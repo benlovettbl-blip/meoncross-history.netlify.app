@@ -1,633 +1,2865 @@
-<!DOCTYPE html><html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>The History Department</title>
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
-            body { font-family: 'Outfit', sans-serif; color: #1e293b; background: #fff; margin: 0; padding: 0; font-size: 8.5pt; line-height: 1.35; }
-            h1, h2, h3, h4 { font-family: 'Playfair Display', serif; color: #1b365d; margin-top: 0; }
-            .cover-page { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; background: #f8fafc; border: 8px solid #facc15; padding: 30px; box-sizing: border-box; }
-            .cover-title { font-size: 38pt; font-weight: 700; color: #1b365d; margin-bottom: 14px; }
-            .cover-subtitle { font-size: 20pt; color: #facc15; font-family: 'Outfit', sans-serif; font-weight: 300; text-transform: uppercase; letter-spacing: 2px; }
-            .page-break { page-break-before: always; }
-            .container { padding: 15px 25px; }
-            .header-banner { background: #1b365d; color: #fff; padding: 12px 18px; text-align: center; border-radius: 6px; margin-bottom: 16px; border-bottom: 3px solid #facc15; }
-            .header-banner h1 { color: #fff; margin: 0; font-size: 16pt; }
-            .year-section { margin-bottom: 16px; }
-            .year-title { background: #facc15; color: #1b365d; padding: 5px 12px; border-radius: 4px; font-size: 11pt; margin-bottom: 8px; display: inline-block; font-family: 'Outfit', sans-serif; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
-            .unit-card { page-break-inside: avoid; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px 12px; margin-bottom: 8px; background: #f8fafc; border-left: 4px solid #1b365d; }
-            .unit-card h3 { font-size: 11pt; margin: 0 0 3px 0; color: #1b365d; }
-            .unit-card .enquiry { font-weight: 600; color: #b89c30; font-size: 8.5pt; margin-bottom: 3px; }
-            .unit-card .desc { font-size: 8pt; color: #475569; margin: 0; line-height: 1.3; }
-            
-            /* SOW Styles */
-            .sow-unit-container { margin-bottom: 25px; page-break-inside: auto; }
-            .sow-unit-header { background: #1b365d; color: #fff; padding: 10px 16px; border-radius: 6px 6px 0 0; border-bottom: 3px solid #facc15; margin-bottom: 12px; }
-            .sow-unit-header h2 { color: #fff; margin: 0 0 4px 0; font-size: 16pt; }
-            .sow-unit-header p { margin: 0; color: #e2e8f0; font-family: 'Outfit', sans-serif; font-size: 9.5pt; }
-            .primer-box { background: #fef3c7; border: 1px solid #fde68a; border-left: 4px solid #d97706; padding: 8px 12px; border-radius: 4px; margin-bottom: 12px; font-size: 8pt; line-height: 1.35; }
-            .primer-box h4 { margin: 0 0 4px 0; color: #92400e; font-family: 'Outfit', sans-serif; text-transform: uppercase; font-size: 8.5pt; letter-spacing: 1px; }
-            
-            table { width: 100%; border-collapse: collapse; margin-bottom: 16px; page-break-inside: auto; font-size: 8pt; }
-            tr { page-break-inside: avoid; page-break-after: auto; border-bottom: 1px solid #e2e8f0; }
-            tr:nth-child(even) { background-color: #f8fafc; }
-            th { background: #0f172a; color: #ffffff; text-align: left; padding: 7px 9px; font-family: 'Outfit', sans-serif; font-weight: 600; font-size: 8pt; border: none; }
-            td { padding: 6px 8px; border: none; vertical-align: top; font-size: 7.8pt; line-height: 1.3; color: #334155; }
-            
-            .lesson-num { font-weight: 700; color: #1b365d; white-space: nowrap; font-size: 8pt; }
-            .lesson-title { font-weight: 700; margin-bottom: 2px; color: #1e40af; font-size: 8.5pt; }
-            
-            .hinge-question { color: #b91c1c; font-style: italic; font-weight: 600; margin-top: 4px; display: block; border-left: 2px solid #ef4444; padding-left: 6px; font-size: 7.5pt; }
-            
-            ul.obj-list { margin: 2px 0 0 0; padding-left: 14px; font-size: 7.8pt; }
-            ul.obj-list li { margin-bottom: 2px; }
-            
-            /* SOW 3-Tier Task Extractor Styles */
-            .sow-three-tier { display: flex; flex-direction: column; gap: 4.5px; }
-            .tier-box { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 4px; padding: 4px 7px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); }
-            .tier-label { font-size: 6.8pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px; }
-            .tier-evidence { border-left: 3.5px solid #1e3a8a; }
-            .tier-evidence .tier-label { color: #1e3a8a; }
-            .tier-debate { border-left: 3.5px solid #b45309; }
-            .tier-debate .tier-label { color: #b45309; }
-            .tier-assessment { border-left: 3.5px solid #0f766e; }
-            .tier-assessment .tier-label { color: #0f766e; }
-            .tier-content { font-size: 7.3pt; color: #1e293b; line-height: 1.28; }
-            .tier-assessment .tier-content { font-weight: 600; color: #0f172a; }
-        </style>
-    </head>
-<body>
-        <div class="cover-page">
-            <div class="cover-title">The History Department</div>
-            <div class="cover-subtitle">Year 7 Scheme of Work (2026-2027)</div>
-            <div style="margin-top: 30px; font-size: 12pt; color: #475569;">Curriculum Planning &amp; Lesson Companion</div>
-        </div>
-    
-        <div class="page-break"></div>
-        <div class="container" style="padding-top: 25px;">
-            <div class="header-banner">
-                <h1>Key Stage 3 Curriculum Intent &amp; Pedagogical Architecture</h1>
-            </div>
-            
-            <div style="margin-bottom: 16px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">1. Curriculum Rationale &amp; Local Maritime Heritage</h2>
-                <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                    Our Key Stage 3 history curriculum is intentionally constructed to link national and global historical narratives with the distinctive maritime geography and lived environment of The History Portal pupils. From the industrial revolution of the Fareham ironmaster (Henry Cort at Funtley) to the strategic supremacy of Portsmouth Royal Dockyard and the profound sacrifices recorded on the Stubbington village war memorials, history is made tangible, relevant, and deeply rooted in our coastal community.
-                </p>
-            </div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>The History Department</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+      body {
+        font-family: 'Outfit', sans-serif;
+        color: #1e293b;
+        background: #fff;
+        margin: 0;
+        padding: 0;
+        font-size: 8.5pt;
+        line-height: 1.35;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: 'Playfair Display', serif;
+        color: #1b365d;
+        margin-top: 0;
+      }
+      .cover-page {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: #f8fafc;
+        border: 8px solid #facc15;
+        padding: 30px;
+        box-sizing: border-box;
+      }
+      .cover-title {
+        font-size: 38pt;
+        font-weight: 700;
+        color: #1b365d;
+        margin-bottom: 14px;
+      }
+      .cover-subtitle {
+        font-size: 20pt;
+        color: #facc15;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+      .page-break {
+        page-break-before: always;
+      }
+      .container {
+        padding: 15px 25px;
+      }
+      .header-banner {
+        background: #1b365d;
+        color: #fff;
+        padding: 12px 18px;
+        text-align: center;
+        border-radius: 6px;
+        margin-bottom: 16px;
+        border-bottom: 3px solid #facc15;
+      }
+      .header-banner h1 {
+        color: #fff;
+        margin: 0;
+        font-size: 16pt;
+      }
+      .year-section {
+        margin-bottom: 16px;
+      }
+      .year-title {
+        background: #facc15;
+        color: #1b365d;
+        padding: 5px 12px;
+        border-radius: 4px;
+        font-size: 11pt;
+        margin-bottom: 8px;
+        display: inline-block;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+      .unit-card {
+        page-break-inside: avoid;
+        border: 1px solid #cbd5e1;
+        border-radius: 6px;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+        background: #f8fafc;
+        border-left: 4px solid #1b365d;
+      }
+      .unit-card h3 {
+        font-size: 11pt;
+        margin: 0 0 3px 0;
+        color: #1b365d;
+      }
+      .unit-card .enquiry {
+        font-weight: 600;
+        color: #b89c30;
+        font-size: 8.5pt;
+        margin-bottom: 3px;
+      }
+      .unit-card .desc {
+        font-size: 8pt;
+        color: #475569;
+        margin: 0;
+        line-height: 1.3;
+      }
 
-            <div style="margin-bottom: 16px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">2. Disciplinary Progression &amp; Historical Enquiry</h2>
-                <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                    Across Years 7, 8, and 9, disciplinary thinking progresses sequentially to secure the foundational skills required for GCSE excellence:
-                </p>
-                <ul style="color: #334155; font-size: 8pt; line-height: 1.4; margin: 4px 0 0 0; padding-left: 18px;">
-                    <li style="margin-bottom: 4px;"><strong>Chronological Rigour &amp; Global Encounters:</strong> De-centering traditional anglocentric narratives by examining early global trade, Indigenous perspectives in Australia, and African resistance to the Transatlantic Slave Trade alongside British social transformations.</li>
-                    <li style="margin-bottom: 4px;"><strong>Causation &amp; Consequence:</strong> Moving from simple direct triggers in Year 7 to evaluating multi-tiered, long-term geopolitical catalysts (e.g. European alliance systems, naval arms races).</li>
-                    <li style="margin-bottom: 4px;"><strong>Source Utility &amp; Forensic Evidence:</strong> Progressing from basic comprehension to rigorous interrogation of provenance, evaluating authorial motive, audience, and historical reliability.</li>
-                    <li style="margin-bottom: 4px;"><strong>Historiographical Debate:</strong> Engaging pupils with active academic debates (e.g., assessing the Magna Carta, or challenging the 'Lions led by Donkeys' narrative of the Great War) grounded in historical evidence.</li>
-                </ul>
-            </div>
+      /* SOW Styles */
+      .sow-unit-container {
+        margin-bottom: 25px;
+        page-break-inside: auto;
+      }
+      .sow-unit-header {
+        background: #1b365d;
+        color: #fff;
+        padding: 10px 16px;
+        border-radius: 6px 6px 0 0;
+        border-bottom: 3px solid #facc15;
+        margin-bottom: 12px;
+      }
+      .sow-unit-header h2 {
+        color: #fff;
+        margin: 0 0 4px 0;
+        font-size: 16pt;
+      }
+      .sow-unit-header p {
+        margin: 0;
+        color: #e2e8f0;
+        font-family: 'Outfit', sans-serif;
+        font-size: 9.5pt;
+      }
+      .primer-box {
+        background: #fef3c7;
+        border: 1px solid #fde68a;
+        border-left: 4px solid #d97706;
+        padding: 8px 12px;
+        border-radius: 4px;
+        margin-bottom: 12px;
+        font-size: 8pt;
+        line-height: 1.35;
+      }
+      .primer-box h4 {
+        margin: 0 0 4px 0;
+        color: #92400e;
+        font-family: 'Outfit', sans-serif;
+        text-transform: uppercase;
+        font-size: 8.5pt;
+        letter-spacing: 1px;
+      }
 
-            <div style="margin-bottom: 14px;">
-                <h2 style="color: #1b365d; border-bottom: 2px solid #facc15; padding-bottom: 5px; font-size: 13pt;">3. Adaptive Teaching, Dual Coding &amp; Inclusion</h2>
-                <p style="margin-top: 0; font-size: 8.5pt; color: #475569; line-height: 1.4;">
-                    Pupils work through bespoke printed A4 workbooks closely paired with our digital learning portal. Standardized PEE/PEEL Structure Strips, Causal Connective Banks, consistent dual coding, and digital accessibility features offload working memory, ensuring all SEND and lower-attaining pupils achieve ambitious historical progress with zero cognitive overload.
-                </p>
-            </div>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 16px;
+        page-break-inside: auto;
+        font-size: 8pt;
+      }
+      tr {
+        page-break-inside: avoid;
+        page-break-after: auto;
+        border-bottom: 1px solid #e2e8f0;
+      }
+      tr:nth-child(even) {
+        background-color: #f8fafc;
+      }
+      th {
+        background: #0f172a;
+        color: #ffffff;
+        text-align: left;
+        padding: 7px 9px;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+        font-size: 8pt;
+        border: none;
+      }
+      td {
+        padding: 6px 8px;
+        border: none;
+        vertical-align: top;
+        font-size: 7.8pt;
+        line-height: 1.3;
+        color: #334155;
+      }
+
+      .lesson-num {
+        font-weight: 700;
+        color: #1b365d;
+        white-space: nowrap;
+        font-size: 8pt;
+      }
+      .lesson-title {
+        font-weight: 700;
+        margin-bottom: 2px;
+        color: #1e40af;
+        font-size: 8.5pt;
+      }
+
+      .hinge-question {
+        color: #b91c1c;
+        font-style: italic;
+        font-weight: 600;
+        margin-top: 4px;
+        display: block;
+        border-left: 2px solid #ef4444;
+        padding-left: 6px;
+        font-size: 7.5pt;
+      }
+
+      ul.obj-list {
+        margin: 2px 0 0 0;
+        padding-left: 14px;
+        font-size: 7.8pt;
+      }
+      ul.obj-list li {
+        margin-bottom: 2px;
+      }
+
+      /* SOW 3-Tier Task Extractor Styles */
+      .sow-three-tier {
+        display: flex;
+        flex-direction: column;
+        gap: 4.5px;
+      }
+      .tier-box {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        padding: 4px 7px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+      }
+      .tier-label {
+        font-size: 6.8pt;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 2px;
+      }
+      .tier-evidence {
+        border-left: 3.5px solid #1e3a8a;
+      }
+      .tier-evidence .tier-label {
+        color: #1e3a8a;
+      }
+      .tier-debate {
+        border-left: 3.5px solid #b45309;
+      }
+      .tier-debate .tier-label {
+        color: #b45309;
+      }
+      .tier-assessment {
+        border-left: 3.5px solid #0f766e;
+      }
+      .tier-assessment .tier-label {
+        color: #0f766e;
+      }
+      .tier-content {
+        font-size: 7.3pt;
+        color: #1e293b;
+        line-height: 1.28;
+      }
+      .tier-assessment .tier-content {
+        font-weight: 600;
+        color: #0f172a;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cover-page">
+      <div class="cover-title">The History Department</div>
+      <div class="cover-subtitle">Year 10 Scheme of Work (2026-2027)</div>
+      <div style="margin-top: 30px; font-size: 12pt; color: #475569">
+        Curriculum Planning &amp; Lesson Companion
+      </div>
+    </div>
+
+    <div class="page-break"></div>
+    <div class="container" style="padding-top: 25px">
+      <div class="header-banner">
+        <h1>Key Stage 4 Curriculum Architecture &amp; Edexcel GCSE Specification</h1>
+      </div>
+
+      <div style="margin-bottom: 14px">
+        <h2
+          style="
+            color: #1b365d;
+            border-bottom: 2px solid #facc15;
+            padding-bottom: 4px;
+            font-size: 12pt;
+          "
+        >
+          Pearson Edexcel GCSE (9–1) History Specification (1HI0)
+        </h2>
+        <p style="margin-top: 0; font-size: 8pt; color: #475569; line-height: 1.35">
+          The History Portal delivers a balanced 4-unit curriculum covering thematic development,
+          British depth, period conflict, and modern world history:
+        </p>
+        <table style="font-size: 7.8pt; margin-bottom: 10px">
+          <thead>
+            <tr>
+              <th style="width: 28%">Exam Paper &amp; Topic</th>
+              <th style="width: 18%">Assessment Focus</th>
+              <th style="width: 14%">Weighting</th>
+              <th style="width: 20%">Format &amp; Marks</th>
+              <th style="width: 20%">Taught Cohort</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <strong>Paper 1 (1HI0/11):</strong><br />Medicine in Britain (c.1250–present) &amp;
+                Western Front (1914–18)
+              </td>
+              <td>Thematic Study &amp; Historic Environment</td>
+              <td><strong>30%</strong> of GCSE</td>
+              <td>1 hr 15 mins<br />52 marks (incl. 4 SPaG)</td>
+              <td>Year 11</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Paper 2 (1HI0/26):</strong><br />Conflict in the Middle East (1945–1995)
+              </td>
+              <td>Period Study</td>
+              <td><strong>20%</strong> of GCSE</td>
+              <td>50 mins<br />32 marks</td>
+              <td>Year 10</td>
+            </tr>
+            <tr>
+              <td>
+                <strong>Paper 2 (1HI0/26):</strong><br />Early Elizabethan England (1558–1588)
+              </td>
+              <td>British Depth Study</td>
+              <td><strong>20%</strong> of GCSE</td>
+              <td>55 mins<br />32 marks</td>
+              <td>Year 11</td>
+            </tr>
+            <tr>
+              <td><strong>Paper 3 (1HI0/31):</strong><br />Weimar and Nazi Germany (1918–1939)</td>
+              <td>Modern Depth Study</td>
+              <td><strong>30%</strong> of GCSE</td>
+              <td>1 hr 20 mins<br />52 marks (incl. 4 SPaG)</td>
+              <td>Year 10</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 10px">
+        <div
+          style="
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #1b365d;
+            padding: 8px 10px;
+            border-radius: 4px;
+          "
+        >
+          <h3 style="color: #1b365d; margin: 0 0 3px 0; font-size: 9pt">
+            Assessment Objectives (AOs)
+          </h3>
+          <ul
+            style="
+              font-size: 7.5pt;
+              line-height: 1.3;
+              margin: 0;
+              padding-left: 12px;
+              color: #334155;
+            "
+          >
+            <li>
+              <strong>AO1 (35%):</strong> Demonstrate knowledge and understanding of key features.
+            </li>
+            <li>
+              <strong>AO2 (35%):</strong> Explain and analyse events, causes, consequences, and
+              change.
+            </li>
+            <li><strong>AO3 (15%):</strong> Analyse, evaluate, and use contemporary sources.</li>
+            <li>
+              <strong>AO4 (15%):</strong> Analyse and evaluate historical interpretations in
+              context.
+            </li>
+          </ul>
         </div>
+        <div
+          style="
+            background: #f8fafc;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid #d97706;
+            padding: 8px 10px;
+            border-radius: 4px;
+          "
+        >
+          <h3 style="color: #92400e; margin: 0 0 3px 0; font-size: 9pt">
+            Standardized Question Frameworks
+          </h3>
+          <ul
+            style="
+              font-size: 7.5pt;
+              line-height: 1.3;
+              margin: 0;
+              padding-left: 12px;
+              color: #334155;
+            "
+          >
+            <li><strong>4-mark Consequence:</strong> PEE structure (immediate &amp; long-term).</li>
+            <li><strong>8-mark Narrative:</strong> 3-phase chronological causal flowchart.</li>
+            <li><strong>8-mark Importance:</strong> Analytical criteria for historical impact.</li>
+            <li><strong>2+2 Features:</strong> Concisely identifying and developing features.</li>
+            <li>
+              <strong>8-mark Utility:</strong> Evaluating content and provenance
+              (Author/Audience/Motive).
+            </li>
+            <li>
+              <strong>16+4 Judgement Essays:</strong> Evaluative criteria with sustained balance.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        style="
+          background: #eff6ff;
+          border: 1px solid #bfdbfe;
+          padding: 7px 10px;
+          border-radius: 4px;
+        "
+      >
+        <p style="margin: 0; font-size: 7.8pt; color: #1e40af; line-height: 1.3">
+          <strong>Mastery Methodology:</strong> GCSE pupils utilize printed Edexcel Mastery Booklets
+          featuring 3-tier models, formula stamps, and walking-talking mock rehearsals, ensuring
+          complete familiarity with mark schemes and timing constraints prior to the final
+          examinations.
+        </p>
+      </div>
+    </div>
     <div class="container sow-unit-container">
-                <div class="sow-unit-header">
-                    <h2>KS3: Water and Sanitation Through Time</h2>
-                    <p><strong>Year 7</strong> | Why did it take so long to clean up Britain?</p>
-                </div>
-            
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 10px; margin-bottom: 12px; page-break-inside: avoid;">
-          <div style="font-family: 'Outfit', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-            <span>🌀 Spiral Curriculum Thematic Strands (Vertical Disciplinary Progression)</span>
-            <span style="color: #64748b; font-weight: 600; font-size: 6.5pt;">Christine Counsell Curricular Threads</span>
+      <div class="sow-unit-header">
+        <h2>Paper 2: Conflict in the Middle East, 1945-1995</h2>
+        <p><strong>Year 10</strong> | Why has peace proved so elusive in the Middle East?</p>
+      </div>
+
+      <div
+        style="
+          background: #ffffff;
+          border: 1.2px solid #cbd5e1;
+          border-radius: 4px;
+          padding: 6px 10px;
+          margin-bottom: 12px;
+          page-break-inside: avoid;
+        "
+      >
+        <div
+          style="
+            font-family: 'Outfit', sans-serif;
+            font-size: 7.2pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #1e3a8a;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>🌀 Spiral Curriculum Thematic Strands (Vertical Disciplinary Progression)</span>
+          <span style="color: #64748b; font-weight: 600; font-size: 6.5pt"
+            >Christine Counsell Curricular Threads</span
+          >
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px">
+          <div
+            style="
+              border-left: 3px solid #1e3a8a;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase"
+            >
+              Sovereignty & Power
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              State institutions, governance, authority and constitutional development
+            </div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-            
-              <div style="border-left: 3px solid #1e3a8a; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase;">Public Health & State Power</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Roman civic governance → Medieval municipal neglect → 1848 Public Health Act (L1, L2, L4)</div>
-              </div>
-            
-              <div style="border-left: 3px solid #0369a1; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Sanitary Engineering & Tech</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Roman aqueducts → Lead piping → Bazalgette’s brick sewer network (L1, L6)</div>
-              </div>
-            
-              <div style="border-left: 3px solid #b91c1c; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #b91c1c; text-transform: uppercase;">Etiology & Scientific Empiricism</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Divine retribution & Miasma → John Snow’s Broad St map → Germ Theory (L3, L5)</div>
-              </div>
-            
-              <div style="border-left: 3px solid #15803d; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #15803d; text-transform: uppercase;">Working-Class Activism & Rights</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Polluted town riots → Water rate strikes → Public demand for health infrastructure (L2, L4)</div>
-              </div>
-            
+
+          <div
+            style="
+              border-left: 3px solid #0369a1;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #0369a1; text-transform: uppercase"
+            >
+              Trade & Technology
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              Economic engines, technical innovations and overseas geopolitical interactions
+            </div>
+          </div>
+
+          <div
+            style="
+              border-left: 3px solid #b91c1c;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #b91c1c; text-transform: uppercase"
+            >
+              Ideology & Causation
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              Religious beliefs, philosophical movements and drivers of historical change
+            </div>
+          </div>
+
+          <div
+            style="
+              border-left: 3px solid #15803d;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #15803d; text-transform: uppercase"
+            >
+              Resistance & Agency
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              Popular protest, social struggle, rights development and civilian agency
+            </div>
           </div>
         </div>
-      
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt;">
-                        <thead>
-                            <tr>
-                                <th style="width: 20%">Lesson Number &amp; Title</th>
-                                <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
-                                <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 1</div>
-                                <div class="lesson-title">How much progress did the Romans make in public health?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Change & Continuity
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the simple, practical sanitation methods used by Iron Age Britons.</li><li>Explain how Roman engineers introduced revolutionary sanitation technology.</li><li>Evaluate the significance of Roman bathhouses and latrines for public health.</li></ul>
-                                <span class="hinge-question">Hinge Q: How did the Romans manage to keep the water flowing constantly into their forts?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Housesteads Fort Roman communal latrines (Hadrian's Wall); Seneca's moral treatise on Roman baths; Fishbourne Roman Palace mosaics</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Roman engineering triumphalism vs lived public health reality: lead piping & parasite transmission</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">Write a PEEL paragraph explaining how the Romans tried to keep their towns clean.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 2</div>
-                                <div class="lesson-title">Why did public health decline during the Middle Ages?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Historical Evidence & Monastic Life
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the simple cesspits used by peasants in rural Medieval villages.</li><li>Explain why Medieval monasteries built complex water systems.</li><li>Evaluate the role of gongfermers and night-work in medieval towns.</li></ul>
-                                <span class="hinge-question">Hinge Q: Why were medieval drinking wells so dangerous?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Canterbury Cathedral Waterworks Plan (c. 1165); City of London Sanitary Ordinance of 1357; Monastic reredorter latrine architecture</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Medieval hygiene myths: Religious purity and monastic engineering vs urban municipal paralysis</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">Write a PEEL paragraph explaining why public health in towns got worse during the Middle Ages.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 3</div>
-                                <div class="lesson-title">To what extent did towns become filthier during the Early Modern period?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Causation & Etiological Beliefs
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the sanitation problems in growing Tudor and Stuart towns.</li><li>Explain why early flushing toilets like Sir John Harington's failed to catch on.</li><li>Evaluate how Samuel Pepys's diary reveals the reality of Early Modern sanitation.</li></ul>
-                                <span class="hinge-question">Hinge Q: Why did the rivers in early modern towns become open sewers?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Sir John Harington's 1596 'Ajax' Toilet Diagram; Samuel Pepys' 1660 Diary on cellar privies; The Cowdray Engraving of Tudor Portsmouth (1545)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Laissez-faire policy debate & Roy Porter on early modern infrastructure limits; technological innovation vs municipal failure</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Evaluative Enquiry] How useful are Sources A and B for an enquiry into how London authorities and medical practitioners attempted to control the 1665 Great Plague?</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 4</div>
-                                <div class="lesson-title">How did the Industrial Revolution lead to a public health crisis?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Historical Significance & State Intervention
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the overcrowded and unhygienic conditions of industrial back-to-back housing.</li><li>Explain how Edwin Chadwick argued for public health reform in his 1842 report.</li><li>Evaluate Dr. John Snow's discovery that cholera was waterborne.</li></ul>
-                                <span class="hinge-question">Hinge Q: Why did the rapid building of factories lead to a housing crisis?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Chadwick's 1842 Report on the Sanitary Condition of the Labouring Population; Dr John Snow's Broad Street Cholera Spot Map (1854); Portsmouth cholera burial registers</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Industrial urbanisation: Miasma theory vs early contagionist epidemiology; laissez-faire vs state health intervention</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Evaluative Enquiry] How useful are Sources A and B for an enquiry into why Victorian medical authorities resisted John Snow’s discovery that cholera was water-borne?</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 5</div>
-                                <div class="lesson-title">Why did it take the 'Great Stink' to finally clean up Britain's streets?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Source Utility & Epidemiological Mapping
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the events of the Great Stink in 1858.</li><li>Explain how Joseph Bazalgette's sewer system transformed London.</li><li>Evaluate how Louis Pasteur's Germ Theory revolutionized our understanding of disease.</li></ul>
-                                <span class="hinge-question">Hinge Q: Why did Parliament suddenly care about public health in 1858?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Punch Cartoon 'The Silent Highwayman' (1858 Great Stink); Bazalgette's Victorian intercepting sewer blueprints (1859–1865); Eastney Beam Engine Pumping Station, Portsmouth: Civic Sanitation Masterpiece (1887)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">The Great Stink of 1858: Parliamentary self-interest and physical stench vs municipal laissez-faire ideology</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">Write a PEEL paragraph explaining how Joseph Bazalgette's sewers improved public health in London.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 6</div>
-                                <div class="lesson-title">End of Unit Assessment: Cholera Investigation</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Turning Point Analysis & Civil Engineering
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Evaluate how Dr John Snow used map data and scientific deduction to prove cholera was waterborne in 1854.</li><li>Explain the shift from laissez-faire government attitudes to compulsory state intervention in British public health.</li><li>Produce a structured 8-mark explanation assessing the significance of Victorian sanitation reforms.</li></ul>
-                                
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Dr John Snow's 1854 Broad Street Cholera Spot Map; Soho mortality records & Eley Brothers percussion cap factory logs</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Snow's empirical epidemiological mapping vs the entrenched medical establishment and Board of Health</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">Explain the significance of John Snow's discovery during the 1854 Broad Street Cholera outbreak. (8 marks)</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody></table>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 3px solid #1b365d; padding: 5px 8px; border-radius: 4px; margin: 6px 0 12px 0; font-size: 7.5pt;">
-                <strong style="color: #1b365d;">Unit Key Vocabulary:</strong> 
-                <span style="color: #475569;">Cholera • Miasma Theory • Laissez-Faire • Cesspit • Back-to-back housing • Public Health Act 1848 • Public Health Act 1875 • Broad Street Pump • The Great Stink • Sewage System • Edwin Chadwick • John Snow • Joseph Bazalgette • Industrial Revolution</span>
-            </div>
-        </div><div class="container sow-unit-container">
-                <div class="sow-unit-header">
-                    <h2>Medieval England: 1066–1485</h2>
-                    <p><strong>Year 7</strong> | How was power won, maintained, and lost in Medieval England?</p>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt">
+        <thead>
+          <tr>
+            <th style="width: 20%">Lesson Number &amp; Title</th>
+            <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
+            <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 1</div>
+              <div class="lesson-title">
+                KT 1.0: Broken Promises & Imperial Borders: Why Was Conflict in the Middle East
+                Inevitable?
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Significance (1947 UN Partition)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Analyse how the Sykes-Picot Agreement (1916) and League of Nations mandates drew
+                  artificial straight lines across former Ottoman territories.
+                </li>
+                <li>
+                  Evaluate the contradictory British wartime pledges: the McMahon-Hussein
+                  Correspondence (1915) versus the Balfour Declaration (1917).
+                </li>
+                <li>
+                  Identify the 4 strategic flashpoints of the Arab-Israeli conflict: Maritime
+                  Chokepoints, Elevated High Ground, Freshwater Basins, and Jerusalem.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did drawing arbitrary straight lines across former Ottoman lands
+                create chronic long-term political instability in the modern Middle East?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: The Sykes-Picot Agreement Partition Map (May 1916); Source B: The
+                    Original Balfour Declaration Letter (2 November 1917); Source A: The Sykes-Picot
+                    Agreement Partition Map (8 May 1916)
+                  </div>
                 </div>
-            
-        <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 6px 10px; margin-bottom: 12px; page-break-inside: avoid;">
-          <div style="font-family: 'Outfit', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #1e3a8a; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-            <span>🌀 Spiral Curriculum Thematic Strands (Vertical Disciplinary Progression)</span>
-            <span style="color: #64748b; font-weight: 600; font-size: 6.5pt;">Christine Counsell Curricular Threads</span>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the contradictory British wartime pledges: the McMahon-Hussein
+                    Correspondence (1915) versus the Balfour Declaration (1917).
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    Complete the geopolitical map of the Middle East by checking off each feature as
+                    you label it: - 🌍 Major Countries: Egypt, Israel, Jordan, Syria, Lebanon, Iraq,
+                    Iran, Saudi Arabia, Turke...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 2</div>
+              <div class="lesson-title">
+                KT 1.1: The End of the British Mandate and the Creation of Israel, 1945–1949
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Causation & Consequence (1948 Arab-Israeli War)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Understand the conflicting interests and demands of Jews and Arabs within the
+                  British Mandate.
+                </li>
+                <li>
+                  Analyze the key events leading to the end of the British Mandate, partition and
+                  the creation of Israel, including the significance of the bombing of the King
+                  David Hotel and UN Resolution 181.
+                </li>
+                <li>Describe the key events of the Arab-Israeli war (1948–49).</li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: What event on 22 July 1946 was the 'final straw' for British morale?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: The Ruins of the King David Hotel, Jerusalem (July 1946); Source B:
+                    The Sergeants Affair, Netanya (July 1947); Source C: The SS Exodus Intercepted
+                    off Palestine (July 1947)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Core Disciplinary Concept: Historical Enquiry & Causal Argumentation
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the bombing of the King David Hotel
+                    (July 1946). (4 marks) • [4 Marks] 1(b). Explain one consequence of the SS
+                    Exodus affair (July 1947). (4 mar...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 3</div>
+              <div class="lesson-title">
+                KT 1.2: The Aftermath of the 1948–49 War & The Palestinian Refugee Crisis
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Source Utility & Provenance (1956 Suez Crisis)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Explain the territorial changes and their impact, including the refugee status of
+                  Palestinian Arabs.
+                </li>
+                <li>
+                  Understand the creation of the Israeli Defence Forces (IDF) and the Law of Return
+                  (1950), and the importance of US aid to Israel.
+                </li>
+                <li>Analyze Israel’s relations with Egypt in the aftermath of the war.</li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why was an independent Palestinian state not created after the 1948-49
+                war?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Palestinian Refugees Fleeing Galilee During the 1948 Nakba; Source B:
+                    David Ben-Gurion Declaring Israeli Independence (14 May 1948); Source A: Israeli
+                    Troops in Heavy Fighting During the 1948 War
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Core Disciplinary Concept: Historical Enquiry & Causal Argumentation
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the 1948–49 War for Palestinian
+                    Arabs. (4 marks) • [4 Marks] 1(b). Explain one consequence of the Israeli Law of
+                    Return (1950). (4 marks) • [8 M...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 4</div>
+              <div class="lesson-title">
+                KT 1.3: Increased Tension, Nasser, and the Suez Crisis, 1955–1963
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Consequence & Territorial Shift (1967 Six-Day War)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>Understand Nasser and Egypt’s leadership of the Arab world.</li>
+                <li>
+                  Analyze the events and significance of Israeli attacks on Gaza in 1955 and Sinai
+                  in 1956.
+                </li>
+                <li>
+                  Evaluate the events and significance of the Suez Crisis (1956), including the
+                  formation of the United Arab Republic (UAR) in 1958.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did the US and UK cancel their loan for the Aswan High Dam?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: President Gamal Abdel Nasser (1956); Source B: Cairo Newspaper
+                    Al-Ahram Announcing the Suez Nationalisation (July 1956); Source B: Al-Ahram
+                    Front Page — Suez Canal Nationalised (July 1956)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the events and significance of the Suez Crisis (1956), including the
+                    formation of the United Arab Republic (UAR) in 1958.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the Israeli raid on Gaza (February
+                    1955). (4 marks) • [4 Marks] 1(b). Explain one consequence of the 1956 Suez
+                    Crisis for Britain and France as ...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 5</div>
+              <div class="lesson-title">
+                KT 2.1 Enquiry: How Did Water, Border Raids, and Rhetoric Make a Second Arab-Israeli
+                War Inevitable? (1964–1967)
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Interpretations (1973 Yom Kippur War)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Explain the significance of the 1964 Cairo Conference and the growth of
+                  Palestinian resistance groups.
+                </li>
+                <li>
+                  Describe the causes and consequences of the River Jordan water dispute and Syrian
+                  border clashes.
+                </li>
+                <li>
+                  Evaluate how the Samu raid (November 1966) and the Golan air battle (7 April 1967)
+                  created unstoppable momentum towards war.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did Palestinian groups like Fatah believe armed struggle was necessary
+                rather than relying solely on Arab governments?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Archival Primary Photograph: Arab Heads of State at the First Arab
+                    League Summit in Cairo (January 1964); Source B: Historical Topographical Map:
+                    The Syrian Armistice Line and Golan Heights Overlooking Israeli Settlements
+                    (1964–1967); Source C: Archival Diplomatic Dispatch: The 7 April 1967 Air Battle
+                    and Arab Political Repercussions
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate how the Samu raid (November 1966) and the Golan air battle (7 April
+                    1967) created unstoppable momentum towards war.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the Cairo Conference (1964). [4
+                    marks]. (4 marks) • [4 Marks] 1(b). Explain one consequence of the events of 7
+                    April 1967. [4 marks]. (4 marks) ...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 6</div>
+              <div class="lesson-title">
+                KT 2.2 Enquiry: Why Was the Six-Day War Decided in Three Hours, and Did Nasser
+                Intend to Fight? (May–June 1967)
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Significance & Diplomacy (1978–79 Camp David Accords)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Explain the sequence of events in May 1967 that made war unavoidable (Soviet
+                  reports, UNEF, Tiran).
+                </li>
+                <li>
+                  Describe the execution and decisive impact of Israel's pre-emptive dawn airstrike
+                  on 5 June 1967.
+                </li>
+                <li>
+                  Trace the three military campaigns and explain why Israel succeeded so rapidly in
+                  Sinai, the West Bank, and the Golan Heights.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did Israel regard the closure of the Straits of Tiran as an act of war
+                (casus belli)?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Archival Photograph: Destroyed Egyptian Jet Aircraft at Bir Gifgafa
+                    Airfield, Sinai (5 June 1967); Source B: Archival Primary Photograph: Israeli
+                    Paratroopers at the Western Wall, Jerusalem (David Rubinger, 7 June 1967)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Core Disciplinary Concept: Historical Enquiry & Causal Argumentation
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the actions of Nasser in the period
+                    leading to war. [4 marks]. (4 marks) • [4 Marks] 1(b). Explain one consequence
+                    of the outbreak of the Six-Da...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 7</div>
+              <div class="lesson-title">
+                KT 2.3 Enquiry: "Land for Peace" or Permanent Stalemate: How Did the 1967 Conquered
+                Territories Transform the Conflict?
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Resistance & Insurgency (First Intifada 1987)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Identify the five Occupied Territories and explain the humanitarian impact on
+                  Palestinian refugees.
+                </li>
+                <li>
+                  Explain the significance of the Khartoum Conference (August 1967) and the "Three
+                  Noes".
+                </li>
+                <li>
+                  Analyse the core principles and deliberate ambiguities of UN Security Council
+                  Resolution 242 (November 1967).
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did the capture of the West Bank and Gaza Strip create a long-term
+                demographic challenge for Israel?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Archival Primary Map: The Conquered Occupied Territories Following the
+                    Six-Day War (June 1967); Source B: Archival Communiqué: The Khartoum Arab League
+                    Summit Resolution (1 September 1967); Source C: Diplomatic Treaty Comparison:
+                    Article 1(i) of UN Security Council Resolution 242 in English and French
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Core Disciplinary Concept: Historical Enquiry & Causal Argumentation
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of UN Resolution 242. [4 marks]. (4
+                    marks) • [4 Marks] 1(b). Explain one consequence of the continued dispute over
+                    the Suez Canal. [4 marks]. (4 ma...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 8</div>
+              <div class="lesson-title">
+                KT 2.4: The Rise of Palestinian Resistance: The PLO, Black September & Munich
+                (1968–1972)
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historiographical Evaluation (1993–95 Oslo Accords)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Explain the significance of the Battle of Karameh (1968) for Palestinian morale
+                  and Arafat's rise.
+                </li>
+                <li>
+                  Describe the events of Black September in Jordan (1970) and explain why the PLO
+                  was expelled.
+                </li>
+                <li>
+                  Analyse the 1972 Munich Olympics massacre and evaluate its international impact.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did the Battle of Karameh cause thousands of young Palestinians to
+                join Fatah and the PLO?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Archival Photograph: PFLP Militants Detonating Hijacked Commercial
+                    Airliners at Dawson's Field, Jordan (12 September 1970); Source B: Archival
+                    Primary Photograph: Masked Black September Gunman on the Balcony at Munich
+                    Olympic Village (5 September 1972)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Analyse the 1972 Munich Olympics massacre and evaluate its international impact.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the PFLP airplane hijacks of 1970. [4
+                    marks]. (4 marks) • [4 Marks] 1(b). Explain one consequence of the expulsion of
+                    the PLO from Jordan (1970)...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 9</div>
+              <div class="lesson-title">
+                KT 2.5: The War of Attrition & The Yom Kippur War (1969–1973)
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Explain the nature of the War of Attrition and Anwar Sadat's strategic motivation
+                  for war.
+                </li>
+                <li>
+                  Describe how Egypt and Syria achieved tactical surprise on 6 October 1973 and
+                  breached Israeli defenses.
+                </li>
+                <li>
+                  Analyse the global impact of the war, including superpower confrontation and the
+                  OPEC oil embargo.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did Anwar Sadat believe a limited military conflict was necessary to
+                achieve a diplomatic solution?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Archival Photograph: Egyptian Infantry and Armored Columns Crossing
+                    the Suez Canal (October 1973); Source B: Archival Photograph: Israeli Armored
+                    Vehicles and Tanks Crossing the Suez Canal to the West Bank (October 1973)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Core Disciplinary Concept: Historical Enquiry & Causal Argumentation
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of Israel’s consolidation of control of
+                    the occupied territories. [4 marks]. (4 marks) • [4 Marks] 1(b). Explain one
+                    consequence of the Yom Kippur ...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 10</div>
+              <div class="lesson-title">
+                KT 3.1: Diplomatic Negotiations: From Shuttle Diplomacy to Camp David, 1974–1979
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Understand the significance of the oil crisis and the involvement of the USA and
+                  the USSR.
+                </li>
+                <li>Analyze Kissinger, ‘shuttle diplomacy’ and the reopening of the Suez Canal.</li>
+                <li>
+                  Evaluate Sadat’s visit to Israel (1977), Begin’s visit to Egypt (1977), US
+                  President Carter and Camp David (1978) and the Treaty of Washington (1979).
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did the United States suddenly have a powerful financial incentive to
+                broker peace after 1973?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Begin, Carter, and Sadat at the Camp David Accords (September 1978);
+                    Source B: The Triple Handshake at the Washington Peace Treaty Signing (26 March
+                    1979); Source A: President Anwar Sadat Addresses the Israeli Knesset (20
+                    November 1977)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate Sadat’s visit to Israel (1977), Begin’s visit to Egypt (1977), US
+                    President Carter and Camp David (1978) and the Treaty of Washington (1979).
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the 1973 OPEC oil embargo for
+                    American foreign policy in the Middle East. [4 marks]. (4 marks) • [4 Marks]
+                    1(b). Explain one consequence of Anwa...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 11</div>
+              <div class="lesson-title">
+                KT 3.2: The Palestinian Issue: Lebanon, Sabra & Shatila, and the First Intifada,
+                1974–1993
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Understand Arafat’s speech to the UN (1974) and the significance of PLO activities
+                  in Lebanon.
+                </li>
+                <li>Analyze Israeli reprisals, the invasion of Lebanon (1982) and the results.</li>
+                <li>
+                  Evaluate the situation in the Israeli occupied territories and the First
+                  Palestinian Intifada (1987–93).
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did Arafat bring both a gun and an olive branch to the UN General
+                Assembly?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Ariel Sharon Overlooking Beirut During the Lebanon Invasion (1982);
+                    Source B: Palestinian Youths at Street Barricades During the First Intifada
+                    (December 1987); Source A: Ariel Sharon Overlooking Beirut During the Lebanon
+                    Invasion (June 1982)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate the situation in the Israeli occupied territories and the First
+                    Palestinian Intifada (1987–93).
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of the Camp David Accords (1978) for
+                    Egyptian-Arab relations. [4 marks]. (4 marks) • [4 Marks] 1(b). Explain one
+                    consequence of the Treaty of Washi...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 12</div>
+              <div class="lesson-title">
+                KT 3.3: Attempts at a Solution: From the Oslo Accords to Oslo II, 1988–1995
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Understand the significance of Arafat’s renunciation of terrorism in a speech at
+                  the UN (1988).
+                </li>
+                <li>
+                  Analyze changing superpower policies in the Middle East: US involvement in the
+                  Gulf War (1991), and the end of the Cold War.
+                </li>
+                <li>
+                  Evaluate Arafat, Rabin and the Oslo Accords (1993); the setting up of the
+                  Palestinian National Authority; the Israel-Jordan peace treaty (1994); and Oslo II
+                  (1995).
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did Arafat explicitly renounce terrorism at the UN in Geneva?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: The Oslo Handshake on the White House Lawn (13 September 1993); Source
+                    B: The Oslo II Map of West Bank Areas A, B, and C (1995); Source A: The Historic
+                    Oslo Handshake on the White House Lawn (13 September 1993)
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    Evaluate Arafat, Rabin and the Oslo Accords (1993); the setting up of the
+                    Palestinian National Authority; the Israel-Jordan peace treaty (1994); and Oslo
+                    II (1995).
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [4 Marks] 1(a). Explain one consequence of Operation Litani in March 1978. [4
+                    marks]. (4 marks) • [4 Marks] 1(b). Explain one consequence of the Sabra and
+                    Shatila massacre (September 1982...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        style="
+          background: #f8fafc;
+          border: 1px solid #cbd5e1;
+          border-left: 3px solid #1b365d;
+          padding: 5px 8px;
+          border-radius: 4px;
+          margin: 6px 0 12px 0;
+          font-size: 7.5pt;
+        "
+      >
+        <strong style="color: #1b365d">Unit Key Vocabulary:</strong>
+        <span style="color: #475569"
+          >Zionism • Anti-Semitism • Mandate • Balfour Declaration • Haganah • Irgun (IZL) • Lehi
+          (The Stern Gang) • Nakba • Israeli Defence Forces (IDF) • Law of Return • Fedayeen •
+          United Arab Republic (UAR) • Fatah • Palestine Liberation Organisation (PLO) • Popular
+          Front for the Liberation of Palestine (PFLP) • UN Resolution 242 • Black September
+          Organization (BSO) • OPEC • Shuttle Diplomacy • Camp David Accords • Treaty of Washington
+          • Intifada • Hamas • Hezbollah • Palestinian National Authority (PNA) • Unified National
+          Leadership of the Uprising (UNLU) • Area C</span
+        >
+      </div>
+    </div>
+    <div class="container sow-unit-container">
+      <div class="sow-unit-header">
+        <h2>Paper 3: Weimar and Nazi Germany, 1918-39</h2>
+        <p>
+          <strong>Year 10</strong> | From Democracy to Dictatorship: How did Hitler destroy the
+          Weimar Republic?
+        </p>
+      </div>
+
+      <div
+        style="
+          background: #ffffff;
+          border: 1.2px solid #cbd5e1;
+          border-radius: 4px;
+          padding: 6px 10px;
+          margin-bottom: 12px;
+          page-break-inside: avoid;
+        "
+      >
+        <div
+          style="
+            font-family: 'Outfit', sans-serif;
+            font-size: 7.2pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #1e3a8a;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          "
+        >
+          <span>🌀 Spiral Curriculum Thematic Strands (Vertical Disciplinary Progression)</span>
+          <span style="color: #64748b; font-weight: 600; font-size: 6.5pt"
+            >Christine Counsell Curricular Threads</span
+          >
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px">
+          <div
+            style="
+              border-left: 3px solid #1e3a8a;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase"
+            >
+              Democracy vs Authoritarian State
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              1919 Weimar Constitution → Article 48 abuse → Reichstag Fire & Enabling Act autocracy
+            </div>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-            
-              <div style="border-left: 3px solid #1e3a8a; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #1e3a8a; text-transform: uppercase;">Monarchy, Law & State Power</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Norman conquest autocracy → Royal justice & Clarendon → Magna Carta & Dynastic collapse (L1–L4, L8)</div>
-              </div>
-            
-              <div style="border-left: 3px solid #0369a1; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #0369a1; text-transform: uppercase;">Feudal Economy & Military Tech</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Motte-and-bailey engineering → Domesday land audit → Post-plague market economy (L1, L2, L5, L6)</div>
-              </div>
-            
-              <div style="border-left: 3px solid #b91c1c; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #b91c1c; text-transform: uppercase;">Catholic Hegemony & Ideology</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Papal supremacy & Becket martyrdom → Doom paintings & tithes → Divine plague etiology (L3, L5, L6)</div>
-              </div>
-            
-              <div style="border-left: 3px solid #15803d; background: #f8fafc; padding: 3px 6px; border-radius: 2px;">
-                <div style="font-size: 6.8pt; font-weight: 800; color: #15803d; text-transform: uppercase;">Popular & Baronial Resistance</div>
-                <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px;">Saxon rebellions & Hereward → Runnymede baronial revolt → 1381 Peasants’ March on London (L2, L4, L7)</div>
-              </div>
-            
+
+          <div
+            style="
+              border-left: 3px solid #0369a1;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #0369a1; text-transform: uppercase"
+            >
+              Economic Shocks & War Production
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              1923 Hyperinflation → 1929 Wall St crash → Schacht’s New Plan & Four-Year War Economy
+            </div>
+          </div>
+
+          <div
+            style="
+              border-left: 3px solid #b91c1c;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #b91c1c; text-transform: uppercase"
+            >
+              Totalitarian Ideology & Indoctrination
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              Dolchstoß myth → Racial antisemitism → Goebbels propaganda, Hitler Youth & Church
+              control
+            </div>
+          </div>
+
+          <div
+            style="
+              border-left: 3px solid #15803d;
+              background: #f8fafc;
+              padding: 3px 6px;
+              border-radius: 2px;
+            "
+          >
+            <div
+              style="font-size: 6.8pt; font-weight: 800; color: #15803d; text-transform: uppercase"
+            >
+              Repression vs Covert Resistance
+            </div>
+            <div style="font-size: 6.4pt; color: #475569; line-height: 1.25; margin-top: 1px">
+              SA terror & Dachau → Edelweiss Pirates & White Rose → July 1944 Stauffenberg bomb plot
+            </div>
           </div>
         </div>
-      
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt;">
-                        <thead>
-                            <tr>
-                                <th style="width: 20%">Lesson Number &amp; Title</th>
-                                <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
-                                <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 1</div>
-                                <div class="lesson-title">1066 & The Battle of Hastings: Why did William win?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Causation (1066 Succession Crisis)
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the three rival claims to the English throne in 1066 and assess which was strongest.</li><li>Explain how military tactics, physical exhaustion, and battlefield leadership decided the Battle of Hastings.</li><li>Evaluate whether William won through tactical superiority or whether King Harold lost due to exhaustion and bad luck.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: If bloodline succession was not legally binding in 1066, what gave a medieval claimant true legitimacy: royal election, papal blessing, or military force?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: The Bayeux Tapestry: King Edward the Confessor on his Deathbed (c. 1070s); Source B: The Anglo-Saxon Chronicle (Manuscript C, 1066) on the Battle of Stamford Bridge</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate whether William won through tactical superiority or whether King Harold lost due to exhaustion and bad luck.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 2</div>
-                                <div class="lesson-title">Castles, Terror & Domesday: How did William control England?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Historical Evidence (Bayeux Tapestry)
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Explain how William used Motte and Bailey castles as instruments of military domination.</li><li>Describe the Harrying of the North and evaluate its devastation as medieval scorched-earth warfare.</li><li>Assess the role of the 1086 Domesday Book in establishing royal surveillance and fiscal control.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why were early Norman castles made of wood and earth rather than stone, and how did this speed William’s conquest?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: The Bayeux Tapestry: Normans Constructing a Motte and Bailey Castle at Hastings (c. 1070s); Source B: Orderic Vitalis, Ecclesiastical History (c. 1120s) on the Harrying of the North</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Describe the Harrying of the North and evaluate its devastation as medieval scorched-earth warfare.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 3</div>
-                                <div class="lesson-title">Crown vs Church: Why did Henry II clash with Thomas Becket?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Significance & State Control (Domesday Book)
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Explain the legal conflict over the Constitutions of Clarendon and ‘criminous clerks’.</li><li>Describe the escalation from exile to the excommunications of 1170.</li><li>Evaluate whether Becket’s murder resulted from institutional conflict or personal pride.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why did the privilege of "Benefit of Clergy" threaten to divide England into two separate legal systems?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: Contemporary Depiction of King Henry II and Chancellor Thomas Becket (12th-Century Manuscript); Source B: Clause 3 of the Constitutions of Clarendon (1164)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate whether Becket’s murder resulted from institutional conflict or personal pride.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 4</div>
-                                <div class="lesson-title">Magna Carta (1215): Liberty or Barons’ Power Grab?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Change & Continuity (Feudal Structure)
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Explain how King John’s military failures and arbitrary taxation drove the barons to rebel.</li><li>Analyse the key clauses of Magna Carta, particularly Clause 39 and Clause 40.</li><li>Evaluate whether Magna Carta was a selfish baronial pact or a charter of liberty.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why did the loss of Normandy in 1204 make King John far more dangerous and extortionate to his English subjects?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: Roger of Wendover, Flowers of History (c. 1220s) on King John’s Extortions; Source B: Clauses 12, 39, and 61 of Magna Carta (15 June 1215)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate whether Magna Carta was a selfish baronial pact or a charter of liberty.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 5</div>
-                                <div class="lesson-title">Doom Paintings & Tithes: What was life like in a medieval village?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Interpretations & Constitutional Law (Magna Carta)
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the social structure of the Three Estates and open-field farming.</li><li>Explain manorial obligations, Church tithes, and local Hampshire episcopal estates.</li><li>Evaluate how Doom paintings and fear of Hell policed peasant behavior.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why did medieval society believe that strict inequality between the Three Estates was God’s divine will?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: The Luttrell Psalter: Peasants Reaping Wheat Under the Reeve’s Direction (c. 1330); Source B: The Pipe Rolls of the Bishopric of Winchester for the Manor of Bishop’s Waltham (c. 1210)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate how Doom paintings and fear of Hell policed peasant behavior.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 6</div>
-                                <div class="lesson-title">1348: How did the Black Death shatter medieval social order?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Causation & Consequence (The Black Death)
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Describe the arrival and biological horror of the plague in 1348.</li><li>Explain how acute labour shortages dismantled feudal ties.</li><li>Evaluate whether the Black Death triggered a "Golden Age" for surviving peasants.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why were medieval medical explanations (miasma, alignment of planets, God’s wrath) powerless to halt the epidemic?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: Henry Knighton, Chronicle of Leicester Abbey on the Black Death (1348–1349); Source B: Bishop Ralph of Shrewsbury’s Emergency Letter to the Diocese of Bath and Wells (January 1349)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate whether the Black Death triggered a "Golden Age" for surviving peasants.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 7</div>
-                                <div class="lesson-title">1381: Why did the Peasants revolt, and did they achieve anything?</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Causation & Consequence
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Explain the socio-economic causes and the catalyst of the 1381 Poll Tax.</li><li>Describe the march on London, the Tower storming, and Smithfield.</li><li>Evaluate whether the Peasants’ Revolt achieved anything in the long term.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why was a flat-rate Poll Tax of 12 pence considered far more intolerable by peasants than traditional feudal tithes?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: Jean Froissart on the Preaching of Radical Priest John Ball (c. 1380s); Source B: The Anonimalle Chronicle: The Execution of Archbishop Sudbury (1381)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate whether the Peasants’ Revolt achieved anything in the long term.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    
-                        <tr>
-                            <td>
-                                <div class="lesson-num">Lesson 8</div>
-                                <div class="lesson-title">The Wars of the Roses (1455–1485): Dynastic Bloodbath</div>
-                                <div class="sow-skill-badge" style="display: inline-block; margin-top: 3px; background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-family: 'Outfit', sans-serif; font-size: 6.8pt; font-weight: 700; padding: 1.5px 5px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.3px;">
-                                    🎯 Historical Enquiry & Analysis
-                                </div>
-                            </td>
-                            <td>
-                                <ul class="obj-list"><li>Explain the structural causes of the Wars of the Roses (Henry VI & Bastard Feudalism).</li><li>Analyse the bloody escalation of the war from Towton to the Princes in the Tower.</li><li>Evaluate the significance of Bosworth Field (1485) in ending the medieval era.</li></ul>
-                                <span class="hinge-question">Hinge Q: Hinge Question: Why did the medieval monarchy require a ruthless, warrior king, and why was a gentle, saintly king like Henry VI a national disaster?</span>
-                                
-                            </td>
-                            <td>
-                                <div class="sow-three-tier">
-                                    <div class="tier-box tier-evidence">
-                                        <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
-                                        <div class="tier-content">Source A: The Crowland Chronicle on the Factionalism and Weakness of Henry VI (c. 1450s); Source B: The Chronicle of the Brut on the Slaughter at the Battle of Towton (1461)</div>
-                                    </div>
-                                    <div class="tier-box tier-debate">
-                                        <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
-                                        <div class="tier-content">Evaluate the significance of Bosworth Field (1485) in ending the medieval era.</div>
-                                    </div>
-                                    <div class="tier-box tier-assessment">
-                                        <div class="tier-label">✍️ Core Written Assessment:</div>
-                                        <div class="tier-content">[Written Synthesis] Complete structured analytical enquiry response in pupil workbook.</div>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody></table>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 3px solid #1b365d; padding: 5px 8px; border-radius: 4px; margin: 6px 0 12px 0; font-size: 7.5pt;">
-                <strong style="color: #1b365d;">Unit Key Vocabulary:</strong> 
-                <span style="color: #475569;">Power • Claim • Conquest • Anglo-Saxon • Significance • Feudal system • Resistance • Propaganda • Domesday Book • Motte-and-bailey • Church • Monarchy • Martyr • Excommunication • Canon law • Magna Carta • Democracy • Parliament • Interpretation • Baron • Peasantry • Tithe • Feudalism • Serf • Strip farming • Black Death • Change • Labour shortage • Statute of Labourers • Social order • Revolt • Poll tax • Wat Tyler • Villeinage • Dynasty • Usurper • Synthesis • Evidence • Judgement</span>
-            </div>
-        </div></body></html>
+      </div>
+
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8pt">
+        <thead>
+          <tr>
+            <th style="width: 20%">Lesson Number &amp; Title</th>
+            <th style="width: 32%">Learning Objectives &amp; Enquiry</th>
+            <th style="width: 48%">Curriculum Rigour: Evidence, Debate &amp; Assessment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 1</div>
+              <div class="lesson-title">KT1.1: The Origins of the Republic, 1918–1919</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Causation (Treaty of Versailles & Weimar Constitution)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate comprehensive knowledge of the catastrophic social, economic, and
+                  political situation in Germany at the end of the First World War.
+                </li>
+                <li>
+                  Analyse the chronological sequence of events that led to the abdication of Kaiser
+                  Wilhelm II, the signing of the Armistice, and the birth of the Republic.
+                </li>
+                <li>
+                  Evaluate the democratic strengths and structural weaknesses of the new Weimar
+                  Constitution, judging the extent to which it left the Republic vulnerable to
+                  instability.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: How did the British naval blockade contribute to the political collapse of
+                Germany in 1918?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: From a speech by Philipp Scheidemann, announcing the new Republic from
+                    the balcony of the Reichstag, 9 November 1918.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete these three sentences with historically
+                    accurate details: 1) Proportional Representation was highly democratic, BUT...
+                    2) Philipp Scheidemann rushed to declare a Republic BECAUSE... 3) The army felt
+                    betrayed by the Armistice, SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Prioritising Causes (The Diamond Ranking Challenge): You
+                    have been given four reasons why the Weimar Republic was highly unstable in
+                    1919: The legacy of the First Wor...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 2</div>
+              <div class="lesson-title">KT1.2: Early Challenges to the Republic, 1919–1923</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Turning Point Analysis (1923 Hyperinflation & Munich Putsch)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate comprehensive knowledge of the Treaty of Versailles and explain why it
+                  made the Republic instantly unpopular.
+                </li>
+                <li>
+                  Analyse the political challenges from the extreme Left (the Spartacist Uprising)
+                  and the extreme Right (the Kapp Putsch), evaluating why the Republic struggled to
+                  maintain authority.
+                </li>
+                <li>
+                  Evaluate the causes and devastating social and economic consequences of the 1923
+                  Ruhr crisis and hyperinflation, identifying the 'winners' and 'losers' of the
+                  economic collapse.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Which term of the Treaty of Versailles do you think caused the most
+                resentment in Germany, and why?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source): From a diary entry by a German bank
+                    clerk living in Berlin, August 1923.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson's narrative, explaining the cause-and-effect relationships: 1. The Treaty
+                    of Versailles was deeply unpopular in Germany, BUT... 2. The Weimar Republic
+                    faced numerous challenges from both the left and the right BECAUSE... 3. The
+                    Ruhr Crisis and the policy of Passive Resistance led to Hyperinflation, SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine the Weimar Republic had
+                    successfully negotiated a significantly reduced reparations payment in 1920,
+                    avoiding the Ruhr Crisis and sub...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 3</div>
+              <div class="lesson-title">KT1.3: The Recovery of the Republic, 1924–1929</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Significance (Golden Twenties & Depression)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate comprehensive knowledge of Stresemann's economic strategies, including
+                  the Rentenmark, the Dawes Plan, and the Young Plan.
+                </li>
+                <li>
+                  Analyse Stresemann's foreign policy achievements (the Locarno Pact, joining the
+                  League of Nations, the Kellogg-Briand Pact) and explain how they restored German
+                  pride.
+                </li>
+                <li>
+                  Evaluate the extent of German recovery by 1929, distinguishing between genuine
+                  political stability and superficial economic prosperity.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Which of Stresemann's economic policies do you think was the most
+                important for restoring confidence in the German government?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source): From a private letter written by Gustav
+                    Stresemann, September 1928.; Source C (Contemporary Written Source): From an
+                    article in a German financial newspaper, late 1928.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson: 1) Germany's economy experienced a period of recovery and stability
+                    between 1924 and 1929, BUT... 2) Gustav Stresemann was a pivotal figure in
+                    Germany's recovery BECAUSE... 3) Germany regained significant international
+                    standing SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Complex Causal Reasoning: To what extent was Germany's
+                    'recovery' between 1924 and 1929 a genuine and sustainable improvement, or was
+                    it built on fragile foundations?...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 4</div>
+              <div class="lesson-title">KT1.4: Changes in Society, 1924–1929</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Causation & Autocracy (Reichstag Fire & Enabling Act)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate comprehensive knowledge of changes in the standard of living,
+                  including wages, housing, and unemployment insurance.
+                </li>
+                <li>
+                  Analyse the changing position of women in politics, work, and leisure, contrasting
+                  the reality of their lives with the image of the 'New Woman'.
+                </li>
+                <li>
+                  Evaluate the explosion of cultural changes in art, cinema, and architecture,
+                  judging why this provoked such fierce opposition from traditionalists and
+                  extremists.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why would a middle-class shop owner be angry about the Unemployment
+                Insurance Act of 1927?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Interpretation 1 (The Social Liberation View):; Interpretation 2 (The
+                    Traditionalist Backlash View):
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    provided text: 1) The standard of living generally improved in Germany between
+                    1924-1929 BUT... 2) The 'New Woman' became a prominent figure in Weimar society
+                    BECAUSE... 3) Weimar culture saw an explosion of avant-garde movements SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine the 'Golden Age' of Weimar
+                    Germany (1924-1929) never happened, and instead, economic instability and high
+                    unemployment persisted thro...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 5</div>
+              <div class="lesson-title">
+                KT2.1: The Early Development of the Nazi Party, 1919–1922
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Interpretations (Nazi Police State, Youth & Women)
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the 25-Point Programme and explain how it was
+                  designed to appeal to multiple different groups in German society.
+                </li>
+                <li>
+                  Analyse the methods Adolf Hitler used to take total control of the party,
+                  including his public speaking, party restructuring, and early propaganda.
+                </li>
+                <li>
+                  Evaluate the role and impact of the SA (Sturmabteilung), explaining how political
+                  violence became a core tactic of the early Nazi Party.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Which point from the 25-Point Programme would have most appealed to a
+                poor, working-class labourer?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Point 4 of the 25-Point Programme, published in February 1920.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    provided narrative: 1) Hitler joined the DAP in 1919 BUT... 2) The DAP changed
+                    its name to NSDAP in 1920 BECAUSE... 3) The SA was formed in 1921 SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine that the **SA**
+                    (Sturmabteilung) was never formed, or was quickly suppressed by authorities,
+                    during the 1919-1922 period. How might t...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 6</div>
+              <div class="lesson-title">KT2.2: The Munich Putsch and the Lean Years, 1923–1929</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the short-term and long-term causes, events, and
+                  immediate consequences of the 1923 Munich Putsch.
+                </li>
+                <li>
+                  Analyse how Hitler used his time in prison to write Mein Kampf and fundamentally
+                  change the strategy and structure of the Nazi Party.
+                </li>
+                <li>
+                  Evaluate why the Nazi Party struggled to win electoral support between 1924 and
+                  1928, despite their highly effective internal reorganisation.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did Hitler believe November 1923 was the perfect moment to launch a
+                revolution against the Weimar government?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source): From eyewitness testimony by a Bavarian
+                    police officer describing the march on the Odeonsplatz, 9 November 1923.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson narrative: 1. Hitler's Munich Putsch failed to seize power in 1923,
+                    BUT... 2. Hitler received a lenient sentence for treason BECAUSE... 3. During
+                    his time in Landsberg Prison, Hitler wrote *Mein Kampf*, SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] The 'What If' Challenge: Imagine a counter-factual scenario
+                    where the Bavarian Triumvirate (Kahr, Lossow, Seisser) had *not* reneged on
+                    their initial agreement with H...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 7</div>
+              <div class="lesson-title">KT2.3: The Growth of Nazi Support, 1929–1932</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the economic and social impacts of the 1929 Wall
+                  Street Crash on Germany.
+                </li>
+                <li>
+                  Analyse the political paralysis of the Weimar Republic, explaining why the
+                  collapse of Müller's coalition and Brüning's policies caused voters to flock to
+                  extremist parties.
+                </li>
+                <li>
+                  Evaluate the reasons for the surge in Nazi support, judging the relative
+                  importance of Hitler's personal appeal, Goebbels' propaganda, Big Business
+                  funding, and the violence of the SA.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Why did the Wall Street Crash have a more devastating effect on Germany
+                than on other European nations?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source): From the diary of Luise Solmitz, a
+                    schoolteacher in Hamburg, March 1932.; Source C (Contemporary Written Source):
+                    From an article describing the conditions of the unemployed in Berlin, 1931.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson narrative: 1) The Grand Coalition government under Hermann Müller
+                    collapsed BUT... 2) Heinrich Brüning increasingly relied on Article 48
+                    BECAUSE... 3) Nazi support grew dramatically between 1929 and 1932 SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: "If the Wall Street Crash had not
+                    occurred in October 1929, the Nazis would never have come to power." To what
+                    extent do you agree with this ...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 8</div>
+              <div class="lesson-title">KT2.4: How Hitler Became Chancellor, 1932–1933</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise chronological knowledge of the rapid succession of Weimar
+                  Chancellors between 1930 and 1933 (Brüning, von Papen, von Schleicher).
+                </li>
+                <li>
+                  Analyse the political scheming ("backstairs intrigue") between President
+                  Hindenburg, his inner circle, Franz von Papen, and the conservative elites.
+                </li>
+                <li>
+                  Evaluate why Hindenburg finally agreed to appoint Hitler as Chancellor despite his
+                  deep personal hatred for him, understanding the fatal miscalculation the elites
+                  made.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: What was the correct chronological order of the final three Weimar
+                Chancellors before Hitler?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Interpretation 1 (The Democratic Collapse View):; Interpretation 2 (The
+                    Political Intrigue View):
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson: 1. Kurt von Schleicher became Chancellor in December 1932, BUT... 2.
+                    Franz von Papen wanted to get back into power BECAUSE... 3. President Hindenburg
+                    ultimately appointed Hitler as Chancellor SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine that President Hindenburg
+                    had refused to meet with Franz von Papen and Hitler in early January 1933, or
+                    had simply dismissed Papen's ...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 9</div>
+              <div class="lesson-title">
+                Key Topic 3.1: The Creation of a Dictatorship, 1933–1934
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise chronological knowledge of the rapid steps Hitler took to
+                  secure power between January 1933 and August 1934.
+                </li>
+                <li>
+                  Analyse how Hitler used the Reichstag Fire and the Enabling Act to legally destroy
+                  political opposition and civil liberties.
+                </li>
+                <li>
+                  Evaluate the significance of the Night of the Long Knives and the Army Oath in
+                  eliminating internal threats and securing absolute power as Führer.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Which event came first: the banning of trade unions or the Enabling
+                Act?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Extract from the 'Decree for the Protection of the People and the
+                    State' (Reichstag Fire Decree), 28 February 1933.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson narrative: 1. In January 1933, Hitler became Chancellor BUT... 2. The
+                    Enabling Act was passed in March 1933 BECAUSE... 3. The Night of the Long Knives
+                    occurred in June 1934 SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine that President Paul von
+                    Hindenburg had lived for another five years beyond August 1934. How might this
+                    have altered the pace and natu...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 10</div>
+              <div class="lesson-title">
+                Key Topic 3.2: The Police State and Religion, 1933–1939
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the different, overlapping branches of the Nazi
+                  police state, distinguishing between the roles of the SS, SD, and Gestapo.
+                </li>
+                <li>
+                  Analyse how the Nazis completely removed the independence of the German legal
+                  system to ensure the courts always ruled in Hitler's favour.
+                </li>
+                <li>
+                  Evaluate the varying successes and failures of Nazi policies towards the Catholic
+                  and Protestant churches.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Which Nazi police branch was primarily responsible for gathering
+                intelligence and keeping index cards on opponents?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source): From a speech by Adolf Hitler to the
+                    Reichstag justifying the Night of the Long Knives, 13 July 1934.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete these sentences based on the lesson
+                    narrative: 1) Hitler signed the Concordat with the Catholic Church in 1933
+                    BUT... 2) Hitler attempted to create a unified 'Reich Church' BECAUSE... 3) The
+                    Gestapo arrested many priests and pastors SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine the Nazi regime, from
+                    1933, had chosen a policy of *immediate and complete suppression* of all
+                    religious institutions (Catholic and P...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 11</div>
+              <div class="lesson-title">
+                Key Topic 3.3: Controlling and Influencing Attitudes, 1933–1939
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the methods Goebbels used to censor the press,
+                  literature, and radio.
+                </li>
+                <li>
+                  Analyse how the Nazis utilised mass rallies, the 1936 Berlin Olympics, and cheap
+                  technology (like the Volksempfänger) as tools of indoctrination.
+                </li>
+                <li>
+                  Evaluate the ways in which the Nazis crushed independent thought by controlling
+                  art, architecture, and music through the Reich Chamber of Culture.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: How did the Editor's Law of 1933 effectively force newspaper editors to
+                censor themselves?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source):; Source C (Contemporary Written Source):
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete these sentences based on the lesson's
+                    narrative: 1) The Nazi regime established the Ministry of Public Enlightenment
+                    and Propaganda in March 1933, BUT... 2) Joseph Goebbels was appointed head of
+                    this Ministry BECAUSE... 3) The Nazis immediately began to control all forms of
+                    media, SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] The 'What If' Challenge (Counter-Factual History): What if
+                    the Nazi regime had *failed* to establish effective control over radio and film
+                    in the early years (1933-19...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 12</div>
+              <div class="lesson-title">
+                Key Topic 3.4: Opposition, Resistance and Conformity, 1933–1939
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Agency & Resistance
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the different youth opposition groups,
+                  distinguishing between the working-class Edelweiss Pirates and the middle-class
+                  Swing Youth.
+                </li>
+                <li>
+                  Analyse the methods used by underground political networks, industrial workers,
+                  and lone-wolf attackers to resist the Nazi state.
+                </li>
+                <li>
+                  Evaluate the reasons why the vast majority of the German population conformed to
+                  Nazi rule rather than actively opposing it.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: How did the social background of the Swing Youth dictate their method of
+                resistance compared to the Edelweiss Pirates?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Interpretation 1 (The Brave Resistance View):; Interpretation 2 (The Limited
+                    Conformity View):
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson narrative: 1) Early opposition groups like the SPD and KPD were quickly
+                    suppressed BUT... 2) The Confessional Church and Catholic Church resisted the
+                    Nazis BECAUSE... 3) Most Germans conformed to Nazi rule SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine a scenario where the SPD
+                    and KPD had managed to form a unified, underground resistance movement
+                    immediately after 1933, receiving sig...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 13</div>
+              <div class="lesson-title">Key Topic 4.1: Nazi Policies Towards Women, 1933–1939</div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the laws and incentives used to increase the
+                  birth rate and promote traditional marriage.
+                </li>
+                <li>
+                  Analyse the methods used by the NS-Frauenschaft and the Deutsches Frauenwerk to
+                  control women's daily lives and education.
+                </li>
+                <li>
+                  Evaluate the 'great contradiction' of Nazi policy: why female employment actually
+                  increased between 1933 and 1939 despite ideological attempts to force women out of
+                  the workplace.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: What specific financial condition was attached to the 1933 Law for the
+                Encouragement of Marriage?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source A: Extract from a speech by Hitler to the National Socialist Women's
+                    Organisation, 1934.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete these sentences based on the lesson's
+                    core narrative: 1) Nazi policies aimed to confine women to the roles of "Kinder,
+                    Küche, Kirche" BUT... 2) The Law for the Encouragement of Marriage was
+                    introduced BECAUSE... 3) The Nazis created organizations like the
+                    NS-Frauenschaft SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: What if the Nazi regime had not
+                    faced severe labour shortages due to rearmament? How might their policies
+                    towards women's employment have evo...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 14</div>
+              <div class="lesson-title">
+                Key Topic 4.2: Nazi Policies Towards the Young, 1933–1939
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of how the school curriculum and teaching profession
+                  were completely 'Nazified' by Bernhard Rust.
+                </li>
+                <li>
+                  Analyse the differences between the youth movements for boys (military
+                  preparation) and girls (domestic preparation).
+                </li>
+                <li>
+                  Evaluate the extent to which Nazi youth policies were a success, acknowledging the
+                  Grade 9 nuance that resistance did exist.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: Give one specific example of how a subject like Mathematics was used as a
+                tool for propaganda.</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B (Contemporary Written Source): From a memoir written by a former member
+                    of the Hitler Youth recalling his school experiences in 1937.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    The 'But/Because/So' Strategy: Complete the following sentences based on the
+                    lesson: 1) The Nazi regime introduced significant changes to the school
+                    curriculum BUT... 2) Membership in the Hitlerjugend (HJ) and Bund Deutscher
+                    Mädel (BDM) became compulsory BECAUSE... 3) Teachers faced pressure to join the
+                    NSLB and swear loyalty to Hitler, SO...
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] The 'What If' Challenge: What if the Nazi regime had
+                    *failed* to gain significant control over the education system and youth
+                    organizations by 1939? How might this ha...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 15</div>
+              <div class="lesson-title">
+                Key Topic 4.3: Employment and Living Standards, 1933–1939
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of the government schemes used to reduce
+                  unemployment (RAD, public works, and rearmament).
+                </li>
+                <li>
+                  Analyse the shift in economic leadership from Schacht’s 'New Plan' to Goering’s
+                  'Four Year Plan' and the goal of Autarky.
+                </li>
+                <li>
+                  Evaluate the extent to which the Nazi economic recovery was a statistical illusion
+                  (invisible unemployment) and assess the true impact on living standards.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: What was the main purpose of the National Labour Service (RAD) and who was
+                forced to join it?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Source B: From a letter written by a German factory worker, 1937.; Source C:
+                    From a report compiled by an undercover agent of the Social Democratic Party in
+                    exile (SOPADE), describing attitudes in a Berlin factory, 1938.
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    True/False/Justify: Read the following statements. For each, state whether it is
+                    True or False, and then justify your answer using specific evidence from the
+                    lesson narrative. 1. Nazi Germany completely eliminated unemployment by 1939
+                    through genuine, sustainable economic growth. 2. The Four Year Plan, led by
+                    Hermann Goering, aimed to make Germany economically self-sufficient and prepare
+                    for war. 3. Living standards for most Germans significantly improved between
+                    1933 and 1939, with an abundance of consumer goods.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Counter-Factual History: Imagine a scenario where, from
+                    1933, the Nazi regime had genuinely prioritized improving the living standards
+                    of ordinary Germans through inc...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="lesson-num">Lesson 16</div>
+              <div class="lesson-title">
+                Key Topic 4.4: The Persecution of Minorities, 1933–1939
+              </div>
+              <div
+                class="sow-skill-badge"
+                style="
+                  display: inline-block;
+                  margin-top: 3px;
+                  background: #e0f2fe;
+                  color: #0369a1;
+                  border: 1px solid #bae6fd;
+                  font-family: 'Outfit', sans-serif;
+                  font-size: 6.8pt;
+                  font-weight: 700;
+                  padding: 1.5px 5px;
+                  border-radius: 3px;
+                  text-transform: uppercase;
+                  letter-spacing: 0.3px;
+                "
+              >
+                🎯 Historical Enquiry & Analysis
+              </div>
+            </td>
+            <td>
+              <ul class="obj-list">
+                <li>
+                  Demonstrate precise knowledge of Nazi racial ideology, distinguishing between
+                  'Untermenschen' and 'Asocials'.
+                </li>
+                <li>
+                  Analyse the escalating stages of anti-Semitic persecution: from early boycotts
+                  (1933) to legislation (1935), bureaucratic dehumanisation (1938), and
+                  state-sponsored violence.
+                </li>
+                <li>
+                  Evaluate the brutal methods used against the disabled, Roma/Sinti, and
+                  homosexuals, including the Marzahn camp, sterilisation, and the T4 programme.
+                </li>
+              </ul>
+              <span class="hinge-question"
+                >Hinge Q: What twisted biological theory underpinned Hitler's belief in a 'Master
+                Race'?</span
+              >
+            </td>
+            <td>
+              <div class="sow-three-tier">
+                <div class="tier-box tier-evidence">
+                  <div class="tier-label">📜 Primary Evidence &amp; Source Analysis:</div>
+                  <div class="tier-content">
+                    Interpretation 1 (The Planned State Pogrom View):; Interpretation 2 (The Public
+                    Fear/Isolation View):
+                  </div>
+                </div>
+                <div class="tier-box tier-debate">
+                  <div class="tier-label">⚖️ Disciplinary Debate / Historian Focus:</div>
+                  <div class="tier-content">
+                    True/False/Justify: Read the following statements. For each, state whether it is
+                    True or False, and then justify your answer using specific information from the
+                    lesson narrative. 1. The Nuremberg Laws primarily targeted 'asocials' and
+                    homosexuals, stripping them of their citizenship. 2. Kristallnacht was a
+                    spontaneous, unorganised outburst of public anger against Jewish businesses and
+                    synagogues. 3. The Nazi concept of 'Volksgemeinschaft' aimed to create a unified
+                    German society that embraced all citizens, regardless of their background or
+                    perceived deficiencies.
+                  </div>
+                </div>
+                <div class="tier-box tier-assessment">
+                  <div class="tier-label">✍️ Core Written Assessment:</div>
+                  <div class="tier-content">
+                    [Evaluative Enquiry] Complex Causal Reasoning: To what extent was the
+                    persecution of *all* minority groups (Jews, Roma/Sinti, disabled, homosexuals,
+                    and 'asocials') between 1933 and 1939 ...
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div
+        style="
+          background: #f8fafc;
+          border: 1px solid #cbd5e1;
+          border-left: 3px solid #1b365d;
+          padding: 5px 8px;
+          border-radius: 4px;
+          margin: 6px 0 12px 0;
+          font-size: 7.5pt;
+        "
+      >
+        <strong style="color: #1b365d">Unit Key Vocabulary:</strong>
+        <span style="color: #475569"
+          >Reichstag • Reichsrat • Armistice • Constitution • Dolchstoßlegende • November Criminals
+          • Proportional Representation (PR) • Coalition Government • Article 48 • Diktat •
+          Reparations • Spartacist League • Freikorps • Putsch • Passive Resistance • Hyperinflation
+          • Rentenmark • Reichsmark • Dawes Plan (1924) • Young Plan (1929) • Locarno Pact (1925) •
+          League of Nations • Kellogg-Briand Pact (1928) • Standard of Living • Unemployment
+          Insurance Act (1927) • New Woman (Neue Frau) • Article 109 • Avant-garde • New Objectivity
+          (Neue Sachlichkeit) • Bauhaus • DAP (German Workers' Party) • NSDAP (National Socialist
+          German Workers' Party) • 25-Point Programme • Nationalism • Socialism • SA
+          (Sturmabteilung) • Stosstrupp (Shock Troop) • Völkischer Beobachter • The Bavarian
+          Triumvirate • Treason • Landsberg Prison • Mein Kampf ('My Struggle') • Führerprinzip (The
+          Leadership Principle) • Gauleiter • SS (Schutzstaffel) • Aryan • The Wall Street Crash •
+          KPD (Communist Party of Germany) • Hermann Müller • Heinrich Brüning • Negative Cohesion •
+          Rotfrontkämpferbund (Red Front Fighters' League) • Paul von Hindenburg • The Camarilla •
+          Franz von Papen • Kurt von Schleicher • Backstairs Intrigue • Cabinet • SD
+          (Sicherheitsdienst) • Gestapo • Schutzhaft (Protective Custody) • The Concordat (1933) •
+          Reich Church • Confessional Church • Censorship • Propaganda • Ministry of Public
+          Enlightenment and Propaganda • Volksempfänger (People’s Receiver) • Reich Chamber of
+          Culture • Entartete Kunst (Degenerate Art) • Conformity • Active Resistance • Sopade
+          Reports • Sabotage • Edelweiss Pirates • Swing Youth • Kinder, Küche, Kirche • Law for the
+          Encouragement of Marriage (1933) • The Mother’s Cross (Mutterkreuz) • Lebensborn (Spring
+          of Life) • NS-Frauenschaft (NSF) • Deutsches Frauenwerk (DFW) • Gertrud Scholtz-Klink •
+          Indoctrination • National Socialist Teachers' League (NSLB) • Bernhard Rust • Eugenics
+          (Race Studies) • Hitlerjugend (HJ) • Bund Deutscher Mädel (BDM) • Faith and Beauty Society
+          • Invisible Unemployment • Autarky • Ersatz • Hermann Goering • National Labour Service
+          (RAD) • German Labour Front (DAF) • Strength Through Joy (KdF) • Beauty of Labour (SdA) •
+          Volksgemeinschaft • Social Darwinism • Untermenschen • Asocials • Anti-Semitism • Eugenics
+          • Aryanisation</span
+        >
+      </div>
+    </div>
+  </body>
+</html>

@@ -4476,7 +4476,7 @@ export const unitData = {
           {
             step: 4,
             date: 'October–November 1956',
-            title: 'The Protocol of Sèvres & Invasion',
+            title: 'The Secret Sèvres Agreement & Invasion',
             actor: 'Britain, France & Israel',
             tag: 'The Tripartite Conspiracy',
             trigger:
@@ -5229,6 +5229,11 @@ export const unitData = {
           title: 'Secret Sevres Protocol Collusion',
           desc: 'Britain, France, and Israel secretly meet outside Paris to orchestrate a tripartite military invasion of Egypt, sparking the 1956 Suez Crisis.',
         },
+        {
+          date: 'Nov 1956 – Mar 1957',
+          title: 'US Ultimatum & UNEF Deployment',
+          desc: 'Eisenhower forces Anglo-French withdrawal under threat of financial collapse; the UN deploys UNEF peacekeepers, securing a decade of border stability.',
+        },
       ],
       video: [
         {
@@ -5237,7 +5242,7 @@ export const unitData = {
           title: 'GCSE Revision: President Nasser & The 1956 Suez Crisis',
           duration: '2 mins 0 secs',
           teacher_guidance:
-            'Key facts: Aswan Dam funding withdrawn, nationalisation of the Suez Canal, and the secret Protocol of Sèvres.',
+            'Key facts: Aswan Dam funding withdrawn, nationalisation of the Suez Canal, and the secret Sèvres agreement.',
         },
         {
           type: 'youtube',
@@ -6901,7 +6906,7 @@ export const unitData = {
         {
           type: 'youtube',
           url: 'https://www.youtube.com/watch?v=B60O6Kcijso',
-          title: 'Operation Focus: The Pre-emptive Airstrike (June 1967)',
+          title: 'The Pre-emptive Airstrike (June 1967)',
           duration: '6 mins 45 secs',
           teacher_guidance:
             'Military breakdown of the morning of 5 June 1967: Israeli Mirage jets destroying the Egyptian air force on runways within 3 hours.',

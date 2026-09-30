@@ -894,9 +894,9 @@ function renderCausalDominoSpine(spine) {
 
   const connectives = [
     'In direct reaction to this...',
-    'Alarmed by Soviet influence, the West...',
-    'Outraged by canal nationalisation, Britain & France...',
-    'Furious at unapproved invasion, President Eisenhower...',
+    'Alarmed by Soviet arms, the West...',
+    'Outraged by canal seizure, Eden colludes...',
+    'Furious at unapproved war, Eisenhower ultimatums...',
   ];
 
   let stagesHtml = stages
@@ -905,130 +905,176 @@ function renderCausalDominoSpine(spine) {
       const connective = !isLast ? connectives[idx] || 'Consequently...' : null;
 
       return `
-      <div class="causal-domino-card" data-stage="${s.step}" style="flex: 0 0 min(320px, 85vw); width: min(320px, 85vw); background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; padding: 18px 16px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 8px rgba(0,0,0,0.04); position: relative;">
+      <div class="causal-domino-card" data-stage="${s.step}" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid ${idx === 4 ? '#10b981' : '#0284c7'}; border-radius: 8px; padding: 12px 10px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 2px 6px rgba(0,0,0,0.04); min-width: 0; box-sizing: border-box; position: relative;">
         <div>
-          <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px;">
-            <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${s.step}</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 700; color: #0284c7; white-space: nowrap;">${s.date}</span>
+          <!-- Header -->
+          <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 6px;">
+            <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${s.step}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700; color: #0284c7; white-space: nowrap;">${s.date}</span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${s.tag} • ${s.actor}">
             ${s.tag} &bull; <strong style="color: #334155;">${s.actor}</strong>
           </div>
-          <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; font-weight: 800; color: #0f172a; margin: 0 0 12px 0; line-height: 1.25;">
+          <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.98rem; font-weight: 800; color: #0f172a; margin: 0 0 10px 0; line-height: 1.25; min-height: 2.4em;">
             ${s.title}
           </h4>
 
           <!-- Row 1: The Action / Trigger -->
-          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 8px 10px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
-            <div style="font-size: 0.68rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              1. The Action / Trigger
+          <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px 8px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
+            <div style="font-size: 0.62rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              1. Action / Trigger
             </div>
-            <div style="font-size: 0.85rem; color: #1e293b; line-height: 1.45;">
+            <div style="font-size: 0.78rem; color: #1e293b; line-height: 1.35;">
               ${s.trigger}
             </div>
           </div>
 
           <!-- Row 2: The 'Because' (Motive) -->
-          <div class="domino-because-box" style="background: #fefce8; border-left: 3px solid #eab308; padding: 8px 10px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
-            <div style="font-size: 0.68rem; font-weight: 800; color: #854d0e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              2. The "Because" (Motive)
+          <div class="domino-because-box" style="background: #fefce8; border-left: 3px solid #eab308; padding: 6px 8px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
+            <div style="font-size: 0.62rem; font-weight: 800; color: #854d0e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              2. "Because" (Motive)
             </div>
-            <div class="domino-content-model" style="font-size: 0.85rem; color: #713f12; line-height: 1.45;">
+            <div class="domino-content-model" style="font-size: 0.78rem; color: #713f12; line-height: 1.35;">
               ${s.because}
             </div>
-            <div class="domino-content-practice" style="display: none; font-size: 0.82rem; color: #854d0e; font-style: italic; line-height: 1.45;">
-              <span style="display: inline-block; background: #fef08a; padding: 2px 6px; border-radius: 3px; font-weight: 600; margin-bottom: 4px;">✍️ In Your Notes:</span> Why did this actor take this action? Record the motive...
+            <div class="domino-content-practice" style="display: none; font-size: 0.76rem; color: #854d0e; font-style: italic; line-height: 1.35;">
+              <span style="display: inline-block; background: #fef08a; padding: 1px 4px; border-radius: 3px; font-weight: 700; font-size: 0.7rem; margin-bottom: 2px;">✍️ Class Prompt:</span> Why did this actor act? Record motive...
             </div>
           </div>
 
           <!-- Row 3: The 'Therefore' (Consequence) -->
-          <div class="domino-therefore-box" style="background: #f0fdf4; border-left: 3px solid #22c55e; padding: 8px 10px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
-            <div style="font-size: 0.68rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              3. The "Therefore" (Immediate Result)
+          <div class="domino-therefore-box" style="background: #f0fdf4; border-left: 3px solid #22c55e; padding: 6px 8px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
+            <div style="font-size: 0.62rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              3. "Therefore" (Result)
             </div>
-            <div class="domino-content-model" style="font-size: 0.85rem; color: #14532d; line-height: 1.45;">
+            <div class="domino-content-model" style="font-size: 0.78rem; color: #14532d; line-height: 1.35;">
               ${s.therefore}
             </div>
-            <div class="domino-content-practice" style="display: none; font-size: 0.82rem; color: #166534; font-style: italic; line-height: 1.45;">
-              <span style="display: inline-block; background: #bbf7d0; padding: 2px 6px; border-radius: 3px; font-weight: 600; margin-bottom: 4px;">✍️ In Your Notes:</span> What did this directly trigger next? Record the consequence...
+            <div class="domino-content-practice" style="display: none; font-size: 0.76rem; color: #166534; font-style: italic; line-height: 1.35;">
+              <span style="display: inline-block; background: #bbf7d0; padding: 1px 4px; border-radius: 3px; font-weight: 700; font-size: 0.7rem; margin-bottom: 2px;">✍️ Class Prompt:</span> What did this trigger next? Record result...
             </div>
           </div>
+
+          <!-- Interactive Per-Card Reveal in Practice Mode -->
+          <div class="domino-card-reveal-btn" style="display: none; margin-bottom: 8px;">
+            <button type="button" class="btn-reveal-stage" onclick="window.revealSingleStage(${s.step})" id="btn-reveal-stage-${s.step}" style="width: 100%; padding: 4px 6px; font-size: 0.72rem; font-weight: 700; background: #0284c7; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+              <i class="fa-solid fa-eye"></i> Reveal Stage ${s.step} Model
+            </button>
+          </div>
+
+          <!-- Connective Step Banner -->
+          ${
+            connective
+              ? `
+            <div style="margin: 4px 0 8px 0; padding: 4px 6px; background: #eff6ff; border: 1px dashed #bfdbfe; border-radius: 4px; font-size: 0.68rem; color: #1e40af; font-weight: 700; line-height: 1.25; text-align: center;">
+              <i class="fa-solid fa-arrow-down" style="color: #2563eb; display: block; margin-bottom: 2px;"></i>
+              ${connective}
+            </div>
+          `
+              : ''
+          }
         </div>
 
         <!-- Exam Link Footer -->
-        <div style="border-top: 1px solid #e2e8f0; padding-top: 8px; margin-top: 8px;">
-          <div style="display: inline-flex; align-items: center; gap: 5px; font-size: 0.72rem; font-weight: 700; color: #475569; line-height: 1.3;">
-            <i class="fa-solid fa-bullseye" style="color: #dc2626;"></i>
+        <div style="border-top: 1px solid #e2e8f0; padding-top: 6px; margin-top: auto;">
+          <div style="display: flex; align-items: flex-start; gap: 4px; font-size: 0.68rem; font-weight: 700; color: #475569; line-height: 1.25;">
+            <i class="fa-solid fa-bullseye" style="color: #dc2626; margin-top: 2px; flex-shrink: 0;"></i>
             <span>${s.exam_link}</span>
           </div>
         </div>
       </div>
-      ${
-        connective
-          ? `
-        <div class="causal-domino-connector" style="flex: 0 0 130px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 2px; text-align: center;">
-          <div style="background: #eff6ff; border: 1.5px solid #bfdbfe; color: #1e40af; font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 700; padding: 8px 10px; border-radius: 8px; box-shadow: 0 2px 4px rgba(30,64,175,0.06); line-height: 1.35; width: 100%;">
-            <i class="fa-solid fa-arrow-right" style="color: #2563eb; margin-bottom: 4px; font-size: 0.88rem; display: block;"></i>
-            ${connective}
-          </div>
-        </div>
-      `
-          : ''
-      }
     `;
     })
     .join('');
 
   return `
-    <section class="causal-domino-section" id="causal-domino-scaffold" style="margin: 25px 0 35px 0; background: #ffffff; border: 2px solid #0f172a; border-radius: 10px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08); overflow: hidden;">
+    <section class="causal-domino-section" id="causal-domino-scaffold" style="margin: 30px 0 35px 0; background: #ffffff; border: 2px solid #0f172a; border-radius: 10px; box-shadow: 0 4px 16px rgba(15, 23, 42, 0.08); overflow: hidden;">
+      <style>
+        .causal-domino-grid-layout {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: 10px;
+          padding: 16px;
+          background: #f8fafc;
+          box-sizing: border-box;
+          width: 100%;
+          overflow-x: hidden;
+        }
+        @media (max-width: 1024px) {
+          .causal-domino-grid-layout {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+          }
+        }
+        @media (max-width: 680px) {
+          .causal-domino-grid-layout {
+            grid-template-columns: 1fr;
+          }
+        }
+        .btn-domino-mode {
+          transition: all 0.15s ease;
+        }
+        .btn-domino-mode:hover {
+          filter: brightness(1.1);
+        }
+      </style>
+
       <!-- Scaffold Header Bar -->
-      <div style="background: #0f172a; color: #ffffff; padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <div style="background: #0f172a; color: #ffffff; padding: 12px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
         <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
-          <span style="background: #eab308; color: #000000; font-family: 'Inter', sans-serif; font-size: 0.74rem; font-weight: 900; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
-            BOARD MODE &bull; NOTE-TAKING SCAFFOLD
+          <span style="background: #eab308; color: #000000; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 900; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
+            BOARD MODE &bull; PRE-EXAM CAUSAL CONSOLIDATION
           </span>
           <div>
             <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 800; color: #ffffff;">
               ${spine.title}
             </h3>
-            <div style="font-family: 'Inter', sans-serif; font-size: 0.78rem; color: #cbd5e1; margin-top: 2px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 0.76rem; color: #cbd5e1; margin-top: 2px;">
               ${spine.subtitle}
             </div>
           </div>
         </div>
 
-        <!-- Toolbar Buttons -->
+        <!-- Mode Toggle & Copy Actions -->
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <div class="view-mode-toggle" style="background: #1e293b; padding: 2px; border-radius: 6px; display: inline-flex; border: 1px solid #334155;">
-            <button type="button" class="btn-domino-mode active" onclick="window.switchDominoMode('model')" id="domino-btn-model" style="padding: 5px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; background: #0284c7; color: #ffffff; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-eye"></i> Teacher Model
+          <div class="view-mode-toggle" style="background: #1e293b; padding: 3px; border-radius: 6px; display: inline-flex; border: 1px solid #334155; gap: 3px;">
+            <button type="button" class="btn-domino-mode active" onclick="window.switchDominoMode('model')" id="domino-btn-model" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 800; border-radius: 4px; border: none; cursor: pointer; background: #0284c7; color: #ffffff; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
+              <i class="fa-solid fa-eye"></i> Completed Model
             </button>
-            <button type="button" class="btn-domino-mode" onclick="window.switchDominoMode('practice')" id="domino-btn-practice" style="padding: 5px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; border: none; cursor: pointer; background: transparent; color: #94a3b8; display: inline-flex; align-items: center; gap: 5px;">
-              <i class="fa-solid fa-pen-nib"></i> Pupil Practice Blanks
+            <button type="button" class="btn-domino-mode" onclick="window.switchDominoMode('practice')" id="domino-btn-practice" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 800; border-radius: 4px; border: none; cursor: pointer; background: transparent; color: #94a3b8; display: inline-flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-pen-nib"></i> Student Practice
             </button>
           </div>
-          <button type="button" onclick="window.copyDominoNotes()" id="btn-copy-domino" style="padding: 5px 12px; font-size: 0.74rem; font-weight: 700; background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s ease;" title="Copy all 5 stages as text notes to paste into your book/OneNote">
+          <button type="button" onclick="window.copyDominoNotes()" id="btn-copy-domino" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 700; background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;" title="Copy all 5 stages as text notes to paste into your book/OneNote">
             <i class="fa-solid fa-copy"></i> Copy Notes
           </button>
         </div>
       </div>
 
-      <!-- Pedagogical Strategy Strip -->
-      <div style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.84rem; color: #475569;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-lightbulb" style="color: #eab308; font-size: 1rem;"></i>
-          <span><strong>The 3-Step Disciplinary Rule:</strong> To learn an Edexcel Paper 2 narrative, record <strong>1. The Action</strong> &rarr; <strong>2. The 'Because' (Motive)</strong> &rarr; <strong>3. The 'Therefore' (Consequence)</strong>.</span>
-        </div>
-        <span style="font-size: 0.74rem; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
-          <i class="fa-solid fa-shield-halved"></i> Edexcel Paper 2 Band 3 Schema
+      <!-- Live Interactive Status Banner -->
+      <div id="domino-status-banner" style="background: #ecfdf5; border-bottom: 1px solid #a7f3d0; padding: 7px 18px; font-size: 0.8rem; font-weight: 700; color: #065f46; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
+        <span id="domino-status-text" style="display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid fa-circle-check" style="color: #10b981;"></i> <strong>Teacher Answer Key Active:</strong> All 5 causal triggers, motives, and consequences are fully revealed for whole-class board instruction.
+        </span>
+        <span style="font-size: 0.72rem; font-weight: 800; color: #047857; text-transform: uppercase; letter-spacing: 0.5px;">
+          <i class="fa-solid fa-graduation-cap"></i> Edexcel Paper 2 Synthesis Bridge
         </span>
       </div>
 
-      <!-- The 5-Stage Domino Flow Container (Horizontal Flex Scroll) -->
-      <div class="causal-domino-flow-container" style="padding: 24px 20px; overflow-x: auto; background: #f8fafc; border-top: 1px solid #e2e8f0; scrollbar-width: thin;">
-        <div style="display: flex; align-items: stretch; gap: 12px; min-width: min-content;">
-          ${stagesHtml}
+      <!-- Strategy Strip -->
+      <div style="background: #f8fafc; border-bottom: 1px solid #e2e8f0; padding: 8px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; color: #475569;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-lightbulb" style="color: #eab308; font-size: 0.95rem;"></i>
+          <span><strong>The 3-Step Disciplinary Rule:</strong> To write an 8-mark Paper 2 narrative account, record <strong>1. The Action</strong> &rarr; <strong>2. The 'Because' (Motive)</strong> &rarr; <strong>3. The 'Therefore' (Consequence)</strong>.</span>
         </div>
+        <span style="font-size: 0.72rem; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+          5-Stage Non-Scrollable Smartboard View
+        </span>
+      </div>
+
+      <!-- 5-Stage Non-Scrollable Grid Container -->
+      <div class="causal-domino-grid-layout">
+        ${stagesHtml}
       </div>
     </section>
   `;
@@ -1039,31 +1085,79 @@ if (typeof window !== 'undefined') {
   window.switchDominoMode = function (mode) {
     const btnModel = document.getElementById('domino-btn-model');
     const btnPractice = document.getElementById('domino-btn-practice');
+    const statusBanner = document.getElementById('domino-status-banner');
+    const statusText = document.getElementById('domino-status-text');
     const modelEls = document.querySelectorAll('.domino-content-model');
     const practiceEls = document.querySelectorAll('.domino-content-practice');
+    const revealBtns = document.querySelectorAll('.domino-card-reveal-btn');
 
     if (mode === 'practice') {
       if (btnModel) {
         btnModel.style.background = 'transparent';
         btnModel.style.color = '#94a3b8';
+        btnModel.classList.remove('active');
       }
       if (btnPractice) {
         btnPractice.style.background = '#0284c7';
         btnPractice.style.color = '#ffffff';
+        btnPractice.classList.add('active');
+      }
+      if (statusBanner && statusText) {
+        statusBanner.style.background = '#fffbeb';
+        statusBanner.style.borderBottom = '1px solid #fde68a';
+        statusBanner.style.color = '#92400e';
+        statusText.innerHTML =
+          '<i class="fa-solid fa-pen-to-square" style="color: #f59e0b;"></i> <strong>Student Practice Mode Active:</strong> Motives & results are blanked out. Tap "Reveal Stage" on any card below to reveal step-by-step.';
       }
       modelEls.forEach((el) => (el.style.display = 'none'));
       practiceEls.forEach((el) => (el.style.display = 'block'));
+      revealBtns.forEach((el) => (el.style.display = 'block'));
     } else {
       if (btnModel) {
         btnModel.style.background = '#0284c7';
         btnModel.style.color = '#ffffff';
+        btnModel.classList.add('active');
       }
       if (btnPractice) {
         btnPractice.style.background = 'transparent';
         btnPractice.style.color = '#94a3b8';
+        btnPractice.classList.remove('active');
+      }
+      if (statusBanner && statusText) {
+        statusBanner.style.background = '#ecfdf5';
+        statusBanner.style.borderBottom = '1px solid #a7f3d0';
+        statusBanner.style.color = '#065f46';
+        statusText.innerHTML =
+          '<i class="fa-solid fa-circle-check" style="color: #10b981;"></i> <strong>Teacher Answer Key Active:</strong> All 5 causal triggers, motives, and consequences are fully revealed for whole-class board instruction.';
       }
       modelEls.forEach((el) => (el.style.display = 'block'));
       practiceEls.forEach((el) => (el.style.display = 'none'));
+      revealBtns.forEach((el) => (el.style.display = 'none'));
+    }
+  };
+
+  window.revealSingleStage = function (step) {
+    const card = document.querySelector(`.causal-domino-card[data-stage="${step}"]`);
+    if (!card) return;
+    const modelEls = card.querySelectorAll('.domino-content-model');
+    const practiceEls = card.querySelectorAll('.domino-content-practice');
+    const btn = document.getElementById(`btn-reveal-stage-${step}`);
+
+    const isCurrentlyHidden = modelEls[0] && modelEls[0].style.display === 'none';
+    if (isCurrentlyHidden) {
+      modelEls.forEach((el) => (el.style.display = 'block'));
+      practiceEls.forEach((el) => (el.style.display = 'none'));
+      if (btn) {
+        btn.innerHTML = `<i class="fa-solid fa-check"></i> Stage ${step} Revealed (Hide)`;
+        btn.style.background = '#16a34a';
+      }
+    } else {
+      modelEls.forEach((el) => (el.style.display = 'none'));
+      practiceEls.forEach((el) => (el.style.display = 'block'));
+      if (btn) {
+        btn.innerHTML = `<i class="fa-solid fa-eye"></i> Reveal Stage ${step} Model`;
+        btn.style.background = '#0284c7';
+      }
     }
   };
 
@@ -3420,13 +3514,21 @@ export function renderLesson(lesson) {
             `,
               )
               .join('')}
+            ${
+              lesson.causal_domino_spine
+                ? `
+              <div style="grid-column: 1 / -1; margin-top: 6px; padding-top: 10px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                <span style="font-size: 0.8rem; color: #64748b; font-style: italic;"><i class="fa-solid fa-circle-info" style="color: #0284c7;"></i> Master Chronology: Macro-framework covering 1955–1957 turning points.</span>
+                <button type="button" onclick="document.getElementById('causal-domino-scaffold')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 4px 10px; font-size: 0.76rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                  <i class="fa-solid fa-diagram-project"></i> Jump to 5-Stage Causal Domino Note Scaffold (Pre-Exam Synthesis) &darr;
+                </button>
+              </div>
+            `
+                : ''
+            }
           </div>
         </details>
       `;
-    }
-
-    if (lesson.causal_domino_spine) {
-      htmlNarrative += renderCausalDominoSpine(lesson.causal_domino_spine);
     }
 
     let renderedKeyIndividual = false;
@@ -6542,6 +6644,11 @@ export function renderLesson(lesson) {
       htmlHistorian;
   } else {
     // Universal GCSE Unified Layout
+    let htmlDominoSpine = '';
+    if (lesson.causal_domino_spine) {
+      htmlDominoSpine = renderCausalDominoSpine(lesson.causal_domino_spine);
+    }
+
     html +=
       htmlVideo +
       htmlDoNow +
@@ -6550,6 +6657,7 @@ export function renderLesson(lesson) {
       (lesson.narrative_blocks && lesson.narrative_blocks.length > 0 ? '' : htmlPrimary) +
       (typeof isGCSE !== 'undefined' && isGCSE ? '' : htmlSources1) +
       htmlTasks +
+      htmlDominoSpine +
       htmlExamPractice +
       htmlVocabDeck +
       htmlExtended +
