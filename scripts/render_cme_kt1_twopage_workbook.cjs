@@ -1397,8 +1397,8 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin: 3px 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000; padding-bottom: 2px; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Chronological Lesson Spine &amp; Structured Note-Taking
           </strong>
@@ -1407,33 +1407,35 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
           </span>
         </div>
 
-        ${cfg.stages
-          .map(
-            (s, sIdx) => `
-        <div class="spine-stage-row" style="display: flex; gap: 8px; flex: 1; align-items: stretch; margin-bottom: ${sIdx < cfg.stages.length - 1 ? '3px' : '0'};">
-          <!-- Spine Node Down The Left (Heading & Date Only • No AI Text) -->
-          <div style="width: 58mm; flex-shrink: 0; border-left: 3px solid #000000; padding-left: 7px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-            <div style="position: absolute; left: -6.5px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background: #000000; border-radius: 50%;"></div>
-            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
-              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #000000;">${s.date}</span>
+        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.2px solid #000000;">
+          ${cfg.stages
+            .map(
+              (s, sIdx) => `
+          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
+            <!-- Spine Node Down The Left (Heading & Date Only • No AI Text • 44mm Width) -->
+            <div style="width: 44mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 5px 0 7px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 9px; height: 9px; background: #000000; border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 900; padding: 1px 3px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000;">${s.date}</span>
+              </div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.15;">
+                ${s.title}
+              </div>
             </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; line-height: 1.15;">
-              ${s.title}
-            </div>
-          </div>
 
-          <!-- Ruled Note-Taking Lines (Pupil writes notes here) -->
-          <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-left: 1px solid #e2e8f0; padding-left: 6px;">
-            <div class="task-line" style="height: 6.8mm;"></div>
-            <div class="task-line" style="height: 6.8mm;"></div>
-            <div class="task-line" style="height: 6.8mm;"></div>
-            <div class="task-line" style="height: 6.8mm;"></div>
+            <!-- Ruled Note-Taking Lines (Pupil writes notes here • Faint Vertical Line shifted left) -->
+            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
           </div>
+          `,
+            )
+            .join('')}
         </div>
-        `,
-          )
-          .join('')}
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
@@ -1466,13 +1468,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
           ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-          Disciplinary Lesson Notes &bull; Chronological Synthesis
-        </span>
-      </div>
-
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 3px; line-height: 1.2;">
-        <strong>Instructions:</strong> Use this open note-taking canvas to record teacher direct instruction, annotate key causal links, and synthesize the 5 milestones on facing Page ${leftPageNum}.
       </div>
 
       <!-- 28 Ruled Lines with 22mm Left Margin -->
@@ -1482,13 +1477,10 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
           const marginContent = isFirst
             ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
             : `&nbsp;`;
-          const linePrompt = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Lesson Notes &bull; Causal Synthesis &bull; Disciplinary Analysis ]</span>`
-            : `&nbsp;`;
           return `
             <div class="lined-row">
               <div class="lined-margin-cell">${marginContent}</div>
-              <div class="lined-content-cell">${linePrompt}</div>
+              <div class="lined-content-cell">&nbsp;</div>
             </div>`;
         }).join('')}
       </div>
@@ -1595,17 +1587,19 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Initial Response Lines -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Begin your analytical response below and continue onto facing Page ${linedRightPageNum} for full timed response:
-      </div>
-      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; margin-bottom: 2px;">
-        <div class="task-line" style="height: 6.8mm;"></div>
-        <div class="task-line" style="height: 6.8mm;"></div>
-        <div class="task-line" style="height: 6.8mm;"></div>
-        <div class="task-line" style="height: 6.8mm;"></div>
-        <div class="task-line" style="height: 6.8mm;"></div>
-        <div class="task-line" style="height: 6.8mm;"></div>
+      <!-- Initial Response Lines (Ruled Grid with Margin) -->
+      <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
+        ${Array.from({ length: 15 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">&nbsp;</div>
+            </div>`;
+        }).join('')}
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
@@ -1622,9 +1616,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Independent Practice &bull; Extended Exam Response
-        </span>
       </div>
 
       <!-- 20 Ruled Response Lines with Margin -->
@@ -1634,13 +1625,10 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
           const marginContent = isFirst
             ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
             : `&nbsp;`;
-          const linePrompt = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 2/3 &amp; Sustained Analytical Conclusion ]</span>`
-            : `&nbsp;`;
           return `
             <div class="lined-row">
               <div class="lined-margin-cell">${marginContent}</div>
-              <div class="lined-content-cell">${linePrompt}</div>
+              <div class="lined-content-cell">&nbsp;</div>
             </div>`;
         }).join('')}
       </div>
