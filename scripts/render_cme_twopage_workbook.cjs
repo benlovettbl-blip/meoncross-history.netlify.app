@@ -92,6 +92,7 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
+        keywords: ['President Nasser', 'Arab League Summit', 'PLO Established', 'Fatah Sabotage'],
         date: 'January 1964',
         title: 'The 1964 Cairo Conference & PLO Founded',
         actor: 'President Nasser & The Arab League',
@@ -109,6 +110,12 @@ const kt2Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Headwater Diversion',
+          'River Jordan Waters',
+          'Artillery Duels',
+          'National Water Carrier',
+        ],
         date: '1964–1965',
         title: 'The Dispute Over the River Jordan Waterways',
         actor: 'Israel & Syria',
@@ -126,6 +133,12 @@ const kt2Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Salah Jadid',
+          'Syrian Baath Party',
+          'Landmine Raids',
+          'Northern Border Hotspot',
+        ],
         date: '1966',
         title: 'Syrian Support for Fatah Border Raids',
         actor: 'Syrian Government & Palestinian Guerrillas',
@@ -143,6 +156,12 @@ const kt2Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Samu Village Raid',
+          'West Bank Frontier',
+          'King Hussein Backlash',
+          'Nasser Under Pressure',
+        ],
         date: '13 November 1966',
         title: 'The Israeli Raid on Samu',
         actor: 'Israeli Defence Forces (IDF) & Jordan',
@@ -160,6 +179,12 @@ const kt2Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Six Syrian MiGs Downed',
+          'Mirage IIIC Jets',
+          'Damascus Flyover',
+          'Soviet Disinformation',
+        ],
         date: '7 April 1967',
         title: 'The Aerial Battle of 7 April 1967',
         actor: 'Israeli & Syrian Air Forces',
@@ -240,6 +265,12 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Soviet False Warnings',
+          '100,000 Sinai Troops',
+          'UNEF Expulsion',
+          'Sharm el-Sheikh',
+        ],
         date: '13–15 May 1967',
         title: 'Soviet False Reports & Egyptian Mobilisation',
         actor: 'The Soviet Union & President Nasser',
@@ -257,6 +288,12 @@ const kt2Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Straits of Tiran Closed',
+          'Casus Belli',
+          'Jordan Defence Pact',
+          'Moshe Dayan Appointed',
+        ],
         date: '16–23 May 1967',
         title: 'UN Peacekeepers Expelled & Straits of Tiran Closed',
         actor: 'Egypt & The United Nations',
@@ -274,6 +311,12 @@ const kt2Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Operation Focus (Moked)',
+          'Runway Crater Bombs',
+          '300 Egyptian Jets Destroyed',
+          'Air Supremacy (3 hrs)',
+        ],
         date: '30 May 1967',
         title: 'The Arab Defence Pact (Israel Encircled)',
         actor: 'Egypt, Jordan & Syria',
@@ -291,6 +334,7 @@ const kt2Configs = [
       },
       {
         step: 4,
+        keywords: ['Mitla Pass Ambush', 'Sinai Captured', 'Gaza Cleared', 'Suez Canal Front'],
         date: '5 June 1967',
         title: 'The Pre-Emptive Air Strike',
         actor: 'The Israeli Air Force',
@@ -308,6 +352,12 @@ const kt2Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Western Wall Captured',
+          'Golan Heights Assault',
+          '1 Million Under Occupation',
+          'Ceasefire (10 June)',
+        ],
         date: '5–10 June 1967',
         title: 'The Six-Day Victory & The Conquered Territories',
         actor: 'Israeli Defence Forces (IDF)',
@@ -392,6 +442,12 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Old City Captured',
+          'Western Wall',
+          'East Jerusalem Annexed',
+          'Intractable Sacred Dispute',
+        ],
         date: '7 June 1967',
         title: 'The Capture of East Jerusalem',
         actor: 'Israeli Forces (IDF)',
@@ -409,6 +465,12 @@ const kt2Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Khartoum Conference',
+          '"Three Noes"',
+          'No Peace / No Recognition',
+          'Diplomatic Stalemate',
+        ],
         date: 'September 1967',
         title: 'The Khartoum Summit & The "Three No’s"',
         actor: 'Arab Leaders (Led by Egypt’s Nasser)',
@@ -426,6 +488,12 @@ const kt2Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'UN Resolution 242',
+          '"Land for Peace"',
+          'Inadmissibility Principle',
+          'Linguistic Ambiguity',
+        ],
         date: '22 November 1967',
         title: 'UN Resolution 242: "Land for Peace"',
         actor: 'The United Nations Security Council',
@@ -443,6 +511,12 @@ const kt2Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Bar-Lev Line Forts',
+          'Sinai Strategic Depth',
+          'Giant Sand Walls',
+          'Military Overconfidence',
+        ],
         date: '1968–1969',
         title: 'The Bar-Lev Line on the Suez Canal',
         actor: 'Israeli Military (IDF)',
@@ -460,6 +534,12 @@ const kt2Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'West Bank & Gaza Settlements',
+          'Golan Heights Outposts',
+          'Strategic Buffer Zones',
+          '"Facts on the Ground"',
+        ],
         date: '1968–1973',
         title: 'The Beginning of Israeli Settlements',
         actor: 'Israeli Government & Jewish Settlers',
@@ -542,6 +622,12 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Battle of Karameh',
+          'Fatah Guerrilla Stand',
+          'Yasser Arafat PLO Leader',
+          'Fedayeen Recruitment',
+        ],
         date: '21 March 1968',
         title: 'The Battle of Karameh',
         actor: 'Palestinian Fighters (Fatah) & Jordanian Army vs. Israel',
@@ -559,6 +645,12 @@ const kt2Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Dawson’s Field Hijackings',
+          'PFLP Guerrillas',
+          'TV Aircraft Explosions',
+          '"State Within a State"',
+        ],
         date: 'September 1970',
         title: 'The Dawson’s Field Airline Hijackings',
         actor: 'PFLP (Militant Palestinian Group)',
@@ -576,6 +668,12 @@ const kt2Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Black September (1970)',
+          'King Hussein Crackdown',
+          'Amman Tank Assault',
+          'PLO Exile to Lebanon',
+        ],
         date: 'September 1970',
         title: 'Black September (Civil War in Jordan)',
         actor: 'The Jordanian Army vs. The PLO',
@@ -593,6 +691,12 @@ const kt2Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Munich Olympics (1972)',
+          'Black September Militants',
+          '11 Israeli Athletes Murdered',
+          'Global TV Outrage',
+        ],
         date: '5–6 September 1972',
         title: 'The Munich Olympics Massacre',
         actor: 'Black September Militants',
@@ -610,6 +714,12 @@ const kt2Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Operation Wrath of God',
+          'Golda Meir Deterrence',
+          'Mossad Assassination Teams',
+          'Covert European War',
+        ],
         date: '1972–1979',
         title: 'Israeli Retaliation (Operation Wrath of God)',
         actor: 'Israeli Intelligence (Mossad)',
@@ -693,6 +803,12 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'War of Attrition (1969–70)',
+          'Suez Artillery Duels',
+          'Soviet SAM Missiles',
+          'Sinai Stalemate',
+        ],
         date: '1969–1970',
         title: 'The War of Attrition',
         actor: 'Egypt vs. Israel',
@@ -710,6 +826,12 @@ const kt2Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'President Anwar Sadat',
+          '15,000 Soviet Advisers Expelled',
+          'Bar-Lev Complacency',
+          'Diplomatic Rebuff',
+        ],
         date: '1971–1972',
         title: 'Sadat Expels Soviet Advisers',
         actor: 'President Anwar Sadat of Egypt',
@@ -727,6 +849,12 @@ const kt2Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Yom Kippur & Ramadan',
+          'Bar-Lev Water Canons',
+          'Operation Badr',
+          'Two-Front Surprise',
+        ],
         date: '6 October 1973',
         title: 'The Surprise Attack on Yom Kippur',
         actor: 'Egypt & Syria vs. Israel',
@@ -744,6 +872,12 @@ const kt2Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Operation Nickel Grass',
+          'US Emergency Airlift',
+          'Ariel Sharon Crossing',
+          'Third Army Encircled',
+        ],
         date: '12–16 October 1973',
         title: 'The US Emergency Airlift & Israeli Counter-Attack',
         actor: 'The USA & Israeli Army (IDF)',
@@ -761,6 +895,12 @@ const kt2Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'OPEC Oil Embargo',
+          'Fourfold Price Hike',
+          'UN Resolution 338',
+          'Kissinger Shuttle Diplomacy',
+        ],
         date: 'October 1973',
         title: 'The Arab Oil Embargo & Ceasefire',
         actor: 'Arab Oil Producers (OPEC) & The UN',
@@ -1293,16 +1433,24 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Heading & Date Only • No AI Text • 34mm Width) -->
-            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 4px 0 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title & Level 4 Keywords • 34mm Width) -->
+            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px; flex-wrap: wrap;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 900; padding: 1px 3px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">${s.date}</span>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.12;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1.5px;">
                 ${s.title}
               </div>
+              ${
+                s.keywords && s.keywords.length > 0
+                  ? `
+              <div style="margin-top: 1px; display: flex; flex-direction: column; gap: 0.8px; font-family: 'Inter', sans-serif; font-size: 5.6pt; line-height: 1.12; color: #1e293b;">
+                ${s.keywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+              </div>`
+                  : ''
+              }
             </div>
 
             <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
@@ -1464,10 +1612,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Initial Response Lines (Ruled Grid with 8mm Margin) -->
+      <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 15 },
+          { length: 18 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1492,10 +1640,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 20 Ruled Response Lines with 8mm Margin -->
+      <!-- 26 Ruled Response Lines with 8mm Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
         ${Array.from(
-          { length: 20 },
+          { length: 26 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1504,26 +1652,13 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      <!-- Timeline Mission Box -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 3px;">
+      <!-- Timeline Mission Box (At very foot of page above footer strip) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
           Timeline Mission &bull; Pages 2–3
         </div>
         <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.18;">
           ${rx.timelineMission}
-        </div>
-      </div>
-
-      <!-- Band 4 Marking Rubric / Self-Assessment Checklist -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <span style="font-weight: 800; text-transform: uppercase;">Band 4 Checklist [7–8m]:</span>
-          <span><input type="checkbox"> Accurate &amp; relevant details deployed</span>
-          <span><input type="checkbox"> Analytical progression sustained throughout</span>
-          <span><input type="checkbox"> Explicit causal connectives used</span>
-        </div>
-        <div style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; white-space: nowrap;">
-          Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 8 ]
         </div>
       </div>
 

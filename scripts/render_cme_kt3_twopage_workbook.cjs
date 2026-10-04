@@ -92,6 +92,12 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'OPEC Oil Embargo',
+          'Stagflation Crisis',
+          'King Faisal (Saudi)',
+          'US Security Priority',
+        ],
         date: 'Oct 1973',
         title: 'The Arab Oil Shock & Superpower Realignment',
         actor: 'OPEC Arab Oil Producers & The USA',
@@ -107,6 +113,12 @@ const kt3Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Henry Kissinger',
+          'Shuttle Diplomacy',
+          'Sinai I Disengagement',
+          'Suez Canal Reopened',
+        ],
         date: 'Jan 1974',
         title: 'Kissinger’s Shuttle Diplomacy & Sinai I',
         actor: 'Henry Kissinger, Egypt & Israel',
@@ -122,6 +134,12 @@ const kt3Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Sinai II Agreement (1975)',
+          'Abu Rudeis Oilfields',
+          'Renouncing Military Force',
+          'Geneva Accord',
+        ],
         date: 'Sept 1975',
         title: 'The Sinai II Agreement',
         actor: 'Egyptian & Israeli Governments',
@@ -137,6 +155,12 @@ const kt3Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Likud Election (1977)',
+          'Menachem Begin',
+          'Labour Rule Ends',
+          'Hardline Revisionist Zionism',
+        ],
         date: 'May 1977',
         title: 'Likud Election Victory (Menachem Begin)',
         actor: 'Menachem Begin & The Likud Party',
@@ -152,6 +176,12 @@ const kt3Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Anwar Sadat',
+          'Knesset Address (1977)',
+          '"No More War, No More Bloodshed"',
+          'Psychological Barrier Broken',
+        ],
         date: '19–21 Nov 1977',
         title: 'Sadat’s Historic Journey to Jerusalem',
         actor: 'President Anwar Sadat & The Israeli Knesset',
@@ -226,6 +256,12 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Camp David Retreat (1978)',
+          'Jimmy Carter Mediation',
+          '13 Days Closed Talks',
+          '$Billion US Subsidies',
+        ],
         date: '5–17 Sept 1978',
         title: 'The Camp David Summit',
         actor: 'Jimmy Carter, Anwar Sadat & Menachem Begin',
@@ -241,6 +277,12 @@ const kt3Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Two Framework Accords',
+          'Sinai Total Return',
+          'Palestinian Autonomy Sham',
+          'West Bank Control Retained',
+        ],
         date: 'Sept 1978',
         title: 'The Dual Framework Agreements',
         actor: 'The United States, Egypt & Israel',
@@ -256,6 +298,12 @@ const kt3Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Treaty of Washington (1979)',
+          'White House Lawn',
+          'Yamit Settlement Bulldozed',
+          'Demilitarised Sinai',
+        ],
         date: '26 March 1979',
         title: 'The Egypt-Israel Peace Treaty',
         actor: 'Sadat, Begin & Carter',
@@ -271,6 +319,12 @@ const kt3Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Baghdad Arab Summit',
+          'Arab League Suspension',
+          'Cairo HQ Moved to Tunis',
+          'Sadat Diplomatic Exile',
+        ],
         date: 'March–Nov 1979',
         title: 'The Arab League Boycott of Egypt',
         actor: 'The Arab League & PLO',
@@ -286,6 +340,12 @@ const kt3Configs = [
       },
       {
         step: 5,
+        keywords: [
+          '6 October 1981 Parade',
+          'Egyptian Islamic Jihad',
+          'Sadat Assassinated',
+          'Hosni Mubarak Succeeds',
+        ],
         date: '6 October 1981',
         title: 'The Assassination of Anwar Sadat',
         actor: 'Egyptian Islamic Jihad Militants',
@@ -376,6 +436,12 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Coastal Road Bus Attack',
+          'Operation Litani (1978)',
+          'UNIFIL (Res 425)',
+          'South Lebanon Army Buffer',
+        ],
         date: 'March 1978',
         title: 'Operation Litani & The Border Buffer',
         actor: 'IDF & Palestinian Guerrillas',
@@ -391,6 +457,12 @@ const kt3Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Shlomo Argov Ambush',
+          'Operation Peace for Galilee',
+          'Ariel Sharon',
+          '60-Mile Drive to Beirut',
+        ],
         date: '6 June 1982',
         title: 'Operation Peace for Galilee Launched',
         actor: 'Defence Minister Ariel Sharon & The IDF',
@@ -406,6 +478,12 @@ const kt3Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Siege of Beirut (10 Weeks)',
+          'Philip Habib Ceasefire',
+          'PLO Tunis Evacuation',
+          'Arafat Sea Exile',
+        ],
         date: 'June–Aug 1982',
         title: 'The Siege of Beirut & PLO Evacuation',
         actor: 'IDF, PLO & US Diplomat Philip Habib',
@@ -421,6 +499,12 @@ const kt3Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Bachir Gemayel Murder',
+          'Phalangist Militias',
+          'Sabra-Shatila Slaughter',
+          'IDF Flares Complicity',
+        ],
         date: '16–18 Sept 1982',
         title: 'The Sabra and Shatila Massacre',
         actor: 'Lebanese Christian Phalangists & The IDF',
@@ -436,6 +520,12 @@ const kt3Configs = [
       },
       {
         step: 5,
+        keywords: [
+          '400,000 Tel Aviv Rally',
+          'Kahan Commission',
+          'Sharon "Personal Blame"',
+          'Begin Resignation (1983)',
+        ],
         date: 'Feb 1983',
         title: 'The Kahan Commission & Israeli Protests',
         actor: 'The Israeli Judiciary & The Peace Now Movement',
@@ -509,6 +599,12 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Jabalia Checkpoint Crash',
+          'Four Workers Killed',
+          'Spontaneous Outbreak',
+          'First Intifada Spark',
+        ],
         date: '8 Dec 1987',
         title: 'The Jabalia Traffic Spark',
         actor: 'Palestinian Civilians & The IDF',
@@ -524,6 +620,12 @@ const kt3Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Popular Civil Disobedience',
+          'Yitzhak Rabin',
+          '"Iron Fist" & Beatings',
+          'Global Television Outrage',
+        ],
         date: '1987–1988',
         title: 'Popular Uprising & The "Iron Fist" Policy',
         actor: 'Palestinian Youths vs. Defence Minister Yitzhak Rabin',
@@ -539,6 +641,12 @@ const kt3Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Sheikh Ahmed Yassin',
+          'Hamas Founded (Dec 1987)',
+          '1988 Islamic Covenant',
+          'Sacred Waqf vs Diplomacy',
+        ],
         date: 'Dec 1987',
         title: 'The Founding of Hamas in Gaza',
         actor: 'Sheikh Ahmed Yassin & The Muslim Brotherhood',
@@ -554,6 +662,12 @@ const kt3Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Arafat Geneva UN Speech (1988)',
+          'Renouncing Terrorism',
+          'UN Resolution 242 Accepted',
+          'Direct US-PLO Talks',
+        ],
         date: '13 Dec 1988',
         title: 'Arafat’s Geneva Speech to the UN',
         actor: 'Yasser Arafat & The UN General Assembly',
@@ -569,6 +683,12 @@ const kt3Configs = [
       },
       {
         step: 5,
+        keywords: [
+          '1991 Gulf War Repercussions',
+          'George H.W. Bush & Gorbachev',
+          'Madrid Peace Conference (1991)',
+          'Face-to-Face Delegations',
+        ],
         date: 'Oct 1991',
         title: 'The Madrid Peace Conference',
         actor: 'The USA, The USSR, Israel & Arab Neighbours',
@@ -659,6 +779,12 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          '1992 Labour Election Victory',
+          'Yitzhak Rabin',
+          'Nine-Month Peace Pledge',
+          'Settlement Freeze',
+        ],
         date: 'June 1992',
         title: 'The Election of Yitzhak Rabin',
         actor: 'Yitzhak Rabin & The Israeli Labour Party',
@@ -674,6 +800,12 @@ const kt3Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Secret Oslo Talks (Norway)',
+          'Terje Rød-Larsen Facilitation',
+          'Letters of Mutual Recognition',
+          'Bypassing Washington',
+        ],
         date: 'Jan–Aug 1993',
         title: 'Secret Backchannel Negotiations in Oslo',
         actor: 'Israeli Academics, PLO Delegates & Norwegian Facilitators',
@@ -689,6 +821,12 @@ const kt3Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Oslo I Accord (1993)',
+          'White House Handshake',
+          'Bill Clinton Orchestration',
+          'Palestinian Authority (Gaza-Jericho)',
+        ],
         date: '13 Sept 1993',
         title: 'Oslo I (Declaration of Principles) & White House Handshake',
         actor: 'Yitzhak Rabin, Yasser Arafat & Bill Clinton',
@@ -704,6 +842,12 @@ const kt3Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Baruch Goldstein Massacre',
+          'Hamas Bus Bombings',
+          'Israel-Jordan Peace Treaty',
+          'Oslo II (Areas A, B, C)',
+        ],
         date: '1994–1995',
         title: 'Extremist Violence, Jordan Peace & Oslo II',
         actor: 'Baruch Goldstein, Hamas Militants & King Hussein',
@@ -719,6 +863,12 @@ const kt3Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Kings of Israel Square Rally',
+          'Yigal Amir (Assassin)',
+          'Rabin Assassinated',
+          'Netanyahu 1996 Election',
+        ],
         date: '4 Nov 1995',
         title: 'The Assassination of Yitzhak Rabin',
         actor: 'Yigal Amir & The Israeli Nation',
@@ -1245,16 +1395,24 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Heading & Date Only • No AI Text • 34mm Width) -->
-            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 4px 0 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title & Level 4 Keywords • 34mm Width) -->
+            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px; flex-wrap: wrap;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 900; padding: 1px 3px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">${s.date}</span>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.12;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1.5px;">
                 ${s.title}
               </div>
+              ${
+                s.keywords && s.keywords.length > 0
+                  ? `
+              <div style="margin-top: 1px; display: flex; flex-direction: column; gap: 0.8px; font-family: 'Inter', sans-serif; font-size: 5.6pt; line-height: 1.12; color: #1e293b;">
+                ${s.keywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+              </div>`
+                  : ''
+              }
             </div>
 
             <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
@@ -1434,10 +1592,10 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Initial Response Lines (Ruled Grid with 8mm Margin) -->
+      <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 15 },
+          { length: 18 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1462,10 +1620,10 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 20 Ruled Response Lines with 8mm Margin -->
+      <!-- 26 Ruled Response Lines with 8mm Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
         ${Array.from(
-          { length: 20 },
+          { length: 26 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1474,26 +1632,13 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      <!-- Timeline Mission Box -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 3px;">
+      <!-- Timeline Mission Box (At very foot of page above footer strip) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
           Timeline Mission &bull; Pages 2–3
         </div>
         <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.18;">
           ${rx.timelineMission}
-        </div>
-      </div>
-
-      <!-- Band 4 Marking Rubric / Self-Assessment Checklist -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <span style="font-weight: 800; text-transform: uppercase;">Band 4 Checklist [7–8m]:</span>
-          <span><input type="checkbox"> Accurate &amp; relevant details deployed</span>
-          <span><input type="checkbox"> Analytical progression sustained throughout</span>
-          <span><input type="checkbox"> Explicit causal connectives used</span>
-        </div>
-        <div style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; white-space: nowrap;">
-          Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 8 ]
         </div>
       </div>
 

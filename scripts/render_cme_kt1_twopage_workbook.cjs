@@ -93,6 +93,7 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
+        keywords: ['Sherif Hussein', 'Sir Henry McMahon', 'Arab Revolt (1916)', 'Vague Frontiers'],
         date: '1915–1916',
         title: 'The McMahon-Hussein Correspondence',
         actor: 'Britain & Arab Leaders',
@@ -108,6 +109,12 @@ const kt1Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Mark Sykes',
+          'François Georges-Picot',
+          'Spheres of Influence',
+          'Direct Colonial Control',
+        ],
         date: 'May 1916',
         title: 'The Secret Sykes-Picot Agreement',
         actor: 'Britain & France',
@@ -123,6 +130,12 @@ const kt1Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Arthur Balfour',
+          'Lord Rothschild',
+          '"Jewish National Home"',
+          'Civil & Religious Rights',
+        ],
         date: 'November 1917',
         title: 'The Balfour Declaration',
         actor: 'The British Government',
@@ -138,6 +151,7 @@ const kt1Configs = [
       },
       {
         step: 4,
+        keywords: ['League of Nations', 'Jewish National Fund', 'Fifth Aliyah', 'Tenant Evictions'],
         date: '1920–1936',
         title: 'The British Mandate & Rising Immigration',
         actor: 'British Authorities & Jewish Immigrants',
@@ -153,6 +167,7 @@ const kt1Configs = [
       },
       {
         step: 5,
+        keywords: ['Grand Mufti', 'General Strike (1936)', '75,000 Quota', 'Haganah Cooperation'],
         date: '1936–1939',
         title: 'The Arab Revolt & The 1939 White Paper',
         actor: 'Palestinian Arabs & British Government',
@@ -265,6 +280,12 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Displaced Persons (DPs)',
+          'Irgun & Lehi',
+          '1,500/Month Quota',
+          'Guerrilla Sabotage',
+        ],
         date: '1945–1946',
         title: 'Post-War Holocaust Survivors & The Insurgency',
         actor: 'Jewish Militias vs. British Army',
@@ -280,6 +301,12 @@ const kt1Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Menachem Begin',
+          'British HQ (Secretariat)',
+          '91 Fatalities',
+          'Operation Agatha',
+        ],
         date: '22 July 1946',
         title: 'The King David Hotel Bombing',
         actor: 'The Irgun (Menachem Begin)',
@@ -295,6 +322,7 @@ const kt1Configs = [
       },
       {
         step: 3,
+        keywords: ['Ernest Bevin', 'Post-War Bankruptcy', 'UNSCOP Committee', 'Mandate Surrender'],
         date: 'February 1947',
         title: 'Britain Hands Palestine to the United Nations',
         actor: 'British Government & The UN',
@@ -310,6 +338,12 @@ const kt1Configs = [
       },
       {
         step: 4,
+        keywords: [
+          '4,500 Holocaust Refugees',
+          'President Truman',
+          'Naval Blockade',
+          'Hamburg DP Camps',
+        ],
         date: 'July 1947',
         title: 'The SS Exodus Affair & Global Outcry',
         actor: 'British Navy & Holocaust Refugees',
@@ -325,6 +359,12 @@ const kt1Configs = [
       },
       {
         step: 5,
+        keywords: [
+          '55% Jewish / 44% Arab',
+          'Corpus Separatum',
+          'General Assembly Vote',
+          'Civil War Outbreak',
+        ],
         date: '29 November 1947',
         title: 'UN Resolution 181 (The Partition Plan)',
         actor: 'United Nations General Assembly',
@@ -439,6 +479,7 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
+        keywords: ['Plan Dalet', 'Armed Road Convoys', 'Bab al-Wad Corridor', 'Siege of Jerusalem'],
         date: 'Dec 1947 – May 1948',
         title: 'Communal Civil War & British Evacuation',
         actor: 'Jewish & Arab Militias',
@@ -454,6 +495,12 @@ const kt1Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'David Ben-Gurion',
+          'Tel Aviv Proclamation',
+          'Midnight Mandate End',
+          'US Recognition (11 mins)',
+        ],
         date: '14 May 1948',
         title: 'David Ben-Gurion Proclaims the State of Israel',
         actor: 'David Ben-Gurion & Jewish Agency',
@@ -468,6 +515,12 @@ const kt1Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Five Arab Armies',
+          'Arab Legion (Glubb)',
+          'West Jerusalem Siege',
+          'Severe Arms Shortage',
+        ],
         date: '15 May 1948',
         title: 'Invasion by Five Arab Armies',
         actor: 'Egypt, Jordan, Syria, Iraq, Lebanon vs. Israel',
@@ -483,6 +536,7 @@ const kt1Configs = [
       },
       {
         step: 4,
+        keywords: ['Count Bernadotte', 'Operation Balak', 'Škoda Arms (Czech)', 'IDF Order No. 4'],
         date: 'June–July 1948',
         title: 'The First UN Truce & The Czech Arms Supply',
         actor: 'Israel (IDF) & Czechoslovakia',
@@ -498,6 +552,12 @@ const kt1Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Ralph Bunche',
+          '78% Mandate Control',
+          '750k Nakba Refugees',
+          'Green Line (1949)',
+        ],
         date: '1949',
         title: 'The Rhodes Armistice Agreements & The Green Line',
         actor: 'UN, Israel, Egypt, Jordan, Syria, Lebanon',
@@ -614,6 +674,12 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          '750,000 Refugees',
+          'Deir Yassin Terror',
+          'Al-Nakba ("Catastrophe")',
+          'Permanent Displacement',
+        ],
         date: '1948–1949',
         title: 'The Palestinian Refugee Crisis (Al-Nakba)',
         actor: '700,000 Palestinian Refugees',
@@ -629,6 +695,7 @@ const kt1Configs = [
       },
       {
         step: 2,
+        keywords: ['UN Resolution 194', 'Right of Return', 'UNRWA Camps', 'Food & Medical Relief'],
         date: 'Dec 1948 – Dec 1949',
         title: 'UN Resolutions 194 & 302 (Founding of UNRWA)',
         actor: 'United Nations General Assembly',
@@ -644,6 +711,12 @@ const kt1Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Law of Return (1950)',
+          'Mizrahi & Sephardi',
+          'Operation Magic Carpet',
+          "Ma'abarot Camps",
+        ],
         date: 'July 1950',
         title: 'The Israeli Law of Return & Demographic Surge',
         actor: 'The Israeli Knesset',
@@ -659,6 +732,12 @@ const kt1Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Universal Conscription',
+          'Kibbutzim Defense',
+          'US Financial Loans',
+          'Green Line Fortification',
+        ],
         date: '1950–1953',
         title: 'Consolidation of the IDF & US Economic Backing',
         actor: 'IDF & The United States Government',
@@ -674,6 +753,7 @@ const kt1Configs = [
       },
       {
         step: 5,
+        keywords: ['Fedayeen Guerrillas', 'Unit 101', 'Ariel Sharon', 'Qibya Raid (1953)'],
         date: '1950–1954',
         title: 'Fedayeen Infiltration & Disproportionate Reprisals',
         actor: 'Palestinian Fedayeen & Israeli Unit 101',
@@ -789,6 +869,12 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
+        keywords: [
+          'Operation Black Arrow',
+          'Gaza Raid (37 Dead)',
+          'Gamal Abdel Nasser',
+          'Military Humiliation',
+        ],
         date: '28 February 1955',
         title: 'The Gaza Raid (Operation Black Arrow)',
         actor: 'Israel (IDF Paratroopers) vs. Egypt',
@@ -804,6 +890,12 @@ const kt1Configs = [
       },
       {
         step: 2,
+        keywords: [
+          'Czech Arms Deal (1955)',
+          '200 MiG-15 Jets',
+          'Baghdad Pact Refusal',
+          'Straits of Tiran Blockade',
+        ],
         date: 'September 1955',
         title: 'The Czech Arms Deal & Soviet Influence',
         actor: 'Egypt & The Soviet Bloc',
@@ -819,6 +911,12 @@ const kt1Configs = [
       },
       {
         step: 3,
+        keywords: [
+          'Aswan Dam Cancellation',
+          'Alexandria Speech',
+          'Suez Canal Company',
+          'Anthony Eden Ultimatum',
+        ],
         date: '26 July 1956',
         title: 'Aswan Loans Cancelled & Suez Canal Nationalised',
         actor: 'President Nasser & Egypt',
@@ -834,6 +932,12 @@ const kt1Configs = [
       },
       {
         step: 4,
+        keywords: [
+          'Protocol of Sèvres',
+          'Tripartite Collusion',
+          'Operation Kadesh',
+          'Mitla Pass Airdrop',
+        ],
         date: '22–24 October 1956',
         title: 'The Secret Protocol of Sèvres & Sinai Invasion',
         actor: 'Britain, France & Israel',
@@ -849,6 +953,12 @@ const kt1Configs = [
       },
       {
         step: 5,
+        keywords: [
+          'Dwight Eisenhower',
+          'IMF Sterling Threat',
+          'UNEF Peacekeepers',
+          'Eden Resignation',
+        ],
         date: 'Nov 1956 – Mar 1957',
         title: 'US Ultimatum, Imperial Retreat & UNEF Deployment',
         actor: 'US President Eisenhower & The UN',
@@ -1412,16 +1522,24 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Heading & Date Only • No AI Text • 34mm Width) -->
-            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 4px 0 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title & Level 4 Keywords • 34mm Width) -->
+            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px; flex-wrap: wrap;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 900; padding: 1px 3px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">${s.date}</span>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.12;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1.5px;">
                 ${s.title}
               </div>
+              ${
+                s.keywords && s.keywords.length > 0
+                  ? `
+              <div style="margin-top: 1px; display: flex; flex-direction: column; gap: 0.8px; font-family: 'Inter', sans-serif; font-size: 5.6pt; line-height: 1.12; color: #1e293b;">
+                ${s.keywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+              </div>`
+                  : ''
+              }
             </div>
 
             <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
@@ -1583,10 +1701,10 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Initial Response Lines (Ruled Grid with 8mm Margin) -->
+      <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 15 },
+          { length: 18 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1611,10 +1729,10 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 20 Ruled Response Lines with 8mm Margin -->
+      <!-- 26 Ruled Response Lines with 8mm Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
         ${Array.from(
-          { length: 20 },
+          { length: 26 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1623,26 +1741,13 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      <!-- Timeline Mission Box -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 3px;">
+      <!-- Timeline Mission Box (At very foot of page above footer strip) -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 2px;">
         <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
           Timeline Mission &bull; Pages 2–3
         </div>
         <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.18;">
           ${rx.timelineMission}
-        </div>
-      </div>
-
-      <!-- Band 4 Marking Rubric / Self-Assessment Checklist -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <span style="font-weight: 800; text-transform: uppercase;">Band 4 Checklist [7–8m]:</span>
-          <span><input type="checkbox"> Accurate &amp; relevant details deployed</span>
-          <span><input type="checkbox"> Analytical progression sustained throughout</span>
-          <span><input type="checkbox"> Explicit causal connectives used</span>
-        </div>
-        <div style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; white-space: nowrap;">
-          Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 8 ]
         </div>
       </div>
 
