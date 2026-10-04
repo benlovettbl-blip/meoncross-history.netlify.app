@@ -799,9 +799,9 @@ export const unitData = {
       vocab_cloze_text:
         'During the First World War, European imperial interests led to the secret [Sykes-Picot Agreement], which partitioned Ottoman lands. Britain also promised support for [Arab Nationalism] to spark revolt against the Turks, while simultaneously issuing the [Balfour Declaration] favoring a Jewish national home in Palestine rooted in [Zionism]. After the war, the League of Nations established a [Mandate] system, giving Britain control over strategic territory and vital maritime trade routes near the Suez [Chokepoint].',
       causal_domino_spine: {
-        title: 'Origins of the Conflict: 5-Stage Causal Domino Chain',
+        title: 'Imperial Pledges & Conflicting Promises: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
@@ -809,85 +809,86 @@ export const unitData = {
             step: 1,
             date: '1915–1916',
             title: 'The McMahon-Hussein Correspondence',
-            actor: 'Britain & Arab Leadership',
-            tag: 'The Wartime Pledge',
+            actor: 'Britain & Arab Leaders',
+            tag: 'The Wartime Promise',
             trigger:
-              'British High Commissioner McMahon exchanges letters with Sherif Hussein of Mecca, promising British support for an independent post-war Arab state.',
+              'British High Commissioner McMahon exchanges letters with Arab leader Sherif Hussein, promising British support for an independent post-war Arab state in exchange for an Arab revolt against the Ottoman Empire.',
             because:
-              'Britain desperately needed Arab tribal forces to launch a desert guerrilla revolt to tie down Ottoman divisions and protect the Suez Canal.',
+              'Britain urgently needed Arab guerrilla forces to tie down Ottoman troops during the First World War and protect the Suez Canal.',
             therefore:
-              'Arab forces mobilized under the belief they were fighting for national independence, but Britain withheld geographical specifics regarding Palestine.',
+              'Arab forces launched the revolt believing they were fighting for national independence, but Britain deliberately left the future borders of Palestine vague.',
             connective:
-              'However, while negotiating with Arab leaders, Britain and France held secret imperial talks...',
+              'While promising independence to Arab leaders, Britain secretly made a conflicting partition deal with its European ally...',
             exam_link:
-              'Q1 Consequence: Established the fundamental Arab grievance of imperial betrayal that fueled future resistance.',
+              'Q1 Consequence: Created lasting Arab distrust of British imperial motives when contradictory promises were later revealed.',
           },
           {
             step: 2,
             date: 'May 1916',
             title: 'The Secret Sykes-Picot Agreement',
             actor: 'Britain & France',
-            tag: 'Imperial Collusion',
+            tag: 'Imperial Partition',
             trigger:
-              'Diplomats Mark Sykes and François Georges-Picot secretly negotiate the partition of Ottoman Arab lands into direct British and French spheres of influence.',
+              'British and French diplomats secretly agree to divide the Ottoman Arab lands into British and French zones of colonial control.',
             because:
-              'European imperial powers sought strategic dominance over oil routes, Mediterranean naval ports, and the overland transit corridor to British India.',
+              'Britain and France wanted to secure Middle Eastern oil supplies, trading ports, and strategic transit routes to British India.',
             therefore:
-              'Directly contradicted promises made to Hussein; exposed to the world by Bolsheviks in 1917, deeply radicalising Arab distrust.',
+              'Directly broke Britain’s promise of Arab independence; when leaked in 1917, it convinced Arab leaders that European powers could not be trusted.',
             connective:
-              'To compound Arab betrayal, British wartime diplomacy produced an additional contradictory commitment...',
+              'Britain then issued a third, fateful pledge to win international wartime support...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Contrasted wartime promises of Arab independence with secret colonial division.',
+              'Q2 Narrative Account: Formed the second conflicting imperial pledge that made competing territorial claims in Palestine inevitable.',
           },
           {
             step: 3,
             date: 'November 1917',
             title: 'The Balfour Declaration',
-            actor: 'Britain & World Zionist Movement',
-            tag: 'The Dual Obligation',
+            actor: 'The British Government',
+            tag: 'The Conflicting Pledge',
             trigger:
-              'Foreign Secretary Arthur Balfour writes an official letter pledging British support for "the establishment in Palestine of a national home for the Jewish people".',
+              'British Foreign Secretary Arthur Balfour writes an official letter stating Britain’s support for "a national home for the Jewish people" in Palestine.',
             because:
-              'The Lloyd George cabinet sought to rally worldwide Jewish support (particularly in the US and revolutionary Russia) for the Allied war effort.',
+              'Britain sought to win wartime diplomatic sympathy and financial backing from Jewish communities in the USA and Russia.',
             therefore:
-              'Created an irreconcilable imperial dilemma: pledging a Jewish national home while promising not to prejudice civil/religious rights of existing Arab inhabitants.',
+              'Created a deep contradiction: promising to help build a Jewish homeland while also pledging not to harm the rights of the existing Arab majority.',
             connective:
-              'Following Ottoman defeat, the newly formed League of Nations formalized these imperial pledges...',
+              'Following Allied victory, Britain was given international authority to govern Palestine and manage these rival promises...',
             exam_link:
-              'Q3 Importance: Provided legal international legitimacy for the Zionist movement while marginalising Palestinian Arabs.',
+              'Q1 Consequence: Provided the international legal backing for the Zionist movement to establish a national Jewish homeland in Palestine.',
           },
           {
             step: 4,
             date: '1920–1936',
-            title: 'The British Mandate & Rising Aliyah Influx',
-            actor: 'British Administration & Jewish Immigrants',
-            tag: 'Demographic Transformation',
+            title: 'The British Mandate & Rising Immigration',
+            actor: 'British Authorities & Jewish Immigrants',
+            tag: 'Population Shift',
             trigger:
-              'Britain governs Palestine under League of Nations mandate; Jewish immigration (Aliyah) swells the Jewish population from 11% to nearly 30% by 1936.',
+              'Britain rules Palestine under a League of Nations mandate; Jewish immigration rises steadily, increasing the Jewish share of the population from 11% to nearly 30% by 1936.',
             because:
-              'Zionist pioneers fled rising anti-Semitism and Nazi persecution in Europe, purchasing fertile agricultural land through the Jewish National Fund.',
+              'Jewish immigrants fled rising anti-Semitism and Nazi persecution in Europe, purchasing land through the Jewish National Fund to build farms and towns.',
             therefore:
-              'Palestinian Arab tenant farmers (fellahin) were evicted from ancestral lands, sparking severe economic anxiety and violent inter-communal clashes.',
+              'Palestinian Arab tenant farmers lost access to farmland, creating severe economic hardship and growing hostility between both communities.',
             connective:
-              'Mounting economic desperation and lack of democratic representation boiled over into open rebellion...',
+              'Simmering Arab anger boiled over into a full-scale armed rebellion against British rule...',
             exam_link:
-              'Q1 Consequence: Dramatic demographic and economic shift that made violent communal conflict inevitable.',
+              'Q2 Narrative Account: Demographic transformation and land purchases created the grassroots friction that triggered the 1936 Arab Revolt.',
           },
           {
             step: 5,
             date: '1936–1939',
             title: 'The Arab Revolt & The 1939 White Paper',
-            actor: 'Palestinian Arabs & British Forces',
-            tag: 'The Imperial Uprising',
+            actor: 'Palestinian Arabs & British Government',
+            tag: 'The Immigration Cap',
             trigger:
-              'Palestinian Arabs launch a 3-year armed revolt and general strike; Britain crushes the revolt with 20,000 troops, but subsequently issues the 1939 White Paper.',
+              'Palestinian Arabs launch a three-year armed rebellion; Britain crushes the uprising with troops, but then issues the 1939 White Paper strictly capping Jewish immigration.',
             because:
-              'Faced with impending war against Nazi Germany, Britain could not risk Arab oil embargoes or regional rebellion and sought to appease Arab states.',
+              'With the Second World War approaching, Britain needed to appease Arab opinion to keep Middle Eastern oil supplies and trade routes secure.',
             therefore:
-              'The White Paper strictly capped Jewish immigration to 75,000 over five years just as the Holocaust began, alienating both Jews and Arabs and turning Britain into the enemy of both.',
-            connective: null,
+              'Limited Jewish immigration to 75,000 over five years just as the Holocaust began, leaving both Jews and Arabs feeling betrayed and turning both sides against Britain.',
+            connective:
+              'The 1939 White Paper convinced Jewish groups that Britain had broken its promises, leading to post-war armed insurgency...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: Left Palestinian Arabs militarily disarmed while driving Jewish militants into armed anti-British insurgency.',
+              'Q1 Consequence: Convinced Zionist leaders that only armed resistance against Britain could secure an independent Jewish state.',
           },
         ],
       },
@@ -1746,9 +1747,9 @@ export const unitData = {
         ],
       },
       causal_domino_spine: {
-        title: 'End of the British Mandate: 5-Stage Causal Domino Chain',
+        title: 'The End of the Mandate & Creation of Israel: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
@@ -1756,85 +1757,86 @@ export const unitData = {
             step: 1,
             date: '1945–1946',
             title: 'Holocaust Survivors & The Jewish Insurgency',
-            actor: 'Zionist Militants & British Forces',
-            tag: 'The Post-War Crisis',
+            actor: 'Jewish Militias vs. British Army',
+            tag: 'The Post-War Conflict',
             trigger:
-              'Zionist paramilitaries (Haganah, Irgun, Lehi) launch coordinated attacks against British railways, radar stations, and police posts; Britain blockades refugee ships.',
+              'Armed Jewish paramilitary groups (the Haganah and Irgun) launch guerrilla attacks and sabotage raids against British military bases and railways in Palestine.',
             because:
-              '250,000 Jewish Holocaust survivors languished in European DP camps, while Britain maintained strict 1939 White Paper immigration quotas.',
+              'Britain maintained its strict immigration cap of 1,500 people per month, turning away ships carrying European Holocaust survivors who had nowhere else to go.',
             therefore:
-              'Forced Britain to deploy 100,000 troops and impose martial law in Palestine, exhausting British finances and public patience.',
+              'Made Palestine dangerous and financially crippling for Britain to govern, tying down 100,000 British soldiers in constant anti-guerrilla operations.',
             connective:
-              'In direct retaliation for British mass arrests and weapons raids on Black Saturday...',
+              'The guerrilla campaign escalated into a devastating attack on the heart of British military administration...',
             exam_link:
-              'Q1 Consequence: Turned British domestic opinion against maintaining the costly mandate.',
+              'Q2 Narrative Account: Shows how British immigration restrictions drove Jewish groups to launch the armed campaign that forced Britain to withdraw.',
           },
           {
             step: 2,
             date: '22 July 1946',
             title: 'The King David Hotel Bombing',
-            actor: 'Irgun (Menachem Begin)',
-            tag: 'The Decisive Strike',
+            actor: 'The Irgun (Militant Jewish Group)',
+            tag: 'The Decisive Attack',
             trigger:
-              'Irgun militants disguise themselves as milkmen and detonate 350kg of explosives in the basement of the British Secretariat and Military Headquarters, killing 91.',
+              'The Irgun blows up the British administrative and military headquarters at the King David Hotel in Jerusalem, killing 91 British, Arab, and Jewish staff.',
             because:
-              'The Irgun sought to destroy incriminating intelligence documents seized during Operation Agatha and prove Britain could not maintain order.',
+              'The Irgun, led by Menachem Begin, wanted to destroy British military intelligence files and force Britain to abandon control of Palestine.',
             therefore:
-              'Humiliated the British administration, prompted anti-Semitic riots in UK cities, and convinced PM Clement Attlee that Palestine was militarily ungovernable.',
+              'Deeply shocked the British public and government, destroying British domestic political will to keep soldiers stationed in Palestine.',
             connective:
-              'Facing bankruptcy, domestic war-weariness, and international condemnation over the SS Exodus...',
+              'Exhausted by casualties, financial debt, and public outrage, the British government decided to walk away from Palestine...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Direct trigger that broke British political resolve to stay in Palestine.',
+              'Q1 Consequence: Convinced the British government that governing Palestine was no longer sustainable, leading directly to the decision to hand it to the UN.',
           },
           {
             step: 3,
             date: 'February 1947',
-            title: 'Britain Refers Palestine to the United Nations',
-            actor: 'British Cabinet (Ernest Bevin)',
-            tag: 'Imperial Abdication',
+            title: 'Britain Hands Palestine to the United Nations',
+            actor: 'The British Government & The UN',
+            tag: 'The UN Referral',
             trigger:
-              'Foreign Secretary Ernest Bevin announces Britain will surrender the League of Nations mandate and hand the problem unconditionally to the United Nations.',
+              'British Foreign Secretary Ernest Bevin announces that Britain will surrender its mandate and hand full responsibility for Palestine to the United Nations.',
             because:
-              'Palestine was costing £40 million annually during extreme domestic post-war rationing, and diplomatic plans (Bevin Plan) were rejected by both sides.',
+              'Britain was near bankruptcy after the Second World War, facing severe fuel rationing at home, and could not find an agreement acceptable to both Arabs and Jews.',
             therefore:
-              'Transferred full responsibility to the UN, which established the 11-nation Special Committee on Palestine (UNSCOP) to conduct a fact-finding mission.',
+              'The UN established a special fact-finding committee (UNSCOP) to tour Palestine and produce an international partition plan.',
             connective:
-              'Following extensive investigations and visits to European refugee camps, UNSCOP published its verdict...',
+              'The United Nations investigated on the ground and produced a formal plan to divide the country into two separate states...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): Shifted the conflict from a British colonial problem into an international crisis.',
+              'Q2 Narrative Account: Transferred responsibility from the British Empire to the international community, setting the stage for UN Resolution 181.',
           },
           {
             step: 4,
             date: '29 November 1947',
-            title: 'UN Resolution 181 Partition Plan',
+            title: 'UN Resolution 181 (The Partition Plan)',
             actor: 'United Nations General Assembly',
-            tag: 'The International Partition',
+            tag: 'The Division of Palestine',
             trigger:
-              'The UN General Assembly passes Resolution 181 by 33 votes to 13, partitioning Palestine into an Arab state (43%) and a Jewish state (56%), with Jerusalem internationalised.',
+              'The UN votes to partition Palestine into two separate states: a Jewish state (55% of the land) and an Arab state (44%), with Jerusalem placed under international control.',
             because:
-              'Intense global sympathy for Holocaust survivors and decisive diplomatic lobbying by US President Harry Truman secured the necessary two-thirds majority.',
+              'The UN concluded that the two communities had completely incompatible national goals and could not live peacefully under one government.',
             therefore:
-              'The Jewish Agency accepted the plan as legal recognition of statehood; the Arab Higher Committee rejected it as an illegitimate theft of Arab land, sparking immediate civil war.',
+              'Jewish leaders accepted the plan as international recognition of their statehood, while Arab leaders rejected it as unfair, sparking immediate civil war across Palestine.',
             connective:
-              'As British forces began their final staged withdrawal, inter-communal fighting turned into total war...',
+              'As the final British soldiers packed up and departed, the civil conflict erupted into a regional war...',
             exam_link:
-              'Q3 Importance: Provided legal international authority for David Ben-Gurion to declare Israeli independence.',
+              'Q1 Consequence: Sparked intense communal fighting that escalated directly into the 1948–49 Arab-Israeli War.',
           },
           {
             step: 5,
             date: '14–15 May 1948',
-            title: 'Declaration of Israel & Pan-Arab Invasion',
+            title: 'Declaration of Israel & The 1948 War',
             actor: 'David Ben-Gurion & Five Arab States',
-            tag: 'The Birth & The Onslaught',
+            tag: 'Independence & Invasion',
             trigger:
-              'David Ben-Gurion proclaims the independent State of Israel at 4:00 PM on 14 May; at midnight the British Mandate ends, and armies from Egypt, Jordan, Syria, Iraq, and Lebanon invade.',
+              'David Ben-Gurion proclaims the independent State of Israel; at midnight the British Mandate officially ends, and armies from Egypt, Jordan, Syria, Iraq, and Lebanon invade.',
             because:
-              'The British evacuation left a total security vacuum, and Arab leaders had vowed to prevent partition and defend Palestinian sovereignty by force.',
+              'Arab states were determined to prevent the partition of Palestine, stop the creation of a Jewish state, and protect the Palestinian Arab population.',
             therefore:
-              'Transformed an internal civil skirmish into the first full-scale regional Arab-Israeli interstate war (the 1948 War of Independence / Al-Nakba).',
-            connective: null,
+              'Started the first Arab-Israeli interstate war (1948–49), resulting in an Israeli victory, border expansion, and the displacement of over 700,000 Palestinians.',
+            connective:
+              'The 1948–49 war completely redrew the map of the Middle East and created a permanent refugee crisis...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: The defining climax that established Israel as a sovereign military reality.',
+              'Q1 Consequence: Established the sovereign State of Israel while creating the lasting Palestinian refugee issue.',
           },
         ],
       },
@@ -3068,95 +3070,96 @@ export const unitData = {
           "Photographic evidence of Palestinian refugees evacuating Galilee in late 1948 alongside Ben-Gurion's formal proclamation of Israeli independence on 14 May 1948. **Hinge Question:** How does the profound contrast between Jewish national celebration and Palestinian refugee catastrophe in 1948 explain why a permanent peace treaty proved impossible to negotiate?",
       },
       causal_domino_spine: {
-        title: 'The 1948 War & Refugee Crisis: 5-Stage Causal Domino Chain',
+        title: 'Aftermath of the 1948–49 War & The Refugee Crisis: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
             date: 'June–July 1948',
-            title: 'The First UN Truce & The Czech Arms Influx',
-            actor: 'Israel, UN & Soviet Bloc',
-            tag: 'The Tactical Turning Point',
+            title: 'The UN Ceasefire & The Czech Arms Supply',
+            actor: 'Israel & The Czech Arms Supply',
+            tag: 'The Military Turning Point',
             trigger:
-              'A 4-week UN ceasefire halts active combat; Israel bypasses the UN arms embargo by importing 25,000 rifles, 5,000 machine guns, and 25 Avia fighter planes from Czechoslovakia.',
+              'During a four-week UN truce, Israel reorganises its forces into the Israeli Defence Forces (IDF) and imports large shipments of rifles, machine guns, and fighter planes from Czechoslovakia.',
             because:
-              'The newly formed IDF was initially outgunned by regular Arab artillery and armoured columns; Ben-Gurion utilized Soviet diplomatic support to rearm.',
+              'Israel was initially short of heavy equipment and needed modern arms to resist five invading Arab armies.',
             therefore:
-              'Decisively shifted the military balance of power, allowing the reorganized IDF to launch sweeping offensives (Operation Dani & Yoav) when fighting resumed.',
+              'Decisively shifted the military balance in Israel’s favor, allowing the newly organized IDF to launch successful counter-offensives and win the war.',
             connective:
-              'Armed with superior weapons and unified command, Israeli offensives swept through Arab population centres...',
+              'As the fighting swept through towns and villages, hundreds of thousands of civilians were forced from their homes...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Turned the military tide of the 1948 war from defensive survival to decisive expansion.',
+              'Q2 Narrative Account: Explains how Israel used the UN truce to rearm and overcome Arab numerical superiority.',
           },
           {
             step: 2,
             date: '1948–1949',
-            title: 'The Palestinian Nakba (The Catastrophe)',
-            actor: 'Palestinian Civilians & IDF',
+            title: 'The Palestinian Refugee Crisis (The Nakba)',
+            actor: 'Palestinian Refugees & The UN (UNRWA)',
             tag: 'Mass Dispossession',
             trigger:
-              'Between 700,000 and 750,000 Palestinian Arabs are displaced from their towns and villages, fleeing into emergency refugee camps in Gaza, the West Bank, Lebanon, Syria, and Jordan.',
+              'Around 700,000 Palestinian Arabs flee or are expelled from their homes, ending up in emergency refugee camps in Gaza, the West Bank, Jordan, Syria, and Lebanon.',
             because:
-              'A combination of IDF military expulsions (Plan Dalet at Lydda and Ramle), psychological panic following the Deir Yassin massacre, and the collapse of Palestinian leadership.',
+              'Palestinians fled due to intense battlefield shelling, panic caused by atrocities such as the Deir Yassin massacre, and direct expulsions by Israeli forces.',
             therefore:
-              'Created a permanent refugee population living under UNRWA care; Israel demolished abandoned villages and refused their return under UN Resolution 194.',
+              'Created a permanent refugee population reliant on UN food and shelter; Palestinians refer to this disaster as the Nakba ("The Catastrophe").',
             connective:
-              'With Arab armies routed and hundreds of thousands displaced, bilateral armistices were negotiated...',
+              'The active fighting was halted by temporary ceasefire agreements that completely redrew the borders...',
             exam_link:
-              'Q1 Consequence: Created the enduring core humanitarian and political grievance of the Middle East conflict.',
+              'Q1 Consequence: Created the lasting Palestinian refugee crisis that became one of the main obstacles to Middle East peace.',
           },
           {
             step: 3,
-            date: 'Jan–July 1949',
+            date: '1949',
             title: 'The 1949 Armistice Agreements (The Green Line)',
             actor: 'Israel, Egypt, Jordan, Syria, Lebanon',
-            tag: 'The New Map',
+            tag: 'The Redrawn Borders',
             trigger:
-              'UN mediator Ralph Bunche brokers separate bilateral armistices on Rhodes; the temporary armistice demarcation lines become known as the "Green Line".',
+              'The UN brokers separate ceasefire agreements establishing temporary armistice borders known as the "Green Line".',
             because:
-              'Arab states suffered humiliating battlefield defeats; Israel held 78% of mandatory Palestine (a 22% increase over the 1947 UN Partition Plan).',
+              'Arab armies had suffered heavy battlefield defeats and needed to halt the advancing Israeli military.',
             therefore:
-              'Jordan formally annexed the West Bank and East Jerusalem; Egypt occupied the Gaza Strip; no independent Palestinian state was established, and Arab states refused formal peace.',
+              'Israel expanded its territory to 78% of Palestine; Jordan took control of the West Bank and East Jerusalem, while Egypt occupied the Gaza Strip, leaving no independent Palestinian state.',
             connective:
-              'With borders temporarily secured behind armistice lines, Israel moved to consolidate its demographic survival...',
+              'With its new borders secured, the Israeli government passed laws to rapidly build up its population...',
             exam_link:
-              'Q3 Importance: Established the de facto geopolitical borders that governed the region until June 1967.',
+              'Q1 Consequence: Wiped the proposed Arab state off the map and established borders that left Israel with narrow, vulnerable frontiers.',
           },
           {
             step: 4,
             date: 'July 1950',
             title: 'The Israeli Law of Return',
-            actor: 'Knesset (David Ben-Gurion)',
-            tag: 'Demographic Consolidation',
+            actor: 'The Israeli Parliament (Knesset)',
+            tag: 'Building the Population',
             trigger:
-              'The Israeli Knesset enacts the Law of Return, guaranteeing every Jewish person worldwide the automatic right to immigrate to Israel and receive full citizenship.',
+              'Israel passes the Law of Return, granting every Jewish person in the world the automatic right to move to Israel and become an Israeli citizen.',
             because:
-              'Ben-Gurion sought to build a permanent Jewish demographic majority and absorb 680,000 displaced European Holocaust survivors and Jewish refugees expelled from Arab nations.',
+              'Israel wanted to provide a permanent refuge for world Jewry and rapidly build up its workforce and armed forces.',
             therefore:
-              'Doubled Israel’s population within four years, requiring massive US financial aid and German reparations to construct housing, while permanently closing borders to Arab return.',
+              'Doubled Israel’s population within four years as European survivors and Jews expelled from Arab countries arrived, while Palestinian refugees were barred from returning to their homes.',
             connective:
-              'Separated from their ancestral lands by barbed wire and minefields, impoverished refugees organized cross-border resistance...',
+              'Border friction grew intense as displaced Palestinians began staging raids back across the armistice lines...',
             exam_link:
-              'Q1 Consequence: Institutionalized the permanent demographic transformation of Palestine into a sovereign Jewish state.',
+              'Q1 Consequence: Transformed Israeli society and cemented the policy of barring displaced Palestinians from reclaiming their land.',
           },
           {
             step: 5,
-            date: 'October 1953',
-            title: 'Fedayeen Infiltration & The Qibya Massacre',
-            actor: 'Palestinian Fedayeen & IDF Unit 101',
-            tag: 'The Cycle of Reprisal',
+            date: '1950–1955',
+            title: 'Fedayeen Border Raids & Israeli Reprisals',
+            actor: 'Palestinian Fedayeen & Israeli Forces',
+            tag: 'The Cycle of Violence',
             trigger:
-              'Armed Palestinian guerrillas (Fedayeen) stage cross-border sabotage raids; Ariel Sharon’s commando Unit 101 retaliates by blowing up 45 houses in Qibya, killing 69 civilians.',
+              'Armed Palestinian guerrillas (Fedayeen) carry out cross-border raids into Israel; Israel responds with large-scale, destructive military reprisal attacks.',
             because:
-              'Prime Minister Ben-Gurion established a doctrine of disproportionate military retaliation to force Arab host governments to police their borders.',
+              'Displaced Palestinians sought to strike back at Israel, while Israeli leaders adopted a policy of disproportionate retaliation to deter future attacks.',
             therefore:
-              'Provoked fierce international condemnation from the UN and US, hardened Arab hatred, and set off the military escalation that led directly to the 1955 Gaza Raid and 1956 Suez Crisis.',
-            connective: null,
+              'Created a vicious cycle of violence and border tension that led directly to the 1955 Gaza Raid and the 1956 Suez Crisis.',
+            connective:
+              'Rising border violence and Egyptian support for the Fedayeen convinced Israeli leaders to seek a military showdown with Egypt...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: Established the escalatory reprisal dynamic that dragged Egypt into the Suez Crisis.',
+              'Q2 Narrative Account: Demonstrates how post-1949 border raids created the military escalation that sparked the 1956 Suez Crisis.',
           },
         ],
       },
@@ -4702,9 +4705,9 @@ export const unitData = {
         },
       ],
       causal_domino_spine: {
-        title: 'The 1956 Suez Crisis: 5-Stage Causal Domino Chain',
+        title: 'Nasser, Increased Tension & The Suez Crisis: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q2 Narrative Account [8m] & Q1 Consequence [4m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
@@ -4712,75 +4715,86 @@ export const unitData = {
             step: 1,
             date: 'February 1955',
             title: 'The Gaza Raid',
-            actor: 'Israel & Egypt',
+            actor: 'Israel vs. Egypt',
             tag: 'The Spark',
             trigger:
-              'Israeli paratroopers launch a surprise raid into Gaza, killing 37 Egyptian soldiers.',
+              'Israeli paratroopers launch a surprise raid into Egyptian-controlled Gaza, destroying an army headquarters and killing 37 Egyptian soldiers.',
             because:
-              'Prime Minister Ben-Gurion implemented a disproportionate reprisal doctrine to retaliate for cross-border Fedayeen raids.',
+              'Israel wanted to punish Egypt for sponsoring Palestinian Fedayeen guerrilla attacks across the border.',
             therefore:
-              'Nasser was publicly humiliated and became determined to urgently rearm Egypt with modern fighter jets and tanks.',
+              'Humiliated Egyptian President Nasser, convincing him that the Egyptian army was too weak and urgently needed modern tanks and combat jets.',
+            connective:
+              'Blocked from buying weapons by Western powers, Nasser turned directly to the Communist Eastern Bloc...',
             exam_link:
-              'Q1 Consequence: Exposed Egyptian military vulnerability; drove Nasser to seek Soviet arms.',
+              'Q1 Consequence: Convinced Nasser to buy Soviet weapons, which brought Cold War rivalries directly into the Middle East conflict.',
           },
           {
             step: 2,
             date: 'September 1955',
             title: 'The Czech Arms Deal',
-            actor: 'Egypt & Soviet Bloc',
+            actor: 'Egypt & The Soviet Bloc',
             tag: 'Cold War Shift',
-            trigger: 'Nasser purchases 200 Soviet MiG-15 jets and 300 tanks via Czechoslovakia.',
+            trigger:
+              'Nasser signs an agreement to buy 200 Soviet jet fighters and 300 tanks via Czechoslovakia.',
             because:
-              'Western powers refused to sell arms to Egypt unless Nasser signed anti-Soviet military pacts.',
+              'Western powers refused to sell arms to Egypt unless Nasser agreed to join anti-Soviet military alliances.',
             therefore:
-              'Shattered the Western monopoly on Middle Eastern weapons and drew the Cold War directly into the Arab-Israeli conflict.',
+              'Broke the Western monopoly on Middle Eastern arms sales, alarming Britain and the USA and establishing Soviet influence in the Arab world.',
+            connective:
+              'Alarmed by Egypt’s friendship with the Soviet Union, the United States retaliated economically...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Israeli raid directly motivated the Soviet arms purchase.',
+              'Q2 Narrative Account: Led the USA to cancel financial funding for the Aswan High Dam, triggering the Suez nationalisation.',
           },
           {
             step: 3,
             date: 'July 1956',
-            title: 'Dam Loans Pulled & Canal Seized',
+            title: 'Dam Loans Cancelled & Suez Canal Nationalised',
             actor: 'USA, Britain & Egypt',
             tag: 'The Economic Trigger',
             trigger:
-              'US Secretary Dulles abruptly cancels $70m Aswan Dam loan (19 July); Nasser nationalises the Suez Canal (26 July).',
+              'The USA abruptly cancels funding for the Aswan High Dam; Nasser retaliates by nationalising the British-and-French-owned Suez Canal.',
             because:
-              "The US was alarmed by Nasser's Soviet arms deal and recognition of Communist China; Nasser needed the canal's £35m annual tolls to fund the dam.",
+              'The US wanted to punish Nasser for his Soviet ties, while Nasser needed the canal’s shipping tolls to pay for building the dam himself.',
             therefore:
-              'Infuriated British PM Eden, who viewed the canal as an imperial oil lifeline and resolved to remove Nasser by force.',
+              'Furious British Prime Minister Anthony Eden viewed the canal as an imperial oil lifeline and resolved to overthrow Nasser by force.',
+            connective:
+              'Britain and France secretly allied with Israel to launch an unprovoked military invasion...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3) & Q3 Importance: Canal nationalisation as symbol of Arab sovereignty.',
+              'Q1 Consequence: Sparked the military crisis by giving Britain and France an excuse to plan an invasion to reclaim the canal.',
           },
           {
             step: 4,
             date: 'October–November 1956',
-            title: 'The Secret Sèvres Agreement & Invasion',
+            title: 'The Secret Sèvres Plot & Invasion',
             actor: 'Britain, France & Israel',
-            tag: 'The Tripartite Conspiracy',
+            tag: 'The Secret Conspiracy',
             trigger:
-              'Secret meeting outside Paris; Israel invades Sinai (29 Oct); Anglo-French forces bomb airfields and invade Port Said (5 Nov).',
+              'Britain, France, and Israel secretly plan an attack; Israel invades the Sinai Desert, and Anglo-French forces bomb Egyptian airfields and land troops at Port Said.',
             because:
-              "Britain and France wanted to reclaim the canal under the false pretext of 'separating the combatants' and overthrow Nasser.",
+              'Britain and France wanted to regain the canal under the fake excuse of "separating the combatants", while Israel wanted to crush Fedayeen bases and open the Straits of Tiran.',
             therefore:
-              'Egypt was defeated militarily in Sinai, but Nasser ordered blockships sunk, completely choking the canal.',
+              'Egypt was beaten militarily in Sinai, but Nasser ordered ships sunk in the canal, completely blocking it to world shipping.',
+            connective:
+              'The invasion provoked intense fury from the superpowers, bringing immediate international pressure...',
             exam_link:
-              'Q2 Narrative (Link 3 → 4): Collusion between the three allies to fabricate a justification for invasion.',
+              'Q2 Narrative Account: Showed how the imperial conspiracy collapsed under diplomatic and financial pressure from the superpowers.',
           },
           {
             step: 5,
             date: 'November 1956',
-            title: 'US Ultimatum & UNEF Deployment',
-            actor: 'USA, UN & The World',
-            tag: 'The Climax & Aftermath',
+            title: 'US Ultimatum & British Retreat',
+            actor: 'USA, The UN & Britain',
+            tag: 'The Imperial Humiliation',
             trigger:
-              'US President Eisenhower threatens to collapse the British pound unless forces withdraw; UN establishes UNEF.',
+              'US President Eisenhower threatens to cut off emergency loans and crash the British economy unless British, French, and Israeli troops withdraw immediately.',
             because:
-              'Eisenhower was furious at allies acting without US approval while Soviet tanks crushed the Hungarian uprising.',
+              'Eisenhower was furious at allies launching an imperial war without US approval during an American election and while Soviet tanks crushed Hungary.',
             therefore:
-              'Humiliating British and French imperial retreat (end of Britain as a superpower); Nasser hailed as Arab hero; UNEF secured peace for 10 years.',
+              'Forced a humiliating British and French retreat, signaling the end of Britain as a world superpower; Nasser became a hero across the Arab world, and UN peacekeepers (UNEF) guarded the border.',
+            connective:
+              'UN peacekeepers kept the border peaceful for a decade, until rising Arab nationalism triggered the 1967 crisis...',
             exam_link:
-              "Q1 Consequence (Collapse of British/French imperial status) & Q3 Importance (Eisenhower's intervention & UNEF buffer).",
+              'Q1 Consequence: Ended British imperial dominance in the Middle East and made Nasser the undisputed hero of Arab nationalism.',
           },
         ],
       },
@@ -6106,95 +6120,96 @@ export const unitData = {
         ],
       },
       causal_domino_spine: {
-        title: 'Road to the Six Day War: 5-Stage Causal Domino Chain',
+        title: 'Causes of the Six-Day War (1964–1967): 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
             date: 'January 1964',
-            title: 'The 1964 Cairo Conference & PLO Founding',
-            actor: 'Arab League & President Nasser',
-            tag: 'Institutionalised Resistance',
+            title: 'The 1964 Cairo Conference & PLO Founded',
+            actor: 'President Nasser & The Arab League',
+            tag: 'Arab Resistance',
             trigger:
-              'Nasser convenes Arab heads of state in Cairo to create the Palestine Liberation Organisation (PLO) under Ahmad Shukeiri and coordinate unified Arab defense.',
+              'President Nasser hosts Arab heads of state in Cairo to coordinate opposition to Israel and establish the Palestine Liberation Organisation (PLO).',
             because:
-              'Arab regimes sought to institutionalize and control rising Palestinian guerrilla nationalism while opposing Israeli water diversion projects.',
+              'Arab leaders wanted to show leadership on the Palestinian issue and control growing Palestinian guerrilla activity.',
             therefore:
-              'Re-established Palestinian identity on the global stage; Yasser Arafat’s radical Fatah faction began guerrilla sabotage raids independent of Arab state control.',
+              'Put the Palestinian cause back on the world stage; Yasser Arafat’s guerrilla group, Fatah, began launching independent sabotage raids into Israel.',
             connective:
-              'Alongside political mobilization, Arab leaders targeted Israel’s most vital natural lifeline...',
+              'Disputes over vital water supplies soon escalated border clashes between Israel and Syria...',
             exam_link:
-              'Q1 Consequence: Transformed Palestinian resistance from scattered refugees into an organized political movement.',
+              'Q2 Narrative Account: Marked the formal revival of Palestinian national resistance, leading to cross-border guerrilla raids.',
           },
           {
             step: 2,
             date: '1964–1965',
-            title: 'The War Over the River Jordan Waterways',
-            actor: 'Israel, Syria & Jordan',
-            tag: 'The Resource Battle',
+            title: 'The Dispute Over the River Jordan Waterways',
+            actor: 'Israel & Syria',
+            tag: 'The Battle for Water',
             trigger:
-              'Arab states begin building heavy engineering canals to divert headwaters of the River Jordan (Hasbani and Banias); Israeli tanks and aircraft shell Syrian construction sites.',
+              'Syria attempts to divert the headwaters feeding the River Jordan; Israeli artillery and tanks shell Syrian engineering machinery to stop construction.',
             because:
-              'Israel completed its National Water Carrier to irrigate the Negev desert; Arab states resolved to cut Israel’s freshwater supply by 35%.',
+              'Israel relied on the River Jordan to irrigate its farms and towns, while Arab states sought to cut Israel’s fresh water supply.',
             therefore:
-              'Israel proved it would use pre-emptive military force to protect essential resources, escalating border tensions into routine artillery duels.',
+              'Showed that Israel was prepared to use pre-emptive military force to protect essential resources, making border shootouts a regular occurrence.',
             connective:
-              'Unable to defeat Israel conventionally, Syria’s military leadership turned to sponsorship of guerrilla proxies...',
+              'A radical new government in Syria began actively funding guerrilla attacks against Israel...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Escalated political rhetoric into hot armed border clashes.',
+              'Q1 Consequence: Escalated border tensions between Israel and Syria, making military clashes frequent on the northern frontier.',
           },
           {
             step: 3,
-            date: 'February 1966',
-            title: 'The Radical Syrian Coup & Fatah Sponsorship',
-            actor: 'Ba’athist Syrian Junta & Fatah',
-            tag: 'Revolutionary Escalation',
+            date: '1966',
+            title: 'Syrian Support for Fatah Border Raids',
+            actor: 'Syrian Government & Palestinian Guerrillas',
+            tag: 'Border Guerrilla Attacks',
             trigger:
-              'Hardline radical officers seize power in Damascus, declaring a "People’s War of Liberation" and directly providing funds, arms, and bases for Fatah landmine raids.',
+              'The Syrian government begins openly supplying money, weapons, and bases to Fatah fighters launching landmine raids into northern Israel.',
             because:
-              'The new Syrian regime sought to assert radical revolutionary leadership in the Arab world and shame Nasser for relying on UN peacekeepers.',
+              'Syrian leaders wanted to prove they were the most radical opponents of Israel and pressure other Arab states to take action.',
             therefore:
-              'Cross-border guerrilla attacks into northern Israel tripled, making the Syrian frontier the most volatile battleground in the region.',
+              'Cross-border guerrilla attacks into northern Israel multiplied, turning the Israeli-Syrian border into the most dangerous hotspot in the region.',
             connective:
-              'When an Israeli police patrol was blown up by a Syrian-trained landmine, Israel launched a massive retaliatory strike...',
+              'Israel launched a large retaliatory raid across the Jordanian border to deter infiltrators...',
             exam_link:
-              'Q1 Consequence: Turned the Golan Heights border into an active combat zone that dragged Jordan and Egypt toward war.',
+              'Q2 Narrative Account: Syrian state backing for Fatah provoked heavy Israeli retaliation, bringing the region closer to war.',
           },
           {
             step: 4,
             date: '13 November 1966',
-            title: 'The Samu Raid in the West Bank',
-            actor: 'IDF & Jordanian Armed Forces',
-            tag: 'The Inter-Arab Fracture',
+            title: 'The Israeli Raid on Samu',
+            actor: 'Israeli Defence Forces (IDF) & Jordan',
+            tag: 'The Reprisal Strike',
             trigger:
-              '600 Israeli soldiers backed by 60 tanks and air support attack the Jordanian-controlled village of Samu, destroying 125 buildings and killing 15 Jordanian soldiers.',
+              'Israeli tanks and troops raid the village of Samu in the Jordanian-controlled West Bank, destroying houses and clashing with Jordanian soldiers.',
             because:
-              'Retaliation for a Fatah landmine that killed three Israeli border police; Israel struck Jordan because the infiltrators operated from the West Bank.',
+              'Israel retaliated after a Fatah landmine killed three Israeli border police near the frontier.',
             therefore:
-              'Deeply embarrassed King Hussein of Jordan, who publicly accused Nasser of hiding behind UNEF peacekeepers instead of defending his Arab brother nations.',
+              'Damaged relations between Arab states: Jordan’s King Hussein blamed Nasser for failing to support him, raising public pressure on Nasser to act tough.',
             connective:
-              'With King Hussein openly mocking Nasser’s courage, border tensions on the Syrian front exploded into open aerial combat...',
+              'Tensions reached boiling point in a major aerial clash over the Syrian border...',
             exam_link:
-              'Q2 Narrative (Link 3 → 4): Pressured Nasser into taking reckless gambles in 1967 to restore his Arab leadership.',
+              'Q1 Consequence: Deepened divisions between Arab leaders and pressured Nasser into taking aggressive action to restore his leadership.',
           },
           {
             step: 5,
             date: '7 April 1967',
-            title: 'The Air Dogfight Over Damascus',
-            actor: 'Israeli Air Force & Syrian Air Force',
-            tag: 'The Military Catalyst',
+            title: 'The Aerial Battle of 7 April 1967',
+            actor: 'Israeli & Syrian Air Forces',
+            tag: 'The Final Spark',
             trigger:
-              'Syrian artillery shells Israeli tractors farming in the demilitarized zone; Israeli Mirage jets respond aggressively, shooting down six Syrian MiG-21s and buzzing Damascus.',
+              'After Syrian guns shell Israeli tractors in the border zone, Israeli fighter jets shoot down six Syrian MiG fighter planes and fly low over Damascus.',
             because:
-              'Israel resolved to silence Syrian artillery on the Golan Heights and display absolute aerial dominance over Syrian airspace.',
+              'Israel wanted to silence Syrian gun positions and demonstrate total command of the skies.',
             therefore:
-              'Humiliated the Syrian military junta, leaving Damascus desperate for Egyptian intervention and prompting Moscow to intervene with fateful false intelligence in May 1967.',
-            connective: null,
+              'Humiliated the Syrian government, leaving Syrian leaders demanding military help from Egypt and setting the stage for war in May 1967.',
+            connective:
+              'Desperate to deter another Israeli attack on Syria, the Soviet Union issued a fateful false warning to Nasser...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: The final military spark that triggered the Soviet false warning and the Six-Day War crisis.',
+              'Q2 Narrative Account: The destruction of Syrian jets pushed Syria and the USSR to provoke the crisis that started the Six-Day War.',
           },
         ],
       },
@@ -6995,95 +7010,96 @@ export const unitData = {
         ],
       },
       causal_domino_spine: {
-        title: 'The 1967 Six Day War: 5-Stage Causal Domino Chain',
+        title: 'The Six-Day War (May–June 1967): 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
             date: '13–15 May 1967',
-            title: 'Soviet False Intelligence & Egyptian Mobilisation',
-            actor: 'USSR & President Nasser',
-            tag: 'The Fabricated Crisis',
+            title: 'Soviet False Reports & Egyptian Mobilisation',
+            actor: 'The Soviet Union & President Nasser',
+            tag: 'The False Warning',
             trigger:
-              'The Soviet Union falsely informs Nasser that Israel has massed 10 armed brigades on the Syrian border; Nasser puts the Egyptian military on high alert and marches 100,000 troops into Sinai.',
+              'The Soviet Union falsely tells Nasser that Israel is massing troops on the Syrian border; Nasser moves 100,000 Egyptian soldiers into the Sinai Desert.',
             because:
-              'Moscow sought to deter an Israeli strike against Syria, but UN observers on the ground confirmed there was zero Israeli troop concentration.',
+              'The Soviets wanted to deter an Israeli strike against Syria, while Nasser wanted to reassert his position as the leader of the Arab world.',
             therefore:
-              'Taunted by Jordan and Syria for hiding behind UN peacekeepers, Nasser felt compelled to take a dramatic military stand to restore his Arab leadership.',
+              'Started a rapid military buildup in Sinai that quickly spiraled out of control as both sides prepared for war.',
             connective:
-              'To demonstrate to the Arab street that he was ready for full-scale confrontation, Nasser took a fateful diplomatic step...',
+              'To prove he was serious, Nasser took two dramatic steps that directly provoked Israel...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): The catalyst that transformed border friction into an uncontrollable regional crisis.',
+              'Q2 Narrative Account: Triggered the rapid chain of events in May 1967 that made a pre-emptive strike by Israel inevitable.',
           },
           {
             step: 2,
             date: '16–23 May 1967',
-            title: 'UNEF Expulsion & Closing the Straits of Tiran',
-            actor: 'Egypt & United Nations',
-            tag: 'The Casus Belli',
+            title: 'UN Peacekeepers Expelled & Straits of Tiran Closed',
+            actor: 'Egypt & The United Nations',
+            tag: 'The Cause for War',
             trigger:
-              'Nasser orders the immediate withdrawal of UN Emergency Force (UNEF) peacekeepers from the Sinai border and closes the Straits of Tiran at Sharm el-Sheikh to Israeli ships.',
+              'Nasser orders UN peacekeepers (UNEF) to leave the Sinai border and closes the Straits of Tiran to all Israeli shipping.',
             because:
-              'Nasser gambled that aggressive military posturing would win him a bloodless diplomatic triumph and force Israel to make political concessions.',
+              'Nasser believed this aggressive show of force would force Israel into a diplomatic climbdown without full-scale war.',
             therefore:
-              'Choked off 90% of Israel’s vital petroleum imports through Eilat; Israel had explicitly warned since 1957 that closing the Straits would be treated as an act of war.',
+              'Cut off Israel’s oil supply route through the port of Eilat; Israel had warned since 1957 that closing the Straits would be treated as an act of war.',
             connective:
-              'Caught in a wave of Arab nationalist euphoria, neighbouring monarchs rushed to join Nasser’s war coalition...',
+              'Jordan then signed a joint military alliance with Egypt, completely surrounding Israel on three sides...',
             exam_link:
-              'Q3 Importance: The closure of the Straits of Tiran provided Israel with the formal justification for a pre-emptive strike.',
+              'Q1 Consequence: Closing the Straits of Tiran cut off vital oil supplies and provided Israel with the immediate justification for war.',
           },
           {
             step: 3,
             date: '30 May 1967',
-            title: 'The Jordan-Egypt Mutual Defence Treaty',
-            actor: 'King Hussein & President Nasser',
-            tag: 'The Encirclement',
+            title: 'The Arab Defence Pact (Israel Encircled)',
+            actor: 'Egypt, Jordan & Syria',
+            tag: 'Three-Front Encirclement',
             trigger:
-              'King Hussein of Jordan flies to Cairo and signs a joint military defense pact, placing the Royal Jordanian Army under the direct command of an Egyptian general.',
+              'King Hussein of Jordan flies to Cairo and places the Jordanian army under Egyptian command, completing an encirclement of Israel on three sides.',
             because:
-              'Hussein feared an internal coup or revolution if he stood aside while Arab radio stations called for the holy liberation of Palestine.',
+              'Hussein feared an uprising at home if he did not join the growing Arab coalition against Israel.',
             therefore:
-              'Completed the complete military encirclement of Israel on three fronts (Egypt, Jordan, Syria); panicked Israeli civilians and prompted the formation of a National Unity Cabinet with Moshe Dayan as Defence Minister.',
+              'Created panic among Israeli civilians, leading to the appointment of popular war hero Moshe Dayan as Defence Minister.',
             connective:
-              'Convinced that Arab armies were preparing an imminent invasion to destroy the Jewish state, Israel decided to strike first...',
+              'Fearing an imminent attack from three sides, Israel decided to launch a surprise pre-emptive strike...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): Convinced the Israeli cabinet that diplomatic solutions were exhausted and invasion was imminent.',
+              'Q2 Narrative Account: Convinced Israeli leaders that waiting would lead to national destruction, prompting the pre-emptive air strike.',
           },
           {
             step: 4,
-            date: '5 June 1967 (7:45 AM)',
-            title: 'The Pre-Emptive Air Strike (5 June 1967)',
-            actor: 'Israeli Air Force (IAF)',
-            tag: 'The Three-Hour Decision',
+            date: '5 June 1967',
+            title: 'The Pre-Emptive Air Strike',
+            actor: 'The Israeli Air Force',
+            tag: 'Three Hours to Victory',
             trigger:
-              'Nearly 200 Israeli fighter jets fly ultra-low over the Mediterranean to avoid radar, bombing runways and destroying 309 of Egypt’s 340 combat aircraft on the tarmac within three hours.',
+              'Nearly 200 Israeli fighter jets fly low beneath Egyptian radar, destroying over 300 Egyptian combat aircraft on the ground in less than three hours.',
             because:
-              'Lacking strategic depth and facing a three-front encirclement, Israel could not survive a ground war without absolute command of the skies.',
+              'Israel was heavily outnumbered on the ground and needed complete control of the skies to protect its soldiers and cities.',
             therefore:
-              'Decided the outcome of the war on the first morning; subsequent strikes obliterated the Syrian and Jordanian air forces, leaving Arab ground armies defenseless.',
+              'Decided the war on the first morning; subsequent strikes wiped out the Syrian and Jordanian air forces, leaving Arab ground armies defenseless.',
             connective:
-              'With total air superiority secured, Israeli armoured divisions launched a lightning three-front blitzkrieg...',
+              'With total air superiority, Israeli ground forces advanced rapidly on all three fronts...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: The decisive tactical turning point that guaranteed Israel’s complete military victory.',
+              'Q1 Consequence: Destroyed Arab air power in three hours, guaranteeing Israel’s total battlefield victory in the Six-Day War.',
           },
           {
             step: 5,
             date: '5–10 June 1967',
-            title: 'The Lightning Conquests & UN Ceasefire',
-            actor: 'IDF vs. Egypt, Jordan, Syria',
+            title: 'The Six-Day Victory & The Conquered Territories',
+            actor: 'Israeli Defence Forces (IDF)',
             tag: 'The Redrawn Map',
             trigger:
-              'In six days of combat, Israel conquers the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.',
+              'In just six days, Israel captures the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.',
             because:
-              'Arab ground armies were decimated from the air and suffered from chaotic, uncoordinated command structures.',
+              'Arab ground armies were thrown into chaotic retreat by relentless Israeli air attacks and coordinated tank columns.',
             therefore:
-              'Tripled Israel’s territorial size, brought over 1 million Palestinian Arabs under direct Israeli military occupation, and deeply shattered the prestige of Pan-Arab nationalism.',
-            connective: null,
+              'Tripled the size of Israeli-controlled territory and brought over 1 million Palestinian Arabs under direct Israeli military occupation.',
+            connective:
+              'The stunning conquest of vast Arab lands created the central dilemma of modern Middle Eastern history...',
             exam_link:
-              'Q1 Consequence: Transformed the geopolitical landscape and created the modern "Occupied Territories" conflict.',
+              'Q1 Consequence: Transformed the geography of the conflict by giving Israel the occupied territories of Sinai, Gaza, the West Bank, and Golan Heights.',
           },
         ],
       },
@@ -7960,93 +7976,94 @@ export const unitData = {
       causal_domino_spine: {
         title: 'The Conquered Territories & Resolution 242: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
             date: '7 June 1967',
-            title: 'The Capture & Unification of East Jerusalem',
-            actor: 'Israeli Paratroopers (Motta Gur)',
-            tag: 'The Emotional Heart',
+            title: 'The Capture of East Jerusalem',
+            actor: 'Israeli Forces (IDF)',
+            tag: 'The Holy City Captured',
             trigger:
-              'Israeli paratroopers breach the Lions’ Gate, storm the Old City, and secure the Western Wall; the Israeli Knesset immediately passes legislation annexing East Jerusalem.',
+              'Israeli paratroopers capture the Old City of Jerusalem and the Western Wall; the Israeli parliament quickly annexes East Jerusalem under Israeli law.',
             because:
-              'Jordan opened artillery fire on West Jerusalem on 5 June, giving Israel the tactical justification to capture the holy sites.',
+              'Jordan had opened artillery fire on West Jerusalem on the first day of the war, giving Israel the opportunity to capture the sacred holy sites.',
             therefore:
-              'Unified Jerusalem under sole Israeli civil law, prompting universal condemnation under UN Resolution 2253 and making the city the most sacred dispute in the conflict.',
+              'Reunited Jerusalem under Israeli control, but was condemned by the UN and became the most emotional, contested issue in the entire conflict.',
             connective:
-              'Stunned by their catastrophic battlefield collapse, Arab heads of state gathered in Sudan to formulate a response...',
+              'Stunned by their catastrophic battlefield defeat, Arab leaders gathered to coordinate a response...',
             exam_link:
-              'Q1 Consequence: Made Jerusalem an intractable religious and political flashpoint in all future peace talks.',
+              'Q1 Consequence: Made Jerusalem the most sacred and intractable dispute between Israelis and Palestinians.',
           },
           {
             step: 2,
-            date: '1 September 1967',
+            date: 'September 1967',
             title: 'The Khartoum Summit & The "Three No’s"',
-            actor: 'The Arab League',
+            actor: 'Arab Leaders (Led by Egypt’s Nasser)',
             tag: 'The Rejectionist Stance',
             trigger:
-              'Eight Arab heads of state adopt the Khartoum Resolution containing the famous "Three No’s": "No peace with Israel, no recognition of Israel, no negotiations with it".',
+              'Arab heads of state meet in Khartoum and declare the famous "Three No’s": no peace with Israel, no recognition of Israel, no negotiations with Israel.',
             because:
-              'Defeated Arab leaders (Nasser, Hussein, Atassi) could not survive politically at home if they recognized the victorious Jewish state.',
+              'Defeated Arab leaders could not recognize Israel or accept the permanent loss of Arab land without being overthrown by their own people.',
             therefore:
-              'Shattered Israeli hopes of immediately exchanging captured land for permanent peace treaties, entrenching diplomatic deadlock.',
+              'Destroyed Israeli hopes of quickly trading captured land for permanent peace treaties, locking both sides into a bitter stalemate.',
             connective:
-              'With direct negotiations blocked by the Khartoum declaration, the United Nations sought a diplomatic compromise...',
+              'To break the diplomatic deadlock, the United Nations drafted a historic peace formula...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Blocked direct bilateral negotiations and locked the Middle East in a diplomatic deep-freeze.',
+              'Q1 Consequence: Blocked early peace negotiations and entrenched the diplomatic stalemate after the 1967 war.',
           },
           {
             step: 3,
             date: '22 November 1967',
             title: 'UN Resolution 242: "Land for Peace"',
-            actor: 'UN Security Council (Lord Caradon)',
-            tag: 'The Diplomatic Foundation',
+            actor: 'The United Nations Security Council',
+            tag: 'The Diplomatic Formula',
             trigger:
-              'The UN Security Council unanimously passes Resolution 242, establishing the core principle of "Land for Peace": Israeli withdrawal in return for Arab recognition of its right to secure borders.',
+              'The UN passes Resolution 242, establishing the principle of "Land for Peace": Israel should withdraw from occupied lands in return for Arab recognition of its right to live in peace.',
             because:
-              'Superpowers sought to prevent another regional war while resolving the humanitarian and territorial fallout of the 1967 conquests.',
+              'The superpowers (USA and USSR) wanted to prevent another regional war while resolving the refugee and territorial crisis.',
             therefore:
-              'Deliberate ambiguity in the English text ("withdrawal from territories" rather than "the territories") allowed Israel to argue it was not required to surrender all captured lands.',
+              'Became the basis for all future peace negotiations, but vague English phrasing ("withdrawal from territories" rather than "all territories") led to years of disagreement.',
             connective:
-              'While diplomats argued over wording, the Israeli military moved to permanently fortify its new strategic frontiers...',
+              'Expecting no quick peace deal, Israel built heavy military fortifications along the new borders...',
             exam_link:
-              'Q3 Importance: The foundational legal framework for all subsequent Middle East peace negotiations (Camp David, Madrid, Oslo).',
+              'Q1 Consequence: Established the international framework of "Land for Peace" that underpinned all subsequent peace talks (Camp David and Oslo).',
           },
           {
             step: 4,
             date: '1968–1969',
             title: 'The Bar-Lev Line on the Suez Canal',
-            actor: 'IDF (General Haim Bar-Lev)',
-            tag: 'The Fortress Strategy',
+            actor: 'Israeli Military (IDF)',
+            tag: 'Fortress Defense',
             trigger:
-              'Israel constructs a 20-metre-high sand embankment backed by 35 concrete fortresses and underground napalm pipes along the entire 160km eastern bank of the Suez Canal.',
+              'Israel builds a massive defensive barrier of giant sand walls and concrete fortresses along the entire eastern bank of the Suez Canal.',
             because:
-              'The Sinai desert provided vast strategic depth to absorb any future Egyptian invasion and protect mainland Israel.',
+              'The Sinai Desert provided Israel with strategic depth to absorb any future Egyptian attack and protect mainland Israeli cities.',
             therefore:
-              'Bred dangerous military complacency (the "Conceptzia") among Israeli generals, who believed Egypt could never cross the canal, setting the stage for surprise in 1973.',
+              'Created a false sense of security among Israeli commanders, who believed Egyptian forces could never cross the canal, setting the stage for surprise in 1973.',
             connective:
-              'Alongside military fortifications, ideological and security motives drove Israeli civilians into the captured territories...',
+              'Alongside military forts, Israeli civilians began settling inside the captured Arab territories...',
             exam_link:
-              'Q1 Consequence: Massive fortification that anchored the occupation of Sinai but fostered fatal Israeli military overconfidence.',
+              'Q2 Narrative Account: Bred the military overconfidence that left Israeli forces unprepared for the surprise Egyptian canal crossing in 1973.',
           },
           {
             step: 5,
             date: '1968–1973',
-            title: 'The Inception of Israeli Settlements',
-            actor: 'Israeli Government & Gush Emunim',
-            tag: 'Facts on the Ground',
+            title: 'The Beginning of Israeli Settlements',
+            actor: 'Israeli Government & Jewish Settlers',
+            tag: 'Settlements in Occupied Land',
             trigger:
-              'Israel establishes its first permanent civilian settlements: agricultural kibbutzim in the Golan and Jordan Valley (Allon Plan), and religious enclaves in Hebron and the West Bank.',
+              'Israel begins building permanent civilian settlements in the newly captured territories: the West Bank, Golan Heights, and Gaza Strip.',
             because:
-              'Military planners sought defensive buffer frontiers, while religious-nationalist Jews believed settling Judea and Samaria was a divine biblical mandate.',
+              'The Israeli government sought security buffer zones, while religious settlers believed the land belonged to the historic Jewish homeland.',
             therefore:
-              'Fragmented Palestinian territory, established irreversible "facts on the ground", and transformed a temporary military occupation into a permanent dispute.',
-            connective: null,
+              'Created permanent Jewish communities inside Palestinian areas, establishing "facts on the ground" that made future territorial compromise far harder.',
+            connective:
+              'Faced with permanent occupation and defeated Arab armies, Palestinians turned to armed guerrilla warfare...',
             exam_link:
-              'Q1 Consequence: The root cause of enduring Palestinian dispossession and resistance across the West Bank and Gaza.',
+              'Q1 Consequence: Created permanent Jewish settlements in Palestinian territory, which became a major barrier to a two-state solution.',
           },
         ],
       },
@@ -8889,9 +8906,9 @@ export const unitData = {
         ],
       },
       causal_domino_spine: {
-        title: 'Rise of Palestinian Resistance: 5-Stage Causal Domino Chain',
+        title: 'The Rise of Palestinian Resistance: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
@@ -8899,84 +8916,86 @@ export const unitData = {
             step: 1,
             date: '21 March 1968',
             title: 'The Battle of Karameh',
-            actor: 'Fatah Guerrillas, Jordan Army & IDF',
-            tag: 'The Legend of the Fedayeen',
+            actor: 'Palestinian Fighters (Fatah) & Jordanian Army vs. Israel',
+            tag: 'The Rise of the Fedayeen',
             trigger:
-              'A massive Israeli armoured force attacks the Fatah base at Karameh in Jordan; Palestinian guerrillas stand their ground alongside Jordanian artillery, inflicting 28 Israeli deaths.',
+              'Israeli tanks cross the Jordan River to attack a Palestinian guerrilla base at Karameh; Palestinian fighters stand their ground and inflict heavy Israeli casualties.',
             because:
-              'Israel launched a punitive cross-border raid to crush Arafat’s guerrilla command after a school bus was blown up by a landmine.',
+              'Israel launched the punitive raid to crush guerrilla camps carrying out sabotage attacks inside Israel.',
             therefore:
-              'Despite losing 150 fighters, Fatah claimed an iconic moral victory; thousands of young Arabs rushed to join the Fedayeen, and Yasser Arafat was elected PLO Chairman in 1969.',
+              'Celebrated as an inspiring moral victory across the Arab world; thousands rushed to join the guerrilla resistance, and Yasser Arafat became Chairman of the PLO in 1969.',
             connective:
-              'Emboldened by their soaring popularity, radical Marxist factions inside the PLO turned to international terrorism...',
+              'Radical Palestinian factions turned to international terrorism to gain worldwide television attention...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Transformed Arafat into the undisputed hero of Palestinian national resistance.',
+              'Q2 Narrative Account: Established Yasser Arafat and Fatah as the dominant leaders of the Palestinian national struggle.',
           },
           {
             step: 2,
             date: 'September 1970',
             title: 'The Dawson’s Field Airline Hijackings',
-            actor: 'PFLP (George Habash)',
-            tag: 'Internationalising Terror',
+            actor: 'PFLP (Militant Palestinian Group)',
+            tag: 'Hijackings on TV',
             trigger:
-              'The Popular Front for the Liberation of Palestine (PFLP) hijacks four Western passenger airliners, forcing three to land at a remote desert strip in Jordan and blowing them up on live TV.',
+              'Palestinian militants hijack four Western passenger airliners, force three to land in the Jordanian desert, and blow up the empty planes on live television.',
             because:
-              'The Marxist PFLP sought to internationalize the Palestinian cause, win the release of prisoners, and humiliate pro-Western Arab monarchs.',
+              'Militants wanted to force the release of Palestinian prisoners in Europe and Israel, and draw global attention to the Palestinian cause.',
             therefore:
-              'Directly challenged King Hussein’s royal sovereignty, turning the PLO into a lawless "state within a state" that openly threatened to overthrow the Jordanian monarchy.',
+              'Directly challenged the authority of Jordan’s King Hussein, creating an armed "state within a state" that openly threatened to overthrow the Jordanian monarchy.',
             connective:
-              'Pushed to the brink of losing his throne, King Hussein ordered the Royal Jordanian Army to strike...',
-            exam_link: 'Q1 Consequence: Direct trigger of the Black September civil war in Jordan.',
+              'Furious at being humiliated in his own country, King Hussein ordered his army to crush the PLO...',
+            exam_link:
+              'Q1 Consequence: Brought the Palestinian issue to global attention, but provoked King Hussein into launching military action against the PLO.',
           },
           {
             step: 3,
             date: 'September 1970',
-            title: 'Black September Civil War in Jordan',
-            actor: 'Royal Jordanian Army vs. PLO',
-            tag: 'The Brother War',
+            title: 'Black September (Civil War in Jordan)',
+            actor: 'The Jordanian Army vs. The PLO',
+            tag: 'The Expulsion from Jordan',
             trigger:
-              'King Hussein declares martial law and unleashes tank divisions against PLO strongholds and refugee camps in Amman, killing thousands of Palestinian fighters.',
+              'King Hussein sends Jordanian tanks and troops into Amman to crush PLO bases and refugee camps, killing thousands of fighters and civilians.',
             because:
-              'The PLO had established armed checkpoints, flouted Jordanian police authority, and attempted two separate assassinations of King Hussein.',
+              'The PLO had set up its own armed checkpoints in Jordan, disregarded police authority, and attempted to assassinate King Hussein.',
             therefore:
-              'The PLO was completely crushed and expelled from Jordan; Arafat relocated his entire military and political headquarters to Beirut and southern Lebanon ("Fatahland").',
+              'The PLO was completely defeated and expelled from Jordan; Arafat moved his fighters and headquarters to Beirut and southern Lebanon.',
             connective:
-              'Consumed by bitterness over their violent expulsion, radical militants formed a secretive covert assassination cell...',
+              'A vengeful new faction named after the Jordanian defeat carried out a shocking attack on the world stage...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): Shifted Palestinian guerrilla operations to Lebanon and birthed the Black September terror faction.',
+              'Q1 Consequence: Led to the expulsion of the PLO from Jordan and the relocation of their bases to Lebanon.',
           },
           {
             step: 4,
             date: '5–6 September 1972',
             title: 'The Munich Olympics Massacre',
-            actor: 'Black September Terrorist Faction',
-            tag: 'Terror on the World Stage',
+            actor: 'Black September Militants',
+            tag: 'Terror at the Games',
             trigger:
-              'Eight Black September militants infiltrate the Munich Olympic Village, killing two Israeli athletes and taking nine hostage; all nine hostages and a German police officer are killed in a botched rescue.',
+              'Eight Palestinian terrorists break into the Munich Olympic Village, killing two Israeli athletes and taking nine hostage; all nine hostages die during a botched German rescue attempt.',
             because:
-              'The group demanded the release of 234 Palestinian prisoners in Israeli jails and global television publicity for the forgotten Palestinian struggle.',
+              'The group demanded the release of over 200 Palestinian prisoners held in Israel and worldwide television publicity for the Palestinian cause.',
             therefore:
-              'Shocked the global public, branded the Palestinian national movement with international terrorism, and united Israelis in fierce grief and anger.',
+              'Horrified the global public, heavily damaged the international reputation of the Palestinian movement, and led Israel to launch undercover retaliation.',
             connective:
-              'In cold fury, Israeli Prime Minister Golda Meir convened a secret war cabinet to order absolute retribution...',
+              'In response to Munich, Israeli Prime Minister Golda Meir ordered a covert campaign against those responsible...',
             exam_link:
-              'Q3 Importance: Brought the Palestinian struggle into 900 million living rooms but isolated the movement diplomatically.',
+              'Q1 Consequence: Branded the Palestinian cause with international terrorism and prompted Israel to launch covert retaliatory strikes.',
           },
           {
             step: 5,
             date: '1972–1979',
-            title: 'Operation Wrath of God (Mossad Retribution)',
-            actor: 'Mossad (Golda Meir & Zvi Zamir)',
-            tag: 'The Covert Shadow War',
+            title: 'Israeli Retaliation (Operation Wrath of God)',
+            actor: 'Israeli Intelligence (Mossad)',
+            tag: 'The Covert War',
             trigger:
-              'Israeli Mossad assassination squads track down and assassinate Palestinian organizers across Rome, Paris, Cyprus, and Beirut using car bombs and silenced pistols.',
+              'Israeli secret agents track down and assassinate Palestinian militants linked to the Munich attack across Europe and the Middle East.',
             because:
-              'Prime Minister Golda Meir resolved to re-establish Israeli military deterrence and eliminate every individual associated with the Munich massacre.',
+              'Prime Minister Golda Meir was determined to re-establish deterrence and prove that terrorist attacks on Israelis would never go unpunished.',
             therefore:
-              'Ignited a ruthless international shadow war; accidentally killed an innocent Moroccan waiter in Lillehammer (1973), exposing Mossad methods and drawing international condemnation.',
-            connective: null,
+              'Eliminated many militant leaders, but sparked cycles of counter-attacks and drew international criticism when an innocent man was killed by mistake.',
+            connective:
+              'While the covert war raged, Egypt and Syria prepared a massive conventional surprise attack on Israel...',
             exam_link:
-              'Q1 Consequence: Established Israel’s targeted assassination doctrine against terrorist leadership abroad.',
+              'Q2 Narrative Account: Shows how Israel used targeted assassinations in Europe to restore deterrence after the Munich attack.',
           },
         ],
       },
@@ -9778,95 +9797,96 @@ export const unitData = {
         ],
       },
       causal_domino_spine: {
-        title: 'The 1973 Yom Kippur War: 5-Stage Causal Domino Chain',
+        title: 'The War of Attrition & The Yom Kippur War: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
             date: '1969–1970',
-            title: 'The War of Attrition along the Suez Canal',
-            actor: 'Egypt, USSR & Israel',
-            tag: 'The Grinding Stalemate',
+            title: 'The War of Attrition',
+            actor: 'Egypt vs. Israel',
+            tag: 'Canal Artillery Duels',
             trigger:
-              'Nasser launches a continuous 18-month artillery and commando bombardment across the Suez Canal; Israel responds with deep-penetration air raids; Soviets install SAM missile batteries.',
+              'Nasser launches an 18-month campaign of heavy artillery shelling and commando raids across the Suez Canal; Israel responds with massive air strikes.',
             because:
-              'Egypt refused to accept the static Israeli occupation of Sinai and sought to bleed the IDF into economic and military exhaustion.',
+              'Egypt refused to accept the Israeli occupation of the Sinai Peninsula and wanted to wear down the Israeli military and economy.',
             therefore:
-              'Killed over 10,000 Egyptian and 368 Israeli soldiers; established an impenetrable Soviet surface-to-air missile umbrella along the west bank of the canal.',
+              'Cost thousands of lives, damaged towns along the canal, and brought Soviet surface-to-air missiles to the Egyptian side of the canal.',
             connective:
-              'Following Nasser’s sudden death in September 1970, his successor Anwar Sadat sought a bold diplomatic breakthrough...',
+              'Egypt’s new president tried diplomacy to regain Sinai, but his overtures were ignored...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Constructed the Soviet missile screen that made the 1973 canal crossing possible.',
+              'Q2 Narrative Account: Showed Egypt’s refusal to accept the loss of Sinai, setting the stage for the Yom Kippur War.',
           },
           {
             step: 2,
-            date: 'July 1972',
-            title: 'Sadat Expels 15,000 Soviet Advisers',
-            actor: 'President Anwar Sadat',
-            tag: 'The Diplomatic Rebuff',
+            date: '1971–1972',
+            title: 'Sadat Expels Soviet Advisers',
+            actor: 'President Anwar Sadat of Egypt',
+            tag: 'The Diplomatic Turn',
             trigger:
-              'Sadat summarily expels all 15,000 Soviet military technicians from Egypt after his 1971 "Peace for Sinai" diplomatic proposal is ignored by Israel and the United States.',
+              'Anwar Sadat expels 15,000 Soviet military advisers from Egypt after his peace proposals to return Sinai are ignored by Israel and the USA.',
             because:
-              'Golda Meir felt invulnerable behind the Bar-Lev Line, while Moscow refused to supply offensive weapons and Washington ignored Egyptian overtures.',
+              'Israel felt completely secure behind the Bar-Lev Line, while the Soviets refused to provide offensive weapons to attack Israel.',
             therefore:
-              'Left Sadat mocked at home as a weak leader; convinced him that only a limited, dramatic military shock could shatter Israeli complacency and force superpower intervention.',
+              'Convinced Sadat that only a surprise military strike could break the stalemate and force the USA and Israel to take peace talks seriously.',
             connective:
-              'With peaceful diplomacy exhausted, Sadat forged a secret military alliance with Syria to plan a surprise assault...',
+              'Sadat coordinated with Syria to launch a shock attack on the holiest day of the Jewish year...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): The critical psychological and strategic motive that made the 1973 surprise attack inevitable.',
+              'Q1 Consequence: Convinced Sadat that war was the only way to shatter Israeli complacency and force diplomatic negotiations.',
           },
           {
             step: 3,
-            date: '6 October 1973 (2:00 PM)',
-            title: 'The Surprise Yom Kippur Canal Crossing',
+            date: '6 October 1973',
+            title: 'The Surprise Attack on Yom Kippur',
             actor: 'Egypt & Syria vs. Israel',
-            tag: 'The Two-Front Shock',
+            tag: 'The Two-Front Surprise',
             trigger:
-              'Egyptian forces cross the Suez Canal using high-pressure water cannons to blast through the Bar-Lev Line, while 1,400 Syrian tanks storm the Golan Heights.',
+              'Egyptian troops cross the Suez Canal and blast through the Bar-Lev Line, while hundreds of Syrian tanks storm the Golan Heights.',
             because:
-              'Launched on Yom Kippur (holiest Jewish fast day) and during Muslim Ramadan, catching the IDF completely off-guard with reserve units unmobilized.',
+              'Launched on Yom Kippur (the Jewish Day of Atonement), catching Israeli forces completely off-guard with reserve troops not yet mobilised.',
             therefore:
-              'Overran the Bar-Lev Line under SAM missile cover, destroying hundreds of Israeli tanks and shattering the myth of Israeli military invincibility.',
+              'Overran Israeli defenses, destroyed hundreds of Israeli tanks, and shattered the myth of Israeli military invincibility.',
             connective:
-              'With the IDF suffering catastrophic initial losses and running low on ammunition, the conflict became a superpower crisis...',
+              'Facing catastrophic losses, Israel turned to the United States for an emergency resupply...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: Shattered Israeli military overconfidence and caused the resignation of Golda Meir and Moshe Dayan.',
+              'Q1 Consequence: Shattered Israeli military overconfidence and proved that Arab armies could mount sophisticated, coordinated offensives.',
           },
           {
             step: 4,
             date: '12–16 October 1973',
-            title: 'Operation Nickel Grass & Sharon’s Counter-Crossing',
-            actor: 'USA & General Ariel Sharon',
-            tag: 'The Military Turn',
+            title: 'The US Emergency Airlift & Israeli Counter-Attack',
+            actor: 'The USA & Israeli Army (IDF)',
+            tag: 'The Battlefield Turn',
             trigger:
-              'US President Richard Nixon orders a massive military airlift (Operation Nickel Grass) to resupply Israel; General Ariel Sharon exploits a gap to cross to the west bank of the Suez Canal.',
+              'The US flies thousands of tons of emergency military supplies to Israel; Israeli forces counter-attack, crossing the Suez Canal and cutting off Egypt’s Third Army.',
             because:
-              'Israel faced an existential crisis running out of artillery shells and tanks after six days of brutal attrition against Soviet-supplied armies.',
+              'The USA feared Israel was running out of tanks and ammunition and might face total military collapse.',
             therefore:
-              'Sharon’s armoured divisions destroyed Egyptian SAM sites and completely encircled Egypt’s Third Army in Sinai, bringing the superpowers to DEFCON 3 nuclear alert.',
+              'Turned the tide of battle in Israel’s favor, but brought the USA and USSR dangerously close to a direct Cold War confrontation.',
             connective:
-              'Furious at American military intervention, Arab oil-exporting nations deployed their ultimate economic weapon...',
+              'To stop the Israeli advance and punish Western allies, Arab oil producers deployed an economic weapon...',
             exam_link:
-              'Q2 Narrative (Link 3 → 4) & Q3 Importance: Demonstrated total Israeli dependence on American military and diplomatic support.',
+              'Q2 Narrative Account: Massive US military aid saved Israel from defeat, while Israeli counter-attacks forced the superpowers to broker a ceasefire.',
           },
           {
             step: 5,
-            date: '17–24 October 1973',
-            title: 'The Arab Oil Embargo & UN Resolution 338',
-            actor: 'OPEC & UN Security Council',
-            tag: 'The Global Economic Weapon',
+            date: 'October 1973',
+            title: 'The Arab Oil Embargo & Ceasefire',
+            actor: 'Arab Oil Producers (OPEC) & The UN',
+            tag: 'The Oil Weapon',
             trigger:
-              'Arab OPEC members cut oil production by 5% monthly and embargo all crude exports to the US and Netherlands; the UN Security Council passes Resolution 338 enforcing a ceasefire.',
+              'Arab oil-producing nations cut oil production and embargo crude oil exports to the USA and the Netherlands; the UN enforces a ceasefire.',
             because:
-              'Arab nations sought to punish Western allies of Israel and force international pressure on Israel to withdraw from 1967 territories.',
+              'Arab nations wanted to punish Western supporters of Israel and force the West to pressure Israel into returning captured Arab territories.',
             therefore:
-              'Quadrupled world oil prices, triggered global economic stagflation, and convinced US Secretary of State Henry Kissinger that resolving the conflict was an urgent US security priority.',
-            connective: null,
+              'Quadrupled world oil prices, triggered global fuel shortages, and convinced the USA that resolving the Middle East conflict was an urgent priority.',
+            connective:
+              'The oil shock forced the US government to lead intense diplomatic negotiations to prevent future wars...',
             exam_link:
-              'Q1 Consequence: The birth of the Arab "oil weapon" and direct catalyst for Kissinger’s Shuttle Diplomacy.',
+              'Q1 Consequence: The oil crisis made Middle Eastern peace an urgent priority for US foreign policy, leading directly to Kissinger’s shuttle diplomacy.',
           },
         ],
       },
@@ -10602,95 +10622,97 @@ export const unitData = {
       vocab_cloze_text:
         'In the years following the 1973 oil shock, Western economies struggled with severe [Stagflation]. US Secretary of State Henry Kissinger engaged in intensive [Shuttle Diplomacy], mediating the 1975 [Sinai II Agreement] between Egypt and Israel. In 1977, the right-wing [Likud] party came to power in Israel under Menachem Begin. Secluded summit talks led to the landmark 1978 [Camp David Accords], culminating in the historic 1979 [Treaty of Washington] which secured peace between Egypt and Israel.',
       causal_domino_spine: {
-        title: 'From Shuttle Diplomacy to Camp David: 5-Stage Causal Domino Chain',
+        title:
+          'Diplomatic Negotiations: From Shuttle Diplomacy to Camp David: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
             date: '1974–1975',
-            title: 'Henry Kissinger’s Shuttle Diplomacy',
-            actor: 'Henry Kissinger, Israel & Egypt',
+            title: 'Kissinger’s Shuttle Diplomacy',
+            actor: 'US Secretary of State Henry Kissinger',
             tag: 'Step-by-Step Diplomacy',
             trigger:
-              'US Secretary of State Henry Kissinger flies repeatedly between Jerusalem, Cairo, and Damascus to broker military disengagement pacts (Sinai I & II).',
+              'Henry Kissinger flies repeatedly between Cairo, Jerusalem, and Damascus to negotiate troop pullbacks and disengagement agreements.',
             because:
-              'The US sought to defuse the Arab oil embargo, prevent another regional war, and pull Egypt decisively away from its alliance with the Soviet Union.',
+              'The USA wanted to end the oil crisis, prevent another war, and pull Egypt away from its alliance with the Soviet Union.',
             therefore:
-              'Israel withdrew from the Suez Canal and western Sinai oilfields, allowing Egypt to reopen the Suez Canal in June 1975 and establishing UN buffer zones.',
+              'Israel pulled back from the Suez Canal, allowing Egypt to clear and reopen the canal to world shipping in 1975.',
             connective:
-              'Although disengagement stabilized the borders, comprehensive peace remained blocked until a radical psychological breakthrough...',
+              'President Sadat decided to take a dramatic personal gamble to break thirty years of deadlock...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Laid the diplomatic groundwork for direct Egyptian-Israeli bilateral communication.',
+              'Q2 Narrative Account: Restored civilian shipping through the Suez Canal and established the US as the primary mediator in Middle East diplomacy.',
           },
           {
             step: 2,
-            date: '19–20 November 1977',
-            title: 'Sadat’s Historic Address to the Knesset',
-            actor: 'President Anwar Sadat',
-            tag: 'The Psychological Breakthrough',
+            date: 'November 1977',
+            title: 'Sadat’s Historic Visit to Jerusalem',
+            actor: 'President Anwar Sadat of Egypt',
+            tag: 'The Bold Peace Move',
             trigger:
-              'Anwar Sadat becomes the first Arab leader to set foot in Israel, arriving at Ben-Gurion Airport and addressing the Israeli Knesset in Jerusalem with an offer of permanent peace.',
+              'Sadat travels to Israel and addresses the Israeli parliament (the Knesset) in Jerusalem, directly offering peace in return for occupied Arab land.',
             because:
-              'Egypt was economically bankrupt from continuous military spending; Sadat realized only a direct psychological shock could convince Israelis he was serious about peace.',
+              'Egypt’s economy was struggling from decades of military spending, and Sadat knew only a dramatic gesture could convince Israelis he was serious about peace.',
             therefore:
-              'Broke the 30-year Arab taboo against direct recognition of Israel, won global acclaim, and forced hardline Israeli PM Menachem Begin to enter direct peace negotiations.',
+              'Broke the 30-year Arab taboo against direct recognition of Israel, opening direct peace negotiations with Israeli Prime Minister Menachem Begin.',
             connective:
-              'When subsequent bilateral talks stalled over Israeli settlements in Sinai, the US President intervened personally...',
+              'When negotiations stalled over the details, the US President stepped in to force a breakthrough...',
             exam_link:
-              'Q3 Importance: The decisive psychological turning point that transformed a military enemy into a negotiating partner.',
+              'Q1 Consequence: Shattered psychological barriers between Egypt and Israel, paving the way for the Camp David summit.',
           },
           {
             step: 3,
-            date: '5–17 September 1978',
+            date: 'September 1978',
             title: 'The Camp David Summit',
             actor: 'Jimmy Carter, Anwar Sadat, Menachem Begin',
-            tag: 'The Presidential Crucible',
+            tag: '13 Days of Talks',
             trigger:
-              'US President Jimmy Carter sequesters Sadat and Begin at the secluded Camp David presidential retreat in Maryland for 13 days of grueling, round-the-clock negotiations.',
+              'US President Jimmy Carter hosts Sadat and Begin at the Camp David presidential retreat in Maryland for 13 days of intense, closed-door negotiations.',
             because:
-              'Bilateral negotiations had completely collapsed over the removal of Israeli settlements in Sinai and Palestinian autonomy in the West Bank.',
+              'Talks were on the verge of collapsing over Israeli settlements in Sinai and Palestinian self-government in the West Bank.',
             therefore:
-              'Carter drafted 23 versions of the accords, cajoling Begin and Sadat into signing the two historic Camp David Frameworks for peace.',
+              'Produced the Camp David Accords, setting out a framework for peace between Egypt and Israel and future Palestinian self-rule.',
             connective:
-              'With the principles established, diplomats drafted the first formal peace treaty between Israel and an Arab state...',
+              'The Camp David breakthrough culminated in a formal peace treaty signed on the White House lawn...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): Demonstrated the indispensable mediating role of the US President in Middle Eastern diplomacy.',
+              'Q1 Consequence: Established the framework that produced the first peace treaty between Israel and an Arab nation.',
           },
           {
             step: 4,
             date: '26 March 1979',
-            title: 'The Egypt-Israel Peace Treaty (Washington)',
-            actor: 'Sadat, Begin & Carter',
-            tag: 'The Historic Accord',
+            title: 'The Egypt-Israel Peace Treaty',
+            actor: 'Egypt & Israel (Hosted by USA)',
+            tag: 'The Treaty of Washington',
             trigger:
-              'Sadat and Begin sign the formal Egypt-Israel Peace Treaty on the White House lawn, formally ending the state of war that had existed since May 1948.',
+              'Sadat and Begin sign the first formal peace treaty between Israel and an Arab nation, ending 30 years of war.',
             because:
-              'Israel agreed to return the entire Sinai Peninsula and evacuate all 7,000 Jewish settlers (Yamit); Egypt recognized Israel and granted Israeli ships passage through the Suez Canal.',
+              'Israel agreed to return all of Sinai to Egypt, while Egypt agreed to recognize Israel and allow Israeli ships through the Suez Canal.',
             therefore:
-              'Removed the Arab world’s largest army from the military conflict; the US rewarded both nations with billions of dollars in annual military and economic subsidies.',
+              'Removed the Arab world’s largest army from the military conflict; the USA rewarded both countries with billions of dollars in annual financial and military aid.',
             connective:
-              'While celebrated in Western capitals, Sadat’s separate peace provoked fury and condemnation across the Arab world...',
+              'However, signing a separate peace treaty provoked fury across the rest of the Arab world...',
             exam_link:
-              'Q1 Consequence: The first peace treaty between Israel and an Arab nation, permanently neutralizing Israel’s southern front.',
+              'Q1 Consequence: Ended the military threat from Egypt, securing Israel’s southern border for the first time since 1948.',
           },
           {
             step: 5,
             date: '1979–1981',
-            title: 'Arab Ostracization & Sadat’s Assassination',
-            actor: 'The Arab League & Islamic Jihad',
+            title: 'Arab Boycott & The Assassination of Sadat',
+            actor: 'The Arab League & Extremist Gunmen',
             tag: 'The Deadly Backlash',
             trigger:
-              'The Arab League expels Egypt and severs diplomatic ties; on 6 October 1981, Islamic extremists assassinate President Sadat during a military parade in Cairo.',
+              'The Arab League expels Egypt and cuts off diplomatic ties; in October 1981, Muslim extremists assassinate President Sadat at a military parade.',
             because:
-              'Arab leaders and Islamists viewed Sadat’s separate treaty as a treasonous betrayal that abandoned the Palestinian people to permanent Israeli occupation.',
+              'Arab leaders and extremists viewed Sadat’s separate peace deal as a betrayal of the Palestinian cause.',
             therefore:
-              'Egypt maintained the peace treaty with Israel, but Israel remained an isolated regional island with no other Arab peace treaties for 15 years.',
-            connective: null,
+              'Egypt remained committed to the peace treaty, but was isolated by the Arab world, leaving Israel with no other peace partners for 15 years.',
+            connective:
+              'With Egypt at peace, the focus of the Arab-Israeli conflict shifted north to Lebanon and the Palestinian issue...',
             exam_link:
-              'Q1 Consequence: Highlighted the lethal domestic and regional risks facing any Arab leader who compromised with Israel.',
+              'Q1 Consequence: Left Egypt diplomatically isolated in the Arab world and showed the extreme danger facing leaders who compromised with Israel.',
           },
         ],
       },
@@ -11973,95 +11995,97 @@ export const unitData = {
       vocab_cloze_text:
         "In 1974, the PLO gained international recognition when [UN Resolution 3236] acknowledged the right of Palestinians to self-determination. In southern Lebanon, the PLO created a fortified enclave known as [Fatahland], launching cross-border attacks that provoked Israel's 1982 invasion, [Operation Peace for Galilee]. Global outrage followed the massacre of civilians by Phalangist militias at [Sabra and Shatila]. By 1987, decades of military occupation ignited the grassroots civilian uprising known as the [First Intifada], which the Israeli military met with a harsh [Iron Fist Policy].",
       causal_domino_spine: {
-        title: 'Lebanon & The First Intifada: 5-Stage Causal Domino Chain',
+        title:
+          'The Palestinian Issue: Lebanon, Sabra & Shatila, and the First Intifada: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
           {
             step: 1,
-            date: '6 June 1982',
-            title: 'Operation Peace for Galilee (Invasion of Lebanon)',
-            actor: 'IDF (Ariel Sharon & Menachem Begin)',
-            tag: 'The Northern Incursion',
+            date: 'June 1982',
+            title: 'The Israeli Invasion of Lebanon',
+            actor: 'Israeli Defence Forces (IDF)',
+            tag: 'Operation Peace for Galilee',
             trigger:
-              'Israel launches a massive invasion of Lebanon with 76,000 troops, pushing past the 40km buffer zone to encircle and bombard the capital city of Beirut.',
+              'Israel launches a major invasion of Lebanon with 76,000 troops, advancing all the way to the capital city, Beirut.',
             because:
-              'Retaliation for the Abu Nidal assassination attempt on Israel’s UK ambassador Shlomo Argov, and Sharon’s objective to eliminate the PLO base in southern Lebanon.',
+              'Israel wanted to destroy PLO bases in southern Lebanon that had been firing rockets and staging attacks across the Israeli border.',
             therefore:
-              'Inflicted devastating urban casualties in Beirut, forcing Yasser Arafat and 14,000 PLO fighters to evacuate Lebanon to distant exile in Tunisia by sea.',
+              'Caused heavy destruction in Beirut and forced Yasser Arafat and 14,000 PLO fighters to evacuate Lebanon to exile in Tunisia.',
             connective:
-              'In the chaotic aftermath of the PLO’s departure from Beirut, a horrific sectarian atrocity occurred...',
+              'In the chaotic aftermath of the PLO’s departure, a horrific atrocity was carried out against civilians...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Expelled the PLO military command from Israel’s border but dragged Israel into an 18-year quagmire.',
+              'Q1 Consequence: Expelled the PLO military leadership from Lebanon, scattering them across the Arab world to distant Tunisia.',
           },
           {
             step: 2,
-            date: '16–18 September 1982',
-            title: 'The Sabra and Shatila Refugee Camp Massacres',
-            actor: 'Christian Phalangist Militias & IDF',
-            tag: 'The Humanitarian Horror',
+            date: 'September 1982',
+            title: 'The Sabra and Shatila Massacres',
+            actor: 'Lebanese Christian Militias & The IDF',
+            tag: 'The Humanitarian Outrage',
             trigger:
-              'Lebanese Christian Phalangist militia enter the Sabra and Shatila refugee camps in West Beirut, systematically massacring between 800 and 3,000 Palestinian civilians.',
+              'Lebanese Christian Phalangist militia enter the Sabra and Shatila refugee camps in Beirut, killing hundreds of Palestinian civilians while Israeli troops surround the camps.',
             because:
-              'Revenge for the assassination of Lebanese Christian President-elect Bachir Gemayel; the IDF surrounded the camps and fired illumination flares without intervening.',
+              'The Christian militia sought revenge for the assassination of their leader, while Israeli commanders failed to intervene to stop the killings.',
             therefore:
-              'Caused international outrage and a 400,000-person anti-war protest in Tel Aviv; the official Kahan Commission found Sharon personally responsible, forcing his resignation.',
+              'Caused massive international outrage and a huge anti-war protest in Tel Aviv; an Israeli official inquiry forced Defence Minister Ariel Sharon to resign.',
             connective:
-              'With the PLO leadership exiled in distant Tunis, daily friction in the occupied territories reached breaking point...',
+              'With the PLO exiled far away in Tunisia, frustration among Palestinians in the occupied territories reached breaking point...',
             exam_link:
-              'Q1 Consequence: Deepened Palestinian hatred, damaged Israel’s international moral standing, and led to Sharon’s censure.',
+              'Q1 Consequence: Triggered international condemnation and led to the resignation of Israeli Defence Minister Ariel Sharon.',
           },
           {
             step: 3,
-            date: '8 December 1987',
+            date: 'December 1987',
             title: 'Outbreak of the First Intifada',
-            actor: 'Palestinian Youths & IDF',
-            tag: 'The Grassroots Uprising',
+            actor: 'Palestinian Civilians in West Bank & Gaza',
+            tag: 'The Mass Uprising',
             trigger:
-              'An Israeli military transport vehicle collides with civilian cars in the Gaza Strip, killing four Palestinian workers; riots erupt and spread like wildfire.',
+              'An Israeli military vehicle collides with civilian cars in Gaza, killing four Palestinians; spontaneous riots and strikes erupt across the West Bank and Gaza.',
             because:
-              'Twenty years of accumulated frustration under military occupation: land confiscations, Jewish settlement expansion, arbitrary curfews, and lack of civil rights.',
+              'Twenty years of military occupation: land confiscations, growing Jewish settlements, lack of civil rights, and daily curfews.',
             therefore:
-              'Transformed the conflict into a mass civilian uprising (strikes, boycotts, stone-throwing) led by local underground youth rather than the exiled PLO elite.',
+              'Turned into a mass civilian uprising (the Intifada, or "shaking off") featuring street strikes, boycotts, and stone-throwing led by local youths.',
             connective:
-              'Struggling to suppress mass civilian demonstrations, Israel’s military command instituted harsh riot measures...',
+              'As the Israeli military struggled to control civilian protests, a radical new movement emerged...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): Shifted the focus of Palestinian resistance from external terrorism to internal civil disobedience.',
+              'Q1 Consequence: Transformed the conflict from cross-border military attacks into a mass grassroots civilian uprising inside the occupied territories.',
           },
           {
             step: 4,
             date: '1987–1988',
-            title: 'Rabin’s "Iron Fist" & The Rise of Hamas',
-            actor: 'IDF & Islamic Resistance Movement',
-            tag: 'The Radicalisation',
+            title: 'The Israeli Response & The Rise of Hamas',
+            actor: 'The Israeli Military & Hamas',
+            tag: 'The Radical Division',
             trigger:
-              'Defence Minister Yitzhak Rabin orders troops to "break the bones" of stone-throwers; Sheikh Ahmed Yassin establishes Hamas as an Islamic alternative to the secular PLO.',
+              'Israel uses tough riot-control measures against stone-throwers; a new Islamic militant group, Hamas, is formed in Gaza.',
             because:
-              'The IDF was trained for conventional tank warfare, not urban crowd control; Hamas rejected any compromise with Israel, calling for an Islamic state across all of Palestine.',
+              'The Israeli army was trained for conventional tank battles, not civilian street riots; Hamas rejected compromise, calling for an Islamic state over all of Palestine.',
             therefore:
-              'Televised footage of soldiers beating unarmed youths damaged Israel’s global reputation; Hamas introduced suicide bombings, permanently fracturing Palestinian leadership.',
+              'TV images of soldiers clashing with teenage stone-throwers damaged Israel’s international image; Hamas emerged as a powerful, violent rival to the secular PLO.',
             connective:
-              'Under immense pressure from the street uprising and the rise of Hamas, Yasser Arafat made a radical diplomatic pivot...',
+              'Pressured by the uprising and the rise of Hamas, Yasser Arafat made a historic diplomatic pivot...',
             exam_link:
-              'Q1 Consequence: The emergence of Hamas as a violent, fundamentalist rival to the PLO.',
+              'Q2 Narrative Account: The rise of Hamas divided Palestinian leadership, introducing suicide bombings and challenging Arafat’s authority.',
           },
           {
             step: 5,
             date: 'December 1988',
-            title: 'Arafat Renounces Terror & Accepts Resolution 242',
-            actor: 'Yasser Arafat & United Nations',
+            title: 'Arafat Renounces Terrorism & Accepts Resolution 242',
+            actor: 'Yasser Arafat (PLO Chairman) & The UN',
             tag: 'The Historic Concession',
             trigger:
-              'Yasser Arafat addresses the UN General Assembly in Geneva, explicitly renouncing all forms of terrorism and accepting UN Resolutions 242 and 338.',
+              'Yasser Arafat addresses the United Nations, explicitly renouncing all terrorism and recognizing Israel’s right to exist under UN Resolution 242.',
             because:
-              'The Intifada proved Palestinians wanted an independent state in the West Bank and Gaza; King Hussein of Jordan had severed all administrative ties with the West Bank in July 1988.',
+              'The Intifada showed that Palestinians wanted an independent state in the West Bank and Gaza, and Arafat needed US diplomatic support.',
             therefore:
-              'Satisfied US conditions, opening the first direct official diplomatic dialogue between the US and the PLO, laying the foundation for Madrid and Oslo.',
-            connective: null,
+              'Satisfied US conditions, opening the first direct official talks between the USA and the PLO, laying the groundwork for Madrid and Oslo.',
+            connective:
+              'This diplomatic breakthrough, combined with the end of the Cold War, opened the door to peace talks in the 1990s...',
             exam_link:
-              'Q3 Importance: The fundamental diplomatic concession that accepted the two-state solution and led directly to the Oslo peace process.',
+              'Q1 Consequence: Opened direct diplomatic relations between the US and the PLO, paving the way for the Madrid and Oslo peace talks.',
           },
         ],
       },
@@ -13156,9 +13180,9 @@ export const unitData = {
       vocab_cloze_text:
         'Following the Intifada, international diplomacy pursued a permanent [Two-State Solution] where Israel and Palestine could coexist. Direct negotiations commenced at the 1991 [Madrid Conference], paving the way for secret talks and the 1993 [Oslo I Accords] establishing Palestinian self-rule. In 1995, the subsequent [Oslo II Accords] divided the West Bank into [Area A, B, C] zones under differing levels of civil and military control. However, peace efforts suffered a catastrophic blow when Israeli Prime Minister Yitzhak Rabin was assassinated by Jewish extremist [Yigal Amir].',
       causal_domino_spine: {
-        title: 'The Oslo Peace Process & Assassination: 5-Stage Causal Domino Chain',
+        title: 'Attempts at a Solution: From Madrid to Oslo II: 5-Stage Causal Domino Chain',
         subtitle:
-          'Edexcel Paper 2 Disciplinary Framework for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
+          'Edexcel Paper 2 Exam Strategy for Q1 Consequence [4m] & Q2 Narrative Account [8m]',
         exam_strategy:
           'Paper 2 tests chronological progression and causal consequence: Event A provoked Decision B, which triggered Action C.',
         stages: [
@@ -13166,85 +13190,86 @@ export const unitData = {
             step: 1,
             date: 'October 1991',
             title: 'The Madrid Peace Conference',
-            actor: 'USA, USSR, Israel, Arab States, Palestinians',
-            tag: 'The Multilateral Forum',
+            actor: 'USA, USSR, Israel & Arab States',
+            tag: 'Face-to-Face Talks',
             trigger:
-              'US President George H.W. Bush and Soviet President Gorbachev co-sponsor the first direct multilateral peace conference in Madrid, bringing all warring parties together.',
+              'The USA and Soviet Union co-sponsor the first direct peace conference in Madrid, bringing Israeli and Arab delegates into the same room.',
             because:
-              'The 1991 Gulf War defeated Saddam Hussein, leaving the US in unchallenged regional dominance; Bush pressured Israeli PM Shamir by withholding $10bn in loan guarantees.',
+              'Following victory in the 1991 Gulf War, the US was the dominant superpower in the region and pressured all parties to sit down together.',
             therefore:
-              'Broke the historical taboo of face-to-face negotiations between Israelis and Palestinians, though formal plenary discussions quickly bogged down in posturing.',
+              'Broke the long-standing taboo against face-to-face negotiations, although formal public speeches soon became bogged down in arguments.',
             connective:
-              'Frustrated by the rigid public posturing in Washington, Israeli academics and PLO officials opened a covert backchannel...',
+              'Frustrated by stalled public talks, Israeli and Palestinian negotiators opened a secret backchannel in Europe...',
             exam_link:
-              'Q2 Narrative (Link 1 → 2): Broke the psychological taboo against direct multilateral face-to-face Arab-Israeli negotiations.',
+              'Q2 Narrative Account: Brought Israeli and Arab leaders together for the first time, paving the way for secret bilateral negotiations.',
           },
           {
             step: 2,
-            date: 'Jan–August 1993',
-            title: 'The Secret Oslo Backchannel Negotiations',
-            actor: 'Israeli Academics & PLO Delegates',
-            tag: 'The Norwegian Breakthrough',
+            date: '1993',
+            title: 'The Secret Oslo Negotiations',
+            actor: 'Israeli & Palestinian Negotiators',
+            tag: 'The Secret Talks',
             trigger:
-              'Norwegian sociologists host 14 rounds of secret negotiations in secluded country houses outside Oslo between Israeli delegates (Hirschfeld/Pundak) and PLO officials (Abu Ala).',
+              'Israeli and Palestinian representatives hold 14 rounds of secret face-to-face talks in Norway, bypassing the media and politicians.',
             because:
-              'Newly elected Israeli PM Yitzhak Rabin and Shimon Peres realized official talks were deadlocked and feared the rising power of extremist Hamas.',
+              'Newly elected Israeli Prime Minister Yitzhak Rabin realized official talks were deadlocked and feared the rising popularity of extremist groups like Hamas.',
             therefore:
-              'Negotiators bypassed public media scrutiny and political posturing, drafting a pragmatic 5-year interim framework for mutual recognition and Palestinian self-government.',
+              'Allowed negotiators to build trust and draft a historic breakthrough: mutual recognition and a timetable for Palestinian self-government.',
             connective:
-              'The secret Norwegian breakthrough culminated in an iconic diplomatic ceremony on the world stage...',
+              'The secret Norwegian breakthrough led to an unforgettable ceremony on the world stage...',
             exam_link:
-              'Q2 Narrative (Link 2 → 3): Demonstrated how covert backchannel secrecy allowed compromises impossible under public scrutiny.',
+              'Q1 Consequence: Bypassed public political posturing and produced the historic Declaration of Principles.',
           },
           {
             step: 3,
             date: '13 September 1993',
-            title: 'The Oslo I Accord & White House Handshake',
-            actor: 'Yitzhak Rabin, Yasser Arafat, Bill Clinton',
+            title: 'The Oslo I Accord & The White House Handshake',
+            actor: 'Yitzhak Rabin, Yasser Arafat & Bill Clinton',
             tag: 'The Historic Handshake',
             trigger:
-              'Rabin and Arafat sign the Declaration of Principles on the White House lawn, sealed by an iconic, reluctant handshake hosted by US President Bill Clinton.',
+              'Rabin and Arafat sign the Declaration of Principles on the White House lawn, sealed with a historic handshake hosted by US President Bill Clinton.',
             because:
-              'Letters of Mutual Recognition were exchanged: the PLO recognized Israel’s right to exist in peace; Israel recognized the PLO as the official representative of the Palestinian people.',
+              'The PLO formally recognized Israel’s right to exist in peace; Israel recognized the PLO as the official representative of the Palestinian people.',
             therefore:
-              'Established the Palestinian Authority (PA) with self-rule starting in "Gaza and Jericho first", deferring explosive final status issues (Jerusalem, refugees, borders) for 5 years.',
+              'Set up the Palestinian Authority (PA) to govern Gaza and the West Bank town of Jericho, leaving the hardest issues (Jerusalem, refugees, borders) for later talks.',
             connective:
-              'Momentum from the Oslo breakthrough immediately unlocked another historic bilateral peace treaty on Israel’s eastern border...',
+              'The momentum of Oslo immediately unlocked a second peace treaty on Israel’s eastern border...',
             exam_link:
-              'Q3 Importance: Mutual diplomatic recognition between the two warring national movements after 45 years of existential conflict.',
+              'Q1 Consequence: Created the Palestinian Authority and established the framework for Palestinian self-rule in Gaza and the West Bank.',
           },
           {
             step: 4,
             date: '1994–1995',
-            title: 'Israel-Jordan Peace Treaty & Oslo II Accords',
-            actor: 'King Hussein, Yitzhak Rabin, Yasser Arafat',
-            tag: 'The Partition of the West Bank',
+            title: 'Israel-Jordan Peace Treaty & Oslo II',
+            actor: 'King Hussein, Yitzhak Rabin & Yasser Arafat',
+            tag: 'Dividing the West Bank',
             trigger:
-              'King Hussein and Rabin sign a peace treaty in October 1994; in September 1995, Oslo II divides the West Bank into Areas A (18% PA control), B (22% joint), and C (60% Israeli control).',
+              'King Hussein of Jordan signs a formal peace treaty with Israel (1994); in 1995, Oslo II divides the West Bank into Areas A, B, and C.',
             because:
-              'King Hussein felt protected by the Palestinian deal to normalize relations, while negotiators sought to gradually transfer civil control in the West Bank.',
+              'Jordan felt safe to make peace after the Palestinian agreement, while negotiators sought to gradually transfer civil control in the West Bank.',
             therefore:
-              'Secured Israel’s longest border, but created a fragmented territorial archipelago in the West Bank that outraged both Israeli settlers and Palestinian nationalists.',
+              'Secured Israel’s border with Jordan, but dividing the West Bank into disconnected zones angered both Israeli settlers and Palestinian nationalists.',
             connective:
-              'The deepening territorial compromises provoked violent, fanatical extremism from both fringes...',
+              'Territorial compromises provoked violent anger from extremists on both fringes...',
             exam_link:
-              'Q1 Consequence & Q2 Narrative: Established the three-tier administrative division (Area A/B/C) that still governs the West Bank today.',
+              'Q1 Consequence: Secured Israel’s eastern frontier with Jordan and established the three administrative zones in the West Bank.',
           },
           {
             step: 5,
-            date: '1994–1995',
+            date: '4 November 1995',
             title: 'Extremist Violence & The Assassination of Rabin',
-            actor: 'Hamas, Baruch Goldstein & Yigal Amir',
-            tag: 'The Death of the Peace Process',
+            actor: 'Extremists vs. Prime Minister Yitzhak Rabin',
+            tag: 'The Peace Process Shattered',
             trigger:
-              'Baruch Goldstein massacres 29 Muslims in Hebron; Hamas launches deadly bus bombings; right-wing Jewish extremist Yigal Amir assassinates Prime Minister Rabin on 4 November 1995.',
+              'Following deadly suicide bombings by Hamas and violent protests by right-wing Israelis, Prime Minister Yitzhak Rabin is assassinated by a Jewish extremist in Tel Aviv.',
             because:
-              'Religious zealots on both sides viewed political compromise as an existential betrayal of holy land and national destiny.',
+              'Extremists on both sides rejected any compromise, viewing the peace process as a betrayal of their national and religious land.',
             therefore:
-              'Dealt a fatal psychological blow to the Oslo peace process; shattered Israeli consensus and paved the way for the election of Benjamin Netanyahu in May 1996.',
-            connective: null,
+              'Dealt a devastating psychological blow to the peace process, shattering Israeli confidence and slowing down the implementation of future peace agreements.',
+            connective:
+              'Rabin’s murder and continued terror attacks led to the election of right-wing leader Benjamin Netanyahu in 1996, stalling the Oslo process.',
             exam_link:
-              'Q1 Consequence: The tragic turning point that halted the momentum of the Oslo peace process.',
+              'Q1 Consequence: Shattered the momentum of the Oslo peace process and deepened division within Israeli society.',
           },
         ],
       },
