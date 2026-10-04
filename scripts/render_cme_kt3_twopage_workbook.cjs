@@ -997,7 +997,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+          <strong>Living Timeline Protocol:</strong> Throughout this unit, illustrate each historical milestone inside its dedicated sketchpad box below. Use the dual-coding prompt to combine symbolic diagrams, causal arrows, and key dates.
         </div>
       </div>
 
@@ -1017,7 +1017,17 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
               Following years of Kissinger’s shuttle diplomacy, Anwar Sadat breaks thirty years of Arab taboos by landing at Ben Gurion Airport and addressing the Israeli Knesset: <em>"No more war, no more bloodshed."</em> He offers permanent peace and recognition in exchange for Israeli withdrawal from 1967 lands.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 44mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.2pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; letter-spacing: 0.3px; color: #000000;">Milestone Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Sketch Sadat's presidential aircraft landing in Jerusalem and Sadat addressing the Knesset under the words: 'No More War'.</span></span>
+              <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span>⌜ Visual Diagram / Symbolic Sketch</span>
+              <span>Causal Annotation &amp; Key Dates ⌟</span>
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 2: SEPT 1978 -->
@@ -1033,7 +1043,17 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
               President Jimmy Carter secludes Begin and Sadat at Camp David for 13 days of intense negotiation. They sign two frameworks: a vague five-year path for Palestinian self-government, and concrete terms for a bilateral peace treaty returning the entire Sinai to Egypt.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 44mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.2pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; letter-spacing: 0.3px; color: #000000;">Milestone Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Sketch a 3-way diplomatic triangle: Jimmy Carter mediating at the top, joining hands with Sadat (Egypt) and Begin (Israel).</span></span>
+              <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span>⌜ Visual Diagram / Symbolic Sketch</span>
+              <span>Causal Annotation &amp; Key Dates ⌟</span>
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 3: 1979–1982 -->
@@ -1049,7 +1069,17 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
               Begin and Sadat sign the Treaty of Washington, securing mutual diplomatic recognition, demilitarisation, and open navigation through Suez. Arab states sever ties and expel Egypt. In April 1982, Israel demolishes the settlement of Yamit and returns all Sinai territory to Egypt. Sadat is assassinated in Oct 1981.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 44mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.2pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; letter-spacing: 0.3px; color: #000000;">Milestone Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Sketch the White House lawn signing ceremony, Israeli bulldozers demolishing Yamit, and the Egyptian flag over Sinai.</span></span>
+              <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span>⌜ Visual Diagram / Symbolic Sketch</span>
+              <span>Causal Annotation &amp; Key Dates ⌟</span>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1069,7 +1099,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+          <strong>Living Timeline Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual symbols, causal arrows, and dates) to master the chronological spine.
         </div>
       </div>
 
@@ -1089,7 +1119,17 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
               Ariel Sharon launches an invasion of Lebanon, driving 60 miles north to besiege West Beirut. After a 10-week siege, Arafat and 14,000 PLO fighters evacuate to Tunis. In September, Christian Phalangists slaughter up to 2,000 Palestinians in Sabra and Shatila. The Kahan Commission forces Sharon’s resignation.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 44mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.2pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; letter-spacing: 0.3px; color: #000000;">Milestone Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Sketch IDF invasion arrows driving 60 miles north to Beirut, PLO evacuation ships heading for Tunis, and the Kahan report.</span></span>
+              <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span>⌜ Visual Diagram / Symbolic Sketch</span>
+              <span>Causal Annotation &amp; Key Dates ⌟</span>
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 5: DEC 1987 &ndash; 1988 -->
@@ -1105,7 +1145,17 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
               A road accident in Jabalia camp triggers the First Intifada: stone throwing, commercial strikes, and barricades across Gaza and the West Bank. Rabin deploys the "Iron Fist" policy. Hamas is founded in 1987. In Geneva (Dec 1988), Arafat formally renounces terrorism and recognizes Israel, opening dialogue with the US.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 44mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.2pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; letter-spacing: 0.3px; color: #000000;">Milestone Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Sketch a stone-throwing youth confronting a military vehicle (slingshot vs armour), paired with Arafat at the Geneva UN podium.</span></span>
+              <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span>⌜ Visual Diagram / Symbolic Sketch</span>
+              <span>Causal Annotation &amp; Key Dates ⌟</span>
+            </div>
+          </div>
         </div>
 
         <!-- Milestone 6: SEPT 1993 &ndash; NOV 1995 -->
@@ -1121,7 +1171,17 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
               Secret talks in Norway produce Letters of Mutual Recognition and Oslo I on the White House lawn. Oslo II (1995) divides the West Bank into Areas A, B, and C. Violent opposition erupts from Hamas suicide bombers and Jewish extremists. On 4 November 1995, Prime Minister Yitzhak Rabin is assassinated at a Tel Aviv peace rally.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 44mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 7.2pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; letter-spacing: 0.3px; color: #000000;">Milestone Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Sketch the Rabin-Arafat-Clinton White House handshake, a map dividing Areas A/B/C, and a memorial candle for Rabin.</span></span>
+              <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
+              <span>⌜ Visual Diagram / Symbolic Sketch</span>
+              <span>Causal Annotation &amp; Key Dates ⌟</span>
+            </div>
+          </div>
         </div>
 
       </div>
