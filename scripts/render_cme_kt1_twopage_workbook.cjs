@@ -1052,16 +1052,16 @@ const kt1Configs = [
       {
         step: 2,
         coreKeywords: [
-          'Aswan Dam loan cancelled',
-          'Suez Canal taken over',
-          'Nasser speech in Alexandria',
-          'Canal money for dam',
+          '200 MiG-15 fighter jets',
+          '300 Soviet tanks',
+          'Czech arms agreement',
+          'Break Western monopoly',
         ],
         stretchKeywords: [
-          'Nationalisation of Suez Company',
-          'John Foster Dulles loan veto',
-          'Anti-imperial sovereignty assertion',
-          'Threat to British oil supply',
+          'Cold War regional shift',
+          'Cairo-Moscow alignment',
+          'Rejection of Baghdad Pact',
+          'Egyptian military modernization',
         ],
         date: 'September 1955',
         title: 'The Czech Arms Deal & Soviet Influence',
@@ -1079,16 +1079,16 @@ const kt1Configs = [
       {
         step: 3,
         coreKeywords: [
-          'Secret meeting in France',
-          'Britain, France, and Israel',
-          'Plot to attack Egypt',
-          'Fake excuse for war',
+          'Aswan Dam loan cancelled',
+          'Suez Canal nationalised',
+          'Nasser speech in Alexandria',
+          'Canal tolls fund dam',
         ],
         stretchKeywords: [
-          'Tripartite conspiracy',
-          'Protocol of Sèvres collusion',
-          'Phony peacekeeping pretext',
-          'Pre-planned ultimatum',
+          'Nationalisation of Suez Company',
+          'John Foster Dulles loan veto',
+          'Anti-imperial sovereignty assertion',
+          'Threat to British oil supply',
         ],
         date: '26 July 1956',
         title: 'Aswan Loans Cancelled & Suez Canal Nationalised',
@@ -1106,16 +1106,16 @@ const kt1Configs = [
       {
         step: 4,
         coreKeywords: [
+          'Secret meeting in France',
+          'Britain, France, and Israel',
           'Israel invades Sinai',
-          'Paratroopers at Mitla Pass',
-          'British and French bombers',
-          'Sinking ships in canal',
+          'Mitla Pass paratroopers',
         ],
         stretchKeywords: [
-          'Operation Kadesh advance',
-          'Operation Musketeer landings',
-          'Canal blockage to international trade',
-          'Egyptian guerrilla resistance',
+          'Tripartite conspiracy',
+          'Protocol of Sèvres collusion',
+          'Phony peacekeeping pretext',
+          'Sinking ships in canal',
         ],
         date: '22–24 October 1956',
         title: 'The Secret Protocol of Sèvres & Sinai Invasion',
@@ -1134,8 +1134,8 @@ const kt1Configs = [
         step: 5,
         coreKeywords: [
           'President Eisenhower',
-          'US threatens British money',
-          'Troops forced to withdraw',
+          'US threatens British currency',
+          'Forces forced to withdraw',
           'UN peacekeepers arrive',
         ],
         stretchKeywords: [
@@ -1693,22 +1693,13 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
       <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000; padding-bottom: 2px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Chronological Lesson Spine &amp; Structured Note-Taking
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000; padding: 0 5px; border-radius: 2px;">
-            5 TURNING POINTS &bull; ACTIVE RECALL
-          </span>
-        </div>
-
         <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
           ${cfg.stages
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, L4 Core & L7-9 Stretch Keywords • 36mm Width) -->
-            <div style="width: 36mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title, Bullet Keywords • 38mm Width) -->
+            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
                 <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
@@ -1718,23 +1709,17 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
                 ${s.title}
               </div>
               ${
-                s.coreKeywords && s.coreKeywords.length > 0
+                (s.coreKeywords && s.coreKeywords.length > 0) ||
+                (s.stretchKeywords && s.stretchKeywords.length > 0)
                   ? `
-              <div style="margin-top: 1px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #475569; letter-spacing: 0.2px; margin-bottom: 0.5px;">Core Vocabulary (L4):</div>
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #111111;">
-                  ${s.coreKeywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
-                </div>
-              </div>`
-                  : ''
-              }
-              ${
-                s.stretchKeywords && s.stretchKeywords.length > 0
-                  ? `
-              <div style="margin-top: 1.5px; border-top: 1px dashed #cbd5e1; padding-top: 1px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #047857; letter-spacing: 0.2px; margin-bottom: 0.5px;">Grade 7–9 Stretch:</div>
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #0f172a;">
-                  ${s.stretchKeywords.map((kw) => `<div><span style="font-weight: 900; color: #047857;">&bull;</span> ${kw}</div>`).join('')}
+              <div style="margin-top: 1.5px;">
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
+                  ${[...(s.coreKeywords || []), ...(s.stretchKeywords || [])]
+                    .map(
+                      (kw) =>
+                        `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
+                    )
+                    .join('')}
                 </div>
               </div>`
                   : ''
