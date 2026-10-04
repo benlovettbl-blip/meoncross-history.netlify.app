@@ -1396,47 +1396,41 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
-      <!-- 5-Stage Chronological Domino Chain (Key Causal Turning Points) -->
-      <div class="domino-chain-container">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 5-Stage Chronological Domino Chain (Key Causal Turning Points)
+      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; margin: 3px 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Chronological Lesson Spine &amp; Structured Note-Taking
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">
-            CAUSAL REASONING &bull; 5 STAGES
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000; padding: 0 5px; border-radius: 2px;">
+            5 TURNING POINTS &bull; ACTIVE RECALL
           </span>
         </div>
 
         ${cfg.stages
           .map(
             (s, sIdx) => `
-        <div class="domino-card-compact">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <div style="display: flex; align-items: center; gap: 5px;">
-              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000;">${s.date}</span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #444444; text-transform: uppercase;">${s.tag} &bull; ${s.actor}</span>
+        <div class="spine-stage-row" style="display: flex; gap: 8px; flex: 1; align-items: stretch; margin-bottom: ${sIdx < cfg.stages.length - 1 ? '3px' : '0'};">
+          <!-- Spine Node Down The Left (Heading & Date Only • No AI Text) -->
+          <div style="width: 58mm; flex-shrink: 0; border-left: 3px solid #000000; padding-left: 7px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <div style="position: absolute; left: -6.5px; top: 50%; transform: translateY(-50%); width: 10px; height: 10px; background: #000000; border-radius: 50%;"></div>
+            <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
+              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #000000;">${s.date}</span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; line-height: 1.15;">
+              ${s.title}
             </div>
           </div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; line-height: 1.15; margin: 1px 0;">
-            ${s.step}. ${s.title}
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111111; line-height: 1.18; margin-bottom: 2px;">
-            <strong>Action:</strong> ${s.trigger}
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.18;">
-            <div><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Because" (Motive):</strong> ${s.because}</div>
-            <div style="border-left: 1px solid #cbd5e1; padding-left: 4px;"><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Therefore" (Consequence):</strong> ${s.therefore}</div>
+
+          <!-- Ruled Note-Taking Lines (Pupil writes notes here) -->
+          <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-left: 1px solid #e2e8f0; padding-left: 6px;">
+            <div class="task-line" style="height: 6.8mm;"></div>
+            <div class="task-line" style="height: 6.8mm;"></div>
+            <div class="task-line" style="height: 6.8mm;"></div>
+            <div class="task-line" style="height: 6.8mm;"></div>
           </div>
         </div>
-        ${
-          sIdx < cfg.stages.length - 1
-            ? `
-        <div class="domino-connector">
-          &darr; <em>${s.connective}</em> &darr;
-        </div>`
-            : ''
-        }
         `,
           )
           .join('')}
@@ -2063,11 +2057,96 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
   });
 
   html += `
+  <!-- Client-Side Auto-Lines Calculator (Evaluated in Puppeteer before PDF print) -->
+  <script>
+    function autoFillWritingLines() {
+      document.querySelectorAll('[data-auto-lines]').forEach(el => {
+        el.innerHTML = '';
+        const availablePx = el.clientHeight;
+        const lineHMm = parseFloat(el.dataset.lineHeight || '7.5');
+        // Standard 96 DPI: 1 inch = 25.4mm = 96px => 1mm = 3.779527559px
+        const lineHPx = lineHMm * (96 / 25.4);
+        const count = Math.max(1, Math.round(availablePx / lineHPx));
+        el.innerHTML = Array(count).fill(
+          '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>'
+        ).join('');
+      });
+    }
+    window.addEventListener('DOMContentLoaded', autoFillWritingLines);
+    if (document.readyState !== 'loading') autoFillWritingLines();
+  </script>
 </body>
 </html>
 `;
 
   return html;
+}
+
+// ============================================================================
+// PDF COMPILER HELPER (WITH AUDIT)
+// ============================================================================
+async function compilePdf(htmlPath, pdfPath, v17Path) {
+  const puppeteer = require('puppeteer');
+  const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+  const page = await browser.newPage();
+  await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
+
+  // Evaluate dynamic lines calculation client-side in Puppeteer
+  await page.evaluate(() => {
+    if (typeof autoFillWritingLines === 'function') {
+      autoFillWritingLines();
+    }
+  });
+
+  // Space audit before PDF compilation
+  const audit = await auditPageBudget(page);
+  printSpaceAuditReport(audit, path.basename(htmlPath));
+
+  await page.pdf({
+    path: pdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
+  });
+
+  if (v17Path) {
+    fs.copyFileSync(pdfPath, v17Path);
+  }
+
+  await browser.close();
+}
+
+// CLI runner
+if (require.main === module) {
+  (async () => {
+    const rootDir = path.join(__dirname, '..');
+    const html = buildCmeKt1TwoPageWorkbook({}, { name: 'KT1' });
+    const publicHtml = path.join(rootDir, 'public', 'units', 'cme_new', 'pupil_workbook_KT1.html');
+    const unitHtml = path.join(rootDir, 'units', 'cme_new', 'pupil_workbook_KT1.html');
+    fs.mkdirSync(path.dirname(publicHtml), { recursive: true });
+    fs.mkdirSync(path.dirname(unitHtml), { recursive: true });
+    fs.writeFileSync(publicHtml, html, 'utf8');
+    fs.writeFileSync(unitHtml, html, 'utf8');
+    console.log(`✅ Saved HTML: ${publicHtml}`);
+
+    const pdfPath = path.join(rootDir, 'public', 'pdfs', 'cme_new_pupil_workbook_KT1.pdf');
+    const v17Path = path.join(
+      rootDir,
+      'public',
+      'pdfs',
+      'cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
+    );
+    console.log(`🖨️ Compiling PDF with Puppeteer & Dynamic Auto-Lines...`);
+    await compilePdf(publicHtml, pdfPath, v17Path);
+    console.log(`✅ Compiled PDF: ${v17Path}`);
+  })().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }
 
 module.exports = { buildCmeKt1TwoPageWorkbook };
