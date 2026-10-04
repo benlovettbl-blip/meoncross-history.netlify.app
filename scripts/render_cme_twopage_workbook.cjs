@@ -92,7 +92,18 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: ['President Nasser', 'Arab League Summit', 'PLO Established', 'Fatah Sabotage'],
+        coreKeywords: [
+          'Arab leaders meet in Cairo',
+          'President Nasser',
+          'PLO created',
+          'Palestinian fighters (Fatah)',
+        ],
+        stretchKeywords: [
+          'Arab League summit',
+          'Palestine Liberation Organisation',
+          'National charter adopted',
+          'Guerrilla cross-border raids',
+        ],
         date: 'January 1964',
         title: 'The 1964 Cairo Conference & PLO Founded',
         actor: 'President Nasser & The Arab League',
@@ -110,11 +121,17 @@ const kt2Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Headwater Diversion',
-          'River Jordan Waters',
-          'Artillery Duels',
+        coreKeywords: [
+          'Dispute over river water',
+          'Syria tries to divert river',
+          'Israel shells diggers',
+          'Water needed for farms',
+        ],
+        stretchKeywords: [
+          'Headwater Diversion Plan',
           'National Water Carrier',
+          'Artillery border clashes',
+          'Resource denial strategy',
         ],
         date: '1964–1965',
         title: 'The Dispute Over the River Jordan Waterways',
@@ -133,11 +150,17 @@ const kt2Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Salah Jadid',
-          'Syrian Baath Party',
-          'Landmine Raids',
-          'Northern Border Hotspot',
+        coreKeywords: [
+          'Syria helps guerrillas',
+          'Guns and money for Fatah',
+          'Landmines on border',
+          'Deadly border hotspot',
+        ],
+        stretchKeywords: [
+          "Syrian Ba'athist government",
+          'Cross-border mine warfare',
+          'Salah Jadid radical policy',
+          'Escalating border friction',
         ],
         date: '1966',
         title: 'Syrian Support for Fatah Border Raids',
@@ -156,11 +179,17 @@ const kt2Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Samu Village Raid',
-          'West Bank Frontier',
-          'King Hussein Backlash',
-          'Nasser Under Pressure',
+        coreKeywords: [
+          'Samu village raid',
+          'Israeli tanks cross border',
+          'Jordanian soldiers fight',
+          'Three Israeli police killed',
+        ],
+        stretchKeywords: [
+          'Disproportionate reprisal strike',
+          'West Bank border raid',
+          'King Hussein anger at Nasser',
+          'Arab inter-state rivalry',
         ],
         date: '13 November 1966',
         title: 'The Israeli Raid on Samu',
@@ -179,11 +208,17 @@ const kt2Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'Six Syrian MiGs Downed',
-          'Mirage IIIC Jets',
-          'Damascus Flyover',
-          'Soviet Disinformation',
+        coreKeywords: [
+          'Dogfight in the sky',
+          'Six Syrian jets shot down',
+          'Israeli planes fly over capital',
+          'Syria asks Egypt for help',
+        ],
+        stretchKeywords: [
+          'Mirage IIIC vs MiG-21s',
+          'Damascus victory flyovers',
+          'Humiliation of Syrian military',
+          'Pretext for Soviet warnings',
         ],
         date: '7 April 1967',
         title: 'The Aerial Battle of 7 April 1967',
@@ -265,11 +300,17 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Soviet False Warnings',
-          '100,000 Sinai Troops',
-          'UNEF Expulsion',
-          'Sharm el-Sheikh',
+        coreKeywords: [
+          'False Soviet warning',
+          '100,000 soldiers in Sinai',
+          'Egypt moves tanks to border',
+          'Tensions rise',
+        ],
+        stretchKeywords: [
+          'Soviet disinformation report',
+          'Nasser military mobilisation',
+          'Reassertion of Arab leadership',
+          'Sinai garrison buildup',
         ],
         date: '13–15 May 1967',
         title: 'Soviet False Reports & Egyptian Mobilisation',
@@ -288,11 +329,17 @@ const kt2Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Straits of Tiran Closed',
-          'Casus Belli',
-          'Jordan Defence Pact',
-          'Moshe Dayan Appointed',
+        coreKeywords: [
+          'UN peacekeepers kicked out',
+          'Straits of Tiran closed',
+          'Eilat port blocked',
+          'Jordan joins Egypt',
+        ],
+        stretchKeywords: [
+          'Expulsion of UNEF troops',
+          'Sharm el-Sheikh naval blockade',
+          'Casus belli for Israel',
+          'Joint military defence pact',
         ],
         date: '16–23 May 1967',
         title: 'UN Peacekeepers Expelled & Straits of Tiran Closed',
@@ -311,11 +358,17 @@ const kt2Configs = [
       },
       {
         step: 3,
-        keywords: [
+        coreKeywords: [
+          'Surprise air attack',
+          'Flying under radar',
+          '300 Egyptian planes destroyed',
+          'Airfields bombed',
+        ],
+        stretchKeywords: [
           'Operation Focus (Moked)',
-          'Runway Crater Bombs',
-          '300 Egyptian Jets Destroyed',
-          'Air Supremacy (3 hrs)',
+          'Runway crater bombs',
+          'Total command of the skies',
+          'Decisive first three hours',
         ],
         date: '30 May 1967',
         title: 'The Arab Defence Pact (Israel Encircled)',
@@ -334,7 +387,18 @@ const kt2Configs = [
       },
       {
         step: 4,
-        keywords: ['Mitla Pass Ambush', 'Sinai Captured', 'Gaza Cleared', 'Suez Canal Front'],
+        coreKeywords: [
+          'Tanks drive through desert',
+          'Mitla Pass battle',
+          'Sinai captured',
+          'Egyptian army in retreat',
+        ],
+        stretchKeywords: [
+          'Armored thrust to Suez Canal',
+          'Gaza Strip clearance',
+          'Air strikes on retreating columns',
+          'Destruction of Egyptian tanks',
+        ],
         date: '5 June 1967',
         title: 'The Pre-Emptive Air Strike',
         actor: 'The Israeli Air Force',
@@ -352,11 +416,17 @@ const kt2Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'Western Wall Captured',
-          'Golan Heights Assault',
-          '1 Million Under Occupation',
-          'Ceasefire (10 June)',
+        coreKeywords: [
+          'Old City captured',
+          'Soldiers at Western Wall',
+          'Golan Heights taken',
+          'Six-day victory',
+        ],
+        stretchKeywords: [
+          'East Jerusalem annexed',
+          'High plateau captured from Syria',
+          '1 million under occupation',
+          'Tripled Israeli territory',
         ],
         date: '5–10 June 1967',
         title: 'The Six-Day Victory & The Conquered Territories',
@@ -442,11 +512,17 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Old City Captured',
+        coreKeywords: [
+          'Holy sites captured',
           'Western Wall',
-          'East Jerusalem Annexed',
-          'Intractable Sacred Dispute',
+          'Jerusalem united under Israel',
+          'Arab outcry',
+        ],
+        stretchKeywords: [
+          'Immediate municipal annexation',
+          'Intractable sacred dispute',
+          'Demolition of Moroccan Quarter',
+          'UN condemnation of annexation',
         ],
         date: '7 June 1967',
         title: 'The Capture of East Jerusalem',
@@ -465,11 +541,17 @@ const kt2Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Khartoum Conference',
-          '"Three Noes"',
-          'No Peace / No Recognition',
-          'Diplomatic Stalemate',
+        coreKeywords: [
+          'Arab leaders meet in Sudan',
+          'The "Three Noes"',
+          'No peace, no recognition',
+          'No talks with Israel',
+        ],
+        stretchKeywords: [
+          'Khartoum Summit resolution',
+          'Rejection of surrender',
+          'Arab diplomatic defiance',
+          'Entrenched regional stalemate',
         ],
         date: 'September 1967',
         title: 'The Khartoum Summit & The "Three No’s"',
@@ -488,11 +570,17 @@ const kt2Configs = [
       },
       {
         step: 3,
-        keywords: [
+        coreKeywords: [
           'UN Resolution 242',
-          '"Land for Peace"',
-          'Inadmissibility Principle',
-          'Linguistic Ambiguity',
+          'Give land back for peace',
+          'Both sides disagree',
+          'Vague wording',
+        ],
+        stretchKeywords: [
+          '"Land for Peace" formula',
+          'Deliberate linguistic ambiguity',
+          'Inadmissibility of land by war',
+          'Right to secure boundaries',
         ],
         date: '22 November 1967',
         title: 'UN Resolution 242: "Land for Peace"',
@@ -511,11 +599,17 @@ const kt2Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Bar-Lev Line Forts',
-          'Sinai Strategic Depth',
-          'Giant Sand Walls',
-          'Military Overconfidence',
+        coreKeywords: [
+          'Giant sand wall on canal',
+          'Concrete forts',
+          'Canal closed to ships',
+          'Artillery shootouts',
+        ],
+        stretchKeywords: [
+          'Bar-Lev defensive line',
+          'War of Attrition artillery duels',
+          'Strategic depth in Sinai',
+          'Military complacency',
         ],
         date: '1968–1969',
         title: 'The Bar-Lev Line on the Suez Canal',
@@ -534,11 +628,17 @@ const kt2Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'West Bank & Gaza Settlements',
-          'Golan Heights Outposts',
-          'Strategic Buffer Zones',
-          '"Facts on the Ground"',
+        coreKeywords: [
+          'Building new towns',
+          'West Bank settlements',
+          'Golan Heights farms',
+          'Land taken for homes',
+        ],
+        stretchKeywords: [
+          'Permanent civilian outposts',
+          '"Facts on the ground"',
+          'Religious Zionist ideology',
+          'Barrier to future compromise',
         ],
         date: '1968–1973',
         title: 'The Beginning of Israeli Settlements',
@@ -622,11 +722,17 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
+        coreKeywords: [
           'Battle of Karameh',
-          'Fatah Guerrilla Stand',
-          'Yasser Arafat PLO Leader',
-          'Fedayeen Recruitment',
+          'Fighters stand their ground',
+          'Yasser Arafat',
+          'New recruits join PLO',
+        ],
+        stretchKeywords: [
+          'Moral victory over IDF tanks',
+          'Fatah guerrilla prestige',
+          'Arafat elected PLO Chairman',
+          'Rise of armed fedayeen',
         ],
         date: '21 March 1968',
         title: 'The Battle of Karameh',
@@ -645,11 +751,17 @@ const kt2Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Dawson’s Field Hijackings',
-          'PFLP Guerrillas',
-          'TV Aircraft Explosions',
-          '"State Within a State"',
+        coreKeywords: [
+          'Airplanes hijacked',
+          'Desert runway in Jordan',
+          'Planes blown up on TV',
+          'King of Jordan angered',
+        ],
+        stretchKeywords: [
+          'PFLP international terrorism',
+          'TV hostage spectacle',
+          '"State within a state" threat',
+          'Challenge to Jordanian monarchy',
         ],
         date: 'September 1970',
         title: 'The Dawson’s Field Airline Hijackings',
@@ -668,11 +780,17 @@ const kt2Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Black September (1970)',
-          'King Hussein Crackdown',
-          'Amman Tank Assault',
-          'PLO Exile to Lebanon',
+        coreKeywords: [
+          'Civil war in Jordan',
+          'King Hussein uses tanks',
+          'PLO defeated',
+          'Fighters expelled to Lebanon',
+        ],
+        stretchKeywords: [
+          'Jordanian military crackdown',
+          'Thousands killed in Amman camps',
+          'Relocation of PLO to Beirut',
+          '"Fatahland" southern Lebanon',
         ],
         date: 'September 1970',
         title: 'Black September (Civil War in Jordan)',
@@ -691,11 +809,17 @@ const kt2Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Munich Olympics (1972)',
-          'Black September Militants',
-          '11 Israeli Athletes Murdered',
-          'Global TV Outrage',
+        coreKeywords: [
+          'Munich Olympic Games',
+          'Black September group',
+          '11 Israeli athletes killed',
+          'Live TV broadcast',
+        ],
+        stretchKeywords: [
+          'Worldwide television coverage',
+          'Botched German rescue attempt',
+          'International outrage',
+          'Brand of terrorism on cause',
         ],
         date: '5–6 September 1972',
         title: 'The Munich Olympics Massacre',
@@ -714,11 +838,17 @@ const kt2Configs = [
       },
       {
         step: 5,
-        keywords: [
+        coreKeywords: [
+          'Israel tracks down attackers',
+          'Golda Meir orders revenge',
+          'Secret agents in Europe',
+          'Targeted killings',
+        ],
+        stretchKeywords: [
           'Operation Wrath of God',
-          'Golda Meir Deterrence',
-          'Mossad Assassination Teams',
-          'Covert European War',
+          'Mossad assassination squads',
+          'Restoring national deterrence',
+          'International backlash',
         ],
         date: '1972–1979',
         title: 'Israeli Retaliation (Operation Wrath of God)',
@@ -803,11 +933,17 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'War of Attrition (1969–70)',
-          'Suez Artillery Duels',
-          'Soviet SAM Missiles',
-          'Sinai Stalemate',
+        coreKeywords: [
+          'Artillery along the canal',
+          'Egyptian bombing raids',
+          'Soviet missiles',
+          'Nasser dies',
+        ],
+        stretchKeywords: [
+          'Suez Canal attrition campaign',
+          'Soviet surface-to-air umbrellas',
+          'Anwar Sadat becomes president',
+          'Refusal to accept Sinai loss',
         ],
         date: '1969–1970',
         title: 'The War of Attrition',
@@ -826,11 +962,17 @@ const kt2Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'President Anwar Sadat',
-          '15,000 Soviet Advisers Expelled',
-          'Bar-Lev Complacency',
-          'Diplomatic Rebuff',
+        coreKeywords: [
+          'Sadat sends Russians home',
+          '15,000 Soviet advisers leave',
+          'Peace offers ignored',
+          'Planning surprise war',
+        ],
+        stretchKeywords: [
+          'Diplomatic overtures rejected',
+          'Israeli overconfidence behind forts',
+          'Soviet offensive weapon veto',
+          'Preparing military catalyst',
         ],
         date: '1971–1972',
         title: 'Sadat Expels Soviet Advisers',
@@ -849,11 +991,17 @@ const kt2Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Yom Kippur & Ramadan',
-          'Bar-Lev Water Canons',
-          'Operation Badr',
-          'Two-Front Surprise',
+        coreKeywords: [
+          'Surprise attack on holy day',
+          'Water cannons cut sand walls',
+          'Crossing Suez Canal',
+          'Syrian tanks attack Golan',
+        ],
+        stretchKeywords: [
+          'Operation Badr canal crossing',
+          'Bar-Lev Line breached',
+          'Two-front coordinated surprise',
+          'Shattered myth of invincibility',
         ],
         date: '6 October 1973',
         title: 'The Surprise Attack on Yom Kippur',
@@ -872,11 +1020,17 @@ const kt2Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Operation Nickel Grass',
-          'US Emergency Airlift',
-          'Ariel Sharon Crossing',
-          'Third Army Encircled',
+        coreKeywords: [
+          'US flies in weapons',
+          'Emergency tanks and shells',
+          'Israel crosses canal',
+          'Egyptian army trapped',
+        ],
+        stretchKeywords: [
+          'Operation Nickel Grass airlift',
+          'Ariel Sharon counter-crossing',
+          'Egyptian Third Army encircled',
+          'Superpower nuclear alert (DEFCON 3)',
         ],
         date: '12–16 October 1973',
         title: 'The US Emergency Airlift & Israeli Counter-Attack',
@@ -895,11 +1049,17 @@ const kt2Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'OPEC Oil Embargo',
-          'Fourfold Price Hike',
-          'UN Resolution 338',
-          'Kissinger Shuttle Diplomacy',
+        coreKeywords: [
+          'Arab oil embargo',
+          'Oil prices jump four times',
+          'Petrol queues in the West',
+          'UN stops the war',
+        ],
+        stretchKeywords: [
+          'OPEC oil weapon deployment',
+          'Western economic stagflation',
+          'UN Resolution 338 ceasefire',
+          'Kissinger shuttle diplomacy trigger',
         ],
         date: 'October 1973',
         title: 'The Arab Oil Embargo & Ceasefire',
@@ -1433,28 +1593,44 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title & Level 4 Keywords • 34mm Width) -->
-            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title, L4 Core & L7-9 Stretch Keywords • 36mm Width) -->
+            <div style="width: 36mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
                 <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
                 <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1.5px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
                 ${s.title}
               </div>
               ${
-                s.keywords && s.keywords.length > 0
+                s.coreKeywords && s.coreKeywords.length > 0
                   ? `
-              <div style="margin-top: 1px; display: flex; flex-direction: column; gap: 0.8px; font-family: 'Inter', sans-serif; font-size: 5.6pt; line-height: 1.12; color: #1e293b;">
-                ${s.keywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+              <div style="margin-top: 1px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #475569; letter-spacing: 0.2px; margin-bottom: 0.5px;">Core Vocabulary (L4):</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #111111;">
+                  ${s.coreKeywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+                </div>
+              </div>`
+                  : ''
+              }
+              ${
+                s.stretchKeywords && s.stretchKeywords.length > 0
+                  ? `
+              <div style="margin-top: 1.5px; border-top: 1px dashed #cbd5e1; padding-top: 1px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #047857; letter-spacing: 0.2px; margin-bottom: 0.5px;">Grade 7–9 Stretch:</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #0f172a;">
+                  ${s.stretchKeywords.map((kw) => `<div><span style="font-weight: 900; color: #047857;">&bull;</span> ${kw}</div>`).join('')}
+                </div>
               </div>`
                   : ''
               }
             </div>
 
-            <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
+            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
@@ -1468,20 +1644,6 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #fafafa; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
-        </div>
-        <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-          ${cfg.vocabPrompt}
-        </p>
-        <div class="task-line" style="height: 6.5mm;"></div>
-        <div class="task-line" style="height: 6.5mm;"></div>
-      </div>
-
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
     </div>
   </div>
@@ -1498,10 +1660,10 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 28 Ruled Lines with 8mm Left Margin (Thick 1.5px Black Lines) -->
+      <!-- 32 Ruled Lines with 8mm Left Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1;">
         ${Array.from(
-          { length: 28 },
+          { length: 32 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1615,7 +1777,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 18 },
+          { length: 20 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1643,7 +1805,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       <!-- 26 Ruled Response Lines with 8mm Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
         ${Array.from(
-          { length: 26 },
+          { length: 28 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>

@@ -93,7 +93,13 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
-        keywords: ['Sherif Hussein', 'Sir Henry McMahon', 'Arab Revolt (1916)', 'Vague Frontiers'],
+        coreKeywords: ['British promise', 'Arab revolt', 'Sherif Hussein', 'Fight Ottoman Empire'],
+        stretchKeywords: [
+          'High Commissioner McMahon',
+          'Vague territorial frontiers',
+          'Military diversion',
+          'Suez Canal protection',
+        ],
         date: '1915–1916',
         title: 'The McMahon-Hussein Correspondence',
         actor: 'Britain & Arab Leaders',
@@ -109,11 +115,17 @@ const kt1Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Mark Sykes',
-          'François Georges-Picot',
-          'Spheres of Influence',
-          'Direct Colonial Control',
+        coreKeywords: [
+          'Secret agreement',
+          'Britain and France',
+          'Divide Arab lands',
+          'Broken promises',
+        ],
+        stretchKeywords: [
+          'Imperial carve-up',
+          'Spheres of influence',
+          'Direct colonial administration',
+          'Petrograd diplomatic leaks',
         ],
         date: 'May 1916',
         title: 'The Secret Sykes-Picot Agreement',
@@ -130,11 +142,17 @@ const kt1Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Arthur Balfour',
+        coreKeywords: [
+          'Arthur Balfour letter',
+          'Jewish national home',
           'Lord Rothschild',
-          '"Jewish National Home"',
-          'Civil & Religious Rights',
+          'Protect Arab rights',
+        ],
+        stretchKeywords: [
+          'Zionist federation',
+          'Contradictory pledges',
+          'Civil and religious rights',
+          'Wartime superpower lobbying',
         ],
         date: 'November 1917',
         title: 'The Balfour Declaration',
@@ -151,7 +169,18 @@ const kt1Configs = [
       },
       {
         step: 4,
-        keywords: ['League of Nations', 'Jewish National Fund', 'Fifth Aliyah', 'Tenant Evictions'],
+        coreKeywords: [
+          'League of Nations mandate',
+          'Jewish immigration',
+          'Buying farmland',
+          'Arab tenant farmers',
+        ],
+        stretchKeywords: [
+          'Fifth Aliyah',
+          'Jewish National Fund (JNF)',
+          'Tenant evictions',
+          'Demographic polarization',
+        ],
         date: '1920–1936',
         title: 'The British Mandate & Rising Immigration',
         actor: 'British Authorities & Jewish Immigrants',
@@ -167,7 +196,18 @@ const kt1Configs = [
       },
       {
         step: 5,
-        keywords: ['Grand Mufti', 'General Strike (1936)', '75,000 Quota', 'Haganah Cooperation'],
+        coreKeywords: [
+          'Arab rebellion',
+          'British army crackdown',
+          '1939 White Paper',
+          'Immigration limits (75k)',
+        ],
+        stretchKeywords: [
+          'Grand Mufti of Jerusalem',
+          'Six-month general strike',
+          'Appeasement of Arab oil states',
+          'Yishuv sense of betrayal',
+        ],
         date: '1936–1939',
         title: 'The Arab Revolt & The 1939 White Paper',
         actor: 'Palestinian Arabs & British Government',
@@ -280,11 +320,17 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
+        coreKeywords: [
+          'Holocaust survivors',
+          'Jewish refugee camps',
+          'Guerrilla attacks',
+          '1,500 monthly limit',
+        ],
+        stretchKeywords: [
           'Displaced Persons (DPs)',
-          'Irgun & Lehi',
-          '1,500/Month Quota',
-          'Guerrilla Sabotage',
+          'Irgun & Lehi underground',
+          'Anti-guerrilla garrison (100k)',
+          'Naval blockade of Palestine',
         ],
         date: '1945–1946',
         title: 'Post-War Holocaust Survivors & The Insurgency',
@@ -301,11 +347,17 @@ const kt1Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Menachem Begin',
-          'British HQ (Secretariat)',
-          '91 Fatalities',
-          'Operation Agatha',
+        coreKeywords: [
+          'King David Hotel',
+          'British headquarters',
+          '91 people killed',
+          'Bomb in milk churns',
+        ],
+        stretchKeywords: [
+          'Menachem Begin (Irgun)',
+          'Secretariat destruction',
+          'Domestic British war weariness',
+          'Operation Agatha retaliation',
         ],
         date: '22 July 1946',
         title: 'The King David Hotel Bombing',
@@ -322,7 +374,18 @@ const kt1Configs = [
       },
       {
         step: 3,
-        keywords: ['Ernest Bevin', 'Post-War Bankruptcy', 'UNSCOP Committee', 'Mandate Surrender'],
+        coreKeywords: [
+          'Britain gives up',
+          'United Nations',
+          'Ernest Bevin',
+          'Post-war money problems',
+        ],
+        stretchKeywords: [
+          'Economic exhaustion',
+          'UNSCOP fact-finding committee',
+          'Unworkable mandate',
+          'Surrender of imperial authority',
+        ],
         date: 'February 1947',
         title: 'Britain Hands Palestine to the United Nations',
         actor: 'British Government & The UN',
@@ -338,11 +401,17 @@ const kt1Configs = [
       },
       {
         step: 4,
-        keywords: [
-          '4,500 Holocaust Refugees',
-          'President Truman',
-          'Naval Blockade',
-          'Hamburg DP Camps',
+        coreKeywords: [
+          'SS Exodus ship',
+          '4,500 refugees',
+          'Forced back to Germany',
+          'Global news headlines',
+        ],
+        stretchKeywords: [
+          'President Truman diplomatic pressure',
+          'Public relations catastrophe',
+          'Loss of moral legitimacy',
+          'Turning world opinion',
         ],
         date: 'July 1947',
         title: 'The SS Exodus Affair & Global Outcry',
@@ -359,11 +428,17 @@ const kt1Configs = [
       },
       {
         step: 5,
-        keywords: [
-          '55% Jewish / 44% Arab',
-          'Corpus Separatum',
-          'General Assembly Vote',
-          'Civil War Outbreak',
+        coreKeywords: [
+          'UN partition vote',
+          'Jewish state (55%)',
+          'Arab state (44%)',
+          'Jerusalem international city',
+        ],
+        stretchKeywords: [
+          'UN General Assembly Resolution 181',
+          'Special international status',
+          'Arab total rejection',
+          'Immediate civil war outbreak',
         ],
         date: '29 November 1947',
         title: 'UN Resolution 181 (The Partition Plan)',
@@ -479,7 +554,18 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
-        keywords: ['Plan Dalet', 'Armed Road Convoys', 'Bab al-Wad Corridor', 'Siege of Jerusalem'],
+        coreKeywords: [
+          'Road ambushes',
+          'Food convoys blocked',
+          'Siege of Jerusalem',
+          'British soldiers leave',
+        ],
+        stretchKeywords: [
+          'Plan Dalet strategic offensive',
+          'Bab al-Wad corridor fighting',
+          'Security power vacuum',
+          'Demographic clearing of roads',
+        ],
         date: 'Dec 1947 – May 1948',
         title: 'Communal Civil War & British Evacuation',
         actor: 'Jewish & Arab Militias',
@@ -495,11 +581,17 @@ const kt1Configs = [
       },
       {
         step: 2,
-        keywords: [
+        coreKeywords: [
           'David Ben-Gurion',
-          'Tel Aviv Proclamation',
-          'Midnight Mandate End',
-          'US Recognition (11 mins)',
+          'State of Israel declared',
+          'Tel Aviv museum',
+          'US recognises state',
+        ],
+        stretchKeywords: [
+          'Proclamation of Independence',
+          'Midnight mandate expiration',
+          'Sovereign Jewish statehood',
+          'Truman immediate recognition',
         ],
         date: '14 May 1948',
         title: 'David Ben-Gurion Proclaims the State of Israel',
@@ -515,11 +607,17 @@ const kt1Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Five Arab Armies',
-          'Arab Legion (Glubb)',
-          'West Jerusalem Siege',
-          'Severe Arms Shortage',
+        coreKeywords: [
+          'Five Arab armies',
+          'Egypt, Jordan, Syria',
+          'Attack from all sides',
+          'Shortage of weapons',
+        ],
+        stretchKeywords: [
+          'Arab Legion (Glubb Pasha)',
+          'Multi-front invasion',
+          'Existential defensive struggle',
+          'Artillery and armor deficit',
         ],
         date: '15 May 1948',
         title: 'Invasion by Five Arab Armies',
@@ -536,7 +634,18 @@ const kt1Configs = [
       },
       {
         step: 4,
-        keywords: ['Count Bernadotte', 'Operation Balak', 'Škoda Arms (Czech)', 'IDF Order No. 4'],
+        coreKeywords: [
+          'Four-week ceasefire',
+          'Weapons from Czechoslovakia',
+          'Rifles and planes',
+          'IDF army created',
+        ],
+        stretchKeywords: [
+          'Count Bernadotte mediation',
+          'Operation Balak airlift',
+          'Avia S-199 fighter aircraft',
+          'IDF central command reorganization',
+        ],
         date: 'June–July 1948',
         title: 'The First UN Truce & The Czech Arms Supply',
         actor: 'Israel (IDF) & Czechoslovakia',
@@ -552,11 +661,17 @@ const kt1Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'Ralph Bunche',
-          '78% Mandate Control',
-          '750k Nakba Refugees',
-          'Green Line (1949)',
+        coreKeywords: [
+          'Peace talks on Rhodes',
+          'Green Line borders',
+          'Israel controls 78%',
+          'Arab neighbours sign truce',
+        ],
+        stretchKeywords: [
+          'Ralph Bunche UN diplomacy',
+          'Bilateral armistice lines',
+          'Permanent border partition',
+          'Exclusion of Palestinian state',
         ],
         date: '1949',
         title: 'The Rhodes Armistice Agreements & The Green Line',
@@ -583,7 +698,7 @@ const kt1Configs = [
       },
       {
         q: 'What was the planned international status of Jerusalem under the UN partition plan?',
-        a: 'Corpus Separatum (international zone)',
+        a: 'International zone under UN control',
       },
       {
         q: 'Did the Arab Higher Committee and Arab states accept or reject UN Resolution 181?',
@@ -674,11 +789,17 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          '750,000 Refugees',
-          'Deir Yassin Terror',
+        coreKeywords: [
+          '700,000 refugees',
+          'Fleeing homes',
+          'Refugee camps',
           'Al-Nakba ("Catastrophe")',
-          'Permanent Displacement',
+        ],
+        stretchKeywords: [
+          'Permanent demographic exile',
+          'Gaza and West Bank tent camps',
+          'Denial of return rights',
+          'Intergenerational displacement',
         ],
         date: '1948–1949',
         title: 'The Palestinian Refugee Crisis (Al-Nakba)',
@@ -695,7 +816,18 @@ const kt1Configs = [
       },
       {
         step: 2,
-        keywords: ['UN Resolution 194', 'Right of Return', 'UNRWA Camps', 'Food & Medical Relief'],
+        coreKeywords: [
+          'UN help for refugees',
+          'UNRWA relief agency',
+          'Food, tents, and schools',
+          'Right to return home',
+        ],
+        stretchKeywords: [
+          'UN General Assembly Resolution 194',
+          'Compensation claims',
+          'Permanent humanitarian infrastructure',
+          'Stateless refugee status',
+        ],
         date: 'Dec 1948 – Dec 1949',
         title: 'UN Resolutions 194 & 302 (Founding of UNRWA)',
         actor: 'United Nations General Assembly',
@@ -711,11 +843,17 @@ const kt1Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Law of Return (1950)',
-          'Mizrahi & Sephardi',
-          'Operation Magic Carpet',
-          "Ma'abarot Camps",
+        coreKeywords: [
+          'Law of Return',
+          'Any Jewish person can move',
+          'Population doubles',
+          'Temporary tent camps',
+        ],
+        stretchKeywords: [
+          'Automatic citizenship rights',
+          'Ingathering of the Diaspora',
+          'Mizrahi and Sephardi immigration',
+          "Ma'abarot transit settlements",
         ],
         date: 'July 1950',
         title: 'The Israeli Law of Return & Demographic Surge',
@@ -732,11 +870,17 @@ const kt1Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Universal Conscription',
-          'Kibbutzim Defense',
-          'US Financial Loans',
-          'Green Line Fortification',
+        coreKeywords: [
+          'Every citizen in army',
+          'Fortified border farms',
+          'US money and loans',
+          'Protect new borders',
+        ],
+        stretchKeywords: [
+          'Universal military conscription',
+          'Kibbutzim frontline defense',
+          'Superpower strategic aid',
+          'Citizen-soldier reserve system',
         ],
         date: '1950–1953',
         title: 'Consolidation of the IDF & US Economic Backing',
@@ -753,7 +897,18 @@ const kt1Configs = [
       },
       {
         step: 5,
-        keywords: ['Fedayeen Guerrillas', 'Unit 101', 'Ariel Sharon', 'Qibya Raid (1953)'],
+        coreKeywords: [
+          'Arab guerrilla fighters',
+          'Night border raids',
+          'Israel attacks back',
+          'Qibya village raid',
+        ],
+        stretchKeywords: [
+          'Fedayeen border infiltrations',
+          'Unit 101 commando tactics',
+          'Ariel Sharon retaliatory doctrine',
+          'Disproportionate deterrence policy',
+        ],
         date: '1950–1954',
         title: 'Fedayeen Infiltration & Disproportionate Reprisals',
         actor: 'Palestinian Fedayeen & Israeli Unit 101',
@@ -869,11 +1024,17 @@ const kt1Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
+        coreKeywords: [
+          'President Nasser',
+          'Israeli raid on Gaza',
+          '37 soldiers killed',
+          'Soviet weapons deal',
+        ],
+        stretchKeywords: [
           'Operation Black Arrow',
-          'Gaza Raid (37 Dead)',
-          'Gamal Abdel Nasser',
-          'Military Humiliation',
+          'Czech arms agreement (MiG-15s)',
+          'Pan-Arab leadership',
+          'Break from Western arms monopoly',
         ],
         date: '28 February 1955',
         title: 'The Gaza Raid (Operation Black Arrow)',
@@ -890,11 +1051,17 @@ const kt1Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Czech Arms Deal (1955)',
-          '200 MiG-15 Jets',
-          'Baghdad Pact Refusal',
-          'Straits of Tiran Blockade',
+        coreKeywords: [
+          'Aswan Dam loan cancelled',
+          'Suez Canal taken over',
+          'Nasser speech in Alexandria',
+          'Canal money for dam',
+        ],
+        stretchKeywords: [
+          'Nationalisation of Suez Company',
+          'John Foster Dulles loan veto',
+          'Anti-imperial sovereignty assertion',
+          'Threat to British oil supply',
         ],
         date: 'September 1955',
         title: 'The Czech Arms Deal & Soviet Influence',
@@ -911,11 +1078,17 @@ const kt1Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Aswan Dam Cancellation',
-          'Alexandria Speech',
-          'Suez Canal Company',
-          'Anthony Eden Ultimatum',
+        coreKeywords: [
+          'Secret meeting in France',
+          'Britain, France, and Israel',
+          'Plot to attack Egypt',
+          'Fake excuse for war',
+        ],
+        stretchKeywords: [
+          'Tripartite conspiracy',
+          'Protocol of Sèvres collusion',
+          'Phony peacekeeping pretext',
+          'Pre-planned ultimatum',
         ],
         date: '26 July 1956',
         title: 'Aswan Loans Cancelled & Suez Canal Nationalised',
@@ -932,11 +1105,17 @@ const kt1Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Protocol of Sèvres',
-          'Tripartite Collusion',
-          'Operation Kadesh',
-          'Mitla Pass Airdrop',
+        coreKeywords: [
+          'Israel invades Sinai',
+          'Paratroopers at Mitla Pass',
+          'British and French bombers',
+          'Sinking ships in canal',
+        ],
+        stretchKeywords: [
+          'Operation Kadesh advance',
+          'Operation Musketeer landings',
+          'Canal blockage to international trade',
+          'Egyptian guerrilla resistance',
         ],
         date: '22–24 October 1956',
         title: 'The Secret Protocol of Sèvres & Sinai Invasion',
@@ -953,11 +1132,17 @@ const kt1Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'Dwight Eisenhower',
-          'IMF Sterling Threat',
-          'UNEF Peacekeepers',
-          'Eden Resignation',
+        coreKeywords: [
+          'President Eisenhower',
+          'US threatens British money',
+          'Troops forced to withdraw',
+          'UN peacekeepers arrive',
+        ],
+        stretchKeywords: [
+          'Financial sterling crisis threat',
+          'Humiliation of Britain and France',
+          'End of European imperial power',
+          'UNEF peacekeeper deployment',
         ],
         date: 'Nov 1956 – Mar 1957',
         title: 'US Ultimatum, Imperial Retreat & UNEF Deployment',
@@ -1381,7 +1566,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.3</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 9.2pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
-              The United Nations General Assembly votes 33 to 13 to terminate the British Mandate and partition Palestine into separate Arab and Jewish states, with Jerusalem placed under international trusteeship (Corpus Separatum). The Jewish Agency accepts; all Arab nations reject the plan, triggering civil war.
+              The United Nations General Assembly votes 33 to 13 to terminate the British Mandate and partition Palestine into separate Arab and Jewish states, with Jerusalem placed under international United Nations trusteeship. The Jewish Agency accepts; all Arab nations reject the plan, triggering civil war.
             </p>
           </div>
           <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
@@ -1522,28 +1707,44 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title & Level 4 Keywords • 34mm Width) -->
-            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title, L4 Core & L7-9 Stretch Keywords • 36mm Width) -->
+            <div style="width: 36mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
                 <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
                 <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1.5px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
                 ${s.title}
               </div>
               ${
-                s.keywords && s.keywords.length > 0
+                s.coreKeywords && s.coreKeywords.length > 0
                   ? `
-              <div style="margin-top: 1px; display: flex; flex-direction: column; gap: 0.8px; font-family: 'Inter', sans-serif; font-size: 5.6pt; line-height: 1.12; color: #1e293b;">
-                ${s.keywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+              <div style="margin-top: 1px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #475569; letter-spacing: 0.2px; margin-bottom: 0.5px;">Core Vocabulary (L4):</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #111111;">
+                  ${s.coreKeywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+                </div>
+              </div>`
+                  : ''
+              }
+              ${
+                s.stretchKeywords && s.stretchKeywords.length > 0
+                  ? `
+              <div style="margin-top: 1.5px; border-top: 1px dashed #cbd5e1; padding-top: 1px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #047857; letter-spacing: 0.2px; margin-bottom: 0.5px;">Grade 7–9 Stretch:</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #0f172a;">
+                  ${s.stretchKeywords.map((kw) => `<div><span style="font-weight: 900; color: #047857;">&bull;</span> ${kw}</div>`).join('')}
+                </div>
               </div>`
                   : ''
               }
             </div>
 
-            <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
+            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
@@ -1557,20 +1758,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #fafafa; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
-        </div>
-        <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-          ${cfg.vocabPrompt}
-        </p>
-        <div class="task-line" style="height: 6.5mm;"></div>
-        <div class="task-line" style="height: 6.5mm;"></div>
-      </div>
-
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
     </div>
   </div>
@@ -1587,10 +1774,10 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 28 Ruled Lines with 8mm Left Margin (Thick 1.5px Black Lines) -->
+      <!-- 32 Ruled Lines with 8mm Left Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1;">
         ${Array.from(
-          { length: 28 },
+          { length: 32 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1704,7 +1891,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 18 },
+          { length: 20 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1732,7 +1919,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       <!-- 26 Ruled Response Lines with 8mm Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
         ${Array.from(
-          { length: 26 },
+          { length: 28 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1812,7 +1999,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
           <!-- Key Data Statistics Box -->
           <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>UN Resolution 181 (1947):</strong> Allocated 55% to Jewish state, 44% to Arab state, Jerusalem international Corpus Separatum.</div>
+            <div>&bull; <strong>UN Resolution 181 (1947):</strong> Allocated 55% to Jewish state, 44% to Arab state, Jerusalem designated an international UN zone.</div>
             <div>&bull; <strong>1948–49 War Outcome:</strong> Israel expanded to secure 79% of Mandate Palestine; Transjordan annexed West Bank; Egypt held Gaza.</div>
             <div>&bull; <strong>The Nakba (1948):</strong> 700,000+ Palestinian Arabs displaced; armistice demarcation drawn in green pencil at Rhodes (Green Line).</div>
           </div>

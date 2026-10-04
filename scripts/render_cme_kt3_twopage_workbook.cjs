@@ -92,11 +92,17 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'OPEC Oil Embargo',
-          'Stagflation Crisis',
-          'King Faisal (Saudi)',
-          'US Security Priority',
+        coreKeywords: [
+          'Oil embargo',
+          'Fuel shortages',
+          'Western petrol queues',
+          'US must make peace',
+        ],
+        stretchKeywords: [
+          'Quadrupling world oil prices',
+          'OPEC economic leverage',
+          'US foreign policy priority',
+          'Western stagflation crisis',
         ],
         date: 'Oct 1973',
         title: 'The Arab Oil Shock & Superpower Realignment',
@@ -113,11 +119,17 @@ const kt3Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Henry Kissinger',
-          'Shuttle Diplomacy',
-          'Sinai I Disengagement',
-          'Suez Canal Reopened',
+        coreKeywords: [
+          'Henry Kissinger travels',
+          'Flying between capitals',
+          'Separate front-line armies',
+          'Suez Canal reopens',
+        ],
+        stretchKeywords: [
+          'Step-by-step shuttle diplomacy',
+          'Sinai Disengagement Accord I',
+          'UN buffer zone created',
+          'De-escalating superpower tension',
         ],
         date: 'Jan 1974',
         title: 'Kissinger’s Shuttle Diplomacy & Sinai I',
@@ -134,11 +146,17 @@ const kt3Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Sinai II Agreement (1975)',
-          'Abu Rudeis Oilfields',
-          'Renouncing Military Force',
-          'Geneva Accord',
+        coreKeywords: [
+          'Sinai II peace agreement',
+          'Israel pulls back in desert',
+          'Oil fields returned to Egypt',
+          'Promise not to fight',
+        ],
+        stretchKeywords: [
+          'Renouncing military force',
+          'Abu Rudeis oilfield handover',
+          'Geneva bilateral compromise',
+          'Detaching Egypt from Arab bloc',
         ],
         date: 'Sept 1975',
         title: 'The Sinai II Agreement',
@@ -155,11 +173,17 @@ const kt3Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Likud Election (1977)',
-          'Menachem Begin',
-          'Labour Rule Ends',
-          'Hardline Revisionist Zionism',
+        coreKeywords: [
+          'Election in Israel',
+          'Menachem Begin wins',
+          'Labour party loses',
+          'Tough leader takes over',
+        ],
+        stretchKeywords: [
+          'Likud right-wing triumph',
+          'End of 29-year Labour dominance',
+          'Revisionist Zionist ideology',
+          'Hardline stance on West Bank',
         ],
         date: 'May 1977',
         title: 'Likud Election Victory (Menachem Begin)',
@@ -176,11 +200,17 @@ const kt3Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'Anwar Sadat',
-          'Knesset Address (1977)',
-          '"No More War, No More Bloodshed"',
-          'Psychological Barrier Broken',
+        coreKeywords: [
+          'Sadat flies to Israel',
+          'Speaks to Israeli parliament',
+          'Says "No more war"',
+          'Historic peace visit',
+        ],
+        stretchKeywords: [
+          'Historic Knesset address',
+          'Shattering psychological barriers',
+          'Direct bilateral breakthrough',
+          'Bypassing Arab taboos',
         ],
         date: '19–21 Nov 1977',
         title: 'Sadat’s Historic Journey to Jerusalem',
@@ -256,11 +286,17 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Camp David Retreat (1978)',
-          'Jimmy Carter Mediation',
-          '13 Days Closed Talks',
-          '$Billion US Subsidies',
+        coreKeywords: [
+          'Camp David retreat',
+          'President Jimmy Carter',
+          '13 days of secret talks',
+          'Sadat and Begin meet',
+        ],
+        stretchKeywords: [
+          'Presidential mediation pressure',
+          'Isolated Maryland summit',
+          'Near-breakdown over settlements',
+          'Billions in US financial aid',
         ],
         date: '5–17 Sept 1978',
         title: 'The Camp David Summit',
@@ -277,11 +313,17 @@ const kt3Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Two Framework Accords',
-          'Sinai Total Return',
-          'Palestinian Autonomy Sham',
-          'West Bank Control Retained',
+        coreKeywords: [
+          'Two peace frameworks',
+          'Sinai returned to Egypt',
+          'Self-rule for Palestinians',
+          'Palestinians reject deal',
+        ],
+        stretchKeywords: [
+          'Bilateral peace vs Palestinian autonomy',
+          'Begin West Bank sovereignty refusal',
+          'Rejection by PLO as sham',
+          'Unequal dual frameworks',
         ],
         date: 'Sept 1978',
         title: 'The Dual Framework Agreements',
@@ -298,11 +340,17 @@ const kt3Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Treaty of Washington (1979)',
-          'White House Lawn',
-          'Yamit Settlement Bulldozed',
-          'Demilitarised Sinai',
+        coreKeywords: [
+          'Peace treaty signed',
+          'White House lawn ceremony',
+          'Handshake with Carter',
+          'All 18 settlements removed',
+        ],
+        stretchKeywords: [
+          'Treaty of Washington ratified',
+          'Phased Sinai return (to 1982)',
+          'Yamit settlement bulldozed',
+          'Demilitarised border security',
         ],
         date: '26 March 1979',
         title: 'The Egypt-Israel Peace Treaty',
@@ -319,11 +367,17 @@ const kt3Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Baghdad Arab Summit',
-          'Arab League Suspension',
-          'Cairo HQ Moved to Tunis',
-          'Sadat Diplomatic Exile',
+        coreKeywords: [
+          'Arab countries furious',
+          'Egypt kicked out of Arab League',
+          'Offices moved to Tunis',
+          'Sadat called a traitor',
+        ],
+        stretchKeywords: [
+          'Baghdad Arab Summit boycott',
+          'Pan-Arab diplomatic exile',
+          'Severing of diplomatic relations',
+          'Isolation of Egyptian leadership',
         ],
         date: 'March–Nov 1979',
         title: 'The Arab League Boycott of Egypt',
@@ -340,11 +394,17 @@ const kt3Configs = [
       },
       {
         step: 5,
-        keywords: [
-          '6 October 1981 Parade',
-          'Egyptian Islamic Jihad',
-          'Sadat Assassinated',
-          'Hosni Mubarak Succeeds',
+        coreKeywords: [
+          'Sadat assassinated',
+          'Military parade in Cairo',
+          'Gunmen shoot president',
+          'Mubarak takes over',
+        ],
+        stretchKeywords: [
+          'Egyptian Islamic Jihad militants',
+          'Revenge for Camp David peace',
+          'Martyr of bilateral diplomacy',
+          'Hosni Mubarak reaffirms treaty',
         ],
         date: '6 October 1981',
         title: 'The Assassination of Anwar Sadat',
@@ -432,15 +492,21 @@ const kt3Configs = [
       'Key Topic 3.3: The Palestinian Issue in Lebanon: Litani to Sabra-Shatila (1974–1985)',
     title: 'KT3.3: The Palestinian Issue in Lebanon (1974–1985)',
     specAnchor:
-      'Arafat and the PLO: changing attitudes to diplomacy; rejectionist states; the PLO in Lebanon and "Fatahland"; the 1978 Coastal Road massacre and Operation Litani; UNIFIL and the South Lebanon Army; the 1982 Israeli invasion of Lebanon (Operation Peace for Galilee); the siege of West Beirut; the evacuation of the PLO to Tunis; the assassination of Bachir Gemayel and the Sabra and Shatila massacre (September 1982); the Kahan Commission and the resignation of Ariel Sharon.',
+      'The PLO in Lebanon and 1978 Coastal Road attack; Operation Litani; the 1982 invasion (Operation Peace for Galilee); the siege of Beirut and PLO evacuation to Tunis; the Sabra and Shatila massacres (1982); the Kahan Commission inquiry and Sharon’s resignation.',
     stages: [
       {
         step: 1,
-        keywords: [
-          'Coastal Road Bus Attack',
-          'Operation Litani (1978)',
-          'UNIFIL (Res 425)',
-          'South Lebanon Army Buffer',
+        coreKeywords: [
+          'Bus hijacking near Tel Aviv',
+          'Israel invades Lebanon',
+          'Pushing PLO back',
+          'UN peacekeepers arrive',
+        ],
+        stretchKeywords: [
+          'Operation Litani buffer zone',
+          'UN Resolution 425 (UNIFIL)',
+          'South Lebanon Army proxy',
+          '100,000 civilians displaced',
         ],
         date: 'March 1978',
         title: 'Operation Litani & The Border Buffer',
@@ -457,11 +523,17 @@ const kt3Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Shlomo Argov Ambush',
+        coreKeywords: [
+          'Ambassador shot in London',
+          'Full invasion of Lebanon',
+          'Ariel Sharon in charge',
+          'Tanks drive to Beirut',
+        ],
+        stretchKeywords: [
           'Operation Peace for Galilee',
-          'Ariel Sharon',
-          '60-Mile Drive to Beirut',
+          'Bypassing 40km cabinet limit',
+          '60-mile drive to Lebanese capital',
+          'Goal to destroy PLO bases',
         ],
         date: '6 June 1982',
         title: 'Operation Peace for Galilee Launched',
@@ -478,11 +550,17 @@ const kt3Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Siege of Beirut (10 Weeks)',
-          'Philip Habib Ceasefire',
-          'PLO Tunis Evacuation',
-          'Arafat Sea Exile',
+        coreKeywords: [
+          'Beirut surrounded',
+          'Two months of bombing',
+          'PLO leaves by ship',
+          'Arafat headquarters moved to Tunis',
+        ],
+        stretchKeywords: [
+          'Ten-week siege of West Beirut',
+          'Philip Habib mediated ceasefire',
+          '14,000 fighters evacuated',
+          'PLO exile 1,500 miles away',
         ],
         date: 'June–Aug 1982',
         title: 'The Siege of Beirut & PLO Evacuation',
@@ -499,11 +577,17 @@ const kt3Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Bachir Gemayel Murder',
-          'Phalangist Militias',
-          'Sabra-Shatila Slaughter',
-          'IDF Flares Complicity',
+        coreKeywords: [
+          'Lebanese Christian militia',
+          'Refugee camps attacked',
+          'Unarmed civilians killed',
+          'Israeli flares in the sky',
+        ],
+        stretchKeywords: [
+          'Phalangist revenge killings',
+          'Sabra and Shatila slaughter',
+          'IDF perimeter encirclement',
+          'Global outcry over complicity',
         ],
         date: '16–18 Sept 1982',
         title: 'The Sabra and Shatila Massacre',
@@ -520,11 +604,17 @@ const kt3Configs = [
       },
       {
         step: 5,
-        keywords: [
-          '400,000 Tel Aviv Rally',
-          'Kahan Commission',
-          'Sharon "Personal Blame"',
-          'Begin Resignation (1983)',
+        coreKeywords: [
+          '400,000 protest in Tel Aviv',
+          'Official investigation',
+          'Sharon loses minister job',
+          'Prime Minister Begin resigns',
+        ],
+        stretchKeywords: [
+          'Kahan Commission of Inquiry',
+          '"Personal responsibility" ruling',
+          'Ariel Sharon forced resignation',
+          'Rise of Peace Now movement',
         ],
         date: 'Feb 1983',
         title: 'The Kahan Commission & Israeli Protests',
@@ -599,11 +689,17 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Jabalia Checkpoint Crash',
-          'Four Workers Killed',
-          'Spontaneous Outbreak',
-          'First Intifada Spark',
+        coreKeywords: [
+          'Army truck crash',
+          'Four workers killed',
+          'Funerals turn to riots',
+          'First Intifada begins',
+        ],
+        stretchKeywords: [
+          'Jabalia refugee camp spark',
+          'Erez checkpoint collision',
+          'Spontaneous uprising spreads',
+          'Twenty years of military rule',
         ],
         date: '8 Dec 1987',
         title: 'The Jabalia Traffic Spark',
@@ -620,11 +716,17 @@ const kt3Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Popular Civil Disobedience',
-          'Yitzhak Rabin',
-          '"Iron Fist" & Beatings',
-          'Global Television Outrage',
+        coreKeywords: [
+          'Throwing stones at tanks',
+          'Strikes and boycotts',
+          'Yitzhak Rabin "break bones"',
+          'Beating scenes on TV',
+        ],
+        stretchKeywords: [
+          'Grassroots civil disobedience',
+          'Unified National Leadership (UNLU)',
+          'Iron Fist policy televised',
+          'Shattered moral standing of IDF',
         ],
         date: '1987–1988',
         title: 'Popular Uprising & The "Iron Fist" Policy',
@@ -641,11 +743,17 @@ const kt3Configs = [
       },
       {
         step: 3,
-        keywords: [
+        coreKeywords: [
+          'Hamas founded in Gaza',
           'Sheikh Ahmed Yassin',
-          'Hamas Founded (Dec 1987)',
-          '1988 Islamic Covenant',
-          'Sacred Waqf vs Diplomacy',
+          'Islamic resistance group',
+          'Refuses peace with Israel',
+        ],
+        stretchKeywords: [
+          'Hamas Covenant published (1988)',
+          'Palestine as sacred Islamic Waqf',
+          'Suicide bombing doctrine',
+          'Challenge to PLO secular diplomacy',
         ],
         date: 'Dec 1987',
         title: 'The Founding of Hamas in Gaza',
@@ -662,11 +770,17 @@ const kt3Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Arafat Geneva UN Speech (1988)',
-          'Renouncing Terrorism',
-          'UN Resolution 242 Accepted',
-          'Direct US-PLO Talks',
+        coreKeywords: [
+          'Arafat speaks to UN',
+          'Gives up terrorism',
+          'Recognises Israel',
+          'US opens talks with PLO',
+        ],
+        stretchKeywords: [
+          'Geneva UN General Assembly address',
+          'Acceptance of UN Resolution 242',
+          'Two-state solution legitimacy',
+          'Direct US-PLO diplomatic dialogue',
         ],
         date: '13 Dec 1988',
         title: 'Arafat’s Geneva Speech to the UN',
@@ -683,11 +797,17 @@ const kt3Configs = [
       },
       {
         step: 5,
-        keywords: [
-          '1991 Gulf War Repercussions',
-          'George H.W. Bush & Gorbachev',
+        coreKeywords: [
+          'Gulf War ends',
+          'Peace meeting in Madrid',
+          'President Bush and Gorbachev',
+          'Arabs and Israelis face-to-face',
+        ],
+        stretchKeywords: [
           'Madrid Peace Conference (1991)',
-          'Face-to-Face Delegations',
+          'Post-Cold War US hegemony',
+          'First face-to-face negotiations',
+          'Bypassing rejected PLO members',
         ],
         date: 'Oct 1991',
         title: 'The Madrid Peace Conference',
@@ -775,15 +895,21 @@ const kt3Configs = [
     subTitle: 'Key Topic 3.5: The Oslo Peace Accords, Areas A/B/C & The Road to 1995 (1992–1995)',
     title: 'KT3.5: The Oslo Accords & Rabin’s Assassination (1992–1995)',
     specAnchor:
-      'The 1992 Israeli election and the Labour victory of Yitzhak Rabin; the secret Oslo negotiations in Norway (1993); the Letters of Mutual Recognition; the Oslo I Accord (Declaration of Principles, September 1993); the Cairo Agreement (Gaza-Jericho First, 1994); the 1994 Israel-Jordan Peace Treaty; the 1994 Nobel Peace Prize; extremist opposition on both sides: Hamas suicide bombings, the Hebron mosque massacre (1994); the Oslo II Interim Agreement (1995) partitioning the West Bank into Areas A, B, and C; the assassination of Yitzhak Rabin (4 November 1995).',
+      'The 1992 Labour victory of Yitzhak Rabin; secret Oslo negotiations and Letters of Mutual Recognition (1993); the Oslo I Accord; 1994 Israel-Jordan Peace Treaty; extremist opposition including Hamas suicide bombings and the Hebron massacre; Oslo II (Areas A, B, C); the assassination of Yitzhak Rabin (1995).',
     stages: [
       {
         step: 1,
-        keywords: [
-          '1992 Labour Election Victory',
-          'Yitzhak Rabin',
-          'Nine-Month Peace Pledge',
-          'Settlement Freeze',
+        coreKeywords: [
+          'Yitzhak Rabin elected',
+          'Labour party wins',
+          'Promises peace in 9 months',
+          'Freezes some settlements',
+        ],
+        stretchKeywords: [
+          'Labour electoral victory',
+          'Mandate for compromise',
+          'Exhaustion with Intifada',
+          'Direct Palestinian channel approval',
         ],
         date: 'June 1992',
         title: 'The Election of Yitzhak Rabin',
@@ -800,11 +926,17 @@ const kt3Configs = [
       },
       {
         step: 2,
-        keywords: [
-          'Secret Oslo Talks (Norway)',
-          'Terje Rød-Larsen Facilitation',
+        coreKeywords: [
+          'Secret talks in Norway',
+          'Quiet meetings away from press',
+          'Israel recognises PLO',
+          'PLO recognises Israel',
+        ],
+        stretchKeywords: [
+          'Secret backchannel diplomacy',
+          'Terje Rød-Larsen facilitation',
           'Letters of Mutual Recognition',
-          'Bypassing Washington',
+          'Renouncing violence in writing',
         ],
         date: 'Jan–Aug 1993',
         title: 'Secret Backchannel Negotiations in Oslo',
@@ -821,11 +953,17 @@ const kt3Configs = [
       },
       {
         step: 3,
-        keywords: [
-          'Oslo I Accord (1993)',
-          'White House Handshake',
-          'Bill Clinton Orchestration',
-          'Palestinian Authority (Gaza-Jericho)',
+        coreKeywords: [
+          'Signing on White House lawn',
+          'Famous handshake',
+          'President Clinton',
+          'Self-rule in Gaza and Jericho',
+        ],
+        stretchKeywords: [
+          'Declaration of Principles (Oslo I)',
+          'Palestinian Authority (PA) created',
+          '"Gaza-Jericho First" formula',
+          'Interim five-year self-rule',
         ],
         date: '13 Sept 1993',
         title: 'Oslo I (Declaration of Principles) & White House Handshake',
@@ -842,11 +980,17 @@ const kt3Configs = [
       },
       {
         step: 4,
-        keywords: [
-          'Baruch Goldstein Massacre',
-          'Hamas Bus Bombings',
-          'Israel-Jordan Peace Treaty',
-          'Oslo II (Areas A, B, C)',
+        coreKeywords: [
+          'Mosque shooting in Hebron',
+          'Hamas bus bombings',
+          'Peace with Jordan',
+          'West Bank split into Areas A, B, C',
+        ],
+        stretchKeywords: [
+          'Baruch Goldstein extremist terror',
+          'Bus suicide bombing campaign',
+          'Israel-Jordan Peace Treaty (1994)',
+          'Oslo II partition of West Bank',
         ],
         date: '1994–1995',
         title: 'Extremist Violence, Jordan Peace & Oslo II',
@@ -863,11 +1007,17 @@ const kt3Configs = [
       },
       {
         step: 5,
-        keywords: [
-          'Kings of Israel Square Rally',
-          'Yigal Amir (Assassin)',
-          'Rabin Assassinated',
-          'Netanyahu 1996 Election',
+        coreKeywords: [
+          'Rabin shot at peace rally',
+          'Jewish extremist assassin',
+          'Tel Aviv square',
+          'Peace process in crisis',
+        ],
+        stretchKeywords: [
+          'Yigal Amir extremist gunman',
+          'Point-blank assassination',
+          'Trauma to Israeli peace movement',
+          'Netanyahu 1996 election victory',
         ],
         date: '4 Nov 1995',
         title: 'The Assassination of Yitzhak Rabin',
@@ -1395,28 +1545,44 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title & Level 4 Keywords • 34mm Width) -->
-            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Spine Node Down The Left (Number, Date, Title, L4 Core & L7-9 Stretch Keywords • 36mm Width) -->
+            <div style="width: 36mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
                 <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
                 <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.5pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1.5px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
                 ${s.title}
               </div>
               ${
-                s.keywords && s.keywords.length > 0
+                s.coreKeywords && s.coreKeywords.length > 0
                   ? `
-              <div style="margin-top: 1px; display: flex; flex-direction: column; gap: 0.8px; font-family: 'Inter', sans-serif; font-size: 5.6pt; line-height: 1.12; color: #1e293b;">
-                ${s.keywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+              <div style="margin-top: 1px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #475569; letter-spacing: 0.2px; margin-bottom: 0.5px;">Core Vocabulary (L4):</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #111111;">
+                  ${s.coreKeywords.map((kw) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`).join('')}
+                </div>
+              </div>`
+                  : ''
+              }
+              ${
+                s.stretchKeywords && s.stretchKeywords.length > 0
+                  ? `
+              <div style="margin-top: 1.5px; border-top: 1px dashed #cbd5e1; padding-top: 1px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.0pt; font-weight: 800; text-transform: uppercase; color: #047857; letter-spacing: 0.2px; margin-bottom: 0.5px;">Grade 7–9 Stretch:</div>
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.1; color: #0f172a;">
+                  ${s.stretchKeywords.map((kw) => `<div><span style="font-weight: 900; color: #047857;">&bull;</span> ${kw}</div>`).join('')}
+                </div>
               </div>`
                   : ''
               }
             </div>
 
-            <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
+            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
@@ -1430,20 +1596,6 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #fafafa; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
-        </div>
-        <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-          ${cfg.vocabPrompt}
-        </p>
-        <div class="task-line" style="height: 6.5mm;"></div>
-        <div class="task-line" style="height: 6.5mm;"></div>
-      </div>
-
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
     </div>
   </div>
@@ -1460,10 +1612,10 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 28 Ruled Lines with 8mm Left Margin (Thick 1.5px Black Lines) -->
+      <!-- 32 Ruled Lines with 8mm Left Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1;">
         ${Array.from(
-          { length: 28 },
+          { length: 32 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1595,7 +1747,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 18 },
+          { length: 20 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
@@ -1623,7 +1775,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       <!-- 26 Ruled Response Lines with 8mm Margin (Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
         ${Array.from(
-          { length: 26 },
+          { length: 28 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>

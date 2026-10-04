@@ -995,7 +995,7 @@ export const unitData = {
           q: 'Explain one consequence of the 1948–49 Arab-Israeli War for the city of Jerusalem.',
           options: [
             'The city was divided along the Green Line, leaving West Jerusalem under Israeli control and East Jerusalem, including the Old City and Western Wall, under Jordanian rule.',
-            'The city was placed under permanent United Nations direct military rule as an international corpus separatum.',
+            'The city was placed under permanent United Nations direct military rule as an international zone under UN control.',
             'All Jewish and Arab residents were permanently evacuated, and the city was converted into an international park.',
             'The city was annexed entirely by Egypt, which established a joint military headquarters with Syria in the Old City.',
           ],
@@ -2014,7 +2014,7 @@ export const unitData = {
           ],
         },
         {
-          text: "**The SS Exodus & The Decision to Evacuate (Summer–Autumn 1947):** While the United Nations Special Committee on Palestine (UNSCOP) was investigating on the ground in summer 1947, a second international public relations disaster broke British imperial resolve. In July 1947, the Royal Navy intercepted the **SS Exodus** carrying 4,500 Holocaust survivors off Haifa. When British destroyers rammed the ship and forcibly deported the destitute refugees back to detention camps in Hamburg, Germany, international photographs triggered worldwide moral condemnation and immense outrage across the United States, with President Truman threatening crucial postwar financial loans. Concurrently, domestic fury erupted in Britain over the hanged sergeants, with riots breaking out in Liverpool and London and newspapers demanding the government 'bring the boys home.' Faced with this total collapse of domestic and international support, the British Cabinet concluded that Palestine had become completely ungovernable. In September 1947, Britain made the historic announcement that it would terminate the Mandate and completely evacuate all British forces by 15 May 1948, refusing to enforce any partition plan. UNSCOP concluded that the only viable solution was the partition of the territory into separate Jewish and Arab states, with Jerusalem administered as an international zone (corpus separatum) under UN control. On 29 November 1947, the UN General Assembly voted 33 to 13 to approve Resolution 181.",
+          text: "**The SS Exodus & The Decision to Evacuate (Summer–Autumn 1947):** While the United Nations Special Committee on Palestine (UNSCOP) was investigating on the ground in summer 1947, a second international public relations disaster broke British imperial resolve. In July 1947, the Royal Navy intercepted the **SS Exodus** carrying 4,500 Holocaust survivors off Haifa. When British destroyers rammed the ship and forcibly deported the destitute refugees back to detention camps in Hamburg, Germany, international photographs triggered worldwide moral condemnation and immense outrage across the United States, with President Truman threatening crucial postwar financial loans. Concurrently, domestic fury erupted in Britain over the hanged sergeants, with riots breaking out in Liverpool and London and newspapers demanding the government 'bring the boys home.' Faced with this total collapse of domestic and international support, the British Cabinet concluded that Palestine had become completely ungovernable. In September 1947, Britain made the historic announcement that it would terminate the Mandate and completely evacuate all British forces by 15 May 1948, refusing to enforce any partition plan. UNSCOP concluded that the only viable solution was the partition of the territory into separate Jewish and Arab states, with Jerusalem administered as an international zone under UN control. On 29 November 1947, the UN General Assembly voted 33 to 13 to approve Resolution 181.",
           level_4:
             'In July 1947, Britain intercepted the SS Exodus, deporting 4,500 Holocaust survivors to Germany. Outraged by this and the hanged sergeants, the British public demanded withdrawal. In Sept 1947, Britain announced it would leave Palestine on 15 May 1948.',
           source: {
@@ -2033,9 +2033,9 @@ export const unitData = {
               text: 'How did UN Resolution 181 propose to partition Palestine, and why did the Arab Higher Committee reject it? (P6)',
               starter: 'UN Resolution 181 proposed to partition Palestine into...',
               model:
-                'UN Resolution 181 proposed dividing Palestine into an independent Arab state (44% of the land) and an independent Jewish state (55% of the land), with Jerusalem designated as an international zone (corpus separatum). Zionist leaders accepted the plan because it granted international legitimacy to Jewish statehood. The Arab Higher Committee categorically rejected it as inherently unjust, arguing that it awarded over half the fertile territory to a Jewish population that comprised only one-third of the population and owned less than 7% of the land.',
+                'UN Resolution 181 proposed dividing Palestine into an independent Arab state (44% of the land) and an independent Jewish state (55% of the land), with Jerusalem designated as an international zone under UN control. Zionist leaders accepted the plan because it granted international legitimacy to Jewish statehood. The Arab Higher Committee categorically rejected it as inherently unjust, arguing that it awarded over half the fertile territory to a Jewish population that comprised only one-third of the population and owned less than 7% of the land.',
               model_answer:
-                'UN Resolution 181 proposed dividing Palestine into an independent Arab state (44% of the land) and an independent Jewish state (55% of the land), with Jerusalem designated as an international zone (corpus separatum). Zionist leaders accepted the plan because it granted international legitimacy to Jewish statehood. The Arab Higher Committee categorically rejected it as inherently unjust, arguing that it awarded over half the fertile territory to a Jewish population that comprised only one-third of the population and owned less than 7% of the land.',
+                'UN Resolution 181 proposed dividing Palestine into an independent Arab state (44% of the land) and an independent Jewish state (55% of the land), with Jerusalem designated as an international zone under UN control. Zionist leaders accepted the plan because it granted international legitimacy to Jewish statehood. The Arab Higher Committee categorically rejected it as inherently unjust, arguing that it awarded over half the fertile territory to a Jewish population that comprised only one-third of the population and owned less than 7% of the land.',
             },
           ],
         },
@@ -2187,7 +2187,7 @@ export const unitData = {
             'Partitioning Palestine into separate Arab and Jewish states with Jerusalem under international control',
           a: 'Partitioning Palestine into separate Arab and Jewish states with Jerusalem under international control',
           explanation:
-            "Resolution 181 allocated 55% of mandatory territory to a Jewish state, 45% to an Arab state, and designated Jerusalem an international 'corpus separatum'. It was accepted by Jews but rejected by Arabs.",
+            'Resolution 181 allocated 55% of mandatory territory to a Jewish state, 45% to an Arab state, and designated Jerusalem an international zone under UN control. It was accepted by Jews but rejected by Arabs.',
         },
         {
           question:
@@ -2602,11 +2602,11 @@ export const unitData = {
             'It decreed that Palestine remain under permanent British military trusteeship until the year 2000.',
             'It mandated creating a single unitary binational state with equal parliamentary seats for Jews and Arabs.',
             'It transferred all mandatory lands to the Kingdom of Transjordan, granting autonomous municipal status to Tel Aviv.',
-            'It recommended ending the British Mandate and partitioning Palestine into a Jewish state (55% of land) and an Arab state (45%), with Jerusalem as an international corpus separatum under UN administration.',
+            'It recommended ending the British Mandate and partitioning Palestine into a Jewish state (55% of land) and an Arab state (45%), with Jerusalem as an international zone under UN administration.',
           ],
           answer:
-            'It recommended ending the British Mandate and partitioning Palestine into a Jewish state (55% of land) and an Arab state (45%), with Jerusalem as an international corpus separatum under UN administration.',
-          a: 'It recommended ending the British Mandate and partitioning Palestine into a Jewish state (55% of land) and an Arab state (45%), with Jerusalem as an international corpus separatum under UN administration.',
+            'It recommended ending the British Mandate and partitioning Palestine into a Jewish state (55% of land) and an Arab state (45%), with Jerusalem as an international zone under UN administration.',
+          a: 'It recommended ending the British Mandate and partitioning Palestine into a Jewish state (55% of land) and an Arab state (45%), with Jerusalem as an international zone under UN administration.',
           explanation:
             'Resolution 181 passed the General Assembly by a 33–13 vote (with 10 abstentions), securing the necessary two-thirds majority. The Jewish state received 55% of the land (including the Negev and coastal plain), while the Arab state received 45%, leaving Jerusalem under international control.',
         },
