@@ -915,35 +915,35 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       font-size: 11pt !important;
       letter-spacing: 2px;
     }
-    /* Ruled Paper Geometry (0px Overflow Standard • 28 Lines with 22mm Left Margin) */
+    /* Clean Lined Paper Grid for Extended Writing Pages (8mm margin, thick 1.5px black lines for photocopying) */
     .lined-page-grid {
       display: flex;
       flex-direction: column;
       flex: 1;
       margin: 2px 0 3px 0;
-      border-top: 1.2px solid #000000;
+      border-top: 1.5px solid #000000;
     }
     .lined-row {
       display: flex;
       flex: 1;
       min-height: 0;
-      border-bottom: 1.2px solid #000000;
+      border-bottom: 1.5px solid #000000;
       box-sizing: border-box;
     }
     .lined-margin-cell {
-      width: 22mm;
-      border-right: 1.2px solid #000000;
+      width: 8mm;
+      border-right: 1.5px solid #000000;
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      padding-left: 2px;
+      padding-left: 1px;
       box-sizing: border-box;
     }
     .lined-content-cell {
       flex: 1;
       display: flex;
       align-items: center;
-      padding-left: 6px;
+      padding-left: 5px;
       box-sizing: border-box;
     }
   </style>
@@ -1240,29 +1240,29 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
           </span>
         </div>
 
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.2px solid #000000;">
+        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
           ${cfg.stages
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Heading & Date Only • No AI Text • 44mm Width) -->
-            <div style="width: 44mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 5px 0 7px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 9px; height: 9px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 900; padding: 1px 3px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000;">${s.date}</span>
+            <!-- Spine Node Down The Left (Heading & Date Only • No AI Text • 34mm Width) -->
+            <div style="width: 34mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 4px 0 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px; flex-wrap: wrap;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 900; padding: 1px 3px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">${s.date}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.15;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.12;">
                 ${s.title}
               </div>
             </div>
 
-            <!-- Ruled Note-Taking Lines (Pupil writes notes here • Faint Vertical Line shifted left) -->
+            <!-- Ruled Note-Taking Lines (Pupil writes notes here • Thick 1.5px Black Lines for Photocopying) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
           `,
@@ -1272,7 +1272,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fafafa; margin-top: 2px;">
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #fafafa; margin-top: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
@@ -1282,9 +1282,8 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
-        <div class="task-line" style="height: 6.2mm;"></div>
-        <div class="task-line" style="height: 6.2mm;"></div>
-        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
       </div>
 
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
@@ -1303,19 +1302,16 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <!-- 28 Ruled Lines with 8mm Left Margin (Thick 1.5px Black Lines) -->
       <div class="lined-page-grid" style="flex: 1;">
-        ${Array.from({ length: 28 }, (_, idx) => {
-          const isFirst = idx === 0;
-          const marginContent = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-            : `&nbsp;`;
-          return `
+        ${Array.from(
+          { length: 28 },
+          () => `
             <div class="lined-row">
-              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-margin-cell">&nbsp;</div>
               <div class="lined-content-cell">&nbsp;</div>
-            </div>`;
-        }).join('')}
+            </div>`,
+        ).join('')}
       </div>
 
       ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
@@ -1438,19 +1434,16 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Initial Response Lines (Ruled Grid with Margin) -->
+      <!-- Initial Response Lines (Ruled Grid with 8mm Margin) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
-        ${Array.from({ length: 15 }, (_, idx) => {
-          const isFirst = idx === 0;
-          const marginContent = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-            : `&nbsp;`;
-          return `
+        ${Array.from(
+          { length: 15 },
+          () => `
             <div class="lined-row">
-              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-margin-cell">&nbsp;</div>
               <div class="lined-content-cell">&nbsp;</div>
-            </div>`;
-        }).join('')}
+            </div>`,
+        ).join('')}
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
@@ -1469,19 +1462,16 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </h2>
       </div>
 
-      <!-- 20 Ruled Response Lines with Margin -->
+      <!-- 20 Ruled Response Lines with 8mm Margin -->
       <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
-        ${Array.from({ length: 20 }, (_, idx) => {
-          const isFirst = idx === 0;
-          const marginContent = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-            : `&nbsp;`;
-          return `
+        ${Array.from(
+          { length: 20 },
+          () => `
             <div class="lined-row">
-              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-margin-cell">&nbsp;</div>
               <div class="lined-content-cell">&nbsp;</div>
-            </div>`;
-        }).join('')}
+            </div>`,
+        ).join('')}
       </div>
 
       <!-- Timeline Mission Box -->
