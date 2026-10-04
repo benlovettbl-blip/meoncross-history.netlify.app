@@ -58,7 +58,7 @@ const approvedFunnyFooters = [
 // Even pages (verso/left): Page number on left, text on right.
 // Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, text, totalPages = 28) {
+function renderFooterStrip(pageNum, text, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -87,143 +87,72 @@ const kt3Configs = [
       'How did the 1973 oil shock and shuttle diplomacy lead to Sadat’s visit to Jerusalem?',
     subTitle: 'Key Topic 3.1: Diplomatic Negotiations & Shuttle Diplomacy (1974–1978)',
     title: 'KT3.1: Diplomatic Negotiations & Shuttle Diplomacy (1974–1978)',
-    specAnchor:
-      'The oil crisis and superpower involvement: the roles of the USA (Kissinger’s shuttle diplomacy) and the USSR; the 1974–75 disengagement accords; the reopening of the Suez Canal; the 1977 Israeli election of Menachem Begin; Sadat’s visit to Israel (November 1977) and Knesset speech; Begin’s visit to Egypt (December 1977).',
+    specAnchor: `The <strong>oil crisis and superpower involvement</strong>; the <strong>roles of the USA (Kissinger’s shuttle diplomacy) and the USSR</strong>; the <strong>1974–75 disengagement accords (Sinai I and II)</strong>; the <strong>reopening of the Suez Canal</strong>; the <strong>May 1977 Israeli election of Menachem Begin (Likud)</strong>; and <strong>Sadat’s historic visit to Jerusalem (Nov 1977) and address to the Knesset</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Oil embargo',
-          'Fuel shortages',
-          'Western petrol queues',
-          'US must make peace',
+        keywords: [
+          'OPEC crude oil embargo against US',
+          'World oil prices quadruple',
+          'Western petrol rationing & queues',
+          'Middle East stability vital for US economy',
+          'USSR displaced as primary peace broker',
         ],
-        stretchKeywords: [
-          'Quadrupling world oil prices',
-          'OPEC economic leverage',
-          'US foreign policy priority',
-          'Western stagflation crisis',
-        ],
+        clue: 'Why did the OPEC oil shock force the US to prioritize Middle East diplomacy?',
         date: 'Oct 1973',
         title: 'The Arab Oil Shock & Superpower Realignment',
-        actor: 'OPEC Arab Oil Producers & The USA',
-        tag: 'The Economic Lever',
-        trigger:
-          'Arab OPEC states embargo crude oil shipments to the US and slash production, quadrupling world oil prices in weeks.',
-        because:
-          'Arab nations sought to punish the US for resupplying Israel during the 1973 war and force Western powers to pressure Israel into territorial concessions.',
-        therefore:
-          'Inflicted severe Western stagflation and convinced Washington that Middle East stability was an urgent national security priority.',
-        connective:
-          'With US economic interests threatened, Secretary of State Henry Kissinger launched unprecedented mediation...',
       },
       {
         step: 2,
-        coreKeywords: [
-          'Henry Kissinger travels',
-          'Flying between capitals',
-          'Separate front-line armies',
-          'Suez Canal reopens',
+        keywords: [
+          'US Sec of State Henry Kissinger',
+          'Shuttle diplomacy between Cairo & Tel Aviv',
+          'Sinai Disengagement Accord I signed',
+          'UN buffer zone created along canal',
+          'Suez Canal cleared & reopened (1975)',
         ],
-        stretchKeywords: [
-          'Step-by-step shuttle diplomacy',
-          'Sinai Disengagement Accord I',
-          'UN buffer zone created',
-          'De-escalating superpower tension',
-        ],
+        clue: 'How did Kissinger’s step-by-step shuttle diplomacy separate the frontline armies?',
         date: 'Jan 1974',
         title: 'Kissinger’s Shuttle Diplomacy & Sinai I',
-        actor: 'Henry Kissinger, Egypt & Israel',
-        tag: 'Bilateral Disengagement',
-        trigger:
-          'Kissinger flies between Cairo and Jerusalem, brokering the Sinai Disengagement Agreement (Sinai I) to separate frontline armies.',
-        because:
-          'Both armies were dangerously entangled across the Suez Canal, with Egypt’s Third Army encircled and risking renewed superpower war.',
-        therefore:
-          'Established a UN buffer zone along the canal, allowing Egypt to reopen the waterway and paving the way for gradual territorial talks.',
-        connective:
-          'Encouraged by military separation, the parties negotiated a broader diplomatic pact...',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Sinai II peace agreement',
-          'Israel pulls back in desert',
-          'Oil fields returned to Egypt',
-          'Promise not to fight',
+        keywords: [
+          'Sinai II bilateral agreement signed',
+          'Israel withdraws further into Sinai desert',
+          'Abu Rudeis oilfields returned to Egypt',
+          'Formal pledge to renounce military force',
+          'Egypt begins detachment from Arab war coalition',
         ],
-        stretchKeywords: [
-          'Renouncing military force',
-          'Abu Rudeis oilfield handover',
-          'Geneva bilateral compromise',
-          'Detaching Egypt from Arab bloc',
-        ],
+        clue: "Why was the return of the Abu Rudeis oilfields so vital for Egypt's economy?",
         date: 'Sept 1975',
         title: 'The Sinai II Agreement',
-        actor: 'Egyptian & Israeli Governments',
-        tag: 'Renouncing Force',
-        trigger:
-          'Egypt and Israel sign Sinai II in Geneva, committing both nations to resolve their territorial disputes exclusively by peaceful means.',
-        because:
-          'Sadat urgently needed to rebuild Egypt’s shattered domestic economy, while Israel sought to detach Egypt from the Arab military coalition.',
-        therefore:
-          'Israel withdrew further into Sinai, returning the Abu Rudeis oilfields, while Egypt formally pledged not to resort to military force.',
-        connective:
-          'However, political leadership in Israel shifted sharply to the right, threatening negotiations...',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Election in Israel',
-          'Menachem Begin wins',
-          'Labour party loses',
-          'Tough leader takes over',
-        ],
-        stretchKeywords: [
-          'Likud right-wing triumph',
-          'End of 29-year Labour dominance',
+        keywords: [
+          'Menachem Begin (Likud leader) elected',
+          'Ends 29 years of unbroken Labour rule',
           'Revisionist Zionist ideology',
-          'Hardline stance on West Bank',
+          'West Bank claimed as Judea and Samaria',
+          'Fears of renewed Middle East war',
         ],
+        clue: 'Why did Menachem Begin’s 1977 election make a peace agreement seem impossible?',
         date: 'May 1977',
         title: 'Likud Election Victory (Menachem Begin)',
-        actor: 'Menachem Begin & The Likud Party',
-        tag: 'Right-Wing Triumph',
-        trigger:
-          'Menachem Begin leads the right-wing Likud party to an election victory, ending 29 years of unbroken Labour rule in Israel.',
-        because:
-          'Israeli voters were disillusioned by Labour’s military unpreparedness in 1973 and sought stronger, uncompromising leadership.',
-        therefore:
-          'Begin took power as a hardline ideological Zionist opposed to returning the West Bank, making peace appear completely impossible.',
-        connective:
-          'To break this dangerous diplomatic impasse, President Sadat made an astonishing unilateral gamble...',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Sadat flies to Israel',
-          'Speaks to Israeli parliament',
-          'Says "No more war"',
-          'Historic peace visit',
+        keywords: [
+          'Anwar Sadat lands at Ben-Gurion Airport',
+          'Historic address to the Israeli Knesset',
+          '"No more war, no more bloodshed"',
+          'Shatters 30 years of Arab diplomatic taboos',
+          'Paves direct way to Camp David Summit',
         ],
-        stretchKeywords: [
-          'Historic Knesset address',
-          'Shattering psychological barriers',
-          'Direct bilateral breakthrough',
-          'Bypassing Arab taboos',
-        ],
+        clue: 'Why was Sadat’s speech to the Israeli Knesset such a profound psychological breakthrough?',
         date: '19–21 Nov 1977',
         title: 'Sadat’s Historic Journey to Jerusalem',
-        actor: 'President Anwar Sadat & The Israeli Knesset',
-        tag: 'The Psychological Breakthrough',
-        trigger:
-          'Sadat flies to Tel Aviv and addresses the Israeli Knesset in Jerusalem, declaring directly to the Israeli people: "No more war."',
-        because:
-          'Sadat realised that mutual fear and psychological barriers prevented peace, and that only a dramatic gesture could unlock direct talks.',
-        therefore:
-          'Electrified world opinion, shattered 30 years of Arab diplomatic taboos, and paved the way directly to the Camp David Summit.',
-        connective:
-          'Sadat’s courage opened the door to intense tripartite negotiations at the presidential retreat of Camp David...',
       },
     ],
     vocabPrompt:
@@ -281,143 +210,72 @@ const kt3Configs = [
       'Why were the Camp David Accords signed, and why did they provoke violent fury across the Arab world?',
     subTitle: 'Key Topic 3.2: The Camp David Accords & The Treaty of Washington (1978–1982)',
     title: 'KT3.2: Camp David Accords & The Treaty of Washington (1978–1982)',
-    specAnchor:
-      'The role of US President Jimmy Carter; the Camp David negotiations (September 1978); the two frameworks of the Camp David Accords; the Egyptian-Israeli Peace Treaty (Treaty of Washington, March 1979); the phased return of Sinai and the evacuation of Yamit (1982); Arab state backlash, the Arab League boycott, and the assassination of Anwar Sadat (October 1981).',
+    specAnchor: `The <strong>role of US President Jimmy Carter</strong>; the <strong>Camp David negotiations (Sept 1978)</strong>; the <strong>two frameworks of the Camp David Accords</strong>; the <strong>Egyptian-Israeli Peace Treaty (Treaty of Washington, March 1979)</strong>; the <strong>phased return of Sinai</strong>; <strong>Arab state backlash and the Arab League boycott</strong>; and the <strong>assassination of Anwar Sadat (October 1981)</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Camp David retreat',
-          'President Jimmy Carter',
-          '13 days of secret talks',
-          'Sadat and Begin meet',
+        keywords: [
+          'President Jimmy Carter presidential retreat',
+          '13 days of intense secret isolation',
+          'Near collapse over settlements & West Bank',
+          "Carter's personal shuttle diplomacy",
+          'Billions in US financial & military aid promised',
         ],
-        stretchKeywords: [
-          'Presidential mediation pressure',
-          'Isolated Maryland summit',
-          'Near-breakdown over settlements',
-          'Billions in US financial aid',
-        ],
+        clue: 'How did Jimmy Carter prevent the 13-day Camp David summit from collapsing?',
         date: '5–17 Sept 1978',
         title: 'The Camp David Summit',
-        actor: 'Jimmy Carter, Anwar Sadat & Menachem Begin',
-        tag: 'Presidential Isolation',
-        trigger:
-          'US President Jimmy Carter isolates Sadat and Begin at Camp David for 13 days of grueling, closed-door negotiations.',
-        because:
-          'Bilateral talks had collapsed over Israeli settlements in Sinai and Begin’s refusal to grant Palestinian national sovereignty.',
-        therefore:
-          'Carter’s personal diplomacy and promises of billions in US economic and military aid saved the summit from total failure.',
-        connective:
-          'The intense 13-day summit produced two historic but fundamentally unequal framework documents...',
       },
       {
         step: 2,
-        coreKeywords: [
-          'Two peace frameworks',
-          'Sinai returned to Egypt',
-          'Self-rule for Palestinians',
-          'Palestinians reject deal',
+        keywords: [
+          'Framework for Egyptian-Israeli peace',
+          'Second framework for Palestinian autonomy',
+          'Begin refuses to surrender West Bank',
+          'PLO & Palestinians reject framework as sham',
+          'Arab world brands deal a betrayal',
         ],
-        stretchKeywords: [
-          'Bilateral peace vs Palestinian autonomy',
-          'Begin West Bank sovereignty refusal',
-          'Rejection by PLO as sham',
-          'Unequal dual frameworks',
-        ],
+        clue: 'Why did Palestinian leaders reject the second Camp David framework?',
         date: 'Sept 1978',
         title: 'The Dual Framework Agreements',
-        actor: 'The United States, Egypt & Israel',
-        tag: 'The Two Accords',
-        trigger:
-          'The leaders sign two frameworks: one for complete Israeli withdrawal from Sinai, and a second vague framework for Palestinian self-government.',
-        because:
-          'Begin agreed to trade Sinai for peace, but adamantly refused to surrender Israeli military control over the West Bank and Gaza.',
-        therefore:
-          'Created deep division: Egypt secured its lost territory, but Palestinians rejected the second framework as an empty sham.',
-        connective:
-          'The bilateral framework was formally transformed into a binding international peace treaty...',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Peace treaty signed',
-          'White House lawn ceremony',
-          'Handshake with Carter',
-          'All 18 settlements removed',
+        keywords: [
+          'Treaty of Washington signed on White House lawn',
+          'Sadat, Begin & Carter historic handshake',
+          '31 years of official war ended',
+          'Phased return of entire Sinai to 1982',
+          'Yamit Jewish settlement bulldozed',
         ],
-        stretchKeywords: [
-          'Treaty of Washington ratified',
-          'Phased Sinai return (to 1982)',
-          'Yamit settlement bulldozed',
-          'Demilitarised border security',
-        ],
+        clue: 'What territorial concessions did Israel make under the 1979 Peace Treaty?',
         date: '26 March 1979',
         title: 'The Egypt-Israel Peace Treaty',
-        actor: 'Sadat, Begin & Carter',
-        tag: 'Peace on the White House Lawn',
-        trigger:
-          'Sadat and Begin sign the formal peace treaty on the White House lawn, officially ending 31 years of war between Egypt and Israel.',
-        because:
-          'Both nations sought an enduring bilateral peace guaranteed by massive American financial and military assistance.',
-        therefore:
-          'Israel agreed to dismantle all 18 Sinai settlements and return the peninsula; Egypt recognised Israel and opened diplomatic ties.',
-        connective:
-          'While celebrated in the West, Egypt’s separate peace provoked immense outrage across the Arab world...',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Arab countries furious',
-          'Egypt kicked out of Arab League',
-          'Offices moved to Tunis',
-          'Sadat called a traitor',
+        keywords: [
+          'Baghdad Arab Summit condemns Sadat',
+          'Egypt expelled from the Arab League',
+          'Arab League headquarters moved to Tunis',
+          'Arab diplomatic & economic embargo',
+          'Egypt totally isolated in the Arab world',
         ],
-        stretchKeywords: [
-          'Baghdad Arab Summit boycott',
-          'Pan-Arab diplomatic exile',
-          'Severing of diplomatic relations',
-          'Isolation of Egyptian leadership',
-        ],
+        clue: 'Why did the Arab League expel Egypt after the Treaty of Washington?',
         date: 'March–Nov 1979',
         title: 'The Arab League Boycott of Egypt',
-        actor: 'The Arab League & PLO',
-        tag: 'Total Pan-Arab Isolation',
-        trigger:
-          'The Arab League condemns Egypt as a traitor to the Arab cause, suspends Egypt’s membership, and relocates its headquarters from Cairo to Tunis.',
-        because:
-          'Arab states and Palestinians viewed Sadat’s separate peace as an unforgivable betrayal that removed the Arab world’s strongest army from the struggle.',
-        therefore:
-          'Egypt was completely isolated diplomatically and economically in the Arab world, leaving Palestinians feeling abandoned.',
-        connective:
-          'Violent fury within Egypt culminated in extreme tragedy for the architect of the peace treaty...',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Sadat assassinated',
-          'Military parade in Cairo',
-          'Gunmen shoot president',
-          'Mubarak takes over',
+        keywords: [
+          'Cairo military victory parade',
+          'Egyptian Islamic Jihad assassins open fire',
+          'Sadat shot dead on review stand',
+          'Revenge for peace with Israel & mass arrests',
+          'Hosni Mubarak takes over & upholds treaty',
         ],
-        stretchKeywords: [
-          'Egyptian Islamic Jihad militants',
-          'Revenge for Camp David peace',
-          'Martyr of bilateral diplomacy',
-          'Hosni Mubarak reaffirms treaty',
-        ],
+        clue: 'Why did Egyptian Islamic Jihad target Anwar Sadat in October 1981?',
         date: '6 October 1981',
         title: 'The Assassination of Anwar Sadat',
-        actor: 'Egyptian Islamic Jihad Militants',
-        tag: 'Martyr of Camp David',
-        trigger:
-          'Islamist army officers open fire on Sadat during a military victory parade in Cairo, assassinating him on the anniversary of the 1973 crossing.',
-        because:
-          'Militants were enraged by Sadat’s peace treaty with Israel, his alliance with the US, and his arrest of hundreds of Islamic opponents.',
-        therefore:
-          'Shook the Middle East, but Vice President Hosni Mubarak assumed the presidency and vowed to maintain the 1979 peace treaty.',
-        connective:
-          'With its southern border secure, Israel turned its military attention to PLO bases in Lebanon...',
       },
     ],
     vocabPrompt:
@@ -491,143 +349,72 @@ const kt3Configs = [
     subTitle:
       'Key Topic 3.3: The Palestinian Issue in Lebanon: Litani to Sabra-Shatila (1974–1985)',
     title: 'KT3.3: The Palestinian Issue in Lebanon (1974–1985)',
-    specAnchor:
-      'The PLO in Lebanon and 1978 Coastal Road attack; Operation Litani; the 1982 invasion (Operation Peace for Galilee); the siege of Beirut and PLO evacuation to Tunis; the Sabra and Shatila massacres (1982); the Kahan Commission inquiry and Sharon’s resignation.',
+    specAnchor: `The <strong>PLO in Lebanon and the 1978 Coastal Road attack</strong>; <strong>Operation Litani (1978)</strong>; the <strong>1982 Israeli invasion of Lebanon (Operation Peace for Galilee)</strong>; the <strong>siege of West Beirut and PLO evacuation to Tunis</strong>; the <strong>Sabra and Shatila massacres (Sept 1982)</strong>; and the <strong>Kahan Commission inquiry and Sharon’s resignation</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Bus hijacking near Tel Aviv',
-          'Israel invades Lebanon',
-          'Pushing PLO back',
-          'UN peacekeepers arrive',
+        keywords: [
+          'Fatah Coastal Road bus hijack (38 dead)',
+          'Operation Litani IDF invasion',
+          '25,000 troops advance to Litani River',
+          'UN Security Council Resolution 425',
+          'UNIFIL peacekeepers & Christian militia buffer',
         ],
-        stretchKeywords: [
-          'Operation Litani buffer zone',
-          'UN Resolution 425 (UNIFIL)',
-          'South Lebanon Army proxy',
-          '100,000 civilians displaced',
-        ],
+        clue: 'What was the military objective of Operation Litani in southern Lebanon?',
         date: 'March 1978',
         title: 'Operation Litani & The Border Buffer',
-        actor: 'IDF & Palestinian Guerrillas',
-        tag: 'The First Incursion',
-        trigger:
-          'Following a deadly coastal road bus hijacking near Tel Aviv, the IDF invades southern Lebanon up to the Litani River.',
-        because:
-          'The PLO used southern Lebanon ("Fatahland") as a staging ground to fire Katyusha rockets and launch raids into northern Israel.',
-        therefore:
-          'Displaced 100,000 Lebanese civilians; UN Resolution 425 established UNIFIL peacekeepers and a Christian militia buffer zone.',
-        connective:
-          'PLO cross-border shelling continued, prompting Israeli defence leaders to plan a much larger invasion...',
       },
       {
         step: 2,
-        coreKeywords: [
-          'Ambassador shot in London',
-          'Full invasion of Lebanon',
-          'Ariel Sharon in charge',
-          'Tanks drive to Beirut',
+        keywords: [
+          'Ambassador Shlomo Argov shot in London',
+          'Full-scale invasion of Lebanon launched',
+          'Defence Minister Ariel Sharon',
+          'Armored columns advance 60 miles to Beirut',
+          'Cabinet 40km limit secretly bypassed',
         ],
-        stretchKeywords: [
-          'Operation Peace for Galilee',
-          'Bypassing 40km cabinet limit',
-          '60-mile drive to Lebanese capital',
-          'Goal to destroy PLO bases',
-        ],
+        clue: "Why did Ariel Sharon expand the invasion far beyond the cabinet's 40km limit?",
         date: '6 June 1982',
         title: 'Operation Peace for Galilee Launched',
-        actor: 'Defence Minister Ariel Sharon & The IDF',
-        tag: 'The Full-Scale Invasion',
-        trigger:
-          'Following the shooting of Israeli ambassador Shlomo Argov in London, Israel launches a massive air and ground invasion of Lebanon.',
-        because:
-          'Ariel Sharon was determined to eradicate the PLO’s military infrastructure in Lebanon and install a friendly Christian government in Beirut.',
-        therefore:
-          'Sharon’s armored columns bypassed the government’s authorised 40km zone, advancing rapidly all the way to the Lebanese capital.',
-        connective:
-          'Israeli forces laid siege to Beirut, trapping thousands of Palestinian fighters and Lebanese civilians...',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Beirut surrounded',
-          'Two months of bombing',
-          'PLO leaves by ship',
-          'Arafat headquarters moved to Tunis',
-        ],
-        stretchKeywords: [
+        keywords: [
           'Ten-week siege of West Beirut',
-          'Philip Habib mediated ceasefire',
-          '14,000 fighters evacuated',
-          'PLO exile 1,500 miles away',
+          'Heavy IDF shelling & aerial bombardment',
+          'US envoy Philip Habib brokers ceasefire',
+          '14,000 PLO fighters evacuated by ship',
+          'Arafat moves headquarters to Tunis (1,500 mi)',
         ],
+        clue: 'Why did the evacuation of the PLO to Tunis weaken Arafat’s military power?',
         date: 'June–Aug 1982',
         title: 'The Siege of Beirut & PLO Evacuation',
-        actor: 'IDF, PLO & US Diplomat Philip Habib',
-        tag: 'The Beirut Siege',
-        trigger:
-          'The IDF bombards West Beirut with heavy artillery and airstrikes for two months until US envoy Philip Habib brokers a ceasefire.',
-        because:
-          'Arafat and 14,000 PLO fighters were encircled in the city, using urban neighborhoods as defensive fortifications.',
-        therefore:
-          'The PLO agreed to evacuate Beirut by sea under international protection, relocating its political headquarters 1,500 miles away to Tunis.',
-        connective:
-          'The withdrawal of PLO fighters left Palestinian refugee camps unprotected when Christian leader Bachir Gemayel was assassinated...',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Lebanese Christian militia',
-          'Refugee camps attacked',
-          'Unarmed civilians killed',
-          'Israeli flares in the sky',
+        keywords: [
+          'Lebanese President Gemayel assassinated',
+          'Christian Phalangist militiamen enter camps',
+          '800 to 3,500 unarmed refugees slaughtered',
+          'IDF controls perimeter & fires night flares',
+          'Worldwide moral outrage at Israeli complicity',
         ],
-        stretchKeywords: [
-          'Phalangist revenge killings',
-          'Sabra and Shatila slaughter',
-          'IDF perimeter encirclement',
-          'Global outcry over complicity',
-        ],
+        clue: 'Why was Israel held internationally accountable for the Phalangist massacre?',
         date: '16–18 Sept 1982',
         title: 'The Sabra and Shatila Massacre',
-        actor: 'Lebanese Christian Phalangists & The IDF',
-        tag: 'Camp Slaughter',
-        trigger:
-          'Christian Phalangist militiamen enter the Sabra and Shatila refugee camps, slaughtering between 800 and 3,500 unarmed Palestinian civilians.',
-        because:
-          'Phalangists sought bloody revenge for the assassination of their leader, President-elect Bachir Gemayel.',
-        therefore:
-          'The IDF controlled the camp perimeter and fired illumination flares over the camps, sparking global outrage at Israeli complicity.',
-        connective:
-          'Horror at the massacre triggered massive political upheaval and public protests within Israel...',
       },
       {
         step: 5,
-        coreKeywords: [
-          '400,000 protest in Tel Aviv',
-          'Official investigation',
-          'Sharon loses minister job',
-          'Prime Minister Begin resigns',
+        keywords: [
+          '400,000 Israelis protest in Tel Aviv',
+          'Judicial Kahan Commission of Inquiry',
+          'Sharon found "personally responsible"',
+          'Sharon forced to resign as Defence Minister',
+          'Begin resigns as Prime Minister (Aug 1983)',
         ],
-        stretchKeywords: [
-          'Kahan Commission of Inquiry',
-          '"Personal responsibility" ruling',
-          'Ariel Sharon forced resignation',
-          'Rise of Peace Now movement',
-        ],
+        clue: 'What were the findings of the Kahan Commission regarding Ariel Sharon?',
         date: 'Feb 1983',
         title: 'The Kahan Commission & Israeli Protests',
-        actor: 'The Israeli Judiciary & The Peace Now Movement',
-        tag: 'Judicial Verdict',
-        trigger:
-          '400,000 Israelis protest in Tel Aviv, forcing the government to establish the independent Kahan Commission of Inquiry.',
-        because:
-          'The Israeli public was shocked by the brutality of the massacres and demanded accountability for military command decisions.',
-        therefore:
-          'The commission ruled Ariel Sharon bore "personal responsibility" for failing to prevent the slaughter, forcing his resignation as Defence Minister.',
-        connective:
-          'With the PLO exiled in Tunis, grassroots frustration inside the occupied territories boiled over into spontaneous rebellion...',
       },
     ],
     vocabPrompt:
@@ -684,143 +471,72 @@ const kt3Configs = [
       'Why did the First Intifada break out in December 1987, and how did changing superpower relations reshape Middle East diplomacy?',
     subTitle: 'Key Topic 3.4: The First Intifada & Changing Superpower Dynamics (1987–1992)',
     title: 'KT3.4: First Intifada & Superpower Shifts (1987–1992)',
-    specAnchor:
-      'The First Intifada (1987–93): causes, events and the Israeli response; the roles of the PLO and the founding of Hamas (1987); Arafat’s Geneva speech (1988); the collapse of the Soviet Union and Soviet Jewish immigration; US loan guarantees and West Bank settlement disputes; the 1990–91 Gulf War; the 1991 Madrid Peace Conference; the 1992 Israeli election of Yitzhak Rabin.',
+    specAnchor: `The <strong>First Intifada (1987–93)</strong>: <strong>causes, events, and the Israeli "Iron Fist" response</strong>; the <strong>role of the PLO and the founding of Hamas (1987)</strong>; <strong>Arafat’s Geneva speech to the UN renouncing terrorism (1988)</strong>; <strong>collapse of the Soviet Union</strong>; the <strong>1990–91 Gulf War</strong>; the <strong>1991 Madrid Peace Conference</strong>; and the <strong>1992 Israeli election of Yitzhak Rabin</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Army truck crash',
-          'Four workers killed',
-          'Funerals turn to riots',
-          'First Intifada begins',
+        keywords: [
+          'IDF tank transporter crashes at checkpoint',
+          'Four Palestinian workers from Jabalia killed',
+          'Rumors of deliberate Israeli retaliation',
+          'Funerals explode into mass rioting',
+          'Spontaneous uprising across Gaza & West Bank',
         ],
-        stretchKeywords: [
-          'Jabalia refugee camp spark',
-          'Erez checkpoint collision',
-          'Spontaneous uprising spreads',
-          'Twenty years of military rule',
-        ],
+        clue: 'Why did a traffic collision at the Erez checkpoint spark the First Intifada?',
         date: '8 Dec 1987',
         title: 'The Jabalia Traffic Spark',
-        actor: 'Palestinian Civilians & The IDF',
-        tag: 'The Catalyst',
-        trigger:
-          'An Israeli army tank transporter crashes into four civilian cars at the Erez checkpoint, killing four Palestinian laborers from Jabalia camp.',
-        because:
-          'Rumors spread that the crash was a deliberate revenge attack for the stabbing of an Israeli salesman in Gaza.',
-        therefore:
-          'Funerals turned into furious mass protests, quickly spreading across the entire Gaza Strip and the West Bank as the First Intifada.',
-        connective:
-          'What began as spontaneous riots transformed into an organised, grassroots campaign of civil disobedience...',
       },
       {
         step: 2,
-        coreKeywords: [
-          'Throwing stones at tanks',
-          'Strikes and boycotts',
-          'Yitzhak Rabin "break bones"',
-          'Beating scenes on TV',
+        keywords: [
+          'Youths throwing stones vs armed soldiers',
+          'Commercial strikes & tax boycotts',
+          'Defence Minister Rabin "break their bones"',
+          'Global TV footage of soldiers beating youths',
+          'IDF moral authority & image shattered',
         ],
-        stretchKeywords: [
-          'Grassroots civil disobedience',
-          'Unified National Leadership (UNLU)',
-          'Iron Fist policy televised',
-          'Shattered moral standing of IDF',
-        ],
+        clue: 'How did global television broadcasts of the "Iron Fist" policy damage Israel?',
         date: '1987–1988',
         title: 'Popular Uprising & The "Iron Fist" Policy',
-        actor: 'Palestinian Youths vs. Defence Minister Yitzhak Rabin',
-        tag: 'Stones vs. Bullets',
-        trigger:
-          'Palestinian youths wage continuous stone-throwing protests and commercial strikes; Rabin orders the IDF to use "force, might, and beatings."',
-        because:
-          'Twenty years of Israeli military occupation, land confiscations, and economic subjugation had left Palestinian youth with nothing to lose.',
-        therefore:
-          'Global television broadcasts of Israeli soldiers beating teenage protesters shattered Israel’s international image and moral authority.',
-        connective:
-          'As the secular uprising escalated, a militant Islamic faction emerged to challenge PLO leadership...',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Hamas founded in Gaza',
-          'Sheikh Ahmed Yassin',
-          'Islamic resistance group',
-          'Refuses peace with Israel',
+        keywords: [
+          'Sheikh Ahmed Yassin (Muslim Brotherhood)',
+          'Hamas founded as Islamic Resistance',
+          '1988 Hamas Covenant: all Palestine Islamic Waqf',
+          'Rejection of any diplomatic compromise',
+          'Challenges secular authority of the PLO',
         ],
-        stretchKeywords: [
-          'Hamas Covenant published (1988)',
-          'Palestine as sacred Islamic Waqf',
-          'Suicide bombing doctrine',
-          'Challenge to PLO secular diplomacy',
-        ],
+        clue: 'Why did the rise of Hamas threaten Yasser Arafat and the PLO’s leadership?',
         date: 'Dec 1987',
         title: 'The Founding of Hamas in Gaza',
-        actor: 'Sheikh Ahmed Yassin & The Muslim Brotherhood',
-        tag: 'The Islamic Alternative',
-        trigger:
-          'Paraplegic cleric Sheikh Ahmed Yassin founds Hamas in Gaza, publishing an Islamic Covenant rejecting any territorial compromise.',
-        because:
-          'Religious militants believed the secular PLO was weak, corrupt, and ineffective in ending the Israeli occupation.',
-        therefore:
-          'Introduced suicide bombings and militant Islamic ideology, dividing Palestinian leadership between secular diplomacy and religious resistance.',
-        connective:
-          'Feeling his leadership slipping away, Yasser Arafat made a radical diplomatic pivot on the international stage...',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Arafat speaks to UN',
-          'Gives up terrorism',
-          'Recognises Israel',
-          'US opens talks with PLO',
+        keywords: [
+          'UN General Assembly moves to Geneva',
+          'Arafat explicitly renounces terrorism',
+          'Accepts UN Resolutions 242 & 338',
+          'Recognises State of Israel’s right to exist',
+          'US opens direct diplomatic dialogue with PLO',
         ],
-        stretchKeywords: [
-          'Geneva UN General Assembly address',
-          'Acceptance of UN Resolution 242',
-          'Two-state solution legitimacy',
-          'Direct US-PLO diplomatic dialogue',
-        ],
+        clue: 'Why was Arafat’s 1988 Geneva speech a historic turning point for the PLO?',
         date: '13 Dec 1988',
         title: 'Arafat’s Geneva Speech to the UN',
-        actor: 'Yasser Arafat & The UN General Assembly',
-        tag: 'Renouncing Terrorism',
-        trigger:
-          'Arafat addresses the UN General Assembly in Geneva, explicitly renouncing terrorism and recognising Israel’s right to exist in peace (UN Res 242).',
-        because:
-          'Arafat urgently needed to break the diplomatic blockade imposed by the United States and establish direct US-PLO dialogue.',
-        therefore:
-          'Washington immediately opened formal diplomatic talks with the PLO, legitimising the two-state solution internationally.',
-        connective:
-          'The collapse of the Soviet Union and the 1991 Gulf War transformed the geopolitical balance of power...',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Gulf War ends',
-          'Peace meeting in Madrid',
-          'President Bush and Gorbachev',
-          'Arabs and Israelis face-to-face',
+        keywords: [
+          'US victory in 1991 Gulf War',
+          'Pres Bush & Gorbachev convene summit',
+          'Arabs & Israelis face-to-face for first time',
+          'Palestinians represented in Jordanian delegation',
+          'Framework established for future bilateral talks',
         ],
-        stretchKeywords: [
-          'Madrid Peace Conference (1991)',
-          'Post-Cold War US hegemony',
-          'First face-to-face negotiations',
-          'Bypassing rejected PLO members',
-        ],
+        clue: 'Why did the end of the Cold War and the Gulf War make the Madrid Conference possible?',
         date: 'Oct 1991',
         title: 'The Madrid Peace Conference',
-        actor: 'The USA, The USSR, Israel & Arab Neighbours',
-        tag: 'The Face-to-Face Summit',
-        trigger:
-          'Following victory in the 1991 Gulf War, US President Bush and Soviet President Gorbachev convene the historic Madrid Peace Conference.',
-        because:
-          'The US held unchallenged superpower dominance and wanted to reward Arab allies who had joined the coalition against Saddam Hussein.',
-        therefore:
-          'Brought Israeli, Jordanian, Syrian, Lebanese, and Palestinian delegates together in the same room for face-to-face talks for the first time.',
-        connective:
-          'While formal talks in Madrid stalled, secret backchannel contacts began in Scandinavia...',
       },
     ],
     vocabPrompt:
@@ -894,143 +610,72 @@ const kt3Configs = [
       'Why were the Oslo Accords signed in 1993, and why did the peace process collapse into violence by 1995?',
     subTitle: 'Key Topic 3.5: The Oslo Peace Accords, Areas A/B/C & The Road to 1995 (1992–1995)',
     title: 'KT3.5: The Oslo Accords & Rabin’s Assassination (1992–1995)',
-    specAnchor:
-      'The 1992 Labour victory of Yitzhak Rabin; secret Oslo negotiations and Letters of Mutual Recognition (1993); the Oslo I Accord; 1994 Israel-Jordan Peace Treaty; extremist opposition including Hamas suicide bombings and the Hebron massacre; Oslo II (Areas A, B, C); the assassination of Yitzhak Rabin (1995).',
+    specAnchor: `The <strong>1992 Labour victory of Yitzhak Rabin</strong>; <strong>secret Oslo backchannel negotiations</strong> and <strong>Letters of Mutual Recognition (1993)</strong>; the <strong>Oslo I Accord (Declaration of Principles)</strong>; the <strong>1994 Israel-Jordan Peace Treaty</strong>; <strong>extremist opposition (Hamas suicide bombings and the Hebron massacre)</strong>; <strong>Oslo II (partition of the West Bank into Areas A, B, and C)</strong>; and the <strong>assassination of Yitzhak Rabin (Nov 1995)</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Yitzhak Rabin elected',
-          'Labour party wins',
-          'Promises peace in 9 months',
-          'Freezes some settlements',
+        keywords: [
+          'Yitzhak Rabin elected Prime Minister',
+          'Ends 15 years of Likud dominance',
+          'Pledges peace within nine months',
+          'Freeze on political West Bank settlements',
+          'Public exhaustion with the First Intifada',
         ],
-        stretchKeywords: [
-          'Labour electoral victory',
-          'Mandate for compromise',
-          'Exhaustion with Intifada',
-          'Direct Palestinian channel approval',
-        ],
+        clue: 'What mandate did Israeli voters give Yitzhak Rabin and Labour in 1992?',
         date: 'June 1992',
         title: 'The Election of Yitzhak Rabin',
-        actor: 'Yitzhak Rabin & The Israeli Labour Party',
-        tag: 'The Mandate for Peace',
-        trigger:
-          'Israeli voters elect Yitzhak Rabin and the Labour Party, ending 15 years of Likud dominance on a pledge to achieve peace within nine months.',
-        because:
-          'The Israeli public was exhausted by five years of the First Intifada and feared the demographic growth of the Palestinian population.',
-        therefore:
-          'Rabin halted new political settlement building in the West Bank and authorised direct diplomatic contacts with Palestinian representatives.',
-        connective:
-          'Frustrated by public delays in Washington, negotiators opened an ultra-secret backchannel in Norway...',
       },
       {
         step: 2,
-        coreKeywords: [
-          'Secret talks in Norway',
-          'Quiet meetings away from press',
-          'Israel recognises PLO',
-          'PLO recognises Israel',
+        keywords: [
+          'Covert talks in Norwegian farmhouses',
+          'Away from media grandstanding & leaks',
+          'Letters of Mutual Recognition signed',
+          'Rabin recognises PLO as Palestinian representative',
+          'Arafat recognises Israel & renounces violence',
         ],
-        stretchKeywords: [
-          'Secret backchannel diplomacy',
-          'Terje Rød-Larsen facilitation',
-          'Letters of Mutual Recognition',
-          'Renouncing violence in writing',
-        ],
+        clue: 'Why was strict secrecy essential for the Oslo negotiators in Norway?',
         date: 'Jan–Aug 1993',
         title: 'Secret Backchannel Negotiations in Oslo',
-        actor: 'Israeli Academics, PLO Delegates & Norwegian Facilitators',
-        tag: 'Secret Scandinavian Diplomacy',
-        trigger:
-          'Covert talks in Norwegian farmhouses produce the breakthrough Letters of Mutual Recognition between Israel and the PLO.',
-        because:
-          'Secrecy allowed negotiators to speak honestly without political grandstanding or leaks to domestic extremists.',
-        therefore:
-          'Rabin officially recognised the PLO as the legitimate representative of Palestinians; Arafat officially recognised Israel and renounced terror.',
-        connective:
-          'Mutual recognition made possible an unprecedented public signing ceremony in Washington...',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Signing on White House lawn',
-          'Famous handshake',
-          'President Clinton',
-          'Self-rule in Gaza and Jericho',
-        ],
-        stretchKeywords: [
+        keywords: [
           'Declaration of Principles (Oslo I)',
-          'Palestinian Authority (PA) created',
-          '"Gaza-Jericho First" formula',
-          'Interim five-year self-rule',
+          'Signing ceremony on White House lawn',
+          'Historic Rabin-Arafat handshake (Clinton)',
+          'Palestinian Authority (PA) established',
+          '"Gaza-Jericho First" interim self-rule',
         ],
+        clue: 'What did the "Gaza-Jericho First" formula provide for Palestinians?',
         date: '13 Sept 1993',
-        title: 'Oslo I (Declaration of Principles) & White House Handshake',
-        actor: 'Yitzhak Rabin, Yasser Arafat & Bill Clinton',
-        tag: 'The Historic Handshake',
-        trigger:
-          'On the White House lawn, Rabin and Arafat sign the Oslo I Accord and share a historic handshake orchestrated by President Clinton.',
-        because:
-          'Both leaders recognised that decades of armed conflict had reached a military stalemate that only political compromise could resolve.',
-        therefore:
-          'Established the Palestinian Authority (PA) with five years of interim self-rule, starting in Gaza and Jericho ("Gaza-Jericho First").',
-        connective:
-          'However, extremists on both sides were determined to sabotage the peace agreement through terror...',
+        title: 'Oslo I (Declaration of Principles) & Handshake',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Mosque shooting in Hebron',
-          'Hamas bus bombings',
-          'Peace with Jordan',
-          'West Bank split into Areas A, B, C',
+        keywords: [
+          'Hebron Cave of Patriarchs massacre (29 dead)',
+          'Hamas bus suicide bombing campaign',
+          'Israel-Jordan Peace Treaty signed (1994)',
+          'Oslo II Accord: West Bank divided',
+          'Area A (PA), Area B (Joint), Area C (IDF)',
         ],
-        stretchKeywords: [
-          'Baruch Goldstein extremist terror',
-          'Bus suicide bombing campaign',
-          'Israel-Jordan Peace Treaty (1994)',
-          'Oslo II partition of West Bank',
-        ],
+        clue: 'How did the division of the West Bank into Areas A, B, and C leave territory fragmented?',
         date: '1994–1995',
         title: 'Extremist Violence, Jordan Peace & Oslo II',
-        actor: 'Baruch Goldstein, Hamas Militants & King Hussein',
-        tag: 'The Violent Backlash',
-        trigger:
-          'Baruch Goldstein murders 29 Palestinians in Hebron; Hamas launches bus suicide bombings; King Hussein signs the Israel-Jordan Peace Treaty.',
-        because:
-          'Jewish and Islamist extremists both viewed territorial compromise as an existential betrayal of their sacred religious duties.',
-        therefore:
-          'Polarised both societies; nonetheless, Rabin and Arafat signed Oslo II (1995), dividing the West Bank into Areas A, B, and C.',
-        connective:
-          'Growing hatred and right-wing incitement inside Israel culminated in an act of domestic terror that changed history...',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Rabin shot at peace rally',
-          'Jewish extremist assassin',
-          'Tel Aviv square',
-          'Peace process in crisis',
+        keywords: [
+          'Massive peace rally in Tel Aviv',
+          'Yigal Amir Jewish religious extremist',
+          'Rabin shot point-blank walking to car',
+          'Religious opposition to ceding biblical land',
+          'Shatters the momentum of the Oslo peace process',
         ],
-        stretchKeywords: [
-          'Yigal Amir extremist gunman',
-          'Point-blank assassination',
-          'Trauma to Israeli peace movement',
-          'Netanyahu 1996 election victory',
-        ],
+        clue: 'Why did Jewish extremist Yigal Amir assassinate Prime Minister Yitzhak Rabin?',
         date: '4 Nov 1995',
         title: 'The Assassination of Yitzhak Rabin',
-        actor: 'Yigal Amir & The Israeli Nation',
-        tag: 'The Tragedy of Peace',
-        trigger:
-          'Jewish religious extremist Yigal Amir shoots Prime Minister Yitzhak Rabin three times at point-blank range following a peace rally in Tel Aviv.',
-        because:
-          'Amir believed that surrendering biblical Jewish land to the Palestinians was an act of treason forbidden by Jewish religious law.',
-        therefore:
-          'Traumatised Israel, halted further territorial withdrawals, and led to the narrow election of right-wing Likud leader Benjamin Netanyahu in 1996.',
-        connective:
-          'Rabin’s death effectively shattered the momentum of the Oslo peace process, leaving its promise unfulfilled...',
       },
     ],
     vocabPrompt:
@@ -1333,7 +978,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       ],
     },
     footerQuip: approvedFunnyFooters[0],
-    totalPageCount: 28,
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
@@ -1409,7 +1054,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, approvedFunnyFooters[1], 28)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 24)}
     </div>
   </div>
 
@@ -1481,7 +1126,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, approvedFunnyFooters[2], 28)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 24)}
     </div>
   </div>
   `;
@@ -1536,7 +1181,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Bullet Keywords • 38mm Width) -->
+            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
             <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
@@ -1547,17 +1192,31 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
                 ${s.title}
               </div>
               ${
+                (s.keywords && s.keywords.length > 0) ||
                 (s.coreKeywords && s.coreKeywords.length > 0) ||
                 (s.stretchKeywords && s.stretchKeywords.length > 0)
                   ? `
-              <div style="margin-top: 1.5px;">
+              <div style="margin-top: 1px;">
                 <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${[...(s.coreKeywords || []), ...(s.stretchKeywords || [])]
+                  ${(s.keywords || [...(s.coreKeywords || []), ...(s.stretchKeywords || [])])
                     .map(
                       (kw) =>
                         `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
                     )
                     .join('')}
+                </div>
+              </div>`
+                  : ''
+              }
+              ${
+                s.clue
+                  ? `
+              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
+                  Focus Clue
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
+                  ${s.clue}
                 </div>
               </div>`
                   : ''
@@ -1581,7 +1240,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1609,7 +1268,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1741,7 +1400,7 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
+      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1779,364 +1438,14 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
+      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 24)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 24: CARTOGRAPHIC MASTERCLASS & TERRITORIAL REFERENCE (VERSO)
-  // ====================================================================
-  html += `
-  <!-- PAGE 24: CARTOGRAPHIC MASTERCLASS & TERRITORIAL PARTITION REFERENCE -->
-  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Top Title Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
-            Key Topic 3 Cartographic Masterclass &bull; Territorial Partition (1974–1995)
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
-            Geographical Disciplinary Evidence
-          </span>
-        </div>
-      </div>
-
-      <!-- Two Authentic Historical Maps Side by Side -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 4px; flex: 1;">
-        
-        <!-- Map 1: Oslo II West Bank Partition -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
-                1. The Oslo II Accord (1995): Areas A, B &amp; C
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">MAP ARCHIVE</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
-              The 1995 Interim Agreement partitioned the West Bank into three distinct jurisdictions, creating a fragmented archipelago of Palestinian enclaves:
-            </p>
-          </div>
-          
-          <div style="text-align: center; margin: 2px 0;">
-            <img src="${osloMapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="Oslo II Areas Map">
-          </div>
-
-          <!-- Key Data Statistics Box -->
-          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>Area A (~18% of land, 55% of Palestinians):</strong> Full Palestinian Authority civil &amp; security control (Jenin, Nablus, Ramallah, Bethlehem, Jericho).</div>
-            <div>&bull; <strong>Area B (~22% of land, 41% of Palestinians):</strong> Palestinian civil control; joint Israeli security control.</div>
-            <div>&bull; <strong>Area C (~60% of land, 4% of Palestinians):</strong> Exclusive Israeli civil &amp; military control, containing all Israeli settlements, roads, and the Jordan Valley.</div>
-          </div>
-        </div>
-
-        <!-- Map 2: Southern Lebanon & Operation Litani / 1982 War -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
-                2. Southern Lebanon &bull; Litani to Beirut (1978–82)
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">IDF ARCHIVE</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
-              The strategic frontline of the PLO-Israeli conflict in Lebanon: from the 1978 Litani River buffer zone to the 1982 encirclement of West Beirut:
-            </p>
-          </div>
-
-          <div style="text-align: center; margin: 2px 0;">
-            <img src="${lebanonMapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="Lebanon Campaign Map">
-          </div>
-
-          <!-- Strategic Key Data Box -->
-          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>Operation Litani (1978):</strong> 25,000 IDF troops pushed PLO north of the Litani River; UNIFIL created under Res 425; South Lebanon Army proxy established.</div>
-            <div>&bull; <strong>Operation Peace for Galilee (1982):</strong> Advanced 60 miles beyond the 40km cabinet limit to encircle Beirut; 10-week siege evacuated 14,000 PLO fighters to Tunis.</div>
-            <div>&bull; <strong>Sabra &amp; Shatila (Sept 1982):</strong> Phalangist militia massacres in refugee camps; 400,000 march in Tel Aviv forcing Sharon’s resignation.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Cartographic Disciplinary Synthesis Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fafafa; margin-bottom: 2px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
-          Cartographic Disciplinary Insight: Why Did Geography Undermine the Peace Process?
-        </strong>
-        <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0; line-height: 1.22;">
-          Geographical reality was the decisive barrier to lasting peace. Under Oslo II, Area A consisted of 227 separate islands of Palestinian autonomy entirely surrounded by Area C. Israeli bypass roads, military checkpoints, and expanding settlements fragmented the West Bank into disconnected cantons, making a viable sovereign Palestinian state physically impossible without extensive Israeli territorial concessions that right-wing nationalists refused to concede.
-        </p>
-      </div>
-
-      ${renderFooterStrip(24, approvedFunnyFooters[23], 28)}
-    </div>
-  </div>
-  `;
-
-  <!-- ==================================================================== -->
-  <!-- PAGE 25: EXAM MASTERCLASS & SYNOPTIC THEMATIC SYNTHESIS (RECTO)      -->
-  <!-- ==================================================================== -->
-  html += `
-  <div class="page page-container recto-page" id="page-25" style="padding: 4mm 6mm;">
-    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-      
-      <!-- Top Departmental Branding -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Grade 9 Masterclass</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 3 EXAM EXCELLENCE</span>
-        </div>
-      </div>
-
-      <!-- Main Title Header -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1px;">
-            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
-              EXAM ARCHITECTURE
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-              Pearson Edexcel Paper 2 Assessment Rubric
-            </span>
-          </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; line-height: 1.15; margin: 0; font-weight: 900;">
-            Grade 9 Extended Writing Masterclass &amp; Mark Scheme Rubric
-          </h2>
-        </div>
-        <div style="text-align: right; border-left: 1.5px solid #000; padding-left: 10px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; display: block;">Target Standard</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900;">GRADE 9 (85%+)</span>
-        </div>
-      </div>
-
-      <!-- Section 1: Official Pearson Edexcel 8-Mark Level Descriptors -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
-        <div style="background: #000000; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; display: flex; justify-content: space-between;">
-          <span>1. Official Pearson Edexcel 8-Mark Level Descriptors &amp; Grade 9 Criteria</span>
-          <span>Narrative &amp; Utility</span>
-        </div>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.2;">
-          <thead>
-            <tr style="background: #f1f5f9; border-bottom: 1px solid #000;">
-              <th style="padding: 2px 6px; text-align: center; width: 65px; border-right: 1px solid #000;">Level</th>
-              <th style="padding: 2px 8px; text-align: left; border-right: 1px solid #000;">Official Pearson Standard</th>
-              <th style="padding: 2px 8px; text-align: left; width: 230px;">Actionable Pupil Guidance (How to Secure It)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #000; background: #fff;">
-              <td style="padding: 2px 6px; text-align: center; font-weight: 900; font-size: 7.2pt; border-right: 1px solid #000;">
-                Level 4<br><span style="font-size: 8pt;">7–8m</span>
-              </td>
-              <td style="padding: 2px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                Analytical explanation consistently directed to the question. Shows comprehensive, accurate knowledge. Sustained line of reasoning with explicit causal links.
-              </td>
-              <td style="padding: 2px 8px; font-weight: 600;">
-                &bull; Never say <em>'and then'</em>; explain <strong>HOW</strong> event A forced event B.<br>
-                &bull; Integrate at least 4 precise proper nouns/statistics per paragraph.<br>
-                &bull; Conclude each phase with an analytical verdict directly addressing the stem.
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000; background: #fafafa;">
-              <td style="padding: 2px 6px; text-align: center; font-weight: 800; font-size: 7.2pt; border-right: 1px solid #000;">
-                Level 3<br><span style="font-size: 8pt;">5–6m</span>
-              </td>
-              <td style="padding: 2px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                Accurate knowledge demonstrated with some causal structure, but sections lapse into chronological narrative without evaluating consequences.
-              </td>
-              <td style="padding: 2px 8px;">
-                &bull; Accurate chronology but descriptive narrative rather than analytical explanation.<br>
-                &bull; Weak transition connectives between phases.
-              </td>
-            </tr>
-            <tr style="background: #fff;">
-              <td style="padding: 2px 6px; text-align: center; font-weight: 800; font-size: 7.2pt; border-right: 1px solid #000;">
-                Level 1–2<br><span style="font-size: 8pt;">1–4m</span>
-              </td>
-              <td style="padding: 2px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                Simple, general statements or descriptive retell with limited factual detail and weak links.
-              </td>
-              <td style="padding: 2px 8px;">
-                &bull; Needs specific proper nouns, dates, and clear causal connectives.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Section 2: Synoptic Question: Why Was Peace So Difficult to Achieve? -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">
-            2. Synoptic Disciplinary Essay Plan: Why Was Peace So Difficult to Achieve (1974–1995)?
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">
-            THE BIG ENQUIRY
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.2pt; margin-bottom: 2px;">
-          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
-            <strong>1. UNRESOLVED FINAL STATUS:</strong> Oslo postponed the four hardest issues: Jerusalem, 1948 refugees\' right of return, borders, and Jewish settlements.
-          </div>
-          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
-            <strong>2. EXTREMIST SABOTAGE:</strong> Hamas suicide bombings (1994–95) and Jewish extremist terrorism (Goldstein in Hebron, Amir assassinating Rabin).
-          </div>
-          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
-            <strong>3. ASYMMETRY OF POWER:</strong> Israel maintained military control over 60% of West Bank (Area C), while Palestinian Authority lacked territorial contiguity.
-          </div>
-        </div>
-        <div style="border-left: 2px solid #000; padding-left: 5px; font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.2; color: #111;">
-          <strong>Grade 9 Conclusion Model:</strong> <em>Peace proved elusive not because leaders lacked diplomatic skill, but because the Oslo Accords created a paradox: by deferring the existential questions of Jerusalem and settlements to future talks, both sides allowed violent rejectionists—Hamas suicide bombers on one side and militant settlers on the other—to hijack the political agenda, culminating in the tragic assassination of Yitzhak Rabin on 4 November 1995.</em>
-        </div>
-      </div>
-
-      <!-- Section 3: High-Yield Analytical Connective & Sentence Starter Matrix -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; margin-bottom: 3px;">
-        <div style="background: #000000; color: #ffffff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
-          <span>3. Grade 9 Analytical Connective &amp; Transition Bank</span>
-          <span>Elevate Your Writing</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.22;">
-          <div style="padding: 2px 5px; border-right: 1px solid #000; background: #fff;">
-            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Causal Chain Stems:</strong>
-            <span style="font-family: 'Georgia', serif; font-style: italic;">
-              &bull; "The underlying catalyst was..."<br>
-              &bull; "This directly precipitated..."<br>
-              &bull; "Consequently, this forced Begin to..."<br>
-              &bull; "As an inevitable repercussion..."
-            </span>
-          </div>
-          <div style="padding: 2px 5px; border-right: 1px solid #000; background: #fafafa;">
-            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Narrative Progression:</strong>
-            <span style="font-family: 'Georgia', serif; font-style: italic;">
-              &bull; "The diplomatic deadlock broke when..."<br>
-              &bull; "Tensions intensified when..."<br>
-              &bull; "This secret breakthrough enabled..."<br>
-              &bull; "The situation culminated in..."
-            </span>
-          </div>
-          <div style="padding: 2px 5px; background: #fff;">
-            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Significance &amp; Verdict:</strong>
-            <span style="font-family: 'Georgia', serif; font-style: italic;">
-              &bull; "This proved decisive because..."<br>
-              &bull; "The fundamental turning point lay in..."<br>
-              &bull; "This shattered the assumption that..."<br>
-              &bull; "The enduring consequence was..."
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 4: Pupil Extended Writing Self-Audit Checklist -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 8px; background: #fafafa; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #000; padding-bottom: 2px;">
-          <span>4. Pupil Extended Writing Self-Audit Checklist (The Grade 9 Polish)</span>
-          <span>Tick Before Handing In</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.25; flex: 1; align-content: space-between;">
-          <div>&bull; &#9633; Did I name at least 3 specific historical proper nouns per paragraph?</div>
-          <div>&bull; &#9633; Did I frame my opening line to echo the exact words of the exam question?</div>
-          <div>&bull; &#9633; Did I explain <strong>HOW</strong> event A caused event B rather than just stating it?</div>
-          <div>&bull; &#9633; For narrative accounts: Are my 3 paragraphs in strict chronological sequence?</div>
-          <div>&bull; &#9633; Did I use causal connectives (<em>Consequently, This directly led to</em>)?</div>
-          <div>&bull; &#9633; For utility questions: Did I evaluate provenance (nature, origin, purpose) and content?</div>
-        </div>
-      </div>
-
-      ${renderFooterStrip(25, approvedFunnyFooters[24], 28)}
-    </div>
-  </div>
-  `;
-
-  // ====================================================================
-  // PAGES 26–27: SYNOPTIC ASSESSMENT & TIMED EXAM PRACTICE (FACING SPREAD)
-  // ====================================================================
-  const linedRowsSynopticLeft = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice &bull; Aspect 1: Detailed Historical Analysis ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  html += `
-  <div class="page page-container verso-page" id="page-26" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 3 Synoptic Assessment &bull; Timed Exam Practice
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 2 &bull; Question 2 / Question 3 &bull; Aspect 1 Analysis
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsSynopticLeft}
-      </div>
-
-      ${renderFooterStrip(26, approvedFunnyFooters[25], 28)}
-    </div>
-  </div>
-`;
-
-  const linedRowsSynopticRight = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice Continued &bull; Aspect 2 &amp; Sustained Evaluative Conclusion ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  html += `
-  <div class="page page-container recto-page" id="page-27" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 3 Synoptic Assessment &bull; Sustained Analytical Conclusion
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 2 &bull; Band 4 Evaluative Verdict &bull; Examiner Criteria
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsSynopticRight}
-      </div>
-
-      ${renderFooterStrip(27, approvedFunnyFooters[26], 28)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGE 28: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
+  // PAGE 24: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
   // ====================================================================
   html += renderStandardBackCover({
     unitId: 'cme_new',
@@ -2228,8 +1537,8 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=13`,
       },
     ],
-    footerQuip: approvedFunnyFooters[27],
-    totalPageCount: 28,
+    footerQuip: approvedFunnyFooters[23],
+    totalPageCount: 24,
     renderFooterStrip,
   });
 

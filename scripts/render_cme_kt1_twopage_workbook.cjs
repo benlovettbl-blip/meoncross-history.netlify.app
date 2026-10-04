@@ -58,7 +58,7 @@ const approvedFunnyFooters = [
 // Even pages (verso/left): Page number on left, text on right.
 // Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, text, totalPages = 28) {
+function renderFooterStrip(pageNum, text, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -88,180 +88,67 @@ const kt1Configs = [
     subTitle:
       'Key Topic 1.1: Imperial Origins, Conflicting Promises & Mandate Tensions (1915–1945)',
     title: 'KT1.1: Imperial Origins & Contradictory Pledges (1915–1945)',
-    specAnchor:
-      'Conflicting interests and demands of Jews and Arabs within the British Mandate; the McMahon-Hussein Correspondence (1915), the secret Sykes-Picot Agreement (1916), the Balfour Declaration (1917), and the 1939 British White Paper.',
+    specAnchor: `<strong>Conflicting interests and demands of Jews and Arabs within the British Mandate</strong>; contextualised by the McMahon-Hussein Correspondence (1915), the secret Sykes-Picot Agreement (1916), the Balfour Declaration (1917), and the 1939 British White Paper.`,
     stages: [
       {
         step: 1,
-        coreKeywords: ['British promise', 'Arab revolt', 'Sherif Hussein', 'Fight Ottoman Empire'],
-        stretchKeywords: [
+        keywords: [
+          'Sherif Hussein of Mecca',
           'High Commissioner McMahon',
-          'Vague territorial frontiers',
-          'Military diversion',
-          'Suez Canal protection',
+          'Arab Revolt against Ottomans',
+          'Pledge of Arab independence',
         ],
+        clue: 'Why did Arabs believe Britain promised them Palestine in 1915?',
         date: '1915–1916',
         title: 'The McMahon-Hussein Correspondence',
-        actor: 'Britain & Arab Leaders',
-        tag: 'The Wartime Promise',
-        trigger:
-          'British High Commissioner McMahon exchanges letters with Arab leader Sherif Hussein, promising British support for an independent post-war Arab state in exchange for an Arab revolt against the Ottoman Empire.',
-        because:
-          'Britain urgently needed Arab guerrilla forces to tie down Ottoman troops during the First World War and protect the Suez Canal.',
-        therefore:
-          'Arab forces launched the revolt believing they were fighting for national independence, but Britain deliberately left the future borders of Palestine vague.',
-        connective:
-          'While promising independence to Arab leaders, Britain secretly made a conflicting partition deal with its European ally...',
       },
       {
         step: 2,
-        coreKeywords: [
-          'Secret agreement',
-          'Britain and France',
-          'Divide Arab lands',
-          'Broken promises',
+        keywords: [
+          'Mark Sykes & François Picot',
+          'Secret British-French treaty',
+          'Middle East imperial carve-up',
+          'International administration zone',
         ],
-        stretchKeywords: [
-          'Imperial carve-up',
-          'Spheres of influence',
-          'Direct colonial administration',
-          'Petrograd diplomatic leaks',
-        ],
+        clue: 'Why was the secret Sykes-Picot deal seen as an imperial betrayal?',
         date: 'May 1916',
         title: 'The Secret Sykes-Picot Agreement',
-        actor: 'Britain & France',
-        tag: 'Imperial Partition',
-        trigger:
-          'British and French diplomats secretly agree to divide the Ottoman Arab lands into British and French zones of colonial control.',
-        because:
-          'Britain and France wanted to secure Middle Eastern oil supplies, trading ports, and strategic transit routes to British India.',
-        therefore:
-          'Directly broke Britain’s promise of Arab independence; when leaked in 1917, it convinced Arab leaders that European powers could not be trusted.',
-        connective:
-          'Britain then issued a third, fateful pledge to win international wartime support...',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Arthur Balfour letter',
-          'Jewish national home',
-          'Lord Rothschild',
-          'Protect Arab rights',
+        keywords: [
+          'Foreign Sec Arthur Balfour',
+          'Lord Walter Rothschild',
+          '"National home for Jewish people"',
+          'Safeguard civil & religious rights',
         ],
-        stretchKeywords: [
-          'Zionist federation',
-          'Contradictory pledges',
-          'Civil and religious rights',
-          'Wartime superpower lobbying',
-        ],
+        clue: 'Why was the Balfour Declaration contradictory to McMahon’s pledge?',
         date: 'November 1917',
         title: 'The Balfour Declaration',
-        actor: 'The British Government',
-        tag: 'The Conflicting Pledge',
-        trigger:
-          'British Foreign Secretary Arthur Balfour writes an official letter stating Britain’s support for "a national home for the Jewish people" in Palestine.',
-        because:
-          'Britain sought to win wartime diplomatic sympathy and financial backing from Jewish communities in the USA and Russia.',
-        therefore:
-          'Created a deep contradiction: promising to help build a Jewish homeland while also pledging not to harm the rights of the existing Arab majority.',
-        connective:
-          'Following Allied victory, Britain was given international authority to govern Palestine and manage these rival promises...',
       },
       {
         step: 4,
-        coreKeywords: [
-          'League of Nations mandate',
-          'Jewish immigration',
-          'Buying farmland',
-          'Arab tenant farmers',
+        keywords: [
+          'League of Nations Mandate',
+          '1929 Jaffa & Hebron riots',
+          '1936–39 Arab Great Revolt',
+          'Haganah Jewish defence militia',
         ],
-        stretchKeywords: [
-          'Fifth Aliyah',
-          'Jewish National Fund (JNF)',
-          'Tenant evictions',
-          'Demographic polarization',
-        ],
+        clue: 'How did rising Jewish immigration spark the 1936 Arab Revolt?',
         date: '1920–1936',
         title: 'The British Mandate & Rising Immigration',
-        actor: 'British Authorities & Jewish Immigrants',
-        tag: 'Population Shift',
-        trigger:
-          'Britain rules Palestine under a League of Nations mandate; Jewish immigration rises steadily, increasing the Jewish share of the population from 11% to nearly 30% by 1936.',
-        because:
-          'Jewish immigrants fled rising anti-Semitism and Nazi persecution in Europe, purchasing land through the Jewish National Fund to build farms and towns.',
-        therefore:
-          'Palestinian Arab tenant farmers lost access to farmland, creating severe economic hardship and growing hostility between both communities.',
-        connective:
-          'Simmering Arab anger boiled over into a full-scale armed rebellion against British rule...',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Arab rebellion',
-          'British army crackdown',
-          '1939 White Paper',
-          'Immigration limits (75k)',
+        keywords: [
+          'Colonial Sec Malcolm MacDonald',
+          '75,000 Jewish entry cap (5 yrs)',
+          'Arab consent for future entry',
+          'Zionist sense of betrayal',
         ],
-        stretchKeywords: [
-          'Grand Mufti of Jerusalem',
-          'Six-month general strike',
-          'Appeasement of Arab oil states',
-          'Yishuv sense of betrayal',
-        ],
+        clue: 'Why did the 1939 White Paper turn Zionists against Britain?',
         date: '1936–1939',
         title: 'The Arab Revolt & The 1939 White Paper',
-        actor: 'Palestinian Arabs & British Government',
-        tag: 'The Immigration Cap',
-        trigger:
-          'Palestinian Arabs launch a three-year armed rebellion; Britain crushes the uprising with troops, but then issues the 1939 White Paper strictly capping Jewish immigration.',
-        because:
-          'With the Second World War approaching, Britain needed to appease Arab opinion to keep Middle Eastern oil supplies and trade routes secure.',
-        therefore:
-          'Limited Jewish immigration to 75,000 over five years just as the Holocaust began, leaving both Jews and Arabs feeling betrayed and turning both sides against Britain.',
-        connective:
-          'The 1939 White Paper convinced Jewish groups that Britain had broken its promises, leading to post-war armed insurgency...',
-      },
-    ],
-    doNow: [
-      {
-        q: 'Which vital maritime waterway, completed in 1869, connects the Mediterranean to the Red Sea?',
-        a: 'The Suez Canal',
-      },
-      {
-        q: 'Which narrow strait at the tip of the Sinai Peninsula controls access to the Gulf of Aqaba?',
-        a: 'The Straits of Tiran',
-      },
-      {
-        q: 'Which vast desert peninsula connecting Africa to Asia served as a buffer between Egypt and Palestine?',
-        a: 'The Sinai Peninsula',
-      },
-      {
-        q: 'Which ancient city is holy to Judaism, Christianity, and Islam, and claimed by both peoples?',
-        a: 'Jerusalem',
-      },
-      {
-        q: 'Which collapsing empire ruled the Middle East for over 400 years until its defeat in World War One?',
-        a: 'The Ottoman Empire',
-      },
-      {
-        q: 'What international organisation, established in 1919, granted Britain the Mandate for Palestine?',
-        a: 'The League of Nations',
-      },
-      {
-        q: 'What political movement, founded by Theodor Herzl in 1897, campaigned for a Jewish national homeland?',
-        a: 'Zionism',
-      },
-      {
-        q: 'What political ideology sought self-determination and political independence for Arab populations?',
-        a: 'Arab Nationalism',
-      },
-      {
-        q: 'What secret 1916 agreement between Britain and France used straight lines to carve up the Middle East?',
-        a: 'The Sykes-Picot Agreement',
-      },
-      {
-        q: 'What 1939 British government policy paper severely restricted Jewish immigration into Palestine to 75,000 over five years?',
-        a: 'The 1939 White Paper',
       },
     ],
     vocabPrompt:
@@ -315,185 +202,67 @@ const kt1Configs = [
       'Why did Britain abandon its Mandate in Palestine and hand the problem to the UN?',
     subTitle: 'Key Topic 1.2: The Collapse of the British Mandate & UN Partition (1945–1947)',
     title: 'KT1.2: Collapse of the Mandate & UN Partition (1945–1947)',
-    specAnchor:
-      'Conflicting interests after World War Two; Jewish insurgency (Irgun and Lehi); the bombing of the King David Hotel (July 1946); British economic and military exhaustion; the SS Exodus affair (1947); and UNSCOP recommendations.',
+    specAnchor: `<strong>Conflicting interests and demands of Jews and Arabs within the British Mandate</strong>; <strong>Jewish insurgency</strong> (the <strong>Irgun</strong> and <strong>Lehi</strong>); the <strong>bombing of the King David Hotel (July 1946)</strong>; British economic and military exhaustion; the <strong>SS Exodus affair (1947)</strong>; and <strong>UNSCOP recommendations</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Holocaust survivors',
-          'Jewish refugee camps',
-          'Guerrilla attacks',
-          '1,500 monthly limit',
+        keywords: [
+          '250,000 Displaced Persons (DPs)',
+          'Foreign Sec Ernest Bevin',
+          '1,500 monthly entry quota',
+          'Truman calls for 100,000 visas',
         ],
-        stretchKeywords: [
-          'Displaced Persons (DPs)',
-          'Irgun & Lehi underground',
-          'Anti-guerrilla garrison (100k)',
-          'Naval blockade of Palestine',
-        ],
+        clue: 'Why did Bevin strictly enforce the 1,500 monthly refugee limit?',
         date: '1945–1946',
-        title: 'Post-War Holocaust Survivors & The Insurgency',
-        actor: 'Jewish Militias vs. British Army',
-        tag: 'The Post-War Conflict',
-        trigger:
-          'Armed Jewish paramilitary groups (Haganah and Irgun) launch guerrilla attacks and sabotage raids against British military bases and railways in Palestine.',
-        because:
-          'Britain maintained its strict immigration cap of 1,500 people per month, turning away ships carrying European Holocaust survivors who had nowhere else to go.',
-        therefore:
-          'Made Palestine dangerous and financially crippling for Britain to govern, tying down 100,000 British soldiers in constant anti-guerrilla operations.',
-        connective:
-          'The guerrilla campaign escalated into a devastating attack on the heart of British military administration...',
+        title: 'Holocaust Survivors & Immigration Caps',
       },
       {
         step: 2,
-        coreKeywords: [
-          'King David Hotel',
-          'British headquarters',
-          '91 people killed',
-          'Bomb in milk churns',
+        keywords: [
+          'United Resistance Movement',
+          'Haganah, Irgun & Lehi alliance',
+          'Night of Trains (153 rail cuts)',
+          'Guerilla raids & oil sabotage',
         ],
-        stretchKeywords: [
-          'Menachem Begin (Irgun)',
-          'Secretariat destruction',
-          'Domestic British war weariness',
-          'Operation Agatha retaliation',
-        ],
-        date: '22 July 1946',
-        title: 'The King David Hotel Bombing',
-        actor: 'The Irgun (Menachem Begin)',
-        tag: 'The Decisive Attack',
-        trigger:
-          'The Irgun blows up the British administrative and military headquarters at the King David Hotel in Jerusalem, killing 91 British, Arab, and Jewish staff.',
-        because:
-          'The Irgun, led by Menachem Begin, wanted to destroy British military intelligence files and force Britain to abandon control of Palestine.',
-        therefore:
-          'Deeply shocked the British public and government, destroying British domestic political will to keep soldiers stationed in Palestine.',
-        connective:
-          'Exhausted by casualties, financial debt, and public outcry, the British government decided to walk away from Palestine...',
+        clue: 'How did Zionist paramilitaries paralyze British transport networks?',
+        date: 'Nov 1945 – 1946',
+        title: 'The Jewish Insurgency & Night of the Trains',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Britain gives up',
-          'United Nations',
-          'Ernest Bevin',
-          'Post-war money problems',
+        keywords: [
+          'Menachem Begin (Irgun commander)',
+          '350kg explosives in milk churns',
+          'British military & civil HQ',
+          '91 officials & staff killed',
         ],
-        stretchKeywords: [
-          'Economic exhaustion',
-          'UNSCOP fact-finding committee',
-          'Unworkable mandate',
-          'Surrender of imperial authority',
-        ],
-        date: 'February 1947',
-        title: 'Britain Hands Palestine to the United Nations',
-        actor: 'British Government & The UN',
-        tag: 'The UN Referral',
-        trigger:
-          'British Foreign Secretary Ernest Bevin announces that Britain will surrender its mandate and hand full responsibility for Palestine to the United Nations.',
-        because:
-          'Britain was near bankruptcy after the Second World War, facing severe fuel rationing at home, and could not find an agreement acceptable to both Arabs and Jews.',
-        therefore:
-          'The UN established a special fact-finding committee (UNSCOP) to tour Palestine and produce an international partition plan.',
-        connective:
-          'The international crisis escalated when British warships intercepted a ship of displaced Holocaust survivors...',
+        clue: 'Why did targeting the King David Hotel prove Palestine was ungovernable?',
+        date: '22 July 1946',
+        title: 'Bombing of the King David Hotel',
       },
       {
         step: 4,
-        coreKeywords: [
-          'SS Exodus ship',
-          '4,500 refugees',
-          'Forced back to Germany',
-          'Global news headlines',
+        keywords: [
+          'Sgts Clifford Martin & Mervyn Paice',
+          'Retaliation for Acre hangings',
+          'Booby-trapped bodies in grove',
+          'UK anti-Jewish riots & outcry',
         ],
-        stretchKeywords: [
-          'President Truman diplomatic pressure',
-          'Public relations catastrophe',
-          'Loss of moral legitimacy',
-          'Turning world opinion',
-        ],
+        clue: 'Why did the hanged sergeants trigger "bring our boys home" demands?',
         date: 'July 1947',
-        title: 'The SS Exodus Affair & Global Outcry',
-        actor: 'British Navy & Holocaust Refugees',
-        tag: 'Public Relations Disaster',
-        trigger:
-          'British warships intercept the SS Exodus carrying 4,500 Holocaust survivors, forcibly returning the refugees to displaced persons camps in Germany.',
-        because:
-          'Britain was determined to enforce its strict naval blockade against illegal Jewish immigration into Mandatory Palestine.',
-        therefore:
-          'Created an international media scandal that devastated British moral prestige, turning US President Truman and global public opinion decisively against the Mandate.',
-        connective:
-          'UNSCOP completed its investigations and proposed an immediate end to British rule and the division of the country...',
+        title: 'The Sergeants Affair & Public Backlash',
       },
       {
         step: 5,
-        coreKeywords: [
-          'UN partition vote',
-          'Jewish state (55%)',
-          'Arab state (44%)',
-          'Jerusalem international city',
+        keywords: [
+          'SS Exodus (4,500 refugees)',
+          'Royal Navy forced German return',
+          'US outrage & loan threats',
+          'UNSCOP recommendation (Feb 1947)',
         ],
-        stretchKeywords: [
-          'UN General Assembly Resolution 181',
-          'Special international status',
-          'Arab total rejection',
-          'Immediate civil war outbreak',
-        ],
-        date: '29 November 1947',
-        title: 'UN Resolution 181 (The Partition Plan)',
-        actor: 'United Nations General Assembly',
-        tag: 'The Division of Palestine',
-        trigger:
-          'The UN votes to partition Palestine into two separate states: a Jewish state (55% of the land) and an Arab state (44%), with Jerusalem placed under international control.',
-        because:
-          'The UN concluded that the two communities had completely incompatible national goals and could not live peacefully under one government.',
-        therefore:
-          'Jewish leaders accepted the plan as international recognition of their statehood, while Arab leaders rejected it as unfair, sparking immediate civil war across Palestine.',
-        connective:
-          'As the final British soldiers withdrew, the civil conflict erupted into a regional war...',
-      },
-    ],
-    doNow: [
-      {
-        q: 'What 1917 document promised British support for a Jewish national home in Palestine?',
-        a: 'The Balfour Declaration',
-      },
-      {
-        q: 'What was the immigration limit set by the British White Paper in 1939?',
-        a: '75,000 over five years',
-      },
-      {
-        q: 'Which catastrophic genocide during World War Two saw 6 million European Jews murdered by Nazi Germany?',
-        a: 'The Holocaust (Shoah)',
-      },
-      {
-        q: 'What was the official Jewish defence militia in Mandatory Palestine that later became the IDF?',
-        a: 'The Haganah',
-      },
-      {
-        q: 'Which militant Zionist paramilitary group was led by Menachem Begin from 1943?',
-        a: 'The Irgun (Etzel)',
-      },
-      {
-        q: 'In which Jerusalem building was the British military and administrative headquarters located?',
-        a: 'The King David Hotel',
-      },
-      {
-        q: 'In what month and year was the King David Hotel bombed by the Irgun?',
-        a: 'July 1946',
-      },
-      {
-        q: 'How many British, Arab, and Jewish administrative personnel died in the King David Hotel bombing?',
-        a: '91 people',
-      },
-      {
-        q: 'Which ship carrying 4,500 Holocaust survivors was turned back to Europe by the British in July 1947?',
-        a: 'The SS Exodus',
-      },
-      {
-        q: 'What international body replaced the League of Nations in 1945 to maintain global peace?',
-        a: 'The United Nations (UN)',
+        clue: 'How did the SS Exodus PR disaster force Britain to surrender the Mandate?',
+        date: 'Summer–Nov 1947',
+        title: 'The SS Exodus & UN Referral',
       },
     ],
     vocabPrompt:
@@ -549,184 +318,72 @@ const kt1Configs = [
     inquiryQuestion: 'How was the State of Israel established and defended during the 1948–49 War?',
     subTitle: 'Key Topic 1.3: UN Resolution 181, Independence & The 1948–49 War (1947–1949)',
     title: 'KT1.3: UN Resolution 181 & The 1948–49 War (1947–1949)',
-    specAnchor:
-      'UN Resolution 181 (Partition Plan, November 1947); outbreak of civil war; the British evacuation; David Ben-Gurion’s declaration of Israel (14 May 1948); invasion by five Arab armies; the UN truces; and the 1949 Armistice Agreements (Green Line).',
+    specAnchor: `<strong>UN Resolution 181 (Partition Plan, November 1947)</strong>; <strong>outbreak of civil war</strong>; <strong>the British evacuation</strong>; <strong>David Ben-Gurion’s declaration of the State of Israel (14 May 1948)</strong>; <strong>invasion by five Arab armies</strong>; <strong>the UN truces</strong>; and the <strong>1949 Armistice Agreements (Green Line)</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'Road ambushes',
-          'Food convoys blocked',
-          'Siege of Jerusalem',
-          'British soldiers leave',
+        keywords: [
+          'UN Resolution 181 partition (55%/45%)',
+          'Plan Dalet (Plan D offensive)',
+          'Tel Aviv–Jerusalem convoy ambushes',
+          'Deir Yassin massacre & panic',
+          'British military non-intervention',
         ],
-        stretchKeywords: [
-          'Plan Dalet strategic offensive',
-          'Bab al-Wad corridor fighting',
-          'Security power vacuum',
-          'Demographic clearing of roads',
-        ],
+        clue: 'Why was securing the Tel Aviv–Jerusalem road vital before 14 May?',
         date: 'Dec 1947 – May 1948',
-        title: 'Communal Civil War & British Evacuation',
-        actor: 'Jewish & Arab Militias',
-        tag: 'The Civil Conflict',
-        trigger:
-          'Following UN Resolution 181, intense civil fighting erupts between Jewish militias and Palestinian irregulars along roads, towns, and the siege of Jerusalem.',
-        because:
-          'Both communities sought to seize strategic high ground and control road corridors before the final British evacuation.',
-        therefore:
-          'British forces refused to intervene, creating a security vacuum as Jewish forces implemented Plan Dalet to secure vital routes and defensive frontiers.',
-        connective:
-          'As the final British soldiers withdrew from Tel Aviv, Zionist leaders took the historic step to declare statehood...',
+        title: 'Communal Civil War & Plan Dalet',
       },
       {
         step: 2,
-        coreKeywords: [
-          'David Ben-Gurion',
-          'State of Israel declared',
-          'Tel Aviv museum',
-          'US recognises state',
+        keywords: [
+          'David Ben-Gurion declaration',
+          'Tel Aviv Museum of Art',
+          'Theodor Herzl portrait',
+          'US Truman recognition in 11 mins',
+          'British Mandate expires at midnight',
         ],
-        stretchKeywords: [
-          'Proclamation of Independence',
-          'Midnight mandate expiration',
-          'Sovereign Jewish statehood',
-          'Truman immediate recognition',
-        ],
+        clue: 'Why did Ben-Gurion insist on declaring statehood hours before the British left?',
         date: '14 May 1948',
-        title: 'David Ben-Gurion Proclaims the State of Israel',
-        actor: 'David Ben-Gurion & Jewish Agency',
-        tag: 'Declaration of Statehood',
-        trigger:
-          'David Ben-Gurion reads the Proclamation of Independence at the Tel Aviv Museum of Art as the British Mandate officially expires at midnight.',
-        because:
-          'Zionist leaders resolved to establish sovereign Jewish statehood immediately to open the gates to immigration and secure international recognition.',
-        therefore:
-          'US President Truman recognised Israel within 11 minutes; the next morning five Arab states launched an immediate military invasion.',
-        connective: 'Sovereignty was instantly challenged by a multi-front coordinated invasion...',
+        title: 'Proclamation of the State of Israel',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Five Arab armies',
-          'Egypt, Jordan, Syria',
-          'Attack from all sides',
-          'Shortage of weapons',
+        keywords: [
+          'Egypt, Transjordan, Syria, Iraq, Lebanon',
+          'Multi-front coordinated assault',
+          'Glubb Pasha & Arab Legion',
+          'Old City of Jerusalem captured',
+          'Severe Israeli heavy weapons deficit',
         ],
-        stretchKeywords: [
-          'Arab Legion (Glubb Pasha)',
-          'Multi-front invasion',
-          'Existential defensive struggle',
-          'Artillery and armor deficit',
-        ],
+        clue: 'Which strategic areas did Transjordan’s Arab Legion seize immediately?',
         date: '15 May 1948',
-        title: 'Invasion by Five Arab Armies',
-        actor: 'Egypt, Jordan, Syria, Iraq, Lebanon vs. Israel',
-        tag: 'Interstate Invasion',
-        trigger:
-          'Armies from Egypt, Transjordan, Syria, Iraq, and Lebanon invade Israel, besieging West Jerusalem and advancing towards Tel Aviv.',
-        because:
-          'Arab leaders were determined to crush the newly declared Jewish state, support Palestinian Arabs, and protect sacred holy sites.',
-        therefore:
-          'Israel faced an existential struggle for survival, fighting defensively with a severe shortage of heavy artillery, armor, and combat aircraft.',
-        connective:
-          'The United Nations mediated a temporary ceasefire that transformed the balance of military power...',
+        title: 'Five Arab Armies Invade',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Four-week ceasefire',
-          'Weapons from Czechoslovakia',
-          'Rifles and planes',
-          'IDF army created',
+        keywords: [
+          'Count Folke Bernadotte 28-day truce',
+          'Operation Balak Czech arms airlift',
+          '25,000 rifles & Avia fighter planes',
+          'Unified IDF command established',
+          'Bernadotte assassinated by Lehi',
         ],
-        stretchKeywords: [
-          'Count Bernadotte mediation',
-          'Operation Balak airlift',
-          'Avia S-199 fighter aircraft',
-          'IDF central command reorganization',
-        ],
+        clue: 'How did the 4-week UN truce decisively tip military firepower to Israel?',
         date: 'June–July 1948',
-        title: 'The First UN Truce & The Czech Arms Supply',
-        actor: 'Israel (IDF) & Czechoslovakia',
-        tag: 'The Turning Point',
-        trigger:
-          'A 4-week UN truce halts fighting; Israel unifies all militias into the IDF (Order No. 4) and imports thousands of rifles, machine guns, and Avia S-199 fighters from Czechoslovakia.',
-        because:
-          'The Israeli government needed modern heavy equipment to counter Arab superiority in tanks, artillery, and British-trained officers.',
-        therefore:
-          'Decisively reversed the military balance, allowing the reorganised IDF to launch massive counter-offensives (Operation Dani & Operation Yoav) when fighting resumed.',
-        connective:
-          'Crushing Israeli military victories forced Arab states to accept separate armistice negotiations...',
+        title: 'The First UN Truce & Czech Arms Resupply',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Peace talks on Rhodes',
-          'Green Line borders',
-          'Israel controls 78%',
-          'Arab neighbours sign truce',
+        keywords: [
+          'UN mediator Ralph Bunche',
+          '1949 Rhodes Armistice Agreements',
+          'Green Line borders (Israel 79%)',
+          'Transjordan annexes West Bank',
+          'Egypt controls Gaza Strip',
         ],
-        stretchKeywords: [
-          'Ralph Bunche UN diplomacy',
-          'Bilateral armistice lines',
-          'Permanent border partition',
-          'Exclusion of Palestinian state',
-        ],
-        date: '1949',
-        title: 'The Rhodes Armistice Agreements & The Green Line',
-        actor: 'UN, Israel, Egypt, Jordan, Syria, Lebanon',
-        tag: 'The Redrawn Borders',
-        trigger:
-          'Israel and Arab states sign bilateral armistice agreements on the island of Rhodes, drawing ceasefire boundaries in green pencil (The Green Line).',
-        because:
-          'Arab armies had suffered decisive military defeats and required an internationally monitored ceasefire to halt further Israeli advances.',
-        therefore:
-          'Israel expanded its territory to 79% of Mandate Palestine; Jordan annexed the West Bank and East Jerusalem, and Egypt occupied Gaza, leaving no sovereign Palestinian state.',
-        connective:
-          'The armistice lines froze the conflict without peace treaties, creating permanent demographic displacement...',
-      },
-    ],
-    doNow: [
-      {
-        q: 'What United Nations resolution in November 1947 proposed partitioning Palestine into separate states?',
-        a: 'UN Resolution 181',
-      },
-      {
-        q: 'What percentage of the land was allocated to the proposed Jewish state under UN Resolution 181?',
-        a: '55% (including the Negev Desert)',
-      },
-      {
-        q: 'What was the planned international status of Jerusalem under the UN partition plan?',
-        a: 'International zone under UN control',
-      },
-      {
-        q: 'Did the Arab Higher Committee and Arab states accept or reject UN Resolution 181?',
-        a: 'They rejected it completely',
-      },
-      {
-        q: 'On what exact date did David Ben-Gurion proclaim the establishment of the State of Israel?',
-        a: '14 May 1948',
-      },
-      {
-        q: 'Which five Arab states invaded the newly declared State of Israel on 15 May 1948?',
-        a: 'Egypt, Syria, Transjordan, Iraq, and Lebanon',
-      },
-      {
-        q: 'What Eastern European country supplied vital rifles and Messerschmitt fighter planes to Israel during the first truce?',
-        a: 'Czechoslovakia (Czech arms deal)',
-      },
-      {
-        q: 'What Jordanian military force, commanded by British General Glubb Pasha, captured East Jerusalem?',
-        a: 'The Arab Legion',
-      },
-      {
-        q: 'In what year were the armistice agreements signed on the island of Rhodes that ended the war?',
-        a: '1949',
-      },
-      {
-        q: 'What color pencil gave its name to the 1949 armistice borders separating Israel from Arab neighbours?',
-        a: 'The Green Line',
+        clue: 'How did the 1949 Green Line transform the borders allocated by UN 181?',
+        date: 'Feb–July 1949',
+        title: 'Rhodes Armistices & The Green Line',
       },
     ],
     vocabPrompt:
@@ -784,185 +441,72 @@ const kt1Configs = [
     subTitle:
       'Key Topic 1.4: The Refugee Crisis (Nakba), Israeli Statehood & Border Friction (1949–1955)',
     title: 'KT1.4: The Refugee Crisis (Nakba) & New Israeli State (1948–1954)',
-    specAnchor:
-      'Territorial changes and the Green Line; the refugee status of approximately 700,000 Palestinian Arabs (Al-Nakba); creation of UNRWA; the Israeli Law of Return (1950); the creation of the IDF; US financial aid; and early relations with Egypt.',
+    specAnchor: `<strong>Territorial changes and the refugee status of approximately 700,000 Palestinian Arabs (Al-Nakba)</strong>; creation and role of <strong>UNRWA</strong>; the development of the State of Israel: the <strong>Law of Return (1950)</strong>; the <strong>creation of the Israeli Defence Forces (IDF)</strong>; the role of <strong>US financial aid</strong>; and <strong>early relations between Israel and its Arab neighbours</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          '700,000 refugees',
-          'Fleeing homes',
-          'Refugee camps',
-          'Al-Nakba ("Catastrophe")',
+        keywords: [
+          '700,000+ Palestinians displaced',
+          'Contested causes: flight vs expulsion',
+          'Destruction of 400+ Arab villages',
+          'Loss of homes, farmland & property',
+          'Al-Nakba ("The Catastrophe")',
         ],
-        stretchKeywords: [
-          'Permanent demographic exile',
-          'Gaza and West Bank tent camps',
-          'Denial of return rights',
-          'Intergenerational displacement',
-        ],
+        clue: 'Why is the cause of the 1948 Palestinian refugee exodus still contested?',
         date: '1948–1949',
-        title: 'The Palestinian Refugee Crisis (Al-Nakba)',
-        actor: '700,000 Palestinian Refugees',
-        tag: 'Mass Dispossession',
-        trigger:
-          'Approximately 700,000 Palestinian Arabs flee or are expelled from their ancestral homes, becoming permanent refugees in Gaza, the West Bank, Jordan, Syria, and Lebanon.',
-        because:
-          'Palestinians fled due to intense military combat, terror provoked by atrocities like Deir Yassin, and deliberate expulsions by Israeli commanders.',
-        therefore:
-          'Created an enduring demographic tragedy known by Palestinians as Al-Nakba ("The Catastrophe"), transforming regional demographics permanently.',
-        connective:
-          'The United Nations stepped in to establish humanitarian infrastructure for the displaced population...',
+        title: 'The Palestinian Refugee Flight (Al-Nakba)',
       },
       {
         step: 2,
-        coreKeywords: [
-          'UN help for refugees',
-          'UNRWA relief agency',
-          'Food, tents, and schools',
-          'Right to return home',
+        keywords: [
+          'UN General Assembly Res 194',
+          'Palestinian "Right of Return" principle',
+          'Creation of UNRWA relief agency',
+          'Camps in Gaza, West Bank, Jordan, Lebanon',
+          'Refugees denied resettlement',
         ],
-        stretchKeywords: [
-          'UN General Assembly Resolution 194',
-          'Compensation claims',
-          'Permanent humanitarian infrastructure',
-          'Stateless refugee status',
-        ],
-        date: 'Dec 1948 – Dec 1949',
-        title: 'UN Resolutions 194 & 302 (Founding of UNRWA)',
-        actor: 'United Nations General Assembly',
-        tag: 'International Relief',
-        trigger:
-          'The UN passes Resolution 194 establishing the right of refugees to return or receive compensation, and creates UNRWA (Resolution 302) to provide food, healthcare, and schools.',
-        because:
-          'Arab host nations were unable and unwilling to absorb hundreds of thousands of destitute refugees into their economies without international funding.',
-        therefore:
-          'Refugee camps became permanent, densely populated enclaves where generations of Palestinians preserved their national identity and demand for return.',
-        connective:
-          'While Palestinians were barred from returning, Israel opened its doors to unrestricted Jewish immigration...',
+        clue: 'Why did Arab states and Israel disagree over UN Resolution 194?',
+        date: 'Dec 1949',
+        title: 'UN Resolution 194 & Creation of UNRWA',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Law of Return',
-          'Any Jewish person can move',
-          'Population doubles',
-          'Temporary tent camps',
+        keywords: [
+          'Law of Return enacted (Knesset)',
+          'Automatic citizenship for any Jew',
+          'Holocaust survivors & Mizrahi Jews',
+          'Jewish population doubles in 3 yrs',
+          "Ma'abarot transit tent camps",
         ],
-        stretchKeywords: [
-          'Automatic citizenship rights',
-          'Ingathering of the Diaspora',
-          'Mizrahi and Sephardi immigration',
-          "Ma'abarot transit settlements",
-        ],
+        clue: 'How did the Law of Return transform Israel’s demographics by 1953?',
         date: 'July 1950',
-        title: 'The Israeli Law of Return & Demographic Surge',
-        actor: 'The Israeli Knesset',
-        tag: 'Open-Door Immigration',
-        trigger:
-          'The Israeli Knesset passes the Law of Return, guaranteeing every Jewish person worldwide the automatic right to settle in Israel and gain citizenship.',
-        because:
-          'Israel was founded as a sovereign sanctuary for the Jewish diaspora, committed to absorbing Holocaust survivors and Jews fleeing Arab lands.',
-        therefore:
-          "Israel’s Jewish population doubled from 650,000 to 1.4 million by 1952, creating severe austerity and tent cities (ma'abarot), but securing national workforce and defense.",
-        connective:
-          'To defend its expanding population, Israel consolidated its national armed forces and secured foreign backing...',
+        title: 'The Israeli Law of Return & Immigration Boom',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Every citizen in army',
-          'Fortified border farms',
-          'US money and loans',
-          'Protect new borders',
+        keywords: [
+          'Integration of Haganah, Irgun & Lehi',
+          'Universal compulsory military service',
+          'US government grants & soft loans',
+          'American Jewish diaspora fundraising',
+          'Technological & defensive edge',
         ],
-        stretchKeywords: [
-          'Universal military conscription',
-          'Kibbutzim frontline defense',
-          'Superpower strategic aid',
-          'Citizen-soldier reserve system',
-        ],
-        date: '1950–1953',
-        title: 'Consolidation of the IDF & US Economic Backing',
-        actor: 'IDF & The United States Government',
-        tag: 'State Security',
-        trigger:
-          'Israel establishes mandatory universal military conscription into the IDF, while receiving over $200 million in US government grants and loans.',
-        because:
-          'Surrounded by hostile Arab states that refused to recognise its existence, Israel required a permanent citizen-army backed by superpower capital.',
-        therefore:
-          'Transformed Israel into a formidable regional military power with fortified border settlements (kibbutzim) guarding the fragile Green Line frontiers.',
-        connective:
-          'Frustrated refugees began launching guerrilla raids back across the armistice demarcation lines...',
+        clue: 'Why was universal conscription essential for Israel’s survival?',
+        date: '1948–1953',
+        title: 'IDF Military Consolidation & US Aid',
       },
       {
         step: 5,
-        coreKeywords: [
-          'Arab guerrilla fighters',
-          'Night border raids',
-          'Israel attacks back',
-          'Qibya village raid',
+        keywords: [
+          'Palestinian refugee border crossers',
+          'Stealing crops vs armed sabotage',
+          'IDF Unit 101 (Ariel Sharon)',
+          '1953 Qibya raid (69 civilians killed)',
+          'Severe international condemnation',
         ],
-        stretchKeywords: [
-          'Fedayeen border infiltrations',
-          'Unit 101 commando tactics',
-          'Ariel Sharon retaliatory doctrine',
-          'Disproportionate deterrence policy',
-        ],
-        date: '1950–1954',
-        title: 'Fedayeen Infiltration & Disproportionate Reprisals',
-        actor: 'Palestinian Fedayeen & Israeli Unit 101',
-        tag: 'The Cycle of Violence',
-        trigger:
-          'Displaced Palestinian guerrillas (Fedayeen) stage cross-border raids; Israel creates elite Unit 101 under Ariel Sharon to execute devastating reprisal strikes (e.g. Qibya, 1953).',
-        because:
-          'Refugees sought to return to farmland or strike Israel, while Israeli leaders adopted a doctrine of overwhelming retaliation to enforce border deterrence.',
-        therefore:
-          'Created an escalating spiral of border clashes and civilian casualties that pushed Israel and Egypt directly toward the 1955 Gaza Raid and 1956 Suez Crisis.',
-        connective:
-          'Rising cross-border warfare provoked Israeli leaders to seek an immediate military showdown...',
-      },
-    ],
-    doNow: [
-      {
-        q: 'Approximately how many Palestinian Arabs were displaced from their homes during the 1948–49 War?',
-        a: 'Approximately 700,000 refugees',
-      },
-      {
-        q: 'What Arabic term, meaning "The Catastrophe", is used by Palestinians to describe the 1948 displacement?',
-        a: 'Al-Nakba',
-      },
-      {
-        q: 'Which United Nations relief agency was established in December 1949 to support Palestinian refugees?',
-        a: 'UNRWA (UN Relief and Works Agency)',
-      },
-      {
-        q: 'Which Arab country annexed the West Bank in 1950, granting citizenship to Palestinian refugees?',
-        a: 'Transjordan (Jordan)',
-      },
-      {
-        q: 'Which country controlled the Gaza Strip and kept Palestinian refugees under military administration?',
-        a: 'Egypt',
-      },
-      {
-        q: 'What landmark 1950 Israeli legislation granted every Jewish person worldwide the right to settle in Israel?',
-        a: 'The Law of Return (1950)',
-      },
-      {
-        q: 'By what factor did Israel’s Jewish population increase between 1948 and 1952 due to immigration?',
-        a: 'It doubled (from ~650,000 to ~1.4 million)',
-      },
-      {
-        q: 'What official national military force was created on 26 May 1948, unifying all Jewish militias?',
-        a: 'The Israel Defense Forces (IDF / Tzahal)',
-      },
-      {
-        q: 'Which global superpower provided substantial loans, economic aid, and diplomatic backing to the new Israeli state?',
-        a: 'The United States (USA)',
-      },
-      {
-        q: 'What term was given to Palestinian armed infiltrators and guerrillas who launched cross-border raids into Israel from Gaza?',
-        a: 'Fedayeen ("self-sacrificers")',
+        clue: 'Why did Israeli border crossers trigger Sharon’s Unit 101 raid on Qibya?',
+        date: '1949–1954',
+        title: 'Border Infiltration & Retaliatory Raids',
       },
     ],
     vocabPrompt:
@@ -1019,185 +563,72 @@ const kt1Configs = [
       'Why did the nationalisation of the Suez Canal trigger an international crisis in 1956?',
     subTitle: 'Key Topic 1.5: Nasser, Border Tension, the Gaza Raid & The Suez Crisis (1955–1963)',
     title: 'KT1.5: Nasser, Border Tension & The 1956 Suez Crisis (1955–1958)',
-    specAnchor:
-      'Gamal Abdel Nasser and Egypt’s leadership of the Arab world; cross-border fedayeen raids; the Israeli raid on Gaza (Feb 1955); the Czech arms deal (1955); the nationalisation of the Suez Canal (July 1956); the secret Protocol of Sèvres; the Sinai campaign; US intervention; and the creation of the United Arab Republic (1958).',
+    specAnchor: `<strong>Gamal Abdel Nasser and Egypt’s leadership of the Arab world</strong>; cross-border fedayeen raids; the <strong>Israeli raid on Gaza (Feb 1955)</strong>; the <strong>Czech arms deal (1955)</strong>; the <strong>nationalisation of the Suez Canal (July 1956)</strong>; the <strong>secret Protocol of Sèvres</strong>; the <strong>Sinai campaign</strong>; <strong>US and Soviet intervention</strong>; and the <strong>creation of the United Arab Republic (1958)</strong>.`,
     stages: [
       {
         step: 1,
-        coreKeywords: [
-          'President Nasser',
-          'Israeli raid on Gaza',
-          '37 soldiers killed',
-          'Soviet weapons deal',
+        keywords: [
+          'President Gamal Abdel Nasser',
+          'IDF Gaza Raid (37 Egyptians killed)',
+          'Egyptian army humiliation',
+          'State-sponsored fedayeen attacks',
+          'Voice of the Arabs radio propaganda',
         ],
-        stretchKeywords: [
-          'Operation Black Arrow',
-          'Czech arms agreement (MiG-15s)',
-          'Pan-Arab leadership',
-          'Break from Western arms monopoly',
-        ],
-        date: '28 February 1955',
-        title: 'The Gaza Raid (Operation Black Arrow)',
-        actor: 'Israel (IDF Paratroopers) vs. Egypt',
-        tag: 'The Spark',
-        trigger:
-          'Israeli paratroopers launch a devastating night raid into Egyptian-held Gaza, killing 37 Egyptian soldiers in retaliation for Fedayeen infiltration.',
-        because:
-          'Israel sought to punish Egyptian authorities and force President Nasser to halt cross-border guerrilla attacks into southern Israel.',
-        therefore:
-          'Publicly humiliated Nasser and exposed the Egyptian army’s technological weakness, convincing him that Egypt urgently needed modern heavy weapons.',
-        connective:
-          'Rebuffed by Western powers, Nasser made a revolutionary Cold War alliance with the Soviet bloc...',
+        clue: 'Why did Ben-Gurion’s Gaza raid convince Nasser he needed heavy weapons?',
+        date: 'Feb 1955',
+        title: 'The Gaza Raid & Escalating Fedayeen Clashes',
       },
       {
         step: 2,
-        coreKeywords: [
-          '200 MiG-15 fighter jets',
-          '300 Soviet tanks',
-          'Czech arms agreement',
-          'Break Western monopoly',
+        keywords: [
+          'Czech Arms Deal via USSR',
+          'MiG-15 fighters & T-34 tanks',
+          'Western arms monopoly broken',
+          'US cancels Aswan High Dam loans',
+          'Soviet geopolitical entry to Mideast',
         ],
-        stretchKeywords: [
-          'Cold War regional shift',
-          'Cairo-Moscow alignment',
-          'Rejection of Baghdad Pact',
-          'Egyptian military modernization',
-        ],
-        date: 'September 1955',
-        title: 'The Czech Arms Deal & Soviet Influence',
-        actor: 'Egypt & The Soviet Bloc',
-        tag: 'Cold War Alignment',
-        trigger:
-          'Nasser purchases 200 MiG-15 jet fighters, 300 modern tanks, and bombers from the Soviet Union via Czechoslovakia, breaking the Western arms monopoly.',
-        because:
-          'The US and Britain conditioned arms sales on Egypt joining anti-Soviet military pacts (the Baghdad Pact), which Nasser fiercely rejected.',
-        therefore:
-          'Shocked Britain, France, and the USA by bringing Soviet influence into the heart of the Middle East, while prompting Egypt to blockade the Straits of Tiran.',
-        connective:
-          'Alarmed by Egypt’s friendship with Moscow, the United States retaliated economically...',
+        clue: 'Why did the Czech arms deal alarm Britain, France, and Israel?',
+        date: 'Sept 1955',
+        title: 'The Czech Arms Deal & Cold War Realignment',
       },
       {
         step: 3,
-        coreKeywords: [
-          'Aswan Dam loan cancelled',
-          'Suez Canal nationalised',
-          'Nasser speech in Alexandria',
-          'Canal tolls fund dam',
+        keywords: [
+          'Alexandria speech ("de Lesseps" codeword)',
+          'Canal revenues fund Aswan Dam',
+          'Anglo-French maritime lifeline seized',
+          'Closure of Straits of Tiran',
+          'PM Anthony Eden vows to remove Nasser',
         ],
-        stretchKeywords: [
-          'Nationalisation of Suez Company',
-          'John Foster Dulles loan veto',
-          'Anti-imperial sovereignty assertion',
-          'Threat to British oil supply',
-        ],
+        clue: 'Why did Britain and France view canal nationalisation as an act of theft?',
         date: '26 July 1956',
-        title: 'Aswan Loans Cancelled & Suez Canal Nationalised',
-        actor: 'President Nasser & Egypt',
-        tag: 'The Economic Flashpoint',
-        trigger:
-          'The US and Britain abruptly cancel loans for the Aswan High Dam; Nasser retaliates by nationalising the British-and-French-owned Suez Canal Company.',
-        because:
-          'Nasser needed the $100 million annual canal shipping tolls to finance the dam itself, while demonstrating Egyptian sovereignty over foreign imperial assets.',
-        therefore:
-          'British Prime Minister Anthony Eden resolved to seize back the canal and topple Nasser, viewing the waterway as Britain’s imperial oil lifeline.',
-        connective:
-          'Britain and France entered into a top-secret conspiracy with Israel to engineer a pretext for war...',
+        title: 'Nasser Nationalises the Suez Canal',
       },
       {
         step: 4,
-        coreKeywords: [
-          'Secret meeting in France',
-          'Britain, France, and Israel',
-          'Israel invades Sinai',
-          'Mitla Pass paratroopers',
+        keywords: [
+          'Secret Protocol of Sèvres collusion',
+          'Britain, France & Israel plot',
+          'Operation Kadesh IDF Sinai assault',
+          'Anglo-French ultimatum & Port Said bombs',
+          'Paratroopers at Mitla Pass',
         ],
-        stretchKeywords: [
-          'Tripartite conspiracy',
-          'Protocol of Sèvres collusion',
-          'Phony peacekeeping pretext',
-          'Sinking ships in canal',
-        ],
-        date: '22–24 October 1956',
-        title: 'The Secret Protocol of Sèvres & Sinai Invasion',
-        actor: 'Britain, France & Israel',
-        tag: 'The Collusion',
-        trigger:
-          'Britain, France, and Israel secretly sign the Protocol of Sèvres: Israel invades Sinai on 29 October; Britain and France intervene to "separate the combatants" and seize Port Said.',
-        because:
-          'Britain and France needed a false peacekeeping pretext to occupy the canal, while Israel sought to eliminate Fedayeen bases and open the Straits of Tiran.',
-        therefore:
-          'Mosque speakers rallied Egyptian resistance, while Nasser ordered ships sunk in the canal, completely blocking international maritime trade.',
-        connective:
-          'The military victory was instantly overturned by superpower financial and diplomatic fury...',
+        clue: 'How did the secret Protocol of Sèvres orchestrate a fake pretext for war?',
+        date: 'Oct–Nov 1956',
+        title: 'The Secret Protocol of Sèvres & Sinai Blitz',
       },
       {
         step: 5,
-        coreKeywords: [
-          'President Eisenhower',
-          'US threatens British currency',
-          'Forces forced to withdraw',
-          'UN peacekeepers arrive',
+        keywords: [
+          'President Eisenhower financial threats',
+          'Sterling run forces UK ceasefire',
+          'UNEF peacekeepers in Sinai',
+          'Nasser emerges as Pan-Arab hero',
+          'United Arab Republic formed (1958)',
         ],
-        stretchKeywords: [
-          'Financial sterling crisis threat',
-          'Humiliation of Britain and France',
-          'End of European imperial power',
-          'UNEF peacekeeper deployment',
-        ],
-        date: 'Nov 1956 – Mar 1957',
-        title: 'US Ultimatum, Imperial Retreat & UNEF Deployment',
-        actor: 'US President Eisenhower & The UN',
-        tag: 'Imperial Humiliation',
-        trigger:
-          'US President Eisenhower threatens to crash the British pound and deny oil supplies; Britain and France withdraw; UN Emergency Force (UNEF) peacekeepers deploy to Sinai.',
-        because:
-          'Eisenhower was furious at allies launching an unprovoked colonial war without US consent, distracting from the simultaneous Soviet invasion of Hungary.',
-        therefore:
-          'Marked the definitive end of Britain and France as global imperial superpowers; Nasser emerged as the undisputed hero of Arab nationalism.',
-        connective:
-          'UN peacekeepers monitored the demilitarised Sinai frontier for a decade until 1967...',
-      },
-    ],
-    doNow: [
-      {
-        q: 'Which Egyptian army officer seized power after overthrowing King Farouk in 1952, becoming President in 1954?',
-        a: 'Gamal Abdel Nasser',
-      },
-      {
-        q: 'Which strategic maritime chokepoint did Egypt close to Israeli shipping in 1950, blockading Eilat?',
-        a: 'The Straits of Tiran',
-      },
-      {
-        q: 'In February 1955, Israeli paratroopers launched a devastating reprisal raid into which Egyptian-controlled territory?',
-        a: 'The Gaza Strip (The Gaza Raid)',
-      },
-      {
-        q: 'How many Egyptian soldiers were killed in the February 1955 Gaza Raid, humiliating Nasser?',
-        a: '37 Egyptian soldiers (and 2 civilians)',
-      },
-      {
-        q: 'In September 1955, Egypt bypassed Western arms embargoes by purchasing Soviet weapons via which country?',
-        a: 'Czechoslovakia (The Czech Arms Deal)',
-      },
-      {
-        q: 'Which massive hydroelectric construction project on the River Nile did the US and Britain refuse to finance in July 1956?',
-        a: 'The Aswan High Dam',
-      },
-      {
-        q: 'On what date in July 1956 did Nasser announce the nationalisation of the Suez Canal Company?',
-        a: '26 July 1956',
-      },
-      {
-        q: 'What secret agreement was signed in France in October 1956 between Britain, France, and Israel to invade Egypt?',
-        a: 'The Protocol of Sèvres',
-      },
-      {
-        q: 'Which US President threatened financial ruin against Britain and ordered an immediate military withdrawal from Suez?',
-        a: 'Dwight D. Eisenhower',
-      },
-      {
-        q: 'What political union between Egypt and Syria was established in February 1958 under Nasser’s leadership?',
-        a: 'The United Arab Republic (UAR)',
+        clue: 'Why did the Suez Crisis end in political triumph for Nasser despite military defeat?',
+        date: 'Nov 1956 – 1958',
+        title: 'US Ultimatum, UNEF & Arab Leadership',
       },
     ],
     vocabPrompt:
@@ -1498,7 +929,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       ],
     },
     footerQuip: approvedFunnyFooters[0],
-    totalPageCount: 28,
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
@@ -1574,7 +1005,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, approvedFunnyFooters[1], 28)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 24)}
     </div>
   </div>
 
@@ -1646,7 +1077,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, approvedFunnyFooters[2], 28)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 24)}
     </div>
   </div>
 `;
@@ -1698,7 +1129,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Bullet Keywords • 38mm Width) -->
+            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
             <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
@@ -1709,17 +1140,31 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
                 ${s.title}
               </div>
               ${
+                (s.keywords && s.keywords.length > 0) ||
                 (s.coreKeywords && s.coreKeywords.length > 0) ||
                 (s.stretchKeywords && s.stretchKeywords.length > 0)
                   ? `
-              <div style="margin-top: 1.5px;">
+              <div style="margin-top: 1px;">
                 <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${[...(s.coreKeywords || []), ...(s.stretchKeywords || [])]
+                  ${(s.keywords || [...(s.coreKeywords || []), ...(s.stretchKeywords || [])])
                     .map(
                       (kw) =>
                         `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
                     )
                     .join('')}
+                </div>
+              </div>`
+                  : ''
+              }
+              ${
+                s.clue
+                  ? `
+              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
+                  Focus Clue
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
+                  ${s.clue}
                 </div>
               </div>`
                   : ''
@@ -1743,7 +1188,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1771,7 +1216,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1885,7 +1330,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
+      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1923,298 +1368,14 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
+      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 24)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 14: KEY TOPIC 1 CARTOGRAPHIC MASTERCLASS & STRATEGIC ATLAS
-  // The 1947 Partition, 1949 Armistice & 1956 Suez Campaign Cartography
-  // ====================================================================
-  html += `
-  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
-    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-      
-      <!-- Top Departmental Branding -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Cartographic Masterclass</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 1 CARTOGRAPHIC EVIDENCE</span>
-        </div>
-      </div>
-
-      <!-- Main Title Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
-            Key Topic 1 Cartographic Masterclass &bull; Partition &amp; Suez (1947–1956)
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
-            Geographical Disciplinary Evidence
-          </span>
-        </div>
-      </div>
-
-      <!-- Two Authentic Historical Maps Side by Side -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px; flex: 1;">
-        
-        <!-- Map 1: 1949 Armistice Green Line -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
-                1. The 1949 Rhodes Armistice Green Line
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">MAP ARCHIVE</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
-              From the 1947 UN Resolution 181 partition proposal to the 1949 Armistice borders and the Nakba:
-            </p>
-          </div>
-          
-          <div style="text-align: center; margin: 2px 0;">
-            <img src="${palestine1949MapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="1949 Armistice Map">
-          </div>
-
-          <!-- Key Data Statistics Box -->
-          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>UN Resolution 181 (1947):</strong> Allocated 55% to Jewish state, 44% to Arab state, Jerusalem designated an international UN zone.</div>
-            <div>&bull; <strong>1948–49 War Outcome:</strong> Israel expanded to secure 79% of Mandate Palestine; Transjordan annexed West Bank; Egypt held Gaza.</div>
-            <div>&bull; <strong>The Nakba (1948):</strong> 700,000+ Palestinian Arabs displaced; armistice demarcation drawn in green pencil at Rhodes (Green Line).</div>
-          </div>
-        </div>
-
-        <!-- Map 2: 1956 Suez Campaign & Sinai Conquest -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
-                2. The 1956 Suez Crisis &bull; Sinai Conquest
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">CAMPAIGN ARCHIVE</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
-              Operation Kadesh, the secret Protocol of Sèvres collusion, and the Anglo-French Port Said landings:
-            </p>
-          </div>
-
-          <div style="text-align: center; margin: 2px 0;">
-            <img src="${suez1956MapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="1956 Suez Campaign Map">
-          </div>
-
-          <!-- Strategic Key Data Box -->
-          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>Protocol of Sèvres:</strong> Secret collusion between Britain, France, and Israel to seize the canal and overthrow President Nasser.</div>
-            <div>&bull; <strong>100-Hour Blitzkrieg:</strong> Moshe Dayan’s IDF swept across Sinai in 100 hours; 202nd Paratroopers dropped at Mitla Pass; took Sharm el-Sheikh.</div>
-            <div>&bull; <strong>Superpower Intervention:</strong> US President Eisenhower forced Allied withdrawal via financial pressure; UNEF deployed to Sinai.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Cartographic Disciplinary Synthesis Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fafafa; margin-bottom: 2px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
-          Cartographic Disciplinary Insight: How Did Borders &amp; Strategic Maritime Chokepoints Fuel Conflict?
-        </strong>
-        <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0; line-height: 1.22;">
-          The armistice boundaries of 1949 created extreme strategic vulnerability: Israel’s coastal waist near Tel Aviv was only 9 miles wide, while over 700,000 displaced Palestinians were confined to crowded refugee enclaves in Gaza and the West Bank without sovereignty. Simultaneously, critical maritime waterways—the Suez Canal and the Straits of Tiran at Sharm el-Sheikh—became geopolitical flashpoints. Nasser’s blockade of Israeli shipping directly precipitated the 1956 invasion, demonstrating how geography and maritime access dictated the rhythm of regional warfare.
-        </p>
-      </div>
-
-      ${renderFooterStrip(24, approvedFunnyFooters[23], 28)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGE 25: GRADE 9 EXTENDED WRITING MASTERCLASS & BAND 4 RUBRIC (RECTO)
-  // Facing Page to Cartographic Atlas (Spread 24–25)
-  // ====================================================================
-  html += `
-  <div class="page page-container recto-page" id="page-25" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 13pt; color: #000000; margin: 0; font-weight: 900; text-transform: uppercase;">
-            Grade 9 Extended Writing Masterclass &amp; Band 4 Rubric
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px;">
-            EDEXCEL PAPER 2 EXCELLENCE
-          </span>
-        </div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between;">
-        
-        <!-- Section 1: The PFC Analytical Framework for 4-Mark Consequence Questions -->
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px; background: #ffffff;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between;">
-            <span>1. The PFC Analytical Formula (Q1 Consequence [4 Marks])</span>
-            <span style="font-weight: 700; color: #333;">Strict 5-Minute Exam Target</span>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; margin-bottom: 3px;">
-            <div style="border: 1px solid #000; border-radius: 2px; padding: 3px 5px; background: #fafafa;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">[P] Point</strong>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2;">Directly state the consequence using exact question phrasing.</div>
-            </div>
-            <div style="border: 1px solid #000; border-radius: 2px; padding: 3px 5px; background: #fafafa;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">[F] Fact</strong>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2;">Provide precise historical evidence (exact dates, figures, casualties, names).</div>
-            </div>
-            <div style="border: 1px solid #000; border-radius: 2px; padding: 3px 5px; background: #fafafa;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">[C] Consequence</strong>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2;">Explain the long-term causal impact on regional tension or conflict.</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: Causal Connectives & Band 4 Evaluative Criteria -->
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px; background: #fafafa;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px;">
-            2. High-Yield Causal Connectives &amp; Band 4 Evaluative Criteria
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
-            <div>
-              <strong>Analytical Causal Connectives:</strong><br>
-              &bull; <em>"Consequently, this fundamentally shifted..."</em><br>
-              &bull; <em>"In direct reaction to this humiliation, Nasser..."</em><br>
-              &bull; <em>"Crucially, this created an unresolvable deadlock because..."</em><br>
-              &bull; <em>"This directly resulted in the military turning point whereby..."</em>
-            </div>
-            <div>
-              <strong>Band 4 Evaluative Criteria Prompts:</strong><br>
-              &bull; <strong>Scale &amp; Permanence:</strong> Did this alter borders permanently (e.g. 1949 Green Line)?<br>
-              &bull; <strong>Superpower Influence:</strong> How did US or Soviet intervention dictate the outcome?<br>
-              &bull; <strong>Demographic Impact:</strong> How did displacement (Nakba) prevent diplomatic recognition?<br>
-              &bull; <strong>Strategic Supremacy:</strong> How did military factors overpower political agreements?
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 3: Annotated Grade 9 Benchmark Model Essay (Q3 Importance [8 Marks]) -->
-        <div style="border: 1.2px solid #000; border-radius: 3px; padding: 4px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px; border-bottom: 1px solid #000; padding-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
-                3. Annotated Grade 9 Model Answer &bull; Q3: Explain Importance [8 Marks]
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #000; color: #fff; padding: 0.5px 5px; border-radius: 1px;">
-                EXAMINER MARKS: 8/8 (BAND 4)
-              </span>
-            </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; margin-bottom: 2px;">
-              Question: Explain the importance of the bombing of the King David Hotel (July 1946) for the British decision to withdraw from Palestine.
-            </div>
-            <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.26; color: #111;">
-              <p style="margin: 0 0 3px 0;">
-                <strong>Aspect 1 (Military &amp; Administrative Destruction):</strong> The bombing of the King David Hotel on 22 July 1946 was of paramount importance because it directly crippled British military and civil administration in Mandatory Palestine. Militants from Menachem Begin’s Irgun smuggled 350kg of explosives into the basement disguised as milk churns, detonating the entire south-west wing and killing 91 British, Arab, and Jewish staff. Crucially, this eradicated the central archives, intelligence registries, and senior command infrastructure of the British Secretariat. Consequently, the British army was forced into defensive, fortified enclaves ("Bevingrads"), demonstrating that Britain could no longer maintain basic law and order against determined Jewish insurgent militias.
-              </p>
-              <p style="margin: 0;">
-                <strong>Aspect 2 (Domestic Political &amp; Financial Exhaustion):</strong> Furthermore, the bombing was decisively important in shattering British political resolve at home. Prime Minister Clement Attlee’s postwar Labour government was financially bankrupt, rationing bread, and struggling under £3 billion of wartime debt while deploying 100,000 soldiers to Palestine. The public spectacle of British soldiers dying in a thankless imperial conflict triggered ferocious parliamentary and media backlash, crystallised by the execution of two British intelligence sergeants in retaliation for Irgun hangings in 1947. In direct reaction to this unsustainable financial drain and domestic fury, Foreign Secretary Ernest Bevin announced in February 1947 that Britain would abandon the Mandate and surrender the entire problem to the United Nations without enforcing a partition.
-              </p>
-            </div>
-          </div>
-          <div style="border-top: 1px dashed #000; padding-top: 2px; margin-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #333; display: flex; justify-content: space-between;">
-            <span>&bull; Detailed historical facts: 22 July 1946, 350kg TNT, 91 deaths, Menachem Begin, 100,000 troops.</span>
-            <span>&bull; Analytical focus: Direct link to Attlee’s February 1947 UN surrender.</span>
-          </div>
-        </div>
-
-      </div>
-
-      ${renderFooterStrip(25, approvedFunnyFooters[24], 28)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGES 26–27: SYNOPTIC ASSESSMENT & TIMED EXAM PRACTICE (FACING SPREAD)
-  // ====================================================================
-  const linedRowsSynopticLeft = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice &bull; Aspect 1: Detailed Historical Analysis ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  html += `
-  <div class="page page-container verso-page" id="page-26" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 1 Synoptic Assessment &bull; Timed Exam Practice
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 2 &bull; Question 2 / Question 3 &bull; Aspect 1 Analysis
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsSynopticLeft}
-      </div>
-
-      ${renderFooterStrip(26, approvedFunnyFooters[25], 28)}
-    </div>
-  </div>
-`;
-
-  const linedRowsSynopticRight = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice Continued &bull; Aspect 2 &amp; Sustained Evaluative Conclusion ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  html += `
-  <div class="page page-container recto-page" id="page-27" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 1 Synoptic Assessment &bull; Sustained Analytical Conclusion
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 2 &bull; Band 4 Evaluative Verdict &bull; Examiner Criteria
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsSynopticRight}
-      </div>
-
-      ${renderFooterStrip(27, approvedFunnyFooters[26], 28)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGE 28: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
+  // PAGE 24: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
   // ====================================================================
   html += renderStandardBackCover({
     unitId: 'cme_new',
@@ -2306,8 +1467,8 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=4`,
       },
     ],
-    footerQuip: approvedFunnyFooters[27],
-    totalPageCount: 28,
+    footerQuip: approvedFunnyFooters[23],
+    totalPageCount: 24,
     renderFooterStrip,
   });
 

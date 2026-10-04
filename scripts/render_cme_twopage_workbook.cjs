@@ -58,7 +58,7 @@ const approvedFunnyFooters = [
 // Even pages (verso/left): Page number on left, text on right.
 // Odd pages (recto/right): Text on left, page number on right.
 // ============================================================================
-function renderFooterStrip(pageNum, text, totalPages = 28) {
+function renderFooterStrip(pageNum, text, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -87,8 +87,7 @@ const kt2Configs = [
     subTitle:
       'Key Topic 2.1: The Road to War: Water Wars, Guerrilla Raids & Skirmishes (1964–1967)',
     title: 'KT2.1: The Road to War: Water Wars & Skirmishes (1964–1967)',
-    specAnchor:
-      'The Cairo Conference (1964) and creation of the PLO; River Jordan water dispute and Headwater Diversion Plan; Syrian-backed fedayeen guerrilla attacks; Israeli reprisal raids and the 7 April 1967 aerial battle over the Golan Heights.',
+    specAnchor: `The <strong>founding of the Palestine Liberation Organization (PLO) in 1964 and its aims</strong>; <strong>Fatah guerrilla raids</strong>; the <strong>Samu raid (1966)</strong>; <strong>Syrian border disputes and the Golan Heights</strong>; the <strong>April 1967 air skirmish</strong>; and <strong>Soviet false intelligence warnings</strong>.`,
     stages: [
       {
         step: 1,
@@ -295,8 +294,7 @@ const kt2Configs = [
     inquiryQuestion: 'How did Israel secure total military victory during the Six-Day War?',
     subTitle: 'Key Topic 2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     title: 'KT2.2: The Outbreak & Course of the Six-Day War (June 1967)',
-    specAnchor:
-      'The actions of the USSR, Nasser and the USA in the period leading to war; the outbreak of war on 5 June 1967; Operation Focus; key events of the war in Sinai, the West Bank, East Jerusalem and the Golan Heights.',
+    specAnchor: `<strong>Causes of the Six-Day War</strong>: <strong>Nasser's remilitarisation of the Sinai and expulsion of UNEF</strong>; <strong>closure of the Straits of Tiran</strong>; the <strong>Egyptian-Jordanian Defence Pact</strong>; the <strong>Israeli pre-emptive air strike (Operation Focus, 5 June 1967)</strong>; <strong>air supremacy</strong>; and the <strong>rapid IDF tank blitzkrieg in Sinai, Jerusalem, the West Bank, and the Golan Heights</strong>.`,
     stages: [
       {
         step: 1,
@@ -507,8 +505,7 @@ const kt2Configs = [
     inquiryQuestion: 'Why did the aftermath of the 1967 war lead to lasting diplomatic deadlock?',
     subTitle: 'Key Topic 2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     title: 'KT2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
-    specAnchor:
-      'UN Resolution 242 and the continued dispute over the Suez Canal; Palestinian refugees and the significance of the occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem.',
+    specAnchor: `<strong>Consequences of the Six-Day War</strong>: <strong>territorial gains (Sinai, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights)</strong>; the <strong>refugee crisis</strong>; the <strong>Khartoum Resolution ("Three No's")</strong>; <strong>UN Resolution 242 ("Land for Peace")</strong>; and the <strong>start of Israeli settlement building</strong>.`,
     stages: [
       {
         step: 1,
@@ -717,8 +714,7 @@ const kt2Configs = [
     subTitle:
       'Key Topic 2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     title: 'KT2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
-    specAnchor:
-      'The use of terrorism, Israel’s response and international attitudes towards the Palestine issue: the PFLP airplane hijacks of 1970; Black September and the Munich Olympics; the expulsion of the PLO from Jordan (1970).',
+    specAnchor: `The <strong>War of Attrition along the Suez Canal (1969–70)</strong>; the <strong>Battle of Karameh (1968)</strong>; the <strong>rise of Yasser Arafat</strong>; <strong>international aircraft hijackings (Dawson's Field, Sept 1970)</strong>; <strong>Black September in Jordan (1970)</strong>; and the <strong>Munich Olympics massacre (Sept 1972)</strong> followed by <strong>Operation Wrath of God</strong>.`,
     stages: [
       {
         step: 1,
@@ -928,8 +924,7 @@ const kt2Configs = [
     inquiryQuestion: 'How did the Yom Kippur War shatter Israeli invincibility in October 1973?',
     subTitle: 'Key Topic 2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     title: 'KT2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
-    specAnchor:
-      'Israel’s consolidation of control of the occupied territories; key events of the Yom Kippur War (1973) and its aftermath.',
+    specAnchor: `<strong>Causes of the Yom Kippur War (1973)</strong>: <strong>Sadat’s diplomacy and Egyptian-Syrian desire to regain lost land</strong>; <strong>Operation Badr surprise crossing on Yom Kippur</strong>; <strong>Syrian offensive on Mount Hermon</strong>; the <strong>Israeli counter-offensive (Sharon crossing the Suez Canal)</strong>; <strong>superpower resupply airlifts (US Operation Nickel Grass vs Soviet airlift)</strong>; <strong>nuclear alert DEFCON 3</strong>; the <strong>ceasefire (UN Res 338)</strong>; and the <strong>OPEC oil embargo</strong>.`,
     stages: [
       {
         step: 1,
@@ -1381,7 +1376,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       ],
     },
     footerQuip: approvedFunnyFooters[0],
-    totalPageCount: 28,
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
@@ -1458,7 +1453,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, approvedFunnyFooters[1], 28)}
+      ${renderFooterStrip(2, approvedFunnyFooters[1], 24)}
     </div>
   </div>
 
@@ -1530,7 +1525,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, approvedFunnyFooters[2], 28)}
+      ${renderFooterStrip(3, approvedFunnyFooters[2], 24)}
     </div>
   </div>
 `;
@@ -1584,7 +1579,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .map(
               (s, sIdx) => `
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Bullet Keywords • 38mm Width) -->
+            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
             <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
@@ -1595,17 +1590,31 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
                 ${s.title}
               </div>
               ${
+                (s.keywords && s.keywords.length > 0) ||
                 (s.coreKeywords && s.coreKeywords.length > 0) ||
                 (s.stretchKeywords && s.stretchKeywords.length > 0)
                   ? `
-              <div style="margin-top: 1.5px;">
+              <div style="margin-top: 1px;">
                 <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${[...(s.coreKeywords || []), ...(s.stretchKeywords || [])]
+                  ${(s.keywords || [...(s.coreKeywords || []), ...(s.stretchKeywords || [])])
                     .map(
                       (kw) =>
                         `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
                     )
                     .join('')}
+                </div>
+              </div>`
+                  : ''
+              }
+              ${
+                s.clue
+                  ? `
+              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
+                  Focus Clue
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
+                  ${s.clue}
                 </div>
               </div>`
                   : ''
@@ -1629,7 +1638,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
-      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
+      ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1657,7 +1666,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1771,7 +1780,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         ).join('')}
       </div>
 
-      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
+      ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 24)}
     </div>
   </div>
 
@@ -1809,387 +1818,14 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
+      ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 24)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 24: KEY TOPIC 2 CARTOGRAPHIC MASTERCLASS & STRATEGIC ATLAS (VERSO)
-  // The 1967 Six-Day War & The 1973 Yom Kippur War Primary Cartography
-  // ====================================================================
-  html += `
-  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
-    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-      
-      <!-- Top Departmental Branding -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Cartographic Masterclass</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 2 CARTOGRAPHIC EVIDENCE</span>
-        </div>
-      </div>
-
-      <!-- Main Title Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 900;">
-            Key Topic 2 Cartographic Masterclass &bull; The 1967 &amp; 1973 Wars
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
-            Geographical Disciplinary Evidence
-          </span>
-        </div>
-      </div>
-
-      <!-- Two Authentic Historical Maps Side by Side -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 3px; flex: 1;">
-        
-        <!-- Map 1: 1967 Six-Day War Blitzkrieg -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
-                1. The Six-Day War (June 1967): Blitzkrieg
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">MAP ARCHIVE</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
-              Operation Focus dawn airstrike and the capture of the Sinai Peninsula, Gaza Strip, West Bank, Jerusalem &amp; Golan Heights:
-            </p>
-          </div>
-          
-          <div style="text-align: center; margin: 2px 0;">
-            <img src="${sixDayWarMapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="Six-Day War Historical Map">
-          </div>
-
-          <!-- Key Data Statistics Box -->
-          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>Operation Focus (5 June):</strong> Israeli jets destroy 300+ Egyptian aircraft on tarmac in 3 hours, achieving total air supremacy.</div>
-            <div>&bull; <strong>Triple Front Advance:</strong> IDF armor captures Sinai to Suez; paratroopers take Old City Jerusalem (7 June); Golan cliffs scaled (9–10 June).</div>
-            <div>&bull; <strong>Strategic Outcomes:</strong> Israeli territory quadruples; creates buffer zones; places 1M+ Palestinians under direct military occupation.</div>
-          </div>
-        </div>
-
-        <!-- Map 2: 1973 Yom Kippur War Suez Crossing -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 2px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase;">
-                2. The Yom Kippur War (Oct 1973): Sinai Front
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">CAMPAIGN ARCHIVE</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0 0 4px 0; line-height: 1.2;">
-              Operation Badr canal crossing, the Bar-Lev sand rampart breach, and Sharon's armoured counter-crossing at Deversoir:
-            </p>
-          </div>
-
-          <div style="text-align: center; margin: 2px 0;">
-            <img src="${yomKippurMapSrc}" style="max-height: 115mm; max-width: 100%; object-fit: contain; border: 1px solid #cbd5e1; border-radius: 2px; display: block; margin: 0 auto;" alt="Yom Kippur War Sinai Map">
-          </div>
-
-          <!-- Strategic Key Data Box -->
-          <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.22;">
-            <div>&bull; <strong>Operation Badr (6 Oct):</strong> 80,000 Egyptian troops cross Suez; high-pressure water monitors wash away Bar-Lev sand wall in 2 hours.</div>
-            <div>&bull; <strong>Sharon's Counter-Crossing (15–16 Oct):</strong> Israeli armor exploits seam between 2nd &amp; 3rd Armies, encircling Egypt's 3rd Army on west bank.</div>
-            <div>&bull; <strong>Global Shock:</strong> OPEC oil embargo quadruples world crude oil prices; US DEFCON 3 alert; Henry Kissinger brokers UN Res 338 ceasefire.</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Cartographic Disciplinary Synthesis Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fafafa; margin-bottom: 2px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
-          Cartographic Disciplinary Insight: Why Did Topography &amp; Buffer Zones Dictate Middle Eastern Military Strategy?
-        </strong>
-        <p style="font-family: 'Georgia', serif; font-size: 6.8pt; margin: 0; line-height: 1.22;">
-          The geographical outcome of 1967 fundamentally altered regional military doctrine. While Israel viewed the vast Sinai desert, Suez water barrier, and Golan Heights as an impenetrable defensive buffer, this exact geographical reality convinced Egypt and Syria that only a high-technology surprise assault—using water monitors to dissolve sand ramparts and mobile SAM umbrellas—could overcome Israeli air superiority. Consequently, the 1973 war shattered the assumption that defensible geographical borders alone could guarantee national security.
-        </p>
-      </div>
-
-      ${renderFooterStrip(24, approvedFunnyFooters[23], 28)}
-    </div>
-  </div>
-
-  <!-- ==================================================================== -->
-  <!-- PAGE 25: GRADE 9 EXAM MASTERCLASS & MARK SCHEME RUBRIC (RECTO)       -->
-  <!-- Pearson Edexcel Rubric, PFC Formula & Analytical Connectives         -->
-  <!-- ==================================================================== -->
-  <div class="page page-container recto-page" id="page-25" style="padding: 4mm 6mm;">
-    <div class="page-body-full" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
-      
-      <!-- Top Departmental Branding -->
-      <div style="border-bottom: 2px solid #000; padding-bottom: 2px; margin-bottom: 4px;" data-department-name="The History Department">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Grade 9 Masterclass</span>
-        </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 2: CONFLICT IN THE MIDDLE EAST, 1945–1995</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">KEY TOPIC 2 EXAM EXCELLENCE</span>
-        </div>
-      </div>
-
-      <!-- Main Title Header -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center;">
-        <div>
-          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 1px;">
-            <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
-              EXAM ARCHITECTURE
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
-              Pearson Edexcel Paper 2 Assessment Rubric
-            </span>
-          </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; line-height: 1.15; margin: 0; font-weight: 900;">
-            Grade 9 Extended Writing Masterclass &amp; Mark Scheme Rubric
-          </h2>
-        </div>
-        <div style="text-align: right; border-left: 1.5px solid #000; padding-left: 10px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase; display: block;">Target Standard</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900;">GRADE 9 (85%+)</span>
-        </div>
-      </div>
-
-      <!-- Section 1: Official Pearson Edexcel Mark Scheme Descriptors Matrix -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
-        <div style="background: #000; color: #fff; padding: 2.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
-          <span>1. Official Pearson Edexcel Mark Scheme Descriptors (Q2 Narrative &amp; Q3 Importance [8 Marks])</span>
-          <span>Assessment Criteria</span>
-        </div>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
-          <thead>
-            <tr style="background: #f0f0f0; border-bottom: 1.2px solid #000;">
-              <th style="padding: 3px 6px; width: 65px; text-align: center; border-right: 1px solid #000;">Level &amp; Marks</th>
-              <th style="padding: 3px 8px; text-align: left; border-right: 1px solid #000;">Official Pearson Edexcel Standard</th>
-              <th style="padding: 3px 8px; text-align: left; width: 230px;">Actionable Pupil Guidance (How to Secure It)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #000; background: #fff;">
-              <td style="padding: 3px 6px; text-align: center; font-weight: 900; font-size: 7.5pt; border-right: 1px solid #000;">
-                Level 4<br><span style="font-size: 8.5pt;">7–8m</span>
-              </td>
-              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                An analytical explanation is offered which is consistently directed to the question. Shows comprehensive, accurate historical knowledge and understanding. Synthesises a sustained, coherent line of reasoning with explicit causal links between events/phases.
-              </td>
-              <td style="padding: 3px 8px; font-weight: 600;">
-                &bull; Never just say <em>'and then'</em>; explain <strong>HOW</strong> event A directly forced event B.<br>
-                &bull; Integrate at least 4 precise proper nouns, statistics, or named figures per paragraph.<br>
-                &bull; Conclude each paragraph with an analytical verdict directly answering the stem.
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000; background: #fafafa;">
-              <td style="padding: 3px 6px; text-align: center; font-weight: 800; font-size: 7.5pt; border-right: 1px solid #000;">
-                Level 3<br><span style="font-size: 8.5pt;">5–6m</span>
-              </td>
-              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                An analytical explanation is offered with some focus on the question. Accurate knowledge is demonstrated. The account is mostly coherent and structured, with some causal links established between stages.
-              </td>
-              <td style="padding: 3px 8px;">
-                &bull; Good factual knowledge and chronological ordering, but some sections lapse into storytelling without explaining historical consequence.<br>
-                &bull; Weak or missing transitions between the phases of the event.
-              </td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000; background: #fff;">
-              <td style="padding: 3px 6px; text-align: center; font-weight: 800; font-size: 7.5pt; border-right: 1px solid #000;">
-                Level 2<br><span style="font-size: 8.5pt;">3–4m</span>
-              </td>
-              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                A narrative or descriptive account is offered. Basic knowledge is shown. Links between events are weak, simple, or purely chronological rather than causal.
-              </td>
-              <td style="padding: 3px 8px;">
-                &bull; Retells the plot chronologically without answering the prompt's key analytical verb.<br>
-                &bull; Broad generalisations with few specific dates, proper nouns, or named battles.
-              </td>
-            </tr>
-            <tr style="background: #fafafa;">
-              <td style="padding: 3px 6px; text-align: center; font-weight: 800; font-size: 7.5pt; border-right: 1px solid #000;">
-                Level 1<br><span style="font-size: 8.5pt;">1–2m</span>
-              </td>
-              <td style="padding: 3px 8px; border-right: 1px solid #000; font-family: 'Georgia', serif;">
-                Simple, general statements are made. Demonstrates limited knowledge with significant factual confusion or irrelevance.
-              </td>
-              <td style="padding: 3px 8px;">
-                &bull; 1–2 vague, disjointed sentences without historical grounding. Needs basic recall drill.
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Section 2: The Edexcel PFC Formula for Q1 Consequence Questions [4 Marks] -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #fff; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">
-            2. The Edexcel PFC Formula for Q1 Consequence Questions [4 Marks in 4 Minutes]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; background: #000; color: #fff; padding: 1px 5px; border-radius: 2px;">
-            1 PARAGRAPH = 4/4 MARKS
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1.2fr 1.4fr; gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.5pt; margin-bottom: 2px;">
-          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
-            <strong>[P] POINT (1 Mark):</strong> Identify ONE specific consequence clearly in your very first sentence.
-          </div>
-          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
-            <strong>[F] FACT (1–2 Marks):</strong> Deploy 2–3 precise proper nouns, statistics, or chronological details.
-          </div>
-          <div style="border: 1px solid #000; padding: 2px 4px; border-radius: 2px; background: #fafafa;">
-            <strong>[C] CONSEQUENCE (1 Mark):</strong> Explain the direct historical impact and why it mattered.
-          </div>
-        </div>
-        <div style="border-left: 2px solid #000; padding-left: 5px; font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.2; color: #111;">
-          <strong>Exemplar 4/4 Model:</strong> <em>One consequence of Nasser closing the Straits of Tiran in May 1967 was that it made war inevitable [P]. By blockading the port of Eilat, Egypt cut off 90% of Israel’s vital oil imports, which Prime Minister Levi Eshkol had repeatedly declared would be treated as an explicit casus belli [F]. Consequently, this economic asphyxiation convinced the Israeli Cabinet that diplomatic options were exhausted, directly triggering the pre-emptive air strikes of Operation Focus on 5 June 1967 [C].</em>
-        </div>
-      </div>
-
-      <!-- Section 3: High-Yield Analytical Connective & Sentence Starter Matrix -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 4px;">
-        <div style="background: #000; color: #fff; padding: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; display: flex; justify-content: space-between;">
-          <span>3. Grade 9 Analytical Connective &amp; Transition Bank</span>
-          <span>Elevate Your Writing</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.22;">
-          <div style="padding: 3px 6px; border-right: 1px solid #000; background: #fff;">
-            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Causal Chain Stems:</strong>
-            <span style="font-family: 'Georgia', serif; font-style: italic;">
-              &bull; "The underlying catalyst was..."<br>
-              &bull; "This directly precipitated..."<br>
-              &bull; "Consequently, this forced Israel to..."<br>
-              &bull; "As an inevitable repercussion..."
-            </span>
-          </div>
-          <div style="padding: 3px 6px; border-right: 1px solid #000; background: #fafafa;">
-            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Narrative Progression:</strong>
-            <span style="font-family: 'Georgia', serif; font-style: italic;">
-              &bull; "The immediate precursor was..."<br>
-              &bull; "Tensions intensified when..."<br>
-              &bull; "This military breakthrough enabled..."<br>
-              &bull; "The situation culminated in..."
-            </span>
-          </div>
-          <div style="padding: 3px 6px; background: #fff;">
-            <strong style="text-transform: uppercase; color: #000; display: block; margin-bottom: 1px;">Significance &amp; Verdict:</strong>
-            <span style="font-family: 'Georgia', serif; font-style: italic;">
-              &bull; "This proved decisive because..."<br>
-              &bull; "The fundamental turning point lay in..."<br>
-              &bull; "This shattered the assumption that..."<br>
-              &bull; "The enduring consequence was..."
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Section 4: Pupil Extended Writing Self-Audit Checklist -->
-      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4px 8px; background: #fafafa; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 2px; display: flex; justify-content: space-between; border-bottom: 1px solid #000; padding-bottom: 2px;">
-          <span>4. Pupil Extended Writing Self-Audit Checklist (The Grade 9 Polish)</span>
-          <span>Tick Before Handing In</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.25; flex: 1; align-content: space-between;">
-          <div>&bull; &#9633; Did I name at least 3 specific historical proper nouns per paragraph?</div>
-          <div>&bull; &#9633; Did I frame my opening line to echo the exact words of the exam question?</div>
-          <div>&bull; &#9633; Did I explain <strong>HOW</strong> event A caused event B rather than just stating it?</div>
-          <div>&bull; &#9633; For narrative accounts: Are my 3 paragraphs in strict chronological sequence?</div>
-          <div>&bull; &#9633; Did I use causal connectives (<em>Consequently, This directly led to</em>)?</div>
-          <div>&bull; &#9633; For importance questions: Did I evaluate the lasting impact or turning point?</div>
-        </div>
-      </div>
-
-      ${renderFooterStrip(25, approvedFunnyFooters[24], 28)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGES 26–27: SYNOPTIC ASSESSMENT & TIMED EXAM PRACTICE (FACING SPREAD)
-  // ====================================================================
-  const linedRowsSynopticLeft = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice &bull; Aspect 1: Detailed Historical Analysis ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  html += `
-  <div class="page page-container verso-page" id="page-26" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 2 Synoptic Assessment &bull; Timed Exam Practice
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 2 &bull; Question 2 / Question 3 &bull; Aspect 1 Analysis
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsSynopticLeft}
-      </div>
-
-      ${renderFooterStrip(26, approvedFunnyFooters[25], 28)}
-    </div>
-  </div>
-`;
-
-  const linedRowsSynopticRight = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Synoptic Practice Continued &bull; Aspect 2 &amp; Sustained Evaluative Conclusion ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  html += `
-  <div class="page page-container recto-page" id="page-27" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 2 Synoptic Assessment &bull; Sustained Analytical Conclusion
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 2 &bull; Band 4 Evaluative Verdict &bull; Examiner Criteria
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsSynopticRight}
-      </div>
-
-      ${renderFooterStrip(27, approvedFunnyFooters[26], 28)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGE 28: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
+  // PAGE 24: OUTSIDE BACK COVER (Student Assessment Record & Digital Quizzing Hub)
   // ====================================================================
   html += renderStandardBackCover({
     unitId: 'cme_new',
@@ -2281,8 +1917,8 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         url: `https://the-history-revision-hub.netlify.app/?view=lessons&unit=cme_new&lesson=8`,
       },
     ],
-    footerQuip: approvedFunnyFooters[27],
-    totalPageCount: 28,
+    footerQuip: approvedFunnyFooters[23],
+    totalPageCount: 24,
     renderFooterStrip,
   });
 
