@@ -89,46 +89,81 @@ const kt3Configs = [
     title: 'KT3.1: Diplomatic Negotiations & Shuttle Diplomacy (1974–1978)',
     specAnchor:
       'The oil crisis and superpower involvement: the roles of the USA (Kissinger’s shuttle diplomacy) and the USSR; the 1974–75 disengagement accords; the reopening of the Suez Canal; the 1977 Israeli election of Menachem Begin; Sadat’s visit to Israel (November 1977) and Knesset speech; Begin’s visit to Egypt (December 1977).',
-    doNow: [
+    stages: [
       {
-        q: 'On what Jewish holy day did Egypt and Syria launch their surprise attack in 1973?',
-        a: 'Yom Kippur (Day of Atonement)',
+        step: 1,
+        date: 'Oct 1973',
+        title: 'The Arab Oil Shock & Superpower Realignment',
+        actor: 'OPEC Arab Oil Producers & The USA',
+        tag: 'The Economic Lever',
+        trigger:
+          'Arab OPEC states embargo crude oil shipments to the US and slash production, quadrupling world oil prices in weeks.',
+        because:
+          'Arab nations sought to punish the US for resupplying Israel during the 1973 war and force Western powers to pressure Israel into territorial concessions.',
+        therefore:
+          'Inflicted severe Western stagflation and convinced Washington that Middle East stability was an urgent national security priority.',
+        connective:
+          'With US economic interests threatened, Secretary of State Henry Kissinger launched unprecedented mediation...',
       },
       {
-        q: 'What cartel of Arab oil-producing nations imposed the October 1973 oil embargo?',
-        a: 'OPEC (Organization of the Petroleum Exporting Countries)',
+        step: 2,
+        date: 'Jan 1974',
+        title: 'Kissinger’s Shuttle Diplomacy & Sinai I',
+        actor: 'Henry Kissinger, Egypt & Israel',
+        tag: 'Bilateral Disengagement',
+        trigger:
+          'Kissinger flies between Cairo and Jerusalem, brokering the Sinai Disengagement Agreement (Sinai I) to separate frontline armies.',
+        because:
+          'Both armies were dangerously entangled across the Suez Canal, with Egypt’s Third Army encircled and risking renewed superpower war.',
+        therefore:
+          'Established a UN buffer zone along the canal, allowing Egypt to reopen the waterway and paving the way for gradual territorial talks.',
+        connective:
+          'Encouraged by military separation, the parties negotiated a broader diplomatic pact...',
       },
       {
-        q: 'By how much did the price of crude oil increase per barrel following the 1973 oil embargo?',
-        a: 'It quadrupled (from $3 to $12 a barrel)',
+        step: 3,
+        date: 'Sept 1975',
+        title: 'The Sinai II Agreement',
+        actor: 'Egyptian & Israeli Governments',
+        tag: 'Renouncing Force',
+        trigger:
+          'Egypt and Israel sign Sinai II in Geneva, committing both nations to resolve their territorial disputes exclusively by peaceful means.',
+        because:
+          'Sadat urgently needed to rebuild Egypt’s shattered domestic economy, while Israel sought to detach Egypt from the Arab military coalition.',
+        therefore:
+          'Israel withdrew further into Sinai, returning the Abu Rudeis oilfields, while Egypt formally pledged not to resort to military force.',
+        connective:
+          'However, political leadership in Israel shifted sharply to the right, threatening negotiations...',
       },
       {
-        q: 'Who served as US Secretary of State and pioneered "shuttle diplomacy" between 1974 and 1975?',
-        a: 'Henry Kissinger',
+        step: 4,
+        date: 'May 1977',
+        title: 'Likud Election Victory (Menachem Begin)',
+        actor: 'Menachem Begin & The Likud Party',
+        tag: 'Right-Wing Triumph',
+        trigger:
+          'Menachem Begin leads the right-wing Likud party to an election victory, ending 29 years of unbroken Labour rule in Israel.',
+        because:
+          'Israeli voters were disillusioned by Labour’s military unpreparedness in 1973 and sought stronger, uncompromising leadership.',
+        therefore:
+          'Begin took power as a hardline ideological Zionist opposed to returning the West Bank, making peace appear completely impossible.',
+        connective:
+          'To break this dangerous diplomatic impasse, President Sadat made an astonishing unilateral gamble...',
       },
       {
-        q: 'Which vital international waterway, closed since June 1967, was reopened by Egypt in June 1975?',
-        a: 'The Suez Canal',
-      },
-      {
-        q: 'Which right-wing Israeli political party won the May 1977 election, ending 29 years of Labour rule?',
-        a: 'Likud',
-      },
-      {
-        q: 'Who became Prime Minister of Israel in May 1977 having formerly commanded the Irgun?',
-        a: 'Menachem Begin',
-      },
-      {
-        q: 'On what date did Egyptian President Anwar Sadat land in Israel to address the Knesset in Jerusalem?',
-        a: '19 November 1977',
-      },
-      {
-        q: 'What foundational diplomatic principle did UN Resolution 242 establish in November 1967?',
-        a: '"Land for Peace"',
-      },
-      {
-        q: 'In which Egyptian city did Menachem Begin meet Sadat on Christmas Day 1977 for reciprocal talks?',
-        a: 'Ismailia',
+        step: 5,
+        date: '19–21 Nov 1977',
+        title: 'Sadat’s Historic Journey to Jerusalem',
+        actor: 'President Anwar Sadat & The Israeli Knesset',
+        tag: 'The Psychological Breakthrough',
+        trigger:
+          'Sadat flies to Tel Aviv and addresses the Israeli Knesset in Jerusalem, declaring directly to the Israeli people: "No more war."',
+        because:
+          'Sadat realised that mutual fear and psychological barriers prevented peace, and that only a dramatic gesture could unlock direct talks.',
+        therefore:
+          'Electrified world opinion, shattered 30 years of Arab diplomatic taboos, and paved the way directly to the Camp David Summit.',
+        connective:
+          'Sadat’s courage opened the door to intense tripartite negotiations at the presidential retreat of Camp David...',
       },
     ],
     vocabPrompt:
@@ -188,46 +223,81 @@ const kt3Configs = [
     title: 'KT3.2: Camp David Accords & The Treaty of Washington (1978–1982)',
     specAnchor:
       'The role of US President Jimmy Carter; the Camp David negotiations (September 1978); the two frameworks of the Camp David Accords; the Egyptian-Israeli Peace Treaty (Treaty of Washington, March 1979); the phased return of Sinai and the evacuation of Yamit (1982); Arab state backlash, the Arab League boycott, and the assassination of Anwar Sadat (October 1981).',
-    doNow: [
+    stages: [
       {
-        q: 'Which US President invited Menachem Begin and Anwar Sadat to Camp David in September 1978?',
-        a: 'Jimmy Carter',
+        step: 1,
+        date: '5–17 Sept 1978',
+        title: 'The Camp David Summit',
+        actor: 'Jimmy Carter, Anwar Sadat & Menachem Begin',
+        tag: 'Presidential Isolation',
+        trigger:
+          'US President Jimmy Carter isolates Sadat and Begin at Camp David for 13 days of grueling, closed-door negotiations.',
+        because:
+          'Bilateral talks had collapsed over Israeli settlements in Sinai and Begin’s refusal to grant Palestinian national sovereignty.',
+        therefore:
+          'Carter’s personal diplomacy and promises of billions in US economic and military aid saved the summit from total failure.',
+        connective:
+          'The intense 13-day summit produced two historic but fundamentally unequal framework documents...',
       },
       {
-        q: 'How many days of sequestered negotiations took place at the Camp David presidential retreat?',
-        a: '13 days',
+        step: 2,
+        date: 'Sept 1978',
+        title: 'The Dual Framework Agreements',
+        actor: 'The United States, Egypt & Israel',
+        tag: 'The Two Accords',
+        trigger:
+          'The leaders sign two frameworks: one for complete Israeli withdrawal from Sinai, and a second vague framework for Palestinian self-government.',
+        because:
+          'Begin agreed to trade Sinai for peace, but adamantly refused to surrender Israeli military control over the West Bank and Gaza.',
+        therefore:
+          'Created deep division: Egypt secured its lost territory, but Palestinians rejected the second framework as an empty sham.',
+        connective:
+          'The bilateral framework was formally transformed into a binding international peace treaty...',
       },
       {
-        q: 'What were the two distinct frameworks signed at Camp David on 17 September 1978?',
-        a: 'Palestinian self-governing autonomy & Egyptian-Israeli bilateral peace',
+        step: 3,
+        date: '26 March 1979',
+        title: 'The Egypt-Israel Peace Treaty',
+        actor: 'Sadat, Begin & Carter',
+        tag: 'Peace on the White House Lawn',
+        trigger:
+          'Sadat and Begin sign the formal peace treaty on the White House lawn, officially ending 31 years of war between Egypt and Israel.',
+        because:
+          'Both nations sought an enduring bilateral peace guaranteed by massive American financial and military assistance.',
+        therefore:
+          'Israel agreed to dismantle all 18 Sinai settlements and return the peninsula; Egypt recognised Israel and opened diplomatic ties.',
+        connective:
+          'While celebrated in the West, Egypt’s separate peace provoked immense outrage across the Arab world...',
       },
       {
-        q: 'On what date was the formal Egyptian-Israeli Peace Treaty signed on the White House lawn?',
-        a: '26 March 1979 (Treaty of Washington)',
+        step: 4,
+        date: 'March–Nov 1979',
+        title: 'The Arab League Boycott of Egypt',
+        actor: 'The Arab League & PLO',
+        tag: 'Total Pan-Arab Isolation',
+        trigger:
+          'The Arab League condemns Egypt as a traitor to the Arab cause, suspends Egypt’s membership, and relocates its headquarters from Cairo to Tunis.',
+        because:
+          'Arab states and Palestinians viewed Sadat’s separate peace as an unforgivable betrayal that removed the Arab world’s strongest army from the struggle.',
+        therefore:
+          'Egypt was completely isolated diplomatically and economically in the Arab world, leaving Palestinians feeling abandoned.',
+        connective:
+          'Violent fury within Egypt culminated in extreme tragedy for the architect of the peace treaty...',
       },
       {
-        q: 'What major captured territory did Israel agree to return to Egypt in exchange for full diplomatic peace?',
-        a: 'The Sinai Peninsula',
-      },
-      {
-        q: 'What was the name of the modern Israeli settlement in northern Sinai evacuated and bulldozed in April 1982?',
-        a: 'Yamit',
-      },
-      {
-        q: 'Approximately how much annual military and economic aid did the US guarantee to Israel and Egypt?',
-        a: 'Approximately $3 billion to Israel and $2 billion to Egypt annually',
-      },
-      {
-        q: 'To which North African city did the Arab League move its headquarters after expelling Egypt in 1979?',
-        a: 'Tunis (Tunisia)',
-      },
-      {
-        q: 'On what date was Egyptian President Anwar Sadat assassinated by Islamist soldiers in Cairo?',
-        a: '6 October 1981',
-      },
-      {
-        q: 'Who succeeded Anwar Sadat as President of Egypt and pledged to uphold the 1979 Peace Treaty?',
-        a: 'Hosni Mubarak',
+        step: 5,
+        date: '6 October 1981',
+        title: 'The Assassination of Anwar Sadat',
+        actor: 'Egyptian Islamic Jihad Militants',
+        tag: 'Martyr of Camp David',
+        trigger:
+          'Islamist army officers open fire on Sadat during a military victory parade in Cairo, assassinating him on the anniversary of the 1973 crossing.',
+        because:
+          'Militants were enraged by Sadat’s peace treaty with Israel, his alliance with the US, and his arrest of hundreds of Islamic opponents.',
+        therefore:
+          'Shook the Middle East, but Vice President Hosni Mubarak assumed the presidency and vowed to maintain the 1979 peace treaty.',
+        connective:
+          'With its southern border secure, Israel turned its military attention to PLO bases in Lebanon...',
       },
     ],
     vocabPrompt:
@@ -303,46 +373,81 @@ const kt3Configs = [
     title: 'KT3.3: The Palestinian Issue in Lebanon (1974–1985)',
     specAnchor:
       'Arafat and the PLO: changing attitudes to diplomacy; rejectionist states; the PLO in Lebanon and "Fatahland"; the 1978 Coastal Road massacre and Operation Litani; UNIFIL and the South Lebanon Army; the 1982 Israeli invasion of Lebanon (Operation Peace for Galilee); the siege of West Beirut; the evacuation of the PLO to Tunis; the assassination of Bachir Gemayel and the Sabra and Shatila massacre (September 1982); the Kahan Commission and the resignation of Ariel Sharon.',
-    doNow: [
+    stages: [
       {
-        q: 'In what year did Yasser Arafat deliver his famous "Olive Branch and Gun" speech at the United Nations?',
-        a: '1974 (13 November)',
+        step: 1,
+        date: 'March 1978',
+        title: 'Operation Litani & The Border Buffer',
+        actor: 'IDF & Palestinian Guerrillas',
+        tag: 'The First Incursion',
+        trigger:
+          'Following a deadly coastal road bus hijacking near Tel Aviv, the IDF invades southern Lebanon up to the Litani River.',
+        because:
+          'The PLO used southern Lebanon ("Fatahland") as a staging ground to fire Katyusha rockets and launch raids into northern Israel.',
+        therefore:
+          'Displaced 100,000 Lebanese civilians; UN Resolution 425 established UNIFIL peacekeepers and a Christian militia buffer zone.',
+        connective:
+          'PLO cross-border shelling continued, prompting Israeli defence leaders to plan a much larger invasion...',
       },
       {
-        q: 'What armed stronghold did the PLO establish in southern Lebanon following their expulsion from Jordan?',
-        a: '"Fatahland"',
+        step: 2,
+        date: '6 June 1982',
+        title: 'Operation Peace for Galilee Launched',
+        actor: 'Defence Minister Ariel Sharon & The IDF',
+        tag: 'The Full-Scale Invasion',
+        trigger:
+          'Following the shooting of Israeli ambassador Shlomo Argov in London, Israel launches a massive air and ground invasion of Lebanon.',
+        because:
+          'Ariel Sharon was determined to eradicate the PLO’s military infrastructure in Lebanon and install a friendly Christian government in Beirut.',
+        therefore:
+          'Sharon’s armored columns bypassed the government’s authorised 40km zone, advancing rapidly all the way to the Lebanese capital.',
+        connective:
+          'Israeli forces laid siege to Beirut, trapping thousands of Palestinian fighters and Lebanese civilians...',
       },
       {
-        q: 'What March 1978 terrorist attack on a civilian bus near Tel Aviv left 37 Israelis dead?',
-        a: 'The Coastal Road Massacre',
+        step: 3,
+        date: 'June–Aug 1982',
+        title: 'The Siege of Beirut & PLO Evacuation',
+        actor: 'IDF, PLO & US Diplomat Philip Habib',
+        tag: 'The Beirut Siege',
+        trigger:
+          'The IDF bombards West Beirut with heavy artillery and airstrikes for two months until US envoy Philip Habib brokers a ceasefire.',
+        because:
+          'Arafat and 14,000 PLO fighters were encircled in the city, using urban neighborhoods as defensive fortifications.',
+        therefore:
+          'The PLO agreed to evacuate Beirut by sea under international protection, relocating its political headquarters 1,500 miles away to Tunis.',
+        connective:
+          'The withdrawal of PLO fighters left Palestinian refugee camps unprotected when Christian leader Bachir Gemayel was assassinated...',
       },
       {
-        q: 'What was the code name of the March 1978 Israeli military invasion of southern Lebanon?',
-        a: 'Operation Litani',
+        step: 4,
+        date: '16–18 Sept 1982',
+        title: 'The Sabra and Shatila Massacre',
+        actor: 'Lebanese Christian Phalangists & The IDF',
+        tag: 'Camp Slaughter',
+        trigger:
+          'Christian Phalangist militiamen enter the Sabra and Shatila refugee camps, slaughtering between 800 and 3,500 unarmed Palestinian civilians.',
+        because:
+          'Phalangists sought bloody revenge for the assassination of their leader, President-elect Bachir Gemayel.',
+        therefore:
+          'The IDF controlled the camp perimeter and fired illumination flares over the camps, sparking global outrage at Israeli complicity.',
+        connective:
+          'Horror at the massacre triggered massive political upheaval and public protests within Israel...',
       },
       {
-        q: 'What United Nations peacekeeping force was created by Resolution 425 to patrol southern Lebanon in 1978?',
-        a: 'UNIFIL (UN Interim Force in Lebanon)',
-      },
-      {
-        q: 'Which Israeli Defence Minister launched Operation Peace for Galilee on 6 June 1982?',
-        a: 'Ariel Sharon',
-      },
-      {
-        q: 'For how many weeks did the Israeli military besiege and bombard West Beirut in the summer of 1982?',
-        a: 'Ten weeks',
-      },
-      {
-        q: 'To which North African nation was Yasser Arafat and 14,000 PLO fighters evacuated in August 1982?',
-        a: 'Tunisia (Tunis)',
-      },
-      {
-        q: 'Which Lebanese Christian President-elect was assassinated on 14 September 1982?',
-        a: 'Bachir Gemayel',
-      },
-      {
-        q: 'What official Israeli judicial inquiry investigated the Sabra and Shatila massacre in 1982–83?',
-        a: 'The Kahan Commission',
+        step: 5,
+        date: 'Feb 1983',
+        title: 'The Kahan Commission & Israeli Protests',
+        actor: 'The Israeli Judiciary & The Peace Now Movement',
+        tag: 'Judicial Verdict',
+        trigger:
+          '400,000 Israelis protest in Tel Aviv, forcing the government to establish the independent Kahan Commission of Inquiry.',
+        because:
+          'The Israeli public was shocked by the brutality of the massacres and demanded accountability for military command decisions.',
+        therefore:
+          'The commission ruled Ariel Sharon bore "personal responsibility" for failing to prevent the slaughter, forcing his resignation as Defence Minister.',
+        connective:
+          'With the PLO exiled in Tunis, grassroots frustration inside the occupied territories boiled over into spontaneous rebellion...',
       },
     ],
     vocabPrompt:
@@ -401,46 +506,81 @@ const kt3Configs = [
     title: 'KT3.4: First Intifada & Superpower Shifts (1987–1992)',
     specAnchor:
       'The First Intifada (1987–93): causes, events and the Israeli response; the roles of the PLO and the founding of Hamas (1987); Arafat’s Geneva speech (1988); the collapse of the Soviet Union and Soviet Jewish immigration; US loan guarantees and West Bank settlement disputes; the 1990–91 Gulf War; the 1991 Madrid Peace Conference; the 1992 Israeli election of Yitzhak Rabin.',
-    doNow: [
+    stages: [
       {
-        q: 'In what refugee camp in the Gaza Strip did the First Intifada ignite on 8 December 1987?',
-        a: 'Jabalia refugee camp',
+        step: 1,
+        date: '8 Dec 1987',
+        title: 'The Jabalia Traffic Spark',
+        actor: 'Palestinian Civilians & The IDF',
+        tag: 'The Catalyst',
+        trigger:
+          'An Israeli army tank transporter crashes into four civilian cars at the Erez checkpoint, killing four Palestinian laborers from Jabalia camp.',
+        because:
+          'Rumors spread that the crash was a deliberate revenge attack for the stabbing of an Israeli salesman in Gaza.',
+        therefore:
+          'Funerals turned into furious mass protests, quickly spreading across the entire Gaza Strip and the West Bank as the First Intifada.',
+        connective:
+          'What began as spontaneous riots transformed into an organised, grassroots campaign of civil disobedience...',
       },
       {
-        q: 'What fatal traffic incident triggered mass protests and riots across Gaza on 8 December 1987?',
-        a: 'An IDF tank transporter crashed into four Palestinian civilian cars, killing four workers',
+        step: 2,
+        date: '1987–1988',
+        title: 'Popular Uprising & The "Iron Fist" Policy',
+        actor: 'Palestinian Youths vs. Defence Minister Yitzhak Rabin',
+        tag: 'Stones vs. Bullets',
+        trigger:
+          'Palestinian youths wage continuous stone-throwing protests and commercial strikes; Rabin orders the IDF to use "force, might, and beatings."',
+        because:
+          'Twenty years of Israeli military occupation, land confiscations, and economic subjugation had left Palestinian youth with nothing to lose.',
+        therefore:
+          'Global television broadcasts of Israeli soldiers beating teenage protesters shattered Israel’s international image and moral authority.',
+        connective:
+          'As the secular uprising escalated, a militant Islamic faction emerged to challenge PLO leadership...',
       },
       {
-        q: 'What is the literal Arabic meaning of the word "Intifada"?',
-        a: '"Shaking off" (uprising)',
+        step: 3,
+        date: 'Dec 1987',
+        title: 'The Founding of Hamas in Gaza',
+        actor: 'Sheikh Ahmed Yassin & The Muslim Brotherhood',
+        tag: 'The Islamic Alternative',
+        trigger:
+          'Paraplegic cleric Sheikh Ahmed Yassin founds Hamas in Gaza, publishing an Islamic Covenant rejecting any territorial compromise.',
+        because:
+          'Religious militants believed the secular PLO was weak, corrupt, and ineffective in ending the Israeli occupation.',
+        therefore:
+          'Introduced suicide bombings and militant Islamic ideology, dividing Palestinian leadership between secular diplomacy and religious resistance.',
+        connective:
+          'Feeling his leadership slipping away, Yasser Arafat made a radical diplomatic pivot on the international stage...',
       },
       {
-        q: 'What controversial security policy did Israeli Defence Minister Yitzhak Rabin announce to suppress the uprising?',
-        a: 'The "Iron Fist" policy ("breaking the bones" of stone throwers)',
+        step: 4,
+        date: '13 Dec 1988',
+        title: 'Arafat’s Geneva Speech to the UN',
+        actor: 'Yasser Arafat & The UN General Assembly',
+        tag: 'Renouncing Terrorism',
+        trigger:
+          'Arafat addresses the UN General Assembly in Geneva, explicitly renouncing terrorism and recognising Israel’s right to exist in peace (UN Res 242).',
+        because:
+          'Arafat urgently needed to break the diplomatic blockade imposed by the United States and establish direct US-PLO dialogue.',
+        therefore:
+          'Washington immediately opened formal diplomatic talks with the PLO, legitimising the two-state solution internationally.',
+        connective:
+          'The collapse of the Soviet Union and the 1991 Gulf War transformed the geopolitical balance of power...',
       },
       {
-        q: 'Which Islamic militant group was founded in Gaza in December 1987 by Sheikh Ahmed Yassin?',
-        a: 'Hamas (Islamic Resistance Movement)',
-      },
-      {
-        q: 'In which Swiss city did Yasser Arafat address the UN in December 1988, officially renouncing terrorism?',
-        a: 'Geneva',
-      },
-      {
-        q: 'Approximately how many Soviet Jews immigrated to Israel between 1989 and 1992 following the USSR’s collapse?',
-        a: 'Over 400,000 (roughly 10% of Israel’s population)',
-      },
-      {
-        q: 'What amount of US loan guarantees did President George H.W. Bush withhold over West Bank settlement building?',
-        a: '$10 billion',
-      },
-      {
-        q: 'Which Iraqi dictator did Yasser Arafat publicly support during the 1990–91 Gulf War?',
-        a: 'Saddam Hussein',
-      },
-      {
-        q: 'Which historic international peace conference was convened jointly by the US and USSR in October 1991?',
-        a: 'The Madrid Conference',
+        step: 5,
+        date: 'Oct 1991',
+        title: 'The Madrid Peace Conference',
+        actor: 'The USA, The USSR, Israel & Arab Neighbours',
+        tag: 'The Face-to-Face Summit',
+        trigger:
+          'Following victory in the 1991 Gulf War, US President Bush and Soviet President Gorbachev convene the historic Madrid Peace Conference.',
+        because:
+          'The US held unchallenged superpower dominance and wanted to reward Arab allies who had joined the coalition against Saddam Hussein.',
+        therefore:
+          'Brought Israeli, Jordanian, Syrian, Lebanese, and Palestinian delegates together in the same room for face-to-face talks for the first time.',
+        connective:
+          'While formal talks in Madrid stalled, secret backchannel contacts began in Scandinavia...',
       },
     ],
     vocabPrompt:
@@ -516,46 +656,81 @@ const kt3Configs = [
     title: 'KT3.5: The Oslo Accords & Rabin’s Assassination (1992–1995)',
     specAnchor:
       'The 1992 Israeli election and the Labour victory of Yitzhak Rabin; the secret Oslo negotiations in Norway (1993); the Letters of Mutual Recognition; the Oslo I Accord (Declaration of Principles, September 1993); the Cairo Agreement (Gaza-Jericho First, 1994); the 1994 Israel-Jordan Peace Treaty; the 1994 Nobel Peace Prize; extremist opposition on both sides: Hamas suicide bombings, the Hebron mosque massacre (1994); the Oslo II Interim Agreement (1995) partitioning the West Bank into Areas A, B, and C; the assassination of Yitzhak Rabin (4 November 1995).',
-    doNow: [
+    stages: [
       {
-        q: 'Which Israeli Prime Minister was elected in June 1992 on a platform promising peace within nine months?',
-        a: 'Yitzhak Rabin',
+        step: 1,
+        date: 'June 1992',
+        title: 'The Election of Yitzhak Rabin',
+        actor: 'Yitzhak Rabin & The Israeli Labour Party',
+        tag: 'The Mandate for Peace',
+        trigger:
+          'Israeli voters elect Yitzhak Rabin and the Labour Party, ending 15 years of Likud dominance on a pledge to achieve peace within nine months.',
+        because:
+          'The Israeli public was exhausted by five years of the First Intifada and feared the demographic growth of the Palestinian population.',
+        therefore:
+          'Rabin halted new political settlement building in the West Bank and authorised direct diplomatic contacts with Palestinian representatives.',
+        connective:
+          'Frustrated by public delays in Washington, negotiators opened an ultra-secret backchannel in Norway...',
       },
       {
-        q: 'In which European capital city did secret backchannel negotiations between Israeli and PLO delegates occur in 1993?',
-        a: 'Oslo (Norway)',
+        step: 2,
+        date: 'Jan–Aug 1993',
+        title: 'Secret Backchannel Negotiations in Oslo',
+        actor: 'Israeli Academics, PLO Delegates & Norwegian Facilitators',
+        tag: 'Secret Scandinavian Diplomacy',
+        trigger:
+          'Covert talks in Norwegian farmhouses produce the breakthrough Letters of Mutual Recognition between Israel and the PLO.',
+        because:
+          'Secrecy allowed negotiators to speak honestly without political grandstanding or leaks to domestic extremists.',
+        therefore:
+          'Rabin officially recognised the PLO as the legitimate representative of Palestinians; Arafat officially recognised Israel and renounced terror.',
+        connective:
+          'Mutual recognition made possible an unprecedented public signing ceremony in Washington...',
       },
       {
-        q: 'What historic diplomatic exchange in September 1993 saw Israel and the PLO officially recognize each other?',
-        a: 'Letters of Mutual Recognition',
+        step: 3,
+        date: '13 Sept 1993',
+        title: 'Oslo I (Declaration of Principles) & White House Handshake',
+        actor: 'Yitzhak Rabin, Yasser Arafat & Bill Clinton',
+        tag: 'The Historic Handshake',
+        trigger:
+          'On the White House lawn, Rabin and Arafat sign the Oslo I Accord and share a historic handshake orchestrated by President Clinton.',
+        because:
+          'Both leaders recognised that decades of armed conflict had reached a military stalemate that only political compromise could resolve.',
+        therefore:
+          'Established the Palestinian Authority (PA) with five years of interim self-rule, starting in Gaza and Jericho ("Gaza-Jericho First").',
+        connective:
+          'However, extremists on both sides were determined to sabotage the peace agreement through terror...',
       },
       {
-        q: 'On what date was the Oslo I Accord (Declaration of Principles) signed on the White House lawn?',
-        a: '13 September 1993',
+        step: 4,
+        date: '1994–1995',
+        title: 'Extremist Violence, Jordan Peace & Oslo II',
+        actor: 'Baruch Goldstein, Hamas Militants & King Hussein',
+        tag: 'The Violent Backlash',
+        trigger:
+          'Baruch Goldstein murders 29 Palestinians in Hebron; Hamas launches bus suicide bombings; King Hussein signs the Israel-Jordan Peace Treaty.',
+        because:
+          'Jewish and Islamist extremists both viewed territorial compromise as an existential betrayal of their sacred religious duties.',
+        therefore:
+          'Polarised both societies; nonetheless, Rabin and Arafat signed Oslo II (1995), dividing the West Bank into Areas A, B, and C.',
+        connective:
+          'Growing hatred and right-wing incitement inside Israel culminated in an act of domestic terror that changed history...',
       },
       {
-        q: 'Which US President facilitated the historic handshake between Yitzhak Rabin and Yasser Arafat in 1993?',
-        a: 'Bill Clinton',
-      },
-      {
-        q: 'Which two areas were transferred to Palestinian Authority control first under the May 1994 Cairo Agreement?',
-        a: 'Gaza and Jericho ("Gaza-Jericho First")',
-      },
-      {
-        q: 'Which Arab monarch signed a formal peace treaty with Israel in the Arava desert in October 1994?',
-        a: 'King Hussein of Jordan',
-      },
-      {
-        q: 'What American-Israeli extremist murdered 29 Palestinian worshippers at the Cave of the Patriarchs in Hebron in February 1994?',
-        a: 'Baruch Goldstein',
-      },
-      {
-        q: 'What September 1995 agreement divided the West Bank into three administrative zones: Area A, Area B, and Area C?',
-        a: 'Oslo II (The Taba / Washington Agreement)',
-      },
-      {
-        q: 'On what date was Israeli Prime Minister Yitzhak Rabin assassinated at a peace rally in Tel Aviv by Yigal Amir?',
-        a: '4 November 1995',
+        step: 5,
+        date: '4 Nov 1995',
+        title: 'The Assassination of Yitzhak Rabin',
+        actor: 'Yigal Amir & The Israeli Nation',
+        tag: 'The Tragedy of Peace',
+        trigger:
+          'Jewish religious extremist Yigal Amir shoots Prime Minister Yitzhak Rabin three times at point-blank range following a peace rally in Tel Aviv.',
+        because:
+          'Amir believed that surrendering biblical Jewish land to the Palestinians was an act of treason forbidden by Jewish religious law.',
+        therefore:
+          'Traumatised Israel, halted further territorial withdrawals, and led to the narrow election of right-wing Likud leader Benjamin Netanyahu in 1996.',
+        connective:
+          'Rabin’s death effectively shattered the momentum of the Oslo peace process, leaving its promise unfulfilled...',
       },
     ],
     vocabPrompt:
@@ -657,6 +832,34 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
     .verso-page,
     .recto-page {
       padding: 4mm 6mm;
+    }
+    
+    /* 5-Stage Domino Causal Chain Styling */
+    .domino-chain-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      margin: 2px 0;
+    }
+    .domino-card-compact {
+      border: 1.2px solid #000000;
+      border-radius: 3px;
+      padding: 2.5px 6px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    .domino-connector {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      font-weight: 700;
+      color: #000000;
+      line-height: 1;
+      padding: 1px 0;
     }
     .page-body-full {
       flex: 1;
@@ -989,303 +1192,290 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
   // Spread 2 (Verso & Recto): Facing Ruled Paper for Extended Assessment
   // ====================================================================
   kt3Configs.forEach((cfg) => {
-    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4; // Pages 4, 8, 12, 16, 20
-    const rightPageNum = leftPageNum + 1; // Pages 5, 9, 13, 17, 21
-    const linedLeftPageNum = leftPageNum + 2; // Pages 6, 10, 14, 18, 22
-    const linedRightPageNum = leftPageNum + 3; // Pages 7, 11, 15, 19, 23
+    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4; // Spread 1 Left (Verso): Chronological Spine + Vocab
+    const rightPageNum = leftPageNum + 1; // Spread 1 Right (Recto): Open Ruled Lesson Notebook
+    const linedLeftPageNum = leftPageNum + 2; // Spread 2 Left (Verso): Exam Practice & Planning Scaffold
+    const linedRightPageNum = leftPageNum + 3; // Spread 2 Right (Recto): Extended Response & Band 4 Rubric
+    const rx = cfg.rightExam || cfg.extendedPractice;
+    const isUtility = rx.type === 'utility_8';
 
-    // LEFT PAGE (VERSO): Spec Anchor, Do Now, Vocab Check, 2x Q1 Consequence (4 Marks Each)
+    // ------------------------------------------------------------------
+    // SPREAD 1, LEFT PAGE (VERSO): 5-STAGE CAUSAL DOMINO SPINE & CORE VOCABULARY
+    // ------------------------------------------------------------------
     html += `
-  <!-- PAGE ${leftPageNum}: ENQUIRY LESSON ${cfg.lessonNum} (PART 1) -->
   <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
-      <!-- Top Title Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 900;">
-            ${cfg.title}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            Key Topic 3.${cfg.lessonNum}
+      <!-- Lesson Header with Inquiry Question Title -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            KEY TOPIC 3.${cfg.lessonNum} &bull; ENQUIRY LESSON NOTEBOOK
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL PAPER 2 (1HI0/2B) &bull; PERIOD STUDY
           </span>
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 8.4pt; font-style: italic; color: #111; margin-top: 1px;">
-          Enquiry: ${cfg.inquiryQuestion}
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+          ${cfg.inquiryQuestion}
+        </h2>
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #222222; line-height: 1.18;">
+          ${cfg.subTitle}
         </div>
       </div>
 
-      <!-- Specification Anchor Strip -->
-      <div style="border: 1px solid #000000; background: #fafafa; padding: 3px 6px; border-radius: 3px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; margin-bottom: 3px;">
-        <strong style="text-transform: uppercase;">Pearson Specification Anchor:</strong> ${cfg.specAnchor}
+      <!-- Key Specification Focus -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.2;">
+        <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
-      <!-- Retrieval Practice Do Now (10 Recall Questions) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase;">
-            1. Retrieval Practice &bull; Historical Recall (Do Now)
+      <!-- 5-Stage Chronological Domino Chain (Key Causal Turning Points) -->
+      <div class="domino-chain-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; 5-Stage Chronological Domino Chain (Key Causal Turning Points)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">Score: &nbsp;&nbsp;&nbsp;&nbsp;/10</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">
+            CAUSAL REASONING &bull; 5 STAGES
+          </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.2;">
-          ${cfg.doNow
-            .map(
-              (item, qIdx) => `
-            <div>
-              <strong>${qIdx + 1}.</strong> ${item.q}
-              <div style="border-bottom: 1px dotted #000000; height: 3.8mm; margin-top: 0.5px;"></div>
-            </div>`,
-            )
-            .join('')}
+
+        ${cfg.stages
+          .map(
+            (s, sIdx) => `
+        <div class="domino-card-compact">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000;">${s.date}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #444444; text-transform: uppercase;">${s.tag} &bull; ${s.actor}</span>
+            </div>
+          </div>
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; line-height: 1.15; margin: 1px 0;">
+            ${s.step}. ${s.title}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111111; line-height: 1.18; margin-bottom: 2px;">
+            <strong>Action:</strong> ${s.trigger}
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.18;">
+            <div><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Because" (Motive):</strong> ${s.because}</div>
+            <div style="border-left: 1px solid #cbd5e1; padding-left: 4px;"><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Therefore" (Consequence):</strong> ${s.therefore}</div>
+          </div>
         </div>
+        ${
+          sIdx < cfg.stages.length - 1
+            ? `
+        <div class="domino-connector">
+          &darr; <em>${s.connective}</em> &darr;
+        </div>`
+            : ''
+        }
+        `,
+          )
+          .join('')}
       </div>
 
-      <!-- Disciplinary Vocabulary Check -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          2. Disciplinary Vocabulary &bull; Historical Rigour
-        </strong>
-        <p style="font-family: 'Georgia', serif; font-size: 7.2pt; margin: 0 0 2px 0; line-height: 1.2;">
+      <!-- Key Vocabulary (Core Disciplinary Distinction) -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fafafa; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
+        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Exam Practice 1: Q1 Consequence A (4 Marks) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">
-            3. Exam Practice &bull; ${cfg.consequenceA.question}
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">[4 Marks &bull; 4 Mins]</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #222; margin-bottom: 1px;">
-          <strong>Model Structure (P-F-C):</strong> ${cfg.consequenceA.guidance}
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; color: #333; margin-bottom: 2px;">
-          <strong>Sentence Starters:</strong> ${cfg.consequenceA.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Exam Practice 2: Q1 Consequence B (4 Marks) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase;">
-              4. Exam Practice &bull; ${cfg.consequenceB.question}
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">[4 Marks &bull; 4 Mins]</span>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #222; margin-bottom: 1px;">
-            <strong>Model Structure (P-F-C):</strong> ${cfg.consequenceB.guidance}
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; color: #333; margin-bottom: 2px;">
-            <strong>Sentence Starters:</strong> ${cfg.consequenceB.stems}
-          </div>
-        </div>
-        <div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
+        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
       </div>
 
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
     </div>
   </div>
-  `;
 
-    // RIGHT PAGE (RECTO): Question 2 Analytical Narrative [8 marks] OR Question 3 Source Utility [8 marks]
-    const isNarrative = cfg.rightExam.type === 'narrative_8';
-
-    html += `
-  <!-- PAGE ${rightPageNum}: ENQUIRY LESSON ${cfg.lessonNum} (PART 2) -->
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 1, RIGHT PAGE (RECTO): OPEN RULED LESSON NOTE-TAKING CANVAS -->
+  <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-
-      <!-- Top Title Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 900;">
-            ${isNarrative ? 'Question 2: Narrative Account' : 'Question 3: Source Utility'} &bull; Key Topic 3.${cfg.lessonNum}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 7px; border-radius: 2px;">
-            ${cfg.rightExam.tariff}
-          </span>
-        </div>
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+          Disciplinary Lesson Notes &bull; Chronological Synthesis
+        </span>
       </div>
 
-      <!-- Question Stem Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #fafafa; margin-bottom: 4px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin-bottom: 2px;">
-          ${cfg.rightExam.stem}
-        </div>
-        ${
-          isNarrative
-            ? `
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222;">
-          <strong>You may use the following in your answer:</strong> &bull; ${cfg.rightExam.stimulus.join(' &bull; ')} <em>(You must also use information of your own.)</em>
-        </div>`
-            : ''
-        }
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 3px; line-height: 1.2;">
+        <strong>Instructions:</strong> Use this open note-taking canvas to record teacher direct instruction, annotate key causal links, and synthesize the 5 milestones on facing Page ${leftPageNum}.
       </div>
 
-      ${
-        !isNarrative
-          ? `
-      <!-- 2 Primary Archival Sources Box for Question 3 Utility -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 4px;">
-        <!-- Source A -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase;">Source ${cfg.rightExam.sourceA.letter} (${cfg.rightExam.sourceA.tag})</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">${cfg.rightExam.sourceA.shelfmark}</span>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #111; margin-bottom: 2px;">
-            ${cfg.rightExam.sourceA.title}
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.5pt; font-style: italic; line-height: 1.2; color: #111;">
-            "${cfg.rightExam.sourceA.quote}"
-          </div>
-        </div>
-
-        <!-- Source B -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #fff;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase;">Source ${cfg.rightExam.sourceB.letter} (${cfg.rightExam.sourceB.tag})</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6pt; border: 1px solid #000; padding: 0 3px;">${cfg.rightExam.sourceB.shelfmark}</span>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #111; margin-bottom: 2px;">
-            ${cfg.rightExam.sourceB.title}
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.5pt; font-style: italic; line-height: 1.2; color: #111;">
-            "${cfg.rightExam.sourceB.quote}"
-          </div>
-        </div>
-      </div>`
-          : ''
-      }
-
-      <!-- Structure Strip (3 Analytical Phases) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
-        <div style="background: #000000; color: #ffffff; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Structure Strip &bull; 3 Analytical Phases (Grade 9 Architecture)
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2;">
-          ${cfg.rightExam.structureStrip
-            .map(
-              (strip, sIdx) => `
-            <div style="padding: 3px 5px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''} background: ${sIdx % 2 === 0 ? '#ffffff' : '#fafafa'};">
-              <strong style="text-transform: uppercase; display: block; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 1px;">
-                ${strip.col}
-              </strong>
-              ${strip.text}
-            </div>`,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Causal Connectives & Transition Bank -->
-      <div style="border: 1px solid #000000; padding: 2px 5px; border-radius: 3px; background: #fafafa; font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; line-height: 1.2; margin-bottom: 3px;">
-        <strong style="font-family: 'Inter', sans-serif; font-style: normal; text-transform: uppercase; font-size: 6pt;">Analytical Stems:</strong>
-        ${cfg.rightExam.connectives}
-      </div>
-
-      <!-- High-Yield Proper Noun Word Bank -->
-      <div style="border: 1px solid #000000; padding: 2px 5px; border-radius: 3px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2; margin-bottom: 4px;">
-        <strong style="text-transform: uppercase; font-size: 6pt;">High-Yield Word Bank (Minimum 4 Per Paragraph):</strong> ${cfg.rightExam.wordBank}
-      </div>
-
-      <!-- Writing Task Prompt & 18 Handwriting Lines (Style matched to 0px overflow budget) -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
-        ${Array.from({ length: 18 })
-          .map(() => '<div class="task-line"></div>')
-          .join('\n        ')}
-      </div>
-
-      <!-- Timeline Integration Mission -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; background: #fafafa; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.2; margin-bottom: 2px;">
-        <strong>Timeline Mission &bull; Pages 2–3:</strong> ${cfg.rightExam.timelineMission}
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${Array.from({ length: 28 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Lesson Notes &bull; Causal Synthesis &bull; Disciplinary Analysis ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
       </div>
 
       ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
     </div>
   </div>
-  `;
 
-    // ------------------------------------------------------------------
-    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES
-    // ------------------------------------------------------------------
-    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedLeftPageNum}">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, LEFT PAGE (VERSO): EXAM PRACTICE & EXTENDED PLANNING SCAFFOLD -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
+      
       <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+          KEY TOPIC 3.${cfg.lessonNum} &bull; EDEXCEL EXAM PRACTICE
+        </span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          PAPER 2 (1HI0/2B) &bull; 12 MARKS TOTAL
         </span>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsLeft}
+      <!-- Section 1: Question 1 Consequence [4 marks] -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; margin-bottom: 4px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 1: Explain One Consequence [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${cfg.consequenceA.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1px; line-height: 1.15;">
+          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
+        </div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+      </div>
+
+      <!-- Section 2: Extended Exam Practice (Q2 Narrative [8m] or Q3 Utility [8m]) -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 10.2pt; color: #000000; margin: 0; font-weight: 800;">
+          ${rx.tariff}
+        </h3>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase;">
+          Extended Writing Assessment &bull; 8 Marks
+        </span>
+      </div>
+
+      <!-- Unified Scaffolding Block -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-bottom: 3px; background: #ffffff;">
+        <!-- Row 1: Stem & Stimulus/Sources -->
+        <div style="padding: 2.5px 6px; border-bottom: 1px solid #000000; background: #ffffff;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            ${rx.stem}
+          </div>
+          ${
+            isUtility
+              ? `
+          <!-- Two Compact Sources for Q3 Utility -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 2px;">
+            <div style="border: 1px solid #000; border-radius: 2px; padding: 2px 4px; background: #fafafa;">
+              <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-bottom: 1px;">
+                <span>SOURCE A: ${rx.sourceA.tag}</span>
+                <span>${rx.sourceA.shelfmark}</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; line-height: 1.15; color: #111;">
+                "${rx.sourceA.quote}"
+              </div>
+            </div>
+            <div style="border: 1px solid #000; border-radius: 2px; padding: 2px 4px; background: #fafafa;">
+              <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-bottom: 1px;">
+                <span>SOURCE B: ${rx.sourceB.tag}</span>
+                <span>${rx.sourceB.shelfmark}</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; line-height: 1.15; color: #111;">
+                "${rx.sourceB.quote}"
+              </div>
+            </div>
+          </div>
+          `
+              : `
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
+            <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
+          </div>
+          `
+          }
+        </div>
+
+        <!-- Row 2: 3-Column Planning Structure Strip -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #fafafa;">
+          ${rx.structureStrip
+            .map(
+              (strip, sIdx) => `
+          <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
+          </div>
+          `,
+            )
+            .join('')}
+        </div>
+
+        <!-- Row 3: Connectives & Word Bank -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
+          <div style="padding: 2px 5px; border-right: 1px solid #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives || rx.causalConnectives}</span>
+          </div>
+          <div style="padding: 2px 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Initial Response Lines -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Begin your analytical response below and continue onto facing Page ${linedRightPageNum} for full timed response:
+      </div>
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; margin-bottom: 2px;">
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
     </div>
   </div>
-`;
 
-    // ------------------------------------------------------------------
-    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
-    // ------------------------------------------------------------------
-    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedRightPageNum}">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, RIGHT PAGE (RECTO): FULL-PAGE EXTENDED TIMED ESSAY RESPONSE -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
@@ -1294,9 +1484,45 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         </span>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsRight}
+      <!-- 20 Ruled Response Lines with Margin -->
+      <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
+        ${Array.from({ length: 20 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 2/3 &amp; Sustained Analytical Conclusion ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 3px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          Timeline Mission &bull; Pages 2–3
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.18;">
+          ${rx.timelineMission}
+        </div>
+      </div>
+
+      <!-- Band 4 Marking Rubric / Self-Assessment Checklist -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="font-weight: 800; text-transform: uppercase;">Band 4 Checklist [7–8m]:</span>
+          <span><input type="checkbox"> Accurate &amp; relevant details deployed</span>
+          <span><input type="checkbox"> Analytical progression sustained throughout</span>
+          <span><input type="checkbox"> Explicit causal connectives used</span>
+        </div>
+        <div style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; white-space: nowrap;">
+          Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 8 ]
+        </div>
       </div>
 
       ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
@@ -1759,6 +1985,74 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
 `;
 
   return html;
+}
+
+// ============================================================================
+// PDF COMPILER WITH PUPPETEER & AUDIT HOOK
+// ============================================================================
+async function compilePdf(htmlPath, pdfPath, v17Path) {
+  const puppeteer = require('puppeteer');
+  const browser = await puppeteer.launch({
+    headless: true,
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+  const page = await browser.newPage();
+  await page.goto('file:///' + htmlPath.replace(/\\/g, '/'), {
+    waitUntil: 'networkidle0',
+    timeout: 60000,
+  });
+
+  const checkOverflowsScript = path.join(__dirname, 'check_overflows.cjs');
+  if (fs.existsSync(checkOverflowsScript)) {
+    const { execSync } = require('child_process');
+    try {
+      execSync(`node "${checkOverflowsScript}" "${htmlPath}" --strict`, { stdio: 'inherit' });
+    } catch (e) {
+      console.warn('⚠️ Overflow check warned or failed:', e.message);
+    }
+  }
+
+  await page.pdf({
+    path: pdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
+  });
+
+  if (v17Path) {
+    fs.copyFileSync(pdfPath, v17Path);
+  }
+
+  await browser.close();
+}
+
+// CLI runner
+if (require.main === module) {
+  (async () => {
+    const rootDir = path.join(__dirname, '..');
+    const html = buildCmeKt3TwoPageWorkbook({}, { name: 'KT3' });
+    const publicHtml = path.join(rootDir, 'public', 'units', 'cme_new', 'pupil_workbook_KT3.html');
+    const unitHtml = path.join(rootDir, 'units', 'cme_new', 'pupil_workbook_KT3.html');
+    fs.mkdirSync(path.dirname(publicHtml), { recursive: true });
+    fs.mkdirSync(path.dirname(unitHtml), { recursive: true });
+    fs.writeFileSync(publicHtml, html, 'utf8');
+    fs.writeFileSync(unitHtml, html, 'utf8');
+    console.log(`✅ Saved HTML: ${publicHtml}`);
+
+    const pdfPath = path.join(rootDir, 'public', 'pdfs', 'cme_new_pupil_workbook_KT3.pdf');
+    const v17Path = path.join(
+      rootDir,
+      'public',
+      'pdfs',
+      'cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
+    );
+    console.log(`🖨️ Compiling PDF with Puppeteer & Dynamic Auto-Lines...`);
+    await compilePdf(publicHtml, pdfPath, v17Path);
+    console.log(`✅ Compiled PDF: ${v17Path}`);
+  })().catch((err) => {
+    console.error(err);
+    process.exit(1);
+  });
 }
 
 module.exports = { buildCmeKt3TwoPageWorkbook };

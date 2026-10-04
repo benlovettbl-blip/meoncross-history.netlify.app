@@ -89,46 +89,91 @@ const kt2Configs = [
     title: 'KT2.1: The Road to War: Water Wars & Skirmishes (1964–1967)',
     specAnchor:
       'The Cairo Conference (1964) and creation of the PLO; River Jordan water dispute and Headwater Diversion Plan; Syrian-backed fedayeen guerrilla attacks; Israeli reprisal raids and the 7 April 1967 aerial battle over the Golan Heights.',
-    doNow: [
+    stages: [
       {
-        q: 'What 1917 British declaration supported a Jewish national home in Palestine?',
-        a: 'The Balfour Declaration',
+        step: 1,
+        date: 'January 1964',
+        title: 'The 1964 Cairo Conference & PLO Founded',
+        actor: 'President Nasser & The Arab League',
+        tag: 'Arab Resistance',
+        trigger:
+          'President Nasser hosts Arab heads of state in Cairo to coordinate opposition to Israel and establish the Palestine Liberation Organisation (PLO).',
+        because:
+          'Arab leaders wanted to show leadership on the Palestinian issue and control growing Palestinian guerrilla activity.',
+        therefore:
+          'Put the Palestinian cause back on the world stage; Yasser Arafat’s guerrilla group, Fatah, began launching independent sabotage raids into Israel.',
+        connective:
+          'Disputes over vital water supplies soon escalated border clashes between Israel and Syria...',
+        exam_link:
+          'Q2 Narrative Account: Marked the formal revival of Palestinian national resistance, leading to cross-border guerrilla raids.',
       },
       {
-        q: 'Which international organisation granted Britain the Mandate for Palestine in 1922?',
-        a: 'The League of Nations',
+        step: 2,
+        date: '1964–1965',
+        title: 'The Dispute Over the River Jordan Waterways',
+        actor: 'Israel & Syria',
+        tag: 'The Battle for Water',
+        trigger:
+          'Syria attempts to divert the headwaters feeding the River Jordan; Israeli artillery and tanks shell Syrian engineering machinery to stop construction.',
+        because:
+          'Israel relied on the River Jordan to irrigate its farms and towns, while Arab states sought to cut Israel’s fresh water supply.',
+        therefore:
+          'Showed that Israel was prepared to use pre-emptive military force to protect essential resources, making border shootouts a regular occurrence.',
+        connective:
+          'A radical new government in Syria began actively funding guerrilla attacks against Israel...',
+        exam_link:
+          'Q1 Consequence: Escalated border tensions between Israel and Syria, making military clashes frequent on the northern frontier.',
       },
       {
-        q: 'Which Jerusalem hotel was bombed by the Zionist militant group Irgun in July 1946?',
-        a: 'The King David Hotel',
+        step: 3,
+        date: '1966',
+        title: 'Syrian Support for Fatah Border Raids',
+        actor: 'Syrian Government & Palestinian Guerrillas',
+        tag: 'Border Guerrilla Attacks',
+        trigger:
+          'The Syrian government begins openly supplying money, weapons, and bases to Fatah fighters launching landmine raids into northern Israel.',
+        because:
+          'Syrian leaders wanted to prove they were the most radical opponents of Israel and pressure other Arab states to take action.',
+        therefore:
+          'Cross-border guerrilla attacks into northern Israel multiplied, turning the Israeli-Syrian border into the most dangerous hotspot in the region.',
+        connective:
+          'Israel launched a large retaliatory raid across the Jordanian border to deter infiltrators...',
+        exam_link:
+          'Q2 Narrative Account: Syrian state backing for Fatah provoked heavy Israeli retaliation, bringing the region closer to war.',
       },
       {
-        q: 'What was the number of the United Nations Resolution to partition Palestine in 1947?',
-        a: 'UN Resolution 181',
+        step: 4,
+        date: '13 November 1966',
+        title: 'The Israeli Raid on Samu',
+        actor: 'Israeli Defence Forces (IDF) & Jordan',
+        tag: 'The Reprisal Strike',
+        trigger:
+          'Israeli tanks and troops raid the village of Samu in the Jordanian-controlled West Bank, destroying houses and clashing with Jordanian soldiers.',
+        because:
+          'Israel retaliated after a Fatah landmine killed three Israeli border police near the frontier.',
+        therefore:
+          'Damaged relations between Arab states: Jordan’s King Hussein blamed Nasser for failing to support him, raising public pressure on Nasser to act tough.',
+        connective:
+          'Tensions reached boiling point in a major aerial clash over the Syrian border...',
+        exam_link:
+          'Q1 Consequence: Deepened divisions between Arab leaders and pressured Nasser into taking aggressive action to restore his leadership.',
       },
       {
-        q: 'On what date did David Ben-Gurion proclaim the establishment of the State of Israel?',
-        a: '14 May 1948',
-      },
-      {
-        q: 'Approximately how many Palestinian Arabs became refugees during the 1948–49 War?',
-        a: 'Approximately 700,000',
-      },
-      {
-        q: 'What 1950 Israeli law granted every Jewish person the right to settle in Israel?',
-        a: 'The Law of Return',
-      },
-      {
-        q: 'Who became President of Egypt in 1954 and emerged as leader of Pan-Arab nationalism?',
-        a: 'Gamal Abdel Nasser',
-      },
-      {
-        q: 'What vital international waterway did Nasser nationalise in July 1956?',
-        a: 'The Suez Canal',
-      },
-      {
-        q: 'Which two European powers secretly colluded with Israel in the Protocol of Sèvres (1956)?',
-        a: 'Britain and France',
+        step: 5,
+        date: '7 April 1967',
+        title: 'The Aerial Battle of 7 April 1967',
+        actor: 'Israeli & Syrian Air Forces',
+        tag: 'The Final Spark',
+        trigger:
+          'After Syrian guns shell Israeli tractors in the border zone, Israeli fighter jets shoot down six Syrian MiG fighter planes and fly low over Damascus.',
+        because:
+          'Israel wanted to silence Syrian gun positions and demonstrate total command of the skies.',
+        therefore:
+          'Humiliated the Syrian government, leaving Syrian leaders demanding military help from Egypt and setting the stage for war in May 1967.',
+        connective:
+          'Desperate to deter another Israeli attack on Syria, the Soviet Union issued a fateful false warning to Nasser...',
+        exam_link:
+          'Q2 Narrative Account: The destruction of Syrian jets pushed Syria and the USSR to provoke the crisis that started the Six-Day War.',
       },
     ],
     vocabRef: '[Textbook §1.1–§1.2]',
@@ -192,46 +237,91 @@ const kt2Configs = [
     title: 'KT2.2: The Outbreak & Course of the Six-Day War (June 1967)',
     specAnchor:
       'The actions of the USSR, Nasser and the USA in the period leading to war; the outbreak of war on 5 June 1967; Operation Focus; key events of the war in Sinai, the West Bank, East Jerusalem and the Golan Heights.',
-    doNow: [
+    stages: [
       {
-        q: 'In which city was the Palestine Liberation Organisation (PLO) founded in January 1964?',
-        a: 'Cairo',
+        step: 1,
+        date: '13–15 May 1967',
+        title: 'Soviet False Reports & Egyptian Mobilisation',
+        actor: 'The Soviet Union & President Nasser',
+        tag: 'The False Warning',
+        trigger:
+          'The Soviet Union falsely tells Nasser that Israel is massing troops on the Syrian border; Nasser moves 100,000 Egyptian soldiers into the Sinai Desert.',
+        because:
+          'The Soviets wanted to deter an Israeli strike against Syria, while Nasser wanted to reassert his position as the leader of the Arab world.',
+        therefore:
+          'Started a rapid military buildup in Sinai that quickly spiraled out of control as both sides prepared for war.',
+        connective:
+          'To prove he was serious, Nasser took two dramatic steps that directly provoked Israel...',
+        exam_link:
+          'Q2 Narrative Account: Triggered the rapid chain of events in May 1967 that made a pre-emptive strike by Israel inevitable.',
       },
       {
-        q: 'Who was elected the first chairman of the PLO in 1964?',
-        a: 'Ahmad Shukeiri',
+        step: 2,
+        date: '16–23 May 1967',
+        title: 'UN Peacekeepers Expelled & Straits of Tiran Closed',
+        actor: 'Egypt & The United Nations',
+        tag: 'The Cause for War',
+        trigger:
+          'Nasser orders UN peacekeepers (UNEF) to leave the Sinai border and closes the Straits of Tiran to all Israeli shipping.',
+        because:
+          'Nasser believed this aggressive show of force would force Israel into a diplomatic climbdown without full-scale war.',
+        therefore:
+          'Cut off Israel’s oil supply route through the port of Eilat; Israel had warned since 1957 that closing the Straits would be treated as an act of war.',
+        connective:
+          'Jordan then signed a joint military alliance with Egypt, completely surrounding Israel on three sides...',
+        exam_link:
+          'Q1 Consequence: Closing the Straits of Tiran cut off vital oil supplies and provided Israel with the immediate justification for war.',
       },
       {
-        q: 'Which Palestinian guerrilla faction was founded by Yasser Arafat in Kuwait in 1959?',
-        a: 'Fatah',
+        step: 3,
+        date: '30 May 1967',
+        title: 'The Arab Defence Pact (Israel Encircled)',
+        actor: 'Egypt, Jordan & Syria',
+        tag: 'Three-Front Encirclement',
+        trigger:
+          'King Hussein of Jordan flies to Cairo and places the Jordanian army under Egyptian command, completing an encirclement of Israel on three sides.',
+        because:
+          'Hussein feared an uprising at home if he did not join the growing Arab coalition against Israel.',
+        therefore:
+          'Created panic among Israeli civilians, leading to the appointment of popular war hero Moshe Dayan as Defence Minister.',
+        connective:
+          'Fearing an imminent attack from three sides, Israel decided to launch a surprise pre-emptive strike...',
+        exam_link:
+          'Q2 Narrative Account: Convinced Israeli leaders that waiting would lead to national destruction, prompting the pre-emptive air strike.',
       },
       {
-        q: 'What strategic high ground overlooking Galilee kibbutzim was controlled by Syria before 1967?',
-        a: 'The Golan Heights',
+        step: 4,
+        date: '5 June 1967',
+        title: 'The Pre-Emptive Air Strike',
+        actor: 'The Israeli Air Force',
+        tag: 'Three Hours to Victory',
+        trigger:
+          'Nearly 200 Israeli fighter jets fly low beneath Egyptian radar, destroying over 300 Egyptian combat aircraft on the ground in less than three hours.',
+        because:
+          'Israel was heavily outnumbered on the ground and needed complete control of the skies to protect its soldiers and cities.',
+        therefore:
+          'Decided the war on the first morning; subsequent strikes wiped out the Syrian and Jordanian air forces, leaving Arab ground armies defenseless.',
+        connective:
+          'With total air superiority, Israeli ground forces advanced rapidly on all three fronts...',
+        exam_link:
+          'Q1 Consequence: Destroyed Arab air power in three hours, guaranteeing Israel’s total battlefield victory in the Six-Day War.',
       },
       {
-        q: 'How many Syrian MiG-21s were shot down by the Israeli Air Force on 7 April 1967?',
-        a: 'Six',
-      },
-      {
-        q: 'What peacekeeping force was deployed in Sinai following the 1956 Suez Crisis?',
-        a: 'UNEF (UN Emergency Force)',
-      },
-      {
-        q: 'What narrow strait did President Nasser close to Israeli shipping on 22 May 1967?',
-        a: 'The Straits of Tiran',
-      },
-      {
-        q: 'Which coastal outpost at the entrance of the Gulf of Aqaba was fortified by Egyptian guns?',
-        a: 'Sharm el-Sheikh',
-      },
-      {
-        q: 'Which monarch of Jordan flew to Cairo on 30 May 1967 to sign a joint defence pact with Nasser?',
-        a: 'King Hussein',
-      },
-      {
-        q: 'Who was appointed Israeli Minister of Defence on 1 June 1967 on the eve of war?',
-        a: 'Moshe Dayan',
+        step: 5,
+        date: '5–10 June 1967',
+        title: 'The Six-Day Victory & The Conquered Territories',
+        actor: 'Israeli Defence Forces (IDF)',
+        tag: 'The Redrawn Map',
+        trigger:
+          'In just six days, Israel captures the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.',
+        because:
+          'Arab ground armies were thrown into chaotic retreat by relentless Israeli air attacks and coordinated tank columns.',
+        therefore:
+          'Tripled the size of Israeli-controlled territory and brought over 1 million Palestinian Arabs under direct Israeli military occupation.',
+        connective:
+          'The stunning conquest of vast Arab lands created the central dilemma of modern Middle Eastern history...',
+        exam_link:
+          'Q1 Consequence: Transformed the geography of the conflict by giving Israel the occupied territories of Sinai, Gaza, the West Bank, and Golan Heights.',
       },
     ],
     vocabRef: '[Textbook §1.1–§2.1 &amp; Source A]',
@@ -299,46 +389,91 @@ const kt2Configs = [
     title: 'KT2.3: The Aftermath: Resolution 242 & The Occupied Territories (1967)',
     specAnchor:
       'UN Resolution 242 and the continued dispute over the Suez Canal; Palestinian refugees and the significance of the occupied territories: Golan Heights, Gaza Strip, West Bank, Sinai and East Jerusalem.',
-    doNow: [
+    stages: [
       {
-        q: 'How many days did the Arab-Israeli war of June 1967 last?',
-        a: 'Six days (5–10 June 1967)',
+        step: 1,
+        date: '7 June 1967',
+        title: 'The Capture of East Jerusalem',
+        actor: 'Israeli Forces (IDF)',
+        tag: 'The Holy City Captured',
+        trigger:
+          'Israeli paratroopers capture the Old City of Jerusalem and the Western Wall; the Israeli parliament quickly annexes East Jerusalem under Israeli law.',
+        because:
+          'Jordan had opened artillery fire on West Jerusalem on the first day of the war, giving Israel the opportunity to capture the sacred holy sites.',
+        therefore:
+          'Reunited Jerusalem under Israeli control, but was condemned by the UN and became the most emotional, contested issue in the entire conflict.',
+        connective:
+          'Stunned by their catastrophic battlefield defeat, Arab leaders gathered to coordinate a response...',
+        exam_link:
+          'Q1 Consequence: Made Jerusalem the most sacred and intractable dispute between Israelis and Palestinians.',
       },
       {
-        q: 'Name the massive desert peninsula captured by Israel from Egypt in 1967.',
-        a: 'The Sinai Peninsula',
+        step: 2,
+        date: 'September 1967',
+        title: 'The Khartoum Summit & The "Three No’s"',
+        actor: 'Arab Leaders (Led by Egypt’s Nasser)',
+        tag: 'The Rejectionist Stance',
+        trigger:
+          'Arab heads of state meet in Khartoum and declare the famous "Three No’s": no peace with Israel, no recognition of Israel, no negotiations with Israel.',
+        because:
+          'Defeated Arab leaders could not recognize Israel or accept the permanent loss of Arab land without being overthrown by their own people.',
+        therefore:
+          'Destroyed Israeli hopes of quickly trading captured land for permanent peace treaties, locking both sides into a bitter stalemate.',
+        connective:
+          'To break the diplomatic deadlock, the United Nations drafted a historic peace formula...',
+        exam_link:
+          'Q1 Consequence: Blocked early peace negotiations and entrenched the diplomatic stalemate after the 1967 war.',
       },
       {
-        q: 'Which territory along the Mediterranean coast was captured from Egyptian military administration?',
-        a: 'The Gaza Strip',
+        step: 3,
+        date: '22 November 1967',
+        title: 'UN Resolution 242: "Land for Peace"',
+        actor: 'The United Nations Security Council',
+        tag: 'The Diplomatic Formula',
+        trigger:
+          'The UN passes Resolution 242, establishing the principle of "Land for Peace": Israel should withdraw from occupied lands in return for Arab recognition of its right to live in peace.',
+        because:
+          'The superpowers (USA and USSR) wanted to prevent another regional war while resolving the refugee and territorial crisis.',
+        therefore:
+          'Became the basis for all future peace negotiations, but vague English phrasing ("withdrawal from territories" rather than "all territories") led to years of disagreement.',
+        connective:
+          'Expecting no quick peace deal, Israel built heavy military fortifications along the new borders...',
+        exam_link:
+          'Q1 Consequence: Established the international framework of "Land for Peace" that underpinned all subsequent peace talks (Camp David and Oslo).',
       },
       {
-        q: 'Which territory on the west bank of the River Jordan was captured from the Kingdom of Jordan?',
-        a: 'The West Bank',
+        step: 4,
+        date: '1968–1969',
+        title: 'The Bar-Lev Line on the Suez Canal',
+        actor: 'Israeli Military (IDF)',
+        tag: 'Fortress Defense',
+        trigger:
+          'Israel builds a massive defensive barrier of giant sand walls and concrete fortresses along the entire eastern bank of the Suez Canal.',
+        because:
+          'The Sinai Desert provided Israel with strategic depth to absorb any future Egyptian attack and protect mainland Israeli cities.',
+        therefore:
+          'Created a false sense of security among Israeli commanders, who believed Egyptian forces could never cross the canal, setting the stage for surprise in 1973.',
+        connective:
+          'Alongside military forts, Israeli civilians began settling inside the captured Arab territories...',
+        exam_link:
+          'Q2 Narrative Account: Bred the military overconfidence that left Israeli forces unprepared for the surprise Egyptian canal crossing in 1973.',
       },
       {
-        q: 'Which holy sector of Jerusalem was captured and annexed by Israel in June 1967?',
-        a: 'East Jerusalem (including the Old City)',
-      },
-      {
-        q: 'Which strategic volcanic plateau was captured by Israeli troops from Syria on 9–10 June?',
-        a: 'The Golan Heights',
-      },
-      {
-        q: 'Approximately how many Palestinian Arabs became refugees following the 1967 war?',
-        a: 'Between 300,000 and 350,000',
-      },
-      {
-        q: 'What city in Sudan hosted the Arab League summit in August–September 1967?',
-        a: 'Khartoum',
-      },
-      {
-        q: 'What famous formula summarized the Arab League position at the Khartoum Summit?',
-        a: 'The "Three Noes" (no peace, no recognition, no negotiations)',
-      },
-      {
-        q: 'What core diplomatic formula was introduced by UN Security Council Resolution 242?',
-        a: '"Land for Peace"',
+        step: 5,
+        date: '1968–1973',
+        title: 'The Beginning of Israeli Settlements',
+        actor: 'Israeli Government & Jewish Settlers',
+        tag: 'Settlements in Occupied Land',
+        trigger:
+          'Israel begins building permanent civilian settlements in the newly captured territories: the West Bank, Golan Heights, and Gaza Strip.',
+        because:
+          'The Israeli government sought security buffer zones, while religious settlers believed the land belonged to the historic Jewish homeland.',
+        therefore:
+          'Created permanent Jewish communities inside Palestinian areas, establishing "facts on the ground" that made future territorial compromise far harder.',
+        connective:
+          'Faced with permanent occupation and defeated Arab armies, Palestinians turned to armed guerrilla warfare...',
+        exam_link:
+          'Q1 Consequence: Created permanent Jewish settlements in Palestinian territory, which became a major barrier to a two-state solution.',
       },
     ],
     vocabRef: '[Textbook §3.1–§3.2 &amp; Source C]',
@@ -404,46 +539,91 @@ const kt2Configs = [
     title: 'KT2.4: Palestinian Resistance: The PLO, Black September & Munich (1968–1972)',
     specAnchor:
       'The use of terrorism, Israel’s response and international attitudes towards the Palestine issue: the PFLP airplane hijacks of 1970; Black September and the Munich Olympics; the expulsion of the PLO from Jordan (1970).',
-    doNow: [
+    stages: [
       {
-        q: 'What core diplomatic formula was established by UN Resolution 242 in November 1967?',
-        a: '"Land for Peace"',
+        step: 1,
+        date: '21 March 1968',
+        title: 'The Battle of Karameh',
+        actor: 'Palestinian Fighters (Fatah) & Jordanian Army vs. Israel',
+        tag: 'The Rise of the Fedayeen',
+        trigger:
+          'Israeli tanks cross the Jordan River to attack a Palestinian guerrilla base at Karameh; Palestinian fighters stand their ground and inflict heavy Israeli casualties.',
+        because:
+          'Israel launched the punitive raid to crush guerrilla camps carrying out sabotage attacks inside Israel.',
+        therefore:
+          'Celebrated as an inspiring moral victory across the Arab world; thousands rushed to join the guerrilla resistance, and Yasser Arafat became Chairman of the PLO in 1969.',
+        connective:
+          'Radical Palestinian factions turned to international terrorism to gain worldwide television attention...',
+        exam_link:
+          'Q2 Narrative Account: Established Yasser Arafat and Fatah as the dominant leaders of the Palestinian national struggle.',
       },
       {
-        q: 'What were the famous "Three Noes" declared by Arab leaders at Khartoum in 1967?',
-        a: 'No peace, no recognition, no negotiations with Israel',
+        step: 2,
+        date: 'September 1970',
+        title: 'The Dawson’s Field Airline Hijackings',
+        actor: 'PFLP (Militant Palestinian Group)',
+        tag: 'Hijackings on TV',
+        trigger:
+          'Palestinian militants hijack four Western passenger airliners, force three to land in the Jordanian desert, and blow up the empty planes on live television.',
+        because:
+          'Militants wanted to force the release of Palestinian prisoners in Europe and Israel, and draw global attention to the Palestinian cause.',
+        therefore:
+          'Directly challenged the authority of Jordan’s King Hussein, creating an armed "state within a state" that openly threatened to overthrow the Jordanian monarchy.',
+        connective:
+          'Furious at being humiliated in his own country, King Hussein ordered his army to crush the PLO...',
+        exam_link:
+          'Q1 Consequence: Brought the Palestinian issue to global attention, but provoked King Hussein into launching military action against the PLO.',
       },
       {
-        q: 'Name three of the five territories captured by Israel in the Six-Day War.',
-        a: 'Any 3: Sinai, Gaza, West Bank, East Jerusalem, Golan Heights',
+        step: 3,
+        date: 'September 1970',
+        title: 'Black September (Civil War in Jordan)',
+        actor: 'The Jordanian Army vs. The PLO',
+        tag: 'The Expulsion from Jordan',
+        trigger:
+          'King Hussein sends Jordanian tanks and troops into Amman to crush PLO bases and refugee camps, killing thousands of fighters and civilians.',
+        because:
+          'The PLO had set up its own armed checkpoints in Jordan, disregarded police authority, and attempted to assassinate King Hussein.',
+        therefore:
+          'The PLO was completely defeated and expelled from Jordan; Arafat moved his fighters and headquarters to Beirut and southern Lebanon.',
+        connective:
+          'A vengeful new faction named after the Jordanian defeat carried out a shocking attack on the world stage...',
+        exam_link:
+          'Q1 Consequence: Led to the expulsion of the PLO from Jordan and the relocation of their bases to Lebanon.',
       },
       {
-        q: 'How many Palestinian refugees fled into Jordan following the 1967 war?',
-        a: 'Approximately 300,000 to 350,000',
+        step: 4,
+        date: '5–6 September 1972',
+        title: 'The Munich Olympics Massacre',
+        actor: 'Black September Militants',
+        tag: 'Terror at the Games',
+        trigger:
+          'Eight Palestinian terrorists break into the Munich Olympic Village, killing two Israeli athletes and taking nine hostage; all nine hostages die during a botched German rescue attempt.',
+        because:
+          'The group demanded the release of over 200 Palestinian prisoners held in Israel and worldwide television publicity for the Palestinian cause.',
+        therefore:
+          'Horrified the global public, heavily damaged the international reputation of the Palestinian movement, and led Israel to launch undercover retaliation.',
+        connective:
+          'In response to Munich, Israeli Prime Minister Golda Meir ordered a covert campaign against those responsible...',
+        exam_link:
+          'Q1 Consequence: Branded the Palestinian cause with international terrorism and prompted Israel to launch covert retaliatory strikes.',
       },
       {
-        q: 'Which Palestinian guerrilla movement was led by Yasser Arafat?',
-        a: 'Fatah',
-      },
-      {
-        q: 'What does the acronym PLO stand for?',
-        a: 'Palestine Liberation Organisation',
-      },
-      {
-        q: 'In what year was Yasser Arafat elected Chairman of the PLO?',
-        a: '1969',
-      },
-      {
-        q: 'Which Egyptian president expelled UNEF and closed the Straits of Tiran in 1967?',
-        a: 'Gamal Abdel Nasser',
-      },
-      {
-        q: 'What was the 1949 armistice border between Israel and Jordan known as?',
-        a: 'The Green Line',
-      },
-      {
-        q: 'What term describes Palestinian armed guerrilla fighters who "sacrifice themselves"?',
-        a: 'Fedayeen',
+        step: 5,
+        date: '1972–1979',
+        title: 'Israeli Retaliation (Operation Wrath of God)',
+        actor: 'Israeli Intelligence (Mossad)',
+        tag: 'The Covert War',
+        trigger:
+          'Israeli secret agents track down and assassinate Palestinian militants linked to the Munich attack across Europe and the Middle East.',
+        because:
+          'Prime Minister Golda Meir was determined to re-establish deterrence and prove that terrorist attacks on Israelis would never go unpunished.',
+        therefore:
+          'Eliminated many militant leaders, but sparked cycles of counter-attacks and drew international criticism when an innocent man was killed by mistake.',
+        connective:
+          'While the covert war raged, Egypt and Syria prepared a massive conventional surprise attack on Israel...',
+        exam_link:
+          'Q2 Narrative Account: Shows how Israel used targeted assassinations in Europe to restore deterrence after the Munich attack.',
       },
     ],
     vocabRef: '[Textbook §1.1–§2.2 &amp; Source A]',
@@ -510,46 +690,91 @@ const kt2Configs = [
     title: 'KT2.5: The War of Attrition & The Yom Kippur War (1969–1973)',
     specAnchor:
       'Israel’s consolidation of control of the occupied territories; key events of the Yom Kippur War (1973) and its aftermath.',
-    doNow: [
+    stages: [
       {
-        q: 'What Israeli hostage crisis occurred at an international sporting event in September 1972?',
-        a: 'The Munich Olympics massacre',
+        step: 1,
+        date: '1969–1970',
+        title: 'The War of Attrition',
+        actor: 'Egypt vs. Israel',
+        tag: 'Canal Artillery Duels',
+        trigger:
+          'Nasser launches an 18-month campaign of heavy artillery shelling and commando raids across the Suez Canal; Israel responds with massive air strikes.',
+        because:
+          'Egypt refused to accept the Israeli occupation of the Sinai Peninsula and wanted to wear down the Israeli military and economy.',
+        therefore:
+          'Cost thousands of lives, damaged towns along the canal, and brought Soviet surface-to-air missiles to the Egyptian side of the canal.',
+        connective:
+          'Egypt’s new president tried diplomacy to regain Sinai, but his overtures were ignored...',
+        exam_link:
+          'Q2 Narrative Account: Showed Egypt’s refusal to accept the loss of Sinai, setting the stage for the Yom Kippur War.',
       },
       {
-        q: 'What covert Mossad retaliation operation was authorized by Golda Meir following Munich?',
-        a: 'Operation Wrath of God',
+        step: 2,
+        date: '1971–1972',
+        title: 'Sadat Expels Soviet Advisers',
+        actor: 'President Anwar Sadat of Egypt',
+        tag: 'The Diplomatic Turn',
+        trigger:
+          'Anwar Sadat expels 15,000 Soviet military advisers from Egypt after his peace proposals to return Sinai are ignored by Israel and the USA.',
+        because:
+          'Israel felt completely secure behind the Bar-Lev Line, while the Soviets refused to provide offensive weapons to attack Israel.',
+        therefore:
+          'Convinced Sadat that only a surprise military strike could break the stalemate and force the USA and Israel to take peace talks seriously.',
+        connective:
+          'Sadat coordinated with Syria to launch a shock attack on the holiest day of the Jewish year...',
+        exam_link:
+          'Q1 Consequence: Convinced Sadat that war was the only way to shatter Israeli complacency and force diplomatic negotiations.',
       },
       {
-        q: 'Which desert airstrip in Jordan was used by the PFLP in 1970 to blow up hijacked airliners?',
-        a: 'Dawson’s Field',
+        step: 3,
+        date: '6 October 1973',
+        title: 'The Surprise Attack on Yom Kippur',
+        actor: 'Egypt & Syria vs. Israel',
+        tag: 'The Two-Front Surprise',
+        trigger:
+          'Egyptian troops cross the Suez Canal and blast through the Bar-Lev Line, while hundreds of Syrian tanks storm the Golan Heights.',
+        because:
+          'Launched on Yom Kippur (the Jewish Day of Atonement), catching Israeli forces completely off-guard with reserve troops not yet mobilised.',
+        therefore:
+          'Overran Israeli defenses, destroyed hundreds of Israeli tanks, and shattered the myth of Israeli military invincibility.',
+        connective:
+          'Facing catastrophic losses, Israel turned to the United States for an emergency resupply...',
+        exam_link:
+          'Q1 Consequence: Shattered Israeli military overconfidence and proved that Arab armies could mount sophisticated, coordinated offensives.',
       },
       {
-        q: 'Which country became the main headquarters for the PLO after being expelled from Jordan in 1971?',
-        a: 'Lebanon',
+        step: 4,
+        date: '12–16 October 1973',
+        title: 'The US Emergency Airlift & Israeli Counter-Attack',
+        actor: 'The USA & Israeli Army (IDF)',
+        tag: 'The Battlefield Turn',
+        trigger:
+          'The US flies thousands of tons of emergency military supplies to Israel; Israeli forces counter-attack, crossing the Suez Canal and cutting off Egypt’s Third Army.',
+        because:
+          'The USA feared Israel was running out of tanks and ammunition and might face total military collapse.',
+        therefore:
+          'Turned the tide of battle in Israel’s favor, but brought the USA and USSR dangerously close to a direct Cold War confrontation.',
+        connective:
+          'To stop the Israeli advance and punish Western allies, Arab oil producers deployed an economic weapon...',
+        exam_link:
+          'Q2 Narrative Account: Massive US military aid saved Israel from defeat, while Israeli counter-attacks forced the superpowers to broker a ceasefire.',
       },
       {
-        q: 'What static artillery border conflict was fought along the Suez Canal in 1969–70?',
-        a: 'The War of Attrition',
-      },
-      {
-        q: 'Who succeeded Gamal Abdel Nasser as President of Egypt following Nasser’s death in 1970?',
-        a: 'Anwar Sadat',
-      },
-      {
-        q: 'What fortified sand-rampart defensive line did Israel construct along the Suez Canal?',
-        a: 'The Bar-Lev Line',
-      },
-      {
-        q: 'What method did Egyptian engineers use to blast through the sand ramparts of the Bar-Lev Line?',
-        a: 'High-pressure water monitors (water cannons)',
-      },
-      {
-        q: 'On what Jewish holy day did Egypt and Syria launch their coordinated surprise attack in 1973?',
-        a: 'Yom Kippur (Day of Atonement)',
-      },
-      {
-        q: 'Which vital international waterway remained closed to shipping between 1967 and 1975?',
-        a: 'The Suez Canal',
+        step: 5,
+        date: 'October 1973',
+        title: 'The Arab Oil Embargo & Ceasefire',
+        actor: 'Arab Oil Producers (OPEC) & The UN',
+        tag: 'The Oil Weapon',
+        trigger:
+          'Arab oil-producing nations cut oil production and embargo crude oil exports to the USA and the Netherlands; the UN enforces a ceasefire.',
+        because:
+          'Arab nations wanted to punish Western supporters of Israel and force the West to pressure Israel into returning captured Arab territories.',
+        therefore:
+          'Quadrupled world oil prices, triggered global fuel shortages, and convinced the USA that resolving the Middle East conflict was an urgent priority.',
+        connective:
+          'The oil shock forced the US government to lead intense diplomatic negotiations to prevent future wars...',
+        exam_link:
+          'Q1 Consequence: The oil crisis made Middle Eastern peace an urgent priority for US foreign policy, leading directly to Kissinger’s shuttle diplomacy.',
       },
     ],
     vocabRef: '[Textbook §1.1–§2.1 &amp; Source A]',
@@ -657,6 +882,34 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
     .verso-page,
     .recto-page {
       padding: 4mm 6mm;
+    }
+    
+    /* 5-Stage Domino Causal Chain Styling */
+    .domino-chain-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      margin: 2px 0;
+    }
+    .domino-card-compact {
+      border: 1.2px solid #000000;
+      border-radius: 3px;
+      padding: 2.5px 6px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    .domino-connector {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      font-weight: 700;
+      color: #000000;
+      line-height: 1;
+      padding: 1px 0;
     }
     .page-body-full {
       flex: 1;
@@ -988,128 +1241,102 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
   // Spread 2 (Verso & Recto): Facing Ruled Paper for Extended Assessment
   // ====================================================================
   kt2Configs.forEach((cfg) => {
-    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4; // Pages 4, 8, 12, 16, 20
-    const rightPageNum = leftPageNum + 1; // Pages 5, 9, 13, 17, 21
-    const linedLeftPageNum = leftPageNum + 2; // Pages 6, 10, 14, 18, 22
-    const linedRightPageNum = leftPageNum + 3; // Pages 7, 11, 15, 19, 23
-    const rx = cfg.rightExam;
+    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4; // Spread 1 Left (Verso): Chronological Spine + Vocab
+    const rightPageNum = leftPageNum + 1; // Spread 1 Right (Recto): Open Ruled Lesson Notebook
+    const linedLeftPageNum = leftPageNum + 2; // Spread 2 Left (Verso): Exam Practice & Planning Scaffold
+    const linedRightPageNum = leftPageNum + 3; // Spread 2 Right (Recto): Extended Response & Band 4 Rubric
+    const rx = cfg.rightExam || cfg.extendedPractice;
 
     // ------------------------------------------------------------------
-    // LEFT PAGE: ENQUIRY TITLE + SPEC FOCUS + 10 DO NOW + VOCAB + TWO 4-MARKERS
+    // SPREAD 1, LEFT PAGE (VERSO): 5-STAGE CAUSAL DOMINO SPINE & CORE VOCABULARY
     // ------------------------------------------------------------------
     html += `
   <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            KEY TOPIC 2.${cfg.lessonNum} &bull; ENQUIRY LESSON
+            KEY TOPIC 2.${cfg.lessonNum} &bull; ENQUIRY LESSON NOTEBOOK
           </span>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 2 &bull; 26 MARKS
+            EDEXCEL PAPER 2 (1HI0/2B) &bull; PERIOD STUDY
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
           ${cfg.inquiryQuestion}
         </h2>
-        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; font-style: italic; color: #222222; line-height: 1.2;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #222222; line-height: 1.18;">
           ${cfg.subTitle}
         </div>
       </div>
 
-      <!-- Key Specification Focus: Directly beneath the Title -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.22;">
+      <!-- Key Specification Focus -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.2;">
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
-      <!-- 10-Question Do Now Retrieval Grid -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
+      <!-- 5-Stage Chronological Domino Chain (Key Causal Turning Points) -->
+      <div class="domino-chain-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; 5-Stage Chronological Domino Chain (Key Causal Turning Points)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">
+            CAUSAL REASONING &bull; 5 STAGES
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px;">
-          ${cfg.doNow
-            .map(
-              (item, idx) => `
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000; line-height: 1.18;">
-              ${idx + 1}. ${item.q}
+
+        ${cfg.stages
+          .map(
+            (s, sIdx) => `
+        <div class="domino-card-compact">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000;">${s.date}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #444444; text-transform: uppercase;">${s.tag} &bull; ${s.actor}</span>
             </div>
-            <div class="task-line-dotted"></div>
           </div>
-          `,
-            )
-            .join('')}
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; line-height: 1.15; margin: 1px 0;">
+            ${s.step}. ${s.title}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111111; line-height: 1.18; margin-bottom: 2px;">
+            <strong>Action:</strong> ${s.trigger}
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.18;">
+            <div><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Because" (Motive):</strong> ${s.because}</div>
+            <div style="border-left: 1px solid #cbd5e1; padding-left: 4px;"><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Therefore" (Consequence):</strong> ${s.therefore}</div>
+          </div>
         </div>
+        ${
+          sIdx < cfg.stages.length - 1
+            ? `
+        <div class="domino-connector">
+          &darr; <em>${s.connective}</em> &darr;
+        </div>`
+            : ''
+        }
+        `,
+          )
+          .join('')}
       </div>
 
-      <!-- Key Vocabulary (3 Lines, No Double Border) -->
-      <div class="task-section" style="margin-bottom: 3px;">
+      <!-- Key Vocabulary (Core Disciplinary Distinction) -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fafafa; margin-top: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+        <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Question 1(a): Explain One Consequence [4 marks] -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 1(a): Explain One Consequence [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
-          ${cfg.consequenceA.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 1px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Question 1(b): Explain One Consequence [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 1(b): Explain One Consequence [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
-          ${cfg.consequenceB.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceB.guidance}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 1px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceB.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
       </div>
 
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
@@ -1117,165 +1344,168 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE / IMPORTANCE)        -->
-  <!-- Docked 3-Row Scaffolding Block (Zero Gaps) • 18 Writing Lines       -->
+  <!-- SPREAD 1, RIGHT PAGE (RECTO): OPEN RULED LESSON NOTE-TAKING CANVAS -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      
-      <!-- Exam Header (Top of Page) -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${rx.tariff}
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
+          ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+          Disciplinary Lesson Notes &bull; Chronological Synthesis
+        </span>
+      </div>
+
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 3px; line-height: 1.2;">
+        <strong>Instructions:</strong> Use this open note-taking canvas to record teacher direct instruction, annotate key causal links, and synthesize the 5 milestones on facing Page ${leftPageNum}.
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${Array.from({ length: 28 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Lesson Notes &bull; Causal Synthesis &bull; Disciplinary Analysis ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
+      </div>
+
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, LEFT PAGE (VERSO): EXAM PRACTICE & EXTENDED PLANNING SCAFFOLD -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+          KEY TOPIC 2.${cfg.lessonNum} &bull; EDEXCEL EXAM PRACTICE
+        </span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          PAPER 2 (1HI0/2B) &bull; 12 MARKS TOTAL
+        </span>
+      </div>
+
+      <!-- Section 1: Question 1 Consequence [4 marks] -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; margin-bottom: 4px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 1: Explain One Consequence [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${cfg.consequenceA.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1px; line-height: 1.15;">
+          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
+        </div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+      </div>
+
+      <!-- Section 2: Extended Exam Practice (Q2 Narrative [8m] or Q3 Importance [8m]) -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 10.2pt; color: #000000; margin: 0; font-weight: 800;">
+          ${rx.tariff}
+        </h3>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase;">
           Extended Writing Assessment &bull; 8 Marks
         </span>
       </div>
 
-      <!-- Unified 3-Row Scaffolding Block (Zero Inter-Row Gaps • Docked Directly Below Header) -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-top: 1px; margin-bottom: 2px; background: #ffffff;">
-        
-        <!-- Row 1: Question Stem & Stimulus / Analytical Focus -->
+      <!-- Unified Scaffolding Block -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-bottom: 3px; background: #ffffff;">
+        <!-- Row 1: Stem & Stimulus/Focus -->
         <div style="padding: 2.5px 6px; border-bottom: 1px solid #000000; background: #ffffff;">
-          <div style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; line-height: 1.2;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
             ${rx.stem}
           </div>
           ${
             rx.type === 'narrative_8'
               ? `
-          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
             <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
           </div>
           `
               : `
-          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
             <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
           </div>
           `
           }
         </div>
 
-        <!-- Row 2: 3-Column Planning Structure Strip (Flush Directly Beneath Row 1) -->
+        <!-- Row 2: 3-Column Planning Structure Strip -->
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #fafafa;">
           ${rx.structureStrip
             .map(
               (strip, sIdx) => `
           <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; display: flex; justify-content: space-between; align-items: center; line-height: 1.1; margin-bottom: 1px;">
-              <span>${strip.col}</span>
-              <span style="font-size: 6.0pt; border: 1px solid #000; padding: 0 3px; border-radius: 2px; background: #ffffff;">SECTION ${sIdx + 1}</span>
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
           `,
             )
             .join('')}
         </div>
 
-        <!-- Row 3: Connectives & Key Vocabulary Bank (Flush Directly Beneath Row 2) -->
+        <!-- Row 3: Connectives & Word Bank -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
           <div style="padding: 2px 5px; border-right: 1px solid #000000;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives || rx.causalConnectives}</span>
           </div>
           <div style="padding: 2px 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
           </div>
         </div>
-
       </div>
 
-      <!-- Writing Task Prompt & 18 Handwriting Lines (Style matched to 0px overflow budget) -->
+      <!-- Initial Response Lines -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+        <strong>Task:</strong> Begin your analytical response below and continue onto facing Page ${linedRightPageNum} for full timed response:
       </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
-        ${Array.from({ length: 18 })
-          .map(() => '<div class="task-line"></div>')
-          .join('\n        ')}
-      </div>
-
-      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
-          Timeline Mission &bull; Pages 2–3
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
-          ${rx.timelineMission}
-        </div>
-      </div>
-
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
-    </div>
-  </div>
-`;
-
-    // ------------------------------------------------------------------
-    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES
-    // ------------------------------------------------------------------
-    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedLeftPageNum}">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsLeft}
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; margin-bottom: 2px;">
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
     </div>
   </div>
-`;
 
-    // ------------------------------------------------------------------
-    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
-    // ------------------------------------------------------------------
-    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedRightPageNum}">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, RIGHT PAGE (RECTO): FULL-PAGE EXTENDED TIMED ESSAY RESPONSE -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
@@ -1284,9 +1514,45 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         </span>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsRight}
+      <!-- 20 Ruled Response Lines with Margin -->
+      <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
+        ${Array.from({ length: 20 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 2/3 &amp; Sustained Analytical Conclusion ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 3px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          Timeline Mission &bull; Pages 2–3
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.18;">
+          ${rx.timelineMission}
+        </div>
+      </div>
+
+      <!-- Band 4 Marking Rubric / Self-Assessment Checklist -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="font-weight: 800; text-transform: uppercase;">Band 4 Checklist [7–8m]:</span>
+          <span><input type="checkbox"> Accurate &amp; relevant details deployed</span>
+          <span><input type="checkbox"> Analytical progression sustained throughout</span>
+          <span><input type="checkbox"> Explicit causal connectives used</span>
+        </div>
+        <div style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; white-space: nowrap;">
+          Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 8 ]
+        </div>
       </div>
 
       ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
