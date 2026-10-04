@@ -90,6 +90,83 @@ const kt1Configs = [
     title: 'KT1.1: Imperial Origins & Contradictory Pledges (1915–1945)',
     specAnchor:
       'Conflicting interests and demands of Jews and Arabs within the British Mandate; the McMahon-Hussein Correspondence (1915), the secret Sykes-Picot Agreement (1916), the Balfour Declaration (1917), and the 1939 British White Paper.',
+    stages: [
+      {
+        step: 1,
+        date: '1915–1916',
+        title: 'The McMahon-Hussein Correspondence',
+        actor: 'Britain & Arab Leaders',
+        tag: 'The Wartime Promise',
+        trigger:
+          'British High Commissioner McMahon exchanges letters with Arab leader Sherif Hussein, promising British support for an independent post-war Arab state in exchange for an Arab revolt against the Ottoman Empire.',
+        because:
+          'Britain urgently needed Arab guerrilla forces to tie down Ottoman troops during the First World War and protect the Suez Canal.',
+        therefore:
+          'Arab forces launched the revolt believing they were fighting for national independence, but Britain deliberately left the future borders of Palestine vague.',
+        connective:
+          'While promising independence to Arab leaders, Britain secretly made a conflicting partition deal with its European ally...',
+      },
+      {
+        step: 2,
+        date: 'May 1916',
+        title: 'The Secret Sykes-Picot Agreement',
+        actor: 'Britain & France',
+        tag: 'Imperial Partition',
+        trigger:
+          'British and French diplomats secretly agree to divide the Ottoman Arab lands into British and French zones of colonial control.',
+        because:
+          'Britain and France wanted to secure Middle Eastern oil supplies, trading ports, and strategic transit routes to British India.',
+        therefore:
+          'Directly broke Britain’s promise of Arab independence; when leaked in 1917, it convinced Arab leaders that European powers could not be trusted.',
+        connective:
+          'Britain then issued a third, fateful pledge to win international wartime support...',
+      },
+      {
+        step: 3,
+        date: 'November 1917',
+        title: 'The Balfour Declaration',
+        actor: 'The British Government',
+        tag: 'The Conflicting Pledge',
+        trigger:
+          'British Foreign Secretary Arthur Balfour writes an official letter stating Britain’s support for "a national home for the Jewish people" in Palestine.',
+        because:
+          'Britain sought to win wartime diplomatic sympathy and financial backing from Jewish communities in the USA and Russia.',
+        therefore:
+          'Created a deep contradiction: promising to help build a Jewish homeland while also pledging not to harm the rights of the existing Arab majority.',
+        connective:
+          'Following Allied victory, Britain was given international authority to govern Palestine and manage these rival promises...',
+      },
+      {
+        step: 4,
+        date: '1920–1936',
+        title: 'The British Mandate & Rising Immigration',
+        actor: 'British Authorities & Jewish Immigrants',
+        tag: 'Population Shift',
+        trigger:
+          'Britain rules Palestine under a League of Nations mandate; Jewish immigration rises steadily, increasing the Jewish share of the population from 11% to nearly 30% by 1936.',
+        because:
+          'Jewish immigrants fled rising anti-Semitism and Nazi persecution in Europe, purchasing land through the Jewish National Fund to build farms and towns.',
+        therefore:
+          'Palestinian Arab tenant farmers lost access to farmland, creating severe economic hardship and growing hostility between both communities.',
+        connective:
+          'Simmering Arab anger boiled over into a full-scale armed rebellion against British rule...',
+      },
+      {
+        step: 5,
+        date: '1936–1939',
+        title: 'The Arab Revolt & The 1939 White Paper',
+        actor: 'Palestinian Arabs & British Government',
+        tag: 'The Immigration Cap',
+        trigger:
+          'Palestinian Arabs launch a three-year armed rebellion; Britain crushes the uprising with troops, but then issues the 1939 White Paper strictly capping Jewish immigration.',
+        because:
+          'With the Second World War approaching, Britain needed to appease Arab opinion to keep Middle Eastern oil supplies and trade routes secure.',
+        therefore:
+          'Limited Jewish immigration to 75,000 over five years just as the Holocaust began, leaving both Jews and Arabs feeling betrayed and turning both sides against Britain.',
+        connective:
+          'The 1939 White Paper convinced Jewish groups that Britain had broken its promises, leading to post-war armed insurgency...',
+      },
+    ],
     doNow: [
       {
         q: 'Which vital maritime waterway, completed in 1869, connects the Mediterranean to the Red Sea?',
@@ -185,6 +262,83 @@ const kt1Configs = [
     title: 'KT1.2: Collapse of the Mandate & UN Partition (1945–1947)',
     specAnchor:
       'Conflicting interests after World War Two; Jewish insurgency (Irgun and Lehi); the bombing of the King David Hotel (July 1946); British economic and military exhaustion; the SS Exodus affair (1947); and UNSCOP recommendations.',
+    stages: [
+      {
+        step: 1,
+        date: '1945–1946',
+        title: 'Post-War Holocaust Survivors & The Insurgency',
+        actor: 'Jewish Militias vs. British Army',
+        tag: 'The Post-War Conflict',
+        trigger:
+          'Armed Jewish paramilitary groups (Haganah and Irgun) launch guerrilla attacks and sabotage raids against British military bases and railways in Palestine.',
+        because:
+          'Britain maintained its strict immigration cap of 1,500 people per month, turning away ships carrying European Holocaust survivors who had nowhere else to go.',
+        therefore:
+          'Made Palestine dangerous and financially crippling for Britain to govern, tying down 100,000 British soldiers in constant anti-guerrilla operations.',
+        connective:
+          'The guerrilla campaign escalated into a devastating attack on the heart of British military administration...',
+      },
+      {
+        step: 2,
+        date: '22 July 1946',
+        title: 'The King David Hotel Bombing',
+        actor: 'The Irgun (Menachem Begin)',
+        tag: 'The Decisive Attack',
+        trigger:
+          'The Irgun blows up the British administrative and military headquarters at the King David Hotel in Jerusalem, killing 91 British, Arab, and Jewish staff.',
+        because:
+          'The Irgun, led by Menachem Begin, wanted to destroy British military intelligence files and force Britain to abandon control of Palestine.',
+        therefore:
+          'Deeply shocked the British public and government, destroying British domestic political will to keep soldiers stationed in Palestine.',
+        connective:
+          'Exhausted by casualties, financial debt, and public outcry, the British government decided to walk away from Palestine...',
+      },
+      {
+        step: 3,
+        date: 'February 1947',
+        title: 'Britain Hands Palestine to the United Nations',
+        actor: 'British Government & The UN',
+        tag: 'The UN Referral',
+        trigger:
+          'British Foreign Secretary Ernest Bevin announces that Britain will surrender its mandate and hand full responsibility for Palestine to the United Nations.',
+        because:
+          'Britain was near bankruptcy after the Second World War, facing severe fuel rationing at home, and could not find an agreement acceptable to both Arabs and Jews.',
+        therefore:
+          'The UN established a special fact-finding committee (UNSCOP) to tour Palestine and produce an international partition plan.',
+        connective:
+          'The international crisis escalated when British warships intercepted a ship of displaced Holocaust survivors...',
+      },
+      {
+        step: 4,
+        date: 'July 1947',
+        title: 'The SS Exodus Affair & Global Outcry',
+        actor: 'British Navy & Holocaust Refugees',
+        tag: 'Public Relations Disaster',
+        trigger:
+          'British warships intercept the SS Exodus carrying 4,500 Holocaust survivors, forcibly returning the refugees to displaced persons camps in Germany.',
+        because:
+          'Britain was determined to enforce its strict naval blockade against illegal Jewish immigration into Mandatory Palestine.',
+        therefore:
+          'Created an international media scandal that devastated British moral prestige, turning US President Truman and global public opinion decisively against the Mandate.',
+        connective:
+          'UNSCOP completed its investigations and proposed an immediate end to British rule and the division of the country...',
+      },
+      {
+        step: 5,
+        date: '29 November 1947',
+        title: 'UN Resolution 181 (The Partition Plan)',
+        actor: 'United Nations General Assembly',
+        tag: 'The Division of Palestine',
+        trigger:
+          'The UN votes to partition Palestine into two separate states: a Jewish state (55% of the land) and an Arab state (44%), with Jerusalem placed under international control.',
+        because:
+          'The UN concluded that the two communities had completely incompatible national goals and could not live peacefully under one government.',
+        therefore:
+          'Jewish leaders accepted the plan as international recognition of their statehood, while Arab leaders rejected it as unfair, sparking immediate civil war across Palestine.',
+        connective:
+          'As the final British soldiers withdrew, the civil conflict erupted into a regional war...',
+      },
+    ],
     doNow: [
       {
         q: 'What 1917 document promised British support for a Jewish national home in Palestine?',
@@ -282,6 +436,82 @@ const kt1Configs = [
     title: 'KT1.3: UN Resolution 181 & The 1948–49 War (1947–1949)',
     specAnchor:
       'UN Resolution 181 (Partition Plan, November 1947); outbreak of civil war; the British evacuation; David Ben-Gurion’s declaration of Israel (14 May 1948); invasion by five Arab armies; the UN truces; and the 1949 Armistice Agreements (Green Line).',
+    stages: [
+      {
+        step: 1,
+        date: 'Dec 1947 – May 1948',
+        title: 'Communal Civil War & British Evacuation',
+        actor: 'Jewish & Arab Militias',
+        tag: 'The Civil Conflict',
+        trigger:
+          'Following UN Resolution 181, intense civil fighting erupts between Jewish militias and Palestinian irregulars along roads, towns, and the siege of Jerusalem.',
+        because:
+          'Both communities sought to seize strategic high ground and control road corridors before the final British evacuation.',
+        therefore:
+          'British forces refused to intervene, creating a security vacuum as Jewish forces implemented Plan Dalet to secure vital routes and defensive frontiers.',
+        connective:
+          'As the final British soldiers withdrew from Tel Aviv, Zionist leaders took the historic step to declare statehood...',
+      },
+      {
+        step: 2,
+        date: '14 May 1948',
+        title: 'David Ben-Gurion Proclaims the State of Israel',
+        actor: 'David Ben-Gurion & Jewish Agency',
+        tag: 'Declaration of Statehood',
+        trigger:
+          'David Ben-Gurion reads the Proclamation of Independence at the Tel Aviv Museum of Art as the British Mandate officially expires at midnight.',
+        because:
+          'Zionist leaders resolved to establish sovereign Jewish statehood immediately to open the gates to immigration and secure international recognition.',
+        therefore:
+          'US President Truman recognised Israel within 11 minutes; the next morning five Arab states launched an immediate military invasion.',
+        connective: 'Sovereignty was instantly challenged by a multi-front coordinated invasion...',
+      },
+      {
+        step: 3,
+        date: '15 May 1948',
+        title: 'Invasion by Five Arab Armies',
+        actor: 'Egypt, Jordan, Syria, Iraq, Lebanon vs. Israel',
+        tag: 'Interstate Invasion',
+        trigger:
+          'Armies from Egypt, Transjordan, Syria, Iraq, and Lebanon invade Israel, besieging West Jerusalem and advancing towards Tel Aviv.',
+        because:
+          'Arab leaders were determined to crush the newly declared Jewish state, support Palestinian Arabs, and protect sacred holy sites.',
+        therefore:
+          'Israel faced an existential struggle for survival, fighting defensively with a severe shortage of heavy artillery, armor, and combat aircraft.',
+        connective:
+          'The United Nations mediated a temporary ceasefire that transformed the balance of military power...',
+      },
+      {
+        step: 4,
+        date: 'June–July 1948',
+        title: 'The First UN Truce & The Czech Arms Supply',
+        actor: 'Israel (IDF) & Czechoslovakia',
+        tag: 'The Turning Point',
+        trigger:
+          'A 4-week UN truce halts fighting; Israel unifies all militias into the IDF (Order No. 4) and imports thousands of rifles, machine guns, and Avia S-199 fighters from Czechoslovakia.',
+        because:
+          'The Israeli government needed modern heavy equipment to counter Arab superiority in tanks, artillery, and British-trained officers.',
+        therefore:
+          'Decisively reversed the military balance, allowing the reorganised IDF to launch massive counter-offensives (Operation Dani & Operation Yoav) when fighting resumed.',
+        connective:
+          'Crushing Israeli military victories forced Arab states to accept separate armistice negotiations...',
+      },
+      {
+        step: 5,
+        date: '1949',
+        title: 'The Rhodes Armistice Agreements & The Green Line',
+        actor: 'UN, Israel, Egypt, Jordan, Syria, Lebanon',
+        tag: 'The Redrawn Borders',
+        trigger:
+          'Israel and Arab states sign bilateral armistice agreements on the island of Rhodes, drawing ceasefire boundaries in green pencil (The Green Line).',
+        because:
+          'Arab armies had suffered decisive military defeats and required an internationally monitored ceasefire to halt further Israeli advances.',
+        therefore:
+          'Israel expanded its territory to 79% of Mandate Palestine; Jordan annexed the West Bank and East Jerusalem, and Egypt occupied Gaza, leaving no sovereign Palestinian state.',
+        connective:
+          'The armistice lines froze the conflict without peace treaties, creating permanent demographic displacement...',
+      },
+    ],
     doNow: [
       {
         q: 'What United Nations resolution in November 1947 proposed partitioning Palestine into separate states?',
@@ -381,6 +611,83 @@ const kt1Configs = [
     title: 'KT1.4: The Refugee Crisis (Nakba) & New Israeli State (1948–1954)',
     specAnchor:
       'Territorial changes and the Green Line; the refugee status of approximately 700,000 Palestinian Arabs (Al-Nakba); creation of UNRWA; the Israeli Law of Return (1950); the creation of the IDF; US financial aid; and early relations with Egypt.',
+    stages: [
+      {
+        step: 1,
+        date: '1948–1949',
+        title: 'The Palestinian Refugee Crisis (Al-Nakba)',
+        actor: '700,000 Palestinian Refugees',
+        tag: 'Mass Dispossession',
+        trigger:
+          'Approximately 700,000 Palestinian Arabs flee or are expelled from their ancestral homes, becoming permanent refugees in Gaza, the West Bank, Jordan, Syria, and Lebanon.',
+        because:
+          'Palestinians fled due to intense military combat, terror provoked by atrocities like Deir Yassin, and deliberate expulsions by Israeli commanders.',
+        therefore:
+          'Created an enduring demographic tragedy known by Palestinians as Al-Nakba ("The Catastrophe"), transforming regional demographics permanently.',
+        connective:
+          'The United Nations stepped in to establish humanitarian infrastructure for the displaced population...',
+      },
+      {
+        step: 2,
+        date: 'Dec 1948 – Dec 1949',
+        title: 'UN Resolutions 194 & 302 (Founding of UNRWA)',
+        actor: 'United Nations General Assembly',
+        tag: 'International Relief',
+        trigger:
+          'The UN passes Resolution 194 establishing the right of refugees to return or receive compensation, and creates UNRWA (Resolution 302) to provide food, healthcare, and schools.',
+        because:
+          'Arab host nations were unable and unwilling to absorb hundreds of thousands of destitute refugees into their economies without international funding.',
+        therefore:
+          'Refugee camps became permanent, densely populated enclaves where generations of Palestinians preserved their national identity and demand for return.',
+        connective:
+          'While Palestinians were barred from returning, Israel opened its doors to unrestricted Jewish immigration...',
+      },
+      {
+        step: 3,
+        date: 'July 1950',
+        title: 'The Israeli Law of Return & Demographic Surge',
+        actor: 'The Israeli Knesset',
+        tag: 'Open-Door Immigration',
+        trigger:
+          'The Israeli Knesset passes the Law of Return, guaranteeing every Jewish person worldwide the automatic right to settle in Israel and gain citizenship.',
+        because:
+          'Israel was founded as a sovereign sanctuary for the Jewish diaspora, committed to absorbing Holocaust survivors and Jews fleeing Arab lands.',
+        therefore:
+          "Israel’s Jewish population doubled from 650,000 to 1.4 million by 1952, creating severe austerity and tent cities (ma'abarot), but securing national workforce and defense.",
+        connective:
+          'To defend its expanding population, Israel consolidated its national armed forces and secured foreign backing...',
+      },
+      {
+        step: 4,
+        date: '1950–1953',
+        title: 'Consolidation of the IDF & US Economic Backing',
+        actor: 'IDF & The United States Government',
+        tag: 'State Security',
+        trigger:
+          'Israel establishes mandatory universal military conscription into the IDF, while receiving over $200 million in US government grants and loans.',
+        because:
+          'Surrounded by hostile Arab states that refused to recognise its existence, Israel required a permanent citizen-army backed by superpower capital.',
+        therefore:
+          'Transformed Israel into a formidable regional military power with fortified border settlements (kibbutzim) guarding the fragile Green Line frontiers.',
+        connective:
+          'Frustrated refugees began launching guerrilla raids back across the armistice demarcation lines...',
+      },
+      {
+        step: 5,
+        date: '1950–1954',
+        title: 'Fedayeen Infiltration & Disproportionate Reprisals',
+        actor: 'Palestinian Fedayeen & Israeli Unit 101',
+        tag: 'The Cycle of Violence',
+        trigger:
+          'Displaced Palestinian guerrillas (Fedayeen) stage cross-border raids; Israel creates elite Unit 101 under Ariel Sharon to execute devastating reprisal strikes (e.g. Qibya, 1953).',
+        because:
+          'Refugees sought to return to farmland or strike Israel, while Israeli leaders adopted a doctrine of overwhelming retaliation to enforce border deterrence.',
+        therefore:
+          'Created an escalating spiral of border clashes and civilian casualties that pushed Israel and Egypt directly toward the 1955 Gaza Raid and 1956 Suez Crisis.',
+        connective:
+          'Rising cross-border warfare provoked Israeli leaders to seek an immediate military showdown...',
+      },
+    ],
     doNow: [
       {
         q: 'Approximately how many Palestinian Arabs were displaced from their homes during the 1948–49 War?',
@@ -479,6 +786,83 @@ const kt1Configs = [
     title: 'KT1.5: Nasser, Border Tension & The 1956 Suez Crisis (1955–1958)',
     specAnchor:
       'Gamal Abdel Nasser and Egypt’s leadership of the Arab world; cross-border fedayeen raids; the Israeli raid on Gaza (Feb 1955); the Czech arms deal (1955); the nationalisation of the Suez Canal (July 1956); the secret Protocol of Sèvres; the Sinai campaign; US intervention; and the creation of the United Arab Republic (1958).',
+    stages: [
+      {
+        step: 1,
+        date: '28 February 1955',
+        title: 'The Gaza Raid (Operation Black Arrow)',
+        actor: 'Israel (IDF Paratroopers) vs. Egypt',
+        tag: 'The Spark',
+        trigger:
+          'Israeli paratroopers launch a devastating night raid into Egyptian-held Gaza, killing 37 Egyptian soldiers in retaliation for Fedayeen infiltration.',
+        because:
+          'Israel sought to punish Egyptian authorities and force President Nasser to halt cross-border guerrilla attacks into southern Israel.',
+        therefore:
+          'Publicly humiliated Nasser and exposed the Egyptian army’s technological weakness, convincing him that Egypt urgently needed modern heavy weapons.',
+        connective:
+          'Rebuffed by Western powers, Nasser made a revolutionary Cold War alliance with the Soviet bloc...',
+      },
+      {
+        step: 2,
+        date: 'September 1955',
+        title: 'The Czech Arms Deal & Soviet Influence',
+        actor: 'Egypt & The Soviet Bloc',
+        tag: 'Cold War Alignment',
+        trigger:
+          'Nasser purchases 200 MiG-15 jet fighters, 300 modern tanks, and bombers from the Soviet Union via Czechoslovakia, breaking the Western arms monopoly.',
+        because:
+          'The US and Britain conditioned arms sales on Egypt joining anti-Soviet military pacts (the Baghdad Pact), which Nasser fiercely rejected.',
+        therefore:
+          'Shocked Britain, France, and the USA by bringing Soviet influence into the heart of the Middle East, while prompting Egypt to blockade the Straits of Tiran.',
+        connective:
+          'Alarmed by Egypt’s friendship with Moscow, the United States retaliated economically...',
+      },
+      {
+        step: 3,
+        date: '26 July 1956',
+        title: 'Aswan Loans Cancelled & Suez Canal Nationalised',
+        actor: 'President Nasser & Egypt',
+        tag: 'The Economic Flashpoint',
+        trigger:
+          'The US and Britain abruptly cancel loans for the Aswan High Dam; Nasser retaliates by nationalising the British-and-French-owned Suez Canal Company.',
+        because:
+          'Nasser needed the $100 million annual canal shipping tolls to finance the dam itself, while demonstrating Egyptian sovereignty over foreign imperial assets.',
+        therefore:
+          'British Prime Minister Anthony Eden resolved to seize back the canal and topple Nasser, viewing the waterway as Britain’s imperial oil lifeline.',
+        connective:
+          'Britain and France entered into a top-secret conspiracy with Israel to engineer a pretext for war...',
+      },
+      {
+        step: 4,
+        date: '22–24 October 1956',
+        title: 'The Secret Protocol of Sèvres & Sinai Invasion',
+        actor: 'Britain, France & Israel',
+        tag: 'The Collusion',
+        trigger:
+          'Britain, France, and Israel secretly sign the Protocol of Sèvres: Israel invades Sinai on 29 October; Britain and France intervene to "separate the combatants" and seize Port Said.',
+        because:
+          'Britain and France needed a false peacekeeping pretext to occupy the canal, while Israel sought to eliminate Fedayeen bases and open the Straits of Tiran.',
+        therefore:
+          'Mosque speakers rallied Egyptian resistance, while Nasser ordered ships sunk in the canal, completely blocking international maritime trade.',
+        connective:
+          'The military victory was instantly overturned by superpower financial and diplomatic fury...',
+      },
+      {
+        step: 5,
+        date: 'Nov 1956 – Mar 1957',
+        title: 'US Ultimatum, Imperial Retreat & UNEF Deployment',
+        actor: 'US President Eisenhower & The UN',
+        tag: 'Imperial Humiliation',
+        trigger:
+          'US President Eisenhower threatens to crash the British pound and deny oil supplies; Britain and France withdraw; UN Emergency Force (UNEF) peacekeepers deploy to Sinai.',
+        because:
+          'Eisenhower was furious at allies launching an unprovoked colonial war without US consent, distracting from the simultaneous Soviet invasion of Hungary.',
+        therefore:
+          'Marked the definitive end of Britain and France as global imperial superpowers; Nasser emerged as the undisputed hero of Arab nationalism.',
+        connective:
+          'UN peacekeepers monitored the demilitarised Sinai frontier for a decade until 1967...',
+      },
+    ],
     doNow: [
       {
         q: 'Which Egyptian army officer seized power after overthrowing King Farouk in 1952, becoming President in 1954?',
@@ -627,6 +1011,33 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       justify-content: space-between;
       height: 100%;
       overflow: hidden;
+    }
+    /* 5-Stage Domino Causal Chain Styling */
+    .domino-chain-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      margin: 2px 0;
+    }
+    .domino-card-compact {
+      border: 1.2px solid #000000;
+      border-radius: 3px;
+      padding: 2.5px 6px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+    }
+    .domino-connector {
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      font-weight: 700;
+      color: #000000;
+      line-height: 1;
+      padding: 1px 0;
     }
     .task-section {
       margin-bottom: 2px;
@@ -949,128 +1360,102 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
   // PAGES 4–23: 5 DEDICATED FOUR-PAGE ENQUIRY SPREADS (2 SPANNING SPREADS PER LESSON)
   // ====================================================================
   kt1Configs.forEach((cfg) => {
-    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4;
-    const rightPageNum = leftPageNum + 1;
-    const linedLeftPageNum = leftPageNum + 2;
-    const linedRightPageNum = leftPageNum + 3;
+    const leftPageNum = 4 + (cfg.lessonNum - 1) * 4; // Spread 1 Left (Verso): Chronological Spine + Vocab
+    const rightPageNum = leftPageNum + 1; // Spread 1 Right (Recto): Open Ruled Lesson Notebook
+    const linedLeftPageNum = leftPageNum + 2; // Spread 2 Left (Verso): Exam Practice & Planning Scaffold
+    const linedRightPageNum = leftPageNum + 3; // Spread 2 Right (Recto): Extended Response & Band 4 Rubric
     const rx = cfg.extendedPractice;
 
     // ------------------------------------------------------------------
-    // LEFT PAGE: ENQUIRY LAUNCH, DO NOW RETRIEVAL & 2x Q1 CONSEQUENCE [4m+4m]
+    // SPREAD 1, LEFT PAGE (VERSO): 5-STAGE CAUSAL DOMINO SPINE & CORE VOCABULARY
     // ------------------------------------------------------------------
     html += `
   <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            KEY TOPIC 1.${cfg.lessonNum} &bull; ENQUIRY LESSON
+            KEY TOPIC 1.${cfg.lessonNum} &bull; ENQUIRY LESSON NOTEBOOK
           </span>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 2 &bull; 26 MARKS
+            EDEXCEL PAPER 2 (1HI0/2B) &bull; PERIOD STUDY
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
           ${cfg.inquiryQuestion}
         </h2>
-        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; font-style: italic; color: #222222; line-height: 1.2;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #222222; line-height: 1.18;">
           ${cfg.subTitle}
         </div>
       </div>
 
-      <!-- Key Specification Focus: Directly beneath the Title -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.22;">
+      <!-- Key Specification Focus -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.2;">
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
-      <!-- 10-Question Do Now Retrieval Grid -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
+      <!-- 5-Stage Chronological Domino Chain (Key Causal Turning Points) -->
+      <div class="domino-chain-container">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000; padding-bottom: 1px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; 5-Stage Chronological Domino Chain (Key Causal Turning Points)
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000; padding: 0 4px; border-radius: 2px;">
+            CAUSAL REASONING &bull; 5 STAGES
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px;">
-          ${cfg.doNow
-            .map(
-              (item, idx) => `
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000; line-height: 1.18;">
-              ${idx + 1}. ${item.q}
+
+        ${cfg.stages
+          .map(
+            (s, sIdx) => `
+        <div class="domino-card-compact">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">STAGE ${s.step}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000;">${s.date}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #444444; text-transform: uppercase;">${s.tag} &bull; ${s.actor}</span>
             </div>
-            <div class="task-line-dotted"></div>
           </div>
-          `,
-            )
-            .join('')}
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; line-height: 1.15; margin: 1px 0;">
+            ${s.step}. ${s.title}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #111111; line-height: 1.18; margin-bottom: 2px;">
+            <strong>Action:</strong> ${s.trigger}
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.18;">
+            <div><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Because" (Motive):</strong> ${s.because}</div>
+            <div style="border-left: 1px solid #cbd5e1; padding-left: 4px;"><strong style="color: #000000; text-transform: uppercase; font-size: 6.0pt;">"Therefore" (Consequence):</strong> ${s.therefore}</div>
+          </div>
         </div>
+        ${
+          sIdx < cfg.stages.length - 1
+            ? `
+        <div class="domino-connector">
+          &darr; <em>${s.connective}</em> &darr;
+        </div>`
+            : ''
+        }
+        `,
+          )
+          .join('')}
       </div>
 
-      <!-- Key Vocabulary (3 Lines, No Double Border) -->
-      <div class="task-section" style="margin-bottom: 3px;">
+      <!-- Key Vocabulary (Core Disciplinary Distinction) -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #fafafa; margin-top: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Core Disciplinary Vocabulary &amp; Historical Distinction
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
         </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+        <p style="font-family: 'Georgia', serif; font-size: 7.5pt; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
           ${cfg.vocabPrompt}
         </p>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Question 1(a): Explain One Consequence [4 marks] -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 1(a): Explain One Consequence [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
-          ${cfg.consequenceA.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 1px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Question 1(b): Explain One Consequence [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 1(b): Explain One Consequence [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
-          ${cfg.consequenceB.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceB.guidance}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 1px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceB.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
+        <div class="task-line" style="height: 6.2mm;"></div>
       </div>
 
       ${renderFooterStrip(leftPageNum, approvedFunnyFooters[leftPageNum - 1], 28)}
@@ -1078,161 +1463,168 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
   </div>
 
   <!-- ------------------------------------------------------------------ -->
-  <!-- SPREAD 1, RIGHT PAGE: EXTENDED EXAM PRACTICE (NARRATIVE/IMPORTANCE)-->
+  <!-- SPREAD 1, RIGHT PAGE (RECTO): OPEN RULED LESSON NOTE-TAKING CANVAS -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      
-      <!-- Exam Header (Top of Page) -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${rx.tariff}
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
+          ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+          Disciplinary Lesson Notes &bull; Chronological Synthesis
+        </span>
+      </div>
+
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 3px; line-height: 1.2;">
+        <strong>Instructions:</strong> Use this open note-taking canvas to record teacher direct instruction, annotate key causal links, and synthesize the 5 milestones on facing Page ${leftPageNum}.
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid">
+        ${Array.from({ length: 28 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Lesson Notes &bull; Causal Synthesis &bull; Disciplinary Analysis ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
+      </div>
+
+      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
+    </div>
+  </div>
+
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, LEFT PAGE (VERSO): EXAM PRACTICE & EXTENDED PLANNING SCAFFOLD -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+          KEY TOPIC 1.${cfg.lessonNum} &bull; EDEXCEL EXAM PRACTICE
+        </span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          PAPER 2 (1HI0/2B) &bull; 12 MARKS TOTAL
+        </span>
+      </div>
+
+      <!-- Section 1: Question 1 Consequence [4 marks] -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; margin-bottom: 4px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 1: Explain One Consequence [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${cfg.consequenceA.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1px; line-height: 1.15;">
+          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
+        </div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+      </div>
+
+      <!-- Section 2: Extended Exam Practice (Q2 Narrative [8m] or Q3 Importance [8m]) -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 10.2pt; color: #000000; margin: 0; font-weight: 800;">
+          ${rx.tariff}
+        </h3>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase;">
           Extended Writing Assessment &bull; 8 Marks
         </span>
       </div>
 
-      <!-- Unified 3-Row Scaffolding Block (Zero Inter-Row Gaps • Docked Directly Below Header) -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-top: 1px; margin-bottom: 2px; background: #ffffff;">
-        
-        <!-- Row 1: Question Stem & Stimulus / Analytical Focus -->
+      <!-- Unified Scaffolding Block -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; overflow: hidden; margin-bottom: 3px; background: #ffffff;">
+        <!-- Row 1: Stem & Stimulus/Focus -->
         <div style="padding: 2.5px 6px; border-bottom: 1px solid #000000; background: #ffffff;">
-          <div style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; line-height: 1.2;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
             ${rx.stem}
           </div>
           ${
             rx.type === 'narrative_8'
               ? `
-          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
             <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
           </div>
           `
               : `
-          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.18;">
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
             <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
           </div>
           `
           }
         </div>
 
-        <!-- Row 2: 3-Column Planning Structure Strip (Flush Directly Beneath Row 1) -->
+        <!-- Row 2: 3-Column Planning Structure Strip -->
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #fafafa;">
           ${rx.structureStrip
             .map(
               (strip, sIdx) => `
           <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
           </div>
           `,
             )
             .join('')}
         </div>
 
-        <!-- Row 3: Connectives & Key Vocabulary Bank (Flush Directly Beneath Row 2) -->
+        <!-- Row 3: Connectives & Word Bank -->
         <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
           <div style="padding: 2px 5px; border-right: 1px solid #000000;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives || rx.causalConnectives}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives || rx.causalConnectives}</span>
           </div>
           <div style="padding: 2px 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
           </div>
         </div>
-
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
+      <!-- Initial Response Lines -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+        <strong>Task:</strong> Begin your analytical response below and continue onto facing Page ${linedRightPageNum} for full timed response:
       </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
-        ${Array.from({ length: 18 })
-          .map(() => '<div class="task-line"></div>')
-          .join('\n        ')}
-      </div>
-
-      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
-          Timeline Mission &bull; Pages 2–3
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
-          ${rx.timelineMission}
-        </div>
-      </div>
-
-      ${renderFooterStrip(rightPageNum, approvedFunnyFooters[rightPageNum - 1], 28)}
-    </div>
-  </div>
-`;
-
-    // ------------------------------------------------------------------
-    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES
-    // ------------------------------------------------------------------
-    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedLeftPageNum}">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsLeft}
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; margin-bottom: 2px;">
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, approvedFunnyFooters[linedLeftPageNum - 1], 28)}
     </div>
   </div>
-`;
 
-    // ------------------------------------------------------------------
-    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
-    // ------------------------------------------------------------------
-    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedRightPageNum}">
+  <!-- ------------------------------------------------------------------ -->
+  <!-- SPREAD 2, RIGHT PAGE (RECTO): FULL-PAGE EXTENDED TIMED ESSAY RESPONSE -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
@@ -1241,9 +1633,45 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         </span>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsRight}
+      <!-- 20 Ruled Response Lines with Margin -->
+      <div class="lined-page-grid" style="flex: 1; margin-bottom: 3px;">
+        ${Array.from({ length: 20 }, (_, idx) => {
+          const isFirst = idx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 2/3 &amp; Sustained Analytical Conclusion ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 2px; padding: 2px 6px; background: #fafafa; margin-bottom: 3px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          Timeline Mission &bull; Pages 2–3
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.18;">
+          ${rx.timelineMission}
+        </div>
+      </div>
+
+      <!-- Band 4 Marking Rubric / Self-Assessment Checklist -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+          <span style="font-weight: 800; text-transform: uppercase;">Band 4 Checklist [7–8m]:</span>
+          <span><input type="checkbox"> Accurate &amp; relevant details deployed</span>
+          <span><input type="checkbox"> Analytical progression sustained throughout</span>
+          <span><input type="checkbox"> Explicit causal connectives used</span>
+        </div>
+        <div style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; white-space: nowrap;">
+          Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 8 ]
+        </div>
       </div>
 
       ${renderFooterStrip(linedRightPageNum, approvedFunnyFooters[linedRightPageNum - 1], 28)}
