@@ -1007,7 +1007,7 @@ const medicineScaffolds = {
           'Early soldiers wore cloth caps; steel Brodie helmets introduced in late 1915 featured a wide protective rim, reducing fatal head wounds by 80%.',
           'Artillery blasts caused severe compound fractures where broken bones pierced skin, triggering immediate fatal hemorrhage and shock.',
         ],
-        key_terms: ['Regimental Aid Post (RAP)', 'Stretcher Bearers'],
+        key_terms: ['High Explosive Shrapnel', 'Brodie Steel Helmet'],
       },
       {
         num: 2,
@@ -1020,7 +1020,7 @@ const medicineScaffolds = {
           'Deep shrapnel wounds drove mud and filthy uniform cloth into airless muscle tissue, incubating deadly tetanus and gas gangrene.',
           'Gas gangrene produced gas bubbles in rotting flesh and killed within hours; routine anti-tetanus serum injections at the RAP drastically reduced lockjaw deaths.',
         ],
-        key_terms: ['Casualty Clearing Station (CCS)', 'Triage System'],
+        key_terms: ['Gas Gangrene', 'Anti-Tetanus Serum'],
       },
       {
         num: 3,
@@ -1033,7 +1033,7 @@ const medicineScaffolds = {
           'Gas masks evolved rapidly: urine-soaked handkerchiefs -> Hypo helmets soaked in chemicals -> British Small Box Respirator (1916) with charcoal filter.',
           'Gas produced psychological terror and clogged evacuation chains, though it caused less than 5% of total war fatalities.',
         ],
-        key_terms: ['Base Hospitals', 'Hospital Trains and Barges'],
+        key_terms: ['Chlorine and Phosgene', 'Mustard Gas'],
       },
     ],
   },
@@ -1052,7 +1052,7 @@ const medicineScaffolds = {
           'The Regimental Aid Post was located within 200m of the frontline in a dugout, cellar, or trench communication corner.',
           'The Regimental Medical Officer (RMO) bandaged wounds, applied splints, administered anti-tetanus injections, and sorted men for rear evacuation.',
         ],
-        key_terms: ['RAMC', 'Frontline Medical Orderlies'],
+        key_terms: ['Regimental Aid Post (RAP)', 'Stretcher Bearers'],
       },
       {
         num: 2,
@@ -1065,7 +1065,7 @@ const medicineScaffolds = {
           'CCS operated strict surgical triage: 1) Walking wounded, 2) In urgent need of lifesaving surgery, 3) Hopeless cases (given comfort care).',
           "CCS performed urgent surgeries (amputations, debridement) because operating within the first 12 hours ('golden window') stopped fatal gas gangrene.",
         ],
-        key_terms: ['FANY', 'Ambulance Drivers'],
+        key_terms: ['Casualty Clearing Station (CCS)', 'Surgical Triage'],
       },
       {
         num: 3,
@@ -1078,7 +1078,7 @@ const medicineScaffolds = {
           'First Aid Nursing Yeomanry (FANY) were volunteer women who drove motor ambulances, mobile soup kitchens, and canteen vans in hazardous combat zones.',
           "Soldiers with disabling injuries requiring months of rehabilitation were shipped across the Channel on hospital ships for treatment in 'Blighty'.",
         ],
-        key_terms: ['Motorised Ambulances', 'Shell-Torn Terrain'],
+        key_terms: ['Base Hospitals', 'FANY Ambulance Drivers'],
       },
     ],
   },

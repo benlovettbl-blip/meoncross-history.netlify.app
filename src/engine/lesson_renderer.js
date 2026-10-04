@@ -910,9 +910,9 @@ function renderCausalDominoSpine(spine) {
           <!-- Header -->
           <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 6px;">
             <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 800; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${s.step}</span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 700; color: #0284c7; white-space: nowrap;">${s.date}</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${s.date}">${s.date}</span>
           </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${s.tag} • ${s.actor}">
+          <div style="font-family: 'Inter', sans-serif; font-size: 0.63rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; line-height: 1.35;" title="${s.tag} • ${s.actor}">
             ${s.tag} &bull; <strong style="color: #334155;">${s.actor}</strong>
           </div>
           <h4 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.98rem; font-weight: 800; color: #0f172a; margin: 0 0 10px 0; line-height: 1.25; min-height: 2.4em;">
@@ -921,8 +921,8 @@ function renderCausalDominoSpine(spine) {
 
           <!-- Row 1: The Action / Trigger -->
           <div style="background: #f8fafc; border-left: 3px solid #0284c7; padding: 6px 8px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
-            <div style="font-size: 0.62rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              1. Action / Trigger
+            <div style="font-size: 0.62rem; font-weight: 800; color: #0369a1; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px;">
+              Action / Trigger:
             </div>
             <div style="font-size: 0.78rem; color: #1e293b; line-height: 1.35;">
               ${s.trigger}
@@ -931,8 +931,8 @@ function renderCausalDominoSpine(spine) {
 
           <!-- Row 2: The 'Because' (Motive) -->
           <div class="domino-because-box" style="background: #fefce8; border-left: 3px solid #eab308; padding: 6px 8px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
-            <div style="font-size: 0.62rem; font-weight: 800; color: #854d0e; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              2. "Because" (Motive)
+            <div style="font-size: 0.62rem; font-weight: 800; color: #854d0e; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px;">
+              Motive:
             </div>
             <div class="domino-content-model" style="font-size: 0.78rem; color: #713f12; line-height: 1.35;">
               ${s.because}
@@ -944,8 +944,8 @@ function renderCausalDominoSpine(spine) {
 
           <!-- Row 3: The 'Therefore' (Consequence) -->
           <div class="domino-therefore-box" style="background: #f0fdf4; border-left: 3px solid #22c55e; padding: 6px 8px; border-radius: 0 4px 4px 0; margin-bottom: 8px;">
-            <div style="font-size: 0.62rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
-              3. "Therefore" (Result)
+            <div style="font-size: 0.62rem; font-weight: 800; color: #166534; text-transform: uppercase; letter-spacing: 0.4px; margin-bottom: 2px;">
+              Consequence:
             </div>
             <div class="domino-content-model" style="font-size: 0.78rem; color: #14532d; line-height: 1.35;">
               ${s.therefore}
@@ -1391,8 +1391,8 @@ function renderLessonNoteScaffold(lesson, unitId) {
             <ul class="note-model-bullets" id="bullets-${lessonId}-${idx}" style="margin: 0; padding-left: 18px; font-size: 0.78rem; color: #14532d; line-height: 1.45;">
               ${modelNotes.map((m) => `<li style="margin-bottom: 4px;">${m}</li>`).join('')}
             </ul>
-            <div class="note-quiz-mask" id="mask-${lessonId}-${idx}" style="display: none; padding: 10px 6px; text-align: center;">
-              <button type="button" onclick="window.revealSingleNoteQuizMask('${lessonId}', ${idx}, event);" style="padding: 5px 10px; font-size: 0.74rem; font-weight: 700; background: #16a34a; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+            <div class="note-quiz-mask" id="mask-${lessonId}-${idx}" style="display: none; padding: 8px 6px; text-align: center;">
+              <button type="button" class="btn-quiz-mask" id="btn-quiz-mask-${lessonId}-${idx}" onclick="window.revealSingleNoteQuizMask('${lessonId}', ${idx}, event);" style="padding: 5px 12px; font-size: 0.74rem; font-weight: 700; background: #16a34a; color: #ffffff; border: 1px solid #15803d; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
                 <i class="fa-solid fa-eye"></i> Click to Reveal Model Evidence
               </button>
             </div>
@@ -1404,19 +1404,20 @@ function renderLessonNoteScaffold(lesson, unitId) {
     .join('');
 
   return `
-    <details id="lesson-note-scaffold" class="lesson-note-scaffold-details" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 16px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
-      <summary style="padding: 10px 15px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0;">
+    <details id="lesson-note-scaffold" class="lesson-note-scaffold-details" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.04);" closed>
+      <summary style="padding: 11px 16px; cursor: pointer; color: #0f172a; font-weight: bold; font-size: 1.05rem; background: #f8fafc; list-style: none; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; user-select: none;">
         <span style="display: flex; align-items: center; gap: 10px;">
-          <i class="fa-solid fa-list-check" style="color: #3b82f6;"></i> Lesson Task
+          <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Core Task</span>
+          <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Active Reading Notes &bull; 3 Core Enquiries</span>
         </span>
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
-          <button type="button" id="btn-note-scaffold-quiz-mode" onclick="window.toggleNoteScaffoldQuizMode('${lessonId}', event);" style="font-size: 0.85rem; padding: 3px 8px; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;">
+          <button type="button" id="btn-note-scaffold-quiz-mode" onclick="window.toggleNoteScaffoldQuizMode('${lessonId}', event);" style="font-size: 0.82rem; padding: 3px 9px; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 700;">
             <i class="fa-solid fa-graduation-cap"></i> <span id="note-scaffold-quiz-label">Self-Quiz Mode</span>
           </button>
-          <button type="button" onclick="window.copyNoteScaffoldToClipboard('${lessonId}', event);" id="btn-copy-notes-${lessonId}" style="font-size: 0.85rem; padding: 3px 8px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;" title="Copy notes to clipboard">
+          <button type="button" onclick="window.copyNoteScaffoldToClipboard('${lessonId}', event);" id="btn-copy-notes-${lessonId}" style="font-size: 0.82rem; padding: 3px 9px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 700;" title="Copy notes to clipboard">
             <i class="fa-solid fa-copy"></i> <span id="copy-notes-label-${lessonId}">Copy Notes</span>
           </button>
-          <button type="button" onclick="window.printNoteScaffoldSheet('${lessonId}', event);" style="font-size: 0.85rem; padding: 3px 8px; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 600;" title="Print clean 1-page A4 note-taking sheet">
+          <button type="button" onclick="window.printNoteScaffoldSheet('${lessonId}', event);" style="font-size: 0.82rem; padding: 3px 9px; background: #f1f5f9; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 700;" title="Print clean 1-page A4 note-taking sheet">
             <i class="fa-solid fa-print"></i> Print A4 Sheet
           </button>
           <span id="note-scaffold-save-indicator-${lessonId}" style="font-size: 0.72rem; font-weight: 700; color: #10b981; opacity: 0; transition: opacity 0.3s ease;">✓ Auto-Saved</span>
@@ -1425,8 +1426,8 @@ function renderLessonNoteScaffold(lesson, unitId) {
       </summary>
 
       <!-- Active Instructions Sub-Bar -->
-      <div style="padding: 8px 15px; background: #f8fafc; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; color: #475569; line-height: 1.4;">
-        <strong style="color: #0f172a;"><i class="fa-solid fa-circle-info" style="color: #3b82f6; margin-right: 5px;"></i> Instructions:</strong> ${scaffold.instruction}
+      <div style="padding: 9px 16px; background: #f0f9ff; border-bottom: 1px solid #bae6fd; font-size: 0.83rem; color: #0369a1; line-height: 1.45;">
+        <strong style="color: #0c4a6e;"><i class="fa-solid fa-pen-to-square" style="color: #0284c7; margin-right: 5px;"></i> Active Lesson Task:</strong> ${scaffold.instruction} <span style="color: #475569; margin-left: 6px;">(Complete these 3 enquiry notes from the chapter narrative below before completing your printed workbook).</span>
       </div>
 
       <!-- 3-Block Grid -->
@@ -1495,9 +1496,16 @@ if (typeof window !== 'undefined') {
         const bullets = document.getElementById(`bullets-${lessonId}-${idx}`);
         const mask = document.getElementById(`mask-${lessonId}-${idx}`);
         const toggleBtn = document.getElementById(`btn-toggle-model-${lessonId}-${idx}`);
+        const maskBtn = document.getElementById(`btn-quiz-mask-${lessonId}-${idx}`);
         if (bullets) bullets.style.display = 'none';
         if (mask) mask.style.display = 'block';
         if (toggleBtn) toggleBtn.style.display = 'none';
+        if (maskBtn) {
+          maskBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Click to Reveal Model Evidence';
+          maskBtn.style.background = '#16a34a';
+          maskBtn.style.color = '#ffffff';
+          maskBtn.style.border = '1px solid #15803d';
+        }
       });
     } else {
       if (label) label.textContent = 'Self-Quiz Mode';
@@ -1510,11 +1518,18 @@ if (typeof window !== 'undefined') {
         const bullets = document.getElementById(`bullets-${lessonId}-${idx}`);
         const mask = document.getElementById(`mask-${lessonId}-${idx}`);
         const toggleBtn = document.getElementById(`btn-toggle-model-${lessonId}-${idx}`);
+        const maskBtn = document.getElementById(`btn-quiz-mask-${lessonId}-${idx}`);
         if (bullets) bullets.style.display = 'block';
         if (mask) mask.style.display = 'none';
         if (toggleBtn) {
           toggleBtn.style.display = 'inline-block';
           toggleBtn.textContent = 'Hide Model';
+        }
+        if (maskBtn) {
+          maskBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Click to Reveal Model Evidence';
+          maskBtn.style.background = '#16a34a';
+          maskBtn.style.color = '#ffffff';
+          maskBtn.style.border = '1px solid #15803d';
         }
       });
     }
@@ -1523,9 +1538,23 @@ if (typeof window !== 'undefined') {
   window.revealSingleNoteQuizMask = function (lessonId, blockIdx, event) {
     if (event && event.stopPropagation) event.stopPropagation();
     const bullets = document.getElementById(`bullets-${lessonId}-${blockIdx}`);
-    const mask = document.getElementById(`mask-${lessonId}-${blockIdx}`);
-    if (bullets) bullets.style.display = 'block';
-    if (mask) mask.style.display = 'none';
+    const maskBtn = document.getElementById(`btn-quiz-mask-${lessonId}-${blockIdx}`);
+    if (!bullets || !maskBtn) return;
+
+    const isCurrentlyVisible = bullets.style.display !== 'none';
+    if (isCurrentlyVisible) {
+      bullets.style.display = 'none';
+      maskBtn.innerHTML = '<i class="fa-solid fa-eye"></i> Click to Reveal Model Evidence';
+      maskBtn.style.background = '#16a34a';
+      maskBtn.style.color = '#ffffff';
+      maskBtn.style.border = '1px solid #15803d';
+    } else {
+      bullets.style.display = 'block';
+      maskBtn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Collapse Model Evidence';
+      maskBtn.style.background = '#f1f5f9';
+      maskBtn.style.color = '#15803d';
+      maskBtn.style.border = '1.5px solid #86efac';
+    }
   };
 
   window.copyNoteScaffoldToClipboard = function (lessonId, event) {
@@ -2668,12 +2697,12 @@ export function renderLesson(lesson) {
               }
               ${
                 lesson.causal_domino_spine
-                  ? `<button class="btn btn-causal-spine-jump" onclick="document.getElementById('${isCme ? 'lesson-chronology-spine' : 'causal-domino-scaffold'}')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Spine"><i class="fa-solid ${isCme ? 'fa-clock-rotate-left' : 'fa-diagram-project'}" style="color: #ca8a04;"></i> ${isCme ? 'Chronology Spine' : 'Causal Domino Scaffold'}</button>`
+                  ? `<button class="btn btn-causal-spine-jump" onclick="const sp = document.getElementById('${isCme ? 'lesson-chronology-spine' : 'causal-domino-scaffold'}'); if(sp) { sp.open = true; sp.scrollIntoView({ behavior: 'smooth' }); }" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Domino Spine"><i class="fa-solid ${isCme ? 'fa-clock-rotate-left' : 'fa-diagram-project'}" style="color: #ca8a04;"></i> ${isCme ? 'Core Causal Task' : 'Causal Domino Scaffold'}</button>`
                   : ''
               }
               ${
                 lesson.note_scaffold
-                  ? `<button class="btn btn-note-scaffold-jump" onclick="document.getElementById('lesson-note-scaffold')?.scrollIntoView({ behavior: 'smooth' });" style="padding: 6px 12px; font-size: 0.88rem; background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Active Lesson Note Scaffold"><i class="fa-solid fa-pen-to-square" style="color: #16a34a;"></i> Note Scaffold</button>`
+                  ? `<button class="btn btn-note-scaffold-jump" onclick="const sc = document.getElementById('lesson-note-scaffold'); if(sc) { sc.open = true; sc.scrollIntoView({ behavior: 'smooth' }); }" style="padding: 6px 12px; font-size: 0.88rem; background: #f0fdf4; color: #166534; border: 1.5px solid #86efac; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Active Lesson Task"><i class="fa-solid fa-pen-to-square" style="color: #16a34a;"></i> Core Lesson Task</button>`
                   : ''
               }
             `
@@ -3948,32 +3977,42 @@ export function renderLesson(lesson) {
           ? lesson.timeline_anchor
           : [];
 
-      // Unify into 5 milestones across 1 single row
-      const count = Math.max(stages.length, anchors.length);
-      const spineItems = [];
-      for (let i = 0; i < count; i++) {
-        const s = stages[i] || {};
-        const a = anchors[i] || {};
-        spineItems.push({
+      let spineItems = [];
+      if (stages.length > 0) {
+        spineItems = stages.map((s, i) => ({
           step: s.step || i + 1,
-          date: a.date || s.date || '',
-          title: a.title || s.title || '',
-          desc: a.desc || s.trigger || '',
+          date: s.date || '',
+          title: s.title || '',
+          desc: s.trigger || '',
           actor: s.actor || '',
           tag: s.tag || '',
           because: s.because || '',
           therefore: s.therefore || '',
           connective: s.connective || '',
           exam_link: s.exam_link || '',
-        });
+        }));
+      } else if (anchors.length > 0) {
+        spineItems = anchors.map((a, i) => ({
+          step: i + 1,
+          date: a.date || '',
+          title: a.title || '',
+          desc: a.desc || '',
+          actor: '',
+          tag: '',
+          because: '',
+          therefore: '',
+          connective: '',
+          exam_link: '',
+        }));
       }
 
       if (spineItems.length > 0) {
         htmlNarrative += `
-        <details id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;" open>
+        <details id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;" open>
           <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-            <span style="display: flex; align-items: center; gap: 10px; font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; color: #0f172a;">
-              <i class="fa-solid fa-clock-rotate-left" style="color: #0284c7;"></i> Chronology & Causal Spine &bull; Key Turning Points
+            <span style="display: flex; align-items: center; gap: 10px;">
+              <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Core Task</span>
+              <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Chronology & Causal Domino Spine &bull; Key Turning Points</span>
             </span>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
               <button type="button" id="btn-toggle-all-causal" onclick="window.toggleAllCausalSpineDrawers();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
@@ -4013,13 +4052,13 @@ export function renderLesson(lesson) {
                 <div>
                   <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
                     <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 1.5px 5px; border-radius: 3px; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${item.step}</span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; color: #0284c7; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.date}">${item.date}</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
                   </div>
 
                   ${
                     item.tag || item.actor
                       ? `
-                  <div style="font-size: 0.63rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${item.tag || ''} • ${item.actor || ''}">
+                  <div style="font-size: 0.63rem; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 5px; line-height: 1.35;" title="${item.tag || ''} • ${item.actor || ''}">
                     ${item.tag ? `${item.tag} &bull; ` : ''}<strong style="color: #334155;">${item.actor || ''}</strong>
                   </div>`
                       : ''
@@ -4039,7 +4078,7 @@ export function renderLesson(lesson) {
                     ? `
                 <details class="cme-causal-drawer" style="margin-top: auto; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
                   <summary style="font-size: 0.68rem; font-weight: 700; color: #0369a1; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none;">
-                    <span><i class="fa-solid fa-code-branch" style="font-size: 0.62rem;"></i> Causal Link</span>
+                    <span><i class="fa-solid fa-code-branch" style="font-size: 0.62rem;"></i> Causal Analysis</span>
                     <span class="drawer-arrow" style="font-size: 0.65rem; color: #64748b;">▾</span>
                   </summary>
                   <div style="margin-top: 6px; padding: 6px 7px; background: #f8fafc; border-radius: 4px; border: 1px solid #e2e8f0; font-size: 0.71rem; line-height: 1.35;">
@@ -4047,7 +4086,7 @@ export function renderLesson(lesson) {
                       item.because
                         ? `
                     <div class="cme-drawer-because" style="margin-bottom: 5px;">
-                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 2px;">2. "Because" (Motive):</strong>
+                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">Motive:</strong>
                       <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
                         <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Motive</span>
                         <span class="cme-quiz-content" style="color: #713f12;">${item.because}</span>
@@ -4059,7 +4098,7 @@ export function renderLesson(lesson) {
                       item.therefore
                         ? `
                     <div class="cme-drawer-therefore" style="margin-bottom: 4px;">
-                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.6rem; display: block; margin-bottom: 2px;">3. "Therefore" (Result):</strong>
+                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">Consequence:</strong>
                       <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
                         <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Result</span>
                         <span class="cme-quiz-content" style="color: #14532d;">${item.therefore}</span>

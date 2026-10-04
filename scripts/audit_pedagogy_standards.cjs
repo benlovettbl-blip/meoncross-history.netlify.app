@@ -52,7 +52,11 @@ unitEntries.forEach(([unitId, unitObj]) => {
 
   lessons.forEach((l, idx) => {
     totalLessons++;
-    const hasSpine = Array.isArray(l.timeline_anchor) && l.timeline_anchor.length >= 3;
+    const hasSpine =
+      (l.causal_domino_spine &&
+        Array.isArray(l.causal_domino_spine.stages) &&
+        l.causal_domino_spine.stages.length >= 3) ||
+      (Array.isArray(l.timeline_anchor) && l.timeline_anchor.length >= 3);
     const hasDelivery = !!(
       l.teacher_notes &&
       l.teacher_notes.delivery_plan &&
@@ -74,7 +78,7 @@ unitEntries.forEach(([unitId, unitObj]) => {
     if (hasHinge) hingeCount++;
     if (has4Act) fourActCount++;
 
-    const spineTag = hasSpine ? '✅ 4 Cards       ' : '❌ Missing       ';
+    const spineTag = hasSpine ? '✅ Active Spine  ' : '❌ Missing       ';
     const deliveryTag = hasDelivery ? '✅ 2-Lesson Phased       ' : '⏳ Queued                ';
     const hingeTag = hasHinge ? '✅ Present        ' : '❌ Missing        ';
     const fourActTag = has4Act ? '✅ Structured    ' : '⚠️ Pending       ';
