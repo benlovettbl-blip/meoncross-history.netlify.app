@@ -388,12 +388,6 @@ const PDF_MAPPINGS = [
     dest: 'Medicine Master Knowledge Recall Quiz (All 380 Questions).pdf',
     category: 'Year 11 GCSE',
   },
-  {
-    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
-    src: 'edexcel_medicine_cover_lesson_double_period.pdf',
-    dest: 'Medicine Cover Lesson (Double Period).pdf',
-    category: 'Year 11 GCSE',
-  },
 
   // Year 11 (GCSE) - Early Elizabethan England
   {

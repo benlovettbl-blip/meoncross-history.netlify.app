@@ -194,14 +194,13 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
     qType.includes('judgement-essay') ||
     /how far do you agree|statement/i.test(qText)
   ) {
-    return `<strong>16-Mark Essay Structure Strip (PEEL):</strong>
+    return `<strong>16-Mark Essay Structure Strip (PEEL &bull; 4-Paragraph Rule):</strong>
 <div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Edexcel Paper 1 Q5/6 and Paper 2 Q3 (Elizabeth) 16-mark evaluative essay format (+4 SPaG).</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Introduction:</strong> Define key concepts, outline criteria for evaluation, and state your provisional thesis.</li>
-  <li><strong>Paragraph 1 (Stimulus Point 1):</strong> Point &bull; Precise contextual evidence &bull; Explain significance &bull; Link to thesis.</li>
-  <li><strong>Paragraph 2 (Stimulus Point 2):</strong> Point &bull; Precise contextual evidence &bull; Direct comparison with paragraph 1.</li>
-  <li><strong>Paragraph 3 (Own Knowledge Factor — Mandatory!):</strong> Point from outside the stimulus &bull; In-depth evidence &bull; Evaluative weight.</li>
-  <li><strong>Conclusion:</strong> Sustained judgement directly answering 'How far do you agree?'. Explain relative weight of factors.</li>
+  <li><strong>Paragraph 1 (Agreement &bull; Stimulus Point 1):</strong> Argue in support of the statement using the first bullet point. Provide precise PEEL evidence and explain why this validates the claim.</li>
+  <li><strong>Paragraph 2 (Disagreement &bull; Stimulus Point 2):</strong> Challenge the statement or present a counter-argument using the second bullet point. Provide precise PEEL counter-evidence and explain why this limits or contradicts the claim.</li>
+  <li><strong>Paragraph 3 (Third Factor &bull; Own Knowledge &bull; Mandatory):</strong> Introduce an independent factor from outside the stimulus (most effectively used to disagree or offer an alternative primary cause). Provide in-depth PEEL evidence.</li>
+  <li><strong>Paragraph 4 (Conclusion &bull; Sustained Historical Verdict):</strong> Directly answer 'How far do you agree?' with a definitive judgement, weighing all three factors against clear historical criteria (e.g. scale of impact, short-term vs long-term).</li>
 </ul>`;
   }
 

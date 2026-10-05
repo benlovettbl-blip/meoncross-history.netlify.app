@@ -126,7 +126,7 @@ export const PEDAGOGY_RESEARCH_BANK = [
     implementation: [
       'Because / But / So Causal Scaffolds: Transforms simple factual statements into multi-clause historical analysis (e.g. "Nasser closed the Straits of Tiran BECAUSE...", "...BUT...", "...SO...").',
       'Analytical Evidence Stems: Provides pre-crafted sentence starters that reduce working memory strain for lower-attaining and neurodiverse writers.',
-      'Standardized Exam Structure Strips: Step-by-step margin scaffolds for Edexcel 4-mark consequence, 8-mark narrative, and 16-mark essay tasks.',
+      'Standardized Exam Structure Strips: Step-by-step margin scaffolds for Edexcel 4-mark consequence, 8-mark narrative, and 16-mark essay tasks (formalizing the 4-Paragraph Rule: P1 Agree with Bullet 1, P2 Disagree with Bullet 2, P3 Disagree with Own Knowledge Factor 3, P4 Historical Verdict).',
       'Authentic Model Answers: Eliminates generic placeholders in favour of historically precise, syntactically rigorous model answers.',
     ],
     protocolHeading: 'Classroom Protocol for History Teachers',

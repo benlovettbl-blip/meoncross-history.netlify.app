@@ -671,7 +671,7 @@ const COVER_PACKS = [
     tagColor: '#7f1d1d',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons&unit=edexcel_medicine',
     pdfFileName: 'standalone_cover_gcse_jack_the_ripper.pdf',
-    driveFolders: ['Year 11 (GCSE)\\Paper 1 - Medicine Through Time', 'Year 10 (GCSE)'],
+    driveFolders: ['Emergency Cover Lessons', 'Year 10 (GCSE)'],
     driveTitle:
       'GCSE Emergency Cover - Jack the Ripper Source Utility Masterclass (Double Period).pdf',
 
