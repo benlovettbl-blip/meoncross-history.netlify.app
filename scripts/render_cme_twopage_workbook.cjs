@@ -1593,6 +1593,7 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <div class="task-line" style="height: 6.8mm;"></div>
         <div class="task-line" style="height: 6.8mm;"></div>
         <div class="task-line" style="height: 6.8mm;"></div>
+        <div class="task-line" style="height: 6.8mm;"></div>
       </div>
 
       <!-- Section 2: Extended Exam Practice (Q2 Narrative [8m] or Q3 Importance [8m]) -->
