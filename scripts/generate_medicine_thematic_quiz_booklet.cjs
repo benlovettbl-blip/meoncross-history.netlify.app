@@ -79,33 +79,43 @@ const APPROVED_FOOTERS = [
 ];
 
 // --------------------------------------------------------------------------
-// MASTER 750-YEAR CHRONOLOGY (18 KEY TURNING POINTS)
+// MASTER 750-YEAR CHRONOLOGY (24 KEY TURNING POINTS)
 // --------------------------------------------------------------------------
 const MEDICINE_TIMELINE = [
   {
     year: '1123',
     title: "St Bartholomew's Hospital Founded",
-    text: 'Rahere establishes London hospital providing charitable "Care Not Cure" monastic shelter.',
+    text: 'Rahere establishes London hospital providing charitable "Care Not Cure" monastic shelter and prayer.',
   },
   {
     year: '1277',
     title: 'Roger Bacon Imprisoned',
-    text: 'Franciscan friar imprisoned for advocating empirical observation over church dogma.',
+    text: 'Franciscan friar imprisoned for advocating empirical observation over unquestioning Church dogma.',
+  },
+  {
+    year: 'c1300',
+    title: 'John of Arderne: Practica',
+    text: 'English surgeon writes battlefield manual; invents opium-sedated anal fistula surgical procedures.',
   },
   {
     year: '1345',
     title: 'Planetary Conjunction',
-    text: 'Saturn, Jupiter, and Mars align in Aquarius, blamed for corrupting air into deadly miasma.',
+    text: 'Conjunction of Saturn, Jupiter, and Mars in Aquarius blamed for corrupting air into deadly miasma.',
   },
   {
     year: '1348',
     title: 'The Black Death Arrives',
-    text: 'Bubonic and pneumonic plague kills 30–45% of England; Gloucester attempts quarantine.',
+    text: 'Bubonic and pneumonic plague kills 30–45% of England; Gloucester attempts quarantine cordon.',
   },
   {
     year: '1440',
     title: 'Gutenberg Printing Press',
-    text: 'Movable metal type enables rapid mass-dissemination of medical texts without copyist error.',
+    text: 'Movable type enables rapid mass-dissemination of medical texts without copyist error.',
+  },
+  {
+    year: '1518',
+    title: 'Royal College of Physicians Founded',
+    text: 'Henry VIII grants Royal Charter, licensing university-trained physicians and regulating medical practice.',
   },
   {
     year: '1543',
@@ -115,12 +125,12 @@ const MEDICINE_TIMELINE = [
   {
     year: '1628',
     title: 'Harvey Publishes De Motu Cordis',
-    text: 'Proves heart is a muscular pump circulating blood in a closed loop, disproving Galen.',
+    text: 'Proves heart is a muscular pump circulating blood in a one-way closed circuit, disproving Galen.',
   },
   {
     year: '1660',
     title: 'Royal Society Founded',
-    text: 'Motto "Nullius in Verba" establishes laboratory experimentation and peer-reviewed journals.',
+    text: 'Receives royal charter; motto "Nullius in Verba" establishes laboratory experimentation and peer review.',
   },
   {
     year: '1665',
@@ -130,22 +140,27 @@ const MEDICINE_TIMELINE = [
   {
     year: '1676',
     title: 'Sydenham Publishes Observationes',
-    text: 'Classifies diseases into distinct species through bedside clinical observation.',
+    text: 'Pioneers bedside clinical observation, classifying distinct diseases into species based on symptoms.',
   },
   {
     year: '1796',
     title: 'Jenner Smallpox Vaccine',
-    text: 'Inoculates James Phipps with cowpox, pioneering safe universal vaccination over variolation.',
+    text: 'Inoculates James Phipps with cowpox pustule matter, developing safe universal vaccination over variolation.',
   },
   {
     year: '1847',
     title: 'Simpson Discovers Chloroform',
-    text: 'Inhales chloroform vapors in Edinburgh, conquering surgical and childbirth pain.',
+    text: 'Tests chloroform vapour in Edinburgh, conquering surgical agony and childbirth pain.',
+  },
+  {
+    year: '1848',
+    title: 'First Public Health Act',
+    text: 'Permissive act creates General Board of Health, encouraging local boards to provide clean water.',
   },
   {
     year: '1854',
     title: 'Snow Broad Street Pump & Scutari',
-    text: 'Snow maps cholera to water; Nightingale cuts Scutari Crimean hospital mortality from 42% to 2%.',
+    text: 'Snow proves cholera is water-borne; Nightingale cuts Scutari Crimean hospital mortality from 42% to 2%.',
   },
   {
     year: '1861',
@@ -155,32 +170,42 @@ const MEDICINE_TIMELINE = [
   {
     year: '1865',
     title: 'Lister Introduces Carbolic Acid',
-    text: 'Applies Germ Theory to surgery, reducing compound fracture sepsis from 46% to 15%.',
+    text: 'Applies Germ Theory to surgery, spraying carbolic acid and reducing compound fracture sepsis from 46% to 15%.',
   },
   {
     year: '1875',
     title: 'Second Public Health Act',
-    text: 'Compulsory legislation mandates piped water, sewage, and inspectors, ending laissez-faire.',
+    text: 'Compulsory legislation forces local councils to supply clean piped water, sewers, and officers, ending laissez-faire.',
+  },
+  {
+    year: '1882',
+    title: 'Koch Isolates Tuberculosis Bacillus',
+    text: 'Robert Koch uses agar plate cultures and methyl violet staining dyes to isolate specific disease-causing microbes.',
+  },
+  {
+    year: '1909',
+    title: 'Ehrlich Discovers Salvarsan 606',
+    text: 'Chemical screen finds 606th arsenic compound targeting syphilis without poisoning human body ("magic bullet").',
   },
   {
     year: '1928',
     title: 'Fleming Discovers Penicillin',
-    text: 'Penicillium notatum mould dissolves staphylococcus; purified by Florey & Chain (1938–41).',
+    text: 'Penicillium notatum mould dissolves staphylococcus; purified by Florey & Chain for D-Day (1944).',
   },
   {
     year: '1948',
     title: 'National Health Service (NHS)',
-    text: 'Bevan launches universal healthcare free at point of need, funded by central taxation.',
+    text: 'Aneurin Bevan launches NHS on 5 July 1948, providing free universal healthcare at the point of delivery.',
   },
   {
     year: '1953',
     title: 'Watson, Crick & Franklin: DNA',
-    text: 'Double-helix molecular structure discovered, shifting medical causation to cellular genetics.',
+    text: 'Double-helix molecular structure unlocked, shifting understanding of medical causation to cellular genetics.',
   },
   {
     year: '2007',
     title: 'Public Smoking Ban Enacted',
-    text: 'Bans smoking in enclosed public workplaces, marking modern lifestyle public health regulation.',
+    text: 'UK government bans smoking in all enclosed workplaces, marking modern state lifestyle intervention.',
   },
 ];
 
@@ -189,48 +214,56 @@ const MEDICINE_TIMELINE = [
 // --------------------------------------------------------------------------
 const THEMATIC_THREADS = [
   {
-    theme: '1. Ideas About Causes of Disease',
+    theme: '1. Ideas About Causes of Disease (Etiology)',
+    focus:
+      'Shift from supernatural punishment & Galenic humoural imbalance to microbial pathogens & genetic DNA',
     medieval:
-      'Divine retribution from God; astrological alignments (1345); Theory of the Four Humours; foul miasma.',
+      '<strong>Supernatural & Humoural Dogma:</strong> God sent illness as punishment or spiritual test; 1345 planetary conjunction of Saturn, Jupiter & Mars blamed for deadly miasma; Galen’s Four Humours (blood, phlegm, yellow bile, black bile) enforced by the Catholic Church as absolute truth; astrology and uroscopy (urine charts) dominated diagnosis.',
     renaissance:
-      'Continuity of miasma & divine will; rise of Humanism; Sydenham classifies diseases as biological species.',
+      '<strong>Continuity with Emerging Scientific Observation:</strong> Miasma and divine retribution remained dominant; Humanism encouraged empirical questioning; Thomas Sydenham (1676) rejected humoural theory, pioneering bedside clinical observation and categorising diseases into distinct biological species (like plants); microscopes revealed animalcules (Leeuwenhoek) but not linked to disease.',
     industrial:
-      'Miasma persists until 1861; Pasteur proves Germ Theory; Koch isolates specific anthrax, TB & cholera bacteria.',
+      '<strong>The Microbial Revolution:</strong> Spontaneous generation disproved by Louis Pasteur’s Germ Theory (1861); Robert Koch isolated specific bacterial pathogens (anthrax 1876, tuberculosis 1882, cholera 1883) using agar plate cultures and chemical methyl violet dyes; miasma permanently disproved as the cause of cholera and fevers.',
     modern:
-      'Genetics & DNA double helix (1953); Human Genome Project (2003); lifestyle factors (smoking, diet, alcohol).',
+      '<strong>Genetics, Cellular & Lifestyle Causation:</strong> Discovery of the DNA double-helix by Watson, Crick, and Rosalind Franklin (1953); Human Genome Project (2003) mapped 3 billion base pairs, unlocking hereditary disease causes (cystic fibrosis, breast cancer genes); lifestyle risk factors proven (Doll and Hill 1950 linked smoking to lung cancer).',
   },
   {
-    theme: '2. Approaches to Prevention',
+    theme: '2. Approaches to Prevention (Prophylaxis)',
+    focus:
+      'Shift from individual religious ritual & herbal regimens to compulsory municipal legislation & universal vaccination',
     medieval:
-      'Prayer, flagellation, pilgrimages; Regimen Sanitatis (Six Non-Naturals); burning sweet herbs; quarantine cordons.',
+      '<strong>Religious Devotion & Humoural Regimens:</strong> Prayer, fasting, pilgrimages, and flagellation to appease God’s wrath; <em>Regimen Sanitatis</em> guide balancing the Six Non-Naturals (air, exercise, sleep, diet, excretion, emotions); burning aromatic herbs (rosemary, frankincense) against miasma; Gloucester attempted local quarantine cordon in 1348.',
     renaissance:
-      'Plague Orders (1665), quarantine with watchmen, stray animals culled; smoking tobacco; clearing streets.',
+      '<strong>Municipal Quarantine & Street Cleansing:</strong> 1665 Plague Orders enforced municipal lockdown with watchmen guarding boarded-up houses marked with red crosses ("Lord have mercy upon us"); 40,000 dogs and 80,000 cats culled; street rakers cleared filth; tobacco smoked to neutralise plague vapours; pest houses used.',
     industrial:
-      'Jenner cowpox vaccine (1796); 1853 Compulsory Vaccination Act; Snow on cholera (1854); 1875 Public Health Act.',
+      '<strong>Vaccination & Public Health Legislation:</strong> Edward Jenner discovered the smallpox cowpox vaccine (1796); government funded research (£30,000) and enacted the 1853 Compulsory Vaccination Act; John Snow mapped the Broad Street pump (1854); the 1875 Public Health Act ended laissez-faire, mandating clean water, sewers, and food inspectors.',
     modern:
-      'Universal childhood immunization (diphtheria, polio, MMR); mass screening; lifestyle legislation (2007 smoking ban).',
+      '<strong>Mass Immunisation & Lifestyle Interventions:</strong> Nationwide childhood vaccination programmes (diphtheria 1942, polio 1955, MMR 1988); mass screening (mammograms, cervical smears); health promotion campaigns (Change4Life); compulsory health laws (1956 Clean Air Act, 2007 Enclosed Public Workplace Smoking Ban, 2018 Sugar Tax).',
   },
   {
-    theme: '3. Approaches to Treatment',
+    theme: '3. Approaches to Treatment & Therapeutics',
+    focus:
+      'Shift from humoural purging & theriac to antiseptic surgery, magic bullets & mass-produced antibiotics',
     medieval:
-      'Phlebotomy (bleeding), purging (laxatives/emetics); Theory of Opposites; herbal theriac; royal touch.',
+      "<strong>Humoural Balancing & Herbal Remedies:</strong> Phlebotomy (bloodletting via vein incision, cupping, or leeches); purging using emetics and laxatives; Galen’s Theory of Opposites (e.g. cold cucumber for hot fevers); theriac (confection of 60+ ingredients including viper flesh); religious healing through saintly relics and the King's Touch for scrofula.",
     renaissance:
-      'Continuity of bleeding & purges; iatrochemistry (mercury for syphilis); cinchona bark (quinine); laudanum.',
+      '<strong>Continuity & Early Chemical Experimentation:</strong> Traditional bleeding and purging continued; Paracelsus pioneered iatrochemistry using chemical minerals (mercury for syphilis); cinchona bark from South America introduced quinine to treat malaria; Thomas Sydenham popularised laudanum (opium tincture) for pain relief.',
     industrial:
-      'Simpson’s chloroform (1847) conquers pain; Lister’s carbolic acid (1865) conquers sepsis; aseptic surgery by 1890s.',
+      '<strong>Conquering Surgical Pain & Sepsis:</strong> James Simpson discovered chloroform anaesthetic (1847), enabling deeper surgery; Joseph Lister introduced carbolic acid spray (1865), reducing compound fracture mortality from 46% to 15%; surgical transition from antiseptic methods to aseptic operating theatres (boiled instruments, masks, rubber gloves) by 1890s.',
     modern:
-      'Ehrlich’s Salvarsan 606 (1909); Domagk’s Prontosil (1932); Fleming, Florey & Chain penicillin (1928–44); chemotherapy.',
+      '<strong>Magic Bullets, Antibiotics & High-Tech Care:</strong> Paul Ehrlich synthesized Salvarsan 606 (1909) for syphilis; Gerhard Domagk discovered Prontosil (1932); Alexander Fleming discovered penicillin (1928), scaled by Florey, Chain, and US industry for D-Day (1944); modern chemotherapy, radiotherapy, and targeted immunotherapy.',
   },
   {
-    theme: '4. Hospital Care & Medical Training',
+    theme: '4. Hospital Care, Nursing & Medical Training',
+    focus:
+      'Shift from monastic religious shelter ("care not cure") to charitable voluntary hospitals, Nightingale nursing & free NHS',
     medieval:
-      'Monastic hospitals ("Care Not Cure"); leper houses; university physicians read Galen; barber-surgeons & wise women.',
+      '<strong>Monastic Charity ("Care Not Cure"):</strong> Medieval hospitals (e.g. St Bartholomew’s 1123, St Thomas\') provided spiritual care, food, and rest rather than medical treatment; leper houses isolated contagious patients; university-trained physicians read Galen without practical dissection; barber-surgeons and wise women treated the poor.',
     renaissance:
-      'Dissolution of monasteries closes 500 hospitals; Royal College of Physicians (1518); Vesalius teaches dissection.',
+      '<strong>Monastic Dissolution & Institutional Reform:</strong> Dissolution of the Monasteries (1536–39) closed 500+ religious hospitals; City of London took over royal hospitals; Royal College of Physicians (1518) and Barber-Surgeons Company regulated practitioners; Andreas Vesalius (1543) reformed training by making direct human dissection compulsory.',
     industrial:
-      'Nightingale pavilion plan & nurse training (1860); voluntary infirmaries; cottage hospitals; specialist surgeons.',
+      '<strong>Pavilion Hospitals & Professional Nursing:</strong> Charitable voluntary hospitals (Guy’s, St George’s) expanded; Florence Nightingale transformed hospital hygiene (pavilion plan with cross-ventilation, separate wards) and founded modern professional nurse training (1860); surgical training formalized in university teaching hospitals.',
     modern:
-      'Cottage/voluntary system nationalized; Bevan launches NHS (1948) free at delivery; robotic & keyhole surgery.',
+      '<strong>The National Health Service (1948) & Regionalisation:</strong> Aneurin Bevan launched the NHS on 5 July 1948, bringing hospitals under state control and providing care free at the point of delivery; evolution into specialized hospital trusts; high-tech ICUs, robotic surgery (Da Vinci), organ transplants, and outpatient care.',
   },
 ];
 
@@ -624,7 +657,7 @@ function buildHtml() {
     /* Page 2: Chronology & Synoptic Matrix */
     .p2-grid {
       display: grid;
-      grid-template-columns: 1.05fr 1.35fr;
+      grid-template-columns: 1fr 1.38fr;
       gap: 8px;
       flex: 1;
       margin: 2px 0;
@@ -633,46 +666,47 @@ function buildHtml() {
       border: 1.3px solid #0f172a;
       border-radius: 2px;
       background: #ffffff;
-      padding: 5px 7px;
+      padding: 4px 6px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
     .col-title {
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 7.8pt;
       font-weight: 900;
       color: #ffffff;
       background: #0f172a;
-      padding: 2.5px 6px;
+      padding: 2.2px 6px;
       border-radius: 1px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
-      margin-bottom: 3px;
+      margin-bottom: 2px;
       text-align: center;
     }
     .timeline-node {
-      border-left: 2.5px solid #0f172a;
-      padding-left: 4.5px;
-      margin-bottom: 2.5px;
-      line-height: 1.14;
+      border-left: 2.2px solid #0f172a;
+      padding-left: 4px;
+      margin-bottom: 1.5px;
+      line-height: 1.15;
     }
-    .t-year { font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; color: #000; }
-    .t-title { font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a; margin-left: 3px; }
-    .t-desc { font-family: 'Georgia', serif; font-size: 6.6pt; color: #222; display: block; }
+    .t-year { font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; color: #000; }
+    .t-title { font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #0f172a; margin-left: 2px; }
+    .t-desc { font-family: 'Georgia', serif; font-size: 6.3pt; color: #1e293b; display: block; line-height: 1.14; }
 
     .thread-card {
-      border: 1px solid #cbd5e1;
+      border: 1.2px solid #0f172a;
       border-left: 3.5px solid #0f172a;
-      background: #f8fafc;
+      background: #ffffff;
       padding: 4px 6px;
       border-radius: 2px;
-      margin-bottom: 3.5px;
-      line-height: 1.18;
+      margin-bottom: 2.5px;
+      line-height: 1.2;
     }
-    .thread-name { font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 2px; }
-    .thread-era-row { font-size: 6.8pt; margin-bottom: 1.5px; }
-    .era-tag { font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; display: inline-block; width: 85px; }
+    .thread-name { font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline; }
+    .thread-focus { font-family: 'Inter', sans-serif; font-size: 6.1pt; color: #475569; font-style: italic; margin-bottom: 2px; line-height: 1.16; }
+    .thread-era-row { font-size: 6.4pt; margin-bottom: 1.5px; font-family: 'Georgia', serif; line-height: 1.18; color: #1e293b; }
+    .era-tag { font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; display: inline-block; width: 75px; font-size: 6.3pt; text-transform: uppercase; }
 
     /* Lesson Question Pages (Pages 3–22) */
     .lesson-meta-bar {
@@ -1120,9 +1154,9 @@ function buildHtml() {
           <thead>
             <tr>
               <th style="width: 58%;">Era 1 &amp; Era 2 (c1250–c1700)</th>
-              <th class="col-score">1st Cold</th>
+              <th class="col-score">1st Test</th>
               <th class="col-score">2nd DIRT</th>
-              <th class="col-score">30D Rev</th>
+              <th class="col-score">3rd Retest</th>
               <th class="col-tick">Check</th>
             </tr>
           </thead>
@@ -1151,9 +1185,9 @@ function buildHtml() {
           <thead>
             <tr>
               <th style="width: 58%;">Era 3 &amp; Era 4 (c1700–present)</th>
-              <th class="col-score">1st Cold</th>
+              <th class="col-score">1st Test</th>
               <th class="col-score">2nd DIRT</th>
-              <th class="col-score">30D Rev</th>
+              <th class="col-score">3rd Retest</th>
               <th class="col-tick">Check</th>
             </tr>
           </thead>
@@ -1178,36 +1212,28 @@ function buildHtml() {
         </table>
       </div>
 
-      <!-- 4-Stage DIRT Retrieval Protocol -->
-      <div class="protocol-card">
-        <div class="protocol-title-row">
-          <span>Four-Stage Closed-Book Retrieval &amp; Green-Pen DIRT Protocol</span>
+      <!-- Authentic Classroom Revision Protocol & Paper 1 Section B Strategy -->
+      <div style="border: 1.3px solid #0f172a; background: #ffffff; border-radius: 2px; margin-bottom: 3.5px; overflow: hidden; flex-shrink: 0;">
+        <div style="background: #0f172a; color: #ffffff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3px; display: flex; justify-content: space-between;">
+          <span>How to Use This Revision Companion</span>
+          <span style="font-weight: 700; color: #94a3b8;">Edexcel Paper 1 (Section B) Strategy Blueprint</span>
         </div>
-        <div class="protocol-grid-4col">
-          <div class="step-item">
-            <strong>Step 1: Blind Recall</strong>
-            Complete 10 questions in black ink without notes under timed 8-minute conditions.
+        <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 8px; padding: 4.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.22; background: #f8fafc;">
+          <!-- Left: 3 Simple Classroom Steps -->
+          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
+            <strong style="color: #0f172a; display: block; font-size: 7.4pt; margin-bottom: 2px; text-transform: uppercase;">3 Simple Revision Steps:</strong>
+            <div style="margin-bottom: 2px;"><strong>1. Quick-Fire Test:</strong> Answer all 10 questions in black ink without notes.</div>
+            <div style="margin-bottom: 2px;"><strong>2. Green-Pen Check:</strong> Self-mark using the Marking Bank (pp. 23–26); correct errors.</div>
+            <div><strong>3. Retest Weak Topics:</strong> Re-quiz any lesson scored &lt;8/10 until you achieve 10/10.</div>
           </div>
-          <div class="step-item">
-            <strong>Step 2: Green-Pen DIRT</strong>
-            Self-assess against Department Marking Bank (pp. 23–26). Correct errors in green ink.
-          </div>
-          <div class="step-item">
-            <strong>Step 3: 48h Flashcard Drill</strong>
-            Re-test any terms scored &lt;8/10 on the interactive Revision Hub portal within 48h.
-          </div>
-          <div class="step-item">
-            <strong>Step 4: 30-Day Retention</strong>
-            Re-test after 30 days to guarantee transfer into permanent long-term semantic memory.
+          <!-- Right: Section B Exam Question Architecture -->
+          <div>
+            <strong style="color: #0f172a; display: block; font-size: 7.4pt; margin-bottom: 2px; text-transform: uppercase;">Section B Exam Question Architecture:</strong>
+            <div style="margin-bottom: 2px;"><strong>Q3 Similarity / Difference [4m]:</strong> 1 comparative PEEL paragraph identifying one valid similarity or difference across two eras with precise evidence.</div>
+            <div style="margin-bottom: 2px;"><strong>Q4 Causal Explanation [12m]:</strong> 3 distinct PEEL paragraphs explaining why medical change happened, evaluating factors (individuals, Church, science/tech).</div>
+            <div><strong>Q5/Q6 Synoptic Essay [16m + 4 SPaG]:</strong> 3 balanced thematic PEEL paragraphs evaluating extent of change across eras, concluding with a justified judgement.</div>
           </div>
         </div>
-      </div>
-
-      <!-- Traffic Tier Performance Guidance -->
-      <div class="traffic-tier-box">
-        <span><strong>Tier 1 (Mastery):</strong> 9–10/10 (&ge;90%) &bull; Ready for 16-Mark Synoptic Evaluation</span>
-        <span><strong>Tier 2 (Consolidation):</strong> 7–8/10 (70–80%) &bull; Green-pen DIRT corrections</span>
-        <span><strong>Tier 3 (Intervention):</strong> &lt;7/10 (&lt;70%) &bull; Re-test flashcards &amp; re-quiz in 48h</span>
       </div>
 
       <!-- 10 Core Disciplinary Terms & Specification Glossary -->
@@ -1258,15 +1284,15 @@ function buildHtml() {
 
       <div class="p2-grid">
         <!-- Col 1: Master Timeline -->
-        <div class="col-card">
-          <div class="col-title">750-Year Chronological Sequence (1123–2007)</div>
+        <div class="col-card" style="padding: 4px 6px;">
+          <div class="col-title" style="margin-bottom: 2px; font-size: 7.8pt;">750-Year Chronological Sequence (1123–2007)</div>
           <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
             ${MEDICINE_TIMELINE.map(
               (t) => `
-              <div class="timeline-node">
-                <span class="t-year">${t.year} &bull;</span>
-                <span class="t-title">${t.title}</span>
-                <span class="t-desc">${t.text}</span>
+              <div class="timeline-node" style="border-left: 2.2px solid #0f172a; padding-left: 4px; margin-bottom: 1.5px; line-height: 1.15;">
+                <span class="t-year" style="font-size: 6.8pt; font-weight: 900; color: #000;">${t.year} &bull;</span>
+                <span class="t-title" style="font-size: 7.0pt; font-weight: 800; color: #0f172a; margin-left: 2px;">${t.title}</span>
+                <span class="t-desc" style="font-size: 6.3pt; font-family: 'Georgia', serif; color: #1e293b; display: block; line-height: 1.14;">${t.text}</span>
               </div>
             `,
             ).join('')}
@@ -1274,20 +1300,31 @@ function buildHtml() {
         </div>
 
         <!-- Col 2: The Four Core Thematic Threads -->
-        <div class="col-card">
-          <div class="col-title">The Four Core Thematic Threads Across 4 Eras</div>
+        <div class="col-card" style="padding: 4px 6px;">
+          <div class="col-title" style="margin-bottom: 2px; font-size: 7.8pt;">The Four Core Thematic Threads Across 4 Eras</div>
           <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
             ${THEMATIC_THREADS.map(
               (th) => `
-              <div class="thread-card">
-                <div class="thread-name">${th.theme}</div>
-                <div class="thread-era-row"><span class="era-tag">Medieval (1250–1500):</span> ${th.medieval}</div>
-                <div class="thread-era-row"><span class="era-tag">Renaissance (1500–1700):</span> ${th.renaissance}</div>
-                <div class="thread-era-row"><span class="era-tag">Industrial (1700–1900):</span> ${th.industrial}</div>
-                <div class="thread-era-row"><span class="era-tag">Modern (1900–present):</span> ${th.modern}</div>
+              <div class="thread-card" style="border: 1.2px solid #0f172a; border-left: 3.5px solid #0f172a; background: #ffffff; padding: 4px 6px; border-radius: 2px; margin-bottom: 2.5px; line-height: 1.2;">
+                <div class="thread-name" style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; color: #0f172a; border-bottom: 1px solid #cbd5e1; padding-bottom: 1px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline;">
+                  <span>${th.theme}</span>
+                </div>
+                <div class="thread-focus" style="font-family: 'Inter', sans-serif; font-size: 6.1pt; color: #475569; font-style: italic; margin-bottom: 2px; line-height: 1.16;">
+                  ${th.focus}
+                </div>
+                <div class="thread-era-row" style="font-size: 6.4pt; margin-bottom: 1.5px; font-family: 'Georgia', serif; line-height: 1.18; color: #1e293b;"><span class="era-tag" style="font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; font-size: 6.3pt; text-transform: uppercase;">Medieval:</span> ${th.medieval}</div>
+                <div class="thread-era-row" style="font-size: 6.4pt; margin-bottom: 1.5px; font-family: 'Georgia', serif; line-height: 1.18; color: #1e293b;"><span class="era-tag" style="font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; font-size: 6.3pt; text-transform: uppercase;">Renaissance:</span> ${th.renaissance}</div>
+                <div class="thread-era-row" style="font-size: 6.4pt; margin-bottom: 1.5px; font-family: 'Georgia', serif; line-height: 1.18; color: #1e293b;"><span class="era-tag" style="font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; font-size: 6.3pt; text-transform: uppercase;">Industrial:</span> ${th.industrial}</div>
+                <div class="thread-era-row" style="font-size: 6.4pt; margin-bottom: 0px; font-family: 'Georgia', serif; line-height: 1.18; color: #1e293b;"><span class="era-tag" style="font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; font-size: 6.3pt; text-transform: uppercase;">Modern:</span> ${th.modern}</div>
               </div>
             `,
             ).join('')}
+
+            <!-- Master 6-Factor Synoptic Examination Guide Strip -->
+            <div style="border: 1.1px solid #94a3b8; background: #f8fafc; padding: 3px 6px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.2; color: #0f172a;">
+              <strong style="text-transform: uppercase; color: #0f172a; font-size: 6.5pt;">Edexcel 6 Factors of Change &amp; Continuity:</strong>
+              <span>1. Religion/Church &bull; 2. Science &amp; Tech &bull; 3. Government &bull; 4. Individuals &bull; 5. War &bull; 6. Chance (Crucial for 16-Mark Synoptic Evaluation).</span>
+            </div>
           </div>
         </div>
       </div>
