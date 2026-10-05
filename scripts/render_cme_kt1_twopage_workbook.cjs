@@ -1330,37 +1330,30 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
           }
         </div>
 
-        <!-- Row 2: 3-Column Planning Structure Strip -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #fafafa;">
+        <!-- Row 2: 3-Column Planning Structure Strip (Heading Anchors Only) -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 1px solid #000000; background: #f4f4f4;">
           ${rx.structureStrip
             .map(
               (strip, sIdx) => `
-          <div style="padding: 2px 4px; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; line-height: 1.1; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111111; line-height: 1.12; display: block;">${strip.text}</span>
+          <div style="padding: 2.5px 4px; text-align: center; ${sIdx < 2 ? 'border-right: 1px solid #000000;' : ''}">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; line-height: 1.15; letter-spacing: 0.3px;">${strip.col}</strong>
           </div>
           `,
             )
             .join('')}
         </div>
 
-        <!-- Row 3: Connectives & Word Bank -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; background: #ffffff;">
-          <div style="padding: 2px 5px; border-right: 1px solid #000000;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Analytical Connectives:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.12; display: block;">${rx.connectives || rx.causalConnectives}</span>
-          </div>
-          <div style="padding: 2px 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; line-height: 1.1;">Key Vocabulary Bank:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.12; display: block;">${rx.wordBank}</span>
-          </div>
+        <!-- Row 3: Causal Connectives Strip (Key Vocabulary Bank removed for active recall) -->
+        <div style="padding: 2.5px 6px; background: #ffffff; display: flex; align-items: baseline; gap: 6px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; flex-shrink: 0; line-height: 1.1;">Causal Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #222222; line-height: 1.12; flex: 1;">${rx.connectives || rx.causalConnectives}</span>
         </div>
       </div>
 
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 20 },
+          { length: 22 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
