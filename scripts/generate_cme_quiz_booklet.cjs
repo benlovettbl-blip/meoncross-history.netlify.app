@@ -3,6 +3,12 @@
  *
  * Compiles the Master 20-Page A4 Saddle-Stitch Knowledge Retrieval & Homework Companion
  * for Pearson Edexcel GCSE History Paper 2 (1HI0/2B): Conflict in the Middle East, 1945–1995.
+ *
+ * Strict Compliance:
+ * - Institutional neutrality (The History Department / GCSE History Revision Hub)
+ * - Zero AI educational jargon / authentic classroom standard
+ * - 100% uniformity across all 12 lessons (12 tiered questions per lesson = 144 questions)
+ * - Publisher-grade typography & 0px dead space underflow budget
  */
 
 const fs = require('fs');
@@ -37,7 +43,20 @@ function generateQrSvg(url) {
 }
 
 // --------------------------------------------------------------------------
-// APPROVED WITTY FOOTERS (20 PAGES)
+// BASE64 IMAGE HELPER (Guarantees zero broken image links in Puppeteer/offline)
+// --------------------------------------------------------------------------
+function getCardImageBase64(filename) {
+  const p = path.join(ROOT_DIR, 'public', 'units', 'cme_new', 'assets', filename);
+  if (fs.existsSync(p)) {
+    const ext = path.extname(filename).replace('.', '') || 'png';
+    const data = fs.readFileSync(p).toString('base64');
+    return `data:image/${ext};base64,${data}`;
+  }
+  return `./assets/${filename}`;
+}
+
+// --------------------------------------------------------------------------
+// APPROVED AUTHENTIC CLASSROOM FOOTERS (20 PAGES)
 // --------------------------------------------------------------------------
 const APPROVED_FOOTERS = [
   'Conflict in the Middle East Master Retrieval Companion • Edexcel Paper 2 • The History Department', // P1
@@ -209,7 +228,7 @@ const DOMINO_TIMELINE = [
 ];
 
 // --------------------------------------------------------------------------
-// LESSON METADATA & INQUIRY ENGINES
+// LESSON METADATA & ENQUIRY HEADERS (12 CORE LESSONS)
 // --------------------------------------------------------------------------
 const LESSON_HEADERS = [
   {
@@ -287,77 +306,109 @@ const LESSON_HEADERS = [
 ];
 
 // --------------------------------------------------------------------------
-// PROTAGONISTS GALLERY (PAGE 19)
+// PROTAGONISTS GALLERY (12 DECISION-MAKERS ON PAGE 19)
 // --------------------------------------------------------------------------
 const PROTAGONISTS = [
   {
     name: 'David Ben-Gurion',
     role: '1st Prime Minister of Israel (1948–53, 1955–63)',
     dates: '1886–1973',
-    img: '/units/cme_new/assets/card_bengurion.png',
+    img: getCardImageBase64('card_bengurion.png'),
     decision:
-      'Proclaimed Israel’s independence on 14 May 1948; integrated underground militias into the IDF; authorized the 1950 Law of Return and 1956 Sinai invasion.',
+      'Proclaimed Israel’s independence on 14 May 1948; integrated militias into the IDF; authorized the 1950 Law of Return and 1956 Sinai invasion.',
   },
   {
     name: 'Gamal Abdel Nasser',
     role: 'President of Egypt (1954–1970)',
     dates: '1918–1970',
-    img: '/units/cme_new/assets/card_nasser.png',
+    img: getCardImageBase64('card_nasser.png'),
     decision:
-      'Nationalised the Suez Canal in July 1956; champion of Pan-Arab nationalism; closed Straits of Tiran in 1967; led Egypt through the 1969–70 War of Attrition.',
+      'Nationalised the Suez Canal in July 1956; champion of Pan-Arabism; closed Straits of Tiran in 1967; led Egypt in the 1969–70 War of Attrition.',
   },
   {
     name: 'Moshe Dayan',
     role: 'IDF Chief of Staff & Defence Minister',
     dates: '1915–1981',
-    img: '/units/cme_new/assets/card_dayan.png',
+    img: getCardImageBase64('card_dayan.png'),
     decision:
-      'Masterminded the 1956 Sinai campaign and 1967 Six-Day War blitzkrieg; famously captured East Jerusalem and the Western Wall; later helped negotiate Camp David.',
+      'Masterminded the 1956 Sinai campaign and 1967 Six-Day War air blitz; famously captured East Jerusalem; later negotiated Camp David with Egypt.',
+  },
+  {
+    name: 'Golda Meir',
+    role: 'Prime Minister of Israel (1969–1974)',
+    dates: '1898–1978',
+    img: getCardImageBase64('card_golda.png'),
+    decision:
+      'Led Israel during the War of Attrition and initial shock of the 1973 Yom Kippur War; secured emergency US Operation Nickel Grass airlift.',
   },
   {
     name: 'Anwar Sadat',
     role: 'President of Egypt (1970–1981)',
     dates: '1918–1981',
-    img: '/units/cme_new/assets/card_sadat.png',
+    img: getCardImageBase64('card_sadat.png'),
     decision:
-      'Launched the surprise 1973 Yom Kippur offensive; flew courageously to Jerusalem in 1977; signed the 1978 Camp David Accords; assassinated in 1981.',
+      'Launched the surprise 1973 Yom Kippur offensive; flew courageously to address the Knesset in 1977; signed the 1978 Camp David Accords.',
   },
   {
     name: 'Menachem Begin',
     role: 'Prime Minister of Israel (1977–1983)',
     dates: '1913–1992',
-    img: '/units/cme_new/assets/card_begin.png',
+    img: getCardImageBase64('card_begin.png'),
     decision:
-      'Former Irgun commander; elected Likud leader in 1977; signed the 1979 Treaty of Washington returning Sinai; authorized the controversial 1982 invasion of Lebanon.',
+      'Former Irgun leader; first Likud PM; signed the 1979 Treaty of Washington returning Sinai for peace; ordered controversial 1982 Lebanon invasion.',
+  },
+  {
+    name: 'King Hussein of Jordan',
+    role: 'King of Jordan (1952–1999)',
+    dates: '1935–1999',
+    img: getCardImageBase64('card_hussein.png'),
+    decision:
+      'Lost the West Bank and East Jerusalem in 1967; crushed PLO militias during 1970 Black September; signed historic 1994 Israel-Jordan Peace Treaty.',
   },
   {
     name: 'Yasser Arafat',
-    role: 'Chairman of the PLO (1969–2004)',
+    role: 'Chairman of the PLO & Fatah (1969–2004)',
     dates: '1929–2004',
-    img: '/units/cme_new/assets/card_arafat.png',
+    img: getCardImageBase64('card_arafat.png'),
     decision:
-      'Leader of Fatah; delivered 1974 UN "Olive Branch and Freedom Fighter\'s Gun" speech; signed 1993 Oslo Accords and became head of the Palestinian Authority.',
+      'Delivered 1974 UN "Olive Branch & Freedom Fighter\'s Gun" speech; signed 1993 Oslo Accords on White House lawn; headed the Palestinian Authority.',
+  },
+  {
+    name: 'Jimmy Carter',
+    role: '39th US President (1977–1981)',
+    dates: '1924–present',
+    img: getCardImageBase64('card_carter.png'),
+    decision:
+      'Mediated 13 days of grueling negotiations between Sadat and Begin at presidential retreat to forge the landmark 1978 Camp David Accords framework.',
   },
   {
     name: 'Ariel Sharon',
     role: 'IDF General & Defence Minister',
     dates: '1928–2014',
-    img: '/units/cme_new/assets/card_sharon.png',
+    img: getCardImageBase64('card_sharon.png'),
     decision:
-      'Led the daring armored crossing of the Suez Canal in 1973, encircling Egypt’s 3rd Army; architect of the 1982 invasion of Lebanon; rebuked by Kahan Commission.',
+      'Led armored crossing of Suez in 1973 encircling Egypt’s 3rd Army; architect of 1982 invasion of Lebanon; rebuked by Kahan Commission for Sabra & Shatila.',
   },
   {
     name: 'Yitzhak Rabin',
     role: 'IDF Chief of Staff & Prime Minister (1974–77, 1992–95)',
     dates: '1922–1995',
-    img: '/units/cme_new/assets/card_rabin.png',
+    img: getCardImageBase64('card_rabin.png'),
     decision:
-      'Commanded IDF in 1967 Six-Day War; signed the historic 1993 Oslo Declaration of Principles and 1994 Jordan Peace Treaty; assassinated by Jewish extremist in 1995.',
+      'Commanded IDF in 1967; signed 1993 Oslo Declaration of Principles and 1994 Jordan Treaty; assassinated by Jewish extremist Yigal Amir in 1995.',
+  },
+  {
+    name: 'Bill Clinton',
+    role: '42nd US President (1993–2001)',
+    dates: '1946–present',
+    img: getCardImageBase64('card_clinton.png'),
+    decision:
+      'Hosted the historic September 1993 White House lawn handshake between Rabin and Arafat; facilitated Oslo II negotiations and 1994 Jordan peace.',
   },
 ];
 
 // --------------------------------------------------------------------------
-// TIER 3 DISCIPLINARY VOCABULARY (PAGE 19)
+// TIER 3 DISCIPLINARY VOCABULARY (16 TERMS ON PAGE 19)
 // --------------------------------------------------------------------------
 const VOCAB_BANK = [
   {
@@ -368,12 +419,32 @@ const VOCAB_BANK = [
   {
     term: 'Sovereignty',
     phonetic: '[SOV-rin-tee]',
-    def: 'Supreme independent authority and legitimate political power over a defined territory and population without foreign control.',
+    def: 'Supreme independent authority and legitimate political power over a defined geographic territory and population without foreign control.',
+  },
+  {
+    term: 'Mandate',
+    phonetic: '[MAN-dayt]',
+    def: 'A legal commission granted by the League of Nations authorizing a major power (e.g. Britain) to administer a territory until ready for self-rule.',
+  },
+  {
+    term: 'Partition',
+    phonetic: '[par-TISH-uhn]',
+    def: 'The political division of a territory into separate autonomous or sovereign states, as enacted by UN Resolution 181 in November 1947.',
+  },
+  {
+    term: 'Al-Nakba',
+    phonetic: '[al-NAHK-bah]',
+    def: 'Arabic for "the Catastrophe"; the permanent flight and displacement of approximately 700,000 Palestinian Arabs during the 1948–49 War.',
+  },
+  {
+    term: 'Armistice',
+    phonetic: '[AR-mi-stis]',
+    def: 'A formal agreement between opposing military forces to suspend hostilities, establishing the 1949 "Green Line" ceasefire borders.',
   },
   {
     term: 'Fedayeen',
     phonetic: '[fed-ah-YEEN]',
-    def: 'Arabic for "self-sacrificers"; armed Palestinian nationalist guerrillas who carried out cross-border raids and armed attacks into Israeli territory.',
+    def: 'Arabic for "self-sacrificers"; armed Palestinian nationalist guerrillas who carried out cross-border raids and sabotage attacks into Israeli territory.',
   },
   {
     term: 'Pan-Arabism',
@@ -383,27 +454,47 @@ const VOCAB_BANK = [
   {
     term: 'Pre-emptive Strike',
     phonetic: '[pree-EMP-tiv]',
-    def: 'A military attack initiated to disable or destroy an enemy’s offensive capability when an attack by that enemy is believed to be imminent.',
+    def: 'A military attack initiated to disable or destroy an enemy’s offensive capability when an attack by that enemy is believed to be imminent (e.g. June 1967).',
   },
   {
     term: 'Attrition',
     phonetic: '[uh-TRISH-uhn]',
-    def: 'A military strategy designed to wear down an opponent through continuous bombardment, economic disruption, and sustained personnel losses.',
+    def: 'A military strategy designed to wear down an opponent through continuous artillery bombardment, economic disruption, and sustained personnel losses.',
   },
   {
     term: 'Demilitarised Zone (DMZ)',
     phonetic: '[dee-MIL-i-tuh-ryzd]',
-    def: 'An agreed geographic area where military forces, armaments, and military installations are prohibited by international treaty.',
+    def: 'An agreed geographic buffer where military forces, armaments, and installations are prohibited by international treaty (e.g. Sinai after 1979).',
+  },
+  {
+    term: 'Shuttle Diplomacy',
+    phonetic: '[SHUHT-uhl dih-PLOH-muh-see]',
+    def: 'Intense diplomatic mediation where an intermediary (e.g. Henry Kissinger) travels back and forth between opposing capitals unable to meet directly.',
+  },
+  {
+    term: 'Asymmetric Warfare',
+    phonetic: '[ay-sih-MET-rik]',
+    def: 'Conflict between belligerents whose relative military power and tactics differ significantly, typical of guerrilla tactics against a conventional army.',
   },
   {
     term: 'Intifada',
     phonetic: '[in-tih-FAH-duh]',
     def: 'Arabic for "shaking off"; the spontaneous grassroots Palestinian uprising of civil disobedience, strikes, and stone-throwing beginning in December 1987.',
   },
+  {
+    term: 'Buffer State / Zone',
+    phonetic: '[BUHF-er zohn]',
+    def: 'A neutral or demilitarised geographic territory separating hostile rival powers to reduce the danger of accidental conflict (e.g. Sinai, Golan).',
+  },
+  {
+    term: 'Displaced Persons (DPs)',
+    phonetic: '[dis-PLAYST PUR-suhnz]',
+    def: 'Approximately 250,000 European Holocaust survivors housed in allied camps after WWII who sought immediate sanctuary in Palestine.',
+  },
 ];
 
 // --------------------------------------------------------------------------
-// EXTRACT & CURATE QUESTIONS FROM Master data.js
+// EXTRACT & CURATE QUESTIONS (100% UNIFORM: 12 QUESTIONS PER LESSON = 144 Qs)
 // --------------------------------------------------------------------------
 function loadCuratedQuestions() {
   const dataPath = path.join(ROOT_DIR, 'units', 'cme_new', 'data.js');
@@ -413,12 +504,13 @@ function loadCuratedQuestions() {
 
   const curated = [];
 
-  // LESSON 1: Special 1945 Baseline Curation (6 Anchor Questions)
+  // LESSON 1: 12 Tiered Anchor Questions (1945 Baseline & Imperial Legacies)
   const l1Questions = [
+    // TIER 1: Core Foundation & Chronology (Grades 1–4)
     {
       q: 'What 1917 British diplomatic statement promised support for a "national home for the Jewish people" in Palestine?',
       a: 'The Balfour Declaration',
-      exp: 'Authored by Foreign Secretary Arthur Balfour, this 67-word pledge gave Zionist aspirations official British imperial sponsorship.',
+      exp: 'Authored by Foreign Secretary Arthur Balfour, this 67-word pledge gave Zionist aspirations official British imperial backing.',
       tier: 'Tier 1: Core Foundation (Grades 1–4)',
     },
     {
@@ -431,33 +523,74 @@ function loadCuratedQuestions() {
       q: 'What 1939 British government policy paper restricted Jewish immigration into Palestine to 75,000 over five years?',
       a: 'The 1939 British White Paper (MacDonald White Paper)',
       exp: 'Seeking Arab support ahead of WWII, Britain abandoned partition plans and capped immigration, alienating Zionists during the Holocaust.',
-      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
+      tier: 'Tier 1: Core Foundation (Grades 1–4)',
     },
     {
       q: 'Following the liberation of Nazi concentration camps in 1945, what urgent humanitarian demand did US President Truman make of Britain?',
       a: 'Immediate admission of 100,000 Jewish Displaced Persons (DPs)',
       exp: 'Truman pressured Prime Minister Clement Attlee to open Palestine’s gates to Holocaust survivors stranded in European camps.',
-      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
+      tier: 'Tier 1: Core Foundation (Grades 1–4)',
     },
+
+    // TIER 2: Causal Mechanism & Process (Grades 5–7)
     {
       q: 'In 1945 at the end of the Second World War, what was the approximate demographic balance in Mandatory Palestine?',
       a: 'Approximately 1.2 million Palestinian Arabs and 600,000 Jews',
-      exp: 'Arabs formed a 2:1 majority and demanded a unitary democratic state; Zionists demanded a sovereign Jewish majority state to secure sanctuary.',
-      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
+      exp: 'Arabs formed a 2:1 majority and demanded a unitary democratic state; Zionists demanded a sovereign Jewish state to secure sanctuary.',
+      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
     },
     {
       q: 'Why did the British Labour government under Clement Attlee decide to refer the Palestine Mandate to the United Nations in February 1947?',
       a: 'Armed Jewish insurgency, economic exhaustion after WWII, and irreconcilable Arab-Jewish demands',
-      exp: 'Attlee and Foreign Secretary Ernest Bevin concluded that maintaining 100,000 British troops in Palestine was politically and financially untenable.',
+      exp: 'Attlee and Ernest Bevin concluded that maintaining 100,000 British troops in Palestine was politically and financially untenable.',
+      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
+    },
+    {
+      q: 'What crucial man-made waterway connects the Mediterranean Sea to the Red Sea, serving as a vital strategic chokepoint for British trade and oil?',
+      a: 'The Suez Canal',
+      exp: 'Opened in 1869, the canal was Britain’s imperial lifeline to India and Persian Gulf oil, making British troops unwilling to leave the region.',
+      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
+    },
+    {
+      q: 'Which strategic maritime passage at the mouth of the Gulf of Aqaba commands naval access to Israel’s southern port of Eilat?',
+      a: 'The Straits of Tiran (Sharm el-Sheikh)',
+      exp: 'Controlling access to the Red Sea, any blockade of this strait by Egypt was considered by Israel an explicit act of war.',
+      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
+    },
+
+    // TIER 3: Grade 8/9 Examiner Nuance & Impact (Grades 8–9)
+    {
+      q: 'Which vast triangular desert peninsula connecting Africa to Asia served as the primary military buffer between Egypt and Israel?',
+      a: 'The Sinai Peninsula',
+      exp: 'Its 60,000 square kilometres of harsh desert made rapid armored maneuver vital, dominating strategic planning in 1956, 1967, and 1973.',
+      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
+    },
+    {
+      q: 'Which elevated volcanic plateau in south-western Syria overlooked the Sea of Galilee, enabling Syrian artillery to shell Israeli collective farms?',
+      a: 'The Golan Heights',
+      exp: 'Its high ridge gave Syrian artillery commanding lines of fire into upper Galilee, making it a critical strategic objective seized by Israel in 1967.',
+      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
+    },
+    {
+      q: 'What special international legal status was proposed for Jerusalem under the 1947 United Nations Partition Plan (Resolution 181)?',
+      a: 'Corpus Separatum (an international city administered by the United Nations)',
+      exp: 'Recognizing its unique holy sites sacred to Judaism, Christianity, and Islam, the UN sought to place Jerusalem outside both Arab and Jewish sovereignty.',
+      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
+    },
+    {
+      q: 'Which neighboring Arab monarch, ruler of Transjordan, held secret negotiations with the Jewish Agency before 1948 to annex the West Bank?',
+      a: 'King Abdullah I of Transjordan (Hashemite Kingdom)',
+      exp: 'Abdullah sought to expand his kingdom across Arab Palestine, leading to deep distrust between Jordan and other Arab League states like Egypt and Syria.',
       tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
     },
   ];
+
   curated.push({
     cfg: LESSON_HEADERS[0],
     questions: l1Questions,
   });
 
-  // LESSONS 2 to 12: 12 Tiered Questions per Lesson
+  // LESSONS 2 to 12: 12 Tiered Questions per Lesson from data.js
   for (let i = 1; i < 12; i++) {
     const l = lessons[i];
     const cfg = LESSON_HEADERS[i];
@@ -511,11 +644,11 @@ function buildHtml(curatedLessons) {
     *, *:before, *:after { box-sizing: border-box; }
     @page {
       size: A4 portrait;
-      margin: 8mm 10mm 6mm 10mm;
+      margin: 6mm 8mm 5mm 8mm;
     }
     body {
       font-family: 'Georgia', 'Garamond', serif;
-      font-size: 8.4pt;
+      font-size: 8.8pt;
       line-height: 1.25;
       color: #000000;
       margin: 0;
@@ -529,8 +662,8 @@ function buildHtml(curatedLessons) {
     }
     .page-container {
       width: 100%;
-      height: 280mm;
-      max-height: 280mm;
+      height: 286mm;
+      max-height: 286mm;
       position: relative;
       page-break-after: always;
       overflow: hidden;
@@ -539,7 +672,7 @@ function buildHtml(curatedLessons) {
       justify-content: space-between;
       background: #ffffff;
       box-sizing: border-box;
-      padding: 1.5mm 0;
+      padding: 0;
     }
     .page-body-full {
       flex: 1;
@@ -549,29 +682,30 @@ function buildHtml(curatedLessons) {
       height: 100%;
       overflow: hidden;
     }
+
     /* Running Header & Footer */
     .running-header {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       border-bottom: 2px solid #000000;
-      padding-bottom: 1.5px;
-      margin-bottom: 2px;
+      padding-bottom: 2px;
+      margin-bottom: 2.5px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.6pt;
       font-weight: 900;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      letter-spacing: 0.6px;
     }
     .page-footer-strip {
       border-top: 1.2px solid #000000;
-      padding-top: 2px;
-      margin-top: 1.5px;
+      padding-top: 2.5px;
+      margin-top: 2px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       color: #000000;
     }
     .footer-page-num { font-weight: 800; }
@@ -581,154 +715,173 @@ function buildHtml(curatedLessons) {
     .cover-top-banner {
       background: #0f172a;
       color: #ffffff;
-      padding: 4px 8px;
+      padding: 8px 10px;
       text-align: center;
       font-family: 'Inter', sans-serif;
-      font-size: 8pt;
+      font-size: 9.2pt;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       border-radius: 2px;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
     .cover-title-box {
-      border: 2px solid #000000;
-      padding: 6px 10px;
+      border: 2.2px solid #000000;
+      padding: 15px 18px;
       text-align: center;
       background: #fafafa;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .cover-main-title {
       font-family: 'Playfair Display', serif;
-      font-size: 15.5pt;
+      font-size: 20.5pt;
       font-weight: 900;
       color: #000000;
       margin: 0;
       line-height: 1.15;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
     }
     .cover-sub-title {
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 10.2pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 2px;
+      letter-spacing: 0.6px;
+      margin-top: 4px;
     }
     .scholar-card {
       border: 1.5px solid #000000;
       background: #ffffff;
-      padding: 4px 8px;
+      padding: 10px 14px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 8px;
-      margin-bottom: 3.5px;
+      grid-template-columns: 1.4fr 1fr 1fr 0.8fr 0.8fr;
+      gap: 12px;
+      margin-bottom: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 8.8pt;
     }
     .scholar-field { display: flex; align-items: baseline; gap: 4px; }
     .scholar-field strong { font-weight: 900; color: #000; }
-    .scholar-field .field-line { flex: 1; border-bottom: 1px solid #000; height: 10px; }
+    .scholar-field .field-line { flex: 1; border-bottom: 1px solid #000; height: 11px; }
 
     /* Homework Tracking Table (Page 1) */
     .hw-ledger-table {
       width: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 6.7pt;
-      margin-bottom: 3px;
+      font-size: 8.6pt;
+      margin-bottom: 6px;
     }
     .hw-ledger-table th {
       background: #0f172a;
       color: #ffffff;
-      padding: 2.2px 4px;
+      padding: 7.5px 6px;
       font-weight: 800;
       text-transform: uppercase;
       border: 1px solid #0f172a;
       text-align: center;
+      font-size: 8.5pt;
     }
     .hw-ledger-table td {
       border: 1px solid #cbd5e1;
-      padding: 1.8px 4px;
+      padding: 8.0px 7px;
       vertical-align: middle;
       color: #000000;
     }
     .hw-ledger-table tr:nth-child(even) td { background: #f8fafc; }
+    
     .traffic-tier-box {
-      border: 1px solid #000;
+      border: 1.3px solid #0f172a;
       border-radius: 2px;
-      padding: 2.5px 6px;
+      padding: 8px 12px;
       background: #f1f5f9;
       display: flex;
       justify-content: space-around;
       align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
+      font-size: 8.3pt;
       font-weight: 700;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
+    }
+
+    .cover-protocol-box {
+      border: 1.3px solid #0f172a;
+      border-left: 5px solid #0f172a;
+      border-radius: 2px;
+      padding: 9px 12px;
+      background: #ffffff;
+      margin-bottom: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      line-height: 1.45;
+      color: #1e293b;
     }
 
     /* Page 2: Chronology Domino Flowchart */
     .timeline-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3.0px 6px;
+      gap: 3.2px 6px;
       flex: 1;
       margin: 2px 0;
     }
     .domino-node {
       border: 1.2px solid #0f172a;
+      border-left: 3.5px solid #0f172a;
       border-radius: 2px;
-      padding: 2px 4px;
+      padding: 2.4px 5px;
       background: #ffffff;
       display: flex;
-      gap: 5px;
+      gap: 6px;
       align-items: flex-start;
-      line-height: 1.15;
+      line-height: 1.18;
     }
     .domino-year {
       background: #0f172a;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
+      font-size: 7.0pt;
       font-weight: 900;
-      padding: 1px 3.5px;
+      padding: 1px 4px;
       border-radius: 2px;
       white-space: nowrap;
       letter-spacing: 0.2px;
     }
     .domino-body { flex: 1; }
-    .domino-title { font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 800; color: #000000; display: block; margin-bottom: 0.5px; }
-    .domino-desc { font-family: 'Georgia', serif; font-size: 6.3pt; color: #222222; }
+    .domino-title { font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #000000; display: block; margin-bottom: 0.5px; }
+    .domino-desc { font-family: 'Georgia', serif; font-size: 7.1pt; color: #222222; }
 
-    /* Lesson Question Pages (Pages 3–14) */
+    /* Lesson Question Pages (Pages 3–14) — 100% UNIFORM ARCHITECTURE */
     .lesson-meta-bar {
       background: #f8fafc;
-      border-left: 3.5px solid #0f172a;
-      padding: 2.2px 6px;
+      border-left: 4px solid #0f172a;
+      padding: 3px 8px;
       margin-bottom: 2px;
+      border-top: 1px solid #cbd5e1;
+      border-right: 1px solid #cbd5e1;
+      border-bottom: 1px solid #cbd5e1;
     }
-    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
-    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #334155; margin-top: 1px; }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
+    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155; margin-top: 1px; }
 
     .tier-header-strip {
       background: #0f172a;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 6.5pt;
+      font-size: 7.2pt;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      padding: 1.2px 5px;
-      margin: 1.5px 0 1.2px 0;
+      padding: 2px 6px;
+      margin: 1.8px 0 1.5px 0;
       border-radius: 1px;
     }
     .q-block {
-      border: 1px solid #cbd5e1;
+      border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2px 5px;
-      margin-bottom: 1.5px;
+      padding: 2.2px 6px;
+      margin-bottom: 1.8px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
@@ -738,183 +891,275 @@ function buildHtml(curatedLessons) {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 4px;
-      line-height: 1.15;
+      gap: 5px;
+      line-height: 1.18;
     }
-    .q-prompt-wrap { display: flex; gap: 3.5px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; color: #000000; min-width: 14px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 7.5pt; font-weight: 700; color: #000000; line-height: 1.15; }
-    .q-attempt { font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 700; color: #475569; white-space: nowrap; }
+    .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; color: #000000; min-width: 16px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 8.6pt; font-weight: 700; color: #000000; line-height: 1.18; }
+    .q-attempt { font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #475569; white-space: nowrap; }
 
     .q-line-row {
       display: flex;
       align-items: flex-end;
-      gap: 5px;
+      gap: 6px;
       margin-top: 0.5px;
     }
     .q-line-lbl {
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
+      font-size: 7.2pt;
       font-weight: 800;
       color: #000000;
       white-space: nowrap;
-      min-width: 70px;
+      min-width: 82px;
     }
     .q-solid-line {
       flex: 1;
       border-bottom: 1.3px solid #000000;
-      height: 6.4mm;
+      height: 6.5mm;
     }
 
-    /* Page 3: 1945 Baseline Matrix */
-    .matrix-box {
-      border: 1.5px solid #0f172a;
-      border-radius: 2px;
-      padding: 3.5px 6px;
-      background: #f8fafc;
-      margin-top: 3px;
-    }
-    .matrix-header {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
-      font-weight: 900;
-      text-transform: uppercase;
-      color: #0f172a;
-      border-bottom: 1px solid #0f172a;
-      padding-bottom: 1.5px;
-      margin-bottom: 2.5px;
-      display: flex;
-      justify-content: space-between;
-    }
-    .matrix-grid {
+    /* Pages 15–18: Department Marking Bank (BALANCED 3-COLUMN ARCHITECTURE) */
+    .mb-grid-3col {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5px;
-      font-family: 'Georgia', serif;
-      font-size: 6.6pt;
-      line-height: 1.18;
-    }
-    .matrix-card {
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      padding: 2.5px 5px;
-      border-radius: 2px;
-    }
-    .matrix-card strong { font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; display: block; margin-bottom: 1px; }
-
-    /* Pages 15–18: Department Marking Bank */
-    .mb-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5px 7px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5.5px;
       flex: 1;
-      margin-top: 1.5px;
+      margin-top: 2px;
+      height: 100%;
     }
     .mb-lesson-col {
       display: flex;
       flex-direction: column;
-      gap: 2.0px;
+      justify-content: space-between;
+      height: 100%;
     }
     .mb-lesson-title {
       background: #0f172a;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 7.3pt;
       font-weight: 800;
-      padding: 2px 5px;
+      padding: 2.2px 5px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       border-radius: 1px;
+      margin-bottom: 2px;
+      text-align: center;
     }
     .ans-card {
       border: 1px solid #cbd5e1;
+      border-left: 2.8px solid #0f172a;
       background: #f8fafc;
       border-radius: 2px;
-      padding: 1.5px 3.5px;
+      padding: 2.2px 4px;
       display: flex;
-      gap: 3px;
-      font-size: 6.2pt;
-      line-height: 1.15;
+      flex-direction: column;
+      gap: 1px;
+      font-size: 7.0pt;
+      line-height: 1.16;
+      margin-bottom: 1.5px;
     }
-    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; min-width: 12px; }
-    .ans-body { flex: 1; }
-    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; }
-    .ans-exp { color: #334155; font-style: italic; }
-    .ans-check { font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .ans-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 3px;
+    }
+    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; font-size: 7.4pt; }
+    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.4pt; flex: 1; margin-left: 3px; }
+    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.8pt; line-height: 1.15; }
 
     /* Page 19: Protagonists & Vocabulary */
     .proto-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3px 6px;
-      margin-bottom: 3px;
+      gap: 5px 8px;
+      margin-bottom: 3.5px;
     }
     .proto-card {
-      border: 1px solid #0f172a;
+      border: 1.2px solid #0f172a;
       border-radius: 2px;
-      padding: 2px 4px;
+      padding: 5px 8px;
       background: #ffffff;
       display: flex;
-      gap: 5px;
+      gap: 9px;
       align-items: center;
     }
     .proto-img {
-      width: 26px;
-      height: 32px;
+      width: 48px;
+      height: 56px;
       object-fit: cover;
-      border: 1px solid #000;
-      border-radius: 1px;
+      border: 1.2px solid #000;
+      border-radius: 2px;
       flex-shrink: 0;
+      background: #e2e8f0;
     }
-    .proto-info { flex: 1; line-height: 1.12; }
-    .proto-name { font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; color: #000000; }
-    .proto-role { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 700; color: #475569; display: block; }
-    .proto-dec { font-family: 'Georgia', serif; font-size: 5.9pt; color: #1e293b; margin-top: 0.5px; }
+    .proto-info { flex: 1; line-height: 1.26; }
+    .proto-name { font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; color: #000000; }
+    .proto-role { font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #334155; display: block; }
+    .proto-dec { font-family: 'Georgia', serif; font-size: 7.4pt; color: #111827; margin-top: 1.5px; }
+
+    .theme-synthesis-bar {
+      border: 1.2px solid #0f172a;
+      background: #f8fafc;
+      border-radius: 2px;
+      padding: 6px 10px;
+      margin: 4px 0;
+    }
+    .theme-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #0f172a;
+      border-bottom: 1.3px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 3.5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .theme-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 7px;
+      font-size: 7.4pt;
+      line-height: 1.28;
+    }
+    .theme-card {
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      padding: 5px 7px;
+      border-radius: 2px;
+    }
+    .theme-card strong { font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000; display: block; margin-bottom: 2px; }
 
     .vocab-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.5px 5px;
+      gap: 4.5px 8px;
     }
     .vocab-card {
       border: 1px solid #cbd5e1;
       border-left: 3px solid #0f172a;
-      padding: 2px 4px;
+      padding: 4.8px 8px;
       background: #f8fafc;
-      font-size: 6.2pt;
-      line-height: 1.12;
+      font-size: 7.5pt;
+      line-height: 1.26;
     }
-    .vocab-term { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; }
-    .vocab-phonetic { font-style: italic; color: #64748b; font-size: 5.6pt; }
-    .vocab-def { color: #1e293b; display: block; margin-top: 0.5px; }
+    .vocab-term { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 8.6pt; }
+    .vocab-phonetic { font-style: italic; color: #64748b; font-size: 7.2pt; }
+    .vocab-def { color: #1e293b; font-family: 'Georgia', serif; display: block; margin-top: 1.5px; }
 
-    /* Page 20: Back Cover Strategy */
+    /* Page 20: Back Cover Strategy Styles */
     .strategy-card {
-      border: 1.5px solid #0f172a;
+      border: 1.4px solid #0f172a;
       border-radius: 2px;
-      padding: 3.5px 6px;
+      padding: 8px 12px;
       background: #ffffff;
-      margin-bottom: 3px;
+      margin-bottom: 6px;
     }
     .strat-header {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 9.0pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
-      border-bottom: 1.2px solid #0f172a;
-      padding-bottom: 1px;
-      margin-bottom: 1.5px;
+      border-bottom: 1.4px solid #0f172a;
+      padding-bottom: 3px;
+      margin-bottom: 5px;
       display: flex;
       justify-content: space-between;
+      letter-spacing: 0.3px;
     }
-    .strat-body { font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.18; color: #111111; }
+    .strat-badge {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 2px;
+      font-size: 7.5pt;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+    }
+    .strat-steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 9px;
+      margin-bottom: 5px;
+    }
+    .strat-step-box {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      padding: 6px 8px;
+      border-radius: 2px;
+      font-size: 7.7pt;
+      line-height: 1.34;
+    }
+    .strat-step-box strong {
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 2.5px;
+      font-size: 8.0pt;
+    }
+    .strat-model-callout {
+      background: #fdfbf7;
+      border: 1px solid #e2e8f0;
+      border-left: 3.5px solid #0f172a;
+      padding: 7px 10px;
+      font-family: 'Georgia', serif;
+      font-size: 8.0pt;
+      line-height: 1.42;
+      color: #0f172a;
+      margin-top: 4px;
+    }
+    .strat-model-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: 7.8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: #0f172a;
+      margin-bottom: 3px;
+      display: block;
+    }
+    .strat-warning-tag {
+      display: inline-block;
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #f87171;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      padding: 2px 5px;
+      border-radius: 2px;
+    }
+    .warnings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5px 9px;
+    }
+    .warning-node {
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #991b1b;
+      background: #fffafa;
+      padding: 6px 8px;
+      font-size: 7.7pt;
+      line-height: 1.32;
+    }
+    .warning-node strong {
+      font-family: 'Inter', sans-serif;
+      color: #991b1b;
+      font-size: 8.0pt;
+    }
     .archival-seal-block {
       border: 2px solid #000000;
-      padding: 3.5px 8px;
+      padding: 10px 16px;
       text-align: center;
       background: #fafafa;
-      margin-top: 2.5px;
+      margin-top: 6px;
     }
 
     /* Commercial School Brand Customizer */
@@ -945,8 +1190,8 @@ function buildHtml(curatedLessons) {
       <div class="cover-title-box">
         <h1 class="cover-main-title">CONFLICT IN THE MIDDLE EAST, 1945–1995</h1>
         <div class="cover-sub-title">20-Page A4 Knowledge Retrieval & Formative Homework Companion</div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; font-style: italic; color: #444; margin-top: 2px;">
-          Exhaustive Dual-Tier Retrieval: Core Facts &bull; Causal Explanations &bull; Grade 9 Specification Mastery
+        <div style="font-family: 'Georgia', serif; font-size: 8.8pt; font-style: italic; color: #334155; margin-top: 4px;">
+          Exhaustive Dual-Tier Retrieval: Core Facts &bull; Causal Mechanisms &bull; Grade 9 Specification Mastery
         </div>
       </div>
 
@@ -954,18 +1199,27 @@ function buildHtml(curatedLessons) {
         <div class="scholar-field"><strong>Scholar:</strong><div class="field-line"></div></div>
         <div class="scholar-field"><strong>Class / Group:</strong><div class="field-line"></div></div>
         <div class="scholar-field"><strong>Teacher:</strong><div class="field-line"></div></div>
+        <div class="scholar-field"><strong>Target:</strong><div class="field-line"></div></div>
+        <div class="scholar-field"><strong>Working At:</strong><div class="field-line"></div></div>
+      </div>
+
+      <!-- Specification Architecture Strip -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 7px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-align: center;">
+        <div style="background: #0f172a; color: #fff; padding: 5px 8px; border-radius: 2px;">KT 1: Early Conflict (1945–56) &bull; L1–L4</div>
+        <div style="background: #0f172a; color: #fff; padding: 5px 8px; border-radius: 2px;">KT 2: War & Escalation (1956–73) &bull; L5–L9</div>
+        <div style="background: #0f172a; color: #fff; padding: 5px 8px; border-radius: 2px;">KT 3: Search for Peace (1974–95) &bull; L10–L12</div>
       </div>
 
       <!-- 12-Week Homework Tracker -->
       <table class="hw-ledger-table">
         <thead>
           <tr>
-            <th style="width: 24px;">Wk</th>
+            <th style="width: 32px;">Wk</th>
             <th>Specification Lesson & Topic Focus</th>
-            <th style="width: 58px;">1st Score</th>
-            <th style="width: 58px;">2nd Score</th>
-            <th style="width: 145px;">Retrieval Strength (Metacognition)</th>
-            <th style="width: 80px;">Staff Sign</th>
+            <th style="width: 74px;">1st Score</th>
+            <th style="width: 74px;">2nd Score</th>
+            <th style="width: 195px;">Retrieval Strength (Metacognition)</th>
+            <th style="width: 90px;">Staff Sign</th>
           </tr>
         </thead>
         <tbody>
@@ -974,10 +1228,10 @@ function buildHtml(curatedLessons) {
           <tr>
             <td style="text-align: center; font-weight: 800;">${idx + 1}</td>
             <td><strong>KT ${idx < 4 ? '1.' + idx : idx < 9 ? '2.' + (idx - 4) : '3.' + (idx - 9)}:</strong> ${h.title}</td>
-            <td style="text-align: center;">___ / 12</td>
-            <td style="text-align: center;">___ / 12</td>
+            <td style="text-align: center; font-weight: 700;">___ / 12</td>
+            <td style="text-align: center; font-weight: 700;">___ / 12</td>
             <td>[ &nbsp; ] Instant &nbsp; [ &nbsp; ] Effortful &nbsp; [ &nbsp; ] Restudy</td>
-            <td style="text-align: center;">________</td>
+            <td style="text-align: center;">__________</td>
           </tr>
           `,
           ).join('')}
@@ -986,16 +1240,25 @@ function buildHtml(curatedLessons) {
 
       <!-- Traffic Light Box -->
       <div class="traffic-tier-box">
-        <span>🟢 <strong>Green (10–12/12):</strong> Secure Core Recall</span>
-        <span>🟡 <strong>Amber (7–9/12):</strong> Green-Pen DIRT Review</span>
-        <span>🔴 <strong>Red (0–6/12):</strong> Flashcard Restudy & Mandatory Re-attempt</span>
+        <span>🟢 <strong>Green (10–12/12):</strong> Secure Core Recall &bull; Advance to Exam Strategy</span>
+        <span>🟡 <strong>Amber (7–9/12):</strong> Effortful &bull; Green-Pen DIRT Review</span>
+        <span>🔴 <strong>Red (0–6/12):</strong> Knowledge Gap &bull; Flashcard Restudy & Mandatory Re-attempt</span>
+      </div>
+
+      <!-- Metacognitive Retrieval Practice & DIRT Review Guide -->
+      <div class="cover-protocol-box">
+        <div style="font-weight: 900; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.3px;">The Spaced Retrieval & Green-Pen DIRT Protocol:</div>
+        <div>&bull; <strong>1. Pure Recall Practice (10 Mins):</strong> Complete each weekly 12-question quiz strictly from memory without textbook or revision notes.</div>
+        <div>&bull; <strong>2. Immediate DIRT Review:</strong> Turn to the <em>Department Marking Bank</em> (pages 15–18) and self-mark in green pen. Write out the full historical explanation for any incorrect answer.</div>
+        <div>&bull; <strong>3. 7-Day Spaced Re-test:</strong> Re-attempt the 12 questions one week later. Record your 2nd score to verify retention into long-term memory.</div>
+        <div>&bull; <strong>4. Interleaved Digital Quizzing:</strong> Scan the QR code below for daily Leitner flashcard practice before end-of-topic GCSE assessments.</div>
       </div>
 
       <!-- QR & Portal Banner -->
-      <div style="display: flex; gap: 8px; align-items: center; border: 1.2px solid #0f172a; padding: 3px 6px; border-radius: 2px; background: #ffffff;">
-        <div style="width: 32px; height: 32px; flex-shrink: 0;">${qrSvg}</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.18; color: #1e293b; flex: 1;">
-          <strong>Interactive Quizzing & Digital Flashcards:</strong> Scan this QR code or access the Department Portal to practice all 240 questions interactively with instant Leitner spaced repetition.
+      <div style="display: flex; gap: 12px; align-items: center; border: 1.3px solid #0f172a; padding: 7px 12px; border-radius: 2px; background: #ffffff;">
+        <div style="width: 52px; height: 52px; flex-shrink: 0;">${qrSvg}</div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.34; color: #1e293b; flex: 1;">
+          <strong>Interactive Leitner Quizzing & Digital Flashcards:</strong> Scan this QR code or access the Department Portal to practice all 144 questions interactively with automated spaced repetition, immediate explanations, and exam-level timing.
         </div>
       </div>
 
@@ -1041,89 +1304,11 @@ function buildHtml(curatedLessons) {
   `;
 
   // ========================================================================
-  // PAGE 3: LESSON 1 — THE 1945 BASELINE & IMPERIAL ROOTS (SLIMMED DOWN)
+  // PAGES 3 TO 14: LESSONS 1 TO 12 (100% UNIFORM RETRIEVAL COMPANIONS)
   // ========================================================================
-  const l1Data = curatedLessons[0];
-  html += `
-  <div class="page-container" id="page-3">
-    <div class="page-body-full">
-      <div class="running-header">
-        <span>KT 1.0 &bull; LESSON 1 RETRIEVAL: THE 1945 BASELINE & IMPERIAL ROOTS</span>
-        <span>FOUNDATION ANCHOR QUESTIONS</span>
-      </div>
-
-      <div class="lesson-meta-bar">
-        <h2 class="lesson-meta-title">${l1Data.cfg.title}</h2>
-        <div class="lesson-meta-enquiry">Enquiry Question: ${l1Data.cfg.enquiry}</div>
-      </div>
-
-      <div style="display: flex; flex-direction: column; gap: 2px;">
-        <div class="tier-header-strip">Specification Anchor Questions: Pre-1945 Causal Legacies (6 Critical Benchmarks)</div>
-        ${l1Data.questions
-          .map(
-            (q, qIdx) => `
-        <div class="q-block">
-          <div class="q-header">
-            <div class="q-prompt-wrap">
-              <span class="q-num">${qIdx + 1}.</span>
-              <span class="q-prompt">${q.q}</span>
-            </div>
-            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Core Fact:</span>
-            <div class="q-solid-line"></div>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">The Explanation:</span>
-            <div class="q-solid-line"></div>
-          </div>
-        </div>
-        `,
-          )
-          .join('')}
-      </div>
-
-      <!-- 1945 Strategic Baseline Actor Matrix -->
-      <div class="matrix-box">
-        <div class="matrix-header">
-          <span>The 1945 Geopolitical Baseline: Conflicting Factions & Strategic Positions</span>
-          <span>Post-WWII Crisis</span>
-        </div>
-        <div class="matrix-grid">
-          <div class="matrix-card">
-            <strong>1. The British Mandate Administration</strong>
-            Exhausted economically after WWII; committed to 1939 White Paper immigration caps to placate Arab states; caught in military crossfire between underground Jewish insurgent groups and Arab resistance.
-          </div>
-          <div class="matrix-card">
-            <strong>2. The Yishuv & Jewish Agency (David Ben-Gurion)</strong>
-            Demanded immediate immigration of 100,000 Holocaust survivors from European Displaced Persons camps; backed united resistance (Haganah, Irgun, Lehi) to force Britain out of Palestine.
-          </div>
-          <div class="matrix-card">
-            <strong>3. Palestinian Arabs & The Arab League (1945)</strong>
-            Formed 2:1 majority in Palestine (1.2m Arabs vs 600,000 Jews); demanded immediate independence based on majority rule; rejected partition and any continued Zionist immigration as imperial dispossession.
-          </div>
-          <div class="matrix-card">
-            <strong>4. The United States & United Nations</strong>
-            President Harry S. Truman pressured Attlee to open gates to survivors; in Feb 1947, Britain referred the Mandate to the newly founded UN, triggering the UNSCOP partition investigation.
-          </div>
-        </div>
-      </div>
-
-      <div class="page-footer-strip">
-        <span class="footer-page-num">3/20</span>
-        <span class="footer-quip">${APPROVED_FOOTERS[2]}</span>
-      </div>
-    </div>
-  </div>
-  `;
-
-  // ========================================================================
-  // PAGES 4 TO 14: LESSONS 2 TO 12 (THE 11 CORE SPECIFICATION LESSONS)
-  // ========================================================================
-  for (let pIdx = 1; pIdx < 12; pIdx++) {
+  for (let pIdx = 0; pIdx < 12; pIdx++) {
     const lData = curatedLessons[pIdx];
-    const pageNum = pIdx + 3; // Pages 4 to 14
+    const pageNum = pIdx + 3; // Pages 3 to 14
 
     html += `
   <div class="page-container" id="page-${pageNum}">
@@ -1231,7 +1416,7 @@ function buildHtml(curatedLessons) {
   }
 
   // ========================================================================
-  // PAGES 15 TO 18: DEPARTMENT MARKING BANK (3 LESSONS PER PAGE)
+  // PAGES 15 TO 18: DEPARTMENT MARKING BANK (UNIFORM 3-COLUMN ARCHITECTURE)
   // ========================================================================
   const mbPageGroups = [
     { page: 15, title: 'Key Topic 1 (Lessons 1 to 3)', lessons: [0, 1, 2] },
@@ -1249,23 +1434,23 @@ function buildHtml(curatedLessons) {
         <span>SELF-ASSESSMENT &bull; DIRT GREEN-PEN LOOP</span>
       </div>
 
-      <div class="mb-grid">
+      <div class="mb-grid-3col">
         ${grp.lessons
           .map((lIdx) => {
             const lData = curatedLessons[lIdx];
             return `
-          <div class="mb-lesson-col" style="${grp.lessons.indexOf(lIdx) === 2 ? 'grid-column: 1 / -1;' : ''}">
-            <div class="mb-lesson-title">Lesson ${lIdx + 1}: ${lData.cfg.title} (${lData.questions.length} Qs)</div>
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson ${lIdx + 1}: ${lData.cfg.title}</div>
             ${lData.questions
               .map(
                 (q, qIdx) => `
             <div class="ans-card">
-              <span class="ans-num">${qIdx + 1}.</span>
-              <div class="ans-body">
-                <span class="ans-core">${q.a}</span> —
-                <span class="ans-exp">${q.exp}</span>
+              <div class="ans-header">
+                <span class="ans-num">${qIdx + 1}.</span>
+                <span class="ans-core">${q.a}</span>
+                <span class="ans-check">[✓] [✗]</span>
               </div>
-              <span class="ans-check">[ ✓ ] [ ✗ ]</span>
+              <div class="ans-exp">${q.exp}</div>
             </div>
             `,
               )
@@ -1293,11 +1478,11 @@ function buildHtml(curatedLessons) {
     <div class="page-body-full">
       <div class="running-header">
         <span>EDEXCEL PAPER 2 &bull; KEY PROTAGONISTS GALLERY & TIER 3 DISCIPLINARY VOCABULARY</span>
-        <span>EXAMINER BIOGRAPHICAL MASTERY</span>
+        <span>EXAMINER BIOGRAPHICAL & LEXICAL MASTERY</span>
       </div>
 
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; border-bottom: 1.5px solid #0f172a; padding-bottom: 1px; margin-bottom: 2px;">
-        Key Historical Protagonists: 8 Pivotal Decision-Makers (1945–1995)
+      <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px;">
+        Key Historical Protagonists: 12 Pivotal Decision-Makers (1945–1995)
       </div>
 
       <div class="proto-grid">
@@ -1306,7 +1491,7 @@ function buildHtml(curatedLessons) {
         <div class="proto-card">
           <img src="${p.img}" class="proto-img" alt="${p.name}">
           <div class="proto-info">
-            <span class="proto-name">${p.name} <em style="font-size: 6pt; color: #555;">(${p.dates})</em></span>
+            <span class="proto-name">${p.name} <em style="font-size: 6.8pt; color: #475569; font-weight: 600;">(${p.dates})</em></span>
             <span class="proto-role">${p.role}</span>
             <div class="proto-dec">${p.decision}</div>
           </div>
@@ -1315,7 +1500,29 @@ function buildHtml(curatedLessons) {
         ).join('')}
       </div>
 
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; border-bottom: 1.5px solid #0f172a; padding-bottom: 1px; margin: 3px 0 2px 0;">
+      <!-- Core Specification Themes Synthesis Strip -->
+      <div class="theme-synthesis-bar">
+        <div class="theme-header">
+          <span>Three Overarching Specification Themes Across 50 Years of Conflict (1945–1995)</span>
+          <span>Grade 9 Synoptic Links</span>
+        </div>
+        <div class="theme-grid">
+          <div class="theme-card">
+            <strong>1. Superpower Proxy Dynamics:</strong>
+            US financial and military aid to Israel vs Soviet advanced weaponry to Egypt and Syria turned regional disputes into Cold War flashpoints, directly shaping the 1956, 1967, and 1973 wars.
+          </div>
+          <div class="theme-card">
+            <strong>2. The "Land for Peace" Principle:</strong>
+            UN Resolution 242 established the core diplomatic trade-off: returning conquered lands (Sinai, Golan, West Bank) for diplomatic recognition, achieving peace with Egypt (1979) and Jordan (1994).
+          </div>
+          <div class="theme-card">
+            <strong>3. State Wars to Asymmetric Struggle:</strong>
+            The shift from conventional multi-state tank wars (1948–73) to asymmetric guerrilla resistance, PLO hijacking, Lebanese proxy warfare (1982), and the grassroots civil uprising of the Intifada (1987).
+          </div>
+        </div>
+      </div>
+
+      <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin: 3.5px 0 3px 0;">
         Tier 3 Academic & Disciplinary Vocabulary (High-Yield Examiner Lexicon)
       </div>
 
@@ -1351,48 +1558,132 @@ function buildHtml(curatedLessons) {
         <span class="school-brand-target">The History Department</span> &bull; Edexcel GCSE Paper 2 Examination Strategy
       </div>
 
+      <!-- Question 1 Architecture -->
       <div class="strategy-card">
         <div class="strat-header">
-          <span>Question 1: Explain One Consequence [4 marks &bull; 5 Minutes]</span>
-          <span>The P-F-C High-Yield Formula</span>
+          <span>Question 1: Explain One Consequence [4 Marks &bull; ~5 Minutes]</span>
+          <span class="strat-badge">The P-F-C High-Yield Formula (AO1 + AO2)</span>
         </div>
-        <div class="strat-body">
-          <strong>Point (1 Sentence):</strong> Directly state one clear consequence of the named event.<br>
-          <strong>Fact (1–2 Sentences):</strong> Support with precise historical evidence (dates, casualty numbers, treaty names, key individuals).<br>
-          <strong>Consequence Link (1 Sentence):</strong> Explain the exact causal mechanism of how this altered relations, triggered retaliation, or transformed the balance of power.
+        <div class="strat-steps-grid">
+          <div class="strat-step-box">
+            <strong>1. Point (Direct Consequence):</strong> Directly identify ONE clear, valid consequence of the named event. (AO2 &bull; 2 marks). Never state two consequences.
+          </div>
+          <div class="strat-step-box">
+            <strong>2. Historical Fact (AO1 Evidence):</strong> Support with precise dates, numbers, weapon types, or named leaders to prove historical recall. (AO1 &bull; 2 marks).
+          </div>
+          <div class="strat-step-box">
+            <strong>3. Causal Impact (Mechanism):</strong> Explain how this consequence altered the balance of power, provoked retaliation, or shifted superpower relations.
+          </div>
+        </div>
+        <div class="strat-model-callout">
+          <span class="strat-model-title">Grade 9 Model Exemplar &bull; Consequence of the 1955 Czech Arms Deal:</span>
+          <strong>[Point]</strong> One consequence of the September 1955 Czech Arms Deal was that it shattered the Western arms monopoly in the Middle East and brought Cold War superpower rivalry directly into the Arab-Israeli conflict. 
+          <strong>[Fact]</strong> Nasser bypassed the Western 1950 Tripartite Declaration embargo by securing $250m worth of modern Soviet-bloc weaponry via Czechoslovakia, including 200 MiG-15 jet fighters, 300 T-34 tanks, and 200 APCs. 
+          <strong>[Causal Link]</strong> Consequently, this tipped the regional balance of power against Israel, alarmed the United States into cancelling funding for the Aswan High Dam in July 1956, and directly precipitated Nasser's nationalisation of the Suez Canal, triggering the 1956 Suez Crisis.
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 3px;">
+          <span class="strat-warning-tag">&bull; Examiner Trap: Edexcel specification requires ONE consequence only. Writing two wastes 5 minutes.</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569; font-weight: 700;">Aim for 1 dense, tightly structured P-F-C paragraph</span>
         </div>
       </div>
 
+      <!-- Question 2 Architecture -->
       <div class="strategy-card">
         <div class="strat-header">
-          <span>Question 2: Narrative Account [8 marks &bull; 12 Minutes]</span>
-          <span>The 3-Phase Chronological Planning Strip</span>
+          <span>Question 2: Write a Narrative Account [8 Marks &bull; ~12–14 Minutes]</span>
+          <span class="strat-badge">The 3-Phase Chronological Framework (AO1 + AO2)</span>
         </div>
-        <div class="strat-body">
-          <strong>Phase 1: Catalyst & Origin:</strong> Establish the initial trigger, underlying grievances, and early escalation.<br>
-          <strong>Phase 2: Turning Point & Escalation:</strong> Explain the crucial military, diplomatic, or political development linking Phase 1 to Phase 3.<br>
-          <strong>Phase 3: Direct Outcome & Deadlock:</strong> Explain the final consequence, treaty, or geopolitical transformation.<br>
-          <em>Examiner Rule:</em> Every paragraph must use causal connectives (<em>"Consequently", "In direct response to", "This culminated in"</em>) to secure Level 4.
+        <div class="strat-steps-grid">
+          <div class="strat-step-box">
+            <strong>Phase 1: Catalyst & Preconditions:</strong> Establish the origin, underlying grievances, and immediate crisis trigger (AO1 knowledge).
+          </div>
+          <div class="strat-step-box">
+            <strong>Phase 2: Turning Point & Escalation:</strong> Explain the crucial military or political development that links Phase 1 directly to Phase 3.
+          </div>
+          <div class="strat-step-box">
+            <strong>Phase 3: Outcome & Aftermath:</strong> Explain the direct result, peace settlement, territorial change, or geopolitical deadlock.
+          </div>
+        </div>
+        <div class="strat-model-callout">
+          <span class="strat-model-title">Grade 9 Model Plan &bull; Narrative Account of the Outbreak of the Six-Day War (1967):</span>
+          <strong>[Phase 1: Catalyst]</strong> In early May 1967, false Soviet intelligence reports of Israeli troop build-ups on Syria's border prompted President Nasser to deploy 100,000 Egyptian troops into the Sinai and expel UNEF peacekeepers. 
+          <strong>[Phase 2: Escalation & Causal Link]</strong> <em>In direct response to this escalation</em>, on 22 May Nasser blockaded the Straits of Tiran—which Israel had repeatedly declared an explicit act of war (casus belli)—and signed a mutual defence pact with King Hussein of Jordan, completing the military encirclement of Israel. 
+          <strong>[Phase 3: Outcome]</strong> <em>Precipitated by this imminent threat</em>, Israel launched pre-emptive air blitz Operation Focus on 5 June, destroying over 300 Arab aircraft on runways within three hours and conquering the Sinai, West Bank, and Golan Heights.
+        </div>
+        <div style="margin-top: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; background: #e0f2fe; border: 1px solid #7dd3fc; padding: 2.5px 6px; border-radius: 2px;">
+          <strong>Essential Causal Connectives Bank:</strong> <em>Consequently... &bull; In direct response to... &bull; This culminated in... &bull; As an immediate catalyst... &bull; Precipitated by... &bull; Deadlock ensued because... &bull; Crucially, this shifted the balance...</em>
         </div>
       </div>
 
+      <!-- Question 3 Architecture -->
       <div class="strategy-card">
         <div class="strat-header">
-          <span>Question 3: Explain the Importance [8 marks &bull; 12 Minutes]</span>
-          <span>Dual-Aspect Comparative Significance</span>
+          <span>Question 3: Explain the Importance of Two Events [16 Marks (2 &times; 8m) &bull; ~25 Minutes]</span>
+          <span class="strat-badge">Dual-Aspect Significance Grid</span>
         </div>
-        <div class="strat-body">
-          <strong>Aspect 1 (Immediate / Operational):</strong> Explain how the event directly impacted military balances or tactical realities.<br>
-          <strong>Aspect 2 (Long-Term / Geopolitical):</strong> Explain the broader impact on international superpower involvement or peace negotiations.<br>
-          <strong>Sustained Conclusion:</strong> Evaluate which aspect proved more significant in prolonging or resolving the Arab-Israeli deadlock.
+        <div class="strat-steps-grid">
+          <div class="strat-step-box">
+            <strong>Aspect 1 (Tactical / Immediate):</strong> Explain how the event directly shifted battlefield balances, borders, military casualties, or strategic chokepoints.
+          </div>
+          <div class="strat-step-box">
+            <strong>Aspect 2 (Geopolitical / Long-Term):</strong> Explain how the event permanently transformed superpower alliances, peace treaties, or Arab-Israeli relations.
+          </div>
+          <div class="strat-step-box">
+            <strong>Sustained Analytical Conclusion:</strong> Write a comparative judgment weighing whether the immediate tactical or long-term geopolitical legacy proved more consequential.
+          </div>
+        </div>
+        <div class="strat-model-callout">
+          <span class="strat-model-title">Grade 9 Exemplar Architecture &bull; Importance of the 1973 Yom Kippur War for Arab-Israeli Relations:</span>
+          <strong>[Aspect 1: Tactical Shock]</strong> Egypt's Operation Badr breached the Bar-Lev Line with high-pressure water monitors, inflicting 2,600 Israeli deaths and shattering the myth of IDF invincibility established in 1967. 
+          <strong>[Aspect 2: Geopolitical Transformation]</strong> However, the war's greater importance was diplomatic: OPEC's Arab oil embargo proved oil could be weaponized against the West, compelling US Secretary of State Henry Kissinger to initiate "Shuttle Diplomacy." 
+          <strong>[Judgment]</strong> Ultimately, by restoring Arab military pride, the war convinced both Sadat and Begin that military victory was impossible, acting as the indispensable catalyst for the 1978 Camp David Accords.
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 3px;">
+          <span class="strat-warning-tag">&bull; Choice Protocol: The exam paper offers 3 options. Answer on TWO options only (spend ~12 minutes each).</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569; font-weight: 700;">Structure: Aspect 1 (Tactical) &rarr; Aspect 2 (Geopolitical) &rarr; Evaluative Verdict</span>
         </div>
       </div>
 
+      <!-- Top 8 Distinction Traps -->
+      <div class="strategy-card" style="margin-bottom: 3px;">
+        <div class="strat-header">
+          <span>Edexcel Paper 2 Distinction Traps &bull; Top 8 Examiner Warnings</span>
+          <span class="strat-badge">Grade 9 Precision & Historical Distinctions</span>
+        </div>
+        <div class="warnings-grid">
+          <div class="warning-node">
+            <strong>1. 1956 Suez vs 1967 Six-Day War:</strong> 1956 was Anglo-French collusion to seize the canal; 1967 was an Israeli pre-emptive strike provoked by the Straits of Tiran closure.
+          </div>
+          <div class="warning-node">
+            <strong>2. UN Res 181 vs UN Res 242:</strong> Res 181 (1947) was the Partition Plan; Res 242 (1967) was "Land for Peace" (the British draft omitted "the" before territories).
+          </div>
+          <div class="warning-node">
+            <strong>3. Question 1 Consequence (4m Only):</strong> Edexcel specification requires ONE consequence only. Writing two wastes 5 minutes with zero extra marks.
+          </div>
+          <div class="warning-node">
+            <strong>4. King David Hotel Bombing (1946):</strong> Executed by Menachem Begin's Irgun militia, NOT by the mainstream Haganah or David Ben-Gurion.
+          </div>
+          <div class="warning-node">
+            <strong>5. Camp David (1978) vs Washington (1979):</strong> Camp David was the negotiation framework; the formal peace treaty was the Treaty of Washington (1979).
+          </div>
+          <div class="warning-node">
+            <strong>6. Black September (1970) Location:</strong> King Hussein crushed and expelled PLO guerrillas to Lebanon and Syria, NOT to Gaza or the West Bank.
+          </div>
+          <div class="warning-node">
+            <strong>7. 1956 vs 1967 Sinai Outcomes:</strong> In 1956 Israel seized Sinai but withdrew under US financial pressure; in 1967 Israel occupied Sinai until the 1979 treaty.
+          </div>
+          <div class="warning-node">
+            <strong>8. The Bar-Lev Line (1973):</strong> Israel's fortified sand-rampart along Suez was breached by Egyptian high-pressure water monitors, not conventional artillery.
+          </div>
+        </div>
+      </div>
+
+      <!-- Archival Seal & Publishing Imprint -->
       <div class="archival-seal-block">
-        <div style="font-family: 'Playfair Display', serif; font-size: 10pt; font-weight: 900; letter-spacing: 1px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 11pt; font-weight: 900; letter-spacing: 1.2px; text-transform: uppercase;">
           THE HISTORY DEPARTMENT &bull; REVISION ARCHIVE
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 6.8pt; font-style: italic; color: #444; margin-top: 1.5px;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 2px;">
           Published for Full-Course Academic Revision & Formative Homework Tracking &bull; Pearson Edexcel Specification 1HI0/2B
         </div>
       </div>
@@ -1416,7 +1707,9 @@ function buildHtml(curatedLessons) {
 async function compilePdf() {
   console.log('🚀 Loading master curriculum questions from data.js...');
   const curatedLessons = loadCuratedQuestions();
-  console.log(`✅ Loaded ${curatedLessons.length} lessons with 138 total curated questions.`);
+  console.log(
+    `✅ Loaded ${curatedLessons.length} lessons with 144 total curated questions (12 Qs per lesson).`,
+  );
 
   const html = buildHtml(curatedLessons);
   const publicHtml = path.join(
