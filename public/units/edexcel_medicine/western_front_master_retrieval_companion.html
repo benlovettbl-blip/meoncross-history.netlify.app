@@ -1,0 +1,3409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The British Sector of the Western Front, 1914–1918: Master Knowledge Retrieval & Historic Environment Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  <style>
+    *, *:before, *:after { box-sizing: border-box; }
+    @page {
+      size: A4 portrait;
+      margin: 6mm 8mm 5mm 8mm;
+    }
+    body {
+      font-family: 'Georgia', 'Garamond', serif;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .page-container {
+      width: 100%;
+      height: 1081px;
+      max-height: 1081px;
+      page-break-after: always;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-sizing: border-box;
+      background: #ffffff;
+    }
+    .page-container:last-child {
+      page-break-after: avoid;
+    }
+
+    .page-body-full {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .running-header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 2.5px;
+      margin-bottom: 3.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #0f172a;
+    }
+
+    .page-footer-strip {
+      border-top: 1.5px solid #0f172a;
+      padding-top: 2.5px;
+      margin-top: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      color: #334155;
+    }
+    .footer-quip { font-family: 'Georgia', serif; font-style: italic; color: #1e293b; }
+    .footer-page-num { font-weight: 900; font-size: 7.5pt; color: #000000; }
+
+    /* FRONT COVER STYLES */
+    .cover-top-box {
+      border: 1.5px solid #0f172a;
+      padding: 7px 10px;
+      background: #ffffff;
+      border-radius: 2px;
+      margin-bottom: 5px;
+    }
+    .cover-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 3px;
+    }
+    .cover-badge {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 900;
+      padding: 2px 7px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .cover-dept-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .cover-main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 15.5pt;
+      font-weight: 900;
+      line-height: 1.15;
+      color: #000000;
+      margin: 3px 0 2px 0;
+      text-align: center;
+    }
+    .cover-sub-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.6pt;
+      font-weight: 700;
+      color: #334155;
+      text-align: center;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+
+    .pupil-meta-strip {
+      border: 1.2px solid #0f172a;
+      background: #f8fafc;
+      padding: 5px 10px;
+      border-radius: 2px;
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1.2fr;
+      gap: 12px;
+      align-items: flex-end;
+      margin-bottom: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.4pt;
+      font-weight: 700;
+    }
+    .pupil-field {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+    }
+    .pupil-field-lbl {
+      color: #0f172a;
+      white-space: nowrap;
+      font-weight: 800;
+    }
+    .pupil-line {
+      flex: 1;
+      border-bottom: 1.4px solid #000000;
+      height: 6.8mm;
+    }
+
+    .tracker-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      margin-bottom: 5px;
+    }
+    .tracker-table th, .tracker-table td {
+      border: 1.2px solid #0f172a;
+      padding: 4px 6px;
+    }
+    .tracker-table th {
+      background: #0f172a;
+      color: #ffffff;
+      font-weight: 800;
+      text-align: left;
+      font-size: 7.6pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .tracker-table tr:nth-child(even) { background: #f8fafc; }
+
+    .traffic-tier-box {
+      border: 1.3px solid #0f172a;
+      background: #f1f5f9;
+      border-radius: 2px;
+      padding: 5px 9px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.1pt;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .cover-protocol-box {
+      border: 1.3px solid #0f172a;
+      border-left: 5px solid #0f172a;
+      border-radius: 2px;
+      padding: 8px 12px;
+      background: #ffffff;
+      margin-bottom: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      line-height: 1.42;
+      color: #1e293b;
+    }
+
+    /* Page 2: Inside Front Cover Layout */
+    .p2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      flex: 1;
+      margin: 2px 0;
+    }
+    .col-card {
+      border: 1.3px solid #0f172a;
+      border-radius: 2px;
+      background: #ffffff;
+      padding: 6px 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .col-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.4pt;
+      font-weight: 900;
+      color: #ffffff;
+      background: #0f172a;
+      padding: 3px 6px;
+      border-radius: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+    .timeline-node {
+      border-left: 2.8px solid #0f172a;
+      padding-left: 5px;
+      margin-bottom: 3.5px;
+      line-height: 1.18;
+    }
+    .t-year { font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000; }
+    .t-title { font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; color: #0f172a; margin-left: 3px; }
+    .t-desc { font-family: 'Georgia', serif; font-size: 6.9pt; color: #222; display: block; }
+
+    .stage-card {
+      border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 4px 6px;
+      border-radius: 2px;
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+    .stage-name { font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; color: #0f172a; }
+    .stage-meta { font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 700; color: #475569; display: block; margin-top: 1px; }
+    .stage-desc { font-family: 'Georgia', serif; font-size: 7.1pt; color: #1e293b; margin-top: 2px; }
+
+    /* Lesson Question Pages (Pages 3–8) */
+    .lesson-meta-bar {
+      background: #f8fafc;
+      border-left: 4px solid #0f172a;
+      padding: 3px 8px;
+      margin-bottom: 2px;
+      border-top: 1px solid #cbd5e1;
+      border-right: 1px solid #cbd5e1;
+      border-bottom: 1px solid #cbd5e1;
+    }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
+    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155; margin-top: 1px; }
+
+    .q-block {
+      border: 1.1px solid #94a3b8;
+      border-radius: 2px;
+      padding: 2.8px 6px;
+      margin-bottom: 2.2px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    .q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 5px;
+      line-height: 1.18;
+    }
+    .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; color: #000000; min-width: 16px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 8.6pt; font-weight: 700; color: #000000; line-height: 1.18; }
+    .q-attempt { font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #475569; white-space: nowrap; }
+
+    .q-line-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      margin-top: 0.5px;
+    }
+    .q-line-lbl {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #000000;
+      white-space: nowrap;
+      min-width: 72px;
+    }
+    .q-solid-line {
+      flex: 1;
+      border-bottom: 1.3px solid #000000;
+      height: 6.8mm;
+    }
+
+    /* Pages 9–10: Department Marking Bank */
+    .mb-grid-3col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5.5px;
+      flex: 1;
+      margin-top: 2px;
+      height: 100%;
+    }
+    .mb-lesson-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .mb-lesson-title {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.3pt;
+      font-weight: 800;
+      padding: 2.2px 5px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      border-radius: 1px;
+      margin-bottom: 2px;
+      text-align: center;
+    }
+    .ans-card {
+      border: 1px solid #cbd5e1;
+      border-left: 2.8px solid #0f172a;
+      background: #f8fafc;
+      border-radius: 2px;
+      padding: 2.2px 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      font-size: 7.0pt;
+      line-height: 1.16;
+      margin-bottom: 1.5px;
+    }
+    .ans-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 3px;
+    }
+    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; font-size: 7.4pt; }
+    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.4pt; flex: 1; margin-left: 3px; }
+    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.8pt; line-height: 1.15; }
+
+    /* Page 11: Sources & Follow-Up Blueprint */
+    .source-vault-card {
+      border: 1.3px solid #0f172a;
+      border-radius: 2px;
+      padding: 7px 10px;
+      background: #ffffff;
+      margin-bottom: 6px;
+    }
+    .card-title-bar {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.5pt;
+      font-weight: 900;
+      color: #ffffff;
+      background: #0f172a;
+      padding: 3px 8px;
+      border-radius: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .sources-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 10px;
+      font-size: 7.4pt;
+      line-height: 1.26;
+    }
+    .source-item {
+      border-left: 3px solid #0f172a;
+      padding-left: 6px;
+      background: #f8fafc;
+      padding-top: 3px;
+      padding-bottom: 3px;
+    }
+    .source-item strong { font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000; display: block; }
+
+    .followup-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      margin-top: 4px;
+    }
+    .followup-table th, .followup-table td {
+      border: 1.2px solid #0f172a;
+      padding: 4px 6px;
+      line-height: 1.24;
+    }
+    .followup-table th {
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 7.2pt;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      font-weight: 800;
+    }
+    .followup-table tr:nth-child(even) { background: #f8fafc; }
+
+    /* Page 1: Specification Overview Card */
+    .spec-overview-card {
+      border: 1.3px solid #0f172a;
+      border-radius: 2px;
+      background: #ffffff;
+      margin-bottom: 5px;
+      overflow: hidden;
+    }
+    .spec-overview-title-bar {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      padding: 3.5px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .spec-three-pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      padding: 5px 8px;
+      background: #f8fafc;
+      border-bottom: 1.2px solid #cbd5e1;
+    }
+    .spec-pillar-col {
+      border-left: 2.8px solid #0f172a;
+      padding-left: 5px;
+      line-height: 1.22;
+    }
+    .pillar-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.3pt;
+      font-weight: 900;
+      color: #0f172a;
+      display: block;
+      margin-bottom: 1px;
+      text-transform: uppercase;
+      letter-spacing: 0.2px;
+    }
+    .pillar-text {
+      font-family: 'Georgia', serif;
+      font-size: 7.0pt;
+      color: #1e293b;
+    }
+    .exam-structure-strip {
+      display: grid;
+      grid-template-columns: 1.1fr 1.3fr 1.1fr;
+      gap: 6px;
+      padding: 4px 8px;
+      background: #ffffff;
+      align-items: center;
+    }
+    .exam-q-cell {
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 3px 6px;
+      background: #f1f5f9;
+      line-height: 1.18;
+    }
+    .eq-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 900;
+      color: #0f172a;
+      display: inline-block;
+      margin-right: 4px;
+    }
+    .eq-type {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #000000;
+    }
+    .eq-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      display: block;
+      margin-top: 1px;
+    }
+
+    /* Page 12: Section A Exam Strategy & Exemplar Models */
+    .strategy-card {
+      border: 1.2px solid #0f172a;
+      border-radius: 2px;
+      padding: 5px 8px;
+      background: #ffffff;
+      margin-bottom: 3.5px;
+    }
+    .strat-card-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 900;
+      color: #0f172a;
+      border-bottom: 1.2px solid #0f172a;
+      padding-bottom: 2px;
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .strat-body {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      line-height: 1.25;
+      color: #1e293b;
+    }
+    .model-box {
+      background: #f8fafc;
+      border-left: 3px solid #0f172a;
+      padding: 3px 6px;
+      margin-top: 2px;
+      font-size: 6.9pt;
+      line-height: 1.22;
+      font-family: 'Georgia', serif;
+    }
+    .model-box strong { font-family: 'Inter', sans-serif; }
+    .checklist-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.9pt;
+      line-height: 1.22;
+      background: #f1f5f9;
+      padding: 3.5px 6px;
+      border-radius: 2px;
+      margin-top: 2px;
+    }
+    .check-item {
+      display: flex;
+      gap: 4px;
+      align-items: flex-start;
+    }
+    .check-box-icon {
+      font-weight: 900;
+      color: #0f172a;
+      min-width: 14px;
+    }
+    .distinction-grid-4col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 5px;
+      margin-top: 2px;
+    }
+    .distinction-grid-6col {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4px;
+      margin-top: 2px;
+    }
+    .dist-card {
+      border: 1px solid #cbd5e1;
+      border-top: 2.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 3px 5px;
+      border-radius: 1px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.7pt;
+      line-height: 1.2;
+    }
+    .dist-card strong {
+      display: block;
+      color: #0f172a;
+      font-size: 6.9pt;
+      margin-bottom: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-container" id="page-1">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PEARSON EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1: SECTION A (1HI0/11)</span>
+        <span>HISTORIC ENVIRONMENT RETRIEVAL COMPANION</span>
+      </div>
+
+      <div class="cover-top-box">
+        <div class="cover-badge-row">
+          <span class="cover-badge">Paper 1: Section A Specialist Companion</span>
+          <span class="cover-dept-name" data-department-name="The History Department">
+            <span class="school-brand-target">The History Department</span>
+          </span>
+        </div>
+        <h1 class="cover-main-title">THE BRITISH SECTOR OF THE WESTERN FRONT, 1914–1918</h1>
+        <div class="cover-sub-title">Injuries, Treatment and the Trenches &bull; Core Knowledge, Evacuation Architecture & Exam Strategy</div>
+      </div>
+
+      <!-- Clean Pupil Metadata Strip -->
+      <div class="pupil-meta-strip">
+        <div class="pupil-field">
+          <span class="pupil-field-lbl">Name:</span>
+          <div class="pupil-line"></div>
+        </div>
+        <div class="pupil-field">
+          <span class="pupil-field-lbl">Class / Group:</span>
+          <div class="pupil-line"></div>
+        </div>
+        <div class="pupil-field">
+          <span class="pupil-field-lbl">Teacher:</span>
+          <div class="pupil-line"></div>
+        </div>
+      </div>
+
+      <!-- Edexcel Paper 1: Section A Specification Overview -->
+      <div class="spec-overview-card">
+        <div class="spec-overview-title-bar">
+          <span>Edexcel Historic Environment Specification Overview (1HI0/11)</span>
+          <span>16 Marks &bull; 10% GCSE Weighting</span>
+        </div>
+        <div class="spec-three-pillars">
+          <div class="spec-pillar-col">
+            <span class="pillar-label">1. Theatre of War &amp; Trenches</span>
+            <div class="pillar-text">
+              Key sectors: <strong>Ypres Salient</strong> (Hill 60, Passchendaele mud), <strong>Somme</strong> (chalk soil, July 1916 casualty crisis), <strong>Arras</strong> (chalk caves, underground hospital), <strong>Cambrai</strong> (artillery/tanks, blood depot). Trench layout: front line, support, reserve, communication, saps, and deep dugouts.
+            </div>
+          </div>
+          <div class="spec-pillar-col">
+            <span class="pillar-label">2. Illnesses, Weaponry &amp; Wounds</span>
+            <div class="pillar-text">
+              Environmental conditions: <strong>trench foot</strong> (whale oil, dry socks), <strong>trench fever</strong> (body lice, pyrexia), <strong>shell shock</strong> / NYDN. Weaponry: high-explosive artillery shells, machine gun fire, shrapnel bullets, and soil bacteria (gas gangrene / tetanus). Poison gas: <strong>chlorine, phosgene, mustard gas</strong>.
+            </div>
+          </div>
+          <div class="spec-pillar-col">
+            <span class="pillar-label">3. Evacuation Chain &amp; Innovations</span>
+            <div class="pillar-text">
+              Evacuation chain: <strong>RAP &rarr; ADS/MDS &rarr; CCS &rarr; Base Hospital</strong>. Medical corps: <strong>RAMC &amp; FANY</strong>. Treatment innovations: <strong>Thomas Splint</strong> (femur traction), <strong>Carrel-Dakin method</strong>, <strong>debridement</strong>, mobile X-rays, <strong>blood transfusions</strong> &amp; <strong>Robertson blood depot</strong>, neurosurgery (Cushing), and plastic reconstruction (Gillies).
+            </div>
+          </div>
+        </div>
+
+        <div class="exam-structure-strip">
+          <div class="exam-q-cell">
+            <span class="eq-num">Q1(a) &amp; Q1(b)</span>
+            <span class="eq-type">Feature Questions</span>
+            <span class="eq-meta">2m + 2m = 4 Marks &bull; ~6 Mins</span>
+          </div>
+          <div class="exam-q-cell">
+            <span class="eq-num">Q2(a)</span>
+            <span class="eq-type">Source Utility Enquiry</span>
+            <span class="eq-meta">8 Marks &bull; ~14 Mins</span>
+          </div>
+          <div class="exam-q-cell">
+            <span class="eq-num">Q2(b)</span>
+            <span class="eq-type">4-Step Follow-Up Enquiry</span>
+            <span class="eq-meta">4 Marks &bull; ~5 Mins</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6-Lesson Homework & Spaced Retrieval Tracker -->
+      <table class="tracker-table">
+        <thead>
+          <tr>
+            <th style="width: 7%;">Lesson</th>
+            <th style="width: 41%;">Historic Environment Topic Title</th>
+            <th style="width: 12%; text-align: center;">1st Score (12)</th>
+            <th style="width: 12%; text-align: center;">2nd Score (12)</th>
+            <th style="width: 12%; text-align: center;">3rd Score (12)</th>
+            <th style="width: 16%;">Identified DIRT Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td style="font-weight: 800; text-align: center;">L1</td>
+            <td><strong>The Theatre of War: Geography, Trenches & Key Battles</strong></td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 800; text-align: center;">L2</td>
+            <td><strong>The Trench Environment: Mud, Vermin & Non-Combat Illnesses</strong></td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 800; text-align: center;">L3</td>
+            <td><strong>Battlefield Trauma: High Explosive Shrapnel, Gas Attacks & Infection</strong></td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 800; text-align: center;">L4</td>
+            <td><strong>The Chain of Evacuation: From RAP to Base Hospitals</strong></td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 800; text-align: center;">L5</td>
+            <td><strong>Surgical Breakthroughs: The Thomas Splint, Wound Debridement & X-Rays</strong></td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
+          </tr>
+          
+          <tr>
+            <td style="font-weight: 800; text-align: center;">L6</td>
+            <td><strong>Lifesaving Innovations: Blood Storage, Brain Surgery & Plastic Reconstruction</strong></td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 12</td>
+            <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <!-- 8 Core Disciplinary Terms & Specification Glossary -->
+      <div class="spec-overview-card" style="margin-bottom: 5px;">
+        <div class="spec-overview-title-bar">
+          <span>8 Core Disciplinary Terms &bull; Pearson Edexcel Specification Glossary</span>
+          <span>Historic Environment Precision</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; padding: 4.5px 7px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2;">
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">1. Ypres Salient</strong>
+            Bulge in the line surrounded by Germans on 3 sides; subjected to converging artillery fire and waterlogged Passchendaele mud.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">2. Gas Gangrene</strong>
+            Anaerobic bacterial infection caused by soil bacteria (*Clostridium*) in deep, oxygen-deprived muscle wounds; produced foul gas.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">3. Debridement</strong>
+            Surgical cutting away of dead, infected tissue from jagged shrapnel wounds before stitching, preventing gangrenous spread.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">4. Carrel-Dakin Method</strong>
+            Continuous chemical irrigation using sterilised rubber tubes flushing sodium hypochlorite solution into deep wound pockets.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">5. Thomas Splint</strong>
+            Rigid metal traction splint introduced in 1915; prevented broken femur ends grinding together, lifting survival from 20% to 82%.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">6. Sodium Citrate</strong>
+            Anticoagulant chemical discovered by Richard Lewisohn in 1915, preventing blood clotting and enabling indirect blood storage.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">7. Blood Depot (Cambrai)</strong>
+            World's first blood bank created by Oswald Robertson in 1917, storing Universal Group O blood in iced bottles for rapid transfusions.
+          </div>
+          <div style="border-left: 2px solid #0f172a; padding-left: 4px;">
+            <strong style="color: #0f172a; font-size: 7.0pt; display: block;">8. Triage Protocol</strong>
+            Systematic sorting of casualties at CCS into three groups: walking wounded, urgent surgery cases, and moribund (fatal).
+          </div>
+        </div>
+      </div>
+
+      <!-- Traffic Light Bands -->
+      <div class="traffic-tier-box">
+        <span>🟢 <strong>Green (10–12/12):</strong> Secure Core Recall &bull; Ready for Feature &amp; Source Questions</span>
+        <span>🟡 <strong>Amber (7–9/12):</strong> Effortful &bull; Green-Pen Review</span>
+        <span>🔴 <strong>Red (0–6/12):</strong> Restudy Flashcards &amp; Re-attempt</span>
+      </div>
+
+      <!-- Section A Assessment Standards -->
+      <div class="traffic-tier-box" style="margin-bottom: 5px; background: #ffffff;">
+        <span>🎯 <strong>AO1 (Recall &amp; Detail):</strong> Accurate dates, casualty tallies &amp; medical terminology (traction, debridement, sodium citrate)</span>
+        <span>🔍 <strong>AO3 (Source Interrogation):</strong> Content + Own Context + Provenance (Nature, Origin, Purpose &bull; never "just biased")</span>
+      </div>
+
+      <!-- Spaced Retrieval Protocol -->
+      <div class="cover-protocol-box">
+        <div style="font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.3px;">Spaced Retrieval &amp; Green-Pen Review Protocol:</div>
+        <div>&bull; <strong>1. Pure Recall Practice (10 Mins):</strong> Complete each weekly 12-question quiz from memory without looking at revision notes.</div>
+        <div>&bull; <strong>2. Immediate Green-Pen Review:</strong> Turn to the <em>Department Marking Bank</em> (pages 9–10) and self-mark in green pen. Write out the full historical explanation for any incorrect answer.</div>
+        <div>&bull; <strong>3. 7-Day Spaced Re-test:</strong> Re-attempt the 12 questions one week later. Record your 2nd score to verify retention into long-term memory.</div>
+        <div>&bull; <strong>4. Section A Exam Application:</strong> Use your core factual knowledge to tackle the 2-mark feature questions and 4-mark follow-up enquiries on page 12.</div>
+        <div>&bull; <strong>5. Diagnostic DIRT &amp; Flashcard Logging:</strong> Transfer any missed questions into your personal revision flashcards for daily Leitner box testing.</div>
+      </div>
+
+      <!-- QR & Portal Banner -->
+      <div style="display: flex; gap: 12px; align-items: center; border: 1.3px solid #0f172a; padding: 6px 12px; border-radius: 2px; background: #ffffff;">
+        <div style="width: 50px; height: 50px; flex-shrink: 0;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 37 37" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h37v37H0z"/><path fill="#000000" d="M0,0h1v1h-1z M1,0h1v1h-1z M2,0h1v1h-1z M3,0h1v1h-1z M4,0h1v1h-1z M5,0h1v1h-1z M6,0h1v1h-1z M8,0h1v1h-1z M9,0h1v1h-1z M12,0h1v1h-1z M14,0h1v1h-1z M17,0h1v1h-1z M18,0h1v1h-1z M19,0h1v1h-1z M24,0h1v1h-1z M25,0h1v1h-1z M28,0h1v1h-1z M30,0h1v1h-1z M31,0h1v1h-1z M32,0h1v1h-1z M33,0h1v1h-1z M34,0h1v1h-1z M35,0h1v1h-1z M36,0h1v1h-1z M0,1h1v1h-1z M6,1h1v1h-1z M10,1h1v1h-1z M11,1h1v1h-1z M12,1h1v1h-1z M14,1h1v1h-1z M17,1h1v1h-1z M20,1h1v1h-1z M21,1h1v1h-1z M25,1h1v1h-1z M30,1h1v1h-1z M36,1h1v1h-1z M0,2h1v1h-1z M2,2h1v1h-1z M3,2h1v1h-1z M4,2h1v1h-1z M6,2h1v1h-1z M11,2h1v1h-1z M12,2h1v1h-1z M14,2h1v1h-1z M15,2h1v1h-1z M16,2h1v1h-1z M17,2h1v1h-1z M19,2h1v1h-1z M20,2h1v1h-1z M21,2h1v1h-1z M23,2h1v1h-1z M24,2h1v1h-1z M27,2h1v1h-1z M30,2h1v1h-1z M32,2h1v1h-1z M33,2h1v1h-1z M34,2h1v1h-1z M36,2h1v1h-1z M0,3h1v1h-1z M2,3h1v1h-1z M3,3h1v1h-1z M4,3h1v1h-1z M6,3h1v1h-1z M8,3h1v1h-1z M12,3h1v1h-1z M14,3h1v1h-1z M15,3h1v1h-1z M16,3h1v1h-1z M18,3h1v1h-1z M19,3h1v1h-1z M23,3h1v1h-1z M24,3h1v1h-1z M25,3h1v1h-1z M26,3h1v1h-1z M30,3h1v1h-1z M32,3h1v1h-1z M33,3h1v1h-1z M34,3h1v1h-1z M36,3h1v1h-1z M0,4h1v1h-1z M2,4h1v1h-1z M3,4h1v1h-1z M4,4h1v1h-1z M6,4h1v1h-1z M8,4h1v1h-1z M11,4h1v1h-1z M13,4h1v1h-1z M18,4h1v1h-1z M21,4h1v1h-1z M23,4h1v1h-1z M26,4h1v1h-1z M27,4h1v1h-1z M28,4h1v1h-1z M30,4h1v1h-1z M32,4h1v1h-1z M33,4h1v1h-1z M34,4h1v1h-1z M36,4h1v1h-1z M0,5h1v1h-1z M6,5h1v1h-1z M8,5h1v1h-1z M10,5h1v1h-1z M11,5h1v1h-1z M12,5h1v1h-1z M13,5h1v1h-1z M18,5h1v1h-1z M19,5h1v1h-1z M20,5h1v1h-1z M21,5h1v1h-1z M22,5h1v1h-1z M28,5h1v1h-1z M30,5h1v1h-1z M36,5h1v1h-1z M0,6h1v1h-1z M1,6h1v1h-1z M2,6h1v1h-1z M3,6h1v1h-1z M4,6h1v1h-1z M5,6h1v1h-1z M6,6h1v1h-1z M8,6h1v1h-1z M10,6h1v1h-1z M12,6h1v1h-1z M14,6h1v1h-1z M16,6h1v1h-1z M18,6h1v1h-1z M20,6h1v1h-1z M22,6h1v1h-1z M24,6h1v1h-1z M26,6h1v1h-1z M28,6h1v1h-1z M30,6h1v1h-1z M31,6h1v1h-1z M32,6h1v1h-1z M33,6h1v1h-1z M34,6h1v1h-1z M35,6h1v1h-1z M36,6h1v1h-1z M8,7h1v1h-1z M10,7h1v1h-1z M12,7h1v1h-1z M16,7h1v1h-1z M17,7h1v1h-1z M18,7h1v1h-1z M19,7h1v1h-1z M20,7h1v1h-1z M22,7h1v1h-1z M23,7h1v1h-1z M26,7h1v1h-1z M28,7h1v1h-1z M0,8h1v1h-1z M4,8h1v1h-1z M6,8h1v1h-1z M7,8h1v1h-1z M8,8h1v1h-1z M11,8h1v1h-1z M12,8h1v1h-1z M14,8h1v1h-1z M15,8h1v1h-1z M18,8h1v1h-1z M22,8h1v1h-1z M23,8h1v1h-1z M24,8h1v1h-1z M29,8h1v1h-1z M30,8h1v1h-1z M31,8h1v1h-1z M32,8h1v1h-1z M33,8h1v1h-1z M36,8h1v1h-1z M1,9h1v1h-1z M3,9h1v1h-1z M4,9h1v1h-1z M5,9h1v1h-1z M7,9h1v1h-1z M9,9h1v1h-1z M10,9h1v1h-1z M11,9h1v1h-1z M16,9h1v1h-1z M19,9h1v1h-1z M20,9h1v1h-1z M21,9h1v1h-1z M23,9h1v1h-1z M26,9h1v1h-1z M27,9h1v1h-1z M28,9h1v1h-1z M32,9h1v1h-1z M33,9h1v1h-1z M34,9h1v1h-1z M35,9h1v1h-1z M3,10h1v1h-1z M4,10h1v1h-1z M5,10h1v1h-1z M6,10h1v1h-1z M7,10h1v1h-1z M8,10h1v1h-1z M9,10h1v1h-1z M11,10h1v1h-1z M14,10h1v1h-1z M16,10h1v1h-1z M17,10h1v1h-1z M18,10h1v1h-1z M20,10h1v1h-1z M21,10h1v1h-1z M22,10h1v1h-1z M23,10h1v1h-1z M25,10h1v1h-1z M26,10h1v1h-1z M27,10h1v1h-1z M31,10h1v1h-1z M0,11h1v1h-1z M3,11h1v1h-1z M4,11h1v1h-1z M5,11h1v1h-1z M7,11h1v1h-1z M9,11h1v1h-1z M10,11h1v1h-1z M11,11h1v1h-1z M13,11h1v1h-1z M14,11h1v1h-1z M17,11h1v1h-1z M18,11h1v1h-1z M21,11h1v1h-1z M24,11h1v1h-1z M26,11h1v1h-1z M27,11h1v1h-1z M29,11h1v1h-1z M31,11h1v1h-1z M32,11h1v1h-1z M33,11h1v1h-1z M34,11h1v1h-1z M35,11h1v1h-1z M0,12h1v1h-1z M2,12h1v1h-1z M3,12h1v1h-1z M5,12h1v1h-1z M6,12h1v1h-1z M12,12h1v1h-1z M15,12h1v1h-1z M17,12h1v1h-1z M19,12h1v1h-1z M20,12h1v1h-1z M21,12h1v1h-1z M22,12h1v1h-1z M23,12h1v1h-1z M24,12h1v1h-1z M28,12h1v1h-1z M29,12h1v1h-1z M30,12h1v1h-1z M33,12h1v1h-1z M34,12h1v1h-1z M35,12h1v1h-1z M36,12h1v1h-1z M0,13h1v1h-1z M2,13h1v1h-1z M4,13h1v1h-1z M5,13h1v1h-1z M15,13h1v1h-1z M16,13h1v1h-1z M17,13h1v1h-1z M20,13h1v1h-1z M23,13h1v1h-1z M27,13h1v1h-1z M28,13h1v1h-1z M32,13h1v1h-1z M33,13h1v1h-1z M1,14h1v1h-1z M3,14h1v1h-1z M4,14h1v1h-1z M6,14h1v1h-1z M8,14h1v1h-1z M9,14h1v1h-1z M11,14h1v1h-1z M12,14h1v1h-1z M13,14h1v1h-1z M14,14h1v1h-1z M15,14h1v1h-1z M16,14h1v1h-1z M18,14h1v1h-1z M21,14h1v1h-1z M22,14h1v1h-1z M23,14h1v1h-1z M26,14h1v1h-1z M27,14h1v1h-1z M31,14h1v1h-1z M32,14h1v1h-1z M33,14h1v1h-1z M34,14h1v1h-1z M35,14h1v1h-1z M0,15h1v1h-1z M2,15h1v1h-1z M5,15h1v1h-1z M8,15h1v1h-1z M9,15h1v1h-1z M10,15h1v1h-1z M11,15h1v1h-1z M12,15h1v1h-1z M13,15h1v1h-1z M14,15h1v1h-1z M19,15h1v1h-1z M21,15h1v1h-1z M24,15h1v1h-1z M26,15h1v1h-1z M27,15h1v1h-1z M28,15h1v1h-1z M31,15h1v1h-1z M32,15h1v1h-1z M34,15h1v1h-1z M35,15h1v1h-1z M0,16h1v1h-1z M2,16h1v1h-1z M3,16h1v1h-1z M5,16h1v1h-1z M6,16h1v1h-1z M7,16h1v1h-1z M10,16h1v1h-1z M13,16h1v1h-1z M14,16h1v1h-1z M15,16h1v1h-1z M16,16h1v1h-1z M19,16h1v1h-1z M20,16h1v1h-1z M24,16h1v1h-1z M27,16h1v1h-1z M29,16h1v1h-1z M30,16h1v1h-1z M33,16h1v1h-1z M34,16h1v1h-1z M36,16h1v1h-1z M1,17h1v1h-1z M2,17h1v1h-1z M4,17h1v1h-1z M5,17h1v1h-1z M7,17h1v1h-1z M10,17h1v1h-1z M18,17h1v1h-1z M19,17h1v1h-1z M21,17h1v1h-1z M22,17h1v1h-1z M23,17h1v1h-1z M25,17h1v1h-1z M26,17h1v1h-1z M27,17h1v1h-1z M28,17h1v1h-1z M31,17h1v1h-1z M32,17h1v1h-1z M33,17h1v1h-1z M34,17h1v1h-1z M35,17h1v1h-1z M0,18h1v1h-1z M1,18h1v1h-1z M4,18h1v1h-1z M6,18h1v1h-1z M7,18h1v1h-1z M8,18h1v1h-1z M9,18h1v1h-1z M15,18h1v1h-1z M17,18h1v1h-1z M18,18h1v1h-1z M19,18h1v1h-1z M23,18h1v1h-1z M24,18h1v1h-1z M25,18h1v1h-1z M27,18h1v1h-1z M29,18h1v1h-1z M30,18h1v1h-1z M1,19h1v1h-1z M3,19h1v1h-1z M7,19h1v1h-1z M9,19h1v1h-1z M14,19h1v1h-1z M15,19h1v1h-1z M16,19h1v1h-1z M17,19h1v1h-1z M19,19h1v1h-1z M20,19h1v1h-1z M21,19h1v1h-1z M23,19h1v1h-1z M28,19h1v1h-1z M29,19h1v1h-1z M31,19h1v1h-1z M34,19h1v1h-1z M35,19h1v1h-1z M0,20h1v1h-1z M4,20h1v1h-1z M5,20h1v1h-1z M6,20h1v1h-1z M7,20h1v1h-1z M10,20h1v1h-1z M17,20h1v1h-1z M20,20h1v1h-1z M21,20h1v1h-1z M22,20h1v1h-1z M23,20h1v1h-1z M29,20h1v1h-1z M30,20h1v1h-1z M31,20h1v1h-1z M33,20h1v1h-1z M34,20h1v1h-1z M0,21h1v1h-1z M1,21h1v1h-1z M2,21h1v1h-1z M3,21h1v1h-1z M4,21h1v1h-1z M7,21h1v1h-1z M8,21h1v1h-1z M9,21h1v1h-1z M10,21h1v1h-1z M12,21h1v1h-1z M14,21h1v1h-1z M15,21h1v1h-1z M18,21h1v1h-1z M21,21h1v1h-1z M23,21h1v1h-1z M25,21h1v1h-1z M27,21h1v1h-1z M28,21h1v1h-1z M31,21h1v1h-1z M32,21h1v1h-1z M35,21h1v1h-1z M0,22h1v1h-1z M2,22h1v1h-1z M6,22h1v1h-1z M7,22h1v1h-1z M13,22h1v1h-1z M15,22h1v1h-1z M17,22h1v1h-1z M20,22h1v1h-1z M23,22h1v1h-1z M24,22h1v1h-1z M26,22h1v1h-1z M27,22h1v1h-1z M28,22h1v1h-1z M31,22h1v1h-1z M32,22h1v1h-1z M33,22h1v1h-1z M34,22h1v1h-1z M4,23h1v1h-1z M8,23h1v1h-1z M9,23h1v1h-1z M10,23h1v1h-1z M14,23h1v1h-1z M15,23h1v1h-1z M16,23h1v1h-1z M17,23h1v1h-1z M18,23h1v1h-1z M20,23h1v1h-1z M22,23h1v1h-1z M23,23h1v1h-1z M24,23h1v1h-1z M26,23h1v1h-1z M27,23h1v1h-1z M28,23h1v1h-1z M29,23h1v1h-1z M31,23h1v1h-1z M32,23h1v1h-1z M34,23h1v1h-1z M35,23h1v1h-1z M1,24h1v1h-1z M2,24h1v1h-1z M3,24h1v1h-1z M4,24h1v1h-1z M6,24h1v1h-1z M7,24h1v1h-1z M8,24h1v1h-1z M10,24h1v1h-1z M11,24h1v1h-1z M13,24h1v1h-1z M14,24h1v1h-1z M15,24h1v1h-1z M18,24h1v1h-1z M19,24h1v1h-1z M22,24h1v1h-1z M24,24h1v1h-1z M27,24h1v1h-1z M29,24h1v1h-1z M30,24h1v1h-1z M33,24h1v1h-1z M34,24h1v1h-1z M36,24h1v1h-1z M0,25h1v1h-1z M4,25h1v1h-1z M5,25h1v1h-1z M7,25h1v1h-1z M8,25h1v1h-1z M9,25h1v1h-1z M12,25h1v1h-1z M13,25h1v1h-1z M16,25h1v1h-1z M17,25h1v1h-1z M19,25h1v1h-1z M20,25h1v1h-1z M21,25h1v1h-1z M23,25h1v1h-1z M26,25h1v1h-1z M27,25h1v1h-1z M28,25h1v1h-1z M32,25h1v1h-1z M33,25h1v1h-1z M2,26h1v1h-1z M5,26h1v1h-1z M6,26h1v1h-1z M10,26h1v1h-1z M11,26h1v1h-1z M12,26h1v1h-1z M16,26h1v1h-1z M17,26h1v1h-1z M18,26h1v1h-1z M20,26h1v1h-1z M23,26h1v1h-1z M24,26h1v1h-1z M27,26h1v1h-1z M28,26h1v1h-1z M31,26h1v1h-1z M34,26h1v1h-1z M3,27h1v1h-1z M8,27h1v1h-1z M10,27h1v1h-1z M11,27h1v1h-1z M12,27h1v1h-1z M17,27h1v1h-1z M21,27h1v1h-1z M22,27h1v1h-1z M26,27h1v1h-1z M27,27h1v1h-1z M28,27h1v1h-1z M32,27h1v1h-1z M34,27h1v1h-1z M36,27h1v1h-1z M0,28h1v1h-1z M1,28h1v1h-1z M3,28h1v1h-1z M4,28h1v1h-1z M5,28h1v1h-1z M6,28h1v1h-1z M8,28h1v1h-1z M9,28h1v1h-1z M10,28h1v1h-1z M11,28h1v1h-1z M12,28h1v1h-1z M15,28h1v1h-1z M16,28h1v1h-1z M17,28h1v1h-1z M19,28h1v1h-1z M21,28h1v1h-1z M24,28h1v1h-1z M26,28h1v1h-1z M27,28h1v1h-1z M28,28h1v1h-1z M29,28h1v1h-1z M30,28h1v1h-1z M31,28h1v1h-1z M32,28h1v1h-1z M34,28h1v1h-1z M36,28h1v1h-1z M8,29h1v1h-1z M9,29h1v1h-1z M11,29h1v1h-1z M12,29h1v1h-1z M15,29h1v1h-1z M16,29h1v1h-1z M17,29h1v1h-1z M18,29h1v1h-1z M23,29h1v1h-1z M25,29h1v1h-1z M26,29h1v1h-1z M28,29h1v1h-1z M32,29h1v1h-1z M35,29h1v1h-1z M0,30h1v1h-1z M1,30h1v1h-1z M2,30h1v1h-1z M3,30h1v1h-1z M4,30h1v1h-1z M5,30h1v1h-1z M6,30h1v1h-1z M8,30h1v1h-1z M12,30h1v1h-1z M14,30h1v1h-1z M15,30h1v1h-1z M16,30h1v1h-1z M18,30h1v1h-1z M21,30h1v1h-1z M22,30h1v1h-1z M23,30h1v1h-1z M26,30h1v1h-1z M28,30h1v1h-1z M30,30h1v1h-1z M32,30h1v1h-1z M0,31h1v1h-1z M6,31h1v1h-1z M9,31h1v1h-1z M10,31h1v1h-1z M13,31h1v1h-1z M21,31h1v1h-1z M28,31h1v1h-1z M32,31h1v1h-1z M33,31h1v1h-1z M34,31h1v1h-1z M0,32h1v1h-1z M2,32h1v1h-1z M3,32h1v1h-1z M4,32h1v1h-1z M6,32h1v1h-1z M8,32h1v1h-1z M9,32h1v1h-1z M13,32h1v1h-1z M14,32h1v1h-1z M16,32h1v1h-1z M20,32h1v1h-1z M24,32h1v1h-1z M28,32h1v1h-1z M29,32h1v1h-1z M30,32h1v1h-1z M31,32h1v1h-1z M32,32h1v1h-1z M33,32h1v1h-1z M34,32h1v1h-1z M36,32h1v1h-1z M0,33h1v1h-1z M2,33h1v1h-1z M3,33h1v1h-1z M4,33h1v1h-1z M6,33h1v1h-1z M10,33h1v1h-1z M11,33h1v1h-1z M12,33h1v1h-1z M14,33h1v1h-1z M17,33h1v1h-1z M18,33h1v1h-1z M19,33h1v1h-1z M21,33h1v1h-1z M22,33h1v1h-1z M23,33h1v1h-1z M26,33h1v1h-1z M27,33h1v1h-1z M30,33h1v1h-1z M31,33h1v1h-1z M33,33h1v1h-1z M34,33h1v1h-1z M36,33h1v1h-1z M0,34h1v1h-1z M2,34h1v1h-1z M3,34h1v1h-1z M4,34h1v1h-1z M6,34h1v1h-1z M9,34h1v1h-1z M10,34h1v1h-1z M12,34h1v1h-1z M13,34h1v1h-1z M15,34h1v1h-1z M17,34h1v1h-1z M19,34h1v1h-1z M21,34h1v1h-1z M23,34h1v1h-1z M24,34h1v1h-1z M26,34h1v1h-1z M29,34h1v1h-1z M30,34h1v1h-1z M33,34h1v1h-1z M0,35h1v1h-1z M6,35h1v1h-1z M10,35h1v1h-1z M12,35h1v1h-1z M14,35h1v1h-1z M15,35h1v1h-1z M16,35h1v1h-1z M17,35h1v1h-1z M18,35h1v1h-1z M19,35h1v1h-1z M20,35h1v1h-1z M21,35h1v1h-1z M23,35h1v1h-1z M26,35h1v1h-1z M32,35h1v1h-1z M34,35h1v1h-1z M35,35h1v1h-1z M0,36h1v1h-1z M1,36h1v1h-1z M2,36h1v1h-1z M3,36h1v1h-1z M4,36h1v1h-1z M5,36h1v1h-1z M6,36h1v1h-1z M8,36h1v1h-1z M10,36h1v1h-1z M12,36h1v1h-1z M13,36h1v1h-1z M14,36h1v1h-1z M17,36h1v1h-1z M20,36h1v1h-1z M21,36h1v1h-1z M22,36h1v1h-1z M23,36h1v1h-1z M27,36h1v1h-1z M29,36h1v1h-1z M30,36h1v1h-1z M31,36h1v1h-1z M34,36h1v1h-1z M35,36h1v1h-1z M36,36h1v1h-1z"/></svg></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; line-height: 1.34; color: #1e293b; flex: 1;">
+          <strong>Interactive Leitner Quizzing & Digital Flashcards:</strong> Scan this QR code or access the Department Portal to practice all 72 Western Front questions interactively with automated spaced repetition and exam-level timing.
+        </div>
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">1/12</span>
+        <span class="footer-quip">Western Front Master Retrieval Companion • Edexcel Paper 1 (Section A) • The History Department</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="page-container" id="page-2">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>EDEXCEL PAPER 1: SECTION A &bull; WESTERN FRONT CHRONOLOGY & CHAIN OF EVACUATION</span>
+        <span>KEY TURNING POINTS &bull; SYSTEM ARCHITECTURE</span>
+      </div>
+
+      <div class="p2-grid">
+        <!-- Left: Key Chronology -->
+        <div class="col-card">
+          <div class="col-title">Western Front Chronology & Medical Milestones (1914–1918)</div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+            
+            <div class="timeline-node">
+              <span class="t-year">Oct–Nov 1914</span>:
+              <span class="t-title">First Battle of Ypres</span>
+              <span class="t-desc">BEF stops German advance to Channel ports; salient established; trench warfare begins.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Autumn 1914</span>:
+              <span class="t-title">Anti-Tetanus Serum Issued</span>
+              <span class="t-desc">Routine prophylactic injections administered to all wounded men, preventing fatal lockjaw.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Apr–May 1915</span>:
+              <span class="t-title">Second Battle of Ypres</span>
+              <span class="t-desc">Germans introduce chlorine poison gas; urine-soaked cotton pads used before gas masks.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">April 1915</span>:
+              <span class="t-title">Mining at Hill 60</span>
+              <span class="t-desc">British tunnel deep under German positions in Ypres salient and detonate 5 massive mines.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">July 1915</span>:
+              <span class="t-title">Hypo Helmet Gas Masks</span>
+              <span class="t-desc">First manufactured gas helmets issued; superseded in 1916 by the Small Box Respirator.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Autumn 1915</span>:
+              <span class="t-title">Brodie Helmets Issued</span>
+              <span class="t-desc">Steel helmets with wide brims replace cloth caps, reducing fatal head injuries by 80%.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Dec 1915</span>:
+              <span class="t-title">Thomas Splint Introduced</span>
+              <span class="t-desc">Robert Jones introduces traction splint to France; femur survival rate leaps from 20% to 82%.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">1 July 1916</span>:
+              <span class="t-title">First Day of the Somme</span>
+              <span class="t-desc">British suffer 57,000 casualties in one day; medical evacuation facilities overwhelmed.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">April 1917</span>:
+              <span class="t-title">Battle of Arras & Cave Hospital</span>
+              <span class="t-desc">Underground hospital inside chalk quarries (Thompson’s Cave) treats 700 beds under shelter.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Jul–Nov 1917</span>:
+              <span class="t-title">Third Battle of Ypres (Passchendaele)</span>
+              <span class="t-desc">Constant rain and shelling turn clay into liquid swamp; men and mules drown in mud.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Nov 1917</span>:
+              <span class="t-title">Battle of Cambrai Blood Depot</span>
+              <span class="t-desc">Oswald Hope Robertson creates world’s first blood bank using stored universal Group O blood.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">1917</span>:
+              <span class="t-title">Queen’s Hospital, Sidcup</span>
+              <span class="t-desc">Harold Gillies opens specialist hospital for facial reconstructive surgery and tube pedicle grafts.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">Spring 1918</span>:
+              <span class="t-title">German Spring Offensive</span>
+              <span class="t-desc">Mobile warfare resumes; forward Casualty Clearing Stations forced to evacuate rapidly.</span>
+            </div>
+            
+            <div class="timeline-node">
+              <span class="t-year">11 Nov 1918</span>:
+              <span class="t-title">The Armistice</span>
+              <span class="t-desc">Hostilities cease; over 113,000 RAMC personnel and 240,000 amputees complete wartime service.</span>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Right: 4-Stage Chain of Evacuation -->
+        <div class="col-card">
+          <div class="col-title">The 4-Stage Chain of Evacuation Architecture</div>
+          <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+            
+            <div class="stage-card">
+              <div class="stage-name">1. Regimental Aid Post (RAP)</div>
+              <span class="stage-meta"><strong>Location:</strong> Within 200m of front line &bull; <strong>Personnel:</strong> Regimental Medical Officer & Stretcher-Bearers</span>
+              <div class="stage-desc">Immediate emergency first aid (bandages, tourniquets, morphia). Patched up walking wounded to fight; stabilised serious casualties. No surgery performed.</div>
+            </div>
+            
+            <div class="stage-card">
+              <div class="stage-name">2. Field Ambulance & Dressing Stations (ADS / MDS)</div>
+              <span class="stage-meta"><strong>Location:</strong> ½ mile to 1 mile behind front &bull; <strong>Personnel:</strong> RAMC Field Ambulance units, orderlies, nurses</span>
+              <div class="stage-desc">Emergency triage and anti-tetanus injections. Located in abandoned farms or tents. Serious casualties loaded onto horse or motor ambulances for transport.</div>
+            </div>
+            
+            <div class="stage-card">
+              <div class="stage-name">3. Casualty Clearing Station (CCS)</div>
+              <span class="stage-meta"><strong>Location:</strong> 7 to 12 miles back (near railway lines) &bull; <strong>Personnel:</strong> Specialist surgical teams, nurses (QAIMNS), mobile X-rays</span>
+              <div class="stage-desc">The primary life-saving surgical unit. Triage into walking wounded, urgent surgery cases, and moribund. Emergency operations for gas gangrene and compound fractures.</div>
+            </div>
+            
+            <div class="stage-card">
+              <div class="stage-name">4. Base Hospitals</div>
+              <span class="stage-meta"><strong>Location:</strong> French coastal ports (Calais, Boulogne, Le Havre) &bull; <strong>Personnel:</strong> Civilian specialists, surgical units, specialist wards</span>
+              <div class="stage-desc">Long-term patient recovery, specialist treatment for head wounds, burns, and gas. Casualties evacuated by hospital ship to "Blighty" (Britain) for rehabilitation.</div>
+            </div>
+            
+
+            <div style="border: 1.2px dashed #0f172a; padding: 5px 8px; border-radius: 2px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.26; color: #1e293b;">
+              <strong>Key Exam Principle:</strong> The Chain of Evacuation was organized by <em>triage urgency</em>. Rapid forward surgery at the CCS was vital because gas gangrene killed within 24 hours. The Thomas Splint kept femoral fractures stable during transport, cutting deaths from 80% to 20%.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">2/12</span>
+        <span class="footer-quip">Master Western Front Chronology & Chain of Evacuation Architecture • The History Department</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="page-container" id="page-3">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PAPER 1: SECTION A &bull; LESSON 1 RETRIEVAL COMPANION</span>
+        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+      </div>
+
+      <div class="lesson-meta-bar">
+        <h2 class="lesson-meta-title">Lesson 1: The Theatre of War: Geography, Trenches & Key Battles</h2>
+        <div class="lesson-meta-enquiry">Enquiry Question: How Did the Landscape and Trench System Shape Military Operations and Medical Care?</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">1.</span>
+              <span class="q-prompt">What is the military definition of a "salient", such as the British position at Ypres?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">2.</span>
+              <span class="q-prompt">Why was holding the town of Ypres strategically vital for the British Army throughout the war?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">3.</span>
+              <span class="q-prompt">What dramatic offensive tactic did British miners use at Hill 60 near Ypres in April 1915?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">4.</span>
+              <span class="q-prompt">On what date did the British launch the Battle of the Somme, suffering catastrophic casualties?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">5.</span>
+              <span class="q-prompt">What unique underground facility did British and Commonwealth miners construct beneath Arras in 1916–17?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">6.</span>
+              <span class="q-prompt">What modern military technology was deployed on a mass scale for the first time at the Battle of Cambrai in 1917?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">7.</span>
+              <span class="q-prompt">Name the four main parallel lines of trenches in the British trench system.</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">8.</span>
+              <span class="q-prompt">Why were trenches dug in a deliberate zig-zag pattern rather than in straight lines?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">9.</span>
+              <span class="q-prompt">What raised wooden planks were placed at the bottom of trenches to keep soldiers out of standing water?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">10.</span>
+              <span class="q-prompt">What was the raised step inside the frontline trench that soldiers stood on to shoot over the parapet?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">11.</span>
+              <span class="q-prompt">Why did constant artillery bombardment make transport and medical evacuation so difficult across Flanders?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">12.</span>
+              <span class="q-prompt">Why did the British Army still have to rely heavily on horse-drawn ambulance wagons throughout the war?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">3/12</span>
+        <span class="footer-quip">"Holding the Ypres Salient guarded the Channel ports; the liquid mud made evacuation an ordeal."</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-4">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PAPER 1: SECTION A &bull; LESSON 2 RETRIEVAL COMPANION</span>
+        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+      </div>
+
+      <div class="lesson-meta-bar">
+        <h2 class="lesson-meta-title">Lesson 2: The Trench Environment: Mud, Vermin & Non-Combat Illnesses</h2>
+        <div class="lesson-meta-enquiry">Enquiry Question: How Did the Harsh Environment of the Trenches Cause Widespread Illness and How Was It Treated?</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">1.</span>
+              <span class="q-prompt">What was the environmental cause of Trench Foot among soldiers on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">2.</span>
+              <span class="q-prompt">State two preventative measures ordered by the British Army to combat Trench Foot.</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">3.</span>
+              <span class="q-prompt">What surgical procedure was frequently required as a last resort for severe, gangrenous Trench Foot?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">4.</span>
+              <span class="q-prompt">What flu-like illness affected an estimated 500,000 British soldiers on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">5.</span>
+              <span class="q-prompt">What parasite was eventually identified in 1918 as the transmitter of Trench Fever?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">6.</span>
+              <span class="q-prompt">How did the British military systematically attempt to eradicate body lice and Trench Fever?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">7.</span>
+              <span class="q-prompt">What was the official British Army medical code used to describe Shell Shock in medical records?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">8.</span>
+              <span class="q-prompt">State two common physical or mental symptoms of Shell Shock observed in front-line soldiers.</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">9.</span>
+              <span class="q-prompt">Approximately how many British soldiers were officially treated for Shell Shock during the First World War?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">10.</span>
+              <span class="q-prompt">Which specialist military hospital in Edinburgh became renowned for treating officers suffering from Shell Shock?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">11.</span>
+              <span class="q-prompt">How did the British military command initially view soldiers suffering from severe Shell Shock?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">12.</span>
+              <span class="q-prompt">What severe intestinal infection was spread in the trenches by drinking water contaminated by sewage and corpses?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">4/12</span>
+        <span class="footer-quip">"Whale oil and dry socks kept men on their feet; body lice spread 500,000 cases of trench fever."</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-5">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PAPER 1: SECTION A &bull; LESSON 3 RETRIEVAL COMPANION</span>
+        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+      </div>
+
+      <div class="lesson-meta-bar">
+        <h2 class="lesson-meta-title">Lesson 3: Battlefield Trauma: High Explosive Shrapnel, Gas Attacks & Infection</h2>
+        <div class="lesson-meta-enquiry">Enquiry Question: Why Were Battlefield Wounds on the Western Front Uniquely Lethal and Difficult to Treat?</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">1.</span>
+              <span class="q-prompt">Which weapon was responsible for the highest percentage (approximately 58%) of all wounds on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">2.</span>
+              <span class="q-prompt">Why did shrapnel wounds almost always lead to rapid, life-threatening bacterial infections?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">3.</span>
+              <span class="q-prompt">What agricultural factor made the soil of Flanders and Northern France so biologically dangerous when wounded?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">4.</span>
+              <span class="q-prompt">What deadly wound infection produced gas bubbles and foul-smelling liquid inside dying muscle tissue?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">5.</span>
+              <span class="q-prompt">What medical preventative injection was routinely given to all wounded British soldiers from late 1914?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">6.</span>
+              <span class="q-prompt">Why were head wounds disproportionately common among British soldiers in 1914 and early 1915?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">7.</span>
+              <span class="q-prompt">What steel protective equipment was introduced in autumn 1915 that reduced fatal head wounds by 80%?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">8.</span>
+              <span class="q-prompt">What poisonous gas was first used by the German Army at the Second Battle of Ypres in April 1915?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">9.</span>
+              <span class="q-prompt">Before gas masks were issued, how did soldiers desperately protect themselves during chlorine gas attacks in 1915?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">10.</span>
+              <span class="q-prompt">Which poisonous gas, introduced in late 1915, was six times more toxic and faster-acting than chlorine?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">11.</span>
+              <span class="q-prompt">What was the distinctive, horrific effect of Mustard Gas when first deployed by the Germans in 1917?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">12.</span>
+              <span class="q-prompt">Despite the terror they caused, why did poison gas attacks account for less than 5% of British military deaths?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">5/12</span>
+        <span class="footer-quip">"Fertilised manure soil bred lethal gas gangrene; the Brodie helmet cut fatal head wounds by 80%."</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-6">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PAPER 1: SECTION A &bull; LESSON 4 RETRIEVAL COMPANION</span>
+        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+      </div>
+
+      <div class="lesson-meta-bar">
+        <h2 class="lesson-meta-title">Lesson 4: The Chain of Evacuation: From RAP to Base Hospitals</h2>
+        <div class="lesson-meta-enquiry">Enquiry Question: How Did the RAMC and FANY Coordinate the Evacuation and Triage of Casualties from the Front Line?</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">1.</span>
+              <span class="q-prompt">What was the primary purpose of the "Chain of Evacuation" on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">2.</span>
+              <span class="q-prompt">Where was the Regimental Aid Post (RAP) physically located on the battlefield?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">3.</span>
+              <span class="q-prompt">What level of medical care could the Regimental Medical Officer provide at the RAP?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">4.</span>
+              <span class="q-prompt">Which medical post was located roughly half a mile to a mile behind the frontline trenches?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">5.</span>
+              <span class="q-prompt">Where were Casualty Clearing Stations (CCS) strategically positioned on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">6.</span>
+              <span class="q-prompt">What crucial medical decision-making process took place at the Casualty Clearing Station (CCS)?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">7.</span>
+              <span class="q-prompt">Why did Casualty Clearing Stations (CCS) become the most important surgical units on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">8.</span>
+              <span class="q-prompt">Where were British Base Hospitals located on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">9.</span>
+              <span class="q-prompt">How did the Royal Army Medical Corps (RAMC) expand in personnel between 1914 and 1918?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">10.</span>
+              <span class="q-prompt">What does the acronym FANY stand for in the context of First World War medical services?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">11.</span>
+              <span class="q-prompt">What dangerous and vital frontline transport role was undertaken by women volunteers of the FANY?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">12.</span>
+              <span class="q-prompt">What transportation was used to move up to 800 stabilized casualties at a time from the CCS to Base Hospitals?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">6/12</span>
+        <span class="footer-quip">"From stretcher-bearers under fire to coastal Base Hospitals: master the four-stage chain of evacuation."</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-7">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PAPER 1: SECTION A &bull; LESSON 5 RETRIEVAL COMPANION</span>
+        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+      </div>
+
+      <div class="lesson-meta-bar">
+        <h2 class="lesson-meta-title">Lesson 5: Surgical Breakthroughs: The Thomas Splint, Wound Debridement & X-Rays</h2>
+        <div class="lesson-meta-enquiry">Enquiry Question: How Did Wartime Necessity Drive Radical Advances in Surgery, Infection Control, and Fracture Care?</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">1.</span>
+              <span class="q-prompt">Why was traditional aseptic surgery (sterile operating theatres) impossible in forward field dressing stations?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">2.</span>
+              <span class="q-prompt">What surgical procedure called "wound debridement" (excision) was introduced to combat wound infection?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">3.</span>
+              <span class="q-prompt">What chemical wound-irrigation system was developed by Alexis Carrel and Henry Dakin in 1915?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">4.</span>
+              <span class="q-prompt">What was a major practical limitation of the Carrel-Dakin antiseptic solution on the front line?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">5.</span>
+              <span class="q-prompt">If debridement and chemical irrigation failed to halt spreading gas gangrene, what was the only life-saving option?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">6.</span>
+              <span class="q-prompt">What was the catastrophic survival rate for soldiers suffering a fractured femur (thigh bone) in 1914–15?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">7.</span>
+              <span class="q-prompt">Who originally designed the traction splint used to immobilize broken leg fractures?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">8.</span>
+              <span class="q-prompt">Who introduced the Thomas Splint to the Western Front in December 1915, transforming survival rates?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">9.</span>
+              <span class="q-prompt">How did the Thomas Splint miraculously reduce the mortality rate for compound femur fractures from 80% to under 20%?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">10.</span>
+              <span class="q-prompt">How were diagnostic X-ray units adapted to operate closer to the front line on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">11.</span>
+              <span class="q-prompt">State one significant technical limitation of early mobile X-ray machines used on the Western Front.</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">12.</span>
+              <span class="q-prompt">Why could early mobile X-ray machines NOT detect the most dangerous cause of wound infection?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">7/12</span>
+        <span class="footer-quip">"The Thomas Splint transformed compound femur survival from 20% to 82%: understand wartime innovation."</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-8">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>PAPER 1: SECTION A &bull; LESSON 6 RETRIEVAL COMPANION</span>
+        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+      </div>
+
+      <div class="lesson-meta-bar">
+        <h2 class="lesson-meta-title">Lesson 6: Lifesaving Innovations: Blood Storage, Brain Surgery & Plastic Reconstruction</h2>
+        <div class="lesson-meta-enquiry">Enquiry Question: How Did Blood Transfusions, Neuro-Surgery, and Plastic Reconstruction Advance Under Battlefield Conditions?</div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">1.</span>
+              <span class="q-prompt">In 1901, what monumental medical discovery did Austrian doctor Karl Landsteiner make regarding human blood?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">2.</span>
+              <span class="q-prompt">Which blood group was identified in 1907 as the "universal donor" group safe for all emergency transfusions?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">3.</span>
+              <span class="q-prompt">Before 1915, why could human blood not be stored in banks for emergency transfusions?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">4.</span>
+              <span class="q-prompt">What chemical anticoagulant did American doctor Richard Lewisohn discover in 1915 that prevented blood clotting?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">5.</span>
+              <span class="q-prompt">What breakthrough did Francis Rous and James Turner make in 1916 that extended blood storage up to four weeks?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">6.</span>
+              <span class="q-prompt">Who established the world's first operational battlefield blood bank at the Battle of Cambrai in 1917?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">7.</span>
+              <span class="q-prompt">How did Oswald Robertson store and preserve his 22 units of donor blood before the Battle of Cambrai?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">8.</span>
+              <span class="q-prompt">Which American surgeon pioneered revolutionary neurosurgical techniques for brain wounds on the Western Front?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">9.</span>
+              <span class="q-prompt">How did Harvey Cushing reduce mortality for penetrating head wounds from 55% down to 29%?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">10.</span>
+              <span class="q-prompt">Which New Zealand-born surgeon pioneered modern plastic and facial reconstruction surgery during the First World War?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">11.</span>
+              <span class="q-prompt">Which specialist military hospital in Kent became the world centre for pioneering facial reconstruction from 1917?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+        <div class="q-block">
+          <div class="q-header">
+            <div class="q-prompt-wrap">
+              <span class="q-num">12.</span>
+              <span class="q-prompt">What innovative surgical technique did Harold Gillies develop to safely graft living skin onto disfigured faces?</span>
+            </div>
+            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Key Fact:</span>
+            <div class="q-solid-line"></div>
+          </div>
+          <div class="q-line-row">
+            <span class="q-line-lbl">Explanation:</span>
+            <div class="q-solid-line"></div>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">8/12</span>
+        <span class="footer-quip">"From Cambrai blood depots to Cushing and Gillies: surgical desperation drove modern clinical medicine."</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-9">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>DEPARTMENT MARKING BANK &bull; LESSONS 1 TO 3: GEOGRAPHY, ENVIRONMENT & TRAUMA</span>
+        <span>SELF-ASSESSMENT &bull; GREEN-PEN DIRT REVIEW</span>
+      </div>
+
+      <div class="mb-grid-3col">
+        
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson 1: The Theatre of War</div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">1.</span>
+                <span class="ans-core">An area of battlefield that juts forward into enemy territory, surrounded on three sides</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Left British troops highly vulnerable to artillery shelling and observation from surrounding German-held ridges.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">2.</span>
+                <span class="ans-core">It guarded the English Channel ports (Calais, Boulogne) used for British supplies and troops</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">If the German army captured Ypres, they could sever the vital supply link between Britain and the front line.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">3.</span>
+                <span class="ans-core">Dug deep underground tunnels and detonated five massive mines under German positions</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Blew the top off the hill, allowing British troops to temporarily capture this vital high-ground observation post.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">4.</span>
+                <span class="ans-core">1 July 1916</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">The British suffered 57,000 casualties on the first day alone, completely overwhelming medical evacuation facilities.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">5.</span>
+                <span class="ans-core">A fully equipped underground hospital in the chalk tunnels (Thompson's Cave)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Contained 700 stretcher beds, operating theatres, electricity, and water, completely sheltered from artillery fire.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">6.</span>
+                <span class="ans-core">Massed deployment of over 450 British tanks</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Broke through the German Hindenburg Line, leading to the first operational use of a stored blood bank.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">7.</span>
+                <span class="ans-core">Frontline trench, Support trench, Reserve trench, and Communication trenches</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Allowed troops, food, ammunition, and wounded casualties to move safely between rear depots and the firing line.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">8.</span>
+                <span class="ans-core">To contain artillery blast waves and prevent enemy riflemen firing straight down the trench</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Protected soldiers if an artillery shell landed inside a trench, but made carrying stretchers around corners difficult.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">9.</span>
+                <span class="ans-core">Duckboards</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Designed to elevate soldiers' boots above mud and stagnant water to prevent debilitating trench foot.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">10.</span>
+                <span class="ans-core">The Firestep</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Allowed soldiers to fire into No Man's Land while remaining protected behind sandbags when stepping down.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">11.</span>
+                <span class="ans-core">It destroyed natural drainage systems and roads, creating a waterlogged quagmire of liquid mud</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Ambulance wagons and motor vehicles got bogged down, forcing stretcher-bearers to carry casualties for miles.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">12.</span>
+                <span class="ans-core">Heavy motor ambulances frequently broke down or got stuck in the deep cratered mud</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Teams of six horses were often required to pull ambulances through mud where motor engines failed.</div>
+            </div>
+            
+          </div>
+          
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson 2: The Trench Environment</div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">1.</span>
+                <span class="ans-core">Standing for days in cold, waterlogged mud and tight boots without dry socks</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Constricted blood circulation, causing feet to go numb, swell, blister, and turn gangrenous.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">2.</span>
+                <span class="ans-core">Rubbing feet daily with whale oil and changing into clean, dry socks twice a day</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Officers carried out compulsory pair inspections; soldiers had to dry each other's feet to ensure compliance.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">3.</span>
+                <span class="ans-core">Amputation of toes or the entire foot</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Necessary to stop spreading gangrene and fatal blood poisoning when tissue death had occurred.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">4.</span>
+                <span class="ans-core">Trench Fever (Pyrexia of Unknown Origin)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Caused high fever, severe headaches, shivering, and aching leg muscles, disabling men for weeks.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">5.</span>
+                <span class="ans-core">Body lice living in the seams of soldiers' woollen uniforms</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Lice thrived in dirty clothing; soldiers scratched the bites, rubbing infected louse faeces into the skin.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">6.</span>
+                <span class="ans-core">By establishing division bathhouses and mobile steam delousing units for uniforms</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Uniforms were baked in mobile steam vans to kill lice eggs, while soldiers were bathed in hot water.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">7.</span>
+                <span class="ans-core">NYD.N ("Not Yet Diagnosed, Nervous")</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Medical officers were ordered not to label men "shell shock" to prevent mass panic and avoid compensation claims.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">8.</span>
+                <span class="ans-core">Severe uncontrollable tremors, nightmares, loss of speech, and mental confusion</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Caused by the relentless psychological trauma, deafening noise, and fear of high-explosive artillery bombardments.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">9.</span>
+                <span class="ans-core">Approximately 80,000 soldiers</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">The scale of psychological trauma shocked military authorities, forcing the creation of specialist mental wards.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">10.</span>
+                <span class="ans-core">Craiglockhart Hospital</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Pioneered talking therapies and psychological rehabilitation, treating famous war poets like Wilfred Owen and Siegfried Sassoon.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">11.</span>
+                <span class="ans-core">Viewed many as cowards or malingerers attempting to shirk front-line duty</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Some men suffering from severe combat trauma were court-martialled and executed for desertion or cowardice.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">12.</span>
+                <span class="ans-core">Dysentery</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Caused severe diarrhoea and dehydration; treated by purifying water supplies using chloride of lime.</div>
+            </div>
+            
+          </div>
+          
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson 3: Battlefield Trauma</div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">1.</span>
+                <span class="ans-core">High-explosive artillery shells and shrapnel</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Exploding shell casings produced jagged, irregular steel fragments that shattered bones and ripped flesh.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">2.</span>
+                <span class="ans-core">Shrapnel tore through dirty uniforms, driving mud and bacteria-soaked cloth deep into muscle tissue</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">The fabric carried lethal spores into deep, anaerobic bullet tracks where peacetime antiseptics could not reach.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">3.</span>
+                <span class="ans-core">The soil had been heavily fertilised with manure, filling it with tetanus and gas gangrene bacteria</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Farmland contained anaerobic Clostridium bacteria that multiplied rapidly in deep wounds without oxygen.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">4.</span>
+                <span class="ans-core">Gas Gangrene</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Bacteria produced toxins that destroyed muscle tissue within hours, turning flesh black and killing within a day.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">5.</span>
+                <span class="ans-core">Anti-tetanus serum (ATS)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Massively reduced deaths from fatal lockjaw muscle spasms caused by soil bacteria entering wounds.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">6.</span>
+                <span class="ans-core">Soldiers had only soft cloth service caps while peeking over parapets in the trenches</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Exposed heads to flying shrapnel, bullet ricochets, and falling debris until steel helmets were introduced.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">7.</span>
+                <span class="ans-core">The Brodie Helmet</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">A steel helmet with a wide brim designed to deflect downward-falling artillery shrapnel and debris.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">8.</span>
+                <span class="ans-core">Chlorine Gas</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">A greenish-yellow choking agent that destroyed the lungs, causing victims to suffocate on bodily fluids.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">9.</span>
+                <span class="ans-core">Held cotton pads soaked in urine over their noses and mouths</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">The ammonia in urine chemically reacted with and neutralised the acidic chlorine gas.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">10.</span>
+                <span class="ans-core">Phosgene Gas</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">An invisible, fast-acting gas with a mouldy-hay smell that could kill an exposed soldier within 48 hours.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">11.</span>
+                <span class="ans-core">It was an odourless blistering agent that burned skin through uniforms and caused internal blisters</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Remained in the soil for weeks, causing temporary blindness, severe skin burns, and lung damage.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">12.</span>
+                <span class="ans-core">Rapid development and universal distribution of effective protective box respirators</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">The British Small Box Respirator (issued 1916) successfully filtered out lethal gases, preventing mass deaths.</div>
+            </div>
+            
+          </div>
+          
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">9/12</span>
+        <span class="footer-quip">Department Marking Bank • Lessons 1 to 3 • Self-Assessment & Green-Pen DIRT Review</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-10">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>DEPARTMENT MARKING BANK &bull; LESSONS 4 TO 6: EVACUATION, SURGERY & INNOVATIONS</span>
+        <span>SELF-ASSESSMENT &bull; GREEN-PEN DIRT REVIEW</span>
+      </div>
+
+      <div class="mb-grid-3col">
+        
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson 4: The Chain of Evacuation</div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">1.</span>
+                <span class="ans-core">To transport, triage, and treat wounded soldiers in staged medical posts without overwhelming frontline units</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Ensured casualties moved efficiently from the battlefield back to specialist base hospitals.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">2.</span>
+                <span class="ans-core">Within 200 metres of the front line, usually inside a communication trench or dugout</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Positioned close to the fighting so wounded men could receive immediate first aid within minutes.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">3.</span>
+                <span class="ans-core">Basic first aid (bandages, tourniquets, pain relief); no surgery could be performed</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Aimed to patch up the walking wounded to return to duty or stabilise serious cases for stretcher transport.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">4.</span>
+                <span class="ans-core">The Advanced Dressing Station (ADS) or Main Dressing Station (MDS)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Staffed by the Field Ambulance, providing wound dressings, hot drinks, and tetanus antitoxin.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">5.</span>
+                <span class="ans-core">7 to 12 miles behind the front line, safely outside artillery range near railway lines</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Near railheads to allow rapid transport of stabilised patients to coastal Base Hospitals.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">6.</span>
+                <span class="ans-core">Triage: sorting casualties into walking wounded, those needing urgent surgery, and the moribund (dying)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Prioritised limited surgical resources for soldiers who had the greatest chance of survival with quick surgery.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">7.</span>
+                <span class="ans-core">Because rapid forward surgery within hours was essential to stop gas gangrene and save lives</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Performing emergency amputations and wound debridement at the CCS prevented fatal sepsis before transport.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">8.</span>
+                <span class="ans-core">Near French and Belgian coastal ports (Calais, Boulogne, Le Havre, Rouen)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Positioned near the sea so long-term casualties could be loaded directly onto hospital ships bound for Britain.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">9.</span>
+                <span class="ans-core">Expanded from approximately 9,000 men in 1914 to over 113,000 by 1918</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Massive mobilization of civilian doctors, nurses, orderlies, and stretcher-bearers to meet casualty demands.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">10.</span>
+                <span class="ans-core">First Aid Nursing Yeomanry</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">A voluntary women's organisation founded in 1907 that provided vital frontline medical support.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">11.</span>
+                <span class="ans-core">Driving motorized ambulance convoys between Dressing Stations, CCS, and railheads under fire</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">FANY drivers were the first women to drive British military vehicles on the Western Front, navigating mud and shelling.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">12.</span>
+                <span class="ans-core">Specially fitted ambulance trains and canal barges</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Provided smooth, comfortable transport that reduced the physical shock of movement on injured soldiers.</div>
+            </div>
+            
+          </div>
+          
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson 5: Surgical Breakthroughs</div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">1.</span>
+                <span class="ans-core">Wounds were already contaminated with muddy manure bacteria the instant the bullet or shrapnel struck</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Sterile operating rooms could not prevent infection when the bacteria were already embedded deep inside muscle.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">2.</span>
+                <span class="ans-core">Surgically cutting away all dead, damaged, and infected tissue from around the wound before closing it</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Removed the oxygen-deprived dead flesh that anaerobic gas gangrene bacteria needed to survive and multiply.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">3.</span>
+                <span class="ans-core">The Carrel-Dakin Method</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Rubber tubes flushed sterilized sodium hypochlorite solution continuously into deep wounds to kill bacteria.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">4.</span>
+                <span class="ans-core">The solution was unstable and degraded quickly, having to be freshly made every six hours</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Demanded constant chemical preparation, making it difficult to maintain during massive casualty offensives.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">5.</span>
+                <span class="ans-core">Immediate surgical amputation of the limb</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">By 1918, over 240,000 British soldiers had lost limbs to save their lives from lethal spreading gangrene.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">6.</span>
+                <span class="ans-core">Only 20% survived (an 80% death rate)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Broken bone ends ground together during rough transport, tearing femoral arteries and causing fatal shock.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">7.</span>
+                <span class="ans-core">Hugh Owen Thomas</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">A Welsh orthopedic surgeon who invented the splint before the war to treat joint and bone tuberculosis.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">8.</span>
+                <span class="ans-core">Robert Jones (nephew of Hugh Owen Thomas)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Trained medical staff and distributed the splint, dramatically increasing femur survival from 20% to 82%.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">9.</span>
+                <span class="ans-core">It held the broken leg in rigid traction, preventing broken bone ends from severing blood vessels and causing shock</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Stabilized the fracture completely during ambulance journeys over rough terrain, preventing fatal internal bleeding.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">10.</span>
+                <span class="ans-core">Six mobile X-ray vans were built to travel directly to Casualty Clearing Stations</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Allowed surgeons to pinpoint the exact location of embedded shrapnel and bullets before operating.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">11.</span>
+                <span class="ans-core">Fragile glass tubes overheated after an hour of use and required cool-down periods</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Machines could not run continuously during large battles, and radiation doses were high and image quality poor.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">12.</span>
+                <span class="ans-core">They could detect metal shrapnel and bone, but could not detect embedded pieces of dirty uniform cloth</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Pieces of uniform carried anaerobic manure bacteria into wounds, remaining invisible on early X-ray plates.</div>
+            </div>
+            
+          </div>
+          
+          <div class="mb-lesson-col">
+            <div class="mb-lesson-title">Lesson 6: Lifesaving Innovations</div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">1.</span>
+                <span class="ans-core">Discovered the existence of different human blood groups (A, B, and O)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Explained why earlier transfusions often caused fatal blood agglutination (clotting) when types were mismatched.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">2.</span>
+                <span class="ans-core">Blood Group O</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Crucial for military transfusions because group O blood could be administered immediately without cross-matching.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">3.</span>
+                <span class="ans-core">Blood coagulated (clotted) and spoiled within minutes as soon as it left the human body</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Transfusions had to be performed "arm-to-arm" with the live donor lying directly beside the wounded soldier.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">4.</span>
+                <span class="ans-core">Sodium Citrate</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Adding small amounts of sodium citrate stopped blood clotting without poisoning the recipient patient.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">5.</span>
+                <span class="ans-core">Added citrate glucose solution to the blood</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Kept red blood cells alive and stable in refrigerated storage, making pre-donated blood depots possible.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">6.</span>
+                <span class="ans-core">Oswald Hope Robertson (an American army medical officer)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Collected universal Group O blood in advance, storing 22 units in ice boxes to treat casualties suffering from shock.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">7.</span>
+                <span class="ans-core">Stored in glass bottles packed inside wooden ammunition boxes with ice and sawdust</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Allowed emergency transfusions right at the Casualty Clearing Station, successfully treating 20 soldiers.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">8.</span>
+                <span class="ans-core">Harvey Cushing</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Used local anaesthetic instead of general anaesthetic to reduce brain swelling and operated at forward CCS units.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">9.</span>
+                <span class="ans-core">Used local anaesthetic, silver surgical clips to stop bleeding, and electromagnets to extract shrapnel</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Careful surgical removal of bone fragments and metal reduced brain trauma and prevented fatal cerebral infection.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">10.</span>
+                <span class="ans-core">Harold Gillies</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Horrified by severe facial disfigurements from shrapnel, he convinced the army to create a specialist facial hospital.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">11.</span>
+                <span class="ans-core">Queen's Hospital in Sidcup, Kent</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Designed by Harold Gillies specifically for facial reconstruction, performing over 11,000 complex operations.</div>
+            </div>
+            
+            <div class="ans-card">
+              <div class="ans-header">
+                <span class="ans-num">12.</span>
+                <span class="ans-core">The "Tube Pedicle" (walking skin graft)</span>
+                <span class="ans-check">[✓] [✗]</span>
+              </div>
+              <div class="ans-exp">Rolled skin from the chest or forehead into a tube to maintain blood supply before grafting it onto facial wounds.</div>
+            </div>
+            
+          </div>
+          
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">10/12</span>
+        <span class="footer-quip">Department Marking Bank • Lessons 4 to 6 • Self-Assessment & Green-Pen DIRT Review</span>
+      </div>
+    </div>
+  </div>
+    
+  <div class="page-container" id="page-11">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>EDEXCEL PAPER 1: SECTION A &bull; HISTORIC ENVIRONMENT SOURCES VAULT</span>
+        <span>SOURCE TYPES &bull; Q2(B) 4-STEP ENQUIRY BLUEPRINT</span>
+      </div>
+
+      <!-- Primary Sources Vault -->
+      <div class="source-vault-card">
+        <div class="card-title-bar">
+          <span>Primary Historical Sources for Western Front Enquiries</span>
+          <span>Edexcel Specification Types</span>
+        </div>
+        <div class="sources-grid">
+          <div class="source-item">
+            <strong>1. National Army Records & War Diaries</strong>
+            Maintained daily by British Army units. Provides factual dates, battalion movements, casualty tallies, and battlefield conditions. Objective military records, though may understate defeats or panic.
+          </div>
+          <div class="source-item">
+            <strong>2. Medical Officers' Day Books & RAMC Reports</strong>
+            Detailed clinical accounts written by surgeons and Regimental Medical Officers at RAPs and CCS units. Extremely accurate regarding wound types, treatments, and shortages of supplies.
+          </div>
+          <div class="source-item">
+            <strong>3. Hospital Admission Registers</strong>
+            Log books recording patient names, ranks, wound classifications, dates admitted, and discharge/death status. Ideal for statistical enquiries into fracture survival or gas mortality rates.
+          </div>
+          <div class="source-item">
+            <strong>4. Personal Memoirs & Soldiers' Letters / Diaries</strong>
+            First-hand emotional accounts from soldiers, stretcher-bearers, and nurses. Rich in personal experience of pain, mud, and morale, but written from individual, subjective perspectives.
+          </div>
+          <div class="source-item">
+            <strong>5. Official & Contemporary Photographs</strong>
+            British official war photographers (e.g. Ernest Brooks). Shows physical trench layout, deep mud, and evacuation transport. May be staged for public morale or censored by authorities.
+          </div>
+          <div class="source-item">
+            <strong>6. Red Cross & FANY Voluntary Archives</strong>
+            Reports and logs kept by volunteer nurses and ambulance drivers. Highly useful for investigating the role of women, motor ambulance transport, and mobile bath units.
+          </div>
+        </div>
+      </div>
+
+      <!-- Q2(b) 4-Part Follow-Up Enquiry Formula -->
+      <div class="source-vault-card" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div class="card-title-bar">
+          <span>Official Edexcel 4-Mark Follow-Up Enquiry Protocol (Question 2b)</span>
+          <span>4 Marks &bull; 100% Success Formula</span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.34; color: #1e293b; margin-bottom: 4px;">
+          Question 2(b) asks: <em>"How could you follow up Source X to find out more about [topic]?"</em> You MUST complete all four prompts with specific, historical precision. Generic source types like "the internet" or "a book" score 0 marks.
+        </div>
+
+        <table class="followup-table">
+          <thead>
+            <tr>
+              <th style="width: 25%;">Edexcel Required Prompt</th>
+              <th style="width: 45%;">Examiner Standard & Rule</th>
+              <th style="width: 30%;">Exemplar Model Answer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Detail in Source that I would follow up</strong></td>
+              <td>Quote one specific detail directly from the source that mentions medical problems or treatments.</td>
+              <td><em>"The mud was up to our knees and the stretcher took four hours to reach the dressing station."</em></td>
+            </tr>
+            <tr>
+              <td><strong>2. Question I would ask</strong></td>
+              <td>Formulate a focused, analytical historical question directly linked to the quote above.</td>
+              <td><em>"What was the average time taken for stretcher-bearers to evacuate wounded men to a CCS at Passchendaele?"</em></td>
+            </tr>
+            <tr>
+              <td><strong>3. Type of source I would use</strong></td>
+              <td>Name a precise contemporary historical record from the Western Front. Never say "Google" or "history book".</td>
+              <td><em>"RAMC Field Ambulance War Diaries or Casualty Clearing Station Admission Registers from Third Ypres (1917)."</em></td>
+            </tr>
+            <tr>
+              <td><strong>4. How this would help me find out more</strong></td>
+              <td>Explain how this specific source answers the question asked in Step 2.</td>
+              <td><em>"It would record the exact arrival times and casualty logs, proving whether delayed evacuation was widespread across the sector."</em></td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div style="border: 1.2px solid #0f172a; background: #f8fafc; padding: 5px 8px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.24; margin-top: 4px;">
+          <strong>Examiner Tip for 4/4 Marks:</strong> Ensure all four steps connect like links in a chain. Step 2 must ask about Step 1; Step 3 must be a real primary source type; Step 4 must state what data that source reveals to answer Step 2.
+        </div>
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">11/12</span>
+        <span class="footer-quip">Historic Environment Primary Sources Vault & Edexcel Q2(b) 4-Step Follow-Up Blueprint</span>
+      </div>
+    </div>
+  </div>
+  
+  <div class="page-container" id="page-12">
+    <div class="page-body-full">
+      <div class="running-header">
+        <span>EDEXCEL PAPER 1: SECTION A &bull; EXAMINATION STRATEGY & EXAM ARCHITECT</span>
+        <span>HISTORIC ENVIRONMENT &bull; MAXIMUM MARKS BLUEPRINT</span>
+      </div>
+
+      <!-- Section Overview Strip -->
+      <div style="border: 1.4px solid #0f172a; padding: 5px 10px; background: #0f172a; color: #ffffff; border-radius: 2px; display: flex; justify-content: space-between; align-items: center; margin-bottom: 3.5px; font-family: 'Inter', sans-serif;">
+        <span style="font-size: 8.3pt; font-weight: 900; text-transform: uppercase;">Section A: 16 Marks &bull; Recommended Time: 25 Minutes</span>
+        <span style="font-size: 7.4pt; font-weight: 700;">Q1(a) [2m] + Q1(b) [2m] + Q2(a) [8m] + Q2(b) [4m]</span>
+      </div>
+
+      <!-- 1. Feature Questions Card -->
+      <div class="strategy-card">
+        <div class="strat-card-title">
+          <span>1. Questions 1(a) &amp; 1(b): Feature Questions [2m + 2m = 4 Marks &bull; ~6 Mins]</span>
+          <span>AO1: Knowledge &amp; Understanding</span>
+        </div>
+        <div class="strat-body">
+          <strong>Official Examiner Rule:</strong> Identify one valid feature [1 mark] and add precise, supporting historical detail [1 mark]. Feature questions appear <em>only</em> in Section A on Paper 1 (never in Section B). Keep responses to two concise sentences per question.
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 2px;">
+          <div class="model-box">
+            <strong>Exemplar A (Feature of Trench Fever):</strong><br>
+            <em>"One feature was that it was transmitted by body lice living in uniforms [1m]. This caused debilitating flu-like symptoms including high pyrexia and severe muscle pain, affecting over 500,000 men and requiring delousing stations [1m]."</em>
+          </div>
+          <div class="model-box">
+            <strong>Exemplar B (Feature of Thomas Splint):</strong><br>
+            <em>"One feature was that it held the broken leg in rigid traction [1m]. This prevented broken femur ends grinding together and severing the femoral artery during rough transport, reducing compound fracture deaths from 80% to 20% [1m]."</em>
+          </div>
+          <div class="model-box">
+            <strong>Exemplar C (Feature of Underground Hospital at Arras):</strong><br>
+            <em>"One feature was that it was built inside chalk quarries (Thompson's Cave) safe from artillery fire [1m]. It contained 700 hospital beds, operating theatres, running water, and electric lighting directly linked to front-line trenches [1m]."</em>
+          </div>
+          <div class="model-box">
+            <strong>Exemplar D (Feature of Chlorine Poison Gas):</strong><br>
+            <em>"One feature was that it was a lethal suffocating agent first deployed at Second Ypres in 1915 [1m]. It stripped the lining of the lungs, causing soldiers to choke on their own fluid; before gas masks, troops used urine-soaked pads [1m]."</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Question 2(a): Source Utility Enquiry Card -->
+      <div class="strategy-card">
+        <div class="strat-card-title">
+          <span>2. Question 2(a): Source Utility Enquiry [8 Marks &bull; ~14 Mins]</span>
+          <span>AO3: Analysis &amp; Evaluation of Utility</span>
+        </div>
+        <div class="strat-body">
+          <strong>The 3-Pillar Assessment Framework:</strong> You must evaluate <strong>both Source A and Source B</strong> using:
+          (1) <em>Content:</em> quote and infer specific details useful for the enquiry;
+          (2) <em>Own Knowledge:</em> validate or contextualise source content;
+          (3) <em>Provenance (NOP):</em> analyze how nature, origin, and purpose affect its utility (never say a source is "useless" because of bias).
+        </div>
+        <div class="model-box" style="margin-top: 2.5px;">
+          <strong>Complete Level 4 Model Answer (Enquiry into problems of treating wounded soldiers on the Western Front):</strong><br>
+          <div style="margin-top: 1.5px;">
+            <strong>&bull; Paragraph 1 (Source A - RAMC Surgeon Clinical Day Book, 1916 Somme):</strong> 
+            <em>"Source A is useful because it directly describes the catastrophic surgical bottlenecks at a CCS: 'Surgeons operated without pause for 48 hours as hundreds of stretcher cases lined the corridors.' From my own knowledge, the British Army suffered 57,000 casualties on 1 July 1916 alone. Casualty Clearing Stations like Dernancourt were completely overwhelmed, forcing surgeons to perform rapid triage and operate under acute shortages of anaesthetics. The provenance enhances its utility because it is an official contemporary clinical log written by a serving RAMC surgeon, giving an accurate eyewitness record of medical supply crises, though it focuses exclusively on surgical cases rather than the walking wounded."</em>
+          </div>
+          <div style="margin-top: 1.5px;">
+            <strong>&bull; Paragraph 2 (Source B - Stretcher-Bearer Memoir, 1917 Third Ypres):</strong> 
+            <em>"Source B is useful because it reveals the transport delays in evacuating casualties: 'The liquid mud of Passchendaele was knee-deep; it took six exhausted bearers four hours to carry one stretcher.' From my own knowledge, heavy artillery destroyed the land drainage around Ypres, creating a waterlogged swamp. Delay in reaching the RAP or ADS allowed soil bacteria (Clostridium perfringens) to multiply in deep wounds, causing fatal gas gangrene. The provenance is useful because it is a first-hand account by a frontline stretcher-bearer, providing authentic evidence of the physical ordeal of evacuation, though written after the war with retrospective emotion."</em>
+          </div>
+          <div style="margin-top: 1.5px;">
+            <strong>&bull; Paragraph 3 (Comparative Synthesis &amp; Verdict):</strong> 
+            <em>"Together, both sources are highly useful and complement each other. Source A provides an institutional perspective on hospital surgical overload at the CCS stage, while Source B explains the physical battlefield obstacles that delayed evacuation at the front line. Neither source alone gives the full picture, but together they demonstrate that treatment failure was driven by impossible terrain combined with unmanageable casualty volumes."</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Question 2(b): 4-Step Follow-Up Quick Blueprint -->
+      <div class="strategy-card">
+        <div class="strat-card-title">
+          <span>3. Question 2(b): 4-Step Follow-Up Enquiry Formula [4 Marks &bull; ~5 Mins]</span>
+          <span>AO3: Historical Investigation</span>
+        </div>
+        <div class="strat-body" style="margin-bottom: 2px;">
+          You must link all 4 steps in an unbroken chain: Step 2 asks directly about the quote in Step 1; Step 3 names an authentic primary source; Step 4 explains what data that source reveals to answer Step 2.
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+          <div class="model-box">
+            <strong>Worked Exemplar 1 (Enquiry into Gas Gangrene):</strong><br>
+            &bull; <strong>Detail in Source:</strong> <em>"The lacerated wounds turned black and bubbled with foul gas within hours."</em><br>
+            &bull; <strong>Question I would ask:</strong> <em>"What percentage of wounded men admitted to Casualty Clearing Stations developed gas gangrene in 1915?"</em><br>
+            &bull; <strong>Type of source I would use:</strong> <em>"RAMC Casualty Clearing Station Admission and Discharge Registers from 1915."</em><br>
+            &bull; <strong>How this helps:</strong> <em>"It would provide official clinical tallies of wound infections and amputations, proving whether gangrene was widespread."</em>
+          </div>
+          <div class="model-box">
+            <strong>Worked Exemplar 2 (Enquiry into Evacuation Transport):</strong><br>
+            &bull; <strong>Detail in Source:</strong> <em>"The motor ambulance broke down in shell craters and took five hours to reach the station."</em><br>
+            &bull; <strong>Question I would ask:</strong> <em>"How reliable were motor ambulances compared to horse-drawn transport in the Ypres Salient?"</em><br>
+            &bull; <strong>Type of source I would use:</strong> <em>"British Red Cross and FANY Motor Ambulance Convoy Logbooks from Third Ypres (1917)."</em><br>
+            &bull; <strong>How this helps:</strong> <em>"It would record vehicle breakdown logs and transit times, showing whether terrain prevented effective motor transport."</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Official Edexcel Marking Matrix & Grade Bands -->
+      <div class="strategy-card">
+        <div class="strat-card-title">
+          <span>4. Official Edexcel Mark Scheme Matrix: Questions 2(a) &amp; 2(b)</span>
+          <span>Targeting Level 4</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22;">
+          <div style="border-left: 2.5px solid #0f172a; padding-left: 5px; background: #f8fafc;">
+            <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Q2(a) Utility [8 Marks &bull; Levels 1–4]:</strong>
+            &bull; <strong>Level 4 (7–8m):</strong> Evaluates BOTH sources thoroughly. Synthesises specific content, contextual knowledge, and sustained analysis of provenance (nature, origin, purpose) with a clear comparative verdict on utility.<br>
+            &bull; <strong>Level 3 (5–6m):</strong> Evaluates both sources; deploys relevant knowledge; addresses provenance.<br>
+            &bull; <strong>Level 2 (3–4m):</strong> Assesses content and knowledge. <em>Exam Cap: Evaluating only one source caps your answer at Level 2 (max 4/8 marks).</em>
+          </div>
+          <div style="border-left: 2.5px solid #0f172a; padding-left: 5px; background: #f8fafc;">
+            <strong style="color: #0f172a; display: block; margin-bottom: 1px;">Q2(b) Follow-Up [4 Marks &bull; 1 Mark per Step]:</strong>
+            &bull; <strong>Step 1 (1m):</strong> Verbatim quote of a relevant factual detail from Source X.<br>
+            &bull; <strong>Step 2 (1m):</strong> Specific historical enquiry question asking directly about that quoted detail.<br>
+            &bull; <strong>Step 3 (1m):</strong> Authentic contemporary primary record named (e.g. <em>RAMC War Diaries</em>).<br>
+            &bull; <strong>Step 4 (1m):</strong> Clear explanation of what historical data this source reveals to answer Step 2.
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Essential Western Front Medical Distinctions -->
+      <div class="strategy-card">
+        <div class="strat-card-title">
+          <span>5. Essential Western Front Disciplinary &amp; Clinical Distinctions</span>
+          <span>Examiner Precision</span>
+        </div>
+        <div class="distinction-grid-6col">
+          <div class="dist-card">
+            <strong>Antiseptic vs. Aseptic:</strong>
+            Antiseptic kills germs in wounds (carbolic acid). Aseptic prevents germs entering operating theatres. Aseptic failed in 1914 because fertile soil bacteria were already embedded in shrapnel wounds before hospital admission.
+          </div>
+          <div class="dist-card">
+            <strong>Debridement vs. Carrel-Dakin:</strong>
+            Debridement is the mechanical cutting away of dead, infected tissue. Carrel-Dakin uses sterilized rubber tubes to flush sodium hypochlorite continuously into deep wound pockets to prevent anaerobic infection.
+          </div>
+          <div class="dist-card">
+            <strong>Direct Transfusion vs. Blood Depot:</strong>
+            1915 direct transfusion required donor-to-patient tubing (Rous &amp; Turner). 1917 Cambrai used sodium citrate &amp; glucose in refrigerated bottles (Oswald Robertson's blood bank) for rapid treatment of shock.
+          </div>
+          <div class="dist-card">
+            <strong>RAMC vs. FANY Corps:</strong>
+            RAMC (Royal Army Medical Corps) provided official military doctors, surgeons, orderlies, and stretcher-bearers. FANY (First Aid Nursing Yeomanry) provided voluntary female motor ambulance drivers and frontline aid.
+          </div>
+          <div class="dist-card">
+            <strong>Shrapnel vs. High-Explosive Shells:</strong>
+            Shrapnel shells exploded in mid-air spraying lead pellets and driving contaminated uniform cloth into flesh. High-explosive shells exploded on impact with massive blast concussions, causing compound fractures and traumatic amputations.
+          </div>
+          <div class="dist-card">
+            <strong>Casualty Clearing Station vs. Base Hospital:</strong>
+            CCS was the primary forward surgical unit (10–12 miles back) performing emergency triage and amputations. Base Hospitals (coastal ports) provided specialist long-term recovery and transport to "Blighty".
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Examiner Audit & Pitfall Prevention -->
+      <div class="strategy-card" style="margin-bottom: 0;">
+        <div class="strat-card-title">
+          <span>6. Section A Examiner Checklist &amp; Trap Prevention</span>
+          <span>Final Exam Audit</span>
+        </div>
+        <div class="checklist-grid">
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>No Feature Questions in Section B:</strong> Feature questions appear ONLY in Section A. Never write 2-mark feature paragraphs for Paper 1 Section B!</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>No Vague Sources for Q2(b):</strong> Never write "a book", "a diary", or "the internet". Always specify the official military archive (e.g. <em>RAMC War Diaries</em>).</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>Utility is NOT Reliability:</strong> A biased propaganda poster or exaggerated memoir is still highly useful for studying British morale or attitudes.</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>Evaluate BOTH Sources in Q2(a):</strong> Failing to evaluate both Source A and Source B caps your mark at Level 2 (maximum 4/8 marks).</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>Feature Formula:</strong> Statement [1m] + Historical Elaboration [1m]. Never write essays for Q1(a) or Q1(b); 2 concise sentences earn full marks.</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>Comparative Judgment:</strong> In Q2(a), always conclude by comparing the relative strengths of the sources and how they complement each other.</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>Direct Quotes in Q2(b):</strong> Always quote directly from the source in Step 1. Inventions or generic summaries lose marks immediately.</div></div>
+          <div class="check-item"><span class="check-box-icon">[✓]</span> <div><strong>Contextual Knowledge in Q2(a):</strong> Never just analyze the source words; deploy specific dates, statistics, and medical names to contextualise the excerpt.</div></div>
+        </div>
+      </div>
+
+      <div class="page-footer-strip">
+        <span class="footer-page-num">12/12</span>
+        <span class="footer-quip">Paper 1 Section A Examination Strategy: Feature Questions & Source Utility • Archival Standard</span>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
+  

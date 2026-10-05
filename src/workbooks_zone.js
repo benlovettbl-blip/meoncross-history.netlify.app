@@ -698,6 +698,28 @@ export function renderWorkbooksZone(container, unitData) {
           </a>
         </div>
       </div>
+
+      <!-- Western Front Master Knowledge Retrieval Companion Callout Banner -->
+      <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 1.5px solid #818cf8; border-radius: 8px; padding: 12px 16px; margin: 10px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 12px rgba(49,46,129,0.25);">
+        <div style="display: flex; align-items: center; gap: 12px; min-width: 260px; flex: 1;">
+          <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.25rem; flex-shrink: 0;">
+            <i class="fa-solid fa-brain"></i>
+          </div>
+          <div>
+            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
+              <span style="font-size: 0.65rem; font-weight: 900; background: #ffffff; color: #312e81; padding: 1px 6px; border-radius: 3px; text-transform: uppercase;">Section A Retrieval Standard</span>
+              <span style="font-size: 0.72rem; font-weight: 700; color: #c7d2fe;">12 Pages &bull; Pearson Guide Aligned &bull; 72 Questions</span>
+            </div>
+            <h4 style="margin: 0; color: #ffffff; font-size: 0.95rem; font-weight: 800;">Western Front: Master Knowledge Retrieval &amp; Historic Environment Companion</h4>
+            <p style="margin: 2px 0 0 0; color: #a5b4fc; font-size: 0.74rem;">12-page publisher-grade saddle-stitch companion: 72 two-line retrieval questions, 4-stage evacuation architecture, primary source vault, and complete Q1, Q2(a) and Q2(b) exam strategy.</p>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <a href="/pdfs/Western_Front_Master_Knowledge_Retrieval_Companion.pdf" target="_blank" title="Open 12-Page Western Front Master Retrieval Companion PDF in new tab" style="background: #ffffff; color: #312e81; border: 1.5px solid #ffffff; padding: 7px 14px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 0.15s ease;" onmouseover="this.style.background='#e0e7ff';" onmouseout="this.style.background='#ffffff';">
+            <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Open Retrieval Companion (12 Pages)
+          </a>
+        </div>
+      </div>
     `;
 
     // 5 Dedicated Era / Period Suites
@@ -746,6 +768,7 @@ export function renderWorkbooksZone(container, unitData) {
         textbookPdf: '/pdfs/edexcel_medicine_textbook_western_front_PUBLISHER_FINAL_V17.pdf',
         workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
         digitalUrl: '/units/edexcel_medicine/pupil_workbook_western_front.html',
+        quizPdf: '/pdfs/Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
       },
     ];
 
@@ -780,9 +803,19 @@ export function renderWorkbooksZone(container, unitData) {
             <a href="${p.workbookPdf}" target="_blank" title="Open ${p.title} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-user-pen"></i> Work
             </a>
+            ${
+              p.quizPdf
+                ? `
+            <a href="${p.quizPdf}" target="_blank" title="Open ${p.title} Master Retrieval Companion in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #7c3aed; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
+              <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Quiz
+            </a>
+            `
+                : `
             <a href="${p.digitalUrl}" target="_blank" title="Open ${p.title} Digital A4 Workbook in browser" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #2563eb; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
               <i class="fa-solid fa-laptop"></i> Digital
             </a>
+            `
+            }
           </div>
         </div>
       `;
