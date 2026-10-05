@@ -753,13 +753,13 @@ function buildHtml(curatedLessons) {
     .scholar-card {
       border: 1.5px solid #000000;
       background: #ffffff;
-      padding: 10px 14px;
+      padding: 10px 16px;
       display: grid;
-      grid-template-columns: 1.4fr 1fr 1fr 0.8fr 0.8fr;
-      gap: 12px;
+      grid-template-columns: 1.6fr 1.2fr 1.2fr;
+      gap: 16px;
       margin-bottom: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 8.8pt;
+      font-size: 9.0pt;
     }
     .scholar-field { display: flex; align-items: baseline; gap: 4px; }
     .scholar-field strong { font-weight: 900; color: #000; }
@@ -865,23 +865,11 @@ function buildHtml(curatedLessons) {
     .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
     .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155; margin-top: 1px; }
 
-    .tier-header-strip {
-      background: #0f172a;
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 2px 6px;
-      margin: 1.8px 0 1.5px 0;
-      border-radius: 1px;
-    }
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2.2px 6px;
-      margin-bottom: 1.8px;
+      padding: 2.8px 6px;
+      margin-bottom: 2.2px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
@@ -911,12 +899,12 @@ function buildHtml(curatedLessons) {
       font-weight: 800;
       color: #000000;
       white-space: nowrap;
-      min-width: 82px;
+      min-width: 72px;
     }
     .q-solid-line {
       flex: 1;
       border-bottom: 1.3px solid #000000;
-      height: 6.5mm;
+      height: 6.8mm;
     }
 
     /* Pages 15–18: Department Marking Bank (BALANCED 3-COLUMN ARCHITECTURE) */
@@ -1191,16 +1179,14 @@ function buildHtml(curatedLessons) {
         <h1 class="cover-main-title">CONFLICT IN THE MIDDLE EAST, 1945–1995</h1>
         <div class="cover-sub-title">20-Page A4 Knowledge Retrieval & Formative Homework Companion</div>
         <div style="font-family: 'Georgia', serif; font-size: 8.8pt; font-style: italic; color: #334155; margin-top: 4px;">
-          Exhaustive Dual-Tier Retrieval: Core Facts &bull; Causal Mechanisms &bull; Grade 9 Specification Mastery
+          Core Historical Knowledge &bull; Causal Chronology &bull; Edexcel Examination Strategy
         </div>
       </div>
 
       <div class="scholar-card">
-        <div class="scholar-field"><strong>Scholar:</strong><div class="field-line"></div></div>
+        <div class="scholar-field"><strong>Name:</strong><div class="field-line"></div></div>
         <div class="scholar-field"><strong>Class / Group:</strong><div class="field-line"></div></div>
         <div class="scholar-field"><strong>Teacher:</strong><div class="field-line"></div></div>
-        <div class="scholar-field"><strong>Target:</strong><div class="field-line"></div></div>
-        <div class="scholar-field"><strong>Working At:</strong><div class="field-line"></div></div>
       </div>
 
       <!-- Specification Architecture Strip -->
@@ -1218,7 +1204,7 @@ function buildHtml(curatedLessons) {
             <th>Specification Lesson & Topic Focus</th>
             <th style="width: 74px;">1st Score</th>
             <th style="width: 74px;">2nd Score</th>
-            <th style="width: 195px;">Retrieval Strength (Metacognition)</th>
+            <th style="width: 195px;">Recall Confidence</th>
             <th style="width: 90px;">Staff Sign</th>
           </tr>
         </thead>
@@ -1230,7 +1216,7 @@ function buildHtml(curatedLessons) {
             <td><strong>KT ${idx < 4 ? '1.' + idx : idx < 9 ? '2.' + (idx - 4) : '3.' + (idx - 9)}:</strong> ${h.title}</td>
             <td style="text-align: center; font-weight: 700;">___ / 12</td>
             <td style="text-align: center; font-weight: 700;">___ / 12</td>
-            <td>[ &nbsp; ] Instant &nbsp; [ &nbsp; ] Effortful &nbsp; [ &nbsp; ] Restudy</td>
+            <td>[ &nbsp; ] Instant &nbsp; [ &nbsp; ] Effortful &nbsp; [ &nbsp; ] Review</td>
             <td style="text-align: center;">__________</td>
           </tr>
           `,
@@ -1240,16 +1226,16 @@ function buildHtml(curatedLessons) {
 
       <!-- Traffic Light Box -->
       <div class="traffic-tier-box">
-        <span>🟢 <strong>Green (10–12/12):</strong> Secure Core Recall &bull; Advance to Exam Strategy</span>
-        <span>🟡 <strong>Amber (7–9/12):</strong> Effortful &bull; Green-Pen DIRT Review</span>
-        <span>🔴 <strong>Red (0–6/12):</strong> Knowledge Gap &bull; Flashcard Restudy & Mandatory Re-attempt</span>
+        <span>🟢 <strong>Green (10–12/12):</strong> Secure Core Recall &bull; Ready for Exam Questions</span>
+        <span>🟡 <strong>Amber (7–9/12):</strong> Effortful &bull; Green-Pen Review</span>
+        <span>🔴 <strong>Red (0–6/12):</strong> Restudy Flashcards & Re-attempt</span>
       </div>
 
-      <!-- Metacognitive Retrieval Practice & DIRT Review Guide -->
+      <!-- Spaced Retrieval Practice & Green-Pen Review Guide -->
       <div class="cover-protocol-box">
-        <div style="font-weight: 900; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.3px;">The Spaced Retrieval & Green-Pen DIRT Protocol:</div>
-        <div>&bull; <strong>1. Pure Recall Practice (10 Mins):</strong> Complete each weekly 12-question quiz strictly from memory without textbook or revision notes.</div>
-        <div>&bull; <strong>2. Immediate DIRT Review:</strong> Turn to the <em>Department Marking Bank</em> (pages 15–18) and self-mark in green pen. Write out the full historical explanation for any incorrect answer.</div>
+        <div style="font-weight: 900; margin-bottom: 3px; text-transform: uppercase; letter-spacing: 0.3px;">Spaced Retrieval & Green-Pen Review Protocol:</div>
+        <div>&bull; <strong>1. Pure Recall Practice (10 Mins):</strong> Complete each weekly 12-question quiz from memory without textbook or revision notes.</div>
+        <div>&bull; <strong>2. Immediate Green-Pen Review:</strong> Turn to the <em>Department Marking Bank</em> (pages 15–18) and self-mark in green pen. Write out the full historical explanation for any incorrect answer.</div>
         <div>&bull; <strong>3. 7-Day Spaced Re-test:</strong> Re-attempt the 12 questions one week later. Record your 2nd score to verify retention into long-term memory.</div>
         <div>&bull; <strong>4. Interleaved Digital Quizzing:</strong> Scan the QR code below for daily Leitner flashcard practice before end-of-topic GCSE assessments.</div>
       </div>
@@ -1315,7 +1301,7 @@ function buildHtml(curatedLessons) {
     <div class="page-body-full">
       <div class="running-header">
         <span>KEY TOPIC ${pIdx < 4 ? '1.' + pIdx : pIdx < 9 ? '2.' + (pIdx - 4) : '3.' + (pIdx - 9)} &bull; LESSON ${pIdx + 1} RETRIEVAL COMPANION</span>
-        <span>12 TIERED QUESTIONS &bull; PAPER 2 (1HI0/2B)</span>
+        <span>12 PRACTICE QUESTIONS &bull; PAPER 2 (1HI0/2B)</span>
       </div>
 
       <div class="lesson-meta-bar">
@@ -1324,10 +1310,7 @@ function buildHtml(curatedLessons) {
       </div>
 
       <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
-        <!-- TIER 1 -->
-        <div class="tier-header-strip">Tier 1: Core Foundation & Chronology (Grades 1–4) &bull; Q1 to Q4</div>
         ${lData.questions
-          .slice(0, 4)
           .map(
             (q, qIdx) => `
         <div class="q-block">
@@ -1339,65 +1322,11 @@ function buildHtml(curatedLessons) {
             <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">Core Fact:</span>
+            <span class="q-line-lbl">Key Fact:</span>
             <div class="q-solid-line"></div>
           </div>
           <div class="q-line-row">
-            <span class="q-line-lbl">The Explanation:</span>
-            <div class="q-solid-line"></div>
-          </div>
-        </div>
-        `,
-          )
-          .join('')}
-
-        <!-- TIER 2 -->
-        <div class="tier-header-strip">Tier 2: Causal Mechanism & Process (Grades 5–7) &bull; Q5 to Q8</div>
-        ${lData.questions
-          .slice(4, 8)
-          .map(
-            (q, qIdx) => `
-        <div class="q-block">
-          <div class="q-header">
-            <div class="q-prompt-wrap">
-              <span class="q-num">${qIdx + 5}.</span>
-              <span class="q-prompt">${q.q}</span>
-            </div>
-            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Causal Fact:</span>
-            <div class="q-solid-line"></div>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Mechanism:</span>
-            <div class="q-solid-line"></div>
-          </div>
-        </div>
-        `,
-          )
-          .join('')}
-
-        <!-- TIER 3 -->
-        <div class="tier-header-strip">Tier 3: Grade 8/9 Examiner Nuance & Impact (Grades 8–9) &bull; Q9 to Q12</div>
-        ${lData.questions
-          .slice(8, 12)
-          .map(
-            (q, qIdx) => `
-        <div class="q-block">
-          <div class="q-header">
-            <div class="q-prompt-wrap">
-              <span class="q-num">${qIdx + 9}.</span>
-              <span class="q-prompt">${q.q}</span>
-            </div>
-            <span class="q-attempt">[ 1st: ___ / 2nd: ___ ]</span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Significance:</span>
-            <div class="q-solid-line"></div>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Analytical Link:</span>
+            <span class="q-line-lbl">Explanation:</span>
             <div class="q-solid-line"></div>
           </div>
         </div>
@@ -1431,7 +1360,7 @@ function buildHtml(curatedLessons) {
     <div class="page-body-full">
       <div class="running-header">
         <span>DEPARTMENT MARKING BANK &bull; ${grp.title.toUpperCase()}</span>
-        <span>SELF-ASSESSMENT &bull; DIRT GREEN-PEN LOOP</span>
+        <span>SELF-ASSESSMENT &bull; GREEN-PEN DIRT REVIEW</span>
       </div>
 
       <div class="mb-grid-3col">
@@ -1477,8 +1406,8 @@ function buildHtml(curatedLessons) {
   <div class="page-container" id="page-19">
     <div class="page-body-full">
       <div class="running-header">
-        <span>EDEXCEL PAPER 2 &bull; KEY PROTAGONISTS GALLERY & TIER 3 DISCIPLINARY VOCABULARY</span>
-        <span>EXAMINER BIOGRAPHICAL & LEXICAL MASTERY</span>
+        <span>EDEXCEL PAPER 2 &bull; KEY PROTAGONISTS GALLERY & HISTORICAL GLOSSARY</span>
+        <span>HISTORICAL BIOGRAPHIES & KEY VOCABULARY</span>
       </div>
 
       <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin-bottom: 3px;">
@@ -1504,7 +1433,7 @@ function buildHtml(curatedLessons) {
       <div class="theme-synthesis-bar">
         <div class="theme-header">
           <span>Three Overarching Specification Themes Across 50 Years of Conflict (1945–1995)</span>
-          <span>Grade 9 Synoptic Links</span>
+          <span>Core Thematic Links</span>
         </div>
         <div class="theme-grid">
           <div class="theme-card">
@@ -1523,7 +1452,7 @@ function buildHtml(curatedLessons) {
       </div>
 
       <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #0f172a; border-bottom: 1.5px solid #0f172a; padding-bottom: 2px; margin: 3.5px 0 3px 0;">
-        Tier 3 Academic & Disciplinary Vocabulary (High-Yield Examiner Lexicon)
+        Key Historical Terms & Definitions (Essential Specification Vocabulary)
       </div>
 
       <div class="vocab-grid">
@@ -1549,7 +1478,7 @@ function buildHtml(curatedLessons) {
   `;
 
   // ========================================================================
-  // PAGE 20: BACK COVER — EDEXCEL PAPER 2 GRADE 9 EXAM STRATEGY & ESSAY ARCHITECT
+  // PAGE 20: BACK COVER — EDEXCEL PAPER 2 EXAM STRATEGY & ESSAY ARCHITECT
   // ========================================================================
   html += `
   <div class="page-container" id="page-20">
@@ -1576,7 +1505,7 @@ function buildHtml(curatedLessons) {
           </div>
         </div>
         <div class="strat-model-callout">
-          <span class="strat-model-title">Grade 9 Model Exemplar &bull; Consequence of the 1955 Czech Arms Deal:</span>
+          <span class="strat-model-title">Model Answer &bull; Consequence of the 1955 Czech Arms Deal:</span>
           <strong>[Point]</strong> One consequence of the September 1955 Czech Arms Deal was that it shattered the Western arms monopoly in the Middle East and brought Cold War superpower rivalry directly into the Arab-Israeli conflict. 
           <strong>[Fact]</strong> Nasser bypassed the Western 1950 Tripartite Declaration embargo by securing $250m worth of modern Soviet-bloc weaponry via Czechoslovakia, including 200 MiG-15 jet fighters, 300 T-34 tanks, and 200 APCs. 
           <strong>[Causal Link]</strong> Consequently, this tipped the regional balance of power against Israel, alarmed the United States into cancelling funding for the Aswan High Dam in July 1956, and directly precipitated Nasser's nationalisation of the Suez Canal, triggering the 1956 Suez Crisis.
@@ -1605,7 +1534,7 @@ function buildHtml(curatedLessons) {
           </div>
         </div>
         <div class="strat-model-callout">
-          <span class="strat-model-title">Grade 9 Model Plan &bull; Narrative Account of the Outbreak of the Six-Day War (1967):</span>
+          <span class="strat-model-title">Model Plan &bull; Narrative Account of the Outbreak of the Six-Day War (1967):</span>
           <strong>[Phase 1: Catalyst]</strong> In early May 1967, false Soviet intelligence reports of Israeli troop build-ups on Syria's border prompted President Nasser to deploy 100,000 Egyptian troops into the Sinai and expel UNEF peacekeepers. 
           <strong>[Phase 2: Escalation & Causal Link]</strong> <em>In direct response to this escalation</em>, on 22 May Nasser blockaded the Straits of Tiran—which Israel had repeatedly declared an explicit act of war (casus belli)—and signed a mutual defence pact with King Hussein of Jordan, completing the military encirclement of Israel. 
           <strong>[Phase 3: Outcome]</strong> <em>Precipitated by this imminent threat</em>, Israel launched pre-emptive air blitz Operation Focus on 5 June, destroying over 300 Arab aircraft on runways within three hours and conquering the Sinai, West Bank, and Golan Heights.
@@ -1633,7 +1562,7 @@ function buildHtml(curatedLessons) {
           </div>
         </div>
         <div class="strat-model-callout">
-          <span class="strat-model-title">Grade 9 Exemplar Architecture &bull; Importance of the 1973 Yom Kippur War for Arab-Israeli Relations:</span>
+          <span class="strat-model-title">Model Answer Architecture &bull; Importance of the 1973 Yom Kippur War for Arab-Israeli Relations:</span>
           <strong>[Aspect 1: Tactical Shock]</strong> Egypt's Operation Badr breached the Bar-Lev Line with high-pressure water monitors, inflicting 2,600 Israeli deaths and shattering the myth of IDF invincibility established in 1967. 
           <strong>[Aspect 2: Geopolitical Transformation]</strong> However, the war's greater importance was diplomatic: OPEC's Arab oil embargo proved oil could be weaponized against the West, compelling US Secretary of State Henry Kissinger to initiate "Shuttle Diplomacy." 
           <strong>[Judgment]</strong> Ultimately, by restoring Arab military pride, the war convinced both Sadat and Begin that military victory was impossible, acting as the indispensable catalyst for the 1978 Camp David Accords.
@@ -1648,7 +1577,7 @@ function buildHtml(curatedLessons) {
       <div class="strategy-card" style="margin-bottom: 3px;">
         <div class="strat-header">
           <span>Edexcel Paper 2 Distinction Traps &bull; Top 8 Examiner Warnings</span>
-          <span class="strat-badge">Grade 9 Precision & Historical Distinctions</span>
+          <span class="strat-badge">Essential Historical Distinctions</span>
         </div>
         <div class="warnings-grid">
           <div class="warning-node">
