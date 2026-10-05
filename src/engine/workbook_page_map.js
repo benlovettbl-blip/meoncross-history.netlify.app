@@ -88,7 +88,7 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 8,
     },
     lesson_11: {
-      page: 25,
+      page: 5,
       booklet: 'Key Topic 3 Booklet',
       unitId: 'cme_new',
       lessonIndex: 9,

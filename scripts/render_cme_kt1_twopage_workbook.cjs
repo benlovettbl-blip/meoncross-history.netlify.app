@@ -895,7 +895,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         'Rudi Weissenstein (1910–1969) &bull; David Ben-Gurion, Executive Head of the World Zionist Organisation, reads the Declaration of Independence beneath the portrait of Theodor Herzl on 5 Iyyar 5708. Registered in the State of Israel Government Press Office archive under Accession Shelfmark GPO-D597-087.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 120,
+      heightMm: 100,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification &bull; Key Topic 1 Content',
@@ -976,10 +976,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
             </div>
             <div style="flex: 1;"></div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
-              <span>⌜ Visual Diagram / Symbolic Sketch</span>
-              <span>Causal Annotation &amp; Key Dates ⌟</span>
-            </div>
           </div>
         </div>
 
@@ -1002,10 +998,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
             </div>
             <div style="flex: 1;"></div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
-              <span>⌜ Visual Diagram / Symbolic Sketch</span>
-              <span>Causal Annotation &amp; Key Dates ⌟</span>
-            </div>
           </div>
         </div>
 
@@ -1028,10 +1020,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
             </div>
             <div style="flex: 1;"></div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
-              <span>⌜ Visual Diagram / Symbolic Sketch</span>
-              <span>Causal Annotation &amp; Key Dates ⌟</span>
-            </div>
           </div>
         </div>
 
@@ -1078,10 +1066,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
             </div>
             <div style="flex: 1;"></div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
-              <span>⌜ Visual Diagram / Symbolic Sketch</span>
-              <span>Causal Annotation &amp; Key Dates ⌟</span>
-            </div>
           </div>
         </div>
 
@@ -1104,10 +1088,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
             </div>
             <div style="flex: 1;"></div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
-              <span>⌜ Visual Diagram / Symbolic Sketch</span>
-              <span>Causal Annotation &amp; Key Dates ⌟</span>
-            </div>
           </div>
         </div>
 
@@ -1130,10 +1110,6 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
               <span style="font-size: 6.2pt; color: #555555; font-weight: 700; text-transform: uppercase; white-space: nowrap; margin-left: 8px;">Dual-Coding</span>
             </div>
             <div style="flex: 1;"></div>
-            <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; text-transform: uppercase; letter-spacing: 0.5px;">
-              <span>⌜ Visual Diagram / Symbolic Sketch</span>
-              <span>Causal Annotation &amp; Key Dates ⌟</span>
-            </div>
           </div>
         </div>
 

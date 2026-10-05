@@ -61,12 +61,15 @@ function renderStandardFrontCover({
   renderFooterStrip = null,
 }) {
   const isWeimar = unitId === 'weimar_nazi_germany';
-  const photoHeight = isWeimar ? Math.min(heroImage.heightMm || 92, 92) : heroImage.heightMm || 120;
-  const objectPos = heroImage.objectPosition || 'center 36%';
 
   // Dynamic specification typography scaling based on column count and item density
   const numCols = (specBox.subtopics || []).length || 3;
   const maxItems = Math.max(...(specBox.subtopics || []).map((s) => (s.items || []).length), 1);
+
+  // Standard photo height: Weimar uses 92mm; standard units with dense specification use 100mm
+  const defaultPhotoHeight = isWeimar ? 92 : maxItems >= 4 ? 100 : 110;
+  const photoHeight = Math.min(heroImage.heightMm || defaultPhotoHeight, defaultPhotoHeight);
+  const objectPos = heroImage.objectPosition || 'center 36%';
 
   let specFontSize, specLineHeight, specTitleSize, specItemMargin, specTitleMargin;
   if (isWeimar) {
@@ -77,24 +80,24 @@ function renderStandardFrontCover({
     specTitleMargin = '4px';
   } else if (numCols <= 3) {
     // 3-column layout (e.g. Conflict in the Middle East, GCSE Paper 2)
-    if (maxItems <= 4) {
-      specFontSize = '7.9pt';
-      specLineHeight = '1.35';
-      specTitleSize = '8.5pt';
-      specItemMargin = '5.5px';
-      specTitleMargin = '6px';
-    } else if (maxItems === 5) {
-      specFontSize = '7.6pt';
-      specLineHeight = '1.32';
+    if (maxItems <= 3) {
+      specFontSize = '7.7pt';
+      specLineHeight = '1.30';
       specTitleSize = '8.3pt';
-      specItemMargin = '4.5px';
-      specTitleMargin = '5px';
+      specItemMargin = '4.0px';
+      specTitleMargin = '4.5px';
+    } else if (maxItems <= 5) {
+      specFontSize = '7.3pt';
+      specLineHeight = '1.27';
+      specTitleSize = '7.9pt';
+      specItemMargin = '3.0px';
+      specTitleMargin = '3.5px';
     } else {
-      specFontSize = '7.0pt';
-      specLineHeight = '1.22';
-      specTitleSize = '7.6pt';
-      specItemMargin = '2.5px';
-      specTitleMargin = '4px';
+      specFontSize = '6.8pt';
+      specLineHeight = '1.20';
+      specTitleSize = '7.4pt';
+      specItemMargin = '2.0px';
+      specTitleMargin = '3.0px';
     }
   } else {
     // 4+ column layout (e.g. Early Elizabethan England, Paper 2 British Depth)
@@ -129,8 +132,8 @@ function renderStandardFrontCover({
 
       return `
           <!-- Subtopic ${idx + 1} -->
-          <div style="${borderStyle} display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
-            <strong style="font-size: ${specTitleSize}; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2.5px; margin-bottom: ${specTitleMargin}; display: block; letter-spacing: 0.3px;">
+          <div style="${borderStyle} display: flex; flex-direction: column; justify-content: flex-start; height: 100%; overflow: hidden;">
+            <strong style="font-size: ${specTitleSize}; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: ${specTitleMargin}; display: block; letter-spacing: 0.3px; flex-shrink: 0;">
               ${sub.title}
             </strong>
             <div style="font-size: ${specFontSize}; line-height: ${specLineHeight}; color: #111;">
@@ -148,7 +151,7 @@ function renderStandardFrontCover({
         <span class="footer-page-num">1/${totalPageCount}</span>
       </div>`;
 
-  // Pupil Workbook Card
+  // Pupil Workbook Card (Top Placement)
   const pupilCardHtml = `
       <!-- Pupil Workbook & Assessment Card (Spanning Across the Page) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4.5px 12px; background: #fff; margin-bottom: 3px;">
@@ -236,6 +239,9 @@ function renderStandardFrontCover({
         </div>
       </div>
 
+      <!-- Pupil Workbook & Assessment Card (Top Placement) -->
+      ${pupilCardHtml}
+
       <!-- Key Topic Title & Inquiry Banner -->
       <div style="border: 1.8px solid #000; border-radius: 4px; padding: 4px 8px; background: #fff; margin-bottom: 3px;">
         <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 1px;">
@@ -254,17 +260,17 @@ function renderStandardFrontCover({
         </div>
       </div>
 
-      <!-- Hero Photo and Pupil Card Order (Weimar: Pupil Card above Photo; Others: Photo above Pupil Card) -->
-      ${isWeimar ? `${pupilCardHtml}\n${photoPlateHtml}` : `${photoPlateHtml}\n${pupilCardHtml}`}
+      <!-- Master Wide Photographic Plate -->
+      ${photoPlateHtml}
 
       <!-- Pearson Edexcel Specification Word-For-Word (Spanning Across the Page) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
-        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center;">
+        <div style="background: #000; color: #fff; padding: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.8px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
           <span>${specBox.title}</span>
           <span style="font-size: 6.8pt; letter-spacing: 0.5px;">Official Specification Content</span>
         </div>
 
-        <div style="padding: 6px 10px; display: grid; grid-template-columns: repeat(${specBox.subtopics.length || 3}, 1fr); gap: 10px; font-family: 'Inter', sans-serif; flex: 1;">
+        <div style="padding: 5px 10px; display: grid; grid-template-columns: repeat(${specBox.subtopics.length || 3}, 1fr); gap: 10px; font-family: 'Inter', sans-serif; flex: 1; overflow: hidden;">
           ${subtopicsHtml}
         </div>
       </div>
