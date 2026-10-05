@@ -326,10 +326,10 @@ function buildHtml() {
     /* FRONT COVER STYLES */
     .cover-top-box {
       border: 1.5px solid #0f172a;
-      padding: 5px 10px;
+      padding: 6px 12px;
       background: #ffffff;
       border-radius: 2px;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
     }
     .cover-badge-row {
       display: flex;
@@ -341,7 +341,7 @@ function buildHtml() {
       background: #0f172a;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7.6pt;
       font-weight: 900;
       padding: 2px 7px;
       border-radius: 2px;
@@ -350,7 +350,7 @@ function buildHtml() {
     }
     .cover-dept-name {
       font-family: 'Inter', sans-serif;
-      font-size: 8.0pt;
+      font-size: 8.2pt;
       font-weight: 800;
       color: #0f172a;
       text-transform: uppercase;
@@ -358,7 +358,7 @@ function buildHtml() {
     }
     .cover-main-title {
       font-family: 'Playfair Display', serif;
-      font-size: 14.5pt;
+      font-size: 14.8pt;
       font-weight: 900;
       line-height: 1.15;
       color: #000000;
@@ -378,31 +378,32 @@ function buildHtml() {
     .pupil-meta-strip {
       border: 1.2px solid #0f172a;
       background: #f8fafc;
-      padding: 4px 10px;
+      padding: 5px 8px;
       border-radius: 2px;
       display: grid;
-      grid-template-columns: 1.6fr 1fr 1.2fr;
-      gap: 12px;
+      grid-template-columns: 1.7fr 1fr 1fr 1fr;
+      gap: 10px;
       align-items: flex-end;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
       font-family: 'Inter', sans-serif;
-      font-size: 8.0pt;
+      font-size: 7.8pt;
       font-weight: 700;
     }
     .pupil-field {
       display: flex;
       align-items: flex-end;
-      gap: 6px;
+      gap: 5px;
     }
     .pupil-field-lbl {
       color: #0f172a;
       white-space: nowrap;
       font-weight: 800;
+      font-size: 7.6pt;
     }
     .pupil-line {
       flex: 1;
       border-bottom: 1.4px solid #000000;
-      height: 6.2mm;
+      height: 6.8mm;
     }
 
     /* SPECIFICATION & EXAM OVERVIEW STRIP */
@@ -410,13 +411,13 @@ function buildHtml() {
       border: 1.2px solid #0f172a;
       border-radius: 2px;
       background: #ffffff;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
       overflow: hidden;
     }
     .spec-overview-title-bar {
       background: #0f172a;
       color: #ffffff;
-      padding: 2.5px 8px;
+      padding: 3px 8px;
       display: flex;
       justify-content: space-between;
       font-family: 'Inter', sans-serif;
@@ -428,71 +429,92 @@ function buildHtml() {
     .spec-four-eras {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-      padding: 4px 6px;
+      gap: 6px;
+      padding: 3.5px 6px;
       font-family: 'Inter', sans-serif;
       font-size: 6.8pt;
-      line-height: 1.2;
+      line-height: 1.20;
       background: #ffffff;
     }
     .spec-era-col {
-      border-left: 2px solid #0f172a;
-      padding-left: 4px;
+      border-left: 2.2px solid #0f172a;
+      padding-left: 5px;
     }
     .spec-era-lbl {
       font-weight: 900;
       color: #0f172a;
       display: block;
-      font-size: 6.9pt;
-      margin-bottom: 1px;
+      font-size: 7.1pt;
+      margin-bottom: 1.5px;
     }
     .exam-structure-strip {
       display: grid;
       grid-template-columns: 1fr 1.2fr 1.5fr;
-      gap: 5px;
+      gap: 6px;
       background: #f1f5f9;
       border-top: 1px solid #cbd5e1;
-      padding: 3px 6px;
+      padding: 3.5px 7px;
       font-family: 'Inter', sans-serif;
     }
     .exam-q-cell {
-      border-left: 2px solid #0f172a;
-      padding-left: 4px;
-      line-height: 1.15;
+      border-left: 2.2px solid #0f172a;
+      padding-left: 5px;
+      line-height: 1.18;
     }
-    .eq-num { font-size: 7.0pt; font-weight: 900; color: #0f172a; display: block; }
-    .eq-type { font-size: 6.8pt; font-weight: 800; color: #334155; display: block; }
-    .eq-meta { font-size: 6.4pt; color: #475569; display: block; }
+    .eq-num { font-size: 7.2pt; font-weight: 900; color: #0f172a; display: block; }
+    .eq-type { font-size: 6.9pt; font-weight: 800; color: #334155; display: block; }
+    .eq-meta { font-size: 6.5pt; color: #475569; display: block; }
 
     /* 20-LESSON TRACKER (2 COLUMNS OF 10) */
     .tracker-wrap {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5px;
-      margin-bottom: 3px;
+      gap: 6px;
+      margin-bottom: 3.5px;
     }
     .tracker-table {
       width: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 6.9pt;
+      font-size: 7.2pt;
     }
     .tracker-table th, .tracker-table td {
       border: 1.1px solid #0f172a;
-      padding: 3.0px 4px;
+      padding: 7.8px 6px;
+      line-height: 1.22;
     }
     .tracker-table th {
       background: #0f172a;
       color: #ffffff;
       font-weight: 800;
       text-align: left;
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       text-transform: uppercase;
       letter-spacing: 0.2px;
+      padding: 4.8px 6px;
     }
     .tracker-table tr:nth-child(even) { background: #f8fafc; }
-    .col-score { width: 32px; text-align: center; }
-    .col-tick { width: 28px; text-align: center; }
+    .col-score { width: 36px; text-align: center; font-size: 6.8pt; font-weight: 800; }
+    .col-tick { width: 28px; text-align: center; font-size: 7.0pt; font-weight: 800; }
+
+    /* 4-ERA DIAGNOSTIC MATRIX (FRONT COVER) */
+    .era-rag-matrix {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      margin-bottom: 2.5px;
+    }
+    .era-rag-card {
+      border: 1.1px solid #0f172a;
+      border-top: 3px solid #0f172a;
+      background: #ffffff;
+      padding: 4.5px 6.5px;
+      border-radius: 1px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.7pt;
+      line-height: 1.22;
+    }
+    .era-rag-title { font-weight: 900; color: #0f172a; display: block; font-size: 7.0pt; margin-bottom: 1.5px; }
 
     /* DIRT RETRIEVAL PROTOCOL */
     .protocol-card {
@@ -500,12 +522,12 @@ function buildHtml() {
       border-left: 4px solid #0f172a;
       background: #f8fafc;
       border-radius: 2px;
-      padding: 3px 6px;
-      margin-bottom: 3px;
+      padding: 3.5px 6.5px;
+      margin-bottom: 2.5px;
     }
     .protocol-title-row {
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -515,46 +537,46 @@ function buildHtml() {
     .protocol-grid-4col {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
+      gap: 5px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      line-height: 1.18;
+      font-size: 6.8pt;
+      line-height: 1.22;
     }
     .step-item {
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      padding: 2.5px 4px;
+      padding: 4px 5.5px;
       border-radius: 1px;
     }
-    .step-item strong { color: #0f172a; display: block; font-size: 6.8pt; }
+    .step-item strong { color: #0f172a; display: block; font-size: 7.0pt; margin-bottom: 1px; }
 
     .traffic-tier-box {
       border: 1.2px solid #0f172a;
       background: #f1f5f9;
       border-radius: 2px;
-      padding: 3px 6px;
+      padding: 4px 8px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.3pt;
       font-weight: 700;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
     }
 
     .glossary-box {
       border: 1.2px solid #0f172a;
       background: #ffffff;
       border-radius: 2px;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
       overflow: hidden;
     }
     .glossary-title {
       background: #0f172a;
       color: #ffffff;
-      padding: 2px 6px;
+      padding: 2.5px 7px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 7.2pt;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.3px;
@@ -564,7 +586,7 @@ function buildHtml() {
       grid-template-columns: 1fr 1fr;
       gap: 2px 8px;
       padding: 3px 6px;
-      font-size: 6.7pt;
+      font-size: 6.5pt;
       line-height: 1.16;
     }
     .glossary-item { font-family: 'Georgia', serif; color: #1e293b; }
@@ -573,21 +595,21 @@ function buildHtml() {
     .guarantee-box {
       border: 1.2px solid #0f172a;
       background: #f8fafc;
-      padding: 3px 6px;
+      padding: 4px 8px;
       border-radius: 2px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
     .guarantee-qr {
-      width: 32px;
-      height: 32px;
+      width: 36px;
+      height: 36px;
       flex-shrink: 0;
     }
     .guarantee-text {
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      line-height: 1.15;
+      font-size: 6.8pt;
+      line-height: 1.2;
       color: #1e293b;
     }
     .guarantee-badge {
@@ -595,7 +617,7 @@ function buildHtml() {
       color: #0f172a;
       text-transform: uppercase;
       display: block;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
     }
 
     /* Page 2: Chronology & Synoptic Matrix */
@@ -759,27 +781,26 @@ function buildHtml() {
     .ans-check { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #475569; white-space: nowrap; }
     .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.5pt; line-height: 1.12; }
 
-    /* Page 27: 6-Factor Analytical Matrix */
+    /* Page 27: 6-Factor Analytical Matrix (Top Half) & Synoptic Synthesis (Bottom Half) */
     .p27-wrap {
       display: flex;
       flex-direction: column;
+      gap: 4.5px;
+      margin-top: 1px;
+      height: 100%;
       justify-content: space-between;
-      flex: 1;
-      gap: 4px;
-      margin-top: 2px;
     }
     .factor-table {
       width: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      flex: 1;
+      font-size: 6.6pt;
     }
     .factor-table th, .factor-table td {
       border: 1.1px solid #0f172a;
-      padding: 3.5px 5px;
+      padding: 11.5px 6.5px;
       vertical-align: top;
-      line-height: 1.18;
+      line-height: 1.26;
     }
     .factor-table th {
       background: #0f172a;
@@ -787,8 +808,9 @@ function buildHtml() {
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.3px;
-      font-size: 7.2pt;
+      font-size: 7.0pt;
       text-align: center;
+      padding: 3.2px 5.5px;
     }
     .factor-lbl {
       background: #f1f5f9;
@@ -796,110 +818,199 @@ function buildHtml() {
       color: #0f172a;
       width: 14%;
       text-transform: uppercase;
-      font-size: 7.1pt;
+      font-size: 6.9pt;
     }
     .factor-col { width: 21.5%; }
 
-    /* Page 28: Section B Examination Strategy */
+    /* Page 27 Bottom Half Components */
+    .p27-bottom-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .thematic-progression-card {
+      border: 1.2px solid #0f172a;
+      background: #ffffff;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .p27-section-title {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.3pt;
+      font-weight: 900;
+      padding: 2.5px 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .thematic-progression-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.4pt;
+    }
+    .thematic-progression-table th, .thematic-progression-table td {
+      border: 1px solid #cbd5e1;
+      padding: 6.8px 6.5px;
+      vertical-align: top;
+      line-height: 1.24;
+    }
+    .thematic-progression-table th {
+      background: #f1f5f9;
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 6.6pt;
+      text-transform: uppercase;
+    }
+    .synergy-card-wrap {
+      border: 1.2px solid #0f172a;
+      background: #ffffff;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .synergy-grid-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+      padding: 4px;
+      background: #f8fafc;
+      font-family: 'Inter', sans-serif;
+    }
+    .synergy-card {
+      border: 1.1px solid #cbd5e1;
+      border-top: 2.5px solid #0f172a;
+      background: #ffffff;
+      padding: 7.5px 7px;
+      border-radius: 1px;
+      font-size: 6.5pt;
+      line-height: 1.22;
+    }
+    .synergy-tag { font-weight: 900; color: #0f172a; display: block; font-size: 6.8pt; margin-bottom: 1.5px; }
+
+    .debates-grid-4col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4.5px;
+      font-family: 'Inter', sans-serif;
+    }
+    .debate-card {
+      border: 1.1px solid #94a3b8;
+      border-top: 2.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 7.5px 7px;
+      border-radius: 1px;
+      font-size: 6.5pt;
+      line-height: 1.22;
+    }
+    .debate-tag { font-weight: 900; color: #0f172a; display: block; font-size: 6.8pt; margin-bottom: 1.5px; }
+
+    /* Page 28: Section B Examination Strategy & Level 4 Scaffolding */
     .p28-wrap {
       display: flex;
       flex-direction: column;
+      gap: 4.5px;
+      margin-top: 1px;
+      height: 100%;
       justify-content: space-between;
-      flex: 1;
-      gap: 4px;
-      margin-top: 2px;
     }
     .exam-section-card {
       border: 1.2px solid #0f172a;
       border-radius: 2px;
       background: #ffffff;
-      padding: 5px 8px;
+      padding: 7.5px 9px;
     }
     .exam-section-title {
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 7.8pt;
       font-weight: 900;
       color: #ffffff;
       background: #0f172a;
-      padding: 2px 6px;
+      padding: 2.8px 8px;
       border-radius: 1px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
-      margin-bottom: 3px;
-      display: inline-block;
+      margin-bottom: 3.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     .q3-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      grid-template-columns: 1fr 1.35fr;
+      gap: 7px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      line-height: 1.2;
+      font-size: 6.8pt;
+      line-height: 1.22;
     }
     .formula-step {
       border-left: 2.5px solid #0f172a;
       padding-left: 4px;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
     }
     .step-bold { font-weight: 800; color: #0f172a; }
 
     .q4-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 5px;
+      gap: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.9pt;
-      line-height: 1.2;
+      font-size: 6.7pt;
+      line-height: 1.22;
     }
     .peel-box {
       border: 1px solid #cbd5e1;
+      border-top: 2.5px solid #0f172a;
       background: #f8fafc;
-      padding: 3px 5px;
-      border-radius: 2px;
+      padding: 4.8px 6px;
+      border-radius: 1px;
     }
 
     .q56-essay-box {
       border: 1.2px solid #0f172a;
       background: #f8fafc;
-      padding: 4px 7px;
+      padding: 5px 8px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 6.8pt;
       line-height: 1.22;
     }
     .essay-grid {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 8px;
+      grid-template-columns: 1.1fr 1.25fr;
+      gap: 7px;
       align-items: start;
     }
     .model-conclusion-box {
       border: 1px solid #94a3b8;
       background: #ffffff;
-      padding: 4px 6px;
+      padding: 5px 7px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 6.8pt;
-      line-height: 1.18;
+      font-size: 6.6pt;
+      line-height: 1.2;
       font-style: italic;
       color: #1e293b;
     }
 
     .pitfalls-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 4px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      line-height: 1.16;
+      font-size: 6.4pt;
+      line-height: 1.18;
     }
     .pitfall-item {
       border: 1px solid #cbd5e1;
       background: #f1f5f9;
-      padding: 2.5px 4px;
-      border-radius: 2px;
+      padding: 4px 5px;
+      border-radius: 1px;
     }
-    .pitfall-tag { font-weight: 800; color: #991b1b; display: block; }
+    .pitfall-tag { font-weight: 800; color: #991b1b; display: block; font-size: 6.5pt; margin-bottom: 1.5px; }
   </style>
 </head>
 <body>
@@ -932,11 +1043,15 @@ function buildHtml() {
           <div class="pupil-line"></div>
         </div>
         <div class="pupil-field">
+          <span class="pupil-field-lbl">Candidate No:</span>
+          <div class="pupil-line"></div>
+        </div>
+        <div class="pupil-field">
           <span class="pupil-field-lbl">Target Grade:</span>
           <div class="pupil-line"></div>
         </div>
         <div class="pupil-field">
-          <span class="pupil-field-lbl">Teaching Group:</span>
+          <span class="pupil-field-lbl">Teacher/Group:</span>
           <div class="pupil-line"></div>
         </div>
       </div>
@@ -986,7 +1101,7 @@ function buildHtml() {
       </div>
 
       <!-- Paper 1 Examination Timing & Mark Allocation Architecture -->
-      <div style="border: 1.1px solid #0f172a; background: #ffffff; padding: 3px 6px; border-radius: 2px; margin-bottom: 3px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2;">
+      <div style="border: 1.2px solid #0f172a; background: #ffffff; padding: 2.8px 6px; border-radius: 2px; margin-bottom: 2.5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.18;">
         <div style="border-left: 2.5px solid #0f172a; padding-left: 4px;">
           <strong style="color: #0f172a;">Section A: Historic Environment (Western Front)</strong> &bull; 16 Marks &bull; 32 Minutes<br>
           Q1(a) Feature [2m] &bull; Q1(b) Feature [2m] &bull; Q2(a) Source Utility [8m] &bull; Q2(b) Follow-up [4m]
@@ -1004,10 +1119,10 @@ function buildHtml() {
           <thead>
             <tr>
               <th style="width: 58%;">Era 1 &amp; Era 2 (c1250–c1700)</th>
-              <th class="col-score">1st</th>
-              <th class="col-score">2nd</th>
-              <th class="col-score">30D</th>
-              <th class="col-tick">DIRT</th>
+              <th class="col-score">1st Cold</th>
+              <th class="col-score">2nd DIRT</th>
+              <th class="col-score">30D Rev</th>
+              <th class="col-tick">Check</th>
             </tr>
           </thead>
           <tbody>
@@ -1015,11 +1130,14 @@ function buildHtml() {
               .map(
                 (l) => `
               <tr>
-                <td><strong>L${l.num}:</strong> ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</td>
-                <td class="col-score">/10</td>
-                <td class="col-score">/10</td>
-                <td class="col-score">/10</td>
-                <td class="col-tick">[ &nbsp; ]</td>
+                <td style="padding: 4.1px 5.5px;">
+                  <div style="font-weight: 800; font-size: 7.2pt; color: #0f172a; line-height: 1.15;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
+                  <div style="font-size: 6.2pt; color: #475569; font-style: italic; line-height: 1.15; margin-top: 1px;">${l.enquiry}</div>
+                </td>
+                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
+                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
+                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
+                <td class="col-tick" style="padding: 4.1px 2px; font-weight: 900;">[ &nbsp; ]</td>
               </tr>
             `,
               )
@@ -1032,10 +1150,10 @@ function buildHtml() {
           <thead>
             <tr>
               <th style="width: 58%;">Era 3 &amp; Era 4 (c1700–present)</th>
-              <th class="col-score">1st</th>
-              <th class="col-score">2nd</th>
-              <th class="col-score">30D</th>
-              <th class="col-tick">DIRT</th>
+              <th class="col-score">1st Cold</th>
+              <th class="col-score">2nd DIRT</th>
+              <th class="col-score">30D Rev</th>
+              <th class="col-tick">Check</th>
             </tr>
           </thead>
           <tbody>
@@ -1043,17 +1161,52 @@ function buildHtml() {
               .map(
                 (l) => `
               <tr>
-                <td><strong>L${l.num}:</strong> ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</td>
-                <td class="col-score">/10</td>
-                <td class="col-score">/10</td>
-                <td class="col-score">/10</td>
-                <td class="col-tick">[ &nbsp; ]</td>
+                <td style="padding: 4.1px 5.5px;">
+                  <div style="font-weight: 800; font-size: 7.2pt; color: #0f172a; line-height: 1.15;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
+                  <div style="font-size: 6.2pt; color: #475569; font-style: italic; line-height: 1.15; margin-top: 1px;">${l.enquiry}</div>
+                </td>
+                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
+                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
+                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
+                <td class="col-tick" style="padding: 4.1px 2px; font-weight: 900;">[ &nbsp; ]</td>
               </tr>
             `,
               )
               .join('')}
           </tbody>
         </table>
+      </div>
+
+      <!-- Section B 4-Era Diagnostic Progress & Mastery Tracker -->
+      <div class="era-rag-matrix">
+        <div class="era-rag-card">
+          <span class="era-rag-title">Era 1: Medieval (c1250–1500)</span>
+          Lessons 1–5 &bull; Target: <strong>&ge;45/50</strong><br>
+          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
+          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
+          <span style="color: #64748b; font-size: 6.0pt;">Focus: Humours &bull; Monasteries &bull; Plague</span>
+        </div>
+        <div class="era-rag-card">
+          <span class="era-rag-title">Era 2: Renaissance (c1500–1700)</span>
+          Lessons 6–10 &bull; Target: <strong>&ge;45/50</strong><br>
+          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
+          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
+          <span style="color: #64748b; font-size: 6.0pt;">Focus: Vesalius &bull; Harvey &bull; 1665 Plague</span>
+        </div>
+        <div class="era-rag-card">
+          <span class="era-rag-title">Era 3: Industrial (c1700–1900)</span>
+          Lessons 11–15 &bull; Target: <strong>&ge;45/50</strong><br>
+          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
+          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
+          <span style="color: #64748b; font-size: 6.0pt;">Focus: Germ Theory &bull; Surgery &bull; 1875 Act</span>
+        </div>
+        <div class="era-rag-card">
+          <span class="era-rag-title">Era 4: Modern (c1900–present)</span>
+          Lessons 16–20 &bull; Target: <strong>&ge;45/50</strong><br>
+          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
+          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
+          <span style="color: #64748b; font-size: 6.0pt;">Focus: Genetics &bull; Penicillin &bull; NHS (1948)</span>
+        </div>
       </div>
 
       <!-- 4-Stage DIRT Retrieval Protocol -->
@@ -1317,6 +1470,7 @@ function buildHtml() {
       </div>
 
       <div class="p27-wrap">
+        <!-- TOP HALF: 6-FACTOR SYNOPTIC ANALYSIS MATRIX -->
         <table class="factor-table">
           <thead>
             <tr>
@@ -1331,143 +1485,251 @@ function buildHtml() {
             <tr>
               <td class="factor-lbl">1. War &amp; Conflict</td>
               <td>
-                &bull; <strong>Battlefield Surgery:</strong> Arrow extractions, amputation &amp; cauterisation with hot irons.<br>
-                &bull; <strong>John of Arderne:</strong> Developed 50% survival fistula-in-ano surgery for Hundred Years War knights.<br>
-                &bull; <strong>Surgical Experience:</strong> Battlefield wounds forced empirical wound dressing over university theory.
+                &bull; <strong>Battlefield Surgery:</strong> Arrow extractions, cautery irons, amputations.<br>
+                &bull; <strong>John of Arderne:</strong> Anal fistula surgery for Hundred Years War knights.<br>
+                &bull; <strong>Empirical Urgency:</strong> Trauma wounds forced wound dressing over Galen.
               </td>
               <td>
-                &bull; <strong>Ambroise Paré:</strong> Ran out of boiling oil in 1537; improvised egg-yolk/turpentine balm; used ligatures.<br>
-                &bull; <strong>Gunpowder Trauma:</strong> Artillery &amp; muskets created shattered bones and deep contaminated flesh wounds.<br>
-                &bull; <strong>Military Hospitals:</strong> Emergence of naval and regimental field dressings during European religious wars.
+                &bull; <strong>Ambroise Paré (1537):</strong> Improvised egg/turpentine balm; silk ligatures.<br>
+                &bull; <strong>Gunpowder Trauma:</strong> Artillery wounds forced deeper wound excision.<br>
+                &bull; <strong>Military Care:</strong> Early naval and regimental field dressings.
               </td>
               <td>
-                &bull; <strong>Crimean War (1854):</strong> Nightingale &amp; Seacole reform Scutari hospital; mortality drops from 42% to 2%.<br>
-                &bull; <strong>Franco-Prussian War (1870):</strong> National rivalry drove massive French and German state funding for Pasteur &amp; Koch.<br>
-                &bull; <strong>American Civil War:</strong> Accelerated large-scale surgical anesthesia (ether and chloroform).
+                &bull; <strong>Crimean War (1854):</strong> Nightingale cuts Scutari deaths from 42% to 2%.<br>
+                &bull; <strong>Franco-Prussian War:</strong> Franco-German rivalry funded Pasteur &amp; Koch.<br>
+                &bull; <strong>American Civil War:</strong> Accelerated adoption of battlefield anesthesia.
               </td>
               <td>
-                &bull; <strong>First World War:</strong> Thomas splint (80% &rarr; 20% femur deaths), mobile X-rays, Robertson blood depot (1917), Gillies plastic surgery.<br>
-                &bull; <strong>Second World War:</strong> US War Production Board funded industrial deep-fermentation vats for 2.3m penicillin doses.<br>
-                &bull; <strong>Trauma Innovation:</strong> Burn treatments (McIndoe Guinea Pig Club) and emergency civilian blood donation services.
-              </td>
-            </tr>
-            <tr>
-              <td class="factor-lbl">2. Religion &amp; Superstition</td>
-              <td>
-                &bull; <strong>Papal Scriptoria Monopoly:</strong> Church controlled book copying and university curriculum; dissenting views burned.<br>
-                &bull; <strong>Galenic Teleology:</strong> Galen’s design argument matched Genesis; questioning Galen was branded heresy.<br>
-                &bull; <strong>Divine Retribution:</strong> Sickness sent as punishment for sin; flagellants, pilgrimages, and royal touch for scrofula.
-              </td>
-              <td>
-                &bull; <strong>Reformation Weakening:</strong> Henry VIII dissolved 500 monastic hospitals; secular charity boards took over.<br>
-                &bull; <strong>Empirical Rejection:</strong> Royal Society motto <em>Nullius in Verba</em> (1660) rejected religious dogma.<br>
-                &bull; <strong>Lingering Superstition:</strong> Astrological comets blamed for 1665 Great Plague; touch of the King continued.
-              </td>
-              <td>
-                &bull; <strong>Clerical Opposition:</strong> Churchmen initially opposed Simpson’s chloroform, citing Genesis childbearing pain.<br>
-                &bull; <strong>Anti-Vaccination League:</strong> Religious objections to injecting animal cowpox matter into human children (1867).<br>
-                &bull; <strong>Social Christian Reform:</strong> Christian philanthropic movements funded voluntary hospitals and sanitary temperance.
-              </td>
-              <td>
-                &bull; <strong>Bioethical Scrutiny:</strong> Faith-based ethical debates over embryonic stem-cell research, human cloning, and IVF.<br>
-                &bull; <strong>End-of-Life Debates:</strong> Modern moral debates over voluntary euthanasia and palliative hospice movements (Cicely Saunders).<br>
-                &bull; <strong>Diminished Causal Role:</strong> Religion ceased to act as an explanation for disease causation or pathology.
+                &bull; <strong>WWI:</strong> Thomas splint (80% &rarr; 20% femur deaths), blood depots, plastic surgery.<br>
+                &bull; <strong>WWII:</strong> US War Production Board funded mass industrial penicillin vats.<br>
+                &bull; <strong>Trauma Innovation:</strong> McIndoe Guinea Pig Club; civilian blood banks.
               </td>
             </tr>
             <tr>
-              <td class="factor-lbl">3. Science &amp; Technology</td>
+              <td class="factor-lbl">2. Religion</td>
               <td>
-                &bull; <strong>Primitive Tools:</strong> Urine wheels, astrolabes, Zodiac Man charts; cautery irons and fleams.<br>
-                &bull; <strong>Absence of Optics:</strong> No microscopes; doctors could not observe bacteria, capillaries, or cellular structures.<br>
-                &bull; <strong>Manuscript Drift:</strong> Hand-copied texts suffered compounding translation and anatomical errors over centuries.
+                &bull; <strong>Scriptoria Monopoly:</strong> Church copied books; dissent burned as heresy.<br>
+                &bull; <strong>Galenic Teleology:</strong> Church preserved Galen as proving God's design.<br>
+                &bull; <strong>Divine Retribution:</strong> Sickness punished sin; flagellants, pilgrimages.
               </td>
               <td>
-                &bull; <strong>Printing Press (1440):</strong> Gutenberg movable metal type enabled mass distribution of Vesalius’s <em>De Fabrica</em>.<br>
-                &bull; <strong>Mechanical Models:</strong> Water pump engineering inspired Harvey to mathematically calculate blood circulation.<br>
-                &bull; <strong>Early Microscopes:</strong> Robert Hooke published <em>Micrographia</em> (1665); Leeuwenhoek observed animalcules.
+                &bull; <strong>Reformation:</strong> Dissolution of 500 monastic hospitals under Henry VIII.<br>
+                &bull; <strong>Royal Society (1660):</strong> Motto <em>Nullius in Verba</em> rejected religious dogma.<br>
+                &bull; <strong>Lingering Superstition:</strong> Astrological comets blamed for 1665 Plague.
               </td>
               <td>
-                &bull; <strong>Swan-Neck Flasks:</strong> Pasteur used bent glass necks to trap airborne dust, disproving spontaneous generation.<br>
-                &bull; <strong>Koch’s Bacteriology:</strong> Solid agar jelly, industrial aniline chemical dyes, and microphotography isolated TB and cholera.<br>
-                &bull; <strong>Chemical Anesthesia:</strong> Chloroform vapors (Simpson) and carbolic acid spray machines (Lister donkey engine).
+                &bull; <strong>Clerical Resistance:</strong> Opposition to chloroform citing childbearing pain.<br>
+                &bull; <strong>Anti-Vaccine League:</strong> Religious objections to injecting animal matter.<br>
+                &bull; <strong>Christian Philanthropy:</strong> Endowed voluntary hospitals and temperance.
               </td>
               <td>
-                &bull; <strong>Diagnostic Imaging:</strong> Röntgen’s X-rays (1895), Hounsfield’s CT scanner (1972), MRI scanners, and endoscopes.<br>
-                &bull; <strong>Molecular Genomics:</strong> Franklin’s Photograph 51, Watson &amp; Crick double helix (1953), Human Genome Project (2003).<br>
-                &bull; <strong>Targeted Pharmacology:</strong> Chemical synthesis (Salvarsan 606), deep-fermentation vats, robotic da Vinci surgery.
+                &bull; <strong>Bioethics:</strong> Debates over embryonic stem-cell research, IVF, cloning.<br>
+                &bull; <strong>Palliative Movement:</strong> Cicely Saunders founded modern hospices (1967).<br>
+                &bull; <strong>Diminished Causal Role:</strong> Religion ceased to explain pathology or disease.
               </td>
             </tr>
             <tr>
-              <td class="factor-lbl">4. Government Intervention</td>
+              <td class="factor-lbl">3. Science &amp; Tech</td>
               <td>
-                &bull; <strong>Strict Laissez-Faire:</strong> No central public health policy; King Edward III wrote letters urging London street cleaning.<br>
-                &bull; <strong>Local Cordons:</strong> Gloucester attempted 1348 quarantine; London dug mass plague burial pits at East Smithfield.<br>
-                &bull; <strong>Tainted Food Fines:</strong> Butcher guilds fined for dumping offal into the Thames and Fleet ditch.
+                &bull; <strong>Primitive Tools:</strong> Urine wheels, astrolabes, Zodiac Man charts, fleams.<br>
+                &bull; <strong>Absence of Optics:</strong> No microscopes; couldn't observe microbes or cells.<br>
+                &bull; <strong>Hand Manuscripts:</strong> Hand-copying compounded translation errors.
               </td>
               <td>
-                &bull; <strong>1665 Plague Orders:</strong> City of London mandated Searchers of the Dead, watchmen, red crosses, and night burials.<br>
-                &bull; <strong>Bills of Mortality:</strong> Parish Clerks tracked epidemic deaths weekly, providing early epidemiological statistics.<br>
-                &bull; <strong>Royal Charters:</strong> Henry VIII chartered Royal College of Physicians (1518); Charles II chartered Royal Society (1662).
+                &bull; <strong>Printing Press (1440):</strong> Enabled mass distribution of Vesalius's texts.<br>
+                &bull; <strong>Mechanical Pumps:</strong> Water engineering inspired Harvey's circulation calculations.<br>
+                &bull; <strong>Early Optics:</strong> Hooke's <em>Micrographia</em>; Leeuwenhoek observed animalcules.
               </td>
               <td>
-                &bull; <strong>Permissive to Compulsory:</strong> 1848 optional Act &rarr; 1853 compulsory smallpox vaccination &rarr; 1875 Public Health Act.<br>
-                &bull; <strong>Sanitary Infrastructure:</strong> Parliament funded Bazalgette’s £3m London sewer network after the 1858 Great Stink.<br>
-                &bull; <strong>Working-Class Vote:</strong> 1867 Reform Act enfranchised urban workers, forcing MPs to legislate clean water and housing.
+                &bull; <strong>Swan-Neck Flasks:</strong> Pasteur trapped airborne dust; disproved spontaneous gen.<br>
+                &bull; <strong>Koch's Bacteriology:</strong> Solid agar, aniline dyes, and camera microscopes.<br>
+                &bull; <strong>Chemical Tech:</strong> Chloroform vaporizers; Lister carbolic donkey spray engine.
               </td>
               <td>
-                &bull; <strong>National Health Service:</strong> Aneurin Bevan launched the NHS on 5 July 1948, nationalising 2,688 hospitals.<br>
-                &bull; <strong>Preventive Legislation:</strong> Clean Air Acts (1956), TV tobacco ad bans (1965), graphic packet warnings (2008).<br>
-                &bull; <strong>Public Workplace Smoking Ban:</strong> 2007 Health Act banned smoking in enclosed work and social venues across England.
+                &bull; <strong>Diagnostic Imaging:</strong> X-rays (1895), CT scans (1972), MRI scanners.<br>
+                &bull; <strong>Genomics:</strong> Franklin/Crick/Watson DNA (1953); Human Genome (2003).<br>
+                &bull; <strong>Targeted Pharmacology:</strong> Salvarsan 606, deep fermentation, robotic surgery.
+              </td>
+            </tr>
+            <tr>
+              <td class="factor-lbl">4. Government</td>
+              <td>
+                &bull; <strong>Laissez-Faire:</strong> No central public health; Edward III urged London cleaning.<br>
+                &bull; <strong>Local Cordons:</strong> Gloucester 1348 quarantine; East Smithfield mass pits.<br>
+                &bull; <strong>Guild Fines:</strong> Butchers fined for dumping offal into the Thames.
+              </td>
+              <td>
+                &bull; <strong>1665 Plague Orders:</strong> Searchers of the Dead, watchmen, red crosses, night burials.<br>
+                &bull; <strong>Bills of Mortality:</strong> Parish clerks recorded weekly cause-of-death stats.<br>
+                &bull; <strong>Royal Charters:</strong> Henry VIII chartered RCP (1518); Charles II Royal Society (1662).
+              </td>
+              <td>
+                &bull; <strong>Permissive &rarr; Compulsory:</strong> 1848 optional Act &rarr; 1875 compulsory Act.<br>
+                &bull; <strong>Sanitary Works:</strong> Parliament funded Bazalgette's £3m London sewer network.<br>
+                &bull; <strong>1867 Reform Act:</strong> Enfranchised urban working men, forcing public health laws.
+              </td>
+              <td>
+                &bull; <strong>NHS (1948):</strong> Bevan nationalised 2,688 hospitals, free at point of need.<br>
+                &bull; <strong>Preventive Laws:</strong> Clean Air Acts (1956), tobacco ad bans, cigarette warnings.<br>
+                &bull; <strong>2007 Smoking Ban:</strong> Health Act banned smoking in enclosed public workspaces.
               </td>
             </tr>
             <tr>
               <td class="factor-lbl">5. Key Individuals</td>
               <td>
-                &bull; <strong>Hippocrates:</strong> Four Humours, clinical bedside observation, and the Hippocratic Oath.<br>
-                &bull; <strong>Claudius Galen:</strong> Theory of Opposites, teleological creator argument, 300 animal dissection errors.<br>
-                &bull; <strong>Guy de Chauliac:</strong> Papal doctor who distinguished bubonic from pneumonic plague and preserved Pope Clement VI.
+                &bull; <strong>Hippocrates:</strong> Four Humours, clinical bedside observation, Hippocratic Oath.<br>
+                &bull; <strong>Galen:</strong> Theory of Opposites, teleology, 300 animal dissection errors.<br>
+                &bull; <strong>Guy de Chauliac:</strong> Preserved Pope Clement VI; noted bubonic vs pneumonic.
               </td>
               <td>
-                &bull; <strong>Andreas Vesalius:</strong> <em>De Fabrica</em> (1543) disproved 300 Galenic errors through direct human dissection.<br>
-                &bull; <strong>William Harvey:</strong> <em>De Motu Cordis</em> (1628) proved systemic one-way blood circulation pumped by the heart.<br>
-                &bull; <strong>Thomas Sydenham:</strong> "English Hippocrates" classified illnesses as distinct species using bedside observation.
+                &bull; <strong>Vesalius (1543):</strong> <em>De Fabrica</em> disproved 300 Galenic anatomical errors.<br>
+                &bull; <strong>William Harvey (1628):</strong> <em>De Motu Cordis</em> proved systemic heart circulation.<br>
+                &bull; <strong>Sydenham (1676):</strong> "English Hippocrates" classified diseases by symptoms.
               </td>
               <td>
-                &bull; <strong>Jenner (1796):</strong> Discovered cowpox vaccination on James Phipps, replacing dangerous live variolation.<br>
-                &bull; <strong>Pasteur &amp; Koch:</strong> Formulated Germ Theory (1861), disproved spontaneous generation, and isolated specific bacilli.<br>
-                &bull; <strong>Simpson, Lister &amp; Snow:</strong> Conquered pain (chloroform), sepsis (carbolic acid), and proved waterborne cholera.
+                &bull; <strong>Jenner (1796):</strong> Discovered cowpox vaccine, replacing variolation.<br>
+                &bull; <strong>Pasteur &amp; Koch:</strong> Formulated Germ Theory (1861); isolated specific bacilli.<br>
+                &bull; <strong>Simpson, Lister, Snow:</strong> Conquered pain (chloroform), sepsis (carbolic), cholera.
               </td>
               <td>
-                &bull; <strong>Paul Ehrlich:</strong> Coined "magic bullet" concept; discovered Salvarsan 606 for syphilis (1909).<br>
-                &bull; <strong>Fleming, Florey &amp; Chain:</strong> Discovered (1928), isolated (1940), and scaled penicillin production for WWII.<br>
-                &bull; <strong>Watson, Crick &amp; Franklin:</strong> Discovered DNA double helix (1953); Doll &amp; Hill proved smoking causes lung cancer (1950).
+                &bull; <strong>Paul Ehrlich:</strong> Coined "magic bullet"; discovered Salvarsan 606 (1909).<br>
+                &bull; <strong>Fleming, Florey &amp; Chain:</strong> Discovered (1928), isolated (1940) penicillin.<br>
+                &bull; <strong>Franklin, Crick, Watson:</strong> DNA double helix; Doll &amp; Hill link smoking to cancer.
               </td>
             </tr>
             <tr>
-              <td class="factor-lbl">6. Institutions &amp; Comm.</td>
+              <td class="factor-lbl">6. Institutions</td>
               <td>
-                &bull; <strong>Monastic Network:</strong> Over 500 monastic hospitals (St Bart's, St Thomas') delivered palliative "Care Not Cure".<br>
-                &bull; <strong>Guild of Surgeons (1376):</strong> Separated military craft surgeons from barber-surgeons in London.<br>
-                &bull; <strong>Universities:</strong> Oxford and Cambridge taught scholastic Latin Galenism; empirical research forbidden.
+                &bull; <strong>Monastic Hospitals:</strong> St Bart's, St Thomas' delivered palliative "Care Not Cure".<br>
+                &bull; <strong>Surgeons Guild (1376):</strong> Separated military craft surgeons from barber-surgeons.<br>
+                &bull; <strong>Universities:</strong> Oxford &amp; Cambridge enforced scholastic Latin Galenism.
               </td>
               <td>
-                &bull; <strong>Royal College of Physicians (1518):</strong> Controlled London licensing; preserved medical prestige and standards.<br>
-                &bull; <strong>The Royal Society (1660):</strong> Provided laboratory forums for experiments without religious censorship.<br>
-                &bull; <strong>Philosophical Transactions (1665):</strong> World’s first peer-reviewed scientific journal enabled rapid international sharing.
+                &bull; <strong>RCP (1518):</strong> Controlled London licensing; preserved physician prestige.<br>
+                &bull; <strong>Royal Society (1660):</strong> Laboratory forums without religious censorship.<br>
+                &bull; <strong>Philosophical Transactions:</strong> First peer-reviewed scientific journal.
               </td>
               <td>
-                &bull; <strong>British Medical Association (1856):</strong> Professionalised doctors, though often opposed state medicine.<br>
-                &bull; <strong>Nightingale Training School (1860):</strong> St Thomas' Hospital school established disciplined nursing standards worldwide.<br>
-                &bull; <strong>Voluntary &amp; Cottage Hospitals:</strong> Endowed municipal and rural infirmaries expanded nationwide surgical access.
+                &bull; <strong>BMA (1856):</strong> Professionalised doctors, though resisted state public health.<br>
+                &bull; <strong>Nightingale School (1860):</strong> Standardised sanitary clinical nursing.<br>
+                &bull; <strong>Voluntary Hospitals:</strong> Municipal and cottage infirmaries expanded surgical care.
               </td>
               <td>
-                &bull; <strong>The National Health Service (1948):</strong> Universal, free healthcare funded by general taxation.<br>
-                &bull; <strong>Medical Research Council (MRC):</strong> State-funded clinical trials (Doll &amp; Hill smoking studies; antibiotic trials).<br>
-                &bull; <strong>World Health Organization (WHO):</strong> Coordinated global vaccination drives, eradicating smallpox worldwide by 1980.
+                &bull; <strong>NHS (1948):</strong> Universal, tax-funded national health service.<br>
+                &bull; <strong>MRC:</strong> State-funded clinical trials (Doll &amp; Hill; streptomycin).<br>
+                &bull; <strong>WHO:</strong> Global coordinated vaccination campaigns; smallpox wiped out (1980).
               </td>
             </tr>
           </tbody>
         </table>
+
+        <!-- BOTTOM HALF: THEMATIC CHANGE/CONTINUITY PROGRESSION & FACTOR SYNERGY -->
+        <div class="p27-bottom-wrap">
+          <div class="thematic-progression-card">
+            <div class="p27-section-title">
+              <span>Thematic Change &amp; Continuity Progression Across 750 Years (c1250–Present)</span>
+              <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Edexcel Paper 1 Section B Core Themes</span>
+            </div>
+            <table class="thematic-progression-table">
+              <thead>
+                <tr>
+                  <th style="width: 14%;">Core Theme</th>
+                  <th style="width: 21.5%;">Medieval (c1250–1500)</th>
+                  <th style="width: 21.5%;">Renaissance (c1500–1700)</th>
+                  <th style="width: 21.5%;">18th &amp; 19th C. (c1700–1900)</th>
+                  <th style="width: 21.5%;">Modern (c1900–present)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="font-weight: 800; background: #f8fafc; color: #0f172a;">1. Ideas on Causes</td>
+                  <td><strong>Supernatural &amp; Humours:</strong> God's punishment, 1345 planetary alignment, Four Humours, miasma. Galen teleology dogmatic.</td>
+                  <td><strong>Transitional Empiricism:</strong> Sydenham bedside observation; animalcules seen; yet miasma and God endured for 1665 Plague.</td>
+                  <td><strong>Microbial Revolution:</strong> Pasteur Germ Theory (1861) disproved spontaneous gen; Koch bacteriology isolated specific TB and cholera bacilli.</td>
+                  <td><strong>Genetics &amp; Lifestyle:</strong> DNA double helix (1953); Human Genome Project (2003); smoking &amp; lifestyle risks identified.</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; background: #f8fafc; color: #0f172a;">2. Prevention &amp; Public Health</td>
+                  <td><strong>Spiritual &amp; Laissez-Faire:</strong> Prayer, flagellants, sweet herbs; local quarantine (Gloucester 1348); butcher offal fines.</td>
+                  <td><strong>Early Municipal Orders:</strong> 1665 Plague Orders (watchmen, Searchers of Dead, red crosses); parish Bills of Mortality; stray animals culled.</td>
+                  <td><strong>Compulsory Legislation:</strong> Jenner vaccine (1796); 1853 mandatory smallpox; Bazalgette sewers; 1875 Public Health Act ended laissez-faire.</td>
+                  <td><strong>Preventive Welfare State:</strong> Universal childhood vaccines (diphtheria, polio, MMR); 1956 Clean Air Act; 2007 smoking ban; NHS screening.</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; background: #f8fafc; color: #0f172a;">3. Treatments &amp; Surgery</td>
+                  <td><strong>Palliative &amp; Humoral:</strong> Phlebotomy (bleeding), purges, herbal theriac, Theory of Opposites; cautery irons and fleams.</td>
+                  <td><strong>Chemical Experiments:</strong> Continuity of bleeding/purges; Paracelsian iatrochemistry (mercury); cinchona bark (quinine); laudanum.</td>
+                  <td><strong>Conquest of Pain &amp; Sepsis:</strong> Simpson chloroform (1847); Lister carbolic spray (1865); transition to aseptic theatres by 1890s.</td>
+                  <td><strong>Targeted Pharmacology:</strong> Ehrlich Salvarsan 606 (1909); Fleming/Florey/Chain penicillin (1928–44); radiotherapy, chemotherapy.</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; background: #f8fafc; color: #0f172a;">4. Care &amp; Institutions</td>
+                  <td><strong>Monastic Hospitality:</strong> 500+ monastic hospitals ("Care Not Cure"); barber-surgeons vs university physicians reading Latin Galen.</td>
+                  <td><strong>Secular Reorganisation:</strong> Dissolution of monasteries closed 500 hospitals; Royal College of Physicians (1518); Royal Society (1660).</td>
+                  <td><strong>Professionalized Nursing:</strong> Nightingale pavilion plan &amp; St Thomas' school (1860); voluntary municipal infirmaries; cottage hospitals.</td>
+                  <td><strong>Universal Healthcare:</strong> Bevan launched NHS (5 July 1948) nationalising 2,688 hospitals; free healthcare funded by general taxation.</td>
+                </tr>
+                <tr>
+                  <td style="font-weight: 800; background: #f8fafc; color: #0f172a;">5. Science &amp; Profession</td>
+                  <td><strong>Scholastic Authority:</strong> Latin texts learned by heart; Galenic infallibility; craft guilds separated barber-surgeons (1376).</td>
+                  <td><strong>Empirical Enquiry:</strong> Human dissection at Padua; <em>Nullius in Verba</em> (1660); <em>Philosophical Transactions</em> peer review.</td>
+                  <td><strong>Laboratory Science:</strong> Medical Act (1858) established GMC register; British Medical Association (1856); bacteriology institutes.</td>
+                  <td><strong>Multidisciplinary Teams:</strong> State Medical Research Council (MRC); clinical trials; international WHO disease eradication (smallpox 1980).</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Synoptic Factor Interdependence & Synergy Matrix (For 16-Mark Essays) -->
+          <div class="synergy-card-wrap">
+            <div class="p27-section-title">
+              <span>Synoptic Factor Interdependence &amp; Cross-Thematic Synergy &bull; Level 4 Evaluative Toolkit</span>
+              <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Edexcel Paper 1 16-Mark Strategy</span>
+            </div>
+            <div class="synergy-grid-4col">
+              <div class="synergy-card">
+                <span class="synergy-tag">&bull; War &amp; Science / Tech</span>
+                Traumatic trauma demanded urgent remedies. WWI enabled Robertson's blood depots &amp; Thomas splints (femur deaths 80% &rarr; 20%); WWII US War Production Board funded mass industrial penicillin fermentation.
+              </div>
+              <div class="synergy-card">
+                <span class="synergy-tag">&bull; Government &amp; Science</span>
+                Scientific discovery was impotent without statutory state force. Snow's 1854 cholera proof remained unapplied until Parliament funded Bazalgette's £3m sewers and passed the compulsory 1875 Act.
+              </div>
+              <div class="synergy-card">
+                <span class="synergy-tag">&bull; Technology &amp; Individuals</span>
+                Genius was imprisoned by contemporary technology. Pasteur and Koch could not have proven Germ Theory without Zeiss optical microscopes and industrial synthetic aniline dyes staining bacilli.
+              </div>
+              <div class="synergy-card">
+                <span class="synergy-tag">&bull; Institutions &amp; Public Health</span>
+                Progress required institutional structures to overcome vested interests. Bevan overcame 90% BMA doctor boycotts in 1948 by allowing private consultant beds, securing universal tax-funded care.
+              </div>
+            </div>
+          </div>
+
+          <!-- 4 Examiner Historiographical Debates for Level 4 Essays -->
+          <div class="debates-grid-4col">
+            <div class="debate-card">
+              <span class="debate-tag">&bull; Renaissance Reality Check</span>
+              <strong>Did Vesalius &amp; Harvey save lives?</strong>
+              <em>No immediate impact.</em> Overthrew Galenic anatomy/physiology, but doctors lacked microscopes and Germ Theory; patients were still bled in 1665.
+            </div>
+            <div class="debate-card">
+              <span class="debate-tag">&bull; 19th C. Individual vs Technology</span>
+              <strong>Genius or Industrial Tech?</strong>
+              <em>Symbiotic dependency.</em> Pasteur &amp; Koch were geniuses, but their bacteriology was impossible without Zeiss microscope optics and industrial aniline dyes.
+            </div>
+            <div class="debate-card">
+              <span class="debate-tag">&bull; Laissez-Faire Turning Point</span>
+              <strong>Why 1875, not 1848?</strong>
+              <em>Working-class vote.</em> The 1848 Act failed because it was permissive. The 1867 Reform Act gave urban workers the vote, forcing compulsory legislation in 1875.
+            </div>
+            <div class="debate-card">
+              <span class="debate-tag">&bull; Modern NHS Politics</span>
+              <strong>Consensus or Conflict?</strong>
+              <em>Bitter opposition.</em> 90% of BMA doctors initially voted to boycott the NHS; Bevan succeeded only by allowing consultants private beds ("gold").
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="page-footer-strip">
@@ -1491,75 +1753,163 @@ function buildHtml() {
       </div>
 
       <div class="p28-wrap">
-        <!-- Q3: Similarity / Difference [4 Marks] -->
+        <!-- Q3: Similarity / Difference [4 Marks &bull; 5 Mins] -->
         <div class="exam-section-card">
-          <div class="exam-section-title">Question 3: Similarity or Difference across Eras [4 Marks &bull; 5 Mins]</div>
+          <div class="exam-section-title">
+            <span>Question 3: Direct Comparative Analysis Across Eras [4 Marks &bull; ~5 Mins]</span>
+            <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Level 2 (3–4m): Direct Comparative Analysis &bull; Both Eras Contextualised</span>
+          </div>
           <div class="q3-grid">
-            <div>
-              <div class="formula-step"><span class="step-bold">The 4-Step Formula:</span> (1) Direct comparative claim; (2) Detailed Era 1 evidence; (3) Mirror Era 2 evidence; (4) Causal synthesis explaining why.</div>
-              <div class="formula-step"><span class="step-bold">Common Exam Prompts:</span> Ideas on causes (1348 vs 1665); Treatments (Medieval vs Renaissance); Hospital care (1700 vs 1900).</div>
+            <div style="font-size: 6.6pt; line-height: 1.22;">
+              <div class="formula-step"><span class="step-bold">The 4-Step Direct Comparative Architecture:</span><br>
+              <strong>(1) Comparative Claim:</strong> State explicit similarity or difference in opening sentence.<br>
+              <strong>(2) Era 1 Specific Evidence:</strong> Name 2+ concrete historical details from the first specified period.<br>
+              <strong>(3) Mirror Era 2 Evidence:</strong> Deploy comparative connective (<em>"Similarly" / "In contrast"</em>) with exact facts.<br>
+              <strong>(4) Causal Synthesis:</strong> Explain <em>why</em> this continuity or change existed historically.</div>
+              <div class="formula-step" style="background: #f1f5f9; padding: 3px 5px; border-radius: 1px; margin-top: 2.5px;">
+                <span class="step-bold" style="color: #991b1b;">Examiner Level 2 Trap:</span> Never write two separate standalone paragraphs! Writing about Era 1 then Era 2 without integrated within-sentence comparison permanently caps your answer at Level 1 (max 2/4m).
+              </div>
+              <div style="margin-top: 3px; background: #ffffff; border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 1px; font-size: 6.0pt; line-height: 1.18;">
+                <strong style="color: #0f172a;">Edexcel Rubric:</strong> Level 1 (1–2m): General description without direct links &bull; Level 2 (3–4m): Direct comparative analysis with accurate knowledge from both periods.
+              </div>
             </div>
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px;">
-              <span class="step-bold" style="color: #0f172a; font-size: 6.9pt; display: block;">Level 4 Worked Model Answer (4/4 Marks):</span>
-              <p style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; margin: 1px 0; font-style: italic;">
-                "One significant similarity between ideas about the cause of disease in the Medieval period and the Renaissance was the enduring belief in miasma. During the Black Death of 1348, people believed foul air corrupted by swamps and corpses caused pestilence, carrying posies to ward off bad air. Similarly, during the Great Plague of 1665, citizens continued to believe miasma caused disease, burning sweet herbs and smoking tobacco pipes to neutralise corrupt vapours. This similarity endured because microscopic pathogens were still unknown before Pasteur published Germ Theory in 1861."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Q4: Causal Analysis / Explain Why [12 Marks] -->
-        <div class="exam-section-card">
-          <div class="exam-section-title">Question 4: Causal Analysis / Explain Why [12 Marks &bull; 18 Mins]</div>
-          <div class="q4-grid">
-            <div class="peel-box">
-              <span class="step-bold">Paragraph 1 (Prompt 1):</span>
-              <p style="margin: 2px 0;">Point &bull; Evidence &bull; Explanation. Connect directly to the prompt with exact statistics, names, and dates.</p>
-            </div>
-            <div class="peel-box">
-              <span class="step-bold">Paragraph 2 (Prompt 2):</span>
-              <p style="margin: 2px 0;">Point &bull; Evidence &bull; Explanation. Show how this second factor catalysed or sustained the development.</p>
-            </div>
-            <div class="peel-box">
-              <span class="step-bold">Paragraph 3 (Mandatory 3rd Factor):</span>
-              <p style="margin: 2px 0;"><strong>Mandatory Level 4 Hurdle:</strong> You MUST introduce a 3rd factor from own knowledge (War, Tech, Govt) to score 10–12m.</p>
-            </div>
-          </div>
-          <div style="margin-top: 3px; background: #f1f5f9; padding: 2px 5px; border-radius: 2px; font-size: 6.6pt;">
-            <span class="step-bold">Examiner Causal Connective Bank:</span> <em>"This led directly to...", "Consequently, the decisive catalyst was...", "Without this state infrastructure...", "This necessitated the adoption of..."</em>
-          </div>
-        </div>
-
-        <!-- Q5 / Q6: 16-Mark Synoptic Essay [+4 SPaG] -->
-        <div class="exam-section-card">
-          <div class="exam-section-title">Question 5 / 6: 16-Mark Evaluative Synoptic Essay [+4 SPaG &bull; 25 Mins]</div>
-          <div class="essay-grid">
-            <div>
-              <div class="formula-step"><span class="step-bold">Introduction:</span> Define key terms and set up explicit criteria for judgment (e.g. short-term vs long-term impact; theoretical discovery vs mass practical lives saved).</div>
-              <div class="formula-step"><span class="step-bold">2 Paragraphs for Named Factor:</span> Evaluate the prompt factor across the full specified timeframe with precise chronological anchors.</div>
-              <div class="formula-step"><span class="step-bold">2 Paragraphs for Alternative Factors:</span> Counter-balance by evaluating rival factors (e.g. Government intervention vs Individuals).</div>
-            </div>
-            <div>
-              <div class="model-conclusion-box">
-                <span class="step-bold" style="font-family: 'Inter', sans-serif; display: block; margin-bottom: 2px; color: #0f172a;">Level 4 Model Conclusion Formula:</span>
-                "In conclusion, while [Named Factor] was undeniably revolutionary in providing [theoretical/scientific breakthrough], it was only a partial turning point because [evidence of delay, resistance, or lack of cures]. Ultimately, the decisive driver across the period was [Alternative Factor], because without [statutory state mandates / industrial mass-production], [Named Factor] remained clinically dormant. Therefore, [Alternative Factor] represents the primary catalyst for progress."
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 5px;">
+              <div style="background: #f8fafc; border: 1.1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 6px 7px; border-radius: 1px;">
+                <span class="step-bold" style="color: #0f172a; font-size: 6.9pt; display: block; margin-bottom: 2px;">Model A: Similarity (4/4m Level 2)</span>
+                <p style="font-family: 'Georgia', serif; font-size: 6.2pt; line-height: 1.20; margin: 1px 0; font-style: italic; color: #1e293b;">
+                  "One significant similarity between ideas about disease causes during the 1348 Black Death and the 1665 Great Plague was the persistent belief in miasma. In 1348, people carried sweet posies and pomanders to neutralise foul air corrupted by swamps and unburied filth. Similarly, in 1665, citizens burned sweet pine resin, smoked tobacco pipes, and carried camphor to ward off poisonous vapours. This similarity endured across three centuries because microscopic bacteria remained undiscovered before Pasteur's 1861 Germ Theory, leaving doctors reliant on ancient humoural assumptions."
+                </p>
+                <div style="margin-top: 3px; font-size: 5.9pt; color: #166534; font-weight: 700; background: #f0fdf4; padding: 2px 4px; border: 1px solid #bbf7d0; border-radius: 1px;">
+                  &check; <strong>Examiner Annotation:</strong> Specific named evidence (posies vs tobacco) integrated within sentences + causal reason explaining continuity.
+                </div>
+              </div>
+              <div style="background: #f8fafc; border: 1.1px solid #cbd5e1; border-top: 2.5px solid #0f172a; padding: 6px 7px; border-radius: 1px;">
+                <span class="step-bold" style="color: #0f172a; font-size: 6.9pt; display: block; margin-bottom: 2px;">Model B: Difference (4/4m Level 2)</span>
+                <p style="font-family: 'Georgia', serif; font-size: 6.2pt; line-height: 1.20; margin: 1px 0; font-style: italic; color: #1e293b;">
+                  "One fundamental difference in hospital care between the Medieval era and the 19th century was their clinical purpose. Medieval monastic hospitals (such as St Bartholomew's) operated on 'Care Not Cure', providing spiritual prayer, palliative shelter, and warmth rather than medical treatment. In sharp contrast, 19th-century hospitals following Florence Nightingale's pavilion plan focused on clinical sanitation, separate infectious wards, aseptic ventilation, and antiseptic surgery to actively cure illness and reduce mortality from 42% to 2%."
+                </p>
+                <div style="margin-top: 3px; font-size: 5.9pt; color: #166534; font-weight: 700; background: #f0fdf4; padding: 2px 4px; border: 1px solid #bbf7d0; border-radius: 1px;">
+                  &check; <strong>Examiner Annotation:</strong> Religious palliative purpose contrasted with clinical curative science + specific mortality statistics (42% &rarr; 2%).
+                </div>
               </div>
             </div>
           </div>
+          <!-- Frequent Edexcel Comparative Pairings -->
+          <div style="margin-top: 4px; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 3px 6px; border-radius: 1px; font-size: 6.2pt; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <div><strong style="color: #0f172a;">Frequent Similarity Prompts:</strong> 1348 vs 1665 Plague causes (miasma) &bull; Medieval vs Renaissance treatment continuities (bleeding, herbal theriac, Galenic herbalism).</div>
+            <div><strong style="color: #0f172a;">Frequent Difference Prompts:</strong> Medieval vs 19th C. hospital purpose ('Care Not Cure' vs clinical cure) &bull; 1348 vs 1848 public health (spiritual prayer vs sanitary engineering).</div>
+          </div>
         </div>
 
-        <!-- Examiner Top 8 Pitfalls -->
+        <!-- Q4: Causal Analysis / Explain Why [12 Marks &bull; 18 Mins] -->
         <div class="exam-section-card">
-          <div class="exam-section-title">Examiner Top 8 Pitfalls in Section B &bull; How to Secure Grade 8/9</div>
-          <div class="pitfalls-grid">
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Storytelling Narrative:</span> Don't just narrate events; explain WHY they happened using analytical causal linking words.</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Ignoring Q4 Third Factor:</span> If you only use the two given bullet points, your mark is permanently capped at Level 3 (8/12).</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Confusing Jenner &amp; Pasteur:</span> Jenner discovered cowpox vaccine (1796); Pasteur formulated Germ Theory (1861).</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Confusing Antiseptic &amp; Aseptic:</span> Antiseptic kills germs in wounds (carbolic); Aseptic excludes germs from theaters.</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Vague Chronological Anchors:</span> Always quote exact dates (e.g. 1875 Public Health Act, 1948 NHS, 1928 Penicillin).</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; 'Fence-Sitting' Conclusions:</span> Never write "Both were equally important." Weigh their relative significance decisively.</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Forgetting SPaG Marks:</span> Q5/Q6 carries 4 SPaG marks. Proofread spellings of key terms (phlebotomy, miasma).</div>
-            <div class="pitfall-item"><span class="pitfall-tag">&cross; Timing Drift:</span> Stick strictly to exam time budgets: Q3 (5m), Q4 (18m), Q5/Q6 (25m), Section A (32m).</div>
+          <div class="exam-section-title">
+            <span>Question 4: Causal Analysis / Explain Why [12 Marks &bull; ~18 Mins]</span>
+            <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Three Full PEEL Paragraphs &bull; Mandatory 3rd Factor Required for Level 4</span>
+          </div>
+          <div class="q4-grid">
+            <div class="peel-box" style="padding: 13px 8.5px;">
+              <span class="step-bold" style="color: #0f172a; font-size: 7.2pt; display: block; margin-bottom: 2px;">PEEL 1: Stimulus Factor 1 Blueprint</span>
+              <p style="margin: 1.5px 0; font-size: 6.5pt; line-height: 1.24;"><strong>Point Stem:</strong> "Firstly, [Factor 1] acted as a decisive primary catalyst in explaining why [event] occurred because..."<br>
+              <strong>Factual Evidence:</strong> Deploy 2+ precise anchors: named individuals, exact dates (e.g. 1861 Germ Theory, 1875 Act), or scientific trials.<br>
+              <strong>Causal Mechanism:</strong> Explain step-by-step explicitly <em>how</em> this factor overcame previous medical barriers or forced reform.<br>
+              <strong>Evaluative Link:</strong> "Therefore, [Factor 1] was essential in initiating the institutional transformation of..."</p>
+              <div style="margin-top: 3px; font-size: 6.0pt; color: #1e293b; background: #ffffff; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 1px;">
+                <em>e.g., "Pasteur's 1861 Germ Theory acted as a primary catalyst because it scientifically proved that airborne microbes caused disease..."</em>
+              </div>
+            </div>
+            <div class="peel-box" style="padding: 13px 8.5px;">
+              <span class="step-bold" style="color: #0f172a; font-size: 7.2pt; display: block; margin-bottom: 2px;">PEEL 2: Stimulus Factor 2 Blueprint</span>
+              <p style="margin: 1.5px 0; font-size: 6.5pt; line-height: 1.24;"><strong>Point Stem:</strong> "Furthermore, [Factor 2] significantly accelerated and embedded this development by..."<br>
+              <strong>Factual Evidence:</strong> Deploy statutory legislation, royal charters, industrial technology, or clinical mortality statistics.<br>
+              <strong>Causal Mechanism:</strong> Demonstrate how this factor sustained, expanded, or reinforced the earlier breakthrough across the population.<br>
+              <strong>Evaluative Link:</strong> "Consequently, without [Factor 2], progress would have remained restricted to localized pockets."</p>
+              <div style="margin-top: 3px; font-size: 6.0pt; color: #1e293b; background: #ffffff; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 1px;">
+                <em>e.g., "The 1875 Public Health Act accelerated progress because it legally compelled local authorities to appoint medical officers..."</em>
+              </div>
+            </div>
+            <div class="peel-box" style="border-top-color: #dc2626; background: #fffaf0; padding: 13px 8.5px;">
+              <span class="step-bold" style="color: #991b1b; font-size: 7.2pt; display: block; margin-bottom: 2px;">PEEL 3: Mandatory 3rd Factor (Level 4 Hurdle)</span>
+              <p style="margin: 1.5px 0; font-size: 6.5pt; line-height: 1.24;"><strong>Level 4 Rule:</strong> You MUST introduce an unprompted 3rd factor from own knowledge (War, Technology, Government, Individuals, Religion).<br>
+              <strong>Critical Warning:</strong> Using ONLY the two stimulus points permanently caps your mark at Level 3 (max 8/12)!<br>
+              <strong>Point Stem:</strong> "Crucially, neither stimulus factor could have succeeded without the independent catalyst of [Factor 3]..."<br>
+              <strong>Causal Prerequisite:</strong> Show why this factor provided the essential infrastructure or funding for change.</p>
+              <div style="margin-top: 3px; font-size: 6.0pt; color: #991b1b; background: #ffffff; border: 1px solid #fca5a5; padding: 2px 4px; border-radius: 1px;">
+                <em>e.g., "Crucially, neither factor could succeed without Bazalgette's £3m industrial engineering and Parliament's 1867 Reform Act..."</em>
+              </div>
+            </div>
+          </div>
+          <div style="margin-top: 4px; background: #f1f5f9; padding: 4px 8px; border-radius: 1px; font-size: 6.6pt; display: flex; justify-content: space-between; align-items: center;">
+            <span class="step-bold" style="color: #0f172a;">Examiner Causal Connective Bank:</span>
+            <span><em>"This acted as the primary catalyst because..." &bull; "Consequently, this was an indispensable prerequisite, without which..." &bull; "This necessitated the statutory adoption of..." &bull; "This created the technological infrastructure required to..."</em></span>
+          </div>
+          <!-- Level 4 Causal Progression & Selection Blueprint -->
+          <div style="margin-top: 4px; background: #ffffff; border: 1px solid #cbd5e1; padding: 3.5px 7px; border-radius: 1px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 6.2pt; line-height: 1.18;">
+            <div><strong style="color: #0f172a;">Level 4 Causal Progression:</strong> Show momentum across paragraphs &bull; Para 1 initiates breakthrough &bull; Para 2 accelerates adoption &bull; Para 3 provides legal/industrial backbone.</div>
+            <div><strong style="color: #0f172a;">Factor Selection Strategy:</strong> If stimulus gives Science and Individual, choose Government or War as your 3rd factor for maximum analytical contrast.</div>
+          </div>
+        </div>
+
+        <!-- Q5 / Q6: 16-Mark Synoptic Essay [+4 SPaG &bull; 25 Mins] -->
+        <div class="exam-section-card">
+          <div class="exam-section-title">
+            <span>Question 5 / 6: 16-Mark Evaluative Synoptic Essay [+4 SPaG &bull; ~25 Mins]</span>
+            <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Full 5-Part Essay Architecture &bull; Sustained Judgment Criteria Required</span>
+          </div>
+          <div class="essay-grid">
+            <div style="font-size: 6.7pt; line-height: 1.28;">
+              <div class="formula-step" style="margin-bottom: 3px;"><span class="step-bold">1. Introduction (Define &amp; Set Criteria):</span> Define the core concept in prompt (e.g. 'turning point'); establish explicit historical criteria (e.g. theoretical discovery vs mass clinical lives saved; voluntary charity vs state statutory compulsion); declare a decisive thesis immediately.</div>
+              <div class="formula-step" style="margin-bottom: 3px;"><span class="step-bold">2. Named Stimulus Factor (2 Paragraphs):</span> Full chronological evaluation across the 750-year range; deploy 2+ concrete dates and named figures; evaluate transformative impact; critically weigh limitations (e.g. delay in clinical adoption, clerical opposition, lack of cures).</div>
+              <div class="formula-step" style="margin-bottom: 3px;"><span class="step-bold">3. Alternative Factor 1 (Rival Assessment):</span> Evaluate a rival factor (Government, Science &amp; Tech, War, Individuals) against your criteria; explain how it directly resolved the shortcomings of the named factor.</div>
+              <div class="formula-step" style="margin-bottom: 3px;"><span class="step-bold">4. Alternative Factor 2 &amp; Symbiotic Synergy:</span> Evaluate a 3rd factor; explicitly demonstrate factor interdependence (e.g. Science discovered microbes, but Government funding and compulsion made clean water universal).</div>
+              <div class="formula-step"><span class="step-bold">5. Sustained Evaluative Conclusion:</span> Re-test introductory criteria; weigh short-term catalysts against long-term prerequisites; deliver an unequivocal, justified final verdict avoiding fence-sitting.</div>
+            </div>
+            <div>
+              <div class="model-conclusion-box" style="padding: 8px 9px; font-size: 6.6pt; line-height: 1.25;">
+                <span class="step-bold" style="font-family: 'Inter', sans-serif; display: block; margin-bottom: 2px; color: #0f172a; font-size: 7.1pt;">Level 4 Model Conclusion Formula:</span>
+                "In conclusion, while [Named Factor] was undeniably revolutionary in providing [theoretical/scientific breakthrough], it was only a partial turning point because [evidence of delay, opposition, or lack of cures]. Ultimately, the decisive driver across the period was [Alternative Factor], because without [statutory state mandates / industrial technology / military funding], [Named Factor] remained clinically dormant. Therefore, [Alternative Factor] represents the primary catalyst for genuine progress, while [Named Factor] acted as an essential supporting prerequisite."
+              </div>
+              <div style="margin-top: 4px; background: #ffffff; border: 1px solid #94a3b8; padding: 5px 7px; border-radius: 1px; font-size: 6.3pt; line-height: 1.22; font-family: 'Inter', sans-serif;">
+                <strong style="color: #0f172a; display: block; margin-bottom: 2px;">Level 4 Evaluative Framework (Choose One to Structure Your Judgment):</strong>
+                &bull; <strong>Catalyst vs Prerequisite:</strong> Did the factor spark initial discovery, or provide the necessary legal/industrial machinery?<br>
+                &bull; <strong>Theory vs Practice:</strong> Did the idea cure patients immediately, or did it require decades of tech development?<br>
+                &bull; <strong>Voluntary vs Statutory:</strong> Did private charity suffice, or was government compulsion required?
+              </div>
+              <div style="margin-top: 4px; background: #f8fafc; border: 1.1px solid #cbd5e1; padding: 4.5px 7px; border-radius: 1px; font-size: 6.4pt; font-family: 'Inter', sans-serif;">
+                <strong style="color: #0f172a;">SPaG Bank (+4 Marks):</strong> <em>phlebotomy, miasma, teleology, iatrochemistry, inoculation, anaesthetic, antiseptic, aseptic, Salvarsan, penicillin, palliative, regimen sanitatis, spontaneous generation, nosology</em>
+              </div>
+            </div>
+          </div>
+          <!-- Level 4 Essay Examination Architecture Strategy -->
+          <div style="margin-top: 4px; background: #f1f5f9; border: 1px solid #cbd5e1; padding: 3px 6px; border-radius: 1px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; font-size: 6.1pt; line-height: 1.18;">
+            <div><strong style="color: #0f172a;">Rigid Essay Timing:</strong> Planning &amp; Criteria (3m) &bull; Named Factor (9m) &bull; Alternative Factors (9m) &bull; Sustained Synthesis &amp; Verdict (4m).</div>
+            <div><strong style="color: #0f172a;">Decisive Catalyst Rule:</strong> Never conclude both were equal. Explicitly distinguish the <em>primary catalyst</em> from the <em>enabling prerequisite</em>.</div>
+            <div><strong style="color: #0f172a;">Factor Interdependence:</strong> Level 4 essays show how Science, Government, War, and Technology acted symbiotically across 750 years.</div>
+          </div>
+        </div>
+
+        <!-- Examiner Top 10 Commandments -->
+        <div class="exam-section-card">
+          <div class="exam-section-title">
+            <span>Examiner Top 10 Commandments in Section B &bull; How to Secure Grade 8/9</span>
+            <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Avoid Historic Traps &bull; Secure Full SPaG</span>
+          </div>
+          <div class="pitfalls-grid" style="gap: 4.5px;">
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Storytelling Narrative</span><span style="color:#0f172a; font-weight:800;">&check; Causal Analysis:</span> Explain WHY things happened using analytical connectives. Never just describe what happened chronologically.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Omitting Q4 3rd Factor</span><span style="color:#0f172a; font-weight:800;">&check; Mandatory 3rd Factor:</span> Introduce War, Tech, or Govt from own knowledge to break the 8/12 mark ceiling.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Confusing Jenner &amp; Pasteur</span><span style="color:#0f172a; font-weight:800;">&check; Accurate Anchors:</span> Jenner (1796) used empirical cowpox without knowing why; Pasteur (1861) proved microbes cause disease.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Confusing Antiseptic/Aseptic</span><span style="color:#0f172a; font-weight:800;">&check; Precise Terms:</span> Antiseptic kills germs in wound (carbolic spray); Aseptic excludes all germs from the operating theatre.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Vague Chronology</span><span style="color:#0f172a; font-weight:800;">&check; Exact Dates:</span> Anchor essays to 1348, 1543, 1628, 1861, 1875, 1948, 1953. Never use vague terms like "in the old days".</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Fence-Sitting Conclusion</span><span style="color:#0f172a; font-weight:800;">&check; Decisive Judgment:</span> Never say "both equal"; weigh relative catalyst significance (catalyst vs prerequisite).</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Forgetting SPaG Marks</span><span style="color:#0f172a; font-weight:800;">&check; Proofread Spellings:</span> Check key terms (phlebotomy, miasma, anaesthetic, penicillin) in final 3 mins for +4 marks.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Exam Timing Drift</span><span style="color:#0f172a; font-weight:800;">&check; Rigid Timings:</span> Q3 (5m), Q4 (18m), Q5/6 (25m), Section A Western Front (32m). Stick to strict clock stops.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Separate Q3 Eras</span><span style="color:#0f172a; font-weight:800;">&check; Integrated Links:</span> Compare within every sentence using <em>"Similarly"</em> or <em>"In contrast"</em> to guarantee Level 2.</div>
+            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Isolated Factors</span><span style="color:#0f172a; font-weight:800;">&check; Symbiotic Links:</span> Show how Science, Tech, and Govt depended on each other (e.g. science proved, govt mandated).</div>
+          </div>
+          <!-- Master Grade 8/9 Examination Synthesis Principles -->
+          <div style="margin-top: 4px; background: #ffffff; border: 1.1px solid #0f172a; padding: 3.5px 8px; border-radius: 1px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 6.2pt; line-height: 1.20;">
+            <div><strong style="color: #0f172a;">Grade 8/9 Golden Rule:</strong> Always substantiate every causal claim with at least TWO precise historical facts (dates, named figures, royal charters, or acts) to demonstrate comprehensive grasp across 750 years.</div>
+            <div><strong style="color: #0f172a;">Thematic Synthesis Checklist:</strong> Before writing, identify whether the enquiry demands <em>causes</em> (miasma/germs/genetics), <em>prevention</em> (regimen/quarantine/vaccines/welfare state), or <em>treatment</em> (monastic/Nightingale/NHS).</div>
           </div>
         </div>
       </div>
