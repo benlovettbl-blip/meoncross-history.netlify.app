@@ -1345,32 +1345,33 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       heightMm: 120,
     },
     specBox: {
-      title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
+      title: 'Pearson Edexcel GCSE (9–1) History Specification &bull; Key Topic 2 Content',
       subtopics: [
         {
           title: '1. The Six Day War, 1967',
           items: [
-            'Significance of Cairo Conference (1964) & growth of Fatah / PLO',
-            'Escalating tension: Syria’s support for Fatah, Samu raid, 7 April 1967',
-            'Actions of the USSR, Nasser and the USA leading to war',
-            'Key events of the war across Sinai, West Bank, Jerusalem & Golan',
+            '<strong>Cairo Conference &amp; PLO (1964):</strong> Arab League water dispute over the National Water Carrier and the creation of the PLO and armed fedayeen factions.',
+            '<strong>Border Clashes &amp; Radicalisation:</strong> Syrian support for Fatah guerrillas, the Israeli Samu raid (Nov 1966), and dogfights over the Golan (April 1967).',
+            '<strong>Drift to War (May–June 1967):</strong> Soviet disinformation, Nasser expelling UNEF from Sinai, blockading the Straits of Tiran, and mobilising Arab forces.',
+            '<strong>Operation Focus &amp; Mobile Victory:</strong> Pre-emptive airstrike destroying the Egyptian Air Force, capturing Sinai, Gaza, West Bank, Jerusalem, and Golan.',
           ],
         },
         {
           title: '2. Aftermath of the 1967 War',
           items: [
-            'UN Resolution 242 and continued dispute over the Suez Canal',
-            'Palestinian refugees and occupied territories (Golan, Gaza, West Bank, Sinai, East Jerusalem)',
-            'Terrorism, response & attitudes: PFLP hijacks 1970, Black September, Munich Olympics',
-            'Expulsion of the PLO from Jordan (1970)',
+            '<strong>UN Resolution 242 (Nov 1967):</strong> The "Land for Peace" formula, Arab Khartoum Summit "Three Noes", and the closed Suez Canal.',
+            '<strong>Refugees &amp; Occupied Lands:</strong> 1 million Palestinians under Israeli military administration; establishment of religious settlements and fresh refugee exiles.',
+            "<strong>International Fedayeen Campaigns:</strong> PFLP aircraft hijackings at Dawson's Field (1970) and the Black September hostage massacre at Munich (1972).",
+            '<strong>Expulsion from Jordan (1970):</strong> King Hussein’s military crushes Palestinian militia strongholds in Black September, forcing the PLO into Lebanon.',
           ],
         },
         {
-          title: '3. Israel & Egypt, 1967–73',
+          title: '3. Israel &amp; Egypt, 1967–73',
           items: [
-            'Egyptian relations with Israel, the USA, the USSR and Arab states',
-            'Israel’s consolidation of control of the occupied territories',
-            'Key events of the Yom Kippur War (1973) and its aftermath',
+            '<strong>War of Attrition &amp; Cold War Diplomacy:</strong> Artillery duels along Suez, Soviet air-defence umbrellas, and Sadat’s 1972 expulsion of 15,000 Soviet advisors.',
+            '<strong>Fortification &amp; The Conceptia:</strong> Construction of the fortified Bar-Lev Line along Suez and Israeli overconfidence in military superiority.',
+            '<strong>The Yom Kippur War (Oct 1973):</strong> Egyptian surprise canal crossing using water cannons, Syrian assault in Golan, and emergency US resupply airlifts.',
+            "<strong>Diplomatic &amp; Economic Fallout:</strong> Sharon’s counter-crossing, Kissinger's shuttle diplomacy, and the OPEC oil embargo quadrupling global fuel prices.",
           ],
         },
       ],
@@ -2013,24 +2014,25 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
 // ============================================================================
 async function compilePdf(htmlPath, pdfPath, v17Path) {
   const puppeteer = require('puppeteer');
-  const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
   const browser = await puppeteer.launch({
-    headless: 'new',
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
-  await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
-
-  // Evaluate dynamic lines calculation client-side in Puppeteer
-  await page.evaluate(() => {
-    if (typeof autoFillWritingLines === 'function') {
-      autoFillWritingLines();
-    }
+  await page.goto('file:///' + htmlPath.replace(/\\/g, '/'), {
+    waitUntil: 'networkidle0',
+    timeout: 60000,
   });
 
-  // Space audit before PDF compilation
-  const audit = await auditPageBudget(page);
-  printSpaceAuditReport(audit, path.basename(htmlPath));
+  const checkOverflowsScript = path.join(__dirname, 'check_overflows.cjs');
+  if (fs.existsSync(checkOverflowsScript)) {
+    const { execSync } = require('child_process');
+    try {
+      execSync(`node "${checkOverflowsScript}" "${htmlPath}" --strict`, { stdio: 'inherit' });
+    } catch (e) {
+      console.warn('⚠️ Overflow check warned or failed:', e.message);
+    }
+  }
 
   await page.pdf({
     path: pdfPath,

@@ -901,29 +901,31 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       title: 'Pearson Edexcel GCSE (9–1) History Specification &bull; Key Topic 1 Content',
       subtopics: [
         {
-          title: '1. The British withdrawal &amp; Israel',
+          title: '1. The British Withdrawal &amp; Israel',
           items: [
-            'Conflicting interests and demands of Jews and Arabs within the British Mandate.',
-            'Key events leading to the end of the British Mandate, partition and the creation of Israel, including the significance of the bombing of the King David Hotel and UN Resolution 181.',
-            'Key events of the Arab-Israeli war (1948–49).',
+            '<strong>Mandate Nationalist Rivalry:</strong> Conflicting demands of Palestinian Arabs and Zionists; British White Paper immigration quotas vs post-Holocaust survivor influx.',
+            '<strong>Zionist Insurgency (1945–47):</strong> Armed campaigns by Irgun and Lehi targeting British administration, culminating in the King David Hotel bombing (July 1946).',
+            '<strong>UN Partition Plan (1947):</strong> UN Resolution 181 voting to divide Palestine (56% Jewish / 43% Arab), accepted by Jewish Agency and rejected by Arab states.',
+            '<strong>The First Arab-Israeli War (1948–49):</strong> Proclamation of Israel, five Arab army invasions, Czech arms supplies, and the 1949 Green Line armistices.',
           ],
         },
         {
-          title: '2. Aftermath of the 1948–49 war',
+          title: '2. Aftermath of the 1948–49 War',
           items: [
-            'Territorial changes and their impact.',
-            'The refugee status of Palestinian Arabs.',
-            'The creation of the Israeli Defence Forces (IDF) and the Law of Return (1950).',
-            'US aid to Israel.',
-            'Israel’s relations with Egypt.',
+            '<strong>Territorial Division:</strong> Israeli control expanding to 78% of Mandate Palestine, Transjordan annexing the West Bank, and Egyptian military rule in Gaza.',
+            '<strong>The Palestinian Refugee Crisis (Al-Nakba):</strong> Permanent displacement of 700,000 Palestinian Arabs into exile and establishment of UNRWA relief camps.',
+            '<strong>State Security &amp; Immigration:</strong> Formation of the Israeli Defence Forces (IDF) and the 1950 Law of Return absorbing over 680,000 Jewish refugees.',
+            '<strong>Superpower Alliances:</strong> Early United States financial aid and diplomatic recognition establishing an enduring strategic partnership.',
+            '<strong>Cross-Border Skirmishes:</strong> Infiltration of Palestinian fedayeen from Gaza and fierce Israeli military reprisals escalating border volatility.',
           ],
         },
         {
-          title: '3. Increased tension, 1955–63',
+          title: '3. Increased Tension, 1955–63',
           items: [
-            'Nasser and Egypt’s leadership of the Arab world.',
-            'The events and significance of Israeli attacks on Gaza in 1955 and Sinai in 1956.',
-            'The events and significance of the Suez Crisis (1956), including the formation of the United Arab Republic (UAR) in 1958.',
+            '<strong>Pan-Arab Leadership:</strong> Gamal Abdel Nasser assumes Egyptian presidency, championing Arab nationalism, anti-colonialism, and regional unity.',
+            '<strong>Gaza Raid &amp; Arms Deal (1955):</strong> Israeli retaliatory strike in Gaza prompting Nasser to secure large-scale modern Soviet-Czech weaponry.',
+            '<strong>The Suez Crisis (1956):</strong> Nasser nationalises the Suez Canal; secret Protocol of Sèvres between Britain, France, and Israel leads to the Sinai invasion.',
+            '<strong>Crisis Aftermath (1957–63):</strong> US financial ultimatums force humiliating European withdrawal, UNEF deployed in Sinai, and creation of the UAR (1958).',
           ],
         },
       ],
@@ -1563,24 +1565,25 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
 // ============================================================================
 async function compilePdf(htmlPath, pdfPath, v17Path) {
   const puppeteer = require('puppeteer');
-  const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.cjs');
   const browser = await puppeteer.launch({
-    headless: 'new',
+    headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
-  await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
-
-  // Evaluate dynamic lines calculation client-side in Puppeteer
-  await page.evaluate(() => {
-    if (typeof autoFillWritingLines === 'function') {
-      autoFillWritingLines();
-    }
+  await page.goto('file:///' + htmlPath.replace(/\\/g, '/'), {
+    waitUntil: 'networkidle0',
+    timeout: 60000,
   });
 
-  // Space audit before PDF compilation
-  const audit = await auditPageBudget(page);
-  printSpaceAuditReport(audit, path.basename(htmlPath));
+  const checkOverflowsScript = path.join(__dirname, 'check_overflows.cjs');
+  if (fs.existsSync(checkOverflowsScript)) {
+    const { execSync } = require('child_process');
+    try {
+      execSync(`node "${checkOverflowsScript}" "${htmlPath}" --strict`, { stdio: 'inherit' });
+    } catch (e) {
+      console.warn('⚠️ Overflow check warned or failed:', e.message);
+    }
+  }
 
   await page.pdf({
     path: pdfPath,

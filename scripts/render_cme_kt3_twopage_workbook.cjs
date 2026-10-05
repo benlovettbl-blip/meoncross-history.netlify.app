@@ -946,33 +946,33 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       heightMm: 120,
     },
     specBox: {
-      title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
+      title: 'Pearson Edexcel GCSE (9–1) History Specification &bull; Key Topic 3 Content',
       subtopics: [
         {
           title: '1. Diplomatic Negotiations, 1974–79',
           items: [
-            'Oil crisis & US/USSR roles: Kissinger’s shuttle diplomacy',
-            'Sadat’s visit to Israel (1977) & Knesset speech; Begin’s visit to Egypt',
-            'Camp David Accords (1978) & Treaty of Washington (1979)',
-            'Evacuation of Yamit, Arab League boycott, Sadat assassinated (1981)',
+            '<strong>Superpower Shuttle Diplomacy:</strong> Henry Kissinger negotiates disengagement accords following the 1973 war and the OPEC oil embargo.',
+            '<strong>Sadat’s Jerusalem Initiative (1977):</strong> Historic flight to Ben Gurion Airport and address to the Israeli Knesset: "No more war, no more bloodshed."',
+            '<strong>Camp David Accords (1978):</strong> 13 days of secluded talks hosted by Jimmy Carter, brokering bilateral peace frameworks between Sadat and Begin.',
+            '<strong>Treaty of Washington (1979):</strong> Demilitarisation and return of Sinai, demolition of Yamit, Arab League boycott, and Sadat’s assassination (1981).',
           ],
         },
         {
           title: '2. The Palestinian Issue, 1974–93',
           items: [
-            'Arafat and PLO diplomacy; Rejectionist states; "Fatahland"',
-            'Operation Litani (1978); 1982 Lebanon invasion & siege of Beirut',
-            'Sabra & Shatila massacre, Kahan Commission & Sharon resignation',
-            'First Intifada (1987–93): causes, events, Iron Fist policy, rise of Hamas',
+            '<strong>PLO Diplomacy &amp; "Fatahland":</strong> Arafat’s UN "gun and olive branch" address (1974) and guerrilla cross-border rocket strikes from southern Lebanon.',
+            '<strong>Lebanon Invasion &amp; Siege of Beirut (1982):</strong> Operation Peace for Galilee driving 60 miles north; 10-week siege and PLO evacuation to Tunis.',
+            '<strong>Sabra-Shatila &amp; Political Repercussions:</strong> Phalangist massacre of Palestinian refugees; Israeli Kahan Commission forces Sharon’s resignation.',
+            '<strong>The First Intifada (1987–93):</strong> Jabalia camp spark, civil strikes, Rabin’s "Iron Fist" policy, and the founding of militant Islamist rival Hamas.',
           ],
         },
         {
           title: '3. Attempts at a Solution, 1988–95',
           items: [
-            'Arafat renounces terrorism (1988); Soviet collapse & loan guarantees',
-            'Gulf War (1990–91) & Madrid (1991); 1992 election of Yitzhak Rabin',
-            'Oslo Accords (1993) & 1994 Israel-Jordan Peace Treaty',
-            'Extremist opposition; Hebron massacre (1994); Oslo II (1995: Areas A/B/C); Rabin assassinated',
+            '<strong>Renunciation of Terrorism (1988):</strong> Arafat’s Geneva address recognising Israel’s right to exist, opening direct US diplomatic dialogue.',
+            '<strong>Madrid Conference &amp; Rabin Election:</strong> Impact of Gulf War and Soviet collapse; 1992 election of Labour leader Yitzhak Rabin promising peace.',
+            '<strong>Oslo Accords &amp; Jordan Treaty (1993–94):</strong> Secret Norwegian backchannel, White House lawn handshake, and 1994 Israel-Jordan peace treaty.',
+            '<strong>Extremist Backlash &amp; Oslo II (1995):</strong> Baruch Goldstein Hebron massacre, Hamas suicide bombings, West Bank division (Areas A/B/C), and Rabin’s assassination.',
           ],
         },
       ],

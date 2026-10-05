@@ -64,24 +64,73 @@ function renderStandardFrontCover({
   const photoHeight = isWeimar ? Math.min(heroImage.heightMm || 92, 92) : heroImage.heightMm || 120;
   const objectPos = heroImage.objectPosition || 'center 36%';
 
-  // Dynamic specification font scaling to guarantee zero cut-off
+  // Dynamic specification typography scaling based on column count and item density
+  const numCols = (specBox.subtopics || []).length || 3;
   const maxItems = Math.max(...(specBox.subtopics || []).map((s) => (s.items || []).length), 1);
-  const specFontSize = isWeimar || maxItems > 3 ? '6.8pt' : '8.8pt';
-  const specLineHeight = isWeimar || maxItems > 3 ? '1.20' : '1.5';
-  const specTitleSize = isWeimar || maxItems > 3 ? '7.2pt' : '8.8pt';
+
+  let specFontSize, specLineHeight, specTitleSize, specItemMargin, specTitleMargin;
+  if (isWeimar) {
+    specFontSize = '6.8pt';
+    specLineHeight = '1.20';
+    specTitleSize = '7.2pt';
+    specItemMargin = '2px';
+    specTitleMargin = '4px';
+  } else if (numCols <= 3) {
+    // 3-column layout (e.g. Conflict in the Middle East, GCSE Paper 2)
+    if (maxItems <= 4) {
+      specFontSize = '7.9pt';
+      specLineHeight = '1.35';
+      specTitleSize = '8.5pt';
+      specItemMargin = '5.5px';
+      specTitleMargin = '6px';
+    } else if (maxItems === 5) {
+      specFontSize = '7.6pt';
+      specLineHeight = '1.32';
+      specTitleSize = '8.3pt';
+      specItemMargin = '4.5px';
+      specTitleMargin = '5px';
+    } else {
+      specFontSize = '7.0pt';
+      specLineHeight = '1.22';
+      specTitleSize = '7.6pt';
+      specItemMargin = '2.5px';
+      specTitleMargin = '4px';
+    }
+  } else {
+    // 4+ column layout (e.g. Early Elizabethan England, Paper 2 British Depth)
+    if (maxItems <= 3) {
+      specFontSize = '7.6pt';
+      specLineHeight = '1.30';
+      specTitleSize = '8.0pt';
+      specItemMargin = '4px';
+      specTitleMargin = '5px';
+    } else if (maxItems === 4) {
+      specFontSize = '7.0pt';
+      specLineHeight = '1.22';
+      specTitleSize = '7.5pt';
+      specItemMargin = '3px';
+      specTitleMargin = '4px';
+    } else {
+      specFontSize = '6.6pt';
+      specLineHeight = '1.18';
+      specTitleSize = '7.0pt';
+      specItemMargin = '2px';
+      specTitleMargin = '3px';
+    }
+  }
 
   const subtopicsHtml = (specBox.subtopics || [])
     .map((sub, idx) => {
       const isLast = idx === specBox.subtopics.length - 1;
       const borderStyle = isLast ? '' : 'border-right: 1.2px solid #e2e8f0; padding-right: 10px;';
       const itemsHtml = (sub.items || [])
-        .map((item) => `<div style="margin-bottom: 2px;">&bull; ${item}</div>`)
+        .map((item) => `<div style="margin-bottom: ${specItemMargin};">&bull; ${item}</div>`)
         .join('\n');
 
       return `
           <!-- Subtopic ${idx + 1} -->
           <div style="${borderStyle} display: flex; flex-direction: column; justify-content: flex-start; height: 100%;">
-            <strong style="font-size: ${specTitleSize}; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2px; margin-bottom: 4px; display: block; letter-spacing: 0.3px;">
+            <strong style="font-size: ${specTitleSize}; text-transform: uppercase; color: #000; border-bottom: 1.2px solid #000; padding-bottom: 2.5px; margin-bottom: ${specTitleMargin}; display: block; letter-spacing: 0.3px;">
               ${sub.title}
             </strong>
             <div style="font-size: ${specFontSize}; line-height: ${specLineHeight}; color: #111;">
