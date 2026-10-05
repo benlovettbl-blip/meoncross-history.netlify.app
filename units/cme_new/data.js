@@ -4670,7 +4670,7 @@ export const unitData = {
           },
         ],
         source_context:
-          "Historical news photography of the Anglo-French landing at Port Said alongside Cairo's Al-Ahram front page proclaiming the nationalisation of the Suez Canal. **Hinge Question:** How did Gamal Abdel Nasser turn a tactical military defeat at Port Said into a monumental political and anti-imperial triumph?",
+          'Contemporary political cartoon by Fritz Behrendt ("The Man at the Tap", August 1956) depicting Gamal Abdel Nasser controlling the Suez oil tap while Western powers queue with cans, alongside the Cairo Al-Ahram nationalisation front page. **Hinge Question:** Why did Western cartoonists depict Nasser’s control of the Suez Canal as a threat to their economic survival rather than a legitimate exercise of Egyptian sovereign rights?',
       },
       flashcards: [
         {
@@ -4804,14 +4804,14 @@ export const unitData = {
           level_4:
             'By 1954, Gamal Abdel Nasser became President of Egypt, championing Pan-Arabism to end Western imperialism. He agreed the withdrawal of 80,000 British troops from the Suez Canal Zone and planned the Aswan High Dam to industrialize Egypt.',
           source: {
-            title: 'Source A: President Gamal Abdel Nasser (1956)',
-            src: '/images/cme_nasser_1956.jpg',
+            title: 'Source A: Political Cartoon: "The Man at the Tap" (August 1956)',
+            src: '/images/cme_nasser_suez_cartoon_1956.jpg',
             caption:
-              'Primary Photograph: President Gamal Abdel Nasser of Egypt, whose nationalisation of the Suez Canal in July 1956 electrified the Arab world.',
+              'Contemporary Political Cartoon: "Der Mann am Hahnen" ("The Man at the Tap") by cartoonist Fritz Behrendt (August 1956). Egyptian President Gamal Abdel Nasser reclines with his hand on the "SUEZ" tap of a giant oil barrel, forcing Britain (John Bull), France (Marianne), and the USA (Uncle Sam) to wait in line with oil cans.',
             question:
-              "Study Source A. Why did Nasser's charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?",
+              'Study Source A. What can you learn from Source A about European and American fears following President Nasser’s nationalisation of the Suez Canal in 1956?',
             model_answer:
-              'Nasser came to personify Pan-Arab nationalism and defiance against Western colonial domination. By overthrowing the corrupt pro-British monarchy in 1952, purchasing arms from Czechoslovakia in 1955, and boldly nationalising the British-and-French-owned Suez Canal, Nasser proved that an Arab leader could stand up to European imperial powers and defend Arab sovereignty, making him the unchallenged hero of the Arab world.',
+              'Source A illustrates Western anxiety that by nationalising the Suez Canal, President Nasser had seized complete control over Western Europe’s vital Middle Eastern oil supply route. The cartoon portrays Nasser reclining comfortably with his hand on the "SUEZ" tap of an oil barrel, while personifications of Britain (John Bull), France (Marianne), and the USA (Uncle Sam) wait nervously in line with oil cans. This conveys the European perception that Nasser now held an economic stranglehold over their economies, directly reflecting British Prime Minister Anthony Eden’s alarm that Nasser had his "thumb on our windpipe".',
           },
         },
         {
@@ -4989,13 +4989,13 @@ export const unitData = {
       ],
       sources: [
         {
-          title: 'Source A: President Gamal Abdel Nasser (1956)',
-          src: '/images/cme_nasser_1956.jpg',
-          source: '/images/cme_nasser_1956.jpg',
+          title: 'Source A: Political Cartoon: "The Man at the Tap" (August 1956)',
+          src: '/images/cme_nasser_suez_cartoon_1956.jpg',
+          source: '/images/cme_nasser_suez_cartoon_1956.jpg',
           caption:
-            'Primary Photograph: President Gamal Abdel Nasser of Egypt, whose nationalisation of the Suez Canal in July 1956 electrified the Arab world.',
+            'Contemporary Political Cartoon: "Der Mann am Hahnen" ("The Man at the Tap") by cartoonist Fritz Behrendt (August 1956). Egyptian President Gamal Abdel Nasser reclines with his hand on the "SUEZ" tap of a giant oil barrel, forcing Britain (John Bull), France (Marianne), and the USA (Uncle Sam) to wait in line with oil cans.',
           question:
-            "Study Source A. Why did Nasser's charismatic leadership and anti-colonial stance inspire such widespread devotion across the Arab world?",
+            'Study Source A. What can you learn from Source A about European and American fears following President Nasser’s nationalisation of the Suez Canal in 1956?',
         },
         {
           title:

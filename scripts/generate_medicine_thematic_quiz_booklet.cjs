@@ -480,7 +480,7 @@ function buildHtml() {
     }
     .tracker-table th, .tracker-table td {
       border: 1.1px solid #0f172a;
-      padding: 7.8px 6px;
+      padding: 5.3px 6px;
       line-height: 1.22;
     }
     .tracker-table th {
@@ -488,10 +488,10 @@ function buildHtml() {
       color: #ffffff;
       font-weight: 800;
       text-align: left;
-      font-size: 7.2pt;
+      font-size: 7.7pt;
       text-transform: uppercase;
       letter-spacing: 0.2px;
-      padding: 4.8px 6px;
+      padding: 5.2px 6px;
     }
     .tracker-table tr:nth-child(even) { background: #f8fafc; }
     .col-score { width: 36px; text-align: center; font-size: 6.8pt; font-weight: 800; }
@@ -522,12 +522,12 @@ function buildHtml() {
       border-left: 4px solid #0f172a;
       background: #f8fafc;
       border-radius: 2px;
-      padding: 3.5px 6.5px;
+      padding: 4.8px 6.5px;
       margin-bottom: 2.5px;
     }
     .protocol-title-row {
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 8.2pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -539,7 +539,7 @@ function buildHtml() {
       grid-template-columns: repeat(4, 1fr);
       gap: 5px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.2pt;
       line-height: 1.22;
     }
     .step-item {
@@ -548,18 +548,18 @@ function buildHtml() {
       padding: 4px 5.5px;
       border-radius: 1px;
     }
-    .step-item strong { color: #0f172a; display: block; font-size: 7.0pt; margin-bottom: 1px; }
+    .step-item strong { color: #0f172a; display: block; font-size: 7.5pt; margin-bottom: 1px; }
 
     .traffic-tier-box {
       border: 1.2px solid #0f172a;
       background: #f1f5f9;
       border-radius: 2px;
-      padding: 4px 8px;
+      padding: 5.0px 8px;
       display: flex;
       justify-content: space-around;
       align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 7.8pt;
       font-weight: 700;
       margin-bottom: 3.5px;
     }
@@ -570,13 +570,14 @@ function buildHtml() {
       border-radius: 2px;
       margin-bottom: 3.5px;
       overflow: hidden;
+      flex-shrink: 0;
     }
     .glossary-title {
       background: #0f172a;
       color: #ffffff;
-      padding: 2.5px 7px;
+      padding: 3.0px 7px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.7pt;
       font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.3px;
@@ -584,10 +585,10 @@ function buildHtml() {
     .glossary-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2px 8px;
-      padding: 3px 6px;
-      font-size: 6.5pt;
-      line-height: 1.16;
+      gap: 2.5px 8px;
+      padding: 3.8px 6px;
+      font-size: 6.8pt;
+      line-height: 1.18;
     }
     .glossary-item { font-family: 'Georgia', serif; color: #1e293b; }
     .glossary-term { font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; }
@@ -1101,7 +1102,7 @@ function buildHtml() {
       </div>
 
       <!-- Paper 1 Examination Timing & Mark Allocation Architecture -->
-      <div style="border: 1.2px solid #0f172a; background: #ffffff; padding: 2.8px 6px; border-radius: 2px; margin-bottom: 2.5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.18;">
+      <div style="border: 1.2px solid #0f172a; background: #ffffff; padding: 4.0px 6px; border-radius: 2px; margin-bottom: 3.5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2;">
         <div style="border-left: 2.5px solid #0f172a; padding-left: 4px;">
           <strong style="color: #0f172a;">Section A: Historic Environment (Western Front)</strong> &bull; 16 Marks &bull; 32 Minutes<br>
           Q1(a) Feature [2m] &bull; Q1(b) Feature [2m] &bull; Q2(a) Source Utility [8m] &bull; Q2(b) Follow-up [4m]
@@ -1130,14 +1131,14 @@ function buildHtml() {
               .map(
                 (l) => `
               <tr>
-                <td style="padding: 4.1px 5.5px;">
-                  <div style="font-weight: 800; font-size: 7.2pt; color: #0f172a; line-height: 1.15;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
-                  <div style="font-size: 6.2pt; color: #475569; font-style: italic; line-height: 1.15; margin-top: 1px;">${l.enquiry}</div>
+                <td style="padding: 5.3px 5.5px;">
+                  <div style="font-weight: 800; font-size: 7.7pt; color: #0f172a; line-height: 1.18;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
+                  <div style="font-size: 6.6pt; color: #475569; font-style: italic; line-height: 1.18; margin-top: 1px;">${l.enquiry}</div>
                 </td>
-                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
-                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
-                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
-                <td class="col-tick" style="padding: 4.1px 2px; font-weight: 900;">[ &nbsp; ]</td>
+                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
+                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
+                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
+                <td class="col-tick" style="padding: 5.3px 2px; font-weight: 900; font-size: 7.3pt;">[ &nbsp; ]</td>
               </tr>
             `,
               )
@@ -1161,52 +1162,20 @@ function buildHtml() {
               .map(
                 (l) => `
               <tr>
-                <td style="padding: 4.1px 5.5px;">
-                  <div style="font-weight: 800; font-size: 7.2pt; color: #0f172a; line-height: 1.15;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
-                  <div style="font-size: 6.2pt; color: #475569; font-style: italic; line-height: 1.15; margin-top: 1px;">${l.enquiry}</div>
+                <td style="padding: 5.3px 5.5px;">
+                  <div style="font-weight: 800; font-size: 7.7pt; color: #0f172a; line-height: 1.18;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
+                  <div style="font-size: 6.6pt; color: #475569; font-style: italic; line-height: 1.18; margin-top: 1px;">${l.enquiry}</div>
                 </td>
-                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
-                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
-                <td class="col-score" style="padding: 4.1px 3px;"><div style="font-size: 5.8pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900;">/10</span></td>
-                <td class="col-tick" style="padding: 4.1px 2px; font-weight: 900;">[ &nbsp; ]</td>
+                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
+                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
+                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
+                <td class="col-tick" style="padding: 5.3px 2px; font-weight: 900; font-size: 7.3pt;">[ &nbsp; ]</td>
               </tr>
             `,
               )
               .join('')}
           </tbody>
         </table>
-      </div>
-
-      <!-- Section B 4-Era Diagnostic Progress & Mastery Tracker -->
-      <div class="era-rag-matrix">
-        <div class="era-rag-card">
-          <span class="era-rag-title">Era 1: Medieval (c1250–1500)</span>
-          Lessons 1–5 &bull; Target: <strong>&ge;45/50</strong><br>
-          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
-          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
-          <span style="color: #64748b; font-size: 6.0pt;">Focus: Humours &bull; Monasteries &bull; Plague</span>
-        </div>
-        <div class="era-rag-card">
-          <span class="era-rag-title">Era 2: Renaissance (c1500–1700)</span>
-          Lessons 6–10 &bull; Target: <strong>&ge;45/50</strong><br>
-          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
-          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
-          <span style="color: #64748b; font-size: 6.0pt;">Focus: Vesalius &bull; Harvey &bull; 1665 Plague</span>
-        </div>
-        <div class="era-rag-card">
-          <span class="era-rag-title">Era 3: Industrial (c1700–1900)</span>
-          Lessons 11–15 &bull; Target: <strong>&ge;45/50</strong><br>
-          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
-          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
-          <span style="color: #64748b; font-size: 6.0pt;">Focus: Germ Theory &bull; Surgery &bull; 1875 Act</span>
-        </div>
-        <div class="era-rag-card">
-          <span class="era-rag-title">Era 4: Modern (c1900–present)</span>
-          Lessons 16–20 &bull; Target: <strong>&ge;45/50</strong><br>
-          Score: <strong>____ / 50</strong> &bull; [ &nbsp; ] DIRT Done<br>
-          <div style="margin-top: 1.5px; font-size: 6.2pt; color: #334155;">Weakest: L___ &bull; Sign: ________</div>
-          <span style="color: #64748b; font-size: 6.0pt;">Focus: Genetics &bull; Penicillin &bull; NHS (1948)</span>
-        </div>
       </div>
 
       <!-- 4-Stage DIRT Retrieval Protocol -->
