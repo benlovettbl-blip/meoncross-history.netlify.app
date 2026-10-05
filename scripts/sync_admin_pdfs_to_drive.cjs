@@ -518,6 +518,18 @@ const PDF_MAPPINGS = [
     dest: 'Conflict in the Middle East Cover Lesson (Double Period).pdf',
     category: 'Year 10 GCSE',
   },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Conflict in the Middle East Master Knowledge Retrieval Companion.pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'CME_Lesson_4_Causal_Domino_Note_Companion.pdf',
+    dest: 'Conflict in the Middle East Lesson 4 Causal Domino Note Companion.pdf',
+    category: 'Year 10 GCSE',
+  },
 
   // Year 11 (GCSE) - USA 1954-75
   {
