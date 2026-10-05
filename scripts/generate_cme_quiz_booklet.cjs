@@ -494,136 +494,15 @@ const VOCAB_BANK = [
 ];
 
 // --------------------------------------------------------------------------
-// EXTRACT & CURATE QUESTIONS (100% UNIFORM: 12 QUESTIONS PER LESSON = 144 Qs)
+// EXTRACT & CURATE QUESTIONS (100% PEARSON REVISION GUIDE ALIGNED: 144 Qs)
 // --------------------------------------------------------------------------
+const { PEARSON_QUIZ_BANK } = require('./cme_pearson_quiz_bank.cjs');
+
 function loadCuratedQuestions() {
-  const dataPath = path.join(ROOT_DIR, 'units', 'cme_new', 'data.js');
-  const raw = require(dataPath);
-  const cme = raw.unitData || raw;
-  const lessons = cme.lessons;
-
-  const curated = [];
-
-  // LESSON 1: 12 Tiered Anchor Questions (1945 Baseline & Imperial Legacies)
-  const l1Questions = [
-    // TIER 1: Core Foundation & Chronology (Grades 1–4)
-    {
-      q: 'What 1917 British diplomatic statement promised support for a "national home for the Jewish people" in Palestine?',
-      a: 'The Balfour Declaration',
-      exp: 'Authored by Foreign Secretary Arthur Balfour, this 67-word pledge gave Zionist aspirations official British imperial backing.',
-      tier: 'Tier 1: Core Foundation (Grades 1–4)',
-    },
-    {
-      q: 'What 1915 correspondence led Arab leaders to believe Britain had promised post-war Arab independence across Palestine?',
-      a: 'The McMahon-Hussein Correspondence',
-      exp: 'Sir Henry McMahon traded promises of Arab independence to Sharif Hussein of Mecca in exchange for an Arab revolt against the Ottoman Empire.',
-      tier: 'Tier 1: Core Foundation (Grades 1–4)',
-    },
-    {
-      q: 'What 1939 British government policy paper restricted Jewish immigration into Palestine to 75,000 over five years?',
-      a: 'The 1939 British White Paper (MacDonald White Paper)',
-      exp: 'Seeking Arab support ahead of WWII, Britain abandoned partition plans and capped immigration, alienating Zionists during the Holocaust.',
-      tier: 'Tier 1: Core Foundation (Grades 1–4)',
-    },
-    {
-      q: 'Following the liberation of Nazi concentration camps in 1945, what urgent humanitarian demand did US President Truman make of Britain?',
-      a: 'Immediate admission of 100,000 Jewish Displaced Persons (DPs)',
-      exp: 'Truman pressured Prime Minister Clement Attlee to open Palestine’s gates to Holocaust survivors stranded in European camps.',
-      tier: 'Tier 1: Core Foundation (Grades 1–4)',
-    },
-
-    // TIER 2: Causal Mechanism & Process (Grades 5–7)
-    {
-      q: 'In 1945 at the end of the Second World War, what was the approximate demographic balance in Mandatory Palestine?',
-      a: 'Approximately 1.2 million Palestinian Arabs and 600,000 Jews',
-      exp: 'Arabs formed a 2:1 majority and demanded a unitary democratic state; Zionists demanded a sovereign Jewish state to secure sanctuary.',
-      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
-    },
-    {
-      q: 'Why did the British Labour government under Clement Attlee decide to refer the Palestine Mandate to the United Nations in February 1947?',
-      a: 'Armed Jewish insurgency, economic exhaustion after WWII, and irreconcilable Arab-Jewish demands',
-      exp: 'Attlee and Ernest Bevin concluded that maintaining 100,000 British troops in Palestine was politically and financially untenable.',
-      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
-    },
-    {
-      q: 'What crucial man-made waterway connects the Mediterranean Sea to the Red Sea, serving as a vital strategic chokepoint for British trade and oil?',
-      a: 'The Suez Canal',
-      exp: 'Opened in 1869, the canal was Britain’s imperial lifeline to India and Persian Gulf oil, making British troops unwilling to leave the region.',
-      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
-    },
-    {
-      q: 'Which strategic maritime passage at the mouth of the Gulf of Aqaba commands naval access to Israel’s southern port of Eilat?',
-      a: 'The Straits of Tiran (Sharm el-Sheikh)',
-      exp: 'Controlling access to the Red Sea, any blockade of this strait by Egypt was considered by Israel an explicit act of war.',
-      tier: 'Tier 2: Causal Mechanism (Grades 5–7)',
-    },
-
-    // TIER 3: Grade 8/9 Examiner Nuance & Impact (Grades 8–9)
-    {
-      q: 'Which vast triangular desert peninsula connecting Africa to Asia served as the primary military buffer between Egypt and Israel?',
-      a: 'The Sinai Peninsula',
-      exp: 'Its 60,000 square kilometres of harsh desert made rapid armored maneuver vital, dominating strategic planning in 1956, 1967, and 1973.',
-      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
-    },
-    {
-      q: 'Which elevated volcanic plateau in south-western Syria overlooked the Sea of Galilee, enabling Syrian artillery to shell Israeli collective farms?',
-      a: 'The Golan Heights',
-      exp: 'Its high ridge gave Syrian artillery commanding lines of fire into upper Galilee, making it a critical strategic objective seized by Israel in 1967.',
-      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
-    },
-    {
-      q: 'What special international legal status was proposed for Jerusalem under the 1947 United Nations Partition Plan (Resolution 181)?',
-      a: 'Corpus Separatum (an international city administered by the United Nations)',
-      exp: 'Recognizing its unique holy sites sacred to Judaism, Christianity, and Islam, the UN sought to place Jerusalem outside both Arab and Jewish sovereignty.',
-      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
-    },
-    {
-      q: 'Which neighboring Arab monarch, ruler of Transjordan, held secret negotiations with the Jewish Agency before 1948 to annex the West Bank?',
-      a: 'King Abdullah I of Transjordan (Hashemite Kingdom)',
-      exp: 'Abdullah sought to expand his kingdom across Arab Palestine, leading to deep distrust between Jordan and other Arab League states like Egypt and Syria.',
-      tier: 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)',
-    },
-  ];
-
-  curated.push({
-    cfg: LESSON_HEADERS[0],
-    questions: l1Questions,
-  });
-
-  // LESSONS 2 to 12: 12 Tiered Questions per Lesson from data.js
-  for (let i = 1; i < 12; i++) {
-    const l = lessons[i];
-    const cfg = LESSON_HEADERS[i];
-    const quiz = l.quiz || [];
-
-    const qList = [];
-    const pool = quiz.slice(0, 20);
-
-    for (let k = 0; k < 12; k++) {
-      const srcQ = pool[k] || {
-        q: `Sample question ${k + 1}`,
-        a: 'Core Fact',
-        explanation: 'Historical explanation.',
-      };
-      let tierLabel = 'Tier 1: Core Foundation (Grades 1–4)';
-      if (k >= 4 && k < 8) tierLabel = 'Tier 2: Causal Mechanism (Grades 5–7)';
-      if (k >= 8) tierLabel = 'Tier 3: Grade 8/9 Examiner Nuance (Grades 8–9)';
-
-      qList.push({
-        q: srcQ.q || srcQ.question,
-        a: srcQ.a || srcQ.answer,
-        exp: srcQ.explanation || srcQ.exp || '',
-        tier: tierLabel,
-      });
-    }
-
-    curated.push({
-      cfg: cfg,
-      questions: qList,
-    });
-  }
-
-  return curated;
+  return PEARSON_QUIZ_BANK.map((item, idx) => ({
+    cfg: LESSON_HEADERS[idx],
+    questions: item.questions,
+  }));
 }
 
 // --------------------------------------------------------------------------
