@@ -1025,7 +1025,8 @@ export function renderInteractiveQuiz() {
                 examPdfUrl = `/pdfs/edexcel_medicine_pupil_workbook_${wbId}_FINAL_V17.pdf`;
               } else if (unitId === 'cme_new') {
                 const upperId = wbId.toUpperCase();
-                recallPdfUrl = '/pdfs/cme_recall_quiz_FULL.pdf';
+                recallPdfUrl =
+                  '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf';
                 examPdfUrl = `/pdfs/cme_new_mastery_pack_${upperId}_FINAL_V17.pdf`;
               } else if (unitId === 'usa') {
                 const upperId = wbId.toUpperCase();

@@ -439,9 +439,9 @@ export function renderWorkbooksZone(container, unitData) {
         pages: '44 Pages',
         badge: 'PILLAR 3 • RECALL QUIZZING',
         color: '#7c3aed',
-        desc: 'All 200 knowledge recall questions across KT1, KT2, and KT3. Memory hacking rules, RAG threat-level checkboxes, and complete Vault self-marking answer keys.',
-        fileBase: '/units/cme_new/mastery_pack_full.html',
-        pdfUrl: '/pdfs/cme_recall_quiz_FULL.pdf',
+        desc: 'All 144 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Spaced retrieval protocol, 28-point chronology flowchart, and complete Department Marking Bank.',
+        fileBase: '/units/cme_new/cme_master_retrieval_companion.html',
+        pdfUrl: '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
       },
     ];
 

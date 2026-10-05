@@ -1578,7 +1578,6 @@ async function compilePdf() {
     PDFS_DIR,
     'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
   );
-  const legacyFullPdf = path.join(PDFS_DIR, 'cme_recall_quiz_FULL.pdf');
 
   await page.pdf({
     path: targetPdf,
@@ -1588,10 +1587,6 @@ async function compilePdf() {
     margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
   console.log(`✅ Generated Master 20-Page A4 PDF: ${targetPdf}`);
-
-  // Also replace legacy multiple-choice dump
-  fs.copyFileSync(targetPdf, legacyFullPdf);
-  console.log(`✅ Updated legacy PDF replacement: ${legacyFullPdf}`);
 
   await browser.close();
 
