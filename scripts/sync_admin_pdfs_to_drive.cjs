@@ -64,6 +64,42 @@ const PDF_MAPPINGS = [
     dest: 'AI Guide for Family Military Historians (Edward Pearson).docx',
     category: 'Admin',
   },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'History_Curriculum_Master_Roadmap_16_Units.docx',
+    dest: 'History Curriculum Master Roadmap 16 Units.docx',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'Departmental_Master_Roadmap_and_16Page_Booklet_Blueprint_2026.pdf',
+    dest: 'Departmental Master Roadmap & 16-Page Booklet Blueprint (2026).pdf',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'history_department_open_evening_a3.pdf',
+    dest: 'History Department Open Evening (A3 Poster).pdf',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'GCSE History Curriculum Audit Table (2026).pdf',
+    dest: 'GCSE History Curriculum Audit Table (2026).pdf',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'GCSE_Three_Pillars_Conversion_Ledger_2026.pdf',
+    dest: 'GCSE Three Pillars Conversion Ledger (2026).pdf',
+    category: 'Admin',
+  },
+  {
+    folder: '00_Department_Admin_and_Policies',
+    src: 'History Department Master Plan & Curriculum Tracker (2026).pdf',
+    dest: 'History Department Master Plan & Curriculum Tracker (2026).pdf',
+    category: 'Admin',
+  },
 
   // 01 - Schemes of Work (All 5 in one dedicated folder for 1-click batch upload)
   {
@@ -149,6 +185,12 @@ const PDF_MAPPINGS = [
     category: 'Year 7',
   },
   {
+    folder: path.join('Year 7', 'Water and Sanitation'),
+    src: 'Water_and_Sanitation_A5_Quiz_Booklet.pdf',
+    dest: 'Water and Sanitation A5 Knowledge Recall Quiz Booklet.pdf',
+    category: 'Year 7',
+  },
+  {
     folder: path.join('Year 7', 'Industrialisation and Empire'),
     src: 'industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
     dest: 'Industrialisation and Empire Pupil Workbook.pdf',
@@ -196,6 +238,12 @@ const PDF_MAPPINGS = [
     folder: path.join('Year 8', 'Early Modern World'),
     src: 'early_modern_world_mastery_pack_full_FINAL_V17.pdf',
     dest: 'Early Modern World Complete Mastery Pack.pdf',
+    category: 'Year 8',
+  },
+  {
+    folder: path.join('Year 8', 'Early Modern World'),
+    src: 'Early_Modern_World_A5_Quiz_Booklet.pdf',
+    dest: 'Early Modern World A5 Knowledge Recall Quiz Booklet.pdf',
     category: 'Year 8',
   },
   {
@@ -388,6 +436,36 @@ const PDF_MAPPINGS = [
     dest: 'Medicine Master Knowledge Recall Quiz (All 380 Questions).pdf',
     category: 'Year 11 GCSE',
   },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    src: 'edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf',
+    dest: 'Medicine Pupil Workbook (Complete All Eras Master).pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Medicine Thematic Study Master Knowledge Retrieval Companion.pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Western Front Master Knowledge Retrieval Companion.pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    src: 'edexcel_medicine_specification_and_limitations_audit.pdf',
+    dest: 'Medicine Specification & Limitations Audit.pdf',
+    category: 'Year 11 GCSE',
+  },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time'),
+    src: 'edexcel_medicine_32_page_compendium.pdf',
+    dest: 'Edexcel Paper 1 Medicine 32-Page Ultimate Compendium.pdf',
+    category: 'Year 11 GCSE',
+  },
 
   // Year 11 (GCSE) - Early Elizabethan England
   {
@@ -455,13 +533,31 @@ const PDF_MAPPINGS = [
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_revision_guide.pdf',
-    dest: 'Conflict in the Middle East Visual Revision Guide.pdf',
+    dest: 'Conflict in the Middle East Visual Revision & Exam Guide.pdf',
     category: 'Year 10 GCSE',
   },
   {
     folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
     src: 'cme_mastery_pack_FULL.pdf',
     dest: 'Conflict in the Middle East Complete Mastery Revision & Exam Practice Guide.pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_new_mastery_pack_KT1_FINAL_V17.pdf',
+    dest: 'Conflict in the Middle East Mastery Pack (KT1).pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_new_mastery_pack_KT2_FINAL_V17.pdf',
+    dest: 'Conflict in the Middle East Mastery Pack (KT2).pdf',
+    category: 'Year 10 GCSE',
+  },
+  {
+    folder: path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'cme_new_mastery_pack_KT3_FINAL_V17.pdf',
+    dest: 'Conflict in the Middle East Mastery Pack (KT3).pdf',
     category: 'Year 10 GCSE',
   },
   {
@@ -716,6 +812,73 @@ const LEGACY_ROOT_FILES = [
   'Edexcel GCSE Medicine Visual Revision and Exam Guide.pdf',
   'Edexcel GCSE USA Visual Revision and Exam Guide.pdf',
   'Conflict in the Middle East Visual Timeline.pdf',
+  'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+  'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf',
+  'Water_and_Sanitation_A5_Quiz_Booklet.pdf',
+  'Early_Modern_World_A5_Quiz_Booklet.pdf',
+  'Departmental_Master_Roadmap_and_16Page_Booklet_Blueprint_2026.pdf',
+  'History_Curriculum_Master_Roadmap_16_Units.docx',
+  'History Department Master Plan & Curriculum Tracker (2026).pdf',
+  'History Department Master Plan & Curriculum Tracker (2026).md',
+  'GCSE_Three_Pillars_Conversion_Ledger_2026.pdf',
+  'GCSE History Curriculum Audit Table (2026).pdf',
+  'history_department_open_evening_a3.pdf',
+];
+
+// Subfolder legacy files / duplicates to clean up
+const LEGACY_SUBFOLDER_FILES = [
+  // Loose in Year 11 (GCSE) root
+  path.join(
+    'Year 11 (GCSE)',
+    'GCSE Emergency Cover - The Bombing of Dresden Interpretations Clash (Double Period).pdf',
+  ),
+  // Loose in Year 10 (GCSE) root
+  path.join(
+    'Year 10 (GCSE)',
+    'GCSE Emergency Cover - Jack the Ripper Source Utility Masterclass (Double Period).pdf',
+  ),
+  // Duplicates / raw codes in Medicine
+  path.join('Year 11 (GCSE)', 'Paper 1 - Medicine Through Time', 'med_mastery_pack_FULL.pdf'),
+  path.join(
+    'Year 11 (GCSE)',
+    'Paper 1 - Medicine Through Time',
+    'Medicine in Britain Complete Mastery Pack.pdf',
+  ),
+  path.join(
+    'Year 11 (GCSE)',
+    'Paper 1 - Medicine Through Time',
+    'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+  ),
+  // Duplicates / raw codes in Middle East
+  path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East', 'cme_mastery_pack_FULL.pdf'),
+  path.join(
+    'Year 10 (GCSE)',
+    'Paper 2 - Conflict in the Middle East',
+    'cme_visual_revision_guide.pdf',
+  ),
+  path.join(
+    'Year 10 (GCSE)',
+    'Paper 2 - Conflict in the Middle East',
+    'Conflict in the Middle East Visual Revision Guide.pdf',
+  ),
+  path.join('Year 10 (GCSE)', 'Paper 2 - Conflict in the Middle East', 'cme_revision_guide.pdf'),
+  path.join(
+    'Year 10 (GCSE)',
+    'Paper 2 - Conflict in the Middle East',
+    'Conflict in the Middle East Revision Guide.pdf',
+  ),
+  path.join(
+    'Year 10 (GCSE)',
+    'Paper 2 - Conflict in the Middle East',
+    'Conflict in the Middle East Complete Mastery Pack.pdf',
+  ),
+  // Duplicates in USA
+  path.join(
+    'Year 11 (GCSE)',
+    'Paper 3 - USA 1954-75',
+    'edexcel_usa_visual_revision_and_exam_guide.pdf',
+  ),
+  path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75', 'usa_visual_revision_guide.pdf'),
 ];
 
 function syncAdminPdfsToDrive() {
@@ -736,7 +899,22 @@ function syncAdminPdfsToDrive() {
   let errorCount = 0;
 
   for (const item of PDF_MAPPINGS) {
-    const srcPath = path.join(PATHS.PDFS, item.src);
+    let srcPath = path.join(PATHS.PDFS, item.src);
+    if (!fs.existsSync(srcPath)) {
+      const candidates = [
+        path.join(PATHS.PUBLIC, 'docs', item.src),
+        path.join(PATHS.PUBLIC, item.src),
+        path.join(PATHS.ROOT, item.src),
+        path.join(PATHS.ROOT, 'public', 'docs', item.src),
+      ];
+      for (const cand of candidates) {
+        if (fs.existsSync(cand)) {
+          srcPath = cand;
+          break;
+        }
+      }
+    }
+
     const targetFolder = path.join(DRIVE_DEP_DIR, item.folder);
     const destPath = path.join(targetFolder, item.dest);
 
@@ -778,9 +956,68 @@ function syncAdminPdfsToDrive() {
     }
   }
 
+  // Clean up legacy subfolder duplicate files
+  console.log('\n🧹 Checking for duplicate/obsolete filenames in subfolders...');
+  for (const relPath of LEGACY_SUBFOLDER_FILES) {
+    const fullPath = path.join(DRIVE_DEP_DIR, relPath);
+    if (fs.existsSync(fullPath)) {
+      try {
+        fs.unlinkSync(fullPath);
+        console.log(`   🗑️ Cleaned subfolder duplicate: ${relPath}`);
+        cleanedCount++;
+      } catch (e) {
+        console.warn(`   ⚠️ Could not remove subfolder duplicate ${relPath}: ${e.message}`);
+      }
+    }
+  }
+
+  // Archive raw pdfs folder if present at root
+  const rawPdfsDir = path.join(DRIVE_DEP_DIR, 'pdfs');
+  const archiveDir = path.join(DRIVE_DEP_DIR, '_Legacy_PDF_Staging_Archive');
+  if (fs.existsSync(rawPdfsDir)) {
+    try {
+      if (fs.existsSync(archiveDir)) {
+        // Merge or leave as is
+        console.log('   📦 Note: _Legacy_PDF_Staging_Archive already exists.');
+      } else {
+        fs.renameSync(rawPdfsDir, archiveDir);
+        console.log('   📦 Archived raw "pdfs" folder to "_Legacy_PDF_Staging_Archive".');
+      }
+    } catch (e) {
+      console.warn(`   ⚠️ Could not rename raw pdfs folder: ${e.message}`);
+    }
+  }
+
+  // Clean up redundant '02. GCSE (Years 10-11)' if everything is safely in Year 10 / Year 11
+  const redundantGcseDir = path.join(DRIVE_DEP_DIR, '02. GCSE (Years 10-11)');
+  if (fs.existsSync(redundantGcseDir)) {
+    try {
+      // First copy USA recall quizzes to Year 11 (GCSE)\Paper 3 - USA 1954-75 if they exist
+      const usaQuizDir = path.join(
+        redundantGcseDir,
+        'Paper 3 - USA 1954-75',
+        '03. Retrieval Quizzing & Mastery',
+      );
+      const targetUsaDir = path.join(DRIVE_DEP_DIR, 'Year 11 (GCSE)', 'Paper 3 - USA 1954-75');
+      if (fs.existsSync(usaQuizDir) && fs.existsSync(targetUsaDir)) {
+        for (const f of fs.readdirSync(usaQuizDir)) {
+          const srcF = path.join(usaQuizDir, f);
+          const dstF = path.join(targetUsaDir, f);
+          if (!fs.existsSync(dstF)) {
+            fs.copyFileSync(srcF, dstF);
+          }
+        }
+      }
+      fs.rmSync(redundantGcseDir, { recursive: true, force: true });
+      console.log('   🗑️ Cleaned up redundant "02. GCSE (Years 10-11)" tree.');
+    } catch (e) {
+      console.warn(`   ⚠️ Could not clean redundant 02. GCSE folder: ${e.message}`);
+    }
+  }
+
   console.log('----------------------------------------------------');
   console.log(
-    `📊 Result: ${syncedCount} synced, ${skippedCount} skipped, ${cleanedCount} root files cleaned, ${errorCount} errors.`,
+    `📊 Result: ${syncedCount} synced, ${skippedCount} skipped, ${cleanedCount} files cleaned, ${errorCount} errors.`,
   );
   console.log('====================================================\n');
   return errorCount === 0;

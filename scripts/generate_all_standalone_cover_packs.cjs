@@ -49,7 +49,7 @@ const COVER_PACKS = [
     tagColor: '#0369a1',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
     pdfFileName: 'standalone_cover_yr7_tollund_man.pdf',
-    driveFolders: ['Year 7', 'Year 7\\Medieval England'],
+    driveFolders: ['Year 7\\Medieval England'],
     driveTitle: 'Year 7 Emergency Cover - The Mystery of the Tollund Man (Double Period).pdf',
 
     p1Context:
@@ -152,7 +152,7 @@ const COVER_PACKS = [
     tagColor: '#be123c',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
     pdfFileName: 'standalone_cover_yr7_eyam_plague.pdf',
-    driveFolders: ['Year 7', 'Year 7\\Medieval England'],
+    driveFolders: ['Year 7\\Medieval England'],
     driveTitle: 'Year 7 Emergency Cover - The Black Death in Eyam (Double Period).pdf',
 
     p1Context:
@@ -256,7 +256,7 @@ const COVER_PACKS = [
     tagColor: '#ea580c',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
     pdfFileName: 'standalone_cover_yr8_great_fire.pdf',
-    driveFolders: ['Year 8', 'Year 8\\Early Modern World'],
+    driveFolders: ['Year 8\\Early Modern World'],
     driveTitle: 'Year 8 Emergency Cover - The Great Fire of London (Double Period).pdf',
 
     p1Context:
@@ -360,7 +360,7 @@ const COVER_PACKS = [
     tagColor: '#5b21b6',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
     pdfFileName: 'standalone_cover_yr8_witchfinder_general.pdf',
-    driveFolders: ['Year 8', 'Year 8\\Early Modern World', 'Year 8\\Emergency Cover'],
+    driveFolders: ['Year 8\\Early Modern World'],
     driveTitle: 'Year 8 Emergency Cover - Matthew Hopkins Witchfinder General (Double Period).pdf',
 
     p1Context:
@@ -464,7 +464,7 @@ const COVER_PACKS = [
     tagColor: '#92400e',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?unit=great_war&view=lessons',
     pdfFileName: 'standalone_cover_yr9_christmas_truce.pdf',
-    driveFolders: ['Year 9', 'Year 9\\The Great War'],
+    driveFolders: ['Year 9\\The Great War'],
     driveTitle: 'Year 9 Emergency Cover - The Christmas Truce of 1914 (Double Period).pdf',
 
     p1Context:
@@ -567,7 +567,7 @@ const COVER_PACKS = [
     tagColor: '#2563eb',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
     pdfFileName: 'standalone_cover_yr9_bletchley_park.pdf',
-    driveFolders: ['Year 9', 'Year 9\\Post-War Britain'],
+    driveFolders: ['Year 9\\Post-War Britain'],
     driveTitle: 'Year 9 Emergency Cover - Codebreakers of Bletchley Park (Double Period).pdf',
 
     p1Context:
@@ -671,7 +671,7 @@ const COVER_PACKS = [
     tagColor: '#7f1d1d',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons&unit=edexcel_medicine',
     pdfFileName: 'standalone_cover_gcse_jack_the_ripper.pdf',
-    driveFolders: ['Emergency Cover Lessons', 'Year 10 (GCSE)'],
+    driveFolders: ['Year 11 (GCSE)\\Paper 1 - Medicine Through Time'],
     driveTitle:
       'GCSE Emergency Cover - Jack the Ripper Source Utility Masterclass (Double Period).pdf',
 
@@ -777,7 +777,7 @@ const COVER_PACKS = [
     tagColor: '#1e40af',
     qrUrl: 'https://the-history-revision-hub.netlify.app/?view=lessons',
     pdfFileName: 'standalone_cover_gcse_bombing_of_dresden.pdf',
-    driveFolders: ['Year 10 (GCSE)\\Paper 3 - Weimar and Nazi Germany', 'Year 11 (GCSE)'],
+    driveFolders: ['Year 10 (GCSE)\\Paper 3 - Weimar and Nazi Germany'],
     driveTitle:
       'GCSE Emergency Cover - The Bombing of Dresden Interpretations Clash (Double Period).pdf',
 
