@@ -162,11 +162,24 @@ export function getStructureStrip(questionObj, marks, unitId = '') {
     (marks === 8 && (qNum.includes('2(A)') || qNum.includes('3(A)')))
   ) {
     return `<strong>8-Mark Source Utility Structure Strip (Edexcel Paper 1 Q2a &amp; Paper 3 Q3a):</strong>
-<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Assessing two contemporary sources for a specific historical enquiry using content, contextual knowledge, and provenance (Nature, Origin, Purpose).</div>
+<div style="font-size: 0.9rem; margin-top: 4px; color: #475569; font-style: italic;">Assessing contemporary sources for a specific historical enquiry using the 3-step framework: Content, Provenance, and Contextual Limitations.</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 12px 0;">
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 6px; padding: 10px;">
+    <strong style="color: #1e3a8a; font-size: 0.85rem; display: block; margin-bottom: 4px;">1. CONTENT &amp; UTILITY</strong>
+    <div style="font-size: 0.82rem; color: #475569; line-height: 1.4;">Analyse what specific historical details the source reveals about the enquiry topic and corroborate with facts.</div>
+  </div>
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 6px; padding: 10px;">
+    <strong style="color: #1e3a8a; font-size: 0.85rem; display: block; margin-bottom: 4px;">2. PROVENANCE &amp; MOTIVE</strong>
+    <div style="font-size: 0.82rem; color: #475569; line-height: 1.4;">Evaluate the author, origin, date, and purpose of the source to judge its reliability and typicality.</div>
+  </div>
+  <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 6px; padding: 10px;">
+    <strong style="color: #1e3a8a; font-size: 0.85rem; display: block; margin-bottom: 4px;">3. CONTEXT &amp; LIMITATIONS</strong>
+    <div style="font-size: 0.82rem; color: #475569; line-height: 1.4;">Cross-reference with own contextual knowledge to identify what crucial medical aspects the source omits.</div>
+  </div>
+</div>
 <ul style="padding-left: 20px; margin-top: 10px; line-height: 1.6;">
-  <li><strong>Source 1 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations for this specific enquiry [2m].</li>
-  <li><strong>Source 2 Evaluation [4 Marks]:</strong> Assess content &amp; accuracy against own historical knowledge [2m] + evaluate Nature, Origin, Purpose (NOP) to explain usefulness/limitations for this specific enquiry [2m].</li>
-  <li><strong>Judgement on Enquiry:</strong> Synthesise how the two sources complement each other for the specific historical enquiry.</li>
+  <li><strong>Source Content &amp; Accuracy [4 Marks]:</strong> Assess what the source says/shows + corroborate with own precise historical knowledge.</li>
+  <li><strong>Provenance &amp; Purpose [4 Marks]:</strong> Evaluate Nature, Origin, and Purpose to explain how they enhance or limit the source's usefulness for this specific enquiry.</li>
 </ul>`;
   }
 

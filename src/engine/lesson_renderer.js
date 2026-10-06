@@ -7602,16 +7602,96 @@ export function renderLesson(lesson) {
     if (shouldRenderGcseTask) {
       if (lesson.gcse_task.tasks) {
         lesson.gcse_task.tasks.forEach((task, tIdx) => {
+          const taskPrompt = task.stem || task.text || task.question || '';
+          const taskModel = task.model_answer || task.model || '';
+          const isUtility =
+            (task.tariff && task.tariff.includes('2(a)')) || /utility|how useful/i.test(taskPrompt);
+          const isFollowUp =
+            (task.tariff && task.tariff.includes('2(b)')) ||
+            /follow up/i.test(taskPrompt) ||
+            !!task.table;
+
+          let matrixHtml = '';
+          if (isUtility) {
+            matrixHtml = `
+              <!-- 3-Step Utility Planning Matrix: Content • Provenance • Limitations -->
+              <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 12px 14px; margin: 12px 0 14px 0;">
+                <div style="font-weight: 700; font-size: 0.85rem; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-table-columns"></i> 3-Step Utility Planning Matrix: Content &bull; Provenance &bull; Limitations
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+                  <div style="background: #ffffff; border: 1px solid #94a3b8; border-top: 3px solid #1e3a8a; border-radius: 6px; padding: 10px;">
+                    <strong style="color: #1e3a8a; font-size: 0.84rem; display: block; margin-bottom: 4px;">1. CONTENT &amp; UTILITY</strong>
+                    <div style="font-size: 0.8rem; color: #475569; line-height: 1.4;">Analyse what specific historical details the source reveals about the enquiry topic and corroborate with facts.</div>
+                  </div>
+                  <div style="background: #ffffff; border: 1px solid #94a3b8; border-top: 3px solid #1e3a8a; border-radius: 6px; padding: 10px;">
+                    <strong style="color: #1e3a8a; font-size: 0.84rem; display: block; margin-bottom: 4px;">2. PROVENANCE &amp; MOTIVE</strong>
+                    <div style="font-size: 0.8rem; color: #475569; line-height: 1.4;">Evaluate the author, origin, date, and purpose of the source to judge its reliability and typicality.</div>
+                  </div>
+                  <div style="background: #ffffff; border: 1px solid #94a3b8; border-top: 3px solid #1e3a8a; border-radius: 6px; padding: 10px;">
+                    <strong style="color: #1e3a8a; font-size: 0.84rem; display: block; margin-bottom: 4px;">3. CONTEXT &amp; LIMITATIONS</strong>
+                    <div style="font-size: 0.8rem; color: #475569; line-height: 1.4;">Cross-reference with own contextual knowledge to identify what crucial aspects the source omits.</div>
+                  </div>
+                </div>
+              </div>
+            `;
+          }
+
+          let tableHtml = '';
+          if (task.table && Array.isArray(task.table)) {
+            tableHtml = `
+              <div style="margin: 12px 0 14px 0; overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; border: 1.5px solid #0f172a; font-size: 0.88rem; background: #ffffff;">
+                  <thead>
+                    <tr style="background: #0f172a; color: #ffffff;">
+                      <th style="padding: 8px 12px; text-align: left; width: 36%;">Official Prompt</th>
+                      <th style="padding: 8px 12px; text-align: left;">Your Response / Target Source</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    ${task.table
+                      .map(
+                        (row, rIdx) => `
+                      <tr style="border-bottom: 1px solid #cbd5e1;">
+                        <td style="padding: 8px 12px; font-weight: 700; background: #f8fafc; border-right: 1.5px solid #0f172a;">${row.row}</td>
+                        <td style="padding: 6px 10px;">
+                          <input type="text" class="student-answer-input" style="width: 100%; margin: 0; padding: 6px 8px; font-size: 0.86rem;" placeholder="Complete prompt...">
+                          ${row.model ? `<div id="row-model-${tIdx}-${rIdx}" class="scaffold-box model-box" style="display:none; margin-top: 6px; font-size: 0.82rem;"><strong>Model:</strong> ${row.model}</div>` : ''}
+                        </td>
+                      </tr>
+                    `,
+                      )
+                      .join('')}
+                  </tbody>
+                </table>
+              </div>
+            `;
+          }
+
           gcseHtml += `
-              <div class="do-now-card" style="background: #ffffff; border: 1px solid #e2e8f0; margin-bottom: 20px;">
-                <div style="font-weight: 700; margin-bottom: 12px; font-size: 1.1rem; color: #0f172a;">
-                  ${lesson.gcse_task.qNum && tIdx === 0 ? `Q${lesson.gcse_task.qNum}. ` : ''}${formatQuestion(task.text || task.question, !(lesson.gcse_task.qNum && tIdx === 0))}
+              <div class="do-now-card" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; margin-bottom: 20px; padding: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; flex-wrap: wrap; gap: 8px;">
+                  ${task.tariff ? `<span style="background: #1e3a8a; color: #ffffff; font-size: 0.76rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">${task.tariff}</span>` : ''}
                   <span style="display: inline-flex; vertical-align: middle;">
-                    ${task.model ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="gcse-model-${tIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
+                    ${taskModel ? `<button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-icon-only btn-pedagogy-model" title="Reveal Model Answer" data-action="toggle-element" data-target-id="gcse-model-${tIdx}"><i class="fa-solid fa-check-double"></i></button>` : ''}
                   </span>
                 </div>
-                <textarea class="student-answer-input" style="min-height: ${(task.text || task.question || '').includes('12 marks') || (task.text || task.question || '').includes('16 marks') ? '200px' : '100px'};" placeholder="Write your response here..." oninput="window.updateProgress()"></textarea>
-                ${task.model ? `<div id="gcse-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(task.model)}</div>` : ''}
+                <div style="font-weight: 700; margin-bottom: 10px; font-size: 1.05rem; color: #0f172a; line-height: 1.45;">
+                  ${lesson.gcse_task.qNum && tIdx === 0 ? `Q${lesson.gcse_task.qNum}. ` : ''}${formatQuestion(taskPrompt, !(lesson.gcse_task.qNum && tIdx === 0))}
+                </div>
+                ${
+                  task.provenance_clue
+                    ? `
+                  <div style="padding: 10px 14px; background: #eff6ff; border-left: 4px solid #2563eb; border-radius: 4px; font-size: 0.88rem; color: #1e40af; margin: 10px 0 14px 0; line-height: 1.45;">
+                    <strong style="color: #1e3a8a;"><i class="fa-solid fa-lightbulb"></i> Provenance Clue:</strong> ${task.provenance_clue}
+                  </div>
+                `
+                    : ''
+                }
+                ${matrixHtml}
+                ${tableHtml}
+                ${!task.table ? `<textarea class="student-answer-input" style="min-height: ${taskPrompt.includes('12 marks') || taskPrompt.includes('16 marks') ? '200px' : '110px'};" placeholder="Write your examination response here..." oninput="window.updateProgress()"></textarea>` : ''}
+                ${taskModel ? `<div id="gcse-model-${tIdx}" class="scaffold-box model-box" style="display:none; margin-top: 15px; padding: 12px 16px; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 6px; color: #166534; font-size: 0.92rem; line-height: 1.5;">${formatBold(taskModel)}</div>` : ''}
               </div>
             `;
         });
