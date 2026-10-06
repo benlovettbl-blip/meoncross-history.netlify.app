@@ -1256,7 +1256,7 @@ const COMMON_CSS = `
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 0;
+    padding: 0 2mm;
     background: #ffffff;
   }
   .page:last-child,
@@ -1270,11 +1270,11 @@ const COMMON_CSS = `
   /* Cover Page Styles */
   .cover-warning {
     border: 1.5px solid #000000;
-    padding: 4px 8px;
-    font-size: 7.5pt;
+    padding: 3.5px 8px;
+    font-size: 7.2pt;
     font-weight: 800;
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     background: #ffffff;
     color: #000000;
     text-transform: uppercase;
@@ -1282,53 +1282,53 @@ const COMMON_CSS = `
   }
   .candidate-box {
     border: 1.5px solid #000000;
-    padding: 8px 12px;
-    margin-bottom: 10px;
+    padding: 6px 10px;
+    margin-bottom: 6px;
     background: #ffffff;
     border-radius: 0;
   }
   .candidate-row {
     display: flex;
     gap: 12px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
   }
   .candidate-row:last-child {
     margin-bottom: 0;
   }
   .field-label {
-    font-size: 7.5pt;
+    font-size: 7.2pt;
     font-weight: 800;
     color: #000000;
     text-transform: uppercase;
-    margin-bottom: 2px;
+    margin-bottom: 1px;
     letter-spacing: 0.2px;
   }
   .field-input {
     border-bottom: 1.5px solid #000000;
-    height: 24px;
+    height: 20px;
     background: #ffffff;
   }
   .char-cell {
     border: 1.2px solid #000000;
-    height: 24px;
-    width: 20px;
+    height: 20px;
+    width: 18px;
     display: inline-block;
     background: #ffffff;
     margin-right: 2px;
     vertical-align: middle;
   }
   .edexcel-banner {
-    font-size: 14pt;
+    font-size: 13pt;
     font-weight: 900;
-    margin: 6px 0 4px 0;
+    margin: 4px 0 3px 0;
     letter-spacing: -0.2px;
     color: #000000;
     text-transform: uppercase;
   }
   .exam-header-box {
     border: 2px solid #000000;
-    padding: 7px 11px;
-    margin-bottom: 8px;
+    padding: 5px 10px;
+    margin-bottom: 6px;
     display: flex;
     justify-content: space-between;
     background: #ffffff;
@@ -1337,54 +1337,54 @@ const COMMON_CSS = `
     flex: 1;
   }
   .exam-date {
-    font-size: 8pt;
+    font-size: 7.8pt;
     font-weight: 800;
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.3px;
   }
   .exam-time {
-    font-size: 8pt;
+    font-size: 7.8pt;
     color: #000000;
-    margin-bottom: 3px;
+    margin-bottom: 2px;
   }
   .exam-subject {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 14pt;
+    font-size: 13pt;
     font-weight: 900;
     line-height: 1.15;
-    margin: 2px 0;
+    margin: 1px 0;
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
   }
   .exam-booklet {
-    font-size: 9.5pt;
+    font-size: 9pt;
     font-weight: 800;
     color: #000000;
   }
   .exam-subtopic {
-    font-size: 8pt;
+    font-size: 7.8pt;
     color: #000000;
     margin-top: 1px;
     font-style: italic;
   }
   .exam-header-right {
     text-align: right;
-    padding-left: 12px;
+    padding-left: 10px;
     border-left: 1.5px solid #000000;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .ref-label {
-    font-size: 7.2pt;
+    font-size: 7pt;
     font-weight: 800;
     color: #000000;
     text-transform: uppercase;
   }
   .ref-val {
-    font-size: 13pt;
+    font-size: 12.5pt;
     font-weight: 900;
     color: #000000;
     letter-spacing: 0.5px;
@@ -1392,45 +1392,45 @@ const COMMON_CSS = `
   .must-have-row {
     display: flex;
     gap: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
   }
   .must-have-box {
     border: 1.5px solid #000000;
-    padding: 8px 12px;
+    padding: 6px 10px;
     flex: 1;
-    font-size: 8.8pt;
-    line-height: 1.45;
+    font-size: 8.2pt;
+    line-height: 1.35;
     background: #ffffff;
     color: #000000;
   }
   .marks-box {
     border: 1.5px solid #000000;
-    width: 95px;
+    width: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-size: 8pt;
+    font-size: 7.5pt;
     font-weight: 800;
     background: #f8fafc;
     color: #000000;
   }
   .marks-number {
-    font-size: 16pt;
+    font-size: 15pt;
     font-weight: 900;
     color: #000000;
   }
   .exam-notice-strip {
     border: 1.5px solid #000000;
     background: #f8fafc;
-    padding: 7px 10px;
-    font-size: 8.4pt;
-    line-height: 1.35;
-    margin-bottom: 12px;
+    padding: 5px 8px;
+    font-size: 8pt;
+    line-height: 1.3;
+    margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
-    gap: 12px;
+    gap: 10px;
     color: #000000;
   }
   .exam-notice-strip > div {
@@ -1444,12 +1444,12 @@ const COMMON_CSS = `
   .tracker-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 9.2pt;
-    line-height: 1.4;
+    font-size: 8.4pt;
+    line-height: 1.25;
   }
   .tracker-table th, .tracker-table td {
     border: 1px solid #000000;
-    padding: 8.5px 10px;
+    padding: 4.5px 8px;
     vertical-align: middle;
   }
   .tracker-table th {
@@ -1457,18 +1457,18 @@ const COMMON_CSS = `
     color: #ffffff;
     font-weight: 800;
     text-transform: uppercase;
-    font-size: 8.8pt;
+    font-size: 8.2pt;
     letter-spacing: 0.2px;
-    padding: 8px 10px;
+    padding: 5px 8px;
   }
   .tracker-section-hdr td {
     background: #f1f5f9;
     font-weight: 800;
     color: #000000;
-    font-size: 8.8pt;
+    font-size: 8.2pt;
     text-transform: uppercase;
     letter-spacing: 0.2px;
-    padding: 7px 10px;
+    padding: 4.5px 8px;
   }
   .tracker-row td {
     background: #ffffff;
@@ -1477,8 +1477,8 @@ const COMMON_CSS = `
     background: #f8fafc;
   }
   .tracker-box {
-    width: 13px;
-    height: 13px;
+    width: 12px;
+    height: 12px;
     border: 1.2px solid #000000;
     display: inline-block;
     vertical-align: middle;
@@ -1885,9 +1885,13 @@ const COMMON_CSS = `
       background: #334155 !important;
     }
     .page {
+      width: 210mm !important;
+      min-height: 297mm !important;
+      padding: 10mm 14mm !important;
       margin: 24px auto !important;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
       border-radius: 2px !important;
+      background: #ffffff !important;
     }
   }
 
@@ -2597,82 +2601,72 @@ function renderBookletHtml(ktKey, meta) {
             </div>
 
             <!-- Enquiry Banner -->
-            <div class="dossier-banner" style="background: #000000; color: #ffffff; padding: 7px 12px; font-weight: 900; font-size: 9.2pt; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
+            <div class="dossier-banner" style="background: #000000; color: #ffffff; padding: 5px 10px; font-weight: 900; font-size: 8.8pt; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
                 <span>Historical Enquiry Focus: ${e.dossier.enquiry}</span>
                 <span style="font-size: 7.2pt; font-weight: 700; background: #334155; padding: 2px 7px; border-radius: 3px;">Paper 3 · Section B</span>
             </div>
 
             <!-- 2x2 Archival Grid -->
-            <div class="dossier-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px;">
+            <div class="dossier-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
                 <!-- Source B -->
-                <div class="archival-source-box" style="margin-bottom: 0; padding: 12px 14px; border: 1.5px solid #000000; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                <div class="archival-source-box" style="margin-bottom: 0; padding: 10px 12px; border: 1.5px solid #000000; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px;">
                     <div>
-                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800;">${e.dossier.sourceB.title}</span>
-                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #f1f5f9; border: 1px solid #000000;">${e.dossier.sourceB.shelfmark.split('·')[0]}</span>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10.5pt; font-weight: 800;">${e.dossier.sourceB.title}</span>
                         </div>
-                        <div class="archival-body" style="font-family: Georgia, serif; font-size: 9.4pt; line-height: 1.5; color: #000000;">
+                        <div class="archival-body" style="font-family: Georgia, serif; font-size: 9.8pt; line-height: 1.52; color: #000000;">
                             ${e.dossier.sourceB.extract}
                         </div>
                     </div>
-                    <div class="archival-footer" style="border-top: 1px dashed #000000; padding-top: 5px; font-size: 8pt; color: #000000; font-style: italic; margin-top: 6px;">
+                    <div class="archival-footer" style="border-top: 1px dashed #000000; padding-top: 4px; font-size: 8.3pt; line-height: 1.38; color: #000000; font-style: italic; margin-top: 6px;">
                         <strong>Provenance:</strong> ${e.dossier.sourceB.provenance}
                     </div>
                 </div>
 
                 <!-- Source C -->
-                <div class="archival-source-box" style="margin-bottom: 0; padding: 12px 14px; border: 1.5px solid #000000; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                <div class="archival-source-box" style="margin-bottom: 0; padding: 10px 12px; border: 1.5px solid #000000; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px;">
                     <div>
-                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800;">${e.dossier.sourceC.title}</span>
-                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #f1f5f9; border: 1px solid #000000;">${e.dossier.sourceC.shelfmark.split('·')[0]}</span>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10.5pt; font-weight: 800;">${e.dossier.sourceC.title}</span>
                         </div>
-                        <div class="archival-body" style="font-family: Georgia, serif; font-size: 9.4pt; line-height: 1.5; color: #000000;">
+                        <div class="archival-body" style="font-family: Georgia, serif; font-size: 9.8pt; line-height: 1.52; color: #000000;">
                             ${e.dossier.sourceC.extract}
                         </div>
                     </div>
-                    <div class="archival-footer" style="border-top: 1px dashed #000000; padding-top: 5px; font-size: 8pt; color: #000000; font-style: italic; margin-top: 6px;">
+                    <div class="archival-footer" style="border-top: 1px dashed #000000; padding-top: 4px; font-size: 8.3pt; line-height: 1.38; color: #000000; font-style: italic; margin-top: 6px;">
                         <strong>Provenance:</strong> ${e.dossier.sourceC.provenance}
                     </div>
                 </div>
 
                 <!-- Interpretation 1 -->
-                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border: 1.5px solid #000000; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border: 1.5px solid #000000; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px;">
                     <div>
-                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800; color: #1e3a8a;">Interpretation 1</span>
-                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #ffffff; border: 1px solid #000000; font-weight: 800;">HISTORIOGRAPHY</span>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10.5pt; font-weight: 800; color: #1e3a8a;">Interpretation 1</span>
                         </div>
-                        <div class="archival-body" style="font-size: 9.4pt; line-height: 1.5; color: #000000;">
-                            <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 8.6pt;">From ${e.dossier.int1.author}:</div>
+                        <div class="archival-body" style="font-size: 9.8pt; line-height: 1.52; color: #000000;">
+                            <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 9.2pt;">From ${e.dossier.int1.author}:</div>
                             ${e.dossier.int1.text}
                         </div>
-                    </div>
-                    <div class="archival-footer" style="border-top: 1px dashed #94a3b8; padding-top: 5px; font-size: 7.5pt; color: #475569; font-style: italic; margin-top: 6px;">
-                        Modern historical view on the enquiry focus.
                     </div>
                 </div>
 
                 <!-- Interpretation 2 -->
-                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border: 1.5px solid #000000; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border: 1.5px solid #000000; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; min-height: 400px;">
                     <div>
-                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
-                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800; color: #1e3a8a;">Interpretation 2</span>
-                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #ffffff; border: 1px solid #000000; font-weight: 800;">HISTORIOGRAPHY</span>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10.5pt; font-weight: 800; color: #1e3a8a;">Interpretation 2</span>
                         </div>
-                        <div class="archival-body" style="font-size: 9.4pt; line-height: 1.5; color: #000000;">
-                            <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 8.6pt;">From ${e.dossier.int2.author}:</div>
+                        <div class="archival-body" style="font-size: 9.8pt; line-height: 1.52; color: #000000;">
+                            <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 9.2pt;">From ${e.dossier.int2.author}:</div>
                             ${e.dossier.int2.text}
                         </div>
-                    </div>
-                    <div class="archival-footer" style="border-top: 1px dashed #94a3b8; padding-top: 5px; font-size: 7.5pt; color: #475569; font-style: italic; margin-top: 6px;">
-                        Alternative historical view on the enquiry focus.
                     </div>
                 </div>
             </div>
 
             <!-- Reading Guide Banner -->
-            <div style="border: 1.5px solid #000000; border-radius: 4px; background: #f1f5f9; padding: 7px 12px; font-size: 7.8pt; color: #000000; display: flex; justify-content: space-between; align-items: center;">
+            <div style="border: 1.5px solid #000000; border-radius: 4px; background: #f1f5f9; padding: 5px 10px; font-size: 7.8pt; color: #000000; display: flex; justify-content: space-between; align-items: center;">
                 <span><strong>Enquiry Core:</strong> Sources B &amp; C provide contemporary primary evidence; Interpretations 1 &amp; 2 provide competing modern historical views.</span>
                 <span style="font-weight: 800; color: #1e3a8a;">Keep Page 5 open for Questions 3(a)–(d)</span>
             </div>
@@ -3292,9 +3286,8 @@ function renderBookletHtml(ktKey, meta) {
                   
                   <!-- Source B -->
                   <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                    <div style="border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
                       <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">${d.sourceB.title}</span>
-                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">${d.sourceB.shelfmark.split('·')[0]}</span>
                     </div>
                     <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
                       ${d.sourceB.extract}
@@ -3306,9 +3299,8 @@ function renderBookletHtml(ktKey, meta) {
 
                   <!-- Source C -->
                   <div style="background: #ffffff; border: 1.5px solid #000000; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
+                    <div style="border-bottom: 1.5px solid #000; padding-bottom: 4px; margin-bottom: 6px;">
                       <span style="font-weight: 800; font-size: 11px; color: #1e3a8a;">${d.sourceC.title}</span>
-                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">${d.sourceC.shelfmark.split('·')[0]}</span>
                     </div>
                     <div style="font-size: 11px; line-height: 1.5; color: #000000; font-style: italic; margin-bottom: 8px;">
                       ${d.sourceC.extract}
@@ -3320,9 +3312,8 @@ function renderBookletHtml(ktKey, meta) {
 
                   <!-- Interpretation 1 -->
                   <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                    <div style="border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
                       <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 1</span>
-                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
                     </div>
                     <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From ${d.int1.author}:</div>
                     <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
@@ -3332,9 +3323,8 @@ function renderBookletHtml(ktKey, meta) {
 
                   <!-- Interpretation 2 -->
                   <div style="background: #f8fafc; border: 1.5px solid #475569; padding: 10px 12px; margin-bottom: 12px; border-radius: 4px;">
-                    <div style="display: flex; justify-content: space-between; border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
+                    <div style="border-bottom: 1.5px solid #475569; padding-bottom: 4px; margin-bottom: 6px;">
                       <span style="font-weight: 800; font-size: 11px; color: #0f172a;">Interpretation 2</span>
-                      <span style="font-size: 9px; font-weight: 700; color: #64748b;">HISTORIOGRAPHY</span>
                     </div>
                     <div style="font-size: 10.5px; font-weight: 700; color: #1e293b; margin-bottom: 4px;">From ${d.int2.author}:</div>
                     <div style="font-size: 10.5px; line-height: 1.45; color: #0f172a;">
