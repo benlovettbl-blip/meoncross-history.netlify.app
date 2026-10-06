@@ -6782,11 +6782,11 @@ export const unitData = {
       video: [
         {
           type: 'youtube',
-          url: 'https://www.youtube.com/watch?v=LoeAVaM48Y0',
-          title: 'The Great Plague of London (1665) | Secondary History',
-          duration: '4 mins 12 secs',
+          url: 'https://www.youtube.com/watch?v=7r15ej0iN1k',
+          title: 'GCSE History Rapid Revision: The Great Plague, 1665',
+          duration: '12 mins 2 secs',
           teacher_guidance:
-            'Compares the 1665 Great Plague with the 1348 Black Death: pest houses, searchers of the dead, quarantine red crosses, and continuing belief in miasma.',
+            'Detailed GCSE revision of the 1665 Great Plague: comparisons with 1348, quarantine rules, red crosses, searchers of the dead, and the persistence of miasma.',
         },
       ],
     },

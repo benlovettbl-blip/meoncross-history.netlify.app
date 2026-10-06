@@ -652,12 +652,13 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       box-sizing: border-box;
     }
     .lined-margin-cell {
-      width: 22mm;
+      width: 12mm;
       border-right: 1.2px solid #000000;
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      padding-left: 2px;
+      padding-left: 1mm;
+      padding-right: 0.5mm;
       box-sizing: border-box;
     }
     .lined-content-cell {
@@ -1163,124 +1164,128 @@ ${flexTaskLines}
   <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 3px;">
         <div data-department-name="The History Department">
           <span style="font-family: 'Inter', sans-serif; font-size: 10pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 0.8px;">
             <span class="school-brand-target">The History Department</span>
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #000000;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000;">
           KEY TOPIC 3 ASSESSMENT RECORD &bull; c1700–c1900
         </div>
       </div>
 
       <!-- Student Target Grade Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 6px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; align-items: center;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Current Grade:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Current Grade:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
       </div>
 
-      <!-- 96-Mark Assessment Breakdown Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
+      <!-- Substantially Enlarged Assessment Breakdown Table with Blank Final Row -->
+      <div style="border: 2px solid #000000; border-radius: 4px; overflow: hidden;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8.8pt;">
           <thead>
             <tr style="background: #000000; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
-              <th style="padding: 3.5px 6px; text-align: left; width: 14%; font-size: 7.2pt; font-weight: 800;">Period Code</th>
-              <th style="padding: 3.5px 6px; text-align: left; width: 44%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Assessment Component Focus</th>
-              <th style="padding: 3.5px 6px; text-align: center; width: 14%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Tariff</th>
-              <th style="padding: 3.5px 6px; text-align: center; width: 14%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Score</th>
-              <th style="padding: 3.5px 6px; text-align: center; width: 14%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Teacher Initial</th>
+              <th style="padding: 7px 10px; text-align: left; width: 13%; font-size: 8pt; font-weight: 800;">Period Code</th>
+              <th style="padding: 7px 10px; text-align: left; width: 45%; font-size: 8pt; font-weight: 800; border-left: 1px solid #444444;">Assessment Component Focus</th>
+              <th style="padding: 7px 10px; text-align: center; width: 14%; font-size: 8pt; font-weight: 800; border-left: 1px solid #444444;">Tariff</th>
+              <th style="padding: 7px 10px; text-align: center; width: 14%; font-size: 8pt; font-weight: 800; border-left: 1px solid #444444;">Score</th>
+              <th style="padding: 7px 10px; text-align: center; width: 14%; font-size: 8pt; font-weight: 800; border-left: 1px solid #444444;">Teacher Initial</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; font-weight: 800; border-right: 1.2px solid #000000;">KT3.1</td>
-              <td style="padding: 4px 6px; border-right: 1.2px solid #000000;">Q4: Explain Why Rapid Progress in Causes c1860–c1890</td>
-              <td style="padding: 4px 6px; text-align: center; font-weight: 700; border-right: 1.2px solid #000000;">[ 12 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
-              <td style="padding: 4px 6px; text-align: center;"></td>
+            <tr style="border-bottom: 1.2px solid #000000;">
+              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.1</td>
+              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Rapid Progress in Causes c1860–c1890</td>
+              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
+              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
+              <td style="padding: 10px 10px; text-align: center;"></td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; font-weight: 800; border-right: 1.2px solid #000000;">KT3.2</td>
-              <td style="padding: 4px 6px; border-right: 1.2px solid #000000;">Q5/6: Essay on Jenner Smallpox Vaccine &bull; c1700–c1900</td>
-              <td style="padding: 4px 6px; text-align: center; font-weight: 700; border-right: 1.2px solid #000000;">[ 16+4 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
-              <td style="padding: 4px 6px; text-align: center;"></td>
+            <tr style="border-bottom: 1.2px solid #000000;">
+              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.2</td>
+              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q5/6: Essay on Jenner Smallpox Vaccine &bull; c1700–c1900</td>
+              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 16+4 ]</td>
+              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
+              <td style="padding: 10px 10px; text-align: center;"></td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; font-weight: 800; border-right: 1.2px solid #000000;">KT3.3</td>
-              <td style="padding: 4px 6px; border-right: 1.2px solid #000000;">Q4: Explain Why Hospital Care &amp; Nursing Improved</td>
-              <td style="padding: 4px 6px; text-align: center; font-weight: 700; border-right: 1.2px solid #000000;">[ 12 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
-              <td style="padding: 4px 6px; text-align: center;"></td>
+            <tr style="border-bottom: 1.2px solid #000000;">
+              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.3</td>
+              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Hospital Care &amp; Nursing Improved</td>
+              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
+              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
+              <td style="padding: 10px 10px; text-align: center;"></td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; font-weight: 800; border-right: 1.2px solid #000000;">KT3.4</td>
-              <td style="padding: 4px 6px; border-right: 1.2px solid #000000;">Q4: Explain Why Surgery Became Safer c1840–c1900</td>
-              <td style="padding: 4px 6px; text-align: center; font-weight: 700; border-right: 1.2px solid #000000;">[ 12 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
-              <td style="padding: 4px 6px; text-align: center;"></td>
+            <tr style="border-bottom: 1.2px solid #000000;">
+              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.4</td>
+              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Surgery Became Safer c1840–c1900</td>
+              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
+              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
+              <td style="padding: 10px 10px; text-align: center;"></td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; font-weight: 800; border-right: 1.2px solid #000000;">KT3.5</td>
-              <td style="padding: 4px 6px; border-right: 1.2px solid #000000;">Q5/6: Essay on John Snow &amp; 19th Century Public Health</td>
-              <td style="padding: 4px 6px; text-align: center; font-weight: 700; border-right: 1.2px solid #000000;">[ 16+4 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
-              <td style="padding: 4px 6px; text-align: center;"></td>
+            <tr style="border-bottom: 1.2px solid #000000;">
+              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.5</td>
+              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q5/6: Essay on John Snow &amp; 19th Century Public Health</td>
+              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 16+4 ]</td>
+              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
+              <td style="padding: 10px 10px; text-align: center;"></td>
             </tr>
-            <tr style="background: #f8fafc; font-weight: 900;">
-              <td colspan="2" style="padding: 4px 6px; text-align: right; text-transform: uppercase; border-right: 1.2px solid #000000;">Cumulative Booklet Total:</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">[ 76 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 76</td>
-              <td style="padding: 4px 6px; text-align: center;">% Grade:</td>
+            <!-- Blank 6th Row: Teacher Custom Notes/Score -->
+            <tr style="background: #ffffff;">
+              <td style="padding: 10px 10px; border-right: 1.5px solid #000000;">&nbsp;</td>
+              <td style="padding: 10px 10px; border-right: 1.5px solid #000000;">&nbsp;</td>
+              <td style="padding: 10px 10px; text-align: center; border-right: 1.5px solid #000000;">&nbsp;</td>
+              <td style="padding: 10px 10px; text-align: center; border-right: 1.5px solid #000000;">&nbsp;</td>
+              <td style="padding: 10px 10px; text-align: center;">&nbsp;</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- Teacher Feedback WWW & EBI Structured Form -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; margin-bottom: 6px;">
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; display: block; margin-bottom: 2px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff;">
+        <div style="margin-bottom: 6px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #000000; display: block; margin-bottom: 3px;">
             &bull; What Went Well (WWW) &bull; Core Historical Strengths:
           </strong>
-          <div class="task-line" style="height: 6.8mm;"></div>
-          <div class="task-line" style="height: 6.8mm;"></div>
+          <div class="task-line" style="height: 7mm;"></div>
+          <div class="task-line" style="height: 7mm;"></div>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; display: block; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #000000; display: block; margin-bottom: 3px;">
             &bull; Even Better If (EBI) &bull; Specific Examination Target:
           </strong>
-          <div class="task-line" style="height: 6.8mm;"></div>
-          <div class="task-line" style="height: 6.8mm;"></div>
+          <div class="task-line" style="height: 7mm;"></div>
+          <div class="task-line" style="height: 7mm;"></div>
         </div>
       </div>
 
-      <!-- 5 Verified Micro-QR Codes with Direct URL Targeting -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+      <!-- 5 Verified Micro-QR Codes with Dual QR (Lesson + Quiz) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 6px; background: #f8fafc;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Digital Retrieval Hub &bull; Smartphone Mastery Quizzes
+            &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000;">
-            10 Questions Per Enquiry &bull; Instant Explanations
+            Interactive Textbook &bull; 10 Questions Per Enquiry
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
           ${eighteenthNineteenthConfigs
             .map((cfg, idx) => {
+              const lessonUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.id}&view=lessons`;
               const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.id}&quiz=true`;
-              const qrSvg = generateQrSvg(quizUrl);
+              const lessonQrSvg = generateQrSvg(lessonUrl);
+              const quizQrSvg = generateQrSvg(quizUrl);
               const shortLabels = [
                 'Pasteur & Koch',
                 'Edward Jenner',
@@ -1289,21 +1294,36 @@ ${flexTaskLines}
                 'Snow & 1875 Act',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 3px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
               KT3.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
-            <div style="width: 21.5mm; height: 21.5mm; margin: 0 auto 2px auto;">
-              ${qrSvg}
+
+            <!-- Top QR: Interactive Lesson Hub -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 4px; width: 100%;">
+              <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
+                ${lessonQrSvg}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Lesson Hub
+              </span>
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
-              Scan to Quiz
-            </span>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
+
+            <!-- Bottom QR: Mastery Quiz -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3px; width: 100%;">
+              <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
+                ${quizQrSvg}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #1e3a8a; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Mastery Quiz
+              </span>
+            </div>
+
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; margin-top: 2px; white-space: nowrap; border: 1px solid #000000; border-radius: 2px; padding: 1px 3px; background: #f8fafc;">
+              Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
           </div>
           `;
