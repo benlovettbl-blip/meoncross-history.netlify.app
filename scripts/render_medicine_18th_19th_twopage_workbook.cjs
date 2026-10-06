@@ -159,7 +159,7 @@ const eighteenthNineteenthConfigs = [
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘Edward Jenner’s development of the smallpox vaccine was the most significant breakthrough in the prevention of disease in the period c1700–c1900.’ How far do you agree? [16+4 marks]',
-    stimulus: ['Smallpox vaccination (1796)', 'The Public Health Act (1875)'],
+    stimulus: ['Inoculation', 'The Public Health Act (1875)'],
     structureStrip: [
       {
         col: '1. JENNER’S 1796 BREAKTHROUGH',
@@ -259,10 +259,7 @@ const eighteenthNineteenthConfigs = [
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
       'Explain why the standard of hospital care and nursing improved so significantly in the second half of the nineteenth century. [12 marks]',
-    stimulus: [
-      "Florence Nightingale's work in the Crimea (1854–56)",
-      'Changes in hospital design and training (1859–60)',
-    ],
+    stimulus: ["Florence Nightingale's work in the Crimea (1854–56)", 'The pavilion hospital plan'],
     structureStrip: [
       {
         col: '1. THE CRIMEAN CRISIS & SCUTARI (1854–56)',
@@ -465,10 +462,7 @@ const eighteenthNineteenthConfigs = [
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘The work of John Snow was the main reason for improvements in public health in the nineteenth century.’ How far do you agree? [16+4 marks]',
-    stimulus: [
-      "John Snow's Broad Street pump investigation (1854)",
-      'The Public Health Act (1875)',
-    ],
+    stimulus: ['Edwin Chadwick’s 1842 Report', 'The Public Health Act (1875)'],
     structureStrip: [
       {
         col: '1. SNOW’S FORENSIC EPIDEMIOLOGY',
@@ -785,10 +779,10 @@ function build18th19thTwoPageWorkbook(unitData, period) {
 
       <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Authentic Provenance) -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="The Dawn of Bacteriology and Scientific Surgery" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; filter: grayscale(100%);">
+        <img src="${coverImgBase64}" alt="James Gillray, The Cow-Pock—or—the Wonderful Effects of the New Inoculation! (1802)" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; filter: grayscale(100%);">
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
-          <span><strong>Primary Visual Evidence:</strong> <em>The Dawn of Bacteriology and Scientific Surgery</em> (c.1700–c.1900)</span>
-          <span style="font-weight: 700;">CONTEMPORARY PRINT ARCHIVE</span>
+          <span><strong>Primary Visual Evidence:</strong> James Gillray, <em>The Cow-Pock—or—the Wonderful Effects of the New Inoculation!</em> (1802 satirical cartoon satirising public fears of Edward Jenner's cowpox vaccine)</span>
+          <span style="font-weight: 700; white-space: nowrap; margin-left: 8px;">HISTORICAL SATIRE ARCHIVE</span>
         </div>
       </div>
 
@@ -933,13 +927,13 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     {
       year: '1796',
       title: 'Edward Jenner: Smallpox Vaccination & Immunology',
-      kt: 'Key Topic 3.1',
+      kt: 'Key Topic 3.2',
       desc: 'Jenner inoculates James Phipps with cowpox pus from Sarah Nelmes, proving cowpox confers immunity against smallpox. Publishes findings in 1798. Despite initial Royal Society scepticism, vaccination eradicates inoculator infection risks and founds immunology.',
     },
     {
       year: '1847',
       title: 'James Young Simpson: Chloroform & Anesthesia',
-      kt: 'Key Topic 3.3',
+      kt: 'Key Topic 3.4',
       desc: 'Simpson discovers the potent anaesthetic properties of chloroform in Edinburgh, ending agony during surgery. Queen Victoria’s use of chloroform during childbirth (1853) popularises it, enabling complex operations despite the initial ‘Black Period’ of surgery.',
     },
     {
@@ -960,7 +954,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     {
       year: '1854–56',
       title: 'Florence Nightingale: Hospital Sanitation at Scutari',
-      kt: 'Key Topic 3.2',
+      kt: 'Key Topic 3.3',
       desc: 'During the Crimean War, Nightingale enforces rigorous cleanliness, ventilation, and fresh nutrition at Scutari hospital, slashing soldier death rates from 40% to 2%. Returns to Britain to establish the Nightingale Training School and author Notes on Nursing (1859).',
     },
     {
@@ -972,7 +966,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     {
       year: '1865–67',
       title: 'Joseph Lister: Carbolic Acid Spray & Antiseptic Surgery',
-      kt: 'Key Topic 3.3',
+      kt: 'Key Topic 3.4',
       desc: 'Applying Pasteur’s Germ Theory to wound sepsis, Lister uses carbolic acid sprays, dressings, and hand-washing during surgery at Glasgow Infirmary. His antiseptic techniques reduce amputee mortality from 46% to 15%, paving the way for modern aseptic operating theatres.',
     },
     {
@@ -1329,9 +1323,6 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Edexcel Paper 1 &bull; Extended Writing Practice
-        </span>
       </div>
 
       <!-- 28 Ruled Lines with 22mm Left Margin -->
@@ -1368,9 +1359,6 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Independent Practice &bull; Extended Exam Response
-        </span>
       </div>
 
       <!-- 28 Ruled Lines with 22mm Left Margin -->
