@@ -4,6 +4,7 @@ import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
 import { getWorkbookPageAnchor } from './workbook_page_map.js';
 import { renderAudioPlaybackBar } from './speech.js';
+import { parseDurationToSeconds, formatShortDuration } from './video_utils.js';
 
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
