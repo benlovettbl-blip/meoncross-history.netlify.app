@@ -1398,7 +1398,7 @@ ${q3ResponseLines}
               <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
                 ${quizQrSvg}
               </div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #1e3a8a; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
                 Mastery Quiz
               </span>
             </div>
