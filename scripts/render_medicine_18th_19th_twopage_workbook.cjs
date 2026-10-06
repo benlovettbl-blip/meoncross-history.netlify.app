@@ -69,6 +69,14 @@ const eighteenthNineteenthConfigs = [
     stimulus: ["Louis Pasteur's Germ Theory (1861)", "Robert Koch's work on bacteria"],
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.1). In the drawing box, sketch Pasteur’s swan-neck flask experiment and Koch’s agar plate. Annotate how identifying specific bacteria ended miasma theory forever!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which ideas about the cause of disease in the late nineteenth century (c1860–c1890) were different from ideas in the Renaissance (c1500–c1700). [4 marks]',
+      hint: 'Contrast Pasteur and Koch’s laboratory discovery that specific microbes cause disease with the persistent Renaissance belief in miasma and spontaneous generation.',
+      stems:
+        'One way ideas about causes differed was... &bull; In the Renaissance period (c1500–c1700)... &bull; In contrast, in the late nineteenth century, Pasteur and Koch...',
+    },
     leftPageQuip:
       '<em>Pasteur proved that rotting soup doesn’t spontaneously create germs; Koch proved which specific germs caused tuberculosis.</em>',
     rightPageQuip:
@@ -149,6 +157,14 @@ const eighteenthNineteenthConfigs = [
     stimulus: ['Inoculation', 'The Public Health Act (1875)'],
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.2). In the drawing box, sketch Jenner inoculating James Phipps with cowpox. Annotate how this empirical experiment laid the foundation for modern immunology!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which methods of preventing smallpox in the late eighteenth century were different from methods used in the seventeenth century. [4 marks]',
+      hint: 'Contrast Edward Jenner’s safe cowpox vaccination (1796) with earlier seventeenth-century reliance on prayer, quarantine, and risky smallpox inoculation (variolation).',
+      stems:
+        'One way prevention of smallpox differed was... &bull; In the seventeenth century... &bull; In contrast, in the late eighteenth century, Edward Jenner...',
+    },
     leftPageQuip:
       '<em>Cartoons showed vaccinated people growing cow heads and horns: proof that anti-vax memes existed long before social media.</em>',
     rightPageQuip:
@@ -229,6 +245,14 @@ const eighteenthNineteenthConfigs = [
     stimulus: ["Florence Nightingale's work in the Crimea (1854–56)", 'The pavilion hospital plan'],
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.3). In the drawing box, sketch the Pavilion Hospital plan with its separate, ventilated pavilions. Annotate how cross-ventilation prevented hospital gangrene!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which hospital care in the late nineteenth century was different from hospital care in the Medieval period. [4 marks]',
+      hint: 'Contrast Florence Nightingale’s sanitary pavilion hospitals staffed by trained nurses providing medical cure with medieval monastic hospitals offering spiritual care and rest (‘care not cure’).',
+      stems:
+        'One way hospital care differed was... &bull; In the Medieval period, hospitals... &bull; In contrast, in the late nineteenth century, Florence Nightingale...',
+    },
     leftPageQuip:
       '<em>Nightingale believed miasma caused disease, yet her obsession with fresh air, scrubbing, and clean drains saved thousands of lives.</em>',
     rightPageQuip:
@@ -312,6 +336,14 @@ const eighteenthNineteenthConfigs = [
     ],
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.4). In the drawing box, sketch Lister’s carbolic donkey engine spraying mist over an open wound. Annotate the difference between antiseptic and aseptic surgery!',
+    fourMark: {
+      type: 'Similarity',
+      question:
+        'Explain one way in which surgical operations in the early nineteenth century (before 1846) were similar to surgery in the Medieval period. [4 marks]',
+      hint: 'Focus on the absolute necessity of raw surgical speed (e.g. Liston’s 28-second amputations) and physical restraint, as effective chemical anaesthetics had not yet been discovered.',
+      stems:
+        'One way surgical operations were similar was... &bull; In the Medieval period... &bull; Similarly, in the early nineteenth century before 1846...',
+    },
     leftPageQuip:
       '<em>Chloroform conquered pain, but Lister conquered the invisible enemy: the rotting microbes thriving on surgeons’ unwashed hands.</em>',
     rightPageQuip:
@@ -392,6 +424,14 @@ const eighteenthNineteenthConfigs = [
     stimulus: ['Edwin Chadwick’s 1842 Report', 'The Public Health Act (1875)'],
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.5). In the drawing box, sketch John Snow’s Broad Street pump map and Bazalgette’s sewer network. Annotate how cholera forced Parliament to abandon laissez-faire!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which government action on public health in the late nineteenth century was different from government action in the Renaissance. [4 marks]',
+      hint: 'Contrast the compulsory 1875 Public Health Act forcing local councils to provide clean water and sewers with Renaissance monarchs who only took temporary, reactive emergency measures during plague outbreaks.',
+      stems:
+        'One way government action differed was... &bull; In the Renaissance period... &bull; In contrast, under the 1875 Public Health Act, the government...',
+    },
     leftPageQuip:
       '<em>Snow removed the Broad Street pump handle in 1854, proving cholera was water-borne seven years before Germ Theory.</em>',
     rightPageQuip:
@@ -773,7 +813,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 3.1: Ideas on Causes: Pasteur’s Germ Theory &amp; Koch’s Bacteriology
                 </div>
@@ -789,7 +829,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 3.2: Approaches to Prevention: Edward Jenner &amp; The Smallpox Vaccine
                 </div>
@@ -805,7 +845,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 3.3: Improvements in Hospital Care: Florence Nightingale &amp; Professional Nursing
                 </div>
@@ -821,7 +861,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 3.4: The Surgical Revolution: Simpson’s Chloroform &amp; Lister’s Antiseptics
                 </div>
@@ -837,7 +877,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 3.5: Public Health &amp; Cholera: John Snow &amp; The 1875 Public Health Act
                 </div>
@@ -1057,8 +1097,9 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Ruled Task Lines Prompt -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0;">
-          <strong>Write your response in the space provided below:</strong>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+          <span><strong>Write your response in the space provided below:</strong></span>
+          <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
         </div>
       </div>
 
@@ -1090,32 +1131,72 @@ ${flexTaskLines}
   </div>
 `;
 
-    // PAGE 3 OF MODULE: LINED WRITING (VERSO)
-    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
+    // PAGE 3 OF MODULE: LINED WRITING (VERSO) - SECOND PAGE OF WHY / ESSAY (16 LINES) + QUESTION 3 [4 MARKS] AT BOTTOM
+    const continuationLinedRows = Array.from({ length: 16 }, (_, idx) => {
       const isFirst = idx === 0;
       const marginContent = isFirst
         ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
         : `&nbsp;`;
       return `
-        <div class="lined-row">
+        <div class="lined-row" style="flex: 1; min-height: 0; display: flex; border-bottom: 1.2px solid #000000; box-sizing: border-box;">
           <div class="lined-margin-cell">${marginContent}</div>
           <div class="lined-content-cell">&nbsp;</div>
         </div>`;
     }).join('');
 
+    const q3ResponseLines = Array.from(
+      { length: 5 },
+      () => `
+        <div class="task-line" style="height: 6.8mm; min-height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    ).join('');
+
     html += `
   <div class="page page-container" id="page-${linedLeftPageNum}">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Running Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.title}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${cfg.tariff.split(':')[0]} Continued
+          </span>
+        </div>
+
+        <!-- Continuation Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Continue your response to ${cfg.tariff.split(':')[0]} below:
+        </div>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsLeft}
+      <!-- 16 Ruled Lines for Continuation of Why / Essay Question (Fills upper half) -->
+      <div class="lined-page-grid" style="flex: 1; display: flex; flex-direction: column; min-height: 75mm; margin: 1px 0 4px 0; border-top: 1.2px solid #000000;">
+        ${continuationLinedRows}
+      </div>
+
+      <!-- Question 3: Similarity / Difference [4 marks] (Authentic Cross-Era Exam Practice at end of 2nd page) -->
+      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
+            [4 MARKS &bull; 5 MINS]
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
+          ${cfg.fourMark.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          <strong>Hint:</strong> ${cfg.fourMark.hint}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${cfg.fourMark.stems}
+        </div>
+        <div class="ruled-lines-block" style="display: flex; flex-direction: column; margin-bottom: 2px;">
+${q3ResponseLines}
+        </div>
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
@@ -1205,67 +1286,67 @@ ${flexTaskLines}
           </thead>
           <tbody>
             <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.1</td>
-              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Rapid Progress in Causes c1860–c1890</td>
-              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
-              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
-              <td style="padding: 10px 10px; text-align: center;"></td>
+              <td style="padding: 19.5px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.1</td>
+              <td style="padding: 18.5px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Rapid Progress in Causes c1860–c1890</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
+              <td style="padding: 18.5px 10px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.2</td>
-              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q5/6: Essay on Jenner Smallpox Vaccine &bull; c1700–c1900</td>
-              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 16+4 ]</td>
-              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
-              <td style="padding: 10px 10px; text-align: center;"></td>
+              <td style="padding: 19.5px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.2</td>
+              <td style="padding: 18.5px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q5/6: Essay on Jenner Smallpox Vaccine &bull; c1700–c1900</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 16+4 ]</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
+              <td style="padding: 18.5px 10px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.3</td>
-              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Hospital Care &amp; Nursing Improved</td>
-              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
-              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
-              <td style="padding: 10px 10px; text-align: center;"></td>
+              <td style="padding: 19.5px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.3</td>
+              <td style="padding: 18.5px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Hospital Care &amp; Nursing Improved</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
+              <td style="padding: 18.5px 10px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.4</td>
-              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Surgery Became Safer c1840–c1900</td>
-              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
-              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
-              <td style="padding: 10px 10px; text-align: center;"></td>
+              <td style="padding: 19.5px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.4</td>
+              <td style="padding: 18.5px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q4: Explain Why Surgery Became Safer c1840–c1900</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 12 ]</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12</td>
+              <td style="padding: 18.5px 10px; text-align: center;"></td>
             </tr>
             <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 10px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.5</td>
-              <td style="padding: 10px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q5/6: Essay on John Snow &amp; 19th Century Public Health</td>
-              <td style="padding: 10px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 16+4 ]</td>
-              <td style="padding: 10px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
-              <td style="padding: 10px 10px; text-align: center;"></td>
+              <td style="padding: 19.5px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.5</td>
+              <td style="padding: 18.5px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q5/6: Essay on John Snow &amp; 19th Century Public Health</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 16+4 ]</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
+              <td style="padding: 18.5px 10px; text-align: center;"></td>
             </tr>
-            <!-- Blank 6th Row: Teacher Custom Notes/Score -->
+            <!-- Row 6: Question 3 Cross-Era Similarity / Difference Cumulative Mastery -->
             <tr style="background: #ffffff;">
-              <td style="padding: 10px 10px; border-right: 1.5px solid #000000;">&nbsp;</td>
-              <td style="padding: 10px 10px; border-right: 1.5px solid #000000;">&nbsp;</td>
-              <td style="padding: 10px 10px; text-align: center; border-right: 1.5px solid #000000;">&nbsp;</td>
-              <td style="padding: 10px 10px; text-align: center; border-right: 1.5px solid #000000;">&nbsp;</td>
-              <td style="padding: 10px 10px; text-align: center;">&nbsp;</td>
+              <td style="padding: 19.5px 10px; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000;">KT3.1–3.5</td>
+              <td style="padding: 18.5px 10px; font-weight: 600; line-height: 1.25; border-right: 1.5px solid #000000;">Q3: Cross-Era Similarity / Difference Mastery (5 Questions)</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-weight: 800; border-right: 1.5px solid #000000;">[ 20 ]</td>
+              <td style="padding: 18.5px 10px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20</td>
+              <td style="padding: 18.5px 10px; text-align: center;"></td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <!-- Teacher Feedback WWW & EBI Structured Form -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 10px 10px; background: #ffffff;">
         <div style="margin-bottom: 6px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #000000; display: block; margin-bottom: 3px;">
             &bull; What Went Well (WWW) &bull; Core Historical Strengths:
           </strong>
-          <div class="task-line" style="height: 7mm;"></div>
-          <div class="task-line" style="height: 7mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
         </div>
         <div>
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #000000; display: block; margin-bottom: 3px;">
             &bull; Even Better If (EBI) &bull; Specific Examination Target:
           </strong>
-          <div class="task-line" style="height: 7mm;"></div>
-          <div class="task-line" style="height: 7mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
         </div>
       </div>
 
