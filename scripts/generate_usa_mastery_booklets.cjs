@@ -53,8 +53,8 @@ const KT_DATA = {
         stem: 'Explain why it was difficult for Black Americans in the Southern states to register to vote in the early 1950s.',
         marks: 12,
         stimulus: ['Literacy tests', 'Ku Klux Klan (KKK)'],
-        linesPage3: 20,
-        linesPage4: 18,
+        linesPage3: 16,
+        linesPage4: 29,
         vocabBank: [
           '15th Amendment bypassed',
           'Poll taxes',
@@ -159,7 +159,7 @@ const KT_DATA = {
         stem: 'Explain why the Brown v. Board of Education decision (1954) met with intense resistance in the Southern states.',
         marks: 12,
         stimulus: ['The Southern Manifesto (1956)', 'Orval Faubus at Little Rock (1957)'],
-        lines: 22,
+        lines: 26,
         vocabBank: [
           'Earl Warren unanimous 9-0 ruling',
           '"Separate is inherently unequal"',
@@ -246,7 +246,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Obstacles to Southern Black Voter Registration (Early 1950s)',
-          page: 'P3',
+          page: 'P3–4',
           marks: 12,
         },
       ],
@@ -255,42 +255,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Montgomery Bus Boycott (Sources B, C & Ints 1, 2)',
-          page: 'P4',
+          page: 'P5',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Reasons for Success of Montgomery Boycott',
-          page: 'P5',
+          page: 'P6',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference in Views on Boycott',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P7–8',
+          page: 'P8–9',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: Why Brown v. Board Met Intense Resistance',
-          page: 'P9',
+          page: 'P10',
           marks: 12,
         },
       ],
@@ -299,14 +299,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P10',
+          page: 'P11',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P11',
+          page: 'P12',
           marks: 'Audit',
         },
       ],
@@ -353,8 +353,8 @@ const KT_DATA = {
           'The Birmingham Campaign (1963)',
           'The assassination of President Kennedy (November 1963)',
         ],
-        linesPage3: 20,
-        linesPage4: 18,
+        linesPage3: 16,
+        linesPage4: 29,
         vocabBank: [
           'Bull Connor fire hoses & dogs',
           'Televised violence shocked voters',
@@ -461,7 +461,7 @@ const KT_DATA = {
         stem: 'Explain why the Black Panther Party was formed in Oakland, California, in 1966.',
         marks: 12,
         stimulus: ['Bobby Seale and Huey Newton', 'Police brutality in Black neighbourhoods'],
-        lines: 22,
+        lines: 26,
         vocabBank: [
           'Oakland, California (Oct 1966)',
           'Ten-Point Programme',
@@ -548,7 +548,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Passage of the Civil Rights Act of 1964',
-          page: 'P3',
+          page: 'P3–4',
           marks: 12,
         },
       ],
@@ -557,42 +557,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Northern Urban Riots (Sources B, C & Ints 1, 2)',
-          page: 'P4',
+          page: 'P5',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Causes of Urban Riots (1965–67)',
-          page: 'P5',
+          page: 'P6',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference in Views on Urban Riots',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P7–8',
+          page: 'P8–9',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: Formation of the Black Panther Party (1966)',
-          page: 'P9',
+          page: 'P10',
           marks: 12,
         },
       ],
@@ -601,14 +601,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P10',
+          page: 'P11',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P11',
+          page: 'P12',
           marks: 'Audit',
         },
       ],
@@ -655,8 +655,8 @@ const KT_DATA = {
           'The Gulf of Tonkin incident (August 1964)',
           'The attack on the US base at Pleiku (February 1965)',
         ],
-        linesPage3: 20,
-        linesPage4: 18,
+        linesPage3: 16,
+        linesPage4: 29,
         vocabBank: [
           'Domino Theory & containment',
           'USS Maddox attacked',
@@ -747,7 +747,7 @@ const KT_DATA = {
         stem: 'How far do you agree with Interpretation 2 about the reasons why US military tactics failed to defeat the Vietcong (1965–68)?',
         marks: 20,
         subMarks: '16 marks for essay + 4 marks for SPaG',
-        linesPage7: 26,
+        linesPage7: 23,
         linesPage8: 28,
         criteria: [
           'Flawed US military tactics (Search and Destroy, body counts, Zippo raids, napalm/Agent Orange destroying villages)',
@@ -763,7 +763,7 @@ const KT_DATA = {
         stem: 'Explain why the Vietcong and North Vietnamese Army were able to launch the Tet Offensive in January 1968.',
         marks: 12,
         stimulus: ['The Ho Chi Minh Trail', 'The siege at Khe Sanh'],
-        lines: 22,
+        lines: 26,
         vocabBank: [
           'Tet Lunar New Year holiday',
           '31 January 1968 assault',
@@ -850,7 +850,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Escalation of US Involvement under LBJ (1964–65)',
-          page: 'P3',
+          page: 'P3–4',
           marks: 12,
         },
       ],
@@ -859,42 +859,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Failure of US Military Tactics (Sources B, C & Ints 1, 2)',
-          page: 'P4',
+          page: 'P5',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Failure of US Military Tactics in Vietnam',
-          page: 'P5',
+          page: 'P6',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference on Why Tactics Failed',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P7–8',
+          page: 'P8–9',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: How Vietcong Launched the Tet Offensive (1968)',
-          page: 'P9',
+          page: 'P10',
           marks: 12,
         },
       ],
@@ -903,14 +903,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P10',
+          page: 'P11',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P11',
+          page: 'P12',
           marks: 'Audit',
         },
       ],
@@ -955,8 +955,8 @@ const KT_DATA = {
         stem: 'Explain why President Richard Nixon introduced the policy of Vietnamization in 1969.',
         marks: 12,
         stimulus: ['Rising US casualties', 'The impact of the Tet Offensive (1968)'],
-        linesPage3: 20,
-        linesPage4: 18,
+        linesPage3: 16,
+        linesPage4: 29,
         vocabBank: [
           '14,000+ US deaths in 1968',
           'Tet Offensive shattered victory claims',
@@ -1048,7 +1048,7 @@ const KT_DATA = {
         stem: 'How far do you agree with Interpretation 2 about the main reason for the growth of opposition to the Vietnam War in the USA (1968–71)?',
         marks: 20,
         subMarks: '16 marks for essay + 4 marks for SPaG',
-        linesPage7: 26,
+        linesPage7: 24,
         linesPage8: 28,
         criteria: [
           'Media coverage & credibility gap (Living-room war, Walter Cronkite, My Lai massacre exposed in 1969)',
@@ -1067,7 +1067,7 @@ const KT_DATA = {
           'Operation Linebacker (December 1972)',
           'Détente with the Soviet Union and China',
         ],
-        lines: 22,
+        lines: 24,
         vocabBank: [
           'Operation Linebacker II (Christmas Bombings)',
           '40,000 tons of bombs on Hanoi & Haiphong',
@@ -1154,7 +1154,7 @@ const KT_DATA = {
           q: '2',
           type: 'Explain Why',
           topic: 'Why Nixon Introduced Vietnamization in 1969',
-          page: 'P3',
+          page: 'P3–4',
           marks: 12,
         },
       ],
@@ -1163,42 +1163,42 @@ const KT_DATA = {
           q: 'Dossier',
           type: 'Enquiry',
           topic: 'Dossier: Growth of Anti-War Opposition (Sources B, C & Ints 1, 2)',
-          page: 'P4',
+          page: 'P5',
           marks: '-',
         },
         {
           q: '3 (a)',
           type: 'Utility',
           topic: 'Sources B & C: Reasons for Growth of Anti-War Opposition',
-          page: 'P5',
+          page: 'P6',
           marks: 8,
         },
         {
           q: '3 (b)',
           type: 'Difference',
           topic: 'Interpretations 1 & 2: Main Difference in Views on Anti-War Movement',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (c)',
           type: 'Reason',
           topic: 'Interpretations 1 & 2: Reasons for Difference in Historical Views',
-          page: 'P6',
+          page: 'P7',
           marks: 4,
         },
         {
           q: '3 (d)',
           type: 'Essay',
           topic: 'Evaluative Essay: How Far Do You Agree with Interpretation 1?',
-          page: 'P7–8',
+          page: 'P8–9',
           marks: 20,
         },
         {
           q: '4',
           type: 'Depth Booster',
           topic: 'Spec Depth: Why the Paris Peace Accords Were Signed (1973)',
-          page: 'P9',
+          page: 'P10',
           marks: 12,
         },
       ],
@@ -1207,14 +1207,14 @@ const KT_DATA = {
           q: 'Exemplars',
           type: 'Section A Models',
           topic: 'Full Level 2 Model Q1 & Level 4 Model Q2 Essay + Examiner Marks',
-          page: 'P10',
+          page: 'P11',
           marks: 'Audit',
         },
         {
           q: 'Exemplars',
           type: 'Section B Models',
           topic: 'Full Level 3 Model Q3a, Q3b, Q3c & Level 4 Q3d Model + Top 3 Traps',
-          page: 'P11',
+          page: 'P12',
           marks: 'Audit',
         },
       ],
@@ -1259,8 +1259,12 @@ const COMMON_CSS = `
     padding: 0;
     background: #ffffff;
   }
-  .page:last-child {
-    page-break-after: avoid;
+  .page:last-child,
+  .page:last-of-type,
+  #page-48,
+  #page-12 {
+    page-break-after: avoid !important;
+    break-after: avoid !important;
   }
 
   /* Cover Page Styles */
@@ -2202,7 +2206,7 @@ function renderBookletHtml(ktKey, meta) {
     );
     if (fs.existsSync(imgFile)) {
       const b64 = fs.readFileSync(imgFile).toString('base64');
-      sourceAImgTag = `<div style="flex-shrink: 0; width: 140px; height: 105px; background: #000; border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1px solid #94a3b8; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
+      sourceAImgTag = `<div style="flex-shrink: 0; width: 195px; height: 135px; background: #000; border-radius: 4px; overflow: hidden; display: flex; align-items: center; justify-content: center; border: 1.5px solid #000000; box-shadow: 0 2px 4px rgba(0,0,0,0.15);">
           <img src="data:image/jpeg;base64,${b64}" alt="Source A" style="max-width: 100%; max-height: 100%; object-fit: contain;">
       </div>`;
     }
@@ -2387,21 +2391,21 @@ function renderBookletHtml(ktKey, meta) {
             </div>
 
             <!-- Archival Visual Source A Box -->
-            <div class="archival-source-box" style="margin-bottom: 8px; padding: 7px 10px;">
+            <div class="archival-source-box" style="margin-bottom: 8px; padding: 8px 12px;">
                 <div class="archival-header" style="margin-bottom: 5px; padding-bottom: 3px;">
-                    <span class="archival-title" style="font-size: 8.2pt;">${e.q1.sourceA.title}</span>
-                    <span class="archival-shelfmark" style="font-size: 6.2pt;">${e.q1.sourceA.shelfmark}</span>
+                    <span class="archival-title" style="font-size: 9.2pt; font-weight: 800;">${e.q1.sourceA.title}</span>
+                    <span class="archival-shelfmark" style="font-size: 6.8pt;">${e.q1.sourceA.shelfmark}</span>
                 </div>
-                <div style="display: flex; gap: 10px; align-items: center;">
+                <div style="display: flex; gap: 12px; align-items: center;">
                     ${sourceAImgTag}
                     <div style="flex: 1;">
-                        <div class="archival-body" style="font-size: 7.2pt; line-height: 1.35; margin-bottom: 3px;">
+                        <div class="archival-body" style="font-size: 8.4pt; line-height: 1.42; margin-bottom: 4px;">
                             ${e.q1.sourceA.extract
                               .split('\n')
                               .map((line) => `<p style="margin: 0 0 2px 0;">${line}</p>`)
                               .join('')}
                         </div>
-                        <div class="archival-footer" style="font-size: 6.5pt; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 2px;">
+                        <div class="archival-footer" style="font-size: 7.4pt; color: #475569; border-top: 1px solid #e2e8f0; padding-top: 3px;">
                             <strong>Provenance:</strong> ${e.q1.sourceA.provenance}
                         </div>
                     </div>
@@ -2410,31 +2414,56 @@ function renderBookletHtml(ktKey, meta) {
 
             <!-- Question 1 Prompt -->
             <div class="question-container">
-                <div class="question-prompt" style="margin-bottom: 5px;">
+                <div class="question-prompt" style="margin-bottom: 8px;">
                     <span><strong class="q-num">1</strong> ${e.q1.stem}</span>
                     <span class="q-marks">(4)</span>
                 </div>
 
-                <!-- Structured Inference Scaffolding Grid -->
-                <div class="inference-grid" style="margin-bottom: 6px;">
-                    <div class="inference-card" style="padding: 5px 8px;">
-                        <strong>(i) Inference 1:</strong>
-                        <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px;">What I can infer from Source A:</div>
-                        <div class="inference-row" data-field="${ktKey}_q1_inf1"></div>
-                        <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 2px 0;">Details in the source that tell me this:</div>
-                        <div class="inference-row" data-field="${ktKey}_q1_det1"></div>
+                <!-- Structured Inference Tasks (Authentic Edexcel Exam Format) -->
+                <div class="inference-container" style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 8px;">
+                    <!-- Inference (i) -->
+                    <div class="inference-box" style="border: 1.5px solid #000000; background: #ffffff; padding: 8px 12px;">
+                        <div style="font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px;">
+                            (i) What I can infer from Source A:
+                        </div>
+                        ${renderLines(3, `${ktKey}_q1_inf1`)}
+                        <div style="font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin: 6px 0 3px 0;">
+                            Details in the source that tell me this:
+                        </div>
+                        ${renderLines(2, `${ktKey}_q1_det1`)}
                     </div>
-                    <div class="inference-card" style="padding: 5px 8px;">
-                        <strong>(ii) Inference 2:</strong>
-                        <div style="font-size: 6.8pt; color: #475569; margin-bottom: 2px;">What I can infer from Source A:</div>
-                        <div class="inference-row" data-field="${ktKey}_q1_inf2"></div>
-                        <div style="font-size: 6.8pt; color: #475569; margin: 3px 0 2px 0;">Details in the source that tell me this:</div>
-                        <div class="inference-row" data-field="${ktKey}_q1_det2"></div>
+
+                    <!-- Inference (ii) -->
+                    <div class="inference-box" style="border: 1.5px solid #000000; background: #ffffff; padding: 8px 12px;">
+                        <div style="font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin-bottom: 3px;">
+                            (ii) What I can infer from Source A:
+                        </div>
+                        ${renderLines(3, `${ktKey}_q1_inf2`)}
+                        <div style="font-size: 8pt; font-weight: 800; color: #000000; text-transform: uppercase; margin: 6px 0 3px 0;">
+                            Details in the source that tell me this:
+                        </div>
+                        ${renderLines(2, `${ktKey}_q1_det2`)}
                     </div>
                 </div>
 
-                <div style="font-size: 7.2pt; font-weight: 700; color: #0f172a; margin: 5px 0 2px 0;">Candidate Response Lines:</div>
-                ${renderLines(e.q1.lines || 6, `${ktKey}_q1_lines`)}
+                <!-- Pearson Edexcel Level 2 Strategy, Sentence Starters & Self-Audit -->
+                <div style="border: 1.5px solid #000000; background: #f8fafc; padding: 8px 12px; margin-top: 8px; font-size: 7.6pt; line-height: 1.38;">
+                    <div style="font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 4px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 3px;">
+                        <span>Pearson Edexcel Level 2 Strategy &amp; Self-Audit [4 Marks]:</span>
+                        <span style="font-size: 7pt; color: #1e3a8a; font-weight: 800; background: #eff6ff; padding: 1.5px 6px; border: 1px solid #1e3a8a; border-radius: 3px;">Examiner Standard · 4/4 Target</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; color: #1e293b; margin-bottom: 6px;">
+                        <div><span class="tracker-box"></span> <strong>Inference 1:</strong> Goes beyond surface copying (deduces deeper meaning)</div>
+                        <div><span class="tracker-box"></span> <strong>Evidence 1:</strong> Cites precise detail or quote from Source A</div>
+                        <div><span class="tracker-box"></span> <strong>Inference 2:</strong> Makes a second, distinct historical inference</div>
+                        <div><span class="tracker-box"></span> <strong>Evidence 2:</strong> Cites independent supporting detail from Source A</div>
+                    </div>
+                    <div style="border-top: 1px dashed #cbd5e1; padding-top: 4px; display: flex; gap: 14px; font-size: 7.2pt; color: #334155;">
+                        <span><strong>Disciplinary Starters:</strong> <em>"From Source A, I can infer that..."</em></span>
+                        <span><em>"This is shown by the detail stating / depicting..."</em></span>
+                        <span><em>"The source also suggests..."</em></span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -2524,16 +2553,16 @@ function renderBookletHtml(ktKey, meta) {
 
             <div class="question-container">
                 <!-- Compulsory Own Knowledge Focus -->
-                <div style="border: 1.5px solid #1e3a8a; border-radius: 4px; background: #eff6ff; padding: 4px 8px; margin-bottom: 6px; font-size: 7pt; color: #1e3a8a; display: flex; justify-content: space-between; align-items: center;">
+                <div style="border: 1.5px solid #1e3a8a; border-radius: 4px; background: #eff6ff; padding: 5px 10px; margin-bottom: 8px; font-size: 7.6pt; color: #1e3a8a; display: flex; justify-content: space-between; align-items: center;">
                     <span><strong>Paragraph 3 Focus (Compulsory Own Knowledge):</strong> ${e.q2.stages.p3}</span>
-                    <span style="font-weight: 800; text-transform: uppercase; font-size: 6.5pt; background: #1e3a8a; color: #fff; padding: 1.5px 5px; border-radius: 3px;">Spec Guarantee</span>
+                    <span style="font-weight: 800; text-transform: uppercase; font-size: 6.8pt; border: 1.2px solid #1e3a8a; background: #ffffff; color: #1e3a8a; padding: 2px 6px; border-radius: 3px;">Beyond Stimulus</span>
                 </div>
 
                 <!-- Candidate Response Lines -->
-                ${renderLines(e.q2.linesPage4 || 24, `${ktKey}_q2_p2`)}
+                ${renderLines(e.q2.linesPage4 || 29, `${ktKey}_q2_p2`)}
 
                 <!-- Pearson Edexcel Level 4 Criteria Checklist -->
-                <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 4px 8px; margin-top: 6px; font-size: 6.8pt; line-height: 1.25;">
+                <div style="border: 1.5px solid #64748b; border-radius: 4px; background: #f8fafc; padding: 5px 8px; margin-top: 6px; font-size: 7pt; line-height: 1.25;">
                     <div style="font-weight: 800; text-transform: uppercase; color: #0f172a; margin-bottom: 2px;">
                         Pearson Edexcel Level 4 Criteria Checklist [10–12 Marks]:
                     </div>
@@ -2568,70 +2597,84 @@ function renderBookletHtml(ktKey, meta) {
             </div>
 
             <!-- Enquiry Banner -->
-            <div class="dossier-banner">
+            <div class="dossier-banner" style="background: #000000; color: #ffffff; padding: 7px 12px; font-weight: 900; font-size: 9.2pt; text-transform: uppercase; letter-spacing: 0.3px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center;">
                 <span>Historical Enquiry Focus: ${e.dossier.enquiry}</span>
-                <span style="font-size: 7pt; font-weight: 600;">Paper 3 · Section B</span>
+                <span style="font-size: 7.2pt; font-weight: 700; background: #334155; padding: 2px 7px; border-radius: 3px;">Paper 3 · Section B</span>
             </div>
 
             <!-- 2x2 Archival Grid -->
-            <div class="dossier-grid">
+            <div class="dossier-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 8px;">
                 <!-- Source B -->
-                <div class="archival-source-box" style="margin-bottom: 0;">
-                    <div class="archival-header">
-                        <span class="archival-title">${e.dossier.sourceB.title}</span>
-                        <span class="archival-shelfmark">${e.dossier.sourceB.shelfmark.split('·')[0]}</span>
+                <div class="archival-source-box" style="margin-bottom: 0; padding: 12px 14px; border: 1.5px solid #000000; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                    <div>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800;">${e.dossier.sourceB.title}</span>
+                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #f1f5f9; border: 1px solid #000000;">${e.dossier.sourceB.shelfmark.split('·')[0]}</span>
+                        </div>
+                        <div class="archival-body" style="font-family: Georgia, serif; font-size: 9.4pt; line-height: 1.5; color: #000000;">
+                            ${e.dossier.sourceB.extract}
+                        </div>
                     </div>
-                    <div class="archival-body">
-                        ${e.dossier.sourceB.extract}
-                    </div>
-                    <div class="archival-footer">
+                    <div class="archival-footer" style="border-top: 1px dashed #000000; padding-top: 5px; font-size: 8pt; color: #000000; font-style: italic; margin-top: 6px;">
                         <strong>Provenance:</strong> ${e.dossier.sourceB.provenance}
                     </div>
                 </div>
 
                 <!-- Source C -->
-                <div class="archival-source-box" style="margin-bottom: 0;">
-                    <div class="archival-header">
-                        <span class="archival-title">${e.dossier.sourceC.title}</span>
-                        <span class="archival-shelfmark">${e.dossier.sourceC.shelfmark.split('·')[0]}</span>
+                <div class="archival-source-box" style="margin-bottom: 0; padding: 12px 14px; border: 1.5px solid #000000; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                    <div>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800;">${e.dossier.sourceC.title}</span>
+                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #f1f5f9; border: 1px solid #000000;">${e.dossier.sourceC.shelfmark.split('·')[0]}</span>
+                        </div>
+                        <div class="archival-body" style="font-family: Georgia, serif; font-size: 9.4pt; line-height: 1.5; color: #000000;">
+                            ${e.dossier.sourceC.extract}
+                        </div>
                     </div>
-                    <div class="archival-body">
-                        ${e.dossier.sourceC.extract}
-                    </div>
-                    <div class="archival-footer">
+                    <div class="archival-footer" style="border-top: 1px dashed #000000; padding-top: 5px; font-size: 8pt; color: #000000; font-style: italic; margin-top: 6px;">
                         <strong>Provenance:</strong> ${e.dossier.sourceC.provenance}
                     </div>
                 </div>
 
                 <!-- Interpretation 1 -->
-                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border-color: #475569;">
-                    <div class="archival-header">
-                        <span class="archival-title" style="color: #1e3a8a;">Interpretation 1</span>
-                        <span class="archival-shelfmark">HISTORIOGRAPHY</span>
+                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border: 1.5px solid #000000; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                    <div>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800; color: #1e3a8a;">Interpretation 1</span>
+                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #ffffff; border: 1px solid #000000; font-weight: 800;">HISTORIOGRAPHY</span>
+                        </div>
+                        <div class="archival-body" style="font-size: 9.4pt; line-height: 1.5; color: #000000;">
+                            <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 8.6pt;">From ${e.dossier.int1.author}:</div>
+                            ${e.dossier.int1.text}
+                        </div>
                     </div>
-                    <div class="archival-body" style="font-size: 7.2pt;">
-                        <div style="font-weight: 700; color: #0f172a; margin-bottom: 2px;">From ${e.dossier.int1.author}:</div>
-                        ${e.dossier.int1.text}
+                    <div class="archival-footer" style="border-top: 1px dashed #94a3b8; padding-top: 5px; font-size: 7.5pt; color: #475569; font-style: italic; margin-top: 6px;">
+                        Modern historical view on the enquiry focus.
                     </div>
                 </div>
 
                 <!-- Interpretation 2 -->
-                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border-color: #475569;">
-                    <div class="archival-header">
-                        <span class="archival-title" style="color: #1e3a8a;">Interpretation 2</span>
-                        <span class="archival-shelfmark">HISTORIOGRAPHY</span>
+                <div class="archival-source-box" style="margin-bottom: 0; background: #f8fafc; border: 1.5px solid #000000; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; min-height: 405px;">
+                    <div>
+                        <div class="archival-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center;">
+                            <span class="archival-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 10pt; font-weight: 800; color: #1e3a8a;">Interpretation 2</span>
+                            <span class="archival-shelfmark" style="font-size: 6.8pt; padding: 2px 5px; background: #ffffff; border: 1px solid #000000; font-weight: 800;">HISTORIOGRAPHY</span>
+                        </div>
+                        <div class="archival-body" style="font-size: 9.4pt; line-height: 1.5; color: #000000;">
+                            <div style="font-weight: 800; color: #0f172a; margin-bottom: 4px; font-size: 8.6pt;">From ${e.dossier.int2.author}:</div>
+                            ${e.dossier.int2.text}
+                        </div>
                     </div>
-                    <div class="archival-body" style="font-size: 7.2pt;">
-                        <div style="font-weight: 700; color: #0f172a; margin-bottom: 2px;">From ${e.dossier.int2.author}:</div>
-                        ${e.dossier.int2.text}
+                    <div class="archival-footer" style="border-top: 1px dashed #94a3b8; padding-top: 5px; font-size: 7.5pt; color: #475569; font-style: italic; margin-top: 6px;">
+                        Alternative historical view on the enquiry focus.
                     </div>
                 </div>
             </div>
 
             <!-- Reading Guide Banner -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 4px; background: #f1f5f9; padding: 4px 8px; font-size: 6.8pt; color: #334155; display: flex; justify-content: space-between; align-items: center;">
-                <span><strong>Enquiry Core:</strong> Source B &amp; C provide contemporary primary evidence; Interpretations 1 &amp; 2 provide competing modern historical views.</span>
-                <span style="font-weight: 700; color: #1e3a8a;">Keep Page 5 open for Q3(a)–(d)</span>
+            <div style="border: 1.5px solid #000000; border-radius: 4px; background: #f1f5f9; padding: 7px 12px; font-size: 7.8pt; color: #000000; display: flex; justify-content: space-between; align-items: center;">
+                <span><strong>Enquiry Core:</strong> Sources B &amp; C provide contemporary primary evidence; Interpretations 1 &amp; 2 provide competing modern historical views.</span>
+                <span style="font-weight: 800; color: #1e3a8a;">Keep Page 5 open for Questions 3(a)–(d)</span>
             </div>
         </div>
 
@@ -2865,7 +2908,7 @@ function renderBookletHtml(ktKey, meta) {
             <div class="page-header">
                 <div class="header-left">
                     <h2>Section B: Specification Depth Booster · Mastery Practice</h2>
-                    <p>Exhaustive specification coverage. Practice an alternative high-yield exam question for this Key Topic.</p>
+                    <p>Spend approx. 15 minutes. Plan all 3 paragraphs and draft your causal explanation below.</p>
                 </div>
                 <span class="header-tag" style="background: #0284c7;">Spec Depth Booster [12m]</span>
             </div>
@@ -2902,7 +2945,7 @@ function renderBookletHtml(ktKey, meta) {
                     </div>
                 </div>
 
-                ${renderLines(d.alternateQ.lines || 22, `${ktKey}_depth_q_lines`)}
+                ${renderLines(d.alternateQ.lines || 26, `${ktKey}_depth_q_lines`)}
             </div>
         </div>
 
@@ -2927,34 +2970,46 @@ function renderBookletHtml(ktKey, meta) {
             </div>
 
             <!-- Q1 Inference Model -->
-            <div class="exemplar-box">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 1: Source Inference Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 2 (4/4)</span>
+            <div class="exemplar-box" style="padding: 10px 14px; margin-bottom: 12px; border: 1.5px solid #000000;">
+                <div class="exemplar-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px;">
+                    <span class="exemplar-title" style="font-size: 10.2pt; font-weight: 800;">Question 1: Source Inference Exemplar</span>
+                    <span class="exemplar-grade" style="font-size: 7.8pt; padding: 2px 7px;">Full Marks · Level 2 (4/4)</span>
                 </div>
-                <div class="exemplar-stem">${x.q1.stem}</div>
-                <div class="exemplar-text" style="white-space: pre-line;">
+                <div class="exemplar-stem" style="font-size: 8.8pt; font-weight: 700; margin-bottom: 6px;">${x.q1.stem}</div>
+                <div class="exemplar-text" style="white-space: pre-line; font-size: 9.2pt; line-height: 1.48; margin-bottom: 6px;">
                     ${x.q1.model}
                 </div>
-                <div class="examiner-note">
+                <div class="examiner-note" style="font-size: 8.2pt; line-height: 1.4; padding: 6px 10px; margin-top: 6px;">
                     <strong>Examiner Annotation:</strong> ${x.q1.examiner}
                 </div>
             </div>
 
             <!-- Q2 Explain Why Model -->
-            <div class="exemplar-box" style="margin-bottom: 0;">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 2: Causation Essay Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 4 (12/12)</span>
+            <div class="exemplar-box" style="margin-bottom: 0; padding: 10px 14px; border: 1.5px solid #000000;">
+                <div class="exemplar-header" style="border-bottom: 1.2px solid #000000; padding-bottom: 4px; margin-bottom: 6px;">
+                    <span class="exemplar-title" style="font-size: 10.2pt; font-weight: 800;">Question 2: Causation Essay Exemplar</span>
+                    <span class="exemplar-grade" style="font-size: 7.8pt; padding: 2px 7px;">Full Marks · Level 4 (12/12)</span>
                 </div>
-                <div class="exemplar-stem">${x.q2.stem}</div>
-                <div class="exemplar-text">
-                    <p style="margin: 0 0 3px 0;">${x.q2.modelP1}</p>
-                    <p style="margin: 0 0 3px 0;">${x.q2.modelP2}</p>
+                <div class="exemplar-stem" style="font-size: 8.8pt; font-weight: 700; margin-bottom: 6px;">${x.q2.stem}</div>
+                <div class="exemplar-text" style="font-size: 9.2pt; line-height: 1.48; margin-bottom: 6px;">
+                    <p style="margin: 0 0 6px 0;">${x.q2.modelP1}</p>
+                    <p style="margin: 0 0 6px 0;">${x.q2.modelP2}</p>
                     <p style="margin: 0;">${x.q2.modelP3}</p>
                 </div>
-                <div class="examiner-note">
+                <div class="examiner-note" style="font-size: 8.2pt; line-height: 1.4; padding: 6px 10px; margin-top: 6px;">
                     <strong>Examiner Annotation:</strong> ${x.q2.examiner}
+                </div>
+            </div>
+
+            <!-- Pearson Edexcel Level 4 Causation Scoring Protocol -->
+            <div style="border: 1.5px solid #000000; background: #f8fafc; padding: 8px 12px; margin-top: 10px; font-size: 7.6pt; line-height: 1.38;">
+                <div style="font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 3px; border-bottom: 1px solid #000000; padding-bottom: 2px; display: flex; justify-content: space-between; align-items: center;">
+                    <span>Pearson Edexcel Examiner Standard · Question 2 Level 4 (10–12 Marks):</span>
+                    <span style="font-size: 7pt; color: #15803d; font-weight: 800;">Grade 8/9 Threshold</span>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 14px; color: #1e293b;">
+                    <div><strong>1. Beyond-Stimulus Prerequisite:</strong> Level 4 CANNOT be awarded unless substantial, accurate own knowledge beyond the stimulus points is integrated.</div>
+                    <div><strong>2. Causal Links vs Narrative:</strong> Every paragraph must end with explicit causal explanation showing <em>why</em> this factor produced the historical outcome.</div>
                 </div>
             </div>
         </div>
@@ -2980,62 +3035,62 @@ function renderBookletHtml(ktKey, meta) {
             </div>
 
             <!-- Q3a Utility Model -->
-            <div class="exemplar-box" style="margin-bottom: 4px;">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 3(a): Source Utility Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 3 (8/8)</span>
+            <div class="exemplar-box" style="margin-bottom: 5px; padding: 6px 10px; border: 1.2px solid #000000;">
+                <div class="exemplar-header" style="border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+                    <span class="exemplar-title" style="font-size: 8.6pt; font-weight: 800;">Question 3(a): Source Utility Exemplar</span>
+                    <span class="exemplar-grade" style="font-size: 7.2pt; padding: 1.5px 5px;">Full Marks · Level 3 (8/8)</span>
                 </div>
-                <div class="exemplar-text">
+                <div class="exemplar-text" style="font-size: 8.2pt; line-height: 1.36; margin-bottom: 3px;">
                     ${x.q3a.model
                       .split('\n\n')
                       .map((p) => `<p style="margin: 0 0 2px 0;">${p}</p>`)
                       .join('')}
                 </div>
-                <div class="examiner-note">
+                <div class="examiner-note" style="font-size: 7.6pt; padding: 2px 6px; margin-top: 2px;">
                     <strong>Examiner Annotation:</strong> ${x.q3a.examiner}
                 </div>
             </div>
 
             <!-- Q3b & Q3c Models -->
-            <div class="exemplar-box" style="margin-bottom: 4px;">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 3(b) &amp; 3(c): Interpretations Exemplar</span>
-                    <span class="exemplar-grade">Full Marks · Level 2 (4/4 + 4/4)</span>
+            <div class="exemplar-box" style="margin-bottom: 5px; padding: 6px 10px; border: 1.2px solid #000000;">
+                <div class="exemplar-header" style="border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+                    <span class="exemplar-title" style="font-size: 8.6pt; font-weight: 800;">Question 3(b) &amp; 3(c): Interpretations Exemplar</span>
+                    <span class="exemplar-grade" style="font-size: 7.2pt; padding: 1.5px 5px;">Full Marks · Level 2 (4/4 + 4/4)</span>
                 </div>
-                <div class="exemplar-text">
+                <div class="exemplar-text" style="font-size: 8.2pt; line-height: 1.36; margin-bottom: 2px;">
                     <p style="margin: 0 0 2px 0;"><strong>Q3(b) Difference:</strong> ${x.q3bc.q3bModel}</p>
                     <p style="margin: 0;"><strong>Q3(c) Reason:</strong> ${x.q3bc.q3cModel}</p>
                 </div>
-                <div class="examiner-note">
+                <div class="examiner-note" style="font-size: 7.6pt; padding: 2px 6px; margin-top: 2px;">
                     <strong>Examiner Annotation:</strong> Q3b: ${x.q3bc.q3bExaminer} | Q3c: ${x.q3bc.q3cExaminer}
                 </div>
             </div>
 
             <!-- Q3d Evaluative Essay Model Extract -->
-            <div class="exemplar-box" style="margin-bottom: 4px;">
-                <div class="exemplar-header">
-                    <span class="exemplar-title">Question 3(d): Evaluative Essay Conclusion Model</span>
-                    <span class="exemplar-grade">Full Marks · Level 4 (16+4 = 20/20)</span>
+            <div class="exemplar-box" style="margin-bottom: 5px; padding: 6px 10px; border: 1.2px solid #000000;">
+                <div class="exemplar-header" style="border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+                    <span class="exemplar-title" style="font-size: 8.6pt; font-weight: 800;">Question 3(d): Evaluative Essay Conclusion Model</span>
+                    <span class="exemplar-grade" style="font-size: 7.2pt; padding: 1.5px 5px;">Full Marks · Level 4 (16+4 = 20/20)</span>
                 </div>
-                <div class="exemplar-text">
+                <div class="exemplar-text" style="font-size: 8.2pt; line-height: 1.36; margin-bottom: 2px;">
                     ${x.q3d.modelExtract}
                 </div>
-                <div class="examiner-note">
+                <div class="examiner-note" style="font-size: 7.6pt; padding: 2px 6px; margin-top: 2px;">
                     <strong>Examiner Annotation:</strong> ${x.q3d.examiner}
                 </div>
             </div>
 
             <!-- Top 3 Fatal Examiner Traps -->
-            <div class="traps-card">
-                <div class="traps-header">
+            <div class="traps-card" style="border: 1.5px solid #000000; background: #ffffff; padding: 6px 8px; margin-top: 5px;">
+                <div class="traps-header" style="font-size: 8.2pt; font-weight: 800; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
                     Top 3 Fatal Examiner Traps to Avoid for Key Topic ${meta.number}
                 </div>
-                <div class="traps-grid">
+                <div class="traps-grid" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
                     ${x.traps
                       .map(
                         (t) => `
-                        <div class="trap-item">
-                            <strong>• ${t.title}</strong>
+                        <div class="trap-item" style="background: #f8fafc; border: 1px solid #000000; padding: 4px 6px; font-size: 7.4pt; line-height: 1.28;">
+                            <strong style="display: block; margin-bottom: 1px; font-weight: 800;">• ${t.title}</strong>
                             <span>${t.desc}</span>
                         </div>
                     `,
