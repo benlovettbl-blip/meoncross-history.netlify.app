@@ -218,7 +218,7 @@ const wfConfigs = [
     enquiryQuestion:
       'Why were environmental pathogens and vermin as dangerous to British troops as enemy artillery?',
     specAnchor:
-      'Ill health arising from the trench environment: trench foot (pathology, gangrene, prevention, whale oil, sock inspection); trench fever (body lice, Pediculus humanus, delousing stations, Serbian barrels); dysentery (water chlorination, chloride of lime, latrines); underground shelter conditions.',
+      'Ill health arising from the trench environment: trench foot (pathology, gangrene, prevention, whale oil, sock inspection); trench fever (body lice, Pediculus humanus, delousing stations, Serbian barrels); shell shock (symptoms, NYDN, rest treatment); dysentery (water chlorination, chloride of lime, latrines); underground shelter conditions.',
     sourceIndex: 0,
     sourceBadge: 'SOURCE A',
     sourceSubtitle: 'Contemporary Photographic Evidence • Western Front',
@@ -250,7 +250,7 @@ const wfConfigs = [
     connectives:
       'A key detail to follow up is... &bull; The question I would ask is... &bull; The specific historical source type needed is... &bull; This source would help answer my question because...',
     wordBank:
-      'trench foot &bull; whale oil &bull; buddy-system &bull; gangrene &bull; trench fever &bull; body lice (Pediculus humanus) &bull; delousing stations &bull; dysentery &bull; chloride of lime &bull; latrine inspection',
+      'trench foot &bull; whale oil &bull; buddy-system &bull; gangrene &bull; trench fever &bull; body lice (Pediculus humanus) &bull; delousing stations &bull; Serbian barrels &bull; shell shock &bull; NYDN &bull; dysentery &bull; chloride of lime',
     timelineMission:
       'Turn to Pages 2–3 (Milestone 2). Draw soldiers applying whale oil and delousing garments in steam ovens.',
     leftPageQuip:
@@ -287,37 +287,38 @@ const wfConfigs = [
       },
       {
         dates: '1914–1918',
-        title: 'Trench Fever & Body Lice',
+        title: 'Trench Fever, Lice & Delousing',
         bullets: [
-          'Symptoms: high fever, shivering, severe joint and shin pain',
+          'High fever, violent shivering, severe joint and shin pain',
           'Incapacitated up to 15% of troops for a month or more',
-          '1918: Proven transmitted by body lice (Pediculus humanus)',
-          'Lice faeces entered broken skin scratched by soldiers',
+          '1918: Proven transmitted by body lice (Pediculus humanus) faeces',
+          'Divisional delousing bathhouses, steam ovens & Serbian barrels',
         ],
         focusClue:
-          'Why was trench fever not prevented until its insect vector was identified in 1918?',
-      },
-      {
-        dates: '1915–1918',
-        title: 'Delousing & Steam Barrels',
-        bullets: [
-          'Men sent to divisional delousing bath-houses in rear',
-          'Uniforms baked in high-pressure steam disinfectant ovens',
-          'Serbian barrels: improvised steam barrels on front line',
-          'Lice eggs (nits) in seams resisted manual picking/burning',
-        ],
-        focusClue: 'Why was high-pressure steam required to eradicate lice from uniform seams?',
+          'Why did trench fever persist until the body louse insect vector was proven in 1918?',
       },
       {
         dates: '1914–1918',
         title: 'Dysentery & Water Chlorination',
         bullets: [
-          'Severe bacterial diarrhoea caused by unhygienic water',
+          'Severe bacterial diarrhoea caused by unhygienic water & food',
           'Deep latrine pits dug away from frontline trenches',
           'Chloride of lime added daily to neutralize foul waste',
-          'Drinking water purified with purifying chlorine tablets',
+          'Drinking water purified with chemical chlorination tablets',
         ],
         focusClue: 'How did strict sanitation and chemical water chlorination prevent epidemics?',
+      },
+      {
+        dates: '1914–1918',
+        title: 'Shell Shock & Psychological Trauma',
+        bullets: [
+          'Caused by artillery blast concussion and mortal combat terror',
+          'Symptoms: uncontrollable shaking, hysterical blindness, mutism',
+          '~80,000 British cases diagnosed; labeled NYDN (Not Yet Diagnosed, Nervous)',
+          'Treated with rest and food; specialist centres like Craiglockhart',
+        ],
+        focusClue:
+          'Why was shell shock initially stigmatised as cowardice before being treated medically?',
       },
     ],
   },
@@ -758,10 +759,10 @@ const wfConfigs = [
         dates: '1917–1918',
         title: 'Harvey Cushing’s Brain Surgery',
         bullets: [
-          'American surgeon Harvey Cushing pioneered delicate neurosurgery',
-          'Used local anaesthetic rather than general; reduced brain swelling',
-          'Employed suction cannula and surgical magnets to remove shrapnel',
-          'Slashed brain surgery wound mortality from 54% to 29%',
+          'American surgeon Harvey Cushing pioneered delicate military neurosurgery',
+          'Used local anaesthetic instead of general to prevent fatal brain swelling',
+          'Silver clips clamped vessels (haemostasis); magnets extracted deep shrapnel',
+          'Operated on 45 patients at 3rd Ypres, cutting mortality from 54% to 29%',
         ],
         focusClue: 'Why was local anaesthesia superior to general anaesthetic in head trauma?',
       },
@@ -770,9 +771,9 @@ const wfConfigs = [
         title: 'Harold Gillies at Sidcup',
         bullets: [
           'Harold Gillies founded Queen’s Hospital, Sidcup, Kent (1917)',
-          'Treated over 11,000 men with shattered faces and lost jaws',
-          'Pioneered tubed pedicle skin grafting to maintain blood supply',
-          'Rebuilt functional noses, eyelids, and lips; foundation of modern plastic surgery',
+          'Treated over 11,000 men with shattered faces and jaw trauma',
+          'Pioneered tubed pedicle skin grafting to maintain active blood supply',
+          'Grafts from chest/neck rebuilt noses and jaws; foundation of plastic surgery',
         ],
         focusClue:
           'How did the tubed pedicle technique prevent skin grafts from rotting and dying?',
@@ -1070,15 +1071,15 @@ function renderWfExamBlueprintPage(
       ${q2Html}
 
       <!-- Source Evidence & Planning Notes (Standard Ruled Lines) -->
-      <div style="margin: 4px 0 3px 0; border: 1px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
+      <div style="margin: 6px 0 5px 0; border: 1px solid #000000; border-radius: 3px; padding: 3.5px 5px; background: #ffffff;">
         <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 2px;">
           Source Evidence, Contextual Knowledge &amp; Disciplinary Analysis Notes:
         </div>
         <div style="display: flex; flex-direction: column; width: 100%;">
           ${Array.from(
-            { length: isQ2a ? 13 : 11 },
+            { length: isQ2a ? 14 : 12 },
             () =>
-              `<div style="height: 7.35mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%;"></div>`,
+              `<div style="height: 7.9mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%;"></div>`,
           ).join('')}
         </div>
       </div>
@@ -1288,14 +1289,14 @@ function renderWfExamResponsePage2(cfg, pageNum) {
   const q2Mark = isQ2a ? '8' : '4';
   const totalMark = isQ2a ? '12' : '8';
 
-  // 31 ruled lines edge-to-edge (no margin cell) with exact 7.2mm height
-  const linedRows = Array.from({ length: 31 }, (_, idx) => {
+  // 32 ruled lines edge-to-edge (no margin cell) with exact 7.4mm height to utilize full page budget
+  const linedRows = Array.from({ length: 32 }, (_, idx) => {
     const linePrompt =
       idx === 0
         ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #777777;">[ Question 2 Sustained Analysis Continued &bull; Contextual Knowledge &bull; Conclusion ]</span>`
         : `&nbsp;`;
     return `
-      <div class="lined-row" style="height: 7.2mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
+      <div class="lined-row" style="height: 7.4mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
         ${linePrompt}
       </div>`;
   }).join('');
@@ -1463,7 +1464,7 @@ function renderWfBackCover(cfgList, quipText) {
           </span>
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #000000;">
-          KEY TOPIC 5 ASSESSMENT RECORD &bull; 1914–1918
+          KEY TOPIC 5 ASSESSMENT RECORD &bull; 6 CURRICULUM HOURS &bull; 1914–1918
         </div>
       </div>
 
@@ -1508,7 +1509,7 @@ function renderWfBackCover(cfgList, quipText) {
             &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #000000;">
-            Interactive Textbook &bull; 10 Questions Per Enquiry
+            Interactive Textbook &bull; 10/20 Questions Per Enquiry
           </span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px;">
@@ -1553,6 +1554,10 @@ function renderWfBackCover(cfgList, quipText) {
               <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 3px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
                 Mastery Quiz
               </span>
+            </div>
+
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; margin-top: 2px; white-space: nowrap; border: 1px solid #000000; border-radius: 2px; padding: 1px 3px; background: #f8fafc;">
+              Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
           </div>
           `;
@@ -1740,8 +1745,8 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       
       <!-- Top Department & Specification Header Strip -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 6px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">
-          The History Department &bull; GCSE Revision Hub
+        <span data-department-name="The History Department" style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">
+          <span class="school-brand-target">The History Department</span> &bull; GCSE Revision Hub
         </span>
         <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000;">
           Edexcel GCSE (9-1) History &bull; Paper 1 Section A
@@ -1767,7 +1772,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       <!-- Main Title Block -->
       <div style="text-align: center; margin: 2px 0 6px 0;">
         <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; background: #ffffff;">
-          Key Topic 5 &bull; 1914–1918
+          Key Topic 5 &bull; 6 Enquiry Hours &bull; 1914–1918
         </div>
         <h1 style="font-family: 'Playfair Display', serif; font-size: 21pt; line-height: 1.15; color: #000000; margin: 2px 0 2px 0; font-weight: 900;">
           The British Sector of the Western Front, 1914–1918
@@ -1781,8 +1786,8 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
         <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="width: 100%; height: 88mm; object-fit: cover; object-position: center 25%; display: block; margin: 0 auto; filter: grayscale(100%);">
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
-          <span><strong>Primary Visual Evidence:</strong> <em>Stretcher Bearers of the RAMC Lifting a Wounded Man out of a Trench</em> &bull; Gilbert Rogers (c1919)</span>
-          <span style="font-weight: 700;">OFFICIAL EDEXCEL SOURCE ARCHIVE &bull; IWM / RAMC MUSEUM</span>
+          <span><strong>Primary Visual Evidence:</strong> <em>Stretcher Bearers of the RAMC Lifting a Wounded Man out of a Trench</em> &bull; Gilbert Rogers (c. 1919)</span>
+          <span style="font-weight: 700;">OFFICIAL EDEXCEL SOURCE ARCHIVE &bull; IWM ART 2485 / RAMC HISTORIC COLLECTION</span>
         </div>
       </div>
 
@@ -2149,3 +2154,26 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
 module.exports = {
   buildWesternFrontTwoPageWorkbook,
 };
+
+if (require.main === module) {
+  const { pathToFileURL } = require('url');
+  (async () => {
+    const mod = await import(
+      pathToFileURL(path.resolve(__dirname, '../units/edexcel_medicine/data.js')).href
+    );
+    const customHtml = buildWesternFrontTwoPageWorkbook(mod.unitData, { name: 'western_front' });
+    const unitPath = path.resolve(
+      __dirname,
+      '../units/edexcel_medicine/pupil_workbook_western_front.html',
+    );
+    const pubPath = path.resolve(
+      __dirname,
+      '../public/units/edexcel_medicine/pupil_workbook_western_front.html',
+    );
+    fs.writeFileSync(unitPath, customHtml, 'utf8');
+    fs.writeFileSync(pubPath, customHtml, 'utf8');
+    console.log('Successfully generated pupil_workbook_western_front.html to:');
+    console.log(' -', unitPath);
+    console.log(' -', pubPath);
+  })();
+}
