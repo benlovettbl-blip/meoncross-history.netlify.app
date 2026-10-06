@@ -1113,7 +1113,7 @@ function renderWfExamResponsePage1(cfg, pageNum) {
           ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #777777;">[ Begin Question 2(a) Utility Evaluation &bull; Content &bull; Provenance &bull; Context ]</span>`
           : `&nbsp;`;
       return `
-        <div class="lined-row" style="height: 7.2mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
+        <div class="lined-row" style="height: 7.3mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
           ${linePrompt}
         </div>`;
     }).join('');
@@ -1140,7 +1140,7 @@ function renderWfExamResponsePage1(cfg, pageNum) {
           ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #777777;">[ Disciplinary Commentary: Justify why this source type is authoritative for your historical enquiry ]</span>`
           : `&nbsp;`;
       return `
-        <div class="lined-row" style="height: 7.2mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
+        <div class="lined-row" style="height: 7.45mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
           ${linePrompt}
         </div>`;
     }).join('');
@@ -1784,7 +1784,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
 
       <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined) -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="width: 100%; height: 88mm; object-fit: cover; object-position: center 25%; display: block; margin: 0 auto; filter: grayscale(100%);">
+        <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="width: 100%; height: 88mm; object-fit: cover; object-position: center 25%; display: block; margin: 0 auto;">
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
           <span><strong>Primary Visual Evidence:</strong> <em>Stretcher Bearers of the RAMC Lifting a Wounded Man out of a Trench</em> &bull; Gilbert Rogers (c. 1919)</span>
           <span style="font-weight: 700;">OFFICIAL EDEXCEL SOURCE ARCHIVE &bull; IWM ART 2485 / RAMC HISTORIC COLLECTION</span>
