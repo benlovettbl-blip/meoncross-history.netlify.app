@@ -1754,37 +1754,39 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Student Identification Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; margin-bottom: 6px; background: #ffffff; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4.5px 12px; margin-bottom: 4px; background: #ffffff; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 13px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 13px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 13px;"></div>
         </div>
       </div>
 
       <!-- Main Title Block -->
-      <div style="text-align: center; margin: 2px 0 6px 0;">
-        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 3px; background: #ffffff;">
+      <div style="text-align: center; margin: 2px 0 4px 0;">
+        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; padding: 1.5px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; background: #ffffff;">
           Key Topic 5 &bull; 6 Enquiry Hours &bull; 1914–1918
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 21pt; line-height: 1.15; color: #000000; margin: 2px 0 2px 0; font-weight: 900;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; line-height: 1.12; color: #000000; margin: 1px 0 1px 0; font-weight: 900;">
           The British Sector of the Western Front, 1914–1918
         </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #222222; font-style: italic; font-weight: 600;">
+        <div style="font-family: 'Georgia', serif; font-size: 9.5pt; color: #222222; font-style: italic; font-weight: 600;">
           Injuries, Treatment and the Trenches in the British Sector
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined) -->
-      <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="width: 100%; height: 88mm; object-fit: cover; object-position: center 25%; display: block; margin: 0 auto;">
+      <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Uncropped Full Canvas) -->
+      <div style="margin: 2px 0 4px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="display: flex; justify-content: center; align-items: center; background: #fafafa; padding: 2px 0;">
+          <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="height: 104mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #000000; border-radius: 2px; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">
+        </div>
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
           <span><strong>Primary Visual Evidence:</strong> <em>Stretcher Bearers of the RAMC Lifting a Wounded Man out of a Trench</em> &bull; Gilbert Rogers (c. 1919)</span>
           <span style="font-weight: 700;">OFFICIAL EDEXCEL SOURCE ARCHIVE &bull; IWM ART 2485 / RAMC HISTORIC COLLECTION</span>
@@ -1792,7 +1794,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Edexcel Paper 1 Section A Specification Overview & Exam Strategy -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 7px 8px; background: #fbfbfb; margin: 4px 0 7px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fbfbfb; margin: 3px 0 4px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
         <div style="border-right: 1px solid #000000; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
             1. Feature Drills [4m]
@@ -1837,7 +1839,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 8.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 5.1: The Theatre of War: The British Sector, Trench Geography &amp; Battles
                 </div>
@@ -1853,7 +1855,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 8.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 5.2: The Trench Environment: Mud, Vermin &amp; Non-Combat Illnesses
                 </div>
@@ -1869,7 +1871,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 8.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 5.3: Battlefield Trauma: High Explosive Shrapnel, Gas Attacks &amp; Infection
                 </div>
@@ -1885,7 +1887,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 8.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 5.4: The Chain of Evacuation: Stretcher Bearers, RAP, Dressing Stations &amp; CCS
                 </div>
@@ -1901,7 +1903,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 8.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 5.5: Surgical Breakthroughs: The Thomas Splint, Wound Debridement &amp; Mobile X-Rays
                 </div>
@@ -1917,7 +1919,7 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr>
-              <td style="padding: 8.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
                   Key Topic 5.6: Lifesaving Innovations: Blood Storage, Brain Surgery &amp; Plastic Reconstruction
                 </div>
