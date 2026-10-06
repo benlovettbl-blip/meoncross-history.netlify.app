@@ -7684,6 +7684,175 @@ export function renderLesson(lesson) {
           gcseHtml += `<div style="margin-top: 15px;"><button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="gcse-model-src"><i class="fa-solid fa-check-double"></i> Reveal Model Answer</button></div>`;
           gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(gcseModel)}</div>`;
         }
+      } else if (lesson.gcse_task.question || lesson.gcse_task.prompt) {
+        const gt = lesson.gcse_task;
+        const qText = gt.question || gt.prompt || '';
+        const qNum = gt.qNum ? `Q${gt.qNum}. ` : '';
+        const typeStr = (gt.type || '').toLowerCase();
+        let tariffBadge = 'GCSE Exam Practice';
+        if (typeStr.includes('12_mark') || qText.includes('12 marks')) {
+          tariffBadge = 'Edexcel Paper 1: Explain Why [12 Marks]';
+        } else if (
+          typeStr.includes('16_mark') ||
+          qText.includes('16 marks') ||
+          qText.includes('16+4 marks')
+        ) {
+          tariffBadge = 'Edexcel Paper 1: Evaluative Essay [16+4 Marks]';
+        } else if (typeStr.includes('4_mark') || qText.includes('4 marks')) {
+          tariffBadge = 'Edexcel GCSE: Explain One Feature [4 Marks]';
+        } else if (gt.tariff) {
+          tariffBadge = gt.tariff;
+        }
+
+        const stimulusList = Array.isArray(gt.stimulus) ? gt.stimulus : [];
+        const structureStrip = Array.isArray(gt.structure_strip) ? gt.structure_strip : [];
+        const rawConnectives = gt.causal_connectives || gt.connective_bank || [];
+        const connectives = Array.isArray(rawConnectives) ? rawConnectives : [];
+        const vocabList = Array.isArray(gt.word_bank)
+          ? gt.word_bank
+          : Array.isArray(lesson.vocab)
+            ? lesson.vocab.map((v) => (typeof v === 'object' ? v.term : v)).filter(Boolean)
+            : [];
+        const modelAns = gt.model_answer || gt.model || '';
+
+        gcseHtml += `
+          <div class="gcse-exam-task-box" style="background: #ffffff; border: 2px solid #1e3a8a; border-radius: 10px; padding: 22px; margin-bottom: 25px; box-shadow: 0 4px 14px rgba(30, 58, 138, 0.08);">
+            <!-- Card Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+              <h4 style="margin: 0; color: #1e3a8a; font-size: 1.18rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-pen-nib" style="color: #2563eb;"></i>
+                <span>${qNum}Edexcel Exam Practice</span>
+              </h4>
+              <span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 800; padding: 4px 12px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-award" style="color: #93c5fd;"></i> ${tariffBadge}
+              </span>
+            </div>
+
+            <!-- Question Stem -->
+            <div style="background: #f8fafc; border-left: 4px solid #1e3a8a; padding: 14px 18px; border-radius: 6px; margin-bottom: 16px;">
+              <div style="font-size: 1.1rem; font-weight: 700; color: #0f172a; line-height: 1.5; margin-bottom: ${stimulusList.length > 0 ? '12px' : '0'};">
+                ${formatBold(qText)}
+              </div>
+              ${
+                stimulusList.length > 0
+                  ? `
+                <div style="background: #ffffff; border: 1.2px solid #cbd5e1; border-radius: 6px; padding: 10px 14px;">
+                  <div style="font-size: 0.8rem; font-weight: 800; color: #475569; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-circle-info" style="color: #3b82f6;"></i> Edexcel Stimulus Points (You must also use information of your own):
+                  </div>
+                  <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    ${stimulusList
+                      .map(
+                        (s) =>
+                          `<span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; font-size: 0.88rem; font-weight: 600; padding: 4px 10px; border-radius: 4px;">• ${s}</span>`,
+                      )
+                      .join('')}
+                  </div>
+                </div>
+              `
+                  : ''
+              }
+            </div>
+
+            <!-- Key Disciplinary Word Bank -->
+            ${
+              vocabList.length > 0
+                ? `
+              <div style="margin-bottom: 16px; background: #faf5ff; border: 1.2px solid #e9d5ff; border-radius: 8px; padding: 12px 16px;">
+                <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #7e22ce; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-spell-check"></i> GCSE Key Vocabulary Bank (Incorporate into your response):
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  ${vocabList
+                    .map(
+                      (w) =>
+                        `<span style="background: #ffffff; border: 1px solid #d8b4fe; color: #6b21a8; font-size: 0.85rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; box-shadow: 0 1px 2px rgba(107,33,168,0.06);">${w}</span>`,
+                    )
+                    .join('')}
+                </div>
+              </div>
+            `
+                : ''
+            }
+
+            <!-- Analytical Structure Strip -->
+            ${
+              structureStrip.length > 0
+                ? `
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #0369a1; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-layer-group"></i> Analytical Structure Strip (Paragraph Breakdown):
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
+                  ${structureStrip
+                    .map(
+                      (st, sIdx) => `
+                    <div style="background: #f0f9ff; border: 1.2px solid #bae6fd; border-radius: 6px; padding: 10px 12px;">
+                      <div style="font-size: 0.8rem; font-weight: 800; color: #0369a1; text-transform: uppercase; margin-bottom: 4px; border-bottom: 1px solid #e0f2fe; padding-bottom: 3px;">
+                        ${st.para || `Paragraph ${sIdx + 1}`}
+                      </div>
+                      <div style="font-size: 0.85rem; color: #1e293b; line-height: 1.4;">
+                        ${st.focus || st.detail || ''}
+                      </div>
+                    </div>
+                  `,
+                    )
+                    .join('')}
+                </div>
+              </div>
+            `
+                : ''
+            }
+
+            <!-- Causal Connectives & Sentence Starters -->
+            ${
+              connectives.length > 0
+                ? `
+              <div style="margin-bottom: 16px; background: #f0fdf4; border: 1.2px solid #bbf7d0; border-radius: 8px; padding: 12px 16px;">
+                <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #15803d; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-pen-fancy"></i> Causal Connective Bank &amp; Tiered Sentence Starters:
+                </div>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                  ${connectives
+                    .map(
+                      (c) =>
+                        `<span style="background: #ffffff; border: 1px solid #86efac; color: #166534; font-size: 0.82rem; font-style: italic; padding: 4px 10px; border-radius: 4px;">&ldquo;${c}&rdquo;</span>`,
+                    )
+                    .join('')}
+                </div>
+              </div>
+            `
+                : ''
+            }
+
+            <!-- Student Response Textarea -->
+            <div style="margin-bottom: 14px;">
+              <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">
+                Your Examination Response:
+              </label>
+              <textarea class="student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 240px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="Write your full exam response here..." oninput="if(window.updateProgress) window.updateProgress()"></textarea>
+            </div>
+
+            <!-- Model Answer Reveal -->
+            ${
+              modelAns
+                ? `
+              <div style="margin-top: 14px;">
+                <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="gcse-model-task-${lesson.id}">
+                  <i class="fa-solid fa-check-double"></i> Reveal Examiner Model Answer
+                </button>
+                <div id="gcse-model-task-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 14px; background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 8px; padding: 16px; font-size: 0.95rem; line-height: 1.6; color: #0f172a;">
+                  <div style="font-weight: 800; color: #1e3a8a; margin-bottom: 8px; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-award"></i> Examiner-Grade Model Answer:
+                  </div>
+                  <div>${formatBold(modelAns)}</div>
+                </div>
+              </div>
+            `
+                : ''
+            }
+          </div>
+        `;
       }
     }
 
