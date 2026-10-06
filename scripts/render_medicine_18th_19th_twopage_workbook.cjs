@@ -1313,9 +1313,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       const marginContent = isFirst
         ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
         : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
-        : `&nbsp;`;
+      const linePrompt = `&nbsp;`;
       return `
         <div class="lined-row">
           <div class="lined-margin-cell">${marginContent}</div>
@@ -1332,7 +1330,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
           ${cfg.title}
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+          Edexcel Paper 1 &bull; Extended Writing Practice
         </span>
       </div>
 
@@ -1354,9 +1352,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       const marginContent = isFirst
         ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
         : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
-        : `&nbsp;`;
+      const linePrompt = `&nbsp;`;
       return `
         <div class="lined-row">
           <div class="lined-margin-cell">${marginContent}</div>
