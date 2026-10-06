@@ -7685,37 +7685,52 @@ export function renderLesson(lesson) {
           gcseHtml += `<div id="gcse-model-src" class="scaffold-box model-box" style="display:none; margin-top: 15px;">${formatBold(gcseModel)}</div>`;
         }
       } else if (lesson.gcse_task.question || lesson.gcse_task.prompt) {
-        const gt = lesson.gcse_task;
-        const qText = gt.question || gt.prompt || '';
-        const qNum = gt.qNum ? `Q${gt.qNum}. ` : '';
-        const typeStr = (gt.type || '').toLowerCase();
-        let tariffBadge = 'GCSE Exam Practice';
-        if (typeStr.includes('12_mark') || qText.includes('12 marks')) {
-          tariffBadge = 'Edexcel Paper 1: Explain Why [12 Marks]';
-        } else if (
-          typeStr.includes('16_mark') ||
-          qText.includes('16 marks') ||
-          qText.includes('16+4 marks')
-        ) {
-          tariffBadge = 'Edexcel Paper 1: Evaluative Essay [16+4 Marks]';
-        } else if (typeStr.includes('4_mark') || qText.includes('4 marks')) {
-          tariffBadge = 'Edexcel GCSE: Explain One Feature [4 Marks]';
-        } else if (gt.tariff) {
-          tariffBadge = gt.tariff;
-        }
+        const renderGcseExamCard = (gt, cardSuffix = '') => {
+          const qText = gt.question || gt.prompt || '';
+          const qNum = gt.qNum ? `Q${gt.qNum}. ` : '';
+          const typeStr = (gt.type || '').toLowerCase();
+          let tariffBadge = 'GCSE Exam Practice';
+          if (gt.tariff) {
+            tariffBadge = gt.tariff;
+          } else if (typeStr.includes('12_mark') || qText.includes('12 marks')) {
+            tariffBadge = 'Edexcel Paper 1: Explain Why [12 Marks]';
+          } else if (
+            typeStr.includes('16_mark') ||
+            qText.includes('16 marks') ||
+            qText.includes('16+4 marks')
+          ) {
+            tariffBadge = 'Edexcel Paper 1: Evaluative Essay [16+4 Marks]';
+          } else if (typeStr.includes('difference') || qText.toLowerCase().includes('different')) {
+            tariffBadge = 'Edexcel Paper 1: Explain One Difference [4 Marks]';
+          } else if (typeStr.includes('similarity') || qText.toLowerCase().includes('similar')) {
+            tariffBadge = 'Edexcel Paper 1: Explain One Similarity [4 Marks]';
+          } else if (typeStr.includes('4_mark') || qText.includes('4 marks')) {
+            tariffBadge = 'Edexcel GCSE: Explain One Feature [4 Marks]';
+          }
 
-        const stimulusList = Array.isArray(gt.stimulus) ? gt.stimulus : [];
-        const structureStrip = Array.isArray(gt.structure_strip) ? gt.structure_strip : [];
-        const rawConnectives = gt.causal_connectives || gt.connective_bank || [];
-        const connectives = Array.isArray(rawConnectives) ? rawConnectives : [];
-        const vocabList = Array.isArray(gt.word_bank)
-          ? gt.word_bank
-          : Array.isArray(lesson.vocab)
-            ? lesson.vocab.map((v) => (typeof v === 'object' ? v.term : v)).filter(Boolean)
-            : [];
-        const modelAns = gt.model_answer || gt.model || '';
+          const stimulusList = Array.isArray(gt.stimulus) ? gt.stimulus : [];
+          const structureStrip = Array.isArray(gt.structure_strip) ? gt.structure_strip : [];
+          const rawConnectives =
+            gt.causal_connectives || gt.connective_bank || gt.sentence_stems || gt.stems || [];
+          const connectives = Array.isArray(rawConnectives) ? rawConnectives : [];
+          const vocabList = Array.isArray(gt.word_bank)
+            ? gt.word_bank
+            : Array.isArray(gt.vocab_bank)
+              ? gt.vocab_bank
+              : Array.isArray(lesson.vocab)
+                ? lesson.vocab.map((v) => (typeof v === 'object' ? v.term : v)).filter(Boolean)
+                : [];
+          const modelAns = gt.model_answer || gt.model || '';
+          const minHeight =
+            typeStr.includes('12_mark') ||
+            typeStr.includes('16_mark') ||
+            qText.includes('12 marks') ||
+            qText.includes('16 marks')
+              ? '240px'
+              : '140px';
+          const cardId = `gcse-model-task-${lesson.id}${cardSuffix ? '-' + cardSuffix : ''}`;
 
-        gcseHtml += `
+          return `
           <div class="gcse-exam-task-box" style="background: #ffffff; border: 2px solid #1e3a8a; border-radius: 10px; padding: 22px; margin-bottom: 25px; box-shadow: 0 4px 14px rgba(30, 58, 138, 0.08);">
             <!-- Card Header -->
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; border-bottom: 2px solid #e0f2fe; padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
@@ -7753,6 +7768,20 @@ export function renderLesson(lesson) {
                   : ''
               }
             </div>
+
+            <!-- Pedagogical Guidance / Clue Box (if present) -->
+            ${
+              gt.hint || gt.clue
+                ? `
+              <div style="margin-bottom: 16px; background: #fffbeb; border: 1.2px solid #fde68a; border-left: 4px solid #f59e0b; border-radius: 6px; padding: 12px 16px;">
+                <div style="font-size: 0.8rem; font-weight: 800; text-transform: uppercase; color: #b45309; letter-spacing: 0.5px; margin-bottom: 4px; display: flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Pedagogical Examination Guidance &amp; Clue:
+                </div>
+                <div style="font-size: 0.92rem; color: #78350f; line-height: 1.5;">${formatBold(gt.hint || gt.clue)}</div>
+              </div>
+            `
+                : ''
+            }
 
             <!-- Key Disciplinary Word Bank -->
             ${
@@ -7830,7 +7859,7 @@ export function renderLesson(lesson) {
               <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #334155; margin-bottom: 6px;">
                 Your Examination Response:
               </label>
-              <textarea class="student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 240px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="Write your full exam response here..." oninput="if(window.updateProgress) window.updateProgress()"></textarea>
+              <textarea class="student-answer-input" style="width: 100%; box-sizing: border-box; min-height: ${minHeight}; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="Write your full exam response here..." oninput="if(window.updateProgress) window.updateProgress()"></textarea>
             </div>
 
             <!-- Model Answer Reveal -->
@@ -7838,10 +7867,10 @@ export function renderLesson(lesson) {
               modelAns
                 ? `
               <div style="margin-top: 14px;">
-                <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="gcse-model-task-${lesson.id}">
+                <button class="btn btn-pedagogy btn-pedagogy-sm btn-pedagogy-model" data-action="toggle-element" data-target-id="${cardId}">
                   <i class="fa-solid fa-check-double"></i> Reveal Examiner Model Answer
                 </button>
-                <div id="gcse-model-task-${lesson.id}" class="scaffold-box model-box" style="display:none; margin-top: 14px; background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 8px; padding: 16px; font-size: 0.95rem; line-height: 1.6; color: #0f172a;">
+                <div id="${cardId}" class="scaffold-box model-box" style="display:none; margin-top: 14px; background: #f8fafc; border: 1.5px solid #94a3b8; border-radius: 8px; padding: 16px; font-size: 0.95rem; line-height: 1.6; color: #0f172a;">
                   <div style="font-weight: 800; color: #1e3a8a; margin-bottom: 8px; text-transform: uppercase; font-size: 0.82rem; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
                     <i class="fa-solid fa-award"></i> Examiner-Grade Model Answer:
                   </div>
@@ -7853,6 +7882,12 @@ export function renderLesson(lesson) {
             }
           </div>
         `;
+        };
+
+        if (lesson.four_mark_task) {
+          gcseHtml += renderGcseExamCard(lesson.four_mark_task, 'q3');
+        }
+        gcseHtml += renderGcseExamCard(lesson.gcse_task, 'q4');
       }
     }
 

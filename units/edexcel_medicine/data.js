@@ -6851,24 +6851,29 @@ export const unitData = {
       },
       timeline_anchor: [
         {
+          date: 'c.1700–1850s',
+          title: 'Spontaneous Generation & Miasma Orthodoxy',
+          desc: 'Anti-contagionist doctors believe disease generates microbes spontaneously from decaying matter, and foul miasma air causes epidemic disease across industrial cities.',
+        },
+        {
           date: '1861',
           title: 'Louis Pasteur Publishes Germ Theory',
-          desc: 'French chemist Louis Pasteur uses swan-neck flasks to disprove spontaneous generation, proving that airborne microbes cause fermentation, decay, and human contagious disease.',
+          desc: 'French chemist Louis Pasteur uses swan-neck flasks to prove that airborne microbes cause decay and fermentation, scientifically disproving spontaneous generation.',
         },
         {
-          date: '1876',
-          title: 'Robert Koch Isolates Anthrax Microbe',
-          desc: 'German country doctor Robert Koch identifies the specific rod-shaped bacterium causing anthrax in cattle, establishing pure culture and microphotography techniques.',
+          date: '1867–1876',
+          title: 'British Scepticism & Tyndall’s Dust Lectures',
+          desc: 'Prominent British physicians (Dr Bastian) reject Pasteur as a "mere chemist", insisting germs are a symptom not cause, until John Tyndall demonstrates airborne bacteria in London.',
         },
         {
-          date: '1882',
-          title: 'Robert Koch Discovers Tuberculosis Bacillus',
-          desc: "Koch uses industrial methyl violet staining and solid agar jelly plates to isolate the bacterium causing tuberculosis, Britain's greatest killer disease.",
+          date: '1876–1882',
+          title: 'Robert Koch Isolates Anthrax & Tuberculosis',
+          desc: 'Robert Koch invents solid agar jelly culture and industrial methyl violet staining, isolating the specific bacteria causing anthrax (1876) and tuberculosis (1882).',
         },
         {
-          date: '1883',
-          title: 'Koch Identifies Cholera Bacterium in India',
-          desc: 'Koch travels to Egypt and India during cholera outbreaks, successfully isolating the comma-shaped Vibrio cholerae bacterium in drinking water supplies.',
+          date: '1883–1890',
+          title: 'Koch’s 4 Postulates & Overthrow of Miasma',
+          desc: 'Koch isolates the cholera microbe and establishes the 4 Postulates; high-resolution photomicrography finally forces British medicine to abandon miasma theory forever.',
         },
       ],
       delivery_plan: {
@@ -7096,6 +7101,18 @@ export const unitData = {
       ],
       tasks: [
         {
+          type: 'written',
+          tariff: 'Question 3: Explain One Difference [4 marks]',
+          topic: 'Edexcel Paper 1 (Section B) • Question 3 Practice',
+          question:
+            'Explain one way in which ideas about the cause of disease in the late nineteenth century (c1860–c1890) were different from ideas in the Renaissance (c1500–c1700). [4 marks]',
+          clue: 'Contrast Pasteur and Koch’s laboratory discovery that specific microscopic bacteria cause disease with the persistent Renaissance belief in miasma and spontaneous generation.',
+          starter:
+            'One way ideas about the cause of disease were different was... In the Renaissance (c1500–c1700), physicians believed... In contrast, in the late nineteenth century (c1860–c1890), Pasteur and Koch...',
+          model:
+            'One way ideas about the cause of disease were different was the understanding of what actually caused sickness. In the Renaissance (c1500–c1700), physicians still believed in ancient, unproven theories like **miasma** (bad air emanating from decaying organic matter) and **spontaneous generation**, believing that rotting filth naturally created disease. In contrast, in the late nineteenth century (c1860–c1890), Louis Pasteur’s **Germ Theory (1861)** and Robert Koch’s work on specific bacteria proved that specific living microorganisms (bacteria) in the air and water entered the body to cause disease, such as *Mycobacterium tuberculosis* in 1882. Therefore, medical ideas changed completely from vague beliefs in poisonous air to laboratory-proven biological science that identified specific bacterial pathogens.',
+        },
+        {
           type: 'two_sided_argument',
           topic: 'Pasteur vs Koch in Revolutionizing Medical Science',
           question:
@@ -7151,6 +7168,29 @@ export const unitData = {
       ],
       vocab_cloze_text:
         'For centuries, physicians believed in [Spontaneous Generation], assuming that decaying organic matter created microbes out of nothing. In 1861, French chemist [Louis Pasteur] published his groundbreaking [Germ Theory], using swan-neck flasks to prove that airborne microbes caused decay. However, British doctors resisted because Pasteur was a chemist. The deadlock was broken by German physician [Robert Koch], who grew pure cultures on [Agar Jelly] and stained microbes with synthetic [Aniline Dyes]. In 1882, Koch isolated the bacterium causing [Tuberculosis], proving specific microbes caused specific diseases.',
+      four_mark_task: {
+        type: 'difference_4_marks',
+        tariff: 'Edexcel Paper 1: Explain One Difference [4 Marks]',
+        question:
+          'Explain one way in which ideas about the cause of disease in the late nineteenth century (c1860–c1890) were different from ideas in the Renaissance (c1500–c1700). [4 marks]',
+        hint: 'Contrast Pasteur and Koch’s laboratory discovery that specific microbes cause disease with the persistent Renaissance belief in miasma and spontaneous generation.',
+        sentence_stems: [
+          'One way ideas about causes differed was...',
+          'In the Renaissance period (c1500–c1700), physicians believed...',
+          'In contrast, in the late nineteenth century, Pasteur and Koch proved...',
+          'Therefore, medical ideas changed from vague beliefs in poisonous air to biological science...',
+        ],
+        word_bank: [
+          'Spontaneous Generation',
+          'Miasma Theory',
+          'Germ Theory (1861)',
+          'Louis Pasteur',
+          'Robert Koch',
+          'Mycobacterium tuberculosis',
+        ],
+        model_answer:
+          'One way ideas about the cause of disease were different was the understanding of what actually caused sickness. In the Renaissance (c1500–c1700), physicians still believed in ancient, unproven theories like **miasma** (bad air emanating from decaying organic matter) and **spontaneous generation**, believing that rotting filth naturally created disease. In contrast, in the late nineteenth century (c1860–c1890), Louis Pasteur’s **Germ Theory (1861)** and Robert Koch’s work on specific bacteria proved that specific living microorganisms (bacteria) in the air and water entered the body to cause disease, such as *Mycobacterium tuberculosis* in 1882. Therefore, medical ideas changed completely from vague beliefs in poisonous air to laboratory-proven biological science that identified specific bacterial pathogens.',
+      },
       gcse_task: {
         type: 'explain_why_12_marks',
         question:

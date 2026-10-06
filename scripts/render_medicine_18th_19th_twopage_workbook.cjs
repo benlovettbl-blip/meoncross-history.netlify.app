@@ -1145,7 +1145,7 @@ ${flexTaskLines}
     }).join('');
 
     const q3ResponseLines = Array.from(
-      { length: 5 },
+      { length: 7 },
       () => `
         <div class="task-line" style="height: 6.8mm; min-height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
     ).join('');
@@ -1185,15 +1185,9 @@ ${flexTaskLines}
             [4 MARKS &bull; 5 MINS]
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
           ${cfg.fourMark.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMark.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Sentence Stems:</strong> ${cfg.fourMark.stems}
-        </div>
         <div class="ruled-lines-block" style="display: flex; flex-direction: column; margin-bottom: 2px;">
 ${q3ResponseLines}
         </div>
