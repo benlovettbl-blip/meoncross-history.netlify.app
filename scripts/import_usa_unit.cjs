@@ -1722,7 +1722,7 @@ function generatePaperHtml(paper, mockMeta) {
       <ul style="font-size: 13px; line-height: 1.6; margin: 0; padding-left: 20px;">
         <li>Use black ink or ball-point pen.</li>
         <li>Answer ALL questions in Section A and Section B.</li>
-        <li>Time allowed: <strong>1 hour 20 minutes</strong> (52 marks + 4 SPaG = 56 marks total).</li>
+        <li>Time allowed: <strong>1 hour 30 minutes</strong> (52 marks + 4 SPaG = 56 marks total).</li>
       </ul>
     </div>
 

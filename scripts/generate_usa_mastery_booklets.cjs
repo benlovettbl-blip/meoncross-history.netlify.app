@@ -2268,7 +2268,7 @@ function renderBookletHtml(ktKey, meta) {
             <div class="exam-header-box">
                 <div class="exam-header-left">
                     <div class="exam-date">History · Paper 3: Modern Depth Study</div>
-                    <div class="exam-time">Time: 1 hour 20 minutes (Complete Mock) · 52 Marks (+4 SPaG)</div>
+                    <div class="exam-time">Time: 1 hour 30 minutes (Complete Mock) · 52 Marks (+4 SPaG)</div>
                     <div class="exam-subject">Option 33: Conflict at Home and Abroad: the USA, 1954–75</div>
                     <div class="exam-booklet">${meta.title}</div>
                     <div class="exam-subtopic">Comprehensive 11-Page Specification Practice Pack · ${meta.dates}</div>
@@ -3389,7 +3389,7 @@ function renderBookletHtml(ktKey, meta) {
     drawer.style.right = '0px';
   };
 
-  const INITIAL_SECONDS = 80 * 60; // 1 hour 20 minutes = 4800s
+  const INITIAL_SECONDS = 90 * 60; // 1 hour 30 minutes = 5400s
   let totalSeconds = INITIAL_SECONDS;
   let timerInterval = null;
   let isRunning = false;
@@ -3546,7 +3546,7 @@ function renderBookletHtml(ktKey, meta) {
   });
 
   resetBtn.addEventListener('click', () => {
-    if (confirm('Reset the exam clock back to 1 hour 20 minutes?')) {
+    if (confirm('Reset the exam clock back to 1 hour 30 minutes?')) {
       pauseTimer();
       totalSeconds = INITIAL_SECONDS;
       milestonesFired.sectionA = false;

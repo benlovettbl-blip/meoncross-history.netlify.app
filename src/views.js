@@ -1904,6 +1904,20 @@ window.toggleHubExamClock = function (action, defaultMinutes = 80) {
             `;
             alertBanner.style.display = 'block';
           }
+        } else if (state.initialSeconds === 5400 && state.totalSeconds === 3600) {
+          if (state.soundEnabled) playDoubleChime();
+          if (alertBanner) {
+            alertBanner.innerHTML = `
+              <div style="background: #000000; color: #ffffff; padding: 10px 18px; border-radius: 4px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 2px solid #ffffff;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <span style="background: #ffffff; color: #000000; padding: 2px 6px; font-weight: 800; font-size: 0.75rem; text-transform: uppercase;">PACING NOTICE</span>
+                  <span><strong>SECTION TRANSITION:</strong> Section A complete &bull; 60m remaining for Section B (Source Enquiry &amp; Interpretations)</span>
+                </div>
+                <button type="button" onclick="this.parentElement.parentElement.style.display='none'" style="background: #374151; border: 1px solid #9ca3af; color: white; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-size: 0.8rem; font-weight: 700;">Dismiss</button>
+              </div>
+            `;
+            alertBanner.style.display = 'block';
+          }
         }
 
         // 5-Minute warning check
@@ -2166,68 +2180,67 @@ function getHubTimingStrategyRows(unitId) {
         actionLabel: '16+4 Mark Essay (26m)',
       },
     ];
-  } else {
-    // Paper 3 Modern Depth Study: USA 1954-75 & Weimar and Nazi Germany
+    // Paper 3 Modern Depth Study: USA 1954-75 & Weimar and Nazi Germany (90 Mins Total)
     rows = [
       {
         tariff: '4 Marks',
         type: 'Give two things you can infer from Source A... (Sec A: Q1)',
-        totalTime: '5 mins',
+        totalTime: '6 mins',
         planSplit: '<strong>1 min</strong> identify quotes and details in Source A',
-        writeSplit: '<strong>4 mins</strong> 2 separate inference + evidence pairs (2× 2 marks)',
-        actionMins: 5,
-        actionLabel: '4-Mark Inference (5m)',
+        writeSplit: '<strong>5 mins</strong> 2 separate inference + evidence pairs (2× 2 marks)',
+        actionMins: 6,
+        actionLabel: '4-Mark Inference (6m)',
       },
       {
         tariff: '12 Marks',
         type: 'Explain why... (Causation / Analytical Account - Sec A: Q2)',
-        totalTime: '18 mins',
-        planSplit: '<strong>3 mins</strong> select 3 distinct causes (2 stimulus + 1 own point)',
-        writeSplit: '<strong>15 mins</strong> 3 PEEL paragraphs with sustained causal links',
-        actionMins: 18,
-        actionLabel: '12-Mark Causation (18m)',
+        totalTime: '24 mins',
+        planSplit: '<strong>4 mins</strong> select 3 distinct causes (2 stimulus + 1 own point)',
+        writeSplit: '<strong>20 mins</strong> 3 sustained PEEL paragraphs with causal links',
+        actionMins: 24,
+        actionLabel: '12-Mark Causation (24m)',
       },
       {
         tariff: '8 Marks',
         type: 'How useful are Sources B and C for an enquiry into... (Sec B: Q3a)',
-        totalTime: '12 mins',
+        totalTime: '14 mins',
         planSplit: '<strong>2 mins</strong> annotate provenance (NOP) + own knowledge context',
         writeSplit:
-          '<strong>10 mins</strong> 2 balanced paragraphs evaluating utility on content and NOP',
-        actionMins: 12,
-        actionLabel: '8-Mark Utility (12m)',
+          '<strong>12 mins</strong> 2 balanced paragraphs evaluating utility on content and NOP',
+        actionMins: 14,
+        actionLabel: '8-Mark Utility (14m)',
       },
       {
         tariff: '4 Marks',
         type: 'What is the main difference between Interpretations 1 and 2? (Sec B: Q3b)',
-        totalTime: '5 mins',
+        totalTime: '6 mins',
         planSplit:
           '<strong>1 min</strong> compare historical perspectives in Interpretations 1 & 2',
         writeSplit:
-          '<strong>4 mins</strong> identify primary divergence supported by direct quotations',
-        actionMins: 5,
-        actionLabel: '4-Mark Difference (5m)',
+          '<strong>5 mins</strong> identify primary divergence supported by direct quotations',
+        actionMins: 6,
+        actionLabel: '4-Mark Difference (6m)',
       },
       {
         tariff: '4 Marks',
         type: 'Suggest one reason why Interpretations 1 and 2 give different views (Sec B: Q3c)',
-        totalTime: '5 mins',
+        totalTime: '6 mins',
         planSplit: '<strong>1 min</strong> match with Sources B/C or author focus/emphasis',
         writeSplit:
-          '<strong>4 mins</strong> explain reason for divergence (different sources/motives)',
-        actionMins: 5,
-        actionLabel: '4-Mark Reason (5m)',
+          '<strong>5 mins</strong> explain reason for divergence (different sources/motives)',
+        actionMins: 6,
+        actionLabel: '4-Mark Reason (6m)',
       },
       {
         tariff: '16+4 Marks',
         type: 'How far do you agree with Interpretation 2... (Sec B: Q3d)',
-        totalTime: '27 mins',
+        totalTime: '34 mins',
         planSplit:
-          '<strong>5 mins</strong> define criteria + balance views against Interpretation 1',
+          '<strong>6 mins</strong> define criteria + balance views against Interpretation 1',
         writeSplit:
-          '<strong>22 mins</strong> Intro + evaluate Int 2 + evaluate Int 1/context + Judgement + SPaG',
-        actionMins: 27,
-        actionLabel: '16+4 Mark Essay (27m)',
+          '<strong>28 mins</strong> Intro + evaluate Int 2 + evaluate Int 1/context + Judgement + SPaG',
+        actionMins: 34,
+        actionLabel: '16+4 Mark Essay (34m)',
       },
     ];
   }
@@ -2288,10 +2301,10 @@ export async function renderMockExamsView() {
   } else if (unitId === 'weimar_nazi_germany') {
     specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939';
     specPaperRef = '1HI0/31';
-    defaultTime = '1 Hour 20 Mins';
+    defaultTime = '1 Hour 30 Mins';
     defaultMarks = '52 Marks + 4 SPaG';
     pacingSummary =
-      'Section A: 28 mins (Q1 5m, Q2 18m) &bull; Section B: 52 mins (Q3a 12m, Q3b 5m, Q3c 5m, Q3d 27m)';
+      'Section A: 30 mins (Q1 6m, Q2 24m) &bull; Section B: 60 mins (Q3a 14m, Q3b 6m, Q3c 6m, Q3d 34m)';
   } else if (unitId === 'eee') {
     specTitle = 'Paper 2: Early Elizabethan England, 1558–1588';
     specPaperRef = '1HI0/B4';
@@ -2308,12 +2321,17 @@ export async function renderMockExamsView() {
   } else if (unitId === 'usa') {
     specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75';
     specPaperRef = '1HI0/33';
-    defaultTime = '1 Hour 20 Mins';
+    defaultTime = '1 Hour 30 Mins';
     defaultMarks = '52 Marks + 4 SPaG';
-    pacingSummary = 'Section A (Civil Rights): 28 mins &bull; Section B (Vietnam): 52 mins';
+    pacingSummary =
+      'Section A (Civil Rights): 30 mins (Q1 6m, Q2 24m) &bull; Section B (Vietnam): 60 mins (Q3a 14m, Q3b 6m, Q3c 6m, Q3d 34m)';
   }
 
-  const defaultMins = defaultTime.includes('55') ? 55 : 80;
+  const defaultMins = defaultTime.includes('55')
+    ? 55
+    : defaultTime.includes('30') || defaultTime.includes('90')
+      ? 90
+      : 80;
   if (window.hubExamTimerState && window.hubExamTimerState.interval) {
     clearInterval(window.hubExamTimerState.interval);
   }
@@ -2335,7 +2353,7 @@ export async function renderMockExamsView() {
               PEARSON EXAM HALL CLOCK &bull; ${specPaperRef}
             </div>
             <div id="hub-exam-clock-display" style="font-size: 1.95rem; font-weight: 800; font-family: 'Courier New', Courier, monospace; letter-spacing: 2px; color: #ffffff; line-height: 1.05; margin-top: 2px;">
-              ${defaultMins === 55 ? '55:00' : '01:20:00'}
+              ${defaultMins === 55 ? '55:00' : defaultMins === 90 ? '01:30:00' : '01:20:00'}
             </div>
           </div>
           <div style="border-left: 1px solid #374151; padding-left: 16px; font-size: 0.78rem; color: #d1d5db; line-height: 1.4;">

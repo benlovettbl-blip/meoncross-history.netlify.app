@@ -311,7 +311,7 @@ export function renderWorkbooksZone(container, unitData) {
       defaultMarks = '32 Marks';
     } else if (unitId === 'weimar_nazi_germany') {
       specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)';
-      defaultTime = '1 Hour 20 Mins';
+      defaultTime = '1 Hour 30 Mins';
       defaultMarks = '52 Marks + 4 SPaG';
     } else if (unitId === 'eee') {
       specTitle = 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)';
@@ -319,11 +319,11 @@ export function renderWorkbooksZone(container, unitData) {
       defaultMarks = '32 Marks';
     } else if (unitId === 'edexcel_medicine') {
       specTitle = 'Paper 1: Medicine in Britain & Western Front (1HI0/11)';
-      defaultTime = '1 Hour 15 Mins';
+      defaultTime = '1 Hour 20 Mins';
       defaultMarks = '52 Marks + 4 SPaG';
     } else if (unitId === 'usa') {
       specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75 (1HI0/33)';
-      defaultTime = '1 Hour 20 Mins';
+      defaultTime = '1 Hour 30 Mins';
       defaultMarks = '52 Marks + 4 SPaG';
     }
 
