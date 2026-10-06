@@ -255,25 +255,55 @@ window.addEventListener('DOMContentLoaded', async () => {
   });
 
   switchView(view, unit, true).then(() => {
+    const resolveLessonTarget = (paramLesson, unitData) => {
+      if (!unitData || !Array.isArray(unitData.lessons) || unitData.lessons.length === 0) {
+        return { index: -1, lesson: null, id: null };
+      }
+      if (paramLesson !== null && paramLesson !== undefined && String(paramLesson).trim() !== '') {
+        const rawStr = String(paramLesson).trim();
+        // 1. Direct ID match (e.g. 'lesson_3_1', 'lesson_1_1', 'lesson_5_1')
+        let idx = unitData.lessons.findIndex(
+          (l) => l.id && l.id.toLowerCase() === rawStr.toLowerCase(),
+        );
+        if (idx !== -1) {
+          return { index: idx, lesson: unitData.lessons[idx], id: unitData.lessons[idx].id };
+        }
+        // 2. ID prefix match or partial match (e.g. '3_1' -> 'lesson_3_1')
+        idx = unitData.lessons.findIndex(
+          (l) =>
+            l.id &&
+            (l.id.toLowerCase() === `lesson_${rawStr.toLowerCase()}` ||
+              l.id.toLowerCase().endsWith(`_${rawStr.toLowerCase()}`)),
+        );
+        if (idx !== -1) {
+          return { index: idx, lesson: unitData.lessons[idx], id: unitData.lessons[idx].id };
+        }
+        // 3. Title match
+        idx = unitData.lessons.findIndex(
+          (l) => l.title && l.title.toLowerCase().includes(rawStr.toLowerCase()),
+        );
+        if (idx !== -1) {
+          return { index: idx, lesson: unitData.lessons[idx], id: unitData.lessons[idx].id };
+        }
+        // 4. Numeric index handling (supports 1-indexed e.g. 1 -> 0, or 0-indexed 0)
+        if (!isNaN(parseInt(rawStr, 10))) {
+          const num = parseInt(rawStr, 10);
+          idx = num >= 1 && num <= unitData.lessons.length ? num - 1 : num === 0 ? 0 : -1;
+          if (idx !== -1 && unitData.lessons[idx]) {
+            return { index: idx, lesson: unitData.lessons[idx], id: unitData.lessons[idx].id };
+          }
+        }
+      }
+      return { index: -1, lesson: null, id: null };
+    };
+
     if (view === 'lessons' && initialLesson !== null) {
-      let targetIdx = !isNaN(parseInt(initialLesson, 10))
-        ? parseInt(initialLesson, 10) >= 1
-          ? parseInt(initialLesson, 10) - 1
-          : parseInt(initialLesson, 10)
-        : -1;
       const unitDataObj =
         window.currentUnitData ||
         (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
-      if (targetIdx === -1 && unitDataObj && Array.isArray(unitDataObj.lessons)) {
-        targetIdx = unitDataObj.lessons.findIndex(
-          (l) =>
-            l.id === initialLesson ||
-            (l.id && l.id.toLowerCase() === String(initialLesson).toLowerCase()) ||
-            (l.title && l.title.toLowerCase().includes(String(initialLesson).toLowerCase())),
-        );
-      }
-      if (targetIdx !== -1 && typeof window.renderLessonByIndex === 'function') {
-        window.renderLessonByIndex(targetIdx, true);
+      const resolved = resolveLessonTarget(initialLesson, unitDataObj);
+      if (resolved.index !== -1 && typeof window.renderLessonByIndex === 'function') {
+        window.renderLessonByIndex(resolved.index, true);
       }
     }
 
@@ -288,26 +318,29 @@ window.addEventListener('DOMContentLoaded', async () => {
       urlParams.get('view') === 'quiz';
 
     if (isQuizRequested && typeof window.startQuiz === 'function') {
-      let lessonIdx =
-        initialLesson !== null && !isNaN(parseInt(initialLesson, 10))
-          ? parseInt(initialLesson, 10) >= 1
-            ? parseInt(initialLesson, 10) - 1
-            : parseInt(initialLesson, 10)
-          : quizParam === 'kt2'
-            ? 4
-            : quizParam === 'kt3'
-              ? 9
-              : 0;
       const unitData =
         window.currentUnitData ||
         (window.appStore && window.appStore.state && window.appStore.state.activeUnitData);
-      const targetLesson =
-        unitData && unitData.lessons ? unitData.lessons[lessonIdx] || unitData.lessons[0] : null;
-      const lessonId = targetLesson ? targetLesson.id : `lesson_${lessonIdx + 1}`;
+      const resolved = resolveLessonTarget(initialLesson, unitData);
+      let targetLesson = resolved.lesson;
+      let lessonId = resolved.id;
 
-      setTimeout(() => {
-        window.startQuiz(lessonId, true);
-      }, 120);
+      if (
+        !targetLesson &&
+        unitData &&
+        Array.isArray(unitData.lessons) &&
+        unitData.lessons.length > 0
+      ) {
+        const fallbackIdx = quizParam === 'kt2' ? 4 : quizParam === 'kt3' ? 9 : 0;
+        targetLesson = unitData.lessons[fallbackIdx] || unitData.lessons[0];
+        lessonId = targetLesson ? targetLesson.id : `lesson_${fallbackIdx + 1}`;
+      }
+
+      if (lessonId) {
+        setTimeout(() => {
+          window.startQuiz(lessonId, true);
+        }, 120);
+      }
     }
 
     // Direct Emergency Cover Generator Modal Experience
