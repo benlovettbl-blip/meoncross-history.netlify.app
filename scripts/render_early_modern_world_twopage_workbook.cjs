@@ -1236,28 +1236,14 @@ function buildEarlyModernWorldTwoPageWorkbook() {
               .join('')}
           </div>
         </div>
-
-        <!-- Task 2: Core Disciplinary Vocabulary -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #fdfbf7;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #0f172a; letter-spacing: 0.5px;">Task 2: Core Disciplinary Vocabulary</strong>
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; margin-bottom: 2px;">
-            ${cfg.vocabTask.prompt}
-          </div>
-          <div class="auto-fill-lines">
-            <div class="task-line-dotted" style="height: 5.4mm;"></div>
-            <div class="task-line-dotted" style="height: 5.4mm;"></div>
-          </div>
-        </div>
       </div>
 
-      <!-- Task 3 Preparation Bridge Container (Expanded to absorb vertical space) -->
+      <!-- Task 2 Preparation Bridge Container (Expanded to absorb vertical space) -->
       <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 5px 8px; background: #ffffff; margin-bottom: 2px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #1e3a8a; padding-bottom: 2px; margin-bottom: 3px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px;">
-              ${cfg.bridgeTask.title}
+              ${cfg.bridgeTask.title.replace(/^Task\s*3/i, 'Task 2')}
             </strong>
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; margin-bottom: 4px;">
@@ -1318,10 +1304,10 @@ function buildEarlyModernWorldTwoPageWorkbook() {
             </div>
           </div>
 
-          <!-- Task 3 Argument Box (Pushed up directly beneath table, 8 Thick Ruled Lines, Expands to Fill) -->
+          <!-- Task 2 Argument Box (Pushed up directly beneath table, 8 Thick Ruled Lines, Expands to Fill) -->
           <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 3px 7px 4px 7px; background: #ffffff; margin-top: 2px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
             <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; flex-shrink: 0;">
-              ✍️ Task 3: Developing Your Argument: ${(
+              ✍️ Task 2: Developing Your Argument: ${(
                 cfg.bridgeTask.synthesisPrompt ||
                 'Combine your findings into a reasoned historical argument:'
               )
@@ -1378,7 +1364,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Task 4: Historical Skill: ${cfg.skill} &bull; Dual-Source Evidence
+              Task 3: Historical Skill: ${cfg.skill} &bull; Dual-Source Evidence
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               ${cfg.enquiryQuestion}
@@ -1475,7 +1461,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
 
       <!-- Footer Section: Strictly Timeline Mission Box & Page Footer -->
       <div>
-        <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
+        <!-- Timeline Mission Box (Connecting Task 3 back to Pages 2–3) -->
         <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
           <div style="display: flex; align-items: center; gap: 6px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
@@ -1509,7 +1495,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Task 4: Historical Skill: ${cfg.skill} &bull; Historiographical Debate
+              Task 3: Historical Skill: ${cfg.skill} &bull; Historiographical Debate
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               ${cfg.enquiryQuestion}
@@ -1580,7 +1566,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
 
       <!-- Footer Section: Strictly Timeline Mission Box & Page Footer -->
       <div>
-        <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
+        <!-- Timeline Mission Box (Connecting Task 3 back to Pages 2–3) -->
         <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
           <div style="display: flex; align-items: center; gap: 6px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">
@@ -1614,7 +1600,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Task 4: Historical Skill: ${cfg.skill} &bull; Extended Writing
+              Task 3: Historical Skill: ${cfg.skill} &bull; Extended Writing
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 12.0pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.25;">
               ${cfg.enquiryQuestion}
@@ -1659,7 +1645,7 @@ function buildEarlyModernWorldTwoPageWorkbook() {
 
       <!-- Footer Section: Strictly Timeline Mission Box & Page Footer -->
       <div>
-        <!-- Timeline Mission Box (Connecting Task 4 back to Pages 2–3) -->
+        <!-- Timeline Mission Box (Connecting Task 3 back to Pages 2–3) -->
         <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 2.5px 8px; background: #eff6ff; display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
           <div style="display: flex; align-items: center; gap: 6px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;">

@@ -298,6 +298,9 @@ function buildKs3WorkbookHtml(unitConfig) {
     const leftPageNum = idx * 2 + 4;
     const rightPageNum = idx * 2 + 5;
     const cleanEnquiry = getEnquiryQuestion(l);
+    const isEarlyModern = unitConfig.unitId === 'early_modern_world';
+    const bridgeTaskNum = isEarlyModern ? 'Task 2' : 'Task 3';
+    const rightTaskNum = isEarlyModern ? 'Task 3' : 'Task 4';
 
     // LEFT PAGE (VERSO): Do Now, Vocab, Task 3 Dual-Column Extraction
     html += `
@@ -360,6 +363,7 @@ function buildKs3WorkbookHtml(unitConfig) {
 
         <!-- Task 2: Core Disciplinary Vocabulary Container -->
         ${(() => {
+          if (isEarlyModern) return '';
           const vt = l.vocabTask || {};
           const isCloze = vt.type === 'cloze' || Boolean(vt.passage || vt.clozeText);
           const isMapping = vt.type === 'mapping';
@@ -429,7 +433,13 @@ function buildKs3WorkbookHtml(unitConfig) {
           <!-- Header + Instruction -->
           <div style="border-bottom: 1.2px solid #0f172a; padding-bottom: 2px; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #0f172a; text-transform: uppercase;">
-              ${l.bridgeTask?.title ? l.bridgeTask.title.replace(/\[.*?\]\s*/g, '') : 'Task 3: Dual-Column Knowledge Extraction'}
+              ${
+                l.bridgeTask?.title
+                  ? isEarlyModern
+                    ? l.bridgeTask.title.replace(/\[.*?\]\s*/g, '').replace(/^Task\s*3/i, 'Task 2')
+                    : l.bridgeTask.title.replace(/\[.*?\]\s*/g, '')
+                  : `${bridgeTaskNum}: Dual-Column Knowledge Extraction`
+              }
             </strong>
           </div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #334155; margin-bottom: 3px;">
@@ -493,7 +503,7 @@ function buildKs3WorkbookHtml(unitConfig) {
           <!-- Task 3 Argument Box (Pushed up directly beneath table, 8 Thick Ruled Lines, Expands to Fill) -->
           <div style="border: 1.4px solid #cbd5e1; border-radius: 4px; padding: 3px 7px 4px 7px; background: #ffffff; margin-top: 2px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
             <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #0f172a; margin-bottom: 2px; flex-shrink: 0;">
-              ✍️ Task 3: Developing Your Argument: ${(
+              ✍️ ${bridgeTaskNum}: Developing Your Argument: ${(
                 l.bridgeTask?.synthesisPrompt ||
                 'Combine your findings into a reasoned historical argument:'
               )
@@ -550,7 +560,7 @@ function buildKs3WorkbookHtml(unitConfig) {
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Task 4: Historical Skill: ${l.skill} &bull; Dual-Source Evidence
+              ${rightTaskNum}: Historical Skill: ${l.skill} &bull; Dual-Source Evidence
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               Enquiry: ${cleanEnquiry}
@@ -619,7 +629,7 @@ function buildKs3WorkbookHtml(unitConfig) {
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Task 4: Historical Skill: ${l.skill} &bull; Historiographical Debate
+              ${rightTaskNum}: Historical Skill: ${l.skill} &bull; Historiographical Debate
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               Enquiry: ${cleanEnquiry}
@@ -688,7 +698,7 @@ function buildKs3WorkbookHtml(unitConfig) {
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
-              Task 4: Historical Skill: ${l.skill || 'Change & Continuity'} &bull; Extended Writing
+              ${rightTaskNum}: Historical Skill: ${l.skill || 'Change & Continuity'} &bull; Extended Writing
             </div>
             <h3 style="font-family: 'Playfair Display', serif; font-size: 12.0pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.25;">
               Enquiry: ${cleanEnquiry}
