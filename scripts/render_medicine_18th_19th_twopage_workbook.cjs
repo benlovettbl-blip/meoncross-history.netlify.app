@@ -1131,66 +1131,40 @@ ${flexTaskLines}
   </div>
 `;
 
-    // PAGE 3 OF MODULE: LINED WRITING (VERSO) - SECOND PAGE OF WHY / ESSAY (16 LINES) + QUESTION 3 [4 MARKS] AT BOTTOM
-    const continuationLinedRows = Array.from({ length: 16 }, (_, idx) => {
+    // PAGE 3 OF MODULE: LINED WRITING (VERSO) - FULL CONTINUATION PAGE FOR WHY / ESSAY (28 LINES WITH MARGIN)
+    const continuationLinedRows = Array.from({ length: 28 }, (_, idx) => {
       const isFirst = idx === 0;
       const marginContent = isFirst
         ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
         : `&nbsp;`;
       return `
-        <div class="lined-row" style="flex: 1; min-height: 0; display: flex; border-bottom: 1.2px solid #000000; box-sizing: border-box;">
+        <div class="lined-row">
           <div class="lined-margin-cell">${marginContent}</div>
           <div class="lined-content-cell">&nbsp;</div>
         </div>`;
     }).join('');
 
-    const q3ResponseLines = Array.from(
-      { length: 7 },
-      () => `
-        <div class="task-line" style="height: 6.8mm; min-height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
-    ).join('');
-
     html += `
   <div class="page page-container" id="page-${linedLeftPageNum}">
-    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-      <div>
-        <!-- Running Header -->
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-            ${cfg.title}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-            ${cfg.tariff.split(':')[0]} Continued
-          </span>
-        </div>
-
-        <!-- Continuation Prompt -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          Continue your response to ${cfg.tariff.split(':')[0]} below:
-        </div>
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          ${cfg.tariff.split(':')[0]} Continued
+        </span>
       </div>
 
-      <!-- 16 Ruled Lines for Continuation of Why / Essay Question (Fills upper half) -->
-      <div class="lined-page-grid" style="flex: 1; display: flex; flex-direction: column; min-height: 75mm; margin: 1px 0 4px 0; border-top: 1.2px solid #000000;">
+      <!-- Continuation Prompt -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+        Continue your response to ${cfg.tariff.split(':')[0]} below:
+      </div>
+
+      <!-- 28 Ruled Lines with 12mm Left Margin (Full Facing Page for Sustained Essay Writing) -->
+      <div class="lined-page-grid">
         ${continuationLinedRows}
-      </div>
-
-      <!-- Question 3: Similarity / Difference [4 marks] (Authentic Cross-Era Exam Practice at end of 2nd page) -->
-      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
-            [4 MARKS &bull; 5 MINS]
-          </span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          ${cfg.fourMark.question}
-        </p>
-        <div class="ruled-lines-block" style="display: flex; flex-direction: column; margin-bottom: 2px;">
-${q3ResponseLines}
-        </div>
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
@@ -1198,8 +1172,20 @@ ${q3ResponseLines}
   </div>
 `;
 
-    // PAGE 4 OF MODULE: LINED WRITING (RECTO)
-    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
+    // PAGE 4 OF MODULE: LINED WRITING (RECTO) - ESSAY SYNTHESIS & HISTORICAL VERDICT (14 LINES) + QUESTION 3 [4 MARKS] (9 LINES WITH MATCHING MARGIN)
+    const conclusionLinedRows = Array.from({ length: 14 }, (_, idx) => {
+      const isFirst = idx === 0;
+      const marginContent = isFirst
+        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+        : `&nbsp;`;
+      return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">&nbsp;</div>
+        </div>`;
+    }).join('');
+
+    const q3LinedRows = Array.from({ length: 9 }, (_, idx) => {
       const isFirst = idx === 0;
       const marginContent = isFirst
         ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
@@ -1213,17 +1199,46 @@ ${q3ResponseLines}
 
     html += `
   <div class="page page-container" id="page-${linedRightPageNum}">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Running Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.title}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Assessment Synthesis &amp; Question 3
+          </span>
+        </div>
+
+        <!-- Conclusion Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Final analytical evaluation &amp; concluding historical verdict:
+        </div>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsRight}
+      <!-- 14 Ruled Lines for Essay Synthesis / Conclusion (Exact same pitch & 12mm margin) -->
+      <div class="lined-page-grid" style="flex: 1.3; display: flex; flex-direction: column; margin: 1px 0 4px 0; border-top: 1.2px solid #000000;">
+        ${conclusionLinedRows}
+      </div>
+
+      <!-- Question 3: Similarity / Difference [4 marks] (Authentic Cross-Era Exam Practice at end of module) -->
+      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; flex: 1; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
+            [4 MARKS &bull; 5 MINS]
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
+          ${cfg.fourMark.question}
+        </p>
+        <!-- 9 Ruled Lines for Question 3 with Identical 12mm Margin Grid -->
+        <div class="lined-page-grid" style="flex: 1; display: flex; flex-direction: column; margin: 1px 0 0 0; border-top: 1.2px solid #000000;">
+          ${q3LinedRows}
+        </div>
       </div>
 
       ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
