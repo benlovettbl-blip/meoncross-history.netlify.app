@@ -1632,7 +1632,7 @@ allDirs.forEach((unitId) => {
         medieval: '../../units/edexcel_medicine/assets/authentic_medieval.jpg',
         renaissance: '../../units/edexcel_medicine/assets/authentic_renaissance.jpg',
         '18th_19th': '../../units/edexcel_medicine/assets/authentic_18th_19th.jpg',
-        modern: '../../images/nhs_established.jpg',
+        modern: '../../images/bevan_first_day_nhs_1948.jpg',
         western_front: '../../units/edexcel_medicine/assets/authentic_western_front.jpg',
       };
 

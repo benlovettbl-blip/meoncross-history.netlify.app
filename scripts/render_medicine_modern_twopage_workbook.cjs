@@ -598,8 +598,9 @@ ${stagesHtml}
 // ============================================================================
 function buildModernTwoPageWorkbook(unitData, period) {
   const coverImgBase64 =
+    getBase64Image('public/images/bevan_first_day_nhs_1948.jpg') ||
+    getBase64Image('/images/bevan_first_day_nhs_1948.jpg') ||
     getBase64Image('public/images/nhs_established.jpg') ||
-    getBase64Image('/images/nhs_established.jpg') ||
     '';
 
   let html = `<!DOCTYPE html>
@@ -775,10 +776,10 @@ function buildModernTwoPageWorkbook(unitData, period) {
 
       <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Authentic Provenance) -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="The Dawn of Free Healthcare: The 1948 National Health Service Leaflet" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 20%; display: block; margin: 0 auto; filter: grayscale(100%);">
+        <img src="${coverImgBase64}" alt="Health Minister Aneurin Bevan visiting Sylvia Beckingham, the first NHS patient, Park Hospital, Davyhulme, 5 July 1948" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 38%; display: block; margin: 0 auto; filter: grayscale(100%);">
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
-          <span><strong>Primary Visual Evidence:</strong> <em>The Dawn of Free Healthcare: The 1948 National Health Service Leaflet</em></span>
-          <span style="font-weight: 700; white-space: nowrap; margin-left: 8px;">CONTEMPORARY PRINT ARCHIVE</span>
+          <span><strong>Primary Visual Evidence:</strong> <em>Health Minister Aneurin Bevan visiting Sylvia Beckingham (first NHS patient), Park Hospital, Davyhulme, 5 July 1948</em></span>
+          <span style="font-weight: 700; white-space: nowrap; margin-left: 8px;">CENTRAL OFFICE OF INFORMATION ARCHIVE</span>
         </div>
       </div>
 
