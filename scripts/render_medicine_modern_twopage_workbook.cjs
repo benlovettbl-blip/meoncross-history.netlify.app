@@ -45,393 +45,376 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-// ============================================================================
-// 5 DEDICATED MODERN MEDICINE ENQUIRY CONFIGURATIONS (100% BLACK & WHITE)
-// ============================================================================
+function renderFooterStrip(pageNum, quip, totalPages = 24) {
+  return `
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">${quip}</span>
+      </div>`;
+}
+
+// 5 Dedicated Modern Medicine Enquiry Configs with Chronological Inquiry Spines
 const modernConfigs = [
   {
-    lessonIndex: 15, // mapped to lesson_4_1 in units/edexcel_medicine/data.js (DNA & Genetics)
     lessonNum: 1,
+    lessonIndex: 15,
     id: 'lesson_4_1',
+    keyTopicBadge: 'KEY TOPIC 4.1',
     title: 'KT4.1: Ideas on Causes: Genetics, DNA & The Human Genome Project',
-    specAnchor:
-      'Ideas about the cause of disease and illness: genetic factors and the discovery of the structure of DNA; the Human Genome Project.',
+    enquiryQuestion:
+      'Why did the discovery of DNA revolutionize understanding of disease causes, yet take decades to yield treatments?',
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
       'Explain why there was rapid progress in understanding the causes of disease in the period c1950 to the present. [12 marks]',
     stimulus: ["Rosalind Franklin's Photograph 51 (1952)", 'The Human Genome Project (1990–2003)'],
-    structureStrip: [
-      {
-        col: '1. FRANKLIN & X-RAY CRYSTALLOGRAPHY',
-        text: 'Explain Photograph 51 (May 1952), 62-hour radiation exposure at King’s College, and the mathematical proof of a double-stranded helical cylinder.',
-      },
-      {
-        col: '2. WATSON & CRICK’S DOUBLE HELIX',
-        text: 'Explain the 1953 Cambridge sheet-metal model, base pairing (A-T, C-G), unzipping replication, and explaining the hereditary transmission of disease.',
-      },
-      {
-        col: '3. THE HUMAN GENOME PROJECT (1990–2003)',
-        text: 'Explain sequencing 3 billion base pairs, mapping 25,000 genes, identifying mutations (BRCA1/2, cystic fibrosis), and enabling predictive medicine.',
-      },
-    ],
-    connectives:
-      'A decisive turning point was... &bull; In particular, Photograph 51 proved... &bull; Building directly on this, Watson and Crick deduced... &bull; Furthermore, the Human Genome Project enabled... &bull; Consequently...',
-    wordBank:
-      'DNA &bull; Rosalind Franklin &bull; Maurice Wilkins &bull; Photograph 51 (1952) &bull; X-ray crystallography &bull; James Watson &bull; Francis Crick &bull; double helix (1953) &bull; base pairing (A-T, C-G) &bull; Human Genome Project (1990–2003) &bull; 3 billion base pairs &bull; BRCA1/2 &bull; gene therapy',
-    doNow: [
-      {
-        q: 'Which ancient Greek physician created the Theory of the Four Humours?',
-        a: 'Hippocrates (c. 460–370 BC)',
-      },
-      {
-        q: 'Which Roman doctor introduced the Theory of Opposites?',
-        a: 'Claudius Galen (c. 129–216 AD)',
-      },
-      { q: 'In what year did Andreas Vesalius publish De Humani Corporis Fabrica?', a: '1543' },
-      {
-        q: 'What did William Harvey prove about blood flow in 1628?',
-        a: 'Blood circulates in one continuous closed loop pumped by the heart',
-      },
-      {
-        q: 'Which English doctor was nicknamed the ‘English Hippocrates’ for bedside observation?',
-        a: 'Thomas Sydenham (Observationes Medicae, 1676)',
-      },
-      {
-        q: 'What vaccine did Edward Jenner develop in 1796 using cowpox matter?',
-        a: 'The smallpox vaccine',
-      },
-      {
-        q: 'Which French chemist disproved spontaneous generation and published Germ Theory in 1861?',
-        a: 'Louis Pasteur',
-      },
-      {
-        q: 'Which German bacteriologist isolated the bacteria causing anthrax (1876) and tuberculosis (1882)?',
-        a: 'Robert Koch',
-      },
-      { q: 'What anaesthetic did James Simpson discover in Edinburgh in 1847?', a: 'Chloroform' },
-      {
-        q: 'What 1875 Act compelled local councils in Britain to provide clean water and sewers?',
-        a: 'The Public Health Act 1875',
-      },
-    ],
-    vocabPrompt:
-      'Define <strong>DNA (Deoxyribonucleic Acid)</strong> and explain how the <strong>Human Genome Project</strong> transformed disease prediction:',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which ideas about the cause of disease in 1900 were similar to ideas in 1880 in Britain. [4 marks]',
-      hint: 'Focus on the universal acceptance of Germ Theory and the belief that all human illnesses were caused exclusively by external microscopic bacteria.',
-      stems:
-        'One way ideas about causes were similar was the reliance on Germ Theory... &bull; In 1880, Koch had proven that... &bull; Similarly, in 1900, doctors still assumed that all diseases...',
-    },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which scientific methods for investigating disease causes in 1990 were different from methods in 1880. [4 marks]',
-      hint: 'Contrast the Human Genome Project’s computerized biochemical DNA sequencing with Robert Koch’s manual microscopic staining with aniline dyes.',
-      stems:
-        'One way methods differed was the use of molecular genetics... &bull; In 1880, Koch relied on... &bull; In contrast, by 1990, geneticists used automated computers to...',
-    },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.1). In the drawing box, sketch Franklin’s Photograph 51 cross pattern and Watson & Crick’s double helix model. Annotate how base pairing unlocked the causes of hereditary disease!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which scientific methods for investigating disease causes in the late twentieth century (c1950–c2000) were different from methods used in the late nineteenth century (c1870–c1900). [4 marks]',
+      hint: 'Contrast computerized biochemical DNA sequencing and electron microscopy with Robert Koch’s manual microscopic staining with aniline dyes.',
+      stems:
+        'One way methods differed was the use of molecular genetics... &bull; In the late nineteenth century, Koch relied on... &bull; In contrast, by the late twentieth century, scientists used...',
+    },
     leftPageQuip:
-      'Rosalind Franklin’s 62-hour X-ray photograph revealed the double helix; Watson and Crick celebrated in The Eagle pub.',
+      '<em>Franklin’s 62-hour X-ray exposure revealed the double helix; Watson and Crick celebrated in The Eagle pub.</em>',
     rightPageQuip:
-      'Mapping all 3 billion human DNA base pairs took 13 years; now geneticists can read our biological instruction manual.',
+      '<em>Sequencing 3 billion base pairs in the human genome took 13 years; now geneticists can read our biological code.</em>',
     linedLeftQuip:
-      'X-ray crystallography transformed genetics from abstract heredity into precise molecular biology.',
+      '<em>X-ray crystallography transformed genetics from abstract heredity into precise molecular biology.</em>',
     linedRightQuip:
-      'Base pairs A-T and C-G explain both the miracle of human life and the genetic roots of inherited diseases.',
+      '<em>Evaluate both breakthroughs: explain how Photograph 51 provided the structural foundation for the Human Genome Project.</em>',
+    stages: [
+      {
+        dates: 'c1900–1940s',
+        title: 'Mendel & Early Genetics',
+        bullets: [
+          'Mendel’s pea plant laws rediscovered',
+          'Chromosomes observed in cell nuclei',
+          'Garrod links genes to metabolism',
+          'Proteins wrongly assumed to carry code',
+        ],
+        focusClue: 'Why did doctors assume proteins carried hereditary traits?',
+      },
+      {
+        dates: '1951–1952',
+        title: 'Franklin & Photograph 51',
+        bullets: [
+          'Rosalind Franklin at King’s College',
+          'Expert in X-ray crystallography',
+          'May 1952: Captures Photograph 51',
+          'X-shaped diffraction proves double helix',
+        ],
+        focusClue: 'How did Photograph 51 prove DNA’s helical structure?',
+      },
+      {
+        dates: '1953',
+        title: 'Watson & Crick’s Model',
+        bullets: [
+          'Cavendish Laboratory, Cambridge',
+          'Wilkins shares Franklin’s data',
+          'March 1953: 3D wire & metal model built',
+          'Base pairing: A-T and C-G replication',
+        ],
+        focusClue: 'How did base pairing explain hereditary replication?',
+      },
+      {
+        dates: '1990–2003',
+        title: 'Human Genome Project',
+        bullets: [
+          'International public consortium (1990)',
+          'Mapped all 3 billion base pairs in DNA',
+          'Identified 20,000–25,000 human genes',
+          'Completed 2003: genetic blueprint open',
+        ],
+        focusClue: 'Why was mapping 3 billion base pairs a medical milestone?',
+      },
+      {
+        dates: '2000s–Present',
+        title: 'Screening & Treatment Gap',
+        bullets: [
+          'Screening faulty genes (BRCA1/2, CF)',
+          'Tailored targeted pharmacogenomics',
+          'Treatment gap: cause known, cure hard',
+          'CRISPR gene editing ethical debates',
+        ],
+        focusClue: 'Why did understanding causes outpace finding cures?',
+      },
+    ],
   },
   {
-    lessonIndex: 16, // mapped to lesson_4_2 in units/edexcel_medicine/data.js (Lifestyle & Diagnosis)
     lessonNum: 2,
+    lessonIndex: 16,
     id: 'lesson_4_2',
+    keyTopicBadge: 'KEY TOPIC 4.2',
     title: 'KT4.2: Lifestyle Factors & The Technological Revolution in Diagnosis',
-    specAnchor:
-      'Ideas about the cause of disease and illness: lifestyle factors (smoking, diet, alcohol); improvements in diagnosis: laboratories, X-rays, scans (CT, MRI), endoscopes, monitors.',
+    enquiryQuestion:
+      'Were high-tech diagnostic scanners more vital to modern health than state lifestyle campaigns?',
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘Technological innovations in medical diagnosis were more important than public health lifestyle campaigns in improving health in Britain c1900–present.’ How far do you agree? [16+4 marks]',
     stimulus: ['Wilhelm Röntgen’s X-rays (1895)', 'The 2007 smoking ban in public places'],
-    structureStrip: [
-      {
-        col: '1. DIAGNOSTIC IMAGING (X-RAYS & CT SCANS)',
-        text: 'Explain Röntgen’s 1895 X-ray, WWI mobile units, Hounsfield’s 1971 CT scanner, eliminating exploratory surgery and diagnosing soft-tissue tumors.',
-      },
-      {
-        col: '2. MULTIMODAL DIAGNOSTICS & MRI',
-        text: 'Explain MRI magnetic fields, flexible fiber-optic endoscopes, automated blood testing, and continuous ECG cardiac monitors.',
-      },
-      {
-        col: '3. LIFESTYLE CAMPAIGNS & CRITERIA',
-        text: 'Evaluate state prevention (anti-smoking, alcohol units, obesity taxes) addressing root causes vs scanners diagnosing damage after it occurs.',
-      },
-    ],
-    connectives:
-      'On the one hand, diagnostic technology was revolutionary because... &bull; In particular, Hounsfield’s CT scanner... &bull; On the other hand, lifestyle prevention tackled root causes because... &bull; Consequently, while imaging improved clinical survival, public campaigns... &bull; In conclusion...',
-    wordBank:
-      'Wilhelm Röntgen (1895) &bull; X-rays &bull; Marie Curie &bull; mobile radiology &bull; Godfrey Hounsfield &bull; CT scanner (1971) &bull; Atkinson Morley Hospital &bull; MRI &bull; ultrasound &bull; endoscope &bull; lifestyle factors &bull; cardiovascular disease &bull; type 2 diabetes &bull; epidemiological transition',
-    doNow: [
-      { q: 'In what year did Wilhelm Röntgen discover X-rays?', a: '1895' },
-      {
-        q: 'Who operated 20 mobile X-ray vehicles ("petites Curies") during WWI?',
-        a: 'Marie Curie',
-      },
-      {
-        q: 'What Scottish surgeon used carbolic acid spray in 1865 to prevent wound sepsis?',
-        a: 'Joseph Lister',
-      },
-      { q: 'What fatal epidemic struck London in 1854, centered on Broad Street?', a: 'Cholera' },
-      {
-        q: 'What doctor used a spot map to identify the contaminated Broad Street pump in 1854?',
-        a: 'Dr John Snow',
-      },
-      { q: 'What chemical base does Adenine pair with in the DNA double helix?', a: 'Thymine' },
-      { q: 'What chemical base does Cytosine pair with in the DNA double helix?', a: 'Guanine' },
-      {
-        q: 'Who captured Photograph 51 in May 1952 using X-ray crystallography?',
-        a: 'Rosalind Franklin (with Raymond Gosling)',
-      },
-      {
-        q: 'What major project mapped all 3 billion base pairs in human DNA (1990–2003)?',
-        a: 'The Human Genome Project',
-      },
-      {
-        q: 'What term describes the shift from infectious diseases to chronic lifestyle conditions?',
-        a: 'The Epidemiological Transition',
-      },
-    ],
-    vocabPrompt:
-      'Explain the fundamental diagnostic difference between a <strong>Standard 2D X-ray</strong> (1895) and a <strong>Computed Tomography (CT) Scan</strong> (1971):',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which diagnosis in 1900 was similar to diagnosis in 1700 in Britain. [4 marks]',
-      hint: 'Focus on doctors relying on external bedside observations (taking pulse, inspecting tongue, smelling urine) and blind exploratory surgery.',
-      stems:
-        'One way diagnosis was similar was the reliance on external bedside guesswork... &bull; In 1700, Sydenham taught doctors to... &bull; Similarly, in 1900, before modern scanning, physicians still had to...',
-    },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which diagnosis in 2000 was different from diagnosis in 1900 in Britain. [4 marks]',
-      hint: 'Contrast high-tech non-invasive imaging (CT, MRI, ultrasound) and automated blood labs with external symptom observation and exploratory surgery.',
-      stems:
-        'One way diagnosis differed was the use of non-invasive 3D internal imaging... &bull; In 1900, doctors had to... &bull; In contrast, by 2000, CT and MRI scanners allowed clinicians to...',
-    },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.2). In the drawing box, sketch Bertha Röntgen’s hand X-ray and Godfrey Hounsfield’s circular CT scanner. Annotate how scanning permanently ended blind exploratory surgery!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which methods of diagnosing illness in the late twentieth century (c1970–present) were different from methods used in the nineteenth century (c1800–c1900). [4 marks]',
+      hint: 'Contrast non-invasive 3D digital imaging (CT, MRI, ultrasound) and automated blood chemistry with external bedside observation and dangerous exploratory surgery.',
+      stems:
+        'One way diagnosis differed was the use of non-invasive internal scanning... &bull; In the nineteenth century, doctors relied on... &bull; In contrast, by the late twentieth century, clinicians utilized...',
+    },
     leftPageQuip:
-      'Bertha Röntgen cried "I have seen my death!" upon seeing her bones; doctors saw the future of medical diagnosis.',
+      '<em>Bertha Röntgen cried "I have seen my death!" upon seeing her bones; doctors saw the dawn of non-invasive diagnosis.</em>',
     rightPageQuip:
-      'Godfrey Hounsfield’s CT scanner at EMI combined rotating X-rays with digital computers to slice through soft tissue.',
+      '<em>Hounsfield’s CT scanner combined rotating X-rays with digital computers to slice through soft body tissue.</em>',
     linedLeftQuip:
-      'From Wilhelm Röntgen’s 1895 X-ray to Godfrey Hounsfield’s 1971 CT scanner: imaging banished exploratory surgery.',
+      '<em>From Wilhelm Röntgen’s 1895 X-ray to Godfrey Hounsfield’s 1971 CT scanner: imaging banished exploratory surgery.</em>',
     linedRightQuip:
-      'Evaluating criteria: high-tech diagnosis detects existing damage; state lifestyle campaigns prevent damage occurring.',
+      '<em>Establish clear criteria: high-tech machines detect existing illness; public health campaigns prevent illness before it occurs.</em>',
+    stages: [
+      {
+        dates: '1895–1918',
+        title: 'Röntgen & Early X-Rays',
+        bullets: [
+          'Wilhelm Röntgen discovers X-rays (1895)',
+          'Passes through tissue; dense bones show',
+          'Marie Curie runs mobile WWI X-ray cars',
+          'Ended blind probing for bullets in war',
+        ],
+        focusClue: 'How did X-rays transform surgical trauma diagnosis in WWI?',
+      },
+      {
+        dates: '1930s–1960s',
+        title: 'Blood Labs & Endoscopy',
+        bullets: [
+          'Automated blood labs track chemistry',
+          'Cellular staining detects abnormalities',
+          'Harold Hopkins invents fiber endoscope',
+          'Visual inspection of gut without surgery',
+        ],
+        focusClue: 'Why was fiber-optic endoscopy superior to exploratory surgery?',
+      },
+      {
+        dates: '1971–1980s',
+        title: 'Hounsfield’s CT & MRI',
+        bullets: [
+          'Godfrey Hounsfield invents CT scan (1971)',
+          'Rotating X-rays form 3D body slices',
+          'Mansfield & Lauterbur develop MRI',
+          'Radio waves image soft brain tumours',
+        ],
+        focusClue: 'Why did CT scans transform internal soft-tissue diagnosis?',
+      },
+      {
+        dates: 'c1950–1980s',
+        title: 'Epidemiological Shift',
+        bullets: [
+          'Antibiotics conquer infectious killers',
+          'Life expectancy rises above 75 years',
+          'Rise of chronic non-communicable disease',
+          'Smoking, diet, and alcohol blamed',
+        ],
+        focusClue: 'What drove the shift from infectious to lifestyle diseases?',
+      },
+      {
+        dates: '1980s–Present',
+        title: 'State Lifestyle Campaigns',
+        bullets: [
+          'Compulsory laws: seatbelts (1983)',
+          'Health Act 2006: 2007 public smoking ban',
+          'Fiscal nudge: 2018 Sugar Tax on drinks',
+          'Education: "5 A Day" & "Change4Life"',
+        ],
+        focusClue: 'Why do governments favour lifestyle prevention over treatment?',
+      },
+    ],
   },
   {
-    lessonIndex: 17, // mapped to lesson_4_3 in units/edexcel_medicine/data.js (Magic Bullets & The NHS)
     lessonNum: 3,
+    lessonIndex: 17,
     id: 'lesson_4_3',
-    title: 'KT4.3: The Search for Magic Bullets, High-Tech Treatments & The Birth of the NHS',
-    specAnchor:
-      'Advances in medicines: magic bullets (Salvarsan 606, Prontosil); high-tech medical and surgical treatments; public health: the National Health Service (1948).',
+    keyTopicBadge: 'KEY TOPIC 4.3',
+    title: 'KT4.3: Magic Bullets, High-Tech Treatments & The Birth of the NHS',
+    enquiryQuestion:
+      'Was the establishment of the NHS in 1948 more transformative than the development of magic bullets?',
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘The establishment of the National Health Service in 1948 was the most significant turning point in medical care in the period c1900–present.’ How far do you agree? [16+4 marks]',
     stimulus: ['The National Health Service (1948)', 'The discovery of Salvarsan 606 (1909)'],
-    structureStrip: [
-      {
-        col: '1. THE NHS REVOLUTION (1948)',
-        text: 'Explain the 1942 Beveridge Report, Bevan defeating BMA opposition, healthcare free at delivery funded by central taxation, and abolishing medical poverty.',
-      },
-      {
-        col: '2. PHARMACOLOGICAL MAGIC BULLETS',
-        text: 'Explain Ehrlich & Hata’s Salvarsan 606 (1909 for syphilis), Domagk’s Prontosil (1932 for blood poisoning), providing the cures that hospitals needed.',
-      },
-      {
-        col: '3. CRITERIA & FINANCIAL STRAIN',
-        text: 'Evaluate economic strain (1951 prescription charges), Bevan’s compromise with consultants, and modern high-tech therapy costs (dialysis, transplants).',
-      },
-    ],
-    connectives:
-      'On the one hand, the NHS was a unique institutional turning point because... &bull; In particular, it guaranteed... &bull; On the other hand, healthcare access relied on pharmacological breakthroughs like... &bull; Furthermore, economic limits forced... &bull; Overall, I judge that...',
-    wordBank:
-      'Zauberkugel (magic bullet) &bull; Paul Ehrlich &bull; Sahachiro Hata &bull; Salvarsan 606 (1909) &bull; Treponema pallidum &bull; Gerhard Domagk &bull; Prontosil (1932) &bull; sulphonamides &bull; William Beveridge (1942) &bull; Five Giants &bull; Aneurin Bevan &bull; BMA opposition &bull; Park Hospital Manchester (5 July 1948) &bull; central taxation',
-    doNow: [
-      {
-        q: 'What term did Paul Ehrlich use for chemical compounds that destroy bacteria without harming patient cells?',
-        a: 'Magic bullets (Zauberkugeln)',
-      },
-      { q: 'What disease was cured by Salvarsan 606 in 1909?', a: 'Syphilis' },
-      {
-        q: 'Which Japanese bacteriologist assisted Paul Ehrlich in discovering Salvarsan 606?',
-        a: 'Sahachiro Hata',
-      },
-      {
-        q: 'Who discovered that the red dye Prontosil cured streptococcal blood poisoning in 1932?',
-        a: 'Gerhard Domagk',
-      },
-      {
-        q: 'What active antibacterial chemical group was found inside Prontosil?',
-        a: 'Sulphonamides',
-      },
-      {
-        q: 'Who authored the 1942 social report identifying the "Five Giant Evils" in Britain?',
-        a: 'William Beveridge',
-      },
-      {
-        q: 'Who was appointed Minister of Health in 1945 to create the National Health Service?',
-        a: 'Aneurin Bevan',
-      },
-      { q: 'On what exact date was the NHS officially launched in Britain?', a: '5 July 1948' },
-      {
-        q: 'Which medical organization fiercely resisted state-employed doctors under the NHS?',
-        a: 'The British Medical Association (BMA)',
-      },
-      {
-        q: 'Which British engineer invented the CT scanner at EMI laboratories in 1971?',
-        a: 'Godfrey Hounsfield',
-      },
-    ],
-    vocabPrompt:
-      'Define a <strong>Magic Bullet</strong> and explain how <strong>Salvarsan 606</strong> fundamentally differed from older chemical antiseptics:',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which healthcare access for working-class families before 1948 was similar to the nineteenth century. [4 marks]',
-      hint: 'Focus on exclusion from state healthcare, reliance on private doctor fees, charity hospitals, and the dread of medical debt.',
-      stems:
-        'One way access was similar was the financial barrier to medical care... &bull; In the nineteenth century, poor families... &bull; Similarly, before 1948, women and children excluded from National Insurance had to...',
-    },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which hospital care after 1948 was different from hospital care in the 1930s in Britain. [4 marks]',
-      hint: 'Contrast complete universal care free at the point of delivery funded by taxation with bankrupt voluntary hospitals and means-tested fees.',
-      stems:
-        'One way hospital care differed was the abolition of fees at the point of treatment... &bull; In the 1930s, voluntary hospitals... &bull; In contrast, by 1948, the NHS provided free treatment funded by...',
-    },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.3). In the drawing box, sketch Ehrlich’s test tube of Salvarsan 606 and the 1948 NHS information leaflet. Annotate how free healthcare abolished medical poverty!',
+    fourMark: {
+      type: 'Difference',
+      question:
+        'Explain one way in which healthcare access in Britain after 1948 was different from healthcare access in the 1930s. [4 marks]',
+      hint: 'Contrast universal care free at the point of delivery funded by general taxation with the 1911 National Insurance scheme (which excluded women and children) and bankrupt voluntary hospitals.',
+      stems:
+        'One way healthcare access differed was the removal of financial charges at the point of treatment... &bull; In the 1930s, working-class families... &bull; In contrast, after 1948, the NHS guaranteed that...',
+    },
     leftPageQuip:
-      'Ehrlich and Hata tested 605 failed arsenic compounds before compound 606 finally cured syphilis in 1909.',
+      '<em>Ehrlich tested 605 failed arsenic compounds before compound 606 finally cured syphilis in 1909.</em>',
     rightPageQuip:
-      'Bevan overcame doctor opposition by "stuffing their mouths with gold," launching the NHS on 5 July 1948.',
+      '<em>Bevan overcame doctor opposition by "stuffing their mouths with gold," launching the NHS on 5 July 1948.</em>',
     linedLeftQuip:
-      'Salvarsan 606 and Prontosil proved chemicals could destroy specific internal microbes without destroying the patient.',
+      '<em>Salvarsan 606 and Prontosil proved chemicals could destroy specific internal microbes without destroying the patient.</em>',
     linedRightQuip:
-      'On 5 July 1948, the NHS made medical care a universal citizenship right rather than a commercial privilege.',
+      '<em>Weigh institutional reform against pharmacology: free healthcare means little without effective drugs to prescribe.</em>',
+    stages: [
+      {
+        dates: '1906–1909',
+        title: 'Ehrlich & Salvarsan 606',
+        bullets: [
+          'Paul Ehrlich tests bacterial chemical dyes',
+          'Conceives synthetic "magic bullets"',
+          'Sahachiro Hata joins team (1909)',
+          'Compound 606 cures syphilis in humans',
+        ],
+        focusClue: 'Why was Salvarsan 606 termed the first "magic bullet"?',
+      },
+      {
+        dates: '1932–1935',
+        title: 'Domagk & Prontosil',
+        bullets: [
+          'Gerhard Domagk tests red industrial dye',
+          '1932: Prontosil kills strep in mice',
+          'Cures daughter’s severe blood poisoning',
+          'Active ingredient: sulfonamide drugs',
+        ],
+        focusClue: 'How did Prontosil prove synthetic drugs could kill microbes?',
+      },
+      {
+        dates: '1942',
+        title: 'The Beveridge Report',
+        bullets: [
+          'Sir William Beveridge social report',
+          'Tackles "Five Giants" including Disease',
+          'Proposes universal state social care',
+          'Wartime collectivism spurs support',
+        ],
+        focusClue: 'How did WWII unity create momentum for state healthcare?',
+      },
+      {
+        dates: '1945–1948',
+        title: 'Bevan & Launch of the NHS',
+        bullets: [
+          'Aneurin Bevan appointed Health Minister',
+          'BMA doctors resist state salaries (90%)',
+          'Bevan lets consultants keep private beds',
+          '5 July 1948: NHS free at point of care',
+        ],
+        focusClue: 'How did Bevan compromise to persuade resistant doctors?',
+      },
+      {
+        dates: '1950s–Present',
+        title: 'High-Tech Care & Costs',
+        bullets: [
+          'Dialysis, hip replacements & transplants',
+          'Keyhole surgery & chemotherapy units',
+          '1951 prescription charges divide party',
+          'Aging population strains tax funding',
+        ],
+        focusClue: 'Why has modern medical success created financial strain?',
+      },
+    ],
   },
   {
-    lessonIndex: 18, // mapped to lesson_4_4 in units/edexcel_medicine/data.js (Penicillin)
     lessonNum: 4,
+    lessonIndex: 18,
     id: 'lesson_4_4',
+    keyTopicBadge: 'KEY TOPIC 4.4',
     title: 'KT4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey & Chain and Penicillin',
-    specAnchor:
-      'Advances in medicines: antibiotics; the development of penicillin, the work of Fleming, Florey and Chain; mass production.',
+    enquiryQuestion:
+      'Why did penicillin require a global war and American industrial might to become a mass-produced cure?',
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
       'Explain why penicillin was successfully developed and mass-produced in the period 1928–1945. [12 marks]',
     stimulus: ['Alexander Fleming’s discovery (1928)', 'The impact of the Second World War'],
-    structureStrip: [
-      {
-        col: '1. FLEMING’S 1928 OBSERVATION',
-        text: 'Explain St Mary’s Hospital, the contaminated staphylococcus plate, the clear halo of destroyed bacteria, and Fleming publishing in 1929.',
-      },
-      {
-        col: '2. THE OXFORD TEAM (1938–41)',
-        text: 'Explain Florey, Chain & Heatley, freeze-drying extraction, the 1940 mice trial, and the tragic 1941 Albert Alexander clinical proof.',
-      },
-      {
-        col: '3. US WARTIME MASS PRODUCTION',
-        text: 'Explain the 1941 Peoria mission, corn steep liquor, cantaloupe strain, deep-tank vats, and 2.3 million doses available for D-Day (1944).',
-      },
-    ],
-    connectives:
-      'A primary catalyst was Fleming’s acute observation in 1928... &bull; In particular, he noticed... &bull; Building directly on this, Florey and Chain solved the purification crisis by... &bull; Most decisively, the Second World War prompted US industrialization because... &bull; Therefore...',
-    wordBank:
-      'Alexander Fleming &bull; St Mary’s Hospital (1928) &bull; Staphylococcus &bull; Penicillium notatum &bull; Howard Florey &bull; Ernst Chain &bull; Norman Heatley &bull; freeze-drying &bull; 1940 mouse trial &bull; Albert Alexander (1941) &bull; Peoria Illinois (1941) &bull; corn steep liquor &bull; Penicillium chrysogenum &bull; deep-tank fermentation &bull; D-Day (1944) &bull; 2.3 million doses',
-    doNow: [
-      {
-        q: 'In what year did Alexander Fleming discover penicillin at St Mary’s Hospital?',
-        a: '1928',
-      },
-      {
-        q: 'What type of bacteria was being cultured when penicillin was discovered?',
-        a: 'Staphylococcus',
-      },
-      {
-        q: 'What was the scientific name of the mold that contaminated Fleming’s dish?',
-        a: 'Penicillium notatum',
-      },
-      {
-        q: 'Which two Oxford scientists reopened penicillin research in 1938?',
-        a: 'Howard Florey and Ernst Chain',
-      },
-      {
-        q: 'What technician built improvised laboratory apparatus using bedpans at Oxford?',
-        a: 'Norman Heatley',
-      },
-      {
-        q: 'What was the name of the Oxford policeman who was the first human patient treated with penicillin in 1941?',
-        a: 'Albert Alexander',
-      },
-      {
-        q: 'Why did Albert Alexander die despite penicillin clearing his infection?',
-        a: 'The Oxford team ran out of penicillin after five days',
-      },
-      {
-        q: 'In what US city did scientists discover that corn steep liquor boosted penicillin yields?',
-        a: 'Peoria, Illinois',
-      },
-      {
-        q: 'How many doses of penicillin were manufactured in time for D-Day in June 1944?',
-        a: '2.3 million doses',
-      },
-      {
-        q: 'What dangerous consequence of overusing antibiotics did Fleming warn about in 1945?',
-        a: 'Bacterial resistance (superbugs like MRSA)',
-      },
-    ],
-    vocabPrompt:
-      'Explain the fundamental chemical difference between an <strong>Antiseptic</strong> (Lister) and an <strong>Antibiotic</strong> (Fleming, Florey & Chain):',
-    fourMarkA: {
+    timelineMission:
+      'Turn to Pages 2–3 (Key Topic 4.4). In the drawing box, sketch Fleming’s contaminated petri dish and an American 10,000-gallon deep-tank vat. Annotate how penicillin saved Allied troops on D-Day!',
+    fourMark: {
       type: 'Similarity',
       question:
         'Explain one way in which Alexander Fleming’s discovery of penicillin in 1928 was similar to Edward Jenner’s discovery of the smallpox vaccine in 1796. [4 marks]',
-      hint: 'Focus on both discoveries relying on serendipitous/accidental observation of natural living organisms protecting against disease.',
+      hint: 'Focus on both breakthroughs relying on accidental observation of natural living organisms protecting against disease, followed by initial difficulty in proving how they worked.',
       stems:
-        'One way both discoveries were similar was the role of serendipitous observation... &bull; In 1796, Jenner observed that... &bull; Similarly, in 1928, Fleming noticed that a stray mold...',
+        'One way both discoveries were similar was the reliance on serendipitous observation... &bull; In 1796, Jenner observed that... &bull; Similarly, in 1928, Fleming noticed that...',
     },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which the mass production of penicillin in 1944 was different from early production in 1940. [4 marks]',
-      hint: 'Contrast 10,000-gallon American deep-tank fermentation vats producing millions of doses with the Oxford team culturing mold in ceramic bedpans.',
-      stems:
-        'One way production differed was the industrial scale and technology... &bull; In 1940, the Oxford team had to... &bull; In contrast, by 1944, US chemical plants utilized...',
-    },
-    timelineMission:
-      'Turn to Pages 2–3 (Key Topic 4.4). In the drawing box, sketch Fleming’s contaminated petri dish and an American 10,000-gallon deep-tank vat. Annotate how penicillin saved Allied troops on D-Day!',
     leftPageQuip:
-      'Fleming almost washed his petri dish in lysol, but noticed a clear halo where mold destroyed golden bacteria.',
+      '<em>Fleming almost washed his petri dish in Lysol, but noticed a clear halo where mould destroyed golden staphylococci.</em>',
     rightPageQuip:
-      'The Oxford team grew penicillin in ceramic bedpans; American factories in Peoria brewed it in 10,000-gallon deep-tank vats.',
+      '<em>The Oxford team grew penicillin in bedpans; American factories brewed it in 10,000-gallon fermentation vats.</em>',
     linedLeftQuip:
-      'Fleming’s observation in 1928 needed Florey and Chain’s chemical purification in 1940 and US wartime industrial scale in 1944.',
+      '<em>Fleming observed penicillin in 1928; Florey and Chain purified it in 1940; US wartime industry mass-produced it in 1944.</em>',
     linedRightQuip:
-      'By D-Day in June 1944, 2.3 million doses of penicillin transformed military survival and launched the antibiotic age.',
+      '<em>Show how individual observation, scientific teamwork, wartime necessity, and US capital combined to create mass antibiotics.</em>',
+    stages: [
+      {
+        dates: '1928–1929',
+        title: 'Fleming’s Discovery',
+        bullets: [
+          'St Mary’s Hospital, London (1928)',
+          'Contaminated staphylococcus petri dish',
+          'Penicillium notatum mould dissolves germs',
+          'Publishes 1929; cannot chemically purify',
+        ],
+        focusClue: 'Why could Fleming not turn mould into a clinical medicine?',
+      },
+      {
+        dates: '1938–1940',
+        title: 'Florey & Chain at Oxford',
+        bullets: [
+          'Oxford team reviews Fleming’s paper',
+          'Rockefeller Foundation funds research',
+          'Norman Heatley builds bedpan apparatus',
+          'Freeze-drying extracts pure penicillin',
+        ],
+        focusClue: 'How did Norman Heatley solve the purification challenge?',
+      },
+      {
+        dates: '1940–1941',
+        title: 'Mice Trials & Albert Alexander',
+        bullets: [
+          'May 1940: 4 treated infected mice survive',
+          '1941: Policeman Albert Alexander treated',
+          'Fatal facial septicaemia clears rapidly',
+          'Drug runs out; patient dies; proof clear',
+        ],
+        focusClue: 'Why was Alexander’s trial both a success and a tragedy?',
+      },
+      {
+        dates: '1941–1944',
+        title: 'Peoria & US Mass Production',
+        bullets: [
+          'Florey & Heatley travel to USA (1941)',
+          'Peoria lab uses corn-steep liquor boost',
+          'Cantaloupe mould strain yields 200x',
+          '10,000-gallon deep-tank vats built',
+        ],
+        focusClue: 'How did US industrial fermentation enable mass production?',
+      },
+      {
+        dates: '1944–Present',
+        title: 'D-Day & Superbugs',
+        bullets: [
+          '2.3m doses produced for D-Day (1944)',
+          'Wound fatality drops from 15% to 1%',
+          'Fleming, Florey, Chain win Nobel (1945)',
+          'Overuse drives resistant MRSA superbugs',
+        ],
+        focusClue: 'Why did Fleming warn that antibiotic overuse causes resistance?',
+      },
+    ],
   },
   {
-    lessonIndex: 19, // mapped to lesson_4_5 in units/edexcel_medicine/data.js (Lung Cancer)
     lessonNum: 5,
+    lessonIndex: 19,
     id: 'lesson_4_5',
+    keyTopicBadge: 'KEY TOPIC 4.5',
     title: 'KT4.5: Case Study 2: Public Health & The Fight Against Lung Cancer',
-    specAnchor:
-      'Case study: The fight against lung cancer in the twenty-first century: the use of science and technology in diagnosis and treatment; government action.',
+    enquiryQuestion:
+      'Why has the modern fight against lung cancer required state coercion rather than laboratory cures?',
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘Government public health legislation was the main reason for progress in combating lung cancer in the period c1950 to the present.’ How far do you agree? [16+4 marks]',
@@ -439,117 +422,175 @@ const modernConfigs = [
       'Doll and Hill’s research (1950)',
       'Technological treatments (radiotherapy, surgery, immunotherapy)',
     ],
-    structureStrip: [
-      {
-        col: '1. GOVERNMENT PUBLIC HEALTH REGULATION',
-        text: 'Explain TV ad ban (1965), packet warnings (1971), 2007 public smoking ban, 2016 plain packaging, and slashing smoking rates from 65% to 13%.',
-      },
-      {
-        col: '2. HIGH-TECH CLINICAL ONCOLOGY',
-        text: 'Explain low-dose helical CT scans, flexible bronchoscopy, robotic VATS lobectomies, chemotherapy, and immunotherapy checkpoint inhibitors.',
-      },
-      {
-        col: '3. CRITERIA & REJECTION OF LAISSEZ-FAIRE',
-        text: 'Evaluate low 5-year survival rates (16%) proving prevention vastly superior to cure; evaluate the 2024 smoke-free generation legislation.',
-      },
-    ],
-    connectives:
-      'On the one hand, government legislation was the decisive factor because... &bull; In particular, Doll and Hill provided the empirical mandate to... &bull; On the other hand, clinical treatments are essential for diagnosed patients because... &bull; Consequently, while oncologists prolong individual lives, state compulsion... &bull; Overall, I conclude that...',
-    wordBank:
-      'lung cancer &bull; cigarette smoking &bull; Richard Doll & Austin Bradford Hill (1950) &bull; British Doctors Study (1951) &bull; low-dose helical CT scan &bull; bronchoscopy &bull; lobectomy (VATS) &bull; stereotactic radiotherapy &bull; chemotherapy &bull; immunotherapy &bull; TV advertising ban (1965) &bull; Health Act 2007 (public ban) &bull; plain packaging (2016) &bull; smoke-free generation',
-    doNow: [
-      {
-        q: 'Who were the two British epidemiologists who proved that smoking causes lung cancer in 1950?',
-        a: 'Richard Doll and Austin Bradford Hill',
-      },
-      {
-        q: 'What was the long-term study of over 40,000 doctors launched in 1951 called?',
-        a: 'The British Doctors Study',
-      },
-      {
-        q: 'Why is lung cancer particularly difficult to diagnose in its early stages?',
-        a: 'Lung tissue has no pain nerves, so early tumors grow without symptoms',
-      },
-      {
-        q: 'What type of diagnostic scan uses low-dose radiation to detect small lung tumors early?',
-        a: 'Low-dose helical CT scan',
-      },
-      {
-        q: 'What surgical procedure involves removing an entire cancerous lobe of a lung?',
-        a: 'Lobectomy',
-      },
-      {
-        q: 'What modern cancer treatment uses drugs to train the body’s own immune T-cells to attack tumors?',
-        a: 'Immunotherapy',
-      },
-      {
-        q: 'In what year was cigarette advertising completely banned on British television?',
-        a: '1965',
-      },
-      {
-        q: 'In what year was smoking banned in all enclosed public places and workplaces in England?',
-        a: '2007 (The Health Act 2007)',
-      },
-      {
-        q: 'What standardized color (Pantone 448 C) was mandated for UK cigarette packaging in 2016?',
-        a: 'Drab dark olive-brown (plain packaging)',
-      },
-      {
-        q: 'Approximately what percentage of adult British men smoked in 1950 compared to under 13% today?',
-        a: '65%',
-      },
-    ],
-    vocabPrompt:
-      'Explain how <strong>Plain Packaging (2016)</strong> and the <strong>Health Act 2007</strong> represent the complete, permanent end of government <strong>Laissez-Faire</strong>:',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which the government reaction to lung cancer after 1965 was similar to the Public Health Act of 1875. [4 marks]',
-      hint: 'Focus on the total abandonment of laissez-faire in favor of compulsory national legislation protecting citizens from environmental health hazards.',
-      stems:
-        'One way government action was similar was the rejection of laissez-faire... &bull; Under the 1875 Act, Parliament compelled councils to... &bull; Similarly, after 1965, the government used compulsory laws to ban advertising and...',
-    },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which treatments for lung cancer in the 2000s were different from treatments in 1950 in Britain. [4 marks]',
-      hint: 'Contrast modern targeted immunotherapy, robotic keyhole lobectomy, and precision radiotherapy with rudimentary palliative care and high operative mortality.',
-      stems:
-        'One way treatments differed was the development of high-tech oncology... &bull; In 1950, doctors could only offer... &bull; In contrast, by the 2000s, oncologists used targeted immunotherapy and robotic lobectomies to...',
-    },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.5). In the drawing box, sketch a 1950s doctor cigarette advert and a 2016 olive-green plain pack. Annotate how state legislation slashed smoking from 65% to under 13%!',
+    fourMark: {
+      type: 'Similarity',
+      question:
+        'Explain one way in which government intervention against lung cancer after 1965 was similar to government action in the 1875 Public Health Act. [4 marks]',
+      hint: 'Focus on both interventions representing the abandonment of laissez-faire in favour of compulsory national legislation to protect public health.',
+      stems:
+        'One way government intervention was similar was the rejection of laissez-faire... &bull; In 1875, Parliament compelled local authorities to... &bull; Similarly, after 1965, the government used compulsory laws to ban advertising and...',
+    },
     leftPageQuip:
-      'Doll and Hill proved smoking caused lung cancer in 1950; Doll immediately extinguished his pipe and lived to age 92.',
+      '<em>Doll and Hill proved smoking caused lung cancer in 1950; Doll immediately extinguished his pipe and lived to age 92.</em>',
     rightPageQuip:
-      'From TV ad bans in 1965 to plain olive-green packs in 2016: government compulsion slashed smoking from 65% to 13%.',
+      '<em>From TV ad bans in 1965 to plain olive-green packs in 2016: government compulsion slashed smoking from 65% to 13%.</em>',
     linedLeftQuip:
-      'Doll and Hill’s statistical epidemiology in 1950 gave the British government the empirical evidence to dismantle tobacco marketing.',
+      '<em>Doll and Hill’s statistical epidemiology gave the British government the empirical evidence to dismantle tobacco marketing.</em>',
     linedRightQuip:
-      'Comparing public health legislation in 1875 and 2007 proves that state compulsion consistently outperforms laissez-faire.',
+      '<em>Compare 1875 sewers with 2007 smoking bans: state compulsion consistently achieves greater public health impact than laissez-faire.</em>',
+    stages: [
+      {
+        dates: '1920s–1950',
+        title: 'The Mysterious Epidemic',
+        bullets: [
+          'British lung cancer deaths surge 15-fold',
+          'Doctors blame tarmac dust or motor fumes',
+          'Tobacco companies market cigarettes',
+          'By 1950: 65% of adult British males smoke',
+        ],
+        focusClue: 'Why did early doctors fail to link smoking to lung cancer?',
+      },
+      {
+        dates: '1950–1954',
+        title: 'Doll & Hill’s Proof',
+        bullets: [
+          'Doll & Hill survey 20 London hospitals',
+          '1950 BMJ paper links smoking to tumors',
+          'British Doctors Study tracks 40,000 GPs',
+          'Proves heavy smokers face 50x risk',
+        ],
+        focusClue: 'How did statistical epidemiology prove the causal link?',
+      },
+      {
+        dates: '1962–1971',
+        title: 'Royal College & Ad Bans',
+        bullets: [
+          '1962: Royal College report sounds alarm',
+          '1965: TV cigarette advertising banned',
+          '1971: Warning labels on tobacco packets',
+          'Industry sponsors sports to bypass bans',
+        ],
+        focusClue: 'Why did government action encounter strong tobacco lobbying?',
+      },
+      {
+        dates: '2000s',
+        title: 'Public Smoking Ban',
+        bullets: [
+          'Second-hand passive smoke proven toxic',
+          'Health Act 2006: July 2007 indoor ban',
+          'Legal buying age raised from 16 to 18',
+          'UK smoking falls from 65% to under 13%',
+        ],
+        focusClue: 'Why was passive smoking crucial in banning public smoking?',
+      },
+      {
+        dates: '2010s–Present',
+        title: 'Plain Packs & Oncology',
+        bullets: [
+          '2016: Plain drab-olive packaging law',
+          'Low-dose spiral CT & bronchoscopy',
+          'Robotic VATS lobectomies & immunotherapy',
+          '16% 5-year survival: prevention vital',
+        ],
+        focusClue: 'Why does low cancer survival prove prevention beats cure?',
+      },
+    ],
   },
 ];
 
-// ============================================================================
-// FOOTER STRIP HELPER (Page Number + Quip on the Same Line)
-// Even pages (verso/left): Page number on left, quip on right.
-// Odd pages (recto/right): Quip on left, page number on right.
-// ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 24) {
-  const isEven = pageNum % 2 === 0;
-  if (isEven) {
-    return `
+function renderSpinePage(cfg) {
+  const { pageNum, keyTopicBadge, enquiryQuestion, stages, leftPageQuip } = cfg;
+
+  let stagesHtml = '';
+  stages.forEach((st, idx) => {
+    let bulletsHtml = st.bullets
+      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
+      .join('\n');
+    stagesHtml += `
+          <!-- Stage ${idx + 1} -->
+          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
+            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+              </div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
+                ${st.title}
+              </div>
+              <div style="margin-top: 1px;">
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
+                  ${bulletsHtml}
+                </div>
+              </div>
+              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
+                  Focus Clue
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
+                  ${st.focusClue}
+                </div>
+              </div>
+            </div>
+
+            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
+            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>`;
+  });
+
+  return `
+  <!-- ------------------------------------------------------------------ -->
+  <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum})         -->
+  <!-- ------------------------------------------------------------------ -->
+  <div class="page page-container" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Lesson Header with Inquiry Question Title -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            ${keyTopicBadge} &bull; ENQUIRY LESSON NOTEBOOK
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL PAPER 1 (1HI0/11) &bull; THEMATIC STUDY
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+          ${enquiryQuestion}
+        </h2>
+      </div>
+
+      <!-- Active Lesson Note-Taking Spine -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry Spine &bull; Core Causal Narrative
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+            Take precise, structured notes alongside each milestone as your teacher narrates the history
+          </span>
+        </div>
+
+        <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
+${stagesHtml}
+        </div>
+      </div>
+
       <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;"><em>${quipText}</em></span>
-      </div>`;
-  } else {
-    return `
-      <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>${quipText}</em></span>
-        <span class="footer-page-num">${pageNum}/${totalPages}</span>
-      </div>`;
-  }
+        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/24</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">${leftPageQuip}</span>
+      </div>
+    </div>
+  </div>`;
 }
 
 // ============================================================================
@@ -587,7 +628,6 @@ function buildModernTwoPageWorkbook(unitData, period) {
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
     }
-    /* Page Container: Zero outer border, pure flex distribution for optimal page budget */
     .page, .page-container {
       width: 100%;
       height: 272mm;
@@ -605,14 +645,12 @@ function buildModernTwoPageWorkbook(unitData, period) {
     .page:last-child, .page-container:last-child {
       page-break-after: auto;
     }
-    /* Full flex section container for interior distribution */
     .page-body-full {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    /* Clean Task Section Spacing */
     .task-section {
       margin-bottom: 5px;
       padding-bottom: 0;
@@ -622,7 +660,6 @@ function buildModernTwoPageWorkbook(unitData, period) {
       padding-bottom: 4px;
       margin-bottom: 5px;
     }
-    /* Thick Black Writing Lines for Handwriting */
     .task-line {
       border-bottom: 1.2px solid #000000;
       height: 7.8mm;
@@ -643,7 +680,6 @@ function buildModernTwoPageWorkbook(unitData, period) {
       gap: 0;
       margin: 1px 0;
     }
-    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
     .lined-page-grid {
       display: flex;
       flex-direction: column;
@@ -659,12 +695,13 @@ function buildModernTwoPageWorkbook(unitData, period) {
       box-sizing: border-box;
     }
     .lined-margin-cell {
-      width: 22mm;
+      width: 12mm;
       border-right: 1.2px solid #000000;
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      padding-left: 2px;
+      padding-left: 1mm;
+      padding-right: 0.5mm;
       box-sizing: border-box;
     }
     .lined-content-cell {
@@ -674,7 +711,6 @@ function buildModernTwoPageWorkbook(unitData, period) {
       padding-left: 6px;
       box-sizing: border-box;
     }
-    /* Clean Footer Strip */
     .page-footer-strip {
       display: flex;
       justify-content: space-between;
@@ -707,7 +743,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGE 1: FRONT COVER (Specification Table, Large Archival Image, No Outer Borders)
+  // PAGE 1: FRONT COVER
   // ====================================================================
   html += `
   <div class="page page-container" id="page-1" style="padding: 4mm 6mm;">
@@ -724,33 +760,17 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- Pupil Details Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 10px;">
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
-        </div>
-        <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
-        </div>
-      </div>
-
-      <!-- Main Title Block -->
-      <div style="text-align: center; margin: 2px 0 6px 0;">
-        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; background: #ffffff;">
-          Key Topic 4 &bull; c1900–present
-        </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 22pt; line-height: 1.15; color: #000000; margin: 2px 0 3px 0; font-weight: 900;">
+      <!-- Unit Title & Subtitle Banner -->
+      <div style="text-align: center; margin-bottom: 8px;">
+        <span style="display: inline-block; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; border: 1.5px solid #000000; padding: 2px 10px; border-radius: 3px; margin-bottom: 4px;">
+          KEY TOPIC 4 &bull; REVISION &amp; PRACTICE COMPANION
+        </span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 900; color: #000000; margin: 4px 0 2px 0; line-height: 1.15; letter-spacing: -0.5px;">
           Medicine in Modern Britain
         </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #222222; font-style: italic; font-weight: 600;">
-          DNA, High-Tech Diagnosis, The NHS, Penicillin, and The War on Lung Cancer
-        </div>
+        <p style="font-family: 'Georgia', serif; font-size: 9pt; color: #222222; margin: 0; font-style: italic;">
+          c1900–present: Ideas on Causes, Diagnostic Technology, The NHS, Penicillin &amp; Lung Cancer
+        </p>
       </div>
 
       <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Authentic Provenance) -->
@@ -758,57 +778,45 @@ function buildModernTwoPageWorkbook(unitData, period) {
         <img src="${coverImgBase64}" alt="The Dawn of Free Healthcare: The 1948 National Health Service Leaflet" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 20%; display: block; margin: 0 auto; filter: grayscale(100%);">
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
           <span><strong>Primary Visual Evidence:</strong> <em>The Dawn of Free Healthcare: The 1948 National Health Service Leaflet</em></span>
-          <span style="font-weight: 700;">CONTEMPORARY PRINT ARCHIVE</span>
+          <span style="font-weight: 700; white-space: nowrap; margin-left: 8px;">CONTEMPORARY PRINT ARCHIVE</span>
         </div>
       </div>
 
-      <!-- Edexcel Paper 1 Section B Specification Overview & Exam Strategy -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 8px; background: #fbfbfb; margin: 4px 0 7px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        <div style="border-right: 1px solid #000000; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            1. Comparison Drills [4m]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Q3: Explain one similarity or difference between eras. Specific factual detail + direct comparative reasoning (5 mins).
-          </div>
+      <!-- Pupil Identification & Target Setting Box -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 6px;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
         </div>
-        <div style="border-right: 1px solid #000000; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            2. Causal Analysis [12m]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Q4: Explain why change or continuity occurred. 3 structured PEE paragraphs using 2 stimulus points + own knowledge (15 mins).
-          </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
         </div>
-        <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            3. Thematic Essay [16m+4m]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Q5/Q6: 'How far do you agree?' Judgement essay balancing factors across broad time periods + SPaG criteria (25 mins).
-          </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
         </div>
       </div>
 
-      <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 4px 0 2px 0;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
+      <!-- Official Edexcel Specification Structure & Retrieval Tracker Table -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
           <thead>
-            <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 6px 10px; text-align: left; font-size: 8.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
-                Course Specification &bull; Key Enquiry Sequence
+            <tr style="background: #000000; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
+              <th style="padding: 4px 8px; text-align: left; width: 78%; font-size: 7.5pt; font-weight: 800;">
+                Key Topic 4 Specification Framework (1HI0/11)
               </th>
-              <th style="padding: 6px 4px; width: 68px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
-                Learnt
+              <th style="padding: 4px 8px; text-align: center; width: 11%; font-size: 7.5pt; font-weight: 800; border-left: 1px solid #444444;">
+                Lesson Done
               </th>
-              <th style="padding: 6px 4px; width: 68px; text-align: center; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
-                Revised
+              <th style="padding: 4px 8px; text-align: center; width: 11%; font-size: 7.5pt; font-weight: 800; border-left: 1px solid #444444;">
+                Quiz [10]
               </th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.1: Ideas on Causes: Genetics, DNA &amp; The Human Genome Project
                 </div>
@@ -824,7 +832,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.2: Lifestyle Factors &amp; The Technological Revolution in Diagnosis
                 </div>
@@ -840,7 +848,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.3: Magic Bullets, High-Tech Treatments &amp; The Birth of the NHS
                 </div>
@@ -856,7 +864,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey &amp; Chain
                 </div>
@@ -872,7 +880,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6.5px 10px; border-right: 1.2px solid #000000;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
                   Key Topic 4.5: Case Study 2: Public Health &amp; The Fight Against Lung Cancer
                 </div>
@@ -965,7 +973,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+          <strong>Instructions:</strong> Complete the timeline sketches and notes as you master each enquiry lesson.
         </div>
       </div>
 
@@ -1044,8 +1052,11 @@ function buildModernTwoPageWorkbook(unitData, period) {
 `;
 
   // ====================================================================
-  // PAGES 4–23: 5 DEDICATED FOUR-PAGE SPREADS (LESSONS 4.1 TO 4.5)
-  // Matching 100% the Master Medieval, Renaissance & 18th/19th Template
+  // PAGES 4–23: 5 DEDICATED 4-PAGE MODULES (LESSONS 4.1 TO 4.5)
+  // Page 1: 5-Stage Chronological Inquiry Spine (renderSpinePage)
+  // Page 2: Exam Question + 28 flex task lines + Timeline Mission
+  // Page 3: Lined Grid (31 lines, 8.0mm pitch, full width)
+  // Page 4: Lined Grid (24 lines) + Question 3 [4 marks] (6 lines)
   // ====================================================================
   modernConfigs.forEach((cfg) => {
     const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
@@ -1053,242 +1064,84 @@ function buildModernTwoPageWorkbook(unitData, period) {
     const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
     const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
 
-    // ------------------------------------------------------------------
-    // LEFT PAGE: 10-QUESTION DO NOW + KEY VOCAB (3 LINES) + TWO 4-MARK QUESTIONS
-    // ------------------------------------------------------------------
+    // PAGE 1 OF MODULE: CHRONOLOGICAL INQUIRY SPINE
+    html += renderSpinePage({ ...cfg, pageNum: leftPageNum });
+
+    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 28 FLEX TASK LINES, TIMELINE MISSION)
+    const flexTaskLines = Array.from(
+      { length: 28 },
+      () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    ).join('');
+
     html += `
-  <div class="page page-container" id="page-${leftPageNum}">
-    <div class="page-body-full">
-      <!-- Lesson Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Exam Practice
-        </span>
-      </div>
-
-      <!-- 10-Question Do Now Retrieval Grid -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 3px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px;">
-          ${cfg.doNow
-            .map(
-              (item, idx) => `
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #000000; line-height: 1.2;">
-              ${idx + 1}. ${item.q}
-            </div>
-            <div class="task-line-dotted"></div>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Key Vocabulary Task (3 Handwriting Lines in Ruled Block) -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          ${cfg.vocabPrompt}
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One ${cfg.fourMarkA.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg.fourMarkA.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkA.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkA.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-
-      <!-- Exam Practice Question 3B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One ${cfg.fourMarkB.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg.fourMarkB.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkB.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkB.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-        </div>
-      </div>
-      </div>
-
-      ${renderFooterStrip(leftPageNum, cfg.leftPageQuip)}
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------------------------ -->
-  <!-- RIGHT PAGE: EXTENDED EXAM PRACTICE & RIGOROUS TIMELINE MISSION     -->
-  <!-- ------------------------------------------------------------------ -->
   <div class="page page-container" id="page-${rightPageNum}">
     <div class="page-body-full">
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.tariff}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing Assessment
-        </span>
-      </div>
+      <div>
+        <!-- Exam Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.tariff}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Extended Writing Assessment
+          </span>
+        </div>
 
-      <!-- Question Stem & Stimulus Box -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
-          ${cfg.examStem}
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
-          <strong>Stimulus:</strong>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
-          <span style="font-style: italic;">(You must also use information of your own)</span>
-        </div>
-      </div>
-
-      <!-- 3-Column Planning Structure Strip -->
-      <div style="margin-bottom: 5px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Structure Strip &bull; 3-Paragraph Analytical Plan
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-          ${cfg.structureStrip
-            .map(
-              (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; line-height: 1.2; display: block;">${strip.text}</span>
+        <!-- Question Stem & Stimulus Box -->
+        <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
+            ${cfg.examStem}
           </div>
-          `,
-            )
-            .join('')}
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
+            <strong>Stimulus:</strong>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
+            <span style="font-style: italic;">(You must also use information of your own)</span>
+          </div>
+        </div>
+
+        <!-- Ruled Task Lines Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+          <span><strong>Write your response in the space provided below:</strong></span>
+          <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
         </div>
       </div>
 
-      <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
+      <!-- 28 Ruled Task Lines for Extended Writing (Authentic 8.0mm Line Budget) -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+${flexTaskLines}
+      </div>
+
+      <!-- Timeline Mission (Deep Historical Analytical Task) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+            Timeline Mission
+          </span>
+          <span style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.25; color: #000000;">
+            ${cfg.timelineMission}
+          </span>
         </div>
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Domain Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #333333; line-height: 1.2; display: block;">${cfg.wordBank}</span>
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 6px; font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp; ] Done
         </div>
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${cfg.rightPageQuip}</span>
+        <span class="footer-page-num">${rightPageNum}/24</span>
       </div>
-      <div class="ruled-lines-block" style="margin-bottom: 3px;">
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-        <div class="task-line" style="height: 8.55mm;"></div>
-      </div>
-
-      <!-- Living Timeline Drawing & Synthesis Mission -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">
-            &bull; Living Timeline Mission
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">SYNTHESIS</span>
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.25; color: #000000;">
-          ${cfg.timelineMission}
-        </div>
-      </div>
-
-      ${renderFooterStrip(rightPageNum, cfg.rightPageQuip)}
     </div>
   </div>
 `;
 
-    // ------------------------------------------------------------------
-    // SPREAD 2, LEFT PAGE (VERSO): EXTENDED WRITING & DISCIPLINARY NOTES
-    // ------------------------------------------------------------------
-    const linedRowsLeft = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
+    // PAGE 3 OF MODULE: LINED WRITING (VERSO) - FULL CONTINUATION PAGE FOR WHY / ESSAY (31 FULL-WIDTH LINES AT 8.0mm PITCH)
+    const continuationTaskLines = Array.from(
+      { length: 31 },
+      () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    ).join('');
 
     html += `
   <div class="page page-container" id="page-${linedLeftPageNum}">
@@ -1298,14 +1151,19 @@ function buildModernTwoPageWorkbook(unitData, period) {
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
           ${cfg.title}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          ${cfg.tariff.split(':')[0]} Continued
         </span>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsLeft}
+      <!-- Continuation Prompt -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+        Continue your response to ${cfg.tariff.split(':')[0]} below:
+      </div>
+
+      <!-- 31 Ruled Lines (Exact 8.0mm line pitch matching Page 5) -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+        ${continuationTaskLines}
       </div>
 
       ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
@@ -1313,40 +1171,61 @@ function buildModernTwoPageWorkbook(unitData, period) {
   </div>
 `;
 
-    // ------------------------------------------------------------------
-    // SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION
-    // ------------------------------------------------------------------
-    const linedRowsRight = Array.from({ length: 28 }, (_, idx) => {
-      const isFirst = idx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
+    // PAGE 4 OF MODULE: LINED WRITING (RECTO) - ESSAY SYNTHESIS & HISTORICAL VERDICT (24 LINES) + QUESTION 3 [4 MARKS] (6 LINES)
+    const conclusionTaskLines = Array.from(
+      { length: 24 },
+      () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    ).join('');
+
+    const q3TaskLines = Array.from(
+      { length: 6 },
+      () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    ).join('');
 
     html += `
   <div class="page page-container" id="page-${linedRightPageNum}">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Independent Practice &bull; Extended Exam Response
-        </span>
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Running Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.title}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Assessment Synthesis &amp; Question 3
+          </span>
+        </div>
+
+        <!-- Conclusion Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Final analytical evaluation &amp; concluding historical verdict:
+        </div>
       </div>
 
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsRight}
+      <!-- 24 Ruled Lines for Essay Synthesis / Conclusion (Exact 8.0mm pitch) -->
+      <div style="flex: 3.6; display: flex; flex-direction: column; margin: 2px 0 6px 0;">
+        ${conclusionTaskLines}
+      </div>
+
+      <!-- Question 3: Similarity / Difference [4 marks] (Authentic Cross-Era Exam Practice at end of module) -->
+      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; flex: 1.4; display: flex; flex-direction: column;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
+            [4 MARKS &bull; 5 MINS]
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
+          ${cfg.fourMark.question}
+        </p>
+        <!-- 6 Ruled Lines for Question 3 (Exact 8.0mm pitch) -->
+        <div style="flex: 1; display: flex; flex-direction: column; margin: 1px 0 0 0;">
+          ${q3TaskLines}
+        </div>
       </div>
 
       ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
@@ -1356,158 +1235,317 @@ function buildModernTwoPageWorkbook(unitData, period) {
   });
 
   // ====================================================================
-  // PAGE 24: OUTSIDE BACK COVER (96-MARK LEDGER, WWW/EBI & 5 QR CODES)
+  // PAGE 24: OUTSIDE BACK COVER
   // ====================================================================
   html += `
   <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <!-- Section Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Key Topic 4: Cumulative Assessment Ledger &amp; Student Voice
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Formative Assessment &bull; Diagnostic Tracker
-        </span>
+      <!-- Top Departmental Branding -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 3px;">
+        <div data-department-name="The History Department">
+          <span style="font-family: 'Inter', sans-serif; font-size: 10pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 0.8px;">
+            <span class="school-brand-target">The History Department</span>
+          </span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000;">
+          KEY TOPIC 4 ASSESSMENT RECORD &bull; c1900–PRESENT
+        </div>
       </div>
 
-      <!-- Cumulative Assessment Tracking Table (96 Marks Total) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+      <!-- Student Target Grade Strip -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; align-items: center;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Current Grade:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+        </div>
+      </div>
+
+      <!-- Expanded Key Topic 4 Assessment Record Table (10 Questions + Cumulative Total) -->
+      <div style="border: 2px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
-            <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 5px 6px; width: 22px; text-align: center; border-right: 1px solid #000000;">#</th>
-              <th style="padding: 5px 8px; text-align: left; border-right: 1px solid #000000;">Enquiry Lesson Title</th>
-              <th style="padding: 5px 6px; text-align: center; border-right: 1px solid #000000;">4-Mark Task</th>
-              <th style="padding: 5px 6px; text-align: center; border-right: 1px solid #000000;">Extended Writing</th>
-              <th style="padding: 5px 6px; text-align: center; font-weight: 900;">Total Score</th>
+            <tr style="background: #000000; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
+              <th style="padding: 7px 6px; text-align: center; width: 8%; font-size: 7.8pt; font-weight: 800;">Enquiry</th>
+              <th style="padding: 7px 10px; text-align: left; width: 36%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid #444444;">Assessment Component Focus</th>
+              <th style="padding: 7px 6px; text-align: center; width: 7%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid #444444;">Page</th>
+              <th style="padding: 7px 6px; text-align: center; width: 12%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid #444444;">Score</th>
+              <th style="padding: 7px 10px; text-align: left; width: 37%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid #444444;">Teacher Comment &amp; Next Steps</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.1:</strong> DNA &amp; Human Genome</td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+            <!-- KT4.1: DNA & Genetics -->
+            <tr style="border-bottom: 1px dashed #d1d5db;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000; background: #f8fafc; vertical-align: middle;">
+                KT4.1
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q4:</strong> Explain Why Rapid Progress in Causes c1950–Present
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 5–7
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #777777; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                </div>
+              </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.2:</strong> Lifestyle &amp; Diagnosis</td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+            <tr style="border-bottom: 2px solid #000000;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q3:</strong> Explain One Difference (Investigating Causes: 1880s vs 1990s)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 7
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.3:</strong> Magic Bullets &amp; The NHS</td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+
+            <!-- KT4.2: Lifestyle & Diagnosis -->
+            <tr style="border-bottom: 1px dashed #d1d5db;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000; background: #f8fafc; vertical-align: middle;">
+                KT4.2
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q5/6:</strong> Evaluative Essay on Diagnostic Scanners vs Lifestyle Campaigns
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 9–11
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #777777; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                </div>
+              </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.4:</strong> Penicillin Case Study</td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Diff: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Why: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
+            <tr style="border-bottom: 2px solid #000000;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q3:</strong> Explain One Difference (Diagnostic Methods: 19th c vs Late 20th c)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 11
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 7.5px 8px; border-right: 1px solid #000000;"><strong>KT4.5:</strong> Lung Cancer Case Study</td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Sim: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q5/6 Essay: <span style="font-size: 9.5pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; text-align: center; font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 24</strong> ]</td>
+
+            <!-- KT4.3: Magic Bullets & The NHS -->
+            <tr style="border-bottom: 1px dashed #d1d5db;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000; background: #f8fafc; vertical-align: middle;">
+                KT4.3
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q5/6:</strong> Evaluative Essay on the NHS as a Medical Turning Point (1948)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 13–15
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #777777; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                </div>
+              </td>
             </tr>
-            <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Cumulative Assessment Totals</td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Total: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Extended: <span style="font-size: 9.8pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 76</strong> ]</span></td>
-              <td style="padding: 7.5px 6px; text-align: center; font-size: 10.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 96</strong> ]</td>
+            <tr style="border-bottom: 2px solid #000000;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q3:</strong> Explain One Difference (Healthcare Access: 1930s vs Post-1948)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 15
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- KT4.4: Penicillin Case Study -->
+            <tr style="border-bottom: 1px dashed #d1d5db;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000; background: #f8fafc; vertical-align: middle;">
+                KT4.4
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q4:</strong> Explain Why Penicillin was Mass-Produced (1928–1945)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 17–19
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #777777; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 2px solid #000000;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q3:</strong> Explain One Similarity (Fleming 1928 vs Jenner 1796)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 19
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- KT4.5: Lung Cancer Case Study -->
+            <tr style="border-bottom: 1px dashed #d1d5db;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.5px solid #000000; background: #f8fafc; vertical-align: middle;">
+                KT4.5
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q5/6:</strong> Evaluative Essay on Government Action &amp; Lung Cancer
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 21–23
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #777777; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #d1d5db; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 2px solid #000000;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 8.2pt;">
+                <strong>Q3:</strong> Explain One Similarity (Anti-Smoking Laws vs 1875 Public Health Act)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+                p. 23
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- Total Row -->
+            <tr style="background: #f8fafc; border-top: 2px solid #000000;">
+              <td style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 8.5pt; border-right: 1.5px solid #000000; background: #000000; color: #ffffff;">
+                TOTAL
+              </td>
+              <td style="padding: 12px 10px; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000;">
+                Key Topic 4 Cumulative Examination Assessment Portfolio (10 Tasks)
+              </td>
+              <td style="padding: 12px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.5px solid #000000;">
+                p. 4–23
+              </td>
+              <td style="padding: 12px 6px; text-align: center; font-size: 11pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 104
+              </td>
+              <td style="padding: 12px 10px; font-weight: 800; font-size: 8.5pt; background: #f8fafc;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <span>Overall Grade: <span style="display: inline-block; width: 45px; border-bottom: 1.5px solid #000000;"></span></span>
+                  <span style="font-size: 7.5pt; color: #555555;">Teacher Target: <span style="display: inline-block; width: 40px; border-bottom: 1px solid #555555;"></span></span>
+                </div>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback Section (WWW & EBI 4 lines each) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-            Teacher Formative Assessment &bull; Feedback
+      <!-- 5 Verified Micro-QR Codes with Dual QR (Lesson + Quiz) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 6px; background: #f8fafc;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700;">
-            Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000;">
+            Interactive Textbook &bull; 10 Questions Per Enquiry
           </span>
         </div>
-
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
-            What Went Well (WWW):
-          </strong>
-          <div class="ruled-lines-block">
-            <div class="task-line" style="height: 12.0mm;"></div>
-            <div class="task-line" style="height: 12.0mm;"></div>
-            <div class="task-line" style="height: 12.0mm;"></div>
-            <div class="task-line" style="height: 12.0mm;"></div>
-          </div>
-        </div>
-
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
-            Even Better If (EBI):
-          </strong>
-          <div class="ruled-lines-block">
-            <div class="task-line" style="height: 12.0mm;"></div>
-            <div class="task-line" style="height: 12.0mm;"></div>
-            <div class="task-line" style="height: 12.0mm;"></div>
-            <div class="task-line" style="height: 12.0mm;"></div>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt;">
-          <span><strong>Teacher Signature:</strong> ____________________________</span>
-          <span><strong>Date:</strong> ____________________</span>
-        </div>
-      </div>
-
-      <!-- Interactive Quizzing QR Codes for Lessons 4.1–4.5 -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
-            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
-            ONLINE RECALL
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
           ${modernConfigs
             .map((cfg, idx) => {
-              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.lessonIndex}&quiz=true`;
-              const qrSvg = generateQrSvg(quizUrl);
+              const lessonUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.id}&view=lessons`;
+              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.id}&quiz=true`;
+              const lessonQrSvg = generateQrSvg(lessonUrl);
+              const quizQrSvg = generateQrSvg(quizUrl);
               const shortLabels = [
                 'DNA & Genetics',
-                'Diagnosis & CT',
+                'Lifestyle & Scans',
                 'Magic Bullets & NHS',
                 'Penicillin Study',
                 'Lung Cancer Study',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 3px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
               KT4.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
-            <div style="width: 21.5mm; height: 21.5mm; margin: 0 auto 2px auto;">
-              ${qrSvg}
+
+            <!-- Top QR: Interactive Lesson Hub -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 4px; width: 100%;">
+              <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
+                ${lessonQrSvg}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Lesson Hub
+              </span>
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
-              Scan to Quiz
-            </span>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
+
+            <!-- Bottom QR: Mastery Quiz -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3px; width: 100%;">
+              <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
+                ${quizQrSvg}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Mastery Quiz
+              </span>
+            </div>
+
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; margin-top: 2px; white-space: nowrap; border: 1px solid #000000; border-radius: 2px; padding: 1px 3px; background: #f8fafc;">
+              Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
           </div>
           `;
@@ -1516,7 +1554,7 @@ function buildModernTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      ${renderFooterStrip(24, 'From DNA to the NHS, state action and laboratory science revolutionized healthcare; revision guarantees your GCSE success.')}
+      ${renderFooterStrip(24, 'From DNA to the NHS, state action and laboratory science revolutionized healthcare; revision guarantees your GCSE success.', 24)}
     </div>
   </div>
 `;
@@ -1527,6 +1565,20 @@ function buildModernTwoPageWorkbook(unitData, period) {
 `;
 
   return html;
+}
+
+if (require.main === module) {
+  const customHtml = buildModernTwoPageWorkbook({}, {});
+  const unitPath = path.resolve(__dirname, '../units/edexcel_medicine/pupil_workbook_modern.html');
+  const pubPath = path.resolve(
+    __dirname,
+    '../public/units/edexcel_medicine/pupil_workbook_modern.html',
+  );
+  fs.writeFileSync(unitPath, customHtml, 'utf8');
+  fs.writeFileSync(pubPath, customHtml, 'utf8');
+  console.log('Successfully generated pupil_workbook_modern.html to:');
+  console.log(' -', unitPath);
+  console.log(' -', pubPath);
 }
 
 module.exports = {
