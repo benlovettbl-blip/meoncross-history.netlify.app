@@ -775,6 +775,11 @@ function updateSidebarForUnit(unitId, unitData = {}) {
         chevron.style.display = 'inline-block';
         chevron.style.transform = 'rotate(180deg)';
       }
+      if (typeof window.highlightActiveSidebarLesson === 'function') {
+        const curIdx =
+          state && typeof state.activeLessonIndex === 'number' ? state.activeLessonIndex : 0;
+        window.highlightActiveSidebarLesson(curIdx);
+      }
     } else if (topTree) {
       topTree.style.display = 'none';
       topTree.innerHTML = '';

@@ -353,9 +353,9 @@ export function bindEvents() {
   }
 }
 
-// Active Unit Tree Highlighting, Auto-Expansion and Lesson Tree Explorer in Lower Sidebar
+// Active Unit Highlighting & Auto-Expansion in Lower Sidebar
 window.highlightActiveSidebarUnit = function (unitId, activeLessonIndex = null) {
-  // Remove existing lesson trees
+  // Remove any legacy lesson trees in unit catalog to prevent duplication with top workspace
   document
     .querySelectorAll('#sidebar-unit-links .sidebar-lessons-tree')
     .forEach((el) => el.remove());
@@ -389,72 +389,14 @@ window.highlightActiveSidebarUnit = function (unitId, activeLessonIndex = null) 
           }
         }
       }
-
-      // Build lesson tree explorer under the active unit
-      const unitEntry = window.db && window.db[targetId] && window.db[targetId].data;
-      const unitData = unitEntry || (state && state.activeUnitData);
-      const lessons = (unitData && (unitData.lessons || unitData.subtopics)) || [];
-
-      if (lessons.length > 0) {
-        const tree = document.createElement('div');
-        tree.className = 'sidebar-lessons-tree';
-
-        lessons.forEach((sub, idx) => {
-          const item = document.createElement('div');
-          item.className = 'sidebar-lesson-item';
-          item.setAttribute('data-lesson-index', idx);
-          if (activeLessonIndex !== null && idx === activeLessonIndex) {
-            item.classList.add('active');
-          }
-
-          const rawTitle = sub.title || `Lesson ${idx + 1}`;
-          const vBadgeHtml = renderSidebarVideoBadgeHTML(sub);
-          item.innerHTML = `
-            <span class="sidebar-lesson-badge">${idx + 1}</span>
-            <span class="sidebar-lesson-title-text" title="${rawTitle.replace(/"/g, '&quot;')}">${rawTitle}</span>
-            ${vBadgeHtml}
-          `;
-
-          item.addEventListener('click', (e) => {
-            e.stopPropagation();
-            // Highlight this lesson item immediately
-            document
-              .querySelectorAll('.sidebar-lesson-item')
-              .forEach((b) => b.classList.remove('active'));
-            item.classList.add('active');
-
-            if (
-              state &&
-              state.selectedUnitId === targetId &&
-              typeof window.viewLessonDetail === 'function'
-            ) {
-              window.viewLessonDetail(idx);
-            } else if (typeof window.switchView === 'function') {
-              window.switchView('lessons', targetId, false, { lessonIndex: idx });
-            } else if (typeof window.launchSubApp === 'function') {
-              window.launchSubApp(targetId);
-            } else {
-              window.location.href = `/?view=lessons&unit=${targetId}&lesson=${idx + 1}`;
-            }
-
-            // Mobile drawer auto-close
-            const sidebar = document.getElementById('app-sidebar');
-            const overlay = document.querySelector('.sidebar-overlay');
-            if (window.innerWidth <= 768 && sidebar && overlay) {
-              sidebar.classList.remove('mobile-open');
-              overlay.classList.remove('active');
-            }
-          });
-
-          tree.appendChild(item);
-        });
-
-        el.after(tree);
-      }
     } else {
       el.classList.remove('active-unit-tree-item');
     }
   });
+
+  if (typeof window.highlightActiveSidebarLesson === 'function' && activeLessonIndex !== null) {
+    window.highlightActiveSidebarLesson(activeLessonIndex);
+  }
 };
 
 window.highlightActiveSidebarLesson = function (lessonIndex) {
