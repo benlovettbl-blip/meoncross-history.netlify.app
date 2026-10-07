@@ -181,7 +181,25 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 
 ---
 
-## 6. Proactive Recommendations & Innovation Register
+## 6. Department-Wide Video Registry Audit, Alignment & Curation Pipeline
+
+### The "Zero Broken Links & High-Signal Lesson Media" Standard
+To guarantee every lesson across the Revision Hub provides pupils and teachers with immediate, accurate, and classroom-tested video media:
+1. **Automated Metadata & Duration Verification:**  
+   Every video entry across all units must be audited with exact runtimes (e.g. `5 mins 12 secs`, not generic `20 mins` approximations) extracted directly from verified ERA JSON-LD schemas and YouTube metadata.
+2. **Pedagogical Alignment & Anti-Confusion Standard:**  
+   - **Targeted Lesson Deep Dives:** Each lesson video must specifically address the enquiry focus of that lesson (e.g. Pasteur’s swan-neck flask experiments for Germ Theory; Dan Snow on trench conditions for Western Front).
+   - **Synoptic vs. Single-Lesson Media:** Multi-period survey videos (such as BBC *History File* 20-minute thematic overviews) must not be placed inside single chronological lessons where they confuse students. They belong in end-of-unit synoptic revision zones.
+   - **Protection Rule (Zero Accidental Deletions):** Existing high-signal, proven classroom videos must never be deleted indiscriminately; audits must preserve good videos, replace broken/mismatched links, and fill missing lesson gaps.
+3. **Rollout Schedule Across All Units:**  
+   - **Phase 1 (Immediate):** GCSE Paper 1 (*Medicine Through Time* — fill gaps, verify all 26 lessons) & KS3 Year 9 (*Causes of the Great War* — complete 6-lesson video curation).
+   - **Phase 2:** GCSE Paper 2 (*Conflict in the Middle East* & *Early Elizabethan England*).
+   - **Phase 3:** Remaining KS3 Units (*Medieval England*, *Industrialisation & Empire*, *Water & Sanitation*, *Early Modern World*, *The Great War Part 2*).
+   - **Phase 4:** GCSE *Weimar and Nazi Germany* & *USA 1954–75*.
+
+---
+
+## 7. Proactive Recommendations & Innovation Register
 All session recommendations are permanently logged, accumulated, and tracked in:  
 👉 **[`DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`](./DEPARTMENT_RECOMMENDATIONS_BACKLOG.md)**  
 *(Recommendations persist cumulatively across conversations and are only executed or cleared upon explicit user instruction).*

@@ -34,10 +34,12 @@ const puppeteer = require('puppeteer');
         .a3-page {
           box-shadow: none !important;
           border: none !important;
-          width: 404mm !important;
+          width: 100% !important;
+          max-width: 100% !important;
           height: 281mm !important;
+          box-sizing: border-box !important;
           border-radius: 0 !important;
-          padding: 8mm 10mm !important;
+          padding: 8mm 10mm 6mm 10mm !important;
           page-break-after: always !important;
         }
         .a3-page:last-of-type {
@@ -46,7 +48,7 @@ const puppeteer = require('puppeteer');
       `,
     });
 
-    // 1. Generate Complete 2-Page Master Pack (Pages 1 & 2)
+    // 1. Generate Single Complete 2-Page Master Pack (Pages 1 & 2)
     await page.pdf({
       path: fullPackFile,
       format: 'A3',
@@ -54,65 +56,52 @@ const puppeteer = require('puppeteer');
       printBackground: true,
       margin: { top: '6mm', right: '6mm', bottom: '6mm', left: '6mm' },
     });
-    console.log(`✅ Complete 2-Page Master Pack compiled: ${fullPackFile}`);
+    console.log(`✅ Complete 2-Page Master Pack compiled (Single PDF): ${fullPackFile}`);
 
-    // 2. Generate Page 1 Only (Championship Knockout)
-    await page.pdf({
-      path: page1File,
-      format: 'A3',
-      landscape: true,
-      printBackground: true,
-      pageRanges: '1',
-      margin: { top: '6mm', right: '6mm', bottom: '6mm', left: '6mm' },
-    });
-    console.log(`✅ Page 1 (Championship Bracket) compiled: ${page1File}`);
-
-    // 3. Generate Page 2 Only (Wooden Spoon & Results Hub)
-    await page.pdf({
-      path: page2File,
-      format: 'A3',
-      landscape: true,
-      printBackground: true,
-      pageRanges: '2',
-      margin: { top: '6mm', right: '6mm', bottom: '6mm', left: '6mm' },
-    });
-    console.log(`✅ Page 2 (Wooden Spoon & Results Hub) compiled: ${page2File}`);
+    // Remove legacy split page PDFs if they exist to keep folder clean
+    if (fs.existsSync(page1File)) fs.unlinkSync(page1File);
+    if (fs.existsSync(page2File)) fs.unlinkSync(page2File);
 
     // Sync to dist if dist exists
     const distPdfs = path.join(__dirname, '..', 'dist', 'pdfs');
     if (fs.existsSync(distPdfs)) {
       fs.copyFileSync(fullPackFile, path.join(distPdfs, 'chess_tournament_bracket_11_players.pdf'));
-      fs.copyFileSync(page1File, path.join(distPdfs, 'chess_tournament_page1_championship_A3.pdf'));
-      fs.copyFileSync(page2File, path.join(distPdfs, 'chess_tournament_page2_wooden_spoon_A3.pdf'));
-      console.log(`✅ Synced all 3 PDFs to dist/pdfs/`);
+      const distP1 = path.join(distPdfs, 'chess_tournament_page1_championship_A3.pdf');
+      const distP2 = path.join(distPdfs, 'chess_tournament_page2_wooden_spoon_A3.pdf');
+      if (fs.existsSync(distP1)) fs.unlinkSync(distP1);
+      if (fs.existsSync(distP2)) fs.unlinkSync(distP2);
+      console.log(`✅ Synced single master pack to dist/pdfs/`);
     }
 
     // Sync to Google Drive Chess Club folder
     const driveChess = 'G:\\My Drive\\AAMX\\Dep File\\Chess Club';
     if (fs.existsSync(driveChess)) {
-      fs.copyFileSync(
-        fullPackFile,
-        path.join(driveChess, 'Tutor Group Chess Tournament Bracket (11 Players A3).pdf'),
+      const driveFullPack = path.join(
+        driveChess,
+        'Tutor Group Chess Tournament Bracket (11 Players A3).pdf',
       );
-      fs.copyFileSync(
-        fullPackFile,
+      fs.copyFileSync(fullPackFile, driveFullPack);
+
+      // Clean up multiple old redundant split PDFs in Drive if present
+      const oldDriveFiles = [
         path.join(
           driveChess,
           'Tutor Group Chess - Complete 2-Page Tournament Pack (A3 Landscape).pdf',
         ),
-      );
-      fs.copyFileSync(
-        page1File,
         path.join(driveChess, 'Tutor Group Chess - 1. Championship Bracket (A3 Landscape).pdf'),
-      );
-      fs.copyFileSync(
-        page2File,
         path.join(
           driveChess,
           'Tutor Group Chess - 2. Wooden Spoon & Results Hub (A3 Landscape).pdf',
         ),
-      );
-      console.log(`✅ Synced all master and individual PDFs to Google Drive Chess Club folder!`);
+      ];
+      oldDriveFiles.forEach((f) => {
+        if (fs.existsSync(f)) {
+          try {
+            fs.unlinkSync(f);
+          } catch (e) {}
+        }
+      });
+      console.log(`✅ Synced single master pack to Google Drive Chess Club folder!`);
     }
   } catch (err) {
     console.error('❌ Error compiling chess tournament PDFs:', err);

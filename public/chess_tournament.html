@@ -181,19 +181,21 @@
        Fills 100% of A3 Landscape with 6mm margins
        ============================================================ */
       .a3-page {
-        width: 408mm;
-        height: 285mm;
+        width: 404mm;
+        max-width: 100%;
+        height: 281mm;
         background: #ffffff;
         border: 2px solid #cbd5e1;
         box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
         border-radius: 6px;
-        padding: 10mm 12mm 8mm 12mm;
+        padding: 8mm 10mm 6mm 10mm;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
         overflow: hidden;
         page-break-after: always;
+        box-sizing: border-box;
       }
       .a3-page:last-of-type {
         page-break-after: avoid;
@@ -277,9 +279,12 @@
         align-items: stretch;
         justify-content: space-between;
         flex: 1;
-        gap: 12mm;
+        gap: 8mm;
         padding: 4px 0;
         position: relative;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .bracket-step-col {
@@ -287,6 +292,7 @@
         flex-direction: column;
         justify-content: space-around;
         flex: 1;
+        min-width: 0;
         position: relative;
       }
 
@@ -834,7 +840,7 @@
       <!-- Giant 4-Column Knockout Tree (Stretches to Full A3 Canvas) -->
       <main class="giant-bracket-tree">
         <!-- Col 1: Preliminary Round (Round 1) -->
-        <div class="bracket-step-col" style="flex: 1.15">
+        <div class="bracket-step-col" style="flex: 1; min-width: 0">
           <div class="round-title-pill">1. Preliminary Round (6 Players)</div>
 
           <!-- Match 1 -->
@@ -923,7 +929,7 @@
         </div>
 
         <!-- Col 2: Quarter-Finals (Round 2 - 8 Players) -->
-        <div class="bracket-step-col" style="flex: 1.25">
+        <div class="bracket-step-col" style="flex: 1.06; min-width: 0">
           <div class="round-title-pill">2. Quarter-Finals (8 Players)</div>
 
           <!-- QF 1 -->
@@ -1040,7 +1046,7 @@
         </div>
 
         <!-- Col 3: Semi-Finals (Round 3 - 4 Players) -->
-        <div class="bracket-step-col" style="flex: 1.2">
+        <div class="bracket-step-col" style="flex: 1; min-width: 0">
           <div class="round-title-pill">3. Semi-Finals (4 Players)</div>
 
           <!-- Semi 1 -->
@@ -1101,7 +1107,7 @@
         </div>
 
         <!-- Col 4: Grand Final & Podium -->
-        <div class="bracket-step-col" style="flex: 1.35">
+        <div class="bracket-step-col" style="flex: 1.1; min-width: 0">
           <div class="round-title-pill gold">4. Grand Final &amp; Podium</div>
 
           <!-- Championship Match -->
