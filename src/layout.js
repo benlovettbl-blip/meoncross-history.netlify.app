@@ -5,6 +5,7 @@
 import { getUnits } from './views.js';
 import { state } from './state.js';
 import { switchView } from './navigation.js';
+import { renderSidebarVideoBadgeHTML } from './engine/video_utils.js';
 
 export function bindEvents() {
   // Back button click handler
@@ -430,9 +431,11 @@ window.highlightActiveSidebarUnit = function (unitId, activeLessonIndex = null) 
           }
 
           const rawTitle = sub.title || `Lesson ${idx + 1}`;
+          const vBadgeHtml = renderSidebarVideoBadgeHTML(sub);
           item.innerHTML = `
             <span class="sidebar-lesson-badge">${idx + 1}</span>
             <span class="sidebar-lesson-title-text" title="${rawTitle.replace(/"/g, '&quot;')}">${rawTitle}</span>
+            ${vBadgeHtml}
           `;
 
           item.addEventListener('click', (e) => {

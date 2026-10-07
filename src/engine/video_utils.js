@@ -63,12 +63,17 @@ export function formatShortDuration(durationStr) {
  */
 export function getSortedLessonVideos(lesson) {
   if (!lesson) return [];
-  const rawVideos = (
-    lesson.video ? (Array.isArray(lesson.video) ? lesson.video : [lesson.video]) : []
-  ).concat(lesson.extra_videos || []);
+  let rawVideos = [];
+  if (Array.isArray(lesson)) {
+    rawVideos = lesson;
+  } else {
+    rawVideos = (
+      lesson.video ? (Array.isArray(lesson.video) ? lesson.video : [lesson.video]) : []
+    ).concat(lesson.extra_videos || []);
+  }
 
-  return [...rawVideos].sort((a, b) => {
-    return parseDurationToSeconds(a.duration) - parseDurationToSeconds(b.duration);
+  return [...rawVideos].filter(Boolean).sort((a, b) => {
+    return parseDurationToSeconds(a && a.duration) - parseDurationToSeconds(b && b.duration);
   });
 }
 

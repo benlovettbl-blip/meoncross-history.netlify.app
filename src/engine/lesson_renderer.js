@@ -4,7 +4,11 @@ import { appStore } from './store.js';
 import { getAssetUrl } from './assets.js';
 import { getWorkbookPageAnchor } from './workbook_page_map.js';
 import { renderAudioPlaybackBar } from './speech.js';
-import { parseDurationToSeconds, formatShortDuration } from './video_utils.js';
+import {
+  parseDurationToSeconds,
+  formatShortDuration,
+  getSortedLessonVideos,
+} from './video_utils.js';
 
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
@@ -742,6 +746,30 @@ if (typeof window !== 'undefined' && !window.switchVideoTab) {
     if (activePill) {
       activePill.style.background = 'rgba(255,255,255,0.18)';
       activePill.style.color = '#ffffff';
+    }
+  };
+}
+
+// Register global toggleVideoTaskDrawer handler for 1-Horizontal-Line Video Shelf
+if (typeof window !== 'undefined' && !window.toggleVideoTaskDrawer) {
+  window.toggleVideoTaskDrawer = function (safeLessonId, idx, e) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    const drawer = document.getElementById('video-task-drawer-' + safeLessonId);
+    if (!drawer) return;
+    const targetContent = document.getElementById('video-task-content-' + safeLessonId + '-' + idx);
+    const isCurrentlyOpen =
+      drawer.style.display !== 'none' && targetContent && targetContent.style.display !== 'none';
+
+    if (isCurrentlyOpen) {
+      drawer.style.display = 'none';
+      if (targetContent) targetContent.style.display = 'none';
+    } else {
+      drawer.querySelectorAll('.video-task-item-content').forEach(function (el) {
+        el.style.display = 'none';
+      });
+      if (targetContent) targetContent.style.display = 'block';
+      drawer.style.display = 'block';
+      drawer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
   };
 }
@@ -1669,14 +1697,21 @@ function renderLessonVideos(videos, lesson, unitId) {
   if (!videos || videos.length === 0) return '';
   const formatBold = window.formatBold || ((s) => s);
 
+  // Always sort videos shortest to longest
+  const sortedVideos = getSortedLessonVideos(videos);
+  if (sortedVideos.length === 0) return '';
+
   const safeLessonId = (
     lesson && (lesson.id || lesson.title) ? String(lesson.id || lesson.title) : 'lesson'
   ).replace(/[^a-zA-Z0-9_-]/g, '_');
-  const videoSectionId = 'video-section-' + safeLessonId;
+  const shelfContainerId = 'video-shelf-' + safeLessonId;
+  const drawerId = 'video-task-drawer-' + safeLessonId;
 
   let videoCardsHtml = '';
+  let taskPanelsHtml = '';
+  let hasAnyTasks = false;
 
-  videos.forEach((vid, idx) => {
+  sortedVideos.forEach((vid, idx) => {
     const isYt =
       vid.type === 'youtube' ||
       (vid.url && (vid.url.includes('youtube.com') || vid.url.includes('youtu.be')));
@@ -1690,259 +1725,213 @@ function renderLessonVideos(videos, lesson, unitId) {
       ytId = match ? match[1] : null;
     }
 
-    const providerName = isEra
-      ? 'BBC / ERA Educational'
-      : isYt
-        ? 'YouTube Archival'
-        : 'Educational Video';
-    const providerBadgeColor = isEra ? '#1e40af' : '#dc2626';
-    const providerBadgeBg = isEra ? '#eff6ff' : '#fef2f2';
-    const providerBadgeBorder = isEra ? '#bfdbfe' : '#fecaca';
+    const shortDur = formatShortDuration(vid.duration);
+    const providerName = isEra ? 'ERA' : isYt ? 'YouTube' : 'Video';
     const providerIcon = isEra ? 'fa-solid fa-graduation-cap' : 'fa-brands fa-youtube';
-
     const pathwayInfo = resolveVideoPathway(vid);
+    const cleanTitle = (vid.title || 'Historical Documentary Resource').replace(/"/g, '&quot;');
+    const rawCleanTitle = vid.title || 'Historical Documentary Resource';
 
-    let actionButtonHtml = '';
+    // Left thumbnail element
+    let thumbHtml = '';
     if (ytId) {
-      actionButtonHtml = `
-        <button type="button" class="btn btn-primary no-print" data-action="open-video-modal" data-youtube="${ytId}" style="display: inline-flex; align-items: center; gap: 6px; background: #dc2626; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; box-shadow: 0 2px 5px rgba(220, 38, 38, 0.25);">
-          <i class="fa-solid fa-play" style="font-size: 0.78rem;"></i> Watch in App
-        </button>
-        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="color: #64748b; font-size: 0.8rem; text-decoration: underline; display: inline-flex; align-items: center; gap: 3px;">
-          Link <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
-        </a>
+      thumbHtml = `
+        <div class="video-shelf-thumb-wrap" data-action="open-video-modal" data-youtube="${ytId}" title="Click to Play: ${cleanTitle}">
+          <img src="https://img.youtube.com/vi/${ytId}/mqdefault.jpg" alt="${cleanTitle}" class="video-shelf-thumb-img" loading="lazy" />
+          <div class="video-shelf-play-overlay">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          ${vid.duration ? `<span class="video-shelf-dur-pill">${shortDur || vid.duration}</span>` : ''}
+        </div>
       `;
     } else if (isEra) {
-      actionButtonHtml = `
-        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 6px; background: #1e40af; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none; transition: all 0.2s; box-shadow: 0 2px 5px rgba(30, 64, 175, 0.25);">
-          <i class="fa-solid fa-lock" style="font-size: 0.75rem;"></i> Stream on ERA <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem; margin-left: 2px;"></i>
+      thumbHtml = `
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="video-shelf-thumb-wrap era" title="Open Stream on ERA (School SSO): ${cleanTitle}">
+          <div class="video-shelf-era-poster">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>BBC / ERA</span>
+          </div>
+          <div class="video-shelf-play-overlay era">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+          ${vid.duration ? `<span class="video-shelf-dur-pill era">${shortDur || vid.duration}</span>` : ''}
         </a>
-        <span class="no-print" style="color: #64748b; font-size: 0.78rem; font-style: italic;">School SSO</span>
       `;
     } else {
-      actionButtonHtml = `
-        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="no-print" style="display: inline-flex; align-items: center; gap: 6px; background: #0f172a; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-weight: 700; font-size: 0.85rem; text-decoration: none;">
-          <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i> Open
+      thumbHtml = `
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="video-shelf-thumb-wrap generic" title="Open Video: ${cleanTitle}">
+          <div class="video-shelf-generic-poster">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <div class="video-shelf-play-overlay">
+            <i class="fa-solid fa-play"></i>
+          </div>
+          ${vid.duration ? `<span class="video-shelf-dur-pill">${shortDur || vid.duration}</span>` : ''}
         </a>
       `;
     }
 
+    // Task and Action buttons
+    let actionButtonsHtml = '';
+    const hasTask = Boolean(vid.viewing_task || pathwayInfo.guidance || vid.model_answer);
+    if (hasTask) hasAnyTasks = true;
+
+    if (ytId) {
+      actionButtonsHtml += `
+        <button type="button" class="btn-video-shelf-action watch" data-action="open-video-modal" data-youtube="${ytId}">
+          <i class="fa-solid fa-play"></i> Watch
+        </button>
+      `;
+    } else if (isEra) {
+      actionButtonsHtml += `
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="btn-video-shelf-action era">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Stream
+        </a>
+      `;
+    } else {
+      actionButtonsHtml += `
+        <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="btn-video-shelf-action generic">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Open
+        </a>
+      `;
+    }
+
+    if (hasTask) {
+      actionButtonsHtml += `
+        <button type="button" class="btn-video-shelf-action task" onclick="window.toggleVideoTaskDrawer('${safeLessonId}', ${idx}, event)" title="View Task &amp; Guidance">
+          <i class="fa-solid fa-crosshairs"></i> Task
+        </button>
+      `;
+    }
+
+    // 1 Horizontal Line Card
     videoCardsHtml += `
-      <div id="${videoSectionId}-card-${idx}" class="archival-video-entry" style="display: ${idx === 0 ? 'flex' : 'none'}; flex-direction: column; gap: 10px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03);">
-        <!-- Top row: Provider + Duration + Pathway Badge + Title + Action -->
-        <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap;">
-          <div style="flex: 1; min-width: 240px;">
-            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px; flex-wrap: wrap;">
-              <span class="archival-meta-tag" style="background: ${providerBadgeBg}; color: ${providerBadgeColor}; border: 1px solid ${providerBadgeBorder}; font-size: 0.70rem; padding: 2px 7px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 4px;">
-                <i class="${providerIcon}"></i> ${providerName}
-              </span>
-              ${vid.duration ? `<span style="background: #f1f5f9; color: #475569; font-size: 0.74rem; font-weight: 600; padding: 2px 7px; border-radius: 4px; border: 1px solid #e2e8f0; display: inline-flex; align-items: center; gap: 4px;"><i class="fa-regular fa-clock"></i> ${vid.duration}</span>` : ''}
-              <span class="archival-meta-tag" style="background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; font-size: 0.72rem; padding: 2px 8px; border-radius: 4px; font-weight: 700; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 4px;">
-                <i class="${pathwayInfo.icon}" style="color: #2563eb;"></i> ${pathwayInfo.pathway}
-              </span>
-            </div>
-            <h4 style="margin: 0; font-size: 1.05rem; color: #0f172a; font-family: 'Playfair Display', serif; line-height: 1.35;">
-              ${vid.title || 'Historical Documentary Resource'}
-            </h4>
+      <div class="video-shelf-card ${isEra ? 'era-card' : 'yt-card'}" id="${shelfContainerId}-card-${idx}">
+        ${thumbHtml}
+        <div class="video-shelf-card-info">
+          <div class="video-shelf-card-tags">
+            <span class="video-shelf-provider-pill ${isEra ? 'era' : 'yt'}">
+              <i class="${providerIcon}"></i> ${providerName}
+            </span>
+            <span class="video-shelf-pathway-pill" title="${(pathwayInfo.guidance || '').replace(/"/g, '&quot;')}">
+              ${pathwayInfo.pathway}
+            </span>
           </div>
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            ${actionButtonHtml}
+          <div class="video-shelf-card-title" title="${cleanTitle}">
+            ${rawCleanTitle}
+          </div>
+          <div class="video-shelf-card-actions">
+            ${actionButtonsHtml}
           </div>
         </div>
-
-        ${
-          ytId
-            ? `
-          <!-- Direct Embedded YouTube Player with Privacy-Enhanced Mode -->
-          <div class="video-embed-wrapper no-print" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; margin-top: 6px; margin-bottom: 4px; background: #000000; box-shadow: 0 4px 14px rgba(0,0,0,0.12);">
-            <iframe src="https://www.youtube-nocookie.com/embed/${ytId}" title="${(vid.title || 'Video').replace(/"/g, '&quot;')}" loading="lazy" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        `
-            : isEra
-              ? `
-          <!-- Live ERA Broadcast Portal Card -->
-          <div class="era-portal-preview no-print" style="background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: #ffffff; border-radius: 8px; padding: 14px 18px; margin-top: 6px; margin-bottom: 4px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 3px 10px rgba(30,64,175,0.2);">
-            <div>
-              <div style="font-size: 0.72rem; text-transform: uppercase; font-weight: 800; letter-spacing: 0.06em; color: #93c5fd; margin-bottom: 3px; display: flex; align-items: center; gap: 6px;">
-                <i class="fa-solid fa-graduation-cap"></i> BBC &amp; Educational Recording Agency (ERA) Broadcast
-              </div>
-              <div style="font-size: 0.98rem; font-weight: 700; color: #ffffff; font-family: 'Playfair Display', serif;">
-                ${vid.title || 'Curriculum Video Resource'}
-              </div>
-              <div style="font-size: 0.78rem; color: #bfdbfe; margin-top: 3px;">
-                Full broadcast licensed for schools &bull; Authenticate via your school Single Sign-On (SSO)
-              </div>
-            </div>
-            <a href="${vid.url}" target="_blank" rel="noopener noreferrer" style="background: #ffffff; color: #1e40af; border: none; padding: 9px 18px; border-radius: 6px; font-weight: 800; font-size: 0.88rem; text-decoration: none; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(0,0,0,0.15); transition: all 0.15s ease;" onmouseover="this.style.background='#f8fafc'; this.style.transform='translateY(-1px)'" onmouseout="this.style.background='#ffffff'; this.style.transform='none'">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Live Stream on ERA
-            </a>
-          </div>
-        `
-              : ''
-        }
-
-        <!-- Side-by-side Teacher Guidance + Active Viewing Task Grid (Option 4) -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 2px;">
-          ${
-            pathwayInfo.guidance
-              ? `
-            <div class="video-teacher-guidance-box" style="background: #f8fafc; border-left: 3px solid #6366f1; padding: 8px 12px; border-radius: 0 5px 5px 0; display: flex; align-items: flex-start; gap: 8px;">
-              <div style="color: #4f46e5; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
-                <i class="fa-solid fa-chalkboard-user"></i>
-              </div>
-              <div>
-                <div style="font-size: 0.70rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
-                  Teacher Video Pathway Guidance:
-                </div>
-                <div style="font-size: 0.84rem; color: #334155; line-height: 1.45;">
-                  ${formatBold(pathwayInfo.guidance)}
-                </div>
-              </div>
-            </div>
-          `
-              : ''
-          }
-
-          ${
-            vid.viewing_task
-              ? `
-            <div class="video-viewing-task-box" style="background: #fffbeb; border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 0 5px 5px 0; display: flex; align-items: flex-start; gap: 8px;">
-              <div style="color: #d97706; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
-                <i class="fa-solid fa-crosshairs"></i>
-              </div>
-              <div>
-                <div style="font-size: 0.70rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
-                  Active Viewing Task:
-                </div>
-                <div style="font-size: 0.85rem; color: #92400e; line-height: 1.45;">
-                  ${formatBold(vid.viewing_task)}
-                </div>
-              </div>
-            </div>
-          `
-              : ''
-          }
-        </div>
-
-        <!-- Revealable Model Answer -->
-        ${
-          vid.model_answer
-            ? `
-          <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden; margin-top: 2px;">
-            <summary style="cursor: pointer; padding: 7px 12px; font-size: 0.82rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 6px; background: #f0fdf4;">
-              <i class="fa-solid fa-key" style="color: #16a34a;"></i> Reveal Viewing Task Model Notes
-            </summary>
-            <div style="padding: 10px 14px; font-size: 0.88rem; color: #14532d; line-height: 1.55; border-top: 1px solid #bbf7d0; background: #ffffff;">
-              ${formatBold(vid.model_answer)}
-            </div>
-          </details>
-        `
-            : ''
-        }
       </div>
     `;
+
+    // Collapsible Task Content (if any)
+    if (hasTask) {
+      taskPanelsHtml += `
+        <div id="video-task-content-${safeLessonId}-${idx}" class="video-task-item-content" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: #0f172a; display: flex; align-items: center; gap: 6px;">
+              <i class="fa-solid fa-crosshairs" style="color: #d97706;"></i>
+              <span>Active Viewing Protocol &bull; ${cleanTitle}</span>
+              ${vid.duration ? `<span style="font-size: 0.72rem; color: #64748b; font-weight: 600;">[${vid.duration}]</span>` : ''}
+            </div>
+            <button type="button" style="background: none; border: none; font-size: 0.82rem; color: #64748b; cursor: pointer; padding: 2px 6px;" onclick="window.toggleVideoTaskDrawer('${safeLessonId}', ${idx}, event)">
+              <i class="fa-solid fa-xmark"></i> Close
+            </button>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 10px; margin-top: 6px;">
+            ${
+              pathwayInfo.guidance
+                ? `
+              <div class="video-teacher-guidance-box" style="background: #ffffff; border-left: 3px solid #6366f1; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #e2e8f0; border-left-width: 3px; display: flex; align-items: flex-start; gap: 8px;">
+                <div style="color: #4f46e5; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <div>
+                  <div style="font-size: 0.70rem; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+                    Teacher Pathway Guidance:
+                  </div>
+                  <div style="font-size: 0.84rem; color: #334155; line-height: 1.45;">
+                    ${formatBold(pathwayInfo.guidance)}
+                  </div>
+                </div>
+              </div>
+            `
+                : ''
+            }
+
+            ${
+              vid.viewing_task
+                ? `
+              <div class="video-viewing-task-box" style="background: #ffffff; border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 0 5px 5px 0; border: 1px solid #fed7aa; border-left-width: 3px; display: flex; align-items: flex-start; gap: 8px;">
+                <div style="color: #d97706; font-size: 0.88rem; margin-top: 2px; flex-shrink: 0;">
+                  <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <div>
+                  <div style="font-size: 0.70rem; font-weight: 800; color: #b45309; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 2px;">
+                    Active Viewing Task:
+                  </div>
+                  <div style="font-size: 0.85rem; color: #92400e; line-height: 1.45;">
+                    ${formatBold(vid.viewing_task)}
+                  </div>
+                </div>
+              </div>
+            `
+                : ''
+            }
+          </div>
+
+          ${
+            vid.model_answer
+              ? `
+            <details class="video-model-details" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; overflow: hidden; margin-top: 8px;">
+              <summary style="cursor: pointer; padding: 6px 12px; font-size: 0.80rem; color: #166534; font-weight: 700; user-select: none; display: flex; align-items: center; gap: 6px;">
+                <i class="fa-solid fa-key" style="color: #16a34a;"></i> Reveal Viewing Task Model Notes
+              </summary>
+              <div style="padding: 10px 14px; font-size: 0.86rem; color: #14532d; line-height: 1.55; border-top: 1px solid #bbf7d0; background: #ffffff;">
+                ${formatBold(vid.model_answer)}
+              </div>
+            </details>
+          `
+              : ''
+          }
+        </div>
+      `;
+    }
   });
 
-  // Segmented Pathway Tabs Bar if multiple videos
-  let tabBarHtml = '';
-  if (videos.length > 1) {
-    const tabButtons = videos
-      .map((v, i) => {
-        const isYt =
-          v.type === 'youtube' ||
-          (v.url && (v.url.includes('youtube.com') || v.url.includes('youtu.be')));
-        const isEra = v.type === 'era' || (v.url && v.url.includes('era.org.uk'));
-        const platformLabel = isEra ? 'ERA' : isYt ? 'YouTube' : 'Video';
-        const platformIcon = isEra ? 'fa-solid fa-graduation-cap' : 'fa-brands fa-youtube';
-        const platformColor = isEra ? '#1e40af' : '#dc2626';
-        const isActive = i === 0;
-
-        let shortDur = '';
-        if (v.duration) {
-          shortDur = v.duration
-            .replace(/\s*secs?/i, 's')
-            .replace(/\s*mins?/i, 'm')
-            .replace(/\s+/g, ' ')
-            .trim();
-        }
-
-        // Clean, readable tab title
-        let displayTitle = v.title || 'Video Option ' + (i + 1);
-        displayTitle = displayTitle
-          .replace(/\s*\|\s*Secondary History.*$/i, '')
-          .replace(/\s*-\s*Medicine Through Time.*$/i, '')
-          .replace(/\s*History File:?\s*/i, '')
-          .replace(/\s*BBC Two:?\s*/i, '')
-          .replace(/\s*BBC Four:?\s*/i, '')
-          .trim();
-        if (displayTitle.length > 36) {
-          displayTitle = displayTitle.substring(0, 34) + '…';
-        }
-
-        return `
-          <button type="button" 
-            class="video-pathway-tab-btn ${isActive ? 'is-active' : ''}" 
-            data-target="${videoSectionId}-card-${i}"
-            onclick="window.switchVideoTab && window.switchVideoTab(this, '${videoSectionId}', '${videoSectionId}-card-${i}')"
-            style="display: inline-flex; align-items: center; gap: 7px; padding: 7px 13px; border-radius: 6px; font-size: 0.82rem; font-weight: ${isActive ? '700' : '600'}; background: ${isActive ? '#0f172a' : '#ffffff'}; color: ${isActive ? '#ffffff' : '#334155'}; border: 1.5px solid ${isActive ? '#0f172a' : '#cbd5e1'}; cursor: pointer; transition: all 0.15s ease; white-space: nowrap; box-shadow: ${isActive ? '0 3px 8px rgba(15,23,42,0.25)' : '0 1px 2px rgba(0,0,0,0.03)'};"
-            onmouseover="if (!this.classList.contains('is-active')) { this.style.background='#f8fafc'; this.style.borderColor='#94a3b8'; }"
-            onmouseout="if (!this.classList.contains('is-active')) { this.style.background='#ffffff'; this.style.borderColor='#cbd5e1'; }"
-          >
-            <span class="tab-platform-pill" data-platform="${isEra ? 'era' : isYt ? 'youtube' : 'other'}" style="display: inline-flex; align-items: center; gap: 4px; padding: 2px 6px; border-radius: 4px; font-size: 0.70rem; font-weight: 800; text-transform: uppercase; background: ${isActive ? 'rgba(255,255,255,0.18)' : isEra ? '#eff6ff' : '#fef2f2'}; color: ${isActive ? '#ffffff' : platformColor};">
-              <i class="${platformIcon}"></i> ${platformLabel}
-            </span>
-            <span class="tab-video-name" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis;">${displayTitle}</span>
-            ${shortDur ? `<span style="font-size: 0.72rem; opacity: 0.8; font-family: monospace;">(${shortDur})</span>` : ''}
-            <span class="tab-live-badge" style="display: ${isActive ? 'inline-flex' : 'none'}; align-items: center; gap: 4px; background: #22c55e; color: #ffffff; font-size: 0.65rem; font-weight: 900; padding: 1px 6px; border-radius: 999px; letter-spacing: 0.04em;">
-              <span style="display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: #ffffff;"></span> LIVE
-            </span>
-          </button>
-        `;
-      })
-      .join('');
-
-    tabBarHtml = `
-      <div class="video-pathway-tabs-bar no-print" style="display: flex; gap: 8px; margin-bottom: 12px; overflow-x: auto; padding-bottom: 6px; border-bottom: 1px solid #e2e8f0;">
-        ${tabButtons}
-      </div>
-    `;
-  }
-
   return `
-    <details id="${videoSectionId}" class="phase-card archival-media-phase no-print" style="margin-top: 10px; margin-bottom: 16px; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.04);" closed>
-      <!-- Streamlined Archival Header Bar acting as Summary -->
-      <summary style="background: #0f172a; color: #ffffff; padding: 10px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; cursor: pointer; list-style: none; user-select: none;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <i class="fa-solid fa-film" style="color: #f87171; font-size: 0.88rem;"></i>
-          <span style="font-size: 0.92rem; font-weight: 700; color: #f8fafc; font-family: 'Playfair Display', serif; letter-spacing: 0.02em;">
-            Archival Video Footage &bull; Contextual Documentary Evidence
-          </span>
-          <span class="no-print" style="font-size: 0.72rem; color: #94a3b8; font-weight: 500;">(Optional Starter / Hook)</span>
+    <div id="${shelfContainerId}" class="lesson-video-shelf-container no-print">
+      <div class="lesson-video-shelf-header">
+        <div class="video-shelf-title">
+          <i class="fa-solid fa-film"></i>
+          <span>Classroom Video Pathways</span>
+          <span class="video-shelf-count-pill">${sortedVideos.length} ${sortedVideos.length === 1 ? 'Option' : 'Options'} &bull; Shortest First</span>
         </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          ${
-            videos.length > 1
-              ? `
-            <span class="no-print" style="font-size: 0.72rem; color: #94a3b8; background: rgba(255,255,255,0.08); padding: 2px 7px; border-radius: 3px;">
-              ${videos.length} Pathways Available
-            </span>
-          `
-              : ''
-          }
-          <span style="font-size: 0.78rem; color: #38bdf8; font-weight: 700; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-play" style="font-size: 0.7rem;"></i> Watch Video <i class="fa-solid fa-chevron-down" style="font-size: 0.75rem; margin-left: 2px;"></i>
-          </span>
-        </div>
-      </summary>
-
-      <!-- Inner Content Area -->
-      <div style="padding: 14px 16px; background: #f8fafc; border-top: 1px solid #334155;">
-        ${tabBarHtml}
-        <div class="video-cards-container">
-          ${videoCardsHtml}
+        <div class="video-shelf-hint">
+          ${sortedVideos.length > 1 ? '<i class="fa-solid fa-arrow-left-long"></i> <span>Scroll horizontal</span> <i class="fa-solid fa-arrow-right-long"></i>' : '<span>One-Click Launch</span>'}
         </div>
       </div>
-    </details>
+
+      <!-- 1 Single Horizontal Line Row of Video Cards -->
+      <div class="lesson-video-shelf-row">
+        ${videoCardsHtml}
+      </div>
+
+      <!-- Expandable Task Drawer if triggered -->
+      ${
+        hasAnyTasks
+          ? `
+        <div id="${drawerId}" class="video-task-drawer" style="display: none;">
+          ${taskPanelsHtml}
+        </div>
+      `
+          : ''
+      }
+    </div>
   `;
 }
 

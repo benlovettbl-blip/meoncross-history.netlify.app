@@ -1,4 +1,5 @@
 import { getAssetUrl } from './engine/assets.js'; // refreshed
+import { renderSidebarVideoBadgeHTML } from './engine/video_utils.js';
 
 export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitData) {
   let lessonsHTML = `
@@ -333,9 +334,13 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
 
         if (isMatch) {
           foundAny = true;
+          const cardBadge = renderSidebarVideoBadgeHTML(lesson);
           lessonsHTML += `
             <div class="homepage-lesson-card" data-action="view-lesson-detail" data-index="${index}" style="position: relative; background: white; border: 1px solid #e2e8f0; border-left: 5px solid ${p.border}; border-radius: 8px; padding: 12px 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 15px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 2px 4px rgba(0,0,0,0.05)';">
-              <h3 style="margin-top: 0; color: #1a237e; font-size: 1rem; margin-bottom: 5px; font-family: 'Outfit', sans-serif;">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; gap: 6px;">
+                <h3 style="margin: 0; color: #1a237e; font-size: 1rem; font-family: 'Outfit', sans-serif;">${unitData.type === 'trip' ? 'Day' : 'Lesson'} ${index + 1}</h3>
+                ${cardBadge}
+              </div>
               <p style="margin: 0; color: #475569; font-weight: 500; font-size: 0.9rem; line-height: 1.3;">${lesson.title.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')}</p>
             </div>
           `;
