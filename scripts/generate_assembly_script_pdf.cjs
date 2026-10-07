@@ -349,12 +349,19 @@ async function generateScriptPdf() {
   await browser.close();
   console.log(`✅ Saved 2-page Pupil Prompt Script PDF to: ${pdfPath}`);
 
-  // Mirror to Google Drive
-  const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\00_Department_Admin_and_Policies';
+  // Mirror to Google Drive Assemblies
+  const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\Assemblies';
   const driveOut = path.join(driveDir, 'Beyond_the_Single_Story_Pupil_Script.pdf');
   if (fs.existsSync(driveDir)) {
     fs.copyFileSync(pdfPath, driveOut);
-    console.log(`✅ Mirrored Pupil Prompt Script PDF to Google Drive: ${driveOut}`);
+    console.log(`✅ Mirrored Pupil Prompt Script PDF to Google Drive Assemblies: ${driveOut}`);
+    const oldMirror =
+      'G:\\My Drive\\AAMX\\Dep File\\00_Department_Admin_and_Policies\\Beyond_the_Single_Story_Pupil_Script.pdf';
+    if (fs.existsSync(oldMirror)) {
+      try {
+        fs.unlinkSync(oldMirror);
+      } catch (e) {}
+    }
   }
 }
 

@@ -1036,7 +1036,7 @@ async function build() {
     'briefings',
     'assembly_beyond_the_single_story.pptx',
   );
-  const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\00_Department_Admin_and_Policies';
+  const driveDir = 'G:\\My Drive\\AAMX\\Dep File\\Assemblies';
   const driveOut = path.join(driveDir, 'Beyond_the_Single_Story_Assembly.pptx');
 
   await pptx.writeFile({ fileName: publicOut });
@@ -1047,7 +1047,14 @@ async function build() {
 
   if (fs.existsSync(driveDir)) {
     fs.copyFileSync(publicOut, driveOut);
-    console.log(`✅ Mirrored presentation to Google Drive: ${driveOut}`);
+    console.log(`✅ Mirrored presentation to Google Drive Assemblies: ${driveOut}`);
+    const oldMirror =
+      'G:\\My Drive\\AAMX\\Dep File\\00_Department_Admin_and_Policies\\Beyond_the_Single_Story_Assembly.pptx';
+    if (fs.existsSync(oldMirror)) {
+      try {
+        fs.unlinkSync(oldMirror);
+      } catch (e) {}
+    }
   }
 }
 
