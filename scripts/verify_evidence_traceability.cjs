@@ -43,6 +43,8 @@ const STOPWORDS = new Set([
   'conversely',
   'built',
   'skillfully',
+  'prudently',
+  'deliberately',
   'collected',
   'bullied',
   'deprived',
