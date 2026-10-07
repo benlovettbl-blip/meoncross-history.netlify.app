@@ -170,30 +170,36 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 2,
     },
     lesson_4: {
-      page: 12,
+      page: 10,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 3,
     },
     lesson_5: {
+      page: 12,
+      booklet: 'Pupil Workbook',
+      unitId: 'early_modern_world',
+      lessonIndex: 4,
+    },
+    lesson_6: {
       page: 14,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 5,
     },
-    lesson_6: {
+    lesson_7: {
       page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 6,
     },
-    lesson_7: {
+    lesson_8: {
       page: 18,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
       lessonIndex: 7,
     },
-    lesson_8: {
+    lesson_9: {
       page: 20,
       booklet: 'Pupil Workbook',
       unitId: 'early_modern_world',
