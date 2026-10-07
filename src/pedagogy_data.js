@@ -80,6 +80,7 @@ export const PEDAGOGY_RESEARCH_BANK = [
       'The Golden Sentence Routine: Pupils synthesize two Tier-3 historical concepts into a single rigorous analytical sentence using a designated subordinating conjunction.',
       'Dual-Term Analytical Distinctions: Rotating vocabulary tasks challenge pupils to articulate the vital historical distinction between easily conflated concepts (e.g. "Armistice vs Peace Treaty", "Annexation vs Military Occupation").',
       'Co-Located Margin Glossaries: Key terminology is defined immediately adjacent to the narrative text, eliminating split-attention tracking fatigue caused by searching distant glossaries.',
+      'Ambient Scholarly Vocabulary Scaffolding: In-text disciplinary terminology features an unobtrusive slate dotted underline (capped at 1–2 barrier terms per paragraph) that is permanently active without requiring students to opt into a toggle. Hovering or tapping instantly reveals syllables, phonetic pronunciation guides, audio read-aloud, and student-friendly definitions directly at the point of need.',
       'Morphological Root Deconstruction: Explicitly highlighting Greek and Latin roots (e.g. "pan-", "anti-", "theo-") equips pupils to independently decode unfamiliar academic terminology.',
     ],
     protocolHeading: 'Classroom Protocol for History Teachers',

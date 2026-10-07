@@ -820,9 +820,6 @@ export function initGlossaryPopover() {
   window.hideVocabPopover = hidePopover;
 
   const showPopover = (e, pinned = false) => {
-    // If Vocabulary Lens is NOT active, do not display popover (Clean Reading Mode)
-    if (!document.body.classList.contains('vocab-lens-active')) return;
-
     const target = e.target ? e.target.closest('.vocab-word, .vocab-lens-term') : e;
     if (!target) return;
 
@@ -932,7 +929,6 @@ export function initGlossaryPopover() {
   document.body.addEventListener('click', (e) => {
     const vocabTarget = e.target.closest('.vocab-word, .vocab-lens-term');
     if (vocabTarget) {
-      if (!document.body.classList.contains('vocab-lens-active')) return;
       if (activeVocabElement === vocabTarget && isPinned) {
         hidePopover(true);
       } else {

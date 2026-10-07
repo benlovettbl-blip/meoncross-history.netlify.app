@@ -2932,51 +2932,41 @@ img::after {
   font-size: 1.05rem;
 }
 /* ==========================================================================
-   DUAL-MODE VOCABULARY LENS & GLOSSARY
+   AMBIENT VOCABULARY LENS & GLOSSARY (SCHOLARLY EDITION STANDARD)
    ========================================================================== */
 
-/* Mode 1: Clean Book Mode (Default / When Vocab Lens is OFF)
-   Paragraphs display 100% clean, pristine typography with zero underlines,
-   zero highlights, and zero hover distraction for whole-class teacher read-aloud. */
-body:not(.vocab-lens-active) .vocab-word,
-body:not(.vocab-lens-active) .vocab-lens-term {
-  border-bottom: none !important;
-  background: transparent !important;
-  color: inherit !important;
-  font-weight: inherit !important;
-  cursor: inherit !important;
-  padding: 0 !important;
-}
-
-body:not(.vocab-lens-active) .vocab-word::after,
-body:not(.vocab-lens-active) .vocab-word::before,
-body:not(.vocab-lens-active) .vocab-lens-term::after,
-body:not(.vocab-lens-active) .vocab-lens-term::before {
-  display: none !important;
-}
-
-/* Mode 2: Vocabulary Lens Mode (Active)
-   Subtle slate dotted underlines (capped at 2 per paragraph) highlight
+/* Ambient Vocabulary Lens (Always Active by Default)
+   Subtle slate dotted underlines (capped at 1–2 per paragraph) highlight
    barrier words for developing readers, with rich phonetic/audio tooltips. */
-body.vocab-lens-active .vocab-word,
-body.vocab-lens-active .vocab-lens-term {
+.vocab-word,
+.vocab-lens-term {
   position: relative;
   border-bottom: 1.5px dotted #94a3b8;
   cursor: pointer;
   color: inherit;
-  font-weight: 500;
+  font-weight: inherit;
   padding: 0 1px;
   border-radius: 2px;
   transition: all 0.2s ease;
 }
 
-body.vocab-lens-active .vocab-word:hover,
-body.vocab-lens-active .vocab-word.active,
-body.vocab-lens-active .vocab-lens-term:hover,
-body.vocab-lens-active .vocab-lens-term.active {
+.vocab-word:hover,
+.vocab-word.active,
+.vocab-lens-term:hover,
+.vocab-lens-term.active {
   border-bottom-color: #0284c7;
-  background-color: rgba(224, 242, 254, 0.5);
+  background-color: rgba(224, 242, 254, 0.55);
   color: #0369a1;
+}
+
+/* In print, preserve 100% clean typography */
+@media print {
+  .vocab-word,
+  .vocab-lens-term {
+    border-bottom: none !important;
+    background: transparent !important;
+    color: inherit !important;
+  }
 }
 
 #global-glossary-popover {

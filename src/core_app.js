@@ -228,37 +228,22 @@ export function initializeApp(unitData) {
       line-height: 1.8;
       font-size: 1.05rem;
     }
-    /* Dual-Mode Vocabulary Lens: Clean Book Mode by default, interactive highlights when active */
-    body:not(.vocab-lens-active) .vocab-word,
-    body:not(.vocab-lens-active) .vocab-lens-term {
-      border-bottom: none !important;
-      background: transparent !important;
-      color: inherit !important;
-      font-weight: inherit !important;
-      cursor: inherit !important;
-      padding: 0 !important;
-    }
-    body:not(.vocab-lens-active) .vocab-word::after,
-    body:not(.vocab-lens-active) .vocab-word::before,
-    body:not(.vocab-lens-active) .vocab-lens-term::after,
-    body:not(.vocab-lens-active) .vocab-lens-term::before {
-      display: none !important;
-    }
-    body.vocab-lens-active .vocab-word,
-    body.vocab-lens-active .vocab-lens-term {
+    /* Ambient Vocabulary Lens: Subtle, unobtrusive scholarly underline by default */
+    .vocab-word,
+    .vocab-lens-term {
       position: relative;
       border-bottom: 1.5px dotted #94a3b8;
       cursor: pointer;
       color: inherit;
-      font-weight: 500;
+      font-weight: inherit;
       padding: 0 1px;
       border-radius: 2px;
       transition: all 0.2s ease;
     }
-    body.vocab-lens-active .vocab-word:hover,
-    body.vocab-lens-active .vocab-word.active,
-    body.vocab-lens-active .vocab-lens-term:hover,
-    body.vocab-lens-active .vocab-lens-term.active {
+    .vocab-word:hover,
+    .vocab-word.active,
+    .vocab-lens-term:hover,
+    .vocab-lens-term.active {
       border-bottom-color: #0284c7;
       background-color: rgba(224, 242, 254, 0.5);
       color: #0369a1;
@@ -2402,9 +2387,6 @@ function initGlossaryPopover() {
   glossaryPopover.addEventListener('mouseleave', scheduleHidePopover);
 
   const showPopover = (e) => {
-    // If Vocabulary Lens is NOT active, do not display popover (Clean Reading Mode)
-    if (!document.body.classList.contains('vocab-lens-active')) return;
-
     const target = e.target.closest('.vocab-word, .vocab-lens-term');
     if (!target) return;
 
@@ -2511,7 +2493,6 @@ function initGlossaryPopover() {
   document.body.addEventListener('click', (e) => {
     const vocabTarget = e.target.closest('.vocab-word, .vocab-lens-term');
     if (vocabTarget) {
-      if (!document.body.classList.contains('vocab-lens-active')) return;
       if (activeVocabElement === vocabTarget) {
         hidePopover(e);
       } else {
