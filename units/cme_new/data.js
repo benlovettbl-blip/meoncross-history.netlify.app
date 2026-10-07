@@ -1442,11 +1442,20 @@ export const unitData = {
             'Demographic breakdown of post-Holocaust immigration, the Exodus ship crisis, and the escalating civil war.',
         },
         {
+          type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/14-israel-and-the-arab-states-twentieth-century-history/',
           title: '20th Century History: Israel and the Arab States (1948 War)',
           duration: '20 mins 0 secs',
           teacher_guidance:
             'BBC archival documentary on Ben-Gurion’s Declaration of Independence and the 1948–49 Arab-Israeli War.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=IhfysdHgGh8',
+          title: 'Land Divided (1947–56) | The 50 Years War: Israel and the Arabs (Episode 1)',
+          duration: '49 mins 26 secs',
+          teacher_guidance:
+            'PBS/BBC documentary examining the 1947 UN Partition Plan, end of the British Mandate, the 1948–49 War, Palestinian refugee displacement, and the road to Suez.',
         },
       ],
       extra_videos: [
