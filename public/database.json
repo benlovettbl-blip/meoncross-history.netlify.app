@@ -23163,22 +23163,16 @@
           },
           "video": [
             {
+              "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
+              "title": "[STARTER HOOK] Medieval Beliefs: The Church, Galen & Supernatural Causes",
+              "duration": "4 mins 20 secs",
+              "teacher_guidance": "Concise classroom hook explaining why medieval people believed illness was a punishment from God or testing of faith, and how the Church preserved Galen's texts."
+            },
+            {
               "url": "https://era.org.uk/streaming-service-resource/1-medicine-and-religion-history-file/",
-              "title": "History File: Medicine and Religion in the Middle Ages",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Recommended for exploring how the medieval Catholic Church controlled medical ideas, training, and Galenic doctrine."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/1-medicine-religion-and-natural-causes-history-file/",
-              "title": "History File: Medicine, Religion and Natural Causes",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Highlights the tension between supernatural beliefs (punishment from God) and rational natural causes (Four Humours, astrology)."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-pain-message-bbc-four/",
-              "title": "Pain, Pus and Poison: The Search for Modern Medicine – Pain Message (BBC Four)",
-              "duration": "58 mins 0 secs",
-              "teacher_guidance": "BBC documentary context on how early medicine understood pain, suffering, and spiritual trials."
+              "title": "[EXAM EXTENSION] History File: Medicine and Religion in the Middle Ages (BBC Two)",
+              "duration": "24 mins 2 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–07:15. Primary focus on monastic scriptoria, church control of medical education, and Galenic doctrine. (Later segments cover ancient origins)."
             }
           ]
         },
@@ -23630,17 +23624,16 @@
           },
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=nVJV8iEAm88",
-              "title": "Medieval Medicine | Secondary History - Medicine Through Time",
+              "title": "[STARTER HOOK] Medieval Rational Medicine: The Four Humours & Galen",
               "duration": "4 mins 20 secs",
-              "teacher_guidance": "Fast-paced curriculum recap of Hippocrates, Galen, the Theory of the Four Humours, and the Theory of Opposites."
+              "teacher_guidance": "Overview of Hippocratic clinical observation, the Four Humours (blood, phlegm, yellow bile, black bile), and Galen's Theory of Opposites."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-galen-and-leonardo-galenic-anatomy/",
-              "title": "BBC Four: The Beauty of Anatomy – Galen and Leonardo: Galenic Anatomy",
-              "duration": "29 mins 0 secs",
-              "teacher_guidance": "Dr. Adam Rutherford investigates Galen’s anatomical errors from dissecting apes and pigs and why his ideas dominated for 1,400 years."
+              "title": "[ENQUIRY EVIDENCE] BBC Four: Galenic Anatomy & Blood Movement",
+              "duration": "5 mins 7 secs",
+              "teacher_guidance": "Dr Adam Rutherford explores Galen’s anatomical doctrines and why nobody challenged his errors on animal dissection for over 1,300 years."
             }
           ]
         },
@@ -24090,9 +24083,9 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/3-medicine-women-and-society-history-file/",
-              "title": "History File: Medicine, Women and Society in the Middle Ages",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Examines everyday medieval treatments: herbal recipes, bleeding, purging, and the crucial role of local wise women and housewives."
+              "title": "[ENQUIRY EVIDENCE] History File: Medieval Treatments, Bleeding & Society (BBC Two)",
+              "duration": "19 mins 2 secs",
+              "teacher_guidance": "⏱️ Watch Window: 02:10–07:45. Shows the practical reality of phlebotomy (bloodletting), leeching, purging, cupping, and zodiac charts used by medieval barber-surgeons."
             }
           ]
         },
@@ -24538,9 +24531,9 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-long-term-change-history-file/",
-              "title": "History File: Medicine and Long Term Change – Monastic Hospitals",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Explores medieval monastic hospitals, showing why their primary mission was hospitality, prayer, and \"care not cure\"."
+              "title": "[ENQUIRY EVIDENCE] History File: Monastic Hospitals & \"Care Not Cure\" (BBC Two)",
+              "duration": "18 mins 48 secs",
+              "teacher_guidance": "⏱️ Watch Window: 03:30–09:15. Case study of St Leonard’s Hospital in York, illustrating monastic care, prayer, and why medical curing was not the hospital's priority."
             }
           ]
         },
@@ -24989,24 +24982,22 @@
           },
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=YhsPPBGtquo",
-              "title": "The Black Death (1348) - Timelines.tv",
+              "title": "[STARTER HOOK] Timelines.tv: The Black Death (1348)",
               "duration": "6 mins 33 secs",
-              "viewing_task": "Explain how the Black Death entered Britain in 1348, how it spread, and what medieval people believed caused the disease.",
-              "model_answer": "The Black Death entered southern England through coastal ports (such as Melcombe Regis in Dorset) in the summer of 1348 aboard merchant trade ships. Carried by fleas living on black rats, it spread rapidly along river and road trade networks. Medieval people had no knowledge of bacteria or microbiology, believing the devastating pestilence was caused by divine retribution from God, astrological conjunctions, or corrupting miasma."
+              "teacher_guidance": "Dramatic classroom overview of the arrival of the bubonic and pneumonic plague in Melcombe Regis (Dorset) in 1348 and its catastrophic demographic impact."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-the-symptoms-of-black-death-and-how-it-spread/",
-              "title": "BBC Two: A History of Britain by Simon Schama – King Death: Symptoms & Spread",
-              "duration": "15 mins 0 secs",
-              "teacher_guidance": "Vivid documentary analysis of bubonic and pneumonic plague pathology, swellings (buboes), and catastrophic societal mortality."
+              "title": "[PRIMARY EVIDENCE] Simon Schama: King Death – Symptoms & Spread (BBC Two)",
+              "duration": "2 mins 28 secs",
+              "teacher_guidance": "Historian Simon Schama details the biological symptoms (buboes, black spots) and the rapid, terrifying speed of contagion."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-history-of-britain-by-simon-schama-series-1-king-death-medieval-treatment-and-beliefs-on-the-cause-of-the-black-death/",
-              "title": "BBC Two: A History of Britain by Simon Schama – King Death: Medieval Treatment & Beliefs",
-              "duration": "15 mins 0 secs",
-              "teacher_guidance": "Focuses on flagellants, holy processions, sweet herbs, and the total inability of medieval physicians to halt the epidemic."
+              "title": "[ENQUIRY EVIDENCE] Simon Schama: Medieval Beliefs & Responses to the Plague (BBC Two)",
+              "duration": "2 mins 12 secs",
+              "teacher_guidance": "Visual demonstration of flagellants, burning of aromatic herbs, and the religious panic that swept medieval Europe."
             }
           ]
         },
@@ -25684,10 +25675,10 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/the-scientific-revolution/",
-              "title": "The Scientific Revolution: The Printing Press and The Royal Society",
-              "duration": "25 mins 0 secs",
-              "teacher_guidance": "Covers Gutenberg’s movable-type press, humanism, and the founding of the Royal Society (1660) with its motto Nullius in verba."
+              "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
+              "title": "[STARTER HOOK] The Renaissance Scientific Revolution: Gutenberg & The Royal Society",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "How the movable type printing press (1440) and the Royal Society's motto \"Nullius in Verba\" (1660) broke the Catholic Church's monopoly on medical knowledge."
             }
           ]
         },
@@ -26349,11 +26340,10 @@
           ],
           "video": [
             {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
-              "title": "Vesalius and Harvey | Secondary History - Medicine Through Time",
-              "duration": "4 mins 30 secs",
-              "teacher_guidance": "Core GCSE video detailing Thomas Sydenham’s empirical bedside observation and why new ideas took time to impact treatments."
+              "url": "https://www.youtube.com/watch?v=7pjAH84f-c0",
+              "title": "[STARTER HOOK] Thomas Sydenham: \"The English Hippocrates\" & Bedside Observation",
+              "duration": "5 mins 40 secs",
+              "teacher_guidance": "Examines how Thomas Sydenham classified diseases as distinct species in \"Observationes Medicae\" (1676) and pioneered cinchona bark (quinine) for malaria."
             }
           ]
         },
@@ -27033,16 +27023,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-anatomy-andreas-vesalius-the-muscle-men/",
-              "title": "BBC Four: The Beauty of Anatomy – Andreas Vesalius: The Muscle Men",
-              "duration": "29 mins 0 secs",
-              "teacher_guidance": "Essential depth documentary on Andreas Vesalius, his landmark 1543 book De Humani Corporis Fabrica, and his dissection of human corpses disproving Galen."
+              "title": "[PRIMARY EVIDENCE] BBC Four: Andreas Vesalius – The Muscle Men (The Beauty of Anatomy)",
+              "duration": "3 mins 8 secs",
+              "teacher_guidance": "Visual analysis of the iconic anatomical woodcuts in \"De Humani Corporis Fabrica\" (1543) and Vesalius's correction of over 200 of Galen’s anatomical errors."
             },
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=walfj2dpU-E",
-              "title": "Vesalius & Human Dissection | Secondary History Recap",
+              "title": "[STARTER HOOK] Vesalius & Human Dissection: Challenging Galen's Anatomy",
               "duration": "4 mins 30 secs",
-              "teacher_guidance": "Focused curriculum recap highlighting Vesalius proving Galen made over 300 anatomical errors."
+              "teacher_guidance": "How Vesalius carried out dissections himself at Padua, proving Galen had only dissected apes and pigs (e.g. human lower jaw is one bone, not two)."
             }
           ]
         },
@@ -27661,18 +27650,16 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=w6q50_qNMoA",
-              "title": "Ceaseless Motion: William Harvey's Experiments in Blood Circulation",
+              "title": "[STARTER HOOK] Ceaseless Motion: William Harvey's Blood Circulation Experiments",
               "duration": "3 mins 18 secs",
-              "teacher_guidance": "Royal College of Physicians visual animation demonstrating Harvey disproving Galen’s liver production theory using valves and ligatures."
+              "teacher_guidance": "Royal College of Physicians animation demonstrating Harvey's mechanical experiments with tight arm bandages, valves, and the heart as a pump."
             },
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=LoeAVaM48Y0",
-              "title": "William Harvey – The Theory of Blood Circulation (1628)",
+              "title": "[ENQUIRY EVIDENCE] William Harvey: De Motu Cordis (1628) & Mathematical Proof",
               "duration": "4 mins 12 secs",
-              "teacher_guidance": "Examines Harvey’s De Motu Cordis (1628), calculating blood volume and proving the heart acts as a mechanical pump."
+              "teacher_guidance": "Detailed breakdown of how Harvey calculated the volume of blood pumped by the heart in an hour, disproving Galen’s theory that liver manufactures new blood."
             }
           ]
         },
@@ -28331,11 +28318,10 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=7r15ej0iN1k",
-              "title": "GCSE History Rapid Revision: The Great Plague, 1665",
+              "title": "[EXAM STRATEGY] GCSE History: The Great Plague 1665 & Comparing 1348 vs 1665",
               "duration": "12 mins 2 secs",
-              "teacher_guidance": "Detailed GCSE revision of the 1665 Great Plague: comparisons with 1348, quarantine rules, red crosses, searchers of the dead, and the persistence of miasma."
+              "teacher_guidance": "Direct preparation for Edexcel Paper 1 4-mark similarity/difference questions comparing plague orders, government action, and medical understanding."
             }
           ]
         },
@@ -28900,16 +28886,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/2-medicine-and-science-history-file/",
-              "title": "History File: Medicine and Science – Germ Theory & Bacteriology",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "In-depth documentary tracing the transition from spontaneous generation and miasma to Pasteur’s 1861 Germ Theory and Koch’s pure cultures."
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-medical-mavericks-series-1-beating-infection-robert-koch-cholera/",
+              "title": "[ENQUIRY EVIDENCE] BBC Medical Mavericks: Robert Koch & Microbe Hunting",
+              "duration": "3 mins 12 secs",
+              "teacher_guidance": "Demonstrates Robert Koch's laboratory innovations: using agar jelly in petri dishes, chemical methylene blue staining, and microphotography to isolate the anthrax, TB, and cholera bacteria."
             },
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-four-medical-mavericks-series-1-beating-infection-robert-koch-cholera/",
-              "title": "BBC Four Medical Mavericks: Robert Koch & The Identification of Cholera & TB",
-              "duration": "29 mins 0 secs",
-              "teacher_guidance": "Examines Koch’s revolutionary laboratory methodology: agar jelly in petri dishes, synthetic aniline stains, and photomicrography."
+              "url": "https://era.org.uk/streaming-service-resource/2-medicine-and-science-history-file/",
+              "title": "[EXAM EXTENSION] History File: Medicine and Science – Germ Theory & Bacteriology (BBC Two)",
+              "duration": "24 mins 8 secs",
+              "teacher_guidance": "⏱️ Watch Window: 12:40–18:15. Skip straight to 12:40 for Pasteur’s swan-neck flask experiments disproving spontaneous generation and Koch's competition. (00:00–12:40 covers earlier centuries)."
             }
           ]
         },
@@ -29457,15 +29443,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/jenners-marvellous-medicine-a-history-of-the-world/",
-              "title": "Jenner's Marvellous Medicine – A History of the World",
+              "title": "[STARTER HOOK] Jenner's Marvellous Medicine: Milkmaids, Cowpox & The 1796 Breakthrough",
               "duration": "15 mins 0 secs",
-              "teacher_guidance": "Narrative account of Edward Jenner’s 1796 cowpox experiments on James Phipps, replacing dangerous variolation with vaccination."
+              "teacher_guidance": "Explores how Edward Jenner tested folklore about milkmaids and inoculated James Phipps with cowpox matter in 1796 to prove immunity against smallpox."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-true-stories-episode-2-the-life-and-work-of-edward-jenner/",
-              "title": "BBC Two True Stories: The Life and Work of Edward Jenner",
+              "title": "[ENQUIRY EVIDENCE] BBC Two True Stories: The Opposition to Jenner & Compulsory Vaccination",
               "duration": "20 mins 0 secs",
-              "teacher_guidance": "Explores the intense initial opposition to Jenner’s vaccine and the eventual 1853 Compulsory Vaccination Act."
+              "teacher_guidance": "Investigates why the Royal Society and the Anti-Vaccine League fiercely opposed Jenner's vaccine, leading to the 1853 Compulsory Vaccination Act."
             }
           ]
         },
@@ -30005,16 +29991,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-diagrams-florence-nightingale-florence-nightingales-rose-diagram/",
-              "title": "BBC Four: The Beauty of Diagrams – Florence Nightingale's Polar Area Rose Diagram",
-              "duration": "29 mins 0 secs",
-              "teacher_guidance": "Mathematical and medical analysis of how Nightingale used statistical polar diagrams to prove that dirt, typhus, and cholera killed more soldiers than combat in the Crimea."
+              "url": "https://era.org.uk/streaming-service-resource/florence-nightingale-nursing-pioneer/",
+              "title": "[STARTER HOOK] Florence Nightingale: Hospital Architecture & The Sanitary Revolution",
+              "duration": "15 mins 0 secs",
+              "teacher_guidance": "Focuses on Nightingale’s work at Scutari Hospital (Crimea), her \"Notes on Nursing\" (1859), and the design of pavilion-style hospitals with ventilation and clean water."
             },
             {
-              "url": "https://era.org.uk/streaming-service-resource/florence-nightingale-nursing-pioneer/",
-              "title": "Florence Nightingale: Nursing Pioneer & Hospital Architecture",
-              "duration": "15 mins 0 secs",
-              "teacher_guidance": "Covers pavilion-style hospital wards, the 1860 St Thomas’ Hospital nursing school, and Notes on Nursing."
+              "url": "https://era.org.uk/streaming-service-resource/bbc-four-the-beauty-of-diagrams-florence-nightingale-florence-nightingales-rose-diagram/",
+              "title": "[ENQUIRY EVIDENCE] BBC Four: Florence Nightingale's Polar Area Rose Diagram",
+              "duration": "29 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 04:10–09:30. In-depth analysis of Nightingale's revolutionary statistical diagram proving that the vast majority of soldiers died from preventable hospital diseases, not wounds."
             }
           ]
         },
@@ -30554,11 +30540,16 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=7pjAH84f-c0",
-              "title": "18th & 19th Century Medicine & Surgery | Secondary History",
+              "title": "[STARTER HOOK] 18th & 19th Century Surgery: Overcoming Pain, Infection & Blood Loss",
               "duration": "5 mins 40 secs",
-              "teacher_guidance": "Explains James Simpson’s 1847 discovery of chloroform, the temporary \"Black Period\" of surgery, and Joseph Lister’s 1865 carbolic antiseptic spray."
+              "teacher_guidance": "Concise classroom summary of the \"Black Period\" of surgery, James Simpson’s chloroform experiments (1847), and Queen Victoria's use of chloroform in childbirth (1853)."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-medicine-and-surgery-history-file/",
+              "title": "[ENQUIRY EVIDENCE] History File: Joseph Lister & Antiseptic Surgery (BBC Two)",
+              "duration": "24 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 08:30–14:45. Reconstructs Lister’s use of carbolic acid spray in the Glasgow Royal Infirmary operating theatre after reading Pasteur's germ theory."
             }
           ]
         },
@@ -31130,36 +31121,22 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/2-medicine-public-health-and-government-history-file/",
-              "title": "History File: Medicine, Public Health and Government Intervention",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Traces the collapse of laissez-faire, Edwin Chadwick’s 1842 report, the 1848 permissive Act, and the compulsory 1875 Public Health Act."
-            },
-            {
-              "type": "era",
-              "url": "https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/",
-              "title": "The Story of John Snow – Moments of Genius (Broad Street Pump)",
-              "duration": "8 mins 32 secs",
-              "teacher_guidance": "Visual case study on John Snow’s 1854 spot map of Soho, identifying contaminated water as the vector for cholera."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/the-doctor-who-discovered-how-cholera-spread-witness-history/",
-              "title": "The Doctor Who Discovered How Cholera Spread – BBC Witness History",
-              "duration": "9 mins 0 secs",
-              "teacher_guidance": "Audio-visual historical record of Snow removing the pump handle and overcoming the entrenched miasma lobby."
-            },
-            {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=TT4Z1Ikf36w",
-              "title": "Chadwick and Snow: Public Health in the 19th Century",
+              "title": "[STARTER HOOK] Chadwick and Snow: The 19th Century Public Health Crisis",
               "duration": "4 mins 52 secs",
-              "teacher_guidance": "Core recap linking John Snow, Joseph Bazalgette’s London sewer network, and the 1858 Great Stink."
+              "teacher_guidance": "Contrasts Edwin Chadwick's 1842 report on sanitary conditions with John Snow's breakthrough during the 1854 Soho cholera outbreak."
             },
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-a-house-through-time-series-1-episode-2-cholera/",
-              "title": "BBC Two A House Through Time: Cholera Outbreak in 19th Century Slums",
-              "duration": "14 mins 0 secs",
-              "teacher_guidance": "Shows the human reality of cesspits, shared privies, and tainted water supply in Victorian housing."
+              "url": "https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/",
+              "title": "[PRIMARY EVIDENCE] Moments of Genius: John Snow & The Broad Street Pump",
+              "duration": "8 mins 32 secs",
+              "teacher_guidance": "The forensic investigation of the Broad Street water pump, the removal of the pump handle, and Snow's spot map disproving the miasma theory."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-medicine-public-health-and-government-history-file/",
+              "title": "[EXAM EXTENSION] History File: Public Health & The 1875 Act (BBC Two)",
+              "duration": "24 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 14:20–19:10. The Great Stink (1858), Bazalgette’s sewer network, and the shift from laissez-faire to the compulsory Public Health Act 1875."
             }
           ]
         },
@@ -31624,23 +31601,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/5-medicine-technology-and-the-individual-history-file/",
-              "title": "History File: Medicine, Technology and the Individual in the 20th Century",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Covers the transition from germ theory to genetic science, X-ray crystallography, and modern diagnosis."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/0-goes-back-in-time-operation-ouch/",
-              "title": "Operation Ouch: Goes Back in Time – Medical Technology & Diagnosis",
-              "duration": "28 mins 0 secs",
-              "teacher_guidance": "Engaging, accessible visual demonstrations of CT scans, MRI, and DNA structures."
-            },
-            {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=my14ZuzjH5I",
-              "title": "Modern Medicine: DNA, Genetics & Diagnosis | Secondary History",
+              "title": "[STARTER HOOK] Modern Medicine: DNA, Genetics & Diagnosis",
               "duration": "5 mins 15 secs",
-              "teacher_guidance": "Curriculum overview of Watson, Crick, Franklin and Wilkins in 1953, the Human Genome Project (1990–2003), and genetic screening."
+              "teacher_guidance": "The discovery of the DNA double helix (Watson, Crick, Franklin 1953) and the Human Genome Project (completed 2003) enabling targeted genetic screening."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/5-medicine-technology-and-the-individual-history-file/",
+              "title": "[EXAM EXTENSION] History File: 20th Century Technology & Genetics (BBC Two)",
+              "duration": "24 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 08:15–13:40. Explores genetic testing, hereditary disease prevention, and ethical questions in modern biotechnology."
             }
           ]
         },
@@ -32107,22 +32077,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/5-medicine-and-surgery-history-file/",
-              "title": "History File: Medicine and Surgery – Modern High-Tech Procedures",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Traces modern surgical evolution: blood grouping (Landsteiner 1901), endoscopes, laparoscopy (keyhole surgery), and robotic surgery."
+              "url": "https://www.youtube.com/watch?v=my14ZuzjH5I",
+              "title": "[STARTER HOOK] High-Tech Diagnosis: X-rays, CT Scans, MRI & Endoscopes",
+              "duration": "5 mins 15 secs",
+              "teacher_guidance": "How medical diagnosis shifted from external observation to internal non-invasive imaging: Röntgen's X-rays (1895), ultrasound, CT scans (1972), and MRI."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/into-the-brain-blood-and-guts-a-history-of-surgery/",
-              "title": "BBC Four: Into the Brain – Blood and Guts: A History of Surgery",
+              "title": "[ENQUIRY EVIDENCE] BBC Four: Blood and Guts – Into the Brain (High-Tech Surgery)",
               "duration": "58 mins 0 secs",
-              "teacher_guidance": "Michael Mosley explores modern brain surgery, imaging scans, and neurological breakthroughs."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/5-grays-anatomy-the-beauty-of-anatomy/",
-              "title": "BBC Four: Gray's Anatomy – The Beauty of Anatomy",
-              "duration": "29 mins 0 secs",
-              "teacher_guidance": "Explores Henry Gray and Henry Carter’s 1858 masterpiece and modern anatomical mapping."
+              "teacher_guidance": "⏱️ Watch Window: 32:00–37:45. Shows micro-surgery, stereotactic imaging, and endoscopes allowing surgeons to operate inside the brain without opening the entire cranium."
             }
           ]
         },
@@ -32589,28 +32553,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/3-medicine-and-government-history-file/",
-              "title": "History File: Medicine and Government – The Foundation of the NHS",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Covers the Beveridge Report (1942), Aneurin Bevan, and the launch of the National Health Service in July 1948."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/s12e02-health-before-the-nhs-a-medical-revolution-timeshift/",
-              "title": "Timeshift: Health Before the NHS – A Medical Revolution",
-              "duration": "59 mins 0 secs",
-              "teacher_guidance": "Eyewitness accounts of working-class healthcare before 1948: means testing, panel doctors, and crushing medical debt."
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-viruses-and-vaccines-bbc-four/",
+              "title": "[STARTER HOOK] Paul Ehrlich, Salvarsan 606 & Prontosil (Magic Bullets)",
+              "duration": "5 mins 30 secs",
+              "teacher_guidance": "⏱️ Watch Window: 18:20–23:50. Explains how Ehrlich used chemical antibodies to target specific bacteria, creating the first \"magic bullet\" (Salvarsan 606 for syphilis) and Domagk's Prontosil (1932)."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-exploring-the-past-post-war-britain-post-war-britain-the-development-of-the-national-health-service-nhs/",
-              "title": "BBC Two: Development of the National Health Service (NHS)",
+              "title": "[ENQUIRY EVIDENCE] BBC Two: Aneurin Bevan & The Launch of the NHS (1948)",
               "duration": "18 mins 0 secs",
-              "teacher_guidance": "Focuses on the political struggle between Bevan and the British Medical Association (BMA) and universal free care."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-viruses-and-vaccines-bbc-four/",
-              "title": "BBC Four: Pain, Pus and Poison – Viruses, Magic Bullets & Vaccines",
-              "duration": "58 mins 0 secs",
-              "teacher_guidance": "Examines Paul Ehrlich’s Salvarsan 606 (1909), Domagk’s Prontosil (1932), and nationwide mass vaccination programs."
+              "teacher_guidance": "⏱️ Watch Window: 00:00–06:30. The Beveridge Report (1942), overcoming doctor opposition by \"stuffing their mouths with gold\", and the founding of free healthcare at the point of delivery."
             }
           ]
         },
@@ -33077,16 +33029,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/breaking-the-mould-the-story-of-penicillin/",
-              "title": "Breaking the Mould: The Story of Penicillin (BBC Drama)",
-              "duration": "82 mins 0 secs",
-              "teacher_guidance": "Acclaimed BBC historical drama starring Dominic West as Howard Florey and Denis Lawson as Alexander Fleming, showing the Oxford lab team purifying penicillin and testing on Albert Alexander in 1941."
+              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-discovery-of-penicillin-bbc-four/",
+              "title": "[STARTER HOOK] The Discovery & Mass Production of Penicillin (BBC Four)",
+              "duration": "22 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 04:30–10:15. Fleming’s untidy petri dish (1928), Florey & Chain’s Oxford lab apparatus, and US industrial fermentation tanks during WWII."
             },
             {
-              "url": "https://era.org.uk/streaming-service-resource/pain-pus-and-poison-the-search-for-modern-medicine-discovery-of-penicillin-bbc-four/",
-              "title": "BBC Four: Pain, Pus and Poison – The Discovery and Mass Production of Penicillin",
-              "duration": "22 mins 0 secs",
-              "teacher_guidance": "Focuses on Fleming’s 1928 discovery, Florey and Chain’s freeze-drying breakthrough, and US government wartime mass production using beer vats."
+              "url": "https://era.org.uk/streaming-service-resource/breaking-the-mould-the-story-of-penicillin/",
+              "title": "[DRAMA EXTENSION] BBC Drama: Breaking the Mould – The Albert Alexander Trial (1941)",
+              "duration": "82 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 42:15–48:30. The dramatic first human trial on police constable Albert Alexander, showing penicillin's miraculous effect and the tragedy of running out of supply."
             }
           ]
         },
@@ -33553,11 +33505,10 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=tlNtakmOOho",
-              "title": "GCSE History: Modern Medicine – Government & Lung Cancer",
+              "title": "[STARTER HOOK] GCSE History: Modern Medicine – Government & Lung Cancer",
               "duration": "7 mins 10 secs",
-              "teacher_guidance": "Examines Richard Doll and Austin Bradford Hill’s 1950 epidemiological study linking smoking to lung cancer, followed by government bans, graphic packaging, and the 2007 indoor smoking ban."
+              "teacher_guidance": "The shift from infectious diseases to lifestyle illnesses: Richard Doll and Austin Bradford Hill’s 1950 epidemiological study linking smoking to cancer, followed by public health bans and modern radiotherapy."
             }
           ]
         },
@@ -33960,9 +33911,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/4-medicine-and-war-history-file/",
-              "title": "History File: Medicine and War – The Western Front Theatre",
-              "duration": "45 mins 0 secs",
-              "teacher_guidance": "Comprehensive overview of the British sector: the Ypres Salient, Somme chalklands, Arras underground tunnels, and Cambrai tank battle."
+              "title": "[EXAM EXTENSION] History File: Medicine and War – The Western Front (BBC Two)",
+              "duration": "24 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 03:10–08:45. Geography of the British sector: the Ypres Salient, underground tunnels at Arras, shell craters at the Somme, and tank warfare at Cambrai."
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=bSPh5Jgx_wY",
+              "title": "[STARTER HOOK] Simple History: Life in the Frontline Trenches",
+              "duration": "3 mins 32 secs",
+              "teacher_guidance": "Animated introduction to trench architecture: fire step, duckboards, traverse, communication trenches, and the dangers of No Man's Land."
             }
           ]
         },
@@ -34364,11 +34321,16 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=bSPh5Jgx_wY",
-              "title": "Simple History: Average Day In The Life Of A WW1 Soldier",
+              "title": "[STARTER HOOK] Simple History: Day in the Life of a WW1 Soldier",
               "duration": "3 mins 32 secs",
-              "teacher_guidance": "Animated visual breakdown of trench rotation: front line, support line, reserve line, communication trenches, mud, rats, and trench hygiene."
+              "teacher_guidance": "The daily routine of trench life: stand-to at dawn, trench maintenance, bully beef rations, and constant sniper vigilance."
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=x8OazQml0gw",
+              "title": "[PRIMARY EVIDENCE] Dan Snow: Trench Foot, Lice & Shell Shock (BBC WW1 Uncut)",
+              "duration": "4 mins 45 secs",
+              "teacher_guidance": "Direct exploration of non-combat conditions: whale oil and dry socks for trench foot, delousing stations for trench fever, and the medical stigma of shell shock (NYDN)."
             }
           ]
         },
@@ -34770,11 +34732,10 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=x8OazQml0gw",
-              "title": "Infections, Shrapnel & Gas – WW1 Uncut with Dan Snow (BBC)",
+              "title": "[STARTER HOOK] Infections, Shrapnel & Gas – WW1 Uncut with Dan Snow (BBC)",
               "duration": "4 mins 45 secs",
-              "teacher_guidance": "Demonstrates the catastrophic blast effects of high-explosive artillery shrapnel, gas gangrene in fertilised soil, and chlorine/phosgene/mustard gas."
+              "teacher_guidance": "Dan Snow demonstrates the devastating physical effects of artillery shrapnel balls, heavily manured soil causing gas gangrene, and chlorine/phosgene/mustard gas burns."
             }
           ]
         },
@@ -35176,32 +35137,22 @@
           ],
           "video": [
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=4xKWnE63E8U",
-              "title": "How the RAMC Worked in WW1 | Field Ambulance Organisation Explained",
+              "title": "[STARTER HOOK] How the RAMC Worked: The Chain of Evacuation Explained",
               "duration": "6 mins 12 secs",
-              "teacher_guidance": "Essential visual walkthrough of the Chain of Evacuation: Stretcher Bearers → Regimental Aid Post (RAP) → Advanced Dressing Station (ADS) → Casualty Clearing Station (CCS) → Base Hospital."
+              "teacher_guidance": "Explains the full sequence: Stretcher Bearers → Regimental Aid Post (RAP) → Advanced Dressing Station (ADS) → Casualty Clearing Station (CCS) → Base Hospital."
             },
             {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=TTaoz0YVO2Y",
-              "title": "Casualty Clearing Station (CCS) – Historian Andy Robertshaw",
+              "title": "[ENQUIRY EVIDENCE] Andy Robertshaw: Inside the Casualty Clearing Station (CCS)",
               "duration": "5 mins 20 secs",
-              "teacher_guidance": "Leading battlefield historian Andy Robertshaw explores the triage system, surgical wards, and nursing sisters at the CCS."
+              "teacher_guidance": "Historian Andy Robertshaw reconstructs the triage system inside a frontline CCS, determining who was treated immediately, sent to Base Hospital, or made comfortable."
             },
             {
-              "type": "youtube",
-              "url": "https://www.youtube.com/watch?v=-jTZ7AwCyug",
-              "title": "Women Medics on the Frontline – WW1 Uncut (BBC)",
-              "duration": "4 mins 10 secs",
-              "teacher_guidance": "Focuses on the First Aid Nursing Yeomanry (FANY) driving motor ambulances and QAIMNS nurses working under fire."
-            },
-            {
-              "type": "youtube",
               "url": "https://www.youtube.com/watch?v=xsz0-8-qAi8",
-              "title": "The Battle of the Somme: Advanced Dressing Station (1916 Archival Film)",
+              "title": "[PRIMARY ARCHIVE] Somme 1916: Authentic Advanced Dressing Station Archival Film",
               "duration": "3 mins 45 secs",
-              "teacher_guidance": "Authentic 1916 Imperial War Museum archival footage showing wounded British soldiers receiving first aid and bandaging in Mindel Trench."
+              "teacher_guidance": "Restored 1916 imperial war footage showing walking wounded arriving at an Advanced Dressing Station near Minden Post during the Battle of the Somme."
             }
           ]
         },
@@ -35604,9 +35555,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/carrel-dakin-method-the-crimson-field/",
-              "title": "The Crimson Field: Carrel-Dakin Antiseptic Method & Wound Debridement",
+              "title": "[ENQUIRY EVIDENCE] The Crimson Field: Carrel-Dakin Antiseptic Method & Debridement",
               "duration": "8 mins 0 secs",
-              "teacher_guidance": "Dramatised BBC medical demonstration of sterilised sodium hypochlorite chemical irrigation (Carrel-Dakin method) and excision of infected tissue (debridement)."
+              "teacher_guidance": "Dramatisation of frontline military surgery: wound debridement (cutting away dead tissue) and continuous irrigation with sodium hypochlorite (Carrel-Dakin method) to defeat gas gangrene."
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=4xKWnE63E8U",
+              "title": "[STARTER HOOK] The Thomas Splint & Mobile X-Ray Units on the Frontline",
+              "duration": "4 mins 15 secs",
+              "teacher_guidance": "How Robert Jones introduced his uncle's Thomas Splint in 1915, stabilizing fractured femurs during transit and reducing mortality from 80% to under 20%."
             }
           ]
         },
@@ -36009,9 +35966,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/fixing-faces-blood-and-guts-a-history-of-surgery/",
-              "title": "Blood and Guts: A History of Surgery – Fixing Faces (Harold Gillies at Queen’s Hospital, Sidcup)",
+              "title": "[ENQUIRY EVIDENCE] Harold Gillies & Queen's Hospital Sidcup: Pioneering Plastic Surgery (BBC Four)",
               "duration": "12 mins 0 secs",
-              "teacher_guidance": "Explores Harold Gillies pioneering plastic surgery using tubed pedicles, alongside blood transfusion breakthroughs (Rous & Turner, Robertson’s 1917 Cambrai blood depot)."
+              "teacher_guidance": "Explores the work of Harold Gillies developing the pedicle tube skin graft at Sidcup, reconstructing severe facial shrapnel wounds for over 11,000 soldiers."
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=4xKWnE63E8U",
+              "title": "[STARTER HOOK] Blood Transfusions: Sodium Citrate & Robertson's Blood Depot at Cambrai (1917)",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "How Landsteiner’s ABO blood groups (1901), Lewisohn’s sodium citrate anticoagulant (1915), and Francis Rous’s dextrose storage allowed Oswald Robertson to establish the first blood depot at Cambrai."
             }
           ]
         }
