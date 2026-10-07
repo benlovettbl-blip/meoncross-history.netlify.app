@@ -1167,10 +1167,10 @@ const great_war = {
           source: {
             letter: 'B',
             title: 'Source B (Visual Record): Gunboat Diplomacy: The SMS Panther at Agadir (1911)',
-            image: '/units/great_war/assets/map_lesson2_b.png',
+            image: '/units/great_war/assets/sms_panther_agadir_1911.jpg',
             caption:
-              'Map detail and record of the colonial flashpoints in North Africa where German gunboat diplomacy challenged French control.',
-            citation: 'Imperial German Naval Command, Agadir Mission Photographic Record.',
+              'A contemporary photograph of the Imperial German Navy gunboat SMS Panther, dispatched by Kaiser Wilhelm II to the Atlantic port of Agadir on 1 July 1911 to challenge French colonial dominance.',
+            citation: 'Imperial German Naval Command / Bundesarchiv (1911).',
             context:
               'Twice (in 1905 at Tangier and 1911 at Agadir), Germany provoked international crises in Morocco to test the Anglo-French Entente, but succeeded only in driving Britain and France into closer military coordination.',
             hinge_question:
@@ -1623,10 +1623,10 @@ const great_war = {
           source: {
             letter: 'A',
             title: 'Source A (Satirical Record): Puck Magazine: "The Armaments Race" (1909)',
-            image: '/units/great_war/assets/map_lesson3.png',
+            image: '/units/great_war/assets/Naval-race-1909.jpg',
             caption:
-              'Contemporary chart and cartoon illustrating the escalating dreadnought battleship building race between the Royal Navy and the Imperial German Navy between 1906 and 1914.',
-            citation: 'Puck Magazine (New York), Vol. 65, No. 1678 (April 1909).',
+              'A contemporary satirical cartoon published in Puck Magazine (1909), showing the great powers sitting around a poker table betting with dreadnought battleships, capturing the escalating naval arms race.',
+            citation: 'Puck Magazine (New York), Vol. 66, No. 1699 (22 September 1909).',
             context:
               'When Britain launched HMS Dreadnought in 1906, it rendered all earlier warships obsolete. Both Britain and Germany poured immense national fortunes into building rival fleets of dreadnoughts.',
             hinge_question:
