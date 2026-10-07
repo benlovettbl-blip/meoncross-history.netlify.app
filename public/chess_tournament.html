@@ -1,0 +1,1454 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Tutor Group Chess Tournament — 2-Page A3 Master Pack (Championship & Wooden Spoon)
+    </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,700;1,6..72,400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+       PRINT & A3 LANDSCAPE CORE SPECIFICATION
+       420mm x 297mm per page @ 300 DPI
+       ============================================================ */
+      @page {
+        size: A3 landscape;
+        margin: 8mm;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+
+      body {
+        font-family:
+          'Inter',
+          -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          Roboto,
+          sans-serif;
+        background: #0f172a;
+        color: #0f172a;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+      }
+
+      /* Screen UI Controls Toolbar */
+      .screen-toolbar {
+        background: #1e293b;
+        color: #f8fafc;
+        padding: 14px 24px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.4);
+        width: 100%;
+        max-width: 1540px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        border: 1px solid #334155;
+      }
+
+      .toolbar-title {
+        font-family: 'Cinzel', serif;
+        font-weight: 800;
+        font-size: 17px;
+        letter-spacing: 0.05em;
+        color: #fbbf24;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .toolbar-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        appearance: none;
+        border: none;
+        padding: 9px 16px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: 700;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.15s ease;
+      }
+
+      .btn-gold {
+        background: linear-gradient(135deg, #f59e0b, #d97706);
+        color: #ffffff;
+        box-shadow: 0 2px 10px rgba(217, 119, 6, 0.35);
+      }
+      .btn-gold:hover {
+        background: linear-gradient(135deg, #fbbf24, #f59e0b);
+        transform: translateY(-1px);
+      }
+
+      .btn-slate {
+        background: #334155;
+        color: #e2e8f0;
+        border: 1px solid #475569;
+      }
+      .btn-slate:hover {
+        background: #475569;
+        color: #ffffff;
+      }
+
+      .btn-outline {
+        background: transparent;
+        border: 1px solid #64748b;
+        color: #cbd5e1;
+      }
+      .btn-outline:hover {
+        background: #334155;
+        color: #ffffff;
+      }
+
+      /* Names Drawer */
+      .names-drawer {
+        background: #1e293b;
+        border: 1px solid #475569;
+        padding: 16px 20px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 1540px;
+        display: none;
+        animation: fadeIn 0.2s ease;
+      }
+      .names-drawer.active {
+        display: block;
+      }
+      .drawer-header {
+        font-size: 13px;
+        font-weight: 700;
+        color: #94a3b8;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 12px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .names-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 10px;
+      }
+      .name-input-group label {
+        display: block;
+        font-size: 10px;
+        font-weight: 700;
+        color: #cbd5e1;
+        margin-bottom: 3px;
+      }
+      .name-input-group input {
+        width: 100%;
+        background: #0f172a;
+        border: 1px solid #475569;
+        color: #ffffff;
+        padding: 7px 10px;
+        border-radius: 4px;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .name-input-group input:focus {
+        outline: none;
+        border-color: #f59e0b;
+      }
+
+      /* ============================================================
+       THE A3 PRINT CANVAS CONTAINER (404mm x 281mm)
+       ============================================================ */
+      .a3-page {
+        width: 404mm;
+        height: 281mm;
+        background: #ffffff;
+        border: 2px solid #cbd5e1;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4);
+        border-radius: 8px;
+        padding: 10mm 12mm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+        page-break-after: always;
+      }
+      .a3-page:last-of-type {
+        page-break-after: avoid;
+      }
+
+      /* Page Header Banner */
+      .sheet-header {
+        border-bottom: 3px double #0f172a;
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .brand-crest {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+      }
+      .crest-icon {
+        width: 48px;
+        height: 48px;
+        background: #0f172a;
+        color: #fbbf24;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 26px;
+        box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+      }
+      .crest-icon.spoon {
+        background: #78350f;
+        color: #fde68a;
+      }
+
+      .title-group h1 {
+        font-family: 'Cinzel', serif;
+        font-size: 24px;
+        font-weight: 900;
+        color: #0f172a;
+        letter-spacing: 0.04em;
+        line-height: 1.1;
+        text-transform: uppercase;
+      }
+      .title-group .subtitle {
+        font-size: 11px;
+        font-weight: 700;
+        color: #64748b;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        margin-top: 2px;
+      }
+
+      .meta-badges {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .badge-card {
+        border: 1.5px solid #cbd5e1;
+        background: #f8fafc;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 11px;
+        line-height: 1.3;
+      }
+      .badge-card strong {
+        display: block;
+        color: #0f172a;
+        font-size: 12px;
+      }
+      .badge-card span {
+        color: #64748b;
+      }
+
+      /* ============================================================
+       PAGE 1: GIANT FULL-A3 CHAMPIONSHIP KNOCKOUT BRACKET
+       ============================================================ */
+      .championship-full-grid {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        flex: 1;
+        gap: 10mm;
+        padding: 6px 0;
+        position: relative;
+      }
+
+      .bracket-col {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        flex: 1;
+        position: relative;
+      }
+
+      .col-header-pill {
+        text-align: center;
+        font-family: 'Cinzel', serif;
+        font-size: 12px;
+        font-weight: 800;
+        color: #0f172a;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        background: #f1f5f9;
+        border: 1.5px solid #cbd5e1;
+        padding: 4px 8px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+      }
+
+      /* Giant Match Card */
+      .big-match-card {
+        border: 2px solid #1e293b;
+        border-radius: 8px;
+        background: #ffffff;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        margin: 6px 0;
+        overflow: hidden;
+        position: relative;
+      }
+      .card-top-tag {
+        background: #0f172a;
+        color: #ffffff;
+        font-size: 9.5px;
+        font-weight: 700;
+        padding: 3px 8px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        letter-spacing: 0.04em;
+      }
+      .card-top-tag.gold {
+        background: linear-gradient(135deg, #b45309, #92400e);
+      }
+      .card-top-tag .note {
+        color: #fbbf24;
+        font-size: 8.5px;
+      }
+
+      .player-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 10px;
+        font-size: 13px;
+        min-height: 34px;
+        background: #ffffff;
+        border-top: 1.5px solid #e2e8f0;
+      }
+      .player-row:first-of-type {
+        border-top: none;
+      }
+      .player-row.bye-row {
+        background: #f8fafc;
+        color: #64748b;
+        font-style: italic;
+      }
+
+      .piece-indicator {
+        font-size: 13px;
+        width: 20px;
+        text-align: center;
+        color: #334155;
+      }
+      .name-slot {
+        flex: 1;
+        font-weight: 700;
+        color: #0f172a;
+        padding: 0 8px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 13px;
+      }
+      .score-square {
+        width: 28px;
+        height: 24px;
+        border: 1.5px solid #94a3b8;
+        border-radius: 4px;
+        background: #f8fafc;
+        text-align: center;
+        font-size: 12px;
+        font-weight: 800;
+        line-height: 22px;
+        color: #0f172a;
+      }
+
+      /* Giant Podium Plaque on Page 1 */
+      .giant-champion-podium {
+        border: 3px solid #d97706;
+        background: linear-gradient(135deg, #fffbeb, #fef3c7);
+        border-radius: 10px;
+        padding: 16px 14px;
+        text-align: center;
+        margin: auto 0;
+        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.2);
+      }
+      .giant-champion-podium .trophy-big {
+        font-size: 42px;
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+      .giant-champion-podium .trophy-title {
+        font-family: 'Cinzel', serif;
+        font-size: 15px;
+        font-weight: 900;
+        color: #92400e;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+      .giant-champion-podium .name-underline {
+        border-bottom: 2.5px solid #b45309;
+        height: 34px;
+        margin: 8px 0 4px 0;
+        font-family: 'Newsreader', serif;
+        font-size: 18px;
+        font-weight: 800;
+        color: #78350f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* ============================================================
+       PAGE 2: THE "WOODEN SPOON" CONSOLATION & RESULTS HUB
+       ============================================================ */
+      .page2-grid {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr 1fr;
+        gap: 10mm;
+        flex: 1;
+        padding: 6px 0;
+      }
+
+      .section-card {
+        border: 2px solid #334155;
+        border-radius: 8px;
+        padding: 12px 14px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #ffffff;
+      }
+      .section-card.bronze-theme {
+        border-color: #78350f;
+        background: #fffdfa;
+      }
+      .section-card.slate-theme {
+        border-color: #1e293b;
+      }
+
+      .section-title {
+        font-family: 'Cinzel', serif;
+        font-size: 13.5px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        border-bottom: 2px solid #cbd5e1;
+        padding-bottom: 6px;
+        margin-bottom: 8px;
+      }
+      .bronze-theme .section-title {
+        color: #78350f;
+        border-bottom-color: #78350f;
+      }
+      .slate-theme .section-title {
+        color: #0f172a;
+        border-bottom-color: #0f172a;
+      }
+
+      /* Giant 3-Way Round Robin Grid Table */
+      .spoon-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 11px;
+        margin: 8px 0;
+        border: 1.5px solid #cbd5e1;
+        border-radius: 6px;
+        overflow: hidden;
+      }
+      .spoon-table th,
+      .spoon-table td {
+        border: 1px solid #cbd5e1;
+        padding: 6px 8px;
+        text-align: center;
+      }
+      .spoon-table th {
+        background: #f1f5f9;
+        font-weight: 800;
+        color: #1e293b;
+        font-size: 10.5px;
+      }
+      .spoon-table td.player-label {
+        text-align: left;
+        font-weight: 700;
+        color: #0f172a;
+        background: #f8fafc;
+        width: 44%;
+      }
+      .spoon-table td.blocked {
+        background: #cbd5e1;
+      }
+
+      /* Giant Wooden Spoon Honoree Plaque */
+      .giant-spoon-podium {
+        border: 2.5px dashed #92400e;
+        background: #fef3c7;
+        border-radius: 8px;
+        padding: 12px 10px;
+        text-align: center;
+        margin-top: 8px;
+      }
+      .giant-spoon-podium .spoon-big {
+        font-size: 32px;
+        line-height: 1;
+      }
+      .giant-spoon-podium .spoon-title {
+        font-family: 'Cinzel', serif;
+        font-size: 13px;
+        font-weight: 900;
+        color: #78350f;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+      .giant-spoon-podium .spoon-name {
+        border-bottom: 2px solid #78350f;
+        height: 28px;
+        margin: 6px 0 3px 0;
+        font-family: 'Newsreader', serif;
+        font-size: 16px;
+        font-weight: 800;
+        color: #78350f;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Master 11-Pupil Standing Directory */
+      .directory-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 10px;
+        margin: 6px 0;
+      }
+      .directory-table th,
+      .directory-table td {
+        border: 1px solid #e2e8f0;
+        padding: 4px 6px;
+        text-align: left;
+      }
+      .directory-table th {
+        background: #0f172a;
+        color: #ffffff;
+        font-weight: 700;
+        font-size: 9.5px;
+      }
+      .directory-table tr:nth-child(even) {
+        background: #f8fafc;
+      }
+
+      /* Printable Match Slips / Result Slips */
+      .slips-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+        margin-top: 6px;
+      }
+      .match-slip {
+        border: 1px dashed #64748b;
+        padding: 6px 8px;
+        border-radius: 4px;
+        background: #f8fafc;
+        font-size: 8.5px;
+        line-height: 1.35;
+      }
+      .slip-header {
+        font-weight: 800;
+        color: #0f172a;
+        border-bottom: 1px solid #cbd5e1;
+        padding-bottom: 2px;
+        margin-bottom: 3px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      /* Footer Bars */
+      .page-footer {
+        border-top: 1.5px solid #0f172a;
+        padding-top: 6px;
+        margin-top: 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9.5px;
+        color: #475569;
+      }
+      .footer-rules-row {
+        display: flex;
+        gap: 16px;
+        font-size: 9px;
+        color: #334155;
+      }
+      .footer-rules-row strong {
+        color: #0f172a;
+      }
+
+      /* ============================================================
+       PRINT MEDIA OVERRIDES
+       ============================================================ */
+      @media print {
+        body {
+          background: #ffffff;
+          padding: 0;
+          gap: 0;
+        }
+        .screen-toolbar,
+        .names-drawer {
+          display: none !important;
+        }
+        .a3-page {
+          border: none;
+          box-shadow: none;
+          width: 100%;
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Screen Toolbar for Teacher (Hides on Print) -->
+    <div class="screen-toolbar">
+      <div class="toolbar-title">
+        <span>♟️</span> Tutor Group Chess Championship — 2-Page A3 Master Wallchart Pack
+      </div>
+      <div class="toolbar-actions">
+        <button class="btn btn-outline" onclick="toggleNamesDrawer()">
+          ✏️ Fill In 11 Pupil Names
+        </button>
+        <button class="btn btn-slate" onclick="randomizeDraw()">🎲 Randomize / Shuffle Draw</button>
+        <button class="btn btn-slate" onclick="resetToBlank()">
+          🧹 Blank Template (Handwrite)
+        </button>
+        <button class="btn btn-gold" onclick="window.print()">
+          🖨️ Print 2-Page Pack (A3 Landscape)
+        </button>
+      </div>
+    </div>
+
+    <!-- Pupil Names Quick Drawer (Interactive) -->
+    <div class="names-drawer" id="namesDrawer">
+      <div class="drawer-header">
+        <span>Type 11 Pupil First Names (Lives strictly in browser — 100% GDPR neutral):</span>
+        <button
+          class="btn btn-slate"
+          style="padding: 4px 10px; font-size: 11px"
+          onclick="applyNames()"
+        >
+          Apply to Both Sheets
+        </button>
+      </div>
+      <div class="names-grid">
+        <div class="name-input-group">
+          <label>Player 1 (Prelim 1)</label>
+          <input type="text" id="inputP1" value="Player 1" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 2 (Prelim 1)</label>
+          <input type="text" id="inputP2" value="Player 2" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 3 (Prelim 2)</label>
+          <input type="text" id="inputP3" value="Player 3" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 4 (Prelim 2)</label>
+          <input type="text" id="inputP4" value="Player 4" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 5 (Prelim 3)</label>
+          <input type="text" id="inputP5" value="Player 5" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 6 (Prelim 3)</label>
+          <input type="text" id="inputP6" value="Player 6" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 7 (QF1 Bye)</label>
+          <input type="text" id="inputP7" value="Player 7" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 8 (QF2 Bye)</label>
+          <input type="text" id="inputP8" value="Player 8" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 9 (QF3 Bye)</label>
+          <input type="text" id="inputP9" value="Player 9" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 10 (QF4 Bye)</label>
+          <input type="text" id="inputP10" value="Player 10" placeholder="First Name" />
+        </div>
+        <div class="name-input-group">
+          <label>Player 11 (QF4 Bye)</label>
+          <input type="text" id="inputP11" value="Player 11" placeholder="First Name" />
+        </div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+       PAGE 1 OF 2: GIANT CHAMPIONSHIP KNOCKOUT WALLCHART (A3)
+       ============================================================ -->
+    <div class="a3-page" id="page1">
+      <!-- Top Header Banner -->
+      <header class="sheet-header">
+        <div class="brand-crest">
+          <div class="crest-icon">♞</div>
+          <div class="title-group">
+            <h1 contenteditable="true" spellcheck="false" title="Click to rename if desired">
+              Tutor Group Chess Championship
+            </h1>
+            <div class="subtitle">
+              Official 11-Player Main Championship Knockout Wallchart • Page 1 of 2
+            </div>
+          </div>
+        </div>
+        <div class="meta-badges">
+          <div class="badge-card">
+            <strong>11 Contenders • 4 Rounds</strong>
+            <span>3 Prelims • 4 Quarter-Finals • 2 Semis • Grand Final</span>
+          </div>
+          <div class="badge-card">
+            <strong>Time Control: 10 Mins Blitz / Rapid</strong>
+            <span>Touch-Move • Sudden-Death Armageddon Tiebreak</span>
+          </div>
+          <div class="badge-card">
+            <strong>Consolation Active</strong>
+            <span>R1 Knockouts proceed to Page 2 Wooden Spoon Draw</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Main Championship 4-Column Tree (Fills Whole A3 Canvas) -->
+      <main class="championship-full-grid">
+        <!-- Col 1: Preliminary Round (Round 1) -->
+        <div class="bracket-col" style="flex: 1.15">
+          <div class="col-header-pill">1. Preliminary Round (6 Players)</div>
+
+          <!-- Match 1 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>PRELIM MATCH 1</span>
+              <span class="note">Loser &rarr; Wooden Spoon</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" id="p1_slot1">Player 1</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot2">Player 2</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- Match 2 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>PRELIM MATCH 2</span>
+              <span class="note">Loser &rarr; Wooden Spoon</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" id="p1_slot3">Player 3</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot4">Player 4</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- Match 3 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>PRELIM MATCH 3</span>
+              <span class="note">Loser &rarr; Wooden Spoon</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" id="p1_slot5">Player 5</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot6">Player 6</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 2: Quarter-Finals (Round 2 - 8 Players) -->
+        <div class="bracket-col" style="flex: 1.25">
+          <div class="col-header-pill">2. Quarter-Finals (8 Players)</div>
+
+          <!-- QF 1 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>QUARTER-FINAL 1</span>
+              <span class="note">Winner to Semi 1</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #64748b">Winner Prelim 1</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row bye-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot7">Player 7 (Bye)</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- QF 2 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>QUARTER-FINAL 2</span>
+              <span class="note">Winner to Semi 1</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #64748b">Winner Prelim 2</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row bye-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot8">Player 8 (Bye)</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- QF 3 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>QUARTER-FINAL 3</span>
+              <span class="note">Winner to Semi 2</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #64748b">Winner Prelim 3</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row bye-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot9">Player 9 (Bye)</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- QF 4 -->
+          <div class="big-match-card">
+            <div class="card-top-tag">
+              <span>QUARTER-FINAL 4</span>
+              <span class="note">Winner to Semi 2</span>
+            </div>
+            <div class="player-row bye-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" id="p1_slot10">Player 10 (Bye)</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row bye-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" id="p1_slot11">Player 11 (Bye)</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 3: Semi-Finals (Round 3 - 4 Players) -->
+        <div class="bracket-col" style="flex: 1.15">
+          <div class="col-header-pill">3. Semi-Finals (4 Players)</div>
+
+          <!-- Semi 1 -->
+          <div class="big-match-card" style="margin-top: 30px">
+            <div class="card-top-tag">
+              <span>SEMI-FINAL 1</span>
+              <span class="note">To Grand Final</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #64748b">Winner QF 1</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" style="color: #64748b">Winner QF 2</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- Semi 2 -->
+          <div class="big-match-card" style="margin-bottom: 30px">
+            <div class="card-top-tag">
+              <span>SEMI-FINAL 2</span>
+              <span class="note">To Grand Final</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #64748b">Winner QF 3</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" style="color: #64748b">Winner QF 4</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Col 4: Grand Final & Champion Trophy -->
+        <div class="bracket-col" style="flex: 1.25">
+          <div
+            class="col-header-pill"
+            style="background: #fef3c7; border-color: #d97706; color: #92400e"
+          >
+            4. Grand Final & Podium
+          </div>
+
+          <!-- Championship Decider -->
+          <div class="big-match-card" style="border: 2.5px solid #b45309">
+            <div class="card-top-tag gold">
+              <span>GRAND CHAMPIONSHIP MATCH</span>
+              <span class="note">Best of 1 or 3</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #78350f; font-weight: 800"
+                >Winner Semi-Final 1</span
+              >
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" style="color: #78350f; font-weight: 800"
+                >Winner Semi-Final 2</span
+              >
+              <span class="score-square"></span>
+            </div>
+          </div>
+
+          <!-- Giant Champion Plaque -->
+          <div class="giant-champion-podium">
+            <div class="trophy-big">🏆</div>
+            <div class="trophy-title">Tutor Group Chess Champion</div>
+            <div class="name-underline">_______________________</div>
+            <div
+              style="font-size: 9px; color: #92400e; font-weight: 800; text-transform: uppercase"
+            >
+              Undefeated Sovereign of the Board
+            </div>
+          </div>
+
+          <!-- 3rd Place Match -->
+          <div class="big-match-card" style="border: 1.5px dashed #475569">
+            <div class="card-top-tag" style="background: #334155">
+              <span>3RD PLACE PLAY-OFF</span>
+              <span class="note">Bronze Medal 🥉</span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♙</span>
+              <span class="name-slot" style="color: #64748b">Loser Semi-Final 1</span>
+              <span class="score-square"></span>
+            </div>
+            <div class="player-row">
+              <span class="piece-indicator">♟</span>
+              <span class="name-slot" style="color: #64748b">Loser Semi-Final 2</span>
+              <span class="score-square"></span>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Bottom Rules & Certification Footer -->
+      <footer class="page-footer">
+        <div class="footer-rules-row">
+          <div>
+            <strong>1. Touch-Move:</strong> If you touch a piece with intent, you must move it if
+            legal.
+          </div>
+          <div><strong>2. Scoring:</strong> Win = 1 pt, Draw = ½ pt, Loss = 0 pts.</div>
+          <div>
+            <strong>3. Tiebreak:</strong> 3-min Blitz or Armageddon (White 5m, Black 4m + draw
+            odds).
+          </div>
+          <div><strong>4. Etiquette:</strong> Shake hands before and after every match.</div>
+        </div>
+        <div>
+          <strong>Arbiter / Tutor Signature:</strong> ___________________________ &nbsp;&nbsp;
+          <strong>Date:</strong> _______________
+        </div>
+      </footer>
+    </div>
+
+    <!-- ============================================================
+       PAGE 2 OF 2: GIANT "WOODEN SPOON" CONSOLATION & RESULTS HUB (A3)
+       ============================================================ -->
+    <div class="a3-page" id="page2">
+      <!-- Top Header Banner -->
+      <header class="sheet-header">
+        <div class="brand-crest">
+          <div class="crest-icon spoon">🥄</div>
+          <div class="title-group">
+            <h1>The "Wooden Spoon" Consolation Plate & Results Hub</h1>
+            <div class="subtitle">
+              Round 1 Knockout Recovery • Quarter-Final Shield • Master Directory • Page 2 of 2
+            </div>
+          </div>
+        </div>
+        <div class="meta-badges">
+          <div class="badge-card">
+            <strong>No Pupil Left Out!</strong>
+            <span>Every R1 knocked-out player gets 2+ more full matches</span>
+          </div>
+          <div class="badge-card">
+            <strong>3-Way Round-Robin Matrix</strong>
+            <span>Loser 1 vs Loser 2 vs Loser 3</span>
+          </div>
+          <div class="badge-card">
+            <strong>Quarter-Final Shield</strong>
+            <span>Consolation tree for QF eliminated contenders</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 3-Column Content Layout (Fills Whole A3 Canvas) -->
+      <main class="page2-grid">
+        <!-- Column 1: The Wooden Spoon Round-Robin Triangle (Round 1 Losers) -->
+        <section class="section-card bronze-theme">
+          <div>
+            <div class="section-title">
+              <span>🥄</span> 1. The Wooden Spoon Triangle (R1 Losers)
+            </div>
+            <div style="font-size: 10px; color: #78350f; line-height: 1.4; margin-bottom: 6px">
+              The 3 pupils eliminated in Preliminary Round 1 play each other in a
+              <strong>3-Way Round-Robin</strong> to ensure everyone gets rich match practice.
+            </div>
+
+            <!-- 3-Way Grid -->
+            <table class="spoon-table">
+              <thead>
+                <tr>
+                  <th>Contender</th>
+                  <th>Vs Loser 1</th>
+                  <th>Vs Loser 2</th>
+                  <th>Vs Loser 3</th>
+                  <th>Total Pts</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="player-label">
+                    <strong>Loser Prelim 1:</strong><br />
+                    <span id="p2_spoonP1" style="color: #64748b; font-size: 9.5px"
+                      >___________________</span
+                    >
+                  </td>
+                  <td class="blocked">&times;</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="player-label">
+                    <strong>Loser Prelim 2:</strong><br />
+                    <span id="p2_spoonP2" style="color: #64748b; font-size: 9.5px"
+                      >___________________</span
+                    >
+                  </td>
+                  <td></td>
+                  <td class="blocked">&times;</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="player-label">
+                    <strong>Loser Prelim 3:</strong><br />
+                    <span id="p2_spoonP3" style="color: #64748b; font-size: 9.5px"
+                      >___________________</span
+                    >
+                  </td>
+                  <td></td>
+                  <td></td>
+                  <td class="blocked">&times;</td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- Spoon Decider Match Box -->
+            <div class="big-match-card" style="border-color: #78350f; margin-top: 10px">
+              <div class="card-top-tag" style="background: #78350f">
+                <span>WOODEN SPOON DECIDER PLAY-OFF</span>
+                <span class="note">Survival Match</span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♙</span>
+                <span class="name-slot" style="color: #78350f">Lowest Scorer in Triangle</span>
+                <span class="score-square"></span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♟</span>
+                <span class="name-slot" style="color: #78350f">Second Lowest Scorer</span>
+                <span class="score-square"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Giant Wooden Spoon Honoree Plaque -->
+          <div class="giant-spoon-podium">
+            <div class="spoon-big">🥄</div>
+            <div class="spoon-title">Official Wooden Spoon Honoree</div>
+            <div class="spoon-name">___________________________</div>
+            <div
+              style="font-size: 8.5px; color: #78350f; font-weight: 800; text-transform: uppercase"
+            >
+              Awarded for Gallant Tenacity, Unyielding Spirit &amp; Supreme Sportsmanship
+            </div>
+          </div>
+        </section>
+
+        <!-- Column 2: The Quarter-Final Consolation Shield (QF Losers) -->
+        <section class="section-card slate-theme">
+          <div>
+            <div class="section-title"><span>🛡️</span> 2. Quarter-Final Consolation Shield</div>
+            <div style="font-size: 10px; color: #475569; line-height: 1.4; margin-bottom: 8px">
+              The 4 pupils knocked out in the Quarter-Finals play off for the
+              <strong>Tutor Group Consolation Shield</strong>!
+            </div>
+
+            <!-- Shield Semi 1 -->
+            <div class="big-match-card" style="margin-bottom: 12px">
+              <div class="card-top-tag">
+                <span>SHIELD SEMI-FINAL 1</span>
+                <span class="note">To Shield Final</span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♙</span>
+                <span class="name-slot" style="color: #64748b">Loser Quarter-Final 1</span>
+                <span class="score-square"></span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♟</span>
+                <span class="name-slot" style="color: #64748b">Loser Quarter-Final 2</span>
+                <span class="score-square"></span>
+              </div>
+            </div>
+
+            <!-- Shield Semi 2 -->
+            <div class="big-match-card" style="margin-bottom: 12px">
+              <div class="card-top-tag">
+                <span>SHIELD SEMI-FINAL 2</span>
+                <span class="note">To Shield Final</span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♙</span>
+                <span class="name-slot" style="color: #64748b">Loser Quarter-Final 3</span>
+                <span class="score-square"></span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♟</span>
+                <span class="name-slot" style="color: #64748b">Loser Quarter-Final 4</span>
+                <span class="score-square"></span>
+              </div>
+            </div>
+
+            <!-- Shield Grand Final -->
+            <div class="big-match-card" style="border: 2px solid #0f172a">
+              <div class="card-top-tag" style="background: #1e293b">
+                <span>CONSOLATION SHIELD FINAL</span>
+                <span class="note">Plate Trophy</span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♙</span>
+                <span class="name-slot" style="color: #0f172a; font-weight: 700"
+                  >Winner Shield Semi 1</span
+                >
+                <span class="score-square"></span>
+              </div>
+              <div class="player-row">
+                <span class="piece-indicator">♟</span>
+                <span class="name-slot" style="color: #0f172a; font-weight: 700"
+                  >Winner Shield Semi 2</span
+                >
+                <span class="score-square"></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shield Winner Plaque -->
+          <div
+            style="
+              border: 2px solid #1e293b;
+              background: #f8fafc;
+              border-radius: 8px;
+              padding: 10px;
+              text-align: center;
+            "
+          >
+            <div style="font-size: 24px; line-height: 1">🛡️</div>
+            <div
+              style="
+                font-family: 'Cinzel', serif;
+                font-size: 11px;
+                font-weight: 800;
+                color: #0f172a;
+                text-transform: uppercase;
+              "
+            >
+              Consolation Shield Winner
+            </div>
+            <div
+              style="
+                border-bottom: 2px solid #0f172a;
+                height: 26px;
+                margin: 4px 0 2px 0;
+                font-family: 'Newsreader', serif;
+                font-weight: 700;
+                font-size: 15px;
+              "
+            >
+              _______________________
+            </div>
+            <div
+              style="font-size: 8px; color: #64748b; font-weight: 700; text-transform: uppercase"
+            >
+              Best Recovery from Quarter-Final Knockout
+            </div>
+          </div>
+        </section>
+
+        <!-- Column 3: Master Directory & Official Match Slips -->
+        <section class="section-card slate-theme">
+          <div>
+            <div class="section-title"><span>📋</span> 3. Master Standings & Match Slips</div>
+
+            <!-- 11-Pupil Directory -->
+            <table class="directory-table">
+              <thead>
+                <tr>
+                  <th style="width: 14%">Rank</th>
+                  <th>Title / Designation</th>
+                  <th>Pupil Name</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>1st 🏆</strong></td>
+                  <td>Tournament Champion</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>2nd 🥈</strong></td>
+                  <td>Tournament Runner-Up</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>3rd 🥉</strong></td>
+                  <td>Bronze Medalist</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>4th</strong></td>
+                  <td>Championship Semi-Finalist</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>5th 🛡️</strong></td>
+                  <td>Consolation Shield Winner</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>6th</strong></td>
+                  <td>Shield Runner-Up</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>7th-8th</strong></td>
+                  <td>Shield Semi-Finalists</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td><strong>9th-10th</strong></td>
+                  <td>Wooden Spoon Survivors</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td style="color: #78350f"><strong>11th 🥄</strong></td>
+                  <td style="color: #78350f"><strong>Wooden Spoon Honoree</strong></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div
+              style="
+                font-size: 9.5px;
+                font-weight: 700;
+                color: #0f172a;
+                text-transform: uppercase;
+                margin-top: 8px;
+                border-bottom: 1px solid #cbd5e1;
+                padding-bottom: 2px;
+              "
+            >
+              ✂️ Board-Side Official Match Result Slips
+            </div>
+
+            <!-- 4 Printable Match Slips -->
+            <div class="slips-grid">
+              <div class="match-slip">
+                <div class="slip-header"><span>MATCH SLIP #1</span><span>Table ___</span></div>
+                White: ___________________<br />
+                Black: ___________________<br />
+                Result: [ 1-0 ] [ ½-½ ] [ 0-1 ]<br />
+                Sign: ____________________
+              </div>
+              <div class="match-slip">
+                <div class="slip-header"><span>MATCH SLIP #2</span><span>Table ___</span></div>
+                White: ___________________<br />
+                Black: ___________________<br />
+                Result: [ 1-0 ] [ ½-½ ] [ 0-1 ]<br />
+                Sign: ____________________
+              </div>
+              <div class="match-slip">
+                <div class="slip-header"><span>MATCH SLIP #3</span><span>Table ___</span></div>
+                White: ___________________<br />
+                Black: ___________________<br />
+                Result: [ 1-0 ] [ ½-½ ] [ 0-1 ]<br />
+                Sign: ____________________
+              </div>
+              <div class="match-slip">
+                <div class="slip-header"><span>MATCH SLIP #4</span><span>Table ___</span></div>
+                White: ___________________<br />
+                Black: ___________________<br />
+                Result: [ 1-0 ] [ ½-½ ] [ 0-1 ]<br />
+                Sign: ____________________
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="
+              font-size: 8px;
+              color: #64748b;
+              text-align: center;
+              border-top: 1px solid #e2e8f0;
+              padding-top: 4px;
+            "
+          >
+            Tutor Group Chess Master Hub • 100% Institutional Neutrality
+          </div>
+        </section>
+      </main>
+
+      <!-- Bottom Page 2 Footer -->
+      <footer class="page-footer">
+        <div>
+          <strong>The History Portal Chess League:</strong> Designed for tutor group time, lunchtime
+          chess clubs, and house competitions.
+        </div>
+        <div>
+          <strong>Master Pack Page 2 of 2</strong> &nbsp;&bull;&nbsp;
+          <strong>A3 Landscape Standard</strong>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      function toggleNamesDrawer() {
+        const d = document.getElementById('namesDrawer');
+        d.classList.toggle('active');
+      }
+
+      function applyNames() {
+        // Update Page 1 slots
+        for (let i = 1; i <= 11; i++) {
+          const input = document.getElementById(`inputP${i}`);
+          const val = input && input.value.trim() ? input.value.trim() : `Player ${i}`;
+          const slot = document.getElementById(`p1_slot${i}`);
+          if (slot) {
+            slot.textContent = i >= 7 ? `${val} (Bye)` : val;
+          }
+        }
+
+        // Update Page 2 Wooden Spoon placeholders
+        const p1 = document.getElementById('inputP1').value.trim() || 'Player 1';
+        const p2 = document.getElementById('inputP2').value.trim() || 'Player 2';
+        const p3 = document.getElementById('inputP3').value.trim() || 'Player 3';
+        const p4 = document.getElementById('inputP4').value.trim() || 'Player 4';
+        const p5 = document.getElementById('inputP5').value.trim() || 'Player 5';
+        const p6 = document.getElementById('inputP6').value.trim() || 'Player 6';
+
+        const sp1 = document.getElementById('p2_spoonP1');
+        const sp2 = document.getElementById('p2_spoonP2');
+        const sp3 = document.getElementById('p2_spoonP3');
+        if (sp1) sp1.textContent = `Loser Match 1 (${p1} / ${p2})`;
+        if (sp2) sp2.textContent = `Loser Match 2 (${p3} / ${p4})`;
+        if (sp3) sp3.textContent = `Loser Match 3 (${p5} / ${p6})`;
+      }
+
+      function randomizeDraw() {
+        const names = [];
+        for (let i = 1; i <= 11; i++) {
+          const val = document.getElementById(`inputP${i}`).value.trim();
+          names.push(val || `Player ${i}`);
+        }
+        for (let i = names.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [names[i], names[j]] = [names[j], names[i]];
+        }
+        for (let i = 1; i <= 11; i++) {
+          document.getElementById(`inputP${i}`).value = names[i - 1];
+        }
+        applyNames();
+      }
+
+      function resetToBlank() {
+        for (let i = 1; i <= 11; i++) {
+          const input = document.getElementById(`inputP${i}`);
+          if (input) input.value = '';
+          const slot = document.getElementById(`p1_slot${i}`);
+          if (slot) {
+            slot.textContent = i >= 7 ? '________________ (Bye)' : '________________';
+          }
+        }
+        const sp1 = document.getElementById('p2_spoonP1');
+        const sp2 = document.getElementById('p2_spoonP2');
+        const sp3 = document.getElementById('p2_spoonP3');
+        if (sp1) sp1.textContent = '_________________';
+        if (sp2) sp2.textContent = '_________________';
+        if (sp3) sp3.textContent = '_________________';
+      }
+
+      // Initialize on load
+      applyNames();
+    </script>
+  </body>
+</html>
