@@ -18112,7 +18112,15 @@
           "formative_assessment": {
             "type": "PEEL Paragraph",
             "question": "PEEL Paragraph (Enquiry): What was the primary motivation for early global explorers?"
-          }
+          },
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=NJMZURabB2k",
+              "title": "[STARTER HOOK] The World in 1450: Ming Dynasty, Ottoman Empire & The Silk Roads",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "Overview of the dominant global superpowers of 1450: the wealth of Ming China, the Ottoman Empire controlling trade routes to the East, the Mali Empire, and why European kingdoms were peripheral."
+            }
+          ]
         },
         {
           "id": "lesson_2",
@@ -18532,11 +18540,10 @@
           "banner": "/images/early_mod_l2_banner.jpg",
           "video": [
             {
-              "type": "era",
               "url": "https://era.org.uk/streaming-service-resource/the-battle-against-the-spanish-armada-battlefield-britain/",
-              "title": "04: The Battle Against the Spanish Armada | Battlefield Britain (BBC Two)",
+              "title": "[ENQUIRY EVIDENCE] Battlefield Britain: The Spanish Armada & Philip II's Crusade (BBC Two)",
               "duration": "58 mins 48 secs",
-              "teacher_guidance": "Peter and Dan Snow take a look at Drake's unlikely sea victory against the Spanish Armada in 1588."
+              "teacher_guidance": "⏱️ Watch Window: 18:20–25:40. Shows the decisive naval engagement at Gravelines: fireships scattering the Spanish crescent formation and English culverins forcing the Armada into the North Sea."
             }
           ],
           "lesson_assessment": {
@@ -18999,12 +19006,16 @@
           "banner": "/images/early_mod_l3_banner.jpg",
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/roanoke-horrible-histories/",
-              "title": "Roanoke (Horrible Histories)"
+              "url": "https://era.org.uk/streaming-service-resource/joint-stock-companies-empire-with-david-olusoga/",
+              "title": "[STARTER HOOK] Empire: The East India Company & Joint-Stock Corporations with David Olusoga (BBC)",
+              "duration": "5 mins 15 secs",
+              "teacher_guidance": "David Olusoga explains how private merchants pooled capital with royal charters to create the East India Company, transforming commercial trade into sovereign colonial rule."
             },
             {
-              "url": "https://era.org.uk/streaming-service-resource/joint-stock-companies-empire-with-david-olusoga/",
-              "title": "Joint-Stock Companies: Empire with David Olusoga"
+              "url": "https://era.org.uk/streaming-service-resource/roanoke-horrible-histories/",
+              "title": "[ENQUIRY EVIDENCE] Early English Colonisation: Walter Raleigh & The Lost Colony of Roanoke (1585)",
+              "duration": "4 mins 20 secs",
+              "teacher_guidance": "Investigates England’s disastrous first attempt to plant a permanent settlement in Virginia, supply ship delays caused by the Spanish Armada, and the mysterious disappearance of the colonists."
             }
           ],
           "lesson_assessment": {
@@ -19182,10 +19193,18 @@
               }
             ]
           },
-          "disciplinary_focus": "Significance - Evaluating the impact of the Renaissance on art and science."
+          "disciplinary_focus": "Significance - Evaluating the impact of the Renaissance on art and science.",
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=s_fTwtgS03A",
+              "title": "[STARTER HOOK] The Gunpowder Plot (5 November 1605): Guy Fawkes & Robert Catesby (BBC Teach)",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "How Jacobean recusancy fines, priest hunting, and the dashed hopes of Catholic toleration under James I drove Robert Catesby to hatch the 36-barrel gunpowder conspiracy."
+            }
+          ]
         },
         {
-          "id": "lesson_4",
+          "id": "lesson_5",
           "flashcards": [
             {
               "term": "King Charles I",
@@ -19567,10 +19586,18 @@
             "lines": 15,
             "qNum": 10
           },
-          "disciplinary_focus": "Causation - Analyzing the reasons for the Spanish Armada's defeat."
+          "disciplinary_focus": "Causation - Analyzing the reasons for the Spanish Armada's defeat.",
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=bZ7J3n3sD0Y",
+              "title": "[STARTER HOOK] The Causes of the English Civil War: Charles I & The Divine Right of Kings (BBC Teach)",
+              "duration": "4 mins 45 secs",
+              "teacher_guidance": "Examines the escalating constitutional struggle over Ship Money, Archbishop Laud’s religious reforms, and Charles I entering the House of Commons with armed guards to arrest the Five Members."
+            }
+          ]
         },
         {
-          "id": "lesson_5",
+          "id": "lesson_6",
           "flashcards": [
             {
               "term": "King Charles I",
@@ -19897,10 +19924,18 @@
             "lines": 15,
             "qNum": 4
           },
-          "disciplinary_focus": "Change and Continuity - Tracing the economic shift towards global trade."
+          "disciplinary_focus": "Change and Continuity - Tracing the economic shift towards global trade.",
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=2YfKCEQ7pC4",
+              "title": "[PRIMARY EVIDENCE] The Trial and Execution of King Charles I (30 January 1649) (BBC)",
+              "duration": "5 mins 0 secs",
+              "teacher_guidance": "The historic legal precedent of putting a reigning monarch on trial for high treason against his own subjects, the execution at Whitehall, and the establishment of the Commonwealth."
+            }
+          ]
         },
         {
-          "id": "lesson_6",
+          "id": "lesson_7",
           "title": "What were the mechanics of the Transatlantic Slave Trade?",
           "vocabulary": [
             {
@@ -20081,48 +20116,22 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-west-india-docks-and-the-sugar-economy/",
-              "title": "BBC Two: Britain's Forgotten Slave Owners - Profit and Loss"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-first-slave-society-in-barbados/",
-              "title": "Profit and Loss: First Slave Society in Barbados"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-slave-plantation-system/",
-              "title": "Profit and Loss: Slave Plantation System"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-implements-of-torture/",
-              "title": "Profit and Loss: Implements of Torture"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-the-legacies-of-slavery/",
-              "title": "The Price of Freedom: The Legacies of Slavery"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-where-did-the-slavery-compensation-money-end-up/",
-              "title": "Where Did the Slavery Compensation Money End Up?"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=IpgD2ehtMmM",
-              "title": "How Barbados became the first slave society"
-            },
-            {
               "url": "https://www.youtube.com/watch?v=k7OQjNRsrvI",
-              "title": "David Harewood Learns Horrifying Details of Barbados Slave Code"
+              "title": "[PRIMARY EVIDENCE] David Harewood Learns Horrifying Details of Barbados Slave Code (1661)",
+              "duration": "4 mins 52 secs",
+              "teacher_guidance": "Actor David Harewood examines original colonial court archives detailing the 1661 Barbados Slave Act—the legal blueprint that classified human beings as absolute chattel property."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-profit-and-loss-west-india-docks-and-the-sugar-economy/",
+              "title": "[ENQUIRY EVIDENCE] BBC Two: Britain's Forgotten Slave Owners – Sugar, Shipping & West India Docks",
+              "duration": "6 mins 30 secs",
+              "teacher_guidance": "David Olusoga details the commercial scale of the trade: how slave-grown sugar funded British banks, insurance firms, and grand infrastructure like London's West India Docks."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/a-people-stolen-enslaved-with-samuel-l-jackson/",
-              "title": "A People Stolen: Enslaved with Samuel L. Jackson"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/a-precious-cargo-enslaved-with-samuel-l-jackson/",
-              "title": "A Precious Cargo: Enslaved with Samuel L. Jackson"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/our-people-enslaved-with-samuel-l-jackson/",
-              "title": "Our People: Enslaved with Samuel L. Jackson"
+              "title": "[DOCUMENTARY EXTENSION] Enslaved with Samuel L. Jackson: The Middle Passage & Sunken Slave Ships",
+              "duration": "48 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 12:15–18:40. Diving the underwater wreckage of transatlantic slave vessels, examining shackles, ballast stones, and the brutal dehumanisation of the Middle Passage."
             }
           ],
           "quiz": [
@@ -20280,7 +20289,7 @@
           "disciplinary_focus": "Significance - Understanding the consequences of the English Civil War."
         },
         {
-          "id": "lesson_7",
+          "id": "lesson_8",
           "banner": "/images/brookes_ship.jpg",
           "title": "How did enslaved Africans resist the Transatlantic Slave Trade?",
           "vocabulary": [
@@ -20645,20 +20654,16 @@
           ],
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-propaganda-tactics/",
-              "title": "Slave Owner Propaganda Tactics"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-britains-forgotten-slave-owners-the-price-of-freedom-slave-owner-compensation-arguments/",
-              "title": "Slave Owner Compensation Arguments"
-            },
-            {
-              "url": "https://www.youtube.com/watch?v=ITtNDpkW26c&t=38s",
-              "title": "Abolitionism and why it was opposed"
-            },
-            {
               "url": "https://era.org.uk/streaming-service-resource/resistance-enslaved-with-samuel-l-jackson/",
-              "title": "Resistance: Enslaved with Samuel L. Jackson"
+              "title": "[STARTER HOOK] Resistance: Enslaved with Samuel L. Jackson (BBC / Epix)",
+              "duration": "48 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 08:30–15:10. Powerful examination of African agency: shipboard uprisings, poison plots, maroon settlements in the mountains, and active subversion of plantation labour."
+            },
+            {
+              "url": "https://www.youtube.com/watch?v=ITtNDpkW26c",
+              "title": "[ENQUIRY EVIDENCE] Abolitionism & Why It Was Opposed: Equiano, Wilberforce & Planter Lobbying",
+              "duration": "5 mins 20 secs",
+              "teacher_guidance": "The economic power of the pro-slavery West India Lobby in Parliament, countered by Olaudah Equiano’s bestselling autobiography, public sugar boycotts, and petition campaigns."
             }
           ],
           "do_now": {
@@ -20703,7 +20708,7 @@
           "disciplinary_focus": "Causation - Why did the Witch Craze spread across early modern Europe?"
         },
         {
-          "id": "lesson_8",
+          "id": "lesson_9",
           "quiz": [
             {
               "question": "In what year was the Bank of England established, revolutionizing British national debt and finance?",
@@ -21145,7 +21150,15 @@
           "formative_assessment": {
             "type": "PEEL Paragraph",
             "question": "PEEL Paragraph (Significance): What was the most significant change of the Early Modern era?"
-          }
+          },
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=zhL5DCizj5c",
+              "title": "[SYNOPTIC REVIEW] Britain on the Eve of the Industrial Revolution: Empire, Agriculture & Steam (1750)",
+              "duration": "5 mins 30 secs",
+              "teacher_guidance": "Synoptic overview assessing how far Britain had transformed between 1450 and 1750: from an isolated feudal kingdom to a global maritime empire on the brink of industrialisation."
+            }
+          ]
         }
       ],
       "portraits": [
