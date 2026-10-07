@@ -340,16 +340,17 @@
         font-weight: 700;
       }
 
-      /* EXTRA ROOMY WRITE-IN ROW (50px HEIGHT) */
+      /* EXTRA ROOMY WRITE-IN ROW (48px HEIGHT) */
       .pupil-slot-row {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 6px 12px;
+        padding: 5px 12px;
         height: 48px;
         background: #ffffff;
         border-top: 2px solid #e2e8f0;
         position: relative;
+        gap: 8px;
       }
       .pupil-slot-row:first-of-type {
         border-top: none;
@@ -360,26 +361,75 @@
 
       .piece-marker {
         font-size: 18px;
-        width: 26px;
+        width: 24px;
         text-align: center;
         color: #1e293b;
         font-weight: 700;
+        flex-shrink: 0;
       }
       .pupil-name-box {
         flex: 1;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        min-width: 0;
+      }
+      .slot-seed-pill {
+        display: inline-flex;
+        align-items: center;
+        background: #f1f5f9;
+        border: 1.5px solid #cbd5e1;
+        color: #475569;
+        font-size: 10.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 2px 7px;
+        border-radius: 4px;
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+      .slot-seed-pill.bye {
+        background: #ede9fe;
+        border-color: #ddd6fe;
+        color: #5b21b6;
+      }
+      .slot-seed-pill.gold {
+        background: #fef3c7;
+        border-color: #fde68a;
+        color: #92400e;
+      }
+      .slot-seed-pill.spoon {
+        background: #fef2f2;
+        border-color: #fecaca;
+        color: #991b1b;
+      }
+      .slot-write-area {
+        flex: 1;
+        border-bottom: 1.5px solid #94a3b8;
+        height: 28px;
+        display: flex;
+        align-items: flex-end;
+        padding-bottom: 3px;
+        padding-left: 6px;
+        min-width: 0;
+      }
+      .slot-write-area .writein-blank {
+        font-size: 11px;
+        color: #94a3b8;
+        font-style: italic;
+        font-weight: 600;
+        white-space: nowrap;
+        letter-spacing: 0.02em;
+      }
+      .slot-write-area .filled-name {
         font-size: 16px;
-        font-weight: 700;
+        font-weight: 800;
         color: #0f172a;
-        padding: 0 10px;
+        font-family: 'Newsreader', Georgia, serif;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        letter-spacing: 0.02em;
-      }
-      .pupil-name-box.placeholder {
-        color: #94a3b8;
-        font-weight: 600;
-        font-style: italic;
       }
 
       /* BIG CRISP SCORE BOX */
@@ -394,6 +444,7 @@
         font-weight: 900;
         line-height: 30px;
         color: #0f172a;
+        flex-shrink: 0;
       }
 
       /* GIANT CHAMPION GOLDEN PODIUM */
@@ -489,25 +540,83 @@
       .giant-spoon-matrix th,
       .giant-spoon-matrix td {
         border: 1.5px solid #cbd5e1;
-        padding: 10px 12px;
+        padding: 8px 10px;
         text-align: center;
       }
       .giant-spoon-matrix th {
         background: #f1f5f9;
         font-weight: 800;
         color: #0f172a;
-        font-size: 12.5px;
+        font-size: 12px;
       }
       .giant-spoon-matrix td.player-col {
         text-align: left;
         font-weight: 700;
         color: #0f172a;
         background: #f8fafc;
-        width: 42%;
-        font-size: 13px;
+        width: 44%;
+        font-size: 12.5px;
+        padding: 8px 12px;
       }
       .giant-spoon-matrix td.blocked {
-        background: #cbd5e1;
+        background: repeating-linear-gradient(
+          45deg,
+          #f1f5f9,
+          #f1f5f9 6px,
+          #e2e8f0 6px,
+          #e2e8f0 12px
+        );
+        color: #94a3b8;
+        font-weight: 900;
+        font-size: 18px;
+      }
+      .spoon-seed-badge {
+        display: inline-block;
+        background: #fef3c7;
+        border: 1px solid #d97706;
+        color: #92400e;
+        font-size: 10.5px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        padding: 2px 7px;
+        border-radius: 4px;
+        margin-bottom: 4px;
+      }
+      .spoon-name-target {
+        font-size: 13px;
+        color: #0f172a;
+        font-weight: 700;
+        min-height: 20px;
+      }
+      .spoon-name-target .writein-blank {
+        color: #64748b;
+        font-style: italic;
+        font-weight: 600;
+        border-bottom: 1.5px solid #94a3b8;
+        display: inline-block;
+        min-width: 170px;
+        padding-bottom: 2px;
+      }
+      .spoon-paired-desc {
+        color: #78350f;
+        font-weight: 700;
+      }
+      .matrix-score-box {
+        width: 38px;
+        height: 32px;
+        border: 1.5px solid #94a3b8;
+        background: #ffffff;
+        border-radius: 4px;
+        margin: auto;
+      }
+      .matrix-total-box {
+        width: 44px;
+        height: 34px;
+        border: 2px solid #78350f;
+        background: #fef3c7;
+        border-radius: 5px;
+        margin: auto;
       }
 
       /* GIANT WOODEN SPOON PODIUM CARD */
@@ -736,12 +845,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box" id="p1_slot1"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Player 1</span>
+                <div class="slot-write-area" id="p1_slot1">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot2"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Player 2</span>
+                <div class="slot-write-area" id="p1_slot2">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -754,12 +873,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box" id="p1_slot3"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Player 3</span>
+                <div class="slot-write-area" id="p1_slot3">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot4"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Player 4</span>
+                <div class="slot-write-area" id="p1_slot4">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -772,12 +901,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box" id="p1_slot5"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Player 5</span>
+                <div class="slot-write-area" id="p1_slot5">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot6"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Player 6</span>
+                <div class="slot-write-area" id="p1_slot6">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -795,12 +934,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder">Winner Prelim 1</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner Prelim 1</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row bye-slot">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot7"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill bye">Player 7 (Bye)</span>
+                <div class="slot-write-area" id="p1_slot7">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -813,12 +962,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder">Winner Prelim 2</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner Prelim 2</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row bye-slot">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot8"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill bye">Player 8 (Bye)</span>
+                <div class="slot-write-area" id="p1_slot8">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -831,12 +990,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder">Winner Prelim 3</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner Prelim 3</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row bye-slot">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot9"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill bye">Player 9 (Bye)</span>
+                <div class="slot-write-area" id="p1_slot9">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -849,12 +1018,22 @@
             </div>
             <div class="pupil-slot-row bye-slot">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box" id="p1_slot10"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill bye">Player 10 (Bye)</span>
+                <div class="slot-write-area" id="p1_slot10">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row bye-slot">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box" id="p1_slot11"></span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill bye">Player 11 (Bye)</span>
+                <div class="slot-write-area" id="p1_slot11">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -872,12 +1051,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder">Winner QF 1</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner QF 1</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box placeholder">Winner QF 2</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner QF 2</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -890,12 +1079,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder">Winner QF 3</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner QF 3</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box placeholder">Winner QF 4</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Winner QF 4</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Winner Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -913,16 +1112,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder" style="color: #78350f; font-weight: 800"
-                >Winner Semi-Final 1</span
-              >
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill gold">Winner Semi 1</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank" style="color: #92400e">Write Finalist Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box placeholder" style="color: #78350f; font-weight: 800"
-                >Winner Semi-Final 2</span
-              >
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill gold">Winner Semi 2</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank" style="color: #92400e">Write Finalist Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -947,12 +1152,22 @@
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♙</span>
-              <span class="pupil-name-box placeholder">Loser Semi-Final 1</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Loser Semi 1</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
             <div class="pupil-slot-row">
               <span class="piece-marker">♟</span>
-              <span class="pupil-name-box placeholder">Loser Semi-Final 2</span>
+              <div class="pupil-name-box">
+                <span class="slot-seed-pill">Loser Semi 2</span>
+                <div class="slot-write-area">
+                  <span class="writein-blank">Write Pupil Name Here</span>
+                </div>
+              </div>
               <span class="big-score-box"></span>
             </div>
           </div>
@@ -1026,65 +1241,77 @@
             <table class="giant-spoon-matrix">
               <thead>
                 <tr>
-                  <th>Contender</th>
-                  <th>Vs Loser Match 1</th>
-                  <th>Vs Loser Match 2</th>
-                  <th>Vs Loser Match 3</th>
-                  <th>Total Pts</th>
+                  <th style="width: 40%">Contender (Prelim Losers)</th>
+                  <th style="width: 15%">Vs Prelim 1 Loser</th>
+                  <th style="width: 15%">Vs Prelim 2 Loser</th>
+                  <th style="width: 15%">Vs Prelim 3 Loser</th>
+                  <th style="width: 15%">Total Pts</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td class="player-col">
-                    <strong>Loser Prelim 1:</strong><br />
-                    <span id="p2_spoonP1" style="color: #64748b; font-size: 13px"></span>
+                    <span class="spoon-seed-badge">Prelim Match 1 Loser</span>
+                    <div class="spoon-name-target" id="p2_spoonP1">
+                      <span class="writein-blank">Name: ______________________</span>
+                    </div>
                   </td>
-                  <td class="blocked">&times;</td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
+                  <td class="blocked" title="Cannot play self">&times;</td>
+                  <td><div class="matrix-score-box"></div></td>
+                  <td><div class="matrix-score-box"></div></td>
+                  <td><div class="matrix-total-box"></div></td>
                 </tr>
                 <tr>
                   <td class="player-col">
-                    <strong>Loser Prelim 2:</strong><br />
-                    <span id="p2_spoonP2" style="color: #64748b; font-size: 13px"></span>
+                    <span class="spoon-seed-badge">Prelim Match 2 Loser</span>
+                    <div class="spoon-name-target" id="p2_spoonP2">
+                      <span class="writein-blank">Name: ______________________</span>
+                    </div>
                   </td>
-                  <td></td>
-                  <td class="blocked">&times;</td>
-                  <td></td>
-                  <td></td>
+                  <td><div class="matrix-score-box"></div></td>
+                  <td class="blocked" title="Cannot play self">&times;</td>
+                  <td><div class="matrix-score-box"></div></td>
+                  <td><div class="matrix-total-box"></div></td>
                 </tr>
                 <tr>
                   <td class="player-col">
-                    <strong>Loser Prelim 3:</strong><br />
-                    <span id="p2_spoonP3" style="color: #64748b; font-size: 13px"></span>
+                    <span class="spoon-seed-badge">Prelim Match 3 Loser</span>
+                    <div class="spoon-name-target" id="p2_spoonP3">
+                      <span class="writein-blank">Name: ______________________</span>
+                    </div>
                   </td>
-                  <td></td>
-                  <td></td>
-                  <td class="blocked">&times;</td>
-                  <td></td>
+                  <td><div class="matrix-score-box"></div></td>
+                  <td><div class="matrix-score-box"></div></td>
+                  <td class="blocked" title="Cannot play self">&times;</td>
+                  <td><div class="matrix-total-box"></div></td>
                 </tr>
               </tbody>
             </table>
 
             <!-- Spoon Decider Match Box -->
-            <div class="giant-match-card" style="border-color: #78350f; margin-top: 16px">
+            <div class="giant-match-card" style="border-color: #78350f; margin-top: 14px">
               <div class="match-header-strip" style="background: #78350f">
                 <span>WOODEN SPOON SURVIVAL PLAY-OFF</span>
                 <span class="dest-badge">Final Decider</span>
               </div>
               <div class="pupil-slot-row">
                 <span class="piece-marker">♙</span>
-                <span class="pupil-name-box placeholder" style="color: #78350f"
-                  >Lowest Scorer in Triangle</span
-                >
+                <div class="pupil-name-box">
+                  <span class="slot-seed-pill spoon">Lowest Triangle Score</span>
+                  <div class="slot-write-area">
+                    <span class="writein-blank" style="color: #991b1b">Write Pupil Name Here</span>
+                  </div>
+                </div>
                 <span class="big-score-box"></span>
               </div>
               <div class="pupil-slot-row">
                 <span class="piece-marker">♟</span>
-                <span class="pupil-name-box placeholder" style="color: #78350f"
-                  >Second Lowest Scorer</span
-                >
+                <div class="pupil-name-box">
+                  <span class="slot-seed-pill spoon">2nd Lowest Score</span>
+                  <div class="slot-write-area">
+                    <span class="writein-blank" style="color: #991b1b">Write Pupil Name Here</span>
+                  </div>
+                </div>
                 <span class="big-score-box"></span>
               </div>
             </div>
@@ -1094,7 +1321,20 @@
           <div class="giant-spoon-podium-card">
             <div class="spoon-big-icon">🥄</div>
             <div class="spoon-card-title">Official Wooden Spoon Honoree</div>
-            <div class="spoon-writein-box"></div>
+            <div class="spoon-writein-box">
+              <span
+                class="writein-blank"
+                style="
+                  font-size: 14px;
+                  color: #78350f;
+                  font-weight: 700;
+                  border-bottom: 2px solid #78350f;
+                  padding: 0 20px 2px 20px;
+                  display: inline-block;
+                "
+                >Write Honoree Pupil Name Here</span
+              >
+            </div>
             <div
               style="font-size: 11px; color: #78350f; font-weight: 800; text-transform: uppercase"
             >
@@ -1119,14 +1359,32 @@
                   <span>SHIELD SEMI 1</span>
                 </div>
                 <div class="pupil-slot-row" style="height: 40px">
-                  <span class="pupil-name-box placeholder" style="font-size: 12px">Loser QF 1</span>
+                  <div class="pupil-name-box">
+                    <span class="slot-seed-pill" style="font-size: 10px; padding: 1px 5px"
+                      >Loser QF 1</span
+                    >
+                    <div class="slot-write-area" style="height: 24px">
+                      <span class="writein-blank" style="font-size: 11px"
+                        >Write Pupil Name Here</span
+                      >
+                    </div>
+                  </div>
                   <span
                     class="big-score-box"
                     style="width: 28px; height: 26px; line-height: 24px; font-size: 12px"
                   ></span>
                 </div>
                 <div class="pupil-slot-row" style="height: 40px">
-                  <span class="pupil-name-box placeholder" style="font-size: 12px">Loser QF 2</span>
+                  <div class="pupil-name-box">
+                    <span class="slot-seed-pill" style="font-size: 10px; padding: 1px 5px"
+                      >Loser QF 2</span
+                    >
+                    <div class="slot-write-area" style="height: 24px">
+                      <span class="writein-blank" style="font-size: 11px"
+                        >Write Pupil Name Here</span
+                      >
+                    </div>
+                  </div>
                   <span
                     class="big-score-box"
                     style="width: 28px; height: 26px; line-height: 24px; font-size: 12px"
@@ -1139,14 +1397,32 @@
                   <span>SHIELD SEMI 2</span>
                 </div>
                 <div class="pupil-slot-row" style="height: 40px">
-                  <span class="pupil-name-box placeholder" style="font-size: 12px">Loser QF 3</span>
+                  <div class="pupil-name-box">
+                    <span class="slot-seed-pill" style="font-size: 10px; padding: 1px 5px"
+                      >Loser QF 3</span
+                    >
+                    <div class="slot-write-area" style="height: 24px">
+                      <span class="writein-blank" style="font-size: 11px"
+                        >Write Pupil Name Here</span
+                      >
+                    </div>
+                  </div>
                   <span
                     class="big-score-box"
                     style="width: 28px; height: 26px; line-height: 24px; font-size: 12px"
                   ></span>
                 </div>
                 <div class="pupil-slot-row" style="height: 40px">
-                  <span class="pupil-name-box placeholder" style="font-size: 12px">Loser QF 4</span>
+                  <div class="pupil-name-box">
+                    <span class="slot-seed-pill" style="font-size: 10px; padding: 1px 5px"
+                      >Loser QF 4</span
+                    >
+                    <div class="slot-write-area" style="height: 24px">
+                      <span class="writein-blank" style="font-size: 11px"
+                        >Write Pupil Name Here</span
+                      >
+                    </div>
+                  </div>
                   <span
                     class="big-score-box"
                     style="width: 28px; height: 26px; line-height: 24px; font-size: 12px"
@@ -1162,22 +1438,28 @@
                 <span class="dest-badge">Shield Winner 🛡️</span>
               </div>
               <div class="pupil-slot-row" style="height: 42px">
-                <span
-                  class="pupil-name-box placeholder"
-                  style="font-size: 13px; color: #0f172a; font-weight: 700"
-                  >Winner Shield Semi 1</span
-                >
+                <div class="pupil-name-box">
+                  <span class="slot-seed-pill" style="font-size: 10.5px; padding: 1px 6px"
+                    >Winner Shield Semi 1</span
+                  >
+                  <div class="slot-write-area" style="height: 24px">
+                    <span class="writein-blank" style="font-size: 11px">Write Pupil Name Here</span>
+                  </div>
+                </div>
                 <span
                   class="big-score-box"
                   style="width: 30px; height: 28px; line-height: 26px; font-size: 13px"
                 ></span>
               </div>
               <div class="pupil-slot-row" style="height: 42px">
-                <span
-                  class="pupil-name-box placeholder"
-                  style="font-size: 13px; color: #0f172a; font-weight: 700"
-                  >Winner Shield Semi 2</span
-                >
+                <div class="pupil-name-box">
+                  <span class="slot-seed-pill" style="font-size: 10.5px; padding: 1px 6px"
+                    >Winner Shield Semi 2</span
+                  >
+                  <div class="slot-write-area" style="height: 24px">
+                    <span class="writein-blank" style="font-size: 11px">Write Pupil Name Here</span>
+                  </div>
+                </div>
                 <span
                   class="big-score-box"
                   style="width: 30px; height: 28px; line-height: 26px; font-size: 13px"
@@ -1297,38 +1579,66 @@
           const slot = document.getElementById(`p1_slot${i}`);
           if (slot) {
             if (val) {
-              slot.textContent = i >= 7 ? `${val} (Bye)` : val;
-              slot.classList.remove('placeholder');
+              slot.innerHTML = `<span class="filled-name">${val}</span>`;
             } else {
-              slot.textContent = i >= 7 ? `Player ${i} (Bye)` : `Player ${i}`;
-              slot.classList.add('placeholder');
+              slot.innerHTML = `<span class="writein-blank">Write Pupil Name Here</span>`;
             }
           }
         }
 
         // Update Page 2 Wooden Spoon placeholders
-        const p1 = document.getElementById('inputP1').value.trim() || 'Prelim 1';
-        const p2 = document.getElementById('inputP2').value.trim() || 'Prelim 1';
-        const p3 = document.getElementById('inputP3').value.trim() || 'Prelim 2';
-        const p4 = document.getElementById('inputP4').value.trim() || 'Prelim 2';
-        const p5 = document.getElementById('inputP5').value.trim() || 'Prelim 3';
-        const p6 = document.getElementById('inputP6').value.trim() || 'Prelim 3';
+        const p1 = document.getElementById('inputP1')
+          ? document.getElementById('inputP1').value.trim()
+          : '';
+        const p2 = document.getElementById('inputP2')
+          ? document.getElementById('inputP2').value.trim()
+          : '';
+        const p3 = document.getElementById('inputP3')
+          ? document.getElementById('inputP3').value.trim()
+          : '';
+        const p4 = document.getElementById('inputP4')
+          ? document.getElementById('inputP4').value.trim()
+          : '';
+        const p5 = document.getElementById('inputP5')
+          ? document.getElementById('inputP5').value.trim()
+          : '';
+        const p6 = document.getElementById('inputP6')
+          ? document.getElementById('inputP6').value.trim()
+          : '';
 
         const sp1 = document.getElementById('p2_spoonP1');
         const sp2 = document.getElementById('p2_spoonP2');
         const sp3 = document.getElementById('p2_spoonP3');
-        if (sp1)
-          sp1.textContent = document.getElementById('inputP1').value.trim()
-            ? `Loser: ${p1} / ${p2}`
-            : 'Loser Prelim 1';
-        if (sp2)
-          sp2.textContent = document.getElementById('inputP3').value.trim()
-            ? `Loser: ${p3} / ${p4}`
-            : 'Loser Prelim 2';
-        if (sp3)
-          sp3.textContent = document.getElementById('inputP5').value.trim()
-            ? `Loser: ${p5} / ${p6}`
-            : 'Loser Prelim 3';
+
+        if (sp1) {
+          if (p1 && p2) {
+            sp1.innerHTML = `<span class="spoon-paired-desc">Loser: <strong>${p1}</strong> vs <strong>${p2}</strong></span>`;
+          } else if (p1) {
+            sp1.innerHTML = `<span class="spoon-paired-desc">Loser: <strong>${p1}</strong> vs Match 1 Opponent</span>`;
+          } else {
+            sp1.innerHTML = `<span class="writein-blank">Write Loser Name Here</span>`;
+          }
+        }
+
+        if (sp2) {
+          if (p3 && p4) {
+            sp2.innerHTML = `<span class="spoon-paired-desc">Loser: <strong>${p3}</strong> vs <strong>${p4}</strong></span>`;
+          } else if (p3) {
+            sp2.innerHTML = `<span class="spoon-paired-desc">Loser: <strong>${p3}</strong> vs Match 2 Opponent</span>`;
+          } else {
+            sp2.innerHTML = `<span class="writein-blank">Write Loser Name Here</span>`;
+          }
+        }
+
+        if (sp3) {
+          if (p5 && p6) {
+            sp3.innerHTML = `<span class="spoon-paired-desc">Loser: <strong>${p5}</strong> vs <strong>${p6}</strong></span>`;
+          } else if (p5) {
+            sp3.innerHTML = `<span class="spoon-paired-desc">Loser: <strong>${p5}</strong> vs Match 3 Opponent</span>`;
+          } else {
+            sp3.innerHTML = `<span class="writein-blank">Write Loser Name Here</span>`;
+          }
+        }
       }
 
       function randomizeDraw() {
@@ -1353,16 +1663,15 @@
           if (input) input.value = '';
           const slot = document.getElementById(`p1_slot${i}`);
           if (slot) {
-            slot.textContent = i >= 7 ? `Player ${i} (Bye)` : `Player ${i}`;
-            slot.classList.add('placeholder');
+            slot.innerHTML = `<span class="writein-blank">Write Pupil Name Here</span>`;
           }
         }
         const sp1 = document.getElementById('p2_spoonP1');
         const sp2 = document.getElementById('p2_spoonP2');
         const sp3 = document.getElementById('p2_spoonP3');
-        if (sp1) sp1.textContent = 'Loser Prelim 1';
-        if (sp2) sp2.textContent = 'Loser Prelim 2';
-        if (sp3) sp3.textContent = 'Loser Prelim 3';
+        if (sp1) sp1.innerHTML = `<span class="writein-blank">Write Loser Name Here</span>`;
+        if (sp2) sp2.innerHTML = `<span class="writein-blank">Write Loser Name Here</span>`;
+        if (sp3) sp3.innerHTML = `<span class="writein-blank">Write Loser Name Here</span>`;
       }
 
       // Initialize on load
