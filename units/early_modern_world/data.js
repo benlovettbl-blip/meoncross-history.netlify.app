@@ -1453,6 +1453,16 @@ const early_modern_world = {
         ],
       },
       banner: '/images/early_mod_l2_banner.jpg',
+      video: [
+        {
+          type: 'era',
+          url: 'https://era.org.uk/streaming-service-resource/the-battle-against-the-spanish-armada-battlefield-britain/',
+          title: '04: The Battle Against the Spanish Armada | Battlefield Britain (BBC Two)',
+          duration: '58 mins 48 secs',
+          teacher_guidance:
+            "Peter and Dan Snow take a look at Drake's unlikely sea victory against the Spanish Armada in 1588.",
+        },
+      ],
       lesson_assessment: {
         question:
           'How did the Protestant Reformation push England into global exploration and conflict with Spain?',

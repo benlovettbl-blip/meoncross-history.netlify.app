@@ -9945,9 +9945,10 @@ export const unitData = {
             'Traces the collapse of laissez-faire, Edwin Chadwick’s 1842 report, the 1848 permissive Act, and the compulsory 1875 Public Health Act.',
         },
         {
+          type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/',
           title: 'The Story of John Snow – Moments of Genius (Broad Street Pump)',
-          duration: '10 mins 0 secs',
+          duration: '8 mins 32 secs',
           teacher_guidance:
             'Visual case study on John Snow’s 1854 spot map of Soho, identifying contaminated water as the vector for cholera.',
         },

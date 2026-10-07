@@ -2073,6 +2073,14 @@ const great_war = {
           model_answer:
             "The alliance system acted like a 'doomsday machine'. Because nations were strictly bound to protect their allies, the local dispute between Austria-Hungary and Serbia quickly dragged all the major European powers into a global conflict.",
         },
+        {
+          type: 'era',
+          url: 'https://era.org.uk/streaming-service-resource/1-the-approach-of-war-history-file/',
+          title: 'The First World War: 01: The Approach of War | History File (BBC Two)',
+          duration: '18 mins 28 secs',
+          teacher_guidance:
+            'BBC Two History File documentary asking who was to blame for the war, examining the alliance system and naval arms race.',
+        },
       ],
       narrative_blocks: [
         {
@@ -2329,6 +2337,14 @@ const great_war = {
             "Trace the sequence of events on 28 June 1914 in Sarajevo, from the Black Hand plot to Gavrilo Princip's fateful encounter with the Archduke's car outside Schiller's Delicatessen.",
           model_answer:
             "Six teenage Bosnian Serb nationalists recruited by the Black Hand lined the Appel Quay armed with bombs and pistols. An initial grenade thrown by Čabrinović missed. Later, when the motorcade changed plans to visit injured officers, the chauffeur took a wrong turn into Franz Josef Street. While trying to reverse, the car stalled outside Schiller's Delicatessen directly in front of Gavrilo Princip, who fired two shots, killing Sophie and Franz Ferdinand and sparking the July Crisis.",
+        },
+        {
+          type: 'era',
+          url: 'https://era.org.uk/streaming-service-resource/learning-zone-britain-and-the-start-of-ww1-bbc-two/',
+          title: 'Britain and the Start of WW1 | Learning Zone (BBC Two)',
+          duration: '7 mins 30 secs',
+          teacher_guidance:
+            'Dan Snow recreates a map of Europe on the beach to explain how Britain became involved in World War I.',
         },
       ],
       vocab: [

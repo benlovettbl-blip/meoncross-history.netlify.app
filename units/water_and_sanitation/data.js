@@ -592,6 +592,16 @@ const water_and_sanitation = {
         'Describe the role of the medieval Church in shaping attitudes to disease and sanitation',
         'Assess the significance of the Black Death (1348) as a turning point in medieval public health',
       ],
+      video: [
+        {
+          type: 'era',
+          url: 'https://era.org.uk/streaming-service-resource/medieval-london-filthy-cities/',
+          title: '01: Medieval London | Filthy Cities (BBC Two)',
+          duration: '58 mins 59 secs',
+          teacher_guidance:
+            'Dan Snow gets down and dirty in medieval grime to discover how the London of today was forged in the filth of the 14th century.',
+        },
+      ],
       do_now: {
         type: 'questions',
         items: [
@@ -1799,16 +1809,26 @@ const water_and_sanitation = {
             'Both sources are profoundly useful when evaluated in conjunction because together they capture the decisive intellectual battleground of Victorian public health: the birth of modern epidemiology colliding with entrenched institutional dogma. Source A provides primary empirical proof of water-borne transmission: Dr Snow’s identification of the Lion Brewery control group (70 workers spared due to free beer) against the devastated Eley factory demonstrates deductive scientific method at its finest. However, Source B is equally indispensable because it explains why public health reform stalled: the General Board of Health was not merely ignorant, but actively dogmatic, publishing official state reports asserting that cholera arose from "poisonous exhalations" and atmospheric miasma. Therefore, while Source A reveals the scientific truth that ultimately saved millions, Source B provides superior historical utility for understanding why Victorian authorities delayed comprehensive sewer legislation until the environmental crisis of the Great Stink in 1858.',
         },
       ],
-      video: {
-        title: 'BBC Bitesize: Chadwick and Snow | Secondary History',
-        type: 'youtube',
-        url: 'https://www.youtube.com/watch?v=TT4Z1Ikf36w',
-        duration: '5 mins 0 sec',
-        viewing_task:
-          "Identify Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population and Dr John Snow's 1854 Broad Street pump investigation, explaining how each tackled Victorian public health.",
-        model_answer:
-          'Edwin Chadwick highlighted that filthy living conditions and open cesspools caused disease and poverty, proposing clean water piped into homes and underground sewers, which led directly to the 1848 Public Health Act. In 1854, Dr John Snow mapped cholera deaths around Soho, proving the disease was waterborne rather than spread by bad air (miasma) by linking the outbreak directly to the contaminated Broad Street water pump.',
-      },
+      video: [
+        {
+          title: 'BBC Bitesize: Chadwick and Snow | Secondary History',
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=TT4Z1Ikf36w',
+          duration: '5 mins 0 secs',
+          viewing_task:
+            "Identify Edwin Chadwick's 1842 Report on the Sanitary Conditions of the Labouring Population and Dr John Snow's 1854 Broad Street pump investigation, explaining how each tackled Victorian public health.",
+          model_answer:
+            'Edwin Chadwick highlighted that filthy living conditions and open cesspools caused disease and poverty, proposing clean water piped into homes and underground sewers, which led directly to the 1848 Public Health Act. In 1854, Dr John Snow mapped cholera deaths around Soho, proving the disease was waterborne rather than spread by bad air (miasma) by linking the outbreak directly to the contaminated Broad Street water pump.',
+        },
+        {
+          type: 'era',
+          url: 'https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/',
+          title: 'The Story of John Snow | Moments of Genius (BBC Four)',
+          duration: '8 mins 32 secs',
+          teacher_guidance:
+            'Clinical geneticist Professor John Burn follows in the footsteps of Dr John Snow and the Broad Street pump investigation.',
+        },
+      ],
       narrative_blocks: [
         {
           text: "Between 1750 and 1850, the Industrial Revolution triggered an unprecedented demographic explosion, causing Britain's population to skyrocket from roughly 6 million to over 21 million. Desperate for employment and a better life, thousands of rural agricultural families flooded into rapidly expanding, smoke-filled cities like Manchester, Leeds, and London to work in enormous steam-powered textile factories and deep coal mines. This resulted in an era of rapid, totally unregulated urbanization. Cities expanded so violently that local governments were entirely overwhelmed. Without any planning laws or building regulations, the sheer speed of this migration resulted in intense, suffocating crowding, transforming once-small market towns into sprawling industrial metropolises choked with soot and desperate workers.",
