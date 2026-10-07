@@ -76646,19 +76646,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/",
-              "title": "Make Germany Pay Twentieth Century History"
+              "title": "[STARTER HOOK] Twentieth Century History: The German Revolution & The Armistice (1918)",
+              "duration": "20 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–06:45. Covers the Kiel mutiny, the abdication of Kaiser Wilhelm II, Friedrich Ebert proclaiming the Republic, and the \"stab-in-the-back\" myth (Dolchstoßlegende)."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/",
-              "title": "6 Making Germany Pay History File"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
-              "title": "Hitlers Rise The Colour Films The Treaty Of Versailles Channel 4"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-the-end-of-ww1/",
-              "title": "Bbc Two Nazis A Warning From History Helped Into Power The End Of Ww1"
+              "title": "[ENQUIRY EVIDENCE] History File: The Treaty of Versailles & The \"Diktat\" (1919)",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–07:30. Examines the terms of Versailles: War Guilt (Article 231), reparations of £6.6 billion, demilitarisation of the Rhineland, and loss of 13% of German territory."
             }
           ],
           "pair_share": {
@@ -76716,28 +76712,16 @@
           },
           "video": [
             {
-              "type": "era",
-              "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
-              "title": "Hitler's Rise, the Colour Films - The Treaty of Versailles",
-              "duration": "50 mins",
-              "viewing_task": "Watch this clip and identify three ways the Treaty of Versailles caused deep resentment in Germany.",
-              "model_answer": "1. The 'War Guilt' clause (Article 231) felt like a humiliating national insult.<br>2. The staggering £6.6 billion reparations bill threatened to bankrupt the economy.<br>3. The extreme loss of territory (13% of land, including the Polish Corridor) left Germany feeling vulnerable and weak."
-            },
-            {
-              "type": "era",
-              "url": "https://era.org.uk/streaming-service-resource/make-germany-pay-twentieth-century-history/",
-              "title": "Make Germany Pay - Twentieth Century History",
-              "duration": "20 mins",
-              "viewing_task": "Note down the key financial and territorial penalties imposed on Germany.",
-              "model_answer": "<b>Financial:</b> Germany was forced to pay £6.6 billion in reparations (mostly to France and Belgium).<br><b>Territorial:</b> They lost all overseas colonies, Alsace-Lorraine was returned to France, and the Polish Corridor was created, splitting Germany in two."
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-opposition-to-the-weimar-republic/",
-              "title": "Bbc Two Nazis A Warning From History Helped Into Power Opposition To The Weimar Republic"
-            },
-            {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-freikorps/",
-              "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Freikorps"
+              "title": "[STARTER HOOK] BBC Two: The Freikorps & Political Violence (1919–1920)",
+              "duration": "4 mins 30 secs",
+              "teacher_guidance": "Explores the demobilised soldiers of the Freikorps crushing the Spartacist Uprising in Berlin, the murder of Luxemburg and Liebknecht, and the Kapp Putsch of 1920."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/",
+              "title": "[PRIMARY EVIDENCE] History File: The 1923 Crisis – Ruhr Occupation & Hyperinflation",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 07:15–14:20. Direct evidence of French and Belgian troops invading the Ruhr, passive resistance, printing paper marks, and the complete collapse of middle-class savings."
             }
           ],
           "learning_objectives": {
@@ -77693,7 +77677,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/6-making-germany-pay-history-file/",
-              "title": "6 Making Germany Pay History File (Start at 15:00)"
+              "title": "[STARTER HOOK] Gustav Stresemann: The Rentenmark, Dawes Plan & Locarno Pact (1924–1929)",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 14:30–19:15. How Stresemann stabilized the currency with the Rentenmark, negotiated US loans under the Dawes Plan (800M marks), and secured Germany's entry into the League of Nations."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
+              "title": "[ENQUIRY EVIDENCE] Weimar's Golden Years: Economic Recovery & The Illusion of Stability",
+              "duration": "48 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 22:00–28:15. Critical historical perspective on whether Weimar recovery was genuine or \"dancing on a volcano\" dependent on short-term American loans."
             }
           ],
           "pair_share": {
@@ -77754,14 +77746,20 @@
             ],
             "source_context": "This photograph shows Walter Gropius's modernist Bauhaus building in Dessau, celebrated worldwide for its revolutionary glass curtain walls, steel frames, and minimalist functional aesthetic ('form follows function'). While urban intellectuals embraced this avant-garde architecture as proof of Weimar cultural liberation, traditional conservatives and nationalists condemned it as degenerate, un-German, and communist. **Hinge Question:** Why did revolutionary modernist cultural movements like the Bauhaus provoke such violent political backlash among traditional, conservative Germans?"
           },
-          "video": {
-            "title": "The History Teacher: Changes for workers, women and to culture in the 1920s",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=-j52Dx5wUFk",
-            "duration": "6 mins 12 secs",
-            "viewing_task": "Note 3 specific changes in living standards for German workers, 2 ways women's social/political freedom expanded, and how traditionalists reacted to avant-garde Berlin culture.",
-            "model_answer": "1) Workers saw real wages increase by 10% between 1924 and 1928, over 100,000 new modern homes built, and the 1927 Unemployment Insurance Act protecting 17M workers. 2) Women gained full voting rights under Article 109, took up professional jobs as teachers/clerks ('New Woman' image), and enjoyed greater social independence. 3) Traditionalists and right-wing nationalists condemned modernist Bauhaus architecture, Expressionist art, and cabaret nightlife as decadent, immoral, and 'un-German'."
-          },
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=-j52Dx5wUFk",
+              "title": "[STARTER HOOK] The History Teacher: Changes for Workers, Women and Culture in the 1920s",
+              "duration": "6 mins 12 secs",
+              "teacher_guidance": "Note 3 specific changes in living standards for German workers, 2 ways women's freedom expanded (\"New Woman\"), and how traditionalists reacted to avant-garde Berlin nightlife."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-the-treaty-of-versailles-channel-4/",
+              "title": "[ENQUIRY EVIDENCE] Weimar Culture & Architecture: Bauhaus, Expressionism & The Cabarets",
+              "duration": "48 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 29:30–35:10. Explores Walter Gropius's Bauhaus movement, Otto Dix's anti-war paintings, and the conservative resentment against Weimar cultural \"decadence\"."
+            }
+          ],
           "learning_objectives": {
             "overarching": "To understand how German society, culture, and living standards changed during the Weimar 'Golden Age'.",
             "scaffolded": [
@@ -78688,7 +78686,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-stormtroopers/",
-              "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Stormtroopers"
+              "title": "[STARTER HOOK] BBC Two: The Early Nazi Party – Anton Drexler, The DAP & Hitler's Oratory",
+              "duration": "5 mins 20 secs",
+              "teacher_guidance": "How Hitler joined the tiny German Workers' Party (DAP) in 1919, renamed it the NSDAP, wrote the 25-Point Programme, and introduced the swastika emblem and Völkischer Beobachter."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-sa-and-the-appeal-of-the-nazis-bbc-two/",
+              "title": "[ENQUIRY EVIDENCE] BBC Two: Rise of the Nazis – Ernst Röhm & The Stormtroopers (SA)",
+              "duration": "6 mins 15 secs",
+              "teacher_guidance": "Focuses on the creation of the SA (\"Brownshirts\") in 1921: their role as paramilitary bodyguards, street fighters breaking up Communist meetings, and intimidating political opponents."
             }
           ],
           "pair_share": {
@@ -79389,12 +79395,16 @@
           },
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-mein-kampf/",
-              "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Mein Kampf"
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-beer-hall-putsch/",
+              "title": "[STARTER HOOK] BBC Two: The Munich Beer Hall Putsch (8–9 November 1923)",
+              "duration": "5 mins 10 secs",
+              "teacher_guidance": "Reconstructs Hitler and Ludendorff hijacking von Kahr's meeting at the Bürgerbräukeller, the march through Munich, the 16 dead Nazis, and the failure of the armed coup."
             },
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-beer-hall-putsch/",
-              "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Beer Hall Putsch"
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-mein-kampf/",
+              "title": "[PRIMARY EVIDENCE] BBC Two: Hitler at Landsberg Prison, Mein Kampf & The Legal Strategy",
+              "duration": "5 mins 30 secs",
+              "teacher_guidance": "How Hitler used his 1924 trial for high treason to gain national publicity, served only 9 months in Landsberg, wrote Mein Kampf, and resolved to win power through democratic elections."
             }
           ],
           "pair_share": {
@@ -80088,8 +80098,16 @@
           },
           "video": [
             {
+              "url": "https://era.org.uk/streaming-service-resource/1-the-rise-of-hitler-history-file/",
+              "title": "[STARTER HOOK] History File: The Wall Street Crash & The Surge in Nazi Support (1929–1932)",
+              "duration": "20 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–08:30. Explores how the collapse of the US stock market led to 6 million unemployed Germans by 1932, pushing desperate voters away from moderate parties toward the Nazis and Communists."
+            },
+            {
               "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-sa-and-the-appeal-of-the-nazis-bbc-two/",
-              "title": "Rise Of The Nazis The Sa And The Appeal Of The Nazis Bbc Two"
+              "title": "[ENQUIRY EVIDENCE] BBC Two: Rise of the Nazis – Goebbels' Propaganda & \"Work and Bread\"",
+              "duration": "6 mins 15 secs",
+              "teacher_guidance": "How modern campaigning (airplanes, mass rallies, targeted posters for farmers, workers, and industrialists) and the slogan \"Arbeit und Brot\" made the Nazis the largest Reichstag party (230 seats in July 1932)."
             }
           ],
           "pair_share": {
@@ -80787,36 +80805,16 @@
           },
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/1-the-rise-of-hitler-history-file/",
-              "title": "1 The Rise Of Hitler History File"
+              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-how-hitler-becomes-chancellor-bbc-two/",
+              "title": "[STARTER HOOK] BBC Two: Rise of the Nazis – Political Intrigue: Papen, Schleicher & Hindenburg",
+              "duration": "7 mins 10 secs",
+              "teacher_guidance": "The political maneuvering of winter 1932–33: Franz von Papen scheming to oust General Kurt von Schleicher by persuading President Hindenburg that Hitler could be \"boxed into a corner\" as Chancellor."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-helped-into-power-chancellor/",
-              "title": "Bbc Two Nazis A Warning From History Helped Into Power Chancellor"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-chancellor-franz-von-papen-bbc-two/",
-              "title": "Rise Of The Nazis Chancellor Franz Von Papen Bbc Two"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-how-hitler-becomes-chancellor-bbc-two/",
-              "title": "Rise Of The Nazis How Hitler Becomes Chancellor Bbc Two"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-reflections-on-hitlers-rise-to-power-bbc-two/",
-              "title": "Rise Of The Nazis Reflections On Hitlers Rise To Power Bbc Two"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-one-andrew-marrs-history-of-the-world-adolf-hitlers-rise-to-power/",
-              "title": "Bbc One Andrew Marrs History Of The World Adolf Hitlers Rise To Power"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-scheming-general-von-schleicher-bbc-two/",
-              "title": "Rise Of The Nazis Scheming General Von Schleicher Bbc Two"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/hitlers-rise-the-colour-films-mein-kampf-channel-4/",
-              "title": "Hitlers Rise The Colour Films Mein Kampf Channel 4"
+              "title": "[PRIMARY EVIDENCE] BBC Two: 30 January 1933 – Hitler Appointed Chancellor & The Torchlight Parade",
+              "duration": "5 mins 45 secs",
+              "teacher_guidance": "Archival footage and eyewitness testimony of Hitler taking the oath as Chancellor of a coalition government, followed by the dramatic SA torchlight procession through the Brandenburg Gate."
             }
           ],
           "pair_share": {
@@ -81518,20 +81516,16 @@
           },
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/4-hitlers-germany-1933-36-twentieth-century-history/",
-              "title": "4 Hitlers Germany 1933 36 Twentieth Century History"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-1-unifying-germany/",
-              "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 1 Unifying Germany"
-            },
-            {
               "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-reichstag-fire-and-the-enabling-act-bbc-two/",
-              "title": "Rise Of The Nazis The Reichstag Fire And The Enabling Act Bbc Two"
+              "title": "[STARTER HOOK] BBC Two: The Reichstag Fire (27 Feb 1933) & The Enabling Act (24 March 1933)",
+              "duration": "6 mins 45 secs",
+              "teacher_guidance": "Examines Marinus van der Lubbe, the Emergency Decree for the Protection of People and State suspending civil liberties, and the intimidation of the Reichstag at the Kroll Opera House to pass the Enabling Act."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-rise-of-the-dictatorship-bbc-two/",
-              "title": "Rise Of The Nazis Rise Of The Dictatorship Bbc Two"
+              "title": "[ENQUIRY EVIDENCE] BBC Two: The Night of the Long Knives (30 June 1934) & Death of Hindenburg",
+              "duration": "6 mins 20 secs",
+              "teacher_guidance": "Reconstructs the SS purge of Ernst Röhm and the SA leadership at Bad Wiessee, the elimination of Schleicher and Strasser, and the German Army swearing a personal oath of loyalty to Hitler as Führer."
             }
           ],
           "pair_share": {
@@ -82001,20 +81995,16 @@
           },
           "video": [
             {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-political-prisoners-and-concentration-camps/",
-              "title": "Bbc Two Nazis A Warning From History Chaos And Consent Political Prisoners And Concentration Camps"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-the-gestapo/",
-              "title": "Bbc Two Nazis A Warning From History Chaos And Consent The Gestapo"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-himmler-and-the-ss-bbc-two/",
-              "title": "Rise Of The Nazis Himmler And The Ss Bbc Two"
-            },
-            {
               "url": "https://era.org.uk/streaming-service-resource/rise-of-the-nazis-the-creation-of-the-gestapo-bbc-two/",
-              "title": "Rise Of The Nazis The Creation Of The Gestapo Bbc Two"
+              "title": "[STARTER HOOK] BBC Two: The SS, The Gestapo & The Nazi Terror Apparatus",
+              "duration": "6 mins 10 secs",
+              "teacher_guidance": "How Heinrich Himmler unified the SS (Schutzstaffel) and Reinhard Heydrich controlled the Gestapo (Secret State Police), relying on ordinary civilian denunciations rather than mass manpower."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-political-prisoners-and-concentration-camps/",
+              "title": "[ENQUIRY EVIDENCE] BBC Two: Dachau Concentration Camp (1933) & Nazi Policy on Religion",
+              "duration": "5 mins 40 secs",
+              "teacher_guidance": "The establishment of Dachau for Communist and political prisoners, the 1933 Reichskonkordat with Pope Pius XI, and the persecution of the Protestant Confessing Church under Pastor Martin Niemöller."
             }
           ],
           "pair_share": {
@@ -82478,11 +82468,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-hitlers-leadership/",
-              "title": "Bbc Two Nazis A Warning From History Chaos And Consent Hitlers Leadership"
+              "title": "[STARTER HOOK] BBC Two: Joseph Goebbels, Propaganda & The \"Führer Myth\"",
+              "duration": "5 mins 30 secs",
+              "teacher_guidance": "How the Ministry of Popular Enlightenment and Propaganda used cheap \"People's Radios\" (Volksempfänger), the Reich Press Law, annual Nuremberg rallies, and cinema to cultivate adoration of Hitler."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/great-continental-railway-journeys-nazi-olympic-games-of-1936-bbc-two/",
-              "title": "Great Continental Railway Journeys Nazi Olympic Games Of 1936 Bbc Two"
+              "title": "[ENQUIRY EVIDENCE] BBC Two: The 1936 Berlin Olympic Games & Nazi Propaganda Spectacle",
+              "duration": "6 mins 0 secs",
+              "teacher_guidance": "Archival analysis of how Hitler used the 1936 Olympics to project a civilized, prosperous image to the world, and how African-American athlete Jesse Owens challenged Nazi racial theories with four gold medals."
             }
           ],
           "pair_share": {
@@ -82957,11 +82951,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/5-opposition-to-hitler-history-file/",
-              "title": "5 Opposition To Hitler History File"
+              "title": "[STARTER HOOK] History File: Youth Resistance – The Edelweiss Pirates & The Swing Youth",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–07:45. Explores non-conformist youth groups: working-class Edelweiss Pirates beating up Hitler Youth patrols, and middle-class Swing Youth dancing to banned American jazz."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-fighting-to-the-end-internal-criticism/",
-              "title": "Bbc Two Nazis A Warning From History Fighting To The End Internal Criticism"
+              "title": "[ENQUIRY EVIDENCE] BBC Two: Religious & Military Dissent – Niemöller, Bonhoeffer & Galen",
+              "duration": "5 mins 40 secs",
+              "teacher_guidance": "Examines the courage of Pastor Martin Niemöller, the secret resistance of Dietrich Bonhoeffer, Bishop von Galen’s public sermons against euthanasia (Aktion T4), and the limits of public protest."
             }
           ],
           "pair_share": {
@@ -83014,14 +83012,20 @@
             ],
             "source_context": "This photograph displays the Honour Cross of the German Mother (Ehrenkreuz der Deutschen Mutter), a medal instituted by the Nazi regime in 1938 awarded in bronze, silver, and gold to racially 'pure' German women who bore four, six, or eight children. Modeled explicitly on military medals like the Iron Cross, the award reflected the Nazi obsession with demographic expansion ('Kinder, Küche, Kirche') to breed soldiers for future imperial conquest. **Hinge Question:** How did the institution of the Mother's Cross demonstrate that the Nazi state viewed a woman's private domestic life and reproductive choices as state-controlled military assets?"
           },
-          "video": {
-            "title": "The History Teacher: Life for Women: Weimar and Nazi Germany",
-            "type": "youtube",
-            "url": "https://www.youtube.com/watch?v=arCs4X2rko4",
-            "duration": "6 mins 6 secs",
-            "viewing_task": "Explain the Nazi slogan 'Kinder, Küche, Kirche' and explain how the Law for the Encouragement of Marriage (1933) and the Mother's Cross incentivised high birth rates.",
-            "model_answer": "The slogan emphasised the Nazi ideal that women belonged strictly in the domestic sphere: children, kitchen, and church. The 1933 Law for the Encouragement of Marriage provided loans of 1,000 marks to newly-wed couples, with 25% of the loan written off for each child born (having 4 children cleared the debt). The Mother's Cross (Ehrenkreuz der Deutschen Mutter) awarded bronze (4-5 children), silver (6-7), and gold (8+) medals to Aryan mothers, elevating motherhood into a patriotic duty to build the Reich's military strength."
-          },
+          "video": [
+            {
+              "url": "https://www.youtube.com/watch?v=arCs4X2rko4",
+              "title": "[STARTER HOOK] The History Teacher: Life for Women: Weimar and Nazi Germany",
+              "duration": "6 mins 6 secs",
+              "teacher_guidance": "Explain the Nazi slogan \"Kinder, Küche, Kirche\" and how the Law for the Encouragement of Marriage (1933) and the Mother's Cross incentivised high Aryan birth rates."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-life-in-hitlers-germany-history-file/",
+              "title": "[ENQUIRY EVIDENCE] History File: The Mother's Cross, Lebensborn & Women's Exclusion",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 05:20–11:30. In-depth examination of the dismissal of female civil servants and doctors, the Ehrenkreuz der Deutschen Mutter (Bronze, Silver, Gold), and the Lebensborn breeding homes."
+            }
+          ],
           "learning_objectives": {
             "overarching": "To understand the key concepts of this topic.",
             "scaffolded": [
@@ -83899,11 +83903,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/4-youth-in-hitlers-germany-history-file/",
-              "title": "4 Youth In Hitlers Germany History File"
+              "title": "[STARTER HOOK] History File: Indoctrination in Schools & The Nazi Curriculum",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–08:15. How the National Socialist Teachers' League transformed school subjects: rewriting history textbooks, adding racial biology (Rassenkunde), and prioritizing PE."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-the-dark-charisma-of-adolf-hitler-episode-2-german-youth/",
-              "title": "Bbc Two The Dark Charisma Of Adolf Hitler Episode 2 German Youth"
+              "title": "[PRIMARY ARCHIVE] BBC Two: The Hitler Youth (HJ) & League of German Girls (BDM)",
+              "duration": "5 mins 30 secs",
+              "teacher_guidance": "Eyewitness accounts of mandatory youth organisations: military drill and weapons training for boys vs gymnastics and preparation for motherhood for girls (1936 compulsory membership law)."
             }
           ],
           "pair_share": {
@@ -84425,7 +84433,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/2-life-in-hitlers-germany-history-file/",
-              "title": "2 Life In Hitlers Germany History File"
+              "title": "[STARTER HOOK] History File: The Economic Miracle – The RAD, Autobahns & Rearmament",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–06:50. How Hitler tackled unemployment: the National Labour Service (RAD), building the Autobahn network, reintroducing military conscription (1935), and hidden unemployment statistics."
+            },
+            {
+              "url": "https://era.org.uk/streaming-service-resource/2-life-in-hitlers-germany-history-file/",
+              "title": "[ENQUIRY EVIDENCE] History File: Workers Under the Nazi Regime – The DAF, KdF & Volkswagen",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 07:00–14:00. Banning independent trade unions, creating Robert Ley’s German Labour Front (DAF), the Strength Through Joy (KdF) cruise ships, and the Volkswagen Beetle savings stamp scheme."
             }
           ],
           "pair_share": {
@@ -84951,19 +84967,15 @@
           "video": [
             {
               "url": "https://era.org.uk/streaming-service-resource/3-the-master-race-history-file/",
-              "title": "3 The Master Race History File"
+              "title": "[STARTER HOOK] History File: Nazi Racial Ideology, The 1933 Boycott & Nuremberg Laws (1935)",
+              "duration": "19 mins 0 secs",
+              "teacher_guidance": "⏱️ Watch Window: 00:00–09:15. Traces the escalating legal persecution of German Jews: the April 1933 shop boycott, the Reich Citizenship Law stripping Jews of citizenship, and the Law for the Protection of German Blood."
             },
             {
               "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-chaos-and-consent-the-night-of-the-broken-glass/",
-              "title": "Bbc Two Nazis A Warning From History Chaos And Consent The Night Of The Broken Glass"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/bbc-two-nazis-a-warning-from-history-the-road-to-treblinka-the-jewish-question/",
-              "title": "Bbc Two Nazis A Warning From History The Road To Treblinka The Jewish Question"
-            },
-            {
-              "url": "https://era.org.uk/streaming-service-resource/my-family-the-holocaust-and-me-the-aftermath-of-kristallnacht-bbc-one/",
-              "title": "My Family The Holocaust And Me The Aftermath Of Kristallnacht Bbc One"
+              "title": "[PRIMARY ARCHIVE] BBC Two: Kristallnacht – The Night of Broken Glass (9–10 November 1938)",
+              "duration": "6 mins 45 secs",
+              "teacher_guidance": "The turning point towards physical violence: Goebbels exploiting the assassination of Ernst vom Rath in Paris, SA destruction of synagogues and Jewish businesses, and the 1 billion mark fine imposed on the Jewish community."
             }
           ],
           "pair_share": {
