@@ -57,6 +57,39 @@ export function formatShortDuration(durationStr) {
 }
 
 /**
+ * Formats duration into a prominent, immediately readable duration badge (e.g. "58 mins", "4m 20s", "12 mins", "1h 25m").
+ * @param {string} durationStr
+ * @returns {string}
+ */
+export function formatProminentDuration(durationStr) {
+  if (!durationStr) return '';
+  const secs = parseDurationToSeconds(durationStr);
+  if (secs === 999999) {
+    return durationStr.trim();
+  }
+  const h = Math.floor(secs / 3600);
+  const m = Math.floor((secs % 3600) / 60);
+  const s = secs % 60;
+  if (h > 0) return `${h}h${m > 0 ? ` ${m}m` : ''}`;
+  if (m > 0 && s > 0 && m < 10) return `${m}m ${s}s`;
+  if (m > 0) return `${m} mins`;
+  return `${s}s`;
+}
+
+/**
+ * Cleans video titles by removing machine-generated episode/index prefixes (e.g., "04: ", "01 - ", "Ep 2: ")
+ * @param {string} title
+ * @returns {string}
+ */
+export function cleanVideoDisplayTitle(title) {
+  if (!title || typeof title !== 'string') return 'Historical Documentary Resource';
+  const cleaned = title
+    .replace(/^\s*(?:ep(?:isode)?\s*\d+[\s:\.\-]+|\d{1,2}[\s:\.\-]+\s*)/i, '')
+    .trim();
+  return cleaned || title;
+}
+
+/**
  * Extracts and sorts all videos for a given lesson from shortest to longest.
  * @param {object} lesson
  * @returns {Array} sorted array of video objects

@@ -7,6 +7,8 @@ import { renderAudioPlaybackBar } from './speech.js';
 import {
   parseDurationToSeconds,
   formatShortDuration,
+  formatProminentDuration,
+  cleanVideoDisplayTitle,
   getSortedLessonVideos,
 } from './video_utils.js';
 
@@ -1707,6 +1709,19 @@ function renderLessonVideos(videos, lesson, unitId) {
   const shelfContainerId = 'video-shelf-' + safeLessonId;
   const drawerId = 'video-task-drawer-' + safeLessonId;
 
+  // Calculate duration summary for the header pill
+  let countPillText = '';
+  if (sortedVideos.length === 1) {
+    const singleDur = formatProminentDuration(sortedVideos[0].duration);
+    countPillText = singleDur ? `1 Video &bull; ⏱️ ${singleDur}` : `1 Video`;
+  } else {
+    const minDur = formatShortDuration(sortedVideos[0].duration);
+    const maxDur = formatShortDuration(sortedVideos[sortedVideos.length - 1].duration);
+    countPillText = minDur
+      ? `${sortedVideos.length} Videos &bull; Shortest First (${minDur} &ndash; ${maxDur})`
+      : `${sortedVideos.length} Videos &bull; Shortest First`;
+  }
+
   let videoCardsHtml = '';
   let taskPanelsHtml = '';
   let hasAnyTasks = false;
@@ -1726,11 +1741,13 @@ function renderLessonVideos(videos, lesson, unitId) {
     }
 
     const shortDur = formatShortDuration(vid.duration);
+    const prominentDur = formatProminentDuration(vid.duration);
     const providerName = isEra ? 'ERA' : isYt ? 'YouTube' : 'Video';
     const providerIcon = isEra ? 'fa-solid fa-graduation-cap' : 'fa-brands fa-youtube';
     const pathwayInfo = resolveVideoPathway(vid);
     const cleanTitle = (vid.title || 'Historical Documentary Resource').replace(/"/g, '&quot;');
     const rawCleanTitle = vid.title || 'Historical Documentary Resource';
+    const displayTitle = cleanVideoDisplayTitle(rawCleanTitle);
 
     // Left thumbnail element
     let thumbHtml = '';
@@ -1741,32 +1758,35 @@ function renderLessonVideos(videos, lesson, unitId) {
           <div class="video-shelf-play-overlay">
             <i class="fa-solid fa-play"></i>
           </div>
-          ${vid.duration ? `<span class="video-shelf-dur-pill">${shortDur || vid.duration}</span>` : ''}
+          ${prominentDur ? `<span class="video-shelf-dur-pill">${shortDur || prominentDur}</span>` : ''}
         </div>
       `;
     } else if (isEra) {
       thumbHtml = `
         <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="video-shelf-thumb-wrap era" title="Open Stream on ERA (School SSO): ${cleanTitle}">
           <div class="video-shelf-era-poster">
-            <i class="fa-solid fa-graduation-cap"></i>
-            <span>BBC / ERA</span>
+            <div class="video-shelf-poster-badge">
+              <i class="fa-solid fa-graduation-cap"></i> ERA
+            </div>
+            <div class="video-shelf-poster-play">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </div>
           </div>
-          <div class="video-shelf-play-overlay era">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </div>
-          ${vid.duration ? `<span class="video-shelf-dur-pill era">${shortDur || vid.duration}</span>` : ''}
+          ${prominentDur ? `<span class="video-shelf-dur-pill era">${shortDur || prominentDur}</span>` : ''}
         </a>
       `;
     } else {
       thumbHtml = `
         <a href="${vid.url}" target="_blank" rel="noopener noreferrer" class="video-shelf-thumb-wrap generic" title="Open Video: ${cleanTitle}">
           <div class="video-shelf-generic-poster">
-            <i class="fa-solid fa-video"></i>
+            <div class="video-shelf-poster-badge">
+              <i class="fa-solid fa-video"></i> Video
+            </div>
+            <div class="video-shelf-poster-play">
+              <i class="fa-solid fa-play"></i>
+            </div>
           </div>
-          <div class="video-shelf-play-overlay">
-            <i class="fa-solid fa-play"></i>
-          </div>
-          ${vid.duration ? `<span class="video-shelf-dur-pill">${shortDur || vid.duration}</span>` : ''}
+          ${prominentDur ? `<span class="video-shelf-dur-pill">${shortDur || prominentDur}</span>` : ''}
         </a>
       `;
     }
@@ -1799,7 +1819,7 @@ function renderLessonVideos(videos, lesson, unitId) {
     if (hasTask) {
       actionButtonsHtml += `
         <button type="button" class="btn-video-shelf-action task" onclick="window.toggleVideoTaskDrawer('${safeLessonId}', ${idx}, event)" title="View Task &amp; Guidance">
-          <i class="fa-solid fa-crosshairs"></i> Task
+          <i class="fa-solid fa-list-check"></i> Task
         </button>
       `;
     }
@@ -1813,12 +1833,21 @@ function renderLessonVideos(videos, lesson, unitId) {
             <span class="video-shelf-provider-pill ${isEra ? 'era' : 'yt'}">
               <i class="${providerIcon}"></i> ${providerName}
             </span>
+            ${
+              prominentDur
+                ? `
+              <span class="video-shelf-duration-badge" title="Exact Runtime: ${vid.duration || prominentDur}">
+                <i class="fa-solid fa-clock"></i> ${prominentDur}
+              </span>
+            `
+                : ''
+            }
             <span class="video-shelf-pathway-pill" title="${(pathwayInfo.guidance || '').replace(/"/g, '&quot;')}">
               ${pathwayInfo.pathway}
             </span>
           </div>
           <div class="video-shelf-card-title" title="${cleanTitle}">
-            ${rawCleanTitle}
+            ${displayTitle}
           </div>
           <div class="video-shelf-card-actions">
             ${actionButtonsHtml}
@@ -1909,10 +1938,10 @@ function renderLessonVideos(videos, lesson, unitId) {
         <div class="video-shelf-title">
           <i class="fa-solid fa-film"></i>
           <span>Classroom Video Pathways</span>
-          <span class="video-shelf-count-pill">${sortedVideos.length} ${sortedVideos.length === 1 ? 'Option' : 'Options'} &bull; Shortest First</span>
+          <span class="video-shelf-count-pill">${countPillText}</span>
         </div>
         <div class="video-shelf-hint">
-          ${sortedVideos.length > 1 ? '<i class="fa-solid fa-arrow-left-long"></i> <span>Scroll horizontal</span> <i class="fa-solid fa-arrow-right-long"></i>' : '<span>One-Click Launch</span>'}
+          ${sortedVideos.length > 1 ? '<i class="fa-solid fa-arrow-left-long"></i> <span>Scroll horizontal</span> <i class="fa-solid fa-arrow-right-long"></i>' : '<span class="video-shelf-instant-badge"><i class="fa-solid fa-bolt"></i> One-Click Launch</span>'}
         </div>
       </div>
 
