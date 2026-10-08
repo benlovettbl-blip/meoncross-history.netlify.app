@@ -1195,8 +1195,8 @@ const USA_PEARSON_QUIZ_BANK = [
         exp: 'Veterans were treated with public indifference or hostility, receiving inadequate medical and psychiatric care.',
       },
       {
-        q: 'What foreign policy mindset dominated American politics for two decades following the defeat ("Vietnam Syndrome")?',
-        a: 'A deep reluctance by the US public and Congress to commit military troops to foreign conflicts without rapid, guaranteed victory',
+        q: 'What term describes the foreign policy reluctance that dominated American politics for two decades following the defeat?',
+        a: 'The "Vietnam Syndrome" (a deep reluctance by public and Congress to commit US ground troops abroad without rapid, guaranteed victory)',
         exp: 'Severely constrained American military deployments in the Middle East, Africa, and Central America through the 1980s.',
       },
       {
