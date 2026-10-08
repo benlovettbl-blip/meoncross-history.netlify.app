@@ -85,12 +85,12 @@ const APPROVED_FOOTERS = [
   '"Nixon promised Peace with Honor; secretly bombing Cambodia while withdrawing ground troops."', // P14
   '"The Tet Offensive was a Vietcong tactical defeat, but a catastrophic psychological victory over US credibility."', // P15
   '"Kent State, My Lai, and the Pentagon Papers: uncensored television made Vietnam the first living room war."', // P16
-  '"Watergate crippled the White House; Congress cut aid, and North Vietnamese tanks rolled into Saigon."', // P17
+  '"Kissinger and Le Duc Tho signed in Paris; US POWs returned home, but 150,000 NVA remained in the South."', // P17
   '"Airpower cannot conquer anti-colonial nationalism: evaluate why the world\'s greatest superpower failed."', // P18
-  'Department Marking Bank • Key Topic 1: The Civil Rights Movement (1954–60) • Green-Pen DIRT Review', // P19
-  'Department Marking Bank • Key Topic 2: Protest, Progress and Radicalism (1960–75) • Green-Pen DIRT Review', // P20
-  'Department Marking Bank • Key Topic 3: US Involvement in Vietnam (1954–75) • Green-Pen DIRT Review', // P21
-  'Department Marking Bank • Key Topic 4: Reactions & End of War (1964–75) • Green-Pen DIRT Review', // P22
+  'Department Marking Bank • Key Topic 1: The Civil Rights Movement (1954–60) • Verified Marking Model', // P19
+  'Department Marking Bank • Key Topic 2: Protest, Progress and Radicalism (1960–75) • Verified Marking Model', // P20
+  'Department Marking Bank • Key Topic 3: US Involvement in Vietnam (1954–75) • Verified Marking Model', // P21
+  'Department Marking Bank • Key Topic 4: Reactions & End of War (1964–75) • Verified Marking Model', // P22
   'Key Historical Protagonists Gallery & Tier 3 Disciplinary Vocabulary • Edexcel Paper 3', // P23
   'Edexcel Paper 3 Examination Strategy & Essay Architect • Departmental Archival Standard', // P24
 ];
@@ -267,7 +267,7 @@ const PROTAGONISTS = [
     name: 'President Richard M. Nixon',
     role: '37th President of the United States',
     card: 'card_nixon.png',
-    desc: 'Elected on "Law and Order" and "Peace with Honor"; executed Vietnamization, bombed Cambodia, and resigned over Watergate.',
+    desc: 'Elected on "Law and Order" and "Peace with Honor"; executed Vietnamization, bombed Cambodia, and signed the 1973 Paris Peace Accords.',
   },
   {
     name: 'Ho Chi Minh',
@@ -366,7 +366,8 @@ const VOCABULARY = [
 // --------------------------------------------------------------------------
 function buildHtml() {
   const qrSvg = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa');
-  const heroImageBase64 = getUsaImageBase64('airborne-little-rock-patrol.jpg');
+  const specImg1Base64 = getUsaImageBase64('usa_spec_cropped_kt1_kt2.png');
+  const specImg2Base64 = getUsaImageBase64('usa_spec_cropped_kt3_kt4.png');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -484,105 +485,181 @@ function buildHtml() {
       color: #1e293b;
       margin: 0;
     }
-    .cover-hero-wrap {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      border: 1.2px solid #0f172a;
-      padding: 5px 8px;
+    /* Specification Snapshot (Top Half) */
+    .cover-spec-container {
+      border: 1.3px solid #0f172a;
       background: #f8fafc;
       border-radius: 2px;
+      padding: 3px 5px;
       margin-bottom: 4px;
     }
-    .cover-hero-img {
-      width: 140px;
-      height: 80px;
-      object-fit: cover;
-      border: 1.2px solid #000;
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
-    .cover-hero-caption {
-      font-family: 'Georgia', serif;
-      font-size: 7.4pt;
-      line-height: 1.25;
-      color: #1e293b;
-    }
-    .cover-hero-caption strong {
+    .cover-spec-header-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 2.5px 6px;
       font-family: 'Inter', sans-serif;
-      display: block;
-      font-size: 7.8pt;
-      margin-bottom: 2px;
+      font-size: 6.8pt;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+      border-radius: 1px;
+    }
+    .cover-spec-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+    }
+    .cover-spec-col {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid #94a3b8;
+      background: #ffffff;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+    .cover-spec-col-title {
+      background: #f1f5f9;
       color: #0f172a;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      text-align: center;
+      padding: 2px 4px;
+      border-bottom: 1px solid #cbd5e1;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .cover-spec-img {
+      width: 100%;
+      height: 98mm;
+      object-fit: contain;
+      background: #ffffff;
+      display: block;
     }
 
     .scholar-meta-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 10px;
-      border: 1.4px solid #000;
-      padding: 5px 10px;
+      gap: 12px;
+      border: 1.3px solid #0f172a;
+      padding: 4px 10px;
       background: #ffffff;
       margin-bottom: 4px;
       font-family: 'Inter', sans-serif;
-      font-size: 8.6pt;
+      font-size: 8.2pt;
     }
     .scholar-field { display: flex; align-items: baseline; gap: 4px; }
-    .scholar-field strong { font-weight: 900; color: #000; }
-    .scholar-field .field-line { flex: 1; border-bottom: 1px solid #000; height: 10px; }
+    .scholar-field strong { font-weight: 900; color: #0f172a; }
+    .scholar-field .field-line { flex: 1; border-bottom: 1.2px solid #0f172a; height: 9px; }
 
-    /* Homework Tracking Table (Page 1) */
+    /* Homework Tracking Dual Grid (Bottom Half) */
+    .hw-ledger-dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
     .hw-ledger-table {
       width: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      margin-bottom: 4px;
+      font-size: 7.0pt;
     }
-    .hw-ledger-table th {
+    .hw-ledger-table thead th {
       background: #0f172a;
       color: #ffffff;
-      padding: 5px 5px;
+      padding: 3px 4px;
       font-weight: 800;
       text-transform: uppercase;
       border: 1px solid #0f172a;
-      text-align: center;
-      font-size: 7.6pt;
+      font-size: 6.8pt;
+      letter-spacing: 0.3px;
     }
     .hw-ledger-table td {
       border: 1px solid #cbd5e1;
-      padding: 4.8px 6px;
+      padding: 2.8px 4.5px;
       vertical-align: middle;
       color: #000000;
       line-height: 1.15;
     }
     .hw-ledger-table tr:nth-child(even) td { background: #f8fafc; }
-    
-    .traffic-tier-box {
-      border: 1.2px solid #0f172a;
-      border-radius: 2px;
-      padding: 6px 10px;
-      background: #f1f5f9;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      font-weight: 700;
-      margin-bottom: 4px;
+    .hw-col-title {
+      background: #1e293b !important;
+      color: #ffffff;
+      font-size: 7.0pt;
+      font-weight: 900;
+      text-align: center;
+      padding: 2.5px 4px !important;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+
+    .cover-bottom-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
+      align-items: stretch;
+      margin-bottom: 2px;
     }
 
     .cover-protocol-box {
-      border: 1.2px solid #0f172a;
+      border: 1.3px solid #0f172a;
       border-left: 4.5px solid #0f172a;
       border-radius: 2px;
-      padding: 7px 10px;
+      padding: 4.5px 8px;
       background: #ffffff;
-      margin-bottom: 4px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
-      line-height: 1.35;
+      font-size: 7.0pt;
+      line-height: 1.32;
       color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .cover-protocol-box strong {
+      color: #0f172a;
+      font-size: 7.5pt;
+      margin-bottom: 1.5px;
+      display: block;
+    }
+
+    .cover-qr-card {
+      border: 1.3px solid #0f172a;
+      border-radius: 2px;
+      padding: 3px 6px;
+      background: #f8fafc;
+      width: 160px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .cover-qr-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.7pt;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+    .cover-qr-img-box {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 2px;
+    }
+    .cover-qr-desc {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.6pt;
+      line-height: 1.15;
+      color: #475569;
+      font-weight: 600;
     }
 
     /* Page 2: Chronology Domino Flowchart */
@@ -878,57 +955,93 @@ function buildHtml() {
       <p class="cover-sub-title">Master Knowledge Retrieval & Homework Companion • Specification 1HI0/33</p>
     </div>
 
-    <div class="cover-hero-wrap">
-      <img src="${heroImageBase64}" class="cover-hero-img" alt="US 101st Airborne Patrol at Little Rock, 1957">
-      <div class="cover-hero-caption">
-        <strong>Archival Primary Record • Central High School, Little Rock, Arkansas (September 1957)</strong>
-        Soldiers of the 101st Airborne Division escort the "Little Rock Nine" past hostile crowds, enforcing federal court orders against state resistance. This companion trains pupils on 192 core specification facts and explanations across the struggle for Civil Rights and the Vietnam War.
-      </div>
-    </div>
-
     <div class="scholar-meta-grid">
       <div class="scholar-field"><strong>Scholar Name:</strong> <div class="field-line"></div></div>
       <div class="scholar-field"><strong>Class / Group:</strong> <div class="field-line"></div></div>
       <div class="scholar-field"><strong>Teacher:</strong> <div class="field-line"></div></div>
     </div>
 
-    <table class="hw-ledger-table">
-      <thead>
-        <tr>
-          <th style="width: 50%;">Specification Enquiry Focus</th>
-          <th style="width: 14%;">Due Date</th>
-          <th style="width: 12%;">Attempt 1</th>
-          <th style="width: 12%;">Attempt 2</th>
-          <th style="width: 12%;">Initial</th>
-        </tr>
-      </thead>
-      <tbody>
-        ${USA_PEARSON_QUIZ_BANK.map(
-          (item) => `
-        <tr>
-          <td><strong>Enquiry ${item.num}:</strong> ${item.title}</td>
-          <td style="text-align: center;">____/____</td>
-          <td style="text-align: center; font-weight: 700;">____ / 12</td>
-          <td style="text-align: center; font-weight: 700;">____ / 12</td>
-          <td style="text-align: center;">[ &nbsp; ]</td>
-        </tr>`,
-        ).join('')}
-      </tbody>
-    </table>
-
-    <div class="traffic-tier-box">
-      <span><strong>Retrieval Strength:</strong></span>
-      <span>🟩 <strong>Instant Recall:</strong> 11–12 / 12</span>
-      <span>🟨 <strong>Minor Effort:</strong> 8–10 / 12</span>
-      <span>🟥 <strong>Priority Restudy:</strong> 0–7 / 12</span>
+    <!-- TOP HALF: OFFICIAL PEARSON SPECIFICATION SNAPSHOT -->
+    <div class="cover-spec-container">
+      <div class="cover-spec-header-strip">
+        <span>Official Specification Snapshot • Pearson Edexcel GCSE (9–1) History Issue 6 • Option 33</span>
+        <span>Paper 3 Core Curriculum</span>
+      </div>
+      <div class="cover-spec-grid">
+        <div class="cover-spec-col">
+          <div class="cover-spec-col-title">Part I: Civil Rights Movement (Key Topics 1 &amp; 2)</div>
+          <img src="${specImg1Base64}" class="cover-spec-img" alt="Official Pearson Specification: Civil Rights">
+        </div>
+        <div class="cover-spec-col">
+          <div class="cover-spec-col-title">Part II: The USA &amp; The Vietnam War (Key Topics 3 &amp; 4)</div>
+          <img src="${specImg2Base64}" class="cover-spec-img" alt="Official Pearson Specification: Vietnam War">
+        </div>
+      </div>
     </div>
 
-    <div class="cover-protocol-box" style="display: flex; gap: 12px; align-items: center;">
-      <div style="flex: 1;">
-        <strong>The Dual-Line Retrieval Protocol:</strong> For every question, write the concise historical anchor on <em>Line 1 (Core Fact)</em>, then explain why it matters on <em>Line 2 (The Explanation)</em>. Self-mark using the Department Marking Bank at the back using green pen (DIRT review). Retest failed items in Attempt 2 before the exam.
+    <div class="hw-ledger-dual-grid">
+      <!-- Part I: Civil Rights Movement (1954-1975) -->
+      <table class="hw-ledger-table">
+        <thead>
+          <tr>
+            <th colspan="3" class="hw-col-title">Part I: Civil Rights Movement (1954–1975)</th>
+          </tr>
+          <tr>
+            <th style="width: 54%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
+            <th style="width: 20%; text-align: center;">Due Date</th>
+            <th style="width: 26%; text-align: center;">Parent / Carer Sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${USA_PEARSON_QUIZ_BANK.slice(0, 8)
+            .map(
+              (item) => `
+          <tr>
+            <td><strong>E${item.num}:</strong> ${item.title}</td>
+            <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #334155;">____/____</td>
+            <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+          </tr>`,
+            )
+            .join('')}
+        </tbody>
+      </table>
+
+      <!-- Part II: The USA & The Vietnam War (1954-1975) -->
+      <table class="hw-ledger-table">
+        <thead>
+          <tr>
+            <th colspan="3" class="hw-col-title">Part II: The USA & The Vietnam War (1954–1975)</th>
+          </tr>
+          <tr>
+            <th style="width: 54%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
+            <th style="width: 20%; text-align: center;">Due Date</th>
+            <th style="width: 26%; text-align: center;">Parent / Carer Sign</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${USA_PEARSON_QUIZ_BANK.slice(8, 16)
+            .map(
+              (item) => `
+          <tr>
+            <td><strong>E${item.num}:</strong> ${item.title}</td>
+            <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #334155;">____/____</td>
+            <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+          </tr>`,
+            )
+            .join('')}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cover-bottom-grid">
+      <div class="cover-protocol-box">
+        <strong>Home Learning & Parental Partnership Protocol</strong>
+        For each weekly enquiry, scholars must complete their 12 retrieval questions under timed recall conditions before self-checking answers against the Department Marking Bank on Pages 19–22. Every question requires both <em>Line 1 (Core Fact)</em> and <em>Line 2 (Historical Explanation)</em>. Parents and carers are kindly requested to inspect that both lines are fully attempted and sign the ledger alongside the due date.
       </div>
-      <div style="width: 48px; height: 48px; flex-shrink: 0;">
-        ${qrSvg}
+      <div class="cover-qr-card">
+        <div class="cover-qr-title">Digital Revision Portal</div>
+        <div class="cover-qr-img-box">${qrSvg}</div>
+        <div class="cover-qr-desc">Scan for 20-question self-marking quizzes, digital flashcards & Edexcel model answers</div>
       </div>
     </div>
 
