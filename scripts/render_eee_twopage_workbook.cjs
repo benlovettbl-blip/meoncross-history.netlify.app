@@ -1173,17 +1173,17 @@ const KEY_TOPICS_DATA = {
     subtitle: 'Education, Leisure, The Problem of Poverty, Voyages & Virginia',
     dateRange: '1558–1588',
     heroImage: {
-      src: getBase64Image('/images/swan_theatre.jpg'),
-      alt: 'Arend van Buchell Sketch of The Swan Playhouse (1596)',
-      objectPosition: 'center 30%',
-      shelfmark: 'UB UTRECHT • MS 842 • FOLIO 132R',
-      date: 'c. 1596',
-      title: 'Contemporary Sketch of The Swan Playhouse, Bankside',
+      src: getBase64Image('/images/john_white_chief_herowan.jpg'),
+      alt: 'John White Watercolor of a Chief of the Secotan (1585)',
+      objectPosition: 'center 20%',
+      shelfmark: 'BRITISH MUSEUM • 1906,0509.1.21 • LONDON',
+      date: '1585',
+      title: 'A Chief of the Secotan (Carolina Algonquian)',
       caption:
-        'Johannes de Witt / Arend van Buchell • The only surviving eyewitness sketch of an Elizabethan public playhouse interior, showing the thrust stage, tiring house facade, covered galleries, and unroofed pit for groundlings. Utrecht University Library, MS 842.',
-      sourceTag: 'Historical Primary Source',
+        'John White • A Cheife Herowan of the Secotan, painted in watercolour during the first Roanoke expedition (1585). Depicts an indigenous Algonquian leader wearing a copper gorget, feather, and fringed deerskin apron. British Museum, London (1906,0509.1.21).',
+      sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 116,
+      heightMm: 106,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
@@ -1696,12 +1696,9 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
 
             <!-- Right: Juicy Enquiry Prompt + Exact 6 Ruled Lines (Live Line Ruling Preserved) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1.5px solid #000000; margin: 0; padding: 0;">
-              <!-- Embedded Stage Enquiry Focus Bar -->
-              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 2px 6px; display: flex; align-items: center; gap: 6px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 900; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px; letter-spacing: 0.4px; flex-shrink: 0;">
-                  ENQUIRY FOCUS ${idx + 1}
-                </span>
-                <span style="font-family: 'Georgia', serif; font-size: 7.4pt; font-weight: 700; color: #000000; line-height: 1.15; font-style: italic;">
+              <!-- Embedded Stage Enquiry Focus Bar (No redundant badge; number is already on left) -->
+              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 2.5px 8px; display: flex; align-items: center;">
+                <span style="font-family: 'Georgia', serif; font-size: 7.8pt; font-weight: 700; color: #000000; line-height: 1.18; font-style: italic;">
                   ${st.focusClue}
                 </span>
               </div>
