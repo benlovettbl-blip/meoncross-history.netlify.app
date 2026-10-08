@@ -115,13 +115,21 @@ function renderStandardFrontCover({
         </div>
       </div>`;
 
-    // Edexcel Table (Approach B): 2-Column official specification table
-    const tableHeader = specBox.edexcelTable
-      ? specBox.edexcelTable.header
-      : `Key topic ${keyTopicNum}: ${title}`;
-    const tableRows = specBox.edexcelTable ? specBox.edexcelTable.rows : [];
+    let specTableHtml = '';
+    if (specBox.specImageSrc) {
+      specTableHtml = `
+      <!-- Pearson Edexcel Specification (Official Specification Snapshot) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; display: flex; flex-direction: column; margin-bottom: 3px;">
+        <img src="${specBox.specImageSrc}" alt="Pearson Edexcel GCSE History Specification Content" style="width: 100%; height: auto; display: block;">
+      </div>`;
+    } else {
+      // Edexcel Table (Approach B): 2-Column official specification table
+      const tableHeader = specBox.edexcelTable
+        ? specBox.edexcelTable.header
+        : `Key topic ${keyTopicNum}: ${title}`;
+      const tableRows = specBox.edexcelTable ? specBox.edexcelTable.rows : [];
 
-    const specTableHtml = `
+      specTableHtml = `
       <!-- Pearson Edexcel Specification (Approach B: Official 2-Column Vector Table) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
         <!-- Grey Header Bar matching Edexcel Specification -->
@@ -153,6 +161,7 @@ function renderStandardFrontCover({
             .join('')}
         </div>
       </div>`;
+    }
 
     const footerHtml = renderFooterStrip
       ? renderFooterStrip(1, footerQuip, totalPageCount)

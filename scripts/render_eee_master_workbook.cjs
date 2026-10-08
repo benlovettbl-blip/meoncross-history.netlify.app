@@ -804,44 +804,11 @@ const KEY_TOPICS_DATA = {
         'Unknown English Artist • Queen Elizabeth I depicted in her patterned cloth of gold coronation robes, holding the sovereign orb and sceptre. National Portrait Gallery, London (NPG 2607).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 88,
+      heightMm: 96,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      edexcelTable: {
-        header: 'Key topic 1: Queen, government and religion, 1558–69',
-        rows: [
-          {
-            numTitle: '1 The situation on Elizabeth’s accession',
-            bullets: [
-              'Elizabethan England in 1558: society and government.',
-              'The Virgin Queen: the problem of her legitimacy, gender, marriage. Her character and strengths.',
-              'Challenges at home and from abroad: financial weaknesses, religious divisions, the French threat.',
-            ],
-          },
-          {
-            numTitle: '2 The ‘settlement’ of religion',
-            bullets: [
-              'Elizabeth’s religious settlement (1559): its features and impact.',
-              'The Church of England: its role in society.',
-            ],
-          },
-          {
-            numTitle: '3 Challenge to the religious settlement',
-            bullets: [
-              'The nature and extent of the Puritan challenge.',
-              'The nature and extent of the Catholic challenge, including the role of the nobility, Papacy and foreign powers.',
-            ],
-          },
-          {
-            numTitle: '4 The problem of Mary, Queen of Scots',
-            bullets: [
-              'Mary, Queen of Scots: her claim to the English throne.',
-              'Relations between Elizabeth and Mary, 1568–69.',
-            ],
-          },
-        ],
-      },
+      specImageSrc: getBase64Image('/images/edexcel_spec_kt1_crop_precise.png'),
     },
     milestones: [
       {
@@ -1328,45 +1295,11 @@ const KEY_TOPICS_DATA = {
         'Attributed to George Gower • Queen Elizabeth I sits in triumph with her right hand resting on a global orb. Behind her, windows depict the English fireships assaulting the Spanish fleet at Gravelines and the Armada wrecked on stormy rocks. Accession Shelfmark WA-INV-042.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 88,
+      heightMm: 106,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      edexcelTable: {
-        header: 'Key topic 2: Challenges to Elizabeth at home and abroad, 1569–88',
-        rows: [
-          {
-            numTitle: '1 Plots and revolts at home',
-            bullets: [
-              'The reasons for, and significance of, the Revolt of the Northern Earls, 1569.',
-              'The features and significance of the Ridolfi, Throckmorton and Babington plots. Walsingham and his spy network.',
-              'The reasons for, and significance of, the execution of Mary, Queen of Scots, 1587.',
-            ],
-          },
-          {
-            numTitle: '2 Relations with Spain',
-            bullets: [
-              'Political and religious rivalry.',
-              'Commercial rivalry. The roles of John Hawkins and Francis Drake; privateering.',
-              'The significance of activities in the Netherlands, including the Dutch Revolt and the assassination of William of Orange.',
-            ],
-          },
-          {
-            numTitle: '3 Outbreak of war with Spain, 1585–88',
-            bullets: [
-              'English involvement in the Netherlands, 1585–88, including the role of Robert Dudley.',
-              'Drake and the raid on Cadiz: ‘singeing the King of Spain’s beard’.',
-            ],
-          },
-          {
-            numTitle: '4 The Armada',
-            bullets: [
-              'Spanish invasion plans. Reasons why Philip used the Spanish Armada.',
-              'The reasons for, and consequences of, the English victory.',
-            ],
-          },
-        ],
-      },
+      specImageSrc: getBase64Image('/images/edexcel_spec_kt2_crop_precise.png'),
     },
     milestones: [
       {
@@ -1852,43 +1785,11 @@ const KEY_TOPICS_DATA = {
         'Johannes de Witt / Arend van Buchell • The only surviving eyewitness sketch of an Elizabethan public playhouse interior, showing the thrust stage, tiring house facade, covered galleries, and unroofed pit for groundlings. Utrecht University Library, MS 842.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 88,
+      heightMm: 116,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      edexcelTable: {
-        header: 'Key topic 3: Elizabethan society in the age of exploration, 1558–88',
-        rows: [
-          {
-            numTitle: '1 Education and leisure',
-            bullets: [
-              'Education in the home, schools and universities.',
-              'Sport, pastimes and the theatre.',
-            ],
-          },
-          {
-            numTitle: '2 The problem of the poor',
-            bullets: [
-              'The reasons for the increase in poverty and vagabondage, and the reasons for fear of vagabonds.',
-              'Attempts to tackle the problem of poverty, including the 1572 and 1576 Acts.',
-            ],
-          },
-          {
-            numTitle: '3 Exploration and voyages of discovery',
-            bullets: [
-              'Factors prompting exploration, including the impact of new technology on ships and navigation and the drive to expand trade.',
-              'Drake’s circumnavigation of the globe.',
-            ],
-          },
-          {
-            numTitle: '4 Attempted colonisation of Virginia',
-            bullets: [
-              'Raleigh and the attempted colonisation of Virginia.',
-              'Reasons for the failure of the attempted colonisation of Virginia.',
-            ],
-          },
-        ],
-      },
+      specImageSrc: getBase64Image('/images/edexcel_spec_kt3_crop_precise.png'),
     },
     milestones: [
       {
