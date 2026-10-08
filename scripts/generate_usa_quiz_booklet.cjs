@@ -366,8 +366,6 @@ const VOCABULARY = [
 // --------------------------------------------------------------------------
 function buildHtml() {
   const qrSvg = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa');
-  const specImg1Base64 = getUsaImageBase64('usa_spec_cropped_kt1_kt2.png');
-  const specImg2Base64 = getUsaImageBase64('usa_spec_cropped_kt3_kt4.png');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -778,42 +776,43 @@ function buildHtml() {
       font-weight: 700;
       letter-spacing: 0.3px;
       border-radius: 2px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .strat-meta-bar-23 strong { color: #f8fafc; font-weight: 900; text-transform: uppercase; }
     .strat-stack-23 {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       flex: 1;
       gap: 7px;
-      margin: 2px 0;
+      margin: 1px 0;
     }
     .strat-card-full {
       border: 1.3px solid #0f172a;
       border-radius: 2px;
       background: #ffffff;
-      padding: 7px 11px;
+      padding: 8px 12px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      flex: 1;
+      gap: 4px;
     }
     .strat-card-header {
       font-family: 'Inter', sans-serif;
-      font-size: 9.4pt;
+      font-size: 9.6pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
       border-bottom: 1.3px solid #0f172a;
       padding-bottom: 2.5px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       letter-spacing: 0.3px;
     }
     .strat-badge {
-      font-size: 7.0pt;
+      font-size: 7.2pt;
       background: #e2e8f0;
       color: #0f172a;
       padding: 1.5px 6px;
@@ -822,33 +821,40 @@ function buildHtml() {
     }
     .strat-task-prompt {
       font-family: 'Georgia', serif;
-      font-size: 8.4pt;
+      font-size: 8.6pt;
       color: #1e293b;
-      margin-bottom: 3.5px;
+      margin-bottom: 3px;
     }
     .strat-grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 7px;
+      flex: 1;
     }
     .strat-grid-3col {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 6px;
+      flex: 1;
     }
     .strat-subbox {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       background: #f8fafc;
-      padding: 5px 8px;
+      padding: 6px 10px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 8.2pt;
-      line-height: 1.32;
+      font-size: 8.5pt;
+      line-height: 1.36;
+      color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 3px;
     }
     .strat-subbox-title {
       font-family: 'Inter', sans-serif;
-      font-size: 8.4pt;
+      font-size: 8.6pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 2.5px;
@@ -858,23 +864,31 @@ function buildHtml() {
       background: #fff5f5;
     }
     .strat-rule-strip {
-      margin-top: 3.5px;
+      margin-top: 3px;
       border: 1px solid #cbd5e1;
       background: #f1f5f9;
-      padding: 3px 6px;
+      padding: 3.5px 7px;
       border-radius: 2px;
       display: flex;
       align-items: baseline;
       gap: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
     }
     .strat-mini-trap {
       font-family: 'Inter', sans-serif;
-      font-size: 7.1pt;
+      font-size: 7.5pt;
+      line-height: 1.32;
       color: #991b1b;
       font-weight: 700;
-      margin-top: 3px;
+      margin-top: 2px;
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 3px 6px;
+      border-radius: 2px;
     }
 
     /* Page 24: Synoptic Essay Architect & Digital Revision Hub */
@@ -896,36 +910,37 @@ function buildHtml() {
     .strat-stack-24 {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       flex: 1;
-      gap: 7px;
-      margin: 2px 0;
+      gap: 8px;
+      margin: 1px 0;
     }
     .strat-card-24 {
       border: 1.4px solid #0f172a;
       border-radius: 2px;
-      padding: 8px 12px;
+      padding: 10px 14px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      justify-content: space-between;
+      flex: 1;
+      gap: 6px;
     }
     .strat-header-24 {
       font-family: 'Inter', sans-serif;
-      font-size: 9.8pt;
+      font-size: 10.0pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
       border-bottom: 1.3px solid #0f172a;
-      padding-bottom: 2.5px;
-      margin-bottom: 3.5px;
+      padding-bottom: 3px;
+      margin-bottom: 2px;
       display: flex;
       justify-content: space-between;
       align-items: baseline;
       letter-spacing: 0.3px;
     }
     .strat-header-badge {
-      font-size: 7.2pt;
+      font-size: 7.3pt;
       background: #e2e8f0;
       color: #0f172a;
       padding: 1.5px 6px;
@@ -941,50 +956,109 @@ function buildHtml() {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       background: #f8fafc;
-      padding: 6px 8px;
+      padding: 6px 9px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 8.4pt;
-      line-height: 1.32;
+      font-size: 8.3pt;
+      line-height: 1.35;
       color: #1e293b;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      gap: 2.5px;
     }
     .strat-step-num {
       font-family: 'Inter', sans-serif;
-      font-size: 8.6pt;
+      font-size: 8.8pt;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 2.5px;
+      margin-bottom: 2px;
+    }
+    .strat-essay-phrases {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 6px;
+      margin-top: 1px;
+    }
+    .strat-phrase-col {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      padding: 5px 8px;
+      border-radius: 2px;
+      font-family: 'Georgia', serif;
+      font-size: 7.9pt;
+      line-height: 1.32;
+      color: #1e293b;
+    }
+    .strat-phrase-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2px;
+    }
+    .strat-model-para-24 {
+      border: 1.2px solid #0f172a;
+      border-left: 4.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 6px 10px;
+      border-radius: 2px;
+      font-family: 'Georgia', serif;
+      font-size: 8.1pt;
+      line-height: 1.36;
+      color: #1e293b;
+      margin-top: 1px;
+    }
+    .strat-model-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 2px;
+    }
+    .strat-criteria-box {
+      border: 1px dashed #0f172a;
+      background: #f1f5f9;
+      padding: 5px 8px;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.5pt;
+      line-height: 1.32;
+      color: #1e293b;
+      margin-top: 1px;
     }
     .strat-traps-bar-fixed {
       border: 1.3px solid #b91c1c;
       border-left: 5px solid #b91c1c;
       background: #fef2f2;
-      padding: 5px 9px;
+      padding: 7px 11px;
       border-radius: 2px;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       color: #7f1d1d;
     }
     .strat-traps-list {
       flex: 1;
       font-weight: 600;
-      line-height: 1.3;
+      line-height: 1.34;
     }
     .back-hub-card {
       border: 1.4px solid #0f172a;
       background: #f8fafc;
-      padding: 7px 11px;
+      padding: 10px 14px;
       border-radius: 2px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .back-hub-qr {
-      width: 58px;
-      height: 58px;
+      width: 74px;
+      height: 74px;
       flex-shrink: 0;
       background: #ffffff;
       padding: 2px;
@@ -996,21 +1070,36 @@ function buildHtml() {
       font-family: 'Inter', sans-serif;
     }
     .back-hub-title {
-      font-size: 8.8pt;
+      font-size: 9.8pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
     }
     .back-hub-desc {
-      font-size: 7.4pt;
-      line-height: 1.30;
+      font-size: 8.1pt;
+      line-height: 1.34;
       color: #334155;
-      margin-bottom: 2px;
+      margin-bottom: 4px;
+    }
+    .back-hub-features {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .hub-feature-tag {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 2px 6px;
+      border-radius: 2px;
+      white-space: nowrap;
     }
     .back-hub-url {
       font-family: monospace;
-      font-size: 7.2pt;
+      font-size: 7.8pt;
       font-weight: 700;
       color: #0f172a;
     }
@@ -1021,13 +1110,13 @@ function buildHtml() {
       gap: 12px;
       border: 1.3px solid #0f172a;
       background: #f8fafc;
-      padding: 4px 10px;
+      padding: 6px 12px;
     }
     .archival-seal-badge {
       border: 2px solid #0f172a;
-      padding: 2.5px 7px;
+      padding: 3px 8px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.3pt;
       font-weight: 900;
       letter-spacing: 0.8px;
       text-transform: uppercase;
@@ -1036,9 +1125,9 @@ function buildHtml() {
     }
     .archival-seal-text {
       font-family: 'Georgia', serif;
-      font-size: 7.4pt;
+      font-size: 7.8pt;
       color: #334155;
-      line-height: 1.25;
+      line-height: 1.30;
     }
   </style>
 </head>
@@ -1059,93 +1148,75 @@ function buildHtml() {
       <p class="cover-sub-title">Master Knowledge Retrieval & Homework Companion • Specification 1HI0/33</p>
     </div>
 
-    <div class="scholar-meta-grid">
-      <div class="scholar-field"><strong>Scholar Name:</strong> <div class="field-line"></div></div>
-      <div class="scholar-field"><strong>Class / Group:</strong> <div class="field-line"></div></div>
-      <div class="scholar-field"><strong>Teacher:</strong> <div class="field-line"></div></div>
+    <div class="pupil-meta-grid">
+      <div class="pupil-field"><strong>Pupil Name:</strong> <div class="field-line"></div></div>
+      <div class="pupil-field"><strong>Class / Group:</strong> <div class="field-line"></div></div>
+      <div class="pupil-field"><strong>Teacher:</strong> <div class="field-line"></div></div>
     </div>
 
-    <!-- TOP HALF: OFFICIAL PEARSON SPECIFICATION SNAPSHOT -->
-    <div class="cover-spec-container">
-      <div class="cover-spec-header-strip">
-        <span>Official Specification Snapshot • Pearson Edexcel GCSE (9–1) History Issue 6 • Option 33</span>
-        <span>Paper 3 Core Curriculum</span>
+    <!-- FULL CENTRAL EXPANDED PARENTAL HOMEWORK & RETRIEVAL TRACKER -->
+    <div class="hw-ledger-full-wrap">
+      <div class="hw-ledger-dual-grid">
+        <!-- Part I: Civil Rights Movement (Enquiries 1-8) -->
+        <table class="hw-ledger-table">
+          <thead>
+            <tr>
+              <th colspan="4" class="hw-col-title">Part I: Civil Rights Movement (1954–1975)</th>
+            </tr>
+            <tr>
+              <th style="width: 48%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
+              <th style="width: 16%; text-align: center;">Due Date</th>
+              <th style="width: 14%; text-align: center;">Score</th>
+              <th style="width: 22%; text-align: center;">Parent / Carer</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${USA_PEARSON_QUIZ_BANK.slice(0, 8)
+              .map(
+                (item) => `
+            <tr>
+              <td><strong>E${item.num}:</strong> ${item.title}</td>
+              <td style="text-align: center; font-family: monospace; font-size: 7.6pt; color: #475569;">____/____</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155;">&nbsp;&nbsp;&nbsp;&nbsp;/12</td>
+              <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+            </tr>`,
+              )
+              .join('')}
+          </tbody>
+        </table>
+
+        <!-- Part II: The USA & The Vietnam War (Enquiries 9-16) -->
+        <table class="hw-ledger-table">
+          <thead>
+            <tr>
+              <th colspan="4" class="hw-col-title">Part II: The USA & The Vietnam War (1954–1975)</th>
+            </tr>
+            <tr>
+              <th style="width: 48%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
+              <th style="width: 16%; text-align: center;">Due Date</th>
+              <th style="width: 14%; text-align: center;">Score</th>
+              <th style="width: 22%; text-align: center;">Parent / Carer</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${USA_PEARSON_QUIZ_BANK.slice(8, 16)
+              .map(
+                (item) => `
+            <tr>
+              <td><strong>E${item.num}:</strong> ${item.title}</td>
+              <td style="text-align: center; font-family: monospace; font-size: 7.6pt; color: #475569;">____/____</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155;">&nbsp;&nbsp;&nbsp;&nbsp;/12</td>
+              <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+            </tr>`,
+              )
+              .join('')}
+          </tbody>
+        </table>
       </div>
-      <div class="cover-spec-grid">
-        <div class="cover-spec-col">
-          <div class="cover-spec-col-title">Part I: Civil Rights Movement (Key Topics 1 &amp; 2)</div>
-          <img src="${specImg1Base64}" class="cover-spec-img" alt="Official Pearson Specification: Civil Rights">
-        </div>
-        <div class="cover-spec-col">
-          <div class="cover-spec-col-title">Part II: The USA &amp; The Vietnam War (Key Topics 3 &amp; 4)</div>
-          <img src="${specImg2Base64}" class="cover-spec-img" alt="Official Pearson Specification: Vietnam War">
-        </div>
-      </div>
-    </div>
 
-    <div class="hw-ledger-dual-grid">
-      <!-- Part I: Civil Rights Movement (1954-1975) -->
-      <table class="hw-ledger-table">
-        <thead>
-          <tr>
-            <th colspan="3" class="hw-col-title">Part I: Civil Rights Movement (1954–1975)</th>
-          </tr>
-          <tr>
-            <th style="width: 54%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
-            <th style="width: 20%; text-align: center;">Due Date</th>
-            <th style="width: 26%; text-align: center;">Parent / Carer Sign</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${USA_PEARSON_QUIZ_BANK.slice(0, 8)
-            .map(
-              (item) => `
-          <tr>
-            <td><strong>E${item.num}:</strong> ${item.title}</td>
-            <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #334155;">____/____</td>
-            <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
-          </tr>`,
-            )
-            .join('')}
-        </tbody>
-      </table>
-
-      <!-- Part II: The USA & The Vietnam War (1954-1975) -->
-      <table class="hw-ledger-table">
-        <thead>
-          <tr>
-            <th colspan="3" class="hw-col-title">Part II: The USA & The Vietnam War (1954–1975)</th>
-          </tr>
-          <tr>
-            <th style="width: 54%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
-            <th style="width: 20%; text-align: center;">Due Date</th>
-            <th style="width: 26%; text-align: center;">Parent / Carer Sign</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${USA_PEARSON_QUIZ_BANK.slice(8, 16)
-            .map(
-              (item) => `
-          <tr>
-            <td><strong>E${item.num}:</strong> ${item.title}</td>
-            <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #334155;">____/____</td>
-            <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
-          </tr>`,
-            )
-            .join('')}
-        </tbody>
-      </table>
-    </div>
-
-    <div class="cover-bottom-grid">
       <div class="cover-protocol-box">
-        <strong>Home Learning & Parental Partnership Protocol</strong>
-        For each weekly enquiry, scholars must complete their 12 retrieval questions under timed recall conditions before self-checking answers against the Department Marking Bank on Pages 19–22. Every question requires both <em>Line 1 (Core Fact)</em> and <em>Line 2 (Historical Explanation)</em>. Parents and carers are kindly requested to inspect that both lines are fully attempted and sign the ledger alongside the due date.
-      </div>
-      <div class="cover-qr-card">
-        <div class="cover-qr-title">Digital Revision Portal</div>
-        <div class="cover-qr-img-box">${qrSvg}</div>
-        <div class="cover-qr-desc">Scan for 20-question self-marking quizzes, digital flashcards & Edexcel model answers</div>
+        <strong>Formative Home Learning & Parental Partnership Protocol</strong>
+        For each weekly enquiry, pupils must complete their 12 retrieval questions under timed recall conditions before self-checking answers against the Department Marking Bank on Pages 19–22. Every question requires both <em>Line 1 (Core Fact)</em> and <em>Line 2 (Historical Explanation)</em>. Parents and carers are kindly requested to inspect that both lines are fully attempted and sign the ledger alongside the due date.
       </div>
     </div>
 
@@ -1198,6 +1269,7 @@ function buildHtml() {
   // =========================================================================
   USA_PEARSON_QUIZ_BANK.forEach((enq, idx) => {
     const pageNum = idx + 3;
+    const cleanTrap = (enq.examinerTrap || '').replace(/^Examiner Warning:\s*/i, '');
     html += `
   <div class="page-container" id="page-${pageNum}">
     <div class="running-header">
@@ -1236,7 +1308,8 @@ function buildHtml() {
     </div>
 
     <div class="examiner-trap-box">
-      <strong>⚠️ ${enq.examinerTrap.split(':')[0]}:</strong> ${enq.examinerTrap.split(':')[1] || ''}
+      <span class="trap-tag">EXAMINER WARNING</span>
+      <span class="trap-text">${cleanTrap}</span>
     </div>
 
     <div class="page-footer-strip">
@@ -1273,9 +1346,9 @@ function buildHtml() {
       <span>${mp.title}</span>
     </div>
 
-    <div class="lesson-meta-bar" style="margin-bottom: 2px;">
-      <h2 class="lesson-meta-title">Department Marking Bank: Part ${mpIdx + 1} of 4</h2>
-      <div class="lesson-meta-enquiry">Self-Assessment Answer Key • Award [✓] for Core Fact + [✓] for Accurate Historical Explanation</div>
+    <div class="mb-meta-bar">
+      <span><strong>Department Marking Bank (Part ${mpIdx + 1} of 4):</strong> ${mp.title}</span>
+      <span>Self-Assessment Key • Award [✓] Core Fact + [✓] Explanation</span>
     </div>
 
     <div class="mb-grid-4enq">
@@ -1314,48 +1387,139 @@ function buildHtml() {
   });
 
   // =========================================================================
-  // PAGE 23: KEY HISTORICAL PROTAGONISTS & DISCIPLINARY VOCABULARY
+  // PAGE 23: EDEXCEL PAPER 3 EXAMINATION STRATEGY (SECTION A & SECTION B)
   // =========================================================================
   html += `
   <div class="page-container" id="page-23">
     <div class="running-header">
-      <span>Key Historical Protagonists & Disciplinary Vocabulary</span>
-      <span>The USA, 1954–75 • Paper 3</span>
+      <span>Edexcel Paper 3 Examination Strategy</span>
+      <span>Section A & Section B Analytical Blueprints (1HI0/33)</span>
     </div>
 
-    <div class="lesson-meta-bar" style="margin-bottom: 3px;">
-      <h2 class="lesson-meta-title">Key Historical Protagonists Gallery</h2>
-      <div class="lesson-meta-enquiry">8 Pivotal Leaders of the Civil Rights Struggle and the War in Vietnam</div>
+    <div class="strat-meta-bar-23">
+      <span><strong>Edexcel Paper 3 Question Guide:</strong> Section A & Section B Technical Execution</span>
+      <span>Paper 3: 52 Marks Total • 1 Hour 20 Mins (80 Mins)</span>
     </div>
 
-    <div class="proto-grid-23">
-      ${PROTAGONISTS.map((p) => {
-        const imgBase64 = getUsaImageBase64(p.card);
-        return `
-      <div class="proto-card-23">
-        <img src="${imgBase64}" class="proto-img-23" alt="${p.name}">
-        <div class="proto-info-23">
-          <span class="proto-name-23">${p.name}</span>
-          <span class="proto-role-23">${p.role}</span>
-          <span class="proto-desc-23">${p.desc}</span>
+    <div class="strat-stack-23">
+      <!-- QUESTION 1: SOURCE INFERENCE -->
+      <div class="strat-card-full">
+        <div class="strat-card-header">
+          <span>Question 1: Contemporary Source Inference</span>
+          <span class="strat-badge">4 Marks • Target: 5 Mins</span>
         </div>
-      </div>`;
-      }).join('')}
-    </div>
+        <div class="strat-task-prompt">
+          <strong>Official Stem:</strong> <em>"Give two things you can infer from Source A about [historical topic]..."</em>
+        </div>
+        <div class="strat-grid-2col">
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Inference 1 [2 Marks: 1m Insight + 1m Verbatim Evidence]</div>
+            <div>• <strong>Valid Deduction:</strong> <em>"I can infer that Southern local authorities deliberately used administrative obstruction and literacy tests to disenfranchise Black citizens."</em></div>
+            <div>• <strong>Direct Supporting Quote:</strong> <em>"The source provides evidence for this when it states: '[quote precise factual phrase from Source A]'."</em></div>
+            <div>• <strong>Mark Rule:</strong> Never copy a quote without explaining the deduction; a quote alone earns 0/2.</div>
+          </div>
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Inference 2 [2 Marks: Distinct Second Deduction]</div>
+            <div>• <strong>Valid Deduction:</strong> <em>"Secondly, I can also infer that Black applicants faced widespread economic coercion and retaliatory violence from employers."</em></div>
+            <div>• <strong>Direct Supporting Quote:</strong> <em>"This is corroborated in the text where the author observes: '[quote distinct second phrase]'."</em></div>
+            <div>• <strong>Mark Rule:</strong> Must target an entirely different historical insight from Inference 1.</div>
+          </div>
+        </div>
+        <div class="strat-mini-trap">
+          <span class="trap-tag" style="padding: 1px 4px; font-size: 6.2pt;">EXAMINER RULE</span>
+          Never copy a quotation without explaining the inference behind it! A quote alone earns 0/2. Always pair 1 mark for inference + 1 mark for supportive detail.
+        </div>
+      </div>
 
-    <div class="lesson-meta-bar" style="margin: 3px 0 2px 0;">
-      <h2 class="lesson-meta-title">Tier 3 Disciplinary Vocabulary Bank</h2>
-      <div class="lesson-meta-enquiry">12 Essential Conceptual Terms with Phonetics and Historical Meanings</div>
-    </div>
+      <!-- QUESTION 2: CAUSAL EXPLANATION -->
+      <div class="strat-card-full">
+        <div class="strat-card-header">
+          <span>Question 2: Causal Explanation (Why an Event Happened)</span>
+          <span class="strat-badge">12 Marks • Target: 18 Mins</span>
+        </div>
+        <div class="strat-task-prompt">
+          <strong>Official Stem:</strong> <em>"Explain why [historical event/development occurred]... You may use [Stimulus 1] and [Stimulus 2]."</em>
+        </div>
+        <div class="strat-grid-3col">
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Paragraph 1: Stimulus 1</div>
+            <div>• <strong>Point:</strong> State first causal factor clearly.</div>
+            <div>• <strong>Evidence:</strong> Precise dates, acts, statistics.</div>
+            <div>• <strong>Explain:</strong> Causal mechanism linking to outcome.</div>
+            <div>• <strong>Link:</strong> Clinch direct connection to stem.</div>
+          </div>
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Paragraph 2: Stimulus 2</div>
+            <div>• <strong>Point:</strong> State second causal factor.</div>
+            <div>• <strong>Evidence:</strong> Detailed historical proof.</div>
+            <div>• <strong>Explain:</strong> How this escalated or forced change.</div>
+            <div>• <strong>Link:</strong> Reinforce causal importance.</div>
+          </div>
+          <div class="strat-subbox highlight-box">
+            <div class="strat-subbox-title" style="color: #991b1b;">Paragraph 3: Own Knowledge Gate</div>
+            <div>• <strong>MANDATORY LEVEL 4 GATE:</strong></div>
+            <div>• Introduce a substantial 3rd factor entirely from own knowledge (omitted from stimulus).</div>
+            <div>• Develop full PEEL causation linking to stem.</div>
+          </div>
+        </div>
+        <div class="strat-mini-trap">
+          <span class="trap-tag" style="padding: 1px 4px; font-size: 6.2pt;">FATAL TRAP</span>
+          Relying solely on the two printed stimulus points strictly caps your mark at Level 2/3 (maximum 7/12 marks). Grade 9 requires rich independent historical knowledge.
+        </div>
+      </div>
 
-    <div class="vocab-grid-23">
-      ${VOCABULARY.map(
-        (v) => `
-      <div class="vocab-card-23">
-        <span class="vocab-term-23">${v.term}</span> <span class="vocab-phon-23">${v.phon}</span>
-        <span class="vocab-def-23">${v.def}</span>
-      </div>`,
-      ).join('')}
+      <!-- QUESTION 3(a): SOURCE UTILITY -->
+      <div class="strat-card-full">
+        <div class="strat-card-header">
+          <span>Question 3(a): Contemporary Source Utility (COP Matrix)</span>
+          <span class="strat-badge">8 Marks • Target: 12 Mins</span>
+        </div>
+        <div class="strat-task-prompt">
+          <strong>Official Stem:</strong> <em>"How useful are Sources B and C for an enquiry into [historical issue]?"</em>
+        </div>
+        <div class="strat-grid-2col">
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Source B Evaluation [4 Marks: Content + Context + Provenance]</div>
+            <div>• <strong>Content &amp; Context:</strong> What specific details does the source give, and does your own knowledge corroborate or challenge them?</div>
+            <div>• <strong>Provenance (NOP):</strong> Nature (speech/report), Origin (author/date), Purpose (motive/audience). How does this affect its historical value?</div>
+            <div>• <strong>Enquiry Value:</strong> State how this specific source illuminates the enquiry topic.</div>
+          </div>
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Source C Evaluation [4 Marks: Content + Context + Provenance]</div>
+            <div>• <strong>Content &amp; Context:</strong> Analyse the specific claims, statistics, or visual evidence presented in the second source.</div>
+            <div>• <strong>Provenance (NOP):</strong> Evaluate author credibility, contemporary biases, and emotional intent within the historical context.</div>
+            <div>• <strong>Enquiry Value:</strong> Explain what Source C adds that Source B omitted.</div>
+          </div>
+        </div>
+        <div class="strat-mini-trap">
+          <span class="trap-tag" style="padding: 1px 4px; font-size: 6.2pt;">FATAL TRAP</span>
+          Never dismiss a source as "useless because it is biased"! Even biased propaganda is exceptionally useful for revealing official ideology, motives, and contemporary attitudes.
+        </div>
+      </div>
+
+      <!-- QUESTIONS 3(b) & 3(c): INTERPRETATIONS -->
+      <div class="strat-card-full">
+        <div class="strat-card-header">
+          <span>Questions 3(b) &amp; 3(c): Historians' Interpretations</span>
+          <span class="strat-badge">8 Marks Total (4m + 4m) • Target: 10 Mins</span>
+        </div>
+        <div class="strat-grid-2col">
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">3(b) Main Difference in Views [4 Marks • 5 Mins]</div>
+            <div>• <strong>State the precise clash:</strong> <em>"Interpretation 1 views [X] as [positive/caused by Y], arguing '[quote]', whereas Interpretation 2 contends [X] was [negative/caused by Z], stating '[quote]'."</em></div>
+            <div>• <strong>Direct Comparison:</strong> Use explicit comparative language showing the divergent emphasis.</div>
+          </div>
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">3(c) Why the Historians Disagree [4 Marks • 5 Mins]</div>
+            <div>• <strong>Explain the historiographical cause:</strong> <em>"The historians disagree because they relied on different contemporary sources or prioritised different aspects of the enquiry."</em></div>
+            <div>• <strong>Concrete Focus:</strong> e.g. Historian 1 focuses on presidential politics; Historian 2 on grassroots community protest.</div>
+          </div>
+        </div>
+        <div class="strat-mini-trap">
+          <span class="trap-tag" style="padding: 1px 4px; font-size: 6.2pt;">EXAMINER RULE</span>
+          Do NOT treat Interpretations 1 &amp; 2 as primary sources! They are modern historical accounts written after the event. Focus strictly on their historiographical arguments.
+        </div>
+      </div>
     </div>
 
     <div class="page-footer-strip">
@@ -1367,121 +1531,119 @@ function buildHtml() {
 `;
 
   // =========================================================================
-  // PAGE 24: EDEXCEL PAPER 3 EXAMINATION STRATEGY & ESSAY ARCHITECT
+  // PAGE 24: EDEXCEL PAPER 3 SYNOPTIC ESSAY ARCHITECT & BACK COVER
   // =========================================================================
   html += `
   <div class="page-container" id="page-24">
     <div class="running-header">
       <span>Edexcel Paper 3 Examination Strategy</span>
-      <span>Modern Depth Study (1HI0/33)</span>
+      <span>Synoptic Evaluation Essay Architect & Back Cover (1HI0/33)</span>
     </div>
 
-    <div class="lesson-meta-bar" style="margin-bottom: 2px;">
-      <h2 class="lesson-meta-title">Edexcel Paper 3 Examination Blueprint & Essay Architect</h2>
-      <div class="lesson-meta-enquiry">Mastering the 5 Essential Question Types for Grade 9 Success • 1 Hour 20 Mins (52 Marks Total)</div>
+    <div class="strat-meta-bar-24">
+      <span><strong>Question 3(d) Synoptic Essay Architect:</strong> Grade 9 Evaluative Structure</span>
+      <span>16 Marks Content + 4 Marks SPaG • Target: 30 Mins</span>
     </div>
 
     <div class="strat-stack-24">
-      <!-- TIMING BAR -->
-      <div class="strat-timing-bar">
-        <span>⏱️ Paper 3 Exam Timing Allocation (80 Minutes Total)</span>
-        <span>Section A: 23 Mins (16m) • Section B: 52 Mins (36m) • Review: 5 Mins</span>
-      </div>
-
-      <!-- SECTION A -->
-      <div class="strat-card-24">
-        <div class="strat-header-24">
-          <span>Section A: Contemporary Source Inference & Causal Explanation</span>
-          <span class="strat-header-badge">Questions 1 & 2 • 16 Marks (23 Mins)</span>
-        </div>
-        <div class="strat-grid-24">
-          <div class="strat-col-item">
-            <strong>Question 1: Source Inference [4 Marks • Target: 5 Mins]</strong>
-            <span>Give two things you can infer from Source A about [enquiry topic].</span>
-            <div>• <span class="stem">Inference 1:</span> "I can infer that [historical insight]..."</div>
-            <div>• <span class="stem">Detail:</span> "The source states that '[direct supportive quote]'."</div>
-            <div>• <span class="stem">Inference 2:</span> "Secondly, I can infer that [second insight]..."</div>
-            <div>• <span class="stem">Detail:</span> "This is shown when the author notes '[second quote]'."</div>
-            <div class="trap">⚠️ Fatal Trap: Never copy a quote without explaining the inference behind it! (1m inference + 1m quote = 2m each).</div>
-          </div>
-          <div class="strat-col-item">
-            <strong>Question 2: Explain Why [12 Marks • Target: 18 Mins]</strong>
-            <span>Explain why [event happened]... You may use [Stimulus 1] and [Stimulus 2].</span>
-            <div>• <strong>3 Detailed PEEL Paragraphs:</strong> Point, Evidence (dates/names), Explain causation, Link to stem.</div>
-            <div>• <strong>Paragraph 1 & 2:</strong> Develop both stimulus points with rich historical context.</div>
-            <div>• <strong>Paragraph 3 (Crucial Level 4 Gate):</strong> You MUST introduce a substantial 3rd independent factor from own knowledge (not in stimulus).</div>
-            <div class="trap">⚠️ Fatal Trap: Relying only on the two stimulus points caps your answer at Level 2/3 (max 7/12 marks).</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION B: UTILITY & INTERPRETATIONS -->
-      <div class="strat-card-24">
-        <div class="strat-header-24">
-          <span>Section B: Source Utility & Historical Interpretation Contrast</span>
-          <span class="strat-header-badge">Questions 3(a), 3(b) & 3(c) • 16 Marks (22 Mins)</span>
-        </div>
-        <div class="strat-grid-24">
-          <div class="strat-col-item">
-            <strong>Question 3(a): Source Utility [8 Marks • Target: 12 Mins]</strong>
-            <span>How useful are Sources B & C for an enquiry into [topic]?</span>
-            <div>• <strong>Evaluate Both Sources Separately:</strong> Content, Context, and Provenance (COP).</div>
-            <div>• <span class="stem">Content:</span> What does the source say, and does own knowledge corroborate it?</div>
-            <div>• <span class="stem">Provenance (NOP):</span> Nature (type), Origin (author/date), Purpose (motive).</div>
-            <div class="trap">⚠️ Fatal Trap: Never say a source is "biased and therefore useless". Even propaganda is highly useful for revealing official intention and attitudes!</div>
-          </div>
-          <div class="strat-col-item">
-            <strong>Questions 3(b) & 3(c): Interpretations [8 Marks • Target: 10 Mins]</strong>
-            <div>• <strong>3(b) Main Difference [4 Marks • 5 Mins]:</strong> State the precise difference in views: <span class="stem">"Interpretation 1 views [X] as [positive/caused by Y], stating '[quote]', whereas Interpretation 2 argues [X] was [negative/caused by Z], stating '[quote]'."</span></div>
-            <div>• <strong>3(c) Reason for Difference [4 Marks • 5 Mins]:</strong> Explain why historians differ: <span class="stem">"The historians disagree because they relied on different evidence or prioritized different aspects (e.g. federal politics vs. grassroots protest)."</span></div>
-            <div class="trap">⚠️ Fatal Trap: Do not treat interpretations as primary sources; evaluate their historiographical emphasis!</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- SECTION B: 20-MARK SYNOPTIC ESSAY -->
+      <!-- 20-MARK ESSAY ARCHITECT CARD -->
       <div class="strat-card-24">
         <div class="strat-header-24">
           <span>Question 3(d): The 20-Mark Synoptic Evaluation Essay</span>
-          <span class="strat-header-badge">16 Marks Content + 4 Marks SPaG • Target: 30 Mins</span>
+          <span class="strat-header-badge">16m Content + 4m SPaG • 30 Mins</span>
         </div>
-        <div class="strat-essay-box">
-          <div style="font-weight: 700; color: #0f172a; margin-bottom: 2px;">
-            The 4-Paragraph Synoptic Architecture: "How far do you agree with Interpretation 2 about [topic]?"
+        <div style="font-family: 'Georgia', serif; font-size: 8.4pt; color: #1e293b; margin-bottom: 2px;">
+          <strong>Official Stem:</strong> <em>"How far do you agree with Interpretation 2 about [historical issue]? Explain your answer, using both interpretations and your knowledge of the historical context."</em>
+        </div>
+
+        <div class="strat-essay-grid-24">
+          <div class="strat-essay-step-24">
+            <div class="strat-step-num">Step 1: Agree with Target Interpretation (Interp 2)</div>
+            <div>• <strong>Validate Thesis:</strong> Explain why Interpretation 2 provides valid historical insight into the question.</div>
+            <div>• <strong>Embed Quotations:</strong> Quote directly from the interpretation to illustrate its causal focus.</div>
+            <div>• <strong>Deploy Own Knowledge:</strong> Corroborate with 2–3 precise historical facts (dates, acts, data, key figures).</div>
           </div>
-          <div class="strat-essay-grid">
-            <div class="strat-essay-step">
-              <strong>Paragraph 1: Agree with Target (Interp 2)</strong>
-              Explain why Interpretation 2 is convincing. Quote directly from the text. Corroborate with 2–3 precise historical facts from your own knowledge (dates, statistics, protagonists) to validate its central argument.
-            </div>
-            <div class="strat-essay-step">
-              <strong>Paragraph 2: Counter-Argue (Interp 1)</strong>
-              Examine the alternative viewpoint in Interpretation 1. Quote directly. Provide conflicting historical evidence demonstrating that this alternative perspective is also valid and holds substantial explanatory power.
-            </div>
-            <div class="strat-essay-step">
-              <strong>Paragraph 3: Broader Causal Context</strong>
-              Integrate wider specification factors not mentioned in either interpretation (e.g. economic boycotts, media coverage, international pressure, legislative deadlock). Show comprehensive specification command.
-            </div>
-            <div class="strat-essay-step">
-              <strong>Paragraph 4: Historical Verdict & Criteria</strong>
-              Deliver a definitive, criteria-based conclusion. Never sit on the fence! Establish clear historical criteria (e.g. long-term structural cause vs. short-term trigger; political reform vs. economic reality) to justify which view is stronger.
-            </div>
+          <div class="strat-essay-step-24">
+            <div class="strat-step-num">Step 2: Alternative Viewpoint (Interpretation 1)</div>
+            <div>• <strong>Explore Counter-Argument:</strong> Examine the alternative perspective presented in Interpretation 1.</div>
+            <div>• <strong>Embed Quotations:</strong> Quote directly to demonstrate where Interpretation 1 places primary causal emphasis.</div>
+            <div>• <strong>Deploy Own Knowledge:</strong> Provide conflicting historical evidence validating this alternative view.</div>
           </div>
+          <div class="strat-essay-step-24">
+            <div class="strat-step-num">Step 3: Broader Causal Context &amp; Synthesis</div>
+            <div>• <strong>Wider Factors:</strong> Introduce decisive specification factors omitted by both interpretations (e.g. federal action, media scrutiny, economic boycotts).</div>
+            <div>• <strong>Panoramic Scope:</strong> Demonstrate comprehensive specification knowledge beyond the two extracts.</div>
+          </div>
+          <div class="strat-essay-step-24">
+            <div class="strat-step-num">Step 4: Criteria-Based Historical Verdict</div>
+            <div>• <strong>Definitive Conclusion:</strong> Deliver a decisive judgement on "how far" you agree. Never sit on the fence!</div>
+            <div>• <strong>Establish Criteria:</strong> Use historical benchmarks (short-term spark vs. long-term structure; rhetoric vs. reality).</div>
+            <div>• <strong>Clinch Verdict:</strong> Justify why one interpretation ultimately offers superior explanatory power.</div>
+          </div>
+        </div>
+
+        <!-- Grade 9 Evaluative Synthesis Model -->
+        <div class="strat-model-para-24">
+          <div class="strat-model-tag">Grade 9 Evaluative Synthesis Model (Sample Paragraph Excerpt):</div>
+          <em>"Interpretation 2 offers substantial explanatory weight by arguing that northern urban unrest stemmed directly from deep-seated economic exclusion rather than civil rights agitation. Historian X correctly identifies that 'de facto housing segregation and discriminatory job markets left 80% of urban Black families below the poverty line.' This is powerfully corroborated by the 1968 Kerner Commission report, which warned of 'two societies, one black, one white, separate and unequal,' proving that federal legislative victories like the 1964 Civil Rights Act had failed to address structural economic disenfranchisement."</em>
+        </div>
+
+        <!-- Grade 9 Sentence Starters & Discourse Markers -->
+        <div class="strat-essay-phrases">
+          <div class="strat-phrase-col">
+            <div class="strat-phrase-title">Evaluating Target (Interp 2)</div>
+            • <em>"Interpretation 2 offers substantial explanatory weight regarding..."</em><br>
+            • <em>"This argument is powerfully corroborated by..."</em>
+          </div>
+          <div class="strat-phrase-col">
+            <div class="strat-phrase-title">Counter-Arguing (Interp 1)</div>
+            • <em>"Conversely, Interpretation 1 prioritises the decisive role of..."</em><br>
+            • <em>"A critical limitation of Interpretation 2 is that it overlooks..."</em>
+          </div>
+          <div class="strat-phrase-col">
+            <div class="strat-phrase-title">Substantiating Verdict</div>
+            • <em>"When evaluated against the benchmark of [criterion], the balance of evidence..."</em><br>
+            • <em>"Ultimately, while Interp 1 accurately identifies X, Interp 2 is more persuasive because Y..."</em>
+          </div>
+        </div>
+
+        <div class="strat-criteria-box">
+          <strong>Level 4 (Grade 9) Examiner Mark Scheme Requirements:</strong>
+          Thoroughly evaluates Interpretation 2 using both interpretations and rich contextual own knowledge • Deploys a balanced, analytical argument exploring strengths and limitations • Reaches a sustained, criteria-led judgement on "how far" the target interpretation is valid.
         </div>
       </div>
 
-      <!-- EXAMINER PITFALLS STRIP -->
-      <div class="strat-traps-bar">
-        <strong>⚠️ 5 Fatal Examiner Pitfalls to Avoid:</strong>
-        1. Quoting without inferring on Q1 • 2. Omitting independent own knowledge on Q2 • 3. Calling sources "useless" on Q3(a) • 4. Paraphrasing without contrasting on Q3(b) • 5. Writing a one-sided essay without criteria on Q3(d).
+      <!-- EXAMINER PITFALLS RED STRIP -->
+      <div class="strat-traps-bar-fixed">
+        <span class="trap-tag" style="background: #b91c1c;">EXAMINER PITFALLS</span>
+        <span class="strat-traps-list">
+          <strong>5 Fatal Traps to Avoid:</strong> 1. Quoting without inferring on Q1 • 2. Omitting independent own knowledge on Q2 (capped at 7/12) • 3. Calling sources "useless" on Q3(a) • 4. Paraphrasing without contrasting on Q3(b) • 5. Writing a one-sided essay without criteria on Q3(d).
+        </span>
       </div>
 
-      <!-- ARCHIVAL SEAL -->
+      <!-- DIGITAL REVISION HUB CARD (RELOCATED FROM COVER) -->
+      <div class="back-hub-card">
+        <div class="back-hub-qr">${qrSvg}</div>
+        <div class="back-hub-info">
+          <div class="back-hub-title">Digital Revision Hub &amp; Interactive Quizzes</div>
+          <div class="back-hub-desc">
+            Scan for 20-question self-marking retrieval quizzes, digital flashcards, and verified Edexcel Paper 3 model answers for all 16 enquiries.
+          </div>
+          <div class="back-hub-features">
+            <span class="hub-feature-tag">✓ 16 Self-Marking Quizzes</span>
+            <span class="hub-feature-tag">✓ Digital Flashcard Vault</span>
+            <span class="hub-feature-tag">✓ Paper 3 Model Bank</span>
+          </div>
+          <div class="back-hub-url">the-history-revision-hub.netlify.app/?unit=usa</div>
+        </div>
+      </div>
+
+      <!-- DEPARTMENT ARCHIVAL SEAL -->
       <div class="archival-seal-wrap">
         <div class="archival-seal-badge">
           OFFICIAL DEPARTMENT ARCHIVAL REVISION STANDARD • 1HI0/33
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; line-height: 1.2;">
+        <div class="archival-seal-text">
           Verified 100% compliant with Pearson Edexcel GCSE (9–1) Specification. 192 Curated Dual-Line Retrieval Prompts across all 16 Enquiries.
         </div>
       </div>
