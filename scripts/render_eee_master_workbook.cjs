@@ -32,7 +32,6 @@ const path = require('path');
 const QRCode = require('qrcode');
 const puppeteer = require('puppeteer');
 const { PDFDocument } = require('pdf-lib');
-const { PDFDocument } = require('pdf-lib');
 const { ENQUIRY_STAGES, QUESTION_PROBABILITIES } = require('./enhance_eee_workbook.cjs');
 const {
   renderStandardFrontCover,
@@ -926,6 +925,15 @@ const KEY_TOPICS_DATA = {
           stems:
             'One key feature was the massive Crown debt inherited from Mary I... Specifically, the debt stood at...',
         },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §2.3]',
+          stem: 'Describe one key feature of the challenges Elizabeth faced regarding marriage in 1558.',
+          guidance:
+            'Point (Intense pressure to produce a Protestant heir and secure foreign alliances) &bull; Fact (Marriage to an English noble created factional jealousy; marrying a foreign Catholic prince risked foreign domination like Mary I and Philip II).',
+          stems:
+            'One key feature was the intense political dilemma over marriage... Specifically, Elizabeth was wary because...',
+        },
         rightExam: {
           provenance: 'Edexcel June 2018 (Q2)',
           type: 'explain_why_12',
@@ -1031,6 +1039,15 @@ const KEY_TOPICS_DATA = {
             'Point (A set of 57 practical instructions issued by William Cecil to enforce church conformity) &bull; Fact (Commanded clergy to preach royal supremacy, keep an English Bible, report recusants, and ban unapproved preaching).',
           stems:
             'One key feature of the Royal Injunctions was to enforce uniform Protestant practice... Specifically, they ordered that...',
+        },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §1.2]',
+          stem: 'Describe one key feature of the Act of Uniformity (1559).',
+          guidance:
+            'Point (Enforced identical church worship and prayer book throughout England) &bull; Fact (Made church attendance compulsory on Sundays with a one-shilling recusancy fine and reinstated the 1552 Protestant Book of Common Prayer).',
+          stems:
+            'One key feature was the legal enforcement of uniform church services... Specifically, the Act established that...',
         },
         rightExam: {
           provenance: 'Edexcel SAMs (Q3)',
@@ -1138,6 +1155,15 @@ const KEY_TOPICS_DATA = {
           stems:
             'One key feature of recusancy was refusal to attend the new Anglican church... Specifically, recusants held secret Latin masses and paid...',
         },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §1.3]',
+          stem: 'Describe one key feature of the Puritan challenge over crucifixes.',
+          guidance:
+            'Point (Puritans objected to crucifixes as Catholic idolatry representing graven images) &bull; Fact (Puritan bishops threatened to resign when Elizabeth ordered crucifixes displayed in every church, forcing her to compromise by removing them from parish churches).',
+          stems:
+            'One key feature was strong Puritan resistance to visual symbols of Catholicism... Specifically, Puritans argued that...',
+        },
         rightExam: {
           provenance: 'Edexcel June 2019 (Q2)',
           type: 'explain_why_12',
@@ -1243,6 +1269,15 @@ const KEY_TOPICS_DATA = {
             'Point (A commission held at York and Westminster to investigate whether Mary plotted Darnley’s murder) &bull; Fact (Elizabeth reached a "not proven" verdict; this allowed her to keep Mary detained in England without executing an anointed queen).',
           stems:
             'One key feature of the Casket Letters inquiry was to determine Mary’s guilt... Specifically, the inquiry concluded with a verdict of...',
+        },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §2.2]',
+          stem: 'Describe one key feature of Mary, Queen of Scots’ arrival in England in May 1568.',
+          guidance:
+            'Point (Mary fled Scotland after Protestant nobles defeated her and sought Elizabeth’s military aid) &bull; Fact (Elizabeth placed Mary under house arrest in the north because her presence as a legitimate Catholic claimant threatened English stability).',
+          stems:
+            'One key feature of Mary’s arrival was the acute security crisis it posed... Specifically, Elizabeth decided to...',
         },
         rightExam: {
           provenance: 'Edexcel June 2022 (Q3a)',
@@ -1417,6 +1452,15 @@ const KEY_TOPICS_DATA = {
           stems:
             'One key feature was Walsingham’s systematic interception of secret communications... Specifically, his cryptographer Thomas Phelippes...',
         },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §2.1]',
+          stem: 'Describe one key feature of the Ridolfi Plot (1571).',
+          guidance:
+            'Point (A conspiracy led by Italian banker Roberto Ridolfi to assassinate Elizabeth and place Mary on the throne) &bull; Fact (Planned for 10,000 Spanish troops under the Duke of Alba to invade; Cecil uncovered the cipher letters and the Duke of Norfolk was executed).',
+          stems:
+            'One key feature was the conspiracy to depose Elizabeth with Spanish military backing... Specifically, the plotters planned to...',
+        },
         rightExam: {
           provenance: 'Edexcel June 2018 (Q2)',
           type: 'explain_why_12',
@@ -1521,6 +1565,15 @@ const KEY_TOPICS_DATA = {
             'Point (Drake captured Spain’s richest treasure galleon in the Pacific during his circumnavigation) &bull; Fact (He seized 80lb of gold, 26 tons of silver, and jewels worth £140,000, bringing it back to Elizabeth on the Golden Hind).',
           stems:
             'One key feature was the colossal value of the treasure seized... Specifically, Drake intercepted the treasure ship off Ecuador and took...',
+        },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §1.2]',
+          stem: 'Describe one key feature of English privateering against Spanish treasure fleets.',
+          guidance:
+            'Point (Elizabeth secretly backed English captains to capture Spanish silver without open declaration of war) &bull; Fact (Captains like Francis Drake held royal letters of marque, bringing vast riches to England and crippling Philip II’s Atlantic supply lines).',
+          stems:
+            'One key feature was the covert state sponsorship of privateering raids... Specifically, English privateers...',
         },
         rightExam: {
           provenance: 'Edexcel June 2023 (Q3a)',
@@ -1628,6 +1681,15 @@ const KEY_TOPICS_DATA = {
           stems:
             'One key feature was the devastating destruction of Spanish naval shipping... Specifically, Drake sailed directly into Cadiz harbour and...',
         },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §1.1]',
+          stem: 'Describe one key feature of the Treaty of Joinville (1584).',
+          guidance:
+            'Point (A secret alliance between Philip II of Spain and the French Catholic League) &bull; Fact (Both parties agreed to eradicate Protestantism, isolating England and removing France as a counterweight against Spanish aggression).',
+          stems:
+            'One key feature was the secret Catholic alliance signed between Spain and France... Specifically, the Treaty of Joinville meant that...',
+        },
         rightExam: {
           provenance: 'Edexcel November 2020 (Q2)',
           type: 'explain_why_12',
@@ -1733,6 +1795,15 @@ const KEY_TOPICS_DATA = {
             'Point (Eight burning ships filled with pitch and gunpowder were launched into the anchored Spanish fleet) &bull; Fact (Spanish captains panicked, cut their anchor cables, and broke their defensive crescent formation, scattering into the open sea).',
           stems:
             'One key feature was the psychological panic caused by the fireships... Specifically, Spanish captains cut their anchors and broke...',
+        },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §2.2]',
+          stem: 'Describe one key feature of English naval tactics during the Armada campaign.',
+          guidance:
+            'Point (English ships utilized superior maneuverability and long-range gunnery) &bull; Fact (English race-built galleons kept out of Spanish grappling range, pounding Spanish vessels with culverin broadsides and causing severe damage at Gravelines).',
+          stems:
+            'One key feature was the reliance on long-distance artillery rather than boarding... Specifically, English commanders...',
         },
         rightExam: {
           provenance: 'Edexcel June 2019 (Q3b)',
@@ -1936,6 +2007,15 @@ const KEY_TOPICS_DATA = {
           stems:
             'One key feature was that public playhouses attracted all social classes... Specifically, poor groundlings stood in the yard for 1 penny, while wealthy gentry...',
         },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §2.2]',
+          stem: 'Describe one key feature of sports and pastimes in Elizabethan England.',
+          guidance:
+            'Point (Pastimes were strictly divided along social class lines) &bull; Fact (Nobles participated in hunting, hawking, and fencing, while ordinary folk gathered for brutal blood sports like bear-baiting, cock-fighting, and football).',
+          stems:
+            'One key feature was the clear social division in leisure activities... Specifically, while the nobility engaged in...',
+        },
         rightExam: {
           provenance: 'Edexcel June 2022 (Q2)',
           type: 'explain_why_12',
@@ -2041,6 +2121,15 @@ const KEY_TOPICS_DATA = {
             'Point (A landmark law that placed legal responsibility on local towns to find work for the unemployed) &bull; Fact (Parishes had to provide raw wool and hemp for the able-bodied to spin, and build Houses of Correction for those who refused to work).',
           stems:
             'One key feature of the 1576 Poor Act was distinguishing between the unemployed and the lazy... Specifically, it forced towns to provide raw materials like wool and build...',
+        },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §1.1]',
+          stem: 'Describe one key feature of the distinction between the ‘deserving’ and ‘idle’ poor.',
+          guidance:
+            'Point (Elizabethan authorities distinguished between those unable to work and those deemed lazy) &bull; Fact (The impotent poor received parish relief and shelter, whereas sturdy beggars and vagabonds were publicly whipped and sent to Houses of Correction).',
+          stems:
+            'One key feature was the official separation of the poor into two categories... Specifically, the law differentiated between...',
         },
         rightExam: {
           provenance: 'Edexcel November 2020 (Q3b)',
@@ -2148,6 +2237,15 @@ const KEY_TOPICS_DATA = {
           stems:
             'One key feature was the immense geographical and financial success of the voyage... Specifically, Drake sailed into the Pacific and returned with...',
         },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §2.1]',
+          stem: 'Describe one key feature of the search for the Northwest Passage.',
+          guidance:
+            'Point (English navigators sought an ice-free northern sea route to Asia to bypass Spanish trade routes) &bull; Fact (Explorers Martin Frobisher and John Davis made three expeditions to northern Canada, charting Arctic waters despite failing to reach China).',
+          stems:
+            'One key feature was the economic motivation to find a northern trade route to Asia... Specifically, explorers like Frobisher...',
+        },
         rightExam: {
           provenance: 'Edexcel November 2021 (Q2)',
           type: 'explain_why_12',
@@ -2253,6 +2351,15 @@ const KEY_TOPICS_DATA = {
             'Point (The colony faced starvation after the flagship *Tiger* flooded, ruining their food seeds) &bull; Fact (Colonists lacked farming skills, alienated local Secotan tribes led by Wingina, and had to be evacuated back to England by Francis Drake in 1586).',
           stems:
             'One key feature was the rapid collapse of food supplies and local relations... Specifically, after the *Tiger* flooded their seeds, the colonists angered Chief Wingina and were rescued by...',
+        },
+        featureC: {
+          provenance: 'Edexcel Specification Focus',
+          ref: '[Textbook §3.2]',
+          stem: 'Describe one key feature of the ‘Lost Colony’ of Roanoke (1587–90).',
+          guidance:
+            'Point (A second settlement of 117 men, women, and children led by John White disappeared completely) • Fact (Delayed by the Spanish Armada, White returned in 1590 to find the fort abandoned with only the word ‘CROATOAN’ carved into a palisade post).',
+          stems:
+            'One key feature was the complete and mysterious disappearance of the second colony... Specifically, when John White returned in 1590...',
         },
         rightExam: {
           provenance: 'Edexcel June 2018 (Q3a)',
@@ -2392,14 +2499,15 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
 function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
   const featAProb = enq.featureA.probability || '★ HIGH PROBABILITY';
   const featBProb = enq.featureB.probability || 'CORE SPECIFICATION FOCUS';
+  const featCProb = enq.featureC?.probability || 'HIGH-YIELD SPECIFICATION FOCUS';
 
   return `
-  <!-- SHORT-TARIFF EXAM PRACTICE: 2x Q1 FEATURE [2m+2m] + VOCAB + TIMELINE (PAGE ${pageNum}) -->
-  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+  <!-- SHORT-TARIFF EXAM PRACTICE: 3x Q1 FEATURE [2m+2m+2m] + TIMELINE MISSION (PAGE ${pageNum}) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 3.5mm 6mm 2.5mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       
       <!-- Top Exam Header -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
             KEY TOPIC ${keyTopicNum}.${enq.enquiryNum} &bull; SHORT-TARIFF EXAM PRACTICE
@@ -2409,115 +2517,118 @@ function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
           </span>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.2;">
-            Question 1: Describe Two Features [2 &times; 2 marks &bull; 6 mins]
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.2;">
+            Question 1 Practice: Describe Three Key Features [3 &times; 2 marks &bull; 9 mins]
           </h2>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 5px; border-radius: 2px;">
-            Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4 ]
+            Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 6 ]
           </span>
         </div>
       </div>
 
       <!-- Question 1(a): Describe One Key Feature [2 marks] -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 1.5px;">
           <div style="display: flex; align-items: center; gap: 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
               &bull; Question 1(a): Describe One Key Feature [2 marks &bull; 3 mins]
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
               ${featAProb}
             </span>
           </div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
             ${enq.featureA.provenance || 'EDEXCEL PAPER 2'}
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
           ${enq.featureA.stem}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
           <strong>Target Guidance:</strong> ${enq.featureA.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Sentence Stems:</strong> ${enq.featureA.stems}
         </div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
       </div>
 
       <!-- Question 1(b): Describe One Key Feature [2 marks] -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 1.5px;">
           <div style="display: flex; align-items: center; gap: 5px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
               &bull; Question 1(b): Describe One Key Feature [2 marks &bull; 3 mins]
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
               ${featBProb}
             </span>
           </div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
             ${enq.featureB.provenance || 'EDEXCEL PAPER 2'}
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
           ${enq.featureB.stem}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
           <strong>Target Guidance:</strong> ${enq.featureB.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Sentence Stems:</strong> ${enq.featureB.stems}
         </div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
-        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
       </div>
 
-      <!-- Core Disciplinary Vocabulary Bridge -->
-      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #fdfdfd; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Core Specification Vocabulary Distinction
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">PEARSON EDEXCEL SPECIFICATION</span>
+      <!-- Question 1(c): Describe One Key Feature [2 marks] -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 1.5px;">
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              &bull; Question 1(c): Describe One Key Feature [2 marks &bull; 3 mins]
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+              ${featCProb}
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+            ${enq.featureC?.provenance || 'EDEXCEL PAPER 2'}
+          </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; line-height: 1.18;">
-          ${enq.vocabPrompt}
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
+          ${enq.featureC?.stem}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+          <strong>Target Guidance:</strong> ${enq.featureC?.guidance}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #1e3a8a; line-height: 1.15; margin: 1px 0;">
-          <strong>Sentence Starter:</strong> <em>While ${enq.vocabTermA} refers specifically to..., ${enq.vocabTermB} operated differently because...</em>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${enq.featureC?.stems}
         </div>
-        <div class="task-line" style="height: 7.0mm;"></div>
-        <div class="task-line" style="height: 7.0mm;"></div>
-        <div class="task-line" style="height: 7.0mm;"></div>
-        <div class="task-line" style="height: 7.0mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
+        <div class="task-line" style="height: 6.5mm;"></div>
       </div>
 
-      <!-- Timeline Mission Box with Draft Sketchpad -->
-      <div style="border: 1.2px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
-            Timeline Mission &bull; Pages 2–3
+      <!-- Timeline Mission (Medicine-Style Analytical Navigation Strip) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+            Timeline Mission
           </span>
-          <span style="border: 1px solid #000000; padding: 1px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">
-            [ &nbsp;&nbsp; ] Sketch Completed
-          </span>
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; line-height: 1.22;">
-          ${enq.rightExam.timelineMission}
-        </div>
-        <div style="border-top: 1px dashed #94a3b8; height: 38mm; margin-top: 3px; background: #fafafa; border-radius: 2px; display: flex; align-items: center; justify-content: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
-            Optional Draft Sketchpad &bull; Practice your visual dual-coding icon before transferring to Pages 2–3
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
+            ${enq.rightExam.timelineMission}
           </span>
         </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
+          &larr; Pages 2–3
+        </span>
       </div>
 
       ${renderFooterStrip(pageNum, quip, 24)}
@@ -2531,9 +2642,9 @@ function renderExtendedWritingPages(enq, leftPageNum, rightPageNum, footers, key
   const maxScore = is12m ? '12' : '20';
   const rightProb = rx.probability || '★ HIGH-YIELD FORECAST';
 
-  // 14 Ruled lines for first page
+  // 17 Ruled lines for first page (Word Bank omitted from workbook; preserved in digital app)
   const leftTaskLines = Array.from(
-    { length: 14 },
+    { length: 17 },
     () => `
       <div class="lined-row">
         <div class="lined-margin-cell">&nbsp;</div>
@@ -2613,18 +2724,12 @@ function renderExtendedWritingPages(enq, leftPageNum, rightPageNum, footers, key
           .join('')}
       </div>
 
-      <!-- Connectives & Word Bank -->
-      <div style="border: 1px solid #000000; padding: 2px 5px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.18;">
-        <div><strong>Analytical Connectives:</strong> ${rx.connectives}</div>
-        <div style="margin-top: 1px;"><strong>Word Bank:</strong> ${rx.wordBank}</div>
-      </div>
-
       <!-- Ruled Task Lines Prompt -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #222222; margin: 1px 0;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #222222; margin: 2px 0 1px 0;">
         <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on facing page for full timed response):
       </div>
 
-      <!-- 14 Ruled Lines with 22mm Left Margin -->
+      <!-- 17 Ruled Lines with 22mm Left Margin -->
       <div class="lined-page-grid" style="flex: 1; min-height: 0;">
         ${leftTaskLines}
       </div>
@@ -2664,12 +2769,12 @@ function renderSynopticVaultPages(data, footers) {
 
   function renderDrillColumn(enq, startNum) {
     return `
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border: 1.2px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff;">
-        <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between; align-items: center;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff;">
+        <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; color: #000000;">
             Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
             [ &nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
           </span>
         </div>
@@ -2679,14 +2784,14 @@ function renderSynopticVaultPages(data, footers) {
               (item, qi) => `
           <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; padding-top: 1px; min-height: 0;">
             <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 4px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #000000; line-height: 1.15;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #000000; line-height: 1.15;">
                 ${startNum + qi}. ${item.q}
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #555555; white-space: nowrap; flex-shrink: 0; padding-top: 1px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; color: #555555; white-space: nowrap; flex-shrink: 0; padding-top: 1px;">
                 [ ] R1 &nbsp; [ ] R2 &nbsp; [ ] R3
               </span>
             </div>
-            <div style="flex: 1; min-height: 3.8mm;"></div>
+            <div style="flex: 1; min-height: 2.2mm;"></div>
             <div style="border-bottom: 1.2px dotted #000000; width: 100%; margin-bottom: 1px;"></div>
           </div>
           `,
@@ -2695,6 +2800,20 @@ function renderSynopticVaultPages(data, footers) {
         </div>
       </div>`;
   }
+
+  // Generate 40-question answers for upside-down key
+  const ans1 = enq1.doNow
+    .map((item, idx) => `<strong>${1 + idx}.</strong> ${item.a}`)
+    .join(' &bull; ');
+  const ans2 = enq2.doNow
+    .map((item, idx) => `<strong>${11 + idx}.</strong> ${item.a}`)
+    .join(' &bull; ');
+  const ans3 = enq3.doNow
+    .map((item, idx) => `<strong>${21 + idx}.</strong> ${item.a}`)
+    .join(' &bull; ');
+  const ans4 = enq4.doNow
+    .map((item, idx) => `<strong>${31 + idx}.</strong> ${item.a}`)
+    .join(' &bull; ');
 
   // Page 22 (Enquiries 1 & 2)
   const page22Html = `
@@ -2716,7 +2835,7 @@ function renderSynopticVaultPages(data, footers) {
           </h2>
         </div>
 
-        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
+        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
           <strong>Classroom Protocol:</strong> Complete 5–10 questions as a Do Now bell-ringer at the start of each lesson, or quiz yourself across the term. Tick the review checkboxes (<strong>R1, R2, R3</strong>) after each spaced retrieval attempt.
         </div>
       </div>
@@ -2730,11 +2849,11 @@ function renderSynopticVaultPages(data, footers) {
     </div>
   </div>`;
 
-  // Page 23 (Enquiries 3 & 4)
+  // Page 23 (Enquiries 3 & 4 + Upside-down Quick-Check Answer Key)
   const page23Html = `
   <!-- PAGE 23: SYNOPTIC RETRIEVAL VAULT PART 2 (ENQUIRIES 3 & 4) -->
   <div class="page page-container recto-page" id="page-23" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
@@ -2750,7 +2869,7 @@ function renderSynopticVaultPages(data, footers) {
           </h2>
         </div>
 
-        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
+        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
           <strong>Spaced Retention Target:</strong> Test yourself on previous weeks’ topics before starting a new enquiry. Frequent low-stakes retrieval prevents forgetting and secures Level 4 factual precision.
         </div>
       </div>
@@ -2758,6 +2877,22 @@ function renderSynopticVaultPages(data, footers) {
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; min-height: 0;">
         ${renderDrillColumn(enq3, 21)}
         ${renderDrillColumn(enq4, 31)}
+      </div>
+
+      <!-- Upside-Down Quick-Check Answer Key (Rotated 180° for self-marking in green pen) -->
+      <div style="transform: rotate(180deg); margin: 3px 0 1px 0; border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #f8fafc; font-family: 'Inter', sans-serif; font-size: 5.3pt; line-height: 1.22; color: #1e293b; box-sizing: border-box;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 0.8px solid #000000; padding-bottom: 1px; margin-bottom: 1.5px;">
+          <strong style="text-transform: uppercase; font-size: 5.6pt; color: #000000; letter-spacing: 0.3px;">
+            🔄 Quick-Check Answer Key &bull; Key Topic ${data.keyTopicNum} Synoptic Vault (Questions 1–40)
+          </strong>
+          <span style="font-size: 4.8pt; font-style: italic; color: #64748b;">Rotate booklet 180&deg; to self-mark retrieval drills in green pen</span>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px 8px;">
+          <div><strong style="color: #000000;">Enquiry ${data.keyTopicNum}.1 (Q1–10):</strong> ${ans1}</div>
+          <div><strong style="color: #000000;">Enquiry ${data.keyTopicNum}.2 (Q11–20):</strong> ${ans2}</div>
+          <div><strong style="color: #000000;">Enquiry ${data.keyTopicNum}.3 (Q21–30):</strong> ${ans3}</div>
+          <div><strong style="color: #000000;">Enquiry ${data.keyTopicNum}.4 (Q31–40):</strong> ${ans4}</div>
+        </div>
       </div>
 
       ${renderFooterStrip(23, footers[22], 24)}
@@ -3649,54 +3784,66 @@ function buildEeeKeyTopicWorkbook(ktId) {
 
     const featAText = cleanStem(enq.featureA?.stem);
     const featBText = cleanStem(enq.featureB?.stem);
+    const featCText = cleanStem(enq.featureC?.stem);
     let extText = enq.rightExam?.stem || 'Extended Writing Task';
-    if (extText.length > 76) extText = extText.slice(0, 73) + '...';
+    if (extText.length > 70) extText = extText.slice(0, 67) + '...';
 
     examRowsHtml += `
       <tr style="border-top: 1.5px solid #000000; border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-        <td rowspan="3" style="padding: 6px 4px; text-align: center; font-weight: 900; font-size: 8.5pt; border-right: 1.2px solid #000000; vertical-align: middle; background: #f8fafc;">
+        <td rowspan="4" style="padding: 3px 4px; text-align: center; font-weight: 900; font-size: 8.5pt; border-right: 1.2px solid #000000; vertical-align: middle; background: #f8fafc;">
           ${data.keyTopicNum}.${enq.enquiryNum}
         </td>
-        <td rowspan="3" style="padding: 6px 8px; border-right: 1.2px solid #000000; vertical-align: middle; background: #ffffff;">
+        <td rowspan="4" style="padding: 3px 8px; border-right: 1.2px solid #000000; vertical-align: middle; background: #ffffff;">
           <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000000; display: block; line-height: 1.2;">
             Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
           </strong>
-          <span style="font-size: 7.2pt; color: #475569; display: block; margin-top: 4px;">
+          <span style="font-size: 7.2pt; color: #475569; display: block; margin-top: 2px;">
             Do Now Retrieval (p. ${leftPageNum}): [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
           </span>
         </td>
-        <td style="padding: 5.5px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 800; background: #fafafa;">
+        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
           p. ${rightPageNum}
         </td>
-        <td style="padding: 5.5px 8px; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 600;">
+        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>Q1(a) Feature:</strong> ${featAText} [2m]
         </td>
-        <td rowspan="3" style="padding: 6px 6px; text-align: center; border-right: 1.2px solid #000000; font-size: 9.0pt; font-weight: 800; vertical-align: middle; background: #ffffff;">
+        <td rowspan="4" style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000; font-size: 8.5pt; font-weight: 800; vertical-align: middle; background: #ffffff;">
           [ &nbsp;&nbsp;&nbsp;<strong>___ / ___</strong>&nbsp;&nbsp;&nbsp; ]
         </td>
-        <td style="padding: 5.5px 6px; text-align: center; font-size: 9.5pt; font-weight: 800; white-space: nowrap;">
+        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
           [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
         </td>
       </tr>
       <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-        <td style="padding: 5.5px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 800; background: #fafafa;">
+        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
           p. ${rightPageNum}
         </td>
-        <td style="padding: 5.5px 8px; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 600;">
+        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>Q1(b) Feature:</strong> ${featBText} [2m]
         </td>
-        <td style="padding: 5.5px 6px; text-align: center; font-size: 9.5pt; font-weight: 800; white-space: nowrap;">
+        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
+        </td>
+      </tr>
+      <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
+        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
+          p. ${rightPageNum}
+        </td>
+        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
+          <strong>Q1(c) Feature:</strong> ${featCText} [2m]
+        </td>
+        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
           [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
         </td>
       </tr>
       <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-        <td style="padding: 5.5px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 800; background: #fafafa;">
+        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
           p. ${rightPageNum}
         </td>
-        <td style="padding: 5.5px 8px; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 600;">
+        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>${extLabel}:</strong> ${extText} [${extTariff}m]
         </td>
-        <td style="padding: 5.5px 6px; text-align: center; font-size: 9.5pt; font-weight: 800; white-space: nowrap;">
+        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
           [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong> ]
         </td>
       </tr>
@@ -4009,48 +4156,6 @@ async function mergeMasterWorkbook() {
   fs.writeFileSync(masterPdfGeneral, mergedBytes);
   console.log(
     `\n🎉 Master Workbook compiled: ${masterPdfPath} (${mergedPdf.getPageCount()} pages, ${(mergedBytes.length / 1024 / 1024).toFixed(2)} MB)`,
-  );
-}
-
-// Master PDF Merger (KT1 + KT2 + KT3 = 72-page Master Workbook)
-async function mergeMasterWorkbook() {
-  console.log('\n🔄 Merging Early Elizabethan England Master Pupil Workbook (72 Pages)...');
-  const mergedPdf = await PDFDocument.create();
-
-  const kts = ['KT1', 'KT2', 'KT3'];
-  let totalMergedPages = 0;
-
-  for (const kt of kts) {
-    const pdfFileName = `eee_pupil_workbook_${kt}_FINAL_V17.pdf`;
-    const pdfPath = path.join(ROOT_DIR, 'public', 'pdfs', pdfFileName);
-
-    if (!fs.existsSync(pdfPath)) {
-      console.warn(`⚠️ Warning: Missing ${pdfFileName}, skipping merge for ${kt}...`);
-      continue;
-    }
-
-    const pdfBytes = fs.readFileSync(pdfPath);
-    const pdfDoc = await PDFDocument.load(pdfBytes);
-    const copiedPages = await mergedPdf.copyPages(pdfDoc, pdfDoc.getPageIndices());
-    copiedPages.forEach((page) => mergedPdf.addPage(page));
-    totalMergedPages += pdfDoc.getPageCount();
-    console.log(`  ✓ Added ${kt} (${pdfDoc.getPageCount()} pages)`);
-  }
-
-  const masterPdfPath = path.join(
-    ROOT_DIR,
-    'public',
-    'pdfs',
-    'eee_pupil_workbook_master_FINAL_V17.pdf',
-  );
-  const masterLegacyPath = path.join(ROOT_DIR, 'public', 'pdfs', 'eee_pupil_workbook_master.pdf');
-
-  const mergedBytes = await mergedPdf.save();
-  fs.writeFileSync(masterPdfPath, mergedBytes);
-  fs.copyFileSync(masterPdfPath, masterLegacyPath);
-
-  console.log(
-    `🎉 Successfully compiled Master Pupil Workbook (${totalMergedPages} pages) -> ${masterPdfPath}\n`,
   );
 }
 
