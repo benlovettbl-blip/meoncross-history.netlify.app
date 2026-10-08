@@ -18,11 +18,13 @@ const path = require('path');
 const srcPath = path.join(__dirname, 'render_eee_twopage_workbook.cjs');
 let code = fs.readFileSync(srcPath, 'utf8');
 
-// 1. Add pdf-lib import
-code = code.replace(
-  "const puppeteer = require('puppeteer');",
-  "const puppeteer = require('puppeteer');\nconst { PDFDocument } = require('pdf-lib');",
-);
+// 1. Add pdf-lib import (if not already present)
+if (!code.includes("require('pdf-lib')")) {
+  code = code.replace(
+    "const puppeteer = require('puppeteer');",
+    "const puppeteer = require('puppeteer');\nconst { PDFDocument } = require('pdf-lib');",
+  );
+}
 
 // 2. Add Cornell CSS to <style>
 const cornellCss = `

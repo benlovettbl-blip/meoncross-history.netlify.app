@@ -2316,6 +2316,350 @@ function renderSynopticVaultPages(data, footers) {
   return page22Html + page23Html;
 }
 
+// ============================================================================
+// OPTION 1: GRADE 9 MODEL ANSWERS & UNSEEN SYNOPTIC EXAM PRACTICE (PAGES 20 & 21)
+// ============================================================================
+
+const GRADE_9_MODEL_ANSWERS = {
+  KT1: {
+    ktNum: '1',
+    ktTitle: 'Queen, Government & Religion, 1558–69',
+    examCode: 'Edexcel June 2019 · Paper 2',
+    stem: 'Explain why the problem of the succession was a serious issue for Elizabeth in the years 1558–69.',
+    stimulus: ['Mary, Queen of Scots', 'Smallpox (1562)'],
+    p1: 'One crucial reason why succession was a serious issue was Elizabeth’s vulnerability to fatal illness, epitomised by her near-fatal encounter with smallpox in October 1562. Because Elizabeth was unmarried and childless, her sudden illness induced acute panic across the Privy Council, who realised that had she died, England lacked a designated Protestant heir and would have plunged directly into catastrophic civil war. This existential fear prompted Parliament in 1563 and 1566 to aggressively petition the Queen to marry or name a successor. Elizabeth’s persistent refusal to surrender her royal prerogative created severe political friction, keeping the Tudor dynasty permanently on the brink of extinction.',
+    p2: "Furthermore, the succession crisis was magnified exponentially by the dynastic threat posed by Mary, Queen of Scots. Arriving as a fugitive in England in 1568, Mary possessed a direct blood claim to the English crown as Henry VII’s great-granddaughter. English Roman Catholics and continental powers viewed Elizabeth as illegitimate due to Henry VIII’s unrecognised divorce from Catherine of Aragon, regarding Mary as England's rightful monarch. Mary’s physical presence transformed a theoretical succession anxiety into an active military security crisis, providing Catholic conspirators with a viable adult figurehead around whom to rally, culminating in the 1569 Northern Rebellion.",
+    p3: 'Beyond the stimulus, the succession dilemma was fundamentally insoluble because any marital choice carried devastating diplomatic and domestic repercussions. Marrying a powerful foreign Catholic suitor—such as Philip II of Spain or Archduke Charles of Austria—threatened to subordinate English foreign policy to foreign Catholic interests, reviving the bitter resentments of Mary I’s marriage to Philip. Conversely, marrying an English Protestant courtier like Robert Dudley inflamed intense factional jealousy within the Privy Council, where William Cecil feared Dudley’s unchecked ascendancy. Consequently, remaining single was Elizabeth’s calculated strategy to prevent civil war, even though it left the crown dangerously unstable.',
+    level2Trap:
+      'Pupils describe the chronology of events without causal links: "First Elizabeth caught smallpox in 1562 and almost died. Then Parliament petitioned her to marry Robert Dudley. Later Mary, Queen of Scots fled to England." This tells a story rather than explaining WHY each factor made succession a destabilising threat.',
+    level4Standard:
+      'Every paragraph opens with a clear causal factor, supports it with precise evidence (1562 smallpox, 1563/66 Parliaments, 1568 arrival, Henry VII lineage), integrates substantial own knowledge beyond the stimulus (foreign marriage traps vs Dudley court factions), and explicitly links back to the question stem.',
+    conclusionPrompt:
+      'State which factor was the primary driver of the succession crisis and justify your choice in 2 sentences:',
+  },
+  KT2: {
+    ktNum: '2',
+    ktTitle: 'Challenges at Home & Abroad, 1569–88',
+    examCode: 'Edexcel June 2021 · Paper 2',
+    stem: 'Explain why the Catholic threat to Elizabeth increased in the years 1569–85.',
+    stimulus: ['Papal Bull Regnans in Excelsis (1570)', 'Throckmorton Plot (1583)'],
+    p1: "A primary reason why the Catholic threat increased was Pope Pius V’s papal bull 'Regnans in Excelsis' in 1570. By excommunicating Elizabeth as a heretic and formally declaring her deposed, the Pope released English Catholics from their feudal oaths of allegiance, ordering them to disobey her royal commands. This transformed English Catholics from moderate religious dissenters into active traitors, providing international theological justification for domestic rebellion and foreign invasion. It also destroyed Elizabeth's policy of religious toleration, forcing the government to treat every Catholic as a potential assassin.",
+    p2: 'Furthermore, the threat deepened because domestic Catholic unrest evolved into coordinated international conspiracies to overthrow the regime, as demonstrated by the 1583 Throckmorton Plot. Led by Francis Throckmorton, the conspiracy planned for a French Catholic invasion force led by the Duke of Guise, funded by Philip II of Spain and the Pope, to liberate Mary, Queen of Scots and depose Elizabeth. Uncovered by Sir Francis Walsingham’s intelligence service, the plot confirmed that foreign Catholic superpowers were actively collaborating to launch a full-scale invasion of England, provoking nationwide alarm and leading directly to the 1584 Bond of Association.',
+    p3: 'Beyond the stimulus, the threat escalated dramatically due to the covert arrival of seminary priests and Jesuits trained in continental Europe. Following William Allen’s establishment of the English College at Douai in 1568, and the arrival of Jesuits like Edmund Campion in 1580, these trained missionaries travelled secretly through England administering Latin sacraments and sustaining Catholic defiance in secret priest holes. Although priests claimed purely spiritual motives, the Privy Council viewed them as foreign fifth-columnists preparing the populace for Spanish invasion. This prompted Parliament to enact draconian treason laws in 1581 and 1585, making conversion to Catholicism punishable by death.',
+    level2Trap:
+      'Pupils list Catholic plots chronologically: "First the Northern Earls rebelled in 1569. Then the Pope issued a bull. Then Ridolfi plotted with Norfolk, and later Throckmorton planned an invasion." This narrates events without explaining HOW the threat mutated from local discontent into global warfare.',
+    level4Standard:
+      'Traces the systematic escalation of threat across three analytical tiers: ideological warfare (papal bull), foreign military coordination (Spanish-backed invasion plots), and clandestine religious subversion (Jesuit missions). Directly explains why each development forced the Crown to adopt harsher counter-measures.',
+    conclusionPrompt:
+      'State which factor was the most dangerous catalyst in escalating the Catholic threat and justify your choice in 2 sentences:',
+  },
+  KT3: {
+    ktNum: '3',
+    ktTitle: 'Elizabethan Society in the Age of Exploration, 1558–88',
+    examCode: 'Edexcel June 2022 · Paper 2',
+    stem: 'Explain why the problem of poverty and vagrancy increased in the years 1558–88.',
+    stimulus: ['Enclosure', 'Population growth'],
+    p1: 'A fundamental cause of increasing poverty and vagrancy was explosive population growth. Between 1558 and 1588, England’s population grew rapidly from roughly 3 million to over 4.2 million. Agricultural food production could not keep pace with this demographic surge, creating chronic food shortages that drove runaway inflation, particularly in bread prices. Concurrently, the massive influx of young labourers saturated the rural job market, depressing real wages while grasping landowners dramatically increased entry fines and rents. Millions of ordinary Englishmen were reduced to subsistence poverty, unable to afford basic nourishment.',
+    p2: 'This crisis was aggravated by agrarian restructuring, predominantly the enclosure of common land for sheep farming. Traditional open-field arable farming supported entire village communities through labour-intensive crop cultivation. However, the immense profitability of the wool trade incentivised landlords to enclose common pastures with hedges and convert arable fields into private sheep pasture. Sheep farming required only a tiny fraction of the labour force needed for arable crops, resulting in the widespread eviction of tenant farmers and cottagers. Deprived of common grazing rights, thousands of dispossessed families were driven onto the roads as destitute vagrants.',
+    p3: 'Beyond the stimulus, poverty worsened severely due to the catastrophic collapse of the European cloth trade and consecutive harvest failures. Woollen cloth accounted for over 80% of England’s exports. In the 1550s and 1560s, religious warfare in the Netherlands and trade disputes with Philip II caused the Antwerp cloth market to crash, causing mass unemployment among spinners, carders, and weavers across East Anglia and the West Country. When combined with consecutive disastrous harvests in the 1570s and 1580s, bread prices spiked beyond reach, forcing thousands of impoverished townspeople to turn to begging and criminality to survive.',
+    level2Trap:
+      'Pupils write descriptive accounts of Tudor beggar types: "Vagabonds wandered the roads. Counterfeit cranks put soap in their mouths to pretend they were foaming sick. Parliament passed laws to whip vagrants and burn holes through their ears." This describes symptoms and punishments rather than analyzing economic causes.',
+    level4Standard:
+      'Categorises socio-economic causation into structural demographic pressure (population surge vs food supply), agrarian structural change (enclosure for sheep farming destroying rural employment), and macroeconomic trade shocks (Antwerp cloth collapse). Explains why parish charity was overwhelmed.',
+    conclusionPrompt:
+      'State which factor was the primary driver of Elizabethan poverty and explain your reasoning in 2 sentences:',
+  },
+};
+
+const UNSEEN_SYNOPTIC_PRACTICE = {
+  KT1: {
+    ktNum: '1',
+    ktTitle: 'Queen, Government & Religion, 1558–69',
+    examCode: 'Pearson Edexcel Nov 2020 · Paper 2',
+    stem: 'Explain why Elizabeth faced serious opposition to her religious settlement in the years 1559–69.',
+    stimulus: ['The Vestments Controversy (1566)', 'Papal Bull / Recusancy'],
+    plan1:
+      '<strong>Factor 1 · Puritan Resistance:</strong> Archbishop Parker’s Book of Advertisements (1566) required clerical surplices; 37 London vicars refused and were suspended; challenged royal supremacy.',
+    plan2:
+      '<strong>Factor 2 · Catholic Recusancy:</strong> Devout Catholic gentry refused Protestant services; paid 1s fines; Pope Pius IV forbade church attendance; secret household Latin Masses.',
+    plan3:
+      '<strong>Factor 3 · Own Knowledge (Crucial):</strong> Revolt of the Northern Earls (1569); Catholic Earls of Northumberland and Westmorland marched on Durham Cathedral, restored Latin Mass, and aimed to free Mary Stuart.',
+  },
+  KT2: {
+    ktNum: '2',
+    ktTitle: 'Challenges at Home & Abroad, 1569–88',
+    examCode: 'Pearson Edexcel June 2018 · Paper 2',
+    stem: 'Explain why relations between England and Spain worsened between 1569 and 1585.',
+    stimulus: ["Francis Drake's privateering", 'The Netherlands'],
+    plan1:
+      '<strong>Factor 1 · Drake’s Privateering:</strong> Raids on Nombre de Dios (1572) and Cacafuego (£140,000 in silver); Drake circumnavigates (1577–80); Elizabeth knights him at Deptford in 1581, enraging Philip II.',
+    plan2:
+      '<strong>Factor 2 · The Netherlands Crisis:</strong> Brutal Spanish repression under Duke of Alba; 1576 Spanish Fury at Antwerp; 1584 William the Silent murdered; 1585 Treaty of Nonsuch sends 7,400 English troops.',
+    plan3:
+      '<strong>Factor 3 · Own Knowledge (Crucial):</strong> Religious & Dynastic Conspiracies; Philip II and Spanish Ambassador Mendoza actively funded the 1571 Ridolfi and 1583 Throckmorton plots; 1584 Treaty of Joinville united France and Spain against England.',
+  },
+  KT3: {
+    ktNum: '3',
+    ktTitle: 'Elizabethan Society in the Age of Exploration, 1558–88',
+    examCode: 'Pearson Edexcel Specification SAMs · Paper 2',
+    stem: 'Explain why English exploration by sea expanded so rapidly in the years 1558–88.',
+    stimulus: ['Navigational technology', 'New trade routes'],
+    plan1:
+      "<strong>Factor 1 · Navigational Advances:</strong> Adoption of the astrolabe and quadrant for latitude calculations; magnetic compasses; Mercator projection nautical charts; Hawkins' race-built galleons.",
+    plan2:
+      '<strong>Factor 2 · Commercial Need for Markets:</strong> Antwerp cloth market collapsed in 1550s/60s; English wool merchants forced to seek new export markets; Muscovy Company (Russia) and Levant Company.',
+    plan3:
+      '<strong>Factor 3 · Own Knowledge (Crucial):</strong> Privateering Riches & Imperial Geopolitics; Royal patronage and unofficial investment from Elizabeth; Drake’s 1577–80 circumnavigation returning £140,000; challenging Spanish Catholic hegemony.',
+  },
+};
+
+function renderGrade9ModelAnswerPage(ktId, footerText) {
+  const modelData = GRADE_9_MODEL_ANSWERS[ktId];
+  if (!modelData) return '';
+
+  return `
+  <!-- PAGE 20: GRADE 9 MODEL ANSWER MASTERCLASS (VERSO) -->
+  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm; box-sizing: border-box;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box;">
+
+      <!-- Top Department & Exam Header -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between; align-items: baseline; box-sizing: border-box;">
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.3px;">
+            ⭐ Grade 9 Masterclass: Causation Essay &bull; Key Topic ${modelData.ktNum}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc; text-transform: uppercase;">
+            ${modelData.examCode}
+          </span>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
+          Level 4 Exemplar &bull; 12/12 Marks
+        </span>
+      </div>
+
+      <!-- Question Stem & Official Stimulus Box -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2.5px; box-sizing: border-box;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000;">
+            Official Exam Question &bull; Question 2 [12 Marks &bull; 18 Mins]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #475569;">
+            AO1 (6m Knowledge &amp; Understanding) + AO2 (6m Causation &amp; Analysis)
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${modelData.stem}
+        </p>
+        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
+          <strong>You may use in your answer:</strong>
+          <span>&bull; ${modelData.stimulus[0]}</span>
+          <span>&bull; ${modelData.stimulus[1]}</span>
+          <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
+        </div>
+      </div>
+
+      <!-- Active Pupil Annotation Protocol Ribbon -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 6px; background: #f1f5f9; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5px; box-sizing: border-box;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #000000; letter-spacing: 0.3px;">
+          Active Model Annotation Protocol:
+        </strong>
+        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700;">
+          <span style="color: #854d0e;">🟡 1. Highlight 3 historical facts / statistics</span>
+          <span style="color: #1e40af;">🔵 2. Underline 3 causal connective links</span>
+          <span style="color: #15803d;">🟢 3. Circle where own knowledge beyond stimulus begins</span>
+        </div>
+      </div>
+
+      <!-- Continuous Prose Level 4 Model Answer (3 Structured Paragraphs) -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0; margin-bottom: 2.5px; box-sizing: border-box;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000;">
+            Continuous Prose Level 4 Exemplar Response (Full Marks &bull; 12/12)
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-style: italic; color: #475569;">
+            Notice: Every paragraph opens with a factor, gives precise evidence, and ends with a direct causal link.
+          </span>
+        </div>
+        <div style="font-family: 'Newsreader', 'Georgia', serif; font-size: 7.7pt; line-height: 1.25; color: #111111; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
+          <p style="margin: 0; text-align: justify;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #1e3a8a; border: 1px solid #1e3a8a; padding: 0 3px; border-radius: 2px; margin-right: 4px;">Paragraph 1 &bull; Stimulus 1</strong>
+            ${modelData.p1}
+          </p>
+          <p style="margin: 0; text-align: justify;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #1e3a8a; border: 1px solid #1e3a8a; padding: 0 3px; border-radius: 2px; margin-right: 4px;">Paragraph 2 &bull; Stimulus 2</strong>
+            ${modelData.p2}
+          </p>
+          <p style="margin: 0; text-align: justify;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #15803d; border: 1px solid #15803d; padding: 0 3px; border-radius: 2px; margin-right: 4px;">Paragraph 3 &bull; Own Knowledge</strong>
+            ${modelData.p3}
+          </p>
+        </div>
+      </div>
+
+      <!-- Examiner Comparison: Level 2 Narrative Trap vs Level 4 Depth -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #f8fafc; margin-bottom: 2.5px; box-sizing: border-box;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px; color: #000000;">
+          Examiner Comparison &bull; Why Most Pupils Drop Marks on Question 2
+        </strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 6.9pt; line-height: 1.18;">
+          <div style="border: 1px solid #cbd5e1; padding: 2.5px 5px; border-radius: 2px; background: #ffffff;">
+            <strong style="color: #b91c1c; display: block; margin-bottom: 1px;">⚠️ The Level 2 Narrative Trap (4–6 / 12 Marks):</strong>
+            ${modelData.level2Trap}
+          </div>
+          <div style="border: 1px solid #cbd5e1; padding: 2.5px 5px; border-radius: 2px; background: #ffffff;">
+            <strong style="color: #15803d; display: block; margin-bottom: 1px;">🎯 The Level 4 Analytical Standard (10–12 / 12 Marks):</strong>
+            ${modelData.level4Standard}
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Student Writing Task: Concluding Synthesis (2 Lines) -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; margin-bottom: 2px; box-sizing: border-box;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
+            ✍️ Pupil Action &bull; Draft Your Own Analytical Conclusion [2 Sentences]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #555555;">
+            ${modelData.conclusionPrompt}
+          </span>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0;">
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(20, footerText, 24)}
+    </div>
+  </div>
+  `;
+}
+
+function renderSynopticExamPracticePage(ktId, footerText) {
+  const unseenData = UNSEEN_SYNOPTIC_PRACTICE[ktId];
+  if (!unseenData) return '';
+
+  return `
+  <!-- PAGE 21: UNSEEN SYNOPTIC EXAM PRACTICE (RECTO) -->
+  <div class="page page-container recto-page" id="page-21" style="padding: 4mm 6mm; box-sizing: border-box;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box;">
+
+      <!-- Top Department & Timed Header -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between; align-items: baseline; box-sizing: border-box;">
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.3px;">
+            ⚡ Unseen Synoptic Exam Practice &bull; Key Topic ${unseenData.ktNum}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc; text-transform: uppercase;">
+            ${unseenData.examCode}
+          </span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
+            ⏱️ Timed Condition: 18 Mins
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px; background: #ffffff;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12 ]
+          </span>
+        </div>
+      </div>
+
+      <!-- Question Stem & Official Stimulus Box -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px; box-sizing: border-box;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000;">
+            Question 2 &bull; Explain Why [12 Marks &bull; AO1 (6m) + AO2 (6m)]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #475569;">
+            Write 3 analytical paragraphs with sustained causal links to the stem
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${unseenData.stem}
+        </p>
+        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
+          <strong>You may use in your answer:</strong>
+          <span>&bull; ${unseenData.stimulus[0]}</span>
+          <span>&bull; ${unseenData.stimulus[1]}</span>
+          <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
+        </div>
+      </div>
+
+      <!-- 3-Column Paragraph Planning Strip (3 Mins Plan) -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 3px; box-sizing: border-box;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #000000;">
+              Paragraph 1 (Stimulus 1)
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 2px; border-radius: 2px; background: #f8fafc;">PLAN</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; margin: 0; line-height: 1.15;">
+            ${unseenData.plan1}
+          </p>
+        </div>
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #000000;">
+              Paragraph 2 (Stimulus 2)
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 2px; border-radius: 2px; background: #f8fafc;">PLAN</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; margin: 0; line-height: 1.15;">
+            ${unseenData.plan2}
+          </p>
+        </div>
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.9pt; text-transform: uppercase; color: #15803d;">
+              Paragraph 3 (Own Knowledge)
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #15803d; color: #15803d; padding: 0 2px; border-radius: 2px; background: #f0fdf4;">CRUCIAL</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; margin: 0; line-height: 1.15;">
+            ${unseenData.plan3}
+          </p>
+        </div>
+      </div>
+
+      <!-- Exactly 18 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid" style="flex: 1; min-height: 0; margin-bottom: 3px;">
+        ${Array.from({ length: 18 }, (_, lIdx) => {
+          const isFirst = lIdx === 0;
+          const marginContent = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+            : `&nbsp;`;
+          const linePrompt = isFirst
+            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Begin your 3-paragraph timed causation response here... ]</span>`
+            : `&nbsp;`;
+          return `
+            <div class="lined-row">
+              <div class="lined-margin-cell">${marginContent}</div>
+              <div class="lined-content-cell">${linePrompt}</div>
+            </div>`;
+        }).join('')}
+      </div>
+
+      <!-- Teacher / Self Assessment Feedback Micro-Box -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; box-sizing: border-box;">
+        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #333333;">
+          <span>Level Descriptors:</span>
+          <span>[ ] L1 (1–3m): Basic / Descriptive</span>
+          <span>[ ] L2 (4–6m): Simple Explanation</span>
+          <span>[ ] L3 (7–9m): Developed Analysis</span>
+          <span>[ ] L4 (10–12m): Sustained Causal Judgement</span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
+          Final Mark: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]
+        </div>
+      </div>
+
+      ${renderFooterStrip(21, footerText, 24)}
+    </div>
+  </div>
+  `;
+}
+
 function buildEeeKeyTopicWorkbook(ktId) {
   const data = KEY_TOPICS_DATA[ktId];
   if (!data) throw new Error(`Unknown Key Topic ID: ${ktId}`);
@@ -2611,620 +2955,14 @@ function buildEeeKeyTopicWorkbook(ktId) {
   });
 
   // ====================================================================
-  // PAGE 12: CARTOGRAPHIC & ARCHIVAL VISUAL BLUEPRINT (VERSO)
+  // PAGE 20: GRADE 9 LEVEL 4 (12/12) MASTERCLASS & CAUSATION ESSAY (VERSO)
   // ====================================================================
-  let page12Content = '';
-  if (ktId === 'KT1') {
-    page12Content = `      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Thematic Study Blueprint &bull; Key Topic 1: Queen, Government &amp; Religion, 1558–69
-        </h2>
-      </div>
-      
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0; gap: 3px;">
-        <!-- Section 1: Government Anatomy -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            1. Anatomy of Elizabethan Government: Power, Patronage &amp; Prerogative
-          </strong>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">👑 The Monarch (Queen Elizabeth I):</strong>
-              Ruled by Divine Right. Held Royal Prerogative: foreign policy, war, marriage, religion. Could summon and dismiss Parliament at will.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🏛️ The Privy Council (Led by William Cecil):</strong>
-              Approx. 19 trusted senior advisors who met daily. Managed government expenditure, state security, military logistics, and royal policy.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">⚖️ Parliament (Lords &amp; Commons):</strong>
-              Met only 10 times in 44 years. Primary power: voting extraordinary taxation (subsidies) and passing statute laws. Free speech was restricted.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🛡️ Local Government (Lords Lieutenant &amp; JPs):</strong>
-              Lords Lieutenant commanded county militias. Unpaid JPs (gentry) enforced laws locally: collected taxes, regulated wages, punished vagrants.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: The Religious Settlement Spectrum -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            2. The Religious Spectrum: Radical Puritans vs Elizabeth’s Via Media vs Roman Catholics
-          </strong>
-          <div style="display: grid; grid-template-columns: 1fr 1.25fr 1fr; gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #000000; padding: 3px 4px; border-radius: 2px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px; text-align: center;">
-                PURITAN REFORMERS
-              </strong>
-              &bull; <strong>Doctrine:</strong> Strict Calvinism; predestination.<br>
-              &bull; <strong>Governance:</strong> Presbytery committees (no bishops).<br>
-              &bull; <strong>Worship:</strong> Plain sermons, no vestments (surplices), no crucifixes or organs.<br>
-              &bull; <strong>Controversies:</strong> 1566 Vestments Crisis (37 suspended); Crucifix Controversy.
-            </div>
-            <div style="border: 1.5px solid #000000; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1.2px solid #000000; padding-bottom: 1px; margin-bottom: 2px; text-align: center;">
-                ELIZABETH’S VIA MEDIA (1559)
-              </strong>
-              &bull; <strong>Act of Supremacy:</strong> Elizabeth = Supreme Governor.<br>
-              &bull; <strong>Act of Uniformity:</strong> Mandated 1559 Common Prayer Book.<br>
-              &bull; <strong>Compromise:</strong> Ambiguous Communion wording; traditional clergy vestments &amp; hymns kept.<br>
-              &bull; <strong>Enforcement:</strong> 1s recusancy fine for missing church; 1559 Royal Injunctions (English Bible in parishes).
-            </div>
-            <div style="border: 1px solid #000000; padding: 3px 4px; border-radius: 2px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px; text-align: center;">
-                ROMAN CATHOLIC CHURCH
-              </strong>
-              &bull; <strong>Authority:</strong> The Pope in Rome = Supreme Head.<br>
-              &bull; <strong>Doctrine:</strong> 7 Sacraments; Latin Mass; Transubstantiation (bread/wine = real Christ).<br>
-              &bull; <strong>Ritual:</strong> Latin liturgy, stained glass, crucifixes, incense, holy water, saint relics.<br>
-              &bull; <strong>Resistance:</strong> Recusancy in Northern counties; secret household Latin Masses.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 3: Foreign Threats & Strategic Dilemmas (1558) -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            3. Foreign Threats &amp; Strategic Security Dilemmas in 1558
-          </strong>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🇫🇷 France &amp; Calais:</strong>
-              England lost Calais in Jan 1558 (Treaty of Cateau-Cambrésis). France was at peace with Spain, freeing French forces to threaten England.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🏴󠁧󠁢󠁳󠁣󠁴󠁿 Scotland &amp; Auld Alliance:</strong>
-              Mary of Guise ruled Scotland with French troops stationed on border. Mary Stuart claimed English throne; French arms could invade north.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🇪🇸 Spain &amp; Philip II:</strong>
-              Philip II was ex-king consort (married Mary I). Wanted alliance against France, proposed marriage to Elizabeth, but was staunchly Catholic.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🤝 Treaty of Edinburgh (1560):</strong>
-              Scottish Protestant lords rebelled against French rule; Elizabeth sent fleet to Leith; Treaty secured French withdrawal from Scotland.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 4: Monarchical Legitimacy, Succession & Crown Finances -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            4. Monarchical Challenges: Legitimacy, Marriage Dilemmas &amp; Crown Finances
-          </strong>
-          <div style="display: grid; grid-template-columns: 1.1fr 1fr 1fr; gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">💍 Marriage &amp; Succession Crisis:</strong>
-              Parliament pressured Elizabeth to marry and produce Protestant heir. Foreign suitors (Philip II, Archduke Charles) risked foreign domination; English nobles (Dudley) caused factional jealousy.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">👑 Legitimacy &amp; Gender Dilemma:</strong>
-              Catholics considered Henry VIII’s marriage to Anne Boleyn illegal, declaring Elizabeth illegitimate. 16th-century society believed female rule was "unnatural" and inherently weak.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">💰 Crown Finances &amp; Debt:</strong>
-              Inherited £300,000 debt from Mary I. Sold Crown lands and cut court costs under William Cecil; reformed debased coinage to restore Antwerp credit rating.
-            </div>
-          </div>
-        </div>
-      </div>`;
-  } else if (ktId === 'KT2') {
-    page12Content = `      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Thematic Study Blueprint &bull; Key Topic 2: Challenges at Home &amp; Abroad, 1569–88
-        </h2>
-      </div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0; gap: 3px;">
-        <!-- Section 1: Armada Strategic Route -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            1. The Strategic Route of the Spanish Armada: Plymouth to Gravelines &amp; The Atlantic Retreat
-          </strong>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>① The Channel (July 1588):</strong> 130 Spanish ships in defensive crescent sail past Plymouth and Isle of Wight. English culverins fire from standoff range with minor damage.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>② Calais Roads (7 Aug):</strong> Armada anchors awaiting Parma. Midnight English fireships cause panic; Spanish cut anchor cables and break defensive formation.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>③ Gravelines (8 Aug):</strong> Close-range artillery battle. Nimble English race-built galleons batter scattered Spanish ships with rapid culverin broadsides; 5 galleons sunk.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>④ The Retreat (Aug–Sept):</strong> South-westerly gales drive Armada around Scotland and Ireland. Lacking anchors, over 40 ships wreck on Atlantic rocky coasts.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: Naval Architecture Comparison -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            2. Naval Architecture: Hawkins’ Race-Built Galleons vs Spanish Imperial Carracks
-          </strong>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1.2px solid #000000; padding: 3px 5px; border-radius: 2px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                🇬🇧 English Race-Built Galleon (*Revenge*, *Ark Royal*)
-              </strong>
-              &bull; <strong>Design:</strong> John Hawkins removed high forecastles; streamlined hull for speed and sailing close to wind.<br>
-              &bull; <strong>Artillery:</strong> Long-range bronze <strong>culverins</strong> on 4-wheel truck carriages for rapid reloading inside ship.<br>
-              &bull; <strong>Gunnery Doctrine:</strong> Stand-off artillery duels; pummel enemy rigging and hull lines, refusing hand-to-hand boarding.
-            </div>
-            <div style="border: 1.2px solid #000000; padding: 3px 5px; border-radius: 2px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                🇪🇸 Spanish Imperial Galleon / Carrack (*San Martín*)
-              </strong>
-              &bull; <strong>Design:</strong> High wooden forecastles/sterncastles designed as floating infantry castles for boarding.<br>
-              &bull; <strong>Artillery:</strong> Heavy short-range cannon on unwieldy 2-wheel carriages; gunners had to climb outside hulls to reload.<br>
-              &bull; <strong>Tactical Goal:</strong> Close range, grapple enemy ships, and unleash veteran infantry in boarding combat.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 3: The Catholic Plots Matrix (1569–87) -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            3. The Catholic Plots Matrix: Conspirators, Foreign Backing &amp; Walsingham’s Counter-Espionage
-          </strong>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>1569 Northern Earls:</strong> Northumberland &amp; Westmorland marched south with Catholic banners to restore Catholic Mass. Quashed by royal army; 450 rebels executed.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>1571 Ridolfi Plot:</strong> Italian banker Ridolfi plotted with Duke of Norfolk, Philip II, and Pope to murder Elizabeth. Cecil uncovered plot; Norfolk beheaded June 1572.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>1583 Throckmorton:</strong> French Duke of Guise planned invasion with Spanish funding. Walsingham’s spies uncovered papers; Throckmorton executed; Bond of Association (1584).
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>1586 Babington Plot:</strong> Anthony Babington sent coded beer-barrel letters to Mary Stuart agreeing to regicide. Phelippes cracked cipher; Mary executed Feb 1587.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 4: Anglo-Spanish Escalation & The Netherlands Crisis -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            4. The Road to War: Commercial Rivalry, The Netherlands &amp; Drake’s Raids (1572–87)
-          </strong>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🏴‍☠️ Privateering &amp; Silver Raids:</strong>
-              Drake raided Nombre de Dios (1572) and captured £140,000 in silver from the *Cacafuego* (1579). Elizabeth knighted Drake on *Golden Hind* in 1581, enraging Philip II.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🇳🇱 Treaty of Nonsuch (1585):</strong>
-              After 1584 Treaty of Joinville (France/Spain) and William the Silent’s murder, Elizabeth signed Nonsuch, sending Dudley and 7,400 troops to aid Dutch Protestants.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">⚓ Cadiz Raid (April 1587):</strong>
-              Drake sailed into Cadiz harbour, destroyed 30 Spanish ships and burned seasoned barrel staves ("singeing the King of Spain’s beard"), delaying the Armada invasion by a year.
-            </div>
-          </div>
-        </div>
-      </div>`;
-  } else {
-    page12Content = `      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 10.5pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Thematic Study Blueprint &bull; Key Topic 3: Elizabethan Society &amp; Exploration, 1558–88
-        </h2>
-      </div>
-
-      <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1; min-height: 0; gap: 3px;">
-        <!-- Section 1: Anatomy of an Elizabethan Playhouse -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            1. Anatomy of an Elizabethan Playhouse: The Globe &amp; The Swan (Bankside)
-          </strong>
-          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong>① The Heavens &amp; Roof:</strong> Painted canopy ceiling supported by pillars; housed trapdoors, winches, ropes, and cannons for special sound effects.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong>② The Pit / Yard:</strong> Unroofed open standing space around thrust stage; held up to 1,000 "groundlings" who paid 1 penny to watch in all weathers.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong>③ Galleries &amp; Lords’ Rooms:</strong> Three tiers of covered wooden seats (2–3d); Lords’ Rooms above stage cost 6d for aristocrats to be seen by the audience.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 2: Global Exploration & Colonisation -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            2. Elizabethan Global Exploration: Drake’s Circumnavigation &amp; The Virginia Colonies
-          </strong>
-          <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1.2px solid #000000; padding: 3px 5px; border-radius: 2px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                🧭 Drake’s Global Track (1577–1580)
-              </strong>
-              &bull; <strong>Route:</strong> Plymouth &rarr; Cape Horn &rarr; Pacific Coast raids &rarr; Nova Albion (California) &rarr; Moluccas &rarr; Plymouth.<br>
-              &bull; <strong>Key Outcomes:</strong> First English circumnavigation; challenged Spanish monopoly in Pacific; trade pact with Sultan of Ternate; returned with £140,000 treasure.
-            </div>
-            <div style="border: 1.2px solid #000000; padding: 3px 5px; border-radius: 2px; background: #ffffff;">
-              <strong style="font-size: 7.5pt; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                🌲 Raleigh’s Virginia Colonies (1585–1587)
-              </strong>
-              &bull; <strong>1585 First Colony:</strong> Ralph Lane + 107 soldiers on Roanoke Island. *Tiger* flooded food seeds; alienated Chief Wingina; rescued by Drake in 1586.<br>
-              &bull; <strong>1587 Lost Colony:</strong> John White + 118 settlers. White delayed by Armada; returned in 1590 to find colony vanished with only "CROATOAN" post remaining.
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 3: Poverty, Vagrancy & The Poor Laws -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            3. Poverty, Vagrancy &amp; The Evolution of Elizabethan Poor Relief
-          </strong>
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">🌾 Causes of Poverty:</strong>
-              &bull; Population growth: 3m to 4.2m created food shortages and rent inflation.<br>
-              &bull; Enclosure: Arable farmland converted into sheep pasture; labourers lost jobs.<br>
-              &bull; Bad harvests: 1590s famines drove desperate rural poor to towns.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">⚖️ Impotent vs Sturdy Poor:</strong>
-              &bull; <strong>Impotent (Deserving):</strong> Sick, elderly, disabled, orphans unable to work; received parish poor relief.<br>
-              &bull; <strong>Sturdy (Idle):</strong> Able-bodied vagrants seen as criminal threats (e.g. counterfeit cranks, clapper dudgeons); harshly punished.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 5px; border-radius: 2px; background: #f8fafc;">
-              <strong style="color: #000000; display: block;">📜 The Poor Acts (1572 &amp; 1576):</strong>
-              &bull; <strong>1572 Vagabonds Act:</strong> Whipped and burned through ear; compulsory poor rate tax.<br>
-              &bull; <strong>1576 Poor Act:</strong> JPs provided wool/hemp for work; created Bridewell workhouses (Houses of Correction).
-            </div>
-          </div>
-        </div>
-
-        <!-- Section 4: The Educational Revolution -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
-            4. The Elizabethan Educational Revolution &amp; Social Class Barriers
-          </strong>
-          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.18;">
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>Petty Schools:</strong> Taught reading, writing, and arithmetic to young boys aged 4–7 in teachers' private homes using hornbooks.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>Grammar Schools:</strong> Over 70 founded under Elizabeth. Fee-paying secondary schools for middle-class boys aged 7–14; intensive Latin, Greek, rhetoric.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>Universities:</strong> Oxford &amp; Cambridge; taught theology, medicine, law, geometry. Expanded to train clergy, diplomats, and statesmen.
-            </div>
-            <div style="border: 1px solid #cbd5e1; padding: 3px 4px; border-radius: 2px; background: #f8fafc;">
-              <strong>Gender &amp; Class:</strong> Noble girls taught at home in needlework, French, music; working-class girls received zero formal schooling; laboured from age 7.
-            </div>
-          </div>
-        </div>
-      </div>`;
-  }
-
-  html += `
-  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      ${page12Content}
-      ${renderFooterStrip(20, footers[19], 24)}
-    </div>
-  </div>
-`;
+  html += renderGrade9ModelAnswerPage(ktId, footers[19]);
 
   // ====================================================================
-  // PAGE 13: MASTER KNOWLEDGE ORGANISER (RECTO)
+  // PAGE 21: UNSEEN SYNOPTIC EXAM PRACTICE (RECTO)
   // ====================================================================
-  let koConcepts = [];
-  let koDates = [];
-  let koFigures = [];
-
-  if (ktId === 'KT1') {
-    koConcepts = [
-      {
-        t: 'Royal Prerogative',
-        d: 'The monarch’s exclusive customary powers over foreign policy, declaring war, marriage, and religion.',
-      },
-      {
-        t: 'Privy Council',
-        d: 'A committee of around 19 trusted noble advisers who met daily to run government, finance, and security.',
-      },
-      {
-        t: 'Via Media',
-        d: 'The "Middle Way": Elizabeth’s religious settlement balancing Protestant doctrine with traditional ritual.',
-      },
-      {
-        t: 'Act of Supremacy (1559)',
-        d: 'Established Elizabeth as "Supreme Governor" of the Church of England, requiring all clergy to take an oath.',
-      },
-      {
-        t: 'Act of Uniformity (1559)',
-        d: 'Mandated the Book of Common Prayer, church ornaments, vestments, and imposed a 1s recusancy fine.',
-      },
-      {
-        t: 'Recusancy',
-        d: 'Refusing to attend compulsory Church of England Sunday services; practiced by devout Roman Catholics.',
-      },
-      {
-        t: 'Vestments Controversy',
-        d: '1566 crisis where 37 Puritan vicars were suspended for refusing Archbishop Parker’s order to wear surplices.',
-      },
-      {
-        t: 'Succession',
-        d: 'The legal right to inherit the crown; Elizabeth refused to name a successor throughout her reign.',
-      },
-    ];
-    koDates = [
-      '1558: Elizabeth succeeds Mary I',
-      '1559: Act of Supremacy passed',
-      '1559: Act of Uniformity passed',
-      '1559: Royal Injunctions issued',
-      '1560: Treaty of Edinburgh signed',
-      '1566: Vestments Controversy (Parker)',
-      '1567: Murder of Lord Darnley',
-      '1568: Mary Stuart flees to England',
-      '1568–69: York & Westminster inquiry',
-      '1569: Northern Earls revolt breaks out',
-    ];
-    koFigures = [
-      {
-        n: 'Queen Elizabeth I',
-        r: 'Tudor monarch (1558–1603); established Protestant settlement and resisted marriage.',
-      },
-      {
-        n: 'Sir William Cecil',
-        r: 'Principal Secretary & Lord Burghley; Elizabeth’s most trusted Protestant statesman.',
-      },
-      {
-        n: 'Matthew Parker',
-        r: 'Archbishop of Canterbury (1559–75); drafted the 1566 Book of Advertisements.',
-      },
-      {
-        n: 'Mary, Queen of Scots',
-        r: 'Catholic cousin of Elizabeth; claimed English throne; fled Scotland in 1568.',
-      },
-      {
-        n: 'Philip II of Spain',
-        r: 'Catholic king of Spain and Netherlands; former husband of Mary I; rival to Elizabeth.',
-      },
-      {
-        n: 'Robert Dudley',
-        r: 'Earl of Leicester; Master of the Horse, royal favourite, and leading Puritan patron at court.',
-      },
-    ];
-  } else if (ktId === 'KT2') {
-    koConcepts = [
-      {
-        t: 'Papal Bull (1570)',
-        d: '*Regnans in Excelsis*: Pope Pius V excommunicated Elizabeth, releasing subjects from loyalty.',
-      },
-      {
-        t: 'Privateering',
-        d: 'State-licensed raiding of enemy merchant shipping by armed private vessels holding letters of marque.',
-      },
-      {
-        t: 'Bond of Association (1584)',
-        d: 'Pledge by Englishmen to execute anyone involved in an assassination attempt against Elizabeth.',
-      },
-      {
-        t: 'Treaty of Nonsuch (1585)',
-        d: 'Official military alliance committing 7,400 English soldiers under Robert Dudley to aid Dutch rebels.',
-      },
-      {
-        t: 'Singeing the King’s Beard',
-        d: 'Drake’s April 1587 raid on Cadiz harbour destroying 30 ships and delaying the Armada by a year.',
-      },
-      {
-        t: 'Galleon',
-        d: 'A large, multi-decked warship designed for ocean navigation and long-range cannon fire.',
-      },
-      {
-        t: 'Culverin',
-        d: 'Long-range English bronze naval cannon mounted on truck carriages for rapid reloading.',
-      },
-      {
-        t: 'Battle of Gravelines (1588)',
-        d: 'Decisive naval clash off Flanders where English artillery battered scattered Spanish warships.',
-      },
-    ];
-    koDates = [
-      '1569: Revolt of the Northern Earls',
-      '1570: Papal Bull excommunicates Queen',
-      '1571: Ridolfi Plot uncovered',
-      '1577–80: Drake circumnavigates world',
-      '1583: Throckmorton Plot uncovered',
-      '1584: Treaty of Joinville (Spain/France)',
-      '1585: Treaty of Nonsuch signed',
-      '1586: Babington Plot ciphers cracked',
-      'Feb 1587: Mary Stuart executed',
-      'July–Aug 1588: Spanish Armada defeated',
-    ];
-    koFigures = [
-      {
-        n: 'Sir Francis Walsingham',
-        r: 'Principal Secretary & Spymaster General; uncovered Ridolfi, Throckmorton, and Babington plots.',
-      },
-      {
-        n: 'Sir Francis Drake',
-        r: 'Privateer, navigator, and vice-admiral; raided Cadiz in 1587 and commanded at Gravelines.',
-      },
-      {
-        n: 'Duke of Medina Sidonia',
-        r: 'Spanish grandee appointed by Philip II to command the 130 ships of the Armada.',
-      },
-      {
-        n: 'Duke of Parma',
-        r: 'Brilliant general commanding Spain’s 27,000-man veteran Army of Flanders.',
-      },
-      {
-        n: 'Anthony Babington',
-        r: 'Catholic gentleman whose coded letters to Mary Stuart triggered her trial and execution.',
-      },
-      {
-        n: 'Sir John Hawkins',
-        r: 'Treasurer of the Navy; designed English race-built galleons and developed naval gunnery.',
-      },
-    ];
-  } else {
-    koConcepts = [
-      {
-        t: 'Grammar School',
-        d: 'Fee-paying secondary school for boys aged 7–14; over 70 established under Elizabeth.',
-      },
-      {
-        t: 'Petty School',
-        d: 'Early elementary school for young boys run in a teacher’s home, teaching basic reading and writing.',
-      },
-      {
-        t: 'Enclosure',
-        d: 'Fencing common arable land into private pastures for sheep farming, dispossessing farm labourers.',
-      },
-      {
-        t: 'Impotent Poor',
-        d: 'The elderly, sick, and disabled unable to work; categorized as "deserving" of parish relief.',
-      },
-      {
-        t: 'Sturdy Beggars',
-        d: 'Able-bodied vagrants categorized as "idle"; punished by whipping and forced labour.',
-      },
-      {
-        t: 'Houses of Correction',
-        d: 'Bridewell workhouses created by the 1576 Poor Act to punish idle vagrants with hard labour.',
-      },
-      {
-        t: 'Astrolabe',
-        d: 'Navigation tool measuring the altitude of sun and stars to calculate latitude at sea.',
-      },
-      {
-        t: 'Colony',
-        d: 'A new overseas settlement established, populated, and governed by people from another country.',
-      },
-    ];
-    koDates = [
-      '1572: Vagabonds Act passed',
-      '1576: Act for Relief of the Poor',
-      "1576: Burbage builds 'The Theatre'",
-      '1577: Drake sails on *Golden Hind*',
-      '1580: Drake returns to Deptford',
-      '1584: Raleigh receives Virginia patent',
-      '1585: First Roanoke colony founded',
-      '1586: Drake rescues Roanoke settlers',
-      '1587: Second Roanoke settlement',
-      '1590: White finds "CROATOAN" post',
-    ];
-    koFigures = [
-      {
-        n: 'Sir Walter Raleigh',
-        r: 'Courtier, poet, and explorer; organized and financed the Virginia colonization expeditions.',
-      },
-      {
-        n: 'James Burbage',
-        r: "Actor and builder; constructed 'The Theatre' in 1576, London’s first public playhouse.",
-      },
-      {
-        n: 'William Shakespeare',
-        r: 'Playwright and actor; joined the Lord Chamberlain’s Men; shaped Elizabethan culture.',
-      },
-      {
-        n: 'Ralph Lane',
-        r: 'Governor of the 1585 Roanoke colony; military officer whose brutality alienated native tribes.',
-      },
-      {
-        n: 'John White',
-        r: 'Artist and governor of the 1587 "Lost Colony"; painted watercolors of Native American life.',
-      },
-      {
-        n: 'Chief Wingina',
-        r: 'Secotan tribal chief on Roanoke Island; initially aided English, killed by Lane in 1586.',
-      },
-    ];
-  }
-
-  html += `
-  <div class="page page-container recto-page" id="page-21" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Master Knowledge Organiser &bull; Key Topic ${data.keyTopicNum}: ${data.title}
-        </h2>
-      </div>
-
-      <!-- 8 Disciplinary Concepts -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; background: #ffffff;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; display: block; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          1. Core Disciplinary Vocabulary &amp; Conceptual Definitions
-        </strong>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 10px; font-family: 'Inter', sans-serif; font-size: 7.6pt; line-height: 1.18;">
-          ${koConcepts
-            .map(
-              (c) => `
-          <div><strong>&bull; ${c.t}:</strong> ${c.d}</div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- 10 Chronological Anchors & 6 Historical Figures -->
-      <div style="display: grid; grid-template-columns: 1fr 1.3fr; gap: 6px; flex: 1;">
-        
-        <!-- 10 Chronological Milestones -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-            2. Essential Chronology
-          </strong>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.22; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
-            ${koDates
-              .map(
-                (d) => `
-            <div><strong>&bull;</strong> ${d}</div>
-            `,
-              )
-              .join('')}
-          </div>
-        </div>
-
-        <!-- 6 Historical Figures Matrix -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; display: block; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-            3. Key Historical Figures Matrix
-          </strong>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
-            ${koFigures
-              .map(
-                (f) => `
-            <div><strong>&bull; ${f.n}:</strong> ${f.r}</div>
-            `,
-              )
-              .join('')}
-          </div>
-        </div>
-
-      </div>
-
-      ${renderFooterStrip(21, footers[20], 24)}
-    </div>
-  </div>
-`;
+  html += renderSynopticExamPracticePage(ktId, footers[20]);
 
   // ====================================================================
   // PAGES 22 & 23: THE 40-QUESTION SYNOPTIC RETRIEVAL VAULT
