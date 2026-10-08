@@ -2960,81 +2960,64 @@ function buildEeeKeyTopicWorkbook(ktId) {
   }
 
   let examRowsHtml = '';
-  let cumulativeExamTotal = 0;
 
   data.enquiries.forEach((enq, idx) => {
     const leftPageNum = idx * 4 + 4;
     const rightPageNum = idx * 4 + 5;
     const extTariff = enq.rightExam.type === 'explain_why_12' ? 12 : 16;
     const extLabel = enq.rightExam.type === 'explain_why_12' ? 'Q2 Explain Why' : 'Q3 Essay';
-    cumulativeExamTotal += 2 + 2 + extTariff;
 
     const featAText = cleanStem(enq.featureA?.stem);
     const featBText = cleanStem(enq.featureB?.stem);
     let extText = enq.rightExam?.stem || 'Extended Writing Task';
-    if (extText.length > 68) extText = extText.slice(0, 65) + '...';
+    if (extText.length > 76) extText = extText.slice(0, 73) + '...';
 
     examRowsHtml += `
       <tr style="border-top: 1.5px solid #000000; border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-        <td rowspan="3" style="padding: 3.5px 4px; text-align: center; font-weight: 900; font-size: 8.2pt; border-right: 1.2px solid #000000; vertical-align: middle; background: #f8fafc;">
+        <td rowspan="3" style="padding: 6px 4px; text-align: center; font-weight: 900; font-size: 8.5pt; border-right: 1.2px solid #000000; vertical-align: middle; background: #f8fafc;">
           ${data.keyTopicNum}.${enq.enquiryNum}
         </td>
-        <td rowspan="3" style="padding: 3.5px 6px; border-right: 1.2px solid #000000; vertical-align: middle; background: #ffffff;">
-          <strong style="font-size: 7.6pt; text-transform: uppercase; color: #000000; display: block; line-height: 1.15;">
+        <td rowspan="3" style="padding: 6px 8px; border-right: 1.2px solid #000000; vertical-align: middle; background: #ffffff;">
+          <strong style="font-size: 8.0pt; text-transform: uppercase; color: #000000; display: block; line-height: 1.2;">
             Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
           </strong>
-          <span style="font-size: 6.8pt; color: #475569; display: block; margin-top: 2px;">
-            Do Now Retrieval (p. ${leftPageNum}): [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
+          <span style="font-size: 7.2pt; color: #475569; display: block; margin-top: 4px;">
+            Do Now Retrieval (p. ${leftPageNum}): [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
           </span>
         </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
+        <td style="padding: 5.5px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 800; background: #fafafa;">
           p. ${rightPageNum}
         </td>
-        <td style="padding: 3px 6px; border-right: 1px solid #000000; font-size: 7.3pt; font-weight: 600;">
+        <td style="padding: 5.5px 8px; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 600;">
           <strong>Q1(a) Feature:</strong> ${featAText} [2m]
         </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 700;">
-          [ &nbsp;<strong>___ / ___</strong>&nbsp; ]
+        <td rowspan="3" style="padding: 6px 6px; text-align: center; border-right: 1.2px solid #000000; font-size: 9.0pt; font-weight: 800; vertical-align: middle; background: #ffffff;">
+          [ &nbsp;&nbsp;&nbsp;<strong>___ / ___</strong>&nbsp;&nbsp;&nbsp; ]
         </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 8.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
-        </td>
-        <td style="padding: 3px 4px; text-align: center; font-size: 6.8pt; color: #444444; white-space: nowrap;">
-          [ ] Done &nbsp; [ ] Redraft
+        <td style="padding: 5.5px 6px; text-align: center; font-size: 9.5pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
         </td>
       </tr>
       <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
+        <td style="padding: 5.5px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 800; background: #fafafa;">
           p. ${rightPageNum}
         </td>
-        <td style="padding: 3px 6px; border-right: 1px solid #000000; font-size: 7.3pt; font-weight: 600;">
+        <td style="padding: 5.5px 8px; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 600;">
           <strong>Q1(b) Feature:</strong> ${featBText} [2m]
         </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 700;">
-          [ &nbsp;<strong>___ / ___</strong>&nbsp; ]
-        </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 8.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
-        </td>
-        <td style="padding: 3px 4px; text-align: center; font-size: 6.8pt; color: #444444; white-space: nowrap;">
-          [ ] Done &nbsp; [ ] Redraft
+        <td style="padding: 5.5px 6px; text-align: center; font-size: 9.5pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
         </td>
       </tr>
       <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
+        <td style="padding: 5.5px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 800; background: #fafafa;">
           p. ${rightPageNum}
         </td>
-        <td style="padding: 3px 6px; border-right: 1px solid #000000; font-size: 7.3pt; font-weight: 600;">
+        <td style="padding: 5.5px 8px; border-right: 1px solid #000000; font-size: 7.6pt; font-weight: 600;">
           <strong>${extLabel}:</strong> ${extText} [${extTariff}m]
         </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 700;">
-          [ &nbsp;<strong>___ / ___</strong>&nbsp; ]
-        </td>
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 8.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong> ]
-        </td>
-        <td style="padding: 3px 4px; text-align: center; font-size: 6.8pt; color: #444444; white-space: nowrap;">
-          [ ] Done &nbsp; [ ] Redraft
+        <td style="padding: 5.5px 6px; text-align: center; font-size: 9.5pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong> ]
         </td>
       </tr>
     `;
@@ -3055,15 +3038,15 @@ function buildEeeKeyTopicWorkbook(ktId) {
           .map((s) => s.trim())
           .filter(Boolean);
         specSnippet = parts.slice(0, 2).join(' &bull; ');
-        if (specSnippet.length > 50) specSnippet = specSnippet.slice(0, 48) + '...';
+        if (specSnippet.length > 44) specSnippet = specSnippet.slice(0, 41) + '...';
       }
 
       return `
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; text-align: center; flex: 1; box-sizing: border-box;">
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; text-align: center; box-sizing: border-box; overflow: hidden; min-width: 0;">
         
         <!-- Card Header -->
-        <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; color: #000000; display: block;">
+        <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; overflow: hidden;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #000000; display: block;">
             Enquiry ${data.keyTopicNum}.${enq.enquiryNum}
           </strong>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #1e293b; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
@@ -3080,30 +3063,30 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
 
         <!-- Dual QR Codes: Lesson + Quiz -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; align-items: center; justify-content: center; margin: auto 0; padding: 2px 0;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; align-items: center; justify-content: center; margin: 3px 0; padding: 2px 0;">
           
           <!-- Left QR: Digital Lesson -->
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1.5px;">
+          <div style="display: flex; flex-direction: column; align-items: center; min-width: 0;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1.5px; white-space: nowrap;">
               📖 Lesson
             </span>
-            <div style="width: 18mm; height: 18mm; margin: 0 auto; background: #ffffff; padding: 1px; border: 1px solid #cbd5e1; border-radius: 3px; box-sizing: border-box;">
+            <div style="width: 16mm; height: 16mm; margin: 0 auto; background: #ffffff; padding: 1px; border: 1px solid #cbd5e1; border-radius: 3px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">
               ${lessonQrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 600; color: #475569; margin-top: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 600; color: #475569; margin-top: 1.5px; white-space: nowrap;">
               Read Online
             </span>
           </div>
 
           <!-- Right QR: Interactive Quiz -->
-          <div style="display: flex; flex-direction: column; align-items: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1.5px;">
+          <div style="display: flex; flex-direction: column; align-items: center; min-width: 0;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1.5px; white-space: nowrap;">
               ⚡ 20-Q Quiz
             </span>
-            <div style="width: 18mm; height: 18mm; margin: 0 auto; background: #ffffff; padding: 1px; border: 1px solid #cbd5e1; border-radius: 3px; box-sizing: border-box;">
+            <div style="width: 16mm; height: 16mm; margin: 0 auto; background: #ffffff; padding: 1px; border: 1px solid #cbd5e1; border-radius: 3px; box-sizing: border-box; display: flex; align-items: center; justify-content: center;">
               ${quizQrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 600; color: #475569; margin-top: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 600; color: #475569; margin-top: 1.5px; white-space: nowrap;">
               Self-Marking
             </span>
           </div>
@@ -3166,49 +3149,31 @@ function buildEeeKeyTopicWorkbook(ktId) {
       </div>
 
       <!-- Master Exam Practice & Homework Assessment Tracker Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 3px; box-sizing: border-box;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px; box-sizing: border-box;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="border-bottom: 1px solid #000000; background: #e2e8f0; color: #000000;">
-              <th colspan="7" style="padding: 2.5px 6px; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">
+              <th colspan="6" style="padding: 3px 6px; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; text-align: left;">
                 Master Exam Practice &amp; Homework Assessment Tracker &bull; Key Topic ${data.keyTopicNum}
               </th>
             </tr>
             <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 2.5px 3px; width: 28px; text-align: center; font-size: 7.5pt; font-weight: 900; border-right: 1.2px solid #000000;">#</th>
-              <th style="padding: 2.5px 6px; text-align: left; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; border-right: 1.2px solid #000000;">Enquiry &amp; Specification Topic</th>
-              <th style="padding: 2.5px 4px; width: 34px; text-align: center; font-size: 7.3pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Page</th>
-              <th style="padding: 2.5px 6px; text-align: left; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Exam Practice Question &amp; Focus</th>
-              <th style="padding: 2.5px 4px; width: 78px; text-align: center; font-size: 7.3pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">HW (Date)</th>
-              <th style="padding: 2.5px 4px; width: 74px; text-align: center; font-size: 7.3pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Mark Awarded</th>
-              <th style="padding: 2.5px 4px; width: 88px; text-align: center; font-size: 7.3pt; font-weight: 900; text-transform: uppercase;">Teacher Check</th>
+              <th style="padding: 3px 4px; width: 28px; text-align: center; font-size: 7.6pt; font-weight: 900; border-right: 1.2px solid #000000;">#</th>
+              <th style="padding: 3px 8px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1.2px solid #000000;">Enquiry &amp; Specification Topic</th>
+              <th style="padding: 3px 4px; width: 36px; text-align: center; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Page</th>
+              <th style="padding: 3px 8px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Exam Practice Question &amp; Focus</th>
+              <th style="padding: 4px 6px; width: 100px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1.2px solid #000000;">Homework Deadline</th>
+              <th style="padding: 4px 6px; width: 125px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase;">Mark Awarded</th>
             </tr>
           </thead>
           <tbody>
             ${examRowsHtml}
-            <tr style="background: #f8fafc; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="3" style="padding: 3px 6px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 7.4pt;">
-                Key Topic ${data.keyTopicNum} Cumulative Assessment Totals
-              </td>
-              <td style="padding: 3px 6px; border-right: 1px solid #000000; font-size: 7.3pt;">
-                Do Now Retrieval Vault Total (pp. 22–23): [ <strong>&nbsp;&nbsp;&nbsp;&nbsp; / 40</strong> ]
-              </td>
-              <td style="padding: 3px 4px; border-right: 1px solid #000000; text-align: center; font-size: 7.2pt; color: #555555;">
-                Key Topic Total
-              </td>
-              <td style="padding: 3px 4px; border-right: 1px solid #000000; text-align: center; white-space: nowrap; font-size: 7.8pt;">
-                [ &nbsp;&nbsp;&nbsp; <strong>/ ${cumulativeExamTotal}</strong> ]
-              </td>
-              <td style="padding: 3px 4px; text-align: center; font-size: 7.8pt; font-weight: 900;">
-                [ &nbsp;&nbsp;&nbsp; <strong>/ ${cumulativeExamTotal + 40}</strong> ]
-              </td>
-            </tr>
           </tbody>
         </table>
       </div>
 
       <!-- Interactive Digital Hub (Flex Absorbs Vertical Space) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px; box-sizing: border-box;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 2px; box-sizing: border-box; overflow: hidden;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding-bottom: 2px; margin-bottom: 3px; box-sizing: border-box;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
             📱 Interactive Digital Hub &bull; Smartphone QR Revision Access
@@ -3217,7 +3182,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
             Scan to read full digital textbook narratives or take live 20-question self-marking quizzes
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; flex: 1; box-sizing: border-box;">
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; text-align: center; flex: 1; box-sizing: border-box; overflow: hidden;">
           ${qrCardsHtml}
         </div>
       </div>
