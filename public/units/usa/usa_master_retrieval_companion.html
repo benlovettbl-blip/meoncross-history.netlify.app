@@ -503,67 +503,162 @@
     .vocab-def-23 { color: #1e293b; font-family: 'Georgia', serif; display: block; margin-top: 1px; }
 
     /* Page 24: Paper 3 Exam Strategy */
-    .strat-card-24 {
-      border: 1.3px solid #0f172a;
+    .strat-stack-24 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 5px;
+      margin: 2px 0;
+    }
+    .strat-timing-bar {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3.5px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
       border-radius: 2px;
-      padding: 6px 10px;
+    }
+    .strat-card-24 {
+      border: 1.4px solid #0f172a;
+      border-radius: 2px;
+      padding: 7px 11px;
       background: #ffffff;
-      margin-bottom: 5px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
     .strat-header-24 {
       font-family: 'Inter', sans-serif;
-      font-size: 8.6pt;
+      font-size: 9.0pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
-      border-bottom: 1.3px solid #0f172a;
-      padding-bottom: 2px;
-      margin-bottom: 4px;
+      border-bottom: 1.4px solid #0f172a;
+      padding-bottom: 2.5px;
+      margin-bottom: 3px;
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
       letter-spacing: 0.3px;
+    }
+    .strat-header-badge {
+      font-size: 7.2pt;
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 1px 6px;
+      border-radius: 2px;
+      font-weight: 800;
     }
     .strat-grid-24 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      gap: 8px;
       font-family: 'Georgia', serif;
-      font-size: 7.5pt;
-      line-height: 1.25;
+      font-size: 8.0pt;
+      line-height: 1.30;
     }
     .strat-col-item {
       border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #0f172a;
       background: #f8fafc;
-      padding: 4px 6px;
+      padding: 6px 8px;
       border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
     }
     .strat-col-item strong {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 8.5pt;
       color: #0f172a;
       display: block;
-      margin-bottom: 2px;
+      margin-bottom: 1px;
+    }
+    .strat-col-item .stem {
+      font-family: 'Georgia', serif;
+      font-style: italic;
+      color: #047857;
+      font-weight: 600;
+    }
+    .strat-col-item .trap {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.0pt;
+      color: #b91c1c;
+      font-weight: 700;
+      margin-top: 1px;
+    }
+
+    .strat-essay-box {
+      font-family: 'Georgia', serif;
+      font-size: 8.0pt;
+      line-height: 1.30;
+      color: #1e293b;
+    }
+    .strat-essay-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px;
+      margin-top: 3px;
+    }
+    .strat-essay-step {
+      border: 1px solid #cbd5e1;
+      background: #f8fafc;
+      padding: 5px 7px;
+      border-radius: 2px;
+      font-size: 7.8pt;
+      line-height: 1.26;
+    }
+    .strat-essay-step strong {
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
+      font-size: 8.2pt;
+      display: block;
+      margin-bottom: 1.5px;
+    }
+
+    .strat-traps-bar {
+      border: 1.2px solid #b91c1c;
+      background: #fef2f2;
+      border-left: 4px solid #b91c1c;
+      padding: 4px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      line-height: 1.28;
+      color: #7f1d1d;
+      border-radius: 2px;
+    }
+    .strat-traps-bar strong {
+      color: #991b1b;
+      font-weight: 900;
+      text-transform: uppercase;
     }
 
     .archival-seal-wrap {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 12px;
       border: 1.3px solid #0f172a;
       background: #f8fafc;
-      padding: 5px 12px;
-      margin-top: 3px;
+      padding: 4px 10px;
     }
     .archival-seal-badge {
       border: 2px solid #0f172a;
-      padding: 3px 8px;
+      padding: 2.5px 7px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 6.8pt;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       text-align: center;
+      white-space: nowrap;
     }
   </style>
 </head>
@@ -6313,72 +6408,114 @@
       <span>Modern Depth Study (1HI0/33)</span>
     </div>
 
-    <div class="lesson-meta-bar" style="margin-bottom: 3px;">
+    <div class="lesson-meta-bar" style="margin-bottom: 2px;">
       <h2 class="lesson-meta-title">Edexcel Paper 3 Examination Blueprint & Essay Architect</h2>
-      <div class="lesson-meta-enquiry">Mastering the 5 Essential Question Types for Grade 9 Success</div>
+      <div class="lesson-meta-enquiry">Mastering the 5 Essential Question Types for Grade 9 Success • 1 Hour 20 Mins (52 Marks Total)</div>
     </div>
 
-    <div class="strat-card-24">
-      <div class="strat-header-24">
-        <span>Section A: Source Inference & Causal Explanation</span>
-        <span>Questions 1 & 2 (16 Marks Total)</span>
+    <div class="strat-stack-24">
+      <!-- TIMING BAR -->
+      <div class="strat-timing-bar">
+        <span>⏱️ Paper 3 Exam Timing Allocation (80 Minutes Total)</span>
+        <span>Section A: 23 Mins (16m) • Section B: 52 Mins (36m) • Review: 5 Mins</span>
       </div>
-      <div class="strat-grid-24">
-        <div class="strat-col-item">
-          <strong>Question 1: Source Inference [4 Marks • 5 Mins]</strong>
-          Give two things you can infer from Source A about [topic].<br>
-          • <em>Formula:</em> "I can infer that..." + "Details in the source that tell me this are..."<br>
-          • <em>Examiner Rule:</em> Never simply copy a quote without stating the inference behind it.
-        </div>
-        <div class="strat-col-item">
-          <strong>Question 2: Explain Why [12 Marks • 18 Mins]</strong>
-          Explain why [event happened]... You may use [Stimulus 1] and [Stimulus 2].<br>
-          • <em>Formula:</em> Write 3 detailed PEEL paragraphs (both stimulus points + 1 substantial own knowledge point).<br>
-          • <em>Examiner Rule:</em> Explicitly link back: "This led directly to... because..."
-        </div>
-      </div>
-    </div>
 
-    <div class="strat-card-24">
-      <div class="strat-header-24">
-        <span>Section B: Source Utility & Historical Interpretations</span>
-        <span>Questions 3(a), 3(b), 3(c) & 3(d) (36 Marks Total)</span>
-      </div>
-      <div class="strat-grid-24">
-        <div class="strat-col-item">
-          <strong>Question 3(a): Source Utility [8 Marks • 12 Mins]</strong>
-          How useful are Sources B & C for an enquiry into [topic]?<br>
-          • <em>Formula:</em> Evaluate Content, Provenance (COP), and Contextual Knowledge for both sources.<br>
-          • <em>Examiner Rule:</em> Utility is about how the source helps an enquiry, not whether it is "biased".
+      <!-- SECTION A -->
+      <div class="strat-card-24">
+        <div class="strat-header-24">
+          <span>Section A: Contemporary Source Inference & Causal Explanation</span>
+          <span class="strat-header-badge">Questions 1 & 2 • 16 Marks (23 Mins)</span>
         </div>
-        <div class="strat-col-item">
-          <strong>Questions 3(b) & 3(c): Interpretation Differences [8 Marks • 10 Mins]</strong>
-          • <em>3(b) [4m]:</em> State the main difference between Interpretation 1 & 2 using direct details.<br>
-          • <em>3(c) [4m]:</em> Suggest one reason why they differ (e.g. they relied on different types of evidence).
+        <div class="strat-grid-24">
+          <div class="strat-col-item">
+            <strong>Question 1: Source Inference [4 Marks • Target: 5 Mins]</strong>
+            <span>Give two things you can infer from Source A about [enquiry topic].</span>
+            <div>• <span class="stem">Inference 1:</span> "I can infer that [historical insight]..."</div>
+            <div>• <span class="stem">Detail:</span> "The source states that '[direct supportive quote]'."</div>
+            <div>• <span class="stem">Inference 2:</span> "Secondly, I can infer that [second insight]..."</div>
+            <div>• <span class="stem">Detail:</span> "This is shown when the author notes '[second quote]'."</div>
+            <div class="trap">⚠️ Fatal Trap: Never copy a quote without explaining the inference behind it! (1m inference + 1m quote = 2m each).</div>
+          </div>
+          <div class="strat-col-item">
+            <strong>Question 2: Explain Why [12 Marks • Target: 18 Mins]</strong>
+            <span>Explain why [event happened]... You may use [Stimulus 1] and [Stimulus 2].</span>
+            <div>• <strong>3 Detailed PEEL Paragraphs:</strong> Point, Evidence (dates/names), Explain causation, Link to stem.</div>
+            <div>• <strong>Paragraph 1 & 2:</strong> Develop both stimulus points with rich historical context.</div>
+            <div>• <strong>Paragraph 3 (Crucial Level 4 Gate):</strong> You MUST introduce a substantial 3rd independent factor from own knowledge (not in stimulus).</div>
+            <div class="trap">⚠️ Fatal Trap: Relying only on the two stimulus points caps your answer at Level 2/3 (max 7/12 marks).</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="strat-card-24" style="margin-bottom: 2px;">
-      <div class="strat-header-24">
-        <span>Question 3(d): The 20-Mark Synoptic Evaluation Essay</span>
-        <span>16 Marks Content + 4 Marks SPaG • 30 Minutes</span>
+      <!-- SECTION B: UTILITY & INTERPRETATIONS -->
+      <div class="strat-card-24">
+        <div class="strat-header-24">
+          <span>Section B: Source Utility & Historical Interpretation Contrast</span>
+          <span class="strat-header-badge">Questions 3(a), 3(b) & 3(c) • 16 Marks (22 Mins)</span>
+        </div>
+        <div class="strat-grid-24">
+          <div class="strat-col-item">
+            <strong>Question 3(a): Source Utility [8 Marks • Target: 12 Mins]</strong>
+            <span>How useful are Sources B & C for an enquiry into [topic]?</span>
+            <div>• <strong>Evaluate Both Sources Separately:</strong> Content, Context, and Provenance (COP).</div>
+            <div>• <span class="stem">Content:</span> What does the source say, and does own knowledge corroborate it?</div>
+            <div>• <span class="stem">Provenance (NOP):</span> Nature (type), Origin (author/date), Purpose (motive).</div>
+            <div class="trap">⚠️ Fatal Trap: Never say a source is "biased and therefore useless". Even propaganda is highly useful for revealing official intention and attitudes!</div>
+          </div>
+          <div class="strat-col-item">
+            <strong>Questions 3(b) & 3(c): Interpretations [8 Marks • Target: 10 Mins]</strong>
+            <div>• <strong>3(b) Main Difference [4 Marks • 5 Mins]:</strong> State the precise difference in views: <span class="stem">"Interpretation 1 views [X] as [positive/caused by Y], stating '[quote]', whereas Interpretation 2 argues [X] was [negative/caused by Z], stating '[quote]'."</span></div>
+            <div>• <strong>3(c) Reason for Difference [4 Marks • 5 Mins]:</strong> Explain why historians differ: <span class="stem">"The historians disagree because they relied on different evidence or prioritized different aspects (e.g. federal politics vs. grassroots protest)."</span></div>
+            <div class="trap">⚠️ Fatal Trap: Do not treat interpretations as primary sources; evaluate their historiographical emphasis!</div>
+          </div>
+        </div>
       </div>
-      <div style="font-family: 'Georgia', serif; font-size: 7.4pt; line-height: 1.25; color: #1e293b;">
-        <strong>The 4-Paragraph Synoptic Architecture:</strong><br>
-        • <strong>Paragraph 1 (Agree with Target):</strong> Unpack the view of Interpretation 2 using quotes, own detailed historical evidence, and explain why this factor is compelling.<br>
-        • <strong>Paragraph 2 (Counter with Interpretation 1):</strong> Unpack the alternative view of Interpretation 1 using evidence and own knowledge.<br>
-        • <strong>Paragraph 3 (Weigh Against Broader Causes):</strong> Integrate wider specification knowledge not covered in either interpretation (e.g. federal intervention vs. economic boycotts; military quagmire vs. domestic anti-war protests).<br>
-        • <strong>Conclusion (Final Historical Verdict):</strong> State clearly which interpretation is more convincing by establishing criteria (e.g. long-term permanence vs. short-term catalyst).
-      </div>
-    </div>
 
-    <div class="archival-seal-wrap">
-      <div class="archival-seal-badge">
-        OFFICIAL DEPARTMENT ARCHIVAL REVISION STANDARD • 1HI0/33
+      <!-- SECTION B: 20-MARK SYNOPTIC ESSAY -->
+      <div class="strat-card-24">
+        <div class="strat-header-24">
+          <span>Question 3(d): The 20-Mark Synoptic Evaluation Essay</span>
+          <span class="strat-header-badge">16 Marks Content + 4 Marks SPaG • Target: 30 Mins</span>
+        </div>
+        <div class="strat-essay-box">
+          <div style="font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+            The 4-Paragraph Synoptic Architecture: "How far do you agree with Interpretation 2 about [topic]?"
+          </div>
+          <div class="strat-essay-grid">
+            <div class="strat-essay-step">
+              <strong>Paragraph 1: Agree with Target (Interp 2)</strong>
+              Explain why Interpretation 2 is convincing. Quote directly from the text. Corroborate with 2–3 precise historical facts from your own knowledge (dates, statistics, protagonists) to validate its central argument.
+            </div>
+            <div class="strat-essay-step">
+              <strong>Paragraph 2: Counter-Argue (Interp 1)</strong>
+              Examine the alternative viewpoint in Interpretation 1. Quote directly. Provide conflicting historical evidence demonstrating that this alternative perspective is also valid and holds substantial explanatory power.
+            </div>
+            <div class="strat-essay-step">
+              <strong>Paragraph 3: Broader Causal Context</strong>
+              Integrate wider specification factors not mentioned in either interpretation (e.g. economic boycotts, media coverage, international pressure, legislative deadlock). Show comprehensive specification command.
+            </div>
+            <div class="strat-essay-step">
+              <strong>Paragraph 4: Historical Verdict & Criteria</strong>
+              Deliver a definitive, criteria-based conclusion. Never sit on the fence! Establish clear historical criteria (e.g. long-term structural cause vs. short-term trigger; political reform vs. economic reality) to justify which view is stronger.
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; line-height: 1.2;">
-        Verified 100% compliant with Pearson Edexcel GCSE (9–1) Specification. 192 Curated Dual-Line Retrieval Prompts across all 16 Enquiries.
+
+      <!-- EXAMINER PITFALLS STRIP -->
+      <div class="strat-traps-bar">
+        <strong>⚠️ 5 Fatal Examiner Pitfalls to Avoid:</strong>
+        1. Quoting without inferring on Q1 • 2. Omitting independent own knowledge on Q2 • 3. Calling sources "useless" on Q3(a) • 4. Paraphrasing without contrasting on Q3(b) • 5. Writing a one-sided essay without criteria on Q3(d).
+      </div>
+
+      <!-- ARCHIVAL SEAL -->
+      <div class="archival-seal-wrap">
+        <div class="archival-seal-badge">
+          OFFICIAL DEPARTMENT ARCHIVAL REVISION STANDARD • 1HI0/33
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; line-height: 1.2;">
+          Verified 100% compliant with Pearson Edexcel GCSE (9–1) Specification. 192 Curated Dual-Line Retrieval Prompts across all 16 Enquiries.
+        </div>
       </div>
     </div>
 

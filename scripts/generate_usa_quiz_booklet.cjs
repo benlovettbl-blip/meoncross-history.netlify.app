@@ -91,8 +91,8 @@ const APPROVED_FOOTERS = [
   'Department Marking Bank • Key Topic 2: Protest, Progress and Radicalism (1960–75) • Verified Marking Model', // P20
   'Department Marking Bank • Key Topic 3: US Involvement in Vietnam (1954–75) • Verified Marking Model', // P21
   'Department Marking Bank • Key Topic 4: Reactions & End of War (1964–75) • Verified Marking Model', // P22
-  'Key Historical Protagonists Gallery & Tier 3 Disciplinary Vocabulary • Edexcel Paper 3', // P23
-  'Edexcel Paper 3 Examination Strategy & Essay Architect • Departmental Archival Standard', // P24
+  'Edexcel Paper 3 Examination Strategy: Section A & Section B Question Guide • The History Department', // P23
+  'Edexcel Paper 3 Synoptic Evaluation Essay Architect & Digital Revision Hub • Departmental Archival Standard', // P24
 ];
 
 // --------------------------------------------------------------------------
@@ -485,181 +485,91 @@ function buildHtml() {
       color: #1e293b;
       margin: 0;
     }
-    /* Specification Snapshot (Top Half) */
-    .cover-spec-container {
-      border: 1.3px solid #0f172a;
-      background: #f8fafc;
-      border-radius: 2px;
-      padding: 3px 5px;
-      margin-bottom: 4px;
-    }
-    .cover-spec-header-strip {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      background: #0f172a;
-      color: #ffffff;
-      padding: 2.5px 6px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 3px;
-      border-radius: 1px;
-    }
-    .cover-spec-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
-    }
-    .cover-spec-col {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #94a3b8;
-      background: #ffffff;
-      border-radius: 2px;
-      overflow: hidden;
-    }
-    .cover-spec-col-title {
-      background: #f1f5f9;
-      color: #0f172a;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      text-align: center;
-      padding: 2px 4px;
-      border-bottom: 1px solid #cbd5e1;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
-    }
-    .cover-spec-img {
-      width: 100%;
-      height: 98mm;
-      object-fit: contain;
-      background: #ffffff;
-      display: block;
-    }
-
-    .scholar-meta-grid {
+    .pupil-meta-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
-      gap: 12px;
-      border: 1.3px solid #0f172a;
-      padding: 4px 10px;
+      gap: 14px;
+      border: 1.4px solid #0f172a;
+      padding: 6px 12px;
       background: #ffffff;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 8.8pt;
     }
-    .scholar-field { display: flex; align-items: baseline; gap: 4px; }
-    .scholar-field strong { font-weight: 900; color: #0f172a; }
-    .scholar-field .field-line { flex: 1; border-bottom: 1.2px solid #0f172a; height: 9px; }
+    .pupil-field { display: flex; align-items: baseline; gap: 6px; }
+    .pupil-field strong { font-weight: 900; color: #0f172a; }
+    .pupil-field .field-line { flex: 1; border-bottom: 1.4px solid #0f172a; height: 11px; }
 
-    /* Homework Tracking Dual Grid (Bottom Half) */
+    /* Expanded Full-Page Homework Tracking Dual Grid */
+    .hw-ledger-full-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
     .hw-ledger-dual-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
-      margin-bottom: 4px;
+      gap: 10px;
+      flex: 1;
     }
     .hw-ledger-table {
       width: 100%;
+      height: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 8.2pt;
     }
     .hw-ledger-table thead th {
       background: #0f172a;
       color: #ffffff;
-      padding: 3px 4px;
-      font-weight: 800;
+      padding: 4px 6px;
+      font-weight: 900;
       text-transform: uppercase;
-      border: 1px solid #0f172a;
-      font-size: 6.8pt;
-      letter-spacing: 0.3px;
+      border: 1.2px solid #0f172a;
+      font-size: 7.5pt;
+      letter-spacing: 0.4px;
     }
     .hw-ledger-table td {
-      border: 1px solid #cbd5e1;
-      padding: 2.8px 4.5px;
+      border: 1.2px solid #cbd5e1;
+      padding: 5px 6px;
       vertical-align: middle;
       color: #000000;
-      line-height: 1.15;
+      line-height: 1.2;
     }
     .hw-ledger-table tr:nth-child(even) td { background: #f8fafc; }
     .hw-col-title {
-      background: #1e293b !important;
+      background: #0f172a !important;
       color: #ffffff;
-      font-size: 7.0pt;
+      font-size: 8.0pt;
       font-weight: 900;
       text-align: center;
-      padding: 2.5px 4px !important;
-      letter-spacing: 0.4px;
+      padding: 4px 6px !important;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-    }
-
-    .cover-bottom-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 8px;
-      align-items: stretch;
-      margin-bottom: 2px;
     }
 
     .cover-protocol-box {
-      border: 1.3px solid #0f172a;
-      border-left: 4.5px solid #0f172a;
+      border: 1.4px solid #0f172a;
+      border-left: 5px solid #0f172a;
       border-radius: 2px;
-      padding: 4.5px 8px;
-      background: #ffffff;
+      padding: 8px 12px;
+      background: #f8fafc;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      line-height: 1.32;
+      font-size: 7.8pt;
+      line-height: 1.35;
       color: #1e293b;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      margin-bottom: 4px;
     }
     .cover-protocol-box strong {
       color: #0f172a;
-      font-size: 7.5pt;
-      margin-bottom: 1.5px;
+      font-size: 8.4pt;
+      margin-bottom: 2px;
       display: block;
-    }
-
-    .cover-qr-card {
-      border: 1.3px solid #0f172a;
-      border-radius: 2px;
-      padding: 3px 6px;
-      background: #f8fafc;
-      width: 160px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      flex-shrink: 0;
-    }
-    .cover-qr-title {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.7pt;
-      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.4px;
-      color: #0f172a;
-      margin-bottom: 2px;
-    }
-    .cover-qr-img-box {
-      width: 44px;
-      height: 44px;
-      margin-bottom: 2px;
-    }
-    .cover-qr-desc {
-      font-family: 'Inter', sans-serif;
-      font-size: 5.6pt;
-      line-height: 1.15;
-      color: #475569;
-      font-weight: 600;
     }
 
     /* Page 2: Chronology Domino Flowchart */
@@ -751,34 +661,63 @@ function buildHtml() {
       height: 6.2mm;
     }
 
-    /* Examiner Trap Box at Base of Enquiry Pages */
+    /* Examiner Trap Box at Base of Enquiry Pages (Clean SVG/HTML Badge, Zero Glyph Failure) */
     .examiner-trap-box {
-      border: 1.2px solid #b91c1c;
-      border-left: 4px solid #b91c1c;
+      border: 1.3px solid #b91c1c;
+      border-left: 4.5px solid #b91c1c;
       background: #fef2f2;
-      padding: 3px 7px;
-      margin-top: 2px;
+      padding: 4px 8px;
+      margin-top: 3px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
       font-size: 7.2pt;
-      line-height: 1.22;
-      color: #991b1b;
-      font-weight: 600;
+      line-height: 1.28;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
     }
-    .examiner-trap-box strong {
-      color: #7f1d1d;
+    .trap-tag {
+      background: #b91c1c;
+      color: #ffffff;
       font-weight: 900;
+      font-size: 6.4pt;
+      letter-spacing: 0.5px;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      padding: 1.5px 5px;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .trap-text {
+      font-weight: 600;
+      color: #991b1b;
+      flex: 1;
     }
 
-    /* Pages 19–22: Department Marking Bank (2 COLUMNS x 2 ROWS = 4 ENQUIRIES PER PAGE) */
+    /* Pages 19–22: Department Marking Bank (4 Pages • 0px Spillover Standard) */
+    .mb-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f5f9;
+      border: 1.2px solid #cbd5e1;
+      padding: 2.5px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.0pt;
+      color: #334155;
+      border-radius: 2px;
+      margin-bottom: 3px;
+    }
+    .mb-meta-bar strong {
+      color: #0f172a;
+      font-weight: 800;
+    }
     .mb-grid-4enq {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 6px;
+      gap: 5px;
       flex: 1;
-      margin-top: 2px;
+      margin-top: 1px;
       height: 100%;
     }
     .mb-enq-card {
@@ -809,132 +748,297 @@ function buildHtml() {
       flex-direction: column;
       justify-content: space-between;
       flex: 1;
-      gap: 1.5px;
+      gap: 1px;
     }
     .mb-ans-row {
       border-bottom: 1px dashed #cbd5e1;
-      padding: 1.2px 2px;
-      font-size: 6.9pt;
+      padding: 1.0px 1px;
+      font-size: 6.6pt;
       line-height: 1.15;
       display: flex;
-      gap: 4px;
+      gap: 3.5px;
       align-items: baseline;
     }
     .mb-ans-row:last-child { border-bottom: none; }
     .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; min-width: 14px; }
     .mb-ans-text { flex: 1; color: #1e293b; }
     .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 800; color: #000000; }
-    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #64748b; white-space: nowrap; }
 
-    /* Page 23: Historical Protagonists & Vocabulary */
-    .proto-grid-23 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 4.5px 8px;
+    /* Page 23: Section A & B Question Guide */
+    .strat-meta-bar-23 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.3pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border-radius: 2px;
       margin-bottom: 4px;
     }
-    .proto-card-23 {
-      border: 1.2px solid #0f172a;
-      border-radius: 2px;
-      padding: 4px 6px;
-      background: #ffffff;
+    .strat-meta-bar-23 strong { color: #f8fafc; font-weight: 900; text-transform: uppercase; }
+    .strat-stack-23 {
       display: flex;
-      gap: 8px;
-      align-items: center;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 7px;
+      margin: 2px 0;
     }
-    .proto-img-23 {
-      width: 44px;
-      height: 52px;
-      object-fit: cover;
-      border: 1.2px solid #000;
-      border-radius: 2px;
-      flex-shrink: 0;
-      background: #e2e8f0;
-    }
-    .proto-info-23 { flex: 1; line-height: 1.22; }
-    .proto-name-23 { font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; color: #000000; }
-    .proto-role-23 { font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #334155; display: block; }
-    .proto-desc-23 { font-family: 'Georgia', serif; font-size: 7.1pt; color: #111827; margin-top: 1px; }
-
-    .vocab-grid-23 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.5px 7px;
-    }
-    .vocab-card-23 {
-      border: 1px solid #cbd5e1;
-      border-left: 3px solid #0f172a;
-      padding: 3.8px 6px;
-      background: #f8fafc;
-      font-size: 7.1pt;
-      line-height: 1.22;
-    }
-    .vocab-term-23 { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 8.2pt; }
-    .vocab-phon-23 { font-style: italic; color: #64748b; font-size: 6.8pt; }
-    .vocab-def-23 { color: #1e293b; font-family: 'Georgia', serif; display: block; margin-top: 1px; }
-
-    /* Page 24: Paper 3 Exam Strategy */
-    .strat-card-24 {
+    .strat-card-full {
       border: 1.3px solid #0f172a;
       border-radius: 2px;
-      padding: 6px 10px;
       background: #ffffff;
-      margin-bottom: 5px;
+      padding: 7px 11px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .strat-header-24 {
+    .strat-card-header {
       font-family: 'Inter', sans-serif;
-      font-size: 8.6pt;
+      font-size: 9.4pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
       border-bottom: 1.3px solid #0f172a;
-      padding-bottom: 2px;
+      padding-bottom: 2.5px;
       margin-bottom: 4px;
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
       letter-spacing: 0.3px;
     }
-    .strat-grid-24 {
+    .strat-badge {
+      font-size: 7.0pt;
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 1.5px 6px;
+      border-radius: 2px;
+      font-weight: 800;
+    }
+    .strat-task-prompt {
+      font-family: 'Georgia', serif;
+      font-size: 8.4pt;
+      color: #1e293b;
+      margin-bottom: 3.5px;
+    }
+    .strat-grid-2col {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+    .strat-grid-3col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 6px;
-      font-family: 'Georgia', serif;
-      font-size: 7.5pt;
-      line-height: 1.25;
     }
-    .strat-col-item {
+    .strat-subbox {
       border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #0f172a;
       background: #f8fafc;
-      padding: 4px 6px;
+      padding: 5px 8px;
       border-radius: 2px;
+      font-family: 'Georgia', serif;
+      font-size: 8.2pt;
+      line-height: 1.32;
     }
-    .strat-col-item strong {
+    .strat-subbox-title {
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
+      font-size: 8.4pt;
+      font-weight: 800;
       color: #0f172a;
-      display: block;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
+    }
+    .highlight-box {
+      border-left-color: #b91c1c;
+      background: #fff5f5;
+    }
+    .strat-rule-strip {
+      margin-top: 3.5px;
+      border: 1px solid #cbd5e1;
+      background: #f1f5f9;
+      padding: 3px 6px;
+      border-radius: 2px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+    }
+    .strat-mini-trap {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      color: #991b1b;
+      font-weight: 700;
+      margin-top: 3px;
     }
 
+    /* Page 24: Synoptic Essay Architect & Digital Revision Hub */
+    .strat-meta-bar-24 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3px 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.3pt;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+      border-radius: 2px;
+      margin-bottom: 4px;
+    }
+    .strat-meta-bar-24 strong { color: #f8fafc; font-weight: 900; text-transform: uppercase; }
+    .strat-stack-24 {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex: 1;
+      gap: 7px;
+      margin: 2px 0;
+    }
+    .strat-card-24 {
+      border: 1.4px solid #0f172a;
+      border-radius: 2px;
+      padding: 8px 12px;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .strat-header-24 {
+      font-family: 'Inter', sans-serif;
+      font-size: 9.8pt;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      border-bottom: 1.3px solid #0f172a;
+      padding-bottom: 2.5px;
+      margin-bottom: 3.5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      letter-spacing: 0.3px;
+    }
+    .strat-header-badge {
+      font-size: 7.2pt;
+      background: #e2e8f0;
+      color: #0f172a;
+      padding: 1.5px 6px;
+      border-radius: 2px;
+      font-weight: 800;
+    }
+    .strat-essay-grid-24 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+    }
+    .strat-essay-step-24 {
+      border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 6px 8px;
+      border-radius: 2px;
+      font-family: 'Georgia', serif;
+      font-size: 8.4pt;
+      line-height: 1.32;
+      color: #1e293b;
+    }
+    .strat-step-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.6pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 2.5px;
+    }
+    .strat-traps-bar-fixed {
+      border: 1.3px solid #b91c1c;
+      border-left: 5px solid #b91c1c;
+      background: #fef2f2;
+      padding: 5px 9px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 7.6pt;
+      color: #7f1d1d;
+    }
+    .strat-traps-list {
+      flex: 1;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+    .back-hub-card {
+      border: 1.4px solid #0f172a;
+      background: #f8fafc;
+      padding: 7px 11px;
+      border-radius: 2px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .back-hub-qr {
+      width: 58px;
+      height: 58px;
+      flex-shrink: 0;
+      background: #ffffff;
+      padding: 2px;
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+    }
+    .back-hub-info {
+      flex: 1;
+      font-family: 'Inter', sans-serif;
+    }
+    .back-hub-title {
+      font-size: 8.8pt;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      margin-bottom: 1.5px;
+    }
+    .back-hub-desc {
+      font-size: 7.4pt;
+      line-height: 1.30;
+      color: #334155;
+      margin-bottom: 2px;
+    }
+    .back-hub-url {
+      font-family: monospace;
+      font-size: 7.2pt;
+      font-weight: 700;
+      color: #0f172a;
+    }
     .archival-seal-wrap {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 15px;
+      justify-content: space-between;
+      gap: 12px;
       border: 1.3px solid #0f172a;
       background: #f8fafc;
-      padding: 5px 12px;
-      margin-top: 3px;
+      padding: 4px 10px;
     }
     .archival-seal-badge {
       border: 2px solid #0f172a;
-      padding: 3px 8px;
+      padding: 2.5px 7px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 6.8pt;
       font-weight: 900;
-      letter-spacing: 1px;
+      letter-spacing: 0.8px;
       text-transform: uppercase;
       text-align: center;
+      white-space: nowrap;
+    }
+    .archival-seal-text {
+      font-family: 'Georgia', serif;
+      font-size: 7.4pt;
+      color: #334155;
+      line-height: 1.25;
     }
   </style>
 </head>
@@ -1272,72 +1376,114 @@ function buildHtml() {
       <span>Modern Depth Study (1HI0/33)</span>
     </div>
 
-    <div class="lesson-meta-bar" style="margin-bottom: 3px;">
+    <div class="lesson-meta-bar" style="margin-bottom: 2px;">
       <h2 class="lesson-meta-title">Edexcel Paper 3 Examination Blueprint & Essay Architect</h2>
-      <div class="lesson-meta-enquiry">Mastering the 5 Essential Question Types for Grade 9 Success</div>
+      <div class="lesson-meta-enquiry">Mastering the 5 Essential Question Types for Grade 9 Success • 1 Hour 20 Mins (52 Marks Total)</div>
     </div>
 
-    <div class="strat-card-24">
-      <div class="strat-header-24">
-        <span>Section A: Source Inference & Causal Explanation</span>
-        <span>Questions 1 & 2 (16 Marks Total)</span>
+    <div class="strat-stack-24">
+      <!-- TIMING BAR -->
+      <div class="strat-timing-bar">
+        <span>⏱️ Paper 3 Exam Timing Allocation (80 Minutes Total)</span>
+        <span>Section A: 23 Mins (16m) • Section B: 52 Mins (36m) • Review: 5 Mins</span>
       </div>
-      <div class="strat-grid-24">
-        <div class="strat-col-item">
-          <strong>Question 1: Source Inference [4 Marks • 5 Mins]</strong>
-          Give two things you can infer from Source A about [topic].<br>
-          • <em>Formula:</em> "I can infer that..." + "Details in the source that tell me this are..."<br>
-          • <em>Examiner Rule:</em> Never simply copy a quote without stating the inference behind it.
-        </div>
-        <div class="strat-col-item">
-          <strong>Question 2: Explain Why [12 Marks • 18 Mins]</strong>
-          Explain why [event happened]... You may use [Stimulus 1] and [Stimulus 2].<br>
-          • <em>Formula:</em> Write 3 detailed PEEL paragraphs (both stimulus points + 1 substantial own knowledge point).<br>
-          • <em>Examiner Rule:</em> Explicitly link back: "This led directly to... because..."
-        </div>
-      </div>
-    </div>
 
-    <div class="strat-card-24">
-      <div class="strat-header-24">
-        <span>Section B: Source Utility & Historical Interpretations</span>
-        <span>Questions 3(a), 3(b), 3(c) & 3(d) (36 Marks Total)</span>
-      </div>
-      <div class="strat-grid-24">
-        <div class="strat-col-item">
-          <strong>Question 3(a): Source Utility [8 Marks • 12 Mins]</strong>
-          How useful are Sources B & C for an enquiry into [topic]?<br>
-          • <em>Formula:</em> Evaluate Content, Provenance (COP), and Contextual Knowledge for both sources.<br>
-          • <em>Examiner Rule:</em> Utility is about how the source helps an enquiry, not whether it is "biased".
+      <!-- SECTION A -->
+      <div class="strat-card-24">
+        <div class="strat-header-24">
+          <span>Section A: Contemporary Source Inference & Causal Explanation</span>
+          <span class="strat-header-badge">Questions 1 & 2 • 16 Marks (23 Mins)</span>
         </div>
-        <div class="strat-col-item">
-          <strong>Questions 3(b) & 3(c): Interpretation Differences [8 Marks • 10 Mins]</strong>
-          • <em>3(b) [4m]:</em> State the main difference between Interpretation 1 & 2 using direct details.<br>
-          • <em>3(c) [4m]:</em> Suggest one reason why they differ (e.g. they relied on different types of evidence).
+        <div class="strat-grid-24">
+          <div class="strat-col-item">
+            <strong>Question 1: Source Inference [4 Marks • Target: 5 Mins]</strong>
+            <span>Give two things you can infer from Source A about [enquiry topic].</span>
+            <div>• <span class="stem">Inference 1:</span> "I can infer that [historical insight]..."</div>
+            <div>• <span class="stem">Detail:</span> "The source states that '[direct supportive quote]'."</div>
+            <div>• <span class="stem">Inference 2:</span> "Secondly, I can infer that [second insight]..."</div>
+            <div>• <span class="stem">Detail:</span> "This is shown when the author notes '[second quote]'."</div>
+            <div class="trap">⚠️ Fatal Trap: Never copy a quote without explaining the inference behind it! (1m inference + 1m quote = 2m each).</div>
+          </div>
+          <div class="strat-col-item">
+            <strong>Question 2: Explain Why [12 Marks • Target: 18 Mins]</strong>
+            <span>Explain why [event happened]... You may use [Stimulus 1] and [Stimulus 2].</span>
+            <div>• <strong>3 Detailed PEEL Paragraphs:</strong> Point, Evidence (dates/names), Explain causation, Link to stem.</div>
+            <div>• <strong>Paragraph 1 & 2:</strong> Develop both stimulus points with rich historical context.</div>
+            <div>• <strong>Paragraph 3 (Crucial Level 4 Gate):</strong> You MUST introduce a substantial 3rd independent factor from own knowledge (not in stimulus).</div>
+            <div class="trap">⚠️ Fatal Trap: Relying only on the two stimulus points caps your answer at Level 2/3 (max 7/12 marks).</div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="strat-card-24" style="margin-bottom: 2px;">
-      <div class="strat-header-24">
-        <span>Question 3(d): The 20-Mark Synoptic Evaluation Essay</span>
-        <span>16 Marks Content + 4 Marks SPaG • 30 Minutes</span>
+      <!-- SECTION B: UTILITY & INTERPRETATIONS -->
+      <div class="strat-card-24">
+        <div class="strat-header-24">
+          <span>Section B: Source Utility & Historical Interpretation Contrast</span>
+          <span class="strat-header-badge">Questions 3(a), 3(b) & 3(c) • 16 Marks (22 Mins)</span>
+        </div>
+        <div class="strat-grid-24">
+          <div class="strat-col-item">
+            <strong>Question 3(a): Source Utility [8 Marks • Target: 12 Mins]</strong>
+            <span>How useful are Sources B & C for an enquiry into [topic]?</span>
+            <div>• <strong>Evaluate Both Sources Separately:</strong> Content, Context, and Provenance (COP).</div>
+            <div>• <span class="stem">Content:</span> What does the source say, and does own knowledge corroborate it?</div>
+            <div>• <span class="stem">Provenance (NOP):</span> Nature (type), Origin (author/date), Purpose (motive).</div>
+            <div class="trap">⚠️ Fatal Trap: Never say a source is "biased and therefore useless". Even propaganda is highly useful for revealing official intention and attitudes!</div>
+          </div>
+          <div class="strat-col-item">
+            <strong>Questions 3(b) & 3(c): Interpretations [8 Marks • Target: 10 Mins]</strong>
+            <div>• <strong>3(b) Main Difference [4 Marks • 5 Mins]:</strong> State the precise difference in views: <span class="stem">"Interpretation 1 views [X] as [positive/caused by Y], stating '[quote]', whereas Interpretation 2 argues [X] was [negative/caused by Z], stating '[quote]'."</span></div>
+            <div>• <strong>3(c) Reason for Difference [4 Marks • 5 Mins]:</strong> Explain why historians differ: <span class="stem">"The historians disagree because they relied on different evidence or prioritized different aspects (e.g. federal politics vs. grassroots protest)."</span></div>
+            <div class="trap">⚠️ Fatal Trap: Do not treat interpretations as primary sources; evaluate their historiographical emphasis!</div>
+          </div>
+        </div>
       </div>
-      <div style="font-family: 'Georgia', serif; font-size: 7.4pt; line-height: 1.25; color: #1e293b;">
-        <strong>The 4-Paragraph Synoptic Architecture:</strong><br>
-        • <strong>Paragraph 1 (Agree with Target):</strong> Unpack the view of Interpretation 2 using quotes, own detailed historical evidence, and explain why this factor is compelling.<br>
-        • <strong>Paragraph 2 (Counter with Interpretation 1):</strong> Unpack the alternative view of Interpretation 1 using evidence and own knowledge.<br>
-        • <strong>Paragraph 3 (Weigh Against Broader Causes):</strong> Integrate wider specification knowledge not covered in either interpretation (e.g. federal intervention vs. economic boycotts; military quagmire vs. domestic anti-war protests).<br>
-        • <strong>Conclusion (Final Historical Verdict):</strong> State clearly which interpretation is more convincing by establishing criteria (e.g. long-term permanence vs. short-term catalyst).
-      </div>
-    </div>
 
-    <div class="archival-seal-wrap">
-      <div class="archival-seal-badge">
-        OFFICIAL DEPARTMENT ARCHIVAL REVISION STANDARD • 1HI0/33
+      <!-- SECTION B: 20-MARK SYNOPTIC ESSAY -->
+      <div class="strat-card-24">
+        <div class="strat-header-24">
+          <span>Question 3(d): The 20-Mark Synoptic Evaluation Essay</span>
+          <span class="strat-header-badge">16 Marks Content + 4 Marks SPaG • Target: 30 Mins</span>
+        </div>
+        <div class="strat-essay-box">
+          <div style="font-weight: 700; color: #0f172a; margin-bottom: 2px;">
+            The 4-Paragraph Synoptic Architecture: "How far do you agree with Interpretation 2 about [topic]?"
+          </div>
+          <div class="strat-essay-grid">
+            <div class="strat-essay-step">
+              <strong>Paragraph 1: Agree with Target (Interp 2)</strong>
+              Explain why Interpretation 2 is convincing. Quote directly from the text. Corroborate with 2–3 precise historical facts from your own knowledge (dates, statistics, protagonists) to validate its central argument.
+            </div>
+            <div class="strat-essay-step">
+              <strong>Paragraph 2: Counter-Argue (Interp 1)</strong>
+              Examine the alternative viewpoint in Interpretation 1. Quote directly. Provide conflicting historical evidence demonstrating that this alternative perspective is also valid and holds substantial explanatory power.
+            </div>
+            <div class="strat-essay-step">
+              <strong>Paragraph 3: Broader Causal Context</strong>
+              Integrate wider specification factors not mentioned in either interpretation (e.g. economic boycotts, media coverage, international pressure, legislative deadlock). Show comprehensive specification command.
+            </div>
+            <div class="strat-essay-step">
+              <strong>Paragraph 4: Historical Verdict & Criteria</strong>
+              Deliver a definitive, criteria-based conclusion. Never sit on the fence! Establish clear historical criteria (e.g. long-term structural cause vs. short-term trigger; political reform vs. economic reality) to justify which view is stronger.
+            </div>
+          </div>
+        </div>
       </div>
-      <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; line-height: 1.2;">
-        Verified 100% compliant with Pearson Edexcel GCSE (9–1) Specification. 192 Curated Dual-Line Retrieval Prompts across all 16 Enquiries.
+
+      <!-- EXAMINER PITFALLS STRIP -->
+      <div class="strat-traps-bar">
+        <strong>⚠️ 5 Fatal Examiner Pitfalls to Avoid:</strong>
+        1. Quoting without inferring on Q1 • 2. Omitting independent own knowledge on Q2 • 3. Calling sources "useless" on Q3(a) • 4. Paraphrasing without contrasting on Q3(b) • 5. Writing a one-sided essay without criteria on Q3(d).
+      </div>
+
+      <!-- ARCHIVAL SEAL -->
+      <div class="archival-seal-wrap">
+        <div class="archival-seal-badge">
+          OFFICIAL DEPARTMENT ARCHIVAL REVISION STANDARD • 1HI0/33
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; line-height: 1.2;">
+          Verified 100% compliant with Pearson Edexcel GCSE (9–1) Specification. 192 Curated Dual-Line Retrieval Prompts across all 16 Enquiries.
+        </div>
       </div>
     </div>
 
@@ -1418,6 +1564,14 @@ async function compilePdf() {
     margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
   console.log(`✅ Generated Master 24-Page A4 PDF: ${targetPdf}`);
+
+  // Take debug screenshots for visual inspection
+  for (const pNum of [1, 4, 22, 23, 24]) {
+    const el = await page.$(`#page-${pNum}`);
+    if (el) {
+      await el.screenshot({ path: path.join(ROOT_DIR, 'public', 'images', `debug_p${pNum}.png`) });
+    }
+  }
 
   await browser.close();
 
