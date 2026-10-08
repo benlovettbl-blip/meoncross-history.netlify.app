@@ -366,7 +366,7 @@ export const WORKBOOK_PAGE_MAP = {
   },
   eee: {
     lesson_1_1: {
-      page: 4,
+      page: 22,
       booklet: 'Key Topic 1 Booklet',
       unitId: 'eee',
       lessonIndex: 0,
@@ -396,7 +396,7 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 4,
     },
     lesson_2_2: {
-      page: 6,
+      page: 22,
       booklet: 'Key Topic 2 Booklet',
       unitId: 'eee',
       lessonIndex: 5,
@@ -426,7 +426,7 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 9,
     },
     lesson_3_3: {
-      page: 8,
+      page: 22,
       booklet: 'Key Topic 3 Booklet',
       unitId: 'eee',
       lessonIndex: 10,

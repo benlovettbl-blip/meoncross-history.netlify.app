@@ -1175,7 +1175,7 @@ const KEY_TOPICS_DATA = {
     heroImage: {
       src: getBase64Image('/images/john_white_chief_herowan.jpg'),
       alt: 'John White Watercolor of a Chief of the Secotan (1585)',
-      objectPosition: 'center 20%',
+      objectPosition: 'center 12%',
       shelfmark: 'BRITISH MUSEUM • 1906,0509.1.21 • LONDON',
       date: '1585',
       title: 'A Chief of the Secotan (Carolina Algonquian)',
@@ -1183,11 +1183,40 @@ const KEY_TOPICS_DATA = {
         'John White • A Cheife Herowan of the Secotan, painted in watercolour during the first Roanoke expedition (1585). Depicts an indigenous Algonquian leader wearing a copper gorget, feather, and fringed deerskin apron. British Museum, London (1906,0509.1.21).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 106,
+      heightMm: 105,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      specImageSrc: getBase64Image('/images/edexcel_spec_kt3_crop_precise.png'),
+      edexcelTable: {
+        header: 'Key topic 3: Elizabethan society in the Age of Exploration, 1558–88',
+        rows: [
+          {
+            numTitle: '1 Education and leisure',
+            bullets: ['Education in the home and schools.', 'Sport, pastimes and the theatre.'],
+          },
+          {
+            numTitle: "2 The 'problem' of the poor",
+            bullets: [
+              'The reasons for the increase in poverty and vagabondage during these years.',
+              'The changing attitudes and policies towards the poor.',
+            ],
+          },
+          {
+            numTitle: '3 Exploration and voyages of discovery',
+            bullets: [
+              'Factors prompting exploration, including the impact of new technology on ships and sailing and the drive to expand trade.',
+              'The reasons for, and significance of, Drake’s circumnavigation of the globe.',
+            ],
+          },
+          {
+            numTitle: '4 Attempted colonisation of Virginia',
+            bullets: [
+              'Reasons for the attempted colonisation of Virginia, including the significance of Raleigh.',
+              'Reasons for the failure of the first settlement in Virginia.',
+            ],
+          },
+        ],
+      },
     },
     milestones: [
       {
