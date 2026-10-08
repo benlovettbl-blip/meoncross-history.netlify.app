@@ -31,6 +31,8 @@ const fs = require('fs');
 const path = require('path');
 const QRCode = require('qrcode');
 const puppeteer = require('puppeteer');
+const { PDFDocument } = require('pdf-lib');
+const { ENQUIRY_STAGES, QUESTION_PROBABILITIES } = require('./enhance_eee_workbook.cjs');
 const {
   renderStandardFrontCover,
   renderStandardBackCover,
@@ -1657,9 +1659,491 @@ const KEY_TOPICS_DATA = {
 // ============================================================================
 // MAIN GENERATOR FUNCTION FOR A GIVEN KEY TOPIC (16 PAGES)
 // ============================================================================
+
+// ============================================================================
+// ============================================================================
+// MEDICINE-STYLE ENQUIRY RENDERING ENGINE (CALIBRATED ZERO-OVERFLOW / ZERO-UNDERFLOW)
+// ============================================================================
+
+function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
+  let stagesHtml = '';
+  const stages = enq.stages || [];
+  stages.forEach((st, idx) => {
+    let bulletsHtml = st.bullets
+      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
+      .join('\n');
+    stagesHtml += `
+          <!-- Stage ${idx + 1} -->
+          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
+            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+              </div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1px;">
+                ${st.title}
+              </div>
+              <div style="margin-top: 1px;">
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.10; color: #111111;">
+                  ${bulletsHtml}
+                </div>
+              </div>
+              <div style="margin-top: 1.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1px 3px; border-radius: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 0.5px;">
+                  Focus Clue
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 5.7pt; line-height: 1.10; color: #222222; font-style: italic;">
+                  ${st.focusClue}
+                </div>
+              </div>
+            </div>
+
+            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
+            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>`;
+  });
+
+  return `
+  <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum}) -->
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 2.5mm 6mm 2mm 6mm;">
+    <div class="page-body-full">
+      <!-- Lesson Header -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            KEY TOPIC ${keyTopicNum}.${enq.enquiryNum} &bull; ENQUIRY LESSON NOTEBOOK
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL PAPER 2 (1HI0/2B) &bull; BRITISH DEPTH STUDY
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+          ${enq.inquiryQuestion}
+        </h2>
+      </div>
+
+      <!-- Active Lesson Note-Taking Spine -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry Spine &bull; Core Causal Narrative
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+            Take precise, structured notes alongside each milestone as your teacher narrates the history
+          </span>
+        </div>
+
+        <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
+          ${stagesHtml}
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
+}
+
+function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
+  const featAProb = enq.featureA.probability || '★ HIGH PROBABILITY';
+  const featBProb = enq.featureB.probability || 'CORE SPECIFICATION FOCUS';
+
+  return `
+  <!-- SHORT-TARIFF EXAM PRACTICE: 2x Q1 FEATURE [2m+2m] + VOCAB + TIMELINE (PAGE ${pageNum}) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      
+      <!-- Top Exam Header -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            KEY TOPIC ${keyTopicNum}.${enq.enquiryNum} &bull; SHORT-TARIFF EXAM PRACTICE
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL PAPER 2 &bull; FACTUAL RECALL (AO1)
+          </span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.2;">
+            Question 1: Describe Two Features [2 &times; 2 marks &bull; 6 mins]
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 5px; border-radius: 2px;">
+            Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4 ]
+          </span>
+        </div>
+      </div>
+
+      <!-- Question 1(a): Describe One Key Feature [2 marks] -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              &bull; Question 1(a): Describe One Key Feature [2 marks &bull; 3 mins]
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+              ${featAProb}
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+            ${enq.featureA.provenance || 'EDEXCEL PAPER 2'}
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${enq.featureA.stem}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+          <strong>Target Guidance:</strong> ${enq.featureA.guidance}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${enq.featureA.stems}
+        </div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+      </div>
+
+      <!-- Question 1(b): Describe One Key Feature [2 marks] -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; gap: 5px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              &bull; Question 1(b): Describe One Key Feature [2 marks &bull; 3 mins]
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
+              ${featBProb}
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
+            ${enq.featureB.provenance || 'EDEXCEL PAPER 2'}
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
+          ${enq.featureB.stem}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
+          <strong>Target Guidance:</strong> ${enq.featureB.guidance}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${enq.featureB.stems}
+        </div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+        <div class="task-line" style="height: 7.5mm;"></div>
+      </div>
+
+      <!-- Core Disciplinary Vocabulary Bridge -->
+      <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #fdfdfd; margin-bottom: 3px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Core Specification Vocabulary Distinction
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">PEARSON EDEXCEL SPECIFICATION</span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000; line-height: 1.18;">
+          ${enq.vocabPrompt}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #1e3a8a; line-height: 1.15; margin: 1px 0;">
+          <strong>Sentence Starter:</strong> <em>While ${enq.vocabTermA} refers specifically to..., ${enq.vocabTermB} operated differently because...</em>
+        </div>
+        <div class="task-line" style="height: 7.0mm;"></div>
+        <div class="task-line" style="height: 7.0mm;"></div>
+        <div class="task-line" style="height: 7.0mm;"></div>
+        <div class="task-line" style="height: 7.0mm;"></div>
+      </div>
+
+      <!-- Timeline Mission Box with Draft Sketchpad -->
+      <div style="border: 1.2px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            Timeline Mission &bull; Pages 2–3
+          </span>
+          <span style="border: 1px solid #000000; padding: 1px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">
+            [ &nbsp;&nbsp; ] Sketch Completed
+          </span>
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; line-height: 1.22;">
+          ${enq.rightExam.timelineMission}
+        </div>
+        <div style="border-top: 1px dashed #94a3b8; height: 38mm; margin-top: 3px; background: #fafafa; border-radius: 2px; display: flex; align-items: center; justify-content: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #64748b; font-style: italic;">
+            Optional Draft Sketchpad &bull; Practice your visual dual-coding icon before transferring to Pages 2–3
+          </span>
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
+}
+
+function renderExtendedWritingPages(enq, leftPageNum, rightPageNum, footers, keyTopicNum) {
+  const rx = enq.rightExam;
+  const is12m = rx.type === 'explain_why_12';
+  const maxScore = is12m ? '12' : '20';
+  const rightProb = rx.probability || '★ HIGH-YIELD FORECAST';
+
+  // 14 Ruled lines for first page
+  const leftTaskLines = Array.from(
+    { length: 14 },
+    () => `
+      <div class="lined-row">
+        <div class="lined-margin-cell">&nbsp;</div>
+        <div class="lined-content-cell">&nbsp;</div>
+      </div>`,
+  ).join('');
+
+  // 28 Ruled lines for continuation page
+  const rightTaskLines = Array.from({ length: 28 }, (_, lIdx) => {
+    const isFirst = lIdx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Writing Continued &bull; Paragraph 2/3 &amp; Final Sustained Conclusion ]</span>`
+      : `&nbsp;`;
+    return `
+        <div class="lined-row">
+          <div class="lined-margin-cell">${marginContent}</div>
+          <div class="lined-content-cell">${linePrompt}</div>
+        </div>`;
+  }).join('');
+
+  return `
+  <!-- EXTENDED WRITING PART 1 (VERSO - PAGE ${leftPageNum}) -->
+  <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Exam Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+            ${rx.tariff}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
+            ${rx.provenance || 'EDEXCEL PAPER 2'}
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
+            ${rightProb}
+          </span>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
+          Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore} ]
+        </span>
+      </div>
+
+      <!-- Question Stem & Stimulus -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.22;">
+          ${rx.stem}
+        </p>
+        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
+          <strong>You may use in your answer:</strong>
+          <span>&bull; ${rx.stimulus[0]}</span>
+          <span>&bull; ${rx.stimulus[1]}</span>
+          <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
+        </div>
+      </div>
+
+      <!-- 3-Column Mastery Structure Strip -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 2px;">
+        ${rx.structureStrip
+          .map(
+            (col, cIdx) => `
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000000;">
+              ${col.col}
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">POINT ${cIdx + 1}</span>
+          </div>
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #111111; margin: 0; line-height: 1.15;">
+            ${col.text}
+          </p>
+        </div>
+        `,
+          )
+          .join('')}
+      </div>
+
+      <!-- Connectives & Word Bank -->
+      <div style="border: 1px solid #000000; padding: 2px 5px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.18;">
+        <div><strong>Analytical Connectives:</strong> ${rx.connectives}</div>
+        <div style="margin-top: 1px;"><strong>Word Bank:</strong> ${rx.wordBank}</div>
+      </div>
+
+      <!-- Ruled Task Lines Prompt -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #222222; margin: 1px 0;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on facing page for full timed response):
+      </div>
+
+      <!-- 14 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid" style="flex: 1; min-height: 0;">
+        ${leftTaskLines}
+      </div>
+
+      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 24)}
+    </div>
+  </div>
+
+  <!-- EXTENDED WRITING PART 2 (RECTO - PAGE ${rightPageNum}) -->
+  <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Running Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Enquiry ${keyTopicNum}.${enq.enquiryNum}: ${enq.title} &bull; ${rx.tariff.split(':')[0]} Continued
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Independent Timed Response &bull; Final Historical Verdict
+        </span>
+      </div>
+
+      <!-- 28 Ruled Lines with 22mm Left Margin -->
+      <div class="lined-page-grid" style="flex: 1; min-height: 0;">
+        ${rightTaskLines}
+      </div>
+
+      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 24)}
+    </div>
+  </div>`;
+}
+
+function renderSynopticVaultPages(data, footers) {
+  const enq1 = data.enquiries[0];
+  const enq2 = data.enquiries[1];
+  const enq3 = data.enquiries[2];
+  const enq4 = data.enquiries[3];
+
+  function renderDrillColumn(enq, startNum) {
+    return `
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; border: 1.2px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff;">
+        <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #000000;">
+            Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+            [ &nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
+          </span>
+        </div>
+        <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; gap: 2px;">
+          ${enq.doNow
+            .map(
+              (item, qi) => `
+          <div style="display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 1px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #000000; line-height: 1.15;">
+                ${startNum + qi}. ${item.q}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #666666; white-space: nowrap; margin-left: 4px;">
+                [ ] R1 &nbsp; [ ] R2 &nbsp; [ ] R3
+              </span>
+            </div>
+            <div class="task-line-dotted" style="height: 5.2mm; margin-top: 1px;"></div>
+          </div>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>`;
+  }
+
+  // Page 22 (Enquiries 1 & 2)
+  const page22Html = `
+  <!-- PAGE 22: SYNOPTIC RETRIEVAL VAULT PART 1 (ENQUIRIES 1 & 2) -->
+  <div class="page page-container verso-page" id="page-22" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+              KEY TOPIC ${data.keyTopicNum} &bull; SYNOPTIC RETRIEVAL VAULT &bull; PART 1
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+              SPACED RETRIEVAL DRILLS &bull; DO NOW QUESTIONS 1–20
+            </span>
+          </div>
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; font-weight: 900;">
+            Cumulative Specification Recall: Enquiries ${data.keyTopicNum}.1 &amp; ${data.keyTopicNum}.2
+          </h2>
+        </div>
+
+        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
+          <strong>Classroom Protocol:</strong> Complete 5–10 questions as a Do Now bell-ringer at the start of each lesson, or quiz yourself across the term. Tick the review checkboxes (<strong>R1, R2, R3</strong>) after each spaced retrieval attempt.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; min-height: 0;">
+        ${renderDrillColumn(enq1, 1)}
+        ${renderDrillColumn(enq2, 11)}
+      </div>
+
+      ${renderFooterStrip(22, footers[21], 24)}
+    </div>
+  </div>`;
+
+  // Page 23 (Enquiries 3 & 4)
+  const page23Html = `
+  <!-- PAGE 23: SYNOPTIC RETRIEVAL VAULT PART 2 (ENQUIRIES 3 & 4) -->
+  <div class="page page-container recto-page" id="page-23" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+              KEY TOPIC ${data.keyTopicNum} &bull; SYNOPTIC RETRIEVAL VAULT &bull; PART 2
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+              SPACED RETRIEVAL DRILLS &bull; DO NOW QUESTIONS 21–40
+            </span>
+          </div>
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; font-weight: 900;">
+            Cumulative Specification Recall: Enquiries ${data.keyTopicNum}.3 &amp; ${data.keyTopicNum}.4
+          </h2>
+        </div>
+
+        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
+          <strong>Spaced Retention Target:</strong> Test yourself on previous weeks’ topics before starting a new enquiry. Frequent low-stakes retrieval prevents forgetting and secures Level 4 factual precision.
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; flex: 1; min-height: 0;">
+        ${renderDrillColumn(enq3, 21)}
+        ${renderDrillColumn(enq4, 31)}
+      </div>
+
+      ${renderFooterStrip(23, footers[22], 24)}
+    </div>
+  </div>`;
+
+  return page22Html + page23Html;
+}
+
 function buildEeeKeyTopicWorkbook(ktId) {
   const data = KEY_TOPICS_DATA[ktId];
   if (!data) throw new Error(`Unknown Key Topic ID: ${ktId}`);
+
+  // Inject 5-stage Chronological Inquiry Spine and probability tags
+  data.enquiries.forEach((enq) => {
+    if (ENQUIRY_STAGES[enq.id]) {
+      enq.stages = ENQUIRY_STAGES[enq.id];
+    }
+    if (QUESTION_PROBABILITIES[enq.id]) {
+      enq.featureA.probability = QUESTION_PROBABILITIES[enq.id].featA;
+      enq.featureB.probability = QUESTION_PROBABILITIES[enq.id].featB;
+      enq.rightExam.probability = QUESTION_PROBABILITIES[enq.id].right;
+    }
+  });
 
   const footers = EEE_FOOTERS[ktId];
   let html = `<!DOCTYPE html>
@@ -1904,320 +2388,31 @@ function buildEeeKeyTopicWorkbook(ktId) {
 `;
 
   // ====================================================================
-  // PAGES 4–19: 4 DEDICATED FOUR-PAGE ENQUIRY SPREADS (2 SPANNING SPREADS PER LESSON)
+  // PAGES 4–19: 4 DEDICATED FOUR-PAGE ENQUIRY MODULES (MEDICINE-STYLE)
+  // Page 1: 5-Stage Chronological Inquiry Spine & Lecture Notes (Verso)
+  // Page 2: Short-Tariff Exam Practice & Concept Bridge (Recto)
+  // Pages 3 & 4: Extended Writing Timed Assessment (Facing Spread)
   // ====================================================================
   data.enquiries.forEach((enq, idx) => {
     const leftPageNum = 4 + idx * 4; // 4, 8, 12, 16
     const rightPageNum = leftPageNum + 1; // 5, 9, 13, 17
     const linedLeftPageNum = leftPageNum + 2; // 6, 10, 14, 18
     const linedRightPageNum = leftPageNum + 3; // 7, 11, 15, 19
-    const rx = enq.rightExam;
 
-    // ------------------------------------------------------------------
-    // SPREAD 1, LEFT PAGE (VERSO): ENQUIRY LAUNCH, DO NOW & 2x Q1 FEATURE [2m+2m]
-    // ------------------------------------------------------------------
-    html += `
-  <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Lesson Header -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            KEY TOPIC ${data.keyTopicNum}.${enq.enquiryNum} &bull; ENQUIRY SPREAD
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 2 &bull; 100% FACTUAL RECALL
-          </span>
-        </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.8pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
-          ${enq.inquiryQuestion}
-        </h2>
-        <div style="font-family: 'Georgia', serif; font-size: 8.2pt; font-style: italic; color: #222222; line-height: 1.2;">
-          ${enq.subTitle}
-        </div>
-      </div>
+    // Page 1 of module (Verso): Chronological Inquiry Spine + Cornell Notes
+    html += renderSpinePage(enq, leftPageNum, footers[leftPageNum - 1], data.keyTopicNum);
 
-      <!-- Specification Focus -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.22;">
-        <strong>Key Specification Focus:</strong> ${enq.specAnchor}
-      </div>
+    // Page 2 of module (Recto): Q1(a) [2m] + Q1(b) [2m] + Core Vocab + Timeline Mission
+    html += renderFeaturePage(enq, rightPageNum, footers[rightPageNum - 1], data.keyTopicNum);
 
-      <!-- 10-Question Do Now Drill -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 12px;">
-          ${enq.doNow
-            .map(
-              (item, qi) => `
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 700; color: #000000; line-height: 1.18;">
-              ${qi + 1}. ${item.q}
-            </div>
-            <div class="task-line-dotted"></div>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Key Disciplinary Vocabulary -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Core Disciplinary Vocabulary
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">HISTORICAL TERMINOLOGY</span>
-        </div>
-        <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.18; margin-bottom: 2px; background: #f8fafc; border: 1px solid #e2e8f0; padding: 2px 6px; border-radius: 2px;">
-            <strong>${enq.vocabTermA}:</strong> Key Disciplinary Concept &nbsp;|&nbsp; <strong>${enq.vocabTermB}:</strong> Key Disciplinary Concept
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; line-height: 1.18;">
-            ${enq.vocabPrompt}
-          </div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e3a8a; line-height: 1.2; margin-top: 1px;">
-            <strong>Sentence Starter:</strong> <em>While ${enq.vocabTermA} established that..., ${enq.vocabTermB} operated differently because...</em>
-          </div>
-          <div class="task-line" style="height: 6.0mm; margin-top: 2px;"></div>
-          <div class="task-line" style="height: 6.0mm;"></div>
-          <div class="task-line" style="height: 6.0mm;"></div>
-        </div>
-      </div>
-
-      <!-- Question 1(a): Describe One Key Feature [2 marks] -->
-      <div class="task-section" style="margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 1(a): Describe One Key Feature [2 marks &bull; 3 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc; color: #000000;">
-            ${enq.featureA.provenance || 'EDEXCEL PAPER 2'}
-          </span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
-          ${enq.featureA.stem}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-          <strong>Target Guidance:</strong> ${enq.featureA.guidance}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; margin-bottom: 1px;">
-          <strong>Sentence Stems:</strong> ${enq.featureA.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Question 1(b): Describe One Key Feature [2 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 1(b): Describe One Key Feature [2 marks &bull; 3 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc; color: #000000;">
-            ${enq.featureB.provenance || 'EDEXCEL PAPER 2'}
-          </span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.4pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
-          ${enq.featureB.stem}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-          <strong>Target Guidance:</strong> ${enq.featureB.guidance}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; margin-bottom: 1px;">
-          <strong>Sentence Stems:</strong> ${enq.featureB.stems}
-        </div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 24)}
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------------------------ -->
-  <!-- SPREAD 1, RIGHT PAGE (RECTO): EXTENDED EXAM PRACTICE (12m/16m)    -->
-  <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
-        <div style="display: flex; align-items: baseline; gap: 6px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 0; font-weight: 800;">
-            ${rx.tariff}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
-            ${rx.provenance || 'EDEXCEL PAPER 2'}
-          </span>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-          Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${rx.type === 'explain_why_12' ? '12' : '20'} ]
-        </span>
-      </div>
-
-      <!-- Question Stem -->
-      <div style="margin: 1px 0 2px 0;">
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.8pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.22;">
-          ${rx.stem}
-        </p>
-        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
-          <strong>You may use in your answer:</strong>
-          <span>&bull; ${rx.stimulus[0]}</span>
-          <span>&bull; ${rx.stimulus[1]}</span>
-          <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
-        </div>
-      </div>
-
-      <!-- 3-Column Mastery Structure Strip -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 2px;">
-        ${rx.structureStrip
-          .map(
-            (col, cIdx) => `
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
-              ${col.col}
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">POINT ${cIdx + 1}</span>
-          </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #111111; margin: 0; line-height: 1.16;">
-            ${col.text}
-          </p>
-        </div>
-        `,
-          )
-          .join('')}
-      </div>
-
-      <!-- Connectives & Word Bank -->
-      <div style="border: 1px solid #000000; padding: 2px 5px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
-        <div><strong>Analytical Connectives:</strong> ${rx.connectives}</div>
-        <div style="margin-top: 1px;"><strong>Word Bank:</strong> ${rx.wordBank}</div>
-      </div>
-
-      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
-        ${Array.from({ length: 18 })
-          .map(() => '<div class="task-line"></div>')
-          .join('\n        ')}
-      </div>
-
-      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
-          Timeline Mission &bull; Pages 2–3
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
-          ${rx.timelineMission}
-        </div>
-      </div>
-
-      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 24)}
-    </div>
-  </div>
-
-  <!-- ------------------------------------------------------------------ -->
-  <!-- SPREAD 2, LEFT PAGE (VERSO): EXTENDED ESSAY RESPONSE / NOTES        -->
-  <!-- ------------------------------------------------------------------ -->
-  ${(() => {
-    const linedRowsLeft = Array.from({ length: 28 }, (_, lIdx) => {
-      const isFirst = lIdx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response &bull; Paragraph 2 / Further Disciplinary Notes ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    return `
-  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing &bull; Disciplinary Notes &bull; Structured Response
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsLeft}
-      </div>
-
-      ${renderFooterStrip(linedLeftPageNum, footers[linedLeftPageNum - 1], 24)}
-    </div>
-  </div>
-`;
-  })()}
-
-  <!-- ------------------------------------------------------------------ -->
-  <!-- SPREAD 2, RIGHT PAGE (RECTO): INDEPENDENT PRACTICE & ESSAY CONCLUSION-->
-  <!-- ------------------------------------------------------------------ -->
-  ${(() => {
-    const linedRowsRight = Array.from({ length: 28 }, (_, lIdx) => {
-      const isFirst = lIdx === 0;
-      const marginContent = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-        : `&nbsp;`;
-      const linePrompt = isFirst
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Conclusion ]</span>`
-        : `&nbsp;`;
-      return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-    }).join('');
-
-    return `
-  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Independent Practice &bull; Timed Exam Response &bull; Sustained Verdict
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${linedRowsRight}
-      </div>
-
-      ${renderFooterStrip(linedRightPageNum, footers[linedRightPageNum - 1], 24)}
-    </div>
-  </div>
-`;
-  })()}
-`;
+    // Pages 3 & 4 of module (Facing Spread): Extended Writing Assessment (12m / 16m+4m)
+    html += renderExtendedWritingPages(
+      enq,
+      linedLeftPageNum,
+      linedRightPageNum,
+      footers,
+      data.keyTopicNum,
+    );
   });
 
   // ====================================================================
@@ -2713,164 +2908,9 @@ function buildEeeKeyTopicWorkbook(ktId) {
 `;
 
   // ====================================================================
-  // PAGE 22: GRADE 9 ASSESSMENT MASTERCLASS & BAND 4 RUBRICS (VERSO)
+  // PAGES 22 & 23: THE 40-QUESTION SYNOPTIC RETRIEVAL VAULT
   // ====================================================================
-  html += `
-  <div class="page page-container verso-page" id="page-22" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-          Grade 9 Exam Technique Masterclass &bull; Pearson Edexcel Paper 2 Rubrics
-        </h2>
-      </div>
-
-      <!-- Question 1: Feature Formula (2 Marks) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; margin-bottom: 4px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase;">
-            1. The 2/2 Mark Formula: Describe One Feature [2 Marks &bull; 3 Mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">EDEXCEL JUNE 2018 &bull; TARGET: 2 / 2</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.22;">
-          <strong>Mark Scheme Law:</strong> 1 mark for identifying a valid feature + 1 mark for supporting historical detail.<br>
-          <div style="background: #f8fafc; border-left: 3px solid #000000; padding: 2px 6px; margin-top: 2px;">
-            <strong>Grade 9 Model Answer:</strong> "One key feature of the Act of Supremacy (1559) was that it made Elizabeth Supreme Governor of the Church of England [1 mark]. Specifically, this title was chosen as a compromise to appease both Catholics who believed only the Pope was head of the Church, and Puritans who believed Christ was the only head [1 mark]."
-          </div>
-        </div>
-      </div>
-
-      <!-- Question 2: Explain Why Formula (12 Marks) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; margin-bottom: 4px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase;">
-            2. The 12/12 Mark Formula: Explain Why [12 Marks &bull; 18 Mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">EDEXCEL JUNE 2019 &bull; TARGET: 11–12 / 12 (LEVEL 4)</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.22;">
-          <strong>Three PEEL Paragraphs:</strong> Use both provided stimulus points + introduce at least ONE distinct self-selected knowledge point. Every paragraph must feature explicit causal reasoning words (<em>Consequently, As a direct result, This meant that</em>).<br>
-          <div style="background: #f8fafc; border-left: 3px solid #000000; padding: 2px 6px; margin-top: 2px;">
-            <strong>Level 4 Linking Formula:</strong> Do not just list reasons! Connect them causally: <em>"This economic grievance did not operate in a vacuum; rather, it directly exacerbated religious fear because..."</em>
-          </div>
-        </div>
-      </div>
-
-      <!-- Question 3: Evaluative Essay Formula (16 Marks + 4 SPaG) -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; text-transform: uppercase;">
-            3. The 16/16 Mark Formula: Evaluative Essay [16 Marks + 4 SPaG &bull; 25 Mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">EDEXCEL JUNE 2022 &bull; TARGET: 15–16 / 16 (LEVEL 4)</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.22;">
-          <strong>Criteria-Led Judgment Architecture:</strong><br>
-          &bull; <strong>Introduction:</strong> Define the key terms, state your overarching thesis, and establish your criteria for judgment (e.g. short-term threat vs long-term structural instability).<br>
-          &bull; <strong>Paragraph 1 (Agree with Statement):</strong> Rigorously analyze the stated factor with precise dates, statistics, and historical names.<br>
-          &bull; <strong>Paragraphs 2 &amp; 3 (Counter-Arguments):</strong> Introduce other critical factors (including required own-knowledge beyond the stimulus points).<br>
-          &bull; <strong>Conclusion:</strong> Weigh the factors comparatively! Never write "both were important". Explain why one factor was the foundational catalyst while another was merely a symptom.
-        </div>
-        <div style="background: #f8fafc; border: 1px solid #cbd5e1; padding: 3px 6px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; margin-top: 2px;">
-          <strong>★ Examiner Secret:</strong> High-scoring Level 4 candidates establish explicit criteria in the first two sentences: <em>"In evaluating this statement, success must be judged by whether the policy achieved long-term institutional stability or merely temporary crisis containment..."</em>
-        </div>
-      </div>
-
-      ${renderFooterStrip(22, footers[21], 24)}
-    </div>
-  </div>
-`;
-
-  // ====================================================================
-  // PAGE 23: TIMED SYNOPTIC EXAM CHALLENGE (RECTO)
-  // ====================================================================
-  let synopticPrompt = {};
-  if (ktId === 'KT1') {
-    synopticPrompt = {
-      title: 'Key Topic 1 Synoptic Examination Assessment',
-      provenance: 'Edexcel June 2023 (Q2)',
-      tariff: 'Section B: Question 2 &bull; Explain Why [12 Marks &bull; 18 Mins]',
-      question:
-        'Explain why Elizabeth’s religious settlement of 1559 faced opposition in the years 1559–1568.',
-      stimulus: ['The Royal Injunctions (1559)', 'The Crucifix Controversy'],
-      hint: 'Remember to include a third point of your own (e.g. Marian Catholic bishops refusing the Oath, recusancy fines, or the 1566 Vestments Controversy).',
-    };
-  } else if (ktId === 'KT2') {
-    synopticPrompt = {
-      title: 'Key Topic 2 Synoptic Examination Assessment',
-      provenance: 'Edexcel June 2022 (Q3b)',
-      tariff: 'Section B: Question 3 &bull; Evaluative Essay [16 Marks + 4 SPaG &bull; 25 Mins]',
-      question:
-        '‘The main reason for the defeat of the Spanish Armada was poor Spanish leadership.’ How far do you agree? Explain your answer.',
-      stimulus: ['The Duke of Medina Sidonia', 'English fireships at Calais'],
-      hint: 'Remember to introduce additional knowledge beyond the stimulus (e.g. John Hawkins’ race-built galleons, long-range culverins, or the Protestant Wind).',
-    };
-  } else {
-    synopticPrompt = {
-      title: 'Key Topic 3 Synoptic Examination Assessment',
-      provenance: 'Edexcel June 2024 (Q2)',
-      tariff: 'Section B: Question 2 &bull; Explain Why [12 Marks &bull; 18 Mins]',
-      question:
-        'Explain why poverty and vagabondage increased significantly in Elizabethan England between 1558 and 1588.',
-      stimulus: ['Enclosure of land', 'Population growth'],
-      hint: 'Remember to include a third point of your own (e.g. bad harvests in the 1590s, debasement of the coinage and inflation, or the dissolution of monastic charities).',
-    };
-  }
-
-  html += `
-  <div class="page page-container recto-page" id="page-23" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div>
-          <div style="display: flex; align-items: center; gap: 6px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 5px; border-radius: 2px;">
-              ${synopticPrompt.title}
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px; background: #f8fafc;">
-              ${synopticPrompt.provenance}
-            </span>
-          </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 2px 0 0 0; font-weight: 800;">
-            ${synopticPrompt.tariff}
-          </h2>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-          Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${ktId === 'KT2' ? '20' : '12'} ]
-        </span>
-      </div>
-
-      <!-- Question Stem & Stimulus -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 3px 6px; background: #f8fafc; margin-bottom: 3px;">
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.22;">
-          ${synopticPrompt.question}
-        </p>
-        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
-          <strong>Stimulus:</strong>
-          <span>&bull; ${synopticPrompt.stimulus[0]}</span>
-          <span>&bull; ${synopticPrompt.stimulus[1]}</span>
-          <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #475569; margin-top: 1px;">
-          ${synopticPrompt.hint}
-        </div>
-      </div>
-
-      <!-- Student PEEL Planning Box -->
-      <div style="border: 1px dashed #000000; border-radius: 3px; padding: 2px 6px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
-        <strong>Quick PEEL Plan:</strong> Point 1: _____________________ | Point 2: _____________________ | Point 3 (Own Knowledge): _____________________
-      </div>
-
-      <!-- AUTO-FILL WRITING LINES (Declarative Engine Target, Dynamic Puppeteer Measurement) -->
-      <div class="auto-lines-target" data-auto-lines="true" data-line-height="7.5" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px; margin-bottom: 0;">
-        <!-- Filled dynamically by engine measurement script -->
-      </div>
-
-      ${renderFooterStrip(23, footers[22], 24)}
-    </div>
-  </div>
-`;
+  html += renderSynopticVaultPages(data, footers);
 
   // ====================================================================
   // PAGE 24: OUTSIDE BACK COVER
@@ -3131,7 +3171,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
 async function compilePdf(htmlPath, pdfPath, v17Path) {
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
   });
   const page = await browser.newPage();
   await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
@@ -3162,51 +3202,113 @@ async function compilePdf(htmlPath, pdfPath, v17Path) {
 }
 
 // ============================================================================
-// CLI RUNNER
+// WORKBOOK COMPILATION & PDF ASSEMBLY
 // ============================================================================
-async function main() {
-  const target = process.argv[2] || 'all';
-  const targets = target === 'all' ? ['KT1', 'KT2', 'KT3'] : [target.toUpperCase()];
+async function renderKeyTopicWorkbook(kt) {
+  console.log(`\n▶ Generating 24-page workbook for Key Topic ${kt}...`);
+  const html = buildEeeKeyTopicWorkbook(kt);
 
-  console.log('======================================================');
-  console.log(`🏰 Early Elizabethan England 24-Page Workbook Engine`);
-  console.log(`Targeting: ${targets.join(', ')}`);
-  console.log('======================================================\n');
+  const publicHtml = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'eee',
+    `pupil_workbook_${kt.toLowerCase()}.html`,
+  );
+  const unitHtml = path.join(ROOT_DIR, 'units', 'eee', `pupil_workbook_${kt.toLowerCase()}.html`);
 
-  for (const kt of targets) {
-    console.log(`\n▶ Generating 24-page workbook for Key Topic ${kt}...`);
-    const html = buildEeeKeyTopicWorkbook(kt);
+  fs.mkdirSync(path.dirname(publicHtml), { recursive: true });
+  fs.mkdirSync(path.dirname(unitHtml), { recursive: true });
 
-    const publicHtml = path.join(ROOT_DIR, 'public', 'units', 'eee', `pupil_workbook_${kt}.html`);
-    const unitHtml = path.join(ROOT_DIR, 'units', 'eee', `pupil_workbook_${kt}.html`);
+  fs.writeFileSync(publicHtml, html, 'utf8');
+  fs.writeFileSync(unitHtml, html, 'utf8');
+  console.log(`✅ Saved HTML: ${publicHtml}`);
 
-    fs.mkdirSync(path.dirname(publicHtml), { recursive: true });
-    fs.mkdirSync(path.dirname(unitHtml), { recursive: true });
+  const pdfPath = path.join(
+    ROOT_DIR,
+    'public',
+    'units',
+    'eee',
+    `pupil_workbook_${kt.toLowerCase()}.pdf`,
+  );
+  const pdfGeneral = path.join(ROOT_DIR, 'public', 'pdfs', `eee_pupil_workbook_${kt}.pdf`);
+  const v17Path = path.join(ROOT_DIR, 'public', 'pdfs', `eee_pupil_workbook_${kt}_FINAL_V17.pdf`);
 
-    fs.writeFileSync(publicHtml, html, 'utf8');
-    fs.writeFileSync(unitHtml, html, 'utf8');
-    console.log(`✅ Saved HTML: ${publicHtml}`);
-
-    const pdfPath = path.join(ROOT_DIR, 'public', 'pdfs', `eee_pupil_workbook_${kt}.pdf`);
-    const v17Path = path.join(ROOT_DIR, 'public', 'pdfs', `eee_pupil_workbook_${kt}_FINAL_V17.pdf`);
-
-    fs.mkdirSync(path.dirname(pdfPath), { recursive: true });
-    console.log(`🖨️ Compiling PDF with Puppeteer...`);
-    await compilePdf(publicHtml, pdfPath, v17Path);
-    console.log(`✅ Compiled PDF: ${v17Path}`);
-  }
-
-  console.log('\n🎉 100% COMPLETE: Early Elizabethan England Workbooks Generated!');
+  fs.mkdirSync(path.dirname(pdfPath), { recursive: true });
+  fs.mkdirSync(path.dirname(pdfGeneral), { recursive: true });
+  console.log(`🖨️ Compiling PDF with Puppeteer...`);
+  await compilePdf(publicHtml, pdfPath, v17Path);
+  fs.copyFileSync(pdfPath, pdfGeneral);
+  console.log(`✅ Compiled PDF: ${pdfPath}`);
 }
 
+async function mergeMasterWorkbook() {
+  console.log('\n=============================================================');
+  console.log('📚 MERGING 72-PAGE EARLY ELIZABETHAN ENGLAND MASTER WORKBOOK...');
+  console.log('=============================================================');
+
+  const kt1PdfPath = path.join(ROOT_DIR, 'public', 'units', 'eee', 'pupil_workbook_kt1.pdf');
+  const kt2PdfPath = path.join(ROOT_DIR, 'public', 'units', 'eee', 'pupil_workbook_kt2.pdf');
+  const kt3PdfPath = path.join(ROOT_DIR, 'public', 'units', 'eee', 'pupil_workbook_kt3.pdf');
+  const masterPdfPath = path.join(ROOT_DIR, 'public', 'units', 'eee', 'pupil_workbook.pdf');
+  const masterPdfGeneral = path.join(ROOT_DIR, 'public', 'pdfs', 'eee_pupil_workbook_master.pdf');
+
+  if (!fs.existsSync(kt1PdfPath) || !fs.existsSync(kt2PdfPath) || !fs.existsSync(kt3PdfPath)) {
+    throw new Error('One or more KT PDF files missing for master merge!');
+  }
+
+  const mergedPdf = await PDFDocument.create();
+
+  for (const [name, pdfPath] of [
+    ['KT1', kt1PdfPath],
+    ['KT2', kt2PdfPath],
+    ['KT3', kt3PdfPath],
+  ]) {
+    const pdfBytes = fs.readFileSync(pdfPath);
+    const doc = await PDFDocument.load(pdfBytes);
+    const copiedPages = await mergedPdf.copyPages(doc, doc.getPageIndices());
+    copiedPages.forEach((page) => mergedPdf.addPage(page));
+    console.log(`  + Appended ${name}: ${copiedPages.length} pages`);
+  }
+
+  const mergedBytes = await mergedPdf.save();
+  fs.writeFileSync(masterPdfPath, mergedBytes);
+  fs.writeFileSync(masterPdfGeneral, mergedBytes);
+  console.log(
+    `\n🎉 Master Workbook compiled: ${masterPdfPath} (${mergedPdf.getPageCount()} pages, ${(mergedBytes.length / 1024 / 1024).toFixed(2)} MB)`,
+  );
+}
+
+// ============================================================================
+// CLI RUNNER
+// ============================================================================
 if (require.main === module) {
-  main().catch((err) => {
-    console.error('Fatal error in EEE workbook generator:', err);
-    process.exit(1);
-  });
+  const target = (process.argv[2] || 'all').toUpperCase();
+
+  (async () => {
+    try {
+      if (target === 'ALL') {
+        for (const kt of ['KT1', 'KT2', 'KT3']) {
+          await renderKeyTopicWorkbook(kt);
+        }
+        await mergeMasterWorkbook();
+      } else if (target === 'MASTER') {
+        await mergeMasterWorkbook();
+      } else {
+        await renderKeyTopicWorkbook(target);
+      }
+      console.log('\n🎉 All requested operations completed cleanly!');
+      process.exit(0);
+    } catch (err) {
+      console.error('\n💥 Execution failed:', err);
+      process.exit(1);
+    }
+  })();
 }
 
 module.exports = {
   buildEeeKeyTopicWorkbook,
+  renderKeyTopicWorkbook,
+  mergeMasterWorkbook,
   KEY_TOPICS_DATA,
 };
