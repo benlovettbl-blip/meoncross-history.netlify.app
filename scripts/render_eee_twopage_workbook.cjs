@@ -190,49 +190,54 @@ const KEY_TOPICS_DATA = {
       'Accession, Religious Settlement, Puritan & Catholic Challenges, and Mary, Queen of Scots',
     dateRange: '1558–1569',
     heroImage: {
-      src: getBase64Image('/images/elizabeth_i.jpg'),
-      alt: 'Queen Elizabeth I Coronation Portrait (1558)',
+      src: getBase64Image('/images/elizabeth_coronation_robes.jpg'),
+      alt: 'Queen Elizabeth I in Coronation Robes',
       objectPosition: 'center 20%',
-      shelfmark: 'NPG 5175 • NATIONAL PORTRAIT GALLERY • LONDON',
-      date: 'c. 1558–1560',
+      shelfmark: 'NPG 2607 • NATIONAL PORTRAIT GALLERY • LONDON',
+      date: 'c. 1600',
       title: 'Queen Elizabeth I in Coronation Robes',
       caption:
-        'Unknown English Artist • Queen Elizabeth I depicted at her accession wearing patterned cloth of gold coronation robes, holding the orb and sceptre as symbols of sovereign monarchical power. Accession Shelfmark NPG 5175.',
-      sourceTag: 'Historical Primary Source',
+        'Unknown English Artist • Queen Elizabeth I depicted in her patterned cloth of gold coronation robes, holding the sovereign orb and sceptre. National Portrait Gallery, London (NPG 2607).',
+      sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 118,
+      heightMm: 88,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      subtopics: [
-        {
-          title: '1. The Situation on Accession (1558)',
-          items: [
-            'Elizabethan society & structure of government (Monarch, Privy Council, Parliament, JPs)',
-            'Virgin Queen: problems of gender, marriage, and disputed Tudor legitimacy',
-            'Financial weaknesses & £300,000 Crown debt inherited from Mary I',
-            'Foreign threats: French dominance, Scotland, and the loss of Calais (1558)',
-          ],
-        },
-        {
-          title: '2. The Religious Settlement (1559)',
-          items: [
-            'Act of Supremacy (1559): Supreme Governor of the Church of England',
-            'Act of Uniformity (1559): Book of Common Prayer & church attendance fines',
-            'Royal Injunctions (1559): 57 instructions enforcing Protestant conformity',
-            'Role of Church of England in enforcing settlement & national administration',
-          ],
-        },
-        {
-          title: '3. Challenges & Mary Queen of Scots',
-          items: [
-            'The Puritan Challenge: Crucifix and Vestments Controversies (1566)',
-            'The Catholic Challenge: Papacy, Counter-Reformation, and recusancy',
-            'Mary, Queen of Scots: Claim to English throne & flight to England (1568)',
-            'Relations between Elizabeth & Mary: House arrest & Casket Letters inquiry',
-          ],
-        },
-      ],
+      edexcelTable: {
+        header: 'Key topic 1: Queen, government and religion, 1558–69',
+        rows: [
+          {
+            numTitle: '1 The situation on Elizabeth’s accession',
+            bullets: [
+              'Elizabethan England in 1558: society and government.',
+              'The Virgin Queen: the problem of her legitimacy, gender, marriage. Her character and strengths.',
+              'Challenges at home and from abroad: financial weaknesses, religious divisions, the French threat.',
+            ],
+          },
+          {
+            numTitle: '2 The ‘settlement’ of religion',
+            bullets: [
+              'Elizabeth’s religious settlement (1559): its features and impact.',
+              'The Church of England: its role in society.',
+            ],
+          },
+          {
+            numTitle: '3 Challenge to the religious settlement',
+            bullets: [
+              'The nature and extent of the Puritan challenge.',
+              'The nature and extent of the Catholic challenge, including the role of the nobility, Papacy and foreign powers.',
+            ],
+          },
+          {
+            numTitle: '4 The problem of Mary, Queen of Scots',
+            bullets: [
+              'Mary, Queen of Scots: her claim to the English throne.',
+              'Relations between Elizabeth and Mary, 1568–69.',
+            ],
+          },
+        ],
+      },
     },
     milestones: [
       {

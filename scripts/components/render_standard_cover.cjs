@@ -61,6 +61,142 @@ function renderStandardFrontCover({
   renderFooterStrip = null,
 }) {
   const isWeimar = unitId === 'weimar_nazi_germany';
+  const isEee = unitId === 'eee';
+
+  if (isEee) {
+    const defaultPhotoHeight = 74;
+    const photoHeight = heroImage.heightMm || defaultPhotoHeight;
+    const objectPos = heroImage.objectPosition || 'center 15%';
+
+    // Clean Pupil Card: strictly Name, Class, Teacher (no extra headers or paper title duplication)
+    const pupilCardHtml = `
+      <!-- Pupil Identification Card -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 4.5px 12px; background: #fff; margin-bottom: 3px;">
+        <div style="display: grid; grid-template-columns: 2fr 1fr 1.2fr; gap: 16px; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 48px; font-size: 7.0pt; color: #000;">Name:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 13px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 44px; font-size: 7.0pt; color: #000;">Class:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 13px;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline;">
+            <strong style="text-transform: uppercase; width: 56px; font-size: 7.0pt; color: #000;">Teacher:</strong>
+            <div style="flex: 1; border-bottom: 1.2px solid #000; height: 13px;"></div>
+          </div>
+        </div>
+      </div>`;
+
+    // Key Topic Title Banner: clean, no "Chronological Enquiry Sequence", no repetitive subtitle
+    const titleBannerHtml = `
+      <!-- Key Topic Title Banner -->
+      <div style="border: 1.8px solid #000; border-radius: 4px; padding: 4px 10px; background: #fff; margin-bottom: 3px; display: flex; align-items: center; justify-content: space-between;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="background: #000; color: #fff; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; padding: 2px 7px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.8px;">
+            Key Topic ${keyTopicNum} &bull; ${dateRange}
+          </span>
+          <h1 style="font-family: 'Playfair Display', serif; font-size: 13.0pt; margin: 0; font-weight: 900; line-height: 1.15; color: #000;">
+            ${title}
+          </h1>
+        </div>
+      </div>`;
+
+    // Master Photographic Plate: Full-Colour (no grayscale filter)
+    const photoPlateHtml = `
+      <!-- Master Wide Photographic Plate (Full Colour) -->
+      <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
+        <div style="height: ${photoHeight}mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+          <img src="${heroImage.src}" alt="${heroImage.alt}" style="width: 100%; height: 100%; object-fit: cover; object-position: ${objectPos}; display: block;">
+        </div>
+        <div style="border-top: 1.5px solid #000; padding: 2.5px 8px; background: #fff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111;">
+          <span><strong style="text-transform: uppercase; letter-spacing: 0.4px;">Historical Primary Record:</strong> ${heroImage.title} (${heroImage.date})</span>
+          <span style="font-weight: 800; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.5px;">${heroImage.shelfmark}</span>
+        </div>
+      </div>`;
+
+    // Edexcel Table (Approach B): 2-Column official specification table
+    const tableHeader = specBox.edexcelTable
+      ? specBox.edexcelTable.header
+      : `Key topic ${keyTopicNum}: ${title}`;
+    const tableRows = specBox.edexcelTable ? specBox.edexcelTable.rows : [];
+
+    const specTableHtml = `
+      <!-- Pearson Edexcel Specification (Approach B: Official 2-Column Vector Table) -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
+        <!-- Grey Header Bar matching Edexcel Specification -->
+        <div style="background: #7f858c; color: #ffffff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; letter-spacing: 0.3px; flex-shrink: 0; border-bottom: 1.2px solid #555;">
+          ${tableHeader}
+        </div>
+
+        <div style="display: flex; flex-direction: column; flex: 1; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.22; color: #111;">
+          ${tableRows
+            .map((row, rIdx, arr) => {
+              const isLast = rIdx === arr.length - 1;
+              const borderBottom = isLast ? '' : 'border-bottom: 1px solid #c0c0c0;';
+              const bulletsHtml = row.bullets
+                .map(
+                  (b) =>
+                    `<div style="margin-bottom: 1.5px; display: flex;"><span style="margin-right: 4px; flex-shrink: 0;">&bull;</span><span>${b}</span></div>`,
+                )
+                .join('');
+              return `
+            <div style="display: flex; flex: 1; ${borderBottom}">
+              <div style="width: 28%; font-weight: 800; color: #000; padding: 4px 6px; border-right: 1.2px solid #c0c0c0; background: #fafafa; display: flex; align-items: flex-start; font-size: 7.3pt; line-height: 1.18;">
+                ${row.numTitle}
+              </div>
+              <div style="width: 72%; padding: 3px 8px; display: flex; flex-direction: column; justify-content: center; background: #fff;">
+                ${bulletsHtml}
+              </div>
+            </div>`;
+            })
+            .join('')}
+        </div>
+      </div>`;
+
+    const footerHtml = renderFooterStrip
+      ? renderFooterStrip(1, footerQuip, totalPageCount)
+      : `
+        <div class="page-footer-strip">
+          <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${footerQuip}</span>
+          <span class="footer-page-num">1/${totalPageCount}</span>
+        </div>`;
+
+    return `
+  <!-- ====================================================================
+       PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover - EEE Approach B)
+       ==================================================================== -->
+  <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      
+      <!-- Top Departmental Header Bar (Clean, single mention of platform & workbook) -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;" data-department-name="The History Department">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span class="school-brand-target" style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; letter-spacing: 2px; text-transform: uppercase;">The History Department</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; letter-spacing: 1px; text-transform: uppercase;">GCSE History Revision Hub &bull; Pupil Workbook</span>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-top: 1px; border-top: 1px solid #000; padding-top: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; color: #222;">${paperTitle}</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800;">${specCode}</span>
+        </div>
+      </div>
+
+      <!-- Pupil Identification Card -->
+      ${pupilCardHtml}
+
+      <!-- Key Topic Title Banner -->
+      ${titleBannerHtml}
+
+      <!-- Master Wide Photographic Plate (Full Colour) -->
+      ${photoPlateHtml}
+
+      <!-- Pearson Edexcel Specification (Approach B: Official 2-Column Vector Table) -->
+      ${specTableHtml}
+
+      ${footerHtml}
+    </div>
+  </div>`;
+  }
 
   // Dynamic specification typography scaling based on column count and item density
   const numCols = (specBox.subtopics || []).length || 3;
