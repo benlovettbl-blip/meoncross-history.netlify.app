@@ -1670,43 +1670,50 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
   const stages = enq.stages || [];
   stages.forEach((st, idx) => {
     let bulletsHtml = st.bullets
-      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
-      .join('\n');
+      .map(
+        (b) =>
+          `<div style="margin-bottom: 2px;"><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`,
+      )
+      .join('');
     stagesHtml += `
           <!-- Stage ${idx + 1} -->
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0; border-bottom: 1.5px solid #000000;">
+            <!-- Left: Factual Chronology Spine (38mm) with larger strong black font -->
+            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 2px 4px 2px 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <div style="position: absolute; left: -5.5px; top: 12px; width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1.5px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4px; border-radius: 2px;">${idx + 1}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000;">${st.dates}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 1px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 900; color: #000000; line-height: 1.12; margin-bottom: 2.5px;">
                 ${st.title}
               </div>
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.1pt; line-height: 1.10; color: #111111;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 1.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 0.5px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.7pt; line-height: 1.10; color: #222222; font-style: italic;">
-                  ${st.focusClue}
-                </div>
+              <!-- Larger, Strong Black Bullets (7.1pt, 700 weight, deep black) -->
+              <div style="display: flex; flex-direction: column; font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; line-height: 1.20; color: #000000;">
+                ${bulletsHtml}
               </div>
             </div>
 
-            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <!-- Right: Juicy Enquiry Prompt + Exact 6 Ruled Lines (Live Line Ruling Preserved) -->
+            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1.5px solid #000000; margin: 0; padding: 0;">
+              <!-- Embedded Stage Enquiry Focus Bar -->
+              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 2px 6px; display: flex; align-items: center; gap: 6px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 900; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px; letter-spacing: 0.4px; flex-shrink: 0;">
+                  ENQUIRY FOCUS ${idx + 1}
+                </span>
+                <span style="font-family: 'Georgia', serif; font-size: 7.4pt; font-weight: 700; color: #000000; line-height: 1.15; font-style: italic;">
+                  ${st.focusClue}
+                </span>
+              </div>
+              <!-- Exact 6 Ruled Lines (Preserving live 1.5px solid #000000 ruling) -->
+              <div style="flex: 1; display: flex; flex-direction: column;">
+                <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+                <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+                <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+                <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+                <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+                <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              </div>
             </div>
           </div>`;
   });
@@ -1732,12 +1739,12 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
 
       <!-- Active Lesson Note-Taking Spine -->
       <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1.5px 0; margin-bottom: 2px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
+            CHRONOLOGICAL INQUIRY SPINE &bull; 5 CAUSAL MILESTONES
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Take precise, structured notes alongside each milestone as your teacher narrates the history
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #1e293b;">
+            PUPIL NOTE-TAKING ZONE &bull; <span style="font-style: italic; font-weight: 500; color: #475569;">Answer each milestone prompt using evidence from teacher exposition</span>
           </span>
         </div>
 
