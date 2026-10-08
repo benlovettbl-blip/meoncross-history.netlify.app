@@ -646,7 +646,6 @@ function buildHtml() {
     .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 800; color: #000000; }
     .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #64748b; white-space: nowrap; }
 
-    /* Page 23: Period Study Question 1 & Question 2 Blueprints */
     /* Page 23: Period Study Question 1 & Question 2 Strategy */
     .strat-meta-bar-23 {
       display: flex;
@@ -654,9 +653,9 @@ function buildHtml() {
       align-items: center;
       background: #0f172a;
       color: #ffffff;
-      padding: 3px 8px;
+      padding: 3.5px 8px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 7.4pt;
       font-weight: 700;
       letter-spacing: 0.3px;
       border-radius: 2px;
@@ -667,7 +666,8 @@ function buildHtml() {
       display: flex;
       flex-direction: column;
       flex: 1;
-      gap: 5px;
+      justify-content: flex-start;
+      gap: 7px;
       margin: 1px 0;
     }
     .strat-card-q1 {
@@ -677,7 +677,7 @@ function buildHtml() {
       padding: 5px 8px;
       display: flex;
       flex-direction: column;
-      gap: 2.5px;
+      gap: 3px;
     }
     .strat-card-q2 {
       border: 1.3px solid #0f172a;
@@ -686,8 +686,6 @@ function buildHtml() {
       padding: 5px 8px;
       display: flex;
       flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
       gap: 3px;
     }
     .strat-card-header {
@@ -720,23 +718,23 @@ function buildHtml() {
     }
     .strat-grid-2col {
       display: grid;
-      grid-template-columns: 1fr 1.35fr;
+      grid-template-columns: 1fr 1fr;
       gap: 5px;
     }
     .strat-grid-3col {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4px;
+      gap: 4.5px;
     }
     .strat-subbox {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       background: #f8fafc;
-      padding: 3.5px 6px;
+      padding: 3.5px 5.5px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 7.3pt;
-      line-height: 1.26;
+      font-size: 7.2pt;
+      line-height: 1.25;
       color: #1e293b;
       display: flex;
       flex-direction: column;
@@ -745,48 +743,133 @@ function buildHtml() {
     }
     .strat-subbox-title {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.4pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 1px;
     }
-    .strat-ok-matrix {
-      border: 1px solid #cbd5e1;
+    .strat-model-q1-box {
+      border: 1px solid #0284c7;
+      border-left: 3.5px solid #0284c7;
+      background: #f0f9ff;
+      padding: 3.5px 6px;
       border-radius: 2px;
-      overflow: hidden;
-      margin: 1px 0;
+      font-size: 6.9pt;
+      line-height: 1.22;
+      color: #0c4a6e;
     }
-    .strat-ok-table {
-      width: 100%;
-      border-collapse: collapse;
+    .strat-model-q1-header {
       font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #0369a1;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5px;
+    }
+    .strat-model-q1-stem {
+      font-family: 'Georgia', serif;
+      font-size: 7.0pt;
+      color: #0f172a;
+      margin-bottom: 1.5px;
+    }
+    .strat-model-q1-body {
+      font-family: 'Georgia', serif;
+      font-size: 6.9pt;
+      line-height: 1.22;
+      color: #1e293b;
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+    .strat-model-q1-breakdown {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      line-height: 1.20;
+      color: #0369a1;
+      border-top: 1px dashed #bae6fd;
+      padding-top: 1.5px;
+    }
+    .strat-qbank-box {
+      border: 1px solid #cbd5e1;
+      border-left: 3.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 3.5px 5.5px;
+      border-radius: 2px;
+    }
+    .strat-qbank-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.3pt;
+      font-weight: 800;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      margin-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .strat-qbank-grid-2col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5px 8px;
+    }
+    .strat-qbank-item {
+      font-family: 'Georgia', serif;
+      font-size: 7.1pt;
+      line-height: 1.22;
+      color: #1e293b;
+    }
+    .strat-qbank-item strong {
+      font-family: 'Inter', sans-serif;
+      color: #0f172a;
       font-size: 7.0pt;
     }
-    .strat-ok-table th {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 2.5px 5px;
-      font-weight: 800;
-      text-align: left;
-      text-transform: uppercase;
-      font-size: 6.6pt;
-      letter-spacing: 0.3px;
+    .strat-q2-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5px 6.5px;
     }
-    .strat-ok-table td {
-      padding: 2px 5px;
-      border-bottom: 1px solid #e2e8f0;
-      color: #334155;
-      line-height: 1.24;
-    }
-    .strat-ok-table tr:nth-child(even) td {
+    .strat-q2-card {
+      border: 1px solid #cbd5e1;
+      border-left: 3px solid #0f172a;
       background: #f8fafc;
+      padding: 3px 5px;
+      border-radius: 2px;
+      font-size: 6.8pt;
+      line-height: 1.18;
     }
-    .strat-ok-table tr:last-child td {
-      border-bottom: none;
+    .strat-q2-card-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1px;
+    }
+    .strat-q2-stimulus {
+      font-family: 'Georgia', serif;
+      font-size: 6.7pt;
+      color: #334155;
+      line-height: 1.16;
+    }
+    .strat-q2-ok {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: #991b1b;
+      margin-top: 1px;
+    }
+    .strat-q2-chain {
+      font-family: 'Georgia', serif;
+      font-size: 6.5pt;
+      font-style: italic;
+      color: #1e3a8a;
+      line-height: 1.15;
+      margin-top: 1px;
     }
     .strat-mini-trap {
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 6.9pt;
       line-height: 1.22;
       color: #991b1b;
       font-weight: 700;
@@ -795,18 +878,18 @@ function buildHtml() {
       gap: 5px;
       background: #fef2f2;
       border: 1px solid #fecaca;
-      padding: 2px 5px;
+      padding: 2.5px 5.5px;
       border-radius: 2px;
     }
     .strat-connectives-bar {
       border: 1px solid #cbd5e1;
       background: #f1f5f9;
-      padding: 2.5px 6px;
+      padding: 3px 6px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 6.9pt;
       color: #334155;
-      line-height: 1.24;
+      line-height: 1.22;
     }
 
     /* Page 24: Period Study Question 3 Importance & Digital Revision Hub */
@@ -816,9 +899,9 @@ function buildHtml() {
       align-items: center;
       background: #0f172a;
       color: #ffffff;
-      padding: 3px 8px;
+      padding: 3.5px 8px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 7.4pt;
       font-weight: 700;
       letter-spacing: 0.3px;
       border-radius: 2px;
@@ -829,18 +912,17 @@ function buildHtml() {
       display: flex;
       flex-direction: column;
       flex: 1;
-      gap: 5px;
+      justify-content: flex-start;
+      gap: 7px;
       margin: 1px 0;
     }
     .strat-card-24 {
       border: 1.4px solid #0f172a;
       border-radius: 2px;
-      padding: 6px 9px;
+      padding: 5px 8px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
       gap: 3.5px;
     }
     .strat-header-24 {
@@ -869,84 +951,64 @@ function buildHtml() {
       border: 1px solid #0284c7;
       background: #f0f9ff;
       border-left: 3.5px solid #0284c7;
-      padding: 2px 5px;
+      padding: 2.5px 5.5px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 7.0pt;
       line-height: 1.22;
       color: #0369a1;
       font-weight: 600;
     }
-    .strat-essay-grid-24 {
+    .strat-q3-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4.5px;
+      gap: 3.5px 6.5px;
     }
-    .strat-essay-step-24 {
+    .strat-q3-card {
       border: 1px solid #cbd5e1;
-      border-left: 3.5px solid #0f172a;
-      background: #f8fafc;
-      padding: 3px 5.5px;
-      border-radius: 2px;
-      font-family: 'Georgia', serif;
-      font-size: 7.1pt;
-      line-height: 1.24;
-      color: #1e293b;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      gap: 1px;
-    }
-    .strat-step-num {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin-bottom: 1px;
-    }
-    .strat-models-grid-3col {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 4px;
-    }
-    .strat-model-para-24 {
-      border: 1.2px solid #0f172a;
-      border-left: 3.5px solid #0f172a;
+      border-left: 3px solid #0f172a;
       background: #f8fafc;
       padding: 3px 5px;
       border-radius: 2px;
+    }
+    .strat-q3-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .strat-q3-focus {
+      color: #1e3a8a;
+      font-weight: 800;
+    }
+    .strat-q3-options {
       font-family: 'Georgia', serif;
       font-size: 6.9pt;
-      line-height: 1.22;
+      line-height: 1.20;
       color: #1e293b;
-    }
-    .strat-model-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.6pt;
-      font-weight: 900;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.25px;
-      margin-bottom: 1px;
     }
     .strat-starters-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4px;
+      gap: 4.5px;
     }
     .strat-starter-box {
       border: 1px solid #cbd5e1;
       background: #f8fafc;
-      padding: 2px 4.5px;
+      padding: 2.5px 5px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 6.8pt;
+      font-size: 6.9pt;
       line-height: 1.20;
       color: #1e293b;
     }
     .strat-starter-title {
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 7.1pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 1px;
@@ -954,43 +1016,55 @@ function buildHtml() {
     .strat-criteria-box {
       border: 1px dashed #0f172a;
       background: #f1f5f9;
-      padding: 2px 5px;
+      padding: 2.5px 5.5px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      line-height: 1.20;
+      font-size: 6.9pt;
+      line-height: 1.22;
       color: #1e293b;
     }
-    .strat-traps-bar-fixed {
+    .strat-traps-box-p24 {
       border: 1.3px solid #b91c1c;
       border-left: 5px solid #b91c1c;
       background: #fef2f2;
-      padding: 4px 8px;
+      padding: 4.5px 8px;
       border-radius: 2px;
       display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .strat-traps-header-p24 {
+      display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 7px;
+      border-bottom: 1px solid #fecaca;
+      padding-bottom: 2px;
+    }
+    .strat-traps-grid-p24 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5px 8px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.1pt;
+      font-size: 6.8pt;
+      line-height: 1.20;
       color: #7f1d1d;
     }
-    .strat-traps-list {
-      flex: 1;
-      font-weight: 600;
-      line-height: 1.25;
+    .strat-trap-item strong {
+      color: #991b1b;
+      font-weight: 800;
     }
     .back-hub-card {
       border: 1.4px solid #0f172a;
       background: #f8fafc;
-      padding: 7px 11px;
+      padding: 8px 12px;
       border-radius: 2px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .back-hub-qr {
-      width: 78px;
-      height: 78px;
+      width: 86px;
+      height: 86px;
       flex-shrink: 0;
       background: #ffffff;
       padding: 2px;
@@ -1002,7 +1076,7 @@ function buildHtml() {
       font-family: 'Inter', sans-serif;
     }
     .back-hub-title {
-      font-size: 9.4pt;
+      font-size: 9.6pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -1010,32 +1084,33 @@ function buildHtml() {
       letter-spacing: 0.3px;
     }
     .back-hub-desc {
-      font-size: 7.5pt;
-      line-height: 1.26;
+      font-size: 7.6pt;
+      line-height: 1.28;
       color: #334155;
-      margin-bottom: 3px;
+      margin-bottom: 3.5px;
     }
-    .back-hub-features {
-      display: flex;
-      gap: 4.5px;
-      margin-bottom: 3px;
+    .back-hub-features-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5px 6px;
+      margin-bottom: 3.5px;
     }
     .hub-feature-tag {
       font-family: 'Inter', sans-serif;
-      font-size: 6.7pt;
+      font-size: 6.8pt;
       font-weight: 800;
       background: #e2e8f0;
       color: #0f172a;
-      padding: 1.2px 4.5px;
+      padding: 1.5px 5px;
       border-radius: 2px;
       white-space: nowrap;
     }
     .back-hub-url {
       font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 8.0pt;
       font-weight: 900;
-      color: #0369a1;
-      letter-spacing: 0.2px;
+      color: #0f172a;
+      letter-spacing: 0.4px;
     }
   </style>
 </head>
@@ -1316,7 +1391,7 @@ function buildHtml() {
   <div class="page-container" id="page-23">
     <div class="running-header">
       <span>Edexcel Paper 2 Period Study Examination Strategy</span>
-      <span>Question 1 &amp; Question 2 Blueprints (1HI0/2B)</span>
+      <span>Question 1 &amp; Question 2 Blueprints &amp; Master Banks (1HI0/2B)</span>
     </div>
 
     <div class="strat-meta-bar-23">
@@ -1334,36 +1409,69 @@ function buildHtml() {
         <div class="strat-task-prompt">
           <strong>Official Stem:</strong> <em>"Explain one consequence of [historical event, development, or treaty]..."</em>
         </div>
+
         <div class="strat-grid-2col">
           <div class="strat-subbox">
-            <div class="strat-subbox-title">Execution Architecture &amp; Level Rubric</div>
-            <div>• <strong>Point (Direct Consequence):</strong> State the single consequence immediately in your opening topic sentence.</div>
+            <div class="strat-subbox-title">Execution Architecture &amp; Level 2 Rubric</div>
+            <div>• <strong>Point (Consequence Sentence):</strong> State the single consequence directly in your opening sentence.</div>
             <div>• <strong>Evidence (Precise Corroboration):</strong> Deploy 2 specific factual anchors (dates, treaty names, numbers, or key figures).</div>
-            <div>• <strong>Explanation (Causal Mechanism):</strong> Explain exactly *how* and *why* the initial event led directly to this subsequent result.</div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; color: #475569; border-top: 1px dashed #cbd5e1; padding-top: 1px; margin-top: 1px;">
-              <strong>Level 2 Descriptor (3–4 Marks):</strong> Accurate, relevant knowledge is deployed with an explicit explanation of the resulting impact.
-            </div>
-            <div style="background: #e2e8f0; padding: 2px 4px; border-radius: 1px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f172a; margin-top: 1px;">
+            <div>• <strong>Explanation (Causal Link):</strong> Explain exactly *how* and *why* the initial event produced this lasting result.</div>
+            <div style="background: #e2e8f0; padding: 1.5px 4px; border-radius: 1px; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; color: #0f172a; margin-top: 1px;">
               Golden Formula: Consequence Statement → 2 Factual Proofs → Causal "So What?" Link
             </div>
           </div>
+
           <div class="strat-subbox">
-            <div class="strat-subbox-title">Four Exemplar Grade 9 Model Answers [4/4 Marks Each]</div>
-            <div><strong>Model 1 (1956 Suez Crisis):</strong> <em>"One major consequence was the decisive humiliation of Britain and France, ending their superpower role. US President Eisenhower threatened to collapse the British pound by blocking IMF emergency loans, forcing Anthony Eden to order a ceasefire and resign."</em></div>
-            <div style="border-top: 1px dashed #cbd5e1; padding-top: 1px; margin-top: 1px;">
-              <strong>Model 2 (1967 Six-Day War):</strong> <em>"One major consequence was the creation of the occupied territories dispute and UN Resolution 242. By capturing Sinai, Gaza, the West Bank, and Golan, Israel established the contested 'Land for Peace' baseline that defined all future peace negotiations."</em>
-            </div>
-            <div style="border-top: 1px dashed #cbd5e1; padding-top: 1px; margin-top: 1px;">
-              <strong>Model 3 (1973 Oil Embargo):</strong> <em>"One major consequence was that it forced Western European nations into a pro-Arab diplomatic shift. When OPEC cut production by 5% monthly and quadrupled prices, fuel shortages compelled European states to distance themselves from Israel to secure oil."</em>
-            </div>
-            <div style="border-top: 1px dashed #cbd5e1; padding-top: 1px; margin-top: 1px;">
-              <strong>Model 4 (1979 Egyptian Peace Treaty):</strong> <em>"One major consequence was the shattering of Arab military unity. By signing a separate peace for the return of Sinai, President Sadat removed Egypt from the conflict, leading to Egypt's expulsion from the Arab League."</em>
+            <div class="strat-subbox-title">Examiner Strategy &amp; Golden Rules</div>
+            <div>• <strong>Single Consequence Rule:</strong> Only ONE consequence is credited. Writing two wastes valuable time with 0 extra marks.</div>
+            <div>• <strong>Avoid Narrative Drift:</strong> Do not explain *why* the event happened; focus 100% on the *aftermath and results*.</div>
+            <div>• <strong>Time Target:</strong> Strictly 5 minutes. Allocate 1 minute to plan and 4 minutes to write one precise PEEL paragraph.</div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #991b1b; font-weight: 700; border-top: 1px dashed #cbd5e1; padding-top: 1px; margin-top: 1px;">
+              Fatal Trap: Describing the event instead of its consequence caps your mark at Level 1 (1–2 marks)!
             </div>
           </div>
         </div>
+
+        <!-- LEVEL 2 (GRADE 9) EXEMPLAR MODEL PARAGRAPH -->
+        <div class="strat-model-q1-box">
+          <div class="strat-model-q1-header">
+            <span>Verified Grade 9 Exemplar Answer [Level 2 • 4/4 Marks]</span>
+            <span style="font-weight: 600; color: #475569;">Target Time: 4 Mins</span>
+          </div>
+          <div class="strat-model-q1-stem">
+            <strong>Practice Prompt:</strong> <em>"Explain one consequence of the 1956 Suez Crisis for Great Britain's global superpower standing." [4 marks]</em>
+          </div>
+          <div class="strat-model-q1-body">
+            "One consequence of the Suez Crisis was the decisive collapse of Great Britain's standing as an independent global superpower. In November 1956, after Britain, France, and Israel secretly colluded under the Protocol of Sèvres to invade Egypt, US President Eisenhower threatened to collapse the British pound by blocking a critical $1.3 billion IMF loan and withholding oil supplies unless British troops withdrew immediately. Prime Minister Anthony Eden was forced into a humiliating and unconditional retreat within days. This exposed Britain's total economic and military subordination to the United States, effectively ending over two centuries of British imperial dominance in the Middle East."
+          </div>
+          <div class="strat-model-q1-breakdown">
+            <strong>Examiner Breakdown (4/4 Marks):</strong> <strong>✓ Point:</strong> States explicit consequence in line 1. <strong>✓ Evidence:</strong> Cites Protocol of Sèvres, Eisenhower IMF loan freeze, and Anthony Eden. <strong>✓ Explanation:</strong> Explicitly explains how US financial leverage forced retreat and ended imperial dominance.
+          </div>
+        </div>
+
+        <!-- QUESTION 1 HIGH-PROBABILITY QUESTION BANK -->
+        <div class="strat-qbank-box">
+          <div class="strat-qbank-title">
+            <span>High-Probability Question 1 Practice Bank (10 Specification Targets)</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">1 Consequence • 4 Marks</span>
+          </div>
+          <div class="strat-qbank-grid-2col">
+            <div class="strat-qbank-item"><strong>1. 1946:</strong> Explain one consequence of the King David Hotel bombing for British rule in Palestine.</div>
+            <div class="strat-qbank-item"><strong>2. 1947:</strong> Explain one consequence of the UN Partition Plan (Resolution 181) for Arab-Jewish relations.</div>
+            <div class="strat-qbank-item"><strong>3. 1948:</strong> Explain one consequence of the 1948–49 Arab-Israeli War for Palestinian Arabs (the Nakba).</div>
+            <div class="strat-qbank-item"><strong>4. 1950:</strong> Explain one consequence of the Israeli Law of Return for the State of Israel.</div>
+            <div class="strat-qbank-item"><strong>5. 1956:</strong> Explain one consequence of the Suez Crisis for Great Britain's global superpower standing.</div>
+            <div class="strat-qbank-item"><strong>6. 1967:</strong> Explain one consequence of the Six-Day War for United Nations diplomacy (Resolution 242).</div>
+            <div class="strat-qbank-item"><strong>7. 1968:</strong> Explain one consequence of the Battle of Karameh for the Palestine Liberation Organization (PLO).</div>
+            <div class="strat-qbank-item"><strong>8. 1973:</strong> Explain one consequence of the Yom Kippur War for Arab oil diplomacy (OAPEC).</div>
+            <div class="strat-qbank-item"><strong>9. 1978:</strong> Explain one consequence of the Camp David Accords for Egypt's standing in the Arab world.</div>
+            <div class="strat-qbank-item"><strong>10. 1987:</strong> Explain one consequence of the First Palestinian Intifada for the Israeli government.</div>
+          </div>
+        </div>
+
         <div class="strat-mini-trap">
           <span class="trap-tag" style="padding: 1px 4px; font-size: 6.2pt;">EXAMINER RULE</span>
-          Under current Edexcel specifications, Question 1 assesses ONE consequence only [4 marks]. Never write two consequences; doing so wastes 5 valuable minutes with zero additional marks awarded!
+          Under current Pearson Edexcel specifications, Question 1 assesses ONE consequence only [4 marks]. Never write two consequences; doing so wastes 5 valuable minutes with zero additional marks awarded!
         </div>
       </div>
 
@@ -1374,73 +1482,85 @@ function buildHtml() {
           <span class="strat-badge">8 Marks • Target: 15 Mins</span>
         </div>
         <div class="strat-task-prompt">
-          <strong>Official Stem:</strong> <em>"Write an analytical narrative account explaining [development]... You may use [Stimulus 1] and [Stimulus 2]. You must also use information of your own."</em>
+          <strong>Official Stem:</strong> <em>"Write a narrative account analysing [development]... You may use [Stimulus 1] and [Stimulus 2]. You must also use information of your own."</em>
         </div>
 
         <div class="strat-grid-3col">
           <div class="strat-subbox">
-            <div class="strat-subbox-title">Phase 1: Catalyst / Spark</div>
-            <div>• <strong>Preconditions:</strong> Establish the initial situation and immediate trigger.</div>
-            <div>• <strong>Stimulus 1:</strong> Anchor with the opening stimulus bullet point.</div>
+            <div class="strat-subbox-title">Phase 1: Catalyst / Spark (¶1)</div>
+            <div>• <strong>Preconditions:</strong> Establish initial trigger.</div>
+            <div>• <strong>Stimulus 1:</strong> Anchor with opening stimulus bullet.</div>
             <div>• <strong>Causal Link:</strong> <em>"This directly precipitated the crisis because..."</em></div>
           </div>
           <div class="strat-subbox">
-            <div class="strat-subbox-title">Phase 2: Escalation &amp; Crisis</div>
-            <div>• <strong>Mandatory Own Knowledge:</strong> Deploy at least 2 precise historical facts omitted from the two stimulus bullets.</div>
+            <div class="strat-subbox-title">Phase 2: Escalation &amp; Conflict (¶2)</div>
+            <div>• <strong>Mandatory Own Knowledge:</strong> Deploy at least 2 facts omitted from stimulus bullets.</div>
             <div>• <strong>Causal Progression:</strong> <em>"Consequently, this in turn compelled..."</em></div>
           </div>
           <div class="strat-subbox">
-            <div class="strat-subbox-title">Phase 3: Climax &amp; Outcome</div>
-            <div>• <strong>Stimulus 2 &amp; Result:</strong> Integrate the second stimulus and explain the decisive resolution.</div>
-            <div>• <strong>Enduring Consequence:</strong> <em>"As an immediate consequence of this outcome..."</em></div>
+            <div class="strat-subbox-title">Phase 3: Climax &amp; Resolution (¶3)</div>
+            <div>• <strong>Stimulus 2:</strong> Integrate second stimulus bullet.</div>
+            <div>• <strong>Decisive Outcome:</strong> Explain the resolution.</div>
+            <div>• <strong>Enduring Result:</strong> <em>"As an immediate consequence..."</em></div>
           </div>
         </div>
 
-        <!-- DUAL GRADE 9 NARRATIVE MODELS -->
-        <div class="strat-grid-2col">
-          <div class="strat-subbox">
-            <div class="strat-subbox-title">Grade 9 Model 1: Outbreak of Six-Day War (1967) [8/8m]</div>
-            <em>"The crisis was sparked in May 1967 when President Nasser expelled UNEF peacekeepers from Sinai and closed the Straits of Tiran to Israeli shipping. This directly precipitated war because Israel had declared any maritime blockade an act of war, prompting Prime Minister Eshkol to appoint Moshe Dayan as Defence Minister. This escalation in turn compelled Israel to execute a pre-emptive strike; at 07:45 on 5 June 1967, Operation Focus flew beneath Egyptian radar to destroy over 300 combat aircraft on the ground within three hours. With total air supremacy secured, Israeli armored divisions advanced across Sinai, while counter-attacks captured East Jerusalem, the West Bank, and Golan Heights, achieving total victory in 132 hours."</em>
+        <!-- QUESTION 2 HIGH-PROBABILITY NARRATIVE PRACTICE BANK (8 SPECIFICATION ARCS) -->
+        <div class="strat-qbank-box" style="padding: 2.5px 5px;">
+          <div class="strat-qbank-title">
+            <span>High-Probability Question 2 Narrative Practice Bank (8 Major Chronological Arcs)</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">8 Marks • 3-Phase Chronological Framework &amp; Own Knowledge Gate</span>
           </div>
-          <div class="strat-subbox">
-            <div class="strat-subbox-title">Grade 9 Model 2: The 1973 Yom Kippur War [8/8m]</div>
-            <em>"The war began on 6 October 1973 with a coordinated surprise attack by Egypt and Syria on Yom Kippur. In Operation Badr, Egyptian forces crossed the Suez Canal, breaching the Bar-Lev Line while Syrian armor advanced into the Golan Heights. This Arab breakthrough in turn compelled the US to launch Operation Nickel Grass, airlifting 22,000 tons of munitions to prevent an Israeli collapse. Reinforced by US arms, General Ariel Sharon executed a daring counter-crossing of the Suez Canal, encircling the Egyptian Third Army. This crisis brought the superpowers to the brink of nuclear war before UN Resolution 338 secured a ceasefire on 25 October."</em>
+          <div class="strat-q2-grid">
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">1. British Withdrawal from Palestine (1945–48)</div>
+              <div class="strat-q2-stimulus">Stimulus: • King David Hotel bombing (1946) • UN Partition Plan (1947)</div>
+              <div class="strat-q2-ok">Own Knowledge: SS Exodus crisis / Bevin's 1,500 monthly quota / Sergeants affair</div>
+              <div class="strat-q2-chain">Causal Chain: Post-war insurgency &amp; Exodus → British crisis &amp; UN referral → May 1948 withdrawal.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">2. The 1948–49 Arab-Israeli War</div>
+              <div class="strat-q2-stimulus">Stimulus: • Declaration of State of Israel (May 1948) • UN ceasefires</div>
+              <div class="strat-q2-ok">Own Knowledge: Haganah/Irgun merger into IDF / Czech arms shipments (Op Balak)</div>
+              <div class="strat-q2-chain">Causal Chain: 5-nation Arab invasion → IDF truce rearmament &amp; counter-offensives → 1949 armistices.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">3. The Suez Crisis of 1956</div>
+              <div class="strat-q2-stimulus">Stimulus: • Nationalisation of Suez Canal (July 1956) • Protocol of Sèvres</div>
+              <div class="strat-q2-ok">Own Knowledge: Israeli Mitla Pass assault / Eisenhower's IMF loan freeze threat</div>
+              <div class="strat-q2-chain">Causal Chain: Nasser nationalises canal → Secret tripartite Sèvres invasion → US financial pressure ends crisis.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">4. Escalation to the Six-Day War (1964–67)</div>
+              <div class="strat-q2-stimulus">Stimulus: • Syrian border clashes &amp; water disputes • Closure of Straits of Tiran</div>
+              <div class="strat-q2-ok">Own Knowledge: Expulsion of UNEF peacekeepers / Operation Focus air strikes</div>
+              <div class="strat-q2-chain">Causal Chain: Border raids &amp; Tiran blockade → Egyptian militarisation of Sinai → Israel launches Op Focus air wipeout.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">5. The 1973 Yom Kippur War</div>
+              <div class="strat-q2-stimulus">Stimulus: • Operation Badr Suez crossing (6 Oct) • US emergency military airlift</div>
+              <div class="strat-q2-ok">Own Knowledge: Bar-Lev Line breach / Soviet SAM umbrella / Sharon's counter-crossing</div>
+              <div class="strat-q2-chain">Causal Chain: Dual surprise crossing breaches Bar-Lev → Soviet SAM umbrella stalls IDF → US airlift &amp; Sharon counter-attack.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">6. Sadat's Peace Initiative &amp; Camp David (1977–79)</div>
+              <div class="strat-q2-stimulus">Stimulus: • Sadat's visit to Jerusalem (Nov 1977) • Treaty of Washington (1979)</div>
+              <div class="strat-q2-ok">Own Knowledge: 13 days Carter mediation at Camp David / Return of Sinai Peninsula</div>
+              <div class="strat-q2-chain">Causal Chain: Sadat breaks 30-year taboo in Knesset → 13-day Carter mediation at Camp David → 1979 Washington treaty.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">7. The First Palestinian Intifada (1987–93)</div>
+              <div class="strat-q2-stimulus">Stimulus: • Jabalya refugee camp road incident • Unified National Leadership (UNLU)</div>
+              <div class="strat-q2-ok">Own Knowledge: Commercial &amp; tax strikes / Rabin's "Iron Fist" policy / 1988 Hamas charter</div>
+              <div class="strat-q2-chain">Causal Chain: Jabalya incident sparks grassroots riots → UNLU strikes defy Rabin's Iron Fist → Global pressure compels talks.</div>
+            </div>
+            <div class="strat-q2-card">
+              <div class="strat-q2-card-title">8. The Road to the Oslo Peace Accords (1991–95)</div>
+              <div class="strat-q2-stimulus">Stimulus: • Madrid Peace Conference (1991) • White House lawn handshake (1993)</div>
+              <div class="strat-q2-ok">Own Knowledge: Secret backchannel talks in Norway / Letters of Mutual Recognition / Oslo II Areas A, B, C</div>
+              <div class="strat-q2-chain">Causal Chain: Gulf War &amp; Madrid open diplomacy → Secret Norwegian talks craft Recognition → 1993 White House handshake.</div>
+            </div>
           </div>
-        </div>
-
-        <!-- LEVEL 3 OWN KNOWLEDGE GATE MATRIX -->
-        <div class="strat-ok-matrix">
-          <table class="strat-ok-table">
-            <thead>
-              <tr>
-                <th style="width: 25%;">Narrative Topic</th>
-                <th style="width: 35%;">Typical Edexcel Stimulus Bullets</th>
-                <th style="width: 40%;">Mandatory Independent Own Knowledge (To Unlock Level 3)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>1948–49 Arab-Israeli War</strong></td>
-                <td>• UN Partition Plan (1947)<br>• Invasion by 5 Arab states</td>
-                <td>Czech arms shipments (Avia fighters) via Operation Balak; Plan Dalet &amp; Deir Yassin; creation of 700,000 refugees.</td>
-              </tr>
-              <tr>
-                <td><strong>1956 Suez Crisis</strong></td>
-                <td>• Nasser nationalises canal<br>• Anglo-French invasion</td>
-                <td>Protocol of Sèvres collusion; Israeli airborne assault on Mitla Pass; Eisenhower's IMF loan freeze threat forcing withdrawal.</td>
-              </tr>
-              <tr>
-                <td><strong>1987 First Intifada</strong></td>
-                <td>• Jabalya camp road collision<br>• Stone-throwing youths vs IDF</td>
-                <td>UNLU leaflets directing civil disobedience; tax strikes &amp; boycotts; Rabin's "Iron Fist" policy; 1988 Hamas founding charter.</td>
-              </tr>
-              <tr>
-                <td><strong>1993 Oslo Peace Process</strong></td>
-                <td>• 1991 Madrid Conference<br>• White House lawn handshake</td>
-                <td>Secret backchannel in Oslo (Holst &amp; Larsen); Letters of Mutual Recognition; division of West Bank into Areas A, B, and C.</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <div class="strat-connectives-bar">
@@ -1449,7 +1569,7 @@ function buildHtml() {
 
         <div class="strat-mini-trap">
           <span class="trap-tag" style="padding: 1px 4px; font-size: 6.2pt;">GRADE 9 CRITERIA</span>
-          Level 3 (7–8 marks) requires sustained chronological causation throughout. Every paragraph must explicitly explain how event A caused event B. Deploying independent own knowledge beyond the stimulus points is strictly mandatory to unlock Level 3!
+          Level 3 (7–8 marks) requires sustained chronological causation across 3 developed paragraphs. Every paragraph must explicitly explain how event A caused event B. Deploying independent own knowledge beyond the stimulus points is strictly mandatory to unlock Level 3!
         </div>
       </div>
     </div>
@@ -1485,7 +1605,7 @@ function buildHtml() {
             <span>Question 3: The Importance Analysis Architect (2 × 8 Marks = 16 Marks)</span>
             <span class="strat-header-badge">2 × 8m • 30 Mins (15 Mins Each)</span>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.7pt; color: #1e293b; margin-bottom: 2px;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #1e293b; margin-bottom: 2px;">
             <strong>Official Stem:</strong> <em>"Explain two of the following: The importance of [Event A] for [Focus]... The importance of [Event B] for [Focus]... The importance of [Event C] for [Focus]..."</em>
           </div>
 
@@ -1493,71 +1613,124 @@ function buildHtml() {
             <strong>The 2-Minute Selection Rule:</strong> Edexcel provides 3 options—you must choose <strong>EXACTLY TWO</strong>. Select the two events where you can deploy the most specific factual anchors. Never attempt all three; doing so wastes 15 minutes because examiners mark only two!
           </div>
 
-          <div class="strat-essay-grid-24" style="margin-top: 3px;">
-            <div class="strat-essay-step-24">
-              <div class="strat-step-num">Paragraph 1: Direct &amp; Immediate Impact [4 Marks]</div>
-              <div>• <strong>Focus Anchor:</strong> Explain how the event immediately transformed the situation regarding the specified question focus.</div>
-              <div>• <strong>Deploy Evidence:</strong> Ground analysis in 2 precise historical facts (treaty terms, casualties, territorial changes).</div>
-              <div>• <strong>Analytical Sentence Stem:</strong> <em>"The primary immediate importance of [Event] lay in..."</em></div>
+          <div class="strat-grid-3col" style="margin-top: 3px;">
+            <div class="strat-subbox">
+              <div class="strat-subbox-title">Selection &amp; Planning (2 Mins)</div>
+              <div>• Audit the 3 options against the stated focus.</div>
+              <div>• Pick the 2 options where you recall exact dates, numbers, treaties, and causal links.</div>
+              <div>• Write 2 distinct 8-mark answers.</div>
             </div>
-            <div class="strat-essay-step-24">
-              <div class="strat-step-num">Paragraph 2: Long-Term Significance &amp; Legacy [4 Marks]</div>
-              <div>• <strong>Enduring Transformation:</strong> Analyze what lasting precedent, realignment, or subsequent conflict was caused.</div>
-              <div>• <strong>Broader Trajectory:</strong> Explain how it fundamentally reshaped Arab-Israeli diplomacy or military strategy.</div>
-              <div>• <strong>Analytical Sentence Stem:</strong> <em>"In the longer term, [Event] was historically decisive because it..."</em></div>
+            <div class="strat-subbox">
+              <div class="strat-subbox-title">Para 1: Immediate Impact [4m]</div>
+              <div>• <strong>Focus Anchor:</strong> How the event immediately transformed the specified question focus.</div>
+              <div>• <strong>Factual Proof:</strong> 2 precise historical facts.</div>
+              <div>• <em>"The primary immediate importance lay in..."</em></div>
+            </div>
+            <div class="strat-subbox">
+              <div class="strat-subbox-title">Para 2: Long-Term Legacy [4m]</div>
+              <div>• <strong>Strategic Precedent:</strong> Lasting realignment or subsequent conflict caused.</div>
+              <div>• <strong>Broader Trajectory:</strong> Shift in diplomacy or military balance.</div>
+              <div>• <em>"In the longer term, this proved decisive as..."</em></div>
             </div>
           </div>
         </div>
 
-        <!-- Grade 9 Triple Models Grid -->
-        <div class="strat-models-grid-3col">
-          <div class="strat-model-para-24">
-            <div class="strat-model-tag">Exemplar 1: Camp David Accords [8/8m]</div>
-            <em>"The Camp David Accords (1978) were of profound importance because they permanently fractured Arab military unity by removing Egypt—the largest Arab military state—from the conflict. In exchange for the Sinai Peninsula, President Sadat signed a separate peace, eliminating the threat of a two-front war for Israel. In the long term, Arab League states expelled Egypt and relocated to Tunis, granting Israel strategic southern security that enabled its 1982 invasion of Lebanon."</em>
+        <!-- Question 3 High-Probability Master Bank (8 Specification Triads = 24 Topics) -->
+        <div class="strat-qbank-box" style="padding: 2.5px 5px;">
+          <div class="strat-qbank-title">
+            <span>High-Probability Question 3 Practice Bank (8 Specification Triads = 24 Topics)</span>
+            <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">16 Marks (2 × 8m) • Authentic Pearson Edexcel Option P5 Triads</span>
           </div>
-          <div class="strat-model-para-24">
-            <div class="strat-model-tag">Exemplar 2: 1973 Yom Kippur War [8/8m]</div>
-            <em>"The Yom Kippur War was of immense importance for superpower relations because it brought the USA and USSR to the brink of direct nuclear confrontation. When the USSR threatened unilateral intervention to save the Egyptian Third Army, the US placed its nuclear forces on DEFCON 3 alert. In the long term, this crisis demonstrated that regional proxy wars could spark global war, compelling Kissinger to launch 'shuttle diplomacy' that displaced Soviet influence from Cairo."</em>
+          <div class="strat-q3-grid">
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 1: Creation of Israel (1945–49)</span>
+                <span class="strat-q3-focus">Focus: Birth of Israel</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) SS Exodus crisis (1947):</strong> Global fury destroyed British moral authority.<br>
+                • <strong>(b) UN Resolution 181 (1947):</strong> International legal legitimacy for statehood.<br>
+                • <strong>(c) 1949 Armistice Agreements:</strong> Established Green Line borders &amp; 78% land control.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 2: 1956 Suez Crisis</span>
+                <span class="strat-q3-focus">Focus: European Influence</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) Nationalisation of Canal:</strong> Shattered UK/French control over oil transit.<br>
+                • <strong>(b) Protocol of Sèvres:</strong> Secret collusion exposed Western imperial aggression.<br>
+                • <strong>(c) US financial ultimatum:</strong> Ended UK and French independent global power.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 3: Superpower Rivalry (1956–73)</span>
+                <span class="strat-q3-focus">Focus: Cold War Tensions</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) Eisenhower Doctrine (1957):</strong> Pledged US military aid to resist Arab communism.<br>
+                • <strong>(b) Soviet arms to Egypt (1967–73):</strong> Equipped Egypt with SAM air defence umbrella.<br>
+                • <strong>(c) US Op Nickel Grass (1973):</strong> 22,000-ton airlift turned Yom Kippur tide.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 4: Palestinian Nationalism (1964–82)</span>
+                <span class="strat-q3-focus">Focus: Palestinian Identity</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) Battle of Karameh (1968):</strong> Fatah resistance created a heroic Arab legend.<br>
+                • <strong>(b) Munich Olympics attack (1972):</strong> Black September broadcast struggle to 900m viewers.<br>
+                • <strong>(c) 1982 Siege of Beirut:</strong> Expelled 14,000 fighters; shifted PLO to diplomacy.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 5: Search for Peace (1967–95)</span>
+                <span class="strat-q3-focus">Focus: Arab-Israeli Peace</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) UN Resolution 242 (1967):</strong> Established "Land for Peace" principle for all talks.<br>
+                • <strong>(b) Sadat's visit to Jerusalem (1977):</strong> Shattered 30-year taboo at the Knesset.<br>
+                • <strong>(c) 1993 Oslo Accords:</strong> First bilateral recognition between Israel and PLO.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 6: Regional Strategic Shifts (1973–79)</span>
+                <span class="strat-q3-focus">Focus: Regional Diplomacy</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) 1973 Arab Oil Embargo:</strong> Quadrupled prices; showed Arab economic leverage.<br>
+                • <strong>(b) Kissinger's shuttle diplomacy:</strong> Displaced Soviet influence from Cairo.<br>
+                • <strong>(c) Camp David Accords (1978):</strong> Removed Egypt from Arab military coalition.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 7: Security &amp; Conflict (1982–85)</span>
+                <span class="strat-q3-focus">Focus: Israeli Security</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) Op Peace for Galilee (1982):</strong> Cleared PLO artillery; led to Sabra/Shatila.<br>
+                • <strong>(b) South Lebanon Security Zone:</strong> Buffer zone embroiled IDF in 18-year guerilla war.<br>
+                • <strong>(c) Emergence of Hezbollah (1982):</strong> Created Iranian-backed militant threat on border.
+              </div>
+            </div>
+            <div class="strat-q3-card">
+              <div class="strat-q3-header">
+                <span>Triad 8: Popular Uprising &amp; Talks (1987–95)</span>
+                <span class="strat-q3-focus">Focus: Resolving Conflict</span>
+              </div>
+              <div class="strat-q3-options">
+                • <strong>(a) First Intifada (1987–93):</strong> Grassroots uprising forced Israel to negotiate.<br>
+                • <strong>(b) Founding of Hamas (1988):</strong> Rejectionist charter opposed all peace with Israel.<br>
+                • <strong>(c) Assassination of Rabin (1995):</strong> Extremist murder derailed Oslo peace process.
+              </div>
+            </div>
           </div>
-          <div class="strat-model-para-24">
-            <div class="strat-model-tag">Exemplar 3: Munich Olympics Massacre [8/8m]</div>
-            <em>"The 1972 Munich massacre was of critical importance because it catapulted the Palestinian national struggle onto the global stage before a live television audience of 900 million. While the murder of 11 Israeli athletes drew international condemnation and sparked Israel's covert Operation Wrath of God, it destroyed the myth that Palestinians were merely passive refugees. In the long term, it forced world powers to treat the PLO as a national liberation movement, leading to Arafat's 1974 UN address."</em>
-          </div>
-        </div>
-
-        <!-- Question 3 High-Frequency Past Paper Targets -->
-        <div class="strat-ok-matrix">
-          <table class="strat-ok-table">
-            <thead>
-              <tr>
-                <th style="width: 28%;">Edexcel Question 3 Event</th>
-                <th style="width: 24%;">Question Focus</th>
-                <th style="width: 48%;">Key Analytical Angle (Immediate Impact vs Long-Term Legacy)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Law of Return (1950)</strong></td>
-                <td>Development of Israel</td>
-                <td>Immediate: Influx of 680,000 immigrants doubling population; Long-term: Permanent Jewish demographic majority.</td>
-              </tr>
-              <tr>
-                <td><strong>UN Resolution 242 (1967)</strong></td>
-                <td>Search for Peace</td>
-                <td>Immediate: Established "Land for Peace" formula; Long-term: Disputed English/French wording stalled diplomacy for decades.</td>
-              </tr>
-              <tr>
-                <td><strong>1973 Arab Oil Embargo</strong></td>
-                <td>International Relations</td>
-                <td>Immediate: 400% oil price hike &amp; Western panic; Long-term: Forced EEC into pro-Arab diplomatic stance away from Israel.</td>
-              </tr>
-              <tr>
-                <td><strong>1982 Siege of Beirut</strong></td>
-                <td>The PLO</td>
-                <td>Immediate: Destruction of military infrastructure &amp; exile to Tunis; Long-term: Arafat compelled towards diplomatic recognition.</td>
-              </tr>
-            </tbody>
-          </table>
         </div>
 
         <!-- Evaluative Discourse Markers Bank -->
@@ -1585,12 +1758,19 @@ function buildHtml() {
         </div>
       </div>
 
-      <!-- EXAMINER PITFALLS RED STRIP -->
-      <div class="strat-traps-bar-fixed">
-        <span class="trap-tag" style="background: #b91c1c;">EXAMINER PITFALLS</span>
-        <span class="strat-traps-list">
-          <strong>5 Fatal Period Study Traps:</strong> 1. On Q1: Describing the event instead of its consequence • 2. Writing 2 consequences when only 1 is required • 3. On Q2: Writing a descriptive story without causal connectors • 4. On Q2: Failing to include own knowledge beyond stimulus points (capped at 5/8) • 5. On Q3: Answering all 3 choices instead of exactly 2.
-        </span>
+      <!-- EXAMINER PITFALLS 5-TRAP CALLOUT GRID -->
+      <div class="strat-traps-box-p24">
+        <div class="strat-traps-header-p24">
+          <span class="trap-tag" style="background: #b91c1c;">EXAMINER PITFALLS</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #7f1d1d;">5 Fatal Period Study Traps &amp; Cap Risk Callout</span>
+        </div>
+        <div class="strat-traps-grid-p24">
+          <div class="strat-trap-item"><strong>Trap 1 (Q1):</strong> Describing the event instead of its consequence. Caps mark at Level 1 (1–2/4). Focus 100% on aftermath.</div>
+          <div class="strat-trap-item"><strong>Trap 2 (Q1):</strong> Writing two consequences. Edexcel awards marks for ONE consequence only; writing two wastes 5 valuable minutes.</div>
+          <div class="strat-trap-item"><strong>Trap 3 (Q2):</strong> Writing a chronological story without causal connectors. Caps answer at Level 2 (4/8). Every paragraph must link A to B.</div>
+          <div class="strat-trap-item"><strong>Trap 4 (Q2):</strong> Omitting own knowledge beyond stimulus points. Level 3 is strictly locked (capped at 5/8) without outside facts.</div>
+          <div class="strat-trap-item" style="grid-column: span 2;"><strong>Trap 5 (Q3):</strong> Attempting all 3 options instead of exactly 2, or writing a narrative of the event without explaining its importance FOR the stated focus.</div>
+        </div>
       </div>
 
       <!-- DIGITAL REVISION HUB CARD -->
@@ -1599,12 +1779,13 @@ function buildHtml() {
         <div class="back-hub-info">
           <div class="back-hub-title">Digital Revision Hub &amp; Interactive Quizzes</div>
           <div class="back-hub-desc">
-            Scan to access 16 self-marking retrieval quizzes, digital flashcards, animated campaign maps, and verified Edexcel Paper 2 model answers.
+            Scan the QR code or visit the portal to access 16 self-marking retrieval quizzes, spaced-repetition digital flashcard vaults, interactive animated campaign maps, and verified Edexcel Paper 2 period study model answers.
           </div>
-          <div class="back-hub-features">
+          <div class="back-hub-features-grid">
             <span class="hub-feature-tag">✓ 16 Self-Marking Quizzes</span>
-            <span class="hub-feature-tag">✓ Digital Flashcard Vault</span>
-            <span class="hub-feature-tag">✓ Period Study Model Bank</span>
+            <span class="hub-feature-tag">✓ 192 Digital Flashcards</span>
+            <span class="hub-feature-tag">✓ 8 Animated Campaign Maps</span>
+            <span class="hub-feature-tag">✓ Period Study Question Bank</span>
           </div>
           <div class="back-hub-url">the-history-revision-hub.netlify.app/?unit=cme_new</div>
         </div>
