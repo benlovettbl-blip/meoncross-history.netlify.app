@@ -77,25 +77,105 @@ const APPROVED_FOOTERS = [
 ];
 
 // --------------------------------------------------------------------------
-// HAND-CRAFTED CONCISE TITLES FOR COVER LEDGER (16 ENQUIRIES)
+// PEARSON EDEXCEL SPECIFICATION TOPIC MAPPINGS FOR COVER LEDGER (16 ENQUIRIES)
 // --------------------------------------------------------------------------
-const LEDGER_TITLES = [
-  'Post-War Mandate Crisis',
-  'Armed Jewish Insurgency',
-  'UN Partition Plan (1947)',
-  '1948–49 Arab-Israeli War',
-  'Palestinian Refugee Crisis',
-  'Nasser & 1956 Suez Crisis',
-  'Road to War (1964–67)',
-  'The Six-Day War (1967)',
-  'Conquered Lands & Res 242',
-  'Black September & Munich',
-  '1973 Yom Kippur War',
-  '1973 Oil Crisis & Kissinger',
-  'Camp David & 1979 Treaty',
-  '1982 Lebanon War',
-  'First Intifada & Hamas',
-  'The Oslo Accords (1993–95)',
+const LEDGER_ENTRIES = [
+  {
+    num: 1,
+    topicCode: 'KT 1.1',
+    title: 'Post-War Mandate Crisis (1945–47)',
+    focus: 'British policy, Jewish DPs, Balfour vs 1939 White Paper & UN handover',
+  },
+  {
+    num: 2,
+    topicCode: 'KT 1.1',
+    title: 'Armed Jewish Insurgency (1945–47)',
+    focus: 'Haganah, Irgun, King David Hotel bombing & British exit decision',
+  },
+  {
+    num: 3,
+    topicCode: 'KT 1.2',
+    title: 'UN Partition & Civil War (1947–48)',
+    focus: 'Resolution 181 (56%/43%), communal civil war, Plan Dalet & Deir Yassin',
+  },
+  {
+    num: 4,
+    topicCode: 'KT 1.2',
+    title: 'First Arab-Israeli War (1948–49)',
+    focus: 'Declaration of Israel, 5-state invasion, Czech arms & Rhodes Green Line',
+  },
+  {
+    num: 5,
+    topicCode: 'KT 1.2',
+    title: 'Palestinian Nakba & Early Israel',
+    focus: '700,000 refugees, UNRWA relief, 1950 Law of Return & state survival',
+  },
+  {
+    num: 6,
+    topicCode: 'KT 1.3',
+    title: 'Suez Crisis & Superpowers (1956)',
+    focus: 'Canal nationalisation, Protocol of Sèvres collusion & US ultimatum',
+  },
+  {
+    num: 7,
+    topicCode: 'KT 2.1',
+    title: 'Road to Six-Day War (1964–67)',
+    focus: 'Water disputes, PLO/Fatah raids, Golan clashes & Tiran blockade',
+  },
+  {
+    num: 8,
+    topicCode: 'KT 2.1',
+    title: 'Six-Day War: 100-Hour Blitz (1967)',
+    focus: 'Operation Focus air strike & conquest of Sinai, Gaza, West Bank, Golan',
+  },
+  {
+    num: 9,
+    topicCode: 'KT 2.2',
+    title: 'Occupied Lands & Res 242 (1967–73)',
+    focus: "Khartoum 'Three Noes', Land for Peace ambiguity & Jewish settlements",
+  },
+  {
+    num: 10,
+    topicCode: 'KT 2.2',
+    title: 'Palestinian Resistance & Terror (1968–72)',
+    focus: "Battle of Karameh, Dawson's Field, Black September & Munich Olympics",
+  },
+  {
+    num: 11,
+    topicCode: 'KT 2.3',
+    title: 'The 1973 Yom Kippur War',
+    focus: 'Sadat surprise crossing, Bar-Lev breach, US airlift & Soviet tension',
+  },
+  {
+    num: 12,
+    topicCode: 'KT 2.3 / 3.1',
+    title: '1973 Oil Crisis & Shuttle Diplomacy',
+    focus: 'OPEC oil embargo quadruples prices & Kissinger step-by-step accords',
+  },
+  {
+    num: 13,
+    topicCode: 'KT 3.1',
+    title: 'Camp David & 1979 Peace Treaty',
+    focus: 'Sadat Knesset speech, Carter mediation, Sinai return & Arab backlash',
+  },
+  {
+    num: 14,
+    topicCode: 'KT 3.2',
+    title: '1982 Lebanon War & Hezbollah',
+    focus: 'Op Peace for Galilee, Beirut siege, Sabra-Shatila & PLO to Tunis',
+  },
+  {
+    num: 15,
+    topicCode: 'KT 3.3',
+    title: 'First Intifada & Rise of Hamas (1987–93)',
+    focus: 'Stone-throwing uprising, Iron Fist policy, Hamas charter & PLO shift',
+  },
+  {
+    num: 16,
+    topicCode: 'KT 3.3',
+    title: 'Oslo Accords & Aftermath (1993–95)',
+    focus: 'Secret Oslo talks, White House handshake, PA rule & Rabin murder',
+  },
 ];
 
 // --------------------------------------------------------------------------
@@ -248,7 +328,10 @@ const DOMINO_TIMELINE = [
 // HTML BUILDER: 24-PAGE A4 SADDLE-STITCH BOOKLET
 // --------------------------------------------------------------------------
 function buildHtml() {
-  const qrSvg = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=cme_new');
+  const qrHub = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=cme_new');
+  const qrKt1 = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=cme_new#kt1');
+  const qrKt2 = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=cme_new#kt2');
+  const qrKt3 = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=cme_new#kt3');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -388,12 +471,12 @@ function buildHtml() {
       flex-direction: column;
       justify-content: space-between;
       gap: 5px;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
     .hw-ledger-dual-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 8px;
+      gap: 7px;
       flex: 1;
     }
     .hw-ledger-table {
@@ -401,53 +484,80 @@ function buildHtml() {
       height: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 8.0pt;
     }
     .hw-ledger-table thead th {
       background: #0f172a;
       color: #ffffff;
-      padding: 4px 5px;
+      padding: 3.5px 4.5px;
       font-weight: 900;
       text-transform: uppercase;
       border: 1.2px solid #0f172a;
-      font-size: 7.4pt;
+      font-size: 7.2pt;
       letter-spacing: 0.3px;
     }
     .hw-ledger-table td {
       border: 1.2px solid #cbd5e1;
-      padding: 4.5px 5px;
+      padding: 3px 4.5px;
       vertical-align: middle;
       color: #000000;
-      line-height: 1.2;
+      line-height: 1.16;
     }
     .hw-ledger-table tr:nth-child(even) td { background: #f8fafc; }
     .hw-col-title {
       background: #0f172a !important;
       color: #ffffff;
-      font-size: 7.8pt;
+      font-size: 7.6pt;
       font-weight: 900;
       text-align: center;
-      padding: 4px 5px !important;
+      padding: 3.5px 5px !important;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+    }
+    .hw-enq-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      line-height: 1.15;
+    }
+    .hw-topic-tag {
+      background: #0f172a;
+      color: #ffffff;
+      font-size: 5.7pt;
+      font-weight: 800;
+      padding: 0.5px 3px;
+      border-radius: 2px;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+    .hw-enq-focus-text {
+      font-family: 'Georgia', serif;
+      font-size: 6.4pt;
+      line-height: 1.15;
+      color: #334155;
+      margin-top: 1.5px;
     }
 
     .cover-protocol-box {
       border: 1.4px solid #0f172a;
       border-left: 5px solid #0f172a;
       border-radius: 2px;
-      padding: 7px 11px;
+      padding: 5.5px 10px;
       background: #f8fafc;
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      line-height: 1.35;
+      font-size: 7.6pt;
+      line-height: 1.32;
       color: #1e293b;
       margin-top: 2px;
     }
     .cover-protocol-box strong.proto-title {
       color: #0f172a;
-      font-size: 8.3pt;
-      margin-bottom: 3px;
+      font-size: 8.1pt;
+      margin-bottom: 2.5px;
       display: block;
       text-transform: uppercase;
       letter-spacing: 0.4px;
@@ -491,20 +601,55 @@ function buildHtml() {
     .lesson-meta-bar {
       background: #f8fafc;
       border-left: 4px solid #0f172a;
-      padding: 3px 8px;
+      padding: 2.5px 8px;
       margin-bottom: 2px;
       border-top: 1px solid #cbd5e1;
       border-right: 1px solid #cbd5e1;
       border-bottom: 1px solid #cbd5e1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.2pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
-    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #334155; margin-top: 1px; }
+    .lesson-meta-left { flex: 1; }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 9.8pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
+    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #334155; margin-top: 1px; }
+
+    .lesson-score-pill {
+      background: #ffffff;
+      border: 1.3px solid #0f172a;
+      border-radius: 2px;
+      padding: 1.5px 6px;
+      text-align: center;
+      margin-left: 8px;
+      flex-shrink: 0;
+    }
+    .score-pill-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.6pt;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    .score-pill-val {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1.1;
+    }
+    .score-pill-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.4pt;
+      font-weight: 700;
+      color: #475569;
+    }
 
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2.4px 6px;
-      margin-bottom: 1.8px;
+      padding: 2.2px 6px;
+      margin-bottom: 1.6px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
@@ -518,9 +663,32 @@ function buildHtml() {
       line-height: 1.16;
     }
     .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; color: #000000; min-width: 15px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.4pt; font-weight: 700; color: #000000; line-height: 1.16; }
-    .q-attempt { font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 8.3pt; font-weight: 900; color: #000000; min-width: 15px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 8.3pt; font-weight: 700; color: #000000; line-height: 1.16; }
+    .q-attempt-dual {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.4pt;
+      font-weight: 800;
+      color: #334155;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .q-tick-pill {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 0.5px 3px;
+      font-size: 5.9pt;
+      font-weight: 700;
+      color: #1e293b;
+    }
+    .q-tick-tot {
+      font-size: 6.6pt;
+      font-weight: 900;
+      color: #0f172a;
+    }
 
     .q-line-row {
       display: flex;
@@ -532,7 +700,7 @@ function buildHtml() {
       font-family: 'Inter', sans-serif;
       font-size: 7.0pt;
       font-weight: 800;
-      color: #000000;
+      color: #0f172a;
       white-space: nowrap;
       min-width: 60px;
     }
@@ -901,7 +1069,7 @@ function buildHtml() {
       color: #ffffff;
       padding: 3.5px 8px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
+      font-size: 7.6pt;
       font-weight: 700;
       letter-spacing: 0.3px;
       border-radius: 2px;
@@ -912,22 +1080,22 @@ function buildHtml() {
       display: flex;
       flex-direction: column;
       flex: 1;
-      justify-content: flex-start;
-      gap: 7px;
+      justify-content: space-between;
+      gap: 5px;
       margin: 1px 0;
     }
     .strat-card-24 {
       border: 1.4px solid #0f172a;
       border-radius: 2px;
-      padding: 5px 8px;
+      padding: 6.5px 9px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 4px;
     }
     .strat-header-24 {
       font-family: 'Inter', sans-serif;
-      font-size: 8.8pt;
+      font-size: 9.4pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -940,10 +1108,10 @@ function buildHtml() {
       letter-spacing: 0.3px;
     }
     .strat-header-badge {
-      font-size: 6.8pt;
+      font-size: 7.1pt;
       background: #e2e8f0;
       color: #0f172a;
-      padding: 1px 5px;
+      padding: 1.5px 6px;
       border-radius: 2px;
       font-weight: 800;
     }
@@ -951,29 +1119,29 @@ function buildHtml() {
       border: 1px solid #0284c7;
       background: #f0f9ff;
       border-left: 3.5px solid #0284c7;
-      padding: 2.5px 5.5px;
+      padding: 3.5px 7px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
-      line-height: 1.22;
+      font-size: 7.5pt;
+      line-height: 1.25;
       color: #0369a1;
       font-weight: 600;
     }
     .strat-q3-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 3.5px 6.5px;
+      gap: 4px 7.5px;
     }
     .strat-q3-card {
       border: 1px solid #cbd5e1;
       border-left: 3px solid #0f172a;
       background: #f8fafc;
-      padding: 3px 5px;
+      padding: 3.8px 7px;
       border-radius: 2px;
     }
     .strat-q3-header {
       font-family: 'Inter', sans-serif;
-      font-size: 7.1pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 1px;
@@ -984,54 +1152,55 @@ function buildHtml() {
     .strat-q3-focus {
       color: #1e3a8a;
       font-weight: 800;
+      font-size: 7.2pt;
     }
     .strat-q3-options {
       font-family: 'Georgia', serif;
-      font-size: 6.9pt;
-      line-height: 1.20;
+      font-size: 7.4pt;
+      line-height: 1.24;
       color: #1e293b;
     }
     .strat-starters-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 4.5px;
+      gap: 5.5px;
     }
     .strat-starter-box {
       border: 1px solid #cbd5e1;
       background: #f8fafc;
-      padding: 2.5px 5px;
+      padding: 4px 7px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 6.9pt;
-      line-height: 1.20;
+      font-size: 7.4pt;
+      line-height: 1.24;
       color: #1e293b;
     }
     .strat-starter-title {
       font-family: 'Inter', sans-serif;
-      font-size: 7.1pt;
+      font-size: 7.6pt;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 1px;
+      margin-bottom: 1.5px;
     }
     .strat-criteria-box {
       border: 1px dashed #0f172a;
       background: #f1f5f9;
-      padding: 2.5px 5.5px;
+      padding: 4px 7.5px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.9pt;
-      line-height: 1.22;
+      font-size: 7.4pt;
+      line-height: 1.25;
       color: #1e293b;
     }
     .strat-traps-box-p24 {
       border: 1.3px solid #b91c1c;
       border-left: 5px solid #b91c1c;
       background: #fef2f2;
-      padding: 4.5px 8px;
+      padding: 5.5px 9.5px;
       border-radius: 2px;
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 3.5px;
     }
     .strat-traps-header-p24 {
       display: flex;
@@ -1043,67 +1212,95 @@ function buildHtml() {
     .strat-traps-grid-p24 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 2.5px 8px;
+      gap: 3px 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      line-height: 1.20;
+      font-size: 7.4pt;
+      line-height: 1.25;
       color: #7f1d1d;
     }
     .strat-trap-item strong {
       color: #991b1b;
       font-weight: 800;
     }
-    .back-hub-card {
+    .back-hub-grid-wrap {
       border: 1.4px solid #0f172a;
       background: #f8fafc;
-      padding: 8px 12px;
       border-radius: 2px;
+      overflow: hidden;
+      margin-top: 1px;
+    }
+    .back-hub-banner {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 4px 8px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 14px;
-    }
-    .back-hub-qr {
-      width: 86px;
-      height: 86px;
-      flex-shrink: 0;
-      background: #ffffff;
-      padding: 2px;
-      border: 1.2px solid #cbd5e1;
-      border-radius: 2px;
-    }
-    .back-hub-info {
-      flex: 1;
       font-family: 'Inter', sans-serif;
     }
-    .back-hub-title {
-      font-size: 9.6pt;
+    .back-hub-banner-title {
+      font-size: 8.0pt;
       font-weight: 900;
-      color: #0f172a;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
-      margin-bottom: 1.5px;
-      letter-spacing: 0.3px;
     }
-    .back-hub-desc {
-      font-size: 7.6pt;
-      line-height: 1.28;
-      color: #334155;
-      margin-bottom: 3.5px;
+    .back-hub-banner-sub {
+      font-size: 6.9pt;
+      color: #94a3b8;
+      font-weight: 700;
     }
-    .back-hub-features-grid {
+    .back-hub-gateways-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5px 6px;
-      margin-bottom: 3.5px;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px;
+      padding: 6px 8px;
     }
-    .hub-feature-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 800;
-      background: #e2e8f0;
-      color: #0f172a;
-      padding: 1.5px 5px;
+    .hub-gw-card {
+      background: #ffffff;
+      border: 1.1px solid #cbd5e1;
       border-radius: 2px;
-      white-space: nowrap;
+      padding: 4.5px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2.5px;
+    }
+    .hub-gw-qr {
+      width: 63px;
+      height: 63px;
+      background: #ffffff;
+      padding: 1px;
+      border: 1px solid #e2e8f0;
+    }
+    .hub-gw-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5px;
+    }
+    .hub-gw-badge {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 5.8pt;
+      font-weight: 800;
+      padding: 0.5px 3.5px;
+      border-radius: 2px;
+      letter-spacing: 0.2px;
+    }
+    .hub-gw-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.0pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.15;
+    }
+    .hub-gw-desc {
+      font-family: 'Georgia', serif;
+      font-size: 6.3pt;
+      color: #475569;
+      line-height: 1.18;
     }
     .back-hub-url {
       font-family: 'Inter', sans-serif;
@@ -1152,23 +1349,29 @@ function buildHtml() {
               <th colspan="5" class="hw-col-title">Part 1: Key Topics 1 &amp; 2 (Enquiries 1–8)</th>
             </tr>
             <tr>
-              <th style="width: 38%;">Enquiry Focus</th>
-              <th style="width: 17%;">Due Date</th>
-              <th style="width: 16%;">Score</th>
-              <th style="width: 20%;">Parent Sign</th>
-              <th style="width: 9%;">RAG</th>
+              <th style="width: 50%;">Enquiry &amp; Specification Focus</th>
+              <th style="width: 12%;">Due Date</th>
+              <th style="width: 15%;">Score (/24)<br><span style="font-size: 5.6pt; font-weight: normal; opacity: 0.9;">12 Qs × 2m</span></th>
+              <th style="width: 15%;">Parent Sign</th>
+              <th style="width: 8%;">RAG</th>
             </tr>
           </thead>
           <tbody>
-            ${CME_PEARSON_QUIZ_BANK.slice(0, 8)
+            ${LEDGER_ENTRIES.slice(0, 8)
               .map(
-                (enq, idx) => `
+                (item) => `
             <tr>
-              <td><strong>Enq ${enq.num}:</strong> ${LEDGER_TITLES[idx]}</td>
-              <td>____/____</td>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
+              <td>
+                <div class="hw-enq-name">
+                  <span class="hw-topic-tag">${item.topicCode}</span>
+                  <span>Enq ${item.num}: ${item.title}</span>
+                </div>
+                <div class="hw-enq-focus-text">${item.focus}</div>
+              </td>
+              <td style="text-align: center; font-size: 7.2pt; color: #64748b;">____/____</td>
+              <td style="text-align: center; font-weight: 700; font-size: 7.4pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
               <td></td>
-              <td style="text-align: center; color: #94a3b8; font-size: 7pt;">[ &nbsp; ]</td>
+              <td style="text-align: center; color: #94a3b8; font-size: 6.8pt;">[ &nbsp; ]</td>
             </tr>`,
               )
               .join('')}
@@ -1182,23 +1385,29 @@ function buildHtml() {
               <th colspan="5" class="hw-col-title">Part 2: Key Topics 2 &amp; 3 (Enquiries 9–16)</th>
             </tr>
             <tr>
-              <th style="width: 38%;">Enquiry Focus</th>
-              <th style="width: 17%;">Due Date</th>
-              <th style="width: 16%;">Score</th>
-              <th style="width: 20%;">Parent Sign</th>
-              <th style="width: 9%;">RAG</th>
+              <th style="width: 50%;">Enquiry &amp; Specification Focus</th>
+              <th style="width: 12%;">Due Date</th>
+              <th style="width: 15%;">Score (/24)<br><span style="font-size: 5.6pt; font-weight: normal; opacity: 0.9;">12 Qs × 2m</span></th>
+              <th style="width: 15%;">Parent Sign</th>
+              <th style="width: 8%;">RAG</th>
             </tr>
           </thead>
           <tbody>
-            ${CME_PEARSON_QUIZ_BANK.slice(8, 16)
+            ${LEDGER_ENTRIES.slice(8, 16)
               .map(
-                (enq, idx) => `
+                (item) => `
             <tr>
-              <td><strong>Enq ${enq.num}:</strong> ${LEDGER_TITLES[idx + 8]}</td>
-              <td>____/____</td>
-              <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
+              <td>
+                <div class="hw-enq-name">
+                  <span class="hw-topic-tag">${item.topicCode}</span>
+                  <span>Enq ${item.num}: ${item.title}</span>
+                </div>
+                <div class="hw-enq-focus-text">${item.focus}</div>
+              </td>
+              <td style="text-align: center; font-size: 7.2pt; color: #64748b;">____/____</td>
+              <td style="text-align: center; font-weight: 700; font-size: 7.4pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
               <td></td>
-              <td style="text-align: center; color: #94a3b8; font-size: 7pt;">[ &nbsp; ]</td>
+              <td style="text-align: center; color: #94a3b8; font-size: 6.8pt;">[ &nbsp; ]</td>
             </tr>`,
               )
               .join('')}
@@ -1208,7 +1417,7 @@ function buildHtml() {
 
       <div class="cover-protocol-box">
         <strong class="proto-title">Department Retrieval Protocol &amp; Spaced Learning Standards:</strong>
-        Complete one enquiry weekly as targeted homework. Each question requires both a <strong>Core Fact</strong> (Line 1: precise historical anchor, date, key figure, or battle) and a complete <strong>Historical Explanation</strong> (Line 2: causal mechanism or significance). Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 18/24 trigger immediate flashcard consolidation.
+        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism or significance). Total: 12 questions × 2 marks = <strong>24 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 18/24 trigger immediate digital flashcard consolidation.
       </div>
     </div>
 
@@ -1270,8 +1479,15 @@ function buildHtml() {
     </div>
 
     <div class="lesson-meta-bar">
-      <h2 class="lesson-meta-title">Enquiry ${enq.num}: ${enq.title}</h2>
-      <div class="lesson-meta-enquiry">${enq.enquiry}</div>
+      <div class="lesson-meta-left">
+        <h2 class="lesson-meta-title">Enquiry ${enq.num}: ${enq.title}</h2>
+        <div class="lesson-meta-enquiry"><strong>Enquiry Focus:</strong> ${enq.enquiry}</div>
+      </div>
+      <div class="lesson-score-pill">
+        <div class="score-pill-title">ENQUIRY SCORE</div>
+        <div class="score-pill-val">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</div>
+        <div class="score-pill-sub">Fact: __/12 • Expl: __/12</div>
+      </div>
     </div>
 
     <div class="page-body-full" style="justify-content: space-between;">
@@ -1284,7 +1500,11 @@ function buildHtml() {
             <span class="q-num">${qIdx + 1}.</span>
             <span class="q-prompt">${q.q}</span>
           </div>
-          <span class="q-attempt">[ &nbsp; ]</span>
+          <span class="q-attempt-dual">
+            <span class="q-tick-pill">Fact: [ &nbsp; ]</span>
+            <span class="q-tick-pill">Expl: [ &nbsp; ]</span>
+            <span class="q-tick-tot">/ 2m</span>
+          </span>
         </div>
         <div class="q-line-row">
           <span class="q-line-lbl">Core Fact:</span>
@@ -1355,7 +1575,7 @@ function buildHtml() {
           const enq = CME_PEARSON_QUIZ_BANK[enqIdx];
           return `
       <div class="mb-enq-card">
-        <div class="mb-enq-header">Enquiry ${enq.num}: ${LEDGER_TITLES[enqIdx]}</div>
+        <div class="mb-enq-header">Enquiry ${enq.num}: ${LEDGER_ENTRIES[enqIdx].title}</div>
         <div class="mb-answers-list">
           ${enq.questions
             .map(
@@ -1773,21 +1993,45 @@ function buildHtml() {
         </div>
       </div>
 
-      <!-- DIGITAL REVISION HUB CARD -->
-      <div class="back-hub-card">
-        <div class="back-hub-qr">${qrSvg}</div>
-        <div class="back-hub-info">
-          <div class="back-hub-title">Digital Revision Hub &amp; Interactive Quizzes</div>
-          <div class="back-hub-desc">
-            Scan the QR code or visit the portal to access 16 self-marking retrieval quizzes, spaced-repetition digital flashcard vaults, interactive animated campaign maps, and verified Edexcel Paper 2 period study model answers.
+      <!-- DIGITAL REVISION HUB 4-GATEWAY COMMAND DECK -->
+      <div class="back-hub-grid-wrap">
+        <div class="back-hub-banner">
+          <span class="back-hub-banner-title">DIGITAL REVISION HUB • DIRECT TOPIC QR REVISION GATEWAYS</span>
+          <span class="back-hub-banner-sub">the-history-revision-hub.netlify.app/?unit=cme_new • Scan with smartphone camera</span>
+        </div>
+        <div class="back-hub-gateways-grid">
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrKt1}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge">KEY TOPIC 1</span>
+              <div class="hub-gw-title">Birth of Israel &amp; Suez (1945–63)</div>
+              <div class="hub-gw-desc">Enquiries 1–6: British Mandate, 1948 War, Nakba, Law of Return &amp; 1956 Suez Crisis.</div>
+            </div>
           </div>
-          <div class="back-hub-features-grid">
-            <span class="hub-feature-tag">✓ 16 Self-Marking Quizzes</span>
-            <span class="hub-feature-tag">✓ 192 Digital Flashcards</span>
-            <span class="hub-feature-tag">✓ 8 Animated Campaign Maps</span>
-            <span class="hub-feature-tag">✓ Period Study Question Bank</span>
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrKt2}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge">KEY TOPIC 2</span>
+              <div class="hub-gw-title">Six-Day &amp; Yom Kippur (1964–73)</div>
+              <div class="hub-gw-desc">Enquiries 7–12: Water War, 1967 Blitz, Res 242, Black September &amp; 1973 Oil Embargo.</div>
+            </div>
           </div>
-          <div class="back-hub-url">the-history-revision-hub.netlify.app/?unit=cme_new</div>
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrKt3}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge">KEY TOPIC 3</span>
+              <div class="hub-gw-title">Peace &amp; Solutions (1974–95)</div>
+              <div class="hub-gw-desc">Enquiries 13–16: Camp David, 1982 Lebanon, First Intifada &amp; Oslo Accords.</div>
+            </div>
+          </div>
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrHub}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge" style="background: #0284c7;">MASTER PORTAL</span>
+              <div class="hub-gw-title">All 16 Quizzes &amp; Flashcards</div>
+              <div class="hub-gw-desc">192 self-marking questions, digital flashcard vaults &amp; animated battle maps.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
