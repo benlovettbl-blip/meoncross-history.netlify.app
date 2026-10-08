@@ -259,10 +259,10 @@ const KEY_TOPICS_DATA = {
         text: 'The Crown issues 57 Royal Injunctions enforcing Protestant worship. Clergy must preach royal supremacy, condemn papal authority, report recusants, and use English bibles. National visitations by 125 commissioners inspect parish compliance.',
       },
       {
-        date: '1563',
-        title: 'The Thirty-Nine Articles of Religion',
-        tag: 'Key Topic 1.2',
-        text: 'Convocation of the Church of England establishes the 39 Articles, formally defining Anglican doctrine as a compromise between Reformed Calvinist theology (justification by faith alone) and traditional liturgical structure with bishops and cathedrals.',
+        date: 'JULY 1560',
+        title: 'The Treaty of Edinburgh',
+        tag: 'Key Topic 1.1 / 1.4',
+        text: 'French troops withdraw from Scotland after a rebellion by Protestant Scottish lords. The Treaty establishes peace and Mary, Queen of Scots gives up her claim to the English throne, though Mary refuses to formally ratify the agreement.',
       },
       {
         date: '1566',
@@ -332,9 +332,9 @@ const KEY_TOPICS_DATA = {
         ],
         vocabRef: '[Textbook §1.1–§2.1]',
         vocabTermA: 'Royal Prerogative',
-        vocabTermB: 'Crown Patronage',
+        vocabTermB: 'Privy Council',
         vocabPrompt:
-          'Distinguish between the monarch’s supreme legal right to make foreign policy and religion decisions alone (<strong>Royal Prerogative</strong>) and the granting of titles, lands, and monopolies to secure political loyalty (<strong>Crown Patronage</strong>):',
+          'Explain the difference between the monarch’s personal right to make key decisions alone (<strong>Royal Prerogative</strong>) and her group of trusted noble advisers who ran the daily government (<strong>Privy Council</strong>):',
         featureA: {
           provenance: 'Edexcel June 2018 (Q1a)',
           ref: '[Textbook §1.1]',
@@ -440,7 +440,7 @@ const KEY_TOPICS_DATA = {
         vocabTermA: 'Act of Supremacy',
         vocabTermB: 'Act of Uniformity',
         vocabPrompt:
-          'Distinguish between the constitutional law establishing the monarch’s control over church leadership (<strong>Act of Supremacy</strong>) and the liturgical law governing church services and prayer books (<strong>Act of Uniformity</strong>):',
+          'Explain the difference between the law that made Elizabeth Supreme Governor of the Church (<strong>Act of Supremacy</strong>) and the law that set out rules for church services and the prayer book (<strong>Act of Uniformity</strong>):',
         featureA: {
           provenance: 'Edexcel SAMs (Q1a)',
           ref: '[Textbook §1.1]',
@@ -543,10 +543,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Puritan Nonconformity',
-        vocabTermB: 'Catholic Recusancy',
+        vocabTermA: 'Puritans',
+        vocabTermB: 'Recusants',
         vocabPrompt:
-          'Distinguish between Protestant clergy refusing to obey royal rules on vestments and ornaments (<strong>Puritan Nonconformity</strong>) and Catholic believers refusing to attend Anglican Sunday church services (<strong>Catholic Recusancy</strong>):',
+          'Explain the difference between extreme Protestants who wanted to purify the Church of Catholic rituals (<strong>Puritans</strong>) and Catholics who refused to attend Sunday church services (<strong>Recusants</strong>):',
         featureA: {
           provenance: 'Edexcel November 2020 (Q1a)',
           ref: '[Textbook §1.2]',
@@ -649,10 +649,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Sovereign Immunity',
-        vocabTermB: 'Casket Letters',
+        vocabTermA: 'Legitimacy',
+        vocabTermB: 'Succession',
         vocabPrompt:
-          'Distinguish between the sacred legal principle that anointed monarchs cannot be tried by courts (<strong>Sovereign Immunity</strong>) and the controversial intercepted casket documents used to discredit Mary Stuart (<strong>Casket Letters</strong>):',
+          'Explain the difference between whether a monarch was born to legally married parents (<strong>Legitimacy</strong>) and the legal right to inherit the crown after Elizabeth died (<strong>Succession</strong>):',
         featureA: {
           provenance: 'Edexcel November 2021 (Q1a)',
           ref: '[Textbook §1.1]',
@@ -724,39 +724,45 @@ const KEY_TOPICS_DATA = {
         'Attributed to George Gower • Queen Elizabeth I sits in triumph with her right hand resting on a global orb. Behind her, windows depict the English fireships assaulting the Spanish fleet at Gravelines and the Armada wrecked on stormy rocks. Accession Shelfmark WA-INV-042.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 118,
+      heightMm: 88,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      subtopics: [
-        {
-          title: '1. Plots and Revolts at Home',
-          items: [
-            'Revolt of the Northern Earls (1569) & papal bull Regnans in Excelsis (1570)',
-            'The Ridolfi Plot (1571), Throckmorton Plot (1583) & Babington Plot (1586)',
-            'Sir Francis Walsingham’s spy network, cipher decoders & agent provocateurs',
-            'Execution of Mary, Queen of Scots (1587) at Fotheringhay Castle',
-          ],
-        },
-        {
-          title: '2. Relations with Spain',
-          items: [
-            'Political & religious rivalry between Protestant England and Catholic Spain',
-            'Commercial rivalry in the New World & English privateering (Sir Francis Drake)',
-            'The Dutch Revolt (1566–84) & Elizabeth’s policy of covert financial support',
-            'Treaty of Nonsuch (1585) & direct military intervention under Robert Dudley',
-          ],
-        },
-        {
-          title: '3. Outbreak of War & The Armada',
-          items: [
-            'Drake’s raid on Cadiz (1587): "Singeing the King of Spain’s Beard"',
-            'Philip II’s invasion plan: Medina Sidonia & Duke of Parma’s Army of Flanders',
-            'English naval advantages: Hawkins’ race-built galleons & rapid-fire culverins',
-            'Fireships at Calais, Battle of Gravelines (1588), and Spanish defeat',
-          ],
-        },
-      ],
+      edexcelTable: {
+        header: 'Key topic 2: Challenges to Elizabeth at home and abroad, 1569–88',
+        rows: [
+          {
+            numTitle: '1 Plots and revolts at home',
+            bullets: [
+              'The reasons for, and significance of, the Revolt of the Northern Earls, 1569.',
+              'The features and significance of the Ridolfi, Throckmorton and Babington plots. Walsingham and his spy network.',
+              'The reasons for, and significance of, the execution of Mary, Queen of Scots, 1587.',
+            ],
+          },
+          {
+            numTitle: '2 Relations with Spain',
+            bullets: [
+              'Political and religious rivalry.',
+              'Commercial rivalry. The roles of John Hawkins and Francis Drake; privateering.',
+              'The significance of activities in the Netherlands, including the Dutch Revolt and the assassination of William of Orange.',
+            ],
+          },
+          {
+            numTitle: '3 Outbreak of war with Spain, 1585–88',
+            bullets: [
+              'English involvement in the Netherlands, 1585–88, including the role of Robert Dudley.',
+              'Drake and the raid on Cadiz: ‘singeing the King of Spain’s beard’.',
+            ],
+          },
+          {
+            numTitle: '4 The Armada',
+            bullets: [
+              'Spanish invasion plans. Reasons why Philip used the Spanish Armada.',
+              'The reasons for, and consequences of, the English victory.',
+            ],
+          },
+        ],
+      },
     },
     milestones: [
       {
@@ -850,10 +856,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Papal Excommunication',
-        vocabTermB: 'Agent Provocateur',
+        vocabTermA: 'Papal Bull',
+        vocabTermB: 'Conspiracy',
         vocabPrompt:
-          'Distinguish between the Pope’s official decree casting Elizabeth out of the Church and freeing subjects from obedience (<strong>Papal Excommunication</strong>) and a secret government spy who encourages suspects to commit treason to gather proof (<strong>Agent Provocateur</strong>):',
+          'Explain the difference between an official written order issued by the Pope (<strong>Papal Bull</strong>) and a secret agreement between people to overthrow or kill the Queen (<strong>Conspiracy</strong>):',
         featureA: {
           provenance: 'Edexcel June 2018 (Q1b)',
           ref: '[Textbook §1.2]',
@@ -955,10 +961,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Privateering Monopoly',
-        vocabTermB: 'Sovereign Hegemony',
+        vocabTermA: 'Privateer',
+        vocabTermB: 'Trade Embargo',
         vocabPrompt:
-          'Distinguish between state-sanctioned commerce raiding against Spanish treasure shipping (<strong>Privateering</strong>) and Philip II’s imperial ambition to dominate European politics and religion (<strong>Sovereign Hegemony</strong>):',
+          'Explain the difference between an armed sailor licensed by the Queen to capture enemy ships (<strong>Privateer</strong>) and a government ban that stops all trade with another nation (<strong>Trade Embargo</strong>):',
         featureA: {
           provenance: 'Edexcel June 2019 (Q1a)',
           ref: '[Textbook §1.2]',
@@ -1062,9 +1068,9 @@ const KEY_TOPICS_DATA = {
         ],
         vocabRef: '[Textbook §1.1–§2.2]',
         vocabTermA: 'Treaty of Nonsuch',
-        vocabTermB: 'Naval Pre-Emptive Raid',
+        vocabTermB: 'Raid on Cadiz',
         vocabPrompt:
-          'Distinguish between an official defensive military alliance deploying standing troops to foreign soil (<strong>Treaty of Nonsuch</strong>) and an offensive tactical maritime strike designed to destroy enemy invasion shipping in harbour (<strong>Pre-Emptive Raid</strong>):',
+          'Explain the difference between England’s treaty promising direct military troops to Dutch rebels (<strong>Treaty of Nonsuch</strong>) and Drake’s surprise naval attack that delayed the Spanish Armada (<strong>Raid on Cadiz</strong>):',
         featureA: {
           provenance: 'Edexcel June 2022 (Q1a)',
           ref: '[Textbook §1.2]',
@@ -1167,10 +1173,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Race-Built Galleon',
-        vocabTermB: 'Crescent Formation',
+        vocabTermA: 'Galleon',
+        vocabTermB: 'Fireships',
         vocabPrompt:
-          'Distinguish between John Hawkins’ agile English warship design built for speed and long-range culverin broadsides (<strong>Race-Built Galleon</strong>) and Medina Sidonia’s defensive naval convoy designed to protect supply carracks and facilitate grappling (<strong>Crescent Formation</strong>):',
+          'Explain the difference between a large, heavily armed warship designed for ocean fighting (<strong>Galleon</strong>) and burning vessels sent into the Spanish fleet to cause panic and scatter their formation (<strong>Fireships</strong>):',
         featureA: {
           provenance: 'Edexcel November 2020 (Q1b)',
           ref: '[Textbook §1.2]',
@@ -1242,39 +1248,43 @@ const KEY_TOPICS_DATA = {
         'Johannes de Witt / Arend van Buchell • The only surviving eyewitness sketch of an Elizabethan public playhouse interior, showing the thrust stage, tiring house facade, covered galleries, and unroofed pit for groundlings. Utrecht University Library, MS 842.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 118,
+      heightMm: 88,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      subtopics: [
-        {
-          title: '1. Education and Leisure',
-          items: [
-            'Education in schools & universities: Petty schools, Grammar schools, girls & nobility',
-            'Pastimes, sports, music, and seasonal festivities across Elizabethan social classes',
-            'The rise of Elizabethan theatre: public playhouses, playwrights & royal patronage',
-            'Opposition to the theatre from Puritans and the London City Corporation',
-          ],
-        },
-        {
-          title: '2. The Problem of Poverty',
-          items: [
-            'Reasons for increase in poverty & vagabondage: population growth, enclosure, inflation',
-            'Changing social attitudes towards the poor: Impotent/Deserving vs Idle/Sturdy beggars',
-            'The Elizabethan Poor Laws: 1572 Vagabonds Act & 1576 Act for Relief of the Poor',
-            'Local parish measures and Houses of Correction (Bridewells)',
-          ],
-        },
-        {
-          title: '3. Exploration and Voyages',
-          items: [
-            'Factors prompting exploration: new navigational tech (astrolabe, compass, maps)',
-            'Sir Francis Drake’s circumnavigation of the globe (1577–80): motives and significance',
-            'Sir Walter Raleigh & the colonisation of Virginia: 1585 & 1587 Roanoke expeditions',
-            'Reasons for the failure of the Virginia colony and its long-term significance',
-          ],
-        },
-      ],
+      edexcelTable: {
+        header: 'Key topic 3: Elizabethan society in the age of exploration, 1558–88',
+        rows: [
+          {
+            numTitle: '1 Education and leisure',
+            bullets: [
+              'Education in the home, schools and universities.',
+              'Sport, pastimes and the theatre.',
+            ],
+          },
+          {
+            numTitle: '2 The problem of the poor',
+            bullets: [
+              'The reasons for the increase in poverty and vagabondage, and the reasons for fear of vagabonds.',
+              'Attempts to tackle the problem of poverty, including the 1572 and 1576 Acts.',
+            ],
+          },
+          {
+            numTitle: '3 Exploration and voyages of discovery',
+            bullets: [
+              'Factors prompting exploration, including the impact of new technology on ships and navigation and the drive to expand trade.',
+              'Drake’s circumnavigation of the globe.',
+            ],
+          },
+          {
+            numTitle: '4 Attempted colonisation of Virginia',
+            bullets: [
+              'Raleigh and the attempted colonisation of Virginia.',
+              'Reasons for the failure of the attempted colonisation of Virginia.',
+            ],
+          },
+        ],
+      },
     },
     milestones: [
       {
@@ -1368,10 +1378,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Humanist Curriculum',
-        vocabTermB: 'Groundlings Pit',
+        vocabTermA: 'Grammar Schools',
+        vocabTermB: 'The Pit',
         vocabPrompt:
-          'Distinguish between the Renaissance classical education in Latin, history, and rhetoric taught in grammar schools (<strong>Humanist Curriculum</strong>) and the unroofed standing floor in public playhouses where ordinary commoners watched plays for one penny (<strong>Groundlings Pit</strong>):',
+          'Explain the difference between fee-paying secondary schools teaching Latin to boys (<strong>Grammar Schools</strong>) and the open standing area in front of the theatre stage where ordinary groundlings stood for one penny (<strong>The Pit</strong>):',
         featureA: {
           provenance: 'Edexcel June 2018 (Q1a)',
           ref: '[Textbook §1.2]',
@@ -1474,10 +1484,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Agricultural Enclosure',
-        vocabTermB: 'Houses of Correction',
+        vocabTermA: 'Enclosure',
+        vocabTermB: 'Vagabonds',
         vocabPrompt:
-          'Distinguish between the conversion of shared arable land into private sheep pasture that dispossessed peasant farmers (<strong>Agricultural Enclosure</strong>) and municipal workhouses established by the 1576 Poor Act to punish vagrants (<strong>Houses of Correction</strong>):',
+          'Explain the difference between fencing off common land for sheep farming (<strong>Enclosure</strong>) and homeless people who wandered from town to town looking for work (<strong>Vagabonds</strong>):',
         featureA: {
           provenance: 'Edexcel November 2021 (Q1a)',
           ref: '[Textbook §1.1]',
@@ -1580,10 +1590,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Celestial Navigation',
-        vocabTermB: 'Maritime Circumnavigation',
+        vocabTermA: 'Astrolabe',
+        vocabTermB: 'Circumnavigation',
         vocabPrompt:
-          'Distinguish between calculating a ship’s position at sea using astrolabes and star quadrants (<strong>Celestial Navigation</strong>) and sailing completely around the earth’s globe on a continuous voyage (<strong>Circumnavigation</strong>):',
+          'Explain the difference between an instrument used by sailors to calculate latitude by observing the sun and stars (<strong>Astrolabe</strong>) and sailing completely around the world on a ship (<strong>Circumnavigation</strong>):',
         featureA: {
           provenance: 'Edexcel June 2022 (Q1b)',
           ref: '[Textbook §1.1]',
@@ -1686,10 +1696,10 @@ const KEY_TOPICS_DATA = {
           },
         ],
         vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Colonial Patent',
-        vocabTermB: 'Roanoke Palissade',
+        vocabTermA: 'Colony',
+        vocabTermB: 'Empire',
         vocabPrompt:
-          'Distinguish between a royal charter granting exclusive commercial and territorial rights to colonise lands (<strong>Colonial Patent</strong>) and the fortified defensive wooden enclosure erected on Roanoke Island (<strong>Roanoke Palisade</strong>):',
+          'Explain the difference between a new settlement established and ruled by people from another country (<strong>Colony</strong>) and a collection of lands and colonies ruled over by a single monarch or power (<strong>Empire</strong>):',
         featureA: {
           provenance: '★ High-Yield Forecast (Q1a)',
           ref: '[Textbook §1.1]',
@@ -2520,8 +2530,8 @@ function buildEeeKeyTopicWorkbook(ktId) {
         d: 'The monarch’s exclusive customary powers over foreign policy, declaring war, marriage, and religion.',
       },
       {
-        t: 'Crown Patronage',
-        d: 'Granting titles, offices, lands, and monopolies to gentry and nobility to guarantee political loyalty.',
+        t: 'Privy Council',
+        d: 'A committee of around 19 trusted noble advisers who met daily to run government, finance, and security.',
       },
       {
         t: 'Via Media',
@@ -2544,8 +2554,8 @@ function buildEeeKeyTopicWorkbook(ktId) {
         d: '1566 crisis where 37 Puritan vicars were suspended for refusing Archbishop Parker’s order to wear surplices.',
       },
       {
-        t: 'Casket Letters',
-        d: 'Alleged love letters between Mary Queen of Scots and Bothwell used at the 1568 York inquiry to justify her detention.',
+        t: 'Succession',
+        d: 'The legal right to inherit the crown; Elizabeth refused to name a successor throughout her reign.',
       },
     ];
     koDates = [
@@ -2553,7 +2563,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
       '1559: Act of Supremacy passed',
       '1559: Act of Uniformity passed',
       '1559: Royal Injunctions issued',
-      '1563: Thirty-Nine Articles drafted',
+      '1560: Treaty of Edinburgh signed',
       '1566: Vestments Controversy (Parker)',
       '1567: Murder of Lord Darnley',
       '1568: Mary Stuart flees to England',
@@ -2609,8 +2619,8 @@ function buildEeeKeyTopicWorkbook(ktId) {
         d: 'Drake’s April 1587 raid on Cadiz harbour destroying 30 ships and delaying the Armada by a year.',
       },
       {
-        t: 'Race-Built Galleon',
-        d: 'Hawkins’ streamlined warship design with low forecastles and agile maneuverability.',
+        t: 'Galleon',
+        d: 'A large, multi-decked warship designed for ocean navigation and long-range cannon fire.',
       },
       {
         t: 'Culverin',
@@ -2662,15 +2672,15 @@ function buildEeeKeyTopicWorkbook(ktId) {
   } else {
     koConcepts = [
       {
-        t: 'Humanist Education',
-        d: 'Renaissance curriculum focusing on classical Latin, Greek, rhetoric, and moral philosophy.',
-      },
-      {
         t: 'Grammar School',
         d: 'Fee-paying secondary school for boys aged 7–14; over 70 established under Elizabeth.',
       },
       {
-        t: 'Agricultural Enclosure',
+        t: 'Petty School',
+        d: 'Early elementary school for young boys run in a teacher’s home, teaching basic reading and writing.',
+      },
+      {
+        t: 'Enclosure',
         d: 'Fencing common arable land into private pastures for sheep farming, dispossessing farm labourers.',
       },
       {
@@ -2690,8 +2700,8 @@ function buildEeeKeyTopicWorkbook(ktId) {
         d: 'Navigation tool measuring the altitude of sun and stars to calculate latitude at sea.',
       },
       {
-        t: 'Royal Patent',
-        d: 'Royal charter granting exclusive rights to explore, settle, and exploit foreign territories.',
+        t: 'Colony',
+        d: 'A new overseas settlement established, populated, and governed by people from another country.',
       },
     ];
     koDates = [

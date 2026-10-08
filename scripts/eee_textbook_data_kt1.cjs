@@ -137,7 +137,7 @@ module.exports = function getKt1Data(helpers) {
           "Appointed Archbishop of Canterbury by Elizabeth in 1559 to implement and defend the 'Middle Way'. A moderate Protestant scholar who had served as Anne Boleyn's chaplain, Parker provided intellectual stability and enforced clerical discipline during the Vestment Controversy.",
         actions: [
           'Consecrated Archbishop in December 1559, supervising the restructuring of the Church of England after the Marian restoration.',
-          'Drafted the Thirty-Nine Articles of Religion (1563), establishing the theological doctrine of the reformed Church of England.',
+          'Helped guide the passage of the 1559 Acts of Supremacy and Uniformity, establishing the theological framework of the Church of England.',
           "Issued the 1566 'Book of Advertisements' enforcing uniform clerical dress, firmly dismissing 37 London Puritan clergy who refused to comply.",
         ],
         image: getBase64Image('units/eee/assets/portraits/elizabeth_i.jpg'),
@@ -239,9 +239,9 @@ module.exports = function getKt1Data(helpers) {
       `,
       timeline: [
         {
-          date: '1563',
-          title: 'Thirty-Nine Articles',
-          text: 'Convocation codifies national doctrine, fusing Calvinist predestination with traditional bishops.',
+          date: 'July 1560',
+          title: 'Treaty of Edinburgh',
+          text: 'French troops withdraw from Scotland; Mary Stuart’s claim to the English throne is formally blocked.',
         },
         {
           date: 'Mar 1566',

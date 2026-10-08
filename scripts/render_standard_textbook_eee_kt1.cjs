@@ -1198,7 +1198,7 @@ async function buildPublisherTextbookHtmlKT1() {
             <!-- Col 3 Sequence -->
             <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 3px 5px; border-radius: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.26;">
               <span style="font-weight: 800; color: #b45309; text-transform: uppercase; display: block; margin-bottom: 1px;">1.3 Chronological Causal Flow</span>
-              <div><strong style="color: #0f172a;">1563:</strong> Thirty-Nine Articles of Faith</div>
+              <div><strong style="color: #0f172a;">1566:</strong> The Dutch Revolt Begins</div>
               <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
               <div><strong style="color: #0f172a;">Mar 1566:</strong> Parker's Book of Advertisements</div>
               <div style="text-align: center; color: #b45309; font-weight: 900; line-height: 0.8;">&darr;</div>
@@ -1713,8 +1713,8 @@ async function buildPublisherTextbookHtmlKT1() {
             French garrisons evacuate Scotland; northern frontier secured under Protestant Lords of Congregation.
           </div>
           <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 3px 4.5px; border-radius: 2px;">
-            <strong style="color: #b45309; display: block;">1563 &bull; Thirty-Nine Articles</strong>
-            Convocation codifies Church doctrine, fusing Calvinist predestination with traditional episcopal hierarchy.
+            <strong style="color: #b45309; display: block;">1566 &bull; Dutch Revolt Begins</strong>
+            Protestant rebellion against Spanish rule in the Netherlands sparks decades of European religious conflict.
           </div>
           <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-left: 2.5px solid #b45309; padding: 3px 4.5px; border-radius: 2px;">
             <strong style="color: #b45309; display: block;">26 Mar 1566 &bull; Advertisements</strong>
@@ -1948,9 +1948,9 @@ async function buildPublisherTextbookHtmlKT1() {
               <td style="padding: 2.2px 6px;">French troops withdraw from Scotland; northern border stabilized under Scottish Protestant lords.</td>
             </tr>
             <tr style="background: #ffffff;">
-              <td style="font-weight: 800; color: #1e3a8a; white-space: nowrap; padding: 2.2px 6px;">1563</td>
-              <td style="font-weight: 700; color: #0f172a; padding: 2.2px 6px;">Thirty-Nine Articles</td>
-              <td style="padding: 2.2px 6px;">Convocation establishes theological doctrine of Church of England, fusing Calvinism with bishops.</td>
+              <td style="font-weight: 800; color: #1e3a8a; white-space: nowrap; padding: 2.2px 6px;">1566</td>
+              <td style="font-weight: 700; color: #0f172a; padding: 2.2px 6px;">Dutch Revolt Begins</td>
+              <td style="padding: 2.2px 6px;">Calvinist riots in Netherlands prompt Philip II to send the Duke of Alba’s army, raising English invasion fears.</td>
             </tr>
             <tr style="background: #f8fafc;">
               <td style="font-weight: 800; color: #1e3a8a; white-space: nowrap; padding: 2.2px 6px;">26 Mar 1566</td>
