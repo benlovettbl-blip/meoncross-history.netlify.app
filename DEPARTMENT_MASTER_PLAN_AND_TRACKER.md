@@ -52,7 +52,35 @@ The following ledger tracks the departmental shift to **Christine Counsell 4-Act
 
 ---
 
-## 3. Reprographics Protection & Classroom Rollout Protocol (The "Zero Disruption" Rule)
+## 3. Master Knowledge Retrieval & Homework Companion Ledger (The 2-Line Dual Retrieval Standard)
+
+The following ledger tracks the rollout of the department's flagship **Knowledge Retrieval & Homework Companion Booklets**.  
+Every companion adheres strictly to the **Dual-Line Retrieval Standard** (`Line 1: Core Fact` anchor + `Line 2: The Historical Explanation` significance), coupled with a **Chronology Domino Flowchart**, a back **Department Marking Bank** for green-pen self-assessment (`[✓][✗]` DIRT review), and **Exam Strategy Spreads**.
+
+| Unit ID | Tier / Year | Unit Title | Companion Status | Booklet Format & Specs | Question Density & Architecture | Target PDF Artifact / Compilation Script |
+| :--- | :---: | :--- | :---: | :---: | :---: | :--- |
+| `water_and_sanitation` | KS3 (Y7) | Water & Sanitation Through Time | 🟩 **GREEN**<br>(Live & Ready) | **12-Page A5 / A4**<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Domino Timeline • Marking Bank | `water_sanitation_quiz_pack.pdf`<br>`scripts/generate_water_sanitation_quiz_booklet.cjs` |
+| `medieval_england` | KS3 (Y7) | Medieval England, 1066–1485 | 🟥 **RED**<br>(Pending) | Scheduled for A4<br>Saddle-Stitch | 64 Questions (8 Enquiries × 8 Qs)<br>Chronology • Marking Bank | *Script pending authoring*<br>(Has 20p workbook & textbook) |
+| `early_modern_world` | KS3 (Y8) | Early Modern World, 1450–1750 | 🟩 **GREEN**<br>(Live & Ready) | **12-Page A5 / A4**<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Domino Timeline • Marking Bank | `early_modern_world_quiz_pack.pdf`<br>`scripts/generate_early_modern_quiz_booklet.cjs` |
+| `industrialisation_and_empire` | KS3 (Y8) | Industrialisation & Empire, 1750–1900 | 🟥 **RED**<br>(Pending) | Scheduled for A4<br>Saddle-Stitch | 64 Questions (8 Enquiries × 8 Qs)<br>Chronology • Marking Bank | *Script pending authoring*<br>(Has 20p workbook & textbook) |
+| `great_war` | KS3 (Y9) | Causes of the Great War, 1870–1914 | 🟩 **GREEN**<br>(Live & Ready) | **12-Page A5 / A4**<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Domino Timeline • Marking Bank • MAIN Essay | `great_war_quiz_pack.pdf`<br>`scripts/generate_great_war_quiz_booklet.cjs` |
+| `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath | 🟥 **RED**<br>(Pending) | Scheduled for A4<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Chronology • Marking Bank | *Script pending authoring*<br>(Has 16p workbook & 14p textbook) |
+| `the_shoah` | KS3 (Y9) | The Shoah (Holocaust Education) | 🟥 **RED**<br>(Pending) | Scheduled for A4<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Chronology • Marking Bank | *Script pending curriculum drafting* |
+| `cold_war` | KS3 (Y9) | The Cold War, 1945–1991 | 🟥 **RED**<br>(Pending) | Scheduled for A4<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Chronology • Marking Bank | *Script pending curriculum drafting* |
+| `post_war_britain` | KS3 (Y9) | Rights, Protest & Post-War Britain | 🟥 **RED**<br>(Pending) | Scheduled for A4<br>Saddle-Stitch | 48 Questions (6 Enquiries × 8 Qs)<br>Chronology • Marking Bank | *Script pending curriculum drafting* |
+| `australia` | KS3 (Y8/9) | History of Australia | 🟥 **RED**<br>(Pending) | Elective Depth Study | Optional retrieval module | *Script pending* |
+| `second_world_war` | KS3 | Second World War | 🟥 **RED**<br>(Pending) | Scheduled for A4 | Optional retrieval module | *Script pending* |
+| `cme_new` | GCSE (Y10–11) | Conflict in the Middle East, 1945–1995 | 🟩 **GREEN**<br>(Production Ready) | **20-Page A4**<br>Saddle-Stitch | **144 Questions** (12 Enquiries × 12 Qs)<br>28-Point Domino Flowchart • 4p Marking Bank • Paper 2 Strategy | `Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf`<br>`scripts/generate_cme_quiz_booklet.cjs` |
+| `edexcel_medicine` (Thematic) | GCSE (Y10–11) | Medicine in Britain, c1250–present (Paper 1 Section B) | 🟩 **GREEN**<br>(Production Ready) | **28-Page A4**<br>Saddle-Stitch | **200 Questions** (20 Lessons × 10 Qs)<br>750-Year Chronology • 4-Era Marking Banks • 6-Factor Matrix • Paper 1 Strategy | `Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf`<br>`scripts/generate_medicine_thematic_quiz_booklet.cjs` |
+| `edexcel_medicine` (Western Front) | GCSE (Y10–11) | British Sector of Western Front, 1914–18 (Paper 1 Section A) | 🟩 **GREEN**<br>(Production Ready) | **12-Page A4**<br>Saddle-Stitch | **72 Questions** (6 Lessons × 12 Qs)<br>Chain of Evacuation Timeline • Marking Bank • Q2(b) 4-Step Follow-Up Blueprint | `Western_Front_Master_Knowledge_Retrieval_Companion.pdf`<br>`scripts/generate_western_front_quiz_booklet.cjs` |
+| `usa` | GCSE (Y10–11) | The USA, 1954–75: Conflict at Home & Abroad (Paper 3) | 🟨 **AMBER**<br>(Queued for Generation) | **24-Page A4**<br>Saddle-Stitch | **192 Questions** (16 Enquiries × 12 Qs)<br>1954–1975 Domino Flowchart • 4p Marking Bank • Paper 3 Strategy | `USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf`<br>`scripts/generate_usa_quiz_booklet.cjs` *(Active)* |
+| `eee` | GCSE (Y10–11) | Early Elizabethan England, 1558–1588 (Paper 2) | 🟨 **AMBER**<br>(Pillar Packs Live) | Scheduled for 24-Page A4 Saddle-Stitch | 144 Questions (12 Enquiries × 12 Qs)<br>Tudor Domino Timeline • Marking Bank • Key Features & 12m Strategy | Has 72p Master Workbook & 24p KT workbooks; standalone companion queued |
+| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar & Nazi Germany, 1918–1939 (Paper 3) | 🟨 **AMBER**<br>(Mastery Packs Live) | Scheduled for 28-Page A4 Saddle-Stitch | 192 Questions (16 Enquiries × 12 Qs)<br>Weimar/Nazi Domino Timeline • Marking Bank • Paper 3 Strategy | Has mastery packs & app quizzes; standalone companion queued |
+| `trip_ypres` | GCSE | Battlefield Tour: Ypres & The Somme | ⚪ **N/A** | Digital Field App | Interactive web app | Intentionally bypassed from print |
+
+---
+
+## 4. Reprographics Protection & Classroom Rollout Protocol (The "Zero Disruption" Rule)
 
 ### The Challenge: Protecting Active Classroom Booklets
 Three core units currently have physical, bound workbooks printed and in daily classroom use:
@@ -81,7 +109,7 @@ If we modify or overwrite their HTML/PDF files now:
 
 ---
 
-## 4. Technical & Publisher Specification Catalog: The 16-Page Booklet Standard
+## 5. Technical & Publisher Specification Catalog: The 16-Page Booklet Standard
 
 The newly established 16-page pupil workbook standard combines **world-class publisher aesthetics**, **monochrome reprographics efficiency**, and **rigorous cognitive load reduction**:
 
@@ -166,7 +194,7 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 
 ---
 
-## 5. Implementation Roadmap & Immediate Next Steps
+## 6. Implementation Roadmap & Immediate Next Steps
 
 1. **Step 1 (COMPLETED):** Conflict in the Middle East (`cme_new`) is 100% complete and up to date:
    - **Key Individuals:** All 12 key individual profile cards hard-coded, vetted, and synchronized across `data.js`, `database.json`, and web app.
@@ -176,12 +204,13 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 2. **Step 2 (COMPLETED):** Universal KS3 Two-Pillar Master Textbooks & Double-Page Spread Workbooks:
    - **Two-Pillar Engine:** Codified permanently in `.agents/skills/ks3-publishing-engine/SKILL.md` and rolled out across all 6 KS3 master textbooks (`great_war_part2`, `great_war`, `medieval_england`, `industrialisation_and_empire`, `water_and_sanitation`, `early_modern_world`), eliminating dead chasms to crisp 6px gaps with 0px overflow and 96%–98% budget utilization.
    - **Double-Page Workbooks:** `industrialisation_and_empire` (20 pages), `great_war_part2` (16 pages), and `medieval_england` (20 pages) fully compiled with 0px overflow and synchronized.
-3. **Step 3:** Consolidate GCSE *Early Elizabethan England* (`eee`) from 3 split booklets into the single unified master volume and 16-page key topic workbooks.
-4. **Step 4:** Maintain strict protection over active printed booklets (Year 7 Sanitation, Year 8 Early Modern, Year 9 Causes of the Great War) until the scheduled vacation reprint cycle.
+3. **Step 3 (ACTIVE):** Roll out the 24-Page Master Knowledge Retrieval & Homework Companion for *The USA, 1954–75* (`usa`) to match the GCSE standard established in Middle East and Medicine.
+4. **Step 4:** Consolidate GCSE *Early Elizabethan England* (`eee`) from 3 split booklets into the single unified master volume and 16-page key topic workbooks.
+5. **Step 5:** Maintain strict protection over active printed booklets (Year 7 Sanitation, Year 8 Early Modern, Year 9 Causes of the Great War) until the scheduled vacation reprint cycle.
 
 ---
 
-## 6. Department-Wide Video Registry Audit, Alignment & Curation Pipeline
+## 7. Department-Wide Video Registry Audit, Alignment & Curation Pipeline
 
 ### The "Zero Broken Links & High-Signal Lesson Media" Standard
 To guarantee every lesson across the Revision Hub provides pupils and teachers with immediate, accurate, and classroom-tested video media:
@@ -199,7 +228,7 @@ To guarantee every lesson across the Revision Hub provides pupils and teachers w
 
 ---
 
-## 7. Proactive Recommendations & Innovation Register
+## 8. Proactive Recommendations & Innovation Register
 All session recommendations are permanently logged, accumulated, and tracked in:  
 👉 **[`DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`](./DEPARTMENT_RECOMMENDATIONS_BACKLOG.md)**  
 *(Recommendations persist cumulatively across conversations and are only executed or cleared upon explicit user instruction).*
