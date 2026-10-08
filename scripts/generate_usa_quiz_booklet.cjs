@@ -651,7 +651,7 @@ function buildHtml() {
       font-weight: 800;
       color: #000000;
       white-space: nowrap;
-      min-width: 68px;
+      min-width: 60px;
     }
     .q-solid-line {
       flex: 1;
@@ -911,8 +911,8 @@ function buildHtml() {
       display: flex;
       flex-direction: column;
       flex: 1;
-      gap: 8px;
-      margin: 1px 0;
+      gap: 10px;
+      margin: 2px 0;
     }
     .strat-card-24 {
       border: 1.4px solid #0f172a;
@@ -927,7 +927,7 @@ function buildHtml() {
     }
     .strat-header-24 {
       font-family: 'Inter', sans-serif;
-      font-size: 10.0pt;
+      font-size: 10.2pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -950,26 +950,26 @@ function buildHtml() {
     .strat-essay-grid-24 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 7px;
+      gap: 8px;
     }
     .strat-essay-step-24 {
       border: 1px solid #cbd5e1;
       border-left: 3.5px solid #0f172a;
       background: #f8fafc;
-      padding: 6px 9px;
+      padding: 7px 10px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 8.3pt;
-      line-height: 1.35;
+      font-size: 8.4pt;
+      line-height: 1.36;
       color: #1e293b;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      gap: 2.5px;
+      gap: 3px;
     }
     .strat-step-num {
       font-family: 'Inter', sans-serif;
-      font-size: 8.8pt;
+      font-size: 8.9pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 2px;
@@ -977,41 +977,41 @@ function buildHtml() {
     .strat-essay-phrases {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 6px;
-      margin-top: 1px;
+      gap: 7px;
+      margin-top: 2px;
     }
     .strat-phrase-col {
       border: 1px solid #cbd5e1;
       background: #f8fafc;
-      padding: 5px 8px;
+      padding: 6px 9px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 7.9pt;
-      line-height: 1.32;
+      font-size: 8.0pt;
+      line-height: 1.34;
       color: #1e293b;
     }
     .strat-phrase-title {
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 8.3pt;
       font-weight: 800;
       color: #0f172a;
-      margin-bottom: 2px;
+      margin-bottom: 2.5px;
     }
     .strat-model-para-24 {
       border: 1.2px solid #0f172a;
       border-left: 4.5px solid #0f172a;
       background: #f8fafc;
-      padding: 6px 10px;
+      padding: 7px 11px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 8.1pt;
-      line-height: 1.36;
+      font-size: 8.2pt;
+      line-height: 1.38;
       color: #1e293b;
-      margin-top: 1px;
+      margin-top: 2px;
     }
     .strat-model-tag {
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
+      font-size: 7.6pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -1021,48 +1021,48 @@ function buildHtml() {
     .strat-criteria-box {
       border: 1px dashed #0f172a;
       background: #f1f5f9;
-      padding: 5px 8px;
+      padding: 5px 9px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
-      line-height: 1.32;
+      font-size: 7.6pt;
+      line-height: 1.34;
       color: #1e293b;
-      margin-top: 1px;
+      margin-top: 2px;
     }
     .strat-traps-bar-fixed {
       border: 1.3px solid #b91c1c;
       border-left: 5px solid #b91c1c;
       background: #fef2f2;
-      padding: 7px 11px;
+      padding: 8px 12px;
       border-radius: 2px;
       display: flex;
       align-items: center;
       gap: 10px;
       font-family: 'Inter', sans-serif;
-      font-size: 8.0pt;
+      font-size: 8.1pt;
       color: #7f1d1d;
     }
     .strat-traps-list {
       flex: 1;
       font-weight: 600;
-      line-height: 1.34;
+      line-height: 1.36;
     }
     .back-hub-card {
       border: 1.4px solid #0f172a;
       background: #f8fafc;
-      padding: 10px 14px;
+      padding: 13px 18px;
       border-radius: 2px;
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 18px;
     }
     .back-hub-qr {
-      width: 74px;
-      height: 74px;
+      width: 98px;
+      height: 98px;
       flex-shrink: 0;
       background: #ffffff;
-      padding: 2px;
-      border: 1px solid #cbd5e1;
+      padding: 3px;
+      border: 1.2px solid #cbd5e1;
       border-radius: 2px;
     }
     .back-hub-info {
@@ -1070,64 +1070,39 @@ function buildHtml() {
       font-family: 'Inter', sans-serif;
     }
     .back-hub-title {
-      font-size: 9.8pt;
+      font-size: 11.0pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
-      margin-bottom: 2px;
+      margin-bottom: 3px;
+      letter-spacing: 0.3px;
     }
     .back-hub-desc {
-      font-size: 8.1pt;
-      line-height: 1.34;
+      font-size: 8.5pt;
+      line-height: 1.38;
       color: #334155;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .back-hub-features {
       display: flex;
-      gap: 6px;
-      margin-bottom: 4px;
+      gap: 8px;
+      margin-bottom: 6px;
     }
     .hub-feature-tag {
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.5pt;
       font-weight: 800;
       background: #e2e8f0;
       color: #0f172a;
-      padding: 2px 6px;
+      padding: 2.5px 7px;
       border-radius: 2px;
       white-space: nowrap;
     }
     .back-hub-url {
       font-family: monospace;
-      font-size: 7.8pt;
-      font-weight: 700;
+      font-size: 8.5pt;
+      font-weight: 800;
       color: #0f172a;
-    }
-    .archival-seal-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      border: 1.3px solid #0f172a;
-      background: #f8fafc;
-      padding: 6px 12px;
-    }
-    .archival-seal-badge {
-      border: 2px solid #0f172a;
-      padding: 3px 8px;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
-      font-weight: 900;
-      letter-spacing: 0.8px;
-      text-transform: uppercase;
-      text-align: center;
-      white-space: nowrap;
-    }
-    .archival-seal-text {
-      font-family: 'Georgia', serif;
-      font-size: 7.8pt;
-      color: #334155;
-      line-height: 1.30;
     }
   </style>
 </head>
@@ -1216,7 +1191,7 @@ function buildHtml() {
 
       <div class="cover-protocol-box">
         <strong>Formative Home Learning & Parental Partnership Protocol</strong>
-        For each weekly enquiry, pupils must complete their 12 retrieval questions under timed recall conditions before self-checking answers against the Department Marking Bank on Pages 19–22. Every question requires both <em>Line 1 (Core Fact)</em> and <em>Line 2 (Historical Explanation)</em>. Parents and carers are kindly requested to inspect that both lines are fully attempted and sign the ledger alongside the due date.
+        For each weekly enquiry, pupils must complete their 12 retrieval questions under timed recall conditions before self-checking answers against the Department Marking Bank on Pages 19–22. Every question requires both a <em>Core Fact</em> and an <em>Historical Explanation</em>. Parents and carers are kindly requested to inspect that both components are fully attempted and sign the ledger alongside the due date.
       </div>
     </div>
 
@@ -1295,11 +1270,11 @@ function buildHtml() {
           <span class="q-attempt">[ &nbsp; ]</span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Line 1 (Core Fact):</span>
+          <span class="q-line-lbl">Core Fact:</span>
           <div class="q-solid-line"></div>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Line 2 (Explanation):</span>
+          <span class="q-line-lbl">Explanation:</span>
           <div class="q-solid-line"></div>
         </div>
       </div>`,
@@ -1617,7 +1592,7 @@ function buildHtml() {
       <div class="strat-traps-bar-fixed">
         <span class="trap-tag" style="background: #b91c1c;">EXAMINER PITFALLS</span>
         <span class="strat-traps-list">
-          <strong>5 Fatal Traps to Avoid:</strong> 1. Quoting without inferring on Q1 • 2. Omitting independent own knowledge on Q2 (capped at 7/12) • 3. Calling sources "useless" on Q3(a) • 4. Paraphrasing without contrasting on Q3(b) • 5. Writing a one-sided essay without criteria on Q3(d).
+          <strong>5 Fatal Traps to Avoid:</strong> 1. Quoting without inferring on Q1 • 2. Omitting independent own knowledge on Q2 (capped at 7/12) • 3. Calling sources "useless" on Q3(a) • 4. Paraphrasing without contrasting on Q3(b) • 5. On Q3(d): Writing a one-sided essay without criteria, or forgetting to use and evaluate both interpretations (capped at Level 2).
         </span>
       </div>
 
@@ -1635,16 +1610,6 @@ function buildHtml() {
             <span class="hub-feature-tag">✓ Paper 3 Model Bank</span>
           </div>
           <div class="back-hub-url">the-history-revision-hub.netlify.app/?unit=usa</div>
-        </div>
-      </div>
-
-      <!-- DEPARTMENT ARCHIVAL SEAL -->
-      <div class="archival-seal-wrap">
-        <div class="archival-seal-badge">
-          OFFICIAL DEPARTMENT ARCHIVAL REVISION STANDARD • 1HI0/33
-        </div>
-        <div class="archival-seal-text">
-          Verified 100% compliant with Pearson Edexcel GCSE (9–1) Specification. 192 Curated Dual-Line Retrieval Prompts across all 16 Enquiries.
         </div>
       </div>
     </div>
