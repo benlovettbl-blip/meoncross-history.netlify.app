@@ -164,20 +164,45 @@ if (typeof window !== 'undefined') {
   window.sanitizePupilName = sanitizePupilName;
 }
 
-// Local Real-Name Reference Registry (100% Local-First · Kept strictly on school laptop)
+// Pupil First-Name Reference Registry (Clean First Names)
 export const DEFAULT_LOCAL_NAME_MAP = {
-  p_1789653842949: 'Ethan P.',
-  p_1789653874979: 'Austen C.',
-  p_1789653816754: 'Alex R.',
-  p_1789653887768: 'Will V.',
-  p_1789653828428: 'Woody R.',
+  p_1789653842949: 'Ethan',
+  p_1789653874979: 'Austen',
+  p_1789653816754: 'Alex',
+  p_1789653887768: 'Will',
+  p_1789653828428: 'Woody',
   p_1789653854856: 'Harry C.',
-  p_1789653903667: 'Jacob C.',
-  p_1789653983357: 'Thomas S.',
-  p_1789653925819: 'Tadhg F.',
-  p_1789653972946: 'Jake B.',
-  p_1789653960520: 'Ben T.',
+  p_1789653903667: 'Jacob',
+  p_1789653983357: 'Thomas',
+  p_1789653925819: 'Tadhg',
+  p_1789653972946: 'Jake',
+  p_1789653960520: 'Ben',
   p_1789653940195: 'Harry M.',
+};
+
+export const CALLSIGN_TO_FIRST_NAME = {
+  'Super Dreadnought': 'Ethan',
+  'Jutland Raider': 'Austen',
+  'The Iron Duke': 'Alex',
+  'Trafalgar Knight': 'Will',
+  'Black Prince': 'Woody',
+  'Armoured Rook': 'Harry C.',
+  'Swift Battlecruiser': 'Jacob',
+  'Lightning Gambit': 'Thomas',
+  'Falkland Corsair': 'Tadhg',
+  'Broadside King': 'Jake',
+  'Battleship Bishop': 'Ben',
+  'Fortress Sentinel': 'Harry M.',
+  'Ethan P.': 'Ethan',
+  'Austen C.': 'Austen',
+  'Alex R.': 'Alex',
+  'Will V.': 'Will',
+  'Woody R.': 'Woody',
+  'Jacob C.': 'Jacob',
+  'Thomas S.': 'Thomas',
+  'Tadhg F.': 'Tadhg',
+  'Jake B.': 'Jake',
+  'Ben T.': 'Ben',
 };
 
 // Combinatorial Historical Naval Chess Themes
@@ -305,33 +330,10 @@ export const HOUSE_NICKNAME_THEMES = {
 };
 
 export function generateHouseThematicNickname(realName, houseId, existingNicknames = []) {
-  let hash = 0;
-  const str = (realName || '').trim().toLowerCase();
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash << 5) - hash + str.charCodeAt(i);
-    hash |= 0;
-  }
-  const absHash = Math.abs(hash);
-  const theme = HOUSE_NICKNAME_THEMES[houseId] || HOUSE_NICKNAME_THEMES.warrior;
-
-  for (let attempt = 0; attempt < 50; attempt++) {
-    const titleIdx = (absHash + attempt * 7) % theme.titles.length;
-    const heroIdx = (absHash + attempt * 13) % theme.heroes.length;
-    const roleIdx = (absHash + attempt * 19) % theme.roles.length;
-
-    let candidate = '';
-    if (attempt % 2 === 0) {
-      candidate = `${theme.titles[titleIdx]} ${theme.roles[roleIdx]}`;
-    } else {
-      candidate = `${theme.titles[titleIdx]} ${theme.heroes[heroIdx]}`;
-    }
-
-    candidate = candidate.trim();
-    if (!existingNicknames.includes(candidate)) {
-      return candidate;
-    }
-  }
-  return `${theme.titles[0]} ${theme.roles[0]} ${(absHash % 20) + 1}`;
+  if (!realName) return 'Player';
+  const clean =
+    typeof sanitizePupilName === 'function' ? sanitizePupilName(realName) : realName.trim();
+  return clean || 'Player';
 }
 
 export function savePlayerRealName(playerId, realName) {
@@ -356,68 +358,78 @@ export function hydratePlayerRealNames(players) {
   }
 
   players.forEach((p) => {
-    if (!p.nickname) {
-      p.nickname = p.name;
+    // 1. Check if name or nickname is a legacy callsign or initialed name
+    if (CALLSIGN_TO_FIRST_NAME[p.name]) {
+      p.name = CALLSIGN_TO_FIRST_NAME[p.name];
     }
-    if (!p.realName) {
-      p.realName = localMap[p.id] || DEFAULT_LOCAL_NAME_MAP[p.id] || '';
+    if (CALLSIGN_TO_FIRST_NAME[p.nickname]) {
+      p.nickname = CALLSIGN_TO_FIRST_NAME[p.nickname];
     }
-    if (p.name && /^[A-Za-z]+ [A-Za-z]\.?$/.test(p.name) && !p.realName) {
-      p.realName = p.name;
-      p.nickname = generateHouseThematicNickname(
-        p.realName,
-        p.house,
-        players.map((x) => x.nickname).filter(Boolean),
-      );
-    }
+
+    const real = localMap[p.id] || DEFAULT_LOCAL_NAME_MAP[p.id] || p.realName || p.name;
+    const cleanReal = CALLSIGN_TO_FIRST_NAME[real] || real;
+    p.realName = cleanReal;
+    p.name = cleanReal;
+    p.nickname = cleanReal;
   });
+
+  // Also migrate any active pairings if present in chessState
+  if (typeof chessState !== 'undefined' && Array.isArray(chessState.activePairings)) {
+    chessState.activePairings.forEach((pair) => {
+      if (pair.white) {
+        const wName =
+          CALLSIGN_TO_FIRST_NAME[pair.white.name] ||
+          DEFAULT_LOCAL_NAME_MAP[pair.white.id] ||
+          pair.white.realName ||
+          pair.white.name;
+        pair.white.name = wName;
+        pair.white.nickname = wName;
+        pair.white.realName = wName;
+      }
+      if (pair.black) {
+        const bName =
+          CALLSIGN_TO_FIRST_NAME[pair.black.name] ||
+          DEFAULT_LOCAL_NAME_MAP[pair.black.id] ||
+          pair.black.realName ||
+          pair.black.name;
+        pair.black.name = bName;
+        pair.black.nickname = bName;
+        pair.black.realName = bName;
+      }
+    });
+  }
+
+  // Also migrate matches
+  if (typeof chessState !== 'undefined' && Array.isArray(chessState.matches)) {
+    chessState.matches.forEach((m) => {
+      if (CALLSIGN_TO_FIRST_NAME[m.white]) m.white = CALLSIGN_TO_FIRST_NAME[m.white];
+      if (CALLSIGN_TO_FIRST_NAME[m.black]) m.black = CALLSIGN_TO_FIRST_NAME[m.black];
+    });
+  }
 }
 
 export function getPlayerDisplayName(player, context = 'default') {
   if (!player) return 'Unknown Player';
-  const h = HOUSES[player.house];
-  const real = player.realName;
-  const nick = player.nickname || player.name;
+  const name =
+    CALLSIGN_TO_FIRST_NAME[player.name] ||
+    CALLSIGN_TO_FIRST_NAME[player.nickname] ||
+    player.realName ||
+    player.name ||
+    player.nickname;
 
-  // If in Teacher view on school laptop (and not in projector mode or pupil preview):
-  if (
-    chessState.userRole === 'teacher' &&
-    !chessState.isPupilPreview &&
-    !chessState.projectorMode &&
-    real &&
-    real !== nick
-  ) {
-    if (context === 'short') {
-      return `${real} (${nick})`;
-    }
-    if (context === 'table') {
-      return `
-        <div style="display: flex; flex-direction: column; gap: 2px;">
-          <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${real}</span>
-          <span style="font-size: 0.72rem; font-weight: 700; color: ${h?.colorDark || '#334155'}; background: ${h?.bgLight || '#f1f5f9'}; border: 1px solid ${h?.borderColor || '#cbd5e1'}; padding: 1px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; width: fit-content;">
-            ⚓ ${nick}
-          </span>
-        </div>
-      `;
-    }
-    if (context === 'podium') {
-      return `
-        <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${real}</div>
-        <div style="font-size: 0.76rem; font-weight: 800; color: ${h?.colorDark || '#334155'}; background: ${h?.bgLight || '#f1f5f9'}; border: 1px solid ${h?.borderColor || '#cbd5e1'}; padding: 2px 8px; border-radius: 6px; margin: 4px auto 0 auto; display: inline-block;">
-          ⚓ ${nick}
-        </div>
-      `;
-    }
+  if (context === 'table') {
     return `
-      <span style="font-weight: 800; color: #0f172a;">${real}</span>
-      <span style="font-size: 0.74rem; font-weight: 700; color: ${h?.colorDark || '#334155'}; background: ${h?.bgLight || '#f1f5f9'}; border: 1px solid ${h?.borderColor || '#cbd5e1'}; padding: 1px 6px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px; margin-left: 6px;">
-        ⚓ ${nick}
-      </span>
+      <div style="display: flex; flex-direction: column; gap: 2px;">
+        <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${name}</span>
+      </div>
     `;
   }
-
-  // Spectator, Pupil, Projector, Netlify Cloud view: Always Nickname!
-  return `<span style="font-weight: 700;">${nick}</span>`;
+  if (context === 'podium') {
+    return `
+      <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${name}</div>
+    `;
+  }
+  return `<span style="font-weight: 700;">${name}</span>`;
 }
 
 export function renderPlayerNameWithCallsign(player, context = 'default') {
@@ -431,10 +443,13 @@ export function getPlayerSelectLabel(player) {
   if (!player) return '';
   const h = HOUSES[player.house];
   const houseName = h ? h.name : player.house;
-  if (player.realName && player.realName !== player.nickname) {
-    return `${player.realName} [${player.nickname || player.name}] (${houseName} - Rtg ${player.rating})`;
-  }
-  return `${player.nickname || player.name} (${houseName} - Rtg ${player.rating})`;
+  const name =
+    CALLSIGN_TO_FIRST_NAME[player.name] ||
+    CALLSIGN_TO_FIRST_NAME[player.nickname] ||
+    player.realName ||
+    player.name ||
+    player.nickname;
+  return `${name} (${houseName} - Rtg ${player.rating})`;
 }
 
 // Helper: Inspect emergency recovery backup
@@ -2929,6 +2944,8 @@ function renderActiveBoardPairingsGrid() {
               borderColor: '#fecaca',
             };
             const isDone = !!p.completed;
+            const wName = CALLSIGN_TO_FIRST_NAME[p.white.name] || p.white.realName || p.white.name;
+            const bName = CALLSIGN_TO_FIRST_NAME[p.black.name] || p.black.realName || p.black.name;
 
             return `
             <div class="board-pairing-card" data-white-id="${p.white.id}" data-black-id="${p.black.id}" style="background: ${isDone ? '#f0fdf4' : '#ffffff'}; border: 2px solid ${isDone ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;">
@@ -2950,7 +2967,7 @@ function renderActiveBoardPairingsGrid() {
                 <div style="background: #f8fafc; border: 1.5px solid ${wH.borderColor}; border-radius: 6px; padding: 8px 10px;">
                   <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">♔ White</div>
                   <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    ${p.white.name}
+                    ${wName}
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px; margin-top: 3px;">
                     <span style="background: ${wH.bgLight}; color: ${wH.color}; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; border: 1px solid ${wH.borderColor};">
@@ -2967,7 +2984,7 @@ function renderActiveBoardPairingsGrid() {
                 <div style="background: #f8fafc; border: 1.5px solid ${bH.borderColor}; border-radius: 6px; padding: 8px 10px; text-align: right;">
                   <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; text-transform: uppercase;">♚ Black</div>
                   <div style="font-size: 0.95rem; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    ${p.black.name}
+                    ${bName}
                   </div>
                   <div style="display: flex; align-items: center; gap: 4px; margin-top: 3px; justify-content: flex-end;">
                     <span style="background: ${bH.bgLight}; color: ${bH.color}; font-size: 0.68rem; font-weight: 700; padding: 1px 6px; border-radius: 3px; border: 1px solid ${bH.borderColor};">
@@ -2985,7 +3002,7 @@ function renderActiveBoardPairingsGrid() {
                     ? `
                 <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; font-size: 0.82rem; font-weight: 800; color: #15803d; text-align: center;">
                   <i class="fa-solid fa-circle-check"></i>
-                  Result: <strong>${p.result}</strong> · ${p.result === '1-0' ? p.white.name + ' Won' : p.result === '0-1' ? p.black.name + ' Won' : 'Draw'}
+                  Result: <strong>${p.result}</strong> · ${p.result === '1-0' ? wName + ' Won' : p.result === '0-1' ? bName + ' Won' : 'Draw'}
                 </div>
                 `
                     : `
@@ -2998,7 +3015,7 @@ function renderActiveBoardPairingsGrid() {
                 <div style="background: #dcfce7; border: 1px solid #86efac; border-radius: 6px; padding: 8px 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px;">
                   <div style="font-size: 0.82rem; font-weight: 800; color: #15803d; display: flex; align-items: center; gap: 6px;">
                     <i class="fa-solid fa-circle-check"></i>
-                    <span>Result: <strong>${p.result}</strong> · ${p.result === '1-0' ? p.white.name + ' Won (+3)' : p.result === '0-1' ? p.black.name + ' Won (+3)' : 'Draw (+2 each)'}</span>
+                    <span>Result: <strong>${p.result}</strong> · ${p.result === '1-0' ? wName + ' Won (+3)' : p.result === '0-1' ? bName + ' Won (+3)' : 'Draw (+2 each)'}</span>
                   </div>
                   <button type="button" onclick="window.undoBoardResult(${p.board})" style="background: #ffffff; color: #475569; border: 1px solid #cbd5e1; font-size: 0.72rem; font-weight: 700; padding: 3px 8px; border-radius: 4px; cursor: pointer;" title="Undo and re-score this game">
                     ↺ Change
@@ -3050,11 +3067,13 @@ function renderActiveBoardPairingsGrid() {
         ${byeBoards
           .map((p) => {
             const h = HOUSES[p.white.house] || { name: p.white.house, color: '#64748b' };
+            const byeName =
+              CALLSIGN_TO_FIRST_NAME[p.white.name] || p.white.realName || p.white.name;
             return `
             <div style="background: #fafaf9; border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
               <div>
                 <div style="font-size: 0.72rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Odd Number of Pupils · Practice Bye</div>
-                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">${p.white.name} (${h.name})</div>
+                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">${byeName} (${h.name})</div>
               </div>
               <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;">
                 +1 Bye Pt
@@ -3152,7 +3171,7 @@ function renderSignInTab(players = []) {
           <span>Games logged this term: <strong style="color: #facc15;">${chessState.matches.length}</strong></span>
           ${hasPairings ? `<span>·</span><span style="color: #38bdf8; font-weight: 700;">⚔️ ${chessState.activePairings.filter((p) => !p.isBye).length} Boards Currently Paired</span>` : ''}
           <span>·</span>
-          <span style="color: ${chessState.projectorMode ? '#c084fc' : '#94a3b8'};">Display Mode: <strong>${chessState.projectorMode ? 'Projector Cloak (Callsigns Only)' : 'Teacher View (Names + Callsigns)'}</strong></span>
+          <span style="color: ${chessState.projectorMode ? '#c084fc' : '#94a3b8'};">Display Mode: <strong>${chessState.projectorMode ? 'Projector Mode' : 'Teacher View'}</strong></span>
         </div>
       </div>
 
@@ -3175,7 +3194,7 @@ function renderSignInTab(players = []) {
               <input type="text" id="reg-name" required placeholder="e.g. Leo B. or Emily T." style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; font-family: inherit; outline: none; transition: border-color 0.2s;" onfocus="this.style.borderColor='#10b981'" onblur="this.style.borderColor='#cbd5e1'; if(this.value && window.sanitizePupilName) this.value = window.sanitizePupilName(this.value);">
               <div style="font-size: 0.74rem; color: #64748b; margin-top: 5px; display: flex; align-items: center; gap: 5px; line-height: 1.3;">
                 <i class="fa-solid fa-shield-halved" style="color: #6366f1;"></i>
-                <span><strong>GDPR Safe Callsigns:</strong> Pupils receive an epic historical callsign (e.g. <em>Spartan Alexander</em>) for leaderboards &amp; projector displays.</span>
+                <span><strong>Pupil Privacy:</strong> Use first name (e.g. <em>Leo</em> or <em>Leo B.</em>). Full surnames are auto-sanitised.</span>
               </div>
             </div>
 
@@ -4356,8 +4375,8 @@ window.toggleProjectorMode = function () {
   renderChessHubView();
   showChessToast(
     chessState.projectorMode
-      ? '📺 Projector Cloak Active: Showing Historical Callsigns only (GDPR Projector Safe)!'
-      : '💻 Teacher View Active: Showing pupil names with callsign badges.',
+      ? '📺 Projector Mode Active (Clean Classroom View)'
+      : '💻 Teacher View Active',
     'info',
   );
 };
@@ -4573,27 +4592,22 @@ window.handleSelfRegister = function (e) {
       chessState.checkedInPlayerIds.push(existing.id);
       saveChessState();
       renderChessHubView();
-      showChessToast(
-        `Welcome back, ${existing.realName || existing.name}! Callsign: "${existing.nickname || existing.name}" checked in.`,
-        'success',
-      );
+      showChessToast(`Welcome back, ${existing.name || existing.realName}! Checked in.`, 'success');
     } else {
       showChessToast(
-        `${existing.realName || existing.name} [${existing.nickname || existing.name}] is already checked in for today!`,
+        `${existing.name || existing.realName} is already checked in for today!`,
         'info',
       );
     }
     return false;
   }
 
-  const existingNicks = chessState.players.map((p) => p.nickname || p.name);
-  const nickname = generateHouseThematicNickname(name, house, existingNicks);
   const newId = 'p_' + Date.now();
   const newRank = chessState.players.length + 1;
   const newPlayer = {
     id: newId,
-    name: nickname,
-    nickname: nickname,
+    name: name,
+    nickname: name,
     realName: name,
     house: house,
     rating: 1000,
@@ -4609,10 +4623,7 @@ window.handleSelfRegister = function (e) {
   savePlayerRealName(newId, name);
   saveChessState();
   renderChessHubView();
-  showChessToast(
-    `🎉 Welcome ${name}! Callsign: "${nickname}" (${HOUSES[house]?.name || house})`,
-    'success',
-  );
+  showChessToast(`🎉 Welcome ${name}! (${HOUSES[house]?.name || house})`, 'success');
 
   setTimeout(() => {
     const input = document.getElementById('reg-name');
@@ -8177,12 +8188,16 @@ window.printFidePairingSheet = function () {
 
   const rowsHtml = pairings
     .map((p) => {
+      const whiteName = CALLSIGN_TO_FIRST_NAME[p.white?.name] || p.white?.realName || p.white?.name;
+      const blackName = p.black
+        ? CALLSIGN_TO_FIRST_NAME[p.black.name] || p.black.realName || p.black.name
+        : '';
       if (p.isBye) {
         return `
         <tr style="background: #f8fafc;">
           <td style="text-align: center; font-weight: 900; font-size: 13px;">Board ${p.board}</td>
           <td style="font-weight: 700; font-size: 13px; color: #0f172a;">
-            ♔ ${p.white.name} 
+            ♔ ${whiteName} 
             <div style="font-size: 10px; color: ${HOUSES[p.white.house]?.color || '#333'}; font-weight: 800; text-transform: uppercase;">
               ${HOUSES[p.white.house]?.name || p.white.house} · ELO ${p.white.rating}
             </div>
@@ -8206,7 +8221,7 @@ window.printFidePairingSheet = function () {
         </td>
         <td>
           <div style="font-weight: 700; font-size: 13px; color: #0f172a;">
-            ♔ ${p.white.name} 
+            ♔ ${whiteName} 
           </div>
           <div style="font-size: 10px; font-weight: 800; color: ${wH?.color || '#333'}; text-transform: uppercase;">
             ${wH?.name || p.white.house} House · ELO ${p.white.rating}
@@ -8223,7 +8238,7 @@ window.printFidePairingSheet = function () {
         </td>
         <td>
           <div style="font-weight: 700; font-size: 13px; color: #0f172a;">
-            ♚ ${p.black.name} 
+            ♚ ${blackName} 
           </div>
           <div style="font-size: 10px; font-weight: 800; color: ${bH?.color || '#333'}; text-transform: uppercase;">
             ${bH?.name || p.black.house} House · ELO ${p.black.rating}
@@ -8505,14 +8520,12 @@ window.handleAddPlayerSubmit = function (e) {
 
   if (!name) return;
 
-  const existingNicks = chessState.players.map((p) => p.nickname || p.name);
-  const nickname = generateHouseThematicNickname(name, house, existingNicks);
   const newId = 'p_' + Date.now();
   const newRank = chessState.players.length + 1;
   const newPlayer = {
     id: newId,
-    name: nickname,
-    nickname: nickname,
+    name: name,
+    nickname: name,
     realName: name,
     house: house,
     rating: 1000,
@@ -8529,10 +8542,7 @@ window.handleAddPlayerSubmit = function (e) {
   saveChessState();
   window.closeChessModal();
   renderChessHubView();
-  showChessToast(
-    `🎉 Added ${name} with Callsign "${nickname}" (${HOUSES[house]?.name || house})!`,
-    'success',
-  );
+  showChessToast(`🎉 Added ${name} (${HOUSES[house]?.name || house})!`, 'success');
 };
 
 window.quickChallengePlayer = function (targetId) {
