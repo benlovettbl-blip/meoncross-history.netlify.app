@@ -1033,18 +1033,18 @@ function renderAnswerBankPage(pageNum, quip) {
   const col2 = dualRetrievalBank.slice(12, 24);
 
   const renderAnswerItem = (q) => `
-    <div style="border-bottom: 0.8px solid #e0e0e0; padding-bottom: 2px; margin-bottom: 1px; flex: 1; display: flex; flex-direction: column; justify-content: center;">
+    <div style="border-bottom: 0.8px solid #e0e0e0; padding: 2px 0; flex: 1; display: flex; flex-direction: column; justify-content: center;">
       <div style="display: flex; justify-content: space-between; align-items: baseline;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; color: #000000;">
           Q${q.num}. ${q.title}
         </strong>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #555555;">[2m]</span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">[2m]</span>
       </div>
-      <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.18; color: #111111; margin-top: 1px;">
-        <span style="font-weight: 800; color: #000000;">• Fact [1m]:</span> ${q.modelFact}
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.25; color: #000000; font-weight: 800; margin-top: 1.5px;">
+        <span style="font-weight: 900; color: #000000;">• Fact:</span> ${q.modelFact}
       </div>
-      <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.18; color: #111111;">
-        <span style="font-weight: 800; color: #000000;">• Explanation [1m]:</span> ${q.modelExpl}
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.25; color: #000000; font-weight: 800; margin-top: 1px;">
+        <span style="font-weight: 900; color: #000000;">• Explanation:</span> ${q.modelExpl}
       </div>
     </div>`;
 
@@ -1052,25 +1052,25 @@ function renderAnswerBankPage(pageNum, quip) {
   <!-- PAGE 19: COMPLETE DEPARTMENT ANSWER BANK & EXAMINER TRAP MATRIX -->
   <div class="page page-container recto-page" id="page-19" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
         <div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-            Complete Department Answer Bank &bull; 24-Question Dual-Retrieval Mastery
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
+            Complete Department Answer Bank &bull; 24-Question Dual-Retrieval Key
           </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #444444; font-weight: 600;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #333333; font-weight: 600;">
             Standardised Core Factual Knowledge &amp; Causal Explanation Models (Enquiries 1–5 &amp; Synoptic Turning Points)
           </div>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
           Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 48 ]
         </span>
       </div>
 
       <!-- Main Body Container filling vertical space -->
-      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between; min-height: 0;">
+      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between; min-height: 0;">
         <!-- 2-Column Complete Answer Grid -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px; flex: 1; align-content: space-between; height: 100%;">
+        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 9px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; flex: 1; align-content: space-between; height: 100%;">
             <div style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
               ${col1.map(renderAnswerItem).join('')}
             </div>
@@ -1081,52 +1081,36 @@ function renderAnswerBankPage(pageNum, quip) {
         </div>
 
         <!-- Common Examiner Traps & Misconceptions Matrix -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #fafafa;">
+        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fafafa;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #000000;">
               ⚠️ Common Examiner Traps &amp; Key Historical Misconceptions
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #333333;">
               GCSE GRADE 7–9 DISCIPLINARY PRECISION
             </span>
           </div>
-          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.2; color: #222222;">
+          <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.24; color: #000000;">
             <div style="border: 0.8px solid #000000; border-radius: 2px; padding: 3px 4px; background: #ffffff;">
-              <strong style="display: block; font-size: 6.6pt; color: #000000; margin-bottom: 1px;">1. Supreme Head vs Governor</strong>
+              <strong style="display: block; font-size: 6.8pt; color: #000000; margin-bottom: 1px;">1. Supreme Head vs Governor</strong>
               Henry VIII claimed absolute spiritual headship (1534); Elizabeth I deliberately chose ‘Governor’ (1559) to soothe Catholic conscience and avoid Puritan blasphemy claims while retaining legal governance.
             </div>
             <div style="border: 0.8px solid #000000; border-radius: 2px; padding: 3px 4px; background: #ffffff;">
-              <strong style="display: block; font-size: 6.6pt; color: #000000; margin-bottom: 1px;">2. 1642 Outbreak vs 1649 Regicide</strong>
+              <strong style="display: block; font-size: 6.8pt; color: #000000; margin-bottom: 1px;">2. 1642 Outbreak vs 1649 Regicide</strong>
               The Civil War was fought in 1642 to curb royal prerogative and enforce parliamentary consent, NOT to kill the King. Regicide in 1649 was a radical minority act after Charles secretly restarted war with Scotland.
             </div>
             <div style="border: 0.8px solid #000000; border-radius: 2px; padding: 3px 4px; background: #ffffff;">
-              <strong style="display: block; font-size: 6.6pt; color: #000000; margin-bottom: 1px;">3. 1688 Was an Invited Invasion</strong>
+              <strong style="display: block; font-size: 6.8pt; color: #000000; margin-bottom: 1px;">3. 1688 Was an Invited Invasion</strong>
               1688 was NOT a popular rebellion. Seven prominent English peers wrote a secret letter formally inviting Dutch Prince William with 15,000 troops; James II fled, allowing Parliament to claim abdication.
             </div>
             <div style="border: 0.8px solid #000000; border-radius: 2px; padding: 3px 4px; background: #ffffff;">
-              <strong style="display: block; font-size: 6.6pt; color: #000000; margin-bottom: 1px;">4. Cromwell: Protector, Not King</strong>
+              <strong style="display: block; font-size: 6.8pt; color: #000000; margin-bottom: 1px;">4. Cromwell: Protector, Not King</strong>
               Oliver Cromwell was offered the crown in the Humble Petition and Advice (1657) but refused it due to Puritan army pressure. He governed as Lord Protector, a military dictatorship, not an anointed monarch.
             </div>
             <div style="border: 0.8px solid #000000; border-radius: 2px; padding: 3px 4px; background: #ffffff;">
-              <strong style="display: block; font-size: 6.6pt; color: #000000; margin-bottom: 1px;">5. Ship Money Legal Nuance</strong>
+              <strong style="display: block; font-size: 6.8pt; color: #000000; margin-bottom: 1px;">5. Ship Money Legal Nuance</strong>
               Ship Money was historically a lawful emergency tax on coastal towns during war. Charles I made it tyrannical by extending it permanently to inland counties in peacetime without parliamentary vote.
             </div>
-          </div>
-        </div>
-
-        <!-- DIRT Protocol Green Pen Action Box -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">
-              DIRT Protocol: Green Pen Causal Correction &amp; Target Revision
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-style: italic; color: #444444;">
-              Write out the corrected causal explanation for any questions missed:
-            </span>
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 0;">
-            <div class="task-line" style="height: 7.8mm; border-bottom: 1.1px solid #000000;"></div>
-            <div class="task-line" style="height: 7.8mm; border-bottom: 1.1px solid #000000;"></div>
           </div>
         </div>
       </div>
