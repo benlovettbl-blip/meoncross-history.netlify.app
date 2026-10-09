@@ -3,7 +3,7 @@
  * Connects teacher arbiter actions to pupil devices in real time.
  */
 
-import { CALLSIGN_TO_FIRST_NAME } from './chess_zone.js';
+import { CALLSIGN_TO_FIRST_NAME, DEFAULT_LOCAL_NAME_MAP } from './chess_zone.js';
 
 const SYNC_ENDPOINT = '/.netlify/functions/chess_sync';
 const POLL_INTERVAL_MS = 3000;
@@ -69,6 +69,7 @@ export async function broadcastStateToCloud(chessState, showToast = false) {
         const nameMap = {};
         (chessState.players || []).forEach((p) => {
           const cleanName =
+            DEFAULT_LOCAL_NAME_MAP[p.id] ||
             CALLSIGN_TO_FIRST_NAME[p.name] ||
             CALLSIGN_TO_FIRST_NAME[p.nickname] ||
             p.realName ||
@@ -83,6 +84,7 @@ export async function broadcastStateToCloud(chessState, showToast = false) {
         const broadcastPlayers = (chessState.players || []).map((p) => {
           const { realName, year, ...rest } = p;
           const cleanName =
+            DEFAULT_LOCAL_NAME_MAP[p.id] ||
             CALLSIGN_TO_FIRST_NAME[p.name] ||
             CALLSIGN_TO_FIRST_NAME[p.nickname] ||
             p.realName ||
@@ -91,6 +93,7 @@ export async function broadcastStateToCloud(chessState, showToast = false) {
             ...rest,
             name: cleanName,
             nickname: cleanName,
+            realName: cleanName,
           };
         });
 

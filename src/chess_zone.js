@@ -198,11 +198,26 @@ export const CALLSIGN_TO_FIRST_NAME = {
   'Alex R.': 'Alex',
   'Will V.': 'Will',
   'Woody R.': 'Woody',
+  'Harry C.': 'Harry C.',
   'Jacob C.': 'Jacob',
+  'Jacob B.': 'Jacob',
   'Thomas S.': 'Thomas',
+  'Thomas B.': 'Thomas',
+  'Tadhg D.': 'Tadhg',
   'Tadhg F.': 'Tadhg',
   'Jake B.': 'Jake',
   'Ben T.': 'Ben',
+  'Harry M.': 'Harry M.',
+  Ethan: 'Ethan',
+  Austen: 'Austen',
+  Alex: 'Alex',
+  Will: 'Will',
+  Woody: 'Woody',
+  Jacob: 'Jacob',
+  Thomas: 'Thomas',
+  Tadhg: 'Tadhg',
+  Jake: 'Jake',
+  Ben: 'Ben',
 };
 
 // Combinatorial Historical Naval Chess Themes
@@ -359,42 +374,53 @@ export function hydratePlayerRealNames(players) {
 
   players.forEach((p) => {
     // 1. Check if name or nickname is a legacy callsign or initialed name
-    if (CALLSIGN_TO_FIRST_NAME[p.name]) {
-      p.name = CALLSIGN_TO_FIRST_NAME[p.name];
-    }
-    if (CALLSIGN_TO_FIRST_NAME[p.nickname]) {
-      p.nickname = CALLSIGN_TO_FIRST_NAME[p.nickname];
-    }
+    const rawVal =
+      localMap[p.id] ||
+      DEFAULT_LOCAL_NAME_MAP[p.id] ||
+      CALLSIGN_TO_FIRST_NAME[p.name] ||
+      CALLSIGN_TO_FIRST_NAME[p.nickname] ||
+      CALLSIGN_TO_FIRST_NAME[p.realName] ||
+      p.realName ||
+      p.name ||
+      p.nickname;
 
-    const real = localMap[p.id] || DEFAULT_LOCAL_NAME_MAP[p.id] || p.realName || p.name;
-    const cleanReal = CALLSIGN_TO_FIRST_NAME[real] || real;
-    p.realName = cleanReal;
-    p.name = cleanReal;
-    p.nickname = cleanReal;
+    const clean = typeof sanitizePupilName === 'function' ? sanitizePupilName(rawVal) : rawVal;
+    p.realName = clean;
+    p.name = clean;
+    p.nickname = clean;
+
+    if (typeof p.byesReceived !== 'number') p.byesReceived = 0;
+    if (typeof p.lastRoundBye !== 'boolean') p.lastRoundBye = false;
   });
 
   // Also migrate any active pairings if present in chessState
   if (typeof chessState !== 'undefined' && Array.isArray(chessState.activePairings)) {
     chessState.activePairings.forEach((pair) => {
       if (pair.white) {
-        const wName =
-          CALLSIGN_TO_FIRST_NAME[pair.white.name] ||
+        const wVal =
+          localMap[pair.white.id] ||
           DEFAULT_LOCAL_NAME_MAP[pair.white.id] ||
+          CALLSIGN_TO_FIRST_NAME[pair.white.name] ||
+          CALLSIGN_TO_FIRST_NAME[pair.white.nickname] ||
           pair.white.realName ||
           pair.white.name;
-        pair.white.name = wName;
-        pair.white.nickname = wName;
-        pair.white.realName = wName;
+        const wClean = typeof sanitizePupilName === 'function' ? sanitizePupilName(wVal) : wVal;
+        pair.white.name = wClean;
+        pair.white.nickname = wClean;
+        pair.white.realName = wClean;
       }
       if (pair.black) {
-        const bName =
-          CALLSIGN_TO_FIRST_NAME[pair.black.name] ||
+        const bVal =
+          localMap[pair.black.id] ||
           DEFAULT_LOCAL_NAME_MAP[pair.black.id] ||
+          CALLSIGN_TO_FIRST_NAME[pair.black.name] ||
+          CALLSIGN_TO_FIRST_NAME[pair.black.nickname] ||
           pair.black.realName ||
           pair.black.name;
-        pair.black.name = bName;
-        pair.black.nickname = bName;
-        pair.black.realName = bName;
+        const bClean = typeof sanitizePupilName === 'function' ? sanitizePupilName(bVal) : bVal;
+        pair.black.name = bClean;
+        pair.black.nickname = bClean;
+        pair.black.realName = bClean;
       }
     });
   }
@@ -411,25 +437,28 @@ export function hydratePlayerRealNames(players) {
 export function getPlayerDisplayName(player, context = 'default') {
   if (!player) return 'Unknown Player';
   const name =
+    DEFAULT_LOCAL_NAME_MAP[player.id] ||
     CALLSIGN_TO_FIRST_NAME[player.name] ||
     CALLSIGN_TO_FIRST_NAME[player.nickname] ||
     player.realName ||
     player.name ||
     player.nickname;
 
+  const clean = typeof sanitizePupilName === 'function' ? sanitizePupilName(name) : name;
+
   if (context === 'table') {
     return `
       <div style="display: flex; flex-direction: column; gap: 2px;">
-        <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${name}</span>
+        <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${clean}</span>
       </div>
     `;
   }
   if (context === 'podium') {
     return `
-      <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${name}</div>
+      <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${clean}</div>
     `;
   }
-  return `<span style="font-weight: 700;">${name}</span>`;
+  return `<span style="font-weight: 700;">${clean}</span>`;
 }
 
 export function renderPlayerNameWithCallsign(player, context = 'default') {
@@ -444,12 +473,14 @@ export function getPlayerSelectLabel(player) {
   const h = HOUSES[player.house];
   const houseName = h ? h.name : player.house;
   const name =
+    DEFAULT_LOCAL_NAME_MAP[player.id] ||
     CALLSIGN_TO_FIRST_NAME[player.name] ||
     CALLSIGN_TO_FIRST_NAME[player.nickname] ||
     player.realName ||
     player.name ||
     player.nickname;
-  return `${name} (${houseName} - Rtg ${player.rating})`;
+  const clean = typeof sanitizePupilName === 'function' ? sanitizePupilName(name) : name;
+  return `${clean} (${houseName} - Rtg ${player.rating})`;
 }
 
 // Helper: Inspect emergency recovery backup
@@ -503,13 +534,15 @@ let chessState = {
   checkedInPlayerIds: [],
   activePairings: [],
   pairingsHistory: [],
+  byesReceived: {},
+  lastRoundByePlayerId: null,
   leagueTableViewMode: 'matrix', // 'matrix' | 'table'
   knockoutBracket: null,
-  activeTab: 'ladder', // 'ladder' | 'signin' | 'table' | 'pairings' | 'knockout' | 'drills' | 'beginners' | 'matches'
+  activeTab: 'signin', // Default to Match Day & Pairings Hub for immediate Period 6 readiness
   filterHouse: 'all', // 'all' | houseId
   userRole: getInitialRole(), // 'teacher' | 'pupil'
   airgapMode: isAirgapModeActive(), // Safe by default on school laptop
-  projectorMode: false, // Cloaks real names for classroom TV/projector
+  projectorMode: false,
   isPupilPreview: false,
   currentPuzzleIdx: 0,
   puzzleCategory: 'grandmaster', // 'grandmaster' | 'beginner'
@@ -1360,34 +1393,31 @@ export function renderChessHubView() {
           : ''
       }
 
-      <!-- Main Navigation Tabs: Classic Typography -->
+      <!-- Main Navigation Tabs: Simplified Classroom Layout -->
       <div style="display: flex; gap: 4px; border-bottom: 2px solid #e7e5e4; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: thin;">
-        <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
-          <span style="font-size: 1.05rem; line-height: 1;">🪜</span> Master Ladder (${chessState.players.length})
-        </button>
         ${
           chessState.userRole === 'teacher'
             ? `
         <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
-          <span style="font-size: 1.1rem; line-height: 1;">♔</span> Period 6 Match Grid
+          <span style="font-size: 1.1rem; line-height: 1;">⚔️</span> Match Day &amp; Pairings
         </button>
         `
             : ''
         }
-        <button onclick="window.switchChessTab('table')" style="${getTabStyle(chessState.activeTab === 'table')}">
-          <span style="font-size: 1.05rem; line-height: 1;">☵</span> League Cross-Table
+        <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
+          <span style="font-size: 1.05rem; line-height: 1;">🏆</span> House Standings (${chessState.players.length})
         </button>
-        <button onclick="window.switchChessTab('knockout')" style="${getTabStyle(chessState.activeTab === 'knockout')}">
-          <span style="font-size: 1.05rem; line-height: 1;">♛</span> Championship Cup
+        <button onclick="window.switchChessTab('table')" style="${getTabStyle(chessState.activeTab === 'table')}">
+          <span style="font-size: 1.05rem; line-height: 1;">📊</span> Cross-Table
+        </button>
+        <button onclick="window.switchChessTab('matches')" style="${getTabStyle(chessState.activeTab === 'matches')}">
+          <span style="font-size: 1.05rem; line-height: 1;">📜</span> Match History (${chessState.matches.length})
+        </button>
+        <button onclick="window.switchChessTab('drills')" style="${getTabStyle(chessState.activeTab === 'drills')}">
+          <span style="font-size: 1.05rem; line-height: 1;">🧩</span> Tactical Puzzles
         </button>
         <button onclick="window.switchChessTab('beginners')" style="${getTabStyle(chessState.activeTab === 'beginners')}">
           <span style="font-size: 1.05rem; line-height: 1;">🌱</span> Rookie Academy
-        </button>
-        <button onclick="window.switchChessTab('drills')" style="${getTabStyle(chessState.activeTab === 'drills')}">
-          <span style="font-size: 1.05rem; line-height: 1;">📖</span> Master Tactical Drills
-        </button>
-        <button onclick="window.switchChessTab('matches')" style="${getTabStyle(chessState.activeTab === 'matches')}">
-          <span style="font-size: 1.05rem; line-height: 1;">📜</span> Match Ledger (${chessState.matches.length})
         </button>
       </div>
 
@@ -2859,6 +2889,18 @@ function renderActiveBoardPairingsGrid() {
   const hasHistory =
     Array.isArray(chessState.pairingsHistory) && chessState.pairingsHistory.length > 0;
 
+  // Calculate free pupils for smart notification banner
+  const busyIds = new Set();
+  activeBoards.forEach((b) => {
+    if (!b.completed) {
+      if (b.white && b.white.id) busyIds.add(b.white.id);
+      if (b.black && b.black.id) busyIds.add(b.black.id);
+    }
+  });
+  const checkedInSet = new Set(chessState.checkedInPlayerIds || []);
+  const freePupils = chessState.players.filter((p) => checkedInSet.has(p.id) && !busyIds.has(p.id));
+  const hasInProgress = activeBoards.some((b) => !b.completed);
+
   return `
     <div id="classroom-pairings-grid" style="background: #ffffff; border: 2px solid #38bdf8; border-radius: 12px; padding: 22px; box-shadow: 0 8px 24px rgba(2, 132, 199, 0.08); margin-top: 14px;">
       
@@ -2906,6 +2948,30 @@ function renderActiveBoardPairingsGrid() {
         }
       </div>
 
+      <!-- Smart Free Pupils Notification Banner -->
+      ${
+        freePupils.length >= 2 && hasInProgress
+          ? `
+      <div style="background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); border: 1.5px solid #34d399; border-radius: 8px; padding: 10px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; box-shadow: 0 2px 6px rgba(5, 150, 105, 0.1);">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-size: 1.25rem;">⚡</span>
+          <div>
+            <div style="font-weight: 800; color: #065f46; font-size: 0.88rem;">
+              ${freePupils.length} Pupils Ready for Next Match:
+            </div>
+            <div style="font-size: 0.8rem; color: #047857; margin-top: 1px;">
+              ${freePupils.map((p) => p.name).join(', ')}
+            </div>
+          </div>
+        </div>
+        <button type="button" onclick="window.pairFreePupilsOnMatchGrid()" style="background: #059669; color: #ffffff; border: none; font-weight: 800; font-size: 0.82rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(5, 150, 105, 0.3);">
+          <span>⚡</span> Pair Free Pupils on Board ${activeBoards.length + 1}
+        </button>
+      </div>
+      `
+          : ''
+      }
+
       ${
         chessState.userRole === 'pupil'
           ? `
@@ -2944,16 +3010,25 @@ function renderActiveBoardPairingsGrid() {
               borderColor: '#fecaca',
             };
             const isDone = !!p.completed;
-            const wName = CALLSIGN_TO_FIRST_NAME[p.white.name] || p.white.realName || p.white.name;
-            const bName = CALLSIGN_TO_FIRST_NAME[p.black.name] || p.black.realName || p.black.name;
+            const wName =
+              DEFAULT_LOCAL_NAME_MAP[p.white.id] ||
+              CALLSIGN_TO_FIRST_NAME[p.white.name] ||
+              p.white.realName ||
+              p.white.name;
+            const bName = p.black
+              ? DEFAULT_LOCAL_NAME_MAP[p.black.id] ||
+                CALLSIGN_TO_FIRST_NAME[p.black.name] ||
+                p.black.realName ||
+                p.black.name
+              : 'TBD';
 
             return `
-            <div class="board-pairing-card" data-white-id="${p.white.id}" data-black-id="${p.black.id}" style="background: ${isDone ? '#f0fdf4' : '#ffffff'}; border: 2px solid ${isDone ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;">
+            <div class="board-pairing-card" data-white-id="${p.white.id}" data-black-id="${p.black ? p.black.id : ''}" style="background: ${isDone ? '#f0fdf4' : '#ffffff'}; border: 2px solid ${isDone ? '#86efac' : '#e2e8f0'}; border-radius: 10px; padding: 14px 16px; box-shadow: 0 2px 6px rgba(0,0,0,0.03); display: flex; flex-direction: column; justify-content: space-between; transition: all 0.2s;">
               
               <!-- Board Header -->
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid ${isDone ? '#bbf7d0' : '#f1f5f9'}; padding-bottom: 8px;">
                 <span style="background: ${isDone ? '#16a34a' : '#0284c7'}; color: #ffffff; font-family: monospace; font-size: 0.76rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">
-                  BOARD ${p.board}
+                  BOARD ${p.board} ${p.isCoachGame ? '· COACH MATCH' : ''}
                 </span>
                 <span style="font-size: 0.74rem; font-weight: 700; color: #64748b;">
                   ${wH.name} vs ${bH.name}
@@ -3033,7 +3108,7 @@ function renderActiveBoardPairingsGrid() {
                             onmouseover="this.style.borderColor='#2563eb';this.style.background='#eff6ff'"
                             onmouseout="this.style.borderColor='#cbd5e1';this.style.background='#ffffff'"
                             title="White wins (+3 House pts)">
-                      <span>♔ White (1)</span>
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">♔ ${wName} Won</span>
                       <span style="font-size: 0.65rem; color: #16a34a; font-weight: 700;">+3 Pts</span>
                     </button>
 
@@ -3051,7 +3126,7 @@ function renderActiveBoardPairingsGrid() {
                             onmouseover="this.style.background='#0f172a';this.style.borderColor='#dc2626'"
                             onmouseout="this.style.background='#1e293b';this.style.borderColor='#0f172a'"
                             title="Black wins (+3 House pts)">
-                      <span>♚ Black (1)</span>
+                      <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">♚ ${bName} Won</span>
                       <span style="font-size: 0.65rem; color: #86efac; font-weight: 700;">+3 Pts</span>
                     </button>
                   </div>
@@ -3068,16 +3143,33 @@ function renderActiveBoardPairingsGrid() {
           .map((p) => {
             const h = HOUSES[p.white.house] || { name: p.white.house, color: '#64748b' };
             const byeName =
-              CALLSIGN_TO_FIRST_NAME[p.white.name] || p.white.realName || p.white.name;
+              DEFAULT_LOCAL_NAME_MAP[p.white.id] ||
+              CALLSIGN_TO_FIRST_NAME[p.white.name] ||
+              p.white.realName ||
+              p.white.name;
             return `
-            <div style="background: #fafaf9; border: 1.5px dashed #cbd5e1; border-radius: 10px; padding: 14px 16px; display: flex; align-items: center; justify-content: space-between;">
-              <div>
-                <div style="font-size: 0.72rem; font-weight: 800; color: #94a3b8; text-transform: uppercase;">Odd Number of Pupils · Practice Bye</div>
-                <div style="font-size: 0.95rem; font-weight: 700; color: #0f172a;">${byeName} (${h.name})</div>
+            <div style="background: #f8fafc; border: 2px dashed #94a3b8; border-radius: 10px; padding: 14px 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <div style="width: 40px; height: 40px; border-radius: 8px; background: #e0f2fe; color: #0284c7; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+                  👑
+                </div>
+                <div>
+                  <div style="font-size: 0.72rem; font-weight: 800; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px;">
+                    Odd Number of Pupils · Rotating Bye
+                  </div>
+                  <div style="font-size: 1.05rem; font-weight: 800; color: #0f172a;">
+                    ${byeName} <span style="font-size: 0.8rem; font-weight: 700; color: ${h.color || '#64748b'};">(${h.name})</span>
+                  </div>
+                  <div style="font-size: 0.78rem; color: #64748b; margin-top: 2px;">
+                    +1 House Point awarded · <strong>Guaranteed first priority</strong> when a board finishes or next round pairs!
+                  </div>
+                </div>
               </div>
-              <span style="background: #eff6ff; color: #2563eb; border: 1px solid #bfdbfe; font-size: 0.76rem; font-weight: 700; padding: 3px 8px; border-radius: 4px;">
-                +1 Bye Pt
-              </span>
+              <div style="display: flex; gap: 8px; align-items: center;">
+                <button type="button" onclick="window.playCoachGame(${p.board})" style="background: #1e293b; color: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 8px 14px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: flex; align-items: center; gap: 6px;" title="Convert this board into a live game against teacher or coach">
+                  <span>♟️</span> Play Teacher / Coach
+                </button>
+              </div>
             </div>
           `;
           })
@@ -3136,8 +3228,8 @@ function renderSignInTab(players = []) {
           </div>
 
           <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-            <button onclick="window.toggleProjectorMode()" style="background: ${chessState.projectorMode ? '#8b5cf6' : 'rgba(255,255,255,0.1)'}; color: #ffffff; border: 1.5px solid ${chessState.projectorMode ? '#c084fc' : 'rgba(255,255,255,0.2)'}; font-weight: 700; font-size: 0.82rem; padding: 9px 13px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Cloak pupil real names on classroom projector">
-              <span>${chessState.projectorMode ? '📺 Projector Cloak: ON' : '📺 Projector Cloak: OFF'}</span>
+            <button onclick="window.toggleChessWhiteboardMode(true)" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.85rem; padding: 10px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);" title="Open big-screen Whiteboard Projector for interactive whiteboard (Press W)">
+              <span>📺</span> Whiteboard Projector (W)
             </button>
             ${
               chessState.players.length > 0
@@ -3168,10 +3260,18 @@ function renderSignInTab(players = []) {
         <div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 14px; padding-top: 12px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.82rem; color: #94a3b8; align-items: center;">
           <span>Checked In: <strong style="color: #4ade80;">${checkedInPlayers.length}</strong> of ${chessState.players.length} pupils</span>
           <span>·</span>
+          <span>${
+            checkedInPlayers.length % 2 === 0
+              ? '<span style="color: #4ade80; font-weight: 700;">✓ Even count (' +
+                checkedInPlayers.length / 2 +
+                ' full boards)</span>'
+              : '<span style="color: #38bdf8; font-weight: 700;">👑 Odd count (' +
+                Math.floor(checkedInPlayers.length / 2) +
+                ' boards + 1 rotating bye)</span>'
+          }</span>
+          <span>·</span>
           <span>Games logged this term: <strong style="color: #facc15;">${chessState.matches.length}</strong></span>
           ${hasPairings ? `<span>·</span><span style="color: #38bdf8; font-weight: 700;">⚔️ ${chessState.activePairings.filter((p) => !p.isBye).length} Boards Currently Paired</span>` : ''}
-          <span>·</span>
-          <span style="color: ${chessState.projectorMode ? '#c084fc' : '#94a3b8'};">Display Mode: <strong>${chessState.projectorMode ? 'Projector Mode' : 'Teacher View'}</strong></span>
         </div>
       </div>
 
@@ -3198,20 +3298,14 @@ function renderSignInTab(players = []) {
               </div>
             </div>
 
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px;">
-              <div>
-                
-              </div>
-
-              <div>
-                <label for="reg-house" style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 5px;">School House:</label>
-                <select id="reg-house" required style="width: 100%; box-sizing: border-box; padding: 9px 10px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.88rem; font-family: inherit; background: #fff;">
-                  <option value="victory" selected>Victory (Blue)</option>
-                  <option value="warrior">Warrior (Red)</option>
-                  <option value="dreadnought">Dreadnought (Green)</option>
-                  <option value="invincible">Invincible (Yellow)</option>
-                </select>
-              </div>
+            <div style="margin-bottom: 16px;">
+              <label for="reg-house" style="display: block; font-size: 0.8rem; font-weight: 700; color: #334155; margin-bottom: 5px;">School House:</label>
+              <select id="reg-house" required style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; border: 1.5px solid #cbd5e1; font-size: 0.88rem; font-family: inherit; background: #fff;">
+                <option value="victory" selected>Victory (Blue)</option>
+                <option value="warrior">Warrior (Red)</option>
+                <option value="dreadnought">Dreadnought (Green)</option>
+                <option value="invincible">Invincible (Yellow)</option>
+              </select>
             </div>
 
             <button type="submit" id="btn-self-register-submit" style="width: 100%; background: #10b981; color: #ffffff; border: none; font-weight: 700; padding: 12px; border-radius: 8px; font-size: 0.95rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); transition: all 0.2s;" onmouseover="this.style.background='#059669'" onmouseout="this.style.background='#10b981'">
@@ -3236,11 +3330,21 @@ function renderSignInTab(players = []) {
             <div style="display: flex; flex-wrap: wrap; gap: 8px; max-height: 220px; overflow-y: auto; padding: 4px; margin-bottom: 8px;">
               ${notCheckedIn
                 .map((p) => {
-                  const h = HOUSES[p.house];
+                  const h = HOUSES[p.house] || {
+                    name: p.house,
+                    color: '#64748b',
+                    borderColor: '#cbd5e1',
+                    bgLight: '#f1f5f9',
+                  };
+                  const cleanName =
+                    DEFAULT_LOCAL_NAME_MAP[p.id] ||
+                    CALLSIGN_TO_FIRST_NAME[p.name] ||
+                    p.realName ||
+                    p.name;
                   return `
-                  <button type="button" onclick="window.checkInPlayer('${p.id}')" style="background: #f8fafc; border: 1.5px solid ${h.borderColor}; border-radius: 20px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: #1e293b; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.background='${h.bgLight}';this.style.borderColor='${h.color}'" onmouseout="this.style.background='#f8fafc';this.style.borderColor='${h.borderColor}'">
-                    <i class="fa-solid fa-circle-plus" style="color: ${h.color};"></i>
-                    <span>${renderPlayerNameWithCallsign(p)} (${h.name})</span>
+                  <button type="button" onclick="window.checkInPlayer('${p.id}')" style="background: #f8fafc; border: 1.5px solid ${h.borderColor || '#cbd5e1'}; border-radius: 20px; padding: 6px 14px; font-size: 0.85rem; font-weight: 700; color: #1e293b; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" onmouseover="this.style.background='${h.bgLight || '#f1f5f9'}';this.style.borderColor='${h.color || '#3b82f6'}'" onmouseout="this.style.background='#f8fafc';this.style.borderColor='${h.borderColor || '#cbd5e1'}'">
+                    <i class="fa-solid fa-circle-plus" style="color: ${h.color || '#3b82f6'};"></i>
+                    <span>${cleanName} (${h.name})</span>
                   </button>
                 `;
                 })
@@ -4650,8 +4754,13 @@ window.pairFreePupilsOnMatchGrid = function () {
 
   if (freePupils.length < 2) {
     if (freePupils.length === 1) {
+      const pName =
+        DEFAULT_LOCAL_NAME_MAP[freePupils[0].id] ||
+        CALLSIGN_TO_FIRST_NAME[freePupils[0].name] ||
+        freePupils[0].realName ||
+        freePupils[0].name;
       showChessToast(
-        `Only 1 free pupil right now (${freePupils[0].name}). Need at least 2 free pupils to pair a new board!`,
+        `Only 1 free pupil right now (${pName}). Need at least 2 free pupils to pair a new board!`,
         'warning',
       );
     } else {
@@ -4667,15 +4776,35 @@ window.pairFreePupilsOnMatchGrid = function () {
   if (!chessState.pairingsHistory) chessState.pairingsHistory = [];
   chessState.pairingsHistory.push(JSON.parse(JSON.stringify(activePairings)));
 
-  // Pair free pupils
-  const pool = [...freePupils].sort((a, b) => (b.rating || 1000) - (a.rating || 1000));
-  const newPairings = [];
+  // PRIORITIZE BYE PUPIL: If anyone was on a bye or sat out last round, put them at index 0 so they play immediately!
+  const byePairing = activePairings.find((b) => b.isBye && b.white);
+  const byePlayerId = byePairing?.white?.id || chessState.lastRoundByePlayerId;
+  const byePupil = freePupils.find((p) => p.id === byePlayerId || p.lastRoundBye);
+  const otherFree = freePupils.filter((p) => p.id !== byePupil?.id);
+
+  if (byePupil) {
+    byePupil.lastRoundBye = false;
+    if (chessState.lastRoundByePlayerId === byePupil.id) {
+      chessState.lastRoundByePlayerId = null;
+    }
+  }
+
+  // Sort remaining free pupils by rating
+  otherFree.sort((a, b) => (b.rating || 1000) - (a.rating || 1000));
+  const pool = byePupil ? [byePupil, ...otherFree] : [...otherFree];
+
+  // Clean out the old bye card if the bye pupil is being paired now
+  const existingActive = activePairings.filter(
+    (b) => !(b.isBye && byePupil && b.white?.id === byePupil.id),
+  );
+
   let maxBoardNum = 0;
-  activePairings.forEach((b) => {
+  existingActive.forEach((b) => {
     if (typeof b.board === 'number' && b.board > maxBoardNum) maxBoardNum = b.board;
   });
   let nextBoard = maxBoardNum + 1;
 
+  const newPairings = [];
   while (pool.length >= 2) {
     const white = pool.shift();
     let bestOpponentIdx = 0;
@@ -4698,10 +4827,15 @@ window.pairFreePupilsOnMatchGrid = function () {
     });
   }
 
+  // If 1 pupil is still left over after pairing, they get the new rotating bye
   if (pool.length === 1) {
+    const remainingByePupil = pool[0];
+    remainingByePupil.lastRoundBye = true;
+    remainingByePupil.byesReceived = (remainingByePupil.byesReceived || 0) + 1;
+    chessState.lastRoundByePlayerId = remainingByePupil.id;
     newPairings.push({
       board: nextBoard++,
-      white: pool[0],
+      white: remainingByePupil,
       black: null,
       isBye: true,
       completed: true,
@@ -4709,11 +4843,54 @@ window.pairFreePupilsOnMatchGrid = function () {
     });
   }
 
-  chessState.activePairings = [...activePairings, ...newPairings];
+  chessState.activePairings = [...existingActive, ...newPairings];
   saveChessState();
   renderChessHubView();
   showChessToast(
     `⚡ Paired ${newPairings.filter((p) => !p.isBye).length} new board(s) for free pupils without disturbing ongoing matches!`,
+    'success',
+  );
+};
+
+// 1-Click Play Teacher / Coach (for pupil on a Bye so they never sit idle)
+window.playCoachGame = function (boardNum) {
+  if (!chessState.activePairings) return;
+  const p = chessState.activePairings.find((x) => x.board === boardNum && x.isBye);
+  if (!p || !p.white) return;
+
+  const pupil = p.white;
+  const pupilObj = chessState.players.find((x) => x.id === pupil.id) || pupil;
+
+  // Convert bye card into an active match against Coach
+  p.isBye = false;
+  p.completed = false;
+  p.result = null;
+  p.isCoachMatch = true;
+  p.black = {
+    id: 'p_coach',
+    name: 'Teacher / Coach',
+    realName: 'Teacher / Coach',
+    nickname: 'Teacher / Coach',
+    house: pupil.house === 'warrior' ? 'victory' : 'warrior',
+    rating: pupilObj.rating || 1000,
+    games: 0,
+    won: 0,
+    drawn: 0,
+    lost: 0,
+    rank: 999,
+  };
+
+  // Reset bye status since they are now playing
+  pupilObj.lastRoundBye = false;
+  p.white.lastRoundBye = false;
+  if (chessState.lastRoundByePlayerId === pupil.id) {
+    chessState.lastRoundByePlayerId = null;
+  }
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(
+    `♟️ Board ${boardNum}: ${pupilObj.name} vs Teacher / Coach! Match in progress.`,
     'success',
   );
 };
@@ -4785,7 +4962,7 @@ window.confirmNewRoundAll = function () {
   window.generateThursdayPairings(true);
 };
 
-// 1-Click Thursday Period 6 Auto-Pairings Algorithm
+// 1-Click Thursday Period 6 Auto-Pairings Algorithm (With Guaranteed Fair Rotating Bye)
 window.generateThursdayPairings = function (force = false) {
   const presentIds = chessState.checkedInPlayerIds;
   if (presentIds.length < 2) {
@@ -4807,13 +4984,55 @@ window.generateThursdayPairings = function (force = false) {
     chessState.pairingsHistory.push(JSON.parse(JSON.stringify(chessState.activePairings)));
   }
 
-  const presentPlayers = chessState.players
-    .filter((p) => presentIds.includes(p.id))
-    .sort((a, b) => b.rating - a.rating);
+  const presentPlayers = chessState.players.filter((p) => presentIds.includes(p.id));
+
+  // Initialize bye properties on all players
+  presentPlayers.forEach((p) => {
+    if (typeof p.byesReceived !== 'number') p.byesReceived = 0;
+    if (typeof p.lastRoundBye !== 'boolean') p.lastRoundBye = false;
+  });
+
+  const isOdd = presentPlayers.length % 2 === 1;
+  let byePlayer = null;
+
+  if (isOdd) {
+    // FAIR BYE ROTATION:
+    // 1. Strictly exclude anyone who had a bye in the immediate previous round
+    let candidates = presentPlayers.filter(
+      (p) => !p.lastRoundBye && p.id !== chessState.lastRoundByePlayerId,
+    );
+    if (candidates.length === 0) candidates = [...presentPlayers];
+
+    // 2. Sort candidates by fewest byes received ascending
+    candidates.sort((a, b) => {
+      const byesA = a.byesReceived || 0;
+      const byesB = b.byesReceived || 0;
+      if (byesA !== byesB) return byesA - byesB;
+      return (a.games || 0) - (b.games || 0);
+    });
+
+    byePlayer = candidates[0];
+    byePlayer.byesReceived = (byePlayer.byesReceived || 0) + 1;
+    chessState.lastRoundByePlayerId = byePlayer.id;
+
+    // Reset lastRoundBye for all, then set for the selected bye pupil
+    presentPlayers.forEach((p) => {
+      p.lastRoundBye = p.id === byePlayer.id;
+    });
+  } else {
+    // Even count - nobody gets a bye
+    presentPlayers.forEach((p) => {
+      p.lastRoundBye = false;
+    });
+    chessState.lastRoundByePlayerId = null;
+  }
+
+  // Pool of players to pair (even length)
+  const pool = presentPlayers
+    .filter((p) => !byePlayer || p.id !== byePlayer.id)
+    .sort((a, b) => (b.rating || 1000) - (a.rating || 1000));
 
   const pairings = [];
-  const pool = [...presentPlayers];
-
   while (pool.length >= 2) {
     const white = pool.shift();
     let bestOpponentIdx = 0;
@@ -4840,10 +5059,11 @@ window.generateThursdayPairings = function (force = false) {
     });
   }
 
-  if (pool.length === 1) {
+  // Add the rotating bye board at the end
+  if (byePlayer) {
     pairings.push({
       board: pairings.length + 1,
-      white: pool[0],
+      white: byePlayer,
       black: null,
       isBye: true,
       completed: true,
@@ -4854,10 +5074,24 @@ window.generateThursdayPairings = function (force = false) {
   chessState.activePairings = pairings;
   saveChessState();
   renderChessHubView();
-  showChessToast(
-    `⚔️ Generated ${pairings.filter((p) => !p.isBye).length} boards for Period 6!`,
-    'success',
-  );
+
+  const boardCount = pairings.filter((p) => !p.isBye).length;
+  if (byePlayer) {
+    const byeName =
+      DEFAULT_LOCAL_NAME_MAP[byePlayer.id] ||
+      CALLSIGN_TO_FIRST_NAME[byePlayer.name] ||
+      byePlayer.realName ||
+      byePlayer.name;
+    showChessToast(
+      `⚔️ Generated ${boardCount} boards! ${byeName} on rotating bye (+1 pt, guaranteed first in next match).`,
+      'info',
+    );
+  } else {
+    showChessToast(
+      `⚔️ Generated ${boardCount} boards for Period 6! (Even count, all pupils paired)`,
+      'success',
+    );
+  }
 };
 
 // 1-Click Direct Board Scoring Engine
@@ -4866,12 +5100,13 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
   const p = chessState.activePairings.find((x) => x.board === boardNum);
   if (!p || !p.white || !p.black) return;
 
+  const isCoachMatch = p.black.id === 'p_coach';
   const pWhite = chessState.players.find((x) => x.id === p.white.id);
-  const pBlack = chessState.players.find((x) => x.id === p.black.id);
+  const pBlack = isCoachMatch ? p.black : chessState.players.find((x) => x.id === p.black.id);
   if (!pWhite || !pBlack) return;
 
   pWhite.games = (pWhite.games || 0) + 1;
-  pBlack.games = (pBlack.games || 0) + 1;
+  if (!isCoachMatch) pBlack.games = (pBlack.games || 0) + 1;
 
   let resultStr = '1-0';
   let winnerName = pWhite.name;
@@ -4880,13 +5115,15 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
   if (resultWinner === 'white') {
     resultStr = '1-0';
     pWhite.won = (pWhite.won || 0) + 1;
-    pBlack.lost = (pBlack.lost || 0) + 1;
     pWhite.rating = (pWhite.rating || 1000) + 15;
-    pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
-    if (pWhite.rank > pBlack.rank) {
-      const t = pWhite.rank;
-      pWhite.rank = pBlack.rank;
-      pBlack.rank = t;
+    if (!isCoachMatch) {
+      pBlack.lost = (pBlack.lost || 0) + 1;
+      pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
+      if (pWhite.rank > pBlack.rank) {
+        const t = pWhite.rank;
+        pWhite.rank = pBlack.rank;
+        pBlack.rank = t;
+      }
     }
     const hName = HOUSES[pWhite.house]?.name || pWhite.house;
     showChessToast(`🏆 Board ${boardNum}: ${pWhite.name} (${hName}) won! +3 House Pts`, 'success');
@@ -4894,26 +5131,27 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     resultStr = '0-1';
     winnerName = pBlack.name;
     winnerHouse = pBlack.house;
-    pBlack.won = (pBlack.won || 0) + 1;
     pWhite.lost = (pWhite.lost || 0) + 1;
-    pBlack.rating = (pBlack.rating || 1000) + 15;
-    pWhite.rating = Math.max(800, (pWhite.rating || 1000) - 15);
-    if (pBlack.rank > pWhite.rank) {
-      const t = pBlack.rank;
-      pBlack.rank = pWhite.rank;
-      pWhite.rank = t;
+    pWhite.rating = Math.max(800, (pWhite.rating || 1000) - 10);
+    if (!isCoachMatch) {
+      pBlack.won = (pBlack.won || 0) + 1;
+      pBlack.rating = (pBlack.rating || 1000) + 15;
+      if (pBlack.rank > pWhite.rank) {
+        const t = pBlack.rank;
+        pBlack.rank = pWhite.rank;
+        pWhite.rank = t;
+      }
     }
-    const hName = HOUSES[pBlack.house]?.name || pBlack.house;
-    showChessToast(`🏆 Board ${boardNum}: ${pBlack.name} (${hName}) won! +3 House Pts`, 'success');
+    const hName = isCoachMatch ? 'Coach' : HOUSES[pBlack.house]?.name || pBlack.house;
+    showChessToast(`🏆 Board ${boardNum}: ${pBlack.name} (${hName}) won!`, 'success');
   } else {
     resultStr = '½-½';
     winnerName = 'Draw';
     winnerHouse = null;
     pWhite.drawn = (pWhite.drawn || 0) + 1;
-    pBlack.drawn = (pBlack.drawn || 0) + 1;
+    if (!isCoachMatch) pBlack.drawn = (pBlack.drawn || 0) + 1;
     const wH = HOUSES[pWhite.house]?.name || pWhite.house;
-    const bH = HOUSES[pBlack.house]?.name || pBlack.house;
-    showChessToast(`🤝 Board ${boardNum}: Draw! +2 House Pts each for ${wH} & ${bH}`, 'info');
+    showChessToast(`🤝 Board ${boardNum}: Draw! +2 House Pts for ${wH}`, 'info');
   }
 
   chessState.players.sort((a, b) => a.rank - b.rank);
@@ -4927,9 +5165,9 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     white: pWhite.name,
     black: pBlack.name,
     whiteHouse: pWhite.house,
-    blackHouse: pBlack.house,
+    blackHouse: pBlack.house || 'coach',
     result: resultStr,
-    opening: 'Period 6 Match',
+    opening: isCoachMatch ? 'Coach Practice Match' : 'Period 6 Match',
   });
 
   p.completed = true;
@@ -4948,26 +5186,33 @@ window.undoBoardResult = function (boardNum) {
   const p = chessState.activePairings.find((x) => x.board === boardNum);
   if (!p || !p.completed) return;
 
+  const isCoachMatch = p.black?.id === 'p_coach';
   const pWhite = chessState.players.find((x) => x.id === p.white.id);
-  const pBlack = chessState.players.find((x) => x.id === p.black.id);
+  const pBlack = isCoachMatch ? p.black : chessState.players.find((x) => x.id === p.black.id);
 
-  if (pWhite && pBlack) {
+  if (pWhite) {
     pWhite.games = Math.max(0, (pWhite.games || 1) - 1);
-    pBlack.games = Math.max(0, (pBlack.games || 1) - 1);
+    if (!isCoachMatch && pBlack) pBlack.games = Math.max(0, (pBlack.games || 1) - 1);
 
     if (p.result === '1-0') {
       pWhite.won = Math.max(0, (pWhite.won || 1) - 1);
-      pBlack.lost = Math.max(0, (pBlack.lost || 1) - 1);
       pWhite.rating = Math.max(800, (pWhite.rating || 1000) - 15);
-      pBlack.rating = (pBlack.rating || 1000) + 15;
+      if (!isCoachMatch && pBlack) {
+        pBlack.lost = Math.max(0, (pBlack.lost || 1) - 1);
+        pBlack.rating = (pBlack.rating || 1000) + 15;
+      }
     } else if (p.result === '0-1') {
-      pBlack.won = Math.max(0, (pBlack.won || 1) - 1);
       pWhite.lost = Math.max(0, (pWhite.lost || 1) - 1);
-      pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
-      pWhite.rating = (pWhite.rating || 1000) + 15;
+      pWhite.rating = (pWhite.rating || 1000) + 10;
+      if (!isCoachMatch && pBlack) {
+        pBlack.won = Math.max(0, (pBlack.won || 1) - 1);
+        pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
+      }
     } else if (p.result === '½-½') {
       pWhite.drawn = Math.max(0, (pWhite.drawn || 1) - 1);
-      pBlack.drawn = Math.max(0, (pBlack.drawn || 1) - 1);
+      if (!isCoachMatch && pBlack) {
+        pBlack.drawn = Math.max(0, (pBlack.drawn || 1) - 1);
+      }
     }
   }
 
@@ -5489,6 +5734,18 @@ export function getActiveMatches() {
   const active = [];
   let boardIdx = 1;
 
+  function getCleanMatchPlayer(p) {
+    if (!p) return p;
+    const cleanName =
+      DEFAULT_LOCAL_NAME_MAP[p.id] || CALLSIGN_TO_FIRST_NAME[p.name] || p.realName || p.name;
+    return {
+      ...p,
+      name: cleanName,
+      realName: cleanName,
+      nickname: cleanName,
+    };
+  }
+
   // 1. Period 6 Classroom Match Grid active pairings
   if (Array.isArray(chessState.activePairings) && chessState.activePairings.length > 0) {
     chessState.activePairings.forEach((p) => {
@@ -5499,10 +5756,10 @@ export function getActiveMatches() {
           mIdx: 0,
           id: `qp_${p.board}`,
           boardNum: p.board || boardIdx++,
-          p1: p.white,
-          p2: p.black,
+          p1: getCleanMatchPlayer(p.white),
+          p2: getCleanMatchPlayer(p.black),
           title: `Match Grid · Board ${p.board}`,
-          badge: 'Period 6 Match',
+          badge: p.isCoachMatch ? 'Coach Match' : 'Period 6 Match',
         });
       }
     });
@@ -5521,8 +5778,8 @@ export function getActiveMatches() {
               mIdx,
               id: m.id || `ko_${rIdx}_${mIdx}`,
               boardNum: boardIdx++,
-              p1: m.p1,
-              p2: m.p2,
+              p1: getCleanMatchPlayer(m.p1),
+              p2: getCleanMatchPlayer(m.p2),
               title: bracket.roundNames?.[rIdx] || `Championship Round ${rIdx + 1}`,
               badge: 'Championship Cup',
             });
@@ -5540,8 +5797,8 @@ export function getActiveMatches() {
               mIdx,
               id: m.id || `plate_${rIdx}_${mIdx}`,
               boardNum: boardIdx++,
-              p1: m.p1,
-              p2: m.p2,
+              p1: getCleanMatchPlayer(m.p1),
+              p2: getCleanMatchPlayer(m.p2),
               title: bracket.plateRoundNames?.[rIdx] || `Plate Round ${rIdx + 1}`,
               badge: 'Challenger Plate',
             });
@@ -5558,8 +5815,8 @@ export function getActiveMatches() {
             mIdx,
             id: m.id,
             boardNum: m.boardNumber || boardIdx++,
-            p1: m.p1,
-            p2: m.p2,
+            p1: getCleanMatchPlayer(m.p1),
+            p2: getCleanMatchPlayer(m.p2),
             title: m.time || '10-Min Rapid Game',
             badge: 'Rapid Re-Pair',
           });
@@ -5579,8 +5836,8 @@ export function getActiveMatches() {
         mIdx: 0,
         id: bracket.cupBronzeMatch.id || 'cup_bronze_final',
         boardNum: boardIdx++,
-        p1: bracket.cupBronzeMatch.p1,
-        p2: bracket.cupBronzeMatch.p2,
+        p1: getCleanMatchPlayer(bracket.cupBronzeMatch.p1),
+        p2: getCleanMatchPlayer(bracket.cupBronzeMatch.p2),
         title: '3rd Place Bronze Playoff',
         badge: 'Bronze Medal Match',
       });
@@ -5598,8 +5855,8 @@ export function getActiveMatches() {
         mIdx: 0,
         id: bracket.woodenSpoonMatch.id || 'wooden_spoon_final',
         boardNum: boardIdx++,
-        p1: bracket.woodenSpoonMatch.p1,
-        p2: bracket.woodenSpoonMatch.p2,
+        p1: getCleanMatchPlayer(bracket.woodenSpoonMatch.p1),
+        p2: getCleanMatchPlayer(bracket.woodenSpoonMatch.p2),
         title: 'Wooden Spoon Shield Final',
         badge: 'Wooden Spoon Shield',
       });
