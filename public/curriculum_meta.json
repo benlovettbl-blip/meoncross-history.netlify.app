@@ -64,6 +64,17 @@
           "assessment": "Analytical written response: \"How significant was the impact of British colonisation on Indigenous Australians?\"",
           "smsc": "<strong>Cultural:</strong> Respect for Indigenous Australian heritage and traditions. <strong>Moral:</strong> Legacies of penal transportation and dispossession. <strong>Social:</strong> Long-term impact of colonialism on First Nations peoples.",
           "careers": "Anthropologist, Human Rights Advocate, Social Worker, Journalist"
+        },
+        {
+          "uid": "monarchy_religion_power",
+          "terms": ["Autumn 1", "Autumn 2"],
+          "shortTitle": "Crown, Church, or Parliament (1517–1689)",
+          "summary": "Pupils investigate 170 years of religious conflict and constitutional struggle, from Henry VIII's Break with Rome and Elizabeth's Middle Way to the English Civil War, the trial and execution of Charles I, and the 1689 Bill of Rights.",
+          "vocab": "Reformation, Act of Supremacy, Middle Way, Armada, Divine Right, Ship Money, New Model Army, Regicide, Bill of Rights",
+          "skills": ["Causation & Motivation", "Source Utility & Propaganda", "Historical Interpretations", "Significance & Turning Points", "Change & Continuity"],
+          "assessment": "Formative analytical responses and source investigations. Synoptic assessment: 'The World Turned Upside Down? To what extent did life and power in Britain truly change between 1517 and 1689?' (extended evaluative essay)",
+          "smsc": "<strong>Spiritual:</strong> The Reformation and conscience vs state religion. <strong>Moral:</strong> Is rebellion or regicide against a king ever justified? <strong>Social:</strong> How power shifted to Parliament while leaving the poorest 90% behind.",
+          "careers": "Constitutional Lawyer, Civil Servant, Parliamentary Researcher, Museum Educator"
         }
       ]
     },
