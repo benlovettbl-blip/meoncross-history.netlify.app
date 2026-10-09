@@ -728,22 +728,19 @@ function renderSpinePage(cfg, pageNum) {
         <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
           <!-- Full-Width Banner with Key Question Across Page -->
-          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2.5px 7px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1.2px solid #000000;">
-            <div style="display: flex; align-items: center; gap: 6px; min-width: 0;">
-              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-                PART ${st.step}
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2.5px 8px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 7px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
+                ${st.step}
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #cbd5e1; white-space: nowrap;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #cbd5e1; white-space: nowrap;">
                 ${st.date}
               </span>
               <span style="color: #64748b; font-size: 7pt;">&bull;</span>
-              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 ${st.questionHeading}
               </span>
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 700; color: #94a3b8; text-transform: uppercase; white-space: nowrap; margin-left: 6px;">
-              Milestone
-            </span>
           </div>
 
           <!-- Content Row: Left Cues & Right Ruled Note-Taking Lines -->
@@ -802,7 +799,7 @@ function renderSpinePage(cfg, pageNum) {
             Chronological Inquiry Spine &bull; Core Causal Narrative
           </span>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Take structured notes alongside each milestone as your teacher narrates the history
+            Take structured notes alongside each stage as your teacher narrates the history
           </span>
         </div>
 
@@ -886,6 +883,12 @@ function renderRightPage(cfg, pageNum) {
         <strong>Task:</strong> Using the structure strip above, write your analytical response below:
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
@@ -1004,8 +1007,19 @@ function renderRightPage(cfg, pageNum) {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines -->
+        <!-- Ruled Writing Lines (21 Lines • Matching GCSE 7.8mm pitch) -->
         <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
@@ -1457,13 +1471,7 @@ function compileMonarchyWorkbook() {
               Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 1 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code Henry VIII on the throne severing the Pope’s papal ties with England; annotate Royal Supremacy.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 2: 1536–1540 -->
@@ -1479,13 +1487,7 @@ function compileMonarchyWorkbook() {
               Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 2 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code a ruined monastery, confiscated gold church chests, and newly fortified Tudor coastal castles.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 3: 1559 -->
@@ -1501,13 +1503,7 @@ function compileMonarchyWorkbook() {
               The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 3 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code balancing scales between Catholic ceremonial tradition and Protestant English scripture.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 4: 1588 -->
@@ -1523,13 +1519,7 @@ function compileMonarchyWorkbook() {
               English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 4 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code fireships scattering the Spanish crescent at Calais, followed by storms in the North Sea.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
       </div>
@@ -1569,13 +1559,7 @@ function compileMonarchyWorkbook() {
               Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 5 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code a padlock on the doors of Parliament, a coastal tax collector in inland towns, and Hampden’s protest.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 6: 1649 -->
@@ -1591,13 +1575,7 @@ function compileMonarchyWorkbook() {
               Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 6 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code the scaffold outside Whitehall Banqueting House, the executioner’s axe, and Charles’s fallen crown.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 7: 1688 -->
@@ -1613,13 +1591,7 @@ function compileMonarchyWorkbook() {
               Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 7 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code William of Orange landing at Torbay under Protestant banners while James II flees across the Thames.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
         <!-- Milestone 8: 1689 -->
@@ -1635,13 +1607,7 @@ function compileMonarchyWorkbook() {
               William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
-              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 8 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code the Crown placed on top of the statutory Bill of Rights, symbolizing constitutional supremacy.</span></span>
-              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
-            </div>
-            <div style="flex: 1;"></div>
-          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
       </div>
@@ -1859,7 +1825,7 @@ function compileMonarchyWorkbook() {
         ${linedRows17}
       </div>
 
-      ${renderFooterStrip(17, 'Historians have argued about the 1689 settlement for 300 years. If you can explain both the Whig and Revisionist views in three paragraphs, examiner grade 9 is yours.', 20)}
+      ${renderFooterStrip(17, 'Historians have argued about the 1689 settlement for 300 years. If you can explain both the Whig and Revisionist views in three paragraphs, KS3 Mastery is yours!', 20)}
     </div>
   </div>
 `;
@@ -2016,13 +1982,13 @@ function compileMonarchyWorkbook() {
     <div class="page-body-full">
       <!-- Back Cover Header Strip -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 12pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
-          Student Assessment Record &amp; Progress Tracker
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.5pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Key Stage 3 History &bull; Pupil Progress &amp; Assessment Record
         </h2>
       </div>
 
-      <!-- Pupil Details & Target Grade Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 7px;">
+      <!-- Pupil Details & Target Level Strip -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1.3fr; gap: 14px; align-items: center; margin-bottom: 5px;">
         <div style="display: flex; align-items: baseline;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
@@ -2032,94 +1998,199 @@ function compileMonarchyWorkbook() {
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target Grade:</strong>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target KS3 Level:</strong>
           <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px; text-align: center; font-weight: 900;"></div>
         </div>
       </div>
 
-      <!-- 80-Mark Progress Ledger Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8.2pt;">
+      <!-- KS3 History Progress Pathways & Descriptors -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 5px; font-family: 'Inter', sans-serif;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <strong style="font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            Key Stage 3 History Assessment Pathways &bull; Level Descriptors &amp; Criteria
+          </strong>
+          <span style="font-size: 7.2pt; font-weight: 800; color: #000000;">YEAR 8 STANDARDS</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; font-size: 7pt; line-height: 1.3;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+                Emerging (1–2)
+              </div>
+              Recalls key historical narrative facts; describes basic Tudor/Stuart events using guided sentence starters.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
+              <strong>Focus:</strong> Add dates &amp; key vocabulary.
+            </div>
+          </div>
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+                Developing (3)
+              </div>
+              Identifies reasons for events; begins to describe causes of religious changes and civil conflict with structured paragraphs.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
+              <strong>Focus:</strong> Explain *why*, not just *what*.
+            </div>
+          </div>
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+                Secure (4–5)
+              </div>
+              Explains multiple causes &amp; consequences; writes structured causal paragraphs using precise statutes and dates.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
+              <strong>Focus:</strong> Compare relative importance.
+            </div>
+          </div>
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+                Advanced (6–7)
+              </div>
+              Analyses causal significance; evaluates competing historical interpretations and weighs counter-arguments with detailed evidence.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
+              <strong>Focus:</strong> Sustained historical criteria.
+            </div>
+          </div>
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+                Mastery (8–9)
+              </div>
+              Sustained, nuanced evaluative judgement; synthesises constitutional, political, and religious change across the 1517–1689 period.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
+              <strong>Focus:</strong> Flawless disciplinary synthesis.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Streamlined KS3 Marking Grid (Low-Friction & Periodic Marking Standard) -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 5px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
           <thead>
             <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 4px 6px; width: 14%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Date Completed</th>
-              <th style="padding: 4px 8px; width: 28%; text-align: left; border-right: 1px solid #444444; font-size: 7.8pt;">Enquiry &bull; Focus</th>
-              <th style="padding: 4px 6px; width: 20%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Drills / Skills</th>
-              <th style="padding: 4px 6px; width: 24%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Extended Response</th>
-              <th style="padding: 4px 6px; width: 14%; text-align: center; font-size: 7.8pt;">Lesson Total</th>
+              <th style="padding: 7px 4px; width: 10%; text-align: center; border-right: 1px solid #444444; font-size: 7.5pt; text-transform: uppercase;">Date</th>
+              <th style="padding: 7px 8px; width: 43%; text-align: left; border-right: 1px solid #444444; font-size: 7.5pt; text-transform: uppercase;">Enquiry &bull; Assessment Focus</th>
+              <th style="padding: 7px 6px; width: 17%; text-align: center; border-right: 1px solid #444444; font-size: 7.5pt; text-transform: uppercase;">KS3 Level / Effort</th>
+              <th style="padding: 7px 8px; width: 30%; text-align: left; font-size: 7.5pt; text-transform: uppercase;">Teacher Comment &bull; Feedback</th>
             </tr>
           </thead>
           <tbody>
-            ${enquiryConfigs
-              .map(
-                (cfg) => `
             <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 6px 8px; border-right: 1px solid #000000;"><strong>Enquiry ${cfg.lessonNum}:</strong> ${cfg.title.split(': ')[1].split(' (')[0]}</td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Skills: <span style="font-size: 9.2pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Writing: <span style="font-size: 9.2pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
-              <td style="padding: 6px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
-            </tr>`,
-              )
-              .join('')}
-            <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
-              <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Cumulative Assessment Totals</td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Drills: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Extended: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 60</strong> ]</span></td>
-              <td style="padding: 6px 6px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 80</strong> ]</td>
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 1: Henry VIII &amp; Break with Rome</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Causal Explanation: Break with Rome (1527–34)</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Level: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 2: Elizabeth I &amp; Religious Settlement</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Source Utility &amp; Consequence of Middle Way</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Level: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 3: Spanish Armada &amp; Naval Power</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Analytical Narrative: Defeat of the Armada (1588)</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Level: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 4: Causes of the English Civil War</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Causal Essay: Divine Right vs Parliament (1642)</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Level: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000;">
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 5: Trial of Charles I &amp; Bill of Rights</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Evaluative Judgement: Turning point in Crown vs Parliament</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Level: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #000000; background: #fafafa;">
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Synoptic Recall: 25-Question Knowledge Bank</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Pages 18–19 Synoptic Recall &amp; DIRT Retrieval</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Recall: <span style="font-weight: 900;">&nbsp;&nbsp;&nbsp;&nbsp; / 25</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #fafafa;">&nbsp;</td>
+            </tr>
+            <tr style="background: #ffffff; border-top: 1.5px solid #000000;">
+              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
+                <div style="font-weight: 900; font-size: 8.5pt;">Unit Assessment: Monarchy, Religion &amp; Power</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">End-of-Unit Summative Extended Assessment</div>
+              </td>
+              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+                <div style="font-size: 7.6pt; line-height: 1.5; color: #000000; text-align: left; padding-left: 6px;">
+                  Level: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span><br>
+                  Effort: <span style="border-bottom: 1.2px solid #000000; display: inline-block; width: 34px;">&nbsp;</span>
+                </div>
+              </td>
+              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Teacher Feedback Section (WWW & EBI) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; margin-bottom: 6px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-            Teacher Formative Assessment &bull; Feedback
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700;">
-            Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ]
-          </span>
-        </div>
-
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
-            What Went Well (WWW):
-          </strong>
-          <div class="ruled-lines-block">
-            <div class="task-line" style="height: 10.8mm;"></div>
-            <div class="task-line" style="height: 10.8mm;"></div>
-            <div class="task-line" style="height: 10.8mm;"></div>
-            <div class="task-line" style="height: 10.8mm;"></div>
-          </div>
-        </div>
-
-        <div style="margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; display: block; margin-bottom: 2px;">
-            Even Better If (EBI):
-          </strong>
-          <div class="ruled-lines-block">
-            <div class="task-line" style="height: 10.8mm;"></div>
-            <div class="task-line" style="height: 10.8mm;"></div>
-            <div class="task-line" style="height: 10.8mm;"></div>
-            <div class="task-line" style="height: 10.8mm;"></div>
-          </div>
-        </div>
-
-        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #000000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt;">
-          <span><strong>Teacher Signature:</strong> ____________________________</span>
-          <span><strong>Date:</strong> ____________________</span>
-        </div>
-      </div>
-
       <!-- Interactive Digital Quizzing Hub (Medicine Style) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
             ONLINE RECALL
           </span>
         </div>
@@ -2136,14 +2207,14 @@ function compileMonarchyWorkbook() {
                 'Bill of Rights',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
             <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
               Enquiry ${cfg.lessonNum}
             </div>
             <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
-            <div style="width: 21.5mm; height: 21.5mm; margin: 0 auto 2px auto;">
+            <div style="width: 24mm; height: 24mm; margin: 0 auto 2px auto;">
               ${qrSvg}
             </div>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
@@ -2158,7 +2229,7 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      ${renderFooterStrip(20, 'Unlike King Charles I in 1642, scanning these quiz QR codes will not cost you your throne or your head. Test yourself before the real exam does.', 20)}
+      ${renderFooterStrip(20, 'Unlike King Charles I in 1642, scanning these quiz QR codes will not cost you your throne or your head. Test yourself before the end-of-unit assessment does.', 20)}
     </div>
   </div>
 </body>
