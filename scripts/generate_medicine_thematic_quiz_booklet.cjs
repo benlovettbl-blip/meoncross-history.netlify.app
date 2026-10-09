@@ -272,8 +272,127 @@ const THEMATIC_THREADS = [
 // --------------------------------------------------------------------------
 const { MEDICINE_THEMATIC_QUIZ_BANK } = require('./medicine_thematic_pearson_quiz_bank.cjs');
 
+// --------------------------------------------------------------------------
+// 20-LESSON SPECIFICATION-MAPPED HOMEWORK LEDGER DEFINITION (EDEXCEL PAPER 1)
+// --------------------------------------------------------------------------
+const LEDGER_ENTRIES = [
+  // Era 1: Medieval Britain (c1250–c1500)
+  {
+    topicCode: 'KT 1.1',
+    title: 'Enq 1: Supernatural & Religious Ideas',
+    sub: 'Divine retribution, Church dogma, Roger Bacon (1277), astrological conjunction (1345), miasma',
+  },
+  {
+    topicCode: 'KT 1.2',
+    title: 'Enq 2: Humours, Galen & Diagnosis',
+    sub: 'Hippocrates, Four Humours, Galen Theory of Opposites, teleology, uroscopy urine charts, Zodiac Man',
+  },
+  {
+    topicCode: 'KT 1.3',
+    title: 'Enq 3: Treatments, Regimen & Rituals',
+    sub: 'Phlebotomy (fleams, cupping, leeches), purges (emetics, laxatives), theriac, Regimen Sanitatis, pomanders',
+  },
+  {
+    topicCode: 'KT 1.4',
+    title: 'Enq 4: Monastic Hospitals & Care Providers',
+    sub: '“Care Not Cure”, St Bart’s (1123), university physicians vs barber-surgeons, apothecaries, wise women',
+  },
+  {
+    topicCode: 'KT 1.5',
+    title: 'Enq 5: Dealing with the Black Death (1348–49)',
+    sub: 'Bubonic vs pneumonic plague, religious flagellants, Gloucester quarantine cordon, butcher offal fines, mass pits',
+  },
+  // Era 2: The Medical Renaissance (c1500–c1700)
+  {
+    topicCode: 'KT 2.1',
+    title: 'Enq 6: Renaissance Ideas on Causes & Humanism',
+    sub: 'Humanism, printing press (1440), Royal Society (1660), Nullius in Verba, animalcules, persistent miasma',
+  },
+  {
+    topicCode: 'KT 2.2',
+    title: 'Enq 7: Thomas Sydenham & Bedside Observation',
+    sub: '“English Hippocrates”, Observationes Medicae, distinct disease classification, cinchona bark, cool therapy',
+  },
+  {
+    topicCode: 'KT 2.3',
+    title: 'Enq 8: Andreas Vesalius & Human Anatomy',
+    sub: 'De Fabrica (1543), 300+ Galenic errors disproved on human cadavers, Padua dissection, anatomical illustrations',
+  },
+  {
+    topicCode: 'KT 2.4',
+    title: 'Enq 9: William Harvey & Blood Circulation',
+    sub: 'De Motu Cordis (1628), heart as mechanical pump, closed systemic circulation, calculation of 540 lbs/hr',
+  },
+  {
+    topicCode: 'KT 2.5',
+    title: 'Enq 10: Dealing with the Great Plague (1665)',
+    sub: '1665 Plague Orders, Searchers of Dead, red crosses, Bills of Mortality, animal culls, mass parish pits',
+  },
+  // Era 3: 18th & 19th Century Britain (c1700–c1900)
+  {
+    topicCode: 'KT 3.1',
+    title: 'Enq 11: Germ Theory: Pasteur & Robert Koch',
+    sub: 'Spontaneous generation disproved (1861), swan-neck flasks, Koch solid agar & aniline dyes, specific bacilli',
+  },
+  {
+    topicCode: 'KT 3.2',
+    title: 'Enq 12: Edward Jenner & Smallpox Vaccination',
+    sub: 'Cowpox discovery (1796), James Phipps, anti-vaccine opposition, £30k grant, 1853 compulsory Vaccination Act',
+  },
+  {
+    topicCode: 'KT 3.3',
+    title: 'Enq 13: Florence Nightingale & Hospital Reform',
+    sub: 'Scutari hospital, pavilion plan ventilation, mortality 42% to 2%, Notes on Nursing, St Thomas’ school (1860)',
+  },
+  {
+    topicCode: 'KT 3.4',
+    title: 'Enq 14: Surgery: Anaesthetics & Antiseptics',
+    sub: 'Simpson chloroform (1847), Black Period of Surgery, Lister carbolic acid (1865), aseptic theatres',
+  },
+  {
+    topicCode: 'KT 3.5',
+    title: 'Enq 15: Public Health: John Snow & 1875 Act',
+    sub: '1854 Broad Street cholera map, removal of pump handle, Bazalgette sewers, 1875 Public Health Act',
+  },
+  // Era 4: Modern Britain (c1900–present)
+  {
+    topicCode: 'KT 4.1',
+    title: 'Enq 16: Modern Causes: DNA, Genetics & Lifestyle',
+    sub: 'Franklin/Crick/Watson double helix (1953), Human Genome Project (2003), hereditary diseases, Doll & Hill smoking',
+  },
+  {
+    topicCode: 'KT 4.2',
+    title: 'Enq 17: Diagnostic Tech & Medical Imaging',
+    sub: 'Röntgen X-rays (1895), blood testing, ultrasound, Godfrey Hounsfield CT scanners (1972), MRI scanning',
+  },
+  {
+    topicCode: 'KT 4.3',
+    title: 'Enq 18: Magic Bullets & Mass Antibiotics',
+    sub: 'Ehrlich Salvarsan 606 (1909), Domagk Prontosil (1932), Fleming penicillin (1928), Florey & Chain mass production',
+  },
+  {
+    topicCode: 'KT 4.4',
+    title: 'Enq 19: The National Health Service (1948)',
+    sub: 'Beveridge Report (1942), Aneurin Bevan, 5 July 1948 launch, overcoming 90% BMA boycott, free at point of need',
+  },
+  {
+    topicCode: 'KT 4.5',
+    title: 'Enq 20: Modern Prevention, Vaccines & Public Health',
+    sub: 'Diphtheria & polio immunisation, 1956 Clean Air Act, 2007 enclosed workplace smoking ban, Change4Life',
+  },
+];
+
 function buildHtml() {
-  const qrSvg = generateQrSvg(
+  const qrMed = generateQrSvg(
+    'https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine#lesson_1_1',
+  );
+  const qrRen = generateQrSvg(
+    'https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine#lesson_2_1',
+  );
+  const qrInd = generateQrSvg(
+    'https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine#lesson_3_1',
+  );
+  const qrHub = generateQrSvg(
     'https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine',
   );
 
@@ -357,301 +476,186 @@ function buildHtml() {
     .footer-page-num { font-weight: 900; font-size: 7.5pt; color: #000000; }
 
     /* FRONT COVER STYLES */
-    .cover-top-box {
-      border: 1.5px solid #0f172a;
-      padding: 6px 12px;
-      background: #ffffff;
-      border-radius: 2px;
-      margin-bottom: 3.5px;
-    }
-    .cover-badge-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2px;
-    }
-    .cover-badge {
+    .cover-top-banner {
       background: #0f172a;
       color: #ffffff;
+      padding: 5px 10px;
+      text-align: center;
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 8.0pt;
       font-weight: 900;
-      padding: 2px 7px;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
       border-radius: 2px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
     }
-    .cover-dept-name {
-      font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
-      font-weight: 800;
-      color: #0f172a;
-      text-transform: uppercase;
-      letter-spacing: 0.3px;
+    .cover-title-group {
+      text-align: center;
+      padding: 2.5px 0 2px 0;
+      border-bottom: 1.8px solid #000000;
+      margin-bottom: 2.5px;
     }
     .cover-main-title {
       font-family: 'Playfair Display', serif;
-      font-size: 14.8pt;
+      font-size: 15.0pt;
       font-weight: 900;
-      line-height: 1.15;
+      margin: 0 0 1px 0;
+      line-height: 1.1;
       color: #000000;
-      margin: 2px 0 1px 0;
-      text-align: center;
+      letter-spacing: -0.3px;
     }
     .cover-sub-title {
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
-      font-weight: 700;
-      color: #334155;
-      text-align: center;
-      line-height: 1.25;
-      margin-bottom: 2px;
-    }
-
-    .pupil-meta-strip {
-      border: 1.2px solid #0f172a;
-      background: #f8fafc;
-      padding: 5px 8px;
-      border-radius: 2px;
-      display: grid;
-      grid-template-columns: 1.7fr 1fr 1fr 1fr;
-      gap: 10px;
-      align-items: flex-end;
-      margin-bottom: 3.5px;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      font-weight: 700;
-    }
-    .pupil-field {
-      display: flex;
-      align-items: flex-end;
-      gap: 5px;
-    }
-    .pupil-field-lbl {
-      color: #0f172a;
-      white-space: nowrap;
-      font-weight: 800;
-      font-size: 7.6pt;
-    }
-    .pupil-line {
-      flex: 1;
-      border-bottom: 1.4px solid #000000;
-      height: 6.8mm;
-    }
-
-    /* SPECIFICATION & EXAM OVERVIEW STRIP */
-    .spec-overview-card {
-      border: 1.2px solid #0f172a;
-      border-radius: 2px;
-      background: #ffffff;
-      margin-bottom: 3.5px;
-      overflow: hidden;
-    }
-    .spec-overview-title-bar {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 3px 8px;
-      display: flex;
-      justify-content: space-between;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 7.4pt;
       font-weight: 800;
       text-transform: uppercase;
-      letter-spacing: 0.3px;
+      letter-spacing: 0.6px;
+      color: #1e293b;
+      margin: 0;
     }
-    .spec-four-eras {
+    .pupil-meta-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 12px;
+      border: 1.3px solid #0f172a;
+      padding: 4.5px 10px;
+      background: #ffffff;
+      margin-bottom: 3.5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.0pt;
+    }
+    .pupil-field { display: flex; align-items: baseline; gap: 5px; }
+    .pupil-field strong { font-weight: 900; color: #0f172a; }
+    .pupil-field .field-line { flex: 1; border-bottom: 1.3px solid #0f172a; height: 9px; }
+
+    .spec-timing-strip {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
       gap: 6px;
-      padding: 3.5px 6px;
+      border: 1.2px solid #0f172a;
+      background: #f8fafc;
+      padding: 3.5px 7px;
+      margin-bottom: 3.5px;
       font-family: 'Inter', sans-serif;
       font-size: 6.8pt;
-      line-height: 1.20;
-      background: #ffffff;
-    }
-    .spec-era-col {
-      border-left: 2.2px solid #0f172a;
-      padding-left: 5px;
-    }
-    .spec-era-lbl {
-      font-weight: 900;
-      color: #0f172a;
-      display: block;
-      font-size: 7.1pt;
-      margin-bottom: 1.5px;
-    }
-    .exam-structure-strip {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr 1.5fr;
-      gap: 6px;
-      background: #f1f5f9;
-      border-top: 1px solid #cbd5e1;
-      padding: 3.5px 7px;
-      font-family: 'Inter', sans-serif;
-    }
-    .exam-q-cell {
-      border-left: 2.2px solid #0f172a;
-      padding-left: 5px;
       line-height: 1.18;
     }
-    .eq-num { font-size: 7.2pt; font-weight: 900; color: #0f172a; display: block; }
-    .eq-type { font-size: 6.9pt; font-weight: 800; color: #334155; display: block; }
-    .eq-meta { font-size: 6.5pt; color: #475569; display: block; }
+    .spec-timing-cell {
+      border-left: 2.2px solid #0f172a;
+      padding-left: 4.5px;
+    }
+    .spec-timing-cell strong {
+      color: #0f172a;
+      font-weight: 900;
+      text-transform: uppercase;
+      font-size: 6.9pt;
+      display: block;
+      margin-bottom: 1px;
+    }
 
-    /* 20-LESSON TRACKER (2 COLUMNS OF 10) */
-    .tracker-wrap {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 6px;
+    /* 20-Lesson Dual Homework Tracking Ledger */
+    .hw-ledger-full-wrap {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 4px;
       margin-bottom: 3.5px;
     }
-    .tracker-table {
+    .hw-ledger-dual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 7px;
+      flex: 1;
+    }
+    .hw-ledger-table {
       width: 100%;
+      height: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 6.9pt;
     }
-    .tracker-table th, .tracker-table td {
-      border: 1.1px solid #0f172a;
-      padding: 5.3px 6px;
-      line-height: 1.22;
-    }
-    .tracker-table th {
+    .hw-ledger-table thead th {
       background: #0f172a;
       color: #ffffff;
-      font-weight: 800;
-      text-align: left;
-      font-size: 7.7pt;
-      text-transform: uppercase;
-      letter-spacing: 0.2px;
-      padding: 5.2px 6px;
-    }
-    .tracker-table tr:nth-child(even) { background: #f8fafc; }
-    .col-score { width: 36px; text-align: center; font-size: 6.8pt; font-weight: 800; }
-    .col-tick { width: 28px; text-align: center; font-size: 7.0pt; font-weight: 800; }
-
-    /* 4-ERA DIAGNOSTIC MATRIX (FRONT COVER) */
-    .era-rag-matrix {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 4px;
-      margin-bottom: 2.5px;
-    }
-    .era-rag-card {
-      border: 1.1px solid #0f172a;
-      border-top: 3px solid #0f172a;
-      background: #ffffff;
-      padding: 4.5px 6.5px;
-      border-radius: 1px;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.7pt;
-      line-height: 1.22;
-    }
-    .era-rag-title { font-weight: 900; color: #0f172a; display: block; font-size: 7.0pt; margin-bottom: 1.5px; }
-
-    /* DIRT RETRIEVAL PROTOCOL */
-    .protocol-card {
-      border: 1.2px solid #0f172a;
-      border-left: 4px solid #0f172a;
-      background: #f8fafc;
-      border-radius: 2px;
-      padding: 4.8px 6.5px;
-      margin-bottom: 2.5px;
-    }
-    .protocol-title-row {
-      font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      padding: 3px 3.5px;
       font-weight: 900;
-      color: #0f172a;
       text-transform: uppercase;
+      border: 1.1px solid #0f172a;
+      font-size: 6.3pt;
+      letter-spacing: 0.2px;
+    }
+    .hw-ledger-table td {
+      border: 1.1px solid #cbd5e1;
+      padding: 2.2px 4px;
+      vertical-align: middle;
+      color: #000000;
+      line-height: 1.12;
+    }
+    .hw-ledger-table tr:nth-child(even) td { background: #f8fafc; }
+    .hw-col-title {
+      background: #0f172a !important;
+      color: #ffffff;
+      font-size: 7.0pt;
+      font-weight: 900;
+      text-align: center;
+      padding: 2.5px 4px !important;
       letter-spacing: 0.3px;
+      text-transform: uppercase;
+    }
+    .ledger-topic-badge {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 5.4pt;
+      font-weight: 900;
+      padding: 0.5px 2.5px;
+      border-radius: 1.5px;
+      margin-right: 2.5px;
+      letter-spacing: 0.2px;
+      vertical-align: baseline;
+    }
+    .ledger-title-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      font-weight: 800;
+      color: #0f172a;
+      display: inline;
+    }
+    .ledger-sub-text {
+      font-family: 'Georgia', serif;
+      font-size: 5.7pt;
+      color: #334155;
+      font-style: italic;
+      line-height: 1.08;
+      margin-top: 0.5px;
+    }
+
+    .cover-protocol-box {
+      border: 1.2px solid #0f172a;
+      border-left: 4.5px solid #0f172a;
+      border-radius: 2px;
+      padding: 4.5px 8px;
+      background: #f8fafc;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
+      line-height: 1.22;
+      color: #1e293b;
       margin-bottom: 2px;
     }
-    .protocol-grid-4col {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 5px;
-      font-family: 'Inter', sans-serif;
+    .cover-protocol-title {
+      color: #0f172a;
       font-size: 7.2pt;
-      line-height: 1.22;
-    }
-    .step-item {
-      background: #ffffff;
-      border: 1px solid #cbd5e1;
-      padding: 4px 5.5px;
-      border-radius: 1px;
-    }
-    .step-item strong { color: #0f172a; display: block; font-size: 7.5pt; margin-bottom: 1px; }
-
-    .traffic-tier-box {
-      border: 1.2px solid #0f172a;
-      background: #f1f5f9;
-      border-radius: 2px;
-      padding: 5.0px 8px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      font-weight: 700;
-      margin-bottom: 3.5px;
-    }
-
-    .glossary-box {
-      border: 1.2px solid #0f172a;
-      background: #ffffff;
-      border-radius: 2px;
-      margin-bottom: 3.5px;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-    .glossary-title {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 3.0px 7px;
-      font-family: 'Inter', sans-serif;
-      font-size: 7.7pt;
       font-weight: 900;
+      margin-bottom: 1.5px;
+      display: block;
       text-transform: uppercase;
       letter-spacing: 0.3px;
     }
-    .glossary-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5px 8px;
-      padding: 3.8px 6px;
-      font-size: 6.8pt;
-      line-height: 1.18;
-    }
-    .glossary-item { font-family: 'Georgia', serif; color: #1e293b; }
-    .glossary-term { font-family: 'Inter', sans-serif; font-weight: 800; color: #0f172a; }
-
-    .guarantee-box {
-      border: 1.2px solid #0f172a;
-      background: #f8fafc;
-      padding: 4px 8px;
-      border-radius: 2px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .guarantee-qr {
-      width: 36px;
-      height: 36px;
-      flex-shrink: 0;
-    }
-    .guarantee-text {
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      line-height: 1.2;
-      color: #1e293b;
-    }
-    .guarantee-badge {
-      font-weight: 900;
+    .cover-protocol-box strong {
       color: #0f172a;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 1.5px;
+      font-weight: 800;
+      display: inline;
     }
 
     /* Page 2: Chronology & Synoptic Matrix */
@@ -710,57 +714,88 @@ function buildHtml() {
 
     /* Lesson Question Pages (Pages 3–22) */
     .lesson-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: #f8fafc;
-      border-left: 4px solid #0f172a;
-      padding: 3.5px 8px;
+      border-left: 4.5px solid #0f172a;
+      padding: 3px 8px;
       margin-bottom: 3px;
       border-top: 1px solid #cbd5e1;
       border-right: 1px solid #cbd5e1;
       border-bottom: 1px solid #cbd5e1;
+      border-radius: 2px;
     }
-    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.6pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
-    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155; margin-top: 1px; }
+    .lesson-meta-info { flex: 1; }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.14; }
+    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #334155; margin-top: 1px; }
+
+    .enquiry-score-pill {
+      background: #ffffff;
+      border: 1.3px solid #0f172a;
+      border-radius: 2px;
+      padding: 2px 7px;
+      text-align: right;
+      flex-shrink: 0;
+      margin-left: 8px;
+      font-family: 'Inter', sans-serif;
+    }
+    .score-pill-title { font-size: 5.5pt; font-weight: 900; color: #64748b; letter-spacing: 0.3px; text-transform: uppercase; }
+    .score-pill-val { font-size: 8.8pt; font-weight: 900; color: #0f172a; line-height: 1.1; }
+    .score-pill-sub { font-size: 5.4pt; font-weight: 700; color: #475569; }
 
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 3.2px 6.5px;
-      margin-bottom: 2.8px;
+      padding: 3.0px 6px;
+      margin-bottom: 2.5px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 1.5px;
+      gap: 1px;
     }
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 5px;
-      line-height: 1.18;
+      line-height: 1.16;
     }
     .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 900; color: #000000; min-width: 18px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.8pt; font-weight: 700; color: #000000; line-height: 1.18; }
-    .q-attempt { font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; min-width: 16px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 8.5pt; font-weight: 700; color: #000000; line-height: 1.16; }
+    .q-marks-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 1px 5px;
+      white-space: nowrap;
+      margin-left: 6px;
+      flex-shrink: 0;
+    }
 
     .q-line-row {
       display: flex;
       align-items: flex-end;
-      gap: 6px;
-      margin-top: 1px;
+      gap: 5px;
+      margin-top: 0.5px;
     }
     .q-line-lbl {
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
+      font-size: 7.0pt;
       font-weight: 800;
       color: #000000;
       white-space: nowrap;
-      min-width: 78px;
+      min-width: 60px;
     }
     .q-solid-line {
       flex: 1;
-      border-bottom: 1.3px solid #000000;
-      height: 7.0mm;
+      border-bottom: 1.2px solid #000000;
+      height: 6.0mm;
     }
 
     /* Pages 23–26: Department Marking Bank (5 Lessons per Page) */
@@ -1031,21 +1066,118 @@ function buildHtml() {
       color: #1e293b;
     }
 
-    .pitfalls-grid {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4px;
+    /* Digital Revision Hub 4-Gateway Command Deck (Page 28) */
+    .back-hub-grid-wrap {
+      border: 1.3px solid #0f172a;
+      background: #f8fafc;
+      border-radius: 2px;
+      overflow: hidden;
+      margin-top: 2px;
+    }
+    .back-hub-header-bar {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 2.5px 8px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
-      line-height: 1.18;
     }
-    .pitfall-item {
-      border: 1px solid #cbd5e1;
-      background: #f1f5f9;
-      padding: 4px 5px;
-      border-radius: 1px;
+    .back-hub-banner-title {
+      font-size: 7.5pt;
+      font-weight: 900;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
     }
-    .pitfall-tag { font-weight: 800; color: #991b1b; display: block; font-size: 6.5pt; margin-bottom: 1.5px; }
+    .back-hub-banner-sub {
+      font-size: 6.5pt;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+    .back-hub-gateways-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 5px;
+      padding: 4px 6px;
+    }
+    .hub-gw-card {
+      background: #ffffff;
+      border: 1.1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 3.5px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2px;
+    }
+    .hub-gw-qr {
+      width: 52px;
+      height: 52px;
+      background: #ffffff;
+      padding: 1px;
+      border: 1px solid #e2e8f0;
+    }
+    .hub-gw-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+    .hub-gw-badge {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 5.6pt;
+      font-weight: 800;
+      padding: 0.5px 3.5px;
+      border-radius: 2px;
+      letter-spacing: 0.2px;
+    }
+    .hub-gw-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      font-weight: 800;
+      color: #0f172a;
+      line-height: 1.14;
+    }
+    .hub-gw-desc {
+      font-family: 'Georgia', serif;
+      font-size: 6.0pt;
+      color: #475569;
+      line-height: 1.12;
+    }
+
+    .examiner-pitfalls-bar {
+      border: 1.2px solid #b91c1c;
+      border-left: 4.5px solid #b91c1c;
+      background: #fef2f2;
+      padding: 3px 7px;
+      margin-top: 2.5px;
+      border-radius: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.7pt;
+      line-height: 1.24;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .pitfalls-tag {
+      background: #b91c1c;
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 6.2pt;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 1.5px 4.5px;
+      border-radius: 2px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .pitfalls-text {
+      color: #991b1b;
+      flex: 1;
+    }
   </style>
 </head>
 <body>
@@ -1055,216 +1187,118 @@ function buildHtml() {
   // PAGE 1: FRONT COVER & 20-LESSON TRACKER
   // =========================================================================
   html += `
-  <!-- PAGE 1: FRONT COVER -->
+  <!-- PAGE 1: FRONT COVER & SPECIFICATION-MAPPED HOMEWORK LEDGER -->
   <div class="page-container" id="page-1">
     <div class="page-body-full">
-      <div class="running-header">
-        <span>EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 (1HI0/11)</span>
-        <span>SECTION B: THEMATIC STUDY &bull; c1250–PRESENT</span>
+      <div class="cover-top-banner">
+        EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 (1HI0/11) &bull; SECTION B: THEMATIC STUDY c1250–PRESENT
       </div>
 
-      <div class="cover-top-box">
-        <div class="cover-badge-row">
-          <span class="cover-badge">Paper 1: Section B</span>
-          <span class="cover-dept-name">The History Department &bull; Revision Spine: Core Knowledge & Exam Strategy</span>
-        </div>
-        <div class="cover-main-title">MEDICINE IN BRITAIN, c1250–PRESENT</div>
-        <div class="cover-sub-title">Master Knowledge Retrieval Companion & Thematic Synoptic Guide &bull; 20 Lessons &bull; 200 Retrieval Questions</div>
+      <div class="cover-title-group">
+        <h1 class="cover-main-title">MEDICINE IN BRITAIN, c1250–PRESENT</h1>
+        <div class="cover-sub-title">MASTER KNOWLEDGE RETRIEVAL COMPANION &bull; 20 RETRIEVAL ENQUIRIES &bull; 200 CORE EXAM QUESTIONS</div>
       </div>
 
-      <div class="pupil-meta-strip">
-        <div class="pupil-field">
-          <span class="pupil-field-lbl">Candidate Name:</span>
-          <div class="pupil-line"></div>
+      <div class="pupil-meta-grid">
+        <div class="pupil-field"><strong>Pupil Name:</strong> <div class="field-line"></div></div>
+        <div class="pupil-field"><strong>Class / Group:</strong> <div class="field-line"></div></div>
+        <div class="pupil-field"><strong>Teacher:</strong> <div class="field-line"></div></div>
+      </div>
+
+      <!-- Edexcel Paper 1 Examination Structure & Timing Strip -->
+      <div class="spec-timing-strip">
+        <div class="spec-timing-cell">
+          <strong>Section A: Western Front (1914–18) &bull; 16 Marks (~32 Mins)</strong>
+          Q1(a) Feature [2m] &bull; Q1(b) Feature [2m] &bull; Q2(a) Utility [8m] &bull; Q2(b) Follow-up [4m]
         </div>
-        <div class="pupil-field">
-          <span class="pupil-field-lbl">Candidate No:</span>
-          <div class="pupil-line"></div>
-        </div>
-        <div class="pupil-field">
-          <span class="pupil-field-lbl">Target Grade:</span>
-          <div class="pupil-line"></div>
-        </div>
-        <div class="pupil-field">
-          <span class="pupil-field-lbl">Teacher/Group:</span>
-          <div class="pupil-line"></div>
+        <div class="spec-timing-cell">
+          <strong>Section B: Thematic Study (c1250–Present) &bull; 36 Marks [+4 SPaG] (~48 Mins)</strong>
+          Q3 Similarity/Diff [4m / 5m] &bull; Q4 Causal [12m / 18m] &bull; Q5/Q6 Synoptic Essay [16m+4 SPaG / 25m]
         </div>
       </div>
 
-      <!-- Edexcel Paper 1: Section B Specification Overview -->
-      <div class="spec-overview-card">
-        <div class="spec-overview-title-bar">
-          <span>Edexcel Specification Overview &bull; Paper 1 (Section B: Thematic Study)</span>
-          <span>36 Marks &bull; ~48 Mins &bull; 750-Year Chronology</span>
-        </div>
-        <div class="spec-four-eras">
-          <div class="spec-era-col">
-            <span class="spec-era-lbl">1. Medieval (c1250–1500)</span>
-            Divine retribution, Galenic teleology, Four Humours, monastic "Care Not Cure", 1348 Black Death.
-          </div>
-          <div class="spec-era-col">
-            <span class="spec-era-lbl">2. Renaissance (c1500–1700)</span>
-            Humanism, Royal Society (1660), Sydenham observation, Vesalius anatomy, Harvey circulation, 1665 Plague.
-          </div>
-          <div class="spec-era-col">
-            <span class="spec-era-lbl">3. Industrial (c1700–1900)</span>
-            Germ Theory (1861), Koch microbes, Jenner vaccine, Nightingale nursing, Simpson, Lister, Snow, 1875 Act.
-          </div>
-          <div class="spec-era-col">
-            <span class="spec-era-lbl">4. Modern (c1900–present)</span>
-            DNA double helix (1953), CT/MRI tech, Ehrlich magic bullets, 1948 NHS, mass penicillin, anti-smoking bans.
-          </div>
-        </div>
-
-        <div class="exam-structure-strip">
-          <div class="exam-q-cell">
-            <span class="eq-num">Question 3</span>
-            <span class="eq-type">Similarity or Difference</span>
-            <span class="eq-meta">4 Marks &bull; ~5 Mins</span>
-          </div>
-          <div class="exam-q-cell">
-            <span class="eq-num">Question 4</span>
-            <span class="eq-type">Causal Analysis (Explain Why)</span>
-            <span class="eq-meta">12 Marks &bull; ~18 Mins &bull; 3 Factors</span>
-          </div>
-          <div class="exam-q-cell">
-            <span class="eq-num">Question 5 or 6</span>
-            <span class="eq-type">Synoptic Evaluative Essay</span>
-            <span class="eq-meta">16 Marks [+4 SPaG] &bull; ~25 Mins</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Paper 1 Examination Timing & Mark Allocation Architecture -->
-      <div style="border: 1.2px solid #0f172a; background: #ffffff; padding: 4.0px 6px; border-radius: 2px; margin-bottom: 3.5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2;">
-        <div style="border-left: 2.5px solid #0f172a; padding-left: 4px;">
-          <strong style="color: #0f172a;">Section A: Historic Environment (Western Front)</strong> &bull; 16 Marks &bull; 32 Minutes<br>
-          Q1(a) Feature [2m] &bull; Q1(b) Feature [2m] &bull; Q2(a) Source Utility [8m] &bull; Q2(b) Follow-up [4m]
-        </div>
-        <div style="border-left: 2.5px solid #0f172a; padding-left: 4px;">
-          <strong style="color: #0f172a;">Section B: Thematic Study (c1250–present)</strong> &bull; 36 Marks [+4 SPaG] &bull; 48 Minutes<br>
-          Q3 Similarity/Diff [4m / 5 mins] &bull; Q4 Causal [12m / 18 mins] &bull; Q5/Q6 Essay [16m+4 SPaG / 25 mins]
-        </div>
-      </div>
-
-      <!-- 20-Lesson Triple-Testing Retrieval Tracker -->
-      <div class="tracker-wrap">
-        <!-- Col 1: Lessons 1 to 10 -->
-        <table class="tracker-table">
-          <thead>
-            <tr>
-              <th style="width: 58%;">Era 1 &amp; Era 2 (c1250–c1700)</th>
-              <th class="col-score">1st Test</th>
-              <th class="col-score">2nd DIRT</th>
-              <th class="col-score">3rd Retest</th>
-              <th class="col-tick">Check</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${MEDICINE_THEMATIC_QUIZ_BANK.slice(0, 10)
-              .map(
-                (l) => `
+      <!-- 20-LESSON SPECIFICATION-MAPPED HOMEWORK & RETRIEVAL DUAL LEDGER -->
+      <div class="hw-ledger-full-wrap">
+        <div class="hw-ledger-dual-grid">
+          <!-- Part I: Medieval & Renaissance Britain (Enquiries 1–10) -->
+          <table class="hw-ledger-table">
+            <thead>
               <tr>
-                <td style="padding: 5.3px 5.5px;">
-                  <div style="font-weight: 800; font-size: 7.7pt; color: #0f172a; line-height: 1.18;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
-                  <div style="font-size: 6.6pt; color: #475569; font-style: italic; line-height: 1.18; margin-top: 1px;">${l.enquiry}</div>
-                </td>
-                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
-                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
-                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
-                <td class="col-tick" style="padding: 5.3px 2px; font-weight: 900; font-size: 7.3pt;">[ &nbsp; ]</td>
+                <th colspan="5" class="hw-col-title">Part I: Medieval &amp; Renaissance Britain (c1250–c1700)</th>
               </tr>
-            `,
-              )
-              .join('')}
-          </tbody>
-        </table>
-
-        <!-- Col 2: Lessons 11 to 20 -->
-        <table class="tracker-table">
-          <thead>
-            <tr>
-              <th style="width: 58%;">Era 3 &amp; Era 4 (c1700–present)</th>
-              <th class="col-score">1st Test</th>
-              <th class="col-score">2nd DIRT</th>
-              <th class="col-score">3rd Retest</th>
-              <th class="col-tick">Check</th>
-            </tr>
-          </thead>
-          <tbody>
-            ${MEDICINE_THEMATIC_QUIZ_BANK.slice(10, 20)
-              .map(
-                (l) => `
               <tr>
-                <td style="padding: 5.3px 5.5px;">
-                  <div style="font-weight: 800; font-size: 7.7pt; color: #0f172a; line-height: 1.18;">L${l.num}: ${l.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '')}</div>
-                  <div style="font-size: 6.6pt; color: #475569; font-style: italic; line-height: 1.18; margin-top: 1px;">${l.enquiry}</div>
-                </td>
-                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
-                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
-                <td class="col-score" style="padding: 5.3px 3px;"><div style="font-size: 6.2pt; color: #64748b; font-weight: normal;">__/__</div><span style="font-weight: 900; font-size: 7.3pt;">/10</span></td>
-                <td class="col-tick" style="padding: 5.3px 2px; font-weight: 900; font-size: 7.3pt;">[ &nbsp; ]</td>
+                <th style="width: 50%; text-align: left; padding-left: 5px;">Enquiry &amp; Specification Focus</th>
+                <th style="width: 14%; text-align: center;">Due Date</th>
+                <th style="width: 16%; text-align: center;">Score (/20)<br><span style="font-size: 5.2pt; font-weight: 700; text-transform: none; color: #94a3b8;">10 Qs &times; 2m</span></th>
+                <th style="width: 12%; text-align: center;">Parent/Staff</th>
+                <th style="width: 8%; text-align: center;">RAG</th>
               </tr>
-            `,
-              )
-              .join('')}
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              ${LEDGER_ENTRIES.slice(0, 10)
+                .map(
+                  (item) => `
+              <tr>
+                <td>
+                  <span class="ledger-topic-badge">${item.topicCode}</span>
+                  <div class="ledger-title-text">${item.title}</div>
+                  <div class="ledger-sub-text">${item.sub}</div>
+                </td>
+                <td style="text-align: center; font-family: monospace; font-size: 6.8pt; color: #475569;">____/____</td>
+                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 20</td>
+                <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
+              </tr>`,
+                )
+                .join('')}
+            </tbody>
+          </table>
 
-      <!-- Authentic Classroom Revision Protocol & Paper 1 Section B Strategy -->
-      <div style="border: 1.3px solid #0f172a; background: #ffffff; border-radius: 2px; margin-bottom: 3.5px; overflow: hidden; flex-shrink: 0;">
-        <div style="background: #0f172a; color: #ffffff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.3px; display: flex; justify-content: space-between;">
-          <span>How to Use This Revision Companion</span>
-          <span style="font-weight: 700; color: #94a3b8;">Edexcel Paper 1 (Section B) Strategy Blueprint</span>
+          <!-- Part II: 18th/19th C. & Modern Britain (Enquiries 11–20) -->
+          <table class="hw-ledger-table">
+            <thead>
+              <tr>
+                <th colspan="5" class="hw-col-title">Part II: 18th/19th C. &amp; Modern Britain (c1700–present)</th>
+              </tr>
+              <tr>
+                <th style="width: 50%; text-align: left; padding-left: 5px;">Enquiry &amp; Specification Focus</th>
+                <th style="width: 14%; text-align: center;">Due Date</th>
+                <th style="width: 16%; text-align: center;">Score (/20)<br><span style="font-size: 5.2pt; font-weight: 700; text-transform: none; color: #94a3b8;">10 Qs &times; 2m</span></th>
+                <th style="width: 12%; text-align: center;">Parent/Staff</th>
+                <th style="width: 8%; text-align: center;">RAG</th>
+              </tr>
+            </thead>
+            <tbody>
+              ${LEDGER_ENTRIES.slice(10, 20)
+                .map(
+                  (item) => `
+              <tr>
+                <td>
+                  <span class="ledger-topic-badge">${item.topicCode}</span>
+                  <div class="ledger-title-text">${item.title}</div>
+                  <div class="ledger-sub-text">${item.sub}</div>
+                </td>
+                <td style="text-align: center; font-family: monospace; font-size: 6.8pt; color: #475569;">____/____</td>
+                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 20</td>
+                <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
+              </tr>`,
+                )
+                .join('')}
+            </tbody>
+          </table>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 1.6fr; gap: 8px; padding: 4.5px 8px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.22; background: #f8fafc;">
-          <!-- Left: 3 Simple Classroom Steps -->
-          <div style="border-right: 1.2px solid #cbd5e1; padding-right: 8px;">
-            <strong style="color: #0f172a; display: block; font-size: 7.4pt; margin-bottom: 2px; text-transform: uppercase;">3 Simple Revision Steps:</strong>
-            <div style="margin-bottom: 2px;"><strong>1. Quick-Fire Test:</strong> Answer all 10 questions in black ink without notes.</div>
-            <div style="margin-bottom: 2px;"><strong>2. Green-Pen Check:</strong> Self-mark using the Marking Bank (pp. 23–26); correct errors.</div>
-            <div><strong>3. Retest Weak Topics:</strong> Re-quiz any lesson scored &lt;8/10 until you achieve 10/10.</div>
-          </div>
-          <!-- Right: Section B Exam Question Architecture -->
-          <div>
-            <strong style="color: #0f172a; display: block; font-size: 7.4pt; margin-bottom: 2px; text-transform: uppercase;">Section B Exam Question Architecture:</strong>
-            <div style="margin-bottom: 2px;"><strong>Q3 Similarity / Difference [4m]:</strong> 1 comparative PEEL paragraph identifying one valid similarity or difference across two eras with precise evidence.</div>
-            <div style="margin-bottom: 2px;"><strong>Q4 Causal Explanation [12m]:</strong> 3 distinct PEEL paragraphs explaining why medical change happened, evaluating factors (individuals, Church, science/tech).</div>
-            <div><strong>Q5/Q6 Synoptic Essay [16m + 4 SPaG]:</strong> 3 balanced thematic PEEL paragraphs evaluating extent of change across eras, concluding with a justified judgement.</div>
-          </div>
-        </div>
-      </div>
 
-      <!-- 10 Core Disciplinary Terms & Specification Glossary -->
-      <div class="glossary-box">
-        <div class="glossary-title">10 Core Disciplinary Terms &bull; Edexcel Paper 1 Command Vocabulary</div>
-        <div class="glossary-grid">
-          <div class="glossary-item"><span class="glossary-term">1. Teleology:</span> Doctrine that bodily organs were purposefully designed by a single divine Creator (Galen).</div>
-          <div class="glossary-item"><span class="glossary-term">2. Miasma:</span> False theory that foul, poisonous airborne vapour corrupted by decaying matter caused illness.</div>
-          <div class="glossary-item"><span class="glossary-term">3. Regimen Sanitatis:</span> Holistic rules balancing diet, sleep, exercise, air, and the Six Non-Naturals.</div>
-          <div class="glossary-item"><span class="glossary-term">4. Humanism:</span> Renaissance intellectual movement prioritizing empirical observation over medieval dogma.</div>
-          <div class="glossary-item"><span class="glossary-term">5. Inoculation vs Vaccine:</span> Inoculation used live virulent smallpox; vaccination used benign cowpox safely.</div>
-          <div class="glossary-item"><span class="glossary-term">6. Spontaneous Generation:</span> False belief that rotting matter generated microbes; disproved by Pasteur (1861).</div>
-          <div class="glossary-item"><span class="glossary-term">7. Magic Bullet:</span> Synthetic chemical targeting specific pathogens internally without harming human cells.</div>
-          <div class="glossary-item"><span class="glossary-term">8. Antiseptic vs Aseptic:</span> Antiseptic kills germs in wounds (carbolic); aseptic excludes germs completely.</div>
-          <div class="glossary-item"><span class="glossary-term">9. Nosology:</span> Systematic scientific classification of distinct diseases into species based on symptoms (Sydenham).</div>
-          <div class="glossary-item"><span class="glossary-term">10. Iatrochemistry:</span> Medical approach using chemical minerals and synthetic drugs rather than herbal humours (Paracelsus).</div>
-        </div>
-      </div>
-
-      <!-- Official Department Revision Standard & QR Code -->
-      <div class="guarantee-box">
-        <div class="guarantee-qr">${qrSvg}</div>
-        <div class="guarantee-text">
-          <span class="guarantee-badge">Official Department Revision Standard &bull; Zero Commercial Compromise</span>
-          This master knowledge retrieval companion covers the complete Pearson Edexcel GCSE History Paper 1 Section B specification. Scan the QR code for instant mobile access to the interactive revision quizzes, digital flashcards, and teacher video walkthroughs on The History Revision Hub.
+        <div class="cover-protocol-box">
+          <div class="cover-protocol-title">DEPARTMENT RETRIEVAL PROTOCOL &amp; SPACED LEARNING STANDARDS:</div>
+          Complete one enquiry weekly as targeted homework or in-class retrieval. Each question follows an examiner-calibrated 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical name, date, royal charter, or publication) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the physiological theory, medical significance, or causal consequence). Total: 10 questions &times; 2 marks = <strong>20 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 23–26. Any enquiry scoring below 16/20 triggers immediate digital flashcard review via the back-cover QR gateway.
         </div>
       </div>
 
       <div class="page-footer-strip">
+        <span class="footer-page-num">Page 1</span>
         <span class="footer-quip">${APPROVED_FOOTERS[0]}</span>
-        <span class="footer-page-num">Page 1 of 28</span>
+        <span class="footer-page-num">1HI0/11</span>
       </div>
     </div>
   </div>
@@ -1354,8 +1388,15 @@ function buildHtml() {
       </div>
 
       <div class="lesson-meta-bar">
-        <div class="lesson-meta-title">LESSON ${lesson.num}: ${lesson.title}</div>
-        <div class="lesson-meta-enquiry">Historical Enquiry: ${lesson.enquiry}</div>
+        <div class="lesson-meta-info">
+          <div class="lesson-meta-title">LESSON ${lesson.num}: ${lesson.title}</div>
+          <div class="lesson-meta-enquiry">Historical Enquiry: ${lesson.enquiry}</div>
+        </div>
+        <div class="enquiry-score-pill">
+          <div class="score-pill-title">ENQUIRY SCORE</div>
+          <div class="score-pill-val">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 20</div>
+          <div class="score-pill-sub">Fact: __/10 &bull; Expl: __/10</div>
+        </div>
       </div>
 
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
@@ -1368,10 +1409,10 @@ function buildHtml() {
                 <span class="q-num">${qIdx + 1}.</span>
                 <span class="q-prompt">${q.q}</span>
               </div>
-              <span class="q-attempt">[ &nbsp; &nbsp; / 10 ]</span>
+              <span class="q-marks-pill">Fact: [ ] &nbsp;Expl: [ ] / 2m</span>
             </div>
             <div class="q-line-row">
-              <span class="q-line-lbl">Key Fact:</span>
+              <span class="q-line-lbl">Core Fact:</span>
               <div class="q-solid-line"></div>
             </div>
             <div class="q-line-row">
@@ -1894,28 +1935,65 @@ function buildHtml() {
           </div>
         </div>
 
-        <!-- Examiner Top 10 Commandments -->
-        <div class="exam-section-card">
-          <div class="exam-section-title">
-            <span>Examiner Top 10 Commandments in Section B &bull; How to Secure Grade 8/9</span>
-            <span style="font-size: 6.2pt; color: #cbd5e1; font-weight: 700;">Avoid Historic Traps &bull; Secure Full SPaG</span>
+        <!-- 5 Fatal Examiner Pitfalls to Avoid in Section B -->
+        <div class="examiner-pitfalls-bar">
+          <span class="pitfalls-tag">EXAMINER PITFALLS</span>
+          <div class="pitfalls-text">
+            <strong>5 Fatal Traps to Avoid:</strong> 
+            1. Writing separate standalone paragraphs on Q3 (permanently caps mark at Level 1 max 2/4m). &bull; 
+            2. Omitting an unprompted 3rd factor on Q4 from own knowledge (caps answer at Level 3 max 8/12m). &bull; 
+            3. Confusing Jenner (1796 cowpox empiricism) with Pasteur (1861 microbial Germ Theory). &bull; 
+            4. Confusing antiseptic (wound carbolic) with aseptic (sterilised operating theatres). &bull; 
+            5. On Q5/6 synoptic essay: Fence-sitting in conclusion; you must distinguish the <em>primary catalyst</em> from the <em>enabling prerequisite</em>.
           </div>
-          <div class="pitfalls-grid" style="gap: 4.5px;">
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Storytelling Narrative</span><span style="color:#0f172a; font-weight:800;">&check; Causal Analysis:</span> Explain WHY things happened using analytical connectives. Never just describe what happened chronologically.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Omitting Q4 3rd Factor</span><span style="color:#0f172a; font-weight:800;">&check; Mandatory 3rd Factor:</span> Introduce War, Tech, or Govt from own knowledge to break the 8/12 mark ceiling.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Confusing Jenner &amp; Pasteur</span><span style="color:#0f172a; font-weight:800;">&check; Accurate Anchors:</span> Jenner (1796) used empirical cowpox without knowing why; Pasteur (1861) proved microbes cause disease.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Confusing Antiseptic/Aseptic</span><span style="color:#0f172a; font-weight:800;">&check; Precise Terms:</span> Antiseptic kills germs in wound (carbolic spray); Aseptic excludes all germs from the operating theatre.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Vague Chronology</span><span style="color:#0f172a; font-weight:800;">&check; Exact Dates:</span> Anchor essays to 1348, 1543, 1628, 1861, 1875, 1948, 1953. Never use vague terms like "in the old days".</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Fence-Sitting Conclusion</span><span style="color:#0f172a; font-weight:800;">&check; Decisive Judgment:</span> Never say "both equal"; weigh relative catalyst significance (catalyst vs prerequisite).</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Forgetting SPaG Marks</span><span style="color:#0f172a; font-weight:800;">&check; Proofread Spellings:</span> Check key terms (phlebotomy, miasma, anaesthetic, penicillin) in final 3 mins for +4 marks.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Exam Timing Drift</span><span style="color:#0f172a; font-weight:800;">&check; Rigid Timings:</span> Q3 (5m), Q4 (18m), Q5/6 (25m), Section A Western Front (32m). Stick to strict clock stops.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Separate Q3 Eras</span><span style="color:#0f172a; font-weight:800;">&check; Integrated Links:</span> Compare within every sentence using <em>"Similarly"</em> or <em>"In contrast"</em> to guarantee Level 2.</div>
-            <div class="pitfall-item" style="padding: 13.5px 7.5px; font-size: 6.6pt; line-height: 1.28;"><span class="pitfall-tag">&cross; Isolated Factors</span><span style="color:#0f172a; font-weight:800;">&check; Symbiotic Links:</span> Show how Science, Tech, and Govt depended on each other (e.g. science proved, govt mandated).</div>
+        </div>
+
+        <!-- DIGITAL REVISION HUB: DIRECT TOPIC QR REVISION GATEWAYS -->
+        <div class="back-hub-grid-wrap">
+          <div class="back-hub-header-bar">
+            <span class="back-hub-banner-title">DIGITAL REVISION HUB &bull; DIRECT ERA QR REVISION GATEWAYS</span>
+            <span class="back-hub-banner-sub">the-history-revision-hub.netlify.app/?unit=edexcel_medicine &bull; Scan with smartphone camera</span>
           </div>
-          <!-- Master Grade 8/9 Examination Synthesis Principles -->
-          <div style="margin-top: 4px; background: #ffffff; border: 1.1px solid #0f172a; padding: 3.5px 8px; border-radius: 1px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; font-size: 6.2pt; line-height: 1.20;">
-            <div><strong style="color: #0f172a;">Grade 8/9 Golden Rule:</strong> Always substantiate every causal claim with at least TWO precise historical facts (dates, named figures, royal charters, or acts) to demonstrate comprehensive grasp across 750 years.</div>
-            <div><strong style="color: #0f172a;">Thematic Synthesis Checklist:</strong> Before writing, identify whether the enquiry demands <em>causes</em> (miasma/germs/genetics), <em>prevention</em> (regimen/quarantine/vaccines/welfare state), or <em>treatment</em> (monastic/Nightingale/NHS).</div>
+          <div class="back-hub-gateways-grid">
+            <!-- Gateway 1: Medieval -->
+            <div class="hub-gw-card">
+              <div class="hub-gw-qr">${qrMed}</div>
+              <div class="hub-gw-body">
+                <span class="hub-gw-badge">ERA 1</span>
+                <div class="hub-gw-title">Medieval Britain (c1250–1500)</div>
+                <div class="hub-gw-desc">Enquiries 1–5: Humours, Galen, Black Death &amp; Monastic Hospitals</div>
+              </div>
+            </div>
+
+            <!-- Gateway 2: Renaissance -->
+            <div class="hub-gw-card">
+              <div class="hub-gw-qr">${qrRen}</div>
+              <div class="hub-gw-body">
+                <span class="hub-gw-badge">ERA 2</span>
+                <div class="hub-gw-title">Medical Renaissance (c1500–1700)</div>
+                <div class="hub-gw-desc">Enquiries 6–10: Vesalius, Harvey, Sydenham &amp; 1665 Great Plague</div>
+              </div>
+            </div>
+
+            <!-- Gateway 3: Industrial -->
+            <div class="hub-gw-card">
+              <div class="hub-gw-qr">${qrInd}</div>
+              <div class="hub-gw-body">
+                <span class="hub-gw-badge">ERA 3</span>
+                <div class="hub-gw-title">18th &amp; 19th Century (c1700–1900)</div>
+                <div class="hub-gw-desc">Enquiries 11–15: Germ Theory, Jenner, Nightingale, Lister &amp; 1875 Act</div>
+              </div>
+            </div>
+
+            <!-- Gateway 4: Modern & Master Portal -->
+            <div class="hub-gw-card">
+              <div class="hub-gw-qr">${qrHub}</div>
+              <div class="hub-gw-body">
+                <span class="hub-gw-badge" style="background: #0284c7;">ERA 4 &amp; MASTER PORTAL</span>
+                <div class="hub-gw-title">Modern Britain &amp; All 20 Quizzes</div>
+                <div class="hub-gw-desc">Enquiries 16–20: DNA, Magic Bullets, 1948 NHS &amp; Flashcard Vault</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -2030,6 +2108,18 @@ async function main() {
       `ℹ️ Google Drive destination folder not found at ${drivePaper1Dir}, skipping cloud mirror.`,
     );
   }
+
+  // Render high-resolution screenshots for all 28 pages
+  const debugDir = path.join(ROOT_DIR, 'public', 'images', 'medicine_pages');
+  if (!fs.existsSync(debugDir)) fs.mkdirSync(debugDir, { recursive: true });
+
+  for (let pNum = 1; pNum <= 28; pNum++) {
+    const el = await page.$(`#page-${pNum}`);
+    if (el) {
+      await el.screenshot({ path: path.join(debugDir, `page_${pNum}.png`) });
+    }
+  }
+  console.log(`📸 Rendered high-resolution screenshots for all 28 pages in: ${debugDir}`);
 
   await browser.close();
 
