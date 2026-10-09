@@ -6506,6 +6506,14 @@ export const unitData = {
             'Summarises water disputes on the River Jordan, Syrian artillery on the Golan Heights, and fedayeen border raids.',
         },
         {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=WqfvoxFnBo4',
+          title: 'The War over Water (Survival of a Nation)',
+          duration: '7 mins 43 secs',
+          teacher_guidance:
+            "Examines the critical 1964–1967 struggle over the River Jordan headwaters, Israel's National Water Carrier, Syrian diversion works on the Golan Heights, and border artillery skirmishes that triggered escalation to the Six-Day War.",
+        },
+        {
           url: 'https://era.org.uk/streaming-service-resource/s3e6-battle-for-the-holy-city-the-six-day-war-days-that-shook-the-world/',
           title: 'Days That Shook the World: The Six-Day War (BBC)',
           duration: '50 mins 0 secs',

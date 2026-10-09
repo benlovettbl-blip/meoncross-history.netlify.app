@@ -7,7 +7,7 @@
  * Strict Compliance:
  * - Institutional neutrality (The History Department / GCSE History Revision Hub)
  * - Zero AI educational jargon / authentic classroom examiner standard
- * - 100% uniformity across all 16 enquiries (12 tiered questions per enquiry = 192 questions)
+ * - 100% uniformity across all 16 enquiries (8 tiered questions per enquiry = 128 questions)
  * - Two-Line Dual Retrieval Format (Line 1: Core Fact / Line 2: The Explanation)
  * - Examiner Warning / Fatal Pitfall Callout on every enquiry page
  * - Exact multiple of 4 (24 pages / 6 folded A3 sheets) for commercial A4 saddle-stitch booklet printing
@@ -780,23 +780,23 @@ function buildHtml() {
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2.2px 6px;
-      margin-bottom: 1.6px;
+      padding: 2.8px 6px;
+      margin-bottom: 2.0px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 1.5px;
     }
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 5px;
-      line-height: 1.16;
+      line-height: 1.18;
     }
     .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; min-width: 15px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.2pt; font-weight: 700; color: #000000; line-height: 1.16; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000; min-width: 17px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 9.6pt; font-weight: 700; color: #000000; line-height: 1.18; }
     .q-marks-pill {
       font-family: 'Inter', sans-serif;
       font-size: 6.2pt;
@@ -819,16 +819,16 @@ function buildHtml() {
     }
     .q-line-lbl {
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 8.0pt;
       font-weight: 800;
-      color: #000000;
+      color: #0f172a;
       white-space: nowrap;
-      min-width: 60px;
+      min-width: 65px;
     }
     .q-solid-line {
       flex: 1;
       border-bottom: 1.2px solid #000000;
-      height: 6.2mm;
+      height: 8.4mm;
     }
 
     /* Examiner Trap Box at Base of Enquiry Pages (Clean SVG/HTML Badge, Zero Glyph Failure) */
@@ -922,18 +922,18 @@ function buildHtml() {
     }
     .mb-ans-row {
       border-bottom: 1px dashed #cbd5e1;
-      padding: 1.0px 1px;
-      font-size: 6.8pt;
-      line-height: 1.15;
+      padding: 2.0px 1px;
+      font-size: 7.6pt;
+      line-height: 1.24;
       display: flex;
-      gap: 3.5px;
+      gap: 4px;
       align-items: baseline;
     }
     .mb-ans-row:last-child { border-bottom: none; }
-    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 14px; }
+    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 15px; }
     .mb-ans-text { flex: 1; color: #000000; font-weight: 500; }
-    .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; }
-    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #000000; white-space: nowrap; }
+    .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.8pt; }
+    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; color: #000000; white-space: nowrap; }
 
     /* Page 23: Section A & B Question Guide */
     .strat-meta-bar-23 {
@@ -1315,7 +1315,7 @@ function buildHtml() {
 
     <div class="cover-title-group">
       <h1 class="cover-main-title">The USA, 1954–75: Conflict at Home & Abroad</h1>
-      <p class="cover-sub-title">Master Knowledge Retrieval & Homework Companion • Specification 1HI0/33</p>
+      <p class="cover-sub-title">Pearson Edexcel GCSE (9–1) History • Paper 3 (1HI0/33) • Master Knowledge Companion (128 Core Exam Questions)</p>
     </div>
 
     <div class="pupil-meta-grid">
@@ -1336,7 +1336,7 @@ function buildHtml() {
             <tr>
               <th style="width: 50%; text-align: left; padding-left: 6px;">Enquiry &amp; Specification Focus</th>
               <th style="width: 14%; text-align: center;">Due Date</th>
-              <th style="width: 16%; text-align: center;">Score (/24)<br><span style="font-size: 5.4pt; font-weight: 700; text-transform: none; color: #94a3b8;">12 Qs × 2m</span></th>
+              <th style="width: 16%; text-align: center;">Score (/16)<br><span style="font-size: 5.4pt; font-weight: 700; text-transform: none; color: #94a3b8;">8 Qs × 2m</span></th>
               <th style="width: 12%; text-align: center;">Parent Sign</th>
               <th style="width: 8%; text-align: center;">RAG</th>
             </tr>
@@ -1352,7 +1352,7 @@ function buildHtml() {
                 <div class="ledger-sub-text">${item.sub}</div>
               </td>
               <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #475569;">____/____</td>
-              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 16</td>
               <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
               <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
             </tr>`,
@@ -1370,7 +1370,7 @@ function buildHtml() {
             <tr>
               <th style="width: 50%; text-align: left; padding-left: 6px;">Enquiry &amp; Specification Focus</th>
               <th style="width: 14%; text-align: center;">Due Date</th>
-              <th style="width: 16%; text-align: center;">Score (/24)<br><span style="font-size: 5.4pt; font-weight: 700; text-transform: none; color: #94a3b8;">12 Qs × 2m</span></th>
+              <th style="width: 16%; text-align: center;">Score (/16)<br><span style="font-size: 5.4pt; font-weight: 700; text-transform: none; color: #94a3b8;">8 Qs × 2m</span></th>
               <th style="width: 12%; text-align: center;">Parent Sign</th>
               <th style="width: 8%; text-align: center;">RAG</th>
             </tr>
@@ -1386,7 +1386,7 @@ function buildHtml() {
                 <div class="ledger-sub-text">${item.sub}</div>
               </td>
               <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #475569;">____/____</td>
-              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 16</td>
               <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
               <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
             </tr>`,
@@ -1398,7 +1398,7 @@ function buildHtml() {
 
       <div class="cover-protocol-box">
         <div class="cover-protocol-title">DEPARTMENT RETRIEVAL PROTOCOL &amp; SPACED LEARNING STANDARDS:</div>
-        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, act, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism, tactical impact, or significance). Total: 12 questions × 2 marks = <strong>24 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 18/24 trigger immediate digital flashcard consolidation.
+        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, act, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism, tactical impact, or significance). Total: 8 questions × 2 marks = <strong>16 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 12/16 trigger immediate digital flashcard consolidation.
       </div>
     </div>
 
@@ -1466,8 +1466,8 @@ function buildHtml() {
       </div>
       <div class="enquiry-score-pill">
         <span class="score-main">ENQUIRY SCORE</span>
-        <span class="score-num">/ 24</span>
-        <span class="score-sub">Fact: __/12 • Expl: __/12</span>
+        <span class="score-num">/ 16</span>
+        <span class="score-sub">Fact: __/8 • Expl: __/8</span>
       </div>
     </div>
 
