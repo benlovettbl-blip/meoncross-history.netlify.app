@@ -719,22 +719,25 @@ function renderSpinePage(cfg, pageNum) {
   const stagesHtml = cfg.stages
     .map((st) => {
       const bulletsHtml = st.bullets
-        .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
+        .map(
+          (b) =>
+            `<div style="display: flex; align-items: baseline; gap: 4px;"><span style="font-weight: 900; color: #000000; font-size: 8pt; line-height: 1;">&bull;</span> <span>${b}</span></div>`,
+        )
         .join('');
       return `
         <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
           <!-- Full-Width Banner with Key Question Across Page -->
-          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1.2px solid #000000;">
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2.5px 7px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1.2px solid #000000;">
             <div style="display: flex; align-items: center; gap: 6px; min-width: 0;">
               <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
                 PART ${st.step}
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #cbd5e1; white-space: nowrap;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #cbd5e1; white-space: nowrap;">
                 ${st.date}
               </span>
               <span style="color: #64748b; font-size: 7pt;">&bull;</span>
-              <span style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 ${st.questionHeading}
               </span>
             </div>
@@ -746,24 +749,14 @@ function renderSpinePage(cfg, pageNum) {
           <!-- Content Row: Left Cues & Right Ruled Note-Taking Lines -->
           <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
             
-            <!-- Left Column: Reduced Number of Bullet Points (2-3 concise cues) + Hinge Question -->
-            <div style="width: 66mm; flex-shrink: 0; background: #fafafa; padding: 2.5px 5px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1.2px solid #000000; box-sizing: border-box;">
-              <div>
-                <div style="display: flex; flex-direction: column; gap: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.18; color: #000000;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 1.5px; border: 1px dashed #000000; background: #ffffff; padding: 1.5px 3px; border-radius: 2px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; display: block; line-height: 1;">
-                  Hinge Question
-                </span>
-                <span style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #111111; font-style: italic; display: block;">
-                  ${st.focusClue}
-                </span>
+            <!-- Left Column: Reduced Number of Bullet Points (2-3 concise cues with larger font, no duplicate hinge box) -->
+            <div style="width: 55mm; flex-shrink: 0; background: #f8fafc; padding: 3px 6px; display: flex; flex-direction: column; justify-content: center; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              <div style="display: flex; flex-direction: column; gap: 2.5px; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 500; line-height: 1.28; color: #0f172a;">
+                ${bulletsHtml}
               </div>
             </div>
 
-            <!-- Right Column: Rule Lines (Same as CME or Medicine Standard: 1.2px solid #000000) -->
+            <!-- Right Column: Widened Ruled Lines (Medicine/CME Standard: 1.2px solid #000000) -->
             <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
@@ -906,6 +899,12 @@ function renderRightPage(cfg, pageNum) {
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
       </div>
 
       <!-- Timeline Mission Box -->
@@ -1007,6 +1006,8 @@ function renderRightPage(cfg, pageNum) {
 
         <!-- Ruled Writing Lines -->
         <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
