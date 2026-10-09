@@ -13,9 +13,14 @@ import {
   weimarGuide,
   elizabethGuide,
 } from '../exam_guide_content.js';
+import { renderHeroCurricularLaunchpad } from './hero_launchpad.js';
 
 export function renderHomepage() {
   const unitData = appStore.state.activeUnitData;
+  const activeUnitId =
+    window.currentUnitId || appStore.state.currentUnitId || appStore.state.activeUnitData?.id;
+  const launchpadHTML = renderHeroCurricularLaunchpad(activeUnitId, appStore.state.activeUnitData);
+
   let lessonsHTML = renderKeyTopicLessonsHTML(
     unitData,
     window.currentUnitId,
@@ -119,6 +124,7 @@ export function renderHomepage() {
             <h2 class="hero-subtitle">
               ${appStore.state.activeUnitData.title}
             </h2>
+            ${launchpadHTML}
             ${appStore.state.activeUnitData.cover_caption ? `<p class="hero-caption">${appStore.state.activeUnitData.cover_caption}</p>` : ''}
           </div>
           ${renderCoverSourcesHTML(appStore.state.activeUnitData, true) ? `<div style="padding: 20px 30px 0 30px; background: white;">${renderCoverSourcesHTML(appStore.state.activeUnitData, true)}</div>` : ''}
@@ -130,7 +136,7 @@ export function renderHomepage() {
             <h2 style="font-size: clamp(1.05rem, 3.5vw, 1.35rem); color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 24px;">
               ${appStore.state.activeUnitData.title}
             </h2>
-            
+            ${launchpadHTML}
             ${renderCoverSourcesHTML(appStore.state.activeUnitData)}
             
             ${appStore.state.activeUnitData.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 20px; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${appStore.state.activeUnitData.cover_caption}</p>` : ''}

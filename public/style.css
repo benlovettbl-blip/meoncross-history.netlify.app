@@ -2449,6 +2449,146 @@ img::after {
   z-index: 2;
 }
 
+/* =========================================
+   Hero Curricular Triad Launchpad Ribbon
+   ========================================= */
+.hero-curricular-launchpad {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 5;
+  margin-top: 18px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+
+.hero-launchpad-capsule {
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: 999px;
+  padding: 6px 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+}
+
+.launchpad-pill-group {
+  display: inline-flex;
+  align-items: stretch;
+  border-radius: 999px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.launchpad-pill-group:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+.launchpad-pill-group.pill-textbook {
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  background: rgba(2, 132, 199, 0.25);
+}
+.launchpad-pill-group.pill-workbook {
+  border: 1px solid rgba(245, 158, 11, 0.5);
+  background: rgba(217, 119, 6, 0.25);
+}
+.launchpad-pill-group.pill-retrieval {
+  border: 1px solid rgba(167, 139, 250, 0.5);
+  background: rgba(124, 58, 237, 0.25);
+}
+
+.launchpad-pill-btn {
+  border: none;
+  padding: 8px 14px 8px 16px;
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  font-family:
+    'Outfit',
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  letter-spacing: 0.01em;
+}
+
+.pill-textbook .launchpad-pill-btn {
+  background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+}
+.pill-workbook .launchpad-pill-btn {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+}
+.pill-retrieval .launchpad-pill-btn {
+  background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+}
+
+.launchpad-pill-pdf {
+  border: none;
+  padding: 8px 11px;
+  font-size: 0.82rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.pill-textbook .launchpad-pill-pdf {
+  background: #075985;
+  color: #bae6fd;
+}
+.pill-textbook .launchpad-pill-pdf:hover {
+  background: #0369a1;
+  color: #ffffff;
+}
+
+.pill-workbook .launchpad-pill-pdf {
+  background: #92400e;
+  color: #fde68a;
+}
+.pill-workbook .launchpad-pill-pdf:hover {
+  background: #b45309;
+  color: #ffffff;
+}
+
+.pill-retrieval .launchpad-pill-pdf {
+  background: #5b21b6;
+  color: #e9d5ff;
+}
+.pill-retrieval .launchpad-pill-pdf:hover {
+  background: #6d28d9;
+  color: #ffffff;
+}
+
+@media (max-width: 640px) {
+  .hero-launchpad-capsule {
+    border-radius: 12px;
+    padding: 8px;
+    width: 100%;
+    justify-content: center;
+  }
+  .launchpad-pill-group {
+    width: 100%;
+  }
+  .launchpad-pill-btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
 @media (max-width: 768px), (max-width: 932px) and (orientation: landscape) and (max-height: 500px) {
   html,
   body {

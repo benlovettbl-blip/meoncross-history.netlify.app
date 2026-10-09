@@ -21,6 +21,7 @@ import { renderLesson } from './engine/lesson_renderer.js'; // force-refresh
 import { initKeyIndividualsTask } from './key_individuals.js';
 import { initGuidedReadingTask } from './guided_reading.js';
 import { getAssetUrl } from './engine/assets.js';
+import { renderHeroCurricularLaunchpad } from './engine/hero_launchpad.js';
 import './engine/modals.js'; // Side-effect: registers window.renderQuizQuestion, openGallery, etc.
 import {
   renderDiagnosticLauncherHTML,
@@ -1647,6 +1648,7 @@ export async function renderLessonsView() {
     heroImageUrl = getAssetUrl(data.cover_sources[0].image);
   }
 
+  const launchpadHTML = renderHeroCurricularLaunchpad(unitId, data);
   let headerHtml = '';
   if (heroImageUrl) {
     const positionFallbacks = {
@@ -1671,6 +1673,7 @@ export async function renderLessonsView() {
           <h2 style="font-size: clamp(1.05rem, 3.5vw, 1.35rem); color: #cbd5e1; font-weight: 500; margin-top: 0; margin-bottom: 0; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">
             ${data.title}
           </h2>
+          ${launchpadHTML}
           ${data.cover_caption ? `<p style="margin-top: 20px; margin-bottom: 0; font-style: italic; color: #94a3b8; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
         </div>
       </div>
@@ -1683,7 +1686,7 @@ export async function renderLessonsView() {
         <h2 style="font-size: clamp(1.05rem, 3.5vw, 1.35rem); color: #475569; font-weight: 500; margin-top: 0; margin-bottom: 24px;">
           ${data.title}
         </h2>
-        
+        ${launchpadHTML}
         ${renderCoverSourcesHTML(data)}
         
         ${data.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 0; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
