@@ -5593,7 +5593,7 @@ export const unitData = {
             objective:
               'Describe the causes and consequences of the River Jordan water dispute and Syrian border clashes.',
             primer:
-              "Guide pupils through paragraphs [2.1]–[2.2]. Show how Israel's National Water Carrier and Syria's diversion scheme turned freshwater into a military trigger, leading to artillery duels across the demilitarised border.",
+              "Guide pupils through the National Water Carrier Map in Act 1 and paragraphs [2.1]–[2.2]. Show how Israel's National Water Carrier and Syria's diversion scheme turned freshwater into a military trigger, leading to artillery duels across the demilitarised border.",
             question:
               'Why did the physical geography of the Golan Heights give Syria a major military advantage over Israeli farms below?',
           },
@@ -5607,6 +5607,8 @@ export const unitData = {
           },
         ],
         source_context: {
+          'National Water Carrier Map':
+            "Strategic engineering map illustrating Israel's National Water Carrier pipeline network from the Sea of Galilee to the Negev desert (1964). **Hinge Question:** Why did the physical route of the National Water Carrier make water a strategic national security issue rather than merely an agricultural dispute?",
           'Source A':
             'Arab heads of state, including President Gamal Abdel Nasser of Egypt and King Hussein of Jordan, gathered at the Cairo Summit in January 1964 to coordinate Arab strategy against Israel and establish the PLO. **Hinge Question:** Does the assembly of Arab leaders in Source A indicate that war was unavoidable in 1964, or was military confrontation deferred until Arab armed forces were unified?',
           'Source B':
@@ -5717,8 +5719,15 @@ export const unitData = {
       narrative_blocks: [
         {
           title: 'Act 1: Context & Catalyst — The 1964 Cairo Conference & The Water Wars',
+          image: '/images/israel_national_water_carrier_1964_map.svg',
+          caption:
+            "Strategic Engineering Map: The Route of Israel's National Water Carrier (Completed 1964)",
+          image_alt:
+            'Map of Israel showing the pipeline, tunnel, and canal route of the National Water Carrier diverting water from the Sea of Galilee south to the Negev Desert',
+          image_context:
+            "This strategic engineering map illustrates the route of Israel's National Water Carrier, inaugurated in 1964. Pumping water from the Sea of Galilee (Lake Kinneret) at the Sapir pumping station, the network of pressurized pipelines, subterranean tunnels, and open canals traversed 130 kilometres southwest past Tel Aviv down to the northern Negev desert around Be'er Sheva. For Arab states, this unilateral diversion of the international Jordan River basin was viewed as an aggressive attempt to absorb mass Jewish immigration and expand agricultural settlements, prompting Arab leaders at the 1964 Cairo Summit to sponsor a counter-diversion plan that triggered armed border clashes. **Hinge Question:** Why did the physical route of the National Water Carrier make water a strategic national security issue rather than merely an agricultural dispute?",
           paragraphs: [
-            '<span class="para-ref">[1.1]</span> In January 1964, the heads of state of the Arab League gathered in Cairo at the invitation of Egyptian President Gamal Abdel Nasser. The immediate catalyst for the summit was Israel’s completion of the National Water Carrier—a massive engineering pipeline designed to pump water from the Sea of Galilee to irrigate farms in central Israel and the southern Negev desert. Arab governments viewed this project as an aggressive attempt to absorb more Jewish immigrants and strengthen Israel\'s economy. At Cairo (<span class="archival-meta-tag">Source A</span>), Arab leaders agreed on two major policies: they voted to create the Palestine Liberation Organisation (PLO) to give the Palestinian people an official political voice, and they approved a joint Arab plan to build canals diverting the headwaters of the River Jordan inside Syria and Lebanon, which would strip Israel of roughly one-third of its freshwater supply.',
+            '<span class="para-ref">[1.1]</span> In January 1964, the heads of state of the Arab League gathered in Cairo at the invitation of Egyptian President Gamal Abdel Nasser. The immediate catalyst for the summit was Israel’s completion of the National Water Carrier—a massive engineering pipeline designed to pump water from the Sea of Galilee to irrigate farms in central Israel and the southern Negev desert (see <span class="archival-meta-tag">National Water Carrier Map</span>). Arab governments viewed this project as an aggressive attempt to absorb more Jewish immigrants and strengthen Israel\'s economy. At Cairo (<span class="archival-meta-tag">Source A</span>), Arab leaders agreed on two major policies: they voted to create the Palestine Liberation Organisation (PLO) to give the Palestinian people an official political voice, and they approved a joint Arab plan to build canals diverting the headwaters of the River Jordan inside Syria and Lebanon, which would strip Israel of roughly one-third of its freshwater supply.',
             '<span class="para-ref">[1.2]</span> The dispute over water quickly turned into active warfare along the northern border. Between 1964 and 1966, Israeli tanks and aircraft repeatedly shelled Syrian construction sites and earth-moving machinery, bringing the Arab diversion scheme to a complete halt. At the exact same time, Palestinian nationalist guerrillas belonging to Fatah—led by Yasser Arafat—began staging hit-and-run sabotage operations across the armistice lines, targeting Israeli water pumps, railways, and border settlements. In February 1966, a radical military coup in Syria brought hardline officers to power in Damascus who openly pledged to sponsor Fatah and support a "popular liberation war" to destroy the state of Israel.',
           ],
           source: {
@@ -5742,9 +5751,9 @@ export const unitData = {
           tasks: [
             {
               id: 'task_6_1',
-              title: 'Task 1: Causal Analysis — The 1964 Cairo Conference',
+              title: 'Task 1: Causal Analysis — The 1964 Cairo Conference & Water Carrier',
               instructions:
-                'Using paragraphs [1.1] and [1.2] and Source A, explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
+                'Using paragraphs [1.1] and [1.2], the National Water Carrier Map, and Source A, explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
               scaffolding: {
                 sentence_starter:
                   "At the January 1964 Cairo Conference, Arab leaders responded to Israel's National Water Carrier by...",
@@ -5756,15 +5765,15 @@ export const unitData = {
               model_answer:
                 "At the January 1964 Cairo Conference, Arab leaders took two major decisions: they founded the Palestine Liberation Organisation (PLO) to represent Palestinian national rights, and they approved a joint Arab plan to divert the headwaters of the River Jordan away from Israel. This triggered armed conflict because freshwater was vital for Israel's survival and agriculture; when Syria began digging diversion canals, Israeli tanks and aircraft bombarded the construction sites, bringing the project to a halt and creating intense border friction.",
               question:
-                'Using paragraphs [1.1] and [1.2] and Source A, explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
-              text: 'Using paragraphs [1.1] and [1.2] and Source A, explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
+                'Using paragraphs [1.1] and [1.2], the National Water Carrier Map, and Source A, explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
+              text: 'Using paragraphs [1.1] and [1.2], the National Water Carrier Map, and Source A, explain the two main decisions made at the 1964 Cairo Conference and why the River Jordan dispute sparked military clashes.',
               model:
                 "At the January 1964 Cairo Conference, Arab leaders took two major decisions: they founded the Palestine Liberation Organisation (PLO) to represent Palestinian national rights, and they approved a joint Arab plan to divert the headwaters of the River Jordan away from Israel. This triggered armed conflict because freshwater was vital for Israel's survival and agriculture; when Syria began digging diversion canals, Israeli tanks and aircraft bombarded the construction sites, bringing the project to a halt and creating intense border friction.",
             },
           ],
           act: 1,
           act_title: 'Context & Catalyst — The 1964 Cairo Conference & The Water Wars',
-          text: '<span class="para-ref">[1.1]</span> In January 1964, the heads of state of the Arab League gathered in Cairo at the invitation of Egyptian President Gamal Abdel Nasser. The immediate catalyst for the summit was Israel’s completion of the National Water Carrier—a massive engineering pipeline designed to pump water from the Sea of Galilee to irrigate farms in central Israel and the southern Negev desert. Arab governments viewed this project as an aggressive attempt to absorb more Jewish immigrants and strengthen Israel\'s economy. At Cairo (<span class="archival-meta-tag">Source A</span>), Arab leaders agreed on two major policies: they voted to create the Palestine Liberation Organisation (PLO) to give the Palestinian people an official political voice, and they approved a joint Arab plan to build canals diverting the headwaters of the River Jordan inside Syria and Lebanon, which would strip Israel of roughly one-third of its freshwater supply.\n\n<span class="para-ref">[1.2]</span> The dispute over water quickly turned into active warfare along the northern border. Between 1964 and 1966, Israeli tanks and aircraft repeatedly shelled Syrian construction sites and earth-moving machinery, bringing the Arab diversion scheme to a complete halt. At the exact same time, Palestinian nationalist guerrillas belonging to Fatah—led by Yasser Arafat—began staging hit-and-run sabotage operations across the armistice lines, targeting Israeli water pumps, railways, and border settlements. In February 1966, a radical military coup in Syria brought hardline officers to power in Damascus who openly pledged to sponsor Fatah and support a "popular liberation war" to destroy the state of Israel.',
+          text: '<span class="para-ref">[1.1]</span> In January 1964, the heads of state of the Arab League gathered in Cairo at the invitation of Egyptian President Gamal Abdel Nasser. The immediate catalyst for the summit was Israel’s completion of the National Water Carrier—a massive engineering pipeline designed to pump water from the Sea of Galilee to irrigate farms in central Israel and the southern Negev desert (see <span class="archival-meta-tag">National Water Carrier Map</span>). Arab governments viewed this project as an aggressive attempt to absorb more Jewish immigrants and strengthen Israel\'s economy. At Cairo (<span class="archival-meta-tag">Source A</span>), Arab leaders agreed on two major policies: they voted to create the Palestine Liberation Organisation (PLO) to give the Palestinian people an official political voice, and they approved a joint Arab plan to build canals diverting the headwaters of the River Jordan inside Syria and Lebanon, which would strip Israel of roughly one-third of its freshwater supply.\n\n<span class="para-ref">[1.2]</span> The dispute over water quickly turned into active warfare along the northern border. Between 1964 and 1966, Israeli tanks and aircraft repeatedly shelled Syrian construction sites and earth-moving machinery, bringing the Arab diversion scheme to a complete halt. At the exact same time, Palestinian nationalist guerrillas belonging to Fatah—led by Yasser Arafat—began staging hit-and-run sabotage operations across the armistice lines, targeting Israeli water pumps, railways, and border settlements. In February 1966, a radical military coup in Syria brought hardline officers to power in Damascus who openly pledged to sponsor Fatah and support a "popular liberation war" to destroy the state of Israel.',
         },
         {
           title: 'Act 2: Escalation & Conflict — Syrian Border Clashes & Israeli Reprisals',
