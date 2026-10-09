@@ -36,9 +36,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Illness was viewed as divine retribution, meaning recovery required repentance, prayer, and devotion.',
       },
       {
-        q: 'Why did the medieval Catholic Church hold an intellectual monopoly over medical education?',
-        a: 'Monks controlled scriptoria (book copying) and university faculties taught only Church-approved texts',
-        exp: 'Challenging official medical dogma was treated as heresy against religious and papal authority.',
+        q: 'How did the medieval Catholic Church maintain its monopoly over medical ideas and education?',
+        a: 'Monks hand-copied books in monastic scriptoria, and universities only taught Church-approved texts',
+        exp: 'Because the Church controlled book copying and university faculties, challenging Galen was treated as heresy.',
       },
       {
         q: 'Which Franciscan friar was imprisoned in 1277 for advocating empirical scientific observation?',
@@ -1015,24 +1015,24 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Enables preventive medicine: patients with mutations can opt for regular MRI scans or preventative mastectomies.',
       },
       {
-        q: 'What is "Pharmacogenomics" (personalized gene therapy) in modern cancer and disease treatment?',
-        a: 'Designing bespoke drugs and therapies tailored to an individual patient’s unique genetic profile and tumor DNA',
-        exp: 'Replaces generic "one-size-fits-all" chemotherapy with targeted biological therapies that attack cancer cells specifically.',
+        q: 'What is personalized medicine (gene therapy) in modern cancer and disease treatment?',
+        a: 'Designing therapies tailored to an individual patient’s specific genetic profile and tumor DNA',
+        exp: 'Replaces generic chemotherapy with targeted biological treatments that attack cancer cells specifically.',
       },
       {
-        q: 'What modern genome-editing technology developed in 2012 allows scientists to alter DNA sequences in living cells?',
-        a: 'CRISPR-Cas9 gene editing',
-        exp: 'Acts as molecular scissors to cut out and repair defective genes, offering potential cures for sickle cell disease.',
+        q: 'How does modern genetic screening allow preventative treatment for disease?',
+        a: 'Identifies faulty gene mutations (e.g. BRCA1/2) so patients can take action before symptoms appear',
+        exp: 'Enables individuals at high hereditary risk to undergo regular scans or preventative surgery.',
       },
       {
-        q: 'How did the discovery of genetics fundamentally change the philosophical understanding of what causes illness?',
-        a: 'Shifted medicine from viewing disease as external invaders (microbes) to recognizing internal cellular and genetic blueprints',
+        q: 'How did the discovery of genetics fundamentally change the understanding of what causes illness?',
+        a: 'Shifted medicine from viewing disease as external invaders (microbes) to recognizing internal cellular blueprints',
         exp: 'Proved many chronic conditions are programmed inside human cellular DNA, rather than caused solely by infections.',
       },
       {
         q: 'What ethical concerns have arisen from modern genetic screening and human gene technology?',
-        a: 'Fears of genetic discrimination by insurance companies and controversial debates over creating "designer babies"',
-        exp: 'Has forced governments and bioethicists to regulate embryo screening, gene editing, and genetic data privacy.',
+        a: 'Fears of genetic discrimination by employers/insurers and ethical debates over screening embryos',
+        exp: 'Has forced governments to regulate embryo testing and protect the privacy of personal genetic data.',
       },
     ],
   },
@@ -1088,13 +1088,13 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Provides real-time non-invasive imaging of developing embryos, blood flow (Doppler), and gallstones without radiation.',
       },
       {
-        q: 'How did non-invasive diagnostic machines transform the danger of patient care between 1900 and the present?',
-        a: 'Eliminated the need for dangerous "exploratory laparotomy" surgeries where doctors cut open chests to diagnose illnesses',
-        exp: 'Doctors can now pinpoint tumors, internal bleeds, and organ damage accurately before picking up a scalpel.',
+        q: 'How did non-invasive diagnostic machines transform patient safety between 1900 and the present?',
+        a: 'Eliminated dangerous exploratory surgery previously needed to diagnose internal illness',
+        exp: 'Doctors can now pinpoint tumors, internal bleeds, and organ damage accurately before operating.',
       },
       {
-        q: 'What wearable digital technologies are increasingly used by 21st-century patients to monitor physical health?',
-        a: 'Smartwatches, continuous glucose monitors (CGMs), and digital blood pressure monitors',
+        q: 'What personal digital technologies are increasingly used by patients to monitor health at home?',
+        a: 'Home monitors, digital blood pressure monitors, and blood sugar monitors for diabetes',
         exp: 'Allows continuous real-time health data monitoring, empowering patients to manage diabetes and cardiac risk remotely.',
       },
     ],
@@ -1200,7 +1200,7 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
       },
       {
         q: 'Why did Howard Florey travel to the United States in July 1941 to seek mass production help?',
-        a: 'British chemical and pharmaceutical factories were fully booked manufacturing munitions for World War Two',
+        a: 'British chemical factories were fully occupied producing explosives and munitions for the war',
         exp: 'The Battle of Britain and Blitz bombing meant British industry could not construct new chemical fermentation plants.',
       },
       {
@@ -1273,7 +1273,7 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
       },
       {
         q: 'Name three statutory government interventions introduced since 1965 to curb cigarette smoking in Britain.',
-        a: 'Banning TV cigarette adverts (1965), graphic pictorial health warnings on packets (2008), and plain standardized packaging (2016)',
+        a: 'Banning TV cigarette adverts (1965), graphic health warnings (2008), and plain packaging (2016)',
         exp: 'Combined with heavy fiscal taxation, raising the legal smoking age to 18 (2007), and mass media campaigns like "Stoptober".',
       },
       {
@@ -1283,7 +1283,7 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
       },
       {
         q: 'How does modern government action against lung cancer demonstrate a fundamental shift in the definition of "Public Health"?',
-        a: 'Shifted from building physical infrastructure (clean water and sewers in 1875) to regulating citizen lifestyle choices and corporate marketing',
+        a: 'Shifted from building sewer/water infrastructure to regulating lifestyle choices and advertising',
         exp: 'Modern public health focuses on behavioral nudges, prohibitive taxation, advertising bans, and preventive education.',
       },
     ],

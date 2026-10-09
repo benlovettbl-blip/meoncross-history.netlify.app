@@ -422,8 +422,8 @@ function buildHtml() {
 
     .page-container {
       width: 100%;
-      height: 1081px;
-      max-height: 1081px;
+      height: 1060px;
+      max-height: 1060px;
       page-break-after: always;
       position: relative;
       overflow: hidden;
@@ -804,7 +804,8 @@ function buildHtml() {
       grid-template-columns: repeat(5, 1fr);
       gap: 4.5px;
       flex: 1;
-      margin-top: 2px;
+      margin-top: 1.5px;
+      margin-bottom: 8px;
       height: 100%;
     }
     .mb-lesson-col {
@@ -817,28 +818,28 @@ function buildHtml() {
       background: #0f172a;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
+      font-size: 6.7pt;
       font-weight: 800;
-      padding: 2px 3px;
+      padding: 1.8px 3px;
       text-transform: uppercase;
       letter-spacing: 0.2px;
       border-radius: 1px;
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
       text-align: center;
       line-height: 1.15;
     }
     .ans-card {
       border: 1px solid #cbd5e1;
-      border-left: 2.5px solid #0f172a;
+      border-left: 2.2px solid #0f172a;
       background: #f8fafc;
-      border-radius: 2px;
-      padding: 2px 3.5px;
+      border-radius: 1.5px;
+      padding: 1.6px 3.2px;
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      font-size: 6.8pt;
-      line-height: 1.15;
-      margin-bottom: 1.2px;
+      gap: 0.5px;
+      font-size: 6.5pt;
+      line-height: 1.12;
+      margin-bottom: 0px;
     }
     .ans-header {
       display: flex;
@@ -846,10 +847,10 @@ function buildHtml() {
       align-items: baseline;
       gap: 2px;
     }
-    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; font-size: 7.2pt; }
-    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.0pt; flex: 1; margin-left: 2px; }
-    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #475569; white-space: nowrap; }
-    .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.5pt; line-height: 1.12; }
+    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; font-size: 6.9pt; }
+    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 6.7pt; flex: 1; margin-left: 2px; }
+    .ans-check { font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.0pt; line-height: 1.08; }
 
     /* Page 27: 6-Factor Analytical Matrix (Top Half) & Synoptic Synthesis (Bottom Half) */
     .p27-wrap {
@@ -1555,8 +1556,8 @@ function buildHtml() {
             <tr>
               <td class="factor-lbl">2. Religion</td>
               <td>
-                &bull; <strong>Scriptoria Monopoly:</strong> Church copied books; dissent burned as heresy.<br>
-                &bull; <strong>Galenic Teleology:</strong> Church preserved Galen as proving God's design.<br>
+                &bull; <strong>Scriptoria Monopoly:</strong> Monks hand-copied books; dissent punished as heresy.<br>
+                &bull; <strong>Church Supported Galen:</strong> Galen believed in God's design; Church banned questioning him.<br>
                 &bull; <strong>Divine Retribution:</strong> Sickness punished sin; flagellants, pilgrimages.
               </td>
               <td>
@@ -2067,7 +2068,7 @@ async function main() {
   if (hasOverflow) {
     console.error('❌ Critical layout error: Page overflow detected!');
   } else {
-    console.log('🎉 100% SUCCESS: All 28 pages strictly budget within 1081px with 0px overflow!');
+    console.log('🎉 100% SUCCESS: All 28 pages strictly budget within 1060px with 0px overflow!');
   }
 
   const outputPdfPath = path.join(
