@@ -242,6 +242,92 @@ const DOMINO_TIMELINE = [
 ];
 
 // --------------------------------------------------------------------------
+// LEDGER SPECIFICATION ENTRIES (PAGE 1)
+// --------------------------------------------------------------------------
+const LEDGER_ENTRIES = [
+  {
+    topicCode: 'KT 1.1',
+    title: 'Enq 1: Position of Black Americans in Early 1950s',
+    sub: 'Jim Crow laws, Plessy v. Ferguson, 14th Amendment, NAACP legal strategy, poll taxes & literacy tests',
+  },
+  {
+    topicCode: 'KT 1.2',
+    title: 'Enq 2: Education: Brown v. Topeka & Little Rock',
+    sub: 'Brown v. Topeka 1954, Earl Warren, Ku Klux Klan revival, Little Rock Nine 1957, Faubus & 101st Airborne',
+  },
+  {
+    topicCode: 'KT 1.3',
+    title: 'Enq 3: The Montgomery Bus Boycott (1955–56)',
+    sub: 'Rosa Parks, Jo Ann Robinson & WPC, MLK leadership, 381-day carpools, Browder v. Gayle desegregation ruling',
+  },
+  {
+    topicCode: 'KT 1.4',
+    title: 'Enq 4: White Resistance, Emmett Till & 1957 Act',
+    sub: "Murder of Emmett Till 1955, all-white juries, White Citizens' Councils, Southern Manifesto, 1957 Civil Rights Act",
+  },
+  {
+    topicCode: 'KT 2.1',
+    title: 'Enq 5: Sit-Ins, Freedom Rides & James Meredith',
+    sub: 'Greensboro 1960, SNCC, CORE Freedom Rides 1961, Anniston firebombing, James Meredith & Ole Miss riots 1962',
+  },
+  {
+    topicCode: 'KT 2.2',
+    title: 'Enq 6: Birmingham, Washington & Landmark Acts',
+    sub: 'Project C & Bull Connor 1963, March on Washington, 1964 Civil Rights Act, Selma & 1965 Voting Rights Act',
+  },
+  {
+    topicCode: 'KT 2.3',
+    title: 'Enq 7: Malcolm X & The Rise of Black Power',
+    sub: 'Nation of Islam, Malcolm X, Stokely Carmichael & 1966 Meredith March, Black Panther Party 1966, 1968 Olympics',
+  },
+  {
+    topicCode: 'KT 2.4',
+    title: 'Enq 8: Urban Rioting, Kerner Report & King (1965–68)',
+    sub: 'Watts riots 1965, Chicago Campaign 1966, 1968 Kerner Report ("two societies"), MLK assassination & 1968 Housing Act',
+  },
+  {
+    topicCode: 'KT 3.1',
+    title: 'Enq 9: US Intervention: Domino Theory & Diem',
+    sub: 'Dien Bien Phu & 1954 Geneva Accords, Domino Theory, SEATO, Ngo Dinh Diem, Vietcong & Strategic Hamlets',
+  },
+  {
+    topicCode: 'KT 3.2',
+    title: 'Enq 10: Tonkin, Escalation & Rolling Thunder',
+    sub: '1963 Diem coup, Gulf of Tonkin Incident & Resolution 1964, Operation Rolling Thunder 1965, US combat troops landing',
+  },
+  {
+    topicCode: 'KT 3.3',
+    title: 'Enq 11: Tactics: Guerrillas vs Search & Destroy',
+    sub: 'Vietcong guerrilla tactics & Ho Chi Minh Trail, Cu Chi tunnels, Operation Cedar Falls, Agent Orange & Napalm',
+  },
+  {
+    topicCode: 'KT 3.4',
+    title: 'Enq 12: Vietnamization, Secret Bombing & Accords',
+    sub: 'Nixon Doctrine, Vietnamization policy, Operation Menu bombing Cambodia & Laos 1969–70, Kissinger secret diplomacy',
+  },
+  {
+    topicCode: 'KT 4.1',
+    title: 'Enq 13: Tet Offensive & The Anti-War Movement',
+    sub: 'Tet Offensive Jan 1968, Battle of Hue & Saigon Embassy, Walter Cronkite credibility gap, SDS, draft card burning',
+  },
+  {
+    topicCode: 'KT 4.2',
+    title: 'Enq 14: Media, My Lai, Kent State & Silent Majority',
+    sub: "1968 My Lai Massacre & Ron Ridenhour, Kent State shootings May 1970, Pentagon Papers 1971, Nixon's Silent Majority",
+  },
+  {
+    topicCode: 'KT 4.3',
+    title: 'Enq 15: Peace Process, Paris Agreement & Costs',
+    sub: '1972 Linebacker bombing, Jan 1973 Paris Peace Accords, US troop withdrawal, War Powers Act 1973, 1975 Fall of Saigon',
+  },
+  {
+    topicCode: 'KT 4.4',
+    title: 'Enq 16: Why the US Failed: Synoptic Evaluation',
+    sub: 'Military vs political failure, Vietnamese nationalism, anti-war movement at home, human and financial cost of the war',
+  },
+];
+
+// --------------------------------------------------------------------------
 // HISTORICAL PROTAGONISTS (PAGE 23)
 // --------------------------------------------------------------------------
 const PROTAGONISTS = [
@@ -365,7 +451,10 @@ const VOCABULARY = [
 // HTML BUILDER: 24-PAGE A4 SADDLE-STITCH BOOKLET
 // --------------------------------------------------------------------------
 function buildHtml() {
-  const qrSvg = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa');
+  const qrKt1 = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa#kt1');
+  const qrKt2 = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa#kt2');
+  const qrKt3 = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa#kt3');
+  const qrHub = generateQrSvg('https://the-history-revision-hub.netlify.app/?unit=usa');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -518,56 +607,90 @@ function buildHtml() {
       height: 100%;
       border-collapse: collapse;
       font-family: 'Inter', sans-serif;
-      font-size: 8.2pt;
+      font-size: 7.6pt;
     }
     .hw-ledger-table thead th {
       background: #0f172a;
       color: #ffffff;
-      padding: 4px 6px;
+      padding: 3.5px 4px;
       font-weight: 900;
       text-transform: uppercase;
       border: 1.2px solid #0f172a;
-      font-size: 7.5pt;
-      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      letter-spacing: 0.3px;
     }
     .hw-ledger-table td {
       border: 1.2px solid #cbd5e1;
-      padding: 5px 6px;
+      padding: 3px 5px;
       vertical-align: middle;
       color: #000000;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .hw-ledger-table tr:nth-child(even) td { background: #f8fafc; }
     .hw-col-title {
       background: #0f172a !important;
       color: #ffffff;
-      font-size: 8.0pt;
+      font-size: 7.6pt;
       font-weight: 900;
       text-align: center;
-      padding: 4px 6px !important;
+      padding: 3px 5px !important;
       letter-spacing: 0.5px;
       text-transform: uppercase;
+    }
+    .ledger-topic-badge {
+      display: inline-block;
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 5.8pt;
+      font-weight: 900;
+      padding: 0.5px 3.5px;
+      border-radius: 2px;
+      margin-right: 3px;
+      letter-spacing: 0.2px;
+      vertical-align: baseline;
+    }
+    .ledger-title-text {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.1pt;
+      font-weight: 800;
+      color: #0f172a;
+      display: inline;
+    }
+    .ledger-sub-text {
+      font-family: 'Georgia', serif;
+      font-size: 6.0pt;
+      color: #334155;
+      font-style: italic;
+      line-height: 1.10;
+      margin-top: 1px;
     }
 
     .cover-protocol-box {
       border: 1.4px solid #0f172a;
       border-left: 5px solid #0f172a;
       border-radius: 2px;
-      padding: 8px 12px;
+      padding: 6px 10px;
       background: #f8fafc;
       font-family: 'Inter', sans-serif;
-      font-size: 7.8pt;
-      line-height: 1.35;
+      font-size: 7.4pt;
+      line-height: 1.30;
       color: #1e293b;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
-    .cover-protocol-box strong {
+    .cover-protocol-title {
       color: #0f172a;
-      font-size: 8.4pt;
+      font-size: 7.7pt;
+      font-weight: 900;
       margin-bottom: 2px;
       display: block;
       text-transform: uppercase;
-      letter-spacing: 0.4px;
+      letter-spacing: 0.3px;
+    }
+    .cover-protocol-box strong {
+      color: #0f172a;
+      font-weight: 800;
+      display: inline;
     }
 
     /* Page 2: Chronology Domino Flowchart */
@@ -606,22 +729,59 @@ function buildHtml() {
 
     /* Enquiry Pages (Pages 3–18) */
     .lesson-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       background: #f8fafc;
-      border-left: 4px solid #0f172a;
-      padding: 3px 8px;
+      border: 1.3px solid #0f172a;
+      border-left: 5px solid #0f172a;
+      padding: 2.5px 8px;
       margin-bottom: 2px;
-      border-top: 1px solid #cbd5e1;
-      border-right: 1px solid #cbd5e1;
-      border-bottom: 1px solid #cbd5e1;
+      border-radius: 2px;
     }
-    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.2pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
-    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #334155; margin-top: 1px; }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 9.8pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
+    .lesson-meta-enquiry { font-family: 'Georgia', serif; font-size: 7.2pt; color: #334155; font-style: italic; margin-top: 1px; }
+
+    .enquiry-score-pill {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #ffffff;
+      border: 1.2px solid #0f172a;
+      border-radius: 2px;
+      padding: 1px 7px;
+      min-width: 96px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+    .score-main {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.6pt;
+      font-weight: 900;
+      color: #0f172a;
+      letter-spacing: 0.5px;
+    }
+    .score-num {
+      font-family: 'Inter', sans-serif;
+      font-size: 8.8pt;
+      font-weight: 900;
+      color: #0f172a;
+      line-height: 1;
+      margin: 1px 0;
+    }
+    .score-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 5.0pt;
+      font-weight: 700;
+      color: #475569;
+    }
 
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2.4px 6px;
-      margin-bottom: 1.8px;
+      padding: 2.2px 6px;
+      margin-bottom: 1.6px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
@@ -635,9 +795,21 @@ function buildHtml() {
       line-height: 1.16;
     }
     .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; color: #000000; min-width: 15px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.4pt; font-weight: 700; color: #000000; line-height: 1.16; }
-    .q-attempt { font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; min-width: 15px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 8.2pt; font-weight: 700; color: #000000; line-height: 1.16; }
+    .q-marks-pill {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      font-weight: 800;
+      color: #0f172a;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 1px 5px;
+      white-space: nowrap;
+      margin-left: 6px;
+      flex-shrink: 0;
+    }
 
     .q-line-row {
       display: flex;
@@ -1047,62 +1219,85 @@ function buildHtml() {
       font-weight: 600;
       line-height: 1.36;
     }
-    .back-hub-card {
+    .back-hub-grid-wrap {
       border: 1.4px solid #0f172a;
       background: #f8fafc;
-      padding: 13px 18px;
       border-radius: 2px;
+      overflow: hidden;
+      margin-top: 1px;
+    }
+    .back-hub-banner {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 3.5px 8px;
       display: flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 18px;
-    }
-    .back-hub-qr {
-      width: 98px;
-      height: 98px;
-      flex-shrink: 0;
-      background: #ffffff;
-      padding: 3px;
-      border: 1.2px solid #cbd5e1;
-      border-radius: 2px;
-    }
-    .back-hub-info {
-      flex: 1;
       font-family: 'Inter', sans-serif;
     }
-    .back-hub-title {
-      font-size: 11.0pt;
+    .back-hub-banner-title {
+      font-size: 7.8pt;
       font-weight: 900;
-      color: #0f172a;
+      letter-spacing: 0.4px;
       text-transform: uppercase;
-      margin-bottom: 3px;
-      letter-spacing: 0.3px;
     }
-    .back-hub-desc {
-      font-size: 8.5pt;
-      line-height: 1.38;
-      color: #334155;
-      margin-bottom: 6px;
+    .back-hub-banner-sub {
+      font-size: 6.8pt;
+      color: #94a3b8;
+      font-weight: 700;
     }
-    .back-hub-features {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 6px;
+    .back-hub-gateways-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 6px;
+      padding: 5px 8px;
     }
-    .hub-feature-tag {
-      font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
-      font-weight: 800;
-      background: #e2e8f0;
-      color: #0f172a;
-      padding: 2.5px 7px;
+    .hub-gw-card {
+      background: #ffffff;
+      border: 1.1px solid #cbd5e1;
       border-radius: 2px;
-      white-space: nowrap;
+      padding: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 2px;
     }
-    .back-hub-url {
-      font-family: monospace;
-      font-size: 8.5pt;
+    .hub-gw-qr {
+      width: 58px;
+      height: 58px;
+      background: #ffffff;
+      padding: 1px;
+      border: 1px solid #e2e8f0;
+    }
+    .hub-gw-body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1px;
+    }
+    .hub-gw-badge {
+      background: #0f172a;
+      color: #ffffff;
+      font-family: 'Inter', sans-serif;
+      font-size: 5.7pt;
+      font-weight: 800;
+      padding: 0.5px 3.5px;
+      border-radius: 2px;
+      letter-spacing: 0.2px;
+    }
+    .hub-gw-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.8pt;
       font-weight: 800;
       color: #0f172a;
+      line-height: 1.15;
+    }
+    .hub-gw-desc {
+      font-family: 'Georgia', serif;
+      font-size: 6.2pt;
+      color: #475569;
+      line-height: 1.15;
     }
   </style>
 </head>
@@ -1136,24 +1331,30 @@ function buildHtml() {
         <table class="hw-ledger-table">
           <thead>
             <tr>
-              <th colspan="4" class="hw-col-title">Part I: Civil Rights Movement (1954–1975)</th>
+              <th colspan="5" class="hw-col-title">Part I: Civil Rights Movement (1954–1975)</th>
             </tr>
             <tr>
-              <th style="width: 48%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
-              <th style="width: 16%; text-align: center;">Due Date</th>
-              <th style="width: 14%; text-align: center;">Score</th>
-              <th style="width: 22%; text-align: center;">Parent / Carer</th>
+              <th style="width: 50%; text-align: left; padding-left: 6px;">Enquiry &amp; Specification Focus</th>
+              <th style="width: 14%; text-align: center;">Due Date</th>
+              <th style="width: 16%; text-align: center;">Score (/24)<br><span style="font-size: 5.4pt; font-weight: 700; text-transform: none; color: #94a3b8;">12 Qs × 2m</span></th>
+              <th style="width: 12%; text-align: center;">Parent Sign</th>
+              <th style="width: 8%; text-align: center;">RAG</th>
             </tr>
           </thead>
           <tbody>
-            ${USA_PEARSON_QUIZ_BANK.slice(0, 8)
+            ${LEDGER_ENTRIES.slice(0, 8)
               .map(
                 (item) => `
             <tr>
-              <td><strong>E${item.num}:</strong> ${item.title}</td>
-              <td style="text-align: center; font-family: monospace; font-size: 7.6pt; color: #475569;">____/____</td>
-              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155;">&nbsp;&nbsp;&nbsp;&nbsp;/12</td>
+              <td>
+                <span class="ledger-topic-badge">${item.topicCode}</span>
+                <div class="ledger-title-text">${item.title}</div>
+                <div class="ledger-sub-text">${item.sub}</div>
+              </td>
+              <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #475569;">____/____</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
               <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
             </tr>`,
               )
               .join('')}
@@ -1164,24 +1365,30 @@ function buildHtml() {
         <table class="hw-ledger-table">
           <thead>
             <tr>
-              <th colspan="4" class="hw-col-title">Part II: The USA & The Vietnam War (1954–1975)</th>
+              <th colspan="5" class="hw-col-title">Part II: The USA &amp; The Vietnam War (1954–1975)</th>
             </tr>
             <tr>
-              <th style="width: 48%; text-align: left; padding-left: 6px;">Enquiry Focus</th>
-              <th style="width: 16%; text-align: center;">Due Date</th>
-              <th style="width: 14%; text-align: center;">Score</th>
-              <th style="width: 22%; text-align: center;">Parent / Carer</th>
+              <th style="width: 50%; text-align: left; padding-left: 6px;">Enquiry &amp; Specification Focus</th>
+              <th style="width: 14%; text-align: center;">Due Date</th>
+              <th style="width: 16%; text-align: center;">Score (/24)<br><span style="font-size: 5.4pt; font-weight: 700; text-transform: none; color: #94a3b8;">12 Qs × 2m</span></th>
+              <th style="width: 12%; text-align: center;">Parent Sign</th>
+              <th style="width: 8%; text-align: center;">RAG</th>
             </tr>
           </thead>
           <tbody>
-            ${USA_PEARSON_QUIZ_BANK.slice(8, 16)
+            ${LEDGER_ENTRIES.slice(8, 16)
               .map(
                 (item) => `
             <tr>
-              <td><strong>E${item.num}:</strong> ${item.title}</td>
-              <td style="text-align: center; font-family: monospace; font-size: 7.6pt; color: #475569;">____/____</td>
-              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155;">&nbsp;&nbsp;&nbsp;&nbsp;/12</td>
+              <td>
+                <span class="ledger-topic-badge">${item.topicCode}</span>
+                <div class="ledger-title-text">${item.title}</div>
+                <div class="ledger-sub-text">${item.sub}</div>
+              </td>
+              <td style="text-align: center; font-family: monospace; font-size: 7.2pt; color: #475569;">____/____</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
               <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
+              <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
             </tr>`,
               )
               .join('')}
@@ -1190,8 +1397,8 @@ function buildHtml() {
       </div>
 
       <div class="cover-protocol-box">
-        <strong>Formative Home Learning & Parental Partnership Protocol</strong>
-        For each weekly enquiry, pupils must complete their 12 retrieval questions under timed recall conditions before self-checking answers against the Department Marking Bank on Pages 19–22. Every question requires both a <em>Core Fact</em> and an <em>Historical Explanation</em>. Parents and carers are kindly requested to inspect that both components are fully attempted and sign the ledger alongside the due date.
+        <div class="cover-protocol-title">DEPARTMENT RETRIEVAL PROTOCOL &amp; SPACED LEARNING STANDARDS:</div>
+        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, act, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism, tactical impact, or significance). Total: 12 questions × 2 marks = <strong>24 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 18/24 trigger immediate digital flashcard consolidation.
       </div>
     </div>
 
@@ -1253,8 +1460,15 @@ function buildHtml() {
     </div>
 
     <div class="lesson-meta-bar">
-      <h2 class="lesson-meta-title">Enquiry ${enq.num}: ${enq.title}</h2>
-      <div class="lesson-meta-enquiry">${enq.enquiry}</div>
+      <div>
+        <h2 class="lesson-meta-title">Enquiry ${enq.num}: ${enq.title}</h2>
+        <div class="lesson-meta-enquiry"><strong>Enquiry Focus:</strong> ${enq.enquiry}</div>
+      </div>
+      <div class="enquiry-score-pill">
+        <span class="score-main">ENQUIRY SCORE</span>
+        <span class="score-num">/ 24</span>
+        <span class="score-sub">Fact: __/12 • Expl: __/12</span>
+      </div>
     </div>
 
     <div class="page-body-full" style="justify-content: space-between;">
@@ -1267,7 +1481,7 @@ function buildHtml() {
             <span class="q-num">${qIdx + 1}.</span>
             <span class="q-prompt">${q.q}</span>
           </div>
-          <span class="q-attempt">[ &nbsp; ]</span>
+          <span class="q-marks-pill">Fact: [ ] &nbsp; Expl: [ ] &nbsp; / 2m</span>
         </div>
         <div class="q-line-row">
           <span class="q-line-lbl">Core Fact:</span>
@@ -1596,20 +1810,45 @@ function buildHtml() {
         </span>
       </div>
 
-      <!-- DIGITAL REVISION HUB CARD (RELOCATED FROM COVER) -->
-      <div class="back-hub-card">
-        <div class="back-hub-qr">${qrSvg}</div>
-        <div class="back-hub-info">
-          <div class="back-hub-title">Digital Revision Hub &amp; Interactive Quizzes</div>
-          <div class="back-hub-desc">
-            Scan for 20-question self-marking retrieval quizzes, digital flashcards, and verified Edexcel Paper 3 model answers for all 16 enquiries.
+      <!-- DIGITAL REVISION HUB 4-GATEWAY COMMAND DECK -->
+      <div class="back-hub-grid-wrap">
+        <div class="back-hub-banner">
+          <span class="back-hub-banner-title">DIGITAL REVISION HUB • DIRECT TOPIC QR REVISION GATEWAYS</span>
+          <span class="back-hub-banner-sub">the-history-revision-hub.netlify.app/?unit=usa • Scan with smartphone camera</span>
+        </div>
+        <div class="back-hub-gateways-grid">
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrKt1}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge">KEY TOPIC 1</span>
+              <div class="hub-gw-title">Civil Rights (1954–60)</div>
+              <div class="hub-gw-desc">Enquiries 1–4: Jim Crow, Brown v. Topeka, Montgomery &amp; Little Rock.</div>
+            </div>
           </div>
-          <div class="back-hub-features">
-            <span class="hub-feature-tag">✓ 16 Self-Marking Quizzes</span>
-            <span class="hub-feature-tag">✓ Digital Flashcard Vault</span>
-            <span class="hub-feature-tag">✓ Paper 3 Model Bank</span>
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrKt2}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge">KEY TOPIC 2</span>
+              <div class="hub-gw-title">Protest &amp; Radicalism (1960–75)</div>
+              <div class="hub-gw-desc">Enquiries 5–8: Sit-Ins, Birmingham, Malcolm X, Black Power &amp; 1964/65 Acts.</div>
+            </div>
           </div>
-          <div class="back-hub-url">the-history-revision-hub.netlify.app/?unit=usa</div>
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrKt3}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge">KEY TOPIC 3</span>
+              <div class="hub-gw-title">Vietnam Involvement (1954–75)</div>
+              <div class="hub-gw-desc">Enquiries 9–12: Geneva, Diem, Tonkin, Rolling Thunder &amp; Guerrilla Warfare.</div>
+            </div>
+          </div>
+          <div class="hub-gw-card">
+            <div class="hub-gw-qr">${qrHub}</div>
+            <div class="hub-gw-body">
+              <span class="hub-gw-badge" style="background: #0284c7;">KT4 &amp; MASTER PORTAL</span>
+              <div class="hub-gw-title">End of War &amp; All 16 Quizzes</div>
+              <div class="hub-gw-desc">Enquiries 13–16: Tet, My Lai, Kent State, Paris Accords &amp; Flashcard Vault.</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -1692,13 +1931,19 @@ async function compilePdf() {
   });
   console.log(`✅ Generated Master 24-Page A4 PDF: ${targetPdf}`);
 
-  // Take debug screenshots for visual inspection
-  for (const pNum of [1, 4, 22, 23, 24]) {
+  // Take visual screenshots for all 24 pages
+  const debugDir = path.join(ROOT_DIR, 'public', 'images', 'usa_pages');
+  if (!fs.existsSync(debugDir)) {
+    fs.mkdirSync(debugDir, { recursive: true });
+  }
+
+  for (let pNum = 1; pNum <= 24; pNum++) {
     const el = await page.$(`#page-${pNum}`);
     if (el) {
-      await el.screenshot({ path: path.join(ROOT_DIR, 'public', 'images', `debug_p${pNum}.png`) });
+      await el.screenshot({ path: path.join(debugDir, `page_${pNum}.png`) });
     }
   }
+  console.log(`📸 Rendered high-resolution screenshots for all 24 pages in: ${debugDir}`);
 
   await browser.close();
 
