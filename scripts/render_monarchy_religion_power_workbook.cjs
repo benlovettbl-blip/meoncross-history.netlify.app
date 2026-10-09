@@ -62,22 +62,21 @@ const enquiryConfigs = [
         date: '1517–1527',
         questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
         bullets: [
-          'Catherine of Aragon produced no surviving male heir',
-          'Henry VIII feared divine biblical curse (Leviticus 20:21)',
-          'Anne Boleyn refused to become a mere royal mistress',
-          'Urgent need for uncontested Tudor dynastic succession',
+          'Catherine of Aragon had no surviving male heir to secure the Tudor succession',
+          'Henry VIII feared a divine curse from God, citing Leviticus 20:21',
+          'Anne Boleyn refused to be a royal mistress, demanding legitimate marriage',
         ],
-        focusClue: 'Why was the lack of a male heir seen as a threat of civil war?',
+        focusClue:
+          'Why did Henry believe that without a son, England would collapse into civil war?',
       },
       {
         step: 2,
         date: '1527–1529',
         questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
         bullets: [
-          'Cardinal Wolsey tasked with securing papal annulment in Rome',
-          'Imperial sack of Rome (1527) by Emperor Charles V',
-          'Pope Clement VII held captive by Charles V (Catherine’s nephew)',
-          'Blackfriars legatine court collapsed without verdict (1529)',
+          'Cardinal Wolsey failed to secure a papal annulment from Rome',
+          'In 1527, Charles V sacked Rome and held Pope Clement captive',
+          'Charles V was Catherine’s nephew, blocking any divorce from Henry',
         ],
         focusClue: 'Why did European power politics prevent the Pope from granting the annulment?',
       },
@@ -86,22 +85,21 @@ const enquiryConfigs = [
         date: '1529–1532',
         questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
         bullets: [
-          'Wolsey dismissed and stripped of power for praemunire (1529)',
-          'Thomas Cromwell proposed breaking legal jurisdiction of Rome',
-          'Reformation Parliament summoned; anti-clerical petitions heard',
-          'Supplication Against the Ordinaries forced clergy submission',
+          'Thomas Cromwell advised Henry to break England from the legal power of Rome',
+          'Reformation Parliament passed laws attacking church abuses and clergy privileges',
+          'In 1532, English bishops surrendered their independence to the King',
         ],
-        focusClue: 'How did Cromwell weaponise parliamentary statute against the clergy?',
+        focusClue:
+          'How did using Acts of Parliament give Henry’s religious changes the force of law?',
       },
       {
         step: 4,
         date: '1533',
         questionHeading: 'How did the Act in Restraint of Appeals make England an ‘Empire’?',
         bullets: [
-          'Thomas Cranmer consecrated as new Archbishop of Canterbury',
-          'Cranmer declared Henry’s marriage to Catherine null and void',
-          'Anne Boleyn crowned Queen of England in Westminster Abbey',
-          'Statute declared: “This realm of England is an Empire” under the King',
+          '1533 statute declared: ‘This realm of England is an Empire’ under the King alone',
+          'Banned all English legal and religious appeals to the Pope in Rome',
+          'Archbishop Cranmer annulled Henry’s marriage; Anne Boleyn crowned Queen',
         ],
         focusClue: 'What constitutional power did declaring England an ‘Empire’ grant Henry?',
       },
@@ -110,12 +108,12 @@ const enquiryConfigs = [
         date: '1534',
         questionHeading: 'How did the Act of Supremacy legally consolidate royal sovereignty?',
         bullets: [
-          'Act of Supremacy confirmed King as “Supreme Head in earth”',
-          'All papal taxation, annates, and appeals permanently abolished',
-          'Treasons Act (1534) made questioning royal title punishable by death',
-          'Sir Thomas More and Bishop John Fisher beheaded for dissent',
+          '1534 Act of Supremacy declared Henry the ‘Supreme Head’ of the Church of England',
+          'Treason Act made denying the King’s supremacy punishable by public execution',
+          'Sir Thomas More and Bishop Fisher were beheaded for refusing the oath',
         ],
-        focusClue: 'How did the Treasons Act extinguish all legal opposition to the Supremacy?',
+        focusClue:
+          'Why was the Act of Supremacy the most radical constitutional change in English history?',
       },
     ],
     vocabPrompt:
@@ -163,64 +161,59 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1558–1559',
-        questionHeading: 'Why was England religiously fractured upon Elizabeth’s accession?',
+        questionHeading: 'Why was England religiously fractured when Elizabeth became Queen?',
         bullets: [
-          'Edward VI’s radical Protestantism vs Mary I’s Catholic restoration',
-          '280+ Protestants burned at the stake under Mary (Smithfield fires)',
-          'Returning Marian exiles demanded radical Calvinist purification',
-          'War with France, crown bankruptcy, and constant Catholic threat',
+          'Violent religious swings under Edward VI (Protestant) and Mary I (Catholic)',
+          'Over 280 Protestants burned at the stake under Mary I, sparking deep anti-Catholic fear',
+          'Returning Protestant exiles demanded radical reform, while Catholics held the north',
         ],
-        focusClue: 'Why did Mary I’s burnings produce profound anti-Catholic fear in England?',
+        focusClue: 'Why did Mary I’s burnings produce profound anti-Catholic fear across England?',
       },
       {
         step: 2,
         date: '1559',
-        questionHeading: 'How did the Act of Supremacy restore royal control without alienation?',
+        questionHeading: 'How did the Act of Supremacy restore royal control through compromise?',
         bullets: [
-          'Elizabeth dropped Henry VIII’s provocative title of “Supreme Head”',
-          'Adopted compromise title of “Supreme Governor” of the Church',
-          'Oath of Supremacy required from all clergy and royal officials',
-          'All Catholic Marian bishops except one refused and were deprived',
+          'Elizabeth dropped Henry VIII’s title of ‘Supreme Head’ to avoid offending Catholics',
+          'Adopted the compromise title of ‘Supreme Governor’ of the Church of England',
+          'All clergy took an Oath of Supremacy; all but one Catholic bishop refused and were dismissed',
         ],
-        focusClue: 'Why was the title “Supreme Governor” a masterstroke of political compromise?',
+        focusClue:
+          'Why was the title ‘Supreme Governor’ a clever compromise for moderate subjects?',
       },
       {
         step: 3,
         date: '1559',
-        questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’?',
+        questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’ (Via Media)?',
         bullets: [
-          '1559 Book of Common Prayer merged 1549 and 1552 communion words',
-          'Allowed belief in either spiritual or literal Eucharistic presence',
-          'Traditional vestments and church decorations retained for Catholics',
-          '12d shilling recusancy fine for failing to attend Sunday service',
+          'Set up a single national church using the 1559 English Book of Common Prayer',
+          'Communion wording was kept ambiguous so Protestants and Catholics could accept it',
+          'Compulsory church attendance; recusants who stayed away paid a 12d shilling fine',
         ],
-        focusClue: 'Why did Elizabeth claim she had “no desire to make windows into men’s souls”?',
+        focusClue:
+          'Why did Elizabeth state that she had ‘no desire to make windows into men’s souls’?',
       },
       {
         step: 4,
         date: '1568–1570',
-        questionHeading: 'How did Mary Queen of Scots and the Papal Bull shatter stability?',
+        questionHeading: 'How did Mary Queen of Scots and the Papal Bull spark Catholic plots?',
         bullets: [
-          'Mary Queen of Scots fled to England; focal point for Catholic plots',
-          'Northern Rebellion (1569) attempted to overthrow Elizabeth',
-          'Pope Pius V issued Regnans in Excelsis bull excommunicating Queen',
-          'Papal bull ordered English Catholics to depose Elizabeth as heretic',
+          'In 1568, Catholic cousin Mary Queen of Scots fled to England and became a rival figurehead',
+          'Northern Catholic Earls rebelled in 1569, attempting to overthrow Elizabeth and free Mary',
+          'In 1570, Pope Pius V excommunicated Elizabeth, ordering Catholics to depose her',
         ],
-        focusClue:
-          'How did the 1570 Papal Bull turn private Catholic faith into political treason?',
+        focusClue: 'How did the 1570 Papal Bull turn practicing Catholics into suspected traitors?',
       },
       {
         step: 5,
         date: '1571–1588',
-        questionHeading: 'How did Walsingham’s counter-espionage lead to Mary’s execution?',
+        questionHeading: 'How did Walsingham’s spy network lead to Mary’s execution?',
         bullets: [
-          'Ridolfi (1571) and Throckmorton (1583) plots backed by Spain',
-          'Sir Francis Walsingham established codebreaking intelligence network',
-          'Babington Plot (1586) intercepted letter proving Mary’s treason',
-          'Mary Stuart beheaded at Fotheringhay Castle on 8 February 1587',
+          'Sir Francis Walsingham built a network of spies and codebreakers to uncover Catholic plots',
+          'Babington Plot (1586) intercepted letter proving Mary agreed to assassinate Elizabeth',
+          'Elizabeth reluctantly signed the death warrant; Mary was beheaded in February 1587',
         ],
-        focusClue:
-          'Why was executing an anointed monarch such a terrifying precedent for Elizabeth?',
+        focusClue: 'Why was executing an anointed queen such a dangerous precedent for Elizabeth?',
       },
     ],
     vocabPrompt:
@@ -276,61 +269,58 @@ const enquiryConfigs = [
         date: '1585–1587',
         questionHeading: 'What imperial and religious rivalries provoked Philip II’s invasion?',
         bullets: [
-          'Spain Championed Catholic Counter-Reformation across Europe',
-          'Drake and English privateers raided Spanish silver fleets in Americas',
-          'Treaty of Nonsuch (1585): English troops sent to aid Dutch rebels',
-          'Execution of Mary Queen of Scots (1587) triggered Enterprise of England',
+          'Philip II was determined to restore Catholicism and punish England for Mary’s execution',
+          'Francis Drake and English privateers repeatedly plundered Spanish treasure ships',
+          'Elizabeth sent English troops to help Protestant Dutch rebels fight against Spain',
         ],
-        focusClue: 'Why did Francis Drake’s 1587 raid on Cadiz delay the Armada by a full year?',
+        focusClue: 'Why did Philip view invading England as a holy crusade against Protestantism?',
       },
       {
         step: 2,
-        date: 'July–Aug 1588',
-        questionHeading: 'How did the Spanish Armada advance up the English Channel?',
+        date: '1587',
+        questionHeading: 'How did Drake’s raid on Cadiz delay the Spanish invasion?',
         bullets: [
-          '130 warships and 30,000 troops sailed from Lisbon under Medina Sidonia',
-          'Strict defensive crescent formation resisted English broadside attacks',
-          'Running skirmishes off Plymouth, Portland Bill, and Isle of Wight',
-          'English lacked heavy firepower to break the dense Spanish formation',
+          'In April 1587, Drake sailed daringly into Cadiz harbor in southern Spain',
+          'Burned over 30 Spanish warships and destroyed seasoned barrel wood supplies',
+          'Drake boasted he had ‘singed the King of Spain’s beard’, delaying the Armada by a year',
         ],
-        focusClue: 'Why was the crescent formation impenetrable to standoff English naval gunfire?',
+        focusClue:
+          'How did burning seasoned barrel wood ruin Spanish water and food supplies at sea?',
       },
       {
         step: 3,
-        date: '6–7 August 1588',
-        questionHeading: 'How did English fireships break the Spanish formation at Calais?',
+        date: 'July 1588',
+        questionHeading: 'How did the English fleet harry the Armada up the English Channel?',
         bullets: [
-          'Armada anchored off Calais awaiting Duke of Parma’s invasion army',
-          'Parma’s troop barges blocked by Dutch flyboat shallow water blockades',
-          'Lord Howard and Drake launched 8 blazing pitch-soaked fireships',
-          'Spanish panicked, cut anchor cables, and scattered into the night',
+          '130 Spanish ships sailed in an impenetrable crescent formation up the English Channel',
+          'English race-built galleons were faster, lighter, and loaded long-range culverin cannon',
+          'English gunners fired from safe distance, preventing Spanish soldiers from boarding',
         ],
-        focusClue: 'Why was cutting anchor cables at Calais a fatal tactical error for the Armada?',
+        focusClue:
+          'Why did long-range gunnery give the English fleet a decisive tactical advantage?',
       },
       {
         step: 4,
-        date: '8 August 1588',
-        questionHeading: 'How did the Battle of Gravelines prove English tactical supremacy?',
+        date: '7–8 August 1588',
+        questionHeading: 'How did English fireships at Calais shatter the Spanish formation?',
         bullets: [
-          'Scattered Spanish ships engaged in close-range battle off Gravelines',
-          'Hawkins’ race-built galleons sailed faster and loaded cannon rapidly',
-          'English culverin long guns battered timber hulls at close range',
-          'Three Spanish galleons sank; many others crippled and drifted north',
+          'Armada anchored off Calais waiting for the Duke of Parma’s army from Flanders',
+          'At midnight on 7 August, the English launched eight blazing fireships into the fleet',
+          'Spanish captains panicked, cut their heavy anchor cables, and scattered into the dark',
         ],
-        focusClue: 'How did English race-built naval architecture outclass heavy Spanish galleons?',
+        focusClue:
+          'Why did cutting anchor cables leave Spanish ships helpless in rough North Sea weather?',
       },
       {
         step: 5,
         date: 'Aug–Sept 1588',
-        questionHeading: 'How did the ‘Protestant Wind’ and severe gales destroy the fleet?',
+        questionHeading: 'How did the Battle of Gravelines and severe storms destroy the fleet?',
         bullets: [
-          'Fierce south-westerly winds prevented return through English Channel',
-          'Armada forced to circumnavigate Scotland and treacherous Irish coast',
-          'Over 50 Spanish ships wrecked on rocks; thousands drowned or killed',
-          'Fewer than 70 battered vessels limped back to Spain; England survived',
+          'At Gravelines, English warships battered the scattered, anchorless Spanish galleons',
+          'Ferocious Atlantic gales (‘The Protestant Wind’) drove the Armada around Scotland and Ireland',
+          'Over 50 Spanish ships wrecked on rocky coasts; fewer than half limped home to Spain',
         ],
-        focusClue:
-          'Why did English propaganda strike commemorative medals declaring “God blew and they were scattered”?',
+        focusClue: 'Why did Elizabeth’s medal declare: ‘God blew and they were scattered’?',
       },
     ],
     vocabPrompt:
@@ -389,12 +379,11 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1629–1640',
-        questionHeading: 'Why did Charles I’s ‘Personal Rule’ alienate Parliament and country?',
+        questionHeading: 'Why did Charles I’s ‘Personal Rule’ without Parliament cause outrage?',
         bullets: [
-          'Charles dissolved Parliament in 1629 for questioning royal power',
-          'Ruled 11 years without Parliament using archaic taxes (Ship Money)',
-          'John Hampden put on trial (1637) for refusing illegal inland tax',
-          'Archbishop Laud enforced Arminian ritual, triggering Scottish Revolt',
+          'Charles I believed in Divine Right—that kings answer only to God, never to Parliament',
+          'Ruled 11 years alone, raising archaic taxes like inland Ship Money without MPs’ consent',
+          'Archbishop Laud forced English prayer books on Scotland, sparking an armed rebellion',
         ],
         focusClue:
           'Why did inland Ship Money spark widespread constitutional outrage across England?',
@@ -404,35 +393,32 @@ const enquiryConfigs = [
         date: '1640–1642',
         questionHeading: 'How did the breakdown of trust lead to armed civil conflict?',
         bullets: [
-          'Bankruptcy forced Charles to summon Long Parliament in Nov 1640',
-          'MPs impeached Laud and executed King’s chief minister Strafford',
-          'Charles entered Commons with 400 soldiers to arrest Five Members (1642)',
-          'Charles raised royal battle standard at Nottingham on 22 August 1642',
+          'Bankruptcy forced Charles to summon the Long Parliament; MPs arrested royal ministers',
+          'In January 1642, Charles entered the Commons with 400 soldiers to arrest five MPs',
+          'The MPs had fled; Charles raised the royal standard at Nottingham on 22 August 1642',
         ],
         focusClue: 'Why did the King entering the Commons with armed soldiers make war inevitable?',
       },
       {
         step: 3,
         date: '1645–1648',
-        questionHeading: 'How did the New Model Army defeat the King and radicalise politics?',
+        questionHeading: 'How did the New Model Army defeat the King at the Battle of Naseby?',
         bullets: [
-          'Fairfax and Cromwell created New Model Army with merit-based command',
-          'Decisive victory at Battle of Naseby (1645) destroyed Royalist forces',
-          'Charles surrendered to Scots (1646) but secretly plotted Scottish invasion',
-          'Second Civil War (1648) branded Charles a treacherous “man of blood”',
+          'Parliament formed the New Model Army under Fairfax and Cromwell, promoted on merit',
+          'Decisive victory at the Battle of Naseby (1645) destroyed Charles’s royalist army',
+          'Defeated Charles secretly plotted with the Scots to invade England (Second Civil War, 1648)',
         ],
         focusClue:
-          'Why did the Second Civil War convince army officers that Charles had to be punished?',
+          'Why did Charles’s secret deal brand him in soldiers’ eyes as a treacherous ‘man of blood’?',
       },
       {
         step: 4,
-        date: 'Dec 1648 – Jan 1649',
+        date: '1648–1649',
         questionHeading: 'Why did Pride’s Purge and the High Court lead to regicide?',
         bullets: [
-          'Colonel Pride purged moderate MPs who wished to negotiate with King',
-          'Rump Parliament created High Court of Justice to try Charles for treason',
-          'Charles refused to enter a plea, arguing no court had authority over king',
-          'King Charles I publicly beheaded outside Whitehall Banqueting House (30 Jan)',
+          'In Dec 1648, Colonel Pride purged moderate MPs who wanted to negotiate with the King',
+          'Remaining ‘Rump Parliament’ put Charles on trial for treason against his own people',
+          'Charles refused to plead; publicly beheaded outside Whitehall on 30 January 1649',
         ],
         focusClue:
           'On what constitutional grounds did Charles I refuse to recognize the trial court?',
@@ -442,10 +428,9 @@ const enquiryConfigs = [
         date: '1660–1689',
         questionHeading: 'How did the Glorious Revolution permanently limit royal power?',
         bullets: [
-          'Monarchy restored under Charles II (1660) after Cromwell’s Protectorate',
-          'James II alienated nation by suspending anti-Catholic laws and packing courts',
-          'William of Orange invited by Parliament in 1688; James fled to France',
-          '1689 Bill of Rights established parliamentary supremacy and rule of law',
+          'Cromwell’s republic collapsed, restoring Charles II in 1660, but James II alienated MPs',
+          'In 1688, Parliament invited Dutch Prince William of Orange to replace Catholic James II',
+          'The 1689 Bill of Rights established that no monarch can tax or keep an army without Parliament',
         ],
         focusClue:
           'How did the 1689 Bill of Rights legally end the Stuart doctrine of Divine Right?',
@@ -503,9 +488,8 @@ const enquiryConfigs = [
         questionHeading: 'How did Henry VIII reshape sovereign authority in the Reformation?',
         bullets: [
           'Henry broke with Rome to secure Tudor succession and Crown wealth',
-          'Act of Supremacy (1534) absorbed spiritual authority into royal crown',
-          'Used Parliament to pass statutes, setting a vital constitutional precedent',
-          'Dissolution of monasteries created landed gentry invested in Reformation',
+          '1534 Act of Supremacy used Parliament to give religious change legal authority',
+          'Dissolution of monasteries created landed gentry invested in Protestant rule',
         ],
         focusClue: 'Did the break with Rome increase royal prerogative or parliamentary authority?',
       },
@@ -514,22 +498,21 @@ const enquiryConfigs = [
         date: '1559–1588',
         questionHeading: 'How did the Elizabethan settlement forge a Protestant national state?',
         bullets: [
-          'Via Media compromise prevented religious civil war seen in Europe',
-          'Queen governed as Supreme Governor with broad popular acceptance',
-          'Victory against Armada (1588) tied English patriotism to Protestantism',
-          'Crown and Parliament worked in mutual alliance against foreign Catholic threat',
+          'The 1559 Via Media compromise prevented the religious civil wars seen in Europe',
+          'Queen governed as ‘Supreme Governor’ with broad popular acceptance and outward conformity',
+          'Victory over the Spanish Armada in 1588 fused English patriotism with Protestantism',
         ],
-        focusClue: 'How did external threats under Elizabeth cement parliamentary co-operation?',
+        focusClue:
+          'How did external Catholic threats unite Crown and Parliament during Elizabeth’s reign?',
       },
       {
         step: 3,
         date: '1603–1640',
         questionHeading: 'Why did Stuart claims of Divine Right provoke constitutional crisis?',
         bullets: [
-          'James I and Charles I asserted absolute royal prerogative above the law',
-          '11 Years’ Personal Rule bypassed Parliament through illegal taxation',
-          'Collision between royal prerogative and parliamentary privileges of speech',
-          'Religious reforms of Archbishop Laud sparked armed rebellion in Scotland',
+          'James I and Charles I asserted absolute royal prerogative, claiming they answered only to God',
+          'Charles I’s 11-Year Personal Rule raised illegal taxes and silenced critics without Parliament',
+          'Attempt to impose religious uniformity sparked war with Scotland, bankrupting the King',
         ],
         focusClue: 'Why did Stuart absolutism break down while Tudor compromise had succeeded?',
       },
@@ -538,10 +521,9 @@ const enquiryConfigs = [
         date: '1642–1649',
         questionHeading: 'Why was the trial and execution of Charles I a radical turning point?',
         bullets: [
-          'English Civil War pitted Crown against Parliamentary armed forces',
-          'New Model Army proved soldiers from lower orders could defeat nobility',
-          'Regicide (1649) proved an English monarch was accountable to the law',
-          'Abolition of monarchy and House of Lords created radical Commonwealth',
+          'Civil war proved a disciplined parliamentary citizen army could defeat the King’s forces',
+          'Regicide in 1649 proved that an English monarch was accountable to the law of the people',
+          'Abolishing the monarchy and House of Lords created England’s only republican Commonwealth',
         ],
         focusClue:
           'Why was publicly executing an anointed king the most shocking event in Tudor-Stuart history?',
@@ -551,10 +533,9 @@ const enquiryConfigs = [
         date: '1660–1689',
         questionHeading: 'How did the 1689 Bill of Rights finalize Parliamentary Supremacy?',
         bullets: [
-          'Restoration of 1660 failed to resolve royal prerogative vs Parliament',
+          'The 1660 Restoration failed to settle whether King or Parliament held supreme power',
           'Glorious Revolution (1688) expelled James II without major bloodshed',
-          'William and Mary accepted throne strictly upon parliamentary conditions',
-          '1689 Bill of Rights: no royal standing army or taxation without Parliament',
+          '1689 Bill of Rights established parliamentary sovereignty: law and taxation require Parliament',
         ],
         focusClue:
           'Why does the 1689 Bill of Rights form the bedrock of Britain’s modern democracy?',
@@ -741,39 +722,56 @@ function renderSpinePage(cfg, pageNum) {
         .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
         .join('');
       return `
-        <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-          <!-- Node Column (38mm Width with Authentic Chronological Question Heading) -->
-          <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 4px 0 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-            <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-            <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${st.step}</span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.date}</span>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+                PART ${st.step}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; color: #cbd5e1; white-space: nowrap;">
+                ${st.date}
+              </span>
+              <span style="color: #64748b; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                ${st.questionHeading}
+              </span>
             </div>
-            <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-              ${st.questionHeading}
-            </div>
-            <div style="margin-top: 1px;">
-              <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                ${bulletsHtml}
-              </div>
-            </div>
-            <div style="margin-top: 2px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                Focus Clue
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                ${st.focusClue}
-              </div>
-            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 5.8pt; font-weight: 700; color: #94a3b8; text-transform: uppercase; white-space: nowrap; margin-left: 6px;">
+              Milestone
+            </span>
           </div>
 
-          <!-- Ruled Note-Taking Lines (5 Lines per stage • Tighter Line Spacing) -->
-          <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
-            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+          <!-- Content Row: Left Cues & Right Ruled Note-Taking Lines -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <!-- Left Column: Reduced Number of Bullet Points (2-3 concise cues) + Hinge Question -->
+            <div style="width: 66mm; flex-shrink: 0; background: #fafafa; padding: 2.5px 5px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              <div>
+                <div style="display: flex; flex-direction: column; gap: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.5pt; line-height: 1.18; color: #000000;">
+                  ${bulletsHtml}
+                </div>
+              </div>
+              <div style="margin-top: 1.5px; border: 1px dashed #000000; background: #ffffff; padding: 1.5px 3px; border-radius: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; display: block; line-height: 1;">
+                  Hinge Question
+                </span>
+                <span style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #111111; font-style: italic; display: block;">
+                  ${st.focusClue}
+                </span>
+              </div>
+            </div>
+
+            <!-- Right Column: Rule Lines (Same as CME or Medicine Standard: 1.2px solid #000000) -->
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+
           </div>
         </div>`;
     })
@@ -894,20 +892,20 @@ function renderRightPage(cfg, pageNum) {
       <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
         <strong>Task:</strong> Using the structure strip above, write your analytical response below:
       </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
-        <div class="task-line" style="height: 9.8mm;"></div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
       </div>
 
       <!-- Timeline Mission Box -->
@@ -955,10 +953,10 @@ function renderRightPage(cfg, pageNum) {
           <strong>Sentence Stems:</strong> ${rp.partA.stems}
         </div>
         <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.6mm;"></div>
-          <div class="task-line" style="height: 8.6mm;"></div>
-          <div class="task-line" style="height: 8.6mm;"></div>
-          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
         </div>
       </div>
 
@@ -1008,14 +1006,15 @@ function renderRightPage(cfg, pageNum) {
         </div>
 
         <!-- Ruled Writing Lines -->
-        <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
-          <div class="task-line" style="height: 9.4mm;"></div>
-          <div class="task-line" style="height: 9.4mm;"></div>
-          <div class="task-line" style="height: 9.4mm;"></div>
-          <div class="task-line" style="height: 9.4mm;"></div>
-          <div class="task-line" style="height: 9.4mm;"></div>
-          <div class="task-line" style="height: 9.4mm;"></div>
-          <div class="task-line" style="height: 9.4mm;"></div>
+        <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
         </div>
 
         <!-- Timeline Mission Box -->
@@ -1137,14 +1136,14 @@ function compileMonarchyWorkbook() {
     }
     .task-line {
       border-bottom: 1.2px solid #000000;
-      height: 8.4mm;
+      height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
-      height: 7.2mm;
+      height: 7.4mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
