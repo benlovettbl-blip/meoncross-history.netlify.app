@@ -3,13 +3,13 @@
  *
  * Official Pearson Edexcel GCSE History Paper 1 (Section B: Thematic Study)
  * Medicine in Britain, c1250–present: Master Knowledge Retrieval Bank.
- * Exactly 20 Lessons x 10 Questions = 200 High-Yield Retrieval Questions.
+ * Exactly 20 Lessons x 8 Questions = 160 High-Yield Retrieval Questions.
  *
  * Pedagogical Standards (SEN & GCSE Exam Optimized):
  * 1. 100% Fidelity to the Pearson Edexcel Specification and Revision Guide.
  * 2. Chronological Anchoring: Key dates, laws, and publications pre-anchored in stems to test facts/causes.
  * 3. SEN-Accessible Language: Direct, plain English Tier-2 vocabulary; 100% preserved Tier-3 terms.
- * 4. Short, Focused Questions: Single-line stems (10–18 words) for maximum handwriting room.
+ * 4. Streamlined 8-Question Format: 8 high-yield questions per lesson for optimal cognitive load & handwriting space.
  * 5. Two-Line Format: Line 1 = Key Fact; Line 2 = Historical Explanation (why it matters).
  * 6. Structured across the 4 core chronological eras (5 lessons each):
  *    - Medieval Britain (c1250–c1500): Lessons 1–5
@@ -53,11 +53,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Believed to create poisonous air that descended to earth as deadly, foul-smelling miasma.',
       },
       {
-        q: 'What medical reference book containing planetary charts and calendars did medieval doctors carry?',
-        a: 'An almanac (or Vademecum)',
-        exp: 'Used to check lucky star alignments before carrying out bloodletting or giving herbal medicine.',
-      },
-      {
         q: 'What was the idea of "miasma" in medieval medical thinking?',
         a: 'Bad air corrupted by rotting waste, swamps, corpses, or filth that poisoned the body',
         exp: 'Led wealthy people to carry sweet-smelling flower posies and light scented fires to clear the air.',
@@ -71,11 +66,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         q: 'What religious penance was carried out by groups of flagellants during deadly plagues?',
         a: 'Publicly whipping themselves with leather scourges tipped with iron spikes',
         exp: 'Hoped to stop God’s anger and end the plague through voluntary bodily suffering.',
-      },
-      {
-        q: 'Why did medieval priests believe saving the soul was far more important than curing the body?',
-        a: 'The soul was immortal and faced heaven or hell, while the earthly body was temporary',
-        exp: 'Confession and the last rites were considered far more important than physical medicine.',
       },
       {
         q: 'What role did medieval astrology diagrams like the "Zodiac Man" play in medical care?',
@@ -134,16 +124,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         a: 'The Hippocratic Oath ("First, do no harm")',
         exp: 'Bound doctors to keep patient secrets and always act in the patient’s best interests.',
       },
-      {
-        q: 'How did Galen incorrectly explain blood moving between the two sides of the heart?',
-        a: 'Claimed blood passed through invisible microscopic pores in the heart wall (septum)',
-        exp: 'An incorrect idea that prevented doctors from discovering blood circulation until William Harvey in 1628.',
-      },
-      {
-        q: 'Why was the Theory of the Four Humours considered a "rational" medical idea in the Middle Ages?',
-        a: 'It explained disease through natural physical fluids rather than spirits or curses',
-        exp: 'Gave doctors a logical, structured way to understand sickness without relying purely on miracles.',
-      },
     ],
   },
 
@@ -193,19 +173,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Believed prayer at the tomb of holy martyrs like Thomas Becket could cure blindness and paralysis.',
       },
       {
-        q: 'What surgical operation involved drilling or scraping a hole through the patient’s skull?',
-        a: 'Trephining (trepanning)',
-        exp: 'Used to relieve pressure from skull fractures or let out trapped evil spirits causing madness.',
-      },
-      {
         q: 'Why was cauterisation with red-hot irons so terrifying for medieval surgical patients?',
         a: 'It burned open flesh and amputated stumps with white-hot metal to seal blood vessels',
         exp: 'Extremely painful without anaesthetics, often causing fatal shock, infection, and tissue death.',
-      },
-      {
-        q: 'What were medieval "herbals" and how were they used by ordinary families?',
-        a: 'Illustrated books listing the medical uses of plants, herbs, and roots',
-        exp: 'Helped women prepare home remedies, teas, and poultices to treat family illnesses.',
       },
     ],
   },
@@ -256,19 +226,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Passed down home remedies, plant medicines, and childbirth midwifery across generations.',
       },
       {
-        q: 'In 1123, which famous hospital was founded in London to care for the poor and sick?',
-        a: 'St Bartholomew’s Hospital',
-        exp: 'Set up by Rahere; survived for centuries as one of London’s greatest charitable hospitals.',
-      },
-      {
         q: 'What special hospital was built outside town walls specifically for people with leprosy?',
         a: 'A Lazar House (Leper Hospital)',
         exp: 'Kept contagious lepers separated from healthy townsfolk while giving them food, shelter, and chapel prayers.',
-      },
-      {
-        q: 'Why was the main ward of a monastic hospital arranged so beds faced an altar?',
-        a: 'So sick patients could see and hear daily Catholic Mass and prayers from their beds',
-        exp: 'Reinforced the belief that religious repentance and prayer were vital for healing and saving the soul.',
       },
     ],
   },
@@ -318,19 +278,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Believed these drew out the poison, but in reality caused terrible pain and spread blood poisoning.',
       },
       {
-        q: 'Why did many priests and doctors run away during the height of the Black Death in 1348–49?',
-        a: 'Terrified of catching the fatal disease by visiting sickrooms',
-        exp: 'Left thousands of dying people without medical care or Church last rites, creating panic and disorder.',
-      },
-      {
         q: 'What economic change happened after the Black Death wiped out over a third of England’s workers?',
         a: 'A severe labour shortage allowed surviving peasants to demand much higher wages',
         exp: 'Damaged the old feudal system, prompting Parliament to pass the 1351 Statute of Labourers to freeze wages.',
-      },
-      {
-        q: 'Why did all medieval medical treatments fail completely against the Black Death?',
-        a: 'Bleeding and purging weakened sick patients, while rats and fleas were left uncontrolled',
-        exp: 'Taking blood lowered blood pressure, speeding up death from shock and organ failure.',
       },
     ],
   },
@@ -385,19 +335,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Argued illness was caused by external chemicals rather than internal humours, using mercury for syphilis.',
       },
       {
-        q: 'Between 1536 and 1540, what impact did Henry VIII’s Dissolution of the Monasteries have on English hospitals?',
-        a: 'Closed over 500 church-run hospitals, causing a severe shortage of hospital beds',
-        exp: 'Forced London hospitals like St Bart’s and St Thomas’ to be reopened as charity hospitals run by town councils.',
-      },
-      {
         q: 'What was the "Renaissance Paradox" regarding medical breakthroughs and everyday patient cures?',
         a: 'Doctors made huge anatomical discoveries, but day-to-day patient treatments barely changed',
         exp: 'Physicians understood the human body much better, but still lacked anaesthetics, antiseptics, and infection cures.',
-      },
-      {
-        q: 'Why did ordinary people in the Renaissance continue using traditional herbal remedies and bleeding?',
-        a: 'New anatomical discoveries offered no immediate cures, so traditional treatments remained the only option',
-        exp: 'Humoural ideas and home remedies remained the only treatments available to common citizens.',
       },
     ],
   },
@@ -448,19 +388,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Gave doctors a reliable painkiller and sedative to treat bowel pain, severe coughs, and surgical shock.',
       },
       {
-        q: 'Why did Thomas Sydenham tell young doctors to put away ancient books and visit the bedside?',
-        a: 'He believed true medical knowledge came only from watching and listening to sick patients directly',
-        exp: 'Warned that arguing over humours and star charts stopped doctors from learning practical clinical skills.',
-      },
-      {
         q: 'How did Sydenham’s method of grouping illnesses challenge Galen’s Four Humours?',
         a: 'Galen treated every person’s illness as totally unique; Sydenham showed diseases shared predictable symptoms',
         exp: 'Helped lay the groundwork for modern medical diagnosis and targeted pharmaceutical drugs.',
-      },
-      {
-        q: 'Despite his new observational methods, what traditional treatment did Sydenham still prescribe?',
-        a: 'Occasional mild bloodletting and purges',
-        exp: 'Shows that even the most forward-thinking Renaissance doctors were still influenced by humoural ideas.',
       },
     ],
   },
@@ -508,16 +438,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         q: 'What advice did Vesalius give to medical students about trusting ancient books?',
         a: '“Trust not Galen, trust your own eyes”',
         exp: 'Urged doctors to base medical knowledge on direct dissection rather than accepting ancient books blindly.',
-      },
-      {
-        q: 'What invention helped Vesalius’s anatomical drawings spread quickly across Europe and into England?',
-        a: 'The printing press with detailed woodcut prints',
-        exp: 'Allowed copies of his anatomical drawings to be printed and used by barber-surgeons in London by 1545.',
-      },
-      {
-        q: 'How did traditional university doctors react to Vesalius’s discoveries?',
-        a: 'Many attacked him bitterly and claimed human bodies must have changed since Galen’s time',
-        exp: 'Traditional professors refused to admit Galen was wrong, forcing Vesalius to resign from Padua.',
       },
       {
         q: 'Why did Vesalius’s anatomical discoveries fail to save patients’ lives immediately in the 1500s?',
@@ -572,19 +492,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Italian scientist Marcello Malpighi used microscopes in 1661 to see capillaries, confirming Harvey’s theory.',
       },
       {
-        q: 'How did conservative English doctors react when Harvey first published his blood circulation discovery?',
-        a: 'Ridiculed him as a "crackpot" and many patients left his medical practice',
-        exp: 'Traditional physicians refused to admit Galen was wrong; it took nearly 50 years for universities to teach it.',
-      },
-      {
         q: 'Why did Harvey’s discovery of blood circulation make bleeding patients logically pointless?',
         a: 'Because blood circulates constantly in a single loop, bleeding one arm does not balance a separate organ',
         exp: 'Despite Harvey’s proof, doctors continued bloodletting for another 200 years because they lacked other cures.',
-      },
-      {
-        q: 'Why did Harvey’s discovery have little immediate practical use for treating sick patients in 1628?',
-        a: 'Knowing blood circulated did not cure fevers, and blood transfusions were deadly without blood typing',
-        exp: 'Blood transfusions with animals or unmatched human blood caused fatal clotting, so practical uses took centuries.',
       },
     ],
   },
@@ -633,16 +543,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         q: 'Which brave London doctor stayed in the city during the 1665 plague to treat thousands of sick citizens?',
         a: 'Dr Nathaniel Hodges',
         exp: 'Visited hundreds of patients daily and wrote a detailed medical record of the plague in Loimologia (1672).',
-      },
-      {
-        q: 'What weekly paper showed death numbers and caused panic in London parishes in 1665?',
-        a: 'The London Bills of Mortality',
-        exp: 'Published weekly by church clerks, letting people track soaring plague deaths across different parishes.',
-      },
-      {
-        q: 'Why did King Charles II and wealthy London doctors flee to the countryside during the 1665 plague?',
-        a: 'To escape the bad air and crowded sickness of the capital city',
-        exp: 'Left poor citizens with few qualified physicians, forcing them to rely on quack medicines and apothecaries.',
       },
       {
         q: 'What was the single biggest difference between the 1348 and 1665 responses to epidemic plague?',
@@ -697,16 +597,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'A strict scientific standard: isolate the microbe, grow it pure, test in an animal, and retrieve it again.',
       },
       {
-        q: 'Why did British doctors take over 15 years to accept Pasteur’s Germ Theory?',
-        a: 'Doctors like Henry Bastian argued that invisible microbes could not possibly kill healthy humans',
-        exp: 'Many doctors still believed disease was caused by bad air (miasma) and internal bodily decay.',
-      },
-      {
-        q: 'Which British scientist gave public lectures using light beams in 1870 to prove dust carried germs?',
-        a: 'John Tyndall',
-        exp: 'Showed dust motes in room air carried living bacteria, helping convince the British medical establishment.',
-      },
-      {
         q: 'What weakened vaccines did Louis Pasteur create after discovering how germs work?',
         a: 'Vaccines for Chicken Cholera, Anthrax (1881), and Rabies (1885)',
         exp: 'Discovered that weakened or aged pathogens stimulated protective antibodies without killing the host.',
@@ -755,11 +645,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Coined the word "vaccination" (from Latin vacca, cow) to distinguish it from dangerous inoculation.',
       },
       {
-        q: 'Why did the Royal Society initially reject Edward Jenner’s paper on smallpox vaccination in 1797?',
-        a: 'Jenner could not explain how or why it worked because microbes were unknown',
-        exp: 'Because Germ Theory was still 60 years away, conservative doctors dismissed his findings as folklore.',
-      },
-      {
         q: 'Why did professional inoculators and private doctors oppose Jenner’s free smallpox vaccine?',
         a: 'They stood to lose large profits made by charging wealthy families high fees for inoculation',
         exp: 'Money and self-interest led many private doctors to publish pamphlets attacking vaccination.',
@@ -773,11 +658,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         q: 'In 1853, what law did the British government pass to protect newborn babies from smallpox?',
         a: 'The Compulsory Vaccination Act (1853)',
         exp: 'Ended optional public health; marked a major shift from laissez-faire toward compulsory health laws.',
-      },
-      {
-        q: 'Why did the Anti-Vaccination League protest against compulsory vaccines in the 1860s and 1870s?',
-        a: 'Believed forcing injections took away personal liberty and feared injecting animal matter',
-        exp: 'Argued parents had a God-given right to decide their children’s healthcare without government control.',
       },
     ],
   },
@@ -829,16 +709,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Convinced politicians and generals that poor hospital sanitation caused thousands of avoidable deaths.',
       },
       {
-        q: 'What was the character of 18th-century "voluntary hospitals" before Nightingale’s reforms?',
-        a: 'Filthy, crowded charity buildings where surgical infections spread rapidly',
-        exp: 'Known as "gateways to death" because dirty sheets and unwashed hands turned cuts into fatal gangrene.',
-      },
-      {
-        q: 'What was the purpose of the 19th-century "cottage hospital" opened in rural areas from 1859?',
-        a: 'Small local community hospitals run by local GPs for farmworkers',
-        exp: 'Saved rural patients having to travel long journeys to crowded county hospitals for routine care.',
-      },
-      {
         q: 'How did the public view of hospitals change completely between 1800 and 1900?',
         a: 'Changed from feared places where the poor went to die into clean, scientific places of recovery',
         exp: 'Achieved through professional nurses, antiseptic surgery, trained doctors, and clean drainage.',
@@ -882,11 +752,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Understood that wound rotting was caused by living airborne germs, not chemical reactions.',
       },
       {
-        q: 'What clinical case in 1865 proved to Joseph Lister that carbolic acid stopped wound infection?',
-        a: 'Treated eleven-year-old Jamie Greenlees’s broken leg with carbolic-soaked dressings',
-        exp: 'The broken bone and torn flesh healed cleanly without infection, gangrene, or amputation.',
-      },
-      {
         q: 'What machine did Joseph Lister invent to spray carbolic acid mist across the operating room?',
         a: 'The Carbolic Spray machine (The "Donkey Engine")',
         exp: 'Pumped carbolic mist over surgical wounds, hands, and equipment throughout operations.',
@@ -900,11 +765,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         q: 'What is the difference between Antiseptic surgery and Aseptic surgery?',
         a: 'Antiseptic kills germs in wounds with chemicals; Aseptic keeps all germs out of the room completely',
         exp: 'By the 1890s, asepsis replaced chemical sprays with steam-sterilized tools, gowns, and rubber gloves.',
-      },
-      {
-        q: 'In 1890, which American surgeon introduced sterilized rubber surgical gloves to operating theatres?',
-        a: 'William Halsted',
-        exp: 'Originally invented for his nurse Caroline Hampton whose skin was burned by carbolic acid.',
       },
     ],
   },
@@ -950,19 +810,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Forced people to use other water sources; the local cholera epidemic stopped almost immediately.',
       },
       {
-        q: 'What source of contamination was found leaking into the Broad Street water well?',
-        a: 'A cracked cesspool leaking dirty sewage from a baby with cholera, just three feet away',
-        exp: 'Physical proof that cholera was swallowed through sewage-contaminated water, not bad air (miasma).',
-      },
-      {
         q: 'In 1858, what environmental disaster forced Parliament to fund Joseph Bazalgette’s London sewers?',
         a: 'The “Great Stink” of 1858',
         exp: 'The Thames became so clogged with sewage that politicians fled Parliament, voting £3m for new sewers.',
-      },
-      {
-        q: 'What 1867 voting reform gave working-class men the vote, forcing politicians to improve health laws?',
-        a: 'The Second Reform Act of 1867',
-        exp: 'Politicians had to win working-class votes by promising clean water, better housing, and public health.',
       },
       {
         q: 'In 1875, why was the Second Public Health Act a turning point for British public health?',
@@ -1022,19 +872,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Replaces blanket chemotherapy with biological drugs that attack specific cancer cells.',
       },
       {
-        q: 'How does modern genetic screening allow preventative treatment for disease?',
-        a: 'Finds faulty gene mutations early so patients can take action before symptoms appear',
-        exp: 'Helps people at high genetic risk make informed lifestyle choices or undergo preventive surgery.',
-      },
-      {
         q: 'How did discovering genetics change our understanding of what causes disease?',
         a: 'Showed illness can be caused by internal faulty genes, not just external germs from outside',
         exp: 'Proved many chronic illnesses are written into our cellular DNA, rather than caused solely by infections.',
-      },
-      {
-        q: 'What ethical concerns have arisen from modern genetic screening and testing?',
-        a: 'Fears of genetic discrimination by insurance firms and ethical debates over screening embryos',
-        exp: 'Has forced governments to pass strict privacy laws protecting personal genetic information.',
       },
     ],
   },
@@ -1089,16 +929,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         a: 'Ultrasound scanning',
         exp: 'Gives real-time images of unborn babies and heart valves without using any harmful radiation.',
       },
-      {
-        q: 'How did non-invasive diagnostic scans transform patient safety after 1900?',
-        a: 'Stopped doctors having to cut patients open with exploratory surgery just to find what was wrong',
-        exp: 'Doctors can now find tumours, internal bleeds, and bone fractures accurately before operating.',
-      },
-      {
-        q: 'What personal digital devices do patients use today to track their health at home?',
-        a: 'Digital blood pressure cuffs, blood sugar monitors, and wearable heart-rate monitors',
-        exp: 'Allows people with diabetes and heart disease to monitor their condition daily without visiting a hospital.',
-      },
     ],
   },
 
@@ -1148,19 +978,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Opened the way for modern organ transplants (kidneys, livers, lungs) using anti-rejection drugs.',
       },
       {
-        q: 'What modern surgical method uses tiny tools and cameras through small punctures to heal faster?',
-        a: 'Keyhole surgery (laparoscopic surgery)',
-        exp: 'Vastly reduces bleeding, muscle cutting, infection risk, and hospital recovery times from weeks to days.',
-      },
-      {
         q: 'In 1942, what famous wartime report urged the government to defeat the "Five Giant Evils"?',
         a: 'The Beveridge Report (slaying Want, Disease, Ignorance, Squalor, and Idleness)',
         exp: 'Built huge public support for a welfare state and free healthcare for all after World War Two.',
-      },
-      {
-        q: 'What major financial pressure does the NHS face in Britain today?',
-        a: 'An ageing population, expensive high-tech machines, and rising rates of lifestyle illnesses',
-        exp: 'Longer lifespans mean more people need expensive ongoing treatment for dementia, cancer, and diabetes.',
       },
     ],
   },
@@ -1206,19 +1026,9 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Wartime bombing and supply shortages meant British firms could not build big chemical vats.',
       },
       {
-        q: 'In 1941, what agricultural liquid in Peoria, Illinois, multiplied penicillin production a thousand times?',
-        a: 'Corn-steep liquor in giant industrial deep-fermentation vats',
-        exp: 'Brewed with a new cantaloupe melon mould strain, yields skyrocketed to supply millions of doses.',
-      },
-      {
         q: 'In 1944, which military invasion received 2.3 million doses of mass-produced American penicillin?',
         a: 'The D-Day Allied landings in Normandy',
         exp: 'Saved thousands of wounded Allied soldiers from dying of gangrene and infected bullet wounds.',
-      },
-      {
-        q: 'In 1945, what international award was given to Fleming, Florey, and Chain for penicillin?',
-        a: 'The Nobel Prize in Physiology or Medicine',
-        exp: 'Recognized their combined work in finding, purifying, and mass-producing the world’s first true antibiotic.',
       },
       {
         q: 'What serious modern medical danger has been caused by overusing antibiotics?',
@@ -1264,11 +1074,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         exp: 'Spots small lung tumours long before they become visible on standard 2D chest X-rays.',
       },
       {
-        q: 'What test uses a camera tube into the airways to take tissue samples from lung tumours?',
-        a: 'A Bronchoscopy and biopsy',
-        exp: 'Allows doctors to test cancer cells and choose targeted radiotherapy or chemotherapy drugs.',
-      },
-      {
         q: 'In 2007, what landmark public health law banned smoking in all enclosed public places in England?',
         a: 'The 2007 Public Smoking Ban (Health Act 2006)',
         exp: 'Banned smoking in pubs, restaurants, offices, and buses to protect people from secondhand passive smoke.',
@@ -1277,11 +1082,6 @@ const MEDICINE_THEMATIC_QUIZ_BANK = [
         q: 'Name three government measures introduced since 1965 to discourage cigarette smoking in Britain.',
         a: 'Banning TV cigarette adverts (1965), graphic health warnings (2008), and plain packaging (2016)',
         exp: 'Combined with heavy taxes, raising the legal smoking age to 18 (2007), and campaigns like Stoptober.',
-      },
-      {
-        q: 'What modern medical treatments do NHS teams use today to treat lung cancer?',
-        a: 'Keyhole surgery, targeted radiotherapy, chemotherapy, and immunotherapy drugs',
-        exp: 'Immunotherapy boosts the body’s own immune system to spot and kill specific cancer tumour cells.',
       },
       {
         q: 'How does modern government action on lung cancer show a change in the meaning of "Public Health"?',

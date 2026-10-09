@@ -727,8 +727,8 @@ function buildHtml() {
       border-radius: 2px;
     }
     .lesson-meta-info { flex: 1; }
-    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.14; }
-    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; color: #334155; margin-top: 1px; }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.14; }
+    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #334155; margin-top: 1px; }
 
     .enquiry-score-pill {
       background: #ffffff;
@@ -741,38 +741,38 @@ function buildHtml() {
       font-family: 'Inter', sans-serif;
     }
     .score-pill-title { font-size: 5.5pt; font-weight: 900; color: #64748b; letter-spacing: 0.3px; text-transform: uppercase; }
-    .score-pill-val { font-size: 8.8pt; font-weight: 900; color: #0f172a; line-height: 1.1; }
-    .score-pill-sub { font-size: 5.4pt; font-weight: 700; color: #475569; }
+    .score-pill-val { font-size: 9.0pt; font-weight: 900; color: #0f172a; line-height: 1.1; }
+    .score-pill-sub { font-size: 5.6pt; font-weight: 700; color: #475569; }
 
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 3.0px 6px;
-      margin-bottom: 2.5px;
+      padding: 4.8px 8px;
+      margin-bottom: 3.5px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 2px;
     }
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 5px;
-      line-height: 1.16;
+      gap: 6px;
+      line-height: 1.22;
     }
-    .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; min-width: 16px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.5pt; font-weight: 700; color: #000000; line-height: 1.16; }
+    .q-prompt-wrap { display: flex; gap: 5px; flex: 1; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000; min-width: 18px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 9.6pt; font-weight: 700; color: #000000; line-height: 1.22; }
     .q-marks-pill {
       font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
+      font-size: 6.8pt;
       font-weight: 800;
       color: #0f172a;
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
       border-radius: 2px;
-      padding: 1px 5px;
+      padding: 1.5px 6px;
       white-space: nowrap;
       margin-left: 6px;
       flex-shrink: 0;
@@ -786,16 +786,16 @@ function buildHtml() {
     }
     .q-line-lbl {
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #000000;
       white-space: nowrap;
-      min-width: 60px;
+      min-width: 68px;
     }
     .q-solid-line {
       flex: 1;
       border-bottom: 1.2px solid #000000;
-      height: 6.0mm;
+      height: 8.4mm;
     }
 
     /* Pages 23–26: Department Marking Bank (CME Standard • 5 Lessons per Era) */
@@ -835,7 +835,7 @@ function buildHtml() {
       background: #000000;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 7.1pt;
+      font-size: 7.4pt;
       font-weight: 900;
       padding: 2.5px 5px;
       text-transform: uppercase;
@@ -853,18 +853,18 @@ function buildHtml() {
     }
     .mb-ans-row {
       border-bottom: 1px dashed #cbd5e1;
-      padding: 1.2px 1px;
-      font-size: 6.6pt;
-      line-height: 1.15;
+      padding: 2.0px 1px;
+      font-size: 7.4pt;
+      line-height: 1.22;
       display: flex;
-      gap: 3.5px;
+      gap: 4px;
       align-items: baseline;
     }
     .mb-ans-row:last-child { border-bottom: none; }
-    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 14px; }
+    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 15px; }
     .mb-ans-text { flex: 1; color: #000000; font-weight: 500; }
     .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; }
-    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #000000; white-space: nowrap; }
+    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #000000; white-space: nowrap; }
 
     .mb-split-wrap {
       display: flex;
@@ -1221,7 +1221,7 @@ function buildHtml() {
 
       <div class="cover-title-group">
         <h1 class="cover-main-title">MEDICINE IN BRITAIN, c1250–PRESENT</h1>
-        <div class="cover-sub-title">MASTER KNOWLEDGE RETRIEVAL COMPANION &bull; 20 RETRIEVAL ENQUIRIES &bull; 200 CORE EXAM QUESTIONS</div>
+        <div class="cover-sub-title">MASTER KNOWLEDGE RETRIEVAL COMPANION &bull; 20 RETRIEVAL ENQUIRIES &bull; 160 CORE EXAM QUESTIONS</div>
       </div>
 
       <div class="pupil-meta-grid">
@@ -1254,7 +1254,7 @@ function buildHtml() {
               <tr>
                 <th style="width: 50%; text-align: left; padding-left: 5px;">Enquiry &amp; Specification Focus</th>
                 <th style="width: 14%; text-align: center;">Due Date</th>
-                <th style="width: 16%; text-align: center;">Score (/20)<br><span style="font-size: 5.2pt; font-weight: 700; text-transform: none; color: #94a3b8;">10 Qs &times; 2m</span></th>
+                <th style="width: 16%; text-align: center;">Score (/16)<br><span style="font-size: 5.2pt; font-weight: 700; text-transform: none; color: #94a3b8;">8 Qs &times; 2m</span></th>
                 <th style="width: 12%; text-align: center;">Parent/Staff</th>
                 <th style="width: 8%; text-align: center;">RAG</th>
               </tr>
@@ -1270,7 +1270,7 @@ function buildHtml() {
                   <div class="ledger-sub-text">${item.sub}</div>
                 </td>
                 <td style="text-align: center; font-family: monospace; font-size: 6.8pt; color: #475569;">____/____</td>
-                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 20</td>
+                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 16</td>
                 <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
                 <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
               </tr>`,
@@ -1288,7 +1288,7 @@ function buildHtml() {
               <tr>
                 <th style="width: 50%; text-align: left; padding-left: 5px;">Enquiry &amp; Specification Focus</th>
                 <th style="width: 14%; text-align: center;">Due Date</th>
-                <th style="width: 16%; text-align: center;">Score (/20)<br><span style="font-size: 5.2pt; font-weight: 700; text-transform: none; color: #94a3b8;">10 Qs &times; 2m</span></th>
+                <th style="width: 16%; text-align: center;">Score (/16)<br><span style="font-size: 5.2pt; font-weight: 700; text-transform: none; color: #94a3b8;">8 Qs &times; 2m</span></th>
                 <th style="width: 12%; text-align: center;">Parent/Staff</th>
                 <th style="width: 8%; text-align: center;">RAG</th>
               </tr>
@@ -1304,7 +1304,7 @@ function buildHtml() {
                   <div class="ledger-sub-text">${item.sub}</div>
                 </td>
                 <td style="text-align: center; font-family: monospace; font-size: 6.8pt; color: #475569;">____/____</td>
-                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 20</td>
+                <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f172a;">&nbsp;&nbsp;&nbsp;&nbsp;/ 16</td>
                 <td style="text-align: center; border-bottom: 1px dotted #94a3b8;">&nbsp;</td>
                 <td style="text-align: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #64748b;">[ &nbsp; ]</td>
               </tr>`,
@@ -1316,7 +1316,7 @@ function buildHtml() {
 
         <div class="cover-protocol-box">
           <div class="cover-protocol-title">DEPARTMENT RETRIEVAL PROTOCOL &amp; SPACED LEARNING STANDARDS:</div>
-          Complete one enquiry weekly as targeted homework or in-class retrieval. Each question follows an examiner-calibrated 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical name, date, royal charter, or publication) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the physiological theory, medical significance, or causal consequence). Total: 10 questions &times; 2 marks = <strong>20 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 23–26. Any enquiry scoring below 16/20 triggers immediate digital flashcard review via the back-cover QR gateway.
+          Complete one enquiry weekly as targeted homework or in-class retrieval. Each question follows an examiner-calibrated 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical name, date, royal charter, or publication) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the physiological theory, medical significance, or causal consequence). Total: 8 questions &times; 2 marks = <strong>16 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 23–26. Any enquiry scoring below 13/16 triggers immediate digital flashcard review via the back-cover QR gateway.
         </div>
       </div>
 
@@ -1419,8 +1419,8 @@ function buildHtml() {
         </div>
         <div class="enquiry-score-pill">
           <div class="score-pill-title">ENQUIRY SCORE</div>
-          <div class="score-pill-val">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 20</div>
-          <div class="score-pill-sub">Fact: __/10 &bull; Expl: __/10</div>
+          <div class="score-pill-val">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 16</div>
+          <div class="score-pill-sub">Fact: __/8 &bull; Expl: __/8</div>
         </div>
       </div>
 
@@ -1506,8 +1506,8 @@ function buildHtml() {
       </div>`;
 
     const renderSpanCard = (lesson) => {
-      const qLeft = lesson.questions.slice(0, 5);
-      const qRight = lesson.questions.slice(5, 10);
+      const qLeft = lesson.questions.slice(0, 4);
+      const qRight = lesson.questions.slice(4, 8);
       return `
       <div class="mb-enq-card mb-span-2">
         <div class="mb-enq-header">Lesson ${lesson.num}: ${lesson.title.toUpperCase()}</div>
@@ -1532,7 +1532,7 @@ function buildHtml() {
               .map(
                 (q, qIdx) => `
               <div class="mb-ans-row">
-                <span class="mb-ans-num">${qIdx + 6}.</span>
+                <span class="mb-ans-num">${qIdx + 5}.</span>
                 <div class="mb-ans-text">
                   <span class="mb-ans-bold">${q.a}</span> — ${q.exp}
                 </div>

@@ -450,30 +450,30 @@ function buildHtml() {
       border-right: 1px solid #cbd5e1;
       border-bottom: 1px solid #cbd5e1;
     }
-    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
-    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #334155; margin-top: 1px; }
+    .lesson-meta-title { font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #000000; margin: 0; line-height: 1.15; }
+    .lesson-meta-enquiry { font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #334155; margin-top: 1px; }
 
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2.8px 6px;
-      margin-bottom: 2.2px;
+      padding: 4.6px 8px;
+      margin-bottom: 3.5px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 2px;
     }
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
-      gap: 5px;
-      line-height: 1.18;
+      gap: 6px;
+      line-height: 1.22;
     }
-    .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; color: #000000; min-width: 16px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.6pt; font-weight: 700; color: #000000; line-height: 1.18; }
-    .q-attempt { font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #475569; white-space: nowrap; }
+    .q-prompt-wrap { display: flex; gap: 5px; flex: 1; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000; min-width: 18px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 9.6pt; font-weight: 700; color: #000000; line-height: 1.22; }
+    .q-attempt { font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #475569; white-space: nowrap; }
 
     .q-line-row {
       display: flex;
@@ -483,16 +483,16 @@ function buildHtml() {
     }
     .q-line-lbl {
       font-family: 'Inter', sans-serif;
-      font-size: 7.2pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #000000;
       white-space: nowrap;
-      min-width: 72px;
+      min-width: 78px;
     }
     .q-solid-line {
       flex: 1;
       border-bottom: 1.3px solid #000000;
-      height: 6.8mm;
+      height: 8.5mm;
     }
 
     /* Pages 9–10: Department Marking Bank */
@@ -514,9 +514,9 @@ function buildHtml() {
       background: #0f172a;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 7.3pt;
+      font-size: 7.5pt;
       font-weight: 800;
-      padding: 2.2px 5px;
+      padding: 2.4px 5px;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       border-radius: 1px;
@@ -528,13 +528,13 @@ function buildHtml() {
       border-left: 2.8px solid #000000;
       background: #f8fafc;
       border-radius: 2px;
-      padding: 2.2px 4px;
+      padding: 3.6px 6px;
       display: flex;
       flex-direction: column;
-      gap: 1px;
-      font-size: 7.0pt;
-      line-height: 1.16;
-      margin-bottom: 1.5px;
+      gap: 1.5px;
+      font-size: 7.6pt;
+      line-height: 1.2;
+      margin-bottom: 2.5px;
     }
     .ans-header {
       display: flex;
@@ -542,10 +542,10 @@ function buildHtml() {
       align-items: baseline;
       gap: 3px;
     }
-    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.4pt; }
-    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.4pt; flex: 1; margin-left: 3px; }
-    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; color: #000000; white-space: nowrap; }
-    .ans-exp { color: #000000; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; font-size: 7.0pt; line-height: 1.15; }
+    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 8.0pt; }
+    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 8.0pt; flex: 1; margin-left: 3px; }
+    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; color: #000000; white-space: nowrap; }
+    .ans-exp { color: #000000; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; font-size: 7.6pt; line-height: 1.2; }
 
     /* Page 11: Sources & Follow-Up Blueprint */
     .source-vault-card {
@@ -876,9 +876,9 @@ function buildHtml() {
           <tr>
             <th style="width: 7%;">Lesson</th>
             <th style="width: 41%;">Historic Environment Topic Title</th>
-            <th style="width: 12%; text-align: center;">1st Score (12)</th>
-            <th style="width: 12%; text-align: center;">2nd Score (12)</th>
-            <th style="width: 12%; text-align: center;">3rd Score (12)</th>
+            <th style="width: 12%; text-align: center;">1st Score (/16)</th>
+            <th style="width: 12%; text-align: center;">2nd Score (/16)</th>
+            <th style="width: 12%; text-align: center;">3rd Score (/16)</th>
             <th style="width: 16%;">Identified DIRT Focus</th>
           </tr>
         </thead>
@@ -888,9 +888,9 @@ function buildHtml() {
           <tr>
             <td style="font-weight: 800; text-align: center;">L${l.num}</td>
             <td><strong>${l.title}</strong></td>
-            <td style="text-align: center;">_____ / 12</td>
-            <td style="text-align: center;">_____ / 12</td>
-            <td style="text-align: center;">_____ / 12</td>
+            <td style="text-align: center;">_____ / 16</td>
+            <td style="text-align: center;">_____ / 16</td>
+            <td style="text-align: center;">_____ / 16</td>
             <td style="font-size: 6.8pt; color: #64748b;">Q#: ____________</td>
           </tr>
           `,
@@ -942,9 +942,9 @@ function buildHtml() {
 
       <!-- Traffic Light Bands -->
       <div class="traffic-tier-box">
-        <span>🟢 <strong>Green (10–12/12):</strong> Secure Core Recall &bull; Ready for Feature &amp; Source Questions</span>
-        <span>🟡 <strong>Amber (7–9/12):</strong> Effortful &bull; Green-Pen Review</span>
-        <span>🔴 <strong>Red (0–6/12):</strong> Restudy Flashcards &amp; Re-attempt</span>
+        <span>🟢 <strong>Green (14–16/16):</strong> Secure Core Recall &bull; Ready for Feature &amp; Source Questions</span>
+        <span>🟡 <strong>Amber (10–13/16):</strong> Effortful &bull; Green-Pen Review</span>
+        <span>🔴 <strong>Red (0–9/16):</strong> Restudy Flashcards &amp; Re-attempt</span>
       </div>
 
       <!-- Section A Assessment Standards -->
@@ -956,9 +956,9 @@ function buildHtml() {
       <!-- Spaced Retrieval Protocol -->
       <div class="cover-protocol-box">
         <div style="font-weight: 900; margin-bottom: 2px; text-transform: uppercase; letter-spacing: 0.3px;">Spaced Retrieval &amp; Green-Pen Review Protocol:</div>
-        <div>&bull; <strong>1. Pure Recall Practice (10 Mins):</strong> Complete each weekly 12-question quiz from memory without looking at revision notes.</div>
+        <div>&bull; <strong>1. Pure Recall Practice (10 Mins):</strong> Complete each weekly 8-question quiz from memory without looking at revision notes.</div>
         <div>&bull; <strong>2. Immediate Green-Pen Review:</strong> Turn to the <em>Department Marking Bank</em> (pages 9–10) and self-mark in green pen. Write out the full historical explanation for any incorrect answer.</div>
-        <div>&bull; <strong>3. 7-Day Spaced Re-test:</strong> Re-attempt the 12 questions one week later. Record your 2nd score to verify retention into long-term memory.</div>
+        <div>&bull; <strong>3. 7-Day Spaced Re-test:</strong> Re-attempt the 8 questions one week later. Record your 2nd score to verify retention into long-term memory.</div>
         <div>&bull; <strong>4. Section A Exam Application:</strong> Use your core factual knowledge to tackle the 2-mark feature questions and 4-mark follow-up enquiries on page 12.</div>
         <div>&bull; <strong>5. Diagnostic DIRT &amp; Flashcard Logging:</strong> Transfer any missed questions into your personal revision flashcards for daily Leitner box testing.</div>
       </div>
@@ -967,7 +967,7 @@ function buildHtml() {
       <div style="display: flex; gap: 12px; align-items: center; border: 1.3px solid #0f172a; padding: 6px 12px; border-radius: 2px; background: #ffffff;">
         <div style="width: 50px; height: 50px; flex-shrink: 0;">${qrSvg}</div>
         <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; line-height: 1.34; color: #1e293b; flex: 1;">
-          <strong>Interactive Leitner Quizzing & Digital Flashcards:</strong> Scan this QR code or access the Department Portal to practice all 72 Western Front questions interactively with automated spaced repetition and exam-level timing.
+          <strong>Interactive Leitner Quizzing & Digital Flashcards:</strong> Scan this QR code or access the Department Portal to practice all 48 Western Front questions interactively with automated spaced repetition and exam-level timing.
         </div>
       </div>
 
@@ -1048,12 +1048,15 @@ function buildHtml() {
     <div class="page-body-full">
       <div class="running-header">
         <span>PAPER 1: SECTION A &bull; LESSON ${pIdx + 1} RETRIEVAL COMPANION</span>
-        <span>12 PRACTICE QUESTIONS &bull; HISTORIC ENVIRONMENT</span>
+        <span>8 PRACTICE QUESTIONS &bull; ENQUIRY SCORE: ___ / 16</span>
       </div>
 
       <div class="lesson-meta-bar">
         <h2 class="lesson-meta-title">Lesson ${pIdx + 1}: ${lData.title}</h2>
-        <div class="lesson-meta-enquiry">Enquiry Question: ${lData.enquiry}</div>
+        <div class="lesson-meta-enquiry" style="display: flex; justify-content: space-between; align-items: baseline;">
+          <span>Historical Enquiry: ${lData.enquiry}</span>
+          <span style="font-weight: 900; color: #0f172a; font-size: 8.4pt;">Score: [ &nbsp; ] / 16</span>
+        </div>
       </div>
 
       <div style="display: flex; flex-direction: column; justify-content: space-between; flex: 1;">
