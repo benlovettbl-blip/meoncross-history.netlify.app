@@ -102,7 +102,12 @@ export function renderDashboard() {
     .sort((a, b) => year7Order.indexOf(a.id) - year7Order.indexOf(b.id));
 
   // Year 8 Grouping
-  const year8Order = ['early_modern_world', 'industrialisation_and_empire', 'australia'];
+  const year8Order = [
+    'early_modern_world',
+    'industrialisation_and_empire',
+    'australia',
+    'monarchy_religion_power',
+  ];
   const year8Units = units
     .filter((u) => year8Order.includes(u.id))
     .sort((a, b) => year8Order.indexOf(a.id) - year8Order.indexOf(b.id));

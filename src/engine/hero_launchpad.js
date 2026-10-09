@@ -103,6 +103,26 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/early_modern_world_quiz_pack_FINAL_V1.pdf',
     },
   },
+  monarchy_religion_power: {
+    textbook: {
+      title: 'Crown, Church, or Parliament Master Workbook',
+      label: 'Master Workbook',
+      htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html',
+      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
+    },
+    workbook: {
+      title: 'Crown, Church, or Parliament 20-Page Pupil Workbook',
+      label: 'Pupil Workbook',
+      htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html',
+      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
+    },
+    retrieval: {
+      title: '25-Question Knowledge Retrieval Drill & Answer Key',
+      label: 'Retrieval Companion',
+      htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html#page-18',
+      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
+    },
+  },
   industrialisation_and_empire: {
     textbook: {
       title: 'Industrialisation & Empire Master Textbook',
