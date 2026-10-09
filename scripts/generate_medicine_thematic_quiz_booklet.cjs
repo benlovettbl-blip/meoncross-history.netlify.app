@@ -830,7 +830,7 @@ function buildHtml() {
     }
     .ans-card {
       border: 1px solid #cbd5e1;
-      border-left: 2.2px solid #0f172a;
+      border-left: 2.2px solid #000000;
       background: #f8fafc;
       border-radius: 1.5px;
       padding: 1.6px 3.2px;
@@ -847,10 +847,10 @@ function buildHtml() {
       align-items: baseline;
       gap: 2px;
     }
-    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; font-size: 6.9pt; }
+    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 6.9pt; }
     .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 6.7pt; flex: 1; margin-left: 2px; }
-    .ans-check { font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; color: #475569; white-space: nowrap; }
-    .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.0pt; line-height: 1.08; }
+    .ans-check { font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; color: #000000; white-space: nowrap; }
+    .ans-exp { color: #000000; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; font-size: 6.0pt; line-height: 1.08; }
 
     /* Page 27: 6-Factor Analytical Matrix (Top Half) & Synoptic Synthesis (Bottom Half) */
     .p27-wrap {

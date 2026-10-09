@@ -525,7 +525,7 @@ function buildHtml() {
     }
     .ans-card {
       border: 1px solid #cbd5e1;
-      border-left: 2.8px solid #0f172a;
+      border-left: 2.8px solid #000000;
       background: #f8fafc;
       border-radius: 2px;
       padding: 2.2px 4px;
@@ -542,10 +542,10 @@ function buildHtml() {
       align-items: baseline;
       gap: 3px;
     }
-    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #0f172a; font-size: 7.4pt; }
+    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.4pt; }
     .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.4pt; flex: 1; margin-left: 3px; }
-    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; color: #475569; white-space: nowrap; }
-    .ans-exp { color: #1e293b; font-family: 'Georgia', serif; font-style: italic; font-size: 6.8pt; line-height: 1.15; }
+    .ans-check { font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; color: #000000; white-space: nowrap; }
+    .ans-exp { color: #000000; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; font-size: 7.0pt; line-height: 1.15; }
 
     /* Page 11: Sources & Follow-Up Blueprint */
     .source-vault-card {
