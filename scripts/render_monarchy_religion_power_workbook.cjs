@@ -45,99 +45,108 @@ function generateQrSvg(url) {
 }
 
 // ============================================================================
-// 5 Dedicated Crown, Church, or Parliament Enquiry Configurations (Medicine Style)
+// 5 Dedicated Crown, Church, or Parliament Enquiry Configurations
+// Medicine 18th-19th Century & CME Standard (Spine Left, Rotating Skills Right)
 // ============================================================================
 const enquiryConfigs = [
   {
     lessonNum: 1,
     id: 'lesson_1',
     title: 'Enquiry 1: Henry VIII & The English Reformation (1517–1534)',
+    enquiryQuestion: 'Why did Henry VIII break with Rome, and how was Royal Supremacy established?',
     specAnchor:
       'Break with Rome; Royal Supremacy; Act of Supremacy (1534); Dynastic and financial causes.',
-    tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
-    examStem:
-      'Explain why King Henry VIII broke with the Roman Catholic Church in the period 1527–1534. [12 marks]',
-    stimulus: ['The succession and Catherine of Aragon', 'Crown finances and monastic wealth'],
-    structureStrip: [
+    stages: [
       {
-        col: '1. DYNASTIC SUCCESSION',
-        text: 'Explain Henry’s urgent need for a legitimate male heir; Pope Clement VII was captive to Catherine’s nephew, Charles V, blocking the annulment.',
+        step: 1,
+        date: '1517–1527',
+        questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
+        bullets: [
+          'Catherine of Aragon produced no surviving male heir',
+          'Henry VIII feared divine biblical curse (Leviticus 20:21)',
+          'Anne Boleyn refused to become a mere royal mistress',
+          'Urgent need for uncontested Tudor dynastic succession',
+        ],
+        focusClue: 'Why was the lack of a male heir seen as a threat of civil war?',
       },
       {
-        col: '2. CROWN FINANCES',
-        text: 'Explain how Cromwell highlighted Church riches; breaking with Rome allowed the Crown to seize tenths and first fruits, funding national coastal defence.',
+        step: 2,
+        date: '1527–1529',
+        questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
+        bullets: [
+          'Cardinal Wolsey tasked with securing papal annulment in Rome',
+          'Imperial sack of Rome (1527) by Emperor Charles V',
+          'Pope Clement VII held captive by Charles V (Catherine’s nephew)',
+          'Blackfriars legatine court collapsed without verdict (1529)',
+        ],
+        focusClue: 'Why did European power politics prevent the Pope from granting the annulment?',
       },
       {
-        col: '3. IMPERIAL SOVEREIGNTY',
-        text: 'Explain Thomas Cromwell’s 1533 Act in Restraint of Appeals declaring England an ‘Empire’ subject to no foreign pope or potentate.',
-      },
-    ],
-    connectives:
-      'A primary cause of the break with Rome was... &bull; In particular, the dynastic crisis... &bull; Furthermore, Thomas Cromwell demonstrated... &bull; Crucially, the 1534 Act of Supremacy... &bull; Consequently...',
-    wordBank:
-      'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
-    doNow: [
-      {
-        q: 'Which religious leader in Rome held supreme spiritual authority over medieval England?',
-        a: 'The Pope (Bishop of Rome)',
+        step: 3,
+        date: '1529–1532',
+        questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
+        bullets: [
+          'Wolsey dismissed and stripped of power for praemunire (1529)',
+          'Thomas Cromwell proposed breaking legal jurisdiction of Rome',
+          'Reformation Parliament summoned; anti-clerical petitions heard',
+          'Supplication Against the Ordinaries forced clergy submission',
+        ],
+        focusClue: 'How did Cromwell weaponise parliamentary statute against the clergy?',
       },
       {
-        q: 'In which language were all medieval Catholic Bible readings and Church services conducted?',
-        a: 'Latin (The Vulgate / Latin Mass)',
+        step: 4,
+        date: '1533',
+        questionHeading: 'How did the Act in Restraint of Appeals make England an ‘Empire’?',
+        bullets: [
+          'Thomas Cranmer consecrated as new Archbishop of Canterbury',
+          'Cranmer declared Henry’s marriage to Catherine null and void',
+          'Anne Boleyn crowned Queen of England in Westminster Abbey',
+          'Statute declared: “This realm of England is an Empire” under the King',
+        ],
+        focusClue: 'What constitutional power did declaring England an ‘Empire’ grant Henry?',
       },
       {
-        q: 'Name the Archbishop of Canterbury murdered in his cathedral in 1170 after disputing royal power.',
-        a: 'Thomas Becket',
-      },
-      {
-        q: 'What German monk sparked the Protestant Reformation in 1517 with his 95 Theses?',
-        a: 'Martin Luther',
-      },
-      {
-        q: 'What term describes corrupt church certificates sold to reduce time in purgatory?',
-        a: 'Indulgences',
-      },
-      {
-        q: 'What honorary title did Pope Leo X award Henry VIII in 1521 for defending Catholic sacraments?',
-        a: 'Fidei Defensor (Defender of the Faith)',
-      },
-      {
-        q: 'Who was Henry VIII’s first wife, the Spanish mother of Princess Mary?',
-        a: 'Catherine of Aragon',
-      },
-      {
-        q: 'Which Holy Roman Emperor was Catherine of Aragon’s powerful nephew?',
-        a: 'Emperor Charles V',
-      },
-      {
-        q: 'Which English cardinal failed to secure the papal divorce and was stripped of power in 1529?',
-        a: 'Cardinal Thomas Wolsey',
-      },
-      {
-        q: 'Which brilliant legal advisor engineered the parliamentary break with Rome in 1532–1534?',
-        a: 'Thomas Cromwell',
+        step: 5,
+        date: '1534',
+        questionHeading: 'How did the Act of Supremacy legally consolidate royal sovereignty?',
+        bullets: [
+          'Act of Supremacy confirmed King as “Supreme Head in earth”',
+          'All papal taxation, annates, and appeals permanently abolished',
+          'Treasons Act (1534) made questioning royal title punishable by death',
+          'Sir Thomas More and Bishop John Fisher beheaded for dissent',
+        ],
+        focusClue: 'How did the Treasons Act extinguish all legal opposition to the Supremacy?',
       },
     ],
     vocabPrompt:
       'Define <strong>Royal Supremacy</strong> and explain how it fundamentally differed from <strong>Papal Authority</strong> in sixteenth-century England:',
-    fourMarkA: {
-      type: 'Feature',
-      question:
-        'Describe one key feature of the Act of Supremacy passed by Parliament in 1534. [4 marks]',
-      hint: 'Focus on how the statute legally declared Henry VIII the ‘Supreme Head’ of the Church of England on earth, extinguishing all papal jurisdiction.',
-      stems:
-        'One key feature of the Act of Supremacy was... &bull; Specifically, the statute declared... &bull; This was significant because it meant...',
+    rightPage: {
+      type: 'single_12',
+      tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
+      examStem:
+        'Explain why King Henry VIII broke with the Roman Catholic Church in the period 1527–1534. [12 marks]',
+      stimulus: ['The succession and Catherine of Aragon', 'Crown finances and monastic wealth'],
+      structureStrip: [
+        {
+          col: '1. DYNASTIC SUCCESSION',
+          text: 'Explain Henry’s urgent need for a legitimate male heir; Pope Clement VII was captive to Catherine’s nephew, Charles V, blocking the annulment.',
+        },
+        {
+          col: '2. CROWN FINANCES',
+          text: 'Explain how Cromwell highlighted Church riches; breaking with Rome allowed the Crown to seize tenths and first fruits, funding national coastal defence.',
+        },
+        {
+          col: '3. IMPERIAL SOVEREIGNTY',
+          text: 'Explain Thomas Cromwell’s 1533 Act in Restraint of Appeals declaring England an ‘Empire’ subject to no foreign pope or potentate.',
+        },
+      ],
+      connectives:
+        'A primary cause of the break with Rome was... &bull; In particular, the dynastic crisis... &bull; Furthermore, Thomas Cromwell demonstrated... &bull; Crucially, the 1534 Act of Supremacy... &bull; Consequently...',
+      wordBank:
+        'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
+      timelineMission:
+        'Turn to Pages 10–11 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
     },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which church authority in England in 1520 was different from church authority in 1535. [4 marks]',
-      hint: 'Contrast the supreme judicial authority of the Pope in 1520 with the absolute constitutional supremacy of the Crown established by 1535.',
-      stems:
-        'One way church authority differed was... &bull; In 1520, the Church was governed by... &bull; In contrast, by 1535...',
-    },
-    timelineMission:
-      'Turn to Pages 10–11 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
     leftPageQuip:
       'Remember: In 1534, disagreeing with Henry VIII’s marriage status wasn’t just poor etiquette—it was an immediate date with the executioner at Tower Hill.',
     rightPageQuip:
@@ -147,92 +156,107 @@ const enquiryConfigs = [
     lessonNum: 2,
     id: 'lesson_2',
     title: 'Enquiry 2: Elizabeth I & The Middle Way (1558–1588)',
+    enquiryQuestion: 'How did Elizabeth I navigate religious divisions through the 1559 Via Media?',
     specAnchor:
       'Elizabethan Religious Settlement (1559); Act of Supremacy; Act of Uniformity; Via Media compromise.',
-    tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
-    examStem:
-      'Explain why Elizabeth I chose a ‘Middle Way’ (Via Media) in her 1559 Religious Settlement. [12 marks]',
-    stimulus: [
-      'The threat of religious civil war and European invasion',
-      'The legacy of Mary I’s Smithfield persecutions',
-    ],
-    structureStrip: [
+    stages: [
       {
-        col: '1. PREVENTING CIVIL WAR',
-        text: 'Explain how England was deeply divided; Elizabeth sought national unity to avoid the bloody sectarian wars devastating France and the Netherlands.',
+        step: 1,
+        date: '1558–1559',
+        questionHeading: 'Why was England religiously fractured upon Elizabeth’s accession?',
+        bullets: [
+          'Edward VI’s radical Protestantism vs Mary I’s Catholic restoration',
+          '280+ Protestants burned at the stake under Mary (Smithfield fires)',
+          'Returning Marian exiles demanded radical Calvinist purification',
+          'War with France, crown bankruptcy, and constant Catholic threat',
+        ],
+        focusClue: 'Why did Mary I’s burnings produce profound anti-Catholic fear in England?',
       },
       {
-        col: '2. MARIAN BACKLASH',
-        text: 'Explain how Mary I’s burning of nearly 300 Protestants at Smithfield alienated the public, creating widespread revulsion against Catholic extremism.',
+        step: 2,
+        date: '1559',
+        questionHeading: 'How did the Act of Supremacy restore royal control without alienation?',
+        bullets: [
+          'Elizabeth dropped Henry VIII’s provocative title of “Supreme Head”',
+          'Adopted compromise title of “Supreme Governor” of the Church',
+          'Oath of Supremacy required from all clergy and royal officials',
+          'All Catholic Marian bishops except one refused and were deprived',
+        ],
+        focusClue: 'Why was the title “Supreme Governor” a masterstroke of political compromise?',
       },
       {
-        col: '3. PRAGMATIC SETTLEMENT',
-        text: 'Explain Elizabeth’s adoption of ‘Supreme Governor’ to pacify Catholics while imposing Protestant doctrine via the 1559 Book of Common Prayer.',
-      },
-    ],
-    connectives:
-      'A primary reason Elizabeth chose the Middle Way was... &bull; In particular, the threat of civil conflict... &bull; Furthermore, the brutal legacy of Mary I... &bull; Crucially, Elizabeth’s title of Supreme Governor... &bull; Consequently...',
-    wordBank:
-      'Via Media (Middle Way) &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity (1559) &bull; Book of Common Prayer &bull; recusants &bull; Marian persecutions &bull; Smithfield burnings &bull; Mary, Queen of Scots &bull; Puritan faction',
-    doNow: [
-      {
-        q: 'Which Catholic queen ruled England from 1553 to 1558, restoring the Pope’s authority?',
-        a: 'Queen Mary I (Mary Tudor)',
+        step: 3,
+        date: '1559',
+        questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’?',
+        bullets: [
+          '1559 Book of Common Prayer merged 1549 and 1552 communion words',
+          'Allowed belief in either spiritual or literal Eucharistic presence',
+          'Traditional vestments and church decorations retained for Catholics',
+          '12d shilling recusancy fine for failing to attend Sunday service',
+        ],
+        focusClue: 'Why did Elizabeth claim she had “no desire to make windows into men’s souls”?',
       },
       {
-        q: 'How many Protestant martyrs were burned at the stake during the reign of Mary I?',
-        a: 'Nearly 300 (approx. 284)',
+        step: 4,
+        date: '1568–1570',
+        questionHeading: 'How did Mary Queen of Scots and the Papal Bull shatter stability?',
+        bullets: [
+          'Mary Queen of Scots fled to England; focal point for Catholic plots',
+          'Northern Rebellion (1569) attempted to overthrow Elizabeth',
+          'Pope Pius V issued Regnans in Excelsis bull excommunicating Queen',
+          'Papal bull ordered English Catholics to depose Elizabeth as heretic',
+        ],
+        focusClue:
+          'How did the 1570 Papal Bull turn private Catholic faith into political treason?',
       },
       {
-        q: 'Which Protestant boy-king ruled England between Henry VIII and Mary I (1547–1553)?',
-        a: 'King Edward VI',
-      },
-      { q: 'What year did Elizabeth I ascend the English throne upon Mary I’s death?', a: '1558' },
-      {
-        q: 'What Latin phrase describes Elizabeth’s deliberate policy of religious compromise?',
-        a: 'Via Media (The Middle Way)',
-      },
-      {
-        q: 'What title did Elizabeth I adopt under the 1559 Act of Supremacy instead of ‘Supreme Head’?',
-        a: 'Supreme Governor of the Church of England',
-      },
-      {
-        q: 'Which 1559 Act required all English citizens to attend Sunday church services or pay a fine?',
-        a: 'The Act of Uniformity',
-      },
-      {
-        q: 'What term describes Catholic believers who refused to attend Anglican services and paid fines?',
-        a: 'Recusants',
-      },
-      {
-        q: 'Which Catholic cousin of Elizabeth fled Scotland in 1568 and became the focus of Catholic plots?',
-        a: 'Mary, Queen of Scots',
-      },
-      {
-        q: 'In 1570, which Pope issued the papal bull Regnans in Excelsis excommunicating Elizabeth?',
-        a: 'Pope Pius V',
+        step: 5,
+        date: '1571–1588',
+        questionHeading: 'How did Walsingham’s counter-espionage lead to Mary’s execution?',
+        bullets: [
+          'Ridolfi (1571) and Throckmorton (1583) plots backed by Spain',
+          'Sir Francis Walsingham established codebreaking intelligence network',
+          'Babington Plot (1586) intercepted letter proving Mary’s treason',
+          'Mary Stuart beheaded at Fotheringhay Castle on 8 February 1587',
+        ],
+        focusClue:
+          'Why was executing an anointed monarch such a terrifying precedent for Elizabeth?',
       },
     ],
     vocabPrompt:
-      'Define <strong>The Middle Way (Via Media)</strong> and explain how it attempted to balance Catholic ceremony with Protestant doctrine:',
-    fourMarkA: {
-      type: 'Feature',
-      question:
-        'Describe one key feature of the Elizabethan Act of Uniformity passed in 1559. [4 marks]',
-      hint: 'Focus on the compulsory use of the English Book of Common Prayer in every church and the imposition of a one-shilling fine for recusants who refused to attend.',
-      stems:
-        'One key feature of the Act of Uniformity was... &bull; Specifically, the law required... &bull; This was important because it ensured...',
+      'Define Elizabeth I’s <strong>Via Media (The Middle Way)</strong> and explain how it sought to reconcile conflicting <strong>Catholic</strong> and <strong>Protestant</strong> doctrines:',
+    rightPage: {
+      type: 'split',
+      partA: {
+        tariff: 'Question 3(a): Explain One Difference [4 marks &bull; 5 mins]',
+        question:
+          'Explain one way in which Elizabeth I’s religious policy in 1559 was different from Mary I’s religious policy (1553–1558). [4 marks]',
+        hint: 'Contrast Mary I’s systematic heresy burnings and strict papal obedience with Elizabeth’s compromise on outward conformity without investigating private conscience.',
+        stems:
+          'One way religious policy differed was... &bull; Under Mary I, religious dissent was punished by... &bull; In contrast, Elizabeth I...',
+      },
+      partB: {
+        tariff: 'Question 3(b): Explain Importance [8 marks &bull; 10 mins]',
+        question:
+          'Explain the importance of the Elizabethan Religious Settlement (1559) for religious stability in England. [8 marks]',
+        structureStrip: [
+          {
+            col: '1. VIA MEDIA & DEFUSING REBELLION',
+            text: 'Explain how the 1559 Prayer Book’s ambiguous Communion wording and traditional vestments allowed moderate Catholics to attend without violating conscience.',
+          },
+          {
+            col: '2. SECURING THE PROTESTANT STATE',
+            text: 'Explain how adopting ‘Supreme Governor’ and enforcing 12d recusancy fines established royal control while uniting the nation against foreign Catholic threats.',
+          },
+        ],
+        connectives:
+          'This was of paramount importance because... &bull; Specifically, the compromise prevented... &bull; Furthermore, by establishing the Queen as Supreme Governor... &bull; Crucially, this secured stability because...',
+        wordBank:
+          'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
+      },
+      timelineMission:
+        'Turn to Pages 10–11 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
     },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which religious policy under Elizabeth I was different from religious policy under Mary I. [4 marks]',
-      hint: 'Contrast Mary I’s systematic heresy burnings and strict papal obedience with Elizabeth’s compromise on outward conformity without investigating private conscience.',
-      stems:
-        'One way religious policy differed was... &bull; Under Mary I, religious dissent was punished by... &bull; In contrast, Elizabeth I...',
-    },
-    timelineMission:
-      'Turn to Pages 10–11 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
     leftPageQuip:
       'Queen Elizabeth I famously said she had ‘no desire to make windows into men’s souls.’ Translation: pay your church fines on Sunday and keep your treason to yourself.',
     rightPageQuip:
@@ -242,94 +266,112 @@ const enquiryConfigs = [
     lessonNum: 3,
     id: 'lesson_3',
     title: 'Enquiry 3: The Spanish Armada & Naval Power (1588)',
+    enquiryQuestion:
+      'Why was Philip II’s Armada defeated, and how did naval strategy transform warfare?',
     specAnchor:
       'Anglo-Spanish rivalry; execution of Mary Queen of Scots (1587); Armada campaign; naval tactics and weather.',
-    tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
-    examStem: 'Explain why the Spanish Armada was defeated in the summer of 1588. [12 marks]',
-    stimulus: [
-      'English naval tactics and fireships at Calais',
-      'The ‘Protestant Wind’ and North Sea gales',
-    ],
-    structureStrip: [
+    stages: [
       {
-        col: '1. FIRESHIPS & GRAVELINES',
-        text: 'Explain how Drake’s midnight fireships panicked Medina Sidonia’s crescent fleet at Calais; English race-built galleons then exploited the chaos at Gravelines.',
+        step: 1,
+        date: '1585–1587',
+        questionHeading: 'What imperial and religious rivalries provoked Philip II’s invasion?',
+        bullets: [
+          'Spain Championed Catholic Counter-Reformation across Europe',
+          'Drake and English privateers raided Spanish silver fleets in Americas',
+          'Treaty of Nonsuch (1585): English troops sent to aid Dutch rebels',
+          'Execution of Mary Queen of Scots (1587) triggered Enterprise of England',
+        ],
+        focusClue: 'Why did Francis Drake’s 1587 raid on Cadiz delay the Armada by a full year?',
       },
       {
-        col: '2. NORTH SEA GALES',
-        text: 'Explain how severe westerly gales prevented the Armada returning via the Channel, shipwrecking dozens of galleons on the treacherous Scottish and Irish coasts.',
+        step: 2,
+        date: 'July–Aug 1588',
+        questionHeading: 'How did the Spanish Armada advance up the English Channel?',
+        bullets: [
+          '130 warships and 30,000 troops sailed from Lisbon under Medina Sidonia',
+          'Strict defensive crescent formation resisted English broadside attacks',
+          'Running skirmishes off Plymouth, Portland Bill, and Isle of Wight',
+          'English lacked heavy firepower to break the dense Spanish formation',
+        ],
+        focusClue: 'Why was the crescent formation impenetrable to standoff English naval gunfire?',
       },
       {
-        col: '3. SPANISH FLAWS',
-        text: 'Explain Medina Sidonia’s lack of naval experience and the catastrophic breakdown in communication with the Duke of Parma’s invasion army in Flanders.',
-      },
-    ],
-    connectives:
-      'A primary cause of the Armada’s defeat was... &bull; In particular, English tactical deployment of fireships... &bull; Furthermore, ferocious storms... &bull; Crucially, Medina Sidonia’s logistical failure... &bull; Consequently...',
-    wordBank:
-      'Spanish Armada &bull; King Philip II &bull; Duke of Medina Sidonia &bull; Duke of Parma &bull; race-built galleons &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; crescent formation &bull; culverins &bull; Protestant Wind',
-    doNow: [
-      {
-        q: 'Which Catholic King of Spain launched the Armada against England in 1588?',
-        a: 'King Philip II',
+        step: 3,
+        date: '6–7 August 1588',
+        questionHeading: 'How did English fireships break the Spanish formation at Calais?',
+        bullets: [
+          'Armada anchored off Calais awaiting Duke of Parma’s invasion army',
+          'Parma’s troop barges blocked by Dutch flyboat shallow water blockades',
+          'Lord Howard and Drake launched 8 blazing pitch-soaked fireships',
+          'Spanish panicked, cut anchor cables, and scattered into the night',
+        ],
+        focusClue: 'Why was cutting anchor cables at Calais a fatal tactical error for the Armada?',
       },
       {
-        q: 'In what year was Mary, Queen of Scots executed at Fotheringhay Castle for plotting against Elizabeth?',
-        a: '1587',
+        step: 4,
+        date: '8 August 1588',
+        questionHeading: 'How did the Battle of Gravelines prove English tactical supremacy?',
+        bullets: [
+          'Scattered Spanish ships engaged in close-range battle off Gravelines',
+          'Hawkins’ race-built galleons sailed faster and loaded cannon rapidly',
+          'English culverin long guns battered timber hulls at close range',
+          'Three Spanish galleons sank; many others crippled and drifted north',
+        ],
+        focusClue: 'How did English race-built naval architecture outclass heavy Spanish galleons?',
       },
       {
-        q: 'Which English privateer famously raided the Spanish port of Cadiz in 1587, ‘singeing the King of Spain’s beard’?',
-        a: 'Sir Francis Drake',
-      },
-      {
-        q: 'Approximately how many warships and transport vessels comprised the Spanish Armada?',
-        a: 'Approx. 130 ships',
-      },
-      {
-        q: 'Who was appointed Commander-in-Chief of the Spanish Armada despite having zero naval experience?',
-        a: 'The Duke of Medina Sidonia',
-      },
-      {
-        q: 'What defensive geometric formation did the Spanish fleet adopt sailing up the English Channel?',
-        a: 'The Crescent formation',
-      },
-      {
-        q: 'At which French port did the Armada anchor before being scattered by English fireships?',
-        a: 'Calais',
-      },
-      {
-        q: 'Name the decisive naval engagement fought on 8 August 1588 after the fireship attack.',
-        a: 'The Battle of Gravelines',
-      },
-      {
-        q: 'What popular religious name was given to the fierce North Sea gales that wrecked Spanish ships?',
-        a: 'The Protestant Wind',
-      },
-      {
-        q: 'What type of lighter, faster English warships outmanoeuvred the bulky Spanish galleons?',
-        a: 'Race-built galleons',
+        step: 5,
+        date: 'Aug–Sept 1588',
+        questionHeading: 'How did the ‘Protestant Wind’ and severe gales destroy the fleet?',
+        bullets: [
+          'Fierce south-westerly winds prevented return through English Channel',
+          'Armada forced to circumnavigate Scotland and treacherous Irish coast',
+          'Over 50 Spanish ships wrecked on rocks; thousands drowned or killed',
+          'Fewer than 70 battered vessels limped back to Spain; England survived',
+        ],
+        focusClue:
+          'Why did English propaganda strike commemorative medals declaring “God blew and they were scattered”?',
       },
     ],
     vocabPrompt:
       'Define <strong>Fireships (Hellburners)</strong> and explain how their deployment at Calais disrupted the Spanish Armada:',
-    fourMarkA: {
-      type: 'Feature',
-      question:
-        'Describe one key feature of the English naval ships designed by Sir John Hawkins. [4 marks]',
-      hint: 'Focus on how English race-built galleons were longer, lower, and faster, equipped with long-range culverin cannons that could reload rapidly.',
-      stems:
-        'One key feature of English race-built galleons was... &bull; Specifically, they were designed to... &bull; This gave the English an advantage because...',
+    rightPage: {
+      type: 'split',
+      partA: {
+        tariff: 'Question 1: Describe One Feature [4 marks &bull; 5 mins]',
+        question:
+          'Describe one key feature of the English race-built warships designed by Sir John Hawkins. [4 marks]',
+        hint: 'Focus on how English race-built galleons were lower, longer, and faster, carrying long-range culverin cannons that could reload quickly.',
+        stems:
+          'One key feature of English race-built galleons was... &bull; Specifically, they were designed with... &bull; This gave the English an advantage because...',
+      },
+      partB: {
+        tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
+        question:
+          'Write a narrative account analysing the key events of the Spanish Armada campaign in the summer of 1588. [8 marks]',
+        stimulus: ['The crescent formation in the Channel', 'The fireships at Calais'],
+        structureStrip: [
+          {
+            col: '1. CHANNEL RUN & CRESCENT',
+            text: 'Explain the 130-ship crescent formation sailing up the Channel; running battles off Plymouth and Isle of Wight tested standoff gunnery.',
+          },
+          {
+            col: '2. CALAIS FIRESHIPS & GRAVELINES',
+            text: 'Explain Drake’s midnight fireships forcing Spanish captains to cut anchors; English race-built galleons battered scattered ships at Gravelines.',
+          },
+          {
+            col: '3. PROTESTANT WIND & RETREAT',
+            text: 'Explain south-westerly gales driving Armada into the North Sea, wrecking over 50 galleons on the treacherous Scottish and Irish coasts.',
+          },
+        ],
+        connectives:
+          'The campaign began in July 1588 when... &bull; In response, English warships... &bull; The decisive turning point occurred at Calais when... &bull; Following the fireship chaos, the Battle of Gravelines resulted in... &bull; Finally, ferocious storms...',
+        wordBank:
+          'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
+      },
+      timelineMission:
+        'Turn to Pages 10–11 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
     },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which Spanish naval battle tactics were different from English naval tactics in 1588. [4 marks]',
-      hint: 'Contrast Spanish reliance on close-range grappling and hand-to-hand infantry boarding with English preference for standoff broadside gunnery.',
-      stems:
-        'One way naval tactics differed was... &bull; Spanish commanders planned to... &bull; In contrast, English commanders chose to...',
-    },
-    timelineMission:
-      'Turn to Pages 10–11 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
     leftPageQuip:
       'The Spanish Armada carried 130 ships, 30,000 soldiers, and hundreds of barrels of holy water. Unfortunately for King Philip II, none of that stopped English fireships.',
     rightPageQuip:
@@ -339,272 +381,728 @@ const enquiryConfigs = [
     lessonNum: 4,
     id: 'lesson_4',
     title: 'Enquiry 4: The English Civil War, Regicide & Bill of Rights (1642–1689)',
+    enquiryQuestion:
+      'Why did the collision over Divine Right lead to the trial and execution of Charles I?',
     specAnchor:
       'Causes of Civil War; Charles I Personal Rule (1629–40); New Model Army; Trial & Regicide (1649); Bill of Rights (1689).',
-    tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
-    examStem:
-      'Explain why Parliament put King Charles I on trial and executed him in January 1649. [12 marks]',
-    stimulus: [
-      'Charles I’s refusal to accept constitutional limits',
-      'The outbreak of the Second Civil War (1648)',
-    ],
-    structureStrip: [
+    stages: [
       {
-        col: '1. DUPLICITY & DIVINE RIGHT',
-        text: 'Explain Charles’s obstinate belief in Divine Right; he treated all post-war peace negotiations as delaying tactics while attempting to rearm.',
+        step: 1,
+        date: '1629–1640',
+        questionHeading: 'Why did Charles I’s ‘Personal Rule’ alienate Parliament and country?',
+        bullets: [
+          'Charles dissolved Parliament in 1629 for questioning royal power',
+          'Ruled 11 years without Parliament using archaic taxes (Ship Money)',
+          'John Hampden put on trial (1637) for refusing illegal inland tax',
+          'Archbishop Laud enforced Arminian ritual, triggering Scottish Revolt',
+        ],
+        focusClue:
+          'Why did inland Ship Money spark widespread constitutional outrage across England?',
       },
       {
-        col: '2. SECOND CIVIL WAR (1648)',
-        text: 'Explain how Charles made a secret pact with the Scots to invade England; the New Model Army viewed him as a ‘man of blood’ who provoked needless death.',
+        step: 2,
+        date: '1640–1642',
+        questionHeading: 'How did the breakdown of trust lead to armed civil conflict?',
+        bullets: [
+          'Bankruptcy forced Charles to summon Long Parliament in Nov 1640',
+          'MPs impeached Laud and executed King’s chief minister Strafford',
+          'Charles entered Commons with 400 soldiers to arrest Five Members (1642)',
+          'Charles raised royal battle standard at Nottingham on 22 August 1642',
+        ],
+        focusClue: 'Why did the King entering the Commons with armed soldiers make war inevitable?',
       },
       {
-        col: '3. PRIDE’S PURGE & REGICIDE',
-        text: 'Explain how the Army purged moderate MPs from Parliament in Dec 1648; the Rump Parliament created a High Court of Justice to execute the King for treason.',
-      },
-    ],
-    connectives:
-      'A primary reason Parliament executed Charles I was... &bull; In particular, his unshakeable belief in Divine Right... &bull; Furthermore, his secret Scottish alliance provoked... &bull; Crucially, Colonel Pride’s purge left... &bull; Consequently...',
-    wordBank:
-      'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
-    doNow: [
-      {
-        q: 'Which Stuart king succeeded Queen Elizabeth I on the English throne in 1603?',
-        a: 'King James I (James VI of Scotland)',
-      },
-      {
-        q: 'What Catholic conspiracy attempted to blow up King James I and Parliament on 5 November 1605?',
-        a: 'The Gunpowder Plot',
+        step: 3,
+        date: '1645–1648',
+        questionHeading: 'How did the New Model Army defeat the King and radicalise politics?',
+        bullets: [
+          'Fairfax and Cromwell created New Model Army with merit-based command',
+          'Decisive victory at Battle of Naseby (1645) destroyed Royalist forces',
+          'Charles surrendered to Scots (1646) but secretly plotted Scottish invasion',
+          'Second Civil War (1648) branded Charles a treacherous “man of blood”',
+        ],
+        focusClue:
+          'Why did the Second Civil War convince army officers that Charles had to be punished?',
       },
       {
-        q: 'Which king ruled England during the Civil War and was beheaded outside Whitehall in 1649?',
-        a: 'King Charles I',
+        step: 4,
+        date: 'Dec 1648 – Jan 1649',
+        questionHeading: 'Why did Pride’s Purge and the High Court lead to regicide?',
+        bullets: [
+          'Colonel Pride purged moderate MPs who wished to negotiate with King',
+          'Rump Parliament created High Court of Justice to try Charles for treason',
+          'Charles refused to enter a plea, arguing no court had authority over king',
+          'King Charles I publicly beheaded outside Whitehall Banqueting House (30 Jan)',
+        ],
+        focusClue:
+          'On what constitutional grounds did Charles I refuse to recognize the trial court?',
       },
       {
-        q: 'What term describes the monarch’s belief that royal power is granted directly by God and cannot be questioned?',
-        a: 'The Divine Right of Kings',
-      },
-      {
-        q: 'What controversial coastal tax did Charles I illegally enforce upon inland counties in 1635?',
-        a: 'Ship Money',
-      },
-      {
-        q: 'For how many years did Charles I rule without calling Parliament during his ‘Personal Rule’ (1629–1640)?',
-        a: '11 Years (The Eleven Years’ Tyranny)',
-      },
-      {
-        q: 'Which revolutionary military force was created by Parliament in 1645, commanded by Fairfax and Cromwell?',
-        a: 'The New Model Army',
-      },
-      {
-        q: 'Which decisive 1645 battle destroyed Charles I’s main Royalist field army?',
-        a: 'The Battle of Naseby',
-      },
-      {
-        q: 'What military event in December 1648 expelled moderate MPs from Parliament, leaving the radical Rump?',
-        a: 'Pride’s Purge',
-      },
-      {
-        q: 'On what exact date was King Charles I executed outside the Banqueting House at Whitehall?',
-        a: '30 January 1649',
+        step: 5,
+        date: '1660–1689',
+        questionHeading: 'How did the Glorious Revolution permanently limit royal power?',
+        bullets: [
+          'Monarchy restored under Charles II (1660) after Cromwell’s Protectorate',
+          'James II alienated nation by suspending anti-Catholic laws and packing courts',
+          'William of Orange invited by Parliament in 1688; James fled to France',
+          '1689 Bill of Rights established parliamentary supremacy and rule of law',
+        ],
+        focusClue:
+          'How did the 1689 Bill of Rights legally end the Stuart doctrine of Divine Right?',
       },
     ],
     vocabPrompt:
       'Define <strong>Constitutional Monarchy</strong> and contrast it with the Stuart doctrine of <strong>The Divine Right of Kings</strong>:',
-    fourMarkA: {
-      type: 'Feature',
-      question:
-        'Describe one key feature of Oliver Cromwell’s New Model Army established in 1645. [4 marks]',
-      hint: 'Focus on merit-based promotion regardless of noble birth, regular discipline and pay, and intense religious Puritan zeal.',
-      stems:
-        'One key feature of the New Model Army was... &bull; Specifically, soldiers were... &bull; This was revolutionary because it meant...',
+    rightPage: {
+      type: 'single_12',
+      tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
+      examStem:
+        'Explain why Parliament put King Charles I on trial and executed him in January 1649. [12 marks]',
+      stimulus: [
+        'Charles I’s refusal to accept constitutional limits',
+        'The outbreak of the Second Civil War (1648)',
+      ],
+      structureStrip: [
+        {
+          col: '1. DUPLICITY & DIVINE RIGHT',
+          text: 'Explain Charles’s obstinate belief in Divine Right; he treated all post-war peace negotiations as delaying tactics while attempting to rearm.',
+        },
+        {
+          col: '2. SECOND CIVIL WAR (1648)',
+          text: 'Explain how Charles made a secret pact with the Scots to invade England; the New Model Army viewed him as a ‘man of blood’ who provoked needless death.',
+        },
+        {
+          col: '3. PRIDE’S PURGE & REGICIDE',
+          text: 'Explain how the Army purged moderate MPs from Parliament in Dec 1648; the Rump Parliament created a High Court of Justice to execute the King for treason.',
+        },
+      ],
+      connectives:
+        'A primary reason Parliament executed Charles I was... &bull; In particular, his unshakeable belief in Divine Right... &bull; Furthermore, his secret Scottish alliance provoked... &bull; Crucially, Colonel Pride’s purge left... &bull; Consequently...',
+      wordBank:
+        'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
+      timelineMission:
+        'Turn to Pages 10–11 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
     },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which the power of the Crown in 1640 was different from its power in 1689. [4 marks]',
-      hint: 'Contrast Charles I’s unilateral taxation (Ship Money) and personal rule with the statutory restrictions enforced by the 1689 Bill of Rights.',
-      stems:
-        'One way the power of the Crown differed was... &bull; In 1640, Charles I claimed the right to... &bull; In contrast, by 1689...',
-    },
-    timelineMission:
-      'Turn to Pages 10–11 (Enquiry 4). In Milestone 7, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649, showing the severed crown fallen onto the block.',
     leftPageQuip:
-      'King Charles I honestly believed God personally appointed him to rule without Parliament. Parliament respectfully disagreed by raising an army and locking the gates.',
+      'King Charles I told his trial judges: ‘A King cannot be tried by any superior jurisdiction on earth.’ Three days later, they beheaded him outside his own banqueting hall.',
     rightPageQuip:
-      'On 30 January 1649, Charles I wore two shirts to his execution so the crowd wouldn’t think he was shivering from fear in the winter cold. Royal dignity to the very end.',
+      'Oliver Cromwell called the execution of King Charles I a ‘cruel necessity.’ Charles I’s loyal supporters had several rather less polite words for it.',
   },
   {
     lessonNum: 5,
     id: 'lesson_5',
     title: 'Enquiry 5: Synoptic Assessment: Crown, Church, or Parliament?',
+    enquiryQuestion:
+      'Which turning point decisively transformed the English state between 1517 and 1689?',
     specAnchor:
-      'Long-term constitutional transformation (1517–1689); Glorious Revolution (1688); Bill of Rights (1689); Parliamentary Sovereignty.',
-    tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
-    examStem:
-      'Explain why the balance of power shifted permanently from the Crown to Parliament in the period 1640–1689. [12 marks]',
-    stimulus: [
-      'Parliamentary control over national taxation and finance',
-      'The statutory provisions of the 1689 Bill of Rights',
-    ],
-    structureStrip: [
+      'Synoptic evaluation of Royal Supremacy, Civil War, Regicide, and the 1689 Bill of Rights.',
+    stages: [
       {
-        col: '1. POWER OF THE PURSE',
-        text: 'Explain how the abolition of medieval prerogatives (Ship Money, forced loans) meant the Crown could never govern or fund wars without annual parliamentary supply.',
+        step: 1,
+        date: '1517–1534',
+        questionHeading: 'How did Henry VIII reshape sovereign authority in the Reformation?',
+        bullets: [
+          'Henry broke with Rome to secure Tudor succession and Crown wealth',
+          'Act of Supremacy (1534) absorbed spiritual authority into royal crown',
+          'Used Parliament to pass statutes, setting a vital constitutional precedent',
+          'Dissolution of monasteries created landed gentry invested in Reformation',
+        ],
+        focusClue: 'Did the break with Rome increase royal prerogative or parliamentary authority?',
       },
       {
-        col: '2. BILL OF RIGHTS (1689)',
-        text: 'Explain the legal terms agreed by William & Mary: banning standing armies in peacetime, outlawing suspension of laws, and guaranteeing free parliamentary debate.',
+        step: 2,
+        date: '1559–1588',
+        questionHeading: 'How did the Elizabethan settlement forge a Protestant national state?',
+        bullets: [
+          'Via Media compromise prevented religious civil war seen in Europe',
+          'Queen governed as Supreme Governor with broad popular acceptance',
+          'Victory against Armada (1588) tied English patriotism to Protestantism',
+          'Crown and Parliament worked in mutual alliance against foreign Catholic threat',
+        ],
+        focusClue: 'How did external threats under Elizabeth cement parliamentary co-operation?',
       },
       {
-        col: '3. END OF DIVINE RIGHT',
-        text: 'Explain how the regicide of Charles I (1649) and deposition of James II (1688) smashed the mystical doctrine of untouchable kings; monarchs now ruled by contract.',
-      },
-    ],
-    connectives:
-      'A primary cause of the shift towards Parliament was... &bull; In particular, parliamentary control over the purse... &bull; Furthermore, the 1689 Bill of Rights established... &bull; Crucially, the collapse of Divine Right... &bull; Consequently...',
-    wordBank:
-      'Parliamentary Sovereignty &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William III & Mary II &bull; James II &bull; Constitutional Monarchy &bull; power of the purse &bull; Toleration Act (1689) &bull; John Locke &bull; Social Contract',
-    doNow: [
-      {
-        q: 'In what year was the English monarchy restored under King Charles II?',
-        a: '1660 (The Restoration)',
+        step: 3,
+        date: '1603–1640',
+        questionHeading: 'Why did Stuart claims of Divine Right provoke constitutional crisis?',
+        bullets: [
+          'James I and Charles I asserted absolute royal prerogative above the law',
+          '11 Years’ Personal Rule bypassed Parliament through illegal taxation',
+          'Collision between royal prerogative and parliamentary privileges of speech',
+          'Religious reforms of Archbishop Laud sparked armed rebellion in Scotland',
+        ],
+        focusClue: 'Why did Stuart absolutism break down while Tudor compromise had succeeded?',
       },
       {
-        q: 'Which Catholic brother of Charles II ascended the throne in 1685, sparking intense political crisis?',
-        a: 'King James II',
+        step: 4,
+        date: '1642–1649',
+        questionHeading: 'Why was the trial and execution of Charles I a radical turning point?',
+        bullets: [
+          'English Civil War pitted Crown against Parliamentary armed forces',
+          'New Model Army proved soldiers from lower orders could defeat nobility',
+          'Regicide (1649) proved an English monarch was accountable to the law',
+          'Abolition of monarchy and House of Lords created radical Commonwealth',
+        ],
+        focusClue:
+          'Why was publicly executing an anointed king the most shocking event in Tudor-Stuart history?',
       },
       {
-        q: 'What term describes the bloodless overthrow of James II in 1688 by William of Orange and Mary?',
-        a: 'The Glorious Revolution',
-      },
-      {
-        q: 'Which landmark 1689 constitutional statute banned Catholic monarchs and required parliamentary consent for taxes?',
-        a: 'The Bill of Rights',
-      },
-      {
-        q: 'Which 1689 Act granted freedom of worship to non-conformist Protestant dissenters?',
-        a: 'The Toleration Act',
-      },
-      {
-        q: 'What constitutional doctrine asserts that Parliament has supreme legal authority over the Crown and courts?',
-        a: 'Parliamentary Sovereignty',
-      },
-      {
-        q: 'Which English philosopher wrote Two Treatises of Government (1689) defending government by consent?',
-        a: 'John Locke',
-      },
-      {
-        q: 'What financial institution was founded in 1694 to manage government debt and fund military campaigns?',
-        a: 'The Bank of England',
-      },
-      {
-        q: 'What 1701 statute settled the succession on the Protestant House of Hanover?',
-        a: 'The Act of Settlement',
-      },
-      {
-        q: 'Which 1707 treaty united the parliaments of England and Scotland into the Kingdom of Great Britain?',
-        a: 'The Act of Union',
+        step: 5,
+        date: '1660–1689',
+        questionHeading: 'How did the 1689 Bill of Rights finalize Parliamentary Supremacy?',
+        bullets: [
+          'Restoration of 1660 failed to resolve royal prerogative vs Parliament',
+          'Glorious Revolution (1688) expelled James II without major bloodshed',
+          'William and Mary accepted throne strictly upon parliamentary conditions',
+          '1689 Bill of Rights: no royal standing army or taxation without Parliament',
+        ],
+        focusClue:
+          'Why does the 1689 Bill of Rights form the bedrock of Britain’s modern democracy?',
       },
     ],
     vocabPrompt:
-      'Define <strong>Parliamentary Sovereignty</strong> and explain how the 1689 Bill of Rights ended the doctrine of absolute royal prerogative:',
-    fourMarkA: {
-      type: 'Similarity',
-      question:
-        'Explain one way in which religious rebellion under Henry VIII (1536) was similar to religious rebellion under Elizabeth I (1569). [4 marks]',
-      hint: 'Focus on how both the Pilgrimage of Grace (1536) and the Revolt of the Northern Earls (1569) were led by northern Catholic nobles demanding the restoration of the traditional Latin Mass.',
-      stems:
-        'One way religious rebellions were similar was... &bull; In 1536, the Pilgrimage of Grace demanded... &bull; Similarly, in 1569, northern rebels...',
+      'Define <strong>Parliamentary Supremacy</strong> and explain how it was legally secured through the <strong>Bill of Rights (1689)</strong>:',
+    rightPage: {
+      type: 'split',
+      partA: {
+        tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
+        question:
+          'Explain one consequence of the Bill of Rights passed by Parliament in 1689. [4 marks]',
+        hint: 'Focus on how the statute permanently abolished the royal suspension of laws and taxation without parliamentary consent, establishing statutory constitutional monarchy.',
+        stems:
+          'One major consequence was... &bull; Specifically, the Bill of Rights established that... &bull; Consequently, this permanently altered the constitution because...',
+      },
+      partB: {
+        tariff: 'Question 5: Evaluative Judgement [12 marks &bull; 12 mins]',
+        question:
+          '‘The execution of Charles I in 1649 was the most significant turning point in the struggle between Crown and Parliament.’ How far do you agree? [12 marks]',
+        structureStrip: [
+          {
+            col: '1. REGICIDE & ABOLITION (1649)',
+            text: 'Explain how executing Charles I shattered Divine Right and proved Parliament could eliminate the monarchy by military force.',
+          },
+          {
+            col: '2. BILL OF RIGHTS (1689)',
+            text: 'Explain how the 1689 settlement created permanent statutory limits on the Crown, ensuring no taxation or standing army without Parliament.',
+          },
+          {
+            col: '3. COMPARATIVE VERDICT',
+            text: 'Weigh whether the radical violence of 1649 was more significant than the enduring, peaceful constitutional victory of 1689.',
+          },
+        ],
+        connectives:
+          'A compelling argument for 1649 being pivotal is... &bull; On one hand, executing Charles I proved... &bull; However, the 1649 republic collapsed, whereas 1689... &bull; Crucially, the Bill of Rights permanently established... &bull; In conclusion...',
+        wordBank:
+          'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
+      },
+      timelineMission:
+        'Turn to Pages 10–11 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
     },
-    fourMarkB: {
-      type: 'Difference',
-      question:
-        'Explain one way in which the authority of Parliament under King Henry VIII was different from its authority under William III & Mary II. [4 marks]',
-      hint: 'Contrast Parliament functioning as a subservient instrument summoned at Henry VIII’s pleasure with its permanent sovereign status as a co-equal governing partner under the 1689 Bill of Rights.',
-      stems:
-        'One way parliamentary authority differed was... &bull; Under Henry VIII, Parliament was... &bull; In contrast, under William & Mary in 1689...',
-    },
-    timelineMission:
-      'Turn to Pages 10–11. Review all 8 milestones. Draw arrows showing the causal chain connecting Henry’s break with Rome in 1534 to the Bill of Rights in 1689.',
     leftPageQuip:
-      'The Glorious Revolution of 1688 was so ‘peaceful’ because King James II dropped the Great Seal of England into the Thames and ran away to France in the middle of the night.',
+      'In 1689, King William III signed the Bill of Rights, surrendering absolute taxation powers. He wanted money to fight France; Parliament wanted him under control. Both got their wish.',
     rightPageQuip:
-      'By 1689, British kings officially could not raise taxes, suspend laws, or keep a peacetime army without MPs saying yes. Modern constitutional politics was officially born.',
+      'By 1689, England had tried absolute monarchy, civil war, military dictatorship, and Dutch invasion. Finally, Parliament decided that writing rules down was the safest option.',
   },
 ];
 
-// ============================================================================
-// FOOTER STRIP HELPER (Alternating Page Number + Humorous Quip on Same Line)
-// Even pages (verso/left): Page number on left, quip on right.
-// Odd pages (recto/right): Quip on left, page number on right.
-// ============================================================================
-function renderFooterStrip(pageNum, quipText, totalPages = 20) {
+// 25 Core Knowledge Recall Questions Gathered for Pages 18–19 (End of booklet!)
+const synopticRetrievalBank = [
+  // Enquiry 1 (1–5)
+  {
+    q: 'Which religious leader in Rome held supreme spiritual authority over medieval England?',
+    a: 'The Pope (Bishop of Rome)',
+  },
+  {
+    q: 'In which language were all medieval Catholic Bible readings and Church services conducted?',
+    a: 'Latin (The Vulgate / Latin Mass)',
+  },
+  {
+    q: 'What German monk sparked the Protestant Reformation in 1517 with his 95 Theses?',
+    a: 'Martin Luther',
+  },
+  {
+    q: 'Which Holy Roman Emperor was Catherine of Aragon’s powerful nephew?',
+    a: 'Emperor Charles V',
+  },
+  {
+    q: 'Which 1534 parliamentary statute declared Henry VIII the ‘Supreme Head’ of the Church of England?',
+    a: 'The Act of Supremacy (1534)',
+  },
+  // Enquiry 2 (6–10)
+  {
+    q: 'What royal title did Elizabeth I adopt in the 1559 Act of Supremacy instead of ‘Supreme Head’?',
+    a: 'Supreme Governor',
+  },
+  {
+    q: 'What fine was imposed on recusants who refused to attend Sunday services under the Act of Uniformity?',
+    a: '12d (One Shilling)',
+  },
+  {
+    q: 'Which Catholic cousin of Elizabeth fled to England in 1568, becoming the focus of Catholic plots?',
+    a: 'Mary, Queen of Scots',
+  },
+  {
+    q: 'Which Pope excommunicated Elizabeth I in 1570 with the papal bull Regnans in Excelsis?',
+    a: 'Pope Pius V',
+  },
+  {
+    q: 'Who served as Elizabeth I’s spymaster, uncovering the Babington Plot in 1586?',
+    a: 'Sir Francis Walsingham',
+  },
+  // Enquiry 3 (11–15)
+  {
+    q: 'Which Catholic King of Spain launched the Armada against England in 1588?',
+    a: 'King Philip II',
+  },
+  {
+    q: 'Who was appointed Commander-in-Chief of the Spanish Armada despite having zero naval experience?',
+    a: 'The Duke of Medina Sidonia',
+  },
+  {
+    q: 'What defensive geometric formation did the Spanish fleet adopt sailing up the English Channel?',
+    a: 'The Crescent formation',
+  },
+  {
+    q: 'At which French port did the Armada anchor before being scattered by English fireships?',
+    a: 'Calais',
+  },
+  {
+    q: 'What popular name was given to the fierce North Sea gales that wrecked Spanish ships?',
+    a: 'The Protestant Wind',
+  },
+  // Enquiry 4 (16–20)
+  {
+    q: 'What term describes the monarch’s belief that royal power is granted directly by God and cannot be questioned?',
+    a: 'The Divine Right of Kings',
+  },
+  {
+    q: 'What controversial coastal tax did Charles I illegally enforce upon inland counties in 1635?',
+    a: 'Ship Money',
+  },
+  {
+    q: 'Which decisive 1645 battle destroyed Charles I’s main Royalist field army?',
+    a: 'The Battle of Naseby',
+  },
+  {
+    q: 'What military event in December 1648 expelled moderate MPs from Parliament, leaving the Rump?',
+    a: 'Pride’s Purge',
+  },
+  {
+    q: 'On what exact date was King Charles I executed outside the Banqueting House at Whitehall?',
+    a: '30 January 1649',
+  },
+  // Enquiry 5 (21–25)
+  {
+    q: 'Who ruled Britain as Lord Protector during the Commonwealth period (1653–1658)?',
+    a: 'Oliver Cromwell',
+  },
+  {
+    q: 'Which Catholic Stuart king was deposed in the Glorious Revolution of 1688?',
+    a: 'King James II',
+  },
+  {
+    q: 'Which Dutch prince was invited by Parliament to invade England in 1688?',
+    a: 'William of Orange (King William III)',
+  },
+  {
+    q: 'Which foundational 1689 statute ended royal taxation and standing armies without parliamentary consent?',
+    a: 'The Bill of Rights (1689)',
+  },
+  {
+    q: 'Which political philosopher wrote Two Treatises of Government justifying the 1688 revolution?',
+    a: 'John Locke',
+  },
+];
+
+function renderFooterStrip(pageNum, quip, totalPages = 20) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
       <div class="page-footer-strip">
         <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;"><em>${quipText}</em></span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">${quip}</span>
       </div>`;
   } else {
     return `
       <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;"><em>${quipText}</em></span>
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${quip}</span>
         <span class="footer-page-num">${pageNum}/${totalPages}</span>
       </div>`;
   }
 }
 
 // ============================================================================
-// COMPILE 20-PAGE SADDLE-STITCHED PUPIL WORKBOOK (100% Black & White / Medicine Standard)
+// LEFT PAGE RENDERER: 5-STAGE CHRONOLOGICAL INQUIRY SPINE (MEDICINE/CME STYLE)
+// ============================================================================
+function renderSpinePage(cfg, pageNum) {
+  const stagesHtml = cfg.stages
+    .map((st) => {
+      const bulletsHtml = st.bullets
+        .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
+        .join('');
+      return `
+        <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
+          <!-- Node Column (38mm Width with Authentic Chronological Question Heading) -->
+          <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 4px 0 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+            <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+              <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${st.step}</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.date}</span>
+            </div>
+            <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
+              ${st.questionHeading}
+            </div>
+            <div style="margin-top: 1px;">
+              <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
+                ${bulletsHtml}
+              </div>
+            </div>
+            <div style="margin-top: 2px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
+              <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
+                Focus Clue
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
+                ${st.focusClue}
+              </div>
+            </div>
+          </div>
+
+          <!-- Ruled Note-Taking Lines (5 Lines per stage • Tighter Line Spacing) -->
+          <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+          </div>
+        </div>`;
+    })
+    .join('');
+
+  return `
+  <!-- LESSON SPREAD: LEFT PAGE (VERSO • CHRONOLOGICAL INQUIRY SPINE) -->
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- Lesson Header with Inquiry Question Title -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            ENQUIRY ${cfg.lessonNum} &bull; LESSON NOTEBOOK
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            YEAR 8 &bull; CROWN, CHURCH, OR PARLIAMENT? (1517–1689)
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+          ${cfg.enquiryQuestion}
+        </h2>
+      </div>
+
+      <!-- Specification Focus Strip -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2;">
+        <strong>Core Specification Focus:</strong> ${cfg.specAnchor}
+      </div>
+
+      <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry Spine &bull; Core Causal Narrative
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+            Take structured notes alongside each milestone as your teacher narrates the history
+          </span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
+          ${stagesHtml}
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.leftPageQuip, 20)}
+    </div>
+  </div>`;
+}
+
+// ============================================================================
+// RIGHT PAGE RENDERER: ROTATING DISCIPLINARY SKILLS WRITING (PAGES 3, 5, 7, 9, 13)
+// ============================================================================
+function renderRightPage(cfg, pageNum) {
+  const rp = cfg.rightPage;
+
+  if (rp.type === 'single_12') {
+    // 12-MARK CAUSAL WRITING (ENQUIRIES 1 AND 4)
+    return `
+  <!-- LESSON SPREAD: RIGHT PAGE (RECTO • 12-MARK EXPLAIN WHY) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Exam Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+          ${rp.tariff}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          Extended Writing Assessment
+        </span>
+      </div>
+
+      <!-- Question Stem & Stimulus Box -->
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
+          ${rp.examStem}
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #000000;">
+          <strong>Stimulus:</strong>
+          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${rp.stimulus[0]}</span>
+          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${rp.stimulus[1]}</span>
+          <span style="font-style: italic;">(You must also use information of your own)</span>
+        </div>
+      </div>
+
+      <!-- 3-Column Planning Structure Strip -->
+      <div style="margin-bottom: 5px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
+          Structure Strip &bull; 3-Paragraph Analytical Plan
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
+          ${rp.structureStrip
+            .map(
+              (strip) => `
+          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; line-height: 1.2; display: block;">${strip.text}</span>
+          </div>`,
+            )
+            .join('')}
+        </div>
+      </div>
+
+      <!-- Connectives & Key Vocabulary Bank -->
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${rp.connectives}</span>
+        </div>
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${rp.wordBank}</span>
+        </div>
+      </div>
+
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the structure strip above, write your analytical response below:
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+        <div class="task-line" style="height: 9.8mm;"></div>
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+            Timeline Mission
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
+            ${rp.timelineMission}
+          </span>
+        </div>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
+          &rarr; Pages 10–11
+        </span>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 20)}
+    </div>
+  </div>`;
+  } else {
+    // TWO-PART ROTATING SKILLS WRITING (ENQUIRIES 2, 3, AND 5)
+    return `
+  <!-- LESSON SPREAD: RIGHT PAGE (RECTO • ROTATING DISCIPLINARY SKILLS) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- PART A: SHORT-FORM DISCIPLINARY PRACTICE [4 MARKS] -->
+      <div style="border-bottom: 1.5px solid #000000; padding-bottom: 4px; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #000000; margin: 0; font-weight: 800;">
+            ${rp.partA.tariff}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+            DISCIPLINARY DRILL
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
+          ${rp.partA.question}
+        </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          <strong>Hint:</strong> ${rp.partA.hint}
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> ${rp.partA.stems}
+        </div>
+        <div class="ruled-lines-block">
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+        </div>
+      </div>
+
+      <!-- PART B: EXTENDED SKILL WRITING [8 OR 12 MARKS] -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #000000; margin: 0; font-weight: 800;">
+              ${rp.partB.tariff}
+            </h2>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; text-transform: uppercase;">
+              STRUCTURED WRITING
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
+            ${rp.partB.question}
+          </p>
+          ${
+            rp.partB.stimulus
+              ? `
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; margin-bottom: 3px;">
+            <strong>Stimulus:</strong>
+            <span style="border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; font-weight: 600;">${rp.partB.stimulus[0]}</span>
+            <span style="border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; font-weight: 600;">${rp.partB.stimulus[1]}</span>
+          </div>`
+              : ''
+          }
+
+          <!-- Structure Strip -->
+          <div style="display: grid; grid-template-columns: repeat(${rp.partB.structureStrip.length}, 1fr); gap: 5px; margin-bottom: 4px;">
+            ${rp.partB.structureStrip
+              .map(
+                (strip) => `
+            <div style="border: 1px solid #000000; border-top: 2.2px solid #000000; border-radius: 2px; padding: 2px 4px; background: #ffffff;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #000000; line-height: 1.18; display: block;">${strip.text}</span>
+            </div>`,
+              )
+              .join('')}
+          </div>
+
+          <!-- Connectives & Word Bank -->
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.2;">
+            <div><strong>Connectives:</strong> <em>${rp.partB.connectives}</em></div>
+            <div style="margin-top: 1px;"><strong>Key Terms:</strong> ${rp.partB.wordBank}</div>
+          </div>
+        </div>
+
+        <!-- Ruled Writing Lines -->
+        <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
+          <div class="task-line" style="height: 9.4mm;"></div>
+          <div class="task-line" style="height: 9.4mm;"></div>
+          <div class="task-line" style="height: 9.4mm;"></div>
+          <div class="task-line" style="height: 9.4mm;"></div>
+          <div class="task-line" style="height: 9.4mm;"></div>
+          <div class="task-line" style="height: 9.4mm;"></div>
+          <div class="task-line" style="height: 9.4mm;"></div>
+        </div>
+
+        <!-- Timeline Mission Box -->
+        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+              Timeline Mission
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
+              ${rp.timelineMission}
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
+            &rarr; Pages 10–11
+          </span>
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 20)}
+    </div>
+  </div>`;
+  }
+}
+
+// ============================================================================
+// MAIN COMPILATION FUNCTION
 // ============================================================================
 function compileMonarchyWorkbook() {
   const coverImgBase64 =
-    getBase64Image('public/images/henry_viii.jpg') ||
-    getBase64Image('/images/henry_viii.jpg') ||
-    '';
+    getBase64Image('images/henry_viii.jpg') || getBase64Image('public/images/henry_viii.jpg') || '';
+
+  const linedRows15 = Array.from({ length: 28 }, (_, idx) => {
+    const isFirst = idx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Essay Response &bull; Write your thesis, evidence, and analytical evaluation below ]</span>`
+      : `&nbsp;`;
+    return `
+      <div class="lined-row">
+        <div class="lined-margin-cell">${marginContent}</div>
+        <div class="lined-content-cell">${linePrompt}</div>
+      </div>`;
+  }).join('');
+
+  const linedRows17 = Array.from({ length: 28 }, (_, idx) => {
+    const isFirst = idx === 0;
+    const marginContent = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
+      : `&nbsp;`;
+    const linePrompt = isFirst
+      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Historical Judgement ]</span>`
+      : `&nbsp;`;
+    return `
+      <div class="lined-row">
+        <div class="lined-margin-cell">${marginContent}</div>
+        <div class="lined-content-cell">${linePrompt}</div>
+      </div>`;
+  }).join('');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Crown, Church, or Parliament (1517–1689) &bull; Pupil Workbook</title>
+  <title>Crown, Church, or Parliament (1517–1689) Pupil Workbook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
-    /* Print Offset for Saddle-Stitch Booklet Binding (3mm alternating inner margin) */
     @page {
       size: A4 portrait;
       margin: 10mm 10mm 12mm 10mm;
     }
-    @page:left {
-      margin-top: 10mm;
-      margin-bottom: 12mm;
-      margin-left: 7mm;
-      margin-right: 13mm; /* 3mm inner gutter on right for verso staple fold */
-    }
-    @page:right {
-      margin-top: 10mm;
-      margin-bottom: 12mm;
-      margin-left: 13mm; /* 3mm inner gutter on left for recto staple fold */
-      margin-right: 7mm;
-    }
     body {
-      font-family: 'Georgia', 'Garamond', serif;
+      font-family: 'Georgia', serif;
       font-size: 8.5pt;
       line-height: 1.32;
       color: #000000;
       margin: 0;
       padding: 0;
       background: #ffffff;
-      -webkit-font-smoothing: antialiased;
     }
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
     }
-    /* Page Container: Zero outer border, pure flex distribution for optimal page budget */
     .page, .page-container {
       width: 100%;
       height: 272mm;
@@ -616,20 +1114,18 @@ function compileMonarchyWorkbook() {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding: 3mm 4mm;
+      padding: 4mm 6mm;
       background: #ffffff;
     }
     .page:last-child, .page-container:last-child {
       page-break-after: auto;
     }
-    /* Full flex section container for interior distribution */
     .page-body-full {
       flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
     }
-    /* Clean Task Section Spacing (Zero double lines after handwriting task lines) */
     .task-section {
       margin-bottom: 5px;
       padding-bottom: 0;
@@ -639,17 +1135,16 @@ function compileMonarchyWorkbook() {
       padding-bottom: 4px;
       margin-bottom: 5px;
     }
-    /* Thick Black Writing Lines for Handwriting */
     .task-line {
       border-bottom: 1.2px solid #000000;
-      height: 7.8mm;
+      height: 8.4mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
-      height: 7.4mm;
+      height: 7.2mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
@@ -660,7 +1155,6 @@ function compileMonarchyWorkbook() {
       gap: 0;
       margin: 1px 0;
     }
-    /* Clean Lined Paper Grid for Extended Writing Pages (28 ruled lines per page) */
     .lined-page-grid {
       display: flex;
       flex-direction: column;
@@ -676,12 +1170,13 @@ function compileMonarchyWorkbook() {
       box-sizing: border-box;
     }
     .lined-margin-cell {
-      width: 22mm;
+      width: 12mm;
       border-right: 1.2px solid #000000;
       flex-shrink: 0;
       display: flex;
       align-items: center;
-      padding-left: 2px;
+      padding-left: 1mm;
+      padding-right: 0.5mm;
       box-sizing: border-box;
     }
     .lined-content-cell {
@@ -691,22 +1186,21 @@ function compileMonarchyWorkbook() {
       padding-left: 6px;
       box-sizing: border-box;
     }
-    /* Single-Line Page Footer with Page Number & Humorous Revision Quip */
     .page-footer-strip {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 0.5px solid #d0d0d0;
+      border-top: 0.5px solid #000000;
       padding-top: 1.5px;
       margin-top: 2px;
       font-family: 'Inter', sans-serif;
       font-size: 6.4pt;
       line-height: 1.15;
-      color: #666666;
+      color: #000000;
     }
     .footer-quip {
       font-style: italic;
-      color: #666666;
+      color: #000000;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -791,10 +1285,10 @@ function compileMonarchyWorkbook() {
         </div>
         <div style="border-right: 1px solid #000000; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            2. Disciplinary Drills [4m]
+            2. Disciplinary Drills [4m/8m]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Q3(a/b): Explain features, similarities, and differences between political and religious regimes. Specific factual evidence + comparison (5 mins).
+            Rotating skills: explain differences, features, and historical importance. Specific factual evidence + comparison (5–10 mins).
           </div>
         </div>
         <div>
@@ -914,227 +1408,22 @@ function compileMonarchyWorkbook() {
 `;
 
   // ====================================================================
-  // PAGES 2–9: THE FIRST 4 ENQUIRIES (MEDICINE 2-PAGE SPREAD ARCHITECTURE)
+  // PAGES 2–9: THE FIRST 4 ENQUIRIES (MEDICINE/CME STYLE: SPINE LEFT, SKILLS RIGHT)
   // ====================================================================
   for (let i = 0; i < 4; i++) {
     const cfg = enquiryConfigs[i];
     const leftPageNum = i * 2 + 2;
     const rightPageNum = i * 2 + 3;
 
-    // LEFT PAGE (VERSO): DO NOW + KEY VOCAB + TWO 4-MARK QUESTIONS
-    html += `
-  <div class="page page-container verso-page" id="page-${leftPageNum}">
-    <div class="page-body-full">
-      <!-- Lesson Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Disciplinary Practice
-        </span>
-      </div>
+    // LEFT PAGE (VERSO): CHRONOLOGICAL INQUIRY SPINE WITH QUESTION HEADINGS
+    html += renderSpinePage(cfg, leftPageNum);
 
-      <!-- 10-Question Do Now Retrieval Grid -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 3px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px;">
-          ${cfg.doNow
-            .map(
-              (item, idx) => `
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #000000; line-height: 1.2;">
-              ${idx + 1}. ${item.q}
-            </div>
-            <div class="task-line-dotted"></div>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Key Vocabulary Task -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          ${cfg.vocabPrompt}
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-        </div>
-      </div>
-
-      <!-- Disciplinary Practice Question A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One ${cfg.fourMarkA.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg.fourMarkA.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkA.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkA.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-        </div>
-      </div>
-
-      <!-- Disciplinary Practice Question B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One ${cfg.fourMarkB.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg.fourMarkB.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkB.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkB.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-        </div>
-      </div>
-
-      ${renderFooterStrip(leftPageNum, cfg.leftPageQuip, 20)}
-    </div>
-  </div>
-
-  <!-- RIGHT PAGE (RECTO): 12-MARK EXPLAIN WHY + STRUCTURE STRIP + WRITING LINES + TIMELINE MISSION -->
-  <div class="page page-container recto-page" id="page-${rightPageNum}">
-    <div class="page-body-full">
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.tariff}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing Assessment
-        </span>
-      </div>
-
-      <!-- Question Stem & Stimulus Box -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
-          ${cfg.examStem}
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
-          <strong>Stimulus:</strong>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
-          <span style="font-style: italic;">(You must also use information of your own)</span>
-        </div>
-      </div>
-
-      <!-- 3-Column Planning Structure Strip -->
-      <div style="margin-bottom: 5px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Structure Strip &bull; 3-Paragraph Analytical Plan
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-          ${cfg.structureStrip
-            .map(
-              (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; line-height: 1.2; display: block;">${strip.text}</span>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
-        </div>
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${cfg.wordBank}</span>
-        </div>
-      </div>
-
-      <!-- Ruled Task Lines for Extended Writing -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below:
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Timeline Mission Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-            Timeline Mission
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
-            ${cfg.timelineMission}
-          </span>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &rarr; Pages 10–11
-        </span>
-      </div>
-
-      ${renderFooterStrip(rightPageNum, cfg.rightPageQuip, 20)}
-    </div>
-  </div>
-`;
+    // RIGHT PAGE (RECTO): ROTATING SKILLS WRITING WITH STRUCTURE STRIP & TIMELINE MISSION
+    html += renderRightPage(cfg, rightPageNum);
   }
 
   // ====================================================================
-  // PAGES 10–11: THE LIVING TIMELINE IN THE MIDDLE OF BOOKLET!
+  // PAGES 10–11: THE LIVING TIMELINE IN THE EXACT MIDDLE OF BOOKLET!
   // ====================================================================
   html += `
   <!-- PAGE 10: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
@@ -1148,80 +1437,104 @@ function compileMonarchyWorkbook() {
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+          <strong>Living Timeline Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
-      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Medicine Standard) -->
+      <!-- 4 Milestones with Large Blank Dual-Coding Workspace -->
       <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
-
-        <!-- Milestone 1 -->
+        
+        <!-- Milestone 1: 1534 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1517 / 1534 &bull; The Break with Rome &amp; Henry VIII’s Act of Supremacy
+                1534 &bull; Henry VIII &amp; The Act of Supremacy
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Martin Luther’s 95 Theses challenge papal corruption. In England, Pope Clement VII refuses Henry VIII’s divorce petition. Guided by Thomas Cromwell, Parliament passes the 1534 Act of Supremacy, declaring the King Supreme Head of the Church and extinguishing 1,000 years of papal authority.
+              Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 1 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code Henry VIII on the throne severing the Pope’s papal ties with England; annotate Royal Supremacy.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
         </div>
 
-        <!-- Milestone 2 -->
+        <!-- Milestone 2: 1536–1540 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1536–1539 &bull; The Dissolution of the Monasteries &amp; Pilgrimage of Grace
+                1536–1540 &bull; Dissolution of the Monasteries
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Following the Valor Ecclesiasticus survey, Cromwell dismantles over 800 wealthy monasteries, seizing monastic gold, lead roofs, and vast estates for Crown revenue. In the North, Robert Aske leads 30,000 rebels in the Pilgrimage of Grace; Henry brutally executes the rebel leaders.
+              Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 2 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code a ruined monastery, confiscated gold church chests, and newly fortified Tudor coastal castles.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
         </div>
 
-        <!-- Milestone 3 -->
+        <!-- Milestone 3: 1559 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1559 &bull; Elizabeth I’s Religious Settlement: The Elizabethan Middle Way
+                1559 &bull; Elizabeth I &amp; The Religious Settlement
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 2</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Following Mary I’s bloody burnings at Smithfield, Elizabeth establishes the Via Media. Taking the title Supreme Governor, she enforces the 1559 Book of Common Prayer and Uniformity fines, while refusing to persecute private Catholic conscience provided citizens remain outwardly loyal.
+              The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 3 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code balancing scales between Catholic ceremonial tradition and Protestant English scripture.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
         </div>
 
-        <!-- Milestone 4 -->
+        <!-- Milestone 4: 1588 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1588 &bull; The Defeat of the Spanish Armada: English Naval Ascendancy
+                1588 &bull; Defeat of the Spanish Armada
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Philip II launches 130 warships to overthrow Elizabeth and restore Catholicism. At Calais, Drake deploys midnight fireships to shatter the Spanish crescent formation. Decimated by English long-range gunnery at Gravelines and battered by North Sea storms, half the fleet is destroyed.
+              English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 4 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code fireships scattering the Spanish crescent at Calais, followed by storms in the North Sea.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
         </div>
 
       </div>
 
-      ${renderFooterStrip(10, 'Tudor Rule: Marry strategically, execute your chief ministers when things go wrong, and always blame the Pope.', 20)}
+      ${renderFooterStrip(10, 'Centrefold timeline: Dual-coding visual symbols alongside dates and causal links turns raw historical narrative into permanent long-term memory.', 20)}
     </div>
   </div>
 
@@ -1231,325 +1544,129 @@ function compileMonarchyWorkbook() {
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
           <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-            Living Timeline &bull; Part 2: Civil War, Regicide &amp; Parliamentary Sovereignty (1605–1689)
+            Living Timeline &bull; Part 2: Civil War, Regicide &amp; The Bill of Rights (1603–1689)
           </h2>
         </div>
 
         <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> As you study each enquiry lesson, complete the timeline missions by sketching and annotating in the corresponding Key Topic boxes below.
+          <strong>Living Timeline Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
-      <!-- 4 Milestones with Large Blank Drawing/Notes Area (Medicine Standard) -->
+      <!-- 4 Milestones with Large Blank Dual-Coding Workspace -->
       <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
-
-        <!-- Milestone 5 -->
+        
+        <!-- Milestone 5: 1629–1640 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1605 / 1628 &bull; The Gunpowder Plot &amp; Petition of Right: Clashing Sovereignty
+                1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Catholic conspirators attempt to blow up James I in 1605. When Charles I claims Divine Right and collects illegal loans, Parliament forces him to sign the 1628 Petition of Right, outlawing taxation without consent. In 1629, Charles dissolves Parliament for eleven years of Personal Rule.
+              Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 5 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code a padlock on the doors of Parliament, a coastal tax collector in inland towns, and Hampden’s protest.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
         </div>
 
-        <!-- Milestone 6 -->
+        <!-- Milestone 6: 1649 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1642–1646 &bull; Outbreak of the Civil War &amp; The Rise of the New Model Army
+                1649 &bull; Trial &amp; Execution of King Charles I
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Armed confrontation over Ship Money and church policy erupts into civil war. Cromwell and Fairfax forge the professional, merit-based New Model Army. Driven by Puritan conviction and disciplined cavalry tactics, Parliament crushes the Royalists at Naseby in 1645.
+              Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
-        </div>
-
-        <!-- Milestone 7 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1649 &bull; The Trial &amp; Public Regicide of King Charles I at Whitehall
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 6 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code the scaffold outside Whitehall Banqueting House, the executioner’s axe, and Charles’s fallen crown.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Branded a ‘man of blood’ after provoking the Second Civil War, Charles is tried by the Rump Parliament for treason against his own people. On 30 January 1649, he is publicly beheaded outside the Banqueting House at Whitehall; England becomes an unprecedented Commonwealth republic.
-            </p>
+            <div style="flex: 1;"></div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
 
-        <!-- Milestone 8 -->
+        <!-- Milestone 7: 1688 -->
         <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1688–1689 &bull; The Glorious Revolution &amp; The Statutory Bill of Rights
+                1688 &bull; The Glorious Revolution
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
             </div>
             <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Fearing a permanent Catholic dynasty, Parliament deposes James II and invites William of Orange and Mary II. In 1689, they sign the Bill of Rights, permanently outlawing royal suspension of laws and taxation without consent—establishing modern Constitutional Monarchy and Parliamentary Sovereignty.
+              Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 7 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code William of Orange landing at Torbay under Protestant banners while James II flees across the Thames.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
+        </div>
+
+        <!-- Milestone 8: 1689 -->
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
+                1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
+              </strong>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
+            </div>
+            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
+              William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
+            </p>
+          </div>
+          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px; padding: 3px 5px 2px 5px; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline; font-family: 'Inter', sans-serif; font-size: 6.8pt; border-bottom: 0.5px dashed #000000; padding-bottom: 2px;">
+              <span><strong style="text-transform: uppercase; color: #000000;">Milestone 8 Sketchpad:</strong> <span style="font-style: italic; color: #222222;">Dual-code the Crown placed on top of the statutory Bill of Rights, symbolizing constitutional supremacy.</span></span>
+              <span style="font-size: 6pt; color: #555555; font-weight: 700; text-transform: uppercase;">Dual-Coding</span>
+            </div>
+            <div style="flex: 1;"></div>
+          </div>
         </div>
 
       </div>
 
-      ${renderFooterStrip(11, 'Stuart Rule: Tell Parliament you answer only to God, dissolve them for 11 years, and act surprised when they issue an arrest warrant.', 20)}
+      ${renderFooterStrip(11, 'Notice how the 1689 Bill of Rights completed what the 1534 Act of Supremacy began: Parliament went from Henry VIII’s legal weapon to the supreme master of the Crown.', 20)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 12–13: ENQUIRY 5 (SYNOPTIC LESSON SPREAD)
+  // PAGES 12–13: ENQUIRY 5 (SPINE LEFT, SKILLS RIGHT)
   // ====================================================================
   const cfg5 = enquiryConfigs[4];
-  html += `
-  <!-- PAGE 12: ENQUIRY 5 LEFT PAGE (VERSO) -->
-  <div class="page page-container verso-page" id="page-12">
-    <div class="page-body-full">
-      <!-- Lesson Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg5.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Knowledge Retrieval &bull; Key Vocabulary &bull; Disciplinary Practice
-        </span>
-      </div>
+  // LEFT PAGE (VERSO): CHRONOLOGICAL INQUIRY SPINE WITH QUESTION HEADINGS
+  html += renderSpinePage(cfg5, 12);
 
-      <!-- 10-Question Do Now Retrieval Grid -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; 'Do Now' Retrieval Drill (10 Recall Questions)
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 3px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 10 ]
-          </span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 14px;">
-          ${cfg5.doNow
-            .map(
-              (item, idx) => `
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #000000; line-height: 1.2;">
-              ${idx + 1}. ${item.q}
-            </div>
-            <div class="task-line-dotted"></div>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Key Vocabulary Task -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Key Vocabulary Task
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">TERMINOLOGY</span>
-        </div>
-        <p style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
-          ${cfg5.vocabPrompt}
-        </p>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-        </div>
-      </div>
-
-      <!-- Disciplinary Practice Question A [4 marks] -->
-      <div class="task-section task-section-divider">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(a): Explain One ${cfg5.fourMarkA.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg5.fourMarkA.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg5.fourMarkA.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg5.fourMarkA.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-        </div>
-      </div>
-
-      <!-- Disciplinary Practice Question B [4 marks] -->
-      <div class="task-section">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 3(b): Explain One ${cfg5.fourMarkB.type} [4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">[4 MARKS &bull; 5 MINS]</span>
-        </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
-          ${cfg5.fourMarkB.question}
-        </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg5.fourMarkB.hint}
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg5.fourMarkB.stems}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-          <div class="task-line" style="height: 8.4mm;"></div>
-        </div>
-      </div>
-
-      ${renderFooterStrip(12, cfg5.leftPageQuip, 20)}
-    </div>
-  </div>
-
-  <!-- PAGE 13: ENQUIRY 5 RIGHT PAGE (RECTO) -->
-  <div class="page page-container recto-page" id="page-13">
-    <div class="page-body-full">
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg5.tariff}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing Assessment
-        </span>
-      </div>
-
-      <!-- Question Stem & Stimulus Box -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
-          ${cfg5.examStem}
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
-          <strong>Stimulus:</strong>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg5.stimulus[0]}</span>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg5.stimulus[1]}</span>
-          <span style="font-style: italic;">(You must also use information of your own)</span>
-        </div>
-      </div>
-
-      <!-- 3-Column Planning Structure Strip -->
-      <div style="margin-bottom: 5px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Structure Strip &bull; 3-Paragraph Analytical Plan
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-          ${cfg5.structureStrip
-            .map(
-              (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; line-height: 1.2; display: block;">${strip.text}</span>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg5.connectives}</span>
-        </div>
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${cfg5.wordBank}</span>
-        </div>
-      </div>
-
-      <!-- Ruled Task Lines for Extended Writing -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below:
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 5px; flex: 1; justify-content: space-between;">
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-        <div class="task-line"></div>
-      </div>
-
-      <!-- Timeline Mission Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-            Timeline Mission
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
-            ${cfg5.timelineMission}
-          </span>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &larr; Pages 10–11
-        </span>
-      </div>
-
-      ${renderFooterStrip(13, cfg5.rightPageQuip, 20)}
-    </div>
-  </div>
-`;
+  // RIGHT PAGE (RECTO): ROTATING SKILLS WRITING (CONSEQUENCE + EVALUATIVE STATEMENT)
+  html += renderRightPage(cfg5, 13);
 
   // ====================================================================
-  // PAGES 14–15: SYNOPTIC ASSESSMENT & 16-MARK ESSAY SPREAD (MEDICINE STYLE)
+  // PAGES 14–15: SYNOPTIC ESSAY SPREAD (MEDICINE STYLE)
   // ====================================================================
-  const linedRows15 = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Essay Response &bull; Paragraph 2 / Counter-Argument &bull; Evaluation ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
   html += `
   <!-- PAGE 14: SYNOPTIC ESSAY BLUEPRINT & COMPARATIVE EVALUATION MATRIX -->
-  <div class="page page-container verso-page" id="page-14">
+  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
@@ -1624,7 +1741,7 @@ function compileMonarchyWorkbook() {
   </div>
 
   <!-- PAGE 15: 28-LINE LINED ESSAY PAGE (MEDICINE STYLE) -->
-  <div class="page page-container recto-page" id="page-15">
+  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
@@ -1647,24 +1764,9 @@ function compileMonarchyWorkbook() {
   // ====================================================================
   // PAGES 16–17: KEY HISTORICAL FIGURES & HISTORIOGRAPHY (MEDICINE STYLE)
   // ====================================================================
-  const linedRows17 = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Historical Judgement ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
   html += `
   <!-- PAGE 16: KEY HISTORICAL FIGURES & HISTORIOGRAPHICAL DEBATE -->
-  <div class="page page-container verso-page" id="page-16">
+  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
@@ -1742,7 +1844,7 @@ function compileMonarchyWorkbook() {
   </div>
 
   <!-- PAGE 17: 28-LINE LINED ESSAY PAGE (MEDICINE STYLE) -->
-  <div class="page page-container recto-page" id="page-17">
+  <div class="page page-container recto-page" id="page-17" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
@@ -1763,15 +1865,15 @@ function compileMonarchyWorkbook() {
 `;
 
   // ====================================================================
-  // PAGES 18–19: 25-QUESTION RETRIEVAL BANK & DIRT SCOREBOARD (MEDICINE STYLE)
+  // PAGES 18–19: 25-QUESTION RETRIEVAL BANK & DIRT SCOREBOARD (END OF BOOKLET!)
   // ====================================================================
   html += `
   <!-- PAGE 18: 25-QUESTION MASTER RETRIEVAL DRILL BANK -->
-  <div class="page page-container verso-page" id="page-18">
+  <div class="page page-container verso-page" id="page-18" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          25-Question Master Knowledge Retrieval Drill Bank
+          Synoptic Knowledge Retrieval Bank &bull; 25 Core Recall Questions
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
           Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 25 ]
@@ -1780,8 +1882,9 @@ function compileMonarchyWorkbook() {
 
       <div style="display: flex; flex-direction: column; gap: 5px; flex: 1; justify-content: space-between;">
         ${enquiryConfigs
-          .map(
-            (cfg, cIdx) => `
+          .map((cfg, cIdx) => {
+            const questions = synopticRetrievalBank.slice(cIdx * 5, cIdx * 5 + 5);
+            return `
         <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; color: #000000;">
@@ -1792,8 +1895,7 @@ function compileMonarchyWorkbook() {
             </span>
           </div>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px;">
-            ${cfg.doNow
-              .slice(0, 5)
+            ${questions
               .map(
                 (item, qIdx) => `
             <div>
@@ -1801,14 +1903,12 @@ function compileMonarchyWorkbook() {
                 ${cIdx * 5 + qIdx + 1}. ${item.q}
               </div>
               <div class="task-line-dotted" style="height: 6.2mm;"></div>
-            </div>
-            `,
+            </div>`,
               )
               .join('')}
           </div>
-        </div>
-        `,
-          )
+        </div>`;
+          })
           .join('')}
       </div>
 
@@ -1817,107 +1917,88 @@ function compileMonarchyWorkbook() {
   </div>
 
   <!-- PAGE 19: COMPLETE ANSWER KEY & GAMIFIED DIRT SCOREBOARD -->
-  <div class="page page-container recto-page" id="page-19">
+  <div class="page page-container recto-page" id="page-19" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Complete Answer Key &amp; Gamified D.I.R.T. Scoreboard
+          Retrieval Drill Complete Model Answer Key &amp; DIRT Tracker
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Dedicated Improvement &amp; Reflection Time
+          Self / Peer Assessment
         </span>
       </div>
 
-      <!-- 25 Model Answers Grid -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fbfbfb; margin-bottom: 6px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-          Master Retrieval Answer Key &bull; Self-Marking Criteria
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; color: #000000;">
-          ${enquiryConfigs
-            .map((cfg, cIdx) =>
-              cfg.doNow
-                .slice(0, 5)
-                .map(
-                  (item, qIdx) => `
-            <div>
-              <strong>Q${cIdx * 5 + qIdx + 1}:</strong> ${item.a}
-            </div>
-            `,
-                )
-                .join(''),
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Gamified DIRT Scoreboard Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.8pt;">
-          <thead>
-            <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 4px 6px; text-align: left; border-right: 1px solid #444444;">Enquiry Module</th>
-              <th style="padding: 4px 6px; text-align: center; border-right: 1px solid #444444; width: 68px;">Recall Score</th>
-              <th style="padding: 4px 6px; text-align: center; border-right: 1px solid #444444; width: 68px;">Target Band</th>
-              <th style="padding: 4px 6px; text-align: center; width: 90px;">Mastery Level</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000;">Enquiry 1: Henry VIII &amp; Reformation (1517–1534)</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000; font-weight: 800;">[ &nbsp;&nbsp;&nbsp; / 5 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000;">4 / 5</td>
-              <td style="padding: 4px 6px; text-align: center;">&bull; Proficient &bull;</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000;">Enquiry 2: Elizabeth I &amp; The Middle Way (1558–1588)</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000; font-weight: 800;">[ &nbsp;&nbsp;&nbsp; / 5 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000;">4 / 5</td>
-              <td style="padding: 4px 6px; text-align: center;">&bull; Proficient &bull;</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000;">Enquiry 3: The Spanish Armada (1588)</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000; font-weight: 800;">[ &nbsp;&nbsp;&nbsp; / 5 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000;">4 / 5</td>
-              <td style="padding: 4px 6px; text-align: center;">&bull; Proficient &bull;</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000;">Enquiry 4: English Civil War &amp; Regicide (1642–1649)</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000; font-weight: 800;">[ &nbsp;&nbsp;&nbsp; / 5 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000;">4 / 5</td>
-              <td style="padding: 4px 6px; text-align: center;">&bull; Proficient &bull;</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000;">Enquiry 5: Bill of Rights &amp; Sovereignty (1688–1689)</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000; font-weight: 800;">[ &nbsp;&nbsp;&nbsp; / 5 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000;">4 / 5</td>
-              <td style="padding: 4px 6px; text-align: center;">&bull; Proficient &bull;</td>
-            </tr>
-            <tr style="background: #fbfbfb; font-weight: 900; border-top: 2px solid #000000;">
-              <td style="padding: 4px 6px; border-right: 1px solid #000000; text-transform: uppercase;">Cumulative Knowledge Drill Total</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000; font-size: 8.8pt;">[ &nbsp;&nbsp;&nbsp; / 25 ]</td>
-              <td style="padding: 4px 6px; text-align: center; border-right: 1px solid #000000;">20 / 25</td>
-              <td style="padding: 4px 6px; text-align: center;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % ]</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-      <!-- Green Pen DIRT Evidence Gap Fill Lines -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #000000;">
-            Green Pen D.I.R.T. Corrections &amp; Evidence Gap Fill:
+      <!-- Gamified DIRT Mastery Scoreboard -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 10px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+        <div style="display: flex; align-items: baseline; gap: 6px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; text-transform: uppercase;">
+            DIRT Retrieval Score:
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #555555; display: block; margin-top: 1px;">
-            Select any question answered incorrectly above. Re-write the question and complete factual answer in full sentences below:
+          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; border: 1.5px solid #000000; padding: 1px 10px; border-radius: 3px; background: #ffffff;">
+            [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 25</strong> ]
           </span>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 0; margin-top: 3px;">
-          <div class="task-line" style="height: 7.4mm;"></div>
-          <div class="task-line" style="height: 7.4mm;"></div>
-          <div class="task-line" style="height: 7.4mm;"></div>
-          <div class="task-line" style="height: 7.4mm;"></div>
+        <div style="display: flex; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800;">
+          <span style="border: 1px solid #000000; padding: 2px 6px; border-radius: 3px; background: #000000; color: #ffffff;">23–25: MASTER</span>
+          <span style="border: 1px solid #000000; padding: 2px 6px; border-radius: 3px;">19–22: SECURE</span>
+          <span style="border: 1px solid #000000; padding: 2px 6px; border-radius: 3px;">14–18: DEVELOPING</span>
+          <span style="border: 1px solid #000000; padding: 2px 6px; border-radius: 3px; font-style: italic;">&lt;14: REVISION NEEDED</span>
+        </div>
+      </div>
+
+      <!-- 25 Complete Answers in 5 Structured Enquiry Blocks -->
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 6px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 2.5px; margin-bottom: 4px;">
+          Official Model Answer Key (Enquiries 1 to 5)
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.25;">
+          <div>
+            ${synopticRetrievalBank
+              .slice(0, 13)
+              .map(
+                (item, idx) => `
+            <div style="margin-bottom: 2.5px;">
+              <strong>${idx + 1}.</strong> ${item.a}
+            </div>`,
+              )
+              .join('')}
+          </div>
+          <div>
+            ${synopticRetrievalBank
+              .slice(13)
+              .map(
+                (item, idx) => `
+            <div style="margin-bottom: 2.5px;">
+              <strong>${idx + 14}.</strong> ${item.a}
+            </div>`,
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>
+
+      <!-- DIRT Green Pen Reflection & Correction Box -->
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 10px; background: #fbfbfb; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase;">
+            DIRT Protocol: Green Pen Knowledge Correction
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic;">
+            Write out the full corrections for any incorrect recall answers below:
+          </span>
+        </div>
+        <div class="ruled-lines-block" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
+          <div class="task-line" style="height: 8.6mm;"></div>
         </div>
       </div>
 
@@ -1963,7 +2044,7 @@ function compileMonarchyWorkbook() {
             <tr style="background: #000000; color: #ffffff;">
               <th style="padding: 4px 6px; width: 14%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Date Completed</th>
               <th style="padding: 4px 8px; width: 28%; text-align: left; border-right: 1px solid #444444; font-size: 7.8pt;">Enquiry &bull; Focus</th>
-              <th style="padding: 4px 6px; width: 20%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Q3 Drills [4m]</th>
+              <th style="padding: 4px 6px; width: 20%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Drills / Skills</th>
               <th style="padding: 4px 6px; width: 24%; text-align: center; border-right: 1px solid #444444; font-size: 7.8pt;">Extended Response</th>
               <th style="padding: 4px 6px; width: 14%; text-align: center; font-size: 7.8pt;">Lesson Total</th>
             </tr>
@@ -1975,16 +2056,15 @@ function compileMonarchyWorkbook() {
             <tr style="border-bottom: 1px solid #000000;">
               <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 6px 8px; border-right: 1px solid #000000;"><strong>Enquiry ${cfg.lessonNum}:</strong> ${cfg.title.split(': ')[1].split(' (')[0]}</td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Practice: <span style="font-size: 9.2pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q4 Causal: <span style="font-size: 9.2pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
+              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Skills: <span style="font-size: 9.2pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]</span></td>
+              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Writing: <span style="font-size: 9.2pt; font-weight: 800;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 12</strong> ]</span></td>
               <td style="padding: 6px 6px; text-align: center; font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 16</strong> ]</td>
-            </tr>
-            `,
+            </tr>`,
               )
               .join('')}
             <tr style="background: #ffffff; font-weight: 900; border-top: 2px solid #000000;">
               <td colspan="2" style="padding: 4px 8px; border-right: 1px solid #000000; text-transform: uppercase; font-size: 8pt;">Cumulative Assessment Totals</td>
-              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Q3 Total: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
+              <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Drills: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span></td>
               <td style="padding: 6px 6px; border-right: 1px solid #000000; text-align: center; white-space: nowrap;">Extended: <span style="font-size: 9.5pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 60</strong> ]</span></td>
               <td style="padding: 6px 6px; text-align: center; font-size: 10pt; font-weight: 900;">[ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 80</strong> ]</td>
             </tr>
@@ -2072,8 +2152,7 @@ function compileMonarchyWorkbook() {
             <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
               Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
             </div>
-          </div>
-          `;
+          </div>`;
             })
             .join('')}
         </div>
@@ -2094,7 +2173,7 @@ function compileMonarchyWorkbook() {
 // ============================================================================
 async function main() {
   console.log(
-    'Rendering 20-Page A4 Pupil Workbook (Medicine Standard): Crown, Church, or Parliament (1517–1689)...',
+    'Rendering 20-Page A4 Pupil Workbook (Medicine/CME Standard): Crown, Church, or Parliament (1517–1689)...',
   );
 
   const outDir = path.join(ROOT_DIR, 'public', 'units', 'monarchy_religion_power');
