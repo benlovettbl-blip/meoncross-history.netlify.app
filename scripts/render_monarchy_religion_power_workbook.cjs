@@ -143,7 +143,7 @@ const enquiryConfigs = [
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
       timelineMission:
-        'Turn to Pages 10–11 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
+        'Turn to Pages 12–13 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
     },
     leftPageQuip:
       'In 1534, questioning Henry VIII’s marriage was high treason punishable by death at Tower Hill.',
@@ -248,7 +248,7 @@ const enquiryConfigs = [
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
       timelineMission:
-        'Turn to Pages 10–11 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
+        'Turn to Pages 12–13 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
     },
     leftPageQuip:
       'Elizabeth I had ‘no desire to make windows into men’s souls’—pay your Sunday fines and keep private doubts to yourself.',
@@ -360,7 +360,7 @@ const enquiryConfigs = [
           'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
       },
       timelineMission:
-        'Turn to Pages 10–11 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
+        'Turn to Pages 12–13 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
     },
     leftPageQuip:
       'The Armada carried 130 ships and 30,000 soldiers. Unfortunately for Philip II, none of it stopped English fireships.',
@@ -466,7 +466,7 @@ const enquiryConfigs = [
       wordBank:
         'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
       timelineMission:
-        'Turn to Pages 10–11 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
+        'Turn to Pages 12–13 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
     },
     leftPageQuip:
       'Charles I insisted no earthly court could try a king; three days later, Parliament had him beheaded outside Whitehall.',
@@ -577,12 +577,188 @@ const enquiryConfigs = [
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },
       timelineMission:
-        'Turn to Pages 10–11 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
+        'Turn to Pages 12–13 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
     },
     leftPageQuip:
       'In 1689, William III accepted the Bill of Rights to secure war taxes, legally subordinating the Crown to Parliament.',
     rightPageQuip:
       'After monarchy, civil war, and military rule, Parliament decided in 1689 that binding written rules were the safest remedy.',
+  },
+];
+
+// ============================================================================
+// 4 DEDICATED PRIMARY SOURCE WORKSHOP CONFIGURATIONS (PLAN A1 STANDARD)
+// Two Thematic Spreads: Tudor Lab (Pages 6–7) & Stuart Lab (Pages 16–17)
+// Top Half: Source A (Written) + Provenance Clues + 3 Lines
+// Bottom Half: Source B (Visual) + Visual Iconography Guide + 3 Lines
+// Bottom Footer: 8-Mark "How Useful" Exam Challenge with Structure Strip
+// ============================================================================
+const sourceWorkshopConfigs = [
+  // WORKSHOP 1 (PAGE 6): HENRY VIII & ROYAL SUPREMACY (1534)
+  {
+    workshopNum: 1,
+    title: 'Tudor Source Workshop 1: Henry VIII & Royal Supremacy (1534)',
+    tariff: 'Question 3(a): How Useful [8 marks &bull; 10–12 mins]',
+    enquiryQuestion:
+      'How useful are Sources A and B for an enquiry into how King Henry VIII established Royal Supremacy over the Church of England?',
+    sourceA: {
+      type: 'written',
+      label: 'SOURCE A: Official Statute &bull; The Act of Supremacy (November 1534)',
+      provenanceTitle: 'Provenance Analysis:',
+      provenancePrompts: [
+        '<strong>Nature:</strong> Official Act of Parliament with full force of English statutory law.',
+        '<strong>Origin:</strong> Drafted by Thomas Cromwell and passed by the Reformation Parliament.',
+        '<strong>Purpose:</strong> Legally assert supreme royal authority and deter papal resistance under threat of high treason.',
+      ],
+      text: '“Albeit the King’s Majesty justly and rightfully is and ought to be the supreme head of the Church of England... be it enacted by authority of this present Parliament that the King our sovereign lord, his heirs and successors kings of this realm, shall be taken, accepted, and reputed the only supreme head in earth of the Church of England... and shall have full power to correct and reform all manner of errors, heresies, and abuses within the same.”',
+      analysisPrompt:
+        'What does Source A prove about how Henry VIII made his religious supremacy legally binding upon all subjects?',
+    },
+    sourceB: {
+      type: 'visual',
+      label: 'SOURCE B: Contemporary Woodcut &bull; Title Page of the Great Bible (1539)',
+      imageRelPath: 'images/great_bible_frontispiece.jpg',
+      iconographyTitle: 'Iconography & Visual Evidence:',
+      iconographyPrompts: [
+        '<strong>1. Divine Authority:</strong> God in heaven blesses King Henry, who sits crowned on his throne.',
+        '<strong>2. Royal Supremacy:</strong> Henry hands the Bible directly to Cranmer (Church) and Cromwell (Nobility).',
+        '<strong>3. Eradication of the Pope:</strong> The Pope is completely absent from the national religious hierarchy.',
+        '<strong>4. Popular Obedience:</strong> Subjects at the base shout <em>‘Vivat Rex’</em> and <em>‘God Save the King’</em>.',
+      ],
+      caption:
+        'Title page of the Great Bible (1539), commissioned by Thomas Cromwell and authorized by King Henry VIII for every parish church in England.',
+      analysisPrompt:
+        'What visual message does Source B communicate about the King’s new position as head of both Church and State?',
+    },
+    structureStrip:
+      '<strong>Structure Strip:</strong> <strong>Para 1:</strong> Source A (Content + Provenance: statutory parliamentary authority) &bull; <strong>Para 2:</strong> Source B (Visual Evidence + Purpose: royal propaganda of divine kingship) &bull; <strong>Verdict:</strong> Explain how combining legal statute with visual propaganda secured total Crown control.',
+    quip: 'Henry VIII placed his face on every English Bible so no subject could ever forget who ran the Church.',
+  },
+
+  // WORKSHOP 2 (PAGE 7): ELIZABETH I & ROYAL AUTHORITY (1559–1588)
+  {
+    workshopNum: 2,
+    title: 'Tudor Source Workshop 2: Elizabeth I & Royal Authority (1559–1588)',
+    tariff: 'Question 3(a): How Useful [8 marks &bull; 10–12 mins]',
+    enquiryQuestion:
+      'How useful are Sources A and B for an enquiry into how Elizabeth I maintained authority and religious stability in England?',
+    sourceA: {
+      type: 'written',
+      label: 'SOURCE A: Official Statute &bull; The Act of Uniformity (April 1559)',
+      provenanceTitle: 'Provenance Analysis:',
+      provenancePrompts: [
+        '<strong>Nature:</strong> Parliamentary statute establishing compulsory national church attendance.',
+        '<strong>Origin:</strong> Elizabethan government legislative compromise (The Via Media).',
+        '<strong>Purpose:</strong> Enforce outward religious uniformity while avoiding Marian heresy burnings or open civil rebellion.',
+      ],
+      text: '“Every person and persons inhabiting within this realm shall diligently and faithfully, having no lawful or reasonable excuse to be absent, endeavour themselves to resort to their parish church... upon every Sunday and other days ordained to be kept as holy days, upon pain that every person so offending shall forfeit for every such offence twelve pence, to be levied by the churchwardens to the use of the poor.”',
+      analysisPrompt:
+        'What does Source A reveal about Elizabeth’s strategy of demanding outward obedience through fines rather than religious persecution?',
+    },
+    sourceB: {
+      type: 'visual',
+      label: 'SOURCE B: Royal Portraiture &bull; The Armada Portrait of Elizabeth I (c. 1588)',
+      imageRelPath: 'images/armada_portrait.jpg',
+      iconographyTitle: 'Iconography & Visual Evidence:',
+      iconographyPrompts: [
+        '<strong>1. Global Dominion:</strong> Elizabeth’s hand rests firmly on the globe, asserting English power over the Americas.',
+        '<strong>2. Imperial Crown:</strong> Sits prominently behind the Queen, symbolizing independent imperial majesty.',
+        '<strong>3. Providential Victory:</strong> Windows show the calm English fleet on the left, and Spanish galleons wrecked on the right.',
+        '<strong>4. Virgin Purity:</strong> Pearls and bows symbolize chastity, national security, and God’s sacred protection.',
+      ],
+      caption:
+        'The Armada Portrait (c. 1588), commemorating the defeat of Philip II’s invasion fleet and celebrating Elizabeth’s providential rule.',
+      analysisPrompt:
+        'How does Source B use visual symbols to convince English subjects that Elizabeth was chosen and protected by God?',
+    },
+    structureStrip:
+      '<strong>Structure Strip:</strong> <strong>Para 1:</strong> Source A (Content + Provenance: pragmatic legal fines) &bull; <strong>Para 2:</strong> Source B (Visual Evidence + Purpose: providential imperial propaganda) &bull; <strong>Verdict:</strong> Weigh how statutory compromise and visual myth-making together secured national stability.',
+    quip: 'Elizabeth I demanded 12-pence Sunday fines for missed church—expensive enough to enforce conformity without provoking martyrs.',
+  },
+
+  // WORKSHOP 3 (PAGE 16): CHARLES I & DIVINE RIGHT ON TRIAL (1649)
+  {
+    workshopNum: 3,
+    title: 'Stuart Source Workshop 3: Charles I & Divine Right on Trial (1649)',
+    tariff: 'Question 3(a): How Useful [8 marks &bull; 10–12 mins]',
+    enquiryQuestion:
+      'How useful are Sources A and B for an enquiry into why King Charles I was tried and executed in January 1649?',
+    sourceA: {
+      type: 'written',
+      label:
+        'SOURCE A: Verbatim Court Transcript &bull; Charles I at Westminster Hall (22 January 1649)',
+      provenanceTitle: 'Provenance Analysis:',
+      provenancePrompts: [
+        '<strong>Nature:</strong> Official trial courtroom speech spoken directly by the King.',
+        '<strong>Origin:</strong> High Court of Justice proceedings, recorded by parliamentary court scribes.',
+        '<strong>Purpose:</strong> Deny that any human court holds legal jurisdiction over an anointed monarch answering only to God.',
+      ],
+      text: '“I would know by what power I am called hither... I would know by what authority, I mean lawful; for there are many unlawful authorities in the world, thieves and robbers by the highways... Remember I am your King, your lawful King! I have a trust committed unto me by God, by old and lawful descent; I will not betray it to answer to a new and unlawful authority. An earthly King cannot be tried by any court on earth!”',
+      analysisPrompt:
+        'What does Source A prove about Charles I’s unyielding refusal to compromise on the Divine Right of Kings?',
+    },
+    sourceB: {
+      type: 'visual',
+      label:
+        'SOURCE B: Contemporary Broadside &bull; Execution of Charles I at Whitehall (30 January 1649)',
+      imageRelPath: 'images/charles_i_execution.jpg',
+      iconographyTitle: 'Iconography & Visual Evidence:',
+      iconographyPrompts: [
+        '<strong>1. The Scaffold:</strong> Erected outside the royal Banqueting House at Whitehall.',
+        '<strong>2. The Severed Head:</strong> Executioner holds up the King’s head before a vast crowd.',
+        '<strong>3. Military Guard:</strong> New Model Army cavalry and pikemen surround the scaffold to prevent public rebellion.',
+        '<strong>4. Martyrdom Medallions:</strong> Top portraits frame Charles as a Christian martyr sacrifice.',
+      ],
+      caption:
+        'Contemporary 1649 German broadside engraving depicting the public beheading of King Charles I outside the Banqueting House at Whitehall.',
+      analysisPrompt:
+        'What does Source B reveal about the public shock and military power required to carry out the King’s execution?',
+    },
+    structureStrip:
+      '<strong>Structure Strip:</strong> <strong>Para 1:</strong> Source A (Content + Provenance: King’s constitutional defiance) &bull; <strong>Para 2:</strong> Source B (Visual Evidence + Context: military enforcement of regicide) &bull; <strong>Verdict:</strong> Explain how the irreconcilable clash between divine monarchy and military sovereignty made regicide inevitable.',
+    quip: 'Charles I insisted no earthly court could try a king; three days later, Parliament had him beheaded outside Whitehall.',
+  },
+
+  // WORKSHOP 4 (PAGE 17): THE GLORIOUS REVOLUTION & SOVEREIGNTY (1688–1689)
+  {
+    workshopNum: 4,
+    title: 'Stuart Source Workshop 4: The Bill of Rights & Sovereignty (1688–1689)',
+    tariff: 'Question 3(a): How Useful [8 marks &bull; 10–12 mins]',
+    enquiryQuestion:
+      'How useful are Sources A and B for an enquiry into how the Glorious Revolution (1688–1689) limited the powers of the English Monarchy?',
+    sourceA: {
+      type: 'written',
+      label: 'SOURCE A: Parliamentary Statute &bull; The Bill of Rights (December 1689)',
+      provenanceTitle: 'Provenance Analysis:',
+      provenancePrompts: [
+        '<strong>Nature:</strong> Landmark constitutional statute enacted by Parliament.',
+        '<strong>Origin:</strong> Drafted by Convention Parliament and accepted by William & Mary.',
+        '<strong>Purpose:</strong> Permanently abolish royal prerogative to suspend laws or tax without parliamentary consent.',
+      ],
+      text: '“That the pretended power of suspending of laws, or the execution of laws, by regal authority, without consent of Parliament, is illegal; That levying money for or to the use of the Crown by pretence of prerogative, without grant of Parliament, is illegal; That the raising or keeping a standing army within the kingdom in time of peace, unless it be with consent of Parliament, is against law; That election of members of Parliament ought to be free.”',
+      analysisPrompt:
+        'What specific royal powers does Source A permanently take away from the English Crown?',
+    },
+    sourceB: {
+      type: 'visual',
+      label:
+        'SOURCE B: Contemporary Painting &bull; William III Landing at Brixham (5 November 1688)',
+      imageRelPath: 'images/william_landing_1688.jpg',
+      iconographyTitle: 'Iconography & Visual Evidence:',
+      iconographyPrompts: [
+        '<strong>1. Massive Dutch Fleet:</strong> 463 transport ships and 50 warships fill Torbay.',
+        '<strong>2. Armed Invasion:</strong> 15,000 Dutch soldiers and artillery disembarking.',
+        '<strong>3. Royal Standards:</strong> Flags display the arms of Orange and the motto <em>‘For Religion and Liberty’</em>.',
+        '<strong>4. English Welcome:</strong> Local gentry and fishermen wading out to greet the Prince.',
+      ],
+      caption:
+        'The Landing of Prince William of Orange at Brixham, Torbay (5 November 1688), leading a Dutch army to overthrow James II.',
+      analysisPrompt:
+        'How does Source B challenge the myth that the Glorious Revolution was merely a peaceful parliamentary discussion?',
+    },
+    structureStrip:
+      '<strong>Structure Strip:</strong> <strong>Para 1:</strong> Source A (Content + Provenance: statutory binding of royal prerogative) &bull; <strong>Para 2:</strong> Source B (Visual Evidence + Context: armed invasion that forced royal collapse) &bull; <strong>Verdict:</strong> Synthesise how military intervention produced the statutory constitutional monarchy.',
+    quip: 'In 1689, William III accepted the Bill of Rights to secure war taxes, permanently ending Stuart Divine Right.',
   },
 ];
 
@@ -1011,12 +1187,12 @@ function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, qu
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, quip, 20)}
+      ${renderFooterStrip(pageNum, quip, 24)}
     </div>
   </div>`;
 }
 
-// Helper to render Page 19 Complete Department Answer Bank + Examiner Traps Box
+// Helper to render Page 23 Complete Department Answer Bank + Examiner Traps Box
 function renderAnswerBankPage(pageNum, quip) {
   const col1 = dualRetrievalBank.slice(0, 12);
   const col2 = dualRetrievalBank.slice(12, 24);
@@ -1038,8 +1214,8 @@ function renderAnswerBankPage(pageNum, quip) {
     </div>`;
 
   return `
-  <!-- PAGE 19: COMPLETE DEPARTMENT ANSWER BANK & EXAMINER TRAP MATRIX -->
-  <div class="page page-container recto-page" id="page-19" style="padding: 4mm 6mm;">
+  <!-- PAGE 23: COMPLETE DEPARTMENT ANSWER BANK & EXAMINER TRAP MATRIX -->
+  <div class="page page-container recto-page" id="page-23" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
         <div>
@@ -1104,12 +1280,12 @@ function renderAnswerBankPage(pageNum, quip) {
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, quip, 20)}
+      ${renderFooterStrip(pageNum, quip, 24)}
     </div>
   </div>`;
 }
 
-function renderFooterStrip(pageNum, quip, totalPages = 20) {
+function renderFooterStrip(pageNum, quip, totalPages = 24) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -1222,13 +1398,13 @@ function renderSpinePage(cfg, pageNum) {
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, cfg.leftPageQuip, 20)}
+      ${renderFooterStrip(pageNum, cfg.leftPageQuip, 24)}
     </div>
   </div>`;
 }
 
 // ============================================================================
-// RIGHT PAGE RENDERER: ROTATING DISCIPLINARY SKILLS WRITING (PAGES 3, 5, 7, 9, 13)
+// RIGHT PAGE RENDERER: ROTATING DISCIPLINARY SKILLS WRITING (PAGES 3, 5, 9, 11, 15)
 // ============================================================================
 function renderRightPage(cfg, pageNum) {
   const rp = cfg.rightPage;
@@ -1317,11 +1493,11 @@ function renderRightPage(cfg, pageNum) {
           </span>
         </div>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &rarr; Pages 10–11
+          &rarr; Pages 12–13
         </span>
       </div>
 
-      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 20)}
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 24)}
     </div>
   </div>`;
   } else {
@@ -1423,15 +1599,153 @@ function renderRightPage(cfg, pageNum) {
             </span>
           </div>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-            &rarr; Pages 10–11
+            &rarr; Pages 12–13
           </span>
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 20)}
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 24)}
     </div>
   </div>`;
   }
+}
+
+// ============================================================================
+// DEDICATED PRIMARY SOURCE WORKSHOP RENDERER (PAGES 6, 7, 16, 17)
+// Top Half: Source A (Written) + Provenance Clues + 3 Lines
+// Bottom Half: Source B (Visual) + Visual Iconography Guide + 3 Lines
+// Bottom Footer: 8-Mark "How Useful" Exam Challenge with Structure Strip
+// ============================================================================
+function renderSourceWorkshopPage(cfg, pageNum) {
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
+  const imgBase64 = getBase64Image(cfg.sourceB.imageRelPath) || '';
+
+  return `
+  <!-- SOURCE WORKSHOP: ${isEven ? 'VERSO' : 'RECTO'} • ${cfg.title.toUpperCase()} -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- 1. Header Banner -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.2pt; color: #000000; margin: 0; font-weight: 900; letter-spacing: 0.2px;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px; text-transform: uppercase; background: #ffffff;">
+          ${cfg.tariff}
+        </span>
+      </div>
+
+      <!-- 2. Question Stem Strip -->
+      <div style="border: 1.2px solid #000000; border-left: 4px solid #000000; padding: 4px 8px; background: #ffffff; margin-bottom: 6px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #000000; line-height: 1.22;">
+          ${cfg.enquiryQuestion}
+        </div>
+      </div>
+
+      <!-- 3. TOP HALF: SOURCE A (WRITTEN PRIMARY SOURCE) -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 7px; background: #ffffff; margin-bottom: 5px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+            ${cfg.sourceA.label}
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+            Contemporary Written Evidence
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 58mm; gap: 7px; align-items: stretch; margin-bottom: 3px;">
+          <!-- Verbatim Primary Extract in Archival Card -->
+          <div style="background: #faf8f5; border: 1px solid #000000; border-radius: 2px; padding: 4px 6px; font-family: 'Georgia', serif; font-size: 7.3pt; line-height: 1.28; color: #111111; font-style: italic; display: flex; align-items: center;">
+            ${cfg.sourceA.text}
+          </div>
+          <!-- Provenance Analysis Guidance Box -->
+          <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 3px 5px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.22; color: #000000; display: flex; flex-direction: column; justify-content: space-between;">
+            <div style="font-weight: 900; text-transform: uppercase; border-bottom: 0.8px solid #000000; padding-bottom: 1px; margin-bottom: 1.5px; font-size: 6.5pt;">
+              ${cfg.sourceA.provenanceTitle}
+            </div>
+            ${cfg.sourceA.provenancePrompts.map((p) => `<div>&bull; ${p}</div>`).join('')}
+          </div>
+        </div>
+
+        <!-- Source A Guided Response Lines -->
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 700; color: #000000; margin-bottom: 1px;">
+            1. Source A Evaluation &bull; Content &amp; Provenance: <span style="font-weight: 400; font-style: italic; color: #333333;">(${cfg.sourceA.analysisPrompt})</span>
+          </div>
+          <div class="ruled-lines-block">
+            <div class="task-line" style="height: 9.8mm;"></div>
+            <div class="task-line" style="height: 9.8mm;"></div>
+            <div class="task-line" style="height: 9.8mm;"></div>
+            <div class="task-line" style="height: 9.8mm;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. BOTTOM HALF: SOURCE B (VISUAL PRIMARY SOURCE) -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 7px; background: #ffffff; margin-bottom: 5px; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+            ${cfg.sourceB.label}
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+            Contemporary Visual Evidence
+          </span>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 46mm 1fr; gap: 7px; align-items: stretch; margin-bottom: 3px;">
+          <!-- Visual Image Plate -->
+          <div style="background: #faf8f5; border: 1px solid #000000; border-radius: 2px; padding: 2px; display: flex; justify-content: center; align-items: center;">
+            <img src="${imgBase64}" alt="${cfg.sourceB.label}" style="max-height: 46mm; max-width: 100%; object-fit: contain; border: 0.8px solid #000000; display: block;">
+          </div>
+          <!-- Visual Iconography Guidance Box -->
+          <div style="background: #f8fafc; border: 1px solid #000000; border-radius: 2px; padding: 3px 5px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.22; color: #000000; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; text-transform: uppercase; border-bottom: 0.8px solid #000000; padding-bottom: 1px; margin-bottom: 1.5px; font-size: 6.5pt;">
+                ${cfg.sourceB.iconographyTitle}
+              </div>
+              ${cfg.sourceB.iconographyPrompts.map((p) => `<div>&bull; ${p}</div>`).join('')}
+            </div>
+            <div style="font-size: 6.1pt; font-style: italic; color: #444444; border-top: 0.8px dashed #cccccc; padding-top: 1.5px; margin-top: 1.5px;">
+              ${cfg.sourceB.caption}
+            </div>
+          </div>
+        </div>
+
+        <!-- Source B Guided Response Lines -->
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 700; color: #000000; margin-bottom: 1px;">
+            2. Source B Evaluation &bull; Visual Evidence &amp; Purpose: <span style="font-weight: 400; font-style: italic; color: #333333;">(${cfg.sourceB.analysisPrompt})</span>
+          </div>
+          <div class="ruled-lines-block">
+            <div class="task-line" style="height: 9.8mm;"></div>
+            <div class="task-line" style="height: 9.8mm;"></div>
+            <div class="task-line" style="height: 9.8mm;"></div>
+            <div class="task-line" style="height: 9.8mm;"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Comparative Utility Verdict Response -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 4px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 700; color: #000000; margin-bottom: 1px;">
+          3. Comparative Utility Verdict &bull; Final Synthesis: <span style="font-weight: 400; font-style: italic; color: #333333;">(Compare both sources &bull; Which provides greater historical insight into this enquiry, and why?)</span>
+        </div>
+        <div class="ruled-lines-block">
+          <div class="task-line" style="height: 9.8mm;"></div>
+          <div class="task-line" style="height: 9.8mm;"></div>
+          <div class="task-line" style="height: 9.8mm;"></div>
+        </div>
+      </div>
+
+      <!-- 6. Structure Strip & Utility Exam Strategy -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 8px 8px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.24;">
+        ${cfg.structureStrip}
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.quip, 24)}
+    </div>
+  </div>`;
 }
 
 // ============================================================================
@@ -1752,26 +2066,26 @@ function compileMonarchyWorkbook() {
       <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fbfbfb; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
         <div style="border-right: 1px solid #000000; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            1. Causal Analysis [12m]
+            1. Explaining Why Events Happened [12 Marks]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Q4: Explain why major constitutional turning points occurred. 3 structured analytical paragraphs using 2 stimulus points + own knowledge (15 mins).
+            Q4: Explain why major turning points occurred. 3 structured analytical paragraphs using 2 stimulus points + own knowledge (15 mins).
           </div>
         </div>
         <div style="border-right: 1px solid #000000; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            2. Disciplinary Drills [4m/8m]
+            2. Core Skills &amp; Source Workshops [4m &amp; 8m]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Rotating skills: explain differences, features, and historical importance. Specific factual evidence + comparison (5–10 mins).
+            Four dedicated source investigations: test written statutes and visual propaganda for utility; practise features and differences (5–12 mins).
           </div>
         </div>
         <div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            3. Synoptic Essay [16m+4m]
+            3. Big Enquiry Essay: Reaching a Verdict [16+4m]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Enquiry 5: ‘How far do you agree?’ Evaluative historical judgement weighing the power of Crown, Church, and Parliament across 172 years (25 mins).
+            Enquiry 5: ‘How far do you agree?’ Reach a reasoned historical verdict weighing the power of Crown, Church, and Parliament across 172 years (25 mins).
           </div>
         </div>
       </div>
@@ -1844,10 +2158,10 @@ function compileMonarchyWorkbook() {
             <tr style="border-bottom: 1px solid #000000;">
               <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
-                  Enquiry 4: The English Civil War, Regicide &amp; Bill of Rights (1642–1689)
+                  Enquiry 4: The English Civil War, Regicide &amp; The Republic (1642–1649)
                 </div>
                 <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  Why did constitutional collision over Divine Right culminate in the execution of Charles I and parliamentary supremacy?
+                  Why did constitutional collision over Divine Right culminate in the execution of Charles I and England's republic?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
@@ -1860,10 +2174,10 @@ function compileMonarchyWorkbook() {
             <tr>
               <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
-                  Enquiry 5: Synoptic Assessment: Crown, Church, or Parliament?
+                  Enquiry 5: The Glorious Revolution &amp; The Bill of Rights (1688–1689)
                 </div>
                 <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
-                  Which turning point decisively transformed the English constitution from absolute monarchy to parliamentary rule?
+                  Why did Parliament invite William of Orange in 1688, and how did the Bill of Rights establish parliamentary rule?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
@@ -1877,32 +2191,49 @@ function compileMonarchyWorkbook() {
         </table>
       </div>
 
-      ${renderFooterStrip(1, 'If you think politics today is messy, King Henry VIII invented a whole new church because his divorce paperwork took too long.', 20)}
+      ${renderFooterStrip(1, 'If you think politics today is messy, King Henry VIII invented a whole new church because his divorce paperwork took too long.', 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 2–9: THE FIRST 4 ENQUIRIES (MEDICINE/CME STYLE: SPINE LEFT, SKILLS RIGHT)
+  // PAGES 2–3: ENQUIRY 1 (HENRY VIII & BREAK WITH ROME)
   // ====================================================================
-  for (let i = 0; i < 4; i++) {
-    const cfg = enquiryConfigs[i];
-    const leftPageNum = i * 2 + 2;
-    const rightPageNum = i * 2 + 3;
-
-    // LEFT PAGE (VERSO): CHRONOLOGICAL INQUIRY SPINE WITH QUESTION HEADINGS
-    html += renderSpinePage(cfg, leftPageNum);
-
-    // RIGHT PAGE (RECTO): ROTATING SKILLS WRITING WITH STRUCTURE STRIP & TIMELINE MISSION
-    html += renderRightPage(cfg, rightPageNum);
-  }
+  html += renderSpinePage(enquiryConfigs[0], 2);
+  html += renderRightPage(enquiryConfigs[0], 3);
 
   // ====================================================================
-  // PAGES 10–11: THE LIVING TIMELINE IN THE EXACT MIDDLE OF BOOKLET!
+  // PAGES 4–5: ENQUIRY 2 (THE ELIZABETHAN SETTLEMENT)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[1], 4);
+  html += renderRightPage(enquiryConfigs[1], 5);
+
+  // ====================================================================
+  // PAGES 6–7: TUDOR PRIMARY SOURCE WORKSHOP SPREAD (THEMATIC LAB)
+  // Page 6 (Verso): Henry VIII & Royal Supremacy (1534 Act + Great Bible)
+  // Page 7 (Recto): Elizabeth I & Royal Authority (1559 Act + Armada Portrait)
+  // ====================================================================
+  html += renderSourceWorkshopPage(sourceWorkshopConfigs[0], 6);
+  html += renderSourceWorkshopPage(sourceWorkshopConfigs[1], 7);
+
+  // ====================================================================
+  // PAGES 8–9: ENQUIRY 3 (THE SPANISH ARMADA & MARITIME POWER)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[2], 8);
+  html += renderRightPage(enquiryConfigs[2], 9);
+
+  // ====================================================================
+  // PAGES 10–11: ENQUIRY 4 (CIVIL WAR & REGICIDE)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[3], 10);
+  html += renderRightPage(enquiryConfigs[3], 11);
+
+  // ====================================================================
+  // PAGES 12–13: THE LIVING TIMELINE IN THE EXACT MIDDLE OF BOOKLET!
   // ====================================================================
   html += `
-  <!-- PAGE 10: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
-  <div class="page page-container verso-page" id="page-10" style="padding: 4mm 6mm;">
+  <!-- PAGE 12: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
+  <div class="page page-container verso-page" id="page-12" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
@@ -2029,12 +2360,12 @@ function compileMonarchyWorkbook() {
 
       </div>
 
-      ${renderFooterStrip(10, 'Centrefold timeline: Dual-coding sketches and dates turns narrative history into permanent long-term memory.', 20)}
+      ${renderFooterStrip(12, 'Centrefold timeline: Dual-coding sketches and dates turns narrative history into permanent long-term memory.', 24)}
     </div>
   </div>
 
-  <!-- PAGE 11: LIVING TIMELINE PART 2 (MILESTONES 5–8) -->
-  <div class="page page-container recto-page" id="page-11" style="padding: 4mm 6mm;">
+  <!-- PAGE 13: LIVING TIMELINE PART 2 (MILESTONES 5–8) -->
+  <div class="page page-container recto-page" id="page-13" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
@@ -2161,28 +2492,36 @@ function compileMonarchyWorkbook() {
 
       </div>
 
-      ${renderFooterStrip(11, 'From 1534 to 1689, Parliament evolved from Henry VIII’s occasional legal tool into the sovereign ruler of the Crown.', 20)}
+      ${renderFooterStrip(13, 'From 1534 to 1689, Parliament evolved from Henry VIII’s occasional legal tool into the sovereign ruler of the Crown.', 24)}
     </div>
   </div>
 
 `;
 
   // ====================================================================
-  // PAGES 12–13: ENQUIRY 5 (SPINE LEFT, SKILLS RIGHT)
+  // PAGES 14–15: ENQUIRY 5 (SPINE LEFT, SKILLS RIGHT)
   // ====================================================================
   const cfg5 = enquiryConfigs[4];
   // LEFT PAGE (VERSO): CHRONOLOGICAL INQUIRY SPINE WITH QUESTION HEADINGS
-  html += renderSpinePage(cfg5, 12);
+  html += renderSpinePage(cfg5, 14);
 
   // RIGHT PAGE (RECTO): ROTATING SKILLS WRITING (CONSEQUENCE + EVALUATIVE STATEMENT)
-  html += renderRightPage(cfg5, 13);
+  html += renderRightPage(cfg5, 15);
 
   // ====================================================================
-  // PAGES 14–15: SYNOPTIC ESSAY SPREAD (MEDICINE STYLE)
+  // PAGES 16–17: STUART PRIMARY SOURCE WORKSHOP SPREAD (THEMATIC LAB)
+  // Page 16 (Verso): Charles I Regicide & High Treason on Trial (1649)
+  // Page 17 (Recto): Glorious Revolution, Armed Invasion & Bill of Rights (1688–1689)
+  // ====================================================================
+  html += renderSourceWorkshopPage(sourceWorkshopConfigs[2], 16);
+  html += renderSourceWorkshopPage(sourceWorkshopConfigs[3], 17);
+
+  // ====================================================================
+  // PAGES 18–19: SYNOPTIC ESSAY SPREAD (MEDICINE STYLE)
   // ====================================================================
   html += `
-  <!-- PAGE 14: SYNOPTIC ESSAY RESPONSE & VOCABULARY BANK -->
-  <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
+  <!-- PAGE 18: SYNOPTIC ESSAY RESPONSE & VOCABULARY BANK -->
+  <div class="page page-container verso-page" id="page-18" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Essay Question Stem & Stimulus Box -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 5px;">
@@ -2239,12 +2578,12 @@ function compileMonarchyWorkbook() {
         }).join('')}
       </div>
 
-      ${renderFooterStrip(14, 'In 16-mark essays, never sit on the historical fence until splinters become structural. Take a decisive stand with precise dates.', 20)}
+      ${renderFooterStrip(18, 'In 16-mark essays, never sit on the historical fence until splinters become structural. Take a decisive stand with precise dates.', 24)}
     </div>
   </div>
 
-  <!-- PAGE 15: 28-LINE LINED ESSAY PAGE (MEDICINE STYLE) -->
-  <div class="page page-container recto-page" id="page-15" style="padding: 4mm 6mm;">
+  <!-- PAGE 19: 28-LINE LINED ESSAY PAGE (MEDICINE STYLE) -->
+  <div class="page page-container recto-page" id="page-19" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
         <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
@@ -2259,21 +2598,21 @@ function compileMonarchyWorkbook() {
         ${linedRows15}
       </div>
 
-      ${renderFooterStrip(15, 'One precise historical fact (like ‘1689 Bill of Rights’) is worth ten vague sentences about people being angry.', 20)}
+      ${renderFooterStrip(19, 'One precise historical fact (like ‘1689 Bill of Rights’) is worth ten vague sentences about people being angry.', 24)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 16–18: SEN-ACCESSIBLE DUAL-RETRIEVAL QUIZZING (24 QUESTIONS TOTAL • 48 MARKS)
-  // Page 16 (Verso): Enquiry 1 & 2 (Questions 1–8) [16 marks]
-  // Page 17 (Recto): Enquiry 3 & 4 (Questions 9–16) [16 marks]
-  // Page 18 (Verso): Enquiry 5 & Synoptic Turning Points (Questions 17–24) [16 marks]
+  // PAGES 20–22: SEN-ACCESSIBLE DUAL-RETRIEVAL QUIZZING (24 QUESTIONS TOTAL • 48 MARKS)
+  // Page 20 (Verso): Enquiry 1 & 2 (Questions 1–8) [16 marks]
+  // Page 21 (Recto): Enquiry 3 & 4 (Questions 9–16) [16 marks]
+  // Page 22 (Verso): Enquiry 5 & Synoptic Turning Points (Questions 17–24) [16 marks]
   // ====================================================================
 
-  // PAGE 16 (VERSO): DUAL-RETRIEVAL PART 1 (ENQUIRIES 1 & 2 • QS 1–8)
+  // PAGE 20 (VERSO): DUAL-RETRIEVAL PART 1 (ENQUIRIES 1 & 2 • QS 1–8)
   html += renderDualRetrievalPage(
-    16,
+    20,
     'Dual-Retrieval Practice Bank &bull; Part 1: Enquiries 1 &amp; 2',
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
@@ -2281,9 +2620,9 @@ function compileMonarchyWorkbook() {
     'Dual-Retrieval Rule: A fact without an explanation is like a sword without a blade—you need both to score full marks.',
   );
 
-  // PAGE 17 (RECTO): DUAL-RETRIEVAL PART 2 (ENQUIRIES 3 & 4 • QS 9–16)
+  // PAGE 21 (RECTO): DUAL-RETRIEVAL PART 2 (ENQUIRIES 3 & 4 • QS 9–16)
   html += renderDualRetrievalPage(
-    17,
+    21,
     'Dual-Retrieval Practice Bank &bull; Part 2: Enquiries 3 &amp; 4',
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
@@ -2291,9 +2630,9 @@ function compileMonarchyWorkbook() {
     'Drake’s 1587 raid destroyed so many seasoned barrel staves that Spanish drinking water spoiled before reaching England.',
   );
 
-  // PAGE 18 (VERSO): DUAL-RETRIEVAL PART 3 (ENQUIRY 5 & SYNOPTIC • QS 17–24)
+  // PAGE 22 (VERSO): DUAL-RETRIEVAL PART 3 (ENQUIRY 5 & SYNOPTIC • QS 17–24)
   html += renderDualRetrievalPage(
-    18,
+    22,
     'Dual-Retrieval Practice Bank &bull; Part 3: Enquiry 5 &amp; Synoptic Turning Points',
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
@@ -2302,19 +2641,19 @@ function compileMonarchyWorkbook() {
   );
 
   // ====================================================================
-  // PAGE 19: COMPLETE DEPARTMENT ANSWER BANK & EXAMINER TRAP MATRIX
+  // PAGE 23: COMPLETE DEPARTMENT ANSWER BANK & EXAMINER TRAP MATRIX
   // ====================================================================
   html += renderAnswerBankPage(
-    19,
+    23,
     'Department Answer Key: Self-assess in green pen. If your answer missed the causal explanation, improve it directly.',
   );
 
   // ====================================================================
-  // PAGE 20: OUTSIDE BACK COVER (PROGRESS LEDGER + 5 QR CODES - MEDICINE STYLE)
+  // PAGE 24: OUTSIDE BACK COVER (PROGRESS LEDGER + 5 QR CODES - MEDICINE STYLE)
   // ====================================================================
   html += `
-  <!-- PAGE 20: OUTSIDE BACK COVER -->
-  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
+  <!-- PAGE 24: OUTSIDE BACK COVER -->
+  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Back Cover Header Strip -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -2544,7 +2883,7 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      ${renderFooterStrip(20, "Unlike Charles I in 1642, scanning these revision QR codes won't cost your head. Test yourself before the end-of-unit assessment.", 20)}
+      ${renderFooterStrip(24, "Unlike Charles I in 1642, scanning these revision QR codes won't cost your head. Test yourself before the end-of-unit assessment.", 24)}
     </div>
   </div>
 </body>
@@ -2559,7 +2898,7 @@ function compileMonarchyWorkbook() {
 // ============================================================================
 async function main() {
   console.log(
-    'Rendering 20-Page A4 Pupil Workbook (Medicine/CME Standard): Crown, Church, or Parliament (1517–1689)...',
+    'Rendering 24-Page A4 Pupil Workbook (Medicine/CME Standard): Crown, Church, or Parliament (1517–1689)...',
   );
 
   const outDir = path.join(ROOT_DIR, 'public', 'units', 'monarchy_religion_power');
