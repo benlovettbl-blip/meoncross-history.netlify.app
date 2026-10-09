@@ -1,6 +1,6 @@
 # The History Department: Master Plan & Curriculum Tracker (2026)
 **Departmental Curriculum Architecture, 16-Page Booklet Blueprint & RAG Implementation Ledger**  
-*Last Updated: 20 September 2026 • Official Department Documentation • Academic Year 2026–2027*
+*Last Updated: 9 October 2026 • Official Department Documentation • Academic Year 2026–2027*
 
 ---
 
@@ -9,14 +9,19 @@
 ### Core Milestone Confirmations (Permanent Memory)
 1. **Edexcel GCSE Paper 1 (Medicine in Britain c1250–Present & Western Front):**  
    - **STATUS: COMPLETED (GREEN).**  
-   - All thematic eras (Medieval, Renaissance, Industrial/18th–19th Century, Modern) and Section A (Western Front) lesson narratives are 100% authored and enriched with Christine Counsell 4-Act dramatic structures and delivery plans.
+   - All thematic eras (Medieval, Renaissance, Industrial/18th–19th Century, Modern) and Section A (Western Front) lesson narratives are 100% authored.
+   - **Flagship 28-Page Thematic Master Companion** (`Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf`) and **12-Page Western Front Companion** (`Western_Front_Master_Knowledge_Retrieval_Companion.pdf`) are fully compiled with 272 dual-line retrieval questions, 750-year chronology flowchart, 4-era marking banks, 6-factor synoptic matrix, and 0px overflow across all 40 printed pages.
 2. **Edexcel GCSE Paper 2 (Conflict in the Middle East, 1945–1995 — `cme_new`):**  
-   - **Key Topic 1 (The Birth of the State of Israel, 1945–1963): COMPLETED (GREEN).**  
-     All 5 enquiry lessons (KT 1.1 to KT 1.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT1.html`) is fully compiled, featuring the Rudi Weissenstein Ben-Gurion Declaration hero cover (`GPO-D597-087`), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and back cover assessment tracker with 5 QR portals (0px overflow on all 16 pages).
-   - **Key Topic 2 (The Escalating Conflict, 1964–1973): COMPLETED (GREEN).**  
-     All 5 enquiry lessons (KT 2.1 to KT 2.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT2.html`) is fully compiled, featuring the David Rubinger Western Wall hero plate (`GPO-D388-052`), 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker.
-   - **Key Topic 3 (The Search for Peace, 1973–1995): COMPLETED (GREEN).**  
-     All 5 enquiry lessons (KT 3.1 to KT 3.5) are authored in 4-Act structure. The flagship **16-Page Double-Page Spread Pupil Workbook** (`pupil_workbook_KT3.html`) is fully compiled, featuring the 1993 White House Lawn Handshake hero plate, 5 double-page enquiry spreads, living timeline, master knowledge organiser, Grade 9 masterclass, and assessment tracker (0px overflow on all 16 pages). In addition, the master 12-page publisher-grade textbook (`cme_new_textbook_KT3_PUBLISHER.pdf`) is fully compiled with embedded single-column Key Figure profiles.
+   - **STATUS: COMPLETED (GREEN).**  
+   - Key Topic 1, 2, and 3 (15 enquiry lessons) are authored in 4-Act structure. Flagship 16-page double-page workbooks, 12-page publisher textbooks, and the **20-Page Master Knowledge Retrieval Companion** (`Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf` — 144 questions, 28-point domino flowchart, 4-page marking bank) are fully compiled with 0px overflow.
+3. **Edexcel GCSE Paper 2 (Early Elizabethan England, 1558–1588 — `eee`):**  
+   - **STATUS: CURRICULUM READY (GREEN) • COMPANION QUEUED FOR WEEKEND (AMBER).**  
+   - All 3 Key Topics (22 lessons) are authored in `data.js` with individual 24-page pupil workbooks (`eee_pupil_workbook_KT1/KT2/KT3.pdf`) and publisher textbooks (`eee_textbook_KT1/KT2/KT3_PUBLISHER.pdf`) compiled.
+   - **WEEKEND ROADMAP GOAL:** Author and compile the flagship **24-Page A4 Master Knowledge Retrieval & Homework Companion** (144 dual-line retrieval questions across 12 core enquiry lessons, Tudor Domino Chronology Flowchart, 3-page Department Marking Bank for green-pen DIRT review, and Paper 2 Feature [4m] & 'Explain Why' [12m] Exam Strategy Guides).
+4. **Edexcel GCSE Paper 3 (Weimar and Nazi Germany, 1918–1939 — `weimar_nazi_germany`):**  
+   - **STATUS: CURRICULUM READY (GREEN) • COMPANION QUEUED FOR WEEKEND (AMBER).**  
+   - All 4 Key Topics (24 lessons) are authored in `data.js` with KT1–KT4 pupil workbooks, publisher textbooks, and the visual revision guide compiled.
+   - **WEEKEND ROADMAP GOAL:** Author and compile the flagship **28-Page A4 Master Knowledge Retrieval & Homework Companion** (192 dual-line retrieval questions across 16 core enquiry lessons, 1918–1939 Domino Chronology Flowchart, 4-page Department Marking Bank, and Edexcel Paper 3 Q1 Inference, Q2 Causation, Q3(a) Utility, Q3(b/c) Interpretations, and Q3(d) Evaluation Strategy Spreads).
 
 ---
 
