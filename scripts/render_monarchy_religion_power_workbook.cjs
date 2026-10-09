@@ -146,9 +146,9 @@ const enquiryConfigs = [
         'Turn to Pages 10–11 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
     },
     leftPageQuip:
-      'Remember: In 1534, disagreeing with Henry VIII’s marriage status wasn’t just poor etiquette—it was an immediate date with the executioner at Tower Hill.',
+      'In 1534, questioning Henry VIII’s marriage was high treason punishable by death at Tower Hill.',
     rightPageQuip:
-      'Thomas Cromwell surveyed 800 English monasteries in 1535 and miraculously discovered they all had vast treasure vaults. Coincidence? Absolutely not.',
+      'Thomas Cromwell surveyed 800 monasteries in 1535 and conveniently discovered vast riches. Coincidence? Absolutely not.',
   },
   {
     lessonNum: 2,
@@ -251,9 +251,9 @@ const enquiryConfigs = [
         'Turn to Pages 10–11 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
     },
     leftPageQuip:
-      'Queen Elizabeth I famously said she had ‘no desire to make windows into men’s souls.’ Translation: pay your church fines on Sunday and keep your treason to yourself.',
+      'Elizabeth I had ‘no desire to make windows into men’s souls’—pay your Sunday fines and keep private doubts to yourself.',
     rightPageQuip:
-      'Elizabeth’s Middle Way was so balanced that both extreme Catholics and extreme Puritans despised it equally. That is the true definition of a successful British compromise.',
+      'The Elizabethan Middle Way was balanced so that strict Catholics and Puritans disliked it equally—the ultimate compromise.',
   },
   {
     lessonNum: 3,
@@ -363,9 +363,9 @@ const enquiryConfigs = [
         'Turn to Pages 10–11 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
     },
     leftPageQuip:
-      'The Spanish Armada carried 130 ships, 30,000 soldiers, and hundreds of barrels of holy water. Unfortunately for King Philip II, none of that stopped English fireships.',
+      'The Armada carried 130 ships and 30,000 soldiers. Unfortunately for Philip II, none of it stopped English fireships.',
     rightPageQuip:
-      'King Philip II blamed the loss of his fleet on the weather, claiming he ‘sent ships to fight men, not God’s winds.’ Sir Francis Drake probably disagreed while counting his cannons.',
+      'Philip II blamed storms for his Armada defeat; Drake and English gunners credited superior standoff broadsides.',
   },
   {
     lessonNum: 4,
@@ -469,9 +469,9 @@ const enquiryConfigs = [
         'Turn to Pages 10–11 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
     },
     leftPageQuip:
-      'King Charles I told his trial judges: ‘A King cannot be tried by any superior jurisdiction on earth.’ Three days later, they beheaded him outside his own banqueting hall.',
+      'Charles I insisted no earthly court could try a king; three days later, Parliament had him beheaded outside Whitehall.',
     rightPageQuip:
-      'Oliver Cromwell called the execution of King Charles I a ‘cruel necessity.’ Charles I’s loyal supporters had several rather less polite words for it.',
+      'Oliver Cromwell called the 1649 regicide a ‘cruel necessity’; Royalists called it sacrilegious murder.',
   },
   {
     lessonNum: 5,
@@ -580,9 +580,9 @@ const enquiryConfigs = [
         'Turn to Pages 10–11 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
     },
     leftPageQuip:
-      'In 1689, King William III signed the Bill of Rights, surrendering absolute taxation powers. He wanted money to fight France; Parliament wanted him under control. Both got their wish.',
+      'In 1689, William III accepted the Bill of Rights to secure war taxes, legally subordinating the Crown to Parliament.',
     rightPageQuip:
-      'By 1689, England had tried absolute monarchy, civil war, military dictatorship, and Dutch invasion. Finally, Parliament decided that writing rules down was the safest option.',
+      'After monarchy, civil war, and military rule, Parliament decided in 1689 that binding written rules were the safest remedy.',
   },
 ];
 
@@ -1588,7 +1588,7 @@ function compileMonarchyWorkbook() {
       padding-top: 1.5px;
       margin-top: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 6.2pt;
       line-height: 1.15;
       color: #000000;
     }
@@ -1596,8 +1596,6 @@ function compileMonarchyWorkbook() {
       font-style: italic;
       color: #000000;
       white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
     }
     .footer-page-num {
       font-family: 'Inter', sans-serif;
@@ -1605,6 +1603,7 @@ function compileMonarchyWorkbook() {
       white-space: nowrap;
       color: #000000;
       font-size: 6.8pt;
+      flex-shrink: 0;
     }
   </style>
 </head>
@@ -1796,7 +1795,7 @@ function compileMonarchyWorkbook() {
         </table>
       </div>
 
-      ${renderFooterStrip(1, 'If you think politics today is messy, just remember King Henry VIII literally invented a new church because his divorce paperwork was taking too long.', 20)}
+      ${renderFooterStrip(1, 'If you think politics today is messy, King Henry VIII invented a whole new church because his divorce paperwork took too long.', 20)}
     </div>
   </div>
 `;
@@ -1948,7 +1947,7 @@ function compileMonarchyWorkbook() {
 
       </div>
 
-      ${renderFooterStrip(10, 'Centrefold timeline: Dual-coding visual symbols alongside dates and causal links turns raw historical narrative into permanent long-term memory.', 20)}
+      ${renderFooterStrip(10, 'Centrefold timeline: Dual-coding sketches and dates turns narrative history into permanent long-term memory.', 20)}
     </div>
   </div>
 
@@ -2080,7 +2079,7 @@ function compileMonarchyWorkbook() {
 
       </div>
 
-      ${renderFooterStrip(11, 'Notice how the 1689 Bill of Rights completed what the 1534 Act of Supremacy began: Parliament went from Henry VIII’s legal weapon to the supreme master of the Crown.', 20)}
+      ${renderFooterStrip(11, 'From 1534 to 1689, Parliament evolved from Henry VIII’s occasional legal tool into the sovereign ruler of the Crown.', 20)}
     </div>
   </div>
 
@@ -2158,7 +2157,7 @@ function compileMonarchyWorkbook() {
         }).join('')}
       </div>
 
-      ${renderFooterStrip(14, 'When writing a 16-mark essay, never sit on the historical fence so long that the splinters become structural. Take a decisive stand and prove it with dates.', 20)}
+      ${renderFooterStrip(14, 'In 16-mark essays, never sit on the historical fence until splinters become structural. Take a decisive stand with precise dates.', 20)}
     </div>
   </div>
 
@@ -2178,7 +2177,7 @@ function compileMonarchyWorkbook() {
         ${linedRows15}
       </div>
 
-      ${renderFooterStrip(15, 'Crucial exam tip: One precise piece of evidence (like ‘1689 Bill of Rights’) is worth ten vague sentences about ‘people being angry at the government’.', 20)}
+      ${renderFooterStrip(15, 'One precise historical fact (like ‘1689 Bill of Rights’) is worth ten vague sentences about people being angry.', 20)}
     </div>
   </div>
 `;
@@ -2197,7 +2196,7 @@ function compileMonarchyWorkbook() {
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
     dualRetrievalBank.slice(0, 8),
-    'Dual-Retrieval Rule: A historical fact without a causal explanation is like a sword without a blade. You need both to cut through the exam.',
+    'Dual-Retrieval Rule: A fact without an explanation is like a sword without a blade—you need both to score full marks.',
   );
 
   // PAGE 17 (RECTO): DUAL-RETRIEVAL PART 2 (ENQUIRIES 3 & 4 • QS 9–16)
@@ -2207,7 +2206,7 @@ function compileMonarchyWorkbook() {
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
     dualRetrievalBank.slice(8, 16),
-    'Drake didn’t just singe King Philip’s beard at Cadiz; he burned his barrel staves so thoroughly the Spanish water turned green before they reached Plymouth.',
+    'Drake’s 1587 raid destroyed so many seasoned barrel staves that Spanish drinking water spoiled before reaching England.',
   );
 
   // PAGE 18 (VERSO): DUAL-RETRIEVAL PART 3 (ENQUIRY 5 & SYNOPTIC • QS 17–24)
@@ -2217,7 +2216,7 @@ function compileMonarchyWorkbook() {
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
     dualRetrievalBank.slice(16, 24),
-    'In 1649, Parliament proved kings could be executed. In 1689, they proved kings could be managed with paperwork. Paperwork turned out to be much more permanent.',
+    'In 1649, Parliament proved kings could be beheaded; in 1689, they proved paperwork and statutory law were far more permanent.',
   );
 
   // ====================================================================
@@ -2225,7 +2224,7 @@ function compileMonarchyWorkbook() {
   // ====================================================================
   html += renderAnswerBankPage(
     19,
-    'Official Department Answer Bank: Self-assess with a green pen. If your explanation missed the causal link, re-write it in the correction space.',
+    'Department Answer Key: Self-assess in green pen. If your answer missed the causal explanation, improve it directly.',
   );
 
   // ====================================================================
@@ -2463,7 +2462,7 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      ${renderFooterStrip(20, 'Unlike King Charles I in 1642, scanning these quiz QR codes will not cost you your throne or your head. Test yourself before the end-of-unit assessment does.', 20)}
+      ${renderFooterStrip(20, "Unlike Charles I in 1642, scanning these revision QR codes won't cost your head. Test yourself before the end-of-unit assessment.", 20)}
     </div>
   </div>
 </body>
