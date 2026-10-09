@@ -934,57 +934,46 @@ function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, qu
   const enquiryTitle2 = sec2[0].enquiryTitle;
 
   const renderCard = (q) => `
-    <div style="border: 1.2px solid #000000; border-radius: 3px; display: flex; background: #ffffff; flex: 1; min-height: 0; margin-bottom: 2px;">
-      <!-- 18mm Left Teacher Margin -->
-      <div style="width: 18mm; border-right: 1.2px solid #000000; flex-shrink: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #fafafa; padding: 1px 0;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000;">[ &nbsp;&nbsp; / 2 ]</div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 5.5pt; font-weight: 700; color: #666666; text-transform: uppercase;">Teacher</div>
+    <div style="border: 1.2px solid #000000; border-radius: 3px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; flex: 1; min-height: 0; margin-bottom: 2px; padding: 2.5px 8px;">
+      <!-- Question Prompt Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; line-height: 1.22;">
+          ${q.num}. ${q.stem}
+        </span>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; white-space: nowrap; margin-left: 8px;">
+          2 marks
+        </span>
       </div>
-      <!-- Question Content -->
-      <div style="flex: 1; padding: 2px 6px; display: flex; flex-direction: column; justify-content: space-between;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #000000; line-height: 1.2;">
-            ${q.num}. ${q.stem}
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; border: 0.8px solid #000000; padding: 0.5px 4px; border-radius: 2px; white-space: nowrap; margin-left: 6px;">
-            2 marks
-          </span>
-        </div>
-        <!-- Fact Line -->
-        <div style="display: flex; align-items: flex-end; border-bottom: 1.1px solid #000000; height: 7.8mm; box-sizing: border-box; padding-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000; margin-right: 4px; white-space: nowrap;">
-            Core Fact [1m]:
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #777777;">
-            ${q.factPrompt}
-          </span>
-        </div>
-        <!-- Explanation Line -->
-        <div style="display: flex; align-items: flex-end; border-bottom: 1.1px solid #000000; height: 7.8mm; box-sizing: border-box; padding-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000; margin-right: 4px; white-space: nowrap;">
-            Explanation [1m]:
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #777777;">
-            ${q.explPrompt}
-          </span>
-        </div>
+      <!-- Answer Line -->
+      <div style="display: flex; align-items: flex-end; border-bottom: 1.2px solid #000000; height: 8mm; box-sizing: border-box; padding-bottom: 1px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; margin-right: 6px; white-space: nowrap;">
+          Answer:
+        </span>
+        <div style="flex: 1;"></div>
+      </div>
+      <!-- Explanation Line -->
+      <div style="display: flex; align-items: flex-end; border-bottom: 1.2px solid #000000; height: 8mm; box-sizing: border-box; padding-bottom: 1px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; margin-right: 6px; white-space: nowrap;">
+          Explanation:
+        </span>
+        <div style="flex: 1;"></div>
       </div>
     </div>`;
 
   return `
-  <!-- PAGE ${pageNum}: DUAL-RETRIEVAL MASTERY BANK -->
+  <!-- PAGE ${pageNum}: DUAL-RETRIEVAL PRACTICE BANK -->
   <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
         <div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
             ${title}
           </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #444444; font-weight: 600;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #444444; font-weight: 600;">
             ${subtitle}
           </div>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
           ${tariff}
         </span>
       </div>
@@ -993,30 +982,30 @@ function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, qu
       <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between; min-height: 0;">
         <!-- Section 1 -->
         <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div style="background: #000000; color: #ffffff; padding: 2px 8px; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.3px;">
+          <div style="background: #000000; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.3px;">
               ${enquiryTitle1}
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 5px; border-radius: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 6px; border-radius: 2px;">
               Score: [ &nbsp;&nbsp; / 8 ]
             </span>
           </div>
-          <div style="padding: 3px 4px 1px 4px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+          <div style="padding: 3px 5px 2px 5px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
             ${sec1.map(renderCard).join('')}
           </div>
         </div>
 
         <!-- Section 2 -->
         <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div style="background: #000000; color: #ffffff; padding: 2px 8px; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.3px;">
+          <div style="background: #000000; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.3px;">
               ${enquiryTitle2}
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 5px; border-radius: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 6px; border-radius: 2px;">
               Score: [ &nbsp;&nbsp; / 8 ]
             </span>
           </div>
-          <div style="padding: 3px 4px 1px 4px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+          <div style="padding: 3px 5px 2px 5px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
             ${sec2.map(renderCard).join('')}
           </div>
         </div>
@@ -2259,8 +2248,8 @@ function compileMonarchyWorkbook() {
   // PAGE 16 (VERSO): DUAL-RETRIEVAL PART 1 (ENQUIRIES 1 & 2 • QS 1–8)
   html += renderDualRetrievalPage(
     16,
-    'Dual-Retrieval Mastery Bank &bull; Part 1: Enquiries 1 &amp; 2',
-    'SEN-Accessible Core Fact [1m] + Causal Explanation [1m] Assessment Structure',
+    'Dual-Retrieval Practice Bank &bull; Part 1: Enquiries 1 &amp; 2',
+    'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
     dualRetrievalBank.slice(0, 8),
     'Dual-Retrieval Rule: A historical fact without a causal explanation is like a sword without a blade. You need both to cut through the exam.',
@@ -2269,8 +2258,8 @@ function compileMonarchyWorkbook() {
   // PAGE 17 (RECTO): DUAL-RETRIEVAL PART 2 (ENQUIRIES 3 & 4 • QS 9–16)
   html += renderDualRetrievalPage(
     17,
-    'Dual-Retrieval Mastery Bank &bull; Part 2: Enquiries 3 &amp; 4',
-    'SEN-Accessible Core Fact [1m] + Causal Explanation [1m] Assessment Structure',
+    'Dual-Retrieval Practice Bank &bull; Part 2: Enquiries 3 &amp; 4',
+    'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
     dualRetrievalBank.slice(8, 16),
     'Drake didn’t just singe King Philip’s beard at Cadiz; he burned his barrel staves so thoroughly the Spanish water turned green before they reached Plymouth.',
@@ -2279,8 +2268,8 @@ function compileMonarchyWorkbook() {
   // PAGE 18 (VERSO): DUAL-RETRIEVAL PART 3 (ENQUIRY 5 & SYNOPTIC • QS 17–24)
   html += renderDualRetrievalPage(
     18,
-    'Dual-Retrieval Mastery Bank &bull; Part 3: Enquiry 5 &amp; Synoptic Turning Points',
-    'SEN-Accessible Core Fact [1m] + Causal Explanation [1m] Assessment Structure',
+    'Dual-Retrieval Practice Bank &bull; Part 3: Enquiry 5 &amp; Synoptic Turning Points',
+    'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
     '[16 MARKS &bull; 8 QUESTIONS]',
     dualRetrievalBank.slice(16, 24),
     'In 1649, Parliament proved kings could be executed. In 1689, they proved kings could be managed with paperwork. Paperwork turned out to be much more permanent.',
