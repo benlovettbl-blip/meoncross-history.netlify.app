@@ -1262,39 +1262,21 @@ function renderRightPage(cfg, pageNum) {
         </div>
       </div>
 
-      <!-- 3-Column Planning Structure Strip -->
-      <div style="margin-bottom: 5px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Structure Strip &bull; 3-Paragraph Analytical Plan
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;">
-          ${rp.structureStrip
-            .map(
-              (strip) => `
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; line-height: 1.2; display: block;">${strip.text}</span>
-          </div>`,
-            )
-            .join('')}
-        </div>
-      </div>
-
       <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${rp.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.22; display: block;">${rp.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${rp.wordBank}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; display: block;">${rp.wordBank}</span>
         </div>
       </div>
 
       <!-- Ruled Task Lines for Extended Writing -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below:
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong>Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
@@ -1362,9 +1344,6 @@ function renderRightPage(cfg, pageNum) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${rp.partA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${rp.partA.hint}
-        </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px;">
           <strong>Sentence Stems:</strong> ${rp.partA.stems}
         </div>
@@ -1401,23 +1380,10 @@ function renderRightPage(cfg, pageNum) {
               : ''
           }
 
-          <!-- Structure Strip -->
-          <div style="display: grid; grid-template-columns: repeat(${rp.partB.structureStrip.length}, 1fr); gap: 5px; margin-bottom: 4px;">
-            ${rp.partB.structureStrip
-              .map(
-                (strip) => `
-            <div style="border: 1px solid #000000; border-top: 2.2px solid #000000; border-radius: 2px; padding: 2px 4px; background: #ffffff;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #000000; display: block; margin-bottom: 1px;">${strip.col}</strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #000000; line-height: 1.18; display: block;">${strip.text}</span>
-            </div>`,
-              )
-              .join('')}
-          </div>
-
           <!-- Connectives & Word Bank -->
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.2;">
-            <div><strong>Connectives:</strong> <em>${rp.partB.connectives}</em></div>
-            <div style="margin-top: 1px;"><strong>Key Terms:</strong> ${rp.partB.wordBank}</div>
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
+            <div><strong>Analytical Connectives:</strong> <em>${rp.partB.connectives}</em></div>
+            <div style="margin-top: 2px;"><strong>Key Terms:</strong> ${rp.partB.wordBank}</div>
           </div>
         </div>
 
@@ -2134,81 +2100,60 @@ function compileMonarchyWorkbook() {
   // PAGES 14–15: SYNOPTIC ESSAY SPREAD (MEDICINE STYLE)
   // ====================================================================
   html += `
-  <!-- PAGE 14: SYNOPTIC ESSAY BLUEPRINT & COMPARATIVE EVALUATION MATRIX -->
+  <!-- PAGE 14: SYNOPTIC ESSAY RESPONSE & VOCABULARY BANK -->
   <div class="page page-container verso-page" id="page-14" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Synoptic Historical Verdict &amp; 16-Mark Essay Assessment
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          [16 MARKS + 4 SPaG &bull; 25 MINS]
-        </span>
-      </div>
-
       <!-- Essay Question Stem & Stimulus Box -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 6px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 9.5pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.25;">
-          “The execution of King Charles I in 1649 was the most decisive turning point in the struggle for power between Crown, Church, and Parliament in the period 1517–1689.” How far do you agree? [16 marks + 4 SPaG]
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+            Synoptic Extended Writing
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            16 marks + 4 SPaG &bull; 25 mins
+          </span>
         </div>
-        <div style="display: flex; align-items: center; gap: 10px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.25;">
+          “The execution of King Charles I in 1649 was the most decisive turning point in the struggle for power between Crown, Church, and Parliament in the period 1517–1689.” How far do you agree?
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #000000;">
           <strong>Stimulus:</strong>
-          <span style="border: 1px solid #000000; padding: 1.5px 8px; border-radius: 2px; font-weight: 700;">The Act of Supremacy (1534)</span>
-          <span style="border: 1px solid #000000; padding: 1.5px 8px; border-radius: 2px; font-weight: 700;">The Bill of Rights (1689)</span>
-          <span style="font-style: italic;">(You must also use information of your own)</span>
+          <span style="border: 1px solid #000000; padding: 1px 7px; border-radius: 2px; font-weight: 700;">The Act of Supremacy (1534)</span>
+          <span style="border: 1px solid #000000; padding: 1px 7px; border-radius: 2px; font-weight: 700;">The Bill of Rights (1689)</span>
+          <span style="font-style: italic; color: #333333;">(You must also use information of your own)</span>
         </div>
       </div>
 
-      <!-- 4-Column Synoptic Evaluation Matrix -->
-      <div style="margin-bottom: 6px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; margin-bottom: 3px; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-          Synoptic Evidence Matrix &bull; Balancing Constitutional &amp; Religious Factors
+      <!-- Connectives & Key Vocabulary Bank (Zero Scaffolding Answers) -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #111111; line-height: 1.22; display: block;">
+            Furthermore &bull; Consequently &bull; In stark contrast &bull; Most decisively &bull; Crucially &bull; Although... nevertheless &bull; In the final analysis
+          </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;">
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; margin-bottom: 2px;">1. CROWN POWER</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; line-height: 1.2; display: block;">From Henry VIII’s supreme imperial kingship to Charles I’s Divine Right and William III’s statutory constitutional monarchy.</span>
-          </div>
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; margin-bottom: 2px;">2. CHURCH AUTHORITY</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; line-height: 1.2; display: block;">From Roman Catholic monopoly to royal control, Elizabethan Via Media, Puritan Commonwealth, and 1689 Toleration.</span>
-          </div>
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; margin-bottom: 2px;">3. PARLIAMENT</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; line-height: 1.2; display: block;">From Henry’s legal instrument to revolutionary regicide court and sovereign co-equal governing partner in 1689.</span>
-          </div>
-          <div style="border: 1px solid #000000; border-top: 2.5px solid #000000; border-radius: 2px; padding: 4px 6px; background: #ffffff;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; display: block; margin-bottom: 2px;">4. TURNING POINTS</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #222222; line-height: 1.2; display: block;">Weighing 1534 (Supreme Head), 1588 (Protestant survival), 1649 (Regicide trauma), against 1689 (Statutory supremacy).</span>
-          </div>
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111111; line-height: 1.22; display: block;">
+            Royal Prerogative &bull; Divine Right &bull; Regicide &bull; Protectorate &bull; Constitutional Monarchy &bull; Bill of Rights &bull; Statutory Supremacy
+          </span>
         </div>
-      </div>
-
-      <!-- Analytical Argument Sentence Stems -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 8px; background: #fbfbfb; margin-bottom: 5px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase;">Evaluative Stems:</strong>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; line-height: 1.25; display: block; margin-top: 1px;">
-          A compelling case can be made that the 1649 regicide was the pivotal event because... &bull; On one hand, executing Charles I permanently shattered the mystical belief in Divine Right... &bull; However, the 1649 settlement proved unstable, collapsing into military dictatorship... &bull; In contrast, the 1689 Bill of Rights was more decisive because it established statutory parliamentary sovereignty... &bull; In conclusion, while 1649 removed a king, 1689 permanently transformed the English constitution...
-        </span>
       </div>
 
       <!-- Ruled Lines for Thesis Statement & Introduction (with 18mm Left Teacher Margin) -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000; margin-bottom: 2px;">
-        Essay Introduction &bull; Thesis Statement &amp; Criterion Definition:
+        Essay Response &bull; Introduction &amp; Paragraph 1:
       </div>
-      <div class="lined-page-grid" style="margin-bottom: 4px;">
-        ${Array.from({ length: 24 }, (_, idx) => {
+      <div class="lined-page-grid" style="margin-bottom: 4px; flex: 1;">
+        ${Array.from({ length: 27 }, (_, idx) => {
           const isFirst = idx === 0;
           const marginContent = isFirst
             ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
             : `&nbsp;`;
-          const linePrompt = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Thesis Statement &bull; Define historical criteria &amp; sustained judgement ]</span>`
-            : `&nbsp;`;
           return `
             <div class="lined-row">
               <div class="lined-margin-cell">${marginContent}</div>
-              <div class="lined-content-cell">${linePrompt}</div>
+              <div class="lined-content-cell">&nbsp;</div>
             </div>`;
         }).join('')}
       </div>
