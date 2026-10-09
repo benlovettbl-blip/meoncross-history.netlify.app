@@ -798,59 +798,83 @@ function buildHtml() {
       height: 6.0mm;
     }
 
-    /* Pages 23–26: Department Marking Bank (5 Lessons per Page) */
-    .mb-grid-5col {
+    /* Pages 23–26: Department Marking Bank (CME Standard • 5 Lessons per Era) */
+    .mb-meta-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #f1f5f9;
+      border: 1.2px solid #000000;
+      padding: 2.5px 8px;
+      font-size: 7.0pt;
+      color: #000000;
+      border-radius: 2px;
+      margin-bottom: 4px;
+    }
+    .mb-grid-5enq {
       display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 4.5px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto auto;
+      gap: 5px;
       flex: 1;
-      margin-top: 1.5px;
-      margin-bottom: 8px;
       height: 100%;
     }
-    .mb-lesson-col {
+    .mb-span-2 {
+      grid-column: 1 / -1;
+    }
+    .mb-enq-card {
+      border: 1.2px solid #000000;
+      border-radius: 2px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      height: 100%;
+      background: #ffffff;
+      padding: 3px 5px;
     }
-    .mb-lesson-title {
-      background: #0f172a;
+    .mb-enq-header {
+      background: #000000;
       color: #ffffff;
       font-family: 'Inter', sans-serif;
-      font-size: 6.7pt;
-      font-weight: 800;
-      padding: 1.8px 3px;
+      font-size: 7.1pt;
+      font-weight: 900;
+      padding: 2.5px 5px;
       text-transform: uppercase;
-      letter-spacing: 0.2px;
+      letter-spacing: 0.3px;
       border-radius: 1px;
-      margin-bottom: 1.5px;
+      margin-bottom: 2px;
       text-align: center;
-      line-height: 1.15;
     }
-    .ans-card {
-      border: 1px solid #cbd5e1;
-      border-left: 2.2px solid #000000;
-      background: #f8fafc;
-      border-radius: 1.5px;
-      padding: 1.6px 3.2px;
+    .mb-answers-list {
       display: flex;
       flex-direction: column;
-      gap: 0.5px;
-      font-size: 6.5pt;
-      line-height: 1.12;
-      margin-bottom: 0px;
-    }
-    .ans-header {
-      display: flex;
       justify-content: space-between;
-      align-items: baseline;
-      gap: 2px;
+      flex: 1;
+      gap: 1px;
     }
-    .ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 6.9pt; }
-    .ans-core { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 6.7pt; flex: 1; margin-left: 2px; }
-    .ans-check { font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; color: #000000; white-space: nowrap; }
-    .ans-exp { color: #000000; font-family: 'Inter', sans-serif; font-style: normal; font-weight: 600; font-size: 6.0pt; line-height: 1.08; }
+    .mb-ans-row {
+      border-bottom: 1px dashed #cbd5e1;
+      padding: 1.2px 1px;
+      font-size: 6.6pt;
+      line-height: 1.15;
+      display: flex;
+      gap: 3.5px;
+      align-items: baseline;
+    }
+    .mb-ans-row:last-child { border-bottom: none; }
+    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 14px; }
+    .mb-ans-text { flex: 1; color: #000000; font-weight: 500; }
+    .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; }
+    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #000000; white-space: nowrap; }
+
+    .mb-split-wrap {
+      display: flex;
+      gap: 8px;
+      flex: 1;
+    }
+    .mb-split-divider {
+      width: 1px;
+      background: #cbd5e1;
+    }
 
     /* Page 27: 6-Factor Analytical Matrix (Top Half) & Synoptic Synthesis (Bottom Half) */
     .p27-wrap {
@@ -1457,9 +1481,69 @@ function buildHtml() {
     { id: 'modern', name: 'Era 4: Modern Britain (c1900–present)', start: 15, end: 20, page: 26 },
   ];
 
-  ERAS.forEach((era) => {
+  ERAS.forEach((era, eraIdx) => {
     const eraLessons = MEDICINE_THEMATIC_QUIZ_BANK.slice(era.start, era.end);
     const footerText = APPROVED_FOOTERS[era.page - 1];
+    const [l1, l2, l3, l4, l5] = eraLessons;
+
+    const renderCard = (lesson) => `
+      <div class="mb-enq-card">
+        <div class="mb-enq-header">Lesson ${lesson.num}: ${lesson.title.toUpperCase()}</div>
+        <div class="mb-answers-list">
+          ${lesson.questions
+            .map(
+              (q, qIdx) => `
+            <div class="mb-ans-row">
+              <span class="mb-ans-num">${qIdx + 1}.</span>
+              <div class="mb-ans-text">
+                <span class="mb-ans-bold">${q.a}</span> — ${q.exp}
+              </div>
+              <span class="mb-check-box">[✓][✗]</span>
+            </div>`,
+            )
+            .join('')}
+        </div>
+      </div>`;
+
+    const renderSpanCard = (lesson) => {
+      const qLeft = lesson.questions.slice(0, 5);
+      const qRight = lesson.questions.slice(5, 10);
+      return `
+      <div class="mb-enq-card mb-span-2">
+        <div class="mb-enq-header">Lesson ${lesson.num}: ${lesson.title.toUpperCase()}</div>
+        <div class="mb-split-wrap">
+          <div class="mb-answers-list" style="flex: 1;">
+            ${qLeft
+              .map(
+                (q, qIdx) => `
+              <div class="mb-ans-row">
+                <span class="mb-ans-num">${qIdx + 1}.</span>
+                <div class="mb-ans-text">
+                  <span class="mb-ans-bold">${q.a}</span> — ${q.exp}
+                </div>
+                <span class="mb-check-box">[✓][✗]</span>
+              </div>`,
+              )
+              .join('')}
+          </div>
+          <div class="mb-split-divider"></div>
+          <div class="mb-answers-list" style="flex: 1;">
+            ${qRight
+              .map(
+                (q, qIdx) => `
+              <div class="mb-ans-row">
+                <span class="mb-ans-num">${qIdx + 6}.</span>
+                <div class="mb-ans-text">
+                  <span class="mb-ans-bold">${q.a}</span> — ${q.exp}
+                </div>
+                <span class="mb-check-box">[✓][✗]</span>
+              </div>`,
+              )
+              .join('')}
+          </div>
+        </div>
+      </div>`;
+    };
 
     html += `
   <!-- PAGE ${era.page}: DEPARTMENT MARKING BANK (${era.name}) -->
@@ -1470,35 +1554,23 @@ function buildHtml() {
         <span>${era.name.toUpperCase()}</span>
       </div>
 
-      <div class="mb-grid-5col">
-        ${eraLessons
-          .map(
-            (lesson) => `
-          <div class="mb-lesson-col">
-            <div class="mb-lesson-title">L${lesson.num}: ${lesson.title.replace('Ideas on Causes: ', '').replace('Approaches to ', '').replace('Case Study: ', '').replace('Case Study 1: ', '').replace('Case Study 2: ', '').substring(0, 24)}</div>
-            ${lesson.questions
-              .map(
-                (q, qIdx) => `
-              <div class="ans-card">
-                <div class="ans-header">
-                  <span class="ans-num">Q${qIdx + 1}:</span>
-                  <span class="ans-core">${q.a}</span>
-                  <span class="ans-check">[ &check; ]</span>
-                </div>
-                <div class="ans-exp">${q.exp}</div>
-              </div>
-            `,
-              )
-              .join('')}
-          </div>
-        `,
-          )
-          .join('')}
+      <div class="mb-meta-bar">
+        <span><strong>Department Marking Bank (Part ${eraIdx + 1} of 4):</strong> ${era.name}</span>
+        <span>Self-Assessment Key &bull; Award [✓] Core Fact + [✓] Explanation</span>
+      </div>
+
+      <div class="mb-grid-5enq">
+        ${renderCard(l1)}
+        ${renderCard(l2)}
+        ${renderCard(l3)}
+        ${renderCard(l4)}
+        ${renderSpanCard(l5)}
       </div>
 
       <div class="page-footer-strip">
-        <span class="footer-quip">${footerText}</span>
         <span class="footer-page-num">Page ${era.page} of 28</span>
+        <span class="footer-quip">${footerText}</span>
+        <span class="footer-page-num">1HI0/1B</span>
       </div>
     </div>
   </div>
