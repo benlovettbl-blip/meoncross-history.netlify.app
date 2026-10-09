@@ -694,6 +694,12 @@ const PDF_MAPPINGS = [
     dest: 'Year 11 USA Overdue Work & Revision Booster.pdf',
     category: 'Year 11 GCSE',
   },
+  {
+    folder: path.join('Year 11 (GCSE)', 'Paper 3 - USA 1954-75'),
+    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'USA 1954-75 Master Knowledge Retrieval Companion.pdf',
+    category: 'Year 11 GCSE',
+  },
 
   // Year 10 (GCSE) - Weimar and Nazi Germany
   {
@@ -795,6 +801,108 @@ const PDF_MAPPINGS = [
     src: 'chess_board_qr_stands.pdf',
     dest: 'The History Portal Chess Board QR Table Stands.pdf',
     category: 'Chess Club',
+  },
+
+  // Mastery & Quiz Packs (Central Printing Hub)
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Medicine Thematic Study Master Knowledge Retrieval Companion.pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Western Front Master Knowledge Retrieval Companion.pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Conflict in the Middle East Master Knowledge Retrieval Companion.pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'USA 1954-75 Master Knowledge Retrieval Companion.pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'water_sanitation_quiz_pack.pdf',
+    dest: 'Year 7 - Water and Sanitation Knowledge Recall Quiz (All 48 Questions).pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'early_modern_world_quiz_pack.pdf',
+    dest: 'Year 8 - Early Modern World Knowledge Recall Quiz (All 72 Questions).pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'great_war_quiz_pack.pdf',
+    dest: 'Causes of the Great War Knowledge Recall Quiz (All 72 Questions).pdf',
+    category: 'Mastery & Quizzes',
+  },
+  {
+    folder: 'Mastery & Quiz Packs',
+    src: 'great_war_part2_quiz_pack.pdf',
+    dest: 'Causes of the Great War Part 2 Knowledge Recall Quiz.pdf',
+    category: 'Mastery & Quizzes',
+  },
+
+  // 02. GCSE (Years 10-11) Active Printing Mirrors
+  {
+    folder: path.join('02. GCSE (Years 10-11)', 'Paper 1 - Medicine Through Time'),
+    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'GCSE Mirror',
+  },
+  {
+    folder: path.join('02. GCSE (Years 10-11)', 'Paper 1 - Medicine Through Time'),
+    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Western Front Master Knowledge Retrieval Companion.pdf',
+    category: 'GCSE Mirror',
+  },
+  {
+    folder: path.join('02. GCSE (Years 10-11)', 'Paper 2 - Conflict in the Middle East'),
+    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'GCSE Mirror',
+  },
+  {
+    folder: path.join('02. GCSE (Years 10-11)', 'Paper 3 - USA 1954-75'),
+    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'GCSE Mirror',
+  },
+
+  // Root pdfs Mirrors
+  {
+    folder: 'pdfs',
+    src: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'PDFs Mirror',
+  },
+  {
+    folder: 'pdfs',
+    src: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'PDFs Mirror',
+  },
+  {
+    folder: 'pdfs',
+    src: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'PDFs Mirror',
+  },
+  {
+    folder: 'pdfs',
+    src: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+    dest: 'USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+    category: 'PDFs Mirror',
   },
 ];
 
@@ -971,49 +1079,8 @@ function syncAdminPdfsToDrive() {
     }
   }
 
-  // Archive raw pdfs folder if present at root
-  const rawPdfsDir = path.join(DRIVE_DEP_DIR, 'pdfs');
-  const archiveDir = path.join(DRIVE_DEP_DIR, '_Legacy_PDF_Staging_Archive');
-  if (fs.existsSync(rawPdfsDir)) {
-    try {
-      if (fs.existsSync(archiveDir)) {
-        // Merge or leave as is
-        console.log('   📦 Note: _Legacy_PDF_Staging_Archive already exists.');
-      } else {
-        fs.renameSync(rawPdfsDir, archiveDir);
-        console.log('   📦 Archived raw "pdfs" folder to "_Legacy_PDF_Staging_Archive".');
-      }
-    } catch (e) {
-      console.warn(`   ⚠️ Could not rename raw pdfs folder: ${e.message}`);
-    }
-  }
-
-  // Clean up redundant '02. GCSE (Years 10-11)' if everything is safely in Year 10 / Year 11
-  const redundantGcseDir = path.join(DRIVE_DEP_DIR, '02. GCSE (Years 10-11)');
-  if (fs.existsSync(redundantGcseDir)) {
-    try {
-      // First copy USA recall quizzes to Year 11 (GCSE)\Paper 3 - USA 1954-75 if they exist
-      const usaQuizDir = path.join(
-        redundantGcseDir,
-        'Paper 3 - USA 1954-75',
-        '03. Retrieval Quizzing & Mastery',
-      );
-      const targetUsaDir = path.join(DRIVE_DEP_DIR, 'Year 11 (GCSE)', 'Paper 3 - USA 1954-75');
-      if (fs.existsSync(usaQuizDir) && fs.existsSync(targetUsaDir)) {
-        for (const f of fs.readdirSync(usaQuizDir)) {
-          const srcF = path.join(usaQuizDir, f);
-          const dstF = path.join(targetUsaDir, f);
-          if (!fs.existsSync(dstF)) {
-            fs.copyFileSync(srcF, dstF);
-          }
-        }
-      }
-      fs.rmSync(redundantGcseDir, { recursive: true, force: true });
-      console.log('   🗑️ Cleaned up redundant "02. GCSE (Years 10-11)" tree.');
-    } catch (e) {
-      console.warn(`   ⚠️ Could not clean redundant 02. GCSE folder: ${e.message}`);
-    }
-  }
+  // Keep active print mirrors (pdfs/ and 02. GCSE/) intact and synchronized
+  console.log('   📂 Active print mirrors (pdfs/ and 02. GCSE/) preserved and synchronized.');
 
   console.log('----------------------------------------------------');
   console.log(
