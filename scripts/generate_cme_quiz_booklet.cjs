@@ -7,7 +7,7 @@
  * Strict Compliance:
  * - Institutional neutrality (The History Department / GCSE History Revision Hub)
  * - Zero AI educational jargon / authentic classroom examiner standard
- * - 100% uniformity across all 16 enquiries (12 tiered questions per enquiry = 192 questions)
+ * - 100% uniformity across all 16 enquiries (8 tiered questions per enquiry = 128 questions)
  * - Two-Line Dual Retrieval Format (Line 1: Core Fact / Line 2: The Explanation)
  * - Examiner Warning / Fatal Pitfall Callout on every enquiry page
  * - Exact multiple of 4 (24 pages / 6 folded A3 sheets) for commercial A4 saddle-stitch booklet printing
@@ -648,44 +648,44 @@ function buildHtml() {
     .q-block {
       border: 1.1px solid #94a3b8;
       border-radius: 2px;
-      padding: 2.2px 6px;
-      margin-bottom: 1.6px;
+      padding: 2.8px 6px;
+      margin-bottom: 2.0px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 1px;
+      gap: 1.5px;
     }
     .q-header {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
       gap: 5px;
-      line-height: 1.16;
+      line-height: 1.18;
     }
     .q-prompt-wrap { display: flex; gap: 4px; flex: 1; }
-    .q-num { font-family: 'Inter', sans-serif; font-size: 8.3pt; font-weight: 900; color: #000000; min-width: 15px; }
-    .q-prompt { font-family: 'Georgia', serif; font-size: 8.3pt; font-weight: 700; color: #000000; line-height: 1.16; }
+    .q-num { font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000; min-width: 17px; }
+    .q-prompt { font-family: 'Georgia', serif; font-size: 9.6pt; font-weight: 700; color: #000000; line-height: 1.18; }
     .q-attempt-dual {
       font-family: 'Inter', sans-serif;
-      font-size: 6.4pt;
+      font-size: 6.8pt;
       font-weight: 800;
       color: #334155;
       white-space: nowrap;
       display: flex;
       align-items: center;
-      gap: 3px;
+      gap: 3.5px;
     }
     .q-tick-pill {
       background: #f1f5f9;
       border: 1px solid #cbd5e1;
       border-radius: 2px;
-      padding: 0.5px 3px;
-      font-size: 5.9pt;
+      padding: 0.5px 3.5px;
+      font-size: 6.2pt;
       font-weight: 700;
       color: #1e293b;
     }
     .q-tick-tot {
-      font-size: 6.6pt;
+      font-size: 7.0pt;
       font-weight: 900;
       color: #0f172a;
     }
@@ -698,16 +698,16 @@ function buildHtml() {
     }
     .q-line-lbl {
       font-family: 'Inter', sans-serif;
-      font-size: 7.0pt;
+      font-size: 8.0pt;
       font-weight: 800;
       color: #0f172a;
       white-space: nowrap;
-      min-width: 60px;
+      min-width: 65px;
     }
     .q-solid-line {
       flex: 1;
       border-bottom: 1.2px solid #000000;
-      height: 6.2mm;
+      height: 8.4mm;
     }
 
     /* Examiner Trap Box at Base of Enquiry Pages */
@@ -801,18 +801,18 @@ function buildHtml() {
     }
     .mb-ans-row {
       border-bottom: 1px dashed #cbd5e1;
-      padding: 1.0px 1px;
-      font-size: 6.8pt;
-      line-height: 1.15;
+      padding: 2.0px 1px;
+      font-size: 7.6pt;
+      line-height: 1.24;
       display: flex;
-      gap: 3.5px;
+      gap: 4px;
       align-items: baseline;
     }
     .mb-ans-row:last-child { border-bottom: none; }
-    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 14px; }
+    .mb-ans-num { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; min-width: 15px; }
     .mb-ans-text { flex: 1; color: #000000; font-weight: 500; }
-    .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; }
-    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; color: #000000; white-space: nowrap; }
+    .mb-ans-bold { font-family: 'Inter', sans-serif; font-weight: 900; color: #000000; font-size: 7.8pt; }
+    .mb-check-box { font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; color: #000000; white-space: nowrap; }
 
     /* Page 23: Period Study Question 1 & Question 2 Strategy */
     .strat-meta-bar-23 {
@@ -1330,7 +1330,7 @@ function buildHtml() {
 
     <div class="cover-title-group">
       <h1 class="cover-main-title">Conflict in the Middle East, 1945–1995</h1>
-      <p class="cover-sub-title">Pearson Edexcel GCSE (9–1) History • Option P5 (Paper 2) • Master Knowledge Companion</p>
+      <p class="cover-sub-title">Pearson Edexcel GCSE (9–1) History • Option P5 (Paper 2) • Master Knowledge Companion (128 Core Exam Questions)</p>
     </div>
 
     <div class="pupil-meta-grid">
@@ -1351,7 +1351,7 @@ function buildHtml() {
             <tr>
               <th style="width: 50%;">Enquiry &amp; Specification Focus</th>
               <th style="width: 12%;">Due Date</th>
-              <th style="width: 15%;">Score (/24)<br><span style="font-size: 5.6pt; font-weight: normal; opacity: 0.9;">12 Qs × 2m</span></th>
+              <th style="width: 15%;">Score (/16)<br><span style="font-size: 5.6pt; font-weight: normal; opacity: 0.9;">8 Qs × 2m</span></th>
               <th style="width: 15%;">Parent Sign</th>
               <th style="width: 8%;">RAG</th>
             </tr>
@@ -1369,7 +1369,7 @@ function buildHtml() {
                 <div class="hw-enq-focus-text">${item.focus}</div>
               </td>
               <td style="text-align: center; font-size: 7.2pt; color: #64748b;">____/____</td>
-              <td style="text-align: center; font-weight: 700; font-size: 7.4pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
+              <td style="text-align: center; font-weight: 700; font-size: 7.4pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 16</td>
               <td></td>
               <td style="text-align: center; color: #94a3b8; font-size: 6.8pt;">[ &nbsp; ]</td>
             </tr>`,
@@ -1387,7 +1387,7 @@ function buildHtml() {
             <tr>
               <th style="width: 50%;">Enquiry &amp; Specification Focus</th>
               <th style="width: 12%;">Due Date</th>
-              <th style="width: 15%;">Score (/24)<br><span style="font-size: 5.6pt; font-weight: normal; opacity: 0.9;">12 Qs × 2m</span></th>
+              <th style="width: 15%;">Score (/16)<br><span style="font-size: 5.6pt; font-weight: normal; opacity: 0.9;">8 Qs × 2m</span></th>
               <th style="width: 15%;">Parent Sign</th>
               <th style="width: 8%;">RAG</th>
             </tr>
@@ -1405,7 +1405,7 @@ function buildHtml() {
                 <div class="hw-enq-focus-text">${item.focus}</div>
               </td>
               <td style="text-align: center; font-size: 7.2pt; color: #64748b;">____/____</td>
-              <td style="text-align: center; font-weight: 700; font-size: 7.4pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</td>
+              <td style="text-align: center; font-weight: 700; font-size: 7.4pt;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 16</td>
               <td></td>
               <td style="text-align: center; color: #94a3b8; font-size: 6.8pt;">[ &nbsp; ]</td>
             </tr>`,
@@ -1417,7 +1417,7 @@ function buildHtml() {
 
       <div class="cover-protocol-box">
         <strong class="proto-title">Department Retrieval Protocol &amp; Spaced Learning Standards:</strong>
-        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism or significance). Total: 12 questions × 2 marks = <strong>24 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 18/24 trigger immediate digital flashcard consolidation.
+        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism or significance). Total: 8 questions × 2 marks = <strong>16 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 12/16 trigger immediate digital flashcard consolidation.
       </div>
     </div>
 
@@ -1466,7 +1466,7 @@ function buildHtml() {
 `;
 
   // =========================================================================
-  // PAGES 3–18: 16 ENQUIRY RETRIEVAL PAGES (12 QUESTIONS PER PAGE)
+  // PAGES 3–18: 16 ENQUIRY RETRIEVAL PAGES (8 QUESTIONS PER PAGE)
   // =========================================================================
   CME_PEARSON_QUIZ_BANK.forEach((enq, idx) => {
     const pageNum = idx + 3;
@@ -1485,8 +1485,8 @@ function buildHtml() {
       </div>
       <div class="lesson-score-pill">
         <div class="score-pill-title">ENQUIRY SCORE</div>
-        <div class="score-pill-val">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 24</div>
-        <div class="score-pill-sub">Fact: __/12 • Expl: __/12</div>
+        <div class="score-pill-val">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ 16</div>
+        <div class="score-pill-sub">Fact: __/8 • Expl: __/8</div>
       </div>
     </div>
 
@@ -2029,7 +2029,7 @@ function buildHtml() {
             <div class="hub-gw-body">
               <span class="hub-gw-badge" style="background: #0284c7;">MASTER PORTAL</span>
               <div class="hub-gw-title">All 16 Quizzes &amp; Flashcards</div>
-              <div class="hub-gw-desc">192 self-marking questions, digital flashcard vaults &amp; animated battle maps.</div>
+              <div class="hub-gw-desc">128 self-marking questions, digital flashcard vaults &amp; animated battle maps.</div>
             </div>
           </div>
         </div>
