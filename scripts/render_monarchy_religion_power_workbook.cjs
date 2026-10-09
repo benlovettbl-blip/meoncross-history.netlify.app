@@ -1657,12 +1657,94 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Authentic Provenance) -->
+      <!-- Prominent Primary Visual Source Centerpiece (Holbein Full Canvas in Authentic Color + Disciplinary Iconography Plate) -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="King Henry VIII Portrait" style="width: 100%; height: 100mm; object-fit: cover; object-position: center 20%; display: block; margin: 0 auto; filter: grayscale(100%);">
+        <div style="display: grid; grid-template-columns: 62mm 1fr; background: #ffffff;">
+          <!-- Left: Full-Length Uncropped Portrait in Rich Authentic Color -->
+          <div style="background: #fcfbf9; border-right: 1.5px solid #000000; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
+            <img src="${coverImgBase64}" alt="King Henry VIII Full-Length Portrait by Hans Holbein" style="height: 101mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #000000; border-radius: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">
+          </div>
+          <!-- Right: Visual Iconography & Historical Significance for Year 8 -->
+          <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
+            <!-- 1. Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #000000; letter-spacing: 0.5px;">
+                Primary Visual Evidence &bull; Tudor Royal Propaganda
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #555555;">
+                Hans Holbein the Younger (c. 1537)
+              </span>
+            </div>
+
+            <!-- 2. Statecraft Context -->
+            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #111111; margin: 0;">
+              Following the 1534 Act of Supremacy, Henry VIII commissioned Hans Holbein to project an overwhelming image of absolute monarchical sovereignty. Every visual element was calculated statecraft:
+            </p>
+
+            <!-- 3. Four Core Propaganda Features -->
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">1. Stance of Absolute Dominance:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  Facing the viewer squarely with feet planted wide, elbows flared, and hands gripping dagger and gloves, Henry occupies maximum physical space to intimidate foreign ambassadors and subjects.
+                </div>
+              </div>
+              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">2. Imperial Splendour &amp; Monastic Wealth:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  Exaggerated square shoulders padded in ermine fur, gold-embroidered silver doublet, and heavy ruby collars—lavishly financed by Thomas Cromwell’s Dissolution of the Monasteries (1536–40).
+                </div>
+              </div>
+              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">3. Dynastic Virility &amp; Tudor Succession:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  The prominent codpiece and muscular posture were deliberate visual propaganda, asserting vitality and the promise of a legitimate male Tudor heir following the break with Rome.
+                </div>
+              </div>
+              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">4. The Absent Pope (Sovereignty Unchallenged):</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  Depicted with zero papal, cross, or Roman Catholic emblems. The King stands solitary on English ground—the undisputed Supreme Head on Earth of the Church of England.
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Three-Pillar Propaganda Decoding Matrix -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #000000;">
+              <div style="border: 1px solid #000000; border-radius: 2px; padding: 2.5px 5px; background: #fbfbfb;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #000000;">The Dagger</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #333333; margin-top: 1px;">Immediate physical violence against papal traitors.</div>
+              </div>
+              <div style="border: 1px solid #000000; border-radius: 2px; padding: 2.5px 5px; background: #fbfbfb;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #000000;">Ermine &amp; Gold</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #333333; margin-top: 1px;">Imperial status equal to Holy Roman Emperor.</div>
+              </div>
+              <div style="border: 1px solid #000000; border-radius: 2px; padding: 2.5px 5px; background: #fbfbfb;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #000000;">Turkish Carpet</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #333333; margin-top: 1px;">Global trade connections &amp; Renaissance wealth.</div>
+              </div>
+            </div>
+
+            <!-- 5. Disciplinary Significance Anchor -->
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #333333; line-height: 1.25; background: #f8fafc; border-left: 2px solid #000000; padding: 2px 6px;">
+              <strong style="text-transform: uppercase; color: #000000;">Disciplinary Significance:</strong> In 16th-century England, lacking a standing army or police force, visual portraiture was essential constitutional statecraft to enforce Royal Supremacy.
+            </div>
+
+            <!-- 6. Targeted Disciplinary Hinge Question -->
+            <div style="background: #ffffff; border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #000000;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #555555; text-transform: uppercase;">Historical Evaluation</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #222222; line-height: 1.2; margin-top: 1px;">
+                Does this portrait show a monarch completely confident in his sovereign power, or a ruler using theatrical spectacle to mask profound dynastic and religious vulnerability?
+              </div>
+            </div>
+          </div>
+        </div>
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
-          <span><strong>Primary Visual Evidence:</strong> <em>Contemporary Portrait of King Henry VIII</em> &bull; Workshop of Hans Holbein the Younger (c. 1537)</span>
-          <span style="font-weight: 700;">ROYAL COLLECTION ARCHIVE</span>
+          <span><strong>Primary Visual Evidence:</strong> <em>Full-Length Portrait of King Henry VIII</em> &bull; Workshop of Hans Holbein the Younger (c. 1537–1540)</span>
+          <span style="font-weight: 700;">ROYAL COLLECTION ARCHIVE &bull; WALKER ART GALLERY</span>
         </div>
       </div>
 
