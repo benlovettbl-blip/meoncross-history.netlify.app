@@ -1021,7 +1021,10 @@ export function renderInteractiveQuiz() {
               let examPdfUrl = null;
 
               if (unitId === 'edexcel_medicine') {
-                recallPdfUrl = '/pdfs/med_recall_quiz_pack_FULL.pdf';
+                recallPdfUrl =
+                  wbId === 'western_front'
+                    ? '/pdfs/Western_Front_Master_Knowledge_Retrieval_Companion.pdf'
+                    : '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf';
                 examPdfUrl = `/pdfs/edexcel_medicine_pupil_workbook_${wbId}_FINAL_V17.pdf`;
               } else if (unitId === 'cme_new') {
                 const upperId = wbId.toUpperCase();
@@ -1030,7 +1033,7 @@ export function renderInteractiveQuiz() {
                 examPdfUrl = `/pdfs/cme_new_mastery_pack_${upperId}_FINAL_V17.pdf`;
               } else if (unitId === 'usa') {
                 const upperId = wbId.toUpperCase();
-                recallPdfUrl = '/pdfs/usa_recall_quiz_FULL.pdf';
+                recallPdfUrl = '/pdfs/USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf';
                 examPdfUrl = `/pdfs/usa_mastery_pack_${upperId}_FINAL_V17.pdf`;
               } else if (unitId === 'great_war') {
                 recallPdfUrl = '/pdfs/great_war_recall_quiz_FULL.pdf';

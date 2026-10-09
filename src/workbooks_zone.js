@@ -435,11 +435,11 @@ export function renderWorkbooksZone(container, unitData) {
       },
       {
         id: 'PILLAR_3',
-        title: 'Complete Master Recall Quiz & Vault (All 200 Crucial Questions)',
-        pages: '44 Pages',
+        title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
+        pages: '24 Pages (A4)',
         badge: 'PILLAR 3 • RECALL QUIZZING',
         color: '#7c3aed',
-        desc: 'All 144 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Spaced retrieval protocol, 28-point chronology flowchart, and complete Department Marking Bank.',
+        desc: 'All 128 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Spaced retrieval protocol, 28-point chronology flowchart, front tracking ledger, and complete Department Marking Bank.',
         fileBase: '/units/cme_new/cme_master_retrieval_companion.html',
         pdfUrl: '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
       },
@@ -553,13 +553,13 @@ export function renderWorkbooksZone(container, unitData) {
       },
       {
         id: 'PILLAR_3',
-        title: 'Complete Unit Master Recall Quiz (All 320 Crucial Questions)',
-        pages: '54 Pages',
+        title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
+        pages: '24 Pages (A4)',
         badge: 'PILLAR 3 • RECALL QUIZZING',
         color: '#7c3aed',
-        desc: 'Master retrieval volume compiling all 320 knowledge recall questions across all 4 Key Topics. Includes memory hacking rules, RAG trackers, and complete Vault solutions.',
-        fileBase: '/units/usa/mastery_pack_full.html',
-        pdfUrl: '/pdfs/usa_recall_quiz_FULL.pdf',
+        desc: '16 enquiries × 8 tiered questions with pre-anchored dates, 8.4mm handwriting lines, 28-point chronology flowchart, front tracking ledger, marking bank, and Paper 3 strategy.',
+        fileBase: '/units/usa/usa_master_retrieval_companion.html',
+        pdfUrl: '/pdfs/USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
       },
     ];
 
