@@ -501,7 +501,7 @@ const A5_BOOKLET_CSS = `
   }
   .cover-header-block {
     text-align: center;
-    padding: 6px 6px 5px 6px;
+    padding: 7px 6px 6px 6px;
     background: #f8fafc;
     border-left: 1.2px solid #000000;
     border-right: 1.2px solid #000000;
@@ -528,7 +528,7 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1.2px solid #000000;
     border-top: none;
-    padding: 6px 8px;
+    padding: 7px 8px;
     font-size: 7.2pt;
     color: #000000;
   }
@@ -556,43 +556,43 @@ const A5_BOOKLET_CSS = `
 
   /* Cover Portrait Container */
   .cover-map-container {
-    margin: 4px 0 4px 0;
+    margin: 3px 0 3px 0;
     text-align: center;
     background: #ffffff;
     border: 1.2px solid #000000;
     border-radius: 4px;
-    padding: 3.5px 6px;
+    padding: 3px 6px;
   }
   .cover-map-frame {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 60mm;
+    max-height: 56.5mm;
   }
   .cover-map-img {
-    max-height: 60mm;
+    max-height: 56.5mm;
     max-width: 100%;
     object-fit: contain;
     border: 1.2px solid #000000;
     border-radius: 2px;
   }
   .cover-map-caption {
-    font-size: 6.2pt;
+    font-size: 5.6pt;
     color: #000000;
-    margin-top: 2px;
+    margin-top: 1.5px;
     font-style: italic;
     font-weight: 600;
   }
 
   /* Tracking Ledger */
   .ledger-container {
-    margin-top: 4.5px;
+    margin-top: 3px;
   }
   .tracking-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 6.6pt;
+    font-size: 6.4pt;
     background: #ffffff;
     color: #000000;
   }
@@ -600,15 +600,15 @@ const A5_BOOKLET_CSS = `
     background: #000000;
     color: #ffffff;
     font-weight: 800;
-    padding: 3.5px 3.5px;
+    padding: 3.5px 3px;
     border: 1px solid #000000;
     text-transform: uppercase;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
     text-align: center;
   }
   .tracking-table td {
     border: 1px solid #000000;
-    padding: 6.8px 3.5px;
+    padding: 6.0px 3.5px;
     text-align: center;
     vertical-align: middle;
     color: #000000;
@@ -619,12 +619,12 @@ const A5_BOOKLET_CSS = `
   }
   .tb-lesson-title {
     font-weight: 800;
-    font-size: 6.8pt;
+    font-size: 6.6pt;
     color: #000000;
     line-height: 1.15;
   }
   .tb-lesson-enquiry {
-    font-size: 5.6pt;
+    font-size: 5.4pt;
     color: #000000;
     font-style: italic;
     line-height: 1.15;
@@ -635,17 +635,15 @@ const A5_BOOKLET_CSS = `
     width: 14px;
     border-bottom: 1.2px solid #000000;
   }
-  .retrieval-boxes {
+  .retrieval-vertical {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 6px;
     gap: 2.5px;
-    font-size: 5.1pt;
-    letter-spacing: -0.15px;
+    font-size: 5.4pt;
+    line-height: 1.15;
     color: #000000;
-    white-space: nowrap;
-  }
-  .retrieval-boxes span {
     font-weight: 700;
   }
   .parent-sig-cell {
@@ -662,10 +660,10 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1.2px solid #000000;
     border-radius: 3px;
-    padding: 4.5px 6px;
-    margin-top: 4px;
-    margin-bottom: 4px;
-    font-size: 6.2pt;
+    padding: 2.5px 6px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
+    font-size: 5.8pt;
     line-height: 1.15;
     color: #000000;
     font-weight: 600;
@@ -677,7 +675,7 @@ const A5_BOOKLET_CSS = `
     color: #000000;
   }
   .traffic-dot {
-    font-size: 7.5pt;
+    font-size: 7pt;
     line-height: 1;
   }
   .green-dot { color: #16a34a; }
@@ -691,21 +689,21 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1.2px solid #000000;
     border-radius: 4px;
-    padding: 5px 7px;
+    padding: 3px 6px;
     gap: 8px;
-    margin-top: 4px;
-    margin-bottom: 2px;
+    margin-top: 2.5px;
+    margin-bottom: 1.5px;
     color: #000000;
   }
   .qr-code-img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
   }
   .qr-caption-text {
-    font-size: 6.4pt;
+    font-size: 6.0pt;
     color: #000000;
-    line-height: 1.2;
+    line-height: 1.15;
     text-align: left;
     font-weight: 700;
   }
@@ -791,13 +789,13 @@ const A5_BOOKLET_CSS = `
     border-top: 1px solid #000000;
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    padding: 1.5px 5px;
-    font-size: 6.8pt;
+    padding: 1px 4.5px;
+    font-size: 6.3pt;
     font-weight: 800;
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
-    margin: 1.5px 0 1px 0;
+    margin: 1px 0 1px 0;
   }
   .mb-section-title:first-child { margin-top: 0; }
   .mb-container {
@@ -811,19 +809,19 @@ const A5_BOOKLET_CSS = `
     display: flex;
     align-items: flex-start;
     gap: 4px;
-    font-size: 6.6pt;
-    line-height: 1.18;
+    font-size: 6.3pt;
+    line-height: 1.15;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.5px 5px;
+    padding: 1px 4.5px;
     color: #000000;
   }
   .ans-num-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 15px;
+    min-width: 14px;
     flex-shrink: 0;
     line-height: 1;
     padding-top: 0.5px;
@@ -831,7 +829,7 @@ const A5_BOOKLET_CSS = `
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 7.0pt;
+    font-size: 6.6pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -842,7 +840,7 @@ const A5_BOOKLET_CSS = `
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.8pt;
+    font-size: 5.6pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -852,13 +850,13 @@ const A5_BOOKLET_CSS = `
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 7.0pt;
+    font-size: 6.6pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 600 !important;
     font-style: normal !important;
-    font-size: 6.6pt;
+    font-size: 6.3pt;
   }
   @media print {
     .ans-exp {
@@ -937,10 +935,10 @@ async function compileQuizBookletHtml() {
       <table class="tracking-table">
         <thead>
           <tr>
-            <th style="width: 29%;">Lesson Unit</th>
-            <th style="width: 13%;">Att 1 Score</th>
-            <th style="width: 13%;">Att 2 Score</th>
-            <th style="width: 29%;">Retrieval Strength</th>
+            <th style="width: 32%;">Lesson Unit</th>
+            <th style="width: 14%;">Att 1 Score</th>
+            <th style="width: 14%;">Att 2 Score</th>
+            <th style="width: 24%;">Retrieval Strength</th>
             <th style="width: 16%; font-size: 5.6pt; letter-spacing: -0.2px; white-space: nowrap;">Parent Initials</th>
           </tr>
         </thead>
@@ -955,10 +953,10 @@ async function compileQuizBookletHtml() {
             <td><span class="score-line"></span> / 8</td>
             <td><span class="score-line"></span> / 8</td>
             <td>
-              <div class="retrieval-boxes">
-                <span>[ ] Instant</span>
-                <span>[ ] Effortful</span>
-                <span>[ ] Restudy</span>
+              <div class="retrieval-vertical">
+                <div>[ ] Instant</div>
+                <div>[ ] Effortful</div>
+                <div>[ ] Restudy</div>
               </div>
             </td>
             <td class="parent-sig-cell"></td>
@@ -1263,10 +1261,10 @@ async function run() {
 
   await page.pdf({
     path: primaryPdf,
-    width: '148mm',
-    height: '210mm',
+    format: 'A5',
     printBackground: true,
-    margin: { top: '6mm', bottom: '6mm', left: '0mm', right: '0mm' },
+    preferCSSPageSize: true,
+    margin: { top: '0mm', bottom: '0mm', left: '0mm', right: '0mm' },
   });
   console.log(`✅ Generated Master 8-Page Saddle-Stitch PDF: ${primaryPdf}`);
 
