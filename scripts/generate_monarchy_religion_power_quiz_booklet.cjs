@@ -480,7 +480,7 @@ const A5_BOOKLET_CSS = `
   .cover-banner {
     background: #000000;
     color: #ffffff;
-    padding: 4px 8px;
+    padding: 5px 8px;
     border-radius: 4px 4px 0 0;
     display: flex;
     justify-content: space-between;
@@ -501,7 +501,7 @@ const A5_BOOKLET_CSS = `
   }
   .cover-header-block {
     text-align: center;
-    padding: 4px 6px 3px 6px;
+    padding: 6px 6px 5px 6px;
     background: #f8fafc;
     border-left: 1.2px solid #000000;
     border-right: 1.2px solid #000000;
@@ -528,7 +528,7 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1.2px solid #000000;
     border-top: none;
-    padding: 4.5px 8px;
+    padding: 6px 8px;
     font-size: 7.2pt;
     color: #000000;
   }
@@ -556,22 +556,22 @@ const A5_BOOKLET_CSS = `
 
   /* Cover Portrait Container */
   .cover-map-container {
-    margin: 3px 0 3px 0;
+    margin: 4px 0 4px 0;
     text-align: center;
     background: #ffffff;
     border: 1.2px solid #000000;
     border-radius: 4px;
-    padding: 3px 6px;
+    padding: 3.5px 6px;
   }
   .cover-map-frame {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 75.5mm;
+    max-height: 60mm;
   }
   .cover-map-img {
-    max-height: 75.5mm;
+    max-height: 60mm;
     max-width: 100%;
     object-fit: contain;
     border: 1.2px solid #000000;
@@ -587,7 +587,7 @@ const A5_BOOKLET_CSS = `
 
   /* Tracking Ledger */
   .ledger-container {
-    margin-top: 3px;
+    margin-top: 4.5px;
   }
   .tracking-table {
     width: 100%;
@@ -600,7 +600,7 @@ const A5_BOOKLET_CSS = `
     background: #000000;
     color: #ffffff;
     font-weight: 800;
-    padding: 3px 3.5px;
+    padding: 3.5px 3.5px;
     border: 1px solid #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
@@ -608,7 +608,7 @@ const A5_BOOKLET_CSS = `
   }
   .tracking-table td {
     border: 1px solid #000000;
-    padding: 4.5px 3.5px;
+    padding: 6.8px 3.5px;
     text-align: center;
     vertical-align: middle;
     color: #000000;
@@ -654,7 +654,7 @@ const A5_BOOKLET_CSS = `
     border: 1.2px solid #000000;
     background: #ffffff;
     border-radius: 2px;
-    height: 16px;
+    height: 22px;
     width: 100%;
   }
 
@@ -666,10 +666,10 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1.2px solid #000000;
     border-radius: 3px;
-    padding: 2.5px 6px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    font-size: 6pt;
+    padding: 4.5px 6px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    font-size: 6.2pt;
     line-height: 1.15;
     color: #000000;
     font-weight: 600;
@@ -695,10 +695,10 @@ const A5_BOOKLET_CSS = `
     background: #ffffff;
     border: 1.2px solid #000000;
     border-radius: 4px;
-    padding: 3px 6px;
+    padding: 5px 7px;
     gap: 8px;
-    margin-top: 2px;
-    margin-bottom: 1px;
+    margin-top: 4px;
+    margin-bottom: 2px;
     color: #000000;
   }
   .qr-code-img {
@@ -734,16 +734,9 @@ const A5_BOOKLET_CSS = `
   .q-header {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 5px;
+    gap: 6px;
     font-size: 8.8pt;
     line-height: 1.16;
-  }
-  .q-prompt-wrap {
-    display: flex;
-    align-items: flex-start;
-    gap: 5px;
-    flex: 1;
   }
   .q-num-box {
     display: flex;
@@ -774,14 +767,6 @@ const A5_BOOKLET_CSS = `
     font-size: 8.8pt;
     line-height: 1.16;
     flex: 1;
-  }
-  .q-mastery {
-    font-size: 6.3pt;
-    font-weight: 800;
-    color: #000000;
-    white-space: nowrap;
-    padding-top: 1px;
-    flex-shrink: 0;
   }
   .q-line-row {
     display: flex;
@@ -885,13 +870,6 @@ const A5_BOOKLET_CSS = `
       font-weight: 600 !important;
       -webkit-text-stroke: 0.1px #000000;
     }
-  }
-  .ans-boxes {
-    font-size: 6.4pt;
-    font-weight: 800;
-    color: #000000;
-    white-space: nowrap;
-    margin-left: 3px;
   }
 `;
 
@@ -1051,14 +1029,11 @@ async function compileQuizBookletHtml() {
           return `
       <div class="q-block">
         <div class="q-header">
-          <div class="q-prompt-wrap">
-            <div class="q-num-box">
-              <span class="q-num">${currentNum}.</span>
-              <span class="q-pips">${pipBadge}</span>
-            </div>
-            <span class="q-prompt">${item.q}</span>
+          <div class="q-num-box">
+            <span class="q-num">${currentNum}.</span>
+            <span class="q-pips">${pipBadge}</span>
           </div>
-          <span class="q-mastery">Att 1: [ ] &bull; Att 2: [ ]</span>
+          <span class="q-prompt">${item.q}</span>
         </div>
         <div class="q-line-row">
           <span class="q-line-lbl">Answer:</span>
@@ -1105,7 +1080,6 @@ async function compileQuizBookletHtml() {
           <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
-        <span class="ans-boxes">[✓] [✗]</span>
       </div>`,
         )
         .join('')}
@@ -1123,7 +1097,6 @@ async function compileQuizBookletHtml() {
           <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
-        <span class="ans-boxes">[✓] [✗]</span>
       </div>`,
         )
         .join('')}
@@ -1142,7 +1115,6 @@ async function compileQuizBookletHtml() {
           <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
-        <span class="ans-boxes">[✓] [✗]</span>
       </div>`,
         )
         .join('')}
@@ -1180,7 +1152,6 @@ async function compileQuizBookletHtml() {
           <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
-        <span class="ans-boxes">[✓] [✗]</span>
       </div>`,
         )
         .join('')}
@@ -1198,7 +1169,6 @@ async function compileQuizBookletHtml() {
           <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
-        <span class="ans-boxes">[✓] [✗]</span>
       </div>`,
         )
         .join('')}
@@ -1216,7 +1186,6 @@ async function compileQuizBookletHtml() {
           <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
-        <span class="ans-boxes">[✓] [✗]</span>
       </div>`,
         )
         .join('')}
