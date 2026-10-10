@@ -516,31 +516,31 @@ export const WORKBOOK_PAGE_MAP = {
   },
   industrialisation_and_empire: {
     lesson_1: {
-      page: 4,
+      page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 0,
     },
     lesson_2: {
-      page: 6,
+      page: 4,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 1,
     },
     lesson_3: {
-      page: 10,
+      page: 6,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 2,
     },
     lesson_4: {
-      page: 12,
+      page: 10,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 3,
     },
     lesson_5: {
-      page: 14,
+      page: 12,
       booklet: 'Pupil Workbook',
       unitId: 'industrialisation_and_empire',
       lessonIndex: 4,
