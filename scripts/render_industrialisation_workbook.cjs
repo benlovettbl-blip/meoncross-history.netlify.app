@@ -1717,7 +1717,8 @@ function compileIndustrialisationWorkbook() {
             .map((cfg, idx) => {
               const quizUrl =
                 'https://the-history-revision-hub.netlify.app/?unit=industrialisation_and_empire&lesson=' +
-                (idx + 1);
+                (idx + 1) +
+                '&quiz=true';
               const qrSvg = generateQrSvg(quizUrl);
               const shortLabels = [
                 'Cort &amp; Funtley',
@@ -1727,7 +1728,7 @@ function compileIndustrialisationWorkbook() {
                 'Victorian Verdict',
               ];
               return `
-              <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+              <div data-qr-url="${quizUrl}" style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
                 <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px; color: #0f284e;">
                   Enquiry ${cfg.lessonNum}
                 </div>
