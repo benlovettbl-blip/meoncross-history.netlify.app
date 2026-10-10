@@ -2062,7 +2062,7 @@ function compileMonarchyWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
           <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
@@ -2071,7 +2071,7 @@ function compileMonarchyWorkbook() {
       <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 1: 1534 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1534 &bull; Henry VIII &amp; The Act of Supremacy
@@ -2084,7 +2084,7 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 2: 1536–1540 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1536–1540 &bull; Dissolution of the Monasteries
@@ -2097,7 +2097,7 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 3: 1559 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1559 &bull; Elizabeth I &amp; The Religious Settlement
@@ -2110,7 +2110,7 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 4: 1588 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1588 &bull; Defeat of the Spanish Armada
@@ -2138,7 +2138,7 @@ function compileMonarchyWorkbook() {
           </h2>
         </div>
 
-        <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
           <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
@@ -2147,7 +2147,7 @@ function compileMonarchyWorkbook() {
       <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 5: 1629–1640 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
@@ -2160,7 +2160,7 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 6: 1649 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1649 &bull; Trial &amp; Execution of King Charles I
@@ -2173,7 +2173,7 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 7: 1688 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1688 &bull; The Glorious Revolution
@@ -2186,7 +2186,7 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 8: 1689 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
