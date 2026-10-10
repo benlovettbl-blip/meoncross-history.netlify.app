@@ -657,18 +657,6 @@ const A5_BOOKLET_CSS = `
   }
 
   /* Pages 2–6: Dedicated Question Page Layout */
-  .lesson-instruction-bar {
-    background: #f8fafc;
-    border-left: 3.5px solid #000000;
-    border-top: 1px solid #000000;
-    border-right: 1px solid #000000;
-    border-bottom: 1px solid #000000;
-    padding: 2.5px 6px;
-    font-size: 6.8pt;
-    color: #000000;
-    font-weight: 700;
-    margin-bottom: 2.5px;
-  }
   .q-container {
     display: flex;
     flex-direction: column;
@@ -974,10 +962,6 @@ async function compileQuizBookletHtml() {
         <p>${lessonData.enquiry}</p>
       </div>
       <span class="page-tag">Questions ${globalQNum}–${globalQNum + 7}</span>
-    </div>
-
-    <div class="lesson-instruction-bar">
-      <strong>Retrieval Protocol:</strong> Write the core factual answer on Line 1. On Line 2, write the historical explanation or consequence (Detail / Why).
     </div>
 
     <div class="q-container">
