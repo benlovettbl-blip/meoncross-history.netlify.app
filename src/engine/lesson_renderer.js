@@ -2949,7 +2949,7 @@ export function renderLesson(lesson) {
     !hasInlineNarrativeSources
   ) {
     htmlSources1 += `<div class="sources-grid" style="margin-top: 20px;">`;
-    lesson.sources.forEach((source) => {
+    lesson.sources.forEach((source, sIdx) => {
       const sLetterMatch = (source.title || '').match(/(?:Source|Map|Diagram)\s+([A-Z0-9]+)/i);
       const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
       const isInteractiveSourceUnit =

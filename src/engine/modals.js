@@ -2486,6 +2486,8 @@ window.openGallery = function (encodedData, startIndex) {
   let currentIndex = startIndex;
 
   const modal = document.createElement('div');
+  modal.id = 'global-image-modal';
+  modal.className = 'global-image-modal';
   modal.style.position = 'fixed';
   modal.style.top = '0';
   modal.style.left = '0';
