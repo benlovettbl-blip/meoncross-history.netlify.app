@@ -395,11 +395,10 @@ const A5_BOOKLET_CSS = `
   .pip-badge {
     display: inline-flex;
     align-items: center;
-    font-size: 8.8pt;
+    justify-content: center;
+    font-size: 6.5pt;
     line-height: 1;
-    margin-right: 3px;
-    letter-spacing: -1.5px;
-    vertical-align: middle;
+    letter-spacing: -1.2px;
   }
   .pip-1 {
     color: #16a34a; /* Emerald - Core Knowledge */
@@ -424,6 +423,22 @@ const A5_BOOKLET_CSS = `
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
+  }
+  .page-header-compact {
+    border-bottom: 1.5px solid #000000;
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .page-header-compact h2 {
+    margin: 0;
+    font-size: 8.8pt;
+    color: #000000;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
   }
   .page-header-strip h2 {
     margin: 0;
@@ -720,51 +735,72 @@ const A5_BOOKLET_CSS = `
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 4px;
-    font-size: 9.0pt;
-    line-height: 1.18;
+    gap: 5px;
+    font-size: 8.8pt;
+    line-height: 1.16;
   }
   .q-prompt-wrap {
     display: flex;
     align-items: flex-start;
-    gap: 3px;
+    gap: 5px;
     flex: 1;
+  }
+  .q-num-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 17px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.5px;
   }
   .q-num {
     font-weight: 800;
     color: #000000;
-    min-width: 15px;
-    font-size: 9.0pt;
+    font-size: 8.8pt;
+    line-height: 1.1;
+  }
+  .q-pips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
   }
   .q-prompt {
     font-weight: 700;
     color: #000000;
-    font-size: 9.0pt;
+    font-size: 8.8pt;
+    line-height: 1.16;
+    flex: 1;
   }
   .q-mastery {
-    font-size: 6.5pt;
+    font-size: 6.3pt;
     font-weight: 800;
     color: #000000;
     white-space: nowrap;
+    padding-top: 1px;
+    flex-shrink: 0;
   }
   .q-line-row {
     display: flex;
     align-items: flex-end;
     gap: 5px;
-    font-size: 7.8pt;
+    font-size: 7.6pt;
     margin-top: 1px;
   }
   .q-line-lbl {
     font-weight: 800;
     color: #000000;
     white-space: nowrap;
-    font-size: 7.8pt;
-    min-width: 72px;
+    font-size: 7.6pt;
+    min-width: 44px;
   }
   .q-solid-line {
     flex: 1;
     border-bottom: 1.2px solid #000000;
-    min-height: 19px;
+    min-height: 18px;
   }
 
   /* Pages 7 & 8: Marking Bank */
@@ -802,11 +838,31 @@ const A5_BOOKLET_CSS = `
     padding: 1.2px 4px;
     color: #000000;
   }
+  .ans-num-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 14px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.5px;
+  }
   .ans-num {
     font-weight: 800;
     color: #000000;
-    min-width: 13px;
     font-size: 6.8pt;
+    line-height: 1.1;
+  }
+  .ans-pip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
+  }
+  .ans-pip .pip-badge {
+    font-size: 5.5pt;
+    letter-spacing: -1px;
   }
   .ans-content {
     flex: 1;
@@ -818,9 +874,17 @@ const A5_BOOKLET_CSS = `
     font-size: 6.8pt;
   }
   .ans-exp {
-    color: #000000;
-    font-style: italic;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
     font-size: 6.3pt;
+  }
+  @media print {
+    .ans-exp {
+      color: #000000 !important;
+      font-weight: 600 !important;
+      -webkit-text-stroke: 0.1px #000000;
+    }
   }
   .ans-boxes {
     font-size: 6.2pt;
@@ -1017,8 +1081,10 @@ async function compileQuizBookletHtml() {
       <div class="q-block">
         <div class="q-header">
           <div class="q-prompt-wrap">
-            <span class="q-num">${currentNum}.</span>
-            ${pipBadge}
+            <div class="q-num-box">
+              <span class="q-num">${currentNum}.</span>
+              <span class="q-pips">${pipBadge}</span>
+            </div>
             <span class="q-prompt">${item.q}</span>
           </div>
           <span class="q-mastery">Att 1: [ ] &bull; Att 2: [ ]</span>
@@ -1028,7 +1094,7 @@ async function compileQuizBookletHtml() {
           <span class="q-solid-line"></span>
         </div>
         <div class="q-line-row">
-          <span class="q-line-lbl">Detail / Why:</span>
+          <span class="q-line-lbl">Detail:</span>
           <span class="q-solid-line"></span>
         </div>
       </div>`;
@@ -1049,12 +1115,8 @@ async function compileQuizBookletHtml() {
   // ==========================================================================
   html += `
   <div class="a5-page page-flex-full">
-    <div class="page-header-strip">
-      <div>
-        <h2>Department Marking Bank • Lessons 1–3</h2>
-        <p>Self & Peer Assessment • Review with green pen: tick correct facts and annotate missed historical details.</p>
-      </div>
-      <span class="page-tag">Mark Scheme Q1–Q24</span>
+    <div class="page-header-strip page-header-compact">
+      <h2>Department Marking Bank &bull; Lessons 1–3 (Q1–Q24)</h2>
     </div>
 
     <div class="mb-container">
@@ -1063,10 +1125,12 @@ async function compileQuizBookletHtml() {
         .map(
           (item, i) => `
       <div class="ans-card">
-        <span class="ans-num">${i + 1}.</span>
-        ${getPipBadge(i)}
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 1}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
         <div class="ans-content">
-          <span class="ans-core">${item.a}</span> —
+          <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
         <span class="ans-boxes">[✓] [✗]</span>
@@ -1079,10 +1143,12 @@ async function compileQuizBookletHtml() {
         .map(
           (item, i) => `
       <div class="ans-card">
-        <span class="ans-num">${i + 9}.</span>
-        ${getPipBadge(i)}
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 9}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
         <div class="ans-content">
-          <span class="ans-core">${item.a}</span> —
+          <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
         <span class="ans-boxes">[✓] [✗]</span>
@@ -1095,10 +1161,12 @@ async function compileQuizBookletHtml() {
         .map(
           (item, i) => `
       <div class="ans-card">
-        <span class="ans-num">${i + 17}.</span>
-        ${getPipBadge(i)}
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 17}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
         <div class="ans-content">
-          <span class="ans-core">${item.a}</span> —
+          <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
         <span class="ans-boxes">[✓] [✗]</span>
@@ -1119,12 +1187,8 @@ async function compileQuizBookletHtml() {
   // ==========================================================================
   html += `
   <div class="a5-page page-flex-full">
-    <div class="page-header-strip">
-      <div>
-        <h2>Department Marking Bank • Lessons 4–5 & Summative Review</h2>
-        <p>Self & Peer Assessment • Review with green pen: tick correct facts and annotate missed historical details.</p>
-      </div>
-      <span class="page-tag">Mark Scheme Q25–Q40</span>
+    <div class="page-header-strip page-header-compact">
+      <h2>Department Marking Bank &bull; Lessons 4–5 & Summative Review (Q25–Q40)</h2>
     </div>
 
     <div class="mb-container">
@@ -1133,10 +1197,12 @@ async function compileQuizBookletHtml() {
         .map(
           (item, i) => `
       <div class="ans-card">
-        <span class="ans-num">${i + 25}.</span>
-        ${getPipBadge(i)}
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 25}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
         <div class="ans-content">
-          <span class="ans-core">${item.a}</span> —
+          <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
         <span class="ans-boxes">[✓] [✗]</span>
@@ -1149,10 +1215,12 @@ async function compileQuizBookletHtml() {
         .map(
           (item, i) => `
       <div class="ans-card">
-        <span class="ans-num">${i + 33}.</span>
-        ${getPipBadge(i)}
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 33}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
         <div class="ans-content">
-          <span class="ans-core">${item.a}</span> —
+          <span class="ans-core">${item.a}</span> &mdash;
           <span class="ans-exp">${item.exp}</span>
         </div>
         <span class="ans-boxes">[✓] [✗]</span>
