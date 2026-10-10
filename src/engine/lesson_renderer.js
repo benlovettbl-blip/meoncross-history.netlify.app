@@ -2770,10 +2770,29 @@ export function renderLesson(lesson) {
   if (existingFloatingBtn) existingFloatingBtn.remove();
 
   const resolvedHeroImage = getAssetUrl(heroImage);
-  const heroCaption =
-    typeof lesson.banner === 'object' && lesson.banner?.caption
-      ? `<span class="lesson-hero-caption" style="position: absolute; bottom: 8px; right: 24px; font-size: 0.72rem; color: rgba(241, 245, 249, 0.75); text-shadow: 0 1px 3px rgba(0,0,0,0.8); font-style: italic; pointer-events: none; max-width: 480px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${lesson.banner.caption}</span>`
-      : '';
+
+  // Contextual Gallery Launcher Button on Hero Banner (No explanatory caption text, clean launcher button)
+  let bannerGalleryBtn = '';
+  if (resolvedHeroImage) {
+    const bannerCaption =
+      typeof lesson.banner === 'object' && lesson.banner ? lesson.banner.caption || '' : '';
+    const isArtwork =
+      typeof lesson.banner === 'object' && lesson.banner && lesson.banner.is_artwork !== undefined
+        ? lesson.banner.is_artwork
+        : !/(map|chart|document|newspaper|photograph|diagram|statute|census|record|treaty)/i.test(
+            bannerCaption + ' ' + (lesson.title || ''),
+          );
+    const btnLabel = isArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
+    const btnIcon = isArtwork ? 'fa-palette' : 'fa-scroll';
+    const actionType = isArtwork ? 'open-masterpiece' : 'open-source-spotlight';
+
+    bannerGalleryBtn = `
+      <button class="btn-banner-gallery" data-action="${actionType}" data-banner-lesson="${lesson.id}" style="position: absolute; bottom: 16px; right: 4rem; z-index: 10;" title="Launch ${btnLabel}">
+        <i class="fa-solid ${btnIcon}" style="color: ${isArtwork ? '#fbbf24' : '#60a5fa'}; font-size: 0.9rem;"></i>
+        <span>${btnLabel}</span>
+      </button>
+    `;
+  }
 
   // Full-Bleed Hero Image (Calibrated 140px Compact Height for Smartboards)
   html += `
@@ -2783,7 +2802,7 @@ export function renderLesson(lesson) {
           <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem;">${lessonPrefix}</span>
           <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin: 0.2rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">${lesson.title}</h2>
         </div>
-        ${heroCaption}
+        ${bannerGalleryBtn}
       </div>
     `;
 
@@ -2973,6 +2992,16 @@ export function renderLesson(lesson) {
         }
         const citationText = source.citation || source.provenance || '';
 
+        const isSourceArtwork =
+          source.is_artwork !== undefined
+            ? source.is_artwork
+            : /(painting|portrait|mural|masterpiece|oil on|fresco|canvas)/i.test(
+                displayTitle + ' ' + (source.caption || ''),
+              );
+        const sourceBtnLabel = isSourceArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
+        const sourceIcon = isSourceArtwork ? 'fa-palette' : 'fa-scroll';
+        const sourceAction = isSourceArtwork ? 'open-masterpiece' : 'open-source-spotlight';
+
         htmlSources1 += `
           <details class="cme-source-drawer eee-source-drawer archival-drawer gcse-source-container archival-source-box" ${cardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
             <summary style="padding: 12px 18px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f1f5f9; color: #0f172a; list-style: none; user-select: none; transition: background 0.2s ease;">
@@ -2990,10 +3019,16 @@ export function renderLesson(lesson) {
                   ? `
                 <div class="archival-source-split-layout">
                   <div class="archival-source-media-col">
-                    <img src="${sourceImgUrl}" alt="${displayTitle}" data-action="open-modal" data-src="${sourceImgUrl}" style="cursor: zoom-in;">
-                    <div class="archival-source-inspect-badge">
-                      <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                    <div style="position: relative; width: 100%;">
+                      <img src="${sourceImgUrl}" alt="${displayTitle}" data-action="open-modal" data-src="${sourceImgUrl}" style="cursor: zoom-in; width: 100%; display: block; border-radius: 6px;">
+                      <div class="archival-source-inspect-badge">
+                        <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                      </div>
                     </div>
+                    <button class="btn-source-spotlight-launch" data-action="${sourceAction}" data-lesson-id="${lesson.id}" data-source-index="${sIdx}" title="Launch ${sourceBtnLabel}">
+                      <i class="fa-solid ${sourceIcon}" style="color: ${isSourceArtwork ? '#fbbf24' : '#60a5fa'};"></i>
+                      <span>${sourceBtnLabel}</span>
+                    </button>
                   </div>
                   <div class="archival-source-details-col">
                     <div>
@@ -5145,13 +5180,29 @@ export function renderLesson(lesson) {
           `;
         } else {
           const rawSourceImgUrl = getAssetUrl(rawImgSrc);
+          const isExamSrcArtwork =
+            rawSource.is_artwork !== undefined
+              ? rawSource.is_artwork
+              : /(painting|portrait|mural|masterpiece|oil on|fresco|canvas)/i.test(
+                  (sourceTitle || '') + ' ' + (rawSource.caption || ''),
+                );
+          const examBtnLabel = isExamSrcArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
+          const examIcon = isExamSrcArtwork ? 'fa-palette' : 'fa-scroll';
+          const examAction = isExamSrcArtwork ? 'open-masterpiece' : 'open-source-spotlight';
+
           sourceBodyHtml = `
             <div class="archival-source-split-layout">
               <div class="archival-source-media-col">
-                <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" ${rawSource.default_zoom || rawSource.defaultZoom || (rawSourceImgUrl && rawSourceImgUrl.includes('vesalius_fabrica_frontispiece')) ? `data-default-zoom="${rawSource.default_zoom || rawSource.defaultZoom || '2x'}"` : ''} style="cursor: zoom-in;">
-                <div class="archival-source-inspect-badge">
-                  <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                <div style="position: relative; width: 100%;">
+                  <img src="${rawSourceImgUrl}" alt="${sourceTitle || 'Source'}" data-action="open-modal" data-src="${rawSourceImgUrl}" ${rawSource.default_zoom || rawSource.defaultZoom || (rawSourceImgUrl && rawSourceImgUrl.includes('vesalius_fabrica_frontispiece')) ? `data-default-zoom="${rawSource.default_zoom || rawSource.defaultZoom || '2x'}"` : ''} style="cursor: zoom-in; width: 100%; display: block; border-radius: 6px;">
+                  <div class="archival-source-inspect-badge">
+                    <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
+                  </div>
                 </div>
+                <button class="btn-source-spotlight-launch" data-action="${examAction}" data-src="${rawSourceImgUrl}" data-title="${sourceTitle || 'Historical Source'}" data-caption="${rawSource.caption || ''}" title="Launch ${examBtnLabel}">
+                  <i class="fa-solid ${examIcon}" style="color: ${isExamSrcArtwork ? '#fbbf24' : '#60a5fa'};"></i>
+                  <span>${examBtnLabel}</span>
+                </button>
                 ${
                   window.currentUnitId === 'cme_new' ||
                   window.currentUnitId === 'gcse_middle_east_1945_1995'

@@ -781,4 +781,529 @@ export const MASTERPIECES_DATA = [
         'The scarlet emblem is the Red Cross of the prestigious Order of Santiago. Velázquez was not knighted into the order until November 1659—three years after the painting was completed! According to Palomino, after the artist’s death in 1660, King Philip IV was so proud of his court painter that he ordered the royal red cross to be posthumously added to Velázquez’s chest!',
     },
   },
+  {
+    id: 'family_of_henry_viii_c1545',
+    weekTitle: 'Masterpiece Archive · Tudor Supremacy',
+    title: 'The Family of Henry VIII: An Allegory of the Tudor Succession',
+    artist: 'English School (Follower of Hans Holbein the Younger)',
+    artistDates: 'c. 1545',
+    date: 'c. 1545',
+    medium: 'Oil on canvas (originally oak panel)',
+    location: 'Royal Collection Trust / Hampton Court Palace, London',
+    dimensions: '141 cm × 355 cm',
+    image: '/images/family_of_henry_viii_c1545.jpg',
+    curatorBadge: 'Masterpiece Studio · Tudor Court Propaganda',
+    curatorHook:
+      'A monumental dynastic statement of Royal Supremacy. King Henry VIII sits enthroned under the Tudor canopy of state, flanked by his deceased third wife Jane Seymour and his legitimate Protestant heir Prince Edward, asserting the unchallengeable legitimacy of the Tudor succession.',
+    thematicLinks: [
+      'Henry VIII & The Break with Rome (1534)',
+      'Royal Supremacy & Dynastic Succession',
+      'The English Reformation & Protestant Legitimacy',
+    ],
+    artistBio: {
+      headline: 'The Court Painters of the Tudor Royal Household',
+      summary:
+        'Commissioned in the final years of Henry VIII’s reign by artists in the royal workshop following the death of Hans Holbein the Younger. The composition unites living and deceased royals in an idealized architectural palace to broadcast dynastic stability.',
+      fastFacts: [
+        'Depicts Henry VIII alongside Jane Seymour eight years after her death in childbirth in 1537.',
+        'Prince Edward stands at his father’s right hand, receiving the symbolic transfer of supreme regal power.',
+        'Court jester Will Somers stands in the far-right arcade, balancing official majesty with Tudor court intimacy.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the composition from left to right. Note the central throne, the royal carpet, the heirs, and the two figures in the background archways. Who occupies the positions of highest honour?',
+        teacherHint:
+          'Direct pupils to notice Prince Edward standing on the elevated dais at Henry’s right, while Mary and Elizabeth stand at the outer wings.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Henry VIII was married to Katherine Parr in 1545. Why did he order his deceased third wife, Jane Seymour, to be painted sitting beside him instead?',
+        teacherHint:
+          'Help students connect Jane Seymour directly to Prince Edward as the sole mother of Henry’s surviving legitimate male heir.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was this monumental painting created as an intimate family portrait, or as an aggressive political manifesto asserting the unchallengeable legitimacy of the Protestant Tudor line?',
+        teacherHint:
+          'Take a fast show of hands before highlighting that every architectural column and embroidered cushion was calculated statecraft.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Look closely at the queen seated to Henry’s left: Why is Queen Jane Seymour depicted alive and seated beside Henry in 1545, when she actually died in 1537?',
+      reveal:
+        'Henry VIII was married to his sixth wife, Katherine Parr, in 1545! But Jane Seymour was deliberately painted into this official portrait because she was the only queen who gave Henry a living legitimate male heir (Edward VI). Her presence posthumously validated Edward’s divine and dynastic right to inherit the Crowned Supremacy.',
+    },
+  },
+  {
+    id: 'cranach_martin_luther_1529',
+    weekTitle: 'Masterpiece Archive · The Reformation',
+    title: 'Portrait of Martin Luther',
+    artist: 'Lucas Cranach the Elder',
+    artistDates: '1472–1553',
+    date: '1529',
+    medium: 'Oil on beechwood panel',
+    location: 'Germanisches Nationalmuseum, Nuremberg / Uffizi, Florence',
+    dimensions: '38.3 cm × 24 cm',
+    image: '/images/martin_luther_portrait.jpg',
+    curatorBadge: 'Masterpiece Studio · Protestant Iconography',
+    curatorHook:
+      'Lucas Cranach’s definitive portrait of the reformer. Clothed in sober academic black wool rather than papal vestments, Luther fixes the viewer with intense, penetrating eyes, clutching his vernacular German Bible.',
+    thematicLinks: [
+      'The Protestant Reformation & 95 Theses (1517)',
+      'Vernacular Scripture vs Papal Authority',
+      'The Visual Culture of Protestant Reform',
+    ],
+    artistBio: {
+      headline: 'The Artist of the German Reformation',
+      summary:
+        'Court painter to the Electors of Saxony at Wittenberg and close personal friend of Martin Luther. Cranach ran an innovative workshop that produced woodcuts, broadsheets, and portraits that spread Protestant doctrine across Europe.',
+      fastFacts: [
+        'Served as mayor of Wittenberg and was godfather to Martin Luther’s first son, Johannes.',
+        'Developed the visual iconography of the Reformation, emphasizing Scripture, personal faith, and academic dignity.',
+        'Pioneered rapid woodcut printing techniques to counter Catholic counter-reformation imagery.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Examine Luther’s face, hair, and collar. How does Cranach use simple black cloth and a bright blue-green background to force your focus onto Luther’s eyes and intense expression?',
+        teacherHint:
+          'Point out the absence of gold halos or ecclesiastical jewels; the authority is intellectual and moral.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Contrast this restrained, sober portrait with Catholic depictions of the Pope draped in gold brocade and jewels. What ideological message was Cranach sending to German Christians?',
+        teacherHint:
+          'Encourage students to connect the simple academic gown to the Lutheran doctrine of "sola scriptura" (by Scripture alone).',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Does Cranach present Luther as a dangerous rebel overturning social order, or as a holy scholar restoring pure, uncorrupted Christian faith?',
+        teacherHint:
+          'Note how Cranach’s portrait was specifically designed to reassure moderate rulers that Lutheranism was sober, scholarly, and respectable.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Look closely at Luther’s clothing: Why did Cranach depict him in a clean secular academic doctor’s gown rather than the hooded cowl of the Augustinian monk he originally was?',
+      reveal:
+        'By 1529, Luther had renounced his monastic vows and married former nun Katharina von Bora. Cranach deliberately stripped away Catholic monastic robes to present Luther not as an outcast heretic monk, but as a distinguished University Professor of Wittenberg whose authority derived from rigorous academic scholarship and Scripture alone.',
+    },
+  },
+  {
+    id: 'peake_elizabeth_procession_1601',
+    weekTitle: 'Masterpiece Archive · Elizabethan Cult',
+    title: 'The Procession Portrait of Queen Elizabeth I',
+    artist: 'Robert Peake the Elder (attributed)',
+    artistDates: 'c. 1551–1619',
+    date: 'c. 1601',
+    medium: 'Oil on canvas',
+    location: 'Sherborne Castle / Private Collection',
+    dimensions: '132 cm × 198 cm',
+    image: '/images/elizabeth_procession_1601.jpg',
+    curatorBadge: 'Masterpiece Studio · Elizabethan Court Culture',
+    curatorHook:
+      'A dazzling spectacle of royal power and courtier devotion. An aging Elizabeth I is carried in triumph through London on a canopied litter by her most illustrious Knights of the Garter, projecting eternal youth and majesty.',
+    thematicLinks: [
+      'The Cult of Gloriana & The Virgin Queen',
+      'Patronage, Court Factions & The Garter Knights',
+      'The Elizabethan Religious Settlement & Sovereign Legitimacy',
+    ],
+    artistBio: {
+      headline: 'Serjeant Painter to King James I and Chronicler of Late Tudor Pageantry',
+      summary:
+        'One of the foremost English painters of the late Elizabethan and Jacobean eras. Peake mastered the ceremonial court portraiture that transformed political pageantry into permanent imperial myth.',
+      fastFacts: [
+        'Appointed Serjeant Painter jointly with John de Critz in 1607.',
+        'Specialised in detailed group portraits celebrating aristocratic chivalric ceremonies and royal progresses.',
+        'Captured the intricate lace, jewels, and heraldic collars that defined elite English Renaissance fashion.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Look at how the Queen is being transported: Count how many noblemen are carrying her litter. Examine the white dress of Elizabeth and the dark cloaks of her courtiers.',
+        teacherHint:
+          'Direct pupils to notice that the Queen sits on an elevated throne, appearing luminous in pure white surrounded by dark-clad courtiers.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: In 1601, Elizabeth was 67 years old, frail, and had lost most of her hair and teeth. Why does the painting depict her with unblemished pale skin and vibrant golden-red hair?',
+        teacherHint:
+          'Discuss the "Mask of Youth"—official royal regulations prohibited artists from painting the Queen as aging or frail.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was this public procession portrait designed to demonstrate the genuine personal popularity of Elizabeth, or to conceal dangerous political factionalism and anxiety over the royal succession?',
+        teacherHint:
+          'Remind pupils that the Essex Rebellion erupted in 1601, making projections of united court loyalty urgently necessary.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Look at the noblemen marching in front of the litter: What ceremonial badges are they wearing around their necks, and who leads the procession holding the white staff of office?',
+      reveal:
+        'The courtiers wear the George and Garter collars of the Order of the Garter. Leading the procession is the Lord Chamberlain holding his white staff of office. Behind the litter walk the Queen’s Ladies of the Bedchamber, demonstrating that access to Elizabeth’s physical person was the most prized source of political power in Tudor England.',
+    },
+  },
+  {
+    id: 'gower_armada_portrait_1588',
+    weekTitle: 'Masterpiece Archive · The Armada Triumph',
+    title: 'The Armada Portrait of Queen Elizabeth I',
+    artist: 'Attributed to George Gower (Serjeant Painter to the Queen)',
+    artistDates: 'c. 1540–1596',
+    date: 'c. 1588',
+    medium: 'Oil on oak panel',
+    location: 'National Maritime Museum, Greenwich / Woburn Abbey Collection',
+    dimensions: '112.5 cm × 127 cm',
+    image: '/images/armada_portrait.jpg',
+    curatorBadge: 'Masterpiece Studio · Imperial Propaganda',
+    curatorHook:
+      'The supreme icon of English Renaissance statecraft. Painted following the 1588 defeat of the Spanish Armada, Elizabeth rests her fingers upon the Americas on a terrestrial globe, flanked by windows showing the burning Spanish fleet and the Protestant Wind.',
+    thematicLinks: [
+      'The Spanish Armada & Naval Power (1588)',
+      'The Protestant Wind & Providential Deliverance',
+      'The Expansion of English Global Empire',
+    ],
+    artistBio: {
+      headline: 'Serjeant Painter to Queen Elizabeth I',
+      summary:
+        'Appointed Queen’s Serjeant Painter in 1581, Gower was responsible for the inspection, regulation, and licensing of all royal portraits to ensure the Queen’s public image remained pristine and commanding.',
+      fastFacts: [
+        'Attempted to establish an official Crown monopoly over all portraits of the Queen to suppress unflattering likenesses.',
+        'Grandson of Sir John Gower of Stittenham, Yorkshire; self-taught gentleman artist who defended painting as a liberal art.',
+        'Died in London in 1596 and was buried in the church of St Clement Danes.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the painting: Count how many pearls you can see pinned to Elizabeth’s hair and dress. Where are her right fingers resting, and what sits on the table behind the globe?',
+        teacherHint:
+          'Encourage pupils to notice the pearls of purity, the imperial crown on the table, and her fingers claiming North America.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Look through the two windows behind Elizabeth. What contrasting moments of the Armada campaign are depicted simultaneously on the left and right?',
+        teacherHint:
+          'Left window: English fleet advancing under calm skies. Right window: Spanish Armada wrecked on rocky coasts in stormy darkness.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was the Armada Portrait primarily celebrating a military naval victory, or was it an ideological proclamation that Elizabeth was God’s chosen empress destined to rule a global Protestant empire?',
+        teacherHint:
+          'Direct attention to the terrestrial globe and imperial closed crown, which signified dominion beyond national borders.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Why does Elizabeth’s right hand rest directly over Virginia and North America on the terrestrial globe?',
+      reveal:
+        'In the 1580s, Walter Raleigh had named the first English colony in North America "Virginia" in honour of Elizabeth, the Virgin Queen. Placing her hand over the Americas was a bold imperial challenge to Catholic Spain’s monopoly over the New World, asserting that Protestant England was now a global maritime empire.',
+    },
+  },
+  {
+    id: 'loutherbourg_gravelines_1588',
+    weekTitle: 'Masterpiece Archive · Naval Climax',
+    title: 'The Defeat of the Spanish Armada (The Battle of Gravelines, 8 August 1588)',
+    artist: 'Philip James de Loutherbourg',
+    artistDates: '1740–1812',
+    date: '1796',
+    medium: 'Oil on canvas',
+    location: 'National Maritime Museum, Greenwich, London',
+    dimensions: '152.4 cm × 214.6 cm',
+    image: '/images/battle_of_gravelines_1588.jpg',
+    curatorBadge: 'Masterpiece Studio · Climax of the Armada',
+    curatorHook:
+      'A sensory masterpiece of naval combat. English race-built galleons under Drake and Howard shatter the Spanish crescent formation at Gravelines amidst roaring fireships, dense gunsmoke, and turbulent Channel seas.',
+    thematicLinks: [
+      'Naval Warfare: Culverins & Stand-Off Gunnery',
+      'Drake’s Fireships at Calais & The Battle of Gravelines',
+      'Spanish Logistical Vulnerabilities & Strategic Errors',
+    ],
+    artistBio: {
+      headline: 'Pioneer of Romantic Battle Painting and Theatrical Illusion',
+      summary:
+        'Born in Strasbourg and elected to the Royal Academy in London, Loutherbourg revolutionised historical maritime painting with dynamic theatrical lighting, atmospheric smoke, and visceral psychological intensity.',
+      fastFacts: [
+        'Designed revolutionary stage sets and lighting machinery for David Garrick at Drury Lane Theatre.',
+        'Invented the *Eidophusikon*, a mechanical miniature theatre using moving canvas panoramas and sound effects.',
+        'Commissioned by British publishers to commemorate great naval triumphs of the Tudor and Georgian eras.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the swirling smoke and churning water. Spot the fireships blazing in the distance, the splintering masts, and the sailors struggling in the waves. Which ship appears sleek and agile compared to the towering carracks?',
+        teacherHint:
+          'Point to the lower-profile English galleon delivering rapid broadsides from close range.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: How does Loutherbourg use dramatic light and shadow (*chiaroscuro*) to make England’s victory appear heroic and divinely aided?',
+        teacherHint:
+          'Encourage students to look at the golden light breaking through the storm clouds onto the English flag while dark doom engulfs the Spanish.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Does the painting attribute the Armada’s defeat to English artillery tactics, or to the uncontrollable elemental fury of the stormy seas?',
+        teacherHint:
+          'Have students debate the balance between Hawkins’s race-built culverins and the "Protestant Wind" tempest.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Compare the shape and waterline of the English ship in the foreground with the Spanish vessels: How did English naval architecture transform warfare at sea?',
+      reveal:
+        'English shipwrights cut down the towering fore- and aft-castles, creating low, race-built galleons that could sail closer to the wind and maneuver rapidly. Fitted with heavy culverins on four-wheeled truck carriages that could be quickly reloaded inside the gun deck, the English fought a revolutionary artillery battle at standoff distance, neutralizing Spain’s deadly boarding tactics.',
+    },
+  },
+  {
+    id: 'execution_charles_i_1649',
+    weekTitle: 'Source Spotlight · The Regicide',
+    title: 'The Execution of King Charles I outside the Banqueting House, Whitehall',
+    artist: 'Contemporary European News Printmaker (German / Dutch School)',
+    artistDates: 'c. 1649',
+    date: '30 January 1649',
+    medium: 'Engraving and broadside woodcut on paper',
+    location: 'British Museum Department of Prints and Drawings, London',
+    dimensions: '31 cm × 38 cm',
+    image: '/images/charles_i_execution.jpg',
+    curatorBadge: 'Source Spotlight · Contemporary Regicide Broadside',
+    curatorHook:
+      'A rare contemporary visual record of the most shocking event in English constitutional history: the public beheading of an anointed monarch outside his own palace. Double ranks of Parliamentary cavalry cordon off the scaffold from the stunned London crowd.',
+    thematicLinks: [
+      'The English Civil War & Trial of Charles I (1649)',
+      'The Divine Right of Kings vs Parliamentary Sovereignty',
+      'Oliver Cromwell, Pride’s Purge & The Rump Parliament',
+    ],
+    artistBio: {
+      headline: 'The European Broadside Press and the Shock of Regicide',
+      summary:
+        'Produced rapidly by Continental printmakers in Amsterdam and Frankfurt within weeks of the execution to satisfy the intense demand across Europe for news of the unprecedented trial and public execution of an anointed king.',
+      fastFacts: [
+        'Broadside prints were the 17th-century equivalent of breaking news headlines, sold on street corners across Europe.',
+        'Features detailed depictions of the high wooden scaffold draped in black baize outside Inigo Jones’s Banqueting House.',
+        'Captures the profound trauma and constitutional shock felt throughout royalist Europe.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the print carefully: Look at the Banqueting House windows on the left, the high scaffold draped in black, the executioner holding the severed head, and the circle of cavalrymen surrounding the crowd.',
+        teacherHint:
+          'Direct pupils to notice that the crowd is kept at a great distance by rows of mounted soldiers.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Why did Oliver Cromwell and the Army Council ring the scaffold with double ranks of mounted cavalry with drawn swords?',
+        teacherHint:
+          'Explain that the Army feared a sudden royalist riot or rescue attempt, and wanted to prevent the crowd from hearing Charles I’s final scaffold speech.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was the public execution of Charles I an act of high-minded constitutional justice against a tyrant, or an unlawful military coup by a radical Puritan minority?',
+        teacherHint:
+          'Take a fast vote, noting that Pride’s Purge had expelled over 100 moderate MPs who opposed putting the King on trial.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Archival Detective Challenge',
+      riddle:
+        'Look at the building directly behind the scaffold: Why was Charles I led out to his execution through a window of the Banqueting House?',
+      reveal:
+        'Inigo Jones had built the Banqueting House for Charles’s father, James I, and Charles had commissioned Peter Paul Rubens to paint its ceiling celebrating the Divine Right of Kings! Passing through that very hall and out of a second-floor window onto the execution scaffold was the supreme symbolic inversion of absolute monarchy.',
+    },
+  },
+  {
+    id: 'ward_declaration_of_rights_1689',
+    weekTitle: 'Masterpiece Archive · Constitutional Settlement',
+    title: 'William and Mary Receiving the Declaration of Rights (1689)',
+    artist: 'Edward Matthew Ward, R.A.',
+    artistDates: '1816–1879',
+    date: '1858',
+    medium: 'Oil on canvas (Parliamentary Heritage Fresco Study)',
+    location: 'Palace of Westminster, Houses of Parliament, London',
+    dimensions: '122 cm × 183 cm',
+    image: '/images/william_mary_declaration_of_rights_1689.jpg',
+    curatorBadge: 'Masterpiece Studio · Constitutional Settlement',
+    curatorHook:
+      'The birth of British constitutional monarchy. On 13 February 1689, in the Banqueting House at Whitehall, the Lords and Commons present the Declaration of Rights to Prince William and Princess Mary before offering them the Crown.',
+    thematicLinks: [
+      'The Glorious Revolution & Flight of James II (1688)',
+      'The Bill of Rights & Parliamentary Sovereignty (1689)',
+      'The Permanent Limitation of Royal Prerogative',
+    ],
+    artistBio: {
+      headline: 'The Master of Victorian Parliamentary History Painting',
+      summary:
+        'Commissioned in the 1850s to paint a monumental series of historical frescoes for the newly rebuilt Palace of Westminster. Ward specialized in capturing crucial turning points in the development of British parliamentary democracy.',
+      fastFacts: [
+        'Elected to the Royal Academy in 1855; his historical murals line the Central Corridor between the Lords and Commons.',
+        'Conducted exhaustive research into 17th-century parliamentary journals, portraits, and costumes for photographic historical fidelity.',
+        'Depicted both the tragic lows (the execution of Montrose) and triumphant highs (the 1689 Bill of Rights) of the Stuart constitutional struggle.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Compare the two groups of figures: The Parliamentary leaders standing boldly on the left holding documents, and William and Mary seated on the royal dais on the right. Who commands the room?',
+        teacherHint:
+          'Note the Marquess of Halifax reading the manuscript roll while the royal couple listen attentively.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Look at the velvet cushion resting in front of the monarchs. What object is placed upon it, and why is it not yet on William’s head?',
+        teacherHint:
+          'Guide students to see the Crown on the cushion: Parliament demanded acceptance of their constitutional terms before presenting the Crown.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Look closely at the document held in the center and the crown on the cushion. Who is dictating terms to whom in this room?',
+        teacherHint:
+          'Take a fast show of hands: Parliament is dictating terms to the monarch, permanently reversing Henry VIII’s and Charles I’s Royal Supremacy.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'What historic irony links the location of this ceremony (the Banqueting House) to the execution of Charles I forty years earlier?',
+      reveal:
+        'The Declaration of Rights was presented in the Banqueting House at Whitehall—the exact same building outside whose windows Charles I was beheaded in 1649 for claiming absolute Divine Right! Forty years later, William and Mary sat under the very same ceiling, but now legally bound by Parliament never again to suspend laws or tax without consent.',
+    },
+  },
 ];

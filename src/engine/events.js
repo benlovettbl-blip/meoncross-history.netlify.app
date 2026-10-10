@@ -750,11 +750,57 @@ export function initEventDelegation() {
         if (window.launchSubApp) window.launchSubApp(target.dataset.unit);
         break;
 
-      case 'launch-masterpiece-projector':
+      case 'open-masterpiece':
+      case 'open-source-spotlight':
+      case 'launch-masterpiece-projector': {
         if (typeof window.openMasterpieceProjector === 'function') {
-          window.openMasterpieceProjector();
+          const lessonId = target.dataset.lessonId || target.dataset.bannerLesson;
+          const sourceIdx = target.dataset.sourceIndex;
+          const isBanner =
+            target.classList.contains('btn-banner-gallery') || !!target.dataset.bannerLesson;
+
+          const activeLesson =
+            window.currentActiveLesson ||
+            (window.db && window.currentUnitId && lessonId
+              ? (window.db[window.currentUnitId]?.data?.lessons || []).find(
+                  (l) => l.id === lessonId,
+                )
+              : null);
+
+          if (isBanner && activeLesson) {
+            window.openMasterpieceProjector({
+              type: 'banner',
+              lesson: activeLesson,
+              unitId: activeLesson.unitId || window.currentUnitId,
+            });
+          } else if (
+            sourceIdx !== undefined &&
+            activeLesson &&
+            activeLesson.sources &&
+            activeLesson.sources[parseInt(sourceIdx, 10)]
+          ) {
+            window.openMasterpieceProjector({
+              type: 'source',
+              source: activeLesson.sources[parseInt(sourceIdx, 10)],
+              sourceIndex: parseInt(sourceIdx, 10),
+              lesson: activeLesson,
+              unitId: activeLesson.unitId || window.currentUnitId,
+            });
+          } else if (target.dataset.src) {
+            window.openMasterpieceProjector({
+              image: target.dataset.src,
+              title: target.dataset.title || 'Historical Source',
+              caption: target.dataset.caption || '',
+              lesson: activeLesson,
+            });
+          } else if (target.dataset.sourceId) {
+            window.openMasterpieceProjector(target.dataset.sourceId);
+          } else {
+            window.openMasterpieceProjector();
+          }
         }
         break;
+      }
 
       case 'open-masterpiece-studio':
         if (typeof window.switchView === 'function') {

@@ -23,6 +23,7 @@ export const studioState = {
   magnifierActive: false,
   spotterActive: false,
   spotterPins: [], // Array of { id, x, y } in percentages (0-100)
+  activeCustomItem: null,
 };
 
 // Initialize from localStorage if present
@@ -36,6 +37,157 @@ try {
     studioState.isMuted = savedMuted === 'true';
   }
 } catch (e) {}
+
+/**
+ * Retrieve the currently active artwork or dynamic primary source
+ */
+export function getActiveMasterpiece() {
+  if (studioState.activeCustomItem) return studioState.activeCustomItem;
+  return MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
+}
+
+/**
+ * Universal dynamic studio item builder:
+ * Synthesizes a museum-grade primary source enquiry entry from ANY lesson source or banner
+ */
+export function buildDynamicStudioItem(payload) {
+  if (!payload) return MASTERPIECES_DATA[0];
+
+  const source = payload.source || (payload.type === 'source' ? payload.source : null);
+  const lesson =
+    payload.lesson || (typeof window !== 'undefined' ? window.currentActiveLesson : null);
+  const isBanner = payload.isBanner || payload.type === 'banner';
+
+  const rawTitle =
+    (source && source.title) ||
+    (isBanner && lesson && `${lesson.title} · Banner Artwork`) ||
+    payload.title ||
+    'Historical Primary Source';
+  const cleanTitle = rawTitle.replace(/^Source\s+[A-Z]:\s*/i, '').trim();
+
+  const image =
+    (source && (source.image || source.url || source.src)) ||
+    (isBanner &&
+      lesson &&
+      lesson.banner &&
+      (typeof lesson.banner === 'string'
+        ? lesson.banner
+        : lesson.banner.image || lesson.banner.url)) ||
+    payload.image ||
+    '';
+
+  const caption =
+    (source && source.caption) ||
+    (isBanner && lesson && typeof lesson.banner === 'object' && lesson.banner.caption) ||
+    payload.caption ||
+    '';
+  const context = (source && source.source_context) || (lesson && lesson.enquiry) || '';
+  const hinge =
+    (source && source.hinge_question) ||
+    (lesson && lesson.enquiry) ||
+    'What does this primary source reveal about historical power and intent?';
+  const citation =
+    (source && source.citation) || payload.citation || 'Archival & Museum Heritage Collection';
+
+  const isArtwork =
+    payload.isArtwork !== undefined
+      ? payload.isArtwork
+      : !/(map|chart|document|newspaper|photograph|diagram|statute|census|record|treaty)/i.test(
+          cleanTitle + ' ' + caption,
+        );
+
+  let artist = 'Contemporary Artist / Chronicler';
+  let date = 'Contemporary Primary Record';
+  const dateMatch = (rawTitle + ' ' + caption).match(/\((c\.\s*)?(\d{4}[–-]?\d{0,4})\)/);
+  if (dateMatch) {
+    date = dateMatch[0].replace(/[()]/g, '');
+  }
+  const byMatch = rawTitle.match(/([A-Z][a-z]+(?:\s+[A-Z][a-z]+)+)(?:,\s*|\s+by\s+)/);
+  if (byMatch) {
+    artist = byMatch[1];
+  }
+
+  const id =
+    'dynamic_' +
+    (image
+      ? image
+          .split('/')
+          .pop()
+          .replace(/[^a-zA-Z0-9]/g, '_')
+      : Date.now());
+
+  return {
+    id,
+    weekTitle: isArtwork
+      ? 'Masterpiece Studio · Visual Culture'
+      : 'Source Spotlight · Archival Evidence',
+    title: cleanTitle,
+    artist: artist,
+    artistDates: date,
+    date: date,
+    medium: isArtwork ? 'Oil on panel / canvas' : 'Contemporary archival document / print',
+    location: citation,
+    dimensions: 'Primary Source Archive',
+    image: image,
+    isArtwork: isArtwork,
+    curatorBadge: isArtwork
+      ? 'Masterpiece Studio · Primary Visual Art'
+      : 'Source Spotlight · Contemporary Primary Record',
+    curatorHook:
+      caption ||
+      context ||
+      'High-resolution primary source record calibrated for classroom enquiry and evidence analysis.',
+    thematicLinks: lesson
+      ? [lesson.title, lesson.subtitle || 'Primary Source Evidence']
+      : ['GCSE Primary Source Analysis'],
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question: `Scan the entire source carefully: What key figures, symbols, setting details, or actions immediately stand out? ${caption ? 'Notice: ' + caption : ''}`,
+        teacherHint:
+          'Instruct pupils to observe in complete silence, noting physical details, lighting, clothing, and expressions.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question: `Turn to your partner: Why was this source created at this specific historical moment? ${context ? 'Context: ' + context : ''}`,
+        teacherHint:
+          'Encourage students to consider the author, audience, and motive behind the source.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question: hinge.replace(/^Hinge Question:\s*/i, 'Hinge Question: '),
+        teacherHint:
+          'Take a fast show of hands or mini-whiteboard response before leading whole-class debrief.',
+      },
+    ],
+    detectiveRiddle: {
+      title: isArtwork ? 'The Curator’s Detective Challenge' : 'The Archival Detective Challenge',
+      riddle:
+        (source && source.how_useful_question) ||
+        `How does this source provide crucial evidence for understanding ${lesson ? lesson.title : 'this historical period'}?`,
+      reveal:
+        (source && source.provenance_clues && source.provenance_clues.join(' ')) ||
+        context ||
+        caption ||
+        'Primary evidence from the historical record.',
+    },
+  };
+}
 
 /**
  * Play authentic synthesized transition soundscapes using Web Audio API
@@ -263,6 +415,7 @@ export function selectMasterpiece(id) {
   const item = MASTERPIECES_DATA.find((m) => m.id === id);
   if (!item) return;
   studioState.currentId = id;
+  studioState.activeCustomItem = null;
   studioState.riddleRevealed = false;
   studioState.atelierOpen = false;
   studioState.spotterPins = []; // Reset markers for new artwork
@@ -576,7 +729,45 @@ export function toggleTheaterFocus() {
 /**
  * Open Fullscreen Whiteboard Projector Mode
  */
-export function openProjectorMode() {
+export function openProjectorMode(targetItemOrId) {
+  if (targetItemOrId) {
+    if (typeof targetItemOrId === 'string') {
+      const match = MASTERPIECES_DATA.find(
+        (m) => m.id === targetItemOrId || m.image === targetItemOrId,
+      );
+      if (match) {
+        studioState.currentId = match.id;
+        studioState.activeCustomItem = null;
+      }
+    } else if (typeof targetItemOrId === 'object') {
+      const img =
+        targetItemOrId.image ||
+        (targetItemOrId.source &&
+          (targetItemOrId.source.image ||
+            targetItemOrId.source.url ||
+            targetItemOrId.source.src)) ||
+        (targetItemOrId.lesson &&
+          targetItemOrId.lesson.banner &&
+          (typeof targetItemOrId.lesson.banner === 'string'
+            ? targetItemOrId.lesson.banner
+            : targetItemOrId.lesson.banner.image));
+      const match = MASTERPIECES_DATA.find(
+        (m) => (targetItemOrId.id && m.id === targetItemOrId.id) || (img && m.image === img),
+      );
+      if (match) {
+        studioState.currentId = match.id;
+        studioState.activeCustomItem = null;
+      } else {
+        const dynamicItem = buildDynamicStudioItem(targetItemOrId);
+        studioState.currentId = dynamicItem.id;
+        studioState.activeCustomItem = dynamicItem;
+        if (!MASTERPIECES_DATA.some((m) => m.id === dynamicItem.id)) {
+          MASTERPIECES_DATA.push(dynamicItem);
+        }
+      }
+    }
+  }
+
   studioState.projectorMode = true;
   studioState.theaterFocus = false;
   studioState.magnifierActive = false;
@@ -673,64 +864,106 @@ export function closeProjectorMode() {
  * Positioned on the top right, directly above the countdown timer
  */
 export function getArtistSpotlightCardHtml(item, isProjector = false) {
-  if (!item || !item.artistBio) return '';
+  if (!item) return '';
 
-  const factsHtml = (item.artistBio.fastFacts || [])
-    .map(
-      (fact) => `
-      <div style="display: flex; align-items: flex-start; gap: 7px; font-size: 0.77rem; color: #cbd5e1; line-height: 1.35;">
-        <span style="color: #f59e0b; margin-top: 2px; font-size: 0.65rem; flex-shrink: 0;"><i class="fa-solid fa-chevron-right"></i></span>
-        <span>${fact.replace(/\*(.*?)\*/g, '<strong style="color: #fde68a;">$1</strong>')}</span>
-      </div>
-    `,
-    )
-    .join('');
+  const isArtwork =
+    item.isArtwork !== false &&
+    (!item.curatorBadge || !item.curatorBadge.includes('Source Spotlight'));
+  const headerIcon = isArtwork ? 'fa-palette' : 'fa-scroll';
+  const headerTitle = isArtwork ? 'Artist Spotlight' : 'Archival Provenance & Context';
+  const datesBadge = item.artistDates || item.date || 'Historical Primary Record';
+
+  let factsHtml = '';
+  if (item.artistBio && Array.isArray(item.artistBio.fastFacts)) {
+    factsHtml = item.artistBio.fastFacts
+      .map(
+        (fact) => `
+        <div style="display: flex; align-items: flex-start; gap: 7px; font-size: 0.77rem; color: #cbd5e1; line-height: 1.35;">
+          <span style="color: #f59e0b; margin-top: 2px; font-size: 0.65rem; flex-shrink: 0;"><i class="fa-solid fa-chevron-right"></i></span>
+          <span>${fact.replace(/\*(.*?)\*/g, '<strong style="color: #fde68a;">$1</strong>')}</span>
+        </div>
+      `,
+      )
+      .join('');
+  } else if (item.thematicLinks && Array.isArray(item.thematicLinks)) {
+    factsHtml = item.thematicLinks
+      .map(
+        (theme) => `
+        <div style="display: flex; align-items: flex-start; gap: 7px; font-size: 0.77rem; color: #cbd5e1; line-height: 1.35;">
+          <span style="color: #60a5fa; margin-top: 2px; font-size: 0.65rem; flex-shrink: 0;"><i class="fa-solid fa-tag"></i></span>
+          <span>${theme}</span>
+        </div>
+      `,
+      )
+      .join('');
+  }
+
+  const portraitHtml = item.artistPortrait
+    ? `<img src="${item.artistPortrait}" alt="${item.artist || 'Artist'}" style="width: 52px; height: 62px; object-fit: cover; border-radius: 8px; border: 1.5px solid rgba(245, 158, 11, 0.5); box-shadow: 0 4px 10px rgba(0,0,0,0.4); display: block;" />`
+    : `<div style="width: 52px; height: 62px; border-radius: 8px; border: 1.5px solid rgba(245, 158, 11, 0.5); background: rgba(245, 158, 11, 0.15); color: #f59e0b; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;"><i class="fa-solid ${headerIcon}"></i></div>`;
+
+  const headline =
+    (item.artistBio && item.artistBio.headline) ||
+    item.curatorBadge ||
+    'Primary Visual Source Evidence';
+  const summary =
+    (item.artistBio && item.artistBio.summary) ||
+    item.curatorHook ||
+    (item.location
+      ? `Preserved in the collections of: ${item.location}`
+      : 'Historical primary source record.');
 
   return `
-    <!-- Artist Spotlight Card (Above Timer) -->
+    <!-- Artist Spotlight / Archival Provenance Card (Above Timer) -->
     <div class="masterpiece-artist-spotlight" style="background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border: 1.5px solid rgba(245, 158, 11, 0.4); border-radius: 14px; padding: 14px 16px; color: #f8fafc; box-shadow: 0 4px 18px rgba(15, 23, 42, 0.35); position: relative; overflow: hidden; flex-shrink: 0;">
       
-      <!-- Subtle Ambient Gold Glow -->
+      <!-- Subtle Ambient Glow -->
       <div style="position: absolute; top: -20px; right: -20px; width: 80px; height: 80px; background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
 
-      <!-- Header: Category & Artist Dates Badge -->
+      <!-- Header: Category & Dates Badge -->
       <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 8px; flex-wrap: wrap;">
-        <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: #f59e0b; display: flex; align-items: center; gap: 6px;">
-          <i class="fa-solid fa-palette"></i> Artist Spotlight
+        <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; color: ${isArtwork ? '#f59e0b' : '#60a5fa'}; display: flex; align-items: center; gap: 6px;">
+          <i class="fa-solid ${headerIcon}"></i> ${headerTitle}
         </span>
         <span style="background: rgba(245, 158, 11, 0.15); color: #fde68a; border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: 9999px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.03em;">
-          ${item.artistDates}
+          ${datesBadge}
         </span>
       </div>
 
       <!-- Main Profile: Portrait + Identity + Summary Blurb -->
       <div style="display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px;">
         <div style="position: relative; flex-shrink: 0;">
-          <img src="${item.artistPortrait}" alt="${item.artist}" style="width: 52px; height: 62px; object-fit: cover; border-radius: 8px; border: 1.5px solid rgba(245, 158, 11, 0.5); box-shadow: 0 4px 10px rgba(0,0,0,0.4); display: block;" />
-          <span style="position: absolute; bottom: -3px; right: -3px; background: #0f172a; color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.6); font-size: 0.58rem; padding: 1px 4px; border-radius: 3px;" title="Historical Portrait">
-            <i class="fa-solid fa-paintbrush"></i>
+          ${portraitHtml}
+          <span style="position: absolute; bottom: -3px; right: -3px; background: #0f172a; color: ${isArtwork ? '#f59e0b' : '#60a5fa'}; border: 1px solid rgba(245, 158, 11, 0.6); font-size: 0.58rem; padding: 1px 4px; border-radius: 3px;" title="Historical Visual">
+            <i class="fa-solid ${headerIcon}"></i>
           </span>
         </div>
         <div style="flex: 1; min-width: 0;">
           <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; font-weight: 700; color: #ffffff; line-height: 1.25; margin-bottom: 2px;">
-            ${item.artist}
+            ${item.artist || item.title}
           </div>
           <div style="font-size: 0.75rem; font-weight: 700; color: #fcd34d; margin-bottom: 5px; line-height: 1.3;">
-            ${item.artistBio.headline}
+            ${headline}
           </div>
           <p style="font-size: 0.8rem; color: #cbd5e1; line-height: 1.42; margin: 0;">
-            ${item.artistBio.summary}
+            ${summary}
           </p>
         </div>
       </div>
 
-      <!-- Fascinating Fast Facts Strip -->
+      ${
+        factsHtml
+          ? `
+      <!-- Fascinating Fast Facts / Thematic Strip -->
       <div style="background: rgba(15, 23, 42, 0.65); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 8px 10px; display: flex; flex-direction: column; gap: 5px;">
         <div style="font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; color: #94a3b8; display: flex; align-items: center; gap: 5px;">
-          <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> Fascinating Artist Facts
+          <i class="fa-solid fa-lightbulb" style="color: #f59e0b;"></i> ${isArtwork ? 'Fascinating Artist Facts' : 'Curatorial Context'}
         </div>
         ${factsHtml}
       </div>
+      `
+          : ''
+      }
 
     </div>
   `;
@@ -740,11 +973,15 @@ export function getArtistSpotlightCardHtml(item, isProjector = false) {
  * Generate Inner HTML for Projector Mode
  */
 function getProjectorModalInnerHtml() {
-  const item =
-    MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
+  const item = getActiveMasterpiece();
   const timeFormatted = formatTime(studioState.timerSeconds);
   const activePhase = getActivePhase(studioState.timerSeconds, studioState.timerDuration);
   const isFs = typeof document !== 'undefined' && !!document.fullscreenElement;
+  const isArtwork =
+    item.isArtwork !== false &&
+    (!item.curatorBadge || !item.curatorBadge.includes('Source Spotlight'));
+  const headerIcon = isArtwork ? 'fa-palette' : 'fa-scroll';
+  const headerBadge = isArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
 
   return `
     <div style="display: flex; flex-direction: column; width: 100%; height: 100%; max-width: 1600px; margin: 0 auto; padding: 20px 24px; box-sizing: border-box; color: #f8fafc; font-family: 'Outfit', sans-serif;">
@@ -752,20 +989,20 @@ function getProjectorModalInnerHtml() {
       <!-- Projector Top Header Bar -->
       <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1.5px solid rgba(255,255,255,0.12); padding-bottom: 14px; margin-bottom: 18px; flex-shrink: 0; flex-wrap: wrap; gap: 12px;">
         <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="background: rgba(245, 158, 11, 0.2); border: 1.5px solid #f59e0b; color: #fbbf24; padding: 6px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase;">
-            <i class="fa-solid fa-chalkboard-user"></i> Whiteboard Projector
+          <div style="background: rgba(245, 158, 11, 0.2); border: 1.5px solid ${isArtwork ? '#f59e0b' : '#3b82f6'}; color: ${isArtwork ? '#fbbf24' : '#93c5fd'}; padding: 6px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 7px;">
+            <i class="fa-solid ${headerIcon}"></i> ${headerBadge}
           </div>
           <div>
             <h1 style="margin: 0; font-size: 1.35rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">${item.title}</h1>
             <div style="font-size: 0.84rem; color: #94a3b8; font-weight: 500;">
-              ${item.artist} (${item.artistDates}) · ${item.date} · ${item.location}
+              ${item.artist ? `${item.artist} · ` : ''}${item.date || ''} · ${item.location || ''}
             </div>
           </div>
         </div>
 
         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
           <select id="projector-artwork-select" style="background: #1e293b; color: #f8fafc; border: 1px solid #475569; padding: 7px 12px; border-radius: 8px; font-weight: 600; font-size: 0.84rem; cursor: pointer;">
-            ${MASTERPIECES_DATA.map((m) => `<option value="${m.id}" ${m.id === item.id ? 'selected' : ''}>${m.artist}: ${m.title.split('(')[0]}</option>`).join('')}
+            ${MASTERPIECES_DATA.map((m) => `<option value="${m.id}" ${m.id === item.id ? 'selected' : ''}>${m.artist ? m.artist + ': ' : ''}${m.title.split('(')[0]}</option>`).join('')}
           </select>
           
           <button id="projector-fullscreen-btn" style="background: rgba(59, 130, 246, 0.2); border: 1.5px solid #3b82f6; color: #93c5fd; padding: 7px 14px; border-radius: 8px; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 6px; font-size: 0.84rem;" title="Toggle Fullscreen (F11)">
@@ -936,8 +1173,7 @@ function getProjectorModalInnerHtml() {
  * Attach Event Listeners to Projector Mode
  */
 function attachProjectorEvents() {
-  const item =
-    MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
+  const item = getActiveMasterpiece();
 
   const closeBtn = document.getElementById('projector-close-btn');
   if (closeBtn) closeBtn.onclick = closeProjectorMode;
@@ -1057,8 +1293,7 @@ function attachProjectorEvents() {
  * Generate Compact 72px Historical Art of the Week Strip HTML for the Homepage Dashboard
  */
 export function getMasterpieceStarterStripHtml() {
-  const item =
-    MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
+  const item = getActiveMasterpiece();
 
   const cleanTitle = item.title.split('(')[0].trim();
   const hookText = item.curatorHook
@@ -1153,8 +1388,7 @@ export function attachStarterStripEvents(container) {
  * Generate Masterpiece Archive Tray HTML
  */
 export function getMasterpieceArchiveTrayHtml() {
-  const currentItem =
-    MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
+  const currentItem = getActiveMasterpiece();
 
   return `
     <div style="margin-top: 32px; background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 16px; padding: 22px 24px; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
@@ -1220,8 +1454,7 @@ export function getMasterpieceArchiveTrayHtml() {
  * Generate Main Studio HTML for Embedding in Dashboard / Dedicated View
  */
 export function getMasterpieceStudioHtml() {
-  const item =
-    MASTERPIECES_DATA.find((m) => m.id === studioState.currentId) || MASTERPIECES_DATA[0];
+  const item = getActiveMasterpiece();
   const timeFormatted = formatTime(studioState.timerSeconds);
   const activePhase = getActivePhase(studioState.timerSeconds, studioState.timerDuration);
 
