@@ -1107,78 +1107,37 @@ const dualRetrievalBank = [
   },
 ];
 
-// Helper to render a 12-question Dual-Retrieval Page (Pages 14 & 15 of 16-page workbook)
-function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, quip) {
-  // 3 enquiry sections with 4 questions each
-  const groups = [
-    { title: questions[0].enquiryTitle, qs: questions.slice(0, 4) },
-    { title: questions[4].enquiryTitle, qs: questions.slice(4, 8) },
-    { title: questions[8].enquiryTitle, qs: questions.slice(8, 12) },
-  ];
+// Helper to render a dedicated Lined Notes Page with margin (Pages 14 & 15 of 16-page workbook)
+function renderNotesPage(pageNum, quip) {
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
 
-  const renderCard = (q) => `
-    <div style="border: 1px solid #000000; border-radius: 2.5px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; padding: 2.5px 5.5px; box-sizing: border-box; flex: 1;">
-      <!-- Question Prompt Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; line-height: 1.18;">
-          ${q.num}. ${q.stem}
-        </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 0.8px solid #000000; padding: 0.5px 3.5px; border-radius: 2px; white-space: nowrap; margin-left: 4px;">
-          2m
-        </span>
-      </div>
-      <!-- Answer Line -->
-      <div style="display: flex; align-items: flex-end; border-bottom: 1px solid #000000; height: 6.8mm; box-sizing: border-box; padding-bottom: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; margin-right: 5px; white-space: nowrap;">
-          Ans:
-        </span>
-        <div style="flex: 1;"></div>
-      </div>
-      <!-- Explanation Line -->
-      <div style="display: flex; align-items: flex-end; border-bottom: 1px solid #000000; height: 6.8mm; box-sizing: border-box; padding-bottom: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; margin-right: 5px; white-space: nowrap;">
-          Expl:
-        </span>
-        <div style="flex: 1;"></div>
-      </div>
-    </div>`;
-
-  const renderSection = (grp) => `
-    <div style="border: 1.2px solid #000000; border-radius: 3.5px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-      <div style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; justify-content: space-between; align-items: center;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.3px;">
-          ${grp.title}
-        </strong>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 5px; border-radius: 2px;">
-          Score: [ &nbsp;&nbsp; / 8 ]
-        </span>
-      </div>
-      <div style="padding: 2.5px 4px; flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 6px; min-height: 0;">
-        ${grp.qs.map(renderCard).join('')}
-      </div>
-    </div>`;
+  // 32 ruled lines for standard ~8mm pitch filling the page perfectly
+  const numLines = 32;
+  let linesHtml = '';
+  for (let i = 0; i < numLines; i++) {
+    linesHtml += `          <div class="note-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>\n`;
+  }
 
   return `
-  <!-- PAGE ${pageNum}: DUAL-RETRIEVAL PRACTICE BANK -->
-  <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+  <!-- PAGE ${pageNum}: NOTES PAGE -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2.5px; margin-bottom: 3.5px;">
-        <div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
-            ${title}
-          </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #444444; font-weight: 600;">
-            ${subtitle}
-          </div>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${tariff}
-        </span>
+      <!-- Notes Header -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 13pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Notes
+        </h2>
       </div>
 
-      <!-- 3 Enquiry Sections with 2x2 Question Cards each -->
-      <div style="display: flex; flex-direction: column; gap: 3.5px; flex: 1; justify-content: space-between; min-height: 0;">
-        ${groups.map(renderSection).join('')}
+      <!-- Ruled Lined Canvas with Left Margin (Exercise Book Standard) -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #000000; margin-bottom: 4px;">
+        <!-- Vertical Margin Line (26mm from left edge of lines) -->
+        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #000000; z-index: 2;"></div>
+        
+        <!-- Ruled Horizontal Lines (Standard 8mm school pitch, flex-filled) -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+${linesHtml}        </div>
       </div>
 
       ${renderFooterStrip(pageNum, quip, 16)}
@@ -2354,26 +2313,15 @@ function compileMonarchyWorkbook() {
   html += renderRightPage(enquiryConfigs[4], 13);
 
   // ====================================================================
-  // PAGES 14–15: DUAL-RETRIEVAL PRACTICE BANK (24 QUESTIONS TOTAL • 48 MARKS)
-  // Page 14 (Verso): Enquiries 1–3 (Questions 1–12) [24 marks]
-  // Page 15 (Recto): Enquiries 4–5 & Synoptic Turning Points (Questions 13–24) [24 marks]
+  // PAGES 14–15: DEDICATED LINED NOTES PAGES (EXERCISE BOOK RULING WITH MARGIN)
   // ====================================================================
-  html += renderDualRetrievalPage(
+  html += renderNotesPage(
     14,
-    'Dual-Retrieval Practice Bank &bull; Part 1: Enquiries 1–3',
-    'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
-    '[24 MARKS &bull; 12 QUESTIONS]',
-    dualRetrievalBank.slice(0, 12),
-    'Dual-Retrieval Rule: A fact without an explanation is like a sword without a blade—you need both to score full marks.',
+    'Notes: Record key causal links, essay plans, and teacher feedback for this unit.',
   );
-
-  html += renderDualRetrievalPage(
+  html += renderNotesPage(
     15,
-    'Dual-Retrieval Practice Bank &bull; Part 2: Enquiries 4–5 &amp; Synoptic Turning Points',
-    'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
-    '[24 MARKS &bull; 12 QUESTIONS]',
-    dualRetrievalBank.slice(12, 24),
-    'In 1649, Parliament proved kings could be beheaded; in 1689, they proved paperwork and statutory law were far more permanent.',
+    'Notes: Record key causal links, essay plans, and teacher feedback for this unit.',
   );
 
   // ====================================================================
@@ -2429,7 +2377,7 @@ function compileMonarchyWorkbook() {
           <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
-                Emerging Plus (3)
+                Emerging+ (3)
               </div>
               Identifies reasons for events; begins to describe causes of religious changes and civil conflict with structured paragraphs.
             </div>
@@ -2451,7 +2399,7 @@ function compileMonarchyWorkbook() {
           <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
-                Expected Plus (6–7)
+                Expected+ (6–7)
               </div>
               Analyses causal significance; evaluates competing historical interpretations and weighs counter-arguments with detailed evidence.
             </div>
@@ -2543,8 +2491,8 @@ function compileMonarchyWorkbook() {
             <tr style="border-bottom: 1px solid #000000; background: #fafafa;">
               <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Synoptic Dual Retrieval: 24-Question Mastery Bank</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Pages 14–15 Dual Retrieval (Fact + Causal Explanation)</div>
+                <div style="font-weight: 900; font-size: 8.5pt;">Independent Study &amp; Notes Portfolio</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Pages 14–15 Enquiry Notes, Reflection &amp; Revision Tasks</div>
               </td>
               <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
                 &nbsp;
