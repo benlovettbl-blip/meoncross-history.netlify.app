@@ -1,0 +1,2117 @@
+const fs = require('fs');
+const path = require('path');
+const QRCode = require('qrcode');
+const puppeteer = require('puppeteer');
+
+const ROOT_DIR = path.resolve(__dirname, '..');
+
+function getBase64Image(relPath) {
+  if (!relPath) return null;
+  const clean = relPath.replace(/^\//, '');
+  const candidates = [
+    path.join(ROOT_DIR, 'public', clean),
+    path.join(ROOT_DIR, clean),
+    path.join(ROOT_DIR, 'public', 'images', path.basename(clean)),
+    path.join(ROOT_DIR, 'images', path.basename(clean)),
+  ];
+
+  for (const cand of candidates) {
+    if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+      const ext = path.extname(cand).toLowerCase();
+      let mime = 'image/jpeg';
+      if (ext === '.png') mime = 'image/png';
+      else if (ext === '.webp') mime = 'image/webp';
+      else if (ext === '.svg') mime = 'image/svg+xml';
+      const buf = fs.readFileSync(cand);
+      return `data:${mime};base64,${buf.toString('base64')}`;
+    }
+  }
+  return null;
+}
+
+function generateQrSvg(url) {
+  const qr = QRCode.create(url, { margin: 1 });
+  const size = qr.modules.size;
+  const data = qr.modules.data;
+  let pathD = '';
+  for (let r = 0; r < size; r++) {
+    for (let c = 0; c < size; c++) {
+      if (data[r * size + c]) {
+        pathD += `M${c},${r}h1v1h-1z `;
+      }
+    }
+  }
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
+}
+
+// ============================================================================
+// 5 Dedicated Industrialisation, Empire & Power Enquiry Configurations
+// Christine Counsell 5-Enquiry 16-Page Architecture
+// ============================================================================
+const enquiryConfigs = [
+  {
+    lessonNum: 1,
+    id: 'lesson_1',
+    title: 'Enquiry 1: The Iron & Steam Revolution: Henry Cort & Funtley Works',
+    enquiryQuestion:
+      'How did Henry Cort’s breakthrough at Funtley Ironworks transform Britain into an industrial and naval superpower?',
+    specAnchor:
+      'Energy transition from wood and charcoal to coal; James Watt’s rotary steam engine (1769–1781); Henry Cort at Funtley Ironworks, Fareham (1775–1784); puddling furnace & grooved rolling mill; Admiralty naval trials at Portsmouth Royal Dockyard (1787); ending dependence on Baltic Orgrounds iron.',
+    stages: [
+      {
+        step: 1,
+        date: '1750–1770',
+        questionHeading:
+          'Why was Britain’s early iron industry crippled by charcoal and timber shortages?',
+        bullets: ['Charcoal Shortage', 'Brittle Pig Iron', 'Baltic Orgrounds Import'],
+        focusClue:
+          'Why was Britain forced to import expensive wrought iron from Sweden and Russia for Royal Navy warships?',
+      },
+      {
+        step: 2,
+        date: '1769–1781',
+        questionHeading:
+          'How did James Watt’s rotary steam engine revolutionize heavy industrial power?',
+        bullets: ['Separate Condenser', 'Rotary Motion', 'Liberated from Rivers'],
+        focusClue:
+          'How did Watt’s steam engine enable continuous, heavy mechanical manufacturing far from seasonal river valleys?',
+      },
+      {
+        step: 3,
+        date: '1775–1784',
+        questionHeading:
+          'How did Henry Cort’s puddling furnace at Funtley chemically refine molten iron?',
+        bullets: ['Funtley on River Meon', 'Reverberatory Furnace', 'Stirred with Iron Rods'],
+        focusClue:
+          'How did keeping pig iron separate from burning coal prevent sulfur contamination and burn away brittle impurities?',
+      },
+      {
+        step: 4,
+        date: '1783–1784',
+        questionHeading:
+          'Why were Cort’s patented grooved rollers fifteen times faster than traditional trip hammers?',
+        bullets: ['Grooved Iron Rollers', '15x Faster than Hammers', 'Standardised Naval Bars'],
+        focusClue:
+          'Why did squeezing spongy iron blooms between heavy grooved rollers produce tougher, standardized naval iron?',
+      },
+      {
+        step: 5,
+        date: '1787',
+        questionHeading:
+          'How did the Portsmouth Dockyard naval trials confirm Cort’s triumph for the Royal Navy?',
+        bullets: ['Portsmouth Navy Board', 'Anchors & Mast Hoops', 'Naval Self-Sufficiency'],
+        focusClue:
+          'Why did Admiralty master smiths declare Funtley iron superior to the finest Swedish imports for His Majesty’s Fleet?',
+      },
+    ],
+    vocabPrompt:
+      'Define <strong>Wrought Iron</strong> and explain why Cort’s puddling process at Funtley was vital for Royal Navy warships:',
+    rightPage: {
+      type: 'split',
+      partA: {
+        tariff: 'Question 1: Give Two Inferences [4 marks &bull; 5 mins]',
+        question:
+          'Give two inferences from Source A (Admiralty Navy Board Report, Portsmouth Dockyard, 1787) about Henry Cort’s iron manufactured at Funtley. [4 marks]',
+        hint: 'Examine the findings of Admiralty smiths regarding the toughness of Funtley iron compared to Swedish Orgrounds iron and its suitability for Royal Navy warships.',
+        stems:
+          'One inference I can make is that... &bull; The evidence that supports this is... &bull; A second inference is that... &bull; This is shown by...',
+      },
+      partB: {
+        tariff: 'Question 2: Explain One Causal Factor [4 marks &bull; 5 mins]',
+        question:
+          'Explain one factor that caused Henry Cort to achieve his metallurgical breakthrough at Funtley Ironworks in Hampshire. [4 marks]',
+        hint: 'Focus on either the urgent naval demand from nearby Portsmouth Royal Dockyard or Cort’s innovative chemical combination of the reverberatory puddling furnace with grooved rollers.',
+        stems:
+          'One decisive factor was... &bull; Specifically, Cort established his works at Funtley because... &bull; This resulted in his metallurgical breakthrough because... &bull; Therefore, without this factor...',
+        connectives:
+          'A primary factor was... &bull; For example, during his experiments at Funtley... &bull; Consequently, this impacted iron production because... &bull; Therefore, this proved decisive because...',
+        wordBank:
+          'Henry Cort &bull; Funtley Ironworks &bull; River Meon &bull; puddling furnace &bull; grooved rollers &bull; wrought iron &bull; Portsmouth Dockyard &bull; Royal Navy',
+      },
+      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
+      timelineMission:
+        '<strong>Milestone 1 (Funtley Puddling Furnace &bull; 1784):</strong> Sketch ironworkers at Funtley stirring molten iron in Cort’s reverberatory furnace beside the River Meon [🔥 reverberatory furnace &bull; 🥢 puddling rod &bull; 🌊 River Meon waterwheel].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (Portsmouth Dockyard Naval Trials &bull; 1787):</strong> Sketch Admiralty master smiths testing tough Funtley wrought iron anchors and mast hoops for the Royal Navy [⚓ heavy naval anchor &bull; 🔨 blacksmith anvil &bull; ⛵ warship at dockyard].',
+    },
+    leftPageQuip:
+      'Fareham ironmaster Henry Cort produced the tough wrought iron that built the Royal Navy’s fighting ships right here along the River Meon.',
+    rightPageQuip:
+      'Without Henry Cort’s Funtley ironworks, Britain would have had no iron warships, no railway revolution, and no industrial supremacy.',
+  },
+  {
+    lessonNum: 2,
+    id: 'lesson_2',
+    title: 'Enquiry 2: The Dark Satanic Mills: Child Labour, Slums & Public Health',
+    enquiryQuestion:
+      'Was industrialisation a triumph of human progress or a catastrophe of urban suffering for the working class?',
+    specAnchor:
+      'Factory system; factory clock & fines; child labour in textile mills & coal mines; 1832 Sadler Committee; Matthew Crabtree testimony; rapid urban growth & back-to-back housing; cholera epidemics (1831–1854); Edwin Chadwick’s 1842 Report; 1858 Great Stink & Joseph Bazalgette’s London sewer network.',
+    stages: [
+      {
+        step: 1,
+        date: '1780–1820',
+        questionHeading:
+          'How did the factory clock and machine discipline destroy traditional working rhythms?',
+        bullets: ['Factory Bell & Clock', 'Fines for Lateness', 'Loom Accidents & Dust'],
+        focusClue:
+          'Why did industrial mill owners enforce rigid 14-hour working shifts under constant threat of wage deductions?',
+      },
+      {
+        step: 2,
+        date: '1832',
+        questionHeading:
+          'What shocking abuses of child labour were exposed by the parliamentary Sadler Committee?',
+        bullets: ['Michael Sadler MP', 'Matthew Crabtree Testimony', 'Scavengers & Piecers'],
+        focusClue:
+          'How did 22-year-old former child worker Matthew Crabtree expose beatings, stunted growth, and exhaustion in Yorkshire mills?',
+      },
+      {
+        step: 3,
+        date: '1800–1840',
+        questionHeading:
+          'How did explosive urban growth create deadly back-to-back slums and cellar dwellings?',
+        bullets: ['Back-to-Back Terraces', 'Cesspools & Dungheaps', 'Overcrowded Cellars'],
+        focusClue:
+          'Why did cities like Manchester and Leeds grow tenfold without clean water pipes, drainage, or sewage disposal?',
+      },
+      {
+        step: 4,
+        date: '1831–1842',
+        questionHeading:
+          'Why did devastating cholera epidemics shatter the laissez-faire belief in minimal government?',
+        bullets: ['King Cholera Strikes', 'Edwin Chadwick 1842', 'Miasma vs Contagion'],
+        focusClue:
+          'How did Chadwick’s 1842 Sanitary Report prove that filth in working-class slums generated disease that threatened all classes?',
+      },
+      {
+        step: 5,
+        date: '1858–1865',
+        questionHeading:
+          'How did the 1858 Great Stink force Parliament to construct modern underground sewers?',
+        bullets: [
+          'The Great Stink 1858',
+          'Thames Stench in Commons',
+          'Bazalgette Interceptor Sewers',
+        ],
+        focusClue:
+          'Why did Victorian MPs ignore cholera for thirty years until the suffocating stench of the River Thames invaded the Commons chamber?',
+      },
+    ],
+    vocabPrompt:
+      'Define <strong>Laissez-faire</strong> and explain why early Victorian governments were reluctant to regulate factories or slums:',
+    rightPage: {
+      type: 'split',
+      partA: {
+        tariff: 'Question 2(b): 4-Prompt Forensic Source Follow-Up [4 marks &bull; 5 mins]',
+        question:
+          'How could you follow up Source B (Matthew Crabtree’s testimony to the Sadler Committee, 1832) to find out more about child labour in textile mills? [4 marks]',
+        hint: 'Use the 4 Edexcel prompts: Detail in Source B &bull; Question I would ask &bull; Type of source I would use &bull; How this would help me find out more.',
+        stems:
+          'Detail in Source B that I would follow up: ... &bull; Question I would ask: ... &bull; What type of source I would use: ... &bull; How this would help me find out more: ...',
+      },
+      partB: {
+        tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
+        question:
+          'Explain one consequence of the 1858 Great Stink for public health in Victorian London. [4 marks]',
+        hint: 'Focus on how the intolerable stench of the River Thames forced Parliament to fund Joseph Bazalgette’s monumental 1,100-mile underground interceptor sewer network.',
+        stems:
+          'One consequence was that... &bull; Specifically, this meant that... &bull; This affected public health because... &bull; As a result, waterborne disease...',
+        connectives:
+          'A significant consequence was... &bull; For instance, Parliament immediately passed legislation to... &bull; This directly led to... &bull; Consequently, the impact on sanitation was...',
+        wordBank:
+          'Great Stink (1858) &bull; River Thames &bull; Joseph Bazalgette &bull; interceptor sewers &bull; cholera &bull; Edwin Chadwick &bull; public health',
+      },
+      timelineMissionTitle: 'Centrefold Sketch Challenge 3',
+      timelineMission:
+        '<strong>Milestone 3 (The Sadler Committee on Child Labour &bull; 1832):</strong> Sketch young piecers crawling beneath spinning mules while parliamentary commissioners record child testimonies [🧵 textile spinning mule &bull; 👶 child piecer crawling &bull; 📋 parliamentary report ledger].',
+    },
+    leftPageQuip:
+      'During the 1832 cholera epidemic, life expectancy for labourers in industrial Manchester dropped to just 19 years.',
+    rightPageQuip:
+      'Sir Joseph Bazalgette’s 82 miles of underground brick interceptor sewers permanently banished waterborne cholera from London.',
+  },
+  {
+    lessonNum: 3,
+    id: 'lesson_3',
+    title: 'Enquiry 3: Blood, Machines & Ballots: The Hampshire Swing Riots to Chartism',
+    enquiryQuestion:
+      'Why did British workers turn to machine-breaking and mass petitions to demand a political voice?',
+    specAnchor:
+      'Post-Napoleonic distress; Peterloo Massacre (1819); Six Acts; 1830 Hampshire Swing Riots (Meon Valley, Selborne, Headley, Fareham); threshing machine destruction; Winchester Special Assizes trials & penal transportation; 1832 Great Reform Act; 1834 Tolpuddle Martyrs; 1838 People’s Charter; Moral vs Physical Force Chartism; 1839 Newport Rising.',
+    stages: [
+      {
+        step: 1,
+        date: '1819',
+        questionHeading: 'Why did the Peterloo Massacre ignite widespread working-class outrage?',
+        bullets: ['St Peter’s Field', 'Sabres Drawn on Crowd', '18 Dead & 600 Injured'],
+        focusClue:
+          'Why did magistrates order cavalry to charge a peaceful meeting of 60,000 cotton workers calling for parliamentary reform?',
+      },
+      {
+        step: 2,
+        date: 'Nov 1830',
+        questionHeading:
+          'How did the "Captain Swing" riots sweep through Hampshire and the Meon Valley?',
+        bullets: [
+          'Threshing Machines Smashed',
+          'Selborne & Headley Workhouses',
+          'Threatening "Swing" Letters',
+        ],
+        focusClue:
+          'Why did starving agricultural labourers target threshing machines that stole their winter wages across Hampshire villages?',
+      },
+      {
+        step: 3,
+        date: 'Dec 1830',
+        questionHeading:
+          'How ruthlessly did the state punish Hampshire rioters at the Winchester Assizes?',
+        bullets: [
+          'Special Assizes Winchester',
+          '300 Prisoners Tried',
+          '101 Transported to Australia',
+        ],
+        focusClue:
+          'Why did the government use death sentences and penal transportation to Australia to terrorize agricultural workers?',
+      },
+      {
+        step: 4,
+        date: '1832',
+        questionHeading:
+          'Why did the Great Reform Act leave working-class reformers bitterly betrayed?',
+        bullets: ['Rotten Boroughs Cut', '£10 Property Franchise', 'Working Class Excluded'],
+        focusClue:
+          'How did the 1832 Reform Act enfranchise the industrial middle class while leaving 80% of working men without a vote?',
+      },
+      {
+        step: 5,
+        date: '1838–1839',
+        questionHeading: 'How did Chartism unite British workers behind the People’s Charter?',
+        bullets: ['William Lovett & 6 Points', '1.2m Petition Signatures', 'Newport Rising 1839'],
+        focusClue:
+          'Why did Chartists insist that only universal male suffrage and secret ballots could end economic exploitation?',
+      },
+    ],
+    vocabPrompt:
+      'Define <strong>Universal Male Suffrage</strong> and explain why Chartist leaders believed the vote was the ultimate weapon against poverty:',
+    rightPage: {
+      type: 'equal_split',
+      partA: {
+        tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
+        badge: 'PART A &bull; NARRATIVE',
+        question:
+          'Write a narrative account analysing the key events leading from the Peterloo Massacre (1819) and Hampshire Swing Riots (1830) to the publication of the People’s Charter (1838). [8 marks]',
+        stimulus: [
+          'The Hampshire Swing Riots and machine-breaking (1830)',
+          'The 1832 Great Reform Act and exclusion of working men',
+        ],
+        connectives:
+          'The sequence began in 1819 when... &bull; This led to growing agrarian unrest because... &bull; A decisive turning point occurred when... &bull; This directly caused... &bull; Consequently, this culminated in...',
+        wordBank:
+          'Peterloo (1819) &bull; Hampshire Swing Riots (1830) &bull; threshing machines &bull; Winchester Assizes &bull; 1832 Great Reform Act &bull; People’s Charter (1838) &bull; William Lovett',
+      },
+      partB: {
+        tariff: 'Question 3: Explain Importance [8 marks &bull; 10 mins]',
+        badge: 'PART B &bull; IMPORTANCE',
+        question:
+          'Explain the importance of the Hampshire Swing Riots (1830) and the Chartist movement for the growth of working-class democracy in 19th-century Britain. [8 marks]',
+        connectives:
+          'These movements were of vital importance because... &bull; Prior to 1830, working-class grievances had been... &bull; As a result of agitation, political awareness was... &bull; Consequently, the long-term impact on democracy was...',
+        wordBank:
+          'Captain Swing &bull; Meon Valley &bull; machine-breaking &bull; Winchester Assizes &bull; universal male suffrage &bull; secret ballot &bull; working-class solidarity',
+      },
+      timelineMissionTitle: 'Centrefold Sketch Challenges 4 &amp; 5',
+      timelineMission:
+        '<strong>Milestone 4 (The Hampshire Swing Riots &bull; 1830):</strong> Sketch farm labourers with sledgehammers breaking a wooden threshing machine beside a Hampshire barn [🔨 heavy sledgehammer &bull; 🌾 shattered threshing drum &bull; ✉️ threatening "Swing" letter].<br style="display:block; margin-top:2px;"><strong>Milestone 5 (The People’s Charter &bull; 1838):</strong> Sketch William Lovett presenting the six-point People’s Charter petition roll to a crowd of industrial workers [📜 six-point charter petition &bull; 👥 assembled crowd of factory workers &bull; 🗳️ secret ballot box].',
+    },
+    leftPageQuip:
+      'At the 1830 Winchester Assizes, 19-year-old Henry Cook of Micheldever was hanged for striking a magistrate’s hat during the Swing Riots.',
+    rightPageQuip:
+      'Although Parliament rejected all three Chartist petitions, five of the Six Points eventually became British law.',
+  },
+  {
+    lessonNum: 4,
+    id: 'lesson_4',
+    title: 'Enquiry 4: Steam, Steel & Empire: HMS Warrior & The 1857 Indian Rebellion',
+    enquiryQuestion:
+      'How did industrial technology sustain the British Empire, and why did Indian soldiers rebel in 1857?',
+    specAnchor:
+      'British imperial expansion; East India Company corporate rule; doctrine of lapse; 1857 Indian Rebellion (First War of Independence); greased Enfield cartridges; Meerut outbreak; Rani Lakshmibai of Jhansi; 1858 Government of India Act (The British Raj); steam power, telegraph cables & railways; 1860 HMS Warrior at Portsmouth Royal Dockyard.',
+    stages: [
+      {
+        step: 1,
+        date: '1757–1850',
+        questionHeading:
+          'How did the East India Company transform from commercial merchants into imperial rulers?',
+        bullets: [
+          'Private Company Army',
+          'Doctrine of Lapse Annexations',
+          'Heavy Land Tax Demands',
+        ],
+        focusClue:
+          'How did corporate rule through 200,000 Indian sepoys subjugate a subcontinent of 200 million people?',
+      },
+      {
+        step: 2,
+        date: 'May 1857',
+        questionHeading: 'Why did greased cartridges spark the spontaneous rebellion at Meerut?',
+        bullets: ['Enfield Rifle Cartridges', 'Cow & Pig Fat Rumour', 'Meerut Sepoys Mutiny'],
+        focusClue:
+          'Why did Indian soldiers believe the new rifle cartridges were a deliberate British plot to destroy their Hindu and Muslim faiths?',
+      },
+      {
+        step: 3,
+        date: '1857–1858',
+        questionHeading:
+          'How did the rebellion spread and how did Rani of Jhansi resist British forces?',
+        bullets: [
+          'Siege of Delhi & Kanpur',
+          'Rani Lakshmibai of Jhansi',
+          'Heroic Rebel Resistance',
+        ],
+        focusClue:
+          'Why did the 29-year-old Rani of Jhansi ride into battle against British forces after her kingdom was illegally annexed?',
+      },
+      {
+        step: 4,
+        date: '1858',
+        questionHeading:
+          'Why did the rebellion force Parliament to dismantle the East India Company and declare the British Raj?',
+        bullets: [
+          'Company Rule Abolished',
+          'Queen Victoria Proclamation',
+          'Direct Crown Government',
+        ],
+        focusClue:
+          'Why did the British state strip the company of power and promise religious neutrality under direct royal rule?',
+      },
+      {
+        step: 5,
+        date: '1860',
+        questionHeading:
+          'How did HMS Warrior at Portsmouth Dockyard demonstrate unbeatable British naval dominance?',
+        bullets: [
+          'Iron-Hulled Armour (4.5 in)',
+          'Steam Engine & Screws',
+          'Portsmouth Historic Dockyard',
+        ],
+        focusClue:
+          'How did Henry Cort’s wrought iron metallurgy enable Britain to build an invincible warship that secured global empire?',
+      },
+    ],
+    vocabPrompt:
+      'Define <strong>The British Raj</strong> and explain why direct Crown control replaced East India Company rule after 1857:',
+    rightPage: {
+      type: 'interpretations',
+      tariff: 'Question 3(b) & 3(c): Contrasting Interpretations [8 marks &bull; 10 mins]',
+      interpretation1: {
+        author: 'Historian Niall Ferguson, Empire: How Britain Made the Modern World (2003)',
+        text: '“The British Empire was the pioneer of global modernization. By constructing railways, telegraph networks, steamship routes, and establishing common law, Britain brought governance, modern infrastructure, and global trade to a quarter of the world’s population. Without the Pax Britannica, the globalization of free markets and technology would have been delayed by generations.”',
+      },
+      interpretation2: {
+        author: 'Historian Shashi Tharoor, Inglorious Empire: What the British Did to India (2017)',
+        text: '“British rule was not a philanthropic modernization project; it was ruthless economic extraction enforced by military terror. India’s share of the global economy fell from 27% to under 3% under British rule, as indigenous textile weaving was destroyed to serve British cotton mills. The railways were built not to benefit Indians, but to rush British troops to quell rebellions and extract raw commodities to ports.”',
+      },
+      questionB:
+        'Explain how Interpretations 1 and 2 differ on the motives and consequences of the British Empire. [4 marks]',
+      stemsB:
+        'Interpretations 1 and 2 differ on... &bull; Interpretation 1 portrays the British Empire as... &bull; In contrast, Interpretation 2 argues that British rule was...',
+      questionC:
+        'Suggest one reason why Interpretations 1 and 2 differ on British imperial rule. [4 marks]',
+      stemsC:
+        'One reason why Interpretations 1 and 2 differ is because of the authors’ distinct historical perspectives and selection of evidence... &bull; Specifically, the author of Interpretation 1 emphasizes... whereas the author of Interpretation 2 focuses upon... &bull; Consequently, their conclusions differ because...',
+      timelineMissionTitle: 'Centrefold Sketch Challenges 6 &amp; 7',
+      timelineMission:
+        '<strong>Milestone 6 (The 1857 Indian Rebellion at Meerut):</strong> Sketch sepoys breaking open the ammunition depot at Meerut refusing greased rifle cartridges [🔫 Enfield rifle &amp; cartridge &bull; 🚩 sepoy rebel standard &bull; 🏛️ Meerut cantonment gates].<br style="display:block; margin-top:2px;"><strong>Milestone 7 (HMS Warrior at Portsmouth &bull; 1860):</strong> Sketch the black ironclad hull and steam-funnel of HMS Warrior sailing into the Solent off Portsmouth [🚢 iron-hulled warship HMS Warrior &bull; ☁️ steam engine smokestack &bull; 🌊 Solent waves].',
+    },
+    leftPageQuip:
+      'HMS Warrior at Portsmouth was so heavily armoured and fast that no enemy warship in the world ever dared fire a single shot at her.',
+    rightPageQuip:
+      'By 1900, the British Empire encompassed 400 million subjects across five continents, protected by the Royal Navy’s iron fleet.',
+  },
+  {
+    lessonNum: 5,
+    id: 'lesson_5',
+    title: 'Enquiry 5: The Victorian Verdict: Workshop of the World or Age of Exploitation?',
+    enquiryQuestion:
+      'Did the Industrial Revolution bring unprecedented progress or human catastrophe to the British people?',
+    specAnchor:
+      '1851 Great Exhibition at Crystal Palace; Prince Albert & industrial prestige; British railway boom (Brunel & Stephenson); rise of the middle class; enduring poverty & Charles Booth’s London poverty maps (1889); Factory Acts & trade unions; synoptic evaluation of industrial capitalism.',
+    stages: [
+      {
+        step: 1,
+        date: '1851',
+        questionHeading:
+          'How did the 1851 Great Exhibition proclaim Britain "Workshop of the World"?',
+        bullets: ['Crystal Palace Hyde Park', '6 Million Visitors', 'Triumph of Steam & Steel'],
+        focusClue:
+          'How did Joseph Paxton’s revolutionary glass-and-iron palace showcase British technological supremacy to the globe?',
+      },
+      {
+        step: 2,
+        date: '1840–1880',
+        questionHeading: 'How did the railway boom transform British geography, diet, and economy?',
+        bullets: ['Brunel & Stephenson', 'Time Standardized by Rail', 'Fresh Milk to Cities'],
+        focusClue:
+          'How did 20,000 miles of track shrink travel times from days to hours and create a unified national marketplace?',
+      },
+      {
+        step: 3,
+        date: '1850–1890',
+        questionHeading:
+          'How did the Victorian industrial middle class flourish with unprecedented wealth?',
+        bullets: ['Suburban Villas', 'Cheap Consumer Goods', 'Leisure & Seaside Holidays'],
+        focusClue:
+          'Why did factory owners, merchants, and professionals enjoy suburban comfort, domestic servants, and high living standards?',
+      },
+      {
+        step: 4,
+        date: '1889',
+        questionHeading:
+          'What devastating poverty did Charles Booth’s London poverty survey uncover?',
+        bullets: ['Booth’s Colour-Coded Maps', '30% in Chronic Poverty', 'Casual Dock Labour'],
+        focusClue:
+          'Why did Booth’s survey prove that a third of Londoners still lived below the poverty line despite Britain’s massive wealth?',
+      },
+      {
+        step: 5,
+        date: '1850–1901',
+        questionHeading:
+          'What is the historical verdict on the impact of the Industrial Revolution?',
+        bullets: [
+          'Optimists vs Pessimists',
+          'Short-Term Exploitation',
+          'Long-Term Living Standards',
+        ],
+        focusClue:
+          'Did the short-term misery of child labour and slums outweigh the long-term gains of democracy, medicine, and prosperity?',
+      },
+    ],
+    vocabPrompt:
+      'Define <strong>The Standard of Living Debate</strong> and explain why historians disagree on whether industrial workers gained or lost:',
+    rightPage: {
+      type: 'single_12',
+      tariff: 'Question 5: Evaluative Statement Essay [12 marks &bull; 15 mins]',
+      examStem:
+        '‘The Industrial Revolution brought unprecedented progress for the British people.’ How far do you agree? [12 marks]',
+      stimulus: [
+        'The technological breakthroughs and wealth created by steam, iron (Cort at Funtley), and railways',
+        'The suffering caused by child labour, dangerous factory work, and deadly urban slums',
+      ],
+      structureStrip: [
+        {
+          col: '1. INDUSTRIAL PROGRESS & WEALTH',
+          text: 'Explain how steam power, Cort’s Funtley iron, railways, and mechanisation transformed Britain into the ‘Workshop of the World’ with cheap goods.',
+        },
+        {
+          col: '2. HUMAN SUFFERING & EXPLOITATION',
+          text: 'Explain how factory discipline, child labour (Sadler Report), deadly slums, and cholera epidemics devastated working-class health and lives.',
+        },
+        {
+          col: '3. COMPARATIVE VERDICT',
+          text: 'Weigh whether immediate human suffering outweighed long-term societal progress, considering class divisions and government reforms.',
+        },
+      ],
+      connectives:
+        'To some extent I agree that the Industrial Revolution brought unprecedented progress for the British people because... &bull; On the other hand, it can also be argued that industrialisation brought immense suffering because... &bull; Furthermore, long-term developments such as... demonstrate that... &bull; In conclusion, the most significant impact was... because...',
+      wordBank:
+        'Henry Cort &bull; Funtley Ironworks &bull; puddling furnace &bull; steam power &bull; Sadler Committee &bull; back-to-back slums &bull; cholera &bull; Great Exhibition &bull; Charles Booth &bull; Standard of Living debate',
+      timelineMissionTitle: 'Centrefold Sketch Challenge 8',
+      timelineMission:
+        '<strong>Milestone 8 (The Great Exhibition at Crystal Palace &bull; 1851):</strong> Sketch the towering cast-iron and glass arches of the Crystal Palace with Victorian visitors marveling at steam engines [🏛️ glass Crystal Palace transept &bull; ⚙️ giant steam engine flywheel &bull; 🎩 Victorian gentlemen &amp; ladies].',
+    },
+    leftPageQuip:
+      'At the 1851 Great Exhibition, six million people—a third of Britain’s entire population—visited the Crystal Palace in London.',
+    rightPageQuip:
+      'The debate between "Optimist" and "Pessimist" historians over the Industrial Revolution remains one of the fiercest arguments in modern history.',
+  },
+];
+
+// ============================================================================
+// HELPER RENDERERS
+// ============================================================================
+function renderFooterStrip(pageNum, quip, totalPages = 16) {
+  const isEven = pageNum % 2 === 0;
+  if (isEven) {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
+        <span class="footer-quip" style="text-align: right; flex: 1;">${quip}</span>
+      </div>`;
+  } else {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${quip}</span>
+        <span class="footer-page-num">${pageNum}/${totalPages}</span>
+      </div>`;
+  }
+}
+
+// ============================================================================
+// LEFT PAGE RENDERER: 5-STAGE CHRONOLOGICAL INQUIRY SPINE
+// ============================================================================
+function renderSpinePage(cfg, pageNum) {
+  const stagesHtml = cfg.stages
+    .map((st) => {
+      const bulletsHtml = st.bullets
+        .map(
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 2.5px; ${idx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.15;">
+                <span style="font-weight: 900; color: #0f284e; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #0f284e; word-break: break-word;">${b}</span>
+              </div>
+            </div>`,
+        )
+        .join('');
+      return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #0f284e; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #0f284e; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #0f284e;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
+                ${st.step}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #93c5fd; white-space: nowrap;">
+                ${st.date}
+              </span>
+              <span style="color: #60a5fa; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                ${st.questionHeading}
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (25mm) & Right Ruled Writing Lines (~173mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <div style="width: 25mm; flex-shrink: 0; background: #f0f4f9; display: flex; flex-direction: column; border-right: 1.2px solid #0f284e; box-sizing: border-box;">
+              ${bulletsHtml}
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+
+          </div>
+        </div>`;
+    })
+    .join('');
+
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
+
+  return `
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • CHRONOLOGICAL INQUIRY SPINE -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- Lesson Header with Inquiry Question Title -->
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #0f284e; color: #ffffff; border: 1.2px solid #0f284e; padding: 1px 6px; border-radius: 2px;">
+            ENQUIRY ${cfg.lessonNum} &bull; LESSON NOTEBOOK
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
+            YEAR 8 &bull; INDUSTRIALISATION, EMPIRE &amp; POWER (1750–1901)
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+          ${cfg.enquiryQuestion}
+        </h2>
+      </div>
+
+      <!-- Specification Focus Strip -->
+      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; padding: 2px 6px; background: #f0f4f9; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; color: #1e293b;">
+        <strong style="color: #0f284e;">Core Specification Focus:</strong> ${cfg.specAnchor}
+      </div>
+
+      <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
+            Chronological Inquiry Spine &bull; Core Causal Narrative
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #475569;">
+            Construct your causal explanation for each stage incorporating the core trigger terms
+          </span>
+        </div>
+
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
+          ${stagesHtml}
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.leftPageQuip, 16)}
+    </div>
+  </div>`;
+}
+
+// ============================================================================
+// RIGHT PAGE RENDERER: ROTATING DISCIPLINARY SKILLS WRITING
+// ============================================================================
+function renderRightPage(cfg, pageNum) {
+  const rp = cfg.rightPage;
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
+
+  if (rp.type === 'single_12') {
+    // 12-MARK EVALUATIVE ESSAY WRITING
+    return `
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • 12-MARK EXTENDED ESSAY -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Exam Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 0; font-weight: 800;">
+          ${rp.tariff}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
+          Extended Writing Practice
+        </span>
+      </div>
+
+      <!-- Question Stem & Stimulus Box -->
+      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #f0f4f9; margin-bottom: 5px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #0f284e; margin-bottom: 3px; line-height: 1.25;">
+          ${rp.examStem}
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b;">
+          <strong style="color: #0f284e;">Stimulus:</strong>
+          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[0]}</span>
+          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[1]}</span>
+          <span style="font-style: italic; color: #475569;">(You must also use information of your own)</span>
+        </div>
+      </div>
+
+      <!-- Connectives & Key Vocabulary Bank -->
+      <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.22; display: block; color: #1e293b;">${rp.connectives}</span>
+        </div>
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; display: block; color: #1e293b;">${rp.wordBank}</span>
+        </div>
+      </div>
+
+      <!-- Ruled Task Lines for Extended Writing -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+        <strong style="color: #0f284e;">Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+        ${Array(25).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+            🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+            Turn to Centrefold &bull; Pages 8–9 &rarr;
+          </span>
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+          ${rp.timelineMission}
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
+    </div>
+  </div>`;
+  } else if (rp.type === 'interpretations') {
+    // DUAL HISTORIOGRAPHICAL INTERPRETATIONS WRITING
+    const stemsB = rp.stemsB || '';
+    const stemsC = rp.stemsC || '';
+
+    return `
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • CONTRASTING INTERPRETATIONS -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Exam Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #0f284e; margin: 0; font-weight: 800;">
+          ${rp.tariff}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
+          HISTORIOGRAPHICAL ANALYSIS
+        </span>
+      </div>
+
+      <!-- Competing Historical Interpretations Box -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 4px;">
+        <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 6px; background: #fdfbf7;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+            Interpretation 1 &bull; ${rp.interpretation1.author}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.22;">
+            ${rp.interpretation1.text}
+          </div>
+        </div>
+        <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 6px; background: #f0f4f9;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+            Interpretation 2 &bull; ${rp.interpretation2.author}
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.22;">
+            ${rp.interpretation2.text}
+          </div>
+        </div>
+      </div>
+
+      <!-- Task B: Question 3(b) -->
+      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px; flex: 1.15; display: flex; flex-direction: column; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e;">
+            ${rp.questionB}
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            PART B
+          </span>
+        </div>
+        ${stemsB ? `<div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;"><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${stemsB}</span></div>` : ''}
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
+          ${Array(14).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+        </div>
+      </div>
+
+      <!-- Task C: Question 3(c) -->
+      <div style="flex: 1.15; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e;">
+              ${rp.questionC}
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+              PART C
+            </span>
+          </div>
+          ${stemsC ? `<div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;"><strong style="color: #0f284e;">Scaffolded Sentence Stems:</strong> <span style="color: #1e293b;">${stemsC}</span></div>` : ''}
+          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
+            ${Array(12).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+          </div>
+        </div>
+
+        <!-- Timeline Mission Box -->
+        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+              Turn to Centrefold &bull; Pages 8–9 &rarr;
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+            ${rp.timelineMission}
+          </div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
+    </div>
+  </div>`;
+  } else if (
+    rp.type === 'equal_split' ||
+    (rp.partA &&
+      rp.partA.tariff &&
+      rp.partA.tariff.includes('8 marks') &&
+      rp.partB &&
+      rp.partB.tariff &&
+      rp.partB.tariff.includes('8 marks'))
+  ) {
+    // EQUAL-SPLIT ROTATING SKILLS WRITING (E.G. TWO 8-MARK QUESTIONS WITH EQUAL LINES)
+    const partA = rp.partA || {};
+    const partB = rp.partB || {};
+
+    return `
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • EQUAL SPLIT WRITING [8 MARKS + 8 MARKS] -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- PART A: QUESTION 2 NARRATIVE ACCOUNT [8 MARKS] -->
+      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px; flex: 1; display: flex; flex-direction: column; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 9.6pt; color: #0f284e; margin: 0; font-weight: 800;">
+            ${partA.tariff || 'Question 1: Structured Writing [8 marks]'}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            ${partA.badge || 'PART A &bull; NARRATIVE'}
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0; line-height: 1.22;">
+          ${partA.question || ''}
+        </p>
+        ${
+          partA.stimulus
+            ? `
+        <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; margin-bottom: 2.5px;">
+          <strong style="color: #0f284e;">Stimulus:</strong>
+          <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partA.stimulus[0]}</span>
+          <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partA.stimulus[1]}</span>
+        </div>`
+            : ''
+        }
+        ${
+          partA.connectives || partA.wordBank || partA.stems
+            ? `
+        <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
+          ${partA.connectives ? `<div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${partA.connectives}</em></div>` : ''}
+          ${partA.stems ? `<div><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${partA.stems}</span></div>` : ''}
+          ${partA.wordBank ? `<div style="margin-top: 1.5px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${partA.wordBank}</span></div>` : ''}
+        </div>`
+            : ''
+        }
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
+          ${Array(14).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+        </div>
+      </div>
+
+      <!-- PART B: QUESTION 3 EXPLAIN IMPORTANCE [8 MARKS] -->
+      <div style="flex: 1.1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 9.6pt; color: #0f284e; margin: 0; font-weight: 800;">
+              ${partB.tariff || 'Question 2: Structured Writing [8 marks]'}
+            </h2>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+              ${partB.badge || 'PART B &bull; IMPORTANCE'}
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0; line-height: 1.22;">
+            ${partB.question || ''}
+          </p>
+          ${
+            partB.stimulus
+              ? `
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; margin-bottom: 2.5px;">
+            <strong style="color: #0f284e;">Stimulus:</strong>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[0]}</span>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[1]}</span>
+          </div>`
+              : ''
+          }
+          ${
+            partB.connectives || partB.wordBank || partB.stems
+              ? `
+          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
+            ${partB.connectives ? `<div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${partB.connectives}</em></div>` : ''}
+            ${partB.stems ? `<div><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${partB.stems}</span></div>` : ''}
+            ${partB.wordBank ? `<div style="margin-top: 1.5px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${partB.wordBank}</span></div>` : ''}
+          </div>`
+              : ''
+          }
+          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
+            ${Array(14).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+          </div>
+        </div>
+
+        <!-- Timeline Mission Box -->
+        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+              Turn to Centrefold &bull; Pages 8–9 &rarr;
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+            ${rp.timelineMission}
+          </div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
+    </div>
+  </div>`;
+  } else {
+    // TWO-PART ROTATING SKILLS WRITING (SPLIT: PART A + PART B)
+    const partA = rp.partA || {};
+    const partB = rp.partB || {};
+
+    return `
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • ROTATING DISCIPLINARY SKILLS -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- PART A: SHORT-FORM DISCIPLINARY DRILL [4 MARKS] -->
+      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 4px; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
+            ${partA.tariff || 'Question 1: Disciplinary Drill'}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            DISCIPLINARY DRILL
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0;">
+          ${partA.question || ''}
+        </p>
+        ${partA.hint ? `<div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #475569; margin-bottom: 2px;">${partA.hint}</div>` : ''}
+        ${partA.stems ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px; color: #1e293b;"><strong style="color: #0f284e;">Sentence Stems:</strong> ${partA.stems}</div>` : ''}
+        ${partA.connectives ? `<div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; background: #f0f4f9; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;"><strong style="color: #0f284e;">Connectives:</strong> ${partA.connectives}</div>` : ''}
+        <div class="ruled-lines-block">
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+          <div class="task-line"></div>
+        </div>
+      </div>
+
+      <!-- PART B: EXTENDED SKILL WRITING [4 OR 8 MARKS] -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
+              ${partB.tariff || 'Question 2: Structured Writing'}
+            </h2>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+              STRUCTURED WRITING
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #0f284e; margin: 0 0 3px 0; line-height: 1.25;">
+            ${partB.question || ''}
+          </p>
+          ${partB.hint ? `<div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #475569; margin-bottom: 2px;">${partB.hint}</div>` : ''}
+          ${
+            partB.stimulus
+              ? `
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; margin-bottom: 3px;">
+            <strong style="color: #0f284e;">Stimulus:</strong>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[0]}</span>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[1]}</span>
+          </div>`
+              : ''
+          }
+
+          <!-- Connectives & Word Bank -->
+          ${
+            partB.connectives || partB.stems || partB.wordBank
+              ? `
+          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 4px 7px; background: #f0f4f9; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
+            ${partB.connectives ? `<div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${partB.connectives}</em></div>` : ''}
+            ${partB.stems ? `<div><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${partB.stems}</span></div>` : ''}
+            ${partB.wordBank ? `<div style="margin-top: 2px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${partB.wordBank}</span></div>` : ''}
+          </div>`
+              : ''
+          }
+        </div>
+
+        <!-- Ruled Writing Lines (18 Lines • Matching GCSE 7.8mm pitch) -->
+        <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+          ${Array(18).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+        </div>
+
+        <!-- Timeline Mission Box -->
+        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+              Turn to Centrefold &bull; Pages 8–9 &rarr;
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+            ${rp.timelineMission}
+          </div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
+    </div>
+  </div>`;
+  }
+}
+
+// ============================================================================
+// MAIN COMPILATION FUNCTION
+// ============================================================================
+function compileIndustrialisationWorkbook() {
+  const coverImgBase64 =
+    getBase64Image('images/imperial_federation_map.jpg') ||
+    getBase64Image('public/images/imperial_federation_map.jpg') ||
+    '';
+
+  let html = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Industrialisation, Empire &amp; Power (1750–1901) Pupil Workbook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Georgia:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    *, *:before, *:after { box-sizing: border-box; }
+    @page {
+      size: A4 portrait;
+      margin: 10mm 10mm 12mm 10mm;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      font-size: 8.5pt;
+      line-height: 1.32;
+      color: #000000;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+    h1, h2, h3, h4, h5, h6, strong, th, .sans {
+      font-family: 'Inter', -apple-system, sans-serif;
+    }
+    .page, .page-container {
+      width: 100%;
+      height: 272mm;
+      max-height: 272mm;
+      overflow: hidden;
+      box-sizing: border-box;
+      position: relative;
+      page-break-after: always;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 4mm 6mm;
+      background: #ffffff;
+    }
+    .page:last-child, .page-container:last-child {
+      page-break-after: auto;
+    }
+    .page-body-full {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .task-line {
+      border-bottom: 1.2px solid #000000;
+      height: 7.8mm;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+    }
+    .ruled-lines-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin: 1px 0;
+    }
+    .lined-page-grid {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin: 2px 0 3px 0;
+      border-top: 1.2px solid #000000;
+    }
+    .lined-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      border-bottom: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .lined-margin-cell {
+      width: 18mm;
+      border-right: 1.2px solid #000000;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      padding-left: 1mm;
+      padding-right: 0.5mm;
+      box-sizing: border-box;
+    }
+    .lined-content-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding-left: 6px;
+      box-sizing: border-box;
+    }
+    .page-footer-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 0.8px solid #0f284e;
+      padding-top: 1.5px;
+      margin-top: 2px;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.2pt;
+      line-height: 1.15;
+      color: #000000;
+    }
+    .footer-quip {
+      font-style: italic;
+      color: #475569;
+      white-space: nowrap;
+    }
+    .footer-page-num {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      white-space: nowrap;
+      color: #0f284e;
+      font-size: 6.8pt;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+`;
+
+  // ====================================================================
+  // PAGE 1: FRONT COVER (GCSE High-Contrast Standard)
+  // ====================================================================
+  html += `
+  <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Top Departmental Branding with Customizer Hook -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 4px; margin-bottom: 8px;">
+        <div data-department-name="The History Department">
+          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 1px;">
+            <span class="school-brand-target">The History Department</span>
+          </span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: #0f284e;">
+          KEY STAGE 3 HISTORICAL STUDIES &bull; YEAR 8
+        </div>
+      </div>
+
+      <!-- Pupil Details Strip -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
+        </div>
+      </div>
+
+      <!-- Main Title Block -->
+      <div style="text-align: center; margin: 2px 0 6px 0;">
+        <div style="display: inline-block; border: 1.5px solid #0f284e; color: #ffffff; background: #0f284e; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
+          Year 8 Enquiry &bull; 1750–1901
+        </div>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 21pt; line-height: 1.15; color: #0f284e; margin: 2px 0 3px 0; font-weight: 900;">
+          Industrialisation, Empire &amp; Power: 1750–1901
+        </h1>
+        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #334155; font-style: italic; font-weight: 600;">
+          Energy, Exploitation, Democracy &amp; Global Supremacy
+        </div>
+      </div>
+
+      <!-- Prominent Primary Visual Source Centerpiece (Imperial Federation Map Plate) -->
+      <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="display: grid; grid-template-columns: 70mm 1fr; background: #ffffff;">
+          <!-- Left: Full Visual Canvas -->
+          <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
+            <img src="${coverImgBase64}" alt="Imperial Federation Map 1886" style="height: 101mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+          </div>
+          <!-- Right: Visual Iconography & Historical Significance for Year 8 -->
+          <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
+            <!-- 1. Header -->
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
+                Primary Visual Evidence &bull; Imperial Cartography
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
+                Walter Crane (1886)
+              </span>
+            </div>
+
+            <!-- 2. Statecraft Context -->
+            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
+              Illustrated by socialist artist Walter Crane for the 1886 Colonial and Indian Exhibition, this iconic map celebrates British global dominance while revealing the deep ideological tensions of Victorian imperialism:
+            </p>
+
+            <!-- 3. Four Core Analysis Features -->
+            <div style="display: flex; flex-direction: column; gap: 3px;">
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. The Red Global Web:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  British territories coloured in imperial red spanning five continents, linked by steamship lines and undersea telegraph cables.
+                </div>
+              </div>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. Britannia Enthroned on the World:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  Britannia seated atop the globe holding Neptune’s trident, symbolising industrial naval supremacy secured by ironclad warships like HMS Warrior.
+                </div>
+              </div>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Human Labour &amp; Empire’s Wealth:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  The lower frieze depicts Indian, African, and Australian labourers carrying raw commodities to fuel British factories and furnaces.
+                </div>
+              </div>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. Freedom, Fraternity, Federation:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
+                  The imperial banner proclaims "Freedom, Fraternity, Federation"—yet working men and colonized subjects fought decades for basic democratic rights.
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Three-Pillar Analytical Matrix -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Steam &amp; Iron</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Cort’s metallurgy &amp; steam power driving global trade.</div>
+              </div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Colonial Rule</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">The British Raj in India &amp; Pax Britannica overseas.</div>
+              </div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Class Struggle</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Swing Riots, Chartism &amp; the battle for democracy.</div>
+              </div>
+            </div>
+
+            <!-- 5. Disciplinary Significance Anchor -->
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.25; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
+              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> In late Victorian Britain, imperial maps presented Britain’s industrial triumph as an inevitable civilising mission, obscuring the horrific working-class poverty at home and violent colonial suppression abroad.
+            </div>
+
+            <!-- 6. Targeted Disciplinary Hinge Question -->
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 6px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
+              </div>
+              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.2; margin-top: 1px;">
+                Does this map celebrate genuine technological progress and global fraternity, or does it disguise a brutal system of economic extraction that impoverished millions of factory workers and colonized subjects?
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
+          <span><strong>Primary Visual Evidence:</strong> <em>Imperial Federation: Map of the World Showing the Extent of the British Empire in 1886</em> &bull; Walter Crane</span>
+          <span style="font-weight: 700; color: #93c5fd;">BRITISH LIBRARY ARCHIVE &bull; MAPS 957.(46.)</span>
+        </div>
+      </div>
+
+      <!-- Disciplinary Strategy Overview & Workbook Blueprint -->
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 5px 8px; background: #f0f4f9; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
+            1. Chronological Spines [Enquiries 1–5]
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
+            Structured chronological note-taking on each left page: 5 causal stages guiding pupil understanding as the teacher narrates the history.
+          </div>
+        </div>
+        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
+            2. Disciplinary Writing Practice [4m, 8m, 12m]
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
+            Targeted extended writing on each right page: causal explanation, narrative account, difference, and evaluative statement essay.
+          </div>
+        </div>
+        <div>
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
+            3. Centrefold Timeline &amp; Assessment
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
+            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and dedicated summative assessment task (p. 16).
+          </div>
+        </div>
+      </div>
+
+      <!-- Course Specification Curriculum Tracking Table -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin: 2px 0 2px 0;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
+          <thead>
+            <tr style="border-bottom: 1.5px solid #0f284e; background: #0f284e;">
+              <th style="padding: 6px 10px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
+                Course Specification &bull; Key Enquiry Sequence
+              </th>
+              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
+                Learnt
+              </th>
+              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
+                Revised
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+                  Enquiry 1: The Iron &amp; Steam Revolution: Henry Cort &amp; Funtley Works
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
+                  How did Henry Cort’s breakthrough at Funtley Ironworks transform Britain into an industrial and naval superpower?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+                  Enquiry 2: The Dark Satanic Mills: Child Labour, Slums &amp; Public Health
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
+                  Was industrialisation a triumph of human progress or a catastrophe of urban suffering for the working class?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+                  Enquiry 3: Blood, Machines &amp; Ballots: The Hampshire Swing Riots to Chartism
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
+                  Why did British workers turn to machine-breaking and mass petitions to demand a political voice?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+                  Enquiry 4: Steam, Steel &amp; Empire: HMS Warrior &amp; The 1857 Indian Rebellion
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
+                  How did industrial technology sustain the British Empire, and why did Indian soldiers rebel in 1857?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+                  Enquiry 5: The Victorian Verdict: Workshop of the World or Age of Exploitation?
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
+                  Did the Industrial Revolution bring unprecedented progress or human catastrophe to the British people?
+                </div>
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      ${renderFooterStrip(1, 'Fareham ironmaster Henry Cort and Portsmouth Dockyard provided the metallurgical foundation that built Britain’s industrial and naval empire.', 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGE 2: PUPIL PROGRESS & ASSESSMENT LEDGER
+  // ====================================================================
+  html += `
+  <!-- PAGE 2: PUPIL PROGRESS & ASSESSMENT LEDGER -->
+  <div class="page page-container verso-page" id="page-2" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Back Cover Header Strip -->
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 6px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.5pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Key Stage 3 History &bull; Pupil Progress &amp; Assessment Record
+        </h2>
+      </div>
+
+      <!-- Pupil Details & Target Level Strip -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1.3fr; gap: 14px; align-items: center; margin-bottom: 5px;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Target KS3 Level:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px; text-align: center; font-weight: 900; color: #0f284e;"></div>
+        </div>
+      </div>
+
+      <!-- KS3 History Progress Pathways & Descriptors -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 8px; background: #ffffff; margin-bottom: 5px; font-family: 'Inter', sans-serif;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 4px; border-radius: 2px;">
+          <strong style="font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
+            Key Stage 3 History Assessment Pathways &bull; Level Descriptors &amp; Criteria
+          </strong>
+          <span style="font-size: 7.2pt; font-weight: 800; color: #0f284e;">YEAR 8 STANDARDS</span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; font-size: 7.2pt; line-height: 1.32;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 7px 6px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
+                Emerging (1–2)
+              </div>
+              Recalls key historical narrative facts; describes basic industrial events using guided sentence starters.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 2px; color: #475569;">
+              <strong style="color: #0f284e;">Focus:</strong> Add dates &amp; key vocabulary.
+            </div>
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 7px 6px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
+                Emerging+ (3)
+              </div>
+              Identifies reasons for events; begins to describe causes of industrialisation, urban slums, and democratic protest with structured paragraphs.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 2px; color: #475569;">
+              <strong style="color: #0f284e;">Focus:</strong> Explain *why*, not just *what*.
+            </div>
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 7px 6px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
+                Expected (4–5)
+              </div>
+              Explains multiple causes &amp; consequences; writes structured causal paragraphs using precise dates, technical terms, and primary source details.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 2px; color: #475569;">
+              <strong style="color: #0f284e;">Focus:</strong> Compare relative importance.
+            </div>
+          </div>
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 7px 6px; background: #f0f4f9; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
+                Expected+ (6–7)
+              </div>
+              Analyses causal significance; evaluates competing historical interpretations and weighs counter-arguments with detailed primary evidence.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #93c5fd; padding-top: 2px; color: #1e293b;">
+              <strong style="color: #0f284e;">Focus:</strong> Sustained historical criteria.
+            </div>
+          </div>
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 7px 6px; background: #f0f4f9; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-weight: 900; border-bottom: 1px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
+                Greater Depth (8–9)
+              </div>
+              Sustained, nuanced evaluative judgement; synthesises technological innovation, human exploitation, and political struggle across 1750–1901.
+            </div>
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #93c5fd; padding-top: 2px; color: #1e293b;">
+              <strong style="color: #0f284e;">Focus:</strong> Nuanced historical judgement.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Streamlined KS3 Marking Grid -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 5px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
+          <thead>
+            <tr style="background: #0f284e; color: #ffffff;">
+              <th style="padding: 7px 4px; width: 10%; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">Date</th>
+              <th style="padding: 7px 8px; width: 43%; text-align: left; border-right: 1px solid rgba(255,255,255,0.25); font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">Enquiry &bull; Assessment Focus</th>
+              <th style="padding: 7px 6px; width: 17%; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">KS3 Level / Effort</th>
+              <th style="padding: 7px 8px; width: 30%; text-align: left; font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">Teacher Comment / Spellings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 25px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 25px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 1: Henry Cort &amp; Funtley Ironworks</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Inference &amp; Causation: Naval Metallurgy (1775–1787)</div>
+              </td>
+              <td style="padding: 25px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
+              <td style="padding: 25px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 25px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 25px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 2: Child Labour, Slums &amp; Public Health</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Forensic Follow-Up &amp; Consequence: Sadler 1832 &amp; Bazalgette</div>
+              </td>
+              <td style="padding: 25px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
+              <td style="padding: 25px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 25px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 25px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 3: Hampshire Swing Riots to Chartism</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Narrative Account &amp; Importance: Swing Riots &amp; People’s Charter</div>
+              </td>
+              <td style="padding: 25px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
+              <td style="padding: 25px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 25px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 25px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 4: HMS Warrior &amp; 1857 Indian Rebellion</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Contrasting Interpretations: Pax Britannica vs Violent Extraction</div>
+              </td>
+              <td style="padding: 25px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
+              <td style="padding: 25px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 25px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 25px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 5: The Victorian Verdict</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Evaluative Statement Essay: Progress vs Exploitation (1750–1901)</div>
+              </td>
+              <td style="padding: 25px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
+              <td style="padding: 25px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+            <tr style="background: #ffffff; border-top: 1.5px solid #0f284e;">
+              <td style="padding: 25px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 25px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Teacher-Designated Assessment Task</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Summative Written Portfolio on Outside Back Cover (Page 16)</div>
+              </td>
+              <td style="padding: 25px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
+              <td style="padding: 25px 8px; background: #ffffff;">&nbsp;</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Interactive Digital Quizzing Hub -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 8px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 5px; border-radius: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f284e;">
+            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">
+            ONLINE RECALL
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+          ${enquiryConfigs
+            .map((cfg, idx) => {
+              const quizUrl =
+                'https://the-history-revision-hub.netlify.app/?unit=industrialisation_and_empire&lesson=' +
+                (idx + 1);
+              return `
+              <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px 4px; background: #ffffff;">
+                <div style="width: 58px; height: 58px; margin: 0 auto 2px auto;">
+                  ${generateQrSvg(quizUrl)}
+                </div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; color: #0f284e;">
+                  Enquiry ${cfg.lessonNum}
+                </div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.0pt; color: #475569; line-height: 1.15; margin-top: 1px;">
+                  Online Quiz
+                </div>
+              </div>`;
+            })
+            .join('')}
+        </div>
+      </div>
+
+      ${renderFooterStrip(2, 'Mastery in history is built on systematic spaced recall, disciplined historical vocabulary, and structured causal analysis.', 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGE 3: SPECIFICATION ROADMAP & KNOWLEDGE ARCHITECTURE
+  // ====================================================================
+  html += `
+  <!-- PAGE 3: SPECIFICATION ROADMAP & KNOWLEDGE ARCHITECTURE -->
+  <div class="page page-container recto-page" id="page-3" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+            Specification Roadmap &bull; Industrialisation, Empire &amp; Power (1750–1901)
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase;">
+            CURRICULUM ARCHITECTURE
+          </span>
+        </div>
+      </div>
+
+      <div style="border: 1.2px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 11px 12px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #1e293b; line-height: 1.35;">
+        <strong style="color: #0f284e;">Course Rationale &amp; Disciplinary Framework:</strong> This 5-enquiry unit investigates Britain's seismic transformation from an agrarian kingdom into the world's first industrial superpower and largest global empire. Pupils track how metallurgical breakthroughs in Hampshire (Henry Cort at Funtley) powered naval supremacy, interrogate the human misery of child labour and urban slums, trace working-class struggle from the Hampshire Swing Riots to Chartism, analyze imperial resistance in 1857 India alongside HMS Warrior at Portsmouth, and construct a 12-mark summative verdict evaluating Victorian progress versus exploitation.
+      </div>
+
+      <!-- The 5 Enquiries Detailed Syllabus Architecture Table -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 5px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+          <thead>
+            <tr style="background: #0f284e; color: #ffffff;">
+              <th style="padding: 7px 8px; width: 18%; text-align: left; border-right: 1px solid rgba(255,255,255,0.25); text-transform: uppercase;">Enquiry &amp; Dates</th>
+              <th style="padding: 7px 8px; width: 27%; text-align: left; border-right: 1px solid rgba(255,255,255,0.25); text-transform: uppercase;">Overarching Question</th>
+              <th style="padding: 7px 8px; width: 33%; text-align: left; border-right: 1px solid rgba(255,255,255,0.25); text-transform: uppercase;">Core Specification Knowledge</th>
+              <th style="padding: 7px 8px; width: 22%; text-align: left; text-transform: uppercase;">Local &amp; GCSE Tariff</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
+                Enquiry 1<br><span style="font-weight: 600; color: #475569;">1750–1787</span>
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #0f284e; line-height: 1.22;">
+                How did Henry Cort’s breakthrough at Funtley Ironworks transform Britain into an industrial and naval superpower?
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; line-height: 1.28; color: #1e293b;">
+                Transition from wood/charcoal to coal; Watt’s steam engine; Cort’s reverberatory puddling furnace and grooved rolling mill; ending reliance on Baltic imports.
+              </td>
+              <td style="padding: 33px 8px; line-height: 1.28;">
+                <strong style="color: #0f284e;">Funtley Ironworks, Fareham</strong><br>Q1 Inferences [4m]<br>Q2 Causation [4m]
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
+                Enquiry 2<br><span style="font-weight: 600; color: #475569;">1780–1865</span>
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #0f284e; line-height: 1.22;">
+                Was industrialisation a triumph of human progress or a catastrophe of urban suffering for the working class?
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; line-height: 1.28; color: #1e293b;">
+                Factory discipline &amp; fines; child labour in textile mills; 1832 Sadler Committee; Matthew Crabtree; cholera &amp; Chadwick (1842); Great Stink 1858 &amp; Bazalgette sewers.
+              </td>
+              <td style="padding: 33px 8px; line-height: 1.28;">
+                <strong style="color: #0f284e;">Sadler Report 1832</strong><br>Q2(b) Follow-Up [4m]<br>Q1 Consequence [4m]
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
+                Enquiry 3<br><span style="font-weight: 600; color: #475569;">1819–1848</span>
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #0f284e; line-height: 1.22;">
+                Why did British workers turn to machine-breaking and mass petitions to demand a political voice?
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; line-height: 1.28; color: #1e293b;">
+                Peterloo Massacre (1819); Hampshire Swing Riots (1830); threshing machine destruction; Winchester Assizes trials; 1832 Reform Act; Lovett &amp; People’s Charter (1838).
+              </td>
+              <td style="padding: 33px 8px; line-height: 1.28;">
+                <strong style="color: #0f284e;">Meon Valley Swing Riots</strong><br>Q2 Narrative [8m]<br>Q3 Importance [8m]
+              </td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0; background: #fafafa;">
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
+                Enquiry 4<br><span style="font-weight: 600; color: #475569;">1857–1860</span>
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #0f284e; line-height: 1.22;">
+                How did industrial technology sustain the British Empire, and why did Indian soldiers rebel in 1857?
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; line-height: 1.28; color: #1e293b;">
+                East India Company corporate rule; 1857 Indian Rebellion; greased cartridges &amp; Meerut; Rani of Jhansi; 1858 Government of India Act (Raj); HMS Warrior at Portsmouth.
+              </td>
+              <td style="padding: 33px 8px; line-height: 1.28;">
+                <strong style="color: #0f284e;">HMS Warrior, Portsmouth</strong><br>Q3(b) Difference [4m]<br>Q3(c) Reason [4m]
+              </td>
+            </tr>
+            <tr>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-weight: 800; color: #0f284e;">
+                Enquiry 5<br><span style="font-weight: 600; color: #475569;">1851–1901</span>
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #0f284e; line-height: 1.22;">
+                Did the Industrial Revolution bring unprecedented progress or human catastrophe to the British people?
+              </td>
+              <td style="padding: 33px 8px; border-right: 1px solid #cbd5e1; line-height: 1.28; color: #1e293b;">
+                1851 Great Exhibition at Crystal Palace; railway network (Brunel); Victorian middle class; Charles Booth 1889 London poverty survey; Optimist vs Pessimist debate.
+              </td>
+              <td style="padding: 33px 8px; line-height: 1.28;">
+                <strong style="color: #0f284e;">Synoptic Evaluation</strong><br>Q5 12-Mark Essay [12m]<br>Page 16 Summative Task
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Core Disciplinary Vocabulary & Conceptual Anchor -->
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 8px 8px; background: #f0f4f9; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f284e; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">
+            🔑 Core Disciplinary Vocabulary &amp; Conceptual Thresholds
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+            YEAR 8 KNOWLEDGE REPERTOIRE
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.3;">
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 8px 6px;">
+            <strong style="color: #0f284e; display: block; font-size: 7.2pt;">Wrought Iron</strong>
+            Tough, fibrous naval iron refined by Cort at Funtley using puddling and grooved rollers.
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 8px 6px;">
+            <strong style="color: #0f284e; display: block; font-size: 7.2pt;">Laissez-Faire</strong>
+            The political belief opposing state regulation of factory working hours or urban slums.
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 8px 6px;">
+            <strong style="color: #0f284e; display: block; font-size: 7.2pt;">Captain Swing</strong>
+            The mythical name signing threatening letters during the 1830 machine-breaking in Hampshire.
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 8px 6px;">
+            <strong style="color: #0f284e; display: block; font-size: 7.2pt;">The British Raj</strong>
+            Direct Crown rule over India established by the 1858 Government of India Act.
+          </div>
+          <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 2px; padding: 8px 6px;">
+            <strong style="color: #0f284e; display: block; font-size: 7.2pt;">Living Standards</strong>
+            The historical debate whether industrialisation improved or worsened workers’ lives.
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Disciplinary Skills Progression Matrix -->
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 8px 8px; background: #ffffff; margin-bottom: 5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px; margin-bottom: 4px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f284e;">
+            Edexcel GCSE History Disciplinary Skills Progression Matrix
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #475569;">
+            RIGOROUS KS3-TO-GCSE BRIDGE
+          </span>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.34;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 11px 8px; background: #f0f4f9;">
+            <strong style="display: block; color: #0f284e; text-transform: uppercase; margin-bottom: 2px;">1. Causal Explanation</strong>
+            Explaining *why* events happened (e.g. Cort’s Funtley iron solving naval crises) using precise causal links rather than simple narrative description.
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 11px 8px; background: #f0f4f9;">
+            <strong style="display: block; color: #0f284e; text-transform: uppercase; margin-bottom: 2px;">2. Source Forensics</strong>
+            Extracting historical inferences from primary documents (Q1) and designing forensic follow-up investigations (Q2b) using official trial records and testimonies.
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 11px 8px; background: #f0f4f9;">
+            <strong style="display: block; color: #0f284e; text-transform: uppercase; margin-bottom: 2px;">3. Narrative Sequencing</strong>
+            Constructing analytical narrative accounts (Q2) that sequence causal turning points from Peterloo to the Hampshire Swing Riots and Chartism.
+          </div>
+          <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 11px 8px; background: #f0f4f9;">
+            <strong style="display: block; color: #0f284e; text-transform: uppercase; margin-bottom: 2px;">4. Evaluative Verdict</strong>
+            Weighing contrasting historical interpretations (Q3b/c) and constructing balanced 12-mark evaluative essays (Q5) grounded in historical criteria.
+          </div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(3, 'A high-impact history revision hub balances core chronological recall with rigorous disciplinary essay writing.', 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGES 4–5: ENQUIRY 1 (HENRY CORT & FUNTLEY IRONWORKS)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[0], 4);
+  html += renderRightPage(enquiryConfigs[0], 5);
+
+  // ====================================================================
+  // PAGES 6–7: ENQUIRY 2 (CHILD LABOUR, SLUMS & PUBLIC HEALTH)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[1], 6);
+  html += renderRightPage(enquiryConfigs[1], 7);
+
+  // ====================================================================
+  // PAGES 8–9: LIVING TIMELINE IN THE EXACT PHYSICAL CENTREFOLD!
+  // ====================================================================
+  html += `
+  <!-- PAGE 8: LIVING TIMELINE PART 1 (MILESTONES 1–4: 1784–1830) -->
+  <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+            Living Timeline &bull; Part 1: Metallurgy, Machine Power &amp; Agrarian Revolt (1784–1830)
+          </h2>
+        </div>
+
+        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+          <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        </div>
+      </div>
+
+      <!-- 4 Milestones with Open Drawing Area Across Full A4 Page -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+        
+        <!-- Milestone 1: 1784 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1784 &bull; Henry Cort Patented Puddling at Funtley Ironworks
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Fareham ironmaster Henry Cort invents the reverberatory puddling furnace and grooved rolling mill along the River Meon, enabling Britain to produce tough naval wrought iron from domestic coal and ending reliance on Baltic imports.
+          </p>
+        </div>
+
+        <!-- Milestone 2: 1787 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1787 &bull; Portsmouth Royal Dockyard Naval Trials
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Admiralty master smiths at Portsmouth Dockyard conduct rigorous metallurgical tests on Funtley iron, proving it fully equal to Swedish Orgrounds iron for ship anchors, mast hoops, and naval fittings for the Royal Navy.
+          </p>
+        </div>
+
+        <!-- Milestone 3: 1819 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1819 &bull; The Peterloo Massacre in Manchester
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            60,000 peaceful working-class protesters demanding parliamentary representation and the repeal of the Corn Laws are charged by sabre-wielding cavalry at St Peter’s Field; 18 are killed and hundreds maimed.
+          </p>
+        </div>
+
+        <!-- Milestone 4: 1830 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1830 &bull; The Hampshire "Captain Swing" Riots
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Starving farm labourers in the Meon Valley, Selborne, and Fareham smash threshing machines and burn ricks under the mythical name "Captain Swing"; the Winchester Assizes sentences 101 men to penal transportation to Australia.
+          </p>
+        </div>
+
+      </div>
+
+      ${renderFooterStrip(8, 'Centrefold timeline: Dual-coding sketches and dates turns narrative history into permanent long-term memory.', 16)}
+    </div>
+  </div>
+
+  <!-- PAGE 9: LIVING TIMELINE PART 2 (MILESTONES 5–8: 1832–1860) -->
+  <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+            Living Timeline &bull; Part 2: Reform, Rebellion &amp; Ironclad Supremacy (1832–1860)
+          </h2>
+        </div>
+
+        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+          <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        </div>
+      </div>
+
+      <!-- 4 Milestones with Open Drawing Area Across Full A4 Page -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
+        
+        <!-- Milestone 5: 1832 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1832 &bull; The Great Reform Act Passed
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Fearing middle-class and working-class revolution, Lord Grey’s Whig government passes the Reform Act, abolishing 56 rotten boroughs and granting parliamentary seats to industrial cities like Manchester, Birmingham, and Leeds.
+          </p>
+        </div>
+
+        <!-- Milestone 6: 1838 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1838 &bull; The People’s Charter &amp; Chartist Petition
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            William Lovett and the London Working Men’s Association publish the People’s Charter demanding six points: universal male suffrage, secret ballots, equal constituencies, and salaries for MPs; rejected by Parliament.
+          </p>
+        </div>
+
+        <!-- Milestone 7: 1857 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1857 &bull; The Indian Rebellion &amp; End of Company Rule
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Indian sepoys at Meerut mutiny over greased cartridges and corporate exploitation, spreading rebellion across northern India; Parliament abolishes the East India Company in 1858 and establishes direct British Crown rule (The Raj).
+          </p>
+        </div>
+
+        <!-- Milestone 8: 1860 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              1860 &bull; Launch of HMS Warrior at Portsmouth
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Britain launches the world’s first all-iron-hulled, armoured warship at Portsmouth Historic Dockyard; powered by steam and Cort’s wrought iron armour, HMS Warrior renders all existing wooden navies instantaneously obsolete.
+          </p>
+        </div>
+
+      </div>
+
+      ${renderFooterStrip(9, 'Between 1784 and 1860, British power was transformed by industrial metallurgy, political protest, and global imperial expansion.', 16)}
+    </div>
+  </div>
+`;
+
+  // ====================================================================
+  // PAGES 10–11: ENQUIRY 3 (HAMPSHIRE SWING RIOTS TO CHARTISM)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[2], 10);
+  html += renderRightPage(enquiryConfigs[2], 11);
+
+  // ====================================================================
+  // PAGES 12–13: ENQUIRY 4 (HMS WARRIOR & 1857 INDIAN REBELLION)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[3], 12);
+  html += renderRightPage(enquiryConfigs[3], 13);
+
+  // ====================================================================
+  // PAGES 14–15: ENQUIRY 5 (THE VICTORIAN VERDICT)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[4], 14);
+  html += renderRightPage(enquiryConfigs[4], 15);
+
+  // ====================================================================
+  // PAGE 16: OUTSIDE BACK COVER (TEACHER-DESIGNATED ASSESSMENT TASK)
+  // ====================================================================
+  const ruledRows = Array(26)
+    .fill(
+      '<div class="lined-row"><div class="lined-margin-cell"></div><div class="lined-content-cell"></div></div>',
+    )
+    .join('');
+
+  html += `
+  <!-- PAGE 16: OUTSIDE BACK COVER • TEACHER-DESIGNATED ASSESSMENT TASK -->
+  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; font-weight: 900;">
+            Teacher-Designated Assessment Task
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase;">
+            SUMMATIVE ASSESSMENT
+          </span>
+        </div>
+      </div>
+
+      <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 2.5px 6px; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b;">
+        <strong style="color: #0f284e;">Assessment Protocol:</strong> Complete your teacher-set key enquiry assessment task, timed exam question, or formal evaluative response on the ruled lines below.
+      </div>
+
+      <div class="lined-page-grid">
+        ${ruledRows}
+      </div>
+
+      ${renderFooterStrip(16, 'Industrialisation, Empire & Power (1750–1901) • Disciplinary Summative Assessment', 16)}
+    </div>
+  </div>
+`;
+
+  html += `
+</body>
+</html>`;
+
+  return html;
+}
+
+// ============================================================================
+// MAIN COMPILATION SCRIPT
+// ============================================================================
+async function main() {
+  console.log(
+    'Rendering 16-Page A4 Pupil Workbook (Christine Counsell Standard): Industrialisation, Empire & Power: 1750–1901...',
+  );
+
+  const outDir = path.join(ROOT_DIR, 'public', 'units', 'industrialisation_and_empire');
+  if (!fs.existsSync(outDir)) {
+    fs.mkdirSync(outDir, { recursive: true });
+  }
+
+  const outHtmlPath = path.join(outDir, 'pupil_workbook.html');
+  const html = compileIndustrialisationWorkbook();
+  fs.writeFileSync(outHtmlPath, html, 'utf8');
+  console.log(`[OK] HTML written to: ${outHtmlPath}`);
+
+  // Compile PDFs via Puppeteer
+  const pdfDir = path.join(ROOT_DIR, 'public', 'pdfs');
+  if (!fs.existsSync(pdfDir)) {
+    fs.mkdirSync(pdfDir, { recursive: true });
+  }
+  const outPdfPath = path.join(pdfDir, 'industrialisation_and_empire_pupil_workbook.pdf');
+  const outPdf16pPath = path.join(pdfDir, 'industrialisation_and_empire_16p_workbook.pdf');
+
+  console.log('Launching Puppeteer to generate high-resolution print PDF...');
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  });
+
+  const page = await browser.newPage();
+  await page.setContent(html, { waitUntil: 'networkidle0' });
+
+  // Wait for web fonts to load
+  await page.evaluateHandle('document.fonts.ready');
+
+  await page.pdf({
+    path: outPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      right: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+    },
+  });
+
+  // Also write 16p alias
+  fs.copyFileSync(outPdfPath, outPdf16pPath);
+
+  await browser.close();
+  console.log(`[OK] PDF successfully compiled: ${outPdfPath}`);
+  console.log(`[OK] 16P PDF alias compiled: ${outPdf16pPath}`);
+}
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error('Fatal error during workbook compilation:', err);
+    process.exit(1);
+  });
+}
+
+module.exports = { compileIndustrialisationWorkbook };

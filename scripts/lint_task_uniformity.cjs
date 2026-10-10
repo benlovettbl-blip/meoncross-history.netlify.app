@@ -114,7 +114,10 @@ async function runLinter() {
     if (
       lessons.length !== 8 &&
       lessons.length !== 9 &&
-      !(unitId === 'medieval_england' && lessons.length === 5)
+      !(
+        (unitId === 'medieval_england' || unitId === 'industrialisation_and_empire') &&
+        lessons.length === 5
+      )
     ) {
       errors.push(
         `[Standard KS3 Budget Violation] Full-term unit '${unitId}' must have strictly 8 substantive enquiries. Found: ${lessons.length} lessons.`,

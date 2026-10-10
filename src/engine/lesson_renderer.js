@@ -2963,7 +2963,9 @@ export function renderLesson(lesson) {
         window.currentUnitId === 'first_british_empire' ||
         unitId === 'first_british_empire' ||
         window.currentUnitId === 'medieval_england' ||
-        unitId === 'medieval_england';
+        unitId === 'medieval_england' ||
+        window.currentUnitId === 'industrialisation_and_empire' ||
+        unitId === 'industrialisation_and_empire';
       const cardIdAttr =
         sLetter && isInteractiveSourceUnit
           ? `id="source-card-${sLetter}" data-source-letter="${sLetter}"`
@@ -2983,7 +2985,9 @@ export function renderLesson(lesson) {
         unitId === 'first_british_empire' ||
         window.currentUnitId === 'first_british_empire' ||
         unitId === 'medieval_england' ||
-        window.currentUnitId === 'medieval_england'
+        window.currentUnitId === 'medieval_england' ||
+        unitId === 'industrialisation_and_empire' ||
+        window.currentUnitId === 'industrialisation_and_empire'
       ) {
         const displayTitle = source.title
           ? source.title.replace(/^(?:Source|Map|Diagram)\s+[A-Z0-9]+[:\s-]*/i, '').trim()
@@ -5308,7 +5312,9 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'first_british_empire' ||
           unitId === 'first_british_empire' ||
           window.currentUnitId === 'medieval_england' ||
-          unitId === 'medieval_england';
+          unitId === 'medieval_england' ||
+          window.currentUnitId === 'industrialisation_and_empire' ||
+          unitId === 'industrialisation_and_empire';
 
         if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
