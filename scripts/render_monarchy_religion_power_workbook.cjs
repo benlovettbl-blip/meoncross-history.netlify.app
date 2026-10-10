@@ -1024,16 +1024,16 @@ function renderNotesPage(pageNum, quip) {
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Notes Header -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 13pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 13pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
           Notes
         </h2>
       </div>
 
       <!-- Ruled Lined Canvas with Left Margin (Exercise Book Standard) -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #000000; margin-bottom: 4px;">
-        <!-- Vertical Margin Line (26mm from left edge of lines) -->
-        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #000000; z-index: 2;"></div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #0f284e; margin-bottom: 4px;">
+        <!-- Vertical Margin Line (26mm from left edge of lines) - British Exercise Book Red Margin -->
+        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #dc2626; z-index: 2;"></div>
         
         <!-- Ruled Horizontal Lines (Standard 8mm school pitch, flex-filled) -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
@@ -1165,27 +1165,27 @@ function renderSpinePage(cfg, pageNum) {
       const bulletsHtml = st.bullets
         .map(
           (b, idx) => `
-            <div style="flex: 1; display: flex; align-items: center; padding: 0 2.5px; ${idx < 2 ? 'border-bottom: 0.8px solid #e2e8f0;' : ''}">
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 2.5px; ${idx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
               <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.15;">
-                <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #0f172a; word-break: break-word;">${b}</span>
+                <span style="font-weight: 900; color: #0f284e; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #0f284e; word-break: break-word;">${b}</span>
               </div>
             </div>`,
         )
         .join('');
       return `
-        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #0f284e; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
           <!-- Full-Width Banner with Key Question Across Page -->
-          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+          <div class="stage-banner" style="background: #0f284e; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #0f284e;">
             <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1;">
-              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
+              <span style="background: #ffffff; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
                 ${st.step}
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #cbd5e1; white-space: nowrap;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #93c5fd; white-space: nowrap;">
                 ${st.date}
               </span>
-              <span style="color: #64748b; font-size: 7pt;">&bull;</span>
+              <span style="color: #60a5fa; font-size: 7pt;">&bull;</span>
               <span style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 ${st.questionHeading}
               </span>
@@ -1196,7 +1196,7 @@ function renderSpinePage(cfg, pageNum) {
           <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
             
             <!-- Left Column: Ultra-Compact 25mm Trigger Spine (Each Zone Aligns to 2 Ruled Lines) -->
-            <div style="width: 25mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+            <div style="width: 25mm; flex-shrink: 0; background: #f0f4f9; display: flex; flex-direction: column; border-right: 1.2px solid #0f284e; box-sizing: border-box;">
               ${bulletsHtml}
             </div>
 
@@ -1224,32 +1224,32 @@ function renderSpinePage(cfg, pageNum) {
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #0f284e; color: #ffffff; border: 1.2px solid #0f284e; padding: 1px 6px; border-radius: 2px;">
             ENQUIRY ${cfg.lessonNum} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
             YEAR 8 &bull; CROWN, CHURCH, OR PARLIAMENT? (1517–1689)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
           ${cfg.enquiryQuestion}
         </h2>
       </div>
 
       <!-- Specification Focus Strip -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2;">
-        <strong>Core Specification Focus:</strong> ${cfg.specAnchor}
+      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; padding: 2px 6px; background: #f0f4f9; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; color: #1e293b;">
+        <strong style="color: #0f284e;">Core Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
       <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             Chronological Inquiry Spine &bull; Core Causal Narrative
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #475569;">
             Construct your causal explanation for each stage incorporating the core trigger terms
           </span>
         </div>
@@ -1279,43 +1279,43 @@ function renderRightPage(cfg, pageNum) {
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 0; font-weight: 800;">
           ${rp.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
           Extended Writing Practice
         </span>
       </div>
 
       <!-- Question Stem & Stimulus Box -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
+      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #f0f4f9; margin-bottom: 5px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #0f284e; margin-bottom: 3px; line-height: 1.25;">
           ${rp.examStem}
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #000000;">
-          <strong>Stimulus:</strong>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${rp.stimulus[0]}</span>
-          <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${rp.stimulus[1]}</span>
-          <span style="font-style: italic;">(You must also use information of your own)</span>
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b;">
+          <strong style="color: #0f284e;">Stimulus:</strong>
+          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[0]}</span>
+          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[1]}</span>
+          <span style="font-style: italic; color: #475569;">(You must also use information of your own)</span>
         </div>
       </div>
 
       <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.22; display: block;">${rp.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.22; display: block; color: #1e293b;">${rp.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; display: block;">${rp.wordBank}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; display: block; color: #1e293b;">${rp.wordBank}</span>
         </div>
       </div>
 
       <!-- Ruled Task Lines for Extended Writing -->
       <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
+        <strong style="color: #0f284e;">Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
@@ -1346,12 +1346,12 @@ function renderRightPage(cfg, pageNum) {
       </div>
 
       <!-- Timeline Mission Box -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
             🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
             Turn to Centrefold &bull; Pages 8–9 &rarr;
           </span>
         </div>
@@ -1371,20 +1371,20 @@ function renderRightPage(cfg, pageNum) {
     <div class="page-body-full">
       
       <!-- PART A: SHORT-FORM DISCIPLINARY PRACTICE [4 MARKS] -->
-      <div style="border-bottom: 1.5px solid #000000; padding-bottom: 4px; margin-bottom: 5px;">
+      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 4px; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #000000; margin: 0; font-weight: 800;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
             ${rp.partA.tariff}
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
             DISCIPLINARY DRILL
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0;">
           ${rp.partA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Sentence Stems:</strong> ${rp.partA.stems}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px; color: #1e293b;">
+          <strong style="color: #0f284e;">Sentence Stems:</strong> ${rp.partA.stems}
         </div>
         <div class="ruled-lines-block">
           <div class="task-line"></div>
@@ -1397,32 +1397,32 @@ function renderRightPage(cfg, pageNum) {
       <!-- PART B: EXTENDED SKILL WRITING [8 OR 12 MARKS] -->
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #000000; margin: 0; font-weight: 800;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
               ${rp.partB.tariff}
             </h2>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; text-transform: uppercase;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
               STRUCTURED WRITING
             </span>
           </div>
-          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #0f284e; margin: 0 0 3px 0; line-height: 1.25;">
             ${rp.partB.question}
           </p>
           ${
             rp.partB.stimulus
               ? `
-          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; margin-bottom: 3px;">
-            <strong>Stimulus:</strong>
-            <span style="border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; font-weight: 600;">${rp.partB.stimulus[0]}</span>
-            <span style="border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; font-weight: 600;">${rp.partB.stimulus[1]}</span>
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; margin-bottom: 3px;">
+            <strong style="color: #0f284e;">Stimulus:</strong>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${rp.partB.stimulus[0]}</span>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${rp.partB.stimulus[1]}</span>
           </div>`
               : ''
           }
 
           <!-- Connectives & Word Bank -->
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
-            <div><strong>Analytical Connectives:</strong> <em>${rp.partB.connectives}</em></div>
-            <div style="margin-top: 2px;"><strong>Key Terms:</strong> ${rp.partB.wordBank}</div>
+          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 4px 7px; background: #f0f4f9; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
+            <div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${rp.partB.connectives}</em></div>
+            <div style="margin-top: 2px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${rp.partB.wordBank}</span></div>
           </div>
         </div>
 
@@ -1452,12 +1452,12 @@ function renderRightPage(cfg, pageNum) {
         </div>
 
         <!-- Timeline Mission Box -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
               🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
               Turn to Centrefold &bull; Pages 8–9 &rarr;
             </span>
           </div>
@@ -1732,7 +1732,7 @@ function compileMonarchyWorkbook() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 0.5px solid #000000;
+      border-top: 0.8px solid #0f284e;
       padding-top: 1.5px;
       margin-top: 2px;
       font-family: 'Inter', sans-serif;
@@ -1742,14 +1742,14 @@ function compileMonarchyWorkbook() {
     }
     .footer-quip {
       font-style: italic;
-      color: #000000;
+      color: #475569;
       white-space: nowrap;
     }
     .footer-page-num {
       font-family: 'Inter', sans-serif;
-      font-weight: 700;
+      font-weight: 800;
       white-space: nowrap;
-      color: #000000;
+      color: #0f284e;
       font-size: 6.8pt;
       flex-shrink: 0;
     }
@@ -1765,92 +1765,92 @@ function compileMonarchyWorkbook() {
   <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding with Customizer Hook -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 4px; margin-bottom: 8px;">
         <div data-department-name="The History Department">
-          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 1px;">
             <span class="school-brand-target">The History Department</span>
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: #0f284e;">
           KEY STAGE 3 HISTORICAL STUDIES &bull; YEAR 8
         </div>
       </div>
 
       <!-- Pupil Details Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 8px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 8px;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
       </div>
 
       <!-- Main Title Block -->
       <div style="text-align: center; margin: 2px 0 6px 0;">
-        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; background: #ffffff;">
+        <div style="display: inline-block; border: 1.5px solid #0f284e; color: #ffffff; background: #0f284e; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 800; padding: 2px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
           Year 8 Enquiry &bull; 1517–1689
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 22pt; line-height: 1.15; color: #000000; margin: 2px 0 3px 0; font-weight: 900;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 22pt; line-height: 1.15; color: #0f284e; margin: 2px 0 3px 0; font-weight: 900;">
           Crown, Church, or Parliament?
         </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #222222; font-style: italic; font-weight: 600;">
+        <div style="font-family: 'Georgia', serif; font-size: 10pt; color: #334155; font-style: italic; font-weight: 600;">
           The Struggle for Authority, Religion, and the English State (1517–1689)
         </div>
       </div>
 
       <!-- Prominent Primary Visual Source Centerpiece (Holbein Full Canvas in Authentic Color + Disciplinary Iconography Plate) -->
-      <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
+      <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
         <div style="display: grid; grid-template-columns: 62mm 1fr; background: #ffffff;">
           <!-- Left: Full-Length Uncropped Portrait in Rich Authentic Color -->
-          <div style="background: #fcfbf9; border-right: 1.5px solid #000000; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
-            <img src="${coverImgBase64}" alt="King Henry VIII Full-Length Portrait by Hans Holbein" style="height: 101mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #000000; border-radius: 2px; box-shadow: 0 2px 6px rgba(0,0,0,0.18);">
+          <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
+            <img src="${coverImgBase64}" alt="King Henry VIII Full-Length Portrait by Hans Holbein" style="height: 101mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
           </div>
           <!-- Right: Visual Iconography & Historical Significance for Year 8 -->
           <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
             <!-- 1. Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #000000; letter-spacing: 0.5px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
                 Primary Visual Evidence &bull; Tudor Royal Propaganda
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #555555;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
                 Hans Holbein the Younger (c. 1537)
               </span>
             </div>
 
             <!-- 2. Statecraft Context -->
-            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #111111; margin: 0;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
               Following the 1534 Act of Supremacy, Henry VIII commissioned Hans Holbein to project an overwhelming image of absolute monarchical sovereignty. Every visual element was calculated statecraft:
             </p>
 
             <!-- 3. Four Core Propaganda Features -->
             <div style="display: flex; flex-direction: column; gap: 3px;">
-              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">1. Stance of Absolute Dominance:</strong>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. Stance of Absolute Dominance:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
                   Facing the viewer squarely with feet planted wide, elbows flared, and hands gripping dagger and gloves, Henry occupies maximum physical space to intimidate foreign ambassadors and subjects.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">2. Imperial Splendour &amp; Monastic Wealth:</strong>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. Imperial Splendour &amp; Monastic Wealth:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
                   Exaggerated square shoulders padded in ermine fur, gold-embroidered silver doublet, and heavy ruby collars—lavishly financed by Thomas Cromwell’s Dissolution of the Monasteries (1536–40).
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">3. Dynastic Virility &amp; Tudor Succession:</strong>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Dynastic Virility &amp; Tudor Succession:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
                   The prominent codpiece and muscular posture were deliberate visual propaganda, asserting vitality and the promise of a legitimate male Tudor heir following the break with Rome.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #000000; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #000000;">4. The Absent Pope (Sovereignty Unchallenged):</strong>
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. The Absent Pope (Sovereignty Unchallenged):</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
                   Depicted with zero papal, cross, or Roman Catholic emblems. The King stands solitary on English ground—the undisputed Supreme Head on Earth of the Church of England.
                 </div>
@@ -1858,167 +1858,167 @@ function compileMonarchyWorkbook() {
             </div>
 
             <!-- 4. Three-Pillar Propaganda Decoding Matrix -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #000000;">
-              <div style="border: 1px solid #000000; border-radius: 2px; padding: 2.5px 5px; background: #fbfbfb;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #000000;">The Dagger</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #333333; margin-top: 1px;">Immediate physical violence against papal traitors.</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">The Dagger</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Immediate physical violence against papal traitors.</div>
               </div>
-              <div style="border: 1px solid #000000; border-radius: 2px; padding: 2.5px 5px; background: #fbfbfb;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #000000;">Ermine &amp; Gold</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #333333; margin-top: 1px;">Imperial status equal to Holy Roman Emperor.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Ermine &amp; Gold</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Imperial status equal to Holy Roman Emperor.</div>
               </div>
-              <div style="border: 1px solid #000000; border-radius: 2px; padding: 2.5px 5px; background: #fbfbfb;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #000000;">Turkish Carpet</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #333333; margin-top: 1px;">Global trade connections &amp; Renaissance wealth.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Turkish Carpet</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Global trade connections &amp; Renaissance wealth.</div>
               </div>
             </div>
 
             <!-- 5. Disciplinary Significance Anchor -->
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #333333; line-height: 1.25; background: #f8fafc; border-left: 2px solid #000000; padding: 2px 6px;">
-              <strong style="text-transform: uppercase; color: #000000;">Disciplinary Significance:</strong> In 16th-century England, lacking a standing army or police force, visual portraiture was essential constitutional statecraft to enforce Royal Supremacy.
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.25; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
+              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> In 16th-century England, lacking a standing army or police force, visual portraiture was essential constitutional statecraft to enforce Royal Supremacy.
             </div>
 
             <!-- 6. Targeted Disciplinary Hinge Question -->
-            <div style="background: #ffffff; border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px;">
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 6px;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #000000;">Disciplinary Hinge Question:</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #555555; text-transform: uppercase;">Historical Evaluation</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
               </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #222222; line-height: 1.2; margin-top: 1px;">
+              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.2; margin-top: 1px;">
                 Does this portrait show a monarch completely confident in his sovereign power, or a ruler using theatrical spectacle to mask profound dynastic and religious vulnerability?
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
           <span><strong>Primary Visual Evidence:</strong> <em>Full-Length Portrait of King Henry VIII</em> &bull; Workshop of Hans Holbein the Younger (c. 1537–1540)</span>
-          <span style="font-weight: 700;">ROYAL COLLECTION ARCHIVE &bull; WALKER ART GALLERY</span>
+          <span style="font-weight: 700; color: #93c5fd;">ROYAL COLLECTION ARCHIVE &bull; WALKER ART GALLERY</span>
         </div>
       </div>
 
       <!-- Disciplinary Strategy Overview & Workbook Blueprint -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fbfbfb; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        <div style="border-right: 1px solid #000000; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 5px 8px; background: #f0f4f9; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             1. Chronological Spines [Enquiries 1–5]
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
             Structured chronological note-taking on each left page: 5 causal stages guiding pupil understanding as the teacher narrates the history.
           </div>
         </div>
-        <div style="border-right: 1px solid #000000; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             2. Disciplinary Writing Practice [4m, 8m, 12m]
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
             Targeted extended writing on each right page: causal explanation, narrative account, difference, and constitutional evaluation.
           </div>
         </div>
         <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             3. Centrefold Timeline &amp; Notes Portfolio
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
             Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and dedicated lined notes &amp; essay planning pages (pp. 14–15).
           </div>
         </div>
       </div>
 
       <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 2px 0 2px 0;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin: 2px 0 2px 0;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
-            <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-              <th style="padding: 6px 10px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+            <tr style="border-bottom: 1.5px solid #0f284e; background: #0f284e;">
+              <th style="padding: 6px 10px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
                 Course Specification &bull; Key Enquiry Sequence
               </th>
-              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #000000; color: #000000;">
+              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
                 Learnt
               </th>
-              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
                 Revised
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 1: Henry VIII &amp; The English Reformation (1517–1534)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   Why did Henry VIII break with the Roman Catholic Church, and how did the Act of Supremacy reshape sovereign power?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 2: Elizabeth I &amp; The Middle Way (1558–1588)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   How did Elizabeth I navigate deep religious divisions, and why did she reject religious extremism in 1559?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 3: The Spanish Armada &amp; Naval Power (1588)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   Why was Philip II’s enterprise of England defeated, and how did fireships and weather decide the outcome?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 4: The English Civil War, Regicide &amp; The Republic (1642–1649)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   Why did constitutional collision over Divine Right culminate in the execution of Charles I and England's republic?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr>
-              <td style="padding: 7px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.5pt; font-weight: 800; color: #000000; line-height: 1.25;">
+              <td style="padding: 7px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 5: The Glorious Revolution &amp; The Bill of Rights (1688–1689)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.8pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   Why did Parliament invite William of Orange in 1688, and how did the Bill of Rights establish parliamentary rule?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 15px; height: 15px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 15px; height: 15px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
           </tbody>
@@ -2056,14 +2056,14 @@ function compileMonarchyWorkbook() {
   <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+        <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
             Living Timeline &bull; Part 1: Reformation, Royal Supremacy &amp; The Middle Way (1517–1588)
           </h2>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
-          <strong>Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+          <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
@@ -2071,12 +2071,12 @@ function compileMonarchyWorkbook() {
       <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 1: 1534 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1534 &bull; Henry VIII &amp; The Act of Supremacy
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
@@ -2084,12 +2084,12 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 2: 1536–1540 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1536–1540 &bull; Dissolution of the Monasteries
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
@@ -2097,12 +2097,12 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 3: 1559 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1559 &bull; Elizabeth I &amp; The Religious Settlement
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 2</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 2</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
@@ -2110,12 +2110,12 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 4: 1588 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1588 &bull; Defeat of the Spanish Armada
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
@@ -2132,14 +2132,14 @@ function compileMonarchyWorkbook() {
   <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+        <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
             Living Timeline &bull; Part 2: Civil War, Regicide &amp; The Bill of Rights (1603–1689)
           </h2>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 3px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000;">
-          <strong>Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+          <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
@@ -2147,12 +2147,12 @@ function compileMonarchyWorkbook() {
       <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 5: 1629–1640 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
@@ -2160,12 +2160,12 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 6: 1649 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1649 &bull; Trial &amp; Execution of King Charles I
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
@@ -2173,12 +2173,12 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 7: 1688 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1688 &bull; The Glorious Revolution
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
@@ -2186,12 +2186,12 @@ function compileMonarchyWorkbook() {
         </div>
 
         <!-- Milestone 8: 1689 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0; border-left: 3px solid #0f284e; padding-left: 6px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
               1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
@@ -2237,180 +2237,180 @@ function compileMonarchyWorkbook() {
   <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Back Cover Header Strip -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.5pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 6px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.5pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
           Key Stage 3 History &bull; Pupil Progress &amp; Assessment Record
         </h2>
       </div>
 
       <!-- Pupil Details & Target Level Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1.3fr; gap: 14px; align-items: center; margin-bottom: 5px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1.3fr; gap: 14px; align-items: center; margin-bottom: 5px;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target KS3 Level:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px; text-align: center; font-weight: 900;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Target KS3 Level:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px; text-align: center; font-weight: 900; color: #0f284e;"></div>
         </div>
       </div>
 
       <!-- KS3 History Progress Pathways & Descriptors -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 5px; font-family: 'Inter', sans-serif;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-          <strong style="font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 8px; background: #ffffff; margin-bottom: 5px; font-family: 'Inter', sans-serif;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 4px; border-radius: 2px;">
+          <strong style="font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             Key Stage 3 History Assessment Pathways &bull; Level Descriptors &amp; Criteria
           </strong>
-          <span style="font-size: 7.2pt; font-weight: 800; color: #000000;">YEAR 8 STANDARDS</span>
+          <span style="font-size: 7.2pt; font-weight: 800; color: #0f284e;">YEAR 8 STANDARDS</span>
         </div>
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 5px; font-size: 7pt; line-height: 1.3;">
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+              <div style="font-weight: 900; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
                 Emerging (1–2)
               </div>
               Recalls key historical narrative facts; describes basic Tudor/Stuart events using guided sentence starters.
             </div>
-            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
-              <strong>Focus:</strong> Add dates &amp; key vocabulary.
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 2px; color: #475569;">
+              <strong style="color: #0f284e;">Focus:</strong> Add dates &amp; key vocabulary.
             </div>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+              <div style="font-weight: 900; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
                 Emerging+ (3)
               </div>
               Identifies reasons for events; begins to describe causes of religious changes and civil conflict with structured paragraphs.
             </div>
-            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
-              <strong>Focus:</strong> Explain *why*, not just *what*.
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 2px; color: #475569;">
+              <strong style="color: #0f284e;">Focus:</strong> Explain *why*, not just *what*.
             </div>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+              <div style="font-weight: 900; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
                 Expected (4–5)
               </div>
               Explains multiple causes &amp; consequences; writes structured causal paragraphs using precise statutes and dates.
             </div>
-            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
-              <strong>Focus:</strong> Compare relative importance.
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 2px; color: #475569;">
+              <strong style="color: #0f284e;">Focus:</strong> Compare relative importance.
             </div>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px; background: #f0f4f9; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+              <div style="font-weight: 900; border-bottom: 1px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
                 Expected+ (6–7)
               </div>
               Analyses causal significance; evaluates competing historical interpretations and weighs counter-arguments with detailed evidence.
             </div>
-            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
-              <strong>Focus:</strong> Sustained historical criteria.
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #93c5fd; padding-top: 2px; color: #1e293b;">
+              <strong style="color: #0f284e;">Focus:</strong> Sustained historical criteria.
             </div>
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px; background: #f0f4f9; display: flex; flex-direction: column; justify-content: space-between;">
             <div>
-              <div style="font-weight: 900; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase;">
+              <div style="font-weight: 900; border-bottom: 1px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px; font-size: 7.2pt; text-transform: uppercase; color: #0f284e;">
                 Greater Depth (8–9)
               </div>
               Sustained, nuanced evaluative judgement; synthesises constitutional, political, and religious change across the 1517–1689 period.
             </div>
-            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #cccccc; padding-top: 2px; color: #333333;">
-              <strong>Focus:</strong> Nuanced historical judgement.
+            <div style="margin-top: 4px; font-size: 6.4pt; font-style: italic; border-top: 1px dashed #93c5fd; padding-top: 2px; color: #1e293b;">
+              <strong style="color: #0f284e;">Focus:</strong> Nuanced historical judgement.
             </div>
           </div>
         </div>
       </div>
 
       <!-- Streamlined KS3 Marking Grid (Low-Friction & Periodic Marking Standard) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 5px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 5px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
           <thead>
-            <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 7px 4px; width: 10%; text-align: center; border-right: 1px solid #444444; font-size: 7.5pt; text-transform: uppercase;">Date</th>
-              <th style="padding: 7px 8px; width: 43%; text-align: left; border-right: 1px solid #444444; font-size: 7.5pt; text-transform: uppercase;">Enquiry &bull; Assessment Focus</th>
-              <th style="padding: 7px 6px; width: 17%; text-align: center; border-right: 1px solid #444444; font-size: 7.5pt; text-transform: uppercase;">KS3 Level / Effort</th>
-              <th style="padding: 7px 8px; width: 30%; text-align: left; font-size: 7.5pt; text-transform: uppercase;">Teacher Comment / Spellings</th>
+            <tr style="background: #0f284e; color: #ffffff;">
+              <th style="padding: 7px 4px; width: 10%; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">Date</th>
+              <th style="padding: 7px 8px; width: 43%; text-align: left; border-right: 1px solid rgba(255,255,255,0.25); font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">Enquiry &bull; Assessment Focus</th>
+              <th style="padding: 7px 6px; width: 17%; text-align: center; border-right: 1px solid rgba(255,255,255,0.25); font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">KS3 Level / Effort</th>
+              <th style="padding: 7px 8px; width: 30%; text-align: left; font-size: 7.5pt; text-transform: uppercase; color: #ffffff;">Teacher Comment / Spellings</th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 1: Henry VIII &amp; Break with Rome</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Causal Explanation: Break with Rome (1527–34)</div>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 1: Henry VIII &amp; Break with Rome</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Causal Explanation: Break with Rome (1527–34)</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
               <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 2: Elizabeth I &amp; Religious Settlement</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Source Utility &amp; Consequence of Middle Way</div>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 2: Elizabeth I &amp; Religious Settlement</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Source Utility &amp; Consequence of Middle Way</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
               <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 3: Spanish Armada &amp; Naval Power</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Analytical Narrative: Defeat of the Armada (1588)</div>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 3: Spanish Armada &amp; Naval Power</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Analytical Narrative: Defeat of the Armada (1588)</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
               <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 4: Causes of the English Civil War</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Causal Essay: Divine Right vs Parliament (1642)</div>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 4: Causes of the English Civil War</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Causal Essay: Divine Right vs Parliament (1642)</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
               <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Enquiry 5: Trial of Charles I &amp; Bill of Rights</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Evaluative Judgement: Turning point in Crown vs Parliament</div>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 5: Trial of Charles I &amp; Bill of Rights</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Evaluative Judgement: Turning point in Crown vs Parliament</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
               <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000; background: #fafafa;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Independent Study &amp; Notes Portfolio</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Pages 14–15 Enquiry Notes, Reflection &amp; Revision Tasks</div>
+            <tr style="border-bottom: 1px solid #0f284e; background: #f0f4f9;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Independent Study &amp; Notes Portfolio</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Pages 14–15 Enquiry Notes, Reflection &amp; Revision Tasks</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #fafafa;">&nbsp;</td>
+              <td style="padding: 16px 8px; background: #f0f4f9;">&nbsp;</td>
             </tr>
-            <tr style="background: #ffffff; border-top: 1.5px solid #000000;">
-              <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Teacher-Designated Assessment Task</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Designated Key Enquiry Assessment (Teacher Selected)</div>
+            <tr style="background: #ffffff; border-top: 1.5px solid #0f284e;">
+              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Teacher-Designated Assessment Task</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Designated Key Enquiry Assessment (Teacher Selected)</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
+              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
               <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
@@ -2420,12 +2420,12 @@ function compileMonarchyWorkbook() {
       </div>
 
       <!-- Interactive Digital Quizzing Hub (Medicine Style) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; background: #f0f4f9; padding: 3px 6px; margin-bottom: 4px; border-radius: 2px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; color: #0f284e;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">
             ONLINE RECALL
           </span>
         </div>
@@ -2442,20 +2442,20 @@ function compileMonarchyWorkbook() {
                 'Bill of Rights',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px; color: #0f284e;">
               Enquiry ${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #475569; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
             <div style="width: 24mm; height: 24mm; margin: 0 auto 2px auto;">
               ${qrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
               Scan to Quiz
             </span>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #0f284e; margin-top: 1px; white-space: nowrap;">
               Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
             </div>
           </div>`;
