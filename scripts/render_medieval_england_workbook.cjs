@@ -121,7 +121,7 @@ const enquiryConfigs = [
         stems:
           'One decisive factor was... &bull; Specifically, during the battle... &bull; This resulted in William’s victory because... &bull; Therefore, without this factor...',
         connectives:
-          'A primary reason was... &bull; Furthermore, on Senlac Hill... &bull; Consequently, when the shield wall broke... &bull; This proved decisive because...',
+          'A primary reason was... &bull; For example, during the fighting... &bull; Consequently, this impacted the outcome because... &bull; Therefore, this proved decisive because...',
         wordBank:
           'Senlac Hill &bull; shield wall &bull; feigned retreat &bull; heavy cavalry &bull; housecarls &bull; Harold Godwinson &bull; Stamford Bridge &bull; Duke William',
       },
@@ -197,7 +197,7 @@ const enquiryConfigs = [
           'How could you follow up Source A to find out more about the impact of the Harrying of the North (1069–1070)? [4 marks]',
         hint: 'Use the 4 Edexcel prompts: Detail in Source A &bull; Question I would ask &bull; Type of source I would use &bull; How this would help me find out more.',
         stems:
-          'Detail in Source A: Chronicler Orderic Vitalis records that over 100,000 perished from famine... &bull; Question I would ask: How long did agricultural wasteland persist in Yorkshire? &bull; Type of source: 1086 Domesday Book manorial surveys &bull; How this would help: Verify whether northern villages were still recorded as "waste" sixteen years later...',
+          'Detail in Source A that I would follow up: ... &bull; Question I would ask: ... &bull; What type of source I would use: ... &bull; How this would help me find out more: ...',
       },
       partB: {
         tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
@@ -205,9 +205,9 @@ const enquiryConfigs = [
           'Explain one consequence of the motte-and-bailey blitz for Anglo-Saxon resistance against Norman rule. [4 marks]',
         hint: 'Focus on how fortified castles allowed small Norman garrisons to dominate thousands of hostile Saxons and suppress regional revolts.',
         stems:
-          'One consequence of the motte-and-bailey blitz was... &bull; Specifically, by erecting castles within eight days... &bull; This shattered Anglo-Saxon resistance because... &bull; As a result, the small Norman minority...',
+          'One consequence was that... &bull; Specifically, this meant that... &bull; This affected Anglo-Saxon resistance because... &bull; As a result, Norman control...',
         connectives:
-          'A significant consequence was... &bull; For example, in rebellious towns... &bull; This prevented Saxons from... &bull; Consequently, Norman authority became...',
+          'A significant consequence was... &bull; For instance, the building of castles... &bull; This directly led to... &bull; Consequently, the impact on resistance was...',
         wordBank:
           'motte-and-bailey &bull; garrison &bull; timber palisade &bull; intimidation &bull; Harrying of the North &bull; Portchester Castle &bull; Domesday Book',
       },
@@ -292,7 +292,7 @@ const enquiryConfigs = [
       questionC:
         'Suggest one reason why Interpretations 1 and 2 differ on Becket’s clash with King Henry II. [4 marks]',
       stemsC:
-        'One reason they differ is provenance: Grim was an eyewitness monk who idolised Becket as a holy martyr, whereas Barlow is a modern secular historian examining legal administration...',
+        'One reason why Interpretations 1 and 2 differ is because of the authors’ backgrounds and purposes... &bull; Specifically, the author of Interpretation 1 was... whereas the author of Interpretation 2 is... &bull; As a result, their emphasis differs because...',
       timelineMissionTitle: 'Centrefold Sketch Challenge 4',
       timelineMission:
         '<strong>Milestone 4 (The Murder in Canterbury Cathedral &bull; 1170):</strong> Sketch Archbishop Thomas Becket standing defiant before the cathedral altar while four Norman knights draw their swords in the shadows [⛪ cathedral arch &bull; 🗡️ four knights’ swords &bull; ✝️ altar cross].',
@@ -360,9 +360,10 @@ const enquiryConfigs = [
     vocabPrompt:
       'Define <strong>The Rule of Law</strong> and explain how Clause 39 of Magna Carta restricted arbitrary royal power:',
     rightPage: {
-      type: 'split',
+      type: 'equal_split',
       partA: {
         tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
+        badge: 'PART A &bull; NARRATIVE',
         question:
           'Write a narrative account analysing the key events leading from the loss of Normandy (1204) to the sealing of Magna Carta (1215). [8 marks]',
         stimulus: [
@@ -370,16 +371,17 @@ const enquiryConfigs = [
           'The defeat at the Battle of Bouvines (1214)',
         ],
         connectives:
-          'The crisis originated in 1204 when... &bull; In order to fund his wars, John... &bull; A decisive turning point occurred in 1214 when... &bull; Left bankrupt, John could not resist when... &bull; As a direct consequence...',
+          'The sequence began in 1204 when... &bull; This led to increasing conflict because... &bull; A decisive turning point occurred when... &bull; This directly caused... &bull; Consequently, this culminated in...',
         wordBank:
           'Normandy &bull; scutage &bull; Pope Innocent III &bull; Battle of Bouvines (1214) &bull; Runnymede &bull; Clause 39 &bull; Magna Carta &bull; Robert Fitzwalter',
       },
       partB: {
         tariff: 'Question 3: Explain Importance [8 marks &bull; 10 mins]',
+        badge: 'PART B &bull; IMPORTANCE',
         question:
           'Explain the importance of Clause 39 of Magna Carta for the development of the English legal system. [8 marks]',
         connectives:
-          'Clause 39 was of vital importance because... &bull; Prior to 1215, monarchs could... &bull; By establishing that even kings were subject to law... &bull; Ultimately, this established the precedent of...',
+          'Clause 39 was of vital importance because... &bull; Prior to 1215, royal authority had been... &bull; As a result of Clause 39, legal rights were... &bull; Consequently, the long-term impact on the legal system was...',
         wordBank:
           'Clause 39 &bull; arbitrary power &bull; lawful judgment of peers &bull; due process &bull; trial by jury &bull; rule of law',
       },
@@ -472,7 +474,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'A persuasive argument that the Black Death was decisive is... &bull; By wiping out half the population, the plague... &bull; On the other hand, the feudal breakdown was also accelerated by... &bull; In particular, the 1381 Peasants’ Revolt proved that... &bull; In conclusion, while rebellion reflected popular anger, it was the catastrophic demographic shock of 1348 that...',
+        'To some extent I agree that the Black Death of 1348 was the main cause of the breakdown of the feudal system in medieval England because... &bull; On the other hand, it can also be argued that feudalism collapsed because of... &bull; Furthermore, long-term social changes such as... &bull; In conclusion, the most significant factor in the breakdown of the feudal system was... because...',
       wordBank:
         'Black Death (1348) &bull; Yersinia pestis &bull; labour shortage &bull; Statute of Labourers (1351) &bull; sumptuary laws &bull; Poll Tax &bull; Wat Tyler &bull; John Ball &bull; serfdom / villeinage',
       timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
@@ -795,6 +797,120 @@ function renderRightPage(cfg, pageNum) {
           ${stemsC ? `<div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;"><strong style="color: #0f284e;">Scaffolded Sentence Stems:</strong> <span style="color: #1e293b;">${stemsC}</span></div>` : ''}
           <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
             ${Array(12).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+          </div>
+        </div>
+
+        <!-- Timeline Mission Box -->
+        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+              Turn to Centrefold &bull; Pages 8–9 &rarr;
+            </span>
+          </div>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+            ${rp.timelineMission}
+          </div>
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
+    </div>
+  </div>`;
+  } else if (
+    rp.type === 'equal_split' ||
+    (rp.partA &&
+      rp.partA.tariff &&
+      rp.partA.tariff.includes('8 marks') &&
+      rp.partB &&
+      rp.partB.tariff &&
+      rp.partB.tariff.includes('8 marks'))
+  ) {
+    // EQUAL-SPLIT ROTATING SKILLS WRITING (E.G. TWO 8-MARK QUESTIONS WITH EQUAL LINES)
+    const partA = rp.partA || {};
+    const partB = rp.partB || {};
+
+    return `
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • EQUAL SPLIT WRITING [8 MARKS + 8 MARKS] -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      
+      <!-- PART A: QUESTION 2 NARRATIVE ACCOUNT [8 MARKS] -->
+      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px; flex: 1; display: flex; flex-direction: column; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 9.6pt; color: #0f284e; margin: 0; font-weight: 800;">
+            ${partA.tariff || 'Question 1: Structured Writing [8 marks]'}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            ${partA.badge || 'PART A &bull; NARRATIVE'}
+          </span>
+        </div>
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0; line-height: 1.22;">
+          ${partA.question || ''}
+        </p>
+        ${
+          partA.stimulus
+            ? `
+        <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; margin-bottom: 2.5px;">
+          <strong style="color: #0f284e;">Stimulus:</strong>
+          <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partA.stimulus[0]}</span>
+          <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partA.stimulus[1]}</span>
+        </div>`
+            : ''
+        }
+        ${
+          partA.connectives || partA.wordBank || partA.stems
+            ? `
+        <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
+          ${partA.connectives ? `<div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${partA.connectives}</em></div>` : ''}
+          ${partA.stems ? `<div><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${partA.stems}</span></div>` : ''}
+          ${partA.wordBank ? `<div style="margin-top: 1.5px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${partA.wordBank}</span></div>` : ''}
+        </div>`
+            : ''
+        }
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
+          ${Array(14).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+        </div>
+      </div>
+
+      <!-- PART B: QUESTION 3 EXPLAIN IMPORTANCE [8 MARKS] -->
+      <div style="flex: 1.1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 9.6pt; color: #0f284e; margin: 0; font-weight: 800;">
+              ${partB.tariff || 'Question 2: Structured Writing [8 marks]'}
+            </h2>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+              ${partB.badge || 'PART B &bull; IMPORTANCE'}
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0; line-height: 1.22;">
+            ${partB.question || ''}
+          </p>
+          ${
+            partB.stimulus
+              ? `
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; margin-bottom: 2.5px;">
+            <strong style="color: #0f284e;">Stimulus:</strong>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[0]}</span>
+            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[1]}</span>
+          </div>`
+              : ''
+          }
+          ${
+            partB.connectives || partB.wordBank || partB.stems
+              ? `
+          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22;">
+            ${partB.connectives ? `<div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${partB.connectives}</em></div>` : ''}
+            ${partB.stems ? `<div><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${partB.stems}</span></div>` : ''}
+            ${partB.wordBank ? `<div style="margin-top: 1.5px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${partB.wordBank}</span></div>` : ''}
+          </div>`
+              : ''
+          }
+          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
+            ${Array(14).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
           </div>
         </div>
 
@@ -1389,9 +1505,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Following victory over Vikings at Stamford Bridge, Harold’s exhausted army forms a shield wall atop Senlac Hill; Norman cavalry feigned retreats shatter the line, Harold is killed, and Duke William seizes the crown.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Saxon Shield Wall atop Senlac Hill &bull; Charging Norman Cavalry &bull; Fallen Housecarls]</span>
-          </div>
         </div>
 
         <!-- Milestone 2: 1069–1070 -->
@@ -1405,9 +1518,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             William crushes Anglo-Saxon resistance by systematically burning crops, salting fields, and slaughtering livestock across Yorkshire, starving over 100,000 people while erecting 500 timber motte castles across the realm.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Earthwork Motte &amp; Timber Tower &bull; Scorched Fields &bull; Subjugated Saxon Villagers]</span>
-          </div>
         </div>
 
         <!-- Milestone 3: 1086 -->
@@ -1421,9 +1531,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             William commissions an exhaustive census of all land, mills, pigs, and taxable wealth in England; towering stone keeps like Portchester are erected to permanently seal Norman military and fiscal dominance.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Royal Domesday Commissioners &bull; Portchester Stone Keep &bull; Manor Ledger]</span>
-          </div>
         </div>
 
         <!-- Milestone 4: 1170 -->
@@ -1437,9 +1544,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Following a bitter clash over whether royal courts or church courts could try criminal priests, four of Henry II’s knights butcher Archbishop Becket on the cathedral altar steps; Becket’s shrine becomes Christendom’s greatest pilgrimage.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Canterbury Cathedral Altar &bull; Four Knights’ Drawn Swords &bull; Becket’s Mitre &bull; Henry's Penance]</span>
-          </div>
         </div>
 
       </div>
@@ -1477,9 +1581,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Bankrupted by military defeat at Bouvines, King John is forced by rebel barons at Runnymede to seal Magna Carta; Clause 39 guarantees that no free man can be imprisoned or stripped of land without lawful trial by his peers.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: King John at Runnymede &bull; Great Seal on Parchment &bull; Armed Rebel Barons]</span>
-          </div>
         </div>
 
         <!-- Milestone 6: 1265 -->
@@ -1493,9 +1594,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Rebel leader Simon de Montfort summons two elected knights from each shire and two burgesses from each borough to Westminster alongside barons and bishops, creating the institutional prototype for the House of Commons.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Westminster Parliament Hall &bull; Shire Knights &bull; Town Burgesses Summoned]</span>
-          </div>
         </div>
 
         <!-- Milestone 7: 1348–1349 -->
@@ -1509,9 +1607,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Bubonic plague carried by shipborne black rats enters Dorset and spreads nationwide, killing between 35% and 50% of the population; severe labour shortage enables surviving serfs to demand higher cash wages.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Plague Cross on Door &bull; Black Rat with Flea &bull; Abandoned Unharvested Fields]</span>
-          </div>
         </div>
 
         <!-- Milestone 8: 1381 -->
@@ -1525,9 +1620,6 @@ function compileMedievalWorkbook() {
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
             Enraged by three regressive poll taxes and the 1351 Statute of Labourers, Wat Tyler and radical priest John Ball lead 60,000 peasants into London; Mayor Walworth cuts down Tyler at Smithfield, but serfdom is fatally broken.
           </p>
-          <div style="flex: 1; border: 1.2px dashed #0f284e; border-radius: 4px; margin-top: 3px; background: #ffffff; display: flex; align-items: center; justify-content: center; position: relative;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; color: #94a3b8; font-style: italic;">[Sketch: Wat Tyler &amp; John Ball with Pitchforks &bull; Richard II on Horseback &bull; Smithfield]</span>
-          </div>
         </div>
 
       </div>
@@ -1740,7 +1832,6 @@ function compileMedievalWorkbook() {
               <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Teacher-Designated Assessment Task</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Designated Key Enquiry Assessment (Teacher Selected)</div>
               </td>
               <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;

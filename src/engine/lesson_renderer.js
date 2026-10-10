@@ -2961,7 +2961,9 @@ export function renderLesson(lesson) {
         window.currentUnitId === 'monarchy_religion_power' ||
         unitId === 'monarchy_religion_power' ||
         window.currentUnitId === 'first_british_empire' ||
-        unitId === 'first_british_empire';
+        unitId === 'first_british_empire' ||
+        window.currentUnitId === 'medieval_england' ||
+        unitId === 'medieval_england';
       const cardIdAttr =
         sLetter && isInteractiveSourceUnit
           ? `id="source-card-${sLetter}" data-source-letter="${sLetter}"`
@@ -2979,7 +2981,9 @@ export function renderLesson(lesson) {
         unitId === 'monarchy_religion_power' ||
         window.currentUnitId === 'monarchy_religion_power' ||
         unitId === 'first_british_empire' ||
-        window.currentUnitId === 'first_british_empire'
+        window.currentUnitId === 'first_british_empire' ||
+        unitId === 'medieval_england' ||
+        window.currentUnitId === 'medieval_england'
       ) {
         const displayTitle = source.title
           ? source.title.replace(/^(?:Source|Map|Diagram)\s+[A-Z0-9]+[:\s-]*/i, '').trim()
@@ -5292,6 +5296,7 @@ export function renderLesson(lesson) {
 
         const isAccordionUnit =
           window.currentUnitId === 'cme_new' ||
+          unitId === 'cme_new' ||
           window.currentUnitId === 'edexcel_medicine' ||
           unitId === 'edexcel_medicine' ||
           window.currentUnitId === 'eee' ||
@@ -5301,7 +5306,9 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'monarchy_religion_power' ||
           unitId === 'monarchy_religion_power' ||
           window.currentUnitId === 'first_british_empire' ||
-          unitId === 'first_british_empire';
+          unitId === 'first_british_empire' ||
+          window.currentUnitId === 'medieval_england' ||
+          unitId === 'medieval_england';
 
         if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
