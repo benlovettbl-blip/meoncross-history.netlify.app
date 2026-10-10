@@ -2902,7 +2902,9 @@ export function renderLesson(lesson) {
         window.currentUnitId === 'edexcel_medicine' ||
         unitId === 'edexcel_medicine' ||
         window.currentUnitId === 'eee' ||
-        unitId === 'eee';
+        unitId === 'eee' ||
+        window.currentUnitId === 'monarchy_religion_power' ||
+        unitId === 'monarchy_religion_power';
       const cardIdAttr =
         sLetter && isInteractiveSourceUnit
           ? `id="source-card-${sLetter}" data-source-letter="${sLetter}"`
@@ -2914,7 +2916,12 @@ export function renderLesson(lesson) {
           ? `data-target-source="${sLetter}" title="Hover or click to highlight Source ${sLetter}"`
           : '';
 
-      if (unitId === 'eee' || window.currentUnitId === 'eee') {
+      if (
+        unitId === 'eee' ||
+        window.currentUnitId === 'eee' ||
+        unitId === 'monarchy_religion_power' ||
+        window.currentUnitId === 'monarchy_religion_power'
+      ) {
         const displayTitle = source.title
           ? source.title.replace(/^(?:Source|Map|Diagram)\s+[A-Z0-9]+[:\s-]*/i, '').trim()
           : source.caption || 'Archival Evidence';
@@ -3014,6 +3021,32 @@ export function renderLesson(lesson) {
                   }
                 </div>
               `
+              }
+              ${
+                source.how_useful_question
+                  ? `
+                <div class="archival-source-utility-box" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
+                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-scale-balanced"></i> Source Utility Enquiry & Provenance Scaffolding
+                  </div>
+                  <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 10px; line-height: 1.45;">
+                    ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(source.how_useful_question) : source.how_useful_question}
+                  </div>
+                  ${
+                    source.provenance_clues
+                      ? `
+                    <div style="font-size: 0.88rem; color: #166534; line-height: 1.55; background: #ffffff; padding: 10px 14px; border-radius: 4px; border: 1px solid #bbf7d0;">
+                      <strong style="color: #14532d; display: block; margin-bottom: 4px;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
+                      <ul style="margin: 4px 0 0 16px; padding: 0;">
+                        ${(Array.isArray(source.provenance_clues) ? source.provenance_clues : [source.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
+                      </ul>
+                    </div>
+                  `
+                      : ''
+                  }
+                </div>
+              `
+                  : ''
               }
               ${
                 hingeText
@@ -3554,7 +3587,7 @@ export function renderLesson(lesson) {
 
     const currentUnitId =
       (appStore && appStore.state && appStore.state.selectedUnitId) || window.currentUnitId || '';
-    const showQuizzing = !isTrip && currentUnitId;
+    const showQuizzing = !isTrip && currentUnitId && currentUnitId !== 'monarchy_religion_power';
 
     htmlDoNow += `
         <details style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 6px; margin-bottom: 8px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,0.05);" closed>
@@ -6500,12 +6533,19 @@ export function renderLesson(lesson) {
                   ${hints
                     .map((hint, hIdx) => {
                       const cfg = peelColors[hIdx % peelColors.length];
-                      let cleanHint = hint;
-                      let label = cfg.label;
-                      const splitMatch = hint.match(/^(Point|Evidence|Explanation|Link):\s*(.*)/i);
-                      if (splitMatch) {
-                        label = splitMatch[1];
-                        cleanHint = splitMatch[2];
+                      let cleanHint =
+                        typeof hint === 'string'
+                          ? hint
+                          : hint.prompt || hint.text || hint.desc || '';
+                      let label = typeof hint === 'object' && hint.label ? hint.label : cfg.label;
+                      if (typeof hint === 'string') {
+                        const splitMatch = hint.match(
+                          /^(Point|Evidence|Explanation|Link):\s*(.*)/i,
+                        );
+                        if (splitMatch) {
+                          label = splitMatch[1];
+                          cleanHint = splitMatch[2];
+                        }
                       }
                       return `
                       <div style="background: ${cfg.bg}; border: 1.5px solid ${cfg.border}; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; gap: 4px;">

@@ -59,33 +59,34 @@ const enquiryConfigs = [
     stages: [
       {
         step: 1,
-        date: '1517–1527',
+        date: '1517–1521',
+        questionHeading: 'How did Martin Luther’s protest spark the Reformation across Europe?',
+        bullets: ['95 Theses', 'Indulgences', 'Defender of Faith'],
+        focusClue:
+          'How did Luther’s attack on papal corruption shatter European unity and earn Henry the title ‘Defender of the Faith’?',
+      },
+      {
+        step: 2,
+        date: '1525–1527',
         questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
         bullets: ['Male Heir', 'Leviticus 20:21', 'Anne Boleyn'],
         focusClue:
           'Why did Henry believe that without a son, England would collapse into civil war?',
       },
       {
-        step: 2,
+        step: 3,
         date: '1527–1529',
         questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
         bullets: ['Wolsey Fails', '1527 Sack of Rome', 'Charles V'],
         focusClue: 'Why did European power politics prevent the Pope from granting the annulment?',
       },
       {
-        step: 3,
-        date: '1529–1532',
-        questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
-        bullets: ['Thomas Cromwell', 'Reformation Parl.', '1532 Submission'],
-        focusClue:
-          'How did using Acts of Parliament give Henry’s religious changes the force of law?',
-      },
-      {
         step: 4,
-        date: '1533',
-        questionHeading: 'How did the Act in Restraint of Appeals make England an ‘Empire’?',
-        bullets: ['‘Realm an Empire’', 'Rome Appeals Ban', 'Cranmer Annulment'],
-        focusClue: 'What constitutional power did declaring England an ‘Empire’ grant Henry?',
+        date: '1529–1533',
+        questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
+        bullets: ['Thomas Cromwell', 'Submission of Clergy', 'Appeals Ban (1533)'],
+        focusClue:
+          'How did declaring England an ‘Empire’ and banning appeals to Rome legally isolate the Pope?',
       },
       {
         step: 5,
@@ -122,9 +123,8 @@ const enquiryConfigs = [
         'A primary cause of the break with Rome was... &bull; In particular, the dynastic crisis... &bull; Furthermore, Thomas Cromwell demonstrated... &bull; Crucially, the 1534 Act of Supremacy... &bull; Consequently...',
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
       timelineMission:
-        '<strong>Milestone 1 (The Double-Crown Snip &bull; 1534):</strong> Sketch Henry VIII using giant golden shears to snip the papal authority cable from Rome, placing a second crown on his head [✂️ shears &bull; 👑 pope’s tiara &bull; ⛓️ broken chain].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Monastery Meltdown &bull; 1536–40):</strong> Sketch Thomas Cromwell wheeling cartloads of melted lead roof tiles and golden chalices away from an abbey to build coastal artillery forts [🛒 handcart &bull; 🪙 melted lead &bull; 🏰 artillery fort].',
+        '<strong>Milestone 1 (Wittenberg Door &bull; 1517):</strong> Sketch Martin Luther nailing the 95 Theses to the church door while the Pope counts indulgence coins [🔨 hammer &bull; 📜 95 Theses &bull; 💰 crossed-out gold coins].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Double-Crown Snip &amp; Abbey Meltdown &bull; 1534–40):</strong> Sketch Henry VIII using golden shears to snip the papal cable while Cromwell carts away abbey lead [✂️ shears &bull; 👑 double crown &bull; 🛒 melted lead handcart].',
     },
     leftPageQuip:
       'In 1534, questioning Henry VIII’s marriage was high treason punishable by death at Tower Hill.',
@@ -2070,29 +2070,29 @@ function compileMonarchyWorkbook() {
       <!-- 4 Milestones with Open Drawing Area Across Full A4 Page -->
       <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
-        <!-- Milestone 1: 1534 -->
+        <!-- Milestone 1: 1517 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
-              1534 &bull; Henry VIII &amp; The Act of Supremacy
+              1517 &bull; Martin Luther &amp; The Protestant Reformation
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
-            Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
+            Martin Luther nails his 95 Theses to the Wittenberg church door, attacking corrupt papal indulgences and shattering Catholic unity; King Henry VIII writes in defence of the Pope, earning the title ‘Defender of the Faith’.
           </p>
         </div>
 
-        <!-- Milestone 2: 1536–1540 -->
+        <!-- Milestone 2: 1534–1540 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
-              1536–1540 &bull; Dissolution of the Monasteries
+              1534–1540 &bull; Royal Supremacy &amp; Dissolution of the Monasteries
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
-            Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
+            Parliament passes the Act of Supremacy declaring Henry VIII ‘Supreme Head’ of the Church; Thomas Cromwell surveys and dissolves over 800 monasteries, confiscating gold, lead, and church lands for the Crown.
           </p>
         </div>
 
