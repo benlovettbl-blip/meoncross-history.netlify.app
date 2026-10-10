@@ -61,7 +61,7 @@ const enquiryConfigs = [
         step: 1,
         date: '1517–1527',
         questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
-        bullets: ['Male dynastic heir', 'Leviticus 20:21 curse', 'Anne Boleyn marriage'],
+        bullets: ['Male Heir', 'Leviticus 20:21', 'Anne Boleyn'],
         focusClue:
           'Why did Henry believe that without a son, England would collapse into civil war?',
       },
@@ -69,22 +69,14 @@ const enquiryConfigs = [
         step: 2,
         date: '1527–1529',
         questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
-        bullets: [
-          'Wolsey’s failed diplomacy',
-          '1527 Sack of Rome',
-          'Charles V (Catherine’s nephew)',
-        ],
+        bullets: ['Wolsey Fails', '1527 Sack of Rome', 'Charles V'],
         focusClue: 'Why did European power politics prevent the Pope from granting the annulment?',
       },
       {
         step: 3,
         date: '1529–1532',
         questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
-        bullets: [
-          'Cromwell’s legal strategy',
-          'Reformation Parliament',
-          '1532 Submission of Clergy',
-        ],
+        bullets: ['Thomas Cromwell', 'Reformation Parl.', '1532 Submission'],
         focusClue:
           'How did using Acts of Parliament give Henry’s religious changes the force of law?',
       },
@@ -92,18 +84,14 @@ const enquiryConfigs = [
         step: 4,
         date: '1533',
         questionHeading: 'How did the Act in Restraint of Appeals make England an ‘Empire’?',
-        bullets: [
-          '‘Realm is an Empire’ (1533)',
-          'Appeals to Rome banned',
-          'Cranmer annuls marriage',
-        ],
+        bullets: ['‘Realm an Empire’', 'Rome Appeals Ban', 'Cranmer Annulment'],
         focusClue: 'What constitutional power did declaring England an ‘Empire’ grant Henry?',
       },
       {
         step: 5,
         date: '1534',
         questionHeading: 'How did the Act of Supremacy legally consolidate royal sovereignty?',
-        bullets: ['‘Supreme Head’ on Earth', 'Oath of Supremacy', 'Treason Act / More executed'],
+        bullets: ['‘Supreme Head’', 'Supremacy Oath', 'Sir Thomas More'],
         focusClue:
           'Why was the Act of Supremacy the most radical constitutional change in English history?',
       },
@@ -155,14 +143,14 @@ const enquiryConfigs = [
         step: 1,
         date: '1558–1559',
         questionHeading: 'Why was England religiously fractured when Elizabeth became Queen?',
-        bullets: ['Edward/Mary swings', '280+ Marian burnings', 'Radical Puritan exiles'],
+        bullets: ['Edward/Mary Swings', '280+ Burnings', 'Puritan Exiles'],
         focusClue: 'Why did Mary I’s burnings produce profound anti-Catholic fear across England?',
       },
       {
         step: 2,
         date: '1559',
         questionHeading: 'How did the Act of Supremacy restore royal control through compromise?',
-        bullets: ['‘Supreme Governor’ title', 'Avoided papal offense', 'Marian bishops dismissed'],
+        bullets: ['‘Supreme Governor’', 'Avoids Offence', 'Bishops Dismissed'],
         focusClue:
           'Why was the title ‘Supreme Governor’ a clever compromise for moderate subjects?',
       },
@@ -170,7 +158,7 @@ const enquiryConfigs = [
         step: 3,
         date: '1559',
         questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’ (Via Media)?',
-        bullets: ['1559 Common Prayer Book', 'Ambiguous Communion', '12d Recusancy fines'],
+        bullets: ['1559 Prayer Book', 'Via Media', '12d Recusancy Fine'],
         focusClue:
           'Why did Elizabeth state that she had ‘no desire to make windows into men’s souls’?',
       },
@@ -178,22 +166,14 @@ const enquiryConfigs = [
         step: 4,
         date: '1568–1570',
         questionHeading: 'How did Mary Queen of Scots and the Papal Bull spark Catholic plots?',
-        bullets: [
-          'Mary Queen of Scots arrives',
-          '1569 Northern Rebellion',
-          '1570 Papal Excommunication',
-        ],
+        bullets: ['Mary Queen of Scots', '1569 Rebellion', '1570 Papal Bull'],
         focusClue: 'How did the 1570 Papal Bull turn practicing Catholics into suspected traitors?',
       },
       {
         step: 5,
         date: '1571–1588',
         questionHeading: 'How did Walsingham’s spy network lead to Mary’s execution?',
-        bullets: [
-          'Walsingham’s codebreakers',
-          '1586 Babington Plot letter',
-          '1587 Mary’s execution',
-        ],
+        bullets: ['Walsingham Spies', '1586 Babington Plot', '1587 Execution'],
         focusClue: 'Why was executing an anointed queen such a dangerous precedent for Elizabeth?',
       },
     ],
@@ -250,22 +230,14 @@ const enquiryConfigs = [
         step: 1,
         date: '1585–1587',
         questionHeading: 'What imperial and religious rivalries provoked Philip II’s invasion?',
-        bullets: [
-          'Catholic Holy Crusade',
-          'Drake’s privateer raids',
-          'English aid to Dutch rebels',
-        ],
+        bullets: ['Catholic Crusade', 'Drake’s Raids', 'Dutch Rebel Aid'],
         focusClue: 'Why did Philip view invading England as a holy crusade against Protestantism?',
       },
       {
         step: 2,
         date: '1587',
         questionHeading: 'How did Drake’s raid on Cadiz delay the Spanish invasion?',
-        bullets: [
-          'April 1587 Cadiz raid',
-          'Seasoned barrel supplies burned',
-          '‘Singed King’s beard’ (1-yr delay)',
-        ],
+        bullets: ['1587 Cadiz Raid', 'Barrels Burned', '‘Singed Beard’ (1yr)'],
         focusClue:
           'How did burning seasoned barrel wood ruin Spanish water and food supplies at sea?',
       },
@@ -273,11 +245,7 @@ const enquiryConfigs = [
         step: 3,
         date: 'July 1588',
         questionHeading: 'How did the English fleet harry the Armada up the English Channel?',
-        bullets: [
-          '130-ship crescent formation',
-          'Race-built galleons',
-          'Long-range culverin broadsides',
-        ],
+        bullets: ['130-Ship Crescent', 'Race-Built Ships', 'Culverin Cannons'],
         focusClue:
           'Why did long-range gunnery give the English fleet a decisive tactical advantage?',
       },
@@ -285,7 +253,7 @@ const enquiryConfigs = [
         step: 4,
         date: '7–8 August 1588',
         questionHeading: 'How did English fireships at Calais shatter the Spanish formation?',
-        bullets: ['Anchored off Calais', '8 midnight ‘hellburners’', 'Cut anchor cables in panic'],
+        bullets: ['Calais Anchorage', '8 Hellburners', 'Anchor Cables Cut'],
         focusClue:
           'Why did cutting anchor cables leave Spanish ships helpless in rough North Sea weather?',
       },
@@ -293,11 +261,7 @@ const enquiryConfigs = [
         step: 5,
         date: 'Aug–Sept 1588',
         questionHeading: 'How did the Battle of Gravelines and severe storms destroy the fleet?',
-        bullets: [
-          'Battle of Gravelines battering',
-          '‘Protestant Wind’ gales',
-          '50+ ships wrecked on rocks',
-        ],
+        bullets: ['Gravelines Battle', '‘Protestant Wind’', '50+ Shipwrecks'],
         focusClue: 'Why did Elizabeth’s medal declare: ‘God blew and they were scattered’?',
       },
     ],
@@ -359,7 +323,7 @@ const enquiryConfigs = [
         step: 1,
         date: '1629–1640',
         questionHeading: 'Why did Charles I’s ‘Personal Rule’ without Parliament cause outrage?',
-        bullets: ['Divine Right doctrine', '11-Yr Personal Rule', 'Inland Ship Money tax'],
+        bullets: ['Divine Right', '11-Yr Personal Rule', 'Ship Money Tax'],
         focusClue:
           'Why did inland Ship Money spark widespread constitutional outrage across England?',
       },
@@ -367,14 +331,14 @@ const enquiryConfigs = [
         step: 2,
         date: '1640–1642',
         questionHeading: 'How did the breakdown of trust lead to armed civil conflict?',
-        bullets: ['Long Parliament summoned', '5 MPs armed raid (1642)', 'Royal Standard raised'],
+        bullets: ['Long Parliament', '5 MPs Armed Raid', 'Royal Standard'],
         focusClue: 'Why did the King entering the Commons with armed soldiers make war inevitable?',
       },
       {
         step: 3,
         date: '1645–1648',
         questionHeading: 'How did the New Model Army defeat the King at the Battle of Naseby?',
-        bullets: ['New Model Army (merit)', '1645 Battle of Naseby', 'Secret Scottish pact (1648)'],
+        bullets: ['New Model Army', '1645 Naseby Victory', 'Scottish Pact 1648'],
         focusClue:
           'Why did Charles’s secret deal brand him in soldiers’ eyes as a treacherous ‘man of blood’?',
       },
@@ -382,7 +346,7 @@ const enquiryConfigs = [
         step: 4,
         date: '1648–1649',
         questionHeading: 'Why did Pride’s Purge and the High Court lead to regicide?',
-        bullets: ['Dec 1648 Pride’s Purge', 'Rump Parliament High Court', 'Regicide: 30 Jan 1649'],
+        bullets: ['1648 Pride’s Purge', 'Rump Parliament', 'Regicide (30 Jan 1649)'],
         focusClue:
           'On what constitutional grounds did Charles I refuse to recognize the trial court?',
       },
@@ -390,11 +354,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1660–1689',
         questionHeading: 'How did the Glorious Revolution permanently limit royal power?',
-        bullets: [
-          '1660 Monarchy restored',
-          '1688 William of Orange arrives',
-          '1689 Bill of Rights statute',
-        ],
+        bullets: ['1660 Restoration', '1688 William Lands', '1689 Bill of Rights'],
         focusClue:
           'How did the 1689 Bill of Rights legally end the Stuart doctrine of Divine Right?',
       },
@@ -450,14 +410,14 @@ const enquiryConfigs = [
         step: 1,
         date: '1517–1534',
         questionHeading: 'How did Henry VIII reshape sovereign authority in the Reformation?',
-        bullets: ['Royal Supremacy (1534)', 'Statutory power used', 'Monastic land sale'],
+        bullets: ['Royal Supremacy', 'Statutory Power', 'Monasteries Sold'],
         focusClue: 'Did the break with Rome increase royal prerogative or parliamentary authority?',
       },
       {
         step: 2,
         date: '1559–1588',
         questionHeading: 'How did the Elizabethan settlement forge a Protestant national state?',
-        bullets: ['Via Media compromise', 'Outward conformity', '1588 Armada patriotism'],
+        bullets: ['Via Media', 'Outward Conformity', '1588 Armada Unity'],
         focusClue:
           'How did external Catholic threats unite Crown and Parliament during Elizabeth’s reign?',
       },
@@ -465,14 +425,14 @@ const enquiryConfigs = [
         step: 3,
         date: '1603–1640',
         questionHeading: 'Why did Stuart claims of Divine Right provoke constitutional crisis?',
-        bullets: ['Divine Right claims', 'Unparliamentary taxes', 'Scottish Bishops’ Wars'],
+        bullets: ['Divine Right Claims', 'Ship Money Dispute', 'Bishops’ Wars'],
         focusClue: 'Why did Stuart absolutism break down while Tudor compromise had succeeded?',
       },
       {
         step: 4,
         date: '1642–1649',
         questionHeading: 'Why was the trial and execution of Charles I a radical turning point?',
-        bullets: ['Citizen army beats King', 'Monarchy held to law', 'Republican Commonwealth'],
+        bullets: ['Citizen Army Beats King', 'King Held to Law', 'Republic Created'],
         focusClue:
           'Why was publicly executing an anointed king the most shocking event in Tudor-Stuart history?',
       },
@@ -480,11 +440,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1660–1689',
         questionHeading: 'How did the 1689 Bill of Rights finalize Parliamentary Supremacy?',
-        bullets: [
-          'James II expelled (1688)',
-          'Statutory parliamentary veto',
-          'Constitutional Monarchy',
-        ],
+        bullets: ['James II Expelled', 'Parliamentary Veto', 'Statutory Monarchy'],
         focusClue:
           'Why does the 1689 Bill of Rights form the bedrock of Britain’s modern democracy?',
       },
@@ -1205,10 +1161,16 @@ function renderFooterStrip(pageNum, quip, totalPages = 16) {
 function renderSpinePage(cfg, pageNum) {
   const stagesHtml = cfg.stages
     .map((st) => {
+      // 3 Spaced-out trigger terms, each aligned 1-to-1 with pairs of ruled lines
       const bulletsHtml = st.bullets
         .map(
-          (b) =>
-            `<div style="display: flex; align-items: baseline; gap: 3px;"><span style="font-weight: 900; color: #000000; font-size: 6pt; line-height: 1;">&bull;</span> <span>${b}</span></div>`,
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 2.5px; ${idx < 2 ? 'border-bottom: 0.8px solid #e2e8f0;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.15;">
+                <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #0f172a; word-break: break-word;">${b}</span>
+              </div>
+            </div>`,
         )
         .join('');
       return `
@@ -1230,20 +1192,15 @@ function renderSpinePage(cfg, pageNum) {
             </div>
           </div>
 
-          <!-- Content Row: Left Ingredients Spine (32mm) & Right Ruled Writing Lines (Expanded) -->
+          <!-- Content Row: Left 3-Zone Trigger Spine (25mm) & Right Ruled Writing Lines (173mm) -->
           <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
             
-            <!-- Left Column: Compact 32mm Key Ingredient Spine (Anchor Facts) -->
-            <div style="width: 32mm; flex-shrink: 0; background: #f8fafc; padding: 2px 4px; display: flex; flex-direction: column; justify-content: space-evenly; border-right: 1.2px solid #000000; box-sizing: border-box;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 900; text-transform: uppercase; color: #000000; letter-spacing: 0.4px; border-bottom: 0.8px solid #000000; padding-bottom: 1px; margin-bottom: 1px; text-align: center;">
-                Key Ingredients
-              </div>
-              <div style="display: flex; flex-direction: column; gap: 1.5px; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 600; line-height: 1.15; color: #0f172a;">
-                ${bulletsHtml}
-              </div>
+            <!-- Left Column: Ultra-Compact 25mm Trigger Spine (Each Zone Aligns to 2 Ruled Lines) -->
+            <div style="width: 25mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
             </div>
 
-            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Width ~166mm for Higher Ability) -->
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Width ~173mm for Maximum Student Writing Space) -->
             <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
@@ -1293,7 +1250,7 @@ function renderSpinePage(cfg, pageNum) {
             Chronological Inquiry Spine &bull; Core Causal Narrative
           </span>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Construct your causal explanation for each stage incorporating the key ingredient terms
+            Construct your causal explanation for each stage incorporating the core trigger terms
           </span>
         </div>
 
