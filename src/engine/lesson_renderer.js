@@ -663,8 +663,9 @@ window.renderLessonByIndex = function (index, skipHistory = false) {
 
     if (typeof window.updateBreadcrumbs === 'function') {
       const lessonTitle = lesson.title || `Lesson ${index + 1}`;
-      const unitTitle = appStore.state.activeUnitData.title
-        ? appStore.state.activeUnitData.title.split(':')[0].trim()
+      const activeUnit = appStore.state.activeUnitData || window.currentUnitData || {};
+      let unitTitle = activeUnit.title
+        ? activeUnit.title.replace(/^(?:Paper \d+:?|KS3:?|GCSE[^:]*:?)\s*/i, '').trim()
         : 'Unit';
       window.updateBreadcrumbs([
         { label: 'Dashboard', view: 'dashboard' },

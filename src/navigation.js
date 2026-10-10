@@ -172,20 +172,18 @@ export function updateBreadcrumbs(customTrail = null) {
 
   const getUnitName = (id) => {
     if (!id) return '';
-    if (unitData && unitData.title) {
-      const clean = unitData.title
-        .split(':')[0]
-        .replace(/^(?:Paper \d+:?|KS3:?)\s*/i, '')
-        .trim();
+    const activeUnit = unitData?.title ? unitData : appStore.state.activeUnitData || {};
+    if (activeUnit && activeUnit.title) {
+      const clean = activeUnit.title.replace(/^(?:Paper \d+:?|KS3:?|GCSE[^:]*:?)\s*/i, '').trim();
       if (clean) return clean;
     }
-    if (id === 'cme_new') return 'Middle East (1945–95)';
-    if (id === 'edexcel_medicine') return 'Medicine (c1250–present)';
-    if (id === 'eee') return 'Elizabethan England';
-    if (id === 'weimar_nazi_germany') return 'Weimar & Nazi Germany';
-    if (id === 'usa') return 'USA (1954–75)';
-    if (id === 'trip_ypres') return 'Ypres Expedition';
-    if (id === 'great_war') return 'The Great War';
+    if (id === 'cme_new') return 'Conflict in the Middle East (1945–1995)';
+    if (id === 'edexcel_medicine') return 'Medicine Through Time';
+    if (id === 'eee') return 'Early Elizabethan England (1558–1588)';
+    if (id === 'weimar_nazi_germany') return 'Weimar and Nazi Germany (1918–1939)';
+    if (id === 'usa') return 'Conflict at Home and Abroad: USA (1954–75)';
+    if (id === 'trip_ypres') return 'Ypres Expedition & The Salient';
+    if (id === 'great_war') return 'Causes of the Great War';
     return id.replace(/_/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
   };
 

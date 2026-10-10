@@ -525,6 +525,8 @@ body {
   display: flex;
   align-items: center;
   gap: 16px;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 
 .menu-toggle {
@@ -567,6 +569,8 @@ body {
   max-width: 100%;
   scrollbar-width: none;
   padding: 4px 0;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 .breadcrumbs::-webkit-scrollbar {
   display: none;
@@ -577,10 +581,11 @@ body {
   gap: 6px;
   color: var(--text-muted, #64748b);
   transition: all 0.15s ease;
-  max-width: 240px;
+  max-width: 480px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 .breadcrumb-item.clickable {
   cursor: pointer;
@@ -589,6 +594,8 @@ body {
   text-decoration: none;
   padding: 2px 6px;
   border-radius: 4px;
+  max-width: 420px;
+  flex-shrink: 0;
 }
 .breadcrumb-item.clickable:hover {
   background-color: var(--bg-app, #f1f5f9);
@@ -598,6 +605,9 @@ body {
   color: var(--text-main, #0f172a);
   font-weight: 700;
   cursor: default;
+  max-width: 750px;
+  flex-shrink: 1;
+  min-width: 0;
 }
 .breadcrumb-separator {
   font-size: 0.65rem;
@@ -605,6 +615,7 @@ body {
   opacity: 0.7;
   display: inline-flex;
   align-items: center;
+  flex-shrink: 0;
 }
 .draft-restored-badge {
   display: inline-flex;
@@ -5060,6 +5071,7 @@ body.sen-mode .speech-word.speaking-word-highlight {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex-shrink: 0;
 }
 
 /* SEN / Dyslexia Button */

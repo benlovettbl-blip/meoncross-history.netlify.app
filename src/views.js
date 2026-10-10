@@ -1574,10 +1574,13 @@ export async function renderLessonsView() {
     // Update breadcrumbs to show Dashboard > Unit > Lesson Title
     if (typeof window.updateBreadcrumbs === 'function') {
       const lessonTitle = sub.title || `Lesson ${index + 1}`;
+      let unitTitle = data.title
+        ? data.title.replace(/^(?:Paper \d+:?|KS3:?|GCSE[^:]*:?)\s*/i, '').trim()
+        : 'Unit';
       window.updateBreadcrumbs([
         { label: 'Dashboard', view: 'dashboard' },
         {
-          label: data.title ? data.title.split(':')[0].trim() : 'Unit',
+          label: unitTitle,
           view: 'lessons',
           unit: unitId,
         },
