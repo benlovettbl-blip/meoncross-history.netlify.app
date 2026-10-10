@@ -639,8 +639,9 @@ const A5_BOOKLET_CSS = `
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 3.5px;
-    font-size: 6pt;
+    gap: 2.5px;
+    font-size: 5.1pt;
+    letter-spacing: -0.15px;
     color: #000000;
     white-space: nowrap;
   }
@@ -649,13 +650,8 @@ const A5_BOOKLET_CSS = `
   }
   .parent-sig-cell {
     padding: 2px 4px;
-  }
-  .parent-sig-box {
-    border: 1.2px solid #000000;
-    background: #ffffff;
-    border-radius: 2px;
-    height: 22px;
-    width: 100%;
+    vertical-align: middle;
+    text-align: center;
   }
 
   /* Page 1: 3-Tier Traffic Light Mastery Rule (DIRT Loop) & Micro-Pip Legend */
@@ -941,11 +937,11 @@ async function compileQuizBookletHtml() {
       <table class="tracking-table">
         <thead>
           <tr>
-            <th style="width: 32%;">Lesson Unit</th>
-            <th style="width: 14%;">Att 1 Score</th>
-            <th style="width: 14%;">Att 2 Score</th>
-            <th style="width: 25%;">Retrieval Strength</th>
-            <th style="width: 15%;">Parent Init</th>
+            <th style="width: 29%;">Lesson Unit</th>
+            <th style="width: 13%;">Att 1 Score</th>
+            <th style="width: 13%;">Att 2 Score</th>
+            <th style="width: 29%;">Retrieval Strength</th>
+            <th style="width: 16%; font-size: 5.6pt; letter-spacing: -0.2px; white-space: nowrap;">Parent Initials</th>
           </tr>
         </thead>
         <tbody>
@@ -960,12 +956,12 @@ async function compileQuizBookletHtml() {
             <td><span class="score-line"></span> / 8</td>
             <td>
               <div class="retrieval-boxes">
-                <span>[ ] Ins</span>
-                <span>[ ] Eff</span>
-                <span>[ ] Res</span>
+                <span>[ ] Instant</span>
+                <span>[ ] Effortful</span>
+                <span>[ ] Restudy</span>
               </div>
             </td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
+            <td class="parent-sig-cell"></td>
           </tr>`,
           ).join('')}
         </tbody>
