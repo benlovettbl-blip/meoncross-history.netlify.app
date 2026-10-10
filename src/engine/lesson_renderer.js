@@ -2790,8 +2790,8 @@ export function renderLesson(lesson) {
     `;
 
   let vocabDict = {};
-  const allVocabEntries = (lesson.vocab || []).concat(
-    (!lesson.vocab || lesson.vocab.length === 0) && lesson.flashcards ? lesson.flashcards : [],
+  const allVocabEntries = (lesson.vocab || lesson.vocabulary || []).concat(
+    !lesson.vocab && !lesson.vocabulary && lesson.flashcards ? lesson.flashcards : [],
   );
 
   allVocabEntries.forEach((v) => {
@@ -2842,7 +2842,7 @@ export function renderLesson(lesson) {
   });
 
   let seenTerms = new Set();
-  const highlightGlossary = (text, maxPerBlock = 2) => {
+  const highlightGlossary = (text, maxPerBlock = 3) => {
     if (!text || typeof text !== 'string') return text || '';
     if (Object.keys(vocabDict).length === 0) return text;
     let processedText = text;
@@ -4752,15 +4752,22 @@ export function renderLesson(lesson) {
       const rawHeading = block.theme_heading || block.title;
       if (rawHeading) {
         let displayHeading = rawHeading;
-        const bracketMatch = rawHeading.match(/\(([^)]+)\)/);
-        if (bracketMatch) {
-          // Extract clean historical title from brackets (e.g. "The Spanish Vacancy & Bismarck's Pencil")
-          displayHeading = bracketMatch[1].trim();
+        if (
+          unitId === 'monarchy_religion_power' ||
+          window.currentUnitId === 'monarchy_religion_power'
+        ) {
+          displayHeading = rawHeading;
         } else {
-          // If no brackets, strip internal curriculum "Act X: ..." prefix
-          displayHeading = displayHeading
-            .replace(/^Act\s*\d+\s*:\s*[^:\-–—]+[:\-–—]\s*/i, '')
-            .trim();
+          const bracketMatch = rawHeading.match(/\(([^)]+)\)/);
+          if (bracketMatch) {
+            // Extract clean historical title from brackets (e.g. "The Spanish Vacancy & Bismarck's Pencil")
+            displayHeading = bracketMatch[1].trim();
+          } else {
+            // If no brackets, strip internal curriculum "Act X: ..." prefix
+            displayHeading = displayHeading
+              .replace(/^Act\s*\d+\s*:\s*[^:\-–—]+[:\-–—]\s*/i, '')
+              .trim();
+          }
         }
         const headingId = displayHeading
           .toLowerCase()
@@ -5175,7 +5182,9 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'eee' ||
           unitId === 'eee' ||
           window.currentUnitId === 'weimar_nazi_germany' ||
-          unitId === 'weimar_nazi_germany';
+          unitId === 'weimar_nazi_germany' ||
+          window.currentUnitId === 'monarchy_religion_power' ||
+          unitId === 'monarchy_religion_power';
 
         if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
@@ -5198,6 +5207,32 @@ export function renderLesson(lesson) {
               <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
                 ${sourceHeaderHtml}
                 ${sourceBodyHtml}
+                ${
+                  rawSource.how_useful_question
+                    ? `
+                  <div class="archival-source-utility-box" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
+                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-scale-balanced"></i> Source Utility Enquiry & Provenance Scaffolding
+                    </div>
+                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 10px; line-height: 1.45;">
+                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.how_useful_question) : rawSource.how_useful_question}
+                    </div>
+                    ${
+                      rawSource.provenance_clues
+                        ? `
+                      <div style="font-size: 0.88rem; color: #166534; line-height: 1.55; background: #ffffff; padding: 10px 14px; border-radius: 4px; border: 1px solid #bbf7d0;">
+                        <strong style="color: #14532d; display: block; margin-bottom: 4px;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
+                        <ul style="margin: 4px 0 0 16px; padding: 0;">
+                          ${(Array.isArray(rawSource.provenance_clues) ? rawSource.provenance_clues : [rawSource.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
+                        </ul>
+                      </div>
+                    `
+                        : ''
+                    }
+                  </div>
+                `
+                    : ''
+                }
                 ${
                   rawSource.hinge_question || rawSource.question || rawSource.source_question
                     ? `
@@ -5242,10 +5277,13 @@ export function renderLesson(lesson) {
         !(block.title && block.title.toLowerCase().includes('lesson reflection')),
       );
 
+      const isSourceAfter =
+        window.currentUnitId === 'monarchy_religion_power' || unitId === 'monarchy_religion_power';
+
       htmlNarrative += `
             <div class="standard-narrative-container">
               ${imageHtml}
-              ${blockSourceHtml}
+              ${!isSourceAfter ? blockSourceHtml : ''}
               <div id="para-${index + 1}" class="narrative-chunk" style="display: flex; flex-direction: column; margin-bottom: 15px; padding: 16px 18px; background: ${bg}; border-radius: 6px; border-left: 4px solid #3b82f6; transition: all 0.3s ease; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
                 <div class="narrative-chunk-header" style="display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: ${themeHeadingHtml || showParaNumber ? '10px' : '4px'}; flex-wrap: wrap;">
                   <div class="narrative-chunk-meta" style="display: inline-flex; align-items: center; gap: 10px; flex-wrap: wrap; min-width: 0;">
@@ -5258,6 +5296,7 @@ export function renderLesson(lesson) {
                 </div>
                 <div class="narrative-text" style="width: 100%; line-height: 1.65; color: #1e293b; font-size: 1.05rem;">${styledContent}</div>
               </div>
+              ${isSourceAfter ? blockSourceHtml : ''}
             </div>
           `;
 
@@ -6538,7 +6577,7 @@ export function renderLesson(lesson) {
                           ? hint
                           : hint.prompt || hint.text || hint.desc || '';
                       let label = typeof hint === 'object' && hint.label ? hint.label : cfg.label;
-                      if (typeof hint === 'string') {
+                      if (typeof hint === 'string' && typeof hint.match === 'function') {
                         const splitMatch = hint.match(
                           /^(Point|Evidence|Explanation|Link):\s*(.*)/i,
                         );
