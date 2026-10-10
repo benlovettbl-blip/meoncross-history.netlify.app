@@ -117,10 +117,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
     },
     retrieval: {
-      title: '25-Question Knowledge Retrieval Drill & Answer Key',
-      label: 'Retrieval Companion',
-      htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html#page-18',
-      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
+      title: 'Crown, Church, or Parliament Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
+      htmlUrl: '/units/monarchy_religion_power/quiz_pack.html',
+      pdfUrl: '/pdfs/monarchy_religion_power_quiz_pack_FINAL_V1.pdf',
     },
   },
   industrialisation_and_empire: {
