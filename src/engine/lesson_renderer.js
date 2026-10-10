@@ -2959,7 +2959,9 @@ export function renderLesson(lesson) {
         window.currentUnitId === 'eee' ||
         unitId === 'eee' ||
         window.currentUnitId === 'monarchy_religion_power' ||
-        unitId === 'monarchy_religion_power';
+        unitId === 'monarchy_religion_power' ||
+        window.currentUnitId === 'first_british_empire' ||
+        unitId === 'first_british_empire';
       const cardIdAttr =
         sLetter && isInteractiveSourceUnit
           ? `id="source-card-${sLetter}" data-source-letter="${sLetter}"`
@@ -2975,7 +2977,9 @@ export function renderLesson(lesson) {
         unitId === 'eee' ||
         window.currentUnitId === 'eee' ||
         unitId === 'monarchy_religion_power' ||
-        window.currentUnitId === 'monarchy_religion_power'
+        window.currentUnitId === 'monarchy_religion_power' ||
+        unitId === 'first_british_empire' ||
+        window.currentUnitId === 'first_british_empire'
       ) {
         const displayTitle = source.title
           ? source.title.replace(/^(?:Source|Map|Diagram)\s+[A-Z0-9]+[:\s-]*/i, '').trim()
@@ -4825,7 +4829,9 @@ export function renderLesson(lesson) {
         let displayHeading = rawHeading;
         if (
           unitId === 'monarchy_religion_power' ||
-          window.currentUnitId === 'monarchy_religion_power'
+          window.currentUnitId === 'monarchy_religion_power' ||
+          unitId === 'first_british_empire' ||
+          window.currentUnitId === 'first_british_empire'
         ) {
           displayHeading = rawHeading;
         } else {
@@ -5271,7 +5277,9 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'weimar_nazi_germany' ||
           unitId === 'weimar_nazi_germany' ||
           window.currentUnitId === 'monarchy_religion_power' ||
-          unitId === 'monarchy_religion_power';
+          unitId === 'monarchy_religion_power' ||
+          window.currentUnitId === 'first_british_empire' ||
+          unitId === 'first_british_empire';
 
         if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
@@ -5365,7 +5373,10 @@ export function renderLesson(lesson) {
       );
 
       const isSourceAfter =
-        window.currentUnitId === 'monarchy_religion_power' || unitId === 'monarchy_religion_power';
+        window.currentUnitId === 'monarchy_religion_power' ||
+        unitId === 'monarchy_religion_power' ||
+        window.currentUnitId === 'first_british_empire' ||
+        unitId === 'first_british_empire';
 
       htmlNarrative += `
             <div class="standard-narrative-container">

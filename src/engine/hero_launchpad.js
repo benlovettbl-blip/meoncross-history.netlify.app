@@ -117,6 +117,20 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/monarchy_religion_power_quiz_pack_FINAL_V1.pdf',
     },
   },
+  first_british_empire: {
+    workbook: {
+      title: 'The First British Empire 20-Page Pupil Workbook',
+      label: 'Pupil Workbook (20 Pages)',
+      htmlUrl: '/units/first_british_empire/pupil_workbook.html',
+      pdfUrl: '/pdfs/first_british_empire_pupil_workbook.pdf',
+    },
+    retrieval: {
+      title: 'The First British Empire Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
+      htmlUrl: '/units/first_british_empire/quiz_pack.html',
+      pdfUrl: '/pdfs/first_british_empire_quiz_pack_FINAL_V1.pdf',
+    },
+  },
   industrialisation_and_empire: {
     textbook: {
       title: 'Industrialisation & Empire Master Textbook',

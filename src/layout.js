@@ -211,6 +211,7 @@ export function bindEvents() {
       'industrialisation_and_empire',
       'australia',
       'monarchy_religion_power',
+      'first_british_empire',
     ]);
     const year9Units = getOrderedUnits([
       'great_war',

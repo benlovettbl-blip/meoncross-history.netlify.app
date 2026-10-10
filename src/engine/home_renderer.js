@@ -106,6 +106,7 @@ export function renderHomepage() {
     if (heroImageUrl) {
       const positionFallbacks = {
         monarchy_religion_power: 'center 12%',
+        first_british_empire: 'center 35%',
         eee: 'center 10%',
         edexcel_medicine: 'center 32%',
         cme_new: 'center 20%',

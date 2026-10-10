@@ -107,6 +107,7 @@ export function renderDashboard() {
     'industrialisation_and_empire',
     'australia',
     'monarchy_religion_power',
+    'first_british_empire',
   ];
   const year8Units = units
     .filter((u) => year8Order.includes(u.id))
@@ -158,6 +159,7 @@ export function renderDashboard() {
 
     const positionFallbacks = {
       monarchy_religion_power: 'center 12%',
+      first_british_empire: 'center 35%',
       eee: 'center 10%',
       edexcel_medicine: 'center 32%',
       cme_new: 'center 20%',
@@ -1663,6 +1665,7 @@ export async function renderLessonsView() {
   if (heroImageUrl) {
     const positionFallbacks = {
       monarchy_religion_power: 'center 12%',
+      first_british_empire: 'center 35%',
       eee: 'center 10%',
       edexcel_medicine: 'center 32%',
       cme_new: 'center 20%',

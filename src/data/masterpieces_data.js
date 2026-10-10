@@ -1306,4 +1306,304 @@ export const MASTERPIECES_DATA = [
         'The Declaration of Rights was presented in the Banqueting House at Whitehall—the exact same building outside whose windows Charles I was beheaded in 1649 for claiming absolute Divine Right! Forty years later, William and Mary sat under the very same ceiling, but now legally bound by Parliament never again to suspend laws or tax without consent.',
     },
   },
+  {
+    id: 'west_grant_of_diwani',
+    weekTitle: 'Masterpiece Archive · Imperial Turning Point',
+    title: 'Shah Alam II Conveying the Grant of the Diwani to Lord Clive',
+    artist: 'Benjamin West',
+    artistDates: '1738–1820',
+    date: '1795',
+    medium: 'Oil on canvas',
+    location: 'British Library / FCO Collection, London',
+    dimensions: '132 cm × 188 cm',
+    image: '/images/shah_alam_clive.jpg',
+    curatorBadge: 'Georgian History Painting · Imperial Diplomacy',
+    curatorHook:
+      'A momentous constitutional handoff in an imperial tent: Mughal Emperor Shah Alam II formally surrenders the sovereign tax revenues of 20 million Bengalis to a private London commercial corporation.',
+    thematicLinks: [
+      'The East India Company & Corporate Sovereignty',
+      'The Fall of Mughal Hegemony & Regional Nawabs',
+      'Robert Clive & The Foundations of the British Raj',
+    ],
+    artistBio: {
+      headline: 'Court Painter to George III and History Titan',
+      summary:
+        'Born in colonial Pennsylvania, Benjamin West rose to become the official Historical Painter to King George III and President of the Royal Academy in London. Renowned for monumental canvases depicting the triumphs and sacrifices of the British Empire.',
+      fastFacts: [
+        'Succeeded Sir Joshua Reynolds as President of the Royal Academy in 1792.',
+        'Painted historical events in contemporary 18th-century attire rather than classical Greek or Roman togas, revolutionising history painting.',
+        'Commissioned by Lord Clive’s son (Edward Clive, 1st Earl of Powis) to commemorate the legal triumph of Allahabad.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the painting left to right: Notice the two distinct groups of men. What visual contrast can you see between the British officers on the left and the Mughal courtiers on the right?',
+        teacherHint:
+          'Direct pupils to the stark contrast between scarlet British military uniforms and the flowing white and gold silk robes of the Mughal court.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Look closely at the paper scroll being handed across the dais. What does that single piece of parchment legally grant, and why did Clive want it in writing?',
+        teacherHint:
+          'Guide students to connect the scroll to the Diwani—the constitutional right to collect all land taxes across Bengal, worth millions of pounds.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Why did Benjamin West paint this scene looking like an orderly, peaceful legal contract rather than a forced military shakedown after a war?',
+        teacherHint:
+          'Take a fast show of hands: To legitimise British imperial rule to Parliament as legal commerce rather than violent conquest.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Spot the "Tent of State": Where did this historic meeting actually take place, and why did West paint it under an open stone palace archway instead?',
+      reveal:
+        'In reality, the Treaty of Allahabad was signed on 12 August 1765 inside Robert Clive’s dining tent during the scorching monsoon season! West deliberately swapped the military canvas tent for grand Mughal palace columns and domes in the background to elevate the private corporate deal into an immortal imperial state ceremony.',
+    },
+  },
+  {
+    id: 'brookes_slave_ship_broadside',
+    weekTitle: 'Masterpiece Archive · Forensic Abolition',
+    title: 'Stowage of the British Slave Ship Brookes Under the Regulated Slave Trade',
+    artist: 'Plymouth Committee of the Abolition Society',
+    artistDates: 'Founded 1787',
+    date: '1788',
+    medium: 'Engraved broadside with woodcut print',
+    location: 'British Library / National Maritime Museum, Greenwich',
+    dimensions: '58 cm × 45 cm',
+    image: '/images/brookes_slave_ship.jpg',
+    curatorBadge: 'Enlightenment Abolitionism · Forensic Graphic Evidence',
+    curatorHook:
+      'The most influential and explosive political diagram in human history: A chilling architectural plan showing 454 captive human beings packed like inanimate cargo into the suffocating hold of a Liverpool slave vessel.',
+    thematicLinks: [
+      'The Transatlantic Slave Trade & The Middle Passage',
+      'The Dehumanisation of Chattel Slavery',
+      'Abolitionist Media Campaigning & Forensic Evidence',
+    ],
+    artistBio: {
+      headline: 'The Pioneers of Mass Human Rights Propaganda',
+      summary:
+        'Created by the Plymouth Committee of the Society for Effecting the Abolition of the Slave Trade, guided by Thomas Clarkson. The committee combined meticulous naval architectural drafting with political campaigning to expose the calculated cruelty of the slave trade to British Parliament.',
+      fastFacts: [
+        'Printed in over 7,000 copies in 1788 and distributed to MPs, taverns, schools, and international reformers in Paris and Philadelphia.',
+        'Based on precise on-site ship measurements taken by naval authorities in Liverpool following the 1788 Dolben Act.',
+        'Moved audiences across Britain to tears, convincing millions that the slave trade was an intolerable moral evil that could not be regulated, only abolished.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Examine the cross-sections labeled Fig 2 and Fig 3. Look at the spacing allocated between each individual person. How much room does each human being have to move or breathe?',
+        teacherHint:
+          'Point out that each adult man was allocated a space of just 6 feet by 16 inches—less room than a corpse in a coffin.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Notice that this poster looks like an architectural blueprint or engineer’s diagram. Why did the abolitionists choose a cold, technical format instead of an emotional painting?',
+        teacherHint:
+          'Encourage pupils to realize that slave traders claimed enslaved people were treated humanely; the mathematical precision of the ship plan was undeniable forensic proof of cruelty.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was the primary power of the Brookes diagram that it made people feel pity, or that it used mathematical facts that slave owners could not deny?',
+        teacherHint:
+          'Emphasise that the forensic precision of the measurements disarmed the pro-slavery lobby’s arguments in the House of Commons.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'What shocking truth about the Brookes is revealed in the small explanatory text box at the top right of the poster?',
+      reveal:
+        'The diagram illustrates the ship carrying 454 captives under the "regulated" legal limit of the 1788 Dolben Act. But the text box records that before the law was passed, the exact same ship had routinely crammed over 609 enslaved human beings into that same space on previous voyages—meaning the actual historical horror was over 30% worse than shown in the diagram!',
+    },
+  },
+  {
+    id: 'revere_boston_massacre',
+    weekTitle: 'Masterpiece Archive · Revolutionary Propaganda',
+    title: 'The Bloody Massacre Perpetrated in King-Street, Boston',
+    artist: 'Paul Revere',
+    artistDates: '1734–1818',
+    date: 'March 1770',
+    medium: 'Hand-coloured copperplate engraving',
+    location: 'Library of Congress, Prints and Photographs Division, Washington D.C.',
+    dimensions: '26 cm × 23 cm',
+    image: '/images/boston_massacre.jpg',
+    curatorBadge: 'Colonial American Printmaking · Political Propaganda',
+    curatorHook:
+      'The spark that set the American Revolution alight: A masterclass in 18th-century political spin that turned a chaotic, icy street brawl into a cold-blooded military firing squad.',
+    thematicLinks: [
+      'The Thirteen Colonies & Military Occupation of Boston',
+      'The Sons of Liberty & Anti-British Media Agitation',
+      'Causation & Propaganda in the American Revolution',
+    ],
+    artistBio: {
+      headline: 'Silversmith, Patriot Express Rider, and Propaganda Master',
+      summary:
+        'A Boston silversmith, engraver, and prominent leader of the radical Sons of Liberty. Best known for his famous "Midnight Ride" of April 1775 to warn colonial militia that British regulars were advancing on Lexington and Concord.',
+      fastFacts: [
+        'Engraved and rushed this print onto the streets of Boston within just three weeks of the 5 March 1770 clash.',
+        'Copied the original composition directly from artist Henry Pelham without giving him credit or payment.',
+        'Intentionally added provocative political slogans, including labeling the British Custom House as "Butcher’s Hall".',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Look at the redcoats on the right versus the crowd on the left. Look at their captain standing behind them raising his sword. What command does he appear to be giving?',
+        teacherHint:
+          'Point out Captain Preston’s raised sword, making it look as though he ordered a coordinated firing squad volley into unarmed citizens.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: In historical reality, the colonists were pelting the soldiers with chunks of ice, oyster shells, and heavy wooden clubs in the dark. Does Revere show any of those weapons in the crowd’s hands?',
+        teacherHint:
+          'Encourage pupils to notice the crowd is dressed in respectable coats with open, empty hands, looking completely defenseless.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Why is Paul Revere’s print considered one of the most effective pieces of political propaganda in history?',
+        teacherHint:
+          'Take a fast vote: Because it permanently cemented the image of British troops as tyrannical murderers across all thirteen colonies.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Spot the innocent bystander: Look at the bottom center of the cobblestone street. What unexpected creature is standing there completely calm amid the gunfire?',
+      reveal:
+        'A small spotted dog is standing in the foreground! In 18th-century European art, dogs symbolised loyalty and innocence. Revere deliberately included the calm pet to heighten the emotional feeling that King Street was a peaceful, domestic civilian neighbourhood brutally violated by British military violence.',
+    },
+  },
+  {
+    id: 'trumbull_declaration_independence',
+    weekTitle: 'Masterpiece Archive · The Birth of a Republic',
+    title: 'Declaration of Independence (July 4, 1776)',
+    artist: 'John Trumbull',
+    artistDates: '1756–1843',
+    date: '1819',
+    medium: 'Oil on canvas',
+    location: 'United States Capitol Rotunda, Washington D.C.',
+    dimensions: '365 cm × 548 cm',
+    image: '/images/declaration_of_independence.jpg',
+    curatorBadge: 'Neoclassical American History Painting · Founding Myth',
+    curatorHook:
+      'The monumental founding tableau of the United States: Thomas Jefferson and the Committee of Five present their revolutionary draft to John Hancock, proclaiming universal human equality in a room where two-thirds of the delegates were slaveholders.',
+    thematicLinks: [
+      'The American Revolution & Enlightenment Political Thought',
+      'The 1776 Declaration of Independence & Unalienable Rights',
+      'The Paradox of Liberty and Chattel Slavery in the Early Republic',
+    ],
+    artistBio: {
+      headline: 'The Painter of the American Revolution',
+      summary:
+        'A former soldier and aide-de-camp to General George Washington during the Revolutionary War. Trumbull dedicated decades of his life to creating the definitive visual record of the birth of the American nation.',
+      fastFacts: [
+        'Son of the colonial Governor of Connecticut; studied painting in London under Benjamin West.',
+        'Traveled thousands of miles across America on horseback to paint 42 of the signers from life before they died of old age.',
+        'His monumental 12-by-18-foot canvas has hung in the Capitol Rotunda in Washington D.C. since 1826.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the assembly: Identify the five men standing in the center before the seated president John Hancock. Who is the tallest figure in the red waistcoat holding the paper scroll?',
+        teacherHint:
+          'Identify Thomas Jefferson (in red waistcoat), flanked by Benjamin Franklin and John Adams presenting the Declaration draft.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: The room appears serene, orderly, and harmonious. Why did Trumbull omit the blistering summer heat, the flies, and the furious arguments over whether to condemn the slave trade?',
+        teacherHint:
+          'Guide students to recognize that Trumbull was painting a founding civic myth for a new nation, not a gritty documentary.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Can a painting celebrate the noble ideal that "all men are created equal" while honestly addressing the fact that 41 of the 56 men in that room were slaveholders?',
+        teacherHint:
+          'Facilitate discussion on historical complexity: revolutionary principles vs. painful imperial realities.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Spot the "Trophies of War": Look high on the back wall behind the delegates. What objects are hanging there, and what do they signify?',
+      reveal:
+        'Captured British military battle flags and drums are hanging crossed on the back wall! Trumbull placed them there to remind viewers that while these statesmen were calmly debating philosophy with quill pens in Philadelphia, their countrymen were actively fighting and dying against the British Royal Army on the battlefield.',
+    },
+  },
 ];
