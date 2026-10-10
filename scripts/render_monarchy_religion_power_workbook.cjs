@@ -142,8 +142,9 @@ const enquiryConfigs = [
         'A primary cause of the break with Rome was... &bull; In particular, the dynastic crisis... &bull; Furthermore, Thomas Cromwell demonstrated... &bull; Crucially, the 1534 Act of Supremacy... &bull; Consequently...',
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
+      timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
       timelineMission:
-        'Turn to Pages 8–9 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
+        '<strong>Milestone 1 (The Double-Crown Snip &bull; 1534):</strong> Sketch Henry VIII using giant golden shears to snip the papal authority cable from Rome, placing a second crown on his head [✂️ shears &bull; 👑 pope’s tiara &bull; ⛓️ broken chain].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Monastery Meltdown &bull; 1536–40):</strong> Sketch Thomas Cromwell wheeling cartloads of melted lead roof tiles and golden chalices away from an abbey to build coastal artillery forts [🛒 handcart &bull; 🪙 melted lead &bull; 🏰 artillery fort].',
     },
     leftPageQuip:
       'In 1534, questioning Henry VIII’s marriage was high treason punishable by death at Tower Hill.',
@@ -247,8 +248,9 @@ const enquiryConfigs = [
         wordBank:
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
+      timelineMissionTitle: 'Centrefold Sketch Challenge 3',
       timelineMission:
-        'Turn to Pages 8–9 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
+        '<strong>Milestone 3 (The Tudor Tightrope Walk &bull; 1559):</strong> Sketch Queen Elizabeth I balancing on a tightrope labelled ‘Via Media’, holding an English Protestant Bible in one hand and a Catholic crucifix in the other, smiling as Catholic and Puritan extremists shout below [🎪 tightrope walker &bull; 📖 open Bible &bull; ⚖️ balancing cross].',
     },
     leftPageQuip:
       'Elizabeth I had ‘no desire to make windows into men’s souls’—pay your Sunday fines and keep private doubts to yourself.',
@@ -359,8 +361,9 @@ const enquiryConfigs = [
         wordBank:
           'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
       },
+      timelineMissionTitle: 'Centrefold Sketch Challenge 4',
       timelineMission:
-        'Turn to Pages 8–9 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
+        '<strong>Milestone 4 (The Midnight Hellburners of Calais &bull; 1588):</strong> Sketch eight blazing English fireships crashing into the anchored Spanish Armada at Calais at midnight, with Spanish galleons desperately slicing anchor cables in panic as the crescent formation shatters [🔥 blazing sails &bull; ⚓ sliced anchor cable &bull; ⛵ scattering galleons].',
     },
     leftPageQuip:
       'The Armada carried 130 ships and 30,000 soldiers. Unfortunately for Philip II, none of it stopped English fireships.',
@@ -465,8 +468,9 @@ const enquiryConfigs = [
         'A primary reason Parliament executed Charles I was... &bull; In particular, his unshakeable belief in Divine Right... &bull; Furthermore, his secret Scottish alliance provoked... &bull; Crucially, Colonel Pride’s purge left... &bull; Consequently...',
       wordBank:
         'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
+      timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
       timelineMission:
-        'Turn to Pages 8–9 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
+        '<strong>Milestone 5 (The Inland Navy Absurdity &bull; 1629–40):</strong> Sketch King Charles I’s royal sheriff demanding coastal Ship Money gold from a bewildered farmer in a landlocked field miles from the sea [👨‍🌾 bewildered farmer &bull; 🌾 landlocked haystack &bull; 💰 royal tax bag].<br style="display:block; margin-top:2px;"><strong>Milestone 6 (The Crown on the Block &bull; 1649):</strong> Sketch the executioner’s chopping block outside the Banqueting House at Whitehall on 30 January 1649, with the fallen royal crown resting on the block before a silent crowd [🪓 chopping block &bull; 👑 fallen crown &bull; 🏛️ Whitehall window].',
     },
     leftPageQuip:
       'Charles I insisted no earthly court could try a king; three days later, Parliament had him beheaded outside Whitehall.',
@@ -576,8 +580,9 @@ const enquiryConfigs = [
         wordBank:
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },
+      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
       timelineMission:
-        'Turn to Pages 8–9 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
+        '<strong>Milestone 7 (The Midnight Thames Splash &bull; 1688):</strong> Sketch King James II fleeing London by rowboat at midnight, secretly hurling the heavy Great Seal of the Realm into the cold, dark River Thames [🚣 rowboat in fog &bull; 🌊 sinking Great Seal &bull; 👑 cloaked king].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (The Clipped Crown Contract &bull; 1689):</strong> Sketch Parliament presenting the Crown to William III and Mary II, with legal hedge-clippers trimming away royal powers over taxes, laws, and standing armies [📜 legal scroll &bull; 👑 trimmed crown &bull; 🏛️ parliamentary mace].',
     },
     leftPageQuip:
       'In 1689, William III accepted the Bill of Rights to secure war taxes, legally subordinating the Crown to Parliament.',
@@ -1477,18 +1482,18 @@ function renderRightPage(cfg, pageNum) {
       </div>
 
       <!-- Timeline Mission Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-            Timeline Mission
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+            🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
-            ${rp.timelineMission}
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">
+            Turn to Centrefold &bull; Pages 8–9 &rarr;
           </span>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &rarr; Pages 8–9
-        </span>
+        <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+          ${rp.timelineMission}
+        </div>
       </div>
 
       ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
@@ -1583,18 +1588,18 @@ function renderRightPage(cfg, pageNum) {
         </div>
 
         <!-- Timeline Mission Box -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-              Timeline Mission
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
-              ${rp.timelineMission}
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">
+              Turn to Centrefold &bull; Pages 8–9 &rarr;
             </span>
           </div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-            &rarr; Pages 8–9
-          </span>
+          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+            ${rp.timelineMission}
+          </div>
         </div>
       </div>
 
@@ -2202,111 +2207,75 @@ function compileMonarchyWorkbook() {
       <div style="display: flex; flex-direction: column; gap: 5px; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 1: 1534 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1534 &bull; Henry VIII &amp; The Act of Supremacy
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 1</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Double-Crown Snip
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch King Henry VIII using a giant golden pair of shears to snip the papal authority cable connecting Rome and London, placing a second crown upon his own head.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Shears ✂️ &bull; Pope’s Tiara 👑 &bull; Broken Chain ⛓️
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 1 on Page 3 ]</span>
+          </div>
         </div>
 
         <!-- Milestone 2: 1536–1540 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1536–1540 &bull; Dissolution of the Monasteries
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 1</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Monastery Meltdown
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch Thomas Cromwell wheeling cartloads of melted lead roof tiles and golden chalices away from a dissolved abbey to build King Henry's coastal artillery forts.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Handcart 🛒 &bull; Melted Lead 🪙 &bull; Castle Fortress 🏰
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 1 on Page 3 ]</span>
+          </div>
         </div>
 
         <!-- Milestone 3: 1559 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1559 &bull; Elizabeth I &amp; The Religious Settlement
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 2</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Tudor Tightrope Walk
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch Queen Elizabeth I balancing on a tightrope labelled 'Via Media', holding a Protestant Bible in one hand and a Catholic crucifix in the other, smiling as extremists shout below.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Tightrope Walker 🎪 &bull; Open Bible 📖 &bull; Balancing Cross ⚖️
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 2 on Page 5 ]</span>
+          </div>
         </div>
 
         <!-- Milestone 4: 1588 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1588 &bull; Defeat of the Spanish Armada
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 3</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Midnight Hellburners of Calais
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch eight blazing English fireships crashing into the anchored Spanish Armada at midnight, Spanish galleons desperately slicing their anchor cables in panic.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Blazing Sails 🔥 &bull; Sliced Anchor Cable ⚓ &bull; Scattering Galleons ⛵
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 3 on Page 7 ]</span>
+          </div>
         </div>
 
       </div>
@@ -2334,111 +2303,75 @@ function compileMonarchyWorkbook() {
       <div style="display: flex; flex-direction: column; gap: 5px; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 5: 1629–1640 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 4</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Inland Navy Absurdity
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch King Charles I's royal sheriff demanding coastal 'Ship Money' gold from a bewildered farmer standing in a dusty field miles away from the sea.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Bewildered Farmer 👨‍🌾 &bull; Landlocked Haystack 🌾 &bull; Royal Tax Bag 💰
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 4 on Page 11 ]</span>
+          </div>
         </div>
 
         <!-- Milestone 6: 1649 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1649 &bull; Trial &amp; Execution of King Charles I
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 4</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Crown on the Block
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch the executioner's chopping block outside the Banqueting House at Whitehall, with a royal crown sitting on the block before a silent crowd.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Chopping Block 🪓 &bull; Fallen Crown 👑 &bull; Whitehall Window 🏛️
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 4 on Page 11 ]</span>
+          </div>
         </div>
 
         <!-- Milestone 7: 1688 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1688 &bull; The Glorious Revolution
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 5</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Midnight Thames Splash
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch King James II fleeing London in the dead of night, secretly hurling the heavy Great Seal of the Realm into the cold, dark River Thames.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Rowboat in Fog 🚣 &bull; Sinking Great Seal 🌊 &bull; Cloaked King 👑
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 5 on Page 13 ]</span>
+          </div>
         </div>
 
         <!-- Milestone 8: 1689 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #000000;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
                 1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 5</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #000000; margin: 0 0 2px 0; line-height: 1.18;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
               William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
             </p>
-            <div style="background: #fafafa; border: 1px solid #000000; border-radius: 3px; padding: 2px 5px; margin-bottom: 1px;">
-              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #000000;">
-                🎨 Drawing Challenge: The Clipped Crown Contract
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #222222; line-height: 1.18;">
-                Sketch Parliament handing King William III and Queen Mary II the Crown, but with a pair of legal hedge-clippers trimming away the powers of taxation and arrest.
-              </div>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #444444; margin-top: 1px;">
-                Quick-Draw: Legal Scroll 📜 &bull; Trimmed Crown 👑 &bull; Parliamentary Mace 🏛️
-              </div>
-            </div>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 20mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 5 on Page 13 ]</span>
+          </div>
         </div>
 
       </div>
