@@ -829,20 +829,20 @@ const A5_BOOKLET_CSS = `
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 3.5px;
-    font-size: 6.3pt;
-    line-height: 1.15;
+    gap: 4px;
+    font-size: 6.6pt;
+    line-height: 1.18;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 1.2px 4px;
+    padding: 1.5px 5px;
     color: #000000;
   }
   .ans-num-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 14px;
+    min-width: 15px;
     flex-shrink: 0;
     line-height: 1;
     padding-top: 0.5px;
@@ -850,7 +850,7 @@ const A5_BOOKLET_CSS = `
   .ans-num {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 7.0pt;
     line-height: 1.1;
   }
   .ans-pip {
@@ -861,7 +861,7 @@ const A5_BOOKLET_CSS = `
     line-height: 1;
   }
   .ans-pip .pip-badge {
-    font-size: 5.5pt;
+    font-size: 5.8pt;
     letter-spacing: -1px;
   }
   .ans-content {
@@ -871,13 +871,13 @@ const A5_BOOKLET_CSS = `
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 6.8pt;
+    font-size: 7.0pt;
   }
   .ans-exp {
     color: #000000 !important;
     font-weight: 600 !important;
     font-style: normal !important;
-    font-size: 6.3pt;
+    font-size: 6.6pt;
   }
   @media print {
     .ans-exp {
@@ -887,40 +887,11 @@ const A5_BOOKLET_CSS = `
     }
   }
   .ans-boxes {
-    font-size: 6.2pt;
+    font-size: 6.4pt;
     font-weight: 800;
     color: #000000;
     white-space: nowrap;
     margin-left: 3px;
-  }
-
-  /* Page 8: Summative Evaluation & Verification Sign-Off Box */
-  .signoff-box {
-    background: #ffffff;
-    border: 1.5px solid #000000;
-    border-radius: 3px;
-    padding: 4px 8px;
-    margin-top: 4px;
-    font-size: 6.8pt;
-    color: #000000;
-  }
-  .signoff-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 8px;
-    align-items: center;
-    margin-top: 3px;
-  }
-  .signoff-field {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    font-weight: 700;
-  }
-  .signoff-line {
-    border-bottom: 1.2px solid #000000;
-    flex: 1;
-    min-height: 14px;
   }
 `;
 
@@ -1111,12 +1082,13 @@ async function compileQuizBookletHtml() {
   });
 
   // ==========================================================================
-  // PAGE 7: DEPARTMENT MARKING BANK (PART 1 • LESSONS 1–3 • Q1–Q24)
+  // PAGE 7: DEPARTMENT MARKING BANK (PART 1 • LESSONS 1–3 • Q1–Q20)
+  // 20 Questions evenly distributed across Page 7 (Zero spillover, generous spacing)
   // ==========================================================================
   html += `
   <div class="a5-page page-flex-full">
     <div class="page-header-strip page-header-compact">
-      <h2>Department Marking Bank &bull; Lessons 1–3 (Q1–Q24)</h2>
+      <h2>Department Marking Bank &bull; Part 1: Lessons 1–3 (Q1–Q20)</h2>
     </div>
 
     <div class="mb-container">
@@ -1156,8 +1128,9 @@ async function compileQuizBookletHtml() {
         )
         .join('')}
 
-      <div class="mb-section-title">Lesson 3: The Spanish Armada & Naval Warfare (Q17–Q24)</div>
+      <div class="mb-section-title">Lesson 3: The Spanish Armada — Strategy & Fleet (Q17–Q20)</div>
       ${QUIZ_DATA[2].items
+        .slice(0, 4)
         .map(
           (item, i) => `
       <div class="ans-card">
@@ -1183,15 +1156,35 @@ async function compileQuizBookletHtml() {
 `;
 
   // ==========================================================================
-  // PAGE 8: DEPARTMENT MARKING BANK (PART 2 • LESSONS 4–5 • Q25–Q40) & SIGN-OFF
+  // PAGE 8: DEPARTMENT MARKING BANK (PART 2 • LESSONS 3–5 • Q21–Q40)
+  // 20 Questions evenly distributed across Page 8 (Zero spillover, generous spacing)
   // ==========================================================================
   html += `
   <div class="a5-page page-flex-full">
     <div class="page-header-strip page-header-compact">
-      <h2>Department Marking Bank &bull; Lessons 4–5 & Summative Review (Q25–Q40)</h2>
+      <h2>Department Marking Bank &bull; Part 2: Lessons 3–5 (Q21–Q40)</h2>
     </div>
 
     <div class="mb-container">
+      <div class="mb-section-title">Lesson 3: The Spanish Armada — Gravelines & Impact (Q21–Q24)</div>
+      ${QUIZ_DATA[2].items
+        .slice(4)
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 21}.</span>
+          <span class="ans-pip">${getPipBadge(i + 4)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+        <span class="ans-boxes">[✓] [✗]</span>
+      </div>`,
+        )
+        .join('')}
+
       <div class="mb-section-title">Lesson 4: The Civil War, Regicide & Bill of Rights (Q25–Q32)</div>
       ${QUIZ_DATA[3].items
         .map(
@@ -1229,25 +1222,9 @@ async function compileQuizBookletHtml() {
         .join('')}
     </div>
 
-    <!-- DIRT Protocol & Teacher Quality Inspection Box -->
-    <div class="signoff-box">
-      <div style="font-weight: 800; text-transform: uppercase; font-size: 7.2pt; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px; display: flex; justify-content: space-between;">
-        <span>Department Assessment & DIRT Verification Sign-Off</span>
-        <span>Unit Final Score: ______ / 40</span>
-      </div>
-      <div style="font-size: 6.4pt; line-height: 1.25; margin-bottom: 3px;">
-        <strong>DIRT Protocol:</strong> Any question marked [✗] must be corrected in green pen with the full historical mechanism written out. If score is below 32/40 (80%), scholar must complete a re-test session using the online revision portal.
-      </div>
-      <div class="signoff-grid">
-        <div class="signoff-field"><span>Teacher Sign:</span><span class="signoff-line"></span></div>
-        <div class="signoff-field"><span>DIRT Verified:</span> [ ] Pass &bull; [ ] Redo</div>
-        <div class="signoff-field"><span>Date:</span><span class="signoff-line"></span></div>
-      </div>
-    </div>
-
     <div class="page-footer-strip">
       <span>Crown, Church, or Parliament (1517–1689)</span>
-      <span>Marking Bank Part 2 & Sign-Off &bull; Page 8 of 8</span>
+      <span>Marking Bank Part 2 &bull; Page 8 of 8</span>
     </div>
   </div>
 `;
