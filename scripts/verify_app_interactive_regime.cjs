@@ -11,8 +11,12 @@
  *    spotlight triggers the Masterpiece Projector (#masterpiece-projector-modal), and the top-level gallery view renders cleanly.
  * 4. Retrieval Quizzes & Quiz Pack: Verifies 20 questions per lesson, verifies compiled 8-page saddle-stitch HTML and PDF,
  *    and audits 0px overflow across all pages.
+ * 4B. Distractor Collision & Answer Match Audit: Validates exactly 4 options per question, zero duplicate options,
+ *    and 100% valid answer matching across all retrieval questions.
  * 5. Back Cover QR Codes & Live Routing: Tests all 5 enquiry QR code URLs on http://localhost:3003, asserting 0 console errors,
  *    correct lesson loading, and instant auto-launch of the retrieval quiz modal when &quiz=true is passed.
+ * 5B. Mobile Viewport & Touch Target Ergonomics: Emulates iPhone SE (375x667, touch screen), asserting zero horizontal overflow,
+ *    full mobile modal adaptation, touch target bounds (>= 44px per WCAG 2.1 AA), and clean mobile drawer toggling.
  * 6. Institutional Neutrality & Sanitization: Asserts 0 prohibited school or teacher identifiers.
  *
  * Usage:
@@ -194,7 +198,7 @@ async function runTestingRegime(targetUnitId = 'industrialisation_and_empire') {
   );
 
   // -------------------------------------------------------------
-  // SUITE 2 & 3 & 5: Puppeteer Live App Testing (Accordions, Gallery, Lightbox, QR Routes)
+  // SUITE 2 & 3: Puppeteer Desktop Live App Testing (Accordions, Gallery, Lightbox)
   // -------------------------------------------------------------
   logSection(`SUITE 2: UI Accordion & Collapsible Drawer State in Browser`);
   logSection(`SUITE 3: Gallery Lightbox & Masterpiece Projector Integration`);
@@ -410,6 +414,71 @@ async function runTestingRegime(targetUnitId = 'industrialisation_and_empire') {
     );
 
     // -------------------------------------------------------------
+    // SUITE 4B: Distractor Collision & Answer Match Audit
+    // -------------------------------------------------------------
+    logSection(`SUITE 4B: Distractor Collision & Answer Key Sanity Audit`);
+
+    let totalCheckedQuestions = 0;
+    let duplicateOptionQuestions = 0;
+    let missingAnswerMatches = 0;
+    let malformedOptionsCount = 0;
+
+    lessons.forEach((lesson, lIdx) => {
+      const quizQuestions = lesson.quiz || [];
+      quizQuestions.forEach((q, qIdx) => {
+        totalCheckedQuestions++;
+        const opts = q.options || [];
+
+        // Check options count
+        if (opts.length !== 4) {
+          malformedOptionsCount++;
+          logWarn(`Lesson ${lIdx + 1} Q${qIdx + 1} has ${opts.length} options (Expected 4)`);
+        }
+
+        // Check for duplicate options within the same question
+        const normalized = opts.map((o) => String(o).trim().toLowerCase());
+        const uniqueSet = new Set(normalized);
+        if (uniqueSet.size !== opts.length) {
+          duplicateOptionQuestions++;
+          logWarn(
+            `Lesson ${lIdx + 1} Q${qIdx + 1} contains duplicate options: ${JSON.stringify(opts)}`,
+          );
+        }
+
+        // Check answer match (either numeric index or exact string)
+        let hasValidAnswer = false;
+        if (typeof q.answer === 'number') {
+          hasValidAnswer = q.answer >= 0 && q.answer < opts.length;
+        } else if (typeof q.answer === 'string') {
+          const ansNorm = q.answer.trim().toLowerCase();
+          hasValidAnswer = normalized.some((o) => o === ansNorm);
+        }
+        if (!hasValidAnswer) {
+          missingAnswerMatches++;
+          logWarn(
+            `Lesson ${lIdx + 1} Q${qIdx + 1} answer "${q.answer}" does not match any provided options!`,
+          );
+        }
+      });
+    });
+
+    assertTest(
+      malformedOptionsCount === 0,
+      `100% of questions contain exactly 4 multiple-choice options (${totalCheckedQuestions}/${totalCheckedQuestions})`,
+      `${malformedOptionsCount} questions do not have 4 options`,
+    );
+    assertTest(
+      duplicateOptionQuestions === 0,
+      `Zero distractor collisions or duplicate options detected across all ${totalCheckedQuestions} questions`,
+      `${duplicateOptionQuestions} questions contain duplicate options`,
+    );
+    assertTest(
+      missingAnswerMatches === 0,
+      `100% of questions have an exact, unambiguous answer match in their options array`,
+      `${missingAnswerMatches} questions have answers that do not match their options!`,
+    );
+
+    // -------------------------------------------------------------
     // SUITE 5: Back Cover QR Codes & Live Route Launching
     // -------------------------------------------------------------
     logSection(`SUITE 5: Pupil Workbook Back Cover QR Codes & Live Routing`);
@@ -510,6 +579,109 @@ async function runTestingRegime(targetUnitId = 'industrialisation_and_empire') {
       allQRsPassed,
       `100% of Workbook Back Cover QR codes verified working end-to-end`,
       `One or more QR codes failed live verification`,
+    );
+
+    // -------------------------------------------------------------
+    // SUITE 5B: Mobile Viewport & Touch Target Ergonomics Audit
+    // -------------------------------------------------------------
+    logSection(`SUITE 5B: Mobile Viewport & Touch Target Ergonomics (WCAG 2.1 AA)`);
+
+    // Emulate iPhone SE (Compact 375x667 mobile touchscreen)
+    await page.setViewport({
+      width: 375,
+      height: 667,
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true,
+    });
+
+    const mobileUrl = `${BASE_URL}/?unit=${targetUnitId}&lesson=1&quiz=true`;
+    await page.goto(mobileUrl, { waitUntil: 'domcontentloaded', timeout: 15000 });
+    await page.waitForSelector('#quizModal', { visible: true, timeout: 8000 });
+    await page.waitForSelector('.quiz-option-btn', { timeout: 8000 });
+
+    const mobileMetrics = await page.evaluate(() => {
+      const docWidth = document.documentElement.scrollWidth;
+      const winWidth = window.innerWidth;
+      const hasHorizontalOverflow = docWidth > winWidth;
+
+      const btns = Array.from(document.querySelectorAll('.quiz-option-btn'));
+      const optionsPassWcag = btns.every((b) => {
+        const rect = b.getBoundingClientRect();
+        return rect.height >= 44 && rect.width >= 44;
+      });
+
+      const modal = document.getElementById('quizModal');
+      const content = modal ? modal.querySelector('.modal-content') : null;
+      const contentRect = content ? content.getBoundingClientRect() : null;
+      const modalFitsScreen =
+        contentRect && contentRect.width <= winWidth && contentRect.height <= window.innerHeight;
+
+      // Close modal
+      if (typeof window.closeQuizModal === 'function') {
+        window.closeQuizModal();
+      }
+
+      return {
+        hasHorizontalOverflow,
+        optionsPassWcag,
+        modalFitsScreen,
+        btnCount: btns.length,
+      };
+    });
+
+    assertTest(
+      !mobileMetrics.hasHorizontalOverflow,
+      `Zero horizontal overflow scroll on compact mobile screen (375px width)`,
+      `Horizontal overflow detected on mobile viewport!`,
+    );
+    assertTest(
+      mobileMetrics.optionsPassWcag && mobileMetrics.btnCount === 4,
+      `All 4 mobile quiz options meet WCAG 2.1 AA touch target standards (height & width >= 44px)`,
+      `One or more quiz option buttons fail 44x44px touch target minimum`,
+    );
+    assertTest(
+      mobileMetrics.modalFitsScreen,
+      `Mobile fullscreen quiz modal adapts seamlessly to 100vw / 100vh viewport without clipping`,
+      `Modal content bounds clipped outside mobile screen`,
+    );
+
+    // Test mobile drawer tapping and responsiveness
+    await new Promise((r) => setTimeout(r, 400));
+    await page.waitForSelector('details.cme-source-drawer, details.archival-drawer');
+
+    const mobileDrawerMetrics = await page.evaluate(() => {
+      const firstDrawer = document.querySelector(
+        'details.cme-source-drawer, details.archival-drawer',
+      );
+      if (!firstDrawer) return { found: false };
+      const summary = firstDrawer.querySelector('summary');
+      const summaryRect = summary.getBoundingClientRect();
+      const meetsTouchTarget = summaryRect.height >= 40;
+
+      // Tap drawer to open
+      summary.click();
+      const opened = firstDrawer.open;
+      const docWidthAfterOpen = document.documentElement.scrollWidth;
+      const noOverflowAfterOpen = docWidthAfterOpen <= window.innerWidth;
+
+      return {
+        found: true,
+        meetsTouchTarget,
+        opened,
+        noOverflowAfterOpen,
+      };
+    });
+
+    assertTest(
+      mobileDrawerMetrics.found && mobileDrawerMetrics.meetsTouchTarget,
+      `Archival drawer summary provides generous mobile touch target (height >= 40px)`,
+      `Drawer summary touch target too small on mobile`,
+    );
+    assertTest(
+      mobileDrawerMetrics.opened && mobileDrawerMetrics.noOverflowAfterOpen,
+      `Drawer expands cleanly on mobile touch tap with zero horizontal page spill`,
+      `Drawer open caused horizontal spill or failed to expand on mobile`,
     );
   } finally {
     if (browser) {
