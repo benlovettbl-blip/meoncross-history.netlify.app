@@ -104,15 +104,9 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
   },
   monarchy_religion_power: {
-    textbook: {
-      title: 'Crown, Church, or Parliament Master Workbook',
-      label: 'Master Workbook',
-      htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html',
-      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
-    },
     workbook: {
       title: 'Crown, Church, or Parliament 20-Page Pupil Workbook',
-      label: 'Pupil Workbook',
+      label: 'Pupil Workbook (20 Pages)',
       htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html',
       pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
     },
@@ -381,13 +375,14 @@ export function renderHeroCurricularLaunchpad(unitId, unitData) {
   const wb = config.workbook;
   const rc = config.retrieval;
 
-  const cleanTbTitle = (tb.title || '').replace(/'/g, "\\'");
-  const cleanWbTitle = (wb.title || '').replace(/'/g, "\\'");
-  const cleanRcTitle = (rc.title || '').replace(/'/g, "\\'");
+  const hasDistinctTextbook = tb && wb && tb.htmlUrl !== wb.htmlUrl && tb.pdfUrl !== wb.pdfUrl;
 
-  return `
-    <div class="hero-curricular-launchpad">
-      <div class="hero-launchpad-capsule">
+  const cleanTbTitle = (tb?.title || '').replace(/'/g, "\\'");
+  const cleanWbTitle = (wb?.title || '').replace(/'/g, "\\'");
+  const cleanRcTitle = (rc?.title || '').replace(/'/g, "\\'");
+
+  const textbookPill = hasDistinctTextbook
+    ? `
         <!-- Pillar 1: Master Textbook -->
         <div class="launchpad-pill-group pill-textbook">
           <button type="button" class="launchpad-pill-btn" onclick="window.openCurricularPillar('${tb.htmlUrl}', '${cleanTbTitle}', '${tb.pdfUrl}', 'TEXTBOOK')" title="Open Master Textbook in classroom reader">
@@ -397,8 +392,11 @@ export function renderHeroCurricularLaunchpad(unitId, unitData) {
           <a href="${tb.pdfUrl}" target="_blank" download title="Download Master Textbook PDF" class="launchpad-pill-pdf">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
-        </div>
+        </div>`
+    : '';
 
+  const workbookPill = wb
+    ? `
         <!-- Pillar 2: Pupil Workbook -->
         <div class="launchpad-pill-group pill-workbook">
           <button type="button" class="launchpad-pill-btn" onclick="window.openCurricularPillar('${wb.htmlUrl}', '${cleanWbTitle}', '${wb.pdfUrl}', 'WORKBOOK')" title="Open Pupil Workbook in classroom reader">
@@ -408,8 +406,11 @@ export function renderHeroCurricularLaunchpad(unitId, unitData) {
           <a href="${wb.pdfUrl}" target="_blank" download title="Download Pupil Workbook PDF" class="launchpad-pill-pdf">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
-        </div>
+        </div>`
+    : '';
 
+  const retrievalPill = rc
+    ? `
         <!-- Pillar 3: Knowledge Retrieval Companion -->
         <div class="launchpad-pill-group pill-retrieval">
           <button type="button" class="launchpad-pill-btn" onclick="window.openCurricularPillar('${rc.htmlUrl}', '${cleanRcTitle}', '${rc.pdfUrl}', 'RETRIEVAL')" title="Open Knowledge Retrieval Companion in classroom reader">
@@ -419,7 +420,15 @@ export function renderHeroCurricularLaunchpad(unitId, unitData) {
           <a href="${rc.pdfUrl}" target="_blank" download title="Download Knowledge Retrieval Companion PDF" class="launchpad-pill-pdf">
             <i class="fa-solid fa-file-pdf"></i>
           </a>
-        </div>
+        </div>`
+    : '';
+
+  return `
+    <div class="hero-curricular-launchpad">
+      <div class="hero-launchpad-capsule">
+        ${textbookPill}
+        ${workbookPill}
+        ${retrievalPill}
       </div>
     </div>
   `;

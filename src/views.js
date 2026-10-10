@@ -157,13 +157,15 @@ export function renderDashboard() {
     }
 
     const positionFallbacks = {
-      edexcel_medicine: 'center 10%',
+      monarchy_religion_power: 'center 12%',
       eee: 'center 10%',
+      edexcel_medicine: 'center 32%',
+      cme_new: 'center 20%',
+      great_war_part2: 'center 18%',
+      early_modern_world: 'center 25%',
       australia: 'center 70%',
-      great_war_part2: 'center top',
       weimar_nazi_germany: 'center 20%',
       usa: 'center 25%',
-      cme_new: 'center top',
     };
     const bgPos = unit.cover_image_position || positionFallbacks[unit.id] || 'center';
 
@@ -1657,13 +1659,15 @@ export async function renderLessonsView() {
   let headerHtml = '';
   if (heroImageUrl) {
     const positionFallbacks = {
-      edexcel_medicine: 'center 10%',
+      monarchy_religion_power: 'center 12%',
       eee: 'center 10%',
+      edexcel_medicine: 'center 32%',
+      cme_new: 'center 20%',
+      great_war_part2: 'center 18%',
+      early_modern_world: 'center 25%',
       australia: 'center 70%',
-      great_war_part2: 'center top',
       weimar_nazi_germany: 'center 20%',
       usa: 'center 25%',
-      cme_new: 'center top',
     };
     const heroBgPos =
       data.cover_image_position ||
