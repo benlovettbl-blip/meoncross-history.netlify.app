@@ -2203,79 +2203,59 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      <!-- 4 Milestones with Large Blank Dual-Coding Workspace -->
-      <div style="display: flex; flex-direction: column; gap: 5px; flex: 1; justify-content: space-between;">
+      <!-- 4 Milestones with Open Drawing Area Across Full A4 Page -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 1: 1534 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1534 &bull; Henry VIII &amp; The Act of Supremacy
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 1</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1534 &bull; Henry VIII &amp; The Act of Supremacy
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 1 on Page 3 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Parliament passes the Act of Supremacy, declaring Henry VIII ‘Supreme Head’ of the Church of England, legally ending papal authority and redirecting Church tithes to the Crown.
+          </p>
         </div>
 
         <!-- Milestone 2: 1536–1540 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1536–1540 &bull; Dissolution of the Monasteries
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 1</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1536–1540 &bull; Dissolution of the Monasteries
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 1 on Page 3 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Thomas Cromwell surveys monastic wealth (Valor Ecclesiasticus); over 800 monasteries are closed, confiscating lead, gold, and lands to fund royal coastal fortifications.
+          </p>
         </div>
 
         <!-- Milestone 3: 1559 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1559 &bull; Elizabeth I &amp; The Religious Settlement
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 2</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1559 &bull; Elizabeth I &amp; The Religious Settlement
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 2 on Page 5 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
+          </p>
         </div>
 
         <!-- Milestone 4: 1588 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1588 &bull; Defeat of the Spanish Armada
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 3</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1588 &bull; Defeat of the Spanish Armada
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 3 on Page 7 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
+          </p>
         </div>
 
       </div>
@@ -2299,79 +2279,59 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      <!-- 4 Milestones with Large Blank Dual-Coding Workspace -->
-      <div style="display: flex; flex-direction: column; gap: 5px; flex: 1; justify-content: space-between;">
+      <!-- 4 Milestones with Open Drawing Area Across Full A4 Page -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
         <!-- Milestone 5: 1629–1640 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 4</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 4 on Page 11 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
+          </p>
         </div>
 
         <!-- Milestone 6: 1649 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1649 &bull; Trial &amp; Execution of King Charles I
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 4</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1649 &bull; Trial &amp; Execution of King Charles I
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 4 on Page 11 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
+          </p>
         </div>
 
         <!-- Milestone 7: 1688 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1688 &bull; The Glorious Revolution
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 5</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1688 &bull; The Glorious Revolution
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 5 on Page 13 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
+          </p>
         </div>
 
         <!-- Milestone 8: 1689 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 4px; border-radius: 2px;">Enquiry 5</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; margin: 0; line-height: 1.22;">
-              William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #000000;">
+              1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <div style="border: 1.2px dashed #000000; border-radius: 3px; flex: 1; background: #ffffff; margin-top: 4px; min-height: 38mm; display: flex; align-items: center; justify-content: center;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #888888;">[ Dual-Coding Sketchpad &bull; Follow Timeline Mission instructions from Enquiry 5 on Page 13 ]</span>
-          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
+          </p>
         </div>
 
       </div>
