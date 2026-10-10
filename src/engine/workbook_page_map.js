@@ -507,7 +507,7 @@ export const WORKBOOK_PAGE_MAP = {
       unitId: 'great_war_part2',
       lessonIndex: 4,
     },
-    lesson_6_stubbington_lost_gen: {
+    lesson_6_middle_east_mandate: {
       page: 14,
       booklet: 'Pupil Workbook',
       unitId: 'great_war_part2',

@@ -29,7 +29,7 @@ function formatText(txt) {
 // - Lesson 3: Historical Significance & Erasure
 // - Lesson 4: Change & Continuity Matrix
 // - Lesson 5: Causation & Analytical Narrative
-// - Lesson 6: Local Archival Dual-Source Utility (Stubbington)
+// - Lesson 6: Dual-Source Utility: Sykes-Picot vs Balfour Declaration (Middle East Mandates)
 const lessonConfigs = [
   {
     // Lesson 1: Recruitment & The Rush to the Colours (1914)
@@ -342,65 +342,83 @@ const lessonConfigs = [
     },
   },
   {
-    // Lesson 6: The "Lost Generation" & Stubbington (1914–1922)
+    // Lesson 6: The Dismemberment of the Ottoman Empire & The British Mandate of Palestine (1915–1923)
     taskType: 'source_utility',
-    genre: 'Genre 3: Local Archival Evidence & Communal Memory',
-    skill: 'Local Source Utility',
+    genre: 'Genre 3: Imperial Cartography & Conflicting Diplomacy',
+    skill: 'Dual-Source Utility',
     genreNum: 3,
     enquiryQuestion:
-      'Enquiry: How useful are Sources A and B for an enquiry into the human cost of the Great War on the village of Stubbington?',
+      'Enquiry: How useful are Sources A and B for an enquiry into British wartime promises regarding the future of the Middle East?',
     sourceA: {
-      title: 'Source A: Stubbington Parish Memorial Committee Minutes (1921)',
-      shelfmark: 'HAMPSHIRE RECORD OFFICE • FAREHAM PARISH PAPERS • 88M81/W1',
-      text: '“Resolved: That the memorial to the 67 men of this parish shall take the form of an open thatched shelter over the village water pump on the Green. It shall provide daily rest and shelter to villagers, so that our debt to the fallen shall be remembered in every hour of daily life, and not merely on Armistice Sunday.”',
-      clue: 'Provenance Clue: Official parish council resolution proving villagers consciously chose a living, useful memorial over a remote stone pillar.',
+      title: 'Source A: The Sykes-Picot Agreement (May 1916)',
+      shelfmark: 'THE NATIONAL ARCHIVES • LONDON • CAB 42/14/12',
+      text: '“That France and Great Britain are prepared to recognize and protect an independent Arab State... under the suzerainty of an Arab chief. That in area (A) France, and in area (B) Great Britain, shall have priority of right of pre-emption and of loans... and shall alone supply advisers or foreign functionaries... That in the brown area [Palestine] there shall be established an international administration.”',
+      clue: 'Provenance Clue: Secret imperial treaty signed by Sir Mark Sykes and François Georges-Picot carving Ottoman Arab lands into British and French zones.',
     },
     sourceB: {
-      title: 'Source B: Official Commemorative Scroll delivered to Arthur Tribbeck (1919)',
-      shelfmark: 'NATIONAL ARCHIVES • ADM 171/123 • ROYAL NAVY COMMEMORATIVE REGISTER',
-      text: '“He whom this scroll commemorates was numbered with those who, at the call of King and Country, left all that was dear to them, gave up their lives for freedom. Stoker Arthur Tribbeck, Royal Navy, lost in the blizzard wreck of HMS Narbrough, January 1918.” (Accompanied by the bronze "Dead Man’s Penny").',
-      clue: 'Provenance Clue: Standardized national scroll issued directly to local families; demonstrates how private tragedy was honoured by the state.',
+      title: 'Source B: The Balfour Declaration (2 November 1917)',
+      shelfmark: 'THE BRITISH LIBRARY • LONDON • ADD MS 41178',
+      text: '“Dear Lord Rothschild, I have much pleasure in conveying to you, on behalf of His Majesty’s Government, the following declaration of sympathy with Jewish Zionist aspirations... His Majesty’s Government view with favour the establishment in Palestine of a national home for the Jewish people, and will use their best endeavours to facilitate the achievement of this object...”',
+      clue: 'Provenance Clue: Official public letter from British Foreign Secretary Arthur Balfour to leading British Zionist peer Lord Walter Rothschild.',
     },
     matrix: [
       {
         col: '1. CONTENT & INFERENCE',
-        text: 'What do the sources reveal about how the community and bereaved families experienced loss (parish shelter vs family plaque)?',
+        text: 'Analyse what each source reveals about British plans (secret imperial partition vs public support for a Jewish national home).',
       },
       {
         col: '2. PROVENANCE & MOTIVE',
-        text: 'How does the origin and purpose of each record (local village council vs national crown scroll) shape its historical value?',
+        text: 'Evaluate how the origin and purpose of each document (secret imperial treaty vs public diplomatic declaration) affects its historical value.',
       },
       {
-        col: '3. LOCAL ARCHIVAL JUDGEMENT',
-        text: 'Which source is more useful for understanding the permanent transformation of Stubbington village after the war?',
+        col: '3. HISTORICAL JUDGEMENT',
+        text: 'Reach a reasoned conclusion: which source is more useful for understanding why British policy created long-term conflict in the Middle East?',
       },
     ],
     connectives:
-      'Source A is exceptionally valuable for revealing... • Furthermore, the choice of a thatched shelter shows... • In contrast, Source B demonstrates the intimate grief of local families such as... • Together, both sources prove that... • Ultimately, Source [A/B] is more revealing because...',
+      'Source A is valuable for revealing how Britain secretly... • Furthermore, the partition of land into areas A and B proves... • In contrast, Source B demonstrates a public commitment to... • However, Source B notoriously described the 90% Arab majority as merely... • On balance, both sources cross-referenced together are essential because...',
     vocabTask: {
-      type: 'mapping',
-      termA: 'Lost Generation',
-      termB: 'Memorialisation',
+      type: 'distinction',
+      termA: 'Balfour Declaration (1917)',
+      termB: 'McMahon-Hussein Correspondence (1915–16)',
       prompt:
-        'Write one analytical sentence connecting the demographic catastrophe of the <strong>Lost Generation</strong> to the communal <strong>Memorialisation</strong> on Stubbington Green:',
+        'Distinguish between Britain’s public commitment to support a Jewish national home in Palestine (<strong>Balfour Declaration</strong>) and its earlier promise of an independent Arab kingdom to Sharif Hussein (<strong>McMahon-Hussein Correspondence</strong>):',
     },
     bridgeTask: {
-      type: 'local_archive',
-      badge: 'Local Archival Forensic Dissection: Stubbington Green',
-      title: 'Task 3: Forensic Dissection of the Stubbington War Memorial Shelter (1922)',
-      instruction: 'Examine the archival evidence from our village green and parish records below:',
-      records: [
-        '① <strong>The 67 Names on the Beams:</strong> Hand-carved into English oak timbers under a unique thatched roof built over the village water pump.',
-        '② <strong>The Lowry Brothers (Manor Way Grange):</strong> Major Auriol Lowry DSO MC survived with severe wounds; his brother Lt Cyril Lowry was killed leading his platoon in 1917.',
-        '③ <strong>Arthur Tribbeck (Blacksmith):</strong> Lost two sons to the conflict, including Stoker Arthur Tribbeck drowned when HMS Narbrough was wrecked in a blizzard.',
-        '④ <strong>The "Dead Man’s Penny":</strong> Heavy bronze memorial plaques inscribed "He died for freedom and honour" delivered to 67 bereaved Stubbington homes.',
+      type: 'matrix',
+      badge: 'Imperial Diplomacy & Partition Matrix',
+      title:
+        'Task 3: The Conflicting Pledges Matrix: Arab Independence vs Secret Partition vs Balfour',
+      instruction:
+        'Examine the four contradictory pillars of British Middle East diplomacy between 1915 and 1922:',
+      boxes: [
+        {
+          title: '① McMahon-Hussein Pledges (1915–16)',
+          evidence:
+            'Britain promised Sharif Hussein of Mecca recognition of an independent Arab kingdom in exchange for launching the Arab Revolt against Ottoman Turkish rule.',
+        },
+        {
+          title: '② The Secret Sykes-Picot Pact (1916)',
+          evidence:
+            'Britain and France secretly carved up Ottoman Arab lands: France claimed Syria/Lebanon, Britain claimed Iraq/Jordan, and Palestine was slated for international control.',
+        },
+        {
+          title: '③ The Balfour Declaration (1917)',
+          evidence:
+            'Arthur Balfour promised Lord Rothschild British support for a "national home for the Jewish people" in Palestine, ignoring the political rights of the 90% Arab majority.',
+        },
+        {
+          title: '④ League of Nations Mandates (1920–22)',
+          evidence:
+            'At San Remo, Britain and France established colonial mandates over Palestine, Iraq, and Syria under Article 22, crushing authentic Arab independence.',
+        },
       ],
       prompt:
-        'In 3–4 sentences, explain why the parish of Stubbington chose to build a practical thatched shelter over the water pump rather than a cold stone obelisk:',
+        'In 3–4 sentences, explain why Britain’s conflicting wartime promises made long-term peace in the Middle East impossible:',
       lines: 7,
-      clue: '<em>Low-Floor Clue:</em> The thatched shelter provided daily protection from the rain for villagers waiting for transport or gathering water, keeping the memory of the fallen intertwined with daily life.',
+      clue: '<em>Low-Floor Clue:</em> Britain promised the exact same territory to the Arabs (independence), to France (colonial partition), and to the Zionist movement (a Jewish national home).',
       scholarsEdge:
-        '<strong>★ Scholar’s Edge:</strong> How does the Lowry family’s donation of the Holy Rood memorial lychgate demonstrate how the landed gentry used religious architecture to cope with the extinction of their family line?',
+        '<strong>★ Scholar’s Edge:</strong> How does historian Avi Shlaim explain the tragic irony that Britain sought an alliance with both Arab nationalism and Zionism to win the war, but ended up alienating both communities?',
     },
   },
 ];
@@ -478,7 +496,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
   // PAGE 1: FRONT COVER (Recto, Right Page)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-1" style="padding: 16px 18px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: flex-start;">
+  <div class="page page-container cover-page" id="page-1" style="padding: 16px 18px; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px; justify-content: flex-start;">
     <!-- Institutional Header & Pupil Registration Strip -->
     <div style="margin-bottom: 10px;">
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
@@ -700,9 +718,9 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       desc: 'The Big Three draft the peace; Article 231 war guilt and £6.6bn reparations imposed; League of Nations founded.',
     },
     {
-      year: '1922',
-      title: 'Communal Memorialisation: Stubbington Green',
-      desc: 'Thatched memorial shelter built over village pump on Stubbington Green, honoring 67 fallen local heroes.',
+      year: '1920–22',
+      title: 'Middle East Mandates & Communal Memorialisation',
+      desc: 'San Remo sets British Mandate for Palestine and Iraq; 1922 thatched memorial shelter erected on Stubbington Green for 67 fallen.',
     },
   ];
 
@@ -747,7 +765,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
     // ----------------------------------------------------
     html += `
     <div class="page page-container" id="page-${leftPageNum}">
-      <div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 4px;">
         <!-- Lesson Header -->
         <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
@@ -822,6 +840,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
           <div class="auto-fill-lines" data-line-height="5.6" data-line-type="task-line-dotted">
             <div class="task-line-dotted" style="height: 5.6mm;"></div>
             <div class="task-line-dotted" style="height: 5.6mm;"></div>
+            <div class="task-line-dotted" style="height: 5.6mm;"></div>
           </div>
       `;
     } else if (cfg.vocabTask.type === 'mapping') {
@@ -870,6 +889,10 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
                 <div class="task-line-dotted" style="height: 5.6mm;"></div>
                 <div class="task-line-dotted" style="height: 5.6mm;"></div>
                 <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
+                <div class="task-line-dotted" style="height: 5.6mm;"></div>
               </div>
             </div>
             <div style="border: 1px solid #cbd5e1; border-radius: 4px; padding: 6px 7px; background: #f8fafc;">
@@ -906,7 +929,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             <strong>Tactical Analysis:</strong> ${cfg.bridgeTask.prompt}
           </div>
           <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
-            ${Array(cfg.bridgeTask.lines || 7)
+            ${Array(cfg.bridgeTask.lines || 8)
               .fill('<div class="task-line" style="height: 6.8mm;"></div>')
               .join('')}
           </div>
@@ -935,7 +958,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             <strong>Synoptic Synthesis:</strong> ${cfg.bridgeTask.prompt}
           </div>
           <div class="auto-fill-lines" data-line-height="6.8" data-line-type="task-line">
-            ${Array(cfg.bridgeTask.lines || 7)
+            ${Array(cfg.bridgeTask.lines || 8)
               .fill('<div class="task-line" style="height: 6.8mm;"></div>')
               .join('')}
           </div>
@@ -975,7 +998,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Left Page Footer -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+      <div class="page-footer page-footer-strip" style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
         <span>The History Portal &bull; KS3 The Great War (1914–1919)</span>
         <span>Page ${leftPageNum} (Facing Spread Left)</span>
       </div>
@@ -991,9 +1014,9 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       // ====================================================
       html += `
     <div class="page page-container" id="page-${rightPageNum}">
-      <div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 4px;">
         <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
               Task 4: Historical Skill: ${cfg.skill} &bull; Dual-Source Evidence
@@ -1006,7 +1029,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Dual Primary Sources Box (Side-by-Side) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 5px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
           <!-- Source A -->
           <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #1e3a8a; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
@@ -1041,7 +1064,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Disciplinary Planning Matrix (3 Columns) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 5px;">
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 4px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
             ${cfg.matrix
               .map(
@@ -1059,14 +1082,12 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (13 Lines at 7.2mm line-height) -->
+        <!-- Ruled Writing Lines (17 Lines at 7.2mm line-height) -->
         <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
-          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+          ${Array(17).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
         </div>
-      </div>
 
-      <!-- Teacher Grading & Assessment Footer (Utility-Specific Rubric) -->
-      <div>
+        <!-- Teacher Grading & Assessment -->
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
           <div>
             <strong>Teacher Assessment:</strong> &nbsp;
@@ -1078,12 +1099,12 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             <strong>Utility Grade:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
           </div>
         </div>
+      </div>
 
-        <!-- Right Page Footer -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
-          <span>Source Utility Assessment &bull; The History Portal</span>
-          <span>Page ${rightPageNum} (Facing Spread Right)</span>
-        </div>
+      <!-- Right Page Footer -->
+      <div class="page-footer page-footer-strip" style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+        <span>Source Utility Assessment &bull; The History Portal</span>
+        <span>Page ${rightPageNum} (Facing Spread Right)</span>
       </div>
     </div>
       `;
@@ -1093,9 +1114,9 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       // ====================================================
       html += `
     <div class="page page-container" id="page-${rightPageNum}">
-      <div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 4px;">
         <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
               Task 4: Historical Skill: ${cfg.skill} &bull; Historiographical Debate
@@ -1108,7 +1129,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Dual Interpretations Box (Side-by-Side) -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 5px;">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 7px; margin-bottom: 4px;">
           <!-- Interpretation 1 -->
           <div style="border: 1.2px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 4px; padding: 5px 7px; background: #ffffff;">
             <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
@@ -1143,7 +1164,7 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Disciplinary Planning Matrix (3 Columns) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 5px;">
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 6px; background: #f8fafc; margin-bottom: 4px;">
           <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
             ${cfg.matrix
               .map(
@@ -1161,14 +1182,12 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (13 Lines at 7.2mm line-height) -->
+        <!-- Ruled Writing Lines (17 Lines at 7.2mm line-height) -->
         <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
-          ${Array(13).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
+          ${Array(17).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
         </div>
-      </div>
 
-      <!-- Teacher Grading & Assessment Footer (Interpretations Rubric) -->
-      <div>
+        <!-- Teacher Grading & Assessment -->
         <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
           <div>
             <strong>Teacher Assessment:</strong> &nbsp;
@@ -1180,12 +1199,12 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             <strong>Debate Grade:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
           </div>
         </div>
+      </div>
 
-        <!-- Right Page Footer -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 3px;">
-          <span>Interpretations Assessment &bull; The History Portal</span>
-          <span>Page ${rightPageNum} (Facing Spread Right)</span>
-        </div>
+      <!-- Right Page Footer -->
+      <div class="page-footer page-footer-strip" style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+        <span>Interpretations Assessment &bull; The History Portal</span>
+        <span>Page ${rightPageNum} (Facing Spread Right)</span>
       </div>
     </div>
       `;
@@ -1195,57 +1214,54 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       // ====================================================
       html += `
     <div class="page page-container" id="page-${rightPageNum}">
-      <div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 4px;">
         <!-- Enquiry Question Header -->
-        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 5px; margin-bottom: 7px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: flex-end;">
           <div>
             <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 1px; color: #1e3a8a; font-weight: 700;">
               Task 4: Historical Skill: ${cfg.skill} &bull; Extended Writing
             </div>
-            <h3 style="font-family: 'Playfair Display', serif; font-size: 12.8pt; color: #0f172a; margin: 3px 0 0 0; line-height: 1.25;">
+            <h3 style="font-family: 'Playfair Display', serif; font-size: 12.5pt; color: #0f172a; margin: 2px 0 0 0; line-height: 1.2;">
               ${cfg.enquiryQuestion}
             </h3>
           </div>
           <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe; flex-shrink: 0;">Independent Argument</span>
         </div>
 
-        <!-- Bespoke Disciplinary Structure Strip (3-Columns, 8.5pt) -->
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 5px; padding: 6px 8px; background: #f8fafc; margin-bottom: 6px;">
-          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; margin-bottom: 4px;">
+        <!-- Bespoke Disciplinary Structure Strip (3-Columns) -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 7px; background: #f8fafc; margin-bottom: 4px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; margin-bottom: 3px;">
             ${cfg.structureStrip
               .map(
                 (s) => `
-              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 5px 6px; background: #ffffff;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px; margin-bottom: 2px;">${s.col}</strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 8.3pt; color: #334155; line-height: 1.3; display: block;">${s.text}</span>
+              <div style="border: 1px solid #e2e8f0; border-radius: 3px; padding: 4px 5px; background: #ffffff;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e3a8a; display: block; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; margin-bottom: 1px;">${s.col}</strong>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155; line-height: 1.25; display: block;">${s.text}</span>
               </div>
             `,
               )
               .join('')}
           </div>
-          
-          <div style="border-top: 1px dashed #cbd5e1; padding-top: 3px; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt;">
-            <span style="color: #475569;"><strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}</span>
+          <div style="border-top: 1px dashed #cbd5e1; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #475569; line-height: 1.25;">
+            <strong>Sentence Starters &amp; Connectives:</strong> ${cfg.connectives}
           </div>
         </div>
 
         <!-- Writing Framework Strip (PEEL Mastery) -->
-        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; margin-bottom: 6px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
+        <div style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; margin-bottom: 4px; display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e293b;">
           <span><strong style="color: #1e3a8a;">[P] Point:</strong> Clear direct answer to enquiry.</span>
           <span><strong style="color: #1e3a8a;">[E] Evidence:</strong> Specific wartime names, dates &amp; statistics.</span>
           <span><strong style="color: #1e3a8a;">[E] Explanation:</strong> Causal mechanism (why &amp; how).</span>
           <span><strong style="color: #1e3a8a;">[L] Link:</strong> Direct evaluative conclusion.</span>
         </div>
 
-        <!-- Ruled Writing Lines (Dynamic Auto-Fill, 7.6mm Line Height) -->
-        <div class="auto-fill-writing-lines" data-line-height="7.6" style="width: 100%; margin-bottom: 6px;">
-          ${Array(20).fill('<div class="task-line" style="height: 7.6mm;"></div>').join('')}
+        <!-- Ruled Writing Lines (20 Lines at 7.2mm Line Height) -->
+        <div class="auto-fill-writing-lines" data-line-height="7.2" style="width: 100%; margin-bottom: 4px;">
+          ${Array(20).fill('<div class="task-line" style="height: 7.2mm;"></div>').join('')}
         </div>
-      </div>
 
-      <!-- Teacher Grading & Assessment Footer -->
-      <div>
-        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #334155;">
+        <!-- Teacher Grading & Assessment -->
+        <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 4px 8px; background: #f8fafc; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #334155;">
           <div>
             <strong>Teacher Assessment:</strong> &nbsp;
             Effort: [ 1 &bull; 2 &bull; 3 &bull; 4 &bull; 5 ] &nbsp;|&nbsp; 
@@ -1256,12 +1272,12 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
             <strong>PEEL Mastery:</strong> &nbsp;&nbsp; P &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; E &nbsp;&nbsp;&nbsp;&nbsp; L
           </div>
         </div>
+      </div>
 
-        <!-- Right Page Footer -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px; margin-top: 4px;">
-          <span>Extended Writing Assessment &bull; The History Portal</span>
-          <span>Page ${rightPageNum} (Facing Spread Right)</span>
-        </div>
+      <!-- Right Page Footer -->
+      <div class="page-footer page-footer-strip" style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+        <span>Extended Writing Assessment &bull; The History Portal</span>
+        <span>Page ${rightPageNum} (Facing Spread Right)</span>
       </div>
     </div>
       `;
@@ -1272,102 +1288,128 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
   // PAGE 16: OUTSIDE BACK COVER (Departmental Marking Policy)
   // ==========================================
   html += `
-  <div class="page page-container" id="page-16" style="padding: 14px 18px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
-    <div>
-      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 6px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline;">
+  <div class="page page-container cover-page back-cover" id="page-16" style="padding: 12px 16px; display: flex; flex-direction: column; height: 260mm; justify-content: space-between; border: 1px solid #cbd5e1; outline: 3.5px double #0f172a; outline-offset: -8px;">
+    <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin-bottom: 4px;">
+      <!-- Header -->
+      <div style="border-bottom: 2px solid #1e3a8a; padding-bottom: 4px; margin-bottom: 5px; display: flex; justify-content: space-between; align-items: baseline;">
         <div>
-          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 16pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
+          <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 15pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px;">
             Departmental Marking Policy &amp; Code
           </h2>
-          <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #64748b; margin-top: 2px;">
-            The History Department Standard
+          <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #64748b; margin-top: 1px;">
+            The History Department Standard &bull; KS3 Disciplinary Scholarship
           </div>
         </div>
         <span class="archival-badge" style="background: #eff6ff; color: #1e3a8a; border-color: #bfdbfe;">Policy</span>
       </div>
 
       <!-- Marking Symbols Grid -->
-      <div style="margin-bottom: 12px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 9.2pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 4px;">
-          Formative Correction Codes:
+      <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #ffffff;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #0f172a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">
+          Formative Correction Codes &amp; Pupil Action:
         </strong>
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt; line-height: 1.35;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.25;">
           <thead>
             <tr style="background: #1e3a8a; color: #ffffff;">
-              <th style="padding: 4px 8px; width: 12%; text-align: center; border: 1px solid #94a3b8;">Code</th>
-              <th style="padding: 4px 8px; width: 38%; border: 1px solid #94a3b8;">Meaning &amp; Focus</th>
-              <th style="padding: 4px 8px; width: 50%; border: 1px solid #94a3b8;">Pupil Action / Dirt Task</th>
+              <th style="padding: 3px 6px; width: 10%; text-align: center; border: 1px solid #94a3b8;">Code</th>
+              <th style="padding: 3px 6px; width: 42%; border: 1px solid #94a3b8;">Meaning &amp; Historical Focus</th>
+              <th style="padding: 3px 6px; width: 48%; border: 1px solid #94a3b8;">Pupil Action / DIRT Task</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #b91c1c;">Sp</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Spelling error in key historical term.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Copy the correct spelling 3 times in margin.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #b91c1c;">Sp</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Spelling error in key historical or geographical term.</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Copy correct spelling 3 times neatly in margin.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #b91c1c;">Gr / P</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Grammar or punctuation slip.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Rewrite the sentence correctly in green pen.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #b91c1c;">Gr / P</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Grammar slip, past-tense inconsistency, or missing capital.</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Rewrite sentence accurately in green pen.</td>
             </tr>
             <tr>
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #1e3a8a;">//</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">New paragraph required here.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Insert // symbol and start a new line.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #1e3a8a;">//</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">New paragraph required for new theme or turning point.</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Insert // symbol and start a new line.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #1e3a8a;">[?]</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Meaning unclear / vague phrasing.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Clarify argument using specific evidence.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #1e3a8a;">[?]</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Vague phrasing or unsupported assertion.</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Clarify argument using specific evidence.</td>
             </tr>
             <tr>
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #0369a1;">Ev</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Missing precise factual evidence.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Add specific dates, names, or statistics.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #b45309;">Ev</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Historical evidence missing (need dates, statistics, names).</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Add 2 precise facts or figures to support claim.</td>
             </tr>
             <tr style="background: #f8fafc;">
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #0369a1;">Ex</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Explanation needs deeper causal link.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Use 'This meant that...' or 'Consequently...'.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; color: #0284c7;">Ex</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Explanation needs deeper causal mechanism.</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Use 'This meant that...' or 'Consequently...'.</td>
             </tr>
             <tr>
-              <td style="padding: 4px 8px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #15803d;">J</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Historical judgment needed.</td>
-              <td style="padding: 4px 8px; border: 1px solid #cbd5e1;">Weigh both factors to reach a sustained verdict.</td>
+              <td style="padding: 3px 6px; font-weight: 700; text-align: center; border: 1px solid #cbd5e1; background: #f8fafc; color: #15803d;">J</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Historical judgment needed: weigh competing factors.</td>
+              <td style="padding: 3px 6px; border: 1px solid #cbd5e1;">Weigh evidence to formulate a sustained verdict.</td>
             </tr>
           </tbody>
         </table>
       </div>
 
+      <!-- GCSE Examination Command Words & Stems -->
+      <div style="border: 1.2px solid #cbd5e1; border-radius: 4px; padding: 5px 8px; background: #f8fafc;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">
+          GCSE Examination Command Words &amp; Historical Stems:
+        </strong>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #334155; line-height: 1.25;">
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+            <strong style="color: #0f172a; text-transform: uppercase; font-size: 7.3pt;">Describe [4m]:</strong>
+            <span>Identify and recall two distinct historical features with precise supporting details.</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+            <strong style="color: #0f172a; text-transform: uppercase; font-size: 7.3pt;">Explain Why [12m]:</strong>
+            <span>Analyse 3 distinct causal factors using explicit mechanisms of cause, effect, and consequence.</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+            <strong style="color: #0f172a; text-transform: uppercase; font-size: 7.3pt;">How Useful [8m]:</strong>
+            <span>Evaluate content, accuracy, and provenance (Nature, Origin, Motive) for an historical enquiry.</span>
+          </div>
+          <div style="background: #ffffff; border: 1px solid #e2e8f0; border-radius: 3px; padding: 3px 5px;">
+            <strong style="color: #0f172a; text-transform: uppercase; font-size: 7.3pt;">How Far Agree [16m]:</strong>
+            <span>Weigh competing interpretations against factual evidence to construct a sustained verdict.</span>
+          </div>
+        </div>
+      </div>
+
       <!-- The 4 Golden Rules of Extended Writing -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 5px; padding: 8px 14px; background: #f8fafc; margin-bottom: 10px;">
-        <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #1e3a8a; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 3px;">
+      <div style="border: 1.2px solid #1e3a8a; border-radius: 4px; padding: 5px 10px; background: #f0fdf4;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #166534; text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">
           The 4 Golden Rules of Historical Extended Writing:
         </strong>
-        <ol style="margin: 0; padding-left: 18px; font-family: 'Inter', sans-serif; font-size: 8pt; color: #334155; line-height: 1.35;">
-          <li><strong>Direct Answer:</strong> Open every paragraph with a clear thematic point that directly addresses the enquiry question.</li>
-          <li><strong>Specific Evidence:</strong> Ground every argument in precise historical facts, figures, names, and contemporary legislation.</li>
-          <li><strong>Causal Connectives:</strong> Never just describe events; explain the mechanism of how and why one event caused or accelerated another.</li>
-          <li><strong>Evaluative Judgement:</strong> Weigh competing arguments against explicit historical criteria to reach a nuanced, independent conclusion.</li>
+        <ol style="margin: 0; padding-left: 16px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #14532d; line-height: 1.3;">
+          <li><strong>Direct Answer:</strong> Open every paragraph with a thematic point that directly answers the enquiry question.</li>
+          <li><strong>Specific Evidence:</strong> Ground every point in precise names, dates, casualty figures, and legislation.</li>
+          <li><strong>Causal Connectives:</strong> Explain the mechanism of how and why one event caused or accelerated another.</li>
+          <li><strong>Evaluative Judgement:</strong> Weigh competing arguments against explicit historical criteria to reach a nuanced verdict.</li>
         </ol>
       </div>
 
       <!-- Digital Revision Hub Quick-Link (Vector QR Code) -->
-      <div style="border: 1.5px solid #1e3a8a; border-radius: 6px; padding: 7px 12px; background: #f0f9ff; margin-bottom: 10px; display: flex; align-items: center; gap: 14px;">
-        <div style="width: 78px; height: 78px; flex-shrink: 0; background: #ffffff; padding: 3px; border: 1.2px solid #bae6fd; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); display: flex; align-items: center; justify-content: center;">
+      <div style="border: 1.2px solid #1e3a8a; border-radius: 5px; padding: 5px 10px; background: #f0f9ff; display: flex; align-items: center; gap: 12px;">
+        <div style="width: 68px; height: 68px; flex-shrink: 0; background: #ffffff; padding: 2px; border: 1.2px solid #bae6fd; border-radius: 5px; display: flex; align-items: center; justify-content: center;">
           ${generateQrSvg('https://the-history-revision-hub.netlify.app/?view=interactive&unit=great_war_part2')}
         </div>
         <div style="flex: 1;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #0369a1; text-transform: uppercase; letter-spacing: 0.5px;">
               📱 Digital Revision Hub &bull; Scan with Phone Camera
             </strong>
             <span class="archival-badge" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd; font-size: 6.8pt; padding: 1px 6px;">Interactive</span>
           </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b; margin: 0 0 3px 0; line-height: 1.35;">
+          <p style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b; margin: 0 0 2px 0; line-height: 1.25;">
             Instant home access to the interactive revision flashcards, self-marking knowledge quizzes, and model answers for this unit:
           </p>
-          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #475569;">
+          <div style="display: flex; gap: 12px; font-family: 'Inter', sans-serif; font-size: 7.1pt; color: #475569;">
             <span>&bull; <strong>Flashcard Vault:</strong> 30 Great War vocabulary terms</span>
             <span>&bull; <strong>Quiz Bank:</strong> 140 self-marking recall questions</span>
           </div>
@@ -1378,17 +1420,18 @@ function buildGreatWarPart2TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Institutional Colophon -->
-      <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 6px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1px;">
+      <div style="text-align: center; border-top: 1px solid #cbd5e1; padding-top: 4px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 700; color: #1e3a8a; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 1px;">
           The History Portal &bull; Department of History
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #64748b;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b;">
           Key Stage 3 Historical Studies &bull; Academic Year 2026–2027
         </div>
       </div>
     </div>
 
-    <div style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
+    <!-- Page 16 Footer -->
+    <div class="page-footer page-footer-strip" style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #94a3b8; display: flex; justify-content: space-between; border-top: 1px solid #e2e8f0; padding-top: 3px;">
       <span>Departmental Marking Policy &bull; Year 9 History</span>
       <span>Page 16 (Outside Back Cover)</span>
     </div>
