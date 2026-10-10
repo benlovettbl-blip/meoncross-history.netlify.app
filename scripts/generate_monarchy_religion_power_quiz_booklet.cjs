@@ -7,8 +7,12 @@
  * Page Architecture (8-Page Saddle-Stitch Booklet / 2 sheets A4 landscape folded in half):
  * - Page 1: Uniform Front Cover & Formative Homework & Retrieval Tracking Ledger
  *           (Scholar box, Attempt 1 vs 2 scores, Retrieval Strength [ ] Instant [ ] Effortful [ ] Restudy,
- *           Roomy Parent Initial box, QR code to interactive portal)
+ *           Roomy Parent Initial box, QR code to interactive portal, Subtle Cognitive Progression Key)
  * - Pages 2–6: 5 Dedicated Lesson Retrieval Pages (Lessons 1 to 5 • 8 questions each = 40 questions total)
+ *              Scaffolded on the 3-Tier Cognitive Ascent with Disciplinary Micro-Pips:
+ *              • Q1–Q3 (▸): Substantive Anchor Knowledge & Chronology (Emerald)
+ *              • Q4–Q6 (▸▸): Causal Mechanisms & Historical Context (Amber)
+ *              • Q7–Q8 (▸▸▸): Constitutional Significance & Disciplinary Precedent (Crimson)
  *              Featuring 2 roomy write-in lines per question with strong #000000 black typography:
  *              Line 1: Answer: [Core Fact]
  *              Line 2: Detail / Why: [Historical Mechanism or Consequence]
@@ -59,7 +63,10 @@ function getBase64Image(relPath) {
 }
 
 // --------------------------------------------------------------------------
-// 40 CURATED HIGH-YIELD QUESTIONS ACROSS THE 5 LESSONS
+// 40 RIGOROUS QUESTIONS ACROSS 5 LESSONS: 3-TIER COGNITIVE ASCENT
+// Tier 1 (Q1–Q3): Core Substantive Recall & Chronology (▸)
+// Tier 2 (Q4–Q6): Causal Mechanisms & Historical Dynamics (▸▸)
+// Tier 3 (Q7–Q8): Synoptic Significance, Precedent & High-Stretch (▸▸▸)
 // --------------------------------------------------------------------------
 const QUIZ_DATA = [
   // LESSON 1: The Reformation & The Break with Rome (1517–1547)
@@ -72,42 +79,42 @@ const QUIZ_DATA = [
       {
         q: 'In what year did Martin Luther nail his 95 Theses to the church door in Wittenberg?',
         a: '1517',
-        exp: 'Martin Luther nailed his 95 Theses in October 1517, sparking the Protestant Reformation across Europe.',
+        exp: 'Martin Luther’s protest in 1517 attacked clerical corruption and sparked the Protestant Reformation across Europe.',
       },
       {
-        q: 'What corrupt Catholic certificates did Martin Luther attack for promising forgiveness of sins for cash?',
+        q: 'What corrupt Catholic certificates did Martin Luther attack for promising forgiveness of sins for money?',
         a: 'Indulgences',
-        exp: 'Indulgences were sold by Catholic friars promising wealthy sinners less time suffering in Purgatory.',
+        exp: 'Indulgences were sold by Catholic friars claiming to reduce a sinner’s punishment in Purgatory, enriching the Church.',
       },
       {
         q: 'What title did Pope Leo X award Henry VIII in 1521 for defending Catholic sacraments against Luther?',
         a: 'Defender of the Faith (Fidei Defensor)',
-        exp: 'Henry wrote Assertio Septem Sacramentorum defending the Pope, earning him this prestigious papal title.',
+        exp: 'Henry wrote Assertio Septem Sacramentorum supporting papal authority, earning a title British monarchs still bear today.',
       },
       {
-        q: 'Which Spanish queen failed to give Henry VIII a surviving male heir, triggering his "Great Matter"?',
-        a: 'Catherine of Aragon',
-        exp: 'Catherine produced only one surviving child (Princess Mary), prompting Henry to seek an annulment to secure the Tudor succession.',
+        q: 'Why did Pope Clement VII refuse to grant Henry VIII an annulment from Catherine of Aragon in 1527?',
+        a: 'The Pope was held captive by Emperor Charles V, Catherine’s nephew',
+        exp: 'Following the 1527 Sack of Rome, imperial troops controlled the papacy, making it politically impossible for the Pope to grant the divorce.',
       },
       {
-        q: 'What 1534 law officially made King Henry VIII the Supreme Head of the Church of England?',
+        q: 'What statutory law passed by Parliament in 1534 officially severed the Church of England from Rome?',
         a: 'The Act of Supremacy',
-        exp: 'Passed by Parliament in November 1534, it permanently severed the English Church from papal authority in Rome.',
+        exp: 'The 1534 statute declared the English monarch Supreme Head of the Church of England, replacing the authority of the Pope.',
       },
       {
-        q: 'Which former Lord Chancellor was executed in 1535 for refusing to swear the Oath of Supremacy?',
-        a: 'Sir Thomas More',
-        exp: 'Sir Thomas More refused to betray his conscience and Catholic faith, and was beheaded for high treason on Tower Hill.',
+        q: 'How did Thomas Cromwell use the Dissolution of the Monasteries (1536–1540) to transform the royal treasury?',
+        a: 'By confiscating monastic lands and wealth to fund royal defences and reward loyal nobles',
+        exp: 'Over 800 monasteries were shut down, doubling the Crown’s annual income and binding the gentry to the Reformation through land sales.',
       },
       {
-        q: 'What happened to over 800 Catholic monasteries and abbeys across England between 1536 and 1540?',
-        a: 'They were dissolved, looted, and their lands sold by the Crown',
-        exp: 'Thomas Cromwell orchestrated the Dissolution of the Monasteries, seizing vast wealth to fund royal defences and foreign wars.',
+        q: 'Why did Sir Thomas More and Bishop John Fisher choose execution rather than swear the Oath of Supremacy?',
+        a: 'They believed papal supremacy was divine law that no earthly king or parliament could overturn',
+        exp: 'Their executions in 1535 established the principle of individual religious conscience defying state-enforced statutory uniformity.',
       },
       {
-        q: 'Which imperial ruler held Pope Clement VII captive in Rome in 1527, blocking Henry’s annulment?',
-        a: 'Emperor Charles V',
-        exp: 'Charles V was Catherine of Aragon’s nephew; his sack of Rome left the Pope completely unable to grant Henry a divorce.',
+        q: 'Why did Henry VIII’s use of parliamentary statute to enforce the Break with Rome inadvertently increase Parliament’s future authority?',
+        a: 'It established the precedent that royal supremacy required parliamentary legislation to become sovereign law',
+        exp: 'By continually relying on Parliament to enact religious change and tax land, Henry elevated statute law above the King’s sole proclamation.',
       },
     ],
   },
@@ -120,44 +127,44 @@ const QUIZ_DATA = [
     enquiry: 'How successfully did Elizabeth I resolve the Tudor religious crisis?',
     items: [
       {
-        q: 'What title did Elizabeth I adopt in the 1559 Act of Supremacy to appease Catholics and Puritans?',
+        q: 'What title did Elizabeth I adopt in the 1559 Act of Supremacy to appease both moderate Catholics and Protestants?',
         a: 'Supreme Governor of the Church of England',
-        exp: 'Elizabeth chose "Supreme Governor", a diplomatic compromise that avoided claiming spiritual authority over Christ.',
+        exp: 'Elizabeth chose "Supreme Governor" instead of "Supreme Head", avoiding claims of divine spiritual authority over Christ.',
       },
       {
-        q: 'Approximately how many Protestant martyrs did Queen Mary I burn at the stake during her reign?',
-        a: 'Over 280 (approx. 284)',
-        exp: 'Mary I burned around 284 Protestants, creating immortal martyrs recorded in John Foxe’s famous Book of Martyrs.',
-      },
-      {
-        q: 'What fine was imposed on Catholic recusants who refused to attend Church of England services on Sundays?',
-        a: 'One shilling (12 pence) per missed Sunday',
-        exp: 'The 1559 Act of Uniformity imposed a 12d fine per missed service, designed as a financial deterrent rather than execution.',
-      },
-      {
-        q: 'What was the Latin name for Elizabeth’s strategic religious compromise between Protestantism and Catholicism?',
+        q: 'What Latin term describes Elizabeth I’s strategic policy of balancing Protestant doctrine with traditional ceremonies?',
         a: 'Via Media ("The Middle Way")',
-        exp: 'The Via Media balanced Protestant theology and English scriptures with traditional vestments, music, and ceremonies.',
+        exp: 'The Via Media sought national stability by pairing Protestant theology and English prayer books with traditional vestments and church music.',
       },
       {
-        q: 'Which Catholic cousin fled Scotland in 1568 and became a figurehead for plots against Elizabeth?',
+        q: 'Which Catholic cousin became the focal point of repeated assassination plots after fleeing to England in 1568?',
         a: 'Mary Queen of Scots',
-        exp: 'Mary Queen of Scots had a legitimate dynastic claim to the English throne and inspired repeated Catholic assassination plots.',
+        exp: 'Mary held a direct dynastic claim to the English crown and was viewed by Catholic Europe as the legitimate queen of England.',
       },
       {
-        q: 'In what year did Pope Pius V issue the Papal Bull Regnans in Excelsis excommunicating Elizabeth?',
-        a: '1570',
-        exp: 'The 1570 Papal Bull declared Elizabeth a heretic and commanded English Catholics to disobey her on pain of excommunication.',
+        q: 'Why did the 1559 Act of Uniformity impose fines on recusants rather than executing them for heresy?',
+        a: 'To enforce outward conformity while avoiding the creation of sympathetic Catholic martyrs',
+        exp: 'Elizabeth refused to "make windows into men’s souls", using 12d church attendance fines to compel civic obedience without triggering rebellion.',
       },
       {
-        q: 'Who served as Elizabeth I’s ruthless Principal Secretary and spymaster, uncovering the Babington Plot?',
-        a: 'Sir Francis Walsingham',
-        exp: 'Walsingham managed a sophisticated intelligence network across Europe, using codebreakers to decrypt conspirators’ letters.',
+        q: 'How did Sir Francis Walsingham’s intelligence network uncover Mary Queen of Scots’ treason in the Babington Plot (1586)?',
+        a: 'By intercepting, decoding, and resealing letters hidden in beer barrels',
+        exp: 'Walsingham used master cryptanalyst Thomas Phelippes to decode Mary’s correspondence approving Elizabeth’s assassination, providing undeniable proof.',
       },
       {
-        q: 'Where was Mary Queen of Scots beheaded for high treason in February 1587?',
-        a: 'Fotheringhay Castle',
-        exp: 'Mary was tried and executed in the Great Hall of Fotheringhay Castle after proof emerged of her complicity in the Babington Plot.',
+        q: 'What was the consequence of Pope Pius V issuing the 1570 Papal Bull Regnans in Excelsis?',
+        a: 'It excommunicated Elizabeth and released English Catholics from their oath of loyalty',
+        exp: 'By commanding Catholics to disobey the Queen on pain of anathema, the Bull turned religious allegiance to Rome into active political treason.',
+      },
+      {
+        q: 'Why was the execution of Mary Queen of Scots at Fotheringhay Castle in 1587 such a dangerous decision for Elizabeth?',
+        a: 'It violated the sacred immunity of an anointed monarch and provided Philip II with a pretext to invade',
+        exp: 'Executing a crowned queen shocked European royalty, enraged Catholic Spain, and directly triggered Philip II’s decision to launch the Armada.',
+      },
+      {
+        q: 'To what extent did the Elizabethan Religious Settlement successfully resolve England’s religious divisions by 1588?',
+        a: 'It united the Protestant majority and isolated extreme Catholics, but left radical Puritans deeply dissatisfied',
+        exp: 'The Settlement created lasting national cohesion during the Armada crisis, though Puritans continued to campaign against "popish" rituals.',
       },
     ],
   },
@@ -170,44 +177,44 @@ const QUIZ_DATA = [
     enquiry: 'Why did the Spanish Armada fail to conquer Elizabethan England?',
     items: [
       {
-        q: 'In what year did Sir Francis Drake carry out his raid on Cadiz, "singeing the King of Spain’s beard"?',
+        q: 'In what year did Sir Francis Drake attack Cadiz harbour, famously "singeing the King of Spain’s beard"?',
         a: '1587',
-        exp: 'Drake raided Cadiz harbour in April 1587, destroying over 30 warships and thousands of seasoned barrel staves, delaying the invasion.',
+        exp: 'Drake destroyed over 30 warships and thousands of seasoned barrel staves at Cadiz, delaying the Armada’s launch by a full year.',
       },
       {
-        q: 'What defensive formation did the 130 ships of the Spanish Armada sail in up the English Channel?',
-        a: 'A crescent formation',
-        exp: 'The Armada sailed in an impenetrable seven-mile crescent formation with heavily armed galleons protecting transports in the centre.',
+        q: 'What disciplined, defensive formation did the 130 ships of the Spanish Armada maintain up the English Channel?',
+        a: 'An impenetrable crescent formation',
+        exp: 'Heavily armed galleons guarded the outer wings while vulnerable transport vessels sailed protected in the curved centre.',
       },
       {
-        q: 'What weapon did Francis Drake launch at midnight on 7 August 1588 to scatter the Spanish fleet at Calais?',
-        a: 'Eight blazing fireships (hell-burners)',
-        exp: 'Loaded with pitch and gunpowder, the fireships panicked Spanish captains into severing their anchor cables and scattering in the dark.',
-      },
-      {
-        q: 'What decisive naval battle took place on 8 August 1588 after the fireships scattered the Armada?',
-        a: 'The Battle of Gravelines',
-        exp: 'At Gravelines, nimble English race-built galleons pounded the disorganised, anchorless Spanish fleet with rapid broadside fire.',
-      },
-      {
-        q: 'What popular nickname was given to the violent Atlantic storms that wrecked Spanish ships around Scotland and Ireland?',
-        a: 'The Protestant Wind',
-        exp: 'Protestants viewed the fierce northerly gales as divine intervention, striking medals reading: "God blew and they were scattered."',
-      },
-      {
-        q: 'Who designed the faster, lower "race-built" galleons that gave the English navy superior maneuverability?',
-        a: 'Sir John Hawkins',
-        exp: 'Hawkins removed heavy forecastles, lowered hulls, and fitted long-range culverins that allowed standoff broadside gunnery.',
-      },
-      {
-        q: 'Which Spanish general’s army in the Netherlands was the Armada supposed to transport across to invade England?',
+        q: 'Which Spanish commander led 30,000 elite troops in the Netherlands waiting to be ferried across to invade England?',
         a: 'The Duke of Parma',
-        exp: 'The Duke of Parma assembled 30,000 elite Spanish veterans in Flanders waiting to be ferried across in flat-bottomed barges.',
+        exp: 'The Armada’s sole strategic objective was to secure the Channel so Parma’s veterans could land in Kent in flat-bottomed barges.',
       },
       {
-        q: 'Approximately how many of the 130 Spanish ships were destroyed or wrecked during the 1588 campaign?',
-        a: 'Over 50 ships (between 50 and 65)',
-        exp: 'Fewer than half the men and only 67 battered ships limped back to Spain, crippled by shipwrecks, scurvy, and dysentery.',
+        q: 'How did Sir John Hawkins’ design of "race-built" galleons give the English fleet a tactical advantage?',
+        a: 'They were faster, had lower superstructures, and mounted long-range culverins for standoff broadsides',
+        exp: 'By dismantling high forecastles, English ships sailed closer to the wind and pounded Spanish ships from distance, avoiding hand-to-hand boarding.',
+      },
+      {
+        q: 'Why was the deployment of eight fireships at Calais on 7 August 1588 the decisive turning point of the campaign?',
+        a: 'It panicked Spanish captains into severing their anchor cables, shattering their protective formation',
+        exp: 'Drifting helplessly into the North Sea without anchors, Spanish warships were left vulnerable to close-range bombardment at Gravelines.',
+      },
+      {
+        q: 'How did the failure of communication between Medina-Sidonia and the Duke of Parma doom the Spanish invasion plan?',
+        a: 'Parma’s troop barges were blockaded by Dutch flyboats and unready to embark when the Armada arrived',
+        exp: 'Because the Armada had no deep-water port to shelter in, it could not wait for Parma to break through the Dutch coastal blockade.',
+      },
+      {
+        q: 'Why did Protestants interpret the fierce Atlantic storms ("The Protestant Wind") as divine justification for their realm?',
+        a: 'They believed God directly intervened to wreck Spanish ships and defend the Protestant Church of England',
+        exp: 'Elizabeth struck commemorative medals reading "Afflavit Deus et dissipati sunt" (God blew and they were scattered), forging an enduring Protestant national myth.',
+      },
+      {
+        q: 'Why did the defeat of the Spanish Armada represent a profound turning point in European geopolitical and maritime history?',
+        a: 'It ended the threat of Catholic reconquest, demonstrated the dominance of naval gunnery, and began England’s rise as an oceanic power',
+        exp: 'The victory shattered the myth of Spanish military invincibility, protected the Dutch revolt, and laid the foundations for English global commerce.',
       },
     ],
   },
@@ -221,44 +228,44 @@ const QUIZ_DATA = [
       'Why did the struggle between King and Parliament lead to Civil War and the execution of Charles I?',
     items: [
       {
-        q: 'What belief held that kings were appointed directly by God and could not be questioned by Parliament?',
+        q: 'What political doctrine held that monarchs derived their authority directly from God and were answerable to no earthly court?',
         a: 'The Divine Right of Kings',
-        exp: 'Divine Right asserted that monarchs were chosen by God Almighty and answered only to Heaven, placing them above earthly statutes.',
+        exp: 'Charles I believed his royal prerogative was absolute and sacred, rejecting Parliament’s claim to co-govern or control taxation.',
       },
       {
-        q: 'What ancient coastal tax did Charles I illegally force inland towns to pay during his Personal Rule?',
+        q: 'What controversial tax did Charles I illegally enforce on inland English counties during his 11-year Personal Rule?',
         a: 'Ship Money',
-        exp: 'Traditionally levied only on coastal ports during wartime emergencies, Charles imposed Ship Money across the whole country in peacetime.',
+        exp: 'Ship Money was an ancient coastal levy for naval defence; Charles imposed it nationwide in peacetime to fund royal government without calling Parliament.',
       },
       {
-        q: 'In what year did Oliver Cromwell form the disciplined, merit-based New Model Army?',
-        a: '1645',
-        exp: 'Formed in 1645, this professional, religiously zealous Puritan army destroyed the Royalist forces at the Battle of Naseby.',
+        q: 'What disciplined, religiously motivated army did Oliver Cromwell and Parliament form in 1645 to win the Civil War?',
+        a: 'The New Model Army',
+        exp: 'Led by Sir Thomas Fairfax and Cromwell, this merit-based professional force crushed Royalist armies at Naseby and Langport.',
       },
       {
-        q: 'On what exact date was King Charles I publicly beheaded outside Whitehall Banqueting House?',
-        a: '30 January 1649',
-        exp: 'Charles I was executed on 30 January 1649, wearing two shirts in the freezing winter air so the crowd would not see him shiver.',
+        q: 'Why did Colonel Thomas Pride purge the Long Parliament in December 1648, creating the "Rump Parliament"?',
+        a: 'To expel moderate MPs who sought a negotiated peace with Charles I, leaving only radicals who favored regicide',
+        exp: 'The Army high command insisted the King was a "man of blood" who must face trial for treason; Pride arrested 45 MPs and excluded 186 others.',
       },
       {
-        q: 'What event in December 1648 saw Colonel Pride arrest moderate MPs, leaving the "Rump Parliament"?',
-        a: 'Pride’s Purge',
-        exp: 'Colonel Thomas Pride expelled MPs who wanted to reach a negotiated compromise with the King, leaving only radicals who favored execution.',
-      },
-      {
-        q: 'What historic title did Oliver Cromwell assume as head of the republican Commonwealth in 1653?',
+        q: 'What constitutional title did Oliver Cromwell assume in 1653 as head of state of the Commonwealth republic?',
         a: 'Lord Protector',
-        exp: 'Cromwell ruled Britain as Lord Protector during the Protectorate from 1653 until his death in 1658, declining the royal crown.',
+        exp: 'Governing under the Instrument of Government (Britain’s only written constitution), Cromwell ruled as Lord Protector, refusing the royal crown.',
       },
       {
-        q: 'Which Dutch prince invaded England in the 1688 Glorious Revolution and accepted the 1689 Bill of Rights?',
-        a: 'Prince William of Orange (King William III)',
-        exp: 'Invited by English nobles to depose James II, William landed at Brixham and ruled jointly with his Protestant wife Queen Mary II.',
+        q: 'Why did English political leaders invite Dutch Prince William of Orange to invade England in the 1688 Glorious Revolution?',
+        a: 'To prevent the establishment of a Catholic absolutist dynasty following the birth of James II’s son',
+        exp: 'Fearing permanent Catholic rule under James II, seven prominent peers invited William and his Protestant wife Mary to take the crown.',
       },
       {
-        q: 'Which key constitutional principle was permanently established by the 1689 Bill of Rights?',
-        a: 'Monarchs cannot suspend laws, levy taxes, or maintain a standing army without Parliament',
-        exp: 'The Bill of Rights established Parliamentary Sovereignty and created Britain’s lasting constitutional monarchy under statutory law.',
+        q: 'What revolutionary legal principle was established by the public trial and execution of King Charles I in January 1649?',
+        a: 'That sovereign monarchs are legally accountable to the law and their people, and can commit treason against the realm',
+        exp: 'The High Court of Justice rejected royal immunity, declaring that the monarch was an entrusted officer bound to uphold the welfare of the people.',
+      },
+      {
+        q: 'How did the 1689 Bill of Rights permanently establish Parliamentary Sovereignty and create a Constitutional Monarchy?',
+        a: 'By barring the Crown from suspending statutes, levying taxes, or maintaining a peacetime army without parliamentary consent',
+        exp: 'William and Mary accepted these statutory limits as a condition of rule, transferring ultimate legislative sovereignty from the Crown alone to the King-in-Parliament.',
       },
     ],
   },
@@ -271,53 +278,64 @@ const QUIZ_DATA = [
     enquiry: 'Which turning point decisively transformed the English state between 1517 and 1689?',
     items: [
       {
-        q: 'In 1517, to which foreign spiritual leader did the English Church and King legally answer?',
+        q: 'In 1517, to which foreign spiritual leader was the English monarch and church legally subordinate?',
         a: 'The Pope in Rome',
-        exp: 'Before Henry VIII broke with Rome in 1534, England was a Roman Catholic nation subordinate to papal canon law.',
+        exp: 'Before 1534, England was part of Christendom under Roman Catholic canon law, with the Pope holding ultimate spiritual jurisdiction.',
       },
       {
-        q: 'Why did Henry VIII’s use of Parliament during the Reformation inadvertently increase Parliament’s power?',
-        a: 'He used statute laws passed by Parliament to validate royal supremacy and seize church land',
-        exp: 'By continually using parliamentary legislation to confirm royal power, Henry elevated Parliament into a co-equal statutory institution.',
-      },
-      {
-        q: 'What radical principle was established by the public trial and execution of King Charles I in 1649?',
-        a: 'Monarchs are legally accountable to the law and their people',
-        exp: 'The regicide proved that even an anointed monarch was not above the law and could be punished for tyranny and bloodshed.',
-      },
-      {
-        q: 'Which 1689 constitutional document permanently barred British monarchs from taxing without Parliament?',
-        a: 'The Bill of Rights',
-        exp: 'The 1689 statute ended royal absolutism, guaranteeing regular parliaments, free elections, and legislative supremacy.',
-      },
-      {
-        q: 'What form of government was permanently established in Britain following the 1689 Bill of Rights?',
-        a: 'A Constitutional Monarchy',
-        exp: 'Britain became a constitutional monarchy, where the Crown reigns but rules only through and with the elected Parliament.',
-      },
-      {
-        q: 'Did the everyday legal rights and economic lives of poor agricultural labourers change significantly between 1517 and 1689?',
-        a: 'No, power shifted primarily to wealthy landowners and gentry, leaving labourers poor',
-        exp: 'While constitutional structures transformed, ordinary peasants and women experienced profound continuity in poverty and lack of political voice.',
-      },
-      {
-        q: 'Which radical group of peasants attempted to dig common land on St George’s Hill in Surrey in 1649?',
-        a: 'The Diggers (True Levellers)',
-        exp: 'Led by Gerrard Winstanley, the Diggers advocated communal ownership of land, but were crushed by landowners and Cromwell’s soldiers.',
-      },
-      {
-        q: 'What term describes the system where British laws are enacted jointly by the monarch, Lords, and Commons?',
+        q: 'What foundational constitutional term describes supreme sovereign law being enacted jointly by the monarch, Lords, and Commons?',
         a: 'The King-in-Parliament',
-        exp: 'The "King-in-Parliament" is the foundational principle of British constitutional law: sovereign power resides in the crown in legislature.',
+        exp: 'The King-in-Parliament remains the central principle of the British constitution: supreme legal power resides in the legislature, not the monarch alone.',
+      },
+      {
+        q: 'What form of government was permanently established in Britain following the Glorious Revolution and 1689 Bill of Rights?',
+        a: 'A Constitutional Monarchy',
+        exp: 'The monarch remains head of state, but reigns under the rule of law and exercises executive powers only through parliamentary ministers.',
+      },
+      {
+        q: 'How did the Dissolution of the Monasteries (1536) permanently bind the English gentry to the Protestant Reformation?',
+        a: 'By selling confiscated monastic lands to wealthy gentry families, giving them a vested financial interest in resisting a return to Rome',
+        exp: 'Thousands of gentry families expanded their estates with former abbey land; restoring Catholicism under Mary I threatened their property rights.',
+      },
+      {
+        q: 'Why did Charles I’s belief in the Divine Right of Kings make compromise with Parliament almost impossible?',
+        a: 'He viewed any parliamentary restriction on his royal prerogative as sinful rebellion against God Almighty',
+        exp: 'Charles believed his power came solely from Heaven, making him view parliamentary petitions for rights as illicit challenges to God’s order.',
+      },
+      {
+        q: 'Which radical group of peasants attempted to establish communal ownership of land on St George’s Hill in 1649?',
+        a: 'The Diggers (True Levellers)',
+        exp: 'Led by Gerrard Winstanley, the Diggers argued that the execution of the King should free common land for poor peasants, but were crushed by the Army.',
+      },
+      {
+        q: 'To what extent did the everyday social and economic lives of ordinary agricultural labourers change between 1517 and 1689?',
+        a: 'Very little; while constitutional power shifted to wealthy landowners and MPs, poor labourers and women remained disenfranchised',
+        exp: 'The "Glorious Revolution" was an aristocratic triumph that empowered wealthy property owners; ordinary cottagers gained neither the vote nor land security.',
+      },
+      {
+        q: 'Which turning point between 1517 and 1689 was the most decisive in transferring sovereign power from Crown to Parliament?',
+        a: 'The 1689 Bill of Rights, because it turned parliamentary supremacy from a wartime rebellion into permanent statutory constitutional law',
+        exp: 'While 1649 proved monarchs could be executed, the Commonwealth collapsed into military rule; 1689 created the stable constitutional framework that governs Britain today.',
       },
     ],
   },
 ];
 
+// Helper to generate subtle disciplinary micro-pip badges
+function getPipBadge(index) {
+  if (index < 3) {
+    return `<span class="pip-badge pip-1" title="Core Knowledge"><span class="pip-icon">▸</span></span>`;
+  } else if (index < 6) {
+    return `<span class="pip-badge pip-2" title="Causal Mechanism"><span class="pip-icon">▸▸</span></span>`;
+  } else {
+    return `<span class="pip-badge pip-3" title="Significance & Precedent"><span class="pip-icon">▸▸▸</span></span>`;
+  }
+}
+
 // --------------------------------------------------------------------------
 // CSS STYLING FOR A5 SADDLE-STITCH BOOKLET (148mm x 210mm)
 // Formatted for A4 landscape folded in half (exactly 2 sheets = 8 pages)
-// 100% Solid Black (#000000) Typography for Razor-Sharp Reprographics
+// 100% Solid Black (#000000) Typography with Subtle Color Micro-Pips
 // --------------------------------------------------------------------------
 const A5_BOOKLET_CSS = `
   @page {
@@ -371,6 +389,31 @@ const A5_BOOKLET_CSS = `
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+  }
+
+  /* Micro-Pip Disciplinary Badges (System 1) */
+  .pip-badge {
+    display: inline-flex;
+    align-items: center;
+    font-size: 8.8pt;
+    line-height: 1;
+    margin-right: 3px;
+    letter-spacing: -1.5px;
+    vertical-align: middle;
+  }
+  .pip-1 {
+    color: #16a34a; /* Emerald - Core Knowledge */
+  }
+  .pip-2 {
+    color: #d97706; /* Warm Ochre - Causal Mechanism */
+  }
+  .pip-3 {
+    color: #dc2626; /* Crimson - Significance / Stretch */
+  }
+  @media print {
+    .pip-badge {
+      font-weight: 800;
+    }
   }
 
   /* Page Headers & Footers */
@@ -600,7 +643,7 @@ const A5_BOOKLET_CSS = `
     width: 100%;
   }
 
-  /* Page 1: 3-Tier Traffic Light Mastery Rule (DIRT Loop) */
+  /* Page 1: 3-Tier Traffic Light Mastery Rule (DIRT Loop) & Micro-Pip Legend */
   .mastery-traffic-strip {
     display: flex;
     justify-content: space-between;
@@ -678,25 +721,25 @@ const A5_BOOKLET_CSS = `
     align-items: flex-start;
     justify-content: space-between;
     gap: 4px;
-    font-size: 9.2pt;
+    font-size: 9.0pt;
     line-height: 1.18;
   }
   .q-prompt-wrap {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
+    gap: 3px;
     flex: 1;
   }
   .q-num {
     font-weight: 800;
     color: #000000;
-    min-width: 16px;
-    font-size: 9.2pt;
+    min-width: 15px;
+    font-size: 9.0pt;
   }
   .q-prompt {
     font-weight: 700;
     color: #000000;
-    font-size: 9.2pt;
+    font-size: 9.0pt;
   }
   .q-mastery {
     font-size: 6.5pt;
@@ -721,7 +764,7 @@ const A5_BOOKLET_CSS = `
   .q-solid-line {
     flex: 1;
     border-bottom: 1.2px solid #000000;
-    min-height: 20px;
+    min-height: 19px;
   }
 
   /* Pages 7 & 8: Marking Bank */
@@ -731,39 +774,39 @@ const A5_BOOKLET_CSS = `
     border-top: 1px solid #000000;
     border-right: 1px solid #000000;
     border-bottom: 1px solid #000000;
-    padding: 2px 6px;
-    font-size: 7.2pt;
+    padding: 1.5px 5px;
+    font-size: 6.8pt;
     font-weight: 800;
     color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
-    margin: 3px 0 1.5px 0;
+    margin: 1.5px 0 1px 0;
   }
   .mb-section-title:first-child { margin-top: 0; }
   .mb-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
+    gap: 1px;
     flex: 1;
     justify-content: space-between;
   }
   .ans-card {
     display: flex;
     align-items: flex-start;
-    gap: 4px;
-    font-size: 6.8pt;
-    line-height: 1.18;
+    gap: 3.5px;
+    font-size: 6.3pt;
+    line-height: 1.15;
     background: #ffffff;
     border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2px 5px;
+    padding: 1.2px 4px;
     color: #000000;
   }
   .ans-num {
     font-weight: 800;
     color: #000000;
-    min-width: 14px;
-    font-size: 7.2pt;
+    min-width: 13px;
+    font-size: 6.8pt;
   }
   .ans-content {
     flex: 1;
@@ -772,15 +815,15 @@ const A5_BOOKLET_CSS = `
   .ans-core {
     font-weight: 800;
     color: #000000;
-    font-size: 7.2pt;
+    font-size: 6.8pt;
   }
   .ans-exp {
     color: #000000;
     font-style: italic;
-    font-size: 6.8pt;
+    font-size: 6.3pt;
   }
   .ans-boxes {
-    font-size: 6.5pt;
+    font-size: 6.2pt;
     font-weight: 800;
     color: #000000;
     white-space: nowrap;
@@ -916,7 +959,7 @@ async function compileQuizBookletHtml() {
       </table>
     </div>
 
-    <!-- 3-Tier Traffic Light Mastery Rule (DIRT Loop) -->
+    <!-- 3-Tier Traffic Light Mastery Rule (DIRT Loop) & Micro-Pip Guide -->
     <div class="mastery-traffic-strip">
       <div class="traffic-tier">
         <span class="traffic-dot green-dot">&#9679;</span>
@@ -950,6 +993,7 @@ async function compileQuizBookletHtml() {
 
   // ==========================================================================
   // PAGES 2–6: 5 DEDICATED LESSON RETRIEVAL PAGES (8 Questions Each)
+  // Clean layout: No instruction bar box; micro-pips indicate cognitive depth
   // ==========================================================================
   let globalQNum = 1;
   QUIZ_DATA.forEach((lessonData, lIdx) => {
@@ -966,13 +1010,15 @@ async function compileQuizBookletHtml() {
 
     <div class="q-container">
       ${lessonData.items
-        .map((item) => {
+        .map((item, itemIdx) => {
           const currentNum = globalQNum++;
+          const pipBadge = getPipBadge(itemIdx);
           return `
       <div class="q-block">
         <div class="q-header">
           <div class="q-prompt-wrap">
             <span class="q-num">${currentNum}.</span>
+            ${pipBadge}
             <span class="q-prompt">${item.q}</span>
           </div>
           <span class="q-mastery">Att 1: [ ] &bull; Att 2: [ ]</span>
@@ -1018,6 +1064,7 @@ async function compileQuizBookletHtml() {
           (item, i) => `
       <div class="ans-card">
         <span class="ans-num">${i + 1}.</span>
+        ${getPipBadge(i)}
         <div class="ans-content">
           <span class="ans-core">${item.a}</span> —
           <span class="ans-exp">${item.exp}</span>
@@ -1033,6 +1080,7 @@ async function compileQuizBookletHtml() {
           (item, i) => `
       <div class="ans-card">
         <span class="ans-num">${i + 9}.</span>
+        ${getPipBadge(i)}
         <div class="ans-content">
           <span class="ans-core">${item.a}</span> —
           <span class="ans-exp">${item.exp}</span>
@@ -1048,6 +1096,7 @@ async function compileQuizBookletHtml() {
           (item, i) => `
       <div class="ans-card">
         <span class="ans-num">${i + 17}.</span>
+        ${getPipBadge(i)}
         <div class="ans-content">
           <span class="ans-core">${item.a}</span> —
           <span class="ans-exp">${item.exp}</span>
@@ -1085,6 +1134,7 @@ async function compileQuizBookletHtml() {
           (item, i) => `
       <div class="ans-card">
         <span class="ans-num">${i + 25}.</span>
+        ${getPipBadge(i)}
         <div class="ans-content">
           <span class="ans-core">${item.a}</span> —
           <span class="ans-exp">${item.exp}</span>
@@ -1100,6 +1150,7 @@ async function compileQuizBookletHtml() {
           (item, i) => `
       <div class="ans-card">
         <span class="ans-num">${i + 33}.</span>
+        ${getPipBadge(i)}
         <div class="ans-content">
           <span class="ans-core">${item.a}</span> —
           <span class="ans-exp">${item.exp}</span>
