@@ -911,11 +911,11 @@ async function compileQuizBookletHtml() {
       </div>
       <div class="cover-header-block">
         <h1 class="cover-title">Crown, Church, or Parliament? (1517–1689)</h1>
-        <p class="cover-subtitle">Formative Homework & Knowledge Retrieval Companion • 40 High-Yield Retrieval Questions</p>
+        <p class="cover-subtitle">Knowledge Retrieval & Homework Companion &bull; 40 Questions</p>
       </div>
       <div class="pupil-box">
         <div class="pupil-grid">
-          <div class="pupil-field"><span class="lbl">Scholar Name:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Pupil Name:</span><span class="line"></span></div>
           <div class="pupil-field"><span class="lbl">Class:</span><span class="line"></span></div>
           <div class="pupil-field"><span class="lbl">Teacher:</span><span class="line"></span></div>
         </div>
@@ -936,12 +936,12 @@ async function compileQuizBookletHtml() {
       </div>
     </div>
 
-    <!-- Formative Homework & Retrieval Tracking Ledger -->
+    <!-- Homework & Retrieval Tracking Table -->
     <div class="ledger-container">
       <table class="tracking-table">
         <thead>
           <tr>
-            <th style="width: 32%;">Lesson Retrieval Unit</th>
+            <th style="width: 32%;">Lesson Unit</th>
             <th style="width: 14%;">Att 1 Score</th>
             <th style="width: 14%;">Att 2 Score</th>
             <th style="width: 25%;">Retrieval Strength</th>
@@ -998,8 +998,8 @@ async function compileQuizBookletHtml() {
     </div>
 
     <div class="page-footer-strip">
-      <span><strong>The History Department</strong> &bull; Key Stage 3 Formative Retrieval Companion</span>
-      <span>Front Cover & Tracking Ledger &bull; Page 1 of 8</span>
+      <span><strong>The History Department</strong> &bull; Key Stage 3 History</span>
+      <span>Page 1 of 8</span>
     </div>
   </div>
 `;
@@ -1050,7 +1050,7 @@ async function compileQuizBookletHtml() {
 
     <div class="page-footer-strip">
       <span>Lesson ${lessonData.lesson}: ${lessonData.shortTitle}</span>
-      <span>Retrieval Companion &bull; Page ${pageNum} of 8</span>
+      <span>Page ${pageNum} of 8</span>
     </div>
   </div>
 `;
