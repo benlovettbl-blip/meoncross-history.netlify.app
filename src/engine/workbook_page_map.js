@@ -565,53 +565,35 @@ export const WORKBOOK_PAGE_MAP = {
     },
   },
   medieval_england: {
-    lesson_1_hastings: {
+    lesson_1: {
       page: 4,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 0,
     },
-    lesson_2_castles_terror_domesday: {
+    lesson_2: {
       page: 6,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 1,
     },
-    lesson_3_crown_vs_church: {
+    lesson_3: {
       page: 8,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 2,
     },
-    lesson_4_magna_carta: {
+    lesson_4: {
       page: 10,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 3,
     },
-    lesson_5_doom_paintings_village: {
+    lesson_5: {
       page: 12,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 4,
-    },
-    lesson_6_black_death: {
-      page: 14,
-      booklet: 'Pupil Workbook',
-      unitId: 'medieval_england',
-      lessonIndex: 5,
-    },
-    lesson_7_peasants_revolt: {
-      page: 16,
-      booklet: 'Pupil Workbook',
-      unitId: 'medieval_england',
-      lessonIndex: 6,
-    },
-    lesson_8_wars_of_the_roses: {
-      page: 18,
-      booklet: 'Pupil Workbook',
-      unitId: 'medieval_england',
-      lessonIndex: 7,
     },
   },
   post_war_britain: {

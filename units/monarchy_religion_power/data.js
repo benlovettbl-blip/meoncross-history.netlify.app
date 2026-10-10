@@ -527,7 +527,7 @@ export const unitData = {
         {
           act: 5,
           title: '1.5 Royal Supremacy & Monastic Meltdown (1534–1540)',
-          text: '<span class="para-ref">[1.5]</span> In November 1534, Parliament passed the historic <strong>Act of Supremacy</strong>, formally declaring King Henry VIII the sole "Supreme Head" of the Church of England. Refusing to swear the mandatory Oath of <strong>Supremacy</strong> was classified as high <strong>treason</strong>; Henry’s revered former Chancellor Sir Thomas More was promptly beheaded for remaining loyal to the Pope. Royal power was immense, but church wealth was even sweeter. Between 1536 and 1540, Cromwell orchestrated the systematic <strong>dissolution</strong> of over 800 Catholic monasteries, abbeys, and nunneries. Henry melted their lead roofs, confiscated their gold chalices, and sold their vast estates to wealthy nobles to fund national coastal defences and continental wars.',
+          text: '<span class="para-ref">[1.5]</span> In November 1534, Parliament passed the historic <strong>Act of Supremacy</strong>, formally declaring King Henry VIII the sole "Supreme Head" of the Church of England. Refusing to swear the mandatory Oath of <strong>Supremacy</strong> was classified as high <strong>treason</strong>; Henry’s revered former Chancellor Sir Thomas More was promptly beheaded for remaining loyal to the Pope. Royal power was immense, but church wealth was even sweeter. Between 1536 and 1540, Cromwell orchestrated the systematic <strong>dissolution</strong> of over 800 Catholic monasteries, abbeys, and nunneries. Henry melted their lead roofs, confiscated their gold chalices, and sold their vast estates to wealthy nobles to fund national coastal defences and continental wars. Locally in Hampshire, Henry granted the dissolved Titchfield Abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Along the coast, Henry used lead and stone stripped from dissolved religious houses to build Southsea Castle (1544) to defend Portsmouth Harbour.',
           source: {
             letter: 'B',
             title:
@@ -549,6 +549,33 @@ export const unitData = {
             citation:
               'Hans Holbein the Younger • Royal Collection / Walker Art Gallery, Liverpool.',
           },
+        },
+        {
+          type: 'photo_slider',
+          collapsible: true,
+          accordion_title: 'Local Fieldwork Study • Titchfield Abbey & The Dissolution',
+          tag: 'Tudor Dissolution & Landscape Forensics',
+          title: 'Titchfield Abbey: Monastic Grandeur to Tudor "Place House"',
+          description:
+            'Slide to compare the 1890s Ordnance Survey 25-inch survey with modern aerial topography. In 1537, Henry VIII granted the dissolved Premonstratensian abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Stone and lead stripped from local religious houses were simultaneously used to construct Henry VIII\'s coastal Device Forts, including Southsea Castle (1544) guarding Portsmouth Harbour.',
+          before_image: '/images/titchfield/titchfield_abbey_historic_os_map_1890s.jpg',
+          before_label: '1890s OS 25-Inch Map (Abbey & Stew Ponds)',
+          after_image: '/images/titchfield/titchfield_abbey_modern_map.jpg',
+          after_label: 'Modern Street Map (Place House Ruins)',
+          satellite_image: '/images/titchfield/titchfield_abbey_modern_satellite.jpg',
+          satellite_label: 'Modern Satellite Aerial View',
+          links: [
+            {
+              label: 'English Heritage: History of Titchfield Abbey & Place House',
+              url: 'https://www.english-heritage.org.uk/visit/places/titchfield-abbey/history/',
+              icon: 'fa-solid fa-landmark',
+            },
+            {
+              label: 'English Heritage: Southsea Castle (Henry VIII Device Fort)',
+              url: 'https://www.english-heritage.org.uk/visit/places/southsea-castle/',
+              icon: 'fa-solid fa-shield-halved',
+            },
+          ],
         },
       ],
 

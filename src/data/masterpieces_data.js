@@ -1606,4 +1606,160 @@ export const MASTERPIECES_DATA = [
         'Captured British military battle flags and drums are hanging crossed on the back wall! Trumbull placed them there to remind viewers that while these statesmen were calmly debating philosophy with quill pens in Philadelphia, their countrymen were actively fighting and dying against the British Royal Army on the battlefield.',
     },
   },
+  {
+    id: 'bayeux_tapestry_1066',
+    unitId: 'medieval_england',
+    weekTitle: 'Masterpiece of the Week',
+    title: 'The Bayeux Tapestry: Norman Cavalry & The Shield Wall at Hastings',
+    artist: 'Anglo-Saxon Embroiderers (Canterbury Atelier / Commissioned by Bishop Odo)',
+    artistDates: 'c. 1070s',
+    date: 'c. 1070–1077',
+    medium: 'Embroidered wool yarn on tabby-woven linen cloth',
+    location: 'Bayeux Museum, Normandy, France',
+    dimensions: '68.38 m × 0.5 m',
+    image: '/images/bayeux_william_hastings_wide.jpg',
+    artistPortrait: '/images/william_the_conqueror.jpg',
+    artistPortraitCaption: 'Duke William of Normandy (William the Conqueror)',
+    curatorBadge: 'Romanesque Masterpiece · Epic Visual Chronicle',
+    curatorHook:
+      'A panoramic 70-metre epic of thread, blood, and dynastic betrayal. Commissioned by William the Conqueror’s half-brother, this embroidered masterpiece presents the definitive Norman visual narrative of the 1066 Conquest, from Edward the Confessor’s court to the bloody collapse of the Anglo-Saxon shield wall at Hastings.',
+    thematicLinks: [
+      'The Norman Conquest & 1066 Succession Crisis',
+      'Medieval Battlefield Tactics: Cavalry vs Shield Wall',
+      'Art as Political Propaganda & Norman Legitimacy',
+    ],
+    artistBio: {
+      headline: 'The Master Embroiderers of Canterbury',
+      summary:
+        'Although commissioned by Bishop Odo of Bayeux, art historians demonstrate that the tapestry was stitched in England by highly skilled Anglo-Saxon embroiderers in Kent. The intricate needlework in eight colours of dyed wool preserves exceptional forensic details of 11th-century armour, longships, cavalry tactics, and battlefield violence.',
+      fastFacts: [
+        'Survives intact across nearly 70 metres of linen, containing 626 human figures, 190 horses, and 37 buildings and castles.',
+        'Stitched using just two primary embroidery techniques: stem stitch for outlines and laid-and-couched work for bold blocks of colour.',
+        'Features a rich decorative border filled with real and mythological beasts, farming scenes, and Aesop’s fables commenting on human greed.',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the central frieze: Observe the Norman cavalry charging from the left with couched lances. How are the Anglo-Saxon defenders holding their line, and what gruesome details are depicted in the lower border below their feet?',
+        teacherHint:
+          'Direct pupils to notice the severed heads, stripped chainmail, and fallen limbs in the lower margin.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: In Scene 57, under the Latin words "HAROLD REX INTERFECTUS EST", one figure is struck in the eye with an arrow while another is slashed down by a mounted knight. Why do historians debate which figure represents King Harold?',
+        teacherHint:
+          'Explain that 18th-century stitch repairs and multiple figures make Harold’s exact death a subject of ongoing historical debate.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was the Bayeux Tapestry created to celebrate Norman military genius, or did the English embroiderers subtly weave sympathy for the defeated Anglo-Saxons into the borders?',
+        teacherHint:
+          'Encourage students to consider the English peasant woman and child fleeing their burning house in Scene 47.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Spot the "Omen in the Sky": Earlier in the tapestry (Scene 32), terrified English crowds point towards a blazing celestial fireball with a long fiery tail. What astronomical wonder is depicted?',
+      reveal:
+        'Halley’s Comet! In April 1066, Halley’s Comet swept across the skies of Europe. Chroniclers recorded it as a terrifying omen of doom for King Harold and a divine herald of William’s impending conquest.',
+    },
+  },
+  {
+    id: 'magna_carta_1215',
+    unitId: 'medieval_england',
+    weekTitle: 'Masterpiece of the Week',
+    title: 'Magna Carta (The Great Charter of 1215)',
+    artist: 'Royal Chancery Scribes & Baronial Clerks',
+    artistDates: 'June 1215',
+    date: '15 June 1215',
+    medium: 'Iron gall ink on sheepskin parchment with Great Seal of King John',
+    location: 'The British Library, London / Salisbury Cathedral / Lincoln Cathedral',
+    dimensions: '44 cm × 32 cm',
+    image: '/images/magna_carta_1215.jpg',
+    artistPortrait: '/images/king_john_matthew_paris.jpg',
+    artistPortraitCaption: 'King John, depicted in Matthew Paris’s Chronica Majora (c. 1250)',
+    curatorBadge: 'Foundational Constitutional Charter · Legal Manuscript',
+    curatorHook:
+      'The sacred foundation stone of modern constitutional freedom. Drafted in 63 densely packed clauses of medieval Latin on sheepskin parchment, Magna Carta was forced upon King John by rebel barons at Runnymede, forever establishing that even the monarch is subject to the rule of law.',
+    thematicLinks: [
+      'Medieval Kingship, Autocracy & Baronial Rebellion',
+      'The Rule of Law & Development of Trial by Jury',
+      'From Feudal Extortion to Modern Human Rights',
+    ],
+    artistBio: {
+      headline: 'The Scribes of the Royal Chancery',
+      summary:
+        'Written under extreme pressure during tense five-day negotiations between 15 and 19 June 1215 in the water-meadow of Runnymede. Expert royal scribes copied roughly forty exemplars using quill pens and iron gall ink on specially treated sheepskin vellum, distributing them to sheriffs and cathedral archives across every English shire.',
+      fastFacts: [
+        'Only four original 1215 exemplars survive today: two in the British Library, one in Salisbury Cathedral, and one in Lincoln Castle.',
+        'Never signed by King John; it was authenticated by pressing the two-sided beeswax Great Seal into pendant parchment ribbons.',
+        'Clause 39 established Habeas Corpus: "No free man shall be seized or imprisoned... except by the lawful judgement of his equals."',
+      ],
+    },
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Look closely at the parchment: Notice how there are no paragraph breaks, line spaces, or illustrations across all 63 continuous lines. Why did the scribes cram every word onto a single sheet of sheepskin?',
+        teacherHint:
+          'Explain that parchment was expensive and that leaving blank gaps risked fraudulent insertions or tampering by sheriffs.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Clause 39 guarantees justice to every "free man". In 1215, what percentage of the English population were actually "free men" versus bonded peasant serfs (villeins)?',
+        teacherHint:
+          'Highlight that over 75% of medieval England were unfree serfs, meaning Magna Carta initially protected only a privileged elite.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was Magna Carta a selfish aristocratic tax revolt by 25 wealthy barons, or was it the revolutionary birth of constitutional democracy?',
+        teacherHint:
+          'Take a classroom vote before explaining how 17th-century lawyers and modern democracies transformed a feudal peace treaty into a global symbol of freedom.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Look at the bottom of the parchment: What is missing from the lower edge that once proved the document was official and legally binding?',
+      reveal:
+        'The Great Seal of England! Originally, King John’s two-sided beeswax seal hung from the bottom slit on braided green-and-pink silk cords. Over 800 years of handling and damp storage, the wax seal melted or broke off this British Library exemplar, though the slit and seal cords remain clearly visible.',
+    },
+  },
 ];

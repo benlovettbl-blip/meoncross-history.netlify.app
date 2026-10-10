@@ -4386,8 +4386,10 @@ export function renderLesson(lesson) {
       if (block.type === 'photo_slider') {
         const sliderId = 'slider-' + Math.random().toString(36).substr(2, 9);
         const hasSat = !!block.satellite_image;
-        htmlNarrative += `
-            <div class="photo-slider-container" id="${sliderId}-container" style="margin: 32px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
+        const isCollapsible = !!block.collapsible;
+
+        let sliderHtml = `
+            <div class="photo-slider-container" id="${sliderId}-container" style="margin: ${isCollapsible ? '16px 0 8px 0' : '32px 0'}; background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 24px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.06);">
               <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 6px;">
                 <span class="archival-meta-tag" style="background: #e0e7ff; color: #3730a3; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 0.72rem; letter-spacing: 0.05em; text-transform: uppercase;">${block.tag || 'Cartographic Analysis'}</span>
               </div>
@@ -4479,7 +4481,27 @@ export function renderLesson(lesson) {
                   : ''
               }
             </div>
+        `;
+
+        if (isCollapsible) {
+          htmlNarrative += `
+            <details class="local-study-accordion" style="margin: 24px 0; background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 4px solid #16a34a; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); overflow: hidden;">
+              <summary style="padding: 14px 20px; font-weight: 700; color: #166534; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f0fdf4;">
+                <span style="display: flex; align-items: center; gap: 10px; font-size: 0.98rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-location-dot" style="color: #16a34a;"></i> ${block.accordion_title || 'Local Fieldwork Study &bull; Interactive Cartography'}
+                </span>
+                <span style="font-size: 0.82rem; font-weight: 600; color: #15803d; display: inline-flex; align-items: center; gap: 6px;">
+                  <i class="fa-solid fa-map"></i> View Map &amp; Links <i class="fa-solid fa-chevron-down"></i>
+                </span>
+              </summary>
+              <div style="padding: 8px 16px 16px 16px;">
+                ${sliderHtml}
+              </div>
+            </details>
           `;
+        } else {
+          htmlNarrative += sliderHtml;
+        }
         return;
       }
 
