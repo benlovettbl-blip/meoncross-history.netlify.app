@@ -872,14 +872,23 @@ export function renderKeyTopicLessonsHTML(unitData, currentUnitId, currentUnitDa
         let textColor = '#475569';
         let textShadow = 'none';
 
-        let candidateImg = lesson.banner || lesson.cover_image;
+        let candidateImg = lesson.card_image || lesson.banner || lesson.cover_image;
         if (!candidateImg && lesson.sources && lesson.sources.length > 0) {
           candidateImg = lesson.sources[0].src || lesson.sources[0].image_url;
         }
 
         if (candidateImg) {
           let imgUrl = getAssetUrl(candidateImg);
-          bgStyle = `background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.9) 100%), url('${imgUrl}') center/cover; border: none; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end;`;
+          let cardPos =
+            lesson.card_position ||
+            lesson.card_image_position ||
+            (typeof lesson.card_image === 'object' && lesson.card_image?.position) ||
+            (typeof lesson.banner === 'object' && lesson.banner
+              ? lesson.banner.card_position || lesson.banner.position
+              : null) ||
+            lesson.banner_position ||
+            'center';
+          bgStyle = `background: linear-gradient(to bottom, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.9) 100%), url('${imgUrl}') ${cardPos}/cover; border: none; min-height: 150px; display: flex; flex-direction: column; justify-content: flex-end;`;
           titleColor = '#f8fafc';
           textColor = '#e2e8f0';
           textShadow = '0 2px 4px rgba(0,0,0,0.5)';

@@ -333,10 +333,13 @@ export const unitData = {
       enquiry: 'Why did Henry VIII break with Rome, and how was Royal Supremacy established?',
       subtitle: 'From Martin Luther’s Hammer to Henry VIII’s Crowned Supremacy',
       skill: 'Causation & Motivation',
+      card_image: '/images/henry_viii.jpg',
+      card_position: 'center 2%',
       banner: {
-        image: '/images/henry_viii.jpg',
+        image: '/images/family_of_henry_viii_c1545.jpg',
+        position: 'center 46%',
         caption:
-          'King Henry VIII: from papal "Defender of the Faith" to supreme head of his own national church.',
+          'The Family of Henry VIII (c. 1545): King Henry VIII enthroned under the royal canopy with his heirs, establishing royal supremacy.',
       },
       margin_spine: [
         { year: '1517', label: '1.1 Luther’s Protest' },
@@ -755,10 +758,13 @@ export const unitData = {
       enquiry: 'How did Elizabeth I navigate religious divisions through the 1559 Via Media?',
       subtitle: 'From the Fires of Smithfield to the Golden Age Settlement',
       skill: 'Historical Significance & Compromise',
+      card_image: '/images/elizabeth_coronation_portrait.jpg',
+      card_position: 'center 12%',
       banner: {
-        image: '/images/elizabeth_coronation_portrait.jpg',
+        image: '/images/elizabeth_procession_1601.jpg',
+        position: 'center 28%',
         caption:
-          'Queen Elizabeth I in her coronation robes: forging a Protestant nation while avoiding civil war.',
+          'The Procession Portrait of Queen Elizabeth I (c. 1601): carried in triumph through London surrounded by her Elizabethan courtiers.',
       },
       margin_spine: [
         { year: '1558', label: '2.1 Fractured Kingdom' },
@@ -1154,10 +1160,13 @@ export const unitData = {
       enquiry: 'Why was Philip II’s Armada defeated, and how did naval strategy transform warfare?',
       subtitle: 'From Drake’s Fireships to the Protestant Wind',
       skill: 'Causation & Strategic Evaluation',
+      card_image: '/images/battle_of_gravelines_1588.jpg',
+      card_position: 'center 40%',
       banner: {
-        image: '/images/spanish_armada_battle.jpg',
+        image: '/images/battle_of_gravelines_1588.jpg',
+        position: 'center 35%',
         caption:
-          'The Spanish Armada shattered at Gravelines: English race-built galleons pounding Philip II’s warships.',
+          'The Battle of Gravelines (8 August 1588) by Philip James de Loutherbourg: English fireships and warships scattering Philip II’s Armada.',
       },
       margin_spine: [
         { year: '1585', label: '3.1 Catholic Crusade' },
@@ -1381,6 +1390,8 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This enquiry moves beyond patriotic myth to evaluate the tactical, technological, and logistical reasons behind the Spanish Armada’s defeat. Students must weigh three competing factors: English naval innovation (race-built galleons and culverins), Spanish logistical and strategic errors (unseasoned barrels, lack of a deep-water port, and fireship panic), and meteorological fortune (the "Protestant Wind").',
+        source_context:
+          'Source B is Philip James de Loutherbourg’s dramatic 1796 oil painting depicting the climax of the Armada campaign: English fireships bursting in flames at Calais on the left while English race-built galleons pound the Spanish fleet at Gravelines on the right. Hinge Question: How does Loutherbourg use light, fire, and stormy seas to suggest that England’s victory was both heroic and divinely aided?',
         objectives: [
           {
             objective:
@@ -1430,8 +1441,8 @@ export const unitData = {
         instructions:
           'Construct a causal narrative explaining how English tactics and Atlantic weather combined to destroy Philip II’s invasion fleet.',
         visual_source: {
-          image: '/images/spanish_armada_battle.jpg',
-          title: 'Source B: The Battle of Gravelines (8 August 1588)',
+          image: '/images/battle_of_gravelines_1588.jpg',
+          title: 'Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)',
           caption:
             'English galleons pounding scattered Spanish warships following the midnight fireship panic at Calais.',
           question:
@@ -1549,10 +1560,13 @@ export const unitData = {
         'Why did the collision over Divine Right lead to the trial and execution of Charles I?',
       subtitle: 'From the Battle of Naseby to Parliamentary Sovereignty',
       skill: 'Causation & Constitutional Change',
+      card_image: '/images/charles_i_execution.jpg',
+      card_position: 'center 65%',
       banner: {
-        image: '/images/charles_i_execution.jpg',
+        image: '/images/covers/unit_crown_parliament_revolution.jpg',
+        position: 'center 25%',
         caption:
-          'The execution of Charles I outside Whitehall, 30 January 1649: the fall of Divine Right monarchy.',
+          'The Battle of Naseby (1645): Oliver Cromwell’s New Model Army breaks the Royalists, leading to the trial and execution of Charles I.',
       },
       margin_spine: [
         { year: '1629', label: '4.1 Eleven Years’ Tyranny' },
@@ -1775,6 +1789,8 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This enquiry examines the constitutional breakdown that culminated in the trial and public execution of Charles I. Students must trace the collision between the Stuart doctrine of the Divine Right of Kings and Parliament’s control over taxation. Emphasize that the regicide in 1649 was not inevitable, but resulted from Charles’s obstinate duplicity, the radicalization of the New Model Army, and the failure of negotiated compromises.',
+        source_context:
+          'Source B is a contemporary European broadside print recording the public execution of King Charles I outside the Banqueting House at Whitehall on 30 January 1649. Notice the ranks of Parliamentary soldiers encircling the high scaffold to keep the stunned London crowd at bay. Hinge Question: Why are Parliamentary cavalry shown ringing the execution scaffold?',
         objectives: [
           {
             objective:
@@ -1933,10 +1949,13 @@ export const unitData = {
         'Which turning point decisively transformed the English state between 1517 and 1689?',
       subtitle: 'The 170-Year Struggle for Sovereign Power in Britain',
       skill: 'Synoptic Evaluation & Extent of Change',
+      card_image: '/images/william_mary_declaration_of_rights_1689.jpg',
+      card_position: 'center 20%',
       banner: {
-        image: '/images/bill_of_rights.jpg',
+        image: '/images/william_mary_declaration_of_rights_1689.jpg',
+        position: 'center 24%',
         caption:
-          'The 1689 Bill of Rights: establishing the supreme legal supremacy of Parliament over the British Crown.',
+          'The Presentation of the Crown and Declaration of Rights (1689) by Edward Matthew Ward: Parliament offering the Crown to William and Mary under constitutional terms.',
       },
       margin_spine: [
         { year: '1534', label: '5.1 Tudor Statecraft' },
@@ -2153,6 +2172,8 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This synoptic capstone enquiry brings together the entire 170-year arc from 1517 to 1689. Students must evaluate the changing balance of power across three distinct institutions: the Crown (monarchy), the Church (papal authority vs national church), and Parliament (from tax-granting assembly to supreme law-maker). Push pupils to weigh which turning point was most transformative: Henry VIII’s Break with Rome (1534), the Regicide of Charles I (1649), or the Bill of Rights (1689).',
+        source_context:
+          'Source A is Edward Matthew Ward’s historical painting depicting the Lords and Commons presenting the Declaration of Rights alongside the Crown to William III and Mary II in the Banqueting House at Whitehall on 13 February 1689. Note that the Banqueting House was the exact same hall outside which Charles I was executed forty years earlier. Hinge Question: Look closely at the document held in the center and the crown on the cushion. Who is dictating terms to whom in this room?',
         objectives: [
           {
             objective:
@@ -2172,7 +2193,7 @@ export const unitData = {
           {
             objective: 'Synthesize the synoptic extent of change between 1517 and 1689.',
             primer:
-              'Guide students through Sections 5.4 and 5.5. Use Source A (Bill of Rights) to demonstrate how Britain became a constitutional monarchy ruled by the King-in-Parliament.',
+              'Guide students through Sections 5.4 and 5.5. Use Source A (The Presentation of the Crown and Declaration of Rights) to demonstrate how Britain became a constitutional monarchy ruled by the King-in-Parliament.',
             question:
               'By 1689, had power truly shifted to "the people" or merely to wealthy aristocratic landowners in Parliament?',
           },
@@ -2201,12 +2222,13 @@ export const unitData = {
         instructions:
           'Evaluate the 170-year constitutional journey from Martin Luther’s hammer to the 1689 Bill of Rights. Weigh which turning point was most decisive.',
         visual_source: {
-          image: '/images/bill_of_rights.jpg',
-          title: 'Source A: The 1689 Bill of Rights Original Statute Scroll',
+          image: '/images/william_mary_declaration_of_rights_1689.jpg',
+          title:
+            'Source A: Edward Matthew Ward, The Presentation of the Crown and Declaration of Rights (1689)',
           caption:
-            'The 1689 Bill of Rights parchment scroll establishing Parliamentary Supremacy over the British Crown.',
+            'Edward Matthew Ward’s depiction of the Lords and Commons presenting the Declaration of Rights (Bill of Rights) and the Royal Crown to William III and Mary II in the Banqueting House at Whitehall.',
           question:
-            'What specific clause in Source A permanently prevented future monarchs from ruling without Parliament?',
+            'How does Source A visually prove that after 1689, the British monarch ruled only with the consent and conditions of Parliament?',
         },
         written_task_prompt:
           '“Between 1517 and 1689, the balance of power shifted completely from the Crown to Parliament.” How far do you agree? [12 marks]',

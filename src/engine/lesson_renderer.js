@@ -2576,8 +2576,36 @@ export function renderLesson(lesson) {
   window.currentActiveLesson = lesson;
 
   // Tabs container logic
-  let heroImage =
-    lesson.banner || window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
+  let heroImage = '';
+  if (lesson.banner) {
+    if (typeof lesson.banner === 'string') {
+      heroImage = lesson.banner;
+    } else if (typeof lesson.banner === 'object' && lesson.banner !== null) {
+      heroImage = lesson.banner.image || lesson.banner.url || lesson.banner.src || '';
+    }
+  }
+  if (!heroImage && lesson.hero_image) {
+    heroImage =
+      typeof lesson.hero_image === 'string'
+        ? lesson.hero_image
+        : lesson.hero_image.image || lesson.hero_image.url || '';
+  }
+  if (!heroImage && lesson.cover_image) {
+    heroImage =
+      typeof lesson.cover_image === 'string'
+        ? lesson.cover_image
+        : lesson.cover_image.image ||
+          (Array.isArray(lesson.cover_image) ? lesson.cover_image[0] : '');
+  }
+  if (!heroImage && lesson.sources && lesson.sources.length > 0) {
+    heroImage =
+      lesson.sources[0].src || lesson.sources[0].image_url || lesson.sources[0].image || '';
+  }
+  if (!heroImage && lesson.right_page_task && lesson.right_page_task.visual_source) {
+    heroImage =
+      lesson.right_page_task.visual_source.image || lesson.right_page_task.visual_source.src || '';
+  }
+
   const isTrip =
     (window.currentUnitData && window.currentUnitData.type === 'trip') ||
     (appStore.state.activeUnitData && appStore.state.activeUnitData.type === 'trip') ||
@@ -2589,32 +2617,29 @@ export function renderLesson(lesson) {
   let lessonPrefix = 'Lesson';
   let ktMatch = lesson.title ? lesson.title.match(/^(?:KT|Key Topic)\s*([\d\.]+)/i) : null;
 
-  if (window.currentUnitId === 'cme_new' && ktMatch) {
-    if (ktMatch[1].startsWith('1')) heroImage = '/assets/cme_new_kt1_cover.png';
-    else if (ktMatch[1].startsWith('2')) heroImage = '/assets/cme_new_kt2_cover.png';
-    else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
-  } else if (window.currentUnitId === 'edexcel_medicine' && ktMatch) {
-    if (lesson.banner) {
-      heroImage =
-        typeof lesson.banner === 'string'
-          ? lesson.banner
-          : lesson.banner.image || lesson.banner.url;
-    } else {
+  if (!heroImage) {
+    if (window.currentUnitId === 'cme_new' && ktMatch) {
+      if (ktMatch[1].startsWith('1')) heroImage = '/assets/cme_new_kt1_cover.png';
+      else if (ktMatch[1].startsWith('2')) heroImage = '/assets/cme_new_kt2_cover.png';
+      else if (ktMatch[1].startsWith('3')) heroImage = '/assets/cme_new_kt3_cover.png';
+    } else if (window.currentUnitId === 'edexcel_medicine' && ktMatch) {
       if (ktMatch[1].startsWith('1')) heroImage = '/images/banner_medicine_medieval.jpg';
       else if (ktMatch[1].startsWith('2')) heroImage = '/images/banner_medicine_renaissance.jpg';
       else if (ktMatch[1].startsWith('3')) heroImage = '/images/banner_medicine_18th_19th.jpg';
       else if (ktMatch[1].startsWith('4')) heroImage = '/images/banner_medicine_modern.jpg';
       else if (ktMatch[1].startsWith('5')) heroImage = '/images/banner_medicine_western_front.jpg';
+    } else if (window.currentUnitId === 'usa' && ktMatch) {
+      if (ktMatch[1].startsWith('1'))
+        heroImage = '/units/usa/assets/sources/airborne-little-rock-patrol.jpg';
+      else if (ktMatch[1].startsWith('2'))
+        heroImage = '/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg';
+      else if (ktMatch[1].startsWith('3'))
+        heroImage = '/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg';
+      else if (ktMatch[1].startsWith('4'))
+        heroImage = '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg';
+    } else {
+      heroImage = window.currentUnitData?.homepage_background || '/images/default_hero.jpg';
     }
-  } else if (window.currentUnitId === 'usa' && ktMatch) {
-    if (ktMatch[1].startsWith('1'))
-      heroImage = '/units/usa/assets/sources/airborne-little-rock-patrol.jpg';
-    else if (ktMatch[1].startsWith('2'))
-      heroImage = '/units/usa/assets/sources/birmingham-protests-dogs-1963.jpg';
-    else if (ktMatch[1].startsWith('3'))
-      heroImage = '/units/usa/assets/sources/us-soldier-patrolling-swamp.jpg';
-    else if (ktMatch[1].startsWith('4'))
-      heroImage = '/units/usa/assets/sources/antiwar-pentagon-protest-1967.jpg';
   }
 
   if (isTrip) {
@@ -2729,7 +2754,10 @@ export function renderLesson(lesson) {
         </div>
       </div>
     `;
-  let bannerPosition = lesson.banner_position || 'center';
+  let bannerPosition =
+    lesson.banner_position ||
+    (typeof lesson.banner === 'object' && lesson.banner ? lesson.banner.position : null) ||
+    'center';
   const isFamilyHero =
     lesson.id &&
     (lesson.id.startsWith('hero_') ||
@@ -2740,14 +2768,21 @@ export function renderLesson(lesson) {
   const existingFloatingBtn = document.getElementById('floating-stop-navigator-btn');
   if (existingFloatingBtn) existingFloatingBtn.remove();
 
+  const resolvedHeroImage = getAssetUrl(heroImage);
+  const heroCaption =
+    typeof lesson.banner === 'object' && lesson.banner?.caption
+      ? `<span class="lesson-hero-caption" style="position: absolute; bottom: 8px; right: 24px; font-size: 0.72rem; color: rgba(241, 245, 249, 0.75); text-shadow: 0 1px 3px rgba(0,0,0,0.8); font-style: italic; pointer-events: none; max-width: 480px; text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${lesson.banner.caption}</span>`
+      : '';
+
   // Full-Bleed Hero Image (Calibrated 140px Compact Height for Smartboards)
   html += `
-      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 140px; background: url('${heroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
+      <div class="lesson-hero${heroExtraClass}" style="position: relative; width: calc(100% + 8rem); margin-left: -4rem; margin-top: -1rem; height: 140px; background: url('${resolvedHeroImage}') ${bannerPosition}/cover no-repeat; margin-bottom: 1.5rem; border-bottom: 1px solid var(--border-glass); box-shadow: 0 8px 24px rgba(0,0,0,0.12);">
         <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(15,23,42,0.25), rgba(15,23,42,0.85));"></div>
         <div style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 1.25rem 4rem;">
           <span style="color: #cbd5e1; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.82rem;">${lessonPrefix}</span>
           <h2 style="font-family: 'Playfair Display', serif; color: white; font-size: 1.6rem; margin: 0.2rem 0 0 0; line-height: 1.2; text-shadow: 0 2px 8px rgba(0,0,0,0.6);">${lesson.title}</h2>
         </div>
+        ${heroCaption}
       </div>
     `;
 
