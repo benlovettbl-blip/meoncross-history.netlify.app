@@ -2011,10 +2011,10 @@ function compileMonarchyWorkbook() {
         </div>
         <div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            3. Centrefold Timeline &amp; Retrieval Bank
+            3. Centrefold Timeline &amp; Notes Portfolio
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and a 24-question dual-retrieval mastery bank (pp. 14–15).
+            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and dedicated lined notes &amp; essay planning pages (pp. 14–15).
           </div>
         </div>
       </div>
