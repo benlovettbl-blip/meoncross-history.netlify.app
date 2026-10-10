@@ -287,10 +287,12 @@ const enquiryConfigs = [
       },
       questionB:
         'Explain how Interpretations 1 and 2 differ on Thomas Becket’s motives and character. [4 marks]',
+      stemsB:
+        'Interpretations 1 and 2 differ on... &bull; Interpretation 1 portrays Becket as... &bull; In contrast, Interpretation 2 argues that he was...',
       questionC:
         'Suggest one reason why Interpretations 1 and 2 differ on Becket’s clash with King Henry II. [4 marks]',
-      stems:
-        'Interpretations 1 and 2 differ on... &bull; Interpretation 1 portrays Becket as... &bull; In contrast, Interpretation 2 argues that he was... &bull; One reason they differ is provenance: Grim was an eyewitness monk who idolised Becket as a holy martyr, whereas Barlow is a modern secular historian examining legal administration...',
+      stemsC:
+        'One reason they differ is provenance: Grim was an eyewitness monk who idolised Becket as a holy martyr, whereas Barlow is a modern secular historian examining legal administration...',
       timelineMissionTitle: 'Centrefold Sketch Challenge 4',
       timelineMission:
         '<strong>Milestone 4 (The Murder in Canterbury Cathedral &bull; 1170):</strong> Sketch Archbishop Thomas Becket standing defiant before the cathedral altar while four Norman knights draw their swords in the shadows [⛪ cathedral arch &bull; 🗡️ four knights’ swords &bull; ✝️ altar cross].',
@@ -724,6 +726,11 @@ function renderRightPage(cfg, pageNum) {
   </div>`;
   } else if (rp.type === 'interpretations') {
     // DUAL HISTORIOGRAPHICAL INTERPRETATIONS WRITING
+    const stemsB = rp.stemsB || (rp.stems ? rp.stems.split(' &bull; One reason')[0] : '');
+    const stemsC =
+      rp.stemsC ||
+      (rp.stems ? 'One reason' + rp.stems.split(' &bull; One reason')[1] : rp.stems || '');
+
     return `
   <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • CONTRASTING INTERPRETATIONS -->
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
@@ -759,31 +766,36 @@ function renderRightPage(cfg, pageNum) {
       </div>
 
       <!-- Task B: Question 3(b) -->
-      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 2px; margin-bottom: 4px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin-bottom: 2px;">
-          ${rp.questionB}
+      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px; flex: 1.15; display: flex; flex-direction: column; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e;">
+            ${rp.questionB}
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            PART B
+          </span>
         </div>
-        <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+        ${stemsB ? `<div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;"><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${stemsB}</span></div>` : ''}
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
+          ${Array(14).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
         </div>
       </div>
 
       <!-- Task C: Question 3(c) -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-        <div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin-bottom: 2px;">
-            ${rp.questionC}
+      <div style="flex: 1.15; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+            <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e;">
+              ${rp.questionC}
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+              PART C
+            </span>
           </div>
-          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 3px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;">
-            <strong style="color: #0f284e;">Scaffolded Sentence Stems:</strong> <span style="color: #1e293b;">${rp.stems}</span>
+          ${stemsC ? `<div style="border: 1px solid #0f284e; border-radius: 3px; padding: 2.5px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;"><strong style="color: #0f284e;">Scaffolded Sentence Stems:</strong> <span style="color: #1e293b;">${stemsC}</span></div>` : ''}
+          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
+            ${Array(12).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
           </div>
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
-          ${Array(6).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
         </div>
 
         <!-- Timeline Mission Box -->
