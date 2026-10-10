@@ -143,7 +143,7 @@ const enquiryConfigs = [
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
       timelineMission:
-        'Turn to Pages 12–13 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
+        'Turn to Pages 8–9 (Enquiry 1). In Milestone 1, sketch King Henry VIII sitting on the English throne with the Pope cast down outside England. Add two speech bubbles explaining why Henry claimed Royal Supremacy.',
     },
     leftPageQuip:
       'In 1534, questioning Henry VIII’s marriage was high treason punishable by death at Tower Hill.',
@@ -248,7 +248,7 @@ const enquiryConfigs = [
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
       timelineMission:
-        'Turn to Pages 12–13 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
+        'Turn to Pages 8–9 (Enquiry 2). In Milestone 3, sketch Elizabeth holding balancing scales between Catholic ceremonial tradition and Protestant English scripture. Explain why she refused to ‘make windows into men’s souls’.',
     },
     leftPageQuip:
       'Elizabeth I had ‘no desire to make windows into men’s souls’—pay your Sunday fines and keep private doubts to yourself.',
@@ -360,7 +360,7 @@ const enquiryConfigs = [
           'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
       },
       timelineMission:
-        'Turn to Pages 12–13 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
+        'Turn to Pages 8–9 (Enquiry 3). In Milestone 4, sketch the blazing English fireships drifting into Calais harbour, scattering the Spanish crescent formation into the stormy North Sea.',
     },
     leftPageQuip:
       'The Armada carried 130 ships and 30,000 soldiers. Unfortunately for Philip II, none of it stopped English fireships.',
@@ -466,7 +466,7 @@ const enquiryConfigs = [
       wordBank:
         'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
       timelineMission:
-        'Turn to Pages 12–13 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
+        'Turn to Pages 8–9 (Enquiry 4). In Milestone 6, sketch the execution scaffold outside the Banqueting House at Whitehall on 30 January 1649. Add Charles I’s final speech rejecting parliamentary trial authority.',
     },
     leftPageQuip:
       'Charles I insisted no earthly court could try a king; three days later, Parliament had him beheaded outside Whitehall.',
@@ -476,7 +476,7 @@ const enquiryConfigs = [
   {
     lessonNum: 5,
     id: 'lesson_5',
-    title: 'Enquiry 5: Synoptic Assessment: Crown, Church, or Parliament?',
+    title: 'Enquiry 5: Crown, Church, or Parliament? (1517–1689)',
     enquiryQuestion:
       'Which turning point decisively transformed the English state between 1517 and 1689?',
     specAnchor:
@@ -577,7 +577,7 @@ const enquiryConfigs = [
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },
       timelineMission:
-        'Turn to Pages 12–13 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
+        'Turn to Pages 8–9 (Enquiry 5). In Milestone 8, sketch King William III and Queen Mary II presenting the signed 1689 Bill of Rights before Parliament, establishing the permanent victory of constitutional law.',
     },
     leftPageQuip:
       'In 1689, William III accepted the Bill of Rights to secure war taxes, legally subordinating the Crown to Parliament.',
@@ -1102,37 +1102,54 @@ const dualRetrievalBank = [
   },
 ];
 
-// Helper to render an 8-question Dual-Retrieval Page (Pages 16, 17, 18)
+// Helper to render a 12-question Dual-Retrieval Page (Pages 14 & 15 of 16-page workbook)
 function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, quip) {
-  const sec1 = questions.slice(0, 4);
-  const sec2 = questions.slice(4, 8);
-  const enquiryTitle1 = sec1[0].enquiryTitle;
-  const enquiryTitle2 = sec2[0].enquiryTitle;
+  // 3 enquiry sections with 4 questions each
+  const groups = [
+    { title: questions[0].enquiryTitle, qs: questions.slice(0, 4) },
+    { title: questions[4].enquiryTitle, qs: questions.slice(4, 8) },
+    { title: questions[8].enquiryTitle, qs: questions.slice(8, 12) },
+  ];
 
   const renderCard = (q) => `
-    <div style="border: 1.2px solid #000000; border-radius: 3px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; flex: 1; min-height: 0; margin-bottom: 2px; padding: 2.5px 8px;">
+    <div style="border: 1px solid #000000; border-radius: 2.5px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; padding: 2.5px 5.5px; box-sizing: border-box; flex: 1;">
       <!-- Question Prompt Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; line-height: 1.22;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; line-height: 1.18;">
           ${q.num}. ${q.stem}
         </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0.5px 5px; border-radius: 2px; white-space: nowrap; margin-left: 8px;">
-          2 marks
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 0.8px solid #000000; padding: 0.5px 3.5px; border-radius: 2px; white-space: nowrap; margin-left: 4px;">
+          2m
         </span>
       </div>
       <!-- Answer Line -->
-      <div style="display: flex; align-items: flex-end; border-bottom: 1.2px solid #000000; height: 8mm; box-sizing: border-box; padding-bottom: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; margin-right: 6px; white-space: nowrap;">
-          Answer:
+      <div style="display: flex; align-items: flex-end; border-bottom: 1px solid #000000; height: 6.8mm; box-sizing: border-box; padding-bottom: 1px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; margin-right: 5px; white-space: nowrap;">
+          Ans:
         </span>
         <div style="flex: 1;"></div>
       </div>
       <!-- Explanation Line -->
-      <div style="display: flex; align-items: flex-end; border-bottom: 1.2px solid #000000; height: 8mm; box-sizing: border-box; padding-bottom: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #000000; margin-right: 6px; white-space: nowrap;">
-          Explanation:
+      <div style="display: flex; align-items: flex-end; border-bottom: 1px solid #000000; height: 6.8mm; box-sizing: border-box; padding-bottom: 1px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; margin-right: 5px; white-space: nowrap;">
+          Expl:
         </span>
         <div style="flex: 1;"></div>
+      </div>
+    </div>`;
+
+  const renderSection = (grp) => `
+    <div style="border: 1.2px solid #000000; border-radius: 3.5px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+      <div style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; justify-content: space-between; align-items: center;">
+        <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.3px;">
+          ${grp.title}
+        </strong>
+        <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 5px; border-radius: 2px;">
+          Score: [ &nbsp;&nbsp; / 8 ]
+        </span>
+      </div>
+      <div style="padding: 2.5px 4px; flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px 6px; min-height: 0;">
+        ${grp.qs.map(renderCard).join('')}
       </div>
     </div>`;
 
@@ -1140,7 +1157,7 @@ function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, qu
   <!-- PAGE ${pageNum}: DUAL-RETRIEVAL PRACTICE BANK -->
   <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2.5px; margin-bottom: 3.5px;">
         <div>
           <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 900;">
             ${title}
@@ -1154,40 +1171,12 @@ function renderDualRetrievalPage(pageNum, title, subtitle, tariff, questions, qu
         </span>
       </div>
 
-      <!-- Sections Container filling vertical space -->
-      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between; min-height: 0;">
-        <!-- Section 1 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div style="background: #000000; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.3px;">
-              ${enquiryTitle1}
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 6px; border-radius: 2px;">
-              Score: [ &nbsp;&nbsp; / 8 ]
-            </span>
-          </div>
-          <div style="padding: 3px 5px 2px 5px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-            ${sec1.map(renderCard).join('')}
-          </div>
-        </div>
-
-        <!-- Section 2 -->
-        <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div style="background: #000000; color: #ffffff; padding: 2.5px 8px; display: flex; justify-content: space-between; align-items: center;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.3px;">
-              ${enquiryTitle2}
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #ffffff; color: #000000; padding: 0.5px 6px; border-radius: 2px;">
-              Score: [ &nbsp;&nbsp; / 8 ]
-            </span>
-          </div>
-          <div style="padding: 3px 5px 2px 5px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-            ${sec2.map(renderCard).join('')}
-          </div>
-        </div>
+      <!-- 3 Enquiry Sections with 2x2 Question Cards each -->
+      <div style="display: flex; flex-direction: column; gap: 3.5px; flex: 1; justify-content: space-between; min-height: 0;">
+        ${groups.map(renderSection).join('')}
       </div>
 
-      ${renderFooterStrip(pageNum, quip, 24)}
+      ${renderFooterStrip(pageNum, quip, 16)}
     </div>
   </div>`;
 }
@@ -1285,7 +1274,7 @@ function renderAnswerBankPage(pageNum, quip) {
   </div>`;
 }
 
-function renderFooterStrip(pageNum, quip, totalPages = 24) {
+function renderFooterStrip(pageNum, quip, totalPages = 16) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -1401,7 +1390,7 @@ function renderSpinePage(cfg, pageNum) {
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, cfg.leftPageQuip, 24)}
+      ${renderFooterStrip(pageNum, cfg.leftPageQuip, 16)}
     </div>
   </div>`;
 }
@@ -1426,7 +1415,7 @@ function renderRightPage(cfg, pageNum) {
           ${rp.tariff}
         </h2>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Writing Assessment
+          Extended Writing Practice
         </span>
       </div>
 
@@ -1498,11 +1487,11 @@ function renderRightPage(cfg, pageNum) {
           </span>
         </div>
         <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &rarr; Pages 12–13
+          &rarr; Pages 8–9
         </span>
       </div>
 
-      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 24)}
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
     </div>
   </div>`;
   } else {
@@ -1604,12 +1593,12 @@ function renderRightPage(cfg, pageNum) {
             </span>
           </div>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-            &rarr; Pages 12–13
+            &rarr; Pages 8–9
           </span>
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 24)}
+      ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
     </div>
   </div>`;
   }
@@ -1759,36 +1748,6 @@ function renderSourceWorkshopPage(cfg, pageNum) {
 function compileMonarchyWorkbook() {
   const coverImgBase64 =
     getBase64Image('images/henry_viii.jpg') || getBase64Image('public/images/henry_viii.jpg') || '';
-
-  const linedRows15 = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Essay Response &bull; Write your thesis, evidence, and analytical evaluation below ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
-
-  const linedRows17 = Array.from({ length: 28 }, (_, idx) => {
-    const isFirst = idx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Response Continued &bull; Paragraph 3 &amp; Sustained Historical Judgement ]</span>`
-      : `&nbsp;`;
-    return `
-      <div class="lined-row">
-        <div class="lined-margin-cell">${marginContent}</div>
-        <div class="lined-content-cell">${linePrompt}</div>
-      </div>`;
-  }).join('');
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -2068,30 +2027,30 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      <!-- Disciplinary Strategy Overview & Assessment Blueprint -->
+      <!-- Disciplinary Strategy Overview & Workbook Blueprint -->
       <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fbfbfb; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
         <div style="border-right: 1px solid #000000; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            1. Explaining Why Events Happened [12 Marks]
+            1. Chronological Spines [Enquiries 1–5]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Q4: Explain why major turning points occurred. 3 structured analytical paragraphs using 2 stimulus points + own knowledge (15 mins).
+            Structured chronological note-taking on each left page: 5 causal stages guiding pupil understanding as the teacher narrates the history.
           </div>
         </div>
         <div style="border-right: 1px solid #000000; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            2. Core Skills &amp; Source Workshops [4m &amp; 8m]
+            2. Disciplinary Writing Practice [4m, 8m, 12m]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Four dedicated source investigations: test written statutes and visual propaganda for utility; practise features and differences (5–12 mins).
+            Targeted extended writing on each right page: causal explanation, narrative account, difference, and constitutional evaluation.
           </div>
         </div>
         <div>
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            3. Big Enquiry Essay: Reaching a Verdict [16+4m]
+            3. Centrefold Timeline &amp; Retrieval Bank
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
-            Enquiry 5: ‘How far do you agree?’ Reach a reasoned historical verdict weighing the power of Crown, Church, and Parliament across 172 years (25 mins).
+            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and a 24-question dual-retrieval mastery bank (pp. 14–15).
           </div>
         </div>
       </div>
@@ -2197,7 +2156,7 @@ function compileMonarchyWorkbook() {
         </table>
       </div>
 
-      ${renderFooterStrip(1, 'If you think politics today is messy, King Henry VIII invented a whole new church because his divorce paperwork took too long.', 24)}
+      ${renderFooterStrip(1, 'If you think politics today is messy, King Henry VIII invented a whole new church because his divorce paperwork took too long.', 16)}
     </div>
   </div>
 `;
@@ -2215,31 +2174,17 @@ function compileMonarchyWorkbook() {
   html += renderRightPage(enquiryConfigs[1], 5);
 
   // ====================================================================
-  // PAGES 6–7: TUDOR PRIMARY SOURCE WORKSHOP SPREAD (THEMATIC LAB)
-  // Page 6 (Verso): Henry VIII & Royal Supremacy (1534 Act + Great Bible)
-  // Page 7 (Recto): Elizabeth I & Royal Authority (1559 Act + Armada Portrait)
+  // PAGES 6–7: ENQUIRY 3 (THE SPANISH ARMADA & MARITIME POWER)
   // ====================================================================
-  html += renderSourceWorkshopPage(sourceWorkshopConfigs[0], 6);
-  html += renderSourceWorkshopPage(sourceWorkshopConfigs[1], 7);
+  html += renderSpinePage(enquiryConfigs[2], 6);
+  html += renderRightPage(enquiryConfigs[2], 7);
 
   // ====================================================================
-  // PAGES 8–9: ENQUIRY 3 (THE SPANISH ARMADA & MARITIME POWER)
-  // ====================================================================
-  html += renderSpinePage(enquiryConfigs[2], 8);
-  html += renderRightPage(enquiryConfigs[2], 9);
-
-  // ====================================================================
-  // PAGES 10–11: ENQUIRY 4 (CIVIL WAR & REGICIDE)
-  // ====================================================================
-  html += renderSpinePage(enquiryConfigs[3], 10);
-  html += renderRightPage(enquiryConfigs[3], 11);
-
-  // ====================================================================
-  // PAGES 12–13: THE LIVING TIMELINE IN THE EXACT MIDDLE OF BOOKLET!
+  // PAGES 8–9: THE LIVING TIMELINE IN THE EXACT PHYSICAL CENTREFOLD!
   // ====================================================================
   html += `
-  <!-- PAGE 12: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
-  <div class="page page-container verso-page" id="page-12" style="padding: 4mm 6mm;">
+  <!-- PAGE 8: LIVING TIMELINE PART 1 (MILESTONES 1–4) -->
+  <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
@@ -2366,12 +2311,12 @@ function compileMonarchyWorkbook() {
 
       </div>
 
-      ${renderFooterStrip(12, 'Centrefold timeline: Dual-coding sketches and dates turns narrative history into permanent long-term memory.', 24)}
+      ${renderFooterStrip(8, 'Centrefold timeline: Dual-coding sketches and dates turns narrative history into permanent long-term memory.', 16)}
     </div>
   </div>
 
-  <!-- PAGE 13: LIVING TIMELINE PART 2 (MILESTONES 5–8) -->
-  <div class="page page-container recto-page" id="page-13" style="padding: 4mm 6mm;">
+  <!-- PAGE 9: LIVING TIMELINE PART 2 (MILESTONES 5–8) -->
+  <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
@@ -2498,168 +2443,52 @@ function compileMonarchyWorkbook() {
 
       </div>
 
-      ${renderFooterStrip(13, 'From 1534 to 1689, Parliament evolved from Henry VIII’s occasional legal tool into the sovereign ruler of the Crown.', 24)}
-    </div>
-  </div>
-
-`;
-
-  // ====================================================================
-  // PAGES 14–15: ENQUIRY 5 (SPINE LEFT, SKILLS RIGHT)
-  // ====================================================================
-  const cfg5 = enquiryConfigs[4];
-  // LEFT PAGE (VERSO): CHRONOLOGICAL INQUIRY SPINE WITH QUESTION HEADINGS
-  html += renderSpinePage(cfg5, 14);
-
-  // RIGHT PAGE (RECTO): ROTATING SKILLS WRITING (CONSEQUENCE + EVALUATIVE STATEMENT)
-  html += renderRightPage(cfg5, 15);
-
-  // ====================================================================
-  // PAGES 16–17: STUART PRIMARY SOURCE WORKSHOP SPREAD (THEMATIC LAB)
-  // Page 16 (Verso): Charles I Regicide & High Treason on Trial (1649)
-  // Page 17 (Recto): Glorious Revolution, Armed Invasion & Bill of Rights (1688–1689)
-  // ====================================================================
-  html += renderSourceWorkshopPage(sourceWorkshopConfigs[2], 16);
-  html += renderSourceWorkshopPage(sourceWorkshopConfigs[3], 17);
-
-  // ====================================================================
-  // PAGES 18–19: SYNOPTIC ESSAY SPREAD (MEDICINE STYLE)
-  // ====================================================================
-  html += `
-  <!-- PAGE 18: SYNOPTIC ESSAY RESPONSE & VOCABULARY BANK -->
-  <div class="page page-container verso-page" id="page-18" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Essay Question Stem & Stimulus Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 10px; background: #ffffff; margin-bottom: 5px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            Synoptic Extended Writing
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            16 marks + 4 SPaG &bull; 25 mins
-          </span>
-        </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.25;">
-          “The execution of King Charles I in 1649 was the most decisive turning point in the struggle for power between Crown, Church, and Parliament in the period 1517–1689.” How far do you agree?
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #000000;">
-          <strong>Stimulus:</strong>
-          <span style="border: 1px solid #000000; padding: 1px 7px; border-radius: 2px; font-weight: 700;">The Act of Supremacy (1534)</span>
-          <span style="border: 1px solid #000000; padding: 1px 7px; border-radius: 2px; font-weight: 700;">The Bill of Rights (1689)</span>
-          <span style="font-style: italic; color: #333333;">(You must also use information of your own)</span>
-        </div>
-      </div>
-
-      <!-- Connectives & Key Vocabulary Bank (Zero Scaffolding Answers) -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff; margin-bottom: 5px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #111111; line-height: 1.22; display: block;">
-            Furthermore &bull; Consequently &bull; In stark contrast &bull; Most decisively &bull; Crucially &bull; Although... nevertheless &bull; In the final analysis
-          </span>
-        </div>
-        <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111111; line-height: 1.22; display: block;">
-            Royal Prerogative &bull; Divine Right &bull; Regicide &bull; Protectorate &bull; Constitutional Monarchy &bull; Bill of Rights &bull; Statutory Supremacy
-          </span>
-        </div>
-      </div>
-
-      <!-- Ruled Lines for Thesis Statement & Introduction (with 18mm Left Teacher Margin) -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000; margin-bottom: 2px;">
-        Essay Response &bull; Introduction &amp; Paragraph 1:
-      </div>
-      <div class="lined-page-grid" style="margin-bottom: 4px; flex: 1;">
-        ${Array.from({ length: 27 }, (_, idx) => {
-          const isFirst = idx === 0;
-          const marginContent = isFirst
-            ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-            : `&nbsp;`;
-          return `
-            <div class="lined-row">
-              <div class="lined-margin-cell">${marginContent}</div>
-              <div class="lined-content-cell">&nbsp;</div>
-            </div>`;
-        }).join('')}
-      </div>
-
-      ${renderFooterStrip(18, 'In 16-mark essays, never sit on the historical fence until splinters become structural. Take a decisive stand with precise dates.', 24)}
-    </div>
-  </div>
-
-  <!-- PAGE 19: 28-LINE LINED ESSAY PAGE (MEDICINE STYLE) -->
-  <div class="page page-container recto-page" id="page-19" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Synoptic Historical Verdict &bull; Paragraph 2 &amp; Counter-Perspective
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Extended Essay Assessment
-        </span>
-      </div>
-
-      <div class="lined-page-grid">
-        ${linedRows15}
-      </div>
-
-      ${renderFooterStrip(19, 'One precise historical fact (like ‘1689 Bill of Rights’) is worth ten vague sentences about people being angry.', 24)}
+      ${renderFooterStrip(9, 'From 1534 to 1689, Parliament evolved from Henry VIII’s occasional legal tool into the sovereign ruler of the Crown.', 16)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 20–22: SEN-ACCESSIBLE DUAL-RETRIEVAL QUIZZING (24 QUESTIONS TOTAL • 48 MARKS)
-  // Page 20 (Verso): Enquiry 1 & 2 (Questions 1–8) [16 marks]
-  // Page 21 (Recto): Enquiry 3 & 4 (Questions 9–16) [16 marks]
-  // Page 22 (Verso): Enquiry 5 & Synoptic Turning Points (Questions 17–24) [16 marks]
+  // PAGES 10–11: ENQUIRY 4 (CIVIL WAR & REGICIDE)
   // ====================================================================
+  html += renderSpinePage(enquiryConfigs[3], 10);
+  html += renderRightPage(enquiryConfigs[3], 11);
 
-  // PAGE 20 (VERSO): DUAL-RETRIEVAL PART 1 (ENQUIRIES 1 & 2 • QS 1–8)
+  // ====================================================================
+  // PAGES 12–13: ENQUIRY 5 (CROWN, CHURCH, OR PARLIAMENT?)
+  // ====================================================================
+  html += renderSpinePage(enquiryConfigs[4], 12);
+  html += renderRightPage(enquiryConfigs[4], 13);
+
+  // ====================================================================
+  // PAGES 14–15: DUAL-RETRIEVAL PRACTICE BANK (24 QUESTIONS TOTAL • 48 MARKS)
+  // Page 14 (Verso): Enquiries 1–3 (Questions 1–12) [24 marks]
+  // Page 15 (Recto): Enquiries 4–5 & Synoptic Turning Points (Questions 13–24) [24 marks]
+  // ====================================================================
   html += renderDualRetrievalPage(
-    20,
-    'Dual-Retrieval Practice Bank &bull; Part 1: Enquiries 1 &amp; 2',
+    14,
+    'Dual-Retrieval Practice Bank &bull; Part 1: Enquiries 1–3',
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
-    '[16 MARKS &bull; 8 QUESTIONS]',
-    dualRetrievalBank.slice(0, 8),
+    '[24 MARKS &bull; 12 QUESTIONS]',
+    dualRetrievalBank.slice(0, 12),
     'Dual-Retrieval Rule: A fact without an explanation is like a sword without a blade—you need both to score full marks.',
   );
 
-  // PAGE 21 (RECTO): DUAL-RETRIEVAL PART 2 (ENQUIRIES 3 & 4 • QS 9–16)
   html += renderDualRetrievalPage(
-    21,
-    'Dual-Retrieval Practice Bank &bull; Part 2: Enquiries 3 &amp; 4',
+    15,
+    'Dual-Retrieval Practice Bank &bull; Part 2: Enquiries 4–5 &amp; Synoptic Turning Points',
     'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
-    '[16 MARKS &bull; 8 QUESTIONS]',
-    dualRetrievalBank.slice(8, 16),
-    'Drake’s 1587 raid destroyed so many seasoned barrel staves that Spanish drinking water spoiled before reaching England.',
-  );
-
-  // PAGE 22 (VERSO): DUAL-RETRIEVAL PART 3 (ENQUIRY 5 & SYNOPTIC • QS 17–24)
-  html += renderDualRetrievalPage(
-    22,
-    'Dual-Retrieval Practice Bank &bull; Part 3: Enquiry 5 &amp; Synoptic Turning Points',
-    'Standardised Active Recall &bull; Core Answer + Causal Explanation Structure',
-    '[16 MARKS &bull; 8 QUESTIONS]',
-    dualRetrievalBank.slice(16, 24),
+    '[24 MARKS &bull; 12 QUESTIONS]',
+    dualRetrievalBank.slice(12, 24),
     'In 1649, Parliament proved kings could be beheaded; in 1689, they proved paperwork and statutory law were far more permanent.',
   );
 
   // ====================================================================
-  // PAGE 23: COMPLETE DEPARTMENT ANSWER BANK & EXAMINER TRAP MATRIX
-  // ====================================================================
-  html += renderAnswerBankPage(
-    23,
-    'Department Answer Key: Self-assess in green pen. If your answer missed the causal explanation, improve it directly.',
-  );
-
-  // ====================================================================
-  // PAGE 24: OUTSIDE BACK COVER (PROGRESS LEDGER + 5 QR CODES - MEDICINE STYLE)
+  // PAGE 16: OUTSIDE BACK COVER (PROGRESS LEDGER + 5 QR CODES - MEDICINE STYLE)
   // ====================================================================
   html += `
-  <!-- PAGE 24: OUTSIDE BACK COVER -->
-  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
+  <!-- PAGE 16: OUTSIDE BACK COVER -->
+  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Back Cover Header Strip -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
@@ -2822,7 +2651,7 @@ function compileMonarchyWorkbook() {
               <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 16px 8px; border-right: 1px solid #000000;">
                 <div style="font-weight: 900; font-size: 8.5pt;">Synoptic Dual Retrieval: 24-Question Mastery Bank</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Pages 16–18 Dual Retrieval (Fact + Causal Explanation)</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Pages 14–15 Dual Retrieval (Fact + Causal Explanation)</div>
               </td>
               <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
                 &nbsp;
@@ -2832,8 +2661,8 @@ function compileMonarchyWorkbook() {
             <tr style="background: #ffffff; border-top: 1.5px solid #000000;">
               <td style="padding: 16px 4px; border-right: 1px solid #000000; text-align: center;">&nbsp;</td>
               <td style="padding: 16px 8px; border-right: 1px solid #000000;">
-                <div style="font-weight: 900; font-size: 8.5pt;">Unit Assessment: Monarchy, Religion &amp; Power</div>
-                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">End-of-Unit Summative Extended Assessment</div>
+                <div style="font-weight: 900; font-size: 8.5pt;">Teacher-Designated Assessment Task</div>
+                <div style="font-size: 7.5pt; color: #333333; margin-top: 2px;">Designated Key Enquiry Assessment (Teacher Selected)</div>
               </td>
               <td style="padding: 16px 6px; border-right: 1px solid #000000; text-align: center; vertical-align: middle;">
                 &nbsp;
@@ -2889,7 +2718,7 @@ function compileMonarchyWorkbook() {
         </div>
       </div>
 
-      ${renderFooterStrip(24, "Unlike Charles I in 1642, scanning these revision QR codes won't cost your head. Test yourself before the end-of-unit assessment.", 24)}
+      ${renderFooterStrip(16, "Unlike Charles I in 1642, scanning these revision QR codes won't cost your head. Test yourself regularly.", 16)}
     </div>
   </div>
 </body>
@@ -2904,7 +2733,7 @@ function compileMonarchyWorkbook() {
 // ============================================================================
 async function main() {
   console.log(
-    'Rendering 24-Page A4 Pupil Workbook (Medicine/CME Standard): Crown, Church, or Parliament (1517–1689)...',
+    'Rendering 16-Page A4 Pupil Workbook (Medicine/CME Standard): Crown, Church, or Parliament (1517–1689)...',
   );
 
   const outDir = path.join(ROOT_DIR, 'public', 'units', 'monarchy_religion_power');
