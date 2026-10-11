@@ -1849,9 +1849,11 @@ function compileGreatWarWorkbook() {
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
           ${enquiryConfigs
             .map((cfg, idx) => {
+              const appLessonMapping = [1, 3, 4, 5, 6];
+              const targetLesson = appLessonMapping[idx] || idx + 1;
               const quizUrl =
                 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=' +
-                idx +
+                targetLesson +
                 '&quiz=true';
               const qrSvg = generateQrSvg(quizUrl);
               const shortLabels = [

@@ -57,6 +57,8 @@ const great_war = {
               "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?",
           },
         ],
+        source_context:
+          'Anton von Werner’s iconic oil painting depicts the proclamation of the German Empire on 18 January 1871 in the Hall of Mirrors at Versailles. Commissioned by the Prussian royal family for Bismarck’s 70th birthday, Werner places Bismarck in immaculate white at the visual centre of the composition, symbolizing that the Empire was forged not through democratic consensus, but through Prussian military dominance. **Hinge Question:** Why did Anton von Werner place Chancellor Otto von Bismarck in pure white at the visual centre of the painting, rather than Kaiser Wilhelm I on the raised dais?',
       },
       do_now: {
         title: 'Do Now: Geography of Europe',
@@ -278,15 +280,16 @@ const great_war = {
           source: {
             letter: 'B',
             title:
-              'Source B (Comparative Cartography): Modern European Boundaries vs 1871 Frontiers',
-            image: '/images/modern_germany_map.png',
+              'Source B (Primary Oil Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (18 January 1871)',
+            image: '/images/werner_versailles_1871_highres.jpg',
             caption:
-              'Comparative cartography overlaying 1871 German imperial boundaries onto modern sovereign European borders.',
-            citation: 'Department Cartographic Collection.',
+              'Anton von Werner (1885 Friedrichsruh version): Grand Duke Frederick I of Baden leads German princes and officers in cheering the newly proclaimed Kaiser Wilhelm I on the dais in the Hall of Mirrors at Versailles, while Chancellor Otto von Bismarck stands prominently in his white Cuirassier uniform holding the imperial proclamation.',
+            citation:
+              'Anton von Werner, Die Proklamierung des deutschen Kaiserreiches (18. Januar 1871), 1885, Oil on canvas, Bismarck-Museum Friedrichsruh.',
             context:
-              'Comparing nineteenth-century borders with modern Europe reveals how the massive German Empire occupied the territories of several modern sovereign nations, generating continuous friction with neighbouring empires.',
+              'Staged deliberately inside Louis XIV’s royal palace during the siege of Paris, this coronation solemnized the unification of Germany on conquered French territory. Werner places Chancellor Otto von Bismarck in pure white at the optical centre of the hall, emphasizing that the Empire was forged not through popular democracy, but through Bismarckian military statecraft.',
             hinge_question:
-              "Why would Germany's geographical position between France and Russia cause German military planners permanent strategic anxiety?",
+              'Why did Anton von Werner place Chancellor Otto von Bismarck in pure white at the visual centre of the painting, rather than Kaiser Wilhelm I on the raised dais?',
           },
           tasks: [],
         },
@@ -607,7 +610,7 @@ const great_war = {
           },
         ],
         source_context:
-          'In the 1871 Franco-Prussian War, the newly formed German Empire conquered the French territories of Alsace and Lorraine. Proclaiming the German Empire inside the French royal palace of Versailles was a calculated humiliation. This fueled a burning French desire for revanche (revenge) that poisoned European diplomacy for decades. **Hinge Question:** Why might the location of this coronation guarantee future conflict between France and Germany?',
+          'Albert Bettannier’s 1887 painting "La Tache Noire" (The Black Spot) depicts a French classroom where a teacher in black points to Alsace-Lorraine, draped in pitch black on the wall map, instructing a boy in cadet uniform. This visual source provides profound evidence of French revanchism, illustrating how the education system systematically prepared the next generation to reclaim the lost provinces. **Hinge Question:** How does Bettannier use the classroom setting to prove that the Franco-Prussian War had permanently altered French society?',
       },
       vocab_cloze_text:
         'In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine].',

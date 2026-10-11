@@ -45061,7 +45061,8 @@
                 "primer": "Focus on the 'Crowning a Kaiser' section and the taking of Alsace-Lorraine. Use the maps to show the massive new empire in the center of Europe.",
                 "question": "Why would the creation of the German Empire and the annexation of Alsace-Lorraine terrify Germany's neighbors?"
               }
-            ]
+            ],
+            "source_context": "Anton von Werner’s iconic oil painting depicts the proclamation of the German Empire on 18 January 1871 in the Hall of Mirrors at Versailles. Commissioned by the Prussian royal family for Bismarck’s 70th birthday, Werner places Bismarck in immaculate white at the visual centre of the composition, symbolizing that the Empire was forged not through democratic consensus, but through Prussian military dominance. **Hinge Question:** Why did Anton von Werner place Chancellor Otto von Bismarck in pure white at the visual centre of the painting, rather than Kaiser Wilhelm I on the raised dais?"
           },
           "do_now": {
             "title": "Do Now: Geography of Europe",
@@ -45333,12 +45334,12 @@
               "text": "<span class=\"para-ref\">[3.1]</span> On a bitter winter morning—18 January 1871—Bismarck delivered the ultimate humiliation to French national pride. Inside the sacred sanctuary of French royal majesty, the gilded <strong>Hall of Mirrors at the Palace of Versailles</strong> outside starving, besieged Paris, German princes and field commanders gathered amidst a forest of drawn sabres and spiked pickelhaube helmets. As royal fanfares echoed through the palace of Louis XIV, King Wilhelm I was proclaimed German Emperor (Kaiser). The German Empire was not born in a democratic assembly, but hammered together on the battlefield and christened on the ashes of French defeat.<br><br><span class=\"para-ref\">[3.2]</span> Forensic analysis of the 1871 map reveals the seismic scale of this geopolitical earthquake. Germany annexed the mineral-rich border province of <strong>Alsace-Lorraine</strong>, securing massive iron-ore deposits and the fortress cities of Metz and Strasbourg, while imposing a punitive indemnity of five billion gold francs. Over forty-one million people, welded to the explosive industrial foundries of the Krupp arms works, were suddenly concentrated into a colossal military superpower situated squarely in the vulnerable centre of continental Europe.",
               "source": {
                 "letter": "B",
-                "title": "Source B (Comparative Cartography): Modern European Boundaries vs 1871 Frontiers",
-                "image": "/images/modern_germany_map.png",
-                "caption": "Comparative cartography overlaying 1871 German imperial boundaries onto modern sovereign European borders.",
-                "citation": "Department Cartographic Collection.",
-                "context": "Comparing nineteenth-century borders with modern Europe reveals how the massive German Empire occupied the territories of several modern sovereign nations, generating continuous friction with neighbouring empires.",
-                "hinge_question": "Why would Germany's geographical position between France and Russia cause German military planners permanent strategic anxiety?"
+                "title": "Source B (Primary Oil Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (18 January 1871)",
+                "image": "/images/werner_versailles_1871_highres.jpg",
+                "caption": "Anton von Werner (1885 Friedrichsruh version): Grand Duke Frederick I of Baden leads German princes and officers in cheering the newly proclaimed Kaiser Wilhelm I on the dais in the Hall of Mirrors at Versailles, while Chancellor Otto von Bismarck stands prominently in his white Cuirassier uniform holding the imperial proclamation.",
+                "citation": "Anton von Werner, Die Proklamierung des deutschen Kaiserreiches (18. Januar 1871), 1885, Oil on canvas, Bismarck-Museum Friedrichsruh.",
+                "context": "Staged deliberately inside Louis XIV’s royal palace during the siege of Paris, this coronation solemnized the unification of Germany on conquered French territory. Werner places Chancellor Otto von Bismarck in pure white at the optical centre of the hall, emphasizing that the Empire was forged not through popular democracy, but through Bismarckian military statecraft.",
+                "hinge_question": "Why did Anton von Werner place Chancellor Otto von Bismarck in pure white at the visual centre of the painting, rather than Kaiser Wilhelm I on the raised dais?"
               },
               "tasks": []
             },
@@ -45611,7 +45612,7 @@
                 "question": "Bismarck created alliances to keep Germany safe, but how did these secret treaties actually make a future European war much more dangerous?"
               }
             ],
-            "source_context": "In the 1871 Franco-Prussian War, the newly formed German Empire conquered the French territories of Alsace and Lorraine. Proclaiming the German Empire inside the French royal palace of Versailles was a calculated humiliation. This fueled a burning French desire for revanche (revenge) that poisoned European diplomacy for decades. **Hinge Question:** Why might the location of this coronation guarantee future conflict between France and Germany?"
+            "source_context": "Albert Bettannier’s 1887 painting \"La Tache Noire\" (The Black Spot) depicts a French classroom where a teacher in black points to Alsace-Lorraine, draped in pitch black on the wall map, instructing a boy in cadet uniform. This visual source provides profound evidence of French revanchism, illustrating how the education system systematically prepared the next generation to reclaim the lost provinces. **Hinge Question:** How does Bettannier use the classroom setting to prove that the Franco-Prussian War had permanently altered French society?"
           },
           "vocab_cloze_text": "In 1870, Chancellor Bismarck edited the [Ems Telegram] to trick France into war. After a devastating [Siege] of Paris, France was forced to pay massive [Reparations] and hand over the vital territory of [Alsace-Lorraine].",
           "narrative_blocks": [
