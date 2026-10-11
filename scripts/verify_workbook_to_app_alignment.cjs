@@ -40,6 +40,11 @@ const KS3_16P_UNITS = [
     title: 'Monarchy, Religion & Power',
     script: 'scripts/render_monarchy_religion_power_workbook.cjs',
   },
+  {
+    id: 'great_war',
+    title: 'Causes of the Great War',
+    script: 'scripts/render_great_war_twopage_workbook.cjs',
+  },
 ];
 
 console.log('=============================================================');

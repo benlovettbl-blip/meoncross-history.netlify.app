@@ -98,7 +98,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1862–1866',
-        paraRef: '[1.1–1.2]',
+        paraRef: '[1.1]',
         questionHeading: 'What enabled Prussia to overturn the 1815 balance of power?',
         bullets: ['39 German States', "Bismarck's Blood & Iron", 'Krupp Industrial Steel'],
         focusClue:
@@ -107,7 +107,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1870–1871',
-        paraRef: '[1.3]',
+        paraRef: '[1.2]',
         questionHeading: 'How was the German Empire proclaimed at Versailles in 1871?',
         bullets: ['French Defeat at Sedan', 'Proclamation at Versailles', 'German Empire Born'],
         focusClue:
@@ -116,7 +116,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'May 1871',
-        paraRef: '[2.1]',
+        paraRef: '[1.3]',
         questionHeading: 'Why did the annexation of Alsace-Lorraine shatter peace?',
         bullets: ['Treaty of Frankfurt', '5 Billion Franc Indemnity', 'Alsace-Lorraine Annexed'],
         focusClue:
@@ -125,7 +125,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1871–1889',
-        paraRef: '[2.2–2.3]',
+        paraRef: '[1.4]',
         questionHeading: 'In what ways did French "Revanche" shape patriotic culture?',
         bullets: ['Maps Veiled in Black', 'Cult of Lost Provinces', 'Compulsory Conscription'],
         focusClue:
@@ -134,7 +134,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1871–1890',
-        paraRef: '[2.3]',
+        paraRef: '[1.5]',
         questionHeading: "Evaluate how Bismarck's diplomacy isolated the French Republic.",
         bullets: [
           'Diplomatic Isolation of France',
@@ -179,7 +179,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1884–1885',
-        paraRef: '[3.1]',
+        paraRef: '[2.1]',
         questionHeading: 'Why did European empires carve up Africa in the 1880s Scramble?',
         bullets: [
           'Berlin Conference (1884)',
@@ -192,7 +192,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1890–1897',
-        paraRef: '[3.2]',
+        paraRef: '[2.2]',
         questionHeading: 'Explain why Wilhelm II launched "Weltpolitik" in the 1890s.',
         bullets: ['Bismarck Dismissed (1890)', '"A Place in the Sun"', 'Global Colonial Ambition'],
         focusClue:
@@ -201,7 +201,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'March 1905',
-        paraRef: '[3.3]',
+        paraRef: '[2.3]',
         questionHeading: 'What happened when the Kaiser landed at Tangier in 1905?',
         bullets: [
           'Tangier Port Speech',
@@ -214,7 +214,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1906',
-        paraRef: '[3.4]',
+        paraRef: '[2.4]',
         questionHeading: 'To what extent did the 1906 Algeciras Conference isolate Germany?',
         bullets: [
           'Algeciras Conference',
@@ -227,7 +227,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: 'July 1911',
-        paraRef: '[3.5]',
+        paraRef: '[2.5]',
         questionHeading: 'Why did the gunboat Panther at Agadir bring Europe close to war?',
         bullets: [
           'Gunboat Panther at Agadir',
@@ -280,7 +280,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1889–1897',
-        paraRef: '[4.1]',
+        paraRef: '[3.1]',
         questionHeading: "Why was naval supremacy vital for Great Britain's survival?",
         bullets: [
           'Two-Power Standard (1889)',
@@ -293,7 +293,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1898–1900',
-        paraRef: '[4.2]',
+        paraRef: '[3.2]',
         questionHeading: 'How did Tirpitz\'s "Risk Theory" plan to challenge the Royal Navy?',
         bullets: [
           'German Naval Laws',
@@ -306,7 +306,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'February 1906',
-        paraRef: '[4.3]',
+        paraRef: '[3.3]',
         questionHeading: 'Why did HMS Dreadnought reset naval supremacy to zero?',
         bullets: [
           'All-Big-Gun Battleship',
@@ -319,7 +319,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1909',
-        paraRef: '[4.4]',
+        paraRef: '[3.4]',
         questionHeading: 'What triggered the 1909 British naval panic ("We want eight")?',
         bullets: [
           '"We Want Eight & Won’t Wait!"',
@@ -332,7 +332,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1912–1914',
-        paraRef: '[4.5]',
+        paraRef: '[3.5]',
         questionHeading: 'Evaluate why the 1912 Haldane Mission failed to stop the arms race.',
         bullets: [
           'Lord Haldane in Berlin',
@@ -382,7 +382,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1879–1882',
-        paraRef: '[5.1]',
+        paraRef: '[4.1]',
         questionHeading: "How did Bismarck's Dual Alliance create a Central European bloc?",
         bullets: [
           'Dual Alliance with Austria (1879)',
@@ -395,7 +395,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1894–1907',
-        paraRef: '[5.2]',
+        paraRef: '[4.2]',
         questionHeading: 'Explain why the 1894 Franco-Russian Alliance broke isolation.',
         bullets: [
           'Franco-Russian Alliance (1894)',
@@ -408,7 +408,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1900–1908',
-        paraRef: '[5.3]',
+        paraRef: '[4.3]',
         questionHeading: 'Why was south-eastern Europe known as the "Balkan Powder Keg"?',
         bullets: [
           'Ottoman Imperial Decline',
@@ -421,7 +421,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: 'October 1908',
-        paraRef: '[5.4]',
+        paraRef: '[4.4]',
         questionHeading: 'What were the consequences of the 1908 Bosnian Annexation Crisis?',
         bullets: [
           'Bosnia-Herzegovina Annexed',
@@ -434,7 +434,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1912–1913',
-        paraRef: '[5.5]',
+        paraRef: '[4.5]',
         questionHeading: 'To what extent did the 1912–13 Balkan Wars embolden Serbia?',
         bullets: [
           'Balkan League Defeats Turks',
@@ -492,7 +492,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '28 June 1914',
-        paraRef: '[6.1–6.2]',
+        paraRef: '[5.1]',
         questionHeading:
           'What motivated the Black Hand to assassinate Franz Ferdinand in Sarajevo?',
         bullets: [
@@ -506,7 +506,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '5 July 1914',
-        paraRef: '[6.3]',
+        paraRef: '[5.2]',
         questionHeading: 'How did Germany\'s "Blank Cheque" escalate the regional crisis?',
         bullets: [
           'Kaiser’s Unconditional Pledge',
@@ -519,7 +519,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '23–25 July 1914',
-        paraRef: '[6.4]',
+        paraRef: '[5.3]',
         questionHeading: 'Explain why Austria’s Ten-Point Ultimatum made war inevitable.',
         bullets: [
           'Ten Severe Demands',
@@ -532,7 +532,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '29–31 July 1914',
-        paraRef: '[6.5]',
+        paraRef: '[5.4]',
         questionHeading:
           'In what ways did rigid railway mobilisation schedules trigger the domino effect?',
         bullets: [
@@ -546,7 +546,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1–4 August 1914',
-        paraRef: '[6.6]',
+        paraRef: '[5.5]',
         questionHeading:
           'What forced Great Britain to declare war following the invasion of Belgium?',
         bullets: [
@@ -1849,8 +1849,7 @@ function compileGreatWarWorkbook() {
         <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
           ${enquiryConfigs
             .map((cfg, idx) => {
-              const appLessonMapping = [1, 3, 4, 5, 6];
-              const targetLesson = appLessonMapping[idx] || idx + 1;
+              const targetLesson = idx + 1;
               const quizUrl =
                 'https://the-history-revision-hub.netlify.app/?unit=great_war&lesson=' +
                 targetLesson +
