@@ -2965,7 +2965,11 @@ export function renderLesson(lesson) {
         window.currentUnitId === 'medieval_england' ||
         unitId === 'medieval_england' ||
         window.currentUnitId === 'industrialisation_and_empire' ||
-        unitId === 'industrialisation_and_empire';
+        unitId === 'industrialisation_and_empire' ||
+        window.currentUnitId === 'great_war' ||
+        unitId === 'great_war' ||
+        window.currentUnitId === 'great_war_part2' ||
+        unitId === 'great_war_part2';
       const cardIdAttr =
         sLetter && isInteractiveSourceUnit
           ? `id="source-card-${sLetter}" data-source-letter="${sLetter}"`
@@ -2987,7 +2991,11 @@ export function renderLesson(lesson) {
         unitId === 'medieval_england' ||
         window.currentUnitId === 'medieval_england' ||
         unitId === 'industrialisation_and_empire' ||
-        window.currentUnitId === 'industrialisation_and_empire'
+        window.currentUnitId === 'industrialisation_and_empire' ||
+        unitId === 'great_war' ||
+        window.currentUnitId === 'great_war' ||
+        unitId === 'great_war_part2' ||
+        window.currentUnitId === 'great_war_part2'
       ) {
         const displayTitle = source.title
           ? source.title.replace(/^(?:Source|Map|Diagram)\s+[A-Z0-9]+[:\s-]*/i, '').trim()
@@ -3149,7 +3157,7 @@ export function renderLesson(lesson) {
         return;
       }
 
-      if (unitId === 'great_war' || unitId === 'edexcel_medicine') {
+      if (unitId === 'edexcel_medicine') {
         const sLetterMatch = (source.title || '').match(/(?:Source|Map|Diagram)\s+([A-Z])/i);
         const sLetter = sLetterMatch ? sLetterMatch[1].toUpperCase() : '';
         const isMap = /map/i.test(source.title);
@@ -5394,7 +5402,25 @@ export function renderLesson(lesson) {
           window.currentUnitId === 'medieval_england' ||
           unitId === 'medieval_england' ||
           window.currentUnitId === 'industrialisation_and_empire' ||
-          unitId === 'industrialisation_and_empire';
+          unitId === 'industrialisation_and_empire' ||
+          window.currentUnitId === 'great_war' ||
+          unitId === 'great_war' ||
+          window.currentUnitId === 'great_war_part2' ||
+          unitId === 'great_war_part2' ||
+          window.currentUnitId === 'early_modern_world' ||
+          unitId === 'early_modern_world' ||
+          window.currentUnitId === 'water_and_sanitation' ||
+          unitId === 'water_and_sanitation' ||
+          window.currentUnitId === 'cold_war' ||
+          unitId === 'cold_war' ||
+          window.currentUnitId === 'the_shoah' ||
+          unitId === 'the_shoah' ||
+          window.currentUnitId === 'post_war_britain' ||
+          unitId === 'post_war_britain' ||
+          window.currentUnitId === 'australia' ||
+          unitId === 'australia' ||
+          window.currentUnitId === 'usa' ||
+          unitId === 'usa';
 
         if (isAccordionUnit) {
           const sLetterMatch = (rawSource.title || '').match(/Source\s+([A-Z0-9]+)/i);
@@ -6160,7 +6186,12 @@ export function renderLesson(lesson) {
             const structureStrip =
               scaf.structure_strip && scaf.structure_strip.length > 0
                 ? scaf.structure_strip
-                : (scaf.matrix || []).map((m) => ({ col: m.col, prompt: m.text || m.prompt }));
+                : task.hints && task.hints.length > 0
+                  ? task.hints.map((h) => ({
+                      col: h.label || 'PEEL Step',
+                      prompt: h.prompt || h.text || h,
+                    }))
+                  : (scaf.matrix || []).map((m) => ({ col: m.col, prompt: m.text || m.prompt }));
             const starters = scaf.sentence_starters || [];
             const rawConnectives = scaf.connective_bank || scaf.causal_connectives || [];
             const connectives = Array.isArray(rawConnectives)
@@ -6204,7 +6235,18 @@ export function renderLesson(lesson) {
                     ? `
                   <div class="extended-writing-prompt" style="font-size: 1.08rem; font-weight: 700; color: #0f172a; margin-bottom: 16px; line-height: 1.5; background: #f0f9ff; padding: 14px 18px; border-left: 4px solid #0284c7; border-radius: 6px;">
                     <span style="display: block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; color: #0284c7; margin-bottom: 4px; font-weight: 800;">Enquiry Question:</span>
-                    ${window.formatBold ? window.formatBold(actualPrompt) : actualPrompt}
+                    <div>${window.formatBold ? window.formatBold(actualPrompt) : actualPrompt}</div>
+                    ${
+                      task.stimulus && task.stimulus.length > 0
+                        ? `
+                      <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 10px; font-size: 0.85rem; color: #334155;">
+                        <strong style="color: #0369a1; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.5px;">Stimulus:</strong>
+                        ${task.stimulus.map((st) => `<span style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; padding: 2px 8px; border-radius: 4px; font-weight: 700; font-size: 0.82rem;">${st}</span>`).join('')}
+                        <span style="font-style: italic; font-size: 0.78rem; color: #64748b;">(You must also use information of your own)</span>
+                      </div>
+                    `
+                        : ''
+                    }
                   </div>
                 `
                     : ''
