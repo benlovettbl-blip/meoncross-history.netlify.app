@@ -566,19 +566,19 @@ export const WORKBOOK_PAGE_MAP = {
   },
   medieval_england: {
     lesson_1: {
-      page: 4,
+      page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 0,
     },
     lesson_2: {
-      page: 6,
+      page: 4,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 1,
     },
     lesson_3: {
-      page: 8,
+      page: 6,
       booklet: 'Pupil Workbook',
       unitId: 'medieval_england',
       lessonIndex: 2,
