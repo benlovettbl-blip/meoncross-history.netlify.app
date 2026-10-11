@@ -541,10 +541,10 @@ function renderNotesPage(pageNum, quip) {
       <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline;">
           <h2 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; font-weight: 900;">
-            ${pageNum === 14 ? 'The Great War: Historical Enquiry &amp; Causal Synthesis Notes' : 'The Great War: Disciplinary Extended Writing &amp; Essay Planning'}
+            ${pageNum === 14 ? 'The Great War: Historical Enquiry &amp; Causal Notes' : 'The Great War: Extended Writing &amp; Essay Planning'}
           </h2>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase;">
-            ${pageNum === 14 ? 'KNOWLEDGE REPERTOIRE' : 'DISCIPLINARY WRITING'}
+            ${pageNum === 14 ? 'KNOWLEDGE REPERTOIRE' : 'WRITING PRACTICE'}
           </span>
         </div>
       </div>
@@ -1239,99 +1239,100 @@ function compileGreatWarPart2Workbook() {
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece -->
+      <!-- Prominent Primary Visual Source Centerpiece (Stacked Layout) -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <div style="display: grid; grid-template-columns: 66mm 1fr; background: #ffffff;">
-          <!-- Left: Full Visual Canvas -->
-          <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
-            <img src="${coverImgBase64}" alt="Great War Archival Record" style="height: 101mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
-          </div>
-          <!-- Right: Visual Iconography & Historical Significance for Year 9 -->
-          <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
-            <!-- 1. Header: Authentic Artwork Title & Artist -->
-            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
-              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 900; color: #0f284e; letter-spacing: 0.2px;">
-                The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)
-              </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #475569;">
-                Sir William Orpen (1878–1931)
-              </span>
-            </div>
+        <!-- 1. Header: Authentic Artwork Title & Artist -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; background: #f8fafc; border-bottom: 1.2px solid #0f284e; padding: 2.5px 8px;">
+          <span style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #0f284e; letter-spacing: 0.2px;">
+            The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #475569;">
+            Sir William Orpen (1878–1931)
+          </span>
+        </div>
 
-            <!-- 2. Historical Context -->
-            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
+        <!-- 2. Full Horizontal Painting Presentation (Unclipped Left & Right) -->
+        <div style="background: #0a172a; padding: 4px 0; display: flex; justify-content: center; align-items: center; border-bottom: 1.2px solid #0f284e;">
+          <img src="${coverImgBase64}" alt="Sir William Orpen, The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)" style="height: 67mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.5px solid #d4af37; border-radius: 2px; box-shadow: 0 4px 14px rgba(0,0,0,0.45);">
+        </div>
+
+        <!-- 3. Curatorial Strip directly below painting -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.6pt; color: #ffffff; padding: 2.5px 8px; background: #0f284e;">
+          <span><strong>Medium &amp; Provenance:</strong> Oil on canvas (152.4 &times; 127 cm) &bull; Official War Art Commission</span>
+          <span style="font-weight: 800; color: #93c5fd; letter-spacing: 0.3px;">IMPERIAL WAR MUSEUM, LONDON &bull; ART 2856</span>
+        </div>
+
+        <!-- 4. Explanation Section Beneath the Painting (2-Column Grid) -->
+        <div style="padding: 4px 8px; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 8px; background: #ffffff;">
+          <!-- Left Column: Context & 4 Core Historical Features -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.1pt; line-height: 1.22; color: #1e293b; margin: 0 0 2px 0;">
               On 28 June 1919, exactly five years after the assassination of Archduke Franz Ferdinand, Allied statesmen gathered in the Hall of Mirrors at Versailles to impose peace upon defeated Germany:
             </p>
-
-            <!-- 3. Four Core Historical Features -->
-            <div style="display: flex; flex-direction: column; gap: 3px;">
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. The Big Three &amp; Conflicting Agendas:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Seated at the centre table are Woodrow Wilson (idealist League of Nations), Georges Clemenceau (seeking French revenge &amp; disarmament), and David Lloyd George (pragmatic imperial compromise).
+            <div style="display: flex; flex-direction: column; gap: 2px;">
+              <div style="border-left: 2.2px solid #0f284e; padding-left: 5px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e;">1. The Big Three &amp; Conflicting Agendas:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Seated centre are Woodrow Wilson (League of Nations), Georges Clemenceau (disarmament and reparations), and David Lloyd George (imperial compromise).
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. The Imposition of the Diktat:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  In the foreground, German envoys Johannes Bell and Hermann Müller are compelled to sign Article 231 (War Guilt) and £6.6bn in reparations without negotiation under naval blockade.
+              <div style="border-left: 2.2px solid #0f284e; padding-left: 5px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e;">2. The Imposition of the Diktat:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  In the foreground, German envoys Johannes Bell and Hermann Müller sign Article 231 (War Guilt) and £6.6bn in reparations without negotiation under naval blockade.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Global Imperial Representation:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Flanked behind the leaders stand imperial dignitaries—including the Maharaja of Bikaner—symbolising over 4 million colonial troops whose sacrifices sustained the Allied victory.
+              <div style="border-left: 2.2px solid #0f284e; padding-left: 5px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e;">3. Global Imperial Representation:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Flanked behind the leaders stand imperial dignitaries—including the Maharaja of Bikaner—symbolising over 4 million colonial troops who sustained Allied victory.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. The Seeds of Future Conflict:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Above the delegates, the baroque ceiling ironically proclaims ‘Le Roy Gouverne’ (‘The King Governs’), foreshadowing Marshal Foch’s warning: ‘This is not peace. It is an armistice for twenty years.’
+              <div style="border-left: 2.2px solid #0f284e; padding-left: 5px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e;">4. The Seeds of Future Conflict:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Above, the ceiling proclaims ‘Le Roy Gouverne’ (‘The King Governs’), foreshadowing Marshal Foch’s warning: ‘This is not peace. It is an armistice for twenty years.’
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- 4. Three-Pillar Propaganda Decoding Matrix -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">The Big Three</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Wilson, Clemenceau, Lloyd George.</div>
+          <!-- Right Column: Decoding, Significance & Hinge Question -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 2.5px;">
+            <!-- Three-Pillar Decoding Matrix -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.1pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">The Big Three</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6pt; line-height: 1.1; color: #1e293b; margin-top: 1px;">Wilson, Clemenceau, Lloyd George.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">German Signatories</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Signing the Diktat &amp; War Guilt.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.1pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">German Envoys</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6pt; line-height: 1.1; color: #1e293b; margin-top: 1px;">Signing Article 231 (War Guilt).</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Hall of Mirrors</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">1871 German Empire reversed.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.1pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Hall of Mirrors</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6pt; line-height: 1.1; color: #1e293b; margin-top: 1px;">1871 German Empire reversed.</div>
               </div>
             </div>
 
-            <!-- 5. Disciplinary Significance Anchor -->
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.25; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
-              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> The Treaty of Versailles formally concluded the Great War, dismantled four European empires, and created the economic and territorial grievances that paved the road to the Second World War.
+            <!-- Significance Anchor (No "Disciplinary"!) -->
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.3pt; color: #1e293b; line-height: 1.18; background: #f0f4f9; border-left: 2.2px solid #0f284e; padding: 2px 5px;">
+              <strong style="text-transform: uppercase; color: #0f284e;">Significance:</strong> The Treaty of Versailles formally concluded the Great War, dismantled four European empires, and created the economic and territorial grievances that paved the road to the Second World War.
             </div>
 
-            <!-- 6. Targeted Disciplinary Hinge Question -->
-            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 6px;">
-              <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.2; margin-top: 1px;">
+            <!-- Targeted Hinge Question (No "Disciplinary", No "Historical Evaluation"!) -->
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 2px 5px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Hinge Question:</span>
+              <div style="font-family: 'Georgia', serif; font-size: 6.6pt; font-style: italic; color: #1e293b; line-height: 1.15; margin-top: 1px;">
                 Did the Allied peacemakers at Versailles make another war inevitable through excessive severity, or was the fatal weakness their failure to enforce the treaty’s military terms when challenged in the 1930s?
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
-          <span><strong>Medium &amp; Provenance:</strong> Oil on canvas (152.4 &times; 127 cm) &bull; Official War Art Commission</span>
-          <span style="font-weight: 800; color: #93c5fd;">IMPERIAL WAR MUSEUM, LONDON &bull; ART 2856</span>
-        </div>
       </div>
 
-      <!-- Disciplinary Strategy Overview & Workbook Blueprint -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 5px 8px; background: #f0f4f9; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+      <!-- Strategy Overview & Workbook Blueprint -->
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 4px 8px; background: #f0f4f9; margin: 2px 0 5px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
         <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             1. Chronological Spines [Enquiries 1–5]
@@ -1342,7 +1343,7 @@ function compileGreatWarPart2Workbook() {
         </div>
         <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            2. Disciplinary Writing Practice [4m, 8m, 12m]
+            2. Writing Practice [4m, 8m, 12m]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
             Targeted extended writing on each right page: inference drills, source follow-ups, historiographical interpretations, narrative accounts, and causation essays.
