@@ -178,3 +178,32 @@ Whenever modifying or compiling a KS3 unit, you MUST run the automated quality p
    node verify_images.cjs
    ```
    Ensures 0 institutional branding violations and 0 broken/AI images.
+
+---
+
+## 5. Master 16-Page Saddle-Stitch Pupil Workbook Standard (Gold Architecture)
+All 16-page saddle-stitch pupil workbooks (e.g. `render_great_war_twopage_workbook.cjs`) must strictly enforce:
+1. **General Notes Pages (Pages 14 & 15):**
+   - Page 14 must have a simple, clean header titled "General Notes". Never include "Protocol" instructional boxes or flashcard/cues sidebars.
+   - Page 15 must have NO heading at all—a pure, full-page blank ruled lines canvas with red margin for flexible teacher and student use.
+   - Ruled lines (27–29 rows) must fill the full printable page down to the footer strip with zero dead underflow space.
+2. **Outside Back Cover (Page 16) Marking Grid:**
+   - The marking grid contains exactly 6 rows: 5 Enquiries + 1 "Teacher-Designated Assessment Task" (Row 6).
+   - NEVER include an "Independent Study & Notes Portfolio" row in the marking grid.
+   - Grid rows must be evenly distributed with balanced cell padding (e.g. 20.5px–21px) to absorb vertical space without overflow.
+3. **Scaffolding Separation (Workbook vs Web App):**
+   - Printed workbook right pages must remain clean, authentic examination workspaces: exam stem, stimulus boxes, key terms bank, generic bare-bones connectives, and ruled writing lines.
+   - Extensive scaffolding (sentence starters, 3-column planning boxes, step-by-step hints, model answers) belongs strictly in the interactive web application, NOT in the printed workbook.
+4. **Bare-Bones Generic Analytical Connectives:**
+   - Connectives printed in workbook question boxes must be generic, purely structural transitions (e.g., `A decisive factor was...`, `This led directly to...`, `Furthermore...`, `As a direct result...`, `Ultimately, this meant that...`).
+   - NEVER embed factual clues, dates, or specific historical answers into the connectives list.
+5. **GCSE Statement Essay Question Format (Enquiry 5 / Synoptic Task):**
+   - Must follow authentic GCSE history statement format:
+     `"[Statement]." How far do you agree? Explain your answer. [12 marks]`
+   - Stimulus bullets must strictly provide:
+     - Bullet 1: A factor agreeing with/supporting the statement.
+     - Bullet 2: An alternative/counter-factor disagreeing with the statement.
+     - Followed by: `(You must also use information of your own)`.
+6. **Chronological Spine Stage Question Variety:**
+   - Left-page chronological spine stages (5 stages per enquiry) must strictly rotate question stems across the unit. Avoid repeating "Why did..." or "How did..." on consecutive stages; use varied high-cognitive stems (`What factors led to...`, `In what ways did...`, `Explain why...`, `What forced [X] to...`, `To what extent did...`, `Evaluate why...`).
+
