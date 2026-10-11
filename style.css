@@ -3081,6 +3081,7 @@ img::after {
   border-radius: 0 6px 6px 0;
   line-height: 1.8;
   font-size: 1.05rem;
+  scroll-margin-top: 85px;
 }
 /* ==========================================================================
    AMBIENT VOCABULARY LENS & GLOSSARY (SCHOLARLY EDITION STANDARD)

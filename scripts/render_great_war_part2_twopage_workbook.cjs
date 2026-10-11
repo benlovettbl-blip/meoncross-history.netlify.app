@@ -73,7 +73,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: 'Aug–Sept 1914',
-        paraRef: '[1.3, 4.2]',
+        paraRef: '[2.1–2.2]',
         questionHeading:
           'How did the invasion of Belgium spark genuine moral outrage and civic duty?',
         bullets: ['1839 Treaty of London', 'German Atrocities', 'Crusade for Law'],
@@ -83,7 +83,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'Sept 1914',
-        paraRef: '[2.1–2.2]',
+        paraRef: '[3.1–3.2]',
         questionHeading:
           'Why did workplace camaraderie and local pride drive the formation of Pals Battalions?',
         bullets: [
@@ -97,7 +97,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: 'Autumn 1914',
-        paraRef: '[1.3, 4.3]',
+        paraRef: '[4.1–4.2]',
         questionHeading:
           'In what ways did poverty, adventure, and the King’s Shilling lure young recruits?',
         bullets: ['Regular Pay & Food', 'Escape Factory Drudgery', 'Over by Christmas'],
@@ -107,7 +107,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: 'Late 1914',
-        paraRef: '[3.1–3.3]',
+        paraRef: '[5.1–5.2]',
         questionHeading:
           'How did state propaganda and social coercion make refusal to enlist unbearable?',
         bullets: ['Kitchener Finger Poster', 'White Feather Movement', 'Unbearable Social Shame'],
@@ -149,7 +149,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: 'Autumn 1914',
-        paraRef: '[1.1–1.3]',
+        paraRef: '[1.1–1.2]',
         questionHeading:
           'What forced armies underground into a 400-mile line of industrial stalemate?',
         bullets: ['Race to the Sea', 'Artillery Dominance', '400-Mile Trench Line'],
@@ -169,7 +169,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1915–1916',
-        paraRef: '[2.3, 3.1]',
+        paraRef: '[3.1–3.2]',
         questionHeading:
           'What lethal physical and psychological trauma did infantry endure in the mud?',
         bullets: ['Trench Foot & Gangrene', 'Corpses, Lice & Rats', 'Shell Shock Trauma'],
@@ -179,7 +179,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1 July 1916',
-        paraRef: '[3.2–3.3]',
+        paraRef: '[4.1–4.2]',
         questionHeading:
           'Why did the First Day of the Somme become the bloodiest disaster in British history?',
         bullets: ['7-Day Bombardment Fails', 'German Bunkers Intact', '57,470 Casualties Day 1'],
@@ -189,7 +189,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1916–1918',
-        paraRef: '[4.1–4.3]',
+        paraRef: '[5.1–5.2]',
         questionHeading:
           'Was Sir Douglas Haig a callous "butcher" or a commander learning total war?',
         bullets: ['Lions Led by Donkeys', 'Industrial Learning Curve', 'Allied Victory in 1918'],
@@ -242,7 +242,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1914',
-        paraRef: '[1.1–1.3]',
+        paraRef: '[1.1–1.2]',
         questionHeading:
           'Why was Britain completely dependent on mobilising 4 million imperial subjects?',
         bullets: ['Imperial War Cabinet', 'Global Manpower Pool', 'Dominions & Crown Colonies'],
@@ -262,7 +262,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1915',
-        paraRef: '[2.3, 3.1]',
+        paraRef: '[3.1–3.2]',
         questionHeading:
           'Why did the catastrophe of Gallipoli forge national identity for Australia and New Zealand?',
         bullets: [
@@ -276,7 +276,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1916–1918',
-        paraRef: '[3.2–3.3]',
+        paraRef: '[4.1–4.2]',
         questionHeading:
           'In what ways did the Chinese Labour Corps and African Pioneers sustain Allied logistics?',
         bullets: [
@@ -290,7 +290,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: 'Post-1918',
-        paraRef: '[4.1–4.3]',
+        paraRef: '[5.1–5.2]',
         questionHeading:
           'Why were non-white colonial soldiers denied equal pensions, medals, and remembrance?',
         bullets: ['Imperial Colour Bar', 'Mass Graves in Africa', 'Deliberate Erasure from Memory'],
@@ -338,7 +338,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: 'Aug 1914',
-        paraRef: '[1.1–1.3]',
+        paraRef: '[1.1–1.2]',
         questionHeading:
           'In what ways did DORA grant the British state unprecedented authoritarian control?',
         bullets: ['Defence of the Realm Act', 'Strict Press Censorship', 'Curfews & Watered Beer'],
@@ -362,7 +362,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'Jan 1916',
-        paraRef: '[2.3, 3.1]',
+        paraRef: '[3.1–3.2]',
         questionHeading:
           'Why did catastrophic frontline casualties force Britain to impose conscription in 1916?',
         bullets: ['Somme Demands Reserves', 'Military Service Act 1916', 'Conscientious Objectors'],
@@ -372,7 +372,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1916–1918',
-        paraRef: '[3.2–3.3]',
+        paraRef: '[4.1–4.2]',
         questionHeading:
           'How did 1 million "Canary Girls" transform industrial production despite toxic hazards?',
         bullets: ['Toxic TNT Jaundice', 'Silvertown Explosion (1917)', '80% of British Munitions'],
@@ -382,7 +382,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1917–1918',
-        paraRef: '[4.1–4.3]',
+        paraRef: '[5.1–5.2]',
         questionHeading:
           'Why did unrestricted German submarine warfare push Britain to the brink of starvation?',
         bullets: [
@@ -459,7 +459,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: 'Jan–June 1919',
-        paraRef: '[1.2–1.3]',
+        paraRef: '[2.1–2.2]',
         questionHeading:
           'How did conflicting national motives divide Clemenceau, Lloyd George, and Wilson?',
         bullets: [
@@ -473,7 +473,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '28 June 1919',
-        paraRef: '[2.1–2.2]',
+        paraRef: '[3.1–3.2]',
         questionHeading:
           'Why did Germans across all political parties denounce the Treaty terms as an unjust "Diktat"?',
         bullets: [
@@ -487,7 +487,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: 'June–Dec 1919',
-        paraRef: '[3.1–3.3]',
+        paraRef: '[4.1–4.2]',
         questionHeading:
           'How did Article 231, Keynes’ warning, and Will Dyson’s cartoon predict future catastrophe?',
         bullets: [
@@ -501,7 +501,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1920–1939',
-        paraRef: '[4.1–4.3]',
+        paraRef: '[5.1–5.2]',
         questionHeading:
           'The Historical Verdict: Was Versailles an impossibly harsh peace or an unenforced compromise?',
         bullets: [

@@ -2668,7 +2668,19 @@ export function renderLesson(lesson) {
     }
   }
 
-  const contentArea = document.getElementById('content-area');
+  let contentArea = document.getElementById('content-area');
+  if (!contentArea) {
+    const mainContent =
+      document.getElementById('main-content') ||
+      document.querySelector('.content-container') ||
+      document.body;
+    contentArea = document.createElement('div');
+    contentArea.id = 'content-area';
+    contentArea.style.cssText =
+      'animation: fadeInUp 0.3s ease-out; background-color: var(--bg-app); min-height: 100vh;';
+    mainContent.innerHTML = '';
+    mainContent.appendChild(contentArea);
+  }
   if (contentArea) contentArea.style.paddingTop = '0'; // Fix gap
 
   let html = `<div class="lesson-content">`;
@@ -4380,13 +4392,12 @@ export function renderLesson(lesson) {
                   <div style="margin-top: auto; padding-top: 6px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-size: 0.68rem; font-weight: 700; color: #64748b;">Workbook Left Page</span>
                     <button type="button" onclick="
-                      const target = Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes('${targetFirstPara}'));
-                      if (target) {
-                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                        const parent = target.closest('.narrative-chunk') || target;
-                        parent.style.transition = 'all 0.4s';
-                        parent.style.boxShadow = '0 0 0 4px #f59e0b';
-                        setTimeout(() => { parent.style.boxShadow = ''; }, 2200);
+                      const chunk = document.getElementById('para-${st.step}') || Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes('${targetFirstPara}'))?.closest('.narrative-chunk') || Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes('${targetFirstPara}'));
+                      if (chunk) {
+                        chunk.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        chunk.style.transition = 'all 0.4s ease';
+                        chunk.style.boxShadow = '0 0 0 4px #2563eb, 0 8px 24px rgba(37,99,235,0.25)';
+                        setTimeout(() => { chunk.style.boxShadow = ''; }, 2500);
                       }
                     " style="font-size: 0.68rem; font-weight: 700; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 2px 7px; border-radius: 3px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
                       <i class="fa-solid fa-arrow-down"></i> Jump to Text
