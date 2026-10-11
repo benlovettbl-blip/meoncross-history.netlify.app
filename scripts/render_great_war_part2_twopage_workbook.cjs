@@ -63,7 +63,8 @@ const enquiryConfigs = [
       {
         step: 1,
         date: 'Aug 1914',
-        questionHeading: 'Why did Britain rely on Kitchener’s call for 500,000 volunteers?',
+        questionHeading:
+          'What forced Britain to launch Kitchener’s urgent call for 500,000 volunteers?',
         bullets: ['No Conscription', 'BEF Just 120,000 Men', 'Kitchener’s Dire Call'],
         focusClue:
           'How did Britain’s lack of peacetime conscription force the government into a massive voluntary advertising campaign?',
@@ -72,7 +73,7 @@ const enquiryConfigs = [
         step: 2,
         date: 'Aug–Sept 1914',
         questionHeading:
-          'How did the "Rape of Belgium" spark genuine moral outrage and civic duty?',
+          'How did the invasion of Belgium spark genuine moral outrage and civic duty?',
         bullets: ['1839 Treaty of London', 'German Atrocities', 'Crusade for Law'],
         focusClue:
           'Why did British volunteers view the war as a righteous crusade to defend international law and neutral Belgium?',
@@ -80,7 +81,8 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'Sept 1914',
-        questionHeading: 'How did workplace camaraderie and civic rivalry forge Pals Battalions?',
+        questionHeading:
+          'Why did workplace camaraderie and local pride drive the formation of Pals Battalions?',
         bullets: [
           'Pals Battalions Formed',
           'Pompey Pals (14th/15th Hants)',
@@ -92,7 +94,8 @@ const enquiryConfigs = [
       {
         step: 4,
         date: 'Autumn 1914',
-        questionHeading: 'How did poverty, adventure, and the King’s Shilling lure young recruits?',
+        questionHeading:
+          'In what ways did poverty, adventure, and the King’s Shilling lure young recruits?',
         bullets: ['Regular Pay & Food', 'Escape Factory Drudgery', 'Over by Christmas'],
         focusClue:
           'Why did guaranteed daily meals, clean uniforms, and the promise of adventure appeal to impoverished Edwardian youths?',
@@ -100,7 +103,8 @@ const enquiryConfigs = [
       {
         step: 5,
         date: 'Late 1914',
-        questionHeading: 'How did state propaganda and social coercion compel young men to enlist?',
+        questionHeading:
+          'How did state propaganda and social coercion make refusal to enlist unbearable?',
         bullets: ['Kitchener Finger Poster', 'White Feather Movement', 'Unbearable Social Shame'],
         focusClue:
           'How did visual advertising and patriotic shaming make staying at home morally unbearable for eligible young men?',
@@ -110,7 +114,7 @@ const enquiryConfigs = [
       type: 'two_part',
       partA: {
         tariff: 'Question 1: Give Two Inferences [4 marks &bull; 5 mins]',
-        badge: 'DISCIPLINARY DRILL',
+        badge: 'SOURCE INFERENCE',
         question:
           'Give two inferences from Lord Kitchener’s 1914 recruitment campaign about how the British government persuaded men to enlist. [4 marks]',
         stems:
@@ -152,7 +156,7 @@ const enquiryConfigs = [
         step: 1,
         date: 'Autumn 1914',
         questionHeading:
-          'Why did rapid-firing artillery and machine guns force armies underground?',
+          'What forced armies underground into a 400-mile line of industrial stalemate?',
         bullets: ['Race to the Sea', 'Artillery Dominance', '400-Mile Trench Line'],
         focusClue:
           'Why did modern industrial firepower make open infantry movements impossible, establishing the 400-mile Western Front?',
@@ -160,7 +164,8 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1915',
-        questionHeading: 'How was the three-tier trench system constructed and defended?',
+        questionHeading:
+          'How was the three-tier trench system constructed, traversed, and defended?',
         bullets: ['Fire, Support & Reserve', 'Zig-Zag Traverse Design', 'Barbed Wire Belts'],
         focusClue:
           'Why were trenches dug in zig-zags with deep underground dugouts rather than straight defensive lines?',
@@ -168,7 +173,8 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1915–1916',
-        questionHeading: 'What horrific daily realities did frontline infantry endure in the mud?',
+        questionHeading:
+          'What lethal physical and psychological trauma did infantry endure in the mud?',
         bullets: ['Trench Foot & Gangrene', 'Corpses, Lice & Rats', 'Shell Shock Trauma'],
         focusClue:
           'How did waterlogged clay, relentless shelling, and rotting corpses destroy soldiers’ physical and psychological health?',
@@ -177,7 +183,7 @@ const enquiryConfigs = [
         step: 4,
         date: '1 July 1916',
         questionHeading:
-          'Why was the first day on the Somme the bloodiest catastrophe in British history?',
+          'Why did the First Day of the Somme become the bloodiest disaster in British history?',
         bullets: ['7-Day Bombardment Fails', 'German Bunkers Intact', '57,470 Casualties Day 1'],
         focusClue:
           'Why did the 1.5 million-shell artillery bombardment fail to cut German barbed wire or destroy underground concrete dugouts?',
@@ -186,7 +192,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1916–1918',
         questionHeading:
-          'Was Douglas Haig an incompetent "butcher" or a commander learning total war?',
+          'Was Sir Douglas Haig a callous "butcher" or a commander learning total war?',
         bullets: ['Lions Led by Donkeys', 'Industrial Learning Curve', 'Allied Victory in 1918'],
         focusClue:
           'Did Haig needlessly slaughter a generation of young men, or did he systematically master combined-arms warfare to win in 1918?',
@@ -196,7 +202,7 @@ const enquiryConfigs = [
       type: 'two_part',
       partA: {
         tariff: 'Question 1: Describe One Feature [4 marks &bull; 5 mins]',
-        badge: 'DISCIPLINARY DRILL',
+        badge: 'FEATURE DRILL',
         question:
           'Describe one key feature of the trench defensive systems on the Western Front. [4 marks]',
         stems:
@@ -204,7 +210,7 @@ const enquiryConfigs = [
       },
       partB: {
         tariff: 'Question 2(b): 4-Prompt Forensic Source Follow-Up [4 marks &bull; 5 mins]',
-        badge: 'DISCIPLINARY DRILL',
+        badge: 'SOURCE FOLLOW-UP',
         question:
           'How could you follow up Source A to find out more about the tactical failures on the First Day of the Somme (1 July 1916)? [4 marks]',
         stems:
@@ -232,7 +238,7 @@ const enquiryConfigs = [
         step: 1,
         date: '1914',
         questionHeading:
-          'Why did the British Empire immediately mobilise 4 million global subjects?',
+          'Why was Britain completely dependent on mobilising 4 million imperial subjects?',
         bullets: ['Imperial War Cabinet', 'Global Manpower Pool', 'Dominions & Crown Colonies'],
         focusClue:
           'Why was Britain completely dependent on its global empire to supply troops, wheat, oil, and merchant ships?',
@@ -241,7 +247,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1914–1915',
         questionHeading:
-          'How did 1.5 million Indian Army soldiers plug the crumbling line at Ypres?',
+          'How crucially did 1.5 million Indian soldiers save the crumbling Allied line at Ypres?',
         bullets: ['Lahore & Meerut Divisions', 'First Battle of Ypres', 'Khadadad Khan VC'],
         focusClue:
           'How did Indian infantry and cavalry prevent a catastrophic British collapse in the freezing mud of Flanders in 1914?',
@@ -250,7 +256,7 @@ const enquiryConfigs = [
         step: 3,
         date: '1915',
         questionHeading:
-          'How did Gallipoli forge national identities for Australia and New Zealand?',
+          'Why did the catastrophe of Gallipoli forge national identity for Australia and New Zealand?',
         bullets: [
           'Dardanelles Disaster',
           'Mustafa Kemal & Turkish Defence',
@@ -263,7 +269,7 @@ const enquiryConfigs = [
         step: 4,
         date: '1916–1918',
         questionHeading:
-          'How did the Chinese Labour Corps and African Pioneers sustain frontlines?',
+          'In what ways did the Chinese Labour Corps and African Pioneers sustain Allied logistics?',
         bullets: [
           '140,000 Chinese Workers',
           'Carrier Corps in East Africa',
@@ -276,7 +282,7 @@ const enquiryConfigs = [
         step: 5,
         date: 'Post-1918',
         questionHeading:
-          'Why were colonial soldiers denied equal pensions, medals, and gravestones?',
+          'Why were non-white colonial soldiers denied equal pensions, medals, and remembrance?',
         bullets: ['Imperial Colour Bar', 'Mass Graves in Africa', 'Deliberate Erasure from Memory'],
         focusClue:
           'Why did the Imperial War Graves Commission deliberately refuse individual marked headstones for black African and Asian troops?',
@@ -322,7 +328,8 @@ const enquiryConfigs = [
       {
         step: 1,
         date: 'Aug 1914',
-        questionHeading: 'How did DORA grant the British state unprecedented authoritarian powers?',
+        questionHeading:
+          'In what ways did DORA grant the British state unprecedented authoritarian control?',
         bullets: ['Defence of the Realm Act', 'Strict Press Censorship', 'Curfews & Watered Beer'],
         focusClue:
           'How did DORA transform Britain from a laissez-faire liberal state into a strictly controlled wartime command economy?',
@@ -331,7 +338,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1915–1916',
         questionHeading:
-          'Why did the Shell Crisis force David Lloyd George to nationalise factories?',
+          'What forced David Lloyd George to nationalise munitions factories in 1915?',
         bullets: [
           'Daily Mail Shell Scandal',
           'Ministry of Munitions',
@@ -344,7 +351,7 @@ const enquiryConfigs = [
         step: 3,
         date: 'Jan 1916',
         questionHeading:
-          'Why did casualty rates force Britain to abandon voluntary service for conscription?',
+          'Why did catastrophic frontline casualties force Britain to impose conscription in 1916?',
         bullets: ['Somme Demands Reserves', 'Military Service Act 1916', 'Conscientious Objectors'],
         focusClue:
           'Why was the introduction of conscription for all men aged 18–41 the most radical infringement on personal liberty in British history?',
@@ -352,7 +359,8 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1916–1918',
-        questionHeading: 'How did 1 million "Canary Girls" risk TNT poisoning and explosions?',
+        questionHeading:
+          'How did 1 million "Canary Girls" transform industrial production despite toxic hazards?',
         bullets: ['Toxic TNT Jaundice', 'Silvertown Explosion (1917)', '80% of British Munitions'],
         focusClue:
           'What lethal industrial dangers did women face manufacturing explosives, and how did their work permanently reshape female gender roles?',
@@ -361,7 +369,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1917–1918',
         questionHeading:
-          'How did unrestricted U-boat warfare trigger food queues and national rationing?',
+          'Why did unrestricted German submarine warfare push Britain to the brink of starvation?',
         bullets: [
           'U-Boats Sink Merchant Fleet',
           'Only 6 Weeks Food Left',
@@ -423,7 +431,7 @@ const enquiryConfigs = [
         step: 1,
         date: '11 Nov 1918',
         questionHeading:
-          'Why did the German military collapse trigger the Armistice and Kaiser’s abdication?',
+          'What forced the German military to concede defeat and accept the Armistice in 1918?',
         bullets: [
           'Kiel Mutiny & Revolution',
           'Kaiser Abdicates to Holland',
@@ -436,7 +444,7 @@ const enquiryConfigs = [
         step: 2,
         date: 'Jan–June 1919',
         questionHeading:
-          'How did conflicting aims between Clemenceau, Lloyd George, and Wilson clash?',
+          'How did conflicting national motives divide Clemenceau, Lloyd George, and Wilson?',
         bullets: [
           'Clemenceau Demands Revenge',
           'Wilson’s 14 Points & League',
@@ -449,7 +457,7 @@ const enquiryConfigs = [
         step: 3,
         date: '28 June 1919',
         questionHeading:
-          'How severely did Article 231 (War Guilt) and £6.6bn reparations punish Germany?',
+          'Why did Germans across all political parties denounce Article 231 as an unjust "Diktat"?',
         bullets: [
           'Article 231 "War Guilt"',
           '£6.6 Billion Reparations',
@@ -461,7 +469,8 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1919–1923',
-        questionHeading: 'How did Sykes-Picot and Balfour carve the Ottoman Empire into Mandates?',
+        questionHeading:
+          'In what ways did secret treaties and the Mandates system dismantle the Middle East?',
         bullets: [
           'Secret Sykes-Picot Lines',
           'Balfour Declaration Pledges',
@@ -473,8 +482,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1920–1923',
-        questionHeading:
-          'Did the postwar treaties build lasting security or guarantee future global war?',
+        questionHeading: 'Did the Versailles settlement make a second European war inevitable?',
         bullets: [
           'League Without USA',
           'German Revanchism Awakens',
