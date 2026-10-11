@@ -3521,7 +3521,7 @@ export const unitData = {
         {
           step: 1,
           date: '11 Nov 1918',
-          para_ref: '[1.1–1.3]',
+          para_ref: '[1.1–1.2]',
           heading:
             'What forced the German military to concede defeat and accept the Armistice in 1918?',
           bullets: [
@@ -3535,7 +3535,7 @@ export const unitData = {
         {
           step: 2,
           date: 'Jan–June 1919',
-          para_ref: '[2.1–2.3]',
+          para_ref: '[1.2–1.3]',
           heading:
             'How did conflicting national motives divide Clemenceau, Lloyd George, and Wilson?',
           bullets: [
@@ -3549,43 +3549,44 @@ export const unitData = {
         {
           step: 3,
           date: '28 June 1919',
-          para_ref: '[3.1–3.3]',
+          para_ref: '[2.1–2.2]',
           heading:
-            'Why did Germans across all political parties denounce Article 231 as an unjust "Diktat"?',
+            'Why did Germans across all political parties denounce the Treaty terms as an unjust "Diktat"?',
           bullets: [
             'Article 231 "War Guilt"',
             '£6.6 Billion Reparations',
-            '100,000 Army Cap & No Airforce',
+            '100,000 Army Cap & Land Cuts',
           ],
           focus_clue:
             'Why did Germans across all political parties denounce the Treaty of Versailles as an unjust and humiliating "Diktat"?',
         },
         {
           step: 4,
-          date: '1919–1923',
-          para_ref: '[4.1–4.3]',
+          date: 'June–Dec 1919',
+          para_ref: '[3.1–3.3]',
           heading:
-            'In what ways did secret treaties and the Mandates system dismantle the Middle East?',
+            'How did Article 231, Keynes’ warning, and Will Dyson’s cartoon predict future catastrophe?',
           bullets: [
-            'Secret Sykes-Picot Lines',
-            'Balfour Declaration Pledges',
-            'Class A Mandates Imposed',
+            'Article 231 Moral Condemnation',
+            'Keynes: "Carthaginian Peace"',
+            'Dyson: "1940 Class" Weeps',
           ],
           focus_clue:
-            'How did conflicting British imperial promises dismantle Ottoman Arab provinces, planting the seeds of modern Middle Eastern conflict?',
+            'How did contemporary critics like Keynes and Dyson predict that punishing Germany economically would breed a second war in 1939?',
         },
         {
           step: 5,
-          date: '1920–1923',
+          date: '1920–1939',
           para_ref: '[4.1–4.3]',
-          heading: 'Did the Versailles settlement make a second European war inevitable?',
+          heading:
+            'The Historical Verdict: Was Versailles an impossibly harsh peace or an unenforced compromise?',
           bullets: [
-            'League Without USA',
-            'German Revanchism Awakens',
-            'War Memorials Across Hampshire',
+            'Traditional: Created Hitler',
+            'MacMillan: Germany Stayed Intact',
+            'Fatal Failure of Enforcement',
           ],
           focus_clue:
-            'Did the compromise terms leave Germany vengeful yet militarily intact, making a second European conflict inevitable?',
+            'Did the Treaty of Versailles directly cause World War II, or did the fatal flaw lie in the Allies’ failure to enforce its terms?',
         },
       ],
       learning_objectives: {
@@ -4350,47 +4351,53 @@ export const unitData = {
       workbook_stages: [
         {
           step: 1,
-          date: '1914–1916',
-          para_ref: '[1.1–1.3]',
-          heading: 'The Ottoman Empire at War & The McMahon-Hussein Correspondence',
-          bullets: ['Jihad Proclamation', 'Arab Revolt Promised', 'Sherif Hussein Pledges'],
+          date: '1914–1915',
+          para_ref: '[1.1–1.2]',
+          heading: 'What forced Britain to promise an independent Arab kingdom in 1915?',
+          bullets: ['Ottoman Jihad Declared', 'Suez Canal Threatened', 'McMahon Pledges Kingdom'],
           focus_clue:
-            'Why did Britain promise an independent Arab kingdom in exchange for military rebellion against Ottoman rule?',
+            'Why did Ottoman entry threaten Britain’s empire, driving Britain to pledge Arab sovereignty in exchange for rebellion?',
         },
         {
           step: 2,
-          date: 'May 1916',
-          para_ref: '[2.1–2.3]',
-          heading: 'Secret Imperial Cartography: The Sykes-Picot Agreement',
+          date: 'June 1916',
+          para_ref: '[1.3]',
+          heading: 'How did the Arab Revolt and desert sabotage assist British military victory?',
           bullets: [
-            'Direct French & British Zones',
-            'Straight Line Borders',
-            'Double-Cross of Arab Allies',
+            'Sharif Hussein Rebel Shot',
+            'Hejaz Railway Sabotaged',
+            '30,000 Turks Tied Down',
           ],
           focus_clue:
-            'How did Mark Sykes and François Georges-Picot carve up the Middle East behind their Arab allies’ backs?',
+            'How did mobile desert guerrilla operations commanded by Emir Feisal and T.E. Lawrence paralyze Ottoman forces?',
         },
         {
           step: 3,
-          date: 'Nov 1917',
-          para_ref: '[3.1–3.3]',
-          heading: 'The Balfour Declaration & The Capture of Jerusalem',
-          bullets: [
-            'Jewish National Home Pledge',
-            'General Allenby Enters Jerusalem',
-            'Contradictory Pledges',
-          ],
+          date: 'May 1916–17',
+          para_ref: '[2.1–2.3]',
+          heading: 'Why did the secret Sykes-Picot Agreement betray Britain’s Arab allies?',
+          bullets: ['Secret Anglo-French Deal', '"A Line in the Sand"', 'Bolshevik Leak Outrage'],
           focus_clue:
-            'Why did the Balfour Declaration create contradictory British commitments that ignited modern conflict?',
+            'How did Mark Sykes and François Georges-Picot carve the Middle East into colonies, and why did the 1917 Bolshevik leak cause fury?',
         },
         {
           step: 4,
+          date: 'Nov–Dec 1917',
+          para_ref: '[3.1–3.3]',
+          heading: 'How did the Balfour Declaration introduce a third contradictory commitment?',
+          bullets: ['Jewish National Home', '90% Arab Majority Ignored', 'Allenby Enters on Foot'],
+          focus_clue:
+            'Why did Foreign Secretary Arthur Balfour promise a Jewish national home in Palestine, and why did Allenby enter Jerusalem on foot?',
+        },
+        {
+          step: 5,
           date: '1919–1923',
           para_ref: '[4.1–4.3]',
-          heading: 'League of Nations Mandates & Modern Imperial Legacy',
-          bullets: ['Class A Mandates Imposed', '1920 Iraqi Revolt', 'Artificial Nation-States'],
+          heading:
+            'Did the Mandates system simply rebrand European imperialism in the Middle East?',
+          bullets: ['Article 22 Mandates', 'Battle of Maysalun 1920', 'Artificial Border Strife'],
           focus_clue:
-            'Did the Mandates system simply rebrand Victorian imperialism under the veneer of international law?',
+            'How did France and Britain crush Arab independence at San Remo, drawing artificial borders that ignited century-long regional conflict?',
         },
       ],
       enquiry:
