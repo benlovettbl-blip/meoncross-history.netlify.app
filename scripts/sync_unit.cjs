@@ -178,7 +178,7 @@ async function runSync() {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
-        execSync(`node scripts/generate_ks3_workbook.cjs great_war_part2`, {
+        execSync(`node scripts/render_great_war_part2_twopage_workbook.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });

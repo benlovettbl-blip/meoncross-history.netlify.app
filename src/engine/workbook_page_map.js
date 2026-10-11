@@ -478,19 +478,19 @@ export const WORKBOOK_PAGE_MAP = {
   },
   great_war_part2: {
     lesson_1_enlistment: {
-      page: 4,
+      page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'great_war_part2',
       lessonIndex: 0,
     },
     lesson_2_trenches_haig: {
-      page: 6,
+      page: 4,
       booklet: 'Pupil Workbook',
       unitId: 'great_war_part2',
       lessonIndex: 1,
     },
     lesson_3_empire_troops: {
-      page: 8,
+      page: 6,
       booklet: 'Pupil Workbook',
       unitId: 'great_war_part2',
       lessonIndex: 2,
