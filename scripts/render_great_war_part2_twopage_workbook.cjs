@@ -116,29 +116,18 @@ const enquiryConfigs = [
       },
     ],
     rightPage: {
-      type: 'two_part',
-      partA: {
-        tariff: 'Question 1: Give Two Inferences [4 marks &bull; 5 mins]',
-        badge: 'SOURCE INFERENCE',
-        question:
-          'Give two inferences from Lord Kitchener’s 1914 recruitment campaign about how the British government persuaded men to enlist. [4 marks]',
-        stems:
-          'What I can infer is that the government believed... &bull; Details in the recruitment drive that tell me this are... &bull; What else I can infer is that recruits were motivated by... &bull; Details that tell me this are...',
-      },
-      partB: {
-        tariff: 'Question 2: Explain Why [8 marks &bull; 10 mins]',
-        badge: 'STRUCTURED WRITING',
-        question:
-          'Explain why young British men volunteered in such massive numbers in the autumn of 1914. [8 marks]',
-        stimulus: [
-          'The moral outrage surrounding the invasion of Belgium',
-          'The creation of civic Pals Battalions (e.g. Pompey Pals)',
-        ],
-        connectives:
-          'One key reason why men volunteered was... &bull; This encouraged enlistment because... &bull; Furthermore, social pressure such as... &bull; Consequently, young men felt compelled to...',
-        wordBank:
-          'Pals Battalions &bull; Lord Kitchener &bull; Treaty of London &bull; Pompey Pals &bull; King’s Shilling &bull; White Feather &bull; voluntary enlistment',
-      },
+      type: 'single_12',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      examStem:
+        'Explain why young British men volunteered in such massive numbers in the autumn of 1914. [12 marks]',
+      stimulus: [
+        'The moral outrage surrounding the German invasion of Belgium (1914)',
+        'The creation of civic Pals Battalions (e.g. Pompey Pals)',
+      ],
+      connectives:
+        'One primary reason why young men volunteered was... &bull; This encouraged enlistment because... &bull; Furthermore, social pressure such as the White Feather movement... &bull; Crucially, the camaraderie of civic Pals Battalions ensured that... &bull; Consequently, in the autumn of 1914...',
+      wordBank:
+        'Pals Battalions &bull; Lord Kitchener &bull; Treaty of London &bull; Pompey Pals &bull; King’s Shilling &bull; White Feather &bull; voluntary enlistment &bull; civic patriotism &bull; 750,000 recruits',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 3',
       timelineMission:
         '<strong>Milestone 1 (August 1914):</strong> Turn to Centrefold (Pages 8–9). Sketch Lord Kitchener’s pointing finger and the massive voluntary recruitment queues outside town halls [👉 pointing finger &bull; 📜 enlistment papers &bull; 🚶‍♂️ queue of volunteers].',
@@ -211,20 +200,26 @@ const enquiryConfigs = [
     rightPage: {
       type: 'two_part',
       partA: {
-        tariff: 'Question 1: Describe One Feature [4 marks &bull; 5 mins]',
+        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
         badge: 'FEATURE DRILL',
         question:
-          'Describe one key feature of the trench defensive systems on the Western Front. [4 marks]',
+          'Describe two features of the trench defensive systems on the Western Front. [4 marks]',
         stems:
-          'One key feature of the Western Front trench system was... &bull; Specifically, it was constructed with... &bull; This was important because it ensured that...',
+          'Feature 1: One key feature was... &bull; Detail: Specifically, this meant that... &bull; Feature 2: A second key feature was... &bull; Detail: This was designed to...',
       },
       partB: {
-        tariff: 'Question 2(b): 4-Prompt Forensic Source Follow-Up [4 marks &bull; 5 mins]',
-        badge: 'SOURCE FOLLOW-UP',
+        tariff: 'Question 2: Explain Why [8 marks &bull; 10 mins]',
+        badge: 'STRUCTURED WRITING',
         question:
-          'How could you follow up Source A to find out more about the tactical failures on the First Day of the Somme (1 July 1916)? [4 marks]',
-        stems:
-          'Detail in Source A that I would follow up: ... &bull; Question I would ask: ... &bull; Type of source I would use: ... &bull; How this would help me find out more: ...',
+          'Explain why the First Day of the Somme (1 July 1916) resulted in catastrophic British casualties. [8 marks]',
+        stimulus: [
+          'The failure of the 7-day artillery bombardment to cut German barbed wire',
+          'German soldiers sheltering in deep underground concrete dugouts',
+        ],
+        connectives:
+          'The primary cause of the catastrophic casualties was... &bull; This proved fatal for advancing infantry because... &bull; Furthermore, German machine-gunners were able to... &bull; Consequently, on 1 July 1916...',
+        wordBank:
+          'General Sir Douglas Haig &bull; 7-day bombardment &bull; uncut barbed wire &bull; concrete dugouts &bull; Spandau Maxim machine guns &bull; No Man’s Land &bull; 57,470 casualties',
       },
       timelineMissionTitle: 'Centrefold Sketch Challenges 2 &amp; 3',
       timelineMission:
@@ -1474,7 +1469,7 @@ function compileGreatWarPart2Workbook() {
             2. Writing Practice [4m, 8m, 12m]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Targeted extended writing on each right page: inference drills, source follow-ups, historiographical interpretations, narrative accounts, and causation essays.
+            Targeted extended writing on each right page: structured feature drills, historiographical interpretations, narrative accounts, and analytical causation essays.
           </div>
         </div>
         <div>

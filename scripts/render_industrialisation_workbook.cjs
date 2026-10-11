@@ -107,27 +107,18 @@ const enquiryConfigs = [
     vocabPrompt:
       'Define <strong>Wrought Iron</strong> and explain why Cort’s puddling process at Funtley was vital for Royal Navy warships:',
     rightPage: {
-      type: 'split',
-      partA: {
-        tariff: 'Question 1: Give Two Inferences [4 marks &bull; 5 mins]',
-        question:
-          'Give two inferences from Source A (Admiralty Navy Board Report, Portsmouth Dockyard, 1787) about Henry Cort’s iron manufactured at Funtley. [4 marks]',
-        hint: 'Examine the findings of Admiralty smiths regarding the toughness of Funtley iron compared to Swedish Orgrounds iron and its suitability for Royal Navy warships.',
-        stems:
-          'One inference I can make is that... &bull; The evidence that supports this is... &bull; A second inference is that... &bull; This is shown by...',
-      },
-      partB: {
-        tariff: 'Question 2: Explain One Causal Factor [4 marks &bull; 5 mins]',
-        question:
-          'Explain one factor that caused Henry Cort to achieve his metallurgical breakthrough at Funtley Ironworks in Hampshire. [4 marks]',
-        hint: 'Focus on either the urgent naval demand from nearby Portsmouth Royal Dockyard or Cort’s innovative chemical combination of the reverberatory puddling furnace with grooved rollers.',
-        stems:
-          'One decisive factor was... &bull; Specifically, Cort established his works at Funtley because... &bull; This resulted in his metallurgical breakthrough because... &bull; Therefore, without this factor...',
-        connectives:
-          'A primary factor was... &bull; For example, during his experiments at Funtley... &bull; Consequently, this impacted iron production because... &bull; Therefore, this proved decisive because...',
-        wordBank:
-          'Henry Cort &bull; Funtley Ironworks &bull; River Meon &bull; puddling furnace &bull; grooved rollers &bull; wrought iron &bull; Portsmouth Dockyard &bull; Royal Navy',
-      },
+      type: 'single_12',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      examStem:
+        'Explain why Henry Cort achieved his metallurgical breakthrough in wrought iron production at Funtley in 1784. [12 marks]',
+      stimulus: [
+        'The urgent naval demand for tough iron from Portsmouth Royal Dockyard',
+        'The innovative combination of the puddling furnace and grooved rollers',
+      ],
+      connectives:
+        'A primary reason Henry Cort achieved his breakthrough at Funtley was... &bull; This was vital for the Royal Navy because... &bull; Furthermore, his technological innovation combined... &bull; Consequently, Funtley iron replaced expensive foreign imports because...',
+      wordBank:
+        'Henry Cort &bull; Funtley Ironworks &bull; River Meon &bull; puddling furnace &bull; grooved rollers &bull; wrought iron &bull; Portsmouth Dockyard &bull; Royal Navy &bull; naval self-sufficiency',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
       timelineMission:
         '<strong>Milestone 1 (Funtley Puddling Furnace &bull; 1784):</strong> Sketch ironworkers at Funtley stirring molten iron in Cort’s reverberatory furnace beside the River Meon [🔥 reverberatory furnace &bull; 🥢 puddling rod &bull; 🌊 River Meon waterwheel].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (Portsmouth Dockyard Naval Trials &bull; 1787):</strong> Sketch Admiralty master smiths testing tough Funtley wrought iron anchors and mast hoops for the Royal Navy [⚓ heavy naval anchor &bull; 🔨 blacksmith anvil &bull; ⛵ warship at dockyard].',
@@ -201,15 +192,16 @@ const enquiryConfigs = [
     rightPage: {
       type: 'split',
       partA: {
-        tariff: 'Question 2(b): 4-Prompt Forensic Source Follow-Up [4 marks &bull; 5 mins]',
+        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
+        badge: 'FEATURE DRILL',
         question:
-          'How could you follow up Source B (Matthew Crabtree’s testimony to the Sadler Committee, 1832) to find out more about child labour in textile mills? [4 marks]',
-        hint: 'Use the 4 Edexcel prompts: Detail in Source B &bull; Question I would ask &bull; Type of source I would use &bull; How this would help me find out more.',
+          'Describe two features of working conditions for child labourers in Victorian textile mills. [4 marks]',
         stems:
-          'Detail in Source B that I would follow up: ... &bull; Question I would ask: ... &bull; What type of source I would use: ... &bull; How this would help me find out more: ...',
+          'Feature 1: One key feature was... &bull; Detail: Specifically, child piecers were forced to... &bull; Feature 2: A second key feature was... &bull; Detail: This caused severe injury because...',
       },
       partB: {
-        tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
+        tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
+        badge: 'STRUCTURED WRITING',
         question:
           'Explain one consequence of the 1858 Great Stink for public health in Victorian London. [4 marks]',
         hint: 'Focus on how the intolerable stench of the River Thames forced Parliament to fund Joseph Bazalgette’s monumental 1,100-mile underground interceptor sewer network.',
@@ -1648,7 +1640,7 @@ function compileIndustrialisationWorkbook() {
               <td style="padding: 18px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 18px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 2: Child Labour, Slums &amp; Public Health</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Forensic Follow-Up &amp; Consequence: Sadler 1832 &amp; Bazalgette</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Feature Drill &amp; Consequence: Child Labour &amp; Bazalgette</div>
               </td>
               <td style="padding: 18px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
               <td style="padding: 18px 8px; background: #ffffff;">&nbsp;</td>

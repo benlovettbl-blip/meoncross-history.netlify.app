@@ -102,23 +102,18 @@ const enquiryConfigs = [
     vocabPrompt:
       'Define the <strong>Diwani (1765)</strong> and explain how it fundamentally altered the East India Company’s authority in India:',
     rightPage: {
-      type: 'split',
-      partA: {
-        tariff: 'Question 1: Give Two Inferences [4 marks &bull; 5 mins]',
-        question:
-          'Give two inferences from Source A about British military leadership in 18th-century India. [4 marks]',
-        hint: 'Examine Clive’s posture, uniform, and the battlefield background. What does this suggest about British military ambition and prestige?',
-        stems:
-          'One inference I can make is that... &bull; The evidence that supports this is... &bull; A second inference is that... &bull; This is shown by...',
-      },
-      partB: {
-        tariff: 'Question 3: Explain One Similarity [4 marks &bull; 5 mins]',
-        question:
-          'Explain one similarity between the East India Company’s trading posts in India and early English colonial settlements in North America. [4 marks]',
-        hint: 'Consider royal charters granting commercial monopolies, fortified coastal enclaves, or reliance on native trade networks.',
-        stems:
-          'One similarity was... &bull; In India, the Company operated by... &bull; Similarly, in North America... &bull; Therefore, both shared...',
-      },
+      type: 'single_12',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      examStem:
+        'Explain why the East India Company was able to expand its territorial control across Bengal and India between 1600 and 1765. [12 marks]',
+      stimulus: [
+        'Royal charters granting trade monopolies and company private armies',
+        'The grant of the Diwani (1765) by Mughal Emperor Shah Alam II',
+      ],
+      connectives:
+        'A primary cause of the East India Company’s expansion was... &bull; In particular, royal charters granted... &bull; Furthermore, military victories such as the Battle of Plassey... &bull; Crucially, the 1765 Diwani granted the Company... &bull; Consequently, corporate merchants became...',
+      wordBank:
+        'East India Company &bull; Robert Clive &bull; Battle of Plassey (1757) &bull; Diwani (1765) &bull; Shah Alam II &bull; Bengal &bull; private army &bull; corporate monopoly &bull; tax extraction',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
       timelineMission:
         '<strong>Milestone 1 (The Leadenhall Merchant Ship &bull; 1600):</strong> Sketch an East Indiaman merchant sailing ship flying the company flag, laden with pepper sacks and cinnamon bales [⛵ tall ship &bull; 📜 royal charter &bull; 🌶️ spice sacks].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Imperial Handoff &bull; 1765):</strong> Sketch Mughal Emperor Shah Alam II on his raised dais handing the legal scroll of the Diwani to Robert Clive [👑 imperial throne &bull; 📜 tax scroll &bull; 💂 scarlet officer].',
@@ -184,20 +179,25 @@ const enquiryConfigs = [
     rightPage: {
       type: 'split',
       partA: {
-        tariff: 'Question 2(b): 4-Prompt Forensic Source Follow-Up [4 marks &bull; 5 mins]',
+        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
+        badge: 'FEATURE DRILL',
         question:
-          'How could you follow up Source A to find out more about conditions during the Middle Passage? [4 marks]',
-        hint: 'Use the 4 Edexcel prompts: Detail in Source A &bull; Question I would ask &bull; Type of source I would use &bull; How this would help me find out more.',
+          'Describe two features of conditions endured by enslaved Africans during the Middle Passage. [4 marks]',
         stems:
-          'Detail in Source A: The diagram shows 454 captives stowed on shelves... &bull; Question I would ask: What was the daily mortality rate from disease? &bull; Type of source: Ship surgeon’s medical journal &bull; How this would help: Provide firsthand clinical records of illness...',
+          'Feature 1: One key feature was... &bull; Detail: Specifically, on slave ships captives were... &bull; Feature 2: A second key feature was... &bull; Detail: This caused horrific suffering because...',
       },
       partB: {
-        tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
+        tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
+        badge: 'STRUCTURED WRITING',
         question:
           'Explain one consequence of the Zong massacre (1781) for the British abolitionist movement. [4 marks]',
         hint: 'Focus on how Granville Sharp used court transcripts to shock the public and expose the legal classification of human beings as insured cargo.',
         stems:
           'One consequence of the Zong massacre was... &bull; Specifically, when Captain Collingwood threw 133 captives overboard... &bull; This galvanised abolitionists because...',
+        connectives:
+          'A significant consequence was... &bull; For instance, the legal battle in London... &bull; This directly led to... &bull; Consequently, public outrage...',
+        wordBank:
+          'Zong massacre (1781) &bull; Captain Collingwood &bull; Granville Sharp &bull; Gregson v Gilbert &bull; human cargo &bull; insurance fraud &bull; abolitionist movement',
       },
       timelineMissionTitle: 'Centrefold Sketch Challenge 3',
       timelineMission:

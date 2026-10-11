@@ -104,27 +104,18 @@ const enquiryConfigs = [
     vocabPrompt:
       'Define <strong>The Feigned Retreat</strong> and explain why it was the decisive tactical turning point at Hastings:',
     rightPage: {
-      type: 'split',
-      partA: {
-        tariff: 'Question 1: Give Two Inferences [4 marks &bull; 5 mins]',
-        question:
-          'Give two inferences from Source A (The Bayeux Tapestry) about Anglo-Saxon and Norman warfare in 1066. [4 marks]',
-        hint: 'Examine the interlocking round shields of the Anglo-Saxon wall on Senlac Hill and the lances and stirrups of the Norman cavalry.',
-        stems:
-          'One inference I can make is that... &bull; The evidence that supports this is... &bull; A second inference is that... &bull; This is shown by...',
-      },
-      partB: {
-        tariff: 'Question 2: Explain One Causal Factor [4 marks &bull; 5 mins]',
-        question:
-          'Explain one factor that caused William of Normandy to achieve victory at the Battle of Hastings in 1066. [4 marks]',
-        hint: 'Focus on either Norman military advantages (cavalry, archery, feigned retreat) or Anglo-Saxon vulnerabilities (exhaustion from Stamford Bridge, loss of shield-wall discipline).',
-        stems:
-          'One decisive factor was... &bull; Specifically, during the battle... &bull; This resulted in William’s victory because... &bull; Therefore, without this factor...',
-        connectives:
-          'A primary reason was... &bull; For example, during the fighting... &bull; Consequently, this impacted the outcome because... &bull; Therefore, this proved decisive because...',
-        wordBank:
-          'Senlac Hill &bull; shield wall &bull; feigned retreat &bull; heavy cavalry &bull; housecarls &bull; Harold Godwinson &bull; Stamford Bridge &bull; Duke William',
-      },
+      type: 'single_12',
+      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      examStem:
+        'Explain why William of Normandy achieved victory at the Battle of Hastings in 1066. [12 marks]',
+      stimulus: [
+        'Norman military tactics, heavy cavalry, and the feigned retreat',
+        'Anglo-Saxon exhaustion and loss of shield-wall discipline',
+      ],
+      connectives:
+        'A primary cause of William’s victory was... &bull; Most decisively, the Norman tactic of the feigned retreat... &bull; Furthermore, King Harold’s Saxon army was critically weakened by... &bull; This exhaustion meant that when the shield wall broke... &bull; On balance, while Harold fought bravely, William’s victory was secured by...',
+      wordBank:
+        'Senlac Hill &bull; shield wall &bull; feigned retreat &bull; heavy cavalry &bull; housecarls &bull; Harold Godwinson &bull; Stamford Bridge &bull; Duke William &bull; Norman archers',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
       timelineMission:
         '<strong>Milestone 1 (The Senlac Shield Wall &bull; 1066):</strong> Sketch Anglo-Saxon housecarls with interlocking round shields and two-handed battleaxes resisting charging Norman knights [🛡️ round wooden shield &bull; 🪓 Danish battleaxe &bull; 🐎 charging Norman warhorse].<br style="display:block; margin-top:2px;"><strong>Milestone 2 (The Feigned Retreat &bull; 1066):</strong> Sketch Norman cavalry pretending to flee downhill while undisciplined Saxon fyrdmen break ranks to pursue [🐎 retreating knight &bull; 🏹 Norman archer &bull; 👑 fallen banner].',
@@ -192,15 +183,15 @@ const enquiryConfigs = [
     rightPage: {
       type: 'split',
       partA: {
-        tariff: 'Question 2(b): 4-Prompt Forensic Source Follow-Up [4 marks &bull; 5 mins]',
-        question:
-          'How could you follow up Source A to find out more about the impact of the Harrying of the North (1069–1070)? [4 marks]',
-        hint: 'Use the 4 Edexcel prompts: Detail in Source A &bull; Question I would ask &bull; Type of source I would use &bull; How this would help me find out more.',
+        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
+        badge: 'FEATURE DRILL',
+        question: 'Describe two features of Norman motte-and-bailey castles. [4 marks]',
         stems:
-          'Detail in Source A that I would follow up: ... &bull; Question I would ask: ... &bull; What type of source I would use: ... &bull; How this would help me find out more: ...',
+          'Feature 1: One key feature was... &bull; Detail: Specifically, this was constructed by... &bull; Feature 2: A second key feature was... &bull; Detail: This served the military purpose of...',
       },
       partB: {
-        tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
+        tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
+        badge: 'STRUCTURED WRITING',
         question:
           'Explain one consequence of the motte-and-bailey blitz for Anglo-Saxon resistance against Norman rule. [4 marks]',
         hint: 'Focus on how fortified castles allowed small Norman garrisons to dominate thousands of hostile Saxons and suppress regional revolts.',
@@ -1763,80 +1754,80 @@ function compileMedievalWorkbook() {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 1: 1066 &amp; Battle of Hastings</div>
                 <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Causal Analysis: Why did William win at Hastings?</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 2: Castles, Terror &amp; Domesday</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Source Follow-Up &amp; Motte-and-Bailey Blitz</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Feature Drill &amp; Motte-and-Bailey Blitz</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 3: Crown vs Church: Henry II &amp; Becket</div>
                 <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Contrasting Interpretations: Character of Becket</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 4: Magna Carta &amp; Medieval Kingship</div>
                 <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Narrative Account &amp; Importance of Clause 39</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 5: Black Death &amp; The Peasants' Revolt</div>
                 <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Evaluative Essay: Causes of Feudal Breakdown</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #0f284e; background: #f0f4f9;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Independent Study &amp; Notes Portfolio</div>
                 <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Pages 14–15 Enquiry Notes, Reflection &amp; Revision Tasks</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #f0f4f9;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #f0f4f9;">&nbsp;</td>
             </tr>
             <tr style="background: #ffffff; border-top: 1.5px solid #0f284e;">
-              <td style="padding: 16px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 17px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 17px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Teacher-Designated Assessment Task</div>
               </td>
-              <td style="padding: 16px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 17px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 17px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
           </tbody>
         </table>
