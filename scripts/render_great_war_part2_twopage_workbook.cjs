@@ -549,100 +549,6 @@ const enquiryConfigs = [
     rightPageQuip:
       'John Maynard Keynes resigned from the British peace delegation in protest, warning that impoverishing Germany would drag Europe into economic catastrophe.',
   },
-  {
-    lessonNum: 6,
-    id: 'lesson_6_middle_east_mandate',
-    title: 'Enquiry 6: A Line in the Sand: The Middle East & The Mandates (1915–1923)',
-    enquiryQuestion:
-      'How did secret wartime diplomacy and conflicting imperial promises redraw the map of the Middle East?',
-    specAnchor:
-      'Ottoman Empire war entry (1914) & threat to Suez Canal; McMahon-Hussein Correspondence (1915–16) and promises of Arab sovereignty; the Great Arab Revolt & T.E. Lawrence (1916–18); the secret Sykes-Picot Agreement (1916) and "a line in the sand"; the Balfour Declaration (1917) and British support for a Jewish national home; General Allenby captures Jerusalem on foot (1917); League of Nations Mandates at San Remo (1920); French suppression of Syrian independence (Battle of Maysalun); Winston Churchill and the 1921 Cairo Conference; modern historical debate on imperial cartography (Rogan, Shlaim).',
-    stages: [
-      {
-        step: 1,
-        date: '1914–1915',
-        paraRef: '[1.1–1.2]',
-        questionHeading: 'What forced Britain to promise an independent Arab kingdom in 1915?',
-        bullets: ['Ottoman Jihad Declared', 'Suez Canal Threatened', 'McMahon Pledges Kingdom'],
-        focusClue:
-          'Why did Ottoman entry threaten Britain’s empire, driving Britain to pledge Arab sovereignty in exchange for rebellion?',
-      },
-      {
-        step: 2,
-        date: 'June 1916',
-        paraRef: '[1.3]',
-        questionHeading:
-          'How did the Arab Revolt and desert sabotage assist British military victory?',
-        bullets: ['Sharif Hussein Rebel Shot', 'Hejaz Railway Sabotaged', '30,000 Turks Tied Down'],
-        focusClue:
-          'How did mobile desert guerrilla operations commanded by Emir Feisal and T.E. Lawrence paralyze Ottoman forces?',
-      },
-      {
-        step: 3,
-        date: 'May 1916–17',
-        paraRef: '[2.1–2.3]',
-        questionHeading: 'Why did the secret Sykes-Picot Agreement betray Britain’s Arab allies?',
-        bullets: ['Secret Anglo-French Deal', '"A Line in the Sand"', 'Bolshevik Leak Outrage'],
-        focusClue:
-          'How did Mark Sykes and François Georges-Picot carve the Middle East into colonies, and why did the 1917 Bolshevik leak cause fury?',
-      },
-      {
-        step: 4,
-        date: 'Nov–Dec 1917',
-        paraRef: '[3.1–3.3]',
-        questionHeading:
-          'How did the Balfour Declaration introduce a third contradictory commitment?',
-        bullets: ['Jewish National Home', '90% Arab Majority Ignored', 'Allenby Enters on Foot'],
-        focusClue:
-          'Why did Foreign Secretary Arthur Balfour promise a Jewish national home in Palestine, and why did Allenby enter Jerusalem on foot?',
-      },
-      {
-        step: 5,
-        date: '1919–1923',
-        paraRef: '[4.1–4.3]',
-        questionHeading:
-          'Did the Mandates system simply rebrand European imperialism in the Middle East?',
-        bullets: ['Article 22 Mandates', 'Battle of Maysalun 1920', 'Artificial Border Strife'],
-        focusClue:
-          'How did France and Britain crush Arab independence at San Remo, drawing artificial borders that ignited century-long regional conflict?',
-      },
-    ],
-    rightPage: {
-      type: 'single_12',
-      tariff: 'Question 6: Causal Explanation Essay [12 marks &bull; 15 mins]',
-      examStem:
-        'Explain why British policy in the Middle East between 1915 and 1923 created long-term conflict in the region. [12 marks]',
-      stimulus: [
-        'The McMahon-Hussein Correspondence and the secret Sykes-Picot Agreement',
-        'The Balfour Declaration (1917) and the League of Nations Mandates System (1920)',
-      ],
-      structureStrip: [
-        {
-          col: '1. CONTRADICTORY WARTIME PROMISES',
-          text: 'Explain how pledging Arab sovereignty to Sharif Hussein while secretly dividing the Ottoman provinces with France (Sykes-Picot) created lasting distrust and betrayal.',
-        },
-        {
-          col: '2. THE BALFOUR DECLARATION',
-          text: 'Explain how pledging a "national home for the Jewish people" without consulting the 90% Arab majority created irreconcilable national claims over Palestine.',
-        },
-        {
-          col: '3. MANDATES & ARTIFICIAL BORDERS',
-          text: 'Explain how France and Britain used League Mandates at San Remo to crush Arab independence and draw straight-line borders that caused modern regional strife.',
-        },
-      ],
-      connectives:
-        'A primary reason British policy created long-term conflict was... &bull; In the McMahon-Hussein letters, Britain promised... &bull; However, this directly clashed with the secret Sykes-Picot Agreement because... &bull; Furthermore, the Balfour Declaration introduced... &bull; Crucially, the 1920 Mandates system institutionalised... &bull; In conclusion, British imperial cartography caused generational conflict because...',
-      wordBank:
-        'McMahon-Hussein Correspondence &bull; Sharif Hussein &bull; Arab Revolt &bull; Sykes-Picot Agreement &bull; Arthur Balfour &bull; Balfour Declaration &bull; Zionism &bull; General Allenby &bull; San Remo Conference &bull; Mandates System',
-      timelineMissionTitle: 'Centrefold Sketch Challenge 6',
-      timelineMission:
-        '<strong>Milestone 6 (November 1917 &bull; Middle East Partition):</strong> Turn to Centrefold (Pages 8–9). Sketch Foreign Secretary Arthur Balfour holding the historic declaration letter beside General Allenby walking on foot through Jerusalem’s Jaffa Gate [📜 declaration letter &bull; 🏛️ Jaffa Gate arch &bull; 🚶‍♂️ General Allenby on foot].',
-    },
-    leftPageQuip:
-      'In December 1917, General Edmund Allenby dismounted his horse and entered Jerusalem on foot through the Jaffa Gate out of respect for the holy city.',
-    rightPageQuip:
-      'Historian Avi Shlaim notes that Britain made three mutually irreconcilable promises between 1915 and 1917, drawing arbitrary desert borders that continue to shape Middle Eastern conflicts today.',
-  },
 ];
 
 // ============================================================================
@@ -1458,7 +1364,7 @@ function compileGreatWarPart2Workbook() {
       <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 4px 8px; background: #f0f4f9; margin: 2px 0 5px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
         <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
           <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            1. Chronological Spines [Enquiries 1–6]
+            1. Chronological Spines [Enquiries 1–5]
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
             Structured chronological note-taking on each left page: 5 causal stages guiding pupil understanding as the teacher narrates the history.
@@ -1477,7 +1383,7 @@ function compileGreatWarPart2Workbook() {
             3. Centrefold Living Timeline &amp; Essays
           </div>
           <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and 6 dedicated enquiry spreads covering 1914–1923.
+            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and 5 dedicated enquiry spreads covering 1914–1919.
           </div>
         </div>
       </div>
@@ -1500,7 +1406,7 @@ function compileGreatWarPart2Workbook() {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 5px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.5px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 1: 1914 &amp; The Rush to the Colours
                 </div>
@@ -1516,7 +1422,7 @@ function compileGreatWarPart2Workbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 5px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.5px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 2: Trench Warfare &amp; The Haig Controversy (1915–1916)
                 </div>
@@ -1532,7 +1438,7 @@ function compileGreatWarPart2Workbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 5px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.5px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 3: Global Empire &amp; The Forgotten Fronts (1914–1918)
                 </div>
@@ -1548,7 +1454,7 @@ function compileGreatWarPart2Workbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 5px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.5px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 4: The Home Front &amp; Women’s Total War (1914–1918)
                 </div>
@@ -1564,28 +1470,12 @@ function compileGreatWarPart2Workbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 5px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.5px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 5: The Treaty of Versailles &amp; The Flawed Peace (1918–1919)
                 </div>
                 <div style="font-family: 'Georgia', serif; font-size: 7.2pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.15;">
                   Was the Treaty of Versailles an impossibly harsh peace that made another war inevitable, or an unenforced compromise?
-                </div>
-              </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
-              </td>
-              <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 5px 8px; border-right: 1.2px solid #cbd5e1;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
-                  Enquiry 6: A Line in the Sand: The Middle East &amp; The Mandates (1915–1923)
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.15;">
-                  How did secret wartime diplomacy and conflicting imperial promises redraw the map of the Middle East?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
@@ -1733,20 +1623,33 @@ function compileGreatWarPart2Workbook() {
           </p>
         </div>
 
-        <!-- Milestone 6: November 1917 -->
+        <!-- Milestone 6: 1917–1918 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
-              November 1917 &bull; The Balfour Declaration &amp; Middle East Partition
+              1917–1918 &bull; Global Empire Mobilisation &amp; 4 Million Troops
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 6</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
-            Foreign Secretary Arthur Balfour pledges British support for a Jewish national home in Palestine; conflicting with secret Sykes-Picot deals and pledges to Arab leaders, the stage is set for modern Middle Eastern partition.
+            Over 1.5 million Indian soldiers and hundreds of thousands of African, Caribbean, and Dominion troops fight across Europe, Africa, and the Middle East, sustaining the Allied war effort.
           </p>
         </div>
 
-        <!-- Milestone 7: 28 June 1919 -->
+        <!-- Milestone 7: 11 November 1918 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+              11 November 1918 &bull; The Hundred Days Offensive &amp; Armistice
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+            Allied combined-arms offensives break the Hindenburg Line; facing revolution and starvation at home, Germany signs the Armistice in Marshal Foch’s railway carriage, ending active combat.
+          </p>
+        </div>
+
+        <!-- Milestone 8: 28 June 1919 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
@@ -1755,26 +1658,13 @@ function compileGreatWarPart2Workbook() {
             <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
-            In the Hall of Mirrors at Versailles, Allied powers force Germany to accept Article 231 (War Guilt), pay £6.6 billion in reparations, and surrender 13% of its European territory, leaving Weimar Germany humiliated.
-          </p>
-        </div>
-
-        <!-- Milestone 8: 1920–1923 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
-              1920–1923 &bull; League of Nations Mandates &amp; Parish Remembrance
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 6</span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
-            The League of Nations grants Britain and France Class A Mandates over Palestine, Iraq, and Syria; across Britain, parishes erect permanent stone and timber war memorials to mourn 888,000 fallen service personnel.
+            In the Hall of Mirrors at Versailles, Allied powers force Germany to accept Article 231 (War Guilt), pay £6.6 billion in reparations, and surrender 13% of its European territory, creating a fragile peace.
           </p>
         </div>
 
       </div>
 
-      ${renderFooterStrip(9, 'Between 1914 and 1923, the Great War destroyed four historic empires and fundamentally remade the political map of the modern world.', 16)}
+      ${renderFooterStrip(9, 'Between 1914 and 1919, the Great War destroyed historic empires and fundamentally remade the political map of Europe.', 16)}
     </div>
   </div>
 `;
@@ -1792,10 +1682,16 @@ function compileGreatWarPart2Workbook() {
   html += renderRightPage(enquiryConfigs[4], 13);
 
   // ====================================================================
-  // PAGES 14–15: ENQUIRY 6 (THE MIDDLE EAST & THE MANDATES 1915–1923)
+  // PAGES 14–15: DEDICATED LINED NOTES & ESSAY PORTFOLIO
   // ====================================================================
-  html += renderSpinePage(enquiryConfigs[5], 14);
-  html += renderRightPage(enquiryConfigs[5], 15);
+  html += renderNotesPage(
+    14,
+    'Historical scholarship requires rigorous factual recall, primary evidence, and deep contextual grounding.',
+  );
+  html += renderNotesPage(
+    15,
+    'Extended writing synthesises causation, evaluates competing interpretations, and reaches a substantiated historical verdict.',
+  );
 
   // ====================================================================
   // PAGE 16: OUTSIDE BACK COVER (PROGRESS LEDGER + 5 QR CODES)
@@ -1907,81 +1803,70 @@ function compileGreatWarPart2Workbook() {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 21px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 21px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Enquiry 1: 1914 &amp; Rush to Colours</div>
                 <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Causal Explanation: Why did men rush to volunteer?</div>
               </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 21px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16.5px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 21px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 21px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 21px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Enquiry 2: Trench Warfare &amp; Haig</div>
                 <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Feature Description &amp; Somme Source Follow-Up</div>
               </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 21px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16.5px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 21px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 21px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 21px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Enquiry 3: Global Empire &amp; Memory</div>
                 <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Contrasting Interpretations: Empire Troops</div>
               </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 21px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16.5px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 21px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 21px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 21px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Enquiry 4: Home Front &amp; Women</div>
                 <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Narrative Account &amp; Importance of Munitionettes</div>
               </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 21px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16.5px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 21px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 21px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 21px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Enquiry 5: Versailles &amp; The Flawed Peace</div>
                 <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Evaluative Essay: Was Versailles Inevitably Fatal?</div>
               </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 21px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16.5px 8px; background: #ffffff;">&nbsp;</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #0f284e; background: #f0f4f9;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Enquiry 6: Middle East &amp; The Mandates (1915–1923)</div>
-                <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Causal Explanation: Why British Policy Created Long-Term Conflict</div>
-              </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
-                &nbsp;
-              </td>
-              <td style="padding: 16.5px 8px; background: #f0f4f9;">&nbsp;</td>
+              <td style="padding: 21px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
             <tr style="background: #ffffff; border-top: 1.5px solid #0f284e;">
-              <td style="padding: 16.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
-              <td style="padding: 16.5px 8px; border-right: 1px solid #cbd5e1;">
+              <td style="padding: 21px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
+              <td style="padding: 21px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.2pt; color: #0f284e;">Teacher-Designated Assessment Task</div>
                 <div style="font-size: 7.2pt; color: #475569; margin-top: 1px;">Synoptic End-of-Unit Assessment &amp; Revision Target</div>
               </td>
-              <td style="padding: 16.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
+              <td style="padding: 21px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">
                 &nbsp;
               </td>
-              <td style="padding: 16.5px 8px; background: #ffffff;">&nbsp;</td>
+              <td style="padding: 21px 8px; background: #ffffff;">&nbsp;</td>
             </tr>
           </tbody>
         </table>
@@ -1997,7 +1882,7 @@ function compileGreatWarPart2Workbook() {
             ONLINE RECALL
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; text-align: center;">
           ${enquiryConfigs
             .map((cfg, idx) => {
               const quizUrl =
@@ -2011,7 +1896,6 @@ function compileGreatWarPart2Workbook() {
                 'Global Empire',
                 'Home Front',
                 'Versailles 1919',
-                'Middle East',
               ];
               return (
                 '<div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">' +
@@ -2021,7 +1905,7 @@ function compileGreatWarPart2Workbook() {
                 '<div style="font-family: \'Inter\', sans-serif; font-size: 6pt; font-weight: 700; color: #475569; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">' +
                 shortLabels[idx] +
                 '</div>' +
-                '<div style="width: 23mm; height: 23mm; margin: 0 auto 2px auto;">' +
+                '<div style="width: 24.5mm; height: 24.5mm; margin: 0 auto 2px auto;">' +
                 qrSvg +
                 '</div>' +
                 '<span style="font-family: \'Inter\', sans-serif; font-size: 5.8pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1px 4px; border-radius: 2px; margin-bottom: 2px;">Scan to Quiz</span>' +
