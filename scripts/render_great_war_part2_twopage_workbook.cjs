@@ -1062,9 +1062,10 @@ function renderRightPage(cfg, pageNum) {
 // ============================================================================
 function compileGreatWarPart2Workbook() {
   const coverImgBase64 =
+    getBase64Image('public/images/versailles_signing_1919_orpen.jpg') ||
+    getBase64Image('images/versailles_signing_1919_orpen.jpg') ||
     getBase64Image('public/images/bg_great_war_part2.jpg') ||
     getBase64Image('images/bg_great_war_part2.jpg') ||
-    getBase64Image('public/images/great_war_cover.jpg') ||
     '';
 
   let html = `<!DOCTYPE html>
@@ -1259,33 +1260,33 @@ function compileGreatWarPart2Workbook() {
 
             <!-- 2. Historical Context -->
             <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
-              Between August 1914 and November 1918, the First World War destroyed four European empires, cost over 20 million lives, and transformed Britain into a fully mobilised modern warfare state:
+              On 28 June 1919, exactly five years after the assassination of Franz Ferdinand, Allied statesmen gathered in the Hall of Mirrors at Versailles to impose peace upon defeated Germany:
             </p>
 
             <!-- 3. Four Core Historical Features -->
             <div style="display: flex; flex-direction: column; gap: 3px;">
               <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. Voluntary Enlistment &amp; Pals Battalions:</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. The Big Three &amp; Conflicting Agendas:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Lacking peacetime conscription, over 2.5 million British men volunteered in 1914–1915, forming civic Pals units like the Portsmouth and Hampshire Pals.
+                  Seated at the centre table are Woodrow Wilson (idealist League of Nations), Georges Clemenceau (seeking French revenge &amp; disarmament), and David Lloyd George (pragmatic imperial compromise).
                 </div>
               </div>
               <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. Industrial Firepower &amp; The Somme Deadlock:</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. The Imposition of the Diktat:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Rapid-fire artillery and Maxim machine guns forced armies underground into 400 miles of trenches, leading to 57,470 casualties on 1 July 1916.
+                  In the foreground, German envoys Johannes Bell and Hermann Müller are compelled to sign Article 231 (War Guilt) and £6.6bn in reparations without negotiation under naval blockade.
                 </div>
               </div>
               <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Global Imperial Sacrifice &amp; Erasure:</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Global Imperial Representation:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Over 4 million non-white colonial soldiers and labourers from India, Africa, and the Caribbean sustained the Empire’s war effort across multiple continents.
+                  Flanked behind the leaders stand imperial dignitaries—including the Maharaja of Bikaner—symbolising over 4 million colonial troops whose sacrifices sustained the Allied victory.
                 </div>
               </div>
               <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. The Flawed Peace &amp; Territorial Mandates:</strong>
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. The Seeds of Future Conflict:</strong>
                 <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  The 1919 Treaty of Versailles and Sykes-Picot imperial partition dismantled old empires but sowed the seeds of 1939 and ongoing Middle East conflict.
+                  Above the delegates, the baroque ceiling ironically proclaims ‘Le Roy Gouverne’ (‘The King Governs’), foreshadowing Marshal Foch’s warning: ‘This is not peace. It is an armistice for twenty years.’
                 </div>
               </div>
             </div>
@@ -1293,22 +1294,22 @@ function compileGreatWarPart2Workbook() {
             <!-- 4. Three-Pillar Propaganda Decoding Matrix -->
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
               <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Kitchener Call</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Voluntary mass enlistment in 1914.</div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">The Big Three</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Wilson, Clemenceau, Lloyd George.</div>
               </div>
               <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Trench Systems</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Industrial stalemate &amp; barbed wire.</div>
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">German Signatories</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Signing the Diktat &amp; War Guilt.</div>
               </div>
               <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
                 <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Hall of Mirrors</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Versailles punitive peace (1919).</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">1871 German Empire reversed.</div>
               </div>
             </div>
 
             <!-- 5. Disciplinary Significance Anchor -->
             <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.25; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
-              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> The Great War shattered nineteenth-century European empires, brought women into industrial citizenship, and established the ideological conflicts that defined the twentieth century.
+              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> The Treaty of Versailles formally concluded the Great War, dismantled four European empires, and created the economic and territorial grievances that paved the road to the Second World War.
             </div>
 
             <!-- 6. Targeted Disciplinary Hinge Question -->
@@ -1318,13 +1319,13 @@ function compileGreatWarPart2Workbook() {
                 <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
               </div>
               <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.2; margin-top: 1px;">
-                Did the Treaty of Versailles successfully resolve the underlying imperial rivalries of 1914, or did its punitive terms guarantee that European conflict would reignite twenty years later?
+                Did the Allied peacemakers at Versailles make another war inevitable through excessive severity, or was the fatal weakness their failure to enforce the treaty’s military terms when challenged in the 1930s?
               </div>
             </div>
           </div>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
-          <span><strong>Primary Visual Evidence:</strong> <em>Sarajevo Assassination to Versailles Hall of Mirrors (1914–1919)</em></span>
+          <span><strong>Primary Visual Evidence:</strong> <em>Sir William Orpen, The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)</em></span>
           <span style="font-weight: 700; color: #93c5fd;">ARCHIVE RECORD &bull; IMPERIAL WAR MUSEUM</span>
         </div>
       </div>
