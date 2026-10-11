@@ -76,6 +76,33 @@ export function buildDynamicStudioItem(payload) {
     payload.image ||
     '';
 
+  // Check if this source already has a curated, handcrafted masterpiece entry
+  const targetImgBase = image
+    ? image
+        .split('/')
+        .pop()
+        .toLowerCase()
+        .replace(/\.[a-z0-9]+$/, '')
+    : '';
+  const existingMasterpiece = MASTERPIECES_DATA.find((m) => {
+    if (payload.id && m.id === payload.id) return true;
+    if (targetImgBase && m.image) {
+      const mImgBase = m.image
+        .split('/')
+        .pop()
+        .toLowerCase()
+        .replace(/\.[a-z0-9]+$/, '');
+      if (mImgBase === targetImgBase) return true;
+      if (targetImgBase.length > 5 && mImgBase.includes(targetImgBase)) return true;
+    }
+    if (cleanTitle && m.title && m.title.toLowerCase().includes(cleanTitle.toLowerCase()))
+      return true;
+    return false;
+  });
+  if (existingMasterpiece) {
+    return existingMasterpiece;
+  }
+
   const caption =
     (source && source.caption) ||
     (isBanner && lesson && typeof lesson.banner === 'object' && lesson.banner.caption) ||
@@ -85,7 +112,7 @@ export function buildDynamicStudioItem(payload) {
   const hinge =
     (source && source.hinge_question) ||
     (lesson && lesson.enquiry) ||
-    'What does this primary source reveal about historical power and intent?';
+    'What does this primary source reveal about historical power, motive, and intent?';
   const citation =
     (source && source.citation) || payload.citation || 'Archival & Museum Heritage Collection';
 
@@ -115,6 +142,86 @@ export function buildDynamicStudioItem(payload) {
           .pop()
           .replace(/[^a-zA-Z0-9]/g, '_')
       : Date.now());
+
+  // Pedagogically tailored prompt synthesis
+  const lowerText = (cleanTitle + ' ' + caption + ' ' + context).toLowerCase();
+
+  // Phase 1: Forensic Look (Visual anchors)
+  let forensicQuestion = '';
+  let forensicHint = '';
+  if (source && source.tasks && source.tasks.length && source.tasks[0].text) {
+    const taskText = source.tasks[0].text.replace(/^Task\s*\d*:\s*/i, '');
+    forensicQuestion = `Forensic Observation: Examine the composition carefully. ${taskText} What details of posture, expression, or placement stand out?`;
+    forensicHint =
+      'Direct students to observe silently and note the specific visual focal point indicated.';
+  } else if (
+    /portrait|monarch|king|queen|emperor|chancellor|general|officer|sepoy|figure/i.test(lowerText)
+  ) {
+    forensicQuestion = `Scan the subject from posture to attire: Notice the clothing, regalia or uniform, physical posture, and objects held in hand. How does the artist use lighting and framing to signal status and authority? ${caption ? 'Detail: ' + caption : ''}`;
+    forensicHint =
+      'Direct pupils to observe in complete silence, focusing on posture, gaze, hands, and symbols of rank.';
+  } else if (/poster|propaganda|recruiting|enlistment|cartoon|satire|caricature/i.test(lowerText)) {
+    forensicQuestion = `Scan every visual element methodically: Observe the central focal figure, the accompanying slogans, and the deliberate contrast between foreground and background. What immediate emotional reaction was this image engineered to provoke?`;
+    forensicHint =
+      'Encourage pupils to look for deliberate exaggeration, emotional triggers, and moral guilt.';
+  } else if (
+    /trench|battle|war|soldier|ship|dreadnought|artillery|bombardment|mud/i.test(lowerText)
+  ) {
+    forensicQuestion = `Trace the scene from immediate foreground to distant horizon: Observe the machinery, terrain, physical conditions, and human figures. What specific details provide evidence of the reality of warfare versus heroic myth?`;
+    forensicHint =
+      'Instruct students to look for authentic physical details: weather, mud, equipment, and facial expressions.';
+  } else if (/treaty|charter|document|act|proclamation|map|scroll/i.test(lowerText)) {
+    forensicQuestion = `Inspect the formal presentation: Look at the seals, script, signatures, headings, and margins. What visual features prove official legal legitimacy, and whose interests are recorded versus omitted?`;
+    forensicHint =
+      'Guide students to notice how official documents project royal or state power through formal parchment and seals.';
+  } else {
+    forensicQuestion = `Scan the entire source methodically: Observe the central figures, spatial arrangement, background details, and symbolic objects. What key visual choices indicate the purpose and viewpoint of the creator? ${caption ? 'Note: ' + caption : ''}`;
+    forensicHint =
+      'Instruct pupils to observe in complete silence, noting physical details, lighting, clothing, and expressions.';
+  }
+
+  // Phase 2: Turn & Talk (Provenance & Historical Dilemma)
+  let turnAndTalkQuestion = '';
+  let turnAndTalkHint = '';
+  if (source && source.provenance_clues && source.provenance_clues.length) {
+    const provSnippet = source.provenance_clues.slice(0, 2).join(' • ');
+    turnAndTalkQuestion = `Turn to your partner: Primary sources are constructed with purpose. Considering the creator and audience (${provSnippet}), why was it vital to present the scene in this exact manner? What perspective might be hidden?`;
+    turnAndTalkHint =
+      'Prompt students to debate how the creator’s motive shaped which details were shown and which were suppressed.';
+  } else if (context) {
+    const cleanCtx = context.replace(/\s*Hinge Question:.*$/i, '').trim();
+    turnAndTalkQuestion = `Turn to your partner: Context: ${cleanCtx}. Why did the creator choose to depict this specific event or individual in this way, and how would contemporary viewers have reacted?`;
+    turnAndTalkHint =
+      'Encourage students to connect the historical context directly to the intended audience’s beliefs.';
+  } else {
+    turnAndTalkQuestion = `Turn to your partner: Every primary source reflects a deliberate historical viewpoint. Who was the intended audience for this record, and what specific action, belief, or loyalty did the creator seek to inspire?`;
+    turnAndTalkHint =
+      'Encourage students to evaluate the author, audience, and motive behind the historical source.';
+  }
+
+  // Phase 3: Hinge Verdict (Evaluative historical conclusion)
+  let cleanHinge = hinge.replace(/^Hinge Question:\s*/i, '').trim();
+  if (!cleanHinge.endsWith('?')) cleanHinge += '?';
+  const hingeQuestion = `Hinge Question: ${cleanHinge}`;
+
+  // Detective Riddle Synthesis
+  let riddlePrompt = '';
+  let riddleReveal = '';
+  if (source && source.tasks && source.tasks.length > 1 && source.tasks[1].text) {
+    riddlePrompt = source.tasks[1].text.replace(/^Task\s*\d*:\s*/i, '');
+    riddleReveal = (source.tasks[1].model_answer || source.tasks[1].starter || caption || context)
+      .replace(/^\(/, '')
+      .replace(/\)$/, '');
+  } else if (source && source.provenance_clues && source.provenance_clues.length) {
+    riddlePrompt = `Spot the Provenance Clue: How do the creator's background and intended audience reveal the underlying motive behind this source?`;
+    riddleReveal = source.provenance_clues.join(' — ');
+  } else {
+    riddlePrompt = `Spot the Decisive Detail: What specific visual feature, symbol, or inscription in this record provides the most powerful clue to understanding its historical significance?`;
+    riddleReveal =
+      caption ||
+      context ||
+      'Careful examination reveals that primary sources reflect the political and cultural priorities of the era in which they were created.';
+  }
 
   return {
     id,
@@ -148,9 +255,8 @@ export function buildDynamicStudioItem(payload) {
         badge: 'Silent Observation',
         color: '#f59e0b',
         icon: 'fa-magnifying-glass',
-        question: `Scan the entire source carefully: What key figures, symbols, setting details, or actions immediately stand out? ${caption ? 'Notice: ' + caption : ''}`,
-        teacherHint:
-          'Instruct pupils to observe in complete silence, noting physical details, lighting, clothing, and expressions.',
+        question: forensicQuestion,
+        teacherHint: forensicHint,
       },
       {
         step: 2,
@@ -159,9 +265,8 @@ export function buildDynamicStudioItem(payload) {
         badge: 'Paired Discussion',
         color: '#8b5cf6',
         icon: 'fa-comments',
-        question: `Turn to your partner: Why was this source created at this specific historical moment? ${context ? 'Context: ' + context : ''}`,
-        teacherHint:
-          'Encourage students to consider the author, audience, and motive behind the source.',
+        question: turnAndTalkQuestion,
+        teacherHint: turnAndTalkHint,
       },
       {
         step: 3,
@@ -170,21 +275,15 @@ export function buildDynamicStudioItem(payload) {
         badge: 'Classroom Consensus',
         color: '#ef4444',
         icon: 'fa-gavel',
-        question: hinge.replace(/^Hinge Question:\s*/i, 'Hinge Question: '),
+        question: hingeQuestion,
         teacherHint:
           'Take a fast show of hands or mini-whiteboard response before leading whole-class debrief.',
       },
     ],
     detectiveRiddle: {
       title: isArtwork ? 'The Curator’s Detective Challenge' : 'The Archival Detective Challenge',
-      riddle:
-        (source && source.how_useful_question) ||
-        `How does this source provide crucial evidence for understanding ${lesson ? lesson.title : 'this historical period'}?`,
-      reveal:
-        (source && source.provenance_clues && source.provenance_clues.join(' ')) ||
-        context ||
-        caption ||
-        'Primary evidence from the historical record.',
+      riddle: riddlePrompt,
+      reveal: riddleReveal,
     },
   };
 }

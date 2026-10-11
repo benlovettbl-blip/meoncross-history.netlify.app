@@ -1762,4 +1762,266 @@ export const MASTERPIECES_DATA = [
         'The Great Seal of England! Originally, King John’s two-sided beeswax seal hung from the bottom slit on braided green-and-pink silk cords. Over 800 years of handling and damp storage, the wax seal melted or broke off this British Library exemplar, though the slit and seal cords remain clearly visible.',
     },
   },
+  {
+    id: 'werner_proclamation_german_empire_1871',
+    weekTitle: 'Masterpiece Studio · The Birth of an Empire',
+    title: 'The Proclamation of the German Empire (18 January 1871)',
+    artist: 'Anton von Werner',
+    artistDates: '1843–1915',
+    date: '1885 (Friedrichsruh Version)',
+    medium: 'Oil on canvas',
+    location: 'Bismarck Museum, Friedrichsruh / Deutsches Historisches Museum, Berlin',
+    dimensions: '167 cm × 202 cm',
+    image: '/images/werner_versailles_1871_highres.jpg',
+    curatorBadge: 'Prussian Realism · Imperial Foundation Monument',
+    curatorHook:
+      'Kaiser Wilhelm I is proclaimed German Emperor inside Louis XIV’s legendary Hall of Mirrors at Versailles following Prussia’s crushing defeat of France. Surrounded by a sea of cheering Prussian princes, marshals, and raised sabres, Chancellor Otto von Bismarck commands the exact visual center in dazzling white dress uniform.',
+    thematicLinks: [
+      'German Unification (1871) & Blood and Iron',
+      'The Franco-Prussian War & The Legacy of Revanche',
+      'The European Balance of Power & Encirclement Fears',
+    ],
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the hall from the raised royal dais to the floor: Notice who stands elevated with the Emperor versus who stands in the center of the hall. Count the raised helmets and sabres. Who is wearing a brilliant white uniform in the middle of a sea of dark blue officers, and why does your eye immediately lock onto him?',
+        teacherHint:
+          'Instruct pupils to identify Chancellor Otto von Bismarck in the pure white uniform of the White Cuirassiers.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Why did the Prussian army stage the coronation of the German Emperor inside the historic palace of Versailles near Paris rather than in Berlin? What lasting emotional impact did this deliberate humiliation have on French national pride?',
+        teacherHint:
+          'Guide students to connect this public coronation at Versailles directly to the French desire for "Revanche" and the annexation of Alsace-Lorraine.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Does Werner present the unification of Germany as a triumph of democratic national will, or as an autocratic military conquest achieved by Prussian "Blood and Iron"?',
+        teacherHint:
+          'Ask for mini-whiteboard responses noting the complete absence of civilian politicians or democratic representatives.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Spot the White Uniform: Why is Otto von Bismarck wearing the pure white dress uniform of the White Cuirassiers in this painting, when contemporary eyewitness records prove he actually wore a plain blue uniform on that cold January day in 1871?',
+      reveal:
+        'Artistic propaganda! Werner repainted the historic scene in 1885 as a 70th-birthday gift for Bismarck from the Prussian Royal Family. Kaiser Wilhelm I personally requested that Bismarck be clad in white so the "Iron Chancellor" would stand out as the luminous, indispensable political mastermind who forged the German Empire!',
+    },
+  },
+  {
+    id: 'orpen_signing_treaty_versailles_1919',
+    weekTitle: 'Masterpiece Studio · The Peace Settlement',
+    title: 'The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)',
+    artist: 'Sir William Orpen',
+    artistDates: '1878–1931',
+    date: '1919',
+    medium: 'Oil on canvas',
+    location: 'Imperial War Museum, London',
+    dimensions: '152.4 cm × 127 cm',
+    image: '/images/versailles_signing_1919_orpen.jpg',
+    curatorBadge: 'Official War Art · Postwar Diplomatic Settlement',
+    curatorHook:
+      'Sir William Orpen’s monumental record of the signing of the Treaty of Versailles. The world’s most powerful statesmen—including Wilson, Clemenceau, and Lloyd George—sit dwarfed beneath the towering golden mirrors and gilded vaults of Louis XIV’s palace, while two German delegates bend forward to sign the dictated peace terms.',
+    thematicLinks: [
+      'The Paris Peace Conference & The Big Three (1919)',
+      'The Treaty of Versailles, War Guilt & The "Diktat"',
+      'From the Great War to the Origins of World War Two',
+    ],
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Examine the scale of the room: Compare the small figures of the world leaders seated at the long table with the towering, cavernous mirrors and crystal chandeliers above them. Who are the two figures hunched forward signing the parchment, and why did Orpen make the politicians appear so tiny in comparison to the architecture?',
+        teacherHint:
+          'Point out Johannes Bell and Hermann Müller, the two isolated German representatives signing under duress.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: The French government insisted on holding the signing ceremony in the Hall of Mirrors—the exact room where Germany was proclaimed an empire in 1871. What message was French Prime Minister Georges Clemenceau sending to the defeated German nation?',
+        teacherHint:
+          'Encourage students to discuss symmetry, revenge, and how the treaty sought to erase the humiliation of 1871.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was Orpen celebrating the triumphant victory of the Allied democracies, or was he offering a cynical critique of vain politicians planting the seeds of another world war?',
+        teacherHint:
+          'Highlight Orpen’s disillusionment with the politicians who ignored the sacrifice of millions of dead soldiers.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Curator’s Detective Challenge',
+      riddle:
+        'Spot the Artist’s True Allegiance: Sir William Orpen was paid £3,000 (a small fortune) to paint this victory scene, but what did he do with his final commission painting of the peace conference?',
+      reveal:
+        'Orpen was so disgusted by the arrogance of the politicians at Versailles that he wiped out their portraits in his third official painting and replaced them with a simple, anonymous coffin draped in the Union Flag guarded by two ghostly soldiers in rags—titled "To the Unknown British Soldier in France". The Imperial War Museum initially refused to accept it!',
+    },
+  },
+  {
+    id: 'leete_kitchener_wants_you_1914',
+    weekTitle: 'Source Spotlight · Recruitment & Propaganda',
+    title: 'Lord Kitchener Wants You (5 September 1914)',
+    artist: 'Alfred Leete',
+    artistDates: '1882–1933',
+    date: 'September 1914',
+    medium: 'Lithograph recruitment poster print',
+    location: 'Imperial War Museum, London / National Portrait Gallery',
+    dimensions: '75 cm × 50 cm',
+    image: '/images/gw_kitchener_portrait.jpg',
+    isArtwork: false,
+    curatorBadge: 'WWI Propaganda · Mass Enlistment Icon',
+    curatorHook:
+      'The most influential wartime propaganda image ever designed: Field Marshal Lord Kitchener, British Secretary of State for War, staring hypnotically forward with an outstretched index finger demanding "YOUR COUNTRY NEEDS YOU". Over two million men volunteered in the opening months of the war.',
+    thematicLinks: [
+      'Recruitment, Enlistment & Pals Battalions (1914)',
+      'Wartime Propaganda & The Psychological Home Front',
+      'The Transition to Total War & Conscription (1916)',
+    ],
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Look directly into Kitchener’s face: Notice his eyes, prominent handlebar moustache, Field Marshal cap, and massive foreshortened index finger pointing directly forward. Move your head slowly from side to side—what psychological optical illusion occurs with his gaze and finger?',
+        teacherHint:
+          'Explain how the foreshortened finger and forward gaze create the illusion of tracking the viewer wherever they stand.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: Before conscription in 1916, Britain relied entirely on voluntary enlistment. Why did the recruitment committee choose a stern, military commander rather than King George V or elected Prime Minister Asquith?',
+        teacherHint:
+          'Emphasize Kitchener’s reputation as an incorruptible national hero and his early prediction of a long, costly war.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Was the runaway success of early British recruitment driven primarily by Kitchener’s intimidating image, or by patriotic peer pressure and the naive belief that the war would be over by Christmas?',
+        teacherHint:
+          'Debrief by contrasting the poster’s direct personal guilt with the excitement of "Pals Battalions".',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Archival Detective Challenge',
+      riddle:
+        'Spot the Cover Story: This image is world-famous as an official government poster, but where did it actually appear first on 5 September 1914?',
+      reveal:
+        'It was not originally an official government poster at all! It first appeared as the cover illustration for "London Opinion", a popular weekly satirical entertainment and gossip magazine priced at one penny. The Parliamentary Recruiting Committee recognized its extraordinary psychological power and licensed it for street billboards across the British Empire, inspiring America’s famous Uncle Sam poster!',
+    },
+  },
+  {
+    id: 'kealey_women_say_go_1915',
+    weekTitle: 'Source Spotlight · The Home Front',
+    title: 'Women of Britain Say "GO!" (1915)',
+    artist: 'E.J. Kealey',
+    artistDates: 'fl. 1914–1918',
+    date: '1915',
+    medium: 'Lithograph recruitment poster print',
+    location: 'Parliamentary Recruiting Committee Poster No. 75 / Imperial War Museum',
+    dimensions: '76 cm × 51 cm',
+    image: '/images/gw_women_say_go.jpg',
+    isArtwork: false,
+    curatorBadge: 'WWI Propaganda · Gender & Conscription Pressure',
+    curatorHook:
+      'A masterclass in domestic psychological pressure: a mother holding her young boy’s shoulder and an older woman look out from a cottage window as columns of British soldiers march away to the front. Published by the Parliamentary Recruiting Committee in 1915 as voluntary enlistment began to dry up.',
+    thematicLinks: [
+      'Propaganda & Domestic Guilt in Wartime Britain',
+      'Changing Gender Roles & Women’s War Work',
+      'The Failure of Voluntary Enlistment & Conscription (1916)',
+    ],
+    starterQuestions: [
+      {
+        step: 1,
+        timeRange: '03:00 – 02:00',
+        phaseName: 'Forensic Look',
+        badge: 'Silent Observation',
+        color: '#f59e0b',
+        icon: 'fa-magnifying-glass',
+        question:
+          'Scan the window frame and the landscape: Observe the mother holding her young son’s shoulder while an older woman clenches her hands in resolve. Trace the line of marching soldiers disappearing over the sunlit rolling hill. What emotional contrast is created between the safe domestic room and the distant military front?',
+        teacherHint:
+          'Direct pupils to notice how the cottage interior is framed as safe and sheltered, while the men outside are marching to face danger.',
+      },
+      {
+        step: 2,
+        timeRange: '02:00 – 00:30',
+        phaseName: 'Turn & Talk',
+        badge: 'Paired Discussion',
+        color: '#8b5cf6',
+        icon: 'fa-comments',
+        question:
+          'Turn to your partner: This poster was designed specifically for men who had hesitated to volunteer. How does the slogan "Women of Britain Say GO!" weaponize female approval, family honor, and guilt against civilian men staying at home?',
+        teacherHint:
+          'Encourage students to connect this to the White Feather movement and public shaming of eligible civilian men.',
+      },
+      {
+        step: 3,
+        timeRange: '00:30 – 00:00',
+        phaseName: 'Hinge Verdict',
+        badge: 'Classroom Consensus',
+        color: '#ef4444',
+        icon: 'fa-gavel',
+        question:
+          'Hinge Question: Does this poster prove that British women enthusiastically wanted their husbands and sons to fight, or was it coercive state propaganda exploiting family loyalty to delay compulsory conscription?',
+        teacherHint:
+          'Conclude by showing how voluntary recruitment collapsed in late 1915 despite posters like this, forcing the 1916 Military Service Act.',
+      },
+    ],
+    detectiveRiddle: {
+      title: 'The Archival Detective Challenge',
+      riddle:
+        'Spot the Social Class Clue: Look at the clothing, hair, curtains, and neat interior of the cottage window. What specific social class was this poster targeting, and why?',
+      reveal:
+        'The figures represent the respectable, working-class and lower-middle-class British household. By mid-1915, upper-class university men had already enlisted as officers in huge numbers; the British government urgently needed working-class factory workers, shop assistants, and clerks to fill the ranks of Kitchener’s New Armies before compulsory conscription became inevitable in 1916!',
+    },
+  },
 ];

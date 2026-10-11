@@ -38,9 +38,9 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
     retrieval: {
       title: 'Causes of the Great War Knowledge Retrieval Companion',
-      label: 'Retrieval Companion (48 Qs)',
+      label: 'Retrieval Companion (40 Qs)',
       htmlUrl: '/units/great_war/quiz_pack.html',
-      pdfUrl: '/pdfs/great_war_recall_quiz_FULL.pdf',
+      pdfUrl: '/pdfs/great_war_quiz_pack_FINAL_V1.pdf',
     },
   },
   great_war_part2: {
@@ -58,9 +58,9 @@ export const CURRICULAR_PILLARS_CATALOG = {
     },
     retrieval: {
       title: 'Course of the Great War Knowledge Retrieval Companion',
-      label: 'Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
       htmlUrl: '/units/great_war_part2/quiz_pack.html',
-      pdfUrl: '/pdfs/great_war_part2_quiz_pack_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/great_war_part2_quiz_pack_FINAL_V1.pdf',
     },
   },
   medieval_england: {
@@ -77,10 +77,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/medieval_england_pupil_workbook_FINAL_V17.pdf',
     },
     retrieval: {
-      title: 'Medieval England Mastery & Retrieval Pack',
-      label: 'Retrieval Companion',
+      title: 'Medieval England Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
       htmlUrl: '/units/medieval_england/quiz_pack.html',
-      pdfUrl: '/pdfs/medieval_england_mastery_pack_full_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/medieval_england_quiz_pack.pdf',
     },
   },
   early_modern_world: {
@@ -145,10 +145,10 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
     },
     retrieval: {
-      title: 'Industrialisation & Empire Mastery & Retrieval Pack',
-      label: 'Retrieval Companion',
+      title: 'Industrialisation & Empire Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
       htmlUrl: '/units/industrialisation_and_empire/quiz_pack.html',
-      pdfUrl: '/pdfs/industrialisation_and_empire_mastery_pack_full_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/industrialisation_and_empire_quiz_pack.pdf',
     },
   },
   water_and_sanitation: {

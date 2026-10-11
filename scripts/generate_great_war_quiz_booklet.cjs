@@ -1,24 +1,24 @@
 /**
  * generate_great_war_quiz_booklet.cjs
  *
- * Compiles the 12-Page A5 Saddle-Stitch Knowledge Retrieval & Homework Companion
- * for KS3 History: Causes of the Great War (1871–1914).
+ * Compiles the 8-Page Saddle-Stitch Knowledge Retrieval & Homework Companion
+ * for KS3 History (Year 9): Causes of the Great War (1871–1914).
  *
- * Page Architecture (12-Page A5 Booklet / 3 sheets A4 landscape folded in half):
+ * Page Architecture (8-Page Saddle-Stitch Booklet / 2 sheets A4 landscape folded in half):
  * - Page 1: Uniform Front Cover & Formative Homework & Retrieval Tracking Ledger
- *           (Scholar box, Attempt 1 vs 2, Text-only Retrieval Strength [ ] Instant [ ] Effortful [ ] Restudy,
- *           Roomy Parent Initial box, QR code to interactive portal)
- * - Page 2: Inside Front Cover — Master Chronology Domino Flowchart (1871–1914)
- * - Pages 3–8: 1 Dedicated Page per Lesson (Lessons 1 to 6 • 8 questions each)
- *              Featuring 2 write-in handwriting lines per question:
- *              Line 1: Core Fact
- *              Line 2: The Explanation
- * - Page 9: Department Marking Bank (Part 1 • Lessons 1–3 • Bold answers + The Explanation + [✓][✗])
- * - Page 10: Department Marking Bank (Part 2 • Lessons 4–6 • Bold answers + The Explanation + [✓][✗])
- * - Page 11: Key Historical Figures Gallery (7 protagonists) & Academic Vocabulary with Phonetics
- * - Page 12: Back Cover — Summative Assessment Preparation & Essay Architect
- *            ("Why did the First World War break out in August 1914?" • M.A.I.N. matrix,
- *            Fischer vs. Clark historiography, sentence starters & connectives, Archival Seal)
+ *           (Scholar box, Attempt 1 vs 2 scores, Retrieval Strength [ ] Instant [ ] Effortful [ ] Restudy,
+ *           Roomy Parent Initial box, QR code to interactive portal, Subtle Cognitive Progression Key)
+ * - Pages 2–6: 5 Dedicated Enquiry Retrieval Pages (Enquiries 1 to 5 • 8 questions each = 40 questions total)
+ *              Scaffolded on the 3-Tier Cognitive Ascent with Disciplinary Micro-Pips:
+ *              • Q1–Q3 (▸): Substantive Anchor Knowledge & Chronology (Emerald)
+ *              • Q4–Q6 (▸▸): Causal Mechanisms & Historical Context (Amber)
+ *              • Q7–Q8 (▸▸▸): Synoptic Significance & Disciplinary Precedent (Crimson)
+ *              Featuring 2 roomy write-in lines per question with strong #000000 black typography:
+ *              Line 1: Answer: [Core Fact]
+ *              Line 2: Detail / Why: [Historical Mechanism or Consequence]
+ * - Page 7: Department Marking Bank (Part 1 • Enquiries 1–3 • Q1–Q20 • Bold answers + Explanations)
+ * - Page 8: Department Marking Bank (Part 2 • Enquiries 3–5 • Q21–Q40 • Bold answers + Explanations)
+ *           100% vertical space dedicated to answer cards (Zero DIRT box).
  */
 
 const fs = require('fs');
@@ -30,16 +30,51 @@ const ROOT_DIR = path.join(__dirname, '..');
 const UNIT_DIR = path.join(ROOT_DIR, 'public', 'units', 'great_war');
 const PDFS_DIR = path.join(ROOT_DIR, 'public', 'pdfs');
 
+if (!fs.existsSync(PDFS_DIR)) {
+  fs.mkdirSync(PDFS_DIR, { recursive: true });
+}
+if (!fs.existsSync(UNIT_DIR)) {
+  fs.mkdirSync(UNIT_DIR, { recursive: true });
+}
+
+// Base64 image helper for 100% offline self-contained HTML/PDF rendering
+function getBase64Image(relPath) {
+  if (!relPath) return null;
+  const clean = relPath.replace(/^\//, '');
+  const candidates = [
+    path.join(ROOT_DIR, 'public', clean),
+    path.join(ROOT_DIR, clean),
+    path.join(ROOT_DIR, 'public', 'images', path.basename(clean)),
+    path.join(ROOT_DIR, 'images', path.basename(clean)),
+  ];
+
+  for (const cand of candidates) {
+    if (fs.existsSync(cand) && fs.statSync(cand).isFile()) {
+      const ext = path.extname(cand).toLowerCase();
+      let mime = 'image/jpeg';
+      if (ext === '.png') mime = 'image/png';
+      else if (ext === '.webp') mime = 'image/webp';
+      else if (ext === '.svg') mime = 'image/svg+xml';
+      const buf = fs.readFileSync(cand);
+      return `data:${mime};base64,${buf.toString('base64')}`;
+    }
+  }
+  return null;
+}
+
 // --------------------------------------------------------------------------
-// 48 CURATED HIGH-YIELD QUESTIONS ACROSS THE 6 LESSONS
+// 40 RIGOROUS QUESTIONS ACROSS 5 ENQUIRIES: 3-TIER COGNITIVE ASCENT
+// Tier 1 (Q1–Q3): Core Substantive Recall & Chronology (▸)
+// Tier 2 (Q4–Q6): Causal Mechanisms & Historical Dynamics (▸▸)
+// Tier 3 (Q7–Q8): Synoptic Significance, Precedent & High-Stretch (▸▸▸)
 // --------------------------------------------------------------------------
 const QUIZ_DATA = [
-  // LESSON 1: German Unification (1871) & Bismarck
+  // ENQUIRY 1: German Unification, Franco-Prussian War & Bismarck (1871–1890)
   {
     lesson: 1,
-    lessonTitle: "1. German Unification (1871) & Bismarck's Alliances",
-    shortTitle: 'German Unification & Alliances',
-    enquiry: 'How was the German Empire created in 1871?',
+    lessonTitle: '1. German Unification, Franco-Prussian War & Bismarck (1871–1890)',
+    shortTitle: 'German Unification & Revanche',
+    enquiry: 'How did German unification and the Franco-Prussian War divide Europe?',
     items: [
       {
         q: 'How many independent states existed in Central Europe before German unification?',
@@ -47,412 +82,371 @@ const QUIZ_DATA = [
         exp: 'Prior to 1871, the German states were loosely connected in the German Confederation, dominated by Prussia and Austria.',
       },
       {
-        q: 'Which powerful military kingdom led the unification of Germany?',
+        q: 'Which powerful military kingdom united the German states under Berlin?',
         a: 'Prussia',
-        exp: 'Prussia used its disciplined military, advanced railway network, and Krupp steel industry to unite the German states under Berlin.',
+        exp: 'Prussia used its disciplined military, rail network, and industrial steel power to lead the unification of Germany.',
       },
       {
-        q: 'Who was the Prussian Chancellor who engineered the unification of Germany?',
-        a: 'Otto von Bismarck',
-        exp: "Bismarck used a pragmatic policy of 'Blood and Iron' (Realpolitik) and three swift wars to achieve unification.",
+        q: 'Which French border territory was seized by Germany following the Franco-Prussian War in 1871?',
+        a: 'Alsace-Lorraine',
+        exp: 'Germany annexed this mineral-rich border province, creating an enduring French national desire to reclaim it.',
       },
       {
-        q: 'In what year was the German Empire officially proclaimed?',
-        a: '1871',
-        exp: "The Empire was proclaimed following Prussia's crushing victory over France in the Franco-Prussian War.",
+        q: 'What was the French national desire for vengeance against Germany called?',
+        a: 'Revanche (Revanchism)',
+        exp: 'French school maps, veiled in black, and politicians kept the loss of Alsace-Lorraine alive as an open wound.',
       },
       {
-        q: 'Where was King Wilhelm I of Prussia crowned as the first German Emperor?',
-        a: 'The Hall of Mirrors at Versailles',
-        exp: 'Staging the coronation inside the historic palace of the French monarchy was a calculated insult that deepened French hatred.',
+        q: 'How did Chancellor Otto von Bismarck use "Blood and Iron" to unite Germany?',
+        a: 'Through three short, victorious wars and military power rather than democratic speeches',
+        exp: 'Bismarck believed grand historical questions were decided by pragmatic military strength (Realpolitik).',
       },
       {
-        q: "What was Bismarck's primary foreign policy goal after 1871?",
-        a: 'To isolate France and maintain European peace',
-        exp: 'Bismarck knew a revanchist France could never be reconciled, so he built alliances to deny France any military partners.',
+        q: 'Why was a "war on two fronts" Germany’s greatest strategic nightmare?',
+        a: 'It risked being attacked simultaneously by France in the west and Russia in the east',
+        exp: 'Germany feared its army would be split in two, leading Bismarck to build alliances to keep Russia neutral.',
       },
       {
-        q: "What was Germany's greatest strategic military nightmare?",
-        a: 'A war on two fronts (Encirclement)',
-        exp: 'Germany feared being simultaneously attacked by France from the west and Russia from the east, dividing its armed forces.',
+        q: 'Why did Kaiser Wilhelm II’s dismissal of Bismarck in 1890 trigger a European diplomatic crisis?',
+        a: 'He abandoned Bismarck’s cautious diplomacy and let the Reinsurance Treaty with Russia lapse',
+        exp: 'Dropping the treaty left Russia isolated, prompting the Tsar to sign a military alliance with France in 1894.',
       },
       {
-        q: 'What secret 1887 agreement did Bismarck negotiate to keep Russia neutral?',
-        a: 'The Reinsurance Treaty',
-        exp: "Both powers promised neutrality unless Germany attacked France or Russia attacked Germany's ally, Austria-Hungary.",
+        q: 'How did the creation of the German Empire in 1871 permanently shift the European balance of power?',
+        a: 'It placed a colossal, unified industrial and military giant in the geographic centre of Europe',
+        exp: 'The new empire replaced fractured, weak states with an economic powerhouse that rivalled Britain and alarmed France.',
       },
     ],
   },
 
-  // LESSON 2: Franco-Prussian War & the Legacy of Revanche
+  // ENQUIRY 2: Imperial Rivalry & the Moroccan Crises (1884–1911)
   {
     lesson: 2,
-    lessonTitle: '2. The Franco-Prussian War & the Legacy of Revanche',
-    shortTitle: 'Franco-Prussian War & Revanche',
-    enquiry: 'How did the Franco-Prussian War create a lasting legacy of hatred?',
+    lessonTitle: '2. Imperial Rivalry & the Moroccan Crises (1884–1911)',
+    shortTitle: 'Imperial Rivalry & Morocco',
+    enquiry: 'How did imperial ambition in Africa bring European powers to the brink of war?',
     items: [
       {
-        q: 'Which French territory was annexed by Germany following the war in 1871?',
-        a: 'Alsace-Lorraine',
-        exp: 'Germany seized this mineral-rich border territory for defence and industry, creating an enduring French determination to reclaim it.',
+        q: 'What term describes the rapid colonisation and partition of Africa by European powers (1881–1914)?',
+        a: 'The Scramble for Africa',
+        exp: 'European empires took control of 90% of the African continent to secure raw materials, prestige, and trade markets.',
       },
       {
-        q: 'What was the French national desire for vengeance called?',
-        a: 'Revanche (Revanchism)',
-        exp: 'French school textbooks, maps (veiled in black), and politicians kept the loss of Alsace-Lorraine alive as an open wound.',
+        q: 'Which 1884–85 conference laid down international rules for claiming African territory?',
+        a: 'The Berlin Conference',
+        exp: 'Hosted by Bismarck, it required powers to prove "effective occupation" before claiming colonies to prevent war.',
       },
       {
-        q: 'What was the size of the financial indemnity France was forced to pay Germany in 1871?',
-        a: '5 billion gold francs',
-        exp: 'Germany intended the indemnity to cripple France economically for a generation, though France paid it off ahead of schedule.',
+        q: 'What famous phrase did Kaiser Wilhelm II use to demand a German global empire?',
+        a: 'A "place in the sun" (Platz an der Sonne)',
+        exp: 'Wilhelm II argued that Germany’s rapid industrial growth entitled it to an overseas colonial empire equal to Britain’s.',
       },
       {
-        q: 'Which treaty formally concluded the Franco-Prussian War in May 1871?',
-        a: 'The Treaty of Frankfurt',
-        exp: 'The treaty codified the annexation of Alsace-Lorraine, the indemnity, and German military occupation until payment was complete.',
+        q: 'What was Kaiser Wilhelm II’s aggressive global foreign policy called?',
+        a: 'Weltpolitik ("World Policy")',
+        exp: 'Weltpolitik abandoned continental defence in favour of overseas expansion, colonial acquisitions, and naval buildup.',
       },
       {
-        q: 'Which French Emperor was captured by Prussian forces at the Battle of Sedan (1870)?',
-        a: 'Napoleon III',
-        exp: 'His capture brought the immediate collapse of the French Second Empire and the proclamation of the French Third Republic.',
+        q: 'Why did Kaiser Wilhelm II land at Tangier in 1905 to trigger the First Moroccan Crisis?',
+        a: 'To challenge French influence in North Africa and test the strength of the Anglo-French Entente',
+        exp: 'Wilhelm hoped to humiliate France and drive a wedge between Britain and France, but his tactic backfired completely.',
       },
       {
-        q: 'Which ambitious young Emperor took the German throne in 1888 and dismissed Bismarck in 1890?',
-        a: 'Kaiser Wilhelm II',
-        exp: "Wilhelm II rejected Bismarck's cautious European diplomacy in favour of personal autocratic rule and aggressive global expansion.",
+        q: 'Why did Germany send the gunboat SMS Panther to Agadir during the 1911 Moroccan Crisis?',
+        a: 'To use "gunboat diplomacy" to force France into handing over colonial territory in the Congo',
+        exp: 'Germany demanded French land in exchange for accepting French control over Morocco, alarming Britain.',
       },
       {
-        q: 'What catastrophic diplomatic decision did Wilhelm II make immediately after dismissing Bismarck?',
-        a: 'He allowed the Reinsurance Treaty with Russia to lapse',
-        exp: 'This alienated Tsar Alexander III and left Russia diplomatically isolated and seeking new European partners.',
+        q: 'Why did the two Moroccan Crises ironically strengthen rather than weaken the Anglo-French alliance?',
+        a: 'German bullying convinced Britain that Germany was a dangerous rogue state, prompting joint military talks',
+        exp: 'Rather than splitting Britain and France, the crises led to secret naval agreements and unified diplomatic resistance.',
       },
       {
-        q: "What historic military alliance was signed in 1894 as a direct result of Wilhelm II's blunder?",
-        a: 'The Franco-Russian Military Alliance',
-        exp: "Autocratic Russia and republican France united militarily, realizing Bismarck's worst nightmare of a two-front encirclement.",
+        q: 'To what extent did imperial rivalry in Africa make a general European war more likely?',
+        a: 'It convinced German leaders they were encircled by hostile rivals and normalised armed brinkmanship',
+        exp: 'Repeated colonial confrontations conditioned European publics to expect war and deepened military planning.',
       },
     ],
   },
 
-  // LESSON 3: The Scramble for Africa & Moroccan Crises
+  // ENQUIRY 3: The Anglo-German Naval Arms Race & HMS Dreadnought (1898–1914)
   {
     lesson: 3,
-    lessonTitle: '3. The Scramble for Africa & the Moroccan Crises',
-    shortTitle: 'Scramble for Africa & Morocco',
-    enquiry: "To what extent did the 'Scramble for Africa' increase tension in Europe?",
-    items: [
-      {
-        q: 'What term describes the rapid partition of the African continent by European empires (1881–1914)?',
-        a: 'The Scramble for Africa',
-        exp: 'European powers colonised 90% of Africa in search of raw industrial materials, prestige, and captive colonial markets.',
-      },
-      {
-        q: 'Which 1884–85 conference laid down the imperial ground rules for annexing African territory?',
-        a: 'The Berlin Conference',
-        exp: "Hosted by Bismarck, it established the principle of 'effective occupation' to prevent European wars over African land.",
-      },
-      {
-        q: "What famous slogan expressed Kaiser Wilhelm II's demand for a German colonial empire?",
-        a: "A 'place in the sun' (Platz an der Sonne)",
-        exp: "Wilhelm II argued that Germany's massive industrial and military power entitled it to a worldwide overseas empire matching Britain's.",
-      },
-      {
-        q: "What was Kaiser Wilhelm II's aggressive global foreign policy called?",
-        a: 'Weltpolitik (World Policy)',
-        exp: "Weltpolitik abandoned Bismarck's continental focus and sought global naval, colonial, and commercial dominance.",
-      },
-      {
-        q: 'Where did Kaiser Wilhelm II land in 1905 to provoke the First Moroccan Crisis?',
-        a: 'Tangier',
-        exp: 'He delivered a fiery speech backing the Moroccan Sultan to challenge French dominance and test the strength of the Anglo-French Entente.',
-      },
-      {
-        q: 'Which 1906 conference resolved the First Moroccan Crisis, resulting in a diplomatic humiliation for Germany?',
-        a: 'The Algeciras Conference',
-        exp: 'Only Austria-Hungary supported Germany; Britain, Russia, and Italy stood firmly with France, cementing German isolation.',
-      },
-      {
-        q: 'What military action sparked the Second Moroccan Crisis (Agadir Crisis) in 1911?',
-        a: 'Germany sent the gunboat SMS Panther to the port of Agadir',
-        exp: "Germany attempted 'gunboat diplomacy' to extract French colonial territory in the Congo in exchange for recognizing France in Morocco.",
-      },
-      {
-        q: 'What was the decisive strategic consequence of the two Moroccan Crises for Anglo-French relations?',
-        a: 'It forged secret Anglo-French joint military and naval planning',
-        exp: 'Rather than driving Britain and France apart, German belligerence convinced Britain that Germany was a dangerous rogue power.',
-      },
-    ],
-  },
-
-  // LESSON 4: Anglo-German Naval Arms Race & HMS Dreadnought
-  {
-    lesson: 4,
-    lessonTitle: '4. The Anglo-German Naval Arms Race & HMS Dreadnought',
+    lessonTitle: '3. The Anglo-German Naval Arms Race & HMS Dreadnought (1898–1914)',
     shortTitle: 'Naval Arms Race & Dreadnought',
     enquiry: 'Why did a battleship building contest destroy Anglo-German relations?',
     items: [
       {
         q: 'Which revolutionary, all-big-gun British battleship was launched in 1906?',
         a: 'HMS Dreadnought',
-        exp: 'Dreadnought featured ten 12-inch guns and turbine propulsion, making every existing battleship on the planet instantly obsolete.',
+        exp: 'Dreadnought carried ten 12-inch guns and turbine engines, rendering all existing battleships instantly obsolete.',
       },
       {
-        q: 'Which German naval minister directed the rapid construction of the German High Seas Fleet?',
+        q: 'Which German Admiral directed the rapid expansion of the German High Seas Fleet?',
         a: 'Admiral Alfred von Tirpitz',
-        exp: 'Tirpitz passed the German Naval Laws (1898, 1900) to construct a fleet capable of challenging the British Royal Navy in the North Sea.',
+        exp: 'Tirpitz passed the German Naval Laws (1898/1900) to build a navy capable of confronting Britain in the North Sea.',
       },
       {
-        q: "What traditional maritime doctrine required Britain's fleet to equal the combined strength of the next two largest navies?",
+        q: 'What long-standing British naval policy required its fleet to equal the next two navies combined?',
         a: 'The Two-Power Standard',
-        exp: 'Established by the Naval Defence Act 1889, Britain viewed naval supremacy as strictly vital for its food supply and empire.',
+        exp: 'Britain considered unquestioned naval mastery essential to guard its worldwide trade routes and island food supply.',
       },
       {
-        q: "What was Admiral Tirpitz's 'Risk Theory' (Risikotheorie)?",
-        a: 'To build a navy so strong that Britain would not risk a battle for fear of crippling itself',
-        exp: 'Tirpitz believed this would force Britain to make diplomatic concessions and grant Germany colonial territory.',
+        q: 'Why was naval supremacy a matter of national survival for Great Britain?',
+        a: 'As an island empire, Britain relied on maritime trade for raw materials and to feed its population',
+        exp: 'A hostile blockade would starve Britain within months, making any threat to the North Sea intolerable.',
       },
       {
-        q: 'What was the political slogan shouted by the British public demanding more battleships in 1909?',
-        a: "“We want eight and we won't wait!”",
-        exp: 'British public alarm over German naval expansion forced the Liberal government to double its naval construction budget.',
+        q: 'What was Admiral Tirpitz’s "Risk Theory" (Risikotheorie)?',
+        a: 'Building a fleet strong enough that fighting Germany would cripple Britain’s global supremacy',
+        exp: 'Tirpitz calculated that fear of naval damage would force Britain to make diplomatic and colonial concessions.',
       },
       {
-        q: 'What canal did Germany deepen between 1907 and 1914 to allow dreadnoughts to pass from the Baltic to the North Sea?',
-        a: 'The Kiel Canal',
-        exp: 'Its completion in June 1914 allowed the German fleet to concentrate rapidly, significantly heightening British war fears.',
+        q: 'What popular slogan was chanted in Britain in 1909 demanding more battleships?',
+        a: '“We want eight and we won’t wait!”',
+        exp: 'Public alarm over secret German shipbuilding forced the British government to double its naval construction budget.',
       },
       {
-        q: 'How many Dreadnought-class battleships had Britain and Germany built by August 1914?',
-        a: 'Britain: 29 dreadnoughts; Germany: 17 dreadnoughts',
-        exp: 'Although Britain won the building race, the naval rivalry destroyed over a century of cordial Anglo-German diplomatic relations.',
+        q: 'Why did the launch of HMS Dreadnought ironically endanger Britain’s established naval supremacy?',
+        a: 'It wiped out Britain’s enormous numerical lead in older pre-dreadnoughts, resetting the race to zero',
+        exp: 'By making existing warships obsolete, Germany could compete on equal terms by building only new dreadnoughts.',
       },
       {
-        q: "Why did the invention of HMS Dreadnought ironically endanger Britain's naval supremacy?",
-        a: 'It wiped out the British advantage in older pre-dreadnought battleships, resetting the naval race to zero',
-        exp: 'By making older warships obsolete, Germany could compete on equal terms by building only dreadnoughts.',
+        q: 'How did the naval arms race permanently damage relations between Britain and Germany?',
+        a: 'It turned friendly trading partners into suspicious military rivals and drove Britain toward France and Russia',
+        exp: 'German naval expansion convinced British statesmen that Germany aimed to dominate Europe by military force.',
       },
     ],
   },
 
-  // LESSON 5: The Alliance System & the Balkan Powder Keg
+  // ENQUIRY 4: The Alliance Systems & the Balkan Powder Keg (1882–1913)
+  {
+    lesson: 4,
+    lessonTitle: '4. The Alliance Systems & the Balkan Powder Keg (1882–1913)',
+    shortTitle: 'Alliances & Balkan Powder Keg',
+    enquiry:
+      'Did European military alliances protect peace or guarantee a continental catastrophe?',
+    items: [
+      {
+        q: 'Which three empires made up the Triple Alliance signed in 1882?',
+        a: 'Germany, Austria-Hungary, and Italy',
+        exp: 'The members promised mutual military assistance if attacked by two or more rival great powers.',
+      },
+      {
+        q: 'Which three nations united into the rival Triple Entente by 1907?',
+        a: 'Great Britain, France, and Russia',
+        exp: 'Agreements between France, Russia, and Britain settled past disputes and formed a defensive diplomatic counterweight.',
+      },
+      {
+        q: 'What mountainous region of south-eastern Europe was known as the "Powder Keg of Europe"?',
+        a: 'The Balkans',
+        exp: 'Ethnic nationalism, crumbling Ottoman rule, and great power rivalry made the Balkans extremely volatile.',
+      },
+      {
+        q: 'Why did the decline of the Ottoman Empire create dangerous tension in the Balkans?',
+        a: 'It left a power vacuum that Austria-Hungary and Russia both competed to dominate',
+        exp: 'Both empires sought influence over newly independent Balkan states and control of the Black Sea straits.',
+      },
+      {
+        q: 'Why was Serbia furious when Austria-Hungary annexed Bosnia-Herzegovina in 1908?',
+        a: 'Bosnia contained a large Slavic population that Serbia wanted to unite into an independent South Slav state',
+        exp: 'The annexation frustrated Serbian nationalist dreams of creating a united "Greater Serbia".',
+      },
+      {
+        q: 'Why did Russia feel an ideological duty to support Serbia in Balkan disputes?',
+        a: 'Russia viewed itself as the natural protector of fellow Slavic and Orthodox Christian peoples',
+        exp: 'Russian "Pan-Slavism" and the desire for warm-water Mediterranean access drove its alliance with Serbia.',
+      },
+      {
+        q: 'Why was the Bosnian Crisis of 1908 a fatal rehearsal for the outbreak of war in 1914?',
+        a: 'Russia was forced to back down under German threats, vowing never to retreat in the Balkans again',
+        exp: 'The humiliation accelerated Russian military rearmament and ensured Russia would mobilise if Serbia was threatened.',
+      },
+      {
+        q: 'How did the European alliance system turn a local Balkan confrontation into a world war?',
+        a: 'It chained the great powers together so that an attack on one ally triggered mandatory mobilization of all',
+        exp: 'The treaties transformed a local conflict between Austria and Serbia into an uncontrollable continental domino effect.',
+      },
+    ],
+  },
+
+  // ENQUIRY 5: The July Crisis: Sarajevo to the Outbreak of War (June–August 1914)
   {
     lesson: 5,
-    lessonTitle: '5. The Alliance System & the Balkan Powder Keg',
-    shortTitle: 'Alliance System & Balkan Powder Keg',
-    enquiry: 'Did the Alliance System protect Europe or guarantee a global war?',
+    lessonTitle: '5. The July Crisis: Sarajevo to the Outbreak of War (June–August 1914)',
+    shortTitle: 'Sarajevo & The July Crisis',
+    enquiry: 'Why did a single assassination in Sarajevo ignite the First World War?',
     items: [
       {
-        q: 'Which three empires formed the Triple Alliance in 1882?',
-        a: 'Germany, Austria-Hungary, and Italy',
-        exp: 'The defensive treaty pledged mutual military assistance if any member was attacked by two or more great powers.',
+        q: 'Who was assassinated in Sarajevo on 28 June 1914?',
+        a: 'Archduke Franz Ferdinand (heir to the Austro-Hungarian throne)',
+        exp: 'His assassination during an official inspection tour provided the immediate catalyst for the outbreak of war.',
       },
       {
-        q: "What term describes Britain's 19th-century policy of avoiding permanent European military alliances?",
-        a: 'Splendid Isolation',
-        exp: 'Britain focused on its worldwide empire and maintaining the naval balance of power without entangling continental treaties.',
-      },
-      {
-        q: 'What friendly diplomatic accord did Britain and France sign in 1904?',
-        a: 'The Entente Cordiale',
-        exp: 'It resolved colonial disputes (Britain in Egypt, France in Morocco) and paved the way for close diplomatic cooperation.',
-      },
-      {
-        q: 'What 1907 agreement settled colonial rivalries in Persia, Tibet, and Afghanistan, completing the Triple Entente?',
-        a: 'The Anglo-Russian Convention',
-        exp: "It ended the century-long 'Great Game' of imperial competition in Asia, clearing the path for joint European alignment.",
-      },
-      {
-        q: "Why was Italy widely viewed as the 'weak link' in the Triple Alliance?",
-        a: 'Italy held deep territorial rivalries with its alliance partner, Austria-Hungary',
-        exp: 'Italy coveted Italia Irredenta (Trentino and Trieste) ruled by Vienna, leading Italy to declare neutrality in 1914 and switch sides in 1915.',
-      },
-      {
-        q: 'What was the fatal structural flaw of the European alliance system?',
-        a: 'A localized regional quarrel could instantly trigger a continent-wide chain reaction',
-        exp: 'Pledges of mutual defence meant empires felt compelled to mobilise armies to protect partners, converting a Balkan crisis into World War.',
-      },
-      {
-        q: "Why was south-eastern Europe known as the 'Powder Keg of Europe'?",
-        a: 'The collapse of the Ottoman Empire created intense Slavic nationalism and imperial rivalries',
-        exp: 'Austria-Hungary and Russia both competed to dominate newly independent Balkan states like Serbia, creating constant crises.',
-      },
-      {
-        q: 'Which international crisis in 1908 brought Austria-Hungary and Russia to the brink of war?',
-        a: 'The Bosnian Crisis (Annexation of Bosnia-Herzegovina)',
-        exp: 'Austria annexed the Slavic province; Germany forced Russia to back down with a military ultimatum, leaving Russia determined never to back down again.',
-      },
-    ],
-  },
-
-  // LESSON 6: The Sarajevo Assassination, July Crisis & War
-  {
-    lesson: 6,
-    lessonTitle: '6. The Sarajevo Assassination, July Crisis & War',
-    shortTitle: 'Sarajevo Assassination & July Crisis',
-    enquiry: 'Why did a single assassination in Sarajevo ignite a World War?',
-    items: [
-      {
-        q: 'On what exact date was Archduke Franz Ferdinand assassinated in Sarajevo?',
-        a: '28 June 1914',
-        exp: "The Archduke, heir to the Austro-Hungarian throne, was visiting the Bosnian capital on Vidovdan (St Vitus' Day), a Serbian national holiday.",
-      },
-      {
-        q: 'Who was the 19-year-old Bosnian Serb nationalist who fired the fatal shots?',
+        q: 'What was the name of the 19-year-old Bosnian Serb student who fired the fatal shots?',
         a: 'Gavrilo Princip',
-        exp: 'Princip was a member of Young Bosnia, a revolutionary student movement seeking to unite South Slavs into a Greater Serbia.',
+        exp: 'Princip was a member of Young Bosnia, trained and armed by the Serbian nationalist secret society, the Black Hand.',
       },
       {
-        q: 'What clandestine Serbian military terrorist organisation trained and armed the assassins?',
-        a: 'The Black Hand (Union or Death)',
-        exp: "Led by Colonel Dragutin Dimitrijević ('Apis'), head of Serbian military intelligence, who smuggled weapons and bombs across the border.",
+        q: 'What secret nationalist military society provided the weapons and cyanide for the assassins?',
+        a: 'The Black Hand (Unity or Death)',
+        exp: 'Led by Serbian military intelligence officer Dragutin Dimitrijević ("Apis"), the group aimed to liberate South Slavs.',
       },
       {
-        q: "Why did Austria-Hungary's annexation of Bosnia in 1908 cause fury in Serbia?",
-        a: 'Bosnia contained a large ethnic Serb population that Serbia wanted to incorporate into a Greater Serbian state',
-        exp: 'The 1908 Bosnian Crisis humiliated Serbia and its protector Russia, establishing a bitter blood-feud with Vienna.',
+        q: 'What unconditional pledge of military backing did Germany give Austria-Hungary on 5 July 1914?',
+        a: 'The "Blank Cheque"',
+        exp: 'Kaiser Wilhelm II promised German military support even if Austrian action against Serbia triggered war with Russia.',
       },
       {
-        q: "What was Germany's famous 'Blank Cheque' issued on 5–6 July 1914?",
-        a: "Germany's unconditional promise of total military support to Austria-Hungary against Serbia",
-        exp: 'Kaiser Wilhelm II and Chancellor Bethmann-Hollweg encouraged Vienna to strike quickly, gambling that Russia would back down.',
+        q: 'Why did Austria-Hungary issue Serbia with a harsh 10-point ultimatum on 23 July 1914?',
+        a: 'To provide a pretext for military invasion and permanently crush Serbian independence',
+        exp: 'Austrian leaders drafted demands so humiliating that they expected Serbia to reject them, justifying war.',
       },
       {
-        q: 'What diplomatic document did Austria-Hungary deliver to Serbia on 23 July 1914?',
-        a: 'The Austro-Hungarian Ultimatum (The Ten Demands)',
-        exp: 'Deliberately designed to be rejected, it demanded Austrian police enter Serbian sovereign territory to investigate the murder.',
-      },
-      {
-        q: 'What was the German war strategy designed to prevent a prolonged two-front war?',
+        q: 'What German military operational plan aimed to defeat France in six weeks before turning to face Russia?',
         a: 'The Schlieffen Plan',
-        exp: 'Conceived by Count von Schlieffen, it planned to conquer France in 6 weeks via neutral Belgium before turning east to confront Russia.',
+        exp: 'The plan relied on invading neutral Belgium to bypass French border fortresses and encircle Paris rapidly.',
       },
       {
-        q: 'Why did Great Britain officially declare war on Germany at 11:00 pm on 4 August 1914?',
-        a: 'Germany invaded neutral Belgium, violating the 1839 Treaty of London',
-        exp: 'Britain had guaranteed Belgian neutrality for 75 years; German occupation of the Channel ports directly threatened British survival.',
+        q: 'Why did the German invasion of Belgium directly cause Great Britain to enter the war?',
+        a: 'Britain had guaranteed Belgian neutrality in the 1839 Treaty of London and could not accept hostile ports on the Channel',
+        exp: 'When Germany refused to respect Belgian neutrality, Britain delivered an ultimatum and declared war on 4 August 1914.',
+      },
+      {
+        q: 'Was the outbreak of war in 1914 caused primarily by imperial militarism or the rigid mechanics of military mobilisation?',
+        a: 'A fatal combination of calculated risk-taking by leaders and inflexible rail mobilisation timetables',
+        exp: 'Once Tsar Nicholas II ordered general mobilisation, German war plans left zero time for diplomatic negotiation.',
       },
     ],
   },
 ];
 
+// Helper to render micro-pips (Tier 1: ▸, Tier 2: ▸▸, Tier 3: ▸▸▸)
+function getPipBadge(itemIdx) {
+  if (itemIdx < 3) {
+    return '<span class="pip-badge pip-t1" title="Tier 1: Substantive Recall">&#9658;</span>';
+  } else if (itemIdx < 6) {
+    return '<span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism">&#9658;&#9658;</span>';
+  } else {
+    return '<span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance">&#9658;&#9658;&#9658;</span>';
+  }
+}
+
 // --------------------------------------------------------------------------
-// CSS STYLING FOR A5 SADDLE-STITCH BOOKLET (148mm x 210mm)
+// STRICT A5 PRINT CSS SYSTEM (Monarchy Gold Standard Reference)
 // --------------------------------------------------------------------------
 const A5_BOOKLET_CSS = `
   @page {
-    size: 148mm 210mm;
-    margin: 6mm 0mm;
-  }
-  * { box-sizing: border-box; }
-  body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #0f172a;
+    size: A5 portrait;
     margin: 0;
-    padding: 0;
-    font-size: 7.2pt;
-    line-height: 1.2;
-    background: #ffffff;
+  }
+  * {
+    box-sizing: border-box;
     -webkit-print-color-adjust: exact;
     print-color-adjust: exact;
   }
-  
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #000000;
+    background: #ffffff;
+    font-size: 8.8pt;
+    line-height: 1.25;
+  }
   .a5-page {
+    width: 148mm;
+    height: 210mm;
+    padding: 8.5mm 9.5mm 7.5mm 9.5mm;
+    margin: 0 auto;
     page-break-after: always;
-    height: 198mm;
-    max-height: 198mm;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    break-after: page;
+    background: #ffffff;
     position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
-  /* Gutter-Safe Margin Tuning for A5 Saddle-Stitch Binding */
-  .a5-page:nth-child(odd) {
-    padding-left: 10mm; /* Inner spine clearance on left for odd/recto pages */
-    padding-right: 6mm;
+  @media screen {
+    body {
+      background: #475569;
+      padding: 20px 0;
+    }
+    .a5-page {
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+      margin-bottom: 25px;
+    }
   }
-  .a5-page:nth-child(even) {
-    padding-left: 6mm;
-    padding-right: 10mm; /* Inner spine clearance on right for even/verso pages */
-  }
-  .a5-page:last-child { page-break-after: avoid; }
 
+  /* Utility classes */
   .page-flex-full {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    height: 198mm !important;
-    box-sizing: border-box !important;
-  }
-  .page-body-stretch {
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-  }
-  .timeline-page-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    height: 100%;
   }
 
-  /* Page Headers & Footers */
+  /* Headers and Footers */
   .page-header-strip {
-    border-bottom: 1.5px solid #0f172a;
+    border-bottom: 1.5px solid #000000;
     padding-bottom: 2px;
-    margin-bottom: 4px;
+    margin-bottom: 2.5px;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
   }
+  .page-header-compact {
+    padding-bottom: 1.5px;
+    margin-bottom: 1.5px;
+  }
   .page-header-strip h2 {
-    margin: 0;
-    font-size: 8.8pt;
-    color: #0f172a;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 10.2pt;
     font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
+    margin: 0;
+    color: #000000;
+    line-height: 1.1;
   }
   .page-header-strip p {
     margin: 1px 0 0 0;
-    font-size: 6.2pt;
-    color: #475569;
+    font-size: 6.8pt;
+    color: #000000;
     font-weight: 600;
   }
   .page-tag {
-    font-size: 6.2pt;
+    font-size: 6.5pt;
     font-weight: 800;
-    background: #0f172a;
+    background: #000000;
     color: #ffffff;
-    padding: 2px 6px;
+    padding: 2.5px 6px;
     border-radius: 2px;
     text-transform: uppercase;
     letter-spacing: 0.4px;
     white-space: nowrap;
   }
   .page-footer-strip {
-    font-size: 6.2pt;
-    color: #64748b;
-    border-top: 1px solid #cbd5e1;
+    font-size: 6.8pt;
+    color: #000000;
+    border-top: 1.2px solid #000000;
     padding-top: 2px;
     margin-top: 2px;
     display: flex;
     justify-content: space-between;
-    font-weight: 600;
+    font-weight: 700;
   }
 
   /* Cover Page Styling (Page 1) */
   .cover-banner {
-    background: #0f172a;
+    background: #000000;
     color: #ffffff;
-    padding: 4px 8px;
+    padding: 5px 8px;
     border-radius: 4px 4px 0 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 6.5pt;
+    font-size: 6.8pt;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.8px;
@@ -464,27 +458,27 @@ const A5_BOOKLET_CSS = `
   }
   [data-department-name]:not([data-department-name=""]):not([data-department-name="The History Department"]) .school-brand-target::after {
     content: attr(data-department-name);
-    font-size: 6.5pt;
+    font-size: 6.8pt;
   }
   .cover-header-block {
     text-align: center;
-    padding: 4px 6px 3px 6px;
+    padding: 7px 6px 6px 6px;
     background: #f8fafc;
-    border-left: 1px solid #cbd5e1;
-    border-right: 1px solid #cbd5e1;
+    border-left: 1.2px solid #000000;
+    border-right: 1.2px solid #000000;
   }
   .cover-title {
     font-family: 'Playfair Display', Georgia, serif;
-    font-size: 11.5pt;
+    font-size: 11.8pt;
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
     line-height: 1.15;
     margin: 0 0 2px 0;
   }
   .cover-subtitle {
-    font-size: 6.8pt;
+    font-size: 7.2pt;
     font-weight: 700;
-    color: #475569;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.4px;
     margin: 0;
@@ -493,10 +487,11 @@ const A5_BOOKLET_CSS = `
   /* Pupil Box */
   .pupil-box {
     background: #ffffff;
-    border: 1px solid #cbd5e1;
+    border: 1.2px solid #000000;
     border-top: none;
-    padding: 3px 8px;
-    font-size: 7pt;
+    padding: 7px 8px;
+    font-size: 7.2pt;
+    color: #000000;
   }
   .pupil-grid {
     display: grid;
@@ -510,8 +505,8 @@ const A5_BOOKLET_CSS = `
     gap: 4px;
   }
   .pupil-field span.lbl {
-    font-weight: 700;
-    color: #334155;
+    font-weight: 800;
+    color: #000000;
     white-space: nowrap;
   }
   .pupil-field span.line {
@@ -520,75 +515,78 @@ const A5_BOOKLET_CSS = `
     min-height: 12px;
   }
 
-  /* Cover Map Container */
+  /* Cover Portrait Container */
   .cover-map-container {
-    margin: 2px 0 2px 0;
+    margin: 3px 0 3px 0;
     text-align: center;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border: 1.2px solid #000000;
     border-radius: 4px;
-    padding: 2px 4px 2px 4px;
+    padding: 3px 6px;
   }
   .cover-map-frame {
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    max-height: 90mm;
+    max-height: 56.5mm;
   }
   .cover-map-img {
-    max-height: 90mm;
+    max-height: 56.5mm;
     max-width: 100%;
     object-fit: contain;
-    border: 1px solid #94a3b8;
+    border: 1.2px solid #000000;
     border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
   }
   .cover-map-caption {
     font-size: 5.6pt;
-    color: #475569;
+    color: #000000;
     margin-top: 1.5px;
-    letter-spacing: 0.2px;
+    font-style: italic;
+    font-weight: 600;
   }
 
-  /* Tracking Grid Table (Page 1) */
+  /* Tracking Ledger */
+  .ledger-container {
+    margin-top: 3px;
+  }
   .tracking-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 6.5pt;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    font-size: 6.4pt;
+    background: #ffffff;
+    color: #000000;
   }
   .tracking-table th {
-    background: #0f172a;
+    background: #000000;
     color: #ffffff;
-    font-weight: 700;
+    font-weight: 800;
+    padding: 3.5px 3px;
+    border: 1px solid #000000;
     text-transform: uppercase;
-    padding: 3px 3px;
-    border: 1px solid #0f172a;
-    font-size: 6pt;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.1px;
     text-align: center;
   }
   .tracking-table td {
-    border: 1px solid #cbd5e1;
-    padding: 2.8px 3px;
+    border: 1px solid #000000;
+    padding: 6.0px 3.5px;
     text-align: center;
     vertical-align: middle;
+    color: #000000;
   }
   .tracking-table td.left-title {
     text-align: left;
-    color: #0f172a;
+    color: #000000;
   }
   .tb-lesson-title {
     font-weight: 800;
-    font-size: 6.5pt;
-    color: #0f172a;
+    font-size: 6.6pt;
+    color: #000000;
     line-height: 1.15;
   }
   .tb-lesson-enquiry {
     font-size: 5.4pt;
-    color: #475569;
+    color: #000000;
     font-style: italic;
     line-height: 1.15;
     margin-top: 0.5px;
@@ -596,53 +594,49 @@ const A5_BOOKLET_CSS = `
   .score-line {
     display: inline-block;
     width: 14px;
-    border-bottom: 1px solid #000;
+    border-bottom: 1.2px solid #000000;
   }
-  .retrieval-boxes {
+  .retrieval-vertical {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 3.5px;
-    font-size: 5.8pt;
-    color: #334155;
-    white-space: nowrap;
-  }
-  .retrieval-boxes span {
-    font-weight: 600;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 6px;
+    gap: 2.5px;
+    font-size: 5.4pt;
+    line-height: 1.15;
+    color: #000000;
+    font-weight: 700;
   }
   .parent-sig-cell {
     padding: 2px 4px;
-  }
-  .parent-sig-box {
-    border: 1px solid #94a3b8;
-    background: #ffffff;
-    border-radius: 2px;
-    height: 16px;
-    width: 100%;
+    vertical-align: middle;
+    text-align: center;
   }
 
-  /* Page 1: 3-Tier Traffic Light Mastery Rule (DIRT Loop) */
+  /* Page 1: 3-Tier Traffic Light Mastery Rule */
   .mastery-traffic-strip {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border: 1.2px solid #000000;
     border-radius: 3px;
     padding: 2.5px 6px;
-    margin-top: 2px;
-    margin-bottom: 2px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
     font-size: 5.8pt;
     line-height: 1.15;
+    color: #000000;
+    font-weight: 600;
   }
   .traffic-tier {
     display: flex;
     align-items: center;
     gap: 3.5px;
-    color: #1e293b;
+    color: #000000;
   }
   .traffic-dot {
-    font-size: 7.5pt;
+    font-size: 7pt;
     line-height: 1;
   }
   .green-dot { color: #16a34a; }
@@ -653,131 +647,104 @@ const A5_BOOKLET_CSS = `
   .qr-strip {
     display: flex;
     align-items: center;
-    background: #f1f5f9;
-    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border: 1.2px solid #000000;
     border-radius: 4px;
     padding: 3px 6px;
     gap: 8px;
-    margin-top: 2px;
-    margin-bottom: 1px;
+    margin-top: 2.5px;
+    margin-bottom: 1.5px;
+    color: #000000;
   }
   .qr-code-img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
   }
   .qr-caption-text {
-    font-size: 6.2pt;
-    color: #334155;
-    line-height: 1.2;
+    font-size: 6.0pt;
+    color: #000000;
+    line-height: 1.15;
     text-align: left;
-    font-weight: 600;
+    font-weight: 700;
   }
 
-  /* Page 2: Chronology Domino Flowchart */
-  .timeline-flow {
-    display: flex;
-    flex-direction: column;
-    gap: 2.5px;
-    flex: 1;
-    justify-content: space-between;
-    margin-top: 2px;
-    margin-bottom: 2px;
-  }
-  .domino-node {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    background: #ffffff;
-    border: 1px solid #0f172a;
-    border-radius: 3px;
-    padding: 2.5px 5px;
-    font-size: 6.6pt;
-    line-height: 1.18;
-  }
-  .domino-year {
-    background: #0f172a;
-    color: #ffffff;
-    font-weight: 800;
-    font-size: 6.4pt;
-    padding: 1.5px 4px;
-    border-radius: 2px;
-    white-space: nowrap;
-  }
-  .domino-text {
-    flex: 1;
-  }
-
-  /* Pages 3–8: Dedicated Question Page Layout */
-  .lesson-instruction-bar {
-    background: #f8fafc;
-    border-left: 3px solid #0f172a;
-    padding: 2px 6px;
-    font-size: 6.4pt;
-    color: #334155;
-    font-weight: 600;
-    margin-bottom: 2px;
-  }
+  /* Pages 2–6: Dedicated Question Page Layout */
   .q-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
-    gap: 1.5px;
+    gap: 2px;
   }
   .q-block {
     background: #ffffff;
-    border: 1px solid #cbd5e1;
+    border: 1.2px solid #000000;
     border-radius: 3px;
-    padding: 3px 6px;
+    padding: 3.5px 6px;
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
+    gap: 2px;
   }
   .q-header {
     display: flex;
     align-items: flex-start;
-    justify-content: space-between;
-    gap: 4px;
-    font-size: 8.5pt;
-    line-height: 1.15;
+    gap: 6px;
+    font-size: 8.8pt;
+    line-height: 1.16;
   }
-  .q-prompt-wrap {
+  .q-num-box {
     display: flex;
-    align-items: flex-start;
-    gap: 4px;
-    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-width: 17px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.5px;
   }
   .q-num {
     font-weight: 800;
     color: #000000;
-    min-width: 14px;
-    font-size: 8.5pt;
+    font-size: 8.8pt;
+    line-height: 1.1;
   }
+  .q-pips {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
+  }
+  .pip-badge {
+    font-size: 6.2pt;
+    line-height: 1;
+    letter-spacing: -0.5px;
+  }
+  .pip-t1 { color: #16a34a; }
+  .pip-t2 { color: #d97706; }
+  .pip-t3 { color: #dc2626; }
+
   .q-prompt {
     font-weight: 700;
     color: #000000;
-    font-size: 8.5pt;
-  }
-  .q-mastery {
-    font-size: 6pt;
-    font-weight: 700;
-    color: #475569;
-    white-space: nowrap;
+    font-size: 8.8pt;
+    line-height: 1.16;
+    flex: 1;
   }
   .q-line-row {
     display: flex;
     align-items: flex-end;
     gap: 5px;
-    font-size: 7.2pt;
+    font-size: 7.6pt;
     margin-top: 1px;
   }
   .q-line-lbl {
     font-weight: 800;
     color: #000000;
     white-space: nowrap;
-    font-size: 7.2pt;
-    min-width: 65px;
+    font-size: 7.6pt;
+    min-width: 44px;
   }
   .q-solid-line {
     flex: 1;
@@ -785,23 +752,26 @@ const A5_BOOKLET_CSS = `
     min-height: 18px;
   }
 
-  /* Pages 9 & 10: Marking Bank */
+  /* Pages 7 & 8: Marking Bank */
   .mb-section-title {
     background: #f1f5f9;
-    border-left: 3px solid #0f172a;
-    padding: 1.5px 5px;
-    font-size: 6.8pt;
+    border-left: 3.5px solid #000000;
+    border-top: 1px solid #000000;
+    border-right: 1px solid #000000;
+    border-bottom: 1px solid #000000;
+    padding: 1px 4.5px;
+    font-size: 6.3pt;
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
     text-transform: uppercase;
     letter-spacing: 0.2px;
-    margin: 3px 0 1.5px 0;
+    margin: 1px 0 1px 0;
   }
   .mb-section-title:first-child { margin-top: 0; }
   .mb-container {
     display: flex;
     flex-direction: column;
-    gap: 1.5px;
+    gap: 1px;
     flex: 1;
     justify-content: space-between;
   }
@@ -809,1017 +779,481 @@ const A5_BOOKLET_CSS = `
     display: flex;
     align-items: flex-start;
     gap: 4px;
-    font-size: 6.4pt;
+    font-size: 6.3pt;
     line-height: 1.15;
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
+    background: #ffffff;
+    border: 1px solid #000000;
     border-radius: 2px;
-    padding: 2px 4px;
+    padding: 1px 4.5px;
+    color: #000000;
+  }
+  .ans-num-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 14px;
+    flex-shrink: 0;
+    line-height: 1;
+    padding-top: 0.5px;
   }
   .ans-num {
     font-weight: 800;
-    color: #0f172a;
-    min-width: 13px;
+    color: #000000;
+    font-size: 6.6pt;
+    line-height: 1.1;
+  }
+  .ans-pip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    line-height: 1;
+  }
+  .ans-pip .pip-badge {
+    font-size: 5.6pt;
+    letter-spacing: -1px;
   }
   .ans-content {
     flex: 1;
-    color: #0f172a;
+    color: #000000;
   }
   .ans-core {
     font-weight: 800;
-    color: #0f172a;
+    color: #000000;
+    font-size: 6.6pt;
   }
   .ans-exp {
-    color: #334155;
-    font-style: italic;
-  }
-  .ans-boxes {
-    font-size: 6pt;
-    font-weight: 800;
-    color: #475569;
-    white-space: nowrap;
-    margin-left: 3px;
-  }
-
-  /* Page 11: Figures Gallery & Vocabulary */
-  .p11-sec-title {
-    font-size: 7pt;
-    font-weight: 800;
-    color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    border-bottom: 1px solid #cbd5e1;
-    padding-bottom: 1px;
-    margin: 2px 0 2px 0;
-  }
-  .figures-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-    margin-bottom: 3px;
-  }
-  .figure-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-left: 2.5px solid #0f172a;
-    border-radius: 2px;
-    padding: 2px 5px;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-style: normal !important;
     font-size: 6.3pt;
-    line-height: 1.16;
-  }
-  .figure-name {
-    font-weight: 800;
-    color: #0f172a;
-  }
-  .figure-role {
-    font-weight: 600;
-    color: #475569;
-    font-style: italic;
-    margin-left: 3px;
-  }
-  .figure-act {
-    color: #1e293b;
-    margin-top: 0.5px;
-  }
-
-  .vocab-list {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .vocab-card {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-left: 2.5px solid #2563eb;
-    border-radius: 2px;
-    padding: 2px 5px;
-    font-size: 6.3pt;
-    line-height: 1.16;
-  }
-  .vocab-term {
-    font-weight: 800;
-    color: #0f172a;
-  }
-  .vocab-phonetic {
-    color: #2563eb;
-    font-weight: 700;
-    margin-left: 2px;
-  }
-  .vocab-def {
-    color: #334155;
-    margin-top: 0.5px;
-  }
-
-  /* Page 12: Summative Assessment Preparation & Essay Architect */
-  .architect-card {
-    background: #ffffff;
-    border: 1px solid #cbd5e1;
-    border-radius: 3px;
-    padding: 4px 6px;
-    font-size: 6.8pt;
-    line-height: 1.2;
-    margin-bottom: 3px;
-  }
-  .architect-sec-head {
-    font-size: 7.4pt;
-    font-weight: 800;
-    color: #0f172a;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-    background: #f1f5f9;
-    border-left: 3px solid #0f172a;
-    padding: 2.5px 5px;
-    margin: 4px 0 3px 0;
-  }
-  .main-matrix-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5px;
-  }
-  .main-matrix-cell {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 3px;
-    padding: 3.5px 5px;
-    font-size: 6.6pt;
-    line-height: 1.2;
-  }
-  .historiography-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px;
-  }
-  .historiography-box {
-    border: 1px solid #cbd5e1;
-    border-radius: 3px;
-    padding: 4px 6px;
-    font-size: 6.6pt;
-    line-height: 1.2;
-  }
-  .essay-stages-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5px;
-    margin-bottom: 3px;
-  }
-  .essay-stage-card {
-    background: #f8fafc;
-    border: 1px solid #cbd5e1;
-    border-radius: 3px;
-    padding: 3.5px 5px;
-    font-size: 6.5pt;
-    line-height: 1.2;
-  }
-  .stage-num {
-    font-weight: 800;
-    color: #0f172a;
-    margin-right: 2px;
-  }
-  .stems-list {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-    font-size: 6.8pt;
-    line-height: 1.25;
-    color: #1e293b;
-  }
-  .seal-strip {
-    text-align: center;
-    border-top: 1px solid #cbd5e1;
-    padding-top: 3px;
-    font-size: 6pt;
-    color: #64748b;
-    font-weight: 700;
-    letter-spacing: 0.4px;
-    text-transform: uppercase;
   }
 `;
 
 // --------------------------------------------------------------------------
-// HTML BUILDER FUNCTION
+// MAIN COMPILATION SCRIPT
 // --------------------------------------------------------------------------
-async function buildHtml() {
-  console.log('🛠️  Generating QR Code for Causes of the Great War interactive portal...');
-  const quizUrl = 'https://the-history-revision-hub.netlify.app/?view=quiz&unit=great_war';
-  const qrDataUrl = await QRCode.toDataURL(quizUrl, {
-    margin: 1,
-    width: 200,
-    color: { dark: '#0f172a', light: '#ffffff' },
+async function compileQuizBookletHtml() {
+  const qrUrl = 'https://the-history-revision-hub.netlify.app/?unit=great_war&view=quizzes';
+  const qrDataUrl = await QRCode.toDataURL(qrUrl, {
+    margin: 0,
+    color: { dark: '#000000', light: '#ffffff' },
   });
 
-  console.log('🗺️  Loading German Empire 1871 primary reference map for Cover Page...');
-  const mapPath = path.join(ROOT_DIR, 'public', 'images', 'german_empire_1871.png');
-  let mapDataUrl = '';
-  if (fs.existsSync(mapPath)) {
-    const mapBase64 = fs.readFileSync(mapPath).toString('base64');
-    mapDataUrl = `data:image/png;base64,${mapBase64}`;
-  }
+  const coverImgData =
+    getBase64Image('images/great_war_cover.jpg') ||
+    getBase64Image('public/images/great_war_cover.jpg') ||
+    '';
 
-  // ------------------------------------------------------------------------
-  // PAGE 1: FRONT COVER & FORMATIVE HOMEWORK RETRIEVAL LEDGER
-  // ------------------------------------------------------------------------
-  const page1 = `
-  <div class="a5-page page-flex-full">
-    <div class="page-body-stretch">
-      <div class="cover-banner" data-department-name="${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}">
-        <span>The History Revision Hub &bull; <span class="school-brand-target">${process.env.SCHOOL_NAME || process.env.DEPARTMENT_NAME || 'The History Department'}</span></span>
-        <span>Key Stage 3 Companion</span>
-      </div>
-      <div class="cover-header-block">
-        <h1 class="cover-title">Causes of the Great War (1871–1914)</h1>
-        <p class="cover-subtitle">“How did decades of imperial rivalry and fear culminate in thirty days of madness?”</p>
-      </div>
-
-      <div class="pupil-box">
-        <div class="pupil-grid">
-          <div class="pupil-field"><span class="lbl">Pupil:</span><span class="line"></span></div>
-          <div class="pupil-field"><span class="lbl">Form:</span><span class="line"></span></div>
-          <div class="pupil-field"><span class="lbl">Teacher:</span><span class="line"></span></div>
-        </div>
-      </div>
-
-      <div class="cover-map-container">
-        <div class="cover-map-frame">
-          <img src="${mapDataUrl}" alt="The German Reich 1871-1918 Reference Map" class="cover-map-img">
-        </div>
-        <div class="cover-map-caption">
-          <strong>Historical Reference Map:</strong> The German Reich (1871–1918) &mdash; Geopolitical Encirclement &amp; The Balance of Power
-        </div>
-      </div>
-
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-bottom: none; padding: 2.5px 6px; font-size: 6.2pt; font-weight: 700; color: #334155; display: flex; justify-content: space-between;">
-        <span>FORMATIVE HOMEWORK &amp; RETRIEVAL LEDGER</span>
-        <span>30-SECOND DESK INSPECTION READY</span>
-      </div>
-
-      <table class="tracking-table">
-        <thead>
-          <tr>
-            <th style="width: 34%; text-align: left;">Lesson &amp; Enquiry Focus</th>
-            <th style="width: 12%;">Attempt 1</th>
-            <th style="width: 12%;">Attempt 2</th>
-            <th style="width: 20%;">Retrieval Strength</th>
-            <th style="width: 22%; font-size: 5.4pt; text-transform: uppercase;">Parent Signature</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="left-title">
-              <div class="tb-lesson-title">1. German Unification &amp; Bismarck</div>
-              <div class="tb-lesson-enquiry">How was the German Empire created in 1871?</div>
-            </td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
-          </tr>
-          <tr>
-            <td class="left-title">
-              <div class="tb-lesson-title">2. Franco-Prussian War &amp; Revanche</div>
-              <div class="tb-lesson-enquiry">How did the Franco-Prussian War create a lasting legacy of hatred?</div>
-            </td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
-          </tr>
-          <tr>
-            <td class="left-title">
-              <div class="tb-lesson-title">3. Scramble for Africa &amp; Morocco</div>
-              <div class="tb-lesson-enquiry">To what extent did the 'Scramble for Africa' increase tension in Europe?</div>
-            </td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
-          </tr>
-          <tr>
-            <td class="left-title">
-              <div class="tb-lesson-title">4. Naval Arms Race &amp; Dreadnought</div>
-              <div class="tb-lesson-enquiry">Why did a battleship building contest destroy Anglo-German relations?</div>
-            </td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
-          </tr>
-          <tr>
-            <td class="left-title">
-              <div class="tb-lesson-title">5. Alliance System &amp; Powder Keg</div>
-              <div class="tb-lesson-enquiry">Did the Alliance System protect Europe or guarantee a global war?</div>
-            </td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
-          </tr>
-          <tr>
-            <td class="left-title">
-              <div class="tb-lesson-title">6. Sarajevo &amp; The July Crisis</div>
-              <div class="tb-lesson-enquiry">Why did a single assassination in Sarajevo ignite a World War?</div>
-            </td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><span class="score-line">&nbsp;&nbsp;&nbsp;</span> / 8</td>
-            <td><div class="retrieval-boxes"><span>[ ] Instant</span> <span>[ ] Effortful</span> <span>[ ] Restudy</span></div></td>
-            <td class="parent-sig-cell"><div class="parent-sig-box"></div></td>
-          </tr>
-        </tbody>
-      </table>
-
-
-      <div class="qr-strip">
-        <img src="${qrDataUrl}" alt="Digital Quiz QR" class="qr-code-img">
-        <div class="qr-caption-text">
-          <strong>Interactive Digital Revision Portal:</strong> Scan QR code for instant retrieval practice, flashcard vaults, and spoken teacher audio guides: <em>the-history-revision-hub.netlify.app</em>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-footer-strip">
-      <span>Causes of the Great War (1871–1914) &bull; Pupil Companion</span>
-      <span>Page 1 of 12</span>
-    </div>
-  </div>
-  `;
-
-  // ------------------------------------------------------------------------
-  // PAGE 2: MASTER CHRONOLOGY DOMINO FLOWCHART (1871–1914)
-  // ------------------------------------------------------------------------
-  const timelineNodes = [
-    {
-      year: '1871',
-      text: '<strong>German Empire Proclaimed:</strong> Unified in the Hall of Mirrors at Versailles; Alsace-Lorraine annexed from France, sparking lifelong French <em>Revanche</em>.',
-    },
-    {
-      year: '1879',
-      text: '<strong>Dual Alliance Formed:</strong> Bismarck signs a defensive military treaty between Germany and Austria-Hungary against Tsarist Russia.',
-    },
-    {
-      year: '1882',
-      text: '<strong>Triple Alliance Formed:</strong> Germany, Austria-Hungary, and Italy create a central European mutual defense pact.',
-    },
-    {
-      year: '1890',
-      text: '<strong>Bismarck Dismissed:</strong> Kaiser Wilhelm II rejects defensive diplomacy, cancels the Reinsurance Treaty, and launches aggressive <em>Weltpolitik</em>.',
-    },
-    {
-      year: '1894',
-      text: '<strong>Franco-Russian Alliance:</strong> France and Russia unite militarily, trapping Germany between two rival powers (the two-front encirclement nightmare).',
-    },
-    {
-      year: '1898–1900',
-      text: "<strong>Tirpitz Naval Laws:</strong> Germany begins building the High Seas Fleet to challenge the British Royal Navy's supremacy.",
-    },
-    {
-      year: '1904',
-      text: '<strong>Entente Cordiale Signed:</strong> Britain and France settle colonial disputes (Egypt & Morocco) and begin joint defensive military discussions.',
-    },
-    {
-      year: '1905–1906',
-      text: '<strong>First Moroccan Crisis:</strong> Wilhelm II lands at Tangier to test the Entente; the Algeciras Conference (1906) isolates Germany and binds Britain to France.',
-    },
-    {
-      year: '1906',
-      text: '<strong>HMS Dreadnought Launched:</strong> Revolutionary British all-big-gun battleship resets naval technology and intensifies the Anglo-German arms race.',
-    },
-    {
-      year: '1907',
-      text: '<strong>Triple Entente Completed:</strong> The Anglo-Russian Convention settles Asian colonial rivalries, uniting Britain, France, and Russia.',
-    },
-    {
-      year: '1908',
-      text: '<strong>The Bosnian Crisis:</strong> Austria-Hungary annexes Bosnia, permanently alienating Serbia and humiliating Tsarist Russia.',
-    },
-    {
-      year: '1911',
-      text: '<strong>Second Moroccan Crisis:</strong> Germany sends gunboat Panther to Agadir; British Mansion House speech warns Germany, cementing Anglo-French solidarity.',
-    },
-    {
-      year: '1912–1913',
-      text: '<strong>The Balkan Wars:</strong> Balkan states defeat the Ottomans; Serbia doubles in size, escalating Austrian hostility and regional panic.',
-    },
-    {
-      year: '28 Jun – 4 Aug 1914',
-      text: '<strong>The July Crisis &amp; War:</strong> Franz Ferdinand assassinated in Sarajevo &rarr; German Blank Cheque &rarr; Austrian Ultimatum &rarr; Russian mobilisation &rarr; Schlieffen Plan &rarr; World War.',
-    },
-  ];
-
-  const page2 = `
-  <div class="a5-page page-flex-full">
-    <div class="timeline-page-content">
-      <div class="page-header-strip">
-        <div>
-          <h2>Master Chronology Domino Flowchart</h2>
-          <p>1871–1914 &bull; 14 Anchor Flashpoints from German Unification to Continental War</p>
-        </div>
-        <span class="page-tag">Domino Flowchart</span>
-      </div>
-
-      <div class="lesson-instruction-bar" style="margin-bottom: 2px;">
-        <strong>Causal Chain:</strong> Trace how imperial rivalry, military alliances, and the arms race escalated into the July Crisis and the outbreak of the Great War.
-      </div>
-
-      <div class="timeline-flow">
-        ${timelineNodes
-          .map(
-            (node) => `
-          <div class="domino-node">
-            <span class="domino-year">${node.year}</span>
-            <span class="domino-text">${node.text}</span>
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
-    </div>
-
-    <div class="page-footer-strip">
-      <span>Causes of the Great War &bull; Chronological Chain</span>
-      <span>Page 2 of 12</span>
-    </div>
-  </div>
-  `;
-
-  // ------------------------------------------------------------------------
-  // PAGES 3 TO 8: 1 DEDICATED PAGE PER LESSON (LESSONS 1 TO 6)
-  // ------------------------------------------------------------------------
-  const questionPages = [];
-  let currentQNum = 1;
-
-  for (let lIdx = 0; lIdx < QUIZ_DATA.length; lIdx++) {
-    const l = QUIZ_DATA[lIdx];
-    const pageNum = lIdx + 3; // Pages 3 to 8
-
-    let qItemsHtml = '';
-    l.items.forEach((item) => {
-      qItemsHtml += `
-        <div class="q-block">
-          <div class="q-header">
-            <div class="q-prompt-wrap">
-              <span class="q-num">${currentQNum}.</span>
-              <span class="q-prompt">${item.q}</span>
-            </div>
-            <span class="q-mastery">[ &nbsp; ] Mastered</span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Answer:</span>
-            <span class="q-solid-line"></span>
-          </div>
-          <div class="q-line-row">
-            <span class="q-line-lbl">Detail / Why:</span>
-            <span class="q-solid-line"></span>
-          </div>
-        </div>
-      `;
-      currentQNum++;
-    });
-
-    const pageHtml = `
-    <div class="a5-page">
-      <div>
-        <div class="page-header-strip">
-          <div>
-            <h2>Lesson ${l.lesson}: ${l.shortTitle}</h2>
-            <p>Enquiry: “${l.enquiry}” &bull; Direct Active Recall</p>
-          </div>
-          <div style="display: flex; align-items: center; gap: 4px;">
-            <span style="font-size: 6.5pt; font-weight: 700; border: 1.2px solid #0f172a; padding: 1.5px 5px; border-radius: 2px;">Score: &nbsp;&nbsp;&nbsp; / 8</span>
-            <span class="page-tag">Q${currentQNum - 8}–Q${currentQNum - 1}</span>
-          </div>
-        </div>
-        <div class="lesson-instruction-bar">
-          <strong>Instructions:</strong> Complete Line 1 (Answer) from memory. Complete Line 2 (Detail / Why) to articulate the historical mechanism, motive, or consequence.
-        </div>
-      </div>
-
-      <div class="q-container">
-        ${qItemsHtml}
-      </div>
-
-      <div class="page-footer-strip">
-        <span>Causes of the Great War &bull; Lesson ${l.lesson} Retrieval Drill</span>
-        <span>Page ${pageNum} of 12</span>
-      </div>
-    </div>
-    `;
-
-    questionPages.push(pageHtml);
-  }
-
-  // ------------------------------------------------------------------------
-  // PAGE 9: DEPARTMENT MARKING BANK (PART 1 • LESSONS 1 TO 3)
-  // ------------------------------------------------------------------------
-  let aP9Html = '';
-  let aNum = 1;
-  for (let lIdx = 0; lIdx < 3; lIdx++) {
-    const l = QUIZ_DATA[lIdx];
-    aP9Html += `<div class="mb-section-title">Lesson ${l.lesson}: ${l.shortTitle}</div><div class="mb-container">`;
-    l.items.forEach((item) => {
-      aP9Html += `
-        <div class="ans-card">
-          <span class="ans-num">${aNum}.</span>
-          <div class="ans-content">
-            <span class="ans-core">${item.a}</span> &mdash; <span class="ans-exp">${item.exp}</span>
-          </div>
-          <span class="ans-boxes">[✓][✗]</span>
-        </div>
-      `;
-      aNum++;
-    });
-    aP9Html += `</div>`;
-  }
-
-  const page9 = `
-  <div class="a5-page">
-    <div class="page-header-strip">
-      <div>
-        <h2>Department Marking Bank (Part 1)</h2>
-        <p>Lessons 1 to 3 &bull; Answers 1 to 24 &bull; Core Answers &amp; The Explanation</p>
-      </div>
-      <span class="page-tag">Marking Key 1–24</span>
-    </div>
-
-    ${aP9Html}
-
-    <div class="page-footer-strip">
-      <span>Causes of the Great War &bull; Marking Bank &bull; Turn Page for Lessons 4–6</span>
-      <span>Page 9 of 12</span>
-    </div>
-  </div>
-  `;
-
-  // ------------------------------------------------------------------------
-  // PAGE 10: DEPARTMENT MARKING BANK (PART 2 • LESSONS 4 TO 6)
-  // ------------------------------------------------------------------------
-  let aP10Html = '';
-  for (let lIdx = 3; lIdx < 6; lIdx++) {
-    const l = QUIZ_DATA[lIdx];
-    aP10Html += `<div class="mb-section-title">Lesson ${l.lesson}: ${l.shortTitle}</div><div class="mb-container">`;
-    l.items.forEach((item) => {
-      aP10Html += `
-        <div class="ans-card">
-          <span class="ans-num">${aNum}.</span>
-          <div class="ans-content">
-            <span class="ans-core">${item.a}</span> &mdash; <span class="ans-exp">${item.exp}</span>
-          </div>
-          <span class="ans-boxes">[✓][✗]</span>
-        </div>
-      `;
-      aNum++;
-    });
-    aP10Html += `</div>`;
-  }
-
-  const page10 = `
-  <div class="a5-page">
-    <div class="page-header-strip">
-      <div>
-        <h2>Department Marking Bank (Part 2)</h2>
-        <p>Lessons 4 to 6 &bull; Answers 25 to 48 &bull; Core Answers &amp; The Explanation</p>
-      </div>
-      <span class="page-tag">Marking Key 25–48</span>
-    </div>
-
-    ${aP10Html}
-
-    <div class="page-footer-strip">
-      <span>Causes of the Great War &bull; Marking Bank &bull; Lessons 4 to 6</span>
-      <span>Page 10 of 12</span>
-    </div>
-  </div>
-  `;
-
-  // ------------------------------------------------------------------------
-  // PAGE 11: KEY HISTORICAL FIGURES & ACADEMIC VOCABULARY
-  // ------------------------------------------------------------------------
-  const figures = [
-    {
-      name: 'Otto von Bismarck',
-      role: 'Imperial Chancellor of Germany (1871–1890)',
-      act: 'Engineered German unification through "Blood and Iron"; constructed the Triple Alliance and Reinsurance Treaty to isolate France and prevent a two-front war.',
-    },
-    {
-      name: 'Kaiser Wilhelm II',
-      role: 'German Emperor (1888–1918)',
-      act: 'Impulsive autocrat; dismissed Bismarck (1890), dropped the Russian treaty, championed aggressive Weltpolitik, and gave Austria the fatal Blank Cheque (1914).',
-    },
-    {
-      name: 'Admiral Alfred von Tirpitz',
-      role: 'State Secretary of the German Imperial Navy',
-      act: 'Authored the German Naval Laws (1898/1900) and "Risk Theory"; directed High Seas Fleet construction that triggered the naval arms race with Great Britain.',
-    },
-    {
-      name: 'Archduke Franz Ferdinand',
-      role: 'Heir to the Austro-Hungarian Throne',
-      act: 'Targeted by Serbian extremists for his reformist views; his assassination on 28 June 1914 in Sarajevo was the catalytic spark for the outbreak of war.',
-    },
-    {
-      name: 'Gavrilo Princip',
-      role: 'Serbian Nationalist Assassin (Young Bosnia / Black Hand)',
-      act: '19-year-old student operative who fired the fatal shots in Sarajevo to break the South Slav provinces away from Austria-Hungary into a Greater Serbia.',
-    },
-    {
-      name: 'Sir Edward Grey',
-      role: 'British Foreign Secretary (1905–1916)',
-      act: 'Attempted international mediation during the July Crisis; delivered the British ultimatum to Germany to defend Belgian neutrality under the 1839 Treaty of London.',
-    },
-    {
-      name: 'Helmuth von Moltke (the Younger)',
-      role: 'Chief of the German General Staff',
-      act: 'Executed the Schlieffen Plan; argued that Russian mobilisation meant Germany had to launch an immediate pre-emptive invasion of France via Belgium.',
-    },
-  ];
-
-  const vocabItems = [
-    {
-      term: 'Weltpolitik',
-      phonetic: '[Velt-pol-ee-teek]',
-      lang: 'German',
-      def: '"World Policy." Kaiser Wilhelm II\'s assertive foreign policy seeking global colonies, international prestige, and naval supremacy matching Britain.',
-    },
-    {
-      term: 'Revanche',
-      phonetic: '[Ruh-vahnsh]',
-      lang: 'French',
-      def: '"Revenge." The profound, enduring French national desire to avenge defeat in the Franco-Prussian War (1870–71) and reclaim Alsace-Lorraine.',
-    },
-    {
-      term: 'Realpolitik',
-      phonetic: '[Ray-ahl-pol-ee-teek]',
-      lang: 'German',
-      def: 'Pragmatic, hard-nosed statecraft based on practical power and national self-interest rather than moral or ideological ideals.',
-    },
-    {
-      term: 'HMS Dreadnought',
-      phonetic: '[Dred-nawt]',
-      lang: 'English',
-      def: 'Revolutionary 1906 British battleship with all-big-gun armament and steam turbines, rendering all previous battleships instantly obsolete.',
-    },
-    {
-      term: 'Entente Cordiale',
-      phonetic: '[Ahn-tahnt Kor-dyahl]',
-      lang: 'French',
-      def: '"Cordial Understanding." 1904 diplomatic accord resolving colonial disputes between Britain and France, paving the way for joint military talks.',
-    },
-    {
-      term: 'Blank Cheque (Blankoscheck)',
-      phonetic: '[Blahnk-oh-sheck]',
-      lang: 'German',
-      def: "Germany's unconditional pledge of military backing given to Austria-Hungary on 5–6 July 1914, emboldening Vienna to declare war on Serbia.",
-    },
-    {
-      term: 'Mobilisation',
-      phonetic: '[Moh-bi-ly-zay-shun]',
-      lang: 'Military',
-      def: 'The complex, timetable-driven movement of reserves, troops, and supplies to frontiers via railways; once ordered, it made war unstoppable.',
-    },
-    {
-      term: 'The Powder Keg of Europe',
-      phonetic: '',
-      lang: 'Metaphor',
-      def: 'The volatile Balkan peninsula where competing ethnic Slavic nationalisms and Austro-Russian imperial rivalries threatened continental peace.',
-    },
-  ];
-
-  const page11 = `
-  <div class="a5-page">
-    <div>
-      <div class="page-header-strip">
-        <div>
-          <h2>Key Historical Figures &amp; Academic Vocabulary</h2>
-          <p>The 7 Protagonists &bull; Pronunciation Guide &bull; Core Terminology</p>
-        </div>
-        <span class="page-tag">People &amp; Terms</span>
-      </div>
-
-      <div class="p11-sec-title">The Seven Crucial Protagonists (1871–1914)</div>
-      <div class="figures-grid">
-        ${figures
-          .map(
-            (f) => `
-          <div class="figure-card">
-            <div>
-              <span class="figure-name">${f.name}</span>
-              <span class="figure-role">&bull; ${f.role}</span>
-            </div>
-            <div class="figure-act">${f.act}</div>
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
-
-      <div class="p11-sec-title">Academic Vocabulary with Spoken Pronunciation Guide</div>
-      <div class="vocab-list">
-        ${vocabItems
-          .map(
-            (v) => `
-          <div class="vocab-card">
-            <div>
-              <span class="vocab-term">${v.term}</span>
-              ${v.phonetic ? `<span class="vocab-phonetic">${v.phonetic}</span>` : ''}
-              <span style="font-size: 5.6pt; color: #64748b; text-transform: uppercase; margin-left: 3px;">(${v.lang})</span>
-            </div>
-            <div class="vocab-def">${v.def}</div>
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
-    </div>
-
-    <div class="page-footer-strip">
-      <span>Causes of the Great War &bull; Key Figures &amp; Vocabulary</span>
-      <span>Page 11 of 12</span>
-    </div>
-  </div>
-  `;
-
-  // ------------------------------------------------------------------------
-  // PAGE 12: BACK COVER — HOW TO WRITE YOUR END-OF-UNIT ESSAY
-  // ------------------------------------------------------------------------
-  const page12 = `
-  <div class="a5-page">
-    <div>
-      <div class="page-header-strip">
-        <div>
-          <h2>How to Write Your End-of-Unit Essay</h2>
-          <p>Key Stage 3 History &bull; Causes of the Great War (1871–1914)</p>
-        </div>
-        <span class="page-tag">Essay Guide</span>
-      </div>
-
-      <div style="background: #0f172a; color: #ffffff; padding: 4px 8px; border-radius: 3px; margin-bottom: 3px;">
-        <div style="font-size: 6.2pt; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.5px;">Your Essay Question:</div>
-        <div style="font-size: 8.8pt; font-weight: 800; font-family: 'Playfair Display', serif; line-height: 1.2; margin-top: 1px;">
-          “Why did the First World War break out in August 1914?”
-        </div>
-      </div>
-
-      <!-- 1. The M.A.I.N. Causes & The Spark -->
-      <div class="architect-sec-head">1. The 4 Long-Term Causes (M.A.I.N.) &amp; The 1914 Spark</div>
-      <div class="main-matrix-grid">
-        <div class="main-matrix-cell">
-          <strong>Militarism:</strong> Britain and Germany competed in a naval race to build Dreadnought battleships and grow huge armies.
-        </div>
-        <div class="main-matrix-cell">
-          <strong>Alliances:</strong> The Triple Alliance vs. Triple Entente meant a fight between two countries pulled everyone in.
-        </div>
-        <div class="main-matrix-cell">
-          <strong>Imperialism:</strong> Arguments over colonies in Africa made the Great Powers suspicious and distrustful of each other.
-        </div>
-        <div class="main-matrix-cell">
-          <strong>Nationalism:</strong> Intense pride and rivalry: France wanted lost land back; Serbian nationalists wanted freedom from Austria.
-        </div>
-      </div>
-      <div style="background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 2px; padding: 2px 4px; font-size: 6.1pt; margin-top: 2px;">
-        <strong>The Spark (Summer 1914):</strong> Franz Ferdinand assassinated in Sarajevo (28 June) &rarr; Germany promises to back Austria (5 July) &rarr; Austria attacks Serbia &rarr; Russia mobilises its army &rarr; Germany invades Belgium &rarr; Britain enters the war (4 August).
-      </div>
-
-      <!-- 2. Two Historian Arguments -->
-      <div class="architect-sec-head">2. What Do Historians Argue? (Two Views)</div>
-      <div class="historiography-grid">
-        <div class="historiography-box" style="background: #fff1f2; border-color: #fecdd3;">
-          <strong style="color: #9f1239; font-size: 6.4pt;">Fritz Fischer (Germany Was to Blame):</strong><br>
-          Germany's leaders wanted a war to dominate Europe. They used the Sarajevo assassination as an excuse to start it.
-        </div>
-        <div class="historiography-box" style="background: #f0fdf4; border-color: #bbf7d0;">
-          <strong style="color: #166534; font-size: 6.4pt;">Christopher Clark ('The Sleepwalkers' — An Accident):</strong><br>
-          No single country planned a world war. Leaders made reckless decisions, panicked, and stumbled into a disaster they couldn't stop.
-        </div>
-      </div>
-
-      <!-- 3. Your 4-Paragraph Essay Plan -->
-      <div class="architect-sec-head">3. Your 4-Paragraph Essay Plan</div>
-      <div class="essay-stages-grid">
-        <div class="essay-stage-card">
-          <span class="stage-num">Paragraph 1:</span>
-          <span><strong>Introduction:</strong> State your main argument straight away—was war planned by Germany, or did leaders stumble into it?</span>
-        </div>
-        <div class="essay-stage-card">
-          <span class="stage-num">Paragraph 2:</span>
-          <span><strong>The Deep Causes (M.A.I.N.):</strong> Explain how the arms race and rival alliances divided Europe into two armed camps.</span>
-        </div>
-        <div class="essay-stage-card">
-          <span class="stage-num">Paragraph 3:</span>
-          <span><strong>The 1914 Spark:</strong> Explain how the Sarajevo assassination pushed alliances and armies into motion.</span>
-        </div>
-        <div class="essay-stage-card">
-          <span class="stage-num">Paragraph 4:</span>
-          <span><strong>Conclusion:</strong> Give your final verdict comparing Fischer vs. Clark. Answer clearly: what was most to blame?</span>
-        </div>
-      </div>
-
-      <!-- 4. Sentence Starters -->
-      <div class="architect-sec-head">4. Sentence Starters You Can Use</div>
-      <div class="stems-list">
-        <div>&bull; <em>“One major reason war broke out in 1914 was...”</em></div>
-        <div>&bull; <em>“This increased tension across Europe because...”</em></div>
-        <div>&bull; <em>“The assassination in Sarajevo was the spark because...”</em></div>
-        <div>&bull; <em>“On the other hand, historian Christopher Clark argues that...”</em></div>
-        <div>&bull; <em>“In conclusion, although the M.A.I.N. causes built up tension for years, the decisive factor was...”</em></div>
-      </div>
-
-      <!-- 5. Connecting Words & Pupil Checklist -->
-      <div class="architect-sec-head">5. Useful Connecting Words &amp; Pupil Checklist</div>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3.5px; margin-bottom: 2px;">
-        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3.5px 5px; font-size: 6.3pt; line-height: 1.2;">
-          <strong style="color: #0f172a; text-transform: uppercase;">Helpful Linking Words:</strong><br>
-          <em>As a result &bull; Consequently &bull; Furthermore &bull; However &bull; Most importantly &bull; In contrast</em>
-        </div>
-        <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 3px; padding: 3.5px 5px; font-size: 6.3pt; line-height: 1.2;">
-          <strong style="color: #0f172a; text-transform: uppercase;">Pupil Checklist:</strong><br>
-          [ ] Clear argument in intro &bull; [ ] Explained 2+ M.A.I.N. causes<br>
-          [ ] Explained the 1914 spark &bull; [ ] Final verdict at the end
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="seal-strip">
-        The History Revision Hub &bull; Key Stage 3 History &bull; Causes of the Great War
-      </div>
-      <div class="page-footer-strip">
-        <span>Causes of the Great War &bull; Essay Writing Guide</span>
-        <span>Page 12 of 12</span>
-      </div>
-    </div>
-  </div>
-  `;
-
-  return `<!DOCTYPE html>
+  let html = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Causes of the Great War - Knowledge Retrieval &amp; Homework Companion (12 Pages)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,700;0,800;1,600&display=swap" rel="stylesheet">
-  <style>${A5_BOOKLET_CSS}</style>
+  <title>Causes of the Great War (1871–1914) Knowledge Retrieval Companion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap" rel="stylesheet">
+  <style>
+    ${A5_BOOKLET_CSS}
+  </style>
 </head>
 <body>
-  ${page1}
-  ${page2}
-  ${questionPages.join('\n')}
-  ${page9}
-  ${page10}
-  ${page11}
-  ${page12}
-  <script>
-    (function() {
-      try {
-        const params = new URLSearchParams(window.location.search);
-        const customSchool = params.get('school') || params.get('dept');
-        if (customSchool) {
-          document.querySelectorAll('[data-department-name]').forEach(function(el) {
-            el.setAttribute('data-department-name', customSchool);
-          });
+`;
+
+  // ==========================================================================
+  // PAGE 1: FRONT COVER & TRACKING LEDGER
+  // ==========================================================================
+  html += `
+  <div class="a5-page page-flex-full">
+    <div>
+      <div class="cover-banner" data-department-name="The History Department">
+        <span class="school-brand-target">The History Department</span>
+        <span>Key Stage 3 • Year 9 History</span>
+      </div>
+      <div class="cover-header-block">
+        <h1 class="cover-title">Causes of the Great War (1871–1914)</h1>
+        <p class="cover-subtitle">Knowledge Retrieval & Homework Companion &bull; 40 Questions</p>
+      </div>
+      <div class="pupil-box">
+        <div class="pupil-grid">
+          <div class="pupil-field"><span class="lbl">Pupil Name:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Class:</span><span class="line"></span></div>
+          <div class="pupil-field"><span class="lbl">Teacher:</span><span class="line"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Centerpiece Source -->
+    <div class="cover-map-container">
+      <div class="cover-map-frame">
+        ${
+          coverImgData
+            ? `<img src="${coverImgData}" alt="HMS Dreadnought at sea" class="cover-map-img">`
+            : `<div style="padding: 10px; font-weight: bold; color: #000000;">HMS Dreadnought at Sea (1906)</div>`
         }
-      } catch(e) {}
-    })();
-  </script>
+      </div>
+      <div class="cover-map-caption">
+        The Royal Navy battleship HMS Dreadnought (c. 1906–1907) • Revolutionary steam turbine propulsion and ten 12-inch guns triggered the Anglo-German naval arms race.
+      </div>
+    </div>
+
+    <!-- Homework & Retrieval Tracking Table -->
+    <div class="ledger-container">
+      <table class="tracking-table">
+        <thead>
+          <tr>
+            <th style="width: 32%;">Lesson Unit</th>
+            <th style="width: 14%;">Att 1 Score</th>
+            <th style="width: 14%;">Att 2 Score</th>
+            <th style="width: 24%;">Retrieval Strength</th>
+            <th style="width: 16%; font-size: 5.6pt; letter-spacing: -0.2px; white-space: nowrap;">Parent Initials</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${QUIZ_DATA.map(
+            (l) => `
+          <tr>
+            <td class="left-title">
+              <div class="tb-lesson-title">Enquiry ${l.lesson}: ${l.shortTitle}</div>
+              <div class="tb-lesson-enquiry">${l.enquiry}</div>
+            </td>
+            <td><span class="score-line"></span> / 8</td>
+            <td><span class="score-line"></span> / 8</td>
+            <td>
+              <div class="retrieval-vertical">
+                <div>[ ] Instant</div>
+                <div>[ ] Effortful</div>
+                <div>[ ] Restudy</div>
+              </div>
+            </td>
+            <td class="parent-sig-cell"></td>
+          </tr>`,
+          ).join('')}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 3-Tier Traffic Light Mastery Rule (DIRT Loop) & Micro-Pip Guide -->
+    <div class="mastery-traffic-strip">
+      <div class="traffic-tier">
+        <span class="traffic-dot green-dot">&#9679;</span>
+        <strong>7–8/8 Mastered:</strong> Secure factual recall.
+      </div>
+      <div class="traffic-tier">
+        <span class="traffic-dot amber-dot">&#9679;</span>
+        <strong>5–6/8 Consolidate:</strong> Flashcard restudy on missed terms.
+      </div>
+      <div class="traffic-tier">
+        <span class="traffic-dot red-dot">&#9679;</span>
+        <strong>&lt;5/8 Action Required:</strong> Mandatory re-test after DIRT corrections.
+      </div>
+    </div>
+
+    <!-- Interactive Portal QR Code -->
+    <div class="qr-strip">
+      <img src="${qrDataUrl}" alt="Digital Portal QR" class="qr-code-img">
+      <div class="qr-caption-text">
+        <strong>Scan for Interactive Digital Quizzes & Audio Lessons:</strong><br>
+        Access online self-marking retrieval flashcards, diagnostic feedback, and audio narration at <strong>the-history-revision-hub.netlify.app</strong>.
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
+      <span><strong>The History Department</strong> &bull; Key Stage 3 History</span>
+      <span>Page 1 of 8</span>
+    </div>
+  </div>
+`;
+
+  // ==========================================================================
+  // PAGES 2–6: 5 DEDICATED ENQUIRY RETRIEVAL PAGES (8 Questions Each)
+  // ==========================================================================
+  let globalQNum = 1;
+  QUIZ_DATA.forEach((lessonData, lIdx) => {
+    const pageNum = lIdx + 2;
+    html += `
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip">
+      <div>
+        <h2>Enquiry ${lessonData.lesson}: ${lessonData.shortTitle}</h2>
+        <p>${lessonData.enquiry}</p>
+      </div>
+      <span class="page-tag">Questions ${globalQNum}–${globalQNum + 7}</span>
+    </div>
+
+    <div class="q-container">
+      ${lessonData.items
+        .map((item, itemIdx) => {
+          const currentNum = globalQNum++;
+          const pipBadge = getPipBadge(itemIdx);
+          return `
+      <div class="q-block">
+        <div class="q-header">
+          <div class="q-num-box">
+            <span class="q-num">${currentNum}.</span>
+            <span class="q-pips">${pipBadge}</span>
+          </div>
+          <span class="q-prompt">${item.q}</span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Answer:</span>
+          <span class="q-solid-line"></span>
+        </div>
+        <div class="q-line-row">
+          <span class="q-line-lbl">Detail:</span>
+          <span class="q-solid-line"></span>
+        </div>
+      </div>`;
+        })
+        .join('')}
+    </div>
+
+    <div class="page-footer-strip">
+      <span>Enquiry ${lessonData.lesson}: ${lessonData.shortTitle}</span>
+      <span>Page ${pageNum} of 8</span>
+    </div>
+  </div>
+`;
+  });
+
+  // ==========================================================================
+  // PAGE 7: DEPARTMENT MARKING BANK (PART 1 • ENQUIRIES 1–3 • Q1–Q20)
+  // 20 Questions evenly distributed across Page 7 (Zero spillover, generous spacing)
+  // ==========================================================================
+  html += `
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip page-header-compact">
+      <h2>Department Marking Bank &bull; Part 1: Enquiries 1–3 (Q1–Q20)</h2>
+    </div>
+
+    <div class="mb-container">
+      <div class="mb-section-title">Enquiry 1: German Unification & Revanche (Q1–Q8)</div>
+      ${QUIZ_DATA[0].items
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 1}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+      </div>`,
+        )
+        .join('')}
+
+      <div class="mb-section-title">Enquiry 2: Imperial Rivalry & Morocco (Q9–Q16)</div>
+      ${QUIZ_DATA[1].items
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 9}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+      </div>`,
+        )
+        .join('')}
+
+      <div class="mb-section-title">Enquiry 3: Naval Arms Race & Dreadnought (Q17–Q20)</div>
+      ${QUIZ_DATA[2].items
+        .slice(0, 4)
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 17}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+      </div>`,
+        )
+        .join('')}
+    </div>
+
+    <div class="page-footer-strip">
+      <span>Causes of the Great War (1871–1914)</span>
+      <span>Marking Bank Part 1 &bull; Page 7 of 8</span>
+    </div>
+  </div>
+`;
+
+  // ==========================================================================
+  // PAGE 8: DEPARTMENT MARKING BANK (PART 2 • ENQUIRIES 3–5 • Q21–Q40)
+  // 20 Questions evenly distributed across Page 8 (Zero spillover, generous spacing)
+  // ==========================================================================
+  html += `
+  <div class="a5-page page-flex-full">
+    <div class="page-header-strip page-header-compact">
+      <h2>Department Marking Bank &bull; Part 2: Enquiries 3–5 (Q21–Q40)</h2>
+    </div>
+
+    <div class="mb-container">
+      <div class="mb-section-title">Enquiry 3: Naval Arms Race & Dreadnought (Q21–Q24)</div>
+      ${QUIZ_DATA[2].items
+        .slice(4)
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 21}.</span>
+          <span class="ans-pip">${getPipBadge(i + 4)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+      </div>`,
+        )
+        .join('')}
+
+      <div class="mb-section-title">Enquiry 4: Alliances & Balkan Powder Keg (Q25–Q32)</div>
+      ${QUIZ_DATA[3].items
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 25}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+      </div>`,
+        )
+        .join('')}
+
+      <div class="mb-section-title">Enquiry 5: Sarajevo & The July Crisis (Q33–Q40)</div>
+      ${QUIZ_DATA[4].items
+        .map(
+          (item, i) => `
+      <div class="ans-card">
+        <div class="ans-num-box">
+          <span class="ans-num">${i + 33}.</span>
+          <span class="ans-pip">${getPipBadge(i)}</span>
+        </div>
+        <div class="ans-content">
+          <span class="ans-core">${item.a}</span> &mdash;
+          <span class="ans-exp">${item.exp}</span>
+        </div>
+      </div>`,
+        )
+        .join('')}
+    </div>
+
+    <div class="page-footer-strip">
+      <span>Causes of the Great War (1871–1914)</span>
+      <span>Marking Bank Part 2 &bull; Page 8 of 8</span>
+    </div>
+  </div>
+`;
+
+  html += `
 </body>
 </html>`;
+
+  return html;
 }
 
-// --------------------------------------------------------------------------
-// MAIN COMPILATION PROCESS
-// --------------------------------------------------------------------------
 async function run() {
-  console.log('🚀 Starting Compilation of Causes of the Great War 12-Page A5 Quiz Booklet...');
-  const htmlContent = await buildHtml();
+  console.log('=============================================================');
+  console.log('📖 COMPILING CAUSES OF THE GREAT WAR 8-PAGE QUIZ BOOKLET');
+  console.log('=============================================================\n');
 
-  if (!fs.existsSync(UNIT_DIR)) fs.mkdirSync(UNIT_DIR, { recursive: true });
-  if (!fs.existsSync(PDFS_DIR)) fs.mkdirSync(PDFS_DIR, { recursive: true });
-
-  // 1. Write HTML
+  const htmlContent = await compileQuizBookletHtml();
   const htmlPath = path.join(UNIT_DIR, 'quiz_pack.html');
   fs.writeFileSync(htmlPath, htmlContent, 'utf8');
-  console.log(`✅ Saved 12-Page HTML: ${htmlPath}`);
+  console.log(`✅ Written HTML Booklet: ${htmlPath}`);
 
-  // 2. Launch Puppeteer to compile A5 PDF
+  console.log('🚀 Launching Puppeteer for PDF export and space budget audit...');
   const browser = await puppeteer.launch({
     headless: 'new',
-    args: ['--allow-file-access-from-files', '--no-sandbox', '--disable-setuid-sandbox'],
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
   const page = await browser.newPage();
   await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
 
-  // Check actual page count rendered by browser
-  const pageCount = await page.evaluate(() => {
-    return document.querySelectorAll('.a5-page').length;
-  });
-  console.log(`📑 Total A5 Pages rendered in DOM: ${pageCount}`);
-
-  // ------------------------------------------------------------------------
-  // AUTOMATED PAGE BUDGET & SPACE UTILIZATION AUDIT
-  // ------------------------------------------------------------------------
-  const spaceAudit = await page.evaluate(() => {
+  // Space Budget & Overflow Audit
+  const auditResults = await page.evaluate(() => {
     const pages = document.querySelectorAll('.a5-page');
-    const auditResults = [];
+    const pageData = [];
     pages.forEach((p, idx) => {
-      const pageNum = idx + 1;
-      const clientH = p.clientHeight;
       const scrollH = p.scrollHeight;
-      const overflow = scrollH > clientH + 4 ? scrollH - clientH : 0;
-
-      // Measure content height down to footer
-      const footer = p.querySelector('.page-footer-strip');
-      let unusedBottom = 0;
-      if (footer) {
-        const pRect = p.getBoundingClientRect();
-        const fRect = footer.getBoundingClientRect();
-        unusedBottom = Math.max(0, Math.round(pRect.bottom - fRect.bottom));
-      }
-
-      const utilizationPct = Math.min(100, Math.round(((clientH - unusedBottom) / clientH) * 100));
-      auditResults.push({ pageNum, clientH, scrollH, overflow, unusedBottom, utilizationPct });
+      const clientH = p.clientHeight;
+      const overflow = scrollH - clientH;
+      pageData.push({
+        pageNum: idx + 1,
+        scrollH,
+        clientH,
+        overflow: overflow > 1 ? overflow : 0,
+      });
     });
-    return auditResults;
+    return pageData;
   });
 
   console.log('\n=============================================================');
-  console.log('📐 AUTOMATED PAGE BUDGET & SPACE UTILIZATION AUDIT');
+  console.log('📐 SPACE BUDGET & OVERFLOW AUDIT: Causes of the Great War');
   console.log('=============================================================');
-  let hasErrors = false;
-  spaceAudit.forEach((res) => {
-    const status =
-      res.overflow > 0
-        ? `❌ OVERFLOW (+${res.overflow}px)`
-        : res.unusedBottom > 35
-          ? `⚠️ UNDERFLOW (${res.unusedBottom}px gap)`
-          : `✅ OPTIMAL (${res.utilizationPct}% utilized, ${res.unusedBottom}px gap)`;
-    console.log(`Page ${String(res.pageNum).padStart(2, ' ')}: ${status}`);
-    if (res.overflow > 0) hasErrors = true;
+  let hasOverflow = false;
+  auditResults.forEach((res) => {
+    if (res.overflow > 0) {
+      console.error(
+        `Page ${String(res.pageNum).padStart(2, ' ')}: ❌ OVERFLOW DETECTED (+${res.overflow}px) [scrollH: ${res.scrollH}px, clientH: ${res.clientH}px]`,
+      );
+      hasOverflow = true;
+    } else {
+      console.log(
+        `Page ${String(res.pageNum).padStart(2, ' ')}: ✅ 0px overflow (PERFECT FIT) (clientH: ${res.clientH}px, scrollH: ${res.scrollH}px)`,
+      );
+    }
   });
   console.log('=============================================================\n');
 
-  if (hasErrors) {
-    console.warn('⚠️ Please fix layout overflows before production printing!');
-  } else {
-    console.log('✅ Layout & Space Audit Passed: 100% clean across all 12 pages!');
+  if (hasOverflow) {
+    await browser.close();
+    throw new Error(
+      'Compilation halted: One or more pages exceeded the strict A5 printable budget.',
+    );
   }
 
-  // A5 dimensions: 148mm x 210mm
-  const pdfTargets = [
-    path.join(PDFS_DIR, 'great_war_recall_quiz_FULL.pdf'),
-    path.join(PDFS_DIR, 'great_war_quiz_pack.pdf'),
-    path.join(PDFS_DIR, 'great_war_quiz_pack_FINAL_V17.pdf'),
-  ];
+  console.log('🎉 Audit Passed: 100% clean across all 8 pages with ZERO overflow!');
 
-  const primaryPdf = pdfTargets[0];
+  const pdfPathFinal = path.join(PDFS_DIR, 'great_war_quiz_pack_FINAL_V1.pdf');
+  const pdfPathAlias = path.join(PDFS_DIR, 'great_war_quiz_pack.pdf');
+
   await page.pdf({
-    path: primaryPdf,
-    width: '148mm',
-    height: '210mm',
+    path: pdfPathFinal,
+    format: 'A5',
     printBackground: true,
-    margin: { top: '6mm', bottom: '6mm', left: '0mm', right: '0mm' },
+    margin: {
+      top: '0mm',
+      right: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+    },
   });
-  console.log(`✅ Generated Master 12-Page A5 PDF: ${primaryPdf}`);
 
-  // Copy to aliases
-  for (let i = 1; i < pdfTargets.length; i++) {
-    fs.copyFileSync(primaryPdf, pdfTargets[i]);
-    console.log(`✅ Updated PDF alias: ${pdfTargets[i]}`);
-  }
-
+  fs.copyFileSync(pdfPathFinal, pdfPathAlias);
   await browser.close();
 
-  // Copy to Google Drive if available
-  try {
-    const driveBaseDir = 'G:\\My Drive\\AAMX\\Dep File';
-    if (fs.existsSync(driveBaseDir)) {
-      const gdriveTargets = [
-        path.join(driveBaseDir, 'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf'),
-        path.join(
-          driveBaseDir,
-          'Year 9',
-          'The Great War',
-          'Causes_of_the_Great_War_A5_Quiz_Booklet.pdf',
-        ),
-        path.join(
-          driveBaseDir,
-          'Year 9',
-          'The Great War',
-          'Causes of the Great War Knowledge Recall Quiz (All 48 Questions).pdf',
-        ),
-      ];
-      gdriveTargets.forEach((targetPath) => {
-        const targetDir = path.dirname(targetPath);
-        if (!fs.existsSync(targetDir)) fs.mkdirSync(targetDir, { recursive: true });
-        fs.copyFileSync(primaryPdf, targetPath);
-        console.log(`✅ Synced 12-Page A5 Quiz Booklet to Google Drive: ${targetPath}`);
-      });
-    }
-  } catch (e) {
-    console.warn(`⚠️ Warning syncing to Google Drive: ${e.message}`);
-  }
-
+  console.log(`✅ Generated Master 8-Page Saddle-Stitch PDF: ${pdfPathFinal}`);
+  console.log(`✅ Updated PDF alias: ${pdfPathAlias}`);
   console.log(
-    '\n🎉 Complete 12-page saddle-stitch booklet compiled cleanly with zero overflow! Ready for printing.',
+    '\n🎉 Complete 8-page saddle-stitch Knowledge Retrieval Companion compiled successfully!\n',
   );
 }
 
-if (require.main === module) {
-  run().catch(console.error);
-}
-
-module.exports = { run };
+run().catch((err) => {
+  console.error('Fatal compilation error:', err);
+  process.exit(1);
+});
