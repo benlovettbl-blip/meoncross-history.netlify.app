@@ -440,7 +440,7 @@ export const WORKBOOK_PAGE_MAP = {
   },
   great_war: {
     lesson_1: {
-      page: 3,
+      page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 0,
@@ -468,12 +468,6 @@ export const WORKBOOK_PAGE_MAP = {
       booklet: 'Pupil Workbook',
       unitId: 'great_war',
       lessonIndex: 4,
-    },
-    lesson_6: {
-      page: 12,
-      booklet: 'Pupil Workbook',
-      unitId: 'great_war',
-      lessonIndex: 5,
     },
   },
   great_war_part2: {

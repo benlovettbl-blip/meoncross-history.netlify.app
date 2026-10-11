@@ -6787,7 +6787,7 @@ export function renderLesson(lesson) {
             const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
             const taskTitle = task.topic || 'Task 4: Analytical Synthesis & Historical Essay';
             const badgeText = isKs3
-              ? 'KS3 Enquiry Essay &bull; Disciplinary Synthesis'
+              ? 'KS3 Enquiry Essay &bull; Structured Writing'
               : 'GCSE Analytical Masterclass';
             const questionPrompt = task.question || task.text || task.prompt || '';
             const hints = Array.isArray(task.hints) ? task.hints : [];

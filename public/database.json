@@ -45212,37 +45212,76 @@
           },
           "tasks": [
             {
-              "type": "two_sided_argument",
-              "topic": "Task 3: Evidence Preparation — Bismarck's Statecraft & The 1871 Geopolitical Rupture",
-              "question": "Was the German Empire forged through master diplomacy or ruthless military aggression?",
-              "instruction": "Examine both interpretations of Otto von Bismarck's statecraft. Bullet-point two key pieces of factual evidence into each column, then develop your balanced argument below:",
-              "advancement": {
-                "title": "Interpretation 1: Pragmatic Statesmanship & Diplomacy",
-                "points": [
-                  "Built economic unity early through the Zollverein customs union, binding German states peacefully through trade.",
-                  "Prudently halted Prussian armies after defeating Austria in 1866, refusing to humiliate Vienna to secure future friendship.",
-                  "Skillfully built defensive alliances after 1871 to maintain European peace and avoid a two-front war."
-                ],
-                "starter": "Historians praising Bismarck argue that his statecraft was guided by calculated moderation, because..."
-              },
-              "limitations": {
-                "title": "Interpretation 2: \"Blood and Iron\" & Provoked Warfare",
-                "points": [
-                  "Bypassed the Prussian parliament unconstitutionally in 1862 and declared that major questions are decided by iron and blood.",
-                  "Manufactured three deliberate wars in seven years (against Denmark, Austria, and France) to crush political opposition.",
-                  "Doctored the Ems Telegram and annexed Alsace-Lorraine, guaranteeing forty years of bitter French revanchism."
-                ],
-                "starter": "Conversely, critics argue that Bismarck's unification rested upon cynical violence and militarism, because..."
-              },
-              "synthesis_prompt": "Explain whether Bismarck unified Germany through diplomatic genius or calculated military aggression.",
-              "synthesis_connectives": [
-                "On the one hand...",
-                "For instance, Bismarck...",
-                "However, in reality...",
-                "Consequently...",
-                "Overall, it is clear that..."
+              "type": "extended_writing",
+              "topic": "Question 2: Explain Why [12 marks • 15 mins]",
+              "question": "Explain why the creation of the German Empire in 1871 created long-term instability in Europe. [12 marks]",
+              "stimulus": [
+                "The annexation of Alsace-Lorraine",
+                "Bismarck’s dread of a two-front war"
               ],
-              "model_answer": "While Bismarck was an exceptionally gifted diplomatic tactician who understood the value of moderation—as shown when he refused to march on Vienna in 1866—his entire political strategy rested upon calculated violence. He unconstitutionally bypassed the Prussian parliament to fund his army, manufactured three deliberate wars in seven years, and weaponized the edited Ems Telegram to provoke France. His diplomacy was not an alternative to war, but the art of choosing the precise moment to unleash \"blood and iron.\""
+              "hints": [
+                {
+                  "label": "Point",
+                  "prompt": "State a clear causal factor (e.g. the annexation of Alsace-Lorraine or Bismarck’s dread of a two-front war) that destabilised the European balance of power."
+                },
+                {
+                  "label": "Evidence",
+                  "prompt": "Deploy precise factual evidence: the 1871 Treaty of Frankfurt, the 5 billion franc indemnity, French revanchism, or the 1887 Reinsurance Treaty."
+                },
+                {
+                  "label": "Explanation",
+                  "prompt": "Analyse HOW this factor generated permanent diplomatic paranoia, forced military alliances, or shattered the 1815 Congress of Vienna balance of power."
+                },
+                {
+                  "label": "Link",
+                  "prompt": "Connect directly back to the question stem, demonstrating why this long-term instability set Europe on an inevitable path toward military conflict."
+                }
+              ],
+              "scaffolding": {
+                "structure_strip": [
+                  {
+                    "col": "Paragraph 1: Alsace-Lorraine & Revanche",
+                    "prompt": "Explain how the annexation of Alsace-Lorraine under the Treaty of Frankfurt permanently poisoned Franco-German relations.",
+                    "starter": "A decisive factor creating long-term European instability was the annexation of Alsace-Lorraine in 1871..."
+                  },
+                  {
+                    "col": "Paragraph 2: Two-Front War & Alliances",
+                    "prompt": "Explain how Bismarck’s dread of a two-front war led to a complex web of secret defensive alliances that divided Europe.",
+                    "starter": "Furthermore, German foreign policy was dominated by Bismarck’s existential dread of a two-front war..."
+                  },
+                  {
+                    "col": "Paragraph 3: European Balance of Power",
+                    "prompt": "Explain how the sudden rise of a massive, industrialised German Empire overturned the 1815 Congress of Vienna balance of power.",
+                    "starter": "Ultimately, the fundamental cause of instability was the rupture of the traditional European balance of power..."
+                  }
+                ],
+                "sentence_starters": [
+                  "A decisive factor creating long-term instability was...",
+                  "This rupture was intensified by the Treaty of Frankfurt because...",
+                  "In France, this triggered the cult of \"Revanche\", meaning that...",
+                  "To prevent encirclement, Bismarck attempted to isolate France through...",
+                  "Consequently, the creation of the German Empire divided Europe into..."
+                ],
+                "connective_bank": [
+                  "A decisive factor was...",
+                  "This led directly to...",
+                  "Furthermore...",
+                  "In consequence of this...",
+                  "Ultimately, this meant that..."
+                ],
+                "word_bank": [
+                  "Otto von Bismarck",
+                  "Realpolitik",
+                  "Blood and Iron",
+                  "Hall of Mirrors",
+                  "Treaty of Frankfurt",
+                  "Alsace-Lorraine",
+                  "Revanche",
+                  "Balance of Power",
+                  "Two-Front War"
+                ]
+              },
+              "model_answer": "The creation of the German Empire in 1871 created profound and enduring instability in Europe, fundamentally because it violently overturned the balance of power established by the 1815 Congress of Vienna. The emergence of a united Germany under Prussian military dominance placed an economic and industrial colossus at the physical centre of Europe, instantly threatening the security of its neighbours.\n\nFirst and foremost, the annexation of Alsace-Lorraine under the 1871 Treaty of Frankfurt permanently poisoned Franco-German relations. By seizing these mineral-rich border provinces and imposing a crushing 5 billion franc indemnity, Bismarck inflicted an unbearable national humiliation upon the French Republic. In France, this cultivated the powerful ideology of \"Revanche\" (revenge), symbolised by classroom maps veiling the lost provinces in black mourning crepe. French political leaders could never reconcile with Berlin while German garrisons occupied Strasbourg and Metz, ensuring that France remained an irreconcilable enemy permanently seeking allies to reverse the verdict of 1871.\n\nSecondly, the creation of the Empire generated permanent structural instability through Bismarck’s desperate attempts to prevent a two-front war. Realising France would seek vengeance, Bismarck’s supreme foreign policy objective was to keep France diplomatically isolated. This compelled him to construct an increasingly intricate, contradictory web of secret treaties—most notably the Dual Alliance with Austria-Hungary (1879) and the Reinsurance Treaty with Russia (1887). While Bismarck’s Realpolitik preserved peace during his tenure, it divided the continent into rigid armed camps. When Kaiser Wilhelm II dismissed Bismarck in 1890 and allowed the Russian treaty to lapse, Tsarist Russia naturally aligned with republican France in 1894, creating the very two-front encirclement Germany dreaded and locking Europe into competing alliance blocs."
             }
           ],
           "quiz": [
@@ -45599,11 +45638,77 @@
           "tasks": [
             {
               "type": "short_answer",
-              "act": 5,
+              "topic": "Question 1: Describe Two Features [4 marks • 5 mins]",
               "qNum": 1,
-              "text": "Explain why the 1911 Agadir Crisis brought Britain and France closer together rather than driving them apart.",
-              "starter": "The Agadir Crisis brought Britain and France closer together because...",
-              "answer": "Germany’s dispatch of the gunboat Panther threatened British naval routes in the Atlantic, prompting Lloyd George’s Mansion House speech and initiating secret joint military staff talks between Britain and France."
+              "question": "Describe two features of the 1911 Agadir Crisis (Second Moroccan Crisis). [4 marks]",
+              "starter": "One feature of the 1911 Agadir Crisis was... A second feature was...",
+              "model_answer": "One feature of the 1911 Agadir Crisis was Germany’s provocative deployment of the gunboat SMS Panther to the Moroccan port of Agadir, using military intimidation (\"gunboat diplomacy\") to challenge French colonial dominance and demand territorial compensation in the Congo. A second feature was the robust British diplomatic reaction, notably David Lloyd George’s Mansion House speech, which publicly warned Germany that Britain would fight alongside France rather than allow its maritime interests to be undermined, resulting in secret Anglo-French joint military staff talks."
+            },
+            {
+              "type": "extended_writing",
+              "topic": "Question 2: Explain One Consequence [4 marks • 5 mins]",
+              "question": "Explain one consequence of the Moroccan Crises for relations between Great Britain and France. [4 marks]",
+              "stimulus": [
+                "The 1906 Algeciras Conference",
+                "The 1911 Mansion House Speech"
+              ],
+              "hints": [
+                {
+                  "label": "Point",
+                  "prompt": "State a decisive consequence of the Moroccan Crises for Anglo-French relations (e.g., transforming a loose colonial agreement into a binding military partnership)."
+                },
+                {
+                  "label": "Evidence",
+                  "prompt": "Deploy specific historical evidence: British backing of France at Algeciras (1906), Lloyd George’s Mansion House speech (1911), or secret joint military staff talks."
+                },
+                {
+                  "label": "Explanation",
+                  "prompt": "Explain HOW German imperial bullying backfired by convincing British and French leaders that German Weltpolitik posed a mortal threat to European security."
+                },
+                {
+                  "label": "Link",
+                  "prompt": "Conclude by showing how this solidified the Entente Cordiale into a de facto military alliance before 1914."
+                }
+              ],
+              "scaffolding": {
+                "structure_strip": [
+                  {
+                    "col": "Consequence & Evidence",
+                    "prompt": "Identify how German aggression at Tangier and Agadir drove Britain and France together.",
+                    "starter": "A decisive consequence of the Moroccan Crises was the dramatic strengthening of diplomatic and military ties between Great Britain and France..."
+                  },
+                  {
+                    "col": "Causal Explanation & Impact",
+                    "prompt": "Explain how the 1906 Algeciras Conference and the 1911 Mansion House speech established joint military planning.",
+                    "starter": "This occurred because Kaiser Wilhelm II’s attempts to test the Entente Cordiale completely backfired..."
+                  }
+                ],
+                "sentence_starters": [
+                  "A decisive consequence of the Moroccan Crises was...",
+                  "This happened because Kaiser Wilhelm II attempted to...",
+                  "At the 1906 Algeciras Conference, Britain firmly supported France by...",
+                  "Following the dispatch of the Panther in 1911, David Lloyd George warned that...",
+                  "Consequently, the crises transformed a colonial agreement into..."
+                ],
+                "connective_bank": [
+                  "A decisive consequence was...",
+                  "This happened because...",
+                  "As a direct result...",
+                  "Consequently, this led to...",
+                  "Ultimately, this meant that..."
+                ],
+                "word_bank": [
+                  "Kaiser Wilhelm II",
+                  "Weltpolitik",
+                  "Tangier (1905)",
+                  "Algeciras Conference",
+                  "Panther at Agadir (1911)",
+                  "David Lloyd George",
+                  "Mansion House Speech",
+                  "Entente Cordiale"
+                ]
+              },
+              "model_answer": "A decisive consequence of the Moroccan Crises was the fundamental transformation of the 1904 Anglo-French Entente Cordiale from a loose colonial understanding into a solid, unshakeable military partnership. Rather than driving Britain and France apart as Kaiser Wilhelm II had intended, German bullying at Tangier in 1905 and Agadir in 1911 convinced British statesmen that German Weltpolitik sought European hegemony. At the 1906 Algeciras Conference, Britain firmly backed France, leaving Germany diplomatically isolated with only Austria-Hungary for support. Following the 1911 Agadir Crisis and Lloyd George’s defiant Mansion House speech, the two nations initiated secret joint military staff conversations and agreed to divide naval responsibilities—with the Royal Navy safeguarding the North Sea and the French Navy securing the Mediterranean—locking both powers into an informal military alliance."
             }
           ],
           "quiz": [
@@ -45860,37 +45965,46 @@
           },
           "tasks": [
             {
-              "type": "two_sided_argument",
-              "topic": "Task 3: Historiographical Debate — The Impact of the Naval Arms Race",
-              "question": "Did the naval arms race cause the First World War?",
-              "instruction": "Evaluate both historical interpretations below:",
-              "advancement": {
-                "title": "Interpretation 1: The Naval Race as Primary Catalyst (Paul Kennedy)",
-                "points": [
-                  "Naval supremacy was an existential necessity for Britain; a German battlefleet across the North Sea was an intolerable threat.",
-                  "The race poisoned diplomatic relations, destroying decades of commercial cooperation between London and Berlin.",
-                  "Forced Britain to abandon \"splendid isolation\" and redeploy its battlefleet in partnership with France."
-                ],
-                "starter": "Historians arguing that the naval race caused the war emphasize that..."
+              "type": "historical_interpretations",
+              "topic": "Question 3: Historiographical Analysis [8 marks • 10 mins]",
+              "title": "Historiographical Analysis: The Impact of the Naval Arms Race",
+              "tariff": "Question 3: Historiographical Analysis [8 marks • 10 mins]",
+              "question": "Study Interpretations 1 and 2. How do they differ about the causes and impact of the Anglo-German naval arms race? [4 marks] Suggest one reason why they differ. [4 marks]",
+              "interp1": {
+                "title": "Interpretation 1: The Naval Race as Primary Catalyst",
+                "badge": "Orthodox Historiography",
+                "author": "Professor Paul Kennedy • The Rise of Anglo-German Antagonism",
+                "text": "The naval race was the single most dangerous element in pre-1914 European diplomacy. For Britain, naval supremacy was not a luxury; it was the foundation of national survival and empire. When Germany began massing battleships directly across the North Sea, it transformed what had been friendly commercial relations into bitter existential suspicion. British leaders concluded that a German battlefleet could only be designed for one purpose: to destroy British naval power and dominate Europe."
               },
-              "limitations": {
-                "title": "Interpretation 2: Secondary Factor Overcome by 1912 (Christopher Clark)",
-                "points": [
-                  "By 1912, Germany had abandoned the naval contest to redirect funds into expanding its land army.",
-                  "Britain retained an insurmountable lead in dreadnoughts, making war over naval superiority unnecessary.",
-                  "The actual spark that ignited the conflagration arose from Balkan ethnic nationalism, not North Sea battleships."
-                ],
-                "starter": "Conversely, revisionist historians argue that the naval race was not the decisive catalyst, because..."
+              "interp2": {
+                "title": "Interpretation 2: Secondary Factor Overcome by 1912",
+                "badge": "Revisionist Historiography",
+                "author": "Professor Christopher Clark • The Sleepwalkers",
+                "text": "Historians have greatly exaggerated the fatal impact of the naval race. By 1912, the battleship race was effectively over: Germany had abandoned the contest to concentrate resources on its land army, while Britain retained an insurmountable dreadnought lead. What ultimately triggered the catastrophe was not steel battleships in the North Sea, but unstable ethnic nationalism, crumbling imperial frontiers, and fatal alliance commitments in the volatile Balkan peninsula."
               },
-              "synthesis_prompt": "Explain how far you agree that the Anglo-German naval race made war inevitable.",
-              "synthesis_connectives": [
-                "On one hand...",
-                "For instance...",
-                "However, in contrast...",
-                "Consequently...",
-                "In conclusion..."
+              "matrix": [
+                {
+                  "col": "1. INTERPRETATION 1 (KENNEDY)",
+                  "text": "Argues the naval race was the primary existential catalyst that poisoned pre-1914 relations and made war inevitable."
+                },
+                {
+                  "col": "2. INTERPRETATION 2 (CLARK)",
+                  "text": "Argues the naval race was secondary, already resolved by 1912, and overshadowed by Balkan nationalism and land armies."
+                },
+                {
+                  "col": "3. HISTORIOGRAPHICAL VERDICT",
+                  "text": "Weigh both interpretations: Did naval rivalry create the structural hostility that made the 1914 July Crisis uncontrollable?"
+                }
               ],
-              "model_answer": "While the naval arms race was largely resolved in Britain’s favor by 1912 when Germany redirected spending to its army, the psychological and diplomatic damage was permanent. It eliminated British trust in German intentions, ended Britain’s policy of splendid isolation, and cemented the Anglo-French naval accord that made British entry into the war in August 1914 almost unavoidable."
+              "connectives": [
+                "Interpretation 1 contends that...",
+                "Paul Kennedy emphasizes that naval supremacy was...",
+                "In sharp contrast, Interpretation 2 argues that...",
+                "Christopher Clark maintains that by 1912...",
+                "The fundamental reason the interpretations differ is...",
+                "Weighing both perspectives against historical evidence, I conclude that..."
+              ],
+              "model_answer": "Interpretations 1 and 2 differ fundamentally about the significance of the Anglo-German naval arms race in causing the outbreak of the First World War.\n\nInterpretation 1, by Paul Kennedy, argues that the naval race was the single most dangerous factor in pre-1914 European diplomacy. Kennedy emphasizes that British naval dominance was existential for national survival and food supply; consequently, Germany’s construction of a High Seas Fleet directly opposite the British coast poisoned friendly commercial ties and convinced British leaders that Berlin was bent on European hegemony.\n\nIn sharp contrast, Interpretation 2, by Christopher Clark, argues that historians have exaggerated the impact of the naval race. Clark stresses that by 1912 the contest was effectively over, as Germany conceded naval defeat to fund its army and Britain held an insurmountable lead. Instead, Clark identifies Balkan ethnic nationalism and rigid alliances as the true triggers of the war.\n\nThese interpretations differ because the historians focus on different chronological periods and causal mechanisms: Kennedy focuses on the long-term diplomatic polarization between 1898 and 1911 that drove Britain into the Entente with France and Russia, whereas Clark focuses on the immediate short-term triggers of 1912–1914 in south-eastern Europe."
             }
           ],
           "quiz": [
@@ -46138,12 +46252,144 @@
           },
           "tasks": [
             {
-              "type": "short_answer",
-              "act": 4,
-              "qNum": 1,
-              "text": "Explain why Russia’s diplomatic humiliation during the 1908 Bosnian Crisis made a major European war much more likely in 1914.",
-              "starter": "Russia’s humiliation in 1908 made war more likely because...",
-              "answer": "Being forced to back down under German military ultimatums convinced Tsar Nicholas II and Russian generals that retreating again in the Balkans would destroy Russia’s Great Power status, ensuring they would mobilize their army immediately in the next crisis."
+              "type": "extended_writing",
+              "topic": "Question 1: Narrative Account [8 marks • 10 mins]",
+              "question": "Write a narrative account analysing how crises in the Balkans between 1908 and 1913 increased European tension. [8 marks]",
+              "stimulus": [
+                "The Bosnian Annexation Crisis (1908)",
+                "The Balkan Wars (1912–1913)"
+              ],
+              "hints": [
+                {
+                  "label": "Point",
+                  "prompt": "Begin with the initial catalyst: Austria-Hungary’s 1908 annexation of Bosnia-Herzegovina and Russian humiliation."
+                },
+                {
+                  "label": "Evidence",
+                  "prompt": "Deploy chronological evidence: Serbian fury, German ultimatums backing Vienna, and the 1912–1913 Balkan Wars."
+                },
+                {
+                  "label": "Explanation",
+                  "prompt": "Trace how each event directly caused the next: Serbian territory doubling, Austro-Hungarian fear of Pan-Slavism, and Russian resolve never to retreat again."
+                },
+                {
+                  "label": "Link",
+                  "prompt": "Conclude with the outcome: the Balkans became a primed powder keg where any spark would trigger a general European war."
+                }
+              ],
+              "scaffolding": {
+                "structure_strip": [
+                  {
+                    "col": "Phase 1: Bosnian Crisis (1908)",
+                    "prompt": "Describe the Austrian annexation of Bosnia and Germany’s military ultimatum to Russia.",
+                    "starter": "Initially, Balkan tensions escalated sharply in October 1908 when Austria-Hungary formally annexed Bosnia-Herzegovina..."
+                  },
+                  {
+                    "col": "Phase 2: Balkan Wars (1912–1913)",
+                    "prompt": "Explain how the defeat of the Ottoman Empire doubled Serbian territory and alarmed Vienna.",
+                    "starter": "Following this, the regional instability deepened during the Balkan Wars of 1912–1913..."
+                  },
+                  {
+                    "col": "Phase 3: The Primed Powder Keg",
+                    "prompt": "Analyse how these crises convinced Austria to seek pre-emptive war and Russia to mobilize next time.",
+                    "starter": "Consequently, the cumulative effect of these crises was to make south-eastern Europe the \"powder keg of Europe\"..."
+                  }
+                ],
+                "sentence_starters": [
+                  "Initially, European tensions escalated in 1908 when...",
+                  "This provoked intense outrage in Serbia because...",
+                  "Russia was forced to back down when Germany issued an ultimatum stating that...",
+                  "Following this, the Balkan Wars of 1912–1913 dramatically altered the balance of power because...",
+                  "As an outcome of this, Austrian military leaders concluded that...",
+                  "Ultimately, Russia resolved that in any future Balkan confrontation it would..."
+                ],
+                "connective_bank": [
+                  "Initially...",
+                  "This led directly to...",
+                  "Following this...",
+                  "Consequently...",
+                  "As an outcome of this...",
+                  "Ultimately..."
+                ],
+                "word_bank": [
+                  "Balkan Powder Keg",
+                  "Bosnia-Herzegovina",
+                  "Pan-Slavism",
+                  "Tsar Nicholas II",
+                  "Franz Joseph",
+                  "Greater Serbia",
+                  "Balkan Wars",
+                  "pre-emptive war"
+                ]
+              },
+              "model_answer": "Between 1908 and 1913, a sequence of interconnected crises in the Balkans systematically dismantled regional stability and brought the Great Powers into acute confrontation.\n\nThe chain of events began in October 1908, when Austria-Hungary formally annexed Bosnia-Herzegovina, an Ottoman province populated largely by Serbs that Vienna had administered since 1878. This annexation provoked fury in Serbia, which harboured Pan-Slavic ambitions of creating a \"Greater Serbia.\" Tsarist Russia moved to support its Slavic ally, but in March 1909 Germany intervened with a blunt ultimatum demanding that Russia accept the annexation without an international conference or face war. Humiliated and militarily unready following its 1905 defeat by Japan, Russia was forced to capitulate, leaving Tsar Nicholas II and his generals determined never to back down in the Balkans again.\n\nFollowing this crisis, the collapse of Ottoman authority sparked the First Balkan War (1912), in which the Balkan League (Serbia, Greece, Montenegro, and Bulgaria) drove the Turks almost entirely out of Europe. In the Second Balkan War (1913), Serbia defeated Bulgaria, resulting in Serbia doubling its territorial size and population. This explosive rise of an assertive, heavily armed Serbia terrified Austro-Hungarian leaders in Vienna, who feared that Pan-Slavic nationalism would tear their multi-ethnic empire apart.\n\nConsequently, the Balkan crises convinced Vienna’s military leadership, led by General Conrad von Hötzendorf, that a pre-emptive strike to crush Serbia was necessary for imperial survival. Combined with Russia’s vow to mobilize in any future crisis, south-eastern Europe had become a volatile powder keg awaiting a final trigger."
+            },
+            {
+              "type": "extended_writing",
+              "topic": "Question 2: Explain Importance of Alliance Systems [8 marks • 10 mins]",
+              "question": "Explain the importance of the alliance systems for relations between European great powers before 1914. [8 marks]",
+              "stimulus": [
+                "The Triple Alliance (1882)",
+                "The Triple Entente (1907)"
+              ],
+              "hints": [
+                {
+                  "label": "Point",
+                  "prompt": "State why the alliance systems were critically important (e.g. dividing Europe into two armed camps that transformed local crises into continental tripwires)."
+                },
+                {
+                  "label": "Evidence",
+                  "prompt": "Deploy precise evidence: Dual Alliance (1879), Triple Alliance (1882), Franco-Russian Alliance (1894), Entente Cordiale (1904), and Triple Entente (1907)."
+                },
+                {
+                  "label": "Explanation",
+                  "prompt": "Explain HOW mutual defence commitments eliminated diplomatic flexibility, heightened fears of encirclement, and created an automatic domino effect."
+                },
+                {
+                  "label": "Link",
+                  "prompt": "Link back to the question stem, showing how alliances locked great powers into supporting their allies regardless of the specific dispute."
+                }
+              ],
+              "scaffolding": {
+                "structure_strip": [
+                  {
+                    "col": "Importance 1: Division into Two Armed Camps",
+                    "prompt": "Explain how the Triple Alliance and Triple Entente created mutual fear of encirclement and an arms race.",
+                    "starter": "The alliance systems were critically important because they divided Europe into two rigid, antagonistic coalitions..."
+                  },
+                  {
+                    "col": "Importance 2: The Domino Effect Tripwire",
+                    "prompt": "Explain how mutual military defence pledges converted localized disputes into general continental wars.",
+                    "starter": "Furthermore, the alliances were decisive because they operated as an automatic tripwire mechanism..."
+                  }
+                ],
+                "sentence_starters": [
+                  "A decisive factor was...",
+                  "This was important because the formation of the Triple Alliance in 1882...",
+                  "In response, France and Russia formed a counter-bloc in 1894 which...",
+                  "By 1907, the Triple Entente completed the encirclement of Germany, leading to...",
+                  "As a direct result, any crisis involving one power automatically dragged in...",
+                  "Ultimately, this meant that the alliance system destroyed diplomatic compromise..."
+                ],
+                "connective_bank": [
+                  "A decisive factor was...",
+                  "This was important because...",
+                  "Furthermore...",
+                  "As a direct result...",
+                  "Ultimately, this meant that..."
+                ],
+                "word_bank": [
+                  "Dual Alliance",
+                  "Triple Alliance",
+                  "Franco-Russian Alliance",
+                  "Entente Cordiale",
+                  "Triple Entente",
+                  "Balance of Power",
+                  "Encirclement",
+                  "Domino Effect"
+                ]
+              },
+              "model_answer": "The alliance systems were of paramount importance for relations between the European great powers before 1914 because they polarized the continent into two heavily armed, mutually suspicious camps and created a dangerous domino-effect tripwire that made a general European conflict virtually impossible to contain.\n\nFirst, the development of the alliance blocs permanently altered the European balance of power. Bismarck had initially constructed the Dual Alliance (1879) with Austria-Hungary and expanded it into the Triple Alliance (1882) with Italy to isolate France. However, after Germany allowed its Reinsurance Treaty with Russia to lapse in 1890, France broke its isolation by securing the Franco-Russian Military Alliance in 1894. When Great Britain resolved its imperial disputes with France (1904) and Russia (1907) to form the Triple Entente, Europe became locked into two rigid coalitions. This created acute German paranoia regarding \"encirclement\" (Einkreisung), driving Berlin to cling unconditionally to its sole dependable ally, Austria-Hungary.\n\nSecond, the alliances were decisive because their mutual defence pledges removed diplomatic flexibility during international crises. Instead of regional disputes remaining localized, the commitments meant that a conflict involving one partner inevitably dragged in the entire coalition. In the July Crisis of 1914, Germany’s \"Blank Cheque\" to Vienna and France’s binding obligation to Russia ensured that a regional confrontation between Austria-Hungary and Serbia escalated into an all-out world war."
             }
           ],
           "quiz": [
@@ -46400,37 +46646,84 @@
           },
           "tasks": [
             {
-              "type": "two_sided_argument",
-              "topic": "Task 3: Synoptic Assessment — The Outbreak of the First World War",
-              "question": "“The main cause of the First World War was alliance rivalries.” How far do you agree?",
-              "instruction": "Evaluate the evidence for alliance rivalries versus the July Crisis and militarism:",
-              "advancement": {
-                "title": "Evidence Supporting Alliances as the Decisive Cause",
-                "points": [
-                  "The division of Europe into the Triple Alliance and Triple Entente created an automatic tripwire mechanism.",
-                  "Germany’s \"Blank Cheque\" to Austria and France’s commitment to Russia turned a local Balkan dispute into a continental war.",
-                  "Secret treaties prevented open diplomacy and fostered deep suspicion between coalitions."
-                ],
-                "starter": "Historians who argue that alliance rivalries were decisive emphasize that..."
-              },
-              "limitations": {
-                "title": "Alternative Factors (Militarism, Imperialism & Mobilisation)",
-                "points": [
-                  "Rigid military war plans (the Schlieffen Plan) and automated train mobilization timetables removed political control.",
-                  "Aggressive Serbian nationalism and Austro-Hungarian determination to launch a pre-emptive strike caused the crisis.",
-                  "The German decision to invade neutral Belgium forced Great Britain to enter the war."
-                ],
-                "starter": "Conversely, other historians argue that alliances alone did not cause the war, because..."
-              },
-              "synthesis_prompt": "Write your synoptic historical verdict evaluating how far you agree with the statement.",
-              "synthesis_connectives": [
-                "On one hand...",
-                "A decisive factor was...",
-                "On the other hand...",
-                "Furthermore...",
-                "In the final analysis..."
+              "type": "extended_writing",
+              "topic": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+              "question": "“The main cause of the First World War was alliance rivalries.” How far do you agree? Explain your answer. [12 marks]",
+              "stimulus": [
+                "The Triple Alliance and Triple Entente rivalries",
+                "The assassination of Archduke Franz Ferdinand"
               ],
-              "model_answer": "While alliance commitments provided the fatal mechanism that dragged the Great Powers into war once Austria declared war on Serbia, alliances alone did not make conflagration inevitable. The true catalysts were reckless imperial brinkmanship—demonstrated by Germany’s Blank Cheque—and the rigid, automated mobilization timetables of the Schlieffen Plan. When German generals prioritized railway schedules over diplomatic negotiations, they transformed a manageable regional crisis into thirty-seven days of diplomatic madness that engulfed the globe."
+              "hints": [
+                {
+                  "label": "Point",
+                  "prompt": "State your thesis: evaluate whether alliance commitments or other factors (the July Crisis, militarism, rigid mobilisation timetables) were decisive."
+                },
+                {
+                  "label": "Evidence",
+                  "prompt": "Deploy balanced historical evidence: Triple Alliance vs Triple Entente, the \"Blank Cheque\", Gavrilo Princip at Sarajevo, the Schlieffen Plan, and Belgian neutrality."
+                },
+                {
+                  "label": "Explanation",
+                  "prompt": "Weigh how alliances created the fatal structural mechanism, while militarism and imperial brinkmanship provided the immediate catalyst that unleashed it."
+                },
+                {
+                  "label": "Link",
+                  "prompt": "Provide a sustained historical judgment weighing short-term triggers against long-term structural pressures to reach a clear verdict."
+                }
+              ],
+              "scaffolding": {
+                "structure_strip": [
+                  {
+                    "col": "Paragraph 1: Alliance Rivalries (Agree)",
+                    "prompt": "Explain how the Triple Alliance and Triple Entente locked nations into automated escalation.",
+                    "starter": "On the one hand, it can be strongly argued that alliance rivalries were the decisive cause of the war because..."
+                  },
+                  {
+                    "col": "Paragraph 2: The July Crisis & Sarajevo (Counter-Argument)",
+                    "prompt": "Explain how the assassination of Franz Ferdinand and Austrian aggression sparked the conflict.",
+                    "starter": "On the other hand, the immediate trigger that ignited the conflict was the assassination of Archduke Franz Ferdinand at Sarajevo..."
+                  },
+                  {
+                    "col": "Paragraph 3: Militarism & Inflexible War Plans (Alternative Factor)",
+                    "prompt": "Explain how rigid railway timetables and the German Schlieffen Plan made peaceful compromise impossible.",
+                    "starter": "Furthermore, a crucial alternative factor was the role of militarism and inflexible mobilization timetables..."
+                  },
+                  {
+                    "col": "Historiographical Verdict (Conclusion)",
+                    "prompt": "Reach a sustained evaluative conclusion weighing the hierarchy of causes.",
+                    "starter": "In the final analysis, while the assassination in Sarajevo was the spark and the Schlieffen Plan determined the military timeline, the alliance system was the indispensable structural cause..."
+                  }
+                ],
+                "sentence_starters": [
+                  "On one hand, it can be argued that alliance rivalries were the main cause because...",
+                  "A decisive factor supporting this argument was Germany’s \"Blank Cheque\" to Austria, which...",
+                  "On the other hand, an alternative argument is that the immediate trigger of Sarajevo was crucial because...",
+                  "Furthermore, militarism and the German Schlieffen Plan escalated the crisis because...",
+                  "The invasion of neutral Belgium was decisive because it brought Great Britain into the war...",
+                  "In the final analysis, I agree / disagree that alliances were the primary cause, because..."
+                ],
+                "connective_bank": [
+                  "On one hand, it can be argued that...",
+                  "A decisive factor supporting this is...",
+                  "On the other hand...",
+                  "An alternative argument is that...",
+                  "Furthermore, it must be recognized that...",
+                  "Consequently...",
+                  "In the final analysis..."
+                ],
+                "word_bank": [
+                  "Alliance Rivalries",
+                  "Triple Alliance",
+                  "Triple Entente",
+                  "Balance of Power",
+                  "Franz Ferdinand",
+                  "Blank Cheque",
+                  "Sarajevo",
+                  "Schlieffen Plan",
+                  "Neutrality of Belgium"
+                ]
+              },
+              "model_answer": "Historians remain divided over whether the First World War was primarily caused by alliance rivalries or by a lethal cocktail of militarism, aggressive imperialism, and short-term miscalculation during the July Crisis. While alliances provided the rigid structural tripwires that converted a localized Balkan dispute into a global conflagration, they alone did not make war inevitable; rather, it was aggressive brinkmanship and inflexible military war plans that detonated the system.\n\nOn the one hand, alliance rivalries were undeniably fundamental in establishing the structural conditions for general war. By 1914, Europe was polarized into two armed camps: the Triple Alliance (Germany, Austria-Hungary, and Italy) and the Triple Entente (Britain, France, and Russia). This division created deep existential paranoia in Berlin regarding \"encirclement\" (Einkreisung), convincing German leadership that any loss of Austria-Hungary’s Great Power status would be fatal. Consequently, when Kaiser Wilhelm II issued the unconditional \"Blank Cheque\" to Vienna on 5 July 1914, he guaranteed German military backing for an invasion of Serbia even if Russia intervened. Similarly, France’s commitment to Russia ensured that Tsarist mobilization would automatically bring French armies into the field. Without these mutual obligations, the conflict between Austria-Hungary and Serbia would have remained a third Balkan War.\n\nOn the other hand, alliance commitments were not purely automatic mechanisms; the war was triggered by specific human decisions and militant imperial ambition. The immediate spark was the 28 June 1914 assassination of Archduke Franz Ferdinand in Sarajevo by Gavrilo Princip and the Black Hand. Austrian Chief of Staff Conrad von Hötzendorf seized upon this outrage to advocate a pre-emptive war of annihilation against Serbia. Moreover, the July Crisis was rendered uncontrollable by militarism and rigid mobilization timetables. Once Tsar Nicholas II ordered Russian general mobilization on 30 July, military commanders insisted that railway schedules could not be halted. Germany’s war plan, the Schlieffen Plan, dictated an immediate, rapid invasion of France through neutral Belgium before Russian forces fully concentrated. It was this deliberate violation of Belgian neutrality—shattering the 1839 Treaty of London—that compelled Great Britain to declare war on 4 August 1914.\n\nIn the final analysis, the statement is largely convincing. While the assassination at Sarajevo provided the initial spark and the Schlieffen Plan dictated the military timetable, it was the entangling alliance network that bound the survival of great powers together, ensuring that a single shot on the Latin Bridge inevitably plunged the entire European continent into catastrophe."
             }
           ],
           "quiz": [

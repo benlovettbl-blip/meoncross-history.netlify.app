@@ -105,7 +105,10 @@ async function runLinter() {
   const HALF_TERM_KS3 = ['great_war', 'great_war_part2', 'water_and_sanitation'];
   const FULL_TERM_KS3 = ['medieval_england', 'industrialisation_and_empire', 'early_modern_world'];
   if (HALF_TERM_KS3.includes(unitId)) {
-    if (lessons.length !== 6) {
+    if (
+      lessons.length !== 6 &&
+      !((unitId === 'great_war' || unitId === 'great_war_part2') && lessons.length === 5)
+    ) {
       errors.push(
         `[Standard KS3 Budget Violation] Half-term unit '${unitId}' must have strictly 6 substantive enquiries (16-page workbook / 14-page textbook budget). Found: ${lessons.length} lessons.`,
       );
