@@ -1248,19 +1248,19 @@ function compileGreatWarPart2Workbook() {
           </div>
           <!-- Right: Visual Iconography & Historical Significance for Year 9 -->
           <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
-            <!-- 1. Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
-                Primary Visual Evidence &bull; Archival Record Plate
+            <!-- 1. Header: Authentic Artwork Title & Artist -->
+            <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 900; color: #0f284e; letter-spacing: 0.2px;">
+                The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
-                Imperial War Museum &bull; London
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #475569;">
+                Sir William Orpen (1878–1931)
               </span>
             </div>
 
             <!-- 2. Historical Context -->
             <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
-              On 28 June 1919, exactly five years after the assassination of Franz Ferdinand, Allied statesmen gathered in the Hall of Mirrors at Versailles to impose peace upon defeated Germany:
+              On 28 June 1919, exactly five years after the assassination of Archduke Franz Ferdinand, Allied statesmen gathered in the Hall of Mirrors at Versailles to impose peace upon defeated Germany:
             </p>
 
             <!-- 3. Four Core Historical Features -->
@@ -1325,8 +1325,8 @@ function compileGreatWarPart2Workbook() {
           </div>
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
-          <span><strong>Primary Visual Evidence:</strong> <em>Sir William Orpen, The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)</em></span>
-          <span style="font-weight: 700; color: #93c5fd;">ARCHIVE RECORD &bull; IMPERIAL WAR MUSEUM</span>
+          <span><strong>Medium &amp; Provenance:</strong> Oil on canvas (152.4 &times; 127 cm) &bull; Official War Art Commission</span>
+          <span style="font-weight: 800; color: #93c5fd;">IMPERIAL WAR MUSEUM, LONDON &bull; ART 2856</span>
         </div>
       </div>
 
@@ -1761,7 +1761,7 @@ function compileGreatWarPart2Workbook() {
       </div>
 
       <!-- Streamlined KS3 Marking Grid (5 Enquiries) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 5px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 8px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
           <thead>
             <tr style="background: #0f284e; color: #ffffff;">
