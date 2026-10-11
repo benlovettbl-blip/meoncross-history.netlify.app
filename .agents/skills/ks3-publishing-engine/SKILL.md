@@ -108,10 +108,49 @@ All KS3 pupil workbooks must strictly enforce the 2-page double-page spread arch
 
 ---
 
-## 3. Automated Verification & Sync Pipeline
+## 3. Mandatory Workbook-to-Narrative Stage Synchronization Standard (Zero Classroom Blindness)
+To permanently eliminate classroom projection blindness—where teachers and pupils cannot immediately match the 5 workbook enquiry stages on the left page with the reading paragraphs projected on the whiteboard—every KS3 unit must enforce:
+
+1. **Workbook Stage Paragraph Indexing (`paraRef`):**
+   - Every stage in `stages: [...]` of the workbook generator MUST define `paraRef: '[Act.Para]'` or `paraRef: '[Act.Para–Act.Para]'` (e.g. `paraRef: '[1.1–1.2]'`).
+   - The `.stage-banner` must render the high-visibility paragraph badge:
+     ```html
+     <span class="badge-pararef" style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: 'Inter', monospace; font-size: 6.8pt; font-weight: 800; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">Text ${st.paraRef}</span>
+     ```
+2. **Curriculum Data Contract (`data.js`):**
+   - Every KS3 lesson in `units/<unitId>/data.js` must define a `workbook_stages` array:
+     ```javascript
+     workbook_stages: [
+       {
+         step: 1,
+         date: 'Aug 1914',
+         para_ref: '[1.1–1.2]',
+         heading: 'What forced Britain to launch Kitchener’s urgent call for 500,000 volunteers?',
+         bullets: ['No Conscription', 'BEF Just 120,000 Men', 'Kitchener’s Dire Call'],
+         focus_clue: 'How did Britain’s lack of peacetime conscription force the government into a massive voluntary advertising campaign?'
+       },
+       ...
+     ]
+     ```
+3. **Interactive Classroom Whiteboard Companion (`src/engine/lesson_renderer.js`):**
+   - When `lesson.workbook_stages` is present, the app automatically renders the **5-Stage Chronological Enquiry Spine & Paragraph Anchors** companion drawer at the top of the narrative.
+   - Each stage card features an interactive **"Jump to Text ↓"** button that smoothly scrolls the smartboard to the target paragraph and temporarily highlights it with a 2-second gold focus ring.
+4. **Mandatory Audit Gate (`scripts/audit_ks3_stage_sync.cjs`):**
+   - Enforced automatically as Step 1d in `scripts/sync_unit.cjs`.
+   - Validates that 100% of workbook stages have valid `paraRef` badges and that all referenced paragraph numbers physically exist in the lesson's narrative text. Sync aborts immediately if any stage is unlinked.
+
+---
+
+## 4. Automated Verification & Sync Pipeline
 Whenever modifying or compiling a KS3 unit, you MUST run the automated quality pipeline:
 
-1. **Textbook Balance & Disciplinary Audit:**
+1. **Stage Synchronization & Paragraph Anchor Audit:**
+   ```bash
+   node scripts/audit_ks3_stage_sync.cjs <unit_id>
+   ```
+   Enforces 100% stage-to-paragraph alignment across both the printed workbook and the web application.
+
+2. **Textbook Balance & Disciplinary Audit:**
    ```bash
    node scripts/auto_balance_textbook.cjs <unit_id>
    ```
@@ -121,19 +160,19 @@ Whenever modifying or compiling a KS3 unit, you MUST run the automated quality p
    - 100% PEEL paragraph indexing.
    - 0px overflow across all pages.
 
-2. **Universal KS3 Workbook Compilation:**
+3. **Universal KS3 Workbook Compilation:**
    ```bash
    node scripts/generate_ks3_workbook.cjs <unit_id>
    ```
    Compiles the 20-page A4 workbook, calculates ruled lines dynamically, and mirrors to `public/pdfs/`, `dist/pdfs/`, and `G:\My Drive\AAMX\Dep File\Year <N>\<Unit Name>\`.
 
-3. **Safe Unit Sync:**
+4. **Safe Unit Sync:**
    ```bash
    node scripts/sync_unit.cjs <unit_id>
    ```
-   Validates JavaScript syntax, updates `database.json`, compiles both companion PDFs, aligns the workbook page map, and ensures complete Google Drive synchronization.
+   Validates JavaScript syntax, audits stage synchronization (Step 1d), updates `database.json`, compiles companion PDFs, aligns the workbook page map, and ensures complete Google Drive synchronization.
 
-4. **Sanitization & Image Verification:**
+5. **Sanitization & Image Verification:**
    ```bash
    node scripts/verify_sanitization.cjs
    node verify_images.cjs

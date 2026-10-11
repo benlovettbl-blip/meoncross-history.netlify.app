@@ -4313,6 +4313,86 @@ export function renderLesson(lesson) {
       `;
     }
 
+    if (
+      lesson.workbook_stages &&
+      Array.isArray(lesson.workbook_stages) &&
+      lesson.workbook_stages.length > 0
+    ) {
+      let lIdx = 0;
+      if (typeof unitData !== 'undefined' && unitData && Array.isArray(unitData.lessons)) {
+        lIdx = unitData.lessons.findIndex((l) =>
+          l.id && lesson.id ? l.id === lesson.id : l.title === lesson.title,
+        );
+        if (lIdx === -1) lIdx = 0;
+      }
+      const pageAnchor = getWorkbookPageAnchor(unitId || window.currentUnitId, lesson, lIdx);
+      htmlNarrative += `
+        <details id="lesson-workbook-stages-drawer" class="ks3-workbook-stages-drawer" style="background: #ffffff; border: 1.5px solid #0f284e; border-top: 4px solid #0f284e; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 3px 10px rgba(15, 40, 78, 0.08); overflow: hidden;" open>
+          <summary style="padding: 12px 18px; font-weight: 700; color: #0f284e; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f0f4f9; border-bottom: 1.2px solid #cbd5e1;">
+            <span style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+              <span style="background: #0f284e; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 900; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Pupil Workbook Companion</span>
+              <span style="font-weight: 800; font-size: 0.98rem; color: #0f284e; font-family: 'Inter', sans-serif;">5-Stage Chronological Enquiry Spine &bull; Paragraph Anchors</span>
+            </span>
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
+              ${pageAnchor ? `<span style="font-size: 0.76rem; font-weight: 700; color: #0f284e; background: #ffffff; border: 1px solid #93c5fd; padding: 2px 8px; border-radius: 12px;"><i class="fa-solid fa-book-open" style="color: #2563eb; margin-right: 4px;"></i> Workbook Spread: ${pageAnchor.label}</span>` : ''}
+              <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${lesson.workbook_stages.length} Inquiry Stages</span>
+            </div>
+          </summary>
+          <div class="ks3-stages-grid" style="padding: 14px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 12px; background: #ffffff;">
+            ${lesson.workbook_stages
+              .map((st) => {
+                const targetFirstPara =
+                  st.para_ref && st.para_ref.match(/\d+\.\d+/)
+                    ? st.para_ref.match(/\d+\.\d+/)[0]
+                    : '';
+                return `
+                <div class="ks3-stage-card" style="background: #f8fafc; border: 1.2px solid #cbd5e1; border-top: 3.5px solid #0f284e; border-radius: 6px; padding: 10px 11px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 3px rgba(0,0,0,0.03);">
+                  <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap;">
+                      <div style="display: inline-flex; align-items: center; gap: 4px;">
+                        <span style="background: #0f284e; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 900; padding: 1px 6px; border-radius: 3px;">STAGE ${st.step}</span>
+                        ${st.para_ref ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: monospace; font-size: 0.65rem; font-weight: 800; padding: 1px 5px; border-radius: 3px;">Text ${st.para_ref}</span>` : ''}
+                      </div>
+                      <span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #2563eb;">${st.date}</span>
+                    </div>
+                    <h5 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.88rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
+                      ${st.heading}
+                    </h5>
+                    ${
+                      st.bullets && st.bullets.length > 0
+                        ? `
+                      <div style="display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px;">
+                        ${st.bullets.map((b) => `<span style="font-size: 0.68rem; font-weight: 700; color: #0f284e; background: #e0f2fe; padding: 1px 6px; border-radius: 3px;">&bull; ${b}</span>`).join('')}
+                      </div>
+                    `
+                        : ''
+                    }
+                    ${st.focus_clue ? `<div style="font-size: 0.74rem; color: #475569; font-style: italic; line-height: 1.35; margin-bottom: 8px;">${st.focus_clue}</div>` : ''}
+                  </div>
+                  <div style="margin-top: auto; padding-top: 6px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.68rem; font-weight: 700; color: #64748b;">Workbook Left Page</span>
+                    <button type="button" onclick="
+                      const target = Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes('${targetFirstPara}'));
+                      if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        const parent = target.closest('.narrative-chunk') || target;
+                        parent.style.transition = 'all 0.4s';
+                        parent.style.boxShadow = '0 0 0 4px #f59e0b';
+                        setTimeout(() => { parent.style.boxShadow = ''; }, 2200);
+                      }
+                    " style="font-size: 0.68rem; font-weight: 700; background: #eff6ff; color: #1e40af; border: 1px solid #bfdbfe; padding: 2px 7px; border-radius: 3px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
+                      <i class="fa-solid fa-arrow-down"></i> Jump to Text
+                    </button>
+                  </div>
+                </div>
+              `;
+              })
+              .join('')}
+          </div>
+        </details>
+      `;
+    }
+
     let renderedKeyIndividual = false;
     lesson.narrative_blocks.forEach((block, index) => {
       if (block.type === 'causal_diagram') {

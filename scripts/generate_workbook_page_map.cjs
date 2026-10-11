@@ -178,13 +178,20 @@ async function parsePdf(filePath) {
 
 async function run() {
   console.log('Generating Workbook Page Map from PDF files in public/pdfs...');
-  const masterMap = {};
+  const outJsonPath = path.join(__dirname, '..', 'src', 'engine', 'workbook_page_map.json');
+  let masterMap = {};
+  if (fs.existsSync(outJsonPath)) {
+    try {
+      masterMap = JSON.parse(fs.readFileSync(outJsonPath, 'utf8'));
+    } catch (e) {}
+  }
 
   for (const [unitId, configs] of Object.entries(unitPdfConfigs)) {
     const unitData = db[unitId] && (db[unitId].data || db[unitId]);
     if (!unitData || !unitData.lessons) continue;
 
-    masterMap[unitId] = {};
+    const unitMap = {};
+    let foundAnyPdf = false;
     const lessons = unitData.lessons;
 
     for (const config of configs) {
@@ -194,6 +201,7 @@ async function run() {
         console.warn(`⚠️ Warning: PDF not found ${pdfPath}`);
         continue;
       }
+      foundAnyPdf = true;
 
       const relevantLessons = config.filter ? lessons.filter(config.filter) : lessons;
 
@@ -278,7 +286,7 @@ async function run() {
         const fallbackPage = isDoublePageKS3 ? 4 + relIdx * 2 : 3 + relIdx * 6;
 
         const lessonKey = lesson.id || `lesson_${fullIdx + 1}`;
-        masterMap[unitId][lessonKey] = {
+        unitMap[lessonKey] = {
           page: foundPage || fallbackPage,
           booklet: config.booklet,
           unitId: unitId,
@@ -286,10 +294,15 @@ async function run() {
         };
       });
     }
+
+    if (foundAnyPdf && Object.keys(unitMap).length > 0) {
+      masterMap[unitId] = unitMap;
+    } else if (!masterMap[unitId]) {
+      masterMap[unitId] = {};
+    }
   }
 
   // Write out as JS module and JSON
-  const outJsonPath = path.join(__dirname, '..', 'src', 'engine', 'workbook_page_map.json');
   fs.writeFileSync(outJsonPath, JSON.stringify(masterMap, null, 2));
 
   const outJsPath = path.join(__dirname, '..', 'src', 'engine', 'workbook_page_map.js');

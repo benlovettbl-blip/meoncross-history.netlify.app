@@ -91,6 +91,38 @@ async function runSync() {
     return false;
   }
 
+  // Step 1d: KS3 Workbook Stage Synchronization & Paragraph Anchor Guardrail
+  const KS3_UNITS = [
+    'great_war_part2',
+    'great_war',
+    'early_modern_world',
+    'industrialisation_and_empire',
+    'medieval_england',
+    'monarchy_religion_power',
+    'first_british_empire',
+    'water_and_sanitation',
+    'the_shoah',
+    'cold_war',
+    'post_war_britain',
+    'australia',
+  ];
+  if (KS3_UNITS.includes(unitId)) {
+    console.log(
+      `\n[Step 1d/6] 🔗 Auditing KS3 workbook enquiry stage synchronization & paragraph anchors...`,
+    );
+    try {
+      execSync(`node scripts/audit_ks3_stage_sync.cjs ${unitId}`, {
+        stdio: 'inherit',
+        cwd: ROOT_DIR,
+      });
+    } catch (err) {
+      console.error(
+        `❌ Fatal: KS3 workbook stage synchronization audit failed for ${unitId}. Build aborted.`,
+      );
+      return false;
+    }
+  }
+
   // Step 2: Rebuild Global Database
   console.log(`\n[Step 2/6] 🗄️ Updating public/database.json for digital app...`);
   try {

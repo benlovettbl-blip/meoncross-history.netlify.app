@@ -48491,6 +48491,68 @@
         {
           "id": "lesson_1_enlistment",
           "title": "Why were young men so desperate to join the slaughter of 1914?",
+          "workbook_stages": [
+            {
+              "step": 1,
+              "date": "Aug 1914",
+              "para_ref": "[1.1–1.2]",
+              "heading": "What forced Britain to launch Kitchener’s urgent call for 500,000 volunteers?",
+              "bullets": [
+                "No Conscription",
+                "BEF Just 120,000 Men",
+                "Kitchener’s Dire Call"
+              ],
+              "focus_clue": "How did Britain’s lack of peacetime conscription force the government into a massive voluntary advertising campaign?"
+            },
+            {
+              "step": 2,
+              "date": "Aug–Sept 1914",
+              "para_ref": "[1.3, 4.2]",
+              "heading": "How did the invasion of Belgium spark genuine moral outrage and civic duty?",
+              "bullets": [
+                "1839 Treaty of London",
+                "German Atrocities",
+                "Crusade for Law"
+              ],
+              "focus_clue": "Why did British volunteers view the war as a righteous crusade to defend international law and neutral Belgium?"
+            },
+            {
+              "step": 3,
+              "date": "Sept 1914",
+              "para_ref": "[2.1–2.2]",
+              "heading": "Why did workplace camaraderie and local pride drive the formation of Pals Battalions?",
+              "bullets": [
+                "Pals Battalions Formed",
+                "Pompey Pals (14th/15th Hants)",
+                "Fight Alongside Mates"
+              ],
+              "focus_clue": "How did recruiting men from the same factories, offices, and football clubs encourage immediate mass enlistment?"
+            },
+            {
+              "step": 4,
+              "date": "Autumn 1914",
+              "para_ref": "[1.3, 4.3]",
+              "heading": "In what ways did poverty, adventure, and the King’s Shilling lure young recruits?",
+              "bullets": [
+                "Regular Pay & Food",
+                "Escape Factory Drudgery",
+                "Over by Christmas"
+              ],
+              "focus_clue": "Why did guaranteed daily meals, clean uniforms, and the promise of adventure appeal to impoverished Edwardian youths?"
+            },
+            {
+              "step": 5,
+              "date": "Late 1914",
+              "para_ref": "[3.1–3.3]",
+              "heading": "How did state propaganda and social coercion make refusal to enlist unbearable?",
+              "bullets": [
+                "Kitchener Finger Poster",
+                "White Feather Movement",
+                "Unbearable Social Shame"
+              ],
+              "focus_clue": "How did visual advertising and patriotic shaming make staying at home morally unbearable for eligible young men?"
+            }
+          ],
           "learning_objectives": {
             "overarching": "To analyze how propaganda, imperial patriotism, social coercion, and economic pragmatism drove mass voluntary enlistment in Britain in 1914.",
             "scaffolded": [
@@ -49188,6 +49250,68 @@
         {
           "id": "lesson_2_trenches_haig",
           "title": "Did British generals make the horror of trench warfare worse?",
+          "workbook_stages": [
+            {
+              "step": 1,
+              "date": "Autumn 1914",
+              "para_ref": "[1.1–1.3]",
+              "heading": "What forced armies underground into a 400-mile line of industrial stalemate?",
+              "bullets": [
+                "Race to the Sea",
+                "Artillery Dominance",
+                "400-Mile Trench Line"
+              ],
+              "focus_clue": "Why did modern industrial firepower make open infantry movements impossible, establishing the 400-mile Western Front?"
+            },
+            {
+              "step": 2,
+              "date": "1915",
+              "para_ref": "[2.1–2.2]",
+              "heading": "How was the three-tier trench system constructed, traversed, and defended?",
+              "bullets": [
+                "Fire, Support & Reserve",
+                "Zig-Zag Traverse Design",
+                "Barbed Wire Belts"
+              ],
+              "focus_clue": "Why were trenches dug in zig-zags with deep underground dugouts rather than straight defensive lines?"
+            },
+            {
+              "step": 3,
+              "date": "1915–1916",
+              "para_ref": "[2.3, 3.1]",
+              "heading": "What lethal physical and psychological trauma did infantry endure in the mud?",
+              "bullets": [
+                "Trench Foot & Gangrene",
+                "Corpses, Lice & Rats",
+                "Shell Shock Trauma"
+              ],
+              "focus_clue": "How did waterlogged clay, relentless shelling, and rotting corpses destroy soldiers’ physical and psychological health?"
+            },
+            {
+              "step": 4,
+              "date": "1 July 1916",
+              "para_ref": "[3.2–3.3]",
+              "heading": "Why did the First Day of the Somme become the bloodiest disaster in British history?",
+              "bullets": [
+                "7-Day Bombardment Fails",
+                "German Bunkers Intact",
+                "57,470 Casualties Day 1"
+              ],
+              "focus_clue": "Why did the 1.5 million-shell artillery bombardment fail to cut German barbed wire or destroy underground concrete dugouts?"
+            },
+            {
+              "step": 5,
+              "date": "1916–1918",
+              "para_ref": "[4.1–4.3]",
+              "heading": "Was Sir Douglas Haig a callous \"butcher\" or a commander learning total war?",
+              "bullets": [
+                "Lions Led by Donkeys",
+                "Industrial Learning Curve",
+                "Allied Victory in 1918"
+              ],
+              "focus_clue": "Did Haig needlessly slaughter a generation of young men, or did he systematically master combined-arms warfare to win in 1918?"
+            }
+          ],
           "learning_objectives": {
             "overarching": "To analyze the defensive deadlock of trench warfare on the Western Front and evaluate whether British military leadership (\"Lions led by Donkeys\") was callous and incompetent or adapting to unprecedented industrial warfare.",
             "scaffolded": [
@@ -49915,6 +50039,68 @@
         {
           "id": "lesson_3_empire_troops",
           "title": "How much of a 'World' War was it, and why were the Empire's troops forgotten?",
+          "workbook_stages": [
+            {
+              "step": 1,
+              "date": "1914",
+              "para_ref": "[1.1–1.3]",
+              "heading": "Why was Britain completely dependent on mobilising 4 million imperial subjects?",
+              "bullets": [
+                "Imperial War Cabinet",
+                "Global Manpower Pool",
+                "Dominions & Crown Colonies"
+              ],
+              "focus_clue": "Why was Britain completely dependent on its global empire to supply troops, wheat, oil, and merchant ships?"
+            },
+            {
+              "step": 2,
+              "date": "1914–1915",
+              "para_ref": "[2.1–2.2]",
+              "heading": "How crucially did 1.5 million Indian soldiers save the crumbling Allied line at Ypres?",
+              "bullets": [
+                "Lahore & Meerut Divisions",
+                "First Battle of Ypres",
+                "Khadadad Khan VC"
+              ],
+              "focus_clue": "How did Indian infantry and cavalry prevent a catastrophic British collapse in the freezing mud of Flanders in 1914?"
+            },
+            {
+              "step": 3,
+              "date": "1915",
+              "para_ref": "[2.3, 3.1]",
+              "heading": "Why did the catastrophe of Gallipoli forge national identity for Australia and New Zealand?",
+              "bullets": [
+                "Dardanelles Disaster",
+                "Mustafa Kemal & Turkish Defence",
+                "Birth of ANZAC Legend"
+              ],
+              "focus_clue": "Why did the bloody failure at Anzac Cove become the foundation myth of Australian and New Zealand independence?"
+            },
+            {
+              "step": 4,
+              "date": "1916–1918",
+              "para_ref": "[3.2–3.3]",
+              "heading": "In what ways did the Chinese Labour Corps and African Pioneers sustain Allied logistics?",
+              "bullets": [
+                "140,000 Chinese Workers",
+                "Carrier Corps in East Africa",
+                "Brutal Racial Segregation"
+              ],
+              "focus_clue": "How did non-white labour battalions keep guns firing under deadly conditions while facing strict racial curfews?"
+            },
+            {
+              "step": 5,
+              "date": "Post-1918",
+              "para_ref": "[4.1–4.3]",
+              "heading": "Why were non-white colonial soldiers denied equal pensions, medals, and remembrance?",
+              "bullets": [
+                "Imperial Colour Bar",
+                "Mass Graves in Africa",
+                "Deliberate Erasure from Memory"
+              ],
+              "focus_clue": "Why did the Imperial War Graves Commission deliberately refuse individual marked headstones for black African and Asian troops?"
+            }
+          ],
           "learning_objectives": {
             "overarching": "To evaluate the global scale of the First World War by analyzing the military and logistical contributions of over four million colonial and imperial participants, and to investigate why their sacrifices were marginalized in British post-war memory.",
             "scaffolded": [
@@ -50573,6 +50759,68 @@
         {
           "id": "lesson_4_home_front_dora",
           "title": "How did a war fought miles away completely control daily life in Britain?",
+          "workbook_stages": [
+            {
+              "step": 1,
+              "date": "Aug 1914",
+              "para_ref": "[1.1–1.3]",
+              "heading": "In what ways did DORA grant the British state unprecedented authoritarian control?",
+              "bullets": [
+                "Defence of the Realm Act",
+                "Strict Press Censorship",
+                "Curfews & Watered Beer"
+              ],
+              "focus_clue": "How did DORA transform Britain from a laissez-faire liberal state into a strictly controlled wartime command economy?"
+            },
+            {
+              "step": 2,
+              "date": "1915–1916",
+              "para_ref": "[2.1–2.2]",
+              "heading": "What forced David Lloyd George to nationalise munitions factories in 1915?",
+              "bullets": [
+                "Daily Mail Shell Scandal",
+                "Ministry of Munitions",
+                "State-Run National Shell Factories"
+              ],
+              "focus_clue": "Why did severe ammunition shortages on the Western Front compel the state to seize control of private industrial production?"
+            },
+            {
+              "step": 3,
+              "date": "Jan 1916",
+              "para_ref": "[2.3, 3.1]",
+              "heading": "Why did catastrophic frontline casualties force Britain to impose conscription in 1916?",
+              "bullets": [
+                "Somme Demands Reserves",
+                "Military Service Act 1916",
+                "Conscientious Objectors"
+              ],
+              "focus_clue": "Why was the introduction of conscription for all men aged 18–41 the most radical infringement on personal liberty in British history?"
+            },
+            {
+              "step": 4,
+              "date": "1916–1918",
+              "para_ref": "[3.2–3.3]",
+              "heading": "How did 1 million \"Canary Girls\" transform industrial production despite toxic hazards?",
+              "bullets": [
+                "Toxic TNT Jaundice",
+                "Silvertown Explosion (1917)",
+                "80% of British Munitions"
+              ],
+              "focus_clue": "What lethal industrial dangers did women face manufacturing explosives, and how did their work permanently reshape female gender roles?"
+            },
+            {
+              "step": 5,
+              "date": "1917–1918",
+              "para_ref": "[4.1–4.3]",
+              "heading": "Why did unrestricted German submarine warfare push Britain to the brink of starvation?",
+              "bullets": [
+                "U-Boats Sink Merchant Fleet",
+                "Only 6 Weeks Food Left",
+                "Sugar & Meat Ration Books"
+              ],
+              "focus_clue": "How did German submarine warfare bring Britain within weeks of starvation, forcing the compulsory rationing of sugar, butter, and meat?"
+            }
+          ],
           "learning_objectives": {
             "overarching": "To analyze how total industrialized warfare revolutionized the British Home Front, transforming the relationship between citizen and state through emergency legislation (DORA), military conscription, female industrial mobilization, and food rationing.",
             "scaffolded": [
@@ -51231,6 +51479,68 @@
         {
           "id": "lesson_5_versailles",
           "title": "Did the Treaty of Versailles solve the problems of 1914, or create the nightmares of 1939?",
+          "workbook_stages": [
+            {
+              "step": 1,
+              "date": "11 Nov 1918",
+              "para_ref": "[1.1–1.3]",
+              "heading": "What forced the German military to concede defeat and accept the Armistice in 1918?",
+              "bullets": [
+                "Kiel Mutiny & Revolution",
+                "Kaiser Abdicates to Holland",
+                "Armistice in Compiègne Wagon"
+              ],
+              "focus_clue": "Why did the British naval blockade and the Allied Hundred Days Offensive break the German Army’s will to fight?"
+            },
+            {
+              "step": 2,
+              "date": "Jan–June 1919",
+              "para_ref": "[2.1–2.3]",
+              "heading": "How did conflicting national motives divide Clemenceau, Lloyd George, and Wilson?",
+              "bullets": [
+                "Clemenceau Demands Revenge",
+                "Wilson’s 14 Points & League",
+                "Lloyd George’s Compromise"
+              ],
+              "focus_clue": "Why did French desires to permanently disarm Germany clash with American idealism and British trade interests?"
+            },
+            {
+              "step": 3,
+              "date": "28 June 1919",
+              "para_ref": "[3.1–3.3]",
+              "heading": "Why did Germans across all political parties denounce Article 231 as an unjust \"Diktat\"?",
+              "bullets": [
+                "Article 231 \"War Guilt\"",
+                "£6.6 Billion Reparations",
+                "100,000 Army Cap & No Airforce"
+              ],
+              "focus_clue": "Why did Germans across all political parties denounce the Treaty of Versailles as an unjust and humiliating \"Diktat\"?"
+            },
+            {
+              "step": 4,
+              "date": "1919–1923",
+              "para_ref": "[4.1–4.3]",
+              "heading": "In what ways did secret treaties and the Mandates system dismantle the Middle East?",
+              "bullets": [
+                "Secret Sykes-Picot Lines",
+                "Balfour Declaration Pledges",
+                "Class A Mandates Imposed"
+              ],
+              "focus_clue": "How did conflicting British imperial promises dismantle Ottoman Arab provinces, planting the seeds of modern Middle Eastern conflict?"
+            },
+            {
+              "step": 5,
+              "date": "1920–1923",
+              "para_ref": "[4.1–4.3]",
+              "heading": "Did the Versailles settlement make a second European war inevitable?",
+              "bullets": [
+                "League Without USA",
+                "German Revanchism Awakens",
+                "War Memorials Across Hampshire"
+              ],
+              "focus_clue": "Did the compromise terms leave Germany vengeful yet militarily intact, making a second European conflict inevitable?"
+            }
+          ],
           "learning_objectives": {
             "overarching": "To evaluate the geopolitical compromises of the Paris Peace Conference (1919), analyzing the competing motives of the \"Big Three\", the punitive terms imposed on Weimar Germany (GARGLE), and the historiographical debate surrounding whether the Treaty of Versailles caused the Second World War.",
             "scaffolded": [
@@ -51890,6 +52200,56 @@
           "id": "lesson_6_middle_east_mandate",
           "title": "A Line in the Sand: How did the Great War dismantle the Ottoman Empire and create the British Mandate of Palestine?",
           "subtitle": "From the Arab Revolt and Sykes-Picot to the Balfour Declaration and the League of Nations Mandates (1915–1923)",
+          "workbook_stages": [
+            {
+              "step": 1,
+              "date": "1914–1916",
+              "para_ref": "[1.1–1.3]",
+              "heading": "The Ottoman Empire at War & The McMahon-Hussein Correspondence",
+              "bullets": [
+                "Jihad Proclamation",
+                "Arab Revolt Promised",
+                "Sherif Hussein Pledges"
+              ],
+              "focus_clue": "Why did Britain promise an independent Arab kingdom in exchange for military rebellion against Ottoman rule?"
+            },
+            {
+              "step": 2,
+              "date": "May 1916",
+              "para_ref": "[2.1–2.3]",
+              "heading": "Secret Imperial Cartography: The Sykes-Picot Agreement",
+              "bullets": [
+                "Direct French & British Zones",
+                "Straight Line Borders",
+                "Double-Cross of Arab Allies"
+              ],
+              "focus_clue": "How did Mark Sykes and François Georges-Picot carve up the Middle East behind their Arab allies’ backs?"
+            },
+            {
+              "step": 3,
+              "date": "Nov 1917",
+              "para_ref": "[3.1–3.3]",
+              "heading": "The Balfour Declaration & The Capture of Jerusalem",
+              "bullets": [
+                "Jewish National Home Pledge",
+                "General Allenby Enters Jerusalem",
+                "Contradictory Pledges"
+              ],
+              "focus_clue": "Why did the Balfour Declaration create contradictory British commitments that ignited modern conflict?"
+            },
+            {
+              "step": 4,
+              "date": "1919–1923",
+              "para_ref": "[4.1–4.3]",
+              "heading": "League of Nations Mandates & Modern Imperial Legacy",
+              "bullets": [
+                "Class A Mandates Imposed",
+                "1920 Iraqi Revolt",
+                "Artificial Nation-States"
+              ],
+              "focus_clue": "Did the Mandates system simply rebrand Victorian imperialism under the veneer of international law?"
+            }
+          ],
           "enquiry": "How did secret wartime diplomacy and conflicting imperial promises redraw the map of the Middle East between 1915 and 1923?",
           "banner": {
             "image": "/images/cme_sykes_picot_1916_map.jpg",
