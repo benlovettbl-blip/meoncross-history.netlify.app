@@ -537,7 +537,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'The Glorious Revolution of 1688 marked a decisive turning point because... • The immediate catalyst was James II’s attempt to... • Consequently, the 1689 Bill of Rights established that... • Furthermore, the founding of the Bank of England in 1694 revolutionised... • Ultimately, Britain emerged as a global superpower because...',
+      'The constitutional settlement marked a decisive turning point because... • The immediate catalyst was... • Consequently, the new legal framework established that... • Furthermore, institutional reforms revolutionised... • Ultimately, the decisive transformation was... because...',
   },
   {
     taskType: 'extended_writing',
@@ -610,7 +610,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'The Transatlantic Slave Trade functioned as a ruthless commercial machine because... • On the Outward Leg, British merchants traded... • During the harrowing Middle Passage, enslaved Africans endured... • Primary evidence from the Brookes architectural plan demonstrates that... • Consequently, British economic prosperity in the eighteenth century was inextricably built upon...',
+      'This trade system functioned as a ruthless commercial machine because... • In particular, commercial networks operated by... • Furthermore, conditions endured by victims demonstrate that... • Primary architectural evidence reveals that... • Consequently, long-term economic wealth was built upon...',
   },
   {
     taskType: 'extended_writing',

@@ -561,4 +561,59 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'workbook_scaffolding_separation',
+    author: 'Robert Coe & Paul Kirschner',
+    affiliation: 'Evidence Based Education / Center for Education and Learning',
+    category: 'Cognitive Science & Assessment',
+    categoryBadge: 'badge-amber',
+    title: 'Scaffolding Separation: Productive Struggle vs Knowledge Giveaways in Pupil Workbooks',
+    subtitle:
+      'Preserving Retrieval Effort in Print While Housing Explanatory Models in the Digital Hub',
+    overview:
+      'When analytical writing scaffolds (such as sentence stems and connectives) leak substantive factual content, pupils engage in passive transcription rather than active knowledge retrieval and causal synthesis. Robert Coe’s principle that "memory is the residue of thought" and Bjork’s framework of "desirable difficulties" prove that deep learning only occurs when pupils must exert cognitive effort to recall historical knowledge and construct arguments themselves. Scaffolds in pupil workbooks must remain strictly disciplinary and structural (providing discourse markers and academic transitions), while detailed exemplar answers and content reveals belong in the interactive digital hub.',
+    analysisHeading: 'The Classroom Dilemma (The Illusion of Competence)',
+    analysisText:
+      'In an effort to support weaker writers, worksheets and workbooks often embed specific historical evidence into the sentence starters themselves (e.g. "In particular, Article 231 and £6.6bn reparations caused..."). While this produces complete-looking student responses on paper, it short-circuits historical thinking. Pupils merely copy down the teacher\'s pre-chewed thoughts without retrieving facts or determining causation. In subsequent unassisted assessments, their retention collapses because they never practiced retrieving the knowledge.',
+    evidenceHeading: 'Cognitive Architecture & Disciplinary Grounding',
+    evidenceText:
+      'Bjork & Bjork (2011) demonstrate that making learning artificially easy impairs long-term retention ("desirable difficulties"). Coe et al. (2014) in the Great Teaching Toolkit emphasize that students learn what they attend to and think about. If the workbook provides the facts, the pupil only thinks about handwriting and sentence mechanics. Counsell (2011) further shows that disciplinary history requires pupils to actively select evidence to support claims. Isolating substantive retrieval in the student\'s mind while providing pure disciplinary signposting (e.g. "To a large extent, it can be argued that... • Furthermore, an alternative perspective is...") forces genuine causal synthesis.',
+    applicationHeading: 'Revision Hub Architecture: Workbook vs App Separation',
+    implementation: [
+      'Strict Separation of Print and Digital Scaffolds: Detailed model answers, step-by-step paragraph breakdowns, and interactive exemplar analyses live strictly in the Revision Hub web app, accessed after independent writing.',
+      'Bare-Bones Generic Disciplinary Connectives: Printed workbook writing boxes provide purely structural transitions (e.g. "To a large extent, it can be argued that...", "Furthermore, this created severe consequences because...", "In conclusion, the decisive reason why...").',
+      'Unspoiled Vocabulary Banks: Key historical terms (e.g. Article 231, Diktat, GARGLE, Clemenceau) are provided as unassigned vocabulary banks, requiring pupils to decide which terms belong in which paragraph.',
+      'Elimination of Factual Stems: Zero historical dates, named clauses, or pre-chewed conclusions are embedded into writing prompts, preserving the productive struggle of essay composition.',
+    ],
+    protocolHeading: 'The "Think First, Scaffold Second" Classroom Protocol',
+    teacherProtocols: [
+      '1. Independent Retrieval Phase: Give pupils 8–10 minutes of silent, unassisted writing using only the question, stimulus, and key vocabulary bank in their workbook.',
+      '2. Forbid Pre-Filling Facts: Never dictate or write specific evidence points onto the board for pupils to copy into sentence stems.',
+      '3. App Model Answer Reveal (Post-Writing Review): Project the Revision Hub digital app’s Model Answer and Scaffolding drawer ONLY AFTER pupils have attempted their own paragraphs. Pupils then self-assess or green-pen improve their work against the digital exemplar.',
+      '4. Explicit Signpost Instruction: Teach pupils that connectives are structural steering wheels (signals for consequence, contrast, or hierarchy), not containers for factual answers.',
+    ],
+    citations: [
+      'Bjork, E. L., & Bjork, R. A. (2011). Making things hard on yourself, but in a good way: Creating desirable difficulties to enhance learning. Psychology and the Real World, pp. 56–64.',
+      'Coe, R., Aloisi, C., Higgins, S., & Major, L. E. (2014). What makes great teaching? Review of the underpinning research. Sutton Trust / Center for Evaluation and Monitoring.',
+      'Kirschner, P. A., Sweller, J., & Clark, R. E. (2006). Why minimal guidance during instruction does not work: An analysis of the failure of constructivist, discovery, problem-based, experiential, and inquiry-based teaching. Educational Psychologist, 41(2), pp. 75–86.',
+      'Counsell, C. (2011). Disciplinary knowledge for all, the secondary history curriculum and why text matters. The Curriculum Journal, 22(2), pp. 201–225.',
+    ],
+    links: [
+      {
+        title: 'Robert Coe: What Makes Great Teaching? (Sutton Trust)',
+        url: 'https://www.suttontrust.com/our-priorities/education/what-makes-great-teaching/',
+        displayText: 'www.suttontrust.com/our-priorities/education/what-makes-great-teaching/',
+      },
+      {
+        title: 'Bjork Learning and Forgetting Lab (UCLA): Desirable Difficulties',
+        url: 'https://bjorklab.psych.ucla.edu/research/',
+        displayText: 'bjorklab.psych.ucla.edu/research/',
+      },
+      {
+        title: 'Evidence Based Education: The Great Teaching Toolkit',
+        url: 'https://evidencebased.education/great-teaching-toolkit/',
+        displayText: 'evidencebased.education/great-teaching-toolkit/',
+      },
+    ],
+  },
 ];

@@ -105,6 +105,16 @@ This prevents pupil fatigue and ensures diverse cognitive engagement.
 ## Printed Workbook Timeline Tasks
 Whenever generating or modifying the `generate_worksheets.js` Node script for printed A4 workbooks, if a lesson contains a `do_now.type === "timeline"`, you MUST render it as a 'Domino Flowchart'. The script must print the events inside randomly scattered/shuffled CSS boxes on the page. The instructions must tell the student to 'draw arrows connecting the events in the correct chronological and causal order'.
 
+## Zero Knowledge Giveaways in Printed Workbook Scaffolds (Workbook vs Web App Separation)
+STRICT RULE: Sentence stems, analytical connectives, and writing frames in printed pupil workbooks must provide purely structural, cognitive, and disciplinary scaffolding—NEVER factual historical knowledge, specific answers, or prescribed paragraph points.
+1. **The Core Pedagogical Principle:** Detailed model answers, exemplar paragraphs, and knowledge reveals belong in the interactive web application, NOT in printed pupil workbooks. Workbooks are designed to make pupils think for themselves and retrieve historical knowledge from their own memory and analysis; providing answers or factual hints in sentence stems reduces extended writing to thoughtless transcription.
+2. **Approved Analytical Connectives & Stems:**
+   - Vocabulary Banks: Specific historical key terms are fully approved and encouraged (e.g. `Article 231 (War Guilt) • £6.6 billion reparations • Diktat • Georges Clemenceau`).
+   - Bare-Bones Analytical Connectives: Connectives must be generic, purely structural transitions (e.g., `To a large extent, it can be argued that... • In particular, a decisive factor was... • Furthermore, this created severe consequences because... • On the other hand, an alternative perspective is that... • In conclusion, the decisive reason why...`).
+3. **Strictly Prohibited Knowledge Giveaways:**
+   - Never embed factual clues, dates, specific historical events, named treaty clauses, or pre-chewed conclusions into sentence stems or connectives (e.g., FORBIDDEN: `In particular, Article 231 and reparations caused...`, `Furthermore, the creation of the League of Nations...`, `In response, David Lloyd George established...`, or `In conclusion, the fatal weakness of Versailles was not just its harshness, but...`).
+   - Keep all stems and connectives content-free so the pupil must supply the evidence, causal connections, and historical reasoning themselves.
+
 
 ## Automated Database Sync (Safe Unit Mode)
 Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, add a new unit, OR when the user explicitly asks you to "sync", you MUST automatically run the unified safe unit sync command:

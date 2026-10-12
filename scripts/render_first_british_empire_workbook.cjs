@@ -193,9 +193,9 @@ const enquiryConfigs = [
           'Explain one consequence of the Zong massacre (1781) for the British abolitionist movement. [4 marks]',
         hint: 'Focus on how Granville Sharp used court transcripts to shock the public and expose the legal classification of human beings as insured cargo.',
         stems:
-          'One consequence of the Zong massacre was... &bull; Specifically, when Captain Collingwood threw 133 captives overboard... &bull; This galvanised abolitionists because...',
+          'One consequence was that... &bull; Specifically, this event revealed... &bull; This galvanised abolitionists because...',
         connectives:
-          'A significant consequence was... &bull; For instance, the legal battle in London... &bull; This directly led to... &bull; Consequently, public outrage...',
+          'A significant consequence was... &bull; For instance, legal proceedings demonstrated that... &bull; This directly led to... &bull; Consequently, public reaction...',
         wordBank:
           'Zong massacre (1781) &bull; Captain Collingwood &bull; Granville Sharp &bull; Gregson v Gilbert &bull; human cargo &bull; insurance fraud &bull; abolitionist movement',
       },
@@ -384,7 +384,7 @@ const enquiryConfigs = [
           },
         ],
         connectives:
-          'The Boston Tea Party was of critical importance because... &bull; In particular, it provoked King George III to... &bull; Crucially, the Coercive Acts united... &bull; Consequently, peaceful reconciliation became...',
+          'The primary importance of this event was... &bull; In particular, the British response was to... &bull; Crucially, this had the unexpected effect of... &bull; Consequently, the long-term impact on relations was...',
         wordBank:
           'Boston Tea Party &bull; King George III &bull; Coercive Acts (Intolerable Acts) &bull; Boston Harbour &bull; General Gage &bull; Continental Congress',
       },
@@ -475,7 +475,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'A compelling argument for French intervention being decisive is... &bull; In particular, Admiral de Grasse’s fleet... &bull; On the other hand, American military resilience... &bull; Crucially, without Washington holding the army together... &bull; In conclusion, while American courage sustained the war, French intervention...',
+        'A compelling argument supporting this statement is... &bull; In particular, naval intervention was decisive because... &bull; On the other hand, an alternative perspective is that... &bull; Crucially, military resilience ensured that... &bull; In conclusion, the decisive factor was... because...',
       wordBank:
         'George Washington &bull; Continental Army &bull; Saratoga (1777) &bull; French Alliance &bull; King Louis XVI &bull; Admiral de Grasse &bull; General Cornwallis &bull; Siege of Yorktown (1781) &bull; Treaty of Paris (1783)',
       timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',

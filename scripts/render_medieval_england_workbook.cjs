@@ -198,7 +198,7 @@ const enquiryConfigs = [
         stems:
           'One consequence was that... &bull; Specifically, this meant that... &bull; This affected Anglo-Saxon resistance because... &bull; As a result, Norman control...',
         connectives:
-          'A significant consequence was... &bull; For instance, the building of castles... &bull; This directly led to... &bull; Consequently, the impact on resistance was...',
+          'A significant consequence was... &bull; For instance, military fortifications meant that... &bull; This directly led to... &bull; Consequently, the impact on resistance was...',
         wordBank:
           'motte-and-bailey &bull; garrison &bull; timber palisade &bull; intimidation &bull; Harrying of the North &bull; Portchester Castle &bull; Domesday Book',
       },
@@ -372,7 +372,7 @@ const enquiryConfigs = [
         question:
           'Explain the importance of Clause 39 of Magna Carta for the development of the English legal system. [8 marks]',
         connectives:
-          'Clause 39 was of vital importance because... &bull; Prior to 1215, royal authority had been... &bull; As a result of Clause 39, legal rights were... &bull; Consequently, the long-term impact on the legal system was...',
+          'Clause 39 was of vital importance because... &bull; Prior to this charter, royal authority had been... &bull; As a result of this principle, legal protections were... &bull; Consequently, the long-term impact on the legal system was...',
         wordBank:
           'Clause 39 &bull; arbitrary power &bull; lawful judgment of peers &bull; due process &bull; trial by jury &bull; rule of law',
       },

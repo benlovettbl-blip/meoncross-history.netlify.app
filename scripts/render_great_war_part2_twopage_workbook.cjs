@@ -125,7 +125,7 @@ const enquiryConfigs = [
         'The creation of civic Pals Battalions (e.g. Pompey Pals)',
       ],
       connectives:
-        'One primary reason why young men volunteered was... &bull; This encouraged enlistment because... &bull; Furthermore, social pressure such as the White Feather movement... &bull; Crucially, the camaraderie of civic Pals Battalions ensured that... &bull; Consequently, in the autumn of 1914...',
+        'One primary reason was... &bull; This encouraged enlistment because... &bull; Furthermore, social pressure contributed to... &bull; Crucially, shared identity ensured that... &bull; In consequence, this resulted in...',
       wordBank:
         'Pals Battalions &bull; Lord Kitchener &bull; Treaty of London &bull; Pompey Pals &bull; King’s Shilling &bull; White Feather &bull; voluntary enlistment &bull; civic patriotism &bull; 750,000 recruits',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 3',
@@ -217,7 +217,7 @@ const enquiryConfigs = [
           'German soldiers sheltering in deep underground concrete dugouts',
         ],
         connectives:
-          'The primary cause of the catastrophic casualties was... &bull; This proved fatal for advancing infantry because... &bull; Furthermore, German machine-gunners were able to... &bull; Consequently, on 1 July 1916...',
+          'The primary cause of the catastrophic casualties was... &bull; This proved fatal for advancing infantry because... &bull; Furthermore, defensive firepower meant that... &bull; Consequently, the outcome was...',
         wordBank:
           'General Sir Douglas Haig &bull; 7-day bombardment &bull; uncut barbed wire &bull; concrete dugouts &bull; Spandau Maxim machine guns &bull; No Man’s Land &bull; 57,470 casualties',
       },
@@ -316,7 +316,7 @@ const enquiryConfigs = [
       questionC:
         'Task B: Suggest one reason why Interpretations 1 and 2 differ about the role of empire soldiers. [4 marks]',
       stemsC:
-        'One reason why the interpretations differ is because the authors have different perspectives and purposes. Lord Curzon was a wartime imperial minister whose purpose was to... &bull; On the other hand, David Olusoga is a modern historian using declassified military records to...',
+        'One reason why the interpretations differ is because the authors have different perspectives and purposes. The author of Interpretation 1 was writing from the perspective of... with the purpose of... &bull; On the other hand, the author of Interpretation 2 is evaluating the events from the perspective of... &bull; Consequently, this shaped their conclusions because...',
       timelineMissionTitle: 'Centrefold Sketch Challenges 2 &amp; 5',
       timelineMission:
         '<strong>Milestone 2 (April 1915 &bull; Gallipoli &amp; Empire):</strong> Turn to Centrefold (Pages 8–9). In Milestone 2, sketch Indian cavalry and ANZAC troops landing under Turkish fire on the steep cliffs of Gallipoli [🌊 landing boat &bull; ⛰️ rugged cliffs &bull; 👳‍♂️ Indian turban &amp; slouch hat].',
@@ -406,7 +406,7 @@ const enquiryConfigs = [
           'The passing of the Military Service Act in January 1916',
         ],
         connectives:
-          'The crisis began in May 1915 when... &bull; This led to immediate political consequences because... &bull; In response, David Lloyd George established... &bull; Crucially, by late 1915 the voluntary system failed to... &bull; Consequently, in January 1916 Parliament passed...',
+          'The sequence of events began when... &bull; This led to immediate political consequences because... &bull; In response, the government intervened by... &bull; Crucially, this proved necessary because... &bull; Consequently, this resulted in...',
         wordBank:
           'Shell Crisis &bull; David Lloyd George &bull; Ministry of Munitions &bull; Lord Derby Scheme &bull; Military Service Act (1916) &bull; Conscription',
       },
@@ -420,7 +420,7 @@ const enquiryConfigs = [
           'The dangerous working conditions and toxic jaundice ("Canary Girls")',
         ],
         connectives:
-          'The primary importance of women munitions workers was... &bull; This was vital to the frontlines because... &bull; Furthermore, their courage under toxic conditions... &bull; In the long term, their contribution proved that...',
+          'The primary importance of this contribution was... &bull; This was vital to the frontlines because... &bull; Furthermore, the challenging conditions demonstrated that... &bull; In the long term, this had a profound impact because...',
         wordBank:
           'Canary Girls &bull; TNT poisoning &bull; Silvertown explosion &bull; Ministry of Munitions &bull; Representation of the People Act 1918',
       },
@@ -537,7 +537,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'To a large extent I agree that the Treaty of Versailles made another war inevitable because... &bull; In particular, Article 231 and reparations caused... &bull; On the other hand, defenders of the settlement argue that... &bull; Furthermore, the creation of the League of Nations... &bull; In conclusion, the fatal weakness of Versailles was not just its harshness, but...',
+        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
       wordBank:
         'Article 231 (War Guilt) &bull; £6.6 billion reparations &bull; Diktat &bull; Georges Clemenceau &bull; Woodrow Wilson &bull; David Lloyd George &bull; League of Nations &bull; Rhineland demilitarisation &bull; Polish Corridor &bull; GARGLE',
       timelineMissionTitle: 'Centrefold Sketch Challenge 7',

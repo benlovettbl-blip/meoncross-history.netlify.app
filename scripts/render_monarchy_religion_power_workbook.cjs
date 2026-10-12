@@ -204,7 +204,7 @@ const enquiryConfigs = [
           },
         ],
         connectives:
-          'This was of paramount importance because... &bull; Specifically, the compromise prevented... &bull; Furthermore, by establishing the Queen as Supreme Governor... &bull; Crucially, this secured stability because...',
+          'This was of paramount importance because... &bull; Specifically, the compromise prevented... &bull; Furthermore, the new legal settlement established that... &bull; Crucially, this secured stability because...',
         wordBank:
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
@@ -476,7 +476,7 @@ const enquiryConfigs = [
           },
         ],
         connectives:
-          'A compelling argument for 1649 being pivotal is... &bull; On one hand, executing Charles I proved... &bull; However, the 1649 republic collapsed, whereas 1689... &bull; Crucially, the Bill of Rights permanently established... &bull; In conclusion...',
+          'A compelling argument supporting this statement is... &bull; On one hand, evidence suggests that... &bull; However, an alternative perspective is that... &bull; Crucially, long-term stability was secured when... &bull; In conclusion, the decisive turning point was... because...',
         wordBank:
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },
