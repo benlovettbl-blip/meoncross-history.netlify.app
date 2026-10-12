@@ -882,14 +882,14 @@ const INDUSTRIALISATION_LEFT_SOURCES = {
     },
     sourceB: {
       badge: 'SOURCE B',
-      type: 'Satirical Engraving',
-      title: 'George Cruikshank: "The Reform Tree" (1831)',
-      image: getBase64Image('/images/old_rotten_tree.jpg'),
+      type: 'Satirical Lithograph',
+      title: 'S. Gans: "The School of Reform: Conjugation of the Verb to Reform" (1831)',
+      image: getBase64Image('/images/school_of_reform.jpg'),
       context:
-        'Popular satirical print by George Cruikshank depicting Prime Minister Earl Grey and Lord John Russell chopping down the rotten tree of aristocratic corruption and patronage, while conservative Tories cling desperately to its branches.',
+        'Contemporary satirical print published in May 1831 during the national debate over the Great Reform Act. Prime Minister Earl Grey stands at the classroom lectern drilling anti-reform Tory politicians to conjugate "the verb to reform", while Lord Chancellor Brougham brandishes a giant birch rod and the Duke of Wellington weeps in a dunce’s cap ("I cant Reform").',
       hingeQuestion:
-        'How does Cruikshank use satire to frame the 1832 Reform Act as a vital pruning of national decay rather than a dangerous revolutionary upheaval?',
-      shelfmark: 'British Museum Department of Prints & Drawings (1868,0808.8872)',
+        'How does Source B illustrate that parliamentary reform was viewed as a strict national discipline imposed on reluctant defenders of rotten boroughs?',
+      shelfmark: 'British Museum Department of Prints & Drawings (1868,0808.9377)',
       footer: 'British Museum Satirical Print Collection',
     },
   },

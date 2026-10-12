@@ -3,9 +3,10 @@ export const unitData = {
   title: 'KS3: The Second British Empire (1783–1914)',
   short_title: 'The Second British Empire',
   homepage_background: '/images/imperial_federation_map.jpg',
-  enquiry: 'How did trade, conquest, and anti-colonial resistance shape the Second British Empire?',
+  enquiry:
+    'How did trade, conquest, settler colonialism, and anti-colonial resistance shape the Second British Empire?',
   description:
-    'From East India Company monopoly rule and the industrial naval supremacy of Portsmouth Dockyard to the 1857 Indian Rebellion, the Scramble for Africa, and Dadabhai Naoroji’s Drain Theory, explore how global commerce, armed conflict, and anti-colonial resistance shaped the Second British Empire.',
+    'From East India Company monopoly rule and Portsmouth Royal Dockyard to Australian settler colonialism, the 1857 Indian Rebellion, the Scramble for Africa, and Dadabhai Naoroji’s Drain Theory, explore how global commerce, naval power, dispossession, and armed resistance shaped the Second British Empire.',
   cover_image: '/images/imperial_federation_map.jpg',
   cover_caption:
     'The Imperial Federation Map of the World (1886), illustrating the worldwide territories of the British Empire at its Victorian peak.',
@@ -21,36 +22,52 @@ export const unitData = {
   ],
   timeline: [
     {
-      year: '1813',
-      title: 'End of EIC Trade Monopoly',
+      year: '1765',
+      title: 'Treaty of Allahabad & Diwani of Bengal',
       description:
-        'British Parliament opens Indian trade to private merchants, triggering the flood of machine-woven Lancashire cotton into the subcontinent.',
+        'Mughal Emperor Shah Alam II grants the East India Company the Diwani (right to collect tax revenues) across Bengal, transforming a merchant company into a territorial empire.',
       dual_coding_prompt:
-        'Draw a steamship carrying bales of cotton beside a traditional Indian handloom.',
+        'Draw a pair of merchant scales holding bags of rupees beside a royal charter.',
+    },
+    {
+      year: '1787–1788',
+      title: 'First Fleet & Terra Nullius in Australia',
+      description:
+        '11 ships depart Portsmouth Spithead carrying 775 convicts; Governor Arthur Phillip lands at Botany Bay and Sydney Cove, declaring terra nullius without signing treaties.',
+      dual_coding_prompt:
+        'Draw an 18th-century sailing ship approaching a coastline marked with an Aboriginal spear.',
     },
     {
       year: '1857',
-      title: 'The Indian Rebellion',
+      title: 'The Indian Rebellion (Sepoy Mutiny)',
       description:
-        'Indian sepoys and civilians rise up against corporate East India Company rule across northern India in a fierce war of resistance.',
+        'Indian sepoys and dispossessed rulers rise up across northern India against East India Company rule; Rani Lakshmibai of Jhansi leads heroic resistance.',
       dual_coding_prompt:
-        'Draw an Enfield rifle cartridge beside the royal crest of the Mughal Emperor.',
+        'Draw an Enfield rifle cartridge beside the royal battle-standard of Jhansi.',
     },
     {
       year: '1858',
       title: 'Establishment of the British Raj',
       description:
-        'Parliament dissolves the East India Company; Queen Victoria assumes direct sovereignty over India as constitutional monarch.',
+        'Parliament passes the Government of India Act, dissolving the East India Company; Queen Victoria assumes direct sovereignty over the subcontinent.',
       dual_coding_prompt:
-        'Draw the royal crown of Queen Victoria resting upon an administrative map of India.',
+        'Draw the imperial crown of Queen Victoria resting upon an administrative map of India.',
     },
     {
-      year: '1884',
-      title: 'The Berlin Conference',
+      year: '1884–1885',
+      title: 'The Berlin Conference & Scramble for Africa',
       description:
-        'Fourteen European powers partition 90% of the African continent without consulting a single African leader.',
+        'Fourteen European powers partition 90% of the African continent under the principle of Effective Occupation, without consulting a single African leader.',
       dual_coding_prompt:
-        'Draw a pair of diplomatic dividers measuring across a map of the African continent.',
+        'Draw a pair of diplomatic brass dividers measuring across an outline map of Africa.',
+    },
+    {
+      year: '1892–1901',
+      title: 'Naoroji in Parliament & Drain Theory',
+      description:
+        'Dadabhai Naoroji is elected as Britain’s first Indian MP and publishes Poverty and Un-British Rule in India, statistically demonstrating colonial economic extraction.',
+      dual_coding_prompt:
+        'Draw a ledger book recording tax drain beside the Palace of Westminster.',
     },
   ],
   key_individuals: [
@@ -61,9 +78,31 @@ export const unitData = {
       role: 'Monarch & Imperial Figurehead',
       image: '/images/queen_victoria.jpg',
       significance:
-        'Reigned for sixty-three years as the constitutional monarch and imperial figurehead presiding over the peak of British global expansion, proclaimed Empress of India (Kaisar-i-Hind) in 1876.',
+        'Reigned for sixty-three years as the constitutional monarch presiding over the peak of British global expansion, proclaimed Empress of India (Kaisar-i-Hind) in 1876.',
       actions:
-        'Issued the 1858 Royal Proclamation promising religious neutrality in India; patronized the 1851 Great Exhibition; crowned Empress of India by Benjamin Disraeli in 1876.',
+        'Issued the 1858 Royal Proclamation promising religious neutrality in India; patronized the 1851 Great Exhibition; crowned Empress of India in 1876.',
+    },
+    {
+      name: 'Arthur Phillip',
+      dates: '1738 – 1814',
+      title: 'First Governor of New South Wales & Royal Navy Admiral',
+      role: 'Colonial Founder & Administrator',
+      image: '/images/arthur_phillip.jpg',
+      significance:
+        'Commanded the 11 ships of the First Fleet from Portsmouth to Botany Bay, establishing Britain’s penal colony and enforcing crown sovereignty under the doctrine of terra nullius.',
+      actions:
+        'Led the First Fleet from Portsmouth Spithead in May 1787; established Sydney Cove; proclaimed British rule across eastern Australia without negotiating treaties with Indigenous peoples.',
+    },
+    {
+      name: 'Pemulwuy',
+      dates: 'c. 1750 – 1802',
+      title: 'Bidjigal Resistance Leader & Eora Clan Warrior',
+      role: 'Indigenous Freedom Fighter',
+      image: '/images/pemulwuy.jpg',
+      significance:
+        'Renowned Bidjigal warrior who led a twelve-year armed guerrilla campaign against British military outposts and pastoral expansion along the Hawkesbury River.',
+      actions:
+        'Speared Governor Phillip’s gamekeeper in 1790; united multiple clans in guerrilla raids against farms; led the 1797 Battle of Parramatta; resisted colonial occupation until his death in 1802.',
     },
     {
       name: 'Rani Lakshmibai of Jhansi',
@@ -77,6 +116,17 @@ export const unitData = {
         'Defied British annexation; organized the military defense of Jhansi; died fighting in cavalry action at Gwalior in June 1858.',
     },
     {
+      name: 'Lord Dalhousie',
+      dates: '1812 – 1860',
+      title: 'Governor-General of India (1848–1856)',
+      role: 'Colonial Administrator',
+      image: '/images/lord_dalhousie.jpg',
+      significance:
+        'Aggressive Governor-General whose expansionist policies—especially the Doctrine of Lapse and the annexation of Awadh—alienated Indian princes and sepoys, directly triggering the 1857 Rebellion.',
+      actions:
+        'Annexed Satara, Sambalpur, Jhansi, Nagpur, and Awadh; introduced the electric telegraph and early railway networks; centralized Company governance.',
+    },
+    {
       name: 'Dadabhai Naoroji',
       dates: '1825 – 1917',
       title: 'Grand Old Man of India & British Member of Parliament',
@@ -85,18 +135,7 @@ export const unitData = {
       significance:
         'Pioneering Indian nationalist and political economist who formulated the "Drain of Wealth" theory in Poverty and Un-British Rule in India (1901). Elected Britain’s first Indian MP (Finsbury Central, 1892).',
       actions:
-        'Co-founded the Indian National Congress in 1885; published Poverty and Un-British Rule in India (1901); proved scientifically that colonial taxation drained India of industrial capital.',
-    },
-    {
-      name: 'Lord Dalhousie',
-      dates: '1812 – 1860',
-      title: 'Governor-General of India (1848–1856)',
-      role: 'Colonial Administrator',
-      image: '/images/lord_dalhousie.jpg',
-      significance:
-        'Aggressive Governor-General whose ruthless expansionist policies—especially the Doctrine of Lapse and the annexation of Awadh—alienated Indian princes and sepoys, directly triggering the 1857 Rebellion.',
-      actions:
-        'Annexed Satara, Sambalpur, Jhansi, Nagpur, and Awadh; introduced the electric telegraph and early railway networks; centralized Company governance.',
+        'Co-founded the Indian National Congress in 1885; published Poverty and Un-British Rule in India (1901); proved scientifically that colonial taxation drained India of capital.',
     },
     {
       name: 'Cecil Rhodes',
@@ -105,7 +144,7 @@ export const unitData = {
       role: 'Imperial Expansionist',
       image: '/images/cecil_rhodes.jpg',
       significance:
-        'Arch-imperialist who founded the De Beers diamond monopoly and the British South Africa Company, spearheading the conquest of Rhodesia (Zimbabwe and Zambia) with a vision of a "Cape to Cairo" railway.',
+        'Arch-imperialist who founded the De Beers diamond monopoly and the British South Africa Company, spearheading the conquest of Rhodesia with a vision of a "Cape to Cairo" railway.',
       actions:
         'Formed the De Beers diamond cartel in 1888; secured a royal charter for the British South Africa Company; served as Prime Minister of Cape Colony (1890–1896).',
     },
@@ -515,221 +554,163 @@ export const unitData = {
       quiz: [
         {
           question:
-            'What private joint-stock corporation held a royal charter to control British trade and territories in India until 1858?',
-          q: 'What private joint-stock corporation held a royal charter to control British trade and territories in India until 1858?',
+            'Which royal dockyard in Hampshire served as the world’s largest industrial manufacturing complex in the 19th century?',
           options: [
-            'The East India Company (EIC)',
-            "The Hudson's Bay Company",
-            'The South Sea Company',
-            'The Royal African Company',
+            'Portsmouth Royal Dockyard',
+            'Plymouth Dockyard',
+            'Chatham Dockyard',
+            'Rosyth Dockyard',
           ],
-          answer: 'The East India Company (EIC)',
-          a: 'The East India Company (EIC)',
-          explanation:
-            'Founded in 1600, the East India Company became a corporate empire with its own private army, extracting taxes and monopolizing trade across the Indian subcontinent.',
+          answer: 'Portsmouth Royal Dockyard',
         },
         {
           question:
-            "What was the 'Two-Power Standard' adopted by Britain to guarantee global maritime supremacy?",
-          q: "What was the 'Two-Power Standard' adopted by Britain to guarantee global maritime supremacy?",
-          options: [
-            'A law requiring two admirals to command every fleet squadron.',
-            'A policy requiring the Royal Navy to be as strong as the next two largest navies combined.',
-            'A rule requiring every warship to carry twice as many guns as foreign vessels.',
-            'A treaty dividing global naval bases equally between Britain and France.',
-          ],
-          answer:
-            'A policy requiring the Royal Navy to be as strong as the next two largest navies combined.',
-          a: 'A policy requiring the Royal Navy to be as strong as the next two largest navies combined.',
-          explanation:
-            "Adopted formally in the Naval Defence Act of 1889, the Two-Power Standard ensured Britain's battle fleet could defeat any two rival navies acting in alliance.",
-        },
-        {
-          question:
-            "Launched in 1860, which Portsmouth-associated vessel was the Royal Navy's first revolutionary iron-hulled armoured warship?",
-          q: "Launched in 1860, which Portsmouth-associated vessel was the Royal Navy's first revolutionary iron-hulled armoured warship?",
-          options: ['HMS Victory', 'HMS Dreadnought', 'HMS Warrior', 'HMS Beagle'],
-          answer: 'HMS Warrior',
-          a: 'HMS Warrior',
-          explanation:
-            'HMS Warrior, completed in 1860, combined an iron hull with steam power and heavy rifled guns, rendering all existing wooden warships immediately obsolete.',
-        },
-        {
-          question:
-            'What was the original purpose of the East India Company when it was founded in 1600?',
-          options: [
-            'To fight the French army in North America.',
-            'To establish direct British government rule in India.',
-            'To build ironclad warships for the Royal Navy.',
-            'To control trade in precious spices, silks, indigo, and tea.',
-          ],
-          answer: 'To control trade in precious spices, silks, indigo, and tea.',
-        },
-        {
-          question: 'How did the East India Company secure its commercial monopolies in India?',
-          options: [
-            'By paying higher taxes to the local Indian rulers.',
-            'By signing peaceful trade agreements with all local merchants.',
-            'By recruiting its own private mercenary army and exploiting local political divisions.',
-            'By relying solely on the Royal Navy for protection.',
-          ],
-          answer:
-            'By recruiting its own private mercenary army and exploiting local political divisions.',
-        },
-        {
-          question:
-            "What does it mean that the East India Company turned India into a 'captive market'?",
-          options: [
-            'India was forced to trade exclusively with Britain, preventing local industries from competing.',
-            'Britain sent captive prisoners from London to work in Indian factories.',
-            'The EIC built large prisons in India to hold their commercial rivals.',
-            'Indian merchants were given exclusive rights to sell their goods in London.',
-          ],
-          answer:
-            'India was forced to trade exclusively with Britain, preventing local industries from competing.',
-        },
-        {
-          question: "How did British textile mills affect India's domestic handloom weavers?",
-          options: [
-            'They provided Indian weavers with better, cheaper yarn to make cloth.',
-            'They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.',
-            'They taught Indian weavers how to build their own steam-powered factories.',
-            "They bought all of the Indian weavers' cloth, making them wealthy.",
-          ],
-          answer:
-            'They flooded Indian markets with cheap, machine-made cloth, deliberately bankrupting local weavers.',
-        },
-        {
-          question:
-            "What event was triggered in May 1857 by the East India Company's systemic oppression?",
-          options: [
-            'The Battle of Trafalgar',
-            'The Great Stink',
-            'The signing of the Government of India Act',
-            'The Indian Rebellion (Sepoy Mutiny)',
-          ],
-          answer: 'The Indian Rebellion (Sepoy Mutiny)',
-        },
-        {
-          question:
-            'According to the April 1857 EIC corporate directive, what was the primary purpose of the British presence in India?',
-          options: [
-            'To spread British culture and religion.',
-            'To secure the maintenance of trade and protect shareholder profits.',
-            'To bring modern technology and railways to the Indian people.',
-            'To establish a democratic government in Asia.',
-          ],
-          answer: 'To secure the maintenance of trade and protect shareholder profits.',
-        },
-        {
-          question: 'What was the consequence of the 1857 Rebellion for the East India Company?',
-          options: [
-            'It moved all of its operations to China.',
-            'It agreed to share power with the local Indian rulers.',
-            'It was formally abolished, and control transferred directly to the British Crown.',
-            'It was given even more power by the British Parliament.',
-          ],
-          answer:
-            'It was formally abolished, and control transferred directly to the British Crown.',
-        },
-        {
-          question: "What was the 'Two-Power Standard'?",
-          options: [
-            'A rule that the Royal Navy must be stronger than the next two most powerful navies combined.',
-            'A law requiring two steam engines on every British warship.',
-            'A policy ensuring India was ruled by both a British Governor and an Indian Prince.',
-            'A trade agreement between Britain and two other European nations.',
-          ],
-          answer:
-            'A rule that the Royal Navy must be stronger than the next two most powerful navies combined.',
-        },
-        {
-          question:
-            'Which Hampshire town became the largest steam-powered industrial complex on earth to support the navy?',
-          options: ['Winchester', 'Fareham', 'Southampton', 'Portsmouth'],
-          answer: 'Portsmouth',
-        },
-        {
-          question:
-            'What major technological transition did the Royal Navy undergo at Portsmouth Dockyard during the 19th century?',
-          options: [
-            "Moving from wooden sailing ships to steam-driven 'Ironclads'.",
-            'Moving from merchant vessels to passenger liners.',
-            'Moving from iron hulls back to lighter, faster wooden ships.',
-            'Moving from coal-powered ships to oil-powered ships.',
-          ],
-          answer: "Moving from wooden sailing ships to steam-driven 'Ironclads'.",
-        },
-        {
-          question:
-            "Launched in 1860, which ship was the world's first iron-hulled, steam-powered ironclad warship?",
-          options: ['HMS Dreadnought', 'HMS Victory', 'HMS Warrior', 'HMS Beagle'],
+            'What revolutionary iron-hulled warship launched at Portsmouth in 1860 made all wooden battleships obsolete overnight?',
+          options: ['HMS Victory', 'HMS Warrior', 'HMS Dreadnought', 'HMS Beagle'],
           answer: 'HMS Warrior',
         },
         {
           question:
-            'Whose advanced metallurgy pioneered at Funtley (from Lesson 1) was vital for creating the armor plating of the Ironclads?',
-          options: ['Joseph Bazalgette', 'Henry Cort', 'Edwin Chadwick', 'John Snow'],
-          answer: 'Henry Cort',
+            'What economic system held that national power depended on accumulating bullion and maintaining a favorable trade surplus through state-enforced trade monopolies?',
+          options: [
+            'Free Market Capitalism',
+            'Democratic Socialism',
+            'Mercantilism',
+            'Feudal Manorialism',
+          ],
+          answer: 'Mercantilism',
         },
         {
           question:
-            'According to the letter from Arthur Vance (November 1861), what was the reality for the dockyard riveters?',
+            'What statutory naval policy, established by the Naval Defence Act 1889, legally mandated that the Royal Navy must equal the combined battle strength of the next two strongest foreign navies?',
           options: [
-            'They were replaced by machines and struggled to find work in Hampshire.',
-            'They worked comfortable shifts and were proud of the glory they brought the fleet.',
-            "They mainly did highly skilled wood-carving for the officers' cabins.",
-            'They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.',
+            'The Splendid Isolation Doctrine',
+            'The Pax Britannica Protocol',
+            'The Wooden Wall Mandate',
+            'The Two-Power Standard',
           ],
-          answer:
-            'They endured exhausting 12-hour shifts in blistering heat, breathing black smoke.',
+          answer: 'The Two-Power Standard',
         },
         {
           question:
-            "Why is Arthur Vance's private letter considered highly reliable by historians studying the human cost of empire?",
+            'What seventeenth-century laws restricted colonial trade exclusively to English-built and English-crewed ships?',
           options: [
-            'Because it was written for a political campaign to improve wages.',
-            'Because it was an official dockyard log checked by the government.',
-            'Because it was a private letter to family with no motive to hide the grueling reality.',
-            'Because it was published in The Times newspaper.',
+            'The Navigation Acts',
+            'The Stamp Acts',
+            'The Calico Acts',
+            'The Declaratory Acts',
           ],
-          answer:
-            'Because it was a private letter to family with no motive to hide the grueling reality.',
-        },
-        {
-          question: "What does 'Mercantilism' mean in the context of the British Empire?",
-          options: [
-            'The belief that all men should have the right to vote regardless of wealth.',
-            'The transition from rural farming communities to large industrial cities.',
-            'A policy of free trade where all nations compete equally without tariffs.',
-            'A system maximizing national wealth through strictly controlled colonial trade and monopolies.',
-          ],
-          answer:
-            'A system maximizing national wealth through strictly controlled colonial trade and monopolies.',
+          answer: 'The Navigation Acts',
         },
         {
           question:
-            "What did the Dacca weavers' petition in 1830 beg the British government to do?",
+            'What commercial mechanism allowed the East India Company to function as an imperial ruler rather than a mere merchant syndicate?',
           options: [
-            'To place a duty (tax) on the cheap clothing coming from England to save their trade.',
-            'To force the East India Company to buy their hand-woven cloth at a higher price.',
-            'To send them modern British steam engines for their looms.',
-            'To allow them to move to London to work in the factories.',
+            'An absolute royal monarchy',
+            'A private army of sepoys, sovereign fortresses, and tax collection monopolies',
+            'Direct control by the Church of England',
+            'Subsidies from the French treasury',
           ],
-          answer:
-            'To place a duty (tax) on the cheap clothing coming from England to save their trade.',
+          answer: 'A private army of sepoys, sovereign fortresses, and tax collection monopolies',
         },
         {
           question:
-            "What do 'Optimist' historians typically argue about the British Empire's use of technology?",
+            'What major industrial facility at Portsmouth Royal Dockyard was engineered by Marc Brunel to mass-produce 100,000 rigging blocks annually with steam machinery?',
           options: [
-            'That technology was only used to hurt people and had no positive benefits.',
-            'That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.',
-            'That technological progress was less important than the skill of the handloom weavers.',
-            'That the British completely failed to modernize and relied too much on old wooden ships.',
+            'The Iron Foundry',
+            'The Gunwharf Armory',
+            'The Portsmouth Block Mills',
+            'The Ropewalk Complex',
+          ],
+          answer: 'The Portsmouth Block Mills',
+        },
+        {
+          question:
+            'Why did Victorian military and political leaders prioritize naval coaling stations at Gibraltar, Malta, Aden, and Singapore?',
+          options: [
+            'To store timber for wooden sailing ships',
+            'To extract local gold and diamonds directly from the seabed',
+            'To isolate the British mainland from foreign trade entirely',
+            'To refuel steam warships and secure imperial trade arteries connecting Britain with India and Asia',
           ],
           answer:
-            'That innovations like ironclads and railways created a massive, interconnected network of global trade and progress.',
+            'To refuel steam warships and secure imperial trade arteries connecting Britain with India and Asia',
+        },
+        {
+          question:
+            'What term describes the nineteenth-century era of relative global peace enforced by Royal Navy maritime supremacy?',
+          options: [
+            'Pax Britannica',
+            'Pax Romana',
+            'The Concert of Europe',
+            'The Splendid Alliance',
+          ],
+          answer: 'Pax Britannica',
+        },
+        {
+          question:
+            'Which Scottish philosopher published The Wealth of Nations in 1776, condemning mercantilist colonial trade monopolies as economically harmful?',
+          options: ['David Hume', 'Adam Smith', 'John Stuart Mill', 'Thomas Malthus'],
+          answer: 'Adam Smith',
+        },
+        {
+          question:
+            'What percentage of world trade did the British merchant navy carry by the late nineteenth century?',
+          options: ['Roughly 10%', 'Around 25%', 'Over 50%', 'Nearly 90%'],
+          answer: 'Over 50%',
+        },
+        {
+          question:
+            'How did Portsmouth’s Block Mills revolutionize Industrial Revolution manufacturing methods?',
+          options: [
+            'By employing only manual master craftsmen with hand chisels',
+            'By importing finished wooden blocks from the American colonies',
+            'By utilizing water-powered windmills exclusively',
+            'By introducing all-metal machine tools with interchangeable standardized parts driven by steam',
+          ],
+          answer:
+            'By introducing all-metal machine tools with interchangeable standardized parts driven by steam',
+        },
+        {
+          question:
+            'What protective armor system did HMS Warrior feature to resist modern explosive naval artillery?',
+          options: [
+            '4.5 inches of wrought iron backed by 18 inches of solid teak wood',
+            'Double layers of cast-iron plates without timber backing',
+            'Steel armor plating 12 inches thick',
+            'Reinforced bronze plating over oak frames',
+          ],
+          answer: '4.5 inches of wrought iron backed by 18 inches of solid teak wood',
+        },
+        {
+          question:
+            'What was the primary function of chartered monopoly companies like the East India Company during the early modern era?',
+          options: [
+            'To provide charitable relief to impoverished colonial subjects',
+            'To conquer foreign territories and extract profits on behalf of private shareholders under royal charter',
+            'To convert Asian populations to Protestantism exclusively',
+            'To build democratic self-governing parliaments across the globe',
+          ],
+          answer:
+            'To conquer foreign territories and extract profits on behalf of private shareholders under royal charter',
+        },
+        {
+          question:
+            'Which crucial waterway opened in 1869, dramatically slashing maritime voyage times between Britain and India?',
+          options: ['The Panama Canal', 'The Kiel Canal', 'The Suez Canal', 'The Corinth Canal'],
+          answer: 'The Suez Canal',
+        },
+        {
+          question:
+            "Why did Britain transition from wooden 'hearts of oak' sailing ships to steam-powered ironclads in 1860?",
+          options: [
+            'Britain had completely exhausted all domestic timber supplies',
+            'French wooden warships had defeated the Royal Navy in battle',
+            'The British Admiralty sought to ban coal burning at sea',
+            "France had launched La Gloire (1859), the world's first ironclad, threatening British maritime dominance",
+          ],
+          answer:
+            "France had launched La Gloire (1859), the world's first ironclad, threatening British maritime dominance",
         },
       ],
       pair_share: {
@@ -743,68 +724,68 @@ export const unitData = {
     },
     {
       id: 'lesson_2',
-      title: 'How did British rule transform the Indian economy?',
+      title:
+        'How did corporate exploitation spark the 1857 Indian Rebellion and destroy the East India Company?',
       teacher_notes: {
         primer:
-          "This enquiry investigates the economic consequences of East India Company rule and early Crown governance in India. Challenges pupils to examine the historical debate surrounding 'de-industrialisation'—how Britain's industrial manufacturing and tariff policies reversed global trade flows, transforming India from the world’s preeminent exporter of fine cotton calicos into a supplier of raw agricultural materials and a captive consumer of Lancashire factory textiles.",
+          "This enquiry consolidates the corporate rise, economic exploitation, and violent downfall of the East India Company (EIC). Pupils explore the 1757 Battle of Plassey, the 1765 Bengal Diwani (tax collection rights), and the catastrophic de-industrialisation of traditional Indian handloom weaving caused by Lancashire machine-woven imports. They then investigate the structural resentments created by Lord Dalhousie's aggressive Doctrine of Lapse (annexing Satara, Jhansi, and Awadh) and religious interference, culminating in the 1857 Enfield rifle cartridge crisis at Meerut, the armed leadership of Rani Lakshmibai of Jhansi, and the 1858 Government of India Act establishing the direct British Raj under Queen Victoria.",
         delivery_plan: {
           format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
           lesson_1: {
-            title: 'Lesson 1: Immersion, Bengal Calicos & Colonial Tariffs (50 mins)',
+            title: 'Lesson 1: Plassey, The Bengal Diwani & The Handloom Crisis (50 mins)',
             phases: [
               {
                 time: '00–10m',
-                label: 'Hook & Prior Retrieval',
+                label: 'Hook & Spaced Retrieval',
                 instruction:
-                  'Display Source A (Fine Mughal muslin). Connect pre-colonial Indian textile wealth with prior recall of the East India Company monopoly.',
+                  'Display Source A (Benjamin West’s 1795 painting of Shah Alam II granting the Diwani to Robert Clive). Pupils complete Do Now retrieving naval mercantilism and Portsmouth Dockyard.',
               },
               {
                 time: '10–30m',
                 label: 'Modelled Shared Reading',
                 instruction:
-                  'Read Acts 1 & 2 together. Pause at Act 1 to contrast 18th-century Indian textile supremacy with British protectionist import tariffs.',
+                  'Read Acts 1 & 2 together. Pause at Act 1 to interrogate how the 1765 Diwani allowed a private corporation to fund commercial purchases using Indian taxpayer revenue. Examine the collapse of Dhaka handloom weaving.',
               },
               {
                 time: '30–45m',
-                label: 'Economic & Statistical Analysis',
+                label: 'Economic & Document Analysis',
                 instruction:
-                  'Study Source B (British cotton exports to India vs. Indian exports to Britain graph). Analyze how machine cloth destroyed manual handlooms.',
+                  'Analyse Governor-General Bentinck’s 1834 dispatch (Word Scalpel task) and examine how British import tariffs protected Lancashire mills while starving Indian artisanal communities.',
               },
               {
                 time: '45–50m',
                 label: 'Formative Hinge Plenary',
                 instruction:
-                  'Conduct check for understanding on Hinge Question 1: How did British import tariffs protect Lancashire mills while opening Indian markets to unfair competition?',
+                  'Check for understanding on Hinge Question: Why did the Diwani invert the traditional trade flow between Britain and India?',
               },
             ],
           },
           lesson_2: {
-            title:
-              'Lesson 2: The Handloom Crisis, Historiographical Debates & Extended Writing (50 mins)',
+            title: 'Lesson 2: Dalhousie’s Lapse, The 1857 Explosion & The British Raj (50 mins)',
             phases: [
               {
                 time: '00–10m',
                 label: 'Spaced Retrieval & Vocab Anchor',
                 instruction:
-                  'Complete retrieval Do Now in printed workbook. Review vocabulary: De-industrialisation vs. Captive Market.',
+                  'Review key vocabulary: Diwani, De-industrialisation, Sepoy, Doctrine of Lapse, and British Raj.',
               },
               {
                 time: '10–25m',
-                label: 'Shared Reading & Historiographical Debate',
+                label: 'Shared Reading & Leadership Analysis',
                 instruction:
-                  'Read Acts 3 & 4. Interrogate the 1834 Governor-General report (Source C) and debate: Was the decline of Indian textiles an inevitable result of market forces or deliberate colonial policy?',
+                  'Read Acts 3 & 4. Interrogate the Enfield cartridge controversy at Meerut, the march on Delhi, and the armed leadership of Rani Lakshmibai of Jhansi (Source B).',
               },
               {
                 time: '25–45m',
-                label: 'Workbook Application',
+                label: 'Workbook Application & Extended Writing',
                 instruction:
-                  'Pupils complete the De-industrialisation Causal Chain (Task 4) and 18-line PEEL extended writing evaluation.',
+                  'Pupils complete the 1857 Rebellion Causal Chain and 18-line PEEL extended writing evaluation on whether 1857 was a limited mutiny or a war of liberation.',
               },
               {
                 time: '45–50m',
                 label: 'Live Exemplar Debrief',
                 instruction:
-                  'Visualiser debrief evaluating student responses on the structural transformation of India under colonial rule.',
+                  'Visualiser debrief evaluating student responses on the constitutional transition from Company plunder to the 1858 British Raj.',
               },
             ],
           },
@@ -812,39 +793,39 @@ export const unitData = {
         objectives: [
           {
             objective:
-              'Explain how India was the world’s leading textile manufacturing power before British colonial conquest.',
+              'Explain how the East India Company conquered Bengal and extracted Indian wealth through the 1765 Diwani and tariff-driven de-industrialisation.',
             primer:
-              'Focus on paragraph [1.1], guiding pupils to understand that in 1700, India produced roughly 25% of the world’s manufactured goods.',
+              'Focus on paragraphs [1.2] and [2.1], guiding pupils to understand that in 1700 India produced roughly 25% of world textiles, but colonial rule dismantled domestic weaving.',
             question:
-              'Why were Indian handloom textiles like calico and muslin prized across the European and Asian trade routes?',
+              'How did the 1765 Diwani allow the East India Company to finance its commercial trade using Indian taxpayers’ own money?',
           },
           {
             objective:
-              'Analyse how British industrial mechanisation and colonial trade tariffs caused the de-industrialisation of Indian textiles.',
+              'Analyse the structural causes and the immediate Enfield rifle cartridge spark that ignited the 1857 Indian Rebellion.',
             primer:
-              'Reference paragraph [2.2] and Source B, examining how cheap steam-woven cloth from Lancashire displaced millions of Indian manual weavers.',
+              'Reference paragraphs [2.3] and [3.1], examining how Lord Dalhousie’s Doctrine of Lapse and the cow/pig tallow cartridges alienated Indian aristocrats and soldiers alike.',
             question:
-              'How did British tariffs and free-market access into India create a one-way street for British manufactured goods?',
+              'Why was the greased Enfield rifle cartridge viewed by sepoys as deliberate religious defilement rather than a simple military upgrade?',
           },
           {
             objective:
-              'Evaluate the historiographical debate between colonial modernization and economic drain theories.',
+              'Evaluate the course of the 1857 uprising, the leadership of Rani Lakshmibai of Jhansi, and the constitutional creation of the British Raj in 1858.',
             primer:
-              'Guide pupils to interrogate Source C and Source D in paragraphs [3.2] and [4.2], comparing Governor-General Bentinck’s quote with Dadabhai Naoroji’s analysis.',
+              'Guide pupils through paragraphs [3.3] and [4.2], comparing the Azamgarh Proclamation with the Government of India Act 1858.',
             question:
-              'What did Governor-General Bentinck mean when he wrote that "the bones of the cotton-weavers are bleaching the plains of India"?',
+              'Why did the British Parliament dissolve the East India Company in 1858 rather than allowing corporate executives to continue governing India?',
           },
         ],
         source_context:
-          'An official 1834 dispatch from Governor-General Lord William Bentinck regarding the collapse of traditional Indian textile manufacturing following the flood of Lancashire machine-made goods. **Hinge Question:** Why did the introduction of British steam machinery have a more catastrophic impact on Indian weavers than on British domestic workers?',
+          'Benjamin West’s 1795 monumental painting depicting Mughal Emperor Shah Alam II conveying the imperial firman (decree) of the Diwani of Bengal, Bihar, and Orissa to Robert Clive inside an opulent ceremonial tent at Allahabad in August 1765. Clive is shown accepting legal authority to collect taxes from twenty million Indian subjects on behalf of a private London corporation. **Hinge Question:** How does Source A mask the violent military coercion of the Battle of Buxar behind a civilized facade of diplomatic ceremony?',
       },
       learning_objectives: {
         overarching:
-          'How did British colonial rule transform the Indian economy from producer to captive market?',
+          'How did East India Company corporate exploitation spark the 1857 Indian Rebellion and destroy company rule?',
         scaffolded: [
-          'Describe India’s global textile supremacy before the expansion of the East India Company.',
-          'Explain how British tariffs and machine-made Lancashire textiles dismantled Indian handloom weaving.',
-          'Evaluate whether British colonial rule modernised India or stripped it of industrial self-sufficiency.',
+          'Explain how the 1765 Bengal Diwani and Lancashire machine cloth triggered the de-industrialisation of India.',
+          'Analyse the long-term political grievances (Doctrine of Lapse) and immediate cartridge spark of the 1857 uprising.',
+          'Evaluate the leadership of Rani Lakshmibai of Jhansi and why Parliament dissolved the Company in 1858 to establish the British Raj.',
         ],
       },
       do_now: {
@@ -853,425 +834,483 @@ export const unitData = {
         items: [
           {
             question:
-              'What economic policy used tariffs and state monopolies to enrich the mother country at the expense of colonies?',
-            answer: 'Mercantilism.',
-          },
-          {
-            question:
-              'What private corporation ruled India with its own mercenary army until 1858?',
-            answer: 'The East India Company (EIC).',
-          },
-          {
-            question:
-              'What Hampshire naval facility was the industrial manufacturing heart of the Royal Navy in the 19th century?',
+              'Which Hampshire naval dockyard was the industrial manufacturing heart of the Victorian Royal Navy?',
             answer: 'Portsmouth Royal Dockyard.',
           },
           {
             question:
-              'What revolutionary 1860 ironclad battleship rendered all wooden navies obsolete?',
+              'What 1860 ironclad warship berthed at Portsmouth rendered all wooden sailing battleships obsolete overnight?',
             answer: 'HMS Warrior.',
           },
           {
             question:
-              'What British naval policy required the Royal Navy to be larger than the next two strongest navies combined?',
-            answer: 'The Two-Power Standard.',
+              'What economic theory prioritized national trade surpluses, bullion accumulation, and chartered commercial monopolies?',
+            answer: 'Mercantilism.',
+          },
+          {
+            question:
+              'What 1889 British naval doctrine legally mandated that the Royal Navy must equal the combined battle strength of the next two strongest fleets?',
+            answer: 'The Two-Power Standard (Naval Defence Act 1889).',
           },
         ],
       },
       vocab: [
         {
+          term: 'East India Company (EIC)',
+          definition:
+            'A British commercial joint-stock corporation chartered in 1600 that conquered and governed large parts of India with its private army until dissolved in 1858.',
+        },
+        {
+          term: 'Diwani',
+          definition:
+            'The official legal right to collect civil and land tax revenues in Bengal, granted to the East India Company by the Mughal Emperor in 1765.',
+        },
+        {
           term: 'De-industrialisation',
           definition:
-            'The destruction or decline of a nation’s traditional manufacturing and industrial base, reducing it to an exporter of raw agricultural goods.',
+            'The destruction of traditional artisanal manufacturing—particularly Indian handloom cotton weaving—caused by the flood of cheap British machine-woven cloth.',
         },
         {
-          term: 'Captive Market',
+          term: 'Doctrine of Lapse',
           definition:
-            'A colonial territory forced to buy manufactured goods exclusively from the ruling imperial power without the ability to impose protective tariffs.',
+            'Lord Dalhousie’s annexation policy where Indian princely states without a biological male heir were annexed by the Company, refusing to recognize adopted sons.',
         },
         {
-          term: 'Calico & Muslin',
+          term: 'Sepoy',
           definition:
-            'Finely spun, delicately hand-woven Indian cotton textiles that dominated global fashion and trade before British factory mechanisation.',
+            'An Indian soldier recruited, trained, and armed by the East India Company to serve in its private corporate armies.',
         },
         {
-          term: 'Tariff Disparity',
+          term: 'British Raj',
           definition:
-            'The unequal customs system where Britain imposed heavy taxes on Indian cloth imports while forcing India to accept British goods duty-free.',
-        },
-        {
-          term: 'Drain of Wealth',
-          definition:
-            'The systematic transfer of Indian tax revenues, raw resources, and corporate profits to Great Britain without an equivalent economic return.',
-        },
-        {
-          term: 'Permanent Settlement',
-          definition:
-            'An 1793 British tax law in Bengal fixing land revenues paid by aristocratic landlords (zamindars), resulting in peasant dispossession during crop failures.',
+            'The period of direct British Crown governance over the Indian subcontinent (1858–1947), established after the dissolution of the East India Company.',
         },
       ],
       timeline_anchor: [
         {
-          date: '1700',
-          title: 'Global Textile Hegemony',
-          desc: 'Mughal India produces approximately 25% of the world’s manufactured goods, dominating global trade in cotton cloth.',
+          date: '1765',
+          title: 'Grant of the Bengal Diwani',
+          desc: 'Mughal Emperor Shah Alam II cedes civil tax collection in Bengal to the EIC under the Treaty of Allahabad.',
         },
         {
-          date: '1721',
-          title: 'The Calico Acts in Britain',
-          desc: 'British Parliament passes protective legislation banning the import of printed Indian cottons to protect domestic English woollen makers.',
+          date: '1813–1834',
+          title: 'De-industrialisation & The Handloom Crisis',
+          desc: 'British Parliament eliminates EIC monopoly; cheap Lancashire machine cotton floods India, bankrupting indigenous handloom weavers.',
         },
         {
-          date: '1813',
-          title: 'Abolition of EIC Trade Monopoly',
-          desc: 'British Parliament opens Indian trade to private British merchants, enabling Lancashire cotton mills to flood India with cheap machine cloth.',
+          date: '1848–1856',
+          title: 'Dalhousie & The Doctrine of Lapse',
+          desc: 'Governor-General Dalhousie annexes Satara, Jhansi, Nagpur, and Awadh, fueling explosive resentment among Indian aristocrats and soldiers.',
         },
         {
-          date: '1834',
-          title: 'Bentinck’s Report on Weavers',
-          desc: 'Governor-General Bentinck reports that machine competition has devastated traditional weavers: "The bones of the cotton-weavers are bleaching the plains of India."',
+          date: '1857–1858',
+          title: 'The 1857 Rebellion & The British Raj',
+          desc: 'Sepoys revolt over greased cartridges; Rani Lakshmibai leads Jhansi’s defense; Parliament dissolves the EIC and establishes Crown rule.',
         },
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: The Baseline: India as the World’s Cotton Workshop (1700–1757)',
-          text: '<p><span class="para-ref">[1.1]</span> In the early eighteenth century, prior to European conquest, the Indian subcontinent was the undisputed manufacturing powerhouse of the globe. Under the Mughal Empire, India produced nearly a quarter of all world industrial output. The crown jewel of this economic supremacy was its textile sector. Across Bengal, Gujarat, and the Coromandel coast, millions of skilled weavers, spinners, and dyers produced cotton cloth of unmatched quality—from sturdy calicos to gauzy muslins so exquisitely fine that European travellers called them "woven wind" (<span class="archival-meta-tag">Source A</span>).</p><p><span class="para-ref">[1.2]</span> For over a century, European trading corporations competed furiously for access to these goods. The English East India Company built its colossal fortune by purchasing Indian textiles with silver bullion and exporting them across Europe, Africa, and the Americas. Indian cotton was so superior in comfort, washability, and brightness of dye that English woollen and silk manufacturers panicked. In 1700 and 1721, the British Parliament intervened with the protectionist "Calico Acts", legally banning the import or wearing of dyed Indian cottons in Britain to shield English textile masters from foreign competition.</p><p><span class="para-ref">[1.3]</span> Following Robert Clive’s victory at the Battle of Plassey in 1757 and the Treaty of Allahabad in 1765, the nature of British involvement underwent a predatory transformation. The Mughal Emperor granted the Company the <em>Diwani</em>—the sovereign right to collect land revenues across Bengal, Bihar, and Orissa. Rather than bringing gold and silver to purchase textiles, the Company now used taxes extracted directly from Indian peasants to buy Indian goods for export. Corporate merchants established coercive monopolies over local weavers, forcing them to sign contracts at fixed, sub-market rates and flogging those who dared sell their cloth to rival French or Dutch traders.</p>',
+          title: 'Act 1: Corporate Conquerors: Plassey, The Bengal Diwani & Plunder (1757–1765)',
+          text: '<p><span class="para-ref">[1.1]</span> In 1700, Mughal India was the unrivaled textile workshop of the world, generating nearly 25 percent of global economic manufacturing. Millions of skilled Indian artisanal weavers produced delicate muslins, durable calicoes, and vibrant printed chintz in villages across Bengal and Gujarat. For over a century, European trading syndicates had competed eagerly to purchase these textiles, paying for them with solid silver and gold bullion because British woolen cloth was far too heavy and coarse for tropical markets.</p><p><span class="para-ref">[1.2]</span> That commercial balance was shattered by armed conquest. In June 1757, Robert Clive led East India Company forces to victory at the Battle of Plassey, overthrowing the Nawab of Bengal with the aid of treacherous Indian financiers. Eight years later, following victory at Buxar, Clive negotiated the <strong>Treaty of Allahabad (1765)</strong> with the defeated Mughal Emperor Shah Alam II (<span class="archival-meta-tag">Source A</span>). The emperor formally ceded the <em>Diwani</em>—the legal right to collect civil and land taxes over Bengal, Bihar, and Orissa—to the Company. Overnight, a private joint-stock corporation headquartered in London became the sovereign tax-collector of twenty million Indian peasants.</p><p><span class="para-ref">[1.3]</span> The acquisition of the Diwani inverted global trade finance. Previously, the Company had to import millions of pounds in silver bullion from Britain to buy Indian cloth. Now, Company officials collected over £2 million annually in land taxes directly from Bengali farmers, used those tax revenues to purchase Indian textiles, and shipped the cloth back to Europe for colossal corporate profits. The Company was essentially buying Indian goods with Indian taxpayers\' own confiscated money, draining millions of pounds from the regional economy in an institutionalized extraction known as the "Company Plunder".</p>',
           tasks: [
             {
               type: 'causal_domino',
-              title: 'Causal Chain: From Textile Hegemony to Corporate Coercion (1700–1765)',
+              title: 'Causal Chain: From Bullion Trade to Colonial Tax Extraction (1700–1765)',
               instruction:
-                'Connect the causal stages explaining how the East India Company captured control of Indian textile production.',
+                'Draw arrows connecting the stages explaining how the 1765 Diwani inverted the financial flow between Britain and India.',
               events: [
                 {
                   id: 'ev_1',
-                  title: 'Indian Textile Hegemony',
+                  title: 'Indian Handloom Supremacy (1700)',
                   detail:
-                    'India produces 25% of world manufactured goods; Bengal muslins dominate international trade [1.1, Source A].',
+                    'India produces 25% of world textiles; Europeans pay silver bullion for fine muslins [1.1].',
                 },
                 {
                   id: 'ev_2',
-                  title: 'British Protectionist Calico Acts',
+                  title: 'Battle of Plassey (1757)',
                   detail:
-                    'Parliament bans dyed Indian cottons in 1721 to shield domestic English woollen industries [1.2].',
+                    'Robert Clive defeats Nawab of Bengal, establishing Company military dominance [1.2].',
                 },
                 {
                   id: 'ev_3',
-                  title: 'Battle of Plassey & 1765 Diwani',
+                  title: 'The Treaty of Allahabad (1765)',
                   detail:
-                    'Clive secures the right to collect land taxes across Bengal, turning taxes into commercial purchasing funds [1.3].',
+                    'Shah Alam II cedes the Diwani (tax collection) over Bengal to the private EIC [1.2, Source A].',
                 },
                 {
                   id: 'ev_4',
-                  title: 'Monopoly Coercion of Artisans',
+                  title: 'Institutionalized Tax Extraction',
                   detail:
-                    'Company agents force weavers into exclusive contracts at depressed prices, enforcing discipline through flogging [1.3].',
+                    'EIC buys Indian goods using Indian taxes, eliminating bullion imports and draining wealth [1.3].',
                 },
               ],
               synthesis_prompt:
-                'Historical Causation: Why was obtaining the Bengal Diwani (tax collection) the decisive turning point in British economic control of India?',
-              starter: 'Obtaining the Diwani was the decisive turning point because...',
+                'Historical Causation: Why was the 1765 Treaty of Allahabad more transformative for the British Empire than Clive’s victory at Plassey?',
+              starter: 'The Treaty of Allahabad was more transformative because...',
               model_answer:
-                'Obtaining the Diwani in 1765 was the decisive turning point because it inverted the financial relationship between Britain and India [1.3]. Previously, British merchants had to import massive quantities of precious silver bullion to purchase Indian textiles. With the Diwani, the East India Company collected millions of pounds in land taxes directly from Indian peasants, using that revenue to purchase Indian goods for export back to Europe, essentially financing its commerce using India’s own wealth.',
+                'The Treaty of Allahabad was more transformative because it gave the East India Company a permanent legal mandate to extract taxation from twenty million people [1.2, 1.3]. While Plassey was a battlefield victory, the Diwani institutionalized economic extraction by allowing corporate directors to finance trade directly from Indian revenues, eliminating the need to export British silver and turning Bengal into a sovereign corporate fiefdom.',
             },
           ],
           source: {
             letter: 'A',
-            title: 'Source A: Hand-Woven Bengal Cotton Muslin Fabric Sample (c. 1750)',
+            title:
+              'Source A: Benjamin West, Shah Alam Conveying the Grant of the Diwani to Lord Clive (1795)',
             context:
-              'A surviving sample of fine Dhaka muslin, renowned for its gossamer-like translucence. Indian handloom weavers used specialized varieties of cotton grown along the Brahmaputra River to create textiles that no European machinery could duplicate. **Hinge Question:** Why did the British Parliament pass protectionist laws against Indian textiles in the 1720s if Britain claimed to champion free trade?',
+              'Oil painting by Benjamin West depicting Mughal Emperor Shah Alam II formally delivering the Diwani of Bengal to Robert Clive inside an imperial tent in August 1765. **Hinge Question:** How does West’s painting present corporate military extortion as a dignified, legitimate imperial transaction?',
             hinge_question:
-              'Why did the British Parliament pass protectionist laws against Indian textiles in the 1720s if Britain claimed to champion free trade?',
-            image: '/images/textile_factory.jpg',
+              'How does West’s painting present corporate military extortion as a dignified, legitimate imperial transaction?',
+            image: '/images/shah_alam_clive.jpg',
             caption:
-              'Source A: Traditional handloom weaving of fine cotton textiles in pre-colonial Bengal (Victoria and Albert Museum archival collection).',
+              'Source A: Benjamin West (1795): Mughal Emperor Shah Alam II conveying the firman for the Diwani of Bengal, Bihar, and Orissa to Lord Clive at Allahabad.',
           },
         },
         {
-          title: 'Act 2: The Catalyst: The Steam Loom & The Tariff Stranglehold (1780–1830)',
-          text: '<p><span class="para-ref">[2.1]</span> In the late eighteenth century, the balance of technological power shifted dramatically. The invention of the spinning jenny, Arkwright’s water frame, and Crompton’s mule mechanized cotton spinning in Lancashire, followed by steam-powered weaving mills in Manchester. For the first time, British factories could mass-produce cotton yarn and cloth at speeds unimaginable to hand weavers. However, machine efficiency alone was insufficient to defeat Indian competition; the British government deployed a deliberate, rigged tariff policy to secure complete commercial victory.</p><p><span class="para-ref">[2.2]</span> While Britain maintained high import tariffs of up to 70 to 80 percent on Indian textiles entering the British market, Parliament forced India to open its ports almost entirely duty-free to British manufactured goods (<span class="archival-meta-tag">Source B</span>). In 1813, Parliament abolished the East India Company’s commercial monopoly, opening the subcontinent to thousands of private British merchant ships. Between 1814 and 1835, British cotton goods exported to India skyrocketed from less than 1 million yards to over 51 million yards annually. Simultaneously, Indian textile exports to Britain collapsed from 1.25 million pieces in 1814 to barely 300,000 pieces in 1835.</p><p><span class="para-ref">[2.3]</span> This flood of cheap, steam-woven Lancashire cloth had a catastrophic effect on traditional Indian artisanal society. Centres of world textile excellence like Dhaka (in modern Bangladesh) and Murshidabad saw their populations plunge from vibrant manufacturing hubs of several hundred thousand people into depopulated, malaria-ridden ghost towns. Millions of spinners and handloom weavers—overwhelmingly female spinners who relied on cottage spinning for basic survival—lost their entire livelihood within a single generation, forced back into subsistence agricultural labour on already overcrowded rural land.</p>',
+          title: 'Act 2: De-industrialisation & The Doctrine of Lapse (1813–1856)',
+          text: '<p><span class="para-ref">[2.1]</span> In the early 19th century, Britain’s Industrial Revolution dealt a catastrophic blow to India’s traditional artisans. When Parliament abolished the East India Company’s commercial monopoly in 1813, British private merchants flooded Indian ports with machine-woven cotton manufactured in steam-powered Lancashire mills. Furthermore, the British government maintained deeply discriminatory tariffs: British manufactured textiles entered India practically duty-free (facing a nominal tax of just 2.5 to 3.5 percent), whereas Indian handloom textiles exported to Britain were penalized with crushing import tariffs of 70 to 80 percent.</p><p><span class="para-ref">[2.2]</span> The consequence was rapid <strong>de-industrialisation</strong>. Power looms in Manchester churned out cheap cotton cloth at a fraction of the cost of Indian pit-loom weaving. Within two decades, millions of skilled Indian spinners and weavers were ruined. Ancient textile manufacturing centers like Dhaka (Dacca) in Bengal were depopulated as artisans abandoned their looms to seek precarious field labor as agricultural day laborers. In 1834, Governor-General Lord William Bentinck summarized the tragedy in a famous dispatch to London: <em>"The misery hardly finds a parallel in the history of commerce. The bones of the cotton-weavers are bleaching the plains of India."</em></p><p><span class="para-ref">[2.3]</span> Alongside economic destitution came aggressive political annexation. Between 1848 and 1856, Governor-General <strong>Lord Dalhousie</strong> pursued an unyielding expansionist strategy known as the <strong>Doctrine of Lapse</strong>. Under traditional Indian custom, a prince who lacked a biological son had the sovereign right to adopt a male heir to inherit his title and lands. Dalhousie unilaterally rejected this ancient tradition, declaring that any princely state whose ruler died without a direct biological male heir "lapsed" automatically to the Company. Under this predatory decree, Dalhousie seized Satara, Sambalpur, Nagpur, and the historic Maratha kingdom of <strong>Jhansi</strong> (<span class="archival-meta-tag">Source B</span>), dispossessing young widow <strong>Rani Lakshmibai</strong>. In 1856, Dalhousie topped this by annexing the wealthy kingdom of <strong>Awadh (Oudh)</strong> under the vague pretext of "misgovernment", shocking Indian aristocrats and the thousands of Bengali sepoys recruited from Awadh’s peasantry.</p>',
           tasks: [
             {
               type: 'word_scalpel',
-              title: 'Forensic Scalpel: Interrogating Parliamentary Tariff Evidence (1832)',
-              text: 'Interrogate testimony presented to the British House of Commons Select Committee on the Affairs of the East India Company (1832).',
+              title: 'Forensic Scalpel: Governor-General Bentinck on the Handloom Crisis (1834)',
+              text: 'Analyse Lord William Bentinck’s official 1834 dispatch to the British Board of Control regarding the collapse of traditional Indian textile manufacturing.',
               instruction:
-                'Extract the exact 11-word phrase demonstrating that British customs policy deliberately imposed unequal duties to strangle Indian manufacturing.',
+                'Extract the exact 11-word phrase demonstrating the catastrophic human mortality and economic ruin inflicted upon traditional Indian weavers by Lancashire machine goods.',
               source_excerpt:
-                'The English cottons are admitted into India on payment of a duty of only two and a half percent, while the cottons of India are subjected to a duty of ten percent on entering England, and on some articles up to seventy percent.',
-              model_quote:
-                'admitted into India on payment of a duty of only two and a half percent',
+                'The commercial distress has been overwhelming. The misery hardly finds a parallel in the history of commerce. The bones of the cotton-weavers are bleaching the plains of India, and our trade returns show the complete destruction of this ancient industry.',
+              model_quote: 'The bones of the cotton-weavers are bleaching the plains of India',
               justification_prompt:
-                'Why does this tariff disparity prove that the destruction of Indian manufacturing was not solely caused by superior technology?',
-              starter: 'This tariff disparity proves that...',
+                'Why does Bentinck’s stark imagery prove that colonial de-industrialisation was an active catastrophe rather than a benign economic modernization?',
+              starter: 'Bentinck’s imagery proves it was an active catastrophe because...',
               model_answer:
-                'This tariff disparity proves that the destruction of Indian manufacturing was driven by state protectionism as well as technology [2.2]. By keeping Indian import tariffs on British factory goods at a negligible 2.5% while levying duties up to 70% on Indian cloth entering Britain, Parliament artificially cheapened English goods in India while closing British markets to Indian weavers.',
+                'Bentinck’s stark imagery proves that colonial de-industrialisation caused immediate mass starvation and destitution rather than gradual modernization [2.1, 2.2]. By stating that the weavers\' bones were literally "bleaching the plains", the Governor-General admitted that flooding India with tariff-sheltered Lancashire machine cloth wiped out millions of artisanal livelihoods, forcing skilled urban craftsmen into agricultural famine.',
             },
           ],
           source: {
             letter: 'B',
-            title: 'Source B: Statistical Chart: The Great Trade Reversal (1814–1844)',
+            title: 'Source B: Contemporary Portrait of Rani Lakshmibai of Jhansi (c. 1857)',
             context:
-              'Customs records showing the dramatic reversal of Anglo-Indian textile trade. In 1814, Britain imported vast quantities of cloth from India; by 1844, Britain exported hundreds of millions of yards of factory cloth to India, turning the country into a captive consumer. **Hinge Question:** How did this rapid trade reversal transform India’s economic role within the British Empire?',
+              'Nineteenth-century illustration depicting Rani Lakshmibai of Jhansi in warrior attire, wearing a turban, sword, and shield. Defying Lord Dalhousie’s Doctrine of Lapse after he seized her late husband’s state, Lakshmibai led rebel cavalry in combat and died fighting at Gwalior in June 1858. **Hinge Question:** Why did Rani Lakshmibai’s defiance on horseback become an enduring national symbol of Indian resistance against British rule?',
             hinge_question:
-              'How did this rapid trade reversal transform India’s economic role within the British Empire?',
-            image: '/images/imperial_federation_map.jpg',
+              'Why did Rani Lakshmibai’s defiance on horseback become an enduring national symbol of Indian resistance against British rule?',
+            image: '/images/rani_of_jhansi.jpg',
             caption:
-              'Source B: Parliamentary return detailing the volume of British manufactured cotton goods exported to India versus Indian handloom cloth imported into Great Britain (1814–1844).',
+              'Source B: Rani Lakshmibai of Jhansi, armed with sword and shield, who led Maratha forces against British annexation during the 1857 Rebellion.',
           },
         },
         {
-          title: 'Act 3: Forensic Archival Evidence: The Bleached Plains of India (1830–1858)',
-          text: '<p><span class="para-ref">[3.1]</span> The human toll of this economic restructuring was acknowledged even by senior British colonial administrators. In an 1834 dispatch to the East India Company directors in London, Governor-General Lord William Bentinck summarized the tragedy in one of the most haunting phrases in colonial history: "The misery hardly finds a parallel in the history of commerce. The bones of the cotton-weavers are bleaching the plains of India" (<span class="archival-meta-tag">Source C</span>). Dispossessed weavers sold their looms for firewood, took up manual farm labor, or starved during recurring regional famines.</p><p><span class="para-ref">[3.2]</span> Under Company administration, the Indian countryside was restructured to serve British industrial supply chains. Instead of growing food grains to feed local populations, peasants were coerced through debt and tax demands to cultivate cash crops required by British factories: raw cotton for Lancashire textile mills, indigo for dyeing cloth, opium for smuggling into China to balance the tea trade, and jute for sacks. When international crop prices crashed or droughts struck, peasant farmers could not eat raw cotton or opium, transforming manageable dry spells into catastrophic mass famines.</p><p><span class="para-ref">[3.3]</span> The forensic consequence of this transformation was the complete conversion of India into a "captive market". India became the single largest consumer of British industrial goods, purchasing 40 percent of all cotton exports from Lancashire by the late Victorian era. At the same time, Indian artisans were systematically excluded from emerging modern industries: British colonial railways charged cheaper freight rates for imported goods travelling inland from ports than for domestically manufactured goods travelling between Indian cities, ensuring that native Indian manufacturing could not compete.</p>',
+          title: 'Act 3: The Spark at Meerut: The Enfield Rifle & Armed Revolt (1857)',
+          text: '<p><span class="para-ref">[3.1]</span> By early 1857, northern India was a powder keg of accumulated resentment. Indian soldiers (<em>sepoys</em>), who comprised over 85 percent of the East India Company’s 300,000-man military force, were deeply unsettled. Sepoys had endured decades of low pay, racial condescension from British officers, reductions in foreign deployment allowances (<em>batta</em>), and legislation requiring them to serve overseas across the "black water" (<em>kala pani</em>), which orthodox high-caste Hindus believed destroyed their ritual purity. Furthermore, Christian missionary societies operated openly within army cantonments, sparking widespread terror that the Company intended to forcibly convert Indian soldiers to Christianity.</p><p><span class="para-ref">[3.2]</span> In January 1857, the British military introduced a new weapon: the <strong>Pattern 1853 Enfield rifle</strong>. To load this muzzle-loading rifle, soldiers had to bite open a paper cartridge to pour gunpowder down the barrel. Whispers flashed through military cantonments that the waterproof grease coating the cartridges was crafted from a mixture of beef tallow (sacred to Hindus) and pork lard (forbidden to Muslims). Biting the cartridge meant ritual contamination and spiritual damnation for both faiths. When soldiers at Barrackpore and Meerut refused to handle the cartridges, British commanders responded with court-martials, public degradation, and long sentences of hard labor.</p><p><span class="para-ref">[3.3]</span> On <strong>10 May 1857</strong>, the powder keg detonated. At the Meerut cantonment northeast of Delhi, Indian cavalry and infantry regiments mutinied, broke open the military prison to free their imprisoned comrades, shot their British officers, and marched thirty miles overnight through driving rain to Delhi. Entering the ancient Mughal capital, the sepoys stormed the Red Fort and proclaimed the reluctant 82-year-old Mughal Emperor, <strong>Bahadur Shah Zafar</strong>, as the legitimate sovereign Emperor of Hindostan. What had begun as a military protest transformed into a nationwide war of liberation, uniting Hindu and Muslim soldiers, dispossessed zamindars (landlords), and royal princes under the Mughal banner (<span class="archival-meta-tag">Source C</span>).</p>',
           tasks: [
             {
-              type: 'significance_diamond',
-              title: 'Priority Diamond: Drivers of Indian De-industrialisation',
+              type: 'perspective_grid',
+              title: 'Forensic Audit: British "Mutiny" vs. Indian "War of Liberation" (1857)',
               instruction:
-                'Evaluate and rank the four primary factors that led to the decline of Indian textile manufacturing.',
-              factors: [
-                {
-                  id: 'tariff_policy',
-                  label:
-                    'Rigged Tariff Disparity (British import duties of 70% vs. 2.5% on goods entering India)',
-                },
-                {
-                  id: 'steam_machinery',
-                  label:
-                    'Steam-Powered Industrial Mechanisation (Lancashire mills mass-producing cheap yarn)',
-                },
-                {
-                  id: 'eic_taxation',
-                  label:
-                    'East India Company Tax Extraction (Diwani revenues draining wealth from artisans)',
-                },
-                {
-                  id: 'railway_freight',
-                  label:
-                    'Colonial Infrastructure Bias (Railways favouring imported goods over domestic products)',
-                },
+                'Compare how colonial British commanders and rebel Indian leaders explained the explosive outbreak of 1857.',
+              left_title: 'British Military Perspective (The "Sepoy Mutiny")',
+              right_title: 'Indian Rebel Manifesto (The Azamgarh Proclamation)',
+              left_points: [
+                'Attributed the revolt purely to military indiscipline and irrational superstition over rifle cartridge grease.',
+                'Claimed rebels were ungrateful soldiers misled by fanatical religious agitators and rogue princes.',
+                'Argued the East India Company had brought railways, canals, legal order, and modernization to India.',
+                'Framed British military reconquest as righteous vengeance and restoration of legitimate authority.',
               ],
-              justification_prompt:
-                'Justify your Rank 1 selection: Why was this factor decisive in dismantling traditional Indian manufacturing?',
-              starter: 'The decisive factor was...',
+              right_points: [
+                'Identified decades of economic plunder, confiscation of zamindar estates, and destruction of handlooms [1.3, 2.2].',
+                'Viewed the greased cartridge as the final calculated attempt to defile Hindu and Muslim caste and faith [3.2].',
+                'United disparate ethnic and religious factions behind the shared restoration of the Mughal Emperor [3.3].',
+                'Declared that foreign corporate rule had impoverished all classes of Indian society from nobles to peasants.',
+              ],
+              synthesis_prompt:
+                'Historical Interpretation: Why do modern historians reject the term "Sepoy Mutiny" in favor of the "1857 Indian Rebellion"?',
+              starter: 'Modern historians reject the term "Sepoy Mutiny" because...',
               model_answer:
-                'The decisive factor was the combination of steam mechanisation and rigged tariff disparity [2.1, 2.2]. While steam-powered looms in Lancashire dramatically reduced manufacturing costs, British protectionist tariffs actively shielded English producers from Indian competition while denying Indian weavers any tariff protection against the dumping of factory cloth.',
+                'Modern historians reject the term "Sepoy Mutiny" because the uprising extended far beyond a simple soldiers\' dispute over rifle grease [3.1, 3.3, Source C]. As documented in the Azamgarh Proclamation, the revolt mobilized dispossessed princes like Rani Lakshmibai, rural zamindars ruined by excessive land taxes, and millions of peasants who rose up in civil rebellion across northern India to overthrow a century of predatory corporate extraction.',
             },
           ],
           source: {
             letter: 'C',
-            title: 'Source C: Governor-General Lord William Bentinck, Official Minute (1834)',
+            title: 'Source C: The Azamgarh Proclamation (August 1857)',
             context:
-              'An official minute by the Governor-General of India documenting the social catastrophe caused by the collapse of traditional handloom weaving across northern India. **Hinge Question:** Why did the head of the British colonial government make such an explicit admission of economic devastation?',
+              'Rebel manifesto issued during the Siege of Delhi setting out the grievances of the Indian uprising. **Hinge Question:** What evidence does Source C provide that the rebellion was motivated by economic destruction and loss of sovereignty rather than just religious cartridges?',
             hinge_question:
-              'Why did the head of the British colonial government make such an explicit admission of economic devastation?',
-            text: '“The misery hardly finds a parallel in the history of commerce. The bones of the cotton-weavers are bleaching the plains of India. The commercial world has witnessed no revolution so sudden, so complete, and so disastrous to a numerous and industrious class of human beings.”',
+              'What evidence does Source C provide that the rebellion was motivated by economic destruction and loss of sovereignty rather than just religious cartridges?',
+            text: '“It is well known to all, that in this age the people of Hindostan, both Hindoos and Mahommedans, are being ruined under the tyranny and oppression of the treacherous English... The British have dispossessed ancient landlords, monopolized all valuable trade—indigo, cloth, and salt—and by importing cheap machine goods from England, have impoverished millions of native weavers. Let all brave soldiers unite under the imperial standard to expel the foreign rulers.”',
             caption:
-              'Source C: Official dispatch from Governor-General Lord William Bentinck to the Court of Directors of the East India Company, London, 1834.',
+              'Source C: Excerpt from the Azamgarh Proclamation, published in northern India during the 1857 uprising.',
           },
         },
         {
-          title: 'Act 4: The Historical Verdict: Colonial Modernisation or De-industrialisation?',
-          text: '<p><span class="para-ref">[4.1]</span> By the mid-nineteenth century, the transformation of India from an industrial producer into an agricultural supplier was complete. Raw cotton accounted for the bulk of Indian exports, which was shipped across the oceans to Liverpool, spun in Manchester mills, and sold back to Indian consumers as shirts and sarees. This structural dependence formed the backdrop to deep-seated grievances that exploded in the 1857 Indian Rebellion, when rebel manifestos like the Azamgarh Proclamation specifically condemned the economic ruin of native artisans (<span class="archival-meta-tag">Source D</span>).</p><p><span class="para-ref">[4.2]</span> Today, historians remain sharply divided over the economic impact of British rule in India. Imperial apologist historians (such as Niall Ferguson and traditional British administrative scholars) argue that British rule brought essential modern infrastructure that unified India. They point out that Britain constructed over 25,000 miles of railways, built extensive canal irrigation networks, established telegraph communications, and integrated India into global maritime trade, providing the physical foundation for its 20th-century development.</p><p><span class="para-ref">[4.3]</span> Conversely, Indian nationalist and revisionist economic historians (beginning with Dadabhai Naoroji in 1901 and expanded by modern economists like Amiya Kumar Bagchi and Utsa Patnaik) demonstrate that British rule resulted in catastrophic "de-industrialisation" and a massive "drain of wealth". In 1700, India generated 25 percent of world manufacturing output; by the time the British left in 1947, India’s share had plummeted to less than 2 percent. They argue that colonial railways were designed not to develop local Indian industries, but to extract raw materials to ports and distribute British manufactured goods inland, leaving the Indian population impoverished and vulnerable to catastrophic famines.</p>',
+          title: 'Act 4: Total War, The Defense of Jhansi & The British Raj (1857–1858)',
+          text: '<p><span class="para-ref">[4.1]</span> Between May 1857 and mid-1858, northern and central India descended into total war. Fierce sieges raged across Delhi, Cawnpore (Kanpur), and Lucknow. At Jhansi, <strong>Rani Lakshmibai</strong> fortified her citadel, personally commanding artillery batteries and rallying Maratha warriors against General Hugh Rose’s besieging army. When British forces breached the city walls in April 1858, the Rani tied her adopted child to her back, leapt from the battlements on horseback, and escaped through enemy lines. Joining forces with rebel commander Tatya Tope, she seized the fortress of Gwalior and died fighting heroically in cavalry combat on 18 June 1858. General Rose later remarked that she was <em>"the bravest and best military leader of the rebels."</em></p><p><span class="para-ref">[4.2]</span> British retribution was swift and merciless. Reinforced by loyal Sikh regiments from Punjab and Gurkhas from Nepal, British expeditionary columns recaptured rebel cities, carrying out indiscriminate mass hangings of suspected sepoys and blasting captured mutineers from the mouths of cannons. The ancient Mughal Dynasty was extinguished: Bahadur Shah Zafar was exiled to Burma (where he died in captivity), and his sons were shot dead in cold blood outside Delhi’s gates.</p><p><span class="para-ref">[4.3]</span> The catastrophe proved that a private commercial corporation could no longer govern an empire of two hundred million people. In August 1858, the British Parliament passed the <strong>Government of India Act 1858</strong>, formally liquidating the East India Company and transferring all administrative and military sovereignty directly to the British Crown. Queen Victoria issued a royal proclamation pledging that Britain would no longer annex princely states or interfere with Indian religious traditions (<span class="archival-meta-tag">Source D</span>). Thus was born the <strong>British Raj</strong>—an era of direct Crown governance that would rule the Indian subcontinent until independence in 1947.</p>',
           tasks: [
             {
               type: 'extended_writing',
               question:
-                'Enquiry Essay: "To what extent was the de-industrialisation of India between 1757 and 1857 the deliberate result of British colonial policy rather than natural market forces?"',
+                'Enquiry Essay: "Was the 1857 Indian Rebellion primarily caused by the Enfield rifle cartridge, or was it the inevitable explosion of decades of East India Company exploitation?"',
               scaffolding: {
                 structure_strip: [
-                  'PEE Paragraph 1 (Deliberate Colonial Policy): Argue that British rule intentionally dismantled Indian manufacturing through unequal tariffs, Company monopolies, and coercive taxation [1.2, 1.3, 2.2, Source B].',
-                  'PEE Paragraph 2 (Technological & Market Forces): Counter-argue that the decline was the inevitable result of industrial mechanisation, steam power, and cheaper global transport [2.1, 4.2].',
-                  'Historiographical Verdict: Reach a balanced conclusion evaluating whether technological progress or imperial exploitation was the decisive engine of India’s economic decline.',
+                  'PEEL Paragraph 1 (The Trigger: Cartridge Contamination & Sepoy Grievances): Examine how the Enfield rifle grease (beef/pig fat) and overseas service laws ignited deep fears of forced religious conversion [3.1, 3.2].',
+                  'PEEL Paragraph 2 (Long-term Corporate Plunder & De-industrialisation): Analyse the economic destruction caused by the 1765 Diwani, land tax extraction, and the ruin of Bengal handloom weavers [1.3, 2.1, 2.2, Source C].',
+                  'PEEL Paragraph 3 (Dalhousie’s Aggressive Political Annexations): Detail how the Doctrine of Lapse dispossessed rulers like Rani Lakshmibai of Jhansi and alienated Awadh [2.3, 4.1, Source B].',
+                  'Historiographical Conclusion: Formulate a balanced, nuanced verdict on whether 1857 was a military mutiny or a broad war of national liberation that destroyed the Company.',
                 ],
                 connective_bank: [
-                  'From an economic nationalist perspective, the decline of Indian manufacturing was the direct result of deliberate colonial policy because...',
-                  'As evidenced in paragraph [2.2] and Source B...',
-                  'This tariff disparity proved that...',
-                  'Conversely, imperial apologist historians contend that market forces were primarily responsible, arguing that...',
-                  'As documented in paragraph [2.1]...',
-                  'Ultimately, in evaluating the de-industrialisation of India, one must recognize that...',
+                  'A primary catalyst that detonated the rebellion in May 1857 was...',
+                  'In particular, as detailed in paragraphs [3.1] and [3.2]...',
+                  'However, deeper structural causes had been accumulating since the grant of the 1765 Diwani...',
+                  'Furthermore, the catastrophic de-industrialisation of Indian textiles proved that...',
+                  'This economic resentment was matched by political outrage under Lord Dalhousie, who...',
+                  'Ultimately, in evaluating the causes of the 1857 Rebellion, it is evident that...',
                 ],
               },
               model_answer:
-                "From an economic nationalist perspective, the de-industrialisation of India between 1757 and 1857 was fundamentally the deliberate result of British colonial policy. As documented in paragraph [1.2], Britain had a long record of legislative interference, passing the protectionist Calico Acts as early as 1721 to ban fine Indian muslins and shield English woollen masters from superior Asian competition. Once the East India Company seized political power and tax revenues through the 1765 Diwani of Bengal (Source A), colonial administrators systematically manipulated trade rules in favour of British industry [1.3]. Most decisively, as evidenced in Source B, Parliament imposed an unequal tariff regime: Indian textiles entering Britain were slapped with duties of up to 70 percent, while British manufactured cloth was forced into India virtually duty-free at a negligible 2.5 percent. This rigged system deliberately stripped Indian handloom weavers of their domestic and export markets, transforming India into a captive market forced to consume Lancashire cotton [3.3]. Therefore, colonial legislation and corporate taxation actively engineered the decline of Indian manufacturing.<br><br>Conversely, imperial apologist historians present a counter-argument that the decline of Indian handloom weaving was the inevitable result of global technological mechanisation rather than malicious colonial design. As documented in paragraph [2.1], the invention of the steam engine, spinning mule, and power loom in Britain created an unprecedented revolution in industrial productivity. British steam mills could spin thread and weave cloth hundreds of times faster and at a fraction of the cost of manual artisans. Just as British domestic handloom weavers were driven out of business by northern power looms, Indian weavers succumbed to the overwhelming efficiency of mechanized mass production. Furthermore, colonial defenders argue that British rule laid the foundations for modern commerce by constructing thousands of miles of railways and telegraph networks, integrating India into global trade networks [4.2]. In this view, India’s economic shift was the natural, painful consequence of the global Industrial Revolution.<br><br>Ultimately, in evaluating the de-industrialisation of India, a historian must recognize that industrial technology alone could not have crushed Indian manufacturing without the coercive backing of colonial power. While British steam looms were undeniably more efficient, it was imperial legislation that denied Indian producers the right to protect their own industries with defensive tariffs. As Governor-General Bentinck famously observed, 'the bones of the cotton-weavers are bleaching the plains of India' precisely because colonial rule left millions of skilled artisans defenseless against foreign dumping (Source C). Therefore, while technological mechanisation provided the weapon, British colonial trade policy was the decisive force that dismantled India’s industrial self-sufficiency.",
+                "A primary catalyst that detonated the rebellion in May 1857 was the profound religious and cultural anxiety provoked by the introduction of the Pattern 1853 Enfield rifle cartridge. As detailed in paragraphs [3.1] and [3.2], sepoys had to bite open cartridges greased with animal tallow derived from cows (sacred to Hindus) and pigs (abhorrent to Muslims). In an army where soldiers had already witnessed intrusive Christian missionary activity and overseas service laws threatening their ritual purity, the greased cartridge was perceived not as a minor technical reform, but as a deliberate attempt to defile their faith. When soldiers at Meerut were court-martialled and shackled for refusing the cartridges, their comrades rose in armed revolt, marching on Delhi to proclaim Emperor Bahadur Shah Zafar.<br><br>However, attributing the 1857 uprising solely to bullet grease ignores the profound structural grievances that had accumulated over a century of East India Company rule. As demonstrated in Act 1, ever since the 1765 Treaty of Allahabad (Source A) granted the Company the Diwani of Bengal, corporate directors had extracted millions of pounds in land revenue to purchase Indian goods with Indian taxpayers' own money. Furthermore, the early 19th century witnessed the deliberate de-industrialisation of the subcontinent: unequal British import tariffs and the flood of cheap machine-woven Lancashire cotton ruined millions of traditional handloom weavers in ancient centers like Dhaka [2.1, 2.2]. As Governor-General Bentinck confessed in 1834, the misery of starving artisans was without parallel. When the uprising began, ruined craftsmen and over-taxed zamindars joined the sepoys, as articulated in the Azamgarh Proclamation (Source C).<br><br>This economic destruction was compounded by aggressive political dispossession under Governor-General Lord Dalhousie. Through the ruthless Doctrine of Lapse (1848–1856), Dalhousie refused to recognize adopted heirs, unilaterally annexing historic states such as Satara, Nagpur, and Jhansi [2.3]. By dispossessing Rani Lakshmibai of Jhansi and annexing the kingdom of Awadh—the principal recruitment homeland of Bengal sepoys—Dalhousie alienated both Indian royalty and the rural military classes. Rani Lakshmibai’s armed resistance on horseback (Source B) exemplified how aristocratic dispossession fused with military mutiny into a coordinated struggle for regional sovereignty.<br><br>Ultimately, while the Enfield rifle cartridge was the immediate spark that detonated the rebellion at Meerut, it was the explosive fuel of a century of corporate tax plunder, handloom de-industrialisation, and Dalhousie’s predatory annexations that sustained the conflict. As evidenced by Parliament’s decision to dissolve the East India Company and establish the direct British Raj in 1858 (Source D), the British state recognized that corporate greed had pushed India to the brink of total revolution. Therefore, the 1857 uprising was fundamentally a broad war of national resistance against predatory corporate colonialism.",
             },
           ],
           source: {
             letter: 'D',
-            title: 'Source D: Dadabhai Naoroji, Poverty and Un-British Rule in India (1901)',
+            title: 'Source D: Queen Victoria’s Royal Proclamation (1 November 1858)',
             context:
-              'Dadabhai Naoroji was the first Indian member elected to the British Parliament (MP for Finsbury Central in 1892). His landmark 1901 book formulated the famous "Drain of Wealth" theory, demonstrating how colonial taxation drained India of industrial capital. **Hinge Question:** Why did Naoroji describe British rule as "un-British" in his critique of colonial policy?',
+              'Royal decree read across India following the dissolution of the East India Company, announcing direct British Crown governance. **Hinge Question:** Why did Queen Victoria promise religious tolerance and respect for Indian princes after the 1857 uprising?',
             hinge_question:
-              'Why did Naoroji describe British rule as "un-British" in his critique of colonial policy?',
-            text: '“India is being bled to death. The millions of wealth drained out of India into England year after year without any material return is the true secret of her growing poverty. England’s factories flourish on the ruins of India’s ancient crafts, and while the British talk of freedom and justice at home, they rule India as an economic plantation.”',
+              'Why did Queen Victoria promise religious tolerance and respect for Indian princes after the 1857 uprising?',
+            text: '“We hereby announce to the native Princes of India, that all treaties made with them by the East India Company are by us accepted... We desire no extension of our present territorial possessions... We declare it to be our royal will and pleasure that none be in any degree molested or disquieted by reason of their religious faith or observances.”',
             caption:
-              'Source D: Excerpt from Dadabhai Naoroji’s seminal economic critique presented to the British public and Parliament.',
+              'Source D: Queen Victoria’s 1858 proclamation to the princes and people of India establishing the British Raj.',
           },
         },
       ],
       quiz: [
         {
           question:
-            'What percentage of world manufacturing did Mughal India produce in 1700 before British expansion?',
-          options: ['Around 5%', 'Less than 1%', 'Around 25%', 'Over 50%'],
-          answer: 'Around 25%',
+            'What 1765 treaty formally granted the East India Company the Diwani (civil tax collection rights) over Bengal?',
+          options: [
+            'The Treaty of Allahabad',
+            'The Treaty of Paris',
+            'The Treaty of Versailles',
+            'The Treaty of Amritsar',
+          ],
+          answer: 'The Treaty of Allahabad',
         },
         {
-          question: 'What were the Calico Acts passed by the British Parliament in 1700 and 1721?',
+          question:
+            'What percentage of global manufacturing did Mughal India produce in 1700 before British expansion?',
+          options: ['Barely 2%', 'Roughly 25%', 'Around 50%', 'Over 80%'],
+          answer: 'Roughly 25%',
+        },
+        {
+          question:
+            'What term describes the process where British machine textiles flooded India and wiped out traditional handloom weavers?',
           options: [
-            'Laws making it illegal to trade with France',
-            'Laws banning imported dyed Indian cottons to protect domestic English wool masters',
-            'Laws abolishing the East India Company',
-            'Taxes on British tea imports',
+            'Agricultural Enclosure',
+            'Mercantilist Federation',
+            'De-industrialisation',
+            'Feudal Subjugation',
+          ],
+          answer: 'De-industrialisation',
+        },
+        {
+          question:
+            'What aggressive policy pursued by Lord Dalhousie annexed Indian princely states that lacked a biological male heir?',
+          options: [
+            'The Dual System',
+            'The Permanent Settlement',
+            'The Subsidiary Alliance',
+            'The Doctrine of Lapse',
+          ],
+          answer: 'The Doctrine of Lapse',
+        },
+        {
+          question:
+            'Which ancient textile capital of Bengal, world-famous for fine muslin, saw its population collapse due to British machine cloth imports?',
+          options: ['Dhaka (Dacca)', 'Bombay', 'Madras', 'Calcutta'],
+          answer: 'Dhaka (Dacca)',
+        },
+        {
+          question:
+            'What animal fat was rumoured to grease the new Pattern 1853 Enfield rifle cartridges, outraging both Hindu and Muslim sepoys?',
+          options: [
+            'Whale oil and olive oil',
+            'Cow tallow and pig lard',
+            'Sheep fat and horse grease',
+            'Goat tallow and vegetable lard',
+          ],
+          answer: 'Cow tallow and pig lard',
+        },
+        {
+          question:
+            'At which military cantonment did the 1857 Indian Rebellion formally erupt on 10 May 1857?',
+          options: ['Calcutta', 'Madras', 'Meerut', 'Bombay'],
+          answer: 'Meerut',
+        },
+        {
+          question:
+            'Whom did rebel sepoys proclaim as the symbolic Emperor of Hindostan upon seizing Delhi in May 1857?',
+          options: ['Robert Clive', 'Lord Dalhousie', 'Tipu Sultan', 'Bahadur Shah Zafar'],
+          answer: 'Bahadur Shah Zafar',
+        },
+        {
+          question:
+            'Which warrior queen led Maratha cavalry against British forces and died fighting at Gwalior in June 1858?',
+          options: [
+            'Rani Lakshmibai of Jhansi',
+            'Begum Hazrat Mahal',
+            'Sarojini Naidu',
+            'Kasturba Gandhi',
+          ],
+          answer: 'Rani Lakshmibai of Jhansi',
+        },
+        {
+          question:
+            'What did Governor-General Bentinck write in 1834 regarding the devastating fate of Indian handloom weavers?',
+          options: [
+            "'Indian weavers have grown wealthy from free trade.'",
+            "'The bones of the cotton-weavers are bleaching the plains of India.'",
+            "'Textile manufacturing has successfully relocated to the countryside.'",
+            "'British steam machinery has brought prosperity to all artisans.'",
+          ],
+          answer: "'The bones of the cotton-weavers are bleaching the plains of India.'",
+        },
+        {
+          question:
+            'What statutory act dissolved the East India Company and transferred Indian governance directly to Queen Victoria and the Crown?',
+          options: [
+            'The Regulating Act 1773',
+            "The Pitt's India Act 1784",
+            'The Government of India Act 1858',
+            'The Indian Independence Act 1947',
+          ],
+          answer: 'The Government of India Act 1858',
+        },
+        {
+          question:
+            'What title was given to the period of direct British royal governance over India from 1858 to 1947?',
+          options: [
+            'The Mughal Empire',
+            'The East India Company',
+            'The Commonwealth of Nations',
+            'The British Raj',
+          ],
+          answer: 'The British Raj',
+        },
+        {
+          question:
+            'What discriminatory tariff policy existed in the early 19th century between Britain and India?',
+          options: [
+            'British cotton entered India at 2.5–3.5% duty, while Indian cloth faced 70–80% import tariffs in Britain',
+            'Both nations maintained 100% free trade with zero tariffs',
+            'Indian textiles were completely banned while British cloth was taxed at 50%',
+            'British goods paid 70% tariffs in India while Indian goods entered Britain free',
           ],
           answer:
-            'Laws banning imported dyed Indian cottons to protect domestic English wool masters',
-        },
-        {
-          question: 'What was the Diwani of Bengal granted to the East India Company in 1765?',
-          options: [
-            'The sovereign right to collect land revenues across Bengal, Bihar, and Orissa',
-            'A treaty declaring India an independent republic',
-            'The right to appoint the Mughal Emperor',
-            'A royal title given to Robert Clive',
-          ],
-          answer: 'The sovereign right to collect land revenues across Bengal, Bihar, and Orissa',
+            'British cotton entered India at 2.5–3.5% duty, while Indian cloth faced 70–80% import tariffs in Britain',
         },
         {
           question:
-            'What term describes a colony forced to purchase manufactured goods exclusively from the ruling mother country?',
-          options: [
-            'A Free Trade Zone',
-            'A Crown Colony',
-            'A Mercantilist Guild',
-            'A Captive Market',
-          ],
-          answer: 'A Captive Market',
+            "Which wealthy kingdom did Lord Dalhousie annex in 1856 under the pretext of 'misgovernment', deeply angering Bengal sepoys?",
+          options: ['Punjab', 'Awadh (Oudh)', 'Mysore', 'Bengal'],
+          answer: 'Awadh (Oudh)',
         },
         {
-          question:
-            'What unfair tariff system existed between Britain and India in the early 19th century?',
+          question: 'What was the Azamgarh Proclamation of August 1857?',
           options: [
-            'British goods entered India virtually duty-free while Indian goods faced heavy tariffs in Britain',
-            'Equal 10% taxes in both directions',
-            'All trade between them was banned',
-            'Indian goods paid zero tax while British goods paid 50%',
+            'A British order sentencing rebel sepoys to death',
+            'A royal speech by Queen Victoria granting pardons',
+            'A rebel manifesto setting out the political and economic grievances of Indians across all classes',
+            'A treaty dividing Bengal between the French and British',
           ],
           answer:
-            'British goods entered India virtually duty-free while Indian goods faced heavy tariffs in Britain',
+            'A rebel manifesto setting out the political and economic grievances of Indians across all classes',
         },
         {
           question:
-            'Which major Indian textile city saw its population collapse as handloom weaving was destroyed by British imports?',
-          options: ['Goa', 'Dhaka', 'Pondicherry', 'Colombo'],
-          answer: 'Dhaka',
-        },
-        {
-          question:
-            'What did Governor-General Lord William Bentinck famously write about the handloom weavers in 1834?',
+            'Why did the British Parliament dissolve the East India Company following the 1857 Rebellion?',
           options: [
-            'They have all become wealthy factory owners',
-            'They refuse to work in agriculture',
-            'They are fully satisfied with British rule',
-            'The bones of the cotton-weavers are bleaching the plains of India',
+            'The Company had gone completely bankrupt with zero military forces',
+            'Queen Victoria wished to establish a commercial monopoly of her own',
+            "Indian princes had agreed to buy out the Company's shares",
+            'Parliament recognized that a private profit-seeking corporation could no longer govern an empire of 200 million people',
           ],
-          answer: 'The bones of the cotton-weavers are bleaching the plains of India',
-        },
-        {
-          question:
-            'What cash crops did the British East India Company force Indian peasants to grow instead of food grains?',
-          options: [
-            'Potatoes and corn',
-            'Wheat and barley exclusively',
-            'Raw cotton, indigo, and opium',
-            'Coffee and chocolate',
-          ],
-          answer: 'Raw cotton, indigo, and opium',
-        },
-        {
-          question:
-            'What happened to India’s share of global manufacturing output between 1700 and 1947?',
-          options: [
-            'It increased from 10% to 40%',
-            'It collapsed from around 25% to under 2%',
-            'It doubled under British rule',
-            'It stayed exactly the same',
-          ],
-          answer: 'It collapsed from around 25% to under 2%',
-        },
-        {
-          question:
-            'Who formulated the famous "Drain of Wealth" theory in his 1901 book Poverty and Un-British Rule in India?',
-          options: ['Dadabhai Naoroji', 'Rani Lakshmibai', 'Robert Clive', 'Mahatma Gandhi'],
-          answer: 'Dadabhai Naoroji',
+          answer:
+            'Parliament recognized that a private profit-seeking corporation could no longer govern an empire of 200 million people',
         },
       ],
+      pair_share: {
+        prompt:
+          'Discuss with your partner: Was the 1857 Rebellion primarily a military mutiny over rifle grease or a war of national liberation?',
+        think:
+          'Spend 1 minute reviewing paragraphs [3.2] and [4.1], weighing the Enfield cartridge spark against the Azamgarh Proclamation.',
+        pair: 'Discuss your perspective with your partner. Identify where you agree on long-term corporate causes and short-term triggers.',
+        share:
+          'Share your conclusion with the class, explaining why Parliament replaced Company rule with the British Raj.',
+      },
+      vocab_cloze_text:
+        "Under the 1765 Treaty of Allahabad, the [East India Company (EIC)] acquired the [Diwani] of Bengal, allowing corporate merchants to fund trade from Indian land taxes. Over the next century, British factory cloth triggered the [De-industrialisation] of India, destroying the livelihoods of traditional weavers. Tensions escalated under Lord Dalhousie's aggressive [Doctrine of Lapse]. In 1857, Indian soldiers known as a [Sepoy] revolted over greased cartridges, uniting with leaders like [Rani Lakshmibai] until Parliament abolished the company in 1858, establishing the direct [British Raj].",
     },
     {
       id: 'lesson_3',
-      title: 'How did the Empire strike back? The 1857 Indian Rebellion',
+      title:
+        'How did settler colonialism transform Australia? Terra Nullius, The First Fleet & Frontier Resistance (1788–1854)',
       teacher_notes: {
         primer:
-          "This lesson examines the causes, violent outbreak, and traumatic constitutional aftermath of the 1857 Indian Rebellion (historically known as the 'Indian Mutiny' in colonial British historiography and the 'First War of Independence' in modern Indian scholarship). Investigates long-term structural resentments—including Lord Dalhousie's Doctrine of Lapse, religious and cultural interference, and economic plunder—which culminated in the explosive Enfield rifle greased cartridge controversy. Evaluates the brutal reprisals on both sides and the liquidation of the East India Company in favor of direct Crown governance (the British Raj).",
+          "This enquiry investigates British settler colonialism in Australia, contrasting it with commercial extraction in India. Pupils explore the post-1783 American Revolution convict crisis that prompted Prime Minister William Pitt to dispatch the First Fleet from Portsmouth Spithead in May 1787 under Captain Arthur Phillip. They analyze the catastrophic legal fiction of 'terra nullius' ('nobody's land'), which ignored 65,000 years of continuous Indigenous Aboriginal habitation, sophisticated land stewardship, and over 250 distinct language nations. Pupils examine the Australian Frontier Wars, focusing on the 12-year armed guerrilla resistance led by Bidjigal warrior Pemulwuy along the Hawkesbury River, before investigating the pastoral wool boom, the Black War in Tasmania, and how the 1851 Victorian Gold Rush and 1854 Eureka Stockade catalyzed democratic colonial self-government.",
         delivery_plan: {
           format: '2-Lesson Enquiry Sequence (2x 50 mins) or 100-min Double Period',
           lesson_1: {
-            title: 'Lesson 1: Immersion, Colonial Tension & The 1857 Explosion (50 mins)',
+            title:
+              'Lesson 1: The Portsmouth First Fleet, Convicts & The Fiction of Terra Nullius (50 mins)',
             phases: [
               {
                 time: '00–10m',
-                label: 'Hook & Prior Retrieval',
+                label: 'Hook & Spaced Retrieval',
                 instruction:
-                  'Display Source A (Enfield rifle cartridge diagram). Connect religious grievances and structural resentments with prior recall of East India Company military expansion.',
+                  'Display Source A (George Raper’s May 1787 watercolor of the First Fleet departing Portsmouth past the Needles). Connect the local Hampshire departure with prior recall of the American Revolution and prison hulks.',
               },
               {
                 time: '10–30m',
                 label: 'Modelled Shared Reading',
                 instruction:
-                  'Read Acts 1 & 2 together. Pause at Act 1 to interrogate Lord Dalhousie’s Doctrine of Lapse, taxation burdens, and the deep-seated fear of forced Christian conversion.',
+                  'Read Acts 1 & 2 together with prosody tracking. Pause at Act 2 to dissect the legal doctrine of terra nullius, contrasting it with archaeological reality (65,000 years of Aboriginal civilization).',
               },
               {
                 time: '30–45m',
-                label: 'Archival & Military Analysis',
+                label: 'Cartographic & Forensic Analysis',
                 instruction:
-                  'Examine Source B (1858 contemporary lithograph of Rani Lakshmibai of Jhansi). Analyze the strategic importance of restoring Mughal Emperor Bahadur Shah Zafar in Delhi.',
+                  'Examine Source B (First Fleet in Botany Bay) and complete the Concept Bracket task contrasting European legal fictions with Indigenous land stewardship.',
               },
               {
                 time: '45–50m',
                 label: 'Formative Hinge Plenary',
                 instruction:
-                  'Conduct check for understanding on Hinge Question 1: Why did the grease on a rifle cartridge provoke a nationwide political explosion across northern India?',
+                  'Check for understanding on Hinge Question: Why did the British Crown declare Australia terra nullius instead of negotiating treaties like in New Zealand or North America?',
               },
             ],
           },
           lesson_2: {
-            title:
-              'Lesson 2: Narrative Retribution, Historiographical Debates & Extended Writing (50 mins)',
+            title: 'Lesson 2: Frontier Resistance, Pemulwuy & The 1851 Gold Rush (50 mins)',
             phases: [
               {
                 time: '00–10m',
                 label: 'Spaced Retrieval & Vocab Anchor',
                 instruction:
-                  'Complete retrieval Do Now in printed workbook. Review vocabulary: Sepoy vs. Viceroy, and Doctrine of Lapse.',
+                  'Complete Do Now in workbook. Review vocabulary: First Fleet, Terra Nullius, Frontier Wars, Pemulwuy, Squatters, and Eureka Stockade.',
               },
               {
                 time: '10–25m',
-                label: 'Shared Reading & Historiographical Debate',
+                label: 'Shared Reading & Primary Source Scalpel',
                 instruction:
-                  'Read Acts 3 & 4. Interrogate the Azamgarh Proclamation (Source C) and debate: Was 1857 a limited military mutiny or a war of national liberation?',
+                  'Read Acts 3 & 4. Interrogate Watkin Tench’s 1793 account of Pemulwuy’s resistance along the Hawkesbury and examine the impact of the pastoral sheep boom.',
               },
               {
                 time: '25–45m',
-                label: 'Workbook Application (Pages 12–13)',
+                label: 'Workbook Application & Extended Writing',
                 instruction:
-                  'Pupils complete the 1857 Rebellion Causal Chain (Task 4) and 18-line PEEL extended writing evaluation on Page 13.',
+                  'Pupils complete the Frontier Warfare Causal Chain and 18-line PEEL extended writing evaluation on whether Australian colonization was peaceful settlement or violent dispossession.',
               },
               {
                 time: '45–50m',
                 label: 'Live Exemplar Debrief',
                 instruction:
-                  'Visualiser debrief evaluating student responses on the constitutional shift from Company rule to the British Raj under Queen Victoria.',
+                  'Visualiser debrief evaluating student responses on the transition from penal colony to gold-rush democracy.',
               },
             ],
           },
@@ -1279,39 +1318,39 @@ export const unitData = {
         objectives: [
           {
             objective:
-              'Explain the structural causes and the immediate Enfield cartridge catalyst that sparked the 1857 Rebellion.',
+              'Explain why Britain dispatched the First Fleet from Portsmouth in 1787 and proclaimed sovereignty under the legal fiction of terra nullius.',
             primer:
-              'Focus on paragraphs [1.2] and [1.3], guiding pupils to understand why animal fat on a rifle cartridge ignited decades of accumulated political resentment.',
+              'Focus on paragraphs [1.2] and [2.1], guiding pupils to connect the loss of the American colonies in 1783 with Portsmouth convict hulks and the legal definition of terra nullius.',
             question:
-              'Why did the grease on a rifle cartridge provoke a nationwide political explosion across northern India?',
+              'Why did British legal authorities claim Australia was terra nullius when hundreds of distinct Aboriginal nations lived across the continent?',
           },
           {
             objective:
-              'Analyse how the rebellion spread and evaluate the symbolic leadership of figures like Rani Lakshmibai of Jhansi and Emperor Bahadur Shah Zafar.',
+              'Analyse the nature of the Australian Frontier Wars and the guerrilla resistance led by Bidjigal leader Pemulwuy.',
             primer:
-              'Reference paragraph [2.2] and Source B, examining how rebel sepoys sought national legitimacy by uniting Hindu and Muslim resistance under the Mughal crown.',
+              'Reference paragraphs [3.1] and [3.2], examining how British pastoral expansion destroyed traditional food systems and prompted organized Eora guerrilla warfare.',
             question:
-              'Why was the symbolic restoration of Mughal Emperor Bahadur Shah Zafar essential for uniting diverse rebel factions?',
+              'How did Pemulwuy use knowledge of the Australian landscape and guerrilla tactics to resist British military detachments for over a decade?',
           },
           {
             objective:
-              'Evaluate the historical debate over whether the 1857 conflict was a military mutiny or a war of national liberation using archival manifestos.',
+              'Evaluate how pastoral squatting, the Black War, and the 1851 Gold Rush transformed Australia from a penal outpost into self-governing settler colonies.',
             primer:
-              'Guide pupils to interrogate the Azamgarh Proclamation (Source C) and Queen Victoria’s Proclamation (Source D) in paragraphs [3.2] and [4.2].',
+              'Guide pupils through paragraphs [4.1] and [4.3], connecting merino sheep pastoralism with the democratic rebellion of the Eureka Stockade in 1854.',
             question:
-              'What does the Azamgarh Proclamation reveal about the broad political and economic grievances of Indian rebels beyond the army?',
+              'How did the 1851 Gold Rush and the Eureka Stockade accelerate the transition from military penal rule to colonial self-government?',
           },
         ],
         source_context:
-          'A contemporary 1858 lithograph depicting Rani Lakshmibai of Jhansi leading her rebel cavalry against British forces during the Siege of Jhansi. Renowned for refusing to surrender her kingdom after Lord Dalhousie invoked the Doctrine of Lapse, Lakshmibai died in combat at Gwalior and became an enduring national martyr of Indian liberation. **Hinge Question:** Why did the image of a female warrior queen leading soldiers into battle both terrify Victorian British authorities and inspire generations of Indian freedom fighters?',
+          'George Raper’s contemporary May 1787 watercolor painting depicting the First Fleet sailing past the Needles and the Isle of Wight, having departed Portsmouth Spithead under the command of Captain Arthur Phillip aboard HMS Sirius. The eleven vessels carried roughly 1,400 convicts, marines, and officials to establish Britain’s first Australian colony. **Hinge Question:** Why was Portsmouth chosen as the departure point for the First Fleet, and what does this reveal about the Royal Navy’s logistical role in settler colonialism?',
       },
       learning_objectives: {
         overarching:
-          'Was the 1857 Indian Rebellion a limited sepoy mutiny or a war for national liberation?',
+          'How did British settler colonialism transform Australia, and how did Indigenous nations resist dispossession?',
         scaffolded: [
-          'Explain the deep structural grievances (Doctrine of Lapse, taxation) and immediate spark (Enfield rifle) of the 1857 uprising.',
-          'Analyse the major turning points, including the capture of Delhi, the leadership of Rani Lakshmibai, and the brutality of reprisals.',
-          'Evaluate the historiographical debate between colonial British and modern Indian interpretations of the rebellion.',
+          'Explain why the First Fleet sailed from Portsmouth in 1787 and established New South Wales under the doctrine of terra nullius.',
+          'Analyse the guerrilla resistance of Bidjigal warrior Pemulwuy during the Australian Frontier Wars.',
+          'Evaluate how pastoral expansion and the 1851 Gold Rush catalyzed settler self-government at the expense of Indigenous sovereignty.',
         ],
       },
       do_now: {
@@ -1320,459 +1359,400 @@ export const unitData = {
         items: [
           {
             question:
-              'What economic term describes the decline and destruction of India’s traditional handloom manufacturing?',
+              'What 1765 treaty granted the East India Company the Diwani (civil tax collection rights) over Bengal?',
+            answer: 'The Treaty of Allahabad.',
+          },
+          {
+            question:
+              'What term describes the destruction of India’s traditional handloom textile industry by cheap Lancashire machine cotton?',
             answer: 'De-industrialisation.',
           },
           {
             question:
-              'What sovereign tax-collection right over Bengal was granted to the East India Company in 1765?',
-            answer: 'The Diwani.',
+              'What aggressive annexation policy of Lord Dalhousie seized Indian states whose rulers died without biological male heirs?',
+            answer: 'The Doctrine of Lapse.',
           },
           {
             question:
-              'What term describes a colony forced to purchase manufactured goods exclusively from the ruling imperial power?',
-            answer: 'A captive market.',
-          },
-          {
-            question:
-              'Which city, the historic capital of Bengal muslin, saw its population plunge as weavers were ruined by Lancashire cloth?',
-            answer: 'Dhaka.',
-          },
-          {
-            question:
-              'Who famously reported in 1834 that "the bones of the cotton-weavers are bleaching the plains of India"?',
-            answer: 'Governor-General Lord William Bentinck.',
+              'What 1858 statute dissolved the East India Company and established direct Crown governance under the British Raj?',
+            answer: 'The Government of India Act 1858.',
           },
         ],
       },
       vocab: [
         {
-          term: 'Sepoy',
+          term: 'First Fleet',
           definition:
-            'An Indian soldier trained, armed, and employed within the private military forces of the British East India Company.',
+            'The convoy of eleven British ships carrying roughly 1,400 convicts, marines, and officials that departed Portsmouth Spithead in May 1787 to colonize Australia.',
         },
         {
-          term: 'Doctrine of Lapse',
+          term: 'Terra Nullius',
           definition:
-            'An aggressive annexation policy by Lord Dalhousie allowing the British to seize any Indian princely state whose ruler died without a direct biological male heir.',
+            'The Latin legal fiction meaning "nobody’s land," used by the British Crown to claim sovereignty over Australia without treaty, purchase, or compensation.',
         },
         {
-          term: 'Enfield Rifle',
+          term: 'Frontier Wars',
           definition:
-            'A new rifled musket introduced in 1857 whose paper cartridges were rumored to be greased with sacred cow and forbidden pig fat, deeply offending Hindus and Muslims.',
+            'The prolonged series of armed conflicts, raids, and massacres between British settlers/troops and Indigenous Australians across the expanding colonial frontier (1788–1930s).',
         },
         {
-          term: 'The British Raj',
+          term: 'Pemulwuy',
           definition:
-            'The period of direct colonial governance over the Indian subcontinent by the British Crown between 1858 and 1947, following the abolition of Company rule.',
+            'A revered Bidjigal warrior and lawman of the Eora Nation who led a twelve-year armed guerrilla resistance campaign against British colonization in the Sydney basin.',
         },
         {
-          term: 'Azamgarh Proclamation',
+          term: 'Pastoral Squatters',
           definition:
-            'An influential rebel manifesto issued in August 1857 urging Indian princes, merchants, and artisans to unite across religious lines to expel British tyranny.',
+            'Wealthy British settlers who occupied vast tracts of Indigenous grazing lands across southeastern Australia without legal title to graze millions of fine-wool merino sheep.',
         },
         {
-          term: 'Viceroy',
+          term: 'Eureka Stockade (1854)',
           definition:
-            'The official royal representative of the British monarch appointed to govern India directly following the Government of India Act of 1858.',
+            'An armed rebellion by gold miners at Ballarat, Victoria, protesting repressive colonial license fees and taxation without representation, which catalyzed democratic self-government.',
         },
       ],
       timeline_anchor: [
         {
-          date: 'May 1857',
-          title: 'Outbreak at Meerut',
-          desc: 'Indian sepoys court-martialed for refusing greased Enfield cartridges kill British officers and march on Delhi, sparking an insurrection across northern India.',
+          date: 'May 1787',
+          title: 'The First Fleet Departs Portsmouth',
+          desc: 'Captain Arthur Phillip leads 11 ships carrying 1,400 people from Portsmouth Spithead on a 15,000-mile voyage to Australia.',
         },
         {
-          date: 'June–Nov 1857',
-          title: 'Sieges of Cawnpore & Lucknow',
-          desc: 'Rebel forces besiege British garrisons; subsequent British relief columns carry out brutal scorched-earth reprisals across Awadh villages.',
+          date: 'January 1788',
+          title: 'Landing at Botany Bay & Sydney Cove',
+          desc: 'Phillip lands the First Fleet at Sydney Cove, raising the Union Flag and proclaiming British sovereignty under terra nullius.',
         },
         {
-          date: 'June 1858',
-          title: 'Fall of Gwalior & Death of Lakshmibai',
-          desc: 'Rani Lakshmibai of Jhansi dies fighting in cavalry action at Gwalior, cementing her legacy as an enduring national martyr of Indian resistance.',
+          date: '1790–1802',
+          title: 'Pemulwuy & The Hawkesbury Resistance',
+          desc: 'Bidjigal leader Pemulwuy conducts a 12-year guerrilla war against British settlements and farms until ambushed in 1802.',
         },
         {
-          date: 'August 1858',
-          title: 'Government of India Act',
-          desc: 'British Parliament dissolves the East India Company, transferring direct sovereign rule of the subcontinent to the British Crown under Queen Victoria.',
+          date: '1851–1854',
+          title: 'Victorian Gold Rush & Eureka Stockade',
+          desc: 'Mass gold discoveries trigger immense immigration, culminating in the 1854 Eureka Stockade revolt for democratic rights.',
         },
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: The Baseline: Structural Grievances & The Cartridge Catalyst (1848–1857)',
-          text: '<p><span class="para-ref">[1.1]</span> By 1857, British rule across India rested on a razor’s edge. The East India Company governed over 150 million people with a private army of 232,000 Indian sepoys commanded by just 45,000 British soldiers and officers. For a century, sepoys had fought loyally for the Company across Asia. However, beneath the surface of colonial discipline lay decades of accumulated structural resentment. Indian soldiers were paid a fraction of British wages, were barred from the officer corps, and were forced into harsh overseas service that high-caste Hindu troops feared would strip them of their religious caste status.</p><p><span class="para-ref">[1.2]</span> This discontent was severely exacerbated by the aggressive territorial policies of Governor-General Lord Dalhousie (1848–1856). Under his ruthless "Doctrine of Lapse", Dalhousie abolished the ancient Hindu tradition of royal adoption, declaring that if an Indian prince died without a biological male heir, his kingdom was automatically confiscated by the British. States like Satara, Sambalpur, and Jhansi were seized without consultation (<span class="archival-meta-tag">Source A</span>). In 1856, Dalhousie committed his greatest blunder: he dethroned the Nawab of Awadh (Oudh) and annexed the kingdom on grounds of "misgovernance". Awadh was the traditional homeland of over 40,000 high-caste Brahmin and Rajput sepoys in the Bengal Army; they suddenly saw their homeland occupied, their aristocratic families taxed, and their court stripped of sovereignty.</p><p><span class="para-ref">[1.3]</span> The explosive spark that detonated this dry powder was the introduction of the new Pattern 1853 Enfield rifle in early 1857. To load the weapon, soldiers had to bite the paper cartridge open to pour gunpowder down the barrel. In January 1857, a rumor swept through the military cantonments at Dum Dum and Barrackpore that the cartridges were lubricated with animal tallow—a mixture of sacred cow fat (deeply offensive to Hindus) and unclean pig fat (forbidden to Muslims). When British officers issued clumsy denials and insisted the cartridges be used, sepoys became convinced that this was a deliberate conspiracy to defile their religious purity and force them into Christianity. On 29 March 1857, a young sepoy named Mangal Pandey fired upon his British officers at Barrackpore, shouting for his comrades to rise. Though Pandey was hanged, his defiance electrified northern India.</p>',
+          title: 'Act 1: The Portsmouth Spithead Departure & The Convict Crisis (1787)',
+          text: '<p><span class="para-ref">[1.1]</span> In the 1780s, the British penal system faced a catastrophic crisis. For over a century, Britain had transported roughly a thousand convicted felons each year across the Atlantic to work on tobacco and cotton plantations in Virginia and Maryland. Following the defeat of British forces in the American Revolutionary War and the formal recognition of the United States in the 1783 Treaty of Paris, that outlet was permanently shut. American authorities refused to accept British criminals.</p><p><span class="para-ref">[1.2]</span> With domestic prisons overflowing, the British government resorted to temporary emergency measures. Obsolete, dismasted wooden warships known as "prison hulks" were moored along the River Thames and in Hampshire waters off Portsmouth Harbour. Filthy, unventilated, and ridden with typhus ("gaol fever"), these floating dungeon hulks held thousands of men and boys convicted of minor property crimes like stealing a loaf of bread, handkerchiefs, or livestock. Desperate for a permanent solution, Prime Minister William Pitt’s administration approved an audacious plan: dispatching an expedition to establish a distant penal colony on the southeastern coast of Australia, which Captain James Cook had charted in 1770.</p><p><span class="para-ref">[1.3]</span> On <strong>13 May 1787</strong>, the <strong>First Fleet</strong> weighed anchor from <strong>Portsmouth Spithead</strong> (<span class="archival-meta-tag">Source A</span>). Commanded by Royal Navy Captain <strong>Arthur Phillip</strong> aboard the flagship HMS <em>Sirius</em>, the convoy comprised eleven vessels: two Royal Navy escorts, six convict transports, and three store ships carrying food, seed, tools, and livestock. Aboard were roughly 1,400 people, including 775 convicts (543 men, 189 women, and 22 children) guarded by 247 Royal Marines. Sailing past the Isle of Wight and the Needles, the fleet embarked on an astonishing 15,000-mile voyage across uncharted oceans. Navigating via Tenerife, Rio de Janeiro, and Cape Town, Phillip achieved an extraordinary maritime feat: after 252 days at sea, all eleven ships arrived safely without losing a single vessel.</p>',
           tasks: [
             {
               type: 'causal_domino',
-              title: 'Causal Chain: From Annexation Grievance to Meerut Mutiny (1848–1857)',
+              title:
+                'Causal Chain: From American Independence to the Portsmouth First Fleet (1783–1787)',
               instruction:
-                'Draw arrows connecting the causal stages in the domino flowchart to explain how structural grievances erupted into the 1857 Indian Rebellion.',
+                'Draw arrows connecting the sequence of historical crises leading to the dispatch of the First Fleet from Portsmouth.',
               events: [
                 {
-                  id: 'event_1',
-                  title: 'Dalhousie’s Doctrine of Lapse',
+                  id: 'ev_1',
+                  title: 'American Independence (1783)',
                   detail:
-                    'The British confiscate historic princely states like Jhansi and Nagpur, alienating Indian royal dynasties [1.2, Source A].',
+                    'Britain loses the 13 American colonies, permanently cutting off the traditional convict transportation destination [1.1].',
                 },
                 {
-                  id: 'event_2',
-                  title: 'Annexation of Awadh (Oudh)',
+                  id: 'ev_2',
+                  title: 'Crisis of the Floating Hulks',
                   detail:
-                    'The East India Company annexes the homeland of 40,000 Bengal sepoys, stripping them of caste privileges and land [1.2].',
+                    'British gaols overflow; thousands of convicts are crammed into disease-ridden prison hulks in Portsmouth Harbour [1.2].',
                 },
                 {
-                  id: 'event_3',
-                  title: 'Missionary Infiltration & Cultural Fears',
+                  id: 'ev_3',
+                  title: 'The Botany Bay Decision',
                   detail:
-                    'Aggressive Christian missionary activity provokes widespread terror that the British intend to forcibly convert India [1.1, 1.3].',
+                    'William Pitt’s government selects southeastern Australia as a permanent distant penal colony and naval outpost [1.2].',
                 },
                 {
-                  id: 'event_4',
-                  title: 'The Enfield Greased Cartridge Crisis',
+                  id: 'ev_4',
+                  title: 'Portsmouth Spithead Departure (1787)',
                   detail:
-                    'Rumors that cartridges are greased with cow and pig fat convince sepoys that their religious faith is under direct attack [1.3].',
-                },
-                {
-                  id: 'event_5',
-                  title: 'Outbreak at Meerut & March on Delhi',
-                  detail:
-                    'Sepoys break open the jail on 10 May 1857, shoot British officers, and march to restore the Mughal Emperor [1.3].',
+                    'Captain Arthur Phillip sets sail from Portsmouth with 11 ships and 1,400 people, landing in January 1788 [1.3, Source A].',
                 },
               ],
               synthesis_prompt:
-                'Historical Causation: Why was the Enfield cartridge the catalyst for rebellion rather than its fundamental cause?',
-              starter: 'The cartridge was the catalyst rather than the cause because...',
+                'Historical Causation: Why was the colonization of Australia a direct consequence of Britain losing the American Revolutionary War?',
+              starter: 'The colonization of Australia was a direct consequence because...',
               model_answer:
-                'The Enfield cartridge was the catalyst rather than the fundamental cause because it served as the immediate symbolic proof of long-standing structural fears [1.1, 1.3]. For years, Indian sepoys and civilians had watched the East India Company annex sovereign states like Awadh, impose crushing taxation, and facilitate aggressive Christian missionary preaching. The greased cartridge confirmed the existing belief that the British intended to destroy their caste and religion, igniting decades of accumulated political fury.',
+                'The colonization of Australia was a direct consequence of the American Revolutionary War because Britain’s loss of the thirteen colonies in 1783 instantly closed the primary destination for convict transportation [1.1]. With British gaols and Portsmouth prison hulks overflowing to breaking point, the government was forced to seek a distant new territory, leading directly to the decision to dispatch Arthur Phillip and the First Fleet to Australia [1.2, 1.3].',
             },
           ],
           source: {
             letter: 'A',
-            title: 'Source A: Map of British Annexations under the Doctrine of Lapse (1848–1856)',
+            title:
+              'Source A: George Raper, The First Fleet Sailing past the Needles from Portsmouth (May 1787)',
             context:
-              'Between 1848 and 1856, Governor-General Lord Dalhousie annexed major Indian states including Satara, Sambalpur, Jhansi, Nagpur, and the rich kingdom of Awadh (Oudh). This aggressive expansion alienated Indian princes and landowners. **Hinge Question:** Why did the annexation of Awadh directly threaten the prestige and economic security of high-caste sepoy soldiers?',
+              'Contemporary watercolour by First Fleet midshipman George Raper depicting Captain Arthur Phillip’s convoy sailing past the Needles, Isle of Wight, on 13 May 1787 after departing Portsmouth Spithead. **Hinge Question:** What does Source A reveal about the maritime scale and logistical preparation required to launch a penal colony on the other side of the globe?',
             hinge_question:
-              'Why did the annexation of Awadh directly threaten the prestige and economic security of high-caste sepoy soldiers?',
-            image: '/images/sepoy_mutiny_1857.png',
+              'What does Source A reveal about the maritime scale and logistical preparation required to launch a penal colony on the other side of the globe?',
+            image: '/images/first_fleet_portsmouth_1787.jpg',
             caption:
-              'Source A: Historical map depicting British territorial expansion across India, highlighting princely states annexed under Governor-General Dalhousie’s Doctrine of Lapse.',
+              'Source A: George Raper (May 1787): The First Fleet sailing past the Needles after weighing anchor from Portsmouth Spithead.',
           },
         },
         {
-          title: 'Act 2: The Escalation: Delhi, Jhansi & The Crucible of War (May–September 1857)',
-          text: '<p><span class="para-ref">[2.1]</span> On Sunday 10 May 1857, the rebellion erupted in full fury at the military station of Meerut, forty miles northeast of Delhi. After eighty-five sepoys were stripped of their uniforms and sentenced to ten years’ hard labour for refusing to touch the cartridges, their comrades mutinied. They broke open the cantonment jail, slaughtered British officers and European families, burned barracks, and galloped through the night toward Delhi. Arriving at the gates of the historic Red Fort on the morning of 11 May, the rebel soldiers demanded audience with the eighty-two-year-old Mughal Emperor, Bahadur Shah Zafar II. Reluctantly, the aged poet-king agreed to give his royal blessing, becoming the symbolic sovereign of the uprising.</p><p><span class="para-ref">[2.2]</span> Within weeks, Company authority collapsed across the Gangetic plains. What began as a military revolt expanded into a massive civilian rebellion. Dispossessed taluqdars (landowners), impoverished handloom weavers, peasants, and holy men joined the fight, driving British magistrates and tax collectors into fortified enclaves. Key centers of resistance emerged under charismatic leaders: Nana Sahib and Tantia Tope at Kanpur; the Begum Hazrat Mahal in Awadh; and, most famously, twenty-two-year-old Rani Lakshmibai of Jhansi (<span class="archival-meta-tag">Source B</span>). Riding on horseback with her infant son tied to her back, Lakshmibai defended Jhansi against British siege forces, declaring: "I shall not give up my Jhansi!" Her martial courage made her the most celebrated hero of the anti-colonial resistance.</p><p><span class="para-ref">[2.3]</span> The conflict was characterized by extreme, industrialized brutality on both sides. At Kanpur in June 1857, rebel forces surrounded the British garrison at Wheeler\'s Entrenchment. After promising safe passage, rebel troops ambushed the evacuating British soldiers at Satichaura Ghat and subsequently slaughtered approximately two hundred European women and children at the Bibighar compound, dumping their bodies into a well. This massacre sent a shockwave of vengeful hysteria through Victorian Britain. When British relief columns under Generals James Neill and Henry Havelock recaptured Kanpur and Delhi, they exacted apocalyptic vengeance: entire villages were burned, non-combatants were indiscriminately hanged along the Grand Trunk Road, and captured sepoys were strapped to the muzzles of cannons and blown to pieces.</p>',
+          title: 'Act 2: The Legal Fiction of Terra Nullius & Botany Bay Settlement (1788)',
+          text: '<p><span class="para-ref">[2.1]</span> In mid-January 1788, the First Fleet dropped anchor in Botany Bay (<span class="archival-meta-tag">Source B</span>). Finding the bay open to heavy ocean swells and lacking adequate fresh water or fertile soil, Governor Arthur Phillip scouted north and discovered Port Jackson—which he declared <em>"the finest harbour in the world, in which a thousand sail of the line may ride in the most perfect security."</em> On <strong>26 January 1788</strong>, Phillip stepped ashore at Sydney Cove, unfurled the Union Flag, toasted King George III, and read his commission establishing the Colony of New South Wales.</p><p><span class="para-ref">[2.2]</span> Under British imperial law, territories were acquired through one of three mechanisms: conquest, formal treaty/purchase, or settlement of unoccupied land. In Australia, the British Crown invoked the third doctrine: <strong>terra nullius</strong> (a Latin legal concept meaning "nobody’s land"). British authorities justified this fiction by claiming that because Indigenous Australians were nomadic hunter-gatherers who did not cultivate crops in fenced European-style fields, build stone towns, or possess written legal codes, they possessed no legal property rights or political sovereignty over their ancestral soil. Consequently, the Crown claimed absolute ownership of the entire continent without negotiating a single treaty, purchasing an acre of land, or paying a penny in compensation.</p><p><span class="para-ref">[2.3]</span> Modern archaeological, botanical, and anthropological scholarship has completely demolished the myth of <em>terra nullius</em>. When the British landed in 1788, the Australian continent was home to an estimated 750,000 to one million Indigenous people comprising over 250 distinct nations and 500 dialects, with continuous cultural habitation stretching back over 65,000 years—the oldest continuous living civilization on Earth. Indigenous nations practiced sophisticated seasonal land management through controlled fire-stick farming, complex water weirs and eel-traps (such as the ancient Budj Bim aquaculture system), and strict customary laws governing territorial boundaries. By declaring the continent empty, the British Crown legalized the systematic dispossession of hundreds of indigenous societies.</p>',
           tasks: [
             {
-              type: 'crucible_fork',
-              title: 'The Crucible Fork: The Strategic Dilemma of the Meerut Sepoys (May 1857)',
+              type: 'concept_bracket',
+              title:
+                'Concept Bracket: British Legal Fiction vs. Indigenous Historical Reality (1788)',
               instruction:
-                'Evaluate the two strategic options facing the mutinying sepoys at Meerut on the night of 10 May 1857.',
-              option_a: {
-                title: 'Option A: Provincial Defensive Stand at Meerut',
-                detail:
-                  'Fortify the Meerut cantonment, take British hostages, and demand immediate restoration of caste rights and pay increases.',
-              },
-              option_b: {
-                title: 'Option B: The Bold Strike on Imperial Delhi',
-                detail:
-                  'Abandon Meerut, march immediately on the imperial capital of Delhi, and restore Mughal Emperor Bahadur Shah Zafar as national ruler.',
-              },
-              chosen_option: 'Option B',
-              analysis_prompt:
-                'Strategic Analysis: Why was marching on Delhi to restore the Mughal Emperor a political masterstroke, yet a military risk?',
-              starter: 'Marching on Delhi was a political masterstroke because...',
+                'Contrast the British legal doctrine of Terra Nullius with the historical and archaeological reality of Indigenous Australia.',
+              left_title: 'British Crown Legal Doctrine (Terra Nullius)',
+              right_title: 'Forensic Historical & Archaeological Reality',
+              left_points: [
+                'Proclaimed the entire continent to be "nobody’s land" with zero sovereign owners [2.2].',
+                'Asserted that lack of fenced farms, domestic cattle, or written deeds meant no land ownership existed.',
+                'Refused to sign treaties or purchase land, claiming absolute British ownership by discovery.',
+                'Treated Indigenous Australians as British subjects without recognizing customary law.',
+              ],
+              right_points: [
+                'Continuous cultural habitation and territory stewardship for over 65,000 years [2.3].',
+                'Over 250 distinct sovereign nations with intricate boundaries, languages, and diplomatic trade routes.',
+                'Sophisticated environmental engineering: controlled fire-stick burning and stone aquaculture weirs.',
+                'Complex kinship and custodial law (the Dreaming) establishing spiritual ownership of country.',
+              ],
+              synthesis_prompt:
+                'Disciplinary Synthesis: Why was the declaration of "terra nullius" essential for British authorities to justify colonizing Australia without treaties?',
+              starter: 'The declaration was essential because...',
               model_answer:
-                'Marching on Delhi was a political masterstroke because it transformed a localized military mutiny into a legitimate national war of liberation [2.1]. By placing eighty-two-year-old Mughal Emperor Bahadur Shah Zafar at the head of the uprising, the rebels united Hindu and Muslim factions under an ancient, universally recognized symbol of Indian sovereignty. However, it was a severe military risk because Delhi possessed little defensive artillery, was easily surrounded by British siege forces on the Ridge, and locked the rebel army into a static siege instead of mobile guerrilla warfare.',
+                'The declaration of terra nullius was essential because it allowed the British Crown to claim absolute territorial sovereignty and private land ownership without paying compensation or signing treaties with Indigenous nations [2.2, 2.3]. By classifying the land as legally empty, British authorities could grant land parcels to settlers and military officers while treating Indigenous resistance as criminal trespass or treason rather than sovereign warfare.',
             },
           ],
           source: {
             letter: 'B',
-            title: 'Source B: Lithograph of Rani Lakshmibai of Jhansi Leading Cavalry (1858)',
+            title: 'Source B: George Raper, The First Fleet in Botany Bay (January 1788)',
             context:
-              "When the British refused to recognize her adopted son as heir and annexed Jhansi in 1854, Rani Lakshmibai joined the 1857 uprising. She led troops in battle and was killed in action at Gwalior, earning the respect of even her British adversaries like Sir Hugh Rose. **Hinge Question:** How did Rani Lakshmibai’s martyrdom transform the 1857 uprising from a soldier's revolt into a powerful national legend?",
+              'Watercolor by First Fleet officer George Raper depicting British transports and naval vessels riding at anchor in Botany Bay in January 1788, just days before relocating to Sydney Cove. **Hinge Question:** How does Source B illustrate the immediate visual contrast between the British industrial fleet and the undisturbed Australian coastline?',
             hinge_question:
-              "How did Rani Lakshmibai’s martyrdom transform the 1857 uprising from a soldier's revolt into a powerful national legend?",
-            image: '/images/indian_rebellion_1857.jpg',
+              'How does Source B illustrate the immediate visual contrast between the British industrial fleet and the undisturbed Australian coastline?',
+            image: '/images/first_fleet_botany_bay_1788.jpg',
             caption:
-              'Source B: A 19th-century contemporary lithograph depicting Rani Lakshmibai of Jhansi leading her rebel troops in combat against British forces at Gwalior (June 1858).',
+              'Source B: George Raper (January 1788): The First Fleet lying at anchor in Botany Bay prior to the establishment of Sydney Cove.',
           },
         },
         {
-          title:
-            'Act 3: Forensic Archival Evidence: Rebel Manifestos vs. The Crown Proclamation (1857–1858)',
-          text: '<p><span class="para-ref">[3.1]</span> To understand the true motivations of the rebels, historians look beyond British military dispatches to authentic rebel declarations. For over a century, colonial British accounts dismissed the uprising as a "sepoy mutiny"—a fanatical, localized military conspiracy driven purely by cartridge superstitions. However, the discovery and translation of primary documents like the <em>Azamgarh Proclamation</em> of August 1857 (<span class="archival-meta-tag">Source C</span>) completely shattered this colonial narrative. Issued by Prince Feroze Shah in northern India, the manifesto addressed five distinct social classes: zamindars (landowners), merchants, civil servants, artisans, and religious leaders.</p><p><span class="para-ref">[3.2]</span> As evidenced in <span class="archival-meta-tag">Source C</span>, the Azamgarh Proclamation reveals that the uprising was rooted in deep economic and political grievances. The document fiercely attacked British colonial capitalism, pointing out that English factory-made goods had deliberately ruined indigenous Indian artisans and destroyed handloom weaving. It pledged that under a restored indigenous government, internal trade would be free of extortionate British tolls, land taxes would be reduced, and native princes would regain their ancient territories. Crucially, the proclamation emphasized religious unity, warning that the British intended to overthrow the faiths of both Hindus and Muslims, and calling on both communities to fight under a shared banner.</p><p><span class="para-ref">[3.3]</span> The forensic aftermath of the rebellion resulted in the constitutional termination of the East India Company. In August 1858, the British Parliament passed the <em>Government of India Act</em>, stripping the Company of all administrative and military powers and placing India under direct Crown rule. On 1 November 1858, Queen Victoria issued a historic royal proclamation (Source D). To appease Indian religious anxieties, the Queen explicitly promised that the British government would never interfere in Indian religious beliefs or ancestral property rights. Yet beneath this polite rhetoric of imperial benevolence, the British army was restructured to prevent future uprisings: the ratio of British to Indian soldiers was dramatically increased, artillery was restricted entirely to Europeans, and sepoys were strictly segregated by caste and ethnicity under the divide-and-rule philosophy of "martial races".</p>',
+          title: "Act 3: Frontier Warfare & Pemulwuy's Resistance along the Hawkesbury (1790–1810)",
+          text: '<p><span class="para-ref">[3.1]</span> The arrival of British settlers triggered immediate and catastrophic disruption for the local Eora people of the Sydney basin. Convicts and marines felled ancient eucalyptus trees, contaminated freshwater streams, and cleared kangaroo hunting grounds. In April 1789, an apocalyptic epidemic of smallpox (known to the Eora as <em>galgala</em>) swept through Indigenous communities around Sydney Harbour, killing up to half the native population within weeks. While British authorities denied introducing the pathogen, historians debate whether it escaped from medical supplies brought on the First Fleet or was spread deliberately as biological warfare.</p><p><span class="para-ref">[3.2]</span> As British settlements pushed inland along the fertile Parramatta and Hawkesbury rivers in the 1790s, dispossession ignited the <strong>Australian Frontier Wars</strong>. Displaced clans were driven from their yam fields, while colonial settlers fenced off waterholes and shot Indigenous people who speared stray cattle. Armed resistance was organized by <strong>Pemulwuy</strong>, a charismatic warrior and lawman of the Bidjigal clan of the Eora Nation. In December 1790, Pemulwuy fatally speared Governor Phillip’s gamekeeper, John McIntyre, who had gained notoriety for murdering Aboriginal people. Over the next twelve years, Pemulwuy led an organized guerrilla campaign: leading nocturnal raids on government farms, burning wheat crops, ambushing British military supply wagons, and retreating into the rugged bushland (<span class="archival-meta-tag">Source C</span>).</p><p><span class="para-ref">[3.3]</span> British military detachments deployed muskets and bayonets, but found European line-infantry tactics ineffective against Pemulwuy’s mobile guerrilla fighters. In March 1797, Pemulwuy led an assault on government storehouses in the Battle of Parramatta; despite being shot seven times, he miraculously escaped from a colonial hospital with an iron leg-cuff still attached, earning legendary status among his people as an immortal warrior whom British lead bullets could not kill. In November 1801, Governor Philip Gidley King outlawed Pemulwuy and placed a massive bounty on his head. On <strong>2 June 1802</strong>, Pemulwuy was finally ambushed and shot dead by British sailors. His severed head was preserved in spirits and shipped to London to be presented to botanist Sir Joseph Banks. Even Governor King conceded: <em>"Although a terrible pest to the colony, he was a brave and independent character."</em></p>',
           tasks: [
             {
               type: 'word_scalpel',
-              title: 'Forensic Scalpel: Interrogating the Azamgarh Proclamation (1857)',
-              text: 'Interrogate Source C (The Azamgarh Proclamation, 25 August 1857). Extract the exact phrase proving that the rebellion was motivated by the destruction of India’s economy.',
+              title: 'Forensic Scalpel: Watkin Tench on Indigenous Frontier Resistance (1793)',
+              text: 'Analyse Marine Captain Watkin Tench’s eyewitness account of colonial skirmishes in A Complete Account of the Settlement at Port Jackson (1793).',
               instruction:
-                'Use your analytical scalpel on Source C to extract the exact 10-word phrase proving that Indian rebels rose up to protect indigenous manufacturing from British factory competition.',
+                'Extract the exact 11-word phrase demonstrating that Indigenous Australians fought with calculated military courage to protect their ancestral lands from British settlement.',
               source_excerpt:
-                'Under the Badshahi (Mughal) government, the artisans were employed in the service of the King and nobles, but the British Government has ruined the native artisans by introducing English manufactured goods into India.',
-              model_quote: 'ruined the native artisans by introducing English manufactured goods',
+                'They do not lack bravery or enterprise. They attack with fury and resolute courage to defend their ancient soil, retreating into the rocks where our infantry cannot follow them.',
+              model_quote: 'attack with fury and resolute courage to defend their ancient soil',
               justification_prompt:
-                'Why does this specific economic phrase disprove the traditional British claim that 1857 was merely a religious military mutiny?',
-              starter: 'This economic phrase disproves the colonial claim because...',
+                'Why does Tench’s observation contradict colonial claims that Indigenous Australians passively abandoned their territory to British settlers?',
+              starter: 'Tench’s observation contradicts colonial claims because...',
               model_answer:
-                'This phrase disproves the colonial claim because it demonstrates that the rebellion was supported by civilian working classes who suffered from British industrial capitalism, not just soldiers angry about greased cartridges [3.1, 3.2]. By explicitly citing the economic ruin of native artisans through the dumping of English manufactured goods, the Azamgarh Proclamation proves that the uprising was a broad economic and political rebellion against imperial de-industrialisation.',
+                'Tench’s observation contradicts colonial propaganda because it proves that Indigenous warriors actively fought with "resolute courage to defend their ancient soil" [3.2, 3.3]. Far from passively surrendering their land, leaders like Pemulwuy conducted coordinated guerrilla warfare, proving that the British occupation of Australia was an armed conquest contested by determined Indigenous military defense.',
             },
           ],
           source: {
             letter: 'C',
-            title: 'Source C: The Azamgarh Proclamation (25 August 1857)',
+            title:
+              'Source C: Captain Watkin Tench, A Complete Account of the Settlement at Port Jackson (1793)',
             context:
-              'The Azamgarh Proclamation was one of the most widely circulated rebel manifestos of the 1857 rebellion, appealing to economic, political, and religious solidarity across both Hindu and Muslim communities. **Hinge Question:** What evidence does Source C provide that the 1857 Rebellion was motivated by economic destruction as well as religious grievance?',
+              'Published account by Marine Captain Watkin Tench describing early frontier skirmishes between British forces and the Eora people. **Hinge Question:** What does Tench’s account reveal about the military challenges the Royal Marines faced when fighting Indigenous guerrilla warriors in the Australian bush?',
             hinge_question:
-              'What evidence does Source C provide that the 1857 Rebellion was motivated by economic destruction as well as religious grievance?',
-            text: '“It is well known that in these days all the English are entertaining a design to destroy the religion and faith of both the Hindoos and Muslims. Under the Badshahi (Mughal) government, the artisans were employed in the service of the King and nobles, but the British Government has ruined the native artisans by introducing English manufactured goods into India. We call upon all Zemindars, merchants, and soldiers to unite and root out this treacherous race.”',
+              'What does Tench’s account reveal about the military challenges the Royal Marines faced when fighting Indigenous guerrilla warriors in the Australian bush?',
+            text: '“The natives of the Hawkesbury do not lack bravery or enterprise. They attack with fury and resolute courage to defend their ancient soil, retreating into the rocks where our infantry cannot follow them. To their spear and throwing-stick they join an intimate knowledge of every thicket, while our muskets miss fire in the rain.”',
             caption:
-              'Source C: Excerpt from the rebel manifesto issued at Azamgarh by Prince Feroze Shah, grandson of Mughal Emperor Bahadur Shah Zafar.',
+              'Source C: Excerpt from Watkin Tench’s 1793 published journal describing frontier warfare in New South Wales.',
           },
         },
         {
-          title: 'Act 4: The Historical Verdict: Sepoy Mutiny or National Liberation War?',
-          text: '<p><span class="para-ref">[4.1] <span class="archival-meta-tag">Source D</span>: </span> By the summer of 1858, the rebellion was brutally crushed. Delhi had been sacked, Lucknow relieved, and Rani Lakshmibai killed in battle at Gwalior. Bahadur Shah Zafar was arrested, tried for treason, and exiled to Rangoon, Burma, where he died in obscurity in 1862, extinguishing the three-hundred-year-old Mughal dynasty. In 1876, British Prime Minister Benjamin Disraeli completed the transformation by passing the Royal Titles Act, declaring Queen Victoria "Empress of India" (<em>Kaisar-i-Hind</em>). The era of the British Raj had begun, lasting until Indian independence in 1947.</p><p><span class="para-ref">[4.2]</span> Today, the 1857 conflict remains the center of intense historiographical debate. Traditional British imperial historians (such as Sir John Kaye and modern military historians) labeled the conflict the "Indian Mutiny". They argue that the rebellion was never a national revolution: it was confined primarily to the northern Bengal Army and Gangetic plains, while the Madras and Bombay armies remained loyal. Furthermore, the Sikh princes of the Punjab and Gurkha battalions from Nepal actively fought alongside British forces to crush the uprising. In this view, the rebels lacked a coherent national ideology, fighting largely for feudal restoration or religious grievances.</p><p><span class="para-ref">[4.3]</span> Conversely, Indian nationalist and Marxist historians (beginning with V.D. Savarkar in 1909 and expanded by modern Subaltern scholars like Ranajit Guha) define 1857 as "India\'s First War of Independence". They point out that in provinces like Awadh, over 75 percent of the casualties were ordinary civilian peasants, weavers, and landowners, not soldiers. The rebels crossed deep religious divides to unite under a single political authority, producing sophisticated manifestos demanding the complete expulsion of foreign colonial rule. While the rebellion was defeated, it permanently destroyed corporate East India Company rule and lit the torch of modern anti-colonial nationalism.</p>',
+          title: 'Act 4: Pastoral Encroachment, The Black War & The 1851 Gold Rush (1820–1854)',
+          text: '<p><span class="para-ref">[4.1]</span> Between 1820 and 1850, Australia’s colonial economy transitioned from an isolated penal prison into a colossal export powerhouse. British textile mills in Yorkshire developed an insatiable demand for fine merino wool. Wealthy settlers, known as <strong>pastoral squatters</strong>, drove millions of sheep deep into the interior of New South Wales, Victoria, and Queensland, seizing millions of acres of Indigenous grasslands without government permission. As sheep devoured native vegetation and muddied waterholes, indigenous food chains collapsed. In Van Diemen’s Land (Tasmania), British military forces and settlers waged the catastrophic <strong>Black War (1824–1831)</strong>, declaring martial law and driving the Indigenous Palawa population into virtual near-extinction through coordinated drives and exile to Flinders Island.</p><p><span class="para-ref">[4.2]</span> In 1851, the Australian colonies experienced an epoch-making demographic shock: the discovery of vast gold deposits at Ballarat and Bendigo in the newly formed colony of Victoria. Within a decade, the <strong>Australian Gold Rush</strong> attracted over 600,000 free immigrants from Britain, Ireland, continental Europe, California, and China. Melbourne transformed overnight from a muddy provincial outpost into one of the wealthiest cities in the British Empire ("Marvellous Melbourne"). Transportation of convicts to the eastern colonies was permanently abolished as free settlers demanded an end to the "convict stain".</p><p><span class="para-ref">[4.3]</span> The gold rush also catalyzed democratic revolution. Gold miners (known as "diggers") were subjected to aggressive monthly license fees enforced by corrupt colonial police who arrested miners unable to produce paper receipts. In November 1854, thousands of miners at Ballarat formed the Ballarat Reform League, demanding universal male suffrage, the abolition of license fees, and the right to vote. On <strong>3 December 1854</strong>, miners swore an oath beneath the Southern Cross flag at the <strong>Eureka Stockade</strong> (<span class="archival-meta-tag">Source D</span>): <em>"We swear by the Southern Cross to stand truly by each other, and fight to defend our rights and liberties."</em> British troops and police stormed the wooden stockade, killing at least 22 diggers. Although crushed militarily, public outrage forced the British government to concede: license fees were replaced with a cheap miner’s right, and democratic self-governing colonial parliaments were established across southeastern Australia with secret ballots and male suffrage decades before Britain itself.</p>',
           tasks: [
             {
               type: 'extended_writing',
               question:
-                'Enquiry Essay: "To what extent should the 1857 Indian Rebellion be characterized as a reactionary military mutiny rather than a widespread war for national liberation?"',
+                'Enquiry Essay: "To what extent was the British colonization of Australia characterized by violent dispossession rather than peaceful settlement?"',
               scaffolding: {
                 structure_strip: [
-                  'PEE Paragraph 1 (Military Mutiny & Feudal Reaction): Argue that the uprising was primarily a military mutiny of the Bengal Army, citing greased cartridges, the lack of nationwide unity (Punjab/Madras loyalty), and the desire of feudal princes like Nana Sahib to restore lost privileges [1.1, 1.3, 4.2].',
-                  'PEE Paragraph 2 (National Liberation War & Popular Rebellion): Counter-argue that 1857 was a popular war of liberation, citing the massive participation of civilian peasants and weavers in Awadh, Hindu-Muslim unity under Bahadur Shah Zafar, and the Azamgarh Proclamation [2.2, 3.2, 4.3, Source C].',
-                  'Historiographical Verdict: Reach a nuanced, balanced conclusion evaluating whether the rebellion should be judged by its reactionary origins or its revolutionary anti-colonial impact.',
+                  'PEEL Paragraph 1 (The Legal Fiction of Terra Nullius): Explain how declaring the continent empty denied Indigenous sovereignty, justifying land seizure without treaties [2.1, 2.2, Source B].',
+                  'PEEL Paragraph 2 (The Frontier Wars & Pemulwuy’s Resistance): Analyse the violent armed conflict along the Hawkesbury, smallpox epidemics, and Pemulwuy’s guerrilla defense [3.1, 3.2, 3.3, Source C].',
+                  'PEEL Paragraph 3 (Pastoral Sheep Expansion vs. The Gold Rush Transformation): Examine how pastoral squatting devastated grasslands and how the 1851 Gold Rush and Eureka Stockade won settler democracy while marginalizing Indigenous nations [4.1, 4.2, 4.3, Source D].',
+                  'Historiographical Verdict: Formulate a nuanced historical conclusion on whether Australia was built on the foundation of peaceful pioneering enterprise or systematic violent dispossession.',
                 ],
                 connective_bank: [
-                  'From a colonial British historical perspective, the 1857 conflict was strictly a military mutiny because...',
-                  'As documented in paragraph [1.1] and Source A...',
-                  'Furthermore, the rebellion remained fragmented because...',
-                  'Conversely, Indian nationalist and subaltern historians provide a powerful counter-interpretation, arguing that...',
-                  'As evidenced in the Azamgarh Proclamation (Source C) and paragraph [3.2]...',
-                  'In regions like Awadh, historical records demonstrate that...',
-                  'Ultimately, in determining whether 1857 was a mutiny or a war of national liberation, one must recognize that...',
+                  'From an Indigenous and post-colonial historical perspective, the colonization of Australia was fundamentally driven by violent dispossession because...',
+                  'In particular, the declaration of terra nullius in 1788 established that...',
+                  'Furthermore, as documented in paragraph [3.2] and Source C, the Frontier Wars proved that...',
+                  'The pastoral boom between 1820 and 1850 accelerated this destruction as sheep squatters...',
+                  'Conversely, British colonial narratives celebrated the era as heroic settlement, pointing to...',
+                  'Ultimately, in evaluating the historical transformation of Australia, a historian must conclude that...',
                 ],
               },
               model_answer:
-                "From a traditional British imperial perspective, the 1857 conflict was fundamentally a reactionary military mutiny rather than a cohesive war of national liberation. As documented in paragraph [1.1], the uprising was sparked inside military cantonments by high-caste sepoys in the Bengal Army who mutinied over professional and religious grievances—most notably the grease on the Enfield rifle cartridge. Furthermore, the rebellion was far from universal: the Madras and Bombay armies remained overwhelmingly loyal to the British, while the Sikh princes of the Punjab and Gurkha regiments from Nepal actively fought alongside British relief forces to recapture Delhi and Kanpur [4.2]. The leadership of the rebellion was dominated by dispossessed feudal rulers like Nana Sahib and the Begum of Awadh, who sought to restore their ancient aristocratic privileges under Dalhousie's Doctrine of Lapse (Source A) rather than construct a modern democratic nation. Therefore, British imperial historians argue that 1857 was an uncoordinated, backward-looking soldier's revolt that lacked a unified national vision.<br><br>Conversely, modern Indian nationalist and subaltern historians present a compelling counter-argument that 1857 was genuine India's First War of Independence. While the spark began with the sepoys, the conflict rapidly expanded into a massive popular uprising across northern India [2.2]. In the kingdom of Awadh, over 75 percent of the rebel casualties were ordinary civilian peasants, artisans, and landowners who took up arms against extortionate British taxation and the destruction of local courts. Furthermore, the Azamgarh Proclamation (Source C) proves that the rebels possessed a sophisticated political and economic ideology: it called upon Hindu and Muslim communities to put aside sectarian divisions and unite under the Mughal Emperor Bahadur Shah Zafar to defeat British tyranny, explicitly citing the economic ruin of indigenous handloom weavers by British manufactured cloth [3.2]. The valiant resistance and combat death of leaders like Rani Lakshmibai of Jhansi (Source B) inspired millions and established a heroic tradition of popular anti-colonial struggle.<br><br>Ultimately, in evaluating whether the 1857 rebellion was a reactionary mutiny or a war of liberation, a historian must distinguish between its initial catalyst and its revolutionary trajectory. It began unquestionably as a localized military mutiny fueled by religious fears and feudal grievances. However, once rebel soldiers reached Delhi and allied with dispossessed peasants and artisans, it transformed into an authentic anti-colonial liberation struggle. The fact that the British Crown was forced to abolish the East India Company and issue Queen Victoria's Proclamation of religious neutrality (Source D) proves that the British state recognized 1857 as a mortal threat to its global empire. It was therefore a military mutiny that ignited the first great war of Indian national resistance.",
+                'From an Indigenous and post-colonial historical perspective, the British colonization of Australia between 1788 and 1854 was fundamentally an era of systematic, violent dispossession rather than peaceful pioneering settlement. As detailed in Act 2, the foundational injustice of British rule was the legal fiction of terra nullius (Source B). By legally declaring a continent that had been continuously inhabited and managed by over 250 Indigenous nations for 65,000 years to be "nobody’s land", the British Crown legitimized the total seizure of ancestral soil without negotiating treaties, purchasing land, or offering compensation. This legal erasure reduced sovereign Indigenous peoples to trespassers on their own country, laying the groundwork for unconstrained colonial violence.<br><br>Furthermore, as documented in Act 3 and Source C, British settlement along the Hawkesbury and Parramatta rivers ignited the Australian Frontier Wars. Far from passively fading away, Indigenous nations mounted fierce, organized resistance. Led by Bidjigal warrior Pemulwuy, Eora fighters waged a twelve-year guerrilla war, burning crops, ambushing supply lines, and resisting British infantry detachments with tactical ingenuity [3.2, 3.3]. The British response was ruthless: Governor King declared Pemulwuy an outlaw, military expeditions carried out punitive raids, and when Pemulwuy was killed in 1802, his head was severed and sent to London as an imperial trophy. When combined with deadly smallpox epidemics, colonial settlement was experienced by Indigenous communities as an armed military invasion that decimated ancient populations.<br><br>The violence of dispossession intensified between 1820 and 1850 with the pastoral wool boom. Pastoral squatters drove millions of fine-wool merino sheep across New South Wales and Victoria, destroying native yam beds, draining sacred waterholes, and displacing Indigenous clans [4.1]. In Van Diemen’s Land (Tasmania), the Black War resulted in the virtual near-extinction of the Palawa people under martial law. While the 1851 Victorian Gold Rush and the 1854 Eureka Stockade (Source D) won celebrated democratic reforms—such as universal male suffrage and the secret ballot—this emerging democracy was exclusively white and settler-dominated. Settler self-government solidified pastoral land grabs, leaving Indigenous Australians dispossessed and excluded from civil rights.<br><br>Ultimately, while 19th-century British narratives romanticized Australia as a heroic triumph of convict redemption and pastoral progress, forensic historical evidence reveals that every town, sheep station, and goldfield was founded upon the violent displacement of Indigenous nations. As Captain Watkin Tench admitted as early as 1793, Indigenous warriors fought with resolute courage to defend their ancestral soil against foreign invasion. Therefore, the colonization of Australia was fundamentally characterized by armed dispossession under the shield of a fraudulent legal fiction.',
             },
           ],
           source: {
             letter: 'D',
-            title:
-              'Source D: Queen Victoria’s Proclamation to the Princes and Peoples of India (1 November 1858)',
+            title: 'Source D: The Eureka Stockade Miners’ Oath (Ballarat, 1 December 1854)',
             context:
-              "Following the suppression of the 1857 uprising, the 1858 Government of India Act liquidated the East India Company. Queen Victoria's proclamation pledged non-interference in Indian religious customs and promised equal protection under Crown rule. **Hinge Question:** Why did the British Crown publicly pledge religious neutrality in 1858, and did this truly change the reality of imperial rule?",
+              'Solemn oath sworn by hundreds of gold diggers beneath the Southern Cross flag at Ballarat, Victoria, protesting colonial license taxation without parliamentary representation. **Hinge Question:** Why did British miners at Eureka rebel against royal colonial authorities just sixty years after the First Fleet landed?',
             hinge_question:
-              'Why did the British Crown publicly pledge religious neutrality in 1858, and did this truly change the reality of imperial rule?',
-            text: '“We have resolved to take upon Ourselves the government of the territories in India, heretofore administered in trust by the Honourable East India Company. We disclaim alike the right and the desire to impose Our convictions on any of Our subjects. We declare it to be Our royal will and pleasure that none be in any degree molested or disquieted by reason of their religious faith or observances, but that all shall alike enjoy the equal and impartial protection of the law.”',
+              'Why did British miners at Eureka rebel against royal colonial authorities just sixty years after the First Fleet landed?',
+            text: '“We swear by the Southern Cross to stand truly by each other, and fight to defend our rights and liberties against the unjust taxes and tyranny of the colonial administration.”',
             caption:
-              'Source D: Royal Proclamation read aloud across India announcing that the British Crown had assumed direct sovereignty over India from the East India Company.',
+              'Source D: The Eureka Stockade Oath sworn by gold miners at Ballarat, Victoria, in December 1854.',
           },
         },
       ],
       quiz: [
         {
           question:
-            'In what year did the massive Indian Rebellion against the British Empire begin?',
-          options: ['1886', '1807', '1857', '1832'],
-          answer: '1857',
+            'From which Hampshire naval anchorage did the First Fleet weigh anchor on 13 May 1787 under Captain Arthur Phillip?',
+          options: ['Portsmouth Spithead', 'Plymouth Sound', 'Chatham Docks', 'The Solent Pier'],
+          answer: 'Portsmouth Spithead',
         },
         {
           question:
-            'What military innovation served as the immediate catalyst for the 1857 rebellion?',
-          options: ['The Gatling gun', 'The ironclad ship', 'The Maxim gun', 'The Enfield rifle'],
-          answer: 'The Enfield rifle',
-        },
-        {
-          question: 'Why did the new Enfield rifle cartridges cause such outrage among the sepoys?',
+            'What major geopolitical defeat in 1783 forced the British government to search for a new penal transportation destination?',
           options: [
-            'They were made in Britain instead of India',
-            'They misfired frequently',
-            'They were too heavy to carry',
-            'They were rumored to be greased with beef and pork fat',
+            "The Seven Years' War",
+            'The American Revolutionary War',
+            'The Napoleonic Wars',
+            'The War of the Spanish Succession',
           ],
-          answer: 'They were rumored to be greased with beef and pork fat',
+          answer: 'The American Revolutionary War',
         },
         {
           question:
-            "What percentage of the East India Company's military forces were native Indian soldiers (sepoys)?",
-          options: ['Almost 100%', 'Over 80%', 'Around 50%', 'Less than 20%'],
-          answer: 'Over 80%',
+            "What Latin legal doctrine, meaning 'nobody's land', did the British Crown use to claim sovereignty over Australia without treaties?",
+          options: ['Pax Romana', 'Habeas Corpus', 'Terra Nullius', 'Magna Carta'],
+          answer: 'Terra Nullius',
         },
         {
-          question: "What was the East India Company's 'Doctrine of Lapse'?",
+          question:
+            'How long had Indigenous Australians continuously inhabited and managed the Australian continent before 1788?',
           options: [
-            'A trade agreement with the Mughal Emperor',
-            'A law banning Indian textiles from being sold',
-            'A policy to annex independent Indian kingdoms if a ruler died without a direct male heir',
-            'A rule forcing sepoys to serve overseas',
+            'About 500 years',
+            'Around 2,000 years',
+            'Roughly 10,000 years',
+            'Over 65,000 years',
+          ],
+          answer: 'Over 65,000 years',
+        },
+        {
+          question:
+            'Who was the revered Bidjigal warrior and lawman of the Eora Nation who led a twelve-year armed resistance against British settlement?',
+          options: ['Pemulwuy', 'Bennelong', 'Trundanini', 'Windradyne'],
+          answer: 'Pemulwuy',
+        },
+        {
+          question:
+            'Where did Captain Arthur Phillip first drop anchor in January 1788 before relocating north to Sydney Cove?',
+          options: ['Melbourne Port', 'Botany Bay', 'Brisbane River', 'Hobart Harbor'],
+          answer: 'Botany Bay',
+        },
+        {
+          question:
+            'What term describes the floating, decommissioned wooden warships used to house convicts in Portsmouth Harbour and the Thames?',
+          options: ['Ironclads', 'Frigates', 'Prison hulks', 'Dreadnoughts'],
+          answer: 'Prison hulks',
+        },
+        {
+          question:
+            'What agricultural commodity drove the massive expansion of pastoral squatters across southeastern Australia from the 1820s?',
+          options: ['Tobacco', 'Sugarcane', 'Tea', 'Fine merino wool'],
+          answer: 'Fine merino wool',
+        },
+        {
+          question:
+            'In what year were massive gold discoveries made in Victoria (Ballarat and Bendigo), triggering a global immigration rush?',
+          options: ['1851', '1788', '1802', '1901'],
+          answer: '1851',
+        },
+        {
+          question:
+            "What armed miners' uprising took place in Ballarat, Victoria, on 3 December 1854 beneath the Southern Cross flag?",
+          options: [
+            'The Boston Tea Party',
+            'The Eureka Stockade',
+            'The Tolpuddle Uprising',
+            'The Peterloo Protest',
+          ],
+          answer: 'The Eureka Stockade',
+        },
+        {
+          question:
+            "What was the name of the brutal colonial conflict in Van Diemen's Land (Tasmania) that drove the Indigenous Palawa population into virtual near-extinction?",
+          options: ['The Crimean War', 'The Boer War', 'The Black War', 'The Peninsular War'],
+          answer: 'The Black War',
+        },
+        {
+          question:
+            'Approximately how many distinct Indigenous nations and language groups existed across Australia when the First Fleet landed in 1788?',
+          options: [
+            'Only 1 single tribe',
+            'Fewer than 10 groups',
+            'Around 50 tribes',
+            'Over 250 distinct nations with 500 dialects',
+          ],
+          answer: 'Over 250 distinct nations with 500 dialects',
+        },
+        {
+          question:
+            'What democratic voting innovation did the Australian colonies introduce in the 1850s that was later adopted across the British Empire?',
+          options: [
+            'The Secret Ballot (Australian Ballot)',
+            'Property-only voting',
+            'Open public voice voting',
+            'Hereditary aristocratic voting',
+          ],
+          answer: 'The Secret Ballot (Australian Ballot)',
+        },
+        {
+          question:
+            'What fatal disease epidemic swept through Indigenous communities around Sydney Harbour in April 1789, killing up to half the population?',
+          options: ['Cholera', 'Smallpox (galgala)', 'Yellow fever', 'Typhus'],
+          answer: 'Smallpox (galgala)',
+        },
+        {
+          question:
+            'What happened to Pemulwuy after he was ambushed and killed by British sailors in June 1802?',
+          options: [
+            'He was given a full state funeral in Sydney',
+            'He escaped into the outback and died of old age',
+            'His severed head was preserved in spirits and shipped to Sir Joseph Banks in London',
+            'He was exiled to Norfolk Island',
           ],
           answer:
-            'A policy to annex independent Indian kingdoms if a ruler died without a direct male heir',
+            'His severed head was preserved in spirits and shipped to Sir Joseph Banks in London',
         },
         {
           question:
-            'Besides the cartridges, what deeper issues caused systemic resentment among the Indian population?',
+            'Why did the British Crown classify Australia as terra nullius despite seeing Indigenous people living there?',
           options: [
-            'Heavy taxation, land grabs, and destruction of the textile industry',
-            'The British refusal to trade with India',
-            'Lack of British funding for Indian schools',
-            'The building of too many railways',
-          ],
-          answer: 'Heavy taxation, land grabs, and destruction of the textile industry',
-        },
-        {
-          question: 'Where did the outbreak of violence begin in earnest on May 10, 1857?',
-          options: ['Calcutta', 'Delhi', 'Meerut', 'Lucknow'],
-          answer: 'Meerut',
-        },
-        {
-          question: 'Who did the mutinying sepoys declare as the true leader of India?',
-          options: [
-            'The elderly Mughal Emperor, Bahadur Shah Zafar',
-            'The Governor-General of the EIC',
-            'Queen Victoria',
-            'The Queen of Jhansi',
-          ],
-          answer: 'The elderly Mughal Emperor, Bahadur Shah Zafar',
-        },
-        {
-          question: 'Who was Rani Lakshmibai?',
-          options: [
-            'A leader of the East India Company',
-            'The Queen of Jhansi who famously fought on horseback against the British',
-            'A British missionary',
-            'The first Empress of India',
-          ],
-          answer: 'The Queen of Jhansi who famously fought on horseback against the British',
-        },
-        {
-          question: 'How did the British forces respond to the rebellion?',
-          options: [
-            'By immediately abandoning India',
-            'With peaceful negotiations and political reform',
-            'By paying the sepoys higher wages',
-            'With uncompromising, industrialized brutality and a campaign of mass terror',
-          ],
-          answer: 'With uncompromising, industrialized brutality and a campaign of mass terror',
-        },
-        {
-          question:
-            'What horrific method of execution did the British use as a form of psychological warfare against rebel leaders?',
-          options: [
-            'Exiling them to Australia',
-            'Imprisonment in the Tower of London',
-            'Public hanging in London',
-            'Binding them to the mouths of cannons and blowing them apart',
-          ],
-          answer: 'Binding them to the mouths of cannons and blowing them apart',
-        },
-        {
-          question: 'Why were rebels blown from cannons instead of hanged?',
-          options: [
-            'To deliberately deny the victims traditional religious funerals',
-            'Because it was considered more humane',
-            'Because the British ran out of rope',
-            'To save time',
-          ],
-          answer: 'To deliberately deny the victims traditional religious funerals',
-        },
-        {
-          question: 'What was the most significant political consequence of the 1857 Rebellion?',
-          options: [
-            'The British banned all Indian soldiers from serving in the military',
-            'The East India Company was abolished and the British Crown took direct control of India',
-            'India was immediately granted full independence',
-            'The EIC was given more power to rule India',
+            'Indigenous leaders had signed a formal surrender treaty',
+            'The British had paid gold to the French government for the continent',
+            'The Pope had issued a papal bull commanding British conquest',
+            'Because Indigenous Australians were not farming in European-style fenced fields or building stone towns, British law claimed they lacked ownership',
           ],
           answer:
-            'The East India Company was abolished and the British Crown took direct control of India',
-        },
-        {
-          question: "Which 1858 law formalized the British government's direct rule over India?",
-          options: [
-            'The Doctrine of Lapse',
-            'The Secret Ballot Act',
-            'The Government of India Act',
-            'The Great Reform Act',
-          ],
-          answer: 'The Government of India Act',
-        },
-        {
-          question: 'The era of direct British Crown rule in India is known as what?',
-          options: [
-            'The Imperial Federation',
-            'The British Raj',
-            'The Mughal Empire',
-            'The EIC Era',
-          ],
-          answer: 'The British Raj',
-        },
-        {
-          question: 'Who was declared Empress of India after the rebellion was crushed?',
-          options: [
-            'Queen Victoria',
-            'Mary Queen of Scots',
-            'Rani Lakshmibai',
-            'Queen Elizabeth I',
-          ],
-          answer: 'Queen Victoria',
-        },
-        {
-          question:
-            'How did the 1857 Indian Rebellion contrast with domestic resistance like the Swing Riots?',
-          options: [
-            'It aimed to lower the price of bread',
-            'It was completely peaceful',
-            'It was supported by the aristocratic elite',
-            'It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking',
-          ],
-          answer:
-            'It was a full-scale war for liberation utilizing military training, rather than localized machine-breaking',
-        },
-        {
-          question: 'Why did Christian missionary activity in India contribute to the rebellion?',
-          options: [
-            'The missionaries were heavily armed',
-            'The missionaries stole all the agricultural land',
-            'It convinced many Indians that the British were determined to systematically dismantle their ancient religions',
-            'The missionaries forced Indians to work in factories',
-          ],
-          answer:
-            'It convinced many Indians that the British were determined to systematically dismantle their ancient religions',
-        },
-        {
-          question:
-            "What did the rebellion shatter regarding the British public's view of their empire?",
-          options: [
-            'The idea that trade was profitable',
-            'The concept of parliamentary democracy',
-            'The belief that the Navy was invincible',
-            "The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects",
-          ],
-          answer:
-            "The Victorian myth that the Empire was a 'civilizing' force welcomed by its subjects",
-        },
-        {
-          question:
-            "Which animal's fat was forbidden to Muslim soldiers, making the rumor about the cartridges so explosive?",
-          options: ['Cow', 'Pig', 'Horse', 'Sheep'],
-          answer: 'Pig',
+            'Because Indigenous Australians were not farming in European-style fenced fields or building stone towns, British law claimed they lacked ownership',
         },
       ],
       pair_share: {
         prompt:
-          'Discuss with your partner: What was the primary cause of the 1857 Indian Rebellion?',
-        think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
-        pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
-        share: "Share your pair's combined conclusion with the class.",
+          'Discuss with your partner: Why did the British Crown invent the doctrine of terra nullius, and how did Pemulwuy challenge it?',
+        think:
+          "Spend 1 minute reviewing paragraph [2.2] and Pemulwuy's defense along the Hawkesbury.",
+        pair: 'Discuss your ideas with your partner. Contrast the legal fiction of empty land with the reality of 65,000 years of civilization.',
+        share:
+          'Share your conclusion with the class, explaining why Australian colonization was an armed conquest rather than peaceful pioneering.',
       },
       vocab_cloze_text:
-        'Tensions within the armies of the [East India Company (EIC)] exploded in May 1857. Indian soldiers, known as a [Sepoy], revolted over cartridges greased with animal fat and deep resentment against the [Doctrine of Lapse]. The resulting armed [Mutiny] spread across northern India. Rebel leaders like [Rani Lakshmibai] fought fiercely against British troops. After brutally crushing the uprising, Parliament abolished the company in 1858, inaugurating direct royal governance under the [British Raj].',
+        'In May 1787, the [First Fleet] departed Portsmouth Spithead to establish a penal colony in New South Wales. The British Crown claimed absolute sovereignty under the legal fiction of [Terra Nullius], falsely declaring the continent empty despite over 65,000 years of Indigenous culture. As settlers seized hunting grounds, the [Frontier Wars] erupted. Bidjigal leader [Pemulwuy] mounted fierce guerrilla resistance along the Hawkesbury River. From the 1820s, wealthy [Pastoral Squatters] drove sheep across the interior, while the 1851 Gold Rush sparked the [Eureka Stockade (1854)] rebellion, accelerating colonial self-government.',
     },
     {
       id: 'lesson_4',
@@ -1885,28 +1865,23 @@ export const unitData = {
         items: [
           {
             question:
-              'What 1857 military uprising broke out among Indian soldiers in the British East India Company army?',
-            answer: 'The 1857 Indian Rebellion (or Sepoy Mutiny).',
+              'From which Hampshire naval anchorage did the First Fleet set sail for Australia in May 1787?',
+            answer: 'Portsmouth Spithead.',
           },
           {
             question:
-              'What new military rifle cartridge greased with animal fat sparked the 1857 outbreak at Meerut?',
-            answer: 'The Enfield rifle.',
+              'What Latin legal doctrine meaning "nobody’s land" did the British Crown use to claim sovereignty over Australia without treaties?',
+            answer: 'Terra Nullius.',
           },
           {
             question:
-              'What aggressive annexation policy by Lord Dalhousie confiscated Indian kingdoms lacking biological male heirs?',
-            answer: 'The Doctrine of Lapse.',
+              'Who was the Bidjigal warrior and lawman of the Eora Nation who led armed guerrilla resistance against British settlement in the 1790s?',
+            answer: 'Pemulwuy.',
           },
           {
             question:
-              'Who was the warrior Queen of Jhansi who became a martyr fighting British forces on horseback in 1858?',
-            answer: 'Rani Lakshmibai.',
-          },
-          {
-            question:
-              'What 1858 statute dissolved the East India Company and placed India under direct British Crown governance?',
-            answer: 'The Government of India Act 1858 (establishing the British Raj).',
+              'What 1854 armed rebellion by gold miners in Victoria protested colonial license taxes and won democratic reforms?',
+            answer: 'The Eureka Stockade.',
           },
         ],
       },
@@ -2009,15 +1984,14 @@ export const unitData = {
           ],
           source: {
             letter: 'A',
-            title:
-              'Source A: Caricature of the Berlin Conference: Bismarck Carving the African Cake (1885)',
+            title: 'Source A: Adalbert von Rößler: The Berlin Conference (1884)',
             context:
-              'French satirical illustration depicting German Chancellor Otto von Bismarck standing before European ambassadors, carving a large cake labelled "Afrique" into slices. **Hinge Question:** How does Source A illustrate European contempt for African self-determination in 1884?',
+              'Contemporary engraving by Adalbert von Rößler depicting German Chancellor Otto von Bismarck presiding over the opening of the Berlin Conference in November 1884. Bismarck addresses ambassadors from fourteen European powers in front of a giant wall map of Africa. Not a single African representative was invited. **Hinge Question:** How does Source A illustrate that the partition of Africa was an act of European diplomatic power that completely excluded African voices?',
             hinge_question:
-              'How does Source A illustrate European contempt for African self-determination in 1884?',
-            image: '/images/imperial_federation_map.jpg',
+              'How does Source A illustrate that the partition of Africa was an act of European diplomatic power that completely excluded African voices?',
+            image: '/images/berlin_conference_1884.jpg',
             caption:
-              'Source A: "A Feast of Nations", satirical print published in Paris in 1885, satirizing the partition of the African continent among European powers.',
+              'Source A: Adalbert von Rößler (1884): "Die Berliner Kongo-Konferenz", depicting Bismarck and European ambassadors negotiating the partition of Africa under a large wall map.',
           },
         },
         {
@@ -2044,14 +2018,14 @@ export const unitData = {
           ],
           source: {
             letter: 'B',
-            title: 'Source B: The British Maxim Machine Gun (Designed 1884)',
+            title: 'Source B: The Maxim Machine Gun (1884)',
             context:
-              'The Maxim gun was the primary weapon deployed by British colonial forces during the Scramble for Africa, used by chartered companies in Zimbabwe and British forces in the Sudan. **Hinge Question:** Why did Victorian military leaders celebrate the Maxim gun as a "humanitarian" weapon that brought quick peace?',
+              'The world’s first fully automatic recoil-operated machine gun, invented by Hiram Maxim in 1884, firing 600 rounds per minute. British colonial forces deployed Maxim guns across Africa, including General Kitchener’s army at Omdurman in 1898. **Hinge Question:** Why did Victorian imperialists celebrate the Maxim gun as a "humanitarian" weapon of rapid pacification, while African historians view it as an instrument of mechanized slaughter?',
             hinge_question:
-              'Why did Victorian military leaders celebrate the Maxim gun as a "humanitarian" weapon that brought quick peace?',
-            image: '/images/textile_factory.jpg',
+              'Why did Victorian imperialists celebrate the Maxim gun as a "humanitarian" weapon of rapid pacification, while African historians view it as an instrument of mechanized slaughter?',
+            image: '/images/maxim_machine_gun.jpg',
             caption:
-              'Source B: British colonial soldiers operating a carriage-mounted Maxim machine gun during military maneuvers in East Africa (c. 1895).',
+              'Source B: Authentic 1884 carriage-mounted Maxim automatic machine gun, the definitive tactical weapon of the Scramble for Africa.',
           },
         },
         {
@@ -2142,87 +2116,145 @@ export const unitData = {
         {
           question:
             'What percentage of the African continent was colonized by European powers between 1881 and 1914?',
-          options: ['About 20%', 'Exactly 100%', 'Over 90%', 'Less than 50%'],
+          options: ['Over 90%', 'About 20%', 'Exactly 50%', 'Less than 10%'],
           answer: 'Over 90%',
         },
         {
           question:
             'Which two African nations successfully maintained their sovereignty during the Scramble for Africa?',
           options: [
-            'Ethiopia and Liberia',
-            'Congo and Nigeria',
             'Egypt and Sudan',
-            'Kenya and South Africa',
+            'Ethiopia and Liberia',
+            'Nigeria and Kenya',
+            'Congo and South Africa',
           ],
           answer: 'Ethiopia and Liberia',
         },
         {
           question:
-            'What international meeting in 1884–85 established the ground rules for the partition of Africa without inviting any African delegates?',
-          options: [
-            'The Berlin West Africa Conference',
-            'The Congress of Vienna',
-            'The Treaty of Versailles',
-            'The Geneva Convention',
-          ],
-          answer: 'The Berlin West Africa Conference',
+            'Who convened the 1884–85 Berlin West Africa Conference to establish diplomatic ground rules for partitioning Africa?',
+          options: ['Queen Victoria', 'King Leopold II', 'Otto von Bismarck', 'Cecil Rhodes'],
+          answer: 'Otto von Bismarck',
         },
         {
           question:
-            'What principle established at Berlin required a European nation to demonstrate physical military and administrative control before claiming a colony?',
+            'What key diplomatic principle established at the Berlin Conference required a European power to demonstrate physical administrative and military presence before claiming African territory?',
           options: [
-            'Mercantile Monopoly',
-            'The Open Door Policy',
-            'Effective Occupation',
             'Divine Right',
+            'Free Trade Exemption',
+            'The Civilising Mission',
+            'Effective Occupation',
           ],
           answer: 'Effective Occupation',
         },
         {
           question:
-            'What 1884 weapon gave European armies overwhelming military superiority over traditional African forces?',
-          options: ['The Crossbow', 'The Longbow', 'The Gatling cannon', 'The Maxim machine gun'],
+            'What revolutionary recoil-operated automatic firearm, invented in 1884, gave European expeditionary armies overwhelming firepower in Africa?',
+          options: [
+            'The Maxim machine gun',
+            'The Enfield rifle',
+            'The Gatling hand-crank gun',
+            'The Baker rifle',
+          ],
           answer: 'The Maxim machine gun',
         },
         {
           question:
-            'What medical breakthrough allowed European explorers and troops to survive malaria in the tropical African interior?',
-          options: ['Smallpox vaccine', 'Quinine (from cinchona bark)', 'Aspirin', 'Penicillin'],
-          answer: 'Quinine (from cinchona bark)',
+            'What medicine derived from South American cinchona tree bark protected European explorers and soldiers from deadly tropical malaria?',
+          options: ['Penicillin', 'Quinine', 'Morphine', 'Aspirin'],
+          answer: 'Quinine',
         },
         {
           question:
-            'At which 1898 battle did British forces use Maxim guns and Nile gunboats to slaughter 11,000 Sudanese Mahdist soldiers in five hours?',
+            'At which 1898 battle in the Sudan did British-Egyptian forces use Maxim guns to slaughter 11,000 Mahdist warriors in five hours?',
           options: [
-            'The Battle of Waterloo',
+            'The Battle of Adwa',
+            'The Battle of Isandlwana',
             'The Battle of Omdurman',
-            'The Siege of Lucknow',
-            'The Battle of Plassey',
+            'The Battle of Khartoum',
           ],
           answer: 'The Battle of Omdurman',
         },
         {
           question:
-            'Who authored the famous 1899 poem "The White Man\'s Burden", celebrating imperialism as a selfless moral duty?',
-          options: ['George Orwell', 'William Wordsworth', 'Rudyard Kipling', 'Lord Byron'],
+            "Which diamond magnate and Prime Minister of Cape Colony championed the expansionist vision of a British 'Cape to Cairo' railway?",
+          options: ['E. D. Morel', 'Rudyard Kipling', 'David Livingstone', 'Cecil Rhodes'],
+          answer: 'Cecil Rhodes',
+        },
+        {
+          question:
+            "Which British poet published 'The White Man's Burden' in 1899, urging Western nations to colonize non-European peoples as a selfless moral duty?",
+          options: ['Rudyard Kipling', 'Wilfred Owen', 'Lord Tennyson', 'William Wordsworth'],
           answer: 'Rudyard Kipling',
         },
         {
           question:
-            'Who countered Kipling by publishing "The Black Man\'s Burden" in 1920, exposing the capitalist greed and forced labour of colonial rule?',
-          options: ['Otto von Bismarck', 'Herbert Kitchener', 'Cecil Rhodes', 'E. D. Morel'],
+            "Which investigative journalist founded the Congo Reform Association and authored The Black Man's Burden (1920) to expose colonial rubber atrocities?",
+          options: ['Henry Morton Stanley', 'E. D. Morel', 'Arthur Conan Doyle', 'George Orwell'],
           answer: 'E. D. Morel',
         },
         {
           question:
-            'What private commercial enterprise did Cecil Rhodes use to conquer and exploit gold-rich territory in southern Africa?',
+            "What term describes the patronizing imperial ideology that portrayed European conquerors as stern 'father figures' guiding supposedly childlike colonial peoples?",
+          options: ['Capitalist Mercantilism', 'Scientific Racism', 'Paternalism', 'Abolitionism'],
+          answer: 'Paternalism',
+        },
+        {
+          question:
+            'What was the infamous punishment inflicted by King Leopold II’s Force Publique on Congolese rubber workers who failed to meet collection quotas?',
           options: [
-            'The British South Africa Company',
-            'The Hudson’s Bay Company',
-            'The Royal Niger Company',
-            'The East India Company',
+            'Exile to Great Britain',
+            'Heavy financial cash fines',
+            'Loss of their voting rights',
+            'Severing of hands and brutal public whippings',
           ],
-          answer: 'The British South Africa Company',
+          answer: 'Severing of hands and brutal public whippings',
+        },
+        {
+          question:
+            'How did E. D. Morel discover the hidden reality of King Leopold’s rubber slavery regime in the Congo Free State?',
+          options: [
+            'By auditing Liverpool shipping manifests showing ships carried guns outward and rubber inward',
+            'By receiving an official apology from the Belgian parliament',
+            'By reading Rudyard Kipling’s poetry collections',
+            'By serving as a British military commander in the Sudan',
+          ],
+          answer:
+            'By auditing Liverpool shipping manifests showing ships carried guns outward and rubber inward',
+        },
+        {
+          question:
+            'Which African empire decisively defeated an invading Italian colonial army at the Battle of Adwa in 1896 to preserve its independence?',
+          options: [
+            'The Zulu Kingdom',
+            'The Ethiopian Empire',
+            'The Ashanti Empire',
+            'The Kingdom of Dahomey',
+          ],
+          answer: 'The Ethiopian Empire',
+        },
+        {
+          question:
+            'What valuable industrial resources drove European chartered companies and empires to partition Central and Southern Africa in the late 19th century?',
+          options: [
+            'Timber and whale blubber exclusively',
+            'Grain, potatoes, and wool only',
+            'Wild rubber, copper, palm oil, diamonds, and gold',
+            'Porcelain, silk, and spices',
+          ],
+          answer: 'Wild rubber, copper, palm oil, diamonds, and gold',
+        },
+        {
+          question:
+            'Why did European diplomats at the 1884 Berlin Conference draw straight geometric borders across African maps without consulting indigenous rulers?',
+          options: [
+            'African leaders had requested geometric boundaries in writing',
+            'To avoid fighting each other in Europe by treating Africa as vacant real estate to divide peacefully among themselves',
+            'Because all African ethnic groups lived in neat square territories',
+            'To prepare Africa for immediate democratic independence',
+          ],
+          answer:
+            'To avoid fighting each other in Europe by treating Africa as vacant real estate to divide peacefully among themselves',
         },
       ],
     },
@@ -2338,28 +2370,23 @@ export const unitData = {
         items: [
           {
             question:
-              'What 1884–85 conference partitioned Africa among fourteen European powers without African participation?',
-            answer: 'The Berlin West Africa Conference.',
+              'What Hampshire dockyard served as the manufacturing capital of 19th-century Royal Navy power?',
+            answer: 'Portsmouth Royal Dockyard.',
           },
           {
             question:
-              'What automatic machine gun invented in 1884 gave European forces overwhelming firepower during the Scramble for Africa?',
-            answer: 'The Maxim gun.',
+              'What 1765 treaty gave the East India Company tax collection rights over Bengal, initiating institutionalized tax extraction?',
+            answer: 'The Treaty of Allahabad (The Diwani).',
           },
           {
             question:
-              'Which British poet authored "The White Man’s Burden" in 1899, depicting colonized peoples as "half-devil and half-child"?',
-            answer: 'Rudyard Kipling.',
+              'What Latin legal fiction used in Australia claimed the continent was legally empty, ignoring 65,000 years of Indigenous culture?',
+            answer: 'Terra Nullius.',
           },
           {
             question:
-              'Who published "The Black Man’s Burden" in 1920, exposing that European imperialism was driven by corporate greed for rubber and gold?',
-            answer: 'E. D. Morel.',
-          },
-          {
-            question:
-              'What two African nations successfully maintained their independence during the Scramble for Africa?',
-            answer: 'Ethiopia and Liberia.',
+              'What 1884–85 conference partitioned Africa among fourteen European powers without any African representatives present?',
+            answer: 'The Berlin Conference.',
           },
         ],
       },
@@ -2613,213 +2640,174 @@ export const unitData = {
       quiz: [
         {
           question:
-            "Who was the pioneering Indian economist and first Indian MP elected to Westminster in 1892 who formulated the 'Drain of Wealth' theory?",
-          options: ['Mahatma Gandhi', 'Raja Ram Mohan Roy', 'Dadabhai Naoroji', 'Jawaharlal Nehru'],
+            "Who was the pioneering Indian political economist who formulated the 'Drain of Wealth' theory and was elected as Britain's first Indian MP in 1892?",
+          options: ['Dadabhai Naoroji', 'Mahatma Gandhi', 'Rani Lakshmibai', 'Jawaharlal Nehru'],
           answer: 'Dadabhai Naoroji',
         },
         {
           question:
-            'What landmark economic book did Dadabhai Naoroji publish in 1901 detailing how British rule impoverished India?',
+            "What was the title of Dadabhai Naoroji's landmark 1901 economic study exposing the financial drain of British colonial rule in India?",
           options: [
-            'Poverty and Un-British Rule in India',
             'The Wealth of Nations',
-            'The Condition of the Working Class',
-            "The White Man's Burden",
+            'Poverty and Un-British Rule in India',
+            "The Black Man's Burden",
+            'The Imperial Balance Sheet',
           ],
           answer: 'Poverty and Un-British Rule in India',
         },
         {
           question:
-            'How much capital did Dadabhai Naoroji calculate Britain systematically extracted from India each year without economic return?',
+            'What term did British officials use to describe the mandatory payments extracted from Indian taxes to cover London administration, pensions, and imperial railway debt?',
           options: [
-            'Over £100 million',
-            '£1 million to £2 million',
-            '£5 million to £10 million',
-            '£30 million to £40 million sterling',
+            'The Diwani Subsidy',
+            'Lancashire Tariffs',
+            'Home Charges',
+            'The Salt Monopoly',
           ],
-          answer: '£30 million to £40 million sterling',
+          answer: 'Home Charges',
         },
         {
           question:
-            'What term did Dadabhai Naoroji use to describe the one-way extraction of Indian tax revenues and resources to Great Britain?',
+            "What major international exhibition held in 1851 at London's Crystal Palace celebrated Britain as the undisputed 'Workshop of the World'?",
           options: [
-            'The Industrial Leap',
-            'The Drain of Wealth',
-            'The Imperial Dividend',
-            'The Mercantilist Loop',
+            'The Berlin Conference',
+            'The Paris Exposition',
+            'The British Empire Exhibition',
+            'The Great Exhibition of 1851',
           ],
-          answer: 'The Drain of Wealth',
+          answer: 'The Great Exhibition of 1851',
         },
         {
           question:
-            "What was the central ideological argument of British 'Imperial Apologists' regarding British colonial rule in India?",
+            'What catastrophic human disasters killed an estimated 15 to 30 million Indian peasants between 1876 and 1900 while grain continued to be exported to Britain?',
           options: [
-            'That Britain brought modern railways, irrigation, law, and civilised governance',
-            'That Indian handloom weaving was superior to British machine textiles',
-            'That India should be immediately granted complete national independence',
-            'That Britain had gained nothing of economic value from ruling India',
+            'The Late-Victorian Famines',
+            'Smallpox Epidemics',
+            'The Plague of Calcutta',
+            'The Cholera Outbreaks',
           ],
-          answer: 'That Britain brought modern railways, irrigation, law, and civilised governance',
+          answer: 'The Late-Victorian Famines',
         },
         {
           question:
-            'What monumental exhibition held in London in 1851 showcased the raw materials and wealth of the British Empire to the world?',
-          options: [
-            'The Festival of Britain',
-            'The Colonial and Indian Exhibition',
-            'The British Empire Pageant',
-            'The Great Exhibition of the Works of Industry of All Nations',
-          ],
-          answer: 'The Great Exhibition of the Works of Industry of All Nations',
-        },
-        {
-          question:
-            'Where was the 1851 Great Exhibition held, housed in an enormous prefabricated glass and iron structure?',
-          options: [
-            'Portsmouth Royal Dockyard',
-            'The Crystal Palace in Hyde Park',
-            'The Tower of London',
-            'Westminster Abbey',
-          ],
-          answer: 'The Crystal Palace in Hyde Park',
-        },
-        {
-          question:
-            'Approximately how many Indian colonial subjects are estimated to have died in preventable famines between 1876 and 1900 under British administration?',
-          options: [
-            'Famine did not occur under British rule',
-            '500,000 to 1 million',
-            '15 to 20 million people',
-            '100,000 to 200,000',
-          ],
-          answer: '15 to 20 million people',
-        },
-        {
-          question:
-            'Why did British colonial authorities, such as Viceroy Lord Lytton, refuse to halt grain exports or fix food prices during the Great Famine of 1876–1878?',
-          options: [
-            'There were no ships available to export the grain',
-            'Parliament had ordered all grain to be preserved in Indian storehouses',
-            'They believed that the famine was caused by a curse that human action could not stop',
-            'They adhered dogmatically to laissez-faire economic theory, arguing intervention would disrupt free markets',
-          ],
-          answer:
-            'They adhered dogmatically to laissez-faire economic theory, arguing intervention would disrupt free markets',
-        },
-        {
-          question:
-            "What magnificent 1897 imperial celebration in London celebrated sixty years of Queen Victoria's reign while severe famine struck colonial India?",
-          options: [
-            'The Coronation of King Edward VII',
-            'The Delhi Imperial Durbar',
-            "Queen Victoria's Diamond Jubilee",
-            "Queen Victoria's Golden Jubilee",
-          ],
-          answer: "Queen Victoria's Diamond Jubilee",
-        },
-        {
-          question:
-            'Which social class within Britain was the primary and most unreserved beneficiary of 19th-century imperial expansion?',
-          options: [
-            'The agricultural day-labourers',
-            'The industrial capitalists, financial bourgeoisie, and imperial ruling elite',
-            'The domestic servant class',
-            'The chimney sweeps and mill scavengers',
-          ],
-          answer: 'The industrial capitalists, financial bourgeoisie, and imperial ruling elite',
-        },
-        {
-          question:
-            'How did the historical experience of the British working class compare with that of colonized subjects in India and Africa?',
-          options: [
-            'British workers initially suffered brutal conditions but eventually won higher wages and the vote, whereas colonized subjects remained disenfranchised and impoverished',
-            'British workers were granted complete control over the colonial civil service',
-            'Colonized subjects in India were wealthier than British factory owners',
-            'Both groups enjoyed identical voting rights and equal legal protections throughout the 19th century',
-          ],
-          answer:
-            'British workers initially suffered brutal conditions but eventually won higher wages and the vote, whereas colonized subjects remained disenfranchised and impoverished',
-        },
-        {
-          question:
-            'What historical metaphor is used to describe the unequal distribution of imperial wealth, with British elites at the top and colonized subjects at the bottom?',
-          options: [
-            'The Democratic Circle',
-            'The Imperial Pyramid',
-            'The Maritime Wheel',
-            'The Industrial Compass',
-          ],
-          answer: 'The Imperial Pyramid',
-        },
-        {
-          question:
-            'Which British Viceroy presided over the Delhi Durbar of 1877 during which lavish feasts were held while millions starved in the surrounding countryside?',
-          options: ['Lord Curzon', 'Lord Bentinck', 'Lord Lytton', 'Lord Dalhousie'],
+            'Which British Viceroy presided over the devastating 1876–78 famine, spending lavishly on an imperial coronation banquet while enforcing strict laissez-faire policies?',
+          options: ['Lord Dalhousie', 'Lord Lytton', 'Lord William Bentinck', 'Robert Clive'],
           answer: 'Lord Lytton',
         },
         {
           question:
-            'What did British authorities do with millions of tons of Indian wheat during the catastrophic famines of the late 19th century?',
+            'What economic policy did British authorities strictly enforce during Indian famines, refusing to cap grain prices or halt commercial grain exports?',
           options: [
-            'Stored it permanently in royal military garrisons',
-            'Distributed it free of charge to starving rural villagers',
-            'Burned it to keep market grain prices artificially high',
-            'Exported it to Britain and Europe aboard steamships for profit',
+            'Mercantilist Protectionism',
+            'Socialist Collectivism',
+            'Laissez-faire (Free Market Non-intervention)',
+            'Feudal Price Capping',
           ],
-          answer: 'Exported it to Britain and Europe aboard steamships for profit',
+          answer: 'Laissez-faire (Free Market Non-intervention)',
         },
         {
           question:
-            "How did Dadabhai Naoroji's Drain Theory fundamentally challenge the British justification of the 'civilizing mission'?",
+            'What primary infrastructure project do imperial apologist historians point to as a positive legacy of British colonial rule in India?',
           options: [
-            'It proved with mathematical accounting that British rule systematically drained Indian wealth rather than developing its economy',
-            'It showed that Britain had brought superior spiritual values to India',
-            'It claimed that railways were a completely useless invention',
-            'It argued that India should conquer European territories in retaliation',
+            'A nationwide free healthcare system',
+            'Democratic adult suffrage parliaments',
+            'A national network of traditional textile handlooms',
+            'The construction of over 25,000 miles of railways and irrigation canals',
           ],
-          answer:
-            'It proved with mathematical accounting that British rule systematically drained Indian wealth rather than developing its economy',
+          answer: 'The construction of over 25,000 miles of railways and irrigation canals',
         },
         {
           question:
-            'What political organization was founded in Bombay in 1885, heavily influenced by Dadabhai Naoroji, to campaign for Indian self-government?',
+            'According to critical and post-colonial historians, what was the primary strategic purpose of British-built railways in India?',
           options: [
-            'The Sepoy Council',
-            'The Muslim League',
-            'The Bengal Trade Union',
-            'The Indian National Congress',
-          ],
-          answer: 'The Indian National Congress',
-        },
-        {
-          question:
-            "Which British Conservative Prime Minister dismissed Dadabhai Naoroji in 1888 by declaring that a British constituency was not ready to elect a 'black man'?",
-          options: ['Lord Salisbury', 'Robert Peel', 'Benjamin Disraeli', 'William Gladstone'],
-          answer: 'Lord Salisbury',
-        },
-        {
-          question:
-            'How did the de-industrialisation of Indian cotton weaving directly enrich British industrial cities like Manchester?',
-          options: [
-            'It forced Indian weavers to move to Manchester and work as factory supervisors',
-            'It caused Manchester mills to shut down because raw cotton became too cheap',
-            'It eliminated Indian competition and turned India into a vast captive market for machine-woven Lancashire textiles',
-            'It gave Indian cloth merchants complete ownership of British shipping lines',
+            'To rapidly move British troops to put down rebellions and extract raw agricultural commodities to coastal ports',
+            'To provide free passenger transport to rural Indian villagers',
+            'To connect sacred pilgrimage sites for Hindu and Muslim worshippers',
+            'To stimulate independent Indian-owned heavy manufacturing industries',
           ],
           answer:
-            'It eliminated Indian competition and turned India into a vast captive market for machine-woven Lancashire textiles',
+            'To rapidly move British troops to put down rebellions and extract raw agricultural commodities to coastal ports',
         },
         {
           question:
-            "In historical evaluation, why is it inadequate to view 19th-century imperial transformation as either purely 'civilising progress' or purely 'random chaos'?",
+            "What happened to India's share of global economic manufacturing between 1750 and 1947?",
           options: [
-            'Because no historical records survive from the nineteenth century',
-            'Because it was a systematically organized extractive global economy that enriched the imperial core while structurally underdeveloping the colonized periphery',
-            'Because Queen Victoria made all economic decisions personally without advisers',
-            'Because all historians in the modern era agree completely on every imperial topic',
+            'It grew from 10% to 45%',
+            'It collapsed from roughly 25% down to under 2%',
+            'It remained exactly unchanged at 20%',
+            'It increased because of modern railway transportation',
+          ],
+          answer: 'It collapsed from roughly 25% down to under 2%',
+        },
+        {
+          question:
+            'What historical concept describes how colonial powers governed divided populations by favoring certain ethnic or religious groups over others to prevent unified resistance?',
+          options: [
+            'The Two-Power Standard',
+            'The Civilising Mission',
+            'Divide and Rule',
+            'Effective Occupation',
+          ],
+          answer: 'Divide and Rule',
+        },
+        {
+          question:
+            'What London parliamentary constituency elected Dadabhai Naoroji as the first Indian Member of the House of Commons in 1892?',
+          options: [
+            'Westminster South',
+            'Portsmouth Central',
+            'Manchester East',
+            'Finsbury Central',
+          ],
+          answer: 'Finsbury Central',
+        },
+        {
+          question:
+            "Why did Dadabhai Naoroji choose the phrase 'Un-British Rule' in the title of his famous 1901 book?",
+          options: [
+            'To argue that colonial exploitation violated Britain’s own stated principles of constitutional justice and liberty',
+            'Because he believed the French government was secretly ruling India',
+            'To prove that Queen Victoria had surrendered her power to German diplomats',
+            'Because India was not part of the British Empire',
           ],
           answer:
-            'Because it was a systematically organized extractive global economy that enriched the imperial core while structurally underdeveloping the colonized periphery',
+            'To argue that colonial exploitation violated Britain’s own stated principles of constitutional justice and liberty',
+        },
+        {
+          question:
+            'How did British investors profit from the construction of Indian railways, even if the rail lines lost money?',
+          options: [
+            'By receiving free gold bars directly from the Mughal Emperor',
+            'Through a guaranteed 5% return on capital paid out of Indian tax revenues by the colonial government',
+            'By charging Indian passengers ten times the British ticket price',
+            'By forcing Indian railway workers to work without wages',
+          ],
+          answer:
+            'Through a guaranteed 5% return on capital paid out of Indian tax revenues by the colonial government',
+        },
+        {
+          question:
+            'What contrasting historiographical perspectives define the historical debate over the British Empire?',
+          options: [
+            'Monarchists versus Republicans',
+            'Pacifists versus Militarists',
+            'Optimists (emphasizing technology, law, and modernization) versus Pessimists (emphasizing exploitation, famine, and dispossession)',
+            'Scientists versus Religious Leaders',
+          ],
+          answer:
+            'Optimists (emphasizing technology, law, and modernization) versus Pessimists (emphasizing exploitation, famine, and dispossession)',
+        },
+        {
+          question:
+            'Why did late-Victorian famines in India cause millions of deaths despite total grain production being sufficient to feed the population?',
+          options: [
+            'Locust swarms destroyed 100% of all harvested food across Asia',
+            'All Indian food had to be buried to prevent cholera contagion',
+            'Indian farmers refused to eat wheat and rice grown on British plantations',
+            'Market forces and railway transit exported grain out of famine districts to foreign markets where profits were higher, leaving impoverished peasants unable to buy food',
+          ],
+          answer:
+            'Market forces and railway transit exported grain out of famine districts to foreign markets where profits were higher, leaving impoverished peasants unable to buy food',
         },
       ],
       pair_share: {
@@ -3039,8 +3027,9 @@ export const unitData = {
       lesson_index: 0,
       book_title: 'The Wealth of Nations: Mercantilism & The Navigation Acts',
       author: 'Adam Smith (1776)',
-      cover_image: '/images/shah_alam_clive.jpg',
-      cover_caption: 'Contemporary print of East India Company maritime commerce and trade.',
+      cover_image: '/images/hms_warrior.jpg',
+      cover_caption:
+        'HMS Warrior (1860) at Portsmouth, symbol of British industrial and naval supremacy.',
       author_context:
         'Scottish moral philosopher Adam Smith criticized mercantilism, arguing that monopolies and colonial restrictions harmed both colonies and the mother country.',
       is_adapted: false,
@@ -3057,51 +3046,51 @@ export const unitData = {
     },
     {
       lesson_index: 1,
-      book_title: 'Poverty and Un-British Rule in India (1901)',
-      author: 'Dadabhai Naoroji',
-      cover_image: '/images/textile_factory.jpg',
-      cover_caption:
-        'Historical print of Bengal cotton weaving before the flood of Lancashire machine cloth.',
+      book_title: 'Poverty and Un-British Rule in India (1901) & The Azamgarh Proclamation (1857)',
+      author: 'Dadabhai Naoroji & Leaders of the 1857 Indian Uprising',
+      cover_image: '/images/shah_alam_clive.jpg',
+      cover_caption: 'Shah Alam II conveying the Diwani of Bengal to Robert Clive (1765).',
       author_context:
-        'Dadabhai Naoroji, the first Indian elected to the British Parliament (1892), used official British statistical returns to prove that colonial taxation caused systemic de-industrialisation.',
+        'A paired archival reading contrasting Dadabhai Naoroji’s statistical critique of the colonial Drain of Wealth with the political grievances set out in the 1857 Azamgarh Proclamation.',
       is_adapted: false,
       extract:
-        '"India is being bled to death. The millions of wealth drained out of India into England year after year without any material return is the true secret of her growing poverty. England’s factories flourish on the ruins of India’s ancient crafts, and while the British talk of freedom and justice at home, they rule India as an economic plantation. The destruction of our handloom industry has driven millions into destitution."',
+        '<em>Dadabhai Naoroji (1901):</em><br>"India is being bled to death. The millions of wealth drained out of India into England year after year without any material return is the true secret of her growing poverty. England’s factories flourish on the ruins of India’s ancient crafts, and while the British talk of freedom and justice at home, they rule India as an economic plantation. The destruction of our handloom industry has driven millions into destitution."<br><br><em>The Azamgarh Proclamation (1857):</em><br>"The British Government has dispossessed the ancient landlords, imposing exorbitant land taxes and selling off ancestral estates at public auction upon the slightest delay... Furthermore, by importing cheap machine-made goods from England, they have impoverished millions of native weavers and craftsmen. Under our royal government, their hereditary honours and estates shall be confirmed forever."',
       hinge_question:
-        '<strong>Think:</strong> What phrase does Naoroji use to describe the impact of British tax drain on India?<br><br><strong>Pair:</strong> Compare Naoroji’s critique with Governor-General Bentinck’s admission that "the bones of the weavers bleach the plains". Discuss: did British officials recognize the damage they were causing?<br><br><strong>Share:</strong> Why was Naoroji’s position as a Westminster MP so significant for challenging imperial policy?',
+        '<strong>Think:</strong> What phrase does Naoroji use to describe the impact of British tax drain, and what group does the Azamgarh Proclamation identify as ruined by British cloth?<br><br><strong>Pair:</strong> Compare Naoroji’s economic critique with Governor-General Bentinck’s admission that "the bones of the cotton-weavers bleach the plains". Discuss: did British colonial administrators understand the devastation they were inflicting?<br><br><strong>Share:</strong> Why was the 1857 alliance between dispossessed landlords and ruined artisanal weavers so terrifying to the East India Company?',
       audio_file: '/assets/second_empire_reading_l2.mp3',
       questions: [
         'What phrase does Naoroji use to describe what is happening to India?',
-        'What happened to traditional Indian crafts while English factories flourished?',
-        'In what year was Dadabhai Naoroji elected as Britain’s first Indian MP?',
+        'How did British machine-made cloth affect native Indian weavers?',
+        'In what year did the 1857 uprising erupt across northern India?',
       ],
     },
     {
       lesson_index: 2,
-      book_title: 'The Azamgarh Proclamation (1857)',
-      author: 'Firoz Shah & Leaders of the 1857 Indian Uprising',
-      cover_image: '/images/indian_rebellion_1857.jpg',
-      cover_caption: 'Contemporary print of the 1857 Indian Rebellion.',
+      book_title: 'A Complete Account of the Settlement at Port Jackson (1793)',
+      author: 'Captain Watkin Tench & Governor Arthur Phillip',
+      cover_image: '/images/first_fleet_portsmouth_1787.jpg',
+      cover_caption:
+        'The First Fleet sailing past the Needles after departing Portsmouth Spithead (May 1787).',
       author_context:
-        'Published in August 1857 during the Siege of Delhi, the Azamgarh Proclamation set out the wide-ranging economic, political, and religious grievances of the rebels.',
+        'Eyewitness journal of Royal Marine Captain Watkin Tench documenting the First Fleet’s arrival at Sydney Cove, the declaration of terra nullius, and early frontier warfare with Bidjigal warrior Pemulwuy.',
       is_adapted: false,
       extract:
-        '"It is well known to all, that in this age the people of Hindostan, both Hindoos and Mahommedans, are being ruined under the tyranny and oppression of the treacherous English. It is therefore the bounden duty of all wealthy men and princes to risk their life and property for the common good.<br><br><em>Section I: Regarding the Zamindars.</em> The British Government has dispossessed the ancient landlords, imposing exorbitant land taxes and selling off ancestral estates at public auction upon the slightest delay in payment... Under our royal government, their hereditary honours and estates shall be confirmed forever.<br><br><em>Section II: Regarding the Merchants.</em> The British have monopolized all valuable trade—indigo, opium, cloth, and salt—leaving only petty commerce to native merchants. Furthermore, by importing cheap machine-made goods from England, they have impoverished millions of native weavers and craftsmen.<br><br><em>Section III: Regarding the Sepoys.</em> The British have broken their most sacred oaths, dishonouring the religious caste and faith of both Hindoos and Muslims by their defiled cartridges. Let all brave soldiers unite to expel the foreign rulers."<br><br><div style="background: #f8fafc; padding: 15px; border-left: 4px solid #64748b; margin-top: 20px;"><strong style="color: #334155;">Glossary</strong><ul style="margin-top: 10px; margin-bottom: 0;"><li><strong>Hindostan:</strong> The historical name used across northern India for the Indian subcontinent.</li><li><strong>Zamindar:</strong> A hereditary landowner or aristocratic estate holder responsible for collecting local agricultural revenue.</li><li><strong>Defiled Cartridges:</strong> Paper rifle cartridges greased with animal fat (tallow from cows, sacred to Hindus, and lard from pigs, forbidden to Muslims) that soldiers had to bite open.</li></ul></div>',
+        '"On the morning of 13 May 1787, we weighed anchor from Spithead and cleared the Isle of Wight, leaving England on an enterprise of unprecedented scale. After eight months at sea, we cast anchor in Botany Bay, soon removing to Port Jackson, which Governor Phillip pronounced the finest harbour in the world.<br><br>Yet we found the country already inhabited. The native people look upon our settlement with suspicion, retreating before our clearing axes and guarding their ancient fishing waters. In our dispatches we term this vast land \'terra nullius\', claiming it for King George without treaty, yet every creek and ridge has its native owners.<br><br>Along the Hawkesbury River, resistance has broken out into open war. The Bidjigal leader Pemulwuy has attacked our outposts with fury and resolute courage to defend his ancient soil. Our marines find European tactics unavailing in the dense bush, where every tree conceals a spear and our muskets misfire in the sudden rains."',
       hinge_question:
-        '<strong>Think:</strong> Name two specific groups (e.g. zamindars, merchants, sepoys) addressed in the proclamation and identify one complaint made by each.<br><br><strong>Pair:</strong> British textbooks often labelled the 1857 conflict merely a "Sepoy Mutiny" caused by bullet grease. Discuss with your partner: how does the Azamgarh Proclamation prove that the rebellion was a much broader national uprising against economic and political exploitation?<br><br><strong>Share:</strong> Why was the unity between Hindus and Muslims so terrifying to the British East India Company and Crown authorities?',
+        '<strong>Think:</strong> Where did the First Fleet depart from in England, and what phrase was used to legally claim Australia without treaties?<br><br><strong>Pair:</strong> Compare Tench’s description of Pemulwuy’s "fury and resolute courage to defend his ancient soil" with the legal fiction of terra nullius. Discuss: how did British law contradict physical reality on the frontier?<br><br><strong>Share:</strong> Why was Pemulwuy’s resistance along the Hawkesbury so challenging for British military forces to suppress?',
       audio_file: '/assets/second_empire_reading_l3.mp3',
       questions: [
-        'How does the proclamation say the British treated Indian merchants and native weavers?',
-        'What happened to ancestral zamindar estates when tax payments were delayed?',
-        'Why did the greased cartridges offend both Hindu and Muslim soldiers?',
+        'From which English anchorage did the First Fleet depart in May 1787?',
+        'What legal doctrine did British authorities use to claim Australia without signing treaties?',
+        'Who was the Bidjigal leader who mounted armed resistance along the Hawkesbury River?',
       ],
     },
     {
       lesson_index: 3,
       book_title: "The Black Man's Burden (1920) vs The White Man's Burden (1899)",
       author: 'E. D. Morel & Rudyard Kipling',
-      cover_image: '/images/map_empire_1886.jpg',
-      cover_caption: 'The Imperial Federation Map of the World (1886).',
+      cover_image: '/images/berlin_conference_1884.jpg',
+      cover_caption: 'The Berlin Conference (1884), where European powers partitioned Africa.',
       author_context:
         'A side-by-side reading contrasting Rudyard Kipling’s moral civilising mission with E. D. Morel’s archival exposure of corporate resource plunder.',
       is_adapted: false,
@@ -3120,8 +3109,9 @@ export const unitData = {
       lesson_index: 4,
       book_title: 'The Industrial Revolution and Global Empire: The Final Verdict',
       author: 'Sir John Clapham vs E. P. Thompson',
-      cover_image: '/images/crystal_palace.jpg',
-      cover_caption: 'The Great Exhibition of 1851 at the Crystal Palace in Hyde Park, London.',
+      cover_image: '/images/capital_labour.jpg',
+      cover_caption:
+        'Capital and Labour (1843), illustrating imperial wealth and domestic inequality.',
       author_context:
         'The classic historical debate between "Optimist" economic historians who emphasize long-term wealth, technology, and railways, versus "Pessimist" social historians who emphasize human exploitation, inequality, and colonial dispossession.',
       is_adapted: false,

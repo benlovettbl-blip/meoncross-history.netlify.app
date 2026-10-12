@@ -115,95 +115,44 @@ const QUIZ_DATA = [
     ],
   },
 
-  // LESSON 2: The De-industrialisation of India: The Company & Handloom Crisis (1757–1850)
+  // LESSON 2: The Company's Raj: Economic Exploitation, Sepoy Grievances & The 1857 Indian Rebellion (1765–1858)
   {
     lesson: 2,
-    lessonTitle: '2. The De-industrialisation of India: The Company & Handloom Crisis (1757–1850)',
-    shortTitle: 'De-industrialisation of India',
+    lessonTitle:
+      "2. The Company's Raj: Economic Exploitation, Sepoy Grievances & The 1857 Indian Rebellion (1765–1858)",
+    shortTitle: "Company's Raj & 1857 Rebellion",
     enquiry:
-      'How did British corporate rule transform India from the world’s textile workshop into a captive market?',
+      'How did corporate exploitation spark the 1857 Indian Rebellion and destroy the East India Company?',
     items: [
-      {
-        q: 'What percentage of global manufacturing did Mughal India produce in 1700 before British expansion?',
-        a: 'Approximately 25% (one quarter of global manufacturing)',
-        exp: 'Pre-colonial India was the world’s leading textile producer, famous for exquisite Dhaka muslin, fine calicoes, and vibrant dyed chintz.',
-      },
-      {
-        q: 'What protectionist laws did the British Parliament pass in 1700 and 1721 to ban the import of dyed Indian calicoes and protect domestic wool?',
-        a: 'The Calico Acts',
-        exp: 'British clothiers feared Indian competition, prompting Parliament to ban Indian printed cottons to shelter Britain’s fledgling domestic textile industry.',
-      },
       {
         q: 'What 1765 imperial treaty granted the East India Company the Diwani (civil tax-collecting rights) over the province of Bengal?',
         a: 'The Treaty of Allahabad',
         exp: 'The Mughal Emperor granted civil tax collection to the Company, allowing corporate merchants to extract £2 million annually from 20 million Bengalis.',
       },
       {
-        q: 'What term describes a colony forced to export raw materials and purchase manufactured goods exclusively from the colonial power?',
-        a: 'A captive market (colonial de-industrialisation)',
-        exp: 'Britain transformed India from an exporter of finished goods into a captive consumer of cheap machine-woven Lancashire cotton goods.',
+        q: 'What term describes how cheap British factory cotton decimated traditional Indian handloom weaving in ancient centres like Dhaka?',
+        a: 'De-industrialisation (and creating a captive market)',
+        exp: 'Unequal tariffs flooded India with cheap Lancashire machine cotton, reducing skilled urban weavers to impoverished rural subsistence farmers.',
       },
       {
-        q: 'What tariff disparity existed in the early 19th century between British exports to India and Indian exports to Britain?',
-        a: 'British cotton entered India at 2.5–3.5% duty, while Indian textiles faced 70–80% import tariffs in Britain',
-        exp: 'Discriminatory colonial trade policy deliberately undercut indigenous Indian weavers while flooding Indian bazaars with factory-made British cloth.',
+        q: 'What aggressive annexation policy of Lord Dalhousie annexed Indian princely states whose rulers died without a biological male heir?',
+        a: 'The Doctrine of Lapse',
+        exp: 'Dalhousie annexed Jhansi, Satara, and Awadh (1856), overriding Indian adoption customs, disinheriting dynasties, and alienating soldiers.',
       },
-      {
-        q: 'Which ancient textile metropolis of Bengal, famous for woven muslin, saw its population collapse from hundreds of thousands to under 40,000?',
-        a: 'Dhaka (Dacca)',
-        exp: 'As British machine yarn destroyed handloom weaving, Dhaka’s master artisans were ruined, and the city de-urbanised into an impoverished provincial town.',
-      },
-      {
-        q: 'What did Governor-General Lord William Bentinck famously report to London in 1834 regarding the fate of indigenous cotton weavers?',
-        a: '"The bones of the cotton weavers are bleaching the plains of India."',
-        exp: 'Bentinck acknowledged the horrific human toll of British industrial imports, which wiped out traditional artisanal livelihoods and triggered widespread destitution.',
-      },
-      {
-        q: 'How did British corporate rule permanently restructure Indian agriculture from food self-sufficiency into imperial dependency?',
-        a: 'Peasants were coerced into growing cash crops (raw cotton, opium, and indigo) for British export, leaving rural communities vulnerable to famine',
-        exp: 'Replacing subsistence food grains with commercial export commodities stripped rural Indian villages of emergency food reserves during drought years.',
-      },
-    ],
-  },
-
-  // LESSON 3: The 1857 Indian Rebellion: Sepoy Grievances, Rani Lakshmibai & The British Raj (1857–1858)
-  {
-    lesson: 3,
-    lessonTitle:
-      '3. The 1857 Indian Rebellion: Sepoy Grievances, Rani Lakshmibai & The British Raj (1857–1858)',
-    shortTitle: 'The 1857 Indian Rebellion',
-    enquiry:
-      'Why did Indian soldiers and civilians rebel in 1857, and how did Britain retain control?',
-    items: [
       {
         q: 'In what month and year did the Indian Rebellion break out when sepoys mutinied at Meerut?',
         a: 'May 1857',
-        exp: 'On 10 May 1857, sepoys at Meerut shot their British officers, liberated imprisoned comrades, and marched on Delhi to restore the Mughal Emperor.',
+        exp: 'On 10 May 1857, sepoys at Meerut shot British officers, liberated comrades, and marched on Delhi to restore Mughal sovereignty.',
       },
       {
         q: 'What new firearm cartridge served as the immediate technological spark of the sepoy mutiny?',
-        a: 'The Enfield rifle paper cartridge (rumored to be greased with animal tallow)',
-        exp: 'Biting the cartridges greased with sacred cow and forbidden pig fat outraged Hindu and Muslim soldiers, confirming fears of forced Christian conversion.',
-      },
-      {
-        q: 'What aggressive annexation policy implemented by Lord Dalhousie annexed princely states whose rulers died without a biological male heir?',
-        a: 'The Doctrine of Lapse',
-        exp: 'Dalhousie annexed Jhansi, Satara, and Awadh, overriding Indian adoption customs, disinheriting royal families, and enraging traditional aristocrats.',
-      },
-      {
-        q: 'What ratio of native Indian sepoys to British officers existed within the East India Company’s army on the eve of the 1857 rebellion?',
-        a: 'Roughly 5 or 6 to 1 (over 200,000 sepoys to approximately 40,000 British soldiers)',
-        exp: 'The East India Company maintained military control through a vast native mercenary army that vastly outnumbered its European officer corps.',
+        a: 'The Enfield rifle paper cartridge (greased with animal tallow)',
+        exp: 'Biting cartridges greased with sacred cow and forbidden pig fat outraged Hindu and Muslim sepoys, confirming fears of forced Christian conversion.',
       },
       {
         q: 'Which warrior queen of the annexed state of Jhansi led rebel forces into battle on horseback until she fell fighting in June 1858?',
         a: 'Rani Lakshmibai',
-        exp: 'Rani Lakshmibai refused to yield her kingdom, leading cavalry charges in male battle dress and becoming the supreme national hero of Indian resistance.',
-      },
-      {
-        q: 'Whom did mutinying sepoys proclaim as the symbolic Emperor of all India upon seizing Delhi in May 1857?',
-        a: 'Bahadur Shah Zafar (the last Mughal Emperor)',
-        exp: 'Sepoys rallied around the elderly, poetic Mughal ruler as the legitimate symbol of sovereign Indian authority against foreign corporate usurpers.',
+        exp: 'Rani Lakshmibai refused to surrender Jhansi, leading fierce cavalry charges in male warrior dress and becoming an enduring national symbol of resistance.',
       },
       {
         q: 'What historic legislation passed by Parliament in August 1858 abolished the East India Company and transferred rule to the British Crown?',
@@ -212,8 +161,60 @@ const QUIZ_DATA = [
       },
       {
         q: 'Why did the 1857 Rebellion mark a permanent turning point in British imperial governance and racial ideology?',
-        a: 'Britain abandoned forced social reforms, allied with loyal princes, and institutionalised rigid racial segregation, viewing colonial subjects with deep suspicion',
+        a: 'Britain abandoned forced social reforms, allied with conservative princes, and institutionalised rigid racial segregation under direct Crown rule',
         exp: 'Traumatised by the rebellion, the British Raj retreated behind segregated European cantonments, expanded railway troop transport, and restructured the army.',
+      },
+    ],
+  },
+
+  // LESSON 3: The Empire of Settlement: Terra Nullius, The First Fleet & Frontier Resistance in Australia (1788–1854)
+  {
+    lesson: 3,
+    lessonTitle:
+      '3. The Empire of Settlement: Terra Nullius, The First Fleet & Frontier Resistance in Australia (1788–1854)',
+    shortTitle: 'Settler Colonialism in Australia',
+    enquiry:
+      'How did settler colonialism transform Australia through dispossession and frontier warfare?',
+    items: [
+      {
+        q: 'From which Hampshire naval anchorage did Captain Arthur Phillip and the eleven ships of the First Fleet set sail in May 1787?',
+        a: 'Portsmouth Spithead',
+        exp: 'Carrying over 1,400 convicts, marines, and crew, the First Fleet departed Portsmouth on an eight-month voyage to establish a penal colony in New South Wales.',
+      },
+      {
+        q: 'Why did the British government establish a penal colony in Australia following the American Revolutionary War?',
+        a: 'The loss of the American colonies (1783) blocked convict transportation, causing severe overcrowding in British prisons and Thames prison hulks',
+        exp: 'Before 1776, Britain transported 50,000 convicts to America; with this outlet closed, rotting prison hulks in Portsmouth and London overflowed dangerously.',
+      },
+      {
+        q: 'Where did the First Fleet land in January 1788 to establish the first British settlement in Australia?',
+        a: 'Botany Bay and Sydney Cove (Port Jackson)',
+        exp: 'Finding Botany Bay unsuitable for farming and fresh water, Phillip relocated the settlement to Sydney Cove, founding the town of Sydney.',
+      },
+      {
+        q: 'What Latin legal doctrine meaning "nobody\'s land" did the British Crown use to claim sovereignty over Australia without negotiating treaties?',
+        a: 'Terra Nullius',
+        exp: 'The British treated Australia as uninhabited because Indigenous nations were nomadic and did not practice European agriculture, denying 65,000 years of ownership.',
+      },
+      {
+        q: 'Which Bidjigal warrior and lawman of the Eora Nation led armed guerrilla resistance against British settlers during the Hawkesbury Wars (1790–1802)?',
+        a: 'Pemulwuy',
+        exp: 'Pemulwuy led coordinated raids on colonial farms and outposts, surviving multiple bullet wounds before being killed in battle in 1802.',
+      },
+      {
+        q: 'What devastating impact did British pastoral expansion and introduced diseases have on Indigenous Australian populations?',
+        a: 'Millions of sheep destroyed native food plants and water holes, while virgin-soil epidemics (especially smallpox in 1789) wiped out 50% or more of coastal clans',
+        exp: 'Dispossession combined with catastrophic epidemics shattered clan structures, while frontier pastoralists engaged in violent clashes known as the Australian Frontier Wars.',
+      },
+      {
+        q: 'What 1851 discovery in Victoria sparked a massive global influx of free migrants, transforming Australia from a convict station into a settler society?',
+        a: 'The Victorian Gold Rush',
+        exp: 'The discovery of rich goldfields at Ballarat and Bendigo tripled Australia’s European population in a decade, attracting miners from Britain, Europe, China, and America.',
+      },
+      {
+        q: 'What 1854 armed rebellion by gold miners in Ballarat protested repressive colonial license fees and demanded democratic rights?',
+        a: 'The Eureka Stockade',
+        exp: 'Miners swore an oath under the Eureka Flag of the Southern Cross to resist taxation without representation, leading to democratic voting reforms in Australia.',
       },
     ],
   },
@@ -587,7 +588,7 @@ const A5_BOOKLET_CSS = `
   }
   .tracking-table td {
     border: 1px solid #000000;
-    padding: 6.0px 3.5px;
+    padding: 7.5px 3.5px;
     text-align: center;
     vertical-align: middle;
     color: #000000;
@@ -1050,7 +1051,7 @@ async function compileQuizBookletHtml() {
         )
         .join('')}
 
-      <div class="mb-section-title">Lesson 2: The De-industrialisation of India: The Company & Handloom Crisis (Q9–Q16)</div>
+      <div class="mb-section-title">Lesson 2: The Company's Raj & 1857 Indian Rebellion (Q9–Q16)</div>
       ${QUIZ_DATA[1].items
         .map(
           (item, i) => `
@@ -1067,7 +1068,7 @@ async function compileQuizBookletHtml() {
         )
         .join('')}
 
-      <div class="mb-section-title">Lesson 3: The 1857 Indian Rebellion: Sepoy Grievances & Rani Lakshmibai (Q17–Q20)</div>
+      <div class="mb-section-title">Lesson 3: Settler Colonialism in Australia (Part 1: Q17–Q20)</div>
       ${QUIZ_DATA[2].items
         .slice(0, 4)
         .map(
@@ -1104,7 +1105,7 @@ async function compileQuizBookletHtml() {
     </div>
 
     <div class="mb-container">
-      <div class="mb-section-title">Lesson 3: The 1857 Indian Rebellion (Continued: Q21–Q24)</div>
+      <div class="mb-section-title">Lesson 3: Settler Colonialism in Australia (Part 2: Q21–Q24)</div>
       ${QUIZ_DATA[2].items
         .slice(4, 8)
         .map(

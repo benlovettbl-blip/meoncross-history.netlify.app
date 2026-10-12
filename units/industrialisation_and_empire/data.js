@@ -2909,14 +2909,14 @@ const industrialisation_and_empire = {
           ],
           source: {
             letter: 'B',
-            title: 'Source B: The Reform Tree (Satirical Engraving on the 1832 Reform Act)',
+            title: 'Source B: The School of Reform (Satirical Lithograph on the 1832 Reform Bill)',
             context:
-              'Satirical print celebrating the Whig government cutting away rotten boroughs like Old Sarum, Gatton, and Newtown on the Isle of Wight, while leaving the core aristocratic tree intact. **Hinge Question:** How does Source B illustrate that the 1832 Reform Act was designed to prune the corrupt branches of Parliament rather than uproot the aristocracy?',
+              'Contemporary satirical print published by S. Gans (May 1831) during the national debate over the Great Reform Act. Prime Minister Earl Grey stands at the classroom lectern drilling anti-reform Tory politicians to conjugate "the verb to reform", while Lord Chancellor Brougham brandishes a giant birch rod and the Duke of Wellington weeps in a dunce’s cap ("I cant Reform"). **Hinge Question:** How does Source B illustrate that parliamentary reform was viewed as a strict national discipline imposed on reluctant defenders of rotten boroughs?',
             hinge_question:
-              'How does Source B illustrate that the 1832 Reform Act was designed to prune the corrupt branches of Parliament rather than uproot the aristocracy?',
-            image: '/images/old_rotten_tree.jpg',
+              'How does Source B illustrate that parliamentary reform was viewed as a strict national discipline imposed on reluctant defenders of rotten boroughs?',
+            image: '/images/school_of_reform.jpg',
             caption:
-              'Source B: Contemporary satirical print: "The Old Rotten Tree", depicting Earl Grey and Lord John Russell hacking away the corrupt rotten borough branches of the British constitution.',
+              'Source B: S. Gans (May 1831): "The School of Reform: Conjugation of the Verb to Reform", depicting Earl Grey forcing Tory opponents of the Reform Bill into submission (British Museum).',
           },
         },
         {
