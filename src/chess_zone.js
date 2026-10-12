@@ -178,9 +178,25 @@ export const DEFAULT_LOCAL_NAME_MAP = {
   p_1789653972946: 'Jake',
   p_1789653960520: 'Ben',
   p_1789653940195: 'Harry M.',
+  p_1791467946326: 'Dillon',
 };
 
 export const CALLSIGN_TO_FIRST_NAME = {
+  // Legacy callsigns to First Name + Initial
+  Grandmaster_01: 'Ethan',
+  Grandmaster_02: 'Austen',
+  Grandmaster_04: 'Will',
+  Grandmaster_07: 'Jacob',
+  Grandmaster_12: 'Harry M.',
+  Knight_04: 'Will',
+  Knight_09: 'Tadhg',
+  Bishop_05: 'Woody',
+  Bishop_10: 'Jake',
+  Rook_03: 'Alex',
+  Rook_08: 'Thomas',
+  Pawn_06: 'Harry C.',
+  Pawn_11: 'Ben',
+  'Swift Rook': 'Dillon',
   'Super Dreadnought': 'Ethan',
   'Jutland Raider': 'Austen',
   'The Iron Duke': 'Alex',
@@ -218,6 +234,7 @@ export const CALLSIGN_TO_FIRST_NAME = {
   Tadhg: 'Tadhg',
   Jake: 'Jake',
   Ben: 'Ben',
+  Dillon: 'Dillon',
 };
 
 // Combinatorial Historical Naval Chess Themes
@@ -4320,6 +4337,8 @@ function renderMatchesTab() {
         .map((m) => {
           const wH = HOUSES[m.whiteHouse] || { name: m.whiteHouse, color: '#334155' };
           const bH = HOUSES[m.blackHouse] || { name: m.blackHouse, color: '#334155' };
+          const whiteDisplay = CALLSIGN_TO_FIRST_NAME[m.white] || m.white;
+          const blackDisplay = CALLSIGN_TO_FIRST_NAME[m.black] || m.black;
 
           let scoreBadge = '';
           if (m.result === '1-0') {
@@ -4340,7 +4359,7 @@ function renderMatchesTab() {
                   <i class="fa-solid fa-chess-pawn"></i>
                 </div>
                 <div>
-                  <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">${m.white}</div>
+                  <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">${whiteDisplay}</div>
                   <span style="font-size: 0.72rem; color: ${wH.color}; font-weight: 700;">${wH.name}</span>
                 </div>
               </div>
@@ -4353,7 +4372,7 @@ function renderMatchesTab() {
                   <i class="fa-solid fa-chess-pawn"></i>
                 </div>
                 <div>
-                  <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">${m.black}</div>
+                  <div style="font-weight: 700; color: #0f172a; font-size: 0.95rem;">${blackDisplay}</div>
                   <span style="font-size: 0.72rem; color: ${bH.color}; font-weight: 700;">${bH.name}</span>
                 </div>
               </div>
@@ -7284,7 +7303,7 @@ window.openAssemblySlideModal = function () {
   });
   const champ = chessState.players.find((p) => p.rank === 1) ||
     sortedByPoints[0] || {
-      name: 'Grandmaster_01',
+      name: 'Club Champion',
       house: 'invincible',
       rating: 1000,
       won: 1,
@@ -7515,7 +7534,7 @@ window.downloadAssemblySlidePNG = function () {
   });
   const champ = chessState.players.find((p) => p.rank === 1) ||
     sortedByPoints[0] || {
-      name: 'Grandmaster_01',
+      name: 'Club Champion',
       house: 'invincible',
       rating: 1000,
       won: 1,
@@ -8153,6 +8172,13 @@ window.applySyncKey = function () {
       ? syncData.checkedInPlayerIds
       : [];
     chessState.knockoutBracket = syncData.knockoutBracket || null;
+    hydratePlayerRealNames(chessState.players);
+    if (Array.isArray(chessState.matches)) {
+      chessState.matches.forEach((m) => {
+        if (CALLSIGN_TO_FIRST_NAME[m.white]) m.white = CALLSIGN_TO_FIRST_NAME[m.white];
+        if (CALLSIGN_TO_FIRST_NAME[m.black]) m.black = CALLSIGN_TO_FIRST_NAME[m.black];
+      });
+    }
     saveChessState(true);
     window.closeChessModal();
     renderChessHubView();
@@ -8170,6 +8196,14 @@ window.applySyncKey = function () {
 };
 
 window.downloadChessBackupJSON = function () {
+  hydratePlayerRealNames(chessState.players);
+  if (Array.isArray(chessState.matches)) {
+    chessState.matches.forEach((m) => {
+      if (CALLSIGN_TO_FIRST_NAME[m.white]) m.white = CALLSIGN_TO_FIRST_NAME[m.white];
+      if (CALLSIGN_TO_FIRST_NAME[m.black]) m.black = CALLSIGN_TO_FIRST_NAME[m.black];
+    });
+  }
+
   let localNames = {};
   try {
     const raw = localStorage.getItem('chess_local_roster_names');
@@ -8225,6 +8259,12 @@ window.handleRestoreBackupFile = function (e) {
         } catch (e) {}
       }
       hydratePlayerRealNames(chessState.players);
+      if (Array.isArray(chessState.matches)) {
+        chessState.matches.forEach((m) => {
+          if (CALLSIGN_TO_FIRST_NAME[m.white]) m.white = CALLSIGN_TO_FIRST_NAME[m.white];
+          if (CALLSIGN_TO_FIRST_NAME[m.black]) m.black = CALLSIGN_TO_FIRST_NAME[m.black];
+        });
+      }
       saveChessState();
       window.closeChessModal();
       renderChessHubView();
