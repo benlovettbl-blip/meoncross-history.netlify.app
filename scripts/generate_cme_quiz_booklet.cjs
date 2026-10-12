@@ -45,35 +45,34 @@ function generateQrSvg(url) {
   }
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
-
 // --------------------------------------------------------------------------
 // APPROVED AUTHENTIC CLASSROOM FOOTERS (24 PAGES)
 // --------------------------------------------------------------------------
 const APPROVED_FOOTERS = [
   'Conflict in the Middle East Master Retrieval Companion • Edexcel Paper 2 • The History Department', // P1
-  'Master Chronology Domino Flowchart • 28 Causal Turning Points (1945–1995) • The History Department', // P2
-  '"Balfour promised in 67 words; Attlee handed it to the UN in 1947: master the post-war baseline."', // P3
-  '"Irgun checked into the King David Hotel with milk churns... and checked Britain out of the Mandate."', // P4
-  '"UN Resolution 181 gave each side a jigsaw puzzle; neither side liked the picture."', // P5
-  '"Czech arms turned the tide in 1948; understand why Arab division was Israel\'s greatest asset."', // P6
-  '"Al-Nakba displaced 700,000 refugees; the 1950 Law of Return rebuilt a nation out of tragedy."', // P7
-  '"Eden thought Nasser was Mussolini on the Nile; Eisenhower promptly reminded Eden what year it was."', // P8
-  '"Water in the desert is worth more than oil: understand why the Headwater Diversion triggered 1967."', // P9
-  '"Operation Focus destroyed Arab air power in 3 hours; total air supremacy determined the 100-hour blitz."', // P10
-  '"UN Resolution 242 omitted \'the\' in English: diplomacy turned on a single definite article."', // P11
-  '"Dawson\'s Field to Munich: explain how asymmetric terrorism thrust Palestinian identity onto global TV."', // P12
-  '"Crossing the Bar-Lev Line on Yom Kippur: underestimating Egyptian planning nearly cost Israel the war."', // P13
-  '"OPEC quadrupled oil prices; Kissinger\'s shuttle diplomacy drew Egypt out of the Soviet orbit."', // P14
-  '"Sadat flew to Jerusalem in 1977; Begin surrendered the Sinai: courage in negotiation wins Grade 9."', // P15
-  '"Operation Peace for Galilee drove the PLO to Tunis, but created Hezbollah and ignited the Intifada."', // P16
-  '"The Children of the Stones proved that military force cannot extinguish a popular uprising."', // P17
-  '"A handshake on the White House lawn: analyze why the Oslo peace process collapsed after 1995."', // P18
-  'Department Marking Bank • Key Topic 1: The Birth of Israel & 1948 War • Verified Marking Model', // P19
-  'Department Marking Bank • Key Topic 1 & 2: Refugees, Suez & Escalation • Verified Marking Model', // P20
-  'Department Marking Bank • Key Topic 2 & 3: Conquered Lands, Yom Kippur & Oil • Verified Marking Model', // P21
-  'Department Marking Bank • Key Topic 3: Camp David, Lebanon, Intifada & Oslo • Verified Marking Model', // P22
-  'Edexcel Paper 2 Period Study Examination Strategy: Question 1 & Question 2 Blueprint • The History Department', // P23
-  'Edexcel Paper 2 Period Study Question 3 Importance Architect & Digital Revision Hub • Departmental Archival Standard', // P24
+  '"Balfour promised in 67 words; Attlee handed it to the UN in 1947: master the post-war baseline."', // P2 (Enquiry 1)
+  '"Irgun checked into the King David Hotel with milk churns... and checked Britain out of the Mandate."', // P3 (Enquiry 2)
+  '"UN Resolution 181 gave each side a jigsaw puzzle; neither side liked the picture."', // P4 (Enquiry 3)
+  '"Czech arms turned the tide in 1948; understand why Arab division was Israel\'s greatest asset."', // P5 (Enquiry 4)
+  '"Al-Nakba displaced 700,000 refugees; the 1950 Law of Return rebuilt a nation out of tragedy."', // P6 (Enquiry 5)
+  '"Eden thought Nasser was Mussolini on the Nile; Eisenhower promptly reminded Eden what year it was."', // P7 (Enquiry 6)
+  '"Water in the desert is worth more than oil: understand why the Headwater Diversion triggered 1967."', // P8 (Enquiry 7)
+  '"Operation Focus destroyed Arab air power in 3 hours; total air supremacy determined the 100-hour blitz."', // P9 (Enquiry 8)
+  '"UN Resolution 242 omitted \'the\' in English: diplomacy turned on a single definite article."', // P10 (Enquiry 9)
+  '"Dawson\'s Field to Munich: explain how asymmetric terrorism thrust Palestinian identity onto global TV."', // P11 (Enquiry 10)
+  '"Crossing the Bar-Lev Line on Yom Kippur: underestimating Egyptian planning nearly cost Israel the war."', // P12 (Enquiry 11)
+  '"OPEC quadrupled oil prices; Kissinger\'s shuttle diplomacy drew Egypt out of the Soviet orbit."', // P13 (Enquiry 12)
+  '"Sadat flew to Jerusalem in 1977; Begin surrendered the Sinai: courage in negotiation wins Grade 9."', // P14 (Enquiry 13)
+  '"Operation Peace for Galilee drove the PLO to Tunis, but created Hezbollah and ignited the Intifada."', // P15 (Enquiry 14)
+  '"The Children of the Stones proved that military force cannot extinguish a popular uprising."', // P16 (Enquiry 15)
+  '"A handshake on the White House lawn: analyze why the Oslo peace process collapsed after 1995."', // P17 (Enquiry 16)
+  'Department Marking Bank • Key Topic 1: The Birth of Israel & 1948 War • Verified Marking Model', // P18
+  'Department Marking Bank • Key Topic 1 & 2: Refugees, Suez & Escalation • Verified Marking Model', // P19
+  'Department Marking Bank • Key Topic 2 & 3: Conquered Lands, Yom Kippur & Oil • Verified Marking Model', // P20
+  'Department Marking Bank • Key Topic 3: Camp David, Lebanon, Intifada & Oslo • Verified Marking Model', // P21
+  'Edexcel Paper 2 Period Study Examination Strategy: Question 1 & Question 2 Blueprint • The History Department', // P22
+  'Edexcel Paper 2 Period Study Question 3 Importance Architect & Practice Bank • The History Department', // P23
+  'Edexcel Paper 2 Period Study • 5 Fatal Pitfalls & Digital Revision Hub • The History Department', // P24
 ];
 
 // --------------------------------------------------------------------------
@@ -175,152 +174,6 @@ const LEDGER_ENTRIES = [
     topicCode: 'KT 3.3',
     title: 'Oslo Accords & Aftermath (1993–95)',
     focus: 'Secret Oslo talks, White House handshake, PA rule & Rabin murder',
-  },
-];
-
-// --------------------------------------------------------------------------
-// MASTER CHRONOLOGY DOMINO FLOWCHART (STRICTLY 1945–1995 • 28 TURNING POINTS)
-// --------------------------------------------------------------------------
-const DOMINO_TIMELINE = [
-  {
-    year: '1945',
-    title: 'Post-WWII Jewish Insurgency',
-    text: 'Haganah, Irgun, and Lehi launch armed sabotage against British Mandate forces; illegal immigration surges.',
-  },
-  {
-    year: 'Jul 1946',
-    title: 'King David Hotel Bombing',
-    text: 'Irgun bombs British administrative HQ in Jerusalem, killing 91; shatters British domestic resolve.',
-  },
-  {
-    year: 'Feb 1947',
-    title: 'Britain Surrenders Mandate',
-    text: 'Attlee and Bevin announce Britain will surrender the Palestine Mandate to the United Nations.',
-  },
-  {
-    year: 'Nov 1947',
-    title: 'UN Resolution 181 Partition Plan',
-    text: 'UN votes 33-13 to partition Palestine (56% Jewish state, 43% Arab state; Jerusalem international).',
-  },
-  {
-    year: 'Dec 1947',
-    title: 'Outbreak of Inter-Communal Civil War',
-    text: 'Arab-Jewish fighting erupts over strategic highways, convoys, and towns across Mandatory Palestine.',
-  },
-  {
-    year: 'Apr 1948',
-    title: 'Deir Yassin & Plan Dalet',
-    text: 'Haganah secures strategic corridors; Irgun attacks Deir Yassin, triggering mass Palestinian flight.',
-  },
-  {
-    year: '14 May 1948',
-    title: 'Declaration of the State of Israel',
-    text: 'David Ben-Gurion proclaims sovereign Jewish statehood as the British Mandate officially expires at midnight.',
-  },
-  {
-    year: '15 May 1948',
-    title: 'Invasion by Five Arab States',
-    text: 'Egypt, Jordan, Syria, Iraq, and Lebanon invade; Israel mobilises the newly unified IDF.',
-  },
-  {
-    year: 'Jun 1948',
-    title: 'Czech Arms Shipments Arrive',
-    text: 'First UN truce allows Israel to import rifles, artillery, and Avia fighter aircraft from Czechoslovakia.',
-  },
-  {
-    year: '1949',
-    title: 'Rhodes Armistices & The Green Line',
-    text: 'Fighting ends; Israel controls 78% of Palestine; Jordan annexes West Bank; Egypt holds Gaza.',
-  },
-  {
-    year: '1948–50',
-    title: 'The Palestinian Nakba & UNRWA',
-    text: '700,000+ Palestinian refugees displaced; UNRWA established; Israel bars repatriation of refugees.',
-  },
-  {
-    year: 'Jul 1950',
-    title: 'Law of Return Passed',
-    text: 'Knesset grants automatic citizenship to all Jewish immigrants, doubling the national population by 1951.',
-  },
-  {
-    year: 'Feb 1955',
-    title: 'Israeli Gaza Reprisal Raid',
-    text: 'IDF paratroopers kill 38 Egyptian soldiers; humiliates Nasser and triggers the Czechoslovak Arms Deal.',
-  },
-  {
-    year: 'Jul 1956',
-    title: 'Nasser Nationalises Suez Canal',
-    text: 'Nasser seizes canal after US cancels Aswan Dam loans, outraging Britain and France.',
-  },
-  {
-    year: 'Oct–Nov 1956',
-    title: 'The Suez Crisis',
-    text: 'Protocol of Sèvres collusion; Israel invades Sinai; US financial threat forces British-French withdrawal.',
-  },
-  {
-    year: 'Jan 1964',
-    title: 'Cairo Summit & Founding of PLO',
-    text: 'Arab League plans Jordan River diversion; Palestine Liberation Organization (PLO) founded under Shukeiri.',
-  },
-  {
-    year: '1966–67',
-    title: 'Samu Raid & Golan Air Clashes',
-    text: 'IDF reprisal raid on Samu and downing of 6 Syrian MiGs over Damascus sharply escalate border hostilities.',
-  },
-  {
-    year: 'May 1967',
-    title: 'Pre-War Escalation & Tiran Blockade',
-    text: 'Nasser expels UNEF, blocks Straits of Tiran, and moves 100,000 troops into Sinai; Jordan signs defence pact.',
-  },
-  {
-    year: '5–10 Jun 1967',
-    title: 'The Six-Day War (100-Hour Blitz)',
-    text: 'Operation Focus destroys Arab air forces in 3 hours; Israel conquers Sinai, Gaza, West Bank, Golan Heights.',
-  },
-  {
-    year: 'Nov 1967',
-    title: 'UN Security Council Resolution 242',
-    text: 'Establishes "Land for Peace" principle with disputed English wording regarding withdrawal from territories.',
-  },
-  {
-    year: 'Sep 1970',
-    title: 'Dawson’s Field & Black September',
-    text: 'PFLP hijacks 4 airliners; King Hussein crushes PLO in civil war, expelling Arafat’s forces to Lebanon.',
-  },
-  {
-    year: 'Sep 1972',
-    title: 'Munich Olympics Massacre',
-    text: 'Black September murders 11 Israeli athletes; Israel responds with covert Operation Wrath of God.',
-  },
-  {
-    year: '6–25 Oct 1973',
-    title: 'The Yom Kippur War',
-    text: 'Egypt breaches Bar-Lev Line; Syria attacks Golan; US airlifts weapons; Sharon crosses Suez; ceasefire.',
-  },
-  {
-    year: '1973–75',
-    title: 'Arab Oil Embargo & Shuttle Diplomacy',
-    text: 'OPEC quadruples crude oil prices; Kissinger brokers Sinai disengagement accords; Suez Canal reopens in 1975.',
-  },
-  {
-    year: 'Sep 1978',
-    title: 'Camp David Accords & 1979 Peace Treaty',
-    text: 'Carter, Sadat, and Begin agree peace; Sinai returned to Egypt; Egypt expelled from Arab League.',
-  },
-  {
-    year: 'Jun 1982',
-    title: 'Israeli Invasion of Lebanon',
-    text: 'Operation Peace for Galilee; siege of Beirut; Sabra & Shatila massacre; PLO evacuated to Tunis.',
-  },
-  {
-    year: 'Dec 1987',
-    title: 'First Intifada Erupts & Hamas Founded',
-    text: 'Jabalya incident sparks grassroots uprising; stone-throwing vs IDF; Hamas founded by Sheikh Yassin.',
-  },
-  {
-    year: '1993–95',
-    title: 'The Oslo Accords & Rabin Assassination',
-    text: '1993 Oslo Accords signed at White House; 1994 Jordan peace; Oslo II signed; Rabin assassinated Nov 1995.',
   },
 ];
 
@@ -563,41 +416,7 @@ function buildHtml() {
       letter-spacing: 0.4px;
     }
 
-    /* Page 2: Chronology Domino Flowchart */
-    .timeline-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3.0px 6px;
-      flex: 1;
-      margin: 2px 0;
-    }
-    .domino-node {
-      border: 1.2px solid #0f172a;
-      border-left: 3.5px solid #0f172a;
-      border-radius: 2px;
-      padding: 2.2px 5px;
-      background: #ffffff;
-      display: flex;
-      gap: 5px;
-      align-items: flex-start;
-      line-height: 1.16;
-    }
-    .domino-year {
-      background: #0f172a;
-      color: #ffffff;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.8pt;
-      font-weight: 900;
-      padding: 1px 3.5px;
-      border-radius: 2px;
-      white-space: nowrap;
-      letter-spacing: 0.2px;
-    }
-    .domino-body { flex: 1; }
-    .domino-title { font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #000000; display: block; margin-bottom: 0.5px; }
-    .domino-desc { font-family: 'Georgia', serif; font-size: 7.0pt; color: #222222; }
-
-    /* Enquiry Pages (Pages 3–18) */
+    /* Enquiry Pages (Pages 2–17: 16 Enquiries) */
     .lesson-meta-bar {
       background: #f8fafc;
       border-left: 4px solid #0f172a;
@@ -1060,8 +879,8 @@ function buildHtml() {
       line-height: 1.22;
     }
 
-    /* Page 24: Period Study Question 3 Importance & Digital Revision Hub */
-    .strat-meta-bar-24 {
+    /* Page 23: Period Study Question 3 Importance Architect & Practice Bank */
+    .strat-meta-bar-23 {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -1069,33 +888,33 @@ function buildHtml() {
       color: #ffffff;
       padding: 3.5px 8px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.4pt;
       font-weight: 700;
       letter-spacing: 0.3px;
       border-radius: 2px;
       margin-bottom: 2px;
     }
-    .strat-meta-bar-24 strong { color: #f8fafc; font-weight: 900; text-transform: uppercase; }
-    .strat-stack-24 {
+    .strat-meta-bar-23 strong { color: #f8fafc; font-weight: 900; text-transform: uppercase; }
+    .strat-stack-23 {
       display: flex;
       flex-direction: column;
       flex: 1;
       justify-content: space-between;
-      gap: 5px;
+      gap: 4px;
       margin: 1px 0;
     }
-    .strat-card-24 {
-      border: 1.4px solid #0f172a;
+    .strat-card-q3 {
+      border: 1.3px solid #0f172a;
       border-radius: 2px;
-      padding: 6.5px 9px;
+      padding: 4.5px 7.5px;
       background: #ffffff;
       display: flex;
       flex-direction: column;
-      gap: 4px;
+      gap: 2.5px;
     }
-    .strat-header-24 {
+    .strat-header-23 {
       font-family: 'Inter', sans-serif;
-      font-size: 9.4pt;
+      font-size: 8.8pt;
       font-weight: 900;
       color: #0f172a;
       text-transform: uppercase;
@@ -1108,10 +927,10 @@ function buildHtml() {
       letter-spacing: 0.3px;
     }
     .strat-header-badge {
-      font-size: 7.1pt;
+      font-size: 6.8pt;
       background: #e2e8f0;
       color: #0f172a;
-      padding: 1.5px 6px;
+      padding: 1px 5px;
       border-radius: 2px;
       font-weight: 800;
     }
@@ -1119,29 +938,71 @@ function buildHtml() {
       border: 1px solid #0284c7;
       background: #f0f9ff;
       border-left: 3.5px solid #0284c7;
-      padding: 3.5px 7px;
+      padding: 2.5px 6px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.5pt;
-      line-height: 1.25;
+      font-size: 7.1pt;
+      line-height: 1.22;
       color: #0369a1;
       font-weight: 600;
+    }
+    .strat-model-q3-box {
+      border: 1px solid #0284c7;
+      border-left: 3.5px solid #0284c7;
+      background: #f0f9ff;
+      padding: 3.5px 6px;
+      border-radius: 2px;
+      font-size: 6.9pt;
+      line-height: 1.22;
+      color: #0c4a6e;
+    }
+    .strat-model-q3-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      color: #0369a1;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 1.5px;
+    }
+    .strat-model-q3-stem {
+      font-family: 'Georgia', serif;
+      font-size: 7.0pt;
+      color: #0f172a;
+      margin-bottom: 1.5px;
+    }
+    .strat-model-q3-body {
+      font-family: 'Georgia', serif;
+      font-size: 6.9pt;
+      line-height: 1.22;
+      color: #1e293b;
+      font-style: italic;
+      margin-bottom: 2px;
+    }
+    .strat-model-q3-breakdown {
+      font-family: 'Inter', sans-serif;
+      font-size: 6.6pt;
+      line-height: 1.20;
+      color: #0369a1;
+      border-top: 1px dashed #bae6fd;
+      padding-top: 1.5px;
     }
     .strat-q3-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4px 7.5px;
+      gap: 3px 6.5px;
     }
     .strat-q3-card {
       border: 1px solid #cbd5e1;
       border-left: 3px solid #0f172a;
       background: #f8fafc;
-      padding: 3.8px 7px;
+      padding: 3px 5.5px;
       border-radius: 2px;
     }
     .strat-q3-header {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.2pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 1px;
@@ -1152,32 +1013,32 @@ function buildHtml() {
     .strat-q3-focus {
       color: #1e3a8a;
       font-weight: 800;
-      font-size: 7.2pt;
+      font-size: 6.8pt;
     }
     .strat-q3-options {
       font-family: 'Georgia', serif;
-      font-size: 7.4pt;
-      line-height: 1.24;
+      font-size: 6.9pt;
+      line-height: 1.20;
       color: #1e293b;
     }
     .strat-starters-grid {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
-      gap: 5.5px;
+      gap: 4.5px;
     }
     .strat-starter-box {
       border: 1px solid #cbd5e1;
       background: #f8fafc;
-      padding: 4px 7px;
+      padding: 3px 5.5px;
       border-radius: 2px;
       font-family: 'Georgia', serif;
-      font-size: 7.4pt;
-      line-height: 1.24;
+      font-size: 6.9pt;
+      line-height: 1.22;
       color: #1e293b;
     }
     .strat-starter-title {
       font-family: 'Inter', sans-serif;
-      font-size: 7.6pt;
+      font-size: 7.2pt;
       font-weight: 800;
       color: #0f172a;
       margin-bottom: 1.5px;
@@ -1185,42 +1046,117 @@ function buildHtml() {
     .strat-criteria-box {
       border: 1px dashed #0f172a;
       background: #f1f5f9;
-      padding: 4px 7.5px;
+      padding: 3px 6px;
       border-radius: 2px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
-      line-height: 1.25;
+      font-size: 6.9pt;
+      line-height: 1.22;
       color: #1e293b;
     }
-    .strat-traps-box-p24 {
+
+    /* Page 24: Outside Back Cover: Traps, Spaced Learning & Revision Hub */
+    .back-cover-banner {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 4.5px 10px;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+      font-size: 8.2pt;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      margin-bottom: 2px;
+    }
+    .back-title-group {
+      text-align: center;
+      padding: 2px 0;
+      border-bottom: 1.6px solid #0f172a;
+      margin-bottom: 3px;
+    }
+    .back-main-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 13.5pt;
+      font-weight: 900;
+      margin: 0 0 1px 0;
+      line-height: 1.1;
+      color: #000000;
+    }
+    .back-sub-title {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.2pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      color: #334155;
+      margin: 0;
+    }
+    .back-traps-box {
       border: 1.3px solid #b91c1c;
       border-left: 5px solid #b91c1c;
       background: #fef2f2;
-      padding: 5.5px 9.5px;
+      padding: 5px 8px;
       border-radius: 2px;
       display: flex;
       flex-direction: column;
-      gap: 3.5px;
+      gap: 3px;
     }
-    .strat-traps-header-p24 {
+    .back-traps-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #fecaca;
       padding-bottom: 2px;
     }
-    .strat-traps-grid-p24 {
+    .back-traps-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3px 12px;
       font-family: 'Inter', sans-serif;
-      font-size: 7.4pt;
+      font-size: 7.2pt;
       line-height: 1.25;
       color: #7f1d1d;
     }
     .strat-trap-item strong {
       color: #991b1b;
       font-weight: 800;
+    }
+    .back-protocol-box {
+      border: 1.3px solid #0f172a;
+      border-left: 4.5px solid #0f172a;
+      background: #f8fafc;
+      padding: 5px 8px;
+      border-radius: 2px;
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .back-protocol-header {
+      font-family: 'Inter', sans-serif;
+      font-size: 7.8pt;
+      font-weight: 900;
+      color: #0f172a;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 2px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+    }
+    .back-protocol-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4px 10px;
+      font-family: 'Georgia', serif;
+      font-size: 7.1pt;
+      line-height: 1.24;
+      color: #1e293b;
+    }
+    .back-protocol-item strong {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      color: #0f172a;
     }
     .back-hub-grid-wrap {
       border: 1.4px solid #0f172a;
@@ -1239,13 +1175,13 @@ function buildHtml() {
       font-family: 'Inter', sans-serif;
     }
     .back-hub-banner-title {
-      font-size: 8.0pt;
+      font-size: 7.8pt;
       font-weight: 900;
       letter-spacing: 0.4px;
       text-transform: uppercase;
     }
     .back-hub-banner-sub {
-      font-size: 6.9pt;
+      font-size: 6.8pt;
       color: #94a3b8;
       font-weight: 700;
     }
@@ -1267,8 +1203,8 @@ function buildHtml() {
       gap: 2.5px;
     }
     .hub-gw-qr {
-      width: 63px;
-      height: 63px;
+      width: 66px;
+      height: 66px;
       background: #ffffff;
       padding: 1px;
       border: 1px solid #e2e8f0;
@@ -1302,12 +1238,17 @@ function buildHtml() {
       color: #475569;
       line-height: 1.18;
     }
-    .back-hub-url {
+    .back-brand-strip {
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      border-radius: 2px;
+      padding: 3px 8px;
+      text-align: center;
       font-family: 'Inter', sans-serif;
-      font-size: 8.0pt;
-      font-weight: 900;
-      color: #0f172a;
-      letter-spacing: 0.4px;
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      letter-spacing: 0.3px;
     }
   </style>
 </head>
@@ -1417,7 +1358,7 @@ function buildHtml() {
 
       <div class="cover-protocol-box">
         <strong class="proto-title">Department Retrieval Protocol &amp; Spaced Learning Standards:</strong>
-        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism or significance). Total: 8 questions × 2 marks = <strong>16 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 19–22. Scores below 12/16 trigger immediate digital flashcard consolidation.
+        Complete one enquiry weekly as targeted homework. Each question has a 2-mark structure: <strong>Core Fact</strong> (Line 1: 1 mark for the precise historical anchor, date, key figure, or battle) and <strong>Historical Explanation</strong> (Line 2: 1 mark for the causal mechanism or significance). Total: 8 questions × 2 marks = <strong>16 marks per enquiry</strong>. Self-assess in class using green pen against the verified Department Marking Bank on pages 18–21. Scores below 12/16 trigger immediate digital flashcard consolidation.
       </div>
     </div>
 
@@ -1430,46 +1371,10 @@ function buildHtml() {
 `;
 
   // =========================================================================
-  // PAGE 2: MASTER CHRONOLOGY DOMINO FLOWCHART (1945–1995 • 28 NODES)
-  // =========================================================================
-  html += `
-  <div class="page-container" id="page-2">
-    <div class="running-header">
-      <span>Key Chronology &amp; Causal Turning Points</span>
-      <span>Conflict in the Middle East (1945–1995)</span>
-    </div>
-
-    <div class="lesson-meta-bar" style="margin-bottom: 2px;">
-      <h2 class="lesson-meta-title">Master Chronology Domino Flowchart (1945–1995)</h2>
-      <div class="lesson-meta-enquiry">28 Causal Turning Points Across 50 Years of Middle Eastern Conflict and Diplomacy</div>
-    </div>
-
-    <div class="timeline-grid">
-      ${DOMINO_TIMELINE.map(
-        (node) => `
-      <div class="domino-node">
-        <span class="domino-year">${node.year}</span>
-        <div class="domino-body">
-          <span class="domino-title">${node.title}</span>
-          <span class="domino-desc">${node.text}</span>
-        </div>
-      </div>`,
-      ).join('')}
-    </div>
-
-    <div class="page-footer-strip">
-      <span class="footer-page-num">Page 2</span>
-      <span class="footer-quip">${APPROVED_FOOTERS[1]}</span>
-      <span class="footer-page-num">1HI0/2B</span>
-    </div>
-  </div>
-`;
-
-  // =========================================================================
-  // PAGES 3–18: 16 ENQUIRY RETRIEVAL PAGES (8 QUESTIONS PER PAGE)
+  // PAGES 2–17: 16 ENQUIRY RETRIEVAL PAGES (8 QUESTIONS PER PAGE)
   // =========================================================================
   CME_PEARSON_QUIZ_BANK.forEach((enq, idx) => {
-    const pageNum = idx + 3;
+    const pageNum = idx + 2;
     const cleanTrap = (enq.examinerTrap || '').replace(/^Examiner Warning:\s*/i, '');
     html += `
   <div class="page-container" id="page-${pageNum}">
@@ -1534,7 +1439,7 @@ function buildHtml() {
   });
 
   // =========================================================================
-  // PAGES 19–22: 4-PAGE DEPARTMENT MARKING BANK (4 ENQUIRIES PER PAGE)
+  // PAGES 18–21: 4-PAGE DEPARTMENT MARKING BANK (4 ENQUIRIES PER PAGE)
   // =========================================================================
   const MARKING_PAGES = [
     {
@@ -1556,7 +1461,7 @@ function buildHtml() {
   ];
 
   MARKING_PAGES.forEach((mp, mpIdx) => {
-    const pageNum = 19 + mpIdx;
+    const pageNum = 18 + mpIdx;
     html += `
   <div class="page-container" id="page-${pageNum}">
     <div class="running-header">
@@ -1605,10 +1510,10 @@ function buildHtml() {
   });
 
   // =========================================================================
-  // PAGE 23: EDEXCEL PAPER 2 EXAMINATION STRATEGY (QUESTION 1 & QUESTION 2)
+  // PAGE 22: EDEXCEL PAPER 2 EXAMINATION STRATEGY (QUESTION 1 & QUESTION 2)
   // =========================================================================
   html += `
-  <div class="page-container" id="page-23">
+  <div class="page-container" id="page-22">
     <div class="running-header">
       <span>Edexcel Paper 2 Period Study Examination Strategy</span>
       <span>Question 1 &amp; Question 2 Blueprints &amp; Master Banks (1HI0/2B)</span>
@@ -1795,6 +1700,206 @@ function buildHtml() {
     </div>
 
     <div class="page-footer-strip">
+      <span class="footer-page-num">Page 22</span>
+      <span class="footer-quip">${APPROVED_FOOTERS[21]}</span>
+      <span class="footer-page-num">1HI0/2B</span>
+    </div>
+  </div>
+`;
+
+  // =========================================================================
+  // PAGE 23: EDEXCEL PAPER 2 QUESTION 3 IMPORTANCE ARCHITECT & PRACTICE BANK
+  // =========================================================================
+  html += `
+  <div class="page-container" id="page-23">
+    <div class="running-header">
+      <span>Edexcel Paper 2 Period Study Examination Strategy</span>
+      <span>Question 3 Importance Architect &amp; Practice Bank (1HI0/2B)</span>
+    </div>
+
+    <div class="strat-meta-bar-23">
+      <span><strong>Question 3 Importance Analysis Architect:</strong> Grade 9 Evaluative Structure</span>
+      <span>16 Marks Total (Choose Exactly 2 of 3 Options: 2 × 8m) • Target: 30 Mins (15 Mins Each)</span>
+    </div>
+
+    <div class="strat-stack-23">
+      <!-- 16-MARK IMPORTANCE ARCHITECT CARD -->
+      <div class="strat-card-q3">
+        <div class="strat-header-23">
+          <span>Question 3: The Importance Analysis Architect (2 × 8 Marks = 16 Marks)</span>
+          <span class="strat-header-badge">2 × 8m • 30 Mins (15 Mins Each)</span>
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #1e293b; margin-bottom: 1.5px;">
+          <strong>Official Stem:</strong> <em>"Explain two of the following: The importance of [Event A] for [Focus]... The importance of [Event B] for [Focus]... The importance of [Event C] for [Focus]..."</em>
+        </div>
+
+        <div class="strat-selection-protocol">
+          <strong>The 2-Minute Selection Rule:</strong> Edexcel provides 3 options—you must choose <strong>EXACTLY TWO</strong>. Select the two events where you can deploy the most specific factual anchors. Never attempt all three; doing so wastes 15 minutes because examiners mark only two!
+        </div>
+
+        <div class="strat-grid-3col" style="margin-top: 2px;">
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Selection &amp; Planning (2 Mins)</div>
+            <div>• Audit the 3 options against the stated focus.</div>
+            <div>• Pick the 2 options where you recall exact dates, numbers, treaties, and causal links.</div>
+            <div>• Write 2 distinct 8-mark answers.</div>
+          </div>
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Para 1: Immediate Impact [4m]</div>
+            <div>• <strong>Focus Anchor:</strong> How the event immediately transformed the specified question focus.</div>
+            <div>• <strong>Factual Proof:</strong> 2 precise historical facts.</div>
+            <div>• <em>"The primary immediate importance lay in..."</em></div>
+          </div>
+          <div class="strat-subbox">
+            <div class="strat-subbox-title">Para 2: Long-Term Legacy [4m]</div>
+            <div>• <strong>Strategic Precedent:</strong> Lasting realignment or subsequent conflict caused.</div>
+            <div>• <strong>Broader Trajectory:</strong> Shift in diplomacy or military balance.</div>
+            <div>• <em>"In the longer term, this proved decisive as..."</em></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- LEVEL 3 (GRADE 9) EXEMPLAR MODEL FOR QUESTION 3 -->
+      <div class="strat-model-q3-box">
+        <div class="strat-model-q3-header">
+          <span>Verified Grade 9 Exemplar Answer [Level 3 • 8/8 Marks]</span>
+          <span style="font-weight: 600; color: #475569;">Target Time: 13 Mins</span>
+        </div>
+        <div class="strat-model-q3-stem">
+          <strong>Practice Prompt:</strong> <em>"Explain the importance of the SS Exodus incident (1947) for the birth of the State of Israel." [8 marks]</em>
+        </div>
+        <div class="strat-model-q3-body">
+          "The primary immediate importance of the SS Exodus lay in completely destroying British moral authority and humiliating Foreign Secretary Ernest Bevin on the world stage. In July 1947, Royal Navy destroyers rammed the refugee ship carrying 4,500 Holocaust survivors off Haifa, and Bevin forcibly returned them to internment camps in British-occupied Germany. Photographic evidence of British troops violently clubbing unarmed survivors triggered intense public outrage across the United States. In the longer term, this proved decisive because it compelled US President Truman to threaten severe financial penalties, which forced Clement Attlee's cabinet to acknowledge that Mandatory Palestine was ungovernable. This accelerated the UN referral and directly ensured the necessary international two-thirds majority to pass UN Partition Resolution 181 in November 1947."
+        </div>
+        <div class="strat-model-q3-breakdown">
+          <strong>Examiner Breakdown (8/8 Marks):</strong> <strong>✓ Immediate Impact:</strong> Analyzes US public outrage and collapse of British moral authority with precise details (4,500 survivors, Bevin). <strong>✓ Long-Term Importance FOR Birth of Israel:</strong> Explicitly links US pressure to the UN referral and the passing of Resolution 181. Direct focus sustained throughout.
+        </div>
+      </div>
+
+      <!-- Question 3 High-Probability Master Bank (8 Specification Triads = 24 Topics) -->
+      <div class="strat-qbank-box" style="padding: 2.5px 5px;">
+        <div class="strat-qbank-title">
+          <span>High-Probability Question 3 Practice Bank (8 Specification Triads = 24 Topics)</span>
+          <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">16 Marks (2 × 8m) • Authentic Pearson Edexcel Option P5 Triads</span>
+        </div>
+        <div class="strat-q3-grid">
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 1: Creation of Israel (1945–49)</span>
+              <span class="strat-q3-focus">Focus: Birth of Israel</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) SS Exodus crisis (1947):</strong> Global fury destroyed British moral authority.<br>
+              • <strong>(b) UN Resolution 181 (1947):</strong> International legal legitimacy for statehood.<br>
+              • <strong>(c) 1949 Armistice Agreements:</strong> Established Green Line borders &amp; 78% land control.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 2: 1956 Suez Crisis</span>
+              <span class="strat-q3-focus">Focus: European Influence</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) Nationalisation of Canal:</strong> Shattered UK/French control over oil transit.<br>
+              • <strong>(b) Protocol of Sèvres:</strong> Secret collusion exposed Western imperial aggression.<br>
+              • <strong>(c) US financial ultimatum:</strong> Ended UK and French independent global power.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 3: Superpower Rivalry (1956–73)</span>
+              <span class="strat-q3-focus">Focus: Cold War Tensions</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) Eisenhower Doctrine (1957):</strong> Pledged US military aid to resist Arab communism.<br>
+              • <strong>(b) Soviet arms to Egypt (1967–73):</strong> Equipped Egypt with SAM air defence umbrella.<br>
+              • <strong>(c) US Op Nickel Grass (1973):</strong> 22,000-ton airlift turned Yom Kippur tide.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 4: Palestinian Nationalism (1964–82)</span>
+              <span class="strat-q3-focus">Focus: Palestinian Identity</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) Battle of Karameh (1968):</strong> Fatah resistance created a heroic Arab legend.<br>
+              • <strong>(b) Munich Olympics attack (1972):</strong> Black September broadcast struggle to 900m viewers.<br>
+              • <strong>(c) 1982 Siege of Beirut:</strong> Expelled 14,000 fighters; shifted PLO to diplomacy.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 5: Search for Peace (1967–95)</span>
+              <span class="strat-q3-focus">Focus: Arab-Israeli Peace</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) UN Resolution 242 (1967):</strong> Established "Land for Peace" principle for all talks.<br>
+              • <strong>(b) Sadat's visit to Jerusalem (1977):</strong> Shattered 30-year taboo at the Knesset.<br>
+              • <strong>(c) 1993 Oslo Accords:</strong> First bilateral recognition between Israel and PLO.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 6: Regional Strategic Shifts (1973–79)</span>
+              <span class="strat-q3-focus">Focus: Regional Diplomacy</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) 1973 Arab Oil Embargo:</strong> Quadrupled prices; showed Arab economic leverage.<br>
+              • <strong>(b) Kissinger's shuttle diplomacy:</strong> Displaced Soviet influence from Cairo.<br>
+              • <strong>(c) Camp David Accords (1978):</strong> Removed Egypt from Arab military coalition.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 7: Security &amp; Conflict (1982–85)</span>
+              <span class="strat-q3-focus">Focus: Israeli Security</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) Op Peace for Galilee (1982):</strong> Cleared PLO artillery; led to Sabra/Shatila.<br>
+              • <strong>(b) South Lebanon Security Zone:</strong> Buffer zone embroiled IDF in 18-year guerilla war.<br>
+              • <strong>(c) Emergence of Hezbollah (1982):</strong> Created Iranian-backed militant threat on border.
+            </div>
+          </div>
+          <div class="strat-q3-card">
+            <div class="strat-q3-header">
+              <span>Triad 8: Popular Uprising &amp; Talks (1987–95)</span>
+              <span class="strat-q3-focus">Focus: Resolving Conflict</span>
+            </div>
+            <div class="strat-q3-options">
+              • <strong>(a) First Intifada (1987–93):</strong> Grassroots uprising forced Israel to negotiate.<br>
+              • <strong>(b) Founding of Hamas (1988):</strong> Rejectionist charter opposed all peace with Israel.<br>
+              • <strong>(c) Assassination of Rabin (1995):</strong> Extremist murder derailed Oslo peace process.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Evaluative Discourse Markers Bank -->
+      <div class="strat-starters-grid">
+        <div class="strat-starter-box">
+          <div class="strat-starter-title">Immediate Impact Stems</div>
+          • <em>"The primary immediate significance of X was..."</em><br>
+          • <em>"This instantly transformed the strategic balance by..."</em>
+        </div>
+        <div class="strat-starter-box">
+          <div class="strat-starter-title">Long-Term Legacy Stems</div>
+          • <em>"In the longer term, X proved decisive because..."</em><br>
+          • <em>"This established the lasting precedent that..."</em>
+        </div>
+        <div class="strat-starter-box">
+          <div class="strat-starter-title">Direct Focus Stems</div>
+          • <em>"With specific regard to [Focus], this proved..."</em><br>
+          • <em>"Consequently, the enduring importance for Y was..."</em>
+        </div>
+      </div>
+
+      <div class="strat-criteria-box">
+        <strong>Level 3 (Grade 9) Examiner Mark Scheme Requirements:</strong>
+        Selects exactly 2 options • Focuses directly on the specified historical relationship rather than describing what happened • Explains both immediate impact and long-term significance • Deploys accurate, detailed historical knowledge throughout.
+      </div>
+    </div>
+
+    <div class="page-footer-strip">
       <span class="footer-page-num">Page 23</span>
       <span class="footer-quip">${APPROVED_FOOTERS[22]}</span>
       <span class="footer-page-num">1HI0/2B</span>
@@ -1803,193 +1908,59 @@ function buildHtml() {
 `;
 
   // =========================================================================
-  // PAGE 24: EDEXCEL PAPER 2 QUESTION 3 IMPORTANCE & DIGITAL REVISION HUB
+  // PAGE 24: OUTSIDE BACK COVER (5 PITFALLS, SPACED PROTOCOL & DIGITAL HUB)
   // =========================================================================
   html += `
   <div class="page-container" id="page-24">
     <div class="running-header">
-      <span>Edexcel Paper 2 Period Study Examination Strategy</span>
-      <span>Question 3 Importance Architect &amp; Back Cover (1HI0/2B)</span>
+      <span>Edexcel GCSE (9–1) History • Paper 2 Period Study</span>
+      <span>Option P5: Conflict in the Middle East, 1945–1995 • Back Cover</span>
     </div>
 
-    <div class="strat-meta-bar-24">
-      <span><strong>Question 3 Importance Analysis Architect:</strong> Grade 9 Evaluative Structure</span>
-      <span>16 Marks Total (Choose Exactly 2 of 3 Options: 2 × 8m) • Target: 30 Mins (15 Mins Each)</span>
+    <div class="back-cover-banner">
+      The History Department • Period Study Examination Safeguards &amp; Revision Hub
     </div>
 
-    <div class="strat-stack-24">
-      <!-- 16-MARK IMPORTANCE ARCHITECT CARD -->
-      <div class="strat-card-24">
-        <div>
-          <div class="strat-header-24">
-            <span>Question 3: The Importance Analysis Architect (2 × 8 Marks = 16 Marks)</span>
-            <span class="strat-header-badge">2 × 8m • 30 Mins (15 Mins Each)</span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.6pt; color: #1e293b; margin-bottom: 2px;">
-            <strong>Official Stem:</strong> <em>"Explain two of the following: The importance of [Event A] for [Focus]... The importance of [Event B] for [Focus]... The importance of [Event C] for [Focus]..."</em>
-          </div>
+    <div class="back-title-group">
+      <h1 class="back-main-title">Conflict in the Middle East, 1945–1995</h1>
+      <p class="back-sub-title">Pearson Edexcel GCSE (9–1) History • Option P5 (Paper 2) • Master Examination Safeguards &amp; Digital Hub</p>
+    </div>
 
-          <div class="strat-selection-protocol">
-            <strong>The 2-Minute Selection Rule:</strong> Edexcel provides 3 options—you must choose <strong>EXACTLY TWO</strong>. Select the two events where you can deploy the most specific factual anchors. Never attempt all three; doing so wastes 15 minutes because examiners mark only two!
-          </div>
-
-          <div class="strat-grid-3col" style="margin-top: 3px;">
-            <div class="strat-subbox">
-              <div class="strat-subbox-title">Selection &amp; Planning (2 Mins)</div>
-              <div>• Audit the 3 options against the stated focus.</div>
-              <div>• Pick the 2 options where you recall exact dates, numbers, treaties, and causal links.</div>
-              <div>• Write 2 distinct 8-mark answers.</div>
-            </div>
-            <div class="strat-subbox">
-              <div class="strat-subbox-title">Para 1: Immediate Impact [4m]</div>
-              <div>• <strong>Focus Anchor:</strong> How the event immediately transformed the specified question focus.</div>
-              <div>• <strong>Factual Proof:</strong> 2 precise historical facts.</div>
-              <div>• <em>"The primary immediate importance lay in..."</em></div>
-            </div>
-            <div class="strat-subbox">
-              <div class="strat-subbox-title">Para 2: Long-Term Legacy [4m]</div>
-              <div>• <strong>Strategic Precedent:</strong> Lasting realignment or subsequent conflict caused.</div>
-              <div>• <strong>Broader Trajectory:</strong> Shift in diplomacy or military balance.</div>
-              <div>• <em>"In the longer term, this proved decisive as..."</em></div>
-            </div>
-          </div>
+    <div class="page-body-full" style="justify-content: space-between;">
+      <!-- EXAMINER PITFALLS 5-TRAP CALLOUT GRID -->
+      <div class="back-traps-box">
+        <div class="back-traps-header">
+          <span class="trap-tag" style="background: #b91c1c;">EXAMINER PITFALLS</span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #7f1d1d;">5 Fatal Period Study Traps &amp; Cap Risk Callout</span>
         </div>
-
-        <!-- Question 3 High-Probability Master Bank (8 Specification Triads = 24 Topics) -->
-        <div class="strat-qbank-box" style="padding: 2.5px 5px;">
-          <div class="strat-qbank-title">
-            <span>High-Probability Question 3 Practice Bank (8 Specification Triads = 24 Topics)</span>
-            <span style="font-size: 6.5pt; font-weight: 700; color: #475569;">16 Marks (2 × 8m) • Authentic Pearson Edexcel Option P5 Triads</span>
-          </div>
-          <div class="strat-q3-grid">
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 1: Creation of Israel (1945–49)</span>
-                <span class="strat-q3-focus">Focus: Birth of Israel</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) SS Exodus crisis (1947):</strong> Global fury destroyed British moral authority.<br>
-                • <strong>(b) UN Resolution 181 (1947):</strong> International legal legitimacy for statehood.<br>
-                • <strong>(c) 1949 Armistice Agreements:</strong> Established Green Line borders &amp; 78% land control.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 2: 1956 Suez Crisis</span>
-                <span class="strat-q3-focus">Focus: European Influence</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) Nationalisation of Canal:</strong> Shattered UK/French control over oil transit.<br>
-                • <strong>(b) Protocol of Sèvres:</strong> Secret collusion exposed Western imperial aggression.<br>
-                • <strong>(c) US financial ultimatum:</strong> Ended UK and French independent global power.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 3: Superpower Rivalry (1956–73)</span>
-                <span class="strat-q3-focus">Focus: Cold War Tensions</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) Eisenhower Doctrine (1957):</strong> Pledged US military aid to resist Arab communism.<br>
-                • <strong>(b) Soviet arms to Egypt (1967–73):</strong> Equipped Egypt with SAM air defence umbrella.<br>
-                • <strong>(c) US Op Nickel Grass (1973):</strong> 22,000-ton airlift turned Yom Kippur tide.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 4: Palestinian Nationalism (1964–82)</span>
-                <span class="strat-q3-focus">Focus: Palestinian Identity</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) Battle of Karameh (1968):</strong> Fatah resistance created a heroic Arab legend.<br>
-                • <strong>(b) Munich Olympics attack (1972):</strong> Black September broadcast struggle to 900m viewers.<br>
-                • <strong>(c) 1982 Siege of Beirut:</strong> Expelled 14,000 fighters; shifted PLO to diplomacy.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 5: Search for Peace (1967–95)</span>
-                <span class="strat-q3-focus">Focus: Arab-Israeli Peace</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) UN Resolution 242 (1967):</strong> Established "Land for Peace" principle for all talks.<br>
-                • <strong>(b) Sadat's visit to Jerusalem (1977):</strong> Shattered 30-year taboo at the Knesset.<br>
-                • <strong>(c) 1993 Oslo Accords:</strong> First bilateral recognition between Israel and PLO.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 6: Regional Strategic Shifts (1973–79)</span>
-                <span class="strat-q3-focus">Focus: Regional Diplomacy</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) 1973 Arab Oil Embargo:</strong> Quadrupled prices; showed Arab economic leverage.<br>
-                • <strong>(b) Kissinger's shuttle diplomacy:</strong> Displaced Soviet influence from Cairo.<br>
-                • <strong>(c) Camp David Accords (1978):</strong> Removed Egypt from Arab military coalition.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 7: Security &amp; Conflict (1982–85)</span>
-                <span class="strat-q3-focus">Focus: Israeli Security</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) Op Peace for Galilee (1982):</strong> Cleared PLO artillery; led to Sabra/Shatila.<br>
-                • <strong>(b) South Lebanon Security Zone:</strong> Buffer zone embroiled IDF in 18-year guerilla war.<br>
-                • <strong>(c) Emergence of Hezbollah (1982):</strong> Created Iranian-backed militant threat on border.
-              </div>
-            </div>
-            <div class="strat-q3-card">
-              <div class="strat-q3-header">
-                <span>Triad 8: Popular Uprising &amp; Talks (1987–95)</span>
-                <span class="strat-q3-focus">Focus: Resolving Conflict</span>
-              </div>
-              <div class="strat-q3-options">
-                • <strong>(a) First Intifada (1987–93):</strong> Grassroots uprising forced Israel to negotiate.<br>
-                • <strong>(b) Founding of Hamas (1988):</strong> Rejectionist charter opposed all peace with Israel.<br>
-                • <strong>(c) Assassination of Rabin (1995):</strong> Extremist murder derailed Oslo peace process.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Evaluative Discourse Markers Bank -->
-        <div class="strat-starters-grid">
-          <div class="strat-starter-box">
-            <div class="strat-starter-title">Immediate Impact Stems</div>
-            • <em>"The primary immediate significance of X was..."</em><br>
-            • <em>"This instantly transformed the strategic balance by..."</em>
-          </div>
-          <div class="strat-starter-box">
-            <div class="strat-starter-title">Long-Term Legacy Stems</div>
-            • <em>"In the longer term, X proved decisive because..."</em><br>
-            • <em>"This established the lasting precedent that..."</em>
-          </div>
-          <div class="strat-starter-box">
-            <div class="strat-starter-title">Direct Focus Stems</div>
-            • <em>"With specific regard to [Focus], this proved..."</em><br>
-            • <em>"Consequently, the enduring importance for Y was..."</em>
-          </div>
-        </div>
-
-        <div class="strat-criteria-box">
-          <strong>Level 3 (Grade 9) Examiner Mark Scheme Requirements:</strong>
-          Selects exactly 2 options • Focuses directly on the specified historical relationship rather than describing what happened • Explains both immediate impact and long-term significance • Deploys accurate, detailed historical knowledge throughout.
+        <div class="back-traps-grid">
+          <div class="strat-trap-item"><strong>Trap 1 (Q1 Consequence):</strong> Describing the event instead of its consequence. Caps mark at Level 1 (1–2/4). Focus 100% on the aftermath and lasting results.</div>
+          <div class="strat-trap-item"><strong>Trap 2 (Q1 Consequence):</strong> Writing two consequences. Edexcel awards marks for ONE consequence only; writing two wastes 5 valuable minutes with 0 additional marks.</div>
+          <div class="strat-trap-item"><strong>Trap 3 (Q2 Narrative):</strong> Writing a purely descriptive timeline without causal connectives. Caps answer at Level 2 (4/8). Every paragraph must link Event A to Event B.</div>
+          <div class="strat-trap-item"><strong>Trap 4 (Q2 Narrative):</strong> Omitting own knowledge beyond stimulus points. Level 3 (7–8 marks) is strictly locked (capped at 5/8) without outside facts.</div>
+          <div class="strat-trap-item" style="grid-column: span 2;"><strong>Trap 5 (Q3 Importance):</strong> Attempting all 3 options instead of exactly 2, or writing a narrative of the event without explaining its importance FOR the stated focus.</div>
         </div>
       </div>
 
-      <!-- EXAMINER PITFALLS 5-TRAP CALLOUT GRID -->
-      <div class="strat-traps-box-p24">
-        <div class="strat-traps-header-p24">
-          <span class="trap-tag" style="background: #b91c1c;">EXAMINER PITFALLS</span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #7f1d1d;">5 Fatal Period Study Traps &amp; Cap Risk Callout</span>
+      <!-- SPACED LEARNING & HOMEWORK PROTOCOL BOX -->
+      <div class="back-protocol-box">
+        <div class="back-protocol-header">
+          <span>Department Spaced Learning &amp; Homework Protocol</span>
+          <span style="font-size: 6.8pt; color: #475569; font-weight: 700;">16 Enquiries • 128 Core Questions • Verified Marking Bank</span>
         </div>
-        <div class="strat-traps-grid-p24">
-          <div class="strat-trap-item"><strong>Trap 1 (Q1):</strong> Describing the event instead of its consequence. Caps mark at Level 1 (1–2/4). Focus 100% on aftermath.</div>
-          <div class="strat-trap-item"><strong>Trap 2 (Q1):</strong> Writing two consequences. Edexcel awards marks for ONE consequence only; writing two wastes 5 valuable minutes.</div>
-          <div class="strat-trap-item"><strong>Trap 3 (Q2):</strong> Writing a chronological story without causal connectors. Caps answer at Level 2 (4/8). Every paragraph must link A to B.</div>
-          <div class="strat-trap-item"><strong>Trap 4 (Q2):</strong> Omitting own knowledge beyond stimulus points. Level 3 is strictly locked (capped at 5/8) without outside facts.</div>
-          <div class="strat-trap-item" style="grid-column: span 2;"><strong>Trap 5 (Q3):</strong> Attempting all 3 options instead of exactly 2, or writing a narrative of the event without explaining its importance FOR the stated focus.</div>
+        <div class="back-protocol-grid">
+          <div class="back-protocol-item">
+            <strong>1. Weekly Formative Routine:</strong> Complete one enquiry weekly (8 questions × 2 marks = 16 marks). Submit for parent signature on Page 1 before class review.
+          </div>
+          <div class="back-protocol-item">
+            <strong>2. Dual-Line Retrieval Architecture:</strong> Line 1 (Core Fact) anchors the substantive historical knowledge; Line 2 (Explanation) articulates the causal mechanism or historical significance.
+          </div>
+          <div class="back-protocol-item">
+            <strong>3. Green-Pen DIRT Review:</strong> Self-assess in class against the verified Department Marking Bank on pages 18–21. Record scores and tick RAG rating on front cover ledger.
+          </div>
+          <div class="back-protocol-item">
+            <strong>4. Digital Flashcard Intervention:</strong> Any enquiry score below 12/16 triggers immediate consolidation via the QR gateways below for interactive recall practice.
+          </div>
         </div>
       </div>
 
@@ -2033,6 +2004,11 @@ function buildHtml() {
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- COMMERCIAL SCHOOL COVER CUSTOMIZER STANDARD STRIP -->
+      <div class="back-brand-strip" data-department-name="The History Department">
+        <span class="school-brand-target">The History Department</span> • GCSE History Revision Hub • Independent Commercial Edition
       </div>
     </div>
 

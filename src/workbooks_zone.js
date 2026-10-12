@@ -300,7 +300,7 @@ const UNIT_PUBLICATIONS = {
           label: 'Complete Unit (128 Core Questions & Answers)',
           title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
           pages: '24 Pages (A4)',
-          desc: 'All 128 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Spaced retrieval protocol, 28-point chronology flowchart, front tracking ledger, and complete Marking Bank.',
+          desc: 'All 128 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Immediate Page 2 retrieval quizzing, front tracking ledger, complete Marking Bank, and Paper 2 exam strategy.',
           readUrl: '/units/cme_new/cme_master_retrieval_companion.html',
           pdfUrl: '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
         },
