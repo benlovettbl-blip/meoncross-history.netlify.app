@@ -54,41 +54,27 @@ export function renderDashboard() {
   let html = `
     <div style="max-width: 1180px; margin: 0 auto; padding: 0 20px 60px 20px;">
       
-      <!-- Institutional Masthead & Stage Filters -->
-      <div class="homepage-masthead" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; background: var(--bg-card, #ffffff); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 14px; padding: 16px 22px; margin-bottom: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03);">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 44px; height: 44px; border-radius: 10px; background: linear-gradient(135deg, #1e3a8a, #2563eb); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; flex-shrink: 0; box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <div>
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <h1 style="margin: 0; font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; color: var(--text-main, #0f172a); letter-spacing: -0.01em;">The History Revision Hub</h1>
-              <span style="background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-size: 0.68rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase; letter-spacing: 0.05em;">Curriculum Workspace</span>
-            </div>
-            <p style="margin: 3px 0 0 0; font-size: 0.8rem; color: var(--text-muted, #64748b);">
-              Key Stage 3 &amp; Edexcel GCSE (9–1) History • Disciplinary Knowledge, Primary Evidence &amp; Visual Culture
-            </p>
-          </div>
+      <!-- Unified Curriculum Navigation & Filter Toolbar -->
+      <div class="homepage-nav-toolbar" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; background: var(--bg-card, #ffffff); border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 12px; padding: 8px 14px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+        
+        <!-- Stage Filters -->
+        <div class="stage-filter-group" style="display: inline-flex; align-items: center; gap: 4px; background: #f1f5f9; border-radius: 8px; padding: 3px;">
+          <button class="stage-filter-btn active" data-stage="all" style="background: #0f172a; color: #ffffff; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">All Syllabuses</button>
+          <button class="stage-filter-btn" data-stage="ks3" style="background: transparent; color: #475569; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">Key Stage 3</button>
+          <button class="stage-filter-btn" data-stage="gcse" style="background: transparent; color: #475569; border: none; border-radius: 6px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; transition: all 0.15s ease;">GCSE (9–1)</button>
         </div>
 
-        <!-- Stage Filter Pills -->
-        <div class="stage-filter-group" style="display: inline-flex; align-items: center; gap: 6px; background: #f8fafc; border: 1.5px solid var(--border-glass, #e2e8f0); border-radius: 30px; padding: 4px; box-shadow: inset 0 1px 3px rgba(0,0,0,0.04);">
-          <button class="stage-filter-btn active" data-stage="all" style="background: #1e3a8a; color: #ffffff; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease; box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);">All Syllabuses</button>
-          <button class="stage-filter-btn" data-stage="ks3" style="background: transparent; color: #64748b; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">Key Stage 3</button>
-          <button class="stage-filter-btn" data-stage="gcse" style="background: transparent; color: #64748b; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">GCSE (9–1)</button>
-          <button class="stage-filter-btn" data-stage="fieldwork" style="background: transparent; color: #64748b; border: none; border-radius: 20px; padding: 6px 14px; font-size: 0.78rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">Fieldwork</button>
-        </div>
+        <!-- Fast Year Jump Chips -->
+        <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;">
+          <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 2px;">Jump:</span>
+          <a href="#year7-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 7</a>
+          <a href="#year8-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year8-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 8</a>
+          <a href="#year9-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 9</a>
+          <a href="#year10-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year10-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; cursor: pointer; transition: all 0.15s;">Year 10</a>
+          <a href="#year11-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year11-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1px solid #fde68a; cursor: pointer; transition: all 0.15s;">Year 11</a>
+          <a href="#gcse-trip-section" class="jump-chip jump-fieldwork" onclick="event.preventDefault(); window.scrollToSection('gcse-trip-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #ede9fe; color: #5b21b6; border: 1px solid #ddd6fe; cursor: pointer; transition: all 0.15s;"><i class="fa-solid fa-compass" style="margin-right:4px;"></i> Fieldwork</a>
+        </nav>
       </div>
-
-      <!-- Year Quick Jump Sub-Navigation -->
-      <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
-        <a href="#year7-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 7</a>
-        <a href="#year8-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year8-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 8</a>
-        <a href="#year9-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 9</a>
-        <a href="#year10-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year10-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s; cursor: pointer;">Year 10 — GCSE</a>
-        <a href="#year11-section" class="jump-chip jump-gcse" onclick="event.preventDefault(); window.scrollToSection('year11-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #fef3c7; color: #92400e; border: 1.5px solid #fde68a; transition: all 0.2s; cursor: pointer;">Year 11 — GCSE</a>
-        <a href="#gcse-trip-section" class="jump-chip jump-fieldwork" onclick="event.preventDefault(); window.scrollToSection('gcse-trip-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #ede9fe; color: #5b21b6; border: 1.5px solid #ddd6fe; transition: all 0.2s; cursor: pointer;"><i class="fa-solid fa-compass" style="margin-right:5px;"></i> Ypres Tour (Fieldwork)</a>
-      </nav>
   `;
 
   const units = getUnits();
@@ -144,16 +130,41 @@ export function renderDashboard() {
 
   const renderUnitCard = (unit, index) => {
     const isUnlocked = true;
-    const title = unit.title || unit.id;
-    const desc = unit.desc || unit.enquiry || 'Historical enquiry.';
+    const rawTitle = unit.title || unit.id;
     const imageUrl = unit.homepage_background || unit.cover_image || '';
 
-    let displayTitle = title;
-    let displayDesc = unit.enquiry_question || desc;
+    const unitCanonicalTitles = {
+      water_and_sanitation: 'Water & Sanitation (1250–Present)',
+      medieval_england: 'Medieval England (1066–1485)',
+      early_modern_world: 'Early Modern World (1450–1750)',
+      monarchy_religion_power: 'Crown, Church & Parliament (1517–1689)',
+      first_british_empire: 'The First British Empire (1600–1783)',
+      industrialisation_and_empire: 'The Industrial Revolution (1750–1900)',
+      second_british_empire: 'The Second British Empire (1783–1914)',
+      australia: 'Invasion & Survival in Australia',
+      great_war: 'Causes of the Great War (1890–1914)',
+      great_war_part2: 'The Great War (1914–1919)',
+      the_shoah: 'The Shoah & World War II',
+      cold_war: 'The Cold War (1945–1991)',
+      second_world_war: 'The Second World War',
+      post_war_britain: 'Rights, Protest & Post-War Britain',
+      cme_new: 'Conflict in the Middle East (1945–1995)',
+      weimar_nazi_germany: 'Weimar & Nazi Germany (1918–1939)',
+      edexcel_medicine: 'Medicine Through Time (c.1250–Present)',
+      eee: 'Early Elizabethan England (1558–1588)',
+      usa: 'USA: Conflict at Home & Abroad (1954–1975)',
+    };
 
-    if (title.includes('KS3:') || unit.enquiry_question) {
-      displayTitle = unit.enquiry_question || desc;
-      displayDesc = title;
+    const displayTitle =
+      unitCanonicalTitles[unit.id] || rawTitle.replace(/^(KS3:\s*|Paper\s*\d+:\s*)/i, '').trim();
+
+    let displayEnquiry =
+      unit.enquiry_question ||
+      unit.enquiry ||
+      unit.desc ||
+      'Key disciplinary knowledge and enquiry.';
+    if (displayEnquiry === rawTitle || displayEnquiry.toLowerCase() === rawTitle.toLowerCase()) {
+      displayEnquiry = 'Key concepts, primary source analysis, and historical enquiry.';
     }
 
     const positionFallbacks = {
@@ -173,49 +184,28 @@ export function renderDashboard() {
     const gcseUnitIds = ['cme_new', 'weimar_nazi_germany', 'edexcel_medicine', 'eee', 'usa'];
     const isGcse = gcseUnitIds.includes(unit.id);
     const gcseBadge = isGcse
-      ? `<span style="position:absolute; top:10px; left:10px; z-index:10; background:#f59e0b; color:#fff; font-size:0.65rem; font-weight:800; letter-spacing:0.08em; text-transform:uppercase; padding:3px 9px; border-radius:20px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">GCSE</span>`
+      ? `<span style="position:absolute; top:8px; left:8px; z-index:10; background:#f59e0b; color:#fff; font-size:0.62rem; font-weight:800; letter-spacing:0.06em; text-transform:uppercase; padding:2px 8px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,0.25);">GCSE</span>`
       : '';
 
-    const unitShortNames = {
-      water_and_sanitation: 'Water & Sanitation',
-      medieval_england: 'Medieval England',
-      early_modern_world: 'Early Modern World',
-      industrialisation_and_empire: 'Industrialisation',
-      second_british_empire: 'Second British Empire',
-      australia: 'Australia',
-      great_war: 'Great War Causes',
-      great_war_part2: 'The Great War',
-      the_shoah: 'The Shoah',
-      cold_war: 'The Cold War',
-      second_world_war: 'The Second World War',
-      post_war_britain: 'Post-War Britain',
-      cme_new: 'Middle East',
-      weimar_nazi_germany: 'Weimar Germany',
-      edexcel_medicine: 'Medicine Through Time',
-      eee: 'Elizabethan England',
-      usa: 'USA 1954–75',
-    };
-    const ctaLabel = unitShortNames[unit.id] || title;
-
     html += `
-      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.08}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
+      <div class="module-card ${isUnlocked ? '' : 'locked'}" style="animation-delay: ${index * 0.05}s; cursor: pointer; position: relative; ${isGcse ? 'border-top: 3px solid #f59e0b;' : ''}" data-action="launch-subapp" data-unit="${unit.id}">
         ${gcseBadge}
         ${imageUrl ? `<div class="module-card-img" style="background-image: url('${imageUrl}'); background-position: ${bgPos}; background-size: cover;"></div>` : `<div class="module-card-img" style="background: var(--primary);"></div>`}
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
-          <div class="module-header" style="margin-bottom: 8px;"></div>
-          <div style="display: flex; gap: 14px; align-items: flex-start; flex-grow: 1;">
-            <div style="flex-grow: 1; min-width: 0;">
-              <h4 style="margin: 0 0 4px 0; font-size: 0.95rem; font-weight: 600; line-height: 1.25; color: inherit; font-family: 'Playfair Display', serif;">${displayTitle}</h4>
-              <p style="margin: 0; font-size: 0.8rem; line-height: 1.4; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; opacity: 0.9;">${displayDesc}</p>
-            </div>
+          <div style="flex-grow: 1; min-width: 0;">
+            <h4 style="margin: 0 0 6px 0; font-size: 0.98rem; font-weight: 700; line-height: 1.3; color: var(--text-main, #0f172a); font-family: 'Playfair Display', serif;">${displayTitle}</h4>
+            <p style="margin: 0; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted, #64748b); font-style: italic; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">"${displayEnquiry}"</p>
           </div>
         </div>
         
-        <div class="module-actions" style="margin-top: auto; padding: 0; position: relative; z-index: 2;">
-          <button class="btn-pedagogy-primary btn-pedagogy-sm w-full" data-action="launch-subapp" data-unit="${unit.id}" style="display: flex; align-items: center; justify-content: center; gap: 6px; padding-left: 8px; padding-right: 8px;">
-            <i class="fa-solid fa-circle-play" style="flex-shrink: 0;"></i> 
-            <span style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${ctaLabel}</span>
-          </button>
+        <div class="module-card-footer" style="margin-top: auto; padding-top: 10px; border-top: 1px solid var(--border-glass, #e2e8f0); display: flex; align-items: center; justify-content: space-between; font-size: 0.75rem; position: relative; z-index: 2;">
+          <span style="font-weight: 700; color: ${isGcse ? '#92400e' : '#1d4ed8'}; background: ${isGcse ? '#fef3c7' : '#eff6ff'}; border: 1px solid ${isGcse ? '#fde68a' : '#bfdbfe'}; padding: 2px 7px; border-radius: 4px; font-size: 0.66rem; letter-spacing: 0.04em; text-transform: uppercase;">
+            ${isGcse ? 'Edexcel GCSE' : 'Key Stage 3'}
+          </span>
+          <span class="module-launch-link" style="font-weight: 700; color: #2563eb; display: inline-flex; align-items: center; gap: 4px; font-size: 0.76rem;">
+            <span>Explore</span>
+            <i class="fa-solid fa-arrow-right" style="font-size: 0.68rem;"></i>
+          </span>
         </div>
       </div>
     `;
@@ -425,13 +415,13 @@ function attachDashboardStageFilter(container) {
       filterBtns.forEach((b) => {
         b.classList.remove('active');
         b.style.background = 'transparent';
-        b.style.color = '#64748b';
+        b.style.color = '#475569';
         b.style.boxShadow = 'none';
       });
       btn.classList.add('active');
-      btn.style.background = '#1e3a8a';
+      btn.style.background = '#0f172a';
       btn.style.color = '#ffffff';
-      btn.style.boxShadow = '0 2px 6px rgba(30, 58, 138, 0.25)';
+      btn.style.boxShadow = 'none';
 
       const ks3Blocks = container.querySelectorAll('.stage-block-ks3');
       const gcseBlocks = container.querySelectorAll('.stage-block-gcse');
