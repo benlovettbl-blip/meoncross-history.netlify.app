@@ -111,13 +111,13 @@ const QUIZ_DATA = [
     ],
   },
 
-  // ENQUIRY 2: The Dark Satanic Mills: Child Labour, Slums & Public Health (1800–1858)
+  // ENQUIRY 2: The Factory System & Child Labour (1780–1840)
   {
     lesson: 2,
-    lessonTitle: '2. The Dark Satanic Mills: Child Labour, Slums & Public Health (1800–1858)',
-    shortTitle: 'Child Labour, Slums & Health',
+    lessonTitle: '2. The Factory System & Child Labour: Progress or Punishment? (1780–1840)',
+    shortTitle: 'Factory System & Child Labour',
     enquiry:
-      'Was industrialisation a triumph of human progress or a catastrophe of urban suffering for the working class?',
+      'Was industrial factory work a triumph of productive progress or a brutal system of physical punishment?',
     items: [
       {
         q: 'What dangerous factory jobs were assigned to small children in northern textile mills because of their nimble fingers and small stature?',
@@ -125,10 +125,52 @@ const QUIZ_DATA = [
         exp: 'Scavengers crawled beneath active, whirring machinery to sweep up loose cotton fibres, while piecers tied broken threads at constant risk of mutilation.',
       },
       {
+        q: 'What severe chronic respiratory disease was caused by inhaling toxic airborne cotton lint in unventilated textile mills?',
+        a: 'Byssinosis (known as "mill fever" or brown lung disease)',
+        exp: 'Fine cotton fibres choked children’s lungs, causing chronic coughing, permanent respiratory damage, and premature death among textile operatives.',
+      },
+      {
         q: 'What parliamentary inquiry published horrifying 1832 testimony of 14-hour workdays and physical beatings of child labourers?',
         a: 'The Sadler Committee Report (1832)',
-        exp: 'Michael Sadler’s report shocked Victorian Britain by documenting horrific factory cruelty, paving the way for the Factory Act of 1833.',
+        exp: 'Michael Sadler’s parliamentary report shocked Victorian Britain by documenting horrific mill cruelty, paving the way for the Factory Act of 1833.',
       },
+      {
+        q: 'What historic legislation in 1833 banned textile work for children under nine and created factory inspectors to enforce the law?',
+        a: 'The Factory Act of 1833',
+        exp: 'The 1833 Act established the principle of state regulation, limiting children aged 9–13 to eight hours of daily work and appointing four inspectors nationwide.',
+      },
+      {
+        q: 'What physical punishment was routinely inflicted by mill overlookers to keep exhausted children awake toward the end of 14-hour shifts?',
+        a: '"Strapping" with heavy leather belts',
+        exp: 'Overlookers, whose own pay depended on output targets, ruthlessly beat drowsy children to prevent machine slowdowns and enforce relentless factory discipline.',
+      },
+      {
+        q: 'What landmark 1842 law banned all women and girls and boys under the age of ten from working underground in coal mines?',
+        a: 'The Mines Act 1842',
+        exp: 'Lord Ashley’s inquiry exposed half-naked young trappers and hurriers chained to coal carts in dark, flooded mines, prompting immediate parliamentary prohibition.',
+      },
+      {
+        q: 'What prevailing economic doctrine of government non-intervention did mill owners cite to resist statutory workplace regulation?',
+        a: 'Laissez-faire capitalism',
+        exp: 'Industrialists argued that Parliament had no right to interfere with "freedom of contract" or trade profits, insisting state regulations would ruin British commerce.',
+      },
+      {
+        q: 'Why did the factory system fundamentally transform human labour and time discipline compared to domestic craft work?',
+        a: 'Workers surrendered personal autonomy to the relentless mechanical pace of steam engines and the strict schedule of the factory clock',
+        exp: 'In domestic workshops, artisans controlled their own pace; factories imposed punitive fines, locked gates, and continuous machine toil for 12 to 14 hours daily.',
+      },
+    ],
+  },
+
+  // ENQUIRY 3: Living Conditions, Cholera & Sanitation (1831–1866)
+  {
+    lesson: 3,
+    lessonTitle:
+      '3. Living Conditions, Cholera & Sanitation: Did Industrialisation Make Towns Unlivable? (1831–1866)',
+    shortTitle: 'Slums, Cholera & Sanitation',
+    enquiry:
+      'Did rapid urban industrialisation condemn the working class to disease, squalor, and premature death?',
+    items: [
       {
         q: 'What deadly waterborne bacterium struck British industrial cities in terrifying epidemics in 1831, 1848, 1853, and 1866?',
         a: 'Cholera',
@@ -136,7 +178,7 @@ const QUIZ_DATA = [
       },
       {
         q: 'Why was the average life expectancy for a working-class labourer in 1840s Manchester and Liverpool under 20 years?',
-        a: 'Deadly combinations of open cesspools, contaminated well water, unventilated back-to-back cellars, typhus, and exhausting 14-hour factory work',
+        a: 'Deadly combinations of open cesspools, contaminated well water, unventilated back-to-back cellars, typhus, and exhausting factory toil',
         exp: 'Rapid, unregulated urban migration created catastrophic sanitary conditions, where infants and labourers succumbed to waterborne and respiratory diseases.',
       },
       {
@@ -150,26 +192,41 @@ const QUIZ_DATA = [
         exp: 'Snow proved that cholera was an ingested waterborne contagion caused by cesspool sewage leaking directly into public drinking wells.',
       },
       {
+        q: 'How did Edwin Chadwick’s 1842 Sanitary Report connect working-class disease directly to the national economic burden?',
+        a: 'He argued that preventable filth made breadwinners sick, creating widows and orphans who drained local Poor Law tax rates, making sanitation economically rational',
+        exp: 'Chadwick convinced reluctant laissez-faire ratepayers that investing in clean piped water and arterial sewers would actually lower municipal poor relief costs.',
+      },
+      {
         q: 'What crisis in the sweltering summer of 1858 finally forced Parliament to fund Joseph Bazalgette’s revolutionary London sewer network?',
         a: 'The Great Stink of London',
         exp: 'When intense heat turned the sewage-choked River Thames outside Parliament intolerably foul, politicians fled committee rooms and funded intercepting sewers.',
       },
       {
-        q: 'How did Edwin Chadwick’s 1842 Sanitary Report connect working-class disease directly to the national economic burden?',
-        a: 'He argued that preventable filth made breadwinners sick, creating widows and orphans who drained local Poor Law tax rates, making sanitation economically rational',
-        exp: 'Chadwick convinced reluctant laissez-faire ratepayers that investing in clean piped water and arterial sewers would actually lower municipal poor relief costs.',
+        q: 'What civil engineer designed London’s 1,100-mile underground intercepting sewer network, diverting 420 million gallons of sewage daily?',
+        a: 'Sir Joseph Bazalgette',
+        exp: 'Bazalgette’s brick-arched intercepting sewers carried London’s waste eastward to the Thames estuary, permanently eliminating cholera from the British capital.',
+      },
+      {
+        q: 'Why did the Public Health Act 1875 mark a decisive turning point in the role of the British state?',
+        a: 'It made clean water supply, sewer connection, and street lighting compulsory for all local councils, ending extreme laissez-faire in municipal governance',
+        exp: 'The 1875 Act established the modern public health framework, recognizing that safeguarding citizen health was a mandatory duty of civil government.',
       },
     ],
   },
 
-  // ENQUIRY 3: Blood, Machines & Ballots: The Hampshire Swing Riots to Chartism (1830–1848)
+  // ENQUIRY 4: The Struggle for the Vote: Peterloo, Swing Riots & Tolpuddle (1819–1834)
   {
-    lesson: 3,
-    lessonTitle: '3. Blood, Machines & Ballots: The Hampshire Swing Riots to Chartism (1830–1848)',
-    shortTitle: 'Swing Riots to Chartism',
+    lesson: 4,
+    lessonTitle: '4. The Struggle for the Vote: Peterloo, Swing Riots & Tolpuddle (1819–1834)',
+    shortTitle: 'Peterloo, Swing & Tolpuddle',
     enquiry:
-      'Why did British workers turn to machine-breaking and mass petitions to demand a political voice?',
+      'How did ordinary British people fight against political exclusion, wage cuts, and state repression?',
     items: [
+      {
+        q: 'What 1819 event in Manchester saw cavalry charge a peaceful gathering of 60,000 working-class reformers, killing 18 and injuring hundreds?',
+        a: 'The Peterloo Massacre',
+        exp: 'Magistrates panicked and sent sabre-wielding yeomanry into a peaceful crowd at St Peter’s Field listening to radical orator Henry Hunt demand votes for working men.',
+      },
       {
         q: 'What mythological collective name did agricultural labourers sign on threatening letters sent to landlords during the 1830 rural rebellion?',
         a: '"Captain Swing"',
@@ -186,14 +243,46 @@ const QUIZ_DATA = [
         exp: 'The government made a ruthless example of Hampshire workers, deporting skilled breadwinners and hanging Cook for knocking off a magistrate’s hat.',
       },
       {
-        q: 'What 1832 constitutional legislation disenfranchised corrupt "rotten boroughs" but betrayed working-class reformers by granting votes only to the middle class?',
-        a: 'The Great Reform Act 1832',
-        exp: 'The 1832 Act enfranchised urban industrial towns like Birmingham and Manchester, but retained high property qualifications that excluded working men.',
+        q: 'What six Dorset agricultural labourers were sentenced to seven years’ transportation to Australia in 1834 for forming a friendly society?',
+        a: 'The Tolpuddle Martyrs',
+        exp: 'Led by George Loveless, the labourers were prosecuted under an obsolete 1797 mutiny law against "unlawful oaths", triggering massive trade union protests.',
       },
+      {
+        q: 'What was a corrupt "rotten borough" in the pre-1832 British electoral system?',
+        a: 'A depopulated rural voting district (like Newtown on the Isle of Wight) that sent two MPs to Parliament while industrial cities like Manchester had none',
+        exp: 'Wealthy landowners bought and sold pocket boroughs to control Parliament, excluding millions of urban factory workers from democratic representation.',
+      },
+      {
+        q: 'How did the Great Reform Act 1832 betray working-class reformers who had campaigned fiercely for its passage?',
+        a: 'It enfranchised industrial cities and middle-class property owners, but retained a £10 property qualification that deliberately excluded working men',
+        exp: 'Working men felt cheated by the 1832 settlement, realizing that the middle class had secured power while leaving the working majority disenfranchised.',
+      },
+      {
+        q: 'Why did the state repression of 1819–1834 convince working people of the urgent need for a nationwide political movement?',
+        a: 'Isolated riots and local strikes were crushed by military force; only securing parliamentary votes could change laws and protect workers’ rights',
+        exp: 'The harsh lessons of Peterloo, Winchester Assizes, and Tolpuddle proved that industrial workers required constitutional power, directly inspiring Chartism.',
+      },
+    ],
+  },
+
+  // ENQUIRY 5: Chartism & Parliamentary Democracy (1838–1900)
+  {
+    lesson: 5,
+    lessonTitle:
+      '5. Chartism & Parliamentary Democracy: How Did the Road to Democracy Expand? (1838–1900)',
+    shortTitle: 'Chartism & Democracy',
+    enquiry:
+      'How did working-class pressure overcome elite resistance to build modern parliamentary democracy?',
+    items: [
       {
         q: 'What radical 1838 working-class manifesto drafted by William Lovett demanded universal male suffrage and secret ballots?',
         a: 'The People’s Charter',
         exp: 'The Charter set out Six Points (universal male suffrage, secret ballot, no property qualification, annual parliaments, equal constituencies, salaries for MPs).',
+      },
+      {
+        q: 'Why did the People’s Charter demand annual parliaments and payment for Members of Parliament?',
+        a: 'Annual elections made MPs accountable to voters, while salaries allowed working-class men without private fortunes to serve in Parliament',
+        exp: 'Without state salaries, only wealthy landowners and factory magnates could afford to serve as MPs, preserving elite monopoly over lawmaking.',
       },
       {
         q: 'What was the fundamental tactical division between Chartist leaders William Lovett and Feargus O’Connor?',
@@ -206,112 +295,24 @@ const QUIZ_DATA = [
         exp: 'The Newport Rising was the last major armed insurrection on British soil, resulting in high-treason convictions and cementing the state’s fear of revolution.',
       },
       {
+        q: 'What nationwide 1842 general strike saw industrial workers pull the plugs from factory steam boilers to halt capitalist production?',
+        a: 'The Plug Plot Riots (1842 General Strike)',
+        exp: 'Sparked by wage cuts, half a million factory workers and miners across Lancashire and Yorkshire struck for both higher pay and the People’s Charter.',
+      },
+      {
+        q: 'Which landmark 1872 legislation abolished public voting and ended landlord bribery and workplace intimidation of voters?',
+        a: 'The Secret Ballot Act 1872',
+        exp: 'Prior to 1872, voting was conducted in public on open hustings; the secret ballot allowed workers to vote their conscience without fear of eviction or sacking.',
+      },
+      {
+        q: 'Which two major electoral reform acts in 1867 and 1884 progressively expanded the franchise to urban and agricultural working-class men?',
+        a: 'The Second Reform Act (1867) and Third Reform Act (1884)',
+        exp: 'The 1867 Act gave votes to urban male householders, doubling the electorate to 2 million; the 1884 Act extended equal voting rights to rural labourers.',
+      },
+      {
         q: 'Although Parliament rejected all three mass Chartist petitions in 1839, 1842, and 1848, why was Chartism ultimately victorious?',
-        a: 'Five of the Six Points (all except annual parliaments) were progressively adopted into British law between 1867 and 1918, building modern democracy',
+        a: 'Five of the Six Points (all except annual parliaments) were progressively adopted into British law between 1867 and 1918, creating modern democracy',
         exp: 'Chartism educated millions in political organising, creating the trade union and democratic foundations that eventually enfranchised the entire adult population.',
-      },
-    ],
-  },
-
-  // ENQUIRY 4: Steam, Steel & Empire: HMS Warrior & The 1857 Indian Rebellion (1857–1860)
-  {
-    lesson: 4,
-    lessonTitle: '4. Steam, Steel & Empire: HMS Warrior & The 1857 Indian Rebellion (1857–1860)',
-    shortTitle: 'Warrior & 1857 Rebellion',
-    enquiry:
-      'How did industrial technology sustain the British Empire, and why did Indian soldiers rebel in 1857?',
-    items: [
-      {
-        q: 'What private joint-stock corporation ruled vast swathes of the Indian subcontinent with its own mercenary army until 1858?',
-        a: 'The East India Company (EIC)',
-        exp: 'Founded in 1600, the EIC evolved from a commercial spice trader into an armed sovereign corporate empire collecting taxes from over 150 million Indians.',
-      },
-      {
-        q: 'What immediate technological grievance sparked the mutiny of Indian sepoys at Meerut in May 1857?',
-        a: 'The new Enfield rifle paper cartridges were rumored to be greased with animal tallow made from sacred cow and forbidden pig fat',
-        exp: 'Biting the greased cartridges violated the religious laws of Hindu and Muslim soldiers, confirming fears that Britain intended forced Christian conversion.',
-      },
-      {
-        q: 'What corporate annexing policy created deep resentment among Indian princely states by disinheriting adopted heirs?',
-        a: 'The Doctrine of Lapse',
-        exp: 'Enforced aggressively by Governor-General Dalhousie, the policy annexed independent kingdoms (like Jhansi, Satara, and Awadh) when a ruler died without a biological son.',
-      },
-      {
-        q: 'Who was the warrior Queen of Jhansi who led rebel forces on horseback against British forces until her death in combat in 1858?',
-        a: 'Rani Lakshmibai',
-        exp: 'Refusing to surrender her annexed state, Rani Lakshmibai became the supreme icon of armed anti-colonial resistance during the 1857 Rebellion.',
-      },
-      {
-        q: 'What revolutionary Portsmouth-built warship launched in 1860 was the world’s first all-iron-hulled, armoured, steam-powered battleship?',
-        a: 'HMS Warrior',
-        exp: 'Carrying 4.5-inch wrought iron armour plates and heavy steam engines, HMS Warrior instantaneously rendered every wooden battlefleet in the world obsolete.',
-      },
-      {
-        q: 'How did British machine-woven cotton from Lancashire textile mills economically devastate traditional Indian society?',
-        a: 'It flooded Indian markets with cheap industrial textiles, destroying ancient domestic handloom industries and impoverishing millions of weavers',
-        exp: 'Britain dismantled Indian manufacturing monopolies, converting India into a raw cotton supplier and a captive consumer of British factory goods.',
-      },
-      {
-        q: 'What decisive political transformation was enacted by Parliament in the Government of India Act 1858 following the rebellion?',
-        a: 'The East India Company was completely abolished and direct imperial rule was transferred to the British Crown under the British Raj',
-        exp: 'Parliament stripped the private corporation of sovereign power, placing India under a Secretary of State and declaring Queen Victoria monarch of India.',
-      },
-      {
-        q: 'How does the contrast between HMS Warrior and the 1857 Rebellion expose the dual nature of British imperial power?',
-        a: 'HMS Warrior showcased industrial metallurgical triumph and global Pax Britannica, while the 1857 Rebellion exposed violent colonial military extraction',
-        exp: 'Victorian Britain celebrated technological genius and naval protection, but that supremacy was maintained through brutal suppression and corporate exploitation.',
-      },
-    ],
-  },
-
-  // ENQUIRY 5: The Victorian Verdict: Workshop of the World or Age of Exploitation? (1750–1901)
-  {
-    lesson: 5,
-    lessonTitle:
-      '5. The Victorian Verdict: Workshop of the World or Age of Exploitation? (1750–1901)',
-    shortTitle: 'The Victorian Verdict',
-    enquiry:
-      'Did the Industrial Revolution bring unprecedented progress or human catastrophe to the British people?',
-    items: [
-      {
-        q: 'What monumental international exhibition was staged at London’s Crystal Palace in Hyde Park in 1851?',
-        a: 'The Great Exhibition of the Works of Industry of All Nations',
-        exp: 'Championed by Prince Albert, the 1851 exhibition showcased 100,000 exhibits to 6 million visitors, proclaiming Britain the "Workshop of the World".',
-      },
-      {
-        q: 'What pioneering social investigator mapped poverty across London between 1886 and 1903, proving over 30% lived in poverty?',
-        a: 'Charles Booth',
-        exp: 'Booth’s colour-coded Life and Labour of the People in London proved mathematically that massive poverty was caused by low wages and illness, not moral failings.',
-      },
-      {
-        q: 'What confectionery manufacturer conducted a famous 1901 study of poverty in York, revealing "primary poverty"?',
-        a: 'Seebohm Rowntree',
-        exp: 'Rowntree established that 28% of York’s population lived below the basic nutritional poverty line, providing statistical ammunition for social reform.',
-      },
-      {
-        q: 'What fundamental arguments are advanced by "Optimist" historians regarding the Industrial Revolution?',
-        a: 'Real wages increased, manufactured goods became cheap and abundant, railways democratised travel, and life expectancy rose in the late Victorian era',
-        exp: 'Optimists point to long-term gains: technological literacy, rising real wages by the 1850s, statutory welfare reforms, and expanding democratic rights.',
-      },
-      {
-        q: 'What fundamental arguments are advanced by "Pessimist" historians regarding the early Industrial Revolution?',
-        a: 'Catastrophic declines in urban life expectancy, destruction of artisan independence, horrific child exploitation, and psychological alienation in factories',
-        exp: 'Pessimists argue that for at least two generations, working-class Britons sacrificed their health, family lives, and independence to enrich capitalist industrialists.',
-      },
-      {
-        q: 'How did statutory legislation between 1833 and 1875 gradually tame the excesses of laissez-faire factory capitalism?',
-        a: 'Parliament enacted Factory Acts limiting working hours, banned underground child mine labour (1842), and enforced public health sanitation (1875)',
-        exp: 'Faced with working-class rebellion and cholera, Victorian governments gradually abandoned extreme laissez-faire in favour of the modern regulatory state.',
-      },
-      {
-        q: 'Why did the railway revolution represent the supreme synthesis of coal, iron, and steam technology?',
-        a: 'It required Cort’s wrought iron rails, Watt’s rotary steam power, and coal fuel, connecting provincial industrial towns to global ocean ports',
-        exp: 'Railways unified Britain’s domestic market, slashed transport costs by 90%, allowed rapid fresh food transit to cities, and accelerated national postal communication.',
-      },
-      {
-        q: 'In evaluating 1750–1901, why is the Industrial Revolution considered the most profound transformation in human history since the Neolithic Agricultural Revolution?',
-        a: 'It permanently ended humanity’s dependence on animal muscle and organic energy, unleashing fossil-fuel industrialisation that remade politics, class, and global geopolitics',
-        exp: 'The shift from organic biology to fossilised thermal energy permanently altered human social organisation, living standards, environmental ecology, and imperial power.',
       },
     ],
   },

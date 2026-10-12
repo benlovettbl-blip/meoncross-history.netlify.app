@@ -208,10 +208,11 @@ export function bindEvents() {
     const year7Units = getOrderedUnits(['water_and_sanitation', 'medieval_england']);
     const year8Units = getOrderedUnits([
       'early_modern_world',
-      'industrialisation_and_empire',
-      'australia',
       'monarchy_religion_power',
       'first_british_empire',
+      'industrialisation_and_empire',
+      'second_british_empire',
+      'australia',
     ]);
     const year9Units = getOrderedUnits([
       'great_war',

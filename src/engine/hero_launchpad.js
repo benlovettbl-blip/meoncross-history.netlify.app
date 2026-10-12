@@ -145,10 +145,24 @@ export const CURRICULAR_PILLARS_CATALOG = {
       pdfUrl: '/pdfs/industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
     },
     retrieval: {
-      title: 'Industrialisation & Empire Knowledge Retrieval Companion',
+      title: 'The Industrial Revolution Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
       htmlUrl: '/units/industrialisation_and_empire/quiz_pack.html',
       pdfUrl: '/pdfs/industrialisation_and_empire_quiz_pack.pdf',
+    },
+  },
+  second_british_empire: {
+    workbook: {
+      title: 'The Second British Empire 16-Page Pupil Workbook',
+      label: 'Pupil Workbook (16 Pages)',
+      htmlUrl: '/units/second_british_empire/pupil_workbook.html',
+      pdfUrl: '/pdfs/second_british_empire_pupil_workbook.pdf',
+    },
+    retrieval: {
+      title: 'The Second British Empire Knowledge Retrieval Companion',
+      label: 'Retrieval Companion (40 Qs)',
+      htmlUrl: '/units/second_british_empire/quiz_pack.html',
+      pdfUrl: '/pdfs/second_british_empire_quiz_pack.pdf',
     },
   },
   water_and_sanitation: {

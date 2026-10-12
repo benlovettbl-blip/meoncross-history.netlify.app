@@ -104,10 +104,11 @@ export function renderDashboard() {
   // Year 8 Grouping
   const year8Order = [
     'early_modern_world',
-    'industrialisation_and_empire',
-    'australia',
     'monarchy_religion_power',
     'first_british_empire',
+    'industrialisation_and_empire',
+    'second_british_empire',
+    'australia',
   ];
   const year8Units = units
     .filter((u) => year8Order.includes(u.id))
@@ -182,6 +183,7 @@ export function renderDashboard() {
       medieval_england: 'Medieval England',
       early_modern_world: 'Early Modern World',
       industrialisation_and_empire: 'Industrialisation',
+      second_british_empire: 'Second British Empire',
       australia: 'Australia',
       great_war: 'Great War Causes',
       great_war_part2: 'The Great War',
@@ -719,7 +721,10 @@ export function renderInteractiveQuiz() {
     { id: 'medieval_england', label: 'Year 7: Medieval England, 1066–1509' },
     { id: 'water_and_sanitation', label: 'Year 7: Water & Sanitation' },
     { id: 'early_modern_world', label: 'Year 8: The Early Modern World' },
-    { id: 'industrialisation_and_empire', label: 'Year 8: Industrialisation & Empire' },
+    { id: 'monarchy_religion_power', label: 'Year 8: Crown, Church, or Parliament' },
+    { id: 'first_british_empire', label: 'Year 8: The First British Empire' },
+    { id: 'industrialisation_and_empire', label: 'Year 8: The Industrial Revolution' },
+    { id: 'second_british_empire', label: 'Year 8: The Second British Empire' },
     { id: 'great_war', label: 'Year 9: Causes of the Great War' },
     { id: 'great_war_part2', label: 'Year 9: Western Front & Somme' },
     { id: 'the_shoah', label: 'Year 9: The Holocaust / The Shoah' },
