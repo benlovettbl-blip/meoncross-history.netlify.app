@@ -97,10 +97,7 @@ export function renderDashboard() {
         </div>
       </div>
 
-      <!-- Historical Art of the Week Strip (Prestige Academic Marquee) -->
-      <div id="masterpiece-starter-strip-root" style="margin-bottom: 22px;">
-        ${getMasterpieceStarterStripHtml()}
-      </div>
+
 
       <!-- Year Quick Jump Sub-Navigation -->
       <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">

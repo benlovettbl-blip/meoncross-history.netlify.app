@@ -346,6 +346,11 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     } catch (e) {}
   }
 
+  // Always close any open Middle East regional map modal on view transitions
+  if (typeof window.closeCmeTheaterMapModal === 'function') {
+    window.closeCmeTheaterMapModal();
+  }
+
   // Clean up unit-specific sidebar navigation on global views
   const isGlobalView =
     viewName === 'dashboard' ||
@@ -354,9 +359,22 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     viewName === 'department-portal' ||
     viewName === 'competitions' ||
     viewName === 'chess' ||
+    viewName === 'masterpiece' ||
+    viewName === 'gallery' ||
     (viewName === 'booklet' && (!param || param === 'all'));
 
   if (isGlobalView) {
+    state.selectedUnitId = null;
+    window.currentUnitId = null;
+    state.activeUnitData = null;
+    if (appStore && appStore.state) {
+      appStore.state.selectedUnitId = null;
+      appStore.state.activeUnitData = null;
+    }
+    if (typeof window.removeFloatingCmeMapButton === 'function') {
+      window.removeFloatingCmeMapButton();
+    }
+
     const globalNav = document.getElementById('sidebar-global-nav');
     const unitWorkspace = document.getElementById('sidebar-unit-workspace');
     if (globalNav) globalNav.style.display = 'flex';

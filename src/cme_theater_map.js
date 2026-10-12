@@ -457,11 +457,19 @@ export function resetCmeMapZoom() {
 // FLOATING TRIGGER BUTTON (Pill at bottom-right of viewport)
 // ============================================================================
 
+export function removeFloatingCmeMapButton() {
+  const existing = document.getElementById('cme-floating-theater-map-btn');
+  if (existing) existing.remove();
+}
+
 export function renderFloatingCmeMapButton() {
   const existing = document.getElementById('cme-floating-theater-map-btn');
   const unitId = window.currentUnitId;
+  const urlParams = new URLSearchParams(window.location.search);
+  const currentView = window.appState?.currentView || urlParams.get('view');
 
-  if (unitId !== 'cme_new') {
+  // Strictly only show when the student is inside CME lessons
+  if (unitId !== 'cme_new' || currentView !== 'lessons') {
     if (existing) existing.remove();
     return;
   }
@@ -516,11 +524,13 @@ export function initCmeMapHotkeys() {
     const modal = document.getElementById('cme-theater-map-modal');
     const isModalVisible = modal && modal.style.display === 'flex';
 
-    // Toggle Regional Map with 'M' or 'm'
+    // Toggle Regional Map with 'M' or 'm' (strictly when inside cme_new unit)
     if (e.key === 'm' || e.key === 'M') {
       if (isModalVisible) {
         window.closeCmeTheaterMapModal();
-      } else {
+        return;
+      }
+      if (window.currentUnitId === 'cme_new') {
         window.openCmeTheaterMapModal();
       }
       return;
@@ -555,3 +565,4 @@ window.switchCmeRegionalMap = switchCmeRegionalMap;
 window.zoomCmeMap = zoomCmeMap;
 window.resetCmeMapZoom = resetCmeMapZoom;
 window.renderFloatingCmeMapButton = renderFloatingCmeMapButton;
+window.removeFloatingCmeMapButton = removeFloatingCmeMapButton;
