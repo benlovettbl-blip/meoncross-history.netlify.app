@@ -103,28 +103,6 @@ export const unitData = {
           'Evaluate the historiographical debate between traditional "naive victim" interpretations and revisionist arguments on moral duty (Pennell) and economic pragmatism (Sheffield).',
         ],
       },
-      extended: {
-        title: 'Assessment Practice: Explaining Causation & Enlistment (12 Marks)',
-        question:
-          'Explain why so many young British men volunteered to join the armed forces in 1914. (12 marks)',
-        hints: [
-          'Point 1: The powerful appeal of "Pals Battalions", allowing friends, workmates, and sports teams to enlist and serve together (e.g. the Pompey Pals).',
-          'Point 2: Widespread moral outrage over the German invasion of neutral Belgium and a sense of patriotic duty to defend the Empire.',
-          'Point 3: Economic pragmatism and pre-war poverty, where the army offered steady pay ("the King’s Shilling"), hot meals, and warm clothing.',
-          'Point 4: Psychological coercion and social peer pressure, including government propaganda posters and the civilian White Feather campaign.',
-        ],
-        teacher_guidance: {
-          tiered_stems: {
-            bronze:
-              'One reason why young men volunteered in 1914 was... For example, the government created "Pals Battalions" which... This led to high enlistment because...',
-            silver:
-              'A major factor driving enlistment was social and psychological pressure. For instance, posters like "Women of Britain Say GO!" weaponized guilt... Furthermore, economic factors were decisive because...',
-            gold: 'While traditional historians emphasize that volunteers were naively deceived by patriotic jingoism and Kitchener’s propaganda, revisionist historians demonstrate that enlistment was driven by a complex combination of genuine moral outrage over Belgium (Pennell) and calculated economic pragmatism among the working classes (Sheffield)...',
-          },
-        },
-        model_answer:
-          'In August 1914, the British Empire witnessed the largest voluntary mobilization in its history, with over 750,000 men enlisting within eight weeks and nearly 2.5 million volunteering by late 1915. This mass stampede to the recruiting offices was driven by a powerful combination of communal camaraderie, moral conviction, economic necessity, and psychological coercion.\n\nFirst and foremost, recruitment was propelled by the creation of "Pals Battalions", which harnessed intense local and peer solidarity [2.1]. Conceived by military planners to overcome the British Army’s lack of conscription [1.1], the War Office promised that friends, workmates, and sports teams could enlist, train, and fight together. In Hampshire, the formation of the 14th and 15th Battalions of the Hampshire Regiment—the "Pompey Pals"—saw hundreds of dockworkers, clerks, and farm labourers from Portsmouth, Fareham, and Stubbington volunteer as a collective body [2.2]. Enlisting beside lifelong friends transformed military service from an intimidating leap into the unknown into an exciting communal adventure, creating irresistible social momentum where refusing to join meant being ostracized by one’s peer group.\n\nSecondly, modern revisionist historians like Catriona Pennell emphasize that enlistment was underpinned by genuine moral outrage and a sense of civic duty [4.2]. The British public was deeply shocked by imperial Germany’s violation of the 1839 Treaty of London and the brutal invasion of neutral Belgium. Graphic press reports of German atrocities—the "Rape of Belgium"—convinced hundreds of thousands of educated and working-class men that Britain was fighting a righteous, defensive crusade to uphold international law and protect civilization against Prussian militarism. Rather than acting as mindless dupes, many volunteers made a conscious, moral decision to risk their lives in defence of a vulnerable neighbour.\n\nFurthermore, military historian Gary Sheffield highlights the decisive role of "economic pragmatism" among the British working classes [1.3, 4.3]. In 1914, Britain possessed no modern welfare state, and millions lived in precarious poverty following a period of industrial stagnation. For young men trapped in low-paid textile mills, damp coal mines, or insecure agricultural labour, the army offered guaranteed daily wages ("the King’s Shilling"—1s 2d per day), three square meals, sturdy boots, and warm woollen uniforms. For many destitute families, government separation allowances provided a higher and more reliable household income than casual civilian employment.\n\nFinally, voluntary enlistment was aggressively compelled by psychological coercion and social shame [3.1, 3.2]. Official propaganda, such as the Parliamentary Recruiting Committee’s "Women of Britain Say GO!" poster (Source A), ruthlessly weaponized Victorian gender norms, implying that men who stayed behind were cowards failing their duty as protectors. This was reinforced by civilian vigilante campaigns like the Order of the White Feather, which subjected civilian-clothed men to humiliating public mockery on street corners [3.2]. Terrified of being branded cowards by their sweethearts and neighbours, thousands of boys as young as fifteen lied about their age to enlist.\n\nIn conclusion, British voluntary enlistment in 1914 was not the result of naive ignorance alone, but the culmination of interlocking pressures [4.1, 4.3]. Communal loyalty via Pals Battalions, genuine moral indignation over Belgium, grinding economic hardship, and intense domestic peer pressure combined to turn Kitchener’s recruitment appeal into an irresistible national movement.',
-      },
       vocab: [
         {
           term: 'British Expeditionary Force',
@@ -328,7 +306,7 @@ export const unitData = {
           id: 'gw2_l1_q2_explain_why',
           type: 'extended_writing',
           tariff: 'Question 2: Explain Why [12 marks • 15 mins]',
-          title: 'Question 2: Explain Why [12 marks • 15 mins]',
+          title: 'Enquiry Writing Task [12 marks • 15 mins]',
           question:
             'Explain why young British men volunteered in such massive numbers in the autumn of 1914. [12 marks]',
           stimulus: [
@@ -383,6 +361,7 @@ export const unitData = {
           },
           model_answer:
             'In August 1914, Great Britain witnessed the largest voluntary military mobilization in its history, with over 750,000 men volunteering within eight weeks and nearly 2.5 million enlisting by late 1915 [1.2]. This extraordinary rush to the recruitment offices was propelled by a powerful combination of moral outrage, civic camaraderie, economic necessity, and psychological coercion.\\n\\nFirst and foremost, voluntary enlistment was driven by genuine moral indignation over imperial Germany’s invasion of neutral Belgium [2.1]. Under the 1839 Treaty of London, Britain had legally pledged to guarantee Belgian neutrality. When the German army invaded Belgium under the Schlieffen Plan and dismissed the treaty as a "scrap of paper", the British public viewed the conflict not as an imperial struggle, but as a righteous crusade to defend international law and protect innocent civilians [2.1]. As revisionist historian Catriona Pennell proves, graphic press reports of German atrocities in Louvain and Dinant convinced hundreds of thousands of educated and working-class men that they had a sacred civic duty to halt unprovoked Prussian militarism [2.2].\\n\\nSecondly, recruitment was massively accelerated by the creation of "Pals Battalions", which harnessed intense local and workplace solidarity [3.1]. Conceived by General Sir Henry Rawlinson to overcome Britain’s lack of peacetime conscription [1.1], the War Office guaranteed that friends, work colleagues, and sports clubs could enlist, train, and fight side-by-side. In Hampshire, the formation of the 14th and 15th Battalions of the Hampshire Regiment—the "Pompey Pals"—saw dockworkers, naval clerks, and farm labourers from Portsmouth and Fareham volunteer as a unified body [3.2]. Serving alongside lifelong friends transformed an intimidating military obligation into an exhilarating communal adventure, creating irresistible social pressure where refusing to join meant being ostracized by one’s peer group.\\n\\nFurthermore, military historian Gary Sheffield highlights the decisive role of "economic pragmatism" among the British working classes [4.1]. In 1914, Britain possessed no modern welfare state, and millions lived in precarious poverty following an industrial recession. For young men trapped in repetitive, low-wage jobs in coal mines, textile mills, or seasonal agricultural labour, the army offered guaranteed daily wages ("the King’s Shilling"—1s 2d per day), three hot meals every day, sturdy boots, and warm clothing [4.2]. For destitute families, government separation allowances provided a more reliable household income than casual civilian employment, making enlistment a practical act of family survival.\\n\\nFinally, voluntary enlistment was aggressively compelled by official propaganda and intense social shaming [5.1]. Posters like "Women of Britain Say GO!" (Source E) weaponized Victorian gender roles, implying that men who stayed behind were cowards failing their duty as protectors. This was reinforced by civilian vigilante campaigns like the Order of the White Feather, which subjected civilian-clothed men to humiliating public mockery on street corners [5.2]. Terrified of being branded cowards by their sweethearts and neighbours, thousands of boys as young as fifteen lied about their age to enlist.\\n\\nIn conclusion, British voluntary enlistment in 1914 was not the result of naive ignorance alone, but the culmination of interlocking pressures [1.1–5.2]. Communal loyalty via Pals Battalions, genuine moral indignation over Belgium, grinding economic hardship, and intense domestic peer pressure combined to turn Kitchener’s recruitment appeal into an irresistible national movement.',
+          topic: 'Enquiry Writing Task [12 marks • 15 mins]',
         },
       ],
       vocab_cloze_text:
@@ -903,40 +882,6 @@ export const unitData = {
           'Evaluate the historiographical debate surrounding Field Marshal Sir Douglas Haig and the Battle of the Somme (1916), weighing the "Butcher of the Somme" interpretation against the modern "learning curve" revisionism (Sheffield).',
         ],
       },
-      extended: {
-        title:
-          'Assessment Practice: Evaluating Historical Interpretations of General Haig (16 Marks)',
-        question:
-          '"British generals made the horror of trench warfare worse through outdated tactics and callous incompetence." How far do you agree with this view of General Douglas Haig and the Western Front? (16 marks)',
-        hints: [
-          'Point 1 (In Support): The catastrophic slaughter on Day 1 of the Somme (1 July 1916)—57,470 British casualties caused by Haig ordering troops to walk slowly in neat rows carrying 30kg packs, misplaced faith in a flawed week-long artillery bombardment.',
-          'Point 2 (In Support): The distance between high command and the front line ("Château Generals"), where aristocratic commanders failed to grasp the impenetrable strength of German concrete dugouts and barbed wire (the "Lions led by Donkeys" thesis).',
-          'Point 3 (Against the View / Context): The unprecedented technological vacuum—defensive weapons (Vickers and Maxim machine guns, heavy artillery) completely dominated offensive movement, while communications relied on primitive runners and pigeons because portable radios did not yet exist.',
-          "Point 4 (Against the View / The Learning Curve): Haig’s pragmatic adaptation and modernization—pioneering the world's first combat tanks at Flers-Courcelette (1916), mastering creeping artillery barrages, aerial photo reconnaissance, and coordinating the Hundred Days Offensive to win the war in 1918 (Gary Sheffield / John Terraine thesis).",
-        ],
-        teacher_guidance: {
-          tiered_stems: {
-            starter:
-              'A central debate among historians of the First World War is whether British generals, particularly Field Marshal Sir Douglas Haig, were callous, incompetent "donkeys" or adaptable commanders navigating an impossible industrial battlefield...',
-            causal_connectives: [
-              'Proponents of the traditional "butcher" thesis point to the opening day of the Battle of the Somme (1 July 1916), where...',
-              'As highlighted in paragraph [3.1], Haig’s tactical plan relied on a catastrophic miscalculation that artillery had shattered German wire, resulting in...',
-              'Furthermore, popular critics and wartime poets argued that commanders were completely detached from frontline agony, living in remote châteaux while...',
-              'Conversely, modern revisionist historians such as Gary Sheffield and John Terraine challenge this caricature by demonstrating that...',
-              'In particular, the technological reality of 1914–1918 placed attackers at an insurmountable disadvantage because...',
-              'Far from repeating failed tactics rigidly, Haig oversaw a rapid "learning curve" that embraced revolutionary technologies, including...',
-              'Consequently, by the autumn of 1918, the British Army had developed combined-arms warfare, executing the Hundred Days Offensive which...',
-            ],
-            evaluative_prompts: [
-              'Critique the reliability of popular cultural depictions (e.g. Blackadder, Oh! What a Lovely War) compared to primary archival dispatches and modern operational history [4.1].',
-              'Weigh the moral horror of 57,470 casualties on 1 July 1916 against the strategic necessity of relieving the French Army at Verdun and grinding down the German reserve army [3.1, 3.2].',
-              'Conclude with an authoritative historical judgement: was Haig an inflexible butcher, or an effective, determined commander who paid the inevitable price of industrial victory [4.3]?',
-            ],
-          },
-          full_model_answer:
-            'A defining debate in modern British history concerns the competence of British military leadership during the First World War. For decades, popular culture has embraced the "Lions led by Donkeys" caricature—the belief that brave ordinary soldiers were callously slaughtered due to the stupidity of out-of-touch, aristocratic generals like Field Marshal Sir Douglas Haig [4.1]. However, while Haig made severe tactical errors that exacerbated frontline suffering, modern revisionist scholarship reveals that he operated within an unprecedented technological deadlock and successfully spearheaded a revolutionary "learning curve" that ultimately secured Allied victory in 1918 [4.2, 4.3].\n\nThere is substantial evidence supporting the view that British generals made the horrors of the Western Front worse through rigid, outdated tactics [3.1]. The most damning evidence occurred on the first day of the Battle of the Somme (1 July 1916). Convinced that a seven-day artillery bombardment of 1.5 million shells had obliterated German defensive wire and underground bunkers, Haig ordered British infantry to advance across No Man\'s Land in broad daylight, walking in slow, rigid lines while laden with 30-kilogram equipment packs [3.1]. In reality, shrapnel shells had failed to cut the dense barbed wire, and German defenders emerged unscathed from concrete deep dugouts forty feet underground. The result was the bloodiest catastrophe in British military history: 57,470 casualties, including 19,240 dead, in a single day. Haig’s refusal to halt the offensive, persisting for five agonizing months at the cost of over 420,000 British casualties for an advance of merely six miles, gave rise to his damning moniker: "The Butcher of the Somme" [3.2].\n\nFurthermore, critics argue that British generals suffered from severe geographic and social detachment from frontline realities [4.1]. Living in comfortable, distant French châteaux miles behind the front lines, commanders rarely witnessed the horrific sensory conditions their men endured: waist-deep, freezing mud that drowned wounded soldiers, agonizing trench foot, swarms of corpse-fattened rats, and the suffocating terror of poison gas [2.1, 2.2]. This disconnect fostered deep cynicism among front-line soldiers and junior officers like Siegfried Sassoon and Wilfred Owen, who felt their lives were being squandered by obstinate generals who treated human lives as replaceable units in a grinding war of attrition [2.3, 3.3].\n\nConversely, modern revisionist historians such as Gary Sheffield (The Chief, 2011) and John Terraine convincingly argue that portraying Haig as an incompetent butcher fundamentally misjudges the nature of the Western Front [4.2]. In 1914–1918, defensive technology completely overwhelmed offensive capability. Rapid-firing Vickers and Maxim machine guns (firing 500 rounds per minute) and massed heavy artillery gave entrenched defenders a lethal advantage that no general on earth knew how to overcome. Crucially, military communications had not kept pace with destructive firepower: while defenders utilized secure, buried telephone lines, attacking commanders had no portable two-way radios and were forced to rely on runners, flag signals, and carrier pigeons across pulverized mud [4.2]. Under such conditions, high-casualty attritional warfare was an unavoidable, tragic reality of modern industrial conflict, rather than a failure of individual generalship.\n\nMoreover, revisionist historians prove that Haig and his staff were not inflexible "donkeys", but adaptable modernizers who oversaw a remarkable tactical "learning curve" [4.3]. The British High Command pioneered revolutionary military innovations to break the deadlock. Haig authorized the world’s first deployment of tanks at Flers-Courcelette in September 1916 and developed the "creeping barrage"—a wall of falling artillery fire that advanced 100 yards every few minutes immediately in front of advancing infantry [4.3]. By integrating aerial photographic reconnaissance, flash-spotting, sound-ranging artillery, and synchronized infantry assaults, Haig forged the British Army into the most formidable fighting machine on the Western Front. In the autumn of 1918, Haig’s forces spearheaded the "Hundred Days Offensive", breaking the formidable Hindenburg Line, capturing 188,000 German prisoners, and delivering the decisive military blows that forced Germany to sue for peace [4.3].\n\nIn conclusion, the view that British generals simply made the horror of trench warfare worse is an incomplete and unhistorical oversimplification [4.1, 4.3]. Haig certainly made grave, costly mistakes—most notably on 1 July 1916, where misplaced optimism and rigid marching orders led to immense slaughter. Yet to dismiss him as a callous "donkey" ignores the reality that he faced an unprecedented industrial war with no historical precedent. Ultimately, Haig was an adaptable, determined commander who endured the agonizing crucible of attrition to construct the modern, combined-arms doctrine that achieved total victory in 1918.',
-        },
-      },
       vocab: [
         {
           term: 'Stalemate',
@@ -1162,7 +1107,7 @@ export const unitData = {
           id: 'gw2_l2_q1_describe_two_features',
           type: 'two_features',
           tariff: 'Question 1: Describe Two Features [4 marks • 5 mins]',
-          title: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          title: 'Task A: Describe Two Features [4 marks • 5 mins]',
           question:
             'Describe two features of the trench defensive systems on the Western Front. [4 marks]',
           feature_1: {
@@ -1180,12 +1125,13 @@ export const unitData = {
             model:
               'A second key feature was the zig-zag or traversed design of the trenches [2.2]. This was designed so that trenches were never dug in straight lines; if an enemy raiding party entered a trench or an artillery shell exploded, the blast and shrapnel were confined to a single bay rather than killing soldiers down the entire length of the trench.',
           },
+          topic: 'Task A: Describe Two Features [4 marks • 5 mins]',
         },
         {
           id: 'gw2_l2_q2_explain_why_somme',
           type: 'extended_writing',
           tariff: 'Question 2: Explain Why [8 marks • 10 mins]',
-          title: 'Question 2: Explain Why [8 marks • 10 mins]',
+          title: 'Task B: Explain Why [8 marks • 10 mins]',
           question:
             'Explain why the First Day of the Somme (1 July 1916) resulted in catastrophic British casualties. [8 marks]',
           stimulus: [
@@ -1230,6 +1176,7 @@ export const unitData = {
           },
           model_answer:
             "The first day of the Battle of the Somme (1 July 1916) resulted in 57,470 British casualties—the bloodiest single day in British military history—due to a fatal combination of defective artillery preparation, impenetrable barbed wire, and superior German defensive engineering [4.1, 4.2].\\n\\nFirst and foremost, British casualties were catastrophic because the seven-day preliminary artillery bombardment completely failed to destroy the German defensive line [4.1]. General Haig’s tactical plan assumed that firing 1.5 million shells would obliterate German trenches and shred the dense belts of barbed wire guarding No Man's Land. However, approximately one-third of the British shells were poorly manufactured duds that failed to explode, and the shrapnel shells utilized were incapable of cutting dense 30-foot wire entanglements [4.2]. Consequently, when British infantry advanced in broad daylight weighed down by 30kg packs, they were halted by uncut wire barricades and trapped in concentrated kill-zones.\\n\\nSecondly, German troops survived the massive bombardment due to sophisticated deep underground concrete dugouts (Stollen) burrowed up to forty feet below the chalk surface [2.2]. While British commanders believed the barrage had killed all defenders, German soldiers remained virtually unscathed. The moment the British artillery barrage lifted, German machine-gun crews sprinted to the surface, mounted their Spandau Maxim guns, and opened interlocking fields of rapid fire (500 rounds per minute) into the slow, rigid British lines [4.2]. The advancing infantry had no cover and no portable radio communications to call for emergency artillery support.\\n\\nIn conclusion, the disaster of 1 July 1916 was the tragic consequence of an artillery failure colliding with modern defensive industrial firepower [4.2]. Haig’s misplaced confidence in shellfire, combined with uncut barbed wire and fortified German machine-gun positions, turned No Man’s Land into an inescapable slaughterhouse.",
+          topic: 'Task B: Explain Why [8 marks • 10 mins]',
         },
       ],
       vocab_cloze_text:
@@ -1777,39 +1724,6 @@ export const unitData = {
           'Explain the logistical significance and systemic racial discrimination experienced by non-white personnel, including the British West Indies Regiment (BWIR) and Chinese Labour Corps (CLC).',
           'Evaluate the historiographical debate surrounding imperial memory (David Olusoga and Santanu Das), explaining why the war was whitewashed into a European "white man\'s war" and how the conflict catalyzed global anti-colonial independence movements.',
         ],
-      },
-      extended: {
-        title: 'Assessment Practice: Explaining Causation & Historical Marginalization (12 Marks)',
-        question:
-          'Explain why the contributions of imperial and colonial personnel were marginalized in British memory of the First World War. (12 marks)',
-        hints: [
-          'Point 1: Institutional racism and racial hierarchy in the British military—Black and Asian troops were largely restricted to non-combat labour (e.g. BWIR and CLC), excluded from officer ranks, and barred from the official London Victory Parade of July 1919.',
-          'Point 2: Post-war Eurocentric commemoration and literature—memorials (like the Cenotaph), poetry (Wilfred Owen, Siegfried Sassoon), and cultural plays focused almost exclusively on white British soldiers in the trenches of France.',
-          'Point 3: Imperial anxiety and the rise of anti-colonial independence movements—the British government actively suppressed colonial military records to avoid conceding political self-determination and democracy to India, Africa, and the Caribbean.',
-          'Point 4: Wartime censorship and colonial suppression—intercepted letters (such as those from Brighton Pavilion) and the suppression of the 1918 Taranto Mutiny ensured that colonial discontent never reached the British public.',
-        ],
-        teacher_guidance: {
-          tiered_stems: {
-            starter:
-              'A central limitation of traditional First World War history is that it framed a vast global conflict as an exclusively European struggle, systematically erasing the sacrifices of over four million imperial and colonial participants...',
-            causal_connectives: [
-              'Initially, imperial contributions were marginalized due to institutional racism embedded within the British military establishment, which...',
-              'As demonstrated in paragraph [2.2], non-white units like the British West Indies Regiment were deliberately restricted to hazardous manual labour because...',
-              'Furthermore, this official policy culminated in the deliberate exclusion of non-white colonial troops from the London Victory Parade in July 1919, reinforcing...',
-              'Equally decisive was the Eurocentric focus of post-war cultural memory, where British war poetry, art, and literature centered exclusively on...',
-              'In addition, the British government had powerful political motives to downplay colonial sacrifices, particularly as soldiers returned home demanding...',
-              'As highlighted in paragraph [4.3], acknowledging that colonial troops had saved Britain would have forced the empire to grant self-determination, leading to...',
-              'Ultimately, modern revisionist historians like David Olusoga and Santanu Das have demonstrated that without the Empire, the British war effort would have...',
-            ],
-            evaluative_prompts: [
-              'Contrast the public propaganda image of imperial benevolence (e.g. Brighton Pavilion) against the harsh reality of military censorship and racial segregation [3.1, 3.2].',
-              'Evaluate how the deliberate exclusion of colonial veterans from post-war victory celebrations contributed to nearly a century of historical amnesia [2.3, 4.1].',
-              'Assess the connection between wartime colonial sacrifices and the rapid acceleration of post-war anti-colonial independence movements in India and the Caribbean [4.3].',
-            ],
-          },
-          full_model_answer:
-            'Between 1914 and 1918, over four million non-white colonial soldiers and labourers mobilized to sustain the British war effort, including 1.5 million men from the Indian subcontinent, 140,000 Chinese labourers, and tens of thousands of African and Caribbean volunteers [1.1, 2.1]. Despite their indispensable role in preventing British collapse, their contributions were systematically marginalized and erased from British national memory for nearly a century. This historical amnesia was driven by entrenched institutional racism, Eurocentric cultural commemoration, strict wartime censorship, and imperial political anxiety regarding colonial independence [4.1, 4.3].\n\nFirst and foremost, imperial contributions were marginalized due to pervasive institutional racism within the British military and political establishment [2.2]. British colonial doctrine rested on a rigid racial hierarchy that viewed non-white peoples as racially inferior. Consequently, authorities were terrified of the political consequences of arming Black men against white Europeans. Volunteers from the Caribbean who formed the British West Indies Regiment (BWIR) were denied combat roles on the Western Front and relegated to grueling, dangerous manual labour—digging trenches, carrying artillery shells under bombardment, and building roads [2.2]. Because colonial troops were largely restricted to support roles and denied senior officer commissions, post-war military histories dismissed their service as secondary. This racial prejudice culminated in the shameful London Victory Parade of 19 July 1919, where Black colonial troops were deliberately excluded from marching down Whitehall, sending a clear message that the victory was to be remembered as an exclusively "white man\'s achievement" [2.3].\n\nSecondly, post-war cultural commemoration in Great Britain was overwhelmingly Eurocentric [4.1]. The literature, poetry, and art that defined the public memory of the Great War—epitomized by the trench poetry of Wilfred Owen and Siegfried Sassoon—focused almost exclusively on the tragic suffering of white British soldiers in the mud of Flanders and the Somme. Physical memorials, such as the Cenotaph in London and village memorials across Britain, commemorated local British casualties while ignoring imperial soldiers buried in unmarked mass graves or distant colonial battlefields [4.1]. Furthermore, school textbooks and popular media throughout the twentieth century framed the conflict as a European family dispute between King George V and Kaiser Wilhelm II, ignoring the fact that global empire was the primary source of raw materials, manpower, and wealth that made Allied victory possible [4.2].\n\nFinally, the British government actively marginalized colonial contributions due to profound imperial anxiety over post-war political independence [4.3]. Having fought and died under slogans promoting British "freedom", "justice", and "democracy", colonial veterans returned to India, the Caribbean, and Africa demanding political self-determination and an end to colonial subjugation [4.3]. In India, expectations of self-government were met with brutal state repression, culminating in the 1919 Jallianwala Bagh (Amritsar) massacre [4.3]. To justify the continued subjugation of its empire, the British state had a powerful political interest in suppressing the military achievements of colonial veterans. Celebrating the military heroism of figures like Sepoy Khudadad Khan VC (Source A) contradicted the colonial narrative that subject peoples were uncivilized and incapable of self-rule.\n\nIn conclusion, the marginalization of the Empire\'s troops was not an accidental oversight, but a deliberate act of political and cultural erasure [4.1, 4.3]. Institutional racism, Eurocentric literature, and the British state’s desperate desire to preserve imperial control combined to whitewash the First World War, transforming a truly global struggle into a localized European myth that took modern historians like David Olusoga a century to dismantle.',
-        },
       },
       vocab: [
         {
@@ -2461,7 +2375,7 @@ export const unitData = {
           id: 'gw2_l3_q3_contrasting_interpretations',
           type: 'historical_interpretations',
           tariff: 'Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]',
-          title: 'Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]',
+          title: 'Enquiry Writing Task [8 marks • 10 mins]',
           question:
             'Study Interpretations 1 and 2. How and why do they differ regarding the experiences and contributions of colonial troops in the Great War? [8 marks]',
           interpretation_1: {
@@ -2501,6 +2415,7 @@ export const unitData = {
             'Interpretations 1 and 2 differ fundamentally over the treatment and motivation of imperial troops in the First World War [1.1, 5.1]. Interpretation 1 portrays colonial involvement as a harmonious, voluntary display of "imperial brotherhood", asserting that Indian and dominion soldiers fought out of deep devotion and "mutual love" for the King-Emperor. In sharp contrast, Interpretation 2 argues that the reality for non-white troops was defined by systemic institutional racism, physical abuse, and unequal pay. While Curzon presents imperial sacrifice as celebrated and unified, Olusoga reveals that non-white troops were barred from officer ranks and deliberately whitewashed from British national remembrance after 1918 [5.1].',
           model_answer_c:
             'Interpretations 1 and 2 differ primarily because the authors wrote in completely different historical eras with conflicting purposes and access to evidence. Lord Curzon was a British War Cabinet minister speaking during the war in 1917. His primary objective was political propaganda: maintaining public morale, encouraging continued recruitment across the Empire, and justifying British imperial rule as benevolent and righteous. Consequently, Curzon ignored racial inequality to promote imperial unity. Conversely, David Olusoga is a modern historian writing in 2014 with access to declassified War Office records and the Unremembered Report [5.2]. Olusoga’s purpose is to recover marginalized historical truth, analyzing previously suppressed evidence of racial curfews, the 1918 Taranto Mutiny, and the denial of individual headstones to reveal how imperial authorities deliberately erased non-white sacrifice from post-war history.',
+          topic: 'Enquiry Writing Task [8 marks • 10 mins]',
         },
       ],
     },
@@ -2586,40 +2501,6 @@ export const unitData = {
           'Analyze the moral, political, and social dilemmas of military conscription (1916) and the severe persecution experienced by Conscientious Objectors ("Conchies").',
           'Evaluate the historiographical debate regarding whether wartime work liberated British women (the "Canary Girls"), weighing the achievement of female suffrage in 1918 against the post-war return to domestic servitude (Pugh and Braybon).',
         ],
-      },
-      extended: {
-        title: 'Assessment Practice: Explaining Causation & Social Transformation (12 Marks)',
-        question:
-          'Explain why the First World War had such a significant impact on British civilian life between 1914 and 1918. (12 marks)',
-        hints: [
-          'Point 1: Massive expansion of state power through DORA (August 1914)—the government controlled railways, coal mines, pub opening hours, watered down beer, introduced British Summer Time, and heavily censored the press.',
-          'Point 2: The introduction of compulsory military conscription (Military Service Act, January 1916)—forcing civilian men aged 18–41 to fight, and the brutal persecution and imprisonment of Conscientious Objectors.',
-          'Point 3: Total mobilization of women in the workforce ("Munitionettes" and Canary Girls)—over one million women entered factories, risking TNT poisoning and industrial explosions to solve the Shell Scandal.',
-          'Point 4: Food shortages, the German U-boat blockade, and compulsory rationing (1917–1918)—compulsory rationing of sugar, butter, meat, and tea transformed daily domestic survival for ordinary families.',
-        ],
-        teacher_guidance: {
-          tiered_stems: {
-            starter:
-              'Between 1914 and 1918, the First World War fundamentally transformed British society, obliterating the traditional Victorian boundary between the military battlefield and civilian domestic life...',
-            causal_connectives: [
-              'Initially, civilian life was controlled through the unprecedented legal powers of the Defence of the Realm Act (DORA), which...',
-              'As highlighted in paragraph [1.1], the British state abandoned decades of laissez-faire tradition by taking control of...',
-              'Furthermore, in January 1916 the nature of citizenship was radically altered by the Military Service Act, which introduced compulsory conscription, meaning...',
-              'This created acute moral conflict, resulting in the harsh imprisonment and public vilification of Conscientious Objectors, who...',
-              'Simultaneously, the war revolutionized gender roles as over one million women entered industrial factories as "Munitionettes", where...',
-              'As demonstrated in paragraph [3.1], women risked fatal TNT poisoning ("Canary Girls") and explosions to keep front-line artillery supplied, proving that...',
-              'Finally, the German unrestricted submarine campaign brought food shortages directly into British kitchens, forcing the government to introduce...',
-              'Ultimately, while traditional historians argued the war liberated women and united society, revisionist historians like Martin Pugh emphasize that...',
-            ],
-            evaluative_prompts: [
-              'Examine how DORA transformed Britain from a liberal democracy into a semi-authoritarian state during wartime [1.1, 1.2].',
-              'Evaluate the moral courage of Absolutist Conscientious Objectors versus the intense public hostility they endured [2.2, 2.3].',
-              'Assess whether the 1918 Representation of the People Act was a direct reward for female wartime labour, or a conservative compromise [4.1, 4.2].',
-            ],
-          },
-          full_model_answer:
-            'Between 1914 and 1918, the First World War dismantled the traditional Victorian divide between the frontline battlefield and domestic civilian society, inaugurating the era of "total war" [1.1]. The conflict completely reshaped daily British life through four primary mechanisms: the unprecedented legal expansion of state authority through the Defence of the Realm Act (DORA), the introduction of compulsory military conscription, the mass mobilization of female industrial labour, and the imposition of nationwide food rationing [1.1, 3.1].\n\nFirst and foremost, civilian life was dominated by the revolutionary expansion of state control via the Defence of the Realm Act (DORA), passed on 8 August 1914 [1.1]. Overturning decades of British laissez-faire tradition, DORA granted the government autocratic power to control private property, nationalize railways and coal mines, and seize factories without compensation. The state intruded directly into personal habits to maximize munitions productivity: alcohol consumption was curbed through reduced pub hours, "no-treating" laws (banning buying rounds), and watering down beer, while British Summer Time was introduced in 1916 to extend daylight factory shifts [1.2]. Furthermore, strict state censorship of national newspapers, public speech, and private letters curtailed civil liberties, making any public criticism of the war a criminal offence [1.3].\n\nSecondly, the British state asserted ultimate physical control over its male population by introducing compulsory military conscription under the Military Service Act of January 1916 [2.1]. For the first time in modern British history, civilian men aged 18 to 41 were stripped of the right to choose whether to fight. This triggered profound moral conflict: approximately 16,000 men registered as Conscientious Objectors ("Conchies"), refusing to bear arms on religious, moral, or political grounds [2.2]. While "Alternatists" performed non-combatant ambulance work, "Absolutists" who refused any cooperative war work were subjected to brutal military discipline, hard labour in prisons like Richmond Castle (Source D), and public ostracization, proving that the state demanded total obedience over individual conscience [2.3].\n\nSimultaneously, the conflict fundamentally transformed gender roles and the industrial workforce [3.1]. In response to the catastrophic 1915 "Shell Scandal", newly appointed Minister of Munitions David Lloyd George mobilized over one million women into heavy manufacturing [3.1]. These "Munitionettes" performed dangerous, grueling 12-hour shifts filling artillery shells. Handling toxic chemical powders without protective gear caused severe jaundice—turning their skin and hair bright yellow and earning them the title "Canary Girls"—while hundreds died in catastrophic factory explosions, such as the 1918 Chilwell disaster [3.2]. Despite these lethal hazards, industrial employment gave working-class women unprecedented financial independence, higher wages, and social freedom, shattering the Edwardian myth that women were physically and mentally unsuited to public life [3.3].\n\nFinally, the war brought severe material deprivation directly into British households via the German unrestricted submarine campaign of 1917 [1.3]. U-boats sank one in four merchant ships approaching Britain, leaving the nation with mere weeks of grain reserves. Facing bread riots and catastrophic inflation, the government was forced to introduce compulsory rationing in early 1918 for sugar, meat, butter, and tea [1.3]. Daily life revolved around ration books, food queues, and strict cooking economy, uniting rich and poor in shared domestic sacrifice.\n\nIn conclusion, the First World War exerted a profound, permanent impact on British civilian life [4.1, 4.3]. By subjecting citizens to state conscription, intrusive workplace regulations, female mobilization, and food rationing, the conflict transformed Britain into an organized total war society. While many restrictions were repealed after 1918, the war permanently altered gender expectations, set the precedent for state social planning, and led directly to the partial enfranchisement of women in 1918.',
-        },
       },
       vocab: [
         {
@@ -3263,7 +3144,7 @@ export const unitData = {
           id: 'gw2_l4_q2_narrative_account',
           type: 'narrative_account',
           tariff: 'Question 2: Narrative Account [8 marks • 10 mins]',
-          title: 'Question 2: Narrative Account [8 marks • 10 mins]',
+          title: 'Task A: Narrative Account [8 marks • 10 mins]',
           question:
             'Write a narrative account analysing the key events leading from the Shell Crisis of 1915 to the introduction of compulsory conscription in 1916. [8 marks]',
           stimulus: [
@@ -3305,12 +3186,13 @@ export const unitData = {
           },
           model_answer:
             'The transition from the Shell Crisis of 1915 to the introduction of compulsory conscription in 1916 represented a profound shift from voluntary civilian cooperation to centralized state control [2.1, 3.1].\\n\\nThe crisis began in May 1915 following the failed British attack at Aubers Ridge. Commander-in-Chief Sir John French leaked reports to the Daily Mail revealing that British troops were being slaughtered because the army had run out of high-explosive artillery shells, with guns rationed to just four rounds per day [2.1]. The resulting public outrage forced Prime Minister H.H. Asquith to dissolve his Liberal administration and create a wartime coalition government. In response, David Lloyd George was appointed to head the newly established Ministry of Munitions, seizing control of private factories and deploying women into engineering to nationalize shell production [2.2].\\n\\nHowever, solving the ammunition shortage immediately exposed an even more desperate crisis: an acute shortage of military manpower [3.1]. By late 1915, the voluntary recruitment system had exhausted itself. Massive casualties at Gallipoli and the Battle of Loos, combined with growing public awareness of the horrors of trench warfare, led voluntary enlistment to collapse. The War Office needed 50,000 fresh men every month to prepare for the upcoming Somme offensive, yet voluntary appeals and the Lord Derby Scheme failed to meet recruitment targets [3.1].\\n\\nConsequently, on 27 January 1916, Parliament took the unprecedented step of passing the Military Service Act [3.1]. This legislation abolished Britain’s historic volunteer tradition, imposing compulsory military conscription on all unmarried men aged 18 to 41. Thus, the supply emergency of the Shell Crisis led directly to the total state mobilization of British manpower.',
+          topic: 'Task A: Narrative Account [8 marks • 10 mins]',
         },
         {
           id: 'gw2_l4_q3_explain_importance',
           type: 'extended_writing',
           tariff: 'Question 3: Explain Importance [8 marks • 10 mins]',
-          title: 'Question 3: Explain Importance [8 marks • 10 mins]',
+          title: 'Task B: Explain Importance [8 marks • 10 mins]',
           question:
             'Explain the importance of female munitions workers to the British war effort in the period 1915–1918. [8 marks]',
           stimulus: [
@@ -3348,6 +3230,7 @@ export const unitData = {
           },
           model_answer:
             'Female munitions workers ("Munitionettes") were of vital importance to the British war effort between 1915 and 1918, both in sustaining front-line military operations and in fundamentally transforming the domestic economy [4.1, 4.2].\\n\\nFirst and foremost, female munitions workers were essential because they resolved the catastrophic 1915 Shell Crisis [2.1]. By 1918, nearly 950,000 women worked in munitions factories, manufacturing over 80% of all weapons and ammunition used by the British Army. When male industrial workers were conscripted into the army in 1916, women filled the vacuum, operating heavy machinery, welding metal, and manufacturing cordite. Without this vast female industrial workforce, the British Army would have run out of artillery ammunition on the Western Front, making the continuous bombardments required for the Somme, Passchendaele, and the Hundred Days Offensive impossible [4.1].\\n\\nSecondly, their importance was magnified by the extraordinary physical courage they demonstrated in the face of lethal industrial hazards [4.2]. Munitionettes worked 12-hour shifts handling toxic chemicals like trinitrotoluene (TNT). Prolonged exposure caused severe jaundice, turning their hair green and skin bright yellow—earning them the title "Canary Girls"—while causing fatal liver failure and internal bleeding. Furthermore, women faced constant peril from catastrophic explosions: in January 1917, the Silvertown factory exploded, killing 73 people, yet workers returned to their benches immediately. Their dedication ensured that frontline supplies were never interrupted by domestic fear.\\n\\nIn conclusion, female munitions workers were indispensable to British victory [4.1, 4.2]. By sustaining the artillery supply line under deadly conditions, they proved that women were essential to modern total war, shattering Victorian myths of female incapacity and paving the way for the 1918 Representation of the People Act.',
+          topic: 'Task B: Explain Importance [8 marks • 10 mins]',
         },
       ],
     },
@@ -3435,40 +3318,6 @@ export const unitData = {
           'Analyze the territorial, military, financial, and moral terms imposed on Germany (Article 231 War Guilt Clause, £6.6bn reparations, military caps, and the Polish Corridor).',
           'Evaluate the historiographical debate regarding whether Versailles was an excessively harsh "Carthaginian Peace" (Keynes) or a manageable settlement undermined by Allied failure of enforcement (Margaret MacMillan).',
         ],
-      },
-      extended: {
-        title: 'Assessment Practice: Explaining Causation & Geopolitical Instability (12 Marks)',
-        question:
-          'Explain why the Treaty of Versailles caused such intense anger and political instability in Germany between 1919 and 1923. (12 marks)',
-        hints: [
-          'Point 1: National humiliation and the "Diktat"—Germany was excluded from negotiations, threatened with Allied invasion if it did not sign, and forced to accept sole moral blame under Article 231 ("The War Guilt Clause").',
-          'Point 2: Economic devastation and catastrophic reparations—the astronomical bill of £6.6 billion ($33 billion) fixed in 1921 stripped Germany of vital industrial wealth, contributing directly to the 1923 French occupation of the Ruhr and hyperinflation.',
-          'Point 3: Severe territorial losses and border fragmentation—losing 13% of European land, including Alsace-Lorraine, the Saar coalfields, and the creation of the Polish Corridor which split East Prussia from the rest of Germany.',
-          'Point 4: Military disarmament and national vulnerability—reducing the army to 100,000 volunteers, banning conscription, tanks, military aircraft, and submarines, and demilitarizing the Rhineland left Germany feeling completely defenseless.',
-        ],
-        teacher_guidance: {
-          tiered_stems: {
-            starter:
-              'When the terms of the Treaty of Versailles were presented in June 1919, they provoked universal outrage across the German political spectrum, destabilizing the fragile Weimar Republic...',
-            causal_connectives: [
-              'First and foremost, the primary catalyst for German resentment was Article 231, known as the "War Guilt Clause", which...',
-              'As highlighted in paragraph [2.1], Germans of all classes rejected this clause because they viewed the outbreak of war in 1914 as...',
-              'Furthermore, the peace settlement was bitterly condemned as a "Diktat" (dictated peace), because German diplomats were...',
-              'In addition, the financial burden of £6.6 billion in reparations crippled the post-war German economy, directly leading to...',
-              'This economic devastation was compounded by catastrophic territorial amputations, particularly the creation of the Polish Corridor, which...',
-              'As demonstrated in paragraph [2.2], losing 13% of its European territory and all overseas colonies left millions of ethnic Germans...',
-              'Finally, the severe military disarmament clauses reduced the proud German military to a border police force of 100,000 men, leaving the country...',
-              'Ultimately, while modern revisionist historians like Margaret MacMillan argue the treaty was manageable, its psychological impact created the "stab-in-the-back" myth that...',
-            ],
-            evaluative_prompts: [
-              'Examine why Article 231 generated far greater moral outrage in Germany than the loss of overseas colonies [2.1, 3.1].',
-              'Evaluate the prophetic accuracy of Will Dyson’s "1940 Class" cartoon in predicting the outbreak of the Second World War [3.2, 4.1].',
-              "Assess the revisionist argument that the failure of Versailles lay not in its harshness, but in the Allies' refusal to enforce it in the 1930s [4.2].",
-            ],
-          },
-          full_model_answer:
-            'On 28 June 1919, the German delegation signed the Treaty of Versailles in the Hall of Mirrors, sparking intense national humiliation, economic catastrophe, and violent political instability that plagued the Weimar Republic for a decade [2.1]. This intense resentment was driven by four interlocking factors: the moral outrage generated by Article 231 (the "War Guilt Clause"), the imposition of an authoritarian "Diktat", the crippling burden of £6.6 billion in reparations, and severe territorial amputations [2.1, 2.2].\n\nFirst and foremost, the greatest source of moral fury across the German political spectrum was Article 231, the infamous "War Guilt Clause" [2.1]. Article 231 legally forced Germany to accept sole responsibility for causing all the loss and damage of the war [3.1]. To the German public, who genuinely believed they had fought a defensive war in 1914 against Russian mobilization and Franco-British encirclement, this clause was an intolerable, hypocritical lie. Furthermore, German resentment was compounded by the fact that the treaty was a "Diktat" (a dictated peace) [2.1]. German representatives were barred from the Paris negotiations, locked in their hotel behind barbed wire, and given an ultimatum: sign the treaty within five days or face immediate Allied military invasion and the reimposition of the naval starvation blockade [2.1].\n\nSecondly, the financial reparations imposed by the Allies crippled post-war Germany and triggered acute economic collapse [2.2]. In 1921, the Allied Reparations Commission fixed the total penalty at an astronomical £6.6 billion ($33 billion). As British economist John Maynard Keynes famously warned in 1919, stripping a devastated, industrialized nation of its working capital made economic recovery impossible [3.2]. When Germany defaulted on timber and coal payments in January 1923, French and Belgian troops occupied the industrial Ruhr valley [2.2]. The German government ordered passive resistance and printed massive volumes of paper money to pay striking workers, triggering catastrophic hyperinflation that wiped out the life savings of the German middle class and permanently destroyed faith in Weimar democracy.\n\nSimultaneously, the territorial and colonial terms provoked profound geopolitical grievances [2.2]. Under the treaty, Germany lost 13% of its European territory, 10% of its population, and vital economic resources, including the rich coalfields of the Saar Basin and the iron ore of Alsace-Lorraine [2.2]. Most outrageously to German nationalists, the treaty created the "Polish Corridor" to give the newly recreated state of Poland access to the Baltic Sea, severing the historic province of East Prussia from the rest of Germany and placing millions of ethnic Germans under foreign rule [2.2]. Furthermore, Germany was stripped of all its overseas colonies in Africa and the Pacific, and forbidden from uniting with German-speaking Austria (*Anschluss*).\n\nFinally, severe military disarmament left Germany feeling completely defenseless and stripped of national pride [2.2]. The proud German army, which had held off three great empires for four years, was slashed to a maximum of 100,000 volunteers, conscription was banned, the General Staff was dissolved, and all tanks, military aircraft, and submarines were banned or destroyed [2.2]. The permanent demilitarization of the Rhineland left western Germany open to French invasion, creating intense military vulnerability that right-wing nationalists and Adolf Hitler ruthlessly exploited through the "Dolchstoßlegende" (the stab-in-the-back myth) [2.3].\n\nIn conclusion, the Treaty of Versailles caused catastrophic instability because it was a fatal diplomatic compromise [4.3]. As Will Dyson’s prophetic cartoon illustrated (Source A), the settlement was sufficiently punitive to humiliate and economically destabilize Germany, but not harsh enough to permanently destroy its industrial potential [3.2, 4.3]. By saddling the democratic Weimar Republic with the stigma of the "November Criminals" and Article 231, the Big Three inadvertently cultivated the revanchist nationalism that tore Europe apart twenty years later in 1939.',
-        },
       },
       vocab: [
         {
@@ -4094,7 +3943,7 @@ export const unitData = {
           id: 'gw2_l5_q5_evaluative_essay',
           type: 'extended_writing',
           tariff: 'Question 5: Evaluative Statement Essay [12 marks • 15 mins]',
-          title: 'Question 5: Evaluative Statement Essay [12 marks • 15 mins]',
+          title: 'Enquiry Writing Task [12 marks • 15 mins]',
           question:
             '‘The Treaty of Versailles was so harsh that it made another European war inevitable.’ How far do you agree with this statement? [12 marks]',
           stimulus: [
@@ -4150,6 +3999,7 @@ export const unitData = {
           },
           model_answer:
             'For over a century, historians have debated whether the Treaty of Versailles (1919) was an excessively punitive "Carthaginian Peace" that directly caused the Second World War, or a manageable compromise that collapsed due to subsequent political failures [2.1, 5.1]. While the punitive terms—particularly Article 231 and reparations—inflicted profound psychological humiliation and economic trauma on Germany, I disagree that the treaty made another European war inevitable on its own. Rather, as modern revisionist historians prove, war became inevitable because the victorious Allies failed to enforce the treaty during the 1920s and 1930s [5.2].\\n\\nOn one hand, there is powerful evidence supporting the view that Versailles planted the seeds of future conflict [3.1, 4.1]. The treaty was universally denounced across Germany as a humiliating "Diktat", signed under threat of Allied invasion and a lethal starvation blockade [3.1]. In particular, Article 231 (the "War Guilt Clause") legally forced Germany to accept sole moral responsibility for the war [4.1]. To the German public, who viewed 1914 as a shared European tragedy, this was an intolerable lie. Right-wing nationalists ruthlessly weaponized Article 231 to brand the democratic Weimar politicians who signed it as the "November Criminals", creating the toxic "stab-in-the-back myth" (*Dolchstoßlegende*) that Adolf Hitler later exploited to dismantle democracy [4.1]. Furthermore, fixing reparations at £6.6 billion ($33 billion) in 1921 stripped Germany of working capital, leading directly to the 1923 French occupation of the Ruhr and catastrophic hyperinflation [3.2]. Contemporary critics like British Treasury economist John Maynard Keynes and Australian war artist Will Dyson ("1940 Class") recognized in 1919 that impoverishing Central Europe would guarantee a war of revenge within twenty years [4.2].\\n\\nOn the other hand, modern revisionist historians like Professor Margaret MacMillan (*Peacemakers*, 2001) convincingly argue that the treaty was neither exceptionally harsh nor inherently doomed [5.2]. Compared to the treaty Germany imposed on Bolshevik Russia at Brest-Litovsk in 1918 (which confiscated 34% of Russia\'s population and 54% of its industry), Versailles was relatively moderate. Germany remained the largest, most populous, and most industrially advanced nation in Central Europe [5.2]. Not a single inch of German territory was devastated by fighting; its railway networks, chemical plants, and coal mines were completely intact. Furthermore, the dissolution of the Austro-Hungarian and Russian empires surrounded Germany with small, fragmented successor states in Eastern Europe (Poland, Czechoslovakia), leaving Germany in a strategically stronger geopolitical position than in 1914 [5.2].\\n\\nCrucially, MacMillan and modern scholarship prove that the decisive failure was not the treaty’s terms, but the **Allies\' total failure to enforce them** [5.2]. The United States Senate retreated into strict isolationism, refusing to ratify the treaty or join the League of Nations. Great Britain, plagued by guilt and commercial self-interest, rapidly concluded the treaty was too harsh and adopted appeasement. France lacked the military confidence to enforce the terms alone. Consequently, when Hitler introduced conscription in 1935 and remilitarized the Rhineland in 1936, the Allies did nothing [5.2]. The treaty only became fatal because it was an unresolved compromise: harsh enough to enrage the German people, but far too weak and unenforced to restrain German revanchism.\\n\\nIn conclusion, the Treaty of Versailles did not make another war inevitable by its text alone [5.2]. While it created dangerous nationalist grievances and economic dislocation, Germany’s industrial recovery in the late 1920s under Gustav Stresemann proved that European peace was viable. War only became inevitable when the Great Depression shattered Weimar democracy and the victorious powers abandoned collective security and treaty enforcement in the face of Nazi aggression.',
+          topic: 'Enquiry Writing Task [12 marks • 15 mins]',
         },
       ],
     },

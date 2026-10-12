@@ -117,7 +117,7 @@ const enquiryConfigs = [
     ],
     rightPage: {
       type: 'single_12',
-      tariff: 'Question 2: Explain Why [12 marks &bull; 15 mins]',
+      tariff: 'Enquiry Writing Task [12 marks &bull; 15 mins]',
       examStem:
         'Explain why young British men volunteered in such massive numbers in the autumn of 1914. [12 marks]',
       stimulus: [
@@ -200,7 +200,7 @@ const enquiryConfigs = [
     rightPage: {
       type: 'two_part',
       partA: {
-        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
+        tariff: 'Task A: Describe Two Features [4 marks &bull; 5 mins]',
         badge: 'FEATURE DRILL',
         question:
           'Describe two features of the trench defensive systems on the Western Front. [4 marks]',
@@ -208,7 +208,7 @@ const enquiryConfigs = [
           'Feature 1: One key feature was... &bull; Detail: Specifically, this meant that... &bull; Feature 2: A second key feature was... &bull; Detail: This was designed to...',
       },
       partB: {
-        tariff: 'Question 2: Explain Why [8 marks &bull; 10 mins]',
+        tariff: 'Task B: Explain Why [8 marks &bull; 10 mins]',
         badge: 'STRUCTURED WRITING',
         question:
           'Explain why the First Day of the Somme (1 July 1916) resulted in catastrophic British casualties. [8 marks]',
@@ -300,7 +300,7 @@ const enquiryConfigs = [
     ],
     rightPage: {
       type: 'interpretations',
-      tariff: 'Question 3(b) &amp; 3(c): Contrasting Interpretations [8 marks &bull; 10 mins]',
+      tariff: 'Enquiry Writing Task [8 marks &bull; 10 mins]',
       interpretation1: {
         author: 'Lord Curzon, British War Cabinet Minister, Speech at the Royal Albert Hall (1917)',
         text: '“The Indian Army and the troops from our dominions have rushed forward with magnificent devotion to defend the King-Emperor. Side by side with their British brothers-in-arms, they have shed their blood on the plains of Flanders, Gallipoli, and Egypt. This imperial brotherhood proves that the British Empire is held together not by force, but by mutual love, loyalty, and common sacrifice.”',
@@ -310,11 +310,11 @@ const enquiryConfigs = [
         text: '“Over four million non-white men were mobilised as combatants and labourers by Britain. Yet their treatment was defined by systemic racism. Black and Asian soldiers were barred from becoming officers, paid a fraction of British wages, and subjected to brutal floggings. After 1918, the Imperial War Graves Commission deliberately refused to give African dead individual headstones. Their sacrifice was whitewashed from British national memory.”',
       },
       questionB:
-        'Question 3(b): Explain how Interpretations 1 and 2 differ about the experiences of colonial troops in the Great War. [4 marks]',
+        'Task A: Explain how Interpretations 1 and 2 differ about the experiences of colonial troops in the Great War. [4 marks]',
       stemsB:
         'Interpretation 1 emphasizes that colonial troops were treated with... &bull; In contrast, Interpretation 2 argues that their service was characterized by... &bull; Specifically, Interpretation 1 claims... whereas Interpretation 2 reveals...',
       questionC:
-        'Question 3(c): Suggest one reason why Interpretations 1 and 2 differ about the role of empire soldiers. [4 marks]',
+        'Task B: Suggest one reason why Interpretations 1 and 2 differ about the role of empire soldiers. [4 marks]',
       stemsC:
         'One reason why the interpretations differ is because the authors have different perspectives and purposes. Lord Curzon was a wartime imperial minister whose purpose was to... &bull; On the other hand, David Olusoga is a modern historian using declassified military records to...',
       timelineMissionTitle: 'Centrefold Sketch Challenges 2 &amp; 5',
@@ -397,7 +397,7 @@ const enquiryConfigs = [
     rightPage: {
       type: 'equal_split',
       partA: {
-        tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
+        tariff: 'Task A: Narrative Account [8 marks &bull; 10 mins]',
         badge: 'PART A &bull; NARRATIVE',
         question:
           'Write a narrative account analysing the key events leading from the Shell Crisis of 1915 to the introduction of compulsory conscription in 1916. [8 marks]',
@@ -411,7 +411,7 @@ const enquiryConfigs = [
           'Shell Crisis &bull; David Lloyd George &bull; Ministry of Munitions &bull; Lord Derby Scheme &bull; Military Service Act (1916) &bull; Conscription',
       },
       partB: {
-        tariff: 'Question 3: Explain Importance [8 marks &bull; 10 mins]',
+        tariff: 'Task B: Explain Importance [8 marks &bull; 10 mins]',
         badge: 'PART B &bull; IMPORTANCE',
         question:
           'Explain the importance of female munitions workers to the British war effort in the period 1915–1918. [8 marks]',
@@ -515,7 +515,7 @@ const enquiryConfigs = [
     ],
     rightPage: {
       type: 'single_12',
-      tariff: 'Question 5: Evaluative Statement Essay [12 marks &bull; 15 mins]',
+      tariff: 'Enquiry Writing Task [12 marks &bull; 15 mins]',
       examStem:
         '‘The Treaty of Versailles was so harsh that it made another European war inevitable.’ How far do you agree with this statement? [12 marks]',
       stimulus: [
@@ -895,7 +895,7 @@ function renderRightPage(cfg, pageNum) {
       <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px; flex: 1; display: flex; flex-direction: column; min-height: 0;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 9.6pt; color: #0f284e; margin: 0; font-weight: 800;">
-            ${partA.tariff || 'Question 1: Structured Writing [8 marks]'}
+            ${partA.tariff || 'Task A: Structured Writing [8 marks]'}
           </h2>
           <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
             ${partA.badge || 'PART A &bull; NARRATIVE'}
@@ -929,12 +929,12 @@ function renderRightPage(cfg, pageNum) {
         </div>
       </div>
 
-      <!-- PART B: QUESTION 3 EXPLAIN IMPORTANCE [8 MARKS] -->
+      <!-- PART B: EXPLAIN / IMPORTANCE [8 MARKS] -->
       <div style="flex: 1.1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
             <h2 style="font-family: 'Playfair Display', serif; font-size: 9.6pt; color: #0f284e; margin: 0; font-weight: 800;">
-              ${partB.tariff || 'Question 2: Structured Writing [8 marks]'}
+              ${partB.tariff || 'Task B: Structured Writing [8 marks]'}
             </h2>
             <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
               ${partB.badge || 'PART B &bull; IMPORTANCE'}

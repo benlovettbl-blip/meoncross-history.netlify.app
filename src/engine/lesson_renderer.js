@@ -2490,6 +2490,17 @@ export function renderLesson(lesson) {
     unitId === 'edexcel_medicine' ||
     activeUnit.isGCSE ||
     false;
+  const isKs3 =
+    unitId === 'early_modern_world' ||
+    unitId === 'water_and_sanitation' ||
+    unitId === 'great_war' ||
+    unitId === 'great_war_part2' ||
+    unitId === 'medieval_england' ||
+    unitId === 'industrialisation_and_empire' ||
+    unitId === 'first_british_empire' ||
+    unitId === 'monarchy_religion_power' ||
+    activeUnit.is_ks3 ||
+    !isGCSE;
   const hasInlineNarrativeSources =
     Array.isArray(lesson.narrative_blocks) &&
     lesson.narrative_blocks.some(
@@ -6796,7 +6807,10 @@ export function renderLesson(lesson) {
               window.currentUnitId === 'industrialisation_and_empire' ||
               (typeof unit !== 'undefined' && unit && unit.is_ks3);
             const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
-            const taskTitle = task.topic || 'Task 4: Analytical Synthesis & Historical Essay';
+            const taskTitle =
+              task.title ||
+              task.topic ||
+              (isKs3 ? 'Enquiry Writing Task' : 'Task 4: Analytical Synthesis & Historical Essay');
             const badgeText = isKs3
               ? 'KS3 Enquiry Essay &bull; Structured Writing'
               : 'GCSE Analytical Masterclass';
@@ -6953,7 +6967,9 @@ export function renderLesson(lesson) {
 
           let match = qText.match(/^([A-Za-z0-9'\-\/ ]+):\s*([\s\S]*)/);
           let displayHeading = '';
-          if (task.topic) {
+          if (task.title) {
+            displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${task.title}</div>`;
+          } else if (task.topic) {
             displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${task.topic}</div>`;
           } else if (match && match[2] && match[2].length > 15) {
             displayHeading = `<div style="font-size: 1.15rem; color: #0284c7; margin-bottom: 6px; font-weight: 800;">${match[1]}</div>`;
@@ -7695,7 +7711,7 @@ export function renderLesson(lesson) {
 
   if (
     shouldRenderGcseTask ||
-    (lesson.extended && lesson.extended.question) ||
+    (!isKs3 && lesson.extended && lesson.extended.question) ||
     extractedExamTasks.length > 0
   ) {
     let gcseHtml = `
