@@ -59,6 +59,7 @@ const enquiryConfigs = [
     stages: [
       {
         step: 1,
+        paraRef: '[1.1]',
         date: '1517–1521',
         questionHeading: 'How did Martin Luther’s protest spark the Reformation across Europe?',
         bullets: ['95 Theses', 'Indulgences', 'Defender of Faith'],
@@ -67,6 +68,7 @@ const enquiryConfigs = [
       },
       {
         step: 2,
+        paraRef: '[1.2]',
         date: '1525–1527',
         questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
         bullets: ['Male Heir', 'Leviticus 20:21', 'Anne Boleyn'],
@@ -75,6 +77,7 @@ const enquiryConfigs = [
       },
       {
         step: 3,
+        paraRef: '[1.3]',
         date: '1527–1529',
         questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
         bullets: ['Wolsey Fails', '1527 Sack of Rome', 'Charles V'],
@@ -82,6 +85,7 @@ const enquiryConfigs = [
       },
       {
         step: 4,
+        paraRef: '[1.4]',
         date: '1529–1533',
         questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
         bullets: ['Thomas Cromwell', 'Submission of Clergy', 'Appeals Ban (1533)'],
@@ -90,6 +94,7 @@ const enquiryConfigs = [
       },
       {
         step: 5,
+        paraRef: '[1.5]',
         date: '1534',
         questionHeading: 'How did the Act of Supremacy legally consolidate royal sovereignty?',
         bullets: ['‘Supreme Head’', 'Supremacy Oath', 'Sir Thomas More'],
@@ -141,6 +146,7 @@ const enquiryConfigs = [
     stages: [
       {
         step: 1,
+        paraRef: '[2.1]',
         date: '1558–1559',
         questionHeading: 'Why was England religiously fractured when Elizabeth became Queen?',
         bullets: ['Edward/Mary Swings', '280+ Burnings', 'Puritan Exiles'],
@@ -148,6 +154,7 @@ const enquiryConfigs = [
       },
       {
         step: 2,
+        paraRef: '[2.2]',
         date: '1559',
         questionHeading: 'How did the Act of Supremacy restore royal control through compromise?',
         bullets: ['‘Supreme Governor’', 'Avoids Offence', 'Bishops Dismissed'],
@@ -156,6 +163,7 @@ const enquiryConfigs = [
       },
       {
         step: 3,
+        paraRef: '[2.3]',
         date: '1559',
         questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’ (Via Media)?',
         bullets: ['1559 Prayer Book', 'Via Media', '12d Recusancy Fine'],
@@ -164,6 +172,7 @@ const enquiryConfigs = [
       },
       {
         step: 4,
+        paraRef: '[2.4]',
         date: '1568–1570',
         questionHeading: 'How did Mary Queen of Scots and the Papal Bull spark Catholic plots?',
         bullets: ['Mary Queen of Scots', '1569 Rebellion', '1570 Papal Bull'],
@@ -171,6 +180,7 @@ const enquiryConfigs = [
       },
       {
         step: 5,
+        paraRef: '[2.5]',
         date: '1571–1588',
         questionHeading: 'How did Walsingham’s spy network lead to Mary’s execution?',
         bullets: ['Walsingham Spies', '1586 Babington Plot', '1587 Execution'],
@@ -228,6 +238,7 @@ const enquiryConfigs = [
     stages: [
       {
         step: 1,
+        paraRef: '[3.1]',
         date: '1585–1587',
         questionHeading: 'What imperial and religious rivalries provoked Philip II’s invasion?',
         bullets: ['Catholic Crusade', 'Drake’s Raids', 'Dutch Rebel Aid'],
@@ -235,6 +246,7 @@ const enquiryConfigs = [
       },
       {
         step: 2,
+        paraRef: '[3.2]',
         date: '1587',
         questionHeading: 'How did Drake’s raid on Cadiz delay the Spanish invasion?',
         bullets: ['1587 Cadiz Raid', 'Barrels Burned', '‘Singed Beard’ (1yr)'],
@@ -243,6 +255,7 @@ const enquiryConfigs = [
       },
       {
         step: 3,
+        paraRef: '[3.3]',
         date: 'July 1588',
         questionHeading: 'How did the English fleet harry the Armada up the English Channel?',
         bullets: ['130-Ship Crescent', 'Race-Built Ships', 'Culverin Cannons'],
@@ -251,6 +264,7 @@ const enquiryConfigs = [
       },
       {
         step: 4,
+        paraRef: '[3.4]',
         date: '7–8 August 1588',
         questionHeading: 'How did English fireships at Calais shatter the Spanish formation?',
         bullets: ['Calais Anchorage', '8 Hellburners', 'Anchor Cables Cut'],
@@ -259,6 +273,7 @@ const enquiryConfigs = [
       },
       {
         step: 5,
+        paraRef: '[3.5]',
         date: 'Aug–Sept 1588',
         questionHeading: 'How did the Battle of Gravelines and severe storms destroy the fleet?',
         bullets: ['Gravelines Battle', '‘Protestant Wind’', '50+ Shipwrecks'],
@@ -321,6 +336,7 @@ const enquiryConfigs = [
     stages: [
       {
         step: 1,
+        paraRef: '[4.1]',
         date: '1629–1640',
         questionHeading: 'Why did Charles I’s ‘Personal Rule’ without Parliament cause outrage?',
         bullets: ['Divine Right', '11-Yr Personal Rule', 'Ship Money Tax'],
@@ -329,6 +345,7 @@ const enquiryConfigs = [
       },
       {
         step: 2,
+        paraRef: '[4.2]',
         date: '1640–1642',
         questionHeading: 'How did the breakdown of trust lead to armed civil conflict?',
         bullets: ['Long Parliament', '5 MPs Armed Raid', 'Royal Standard'],
@@ -336,6 +353,7 @@ const enquiryConfigs = [
       },
       {
         step: 3,
+        paraRef: '[4.3]',
         date: '1645–1648',
         questionHeading: 'How did the New Model Army defeat the King at the Battle of Naseby?',
         bullets: ['New Model Army', '1645 Naseby Victory', 'Scottish Pact 1648'],
@@ -344,6 +362,7 @@ const enquiryConfigs = [
       },
       {
         step: 4,
+        paraRef: '[4.4]',
         date: '1648–1649',
         questionHeading: 'Why did Pride’s Purge and the High Court lead to regicide?',
         bullets: ['1648 Pride’s Purge', 'Rump Parliament', 'Regicide (30 Jan 1649)'],
@@ -352,6 +371,7 @@ const enquiryConfigs = [
       },
       {
         step: 5,
+        paraRef: '[4.5]',
         date: '1660–1689',
         questionHeading: 'How did the Glorious Revolution permanently limit royal power?',
         bullets: ['1660 Restoration', '1688 William Lands', '1689 Bill of Rights'],
@@ -408,6 +428,7 @@ const enquiryConfigs = [
     stages: [
       {
         step: 1,
+        paraRef: '[5.1]',
         date: '1517–1534',
         questionHeading: 'How did Henry VIII reshape sovereign authority in the Reformation?',
         bullets: ['Royal Supremacy', 'Statutory Power', 'Monasteries Sold'],
@@ -415,6 +436,7 @@ const enquiryConfigs = [
       },
       {
         step: 2,
+        paraRef: '[5.2]',
         date: '1559–1588',
         questionHeading: 'How did the Elizabethan settlement forge a Protestant national state?',
         bullets: ['Via Media', 'Outward Conformity', '1588 Armada Unity'],
@@ -423,6 +445,7 @@ const enquiryConfigs = [
       },
       {
         step: 3,
+        paraRef: '[5.3]',
         date: '1603–1640',
         questionHeading: 'Why did Stuart claims of Divine Right provoke constitutional crisis?',
         bullets: ['Divine Right Claims', 'Ship Money Dispute', 'Bishops’ Wars'],
@@ -430,6 +453,7 @@ const enquiryConfigs = [
       },
       {
         step: 4,
+        paraRef: '[5.4]',
         date: '1642–1649',
         questionHeading: 'Why was the trial and execution of Charles I a radical turning point?',
         bullets: ['Citizen Army Beats King', 'King Held to Law', 'Republic Created'],
@@ -438,6 +462,7 @@ const enquiryConfigs = [
       },
       {
         step: 5,
+        paraRef: '[5.5]',
         date: '1660–1689',
         questionHeading: 'How did the 1689 Bill of Rights finalize Parliamentary Supremacy?',
         bullets: ['James II Expelled', 'Parliamentary Veto', 'Statutory Monarchy'],
@@ -1182,6 +1207,7 @@ function renderSpinePage(cfg, pageNum) {
               <span style="background: #ffffff; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
                 ${st.step}
               </span>
+              ${st.paraRef ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: 'Inter', monospace; font-size: 6.8pt; font-weight: 800; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">Text ${st.paraRef}</span>` : ''}
               <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #93c5fd; white-space: nowrap;">
                 ${st.date}
               </span>

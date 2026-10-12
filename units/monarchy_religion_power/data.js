@@ -659,6 +659,33 @@ export const unitData = {
           topic: 'Disciplinary Enquiry Task: Causation & Motivation [12 Marks]',
           question:
             'Explain why King Henry VIII broke with Rome in the period 1527–1534. Evaluate which motive was decisive: his dynastic need for a male heir, financial greed for church wealth, or craving for absolute royal sovereignty.',
+          scaffolding: {
+            guidance:
+              'Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link/Judgment for every paragraph.',
+            structure_strip: [
+              {
+                col: '1. Dynastic Urgency',
+                prompt:
+                  'Explain how Catherine of Aragon’s failure to produce a surviving male heir and fear of civil war forced Henry to seek an annulment [1.2, 1.3].',
+                starter:
+                  'The most urgent catalyst explaining why King Henry VIII broke with Rome in the period 1527–1534 was his desperate dynastic need for a legitimate male heir...',
+              },
+              {
+                col: '2. Royal Sovereignty',
+                prompt:
+                  'Explain how Thomas Cromwell used the 1534 Act of Supremacy to make Henry Supreme Head and eliminate papal jurisdiction [1.4, 1.5].',
+                starter:
+                  'A deeper structural cause explaining why King Henry VIII broke with Rome in the period 1527–1534 was his growing craving for absolute royal sovereignty...',
+              },
+              {
+                col: '3. Financial Wealth & Verdict',
+                prompt:
+                  'Weigh how the Dissolution of the Monasteries (1536–1540) enriched the Crown, but evaluate why dynastic succession was the decisive trigger [1.5].',
+                starter:
+                  'Finally, financial greed for church wealth was a powerful secondary factor explaining why King Henry VIII broke with Rome in the period 1527–1534, although...',
+              },
+            ],
+          },
           hints: [
             'Point: State your central thesis: evaluate whether dynastic panic, financial greed, or royal power was the primary spark.',
             'Evidence: Deploy specific factual evidence: Catherine of Aragon, Anne Boleyn, the 1534 Act of Supremacy, and the Dissolution of 800 Monasteries (1536–1540).',
@@ -666,7 +693,7 @@ export const unitData = {
             'Link: Conclude decisively: explain why one factor was the non-negotiable catalyst that drove the Break with Rome.',
           ],
           model_answer:
-            'King Henry VIII’s Break with Rome in 1534 was driven by three interconnected motives, but his dynastic desperation for a legitimate male heir was the decisive catalyst. Initially, Henry was a staunch orthodox Catholic who defended the Pope against Martin Luther, earning the papal title Defender of the Faith. However, by 1527 Catherine of Aragon had failed to produce a male heir, leaving only Princess Mary. Henry was terrified that without a male successor, England would plunge into a catastrophic civil war akin to the Wars of the Roses. When Pope Clement VII refused to annul the marriage due to captivity under Charles V, Thomas Cromwell used Parliament to pass the Act of Supremacy (1534), declaring Henry Supreme Head of the Church of England. While the subsequent Dissolution of the Monasteries (1536–1540) satisfied Henry’s financial greed and funded coastal fortresses, this financial seizure was an opportunistic consequence rather than the initial spark. Ultimately, Henry broke with Rome because dynastic survival demanded a male heir with Anne Boleyn, forcing him to seize absolute sovereign power from the Pope.',
+            'The most urgent catalyst explaining why King Henry VIII broke with Rome in the period 1527–1534 was his desperate dynastic need for a legitimate male heir. By 1527, Queen Catherine of Aragon had suffered multiple miscarriages and produced only one surviving daughter, Princess Mary. Tormented by the memory of the bloody Wars of the Roses, Henry was convinced that without a male Tudor successor, England would plunge into catastrophic civil war upon his death. When Pope Clement VII—held captive by Catherine’s nephew, Holy Roman Emperor Charles V, following the Sack of Rome—refused to grant an annulment, Henry was forced to abandon papal authority to marry Anne Boleyn. Consequently, dynastic panic regarding the royal succession was the immediate trigger that ensured King Henry VIII broke with Rome in the period 1527–1534.<br><br>A deeper structural cause explaining why King Henry VIII broke with Rome in the period 1527–1534 was his growing craving for absolute royal sovereignty over church and state. Guided by his ruthless chief minister Thomas Cromwell and reformist theological treatises, Henry embraced the radical doctrine that England was an autonomous empire answerable to no foreign potentate. Through the 1533 Act in Restraint of Appeals and the landmark 1534 Act of Supremacy passed by Parliament, Henry stripped the Papacy of all legal jurisdiction, declaring the English monarch Supreme Head of the Church of England. This transformed the Crown’s constitutional status, subordinating canon law and clerical loyalties entirely to national statute law. Thus, the desire to eliminate papal supremacy and establish unchecked sovereign authority explains why King Henry VIII broke with Rome in the period 1527–1534.<br><br>Finally, financial greed for church wealth was a powerful secondary factor explaining why King Henry VIII broke with Rome in the period 1527–1534. Once papal ties were severed, Cromwell carried out the 1535 Valor Ecclesiasticus and the Dissolution of the Monasteries (1536–1540), confiscating over 800 abbeys and seizing vast estates, precious jewels, and lead roofing. This unprecedented financial windfall doubled the Crown’s annual revenue and funded coastal Device Forts to defend against Catholic European invasion. However, this financial plunder was an opportunistic consequence rather than the initial spark; Henry only targeted monastic riches after the papal breach had occurred. Ultimately, while wealth consolidated the new regime, it was dynastic panic rather than financial greed that fundamentally explains why King Henry VIII broke with Rome in the period 1527–1534.',
         },
       ],
 
@@ -939,7 +966,7 @@ export const unitData = {
           text: '<span class="para-ref">[2.3]</span> Alongside her supremacy, Elizabeth passed the 1559 Act of <strong>Uniformity</strong>, forging her famous <strong>Via Media</strong>—the "Middle Way." Church was made compulsory: every subject had to attend English Protestant services every Sunday or pay a steep 12d fine as a <strong>recusant</strong>. However, to avoid alienating Catholic subjects, the 1559 Book of Common Prayer deliberately retained traditional priestly vestments, church music, and ambiguous communion wording. A Catholic worshipper could take communion believing in the Real Presence of Christ, while a Protestant could take it as a simple remembrance. Elizabeth famously refused to "make windows into men’s souls"—demanding public loyalty rather than policing private conscience.',
           source: {
             letter: 'A',
-            title: 'Source A: Title Page Woodcut of the Bishops’ Bible (1568)',
+            title: 'Source A: Antonis Mor, Portrait of Queen Mary I ("Bloody Mary") (1554)',
             image: '/images/queen_mary_i_mary_tudor.jpg',
             caption:
               'Contemporary portrait of Queen Mary I ("Bloody Mary"), whose systematic burning of Protestant martyrs created deep-seated anti-Catholic fear across Elizabethan England.',
@@ -991,7 +1018,7 @@ export const unitData = {
 
       sources: [
         {
-          title: 'Source A: Portrait of Queen Mary I ("Bloody Mary")',
+          title: 'Source A: Antonis Mor, Portrait of Queen Mary I ("Bloody Mary") (1554)',
           image: '/images/queen_mary_i_mary_tudor.jpg',
           caption:
             'Contemporary portrait of Queen Mary I, whose systematic burning of Protestant martyrs created deep anti-Catholic fear across England.',
@@ -1064,6 +1091,33 @@ export const unitData = {
           topic: 'Disciplinary Enquiry Task: Significance & Compromise [8 Marks]',
           question:
             'Explain the importance of the Elizabethan Religious Settlement (1559) for religious stability in England. Evaluate whether the Via Media succeeded because it was a genuine religious compromise or because Elizabeth enforced strict legal obedience.',
+          scaffolding: {
+            guidance:
+              'Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link/Judgment for every paragraph.',
+            structure_strip: [
+              {
+                col: '1. Political Compromise',
+                prompt:
+                  'Explain how choosing the title "Supreme Governor" instead of "Supreme Head" resolved theological tensions and avoided civil strife [2.2].',
+                starter:
+                  'First, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England because it established a pragmatic political compromise...',
+              },
+              {
+                col: '2. The Via Media Liturgy',
+                prompt:
+                  'Explain how the 1559 Book of Common Prayer allowed ambiguous communion beliefs without "making windows into men’s souls" [2.3].',
+                starter:
+                  'Second, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England because the Via Media balanced Protestant theology with...',
+              },
+              {
+                col: '3. Legal Enforcement & Verdict',
+                prompt:
+                  'Weigh how 12d recusancy fines maintained order, and evaluate whether compromise or legal enforcement was decisive [2.3, 2.4].',
+                starter:
+                  'Third, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England because it enforced obedience through moderate legal penalties...',
+              },
+            ],
+          },
           hints: [
             'Point: State your thesis: explain how the Via Media avoided immediate civil war while securing the Protestant state.',
             'Evidence: Detail specific terms: "Supreme Governor", the 1559 Book of Common Prayer, 12d recusancy fines, and outward conformity.',
@@ -1071,7 +1125,7 @@ export const unitData = {
             'Link: Evaluate the long-term impact: explain how papal excommunication (1570) eventually disrupted this delicate compromise.',
           ],
           model_answer:
-            'The Elizabethan Religious Settlement of 1559 was of paramount importance for securing political and religious stability in sixteenth-century England. Following the bloody swings between Edward VI’s radical Protestantism and Mary I’s burning of 284 heretics, Elizabeth inherited a nation on the brink of sectarian civil war. Her settlement succeeded primarily because it was a masterclass in strategic compromise. By adopting the title "Supreme Governor" rather than Henry VIII’s "Supreme Head", Elizabeth mollified Catholic theological objections while satisfying Protestant reformers. Furthermore, the 1559 Act of Uniformity established the Via Media: church services were compulsory and conducted in English, yet traditional vestments and ambiguous communion wording were retained so moderate Catholics could attend without violating conscience. By demanding outward conformity enforced through manageable 12d recusancy fines rather than executing dissidents for their private thoughts, Elizabeth successfully neutralized domestic rebellion for over a decade. Although the 1570 Papal Bull eventually polarized religious identities, the 1559 settlement laid the permanent constitutional foundation for the modern Church of England.',
+            'First, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England because it established a pragmatic political compromise that halted sectarian civil strife. Following the violent swings between Edward VI’s radical iconoclasm and Mary I’s burning of 284 Protestant martyrs, the realm was on the verge of religious warfare. Elizabeth defused immediate Catholic hostility by passing the Act of Supremacy (1559), choosing the title "Supreme Governor" rather than Henry VIII’s provocative "Supreme Head". This subtle compromise appeased Catholics who recognized only Christ or the Pope as head of the Church, while reassuring Puritans who objected to female spiritual supremacy. By avoiding dogmatic extremes, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England.<br><br>Second, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England because the Via Media (Middle Way) balanced Protestant theology with traditional ritual. Under the 1559 Act of Uniformity and the revised Book of Common Prayer, services and scripture were conducted in English, satisfying Protestant reformers. Simultaneously, traditional vestments, choral music, and ambiguous communion wording were retained, allowing moderate Catholics to interpret the sacrament according to the Real Presence without committing heresy. Elizabeth famously insisted she had "no desire to make windows into men’s souls", deliberately separating outward loyalty to the Crown from the private persecution of individual conscience. Through this calculated ambiguity, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England.<br><br>Third, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England because it enforced obedience through moderate legal penalties rather than violent terror. Attendance at Sunday church was made compulsory, punishing absentees with a twelve-penny recusancy fine. This manageable financial sanction allowed wealthy Catholic gentry to quietly pay fines while maintaining public order, averting large-scale rebellion for a decade until the 1569 Northern Rebellion and Pope Pius V’s 1570 papal bull excommunicating Elizabeth. While later Catholic plots forced stricter penal laws, Elizabeth’s initial legislative framework prevented the religious massacres witnessed in contemporary France. Ultimately, by combining flexible compromise with consistent statute law, the Elizabethan Religious Settlement of 1559 was of vital importance for religious stability in England.',
         },
       ],
 
@@ -1322,7 +1376,7 @@ export const unitData = {
           source: {
             letter: 'A',
             title: 'Source A: Contemporary Chart of Sir Francis Drake’s Raid on Cadiz (1587)',
-            image: '/images/spanish_armada.jpg',
+            image: '/images/drake_cadiz_1587.jpg',
             caption:
               'Contemporary chart depicting Sir Francis Drake’s daring attack on the Spanish harbour of Cadiz in April 1587, burning thirty warships and crippling Spanish supplies.',
             source_context:
@@ -1355,10 +1409,10 @@ export const unitData = {
           text: '<span class="para-ref">[3.5]</span> At dawn on 8 August, the English closed in for the decisive Battle of Gravelines. In an eight-hour running battle, English race-built galleons pounded the scattered, anchorless Spanish ships with over 100,000 cannonballs at point-blank range, killing thousands of soldiers and puncturing hulls. Then, divine <strong>providence</strong> intervened. Ferocious south-westerly gales—celebrated across England as the "Protestant Wind"—drove the battered Armada north into the treacherous North Sea. Lacking anchors and starving on foul rations, Spanish captains were forced to circumnavigate Scotland and Ireland. Fierce Atlantic hurricanes smashed dozens of galleons against the rocky Irish cliffs; over 50 ships and 15,000 men perished, turning the invasion into an utter catastrophe.',
           source: {
             letter: 'B',
-            title: 'Source B: Nicholas Hilliard (attr.), The Armada Victory Medal (1588)',
-            image: '/images/spanish_armada_battle.jpg',
+            title: 'Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)',
+            image: '/images/battle_of_gravelines_1588.jpg',
             caption:
-              'Contemporary Dutch painting depicting the ferocious close-range naval bombardment at the Battle of Gravelines on 8 August 1588.',
+              'Philip James de Loutherbourg’s dramatic depiction of English race-built galleons bombarding scattered Spanish warships at Gravelines.',
             source_context:
               'Following the fireship panic at Calais, English galleons battered the scattered Spanish fleet at Gravelines, ending Philip II’s hopes of landing an invading army on English soil.',
             how_useful_question:
@@ -1370,7 +1424,7 @@ export const unitData = {
             ],
             hinge_question:
               'Hinge Question: Does the painting attribute the English victory to superior naval artillery or to Spanish panic and chaos?',
-            citation: 'National Maritime Museum, Greenwich.',
+            citation: 'Philip James de Loutherbourg (1796) • National Maritime Museum, Greenwich.',
           },
         },
       ],
@@ -1378,7 +1432,7 @@ export const unitData = {
       sources: [
         {
           title: 'Source A: Contemporary Chart of Drake’s Raid on Cadiz (1587)',
-          image: '/images/spanish_armada.jpg',
+          image: '/images/drake_cadiz_1587.jpg',
           caption:
             'Contemporary chart showing Francis Drake’s raid on Cadiz harbour, burning Spanish transports and barrel supplies.',
           source_context:
@@ -1395,10 +1449,10 @@ export const unitData = {
           citation: 'British Library Maritime Cartographic Manuscripts.',
         },
         {
-          title: 'Source B: The Battle of Gravelines (8 August 1588)',
-          image: '/images/spanish_armada_battle.jpg',
+          title: 'Source B: Philip James de Loutherbourg, The Battle of Gravelines (1588)',
+          image: '/images/battle_of_gravelines_1588.jpg',
           caption:
-            'Contemporary depiction of English galleons bombarding scattered Spanish warships at Gravelines.',
+            'Philip James de Loutherbourg’s dramatic depiction of English race-built galleons bombarding scattered Spanish warships at Gravelines.',
           source_context:
             'At Gravelines, English long-range gunnery and fireship tactics shattered Philip II’s invasion plan.',
           how_useful_question:
@@ -1410,7 +1464,7 @@ export const unitData = {
           ],
           hinge_question:
             'Hinge Question: Does Source B show a traditional boarding battle or modern artillery warfare?',
-          citation: 'National Maritime Museum, Greenwich.',
+          citation: 'Philip James de Loutherbourg (1796) • National Maritime Museum, Greenwich.',
         },
       ],
 
@@ -1452,6 +1506,33 @@ export const unitData = {
           topic: 'Disciplinary Enquiry Task: Narrative Causation [8 Marks]',
           question:
             'Write a narrative account analysing the key events of the Spanish Armada campaign in the summer of 1588. Explain why Philip II’s invasion failed, evaluating English naval tactics and the role of severe weather.',
+          scaffolding: {
+            guidance:
+              'Write a chronological 3-paragraph PEEL narrative account. Use the exact words from the question stem in your Point and in your Link/Judgment for every paragraph.',
+            structure_strip: [
+              {
+                col: '1. Channel Standoff',
+                prompt:
+                  'Explain how Hawkins’ race-built galleons and long-range culverin cannons prevented the Spanish crescent from boarding [3.2, 3.3].',
+                starter:
+                  'At the outset, the Spanish Armada campaign in the summer of 1588 failed because English maritime strategy disrupted Spanish preparations and...',
+              },
+              {
+                col: '2. Calais Fireships & Gravelines',
+                prompt:
+                  'Explain how the midnight fireships forced the Spanish to cut their anchors, allowing English ships to pound them at Gravelines [3.4, 3.5].',
+                starter:
+                  'Crucially, the Spanish Armada campaign in the summer of 1588 failed because the midnight fireship attack at Calais shattered Spanish discipline and...',
+              },
+              {
+                col: '3. Atlantic Gales & Verdict',
+                prompt:
+                  'Explain how the "Protestant Wind" wrecked anchorless ships off Scotland and Ireland, and evaluate the decisive cause of defeat [3.5].',
+                starter:
+                  'Finally, the Spanish Armada campaign in the summer of 1588 failed because severe weather and treacherous Atlantic gales decimated the...',
+              },
+            ],
+          },
           hints: [
             'Chronology: Structure your narrative across three phases: (1) The Channel crescent and standoff gunnery, (2) The midnight fireships at Calais and Gravelines, (3) The retreat around Scotland and the Atlantic gales.',
             'Causal Connectives: Use analytical links: "Consequently", "As a direct result", "Crucially, this forced", "Ultimately".',
@@ -1459,7 +1540,7 @@ export const unitData = {
             'Analytical Judgment: State clearly whether English tactical innovation or atrocious weather was the decisive factor.',
           ],
           model_answer:
-            'The defeat of the Spanish Armada in the summer of 1588 was caused by a combination of English tactical superiority and catastrophic weather. The campaign began in late July when Philip II’s 130 ships entered the English Channel in a formidable defensive crescent formation. Although the Spanish intended to close with English ships and board them with infantry, Sir John Hawkins’ faster, race-built galleons used long-range culverin cannons to deliver rolling broadsides from a standoff distance, keeping the crescent at bay. The decisive turning point occurred on 7 August off Calais. Recognizing that the Spanish fleet was anchored awaiting the Duke of Parma’s troops, Lord Howard and Francis Drake dispatched eight blazing fireships into the anchorage at midnight. Panic-stricken Spanish captains cut their anchor cables to escape the flames, permanently shattering the protective crescent formation. The following morning at the Battle of Gravelines, English galleons pounded the scattered, anchorless Spanish ships at close range. Finally, ferocious south-westerly gales—celebrated as the "Protestant Wind"—drove the damaged fleet into the treacherous North Sea. Lacking anchors, over fifty Spanish galleons were shipwrecked along the rocky coasts of Scotland and Ireland, turning an ambitious invasion into a devastating imperial catastrophe.',
+            'At the outset, the Spanish Armada campaign in the summer of 1588 failed because English maritime strategy disrupted Spanish preparations and neutralized their tactical strengths in the Channel. In April 1587, Sir Francis Drake struck Cadiz, destroying 30 ships and vital seasoned barrel staves, which delayed the invasion and left Spanish provisions to rot in unseasoned casks. When the 130 ships of the Armada entered the English Channel in July 1588 sailing in a tight crescent formation, the Duke of Medina Sidonia aimed to grapple and board enemy ships. However, John Hawkins’ faster "race-built" galleons used long-range culverin cannons to fire rolling broadsides from standoff range, preventing the Spanish infantry from ever boarding. Consequently, superior English ship design and artillery standoff tactics prevented any early Spanish breakthrough, explaining why the Spanish Armada campaign in the summer of 1588 failed.<br><br>Crucially, the Spanish Armada campaign in the summer of 1588 failed because the midnight fireship attack at Calais shattered Spanish discipline and led to defeat at Gravelines. On 6 August, Medina Sidonia anchored off Calais to meet Parma’s blockaded army. Just after midnight on 7–8 August, Lord Howard and Drake launched eight pitch-soaked fireships into the congested anchorage. Panicked Spanish captains chopped their anchor cables and scattered into the night, permanently rupturing their defensive crescent. At dawn on 8 August at the Battle of Gravelines, English galleons closed within point-blank range, battering the anchorless Spanish warships with over 100,000 cannonballs, disabling critical galleons and killing thousands. This tactical catastrophe stripped the fleet of its defensive cohesion and anchors, directly explaining why the Spanish Armada campaign in the summer of 1588 failed.<br><br>Finally, the Spanish Armada campaign in the summer of 1588 failed because severe weather and treacherous Atlantic gales decimated the retreating fleet. Unable to beat back against the prevailing winds or re-group without anchors, Medina Sidonia was forced to navigate the hazardous northern route around Scotland and Ireland. Ferocious late-summer gales, hailed in England as the providential "Protestant Wind", drove battered Spanish ships onto jagged Irish rocks. Starving, afflicted by contaminated water from faulty barrels, and lacking anchors, over 50 galleons were wrecked and 15,000 men drowned or were executed by English garrisons ashore. While English tactics delivered the tactical blow at Gravelines, the Atlantic tempests transformed retreat into complete destruction. Ultimately, the combination of devastating naval gunnery and lethal Atlantic gales proved decisive, explaining why the Spanish Armada campaign in the summer of 1588 failed.',
         },
       ],
 
@@ -1714,8 +1795,7 @@ export const unitData = {
           text: '<span class="para-ref">[4.1]</span> In 1625, Charles I inherited the English throne, holding a fanatical belief in the <strong>Divine Right</strong> of Kings. Charles believed he was appointed directly by God Almighty and that no earthly court or parliament had the right to limit his power. When MPs in Parliament challenged his royal policies, Charles dismissed them in 1629, initiating eleven years of absolute <strong>Personal Rule</strong>. To finance his royal court without parliamentary taxation, Charles revived obsolete feudal fines. Most notoriously, he imposed <strong>Ship Money</strong>—an emergency tax traditionally levied on coastal ports during war—and forced inland farming towns to pay it every year in peacetime. When inland MP John Hampden refused to pay in 1637, constitutional outrage erupted across England.',
           source: {
             letter: 'A',
-            title:
-              'Source A: Contemporary Satirical Broadside on Ship Money and Royal Monopolies (1640)',
+            title: 'Source A: Anthony van Dyck, Portrait of King Charles I (1636)',
             image: '/images/charles_first.jpg',
             caption:
               'Anthony van Dyck’s official court portrait of King Charles I (1636): projecting aristocratic elegance, absolute royal majesty, and the unshakeable doctrine of the Divine Right of Kings.',
@@ -1851,6 +1931,33 @@ export const unitData = {
           topic: 'Disciplinary Enquiry Task: Causation & Constitutional Change [12 Marks]',
           question:
             'Explain why Parliament put King Charles I on trial and executed him in January 1649. Evaluate whether the regicide was caused primarily by Charles I’s refusal to accept constitutional limits, or the radicalization of the New Model Army.',
+          scaffolding: {
+            guidance:
+              'Write a structured 3-paragraph PEEL response. Use the exact words from the question stem in your Point and in your Link/Judgment for every paragraph.',
+            structure_strip: [
+              {
+                col: '1. Tyranny & Divine Right',
+                prompt:
+                  'Explain how Personal Rule, Ship Money, and the attempted arrest of the 5 MPs destroyed constitutional trust [4.1, 4.2].',
+                starter:
+                  'First, Parliament put King Charles I on trial and executed him in January 1649 because of his stubborn adherence to Divine Right absolutism and...',
+              },
+              {
+                col: '2. The "Man of Blood"',
+                prompt:
+                  'Explain how Charles’s secret pact with the Scots provoked the Second Civil War (1648) and convinced the Army he could not be trusted [4.3].',
+                starter:
+                  'Second, Parliament put King Charles I on trial and executed him in January 1649 because the King’s obstinate duplicity made lasting peace...',
+              },
+              {
+                col: '3. Army Purge & Verdict',
+                prompt:
+                  'Explain how Pride’s Purge created the Rump Parliament and evaluate whether Charles’s duplicity or army radicalism was decisive [4.4].',
+                starter:
+                  'Third, Parliament put King Charles I on trial and executed him in January 1649 because the radicalized New Model Army seized control of the state to...',
+              },
+            ],
+          },
           hints: [
             'Point: State your thesis: evaluate whether Charles’s unyielding belief in Divine Right or the New Model Army’s demand for justice was the decisive factor.',
             'Evidence: Deploy specific historical evidence: Personal Rule (1629–1640), Ship Money, the Second Civil War (1648), Pride’s Purge, and the High Court of Justice.',
@@ -1858,7 +1965,7 @@ export const unitData = {
             'Link: Conclude decisively: explain why execution became seen as a "cruel necessity" to prevent endless civil conflict.',
           ],
           model_answer:
-            'Parliament put King Charles I on trial and executed him in January 1649 due to a fatal combination of his obstinate belief in Divine Right and the radicalization of the New Model Army, but the King’s persistent duplicity was the decisive factor. Throughout his reign, Charles held that monarchs were accountable to God alone. During his eleven-year Personal Rule (1629–1640), he levied non-parliamentary taxes like Ship Money, and in 1642 he attempted to arrest five MPs by armed force, demonstrating contempt for constitutional law. Although Parliament was victorious in the First Civil War, Charles refused to negotiate in good faith. Instead, he treated peace proposals as delaying tactics while secretly forging an alliance with the Scots, provoking the bloody Second Civil War in 1648. This betrayal convinced Oliver Cromwell and the New Model Army that Charles was a "man of blood" who was personally responsible for shedding his subjects’ blood. Following Pride’s Purge in December 1648, the radical Rump Parliament created a High Court of Justice. Because Charles adamantly refused to enter a plea or acknowledge the court’s authority, execution was deemed a "cruel necessity" to permanently eliminate the threat of future civil war.',
+            'First, Parliament put King Charles I on trial and executed him in January 1649 because of his stubborn adherence to Divine Right absolutism and years of unconstitutional rule. Between 1629 and 1640, Charles governed during an eleven-year Personal Rule, dissolving Parliament and raising illegal revenue through obsolete feudal fines and peacetime Ship Money imposed on inland counties like Buckinghamshire. When John Hampden resisted, Charles insisted that the Crown answered only to God and was above statute law. In January 1642, Charles entered the House of Commons with 400 armed soldiers to arrest five MPs, permanently destroying political trust and precipitating the First Civil War. This authoritarian contempt for parliamentary law established the deep structural grievances explaining why Parliament put King Charles I on trial and executed him in January 1649.<br><br>Second, Parliament put King Charles I on trial and executed him in January 1649 because the King’s obstinate duplicity made lasting peace impossible. Following the Royalist defeat at Naseby in 1645, Parliament and army leaders offered generous constitutional settlements that would have preserved Charles on his throne. Instead, Charles treated negotiations in bad faith while secretly signing the "Engagement" with Scottish factions in December 1647, inciting an armed invasion and the bloody Second Civil War of 1648. This deliberate renewal of bloodshed convinced Parliamentary soldiers that the King was a treacherous "man of blood" who was personally culpable for the deaths of thousands of his subjects. By choosing renewed warfare over a constitutional compromise, the King sealed his own fate, explaining why Parliament put King Charles I on trial and executed him in January 1649.<br><br>Third, Parliament put King Charles I on trial and executed him in January 1649 because the radicalized New Model Army seized control of the state to enforce justice. In December 1648, Colonel Pride carried out Pride’s Purge, forcibly expelling 140 moderate MPs who wished to continue negotiating with the King. The remaining "Rump Parliament" established a High Court of Justice to try Charles for high treason against his people. When Charles contemptuously refused to acknowledge the court’s authority or remove his hat, Oliver Cromwell and 58 fellow commissioners concluded that executing the King was a "cruel necessity" to prevent endless civil war and secure the Commonwealth republic. Ultimately, while army radicalism wielded the axe, it was Charles’s treasonous bad faith that fundamentally explains why Parliament put King Charles I on trial and executed him in January 1649.',
         },
       ],
 
@@ -2102,7 +2209,7 @@ export const unitData = {
           text: '<span class="para-ref">[5.2]</span> Under Elizabeth I, the English state forged an unshakeable national identity centered on Protestantism and parliamentary partnership. Through the 1559 Via Media, Elizabeth demonstrated political pragmatism: enforcing public <strong>conformity</strong> while avoiding the wholesale burnings of her predecessor Mary I. When Catholic assassination plots and Philip II’s 1588 Armada threatened England, Elizabeth rallied her subjects behind the Protestant Crown. Defeating the Armada convinced generations of English citizens that God Almighty had personally chosen England as a Protestant champion. Crucially, Elizabeth managed Parliament as a trusted partner, consulting MPs on trade, defense, and succession, leaving the Crown immensely popular and financially secure.',
           source: {
             letter: 'A',
-            title: 'Source A: Contemporary Woodcut, Queen Elizabeth I in Parliament (c. 1580s)',
+            title: 'Source A: The 1689 Bill of Rights (Original Statute Scroll)',
             image: '/images/bill_of_rights.jpg',
             caption:
               'The 1689 Bill of Rights: the landmark constitutional statute that finalized Parliamentary Supremacy and ended royal absolutism in Britain.',
@@ -2233,6 +2340,33 @@ export const unitData = {
           topic: 'Synoptic Disciplinary Enquiry: Extent of Change [12 Marks]',
           question:
             '“Between 1517 and 1689, the balance of power shifted completely from the Crown to Parliament.” How far do you agree with this statement? Support your answer using evidence across the period (Henry VIII, Elizabeth I, the Civil War, and the 1689 Bill of Rights).',
+          scaffolding: {
+            guidance:
+              'Write a balanced 3-paragraph PEEL evaluation. Use the exact words from the question stem in your Point and in your Link/Judgment for every paragraph.',
+            structure_strip: [
+              {
+                col: '1. The Constitutional Shift',
+                prompt:
+                  'Explain how the trial of Charles I (1649) and the 1689 Bill of Rights legally subordinated the Crown to Parliament [5.4, 5.5].',
+                starter:
+                  'To a significant extent, I agree that between 1517 and 1689 the balance of power shifted from the Crown to Parliament, because absolute monarchy was...',
+              },
+              {
+                col: '2. Enduring Crown Prerogatives',
+                prompt:
+                  'Explain why the shift was not total: Tudors expanded royal power, and monarchs retained executive control over ministers, war, and treaties [5.1, 5.2, 5.5].',
+                starter:
+                  'On the other hand, it can be argued that between 1517 and 1689 the balance of power shifted from the Crown to Parliament far less completely than claimed, as...',
+              },
+              {
+                col: '3. Synoptic Verdict (King-in-Parliament)',
+                prompt:
+                  'Synthesize the overall change from Henry VIII’s 1534 statutes to 1689: why the King-in-Parliament became the permanent foundation of British rule [5.1, 5.5].',
+                starter:
+                  'In conclusion, I judge that between 1517 and 1689 the balance of power shifted from the Crown to Parliament fundamentally, creating a revolutionary system of...',
+              },
+            ],
+          },
           hints: [
             'Thesis / Argument: State your overall evaluation: agree that a profound constitutional revolution occurred, but note that the monarch retained significant executive power.',
             'Evidence for Change: Detail how Parliament went from an occasional advisory body under Henry VIII to holding supreme legal vetoes over taxes, standing armies, and royal succession in the 1689 Bill of Rights.',
@@ -2240,7 +2374,7 @@ export const unitData = {
             'Synoptic Conclusion: Weigh the decisive turning points: explain whether 1534, 1649, or 1689 delivered the permanent constitutional breakthrough.',
           ],
           model_answer:
-            'Between 1517 and 1689, the constitutional balance of power shifted decisively from personal royal monarchy to parliamentary supremacy, though the Crown retained important executive prerogatives. In 1517, England was an orthodox Catholic realm where the King answered to Rome and Parliament met only when the monarch demanded taxation. Henry VIII’s 1534 Break with Rome initially concentrated vast powers in the royal hands, establishing Royal Supremacy. However, to make this supremacy legally binding, Henry relied on parliamentary statute law, creating a vital precedent that Parliament was the supreme law-making authority in England. When the early Stuarts attempted to reverse this partnership through the Divine Right of Kings and Charles I’s eleven-year Personal Rule (1629–1640), the structural conflict exploded into Civil War. The public trial and execution of Charles I in 1649 established the radical principle that monarchs were accountable to the law and could be put to death for treason against their people. Although the monarchy was restored in 1660, James II’s attempt to revive absolute rule led to the 1688 Glorious Revolution. By accepting the 1689 Bill of Rights, William and Mary permanently conceded that the Crown could not suspend laws, levy taxes, or maintain a standing army without parliamentary consent. While the monarch still retained executive powers to appoint ministers and declare war, sovereignty had fundamentally transformed from an absolute Crown into a constitutional King-in-Parliament.',
+            'To a significant extent, I agree that between 1517 and 1689 the balance of power shifted from the Crown to Parliament, because absolute monarchy was permanently dismantled in favour of parliamentary supremacy. In 1517, monarchs governed largely unchecked by representative assemblies. Over 170 years, however, violent conflicts transformed the constitution. The public trial and execution of Charles I in 1649 established that kings were subject to the law. This transformation culminated in the Glorious Revolution of 1688 and the 1689 Bill of Rights, which barred William and Mary from suspending statutes, levying taxes without parliamentary grant, or maintaining a peacetime standing army. The Crown was legally forced to summon regular Parliaments, creating a constitutional monarchy. Thus, the imposition of binding statutory limitations demonstrates that between 1517 and 1689 the balance of power shifted from the Crown to Parliament.<br><br>On the other hand, it can be argued that between 1517 and 1689 the balance of power shifted from the Crown to Parliament far less completely than claimed, as monarchs retained immense executive prerogatives. Under the Tudors, Royal Supremacy actually concentrated unprecedented authority in royal hands; Henry VIII created the Church of England, and Elizabeth I exercised formidable prerogative powers over religion and foreign diplomacy. Even after the 1689 settlement, British monarchs retained the exclusive right to choose ministers, command the armed forces, declare war, sign international treaties, and veto parliamentary bills. Furthermore, Parliament represented only a narrow, wealthy landed oligarchy rather than a modern democratic electorate. Consequently, the retention of significant executive authority challenges the view that between 1517 and 1689 the balance of power shifted from the Crown to Parliament completely.<br><br>In conclusion, I judge that between 1517 and 1689 the balance of power shifted from the Crown to Parliament fundamentally, creating a revolutionary system of "King-in-Parliament". While the monarch retained executive duties, the institutional foundations of government were irreversibly inverted. In 1517, Parliament was an occasional consultative body summoned at the King’s whim to grant emergency subsidies; by 1689, the Crown could not govern, tax, or survive without annual parliamentary sessions. Paradoxically, this process began when Henry VIII used parliamentary statute to validate his Break with Rome in 1534, setting the precedent that statutory law was superior to royal proclamation. Ultimately, while the Crown survived, its arbitrary power was extinguished, proving that between 1517 and 1689 the balance of power shifted from the Crown to Parliament decisively.',
         },
       ],
 
