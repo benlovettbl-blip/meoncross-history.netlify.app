@@ -11,6 +11,11 @@ import { state } from './state.js';
 import { initEventDelegation } from './engine/events.js';
 import { initSpeech, cancelSpeech } from './engine/speech.js';
 import { initGlossaryPopover } from './engine/modals.js';
+import {
+  initKeywordSearch,
+  openKeywordSearch,
+  highlightTargetKeywordInLesson,
+} from './keyword_search.js';
 import './langemarck_myth.js';
 import('./digital_textbook_reader.js');
 
@@ -170,6 +175,11 @@ window.addEventListener('DOMContentLoaded', async () => {
     state.db = {};
     window.db = {};
   }
+
+  // Initialize in-memory keyword & curriculum search
+  initKeywordSearch(state.db);
+  window.openKeywordSearch = openKeywordSearch;
+  window.highlightTargetKeywordInLesson = highlightTargetKeywordInLesson;
 
   bindEvents();
 

@@ -416,6 +416,20 @@
             </button>
             <div class="breadcrumbs" id="header-breadcrumbs" style="display: none"></div>
           </div>
+          <!-- Global Keyword & Lesson Quick-Search Bar -->
+          <div
+            class="header-search-bar"
+            id="header-search-bar"
+            role="button"
+            tabindex="0"
+            title="Search keywords, definitions, or lessons (Ctrl+K)"
+            aria-label="Search keywords, definitions, or lessons"
+            onclick="window.openKeywordSearch && window.openKeywordSearch()"
+          >
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <span class="search-placeholder">Search keywords, lessons...</span>
+            <kbd class="search-kbd-shortcut">Ctrl K</kbd>
+          </div>
           <!-- Accessibility & Theme Controls Toolbar -->
           <div
             class="header-accessibility-bar"

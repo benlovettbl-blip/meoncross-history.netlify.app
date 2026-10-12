@@ -77,6 +77,23 @@ export function renderDashboard() {
         </div>
       </div>
 
+      <!-- Quick Curriculum & Keyword Search Strip -->
+      <div class="dashboard-search-strip" onclick="window.openKeywordSearch && window.openKeywordSearch()" role="button" tabindex="0" title="Click or press Ctrl+K to search all keywords and lessons">
+        <div class="dashboard-search-content">
+          <div class="search-strip-icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <div class="search-strip-text">
+            <span class="search-strip-headline">Search 800+ Keywords, Concepts &amp; Lessons</span>
+            <span class="search-strip-sub">Instant lookup for glossary definitions, enquiry questions, and exam topics (Press <kbd style='background:rgba(255,255,255,0.7); padding:1px 5px; border-radius:4px; border:1px solid #cbd5e1;'>Ctrl K</kbd>)</span>
+          </div>
+        </div>
+        <div class="search-strip-action">
+          <span class="search-strip-tag"><i class="fa-solid fa-bolt"></i> Quick Jump</span>
+          <kbd class="search-strip-kbd">Ctrl K</kbd>
+        </div>
+      </div>
+
       <!-- Historical Art of the Week Strip (Prestige Academic Marquee) -->
       <div id="masterpiece-starter-strip-root" style="margin-bottom: 22px;">
         ${getMasterpieceStarterStripHtml()}
@@ -1611,6 +1628,15 @@ export async function renderLessonsView() {
         `${unitId}_${sub.id || index}`,
       );
     }
+
+    // Check if a target keyword was requested from search
+    try {
+      const pendingKeyword = sessionStorage.getItem('hh_highlight_keyword');
+      if (pendingKeyword && typeof window.highlightTargetKeywordInLesson === 'function') {
+        sessionStorage.removeItem('hh_highlight_keyword');
+        window.highlightTargetKeywordInLesson(pendingKeyword);
+      }
+    } catch (e) {}
 
     if (targetStopId) {
       setTimeout(() => {

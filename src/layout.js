@@ -26,6 +26,25 @@ export function bindEvents() {
     });
   }
 
+  // Header search bar trigger
+  const headerSearchBar = document.getElementById('header-search-bar');
+  if (headerSearchBar) {
+    headerSearchBar.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (typeof window.openKeywordSearch === 'function') {
+        window.openKeywordSearch();
+      }
+    });
+    headerSearchBar.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        if (typeof window.openKeywordSearch === 'function') {
+          window.openKeywordSearch();
+        }
+      }
+    });
+  }
+
   // Bind Sidebar navigation items
   const navDashboard = document.getElementById('nav-dashboard');
   if (navDashboard) {
