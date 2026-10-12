@@ -4278,9 +4278,6 @@ export function renderLesson(lesson) {
               <button type="button" id="btn-cme-quiz-mode" onclick="window.toggleCmeSpineQuizMode();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
                 <i class="fa-solid fa-graduation-cap"></i> <span id="cme-quiz-label">Self-Quiz Mode</span>
               </button>
-              <button type="button" id="btn-cme-presenter-focus" onclick="window.toggleCmePresenterMode();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #f0fdf4; color: #166534; border: 1px solid #86efac; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" title="Switch to Whole-Class Presenter Focus View for classroom projectors">
-                <i class="fa-solid fa-person-chalkboard"></i> <span id="cme-presenter-label">Presenter Focus View</span>
-              </button>
               <span style="font-size: 0.76rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
             </div>
           </summary>
@@ -4518,20 +4515,6 @@ export function renderLesson(lesson) {
     }
 
     let renderedKeyIndividual = false;
-    if (isCme) {
-      htmlNarrative += `
-        <div id="cme-narrative-prose-wrapper" class="cme-narrative-prose-wrapper">
-          <div id="cme-presenter-folded-banner" class="cme-presenter-folded-banner" style="display: none; margin: 20px 0; padding: 14px 20px; background: #f0f9ff; border: 1.5px dashed #0284c7; border-radius: 8px; text-align: center; cursor: pointer;" onclick="window.toggleCmeNarrativeFold();">
-            <span style="font-weight: 800; color: #0369a1; font-size: 0.95rem;">
-              <i class="fa-solid fa-book-open"></i> Full Lesson Narrative & Primary Sources (Folded for Presenter Focus &bull; Click to expand)
-            </span>
-            <span style="display: block; font-size: 0.8rem; color: #64748b; margin-top: 4px;">
-              Click here to expand the full textbook prose during whole-class discussion
-            </span>
-          </div>
-          <div id="cme-narrative-prose-content" class="cme-narrative-prose-content">
-      `;
-    }
     lesson.narrative_blocks.forEach((block, index) => {
       if (block.type === 'causal_diagram') {
         htmlNarrative += `
@@ -6656,12 +6639,6 @@ export function renderLesson(lesson) {
         }
       }
     });
-    if (isCme) {
-      htmlNarrative += `
-          </div>
-        </div>
-      `;
-    }
     htmlNarrative += '</div>';
 
     if (lesson.key_individual && !renderedKeyIndividual) {

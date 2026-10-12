@@ -7624,28 +7624,6 @@ body.search-modal-open {
   }
 }
 
-/* Presenter Focus View Styles */
-#lesson-chronology-spine.cme-presenter-active {
-  border-color: #0284c7 !important;
-  border-top-width: 5px !important;
-  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15) !important;
-}
-
-#lesson-chronology-spine.cme-presenter-active > summary {
-  background: #f0f9ff !important;
-  border-bottom: 2px solid #bae6fd !important;
-}
-
-.cme-presenter-folded-banner:hover {
-  background: #e0f2fe !important;
-  border-color: #0369a1 !important;
-  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
-}
-
-.cme-presenter-pill:hover {
-  filter: brightness(1.15);
-}
-
 /* Leaflet Live Map Engine Dark-Mode Integration */
 #cme-leaflet-container .leaflet-control-layers {
   background: rgba(15, 23, 42, 0.92) !important;
@@ -7691,12 +7669,7 @@ body.search-modal-open {
 
 @media print {
   .cme-floating-theater-map-btn,
-  .cme-theater-map-modal,
-  #cme-presenter-toolbar,
-  #cme-presenter-folded-banner {
+  .cme-theater-map-modal {
     display: none !important;
-  }
-  #cme-narrative-prose-content {
-    display: block !important;
   }
 }
