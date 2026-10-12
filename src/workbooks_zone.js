@@ -138,7 +138,7 @@ window.closeInPagePreview = function () {
 
 function renderInPagePreviewConsole() {
   return `
-    <!-- In-Page PDF & Document Preview Console (Solution 2) -->
+    <!-- In-Page PDF & Document Preview Console -->
     <div id="inpage-preview-console" style="display: none; background: #0f172a; border: 1.5px solid #334155; border-radius: 8px; margin-top: 14px; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5); flex-direction: column;">
       
       <!-- Top Console Header Strip -->
@@ -194,1003 +194,1006 @@ function renderInPagePreviewConsole() {
   `;
 }
 
+/**
+ * 3 Master Books Publication Catalog
+ * Maps each unit to its 3 distinct publication pillars and available editions.
+ */
+const UNIT_PUBLICATIONS = {
+  cme_new: {
+    specTitle: 'Paper 2: Conflict in the Middle East, 1945–1995 (1HI0/21)',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Reading Narrative', 'Primary Sources', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (KT1–KT3 Combined)',
+          title: '20-Page Specification Revision Guide & War Atlas',
+          pages: '20 Pages',
+          desc: '12 Specification Cheat Sheets across KT1–KT3, 4 cartographic war atlas plates, verbatim Pearson specification targets, and memory vaults.',
+          readUrl: '/units/cme_new/visual_revision_guide.html',
+          pdfUrl: '/pdfs/cme_revision_guide.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: Creation of Israel (1945–56)',
+          title: 'KT1 Master Textbook: Creation of Israel (1945–56)',
+          pages: '16 Pages',
+          desc: 'Mandate collapse, Jewish insurgency, UN Partition, 1948 War, Palestinian refugees & 1956 Suez Crisis. Reading text and primary sources.',
+          readUrl: '/units/cme_new/textbook_KT1_PUBLISHER.html',
+          pdfUrl: '/pdfs/cme_new_textbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: The Escalating Conflict (1964–73)',
+          title: 'KT2 Master Textbook: The Escalating Conflict (1964–73)',
+          pages: '16 Pages',
+          desc: 'Water Wars, Six-Day War (1967), Conquered Territories, Resolution 242, Black September, Munich & Yom Kippur War.',
+          readUrl: '/units/cme_new/textbook_KT2_PUBLISHER.html',
+          pdfUrl: '/pdfs/cme_new_textbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: The Search for Peace (1974–95)',
+          title: 'KT3 Master Textbook: The Search for Peace (1974–95)',
+          pages: '16 Pages',
+          desc: 'Shuttle diplomacy, Camp David (1978), Lebanon & Sabra/Shatila (1982), First Intifada (1987), Oslo Accords & Rabin assassination.',
+          readUrl: '/units/cme_new/textbook_KT3_PUBLISHER.html',
+          pdfUrl: '/pdfs/cme_new_textbook_KT3_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Stepped Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (KT1–KT3 Combined)',
+          title: '36-Page Complete Exam Practice & Assessment Mastery Pack',
+          pages: '36 Pages',
+          desc: 'Complete 36-page exam practice volume combining KT1, KT2, and KT3. Differentiated stepped ladder, 4-mark consequence drills, and photocopier-safe lines.',
+          readUrl: '/units/cme_new/booklets/cme_mastery_FULL.html',
+          pdfUrl: '/pdfs/cme_mastery_pack_FULL.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: Creation of Israel (1945–56)',
+          title: 'KT1 Pupil Consumable Workbook (1945–56)',
+          pages: '12 Pages',
+          desc: 'Photocopier-ready classroom workbook for KT1. Guided recall, enquiry spreads, source analysis, and stepped exam ladders.',
+          readUrl: '/units/cme_new/pupil_workbook_KT1.html',
+          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: The Escalating Conflict (1964–73)',
+          title: 'KT2 Pupil Consumable Workbook (1964–73)',
+          pages: '12 Pages',
+          desc: 'Photocopier-ready classroom workbook for KT2. Six-Day War analysis, military tactics, Resolution 242 evaluation, and 12-mark causation scaffolds.',
+          readUrl: '/units/cme_new/pupil_workbook_KT2.html',
+          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: The Search for Peace (1974–95)',
+          title: 'KT3 Pupil Consumable Workbook (1974–95)',
+          pages: '12 Pages',
+          desc: 'Photocopier-ready classroom workbook for KT3. Camp David treaties, First Intifada timeline, Oslo Accords peace process, and 16-mark essays.',
+          readUrl: '/units/cme_new/pupil_workbook_KT3.html',
+          pdfUrl: '/pdfs/cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['128 Core Questions', 'Spaced Recall', 'Teacher Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (128 Core Questions & Answers)',
+          title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
+          pages: '24 Pages (A4)',
+          desc: 'All 128 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Spaced retrieval protocol, 28-point chronology flowchart, front tracking ledger, and complete Marking Bank.',
+          readUrl: '/units/cme_new/cme_master_retrieval_companion.html',
+          pdfUrl: '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
+        },
+      ],
+    },
+  },
+  usa: {
+    specTitle: 'Paper 3: USA, 1954–75: Conflict at Home and Abroad (1HI0/33)',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#1e40af',
+      tags: ['Reading Spreads', 'Primary Sources', 'Paper 3 Blueprint'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (KT1–KT4 Combined)',
+          title: '36-Page Visual Revision & Exam Assessment Playbook',
+          pages: '36 Pages',
+          desc: '16 double-page spreads across all 4 Key Topics, complete Paper 3 specification blueprints, Q1–Q3 paragraph formulas, Grade 9 WAGOLLs, and timed models.',
+          readUrl: '/units/usa/visual_revision_guide.html',
+          pdfUrl: '/pdfs/usa_visual_revision_guide.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: Civil Rights Movement (1954–65)',
+          title: 'KT1 Master Textbook: Civil Rights Movement (1954–65)',
+          pages: '16 Pages',
+          desc: 'Brown v Board, Montgomery bus boycott, Little Rock, sit-ins, Freedom Rides, March on Washington, CRA 1964, VRA 1965.',
+          readUrl: '/units/usa/textbook_KT1.html',
+          pdfUrl: '/pdfs/usa_textbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: Black Power & Civil Rights (1965–75)',
+          title: 'KT2 Master Textbook: Black Power & Civil Rights (1965–75)',
+          pages: '16 Pages',
+          desc: 'Malcolm X, Nation of Islam, Stokely Carmichael, Black Panthers, 1968 Mexico Olympics, urban riots (Watts), MLK assassination.',
+          readUrl: '/units/usa/textbook_KT2.html',
+          pdfUrl: '/pdfs/usa_textbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: Peace Movement & Counterculture (1960–75)',
+          title: 'KT3 Master Textbook: Peace Movement & Counterculture (1960–75)',
+          pages: '16 Pages',
+          desc: 'Student movement, SDS, anti-Vietnam War protests, Kent State, Woodstock, Women’s Liberation Movement, Roe v Wade.',
+          readUrl: '/units/usa/textbook_KT3.html',
+          pdfUrl: '/pdfs/usa_textbook_KT3_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT4',
+          label: 'Key Topic 4: The Vietnam War (1954–75)',
+          title: 'KT4 Master Textbook: The Vietnam War (1954–75)',
+          pages: '16 Pages',
+          desc: 'Geneva Accords, Gulf of Tonkin, guerrilla tactics, Tet Offensive (1968), My Lai, Vietnamization, and the Fall of Saigon.',
+          readUrl: '/units/usa/textbook_KT4.html',
+          pdfUrl: '/pdfs/usa_textbook_KT4_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Interpretation Drills', 'Stepped Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (KT1–KT4 Combined)',
+          title: '48-Page Complete Unit Master Compendium (KT1–KT4 Combined)',
+          pages: '48 Pages',
+          desc: 'Complete 48-page compendium binding KT1, KT2, KT3, and KT4. 4 full Paper 3 exam paper simulations, 16 primary sources/interpretations, and 24 Grade 8/9 exemplars.',
+          readUrl: '/units/usa/booklets/usa_mastery_FULL.html',
+          pdfUrl: '/pdfs/usa_mastery_pack_FULL.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: Civil Rights (1954–65)',
+          title: 'KT1 Pupil Workbook: Civil Rights (1954–65)',
+          pages: '12 Pages',
+          desc: 'Pupil consumable workbook for KT1 with source utility grids, stepped essay scaffolding, and retrieval tasks.',
+          readUrl: '/units/usa/pupil_workbook_KT1.html',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: Black Power (1965–75)',
+          title: 'KT2 Pupil Workbook: Black Power (1965–75)',
+          pages: '12 Pages',
+          desc: 'Pupil consumable workbook for KT2 with Black Panther source analysis and 16-mark essay frameworks.',
+          readUrl: '/units/usa/pupil_workbook_KT2.html',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: Peace & Protest (1960–75)',
+          title: 'KT3 Pupil Workbook: Peace & Protest (1960–75)',
+          pages: '12 Pages',
+          desc: "Pupil consumable workbook for KT3 covering counterculture, women's rights, and student demonstrations.",
+          readUrl: '/units/usa/pupil_workbook_KT3.html',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT3_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT4',
+          label: 'Key Topic 4: The Vietnam War (1954–75)',
+          title: 'KT4 Pupil Workbook: The Vietnam War (1954–75)',
+          pages: '12 Pages',
+          desc: 'Pupil consumable workbook for KT4 with tactical analysis grids, Tet Offensive evaluation, and exam drills.',
+          readUrl: '/units/usa/pupil_workbook_KT4.html',
+          pdfUrl: '/pdfs/usa_pupil_workbook_KT4_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['128 Core Questions', '28-Pt Flowchart', 'Teacher Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (KT1–KT4 Combined)',
+          title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
+          pages: '24 Pages (A4)',
+          desc: '16 enquiries × 8 tiered questions with pre-anchored dates, 8.4mm handwriting lines, 28-point chronology flowchart, front tracking ledger, marking bank, and Paper 3 strategy.',
+          readUrl: '/units/usa/usa_master_retrieval_companion.html',
+          pdfUrl: '/pdfs/USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
+        },
+      ],
+    },
+  },
+  edexcel_medicine: {
+    specTitle: 'Paper 1: Medicine in Britain & Western Front (1HI0/11)',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0f766e',
+      tags: ['Historical Narratives', 'Primary Medical Treatises', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (All 5 Eras Combined)',
+          title: '40-Page Visual Revision Masterclasses & Specification Playbook',
+          pages: '40 Pages',
+          desc: '18 double-page spreads, complete Paper 1 specification blueprints, Section A 2-mark feature guides, Q3–Q6 paragraph formulas, and 1h 15m exam timing models.',
+          readUrl: '/units/edexcel_medicine/visual_revision_guide.html',
+          pdfUrl: '/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
+        },
+        {
+          id: 'medieval',
+          label: 'Era 1: Medieval Britain (c1250–c1500)',
+          title: 'Medieval Britain Master Textbook (c1250–c1500)',
+          pages: '16 Pages',
+          desc: 'Four Humours, Galen & Church, medieval hospitals, pilgrimage, Black Death (1348). Core reading text and medical plates.',
+          readUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
+        },
+        {
+          id: 'renaissance',
+          label: 'Era 2: The Medical Renaissance (c1500–c1700)',
+          title: 'The Medical Renaissance Master Textbook (c1500–c1700)',
+          pages: '16 Pages',
+          desc: 'Humanism, printing press, Vesalius (1543), Harvey (1628), Sydenham, Great Plague (1665).',
+          readUrl: '/units/edexcel_medicine/textbook_renaissance_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_renaissance_FINAL_V17.pdf',
+        },
+        {
+          id: '18th_19th',
+          label: 'Era 3: 18th & 19th C. Britain (c1700–c1900)',
+          title: '18th & 19th C. Britain Master Textbook (c1700–c1900)',
+          pages: '16 Pages',
+          desc: 'Jenner (smallpox), Germ Theory (Pasteur/Koch), Nightingale, Simpson, Lister, Public Health Acts.',
+          readUrl: '/units/edexcel_medicine/textbook_18th_19th_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_18th_19th_FINAL_V17.pdf',
+        },
+        {
+          id: 'modern',
+          label: 'Era 4: Modern Britain (c1900–present)',
+          title: 'Modern Britain Master Textbook (c1900–present)',
+          pages: '16 Pages',
+          desc: 'Genetics & DNA, magic bullets, Fleming/Florey/Chain (penicillin), NHS (1948), lung cancer diagnosis and treatment.',
+          readUrl: '/units/edexcel_medicine/textbook_modern_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_modern_FINAL_V17.pdf',
+        },
+        {
+          id: 'western_front',
+          label: 'Historic Env: The Western Front (1914–18)',
+          title: 'The Western Front Historic Environment Textbook (1914–18)',
+          pages: '16 Pages',
+          desc: 'Ypres, Somme, Arras, Cambrai; chain of evacuation (RAP, ADS/MDS, CCS); trench conditions, poison gas & surgical innovation.',
+          readUrl: '/units/edexcel_medicine/textbook_western_front_PUBLISHER.html',
+          pdfUrl: '/pdfs/edexcel_medicine_textbook_western_front_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Exam Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (96-Page All-in-One Bound Master)',
+          title: 'Paper 1: Master All-in-One Consumable Pupil Workbook (96 Pages)',
+          pages: '96 Pages',
+          desc: 'The definitive photocopier-ready classroom workbook binding Section A (Western Front) and all four Section B chronological eras together.',
+          readUrl: '/units/edexcel_medicine/booklets/medicine_mastery_compendium_32page.html',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf',
+        },
+        {
+          id: 'medieval',
+          label: 'Era 1: Medieval Britain (c1250–c1500)',
+          title: 'Medieval Britain Pupil Consumable Workbook',
+          pages: '16 Pages',
+          desc: 'Black Death causation grids, Four Humours enquiry tasks, and 12-mark causation essay ladders.',
+          readUrl: '/units/edexcel_medicine/pupil_workbook_medieval.html',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
+        },
+        {
+          id: 'renaissance',
+          label: 'Era 2: The Medical Renaissance (c1500–c1700)',
+          title: 'The Medical Renaissance Pupil Consumable Workbook',
+          pages: '16 Pages',
+          desc: 'Vesalius vs Galen anatomical analysis, Harvey blood circulation tasks, and similarity/difference exam drills.',
+          readUrl: '/units/edexcel_medicine/pupil_workbook_renaissance.html',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
+        },
+        {
+          id: '18th_19th',
+          label: 'Era 3: 18th & 19th C. Britain (c1700–c1900)',
+          title: '18th & 19th C. Britain Pupil Consumable Workbook',
+          pages: '16 Pages',
+          desc: 'Germ Theory timelines, Nightingale hospital reform, Lister antiseptics, and 16-mark essay scaffolding.',
+          readUrl: '/units/edexcel_medicine/pupil_workbook_18th_19th.html',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
+        },
+        {
+          id: 'modern',
+          label: 'Era 4: Modern Britain (c1900–present)',
+          title: 'Modern Britain Pupil Consumable Workbook',
+          pages: '16 Pages',
+          desc: 'Penicillin discovery and mass production, NHS creation, DNA structure, and synoptic factor evaluation.',
+          readUrl: '/units/edexcel_medicine/pupil_workbook_modern.html',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
+        },
+        {
+          id: 'western_front',
+          label: 'Historic Env: The Western Front (1914–18)',
+          title: 'The Western Front Historic Environment Pupil Workbook',
+          pages: '16 Pages',
+          desc: 'Evacuation chain mapping, trench conditions source analysis, and Q1/Q2 exam technique worksheets.',
+          readUrl: '/units/edexcel_medicine/pupil_workbook_western_front.html',
+          pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['380 Core Questions', '750-Year Chronology', 'Teacher Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (Section A & Section B Compendium)',
+          title: 'Paper 1 Complete Knowledge Retrieval Compendium (380 Questions)',
+          pages: '40 Pages',
+          desc: 'Complete retrieval volume compiling all 380 rapid recall questions across Section A and Section B with quick-marking back banks.',
+          readUrl: '/units/edexcel_medicine/med_recall_quiz_FULL.html',
+          pdfUrl: '/pdfs/med_recall_quiz_pack_FULL.pdf',
+        },
+        {
+          id: 'section_b',
+          label: 'Section B: Thematic Study Retrieval Companion',
+          title: 'Medicine Thematic Study Retrieval Companion (200 Questions)',
+          pages: '28 Pages',
+          desc: '20 lessons × 10 Qs, 750-year chronology flowchart, 6-factor matrix, marking bank, and Q3–Q6 model answers.',
+          readUrl: '/units/edexcel_medicine/med_recall_quiz_FULL.html',
+          pdfUrl: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
+        },
+        {
+          id: 'section_a',
+          label: 'Section A: Western Front Retrieval Companion',
+          title: 'Western Front Historic Environment Retrieval Companion (72 Questions)',
+          pages: '12 Pages',
+          desc: 'Saddle-stitch companion: evacuation chain, RAMC/FANY, gas attacks, wound treatments, and Q1/Q2 follow-up strategies.',
+          readUrl: '/units/edexcel_medicine/med_recall_quiz_FULL.html',
+          pdfUrl: '/pdfs/Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
+        },
+      ],
+    },
+  },
+  eee: {
+    specTitle: 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#b45309',
+      tags: ['Reading Spreads', 'Court & Politics', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (KT1–KT3 Combined)',
+          title: 'Complete Early Elizabethan Course Textbook (KT1–KT3 Combined)',
+          pages: '48 Pages',
+          desc: "Full specification coverage across the Elizabethan Religious Settlement, Mary Queen of Scots, the Spanish Armada, and Drake's exploration.",
+          readUrl: '/units/eee/textbook_KT1_PUBLISHER.html',
+          pdfUrl: '/pdfs/eee_textbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: Queen, Government & Religion (1558–69)',
+          title: 'KT1 Master Textbook: Queen, Government & Religion (1558–69)',
+          pages: '16 Pages',
+          desc: "Elizabeth's accession, government structure, religious settlement, Puritan and Catholic challenges.",
+          readUrl: '/units/eee/textbook_KT1_PUBLISHER.html',
+          pdfUrl: '/pdfs/eee_textbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: Challenges Home & Abroad (1569–88)',
+          title: 'KT2 Master Textbook: Challenges to Elizabeth at Home & Abroad (1569–88)',
+          pages: '16 Pages',
+          desc: 'Plots against Elizabeth (Northern Rebellion, Ridolfi, Throckmorton, Babington), execution of Mary QoS, and the Spanish Armada.',
+          readUrl: '/units/eee/textbook_KT2_PUBLISHER.html',
+          pdfUrl: '/pdfs/eee_textbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: Society, Poverty & Exploration (1558–88)',
+          title: 'KT3 Master Textbook: Elizabethan Society in the Age of Exploration (1558–88)',
+          pages: '16 Pages',
+          desc: "Education and leisure, poverty and vagrancy, Drake's circumnavigation, and Raleigh's attempts to colonize Virginia.",
+          readUrl: '/units/eee/textbook_KT3_PUBLISHER.html',
+          pdfUrl: '/pdfs/eee_textbook_KT3_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Stepped Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (KT1–KT3 Combined)',
+          title: 'Complete Paper 2 Elizabethan Consumable Workbook Pack',
+          pages: '36 Pages',
+          desc: 'Comprehensive classroom pupil workbook volume combining KT1, KT2, and KT3 with 2-mark feature drills, 12-mark causation, and 16-mark essays.',
+          readUrl: '/units/eee/pupil_workbook_KT1.html',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: Queen, Government & Religion',
+          title: 'KT1 Pupil Workbook: Queen, Government & Religion',
+          pages: '12 Pages',
+          desc: 'Pupil consumable workbook for KT1 with religious settlement tables and stepped writing scaffolds.',
+          readUrl: '/units/eee/pupil_workbook_KT1.html',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: Plots & The Spanish Armada',
+          title: 'KT2 Pupil Workbook: Plots & The Spanish Armada',
+          pages: '12 Pages',
+          desc: 'Pupil consumable workbook for KT2 with plot comparison matrices and Armada battle analysis.',
+          readUrl: '/units/eee/pupil_workbook_KT2.html',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: Society, Poverty & Exploration',
+          title: 'KT3 Pupil Workbook: Society, Poverty & Exploration',
+          pages: '12 Pages',
+          desc: 'Pupil consumable workbook for KT3 with social hierarchy tasks and Virginia voyage evaluations.',
+          readUrl: '/units/eee/pupil_workbook_KT3.html',
+          pdfUrl: '/pdfs/eee_pupil_workbook_KT3_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['Core Recall Questions', 'Chronology Flowcharts', 'Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (KT1–KT3 Combined)',
+          title: 'Master Knowledge Retrieval & Assessment Companion',
+          pages: '24 Pages',
+          desc: 'Factual retrieval questions across KT1–KT3 with 8.4mm handwriting lines, chronology flowcharts, and marking banks.',
+          readUrl: '/units/eee/mastery_pack_KT1.html',
+          pdfUrl: '/pdfs/eee_mastery_pack_KT1_FINAL_V17.pdf',
+        },
+      ],
+    },
+  },
+  weimar_nazi_germany: {
+    specTitle: 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#7f1d1d',
+      tags: ['Historical Narratives', 'Primary Source Vaults', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (KT1–KT4 Combined)',
+          title: 'Complete Weimar & Nazi Germany Specification Guide & Textbook',
+          pages: '64 Pages',
+          desc: "Complete specification text across the Weimar Republic, Hitler's rise, Nazi dictatorship, and life in the Police State.",
+          readUrl: '/units/weimar_nazi_germany/visual_revision_guide.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: The Weimar Republic (1918–29)',
+          title: 'KT1 Master Textbook: The Weimar Republic (1918–29)',
+          pages: '16 Pages',
+          desc: "Origins, Treaty of Versailles, early rebellions, hyperinflation (1923), Stresemann's Golden Years, and Weimar culture.",
+          readUrl: '/units/weimar_nazi_germany/textbook_KT1_PUBLISHER.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: Hitler’s Rise to Power (1919–33)',
+          title: 'KT2 Master Textbook: Hitler’s Rise to Power (1919–33)',
+          pages: '16 Pages',
+          desc: 'NSDAP origins, 25-Point Programme, Munich Putsch, Lean Years, Great Depression, and appointment as Chancellor.',
+          readUrl: '/units/weimar_nazi_germany/textbook_KT2_PUBLISHER.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: Nazi Control & Dictatorship (1933–39)',
+          title: 'KT3 Master Textbook: Nazi Control & Dictatorship (1933–39)',
+          pages: '16 Pages',
+          desc: 'Reichstag Fire, Enabling Act, Night of Long Knives, death of Hindenburg, Police State, SS/Gestapo, propaganda, and religion.',
+          readUrl: '/units/weimar_nazi_germany/textbook_KT3_PUBLISHER.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT3_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT4',
+          label: 'Key Topic 4: Life in Nazi Germany (1933–39)',
+          title: 'KT4 Master Textbook: Life in Nazi Germany (1933–39)',
+          pages: '16 Pages',
+          desc: 'Women, Hitler Youth, education, employment, standard of living, and persecution of minorities/Jews (Kristallnacht).',
+          readUrl: '/units/weimar_nazi_germany/textbook_KT4_PUBLISHER.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_textbook_KT4_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Interpretation Drills', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (KT1–KT4 Combined)',
+          title: 'Complete Paper 3 Weimar & Nazi Germany Consumable Workbook Pack',
+          pages: '48 Pages',
+          desc: 'Comprehensive pupil workbook volume combining KT1, KT2, KT3, and KT4 with Q1 inference, Q2 causation, Q3(a) utility, Q3(b/c) interpretations, and Q3(d) essays.',
+          readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT1.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT1',
+          label: 'Key Topic 1: The Weimar Republic (1918–29)',
+          title: 'KT1 Pupil Workbook: The Weimar Republic (1918–29)',
+          pages: '12 Pages',
+          desc: 'Weimar Constitution analysis, hyperinflation sources, and Stresemann utility drills.',
+          readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT1.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT1_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT2',
+          label: 'Key Topic 2: Hitler’s Rise to Power (1919–33)',
+          title: 'KT2 Pupil Workbook: Hitler’s Rise to Power (1919–33)',
+          pages: '12 Pages',
+          desc: 'Depression election analysis, backstairs intrigue, and 12-mark causation scaffolds.',
+          readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT2.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT2_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT3',
+          label: 'Key Topic 3: Nazi Control & Dictatorship (1933–39)',
+          title: 'KT3 Pupil Workbook: Nazi Control & Dictatorship (1933–39)',
+          pages: '12 Pages',
+          desc: 'Police State sources, church opposition, and Interpretation difference questions.',
+          readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT3.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT3_FINAL_V17.pdf',
+        },
+        {
+          id: 'KT4',
+          label: 'Key Topic 4: Life in Nazi Germany (1933–39)',
+          title: 'KT4 Pupil Workbook: Life in Nazi Germany (1933–39)',
+          pages: '12 Pages',
+          desc: 'Youth and women policy comparisons, standard of living evaluations, and 16-mark essay frameworks.',
+          readUrl: '/units/weimar_nazi_germany/pupil_workbook_KT4.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_pupil_workbook_KT4_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['Core Recall Questions', 'Chronology Flowcharts', 'Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Course (KT1–KT4 Combined)',
+          title: 'Master Knowledge Retrieval & Assessment Companion',
+          pages: '24 Pages',
+          desc: 'Comprehensive factual recall questions across KT1–KT4 with 8.4mm handwriting lines, chronology flowcharts, and marking banks.',
+          readUrl: '/units/weimar_nazi_germany/mastery_pack_KT1.html',
+          pdfUrl: '/pdfs/weimar_nazi_germany_mastery_pack_KT1_FINAL_V17.pdf',
+        },
+      ],
+    },
+  },
+  great_war: {
+    specTitle: 'Key Stage 3: Causes of the Great War, 1871–1914',
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Narrative Reading', 'Primary Documents', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Core Textbook (6 Lessons)',
+          title: 'Complete Causes of the Great War Core Textbook',
+          pages: '6 Lessons • Full Text',
+          desc: 'Authentic historical narratives, primary documents, and context. Zero writing lines — ideal for reading on screens or printing class sets.',
+          readUrl: '/units/great_war/textbook.html',
+          pdfUrl: '/pdfs/great_war_textbook_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Structured Writing', 'Source Evaluation', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Causes of the Great War (Part 1 Workbook)',
+          title: 'Complete Causes of the Great War Pupil Workbook',
+          pages: 'Photocopier Ready',
+          desc: 'Structured writing tasks, recall challenges, source evaluation tables, and extended writing scaffolds. Print once for the unit.',
+          readUrl: '/units/great_war/pupil_workbook.html',
+          pdfUrl: '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf',
+        },
+        {
+          id: 'part2',
+          label: 'The Western Front (Part 2 Workbook)',
+          title: 'Great War Part 2: The Western Front Pupil Workbook',
+          pages: 'Photocopier Ready',
+          desc: 'Trench warfare, key battles, weaponry, and the Armistice of 1918. Complete pupil consumable workbook.',
+          readUrl: '/units/great_war_part2/pupil_workbook.html',
+          pdfUrl: '/pdfs/great_war_part2_pupil_workbook_FINAL_V17.pdf',
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['48 Core Questions', '1871–1914 Flowchart', 'Teacher Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Unit (All 6 Lessons)',
+          title: 'Master Recall Quiz & Homework Companion (48 Core Questions)',
+          pages: '12 Pages (A5 Booklet)',
+          desc: '48 core factual questions across all 6 lessons with two handwriting lines, 1871–1914 domino flowchart, front tracking ledger, marking bank, and assessment architect.',
+          readUrl: '/units/great_war/quiz_pack.html',
+          pdfUrl: '/pdfs/great_war_quiz_pack_FINAL_V17.pdf',
+        },
+      ],
+    },
+  },
+};
+
+/**
+ * Fallback generator for generic KS3 units
+ */
+function getGenericUnitPublications(unitId, unitData) {
+  const title = (unitData && unitData.title) || unitId;
+  return {
+    specTitle: `Key Stage 3 Curriculum: ${title}`,
+    pillar1: {
+      key: 'pillar1',
+      badge: 'PILLAR 1 • MASTER TEXTBOOK',
+      color: '#0284c7',
+      tags: ['Class Set Reading', 'Primary Extracts', '0% Writing Lines'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Complete Core Textbook',
+          title: `${title} — Complete Core Textbook`,
+          pages: 'Complete Volume',
+          desc: 'Photocopier-ready and digital class set reading text with authentic historical narratives, primary source extracts, and enquiry questions.',
+          readUrl: `/units/${unitId}/textbook.html`,
+          pdfUrl: `/pdfs/${unitId}_textbook_FINAL_V17.pdf`,
+        },
+      ],
+    },
+    pillar2: {
+      key: 'pillar2',
+      badge: 'PILLAR 2 • PUPIL WORKBOOK',
+      color: '#d97706',
+      tags: ['Enquiry Spreads', 'Writing Scaffolds', 'Photocopier Ready'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Pupil Consumable Workbook',
+          title: `${title} — Pupil Consumable Workbook`,
+          pages: 'Photocopier Ready',
+          desc: 'Structured writing spaces, enquiry challenges, source evaluation tables, and extended writing scaffolds for every lesson in the unit.',
+          readUrl: `/units/${unitId}/pupil_workbook.html`,
+          pdfUrl: `/pdfs/${unitId}_pupil_workbook_FINAL_V17.pdf`,
+        },
+      ],
+    },
+    pillar3: {
+      key: 'pillar3',
+      badge: 'PILLAR 3 • RETRIEVAL COMPANION',
+      color: '#7c3aed',
+      tags: ['Knowledge Retrieval', 'Stepped Assessment', 'Marking Bank'],
+      editions: [
+        {
+          id: 'all',
+          label: 'Mastery Pack & Assessment',
+          title: `${title} — Mastery Pack & Assessment`,
+          pages: 'Deep Revision Pack',
+          desc: 'Deep knowledge retrieval, stepped ladder tasks, essay frameworks, and synoptic assessment challenges.',
+          readUrl: `/units/${unitId}/mastery_pack_full.html`,
+          pdfUrl: `/pdfs/${unitId}_mastery_pack_full_FINAL_V17.pdf`,
+        },
+      ],
+    },
+  };
+}
+
+/**
+ * Universal dynamic edition change handler
+ */
+window.onPillarEditionChange = function (selectEl, unitId, pillarKey) {
+  const selectedId = selectEl.value;
+  const unitPubs = UNIT_PUBLICATIONS[unitId] || window.currentGenericUnitPublications;
+  if (!unitPubs || !unitPubs[pillarKey]) return;
+  const pillar = unitPubs[pillarKey];
+  const edition = pillar.editions.find((e) => e.id === selectedId) || pillar.editions[0];
+
+  const cardEl = selectEl.closest('.master-pillar-card');
+  if (!cardEl) return;
+
+  const titleEl = cardEl.querySelector('.pillar-dynamic-title');
+  const pagesEl = cardEl.querySelector('.pillar-dynamic-pages');
+  const descEl = cardEl.querySelector('.pillar-dynamic-desc');
+  const btnRead = cardEl.querySelector('.pillar-btn-read');
+  const btnPdf = cardEl.querySelector('.pillar-btn-pdf');
+
+  if (titleEl) titleEl.textContent = edition.title;
+  if (pagesEl) {
+    pagesEl.innerHTML = `<i class="fa-solid fa-file-pdf" style="color: ${pillar.color}; margin-right: 4px;"></i>${edition.pages}`;
+  }
+  if (descEl) descEl.textContent = edition.desc;
+  if (btnPdf) {
+    btnPdf.href = edition.pdfUrl;
+    btnPdf.title = `Open ${edition.title} PDF in new tab`;
+  }
+  if (btnRead) {
+    const cleanTitle = (edition.title || '').replace(/'/g, "\\'");
+    btnRead.onclick = () => {
+      window.openInPagePreview(edition.readUrl, cleanTitle, edition.pdfUrl, {
+        badge: pillar.badge,
+      });
+    };
+  }
+};
+
+/**
+ * Helper to render an individual master pillar card
+ */
+function renderMasterPillarCard(unitId, pillar) {
+  const defaultEdition = pillar.editions[0];
+  const cleanTitle = (defaultEdition.title || '').replace(/'/g, "\\'");
+  const hasMultipleEditions = pillar.editions.length > 1;
+
+  return `
+    <div class="master-pillar-card" data-pillar-key="${pillar.key}" style="background: #ffffff; border: 1.5px solid #e2e8f0; border-top: 4px solid ${pillar.color}; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(0,0,0,0.04); min-height: 290px; box-sizing: border-box; transition: transform 0.15s ease, box-shadow 0.15s ease;">
+      <div>
+        <!-- Top Badge + Page Budget -->
+        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;">
+          <span style="font-size: 0.68rem; font-weight: 800; background: ${pillar.color}15; color: ${pillar.color}; padding: 3px 8px; border-radius: 4px; letter-spacing: 0.4px; text-transform: uppercase; border: 1px solid ${pillar.color}30;">
+            ${pillar.badge}
+          </span>
+          <span class="pillar-dynamic-pages" style="font-size: 0.72rem; font-weight: 700; color: #64748b; background: #f8fafc; padding: 2px 7px; border-radius: 4px; border: 1px solid #e2e8f0;">
+            <i class="fa-solid fa-file-pdf" style="color: ${pillar.color}; margin-right: 4px;"></i>${defaultEdition.pages}
+          </span>
+        </div>
+
+        <!-- Edition / Module Dropdown -->
+        <div style="margin-bottom: 12px;">
+          <label style="display: block; font-size: 0.68rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;">
+            <i class="fa-solid fa-layer-group" style="margin-right: 4px;"></i>Course Edition / Topic:
+          </label>
+          <select class="pillar-edition-select" onchange="window.onPillarEditionChange(this, '${unitId}', '${pillar.key}')" ${hasMultipleEditions ? '' : 'disabled title="Complete single-volume edition"'} style="width: 100%; font-size: 0.78rem; font-weight: 700; color: #0f172a; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; cursor: ${hasMultipleEditions ? 'pointer' : 'default'}; outline: none; transition: border-color 0.15s ease;">
+            ${pillar.editions.map((e) => `<option value="${e.id}">${e.label}</option>`).join('')}
+          </select>
+        </div>
+
+        <!-- Title & Description -->
+        <h3 class="pillar-dynamic-title" style="margin: 0 0 6px 0; color: #0f172a; font-size: 0.94rem; font-weight: 800; line-height: 1.3;">
+          ${defaultEdition.title}
+        </h3>
+        <p class="pillar-dynamic-desc" style="margin: 0 0 12px 0; font-size: 0.76rem; color: #475569; line-height: 1.45; min-height: 48px;">
+          ${defaultEdition.desc}
+        </p>
+
+        <!-- Key Pedagogical Tags -->
+        <div class="pillar-feature-tags" style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px;">
+          ${(pillar.tags || [])
+            .map(
+              (t) => `
+            <span style="font-size: 0.66rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 2px 7px; border-radius: 4px;">
+              <i class="fa-solid fa-check" style="color: ${pillar.color}; margin-right: 3px;"></i>${t}
+            </span>
+          `,
+            )
+            .join('')}
+        </div>
+      </div>
+
+      <!-- Strictly 2 Primary Actions -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: auto; padding-top: 12px; border-top: 1px solid #f1f5f9;">
+        <button type="button" class="pillar-btn-read" onclick="window.openInPagePreview('${defaultEdition.readUrl}', '${cleanTitle}', '${defaultEdition.pdfUrl}', { badge: '${pillar.badge}' })" style="background: #ffffff; color: #0f172a; border: 1.5px solid #cbd5e1; border-left: 3.5px solid ${pillar.color}; padding: 8px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${pillar.color}'; this.style.boxShadow='0 2px 6px rgba(0,0,0,0.06)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${pillar.color}'; this.style.boxShadow='none';">
+          <i class="fa-solid fa-book-open-reader" style="color: ${pillar.color};"></i> Read Online
+        </button>
+        <a href="${defaultEdition.pdfUrl}" target="_blank" class="pillar-btn-pdf" title="Open ${cleanTitle} PDF in new tab" style="background: ${pillar.color}; color: #ffffff; border: 1.5px solid ${pillar.color}; padding: 8px 10px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.15s ease; box-shadow: 0 2px 6px ${pillar.color}40;" onmouseover="this.style.opacity='0.92';" onmouseout="this.style.opacity='1';">
+          <i class="fa-solid fa-file-pdf"></i> Download PDF
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+/**
+ * Main Workbooks Zone Entry Point
+ */
 export function renderWorkbooksZone(container, unitData) {
   unitData = unitData || state.activeUnitData || {};
   const activeUnitId = state.selectedUnitId || window.currentUnitId;
 
-  // Ultra-compact top bar (Height: ~40px)
+  // Ultra-clean top bar: Institutional neutrality & zero visual alarm
   let html = `
-    <div style="background: #0f172a; padding: 7px 14px; border-radius: 8px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
-      <div style="display: flex; align-items: center; gap: 8px;">
-        <i class="fa-solid fa-graduation-cap" style="color: #38bdf8; font-size: 1.05rem;"></i>
-        <span style="color: #ffffff; font-size: 0.96rem; font-weight: 800; letter-spacing: -0.01em;">Print &amp; PDF Hub</span>
-        <span style="display: inline-block; width: 1px; height: 14px; background: rgba(255,255,255,0.2); margin: 0 4px;"></span>
-        <span style="color: #94a3b8; font-size: 0.74rem; font-weight: 500;">Master Revision Guides, Pupil Workbooks &amp; Exam Assessment Packs</span>
+    <div style="background: #0f172a; padding: 8px 16px; border-radius: 8px; margin-bottom: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <i class="fa-solid fa-book-bookmark" style="color: #38bdf8; font-size: 1.1rem;"></i>
+        <div>
+          <span style="color: #ffffff; font-size: 0.98rem; font-weight: 800; letter-spacing: -0.01em;">Print &amp; PDF Hub</span>
+          <span style="display: inline-block; width: 1px; height: 12px; background: rgba(255,255,255,0.25); margin: 0 6px; vertical-align: middle;"></span>
+          <span style="color: #94a3b8; font-size: 0.76rem; font-weight: 500;">Master Textbooks, Pupil Workbooks &amp; Retrieval Companions</span>
+        </div>
       </div>
-      <div>
-        <button id="btnOpenEmergencyCover" type="button" style="background: #e11d48; color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.25); border-radius: 5px; padding: 5px 12px; font-size: 0.76rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#be123c';" onmouseout="this.style.background='#e11d48';">
-          <i class="fa-solid fa-truck-medical"></i>
-          <span>Emergency Cover Generator</span>
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 600;">
+          <i class="fa-solid fa-circle-check" style="color: #10b981; margin-right: 4px;"></i>Publisher-Grade Formats
+        </span>
+        <button id="btnOpenEmergencyCover" type="button" style="background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid rgba(255,255,255,0.18); border-radius: 5px; padding: 4px 10px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" title="Generate quick emergency replacement covers">
+          <i class="fa-solid fa-file-shield" style="color: #38bdf8;"></i>
+          <span>Cover Customizer</span>
         </button>
       </div>
     </div>
 
-    <!-- Compact Navigation Tabs (Height: ~30px) in Specification Sequence -->
-    <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; padding: 3px 6px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
-      <span style="font-size: 0.7rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 2px; padding-left: 2px;">Unit:</span>
+    <!-- Specification Unit Switcher Tabs -->
+    <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; padding: 4px 6px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
+      <span style="font-size: 0.7rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px; padding-left: 2px;">Unit:</span>
       
-      <button type="button" onclick="window.switchView('booklet', 'edexcel_medicine')" style="background: ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#ffffff'}; color: ${activeUnitId === 'edexcel_medicine' ? '#ffffff' : '#0f766e'}; border: 1px solid ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#99f6e4'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'edexcel_medicine' ? '0 1px 3px rgba(15,118,110,0.25)' : 'none'};">
+      <button type="button" onclick="window.switchView('booklet', 'edexcel_medicine')" style="background: ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#ffffff'}; color: ${activeUnitId === 'edexcel_medicine' ? '#ffffff' : '#0f766e'}; border: 1px solid ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#99f6e4'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'edexcel_medicine' ? '0 1px 3px rgba(15,118,110,0.25)' : 'none'};">
         <i class="fa-solid fa-notes-medical"></i> Medicine (P1)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${activeUnitId === 'cme_new' ? '#0284c7' : '#ffffff'}; color: ${activeUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'cme_new' ? '#0284c7' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'cme_new' ? '0 1px 3px rgba(2,132,199,0.25)' : 'none'};">
+      <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${activeUnitId === 'cme_new' ? '#0284c7' : '#ffffff'}; color: ${activeUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'cme_new' ? '#0284c7' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'cme_new' ? '0 1px 3px rgba(2,132,199,0.25)' : 'none'};">
         <i class="fa-solid fa-dove"></i> ⭐ Middle East (P2)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'eee')" style="background: ${activeUnitId === 'eee' ? '#b45309' : '#ffffff'}; color: ${activeUnitId === 'eee' ? '#ffffff' : '#b45309'}; border: 1px solid ${activeUnitId === 'eee' ? '#b45309' : '#fde68a'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'eee' ? '0 1px 3px rgba(180,83,9,0.25)' : 'none'};">
+      <button type="button" onclick="window.switchView('booklet', 'eee')" style="background: ${activeUnitId === 'eee' ? '#b45309' : '#ffffff'}; color: ${activeUnitId === 'eee' ? '#ffffff' : '#b45309'}; border: 1px solid ${activeUnitId === 'eee' ? '#b45309' : '#fde68a'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'eee' ? '0 1px 3px rgba(180,83,9,0.25)' : 'none'};">
         <i class="fa-solid fa-crown"></i> Elizabethan (P2)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'weimar_nazi_germany')" style="background: ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#ffffff'}; color: ${activeUnitId === 'weimar_nazi_germany' ? '#ffffff' : '#991b1b'}; border: 1px solid ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#fecaca'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'weimar_nazi_germany' ? '0 1px 3px rgba(127,29,29,0.25)' : 'none'};">
+      <button type="button" onclick="window.switchView('booklet', 'weimar_nazi_germany')" style="background: ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#ffffff'}; color: ${activeUnitId === 'weimar_nazi_germany' ? '#ffffff' : '#991b1b'}; border: 1px solid ${activeUnitId === 'weimar_nazi_germany' ? '#7f1d1d' : '#fecaca'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'weimar_nazi_germany' ? '0 1px 3px rgba(127,29,29,0.25)' : 'none'};">
         <i class="fa-solid fa-landmark"></i> Weimar (P3)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'usa')" style="background: ${activeUnitId === 'usa' ? '#1e40af' : '#ffffff'}; color: ${activeUnitId === 'usa' ? '#ffffff' : '#1e40af'}; border: 1px solid ${activeUnitId === 'usa' ? '#1e40af' : '#bfdbfe'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'usa' ? '0 1px 3px rgba(30,64,175,0.25)' : 'none'};">
+      <button type="button" onclick="window.switchView('booklet', 'usa')" style="background: ${activeUnitId === 'usa' ? '#1e40af' : '#ffffff'}; color: ${activeUnitId === 'usa' ? '#ffffff' : '#1e40af'}; border: 1px solid ${activeUnitId === 'usa' ? '#1e40af' : '#bfdbfe'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'usa' ? '0 1px 3px rgba(30,64,175,0.25)' : 'none'};">
         <i class="fa-solid fa-flag-usa"></i> USA 1954–75 (P3)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'great_war')" style="background: ${activeUnitId === 'great_war' ? '#4338ca' : '#ffffff'}; color: ${activeUnitId === 'great_war' ? '#ffffff' : '#4338ca'}; border: 1px solid ${activeUnitId === 'great_war' ? '#4338ca' : '#c7d2fe'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'great_war' ? '0 1px 3px rgba(67,56,202,0.25)' : 'none'};">
+      <button type="button" onclick="window.switchView('booklet', 'great_war')" style="background: ${activeUnitId === 'great_war' ? '#4338ca' : '#ffffff'}; color: ${activeUnitId === 'great_war' ? '#ffffff' : '#4338ca'}; border: 1px solid ${activeUnitId === 'great_war' ? '#4338ca' : '#c7d2fe'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'great_war' ? '0 1px 3px rgba(67,56,202,0.25)' : 'none'};">
         <i class="fa-solid fa-shield-halved"></i> Great War (KS3)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'all')" style="background: ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#ffffff'}; color: ${!activeUnitId || activeUnitId === 'all' ? '#ffffff' : '#475569'}; border: 1px solid ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#cbd5e1'}; font-size: 0.72rem; font-weight: 700; padding: 3px 7px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
+      <button type="button" onclick="window.switchView('booklet', 'all')" style="background: ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#ffffff'}; color: ${!activeUnitId || activeUnitId === 'all' ? '#ffffff' : '#475569'}; border: 1px solid ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#cbd5e1'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
         <i class="fa-solid fa-layer-group"></i> All Units Directory
       </button>
     </div>
   `;
 
-  // Helper to render Three Pillars cards (Compact: ~170px height)
-  const renderThreePillarsGrid = (booklets) => {
-    let gridHtml = `
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
-    `;
+  // Check if unit is in catalog or is generic KS3
+  const isAllUnits = !activeUnitId || activeUnitId === 'all';
+  const unitPubs = isAllUnits
+    ? null
+    : UNIT_PUBLICATIONS[activeUnitId] || getGenericUnitPublications(activeUnitId, unitData);
 
-    booklets.forEach((b) => {
-      const cleanTitle = (b.title || '').replace(/'/g, "\\'");
-      gridHtml += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid ${b.color}; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-              <span style="font-size: 0.68rem; font-weight: 800; background: ${b.color}15; color: ${b.color}; padding: 2px 6px; border-radius: 3px; border: 1px solid ${b.color}30; letter-spacing: 0.3px;">
-                ${b.badge}
-              </span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #64748b;">
-                <i class="fa-solid fa-file-pdf" style="color: ${b.color}; margin-right: 3px;"></i>${b.pages}
-              </span>
-            </div>
-            <h3 style="margin: 0 0 3px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" title="${b.title}">
-              ${b.title}
-            </h3>
-            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
-              ${b.desc}
-            </p>
-          </div>
+  if (unitPubs) {
+    window.currentGenericUnitPublications = unitPubs;
 
-          <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <button type="button" class="btn" onclick="window.openInPagePreview('${b.fileBase}', '${cleanTitle}', '${b.pdfUrl}', { badge: '${b.badge}' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid ${b.color}; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 5px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${b.color}'; this.style.boxShadow='0 1px 4px rgba(0,0,0,0.1)';" onmouseout="this.style.borderColor='#cbd5e1'; this.style.borderLeftColor='${b.color}'; this.style.boxShadow='none';">
-              <i class="fa-solid fa-eye" style="color: ${b.color};"></i> Preview
-            </button>
-
-            <a href="${b.pdfUrl}" target="_blank" style="background: ${b.color}; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Open ${cleanTitle} PDF in new tab">
-              <i class="fa-solid fa-file-pdf"></i> PDF
-            </a>
-
-            <a href="${b.fileBase}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: background 0.15s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open master booklet in a full browser tab">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Web
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    gridHtml += `</div>`;
-    return gridHtml;
-  };
-
-  // Helper to render Mock Exams section (Compact: ~150px height)
-  const renderMockExamsRow = (unitId, mockExams) => {
-    if (!mockExams || !Array.isArray(mockExams) || mockExams.length === 0) return '';
-
-    let specTitle = 'Edexcel GCSE (9–1) History';
-    let defaultTime = '1 Hour 20 Mins';
-    let defaultMarks = '52 Marks';
-
-    if (unitId === 'cme_new') {
-      specTitle = 'Paper 2: Conflict in the Middle East, 1945–1995 (1HI0/21)';
-      defaultTime = '55 Mins';
-      defaultMarks = '32 Marks';
-    } else if (unitId === 'weimar_nazi_germany') {
-      specTitle = 'Paper 3: Weimar and Nazi Germany, 1918–1939 (1HI0/31)';
-      defaultTime = '1 Hour 30 Mins';
-      defaultMarks = '52 Marks + 4 SPaG';
-    } else if (unitId === 'eee') {
-      specTitle = 'Paper 2: Early Elizabethan England, 1558–1588 (1HI0/B4)';
-      defaultTime = '55 Mins';
-      defaultMarks = '32 Marks';
-    } else if (unitId === 'edexcel_medicine') {
-      specTitle = 'Paper 1: Medicine in Britain & Western Front (1HI0/11)';
-      defaultTime = '1 Hour 20 Mins';
-      defaultMarks = '52 Marks + 4 SPaG';
-    } else if (unitId === 'usa') {
-      specTitle = 'Paper 3: Conflict at Home and Abroad: the USA, 1954–75 (1HI0/33)';
-      defaultTime = '1 Hour 30 Mins';
-      defaultMarks = '52 Marks + 4 SPaG';
-    }
-
-    let mocksHtml = `
-      <div style="background: #ffffff; padding: 10px 14px; border-radius: 7px; border: 1.5px solid #000000; box-shadow: 0 1px 4px rgba(0,0,0,0.03);">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1.5px solid #000000;">
-          <div style="display: flex; align-items: center; gap: 8px;">
-            <span style="font-size: 0.7rem; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; color: #000000;">
-              <i class="fa-solid fa-file-signature"></i> GCSE Mock Examination Papers &amp; Mark Schemes
-            </span>
-            <span style="font-size: 0.68rem; color: #4b5563;">&bull; ${specTitle}</span>
-          </div>
-          <span style="font-size: 0.68rem; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 3px; text-transform: uppercase;">
-            ${mockExams.length} Papers Ready
-          </span>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; max-height: 195px; overflow-y: auto; padding-right: 4px;">
-    `;
-
-    mockExams.forEach((mock, idx) => {
-      const paperUrl = mock.url || `${mock.id}.html`;
-      const fullPaperUrl = paperUrl.startsWith('/') ? paperUrl : `/units/${unitId}/${paperUrl}`;
-      const hasMs = Boolean(
-        mock.has_mark_scheme ||
-        mock.mark_scheme_url ||
-        unitId === 'weimar_nazi_germany' ||
-        unitId === 'eee' ||
-        unitId === 'usa' ||
-        (unitId === 'edexcel_medicine' && mock.id !== 'mock_2025_clone'),
-      );
-      const msFileName =
-        mock.mark_scheme_url || `${paperUrl.replace(/\.html$/, '')}_mark_scheme.html`;
-      const fullMsUrl = msFileName.startsWith('/') ? msFileName : `/units/${unitId}/${msFileName}`;
-      const badgeText = mock.title.includes('Prediction') ? 'PREDICTION' : `MOCK PAPER ${idx + 1}`;
-      const cleanMockTitle = (mock.title || '').replace(/'/g, "\\'");
-
-      mocksHtml += `
-        <div style="background: #ffffff; border: 1px solid #d1d5db; border-radius: 5px; padding: 6px 8px; display: flex; flex-direction: column; justify-content: space-between; gap: 4px;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
-              <span style="font-size: 0.64rem; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
-                ${badgeText}
-              </span>
-              <span style="font-size: 0.68rem; font-weight: 800; color: #000000;">
-                ${mock.time_minutes ? mock.time_minutes + ' mins' : defaultTime}
-              </span>
-            </div>
-            <h4 style="margin: 2px 0; color: #000000; font-size: 0.82rem; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${mock.title}">
-              ${mock.title}
-            </h4>
-            <div style="font-size: 0.68rem; color: #4b5563;">
-              ${mock.total_marks ? mock.total_marks + ' marks' : defaultMarks} &bull; Authentic exam layout
-            </div>
-          </div>
-
-          <div style="display: flex; gap: 5px; margin-top: 4px;">
-            <button type="button" onclick="window.openInPagePreview('${fullPaperUrl}', '${cleanMockTitle} (Question Paper)', null, { isMockPaper: true, qpUrl: '${fullPaperUrl}', msUrl: '${hasMs ? fullMsUrl : ''}', activeTab: 'qp', title: '${cleanMockTitle}' })" style="flex: 1; text-align: center; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 4px 6px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.85';" onmouseout="this.style.opacity='1';">
-              <i class="fa-solid fa-file-lines"></i> Question Paper
-            </button>
-
-            ${
-              hasMs
-                ? `
-              <button type="button" onclick="window.openInPagePreview('${fullMsUrl}', '${cleanMockTitle} (Mark Scheme)', null, { isMockPaper: true, qpUrl: '${fullPaperUrl}', msUrl: '${fullMsUrl}', activeTab: 'ms', title: '${cleanMockTitle}' })" style="flex: 1; text-align: center; background: #ffffff; color: #000000; border: 1px solid #000000; padding: 4px 6px; border-radius: 3px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 4px; transition: background 0.15s ease;" onmouseover="this.style.background='#f3f4f6';" onmouseout="this.style.background='#ffffff';">
-                <i class="fa-solid fa-check"></i> Mark Scheme
-              </button>
-            `
-                : `
-              <div style="font-size: 0.65rem; color: #6b7280; text-align: center; font-style: italic; padding: 4px;">
-                Answers in study bank
-              </div>
-            `
-            }
-          </div>
-        </div>
-      `;
-    });
-
-    mocksHtml += `
-        </div>
+    // Render the 3 Master Books Grid
+    html += `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 12px;">
+        ${renderMasterPillarCard(activeUnitId, unitPubs.pillar1)}
+        ${renderMasterPillarCard(activeUnitId, unitPubs.pillar2)}
+        ${renderMasterPillarCard(activeUnitId, unitPubs.pillar3)}
       </div>
     `;
-    return mocksHtml;
-  };
 
-  // 1. Conflict in the Middle East (`cme_new`)
-  if (activeUnitId === 'cme_new') {
-    const cmeBooklets = [
-      {
-        id: 'PILLAR_1',
-        title: '20-Page Specification Revision Guide & Cheat Sheets',
-        pages: '20 Pages',
-        badge: 'PILLAR 1 • REVISION GUIDE',
-        color: '#0284c7',
-        desc: '12 one-page Specification Cheat Sheets across KT1–KT3, 4 cartographic war atlas plates, verbatim Pearson Edexcel specification targets, memory vaults, and primary archival evidence.',
-        fileBase: '/units/cme_new/visual_revision_guide.html',
-        pdfUrl: '/pdfs/cme_revision_guide.pdf',
-      },
-      {
-        id: 'PILLAR_2',
-        title: '36-Page Complete Exam Practice & Assessment Mastery Pack',
-        pages: '36 Pages',
-        badge: 'PILLAR 2 • EXAM PRACTICE',
-        color: '#1e3a8a',
-        desc: 'Complete 36-page exam practice volume combining KT1, KT2, and KT3. Differentiated stepped ladder, 4-mark consequence drills, and photocopier-safe lines.',
-        fileBase: '/units/cme_new/booklets/cme_mastery_FULL.html',
-        pdfUrl: '/pdfs/cme_mastery_pack_FULL.pdf',
-      },
-      {
-        id: 'PILLAR_3',
-        title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
-        pages: '24 Pages (A4)',
-        badge: 'PILLAR 3 • RECALL QUIZZING',
-        color: '#7c3aed',
-        desc: 'All 128 knowledge recall questions across KT1, KT2, and KT3 (100% Pearson Revision Guide aligned). Spaced retrieval protocol, 28-point chronology flowchart, front tracking ledger, and complete Department Marking Bank.',
-        fileBase: '/units/cme_new/cme_master_retrieval_companion.html',
-        pdfUrl: '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-    ];
-
-    html += renderThreePillarsGrid(cmeBooklets);
-
-    const cmeCards = [
-      {
-        id: 'KT1',
-        title: 'KT1: Creation of Israel (1945–56)',
-        desc: 'Mandate collapse, Jewish insurgency, UN Partition, 1948 War, Palestinian refugees & 1956 Suez Crisis.',
-      },
-      {
-        id: 'KT2',
-        title: 'KT2: The Escalating Conflict (1964–73)',
-        desc: 'Water Wars, Six-Day War (1967), Conquered Territories, Resolution 242, Black September, Munich & Yom Kippur War.',
-      },
-      {
-        id: 'KT3',
-        title: 'KT3: The Search for Peace (1974–95)',
-        desc: 'Shuttle diplomacy, Camp David (1978), Lebanon & Sabra/Shatila (1982), First Intifada (1987), Oslo Accords & Rabin assassination.',
-      },
-    ];
-
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px; margin-top: 10px;">
-    `;
-
-    cmeCards.forEach((kt) => {
+    // Specialized Great War Teacher Packs toolbar
+    if (activeUnitId === 'great_war') {
       html += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #0284c7; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-              <span style="font-size: 0.68rem; font-weight: 800; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 3px; border: 1px solid #bae6fd;">
-                ${kt.id} • PAPER 2 (26/27)
-              </span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #64748b;">
-                <i class="fa-solid fa-file-pdf" style="color: #0284c7; margin-right: 3px;"></i>Publisher Suite
-              </span>
-            </div>
-            <h3 style="margin: 0 0 4px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25;">
-              ${kt.title}
-            </h3>
-            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3;">
-              ${kt.desc}
-            </p>
-          </div>
-
-          <!-- Dual-Spread Digital Reader Interactive Action -->
-          <button type="button" onclick="window.openDigitalReader('cme_new', '${kt.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; padding: 7px 12px; border-radius: 5px; font-size: 0.76rem; font-weight: 800; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 7px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.35); margin-top: 10px; transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
-            <i class="fa-solid fa-book-open-reader"></i> 📖 Read Dual-Spread Online
-          </button>
-
-          <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <a href="/pdfs/cme_new_textbook_${kt.id}_PUBLISHER.pdf" target="_blank" title="Open ${kt.id} Publisher Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-book-open"></i> Text
+        <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-bottom: 12px;">
+          <span style="font-size: 0.74rem; font-weight: 800; color: #475569; text-transform: uppercase;">
+            <i class="fa-solid fa-paperclip" style="color: #0284c7; margin-right: 4px;"></i>Specialized Great War Teacher &amp; Revision Packs:
+          </span>
+          <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="/pdfs/great_war_guided_reading_workbook_FINAL_V17.pdf" target="_blank" title="Open Guided Reading Workbook PDF in new tab" style="background: #ffffff; color: #0284c7; border: 1px solid #bae6fd; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-file-pdf"></i> Guided Reading (PDF)
             </a>
-            <a href="/pdfs/cme_new_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-user-pen"></i> Work
+            <a href="/pdfs/great_war_answer_key_FINAL_V17.pdf" target="_blank" title="Open Teacher Answer Key PDF in new tab" style="background: #ffffff; color: #16a34a; border: 1px solid #bbf7d0; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-file-pdf"></i> Teacher Answer Key (PDF)
             </a>
-            <a href="/pdfs/cme_new_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-shield-halved"></i> Master
+            <a href="/pdfs/great_war_cheat_sheet_FINAL_V17.pdf" target="_blank" title="Open Revision Cheat Sheet PDF in new tab" style="background: #ffffff; color: #d97706; border: 1px solid #fde68a; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 5px;">
+              <i class="fa-solid fa-file-pdf"></i> Revision Cheat Sheet (PDF)
             </a>
           </div>
         </div>
       `;
-    });
+    }
 
-    html += `</div>`;
-    html += renderMockExamsRow(
+    // Dedicated Cross-Reference to GCSE Exam Practice Hub (declutters this page completely)
+    const isGcseUnit = [
       'cme_new',
-      unitData.mock_exams || [
-        {
-          id: 'mock_2024_prediction',
-          title: '2024 Prediction Mock Examination Paper',
-          time_minutes: 55,
-          total_marks: 32,
-        },
-        {
-          id: 'mock_2025_specimen',
-          title: '2025 Specimen Exam Simulation Paper',
-          time_minutes: 55,
-          total_marks: 32,
-        },
-      ],
-    );
-  }
-  // 2. USA 1954–75 (`usa`)
-  else if (activeUnitId === 'usa') {
-    const usaBooklets = [
-      {
-        id: 'PILLAR_1',
-        title: '36-Page Visual Revision & Exam Assessment Playbook',
-        pages: '36 Pages',
-        badge: 'PILLAR 1 • REVISION GUIDE',
-        color: '#1e40af',
-        desc: '16 double-page spreads across all 4 Key Topics, complete Paper 3 specification blueprints, Q1–Q3 paragraph formulas, Grade 9 WAGOLLs, and 1h 20m timed models.',
-        fileBase: '/units/usa/visual_revision_guide.html',
-        pdfUrl: '/pdfs/usa_visual_revision_guide.pdf',
-      },
-      {
-        id: 'PILLAR_2',
-        title: '48-Page Complete Unit Master Compendium (KT1–KT4 Combined)',
-        pages: '48 Pages',
-        badge: 'PILLAR 2 • EXAM PRACTICE',
-        color: '#1e3a8a',
-        desc: 'Complete 48-page compendium binding KT1, KT2, KT3, and KT4. 4 full Paper 3 exam paper simulations, 16 primary sources/interpretations, and 24 Grade 8/9 exemplars.',
-        fileBase: '/units/usa/booklets/usa_mastery_FULL.html',
-        pdfUrl: '/pdfs/usa_mastery_pack_FULL.pdf',
-      },
-      {
-        id: 'PILLAR_3',
-        title: 'Master Knowledge Retrieval & Homework Companion (128 Core Questions)',
-        pages: '24 Pages (A4)',
-        badge: 'PILLAR 3 • RECALL QUIZZING',
-        color: '#7c3aed',
-        desc: '16 enquiries × 8 tiered questions with pre-anchored dates, 8.4mm handwriting lines, 28-point chronology flowchart, front tracking ledger, marking bank, and Paper 3 strategy.',
-        fileBase: '/units/usa/usa_master_retrieval_companion.html',
-        pdfUrl: '/pdfs/USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-    ];
-
-    html += renderThreePillarsGrid(usaBooklets);
-
-    const usaCards = [
-      {
-        id: 'KT1',
-        title: 'KT1: The Civil Rights Movement (1954–65)',
-        desc: 'Brown v Board, Montgomery, Little Rock, sit-ins, Freedom Rides, March on Washington, CRA 1964, VRA 1965.',
-      },
-      {
-        id: 'KT2',
-        title: 'KT2: Black Power & Civil Rights (1965–75)',
-        desc: 'Malcolm X, Nation of Islam, Stokely Carmichael, Black Panthers, 1968 Olympics, riots (Watts), MLK assassination.',
-      },
-      {
-        id: 'KT3',
-        title: 'KT3: Peace Movement & Counterculture (1960–75)',
-        desc: 'Student movement, SDS, anti-war protests, Kent State, Woodstock, Women’s Liberation, Roe v Wade.',
-      },
-      {
-        id: 'KT4',
-        title: 'KT4: The Vietnam War (1954–75)',
-        desc: 'Geneva Accords, Gulf of Tonkin, guerrilla warfare, Tet Offensive (1968), My Lai, Vietnamization & Fall of Saigon.',
-      },
-    ];
-
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px;">
-    `;
-
-    usaCards.forEach((kt) => {
-      html += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #1e40af; border-radius: 7px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 165px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
-              <span style="font-size: 0.65rem; font-weight: 800; background: #eff6ff; color: #1e40af; padding: 2px 5px; border-radius: 3px; border: 1px solid #bfdbfe;">
-                ${kt.id} • PAPER 3
-              </span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #64748b;">Complete</span>
-            </div>
-            <h4 style="margin: 0 0 3px 0; color: #0f172a; font-size: 0.82rem; font-weight: 800; line-height: 1.25;">
-              ${kt.title}
-            </h4>
-            <p style="margin: 0; font-size: 0.7rem; color: #64748b; line-height: 1.3;">
-              ${kt.desc}
-            </p>
-          </div>
-
-          <div style="display: flex; gap: 4px; margin-top: 6px;">
-            <a href="/pdfs/usa_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #0284c7; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              Text
-            </a>
-            <a href="/pdfs/usa_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #d97706; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              Work
-            </a>
-            <a href="/pdfs/usa_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #b91c1c; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              Master
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    html += `</div>`;
-
-    html += renderMockExamsRow(
       'usa',
-      unitData.mock_exams || [
-        {
-          id: 'mock_paper3_sim',
-          title: 'Paper 3: USA 1954–75 Official Mock Examination',
-          time_minutes: 80,
-          total_marks: 52,
-        },
-      ],
-    );
-  }
-  // 3. Medicine Through Time (`edexcel_medicine`)
-  else if (activeUnitId === 'edexcel_medicine') {
-    const medBooklets = [
-      {
-        id: 'PILLAR_1',
-        title: '40-Page Visual Revision Masterclasses & Specification Playbook',
-        pages: '40 Pages',
-        badge: 'PILLAR 1 • REVISION GUIDE',
-        color: '#0f766e',
-        desc: '18 double-page spreads, complete Paper 1 specification blueprints, Section A 2-mark feature guides, Q3–Q6 paragraph formulas, and 1h 15m exam timing models.',
-        fileBase: '/units/edexcel_medicine/visual_revision_guide.html',
-        pdfUrl: '/pdfs/edexcel_medicine_visual_revision_and_exam_guide.pdf',
-      },
-      {
-        id: 'PILLAR_2',
-        title: '32-Page Complete Exam Practice & Assessment Compendium',
-        pages: '32 Pages',
-        badge: 'PILLAR 2 • EXAM PRACTICE',
-        color: '#1e3a8a',
-        desc: 'Section A (Western Front: Somme, Ypres, Arras, Cambrai) and Section B (Medieval, Renaissance, 18th/19th C Surgery, Modern Britain). Source Typology Matrix.',
-        fileBase: '/units/edexcel_medicine/booklets/medicine_mastery_compendium_32page.html',
-        pdfUrl: '/pdfs/med_mastery_pack_FULL.pdf',
-      },
-      {
-        id: 'PILLAR_3',
-        title: 'Paper 1 Complete Knowledge Retrieval Compendium (380 Questions)',
-        pages: '16 Pages',
-        badge: 'PILLAR 3 • RECALL QUIZZING',
-        color: '#7c3aed',
-        desc: 'Complete retrieval volume compiling all 380 rapid recall questions across Section A and Section B with micro-checkboxes and quick-marking back banks.',
-        fileBase: '/units/edexcel_medicine/med_recall_quiz_FULL.html',
-        pdfUrl: '/pdfs/med_recall_quiz_pack_FULL.pdf',
-      },
-    ];
-
-    html += renderThreePillarsGrid(medBooklets);
-
-    // Master 96-Page All-in-One Consumable Pupil Workbook Callout Banner
-    html += `
-      <div style="background: linear-gradient(135deg, #042f2e 0%, #0f766e 100%); border: 1.5px solid #14b8a6; border-radius: 8px; padding: 12px 16px; margin: 10px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 12px rgba(15,118,110,0.25);">
-        <div style="display: flex; align-items: center; gap: 12px; min-width: 260px; flex: 1;">
-          <div style="width: 40px; height: 40px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.25rem; flex-shrink: 0;">
-            <i class="fa-solid fa-book-bookmark"></i>
-          </div>
-          <div>
-            <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-              <span style="font-size: 0.65rem; font-weight: 900; background: #ffffff; color: #0f766e; padding: 1px 6px; border-radius: 3px; text-transform: uppercase;">Complete Master Workbook</span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #ccfbf1;">96 Pages &bull; All 5 Periods Bound</span>
-            </div>
-            <h4 style="margin: 0; color: #ffffff; font-size: 0.95rem; font-weight: 800;">Paper 1: Master All-in-One Pupil Consumable Workbook</h4>
-            <p style="margin: 2px 0 0 0; color: #99f6e4; font-size: 0.74rem;">The definitive photocopier-ready classroom workbook binding Section A (Western Front) and all four Section B chronological eras together.</p>
-          </div>
-        </div>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <a href="/pdfs/edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf" target="_blank" title="Open 96-Page Master Pupil Workbook PDF in new tab" style="background: #ffffff; color: #0f766e; border: 1.5px solid #ffffff; padding: 7px 14px; border-radius: 6px; font-size: 0.78rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 0.15s ease;" onmouseover="this.style.background='#f0fdfa';" onmouseout="this.style.background='#ffffff';">
-            <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Open Master PDF (96 Pages)
-          </a>
-        </div>
-      </div>
-
-      <!-- Master Knowledge Retrieval Companions Callout Banners (Section A & Section B) -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 10px; margin: 10px 0;">
-        <!-- Section A: Western Front -->
-        <div style="background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border: 1.5px solid #818cf8; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 12px rgba(49,46,129,0.25);">
-          <div style="display: flex; align-items: center; gap: 10px; min-width: 220px; flex: 1;">
-            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.2rem; flex-shrink: 0;">
-              <i class="fa-solid fa-brain"></i>
-            </div>
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-size: 0.62rem; font-weight: 900; background: #ffffff; color: #312e81; padding: 1px 5px; border-radius: 3px; text-transform: uppercase;">Section A Standard</span>
-                <span style="font-size: 0.70rem; font-weight: 700; color: #c7d2fe;">12 Pages &bull; 72 Questions</span>
-              </div>
-              <h4 style="margin: 0; color: #ffffff; font-size: 0.90rem; font-weight: 800;">Western Front Retrieval Companion</h4>
-              <p style="margin: 2px 0 0 0; color: #a5b4fc; font-size: 0.72rem;">Saddle-stitch companion: evacuation chain, primary source vault, and Q1, Q2(a), Q2(b) exam strategy.</p>
-            </div>
-          </div>
-          <div>
-            <a href="/pdfs/Western_Front_Master_Knowledge_Retrieval_Companion.pdf" target="_blank" title="Open 12-Page Western Front Master Retrieval Companion PDF in new tab" style="background: #ffffff; color: #312e81; border: 1.5px solid #ffffff; padding: 6px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 0.15s ease;" onmouseover="this.style.background='#e0e7ff';" onmouseout="this.style.background='#ffffff';">
-              <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Section A (12p)
-            </a>
-          </div>
-        </div>
-
-        <!-- Section B: Medicine Thematic Study -->
-        <div style="background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%); border: 1.5px solid #2dd4bf; border-radius: 8px; padding: 12px 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 4px 12px rgba(15,118,110,0.25);">
-          <div style="display: flex; align-items: center; gap: 10px; min-width: 220px; flex: 1;">
-            <div style="width: 38px; height: 38px; border-radius: 8px; background: rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 1.2rem; flex-shrink: 0;">
-              <i class="fa-solid fa-dna"></i>
-            </div>
-            <div>
-              <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 2px;">
-                <span style="font-size: 0.62rem; font-weight: 900; background: #ffffff; color: #0f766e; padding: 1px 5px; border-radius: 3px; text-transform: uppercase;">Section B Standard</span>
-                <span style="font-size: 0.70rem; font-weight: 700; color: #ccfbf1;">28 Pages &bull; 200 Questions</span>
-              </div>
-              <h4 style="margin: 0; color: #ffffff; font-size: 0.90rem; font-weight: 800;">Thematic Study Retrieval Companion</h4>
-              <p style="margin: 2px 0 0 0; color: #99f6e4; font-size: 0.72rem;">20 lessons $\times$ 10 Qs, 750-yr chronology, 6-factor matrix, marking bank, Q3/Q4/Q5/Q6 models.</p>
-            </div>
-          </div>
-          <div>
-            <a href="/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf" target="_blank" title="Open 28-Page Medicine Thematic Study Master Retrieval Companion PDF in new tab" style="background: #ffffff; color: #0f766e; border: 1.5px solid #ffffff; padding: 6px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 800; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 6px rgba(0,0,0,0.2); transition: all 0.15s ease;" onmouseover="this.style.background='#f0fdfa';" onmouseout="this.style.background='#ffffff';">
-              <i class="fa-solid fa-file-pdf" style="color: #ef4444;"></i> Section B (28p)
-            </a>
-          </div>
-        </div>
-      </div>
-    `;
-
-    // 5 Dedicated Era / Period Suites
-    const medPeriods = [
-      {
-        id: 'medieval',
-        title: 'Medieval Britain (c1250–c1500)',
-        badge: 'SECTION B • ERA 1',
-        desc: 'Four Humours, Galen & Church, medieval hospitals, pilgrimage, Black Death (1348).',
-        textbookPdf: '/pdfs/edexcel_medicine_textbook_medieval_PUBLISHER_FINAL_V17.pdf',
-        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
-        digitalUrl: '/units/edexcel_medicine/pupil_workbook_medieval.html',
-        quizPdf: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-      {
-        id: 'renaissance',
-        title: 'The Medical Renaissance (c1500–c1700)',
-        badge: 'SECTION B • ERA 2',
-        desc: 'Humanism, printing press, Vesalius (1543), Harvey (1628), Sydenham, Great Plague (1665).',
-        textbookPdf: '/pdfs/edexcel_medicine_textbook_renaissance_PUBLISHER_FINAL_V17.pdf',
-        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
-        digitalUrl: '/units/edexcel_medicine/pupil_workbook_renaissance.html',
-        quizPdf: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-      {
-        id: '18th_19th',
-        title: '18th & 19th C. Britain (c1700–c1900)',
-        badge: 'SECTION B • ERA 3',
-        desc: 'Jenner (smallpox), Germ Theory (Pasteur/Koch), Nightingale, Simpson, Lister, Public Health.',
-        textbookPdf: '/pdfs/edexcel_medicine_textbook_18th_19th_PUBLISHER_FINAL_V17.pdf',
-        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
-        digitalUrl: '/units/edexcel_medicine/pupil_workbook_18th_19th.html',
-        quizPdf: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-      {
-        id: 'modern',
-        title: 'Modern Britain (c1900–present)',
-        badge: 'SECTION B • ERA 4',
-        desc: 'Genetics & DNA, magic bullets, Fleming/Florey/Chain (penicillin), NHS (1948), lung cancer.',
-        textbookPdf: '/pdfs/edexcel_medicine_textbook_modern_PUBLISHER_FINAL_V17.pdf',
-        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
-        digitalUrl: '/units/edexcel_medicine/pupil_workbook_modern.html',
-        quizPdf: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-      {
-        id: 'western_front',
-        title: 'The Western Front (1914–18)',
-        badge: 'SECTION A • HISTORIC ENV.',
-        desc: 'Ypres, Somme, Arras, Cambrai; chain of evacuation (RAP, ADS/MDS, CCS); trench conditions, gas & surgery.',
-        textbookPdf: '/pdfs/edexcel_medicine_textbook_western_front_PUBLISHER_FINAL_V17.pdf',
-        workbookPdf: '/pdfs/edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
-        digitalUrl: '/units/edexcel_medicine/pupil_workbook_western_front.html',
-        quizPdf: '/pdfs/Western_Front_Master_Knowledge_Retrieval_Companion.pdf',
-      },
-    ];
-
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 10px; margin-bottom: 10px;">
-    `;
-
-    medPeriods.forEach((p) => {
-      html += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #0f766e; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-              <span style="font-size: 0.66rem; font-weight: 800; background: #f0fdfa; color: #0f766e; padding: 2px 6px; border-radius: 3px; border: 1px solid #99f6e4;">
-                ${p.badge}
-              </span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #64748b;">
-                <i class="fa-solid fa-file-pdf" style="color: #0f766e; margin-right: 3px;"></i>Publisher Set
-              </span>
-            </div>
-            <h3 style="margin: 0 0 4px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25;">
-              ${p.title}
-            </h3>
-            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3;">
-              ${p.desc}
-            </p>
-          </div>
-
-          <div style="display: flex; gap: 4px; margin-top: 8px;">
-            <a href="${p.textbookPdf}" target="_blank" title="Open ${p.title} Publisher Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0f766e; padding: 5px 2px; border-radius: 4px; font-size: 0.70rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-book-open"></i> Text
-            </a>
-            <a href="${p.workbookPdf}" target="_blank" title="Open ${p.title} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 2px; border-radius: 4px; font-size: 0.70rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-user-pen"></i> Work
-            </a>
-            <a href="${p.quizPdf}" target="_blank" title="Open ${p.title} Master Retrieval Companion in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #7c3aed; padding: 5px 2px; border-radius: 4px; font-size: 0.70rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-brain" style="color: #7c3aed;"></i> Quiz
-            </a>
-            <a href="${p.digitalUrl}" target="_blank" title="Open ${p.title} Digital A4 Workbook in browser" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #2563eb; padding: 5px 2px; border-radius: 4px; font-size: 0.70rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-laptop"></i> Digital
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    html += `</div>`;
-
-    html += renderMockExamsRow(
       'edexcel_medicine',
-      unitData.mock_exams || [
-        {
-          id: 'mock_paper1_medicine',
-          title: 'Paper 1: Medicine in Britain & Western Front Mock Exam',
-          time_minutes: 75,
-          total_marks: 52,
-        },
-      ],
-    );
-  }
-  // 4. Causes of the Great War (`great_war`)
-  else if (activeUnitId === 'great_war') {
-    const gwCards = [
-      {
-        title: 'Complete Core Textbook',
-        badge: 'READING MATERIAL',
-        color: '#0284c7',
-        pages: '6 Lessons • Full Text',
-        desc: 'Authentic historical narratives, primary documents, and context. Zero writing lines — ideal for reading on screens or printing class sets.',
-        pdfUrl: '/pdfs/great_war_textbook_FINAL_V17.pdf',
-        webUrl: '/units/great_war/textbook.html',
-      },
-      {
-        title: 'Complete Pupil Workbook',
-        badge: 'PUPIL WORKBOOK',
-        color: '#d97706',
-        pages: 'Photocopier Ready',
-        desc: 'Structured writing tasks, recall challenges, source evaluation tables, and extended writing scaffolds. Print once for the unit.',
-        pdfUrl: '/pdfs/great_war_pupil_workbook_FINAL_V17.pdf',
-        webUrl: '/units/great_war/pupil_workbook.html',
-      },
-      {
-        title: 'Mastery Pack & Revision',
-        badge: 'MASTERY ASSESSMENT',
-        color: '#b91c1c',
-        pages: 'Assessed Tasks',
-        desc: 'Deep knowledge retrieval, stepped ladder tasks, essay frameworks, and historiographical debates (Fraser vs. Edwards).',
-        pdfUrl: '/pdfs/great_war_mastery_pack_full_FINAL_V17.pdf',
-        webUrl: '/units/great_war/mastery_pack_full.html',
-      },
-      {
-        title: 'Master Recall Quiz & Homework Companion',
-        badge: 'RETRIEVAL & HOMEWORK',
-        color: '#7c3aed',
-        pages: '12 Pages (A5 Booklet)',
-        desc: '48 core factual questions across all 6 lessons with two handwriting lines, 1871–1914 domino flowchart, front tracking ledger, marking bank, and assessment architect.',
-        pdfUrl: '/pdfs/great_war_recall_quiz_FULL.pdf',
-        webUrl: '/units/great_war/quiz_pack.html',
-      },
-    ];
-
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px;">
-    `;
-
-    gwCards.forEach((c) => {
-      const cleanTitle = (c.title || '').replace(/'/g, "\\'");
-      html += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid ${c.color}; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; gap: 4px; margin-bottom: 4px;">
-              <span style="font-size: 0.64rem; font-weight: 800; background: ${c.color}15; color: ${c.color}; padding: 2px 5px; border-radius: 3px; border: 1px solid ${c.color}30; letter-spacing: 0.2px; white-space: nowrap;">
-                ${c.badge}
-              </span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #64748b; white-space: nowrap;">
-                <i class="fa-solid fa-file-pdf" style="color: ${c.color}; margin-right: 3px;"></i>${c.pages}
-              </span>
-            </div>
-            <h3 style="margin: 0 0 3px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25;">
-              ${c.title}
-            </h3>
-            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3;">
-              ${c.desc}
-            </p>
-          </div>
-
-          <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <button type="button" class="btn" onclick="window.openInPagePreview('${c.webUrl}', '${cleanTitle}', '${c.pdfUrl}', { badge: '${c.badge}' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid ${c.color}; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='${c.color}';" onmouseout="this.style.borderColor='#cbd5e1';">
-              <i class="fa-solid fa-eye" style="color: ${c.color};"></i> Preview
-            </button>
-
-            <a href="${c.pdfUrl}" target="_blank" style="background: ${c.color}; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';" title="Open ${c.title} PDF in new tab">
-              <i class="fa-solid fa-file-pdf"></i> PDF
-            </a>
-
-            <a href="${c.webUrl}" target="_blank" style="background: #0f172a; color: #ffffff; padding: 5px 8px; border-radius: 4px; text-decoration: none; font-size: 0.72rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: background 0.15s ease;" onmouseover="this.style.background='#1e293b';" onmouseout="this.style.background='#0f172a';" title="Open interactive version">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Web
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    html += `</div>`;
-
-    // Auxiliary toolbar for secondary PDFs (Height: ~38px)
-    html += `
-      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-        <span style="font-size: 0.74rem; font-weight: 800; color: #475569; text-transform: uppercase;">
-          <i class="fa-solid fa-paperclip"></i> Specialized Great War Teacher Packs:
-        </span>
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <a href="/pdfs/great_war_guided_reading_workbook_FINAL_V17.pdf" target="_blank" title="Open Guided Reading Workbook PDF in new tab" style="background: #ffffff; color: #0284c7; border: 1px solid #bae6fd; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-file-pdf"></i> Guided Reading (PDF)
-          </a>
-          <a href="/pdfs/great_war_answer_key_FINAL_V17.pdf" target="_blank" title="Open Teacher Answer Key PDF in new tab" style="background: #ffffff; color: #16a34a; border: 1px solid #bbf7d0; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-file-pdf"></i> Teacher Answer Key (PDF)
-          </a>
-          <a href="/pdfs/great_war_cheat_sheet_FINAL_V17.pdf" target="_blank" title="Open Revision Cheat Sheet PDF in new tab" style="background: #ffffff; color: #d97706; border: 1px solid #fde68a; padding: 4px 9px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;">
-            <i class="fa-solid fa-file-pdf"></i> Revision Cheat Sheet (PDF)
-          </a>
-        </div>
-      </div>
-    `;
-  }
-  // 5. Early Elizabethan England (`eee`)
-  else if (activeUnitId === 'eee') {
-    const ktCards = [
-      {
-        id: 'KT1',
-        title: 'KT1: Queen, Government & Religion (1558–69)',
-        desc: 'Elizabethan settlement, religious divisions, virgin queen succession.',
-      },
-      {
-        id: 'KT2',
-        title: 'KT2: Challenges to Elizabeth at Home & Abroad (1569–88)',
-        desc: 'Plots (Northern Rebellion, Ridolfi, Throckmorton, Babington), Mary QoS, Armada.',
-      },
-      {
-        id: 'KT3',
-        title: 'KT3: Elizabethan Society in the Age of Exploration (1558–88)',
-        desc: 'Education, leisure, poverty, Drake circumnavigation, Virginia colony.',
-      },
-    ];
-
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
-    `;
-
-    ktCards.forEach((kt) => {
-      html += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #b45309; border-radius: 7px; padding: 12px 14px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 168px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
-              <span style="font-size: 0.68rem; font-weight: 800; background: #fffbeb; color: #b45309; padding: 2px 6px; border-radius: 3px; border: 1px solid #fde68a;">
-                ${kt.id} • PAPER 2 (B4)
-              </span>
-              <span style="font-size: 0.72rem; font-weight: 700; color: #64748b;">
-                <i class="fa-solid fa-file-pdf" style="color: #b45309; margin-right: 3px;"></i>Complete Suite
-              </span>
-            </div>
-            <h3 style="margin: 0 0 4px 0; color: #0f172a; font-size: 0.88rem; font-weight: 800; line-height: 1.25;">
-              ${kt.title}
-            </h3>
-            <p style="margin: 0; font-size: 0.72rem; color: #64748b; line-height: 1.3;">
-              ${kt.desc}
-            </p>
-          </div>
-
-          <div style="display: flex; gap: 5px; margin-top: 8px;">
-            <a href="/pdfs/eee_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-book-open"></i> Text
-            </a>
-            <a href="/pdfs/eee_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-user-pen"></i> Work
-            </a>
-            <a href="/pdfs/eee_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 4px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              <i class="fa-solid fa-shield-halved"></i> Master
-            </a>
-          </div>
-        </div>
-      `;
-    });
-
-    html += `</div>`;
-    html += renderMockExamsRow(
       'eee',
-      unitData.mock_exams || [
-        {
-          id: 'mock_paper2_elizabethan',
-          title: 'Paper 2: Early Elizabethan England Exam Paper',
-          time_minutes: 55,
-          total_marks: 32,
-        },
-      ],
-    );
-  }
-  // 6. Weimar and Nazi Germany (`weimar_nazi_germany`)
-  else if (activeUnitId === 'weimar_nazi_germany') {
-    const weimarCards = [
-      {
-        id: 'KT1',
-        title: 'KT1: The Weimar Republic (1918–29)',
-        desc: 'Origins, Golden Age (Stresemann), culture & early crises.',
-      },
-      {
-        id: 'KT2',
-        title: 'KT2: Hitler’s Rise to Power (1919–33)',
-        desc: 'Early NSDAP, Munich Putsch, Lean Years, Great Depression.',
-      },
-      {
-        id: 'KT3',
-        title: 'KT3: Nazi Control & Dictatorship (1933–39)',
-        desc: 'Reichstag fire, Enabling Act, Night of Long Knives, Police State.',
-      },
-      {
-        id: 'KT4',
-        title: 'KT4: Life in Nazi Germany (1933–39)',
-        desc: 'Women, youth, employment, standard of living, persecution of minorities.',
-      },
-    ];
-
-    html += `
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin-bottom: 10px;">
-    `;
-
-    weimarCards.forEach((kt) => {
+      'weimar_nazi_germany',
+    ].includes(activeUnitId);
+    if (isGcseUnit) {
       html += `
-        <div style="background: #ffffff; border: 1px solid #e2e8f0; border-top: 3.5px solid #7f1d1d; border-radius: 7px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 1px 4px rgba(0,0,0,0.03); min-height: 165px; box-sizing: border-box;">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 3px;">
-              <span style="font-size: 0.65rem; font-weight: 800; background: #fef2f2; color: #991b1b; padding: 2px 5px; border-radius: 3px; border: 1px solid #fecaca;">
-                ${kt.id} • PAPER 3
-              </span>
-              <span style="font-size: 0.68rem; font-weight: 700; color: #64748b;">Complete</span>
+        <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 8px; padding: 12px 18px; margin-top: 10px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; border: 1px solid #334155; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 36px; height: 36px; border-radius: 6px; background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); display: flex; align-items: center; justify-content: center; color: #38bdf8; font-size: 1.05rem;">
+              <i class="fa-solid fa-file-signature"></i>
             </div>
-            <h4 style="margin: 0 0 3px 0; color: #0f172a; font-size: 0.82rem; font-weight: 800; line-height: 1.25;">
-              ${kt.title}
-            </h4>
-            <p style="margin: 0; font-size: 0.7rem; color: #64748b; line-height: 1.3;">
-              ${kt.desc}
-            </p>
+            <div>
+              <div style="color: #ffffff; font-size: 0.90rem; font-weight: 800;">Looking for Timed GCSE Mock Papers &amp; Mark Schemes?</div>
+              <div style="color: #94a3b8; font-size: 0.74rem;">Full authentic Edexcel examination papers, student answer booklets, and examiner mark schemes are organized in the Exam Practice Hub.</div>
+            </div>
           </div>
-
-          <div style="display: flex; gap: 4px; margin-top: 6px;">
-            <a href="/pdfs/weimar_nazi_germany_textbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Textbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #0284c7; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              Text
-            </a>
-            <a href="/pdfs/weimar_nazi_germany_pupil_workbook_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Pupil Workbook PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #d97706; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              Work
-            </a>
-            <a href="/pdfs/weimar_nazi_germany_mastery_pack_${kt.id}_FINAL_V17.pdf" target="_blank" title="Open ${kt.id} Mastery Pack PDF in new tab" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 2.5px solid #b91c1c; padding: 4px 2px; border-radius: 3px; font-size: 0.7rem; font-weight: 700; color: #0f172a; text-decoration: none;">
-              Master
-            </a>
-          </div>
+          <button type="button" onclick="window.switchView('mock-exams', '${activeUnitId}')" style="background: #2563eb; color: #ffffff; border: none; font-weight: 700; font-size: 0.78rem; padding: 8px 16px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; transition: all 0.15s ease;" onmouseover="this.style.background='#1d4ed8';" onmouseout="this.style.background='#2563eb';">
+            <span>Open GCSE Exam Practice Hub</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       `;
-    });
-
-    html += `</div>`;
-    html += renderMockExamsRow(
-      'weimar_nazi_germany',
-      unitData.mock_exams || [
-        {
-          id: 'mock_paper3_weimar',
-          title: 'Paper 3: Weimar and Nazi Germany Mock Exam Paper',
-          time_minutes: 80,
-          total_marks: 52,
-        },
-      ],
-    );
-  }
-  // 7. Generic Unit with Workbooks (e.g. Medieval England, Shoah, Industrialisation, Australia, etc.)
-  else if (
-    unitData.workbooks &&
-    Array.isArray(unitData.workbooks) &&
-    unitData.workbooks.length > 0
-  ) {
-    const uId = activeUnitId;
-    const title = unitData.title || uId;
-
-    const cleanUnitTitle = (title || uId).replace(/'/g, "\\'");
-    html += `
-      <div style="background: #ffffff; padding: 14px 18px; border-radius: 7px; border: 1px solid #e2e8f0; box-shadow: 0 1px 4px rgba(0,0,0,0.03); margin-bottom: 10px;">
-        <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;">
-          <div>
-            <h3 style="margin: 0; color: #0f172a; font-size: 1.05rem; font-weight: 800;">${title} — Printable Master Booklets</h3>
-            <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.78rem;">Photocopier-ready classroom sets, pupil workbooks, and deep revision packs.</p>
-          </div>
-          <span style="font-size: 0.72rem; font-weight: 700; background: #f1f5f9; color: #475569; padding: 3px 8px; border-radius: 4px;">
-            KS3 / Curriculum Unit
-          </span>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px;">
-          <!-- 1. Textbook PDF -->
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #0284c7; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px;">
-            <div>
-              <span style="font-size: 0.65rem; font-weight: 800; background: #e0f2fe; color: #0369a1; padding: 2px 5px; border-radius: 2px;">READING MATERIAL</span>
-              <h4 style="margin: 4px 0 2px 0; color: #0f172a; font-size: 0.85rem; font-weight: 800;">Complete Core Textbook</h4>
-              <p style="margin: 0; font-size: 0.72rem; color: #64748b;">Class set reading materials and primary extracts.</p>
-            </div>
-            <div style="display: flex; gap: 5px; margin-top: 8px;">
-              <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/textbook.html', '${cleanUnitTitle} Core Textbook', '/pdfs/${uId}_textbook_FINAL_V17.pdf', { badge: 'TEXTBOOK' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #0284c7; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#0284c7';" onmouseout="this.style.borderColor='#cbd5e1';">
-                <i class="fa-solid fa-eye" style="color: #0284c7;"></i> Preview
-              </button>
-              <a href="/pdfs/${uId}_textbook_FINAL_V17.pdf" target="_blank" title="Open ${cleanUnitTitle} Textbook PDF in new tab" style="background: #0284c7; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
-                <i class="fa-solid fa-file-pdf"></i> PDF
-              </a>
-            </div>
-          </div>
-
-          <!-- 2. Pupil Workbook PDF -->
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #d97706; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px;">
-            <div>
-              <span style="font-size: 0.65rem; font-weight: 800; background: #fef3c7; color: #b45309; padding: 2px 5px; border-radius: 2px;">WRITING TASKS</span>
-              <h4 style="margin: 4px 0 2px 0; color: #0f172a; font-size: 0.85rem; font-weight: 800;">Pupil Workbook</h4>
-              <p style="margin: 0; font-size: 0.72rem; color: #64748b;">Writing spaces, source evaluation, and pupil tasks.</p>
-            </div>
-            <div style="display: flex; gap: 5px; margin-top: 8px;">
-              <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/pupil_workbook.html', '${cleanUnitTitle} Pupil Workbook', '/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf', { badge: 'WORKBOOK' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #d97706; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#d97706';" onmouseout="this.style.borderColor='#cbd5e1';">
-                <i class="fa-solid fa-eye" style="color: #d97706;"></i> Preview
-              </button>
-              <a href="/pdfs/${uId}_pupil_workbook_FINAL_V17.pdf" target="_blank" title="Open ${cleanUnitTitle} Pupil Workbook PDF in new tab" style="background: #d97706; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
-                <i class="fa-solid fa-file-pdf"></i> PDF
-              </a>
-            </div>
-          </div>
-
-          <!-- 3. Mastery Pack PDF -->
-          <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-top: 3px solid #b91c1c; border-radius: 6px; padding: 10px 12px; display: flex; flex-direction: column; justify-content: space-between; min-height: 140px;">
-            <div>
-              <span style="font-size: 0.65rem; font-weight: 800; background: #fee2e2; color: #b91c1c; padding: 2px 5px; border-radius: 2px;">REVISION &amp; MASTERY</span>
-              <h4 style="margin: 4px 0 2px 0; color: #0f172a; font-size: 0.85rem; font-weight: 800;">Mastery Pack</h4>
-              <p style="margin: 0; font-size: 0.72rem; color: #64748b;">Extended writing, retrieval, and assessment tasks.</p>
-            </div>
-            <div style="display: flex; gap: 5px; margin-top: 8px;">
-              <button type="button" class="btn" onclick="window.openInPagePreview('/units/${uId}/mastery_pack_full.html', '${cleanUnitTitle} Mastery Pack', '/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf', { badge: 'MASTERY' })" style="flex: 1; text-align: center; background: #ffffff; border: 1px solid #cbd5e1; border-left: 3px solid #b91c1c; padding: 5px 6px; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; font-size: 0.74rem; font-weight: 700; color: #1e293b; transition: all 0.15s ease;" onmouseover="this.style.borderColor='#b91c1c';" onmouseout="this.style.borderColor='#cbd5e1';">
-                <i class="fa-solid fa-eye" style="color: #b91c1c;"></i> Preview
-              </button>
-              <a href="/pdfs/${uId}_mastery_pack_full_FINAL_V17.pdf" target="_blank" title="Open ${cleanUnitTitle} Mastery Pack PDF in new tab" style="background: #b91c1c; color: #ffffff; padding: 5px 9px; border-radius: 4px; text-decoration: none; font-size: 0.74rem; font-weight: 700; display: inline-flex; align-items: center; gap: 4px; transition: opacity 0.15s ease;" onmouseover="this.style.opacity='0.9';" onmouseout="this.style.opacity='1';">
-                <i class="fa-solid fa-file-pdf"></i> PDF
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-
-    if (unitData.mock_exams && unitData.mock_exams.length > 0) {
-      html += renderMockExamsRow(uId, unitData.mock_exams);
     }
+
+    // In-page preview console docked below
+    html += renderInPagePreviewConsole();
   }
-  // 8. All Curriculum Units & KS3 Directory (`all`)
+  // Directory of all units (when "All Units Directory" is selected)
   else {
     const gcseUnits = [
       {
@@ -1294,30 +1297,31 @@ export function renderWorkbooksZone(container, unitData) {
     ];
 
     html += `
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
         <!-- GCSE Column -->
-        <div style="background: #ffffff; border: 1.5px solid #000000; border-radius: 7px; padding: 12px 14px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1.5px solid #000000;">
-            <span style="font-size: 0.76rem; font-weight: 900; text-transform: uppercase; color: #000000;">
-              <i class="fa-solid fa-graduation-cap"></i> Edexcel GCSE History Suites (Years 10–11)
+        <div style="background: #ffffff; border: 1.5px solid #000000; border-radius: 8px; padding: 14px 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1.5px solid #000000;">
+            <span style="font-size: 0.78rem; font-weight: 900; text-transform: uppercase; color: #000000;">
+              <i class="fa-solid fa-graduation-cap"></i> Edexcel GCSE History Master Suites (Years 10–11)
             </span>
             <span style="font-size: 0.68rem; font-weight: 800; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px;">5 Units</span>
           </div>
 
-          <div style="display: flex; flex-direction: column; gap: 6px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;">
             ${gcseUnits
               .map(
                 (u) => `
-              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3px solid ${u.color}; border-radius: 5px; padding: 6px 10px; display: flex; align-items: center; justify-content: space-between; transition: all 0.15s ease;">
-                <div style="display: flex; align-items: center; gap: 8px;">
-                  <i class="fa-solid ${u.icon}" style="color: ${u.color}; font-size: 0.88rem;"></i>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-left: 3.5px solid ${u.color}; border-radius: 6px; padding: 8px 12px; display: flex; align-items: center; justify-content: space-between; transition: all 0.15s ease;">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                  <i class="fa-solid ${u.icon}" style="color: ${u.color}; font-size: 0.95rem;"></i>
                   <div>
-                    <strong style="color: #0f172a; font-size: 0.78rem; display: block; line-height: 1.2;">${u.name}</strong>
-                    <span style="color: #64748b; font-size: 0.68rem;">${u.spec}</span>
+                    <strong style="color: #0f172a; font-size: 0.82rem; display: block; line-height: 1.2;">${u.name}</strong>
+                    <span style="color: #64748b; font-size: 0.70rem;">${u.spec}</span>
                   </div>
                 </div>
-                <button type="button" onclick="window.switchView('booklet', '${u.id}')" style="background: #0f172a; color: #ffffff; border: none; padding: 4px 9px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
-                  Open PDFs <i class="fa-solid fa-arrow-right" style="font-size: 0.65rem;"></i>
+                <button type="button" onclick="window.switchView('booklet', '${u.id}')" style="background: #0f172a; color: #ffffff; border: none; padding: 5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+                  <span>Open 3 Pillars</span>
+                  <i class="fa-solid fa-arrow-right" style="font-size: 0.65rem;"></i>
                 </button>
               </div>
             `,
@@ -1327,27 +1331,27 @@ export function renderWorkbooksZone(container, unitData) {
         </div>
 
         <!-- KS3 Column -->
-        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 7px; padding: 12px 14px;">
-          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; padding-bottom: 6px; border-bottom: 1px solid #e2e8f0;">
-            <span style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; color: #1e293b;">
+        <div style="background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px 16px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid #e2e8f0;">
+            <span style="font-size: 0.78rem; font-weight: 800; text-transform: uppercase; color: #1e293b;">
               <i class="fa-solid fa-book-bookmark"></i> Key Stage 3 Curriculum Units (Years 7–9)
             </span>
             <span style="font-size: 0.68rem; font-weight: 700; background: #e2e8f0; color: #334155; padding: 2px 6px; border-radius: 2px;">10 Units</span>
           </div>
 
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
             ${ks3Units
               .map(
                 (u) => `
-              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 5px; padding: 6px 8px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.15s ease;" onclick="window.switchView('booklet', '${u.id}')" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
-                <div style="display: flex; align-items: center; gap: 6px; overflow: hidden;">
-                  <i class="fa-solid ${u.icon}" style="color: #64748b; font-size: 0.8rem; flex-shrink: 0;"></i>
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 10px; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: all 0.15s ease;" onclick="window.switchView('booklet', '${u.id}')" onmouseover="this.style.background='#ffffff'; this.style.borderColor='#0284c7';" onmouseout="this.style.background='#f8fafc'; this.style.borderColor='#e2e8f0';">
+                <div style="display: flex; align-items: center; gap: 8px; overflow: hidden;">
+                  <i class="fa-solid ${u.icon}" style="color: #64748b; font-size: 0.85rem; flex-shrink: 0;"></i>
                   <div style="overflow: hidden;">
-                    <div style="color: #0f172a; font-size: 0.72rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${u.name}</div>
-                    <span style="color: #94a3b8; font-size: 0.64rem;">${u.year}</span>
+                    <div style="color: #0f172a; font-size: 0.74rem; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${u.name}</div>
+                    <span style="color: #94a3b8; font-size: 0.66rem;">${u.year}</span>
                   </div>
                 </div>
-                <i class="fa-solid fa-angle-right" style="color: #94a3b8; font-size: 0.7rem; margin-left: 4px;"></i>
+                <i class="fa-solid fa-angle-right" style="color: #94a3b8; font-size: 0.72rem; margin-left: 4px;"></i>
               </div>
             `,
               )
@@ -1356,11 +1360,6 @@ export function renderWorkbooksZone(container, unitData) {
         </div>
       </div>
     `;
-  }
-
-  // Render docked in-page preview console for all units except all-units directory
-  if (activeUnitId && activeUnitId !== 'all') {
-    html += renderInPagePreviewConsole();
   }
 
   container.innerHTML = html;
