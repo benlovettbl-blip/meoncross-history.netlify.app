@@ -1158,7 +1158,7 @@ export const MASTERPIECES_DATA = [
   },
   {
     id: 'execution_charles_i_1649',
-    weekTitle: 'Source Spotlight · The Regicide',
+    weekTitle: 'Art Spotlight · The Regicide',
     title: 'The Execution of King Charles I outside the Banqueting House, Whitehall',
     artist: 'Contemporary European News Printmaker (German / Dutch School)',
     artistDates: 'c. 1649',
@@ -1167,7 +1167,7 @@ export const MASTERPIECES_DATA = [
     location: 'British Museum Department of Prints and Drawings, London',
     dimensions: '31 cm × 38 cm',
     image: '/images/charles_i_execution.jpg',
-    curatorBadge: 'Source Spotlight · Contemporary Regicide Broadside',
+    curatorBadge: 'Art Spotlight · Contemporary Regicide Broadside',
     curatorHook:
       'A rare contemporary visual record of the most shocking event in English constitutional history: the public beheading of an anointed monarch outside his own palace. Double ranks of Parliamentary cavalry cordon off the scaffold from the stunned London crowd.',
     thematicLinks: [
@@ -1894,7 +1894,7 @@ export const MASTERPIECES_DATA = [
   },
   {
     id: 'leete_kitchener_wants_you_1914',
-    weekTitle: 'Source Spotlight · Recruitment & Propaganda',
+    weekTitle: 'Art Spotlight · Recruitment & Propaganda',
     title: 'Lord Kitchener Wants You (5 September 1914)',
     artist: 'Alfred Leete',
     artistDates: '1882–1933',
@@ -1960,7 +1960,7 @@ export const MASTERPIECES_DATA = [
   },
   {
     id: 'kealey_women_say_go_1915',
-    weekTitle: 'Source Spotlight · The Home Front',
+    weekTitle: 'Art Spotlight · The Home Front',
     title: 'Women of Britain Say "GO!" (1915)',
     artist: 'E.J. Kealey',
     artistDates: 'fl. 1914–1918',

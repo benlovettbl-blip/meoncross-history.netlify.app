@@ -3556,6 +3556,7 @@ export const unitData = {
           source: {
             title: 'Source B: "The Big Three" at the Paris Peace Conference (Versailles, 1919)',
             image: '/images/gw_big_three_versailles.jpg',
+            is_artwork: false,
             caption:
               'David Lloyd George (Britain), Vittorio Orlando (Italy), Georges Clemenceau (France), and Woodrow Wilson (USA) outside the conference chamber at Versailles.',
             provenance: 'Official Allied Press Bureau, Paris Peace Conference, May 1919.',
@@ -3574,6 +3575,7 @@ export const unitData = {
             title:
               'Source C: The Signing of Peace in the Hall of Mirrors, Versailles (28 June 1919)',
             image: '/images/versailles_signing_1919_orpen.jpg',
+            is_artwork: true,
             caption:
               "Sir William Orpen's famous painting depicting German delegates Johannes Bell and Hermann Müller signing the Treaty of Versailles under the gaze of the Big Three.",
             provenance: 'Imperial War Museum Collection, ART 2856, William Orpen, 1919.',
@@ -3594,6 +3596,7 @@ export const unitData = {
             title:
               'Source D: Will Dyson, "Peace and Future Cannon Fodder" (Daily Herald, May 1919)',
             image: '/images/gw_weeping_child.jpg',
+            is_artwork: false,
             caption:
               'Prophetic political cartoon by Will Dyson showing the Big Four leaving Versailles while a weeping child labelled "1940 Class" sobs over the treaty.',
             provenance:

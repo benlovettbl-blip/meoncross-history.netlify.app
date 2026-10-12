@@ -169,6 +169,96 @@ export function getOddOneOutExemplars(lesson, vocabTermsList = []) {
 }
 window.getOddOneOutExemplars = getOddOneOutExemplars;
 
+/**
+ * Pedagogical Visual Source Classifier:
+ * Determines whether a historical source is an authentic historical painting/fine artwork
+ * eligible for Art Spotlight interactive presentation, or a non-painting (e.g. map, photograph,
+ * official treaty, clinical photo, cartoon, newspaper headline, propaganda poster).
+ */
+export function isPaintingSource(source, extraTitle = '') {
+  if (!source) return false;
+  if (typeof source.is_artwork === 'boolean') return source.is_artwork;
+  if (typeof source.is_painting === 'boolean') return source.is_painting;
+
+  const rawTitle = (source.title || '') + ' ' + (extraTitle || '');
+  const rawCaption = source.caption || '';
+  const rawCitation = source.citation || '';
+  const rawMedium = source.medium || '';
+  const rawType = source.type || '';
+  const combinedText = [
+    rawTitle,
+    rawCaption,
+    rawCitation,
+    rawMedium,
+    rawType,
+    source.provenance || '',
+  ]
+    .join(' ')
+    .toLowerCase();
+
+  // Strong negative indicators - definitely NOT a painting (maps, photos, text documents, coins, prints)
+  const strongNonArt =
+    /\b(map|cartographic|cartography|chart|diagram|aerial|reconnaissance|photograph|photo\b|snapshot|medical photograph|clinical photograph|film still|press photo|document|treaty|telegram|dispatch|statute|census|record|letter|diary|oral testimony|speech|proclamation|edict|newspaper|headline|front page|broadside|notice|poster|ration book|medal|plaque|coin|graffiti|artefact|artifact|trench network|engraving|woodcut|copperplate|lithograph|etching)\b/i;
+
+  // Explicit mediums indicating a painting
+  if (
+    rawMedium &&
+    /\b(oil|canvas|panel|fresco|watercolor|watercolour|tempera|gouache|mural)\b/i.test(rawMedium)
+  ) {
+    return true;
+  }
+
+  // Explicit source type
+  if (rawType === 'painting' || rawType === 'artwork') {
+    return true;
+  }
+
+  // Strong painting indicators in text
+  const strongPainting =
+    /\b(oil on canvas|oil on panel|oil on wood|oil on copper|oil on board|fresco|watercolor|watercolour|tempera|gouache|mural|oil painting|altarpiece|triptych|masterpiece|armada portrait|painted by|court painter)\b/i;
+
+  if (strongPainting.test(combinedText)) {
+    // If it says "oil on canvas" / "oil painting" / "fresco", it's a painting
+    if (/\b(oil on (canvas|panel|wood|board)|oil painting|fresco|tempera)\b/i.test(combinedText)) {
+      return true;
+    }
+    // If the title itself designates a map, chart, or photo, reject
+    if (strongNonArt.test(rawTitle)) {
+      return false;
+    }
+    return true;
+  }
+
+  // Check if title explicitly describes it as a painting (e.g. "Primary Oil Painting", "Contemporary Painting")
+  if (/\b(painting|painted)\b/i.test(rawTitle) && !strongNonArt.test(rawTitle)) {
+    return true;
+  }
+
+  // Check if caption explicitly describes it as a painting (e.g. "West's painting", "famous painting", "iconic oil painting")
+  if (
+    /\b([a-z]+['’]s\s+painting|famous\s+painting|contemporary\s+painting|historical\s+painting|iconic\s+painting)\b/i.test(
+      rawCaption,
+    ) &&
+    !strongNonArt.test(rawTitle)
+  ) {
+    return true;
+  }
+
+  // Famous Old Masters / painters explicitly named in citation or title
+  if (
+    /\b(holbein|cranach|van dyck|vel[aá]zquez|rembrandt|goya|vermeer|rubens|titian|michelangelo|raphael|brueghel|delacroix|werner|bettannier|orpen|turner|constable)\b/i.test(
+      combinedText,
+    )
+  ) {
+    if (!strongNonArt.test(rawTitle)) {
+      return true;
+    }
+  }
+
+  return false;
+}
+window.isPaintingSource = isPaintingSource;
+
 function getRetrievalStarterActions(lesson, currentUnitId) {
   if (currentUnitId === 'cme_new') {
     let kt = 'KT1';
@@ -2794,27 +2884,26 @@ export function renderLesson(lesson) {
 
   const resolvedHeroImage = getAssetUrl(heroImage);
 
-  // Contextual Gallery Launcher Button on Hero Banner (No explanatory caption text, clean launcher button)
+  // Contextual Gallery Launcher Button on Hero Banner (Only shown for authentic historical paintings / artworks)
   let bannerGalleryBtn = '';
   if (resolvedHeroImage) {
     const bannerCaption =
       typeof lesson.banner === 'object' && lesson.banner ? lesson.banner.caption || '' : '';
-    const isArtwork =
-      typeof lesson.banner === 'object' && lesson.banner && lesson.banner.is_artwork !== undefined
-        ? lesson.banner.is_artwork
-        : !/(map|chart|document|newspaper|photograph|diagram|statute|census|record|treaty)/i.test(
-            bannerCaption + ' ' + (lesson.title || ''),
-          );
-    const btnLabel = isArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
-    const btnIcon = isArtwork ? 'fa-palette' : 'fa-scroll';
-    const actionType = isArtwork ? 'open-masterpiece' : 'open-source-spotlight';
+    const isBannerArtwork = isPaintingSource(
+      typeof lesson.banner === 'object' && lesson.banner
+        ? lesson.banner
+        : { title: lesson.title, caption: bannerCaption, image: resolvedHeroImage },
+      lesson.title,
+    );
 
-    bannerGalleryBtn = `
-      <button class="btn-banner-gallery" data-action="${actionType}" data-banner-lesson="${lesson.id}" style="position: absolute; bottom: 16px; right: 4rem; z-index: 10;" title="Launch ${btnLabel}">
-        <i class="fa-solid ${btnIcon}" style="color: ${isArtwork ? '#fbbf24' : '#60a5fa'}; font-size: 0.9rem;"></i>
-        <span>${btnLabel}</span>
-      </button>
-    `;
+    if (isBannerArtwork) {
+      bannerGalleryBtn = `
+        <button class="btn-banner-gallery" data-action="open-masterpiece" data-banner-lesson="${lesson.id}" style="position: absolute; bottom: 16px; right: 4rem; z-index: 10;" title="Launch Art Spotlight">
+          <i class="fa-solid fa-palette" style="color: #fbbf24; font-size: 0.9rem;"></i>
+          <span>Art Spotlight</span>
+        </button>
+      `;
+    }
   }
 
   // Full-Bleed Hero Image (Calibrated 140px Compact Height for Smartboards)
@@ -3035,15 +3124,15 @@ export function renderLesson(lesson) {
         }
         const citationText = source.citation || source.provenance || '';
 
-        const isSourceArtwork =
-          source.is_artwork !== undefined
-            ? source.is_artwork
-            : /(painting|portrait|mural|masterpiece|oil on|fresco|canvas)/i.test(
-                displayTitle + ' ' + (source.caption || ''),
-              );
-        const sourceBtnLabel = isSourceArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
-        const sourceIcon = isSourceArtwork ? 'fa-palette' : 'fa-scroll';
-        const sourceAction = isSourceArtwork ? 'open-masterpiece' : 'open-source-spotlight';
+        const isSourceArtwork = isPaintingSource(source, displayTitle);
+        const sourceSpotlightBtn = isSourceArtwork
+          ? `
+                    <button class="btn-source-spotlight-launch btn-art-spotlight-launch" data-action="open-masterpiece" data-lesson-id="${lesson.id}" data-source-index="${sIdx}" title="Launch Art Spotlight">
+                      <i class="fa-solid fa-palette" style="color: #fbbf24;"></i>
+                      <span>Art Spotlight</span>
+                    </button>
+          `
+          : '';
 
         htmlSources1 += `
           <details class="cme-source-drawer eee-source-drawer archival-drawer gcse-source-container archival-source-box" ${cardIdAttr} style="margin: 20px 0; border: 1.5px solid #cbd5e1; border-radius: 8px; background: #f8fafc; overflow: hidden; box-shadow: 0 2px 6px rgba(0,0,0,0.03); transition: all 0.25s ease;">
@@ -3068,10 +3157,7 @@ export function renderLesson(lesson) {
                         <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                       </div>
                     </div>
-                    <button class="btn-source-spotlight-launch" data-action="${sourceAction}" data-lesson-id="${lesson.id}" data-source-index="${sIdx}" title="Launch ${sourceBtnLabel}">
-                      <i class="fa-solid ${sourceIcon}" style="color: ${isSourceArtwork ? '#fbbf24' : '#60a5fa'};"></i>
-                      <span>${sourceBtnLabel}</span>
-                    </button>
+                    ${sourceSpotlightBtn}
                   </div>
                   <div class="archival-source-details-col">
                     <div>
@@ -5326,15 +5412,15 @@ export function renderLesson(lesson) {
           `;
         } else {
           const rawSourceImgUrl = getAssetUrl(rawImgSrc);
-          const isExamSrcArtwork =
-            rawSource.is_artwork !== undefined
-              ? rawSource.is_artwork
-              : /(painting|portrait|mural|masterpiece|oil on|fresco|canvas)/i.test(
-                  (sourceTitle || '') + ' ' + (rawSource.caption || ''),
-                );
-          const examBtnLabel = isExamSrcArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
-          const examIcon = isExamSrcArtwork ? 'fa-palette' : 'fa-scroll';
-          const examAction = isExamSrcArtwork ? 'open-masterpiece' : 'open-source-spotlight';
+          const isExamSrcArtwork = isPaintingSource(rawSource, sourceTitle);
+          const examSpotlightBtn = isExamSrcArtwork
+            ? `
+                <button class="btn-source-spotlight-launch btn-art-spotlight-launch" data-action="open-masterpiece" data-src="${rawSourceImgUrl}" data-title="${sourceTitle || 'Historical Artwork'}" data-caption="${rawSource.caption || ''}" title="Launch Art Spotlight">
+                  <i class="fa-solid fa-palette" style="color: #fbbf24;"></i>
+                  <span>Art Spotlight</span>
+                </button>
+            `
+            : '';
 
           sourceBodyHtml = `
             <div class="archival-source-split-layout">
@@ -5345,10 +5431,7 @@ export function renderLesson(lesson) {
                     <span class="archival-meta-tag" style="font-size: 0.62rem; color: #cbd5e1; letter-spacing: 0.08em;">CLICK TO ENLARGE / PAN-ZOOM</span>
                   </div>
                 </div>
-                <button class="btn-source-spotlight-launch" data-action="${examAction}" data-src="${rawSourceImgUrl}" data-title="${sourceTitle || 'Historical Source'}" data-caption="${rawSource.caption || ''}" title="Launch ${examBtnLabel}">
-                  <i class="fa-solid ${examIcon}" style="color: ${isExamSrcArtwork ? '#fbbf24' : '#60a5fa'};"></i>
-                  <span>${examBtnLabel}</span>
-                </button>
+                ${examSpotlightBtn}
                 ${
                   window.currentUnitId === 'cme_new' ||
                   window.currentUnitId === 'gcse_middle_east_1945_1995'

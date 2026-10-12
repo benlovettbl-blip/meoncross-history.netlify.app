@@ -158,6 +158,7 @@ const great_war = {
             letter: 'A',
             title: 'Source A (Cartographic Record): The German Empire in Central Europe (1871)',
             image: '/images/german_empire_1871.png',
+            is_artwork: false,
             caption:
               'Geopolitical map showing the unification of thirty-nine sovereign German states into the German Empire under Prussian leadership in 1871.',
             citation: 'Prussian State Library, Map Department (1871).',
@@ -176,6 +177,7 @@ const great_war = {
             title:
               'Source B (Primary Oil Painting): Anton von Werner, The Proclamation of the German Empire at Versailles (18 January 1871)',
             image: '/images/werner_versailles_1871_highres.jpg',
+            is_artwork: true,
             caption:
               'Anton von Werner (1885 Friedrichsruh version): Grand Duke Frederick I of Baden leads German princes and officers in cheering the newly proclaimed Kaiser Wilhelm I on the dais in the Hall of Mirrors at Versailles, while Chancellor Otto von Bismarck stands prominently in his white Cuirassier uniform holding the imperial proclamation.',
             citation:
@@ -194,6 +196,7 @@ const great_war = {
             letter: 'C',
             title: 'Source C (Cartographic Record): The Annexation of Alsace-Lorraine (1871)',
             image: '/units/great_war/assets/alsace_lorraine_1871_map.png',
+            is_artwork: false,
             caption:
               'Map detailing the territorial amputation of Alsace and northern Lorraine transferred to the German Empire under the 1871 Treaty of Frankfurt.',
             citation: 'Department Cartographic Collection (1871).',
@@ -212,6 +215,7 @@ const great_war = {
             title:
               'Source D (Visual Record): Albert Bettannier, La Tache Noire (The Black Spot, 1887)',
             image: '/units/great_war/assets/la_tache_noire_1887.jpg',
+            is_artwork: true,
             caption:
               'Albert Bettannier’s iconic 1887 oil painting (Musée d’Orsay) depicting a French schoolmaster in a black coat pointing with a wooden pointer to the blacked-out region of Alsace-Lorraine on a classroom map of France, instructing a young pupil in a cadet uniform.',
             citation:
@@ -587,6 +591,7 @@ const great_war = {
             title:
               'Source A (Cartographic Record): The Partition of Africa by European Empires (1914)',
             image: '/units/great_war/assets/map_africa_1914.png',
+            is_artwork: false,
             caption:
               'Map showing the division of the African continent among European colonial powers on the eve of World War I, with Britain and France holding the largest empires.',
             citation: 'Department Cartographic Collection (1914).',
@@ -621,6 +626,7 @@ const great_war = {
             title:
               'Source B (Primary Photograph): The German Gunboat SMS Panther at Agadir (July 1911)',
             image: '/units/great_war/assets/sms_panther_agadir_1911.jpg',
+            is_artwork: false,
             caption:
               'Primary photograph depicting the German imperial gunboat SMS Panther anchored off the Moroccan port of Agadir during the Second Moroccan Crisis in July 1911.',
             citation:
@@ -963,6 +969,7 @@ const great_war = {
             title:
               'Source A (Primary Photograph): The Royal Navy Battleship HMS Dreadnought at Sea (1906)',
             image: '/images/great_war_cover.jpg',
+            is_artwork: false,
             caption:
               'HMS Dreadnought underway during sea trials in 1906. Its revolutionary steam turbine propulsion and uniform 12-inch gun batteries rendered all previous battleships instantly obsolete.',
             citation: 'Royal Navy Photographic Archives (1906).',
@@ -1672,6 +1679,7 @@ const great_war = {
             title:
               'Source A (Cartographic & Primary Record): The Fatal Wrong Turn at the Latin Bridge, Sarajevo (28 June 1914)',
             image: '/units/great_war/assets/july_crisis.svg',
+            is_artwork: false,
             caption:
               'Forensic street map of Sarajevo showing the route of Archduke Franz Ferdinand’s motorcade along the Appel Quay and the fatal wrong turn outside Schiller’s Delicatessen beside the Latin Bridge.',
             citation: 'Bosnian Archival Primary Record (1914).',

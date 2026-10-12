@@ -227,19 +227,19 @@ export function buildDynamicStudioItem(payload) {
     id,
     weekTitle: isArtwork
       ? 'Masterpiece Studio · Visual Culture'
-      : 'Source Spotlight · Archival Evidence',
+      : 'Art Spotlight · Historical Artwork',
     title: cleanTitle,
     artist: artist,
     artistDates: date,
     date: date,
-    medium: isArtwork ? 'Oil on panel / canvas' : 'Contemporary archival document / print',
+    medium: isArtwork ? 'Oil on panel / canvas' : 'Contemporary historical artwork',
     location: citation,
     dimensions: 'Primary Source Archive',
     image: image,
     isArtwork: isArtwork,
     curatorBadge: isArtwork
       ? 'Masterpiece Studio · Primary Visual Art'
-      : 'Source Spotlight · Contemporary Primary Record',
+      : 'Art Spotlight · Historical Artwork',
     curatorHook:
       caption ||
       context ||
@@ -965,11 +965,9 @@ export function closeProjectorMode() {
 export function getArtistSpotlightCardHtml(item, isProjector = false) {
   if (!item) return '';
 
-  const isArtwork =
-    item.isArtwork !== false &&
-    (!item.curatorBadge || !item.curatorBadge.includes('Source Spotlight'));
-  const headerIcon = isArtwork ? 'fa-palette' : 'fa-scroll';
-  const headerTitle = isArtwork ? 'Artist Spotlight' : 'Archival Provenance & Context';
+  const isArtwork = item.isArtwork !== false;
+  const headerIcon = 'fa-palette';
+  const headerTitle = isArtwork ? 'Artist Spotlight' : 'Artwork Context & Provenance';
   const datesBadge = item.artistDates || item.date || 'Historical Primary Record';
 
   let factsHtml = '';
@@ -1076,11 +1074,9 @@ function getProjectorModalInnerHtml() {
   const timeFormatted = formatTime(studioState.timerSeconds);
   const activePhase = getActivePhase(studioState.timerSeconds, studioState.timerDuration);
   const isFs = typeof document !== 'undefined' && !!document.fullscreenElement;
-  const isArtwork =
-    item.isArtwork !== false &&
-    (!item.curatorBadge || !item.curatorBadge.includes('Source Spotlight'));
-  const headerIcon = isArtwork ? 'fa-palette' : 'fa-scroll';
-  const headerBadge = isArtwork ? 'Masterpiece Studio' : 'Source Spotlight';
+  const isCurated = MASTERPIECES_DATA.some((m) => m.id === item.id);
+  const headerIcon = 'fa-palette';
+  const headerBadge = isCurated ? 'Masterpiece Studio' : 'Art Spotlight';
 
   return `
     <div style="display: flex; flex-direction: column; width: 100%; height: 100%; max-width: 1600px; margin: 0 auto; padding: 20px 24px; box-sizing: border-box; color: #f8fafc; font-family: 'Outfit', sans-serif;">
@@ -1088,7 +1084,7 @@ function getProjectorModalInnerHtml() {
       <!-- Projector Top Header Bar -->
       <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1.5px solid rgba(255,255,255,0.12); padding-bottom: 14px; margin-bottom: 18px; flex-shrink: 0; flex-wrap: wrap; gap: 12px;">
         <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="background: rgba(245, 158, 11, 0.2); border: 1.5px solid ${isArtwork ? '#f59e0b' : '#3b82f6'}; color: ${isArtwork ? '#fbbf24' : '#93c5fd'}; padding: 6px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 7px;">
+          <div style="background: rgba(245, 158, 11, 0.2); border: 1.5px solid #f59e0b; color: #fbbf24; padding: 6px 12px; border-radius: 8px; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.05em; text-transform: uppercase; display: inline-flex; align-items: center; gap: 7px;">
             <i class="fa-solid ${headerIcon}"></i> ${headerBadge}
           </div>
           <div>

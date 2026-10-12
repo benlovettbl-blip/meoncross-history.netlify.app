@@ -5880,7 +5880,8 @@ details.cme-source-drawer[open] {
   box-shadow: 0 8px 24px rgba(245, 158, 11, 0.25);
 }
 
-.btn-source-spotlight-launch {
+.btn-source-spotlight-launch,
+.btn-art-spotlight-launch {
   margin-top: 8px;
   width: 100%;
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -5900,7 +5901,8 @@ details.cme-source-drawer[open] {
   transition: all 0.2s ease;
 }
 
-.btn-source-spotlight-launch:hover {
+.btn-source-spotlight-launch:hover,
+.btn-art-spotlight-launch:hover {
   background: linear-gradient(135deg, #334155 0%, #1e293b 100%);
   border-color: #f59e0b;
   color: #fef08a;

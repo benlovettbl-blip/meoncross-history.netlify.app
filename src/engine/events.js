@@ -751,6 +751,7 @@ export function initEventDelegation() {
         break;
 
       case 'open-masterpiece':
+      case 'open-art-spotlight':
       case 'open-source-spotlight':
       case 'launch-masterpiece-projector': {
         if (typeof window.openMasterpieceProjector === 'function') {
