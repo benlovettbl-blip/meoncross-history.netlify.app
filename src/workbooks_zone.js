@@ -1089,15 +1089,19 @@ export function renderWorkbooksZone(container, unitData) {
     </div>
 
     <!-- Specification Unit Switcher Tabs -->
-    <div style="display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; padding: 4px 6px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px;">
-      <span style="font-size: 0.7rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 4px; padding-left: 2px;">Unit:</span>
+    <div style="display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; padding: 6px 10px; background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px;">
+      <button type="button" onclick="window.switchView('booklet', 'all')" style="background: ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#ffffff'}; color: ${!activeUnitId || activeUnitId === 'all' ? '#ffffff' : '#334155'}; border: 1px solid ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#cbd5e1'}; font-size: 0.74rem; font-weight: 700; padding: 4px 10px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-layer-group"></i> All Units Directory
+      </button>
+
+      <span style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 4px;">GCSE:</span>
       
       <button type="button" onclick="window.switchView('booklet', 'edexcel_medicine')" style="background: ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#ffffff'}; color: ${activeUnitId === 'edexcel_medicine' ? '#ffffff' : '#0f766e'}; border: 1px solid ${activeUnitId === 'edexcel_medicine' ? '#0f766e' : '#99f6e4'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'edexcel_medicine' ? '0 1px 3px rgba(15,118,110,0.25)' : 'none'};">
         <i class="fa-solid fa-notes-medical"></i> Medicine (P1)
       </button>
 
       <button type="button" onclick="window.switchView('booklet', 'cme_new')" style="background: ${activeUnitId === 'cme_new' ? '#0284c7' : '#ffffff'}; color: ${activeUnitId === 'cme_new' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'cme_new' ? '#0284c7' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'cme_new' ? '0 1px 3px rgba(2,132,199,0.25)' : 'none'};">
-        <i class="fa-solid fa-dove"></i> ⭐ Middle East (P2)
+        <i class="fa-solid fa-dove"></i> Middle East (P2)
       </button>
 
       <button type="button" onclick="window.switchView('booklet', 'eee')" style="background: ${activeUnitId === 'eee' ? '#b45309' : '#ffffff'}; color: ${activeUnitId === 'eee' ? '#ffffff' : '#b45309'}; border: 1px solid ${activeUnitId === 'eee' ? '#b45309' : '#fde68a'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'eee' ? '0 1px 3px rgba(180,83,9,0.25)' : 'none'};">
@@ -1112,12 +1116,26 @@ export function renderWorkbooksZone(container, unitData) {
         <i class="fa-solid fa-flag-usa"></i> USA 1954–75 (P3)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'great_war')" style="background: ${activeUnitId === 'great_war' ? '#4338ca' : '#ffffff'}; color: ${activeUnitId === 'great_war' ? '#ffffff' : '#4338ca'}; border: 1px solid ${activeUnitId === 'great_war' ? '#4338ca' : '#c7d2fe'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'great_war' ? '0 1px 3px rgba(67,56,202,0.25)' : 'none'};">
-        <i class="fa-solid fa-shield-halved"></i> Great War (KS3)
+      <span style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin: 0 4px;">KS3:</span>
+
+      <button type="button" onclick="window.switchView('booklet', 'water_and_sanitation')" style="background: ${activeUnitId === 'water_and_sanitation' ? '#0369a1' : '#ffffff'}; color: ${activeUnitId === 'water_and_sanitation' ? '#ffffff' : '#0369a1'}; border: 1px solid ${activeUnitId === 'water_and_sanitation' ? '#0369a1' : '#bae6fd'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-faucet-drip"></i> Water (Y7)
       </button>
 
-      <button type="button" onclick="window.switchView('booklet', 'all')" style="background: ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#ffffff'}; color: ${!activeUnitId || activeUnitId === 'all' ? '#ffffff' : '#475569'}; border: 1px solid ${!activeUnitId || activeUnitId === 'all' ? '#0f172a' : '#cbd5e1'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
-        <i class="fa-solid fa-layer-group"></i> All Units Directory
+      <button type="button" onclick="window.switchView('booklet', 'medieval_england')" style="background: ${activeUnitId === 'medieval_england' ? '#7c2d12' : '#ffffff'}; color: ${activeUnitId === 'medieval_england' ? '#ffffff' : '#7c2d12'}; border: 1px solid ${activeUnitId === 'medieval_england' ? '#7c2d12' : '#fed7aa'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-chess-rook"></i> Medieval (Y7)
+      </button>
+
+      <button type="button" onclick="window.switchView('booklet', 'early_modern_world')" style="background: ${activeUnitId === 'early_modern_world' ? '#047857' : '#ffffff'}; color: ${activeUnitId === 'early_modern_world' ? '#ffffff' : '#047857'}; border: 1px solid ${activeUnitId === 'early_modern_world' ? '#047857' : '#a7f3d0'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-compass"></i> Early Modern (Y8)
+      </button>
+
+      <button type="button" onclick="window.switchView('booklet', 'industrialisation_and_empire')" style="background: ${activeUnitId === 'industrialisation_and_empire' ? '#475569' : '#ffffff'}; color: ${activeUnitId === 'industrialisation_and_empire' ? '#ffffff' : '#475569'}; border: 1px solid ${activeUnitId === 'industrialisation_and_empire' ? '#475569' : '#cbd5e1'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease;">
+        <i class="fa-solid fa-industry"></i> Industry (Y8)
+      </button>
+
+      <button type="button" onclick="window.switchView('booklet', 'great_war')" style="background: ${activeUnitId === 'great_war' ? '#4338ca' : '#ffffff'}; color: ${activeUnitId === 'great_war' ? '#ffffff' : '#4338ca'}; border: 1px solid ${activeUnitId === 'great_war' ? '#4338ca' : '#c7d2fe'}; font-size: 0.72rem; font-weight: 700; padding: 4px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s ease; box-shadow: ${activeUnitId === 'great_war' ? '0 1px 3px rgba(67,56,202,0.25)' : 'none'};">
+        <i class="fa-solid fa-shield-halved"></i> Great War (Y9)
       </button>
     </div>
   `;

@@ -80,25 +80,6 @@ export function renderDashboard() {
         </div>
       </div>
 
-      <!-- Quick Curriculum & Keyword Search Strip -->
-      <div class="dashboard-search-strip" onclick="window.openKeywordSearch && window.openKeywordSearch()" role="button" tabindex="0" title="Click or press Ctrl+K to search all keywords and lessons">
-        <div class="dashboard-search-content">
-          <div class="search-strip-icon">
-            <i class="fa-solid fa-magnifying-glass"></i>
-          </div>
-          <div class="search-strip-text">
-            <span class="search-strip-headline">Search 800+ Keywords, Concepts &amp; Lessons</span>
-            <span class="search-strip-sub">Instant lookup for glossary definitions, enquiry questions, and exam topics (Press <kbd style='background:rgba(255,255,255,0.7); padding:1px 5px; border-radius:4px; border:1px solid #cbd5e1;'>Ctrl K</kbd>)</span>
-          </div>
-        </div>
-        <div class="search-strip-action">
-          <span class="search-strip-tag"><i class="fa-solid fa-bolt"></i> Quick Jump</span>
-          <kbd class="search-strip-kbd">Ctrl K</kbd>
-        </div>
-      </div>
-
-
-
       <!-- Year Quick Jump Sub-Navigation -->
       <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem;">
         <a href="#year7-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 6px 16px; border-radius: 20px; font-size: 0.82rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1.5px solid #bfdbfe; transition: all 0.2s; cursor: pointer;">Year 7</a>
