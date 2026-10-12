@@ -4,18 +4,18 @@
  *
  * Designed for Edexcel GCSE History Paper 2: Conflict in the Middle East.
  * Strictly adheres to Institutional Neutrality and Zero AI Educational Jargon.
- * Clean, uncluttered, high-resolution cartography without distracting overlays.
+ * Clean, uncluttered, high-resolution cartography and live slippy map engine.
  */
 
 import { getAssetUrl } from './engine/assets.js';
 
-// Available High-Resolution Historical Reference Maps
+// Available Regional Reference & Live Maps
 export const CME_REGIONAL_MAPS = {
   regional: {
     id: 'regional',
     title: 'Middle East Regional Cartography (Israel & Surrounding Neighbours)',
     subtitle:
-      'High-resolution theater survey: Israel, Egypt/Sinai, Jordan, Syria, Golan Heights, Lebanon, West Bank & Gaza',
+      'High-resolution historical survey: Israel, Egypt/Sinai, Jordan, Syria, Golan Heights, Lebanon, West Bank & Gaza (1967)',
     image: '/images/palestine_1967_six_day_war_map.png',
   },
   cia: {
@@ -24,6 +24,13 @@ export const CME_REGIONAL_MAPS = {
     subtitle:
       'Official survey: Armistice demarcation lines, former mandate boundaries, and major towns/cities',
     image: '/images/cme_1967_occupied_territories_cia_map.png',
+  },
+  live: {
+    id: 'live',
+    title: 'Live Interactive Map (Satellite & Street Engine)',
+    subtitle:
+      'Real-time slippy map: Zoom seamlessly from space down to street level • Toggle Satellite / Physical Terrain',
+    isLive: true,
   },
 };
 
@@ -36,6 +43,35 @@ let startX = 0;
 let startY = 0;
 let startPanX = 0;
 let startPanY = 0;
+
+let leafletMapInstance = null;
+let leafletLoadingPromise = null;
+
+// ============================================================================
+// DYNAMIC LEAFLET LOADER (No local build dependency, 100% lightweight)
+// ============================================================================
+
+function loadLeaflet() {
+  if (window.L) return Promise.resolve(window.L);
+  if (leafletLoadingPromise) return leafletLoadingPromise;
+
+  leafletLoadingPromise = new Promise((resolve, reject) => {
+    // Inject CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+
+    // Inject Script
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = () => resolve(window.L);
+    script.onerror = (err) => reject(err);
+    document.head.appendChild(script);
+  });
+
+  return leafletLoadingPromise;
+}
 
 // ============================================================================
 // MODAL HTML GENERATOR & OPEN / CLOSE LOGIC
@@ -58,34 +94,37 @@ export function ensureCmeTheaterMapModalInDOM() {
       <div style="padding: 10px 18px; background: #070d19; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
         
         <!-- Left: Title & Map Switcher -->
-        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+        <div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap;">
           <div style="background: #0284c7; color: #ffffff; width: 32px; height: 32px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 0 2px 8px rgba(2,132,199,0.4); flex-shrink: 0;">
             <i class="fa-solid fa-map"></i>
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <h3 id="cme-map-dialog-title" style="margin: 0; font-size: 1.08rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">
+              <h3 id="cme-map-dialog-title" style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">
                 ${CME_REGIONAL_MAPS[currentMapKey].title}
               </h3>
               <span style="background: #0369a1; color: #e0f2fe; font-size: 0.65rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Edexcel Paper 2</span>
             </div>
-            <div id="cme-map-dialog-subtitle" style="font-size: 0.73rem; color: #94a3b8; margin-top: 1px;">
+            <div id="cme-map-dialog-subtitle" style="font-size: 0.72rem; color: #94a3b8; margin-top: 1px;">
               ${CME_REGIONAL_MAPS[currentMapKey].subtitle}
             </div>
           </div>
 
-          <!-- Clean Map Switcher Buttons -->
-          <div style="display: flex; gap: 4px; background: #0f172a; padding: 3px; border-radius: 6px; border: 1px solid #334155; margin-left: 6px;">
+          <!-- Clean 3-Option Map Switcher Buttons -->
+          <div style="display: flex; gap: 4px; background: #0f172a; padding: 3px; border-radius: 6px; border: 1px solid #334155; margin-left: 4px;">
             <button type="button" id="btn-cme-map-regional" onclick="window.switchCmeRegionalMap('regional');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; cursor: pointer; border: 1px solid ${currentMapKey === 'regional' ? '#38bdf8' : 'transparent'}; background: ${currentMapKey === 'regional' ? '#0284c7' : 'transparent'}; color: ${currentMapKey === 'regional' ? '#ffffff' : '#94a3b8'}; transition: all 0.15s ease;">
-              <i class="fa-solid fa-earth-middle-east"></i> Regional Overview (Israel & Neighbours)
+              <i class="fa-solid fa-earth-middle-east"></i> Regional Overview (1967)
             </button>
             <button type="button" id="btn-cme-map-cia" onclick="window.switchCmeRegionalMap('cia');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; cursor: pointer; border: 1px solid ${currentMapKey === 'cia' ? '#38bdf8' : 'transparent'}; background: ${currentMapKey === 'cia' ? '#0284c7' : 'transparent'}; color: ${currentMapKey === 'cia' ? '#ffffff' : '#94a3b8'}; transition: all 0.15s ease;">
               <i class="fa-solid fa-location-dot"></i> CIA Borders Reference
             </button>
+            <button type="button" id="btn-cme-map-live" onclick="window.switchCmeRegionalMap('live');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; cursor: pointer; border: 1px solid ${currentMapKey === 'live' ? '#38bdf8' : 'transparent'}; background: ${currentMapKey === 'live' ? '#0284c7' : 'transparent'}; color: ${currentMapKey === 'live' ? '#ffffff' : '#94a3b8'}; transition: all 0.15s ease;" title="Interactive live slippy map with satellite imagery and infinite zoom">
+              <i class="fa-solid fa-satellite"></i> Live Satellite / Street Map
+            </button>
           </div>
         </div>
 
-        <!-- Right: Zoom & Pan Toolbar, Shortcuts, Close -->
+        <!-- Right: Zoom Controls, Shortcuts, Close -->
         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
           
           <!-- Zoom Controls -->
@@ -108,16 +147,32 @@ export function ensureCmeTheaterMapModalInDOM() {
         </div>
       </div>
 
-      <!-- Main Map Viewport (Full Space, Drag-to-Pan, Zoomable) -->
-      <div id="cme-map-viewport" style="flex: 1; position: relative; overflow: hidden; background: #030712; cursor: grab; display: flex; align-items: center; justify-content: center; user-select: none;">
-        <div id="cme-map-stage" style="position: absolute; transform-origin: center center; will-change: transform; transition: transform 0.08s linear;">
-          <img id="cme-regional-map-img" src="${getAssetUrl(CME_REGIONAL_MAPS[currentMapKey].image)}" alt="Regional Map of Israel and Surrounding Neighbours" style="max-height: 86vh; max-width: 94vw; object-fit: contain; display: block; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); pointer-events: none;" draggable="false">
+      <!-- Main Map Body: Dual Containers (Static High-Res Viewer vs Live Leaflet Slippy Map) -->
+      <div style="flex: 1; position: relative; overflow: hidden; background: #030712; display: flex;">
+        
+        <!-- 1. Static Image Map Viewport (Full Space, Drag-to-Pan, Smooth Zoom) -->
+        <div id="cme-map-viewport" style="flex: 1; position: relative; overflow: hidden; background: #030712; cursor: grab; display: flex; align-items: center; justify-content: center; user-select: none;">
+          <div id="cme-map-stage" style="position: absolute; transform-origin: center center; will-change: transform; transition: transform 0.08s linear;">
+            <img id="cme-regional-map-img" src="${getAssetUrl(CME_REGIONAL_MAPS[currentMapKey].image || CME_REGIONAL_MAPS.regional.image)}" alt="Regional Map of Israel and Surrounding Neighbours" style="max-height: 86vh; max-width: 94vw; object-fit: contain; display: block; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); pointer-events: none;" draggable="false">
+          </div>
+        </div>
+
+        <!-- 2. Live Interactive Slippy Map Container (Leaflet Engine with Satellite & Street Layers) -->
+        <div id="cme-leaflet-container" style="display: none; width: 100%; height: 100%; background: #030712; position: absolute; inset: 0; z-index: 10;">
+          <!-- Loaded dynamically on switch to 'live' -->
+        </div>
+
+        <!-- Google Maps External Link Launcher (Visible when in Live Map mode) -->
+        <div id="cme-live-gmaps-link" style="display: none; position: absolute; bottom: 12px; right: 14px; z-index: 1000; background: rgba(15, 23, 42, 0.9); backdrop-filter: blur(4px); border: 1px solid #334155; border-radius: 6px; padding: 6px 12px; font-size: 0.74rem;">
+          <a href="https://www.google.com/maps/@31.4,34.9,7z" target="_blank" rel="noopener noreferrer" style="color: #38bdf8; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in Google Maps
+          </a>
         </div>
       </div>
 
       <!-- Bottom Hint Bar -->
       <div style="padding: 6px 18px; background: #070d19; border-top: 1px solid #1e293b; font-size: 0.72rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
-        <span><strong>Tip:</strong> Click and drag to pan across the Sinai, Golan, West Bank, Suez, and surrounding borders. Use mouse wheel or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">+</kbd>/<kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">−</kbd> to inspect fine topographical and border details.</span>
+        <span id="cme-bottom-hint"><strong>Tip:</strong> Click and drag to pan across the Sinai, Golan, West Bank, Suez, and surrounding borders. Use mouse wheel or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">+</kbd>/<kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">−</kbd> to inspect fine topographical and border details.</span>
         <span style="color: #38bdf8; font-weight: 700;">Press <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #38bdf8; border: 1px solid #334155;">Esc</kbd> or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #38bdf8; border: 1px solid #334155;">M</kbd> to return to lesson</span>
       </div>
     </div>
@@ -125,7 +180,7 @@ export function ensureCmeTheaterMapModalInDOM() {
 
   document.body.appendChild(modal);
 
-  // Setup Drag-to-Pan and Wheel-to-Zoom Event Listeners
+  // Setup Drag-to-Pan and Wheel-to-Zoom Event Listeners for Static Map
   initMapDragAndZoomEvents(modal);
 
   // Close modal when clicking outside dialog
@@ -143,7 +198,7 @@ function initMapDragAndZoomEvents(modal) {
   if (!viewport) return;
 
   viewport.addEventListener('mousedown', (e) => {
-    if (e.button !== 0) return; // Only primary mouse button
+    if (e.button !== 0) return;
     isDragging = true;
     startX = e.clientX;
     startY = e.clientY;
@@ -167,7 +222,6 @@ function initMapDragAndZoomEvents(modal) {
     }
   });
 
-  // Wheel Zoom centered
   viewport.addEventListener(
     'wheel',
     (e) => {
@@ -192,6 +246,94 @@ function updateMapTransform() {
   }
 }
 
+// ============================================================================
+// LEAFLET LIVE INTERACTIVE ENGINE INITIALIZATION
+// ============================================================================
+
+async function ensureLeafletMapInitialized() {
+  const container = document.getElementById('cme-leaflet-container');
+  if (!container) return;
+
+  if (leafletMapInstance) {
+    setTimeout(() => {
+      leafletMapInstance.invalidateSize();
+    }, 100);
+    return;
+  }
+
+  container.innerHTML = `
+    <div style="position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #38bdf8; font-weight: 700; font-size: 0.9rem; gap: 8px;">
+      <i class="fa-solid fa-spinner fa-spin"></i> Initializing Real-Time Map Engine...
+    </div>
+  `;
+
+  try {
+    const L = await loadLeaflet();
+    container.innerHTML = ''; // Clear loading spinner
+
+    // Center on Israel / Middle East Theater (Lat 31.4, Lng 34.9) at Zoom Level 7
+    leafletMapInstance = L.map('cme-leaflet-container', {
+      center: [31.4, 34.9],
+      zoom: 7,
+      minZoom: 3,
+      maxZoom: 18,
+      zoomControl: true,
+    });
+
+    // Base Layer 1: Esri World Imagery (High-Resolution Real Satellite)
+    const satelliteLayer = L.tileLayer(
+      'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
+      {
+        maxZoom: 18,
+        attribution: 'Tiles &copy; Esri &mdash; Earthstar Geographics',
+      },
+    );
+
+    // Base Layer 2: OpenStreetMap Standard (Roads, Borders, Modern Topography)
+    const streetLayer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; OpenStreetMap contributors',
+    });
+
+    // Default to Satellite Imagery for rich desert/topographical visualization
+    satelliteLayer.addTo(leafletMapInstance);
+
+    // Add 1-Click Layer Switcher (Top Right, Always Open)
+    const baseMaps = {
+      '🛰️ Satellite View': satelliteLayer,
+      '🗺️ Street & Borders': streetLayer,
+    };
+    L.control
+      .layers(baseMaps, null, { position: 'topright', collapsed: false })
+      .addTo(leafletMapInstance);
+
+    // Update zoom indicator on live map zoom changes
+    leafletMapInstance.on('zoomend', () => {
+      const zoomLevelEl = document.getElementById('cme-map-zoom-level');
+      if (zoomLevelEl && currentMapKey === 'live') {
+        zoomLevelEl.textContent = `z${leafletMapInstance.getZoom()}`;
+      }
+    });
+
+    setTimeout(() => {
+      leafletMapInstance.invalidateSize();
+    }, 150);
+  } catch (err) {
+    console.error('Failed to load Leaflet:', err);
+    container.innerHTML = `
+      <div style="padding: 40px; text-align: center; color: #ef4444;">
+        <i class="fa-solid fa-circle-exclamation" style="font-size: 2rem; margin-bottom: 12px;"></i>
+        <div style="font-size: 1rem; font-weight: 700;">Interactive Map Engine Offline</div>
+        <div style="font-size: 0.8rem; color: #94a3b8; margin-top: 6px;">Please check your internet connection or use the Regional Overview / CIA Borders tabs.</div>
+      </div>
+    `;
+  }
+}
+
+// ============================================================================
+// PUBLIC MODAL CONTROLS
+// ============================================================================
+
 export function openCmeTheaterMapModal(preferredMap) {
   const modal = ensureCmeTheaterMapModalInDOM();
 
@@ -199,24 +341,8 @@ export function openCmeTheaterMapModal(preferredMap) {
     currentMapKey = preferredMap;
   }
 
-  currentZoom = 1;
-  panX = 0;
-  panY = 0;
-  updateMapTransform();
-
-  // Refresh image and header
-  const mapData = CME_REGIONAL_MAPS[currentMapKey] || CME_REGIONAL_MAPS.regional;
-  const img = document.getElementById('cme-regional-map-img');
-  const title = document.getElementById('cme-map-dialog-title');
-  const subtitle = document.getElementById('cme-map-dialog-subtitle');
-
-  if (img) img.src = getAssetUrl(mapData.image);
-  if (title) title.textContent = mapData.title;
-  if (subtitle) subtitle.textContent = mapData.subtitle;
-
-  updateMapSwitcherButtonStyles();
-
   modal.style.display = 'flex';
+  switchCmeRegionalMap(currentMapKey);
 }
 
 export function closeCmeTheaterMapModal() {
@@ -229,26 +355,62 @@ export function closeCmeTheaterMapModal() {
 export function switchCmeRegionalMap(mapKey) {
   if (!CME_REGIONAL_MAPS[mapKey]) return;
   currentMapKey = mapKey;
-  currentZoom = 1;
-  panX = 0;
-  panY = 0;
-  updateMapTransform();
 
   const mapData = CME_REGIONAL_MAPS[currentMapKey];
-  const img = document.getElementById('cme-regional-map-img');
   const title = document.getElementById('cme-map-dialog-title');
   const subtitle = document.getElementById('cme-map-dialog-subtitle');
+  const viewport = document.getElementById('cme-map-viewport');
+  const leafletContainer = document.getElementById('cme-leaflet-container');
+  const gmapsLink = document.getElementById('cme-live-gmaps-link');
+  const bottomHint = document.getElementById('cme-bottom-hint');
+  const zoomLevelEl = document.getElementById('cme-map-zoom-level');
 
-  if (img) img.src = getAssetUrl(mapData.image);
   if (title) title.textContent = mapData.title;
   if (subtitle) subtitle.textContent = mapData.subtitle;
 
   updateMapSwitcherButtonStyles();
+
+  if (mapKey === 'live') {
+    // Show Live Leaflet Map
+    if (viewport) viewport.style.display = 'none';
+    if (leafletContainer) leafletContainer.style.display = 'block';
+    if (gmapsLink) gmapsLink.style.display = 'block';
+    if (bottomHint) {
+      bottomHint.innerHTML =
+        '<strong>Live Engine:</strong> Pan anywhere across the Middle East. Zoom with mouse wheel or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">+</kbd>/<kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">−</kbd>. Switch between <strong>Satellite</strong> and <strong>Street</strong> in the top-right corner.';
+    }
+
+    ensureLeafletMapInitialized();
+
+    if (zoomLevelEl && leafletMapInstance) {
+      zoomLevelEl.textContent = `z${leafletMapInstance.getZoom()}`;
+    }
+  } else {
+    // Show Static High-Resolution Image Map
+    if (leafletContainer) leafletContainer.style.display = 'none';
+    if (gmapsLink) gmapsLink.style.display = 'none';
+    if (viewport) viewport.style.display = 'flex';
+    if (bottomHint) {
+      bottomHint.innerHTML =
+        '<strong>Tip:</strong> Click and drag to pan across the Sinai, Golan, West Bank, Suez, and surrounding borders. Use mouse wheel or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">+</kbd>/<kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">−</kbd> to inspect fine topographical and border details.';
+    }
+
+    currentZoom = 1;
+    panX = 0;
+    panY = 0;
+    updateMapTransform();
+
+    const img = document.getElementById('cme-regional-map-img');
+    if (img && mapData.image) {
+      img.src = getAssetUrl(mapData.image);
+    }
+  }
 }
 
 function updateMapSwitcherButtonStyles() {
   const btnRegional = document.getElementById('btn-cme-map-regional');
   const btnCia = document.getElementById('btn-cme-map-cia');
+  const btnLive = document.getElementById('btn-cme-map-live');
 
   if (btnRegional) {
     const isReg = currentMapKey === 'regional';
@@ -262,14 +424,29 @@ function updateMapSwitcherButtonStyles() {
     btnCia.style.borderColor = isCia ? '#38bdf8' : 'transparent';
     btnCia.style.color = isCia ? '#ffffff' : '#94a3b8';
   }
+  if (btnLive) {
+    const isLive = currentMapKey === 'live';
+    btnLive.style.background = isLive ? '#0284c7' : 'transparent';
+    btnLive.style.borderColor = isLive ? '#38bdf8' : 'transparent';
+    btnLive.style.color = isLive ? '#ffffff' : '#94a3b8';
+  }
 }
 
 export function zoomCmeMap(delta) {
+  if (currentMapKey === 'live' && leafletMapInstance) {
+    if (delta > 0) leafletMapInstance.zoomIn();
+    else leafletMapInstance.zoomOut();
+    return;
+  }
   currentZoom = Math.min(Math.max(0.6, parseFloat((currentZoom + delta).toFixed(2))), 4.0);
   updateMapTransform();
 }
 
 export function resetCmeMapZoom() {
+  if (currentMapKey === 'live' && leafletMapInstance) {
+    leafletMapInstance.setView([31.4, 34.9], 7);
+    return;
+  }
   currentZoom = 1;
   panX = 0;
   panY = 0;
@@ -328,7 +505,6 @@ export function initCmeMapHotkeys() {
   window._cmeHotkeysAttached = true;
 
   window.addEventListener('keydown', (e) => {
-    // Ignore when typing in inputs/textareas
     const active = document.activeElement;
     if (
       active &&
@@ -465,7 +641,6 @@ export function toggleCmePresenterMode() {
 }
 
 export function renderCmePresenterUI(spine) {
-  // Extract stages from card elements
   const cards = Array.from(spine.querySelectorAll('.cme-spine-card'));
   if (cards.length === 0) return;
 
@@ -488,7 +663,6 @@ export function renderCmePresenterUI(spine) {
     return { stageNum, date, tag, title, desc, because, therefore, connective };
   });
 
-  // Ensure toolbar exists
   let toolbar = document.getElementById('cme-presenter-toolbar');
   if (!toolbar) {
     toolbar = document.createElement('div');
@@ -505,7 +679,6 @@ export function renderCmePresenterUI(spine) {
     }
   }
 
-  // Render Toolbar HTML
   toolbar.innerHTML = `
     <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
       <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -551,7 +724,6 @@ export function renderCmePresenterUI(spine) {
     </div>
   `;
 
-  // Render Spotlight Stage Box
   let spotlightBox = document.getElementById('cme-presenter-spotlight-box');
   if (!spotlightBox) {
     spotlightBox = document.createElement('div');
@@ -572,8 +744,6 @@ export function renderCmePresenterUI(spine) {
 
   spotlightBox.innerHTML = `
     <div style="max-width: 1080px; margin: 0 auto; animation: fadeIn 0.25s ease;">
-      
-      <!-- Stage Banner & Meta -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; padding-bottom: 12px; margin-bottom: 18px; flex-wrap: wrap; gap: 10px;">
         <div style="display: flex; align-items: center; gap: 10px;">
           <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 900; padding: 3px 10px; border-radius: 5px; letter-spacing: 0.6px;">
@@ -594,20 +764,15 @@ export function renderCmePresenterUI(spine) {
         }
       </div>
 
-      <!-- Stage Title -->
       <h3 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.85rem; font-weight: 800; color: #0f172a; margin: 0 0 14px 0; line-height: 1.25;">
         ${activeStage.title}
       </h3>
 
-      <!-- Trigger Description -->
       <div style="font-size: 1.12rem; line-height: 1.65; color: #1e293b; background: #f8fafc; border-left: 4px solid #0284c7; padding: 14px 18px; border-radius: 0 8px 8px 0; margin-bottom: 22px;">
         ${activeStage.desc}
       </div>
 
-      <!-- Side-by-Side Motive & Consequence Presentation Cards -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; margin-bottom: 22px;">
-        
-        <!-- Motive Card -->
         <div style="background: #fefce8; border: 1.5px solid #fef08a; border-top: 4px solid #ca8a04; border-radius: 8px; padding: 16px;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
             <i class="fa-solid fa-lightbulb" style="color: #ca8a04; font-size: 1rem;"></i>
@@ -620,7 +785,6 @@ export function renderCmePresenterUI(spine) {
           </div>
         </div>
 
-        <!-- Consequence Card -->
         <div style="background: #f0fdf4; border: 1.5px solid #bbf7d0; border-top: 4px solid #16a34a; border-radius: 8px; padding: 16px;">
           <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
             <i class="fa-solid fa-arrow-trend-up" style="color: #16a34a; font-size: 1rem;"></i>
@@ -634,7 +798,6 @@ export function renderCmePresenterUI(spine) {
         </div>
       </div>
 
-      <!-- Domino Bridge to Next Stage -->
       ${
         !isLast
           ? `
