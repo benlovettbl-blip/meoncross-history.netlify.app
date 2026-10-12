@@ -261,7 +261,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Conflict in the Middle East Master Knowledge Retrieval Companion',
       label: 'Retrieval Companion (128 Qs)',
-      htmlUrl: '/units/cme_new/quiz_pack.html',
+      htmlUrl: '/units/cme_new/cme_master_retrieval_companion.html',
       pdfUrl: '/pdfs/Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
@@ -281,7 +281,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'USA 1954–1975 Master Knowledge Retrieval Companion',
       label: 'Retrieval Companion (128 Qs)',
-      htmlUrl: '/units/usa/quiz_pack.html',
+      htmlUrl: '/units/usa/usa_master_retrieval_companion.html',
       pdfUrl: '/pdfs/USA_1954_1975_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
@@ -301,7 +301,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
     retrieval: {
       title: 'Medicine in Britain Master Knowledge Retrieval Companion',
       label: 'Retrieval Companion',
-      htmlUrl: '/units/edexcel_medicine/quiz_pack.html',
+      htmlUrl: '/units/edexcel_medicine/medicine_master_retrieval_companion.html',
       pdfUrl: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
     },
   },
