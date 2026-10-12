@@ -7589,3 +7589,71 @@ body.search-modal-open {
   border-radius: 6px !important;
   transition: all 0.3s ease !important;
 }
+
+/* ==========================================================================
+   Conflict in the Middle East: Strategic Theater Map & Presenter Mode
+   ========================================================================== */
+
+@keyframes radar-pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.8);
+    opacity: 0;
+  }
+}
+
+.cme-theater-map-modal {
+  animation: cmeModalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes cmeModalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Presenter Focus View Styles */
+#lesson-chronology-spine.cme-presenter-active {
+  border-color: #0284c7 !important;
+  border-top-width: 5px !important;
+  box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15) !important;
+}
+
+#lesson-chronology-spine.cme-presenter-active > summary {
+  background: #f0f9ff !important;
+  border-bottom: 2px solid #bae6fd !important;
+}
+
+.cme-presenter-folded-banner:hover {
+  background: #e0f2fe !important;
+  border-color: #0369a1 !important;
+  box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+
+.cme-presenter-pill:hover {
+  filter: brightness(1.15);
+}
+
+@media print {
+  .cme-floating-theater-map-btn,
+  .cme-theater-map-modal,
+  #cme-presenter-toolbar,
+  #cme-presenter-folded-banner {
+    display: none !important;
+  }
+  #cme-narrative-prose-content {
+    display: block !important;
+  }
+}

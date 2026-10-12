@@ -18,6 +18,7 @@ import {
 } from './keyword_search.js';
 import './langemarck_myth.js';
 import('./digital_textbook_reader.js');
+import { initCmeMapHotkeys, renderFloatingCmeMapButton } from './cme_theater_map.js';
 
 function purgeGDPRHistoricalCache() {
   try {
@@ -180,6 +181,10 @@ window.addEventListener('DOMContentLoaded', async () => {
   initKeywordSearch(state.db);
   window.openKeywordSearch = openKeywordSearch;
   window.highlightTargetKeywordInLesson = highlightTargetKeywordInLesson;
+
+  // Initialize Middle East Strategic Theater Map shortcuts
+  initCmeMapHotkeys();
+  renderFloatingCmeMapButton();
 
   bindEvents();
 

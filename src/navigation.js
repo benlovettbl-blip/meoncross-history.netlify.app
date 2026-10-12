@@ -621,6 +621,9 @@ async function loadUnit(unitId) {
   }
 
   updateSidebarForUnit(unitId, state.activeUnitData);
+  if (typeof window.renderFloatingCmeMapButton === 'function') {
+    window.renderFloatingCmeMapButton();
+  }
 }
 
 function updateSidebarForUnit(unitId, unitData = {}) {
