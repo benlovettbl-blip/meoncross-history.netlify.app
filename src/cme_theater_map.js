@@ -1,230 +1,41 @@
 /**
  * Conflict in the Middle East (1945–1995)
- * Strategic Theater & Choke-Points Interactive Map & Teaching Presenter Mode
+ * Dedicated High-Resolution Regional Map Viewer & 5-Stage Presenter Focus Mode
  *
  * Designed for Edexcel GCSE History Paper 2: Conflict in the Middle East.
  * Strictly adheres to Institutional Neutrality and Zero AI Educational Jargon.
+ * Clean, uncluttered, high-resolution cartography without distracting overlays.
  */
 
 import { getAssetUrl } from './engine/assets.js';
 
-export const CME_STRATEGIC_HOTSPOTS = [
-  {
-    id: 'tiran',
-    title: 'Straits of Tiran & Sharm el-Sheikh',
-    category: 'Maritime Choke-Point',
-    theater: 'Southern Sinai / Mouth of Gulf of Aqaba',
-    color: '#dc2626',
-    tag: 'Casus Belli',
-    mapCoords: { x: 74, y: 88 },
-    examTrigger: '1956 Suez Crisis & 1967 Six-Day War Pre-emptive Strike',
-    significance:
-      'Controls the narrow 6-mile sea lane entering the Gulf of Aqaba, separating the Sinai Peninsula from the Saudi Arabian coast.',
-    examContext:
-      'Nasser blockaded the Straits to Israeli shipping in 1956 (spurring the Suez War) and again on 22 May 1967. Israel considered the 1967 blockade an explicit act of war (*casus belli*) that severed its southern oil and commercial lifeline to Asia. This move directly triggered Israel’s pre-emptive airstrikes on 5 June 1967.',
-    keyEvents: [
-      '1956 Suez Crisis (Israeli capture of Sharm el-Sheikh)',
-      '22 May 1967 Egyptian Blockade (*Casus Belli*)',
-      '5 June 1967 Operation Focus (Israeli Air Pre-emption)',
-      '1979 Egyptian-Israeli Peace Treaty (Free passage guaranteed)',
-    ],
+// Available High-Resolution Historical Reference Maps
+export const CME_REGIONAL_MAPS = {
+  regional: {
+    id: 'regional',
+    title: 'Middle East Regional Cartography (Israel & Surrounding Neighbours)',
+    subtitle:
+      'High-resolution theater survey: Israel, Egypt/Sinai, Jordan, Syria, Golan Heights, Lebanon, West Bank & Gaza',
+    image: '/images/palestine_1967_six_day_war_map.png',
   },
-  {
-    id: 'eilat',
-    title: 'Port of Eilat & Gulf of Aqaba',
-    category: 'Economic & Strategic Lifeline',
-    theater: 'Southern Israel / Red Sea Gateway',
-    color: '#0284c7',
-    tag: 'Vital Sea Lane',
-    mapCoords: { x: 80, y: 55 },
-    examTrigger: 'Israeli Trade & Non-Arab Crude Oil Route',
-    significance:
-      'Israel’s sole southern seaport on the Gulf of Aqaba, wedged between Egyptian Sinai and Jordanian Aqaba.',
-    examContext:
-      'Because Egypt banned Israeli-flagged ships from using the Suez Canal from 1948 onwards, Eilat was Israel’s sole route for non-Arab oil imports (principally from Iran) and commercial exports to East Africa and Asia. A blockade at Tiran directly choked Israel’s economic life.',
-    keyEvents: [
-      'March 1949 Operation Uvda (Israeli capture of Eilat)',
-      '1956 Opening of Gulf of Aqaba by UN Emergency Force',
-      'May 1967 Closure triggers emergency Israeli coalition cabinet',
-    ],
-  },
-  {
-    id: 'suez',
-    title: 'Suez Canal & Port Said',
-    category: 'Global Waterway & Front Line',
-    theater: 'Western Sinai / Mainland Egyptian Border',
-    color: '#d97706',
-    tag: 'Imperial & National Crisis',
-    mapCoords: { x: 26, y: 35 },
-    examTrigger: '1956 Suez War, 1967 Closure & 1973 Bar-Lev Crossing',
-    significance:
-      '101-mile canal linking the Mediterranean Sea to the Red Sea; primary arterial for Persian Gulf oil shipments to Western Europe.',
-    examContext:
-      'Nationalized by President Gamal Abdel Nasser on 26 July 1956 after Western loans for the Aswan High Dam were withdrawn. This sparked the secret Protocol of Sèvres (UK, France, Israel alliance). Closed from 1967 to 1975 following the Six-Day War. The canal formed the heavily fortified front line (Bar-Lev Line), successfully breached by Egypt on Yom Kippur 1973 (Operation Badr).',
-    keyEvents: [
-      '26 July 1956 Nasser Nationalises Suez Canal',
-      'Oct–Nov 1956 Tripartite Invasion of Egypt',
-      '1967–1970 War of Attrition Artillery Duels',
-      '6 Oct 1973 Operation Badr (Egyptian Canal Crossing)',
-    ],
-  },
-  {
-    id: 'golan',
-    title: 'Golan Heights & Mount Hermon',
-    category: 'High-Ground Artillery Fortress',
-    theater: 'South-West Syria / Upper Galilee Frontier',
-    color: '#7c3aed',
-    tag: 'High-Ground Vantage',
-    mapCoords: { x: 83, y: 15 },
-    examTrigger: 'Border Artillery Shelling & 1973 Valley of Tears',
-    significance:
-      'Elevated volcanic plateau rising steeply 1,000 to 3,000 ft above the Sea of Galilee and the agricultural kibbutzim of the Hula Valley.',
-    examContext:
-      'From 1949 to 1967, Syrian artillery used this dominating escarpment to shell Israeli farms and attempt to divert the headwaters of the Jordan River. Captured by Israeli forces on Days 5–6 of the 1967 War (9–10 June). In October 1973, Syria launched a massive armor assault here, repulsed after desperate tank battles at the Valley of Tears.',
-    keyEvents: [
-      '1964–1966 "Battle over Water" & Tractor Clashes',
-      '9–10 June 1967 Israeli Assault up the Golan Escarpment',
-      '6–9 Oct 1973 Valley of Tears Armored Clash',
-      '1974 Disengagement Agreement (UNDOF Buffer Zone)',
-    ],
-  },
-  {
-    id: 'sinai_passes',
-    title: 'Mitla & Gidi Strategic Passes',
-    category: 'Tactical Armor Bottlenecks',
-    theater: 'Central Sinai Peninsula',
-    color: '#ea580c',
-    tag: 'Sinai Bottleneck',
-    mapCoords: { x: 42, y: 55 },
-    examTrigger: 'Armored Mobility & Strategic Buffer',
-    significance:
-      'Narrow mountain defiles through the rugged central Sinai ranges, forming the only passable corridors for tank formations between Israel and the Suez Canal.',
-    examContext:
-      'In October 1956, Israeli paratroopers under Rafael Eitan dropped at the eastern entrance to Mitla Pass to simulate a deep strike. In 1967, Israeli armored columns trapped retreating Egyptian forces at the passes. Demilitarized under the 1978 Camp David Accords.',
-    keyEvents: [
-      '29 Oct 1956 Operation Kadesh (Mitla Drop)',
-      '6–8 June 1967 Armored Interception of Retreating Columns',
-      '1978–79 Camp David Accords: Complete Sinai Demilitarization',
-    ],
-  },
-  {
-    id: 'west_bank',
-    title: 'West Bank & East Jerusalem',
-    category: 'Occupied Territory & Strategic Depth',
-    theater: 'Central Palestine / Jordanian Frontier',
-    color: '#059669',
-    tag: 'Territorial Depth',
-    mapCoords: { x: 78, y: 38 },
-    examTrigger: '1967 Six-Day War, UN Res 242 & 1993 Oslo Accords',
-    significance:
-      'Territory west of the Jordan River annexed by Jordan in 1950. Prior to 1967, Israel had only a 9-mile coastal waist at Netanya vulnerable to bisecting assault.',
-    examContext:
-      'Captured from Jordan on 5–7 June 1967 after King Hussein joined Egyptian war pact. Control of the West Bank unified Jerusalem and eliminated Israel’s narrow coastal vulnerability, but placed over 1 million Palestinians under military occupation. Central to UN Resolution 242 ("Land for Peace") and the 1993 Oslo Accords.',
-    keyEvents: [
-      '1948–49 Arab-Israeli War (Jordanian Annexation 1950)',
-      '7 June 1967 Israeli Paratroopers enter Old City of Jerusalem',
-      '22 Nov 1967 UN Security Council Resolution 242',
-      '1987 Outbreak of First Intifada',
-      '1993 Oslo I Accord (Creation of Palestinian Authority)',
-    ],
-  },
-  {
-    id: 'gaza',
-    title: 'Gaza Strip',
-    category: 'Occupied Territory & Refugee Epicenter',
-    theater: 'Mediterranean Coast / Egyptian Border',
-    color: '#b91c1c',
-    tag: 'Fedayeen & Intifada Epicenter',
-    mapCoords: { x: 62, y: 44 },
-    examTrigger: 'Fedayeen Infiltration, 1967 Capture & First Intifada',
-    significance:
-      'Narrow 25-mile coastal strip crowded with hundreds of thousands of 1948 Palestinian refugees, administered by Egypt from 1948 to 1967.',
-    examContext:
-      'Used as a staging post for Fedayeen guerrilla raids into southern Israeli kibbutzim in the 1950s, prompting Israeli retaliatory strikes (e.g. 1955 Gaza Raid). Captured by Israel in June 1967. The First Intifada erupted in Gaza at Jabalia refugee camp in December 1987.',
-    keyEvents: [
-      '1948 War: Refugee Influx into Eight UNRWA Camps',
-      'Feb 1955 Israeli Retaliatory Raid on Egyptian HQ',
-      'June 1967 Israeli Occupation',
-      '9 Dec 1987 Outbreak of the First Intifada (Jabalia Camp)',
-    ],
-  },
-];
-
-export const CME_MAP_TABS = [
-  {
-    id: 'chokepoints',
-    title: 'Choke-Points & Sinai Tactical',
-    subtitle: 'Sinai Peninsula, Suez Canal, Straits of Tiran, Eilat & Golan',
-    icon: 'fa-compass',
-    image: '/images/cme_sinai_peninsula_map.jpg',
-    showHotspots: true,
-    description:
-      'Tactical cartography of the Sinai Peninsula and surrounding maritime choke-points. Hover or click any hotspot chip to inspect why the closure of the Straits of Tiran or the shelling from the Golan escarpment triggered full-scale wars.',
-  },
-  {
-    id: 'occupied1967',
-    title: '1967 Occupied Territories',
-    subtitle: 'Sinai, West Bank, Gaza Strip, Golan Heights & UN Res 242',
-    icon: 'fa-shield-halved',
+  cia: {
+    id: 'cia',
+    title: 'Israel & The Occupied Territories (CIA Cartographic Reference)',
+    subtitle:
+      'Official survey: Armistice demarcation lines, former mandate boundaries, and major towns/cities',
     image: '/images/cme_1967_occupied_territories_cia_map.png',
-    secondaryImage: '/images/palestine_1967_six_day_war_map.png',
-    showHotspots: false,
-    description:
-      'Official CIA cartographic survey showing Israel’s borders before and after the June 1967 Six-Day War. The capture of the Sinai Peninsula (Egypt), Gaza Strip (Egypt), West Bank (Jordan), and Golan Heights (Syria) tripled the territory under Israeli military control and established the "Land for Peace" principle codified in UN Security Council Resolution 242.',
   },
-  {
-    id: 'partition1947',
-    title: '1947 UN Plan vs 1949 Armistice',
-    subtitle: 'Resolution 181 Partition vs 1949 Green Line Armistice',
-    icon: 'fa-scale-balanced',
-    splitView: true,
-    leftImage: '/images/palestine_1947_map.png',
-    leftTitle: '1947 UN Partition Plan (Resolution 181)',
-    leftDesc:
-      'Recommended terminating the British Mandate: Jewish State allocated 56% of territory (including the Negev); Arab State allocated 43%; Jerusalem established as an international zone (*Corpus Separatum*). Accepted by the Jewish Agency; rejected by the Arab Higher Committee.',
-    rightImage: '/images/palestine_1949_map.png',
-    rightTitle: '1949 Armistice Green Line',
-    rightDesc:
-      'Following the 1948–49 War: Israel expanded to hold 78% of the mandate territory. Transjordan annexed the West Bank and East Jerusalem; Egypt assumed military administration of the Gaza Strip. Created the Palestinian refugee question (*Nakba*).',
-  },
-  {
-    id: 'tactical_theaters',
-    title: 'Tactical Campaigns & Theaters',
-    subtitle: '1956 Suez, 1973 Yom Kippur, Golan Relief & Lebanon 1982',
-    icon: 'fa-map-location-dot',
-    gallery: [
-      {
-        title: '1973 Yom Kippur War: Operation Badr (Suez Canal Crossing)',
-        src: '/images/cme_yom_kippur_1973_map.png',
-        desc: 'Egyptian assault forces cross the Suez Canal under cover of a massive Soviet-supplied SAM anti-aircraft umbrella, using high-pressure water cannons to blast breaches through the sand ramparts of the Bar-Lev Line.',
-      },
-      {
-        title: 'Golan Heights Tactical Relief (Syrian Border & Sea of Galilee)',
-        src: '/images/cme_golan_heights_relief_map_1967.jpg',
-        desc: 'Topographical relief map illustrating how Syrian artillery on the high basalt plateau dominated the Israeli farms of the Hula Valley below, explaining why Israel launched an uphill assault on 9–10 June 1967.',
-      },
-      {
-        title: '1956 Suez Crisis: Israeli Sinai Drive & Anglo-French Assault',
-        src: '/images/cme_suez_1956_campaign_map.jpg',
-        desc: 'The secret Protocol of Sèvres in action: Israeli paratroopers drop at Mitla Pass on 29 October 1956, providing the pretext for Britain and France to issue an ultimatum and land troops at Port Said.',
-      },
-      {
-        title: '1982 Operation Peace for Galilee: Invasion of Lebanon',
-        src: '/images/cme_lebanon_1982_campaign_map.png',
-        desc: 'Israeli forces advanced past the initial 40 km buffer zone up to West Beirut to eradicate the PLO military command and expel Yasser Arafat to Tunisia.',
-      },
-      {
-        title: '1995 Oslo II Interim Agreement: West Bank Areas A, B, and C',
-        src: '/images/cme_oslo_areas_map.png',
-        desc: 'The division of the West Bank into Area A (Palestinian civil & security control), Area B (Palestinian civil, joint Israeli security), and Area C (full Israeli civil and military control).',
-      },
-    ],
-  },
-];
+};
 
-let activeTabId = 'chokepoints';
-let activeHotspotId = 'tiran';
+let currentMapKey = 'regional';
 let currentZoom = 1;
+let panX = 0;
+let panY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+let startPanX = 0;
+let startPanY = 0;
 
 // ============================================================================
 // MODAL HTML GENERATOR & OPEN / CLOSE LOGIC
@@ -238,65 +49,84 @@ export function ensureCmeTheaterMapModalInDOM() {
   modal.id = 'cme-theater-map-modal';
   modal.className = 'cme-theater-map-modal';
   modal.style.cssText =
-    'display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(15, 23, 42, 0.88); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 16px; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;';
+    'display: none; position: fixed; inset: 0; z-index: 99999; background: rgba(7, 11, 20, 0.92); backdrop-filter: blur(8px); align-items: center; justify-content: center; padding: 12px; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;';
 
   modal.innerHTML = `
-    <div class="cme-map-dialog" style="background: #0f172a; border: 1.5px solid #334155; border-radius: 12px; width: 96vw; max-width: 1440px; height: 92vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); color: #f8fafc;">
+    <div class="cme-map-dialog" style="background: #0b1120; border: 1.5px solid #1e293b; border-radius: 12px; width: 98vw; max-width: 1560px; height: 95vh; display: flex; flex-direction: column; overflow: hidden; box-shadow: 0 25px 60px -12px rgba(0, 0, 0, 0.85); color: #f8fafc;">
       
-      <!-- Top Modal Header -->
-      <div style="padding: 12px 20px; background: #0b1120; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <div style="background: #0284c7; color: #ffffff; width: 34px; height: 34px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; box-shadow: 0 2px 8px rgba(2,132,199,0.4);">
-            <i class="fa-solid fa-map-location-dot"></i>
+      <!-- Top Modal Header & Controls Toolbar -->
+      <div style="padding: 10px 18px; background: #070d19; border-bottom: 1px solid #1e293b; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+        
+        <!-- Left: Title & Map Switcher -->
+        <div style="display: flex; align-items: center; gap: 14px; flex-wrap: wrap;">
+          <div style="background: #0284c7; color: #ffffff; width: 32px; height: 32px; border-radius: 7px; display: flex; align-items: center; justify-content: center; font-size: 1rem; box-shadow: 0 2px 8px rgba(2,132,199,0.4); flex-shrink: 0;">
+            <i class="fa-solid fa-map"></i>
           </div>
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
-              <h3 style="margin: 0; font-size: 1.15rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">
-                Strategic Theater & Choke-Points: Conflict in the Middle East (1945–1995)
+              <h3 id="cme-map-dialog-title" style="margin: 0; font-size: 1.08rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">
+                ${CME_REGIONAL_MAPS[currentMapKey].title}
               </h3>
-              <span style="background: #0369a1; color: #e0f2fe; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Edexcel Paper 2 Cartography</span>
+              <span style="background: #0369a1; color: #e0f2fe; font-size: 0.65rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Edexcel Paper 2</span>
             </div>
-            <div style="font-size: 0.75rem; color: #94a3b8; margin-top: 2px;">
-              Interactive Geographic Inspector &bull; Straits of Tiran, Suez Canal, Eilat, Sinai Passes, Golan & 1967 Occupied Territories
+            <div id="cme-map-dialog-subtitle" style="font-size: 0.73rem; color: #94a3b8; margin-top: 1px;">
+              ${CME_REGIONAL_MAPS[currentMapKey].subtitle}
             </div>
+          </div>
+
+          <!-- Clean Map Switcher Buttons -->
+          <div style="display: flex; gap: 4px; background: #0f172a; padding: 3px; border-radius: 6px; border: 1px solid #334155; margin-left: 6px;">
+            <button type="button" id="btn-cme-map-regional" onclick="window.switchCmeRegionalMap('regional');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; cursor: pointer; border: 1px solid ${currentMapKey === 'regional' ? '#38bdf8' : 'transparent'}; background: ${currentMapKey === 'regional' ? '#0284c7' : 'transparent'}; color: ${currentMapKey === 'regional' ? '#ffffff' : '#94a3b8'}; transition: all 0.15s ease;">
+              <i class="fa-solid fa-earth-middle-east"></i> Regional Overview (Israel & Neighbours)
+            </button>
+            <button type="button" id="btn-cme-map-cia" onclick="window.switchCmeRegionalMap('cia');" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; border-radius: 4px; cursor: pointer; border: 1px solid ${currentMapKey === 'cia' ? '#38bdf8' : 'transparent'}; background: ${currentMapKey === 'cia' ? '#0284c7' : 'transparent'}; color: ${currentMapKey === 'cia' ? '#ffffff' : '#94a3b8'}; transition: all 0.15s ease;">
+              <i class="fa-solid fa-location-dot"></i> CIA Borders Reference
+            </button>
           </div>
         </div>
 
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <div style="display: flex; align-items: center; gap: 6px; background: #1e293b; padding: 3px 8px; border-radius: 6px; font-size: 0.72rem; color: #94a3b8; border: 1px solid #334155;">
-            <span>Shortcuts:</span>
-            <kbd style="background: #0f172a; padding: 1px 5px; border-radius: 3px; border: 1px solid #475569; font-weight: 700; color: #38bdf8;">M</kbd> toggle &bull; 
-            <kbd style="background: #0f172a; padding: 1px 5px; border-radius: 3px; border: 1px solid #475569; font-weight: 700; color: #e2e8f0;">Esc</kbd> close
+        <!-- Right: Zoom & Pan Toolbar, Shortcuts, Close -->
+        <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+          
+          <!-- Zoom Controls -->
+          <div style="display: flex; align-items: center; gap: 4px; background: #0f172a; padding: 2px 4px; border-radius: 6px; border: 1px solid #334155;">
+            <button type="button" onclick="window.zoomCmeMap(0.25);" style="background: #1e293b; color: #fff; border: 1px solid #475569; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-weight: 900; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;" title="Zoom In (+)">+</button>
+            <button type="button" onclick="window.zoomCmeMap(-0.25);" style="background: #1e293b; color: #fff; border: 1px solid #475569; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-weight: 900; font-size: 0.95rem; display: flex; align-items: center; justify-content: center;" title="Zoom Out (-)">−</button>
+            <button type="button" onclick="window.resetCmeMapZoom();" style="background: #1e293b; color: #cbd5e1; border: 1px solid #475569; padding: 0 9px; height: 28px; border-radius: 4px; cursor: pointer; font-size: 0.72rem; font-weight: 700;" title="Reset View (0)">Reset (↺)</button>
+            <span id="cme-map-zoom-level" style="font-size: 0.72rem; font-weight: 700; color: #38bdf8; min-width: 44px; text-align: center;">100%</span>
           </div>
-          <button type="button" onclick="window.closeCmeTheaterMapModal();" style="background: #1e293b; color: #cbd5e1; border: 1px solid #334155; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; transition: all 0.15s ease;" onmouseover="this.style.background='#dc2626'; this.style.color='#fff';" onmouseout="this.style.background='#1e293b'; this.style.color='#cbd5e1';" title="Close Map Modal (Esc)">
+
+          <!-- Shortcuts Badge -->
+          <div style="display: flex; align-items: center; gap: 6px; background: #0f172a; padding: 4px 8px; border-radius: 6px; font-size: 0.7rem; color: #94a3b8; border: 1px solid #334155;">
+            <span>Drag to pan &bull; Scroll to zoom</span>
+          </div>
+
+          <!-- Close Button -->
+          <button type="button" onclick="window.closeCmeTheaterMapModal();" style="background: #1e293b; color: #cbd5e1; border: 1px solid #334155; width: 32px; height: 32px; border-radius: 6px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.15s ease;" onmouseover="this.style.background='#dc2626'; this.style.color='#fff';" onmouseout="this.style.background='#1e293b'; this.style.color='#cbd5e1';" title="Close Map Modal (Esc)">
             &times;
           </button>
         </div>
       </div>
 
-      <!-- Tab Switcher Bar -->
-      <div style="padding: 8px 16px; background: #1e293b; border-bottom: 1px solid #334155; display: flex; gap: 8px; overflow-x: auto; flex-shrink: 0;">
-        ${CME_MAP_TABS.map(
-          (t) => `
-          <button type="button" class="cme-map-tab-btn" data-tab-id="${t.id}" onclick="window.switchCmeMapTab('${t.id}');" style="padding: 6px 14px; font-size: 0.8rem; font-weight: 700; border-radius: 6px; cursor: pointer; border: 1px solid transparent; display: inline-flex; align-items: center; gap: 7px; transition: all 0.15s ease; ${
-            t.id === activeTabId
-              ? 'background: #0284c7; color: #ffffff; border-color: #38bdf8;'
-              : 'background: #0f172a; color: #94a3b8; border-color: #334155;'
-          }">
-            <i class="fa-solid ${t.icon}"></i> ${t.title}
-          </button>
-        `,
-        ).join('')}
+      <!-- Main Map Viewport (Full Space, Drag-to-Pan, Zoomable) -->
+      <div id="cme-map-viewport" style="flex: 1; position: relative; overflow: hidden; background: #030712; cursor: grab; display: flex; align-items: center; justify-content: center; user-select: none;">
+        <div id="cme-map-stage" style="position: absolute; transform-origin: center center; will-change: transform; transition: transform 0.08s linear;">
+          <img id="cme-regional-map-img" src="${getAssetUrl(CME_REGIONAL_MAPS[currentMapKey].image)}" alt="Regional Map of Israel and Surrounding Neighbours" style="max-height: 86vh; max-width: 94vw; object-fit: contain; display: block; border-radius: 6px; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.9); pointer-events: none;" draggable="false">
+        </div>
       </div>
 
-      <!-- Main Content Split Body (Map Viewport + Inspector Drawer) -->
-      <div id="cme-map-modal-body" style="flex: 1; display: flex; overflow: hidden; position: relative;">
-        <!-- Injected via renderCmeMapTabContent() -->
+      <!-- Bottom Hint Bar -->
+      <div style="padding: 6px 18px; background: #070d19; border-top: 1px solid #1e293b; font-size: 0.72rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
+        <span><strong>Tip:</strong> Click and drag to pan across the Sinai, Golan, West Bank, Suez, and surrounding borders. Use mouse wheel or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">+</kbd>/<kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #e2e8f0;">−</kbd> to inspect fine topographical and border details.</span>
+        <span style="color: #38bdf8; font-weight: 700;">Press <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #38bdf8; border: 1px solid #334155;">Esc</kbd> or <kbd style="background: #1e293b; padding: 1px 4px; border-radius: 3px; color: #38bdf8; border: 1px solid #334155;">M</kbd> to return to lesson</span>
       </div>
     </div>
   `;
 
   document.body.appendChild(modal);
+
+  // Setup Drag-to-Pan and Wheel-to-Zoom Event Listeners
+  initMapDragAndZoomEvents(modal);
 
   // Close modal when clicking outside dialog
   modal.addEventListener('click', (e) => {
@@ -308,21 +138,85 @@ export function ensureCmeTheaterMapModalInDOM() {
   return modal;
 }
 
-export function openCmeTheaterMapModal(initialHotspotOrTab) {
+function initMapDragAndZoomEvents(modal) {
+  const viewport = modal.querySelector('#cme-map-viewport');
+  if (!viewport) return;
+
+  viewport.addEventListener('mousedown', (e) => {
+    if (e.button !== 0) return; // Only primary mouse button
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    startPanX = panX;
+    startPanY = panY;
+    viewport.style.cursor = 'grabbing';
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    panX = startPanX + (e.clientX - startX);
+    panY = startPanY + (e.clientY - startY);
+    updateMapTransform();
+  });
+
+  window.addEventListener('mouseup', () => {
+    if (isDragging) {
+      isDragging = false;
+      const vp = document.getElementById('cme-map-viewport');
+      if (vp) vp.style.cursor = 'grab';
+    }
+  });
+
+  // Wheel Zoom centered
+  viewport.addEventListener(
+    'wheel',
+    (e) => {
+      e.preventDefault();
+      const zoomFactor = e.deltaY < 0 ? 0.15 : -0.15;
+      const nextZoom = Math.min(Math.max(0.6, currentZoom + zoomFactor), 4.0);
+      currentZoom = parseFloat(nextZoom.toFixed(2));
+      updateMapTransform();
+    },
+    { passive: false },
+  );
+}
+
+function updateMapTransform() {
+  const stage = document.getElementById('cme-map-stage');
+  const zoomLevelEl = document.getElementById('cme-map-zoom-level');
+  if (stage) {
+    stage.style.transform = `translate(${panX}px, ${panY}px) scale(${currentZoom})`;
+  }
+  if (zoomLevelEl) {
+    zoomLevelEl.textContent = `${Math.round(currentZoom * 100)}%`;
+  }
+}
+
+export function openCmeTheaterMapModal(preferredMap) {
   const modal = ensureCmeTheaterMapModalInDOM();
 
-  if (initialHotspotOrTab) {
-    if (CME_MAP_TABS.some((t) => t.id === initialHotspotOrTab)) {
-      activeTabId = initialHotspotOrTab;
-    } else if (CME_STRATEGIC_HOTSPOTS.some((h) => h.id === initialHotspotOrTab)) {
-      activeTabId = 'chokepoints';
-      activeHotspotId = initialHotspotOrTab;
-    }
+  if (preferredMap && CME_REGIONAL_MAPS[preferredMap]) {
+    currentMapKey = preferredMap;
   }
 
   currentZoom = 1;
+  panX = 0;
+  panY = 0;
+  updateMapTransform();
+
+  // Refresh image and header
+  const mapData = CME_REGIONAL_MAPS[currentMapKey] || CME_REGIONAL_MAPS.regional;
+  const img = document.getElementById('cme-regional-map-img');
+  const title = document.getElementById('cme-map-dialog-title');
+  const subtitle = document.getElementById('cme-map-dialog-subtitle');
+
+  if (img) img.src = getAssetUrl(mapData.image);
+  if (title) title.textContent = mapData.title;
+  if (subtitle) subtitle.textContent = mapData.subtitle;
+
+  updateMapSwitcherButtonStyles();
+
   modal.style.display = 'flex';
-  renderCmeMapTabContent();
 }
 
 export function closeCmeTheaterMapModal() {
@@ -332,343 +226,54 @@ export function closeCmeTheaterMapModal() {
   }
 }
 
-export function switchCmeMapTab(tabId) {
-  activeTabId = tabId;
+export function switchCmeRegionalMap(mapKey) {
+  if (!CME_REGIONAL_MAPS[mapKey]) return;
+  currentMapKey = mapKey;
   currentZoom = 1;
+  panX = 0;
+  panY = 0;
+  updateMapTransform();
 
-  // Update tab buttons styling
-  const buttons = document.querySelectorAll('.cme-map-tab-btn');
-  buttons.forEach((btn) => {
-    const isCurrent = btn.dataset.tabId === tabId;
-    btn.style.background = isCurrent ? '#0284c7' : '#0f172a';
-    btn.style.color = isCurrent ? '#ffffff' : '#94a3b8';
-    btn.style.borderColor = isCurrent ? '#38bdf8' : '#334155';
-  });
+  const mapData = CME_REGIONAL_MAPS[currentMapKey];
+  const img = document.getElementById('cme-regional-map-img');
+  const title = document.getElementById('cme-map-dialog-title');
+  const subtitle = document.getElementById('cme-map-dialog-subtitle');
 
-  renderCmeMapTabContent();
+  if (img) img.src = getAssetUrl(mapData.image);
+  if (title) title.textContent = mapData.title;
+  if (subtitle) subtitle.textContent = mapData.subtitle;
+
+  updateMapSwitcherButtonStyles();
 }
 
-export function selectCmeHotspot(hotspotId) {
-  activeHotspotId = hotspotId;
-  const hotspot = CME_STRATEGIC_HOTSPOTS.find((h) => h.id === hotspotId);
-  if (!hotspot) return;
+function updateMapSwitcherButtonStyles() {
+  const btnRegional = document.getElementById('btn-cme-map-regional');
+  const btnCia = document.getElementById('btn-cme-map-cia');
 
-  // Update active chip styling
-  document.querySelectorAll('.cme-hotspot-chip').forEach((chip) => {
-    const isCurrent = chip.dataset.hotspotId === hotspotId;
-    chip.style.borderColor = isCurrent ? hotspot.color : '#334155';
-    chip.style.background = isCurrent ? 'rgba(2, 132, 199, 0.18)' : '#0f172a';
-    chip.style.color = isCurrent ? '#ffffff' : '#94a3b8';
-  });
-
-  // Update map pin pulse styling
-  document.querySelectorAll('.cme-map-pin').forEach((pin) => {
-    const isCurrent = pin.dataset.hotspotId === hotspotId;
-    pin.style.transform = isCurrent
-      ? 'translate(-50%, -50%) scale(1.35)'
-      : 'translate(-50%, -50%) scale(1)';
-    pin.style.zIndex = isCurrent ? '50' : '20';
-  });
-
-  // Update Inspector Card
-  const inspectorContent = document.getElementById('cme-inspector-content');
-  if (inspectorContent) {
-    inspectorContent.innerHTML = renderHotspotInspectorHTML(hotspot);
+  if (btnRegional) {
+    const isReg = currentMapKey === 'regional';
+    btnRegional.style.background = isReg ? '#0284c7' : 'transparent';
+    btnRegional.style.borderColor = isReg ? '#38bdf8' : 'transparent';
+    btnRegional.style.color = isReg ? '#ffffff' : '#94a3b8';
   }
-}
-
-function renderHotspotInspectorHTML(h) {
-  return `
-    <div style="animation: fadeIn 0.2s ease;">
-      <div style="display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px;">
-        <span style="background: ${h.color}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${h.tag}
-        </span>
-        <span style="font-size: 0.72rem; color: #94a3b8; font-weight: 700;">
-          <i class="fa-solid fa-crosshairs" style="color: ${h.color};"></i> ${h.category}
-        </span>
-      </div>
-
-      <h4 style="margin: 0 0 6px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.15rem; color: #ffffff; line-height: 1.25;">
-        ${h.title}
-      </h4>
-
-      <div style="font-size: 0.76rem; color: #38bdf8; font-weight: 700; margin-bottom: 12px; display: flex; align-items: center; gap: 5px;">
-        <i class="fa-solid fa-location-dot"></i> ${h.theater}
-      </div>
-
-      <div style="background: #1e293b; border-left: 3px solid ${h.color}; padding: 10px 12px; border-radius: 0 6px 6px 0; font-size: 0.8rem; line-height: 1.5; color: #e2e8f0; margin-bottom: 12px;">
-        <strong style="color: #ffffff; display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 3px; letter-spacing: 0.4px;">Strategic Function:</strong>
-        ${h.significance}
-      </div>
-
-      <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid #334155; padding: 10px 12px; border-radius: 6px; font-size: 0.8rem; line-height: 1.55; color: #cbd5e1; margin-bottom: 14px;">
-        <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
-          <i class="fa-solid fa-graduation-cap" style="color: #f59e0b;"></i>
-          <strong style="color: #f59e0b; font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.4px;">Edexcel Paper 2 Causation Context:</strong>
-        </div>
-        ${h.examContext}
-      </div>
-
-      <div style="margin-top: 10px;">
-        <div style="font-size: 0.72rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">
-          Exam Specification Turning Points:
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 5px;">
-          ${h.keyEvents
-            .map(
-              (ev) => `
-            <div style="display: flex; align-items: baseline; gap: 7px; font-size: 0.75rem; color: #e2e8f0; background: #1e293b; padding: 4px 8px; border-radius: 4px; border: 1px solid #334155;">
-              <span style="color: ${h.color}; font-weight: 900;">&bull;</span>
-              <span>${ev}</span>
-            </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-export function renderCmeMapTabContent() {
-  const container = document.getElementById('cme-map-modal-body');
-  if (!container) return;
-
-  const currentTab = CME_MAP_TABS.find((t) => t.id === activeTabId) || CME_MAP_TABS[0];
-
-  if (currentTab.id === 'chokepoints') {
-    const activeHotspot =
-      CME_STRATEGIC_HOTSPOTS.find((h) => h.id === activeHotspotId) || CME_STRATEGIC_HOTSPOTS[0];
-
-    container.innerHTML = `
-      <!-- Left Map Viewport -->
-      <div style="flex: 1; display: flex; flex-direction: column; background: #030712; position: relative; overflow: hidden;">
-        <!-- Map Canvas / Controls Toolbar -->
-        <div style="position: absolute; top: 12px; left: 14px; z-index: 40; display: flex; gap: 6px; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); padding: 4px 8px; border-radius: 6px; border: 1px solid #334155;">
-          <button type="button" onclick="window.zoomCmeMap(0.15);" style="background: #1e293b; color: #fff; border: 1px solid #475569; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-weight: 900;" title="Zoom In">+</button>
-          <button type="button" onclick="window.zoomCmeMap(-0.15);" style="background: #1e293b; color: #fff; border: 1px solid #475569; width: 28px; height: 28px; border-radius: 4px; cursor: pointer; font-weight: 900;" title="Zoom Out">&minus;</button>
-          <button type="button" onclick="window.resetCmeMapZoom();" style="background: #1e293b; color: #94a3b8; border: 1px solid #475569; padding: 0 8px; height: 28px; border-radius: 4px; cursor: pointer; font-size: 0.72rem; font-weight: 700;" title="Reset Zoom">Reset</button>
-        </div>
-
-        <div style="position: absolute; top: 12px; right: 14px; z-index: 40; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(4px); padding: 4px 10px; border-radius: 6px; border: 1px solid #334155; font-size: 0.72rem; color: #94a3b8;">
-          <i class="fa-solid fa-bullseye" style="color: #38bdf8; margin-right: 4px;"></i> Click hotspot pins on map to inspect
-        </div>
-
-        <!-- Pannable / Zoomable Map Container -->
-        <div id="cme-map-viewport" style="flex: 1; display: flex; align-items: center; justify-content: center; position: relative; overflow: auto; padding: 20px; box-sizing: border-box;">
-          <div id="cme-map-stage" style="position: relative; display: inline-block; transform: scale(${currentZoom}); transform-origin: center center; transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.8); border-radius: 8px; overflow: hidden;">
-            <img src="${getAssetUrl(currentTab.image)}" alt="Sinai Peninsula & Strategic Choke-Points Tactical Map" style="max-height: 72vh; max-width: 100%; display: block; border-radius: 8px; user-select: none;" draggable="false">
-
-            <!-- Dynamic Hotspot Pins Overlay -->
-            ${CME_STRATEGIC_HOTSPOTS.map((h) => {
-              const isCurrent = h.id === activeHotspotId;
-              return `
-                <div class="cme-map-pin" data-hotspot-id="${h.id}" onclick="window.selectCmeHotspot('${h.id}');" style="position: absolute; left: ${h.mapCoords.x}%; top: ${h.mapCoords.y}%; transform: translate(-50%, -50%) ${isCurrent ? 'scale(1.35)' : 'scale(1)'}; z-index: ${isCurrent ? '50' : '20'}; cursor: pointer; transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);">
-                  <div style="position: relative; display: flex; align-items: center; justify-content: center;">
-                    <div style="position: absolute; width: 28px; height: 28px; border-radius: 50%; background: ${h.color}; opacity: 0.4; animation: radar-pulse 2s infinite ease-out;"></div>
-                    <div style="width: 22px; height: 22px; border-radius: 50%; background: ${h.color}; border: 2.5px solid #ffffff; box-shadow: 0 2px 6px rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; color: #ffffff; font-size: 0.65rem; font-weight: 900;">
-                      <i class="fa-solid fa-location-dot"></i>
-                    </div>
-                  </div>
-                </div>
-              `;
-            }).join('')}
-          </div>
-        </div>
-
-        <!-- Bottom Description Bar -->
-        <div style="padding: 8px 16px; background: #0b1120; border-top: 1px solid #1e293b; font-size: 0.74rem; color: #94a3b8; display: flex; align-items: center; justify-content: space-between;">
-          <span>${currentTab.description}</span>
-          <span style="color: #38bdf8; font-weight: 700;">Tactical Field Record</span>
-        </div>
-      </div>
-
-      <!-- Right Inspector Sidebar -->
-      <div style="width: 380px; flex-shrink: 0; background: #0f172a; border-left: 1px solid #1e293b; display: flex; flex-direction: column; overflow: hidden;">
-        <!-- Hotspots Chip Quick Selector -->
-        <div style="padding: 12px 14px; background: #131d31; border-bottom: 1px solid #1e293b;">
-          <div style="font-size: 0.68rem; font-weight: 800; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 8px;">
-            Select Choke-Point / Theater:
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 5px;">
-            ${CME_STRATEGIC_HOTSPOTS.map((h) => {
-              const isCurrent = h.id === activeHotspotId;
-              return `
-              <button type="button" class="cme-hotspot-chip" data-hotspot-id="${h.id}" onclick="window.selectCmeHotspot('${h.id}');" style="padding: 4px 8px; font-size: 0.72rem; font-weight: 700; border-radius: 4px; cursor: pointer; border: 1px solid ${isCurrent ? h.color : '#334155'}; background: ${isCurrent ? 'rgba(2, 132, 199, 0.18)' : '#0f172a'}; color: ${isCurrent ? '#ffffff' : '#94a3b8'}; transition: all 0.15s ease;">
-                ${h.title.split('&')[0].trim()}
-              </button>
-            `;
-            }).join('')}
-          </div>
-        </div>
-
-        <!-- Inspector Body -->
-        <div id="cme-inspector-content" style="flex: 1; padding: 16px; overflow-y: auto;">
-          ${renderHotspotInspectorHTML(activeHotspot)}
-        </div>
-      </div>
-    `;
-  } else if (currentTab.id === 'occupied1967') {
-    container.innerHTML = `
-      <div style="flex: 1; display: flex; background: #030712; overflow: hidden;">
-        <div style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 16px; position: relative; overflow: auto;">
-          <img src="${getAssetUrl(currentTab.image)}" alt="1967 Occupied Territories CIA Official Map" style="max-height: 80vh; max-width: 95%; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.8); border: 1px solid #334155;">
-        </div>
-
-        <div style="width: 400px; flex-shrink: 0; background: #0f172a; border-left: 1px solid #1e293b; padding: 20px; overflow-y: auto; color: #f8fafc;">
-          <span style="background: #0284c7; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase;">
-            June 1967 Six-Day War
-          </span>
-          <h4 style="margin: 8px 0 10px 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; color: #ffffff;">
-            The 1967 Occupied Territories
-          </h4>
-          <p style="font-size: 0.84rem; color: #94a3b8; line-height: 1.5; margin-bottom: 16px;">
-            In 6 days of fighting (5–10 June 1967), Israel conquered four distinct territories, tripling its territorial control and creating a new strategic paradigm:
-          </p>
-
-          <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px;">
-            <div style="background: #1e293b; border-left: 3.5px solid #dc2626; padding: 10px 12px; border-radius: 0 6px 6px 0;">
-              <strong style="color: #ffffff; font-size: 0.82rem; display: block;">1. Sinai Peninsula (from Egypt)</strong>
-              <div style="font-size: 0.76rem; color: #cbd5e1; margin-top: 3px;">60,000 sq km desert buffer giving strategic depth. Closed the Suez Canal and gave Israel control of Sharm el-Sheikh. Later returned to Egypt under 1978–79 Camp David Accords in return for peace and demilitarization.</div>
-            </div>
-
-            <div style="background: #1e293b; border-left: 3.5px solid #b91c1c; padding: 10px 12px; border-radius: 0 6px 6px 0;">
-              <strong style="color: #ffffff; font-size: 0.82rem; display: block;">2. Gaza Strip (from Egyptian military rule)</strong>
-              <div style="font-size: 0.76rem; color: #cbd5e1; margin-top: 3px;">Dense refugee strip. Brought ~350,000 Palestinians under Israeli military administration. Sparked intense underground resistance and the 1987 First Intifada.</div>
-            </div>
-
-            <div style="background: #1e293b; border-left: 3.5px solid #059669; padding: 10px 12px; border-radius: 0 6px 6px 0;">
-              <strong style="color: #ffffff; font-size: 0.82rem; display: block;">3. West Bank & East Jerusalem (from Jordan)</strong>
-              <div style="font-size: 0.76rem; color: #cbd5e1; margin-top: 3px;">Eliminated Israel’s 9-mile coastal waistline; reunited the Western Wall under Jewish control. Brought ~1 million Palestinians under military rule, sparking the Israeli settlement movement.</div>
-            </div>
-
-            <div style="background: #1e293b; border-left: 3.5px solid #7c3aed; padding: 10px 12px; border-radius: 0 6px 6px 0;">
-              <strong style="color: #ffffff; font-size: 0.82rem; display: block;">4. Golan Heights (from Syria)</strong>
-              <div style="font-size: 0.76rem; color: #cbd5e1; margin-top: 3px;">Elevated plateau commanding northern Galilee. Ended Syrian artillery bombardment of kibbutzim; placed Israeli guns within 40 miles of Damascus.</div>
-            </div>
-          </div>
-
-          <div style="background: rgba(2, 132, 199, 0.12); border: 1.5px solid #0284c7; padding: 12px; border-radius: 6px; font-size: 0.78rem; line-height: 1.5; color: #e0f2fe;">
-            <div style="font-weight: 800; color: #38bdf8; text-transform: uppercase; font-size: 0.72rem; margin-bottom: 4px;">
-              <i class="fa-solid fa-scroll"></i> UN Security Council Resolution 242 (22 Nov 1967):
-            </div>
-            Codified the principle of <strong>"Land for Peace"</strong>: withdrawal of Israeli armed forces from territories occupied in the recent conflict, in exchange for termination of all claims or states of belligerency and recognition of every state’s right to live in peace within secure and recognized boundaries.
-          </div>
-        </div>
-      </div>
-    `;
-  } else if (currentTab.id === 'partition1947') {
-    container.innerHTML = `
-      <div style="flex: 1; display: flex; background: #030712; overflow: hidden;">
-        <!-- Left Side: 1947 Partition -->
-        <div style="flex: 1; display: flex; flex-direction: column; border-right: 1px solid #1e293b; padding: 14px; overflow: auto; align-items: center;">
-          <div style="text-align: center; margin-bottom: 8px;">
-            <span style="background: #1e3a8a; color: #bfdbfe; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase;">
-              29 November 1947
-            </span>
-            <h4 style="margin: 4px 0; font-size: 1.05rem; color: #ffffff;">${currentTab.leftTitle}</h4>
-          </div>
-          <div style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%;">
-            <img src="${getAssetUrl(currentTab.leftImage)}" alt="1947 UN Partition Plan Map" style="max-height: 60vh; max-width: 95%; object-fit: contain; border-radius: 6px; box-shadow: 0 4px 14px rgba(0,0,0,0.6); border: 1px solid #334155;">
-          </div>
-          <div style="background: #0f172a; border: 1px solid #334155; padding: 10px 12px; border-radius: 6px; font-size: 0.76rem; color: #cbd5e1; line-height: 1.5; margin-top: 10px; width: 90%;">
-            ${currentTab.leftDesc}
-          </div>
-        </div>
-
-        <!-- Right Side: 1949 Armistice -->
-        <div style="flex: 1; display: flex; flex-direction: column; padding: 14px; overflow: auto; align-items: center;">
-          <div style="text-align: center; margin-bottom: 8px;">
-            <span style="background: #166534; color: #bbf7d0; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 4px; text-transform: uppercase;">
-              Spring 1949
-            </span>
-            <h4 style="margin: 4px 0; font-size: 1.05rem; color: #ffffff;">${currentTab.rightTitle}</h4>
-          </div>
-          <div style="flex: 1; display: flex; align-items: center; justify-content: center; width: 100%;">
-            <img src="${getAssetUrl(currentTab.rightImage)}" alt="1949 Armistice Green Line Map" style="max-height: 60vh; max-width: 95%; object-fit: contain; border-radius: 6px; box-shadow: 0 4px 14px rgba(0,0,0,0.6); border: 1px solid #334155;">
-          </div>
-          <div style="background: #0f172a; border: 1px solid #334155; padding: 10px 12px; border-radius: 6px; font-size: 0.76rem; color: #cbd5e1; line-height: 1.5; margin-top: 10px; width: 90%;">
-            ${currentTab.rightDesc}
-          </div>
-        </div>
-      </div>
-    `;
-  } else if (currentTab.id === 'tactical_theaters') {
-    const galleryItems = currentTab.gallery || [];
-    container.innerHTML = `
-      <div style="flex: 1; display: flex; flex-direction: column; background: #030712; padding: 16px; overflow-y: auto;">
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px;">
-          ${galleryItems
-            .map(
-              (item) => `
-            <div style="background: #0f172a; border: 1.5px solid #334155; border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 4px 12px rgba(0,0,0,0.5);">
-              <div style="background: #030712; padding: 8px; text-align: center; height: 260px; display: flex; align-items: center; justify-content: center;">
-                <img src="${getAssetUrl(item.src)}" alt="${item.title}" style="max-height: 100%; max-width: 100%; object-fit: contain; border-radius: 4px; cursor: zoom-in;" onclick="window.openEnlargedCmeMap('${getAssetUrl(item.src)}', '${item.title.replace(/'/g, "\\'")}');">
-              </div>
-              <div style="padding: 12px 14px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; border-top: 1px solid #1e293b;">
-                <div>
-                  <h5 style="margin: 0 0 6px 0; font-size: 0.88rem; font-weight: 800; color: #ffffff;">
-                    ${item.title}
-                  </h5>
-                  <p style="margin: 0; font-size: 0.76rem; color: #94a3b8; line-height: 1.45;">
-                    ${item.desc}
-                  </p>
-                </div>
-                <div style="margin-top: 10px; padding-top: 6px; border-top: 1px dashed #334155; display: flex; justify-content: flex-end;">
-                  <button type="button" onclick="window.openEnlargedCmeMap('${getAssetUrl(item.src)}', '${item.title.replace(/'/g, "\\'")}');" style="background: #1e293b; color: #38bdf8; border: 1px solid #475569; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer;">
-                    <i class="fa-solid fa-expand"></i> Enlarge Fullscreen
-                  </button>
-                </div>
-              </div>
-            </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-    `;
+  if (btnCia) {
+    const isCia = currentMapKey === 'cia';
+    btnCia.style.background = isCia ? '#0284c7' : 'transparent';
+    btnCia.style.borderColor = isCia ? '#38bdf8' : 'transparent';
+    btnCia.style.color = isCia ? '#ffffff' : '#94a3b8';
   }
 }
 
 export function zoomCmeMap(delta) {
-  currentZoom = Math.min(Math.max(0.6, currentZoom + delta), 2.5);
-  const stage = document.getElementById('cme-map-stage');
-  if (stage) {
-    stage.style.transform = `scale(${currentZoom})`;
-  }
+  currentZoom = Math.min(Math.max(0.6, parseFloat((currentZoom + delta).toFixed(2))), 4.0);
+  updateMapTransform();
 }
 
 export function resetCmeMapZoom() {
   currentZoom = 1;
-  const stage = document.getElementById('cme-map-stage');
-  if (stage) {
-    stage.style.transform = `scale(1)`;
-  }
-}
-
-export function openEnlargedCmeMap(src, title) {
-  let overlay = document.getElementById('cme-map-enlarge-overlay');
-  if (!overlay) {
-    overlay = document.createElement('div');
-    overlay.id = 'cme-map-enlarge-overlay';
-    overlay.style.cssText =
-      'position: fixed; inset: 0; z-index: 100000; background: rgba(0, 0, 0, 0.95); display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; box-sizing: border-box;';
-    overlay.innerHTML = `
-      <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1400px; margin-bottom: 10px; color: #ffffff;">
-        <h4 id="cme-enlarge-title" style="margin: 0; font-size: 1.1rem; font-weight: 700;"></h4>
-        <button type="button" onclick="document.getElementById('cme-map-enlarge-overlay').style.display='none';" style="background: #334155; color: #fff; border: none; padding: 6px 14px; border-radius: 6px; cursor: pointer; font-weight: 700;">Close &times;</button>
-      </div>
-      <img id="cme-enlarge-img" src="" alt="Enlarged Map" style="max-height: 85vh; max-width: 95vw; object-fit: contain; border-radius: 6px; box-shadow: 0 10px 40px rgba(0,0,0,0.9);">
-    `;
-    overlay.addEventListener('click', (e) => {
-      if (e.target === overlay) overlay.style.display = 'none';
-    });
-    document.body.appendChild(overlay);
-  }
-  overlay.querySelector('#cme-enlarge-img').src = src;
-  overlay.querySelector('#cme-enlarge-title').textContent = title || 'Historical Map';
-  overlay.style.display = 'flex';
+  panX = 0;
+  panY = 0;
+  updateMapTransform();
 }
 
 // ============================================================================
@@ -690,13 +295,13 @@ export function renderFloatingCmeMapButton() {
   btn.id = 'cme-floating-theater-map-btn';
   btn.type = 'button';
   btn.className = 'cme-floating-theater-map-btn no-print';
-  btn.setAttribute('aria-label', 'Open Middle East Strategic Theater Map');
+  btn.setAttribute('aria-label', 'Open Middle East Regional Map');
   btn.style.cssText =
     'position: fixed; bottom: 24px; right: 24px; z-index: 9990; background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; border-radius: 30px; padding: 9px 16px; font-size: 0.82rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.45); transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1); user-select: none; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;';
 
   btn.innerHTML = `
-    <i class="fa-solid fa-map-location-dot" style="font-size: 0.95rem;"></i>
-    <span>Theater Map <kbd style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 4px; font-size: 0.65rem; margin-left: 2px;">M</kbd></span>
+    <i class="fa-solid fa-map" style="font-size: 0.95rem;"></i>
+    <span>Regional Map <kbd style="background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.3); border-radius: 3px; padding: 1px 4px; font-size: 0.65rem; margin-left: 2px;">M</kbd></span>
   `;
 
   btn.onmouseover = () => {
@@ -715,7 +320,7 @@ export function renderFloatingCmeMapButton() {
 }
 
 // ============================================================================
-// KEYBOARD SHORTCUTS (M to toggle map, Escape to close)
+// KEYBOARD SHORTCUTS
 // ============================================================================
 
 export function initCmeMapHotkeys() {
@@ -732,16 +337,37 @@ export function initCmeMapHotkeys() {
       return;
     }
 
-    // Toggle Theater Map with 'M' or 'm'
+    const modal = document.getElementById('cme-theater-map-modal');
+    const isModalVisible = modal && modal.style.display === 'flex';
+
+    // Toggle Regional Map with 'M' or 'm'
     if (e.key === 'm' || e.key === 'M') {
-      const modal = document.getElementById('cme-theater-map-modal');
-      const isVisible = modal && modal.style.display === 'flex';
-      if (isVisible) {
+      if (isModalVisible) {
         window.closeCmeTheaterMapModal();
       } else {
         window.openCmeTheaterMapModal();
       }
       return;
+    }
+
+    // Modal active shortcuts (+, -, 0, Esc)
+    if (isModalVisible) {
+      if (e.key === '+' || e.key === '=') {
+        e.preventDefault();
+        window.zoomCmeMap(0.25);
+        return;
+      } else if (e.key === '-' || e.key === '_') {
+        e.preventDefault();
+        window.zoomCmeMap(-0.25);
+        return;
+      } else if (e.key === '0') {
+        e.preventDefault();
+        window.resetCmeMapZoom();
+        return;
+      } else if (e.key === 'Escape') {
+        window.closeCmeTheaterMapModal();
+        return;
+      }
     }
 
     // Presenter Focus Hotkeys (when Presenter Mode is active)
@@ -756,17 +382,7 @@ export function initCmeMapHotkeys() {
         e.preventDefault();
         window.setCmePresenterStage(parseInt(e.key, 10) - 1);
       } else if (e.key === 'Escape') {
-        const modal = document.getElementById('cme-theater-map-modal');
-        if (modal && modal.style.display === 'flex') {
-          window.closeCmeTheaterMapModal();
-        } else {
-          window.toggleCmePresenterMode();
-        }
-      }
-    } else if (e.key === 'Escape') {
-      const modal = document.getElementById('cme-theater-map-modal');
-      if (modal && modal.style.display === 'flex') {
-        window.closeCmeTheaterMapModal();
+        window.toggleCmePresenterMode();
       }
     }
   });
@@ -778,7 +394,7 @@ export function initCmeMapHotkeys() {
 
 window._cmePresenterActive = false;
 window._cmePresenterStageIndex = 0;
-window._cmePresenterLayoutMode = 'spotlight'; // 'spotlight' or 'panoramic'
+window._cmePresenterLayoutMode = 'spotlight';
 
 export function toggleCmePresenterMode() {
   const spine = document.getElementById('lesson-chronology-spine');
@@ -926,8 +542,8 @@ export function renderCmePresenterUI(spine) {
 
     <!-- Right Controls: Map Launcher & Exit -->
     <div style="display: flex; align-items: center; gap: 8px;">
-      <button type="button" onclick="window.openCmeTheaterMapModal();" style="padding: 4px 11px; font-size: 0.76rem; font-weight: 700; background: #0369a1; color: #ffffff; border: 1px solid #38bdf8; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Open Strategic Theater Map (M)">
-        <i class="fa-solid fa-map-location-dot"></i> Theater Map
+      <button type="button" onclick="window.openCmeTheaterMapModal();" style="padding: 4px 11px; font-size: 0.76rem; font-weight: 700; background: #0369a1; color: #ffffff; border: 1px solid #38bdf8; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Open Regional Map (M)">
+        <i class="fa-solid fa-map"></i> Regional Map
       </button>
       <button type="button" onclick="window.toggleCmePresenterMode();" style="padding: 4px 10px; font-size: 0.76rem; font-weight: 700; background: #334155; color: #cbd5e1; border: 1px solid #475569; border-radius: 4px; cursor: pointer;" title="Exit Presenter Focus (Esc)">
         Exit Focus
@@ -946,7 +562,7 @@ export function renderCmePresenterUI(spine) {
 
     const grid = spine.querySelector('.cme-chronology-spine-grid');
     if (grid) {
-      grid.style.display = 'none'; // Hide cramped multi-column grid during focus
+      grid.style.display = 'none';
       spine.insertBefore(spotlightBox, grid);
     }
   }
@@ -1096,12 +712,11 @@ export function toggleCmeNarrativeFold() {
 // Global window registrations
 window.openCmeTheaterMapModal = openCmeTheaterMapModal;
 window.closeCmeTheaterMapModal = closeCmeTheaterMapModal;
-window.switchCmeMapTab = switchCmeMapTab;
-window.selectCmeHotspot = selectCmeHotspot;
+window.switchCmeRegionalMap = switchCmeRegionalMap;
 window.zoomCmeMap = zoomCmeMap;
 window.resetCmeMapZoom = resetCmeMapZoom;
-window.openEnlargedCmeMap = openEnlargedCmeMap;
 window.toggleCmePresenterMode = toggleCmePresenterMode;
 window.setCmePresenterStage = setCmePresenterStage;
 window.stepCmePresenterStage = stepCmePresenterStage;
 window.toggleCmeNarrativeFold = toggleCmeNarrativeFold;
+window.renderFloatingCmeMapButton = renderFloatingCmeMapButton;

@@ -2855,7 +2855,7 @@ export function renderLesson(lesson) {
               }
               ${
                 unitId === 'cme_new' || isCme
-                  ? `<button type="button" class="btn btn-cme-theater-map" onclick="window.openCmeTheaterMapModal()" style="padding: 6px 12px; font-size: 0.88rem; background: #0284c7; color: #ffffff; border: 1.5px solid #0369a1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(2,132,199,0.3); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Open Strategic Theater Map & Choke-Points (Sinai, Suez, Eilat, Tiran, Golan, West Bank, Gaza) [Shortcut: M]"><i class="fa-solid fa-map-location-dot" style="color: #ffffff;"></i> Theater Map</button>`
+                  ? `<button type="button" class="btn btn-cme-theater-map" onclick="window.openCmeTheaterMapModal()" style="padding: 6px 12px; font-size: 0.88rem; background: #0284c7; color: #ffffff; border: 1.5px solid #0369a1; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(2,132,199,0.3); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Open High-Resolution Regional Map (Israel & Surrounding Neighbours) [Shortcut: M]"><i class="fa-solid fa-map" style="color: #ffffff;"></i> Regional Map</button>`
                   : ''
               }
               ${
