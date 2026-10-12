@@ -68,7 +68,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Medieval England Master Textbook',
       label: 'Master Textbook',
       htmlUrl: '/units/medieval_england/textbook.html',
-      pdfUrl: '/pdfs/medieval_england_textbook_PUBLISHER.pdf',
+      pdfUrl: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
     },
     workbook: {
       title: 'Medieval England Pupil Workbook',
@@ -80,7 +80,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Medieval England Knowledge Retrieval Companion',
       label: 'Retrieval Companion (40 Qs)',
       htmlUrl: '/units/medieval_england/quiz_pack.html',
-      pdfUrl: '/pdfs/medieval_england_quiz_pack.pdf',
+      pdfUrl: '/pdfs/medieval_england_quiz_pack_FINAL_V1.pdf',
     },
   },
   early_modern_world: {
@@ -88,7 +88,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Early Modern World Master Textbook',
       label: 'Master Textbook',
       htmlUrl: '/units/early_modern_world/textbook.html',
-      pdfUrl: '/pdfs/early_modern_world_textbook_PUBLISHER.pdf',
+      pdfUrl: '/pdfs/early_modern_world_textbook_FINAL_V17.pdf',
     },
     workbook: {
       title: 'Early Modern World Pupil Workbook',
@@ -100,7 +100,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Early Modern World Knowledge Retrieval Companion',
       label: 'Retrieval Companion',
       htmlUrl: '/units/early_modern_world/quiz_pack.html',
-      pdfUrl: '/pdfs/early_modern_world_quiz_pack_FINAL_V1.pdf',
+      pdfUrl: '/pdfs/early_modern_world_mastery_pack_full_FINAL_V17.pdf',
     },
   },
   monarchy_religion_power: {
@@ -108,7 +108,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Crown, Church, or Parliament 20-Page Pupil Workbook',
       label: 'Pupil Workbook (20 Pages)',
       htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html',
-      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
+      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook_FINAL_V17.pdf',
     },
     retrieval: {
       title: 'Crown, Church, or Parliament Knowledge Retrieval Companion',
@@ -182,7 +182,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Water & Sanitation Knowledge Retrieval Companion',
       label: 'Retrieval Companion',
       htmlUrl: '/units/water_and_sanitation/quiz_pack.html',
-      pdfUrl: '/pdfs/water_sanitation_quiz_pack_FINAL_V1.pdf',
+      pdfUrl: '/pdfs/water_and_sanitation_mastery_pack_full_FINAL_V17.pdf',
     },
   },
   the_shoah: {
@@ -250,7 +250,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Conflict in the Middle East Master Publisher Textbook',
       label: 'Master Textbook',
       htmlUrl: '/units/cme_new/textbook_KT1_PUBLISHER.html',
-      pdfUrl: '/pdfs/cme_new_textbook_KT1_PUBLISHER.pdf',
+      pdfUrl: '/pdfs/cme_new_textbook_KT1_FINAL_V17.pdf',
     },
     workbook: {
       title: 'Conflict in the Middle East Pupil Workbook',
@@ -270,13 +270,13 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'USA 1954–1975 Master Textbook',
       label: 'Master Textbook',
       htmlUrl: '/units/usa/textbook_KT1.html',
-      pdfUrl: '/pdfs/usa_textbook_KT1_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/usa_visual_revision_guide.pdf',
     },
     workbook: {
       title: 'USA 1954–1975 Pupil Workbook',
       label: 'Pupil Workbook',
       htmlUrl: '/units/usa/pupil_workbook_KT1.html',
-      pdfUrl: '/pdfs/usa_pupil_workbook_KT1_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/usa_mastery_pack_FULL.pdf',
     },
     retrieval: {
       title: 'USA 1954–1975 Master Knowledge Retrieval Companion',
@@ -290,17 +290,17 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Medicine in Britain Master Publisher Textbook',
       label: 'Master Textbook',
       htmlUrl: '/units/edexcel_medicine/textbook_medieval_PUBLISHER.html',
-      pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_PUBLISHER_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/edexcel_medicine_textbook_medieval_FINAL_V17.pdf',
     },
     workbook: {
       title: 'Medicine in Britain Master Pupil Workbook',
       label: 'Pupil Workbook',
       htmlUrl: '/units/edexcel_medicine/pupil_workbook_medieval.html',
-      pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
     },
     retrieval: {
       title: 'Medicine in Britain Master Knowledge Retrieval Companion',
-      label: 'Retrieval Companion',
+      label: 'Retrieval Companion (140 Qs)',
       htmlUrl: '/units/edexcel_medicine/medicine_master_retrieval_companion.html',
       pdfUrl: '/pdfs/Medicine_Thematic_Study_Master_Knowledge_Retrieval_Companion.pdf',
     },

@@ -693,6 +693,117 @@ window.launchSubApp = function (subAppName) {
   }, 180);
 };
 
+export function extractUnitSelfQuizCards(unitData, topicFilter = 'all') {
+  if (!unitData) return [];
+  const lessons = unitData.lessons || unitData.subtopics || [];
+  const workbooks = unitData.workbooks || [];
+  const cards = [];
+  const seen = new Set();
+
+  lessons.forEach((l, idx) => {
+    // Topic filtering
+    if (topicFilter && topicFilter !== 'all' && topicFilter !== 'full') {
+      let matched = false;
+      const cleanFilter = topicFilter.toLowerCase().replace(/[\s_:-]+/g, '');
+      const lTitle = (l.title || '').toLowerCase().replace(/[\s_:-]+/g, '');
+      const lId = (l.id || '').toLowerCase().replace(/[\s_:-]+/g, '');
+
+      if (lTitle.includes(cleanFilter) || lId.includes(cleanFilter)) {
+        matched = true;
+      } else {
+        for (const wb of workbooks) {
+          const wbId = (wb.id || wb.name || '').toLowerCase().replace(/[\s_:-]+/g, '');
+          if (wbId === cleanFilter) {
+            const prefix = (wb.prefix || wb.id || '').toLowerCase().replace(/[\s_:-]+/g, '');
+            if (lTitle.startsWith(prefix) || lId.startsWith(prefix) || lId.includes(prefix)) {
+              matched = true;
+            }
+          }
+        }
+      }
+      if (!matched) return;
+    }
+
+    const topicLabel = l.title
+      ? l.title.replace(/^lesson\s*\d+[:.]\s*/i, '').trim()
+      : `Lesson ${idx + 1}`;
+
+    // 1. Dedicated Flashcards
+    if (Array.isArray(l.flashcards)) {
+      l.flashcards.forEach((fc) => {
+        const q = fc.question || fc.term || fc.q;
+        const a = fc.answer || fc.definition || fc.a;
+        if (q && a) {
+          const key = q.trim().toLowerCase();
+          if (!seen.has(key)) {
+            seen.add(key);
+            cards.push({
+              q:
+                q.startsWith('What') ||
+                q.startsWith('Who') ||
+                q.startsWith('Why') ||
+                q.startsWith('How')
+                  ? q
+                  : `Define: ${q}`,
+              a,
+              topic: topicLabel,
+              lessonId: l.id,
+              type: 'flashcard',
+            });
+          }
+        }
+      });
+    }
+
+    // 2. Vocabulary Terms
+    if (Array.isArray(l.vocab)) {
+      l.vocab.forEach((v) => {
+        if (v.term && v.definition) {
+          const key = v.term.trim().toLowerCase();
+          if (!seen.has(key)) {
+            seen.add(key);
+            cards.push({
+              q: `Historical definition: "${v.term}"`,
+              a: v.definition,
+              topic: topicLabel,
+              lessonId: l.id,
+              type: 'vocab',
+            });
+          }
+        }
+      });
+    }
+
+    // 3. Quiz Questions
+    const qList = l.quiz || l.quick_quiz || l.quiz_questions || [];
+    if (Array.isArray(qList)) {
+      qList.forEach((item) => {
+        const q = item.q || item.question;
+        let a = item.a || item.answer;
+        if (typeof a === 'number' && item.options && item.options[a]) {
+          a = item.options[a];
+        }
+        if (q && a) {
+          const key = q.trim().toLowerCase();
+          if (!seen.has(key)) {
+            seen.add(key);
+            const explanation = item.explanation ? ` — ${item.explanation}` : '';
+            cards.push({
+              q,
+              a: `${a}${explanation}`,
+              topic: topicLabel,
+              lessonId: l.id,
+              type: 'quiz',
+            });
+          }
+        }
+      });
+    }
+  });
+
+  return cards;
+}
+
 export function renderInteractiveQuiz() {
   const container = document.getElementById('main-content');
   const unitId = state.selectedUnitId || window.currentUnitId;
@@ -701,8 +812,8 @@ export function renderInteractiveQuiz() {
   if (!data || !unitId) {
     container.innerHTML = `
       <div class="card text-center" style="padding: 40px;">
-        <h3><i class="fa-solid fa-circle-question" style="color: #f59e0b;"></i> Interactive Quizzing &amp; Spaced Recall</h3>
-        <p>Please select a unit to access its interactive quizzes and spaced recall decks.</p>
+        <h3><i class="fa-solid fa-circle-question" style="color: #f59e0b;"></i> Self-Quiz &amp; Knowledge Check</h3>
+        <p>Please select a unit to access its interactive flashcards and timed diagnostic quizzes.</p>
         <button class="btn-pedagogy-primary" data-action="switch-view" data-view="dashboard">Back to Dashboard</button>
       </div>
     `;
@@ -712,266 +823,386 @@ export function renderInteractiveQuiz() {
   const workbooks =
     data.workbooks && data.workbooks.length > 0
       ? data.workbooks
-      : [{ id: 'full', title: 'Complete Unit Mastery', prefix: 'lesson' }];
+      : [{ id: 'full', title: 'Complete Course', prefix: 'lesson' }];
 
-  // Calculate total question count across lessons
-  let totalQuestions = 0;
-  const lessons = data.lessons || data.subtopics || [];
-  lessons.forEach((l) => {
-    const qList = l.quiz || l.quick_quiz || l.quiz_questions;
-    if (qList && Array.isArray(qList)) totalQuestions += qList.length;
-    if (l.do_now && Array.isArray(l.do_now.items)) totalQuestions += l.do_now.items.length;
-    else if (l.do_now && Array.isArray(l.do_now.questions))
-      totalQuestions += l.do_now.questions.length;
-  });
-  if (totalQuestions === 0 && data.quizData) totalQuestions = data.quizData.length;
+  const allCards = extractUnitSelfQuizCards(data, 'all');
 
-  const defaultWb = workbooks[0];
-  const defaultWbId = defaultWb.name || defaultWb.id;
-  const initialFlashcardUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html#practice-mode`;
-  const initialWhiteboardUrl = `/units/${unitId}/mastery_pack_${defaultWbId}.html#practice-mode&teacher=true`;
+  // Initialize self quiz global state
+  window._selfQuizState = {
+    unitId,
+    data,
+    topicFilter: 'all',
+    activeMode: 'flashcards', // 'flashcards' | 'quiz'
+    cards: allCards,
+    currentIndex: 0,
+    isFlipped: false,
+    isWhiteboard: false,
+    masteredSet: new Set(),
+    learningSet: new Set(),
+  };
 
   const catalogRetrieval = CURRICULAR_PILLARS_CATALOG[unitId]?.retrieval || {};
   const retrievalTitle =
     catalogRetrieval.title || `${data.title || 'Curriculum'} Master Knowledge Retrieval Companion`;
-  const retrievalHtml = catalogRetrieval.htmlUrl || `/units/${unitId}/quiz_pack.html`;
   const retrievalPdf = catalogRetrieval.pdfUrl || `/pdfs/${unitId}_quiz_pack_FINAL_V1.pdf`;
-  const retrievalLabel = catalogRetrieval.label || 'Master Revision Booklet';
 
-  let questionHighlight = 'Structured Core Questions';
-  if (retrievalLabel && retrievalLabel.includes('Qs')) {
-    const qMatch = retrievalLabel.match(/\((\d+\s*Qs)\)/i);
-    if (qMatch) questionHighlight = `${qMatch[1]} with Dual-Line Prompts`;
-  } else if (unitId === 'cme_new' || unitId === 'usa') {
-    questionHighlight = '128 Core Questions (Core Fact + Explanation)';
-  } else if (unitId === 'edexcel_medicine') {
-    questionHighlight = '140 Core Questions (Thematic Synoptic Study)';
-  }
-
-  let html = `
-    <div style="max-width: 1080px; margin: 0 auto; padding-bottom: 50px; animation: fadeInUp 0.3s ease-out;">
+  const html = `
+    <div id="self-quiz-arena" class="self-quiz-arena" style="max-width: 960px; margin: 0 auto; padding-bottom: 60px; animation: fadeInUp 0.25s ease-out;">
+      <style>
+        .self-quiz-arena {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        .self-quiz-card-wrapper {
+          perspective: 1200px;
+          width: 100%;
+          max-width: 740px;
+          margin: 0 auto;
+          min-height: 310px;
+          cursor: pointer;
+          user-select: none;
+        }
+        .self-quiz-card-inner {
+          position: relative;
+          width: 100%;
+          min-height: 310px;
+          transition: transform 0.42s cubic-bezier(0.4, 0, 0.2, 1);
+          transform-style: preserve-3d;
+          border-radius: 16px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        .self-quiz-card-inner.is-flipped {
+          transform: rotateY(180deg);
+        }
+        .self-quiz-face {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+          border-radius: 16px;
+          padding: 28px 28px 20px 28px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          box-sizing: border-box;
+        }
+        .self-quiz-front {
+          background: #ffffff;
+          border: 2px solid #e2e8f0;
+          color: #0f172a;
+        }
+        .self-quiz-front:hover {
+          border-color: #cbd5e1;
+          box-shadow: 0 12px 35px rgba(99, 102, 241, 0.12);
+        }
+        .self-quiz-back {
+          background: linear-gradient(145deg, #ffffff 0%, #f8fafc 100%);
+          border: 2px solid #6366f1;
+          color: #0f172a;
+          transform: rotateY(180deg);
+        }
+        .self-quiz-mode-pill {
+          padding: 9px 18px;
+          border-radius: 999px;
+          font-size: 0.85rem;
+          font-weight: 700;
+          cursor: pointer;
+          border: 1.5px solid transparent;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          transition: all 0.2s ease;
+        }
+        .self-quiz-mode-pill.active {
+          background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+          color: #ffffff;
+          border-color: #4338ca;
+          box-shadow: 0 4px 14px rgba(79, 70, 229, 0.35);
+        }
+        .self-quiz-mode-pill:not(.active) {
+          background: #f1f5f9;
+          color: #334155;
+          border-color: #cbd5e1;
+        }
+        .self-quiz-mode-pill:not(.active):hover {
+          background: #e2e8f0;
+          color: #0f172a;
+        }
+        .whiteboard-mode .self-quiz-card-wrapper {
+          max-width: 100%;
+          min-height: 420px;
+        }
+        .whiteboard-mode .self-quiz-card-inner {
+          min-height: 420px;
+        }
+        .whiteboard-mode .self-quiz-front-text {
+          font-size: 1.7rem !important;
+          line-height: 1.4 !important;
+        }
+        .whiteboard-mode .self-quiz-back-text {
+          font-size: 1.4rem !important;
+          line-height: 1.5 !important;
+        }
+      </style>
       
-      <!-- Streamlined Header -->
-      <div style="margin-bottom: 26px; text-align: center;">
-        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.22); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.4); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; backdrop-filter: blur(4px);">
+      <!-- Unified Header -->
+      <div style="margin-bottom: 22px; text-align: center;">
+        <div style="display: inline-flex; align-items: center; gap: 8px; background: rgba(99, 102, 241, 0.2); color: #c7d2fe; border: 1px solid rgba(99, 102, 241, 0.35); padding: 5px 16px; border-radius: 999px; font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; backdrop-filter: blur(4px);">
           <i class="fa-solid fa-graduation-cap" style="color: #fef08a;"></i> ${data.title || 'Curriculum Revision'}
         </div>
-        <h1 class="interactive-hub-title" style="font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; color: #ffffff; margin: 0 0 8px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
-          Knowledge Retrieval &amp; Revision Hub
+        <h1 style="font-family: 'Montserrat', sans-serif; font-size: 2.1rem; font-weight: 800; color: #ffffff; margin: 0 0 6px 0; letter-spacing: -0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.4);">
+          Self-Quiz &amp; Knowledge Check
         </h1>
-        <p class="interactive-hub-subtitle" style="color: #cbd5e1; font-size: 1rem; margin: 0 auto; max-width: 650px; line-height: 1.5; font-weight: 400; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
-          Three dedicated revision modes to consolidate factual knowledge, practice active recall, and benchmark exam readiness.
+        <p style="color: #cbd5e1; font-size: 0.95rem; margin: 0 auto; max-width: 620px; line-height: 1.45; font-weight: 400; text-shadow: 0 1px 3px rgba(0,0,0,0.3);">
+          Master core facts through active recall flashcards or test your readiness with a 10-minute diagnostic check.
         </p>
       </div>
 
-      <!-- 3-Pillars Knowledge & Retrieval Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 22px; margin-bottom: 26px;">
+      <!-- Unified Control Panel (Topic Selector + Mode Switcher) -->
+      <div style="background: white; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 14px 18px; margin-bottom: 20px; box-shadow: 0 4px 18px rgba(0,0,0,0.04); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
         
-        <!-- Pillar 1: Master Retrieval Companion -->
-        <div class="retrieval-pillar-card" style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.2s ease;" onmouseover="this.style.borderColor='#4338ca'; this.style.boxShadow='0 8px 25px rgba(67,56,202,0.12)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)';">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <span style="background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                📖 Pillar 1 • Master Booklet
-              </span>
-              <span style="color: #64748b; font-size: 0.76rem; font-weight: 600;">
-                ${retrievalLabel}
-              </span>
-            </div>
-
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #4338ca 0%, #312e81 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 4px 12px rgba(67, 56, 202, 0.25); flex-shrink: 0;">
-                <i class="fa-solid fa-book-open" style="color: #c7d2fe;"></i>
-              </div>
-              <div>
-                <h2 style="margin: 0; font-size: 1.2rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #0f172a; line-height: 1.2;">
-                  Master Retrieval Companion
-                </h2>
-                <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">
-                  Printable booklet &amp; digital reader
-                </p>
-              </div>
-            </div>
-
-            <p style="color: #475569; font-size: 0.86rem; line-height: 1.5; margin: 0 0 14px 0;">
-              Publisher-grade revision and homework companion covering all core factual knowledge across the entire course.
-            </p>
-
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 18px; font-size: 0.8rem; color: #334155; line-height: 1.6; display: flex; flex-direction: column; gap: 5px;">
-              <div><i class="fa-solid fa-check" style="color: #4338ca; margin-right: 6px;"></i> <strong>Core Factual Recall:</strong> ${questionHighlight}</div>
-              <div><i class="fa-solid fa-check" style="color: #4338ca; margin-right: 6px;"></i> <strong>Fatal Pitfalls:</strong> Key examiner traps &amp; misconceptions</div>
-              <div><i class="fa-solid fa-check" style="color: #4338ca; margin-right: 6px;"></i> <strong>Complete Mark Scheme:</strong> Teacher-verified solutions</div>
-            </div>
+        <!-- Topic Dropdown -->
+        <div style="display: flex; align-items: center; gap: 10px; flex: 1; min-width: 260px;">
+          <div style="width: 36px; height: 36px; border-radius: 8px; background: #eef2ff; color: #4f46e5; display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-layer-group"></i>
           </div>
-
-          <div style="display: flex; flex-direction: column; gap: 8px;">
-            <a href="${retrievalHtml}" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #4338ca 0%, #3730a3 100%); color: white; padding: 11px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(67, 56, 202, 0.3); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              <span>Open Interactive Reader</span>
-            </a>
-            <a href="${retrievalPdf}" target="_blank" download style="text-decoration: none; background: #ffffff; color: #4338ca; border: 1.5px solid #c7d2fe; padding: 9px 16px; border-radius: 9px; font-weight: 700; font-size: 0.86rem; display: flex; align-items: center; justify-content: center; gap: 8px; transition: all 0.15s ease;" onmouseover="this.style.background='#eef2ff';" onmouseout="this.style.background='#ffffff';">
-              <i class="fa-solid fa-file-pdf" style="color: #dc2626;"></i>
-              <span>Download Printable PDF</span>
-            </a>
+          <div style="flex: 1;">
+            <label for="select-recall-deck" style="display: block; font-size: 0.72rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">
+              Topic Scope:
+            </label>
+            <select id="select-recall-deck" class="form-select" style="width: 100%; padding: 6px 10px; font-size: 0.85rem; font-weight: 600; border: 1.5px solid #cbd5e1; border-radius: 6px; background: #ffffff; color: #0f172a; cursor: pointer;" onchange="window.selfQuizSetTopic(this.value)">
+              <option value="all">⭐ Complete Course (All Topics)</option>
+              ${workbooks
+                .map((wb, i) => {
+                  const id = wb.name || wb.id;
+                  if (id === 'full') return '';
+                  return `<option value="${id}">${wb.title || wb.name || `Key Topic ${i + 1}`}</option>`;
+                })
+                .join('')}
+            </select>
           </div>
         </div>
 
-        <!-- Pillar 2: Interactive Flashcards -->
-        <div class="retrieval-pillar-card" style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.2s ease;" onmouseover="this.style.borderColor='#4f46e5'; this.style.boxShadow='0 8px 25px rgba(79,70,229,0.12)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)';">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <span style="background: #eef2ff; color: #4f46e5; border: 1px solid #c7d2fe; font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                ⚡ Pillar 2 • Daily Recall
-              </span>
-              <span style="color: #64748b; font-size: 0.76rem; font-weight: 600;">
-                5-Min Drills
-              </span>
-            </div>
-
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25); flex-shrink: 0;">
-                <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
-              </div>
-              <div>
-                <h2 style="margin: 0; font-size: 1.2rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #0f172a; line-height: 1.2;">
-                  Interactive Flashcards
-                </h2>
-                <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">
-                  Active recall flip-card practice
-                </p>
-              </div>
-            </div>
-
-            <p style="color: #475569; font-size: 0.86rem; line-height: 1.5; margin: 0 0 14px 0;">
-              Flip through core retrieval cards. Reveal answers to reinforce memory of key dates, figures, turning points, and terminology.
-            </p>
-
-            ${
-              workbooks.length > 1
-                ? `
-              <div style="margin-bottom: 18px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 10px 12px;">
-                <label for="select-recall-deck" style="display: block; font-size: 0.74rem; font-weight: 700; color: #475569; margin-bottom: 5px; text-transform: uppercase;">
-                  Choose Revision Topic:
-                </label>
-                <select id="select-recall-deck" class="form-select" style="width: 100%; padding: 7px 10px; font-size: 0.84rem; border: 1px solid #cbd5e1; border-radius: 6px; background: white; color: #0f172a; font-weight: 600; cursor: pointer;" onchange="window.handleRecallDeckChange('${unitId}', this.value)">
-                  <option value="${defaultWbId}">⭐ Complete Course (All Topics)</option>
-                  ${workbooks
-                    .map((wb, i) => {
-                      const id = wb.name || wb.id;
-                      if (id === 'full' || id === defaultWbId) return '';
-                      return `<option value="${id}">Key Topic ${i + 1}: ${wb.title || wb.name}</option>`;
-                    })
-                    .join('')}
-                </select>
-              </div>
-            `
-                : `
-              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px; margin-bottom: 18px; font-size: 0.8rem; color: #334155; line-height: 1.6; display: flex; flex-direction: column; gap: 5px;">
-                <div><i class="fa-solid fa-check" style="color: #4f46e5; margin-right: 6px;"></i> <strong>Quick Drill:</strong> Flip to check factual mastery</div>
-                <div><i class="fa-solid fa-check" style="color: #4f46e5; margin-right: 6px;"></i> <strong>Self-Marking:</strong> Instant answer reveals</div>
-                <div><i class="fa-solid fa-check" style="color: #4f46e5; margin-right: 6px;"></i> <strong>Targeted:</strong> Covers all essential specification content</div>
-              </div>
-            `
-            }
-          </div>
-
-          <div>
-            <a id="btn-start-flashcards" href="${initialFlashcardUrl}" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); color: white; padding: 11px 16px; border-radius: 9px; font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3); transition: all 0.15s ease;" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
-              <i class="fa-solid fa-play"></i>
-              <span>Launch Flashcards</span>
-            </a>
-
-            <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px; padding-top: 8px; font-size: 0.78rem;">
-              <a id="btn-wb-mode" href="${initialWhiteboardUrl}" target="_blank" style="color: #4f46e5; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 5px;" onmouseover="this.style.textDecoration='underline';" onmouseout="this.style.textDecoration='none';">
-                <i class="fa-solid fa-chalkboard-user"></i> Whiteboard Mode (Classroom Starters)
-              </a>
-            </div>
-          </div>
+        <!-- Mode Toggle Pills -->
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <button id="btn-mode-flashcards" type="button" class="self-quiz-mode-pill active" onclick="window.selfQuizSetMode('flashcards')">
+            <i class="fa-solid fa-bolt-lightning" style="color: #fef08a;"></i>
+            <span>Flashcard Deck</span>
+            <span id="deck-card-count" style="background: rgba(255,255,255,0.25); color: #fff; font-size: 0.74rem; padding: 2px 7px; border-radius: 999px; margin-left: 2px;">
+              ${allCards.length}
+            </span>
+          </button>
+          
+          <button id="btn-mode-quiz" type="button" class="self-quiz-mode-pill" onclick="window.selfQuizSetMode('quiz')">
+            <i class="fa-solid fa-bullseye" style="color: #d97706;"></i>
+            <span>10-Minute Knowledge Quiz</span>
+            <span style="background: #e2e8f0; color: #334155; font-size: 0.74rem; font-weight: 800; padding: 2px 7px; border-radius: 999px; margin-left: 2px;">
+              20 Qs
+            </span>
+          </button>
         </div>
 
-        <!-- Pillar 3: 10-Minute Knowledge Quiz -->
-        <div class="retrieval-pillar-card" style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 26px 22px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 20px rgba(0,0,0,0.04); transition: all 0.2s ease;" onmouseover="this.style.borderColor='#f59e0b'; this.style.boxShadow='0 8px 25px rgba(245,158,11,0.12)';" onmouseout="this.style.borderColor='#e2e8f0'; this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)';">
-          <div>
-            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
-              <span style="background: #fef3c7; color: #b45309; border: 1px solid #fde68a; font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
-                🎯 Pillar 3 • Exam Readiness
-              </span>
-              <span style="color: #64748b; font-size: 0.76rem; font-weight: 600;">
-                10-Min Timer
-              </span>
-            </div>
+      </div>
 
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-              <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.25rem; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); flex-shrink: 0;">
-                <i class="fa-solid fa-bullseye" style="color: #fef08a;"></i>
-              </div>
-              <div>
-                <h2 style="margin: 0; font-size: 1.2rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #0f172a; line-height: 1.2;">
-                  10-Minute Knowledge Quiz
-                </h2>
-                <p style="margin: 2px 0 0 0; color: #64748b; font-size: 0.8rem;">
-                  Diagnostic readiness check
-                </p>
-              </div>
-            </div>
-
-            <p style="color: #475569; font-size: 0.86rem; line-height: 1.5; margin: 0 0 14px 0;">
-              Answer 20 sampled questions across the syllabus under timed exam conditions to test recall and identify topics to revise next.
-            </p>
-
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 10px; margin-bottom: 18px; display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
-              <div>
-                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">20</div>
-                <div style="font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Questions</div>
-              </div>
-              <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
-                <div style="font-weight: 800; font-size: 1.05rem; color: #0f172a;">10:00</div>
-                <div style="font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Countdown</div>
-              </div>
-              <div>
-                <div style="font-weight: 800; font-size: 1.05rem; color: #10b981;">Instant</div>
-                <div style="font-size: 0.68rem; color: #64748b; text-transform: uppercase; font-weight: 700;">Feedback</div>
-              </div>
-            </div>
+      <!-- MODE A: ACTIVE RECALL FLASHCARDS (IN-APP) -->
+      <div id="self-quiz-flashcards-view" style="display: block;">
+        
+        <!-- Flashcard Deck Header Bar -->
+        <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 10px 16px; margin-bottom: 16px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.02);">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span id="fc-progress-badge" style="background: #4f46e5; color: white; font-size: 0.76rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.5px;">
+              Card 1 of ${allCards.length}
+            </span>
+            <span id="fc-topic-chip" style="color: #334155; font-size: 0.82rem; font-weight: 700; max-width: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              ${allCards[0]?.topic || 'Core Knowledge'}
+            </span>
           </div>
 
-          <div>
-            <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000; font-weight: 800; font-size: 0.92rem; padding: 11px 16px; border-radius: 9px; border: none; cursor: pointer; width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); transition: all 0.15s ease;" onclick="window.launchUnitBenchmark('${unitId}')" onmouseover="this.style.filter='brightness(1.08)';" onmouseout="this.style.filter='brightness(1)';">
-              <i class="fa-solid fa-bullseye"></i>
-              <span>Start 10-Minute Quiz</span>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" onclick="window.selfQuizShuffle()" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 6px 12px; border-radius: 7px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" onmouseover="this.style.background='#f1f5f9';" onmouseout="this.style.background='#f8fafc';" title="Shuffle Deck">
+              <i class="fa-solid fa-shuffle"></i> <span>Shuffle</span>
             </button>
-
-            <div style="display: flex; align-items: center; justify-content: center; margin-top: 10px; padding-top: 8px; font-size: 0.78rem; color: #64748b;">
-              <span><i class="fa-solid fa-check-circle" style="color: #10b981; margin-right: 4px;"></i> Topic-by-topic score &amp; revision advice</span>
-            </div>
+            <button type="button" onclick="window.selfQuizReset()" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 6px 12px; border-radius: 7px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" onmouseover="this.style.background='#f1f5f9';" onmouseout="this.style.background='#f8fafc';" title="Reset to Start">
+              <i class="fa-solid fa-rotate-left"></i> <span>Reset</span>
+            </button>
+            <button id="btn-fc-whiteboard" type="button" onclick="window.selfQuizToggleWhiteboard()" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e293b; padding: 6px 12px; border-radius: 7px; font-size: 0.78rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" onmouseover="this.style.background='#f1f5f9';" onmouseout="this.style.background='#f8fafc';" title="Toggle Classroom Large Display Mode">
+              <i class="fa-solid fa-chalkboard-user"></i> <span>Smartboard Mode</span>
+            </button>
           </div>
         </div>
 
+        <!-- The 3D Flip Flashcard -->
+        <div id="self-quiz-card-wrapper" class="self-quiz-card-wrapper" onclick="window.selfQuizFlipCard()">
+          <div id="self-quiz-card-inner" class="self-quiz-card-inner">
+            
+            <!-- Front Face: Question / Term -->
+            <div class="self-quiz-face self-quiz-front">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                  <span style="background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; font-size: 0.72rem; font-weight: 800; padding: 3px 9px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    <i class="fa-regular fa-circle-question"></i> Question / Key Term
+                  </span>
+                  <span style="font-size: 0.74rem; font-weight: 600; color: #94a3b8;">
+                    Click to flip
+                  </span>
+                </div>
+                <div id="fc-front-text" class="self-quiz-front-text" style="font-size: 1.25rem; font-weight: 700; color: #0f172a; line-height: 1.5; margin-top: 8px;">
+                  ${allCards[0]?.q || 'No cards found for this topic.'}
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #f1f5f9; padding-top: 12px; margin-top: 14px;">
+                <span style="color: #64748b; font-size: 0.78rem;">
+                  <i class="fa-solid fa-arrows-rotate" style="color: #4f46e5; margin-right: 5px;"></i> Click card or press <strong>Space</strong> to reveal answer
+                </span>
+                <span id="fc-type-badge" style="font-size: 0.72rem; color: #94a3b8; font-weight: 600; text-transform: uppercase;">
+                  ${allCards[0]?.type || 'core'}
+                </span>
+              </div>
+            </div>
+
+            <!-- Back Face: Answer / Historical Facts -->
+            <div class="self-quiz-face self-quiz-back">
+              <div>
+                <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px;">
+                  <span style="background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; font-size: 0.72rem; font-weight: 800; padding: 3px 9px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+                    <i class="fa-regular fa-circle-check"></i> Verified Answer &amp; Key Facts
+                  </span>
+                  <span style="font-size: 0.74rem; font-weight: 600; color: #64748b;">
+                    Click to flip back
+                  </span>
+                </div>
+                <div id="fc-back-text" class="self-quiz-back-text" style="font-size: 1.1rem; font-weight: 500; color: #1e293b; line-height: 1.6; margin-top: 8px;">
+                  ${allCards[0]?.a || 'Select a different topic to view flashcards.'}
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; border-top: 1px solid #e0e7ff; padding-top: 12px; margin-top: 14px;">
+                <span style="color: #4338ca; font-size: 0.78rem; font-weight: 600;">
+                  <i class="fa-solid fa-check" style="margin-right: 5px;"></i> Core Historical Knowledge
+                </span>
+                <span style="color: #64748b; font-size: 0.78rem;">
+                  Rate your recall below ↓
+                </span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Flashcard Navigation & Assessment Controls -->
+        <div style="max-width: 740px; margin: 18px auto 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+          
+          <button id="fc-btn-prev" type="button" onclick="window.selfQuizPrevCard()" style="background: white; border: 1.5px solid #cbd5e1; color: #1e293b; padding: 9px 18px; border-radius: 9px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: all 0.15s ease; box-shadow: 0 2px 6px rgba(0,0,0,0.04);" onmouseover="this.style.background='#f8fafc';" onmouseout="this.style.background='white';">
+            <i class="fa-solid fa-arrow-left"></i> Previous
+          </button>
+
+          <!-- Self-Assessment Rating Buttons -->
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <button type="button" onclick="window.selfQuizMarkLearning()" style="background: #fef2f2; border: 1.5px solid #fecaca; color: #991b1b; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" onmouseover="this.style.background='#fee2e2';" onmouseout="this.style.background='#fef2f2';" title="Mark as needing review">
+              <i class="fa-solid fa-circle-xmark" style="color: #dc2626;"></i> <span>Still Learning</span>
+            </button>
+            <button type="button" onclick="window.selfQuizMarkMastered()" style="background: #ecfdf5; border: 1.5px solid #a7f3d0; color: #065f46; padding: 8px 14px; border-radius: 8px; font-weight: 700; font-size: 0.82rem; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;" onmouseover="this.style.background='#d1fae5';" onmouseout="this.style.background='#ecfdf5';" title="Mark as mastered">
+              <i class="fa-solid fa-circle-check" style="color: #059669;"></i> <span>Mastered</span>
+            </button>
+          </div>
+
+          <button id="fc-btn-next" type="button" onclick="window.selfQuizNextCard()" style="background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%); border: none; color: white; padding: 9px 20px; border-radius: 9px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; transition: all 0.15s ease; box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);" onmouseover="this.style.filter='brightness(1.1)';" onmouseout="this.style.filter='brightness(1)';">
+            Next <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        </div>
+
+        <!-- Session Confidence Stats & Keyboard Helpers -->
+        <div style="max-width: 740px; margin: 14px auto 0 auto; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.8rem; color: #334155; padding: 0 4px;">
+          <div>
+            Session: <span id="fc-mastered-count" style="color: #059669; font-weight: 800;">0</span> Mastered • <span id="fc-learning-count" style="color: #dc2626; font-weight: 800;">0</span> Review
+          </div>
+          <div style="color: #475569; font-weight: 500;">
+            <i class="fa-regular fa-keyboard" style="margin-right: 4px;"></i> <strong>Space</strong> Flip • <strong>← / →</strong> Next / Prev • <strong>1</strong> Review • <strong>2</strong> Mastered
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MODE B: 10-MINUTE KNOWLEDGE QUIZ (DIAGNOSTIC BENCHMARK) -->
+      <div id="self-quiz-quiz-view" style="display: none;">
+        <div style="background: white; border: 2px solid #e2e8f0; border-radius: 16px; padding: 32px 28px; box-shadow: 0 6px 24px rgba(0,0,0,0.04); text-align: center; max-width: 740px; margin: 0 auto;">
+          
+          <div style="width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: white; display: inline-flex; align-items: center; justify-content: center; font-size: 1.6rem; box-shadow: 0 6px 16px rgba(217, 119, 6, 0.3); margin-bottom: 14px;">
+            <i class="fa-solid fa-bullseye" style="color: #fef08a;"></i>
+          </div>
+
+          <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.4rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0;">
+            10-Minute Knowledge Diagnostic Quiz
+          </h2>
+          <p style="color: #64748b; font-size: 0.9rem; max-width: 540px; margin: 0 auto 22px auto; line-height: 1.5;">
+            20 sampled questions testing factual recall and chronological accuracy under timed exam conditions.
+          </p>
+
+          <!-- 3-Metric Spec Breakdown -->
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; padding: 16px 12px; margin-bottom: 24px; display: grid; grid-template-columns: 1fr 1fr 1fr; text-align: center;">
+            <div>
+              <div style="font-weight: 800; font-size: 1.25rem; color: #0f172a;">20</div>
+              <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700; margin-top: 2px;">Questions</div>
+            </div>
+            <div style="border-left: 1px solid #e2e8f0; border-right: 1px solid #e2e8f0;">
+              <div style="font-weight: 800; font-size: 1.25rem; color: #d97706;">10:00</div>
+              <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700; margin-top: 2px;">Countdown</div>
+            </div>
+            <div>
+              <div style="font-weight: 800; font-size: 1.25rem; color: #10b981;">Instant</div>
+              <div style="font-size: 0.72rem; color: #64748b; text-transform: uppercase; font-weight: 700; margin-top: 2px;">Topic Diagnosis</div>
+            </div>
+          </div>
+
+          <button id="btn-start-diagnostic" class="btn-pedagogy-primary" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #000000; font-weight: 800; font-size: 1rem; padding: 13px 28px; border-radius: 10px; border: none; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px; box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35); transition: all 0.15s ease;" onclick="window.launchUnitBenchmark('${unitId}')" onmouseover="this.style.filter='brightness(1.08)';" onmouseout="this.style.filter='brightness(1)';">
+            <i class="fa-solid fa-play"></i>
+            <span>Start 10-Minute Quiz Now</span>
+          </button>
+
+          <div style="margin-top: 14px; font-size: 0.8rem; color: #64748b;">
+            <i class="fa-solid fa-circle-check" style="color: #10b981; margin-right: 5px;"></i> Provides immediate topic-by-topic score analysis and targeted revision steps.
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtle Cross-Reference to Printable 24-Page Companion -->
+      <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 16px 20px; margin-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.03);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; background: #fee2e2; color: #dc2626; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0;">
+            <i class="fa-solid fa-file-pdf"></i>
+          </div>
+          <div>
+            <strong style="color: #0f172a; font-size: 0.92rem; display: block;">Prefer a physical printed booklet?</strong>
+            <span style="color: #64748b; font-size: 0.82rem;">The 24-page Master Knowledge Retrieval Companion with teacher mark schemes is in Workbooks &amp; Textbooks.</span>
+          </div>
+        </div>
+        <button type="button" onclick="window.switchView('booklet', '${unitId}')" style="background: #f8fafc; border: 1.5px solid #cbd5e1; color: #0f172a; padding: 8px 16px; border-radius: 8px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s ease;" onmouseover="this.style.background='#e2e8f0';" onmouseout="this.style.background='#f8fafc';">
+          <span>Go to Workbooks &amp; Textbooks</span> <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
 
       ${
         unitId === 'usa'
           ? `
-      <div style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(6, 182, 212, 0.08)); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 14px; padding: 18px 22px; margin-bottom: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
-        <div style="display: flex; align-items: center; gap: 14px;">
-          <div style="width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #f97316, #ea580c); color: white; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; box-shadow: 0 4px 14px rgba(249, 115, 22, 0.3);">
-            <i class="fa-solid fa-layer-group" style="color: #facc15;"></i>
-          </div>
+      <!-- USA Collector Cards & Arcade Games -->
+      <div style="background: linear-gradient(135deg, rgba(249, 115, 22, 0.08), rgba(6, 182, 212, 0.08)); border: 1px solid rgba(249, 115, 22, 0.3); border-radius: 12px; padding: 14px 18px; margin-top: 14px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <i class="fa-solid fa-gamepad" style="color: #f97316; font-size: 1.2rem;"></i>
           <div>
-            <h3 style="margin: 0 0 3px 0; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; font-weight: 800; color: #ffffff;">
-              Historical Hooligans &amp; Arcade Revision Games
-            </h3>
-            <p style="margin: 0; color: #cbd5e1; font-size: 0.82rem;">
-              16 3D satirical collector cards + Retro Falling Blocks arcade revision game.
-            </p>
+            <strong style="color: #ffffff; font-size: 0.88rem; display: block;">Bonus Revision Arcade</strong>
+            <span style="color: #cbd5e1; font-size: 0.78rem;">16 3D collector cards + Falling Blocks arcade revision game.</span>
           </div>
         </div>
-        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
-          <a href="/units/usa/trading_cards.html" target="_blank" class="btn-pedagogy-primary btn-pedagogy-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; background: linear-gradient(135deg, #f97316, #ea580c); color: #fff; font-weight: 700; border-radius: 8px; padding: 8px 14px; font-size: 0.85rem;">
+        <div style="display: flex; gap: 8px;">
+          <a href="/units/usa/trading_cards.html" target="_blank" style="text-decoration: none; background: linear-gradient(135deg, #f97316, #ea580c); color: #fff; font-weight: 700; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; display: inline-flex; align-items: center; gap: 5px;">
             <i class="fa-solid fa-id-card"></i> Trading Cards
           </a>
-          <a href="/units/usa/falling_blocks.html" target="_blank" class="btn btn-secondary btn-sm" style="text-decoration: none; display: inline-flex; align-items: center; gap: 7px; background: rgba(255, 255, 255, 0.08); color: #fff; font-weight: 700; border-radius: 8px; padding: 8px 14px; font-size: 0.85rem; border: 1px solid var(--border-glass);">
-            <i class="fa-solid fa-gamepad" style="color: #06b6d4;"></i> Falling Blocks Arcade
+          <a href="/units/usa/falling_blocks.html" target="_blank" style="text-decoration: none; background: rgba(255, 255, 255, 0.1); color: #fff; font-weight: 700; border-radius: 6px; padding: 6px 12px; font-size: 0.8rem; border: 1px solid var(--border-glass); display: inline-flex; align-items: center; gap: 5px;">
+            <i class="fa-solid fa-gamepad" style="color: #06b6d4;"></i> Arcade
           </a>
         </div>
       </div>
@@ -983,6 +1214,36 @@ export function renderInteractiveQuiz() {
   `;
 
   container.innerHTML = html;
+
+  // Bind Keyboard navigation
+  if (!window._selfQuizKeyHandlerAttached) {
+    window._selfQuizKeyHandlerAttached = true;
+    window.addEventListener('keydown', (e) => {
+      const arena = document.getElementById('self-quiz-arena');
+      if (!arena) return;
+
+      // Ignore if user is inside a select or input
+      const tag = e.target && e.target.tagName ? e.target.tagName.toLowerCase() : '';
+      if (tag === 'select' || tag === 'input' || tag === 'textarea') return;
+
+      if (e.code === 'Space' || e.key === ' ' || e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+        e.preventDefault();
+        window.selfQuizFlipCard();
+      } else if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        window.selfQuizNextCard();
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        window.selfQuizPrevCard();
+      } else if (e.key === '1') {
+        e.preventDefault();
+        window.selfQuizMarkLearning();
+      } else if (e.key === '2') {
+        e.preventDefault();
+        window.selfQuizMarkMastered();
+      }
+    });
+  }
 
   // Auto-launch Diagnostic Benchmark if requested via URL param (e.g. from targeted QR code)
   const urlParams = new URLSearchParams(window.location.search);
@@ -1001,55 +1262,193 @@ export function renderInteractiveQuiz() {
   }
 }
 
-window.handleMobileRecallDeckChange = function (unitId, value) {
-  let wbId = value;
-  let part = null;
-  if (value && value.includes(':')) {
-    const parts = value.split(':');
-    wbId = parts[0];
-    part = parts[1];
+// ----------------------------------------------------
+// Self-Quiz Interactive Arena Event Handlers
+// ----------------------------------------------------
+
+window.selfQuizUpdateCardDisplay = function () {
+  const s = window._selfQuizState;
+  if (!s) return;
+
+  const cardInner = document.getElementById('self-quiz-card-inner');
+  const frontText = document.getElementById('fc-front-text');
+  const backText = document.getElementById('fc-back-text');
+  const progressBadge = document.getElementById('fc-progress-badge');
+  const topicChip = document.getElementById('fc-topic-chip');
+  const typeBadge = document.getElementById('fc-type-badge');
+  const prevBtn = document.getElementById('fc-btn-prev');
+  const nextBtn = document.getElementById('fc-btn-next');
+
+  // Ensure card is flipped to front on card change
+  if (cardInner) {
+    cardInner.classList.remove('is-flipped');
+  }
+  s.isFlipped = false;
+
+  if (!s.cards || s.cards.length === 0) {
+    if (frontText) frontText.textContent = 'No cards available for the selected topic.';
+    if (backText) backText.textContent = 'Please choose another topic or select Complete Course.';
+    if (progressBadge) progressBadge.textContent = 'Card 0 of 0';
+    if (topicChip) topicChip.textContent = 'No cards';
+    return;
   }
 
-  const mobileBtn = document.getElementById('btn-start-flashcards-mobile');
-  const partParam = part && part !== 'all' ? `&part=${part}` : '';
-  if (mobileBtn) {
-    mobileBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode${partParam}`;
-  }
+  const current = s.cards[s.currentIndex];
+  if (frontText && current) frontText.textContent = current.q;
+  if (backText && current) backText.textContent = current.a;
+  if (progressBadge) progressBadge.textContent = `Card ${s.currentIndex + 1} of ${s.cards.length}`;
+  if (topicChip && current) topicChip.textContent = current.topic || 'Core Knowledge';
+  if (typeBadge && current) typeBadge.textContent = current.type || 'core';
 
-  // Sync with desktop selector if present
-  const desktopSelect = document.getElementById('select-recall-deck');
-  if (desktopSelect) {
-    desktopSelect.value = value;
-    window.handleRecallDeckChange(unitId, value);
+  if (prevBtn) prevBtn.disabled = s.currentIndex === 0;
+  if (nextBtn) {
+    nextBtn.innerHTML =
+      s.currentIndex === s.cards.length - 1
+        ? 'Restart <i class="fa-solid fa-rotate-left"></i>'
+        : 'Next <i class="fa-solid fa-arrow-right"></i>';
+  }
+};
+
+window.selfQuizFlipCard = function () {
+  const s = window._selfQuizState;
+  if (!s) return;
+  const cardInner = document.getElementById('self-quiz-card-inner');
+  if (!cardInner) return;
+  s.isFlipped = !s.isFlipped;
+  if (s.isFlipped) {
+    cardInner.classList.add('is-flipped');
+  } else {
+    cardInner.classList.remove('is-flipped');
+  }
+};
+
+window.selfQuizNextCard = function () {
+  const s = window._selfQuizState;
+  if (!s || !s.cards || s.cards.length === 0) return;
+  if (s.currentIndex >= s.cards.length - 1) {
+    s.currentIndex = 0;
+  } else {
+    s.currentIndex++;
+  }
+  window.selfQuizUpdateCardDisplay();
+};
+
+window.selfQuizPrevCard = function () {
+  const s = window._selfQuizState;
+  if (!s || !s.cards || s.cards.length === 0) return;
+  if (s.currentIndex > 0) {
+    s.currentIndex--;
+    window.selfQuizUpdateCardDisplay();
+  }
+};
+
+window.selfQuizShuffle = function () {
+  const s = window._selfQuizState;
+  if (!s || !s.cards || s.cards.length === 0) return;
+  const arr = [...s.cards];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  s.cards = arr;
+  s.currentIndex = 0;
+  window.selfQuizUpdateCardDisplay();
+};
+
+window.selfQuizReset = function () {
+  const s = window._selfQuizState;
+  if (!s) return;
+  s.currentIndex = 0;
+  window.selfQuizUpdateCardDisplay();
+};
+
+window.selfQuizMarkMastered = function () {
+  const s = window._selfQuizState;
+  if (!s || !s.cards || s.cards.length === 0) return;
+  s.masteredSet.add(s.currentIndex);
+  s.learningSet.delete(s.currentIndex);
+  const countEl = document.getElementById('fc-mastered-count');
+  if (countEl) countEl.textContent = s.masteredSet.size;
+  window.selfQuizNextCard();
+};
+
+window.selfQuizMarkLearning = function () {
+  const s = window._selfQuizState;
+  if (!s || !s.cards || s.cards.length === 0) return;
+  s.learningSet.add(s.currentIndex);
+  s.masteredSet.delete(s.currentIndex);
+  const countEl = document.getElementById('fc-learning-count');
+  if (countEl) countEl.textContent = s.learningSet.size;
+  window.selfQuizNextCard();
+};
+
+window.selfQuizSetTopic = function (topicId) {
+  const s = window._selfQuizState;
+  if (!s) return;
+  s.topicFilter = topicId;
+  s.cards = extractUnitSelfQuizCards(s.data, topicId);
+  s.currentIndex = 0;
+  s.masteredSet.clear();
+  s.learningSet.clear();
+
+  const countEl = document.getElementById('deck-card-count');
+  if (countEl) countEl.textContent = s.cards.length;
+
+  const mCountEl = document.getElementById('fc-mastered-count');
+  if (mCountEl) mCountEl.textContent = '0';
+  const lCountEl = document.getElementById('fc-learning-count');
+  if (lCountEl) lCountEl.textContent = '0';
+
+  window.selfQuizUpdateCardDisplay();
+};
+
+window.selfQuizSetMode = function (mode) {
+  const s = window._selfQuizState;
+  if (!s) return;
+  s.activeMode = mode;
+
+  const flashcardBtn = document.getElementById('btn-mode-flashcards');
+  const quizBtn = document.getElementById('btn-mode-quiz');
+  const flashcardsView = document.getElementById('self-quiz-flashcards-view');
+  const quizView = document.getElementById('self-quiz-quiz-view');
+
+  if (mode === 'flashcards') {
+    if (flashcardBtn) flashcardBtn.classList.add('active');
+    if (quizBtn) quizBtn.classList.remove('active');
+    if (flashcardsView) flashcardsView.style.display = 'block';
+    if (quizView) quizView.style.display = 'none';
+  } else {
+    if (flashcardBtn) flashcardBtn.classList.remove('active');
+    if (quizBtn) quizBtn.classList.add('active');
+    if (flashcardsView) flashcardsView.style.display = 'none';
+    if (quizView) quizView.style.display = 'block';
+  }
+};
+
+window.selfQuizToggleWhiteboard = function () {
+  const s = window._selfQuizState;
+  if (!s) return;
+  s.isWhiteboard = !s.isWhiteboard;
+  const arena = document.getElementById('self-quiz-arena');
+  const btn = document.getElementById('btn-fc-whiteboard');
+  if (arena) {
+    if (s.isWhiteboard) {
+      arena.classList.add('whiteboard-mode');
+      if (btn) btn.innerHTML = '<i class="fa-solid fa-compress"></i> <span>Normal View</span>';
+    } else {
+      arena.classList.remove('whiteboard-mode');
+      if (btn)
+        btn.innerHTML = '<i class="fa-solid fa-chalkboard-user"></i> <span>Smartboard Mode</span>';
+    }
   }
 };
 
 window.handleRecallDeckChange = function (unitId, value) {
-  let wbId = value;
-  let part = null;
-  if (value && value.includes(':')) {
-    const parts = value.split(':');
-    wbId = parts[0];
-    part = parts[1];
-  }
+  window.selfQuizSetTopic(value);
+};
 
-  const flashcardBtn = document.getElementById('btn-start-flashcards');
-  const wbBtn = document.getElementById('btn-wb-mode');
-  const keyBtn = document.getElementById('btn-key-mode');
-
-  const partParam = part && part !== 'all' ? `&part=${part}` : '';
-
-  if (flashcardBtn)
-    flashcardBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode${partParam}`;
-  if (wbBtn)
-    wbBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#practice-mode${partParam}&teacher=true`;
-  if (keyBtn) {
-    if (part && part !== 'all') {
-      keyBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#topic-part-${part}`;
-    } else {
-      keyBtn.href = `/units/${unitId}/mastery_pack_${wbId}.html#the-vault`;
-    }
-  }
+window.handleMobileRecallDeckChange = function (unitId, value) {
+  window.selfQuizSetTopic(value);
 };
 
 window.toggleBookmarkQuestion = function (qid) {
