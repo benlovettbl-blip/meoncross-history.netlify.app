@@ -6270,37 +6270,91 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   transition: transform 0.2s ease;
 }
 
-/* Domino Bridges (Desktop Flow Connectors) */
-.cme-domino-bridge {
+/* Domino Bridges & Chronological Pipeline Connectors */
+.cme-domino-bridge,
+.cme-domino-pipeline-node {
   display: none;
 }
 @media (min-width: 993px) {
-  .cme-domino-bridge {
+  .cme-domino-bridge,
+  .cme-domino-pipeline-node {
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
-    right: -17px;
-    top: 32px;
-    width: 20px;
-    height: 20px;
+    right: -18px;
+    top: 14px;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     background: #ffffff;
-    border: 1.5px solid #0284c7;
+    border: 2px solid #0284c7;
     color: #0284c7;
     font-size: 0.62rem;
     font-weight: 800;
-    box-shadow: 0 1px 3px rgba(2, 132, 199, 0.2);
+    box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);
     z-index: 10;
     cursor: default;
     transition: all 0.2s ease;
   }
-  .cme-spine-card:hover .cme-domino-bridge {
+  .cme-spine-card:hover .cme-domino-bridge,
+  .cme-spine-card:hover .cme-domino-pipeline-node {
     background: #0284c7;
     color: #ffffff;
-    transform: scale(1.18);
-    box-shadow: 0 3px 8px rgba(2, 132, 199, 0.35);
+    transform: scale(1.15);
+    box-shadow: 0 3px 8px rgba(2, 132, 199, 0.4);
   }
+}
+
+/* Card Hover & Shadow Polish */
+.cme-spine-card {
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+.cme-spine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.08) !important;
+  border-color: #93c5fd !important;
+}
+
+/* Equalized Baseline Narrative Zone */
+.cme-spine-narrative-zone {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 250px;
+}
+
+/* Elevated Domino Spark Footer */
+.cme-domino-spark-footer {
+  border-top: 1.5px solid #bfdbfe;
+  background: #eff6ff;
+  border-radius: 0 0 7px 7px;
+  padding: 8px 10px;
+  font-size: 0.69rem;
+  line-height: 1.35;
+  min-height: 98px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  box-sizing: border-box;
+  transition:
+    background 0.18s ease,
+    border-color 0.18s ease;
+}
+.cme-domino-spark-footer.cme-spark-climax {
+  border-top-color: #a7f3d0;
+  background: #ecfdf5;
+}
+.cme-spine-card:hover .cme-domino-spark-footer:not(.cme-spark-climax) {
+  background: #dbeafe;
+  border-top-color: #93c5fd;
+}
+.cme-spine-card:hover .cme-domino-spark-footer.cme-spark-climax {
+  background: #d1fae5;
+  border-top-color: #6ee7b7;
 }
 
 /* Self-Quiz / Active Recall State */

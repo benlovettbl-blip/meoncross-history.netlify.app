@@ -4292,24 +4292,28 @@ export function renderLesson(lesson) {
               </button>
             </div>
           </div>
-          <div class="cme-chronology-spine-grid" style="padding: 14px 14px 12px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 14px; background: #ffffff; box-sizing: border-box;">
+          <div class="cme-chronology-spine-grid" style="padding: 16px 14px 14px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 14px; background: #ffffff; box-sizing: border-box;">
             ${spineItems
               .map((item, idx) => {
                 const isLast = idx === spineItems.length - 1;
                 return `
-              <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 3.5px solid ${isLast ? '#10b981' : '#0284c7'}; border-radius: 6px; padding: 10px 9px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative;">
+              <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 4px solid ${isLast ? '#10b981' : '#0284c7'}; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative; overflow: visible;">
                 ${
                   !isLast
                     ? `
-                <div class="cme-domino-bridge" title="Stage ${item.step} triggers Stage ${item.step + 1}${item.connective ? ': ' + item.connective : ''}">
-                  <span class="cme-bridge-arrow">➔</span>
+                <div class="cme-domino-pipeline-node" title="Stage ${item.step} triggers Stage ${item.step + 1}${item.connective ? ': ' + item.connective : ''}">
+                  <i class="fa-solid fa-arrow-right"></i>
                 </div>`
                     : ''
                 }
-                <div>
+                
+                <!-- Equalized Baseline Narrative Zone -->
+                <div class="cme-spine-narrative-zone" style="padding: 10px 10px 8px 10px; display: flex; flex-direction: column; box-sizing: border-box;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
-                    <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 1.5px 5px; border-radius: 3px; letter-spacing: 0.5px; white-space: nowrap;">STAGE ${item.step}</span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
+                    <span style="background: ${isLast ? '#047857' : '#0f172a'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
+                      STAGE ${item.step}
+                    </span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 800; color: ${isLast ? '#059669' : '#0284c7'}; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
                   </div>
 
                   ${
@@ -4321,29 +4325,32 @@ export function renderLesson(lesson) {
                       : ''
                   }
 
-                  <h5 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.88rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0; line-height: 1.25; min-height: 2.2em;">
+                  <h5 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.88rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0; line-height: 1.25;">
                     ${item.title}
                   </h5>
 
-                  <div class="cme-spine-desc" style="font-size: 0.74rem; color: #334155; line-height: 1.35; margin-bottom: 8px;">
+                  <div class="cme-spine-desc" style="font-size: 0.74rem; color: #334155; line-height: 1.38; margin-bottom: 8px;">
                     ${item.desc}
                   </div>
                 </div>
 
+                <!-- Causal Analysis Drawer (Starts at exact same baseline across all cards) -->
                 ${
                   item.because || item.therefore
                     ? `
-                <details class="cme-causal-drawer" style="margin-top: auto; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
-                  <summary style="font-size: 0.68rem; font-weight: 700; color: #0369a1; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none;">
+                <details class="cme-causal-drawer" style="border-top: 1px dashed #cbd5e1; padding: 6px 8px 8px 8px; background: #fafafa; border-radius: 0;">
+                  <summary style="font-size: 0.68rem; font-weight: 700; color: #0369a1; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; padding: 2px 2px;">
                     <span><i class="fa-solid fa-code-branch" style="font-size: 0.62rem;"></i> Causal Analysis</span>
                     <span class="drawer-arrow" style="font-size: 0.65rem; color: #64748b;">▾</span>
                   </summary>
-                  <div style="margin-top: 6px; padding: 6px 7px; background: #f8fafc; border-radius: 4px; border: 1px solid #e2e8f0; font-size: 0.71rem; line-height: 1.35;">
+                  <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 6px;">
                     ${
                       item.because
                         ? `
-                    <div class="cme-drawer-because" style="margin-bottom: 5px;">
-                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">Motive:</strong>
+                    <div class="cme-drawer-because" style="background: #fffbeb; border: 1px solid #fef08a; border-radius: 4px; padding: 6px 8px; font-size: 0.70rem; line-height: 1.35;">
+                      <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">
+                        <i class="fa-solid fa-lightbulb"></i> Motive:
+                      </strong>
                       <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
                         <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Motive</span>
                         <span class="cme-quiz-content" style="color: #713f12;">${item.because}</span>
@@ -4354,8 +4361,10 @@ export function renderLesson(lesson) {
                     ${
                       item.therefore
                         ? `
-                    <div class="cme-drawer-therefore" style="margin-bottom: 4px;">
-                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">Consequence:</strong>
+                    <div class="cme-drawer-therefore" style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 4px; padding: 6px 8px; font-size: 0.70rem; line-height: 1.35;">
+                      <strong style="color: #166534; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">
+                        <i class="fa-solid fa-arrow-trend-up"></i> Consequence:
+                      </strong>
                       <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
                         <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Result</span>
                         <span class="cme-quiz-content" style="color: #14532d;">${item.therefore}</span>
@@ -4363,16 +4372,24 @@ export function renderLesson(lesson) {
                     </div>`
                         : ''
                     }
-                    ${
-                      !isLast && item.connective
-                        ? `
-                    <div style="font-size: 0.65rem; font-weight: 700; color: #1e40af; border-top: 1px dotted #cbd5e1; padding-top: 3px; margin-top: 4px;">
-                      &darr; ${item.connective}
-                    </div>`
-                        : ''
-                    }
                   </div>
                 </details>`
+                    : ''
+                }
+
+                <!-- Elevated Causal Domino Spark Footer -->
+                ${
+                  item.connective
+                    ? `
+                <div class="cme-domino-spark-footer ${isLast ? 'cme-spark-climax' : ''}" style="padding: 7px 9px; background: ${isLast ? '#ecfdf5' : '#eff6ff'}; border-top: 1.5px solid ${isLast ? '#a7f3d0' : '#bfdbfe'}; border-radius: 0 0 7px 7px; font-size: 0.68rem; line-height: 1.35; margin-top: auto;">
+                  <div style="font-weight: 800; text-transform: uppercase; font-size: 0.60rem; letter-spacing: 0.5px; color: ${isLast ? '#047857' : '#1d4ed8'}; margin-bottom: 2px; display: flex; align-items: center; gap: 4px;">
+                    <i class="fa-solid ${isLast ? 'fa-flag-checkered' : 'fa-bolt'}"></i>
+                    <span>${isLast ? 'Causal Climax & Spec Impact' : `Causal Domino Spark &rarr; Stage ${item.step + 1}`}</span>
+                  </div>
+                  <div style="color: ${isLast ? '#065f46' : '#1e40af'}; font-weight: 600;">
+                    ${item.connective}
+                  </div>
+                </div>`
                     : ''
                 }
               </div>
