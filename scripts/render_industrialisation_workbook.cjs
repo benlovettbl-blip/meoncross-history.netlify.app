@@ -63,7 +63,11 @@ const enquiryConfigs = [
         date: '1750–1770',
         questionHeading:
           'Why was Britain’s early iron industry crippled by charcoal and timber shortages?',
-        bullets: ['Charcoal Shortage', 'Brittle Pig Iron', 'Baltic Orgrounds Import'],
+        bullets: [
+          'Cutting Down the Forests',
+          'Brittle and Cracking Pots',
+          'Importing Swedish Bars',
+        ],
         focusClue:
           'Why was Britain forced to import expensive wrought iron from Sweden and Russia for Royal Navy warships?',
       },
@@ -72,7 +76,7 @@ const enquiryConfigs = [
         date: '1769–1781',
         questionHeading:
           'How did James Watt’s rotary steam engine revolutionize heavy industrial power?',
-        bullets: ['Separate Condenser', 'Rotary Motion', 'Liberated from Rivers'],
+        bullets: ['Burning Coal for Steam', 'Turning Wheels Around', 'Factories Away from Rivers'],
         focusClue:
           'How did Watt’s steam engine enable continuous, heavy mechanical manufacturing far from seasonal river valleys?',
       },
@@ -81,7 +85,7 @@ const enquiryConfigs = [
         date: '1775–1784',
         questionHeading:
           'How did Henry Cort’s puddling furnace at Funtley chemically refine molten iron?',
-        bullets: ['Funtley on River Meon', 'Reverberatory Furnace', 'Stirred with Iron Rods'],
+        bullets: ['Hot Roasting Oven', 'Stirred with Long Rods', 'Poisonous Sulphur Burned Off'],
         focusClue:
           'How did keeping pig iron separate from burning coal prevent sulfur contamination and burn away brittle impurities?',
       },
@@ -90,7 +94,11 @@ const enquiryConfigs = [
         date: '1783–1784',
         questionHeading:
           'Why were Cort’s patented grooved rollers fifteen times faster than traditional trip hammers?',
-        bullets: ['Grooved Iron Rollers', '15x Faster than Hammers', 'Standardised Naval Bars'],
+        bullets: [
+          'Heavy Spinning Cylinders',
+          'Squeezing Out Impurities',
+          'Uniform Tough Metal Bars',
+        ],
         focusClue:
           'Why did squeezing spongy iron blooms between heavy grooved rollers produce tougher, standardized naval iron?',
       },
@@ -99,7 +107,11 @@ const enquiryConfigs = [
         date: '1787',
         questionHeading:
           'How did the Portsmouth Dockyard naval trials confirm Cort’s triumph for the Royal Navy?',
-        bullets: ['Portsmouth Navy Board', 'Anchors & Mast Hoops', 'Naval Self-Sufficiency'],
+        bullets: [
+          'Blacksmith Anvil Tests',
+          'Unbreakable Giant Anchors',
+          'British Ships Built at Home',
+        ],
         focusClue:
           'Why did Admiralty master smiths declare Funtley iron superior to the finest Swedish imports for His Majesty’s Fleet?',
       },
@@ -116,7 +128,7 @@ const enquiryConfigs = [
         'The innovative combination of the puddling furnace and grooved rollers',
       ],
       connectives:
-        'A primary reason Henry Cort achieved his breakthrough at Funtley was... &bull; This was vital for the Royal Navy because... &bull; Furthermore, his technological innovation combined... &bull; Consequently, Funtley iron replaced expensive foreign imports because...',
+        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
       wordBank:
         'Henry Cort &bull; Funtley Ironworks &bull; River Meon &bull; puddling furnace &bull; grooved rollers &bull; wrought iron &bull; Portsmouth Dockyard &bull; Royal Navy &bull; naval self-sufficiency',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
@@ -142,7 +154,7 @@ const enquiryConfigs = [
         date: '1780–1820',
         questionHeading:
           'How did the factory clock and machine discipline destroy traditional working rhythms?',
-        bullets: ['Factory Bell & Clock', 'Fines for Lateness', 'Loom Accidents & Dust'],
+        bullets: ['Fourteen-Hour Work Days', 'Wages Taken for Lateness', 'Choking Fibres and Dust'],
         focusClue:
           'Why did industrial mill owners enforce rigid 14-hour working shifts under constant threat of wage deductions?',
       },
@@ -151,7 +163,11 @@ const enquiryConfigs = [
         date: '1832',
         questionHeading:
           'What shocking abuses of child labour were exposed by the parliamentary Sadler Committee?',
-        bullets: ['Michael Sadler MP', 'Matthew Crabtree Testimony', 'Scavengers & Piecers'],
+        bullets: [
+          'Crawling Under Fast Looms',
+          'Beaten with Heavy Straps',
+          'Too Tired to Eat Supper',
+        ],
         focusClue:
           'How did 22-year-old former child worker Matthew Crabtree expose beatings, stunted growth, and exhaustion in Yorkshire mills?',
       },
@@ -160,7 +176,7 @@ const enquiryConfigs = [
         date: '1800–1840',
         questionHeading:
           'How did explosive urban growth create deadly back-to-back slums and cellar dwellings?',
-        bullets: ['Back-to-Back Terraces', 'Cesspools & Dungheaps', 'Overcrowded Cellars'],
+        bullets: ['One Privy for Hundreds', 'Piles of Human Waste', 'Damp Flooded Basements'],
         focusClue:
           'Why did cities like Manchester and Leeds grow tenfold without clean water pipes, drainage, or sewage disposal?',
       },
@@ -169,7 +185,11 @@ const enquiryConfigs = [
         date: '1831–1842',
         questionHeading:
           'Why did devastating cholera epidemics shatter the laissez-faire belief in minimal government?',
-        bullets: ['King Cholera Strikes', 'Edwin Chadwick 1842', 'Miasma vs Contagion'],
+        bullets: [
+          'Sudden Blue Skin Sickness',
+          'Dying in Twelve Hours',
+          'Chadwick Demands Clean Water',
+        ],
         focusClue:
           'How did Chadwick’s 1842 Sanitary Report prove that filth in working-class slums generated disease that threatened all classes?',
       },
@@ -179,9 +199,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did the 1858 Great Stink force Parliament to construct modern underground sewers?',
         bullets: [
-          'The Great Stink 1858',
-          'Thames Stench in Commons',
-          'Bazalgette Interceptor Sewers',
+          'Boiling Heat on the River',
+          'Soaked Curtains in Parliament',
+          'Brick Tunnels Under London',
         ],
         focusClue:
           'Why did Victorian MPs ignore cholera for thirty years until the suffocating stench of the River Thames invaded the Commons chamber?',
@@ -197,7 +217,7 @@ const enquiryConfigs = [
         question:
           'Describe two features of working conditions for child labourers in Victorian textile mills. [4 marks]',
         stems:
-          'Feature 1: One key feature was... &bull; Detail: Specifically, child piecers were forced to... &bull; Feature 2: A second key feature was... &bull; Detail: This caused severe injury because...',
+          'Feature 1: One key feature was... &bull; Detail: Specifically, this involved... &bull; Feature 2: A second key feature was... &bull; Detail: For example, this meant that...',
       },
       partB: {
         tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
@@ -208,7 +228,7 @@ const enquiryConfigs = [
         stems:
           'One consequence was that... &bull; Specifically, this meant that... &bull; This affected public health because... &bull; As a result, waterborne disease...',
         connectives:
-          'A significant consequence was... &bull; For instance, Parliament immediately passed legislation to... &bull; This directly led to... &bull; Consequently, the impact on sanitation was...',
+          'A significant consequence was... &bull; For instance, this meant that... &bull; This directly led to... &bull; Consequently, the overall outcome was...',
         wordBank:
           'Great Stink (1858) &bull; River Thames &bull; Joseph Bazalgette &bull; interceptor sewers &bull; cholera &bull; Edwin Chadwick &bull; public health',
       },
@@ -234,7 +254,11 @@ const enquiryConfigs = [
         step: 1,
         date: '1819',
         questionHeading: 'Why did the Peterloo Massacre ignite widespread working-class outrage?',
-        bullets: ['St Peter’s Field', 'Sabres Drawn on Crowd', '18 Dead & 600 Injured'],
+        bullets: [
+          'Peaceful Sunday Crowd',
+          'Cavalry Sabres Slashing',
+          'Protesters Trampled by Horses',
+        ],
         focusClue:
           'Why did magistrates order cavalry to charge a peaceful meeting of 60,000 cotton workers calling for parliamentary reform?',
       },
@@ -244,9 +268,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did the "Captain Swing" riots sweep through Hampshire and the Meon Valley?',
         bullets: [
-          'Threshing Machines Smashed',
-          'Selborne & Headley Workhouses',
-          'Threatening "Swing" Letters',
+          'Winter Hunger and No Work',
+          'Sledgehammers on Iron Gears',
+          'Hayricks Burned at Night',
         ],
         focusClue:
           'Why did starving agricultural labourers target threshing machines that stole their winter wages across Hampshire villages?',
@@ -256,7 +280,11 @@ const enquiryConfigs = [
         date: 'Dec 1830',
         questionHeading:
           'How brutally did the Winchester Special Assizes punish Hampshire machine-breakers?',
-        bullets: ['Special Commission Court', '101 Transported to Australia', 'Henry Cook Hanged'],
+        bullets: [
+          'Prisoners Led into Great Hall',
+          'Chained on Australia Ships',
+          'Young Ploughboy Hanged',
+        ],
         focusClue:
           'Why did the British state impose draconian death and transportation sentences on rural workers at Winchester Great Hall?',
       },
@@ -265,7 +293,11 @@ const enquiryConfigs = [
         date: '1832',
         questionHeading:
           'Why was the 1832 Great Reform Act condemned as a betrayal of working men?',
-        bullets: ['Rotten Boroughs Cut', 'Middle Class Gets Vote', 'Working Class Excluded'],
+        bullets: [
+          'Empty Towns Lose Seats',
+          'Only Rich Renters Vote',
+          'Working People Left Empty-Handed',
+        ],
         focusClue:
           'Why did industrial workers who fought for the Reform Bill find themselves completely disenfranchised by property qualifications?',
       },
@@ -274,7 +306,11 @@ const enquiryConfigs = [
         date: '1838–1848',
         questionHeading:
           'How did the Chartist movement mobilize millions to demand universal democracy?',
-        bullets: ['Six Points of Charter', 'Mass Monster Petitions', 'Kennington Common 1848'],
+        bullets: [
+          'Secret Paper Ballot Box',
+          'Wagonloads of Citizen Names',
+          'Soldiers Guarding Parliament',
+        ],
         focusClue:
           'How did William Lovett and Feargus O’Connor unite British workers around secret ballots, equal constituencies, and salaries for MPs?',
       },
@@ -293,7 +329,7 @@ const enquiryConfigs = [
           'The 1832 Great Reform Act and exclusion of working men',
         ],
         connectives:
-          'The sequence began in 1819 when... &bull; This led to growing agrarian unrest because... &bull; A decisive turning point occurred when... &bull; This directly caused... &bull; Consequently, this culminated in...',
+          'The sequence began when... &bull; This led to increasing conflict because... &bull; A decisive turning point occurred when... &bull; This directly caused... &bull; Consequently, this culminated in...',
         wordBank:
           'Peterloo (1819) &bull; Hampshire Swing Riots (1830) &bull; threshing machines &bull; Winchester Assizes &bull; 1832 Great Reform Act &bull; People’s Charter (1838) &bull; William Lovett',
       },
@@ -303,7 +339,7 @@ const enquiryConfigs = [
         question:
           'Explain the importance of the Hampshire Swing Riots (1830) and the Chartist movement for the growth of working-class democracy in 19th-century Britain. [8 marks]',
         connectives:
-          'These movements were of vital importance because... &bull; Prior to 1830, working-class grievances had been... &bull; As a result of agitation, political awareness was... &bull; Consequently, the long-term impact on democracy was...',
+          'This was of vital importance because... &bull; Prior to this development, the situation had been... &bull; As a result of this action, the response was... &bull; Consequently, the long-term impact was...',
         wordBank:
           'Captain Swing &bull; Meon Valley &bull; machine-breaking &bull; Winchester Assizes &bull; universal male suffrage &bull; secret ballot &bull; working-class solidarity',
       },
@@ -331,9 +367,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did the East India Company transform from commercial merchants into imperial rulers?',
         bullets: [
-          'Private Company Army',
-          'Doctrine of Lapse Annexations',
-          'Heavy Land Tax Demands',
+          'Armies Paid by Merchants',
+          'Stealing Land from Princes',
+          'Demanding Crushing Farm Taxes',
         ],
         focusClue:
           'How did corporate rule through 200,000 Indian sepoys subjugate a subcontinent of 200 million people?',
@@ -342,7 +378,11 @@ const enquiryConfigs = [
         step: 2,
         date: 'May 1857',
         questionHeading: 'Why did greased cartridges spark the spontaneous rebellion at Meerut?',
-        bullets: ['Enfield Rifle Cartridges', 'Cow & Pig Fat Rumour', 'Meerut Sepoys Mutiny'],
+        bullets: [
+          'Biting Greased Paper Tubes',
+          'Sacred Religion Insulted',
+          'Indian Soldiers Break Ranks',
+        ],
         focusClue:
           'Why did Indian soldiers believe the new rifle cartridges were a deliberate British plot to destroy their Hindu and Muslim faiths?',
       },
@@ -352,9 +392,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did the rebellion spread and how did Rani of Jhansi resist British forces?',
         bullets: [
-          'Siege of Delhi & Kanpur',
-          'Rani Lakshmibai of Jhansi',
-          'Heroic Rebel Resistance',
+          'Fighting Across North India',
+          'Warrior Queen on Horseback',
+          'Swords Drawn to the Death',
         ],
         focusClue:
           'Why did the 29-year-old Rani of Jhansi ride into battle against British forces after her kingdom was illegally annexed?',
@@ -365,9 +405,9 @@ const enquiryConfigs = [
         questionHeading:
           'Why did the rebellion force Parliament to dismantle the East India Company and declare the British Raj?',
         bullets: [
-          'Company Rule Abolished',
-          'Queen Victoria Proclamation',
-          'Direct Crown Government',
+          'Greedy Company Shut Down',
+          'Royal Promises of Fair Laws',
+          'British Viceroy Takes Power',
         ],
         focusClue:
           'Why did the British state strip the company of power and promise religious neutrality under direct royal rule?',
@@ -378,9 +418,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did HMS Warrior at Portsmouth Dockyard demonstrate unbeatable British naval dominance?',
         bullets: [
-          'Iron-Hulled Armour (4.5 in)',
-          'Steam Engine & Screws',
-          'Portsmouth Historic Dockyard',
+          'Four-Inch Iron Armour Plates',
+          'Fast Steam-Powered Propeller',
+          'Enemy Fleets Dare Not Attack',
         ],
         focusClue:
           'How did Henry Cort’s wrought iron metallurgy enable Britain to build an invincible warship that secured global empire?',
@@ -430,7 +470,11 @@ const enquiryConfigs = [
         date: '1851',
         questionHeading:
           'How did the 1851 Great Exhibition proclaim Britain "Workshop of the World"?',
-        bullets: ['Crystal Palace Hyde Park', '6 Million Visitors', 'Triumph of Steam & Steel'],
+        bullets: [
+          'Giant Glass-and-Iron Hall',
+          'Six Million Staring Visitors',
+          'Clattering Locomotives Inside',
+        ],
         focusClue:
           'How did Joseph Paxton’s revolutionary glass-and-iron palace showcase British technological supremacy to the globe?',
       },
@@ -439,7 +483,11 @@ const enquiryConfigs = [
         date: '1840–1880',
         questionHeading:
           'How did the railway boom transform British commerce, landscape, and society?',
-        bullets: ['Brunel & Stephenson', 'Standard Time & Fresh Food', 'Commuter Suburbs'],
+        bullets: [
+          'Iron Lines Across Fields',
+          'Fresh Milk Rushed to Cities',
+          'Clocks Set to London Time',
+        ],
         focusClue:
           'How did 20,000 miles of iron tracks knit Britain into a single, high-speed national economy?',
       },
@@ -448,7 +496,11 @@ const enquiryConfigs = [
         date: '1860–1890',
         questionHeading:
           'How did the rise of the Victorian middle class reshape wealth and social power?',
-        bullets: ['Factory Owners & Bankers', 'Suburban Villas & Servants', 'Consumer Capitalism'],
+        bullets: [
+          'Wealthy Mill and Mine Owners',
+          'Large Homes with Servants',
+          'Ruling Politics and Trade',
+        ],
         focusClue:
           'Why did industrialists and merchants displace the landed aristocracy as the true rulers of Victorian Britain?',
       },
@@ -458,9 +510,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did Charles Booth’s poverty maps expose persistent deprivation in Victorian London?',
         bullets: [
-          'Life & Labour of People',
-          '30% Living in Poverty',
-          'Black "Lowest Class" Streets',
+          'Visiting Every Slum Door',
+          'Colour-Coded Street Maps',
+          'One-Third Living in Hunger',
         ],
         focusClue:
           'How did Booth’s scientific colour-coded street maps shatter complacency by proving millions lived in chronic squalor?',
@@ -470,7 +522,11 @@ const enquiryConfigs = [
         date: '1750–1901',
         questionHeading:
           'The Victorian Verdict: How do historians judge the balance of progress versus human suffering?',
-        bullets: ['Optimist vs Pessimist', 'Life Expectancy & Wages', 'Democratic Franchise'],
+        bullets: [
+          'Factory Goods for the World',
+          'Short Lives in Smoke and Dirt',
+          'Trade Unions Win Better Pay',
+        ],
         focusClue:
           'Did the long-term gains of modern medicine, technology, and democracy justify four generations of working-class sacrifice?',
       },
@@ -501,7 +557,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'To some extent I agree that the Industrial Revolution brought unprecedented progress for the British people because... &bull; On the other hand, it can also be argued that industrialisation brought immense suffering because... &bull; Furthermore, long-term developments such as... demonstrate that... &bull; In conclusion, the most significant impact was... because...',
+        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
       wordBank:
         'Henry Cort &bull; Funtley Ironworks &bull; puddling furnace &bull; steam power &bull; Sadler Committee &bull; back-to-back slums &bull; cholera &bull; Great Exhibition &bull; Charles Booth &bull; Standard of Living debate',
       timelineMissionTitle: 'Centrefold Sketch Challenge 6',
@@ -1771,6 +1827,12 @@ async function main() {
   const html = compileIndustrialisationWorkbook();
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`[OK] HTML written to: ${outHtmlPath}`);
+
+  const altUnitsDir = path.join(ROOT_DIR, 'units', 'industrialisation_and_empire');
+  if (fs.existsSync(altUnitsDir)) {
+    fs.writeFileSync(path.join(altUnitsDir, 'pupil_workbook.html'), html, 'utf8');
+    console.log(`[OK] HTML mirrored to: ${path.join(altUnitsDir, 'pupil_workbook.html')}`);
+  }
 
   // Compile PDFs via Puppeteer
   const pdfDir = path.join(ROOT_DIR, 'public', 'pdfs');
