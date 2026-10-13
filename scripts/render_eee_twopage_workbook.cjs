@@ -465,6 +465,14 @@ function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
           `<div style="margin-bottom: 2px; display: flex; align-items: baseline;"><span style="font-weight: 900; color: #000000; margin-right: 4px;">&bull;</span><span style="font-size: 8.2pt; font-weight: 700; color: #000000; line-height: 1.22;">${b}</span></div>`,
       )
       .join('');
+
+    // Dynamic base font size so prompt never wraps onto a 2nd line
+    const clueLen = (st.focusClue || '').length;
+    let baseSizePt = '8.0';
+    if (clueLen > 82) baseSizePt = '7.6';
+    if (clueLen > 90) baseSizePt = '7.2';
+    if (clueLen > 98) baseSizePt = '6.9';
+
     stagesHtml += `
           <!-- Stage ${idx + 1} -->
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0; border-bottom: 1.5px solid #000000;">
@@ -484,9 +492,9 @@ function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
             </div>
 
             <!-- Right: Enquiry Prompt + Exact 6 Ruled Lines (Preserving teacher exposition notes) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1.5px solid #000000; margin: 0; padding: 0;">
-              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 3px 8px; display: flex; align-items: center;">
-                <span style="font-family: 'Georgia', serif; font-size: 8.6pt; font-weight: 700; color: #000000; line-height: 1.2; font-style: italic;">
+            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1.5px solid #000000; margin: 0; padding: 0; overflow: hidden;">
+              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 2.5px 8px; display: flex; align-items: center; overflow: hidden; white-space: nowrap;">
+                <span class="spine-focus-prompt" data-base-size="${baseSizePt}" style="font-family: 'Georgia', serif; font-size: ${baseSizePt}pt; font-weight: 700; color: #000000; line-height: 1.15; font-style: italic; white-space: nowrap; display: inline-block;">
                   ${st.focusClue}
                 </span>
               </div>
@@ -636,7 +644,7 @@ function renderEnquiryWritingPart2AndFeatures(cfg, pageNum, quip, keyTopicNum) {
   const tariffLabel = isEssay ? 'Question 3 Evaluative Essay' : 'Question 2 Explain Why';
 
   const continuationLines = Array.from(
-    { length: 13 },
+    { length: 15 },
     () => `
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
@@ -644,13 +652,13 @@ function renderEnquiryWritingPart2AndFeatures(cfg, pageNum, quip, keyTopicNum) {
   const featLinesA = Array.from(
     { length: 3 },
     () => `
-        <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+        <div class="task-line" style="height: 8.6mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
 
   const featLinesB = Array.from(
     { length: 3 },
     () => `
-        <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+        <div class="task-line" style="height: 8.6mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
 
   const stemA = formatFeatureStem(cfg.featureA?.stem);
@@ -661,7 +669,7 @@ function renderEnquiryWritingPart2AndFeatures(cfg, pageNum, quip, keyTopicNum) {
   <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 3.5mm 6mm 3mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
 
-      <!-- TOP HALF: Extended Writing Conclusion & Verdict (~13 Ruled Lines) -->
+      <!-- TOP HALF: Extended Writing Conclusion & Verdict (15 Ruled Lines Calibrated to Match Page 14) -->
       <div style="flex: 1.15; display: flex; flex-direction: column; min-height: 0; margin-bottom: 3px;">
         <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
@@ -695,7 +703,7 @@ ${continuationLines}
         </div>
 
         <!-- Feature Question 1(a) -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px 3.5px 6px; background: #ffffff;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
             <div style="display: flex; align-items: center; gap: 6px;">
               <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; background: #000000; color: #ffffff; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase;">
@@ -715,13 +723,13 @@ ${continuationLines}
           <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px; margin-bottom: 2px;">
             <strong>Target: AO1 (2m) &bull;</strong> <em>Feature: One key feature was that... &bull; Detail: Specifically, this was evident when...</em>
           </div>
-          <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; flex-direction: column; padding-bottom: 2px;">
 ${featLinesA}
           </div>
         </div>
 
         <!-- Feature Question 1(b) (Stacked Vertically on top of each other) -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px 3.5px 6px; background: #ffffff;">
           <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
             <div style="display: flex; align-items: center; gap: 6px;">
               <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; background: #000000; color: #ffffff; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase;">
@@ -741,7 +749,7 @@ ${featLinesA}
           <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px; margin-bottom: 2px;">
             <strong>Target: AO1 (2m) &bull;</strong> <em>Feature: One key feature was that... &bull; Detail: Specifically, this meant that...</em>
           </div>
-          <div style="display: flex; flex-direction: column;">
+          <div style="display: flex; flex-direction: column; padding-bottom: 2px;">
 ${featLinesB}
           </div>
         </div>
@@ -1810,7 +1818,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
 `;
 
   html += `
-  <!-- Client-Side Auto-Lines Calculator (Evaluated in Puppeteer before PDF print) -->
+  <!-- Client-Side Auto-Lines & Auto-Fit Calculator (Evaluated in Puppeteer before PDF print) -->
   <script>
     function autoFillWritingLines() {
       document.querySelectorAll('[data-auto-lines]').forEach(el => {
@@ -1825,8 +1833,27 @@ function buildEeeKeyTopicWorkbook(ktId) {
         ).join('');
       });
     }
-    window.addEventListener('DOMContentLoaded', autoFillWritingLines);
-    if (document.readyState !== 'loading') autoFillWritingLines();
+
+    function autoFitStagePrompts() {
+      document.querySelectorAll('.spine-focus-prompt').forEach(el => {
+        const parent = el.parentElement;
+        if (!parent) return;
+        const maxW = parent.clientWidth - 16;
+        let sizePt = parseFloat(el.dataset.baseSize || '7.6');
+        while (el.scrollWidth > maxW && sizePt > 6.0) {
+          sizePt -= 0.1;
+          el.style.fontSize = sizePt.toFixed(2) + 'pt';
+        }
+      });
+    }
+
+    function initPageCalibrations() {
+      autoFillWritingLines();
+      autoFitStagePrompts();
+    }
+
+    window.addEventListener('DOMContentLoaded', initPageCalibrations);
+    if (document.readyState !== 'loading') initPageCalibrations();
   </script>
 </body>
 </html>
@@ -1846,11 +1873,10 @@ async function compilePdf(htmlPath, pdfPath, v17Path) {
   const page = await browser.newPage();
   await page.goto(`file://${htmlPath}`, { waitUntil: 'networkidle0' });
 
-  // Evaluate dynamic lines calculation client-side in Puppeteer
+  // Evaluate dynamic lines calculation and stage prompt fitting client-side in Puppeteer
   await page.evaluate(() => {
-    if (typeof autoFillWritingLines === 'function') {
-      autoFillWritingLines();
-    }
+    if (typeof autoFillWritingLines === 'function') autoFillWritingLines();
+    if (typeof autoFitStagePrompts === 'function') autoFitStagePrompts();
   });
 
   // Space audit before PDF compilation
