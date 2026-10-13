@@ -66,7 +66,11 @@ const enquiryConfigs = [
         paraRef: '[1.1–1.2]',
         questionHeading:
           'What forced Britain to launch Kitchener’s urgent call for 500,000 volunteers?',
-        bullets: ['No Conscription', 'BEF Just 120,000 Men', 'Kitchener’s Dire Call'],
+        bullets: [
+          'BEF Limited to 120,000 Men',
+          'Absence of Peacetime Conscription',
+          'Massive Voluntary Mobilisation',
+        ],
         focusClue:
           'How did Britain’s lack of peacetime conscription force the government into a massive voluntary advertising campaign?',
       },
@@ -76,7 +80,11 @@ const enquiryConfigs = [
         paraRef: '[2.1–2.2]',
         questionHeading:
           'How did the invasion of Belgium spark genuine moral outrage and civic duty?',
-        bullets: ['1839 Treaty of London', 'German Atrocities', 'Crusade for Law'],
+        bullets: [
+          '1839 London Treaty Guarantor',
+          'Reported Civilian Brutalities',
+          'Righteous International Crusade',
+        ],
         focusClue:
           'Why did British volunteers view the war as a righteous crusade to defend international law and neutral Belgium?',
       },
@@ -87,9 +95,9 @@ const enquiryConfigs = [
         questionHeading:
           'Why did workplace camaraderie and local pride drive the formation of Pals Battalions?',
         bullets: [
-          'Pals Battalions Formed',
-          'Pompey Pals (14th/15th Hants)',
-          'Fight Alongside Mates',
+          'Factory, Office & Club Units',
+          'Shared Civic Identity',
+          'Communities Enlisting En Masse',
         ],
         focusClue:
           'How did recruiting men from the same factories, offices, and football clubs encourage immediate mass enlistment?',
@@ -100,7 +108,11 @@ const enquiryConfigs = [
         paraRef: '[4.1–4.2]',
         questionHeading:
           'In what ways did poverty, adventure, and the King’s Shilling lure young recruits?',
-        bullets: ['Regular Pay & Food', 'Escape Factory Drudgery', 'Over by Christmas'],
+        bullets: [
+          'Guaranteed Meals & Clean Uniforms',
+          'Escape from Industrial Deprivation',
+          'Short-War Euphoria Illusion',
+        ],
         focusClue:
           'Why did guaranteed daily meals, clean uniforms, and the promise of adventure appeal to impoverished Edwardian youths?',
       },
@@ -110,7 +122,11 @@ const enquiryConfigs = [
         paraRef: '[5.1–5.2]',
         questionHeading:
           'How did state propaganda and social coercion make refusal to enlist unbearable?',
-        bullets: ['Kitchener Finger Poster', 'White Feather Movement', 'Unbearable Social Shame'],
+        bullets: [
+          'Alfred Leete Finger Poster',
+          'White Feather Humiliation Stigma',
+          'Overwhelming Moral Coercion',
+        ],
         focusClue:
           'How did visual advertising and patriotic shaming make staying at home morally unbearable for eligible young men?',
       },
@@ -152,7 +168,11 @@ const enquiryConfigs = [
         paraRef: '[1.1–1.2]',
         questionHeading:
           'What forced armies underground into a 400-mile line of industrial stalemate?',
-        bullets: ['Race to the Sea', 'Artillery Dominance', '400-Mile Trench Line'],
+        bullets: [
+          'Flanking Race to the North Sea',
+          'Devastating Maxim Machine-Gun Fire',
+          'Impassable Continental Fortifications',
+        ],
         focusClue:
           'Why did modern industrial firepower make open infantry movements impossible, establishing the 400-mile Western Front?',
       },
@@ -162,7 +182,11 @@ const enquiryConfigs = [
         paraRef: '[2.1–2.2]',
         questionHeading:
           'How was the three-tier trench system constructed, traversed, and defended?',
-        bullets: ['Fire, Support & Reserve', 'Zig-Zag Traverse Design', 'Barbed Wire Belts'],
+        bullets: [
+          'Front-Line, Support & Reserve Belts',
+          'Deep Subterranean Dugouts',
+          'Interlocking Killing Zones',
+        ],
         focusClue:
           'Why were trenches dug in zig-zags with deep underground dugouts rather than straight defensive lines?',
       },
@@ -172,7 +196,11 @@ const enquiryConfigs = [
         paraRef: '[3.1–3.2]',
         questionHeading:
           'What lethal physical and psychological trauma did infantry endure in the mud?',
-        bullets: ['Trench Foot & Gangrene', 'Corpses, Lice & Rats', 'Shell Shock Trauma'],
+        bullets: [
+          'Waterlogged Slime & Gangrene',
+          'Relentless Heavy Shelling',
+          'Neurasthenia & Mental Breakdown',
+        ],
         focusClue:
           'How did waterlogged clay, relentless shelling, and rotting corpses destroy soldiers’ physical and psychological health?',
       },
@@ -182,7 +210,11 @@ const enquiryConfigs = [
         paraRef: '[4.1–4.2]',
         questionHeading:
           'Why did the First Day of the Somme become the bloodiest disaster in British history?',
-        bullets: ['7-Day Bombardment Fails', 'German Bunkers Intact', '57,470 Casualties Day 1'],
+        bullets: [
+          '1.5 Million Shell Bombardment',
+          'Uncut Wire & Concrete Redoubts',
+          '57,470 Casualties Suffered',
+        ],
         focusClue:
           'Why did the 1.5 million-shell artillery bombardment fail to cut German barbed wire or destroy underground concrete dugouts?',
       },
@@ -192,7 +224,11 @@ const enquiryConfigs = [
         paraRef: '[5.1–5.2]',
         questionHeading:
           'Was Sir Douglas Haig a callous "butcher" or a commander learning total war?',
-        bullets: ['Lions Led by Donkeys', 'Industrial Learning Curve', 'Allied Victory in 1918'],
+        bullets: [
+          'Attritional Frontal Assaults',
+          'Technological Transition Trials',
+          '1918 Combined-Arms Breakthrough',
+        ],
         focusClue:
           'Did Haig needlessly slaughter a generation of young men, or did he systematically master combined-arms warfare to win in 1918?',
       },
@@ -245,7 +281,11 @@ const enquiryConfigs = [
         paraRef: '[1.1–1.2]',
         questionHeading:
           'Why was Britain completely dependent on mobilising 4 million imperial subjects?',
-        bullets: ['Imperial War Cabinet', 'Global Manpower Pool', 'Dominions & Crown Colonies'],
+        bullets: [
+          'Dominions & Crown Colony Regiments',
+          'Critical Food, Oil & Grain Convoys',
+          'Sustained Global War Effort',
+        ],
         focusClue:
           'Why was Britain completely dependent on its global empire to supply troops, wheat, oil, and merchant ships?',
       },
@@ -255,7 +295,11 @@ const enquiryConfigs = [
         paraRef: '[2.1–2.2]',
         questionHeading:
           'How crucially did 1.5 million Indian soldiers save the crumbling Allied line at Ypres?',
-        bullets: ['Lahore & Meerut Divisions', 'First Battle of Ypres', 'Khadadad Khan VC'],
+        bullets: [
+          'Lahore & Meerut Divisions Deploy',
+          'Freezing Mud & Winter Trenches',
+          'Sepoy Khudadad Khan VC Bravery',
+        ],
         focusClue:
           'How did Indian infantry and cavalry prevent a catastrophic British collapse in the freezing mud of Flanders in 1914?',
       },
@@ -266,9 +310,9 @@ const enquiryConfigs = [
         questionHeading:
           'Why did the catastrophe of Gallipoli forge national identity for Australia and New Zealand?',
         bullets: [
-          'Dardanelles Disaster',
-          'Mustafa Kemal & Turkish Defence',
-          'Birth of ANZAC Legend',
+          'Steep Shrapnel-Swept Cliffs',
+          'Mustafa Kemal’s Ottoman Resistance',
+          'Emergence of ANZAC Nationhood',
         ],
         focusClue:
           'Why did the bloody failure at Anzac Cove become the foundation myth of Australian and New Zealand independence?',
@@ -280,9 +324,9 @@ const enquiryConfigs = [
         questionHeading:
           'In what ways did the Chinese Labour Corps and African Pioneers sustain Allied logistics?',
         bullets: [
-          '140,000 Chinese Workers',
-          'Carrier Corps in East Africa',
-          'Brutal Racial Segregation',
+          '140,000 Contracted Workers',
+          'Heavy Munitions & Rail Maintenance',
+          'Strict Compound Curfews Imposed',
         ],
         focusClue:
           'How did non-white labour battalions keep guns firing under deadly conditions while facing strict racial curfews?',
@@ -293,7 +337,11 @@ const enquiryConfigs = [
         paraRef: '[5.1–5.2]',
         questionHeading:
           'Why were non-white colonial soldiers denied equal pensions, medals, and remembrance?',
-        bullets: ['Imperial Colour Bar', 'Mass Graves in Africa', 'Deliberate Erasure from Memory'],
+        bullets: [
+          'Imperial War Graves Commission Policy',
+          'Unmarked Mass Burial Sites',
+          'Whitewashed Post-War Commemoration',
+        ],
         focusClue:
           'Why did the Imperial War Graves Commission deliberately refuse individual marked headstones for black African and Asian troops?',
       },
@@ -341,7 +389,11 @@ const enquiryConfigs = [
         paraRef: '[1.1–1.2]',
         questionHeading:
           'In what ways did DORA grant the British state unprecedented authoritarian control?',
-        bullets: ['Defence of the Realm Act', 'Strict Press Censorship', 'Curfews & Watered Beer'],
+        bullets: [
+          'Emergency Parliamentary Powers',
+          'Strict News & Mail Censorship',
+          'Curfews & Alcohol Restrictions',
+        ],
         focusClue:
           'How did DORA transform Britain from a laissez-faire liberal state into a strictly controlled wartime command economy?',
       },
@@ -352,9 +404,9 @@ const enquiryConfigs = [
         questionHeading:
           'What forced David Lloyd George to nationalise munitions factories in 1915?',
         bullets: [
-          'Daily Mail Shell Scandal',
-          'Ministry of Munitions',
-          'State-Run National Shell Factories',
+          'Daily Mail Front-Page Exposé',
+          'Critical Frontline Shell Deficits',
+          'Direct State Production Command',
         ],
         focusClue:
           'Why did severe ammunition shortages on the Western Front compel the state to seize control of private industrial production?',
@@ -365,7 +417,11 @@ const enquiryConfigs = [
         paraRef: '[3.1–3.2]',
         questionHeading:
           'Why did catastrophic frontline casualties force Britain to impose conscription in 1916?',
-        bullets: ['Somme Demands Reserves', 'Military Service Act 1916', 'Conscientious Objectors'],
+        bullets: [
+          'Exhaustion of Voluntary Enlistment',
+          'Military Service Legislation',
+          'Tribunals for Conscientious Objectors',
+        ],
         focusClue:
           'Why was the introduction of conscription for all men aged 18–41 the most radical infringement on personal liberty in British history?',
       },
@@ -375,7 +431,11 @@ const enquiryConfigs = [
         paraRef: '[4.1–4.2]',
         questionHeading:
           'How did 1 million "Canary Girls" transform industrial production despite toxic hazards?',
-        bullets: ['Toxic TNT Jaundice', 'Silvertown Explosion (1917)', '80% of British Munitions'],
+        bullets: [
+          'Silvertown Factory Disaster (1917)',
+          'Chemical TNT Poisoning & Jaundice',
+          'Manufacture of 80% Heavy Munitions',
+        ],
         focusClue:
           'What lethal industrial dangers did women face manufacturing explosives, and how did their work permanently reshape female gender roles?',
       },
@@ -386,9 +446,9 @@ const enquiryConfigs = [
         questionHeading:
           'Why did unrestricted German submarine warfare push Britain to the brink of starvation?',
         bullets: [
-          'U-Boats Sink Merchant Fleet',
-          'Only 6 Weeks Food Left',
-          'Sugar & Meat Ration Books',
+          'Torpedoing of Atlantic Merchant Convoys',
+          'Six Weeks Grain Reserves Remaining',
+          'Compulsory Sugar & Meat Coupons',
         ],
         focusClue:
           'How did German submarine warfare bring Britain within weeks of starvation, forcing the compulsory rationing of sugar, butter, and meat?',
@@ -449,9 +509,9 @@ const enquiryConfigs = [
         questionHeading:
           'What forced the German military to concede defeat and accept the Armistice in 1918?',
         bullets: [
-          'Kiel Mutiny & Revolution',
-          'Kaiser Abdicates to Holland',
-          'Armistice in Compiègne Wagon',
+          "Kiel Naval Mutiny & Sailors' Revolt",
+          'Imperial Abdication & Flight to Holland',
+          'Railway Carriage Ceasefire at Compiègne',
         ],
         focusClue:
           'Why did the British naval blockade and the Allied Hundred Days Offensive break the German Army’s will to fight?',
@@ -463,9 +523,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did conflicting national motives divide Clemenceau, Lloyd George, and Wilson?',
         bullets: [
-          'Clemenceau Demands Revenge',
-          'Wilson’s 14 Points & League',
-          'Lloyd George’s Compromise',
+          'Fourteen Points & Self-Determination',
+          'Permanent Border Security Demands',
+          'British Imperial Trade Priorities',
         ],
         focusClue:
           'Why did French desires to permanently disarm Germany clash with American idealism and British trade interests?',
@@ -477,9 +537,9 @@ const enquiryConfigs = [
         questionHeading:
           'Why did Germans across all political parties denounce the Treaty terms as an unjust "Diktat"?',
         bullets: [
-          'Article 231 "War Guilt"',
-          '£6.6 Billion Reparations',
-          '100,000 Army Cap & Land Cuts',
+          'Article 231 Sole Moral Guilt Clause',
+          '£6.6 Billion Financial Reparations',
+          '100,000 Volunteer Army Ceiling',
         ],
         focusClue:
           'Why did Germans across all political parties denounce the Treaty of Versailles as an unjust and humiliating "Diktat"?',
@@ -491,9 +551,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did Article 231, Keynes’ warning, and Will Dyson’s cartoon predict future catastrophe?',
         bullets: [
-          'Article 231 Moral Condemnation',
-          'Keynes: "Carthaginian Peace"',
-          'Dyson: "1940 Class" Weeps',
+          'Carthaginian Peace Economic Forecast',
+          '1940 Class Cannon Fodder Illustration',
+          'Prophesied Second Continental Warfare',
         ],
         focusClue:
           'How did contemporary critics like Keynes and Dyson predict that punishing Germany economically would breed a second war in 1939?',
@@ -505,9 +565,9 @@ const enquiryConfigs = [
         questionHeading:
           'The Historical Verdict: Was Versailles an impossibly harsh peace or an unenforced compromise?',
         bullets: [
-          'Traditional: Created Hitler',
-          'MacMillan: Germany Stayed Intact',
-          'Fatal Failure of Enforcement',
+          'Preserved Industrial Core & Borders',
+          'Destabilising Grievance Exploitation',
+          'Absence of Allied Will to Resist in 1930s',
         ],
         focusClue:
           'Did the Treaty of Versailles directly cause World War II, or did the fatal flaw lie in the Allies’ failure to enforce its terms?',
@@ -525,15 +585,15 @@ const enquiryConfigs = [
       structureStrip: [
         {
           col: '1. PUNITIVE TERMS & RESENTMENT',
-          text: 'Explain how Article 231, £6.6bn reparations, lost coal territories (Saar/Silesia), and the 100,000-man army cap created toxic German resentment and economic chaos.',
+          text: 'Explain how punitive treaty clauses, financial indemnity, territorial losses, and military restrictions provoked national resentment and economic dislocation.',
         },
         {
           col: '2. COUNTER-ARGUMENT: RESTRAINTS & IDEALS',
-          text: 'Explain that the treaty preserved German national unity, created democratic states in Eastern Europe, and established the League of Nations to resolve disputes peacefully.',
+          text: 'Explain how the settlement preserved national territorial integrity, established new self-governing states, and created international machinery to maintain peace.',
         },
         {
           col: '3. COMPARATIVE VERDICT',
-          text: 'Weigh whether the flaw was the treaty’s severity or the failure of Britain and France to enforce its terms when Hitler challenged it in the 1930s.',
+          text: 'Evaluate whether the fatal weakness was the severity of the peace terms or the political failure of the victorious powers to enforce them in later years.',
         },
       ],
       connectives:
