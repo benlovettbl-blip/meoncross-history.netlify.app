@@ -119,8 +119,8 @@ export const CURRICULAR_PILLARS_CATALOG = {
   },
   first_british_empire: {
     workbook: {
-      title: 'The First British Empire 20-Page Pupil Workbook',
-      label: 'Pupil Workbook (20 Pages)',
+      title: 'The First British Empire 16-Page Pupil Workbook',
+      label: 'Pupil Workbook (16 Pages)',
       htmlUrl: '/units/first_british_empire/pupil_workbook.html',
       pdfUrl: '/pdfs/first_british_empire_pupil_workbook.pdf',
     },

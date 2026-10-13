@@ -237,6 +237,20 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'monarchy_religion_power') {
+        console.log(`\n📚 Compiling 20-page pupil workbook for [monarchy_religion_power]...`);
+        execSync(`node scripts/render_monarchy_religion_power_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
+      if (unitId === 'first_british_empire') {
+        console.log(`\n📚 Compiling 16-page pupil workbook for [first_british_empire]...`);
+        execSync(`node scripts/render_first_british_empire_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

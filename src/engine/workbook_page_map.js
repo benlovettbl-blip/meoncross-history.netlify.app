@@ -883,6 +883,70 @@ export const WORKBOOK_PAGE_MAP = {
       lessonIndex: 15,
     },
   },
+  first_british_empire: {
+    lesson_1: {
+      page: 16,
+      booklet: 'Pupil Workbook',
+      unitId: 'first_british_empire',
+      lessonIndex: 0,
+    },
+    lesson_2: {
+      page: 4,
+      booklet: 'Pupil Workbook',
+      unitId: 'first_british_empire',
+      lessonIndex: 1,
+    },
+    lesson_3: {
+      page: 6,
+      booklet: 'Pupil Workbook',
+      unitId: 'first_british_empire',
+      lessonIndex: 2,
+    },
+    lesson_4: {
+      page: 10,
+      booklet: 'Pupil Workbook',
+      unitId: 'first_british_empire',
+      lessonIndex: 3,
+    },
+    lesson_5: {
+      page: 12,
+      booklet: 'Pupil Workbook',
+      unitId: 'first_british_empire',
+      lessonIndex: 4,
+    },
+  },
+  monarchy_religion_power: {
+    lesson_1: {
+      page: 16,
+      booklet: 'Pupil Workbook',
+      unitId: 'monarchy_religion_power',
+      lessonIndex: 0,
+    },
+    lesson_2: {
+      page: 4,
+      booklet: 'Pupil Workbook',
+      unitId: 'monarchy_religion_power',
+      lessonIndex: 1,
+    },
+    lesson_3: {
+      page: 6,
+      booklet: 'Pupil Workbook',
+      unitId: 'monarchy_religion_power',
+      lessonIndex: 2,
+    },
+    lesson_4: {
+      page: 10,
+      booklet: 'Pupil Workbook',
+      unitId: 'monarchy_religion_power',
+      lessonIndex: 3,
+    },
+    lesson_5: {
+      page: 12,
+      booklet: 'Pupil Workbook',
+      unitId: 'monarchy_religion_power',
+      lessonIndex: 4,
+    },
+  },
 };
 
 export function getWorkbookPageAnchor(unitId, lessonOrId, fallbackIdx = 0) {

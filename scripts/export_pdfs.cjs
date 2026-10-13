@@ -82,7 +82,13 @@ function getFileHash(filePath) {
       }
 
       // Exclude workbooks with dedicated high-performance compilers (already compiled by sync_unit)
-      if (unit === 'great_war' || unit === 'water_and_sanitation' || unit === 'cme_new') {
+      if (
+        unit === 'great_war' ||
+        unit === 'water_and_sanitation' ||
+        unit === 'cme_new' ||
+        unit === 'monarchy_religion_power' ||
+        unit === 'first_british_empire'
+      ) {
         files = files.filter((f) => !f.startsWith('pupil_workbook'));
       }
 

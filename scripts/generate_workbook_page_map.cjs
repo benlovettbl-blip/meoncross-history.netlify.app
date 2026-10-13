@@ -101,8 +101,14 @@ const unitPdfConfigs = {
       file: 'industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
     },
   ],
+  first_british_empire: [
+    { booklet: 'Pupil Workbook', file: 'first_british_empire_pupil_workbook_FINAL_V17.pdf' },
+  ],
   medieval_england: [
     { booklet: 'Pupil Workbook', file: 'medieval_england_pupil_workbook_FINAL_V17.pdf' },
+  ],
+  monarchy_religion_power: [
+    { booklet: 'Pupil Workbook', file: 'monarchy_religion_power_pupil_workbook_FINAL_V17.pdf' },
   ],
   post_war_britain: [
     { booklet: 'Pupil Workbook', file: 'post_war_britain_pupil_workbook_FINAL_V17.pdf' },
