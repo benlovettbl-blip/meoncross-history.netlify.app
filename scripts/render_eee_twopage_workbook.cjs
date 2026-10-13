@@ -536,16 +536,7 @@ function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
       </div>
 
       <!-- Active Lesson Note-Taking Spine -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1.5px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            CHRONOLOGICAL INQUIRY SPINE &bull; 5 CAUSAL MILESTONES
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #1e293b;">
-            PUPIL NOTE-TAKING ZONE &bull; <span style="font-style: italic; font-weight: 500; color: #475569;">Answer each milestone prompt using evidence from teacher exposition</span>
-          </span>
-        </div>
-
+      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 2px; min-height: 0;">
         <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
           ${stagesHtml}
