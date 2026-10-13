@@ -2626,7 +2626,7 @@ async function runKT3() {
   });
 
   const page = await browser.newPage();
-  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+  await page.setContent(htmlContent, { waitUntil: 'networkidle0', timeout: 120000 });
 
   console.log('⚡ Running Automated Typographical & Layout Balancer...');
   const calibrationResults = await autoCalibrateTextbook(page);

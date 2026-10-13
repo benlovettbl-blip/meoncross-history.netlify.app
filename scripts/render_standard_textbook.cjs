@@ -43,6 +43,7 @@ if (!fs.existsSync(dataPath)) {
 const vm = require('vm');
 const dataContent = fs.readFileSync(dataPath, 'utf8');
 const cleanedCode = dataContent
+  .replace(/export\s+const\s+/g, 'const ')
   .replace(/export\s+default\s+[^;]+;?/g, '')
   .replace(/export\s*\{[^}]*\};?/g, '');
 const sandbox = { window: {}, module: { exports: {} } };
@@ -665,7 +666,7 @@ async function buildPublisherTextbookHtml() {
     }
     .archival-map-image {
       width: 100%;
-      max-height: 175px;
+      max-height: 155px;
       object-fit: contain;
       background: #fafaf9;
       border-radius: 3px;
@@ -1617,7 +1618,7 @@ async function runKT2() {
   });
 
   const page = await browser.newPage();
-  await page.setContent(htmlContent, { waitUntil: 'networkidle0' });
+  await page.setContent(htmlContent, { waitUntil: 'networkidle0', timeout: 120000 });
 
   await page.pdf({
     path: pdfPath,

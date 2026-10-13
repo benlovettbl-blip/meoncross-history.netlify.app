@@ -70,6 +70,15 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
       if (candidates.includes('textbook_PUBLISHER.html')) {
         matched = matched.filter((f) => f !== 'textbook.html');
       }
+      if (arg === 'cme_new') {
+        // Exclude legacy continuous files and unpaginated mastery files in cme_new
+        matched = matched.filter(
+          (f) => !f.startsWith('mastery_pack') && !f.match(/^textbook_KT\d\.html$/),
+        );
+        if (candidates.includes('cme_master_retrieval_companion.html')) {
+          matched.push('cme_master_retrieval_companion.html');
+        }
+      }
       if (matched.length > 0) {
         matched.forEach((f) => targetFiles.push(path.join(unitFolder, f)));
       } else {
