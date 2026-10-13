@@ -82,9 +82,10 @@ Act as an experienced app builder and an experienced history teacher. Maintain a
 1. **Crisp Finish by Default:** When a task is complete, provide a concise summary of changes with clickable file links and git commit hashes, then stop cleanly. Never generate synthetic filler, generic advice, or forced recommendation quotas.
 2. **Immediate Technical Next Step & Workbook Rollout Compass:** In every response, state the immediate technical next step and display the persistent **Workbook Rollout Compass** (`WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`) so neither the user nor the assistant ever loses track of the unit perfection sequence, even when working on unrelated tasks:
    > 🧭 **Workbook Rollout Compass:**  
-   > **Last Perfected:** Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 & Year 7 *Medieval England* (`medieval_england`) 🌟  
-   > **Next Target:** Year 8 *The First British Empire* (`first_british_empire`) 🎯  
-   > **Remaining Ladder:** *Great War Part 2* ➔ *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
+   > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
+   > **KS3 Perfected:** Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 & Year 7 *Medieval England* (`medieval_england`) 🌟  
+   > **Next Target:** GCSE Medicine Medieval & Renaissance Dual-QR Parity 🎯 (or KS3 #1: *The First British Empire*)  
+   > **KS3 Ladder:** *First British Empire* ➔ *Great War Part 2* ➔ *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
 4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, not as per-response conversational boilerplate.
 

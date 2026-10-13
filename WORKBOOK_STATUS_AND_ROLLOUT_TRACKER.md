@@ -127,6 +127,7 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Workbook Rollout Compass:**  
-> **Last Perfected:** Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next in Queue:** Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🟡  
-> **Remaining Ladder:** *First British Empire* ➔ *Great War Part 2* ➔ *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
+> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
+> **KS3 Perfected:** Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 & Year 7 *Medieval England* (`medieval_england`) 🌟  
+> **Next Target:** GCSE Medicine Medieval & Renaissance Dual-QR Parity 🎯 (or KS3 #1: *The First British Empire*)  
+> **KS3 Ladder:** *First British Empire* ➔ *Great War Part 2* ➔ *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
