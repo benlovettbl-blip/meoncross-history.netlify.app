@@ -115,12 +115,12 @@ const kt1Configs = [
         date: 'May 1916',
         questionHeading: 'Why was the secret Sykes-Picot Agreement viewed as an imperial betrayal?',
         bullets: [
-          'Anglo-French Imperial Partition',
+          'Dividing Arab Lands with Rulers',
           'Direct British & French Rule',
           'International Holy Land Zone',
         ],
         keywords: [
-          'Anglo-French Imperial Partition',
+          'Dividing Arab Lands with Rulers',
           'Direct British & French Rule',
           'International Holy Land Zone',
         ],
@@ -173,12 +173,12 @@ const kt1Configs = [
         bullets: [
           '75,000 Five-Year Immigrant Cap',
           'Arab Consent for Future Entry',
-          'Zionist Sense of Betrayal',
+          'Underground Bomb Attacks on Police',
         ],
         keywords: [
           '75,000 Five-Year Immigrant Cap',
           'Arab Consent for Future Entry',
-          'Zionist Sense of Betrayal',
+          'Underground Bomb Attacks on Police',
         ],
         clue: 'Why did the 1939 White Paper turn Zionists against Britain?',
         title: 'The Arab Revolt & The 1939 White Paper',
@@ -224,7 +224,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'McMahon-Hussein (1915) &bull; Sharif Hussein &bull; Sykes-Picot (1916) &bull; Balfour Declaration (1917) &bull; Arthur Balfour &bull; Lord Rothschild &bull; "national home" &bull; League of Nations Mandate (1922) &bull; Yishuv &bull; Arab Nationalism &bull; Jewish immigration',
       timelineMission:
@@ -268,12 +268,12 @@ const kt1Configs = [
           'How did Zionist paramilitaries paralyze British infrastructure in Palestine?',
         bullets: [
           'Night of the Trains (153 Rail Cuts)',
-          'Irgun & Lehi Paramilitary Alliance',
+          'Blowing Up Radar Stations',
           'Sabotage of Bridges & Pipelines',
         ],
         keywords: [
           'Night of the Trains (153 Rail Cuts)',
-          'Irgun & Lehi Paramilitary Alliance',
+          'Blowing Up Radar Stations',
           'Sabotage of Bridges & Pipelines',
         ],
         clue: 'How did Zionist paramilitaries paralyze British transport networks?',
@@ -287,12 +287,12 @@ const kt1Configs = [
         bullets: [
           'British Military & Civil HQ Destroyed',
           '91 Government Staff Killed',
-          'Collapse of British Governing Morale',
+          'Soldiers Trapped Behind Barbed Wire',
         ],
         keywords: [
           'British Military & Civil HQ Destroyed',
           '91 Government Staff Killed',
-          'Collapse of British Governing Morale',
+          'Soldiers Trapped Behind Barbed Wire',
         ],
         clue: 'Why did targeting the King David Hotel prove Palestine was ungovernable?',
         title: 'Bombing of the King David Hotel',
@@ -378,7 +378,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
+        'One main reason this was important was that... • For example, ... • This mattered because... • Another key factor was... • In particular, ... • Overall, the most decisive impact was... because...',
       wordBank:
         'King David Hotel (July 1946) &bull; Irgun &bull; Menachem Begin &bull; 91 casualties &bull; British Military HQ &bull; Secretariat &bull; Clement Attlee &bull; Ernest Bevin &bull; financial cost &bull; 100,000 troops &bull; UNSCOP &bull; February 1947 handover',
       timelineMission:
@@ -420,12 +420,12 @@ const kt1Configs = [
         questionHeading:
           'Why did Ben-Gurion proclaim statehood hours before the British Mandate expired?',
         bullets: [
-          'Establish Sovereign Government',
+          'Reading Declaration in Tel Aviv',
           'Immediate Truman Recognition',
           'Legitimacy to Receive Weapons',
         ],
         keywords: [
-          'Establish Sovereign Government',
+          'Reading Declaration in Tel Aviv',
           'Immediate Truman Recognition',
           'Legitimacy to Receive Weapons',
         ],
@@ -532,7 +532,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'David Ben-Gurion &bull; 14 May 1948 &bull; Tel Aviv Museum &bull; Arab invasion &bull; Egypt, Jordan, Syria, Iraq, Lebanon &bull; Arab Legion &bull; Glubb Pasha &bull; June 1948 truce &bull; Count Folke Bernadotte &bull; Czech arms deal &bull; Operation Dani &bull; Operation Yoav &bull; 1949 Armistices &bull; Green Line',
       timelineMission:
@@ -615,12 +615,12 @@ const kt1Configs = [
           'Why was universal military conscription and US aid essential for Israeli survival?',
         bullets: [
           'Surrounded by Hostile Arab States',
-          'Mandatory Service for Men & Women',
+          'Serving Two Years with Weapons',
           'Vital Financial Lifeline from Washington',
         ],
         keywords: [
           'Surrounded by Hostile Arab States',
-          'Mandatory Service for Men & Women',
+          'Serving Two Years with Weapons',
           'Vital Financial Lifeline from Washington',
         ],
         clue: 'Why was universal conscription essential for Israel’s survival?',
@@ -689,7 +689,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main reason this was important was that... • For example, ... • This mattered because... • Another key factor was... • In particular, ... • Overall, the most decisive impact was... because...',
       wordBank:
         'Law of Return (1950) &bull; David Ben-Gurion &bull; Jewish diaspora &bull; Holocaust survivors &bull; Displaced Persons camps &bull; Mizrahi Jews &bull; ma’abarot (transit camps) &bull; population doubled &bull; IDF universal conscription &bull; kibbutzim border defense',
       timelineMission:
@@ -771,12 +771,12 @@ const kt1Configs = [
         bullets: [
           'Secret Tripartite Alliance in Paris',
           'Pre-Planned Anglo-French Ultimatum',
-          'Pretext to Reoccupy the Waterway',
+          'Dropping Paratroopers on Port Said',
         ],
         keywords: [
           'Secret Tripartite Alliance in Paris',
           'Pre-Planned Anglo-French Ultimatum',
-          'Pretext to Reoccupy the Waterway',
+          'Dropping Paratroopers on Port Said',
         ],
         clue: 'How did the secret Protocol of Sèvres orchestrate a fake pretext for war?',
         title: 'The Secret Protocol of Sèvres & Sinai Blitz',
@@ -845,7 +845,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'Gamal Abdel Nasser &bull; Aswan High Dam &bull; nationalisation &bull; 26 July 1956 &bull; Anthony Eden &bull; Protocol of Sèvres &bull; Operation Musketeer &bull; Sinai Peninsula &bull; Port Said paratroopers &bull; Dwight D. Eisenhower &bull; oil sanctions &bull; run on the pound &bull; UN Emergency Force (UNEF) &bull; United Arab Republic (1958)',
       timelineMission:
@@ -1532,17 +1532,23 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
             .join('')}
         </div>
 
-        <!-- Row 3: Causal Connectives Strip (Key Vocabulary Bank removed for active recall) -->
-        <div style="padding: 2.5px 6px; background: #ffffff; display: flex; align-items: baseline; gap: 6px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; flex-shrink: 0; line-height: 1.1;">Causal Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #222222; line-height: 1.12; flex: 1;">${rx.connectives || rx.causalConnectives}</span>
+        <!-- Row 3: Accessible Sentence Starters & Key Vocabulary Bank -->
+        <div style="padding: 2.5px 6px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 8px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">Sentence Starters:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #222222; line-height: 1.15; display: block;">${rx.connectives || rx.causalConnectives}</span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #222222; line-height: 1.15; display: block;">${rx.wordBank}</span>
+          </div>
         </div>
       </div>
 
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 22 },
+          { length: 21 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>

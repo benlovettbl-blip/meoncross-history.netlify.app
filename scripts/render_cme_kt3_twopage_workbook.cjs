@@ -223,7 +223,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'OPEC oil embargo • Henry Kissinger • shuttle diplomacy • Sinai I & II • Suez Canal reopening (1975) • Likud election (1977) • Menachem Begin • Anwar Sadat • Ben Gurion Airport • Knesset speech • Ismailia summit (Dec 1977)',
       timelineMission:
@@ -299,12 +299,12 @@ const kt3Configs = [
         date: 'March–Nov 1979',
         questionHeading: 'Why did the Arab League expel Egypt after the Treaty of Washington?',
         bullets: [
-          'Baghdad Arab League Summit',
+          'Meeting in Baghdad Without Egypt',
           'Fury at Separate Bilateral Deal',
           'Relocating Headquarters to Tunis',
         ],
         keywords: [
-          'Baghdad Arab League Summit',
+          'Meeting in Baghdad Without Egypt',
           'Fury at Separate Bilateral Deal',
           'Relocating Headquarters to Tunis',
         ],
@@ -375,7 +375,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
+        'One main reason this was important was that... • For example, ... • This mattered because... • Another key factor was... • In particular, ... • Overall, the most decisive impact was... because...',
       wordBank:
         'Camp David Accords (1978) • Jimmy Carter • Menachem Begin • Anwar Sadat • Treaty of Washington (1979) • Sinai recovery • land for peace • Baghdad Summit • Arab League expulsion • Tunis HQ • Sadat assassination (1981)',
       timelineMission:
@@ -525,7 +525,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'Operation Litani (1978) • Litani River • UNIFIL (Res 425) • South Lebanon Army • Ariel Sharon • Operation Peace for Galilee (1982) • Siege of Beirut • Philip Habib • PLO evacuation to Tunis • Bachir Gemayel • Sabra and Shatila • Kahan Commission',
       timelineMission:
@@ -679,7 +679,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
+        'One main reason this was important was that... • For example, ... • This mattered because... • Another key factor was... • In particular, ... • Overall, the most decisive impact was... because...',
       wordBank:
         'First Intifada (1987) • Jabalia camp • Iron Fist policy • Yitzhak Rabin • stone-throwing youths • global television broadcast • Arafat Geneva speech (1988) • renunciation of terrorism • US dialogue • Madrid Conference (1991)',
       timelineMission:
@@ -828,7 +828,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'Yitzhak Rabin • Shimon Peres • Yasser Arafat • Bill Clinton • Oslo I Accord (1993) • Letters of Mutual Recognition • Gaza-Jericho First • Jordan Treaty (1994) • Baruch Goldstein (Hebron 1994) • Hamas suicide bombings • Oslo II (1995: Areas A, B, C) • Yigal Amir (4 Nov 1995)',
       timelineMission:
@@ -1538,17 +1538,23 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
             .join('')}
         </div>
 
-        <!-- Row 3: Causal Connectives Strip (Key Vocabulary Bank removed for active recall) -->
-        <div style="padding: 2.5px 6px; background: #ffffff; display: flex; align-items: baseline; gap: 6px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; flex-shrink: 0; line-height: 1.1;">Causal Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #222222; line-height: 1.12; flex: 1;">${rx.connectives || rx.causalConnectives}</span>
+        <!-- Row 3: Accessible Sentence Starters & Key Vocabulary Bank -->
+        <div style="padding: 2.5px 6px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 8px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">Sentence Starters:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #222222; line-height: 1.15; display: block;">${rx.connectives || rx.causalConnectives}</span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #222222; line-height: 1.15; display: block;">${rx.wordBank}</span>
+          </div>
         </div>
       </div>
 
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 22 },
+          { length: 21 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>

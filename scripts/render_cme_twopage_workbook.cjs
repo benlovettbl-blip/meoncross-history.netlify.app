@@ -223,7 +223,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'Cairo Conference (1964) &bull; Syria’s support for Fatah &bull; Samu raid &bull; events of 7 April 1967 &bull; Soviet false warnings &bull; actions of Nasser &bull; UNEF withdrawal &bull; Straits of Tiran &bull; Sharm el-Sheikh &bull; pre-emptive strike',
       timelineMission:
@@ -248,12 +248,12 @@ const kt2Configs = [
         bullets: [
           'Fabricated Syrian Border Threat',
           '100,000 Egyptian Soldiers Deployed',
-          'Reasserting Pan-Arab Leadership',
+          'Parading Tanks Through Cairo Streets',
         ],
         keywords: [
           'Fabricated Syrian Border Threat',
           '100,000 Egyptian Soldiers Deployed',
-          'Reasserting Pan-Arab Leadership',
+          'Parading Tanks Through Cairo Streets',
         ],
         clue: 'How did Soviet false warnings trigger Egyptian troop mobilisation in Sinai?',
         title: 'Soviet False Reports & Egyptian Mobilisation',
@@ -380,7 +380,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
+        'One main reason this was important was that... • For example, ... • This mattered because... • Another key factor was... • In particular, ... • Overall, the most decisive impact was... because...',
       wordBank:
         'Golan Heights &bull; Galilee kibbutzim &bull; Hula Valley &bull; Syrian artillery bunkers &bull; General David Elazar &bull; Mt Hermon &bull; radar early warning &bull; Damascus buffer &bull; strategic depth &bull; 9–10 June assault',
       timelineMission:
@@ -456,12 +456,12 @@ const kt2Configs = [
         bullets: [
           '20-Metre-High Sand Rampart',
           'Thirty Reinforced Concrete Bunkers',
-          'Strategic Depth & Military Overconfidence',
+          'Heavy Artillery Shelling Across Water',
         ],
         keywords: [
           '20-Metre-High Sand Rampart',
           'Thirty Reinforced Concrete Bunkers',
-          'Strategic Depth & Military Overconfidence',
+          'Heavy Artillery Shelling Across Water',
         ],
         clue: 'Why did Israel build the fortified Bar-Lev Line along the Suez Canal?',
         title: 'The Bar-Lev Line on the Suez Canal',
@@ -533,7 +533,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'Occupied territories &bull; 300,000 refugees &bull; West Bank &bull; Gaza Strip &bull; Golan Heights &bull; Khartoum Conference &bull; "Three Noes" &bull; UN Resolution 242 &bull; "Land for Peace" &bull; diplomatic deadlock',
       timelineMission:
@@ -690,7 +690,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
+        'One main reason this was important was that... • For example, ... • This mattered because... • Another key factor was... • In particular, ... • Overall, the most decisive impact was... because...',
       wordBank:
         'Munich Olympics &bull; Black September &bull; 5 September 1972 &bull; 11 Israeli athletes &bull; Olympic Village &bull; 900 million viewers &bull; international attitudes &bull; Palestine issue &bull; Operation Wrath of God &bull; 1974 UN speech',
       timelineMission:
@@ -731,12 +731,12 @@ const kt2Configs = [
         bullets: [
           'Moscow Withholding Offensive Weapons',
           'Superpower Détente Freezing Status Quo',
-          'Resolve to Break Diplomatic Deadlock',
+          'Planning Independent Surprise Attack',
         ],
         keywords: [
           'Moscow Withholding Offensive Weapons',
           'Superpower Détente Freezing Status Quo',
-          'Resolve to Break Diplomatic Deadlock',
+          'Planning Independent Surprise Attack',
         ],
         clue: 'Why did Anwar Sadat expel 15,000 Soviet advisers from Egypt in 1972?',
         title: 'Sadat Expels Soviet Advisers',
@@ -843,7 +843,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
+        'One main event was that... • For example, ... • This led directly to... • The next major development was... • In particular, ... • Overall, this culminated in... because...',
       wordBank:
         'Yom Kippur War (1973) &bull; Bar-Lev Line &bull; water monitors &bull; SAM-6 missiles &bull; Golan Heights &bull; Operation Nickel Grass &bull; Ariel Sharon &bull; Third Army encirclement &bull; OPEC oil embargo &bull; DEFCON 3 &bull; Henry Kissinger',
       timelineMission:
@@ -1531,17 +1531,23 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
             .join('')}
         </div>
 
-        <!-- Row 3: Causal Connectives Strip (Key Vocabulary Bank removed for active recall) -->
-        <div style="padding: 2.5px 6px; background: #ffffff; display: flex; align-items: baseline; gap: 6px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; flex-shrink: 0; line-height: 1.1;">Causal Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #222222; line-height: 1.12; flex: 1;">${rx.connectives || rx.causalConnectives}</span>
+        <!-- Row 3: Accessible Sentence Starters & Key Vocabulary Bank -->
+        <div style="padding: 2.5px 6px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 8px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">Sentence Starters:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #222222; line-height: 1.15; display: block;">${rx.connectives || rx.causalConnectives}</span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #222222; line-height: 1.15; display: block;">${rx.wordBank}</span>
+          </div>
         </div>
       </div>
 
       <!-- Initial Response Lines (Ruled Grid with 8mm Margin • Tighter Line Spacing) -->
       <div class="lined-page-grid" style="flex: 1; margin: 2px 0 2px 0;">
         ${Array.from(
-          { length: 22 },
+          { length: 21 },
           () => `
             <div class="lined-row">
               <div class="lined-margin-cell">&nbsp;</div>
