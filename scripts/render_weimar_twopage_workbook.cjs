@@ -9,12 +9,14 @@
  *   - KT4: Life in Nazi Germany, 1933–39
  *
  * Standards Enforced:
- *   - Single Source of Truth: Consumes units/weimar_nazi_germany/data.js directly.
- *   - Authentic Prior Recall: Do Nows pull 100% prior-knowledge questions from data.js.
- *   - Declarative Dynamic Line Budgeting: data-auto-lines="true" evaluated in Puppeteer.
- *   - Calibrated Classroom Tariffs: Realistic classroom enquiry writing (4m, 8m, 12m),
- *     reserving the full 16-mark essay for Page 15 Synoptic Challenge.
- *   - Strict School Anonymity & Institutional Neutrality.
+ *   - Golden Standard 4-Page Enquiry Module Architecture
+ *   - 5-Stage Chronological Inquiry Spine per Enquiry (Left: 38mm with triad; Right: 6 ruled lines)
+ *   - Spec-Anchored Concrete Triads (3 bullets per stage: concrete nouns + active verbs)
+ *   - Purely Structural Accessible Writing Frames (Zero Knowledge Giveaways)
+ *   - 22 Flex Task Lines on Module Page 2 with Timeline Mission
+ *   - 31 Continuation Lines on Module Page 3
+ *   - 24 Conclusion Lines + 4-Mark Paper 3 Exam Question on Module Page 4
+ *   - Strict School Anonymity & Institutional Neutrality
  */
 
 const fs = require('fs');
@@ -29,13 +31,10 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
 const {
   WEIMAR_FOOTERS,
   WEIMAR_KEY_TOPICS_METADATA,
-  WEIMAR_ENQUIRY_EXAM_CONFIG,
 } = require('./components/weimar_workbook_metadata.cjs');
+const { WEIMAR_ENQUIRY_CONFIGS } = require('./components/weimar_enquiry_configs.cjs');
 
 const ROOT_DIR = path.join(__dirname, '..');
-const weimarCurriculum = require(
-  path.join(ROOT_DIR, 'units', 'weimar_nazi_germany', 'data.js'),
-).default;
 
 function generateQrSvg(url) {
   const qr = QRCode.create(url, { margin: 1 });
@@ -96,77 +95,326 @@ function renderFooterStrip(pageNum, text, totalPages = 24) {
 }
 
 /**
- * Normalizes lesson data from data.js into clean enquiry components
+ * MODULE PAGE 1: 5-Stage Chronological Inquiry Spine (Verso)
  */
-function extractEnquiryData(lesson, ktNum, enquiryNum) {
-  const enquiryQuestion = lesson.enquiry || lesson.title.replace(/^KT\d\.\d:\s*/, '');
-  const specAnchor =
-    lesson.learning_objectives && lesson.learning_objectives[0]
-      ? lesson.learning_objectives[0]
-          .replace(/^Demonstrate precise knowledge of\s*/i, '')
-          .slice(0, 105) + '...'
-      : lesson.title;
+function renderSpinePage(cfg, pageNum, quip) {
+  const { keyTopicBadge, enquiryQuestion, stages } = cfg;
 
-  // 1. Prior Knowledge Do Now (10 Questions strictly from data.js)
-  const doNowQuestions =
-    lesson.do_now && lesson.do_now.items
-      ? lesson.do_now.items.slice(0, 10).map((it) => ({
-          q: it.question || it.q,
-          a: it.answer || it.a || '',
-        }))
-      : [];
+  let stagesHtml = '';
+  stages.forEach((st, idx) => {
+    let bulletsHtml = st.bullets
+      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
+      .join('\n');
+    stagesHtml += `
+          <!-- Stage ${idx + 1} -->
+          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0; border-bottom: 1.2px solid #000000;">
+            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
+              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+              </div>
+              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
+                ${st.title}
+              </div>
+              <div style="margin-top: 1px;">
+                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
+                  ${bulletsHtml}
+                </div>
+              </div>
+              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
+                  Focus Clue
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
+                  ${st.focusClue}
+                </div>
+              </div>
+            </div>
 
-  // 2. Vocabulary extraction from data.js
-  const vocabTerms = Array.isArray(lesson.vocab) ? lesson.vocab : [];
-  const term1 = vocabTerms[0] || {
-    term: 'Constitutional Clause',
-    definition: 'A legal rule or article.',
-  };
-  const term2 = vocabTerms[1] || {
-    term: 'Executive Power',
-    definition: 'The authority to enforce laws.',
-  };
-  const term3 = vocabTerms[2] || {
-    term: 'Paramilitary Wing',
-    definition: 'An armed unofficial military force.',
-  };
+            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
+            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>`;
+  });
 
-  // 3. Exam Practice extraction from data.js
-  const ep = lesson.exam_practice || {};
-  const epQ = ep.questions && ep.questions[0] ? ep.questions[0] : {};
-  const epProv = ep.provenance || epQ.provenance || 'Edexcel GCSE Paper 3';
-  const epStimulus = ep.stimulus || [];
+  return `
+  <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum}) -->
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Lesson Header with Inquiry Question Title -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            ${keyTopicBadge} &bull; ENQUIRY LESSON NOTEBOOK
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL PAPER 3 (1HI0/31) &bull; WEIMAR &amp; NAZI GERMANY
+          </span>
+        </div>
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+          ${enquiryQuestion}
+        </h2>
+      </div>
 
-  return {
-    enquiryNum,
-    id: lesson.id,
-    title: lesson.title,
-    enquiryQuestion,
-    specAnchor,
-    doNow: doNowQuestions,
-    vocab: {
-      terms: vocabTerms,
-      term1,
-      term2,
-      term3,
-      cloze: lesson.vocab_cloze_text || null,
-      deliberateError: lesson.vocab_deliberate_error || null,
-    },
-    exam: {
-      provenance: epProv,
-      stimulus: epStimulus,
-      rawQuestion: epQ.question || '',
-      model: epQ.model || '',
-      tariff: epQ.tariff || ep.tariff || '12 marks',
-      type: epQ.type || '12-mark',
-    },
-    sourceContext: (lesson.teacher_notes && lesson.teacher_notes.source_context) || '',
-    narrativeBlocks: lesson.narrative_blocks || [],
-  };
+      <!-- Active Lesson Note-Taking Spine -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry Spine &bull; Core Causal Narrative
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
+            Take precise, structured notes alongside each milestone as your teacher narrates the history
+          </span>
+        </div>
+
+        <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
+${stagesHtml}
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
 }
 
 /**
- * Builds the complete 16-page workbook HTML for a Key Topic
+ * MODULE PAGE 2: Extended Writing Assessment (Recto)
+ */
+function renderModulePage2(cfg, pageNum, quip) {
+  const flexTaskLines = Array.from(
+    { length: 22 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
+
+  return `
+  <!-- MODULE PAGE 2: EXTENDED WRITING ASSESSMENT (PAGE ${pageNum}) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <!-- Exam Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+              ${cfg.tariff}
+            </h2>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
+              EDEXCEL PAPER 3
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${cfg.scoreMax} ]
+          </span>
+        </div>
+
+        <!-- Question Stem & Stimulus Box -->
+        <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.22;">
+            ${cfg.examStem}
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
+            <strong>You may use in your answer:</strong>
+            <span>&bull; ${cfg.stimulus[0]}</span>
+            <span>&bull; ${cfg.stimulus[1]}</span>
+            <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
+          </div>
+        </div>
+
+        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">
+              Accessible Writing Frames:
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block; color: #222222;">
+              ${cfg.connectives}
+            </span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">
+              Key Vocabulary Bank:
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block; color: #111111;">
+              ${cfg.wordBank}
+            </span>
+          </div>
+        </div>
+
+        <!-- Ruled Task Lines Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+          <span><strong>Write your response in the space provided below:</strong></span>
+          <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
+        </div>
+      </div>
+
+      <!-- 22 Ruled Task Lines for Extended Writing -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+${flexTaskLines}
+      </div>
+
+      <!-- Timeline Mission -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 1px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+            Timeline Mission
+          </span>
+          <span style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.22; color: #000000;">
+            ${cfg.timelineMission}
+          </span>
+        </div>
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 1.5px 5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp; ] Done
+        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
+}
+
+/**
+ * MODULE PAGE 3: Extended Writing Continued (Verso)
+ */
+function renderModulePage3(cfg, pageNum, quip) {
+  const continuationTaskLines = Array.from(
+    { length: 31 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
+
+  return `
+  <!-- MODULE PAGE 3: EXTENDED WRITING CONTINUED (PAGE ${pageNum}) -->
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          ${cfg.tariff.split(':')[0]} Continued
+        </span>
+      </div>
+
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+        Continue your response to ${cfg.tariff.split(':')[0]} below:
+      </div>
+
+      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+${continuationTaskLines}
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
+}
+
+/**
+ * MODULE PAGE 4: Assessment Synthesis & 4-Mark Practice (Recto)
+ */
+function renderModulePage4(cfg, pageNum, quip) {
+  const conclusionTaskLines = Array.from(
+    { length: 24 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
+
+  const q4TaskLines = Array.from(
+    { length: 6 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
+
+  const fm = cfg.fourMark;
+  let fourMarkBody = '';
+
+  if (fm.type === 'Inference') {
+    fourMarkBody = `
+      <div style="border-top: 2px solid #000000; padding-top: 3px; margin-top: 2px; flex: 1.4; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              &bull; ${fm.tariffLabel}
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase;">
+              [4 MARKS &bull; 5 MINS]
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+            ${fm.stem}
+          </p>
+          <div style="font-family: 'Georgia', serif; font-size: 7.0pt; font-style: italic; color: #222222; margin-bottom: 2px; border-left: 2px solid #000000; padding-left: 4px; line-height: 1.18;">
+            ${fm.sourceExcerpt}
+          </div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; margin: 0;">
+          ${q4TaskLines}
+        </div>
+      </div>`;
+  } else {
+    fourMarkBody = `
+      <div style="border-top: 2px solid #000000; padding-top: 3px; margin-top: 2px; flex: 1.4; display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
+              &bull; ${fm.tariffLabel}
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase;">
+              [4 MARKS &bull; 5 MINS]
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.2;">
+            ${fm.stem}
+          </p>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 4px; border-radius: 2px; margin-bottom: 1px;">
+            <strong>Target: AO4 [4 marks] &bull; Sentence Stem:</strong> <em>${fm.stems}</em>
+          </div>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; margin: 0;">
+          ${q4TaskLines}
+        </div>
+      </div>`;
+  }
+
+  return `
+  <!-- MODULE PAGE 4: ASSESSMENT SYNTHESIS & 4-MARK EXAM PRACTICE (PAGE ${pageNum}) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.title}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Assessment Synthesis &amp; Question Practice
+          </span>
+        </div>
+
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Final analytical evaluation &amp; concluding historical verdict:
+        </div>
+      </div>
+
+      <div style="flex: 3.6; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+${conclusionTaskLines}
+      </div>
+
+      ${fourMarkBody}
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
+}
+
+/**
+ * Builds the complete 24-page workbook HTML for a Key Topic
  */
 function buildWeimarKeyTopicWorkbook(ktId) {
   const ktMeta = WEIMAR_KEY_TOPICS_METADATA[ktId];
@@ -175,14 +423,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
   const footers = WEIMAR_FOOTERS[ktId];
   const synopticPrompt = ktMeta.synopticPrompt;
   const ktNum = ktMeta.keyTopicNum;
-
-  // Extract the 4 lessons directly from units/weimar_nazi_germany/data.js
-  const lessonIds = ktMeta.lessons;
-  const lessons = lessonIds.map((id, idx) => {
-    const rawLesson = weimarCurriculum.lessons.find((l) => l.id === id);
-    if (!rawLesson) throw new Error(`Could not find lesson '${id}' in data.js`);
-    return extractEnquiryData(rawLesson, ktNum, idx + 1);
-  });
+  const enquiryConfigs = WEIMAR_ENQUIRY_CONFIGS[ktId] || [];
 
   let html = `<!DOCTYPE html>
 <html lang="en">
@@ -212,7 +453,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
     }
-    .page-container {
+    .page, .page-container {
       width: 100%;
       height: 272mm;
       max-height: 272mm;
@@ -237,49 +478,28 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       height: 100%;
       overflow: hidden;
     }
+    .spine-stage-row {
+      display: flex;
+      flex: 1;
+      min-height: 0;
+      align-items: stretch;
+      margin: 0;
+      border-bottom: 1.2px solid #000000;
+    }
     .task-section {
       margin-bottom: 2px;
     }
     .task-line {
       border-bottom: 1.2px solid #000000;
-      margin: 0;
+      height: 7.8mm;
+      width: 100%;
       box-sizing: border-box;
+      margin: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
       height: 5.8mm;
       margin: 0;
-      box-sizing: border-box;
-    }
-    /* Ruled paper 28 lines with 22mm margin */
-    .lined-page-grid {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      margin: 2px 0 3px 0;
-      border-top: 1.2px solid #000000;
-    }
-    .lined-row {
-      display: flex;
-      flex: 1;
-      min-height: 0;
-      border-bottom: 1.2px solid #000000;
-      box-sizing: border-box;
-    }
-    .lined-margin-cell {
-      width: 22mm;
-      border-right: 1.2px solid #000000;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      padding-left: 2px;
-      box-sizing: border-box;
-    }
-    .lined-content-cell {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding-left: 6px;
       box-sizing: border-box;
     }
     .page-footer-strip {
@@ -386,7 +606,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
               ${m.text}
             </p>
           </div>
-          <!-- Open Sketchpad Area (Pupil can freely use the entire page area) -->
+          <!-- Open Sketchpad Area -->
           <div style="flex: 1; min-height: 48mm; background: #ffffff;"></div>
         </div>
         `,
@@ -428,7 +648,7 @@ function buildWeimarKeyTopicWorkbook(ktId) {
               ${m.text}
             </p>
           </div>
-          <!-- Open Sketchpad Area (Pupil can freely use the entire page area) -->
+          <!-- Open Sketchpad Area -->
           <div style="flex: 1; min-height: 48mm; background: #ffffff;"></div>
         </div>
         `,
@@ -442,668 +662,29 @@ function buildWeimarKeyTopicWorkbook(ktId) {
 `;
 
   // ====================================================================
-  // PAGES 4–19: 4 ENQUIRIES (4 PAGES PER ENQUIRY: 2 FACING SPREADS)
-  // SOURCED DYNAMICALLY FROM units/weimar_nazi_germany/data.js
+  // PAGES 4–19: 4 DEDICATED FOUR-PAGE ENQUIRY MODULES (GOLDEN STANDARD)
+  // Page 1: 5-Stage Chronological Inquiry Spine (Verso)
+  // Page 2: Extended Writing Assessment with 22 Flex Lines & Frames (Recto)
+  // Page 3: Extended Writing Continued with 31 Lines (Verso)
+  // Page 4: Assessment Synthesis with 24 Lines + 4-Mark Practice (Recto)
   // ====================================================================
-  lessons.forEach((enq, idx) => {
-    const leftPageNum = 4 + idx * 4;
-    const rightPageNum = leftPageNum + 1;
-    const linedLeftPageNum = leftPageNum + 2;
-    const linedRightPageNum = leftPageNum + 3;
+  enquiryConfigs.forEach((cfg, idx) => {
+    const leftPageNum = 4 + idx * 4; // 4, 8, 12, 16
+    const rightPageNum = leftPageNum + 1; // 5, 9, 13, 17
+    const linedLeftPageNum = leftPageNum + 2; // 6, 10, 14, 18
+    const linedRightPageNum = leftPageNum + 3; // 7, 11, 15, 19
 
-    // Verso Bottom Component based on enquiry index (0=Inference, 1=Causation Check, 2=Dual Sources Utility, 3=Dual Interpretations)
-    let versoExamComponentHtml = '';
-    if (idx === 0) {
-      // Enquiry 1: Source A Inference Table [4m] & Source A Provenance Evaluation [4m]
-      const stim = enq.exam.stimulus || [];
-      const sourceObj = stim[0] || {};
-      const sourceTitle =
-        sourceObj.title || 'Source A: Contemporary record of conditions and reactions in Germany.';
-      const sourceText = sourceObj.content
-        ? `"${sourceObj.content.replace(/^"|"$/g, '').slice(0, 310)}..."`
-        : 'Surviving archival dispatch documenting the political and social conditions in Germany.';
+    // Page 1 of module (Verso): 5-Stage Chronological Inquiry Spine
+    html += renderSpinePage(cfg, leftPageNum, footers[leftPageNum - 1]);
 
-      const cfgItem =
-        (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][0]) || {};
-      const inferenceFocus = cfgItem.q1Focus || 'the political conditions in Germany';
-      const provenancePrompt =
-        cfgItem.provenancePrompt ||
-        `How does the provenance (Nature, Origin, Purpose) of Source A influence how valuable it is to an historian investigating ${inferenceFocus}? [4 marks]`;
-      const provenanceGuidance =
-        cfgItem.provenanceGuidance ||
-        'Evaluate the nature (type of source), origin (author, date), and purpose (intent to inform, convince, or satirise).';
-      const provenanceStems =
-        cfgItem.provenanceStems ||
-        'The nature of this source means... Its origin in this period gives it value because... However, the purpose means we must consider...';
+    // Page 2 of module (Recto): Extended Writing Assessment
+    html += renderModulePage2(cfg, rightPageNum, footers[rightPageNum - 1]);
 
-      versoExamComponentHtml = `
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
-        <!-- Source A Excerpt -->
-        <div class="archival-box" style="margin-bottom: 2px; padding: 4px 6px;">
-          <div class="archival-header">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase;">
-              Source A
-            </strong>
-          </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin: 1px 0 2px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
-            ${sourceTitle.startsWith('Source A:') ? sourceTitle : `From: ${sourceTitle}`}
-          </p>
-          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; line-height: 1.25; color: #000000; margin: 0;">
-            ${sourceText}
-          </p>
-        </div>
+    // Page 3 of module (Verso): Extended Writing Continued
+    html += renderModulePage3(cfg, linedLeftPageNum, footers[linedLeftPageNum - 1]);
 
-        <!-- Question 1: Inference from Source A (Side-by-Side 2-Column Format) -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 2px;">
-          <div style="margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase;">
-              &bull; Question 1: Inference from Source A [4 marks &bull; 5 mins]
-            </strong>
-          </div>
-          <p style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-            Give two things you can infer from Source A about ${inferenceFocus}.
-          </p>
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 4px; border-radius: 2px; margin-bottom: 2px;">
-            <strong>Target: AO3 [4 marks] &bull;</strong> 1 mark for each valid deduction + 1 mark for each supporting detail/quote from Source A.
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px;">
-            <!-- (i) First Inference -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
-                  (i) What I can infer:
-                </span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b;">[1 mark: deduction]</span>
-              </div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 3px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
-                  Details in Source A that tell me this:
-                </span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b;">[1 mark: quote]</span>
-              </div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-            </div>
-
-            <!-- (ii) Second Inference -->
-            <div style="border: 1px solid #cbd5e1; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
-                  (ii) What I can infer:
-                </span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b;">[1 mark: deduction]</span>
-              </div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 3px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #000000;">
-                  Details in Source A that tell me this:
-                </span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #64748b;">[1 mark: quote]</span>
-              </div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-              <div style="border-bottom: 1.2px solid #000000; height: 5.4mm;"></div>
-            </div>
-          </div>
-
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e3a8a; line-height: 1.15; margin-top: 3px; border-top: 1px solid #e2e8f0; padding-top: 2px;">
-            <strong>Examiner Advice:</strong> Never copy out words as your inference; state your deduction first, then quote the specific words to prove it.
-          </div>
-        </div>
-
-        <!-- Source A Provenance & Historical Value Check [4 marks] -->
-        <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div>
-            <div style="margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-                &bull; Source A Evaluation: Provenance &amp; Historical Value [4 marks &bull; 5 mins]
-              </strong>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-              ${provenancePrompt}
-            </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target Guidance:</strong> ${provenanceGuidance}<br>
-              <strong>Sentence Stems:</strong> <em>${provenanceStems}</em>
-            </div>
-          </div>
-          <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.8" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
-        </div>
-      </div>
-      `;
-    } else if (idx === 1) {
-      // Enquiry 2: Chronological Milestones & Single-Source Utility & Corroboration [6m]
-      const cfgItem =
-        (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][1]) || {};
-      const phases = cfgItem.chronologyPhases || [
-        '<strong>Phase 1:</strong> Deep structural discontent builds under political instability.',
-        '<strong>Phase 2:</strong> Decisive catalyst triggers acute geopolitical and economic crisis.',
-        '<strong>Phase 3:</strong> Strategic intervention by authorities reshapes institutional power.',
-        '<strong>Phase 4:</strong> Lasting consequence transforms the trajectory of the German state.',
-      ];
-      const singleSrc = cfgItem.singleSourceB || {
-        provenance: 'From an official report or contemporary account.',
-        content: 'Historical testimony documenting conditions and turning points of the crisis.',
-        stem: `How useful is Source B for an enquiry into the key turning points of ${ktMeta.title}? [6 marks]`,
-        guidance:
-          'Content Deduction &bull; Own Knowledge Corroboration &bull; Provenance Value (Nature, Origin, Purpose).',
-        stems:
-          'Source B is useful because it reveals that... From my own knowledge, I know that... The provenance makes this account valuable because...',
-      };
-
-      versoExamComponentHtml = `
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
-        <!-- Chronological Sequence (4 Milestones) -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-bottom: 3px;">
-          <div style="border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-              &bull; Chronology: Key Turning Points &amp; Milestones
-            </strong>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3px 6px; font-family: 'Inter', sans-serif; font-size: 7.3pt; line-height: 1.2;">
-            ${phases.map((it) => `<div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 2.5px 5px; border-radius: 2px;">${it}</div>`).join('')}
-          </div>
-        </div>
-
-        <!-- Primary Source B Box -->
-        <div class="archival-box" style="margin-bottom: 3px; padding: 4px 6px;">
-          <div class="archival-header">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase;">
-              Source B
-            </strong>
-          </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #333333; margin: 1px 0 2px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 2px;">
-            ${singleSrc.provenance}
-          </p>
-          <p style="font-family: 'Georgia', serif; font-size: 8.4pt; line-height: 1.22; color: #000000; margin: 0;">
-            "${singleSrc.content}"
-          </p>
-        </div>
-
-        <!-- Single-Source Utility & Corroboration [6 marks] -->
-        <div class="task-section" style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div>
-            <div style="margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-                &bull; Section B Skill Practice: Single-Source Utility &amp; Corroboration [6 marks &bull; 8 mins]
-              </strong>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 8.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
-              ${singleSrc.stem}
-            </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.16; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target Guidance:</strong> ${singleSrc.guidance}<br>
-              <strong>Sentence Stems:</strong> <em>${singleSrc.stems}</em>
-            </div>
-          </div>
-          <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.8" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
-        </div>
-      </div>
-      `;
-    } else if (idx === 2) {
-      // Enquiry 3: Dual Primary Sources B & C and Utility COP Analysis
-      const stim = enq.exam.stimulus || [];
-      const srcB = stim[0] || {
-        title: 'Source B: Official government report or primary speech.',
-        content:
-          'Primary testimony detailing conditions, political tensions, and eyewitness accounts from the period.',
-      };
-      const srcC = stim[1] || {
-        title: 'Source C: Eyewitness diary entry, newspaper article, or memoir.',
-        content:
-          'Personal perspective highlighting social reality, public opinion, and popular reactions.',
-      };
-
-      versoExamComponentHtml = `
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
-        <!-- Dual Primary Sources B & C -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
-          <div class="archival-box" style="margin-bottom: 0;">
-            <div class="archival-header">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; text-transform: uppercase;">
-                Source B
-              </strong>
-            </div>
-            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
-              ${srcB.title.startsWith('Source B:') ? srcB.title.slice(0, 85) : `From: ${srcB.title.slice(0, 80)}`}
-            </p>
-            <p style="font-family: 'Georgia', serif; font-size: 8.0pt; line-height: 1.20; color: #000000; margin: 0;">
-              "${srcB.content.replace(/^"|"$/g, '').slice(0, 260)}..."
-            </p>
-          </div>
-
-          <div class="archival-box" style="margin-bottom: 0;">
-            <div class="archival-header">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; text-transform: uppercase;">
-                Source C
-              </strong>
-            </div>
-            <p style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #333333; margin: 1px 0; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px;">
-              ${srcC.title.startsWith('Source C:') ? srcC.title.slice(0, 85) : `From: ${srcC.title.slice(0, 80)}`}
-            </p>
-            <p style="font-family: 'Georgia', serif; font-size: 8.0pt; line-height: 1.20; color: #000000; margin: 0;">
-              "${srcC.content.replace(/^"|"$/g, '').slice(0, 260)}..."
-            </p>
-          </div>
-        </div>
-
-        <!-- Question 3(a) Preparation: Content & Provenance (COP) Analysis -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 2px 6px; background: #f8fafc; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block;">
-              &bull; Question 3(a) Preparation: Content &amp; Provenance (COP) Analysis
-            </strong>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.16; color: #111111; margin-top: 1px;">
-              <strong>Sentence Stems:</strong> <em>"Source B is useful because it reveals... From own knowledge, I know... The provenance makes it valuable because..."</em>
-            </div>
-          </div>
-
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; flex: 1;">
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-                Source B Utility Breakdown:
-              </strong>
-              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">1. Content Deduction &amp; Quote:</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              </div>
-              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">2. Historical Context (Own Knowledge):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              </div>
-              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">3. Provenance (Nature, Origin, Purpose):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              </div>
-            </div>
-
-            <div style="border: 1px solid #cbd5e1; border-radius: 3px; padding: 3px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 1px;">
-                Source C Utility Breakdown:
-              </strong>
-              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">1. Content Deduction &amp; Quote:</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              </div>
-              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">2. Historical Context (Own Knowledge):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              </div>
-              <div style="border: 1px solid #e2e8f0; border-radius: 2px; padding: 2px 4px; background: #f8fafc; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #1e3a8a;">3. Provenance (Nature, Origin, Purpose):</div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-                <div style="border-bottom: 1.2px solid #000000; height: 5.2mm;"></div>
-              </div>
-            </div>
-          </div>
-
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e3a8a; line-height: 1.15; margin-top: 2px; border-top: 1px solid #e2e8f0; padding-top: 2px;">
-            <strong>Examiner Advice:</strong> Always evaluate Nature, Origin, and Purpose (NOP) to judge how typical or reliable each source is for the enquiry.
-          </div>
-        </div>
-      </div>
-      `;
-    } else {
-      // Enquiry 4: Dual Interpretations 1 & 2 Plate and Q3b/Q3c Tasks with Companion Sources
-      const stim = enq.exam.stimulus || [];
-      const int1 = stim[0] || {
-        title: 'Interpretation 1: From a modern academic study of the period.',
-        content:
-          'Emphasises structural economic failure, mass unemployment, and institutional weakness as the primary decisive factors.',
-      };
-      const int2 = stim[1] || {
-        title: 'Interpretation 2: From a revisionist historical analysis.',
-        content:
-          'Emphasises political conspiracy, backstairs intrigue, and deliberate constitutional betrayal by conservative elites.',
-      };
-
-      const cfgItem =
-        (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][3]) || {};
-      const interpFocus = cfgItem.interpFocus || 'the historical development of the period';
-      const compSources = cfgItem.companionSources || {
-        sourceB: {
-          provenance: 'From contemporary evidence supporting the first view.',
-          content: 'Details supporting Interpretation 1.',
-        },
-        sourceC: {
-          provenance: 'From contemporary evidence supporting the second view.',
-          content: 'Details supporting Interpretation 2.',
-        },
-      };
-
-      versoExamComponentHtml = `
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin-top: 1px;">
-        <!-- Dual Interpretations & Supporting Sources Plate -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-bottom: 2px;">
-          <!-- Left Column: Source B + Interpretation 1 -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-            <!-- Companion Source B -->
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 2px 4px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a; display: block;">
-                Source B (Supporting Evidence)
-              </strong>
-              <p style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; color: #475569; margin: 1px 0;">
-                ${compSources.sourceB.provenance}
-              </p>
-              <p style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.18; color: #000000; margin: 0;">
-                "${compSources.sourceB.content}"
-              </p>
-            </div>
-            <!-- Interpretation 1 -->
-            <div>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                ${int1.title.slice(0, 50)}...
-              </strong>
-              <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
-                "${int1.content.replace(/^"|"$/g, '').slice(0, 240)}..."
-              </p>
-            </div>
-          </div>
-
-          <!-- Right Column: Source C + Interpretation 2 -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff;">
-            <!-- Companion Source C -->
-            <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 2px; padding: 2px 4px; margin-bottom: 3px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #1e3a8a; display: block;">
-                Source C (Supporting Evidence)
-              </strong>
-              <p style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-style: italic; color: #475569; margin: 1px 0;">
-                ${compSources.sourceC.provenance}
-              </p>
-              <p style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.18; color: #000000; margin: 0;">
-                "${compSources.sourceC.content}"
-              </p>
-            </div>
-            <!-- Interpretation 2 -->
-            <div>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000; display: block; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-                ${int2.title.slice(0, 50)}...
-              </strong>
-              <p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.18; color: #000000; margin: 0;">
-                "${int2.content.replace(/^"|"$/g, '').slice(0, 240)}..."
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Question 3(b) & Question 3(c) Writing Frames -->
-        <div style="flex: 1; display: flex; flex-direction: column; gap: 3px; justify-content: space-between; min-height: 0;">
-          <!-- Question 3(b): Difference in Views [4 marks] -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
-                &bull; Question 3(b): Difference in Views [4 marks &bull; 5 mins]
-              </strong>
-              <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 1px 0;">
-                Study Interpretations 1 and 2. They give different views on ${interpFocus}. What is the main difference between the views?
-              </p>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 4px; border-radius: 2px; margin-bottom: 1px;">
-                <strong>Sentence Stem:</strong> The main difference is that Interpretation 1 stresses... whereas Interpretation 2 argues that... Specifically, Interpretation 1 notes "..." while Interpretation 2 suggests "...".
-              </div>
-            </div>
-            <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.0" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
-          </div>
-
-          <!-- Question 3(c): Reasons for Difference [4 marks] -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; display: block; margin-bottom: 1px;">
-                &bull; Question 3(c): Reason for Difference [4 marks &bull; 5 mins]
-              </strong>
-              <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; margin: 1px 0;">
-                Suggest one reason why Interpretations 1 and 2 give different views on ${interpFocus}. You may use Sources B and C to help explain your answer.
-              </p>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 4px; border-radius: 2px; margin-bottom: 1px;">
-                <strong>Sentence Stem:</strong> One reason they differ is because the historians gave weight to different sources of evidence. Interpretation 1 is supported by Source B (which shows that...), whereas Interpretation 2 is supported by Source C (which shows that...).
-              </div>
-            </div>
-            <div class="auto-lines-target" data-auto-lines="true" data-line-height="6.0" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; margin-top: 2px;"></div>
-          </div>
-        </div>
-      </div>
-      `;
-    }
-
-    // Determine Recto Header & Task Structure from WEIMAR_ENQUIRY_EXAM_CONFIG
-    const enqConfig =
-      (WEIMAR_ENQUIRY_EXAM_CONFIG[ktId] && WEIMAR_ENQUIRY_EXAM_CONFIG[ktId][idx]) || {};
-    const rectoTariff =
-      enqConfig.rectoTariff || 'Section A: Question 2 • Explain Why [12 Marks • 18 Mins]';
-    const rectoScoreMax = enqConfig.rectoScoreMax || '12';
-    const rectoStem =
-      enqConfig.rectoStem || `Explain why ${enq.enquiryQuestion.toLowerCase().replace(/\?$/, '')}.`;
-    const rectoProvenance = enqConfig.rectoProvenance || enq.exam.provenance || 'Edexcel Paper 3';
-    const stimulusPoints = enqConfig.rectoStimulus || [enq.vocab.term1.term, enq.vocab.term2.term];
-
-    html += `
-  <!-- ====================================================================
-       ENQUIRY ${ktNum}.${enq.enquiryNum}: PAGES ${leftPageNum}–${rightPageNum}
-       ==================================================================== -->
-  
-  <!-- VERSO PAGE (LEFT): RETRIEVAL DO NOW & EXAM PRACTICE -->
-  <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Top Enquiry Header Bar -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 0; font-weight: 800;">
-            Enquiry ${ktNum}.${enq.enquiryNum}: ${enq.enquiryQuestion}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
-            Key Topic ${ktNum}
-          </span>
-        </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #333333; margin-top: 1px;">
-          <strong>Specification Focus:</strong> ${enq.specAnchor}
-        </div>
-      </div>
-
-      <!-- 10-Question Prior Knowledge Retrieval "Do Now" Grid -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; margin-bottom: 3px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase;">
-            Prior Knowledge Retrieval &bull; Answer in 1–3 words [Target: 10/10]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800;">Score: [ &nbsp;&nbsp;&nbsp; / 10 ]</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2px 8px; font-family: 'Inter', sans-serif; font-size: 7.2pt;">
-          ${enq.doNow
-            .map(
-              (qItem, qIdx) => `
-          <div>
-            <div style="line-height: 1.15;">
-              <strong>Q${qIdx + 1}:</strong> ${qItem.q}
-            </div>
-            <div class="task-line-dotted"></div>
-          </div>
-          `,
-            )
-            .join('')}
-        </div>
-      </div>
-
-      <!-- Verso Section: Exam Practice / Forensic Evidence -->
-      ${versoExamComponentHtml}
-
-      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 24)}
-    </div>
-  </div>
-
-  <!-- RECTO PAGE (RIGHT): EXTENDED DISCIPLINARY WRITING & SCAFFOLDING -->
-  <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 1px;">
-        <div style="display: flex; align-items: baseline; gap: 6px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.2pt; color: #000000; margin: 0; font-weight: 800;">
-            ${rectoTariff}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
-            ${rectoProvenance}
-          </span>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-          Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${rectoScoreMax} ]
-        </span>
-      </div>
-
-      <!-- Question Stem -->
-      <div style="margin: 1px 0 2px 0;">
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.22;">
-          ${rectoStem}
-        </p>
-        ${
-          idx <= 1
-            ? `<div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
-                 <strong>You may use in your answer:</strong>
-                 <span>&bull; ${stimulusPoints[0]}</span>
-                 <span>&bull; ${stimulusPoints[1]}</span>
-                 <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
-               </div>`
-            : idx === 2
-              ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
-                 <strong>Exam Rubric:</strong> Explain your answer, using Sources B and C and your knowledge of the historical context.
-               </div>`
-              : `<div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
-                 <strong>Exam Rubric:</strong> Explain your answer, using both interpretations and your knowledge of the historical context.
-               </div>`
-        }
-      </div>
-
-      <!-- 3-Column Scaffolded Essay Planning Guide -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 2px;">
-        ${(enqConfig.rectoPlan || [])
-          .map(
-            (p) => `
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; color: #000000;">
-                ${p.title}
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
-                ${p.tag}
-              </span>
-            </div>
-            <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #111111; margin: 0; line-height: 1.16;">
-              ${p.guidance}
-            </p>
-          </div>
-        `,
-          )
-          .join('')}
-      </div>
-
-      <!-- Connectives & Word Bank -->
-      <div style="border: 1px solid #000000; padding: 2px 5px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.2;">
-        <div><strong>Analytical Connectives:</strong> Consequently, In direct reaction to, Furthermore, Crucially, As a direct result</div>
-        <div style="margin-top: 1px;"><strong>Word Bank:</strong> ${enq.vocab.terms
-          .slice(0, 5)
-          .map((t) => t.term)
-          .join(' • ')}</div>
-      </div>
-
-      <!-- Ruled Task Lines for Extended Writing (18 Lines with Task Continuation Prompt) -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on Pages ${linedLeftPageNum}–${linedRightPageNum} for full 3-paragraph timed assessment):
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; justify-content: space-between;">
-        ${Array.from({ length: 18 })
-          .map(() => '<div class="task-line"></div>')
-          .join('\n        ')}
-      </div>
-
-      <!-- Timeline Mission Box (Sits right at the bottom above the footer line & funny quote) -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 2px 6px; background: #fdfdfd; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 1px;">
-          Timeline Mission &bull; Pages 2–3
-        </div>
-        <div style="font-family: 'Georgia', serif; font-size: 7.8pt; color: #000000; line-height: 1.2;">
-          Illustrate the milestone sketchpad for Enquiry ${ktNum}.${enq.enquiryNum} on Pages 2–3 with your dual-coding visual symbol.
-        </div>
-      </div>
-
-      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 24)}
-    </div>
-  </div>
-
-  <!-- ====================================================================
-       ENQUIRY ${ktNum}.${enq.enquiryNum}: SPREAD 2 (FACING EXTENDED WRITING RULED PAPER)
-       ==================================================================== -->
-  
-  <!-- SPREAD 2 VERSO (LEFT): 28 RULED LINES WITH 22mm MARGIN -->
-  <div class="page page-container verso-page" id="page-${linedLeftPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-          Enquiry ${ktNum}.${enq.enquiryNum}: ${enq.enquiryQuestion} &bull; Extended Writing Response
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase; background: #f8fafc;">
-          Assessment Page 1 of 2
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${Array.from({ length: 28 })
-          .map(
-            (_, lineIdx) => `
-          <div class="lined-row">
-            <div class="lined-margin-cell">
-              ${lineIdx === 0 ? '<span style="font-family: \'Inter\', sans-serif; font-size: 6.0pt; font-weight: 800; text-transform: uppercase; color: #475569;">Margin</span>' : ''}
-            </div>
-            <div class="lined-content-cell"></div>
-          </div>`,
-          )
-          .join('')}
-      </div>
-
-      ${renderFooterStrip(linedLeftPageNum, footers[linedLeftPageNum - 1], 24)}
-    </div>
-  </div>
-
-  <!-- SPREAD 2 RECTO (RIGHT): 28 RULED LINES WITH 22mm MARGIN -->
-  <div class="page page-container recto-page" id="page-${linedRightPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-          Enquiry ${ktNum}.${enq.enquiryNum}: ${enq.enquiryQuestion} &bull; Extended Writing Response
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase; background: #f8fafc;">
-          Assessment Page 2 of 2
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid">
-        ${Array.from({ length: 28 })
-          .map(
-            (_, lineIdx) => `
-          <div class="lined-row">
-            <div class="lined-margin-cell">
-              ${lineIdx === 0 ? '<span style="font-family: \'Inter\', sans-serif; font-size: 6.0pt; font-weight: 800; text-transform: uppercase; color: #475569;">Margin</span>' : ''}
-            </div>
-            <div class="lined-content-cell"></div>
-          </div>`,
-          )
-          .join('')}
-      </div>
-
-      ${renderFooterStrip(linedRightPageNum, footers[linedRightPageNum - 1], 24)}
-    </div>
-  </div>
-`;
+    // Page 4 of module (Recto): Assessment Synthesis & 4-Mark Practice
+    html += renderModulePage4(cfg, linedRightPageNum, footers[linedRightPageNum - 1]);
   });
 
   // ====================================================================
@@ -1400,16 +981,26 @@ function buildWeimarKeyTopicWorkbook(ktId) {
     keyTopicNum: ktNum,
     trackerTitle: `Student Assessment Record &bull; Key Topic ${ktNum} Tracker`,
     trackerSubtitle: `Paper 3: Weimar and Nazi Germany, 1918–1939 (${ktMeta.title})`,
-    enquiries: lessons.map((l) => ({
-      num: l.enquiryNum,
-      code: `KT${ktNum}.${l.enquiryNum}`,
+    enquiries: enquiryConfigs.map((l) => ({
+      num: l.lessonNum,
+      code: `KT${ktNum}.${l.lessonNum}`,
       title:
         l.enquiryQuestion.length > 55 ? l.enquiryQuestion.slice(0, 52) + '...' : l.enquiryQuestion,
       doNowMarks: 10,
-      q1aMarks: l.enquiryNum === 1 ? 4 : 4,
-      q1bMarks: l.enquiryNum === 4 ? 4 : 4,
-      extType: l.enquiryNum === 3 ? 'Q3a' : 'Q2',
-      extMarks: l.enquiryNum === 3 ? 8 : 12,
+      q1aMarks: 4,
+      q1bMarks: 4,
+      extType:
+        l.lessonNum === 3 && ktNum === 3
+          ? 'Q3a'
+          : l.lessonNum === 4 && (ktNum === 3 || ktNum === 4)
+            ? 'Q3d'
+            : 'Q2',
+      extMarks:
+        l.lessonNum === 3 && ktNum === 3
+          ? 8
+          : l.lessonNum === 4 && (ktNum === 3 || ktNum === 4)
+            ? 16
+            : 12,
       totalMarks: 26,
     })),
     feedback: {
@@ -1417,9 +1008,9 @@ function buildWeimarKeyTopicWorkbook(ktId) {
       signature: '____________________________',
       date: '____________________',
     },
-    qrLessons: lessons.map((l) => ({
-      label: `KT ${ktNum}.${l.enquiryNum}`,
-      subLabel: `Enquiry ${ktNum}.${l.enquiryNum}`,
+    qrLessons: enquiryConfigs.map((l) => ({
+      label: `KT ${ktNum}.${l.lessonNum}`,
+      subLabel: `Enquiry ${ktNum}.${l.lessonNum}`,
       title: l.enquiryQuestion,
       url: `https://the-history-revision-hub.netlify.app/?unit=weimar_nazi_germany&lesson=${l.id}`,
     })),
