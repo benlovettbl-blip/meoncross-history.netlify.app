@@ -33,6 +33,7 @@ const QRCode = require('qrcode');
 const puppeteer = require('puppeteer');
 const { PDFDocument } = require('pdf-lib');
 const { ENQUIRY_STAGES, QUESTION_PROBABILITIES } = require('./enhance_eee_workbook.cjs');
+const { EEE_ENQUIRY_CONFIGS } = require('./components/eee_enquiry_configs.cjs');
 const {
   renderStandardFrontCover,
   renderStandardBackCover,
@@ -184,6 +185,9 @@ function renderFooterStrip(pageNum, text, totalPages = 24) {
 // ============================================================================
 // KEY TOPICS MASTER CONFIGURATIONS
 // ============================================================================
+// ============================================================================
+// KEY TOPICS MASTER CONFIGURATIONS
+// ============================================================================
 const KEY_TOPICS_DATA = {
   KT1: {
     keyTopicNum: 1,
@@ -202,11 +206,45 @@ const KEY_TOPICS_DATA = {
         'Unknown English Artist • Queen Elizabeth I depicted in her patterned cloth of gold coronation robes, holding the sovereign orb and sceptre. National Portrait Gallery, London (NPG 2607).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 96,
+      heightMm: 105,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      specImageSrc: getBase64Image('/images/edexcel_spec_kt1_crop_precise.png'),
+      edexcelTable: {
+        header: 'Key topic 1: Queen, government and religion, 1558–69',
+        rows: [
+          {
+            numTitle: '1 The situation on Elizabeth’s accession',
+            bullets: [
+              'Elizabethan England in 1558: society and government.',
+              'The Virgin Queen: the problem of her legitimacy, gender, marriage. Her character and strengths.',
+              'Challenges at home and abroad: financial weaknesses, Mary, Queen of Scots, and the French threat.',
+            ],
+          },
+          {
+            numTitle: "2 The 'settlement' of religion",
+            bullets: [
+              'Religious divisions in England in 1558.',
+              'Elizabeth’s Religious Settlement (1559): its features and impact.',
+              'The Church of England’s role in society.',
+            ],
+          },
+          {
+            numTitle: '3 Challenge to the religious settlement',
+            bullets: [
+              'The nature and extent of the Puritan challenge.',
+              'The nature and extent of the Catholic challenge, including the role of the Papacy.',
+            ],
+          },
+          {
+            numTitle: '4 The problem of Mary, Queen of Scots',
+            bullets: [
+              'Mary, Queen of Scots: her claim to the English throne, her arrival in England, 1568.',
+              'Relations between Elizabeth and Mary, 1568–69.',
+            ],
+          },
+        ],
+      },
     },
     milestones: [
       {
@@ -246,472 +284,9 @@ const KEY_TOPICS_DATA = {
         text: 'Following the murder of Lord Darnley and defeat at Carberry Hill, Catholic Mary Stuart flees Scotland in a fishing boat to Workington, Cumberland. Elizabeth places her under armed house arrest, triggering twenty years of Catholic conspiracy.',
       },
     ],
-    enquiries: [
-      {
-        enquiryNum: 1,
-        id: 'lesson_1_1',
-        title: 'The situation on Elizabeth’s accession, 1558',
-        inquiryQuestion:
-          'How dangerous was the crisis facing Elizabeth I upon her accession in 1558?',
-        subTitle:
-          'Key Topic 1.1: Society, Government, Legitimacy, Marriage, Debt & Foreign Threats',
-        specAnchor:
-          'Elizabethan government (Monarch, Privy Council, Parliament, Lords Lieutenant, JPs); challenges of gender, legitimacy, and marriage; financial debt; foreign threats from France and Scotland.',
-        doNow: [
-          {
-            q: 'Which Tudor monarch was Elizabeth I’s father?',
-            a: 'King Henry VIII',
-          },
-          {
-            q: 'Who was Elizabeth I’s mother, executed in 1536?',
-            a: 'Anne Boleyn',
-          },
-          {
-            q: 'Which Catholic queen preceded Elizabeth on the throne (1553–58)?',
-            a: 'Mary I (Mary Tudor)',
-          },
-          {
-            q: 'What religion was Queen Elizabeth I?',
-            a: 'Protestant',
-          },
-          {
-            q: 'What ancient English possession in France was lost in January 1558?',
-            a: 'Calais',
-          },
-          {
-            q: 'Approximately how much Crown debt did Elizabeth inherit in 1558?',
-            a: '£300,000',
-          },
-          {
-            q: 'Who did Elizabeth appoint as her trusted Principal Secretary in 1558?',
-            a: 'Sir William Cecil (Lord Burghley)',
-          },
-          {
-            q: 'Which institution had the sole legal power to grant monarchical taxes?',
-            a: 'Parliament',
-          },
-          {
-            q: 'Which unpaid local officials maintained law and order in counties?',
-            a: 'Justices of the Peace (JPs)',
-          },
-          {
-            q: 'Which northern kingdom was ruled by Mary of Guise in 1558?',
-            a: 'Scotland',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Royal Prerogative',
-        vocabTermB: 'Privy Council',
-        vocabPrompt:
-          'Explain the difference between the monarch’s personal right to make key decisions alone (<strong>Royal Prerogative</strong>) and her group of trusted noble advisers who ran the daily government (<strong>Privy Council</strong>):',
-        featureA: {
-          provenance: 'Edexcel June 2018 (Q1a)',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of the role of the Privy Council in 1558.',
-          guidance:
-            'Point (A group of 19 noble advisors who guided royal policy and administration) &bull; Fact (Led by William Cecil, they debated daily on war, finance, and treason, but the Queen had the final prerogative).',
-          stems:
-            'One key feature was that the Privy Council... Specifically, led by Sir William Cecil, they...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2022 (Q1b)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of the financial weaknesses Elizabeth faced in 1558.',
-          guidance:
-            'Point (The Crown was in crippling debt of £300,000 inherited from Mary I) &bull; Fact (Crown income had fallen due to inflation and selling royal land; debasement of the coinage ruined English credit abroad).',
-          stems:
-            'One key feature was the massive Crown debt inherited from Mary I... Specifically, the debt stood at...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §2.3]',
-          stem: 'Describe one key feature of the challenges Elizabeth faced regarding marriage in 1558.',
-          guidance:
-            'Point (Intense pressure to produce a Protestant heir and secure foreign alliances) &bull; Fact (Marriage to an English noble created factional jealousy; marrying a foreign Catholic prince risked foreign domination like Mary I and Philip II).',
-          stems:
-            'One key feature was the intense political dilemma over marriage... Specifically, Elizabeth was wary because...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2018 (Q2)',
-          type: 'explain_why_12',
-          tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
-          stem: 'Explain why Elizabeth’s legitimacy was questioned when she became queen in 1558.',
-          stimulus: ["Her parents' marriage", 'Mary, Queen of Scots'],
-          structureStrip: [
-            {
-              col: '1. CAUSE 1: ANNE BOLEYN & PAPAL LAW',
-              ref: '[Textbook §2.1–§2.2]',
-              text: 'Explain that Catholics never recognized Henry VIII’s divorce from Catherine of Aragon; the Pope declared his marriage to Anne Boleyn illegal, rendering Elizabeth an illegitimate bastard.',
-            },
-            {
-              col: '2. CAUSE 2: HENRY VIII’S OWN SUCCESSION ACTS',
-              ref: '[Textbook §2.2]',
-              text: 'Explain that after Anne Boleyn was beheaded in 1536, Parliament passed the 1536 Succession Act declaring Elizabeth illegitimate, creating enduring legal doubt despite the 1544 Act.',
-            },
-            {
-              col: '3. CAUSE 3: CATHOLIC MARY, QUEEN OF SCOTS',
-              ref: '[Textbook §4.1–§4.2]',
-              text: 'Explain that strict Catholics viewed Mary Stuart, granddaughter of Henry VIII’s sister Margaret Tudor, as the legitimate, Catholic, God-ordained rightful heir to the English throne.',
-            },
-          ],
-          connectives:
-            'Elizabeth’s legitimacy was challenged primarily because... &bull; Specifically, Roman Catholic doctrine maintained that... &bull; Furthermore, this was compounded by Henry VIII’s own actions when... &bull; Consequently, English and European Catholics argued that... &bull; Ultimately, this weakness made Mary Stuart an existential threat because...',
-          wordBank:
-            'Legitimacy &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Papal annulment &bull; Succession Act 1536 &bull; Mary, Queen of Scots &bull; Henry VIII &bull; Illegitimate &bull; Catholic Europe',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 1). In Milestone 1, sketch the Tudor Rose crown and note Elizabeth’s £300,000 inherited debt.',
-        },
-      },
-      {
-        enquiryNum: 2,
-        id: 'lesson_1_2',
-        title: "The 'settlement' of religion, 1559",
-        inquiryQuestion:
-          'Was Elizabeth’s Religious Settlement a brilliant compromise or an unstable truce?',
-        subTitle:
-          'Key Topic 1.2: Act of Supremacy, Act of Uniformity, Royal Injunctions & The Prayer Book',
-        specAnchor:
-          'The Act of Supremacy (1559); the Act of Uniformity (1559); the Royal Injunctions (1559); the Book of Common Prayer; the role of the Church of England.',
-        doNow: [
-          {
-            q: 'What title did Henry VIII claim over the Church of England in 1534?',
-            a: 'Supreme Head of the Church of England',
-          },
-          {
-            q: 'What language was the Catholic Latin Mass spoken in?',
-            a: 'Latin',
-          },
-          {
-            q: 'What term describes Protestants who wanted to purify the Church of all Catholic practices?',
-            a: 'Puritans',
-          },
-          {
-            q: 'What was the official fine for refusing to attend church under the 1559 Act of Uniformity?',
-            a: 'One shilling (12 pence)',
-          },
-          {
-            q: 'What title did Elizabeth I adopt under the 1559 Act of Supremacy?',
-            a: 'Supreme Governor of the Church of England',
-          },
-          {
-            q: 'What English prayer book was made compulsory in all parish churches in 1559?',
-            a: 'The Book of Common Prayer',
-          },
-          {
-            q: 'What official set of 57 instructions enforced the 1559 Settlement?',
-            a: 'The Royal Injunctions',
-          },
-          {
-            q: 'What was a Catholic called who refused to attend Anglican church services?',
-            a: 'A Recusant',
-          },
-          {
-            q: 'How many Marian Catholic bishops refused the Oath of Supremacy in 1559?',
-            a: 'All except one (27 out of 28 bishops)',
-          },
-          {
-            q: 'Who was appointed Elizabeth’s first Protestant Archbishop of Canterbury in 1559?',
-            a: 'Matthew Parker',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Act of Supremacy',
-        vocabTermB: 'Act of Uniformity',
-        vocabPrompt:
-          'Explain the difference between the law that made Elizabeth Supreme Governor of the Church (<strong>Act of Supremacy</strong>) and the law that set out rules for church services and the prayer book (<strong>Act of Uniformity</strong>):',
-        featureA: {
-          provenance: 'Edexcel SAMs (Q1a)',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of the Act of Supremacy (1559).',
-          guidance:
-            'Point (Made Elizabeth Supreme Governor of the Church of England rather than Supreme Head) &bull; Fact (All clergy and royal officials had to take an Oath of Supremacy acknowledging her title or lose their posts).',
-          stems:
-            'One key feature was that Elizabeth took the title of Supreme Governor... Specifically, this required all clergy to...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2023 (Q1a)',
-          ref: '[Textbook §2.1]',
-          stem: 'Describe one key feature of the Royal Injunctions of 1559.',
-          guidance:
-            'Point (A set of 57 practical instructions issued by William Cecil to enforce church conformity) &bull; Fact (Commanded clergy to preach royal supremacy, keep an English Bible, report recusants, and ban unapproved preaching).',
-          stems:
-            'One key feature of the Royal Injunctions was to enforce uniform Protestant practice... Specifically, they ordered that...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of the Act of Uniformity (1559).',
-          guidance:
-            'Point (Enforced identical church worship and prayer book throughout England) &bull; Fact (Made church attendance compulsory on Sundays with a one-shilling recusancy fine and reinstated the 1552 Protestant Book of Common Prayer).',
-          stems:
-            'One key feature was the legal enforcement of uniform church services... Specifically, the Act established that...',
-        },
-        rightExam: {
-          provenance: 'Edexcel SAMs (Q3)',
-          type: 'essay_16',
-          tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
-          stem: '‘Elizabeth’s religious settlement of 1559 was completely successful in pleasing all religious groups.’ How far do you agree? Explain your answer.',
-          stimulus: ['The Act of Uniformity (1559)', 'The Puritan challenge'],
-          structureStrip: [
-            {
-              col: '1. CRITERIA 1: SUCCESSFUL VIA MEDIA',
-              ref: '[Textbook §1.1–§2.2]',
-              text: 'Explain how the Settlement successfully achieved a broad Middle Way: moderate Protestant theology (English services, Book of Common Prayer) combined with Catholic outward ritual (vestments, candles) to prevent civil war.',
-            },
-            {
-              col: '2. CRITERIA 2: PURITAN DISCONTENT',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that the Settlement failed to satisfy zealous Puritans: they condemned the crucifix and vestments as "idolatrous popish rags" and challenged Elizabeth’s authority in the 1566 Vestments Controversy.',
-            },
-            {
-              col: '3. CRITERIA 3: CATHOLIC ALIENATION',
-              ref: '[Textbook §4.1–§4.2]',
-              text: 'Explain that devout Catholics could not accept Elizabeth as Supreme Governor; almost all Catholic bishops resigned in 1559, recusancy grew in the North, and the Pope later excommunicated Elizabeth in 1570.',
-            },
-          ],
-          connectives:
-            'On the one hand, the settlement was highly effective because... &bull; Crucially, by adopting the title Supreme Governor, Elizabeth... &bull; In direct contrast, radical Puritans remained dissatisfied because... &bull; Furthermore, traditional Catholics viewed the settlement as heretical because... &bull; Weighing these factors, I conclude that while the settlement prevented immediate religious war, it was not completely successful because...',
-          wordBank:
-            'Settlement &bull; Supreme Governor &bull; Book of Common Prayer &bull; Surplice &bull; Middle Way (Via Media) &bull; Puritans &bull; Recusancy &bull; Compromise &bull; Vestments Controversy',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 2). In Milestone 2, sketch the open English Book of Common Prayer and note the 1 shilling recusancy fine.',
-        },
-      },
-      {
-        enquiryNum: 3,
-        id: 'lesson_1_3',
-        title: 'Challenge to the religious settlement',
-        inquiryQuestion:
-          'Which group posed the greater danger to Elizabeth: zealous Puritans or defiant Catholics?',
-        subTitle:
-          'Key Topic 1.3: Crucifix Controversy, Vestments Controversy, Recusancy & The Papacy',
-        specAnchor:
-          'The nature and extent of the Puritan challenge (crucifix and vestments controversies); the nature and extent of the Catholic challenge (the papacy, recusancy, and foreign Catholic powers).',
-        doNow: [
-          {
-            q: 'What Latin term means "the middle way", describing Elizabeth’s settlement?',
-            a: 'Via Media',
-          },
-          {
-            q: 'Which white linen robe did Puritans refuse to wear during church services?',
-            a: 'The Surplice',
-          },
-          {
-            q: 'Which Archbishop of Canterbury issued the 1566 Book of Advertisements?',
-            a: 'Matthew Parker',
-          },
-          {
-            q: 'How many London priests were dismissed in 1566 for refusing to wear vestments?',
-            a: '37 priests',
-          },
-          {
-            q: 'What object did Elizabeth place in the Royal Chapel that outraged Puritans?',
-            a: 'A silver Crucifix',
-          },
-          {
-            q: 'What Catholic movement aimed to stamp out Protestantism across Europe?',
-            a: 'The Counter-Reformation',
-          },
-          {
-            q: 'Which Catholic king ruled Spain, the Netherlands, and the Spanish Empire?',
-            a: 'King Philip II of Spain',
-          },
-          {
-            q: 'What region of England was most heavily Catholic in the 1560s?',
-            a: 'The North of England (Lancashire, Yorkshire, Durham)',
-          },
-          {
-            q: 'What council of Catholic clergy (1545–63) reaffirmed Catholic doctrines?',
-            a: 'The Council of Trent',
-          },
-          {
-            q: 'Did King Philip II of Spain immediately attack Elizabeth in 1559?',
-            a: 'No (he hoped Elizabeth might marry him or ally with Spain against France)',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Puritans',
-        vocabTermB: 'Recusants',
-        vocabPrompt:
-          'Explain the difference between extreme Protestants who wanted to purify the Church of Catholic rituals (<strong>Puritans</strong>) and Catholics who refused to attend Sunday church services (<strong>Recusants</strong>):',
-        featureA: {
-          provenance: 'Edexcel November 2020 (Q1a)',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of the Vestments Controversy (1566).',
-          guidance:
-            'Point (Puritan vicars refused to wear the surplice ordered by Archbishop Parker) &bull; Fact (Parker held an exhibition in London; 37 clergy refused to conform and were stripped of their livings and church posts).',
-          stems:
-            'One key feature was the clash over clerical dress... Specifically, Archbishop Parker insisted on the surplice, but 37 London clergy...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2024 (Q1b)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of recusancy in early Elizabethan England.',
-          guidance:
-            'Point (Catholics secretly practiced the Latin Mass and refused compulsory Sunday church services) &bull; Fact (They paid a 1 shilling fine each week; in the North, wealthy Catholic gentry protected recusant priests).',
-          stems:
-            'One key feature of recusancy was refusal to attend the new Anglican church... Specifically, recusants held secret Latin masses and paid...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §1.3]',
-          stem: 'Describe one key feature of the Puritan challenge over crucifixes.',
-          guidance:
-            'Point (Puritans objected to crucifixes as Catholic idolatry representing graven images) &bull; Fact (Puritan bishops threatened to resign when Elizabeth ordered crucifixes displayed in every church, forcing her to compromise by removing them from parish churches).',
-          stems:
-            'One key feature was strong Puritan resistance to visual symbols of Catholicism... Specifically, Puritans argued that...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2019 (Q2)',
-          type: 'explain_why_12',
-          tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
-          stem: 'Explain why the Puritans challenged Elizabeth’s religious settlement between 1559 and 1566.',
-          stimulus: ['Vestments', 'The Crucifix Controversy'],
-          structureStrip: [
-            {
-              col: '1. CAUSE 1: VESTMENTS & POPISH RAGS',
-              ref: '[Textbook §1.1–§1.3]',
-              text: 'Explain that Puritans, influenced by Genevan Calvinism, viewed priestly vestments (surplices) as unscriptural Catholic idolatry that set clergy apart from ordinary congregations.',
-            },
-            {
-              col: '2. CAUSE 2: CRUCIFIXES & GRAVEN IMAGES',
-              ref: '[Textbook §2.1–§2.2]',
-              text: 'Explain that Puritans believed crucifixes violated the Ten Commandments against graven images; several Puritan bishops threatened to resign when Elizabeth insisted on a crucifix in her chapel.',
-            },
-            {
-              col: '3. CAUSE 3: BISHOPS & LITURGICAL PURITY',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that Puritans wanted to eradicate the hierarchy of bishops and eradicate holy days, organs, and kneeling at communion, aiming for an entirely purified biblical church.',
-            },
-          ],
-          connectives:
-            'The Puritans challenged the religious settlement primarily because... &bull; Specifically, their Calvinist theology taught that... &bull; This led directly to conflict over vestments when... &bull; In addition, the crucifix controversy demonstrated that... &bull; Consequently, Puritans believed Elizabeth had stopped halfway in reforming...',
-          wordBank:
-            'Calvinism &bull; Vestments Controversy (1566) &bull; Crucifix &bull; Surplice &bull; Graven images &bull; Idolatry &bull; Archbishop Parker &bull; Book of Advertisements &bull; Nonconformist',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 5). In Milestone 5, sketch the plain Puritan surplice and the crossed-out Catholic crucifix.',
-        },
-      },
-      {
-        enquiryNum: 4,
-        id: 'lesson_1_4',
-        title: 'The problem of Mary, Queen of Scots',
-        inquiryQuestion:
-          'Was Mary, Queen of Scots an innocent royal refugee or an existential threat to the realm?',
-        subTitle:
-          'Key Topic 1.4: Royal Legitimacy, Flight to England (1568), Casket Letters & House Arrest',
-        specAnchor:
-          'Mary, Queen of Scots: her claim to the English throne; her arrival in England in 1568; relations between Elizabeth and Mary (1568–69); the Casket Letters inquiry.',
-        doNow: [
-          {
-            q: 'Who was Mary, Queen of Scots’ first husband, King of France?',
-            a: 'King Francis II',
-          },
-          {
-            q: 'Which grandmother gave Mary Stuart a legitimate claim to the English throne?',
-            a: 'Margaret Tudor (sister of Henry VIII)',
-          },
-          {
-            q: 'What religion was Mary, Queen of Scots?',
-            a: 'Roman Catholic',
-          },
-          {
-            q: 'Who was Mary’s second husband, found strangled after Kirk o’Field exploded in 1567?',
-            a: 'Lord Darnley',
-          },
-          {
-            q: 'Whom did Mary marry shortly after Darnley’s suspicious death?',
-            a: 'The Earl of Bothwell',
-          },
-          {
-            q: 'In what year did Mary Stuart flee across the border into England?',
-            a: '1568',
-          },
-          {
-            q: 'In what northern castle was Mary first held under armed house arrest?',
-            a: 'Carlisle Castle (later Bolton Castle)',
-          },
-          {
-            q: 'What alleged love letters were presented to prove Mary murdered Darnley?',
-            a: 'The Casket Letters',
-          },
-          {
-            q: 'Did Elizabeth formally find Mary guilty of murder at the York Inquiry in 1568–69?',
-            a: 'No (Elizabeth gave a "not proven" verdict to avoid executing a sovereign monarch)',
-          },
-          {
-            q: 'Which powerful Catholic noble family in France was Mary closely related to?',
-            a: 'The Guise family (House of Guise)',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Legitimacy',
-        vocabTermB: 'Succession',
-        vocabPrompt:
-          'Explain the difference between whether a monarch was born to legally married parents (<strong>Legitimacy</strong>) and the legal right to inherit the crown after Elizabeth died (<strong>Succession</strong>):',
-        featureA: {
-          provenance: 'Edexcel November 2021 (Q1a)',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of Mary, Queen of Scots’ claim to the English throne.',
-          guidance:
-            'Point (Mary was the great-granddaughter of Henry VII through Margaret Tudor) &bull; Fact (Because Catholics viewed Elizabeth as illegitimate, many regarded Mary as the rightful, legitimate Catholic Queen of England).',
-          stems:
-            'One key feature was Mary’s legitimate Tudor bloodline... Specifically, as great-granddaughter of Henry VII, English Catholics viewed her as...',
-        },
-        featureB: {
-          provenance: '★ High-Yield Forecast (Q1b)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of the inquiry into the Casket Letters (1568–69).',
-          guidance:
-            'Point (A commission held at York and Westminster to investigate whether Mary plotted Darnley’s murder) &bull; Fact (Elizabeth reached a "not proven" verdict; this allowed her to keep Mary detained in England without executing an anointed queen).',
-          stems:
-            'One key feature of the Casket Letters inquiry was to determine Mary’s guilt... Specifically, the inquiry concluded with a verdict of...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §2.2]',
-          stem: 'Describe one key feature of Mary, Queen of Scots’ arrival in England in May 1568.',
-          guidance:
-            'Point (Mary fled Scotland after Protestant nobles defeated her and sought Elizabeth’s military aid) &bull; Fact (Elizabeth placed Mary under house arrest in the north because her presence as a legitimate Catholic claimant threatened English stability).',
-          stems:
-            'One key feature of Mary’s arrival was the acute security crisis it posed... Specifically, Elizabeth decided to...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2022 (Q3a)',
-          type: 'essay_16',
-          tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
-          stem: '‘The arrival of Mary, Queen of Scots in England in 1568 was the main cause of instability in Elizabethan government.’ How far do you agree? Explain your answer.',
-          stimulus: ['Mary’s claim to the throne', 'Religious divisions in the North'],
-          structureStrip: [
-            {
-              col: '1. CRITERIA 1: MARY AS CATHOLIC FIGUREHEAD',
-              ref: '[Textbook §1.1–§2.2]',
-              text: 'Explain how Mary’s physical presence provided a live, legitimate Catholic alternative to Elizabeth, immediately attracting discontented northern nobles and foreign Catholic conspirators.',
-            },
-            {
-              col: '2. CRITERIA 2: PRE-EXISTING NORTHERN DISCONTENT',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that the North was already deeply Catholic and alienated by Cecil’s centralizing Protestant government; the Earls of Northumberland and Westmorland had lost land and influence before 1568.',
-            },
-            {
-              col: '3. CRITERIA 3: SUCCESSION & DIPLOMATIC RISK',
-              ref: '[Textbook §4.1–§4.2]',
-              text: 'Explain that Elizabeth had no heir; Mary’s presence forced foreign powers (France, Spain, Papacy) to view Elizabeth as expendable, turning Mary into a catalyst for domestic rebellion.',
-            },
-          ],
-          connectives:
-            'Mary’s arrival was undeniably a major cause of instability because... &bull; Specifically, her presence gave English Catholics a figurehead who... &bull; However, severe instability already existed because the northern nobility... &bull; Furthermore, Elizabeth’s refusal to marry meant that... &bull; On balance, while northern grievances were deep-seated, Mary’s arrival was the decisive catalyst because...',
-          wordBank:
-            'Mary, Queen of Scots &bull; Legitimacy &bull; Anointed Queen &bull; Casket Letters &bull; Carlisle Castle &bull; Northern Earls &bull; Succession &bull; Catholic Figurehead &bull; House arrest',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 6). In Milestone 6, sketch Carlisle Castle where Mary Stuart was first held under house arrest in 1568.',
-        },
-      },
-    ],
+    enquiries: EEE_ENQUIRY_CONFIGS.KT1,
   },
 
-  // ==========================================================================
-  // KEY TOPIC 2: Challenges to Elizabeth at home and abroad, 1569–88
   // ==========================================================================
   KT2: {
     keyTopicNum: 2,
@@ -729,11 +304,37 @@ const KEY_TOPICS_DATA = {
         'Attributed to George Gower • Queen Elizabeth I sits in triumph with her right hand resting on a global orb. Behind her, windows depict the English fireships assaulting the Spanish fleet at Gravelines and the Armada wrecked on stormy rocks. Accession Shelfmark WA-INV-042.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 106,
+      heightMm: 105,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
-      specImageSrc: getBase64Image('/images/edexcel_spec_kt2_crop_precise.png'),
+      edexcelTable: {
+        header: 'Key topic 2: Challenges to Elizabeth at home and abroad, 1569–88',
+        rows: [
+          {
+            numTitle: '1 Plots and revolts at home',
+            bullets: [
+              'The reasons for, and significance of, the Revolt of the Northern Earls (1569).',
+              'The features and significance of the Ridolfi, Throckmorton and Babington Plots. Walsingham and his spy network.',
+              'The reasons for, and significance of, Mary, Queen of Scots’ execution in 1587.',
+            ],
+          },
+          {
+            numTitle: '2 Relations with Spain',
+            bullets: [
+              'Political and religious rivalry, including commercial rivalry and the activities of Drake in the New World.',
+              'Direct English involvement in the Netherlands, 1585–88. The role of Robert Dudley.',
+            ],
+          },
+          {
+            numTitle: '3 The Spanish Armada',
+            bullets: [
+              'Drake’s raid on Cadiz (1587) – ‘singeing the King of Spain’s beard’.',
+              'The reasons why Philip II launched the Armada, English and Spanish naval tactics, the defeat of the Armada.',
+            ],
+          },
+        ],
+      },
     },
     milestones: [
       {
@@ -744,500 +345,38 @@ const KEY_TOPICS_DATA = {
       },
       {
         date: 'FEB 1570',
-        title: 'Papal Bull *Regnans in Excelsis*',
+        title: 'Papal Bull: Regnans in Excelsis',
         tag: 'Key Topic 2.1',
-        text: "Pope Pius V issues a papal bull excommunicating Elizabeth, declaring her a 'pretended queen' and heretic. Crucially, the Pope releases all Catholic subjects from their oath of allegiance, making it a sacred Catholic duty to overthrow the Queen.",
+        text: 'Pope Pius V issues the papal bull Regnans in Excelsis, excommunicating Elizabeth as a heretic and absolving all Catholic subjects of their oath of allegiance. This officially criminalizes Catholic loyalty and makes all active recusants potential traitors.',
       },
       {
-        date: '1571–1583',
-        title: 'The Ridolfi and Throckmorton Plots',
-        tag: 'Key Topic 2.1',
-        text: 'Italian banker Roberto Ridolfi plans a Spanish invasion by the Duke of Alba to marry Mary to the Duke of Norfolk. In 1583, French Catholic Francis Throckmorton coordinates a planned invasion backed by Spain and the Pope. Walsingham uncovers both.',
+        date: '1577–1580',
+        title: 'Drake Circumnavigates the Globe',
+        tag: 'Key Topic 2.2',
+        text: 'Francis Drake completes the second circumnavigation in history in the Golden Hind, raiding Spanish Pacific colonies and capturing the treasure galleon Cacafuego (£140,000 in silver). Elizabeth knights Drake at Deptford, escalating Anglo-Spanish commercial rivalry.',
       },
       {
         date: 'AUG 1585',
-        title: 'The Treaty of Nonsuch & Open War with Spain',
+        title: 'Treaty of Nonsuch (War in Netherlands)',
         tag: 'Key Topic 2.3',
-        text: 'Following the assassination of Dutch Protestant leader William of Orange, Elizabeth signs the Treaty of Nonsuch with Dutch rebels, agreeing to send 7,400 troops under Robert Dudley. This ends decades of cold war and triggers open military conflict with Spain.',
+        text: 'Following the assassination of William of Orange and the French Treaty of Joinville, Elizabeth signs the Treaty of Nonsuch, sending Robert Dudley (Earl of Leicester) with 7,400 English soldiers to aid Dutch Protestant rebels against the Duke of Parma.',
       },
       {
-        date: '1586–FEB 1587',
-        title: 'The Babington Plot & Execution of Mary Stuart',
+        date: 'FEB 1587',
+        title: 'Execution of Mary, Queen of Scots',
         tag: 'Key Topic 2.1',
-        text: 'Anthony Babington sends coded letters in beer barrels to Mary Stuart agreeing to assassinate Elizabeth. Walsingham’s codebreaker Thomas Phelippes intercepts Mary’s endorsement. Mary is convicted of high treason and beheaded at Fotheringhay Castle on 8 Feb 1587.',
+        text: 'Walsingham’s codebreaker Thomas Phelippes intercepts Babington’s ciphers explicitly approved by Mary Stuart. Tried under the 1584 Bond of Association, Mary is found guilty of high treason and beheaded at Fotheringhay Castle on 8 February 1587.',
       },
       {
-        date: 'APR 1587–AUG 1588',
-        title: 'Drake at Cadiz & Defeat of the Spanish Armada',
+        date: 'JUL–AUG 1588',
+        title: 'Defeat of the Spanish Armada',
         tag: 'Key Topic 2.4',
-        text: "Drake raids Cadiz harbour, destroying 30 Spanish ships ('singeing the King's beard') and delaying the Armada by a year. In July 1588, 130 Spanish ships enter the Channel. English fireships break their formation at Calais; Gravelines artillery seals English victory.",
+        text: 'Medina Sidonia sails 130 ships to ferry Parma’s invasion army across the Channel. English fireships scatter the crescent formation at Calais Roads; agile galleons batter Spanish ships at Gravelines, and violent storms wreck half the fleet on Scottish and Irish rocks.',
       },
     ],
-    enquiries: [
-      {
-        enquiryNum: 1,
-        id: 'lesson_2_1',
-        title: 'Plots and revolts at home',
-        inquiryQuestion:
-          'Why did every Catholic plot to assassinate Elizabeth end in catastrophic failure?',
-        subTitle:
-          'Key Topic 2.1: Northern Earls, Ridolfi, Throckmorton, Babington & Walsingham’s Spies',
-        specAnchor:
-          'The Revolt of the Northern Earls (1569); plots: Ridolfi (1571), Throckmorton (1583), Babington (1586); Walsingham’s network of spies; execution of Mary Queen of Scots (1587).',
-        doNow: [
-          {
-            q: 'Which two northern Catholic earls led the 1569 rebellion?',
-            a: 'The Earls of Northumberland and Westmorland',
-          },
-          {
-            q: 'Which Catholic cathedral did the Northern Earls seize to celebrate the Latin Mass?',
-            a: 'Durham Cathedral',
-          },
-          {
-            q: 'What papal bull excommunicated Elizabeth I in 1570?',
-            a: 'Regnans in Excelsis',
-          },
-          {
-            q: 'Which English duke was executed in 1572 for his role in the Ridolfi Plot?',
-            a: 'The Duke of Norfolk (Thomas Howard)',
-          },
-          {
-            q: 'Who was Queen Elizabeth’s Spymaster General from 1573?',
-            a: 'Sir Francis Walsingham',
-          },
-          {
-            q: 'How did plotters smuggle coded messages to Mary Stuart during the Babington Plot?',
-            a: 'Inside the bungs of beer barrels',
-          },
-          {
-            q: 'What skilled cryptographer decoded Mary Stuart’s letters for Walsingham?',
-            a: 'Thomas Phelippes',
-          },
-          {
-            q: 'What 1584 document pledged to execute anyone who attempted to assassinate Elizabeth?',
-            a: 'The Bond of Association',
-          },
-          {
-            q: 'In which castle was Mary, Queen of Scots beheaded on 8 February 1587?',
-            a: 'Fotheringhay Castle',
-          },
-          {
-            q: 'Approximately how many northern rebels did Elizabeth execute after the 1569 revolt?',
-            a: 'Approximately 450 rebels',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Papal Bull',
-        vocabTermB: 'Conspiracy',
-        vocabPrompt:
-          'Explain the difference between an official written order issued by the Pope (<strong>Papal Bull</strong>) and a secret agreement between people to overthrow or kill the Queen (<strong>Conspiracy</strong>):',
-        featureA: {
-          provenance: 'Edexcel June 2018 (Q1b)',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of the Revolt of the Northern Earls (1569).',
-          guidance:
-            'Point (A Catholic uprising led by the Earls of Northumberland and Westmorland to restore Catholicism) &bull; Fact (They held a Latin Mass in Durham Cathedral with 4,600 men, but fled when royal troops advanced; 450 rebels were executed).',
-          stems:
-            'One key feature was the northern Catholic nobles’ attempt to overthrow Protestantism... Specifically, they captured Durham Cathedral and...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2023 (Q1b)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of Sir Francis Walsingham’s spy network.',
-          guidance:
-            'Point (An extensive intelligence network of spies, informers, codebreakers, and cryptographers) &bull; Fact (Walsingham intercepted letters, cracked ciphers with Thomas Phelippes, and deployed double agents across England and Europe).',
-          stems:
-            'One key feature was Walsingham’s systematic interception of secret communications... Specifically, his cryptographer Thomas Phelippes...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §2.1]',
-          stem: 'Describe one key feature of the Ridolfi Plot (1571).',
-          guidance:
-            'Point (A conspiracy led by Italian banker Roberto Ridolfi to assassinate Elizabeth and place Mary on the throne) &bull; Fact (Planned for 10,000 Spanish troops under the Duke of Alba to invade; Cecil uncovered the cipher letters and the Duke of Norfolk was executed).',
-          stems:
-            'One key feature was the conspiracy to depose Elizabeth with Spanish military backing... Specifically, the plotters planned to...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2018 (Q2)',
-          type: 'explain_why_12',
-          tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
-          stem: 'Explain why Mary, Queen of Scots was executed in 1587.',
-          stimulus: ['The Babington Plot (1586)', 'Walsingham’s spy network'],
-          structureStrip: [
-            {
-              col: '1. CAUSE 1: DIRECT COMPLICITY IN BABINGTON PLOT',
-              ref: '[Textbook §2.2–§2.3]',
-              text: 'Explain that intercepted beer-barrel letters explicitly showed Mary endorsing Anthony Babington’s plot to assassinate Elizabeth; Phelippes decoded Mary’s letter containing the postmark gallows sign.',
-            },
-            {
-              col: '2. CAUSE 2: WALSINGHAM & PARLIAMENTARY PRESSURE',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that the 1584 Bond of Association legally obligated privy councillors to execute anyone involved in assassination plots; Parliament and Cecil relentlessly lobbied Elizabeth to sign the death warrant.',
-            },
-            {
-              col: '3. CAUSE 3: ESCALATING SPANISH WAR THREAT',
-              ref: '[Textbook §4.1–§4.2]',
-              text: 'Explain that by 1586 England was at open war with Spain following the Treaty of Nonsuch; keeping Mary alive created an immediate rallying figure for an imminent Spanish invasion of England.',
-            },
-          ],
-          connectives:
-            'Mary Stuart was executed in 1587 primarily because... &bull; Specifically, Walsingham obtained conclusive forensic evidence when... &bull; Furthermore, under the Bond of Association, Privy Councillors argued that... &bull; In addition, with war looming against Spain, Mary represented... &bull; Consequently, these combined pressures forced Elizabeth to sign the death warrant because...',
-          wordBank:
-            'Mary, Queen of Scots &bull; Babington Plot &bull; Walsingham &bull; Thomas Phelippes &bull; Bond of Association &bull; Fotheringhay Castle &bull; High Treason &bull; Ciphers &bull; Philip II',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 5). In Milestone 5, sketch the beer barrel with hidden cipher letters and the execution block at Fotheringhay.',
-        },
-      },
-      {
-        enquiryNum: 2,
-        id: 'lesson_2_2',
-        title: 'Relations with Spain',
-        inquiryQuestion:
-          'Was war between England and Spain inevitable from the moment Elizabeth took the throne?',
-        subTitle: 'Key Topic 2.2: Commercial Rivalry, Privateering, Drake & Religious Conflict',
-        specAnchor:
-          'Political and religious rivalry between England and Spain; commercial rivalry in the New World; English privateering and the activities of Sir Francis Drake.',
-        doNow: [
-          {
-            q: 'Which Spanish king had previously been married to Elizabeth’s sister Mary I?',
-            a: 'King Philip II of Spain',
-          },
-          {
-            q: 'What religion was Philip II, positioning himself as champion of the Counter-Reformation?',
-            a: 'Roman Catholic',
-          },
-          {
-            q: 'What Spanish monopoly prohibited English merchants from trading in the Americas?',
-            a: 'The trade monopoly on Spanish New World colonies',
-          },
-          {
-            q: 'What term describes state-licensed sea captains who raided enemy merchant ships?',
-            a: 'Privateers',
-          },
-          {
-            q: 'Which English privateer became the first to circumnavigate the globe (1577–80)?',
-            a: 'Sir Francis Drake',
-          },
-          {
-            q: 'What famous Spanish treasure ship was captured by Drake off Ecuador in 1579?',
-            a: 'The *Nuestra Señora de la Concepción* (nicknamed the *Cacafuego*)',
-          },
-          {
-            q: 'How much silver and treasure did Drake capture from the *Cacafuego*?',
-            a: 'Over £140,000 (worth tens of millions today)',
-          },
-          {
-            q: 'Where did Elizabeth publicly knight Francis Drake in 1581?',
-            a: 'On board the *Golden Hind* at Deptford',
-          },
-          {
-            q: 'Why was Philip II enraged by Elizabeth knighting Francis Drake?',
-            a: 'He viewed Drake as a common pirate and thief of Spanish property',
-          },
-          {
-            q: 'What Dutch territory revolted against Philip II’s rule in 1566?',
-            a: 'The Netherlands (Spanish Netherlands)',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Privateer',
-        vocabTermB: 'Trade Embargo',
-        vocabPrompt:
-          'Explain the difference between an armed sailor licensed by the Queen to capture enemy ships (<strong>Privateer</strong>) and a government ban that stops all trade with another nation (<strong>Trade Embargo</strong>):',
-        featureA: {
-          provenance: 'Edexcel June 2019 (Q1a)',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of commercial rivalry between England and Spain in the New World.',
-          guidance:
-            'Point (Spain held an exclusive trade monopoly on its American colonies that barred English merchants) &bull; Fact (English privateers like John Hawkins and Drake bypassed Spanish licenses to trade illegally and seize Spanish bullion ships).',
-          stems:
-            'One key feature was Spanish trade restrictions in the Caribbean... Specifically, Spain banned English merchants, prompting privateers like Drake to...',
-        },
-        featureB: {
-          provenance: 'Edexcel November 2021 (Q1b)',
-          ref: '[Textbook §2.2]',
-          stem: 'Describe one key feature of Sir Francis Drake’s raid on the Cacafuego (1579).',
-          guidance:
-            'Point (Drake captured Spain’s richest treasure galleon in the Pacific during his circumnavigation) &bull; Fact (He seized 80lb of gold, 26 tons of silver, and jewels worth £140,000, bringing it back to Elizabeth on the Golden Hind).',
-          stems:
-            'One key feature was the colossal value of the treasure seized... Specifically, Drake intercepted the treasure ship off Ecuador and took...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of English privateering against Spanish treasure fleets.',
-          guidance:
-            'Point (Elizabeth secretly backed English captains to capture Spanish silver without open declaration of war) &bull; Fact (Captains like Francis Drake held royal letters of marque, bringing vast riches to England and crippling Philip II’s Atlantic supply lines).',
-          stems:
-            'One key feature was the covert state sponsorship of privateering raids... Specifically, English privateers...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2023 (Q3a)',
-          type: 'essay_16',
-          tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
-          stem: '‘Commercial rivalry in the Americas was the main cause of worsening relations between England and Spain between 1569 and 1585.’ How far do you agree? Explain your answer.',
-          stimulus: ['Francis Drake’s privateering', 'Religious conflict'],
-          structureStrip: [
-            {
-              col: '1. CRITERIA 1: COMMERCIAL RIVALRY & DRAKE',
-              ref: '[Textbook §1.1–§2.2]',
-              text: 'Explain how Drake’s raids in the West Indies and Pacific humiliated Philip II; by knighting Drake in 1581 and funding privateers, Elizabeth demonstrated state sponsorship of piracy against Spanish bullion.',
-            },
-            {
-              col: '2. CRITERIA 2: RELIGIOUS ANTAGONISM',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that Philip viewed himself as the secular sword of the Catholic Counter-Reformation; the 1570 papal bull excommunicating Elizabeth and Philip’s backing of plots (Ridolfi, Throckmorton) made holy war inevitable.',
-            },
-            {
-              col: '3. CRITERIA 3: THE STRATEGIC NETHERLANDS CRISIS',
-              ref: '[Textbook §4.1–§4.2]',
-              text: 'Explain that Spain’s military brutality in the Netherlands (Alba and Parma) threatened England’s chief wool export market; Spanish control of Channel ports was an intolerable direct invasion threat.',
-            },
-          ],
-          connectives:
-            'Commercial rivalry was an explosive cause of hostility because... &bull; Specifically, Drake’s plundering of Spanish galleons directly attacked Philip’s treasury and prestige... &bull; However, religious divisions deepened the clash because Philip believed... &bull; Furthermore, the strategic geopolitical crisis in the Netherlands was arguably more urgent because... &bull; Weighing these factors, I conclude that while commercial piracy provoked constant anger, the Netherlands crisis was the decisive trigger because...',
-          wordBank:
-            'Commercial rivalry &bull; Privateers &bull; Francis Drake &bull; *Golden Hind* &bull; *Cacafuego* &bull; Philip II &bull; Netherlands &bull; Papal Bull (1570) &bull; Counter-Reformation',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 3). In Milestone 3, sketch Drake’s ship the *Golden Hind* and the Spanish silver bars.',
-        },
-      },
-      {
-        enquiryNum: 3,
-        id: 'lesson_2_3',
-        title: 'Outbreak of war with Spain, 1585–88',
-        inquiryQuestion:
-          'Did English intervention in the Netherlands or Drake’s raid on Cadiz make the Armada inevitable?',
-        subTitle:
-          'Key Topic 2.3: The Dutch Revolt, Treaty of Nonsuch (1585), Robert Dudley & Cadiz (1587)',
-        specAnchor:
-          'The Dutch Revolt and English involvement in the Netherlands (Treaty of Nonsuch, Robert Dudley); Drake’s raid on Cadiz (1587) and "Singeing the King of Spain’s Beard".',
-        doNow: [
-          {
-            q: 'Which Dutch Protestant leader was assassinated by a Catholic fanatic in 1584?',
-            a: 'William of Orange (William the Silent)',
-          },
-          {
-            q: 'What treaty between Philip II and the French Catholic League was signed in 1584?',
-            a: 'The Treaty of Joinville',
-          },
-          {
-            q: 'What 1585 treaty committed English troops to fight alongside Dutch rebels?',
-            a: 'The Treaty of Nonsuch',
-          },
-          {
-            q: 'Who was appointed commander of the 7,400 English soldiers sent to the Netherlands?',
-            a: 'Robert Dudley, Earl of Leicester',
-          },
-          {
-            q: 'What controversial political title did Robert Dudley accept in the Netherlands, outraging Elizabeth?',
-            a: 'Governor-General of the United Provinces',
-          },
-          {
-            q: 'Which brilliant Spanish general commanded the Army of Flanders in the Netherlands?',
-            a: 'The Duke of Parma (Alexander Farnese)',
-          },
-          {
-            q: 'In which Spanish harbour did Francis Drake launch a daring surprise raid in April 1587?',
-            a: 'Cadiz Harbour',
-          },
-          {
-            q: 'How many Spanish ships did Drake destroy in Cadiz harbour in 36 hours?',
-            a: 'Approximately 30 ships',
-          },
-          {
-            q: 'What famous phrase described Drake’s raid on Cadiz?',
-            a: '"Singeing the King of Spain’s Beard"',
-          },
-          {
-            q: 'What vital naval supplies did Drake destroy at Cadiz that crippled the Armada’s food storage?',
-            a: 'Seasoned oak barrel staves (ruining water and provisions)',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Treaty of Nonsuch',
-        vocabTermB: 'Raid on Cadiz',
-        vocabPrompt:
-          'Explain the difference between England’s treaty promising direct military troops to Dutch rebels (<strong>Treaty of Nonsuch</strong>) and Drake’s surprise naval attack that delayed the Spanish Armada (<strong>Raid on Cadiz</strong>):',
-        featureA: {
-          provenance: 'Edexcel June 2022 (Q1a)',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of the Treaty of Nonsuch (1585).',
-          guidance:
-            'Point (An official military alliance committing England to support Dutch Protestant rebels against Spain) &bull; Fact (Elizabeth sent 7,400 soldiers under the Earl of Leicester and financed their campaign, officially ending covert neutrality).',
-          stems:
-            'One key feature was England’s formal military commitment to the Dutch rebels... Specifically, Elizabeth agreed to send...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2019 (Q1b)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of Francis Drake’s raid on Cadiz in 1587.',
-          guidance:
-            'Point (A surprise pre-emptive attack on Spain’s primary naval staging base at Cadiz) &bull; Fact (Drake destroyed 30 Spanish warships and tons of seasoned barrel staves, delaying the sailing of the Armada by over 12 months).',
-          stems:
-            'One key feature was the devastating destruction of Spanish naval shipping... Specifically, Drake sailed directly into Cadiz harbour and...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of the Treaty of Joinville (1584).',
-          guidance:
-            'Point (A secret alliance between Philip II of Spain and the French Catholic League) &bull; Fact (Both parties agreed to eradicate Protestantism, isolating England and removing France as a counterweight against Spanish aggression).',
-          stems:
-            'One key feature was the secret Catholic alliance signed between Spain and France... Specifically, the Treaty of Joinville meant that...',
-        },
-        rightExam: {
-          provenance: 'Edexcel November 2020 (Q2)',
-          type: 'explain_why_12',
-          tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
-          stem: 'Explain why Elizabeth signed the Treaty of Nonsuch with Dutch rebels in 1585.',
-          stimulus: ['The assassination of William of Orange', 'The Treaty of Joinville'],
-          structureStrip: [
-            {
-              col: '1. CAUSE 1: ASSASSINATION OF WILLIAM OF ORANGE',
-              ref: '[Textbook §1.1–§1.2]',
-              text: 'Explain that the murder of William the Silent in July 1584 left the Dutch rebellion leaderless and facing total collapse; if the Dutch fell, Parma’s veteran Spanish army would turn directly on England.',
-            },
-            {
-              col: '2. CAUSE 2: THE TREATY OF JOINVILLE & ISOLATION',
-              ref: '[Textbook §2.1–§2.2]',
-              text: 'Explain that in Dec 1584 Spain and France signed the Treaty of Joinville, uniting the two Catholic superpowers; England faced total diplomatic encirclement and could no longer play France off against Spain.',
-            },
-            {
-              col: '3. CAUSE 3: STRATEGIC CONTROL OF CHANNEL PORTS',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that deep-water Dutch ports like Antwerp, Flushing, and Brill lay directly opposite the Thames estuary; Elizabeth had to secure these ports to prevent an invasion springboard into southern England.',
-            },
-          ],
-          connectives:
-            'Elizabeth signed the Treaty of Nonsuch primarily because... &bull; Crucially, the sudden assassination of William of Orange meant that... &bull; This danger was intensified by the Treaty of Joinville, which... &bull; Furthermore, from a military standpoint, controlling Dutch Channel ports was vital because... &bull; Consequently, Elizabeth was forced to abandon covert diplomacy and declare open military commitment because...',
-          wordBank:
-            'Treaty of Nonsuch &bull; William of Orange &bull; Treaty of Joinville &bull; Robert Dudley &bull; Duke of Parma &bull; Netherlands &bull; Army of Flanders &bull; Flushing &bull; Channel ports',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 4). In Milestone 4, sketch the Dutch Protestant rebel banner and the Treaty of Nonsuch seal.',
-        },
-      },
-      {
-        enquiryNum: 4,
-        id: 'lesson_2_4',
-        title: 'The Armada',
-        inquiryQuestion:
-          'Why did the Spanish Armada fail: superior English tactics or disastrous Spanish planning?',
-        subTitle:
-          'Key Topic 2.4: Spanish Invasion Plan, Ship Design, Fireships at Calais & Battle of Gravelines',
-        specAnchor:
-          'The Spanish invasion plan and leadership of Medina Sidonia; English naval design (Hawkins) and artillery; fireships at Calais; the Battle of Gravelines (1588); the reasons for the Armada’s defeat.',
-        doNow: [
-          {
-            q: 'How many ships sailed in the Spanish Armada in May 1588?',
-            a: '130 ships',
-          },
-          {
-            q: 'Who was appointed Commander-in-Chief of the Spanish Armada by Philip II?',
-            a: 'The Duke of Medina Sidonia',
-          },
-          {
-            q: 'What veteran Spanish army in the Netherlands was the Armada supposed to collect?',
-            a: 'The Duke of Parma’s Army of Flanders (27,000 troops)',
-          },
-          {
-            q: 'Who served as Lord High Admiral commanding the English fleet in 1588?',
-            a: 'Lord Howard of Effingham',
-          },
-          {
-            q: 'What naval treasurer revolutionized English galleon design with lower forecastles?',
-            a: 'Sir John Hawkins',
-          },
-          {
-            q: 'What long-range naval cannon allowed English ships to bombard Spanish galleons from safety?',
-            a: 'Culverins',
-          },
-          {
-            q: 'What defensive formation did the Spanish Armada maintain sailing up the Channel?',
-            a: 'The tight Crescent Formation',
-          },
-          {
-            q: 'What terrifying tactic did the English use at midnight on 7 August off Calais?',
-            a: 'Eight Hellburners / Fireships',
-          },
-          {
-            q: 'What decisive naval battle was fought on 8 August 1588 off the Flemish coast?',
-            a: 'The Battle of Gravelines',
-          },
-          {
-            q: 'What route were the surviving Spanish ships forced to take back to Spain?',
-            a: 'North around Scotland and the west coast of Ireland',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Galleon',
-        vocabTermB: 'Fireships',
-        vocabPrompt:
-          'Explain the difference between a large, heavily armed warship designed for ocean fighting (<strong>Galleon</strong>) and burning vessels sent into the Spanish fleet to cause panic and scatter their formation (<strong>Fireships</strong>):',
-        featureA: {
-          provenance: 'Edexcel November 2020 (Q1b)',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of the Spanish invasion plan of 1588.',
-          guidance:
-            'Point (A joint operation requiring the Armada to rendezvous with the Duke of Parma’s army in the Netherlands) &bull; Fact (Medina Sidonia had to transport Parma’s 27,000 veteran soldiers across the Channel on flat-bottomed barges to invade Kent).',
-          stems:
-            'One key feature was the coordination required between fleet and army... Specifically, Medina Sidonia was ordered to rendezvous with Parma at...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2024 (Q1a)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of the English fireship attack at Calais (7 August 1588).',
-          guidance:
-            'Point (Eight burning ships filled with pitch and gunpowder were launched into the anchored Spanish fleet) &bull; Fact (Spanish captains panicked, cut their anchor cables, and broke their defensive crescent formation, scattering into the open sea).',
-          stems:
-            'One key feature was the psychological panic caused by the fireships... Specifically, Spanish captains cut their anchors and broke...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §2.2]',
-          stem: 'Describe one key feature of English naval tactics during the Armada campaign.',
-          guidance:
-            'Point (English ships utilized superior maneuverability and long-range gunnery) &bull; Fact (English race-built galleons kept out of Spanish grappling range, pounding Spanish vessels with culverin broadsides and causing severe damage at Gravelines).',
-          stems:
-            'One key feature was the reliance on long-distance artillery rather than boarding... Specifically, English commanders...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2019 (Q3b)',
-          type: 'essay_16',
-          tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
-          stem: '‘The English defeated the Spanish Armada mainly because of superior English naval tactics and technology.’ How far do you agree? Explain your answer.',
-          stimulus: ['English fireships at Calais', 'Spanish planning and leadership'],
-          structureStrip: [
-            {
-              col: '1. CRITERIA 1: ENGLISH TACTICS & SHIP DESIGN',
-              ref: '[Textbook §2.1–§3.2]',
-              text: 'Explain how Hawkins’ race-built galleons out-maneuvered clumsy Spanish carracks, using long-range culverins on four-wheeled truck carriages to reload and fire broadsides rapidly at Gravelines.',
-            },
-            {
-              col: '2. CRITERIA 2: FLAWED SPANISH INVASION PLANNING',
-              ref: '[Textbook §1.1–§1.3]',
-              text: 'Explain that Philip II’s plan was fatally flawed: Parma controlled no deep-water port in the Netherlands, meaning communication took 48 hours by horse and barges could not escape Dutch flyboat blockades.',
-            },
-            {
-              col: '3. CRITERIA 3: ADVERSE WEATHER & THE "PROTESTANT WIND"',
-              ref: '[Textbook §4.1–§4.2]',
-              text: 'Explain that south-westerly gales drove the scattered Spanish fleet into the hazardous North Sea; lacking anchors lost at Calais, dozens of galleons were wrecked on the jagged rocks of Scotland and Ireland.',
-            },
-          ],
-          connectives:
-            'Superior English tactics and ship design were pivotal because... &bull; Specifically, the deployment of fireships at Calais succeeded in... &bull; Furthermore, at the Battle of Gravelines, English culverins... &bull; However, Spanish structural blunders critically undermined the operation because... &bull; Ultimately, while bad weather completed the destruction, English naval technology was the decisive factor because...',
-          wordBank:
-            'Spanish Armada &bull; Medina Sidonia &bull; Duke of Parma &bull; Race-built galleons &bull; Culverins &bull; Crescent formation &bull; Calais fireships &bull; Battle of Gravelines &bull; Protestant Wind',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 6). In Milestone 6, sketch the blazing fireships drifting into Calais Roads and the shattered Spanish galleon.',
-        },
-      },
-    ],
+    enquiries: EEE_ENQUIRY_CONFIGS.KT2,
   },
 
-  // ==========================================================================
-  // KEY TOPIC 3: Elizabethan society in the Age of Exploration, 1558–88
   // ==========================================================================
   KT3: {
     keyTopicNum: 3,
@@ -1304,507 +443,37 @@ const KEY_TOPICS_DATA = {
         text: "The 1576 Poor Act orders town councils to provide wool and raw materials to put the unemployed to work, creating 'Houses of Correction' (Bridewells). In the same year, actor James Burbage constructs 'The Theatre' in Shoreditch, launching Elizabethan public drama.",
       },
       {
-        date: 'DEC 1577',
-        title: 'Drake Departs on Global Circumnavigation',
+        date: '1577',
+        title: 'Grammar School Expansion & Humanist Curriculum',
+        tag: 'Key Topic 3.1',
+        text: "Over 70 new grammar schools are founded during Elizabeth's reign. The sons of the gentry and yeomanry study Latin, Greek, rhetoric, and classical history from dawn to dusk, fostering a highly literate administrative and legal class.",
+      },
+      {
+        date: '1577–1580',
+        title: 'Drake’s Circumnavigation & Scientific Sailing',
         tag: 'Key Topic 3.3',
-        text: 'Sir Francis Drake departs Plymouth with five ships on the *Pelican* (*Golden Hind*). Backed secretly by Elizabeth and investors, his mission is to disrupt Spanish Pacific trade, discover trade routes to the Moluccas, and claim land for the English Crown.',
+        text: "Using new navigation technology including the astrolabe, magnetic compass, and quadrant, Francis Drake navigates through treacherous waters, claims 'Nova Albion' (California) for Elizabeth, and returns with a 4,700% return for his financial backers.",
       },
       {
-        date: 'SEPT 1580',
-        title: 'Drake Returns to Deptford; Knighted by Elizabeth',
-        tag: 'Key Topic 3.3',
-        text: 'Drake sails the *Golden Hind* into Plymouth Harbour after 33 months, becoming the first Englishman to circumnavigate the globe. His cargo of Spanish bullion yields a 4,700% return for royal investors, and Elizabeth knights him on board in April 1581.',
-      },
-      {
-        date: '1584–1585',
-        title: 'Raleigh’s Patent & The First Roanoke Colony',
+        date: '1584',
+        title: 'Raleigh Granted Royal Patent for Virginia',
         tag: 'Key Topic 3.4',
-        text: 'Queen Elizabeth grants Sir Walter Raleigh a royal patent to explore and colonise Virginia. In 1585, 107 male colonists sail under Sir Richard Grenville and Ralph Lane to Roanoke Island, seeking gold, privateering bases, and fertile agricultural land.',
+        text: "Elizabeth grants Sir Walter Raleigh a royal charter to discover and colonise 'remote heathen and barbarous lands'. Raleigh names the territory 'Virginia' in honour of the Virgin Queen, raising funds from London merchants for private colonisation.",
       },
       {
-        date: '1587–1590',
-        title: 'The Second Roanoke Colony ("The Lost Colony")',
+        date: '1585–1586',
+        title: 'The First Roanoke Settlement & Failure',
         tag: 'Key Topic 3.4',
-        text: 'John White leads 118 settlers, including women and children, to establish a permanent plantation. When White returns in 1590 after being delayed by the Armada, the entire colony has vanished without a trace, leaving only the word "CROATOAN" carved on a post.',
+        text: '107 male colonists under Ralph Lane settle Roanoke Island. The flagship Tiger grounds, ruining seed crops; relations with Chief Wingina turn violent, and when Francis Drake arrives in June 1586, the starving colonists abandon the settlement.',
       },
     ],
-    enquiries: [
-      {
-        enquiryNum: 1,
-        id: 'lesson_3_1',
-        title: 'Education and leisure',
-        inquiryQuestion:
-          'Was Elizabethan society truly entering a "Golden Age" of culture and learning?',
-        subTitle:
-          'Key Topic 3.1: Petty Schools, Grammar Schools, Sport, Hunting, Music & The Globe Playhouse',
-        specAnchor:
-          'Education in schools and universities; pastimes, sports, music, and seasonal festivities; the development of the Elizabethan theatre and public playhouses.',
-        doNow: [
-          {
-            q: 'What basic elementary schools taught reading, writing, and arithmetic to young children?',
-            a: 'Petty schools (or Dame schools)',
-          },
-          {
-            q: 'Which fee-paying secondary schools taught Latin, Greek, and rhetoric to middle-class boys?',
-            a: 'Grammar schools',
-          },
-          {
-            q: 'Did girls attend grammar schools or universities in Elizabethan England?',
-            a: 'No (girls were educated at home in domestic needlework and household management)',
-          },
-          {
-            q: 'Which two universities existed in England during Elizabeth’s reign?',
-            a: 'Oxford and Cambridge',
-          },
-          {
-            q: 'What violent blood sports were popular with both ordinary people and the nobility?',
-            a: 'Bear-baiting and cock-fighting',
-          },
-          {
-            q: 'What name was given to theatergoers who paid 1 penny to stand in the unroofed pit?',
-            a: 'Groundlings (or penny stinkards)',
-          },
-          {
-            q: "Who built London’s first permanent public playhouse, 'The Theatre', in 1576?",
-            a: 'James Burbage',
-          },
-          {
-            q: 'Which famous Southwark playhouse was built by Shakespeare’s company in 1599?',
-            a: 'The Globe Theatre',
-          },
-          {
-            q: 'Why did the Puritan-led City of London Corporation oppose theatres?',
-            a: 'They believed plays spread plague, promoted sin and immorality, and lured apprentices from work',
-          },
-          {
-            q: 'What aristocratic playing company was patronized by Elizabeth’s favourite Robert Dudley?',
-            a: 'The Earl of Leicester’s Men',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Grammar Schools',
-        vocabTermB: 'The Pit',
-        vocabPrompt:
-          'Explain the difference between fee-paying secondary schools teaching Latin to boys (<strong>Grammar Schools</strong>) and the open standing area in front of the theatre stage where ordinary groundlings stood for one penny (<strong>The Pit</strong>):',
-        featureA: {
-          provenance: 'Edexcel June 2018 (Q1a)',
-          ref: '[Textbook §1.2]',
-          stem: 'Describe one key feature of education in Elizabethan Grammar Schools.',
-          guidance:
-            'Point (Fee-paying schools for boys aged 7–14 focusing heavily on classical Latin language and literature) &bull; Fact (Pupils attended 10-hour days from 6am to 5pm, memorizing Latin grammar, Greek, and rhetoric through rote learning and corporal punishment).',
-          stems:
-            'One key feature was the intense focus on Latin and classical literature... Specifically, boys spent ten hours a day studying...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2019 (Q1a)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of the Elizabethan theatre.',
-          guidance:
-            'Point (A circular open-air wooden amphiteatre that brought all social classes together for entertainment) &bull; Fact (Groundlings paid 1 penny to stand in the uncovered yard, while wealthy gentry paid 2–3 pence for tiered roofed galleries; plays took place in daylight).',
-          stems:
-            'One key feature was that public playhouses attracted all social classes... Specifically, poor groundlings stood in the yard for 1 penny, while wealthy gentry...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §2.2]',
-          stem: 'Describe one key feature of sports and pastimes in Elizabethan England.',
-          guidance:
-            'Point (Pastimes were strictly divided along social class lines) &bull; Fact (Nobles participated in hunting, hawking, and fencing, while ordinary folk gathered for brutal blood sports like bear-baiting, cock-fighting, and football).',
-          stems:
-            'One key feature was the clear social division in leisure activities... Specifically, while the nobility engaged in...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2022 (Q2)',
-          type: 'explain_why_12',
-          tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
-          stem: 'Explain why there was a significant expansion in education in Elizabethan England.',
-          stimulus: ['Grammar schools', 'The Protestant Reformation'],
-          structureStrip: [
-            {
-              col: '1. CAUSE 1: RENAISSANCE HUMANISM & TRADE',
-              ref: '[Textbook §1.1–§1.3]',
-              text: 'Explain that the Renaissance emphasized that education was essential for success; growing international trade and bureaucracy required literate merchants, lawyers, clerks, and estate stewards.',
-            },
-            {
-              col: '2. CAUSE 2: PROTESTANT REFORMATION & BIBLE STUDY',
-              ref: '[Textbook §2.1–§2.2]',
-              text: 'Explain that Protestant theology insisted that every Christian must be able to read the English Bible to achieve personal salvation; literacy was viewed as a sacred religious duty.',
-            },
-            {
-              col: '3. CAUSE 3: EXPANSION OF ENDOWED GRAMMAR SCHOOLS',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that wealthy merchants and gentry established over 70 new grammar schools, endowing scholarships so that bright boys from humble backgrounds could attend without paying fees.',
-            },
-          ],
-          connectives:
-            'Education expanded rapidly under Elizabeth primarily because... &bull; Crucially, the growth of commercial trade created a pressing need for... &bull; In addition, Protestant religious belief demanded that ordinary people... &bull; Furthermore, wealthy philanthropists actively funded... &bull; Consequently, these combined economic and religious forces transformed literacy rates because...',
-          wordBank:
-            'Humanism &bull; Grammar schools &bull; Petty schools &bull; Protestantism &bull; Literacy &bull; English Bible &bull; Renaissance &bull; Endowments &bull; Commercial trade',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 2). In Milestone 2, sketch James Burbage’s wooden playhouse and the quill pen of a grammar school scholar.',
-        },
-      },
-      {
-        enquiryNum: 2,
-        id: 'lesson_3_2',
-        title: 'The Problem of Poverty',
-        inquiryQuestion:
-          'Was Elizabethan poverty caused by personal idleness or unstoppable economic forces?',
-        subTitle:
-          'Key Topic 3.2: Enclosure, Population Surge, Bad Harvests & The Poor Laws of 1572 and 1576',
-        specAnchor:
-          'Reasons for the increase in poverty and vagabondage; changing attitudes towards the poor (the deserving/impotent poor vs the idle/sturdy poor); the Elizabethan Poor Laws (1572 and 1576).',
-        doNow: [
-          {
-            q: 'Approximately what was England’s population in 1558 compared to 1603?',
-            a: 'Roughly 3 million in 1558, rising to over 4 million by 1603 (35% increase)',
-          },
-          {
-            q: 'What term describes fencing off open peasant farmland into enclosed fields for sheep grazing?',
-            a: 'Enclosure',
-          },
-          {
-            q: 'Why did landowners prefer sheep farming to arable farming with grain crops?',
-            a: 'Wool was highly profitable and sheep required far fewer agricultural labourers',
-          },
-          {
-            q: 'What economic term describes continuous rising prices of food and goods?',
-            a: 'Inflation (price rise)',
-          },
-          {
-            q: 'What catastrophic weather disaster caused food shortages and rocketing grain prices in the 1590s?',
-            a: 'Consecutive bad harvests',
-          },
-          {
-            q: 'What term described the elderly, orphans, and disabled poor who were unable to work?',
-            a: 'The Impotent Poor (or Deserving Poor)',
-          },
-          {
-            q: 'What term described fit, healthy beggars who were assumed to be deliberately lazy?',
-            a: 'The Sturdy Beggars (or Idle/Undeserving Poor)',
-          },
-          {
-            q: 'What punishment was imposed on sturdy beggars under the 1572 Vagabonds Act?',
-            a: 'Whipped and burned through the gristle of the right ear with a hot iron',
-          },
-          {
-            q: 'What institutions were created by the 1576 Poor Act to punish idle beggars with hard labour?',
-            a: 'Houses of Correction (Bridewells)',
-          },
-          {
-            q: 'What local parish tax paid for the relief of the impotent poor?',
-            a: 'The Poor Rate',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.2]',
-        vocabTermA: 'Enclosure',
-        vocabTermB: 'Vagabonds',
-        vocabPrompt:
-          'Explain the difference between fencing off common land for sheep farming (<strong>Enclosure</strong>) and homeless people who wandered from town to town looking for work (<strong>Vagabonds</strong>):',
-        featureA: {
-          provenance: 'Edexcel November 2021 (Q1a)',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of the enclosure of land in Elizabethan England.',
-          guidance:
-            'Point (Landlords fenced off common fields to replace arable crop farming with sheep farming) &bull; Fact (Wool was far more profitable, but sheep required only one shepherd, putting hundreds of rural labourers out of work and driving them to towns).',
-          stems:
-            'One key feature of enclosure was the conversion of farmland to sheep pasture... Specifically, landlords replaced crops with sheep because wool was profitable, which left...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2023 (Q1a)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of the 1576 Act for the Relief of the Poor.',
-          guidance:
-            'Point (A landmark law that placed legal responsibility on local towns to find work for the unemployed) &bull; Fact (Parishes had to provide raw wool and hemp for the able-bodied to spin, and build Houses of Correction for those who refused to work).',
-          stems:
-            'One key feature of the 1576 Poor Act was distinguishing between the unemployed and the lazy... Specifically, it forced towns to provide raw materials like wool and build...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of the distinction between the ‘deserving’ and ‘idle’ poor.',
-          guidance:
-            'Point (Elizabethan authorities distinguished between those unable to work and those deemed lazy) &bull; Fact (The impotent poor received parish relief and shelter, whereas sturdy beggars and vagabonds were publicly whipped and sent to Houses of Correction).',
-          stems:
-            'One key feature was the official separation of the poor into two categories... Specifically, the law differentiated between...',
-        },
-        rightExam: {
-          provenance: 'Edexcel November 2020 (Q3b)',
-          type: 'essay_16',
-          tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
-          stem: '‘The enclosure of land was the main reason for the dramatic increase in poverty in Elizabethan England.’ How far do you agree? Explain your answer.',
-          stimulus: ['Sheep farming', 'Population growth'],
-          structureStrip: [
-            {
-              col: '1. CRITERIA 1: ENCLOSURE & RURAL EVICTIONS',
-              ref: '[Textbook §1.1–§1.3]',
-              text: 'Explain how enclosing common fields for sheep grazing removed arable strip farming; because wool needed few shepherds, whole villages were depopulated, forcing dispossessed cottagers into vagrancy.',
-            },
-            {
-              col: '2. CRITERIA 2: POPULATION SURGE & INFLATION',
-              ref: '[Textbook §2.1–§2.2]',
-              text: 'Explain that England’s population surged from 3m to over 4m; higher demand drove up food and bread prices (inflation) while creating a labour surplus that depressed wages below subsistence level.',
-            },
-            {
-              col: '3. CRITERIA 3: HARVEST FAILURES & MONASTERY LOSS',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that the dissolution of monasteries had eliminated traditional Catholic charity networks; when bad harvests struck, famine pushed marginal farmworkers into absolute starvation.',
-            },
-          ],
-          connectives:
-            'Enclosure was undeniably a major cause of rural destitution because... &bull; Specifically, landowners converted arable crop fields to sheep pasture, which... &bull; However, rapid population growth was arguably an even deeper cause because... &bull; In addition, consecutive bad harvests caused grain prices to... &bull; Weighing these factors, I conclude that while enclosure devastated specific rural villages, the broad demographic surge and inflation were the fundamental causes because...',
-          wordBank:
-            'Poverty &bull; Enclosure &bull; Sheep farming &bull; Population surge &bull; Inflation &bull; Bad harvests &bull; Vagabonds Act 1572 &bull; 1576 Poor Act &bull; Houses of Correction',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 1). In Milestone 1, sketch the sheep shears and the ear-boring branding iron from the 1572 Act.',
-        },
-      },
-      {
-        enquiryNum: 3,
-        id: 'lesson_3_3',
-        title: 'Exploration and voyages of discovery',
-        inquiryQuestion:
-          'Was English maritime exploration driven by scientific curiosity or ruthless economic greed?',
-        subTitle:
-          'Key Topic 3.3: Astrolabe, Quadrant, Mercator Maps, Trade Routes & Drake’s Circumnavigation',
-        specAnchor:
-          'Factors prompting exploration (new navigational technology, new trade routes, commercial rivalry); Drake’s circumnavigation (1577–80): motives and significance.',
-        doNow: [
-          {
-            q: 'Which navigation instrument measured the angle of the sun and stars to calculate latitude?',
-            a: 'The Astrolabe (or Quadrant)',
-          },
-          {
-            q: 'What magnetic Chinese navigational tool allowed Elizabethan ships to steer accurate compass headings?',
-            a: 'The Magnetic Compass',
-          },
-          {
-            q: 'What new 1569 map projection allowed navigators to plot straight sailing courses across oceans?',
-            a: 'The Mercator Projection',
-          },
-          {
-            q: 'Which valuable Asian commodities drove European explorers to find sea routes to the East?',
-            a: 'Spices (pepper, cloves, nutmeg) and silk',
-          },
-          {
-            q: 'What was the original name of Sir Francis Drake’s flagship before he renamed it *Golden Hind*?',
-            a: '*The Pelican*',
-          },
-          {
-            q: 'Through which notoriously dangerous strait at the tip of South America did Drake sail in 1578?',
-            a: 'The Strait of Magellan',
-          },
-          {
-            q: 'What name did Drake give to the Californian coast he claimed for Queen Elizabeth in 1579?',
-            a: 'Nova Albion (New Britain)',
-          },
-          {
-            q: 'In which Indonesian spice islands did Drake trade with the Sultan of Ternate for cloves?',
-            a: 'The Moluccas (Spice Islands)',
-          },
-          {
-            q: 'How long did Drake’s circumnavigation take from departure to return?',
-            a: 'Nearly three years (December 1577 – September 1580)',
-          },
-          {
-            q: 'What percentage profit did Drake’s voyage generate for Queen Elizabeth and his investors?',
-            a: '4,700% profit',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Astrolabe',
-        vocabTermB: 'Circumnavigation',
-        vocabPrompt:
-          'Explain the difference between an instrument used by sailors to calculate latitude by observing the sun and stars (<strong>Astrolabe</strong>) and sailing completely around the world on a ship (<strong>Circumnavigation</strong>):',
-        featureA: {
-          provenance: 'Edexcel June 2022 (Q1b)',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of the new navigational technology used by Elizabethan explorers.',
-          guidance:
-            'Point (The development of precise navigation instruments like the astrolabe and quadrant) &bull; Fact (They allowed sea captains to measure the angle of the pole star and sun to calculate precise latitude, enabling accurate ocean crossings away from coastlines).',
-          stems:
-            'One key feature was the technological advance in navigation instruments... Specifically, devices like the astrolabe allowed navigators to...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2024 (Q1b)',
-          ref: '[Textbook §2.2]',
-          stem: 'Describe one key feature of Francis Drake’s circumnavigation (1577–80).',
-          guidance:
-            'Point (Drake became the first Englishman to sail completely around the globe) &bull; Fact (He navigated the hazardous Strait of Magellan, raided Spanish treasure ships in the Pacific, reached California (Nova Albion), and returned with £140,000 of bullion).',
-          stems:
-            'One key feature was the immense geographical and financial success of the voyage... Specifically, Drake sailed into the Pacific and returned with...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §2.1]',
-          stem: 'Describe one key feature of the search for the Northwest Passage.',
-          guidance:
-            'Point (English navigators sought an ice-free northern sea route to Asia to bypass Spanish trade routes) &bull; Fact (Explorers Martin Frobisher and John Davis made three expeditions to northern Canada, charting Arctic waters despite failing to reach China).',
-          stems:
-            'One key feature was the economic motivation to find a northern trade route to Asia... Specifically, explorers like Frobisher...',
-        },
-        rightExam: {
-          provenance: 'Edexcel November 2021 (Q2)',
-          type: 'explain_why_12',
-          tariff: 'Question 2: Explain Why [12 marks &bull; 18 mins]',
-          stem: 'Explain why English exploration by sea increased so rapidly between 1558 and 1588.',
-          stimulus: ['New navigational technology', 'The cloth trade collapse'],
-          structureStrip: [
-            {
-              col: '1. CAUSE 1: ECONOMIC CRISIS & NEW MARKETS',
-              ref: '[Textbook §1.1–§1.3]',
-              text: 'Explain that the collapse of the Antwerp cloth market in the 1550s devastated England’s wool trade, forcing merchants to seek new trade routes to Russia (Muscovy Company), the Mediterranean, and the Americas.',
-            },
-            {
-              col: '2. CAUSE 2: TECHNOLOGICAL & CARTOGRAPHIC ADVANCE',
-              ref: '[Textbook §2.1–§2.2]',
-              text: 'Explain that astrolabes, magnetic compasses, Mercator maps, and larger, multi-masted galleons enabled safe transatlantic voyages, transforming open-ocean navigation from suicide into a calculated commercial risk.',
-            },
-            {
-              col: '3. CAUSE 3: PRIVATEERING WEALTH & SPANISH RIVALRY',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that plundering Spanish bullion ships in the Americas offered astronomical wealth; Elizabeth and courtiers secretly invested in voyages to challenge Philip II’s monopoly and finance the Crown.',
-            },
-          ],
-          connectives:
-            'English maritime exploration expanded rapidly primarily because... &bull; Crucially, the sudden collapse of European cloth trade forced merchants to... &bull; In addition, revolutionary developments in navigation technology allowed... &bull; Furthermore, the immense profits of privateering encouraged courtiers to... &bull; Consequently, these economic and strategic incentives transformed England into an oceanic power because...',
-          wordBank:
-            'Exploration &bull; Astrolabe &bull; Mercator projection &bull; Antwerp cloth market &bull; Muscovy Company &bull; Francis Drake &bull; Privateering &bull; Spanish monopoly &bull; *Golden Hind*',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 3). In Milestone 3, sketch the astrolabe dial and the globe encircled by Drake’s sailing route.',
-        },
-      },
-      {
-        enquiryNum: 4,
-        id: 'lesson_3_4',
-        title: 'Raleigh and Virginia',
-        inquiryQuestion:
-          'Why did Walter Raleigh’s dream of an English empire in Virginia end in total catastrophe?',
-        subTitle:
-          'Key Topic 3.4: Royal Patent, Roanoke Colony (1585), Manteo & Wanchese, and "The Lost Colony"',
-        specAnchor:
-          'Sir Walter Raleigh and the attempt to colonise Virginia; reasons for colonising Virginia; reasons for the failure of the first colony (1585); the significance of the colonisation attempts.',
-        doNow: [
-          {
-            q: 'Which Elizabethan courtier and explorer was granted a royal patent to colonise Virginia in 1584?',
-            a: 'Sir Walter Raleigh',
-          },
-          {
-            q: "Why was the new North American territory named 'Virginia' by the English?",
-            a: 'In honour of Elizabeth I, the "Virgin Queen"',
-          },
-          {
-            q: 'Did Sir Walter Raleigh ever travel to Virginia himself?',
-            a: 'No (he organized and funded the expeditions from England)',
-          },
-          {
-            q: 'On which barrier island off modern North Carolina was the first English colony established in 1585?',
-            a: 'Roanoke Island',
-          },
-          {
-            q: 'Which two Native Americans were brought back to London in 1584 to advise the English?',
-            a: 'Manteo and Wanchese',
-          },
-          {
-            q: 'Who was appointed governor of the first 1585 Roanoke settlement?',
-            a: 'Ralph Lane',
-          },
-          {
-            q: 'What catastrophic accident happened to the flagship *Tiger* that destroyed the colonists’ food seeds?',
-            a: 'It ran aground on a sandbar, letting seawater flood the hold and ruin the grain',
-          },
-          {
-            q: 'Who commanded the English relief fleet that evacuated the starving colonists in 1586?',
-            a: 'Sir Francis Drake',
-          },
-          {
-            q: 'Who was appointed governor of the second 1587 settlement ("The Lost Colony")?',
-            a: 'John White',
-          },
-          {
-            q: 'What single word carved on a wooden palisade post was found when John White returned in 1590?',
-            a: 'CROATOAN',
-          },
-        ],
-        vocabRef: '[Textbook §1.1–§2.1]',
-        vocabTermA: 'Colony',
-        vocabTermB: 'Empire',
-        vocabPrompt:
-          'Explain the difference between a new settlement established and ruled by people from another country (<strong>Colony</strong>) and a collection of lands and colonies ruled over by a single monarch or power (<strong>Empire</strong>):',
-        featureA: {
-          provenance: '★ High-Yield Forecast (Q1a)',
-          ref: '[Textbook §1.1]',
-          stem: 'Describe one key feature of Sir Walter Raleigh’s royal patent for Virginia (1584).',
-          guidance:
-            'Point (A royal license granting Raleigh the right to explore and colonise any lands not already possessed by Christian monarchs) &bull; Fact (Raleigh was granted ownership of all land and minerals discovered, in exchange for giving the Crown one-fifth of all gold and silver mined).',
-          stems:
-            'One key feature was the royal authorization to establish an overseas empire... Specifically, Elizabeth granted Raleigh ownership of Virginia, provided he gave the Crown...',
-        },
-        featureB: {
-          provenance: 'Edexcel June 2023 (Q1b)',
-          ref: '[Textbook §3.1]',
-          stem: 'Describe one key feature of the failure of the first Roanoke colony (1585–86).',
-          guidance:
-            'Point (The colony faced starvation after the flagship *Tiger* flooded, ruining their food seeds) &bull; Fact (Colonists lacked farming skills, alienated local Secotan tribes led by Wingina, and had to be evacuated back to England by Francis Drake in 1586).',
-          stems:
-            'One key feature was the rapid collapse of food supplies and local relations... Specifically, after the *Tiger* flooded their seeds, the colonists angered Chief Wingina and were rescued by...',
-        },
-        featureC: {
-          provenance: 'Edexcel Specification Focus',
-          ref: '[Textbook §3.2]',
-          stem: 'Describe one key feature of the ‘Lost Colony’ of Roanoke (1587–90).',
-          guidance:
-            'Point (A second settlement of 117 men, women, and children led by John White disappeared completely) • Fact (Delayed by the Spanish Armada, White returned in 1590 to find the fort abandoned with only the word ‘CROATOAN’ carved into a palisade post).',
-          stems:
-            'One key feature was the complete and mysterious disappearance of the second colony... Specifically, when John White returned in 1590...',
-        },
-        rightExam: {
-          provenance: 'Edexcel June 2018 (Q3a)',
-          type: 'essay_16',
-          tariff: 'Question 3: Evaluative Essay [16 marks + 4 SPaG &bull; 25 mins]',
-          stem: '‘Poor planning and unsuitable colonists were the main reasons why the attempt to colonise Virginia failed in 1585–86.’ How far do you agree? Explain your answer.',
-          stimulus: ['Lack of farming skills', 'Relations with Native Americans'],
-          structureStrip: [
-            {
-              col: '1. CRITERIA 1: UNSUITABLE SETTLERS & POOR PLANNING',
-              ref: '[Textbook §1.1–§2.2]',
-              text: 'Explain that the 107 settlers were mostly aristocratic soldiers seeking quick gold rather than farmers; they lacked agricultural skills, refused physical manual labour, and brought inadequate seeds.',
-            },
-            {
-              col: '2. CRITERIA 2: BAD LUCK & VOYAGE ACCIDENTS',
-              ref: '[Textbook §2.2]',
-              text: 'Explain that the flagship *Tiger* ran aground on a sandbank off Roanoke, flooding the hold with seawater and destroying all grain seeds; settlers arrived too late in the season to plant crops before winter.',
-            },
-            {
-              col: '3. CRITERIA 3: HOSTILITY WITH NATIVE TRIBES',
-              ref: '[Textbook §3.1–§3.2]',
-              text: 'Explain that Ralph Lane’s brutal military temperament alienated Chief Wingina’s Secotan tribe; when an English silver cup went missing, settlers burned a village, leading to open war and starvation.',
-            },
-          ],
-          connectives:
-            'Poor planning and unsuitable personnel were primary factors in the colony’s collapse because... &bull; Specifically, the aristocratic gentlemen refused to perform agricultural labour, which... &bull; Furthermore, this was compounded by disastrous bad luck when the *Tiger*... &bull; In addition, Ralph Lane’s aggressive hostility towards Native Americans alienated Chief Wingina... &bull; Weighing these factors, I conclude that while the loss of the *Tiger’s* seeds made survival precarious, poor planning was the fundamental cause because the expedition was built for plunder rather than permanent farming...',
-          wordBank:
-            'Walter Raleigh &bull; Virginia &bull; Roanoke Island &bull; Ralph Lane &bull; *Tiger* &bull; Chief Wingina &bull; Secotan &bull; Manteo & Wanchese &bull; "Lost Colony" &bull; CROATOAN',
-          timelineMission:
-            'Turn to Pages 2–3 (Milestone 6). In Milestone 6, sketch the wooden palisade post carved with "CROATOAN" and the sinking flagship *Tiger*.',
-        },
-      },
-    ],
+    enquiries: EEE_ENQUIRY_CONFIGS.KT3,
   },
 };
 
-// ============================================================================
-// MAIN GENERATOR FUNCTION FOR A GIVEN KEY TOPIC (16 PAGES)
-// ============================================================================
-
-// ============================================================================
-// ============================================================================
-// MEDICINE-STYLE ENQUIRY RENDERING ENGINE (CALIBRATED ZERO-OVERFLOW / ZERO-UNDERFLOW)
-// ============================================================================
-
-function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
+function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
   let stagesHtml = '';
-  const stages = enq.stages || [];
+  const stages = cfg.stages || [];
   stages.forEach((st, idx) => {
     let bulletsHtml = st.bullets
       .map(
@@ -1815,7 +484,7 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
     stagesHtml += `
           <!-- Stage ${idx + 1} -->
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0; border-bottom: 1.5px solid #000000;">
-            <!-- Left: Factual Chronology Spine (38mm) with larger strong black font -->
+            <!-- Left: Factual Chronology Spine (38mm) with strong black font -->
             <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 2px 4px 2px 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 12px; width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
               <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1.5px;">
@@ -1825,21 +494,18 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
               <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 900; color: #000000; line-height: 1.12; margin-bottom: 2.5px;">
                 ${st.title}
               </div>
-              <!-- Larger, Strong Black Bullets (7.1pt, 700 weight, deep black) -->
               <div style="display: flex; flex-direction: column; font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; line-height: 1.20; color: #000000;">
                 ${bulletsHtml}
               </div>
             </div>
 
-            <!-- Right: Juicy Enquiry Prompt + Exact 6 Ruled Lines (Live Line Ruling Preserved) -->
+            <!-- Right: Enquiry Prompt + Exact 6 Ruled Lines (Preserving teacher exposition notes) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1.5px solid #000000; margin: 0; padding: 0;">
-              <!-- Embedded Stage Enquiry Focus Bar (No redundant badge; number is already on left) -->
               <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 2.5px 8px; display: flex; align-items: center;">
                 <span style="font-family: 'Georgia', serif; font-size: 7.8pt; font-weight: 700; color: #000000; line-height: 1.18; font-style: italic;">
                   ${st.focusClue}
                 </span>
               </div>
-              <!-- Exact 6 Ruled Lines (Matching Medicine 1.2px solid #000000 ruling) -->
               <div style="flex: 1; display: flex; flex-direction: column;">
                 <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
                 <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
@@ -1860,14 +526,14 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            KEY TOPIC ${keyTopicNum}.${enq.enquiryNum} &bull; ENQUIRY LESSON NOTEBOOK
+            KEY TOPIC ${keyTopicNum}.${cfg.enquiryNum} &bull; ENQUIRY LESSON NOTEBOOK
           </span>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
             EDEXCEL PAPER 2 (1HI0/2B) &bull; BRITISH DEPTH STUDY
           </span>
         </div>
         <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
-          ${enq.inquiryQuestion}
+          ${cfg.inquiryQuestion}
         </h2>
       </div>
 
@@ -1893,148 +559,92 @@ function renderSpinePage(enq, pageNum, quip, keyTopicNum) {
   </div>`;
 }
 
-function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
-  const featAProb = enq.featureA.probability || '★ HIGH PROBABILITY';
-  const featBProb = enq.featureB.probability || 'CORE SPECIFICATION FOCUS';
-  const featCProb = enq.featureC?.probability || 'HIGH-YIELD SPECIFICATION FOCUS';
+/**
+ * MODULE PAGE 2: Extended Writing Assessment (Recto)
+ */
+function renderModulePage2(cfg, pageNum, quip, keyTopicNum) {
+  const flexTaskLines = Array.from(
+    { length: 22 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
 
   return `
-  <!-- SHORT-TARIFF EXAM PRACTICE: 3x Q1 FEATURE [2m+2m+2m] + TIMELINE MISSION (PAGE ${pageNum}) -->
-  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 3.5mm 6mm 2.5mm 6mm;">
-    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-      
-      <!-- Top Exam Header -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            KEY TOPIC ${keyTopicNum}.${enq.enquiryNum} &bull; SHORT-TARIFF EXAM PRACTICE
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 2 &bull; FACTUAL RECALL (AO1)
+  <!-- MODULE PAGE 2: EXTENDED WRITING ASSESSMENT (PAGE ${pageNum}) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div>
+        <!-- Exam Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+          <div style="display: flex; align-items: baseline; gap: 6px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+              ${cfg.tariff}
+            </h2>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
+              EDEXCEL PAPER 2 (1HI0/2B)
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${cfg.scoreMax} ]
           </span>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: baseline;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0 0 0; font-weight: 900; line-height: 1.2;">
-            Question 1 Practice: Describe Three Key Features [3 &times; 2 marks &bull; 9 mins]
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 1px 5px; border-radius: 2px;">
-            Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 6 ]
-          </span>
+
+        <!-- Question Stem & Stimulus Box -->
+        <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.22;">
+            ${cfg.examStem}
+          </div>
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
+            <strong>You may use in your answer:</strong>
+            <span>&bull; ${cfg.stimulus[0]}</span>
+            <span>&bull; ${cfg.stimulus[1]}</span>
+            <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
+          </div>
+        </div>
+
+        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 6px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">
+              Accessible Writing Frames:
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block; color: #222222;">
+              ${cfg.connectives}
+            </span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; display: block; margin-bottom: 1px; color: #000000;">
+              Key Vocabulary Bank:
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block; color: #111111;">
+              ${cfg.wordBank}
+            </span>
+          </div>
+        </div>
+
+        <!-- Ruled Task Lines Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+          <span><strong>Write your response in the space provided below:</strong></span>
+          <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
         </div>
       </div>
 
-      <!-- 3 Feature Practice Questions (Flex Absorbs Vertical Space with zero inter-task void) -->
-      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; min-height: 0; margin: 2px 0;">
-
-        <!-- Question 1(a): Describe One Key Feature [2 marks] -->
-        <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 1.5px;">
-              <div style="display: flex; align-items: center; gap: 5px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                  &bull; Question 1(a): Describe One Key Feature [2 marks &bull; 3 mins]
-                </strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-                  ${featAProb}
-                </span>
-              </div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-                ${enq.featureA.provenance || 'EDEXCEL PAPER 2'}
-              </span>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
-              ${enq.featureA.stem}
-            </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target: AO1 [2 marks] &bull;</strong> Point (State one clear, valid historical feature) &bull; Detail (Support with precise factual context).<br>
-              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-          </div>
-        </div>
-
-        <!-- Question 1(b): Describe One Key Feature [2 marks] -->
-        <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 1.5px;">
-              <div style="display: flex; align-items: center; gap: 5px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                  &bull; Question 1(b): Describe One Key Feature [2 marks &bull; 3 mins]
-                </strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-                  ${featBProb}
-                </span>
-              </div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-                ${enq.featureB.provenance || 'EDEXCEL PAPER 2'}
-              </span>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
-              ${enq.featureB.stem}
-            </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target: AO1 [2 marks] &bull;</strong> Point (State one clear, valid historical feature) &bull; Detail (Support with precise factual context).<br>
-              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-          </div>
-        </div>
-
-        <!-- Question 1(c): Describe One Key Feature [2 marks] -->
-        <div class="task-section" style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 1.5px;">
-              <div style="display: flex; align-items: center; gap: 5px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                  &bull; Question 1(c): Describe One Key Feature [2 marks &bull; 3 mins]
-                </strong>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 4px; border-radius: 2px;">
-                  ${featCProb}
-                </span>
-              </div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f8fafc;">
-                ${enq.featureC?.provenance || 'EDEXCEL PAPER 2'}
-              </span>
-            </div>
-            <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
-              ${enq.featureC?.stem}
-            </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 2px; margin-bottom: 2px;">
-              <strong>Target: AO1 [2 marks] &bull;</strong> Point (State one clear, valid historical feature) &bull; Detail (Support with precise factual context).<br>
-              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-            </div>
-          </div>
-          <div style="display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-            <div class="task-line"></div>
-          </div>
-        </div>
-
+      <!-- 22 Ruled Task Lines for Extended Writing -->
+      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+${flexTaskLines}
       </div>
 
       <!-- Timeline Mission (Medicine-Style Analytical Navigation Strip) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
         <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
             Timeline Mission
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.3pt; color: #000000; line-height: 1.2;">
-            ${enq.rightExam.timelineMission}
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; line-height: 1.2;">
+            ${cfg.timelineMission}
           </span>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
           &larr; Pages 2–3
         </span>
       </div>
@@ -2044,127 +654,157 @@ function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
   </div>`;
 }
 
-function renderExtendedWritingPages(enq, leftPageNum, rightPageNum, footers, keyTopicNum) {
-  const rx = enq.rightExam;
-  const is12m = rx.type === 'explain_why_12';
-  const maxScore = is12m ? '12' : '20';
-  const rightProb = rx.probability || '★ HIGH-YIELD FORECAST';
-
-  // 17 Ruled lines for first page (Word Bank omitted from workbook; preserved in digital app)
-  const leftTaskLines = Array.from(
-    { length: 17 },
+/**
+ * MODULE PAGE 3: Extended Writing Continued (Verso)
+ */
+function renderModulePage3(cfg, pageNum, quip, keyTopicNum) {
+  const continuationTaskLines = Array.from(
+    { length: 31 },
     () => `
-      <div class="lined-row">
-        <div class="lined-margin-cell">&nbsp;</div>
-        <div class="lined-content-cell">&nbsp;</div>
-      </div>`,
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
 
-  // 28 Ruled lines for continuation page
-  const rightTaskLines = Array.from({ length: 28 }, (_, lIdx) => {
-    const isFirst = lIdx === 0;
-    const marginContent = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; color: #555555; text-transform: uppercase; font-weight: 700;">Margin</span>`
-      : `&nbsp;`;
-    const linePrompt = isFirst
-      ? `<span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #777777;">[ Extended Writing Continued &bull; Paragraph 2/3 &amp; Final Sustained Conclusion ]</span>`
-      : `&nbsp;`;
-    return `
-        <div class="lined-row">
-          <div class="lined-margin-cell">${marginContent}</div>
-          <div class="lined-content-cell">${linePrompt}</div>
-        </div>`;
-  }).join('');
+  return `
+  <!-- MODULE PAGE 3: EXTENDED WRITING CONTINUED (PAGE ${pageNum}) -->
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+          Enquiry ${keyTopicNum}.${cfg.enquiryNum}: ${cfg.title}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+          ${cfg.tariff.split(':')[0]} Continued &bull; Independent Timed Response
+        </span>
+      </div>
+
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+        Continue your response to ${cfg.tariff.split(':')[0]} below:
+      </div>
+
+      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+${continuationTaskLines}
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 24)}
+    </div>
+  </div>`;
+}
+
+/**
+ * MODULE PAGE 4: Essay Synthesis & 4-Mark Feature Practice (Recto)
+ */
+function renderModulePage4(cfg, pageNum, quip, keyTopicNum) {
+  const conclusionTaskLines = Array.from(
+    { length: 24 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
+
+  const featLinesA = Array.from(
+    { length: 3 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
+
+  const featLinesB = Array.from(
+    { length: 3 },
+    () => `
+        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+  ).join('');
 
   return `
-  <!-- EXTENDED WRITING PART 1 (VERSO - PAGE ${leftPageNum}) -->
-  <div class="page page-container verso-page" id="page-${leftPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div style="display: flex; align-items: baseline; gap: 6px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-            ${rx.tariff}
+  <!-- MODULE PAGE 4: ESSAY SYNTHESIS & 4-MARK FEATURE PRACTICE (PAGE ${pageNum}) -->
+  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      
+      <!-- Top Section: Final Essay Synthesis (Flex 2.2) -->
+      <div style="flex: 2.2; display: flex; flex-direction: column; min-height: 0;">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            Enquiry ${keyTopicNum}.${cfg.enquiryNum}: ${cfg.title} &bull; Final Historical Verdict
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px; background: #f1f5f9; text-transform: uppercase;">
-            ${rx.provenance || 'EDEXCEL PAPER 2'}
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px;">
-            ${rightProb}
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${cfg.scoreMax} ]
           </span>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-          Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${maxScore} ]
-        </span>
-      </div>
 
-      <!-- Question Stem & Stimulus -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 3px;">
-        <p style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.22;">
-          ${rx.stem}
-        </p>
-        <div style="display: flex; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 6px; border-radius: 2px;">
-          <strong>You may use in your answer:</strong>
-          <span>&bull; ${rx.stimulus[0]}</span>
-          <span>&bull; ${rx.stimulus[1]}</span>
-          <span style="font-style: italic; color: #1e3a8a; font-weight: 700;">(You must also use information of your own.)</span>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Conclude your extended response and provide your sustained historical judgment below:
+        </div>
+
+        <div style="flex: 1; display: flex; flex-direction: column; margin: 0 0 2px 0;">
+${conclusionTaskLines}
         </div>
       </div>
 
-      <!-- 3-Column Mastery Structure Strip -->
-      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; margin-bottom: 2px;">
-        ${rx.structureStrip
-          .map(
-            (col, cIdx) => `
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2px 4px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7.0pt; text-transform: uppercase; color: #000000;">
-              ${col.col}
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">POINT ${cIdx + 1}</span>
+      <!-- Bottom Section: Question 1 Practice: Describe Two Key Features [2x2m = 4m] (Flex 1.5) -->
+      <div style="border-top: 2px solid #000000; padding-top: 3px; margin-top: 2px; flex: 1.5; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
+                &bull; Question 1 Practice: Describe Two Key Features [4 marks &bull; 6 mins]
+              </strong>
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+              Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4 ]
+            </span>
           </div>
-          <p style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #111111; margin: 0; line-height: 1.15;">
-            ${col.text}
-          </p>
         </div>
-        `,
-          )
-          .join('')}
+
+        <!-- 2 Features Grid -->
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex: 1; min-height: 0;">
+          
+          <!-- Feature (a) -->
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">
+                  Q1(a) [2 marks]
+                </span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
+                  ${cfg.featureA.provenance}
+                </span>
+              </div>
+              <p style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.15;">
+                ${cfg.featureA.stem}
+              </p>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.12; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 3px; border-radius: 2px; margin-bottom: 1px;">
+                <strong>Target: AO1 &bull;</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
+              </div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; margin: 0;">
+${featLinesA}
+            </div>
+          </div>
+
+          <!-- Feature (b) -->
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">
+                  Q1(b) [2 marks]
+                </span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
+                  ${cfg.featureB.provenance}
+                </span>
+              </div>
+              <p style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.15;">
+                ${cfg.featureB.stem}
+              </p>
+              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.12; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 3px; border-radius: 2px; margin-bottom: 1px;">
+                <strong>Target: AO1 &bull;</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
+              </div>
+            </div>
+            <div style="flex: 1; display: flex; flex-direction: column; margin: 0;">
+${featLinesB}
+            </div>
+          </div>
+
+        </div>
       </div>
 
-      <!-- Ruled Task Lines Prompt -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #222222; margin: 2px 0 1px 0;">
-        <strong>Task:</strong> Using the structure strip above, write your analytical response below (continue on facing page for full timed response):
-      </div>
-
-      <!-- 17 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid" style="flex: 1; min-height: 0;">
-        ${leftTaskLines}
-      </div>
-
-      ${renderFooterStrip(leftPageNum, footers[leftPageNum - 1], 24)}
-    </div>
-  </div>
-
-  <!-- EXTENDED WRITING PART 2 (RECTO - PAGE ${rightPageNum}) -->
-  <div class="page page-container recto-page" id="page-${rightPageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Enquiry ${keyTopicNum}.${enq.enquiryNum}: ${enq.title} &bull; ${rx.tariff.split(':')[0]} Continued
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Independent Timed Response &bull; Final Historical Verdict
-        </span>
-      </div>
-
-      <!-- 28 Ruled Lines with 22mm Left Margin -->
-      <div class="lined-page-grid" style="flex: 1; min-height: 0;">
-        ${rightTaskLines}
-      </div>
-
-      ${renderFooterStrip(rightPageNum, footers[rightPageNum - 1], 24)}
+      ${renderFooterStrip(pageNum, quip, 24)}
     </div>
   </div>`;
 }
@@ -2932,18 +1572,25 @@ function buildEeeKeyTopicWorkbook(ktId) {
     const linedLeftPageNum = leftPageNum + 2; // 6, 10, 14, 18
     const linedRightPageNum = leftPageNum + 3; // 7, 11, 15, 19
 
-    // Page 1 of module (Verso): Chronological Inquiry Spine + Cornell Notes
+    // Page 1 of module (Verso): Chronological Inquiry Spine & Exposition Notes (30 ruled lines)
     html += renderSpinePage(enq, leftPageNum, footers[leftPageNum - 1], data.keyTopicNum);
 
-    // Page 2 of module (Recto): Q1(a) [2m] + Q1(b) [2m] + Core Vocab + Timeline Mission
-    html += renderFeaturePage(enq, rightPageNum, footers[rightPageNum - 1], data.keyTopicNum);
+    // Page 2 of module (Recto): Extended Writing Assessment (Stimulus, Accessible Writing Frames, Key Vocab Bank, 22 flex lines, Timeline Mission)
+    html += renderModulePage2(enq, rightPageNum, footers[rightPageNum - 1], data.keyTopicNum);
 
-    // Pages 3 & 4 of module (Facing Spread): Extended Writing Assessment (12m / 16m+4m)
-    html += renderExtendedWritingPages(
+    // Page 3 of module (Verso): Extended Writing Continued (31 ruled lines with 22mm margin)
+    html += renderModulePage3(
       enq,
       linedLeftPageNum,
+      footers[linedLeftPageNum - 1],
+      data.keyTopicNum,
+    );
+
+    // Page 4 of module (Recto): Essay Synthesis (24 lines) + Q1 Feature Practice [Q1a 2m + Q1b 2m = 4m]
+    html += renderModulePage4(
+      enq,
       linedRightPageNum,
-      footers,
+      footers[linedRightPageNum - 1],
       data.keyTopicNum,
     );
   });
@@ -2981,13 +1628,13 @@ function buildEeeKeyTopicWorkbook(ktId) {
   data.enquiries.forEach((enq, idx) => {
     const leftPageNum = idx * 4 + 4;
     const rightPageNum = idx * 4 + 5;
-    const extTariff = enq.rightExam.type === 'explain_why_12' ? 12 : 16;
-    const extLabel = enq.rightExam.type === 'explain_why_12' ? 'Q2 Explain Why' : 'Q3 Essay';
+    const linedRightPageNum = idx * 4 + 7;
+    const extTariff = enq.tariff && enq.tariff.includes('12') ? 12 : 20;
+    const extLabel = enq.tariff && enq.tariff.includes('12') ? 'Q2 Explain Why' : 'Q3 Essay';
 
     const featAText = cleanStem(enq.featureA?.stem);
     const featBText = cleanStem(enq.featureB?.stem);
-    const featCText = cleanStem(enq.featureC?.stem);
-    let extText = enq.rightExam?.stem || 'Extended Writing Task';
+    let extText = enq.examStem || enq.rightExam?.stem || 'Extended Writing Task';
     if (extText.length > 70) extText = extText.slice(0, 67) + '...';
 
     examRowsHtml += `
@@ -3000,25 +1647,36 @@ function buildEeeKeyTopicWorkbook(ktId) {
             Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
           </strong>
           <span style="font-size: 7.2pt; color: #475569; display: block; margin-top: 2px;">
-            Do Now Retrieval (p. ${leftPageNum}): [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
+            Spine Lecture Notes (p. ${leftPageNum}): [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
           </span>
         </td>
         <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${rightPageNum}
+          p. ${rightPageNum}–${linedRightPageNum}
         </td>
         <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
-          <strong>Q1(a) Feature:</strong> ${featAText} [2m]
+          <strong>${extLabel}:</strong> ${extText} [${extTariff}m]
         </td>
         <td rowspan="4" style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000; font-size: 8.5pt; font-weight: 800; vertical-align: middle; background: #ffffff;">
           [ &nbsp;&nbsp;&nbsp;<strong>___ / ___</strong>&nbsp;&nbsp;&nbsp; ]
         </td>
         <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
+          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong> ]
         </td>
       </tr>
       <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
         <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${rightPageNum}
+          p. ${linedRightPageNum}
+        </td>
+        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
+          <strong>Q1(a) Feature:</strong> ${featAText} [2m]
+        </td>
+        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
+        </td>
+      </tr>
+      <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
+        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
+          p. ${linedRightPageNum}
         </td>
         <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>Q1(b) Feature:</strong> ${featBText} [2m]
@@ -3027,26 +1685,15 @@ function buildEeeKeyTopicWorkbook(ktId) {
           [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
         </td>
       </tr>
-      <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${rightPageNum}
+      <tr style="border-bottom: 1.5px solid #000000; background: #f8fafc;">
+        <td style="padding: 2px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.0pt; font-weight: 800; color: #475569;">
+          Summary
         </td>
-        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
-          <strong>Q1(c) Feature:</strong> ${featCText} [2m]
+        <td style="padding: 2px 8px; border-right: 1px solid #000000; font-size: 7.0pt; font-weight: 700; color: #475569;">
+          Total Module Enquiry Assessment Mark
         </td>
-        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
-        </td>
-      </tr>
-      <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
-        <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${rightPageNum}
-        </td>
-        <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
-          <strong>${extLabel}:</strong> ${extText} [${extTariff}m]
-        </td>
-        <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong> ]
+        <td style="padding: 2px 6px; text-align: center; font-size: 8.5pt; font-weight: 900; white-space: nowrap; color: #000000;">
+          [ &nbsp;&nbsp;&nbsp;<strong>/ ${extTariff + 4}</strong> ]
         </td>
       </tr>
     `;

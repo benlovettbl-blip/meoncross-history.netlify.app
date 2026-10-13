@@ -1,4 +1,5 @@
-export const unitData = {
+// Early Elizabethan England, 1558–88 Unit Data
+const unitData = {
   lesson_reflection: {
     prompt:
       'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
@@ -216,9 +217,7 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A group of 19 noble advisors who guided royal policy and administration) • Fact (Led by William Cecil, they debated daily on war, finance, and treason, but the Queen had the final prerogative).',
-              sentence_starters: [
-                'One key feature was that the Privy Council... Specifically, led by Sir William Cecil, they...',
-              ],
+              sentence_starters: [],
             },
           },
           {
@@ -236,16 +235,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (The Crown was in crippling debt of £300,000 inherited from Mary I) • Fact (Crown income had fallen due to inflation and selling royal land; debasement of the coinage ruined English credit abroad).',
-              sentence_starters: [
-                'One key feature was the massive Crown debt inherited from Mary I... Specifically, the debt stood at...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '12 marks',
             type: 'explain_why_12',
             question:
-              '2. Explain why Elizabeth’s legitimacy was questioned when she became queen in 1558.',
+              '2. Explain why Elizabeth’s legitimacy was questioned when she became queen in 1558. [12 marks]',
             stimulus: ["Her parents' marriage", 'Mary, Queen of Scots'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
@@ -255,7 +252,7 @@ export const unitData = {
               acronym: 'PEEL Structure Strip',
               acronym_title: '3-Paragraph Causal Analysis (PEEL)',
               guidance:
-                'Elizabeth’s legitimacy was challenged primarily because... • Specifically, Roman Catholic doctrine maintained that... • Furthermore, this was compounded by Henry VIII’s own actions when... • Consequently, English and European Catholics argued that... • Ultimately, this weakness made Mary Stuart an existential threat because...',
+                'One main reason was that... • For example, ... • This was important because... • Another key factor was... • In particular, ... • Overall, the most decisive reason was... because...',
               steps: [
                 {
                   letter: 'CAUSE 1',
@@ -280,22 +277,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Elizabeth’s legitimacy was challenged primarily because...',
-                'Specifically, Roman Catholic doctrine maintained that...',
-                'Furthermore, this was compounded by Henry VIII’s own actions when...',
-                'Consequently, English and European Catholics argued that...',
-                'Ultimately, this weakness made Mary Stuart an existential threat because...',
+                'One main reason was that...',
+                'For example, ...',
+                'This was important because...',
+                'Another key factor was...',
+                'In particular, ...',
+                'Overall, the most decisive reason was... because...',
               ],
               connectives_bank: [
-                'Legitimacy',
                 'Catherine of Aragon',
                 'Anne Boleyn',
-                'Papal annulment',
-                'Succession Act 1536',
-                'Mary, Queen of Scots',
+                'Papal Annulment',
+                '1536 Succession Act',
                 'Henry VIII',
-                'Illegitimate',
-                'Catholic Europe',
+                'Anointed Monarch',
+                'Privy Council',
+                'William Cecil',
+                '£300,000 Debt',
               ],
             },
           },
@@ -624,7 +622,7 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q2: Explain Why [12 marks]',
-            text: 'Q2. Explain why Elizabeth’s legitimacy was questioned when she became queen in 1558.',
+            text: 'Q2. Explain why Elizabeth’s legitimacy was questioned when she became queen in 1558. [12 marks]',
             stimulus: ["Her parents' marriage", 'Mary, Queen of Scots'],
             model:
               'One major reason was cause 1: anne boleyn & papal law. Explain that Catholics never recognized Henry VIII’s divorce from Catherine of Aragon; the Pope declared his marriage to Anne Boleyn illegal, rendering Elizabeth an illegitimate bastard. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: henry viii’s own succession acts. Explain that after Anne Boleyn was beheaded in 1536, Parliament passed the 1536 Succession Act declaring Elizabeth illegitimate, creating enduring legal doubt despite the 1544 Act. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: catholic mary, queen of scots. Explain that strict Catholics viewed Mary Stuart, granddaughter of Henry VIII’s sister Margaret Tudor, as the legitimate, Catholic, God-ordained rightful heir to the English throne. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy.',
@@ -776,15 +774,13 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Made Elizabeth Supreme Governor of the Church of England rather than Supreme Head) • Fact (All clergy and royal officials had to take an Oath of Supremacy acknowledging her title or lose their posts).',
-              sentence_starters: [
-                'One key feature was that Elizabeth took the title of Supreme Governor... Specifically, this required all clergy to...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
-            question: '1(b). Describe one key feature of the Royal Injunctions of 1559. [2 marks]',
+            question: '1(b). Describe one key feature of the Royal Injunctions (1559). [2 marks]',
             prompt:
               'Point (A set of 57 practical instructions issued by William Cecil to enforce church conformity) • Fact (Commanded clergy to preach royal supremacy, keep an English Bible, report recusants, and ban unapproved preaching).',
             model:
@@ -795,17 +791,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A set of 57 practical instructions issued by William Cecil to enforce church conformity) • Fact (Commanded clergy to preach royal supremacy, keep an English Bible, report recusants, and ban unapproved preaching).',
-              sentence_starters: [
-                'One key feature of the Royal Injunctions was to enforce uniform Protestant practice... Specifically, they ordered that...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '16 marks',
             type: 'essay_16',
             question:
-              '3. ‘Elizabeth’s religious settlement of 1559 was completely successful in pleasing all religious groups.’ How far do you agree? Explain your answer.',
-            stimulus: ['The Act of Uniformity (1559)', 'The Puritan challenge'],
+              '3. “The Religious Settlement was successful in resolving religious divisions in England in 1559.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['The Act of Supremacy', 'The Act of Uniformity'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -814,7 +808,7 @@ export const unitData = {
               acronym: 'Evaluative Essay Framework',
               acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
               guidance:
-                'On the one hand, the settlement was highly effective because... • Crucially, by adopting the title Supreme Governor, Elizabeth... • In direct contrast, radical Puritans remained dissatisfied because... • Furthermore, traditional Catholics viewed the settlement as heretical because... • Weighing these factors, I conclude that while the settlement prevented immediate religious war, it was not completely successful because...',
+                'To a large extent, it can be argued that... • A decisive factor supporting this view was... • Specifically, this was important because... • On the other hand, an alternative perspective is that... • In particular, ... • In conclusion, the decisive reason was... because...',
               steps: [
                 {
                   letter: 'CRITERIA 1',
@@ -839,22 +833,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'On the one hand, the settlement was highly effective because...',
-                'Crucially, by adopting the title Supreme Governor, Elizabeth...',
-                'In direct contrast, radical Puritans remained dissatisfied because...',
-                'Furthermore, traditional Catholics viewed the settlement as heretical because...',
-                'Weighing these factors, I conclude that while the settlement prevented immediate religious war, it was not completely successful because...',
+                'To a large extent, it can be argued that...',
+                'A decisive factor supporting this view was...',
+                'Specifically, this was important because...',
+                'On the other hand, an alternative perspective is that...',
+                'In particular, ...',
+                'In conclusion, the decisive reason was... because...',
               ],
               connectives_bank: [
-                'Settlement',
                 'Supreme Governor',
                 'Book of Common Prayer',
-                'Surplice',
-                'Middle Way (Via Media)',
-                'Puritans',
-                'Recusancy',
-                'Compromise',
-                'Vestments Controversy',
+                'Via Media (Middle Way)',
+                'Royal Injunctions',
+                '1 Shilling Recusancy Fine',
+                'Marian Bishops Deprived',
+                'Communion in Both Kinds',
+                'Vestments',
+                'Parish Visitations',
               ],
             },
           },
@@ -1197,15 +1192,15 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of the Royal Injunctions of 1559. [2 marks]',
+            text: 'Q1(b). Describe one key feature of the Royal Injunctions (1559). [2 marks]',
             model:
               'One key feature was that a set of 57 practical instructions issued by William Cecil to enforce church conformity. Specifically, Commanded clergy to preach royal supremacy, keep an English Bible, report recusants, and ban unapproved preaching.',
           },
           {
             type: 'written',
             tariff: 'Q3: Evaluative Essay [16 marks]',
-            text: 'Q3. ‘Elizabeth’s religious settlement of 1559 was completely successful in pleasing all religious groups.’ How far do you agree? Explain your answer.',
-            stimulus: ['The Act of Uniformity (1559)', 'The Puritan challenge'],
+            text: 'Q3. “The Religious Settlement was successful in resolving religious divisions in England in 1559.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['The Act of Supremacy', 'The Act of Uniformity'],
             model:
               'On the one hand, it can be strongly argued that criteria 1: successful via media was of primary importance. Explain how the Settlement successfully achieved a broad Middle Way: moderate Protestant theology (English services, Book of Common Prayer) combined with Catholic outward ritual (vestments, candles) to prevent civil war. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: puritan discontent. Explain that the Settlement failed to satisfy zealous Puritans: they condemned the crucifix and vestments as "idolatrous popish rags" and challenged Elizabeth’s authority in the 1566 Vestments Controversy. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: catholic alienation. Explain that devout Catholics could not accept Elizabeth as Supreme Governor; almost all Catholic bishops resigned in 1559, recusancy grew in the North, and the Pope later excommunicated Elizabeth in 1570. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: successful via media was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: puritan discontent was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded.',
           },
@@ -1343,7 +1338,7 @@ export const unitData = {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(a). Describe one key feature of the Vestments Controversy (1566). [2 marks]',
+              '1(a). Describe one key feature of the Puritan challenge to the Religious Settlement. [2 marks]',
             prompt:
               'Point (Puritan vicars refused to wear the surplice ordered by Archbishop Parker) • Fact (Parker held an exhibition in London; 37 clergy refused to conform and were stripped of their livings and church posts).',
             model:
@@ -1354,16 +1349,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Puritan vicars refused to wear the surplice ordered by Archbishop Parker) • Fact (Parker held an exhibition in London; 37 clergy refused to conform and were stripped of their livings and church posts).',
-              sentence_starters: [
-                'One key feature was the clash over clerical dress... Specifically, Archbishop Parker insisted on the surplice, but 37 London clergy...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of recusancy in early Elizabethan England. [2 marks]',
+              '1(b). Describe one key feature of the Papal Bull (Regnans in Excelsis) in 1570. [2 marks]',
             prompt:
               'Point (Catholics secretly practiced the Latin Mass and refused compulsory Sunday church services) • Fact (They paid a 1 shilling fine each week; in the North, wealthy Catholic gentry protected recusant priests).',
             model:
@@ -1374,17 +1367,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Catholics secretly practiced the Latin Mass and refused compulsory Sunday church services) • Fact (They paid a 1 shilling fine each week; in the North, wealthy Catholic gentry protected recusant priests).',
-              sentence_starters: [
-                'One key feature of recusancy was refusal to attend the new Anglican church... Specifically, recusants held secret Latin masses and paid...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '12 marks',
             type: 'explain_why_12',
             question:
-              '2. Explain why the Puritans challenged Elizabeth’s religious settlement between 1559 and 1566.',
-            stimulus: ['Vestments', 'The Crucifix Controversy'],
+              '2. Explain why Puritans challenged the Religious Settlement in the 1560s. [12 marks]',
+            stimulus: ['The vestments controversy', 'The crucifix controversy'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -1393,7 +1384,7 @@ export const unitData = {
               acronym: 'PEEL Structure Strip',
               acronym_title: '3-Paragraph Causal Analysis (PEEL)',
               guidance:
-                'The Puritans challenged the religious settlement primarily because... • Specifically, their Calvinist theology taught that... • This led directly to conflict over vestments when... • In addition, the crucifix controversy demonstrated that... • Consequently, Puritans believed Elizabeth had stopped halfway in reforming...',
+                'One main reason was that... • For example, ... • This was important because... • Another key factor was... • In particular, ... • Overall, the most decisive reason was... because...',
               steps: [
                 {
                   letter: 'CAUSE 1',
@@ -1418,22 +1409,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'The Puritans challenged the religious settlement primarily because...',
-                'Specifically, their Calvinist theology taught that...',
-                'This led directly to conflict over vestments when...',
-                'In addition, the crucifix controversy demonstrated that...',
-                'Consequently, Puritans believed Elizabeth had stopped halfway in reforming...',
+                'One main reason was that...',
+                'For example, ...',
+                'This was important because...',
+                'Another key factor was...',
+                'In particular, ...',
+                'Overall, the most decisive reason was... because...',
               ],
               connectives_bank: [
-                'Calvinism',
-                'Vestments Controversy (1566)',
-                'Crucifix',
-                'Surplice',
-                'Graven images',
-                'Idolatry',
-                'Archbishop Parker',
+                'Puritan Clergy',
+                'Matthew Parker',
                 'Book of Advertisements',
-                'Nonconformist',
+                '37 Vicars Deprived',
+                'Surplice and Tippet',
+                'Papal Idolatry',
+                'Geneva Bible',
+                'Crucifix Symbols',
+                'Marian Exiles',
               ],
             },
           },
@@ -1777,22 +1769,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of the Vestments Controversy (1566). [2 marks]',
+            text: 'Q1(a). Describe one key feature of the Puritan challenge to the Religious Settlement. [2 marks]',
             model:
               'One key feature was that puritan vicars refused to wear the surplice ordered by Archbishop Parker. Specifically, Parker held an exhibition in London; 37 clergy refused to conform and were stripped of their livings and church posts.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of recusancy in early Elizabethan England. [2 marks]',
+            text: 'Q1(b). Describe one key feature of the Papal Bull (Regnans in Excelsis) in 1570. [2 marks]',
             model:
               'One key feature was that catholics secretly practiced the Latin Mass and refused compulsory Sunday church services. Specifically, They paid a 1 shilling fine each week; in the North, wealthy Catholic gentry protected recusant priests.',
           },
           {
             type: 'written',
             tariff: 'Q2: Explain Why [12 marks]',
-            text: 'Q2. Explain why the Puritans challenged Elizabeth’s religious settlement between 1559 and 1566.',
-            stimulus: ['Vestments', 'The Crucifix Controversy'],
+            text: 'Q2. Explain why Puritans challenged the Religious Settlement in the 1560s. [12 marks]',
+            stimulus: ['The vestments controversy', 'The crucifix controversy'],
             model:
               'One major reason was cause 1: vestments & popish rags. Explain that Puritans, influenced by Genevan Calvinism, viewed priestly vestments (surplices) as unscriptural Catholic idolatry that set clergy apart from ordinary congregations. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: crucifixes & graven images. Explain that Puritans believed crucifixes violated the Ten Commandments against graven images; several Puritan bishops threatened to resign when Elizabeth insisted on a crucifix in her chapel. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: bishops & liturgical purity. Explain that Puritans wanted to eradicate the hierarchy of bishops and eradicate holy days, organs, and kneeling at communion, aiming for an entirely purified biblical church. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy.',
           },
@@ -1942,7 +1934,7 @@ export const unitData = {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(a). Describe one key feature of Mary, Queen of Scots’ claim to the English throne. [2 marks]',
+              "1(a). Describe one key feature of Mary, Queen of Scots' claim to the English throne. [2 marks]",
             prompt:
               'Point (Mary was the great-granddaughter of Henry VII through Margaret Tudor) • Fact (Because Catholics viewed Elizabeth as illegitimate, many regarded Mary as the rightful, legitimate Catholic Queen of England).',
             model:
@@ -1953,16 +1945,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Mary was the great-granddaughter of Henry VII through Margaret Tudor) • Fact (Because Catholics viewed Elizabeth as illegitimate, many regarded Mary as the rightful, legitimate Catholic Queen of England).',
-              sentence_starters: [
-                'One key feature was Mary’s legitimate Tudor bloodline... Specifically, as great-granddaughter of Henry VII, English Catholics viewed her as...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of the inquiry into the Casket Letters (1568–69). [2 marks]',
+              '1(b). Describe one key feature of the Casket Letters affair (1568–69). [2 marks]',
             prompt:
               'Point (A commission held at York and Westminster to investigate whether Mary plotted Darnley’s murder) • Fact (Elizabeth reached a "not proven" verdict; this allowed her to keep Mary detained in England without executing an anointed queen).',
             model:
@@ -1973,17 +1963,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A commission held at York and Westminster to investigate whether Mary plotted Darnley’s murder) • Fact (Elizabeth reached a "not proven" verdict; this allowed her to keep Mary detained in England without executing an anointed queen).',
-              sentence_starters: [
-                'One key feature of the Casket Letters inquiry was to determine Mary’s guilt... Specifically, the inquiry concluded with a verdict of...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '16 marks',
             type: 'essay_16',
             question:
-              '3. ‘The arrival of Mary, Queen of Scots in England in 1568 was the main cause of instability in Elizabethan government.’ How far do you agree? Explain your answer.',
-            stimulus: ['Mary’s claim to the throne', 'Religious divisions in the North'],
+              '3. “The arrival of Mary, Queen of Scots in England in 1568 was the main cause of instability in England in the years 1568–69.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ["Mary's claim to the throne", 'The Catholic nobility'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -1992,7 +1980,7 @@ export const unitData = {
               acronym: 'Evaluative Essay Framework',
               acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
               guidance:
-                'Mary’s arrival was undeniably a major cause of instability because... • Specifically, her presence gave English Catholics a figurehead who... • However, severe instability already existed because the northern nobility... • Furthermore, Elizabeth’s refusal to marry meant that... • On balance, while northern grievances were deep-seated, Mary’s arrival was the decisive catalyst because...',
+                'To a large extent, it can be argued that... • A decisive factor supporting this view was... • Specifically, this was important because... • On the other hand, an alternative perspective is that... • In particular, ... • In conclusion, the decisive reason was... because...',
               steps: [
                 {
                   letter: 'CRITERIA 1',
@@ -2017,22 +2005,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Mary’s arrival was undeniably a major cause of instability because...',
-                'Specifically, her presence gave English Catholics a figurehead who...',
-                'However, severe instability already existed because the northern nobility...',
-                'Furthermore, Elizabeth’s refusal to marry meant that...',
-                'On balance, while northern grievances were deep-seated, Mary’s arrival was the decisive catalyst because...',
+                'To a large extent, it can be argued that...',
+                'A decisive factor supporting this view was...',
+                'Specifically, this was important because...',
+                'On the other hand, an alternative perspective is that...',
+                'In particular, ...',
+                'In conclusion, the decisive reason was... because...',
               ],
               connectives_bank: [
-                'Mary, Queen of Scots',
-                'Legitimacy',
+                'Mary Stuart',
                 'Anointed Queen',
-                'Casket Letters',
-                'Carlisle Castle',
-                'Northern Earls',
-                'Succession',
                 'Catholic Figurehead',
-                'House arrest',
+                'Casket Letters Inquiry',
+                'Workington Fishing Boat',
+                'House Arrest',
+                'Earls of Northumberland and Westmorland',
+                'Succession Crisis',
+                'Treaty of Edinburgh',
               ],
             },
           },
@@ -2376,22 +2365,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of Mary, Queen of Scots’ claim to the English throne. [2 marks]',
+            text: "Q1(a). Describe one key feature of Mary, Queen of Scots' claim to the English throne. [2 marks]",
             model:
               'One key feature was that mary was the great-granddaughter of Henry VII through Margaret Tudor. Specifically, Because Catholics viewed Elizabeth as illegitimate, many regarded Mary as the rightful, legitimate Catholic Queen of England.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of the inquiry into the Casket Letters (1568–69). [2 marks]',
+            text: 'Q1(b). Describe one key feature of the Casket Letters affair (1568–69). [2 marks]',
             model:
               'One key feature was that a commission held at York and Westminster to investigate whether Mary plotted Darnley’s murder. Specifically, Elizabeth reached a "not proven" verdict; this allowed her to keep Mary detained in England without executing an anointed queen.',
           },
           {
             type: 'written',
             tariff: 'Q3: Evaluative Essay [16 marks]',
-            text: 'Q3. ‘The arrival of Mary, Queen of Scots in England in 1568 was the main cause of instability in Elizabethan government.’ How far do you agree? Explain your answer.',
-            stimulus: ['Mary’s claim to the throne', 'Religious divisions in the North'],
+            text: 'Q3. “The arrival of Mary, Queen of Scots in England in 1568 was the main cause of instability in England in the years 1568–69.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ["Mary's claim to the throne", 'The Catholic nobility'],
             model:
               'On the one hand, it can be strongly argued that criteria 1: mary as catholic figurehead was of primary importance. Explain how Mary’s physical presence provided a live, legitimate Catholic alternative to Elizabeth, immediately attracting discontented northern nobles and foreign Catholic conspirators. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: pre-existing northern discontent. Explain that the North was already deeply Catholic and alienated by Cecil’s centralizing Protestant government; the Earls of Northumberland and Westmorland had lost land and influence before 1568. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: succession & diplomatic risk. Explain that Elizabeth had no heir; Mary’s presence forced foreign powers (France, Spain, Papacy) to view Elizabeth as expendable, turning Mary into a catalyst for domestic rebellion. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: mary as catholic figurehead was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: pre-existing northern discontent was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded.',
           },
@@ -2578,16 +2567,13 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A Catholic uprising led by the Earls of Northumberland and Westmorland to restore Catholicism) • Fact (They held a Latin Mass in Durham Cathedral with 4,600 men, but fled when royal troops advanced; 450 rebels were executed).',
-              sentence_starters: [
-                'One key feature was the northern Catholic nobles’ attempt to overthrow Protestantism... Specifically, they captured Durham Cathedral and...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
-            question:
-              '1(b). Describe one key feature of Sir Francis Walsingham’s spy network. [2 marks]',
+            question: '1(b). Describe one key feature of the Babington Plot (1586). [2 marks]',
             prompt:
               'Point (An extensive intelligence network of spies, informers, codebreakers, and cryptographers) • Fact (Walsingham intercepted letters, cracked ciphers with Thomas Phelippes, and deployed double agents across England and Europe).',
             model:
@@ -2598,16 +2584,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (An extensive intelligence network of spies, informers, codebreakers, and cryptographers) • Fact (Walsingham intercepted letters, cracked ciphers with Thomas Phelippes, and deployed double agents across England and Europe).',
-              sentence_starters: [
-                'One key feature was Walsingham’s systematic interception of secret communications... Specifically, his cryptographer Thomas Phelippes...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '12 marks',
             type: 'explain_why_12',
-            question: '2. Explain why Mary, Queen of Scots was executed in 1587.',
-            stimulus: ['The Babington Plot (1586)', 'Walsingham’s spy network'],
+            question: '2. Explain why Mary, Queen of Scots was executed in 1587. [12 marks]',
+            stimulus: ['The Babington Plot', 'The Treaty of Nonsuch'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -2616,7 +2600,7 @@ export const unitData = {
               acronym: 'PEEL Structure Strip',
               acronym_title: '3-Paragraph Causal Analysis (PEEL)',
               guidance:
-                'Mary Stuart was executed in 1587 primarily because... • Specifically, Walsingham obtained conclusive forensic evidence when... • Furthermore, under the Bond of Association, Privy Councillors argued that... • In addition, with war looming against Spain, Mary represented... • Consequently, these combined pressures forced Elizabeth to sign the death warrant because...',
+                'One main reason was that... • For example, ... • This was important because... • Another key factor was... • In particular, ... • Overall, the most decisive reason was... because...',
               steps: [
                 {
                   letter: 'CAUSE 1',
@@ -2641,22 +2625,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Mary Stuart was executed in 1587 primarily because...',
-                'Specifically, Walsingham obtained conclusive forensic evidence when...',
-                'Furthermore, under the Bond of Association, Privy Councillors argued that...',
-                'In addition, with war looming against Spain, Mary represented...',
-                'Consequently, these combined pressures forced Elizabeth to sign the death warrant because...',
+                'One main reason was that...',
+                'For example, ...',
+                'This was important because...',
+                'Another key factor was...',
+                'In particular, ...',
+                'Overall, the most decisive reason was... because...',
               ],
               connectives_bank: [
-                'Mary, Queen of Scots',
-                'Babington Plot',
-                'Walsingham',
+                'Anthony Babington',
+                'Francis Walsingham',
                 'Thomas Phelippes',
-                'Bond of Association',
+                'Decoded Cipher Letters',
+                'Beer Barrel Courier',
+                'Bond of Association (1584)',
                 'Fotheringhay Castle',
                 'High Treason',
-                'Ciphers',
-                'Philip II',
+                'Regnans in Excelsis',
               ],
             },
           },
@@ -2977,15 +2962,15 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of Sir Francis Walsingham’s spy network. [2 marks]',
+            text: 'Q1(b). Describe one key feature of the Babington Plot (1586). [2 marks]',
             model:
               'One key feature was that an extensive intelligence network of spies, informers, codebreakers, and cryptographers. Specifically, Walsingham intercepted letters, cracked ciphers with Thomas Phelippes, and deployed double agents across England and Europe.',
           },
           {
             type: 'written',
             tariff: 'Q2: Explain Why [12 marks]',
-            text: 'Q2. Explain why Mary, Queen of Scots was executed in 1587.',
-            stimulus: ['The Babington Plot (1586)', 'Walsingham’s spy network'],
+            text: 'Q2. Explain why Mary, Queen of Scots was executed in 1587. [12 marks]',
+            stimulus: ['The Babington Plot', 'The Treaty of Nonsuch'],
             model:
               'One major reason was cause 1: direct complicity in babington plot. Explain that intercepted beer-barrel letters explicitly showed Mary endorsing Anthony Babington’s plot to assassinate Elizabeth; Phelippes decoded Mary’s letter containing the postmark gallows sign. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: walsingham & parliamentary pressure. Explain that the 1584 Bond of Association legally obligated privy councillors to execute anyone involved in assassination plots; Parliament and Cecil relentlessly lobbied Elizabeth to sign the death warrant. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: escalating spanish war threat. Explain that by 1586 England was at open war with Spain following the Treaty of Nonsuch; keeping Mary alive created an immediate rallying figure for an imminent Spanish invasion of England. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy.',
           },
@@ -3153,7 +3138,7 @@ export const unitData = {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(a). Describe one key feature of commercial rivalry between England and Spain in the New World. [2 marks]',
+              '1(a). Describe one key feature of English privateering against Spain. [2 marks]',
             prompt:
               'Point (Spain held an exclusive trade monopoly on its American colonies that barred English merchants) • Fact (English privateers like John Hawkins and Drake bypassed Spanish licenses to trade illegally and seize Spanish bullion ships).',
             model:
@@ -3164,16 +3149,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Spain held an exclusive trade monopoly on its American colonies that barred English merchants) • Fact (English privateers like John Hawkins and Drake bypassed Spanish licenses to trade illegally and seize Spanish bullion ships).',
-              sentence_starters: [
-                'One key feature was Spanish trade restrictions in the Caribbean... Specifically, Spain banned English merchants, prompting privateers like Drake to...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of Sir Francis Drake’s raid on the Cacafuego (1579). [2 marks]',
+              '1(b). Describe one key feature of Francis Drake’s raid on Cadiz (1587). [2 marks]',
             prompt:
               'Point (Drake captured Spain’s richest treasure galleon in the Pacific during his circumnavigation) • Fact (He seized 80lb of gold, 26 tons of silver, and jewels worth £140,000, bringing it back to Elizabeth on the Golden Hind).',
             model:
@@ -3184,17 +3167,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Drake captured Spain’s richest treasure galleon in the Pacific during his circumnavigation) • Fact (He seized 80lb of gold, 26 tons of silver, and jewels worth £140,000, bringing it back to Elizabeth on the Golden Hind).',
-              sentence_starters: [
-                'One key feature was the colossal value of the treasure seized... Specifically, Drake intercepted the treasure ship off Ecuador and took...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '16 marks',
             type: 'essay_16',
             question:
-              '3. ‘Commercial rivalry in the Americas was the main cause of worsening relations between England and Spain between 1569 and 1585.’ How far do you agree? Explain your answer.',
-            stimulus: ['Francis Drake’s privateering', 'Religious conflict'],
+              '3. “Commercial rivalry was the main cause of conflict between England and Spain in the years 1576–85.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ["Drake's raid on the West Indies", 'Religious differences'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -3203,7 +3184,7 @@ export const unitData = {
               acronym: 'Evaluative Essay Framework',
               acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
               guidance:
-                'Commercial rivalry was an explosive cause of hostility because... • Specifically, Drake’s plundering of Spanish galleons directly attacked Philip’s treasury and prestige... • However, religious divisions deepened the clash because Philip believed... • Furthermore, the strategic geopolitical crisis in the Netherlands was arguably more urgent because... • Weighing these factors, I conclude that while commercial piracy provoked constant anger, the Netherlands crisis was the decisive trigger because...',
+                'To a large extent, it can be argued that... • A decisive factor supporting this view was... • Specifically, this was important because... • On the other hand, an alternative perspective is that... • In particular, ... • In conclusion, the decisive reason was... because...',
               steps: [
                 {
                   letter: 'CRITERIA 1',
@@ -3228,22 +3209,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Commercial rivalry was an explosive cause of hostility because...',
-                'Specifically, Drake’s plundering of Spanish galleons directly attacked Philip’s treasury and prestige...',
-                'However, religious divisions deepened the clash because Philip believed...',
-                'Furthermore, the strategic geopolitical crisis in the Netherlands was arguably more urgent because...',
-                'Weighing these factors, I conclude that while commercial piracy provoked constant anger, the Netherlands crisis was the decisive trigger because...',
+                'To a large extent, it can be argued that...',
+                'A decisive factor supporting this view was...',
+                'Specifically, this was important because...',
+                'On the other hand, an alternative perspective is that...',
+                'In particular, ...',
+                'In conclusion, the decisive reason was... because...',
               ],
               connectives_bank: [
-                'Commercial rivalry',
-                'Privateers',
+                'Privateering',
                 'Francis Drake',
-                '*Golden Hind*',
-                '*Cacafuego*',
-                'Philip II',
-                'Netherlands',
-                'Papal Bull (1570)',
-                'Counter-Reformation',
+                'Golden Hind',
+                'Cacafuego Treasure (£140,000)',
+                'Spanish Monopoly',
+                'New World Silver',
+                'King Philip II',
+                'Papal Excommunication',
+                'Atlantic Trade',
               ],
             },
           },
@@ -3559,22 +3541,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of commercial rivalry between England and Spain in the New World. [2 marks]',
+            text: 'Q1(a). Describe one key feature of English privateering against Spain. [2 marks]',
             model:
               'One key feature was that spain held an exclusive trade monopoly on its American colonies that barred English merchants. Specifically, English privateers like John Hawkins and Drake bypassed Spanish licenses to trade illegally and seize Spanish bullion ships.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of Sir Francis Drake’s raid on the Cacafuego (1579). [2 marks]',
+            text: 'Q1(b). Describe one key feature of Francis Drake’s raid on Cadiz (1587). [2 marks]',
             model:
               'One key feature was that drake captured Spain’s richest treasure galleon in the Pacific during his circumnavigation. Specifically, He seized 80lb of gold, 26 tons of silver, and jewels worth £140,000, bringing it back to Elizabeth on the Golden Hind.',
           },
           {
             type: 'written',
             tariff: 'Q3: Evaluative Essay [16 marks]',
-            text: 'Q3. ‘Commercial rivalry in the Americas was the main cause of worsening relations between England and Spain between 1569 and 1585.’ How far do you agree? Explain your answer.',
-            stimulus: ['Francis Drake’s privateering', 'Religious conflict'],
+            text: 'Q3. “Commercial rivalry was the main cause of conflict between England and Spain in the years 1576–85.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ["Drake's raid on the West Indies", 'Religious differences'],
             model:
               'On the one hand, it can be strongly argued that criteria 1: commercial rivalry & drake was of primary importance. Explain how Drake’s raids in the West Indies and Pacific humiliated Philip II; by knighting Drake in 1581 and funding privateers, Elizabeth demonstrated state sponsorship of piracy against Spanish bullion. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: religious antagonism. Explain that Philip viewed himself as the secular sword of the Catholic Counter-Reformation; the 1570 papal bull excommunicating Elizabeth and Philip’s backing of plots (Ridolfi, Throckmorton) made holy war inevitable. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: the strategic netherlands crisis. Explain that Spain’s military brutality in the Netherlands (Alba and Parma) threatened England’s chief wool export market; Spanish control of Channel ports was an intolerable direct invasion threat. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: commercial rivalry & drake was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: religious antagonism was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded.',
           },
@@ -3739,16 +3721,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (An official military alliance committing England to support Dutch Protestant rebels against Spain) • Fact (Elizabeth sent 7,400 soldiers under the Earl of Leicester and financed their campaign, officially ending covert neutrality).',
-              sentence_starters: [
-                'One key feature was England’s formal military commitment to the Dutch rebels... Specifically, Elizabeth agreed to send...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of Francis Drake’s raid on Cadiz in 1587. [2 marks]',
+              '1(b). Describe one key feature of Robert Dudley’s campaign in the Netherlands. [2 marks]',
             prompt:
               'Point (A surprise pre-emptive attack on Spain’s primary naval staging base at Cadiz) • Fact (Drake destroyed 30 Spanish warships and tons of seasoned barrel staves, delaying the sailing of the Armada by over 12 months).',
             model:
@@ -3759,16 +3739,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A surprise pre-emptive attack on Spain’s primary naval staging base at Cadiz) • Fact (Drake destroyed 30 Spanish warships and tons of seasoned barrel staves, delaying the sailing of the Armada by over 12 months).',
-              sentence_starters: [
-                'One key feature was the devastating destruction of Spanish naval shipping... Specifically, Drake sailed directly into Cadiz harbour and...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '12 marks',
             type: 'explain_why_12',
             question:
-              '2. Explain why Elizabeth signed the Treaty of Nonsuch with Dutch rebels in 1585.',
+              '2. Explain why England became involved in the Netherlands in 1585. [12 marks]',
             stimulus: ['The assassination of William of Orange', 'The Treaty of Joinville'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
@@ -3778,7 +3756,7 @@ export const unitData = {
               acronym: 'PEEL Structure Strip',
               acronym_title: '3-Paragraph Causal Analysis (PEEL)',
               guidance:
-                'Elizabeth signed the Treaty of Nonsuch primarily because... • Crucially, the sudden assassination of William of Orange meant that... • This danger was intensified by the Treaty of Joinville, which... • Furthermore, from a military standpoint, controlling Dutch Channel ports was vital because... • Consequently, Elizabeth was forced to abandon covert diplomacy and declare open military commitment because...',
+                'One main reason was that... • For example, ... • This was important because... • Another key factor was... • In particular, ... • Overall, the most decisive reason was... because...',
               steps: [
                 {
                   letter: 'CAUSE 1',
@@ -3803,22 +3781,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Elizabeth signed the Treaty of Nonsuch primarily because...',
-                'Crucially, the sudden assassination of William of Orange meant that...',
-                'This danger was intensified by the Treaty of Joinville, which...',
-                'Furthermore, from a military standpoint, controlling Dutch Channel ports was vital because...',
-                'Consequently, Elizabeth was forced to abandon covert diplomacy and declare open military commitment because...',
+                'One main reason was that...',
+                'For example, ...',
+                'This was important because...',
+                'Another key factor was...',
+                'In particular, ...',
+                'Overall, the most decisive reason was... because...',
               ],
               connectives_bank: [
-                'Treaty of Nonsuch',
-                'William of Orange',
-                'Treaty of Joinville',
-                'Robert Dudley',
+                'Treaty of Nonsuch (1585)',
+                'Robert Dudley (Earl of Leicester)',
+                '7,400 English Troops',
                 'Duke of Parma',
-                'Netherlands',
-                'Army of Flanders',
-                'Flushing',
-                'Channel ports',
+                'Spanish Netherlands',
+                'Deep-Water Ports',
+                'French Catholic League',
+                'Protestant Rebels',
+                'Flushing and Brill',
               ],
             },
           },
@@ -4108,14 +4087,14 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of Francis Drake’s raid on Cadiz in 1587. [2 marks]',
+            text: 'Q1(b). Describe one key feature of Robert Dudley’s campaign in the Netherlands. [2 marks]',
             model:
               'One key feature was that a surprise pre-emptive attack on Spain’s primary naval staging base at Cadiz. Specifically, Drake destroyed 30 Spanish warships and tons of seasoned barrel staves, delaying the sailing of the Armada by over 12 months.',
           },
           {
             type: 'written',
             tariff: 'Q2: Explain Why [12 marks]',
-            text: 'Q2. Explain why Elizabeth signed the Treaty of Nonsuch with Dutch rebels in 1585.',
+            text: 'Q2. Explain why England became involved in the Netherlands in 1585. [12 marks]',
             stimulus: ['The assassination of William of Orange', 'The Treaty of Joinville'],
             model:
               'One major reason was cause 1: assassination of william of orange. Explain that the murder of William the Silent in July 1584 left the Dutch rebellion leaderless and facing total collapse; if the Dutch fell, Parma’s veteran Spanish army would turn directly on England. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: the treaty of joinville & isolation. Explain that in Dec 1584 Spain and France signed the Treaty of Joinville, uniting the two Catholic superpowers; England faced total diplomatic encirclement and could no longer play France off against Spain. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: strategic control of channel ports. Explain that deep-water Dutch ports like Antwerp, Flushing, and Brill lay directly opposite the Thames estuary; Elizabeth had to secure these ports to prevent an invasion springboard into southern England. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy.',
@@ -4289,7 +4268,7 @@ export const unitData = {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(a). Describe one key feature of the Spanish invasion plan of 1588. [2 marks]',
+              '1(a). Describe one key feature of the Spanish Armada’s crescent formation. [2 marks]',
             prompt:
               'Point (A joint operation requiring the Armada to rendezvous with the Duke of Parma’s army in the Netherlands) • Fact (Medina Sidonia had to transport Parma’s 27,000 veteran soldiers across the Channel on flat-bottomed barges to invade Kent).',
             model:
@@ -4300,16 +4279,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A joint operation requiring the Armada to rendezvous with the Duke of Parma’s army in the Netherlands) • Fact (Medina Sidonia had to transport Parma’s 27,000 veteran soldiers across the Channel on flat-bottomed barges to invade Kent).',
-              sentence_starters: [
-                'One key feature was the coordination required between fleet and army... Specifically, Medina Sidonia was ordered to rendezvous with Parma at...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of the English fireship attack at Calais (7 August 1588). [2 marks]',
+              '1(b). Describe one key feature of English naval tactics during the Armada campaign. [2 marks]',
             prompt:
               'Point (Eight burning ships filled with pitch and gunpowder were launched into the anchored Spanish fleet) • Fact (Spanish captains panicked, cut their anchor cables, and broke their defensive crescent formation, scattering into the open sea).',
             model:
@@ -4320,17 +4297,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Eight burning ships filled with pitch and gunpowder were launched into the anchored Spanish fleet) • Fact (Spanish captains panicked, cut their anchor cables, and broke their defensive crescent formation, scattering into the open sea).',
-              sentence_starters: [
-                'One key feature was the psychological panic caused by the fireships... Specifically, Spanish captains cut their anchors and broke...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '16 marks',
             type: 'essay_16',
             question:
-              '3. ‘The English defeated the Spanish Armada mainly because of superior English naval tactics and technology.’ How far do you agree? Explain your answer.',
-            stimulus: ['English fireships at Calais', 'Spanish planning and leadership'],
+              '3. “The tactics of the English navy were the main reason for the defeat of the Spanish Armada.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['Fireships at Calais', 'The weather'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -4339,7 +4314,7 @@ export const unitData = {
               acronym: 'Evaluative Essay Framework',
               acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
               guidance:
-                'Superior English tactics and ship design were pivotal because... • Specifically, the deployment of fireships at Calais succeeded in... • Furthermore, at the Battle of Gravelines, English culverins... • However, Spanish structural blunders critically undermined the operation because... • Ultimately, while bad weather completed the destruction, English naval technology was the decisive factor because...',
+                'To a large extent, it can be argued that... • A decisive factor supporting this view was... • Specifically, this was important because... • On the other hand, an alternative perspective is that... • In particular, ... • In conclusion, the decisive reason was... because...',
               steps: [
                 {
                   letter: 'CRITERIA 1',
@@ -4364,21 +4339,22 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Superior English tactics and ship design were pivotal because...',
-                'Specifically, the deployment of fireships at Calais succeeded in...',
-                'Furthermore, at the Battle of Gravelines, English culverins...',
-                'However, Spanish structural blunders critically undermined the operation because...',
-                'Ultimately, while bad weather completed the destruction, English naval technology was the decisive factor because...',
+                'To a large extent, it can be argued that...',
+                'A decisive factor supporting this view was...',
+                'Specifically, this was important because...',
+                'On the other hand, an alternative perspective is that...',
+                'In particular, ...',
+                'In conclusion, the decisive reason was... because...',
               ],
               connectives_bank: [
-                'Spanish Armada',
-                'Medina Sidonia',
-                'Duke of Parma',
-                'Race-built galleons',
-                'Culverins',
-                'Crescent formation',
-                'Calais fireships',
+                'Duke of Medina Sidonia',
+                'Crescent Formation',
+                'Calais Roads Midnight',
+                '8 English Fireships',
                 'Battle of Gravelines',
+                'Race-Built Galleons',
+                'Rapid-Fire Culverins',
+                "Parma's Invasion Barges",
                 'Protestant Wind',
               ],
             },
@@ -4694,22 +4670,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of the Spanish invasion plan of 1588. [2 marks]',
+            text: 'Q1(a). Describe one key feature of the Spanish Armada’s crescent formation. [2 marks]',
             model:
               'One key feature was that a joint operation requiring the Armada to rendezvous with the Duke of Parma’s army in the Netherlands. Specifically, Medina Sidonia had to transport Parma’s 27,000 veteran soldiers across the Channel on flat-bottomed barges to invade Kent.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of the English fireship attack at Calais (7 August 1588). [2 marks]',
+            text: 'Q1(b). Describe one key feature of English naval tactics during the Armada campaign. [2 marks]',
             model:
               'One key feature was that eight burning ships filled with pitch and gunpowder were launched into the anchored Spanish fleet. Specifically, Spanish captains panicked, cut their anchor cables, and broke their defensive crescent formation, scattering into the open sea.',
           },
           {
             type: 'written',
             tariff: 'Q3: Evaluative Essay [16 marks]',
-            text: 'Q3. ‘The English defeated the Spanish Armada mainly because of superior English naval tactics and technology.’ How far do you agree? Explain your answer.',
-            stimulus: ['English fireships at Calais', 'Spanish planning and leadership'],
+            text: 'Q3. “The tactics of the English navy were the main reason for the defeat of the Spanish Armada.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['Fireships at Calais', 'The weather'],
             model:
               'On the one hand, it can be strongly argued that criteria 1: english tactics & ship design was of primary importance. Explain how Hawkins’ race-built galleons out-maneuvered clumsy Spanish carracks, using long-range culverins on four-wheeled truck carriages to reload and fire broadsides rapidly at Gravelines. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: flawed spanish invasion planning. Explain that Philip II’s plan was fatally flawed: Parma controlled no deep-water port in the Netherlands, meaning communication took 48 hours by horse and barges could not escape Dutch flyboat blockades. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: adverse weather & the "protestant wind". Explain that south-westerly gales drove the scattered Spanish fleet into the hazardous North Sea; lacking anchors lost at Calais, dozens of galleons were wrecked on the jagged rocks of Scotland and Ireland. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: english tactics & ship design was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: flawed spanish invasion planning was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded.',
           },
@@ -4866,8 +4842,7 @@ export const unitData = {
           {
             tariff: '2 marks',
             type: 'feature_2m',
-            question:
-              '1(a). Describe one key feature of education in Elizabethan Grammar Schools. [2 marks]',
+            question: '1(a). Describe one key feature of Elizabethan grammar schools. [2 marks]',
             prompt:
               'Point (Fee-paying schools for boys aged 7–14 focusing heavily on classical Latin language and literature) • Fact (Pupils attended 10-hour days from 6am to 5pm, memorizing Latin grammar, Greek, and rhetoric through rote learning and corporal punishment).',
             model:
@@ -4878,15 +4853,13 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Fee-paying schools for boys aged 7–14 focusing heavily on classical Latin language and literature) • Fact (Pupils attended 10-hour days from 6am to 5pm, memorizing Latin grammar, Greek, and rhetoric through rote learning and corporal punishment).',
-              sentence_starters: [
-                'One key feature was the intense focus on Latin and classical literature... Specifically, boys spent ten hours a day studying...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
-            question: '1(b). Describe one key feature of the Elizabethan theatre. [2 marks]',
+            question: '1(b). Describe one key feature of Elizabethan theatres. [2 marks]',
             prompt:
               'Point (A circular open-air wooden amphiteatre that brought all social classes together for entertainment) • Fact (Groundlings paid 1 penny to stand in the uncovered yard, while wealthy gentry paid 2–3 pence for tiered roofed galleries; plays took place in daylight).',
             model:
@@ -4897,17 +4870,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A circular open-air wooden amphiteatre that brought all social classes together for entertainment) • Fact (Groundlings paid 1 penny to stand in the uncovered yard, while wealthy gentry paid 2–3 pence for tiered roofed galleries; plays took place in daylight).',
-              sentence_starters: [
-                'One key feature was that public playhouses attracted all social classes... Specifically, poor groundlings stood in the yard for 1 penny, while wealthy gentry...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '12 marks',
             type: 'explain_why_12',
-            question:
-              '2. Explain why there was a significant expansion in education in Elizabethan England.',
-            stimulus: ['Grammar schools', 'The Protestant Reformation'],
+            question: '2. Explain why education expanded in Elizabethan England. [12 marks]',
+            stimulus: ['Grammar schools', 'Humanist ideas'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -4916,7 +4886,7 @@ export const unitData = {
               acronym: 'PEEL Structure Strip',
               acronym_title: '3-Paragraph Causal Analysis (PEEL)',
               guidance:
-                'Education expanded rapidly under Elizabeth primarily because... • Crucially, the growth of commercial trade created a pressing need for... • In addition, Protestant religious belief demanded that ordinary people... • Furthermore, wealthy philanthropists actively funded... • Consequently, these combined economic and religious forces transformed literacy rates because...',
+                'One main reason was that... • For example, ... • This was important because... • Another key factor was... • In particular, ... • Overall, the most decisive reason was... because...',
               steps: [
                 {
                   letter: 'CAUSE 1',
@@ -4941,22 +4911,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Education expanded rapidly under Elizabeth primarily because...',
-                'Crucially, the growth of commercial trade created a pressing need for...',
-                'In addition, Protestant religious belief demanded that ordinary people...',
-                'Furthermore, wealthy philanthropists actively funded...',
-                'Consequently, these combined economic and religious forces transformed literacy rates because...',
+                'One main reason was that...',
+                'For example, ...',
+                'This was important because...',
+                'Another key factor was...',
+                'In particular, ...',
+                'Overall, the most decisive reason was... because...',
               ],
               connectives_bank: [
-                'Humanism',
-                'Grammar schools',
-                'Petty schools',
-                'Protestantism',
-                'Literacy',
-                'English Bible',
-                'Renaissance',
-                'Endowments',
-                'Commercial trade',
+                'Grammar Schools',
+                'Latin &amp; Humanist Curriculum',
+                'Petty Schools',
+                'Dame Schools',
+                'Gentry and Yeomanry',
+                'Printing Press Literacy',
+                'Oxford &amp; Cambridge',
+                'Social Mobility',
+                'Protestant Bible Reading',
               ],
             },
           },
@@ -5241,22 +5212,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of education in Elizabethan Grammar Schools. [2 marks]',
+            text: 'Q1(a). Describe one key feature of Elizabethan grammar schools. [2 marks]',
             model:
               'One key feature was that fee-paying schools for boys aged 7–14 focusing heavily on classical Latin language and literature. Specifically, Pupils attended 10-hour days from 6am to 5pm, memorizing Latin grammar, Greek, and rhetoric through rote learning and corporal punishment.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of the Elizabethan theatre. [2 marks]',
+            text: 'Q1(b). Describe one key feature of Elizabethan theatres. [2 marks]',
             model:
               'One key feature was that a circular open-air wooden amphiteatre that brought all social classes together for entertainment. Specifically, Groundlings paid 1 penny to stand in the uncovered yard, while wealthy gentry paid 2–3 pence for tiered roofed galleries; plays took place in daylight.',
           },
           {
             type: 'written',
             tariff: 'Q2: Explain Why [12 marks]',
-            text: 'Q2. Explain why there was a significant expansion in education in Elizabethan England.',
-            stimulus: ['Grammar schools', 'The Protestant Reformation'],
+            text: 'Q2. Explain why education expanded in Elizabethan England. [12 marks]',
+            stimulus: ['Grammar schools', 'Humanist ideas'],
             model:
               'One major reason was cause 1: renaissance humanism & trade. Explain that the Renaissance emphasized that education was essential for success; growing international trade and bureaucracy required literate merchants, lawyers, clerks, and estate stewards. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: protestant reformation & bible study. Explain that Protestant theology insisted that every Christian must be able to read the English Bible to achieve personal salvation; literacy was viewed as a sacred religious duty. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: expansion of endowed grammar schools. Explain that wealthy merchants and gentry established over 70 new grammar schools, endowing scholarships so that bright boys from humble backgrounds could attend without paying fees. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy.',
           },
@@ -5417,8 +5388,7 @@ export const unitData = {
           {
             tariff: '2 marks',
             type: 'feature_2m',
-            question:
-              '1(a). Describe one key feature of the enclosure of land in Elizabethan England. [2 marks]',
+            question: '1(a). Describe one key feature of the 1572 Vagabonds Act. [2 marks]',
             prompt:
               'Point (Landlords fenced off common fields to replace arable crop farming with sheep farming) • Fact (Wool was far more profitable, but sheep required only one shepherd, putting hundreds of rural labourers out of work and driving them to towns).',
             model:
@@ -5429,16 +5399,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Landlords fenced off common fields to replace arable crop farming with sheep farming) • Fact (Wool was far more profitable, but sheep required only one shepherd, putting hundreds of rural labourers out of work and driving them to towns).',
-              sentence_starters: [
-                'One key feature of enclosure was the conversion of farmland to sheep pasture... Specifically, landlords replaced crops with sheep because wool was profitable, which left...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of the 1576 Act for the Relief of the Poor. [2 marks]',
+              '1(b). Describe one key feature of the 1576 Act for Relief of the Poor. [2 marks]',
             prompt:
               'Point (A landmark law that placed legal responsibility on local towns to find work for the unemployed) • Fact (Parishes had to provide raw wool and hemp for the able-bodied to spin, and build Houses of Correction for those who refused to work).',
             model:
@@ -5449,17 +5417,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A landmark law that placed legal responsibility on local towns to find work for the unemployed) • Fact (Parishes had to provide raw wool and hemp for the able-bodied to spin, and build Houses of Correction for those who refused to work).',
-              sentence_starters: [
-                'One key feature of the 1576 Poor Act was distinguishing between the unemployed and the lazy... Specifically, it forced towns to provide raw materials like wool and build...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '16 marks',
             type: 'essay_16',
             question:
-              '3. ‘The enclosure of land was the main reason for the dramatic increase in poverty in Elizabethan England.’ How far do you agree? Explain your answer.',
-            stimulus: ['Sheep farming', 'Population growth'],
+              '3. “The main reason for the increase in poverty in Elizabethan England was bad harvests.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['Enclosure of land', 'Population growth'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -5468,7 +5434,7 @@ export const unitData = {
               acronym: 'Evaluative Essay Framework',
               acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
               guidance:
-                'Enclosure was undeniably a major cause of rural destitution because... • Specifically, landowners converted arable crop fields to sheep pasture, which... • However, rapid population growth was arguably an even deeper cause because... • In addition, consecutive bad harvests caused grain prices to... • Weighing these factors, I conclude that while enclosure devastated specific rural villages, the broad demographic surge and inflation were the fundamental causes because...',
+                'To a large extent, it can be argued that... • A decisive factor supporting this view was... • Specifically, this was important because... • On the other hand, an alternative perspective is that... • In particular, ... • In conclusion, the decisive reason was... because...',
               steps: [
                 {
                   letter: 'CRITERIA 1',
@@ -5493,22 +5459,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Enclosure was undeniably a major cause of rural destitution because...',
-                'Specifically, landowners converted arable crop fields to sheep pasture, which...',
-                'However, rapid population growth was arguably an even deeper cause because...',
-                'In addition, consecutive bad harvests caused grain prices to...',
-                'Weighing these factors, I conclude that while enclosure devastated specific rural villages, the broad demographic surge and inflation were the fundamental causes because...',
+                'To a large extent, it can be argued that...',
+                'A decisive factor supporting this view was...',
+                'Specifically, this was important because...',
+                'On the other hand, an alternative perspective is that...',
+                'In particular, ...',
+                'In conclusion, the decisive reason was... because...',
               ],
               connectives_bank: [
-                'Poverty',
-                'Enclosure',
-                'Sheep farming',
-                'Population surge',
-                'Inflation',
-                'Bad harvests',
-                'Vagabonds Act 1572',
+                'Population Rose (3m to 4m)',
+                'Enclosure of Common Land',
+                'Sheep Farming Conversion',
+                'Debasement of Coinage',
+                '1572 Vagabonds Act',
+                'Impotent Poor vs Sturdy Beggars',
                 '1576 Poor Act',
-                'Houses of Correction',
+                'Houses of Correction (Bridewells)',
+                'Compulsory Poor Rates',
               ],
             },
           },
@@ -5822,22 +5789,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of the enclosure of land in Elizabethan England. [2 marks]',
+            text: 'Q1(a). Describe one key feature of the 1572 Vagabonds Act. [2 marks]',
             model:
               'One key feature was that landlords fenced off common fields to replace arable crop farming with sheep farming. Specifically, Wool was far more profitable, but sheep required only one shepherd, putting hundreds of rural labourers out of work and driving them to towns.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of the 1576 Act for the Relief of the Poor. [2 marks]',
+            text: 'Q1(b). Describe one key feature of the 1576 Act for Relief of the Poor. [2 marks]',
             model:
               'One key feature was that a landmark law that placed legal responsibility on local towns to find work for the unemployed. Specifically, Parishes had to provide raw wool and hemp for the able-bodied to spin, and build Houses of Correction for those who refused to work.',
           },
           {
             type: 'written',
             tariff: 'Q3: Evaluative Essay [16 marks]',
-            text: 'Q3. ‘The enclosure of land was the main reason for the dramatic increase in poverty in Elizabethan England.’ How far do you agree? Explain your answer.',
-            stimulus: ['Sheep farming', 'Population growth'],
+            text: 'Q3. “The main reason for the increase in poverty in Elizabethan England was bad harvests.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['Enclosure of land', 'Population growth'],
             model:
               'On the one hand, it can be strongly argued that criteria 1: enclosure & rural evictions was of primary importance. Explain how enclosing common fields for sheep grazing removed arable strip farming; because wool needed few shepherds, whole villages were depopulated, forcing dispossessed cottagers into vagrancy. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: population surge & inflation. Explain that England’s population surged from 3m to over 4m; higher demand drove up food and bread prices (inflation) while creating a labour surplus that depressed wages below subsistence level. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: harvest failures & monastery loss. Explain that the dissolution of monasteries had eliminated traditional Catholic charity networks; when bad harvests struck, famine pushed marginal farmworkers into absolute starvation. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: enclosure & rural evictions was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: population surge & inflation was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded.',
           },
@@ -6002,7 +5969,7 @@ export const unitData = {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(a). Describe one key feature of the new navigational technology used by Elizabethan explorers. [2 marks]',
+              '1(a). Describe one key feature of new navigational technology in the Elizabethan era. [2 marks]',
             prompt:
               'Point (The development of precise navigation instruments like the astrolabe and quadrant) • Fact (They allowed sea captains to measure the angle of the pole star and sun to calculate precise latitude, enabling accurate ocean crossings away from coastlines).',
             model:
@@ -6013,16 +5980,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (The development of precise navigation instruments like the astrolabe and quadrant) • Fact (They allowed sea captains to measure the angle of the pole star and sun to calculate precise latitude, enabling accurate ocean crossings away from coastlines).',
-              sentence_starters: [
-                'One key feature was the technological advance in navigation instruments... Specifically, devices like the astrolabe allowed navigators to...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of Francis Drake’s circumnavigation (1577–80). [2 marks]',
+              '1(b). Describe one key feature of Drake’s circumnavigation of the globe. [2 marks]',
             prompt:
               'Point (Drake became the first Englishman to sail completely around the globe) • Fact (He navigated the hazardous Strait of Magellan, raided Spanish treasure ships in the Pacific, reached California (Nova Albion), and returned with £140,000 of bullion).',
             model:
@@ -6033,17 +5998,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (Drake became the first Englishman to sail completely around the globe) • Fact (He navigated the hazardous Strait of Magellan, raided Spanish treasure ships in the Pacific, reached California (Nova Albion), and returned with £140,000 of bullion).',
-              sentence_starters: [
-                'One key feature was the immense geographical and financial success of the voyage... Specifically, Drake sailed into the Pacific and returned with...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '12 marks',
             type: 'explain_why_12',
-            question:
-              '2. Explain why English exploration by sea increased so rapidly between 1558 and 1588.',
-            stimulus: ['New navigational technology', 'The cloth trade collapse'],
+            question: '2. Explain why Drake circumnavigated the globe in 1577–1580. [12 marks]',
+            stimulus: ['Attacking Spanish colonies', 'Exploring new trade routes'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -6052,7 +6014,7 @@ export const unitData = {
               acronym: 'PEEL Structure Strip',
               acronym_title: '3-Paragraph Causal Analysis (PEEL)',
               guidance:
-                'English maritime exploration expanded rapidly primarily because... • Crucially, the sudden collapse of European cloth trade forced merchants to... • In addition, revolutionary developments in navigation technology allowed... • Furthermore, the immense profits of privateering encouraged courtiers to... • Consequently, these economic and strategic incentives transformed England into an oceanic power because...',
+                'One main reason was that... • For example, ... • This was important because... • Another key factor was... • In particular, ... • Overall, the most decisive reason was... because...',
               steps: [
                 {
                   letter: 'CAUSE 1',
@@ -6077,22 +6039,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'English maritime exploration expanded rapidly primarily because...',
-                'Crucially, the sudden collapse of European cloth trade forced merchants to...',
-                'In addition, revolutionary developments in navigation technology allowed...',
-                'Furthermore, the immense profits of privateering encouraged courtiers to...',
-                'Consequently, these economic and strategic incentives transformed England into an oceanic power because...',
+                'One main reason was that...',
+                'For example, ...',
+                'This was important because...',
+                'Another key factor was...',
+                'In particular, ...',
+                'Overall, the most decisive reason was... because...',
               ],
               connectives_bank: [
-                'Exploration',
-                'Astrolabe',
-                'Mercator projection',
-                'Antwerp cloth market',
-                'Muscovy Company',
                 'Francis Drake',
-                'Privateering',
-                'Spanish monopoly',
-                '*Golden Hind*',
+                'Circumnavigation',
+                'Pacific Coast Raids',
+                'Nova Albion (California Claim)',
+                'Spice Islands (Moluccas)',
+                'Astrolabe and Magnetic Compass',
+                'Galleon Ship Design',
+                '4,700% Investment Return',
+                'Knighthood at Deptford',
               ],
             },
           },
@@ -6362,22 +6325,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of the new navigational technology used by Elizabethan explorers. [2 marks]',
+            text: 'Q1(a). Describe one key feature of new navigational technology in the Elizabethan era. [2 marks]',
             model:
               'One key feature was that the development of precise navigation instruments like the astrolabe and quadrant. Specifically, They allowed sea captains to measure the angle of the pole star and sun to calculate precise latitude, enabling accurate ocean crossings away from coastlines.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of Francis Drake’s circumnavigation (1577–80). [2 marks]',
+            text: 'Q1(b). Describe one key feature of Drake’s circumnavigation of the globe. [2 marks]',
             model:
               'One key feature was that drake became the first Englishman to sail completely around the globe. Specifically, He navigated the hazardous Strait of Magellan, raided Spanish treasure ships in the Pacific, reached California (Nova Albion.',
           },
           {
             type: 'written',
             tariff: 'Q2: Explain Why [12 marks]',
-            text: 'Q2. Explain why English exploration by sea increased so rapidly between 1558 and 1588.',
-            stimulus: ['New navigational technology', 'The cloth trade collapse'],
+            text: 'Q2. Explain why Drake circumnavigated the globe in 1577–1580. [12 marks]',
+            stimulus: ['Attacking Spanish colonies', 'Exploring new trade routes'],
             model:
               'One major reason was cause 1: economic crisis & new markets. Explain that the collapse of the Antwerp cloth market in the 1550s devastated England’s wool trade, forcing merchants to seek new trade routes to Russia (Muscovy Company), the Mediterranean, and the Americas. This was a critical factor because it directly heightened contemporary tensions and compelled the Crown to take immediate decisive action.<br><br>Furthermore, a second crucial reason was cause 2: technological & cartographic advance. Explain that astrolabes, magnetic compasses, Mercator maps, and larger, multi-masted galleons enabled safe transatlantic voyages, transforming open-ocean navigation from suicide into a calculated commercial risk. Consequently, this compounded the problem by creating lasting institutional friction and reducing Elizabeth’s diplomatic or political room for manoeuvre.<br><br>Finally, an underlying catalyst was cause 3: privateering wealth & spanish rivalry. Explain that plundering Spanish bullion ships in the Americas offered astronomical wealth; Elizabeth and courtiers secretly invested in voyages to challenge Philip II’s monopoly and finance the Crown. Ultimately, this meant that the situation could not be resolved without significant structural changes to Elizabethan governance and policy.',
           },
@@ -6540,7 +6503,7 @@ export const unitData = {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(a). Describe one key feature of Sir Walter Raleigh’s royal patent for Virginia (1584). [2 marks]',
+              '1(a). Describe one key feature of Walter Raleigh’s plans for colonising Virginia. [2 marks]',
             prompt:
               'Point (A royal license granting Raleigh the right to explore and colonise any lands not already possessed by Christian monarchs) • Fact (Raleigh was granted ownership of all land and minerals discovered, in exchange for giving the Crown one-fifth of all gold and silver mined).',
             model:
@@ -6551,16 +6514,14 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (A royal license granting Raleigh the right to explore and colonise any lands not already possessed by Christian monarchs) • Fact (Raleigh was granted ownership of all land and minerals discovered, in exchange for giving the Crown one-fifth of all gold and silver mined).',
-              sentence_starters: [
-                'One key feature was the royal authorization to establish an overseas empire... Specifically, Elizabeth granted Raleigh ownership of Virginia, provided he gave the Crown...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '2 marks',
             type: 'feature_2m',
             question:
-              '1(b). Describe one key feature of the failure of the first Roanoke colony (1585–86). [2 marks]',
+              '1(b). Describe one key feature of the failure of the 1585 Roanoke settlement. [2 marks]',
             prompt:
               'Point (The colony faced starvation after the flagship *Tiger* flooded, ruining their food seeds) • Fact (Colonists lacked farming skills, alienated local Secotan tribes led by Wingina, and had to be evacuated back to England by Francis Drake in 1586).',
             model:
@@ -6571,17 +6532,15 @@ export const unitData = {
                 'Feature Question Formula: State One Valid Feature + Support with Factual Detail',
               guidance:
                 'Point (The colony faced starvation after the flagship *Tiger* flooded, ruining their food seeds) • Fact (Colonists lacked farming skills, alienated local Secotan tribes led by Wingina, and had to be evacuated back to England by Francis Drake in 1586).',
-              sentence_starters: [
-                'One key feature was the rapid collapse of food supplies and local relations... Specifically, after the *Tiger* flooded their seeds, the colonists angered Chief Wingina and were rescued by...',
-              ],
+              sentence_starters: [],
             },
           },
           {
             tariff: '16 marks',
             type: 'essay_16',
             question:
-              '3. ‘Poor planning and unsuitable colonists were the main reasons why the attempt to colonise Virginia failed in 1585–86.’ How far do you agree? Explain your answer.',
-            stimulus: ['Lack of farming skills', 'Relations with Native Americans'],
+              '3. “The lack of supplies was the main reason for the failure of the Roanoke colony in 1585.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['Relations with Native Americans', 'The damage to the Tiger'],
             prompt:
               'Use the structure strip, causal connectives, and word bank below to structure your response.',
             model:
@@ -6590,7 +6549,7 @@ export const unitData = {
               acronym: 'Evaluative Essay Framework',
               acronym_title: 'Balanced Evaluative Essay (3 Themes + Judgement)',
               guidance:
-                'Poor planning and unsuitable personnel were primary factors in the colony’s collapse because... • Specifically, the aristocratic gentlemen refused to perform agricultural labour, which... • Furthermore, this was compounded by disastrous bad luck when the *Tiger*... • In addition, Ralph Lane’s aggressive hostility towards Native Americans alienated Chief Wingina... • Weighing these factors, I conclude that while the loss of the *Tiger’s* seeds made survival precarious, poor planning was the fundamental cause because the expedition was built for plunder rather than permanent farming...',
+                'To a large extent, it can be argued that... • A decisive factor supporting this view was... • Specifically, this was important because... • On the other hand, an alternative perspective is that... • In particular, ... • In conclusion, the decisive reason was... because...',
               steps: [
                 {
                   letter: 'CRITERIA 1',
@@ -6615,23 +6574,23 @@ export const unitData = {
                 },
               ],
               sentence_starters: [
-                'Poor planning and unsuitable personnel were primary factors in the colony’s collapse because...',
-                'Specifically, the aristocratic gentlemen refused to perform agricultural labour, which...',
-                'Furthermore, this was compounded by disastrous bad luck when the *Tiger*...',
-                'In addition, Ralph Lane’s aggressive hostility towards Native Americans alienated Chief Wingina...',
-                'Weighing these factors, I conclude that while the loss of the *Tiger’s* seeds made survival precarious, poor planning was the fundamental cause because the expedition was built for plunder rather than permanent farming...',
+                'To a large extent, it can be argued that...',
+                'A decisive factor supporting this view was...',
+                'Specifically, this was important because...',
+                'On the other hand, an alternative perspective is that...',
+                'In particular, ...',
+                'In conclusion, the decisive reason was... because...',
               ],
               connectives_bank: [
                 'Walter Raleigh',
-                'Virginia',
-                'Roanoke Island',
+                'Richard Grenville',
+                'Flagship Tiger Seawater Ruin',
                 'Ralph Lane',
-                '*Tiger*',
                 'Chief Wingina',
-                'Secotan',
-                'Manteo & Wanchese',
-                '"Lost Colony"',
-                'CROATOAN',
+                'Roanoke Island',
+                'Algonquian Hostility',
+                'Late Relief Fleets',
+                'Abandonment with Drake',
               ],
             },
           },
@@ -6915,22 +6874,22 @@ export const unitData = {
           {
             type: 'written',
             tariff: 'Q1(a): Feature [2 marks]',
-            text: 'Q1(a). Describe one key feature of Sir Walter Raleigh’s royal patent for Virginia (1584). [2 marks]',
+            text: 'Q1(a). Describe one key feature of Walter Raleigh’s plans for colonising Virginia. [2 marks]',
             model:
               'One key feature was that a royal license granting Raleigh the right to explore and colonise any lands not already possessed by Christian monarchs. Specifically, Raleigh was granted ownership of all land and minerals discovered, in exchange for giving the Crown one-fifth of all gold and silver mined.',
           },
           {
             type: 'written',
             tariff: 'Q1(b): Feature [2 marks]',
-            text: 'Q1(b). Describe one key feature of the failure of the first Roanoke colony (1585–86). [2 marks]',
+            text: 'Q1(b). Describe one key feature of the failure of the 1585 Roanoke settlement. [2 marks]',
             model:
               'One key feature was that the colony faced starvation after the flagship *Tiger* flooded, ruining their food seeds. Specifically, Colonists lacked farming skills, alienated local Secotan tribes led by Wingina, and had to be evacuated back to England by Francis Drake in 1586.',
           },
           {
             type: 'written',
             tariff: 'Q3: Evaluative Essay [16 marks]',
-            text: 'Q3. ‘Poor planning and unsuitable colonists were the main reasons why the attempt to colonise Virginia failed in 1585–86.’ How far do you agree? Explain your answer.',
-            stimulus: ['Lack of farming skills', 'Relations with Native Americans'],
+            text: 'Q3. “The lack of supplies was the main reason for the failure of the Roanoke colony in 1585.” How far do you agree? Explain your answer. [16 marks + 4 marks SPaG]',
+            stimulus: ['Relations with Native Americans', 'The damage to the Tiger'],
             model:
               'On the one hand, it can be strongly argued that criteria 1: unsuitable settlers & poor planning was of primary importance. Explain that the 107 settlers were mostly aristocratic soldiers seeking quick gold rather than farmers; they lacked agricultural skills, refused physical manual labour, and brought inadequate seeds. This supports the statement because contemporary evidence shows that this factor exerted immediate, disruptive pressure on the Elizabethan settlement.<br><br>On the other hand, an alternative critical perspective points to criteria 2: bad luck & voyage accidents. Explain that the flagship *Tiger* ran aground on a sandbank off Roanoke, flooding the hold with seawater and destroying all grain seeds; settlers arrived too late in the season to plant crops before winter. This demonstrates that the issue cannot be reduced to a single cause, as broader structural, political, and socio-economic dynamics played an equally formidable role.<br><br>Furthermore, a third vital factor was criteria 3: hostility with native tribes. Explain that Ralph Lane’s brutal military temperament alienated Chief Wingina’s Secotan tribe; when an English silver cup went missing, settlers burned a village, leading to open war and starvation. Without this compounding element, the severity and long-term consequences of the crisis would have been substantially reduced.<br><br>In conclusion, while criteria 1: unsuitable settlers & poor planning was undeniably significant, it was not the sole or even the primary driver in isolation. Rather, a nuanced historical evaluation reveals that criteria 2: bad luck & voyage accidents was the decisive underlying factor because it established the permanent structural conditions under which all subsequent events unfolded.',
           },
