@@ -63,9 +63,9 @@ const enquiryConfigs = [
         date: '1517–1521',
         questionHeading: 'How did Martin Luther’s protest spark the Reformation across Europe?',
         bullets: [
-          'Wittenberg Castle Church Door',
-          'Papal Indulgence Revenues',
-          'Fidei Defensor Distinction',
+          'Wittenberg Church Door',
+          'Paying for Forgiveness',
+          'Defender of the Faith Title',
         ],
         focusClue:
           'How did Luther’s attack on papal corruption shatter European unity and earn Henry the title ‘Defender of the Faith’?',
@@ -75,11 +75,7 @@ const enquiryConfigs = [
         paraRef: '[1.2]',
         date: '1525–1527',
         questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
-        bullets: [
-          'Tudor Succession Vulnerability',
-          'Levitical Prohibition Text',
-          'Secret Courtly Courtship',
-        ],
+        bullets: ['Need for a Son', 'Bible Warning on Marriage', 'Love for Anne Boleyn'],
         focusClue:
           'Why did Henry believe that without a son, England would collapse into civil war?',
       },
@@ -88,11 +84,7 @@ const enquiryConfigs = [
         paraRef: '[1.3]',
         date: '1527–1529',
         questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
-        bullets: [
-          'Imperial Sack of Rome',
-          'Habsburg Captivity Pressure',
-          'Legatine Court Adjournment',
-        ],
+        bullets: ['Emperor Attacks Rome', 'Pope Held Prisoner', 'Church Trial Cancelled'],
         focusClue: 'Why did European power politics prevent the Pope from granting the annulment?',
       },
       {
@@ -100,11 +92,7 @@ const enquiryConfigs = [
         paraRef: '[1.4]',
         date: '1529–1533',
         questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
-        bullets: [
-          'Supplication Against Ordinaries',
-          'Clerical Praemunire Fines',
-          'Statutory Appeals Prohibition',
-        ],
+        bullets: ['Threatening Church Fines', 'Stopping Taxes to Rome', 'Banning Appeals to Pope'],
         focusClue:
           'How did declaring England an ‘Empire’ and banning appeals to Rome legally isolate the Pope?',
       },
@@ -113,11 +101,7 @@ const enquiryConfigs = [
         paraRef: '[1.5]',
         date: '1534',
         questionHeading: 'How did the Act of Supremacy legally consolidate royal sovereignty?',
-        bullets: [
-          'Ecclesiastical Headship Claim',
-          'Treason Oath Refusal Penalties',
-          'Severance of Roman Jurisdiction',
-        ],
+        bullets: ['Head of the Church', 'Forced Treason Oaths', 'Breaking Ties with Rome'],
         focusClue:
           'Why was the Act of Supremacy the most radical constitutional change in English history?',
       },
@@ -170,9 +154,9 @@ const enquiryConfigs = [
         date: '1558–1559',
         questionHeading: 'Why was England religiously fractured when Elizabeth became Queen?',
         bullets: [
-          'Marian Heresy Executions',
-          'Genevan Exile Radicals',
-          'Deep-Seated Confessional Polarization',
+          'Protestants Burned at Stake',
+          'Fierce Religious Hatred',
+          'Return of Strict Puritans',
         ],
         focusClue: 'Why did Mary I’s burnings produce profound anti-Catholic fear across England?',
       },
@@ -182,9 +166,9 @@ const enquiryConfigs = [
         date: '1559',
         questionHeading: 'How did the Act of Supremacy restore royal control through compromise?',
         bullets: [
-          'Governor Designation',
-          'Marian Episcopacy Refusals',
-          'Clerical Oath Administration',
+          'Title of Supreme Governor',
+          'Loyalty Oaths for Priests',
+          'Sacking Catholic Bishops',
         ],
         focusClue:
           'Why was the title ‘Supreme Governor’ a clever compromise for moderate subjects?',
@@ -195,9 +179,9 @@ const enquiryConfigs = [
         date: '1559',
         questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’ (Via Media)?',
         bullets: [
-          'Book of Common Prayer Rubrics',
-          'Ambiguous Eucharistic Phrasing',
-          'Twelve-Pence Attendance Levies',
+          'One Shared Prayer Book',
+          'Clever Compromise Wording',
+          'Sunday Church Fines (12d)',
         ],
         focusClue:
           'Why did Elizabeth state that she had ‘no desire to make windows into men’s souls’?',
@@ -207,11 +191,7 @@ const enquiryConfigs = [
         paraRef: '[2.4]',
         date: '1568–1570',
         questionHeading: 'How did Mary Queen of Scots and the Papal Bull spark Catholic plots?',
-        bullets: [
-          'Earls of Northumberland & Westmorland',
-          'Durham Cathedral Mass Reinstated',
-          'Regnans in Excelsis Excommunication',
-        ],
+        bullets: ['Northern Earls Rebel', 'Secret Catholic Mass', 'Pope Orders Elizabeth Deposed'],
         focusClue: 'How did the 1570 Papal Bull turn practicing Catholics into suspected traitors?',
       },
       {
@@ -219,11 +199,7 @@ const enquiryConfigs = [
         paraRef: '[2.5]',
         date: '1571–1588',
         questionHeading: 'How did Walsingham’s spy network lead to Mary’s execution?',
-        bullets: [
-          'Brewery Beer-Barrel Ciphers',
-          'Decoded Babington Letters',
-          'Fotheringhay Scaffolding Warrant',
-        ],
+        bullets: ['Letters Hidden in Barrels', 'Secret Code Broken', 'Death Warrant Signed'],
         focusClue: 'Why was executing an anointed queen such a dangerous precedent for Elizabeth?',
       },
     ],
@@ -282,9 +258,9 @@ const enquiryConfigs = [
         date: '1585–1587',
         questionHeading: 'What imperial and religious rivalries provoked Philip II’s invasion?',
         bullets: [
-          'Treaty of Nonsuch Subsidies',
-          'Caribbean Privateering Bullion',
-          'Execution of Catholic Claimant',
+          'Help for Dutch Rebels',
+          'Drake Stealing Spanish Gold',
+          'Mary Queen of Scots Beheaded',
         ],
         focusClue: 'Why did Philip view invading England as a holy crusade against Protestantism?',
       },
@@ -293,11 +269,7 @@ const enquiryConfigs = [
         paraRef: '[3.2]',
         date: '1587',
         questionHeading: 'How did Drake’s raid on Cadiz delay the Spanish invasion?',
-        bullets: [
-          'Burning of Seasoned Barrel Wood',
-          'Loss of Water & Provisions',
-          'Twelve-Month Fleet Postponement',
-        ],
+        bullets: ['Burning Food Barrels', 'Rotten Water and Bread', 'Fleet Held Back for a Year'],
         focusClue:
           'How did burning seasoned barrel wood ruin Spanish water and food supplies at sea?',
       },
@@ -307,9 +279,9 @@ const enquiryConfigs = [
         date: 'July 1588',
         questionHeading: 'How did the English fleet harry the Armada up the English Channel?',
         bullets: [
-          '130-Vessel Crescent Formation',
-          'Long-Range Culverin Broadsides',
-          'Running Standoff Gunnery Duels',
+          '130 Ships in Crescent Line',
+          'Faster Race-Built Ships',
+          'Firing Cannons from Afar',
         ],
         focusClue:
           'Why did long-range gunnery give the English fleet a decisive tactical advantage?',
@@ -320,9 +292,9 @@ const enquiryConfigs = [
         date: '7–8 August 1588',
         questionHeading: 'How did English fireships at Calais shatter the Spanish formation?',
         bullets: [
-          'Eight Pitch-Loaded Hellburners',
-          'Severed Anchor Cables at Midnight',
-          'Scattered Defensive Discipline',
+          'Eight Burning Ghost Ships',
+          'Cutting Anchor Ropes in Panic',
+          'Scattering in the Dark',
         ],
         focusClue:
           'Why did cutting anchor cables leave Spanish ships helpless in rough North Sea weather?',
@@ -332,11 +304,7 @@ const enquiryConfigs = [
         paraRef: '[3.5]',
         date: 'Aug–Sept 1588',
         questionHeading: 'How did the Battle of Gravelines and severe storms destroy the fleet?',
-        bullets: [
-          'Point-Blank Hull Bombardment',
-          'South-Westerly Gales in North Sea',
-          'Fifty Wrecks on Scottish Coasts',
-        ],
+        bullets: ['Blasting Wooden Hulls', 'Fierce North Sea Gales', 'Shipwrecks on Irish Rocks'],
         focusClue: 'Why did Elizabeth’s medal declare: ‘God blew and they were scattered’?',
       },
     ],
@@ -400,9 +368,9 @@ const enquiryConfigs = [
         date: '1629–1640',
         questionHeading: 'Why did Charles I’s ‘Personal Rule’ without Parliament cause outrage?',
         bullets: [
-          'Eleven-Year Legislative Hiatus',
-          'Inland Ship Money Levies',
-          'Hampden Court Resistance Challenge',
+          'Eleven Years with No MPs',
+          'Ship Money on Inland Towns',
+          'John Hampden Refuses to Pay',
         ],
         focusClue:
           'Why did inland Ship Money spark widespread constitutional outrage across England?',
@@ -412,11 +380,7 @@ const enquiryConfigs = [
         paraRef: '[4.2]',
         date: '1640–1642',
         questionHeading: 'How did the breakdown of trust lead to armed civil conflict?',
-        bullets: [
-          'Arrest Attempt on Five Members',
-          'Militia Ordinance Power Contest',
-          'Nottingham Royal Standard Raised',
-        ],
+        bullets: ['Guards Raid the Commons', 'Five MPs Escape by River', 'King Raises War Flag'],
         focusClue: 'Why did the King entering the Commons with armed soldiers make war inevitable?',
       },
       {
@@ -425,9 +389,9 @@ const enquiryConfigs = [
         date: '1645–1648',
         questionHeading: 'How did the New Model Army defeat the King at the Battle of Naseby?',
         bullets: [
-          'Full-Time Professional Redcoats',
-          'Cromwellian Ironside Cavalry Charges',
-          'Royalist Headquarters Rout',
+          'Full-Time Paid Redcoats',
+          'Cromwell’s Cavalry Charges',
+          'Royalists Routed and Captured',
         ],
         focusClue:
           'Why did Charles’s secret deal brand him in soldiers’ eyes as a treacherous ‘man of blood’?',
@@ -438,9 +402,9 @@ const enquiryConfigs = [
         date: '1648–1649',
         questionHeading: 'Why did Pride’s Purge and the High Court lead to regicide?',
         bullets: [
-          'Expulsion of Moderate Members',
-          'Treason Indictment of Monarchy',
-          'Whitehall Scaffold Beheading',
+          'Army Kicks Out Moderate MPs',
+          'King Put on Trial for Treason',
+          'Beheaded Outside Whitehall',
         ],
         focusClue:
           'On what constitutional grounds did Charles I refuse to recognize the trial court?',
@@ -451,9 +415,9 @@ const enquiryConfigs = [
         date: '1660–1689',
         questionHeading: 'How did the Glorious Revolution permanently limit royal power?',
         bullets: [
-          'Torbay Dutch Invasion Force',
-          'Flight of the Stuart Monarch',
-          'Statutory Parliamentary Supremacy',
+          'Dutch Army Lands at Torbay',
+          'James II Flees the Country',
+          'Monarch Bound by the Law',
         ],
         focusClue:
           'How did the 1689 Bill of Rights legally end the Stuart doctrine of Divine Right?',
@@ -512,9 +476,9 @@ const enquiryConfigs = [
         date: '1517–1534',
         questionHeading: 'How did Henry VIII reshape sovereign authority in the Reformation?',
         bullets: [
-          'Papal Jurisdictional Annulment',
-          'Parliamentary Statute Legitimacy',
-          'Monastic Land Redistribution',
+          'Pope Lost All English Power',
+          'New Laws Made with MPs',
+          'Monastery Lands Given Away',
         ],
         focusClue: 'Did the break with Rome increase royal prerogative or parliamentary authority?',
       },
@@ -524,9 +488,9 @@ const enquiryConfigs = [
         date: '1559–1588',
         questionHeading: 'How did the Elizabethan settlement forge a Protestant national state?',
         bullets: [
-          'Via Media Theological Ambiguity',
-          'Recusancy Fines for Absence',
-          'Defensive Standoff Naval Victory',
+          'Compromise for Both Sides',
+          'Fines for Missing Church',
+          'United by Armada Victory',
         ],
         focusClue:
           'How did external Catholic threats unite Crown and Parliament during Elizabeth’s reign?',
@@ -537,9 +501,9 @@ const enquiryConfigs = [
         date: '1603–1640',
         questionHeading: 'Why did Stuart claims of Divine Right provoke constitutional crisis?',
         bullets: [
-          'Unparliamentary Revenue Schemes',
-          'Inland Ship Money Legal Defiance',
-          'Scottish Covenant Resistance',
+          'Kings Claim Only God Rules Them',
+          'Illegal Taxes Without Votes',
+          'Scots Rebel Against English Rules',
         ],
         focusClue: 'Why did Stuart absolutism break down while Tudor compromise had succeeded?',
       },
@@ -549,9 +513,9 @@ const enquiryConfigs = [
         date: '1642–1649',
         questionHeading: 'Why was the trial and execution of Charles I a radical turning point?',
         bullets: [
-          'New Model Army Sovereignty',
-          'Accountability of Anointed Monarchy',
-          'Abolition of House of Lords',
+          'Citizen Army Beat the King',
+          'Monarch Held to the Law',
+          'Abolishing the House of Lords',
         ],
         focusClue:
           'Why was publicly executing an anointed king the most shocking event in Tudor-Stuart history?',
@@ -562,9 +526,9 @@ const enquiryConfigs = [
         date: '1660–1689',
         questionHeading: 'How did the 1689 Bill of Rights finalize Parliamentary Supremacy?',
         bullets: [
-          'Prohibition of Dispensing Powers',
-          'Taxation & Standing Army Veto',
-          'Contractual Constitutional Settlement',
+          'King Cannot Cancel Laws',
+          'No Taxes Without MP Votes',
+          'Contract with New Rulers',
         ],
         focusClue:
           'Why does the 1689 Bill of Rights form the bedrock of Britain’s modern democracy?',

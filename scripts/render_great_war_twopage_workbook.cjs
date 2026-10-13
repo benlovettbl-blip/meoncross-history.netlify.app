@@ -101,9 +101,9 @@ const enquiryConfigs = [
         paraRef: '[1.1]',
         questionHeading: 'What enabled Prussia to overturn the 1815 balance of power?',
         bullets: [
-          '39 Fragmented States',
+          '39 Separate German States',
           'Bismarck’s Blood & Iron Speech',
-          'Krupp Heavy Rail Artillery',
+          'Deadly Krupp Steel Guns',
         ],
         focusClue:
           'How did Prussian military technology, rail networks, and Realpolitik shatter the old fragmented German Confederation?',
@@ -114,9 +114,9 @@ const enquiryConfigs = [
         paraRef: '[1.2]',
         questionHeading: 'How was the German Empire proclaimed at Versailles in 1871?',
         bullets: [
-          'Hall of Mirrors Ceremony',
-          'Napoleon III Sedan Surrender',
-          'Hohenzollern Imperial Ascendancy',
+          'French Emperor Captured at Sedan',
+          'German Empire Crowned at Versailles',
+          'Prussia Dominates Europe',
         ],
         focusClue:
           'Why did crowning Kaiser Wilhelm I inside France’s historic royal palace deliberately humiliate French national pride?',
@@ -127,9 +127,9 @@ const enquiryConfigs = [
         paraRef: '[1.3]',
         questionHeading: 'Why did the annexation of Alsace-Lorraine shatter peace?',
         bullets: [
-          'Treaty of Frankfurt Clauses',
-          '5 Billion Gold Franc Indemnity',
-          'Permanent Continental Rupture',
+          'French Forced to Pay 5 Billion',
+          'Losing Coal and Iron Land',
+          'Hatred Between France and Germany',
         ],
         focusClue:
           'How did seizing mineral-rich border provinces guarantee an unbridgeable diplomatic gulf between France and Germany?',
@@ -141,8 +141,8 @@ const enquiryConfigs = [
         questionHeading: 'In what ways did French "Revanche" shape patriotic culture?',
         bullets: [
           'Classroom Maps Veiled in Black',
-          'Sacred National Retribution',
-          'Universal Peacetime Conscription',
+          'Dreaming of French Revenge',
+          'Army Conscription for Boys',
         ],
         focusClue:
           'Why did generations of French schoolchildren grow up viewing the recovery of the lost provinces as a sacred patriotic duty?',
@@ -152,7 +152,11 @@ const enquiryConfigs = [
         date: '1871–1890',
         paraRef: '[1.5]',
         questionHeading: "Evaluate how Bismarck's diplomacy isolated the French Republic.",
-        bullets: ['1887 Reinsurance Treaty', 'Nightmare of Encirclement', 'Quarantine of Paris'],
+        bullets: [
+          'Secret Deal with Russia',
+          'Fear of War on Two Fronts',
+          'Keeping France Isolated',
+        ],
         focusClue:
           'Why was preventing a simultaneous military encirclement by France and Russia Bismarck’s supreme strategic obsession?',
       },
@@ -194,9 +198,9 @@ const enquiryConfigs = [
         paraRef: '[2.1]',
         questionHeading: 'Why did European empires carve up Africa in the 1880s Scramble?',
         bullets: [
-          'Effective Occupation Principle',
-          'Rubber, Copper & Mineral Wealth',
-          'Imperial Partition Across Continents',
+          'Carving Up African Land',
+          'Rubber, Copper & Mineral Riches',
+          'Rules Made at Berlin Meeting',
         ],
         focusClue:
           'How did Bismarck use the Berlin Conference to establish rules of "effective occupation" to prevent European wars over colonies?',
@@ -207,9 +211,9 @@ const enquiryConfigs = [
         paraRef: '[2.2]',
         questionHeading: 'Explain why Wilhelm II launched "Weltpolitik" in the 1890s.',
         bullets: [
-          'Chancellorship Dismissal (1890)',
-          'Demand for "Place in the Sun"',
-          'Aggressive Overseas Expansion',
+          'Kaiser Sacks Old Bismarck',
+          'Demanding a Place in the Sun',
+          'Building a German Empire',
         ],
         focusClue:
           'Why did Wilhelm II abandon Bismarck’s cautious European balance in favor of an aggressive worldwide imperial presence?',
@@ -220,9 +224,9 @@ const enquiryConfigs = [
         paraRef: '[2.3]',
         questionHeading: 'What happened when the Kaiser landed at Tangier in 1905?',
         bullets: [
-          'White Horse Imperial Parade',
-          'Testing Anglo-French Entente',
-          'Sultanate Sovereignty Asserted',
+          'Kaiser Rides White Horse',
+          'Testing Britain and France',
+          'Promising to Protect Morocco',
         ],
         focusClue:
           'How did the Kaiser attempt to humiliate France and shatter the 1904 Entente Cordiale, and why did it backfire?',
@@ -233,9 +237,9 @@ const enquiryConfigs = [
         paraRef: '[2.4]',
         questionHeading: 'To what extent did the 1906 Algeciras Conference isolate Germany?',
         bullets: [
-          'Ten-to-Two Diplomatic Defeat',
-          'Whitehall Naval Solidarity',
-          'Hostile Encirclement Paranoia',
+          'Germany Defeated in Vote',
+          'Britain Backs Up France',
+          'Fearing Being Surrounded',
         ],
         focusClue:
           'Why did twelve nations vote with France, leaving Germany bitter, isolated, and increasingly convinced of hostile encirclement?',
@@ -246,9 +250,9 @@ const enquiryConfigs = [
         paraRef: '[2.5]',
         questionHeading: 'Why did the gunboat Panther at Agadir bring Europe close to war?',
         bullets: [
-          'Naval Intimidation Tactics',
-          'Mansion House Public Warning',
-          'Joint Staff Military Planning',
+          'Gunboat Sent to Bully France',
+          'Lloyd George Issues Warning',
+          'Britain and France Plan for War',
         ],
         focusClue:
           'How did sending a warship to Morocco lead David Lloyd George to issue a stern public warning and trigger joint military planning?',
@@ -299,9 +303,9 @@ const enquiryConfigs = [
         paraRef: '[3.1]',
         questionHeading: "Why was naval supremacy vital for Great Britain's survival?",
         bullets: [
-          '1889 Naval Defence Act',
-          'Vulnerable Maritime Food Convoys',
-          'Two-Power Fleet Dominance',
+          'Britain Surrounded by Sea',
+          'Food Brought by Ships',
+          'Fleet Twice as Big as Rivals',
         ],
         focusClue:
           'Why did Britain require a fleet equal to the next two navies combined, and why was any threat to the North Sea intolerable?',
@@ -312,9 +316,9 @@ const enquiryConfigs = [
         paraRef: '[3.2]',
         questionHeading: 'How did Tirpitz\'s "Risk Theory" plan to challenge the Royal Navy?',
         bullets: [
-          '1898 & 1900 Fleet Acts',
-          'High Seas North Sea Concentration',
-          'Deterrence via Existential Threat',
+          'Tirpitz Plans High Seas Fleet',
+          'Building Warships in North Sea',
+          'Threatening British Waters',
         ],
         focusClue:
           'How did Tirpitz calculate that building a lethal German battlefleet in the North Sea would force Britain into diplomatic concessions?',
@@ -325,9 +329,9 @@ const enquiryConfigs = [
         paraRef: '[3.3]',
         questionHeading: 'Why did HMS Dreadnought reset naval supremacy to zero?',
         bullets: [
-          'Ten 12-Inch Heavy Guns',
-          'Steam Turbine Speed Advantage',
-          'Pre-Dreadnoughts Instantly Obsolete',
+          'Ten Huge 12-Inch Guns',
+          'Fast Steam Turbine Engines',
+          'Old Battleships Now Useless',
         ],
         focusClue:
           'Why did Admiral Fisher’s revolutionary warship wipe out Britain’s enormous numerical advantage over other navies?',
@@ -338,9 +342,9 @@ const enquiryConfigs = [
         paraRef: '[3.4]',
         questionHeading: 'What triggered the 1909 British naval panic ("We want eight")?',
         bullets: [
-          'Secret Krupp Slipway Expansion',
-          'Sensationalist Press Alarmism',
-          'Doubled Battleship Construction',
+          'Fearing Secret German Docks',
+          'Newspaper Headlines Cause Panic',
+          'Building Eight Battleships',
         ],
         focusClue:
           'How did newspaper headlines and patriotic paranoia compel the British Liberal government to double its battleship construction budget?',
@@ -351,9 +355,9 @@ const enquiryConfigs = [
         paraRef: '[3.5]',
         questionHeading: 'Evaluate why the 1912 Haldane Mission failed to stop the arms race.',
         bullets: [
-          'Berlin Diplomatic Mission',
-          'Unconditional Neutrality Demand',
-          'Mediterranean-North Sea Accord',
+          'Talks in Berlin Fail',
+          'Germany Refuses to Stop Building',
+          'Royal Navy Ships Guard North Sea',
         ],
         focusClue:
           'Why did Germany’s refusal to halt naval expansion drive Britain to redeploy its Mediterranean fleet to the North Sea in partnership with France?',
@@ -401,9 +405,9 @@ const enquiryConfigs = [
         paraRef: '[4.1]',
         questionHeading: "How did Bismarck's Dual Alliance create a Central European bloc?",
         bullets: [
-          'Habsburg Mutual Defence Treaty',
-          'Triple Coalition Expansion',
-          'Anti-Russian Security Shield',
+          'Germany Backs Austria',
+          'Italy Joins the Triple Alliance',
+          'Promise of Help Against Russia',
         ],
         focusClue:
           'Why did Germany and Austria-Hungary pledge to defend each other if attacked by Russia, and how did Italy join the bloc?',
@@ -414,9 +418,9 @@ const enquiryConfigs = [
         paraRef: '[4.2]',
         questionHeading: 'Explain why the 1894 Franco-Russian Alliance broke isolation.',
         bullets: [
-          'St Petersburg Capital Loans',
-          '1904 Entente Cordiale Accord',
-          'Counterbalancing Triple Entente',
+          'French Money Helps Russia',
+          'Britain and France Shake Hands',
+          'Triple Entente Formed',
         ],
         focusClue:
           'How did democratic Britain, republican France, and autocratic Tsarist Russia unite to counterbalance German military dominance?',
@@ -427,9 +431,9 @@ const enquiryConfigs = [
         paraRef: '[4.3]',
         questionHeading: 'Why was south-eastern Europe known as the "Balkan Powder Keg"?',
         bullets: [
-          'Collapsing Ottoman Authority',
-          'Pan-Slavic Liberation Ambitions',
-          'Austro-Russian Imperial Clash',
+          'Ottoman Empire Falling Apart',
+          'Slavic Peoples Want Freedom',
+          'Austria Clashes with Russia',
         ],
         focusClue:
           'How did the collapse of Ottoman authority create a dangerous power vacuum that both Austria and Russia sought to control?',
@@ -440,9 +444,9 @@ const enquiryConfigs = [
         paraRef: '[4.4]',
         questionHeading: 'What were the consequences of the 1908 Bosnian Annexation Crisis?',
         bullets: [
-          'Habsburg Territory Seizure',
-          'Belgrade Public Indignation',
-          'Humiliated Tsarist Capitulation',
+          'Austria Grabs Bosnia',
+          'Serbian Fury at Land Grab',
+          'Russia Forced to Back Down',
         ],
         focusClue:
           'Why did being forced to back down under German military threats convince Russia never to retreat in the Balkans again?',
@@ -453,9 +457,9 @@ const enquiryConfigs = [
         paraRef: '[4.5]',
         questionHeading: 'To what extent did the 1912–13 Balkan Wars embolden Serbia?',
         bullets: [
-          'Regional League Military Campaigns',
-          'Doubled Territory & Manpower',
-          'Vienna Pre-emptive Strike Urge',
+          'Serbia Wins Two Wars',
+          'Double the Land and Army',
+          'Austria Plans to Crush Serbia',
         ],
         focusClue:
           'Why did Austro-Hungarian generals in Vienna conclude that Serbia must be militarily crushed before its Slavic nationalism tore the empire apart?',
@@ -512,9 +516,9 @@ const enquiryConfigs = [
         questionHeading:
           'What motivated the Black Hand to assassinate Franz Ferdinand in Sarajevo?',
         bullets: [
-          'Habsburg Royal Motorcade Route',
-          'Greater Serbian Conspirators',
-          'Fatal Revolver Gunfire',
+          'Open-Top Car in Sarajevo',
+          'Wrong Turn at the Sandwich Shop',
+          'Gavrilo Princip Fires Two Shots',
         ],
         focusClue:
           'How did a wrong turn outside Schiller’s Delicatessen beside the Latin Bridge place the Archduke directly before 19-year-old Gavrilo Princip?',
@@ -525,9 +529,9 @@ const enquiryConfigs = [
         paraRef: '[5.2]',
         questionHeading: 'How did Germany\'s "Blank Cheque" escalate the regional crisis?',
         bullets: [
-          'Potsdam Imperial Audience',
-          'Unconditional Military Backing',
-          'Vienna Emboldened for Retaliation',
+          'Kaiser Promises Total Support',
+          'Blank Cheque Given to Austria',
+          'Ready to Attack Serbia',
         ],
         focusClue:
           'Why did Austrian leaders wait to attack Serbia until Germany promised total military support even if Russia intervened?',
@@ -538,9 +542,9 @@ const enquiryConfigs = [
         paraRef: '[5.3]',
         questionHeading: 'Explain why Austria’s Ten-Point Ultimatum made war inevitable.',
         bullets: [
-          '48-Hour Compliance Window',
-          'Belgrade Police Encroachment',
-          'Danube Artillery Bombardment',
+          'Harsh Ten-Point Demands',
+          'Demanding Austrian Police in Belgrade',
+          'Shelling Serbia from the River',
         ],
         focusClue:
           'How did Austria draft terms that violated Serbian national sovereignty, and why did Austria declare war despite Serbia accepting eight points?',
@@ -552,9 +556,9 @@ const enquiryConfigs = [
         questionHeading:
           'In what ways did rigid railway mobilisation schedules trigger the domino effect?',
         bullets: [
-          'Tsarist Imperial Decrees',
-          'Irreversible Rail Deployments',
-          'Continental Escalation Cascade',
+          'Russian Millions Call Up to War',
+          'Soldiers Boarding Trains',
+          'Clock Ticking for Generals',
         ],
         focusClue:
           'Why did military mobilisations rely on rigid railroad schedules that generals claimed could not be halted without risking total defeat?',
@@ -566,9 +570,9 @@ const enquiryConfigs = [
         questionHeading:
           'What forced Great Britain to declare war following the invasion of Belgium?',
         bullets: [
-          '1839 London Treaty Commitment',
-          'Schlieffen Flanking Offensive',
-          'Midnight Ultimatum Expiration',
+          'German Troops March into Belgium',
+          'Scrap of Paper Treaty Broken',
+          'Britain Enters the War at Midnight',
         ],
         focusClue:
           'How did Germany’s plan to defeat France in six weeks by marching through neutral Belgium force Britain to honour its treaty pledge?',
