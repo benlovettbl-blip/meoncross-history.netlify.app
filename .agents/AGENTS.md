@@ -115,6 +115,17 @@ STRICT RULE: Sentence stems, analytical connectives, and writing frames in print
    - Never embed factual clues, dates, specific historical events, named treaty clauses, or pre-chewed conclusions into sentence stems or connectives (e.g., FORBIDDEN: `In particular, Article 231 and reparations caused...`, `Furthermore, the creation of the League of Nations...`, `In response, David Lloyd George established...`, or `In conclusion, the fatal weakness of Versailles was not just its harshness, but...`).
    - Keep all stems and connectives content-free so the pupil must supply the evidence, causal connections, and historical reasoning themselves.
 
+## The Revision Guide Vocabulary Constraint ("Spec-Anchored Triad" for Left-Spine Triggers)
+STRICT RULE: The 3 trigger keywords on the left of any chronological enquiry stage (e.g. in 2-page pupil workbooks) MUST be drawn directly from the approved unit revision guide (such as `public/content/gcse/gcse_middle_east_1945_1995.md`).
+1. **Mandatory Single Source of Truth:** All 3 trigger keywords must be high-yield, accessible specification concepts extracted directly from the revision guide text.
+2. **Zero A-Level / Niche Creep:** Strictly forbid introducing peripheral, off-specification academic terms (e.g. *Gush Emunim*, *DEFCON 3*, *Operation Nickel Grass*, *Kilometer 101*) that do not appear in the revision guide. Lower-attaining GCSE pupils must not be burdened with extraneous academic jargon.
+3. **The Zero-Echo Filter:** Words extracted from the revision guide must NEVER duplicate names, dates, or phrases already printed in the Stage Question Banner or Date Badge (e.g. if the banner asks about *Kissinger's shuttle diplomacy*, neither *Kissinger* nor *Shuttle Diplomacy* may appear in the triggers).
+4. **The Triad Functional Architecture:** The 3 trigger slots must provide 3 complementary explanatory levers:
+   - **Trigger 1 (Concrete Evidence):** A specific treaty, statistic, or geographic location (e.g. *Quadrupled Oil Prices*, *Eight-Year Closure Ends*).
+   - **Trigger 2 (Causal Friction / Catalyst):** The obstacle, conflict point, or pressure trigger (e.g. *Western Energy Shortages*, *Arab Refusal to Meet*).
+   - **Trigger 3 (Significance / Outcome):** The conceptual turning point or long-term consequence (e.g. *Exclude Soviet Influence*, *Direct Economic Lifeline*).
+
+
 
 ## Automated Database Sync (Safe Unit Mode)
 Whenever you (the AI agent) make structural changes to any unit's curriculum files (such as `data.js`), modify lesson titles, add a new unit, OR when the user explicitly asks you to "sync", you MUST automatically run the unified safe unit sync command:

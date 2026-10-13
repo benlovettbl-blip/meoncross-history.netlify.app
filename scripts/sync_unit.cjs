@@ -223,7 +223,15 @@ async function runSync() {
         });
       }
       if (unitId === 'cme_new') {
-        console.log(`\n📚 Compiling KT3 pupil workbook for [cme_new]...`);
+        console.log(`\n📚 Compiling KT1, KT2, and KT3 pupil workbooks for [cme_new]...`);
+        execSync(`node scripts/render_cme_kt1_twopage_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+        execSync(`node scripts/render_cme_twopage_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
         execSync(`node scripts/render_cme_kt3_twopage_workbook.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
