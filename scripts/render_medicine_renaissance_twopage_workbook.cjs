@@ -80,7 +80,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'A primary reason for change was... &bull; In particular, the movable-type press... &bull; Furthermore, the Royal Society established... &bull; However, the impact was limited because... &bull; Consequently...',
+      'A primary catalyst for change was... &bull; In particular, new technology enabled... &bull; Furthermore, institutional support expanded because... &bull; However, the wider impact was limited because... &bull; Consequently...',
     wordBank:
       'Gutenberg press (c1440) &bull; William Caxton (1476) &bull; clerical monopoly &bull; vernacular translations &bull; Royal Society (1660) &bull; Royal Charter (1662) &bull; Nullius in Verba &bull; Philosophical Transactions (1665) &bull; peer review &bull; animalcules &bull; Robert Hooke (1665)',
     doNow: [
@@ -180,7 +180,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'A primary reason for Sydenham’s significance was... &bull; In particular, his bedside method... &bull; Furthermore, classifying diseases into species... &bull; However, his impact on treatments was limited because... &bull; Consequently...',
+      'A primary reason for this significance was... &bull; In particular, this empirical approach demonstrated that... &bull; Furthermore, systematically categorising evidence showed... &bull; However, practical treatment remained limited because... &bull; Consequently...',
     wordBank:
       'English Hippocrates &bull; bedside observation &bull; Observationes Medicae (1676) &bull; clinical symptoms &bull; disease species &bull; scarlet fever vs measles &bull; cinchona bark (quinine) &bull; cooling regime &bull; fresh air &bull; continued bloodletting &bull; purging',
     doNow: [
@@ -280,7 +280,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'On the one hand, Vesalius transformed anatomy because... &bull; Crucially, by dissecting human cadavers he proved... &bull; Furthermore, De Fabrica was mass-distributed... &bull; However, in terms of treating patients... &bull; Therefore, his overall significance was...',
+      'On the one hand, this work transformed understanding because... &bull; Crucially, direct empirical observation proved that... &bull; Furthermore, wider dissemination was achieved because... &bull; However, in terms of therapeutic cures... &bull; Therefore, the overall significance was...',
     wordBank:
       'Andreas Vesalius &bull; University of Padua &bull; De Humani Corporis Fabrica (1543) &bull; human dissection &bull; 300+ Galenic errors &bull; mandible (jawbone) &bull; sternum (3 parts not 7) &bull; septum pores &bull; anatomical plates &bull; lack of medical cures &bull; continued humoural bleeding',
     doNow: [
@@ -380,7 +380,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'Harvey’s discovery was a turning point because... &bull; By applying mechanical pump theory, he proved... &bull; Crucially, his mathematical calculations proved... &bull; However, the practical impact was limited because... &bull; Consequently...',
+      'This discovery represented a major turning point because... &bull; By applying mechanical experimentation, it proved that... &bull; Crucially, quantitative evidence demonstrated that... &bull; However, the immediate practical impact was limited because... &bull; Consequently...',
     wordBank:
       'William Harvey &bull; De Motu Cordis (1628) &bull; circulation of the blood &bull; mechanical pump &bull; arteries &bull; veins &bull; vein valves (Fabricius) &bull; ligature experiment &bull; 540 pints per hour &bull; capillaries &bull; conservative backlash',
     doNow: [
@@ -480,7 +480,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'On the one hand, responses in 1665 showed change because... &bull; For example, local authorities enforced... &bull; On the other hand, there was complete continuity in... &bull; Crucially, medical treatments... &bull; Overall, while civic methods changed...',
+      'On the one hand, contemporary responses showed clear change because... &bull; For example, local civic authorities enforced... &bull; On the other hand, there was substantial continuity in... &bull; Crucially, underlying medical beliefs remained unchanged because... &bull; Overall, while administrative methods adapted...',
     wordBank:
       'The Great Plague (1665) &bull; London Bills of Mortality &bull; 28-day house quarantine &bull; red crosses &bull; Lord have mercy upon us &bull; searchers of the dead &bull; mass plague pits &bull; parish watchmen &bull; miasma &bull; pomanders &bull; smoking tobacco &bull; continued bloodletting',
     doNow: [
@@ -640,18 +640,18 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
     }
     /* Clean Task Section Spacing */
     .task-section {
-      margin-bottom: 5px;
+      margin-bottom: 6px;
       padding-bottom: 0;
     }
     .task-section-divider {
       border-bottom: 1.2px solid #000000;
-      padding-bottom: 4px;
-      margin-bottom: 5px;
+      padding-bottom: 5px;
+      margin-bottom: 6px;
     }
     /* Standard Handwriting Writing Lines */
     .task-line {
       border-bottom: 1.2px solid #000000;
-      height: 7.8mm;
+      height: 8.0mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
@@ -1183,11 +1183,11 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${cfg.fourMarkA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkA.hint}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.25; color: #333333; margin-bottom: 2.5px;">
+          <strong>Target: AO1/AO2 [4 marks]</strong> &bull; Identify 1 valid ${cfg.fourMarkA.type.toLowerCase()} (1 mark) &bull; Explain with precise historical detail from both named eras (3 marks).
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkA.stems}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.25; margin-bottom: 3px;">
+          <strong>Sentence Stems:</strong> <em>One way in which they were ${cfg.fourMarkA.type.toLowerCase()} was that... &bull; Specifically, in the earlier period... &bull; In ${cfg.fourMarkA.type.toLowerCase() === 'similarity' ? 'the same way' : 'contrast'}, in the later period...</em>
         </div>
         <div class="ruled-lines-block">
           <div class="task-line"></div>
@@ -1209,11 +1209,11 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${cfg.fourMarkB.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkB.hint}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.25; color: #333333; margin-bottom: 2.5px;">
+          <strong>Target: AO1/AO2 [4 marks]</strong> &bull; Identify 1 valid ${cfg.fourMarkB.type.toLowerCase()} (1 mark) &bull; Explain with precise historical detail from both named eras (3 marks).
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkB.stems}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.25; margin-bottom: 3px;">
+          <strong>Sentence Stems:</strong> <em>One way in which they were ${cfg.fourMarkB.type.toLowerCase()} was that... &bull; Specifically, in the earlier period... &bull; In ${cfg.fourMarkB.type.toLowerCase() === 'similarity' ? 'the same way' : 'contrast'}, in the later period...</em>
         </div>
         <div class="ruled-lines-block">
           <div class="task-line"></div>

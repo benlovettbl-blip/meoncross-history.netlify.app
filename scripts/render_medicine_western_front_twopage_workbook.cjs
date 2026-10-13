@@ -137,7 +137,7 @@ const wfConfigs = [
       },
     ],
     connectives:
-      'Source A is useful for an enquiry into trench layout because... &bull; Specifically, the aerial perspective reveals... &bull; In terms of provenance, as an official RFC reconnaissance photograph... &bull; However, the source is limited because it cannot show... &bull; Therefore...',
+      'Source A is useful for an enquiry into this topic because... &bull; Specifically, the source reveals... &bull; In terms of provenance, considering the author and date... &bull; However, the utility is limited because... &bull; Therefore...',
     wordBank:
       'Royal Flying Corps &bull; zig-zag traverses &bull; communication trench &bull; Ypres Salient &bull; Messines Ridge &bull; water table &bull; duckboards &bull; parapet &bull; parados &bull; fire-step',
     timelineMission:
@@ -366,7 +366,7 @@ const wfConfigs = [
       },
     ],
     connectives:
-      'Source B is useful for investigating gas defence because... &bull; Specifically, the physical helmet proves that... &bull; In terms of provenance, as a standard-issue War Office artifact... &bull; However, Source B is limited because it cannot show... &bull; Consequently...',
+      'Source B is useful for investigating this topic because... &bull; Specifically, the source provides evidence that... &bull; In terms of provenance, considering the nature and purpose... &bull; However, the source is limited because... &bull; Consequently...',
     wordBank:
       'high-explosive artillery &bull; shrapnel balls &bull; gas gangrene &bull; Clostridium welchii &bull; Brodie steel helmet &bull; chlorine gas (1915) &bull; phosgene &bull; mustard gas (1917) &bull; PH helmet &bull; Small Box Respirator (1916)',
     timelineMission:
@@ -594,7 +594,7 @@ const wfConfigs = [
       },
     ],
     connectives:
-      'Source A is useful for an enquiry into limb treatments because... &bull; Specifically, the photograph demonstrates... &bull; In terms of provenance, as an RAMC instructional image... &bull; However, the source is limited because... &bull; Therefore...',
+      'Source A is useful for an enquiry into this topic because... &bull; Specifically, the source demonstrates that... &bull; In terms of provenance, considering the contemporary context... &bull; However, the utility is limited because... &bull; Therefore...',
     wordBank:
       'Thomas Splint &bull; Hugh Owen Thomas &bull; Robert Jones &bull; compound fracture &bull; femoral artery &bull; mechanical traction &bull; wound debridement &bull; Carrel-Dakin solution &bull; delayed primary closure &bull; mobile X-ray unit',
     timelineMission:
@@ -948,30 +948,30 @@ function renderWfExamBlueprintPage(
           <strong>Examiner Strategy:</strong> Follow up an exact quotation or visual detail. Your question must directly target your chosen detail. Your named source type must be authentic and specific (e.g. RAMC casualty returns, battalion war diaries).
         </div>
 
-        <!-- 4-Prompt Planning Matrix Model -->
+        <!-- 4-Prompt Disciplinary Enquiry Framework -->
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.2pt; margin-top: 2px;">
           <thead>
             <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 2px 4px; text-align: left; width: 32%;">Official Edexcel Prompt</th>
-              <th style="padding: 2px 4px; text-align: left;">High-Scoring Model Strategy &bull; Historical Exemplar</th>
+              <th style="padding: 2px 4px; text-align: left; width: 34%;">Official Edexcel Prompt</th>
+              <th style="padding: 2px 4px; text-align: left;">AO3 Disciplinary Enquiry Strategy &bull; Exam Standard</th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #cccccc;">
               <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">1. Detail in Source ${cfg.q2bData.sourceLetter} to follow up:</td>
-              <td style="padding: 2px 4px; font-style: italic;">“${cfg.q2bData.detailPrompt}”</td>
+              <td style="padding: 2px 4px; font-style: italic;">Select a precise, verifiable fact or visual detail directly related to the enquiry.</td>
             </tr>
             <tr style="border-bottom: 1px solid #cccccc;">
               <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">2. Question I would ask:</td>
-              <td style="padding: 2px 4px; font-style: italic;">${cfg.q2bData.questionPrompt}</td>
+              <td style="padding: 2px 4px; font-style: italic;">Frame a focused historical question that directly investigates your chosen detail.</td>
             </tr>
             <tr style="border-bottom: 1px solid #cccccc;">
               <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">3. Type of source I would use:</td>
-              <td style="padding: 2px 4px; font-style: italic;">${cfg.q2bData.sourceTypePrompt}</td>
+              <td style="padding: 2px 4px; font-style: italic;">Name a specific contemporary record (e.g. RAMC war diaries, casualty logs, medical records).</td>
             </tr>
             <tr>
               <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">4. How this would help me:</td>
-              <td style="padding: 2px 4px; font-style: italic;">${cfg.q2bData.helpPrompt}</td>
+              <td style="padding: 2px 4px; font-style: italic;">Explain what unique statistical or medical data this source provides to answer your question.</td>
             </tr>
           </tbody>
         </table>
@@ -1051,8 +1051,9 @@ function renderWfExamBlueprintPage(
             <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.15; margin-bottom: 1.5px;">
               1(a) ${cfg.q1Features.a.q} [2 marks]
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #444444; line-height: 1.15; font-style: italic;">
-              <strong>Hint:</strong> ${cfg.q1Features.a.hint}
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #333333; line-height: 1.15;">
+              <strong>Target: AO1 [2 marks]</strong> &bull; Point (1m) + Detail (1m)<br>
+              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
             </div>
           </div>
           <!-- Q1(b) Prompt -->
@@ -1060,8 +1061,9 @@ function renderWfExamBlueprintPage(
             <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.15; margin-bottom: 1.5px;">
               1(b) ${cfg.q1Features.b.q} [2 marks]
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #444444; line-height: 1.15; font-style: italic;">
-              <strong>Hint:</strong> ${cfg.q1Features.b.hint}
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #333333; line-height: 1.15;">
+              <strong>Target: AO1 [2 marks]</strong> &bull; Point (1m) + Detail (1m)<br>
+              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
             </div>
           </div>
         </div>

@@ -80,7 +80,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A primary reason for Church influence was... &bull; In particular, monastic scriptoria... &bull; Furthermore, disease was seen as divine retribution... &bull; Crucially, the harsh punishment of Roger Bacon in 1277 proved... &bull; Consequently...',
+      'A decisive factor was that... &bull; In particular, this was reinforced by... &bull; Furthermore, this belief persisted because... &bull; Crucially, challenges were suppressed because... &bull; Consequently...',
     wordBank:
       'divine retribution &bull; biblical leprosy &bull; Lazar houses &bull; teleology &bull; heresy &bull; Roger Bacon (1277) &bull; monastic scriptoria &bull; 1345 planetary conjunction &bull; astrological almanacs',
     doNow: [
@@ -180,7 +180,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A primary reason for the dominance of the Four Humours was... &bull; Crucially, Galen extended this by introducing... &bull; Furthermore, diagnostic tools such as the matula... &bull; Because the theory explained every symptom without contradiction... &bull; Consequently...',
+      'A primary reason for this dominance was... &bull; In particular, this framework was extended when... &bull; Furthermore, diagnostic methods supported this because... &bull; Crucially, this belief endured because... &bull; Consequently...',
     wordBank:
       'Four Humours &bull; Theory of Opposites &bull; blood (sanguine) &bull; phlegm (phlegmatic) &bull; yellow bile (choleric) &bull; black bile (melancholic) &bull; uroscopy &bull; matula flask &bull; Vademecum &bull; Zodiac Man',
     doNow: [
@@ -277,7 +277,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'One major reason bloodletting was so widespread was... &bull; Furthermore, physicians believed that purging... &bull; Crucially, herbal remedies like Theriac... &bull; Because these treatments aligned with Galenic theory... &bull; Consequently...',
+      'A primary reason this treatment was widespread was... &bull; Furthermore, practitioners believed that... &bull; In particular, alternative methods were used to... &bull; Crucially, this aligned with contemporary theory because... &bull; Consequently...',
     wordBank:
       'phlebotomy (bloodletting) &bull; fleam &bull; scarification &bull; cupping &bull; leeches (Hirudo medicinalis) &bull; purging &bull; emetics &bull; clyster (enema) &bull; Theriac &bull; Regimen Sanitatis &bull; pilgrimages &bull; relics',
     doNow: [
@@ -377,7 +377,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A central reason medieval hospitals focused on care not cure was... &bull; In particular, monasteries established hospitals to... &bull; Furthermore, university-trained physicians were absent because... &bull; Crucially, infectious patients were turned away because... &bull; Consequently...',
+      'A central reason for this approach was... &bull; In particular, institutional rules dictated that... &bull; Furthermore, specific limitations meant that... &bull; Crucially, certain categories of patient were excluded because... &bull; Consequently...',
     wordBank:
       '‘care not cure’ &bull; hospitium &bull; St Bartholomew’s (1123) &bull; Augustinian nuns &bull; chapel altar &bull; university physician &bull; barber-surgeon &bull; apothecary &bull; wise woman &bull; Guild of Surgeons (1368) &bull; Lazar houses',
     doNow: [
@@ -477,7 +477,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'On the one hand, belief in supernatural causes was a primary reason because... &bull; For instance, flagellants... &bull; On the other hand, misdiagnosis of miasma and living conditions were vital because... &bull; Crucially, authorities lacked understanding of Yersinia pestis... &bull; In conclusion, while religious fatalism dictated reactions, the fundamental barrier was...',
+      'On the one hand, a major contemporary explanation was that... &bull; In particular, this led people to... &bull; On the other hand, an alternative belief was that... &bull; Crucially, attempts to prevent spread failed because... &bull; In conclusion, the decisive barrier to effective treatment was...',
     wordBank:
       'The Black Death (1348–49) &bull; Melcombe Regis &bull; Yersinia pestis &bull; bubonic plague (rat fleas) &bull; pneumonic plague (cough droplets) &bull; buboes &bull; 30–50% mortality &bull; flagellants &bull; sweet posies &bull; street fires &bull; Edward III (1349) &bull; East Smithfield plague pits',
     doNow: [
@@ -1203,11 +1203,11 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${cfg.fourMarkA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkA.hint}
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; color: #333333; margin-bottom: 2px;">
+          <strong>Target: AO1/AO2 [4 marks]</strong> &bull; Identify 1 valid ${cfg.fourMarkA.type.toLowerCase()} (1m) &bull; Detail both named eras (3m).
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkA.stems}
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> <em>One way in which they were ${cfg.fourMarkA.type.toLowerCase()} was that... &bull; In the earlier period... &bull; In ${cfg.fourMarkA.type.toLowerCase() === 'similarity' ? 'the same way' : 'contrast'}, in the later period...</em>
         </div>
         <div class="ruled-lines-block">
           <div class="task-line"></div>
@@ -1229,11 +1229,11 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin: 0 0 2px 0;">
           ${cfg.fourMarkB.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          <strong>Hint:</strong> ${cfg.fourMarkB.hint}
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; color: #333333; margin-bottom: 2px;">
+          <strong>Target: AO1/AO2 [4 marks]</strong> &bull; Identify 1 valid ${cfg.fourMarkB.type.toLowerCase()} (1m) &bull; Detail both named eras (3m).
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Stems:</strong> ${cfg.fourMarkB.stems}
+        <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; margin-bottom: 2px;">
+          <strong>Sentence Stems:</strong> <em>One way in which they were ${cfg.fourMarkB.type.toLowerCase()} was that... &bull; In the earlier period... &bull; In ${cfg.fourMarkB.type.toLowerCase() === 'similarity' ? 'the same way' : 'contrast'}, in the later period...</em>
         </div>
         <div class="ruled-lines-block">
           <div class="task-line"></div>
