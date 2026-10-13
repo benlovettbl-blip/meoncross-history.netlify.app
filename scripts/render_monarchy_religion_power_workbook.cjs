@@ -62,7 +62,11 @@ const enquiryConfigs = [
         paraRef: '[1.1]',
         date: '1517–1521',
         questionHeading: 'How did Martin Luther’s protest spark the Reformation across Europe?',
-        bullets: ['95 Theses', 'Indulgences', 'Defender of Faith'],
+        bullets: [
+          'Wittenberg Castle Church Door',
+          'Papal Indulgence Revenues',
+          'Fidei Defensor Distinction',
+        ],
         focusClue:
           'How did Luther’s attack on papal corruption shatter European unity and earn Henry the title ‘Defender of the Faith’?',
       },
@@ -71,7 +75,11 @@ const enquiryConfigs = [
         paraRef: '[1.2]',
         date: '1525–1527',
         questionHeading: 'Why did the royal marriage become an urgent dynastic crisis?',
-        bullets: ['Male Heir', 'Leviticus 20:21', 'Anne Boleyn'],
+        bullets: [
+          'Tudor Succession Vulnerability',
+          'Levitical Prohibition Text',
+          'Secret Courtly Courtship',
+        ],
         focusClue:
           'Why did Henry believe that without a son, England would collapse into civil war?',
       },
@@ -80,7 +88,11 @@ const enquiryConfigs = [
         paraRef: '[1.3]',
         date: '1527–1529',
         questionHeading: 'Why did Pope Clement VII refuse Henry’s annulment request?',
-        bullets: ['Wolsey Fails', '1527 Sack of Rome', 'Charles V'],
+        bullets: [
+          'Imperial Sack of Rome',
+          'Habsburg Captivity Pressure',
+          'Legatine Court Adjournment',
+        ],
         focusClue: 'Why did European power politics prevent the Pope from granting the annulment?',
       },
       {
@@ -88,7 +100,11 @@ const enquiryConfigs = [
         paraRef: '[1.4]',
         date: '1529–1533',
         questionHeading: 'How did Thomas Cromwell use Parliament to pressure the Church?',
-        bullets: ['Thomas Cromwell', 'Submission of Clergy', 'Appeals Ban (1533)'],
+        bullets: [
+          'Supplication Against Ordinaries',
+          'Clerical Praemunire Fines',
+          'Statutory Appeals Prohibition',
+        ],
         focusClue:
           'How did declaring England an ‘Empire’ and banning appeals to Rome legally isolate the Pope?',
       },
@@ -97,7 +113,11 @@ const enquiryConfigs = [
         paraRef: '[1.5]',
         date: '1534',
         questionHeading: 'How did the Act of Supremacy legally consolidate royal sovereignty?',
-        bullets: ['‘Supreme Head’', 'Supremacy Oath', 'Sir Thomas More'],
+        bullets: [
+          'Ecclesiastical Headship Claim',
+          'Treason Oath Refusal Penalties',
+          'Severance of Roman Jurisdiction',
+        ],
         focusClue:
           'Why was the Act of Supremacy the most radical constitutional change in English history?',
       },
@@ -113,19 +133,19 @@ const enquiryConfigs = [
       structureStrip: [
         {
           col: '1. DYNASTIC SUCCESSION',
-          text: 'Explain Henry’s urgent need for a legitimate male heir; Pope Clement VII was captive to Catherine’s nephew, Charles V, blocking the annulment.',
+          text: 'Analyse the urgent requirement for an undisputed male heir and the diplomatic obstacle posed by Habsburg influence in Rome.',
         },
         {
           col: '2. CROWN FINANCES',
-          text: 'Explain how Cromwell highlighted Church riches; breaking with Rome allowed the Crown to seize tenths and first fruits, funding national coastal defence.',
+          text: 'Analyse the fiscal incentives of subordinating ecclesiastical revenues, first fruits, and property to the royal treasury.',
         },
         {
           col: '3. IMPERIAL SOVEREIGNTY',
-          text: 'Explain Thomas Cromwell’s 1533 Act in Restraint of Appeals declaring England an ‘Empire’ subject to no foreign pope or potentate.',
+          text: 'Evaluate the constitutional doctrine that England was an autonomous empire subject to no external foreign jurisdiction.',
         },
       ],
       connectives:
-        'A primary cause of the break with Rome was... &bull; In particular, the dynastic crisis... &bull; Furthermore, Thomas Cromwell demonstrated... &bull; Crucially, the 1534 Act of Supremacy... &bull; Consequently...',
+        'A primary catalyst for religious divergence was... &bull; In particular, dynastic vulnerabilities created... &bull; Furthermore, legal manoeuvres demonstrated that... &bull; Crucially, statutory enactments established... &bull; Consequently, long-term sovereignty...',
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
       timelineMission:
@@ -149,7 +169,11 @@ const enquiryConfigs = [
         paraRef: '[2.1]',
         date: '1558–1559',
         questionHeading: 'Why was England religiously fractured when Elizabeth became Queen?',
-        bullets: ['Edward/Mary Swings', '280+ Burnings', 'Puritan Exiles'],
+        bullets: [
+          'Marian Heresy Executions',
+          'Genevan Exile Radicals',
+          'Deep-Seated Confessional Polarization',
+        ],
         focusClue: 'Why did Mary I’s burnings produce profound anti-Catholic fear across England?',
       },
       {
@@ -157,7 +181,11 @@ const enquiryConfigs = [
         paraRef: '[2.2]',
         date: '1559',
         questionHeading: 'How did the Act of Supremacy restore royal control through compromise?',
-        bullets: ['‘Supreme Governor’', 'Avoids Offence', 'Bishops Dismissed'],
+        bullets: [
+          'Governor Designation',
+          'Marian Episcopacy Refusals',
+          'Clerical Oath Administration',
+        ],
         focusClue:
           'Why was the title ‘Supreme Governor’ a clever compromise for moderate subjects?',
       },
@@ -166,7 +194,11 @@ const enquiryConfigs = [
         paraRef: '[2.3]',
         date: '1559',
         questionHeading: 'How did the Act of Uniformity establish the ‘Middle Way’ (Via Media)?',
-        bullets: ['1559 Prayer Book', 'Via Media', '12d Recusancy Fine'],
+        bullets: [
+          'Book of Common Prayer Rubrics',
+          'Ambiguous Eucharistic Phrasing',
+          'Twelve-Pence Attendance Levies',
+        ],
         focusClue:
           'Why did Elizabeth state that she had ‘no desire to make windows into men’s souls’?',
       },
@@ -175,7 +207,11 @@ const enquiryConfigs = [
         paraRef: '[2.4]',
         date: '1568–1570',
         questionHeading: 'How did Mary Queen of Scots and the Papal Bull spark Catholic plots?',
-        bullets: ['Mary Queen of Scots', '1569 Rebellion', '1570 Papal Bull'],
+        bullets: [
+          'Earls of Northumberland & Westmorland',
+          'Durham Cathedral Mass Reinstated',
+          'Regnans in Excelsis Excommunication',
+        ],
         focusClue: 'How did the 1570 Papal Bull turn practicing Catholics into suspected traitors?',
       },
       {
@@ -183,7 +219,11 @@ const enquiryConfigs = [
         paraRef: '[2.5]',
         date: '1571–1588',
         questionHeading: 'How did Walsingham’s spy network lead to Mary’s execution?',
-        bullets: ['Walsingham Spies', '1586 Babington Plot', '1587 Execution'],
+        bullets: [
+          'Brewery Beer-Barrel Ciphers',
+          'Decoded Babington Letters',
+          'Fotheringhay Scaffolding Warrant',
+        ],
         focusClue: 'Why was executing an anointed queen such a dangerous precedent for Elizabeth?',
       },
     ],
@@ -195,7 +235,7 @@ const enquiryConfigs = [
         tariff: 'Question 3(a): Explain One Difference [4 marks &bull; 5 mins]',
         question:
           'Explain one way in which Elizabeth I’s religious policy in 1559 was different from Mary I’s religious policy (1553–1558). [4 marks]',
-        hint: 'Contrast Mary I’s systematic heresy burnings and strict papal obedience with Elizabeth’s compromise on outward conformity without investigating private conscience.',
+        hint: 'Consider the extent to which state enforcement shifted from active heresy persecutions to formal demands for outward legal conformity.',
         stems:
           'One way religious policy differed was... &bull; Under Mary I, religious dissent was punished by... &bull; In contrast, Elizabeth I...',
       },
@@ -205,16 +245,16 @@ const enquiryConfigs = [
           'Explain the importance of the Elizabethan Religious Settlement (1559) for religious stability in England. [8 marks]',
         structureStrip: [
           {
-            col: '1. VIA MEDIA & DEFUSING REBELLION',
-            text: 'Explain how the 1559 Prayer Book’s ambiguous Communion wording and traditional vestments allowed moderate Catholics to attend without violating conscience.',
+            col: '1. THEOLOGICAL COMPROMISE',
+            text: 'Analyse how deliberately ambiguous liturgical language and ritual continuities defused widespread provincial resistance.',
           },
           {
-            col: '2. SECURING THE PROTESTANT STATE',
-            text: 'Explain how adopting ‘Supreme Governor’ and enforcing 12d recusancy fines established royal control while uniting the nation against foreign Catholic threats.',
+            col: '2. ENFORCEMENT & CONFORMITY',
+            text: 'Evaluate how legislative supremacy oaths and financial penalties established state control while discouraging foreign intervention.',
           },
         ],
         connectives:
-          'This was of paramount importance because... &bull; Specifically, the compromise prevented... &bull; Furthermore, the new legal settlement established that... &bull; Crucially, this secured stability because...',
+          'This was of paramount importance because... &bull; Specifically, structural compromise prevented... &bull; Furthermore, the statutory settlement established that... &bull; Crucially, national stability was secured because...',
         wordBank:
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
@@ -241,7 +281,11 @@ const enquiryConfigs = [
         paraRef: '[3.1]',
         date: '1585–1587',
         questionHeading: 'What imperial and religious rivalries provoked Philip II’s invasion?',
-        bullets: ['Catholic Crusade', 'Drake’s Raids', 'Dutch Rebel Aid'],
+        bullets: [
+          'Treaty of Nonsuch Subsidies',
+          'Caribbean Privateering Bullion',
+          'Execution of Catholic Claimant',
+        ],
         focusClue: 'Why did Philip view invading England as a holy crusade against Protestantism?',
       },
       {
@@ -249,7 +293,11 @@ const enquiryConfigs = [
         paraRef: '[3.2]',
         date: '1587',
         questionHeading: 'How did Drake’s raid on Cadiz delay the Spanish invasion?',
-        bullets: ['1587 Cadiz Raid', 'Barrels Burned', '‘Singed Beard’ (1yr)'],
+        bullets: [
+          'Burning of Seasoned Barrel Wood',
+          'Loss of Water & Provisions',
+          'Twelve-Month Fleet Postponement',
+        ],
         focusClue:
           'How did burning seasoned barrel wood ruin Spanish water and food supplies at sea?',
       },
@@ -258,7 +306,11 @@ const enquiryConfigs = [
         paraRef: '[3.3]',
         date: 'July 1588',
         questionHeading: 'How did the English fleet harry the Armada up the English Channel?',
-        bullets: ['130-Ship Crescent', 'Race-Built Ships', 'Culverin Cannons'],
+        bullets: [
+          '130-Vessel Crescent Formation',
+          'Long-Range Culverin Broadsides',
+          'Running Standoff Gunnery Duels',
+        ],
         focusClue:
           'Why did long-range gunnery give the English fleet a decisive tactical advantage?',
       },
@@ -267,7 +319,11 @@ const enquiryConfigs = [
         paraRef: '[3.4]',
         date: '7–8 August 1588',
         questionHeading: 'How did English fireships at Calais shatter the Spanish formation?',
-        bullets: ['Calais Anchorage', '8 Hellburners', 'Anchor Cables Cut'],
+        bullets: [
+          'Eight Pitch-Loaded Hellburners',
+          'Severed Anchor Cables at Midnight',
+          'Scattered Defensive Discipline',
+        ],
         focusClue:
           'Why did cutting anchor cables leave Spanish ships helpless in rough North Sea weather?',
       },
@@ -276,7 +332,11 @@ const enquiryConfigs = [
         paraRef: '[3.5]',
         date: 'Aug–Sept 1588',
         questionHeading: 'How did the Battle of Gravelines and severe storms destroy the fleet?',
-        bullets: ['Gravelines Battle', '‘Protestant Wind’', '50+ Shipwrecks'],
+        bullets: [
+          'Point-Blank Hull Bombardment',
+          'South-Westerly Gales in North Sea',
+          'Fifty Wrecks on Scottish Coasts',
+        ],
         focusClue: 'Why did Elizabeth’s medal declare: ‘God blew and they were scattered’?',
       },
     ],
@@ -288,7 +348,7 @@ const enquiryConfigs = [
         tariff: 'Question 1: Describe One Feature [4 marks &bull; 5 mins]',
         question:
           'Describe one key feature of the English race-built warships designed by Sir John Hawkins. [4 marks]',
-        hint: 'Focus on how English race-built galleons were lower, longer, and faster, carrying long-range culverin cannons that could reload quickly.',
+        hint: 'Consider naval architectural design, hull profiles, and how artillery battery configurations influenced manoeuvrability and reload rates.',
         stems:
           'One key feature of English race-built galleons was... &bull; Specifically, they were designed with... &bull; This gave the English an advantage because...',
       },
@@ -299,20 +359,20 @@ const enquiryConfigs = [
         stimulus: ['The crescent formation in the Channel', 'The fireships at Calais'],
         structureStrip: [
           {
-            col: '1. CHANNEL RUN & CRESCENT',
-            text: 'Explain the 130-ship crescent formation sailing up the Channel; running battles off Plymouth and Isle of Wight tested standoff gunnery.',
+            col: '1. INITIAL ENGAGEMENTS',
+            text: 'Analyse how defensive naval formations encountered long-range standoff gunnery during the initial channel approach.',
           },
           {
-            col: '2. CALAIS FIRESHIPS & GRAVELINES',
-            text: 'Explain Drake’s midnight fireships forcing Spanish captains to cut anchors; English race-built galleons battered scattered ships at Gravelines.',
+            col: '2. TACTICAL TURNING POINT',
+            text: 'Evaluate how nighttime disruption at anchor dispersed the fleet and enabled close-range decisive broadsides.',
           },
           {
-            col: '3. PROTESTANT WIND & RETREAT',
-            text: 'Explain south-westerly gales driving Armada into the North Sea, wrecking over 50 galleons on the treacherous Scottish and Irish coasts.',
+            col: '3. RETREAT & ADVERSE CONDITIONS',
+            text: 'Explain how severe weather conditions and navigational hazards compounded losses during the northern return voyage.',
           },
         ],
         connectives:
-          'The campaign began in July 1588 when... &bull; In response, English warships... &bull; The decisive turning point occurred at Calais when... &bull; Following the fireship chaos, the Battle of Gravelines resulted in... &bull; Finally, ferocious storms...',
+          'The naval campaign commenced when... &bull; In response, maritime tactical operations... &bull; The decisive operational turning point occurred when... &bull; Following tactical disruption, subsequent engagements resulted in... &bull; Finally, severe environmental conditions...',
         wordBank:
           'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
       },
@@ -339,7 +399,11 @@ const enquiryConfigs = [
         paraRef: '[4.1]',
         date: '1629–1640',
         questionHeading: 'Why did Charles I’s ‘Personal Rule’ without Parliament cause outrage?',
-        bullets: ['Divine Right', '11-Yr Personal Rule', 'Ship Money Tax'],
+        bullets: [
+          'Eleven-Year Legislative Hiatus',
+          'Inland Ship Money Levies',
+          'Hampden Court Resistance Challenge',
+        ],
         focusClue:
           'Why did inland Ship Money spark widespread constitutional outrage across England?',
       },
@@ -348,7 +412,11 @@ const enquiryConfigs = [
         paraRef: '[4.2]',
         date: '1640–1642',
         questionHeading: 'How did the breakdown of trust lead to armed civil conflict?',
-        bullets: ['Long Parliament', '5 MPs Armed Raid', 'Royal Standard'],
+        bullets: [
+          'Arrest Attempt on Five Members',
+          'Militia Ordinance Power Contest',
+          'Nottingham Royal Standard Raised',
+        ],
         focusClue: 'Why did the King entering the Commons with armed soldiers make war inevitable?',
       },
       {
@@ -356,7 +424,11 @@ const enquiryConfigs = [
         paraRef: '[4.3]',
         date: '1645–1648',
         questionHeading: 'How did the New Model Army defeat the King at the Battle of Naseby?',
-        bullets: ['New Model Army', '1645 Naseby Victory', 'Scottish Pact 1648'],
+        bullets: [
+          'Full-Time Professional Redcoats',
+          'Cromwellian Ironside Cavalry Charges',
+          'Royalist Headquarters Rout',
+        ],
         focusClue:
           'Why did Charles’s secret deal brand him in soldiers’ eyes as a treacherous ‘man of blood’?',
       },
@@ -365,7 +437,11 @@ const enquiryConfigs = [
         paraRef: '[4.4]',
         date: '1648–1649',
         questionHeading: 'Why did Pride’s Purge and the High Court lead to regicide?',
-        bullets: ['1648 Pride’s Purge', 'Rump Parliament', 'Regicide (30 Jan 1649)'],
+        bullets: [
+          'Expulsion of Moderate Members',
+          'Treason Indictment of Monarchy',
+          'Whitehall Scaffold Beheading',
+        ],
         focusClue:
           'On what constitutional grounds did Charles I refuse to recognize the trial court?',
       },
@@ -374,7 +450,11 @@ const enquiryConfigs = [
         paraRef: '[4.5]',
         date: '1660–1689',
         questionHeading: 'How did the Glorious Revolution permanently limit royal power?',
-        bullets: ['1660 Restoration', '1688 William Lands', '1689 Bill of Rights'],
+        bullets: [
+          'Torbay Dutch Invasion Force',
+          'Flight of the Stuart Monarch',
+          'Statutory Parliamentary Supremacy',
+        ],
         focusClue:
           'How did the 1689 Bill of Rights legally end the Stuart doctrine of Divine Right?',
       },
@@ -392,20 +472,20 @@ const enquiryConfigs = [
       ],
       structureStrip: [
         {
-          col: '1. DUPLICITY & DIVINE RIGHT',
-          text: 'Explain Charles’s obstinate belief in Divine Right; he treated all post-war peace negotiations as delaying tactics while attempting to rearm.',
+          col: '1. IDEOLOGICAL OBSTINACY',
+          text: 'Analyse the refusal to accept binding constitutional constraints and the perception that negotiations were bad-faith stalling tactics.',
         },
         {
-          col: '2. SECOND CIVIL WAR (1648)',
-          text: 'Explain how Charles made a secret pact with the Scots to invade England; the New Model Army viewed him as a ‘man of blood’ who provoked needless death.',
+          col: '2. MILITARY RETALIATION',
+          text: 'Explain how attempting to renew armed hostilities through external alliances hardened military resolve against the monarch.',
         },
         {
-          col: '3. PRIDE’S PURGE & REGICIDE',
-          text: 'Explain how the Army purged moderate MPs from Parliament in Dec 1648; the Rump Parliament created a High Court of Justice to execute the King for treason.',
+          col: '3. POLITICAL RADICALISATION',
+          text: 'Evaluate how military intervention in the legislature removed political moderates and enabled unprecedented judicial action.',
         },
       ],
       connectives:
-        'A primary reason Parliament executed Charles I was... &bull; In particular, his unshakeable belief in Divine Right... &bull; Furthermore, his secret Scottish alliance provoked... &bull; Crucially, Colonel Pride’s purge left... &bull; Consequently...',
+        'A primary catalyst for unprecedented judicial retribution was... &bull; In particular, adherence to absolute prerogative provoked... &bull; Furthermore, renewed armed conflict demonstrated that... &bull; Crucially, legislative purges ensured that... &bull; Consequently, judicial proceedings culminated in...',
       wordBank:
         'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
       timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
@@ -431,7 +511,11 @@ const enquiryConfigs = [
         paraRef: '[5.1]',
         date: '1517–1534',
         questionHeading: 'How did Henry VIII reshape sovereign authority in the Reformation?',
-        bullets: ['Royal Supremacy', 'Statutory Power', 'Monasteries Sold'],
+        bullets: [
+          'Papal Jurisdictional Annulment',
+          'Parliamentary Statute Legitimacy',
+          'Monastic Land Redistribution',
+        ],
         focusClue: 'Did the break with Rome increase royal prerogative or parliamentary authority?',
       },
       {
@@ -439,7 +523,11 @@ const enquiryConfigs = [
         paraRef: '[5.2]',
         date: '1559–1588',
         questionHeading: 'How did the Elizabethan settlement forge a Protestant national state?',
-        bullets: ['Via Media', 'Outward Conformity', '1588 Armada Unity'],
+        bullets: [
+          'Via Media Theological Ambiguity',
+          'Recusancy Fines for Absence',
+          'Defensive Standoff Naval Victory',
+        ],
         focusClue:
           'How did external Catholic threats unite Crown and Parliament during Elizabeth’s reign?',
       },
@@ -448,7 +536,11 @@ const enquiryConfigs = [
         paraRef: '[5.3]',
         date: '1603–1640',
         questionHeading: 'Why did Stuart claims of Divine Right provoke constitutional crisis?',
-        bullets: ['Divine Right Claims', 'Ship Money Dispute', 'Bishops’ Wars'],
+        bullets: [
+          'Unparliamentary Revenue Schemes',
+          'Inland Ship Money Legal Defiance',
+          'Scottish Covenant Resistance',
+        ],
         focusClue: 'Why did Stuart absolutism break down while Tudor compromise had succeeded?',
       },
       {
@@ -456,7 +548,11 @@ const enquiryConfigs = [
         paraRef: '[5.4]',
         date: '1642–1649',
         questionHeading: 'Why was the trial and execution of Charles I a radical turning point?',
-        bullets: ['Citizen Army Beats King', 'King Held to Law', 'Republic Created'],
+        bullets: [
+          'New Model Army Sovereignty',
+          'Accountability of Anointed Monarchy',
+          'Abolition of House of Lords',
+        ],
         focusClue:
           'Why was publicly executing an anointed king the most shocking event in Tudor-Stuart history?',
       },
@@ -465,7 +561,11 @@ const enquiryConfigs = [
         paraRef: '[5.5]',
         date: '1660–1689',
         questionHeading: 'How did the 1689 Bill of Rights finalize Parliamentary Supremacy?',
-        bullets: ['James II Expelled', 'Parliamentary Veto', 'Statutory Monarchy'],
+        bullets: [
+          'Prohibition of Dispensing Powers',
+          'Taxation & Standing Army Veto',
+          'Contractual Constitutional Settlement',
+        ],
         focusClue:
           'Why does the 1689 Bill of Rights form the bedrock of Britain’s modern democracy?',
       },
@@ -478,7 +578,7 @@ const enquiryConfigs = [
         tariff: 'Question 1: Explain One Consequence [4 marks &bull; 5 mins]',
         question:
           'Explain one consequence of the Bill of Rights passed by Parliament in 1689. [4 marks]',
-        hint: 'Focus on how the statute permanently abolished the royal suspension of laws and taxation without parliamentary consent, establishing statutory constitutional monarchy.',
+        hint: 'Consider the permanent transfer of sovereign authority over taxation, standing armies, and legislative suspension to the elected assembly.',
         stems:
           'One major consequence was... &bull; Specifically, the Bill of Rights established that... &bull; Consequently, this permanently altered the constitution because...',
       },
@@ -488,20 +588,20 @@ const enquiryConfigs = [
           '‘The execution of Charles I in 1649 was the most significant turning point in the struggle between Crown and Parliament.’ How far do you agree? [12 marks]',
         structureStrip: [
           {
-            col: '1. REGICIDE & ABOLITION (1649)',
-            text: 'Explain how executing Charles I shattered Divine Right and proved Parliament could eliminate the monarchy by military force.',
+            col: '1. RADICAL REGICIDE & ABOLITION',
+            text: 'Analyse how judicial regicide shattered the sacrosanct status of Divine Right and temporarily abolished monarchical governance.',
           },
           {
-            col: '2. BILL OF RIGHTS (1689)',
-            text: 'Explain how the 1689 settlement created permanent statutory limits on the Crown, ensuring no taxation or standing army without Parliament.',
+            col: '2. STATUTORY SETTLEMENT',
+            text: 'Evaluate how permanent statutory limits bound the Crown to legal governance, parliamentary consent, and financial oversight.',
           },
           {
             col: '3. COMPARATIVE VERDICT',
-            text: 'Weigh whether the radical violence of 1649 was more significant than the enduring, peaceful constitutional victory of 1689.',
+            text: 'Weigh whether physical overthrow and republican experiments represented a more profound transformation than permanent statutory compromise.',
           },
         ],
         connectives:
-          'A compelling argument supporting this statement is... &bull; On one hand, evidence suggests that... &bull; However, an alternative perspective is that... &bull; Crucially, long-term stability was secured when... &bull; In conclusion, the decisive turning point was... because...',
+          'A compelling argument supporting this statement is... &bull; On one hand, evidence suggests that... &bull; However, an alternative perspective is that... &bull; Crucially, enduring systemic reform was secured when... &bull; In conclusion, the decisive constitutional turning point was... because...',
         wordBank:
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },

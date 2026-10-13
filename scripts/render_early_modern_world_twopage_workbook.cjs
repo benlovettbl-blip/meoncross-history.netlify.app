@@ -145,7 +145,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'In 1450, global power was concentrated in... • Crucially, the Ottoman capture of Constantinople meant that... • In stark contrast, European monarchies were... • This imbalance directly forced explorers like Columbus and da Gama to... • Ultimately, European expansion was born not of strength, but of desperation to...',
+      'In 1450, global power was concentrated primarily in... • Crucially, geopolitical dominance across eastern trade routes meant that... • In stark contrast, peripheral European monarchies were... • This systemic imbalance directly compelled... • Ultimately, global oceanic expansion was driven by... because...',
   },
   {
     taskType: 'source_utility',
@@ -183,7 +183,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Source A (Visual: The Treaty of Tordesillas) is useful for showing how Spain claimed divine and legal ownership over... • However, as a formal diplomatic document it does not reveal the violent resistance or economic greed behind... • In contrast, Source B (Textual: Hakluyt’s Discourse) provides insider strategic insight into England’s desire to... • Cross-referencing both visual and textual sources demonstrates that exploration was driven by... • Overall, Source [A/B] is more valuable for this enquiry because...',
+      'Source A is valuable for revealing contemporary perspectives regarding... • However, as an official institutional record, it omits critical evidence concerning... • In contrast, Source B provides targeted insight into... • Cross-referencing both visual and textual evidence demonstrates that... • Overall, Source [A/B] is more valuable for investigating this enquiry because...',
     doNow: [
       {
         q: 'Which Chinese imperial dynasty deployed massive treasure fleets under Zheng He?',
@@ -304,7 +304,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Initially, European encounters in India and the Americas were characterised by... • However, as corporate profits grew, merchant companies began to... • The turning point occurred when... • This resulted in the catastrophic transformation of... • Ultimately, commercial trade evolved into imperial takeover because...',
+      'Initially, European encounters in India and the Americas were characterised by... • However, as corporate influence expanded, commercial enterprises began to... • The decisive turning point occurred when... • This resulted in the direct transformation of... • Ultimately, commercial operations evolved into territorial dominion because...',
   },
   {
     taskType: 'extended_writing',
@@ -377,7 +377,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Religious division under James I was profoundly volatile because... • Specifically, the anger of Catholic gentry like Catesby was triggered by... • The discovery of the cellar plot demonstrated that... • Consequently, the Jacobean state responded with... • Therefore, the Gunpowder Plot was historically significant because...',
+      'Religious division in this period was profoundly volatile because... • Specifically, growing disaffection among religious minorities was provoked by... • The escalation into clandestine conspiracy demonstrated that... • Consequently, the royal administration responded with... • Therefore, this crisis was of decisive historical significance because...',
   },
   {
     taskType: 'historical_interpretations',
@@ -416,7 +416,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Interpretation 1 argues that the Civil War was an unavoidable fight against royal tyranny because... • This is supported by evidence such as Charles I’s eleven years of Personal Rule and... • However, Interpretation 2 challenges this view, arguing instead that war was an accidental disaster caused by... • This is shown by the fact that in 1640 MPs wanted peace, but Charles I... • On balance, I find Interpretation [1/2] more convincing because...',
+      'Interpretation 1 asserts that the outbreak of armed conflict was unavoidable because... • This perspective is corroborated by evidence demonstrating that... • However, Interpretation 2 challenges this thesis, contending instead that... • In particular, this alternative interpretation emphasizes that... • On balance, Interpretation [1/2] provides a more convincing explanation because...',
     doNow: [
       {
         q: 'What political doctrine stated that kings answer solely to God, not to Parliament?',
@@ -683,7 +683,7 @@ const lessonConfigs = [
       },
     ],
     connectives:
-      'Enslaved Africans constantly resisted the plantation machine through... • On a daily basis, covert agency was expressed by... • More aggressively, militant insurrections like Tacky’s Rebellion proved that... • Most remarkably, the Jamaican Maroons under Queen Nanny demonstrated... • Ultimately, the historical significance of slave resistance is that it disproves the myth of...',
+      'Enslaved populations constantly challenged the plantation system through... • On a daily basis, covert resistance was expressed by... • More directly, organized armed uprisings demonstrated that... • Furthermore, autonomous resistance communities proved that... • Ultimately, the historical significance of sustained resistance is that...',
   },
 ];
 
