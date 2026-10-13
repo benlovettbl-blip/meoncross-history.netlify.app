@@ -132,28 +132,28 @@ function renderStandardFrontCover({
       specTableHtml = `
       <!-- Pearson Edexcel Specification (Approach B: Official 2-Column Vector Table) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
-        <!-- Grey Header Bar matching Edexcel Specification -->
-        <div style="background: #7f858c; color: #ffffff; padding: 3px 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; letter-spacing: 0.3px; flex-shrink: 0; border-bottom: 1.2px solid #555;">
+        <!-- Slate Header Bar matching Edexcel Specification -->
+        <div style="background: #1e293b; color: #ffffff; padding: 4px 10px; font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; flex-shrink: 0; border-bottom: 1.5px solid #000;">
           ${tableHeader}
         </div>
 
-        <div style="display: flex; flex-direction: column; flex: 1; font-family: 'Inter', sans-serif; font-size: 7.1pt; line-height: 1.22; color: #111;">
+        <div style="display: flex; flex-direction: column; flex: 1; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.28; color: #111;">
           ${tableRows
             .map((row, rIdx, arr) => {
               const isLast = rIdx === arr.length - 1;
-              const borderBottom = isLast ? '' : 'border-bottom: 1px solid #c0c0c0;';
+              const borderBottom = isLast ? '' : 'border-bottom: 1.2px solid #cbd5e1;';
               const bulletsHtml = row.bullets
                 .map(
                   (b) =>
-                    `<div style="margin-bottom: 1.5px; display: flex;"><span style="margin-right: 4px; flex-shrink: 0;">&bull;</span><span>${b}</span></div>`,
+                    `<div style="margin-bottom: 2.5px; display: flex; align-items: baseline;"><span style="margin-right: 6px; font-weight: 900; color: #000; flex-shrink: 0;">&bull;</span><span style="font-size: 8.1pt; color: #000; font-weight: 500;">${b}</span></div>`,
                 )
                 .join('');
               return `
             <div style="display: flex; flex: 1; ${borderBottom}">
-              <div style="width: 28%; font-weight: 800; color: #000; padding: 4px 6px; border-right: 1.2px solid #c0c0c0; background: #fafafa; display: flex; align-items: flex-start; font-size: 7.3pt; line-height: 1.18;">
+              <div style="width: 30%; font-weight: 800; color: #000; padding: 4.5px 8px; border-right: 1.2px solid #cbd5e1; background: #f8fafc; display: flex; align-items: center; font-size: 8.3pt; line-height: 1.22;">
                 ${row.numTitle}
               </div>
-              <div style="width: 72%; padding: 3px 8px; display: flex; flex-direction: column; justify-content: center; background: #fff;">
+              <div style="width: 70%; padding: 4px 10px; display: flex; flex-direction: column; justify-content: center; background: #fff;">
                 ${bulletsHtml}
               </div>
             </div>`;

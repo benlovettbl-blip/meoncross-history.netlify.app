@@ -83,7 +83,7 @@ function getBase64Image(relPath) {
   return relPath;
 }
 
-// Approved Witty Revision Quips (24 Pages per Key Topic)
+// Approved Witty Revision Quips (16 Pages per Key Topic)
 const EEE_FOOTERS = {
   KT1: [
     'Early Elizabethan England Revision Hub • Key Topic 1 • The History Department', // Page 1
@@ -91,25 +91,17 @@ const EEE_FOOTERS = {
     '"Chronology is queen: 1558 Accession before 1559 Settlement, always."', // Page 3
     '"Patronage: Elizabeth gave out titles and monopolies, not marks; write the detail!"', // Page 4
     '"Legitimacy was questioned because of Henry VIII; your explanation must be unquestionable."', // Page 5
-    '"Extended writing: develop your 3-paragraph structure with precise evidence on every line."', // Page 6
-    '"Analytical precision: link Crown patronage directly to political stability in the counties."', // Page 7
-    '"The Middle Way was a compromise: Protestants got English Bibles, Catholics kept vestments."', // Page 8
-    '"Royal Injunctions: All clergy had to teach Royal Supremacy — teach the examiner your knowledge."', // Page 9
-    '"Recusancy fines: 1 shilling was a week\'s wage for a labourer; factual depth secures Grade 9."', // Page 10
-    '"Explain why: connect the 1559 Settlement to Marian bishops refusing the Oath of Supremacy."', // Page 11
-    '"Puritans hated crucifixes and vestments; examiners hate vague assertions."', // Page 12
-    '"Vestments crisis: 37 vicars suspended by Parker in 1566 proved Protestant division."', // Page 13
-    '"Disciplinary notes: evaluate Puritan frustration against the Queen\'s demand for uniform order."', // Page 14
-    '"Causal chains: show how Catholic excommunication in 1570 hardened government policy."', // Page 15
-    '"Mary, Queen of Scots arrived in 1568 in a fishing boat; don\'t let your essay drift."', // Page 16
-    '"Casket Letters: Love letters or forged gossip? Elizabeth used them to keep Mary under lock and key."', // Page 17
-    '"Independent practice: forensic analysis of Mary Stuart as an alternative Catholic figurehead."', // Page 18
-    '"Sustained judgment: weigh foreign threat against domestic legitimacy to conclude your essay."', // Page 19
-    '"Visualise the structure: Monarch rules, Privy Council advises, Parliament taxes, JPs enforce."', // Page 20
-    '"Via Media: Neither Geneva nor Rome, but an English compromise designed to avoid civil war."', // Page 21
-    '"Grade 9 Rule: Q1 requires Feature + Detail. Name the feature, then drop the factual hammer."', // Page 22
-    '"Timed Condition Challenge: 12 marks means 3 paragraphs with 3 distinct causal links."', // Page 23
-    'Key Topic 1 Complete • Cumulative Assessment & Digital Practice Hub', // Page 24
+    '"Grade 9 Rule: Q1 requires Feature + Detail. Name the feature, then drop the factual hammer."', // Page 6
+    '"The Middle Way was a compromise: Protestants got English Bibles, Catholics kept vestments."', // Page 7
+    '"Royal Injunctions: All clergy had to teach Royal Supremacy — teach the examiner your knowledge."', // Page 8
+    '"Explain why: connect the 1559 Settlement to Marian bishops refusing the Oath of Supremacy."', // Page 9
+    '"Puritans hated crucifixes and vestments; examiners hate vague assertions."', // Page 10
+    '"Vestments crisis: 37 vicars suspended by Parker in 1566 proved Protestant division."', // Page 11
+    '"Causal chains: show how Catholic excommunication in 1570 hardened government policy."', // Page 12
+    '"Mary, Queen of Scots arrived in 1568 in a fishing boat; don\'t let your essay drift."', // Page 13
+    '"Casket Letters: Love letters or forged gossip? Elizabeth kept Mary under lock and key."', // Page 14
+    '"Timed Condition Challenge: 16 marks means criteria-led evaluation and a sustained verdict."', // Page 15
+    'Key Topic 1 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
   ],
   KT2: [
     'Early Elizabethan England Revision Hub • Key Topic 2 • The History Department', // Page 1
@@ -117,25 +109,17 @@ const EEE_FOOTERS = {
     '"Regnans in Excelsis (1570): The Pope declared Elizabeth a heretic; Elizabeth declared plotters traitors."', // Page 3
     '"Walsingham\'s codebreaker Thomas Phelippes decoded the beer barrel letters: detail matters!"', // Page 4
     '"Ridolfi, Throckmorton, Babington: Three plots, three failures, one execution at Fotheringhay."', // Page 5
-    '"Extended writing: explain how each domestic Catholic plot had direct foreign Spanish backing."', // Page 6
-    '"Forensic detail: the Bond of Association (1584) sealed Mary Stuart\'s fate before Babington wrote."', // Page 7
-    '"Privateers were legal pirates with a royal license: Drake took Spanish silver for England\'s glory."', // Page 8
-    '"Cacafuego surrendered £140,000 of treasure: Elizabeth paid off the entire national debt."', // Page 9
-    '"Sustained response: explain how privateering transformed commercial rivalry into formal war."', // Page 10
-    '"Treaty of Nonsuch (1585): Dudley\'s 7,400 troops in the Netherlands made war with Spain inevitable."', // Page 11
-    '"The Netherlands was England\'s front door: Elizabeth could not allow Parma to control Dutch deep-water ports."', // Page 12
-    "\"Drake at Cadiz: 'Singeing the King of Spain's Beard' destroyed 30 ships and delayed the Armada by a year.\"", // Page 13
-    '"Disciplinary analysis: evaluate the logistical impact of destroying seasoned barrel staves at Cadiz."', // Page 14
-    '"Tactical breakdown: English race-built galleons versus high Spanish castles in the Channel duel."', // Page 15
-    '"The Spanish crescent formation held until eight English fireships drifted into Calais Roads at midnight."', // Page 16
-    '"Battle of Gravelines: Agile English galleons with rapid-fire culverins smashed the drifting Spanish fleet."', // Page 17
-    '"Independent practice: weigh fireship chaos against Medina Sidonia\'s lack of deep-water ports."', // Page 18
-    '"Sustained conclusion: explain why the Protestant Wind finished what English gunnery started."', // Page 19
-    '"Armada Tactics: High Spanish castles for boarding vs low English race-built galleons for gunnery."', // Page 20
-    '"The Protestant Wind: God blew and they were scattered, but Hawkins\' ship design won the battle."', // Page 21
-    '"Grade 9 Essay: Don\'t just describe the fireships — explain why panic broke the defensive formation."', // Page 22
-    '"Timed Condition Challenge: 16 marks means criteria-led evaluation and a sustained, justified verdict."', // Page 23
-    'Key Topic 2 Complete • Cumulative Assessment & Digital Practice Hub', // Page 24
+    '"Forensic detail: the Bond of Association (1584) sealed Mary Stuart\'s fate before Babington wrote."', // Page 6
+    '"Privateers were legal pirates with a royal license: Drake took Spanish silver for England\'s glory."', // Page 7
+    '"Cacafuego surrendered £140,000 of treasure: Elizabeth paid off the entire national debt."', // Page 8
+    '"Sustained response: explain how privateering transformed commercial rivalry into formal war."', // Page 9
+    '"Treaty of Nonsuch (1585): Dudley\'s 7,400 troops in the Netherlands made war with Spain inevitable."', // Page 10
+    "\"Drake at Cadiz: 'Singeing the King of Spain's Beard' destroyed 30 ships and delayed the Armada by a year.\"", // Page 11
+    '"Tactical breakdown: English race-built galleons versus high Spanish castles in the Channel duel."', // Page 12
+    '"The Spanish crescent formation held until eight English fireships drifted into Calais Roads at midnight."', // Page 13
+    '"Battle of Gravelines: Agile English galleons with rapid-fire culverins smashed the drifting Spanish fleet."', // Page 14
+    '"The Protestant Wind: God blew and they were scattered, but Hawkins\' ship design won the battle."', // Page 15
+    'Key Topic 2 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
   ],
   KT3: [
     'Early Elizabethan England Revision Hub • Key Topic 3 • The History Department', // Page 1
@@ -144,28 +128,20 @@ const EEE_FOOTERS = {
     '"The Theatre (1576): The first permanent playhouse in London, built outside the city walls in Shoreditch."', // Page 4
     '"Groundlings paid a penny to stand in the rain; the rich paid sixpence for covered gallery seats."', // Page 5
     '"Extended writing: analyse how Elizabethan education reinforced rigid social class hierarchies."', // Page 6
-    '"Disciplinary notes: compare noble household education with grammar school humanist curricula."', // Page 7
-    '"Poverty grew because population rose from 3m to 4m, while wool enclosure eliminated farm jobs."', // Page 8
-    '"1576 Act for Relief of the Poor: Local parishes provided wool and hemp so the unemployed could work."', // Page 9
-    '"Sustained response: distinguish clearly between the Impotent Poor and Sturdy Beggars."', // Page 10
-    '"Forensic evaluation: explain why local parish rates were revolutionary in replacing monastic charity."', // Page 11
-    '"New navigation tech: The astrolabe measured stars, but Drake\'s daring navigated the globe."', // Page 12
-    '"Drake was the first Englishman to circumnavigate the earth, returning in 1580 with 4,700% profit."', // Page 13
-    '"Disciplinary analysis: assess the geopolitical impact of claiming Nova Albion (California) in 1579."', // Page 14
-    '"Commercial turning point: Drake\'s return proved England could challenge Spain on the world ocean."', // Page 15
-    '"Walter Raleigh planned the Virginia colony from London; he never actually set foot in Roanoke himself."', // Page 16
-    '"Roanoke failed because the Tiger ruined seeds, supplies arrived late, and relations with Wingina collapsed."', // Page 17
-    '"Independent practice: analyse the three core reasons for the collapse of the 1585 Roanoke colony."', // Page 18
-    '"Sustained verdict: explain how Roanoke\'s failure laid the technical groundwork for Jamestown in 1607."', // Page 19
-    '"The Globe Theatre Blueprint: The Heavens above, the Pit below, and the Tiring House backstage."', // Page 20
-    '"From Deserving Poor to Idle Vagabonds: Elizabethan Poor Laws laid the foundation for 250 years of welfare."', // Page 21
-    '"Grade 9 Rule: In 12-mark questions, link your causes! Enclosure caused unemployment, which caused vagrancy."', // Page 22
-    '"Timed Condition Challenge: Structure your points with Point, Fact, Explanation, and Causal Link."', // Page 23
-    'Key Topic 3 Complete • Cumulative Assessment & Digital Practice Hub', // Page 24
+    '"Poverty grew because population rose from 3m to 4m, while wool enclosure eliminated farm jobs."', // Page 7
+    '"1576 Act for Relief of the Poor: Local parishes provided wool and hemp so the unemployed could work."', // Page 8
+    '"Sustained response: distinguish clearly between the Impotent Poor and Sturdy Beggars."', // Page 9
+    '"New navigation tech: The astrolabe measured stars, but Drake\'s daring navigated the globe."', // Page 10
+    '"Drake was the first Englishman to circumnavigate the earth, returning in 1580 with 4,700% profit."', // Page 11
+    '"Commercial turning point: Drake\'s return proved England could challenge Spain on the world ocean."', // Page 12
+    '"Walter Raleigh planned the Virginia colony from London; he never set foot in Roanoke himself."', // Page 13
+    '"Roanoke failed because the Tiger ruined seeds, supplies arrived late, and relations with Wingina collapsed."', // Page 14
+    '"Grade 9 Rule: In 12-mark questions, link your causes! Enclosure caused unemployment, which caused vagrancy."', // Page 15
+    'Key Topic 3 Complete • Cumulative Assessment & Digital Practice Hub', // Page 16
   ],
 };
 
-function renderFooterStrip(pageNum, text, totalPages = 24) {
+function renderFooterStrip(pageNum, text, totalPages = 16) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
     return `
@@ -206,7 +182,7 @@ const KEY_TOPICS_DATA = {
         'Unknown English Artist • Queen Elizabeth I depicted in her patterned cloth of gold coronation robes, holding the sovereign orb and sceptre. National Portrait Gallery, London (NPG 2607).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 105,
+      heightMm: 78,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
@@ -304,7 +280,7 @@ const KEY_TOPICS_DATA = {
         'Attributed to George Gower • Queen Elizabeth I sits in triumph with her right hand resting on a global orb. Behind her, windows depict the English fireships assaulting the Spanish fleet at Gravelines and the Armada wrecked on stormy rocks. Accession Shelfmark WA-INV-042.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 105,
+      heightMm: 78,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
@@ -394,7 +370,7 @@ const KEY_TOPICS_DATA = {
         'John White • A Cheife Herowan of the Secotan, painted in watercolour during the first Roanoke expedition (1585). Depicts an indigenous Algonquian leader wearing a copper gorget, feather, and fringed deerskin apron. British Museum, London (1906,0509.1.21).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 105,
+      heightMm: 78,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
@@ -471,6 +447,14 @@ const KEY_TOPICS_DATA = {
   },
 };
 
+function formatFeatureStem(stem) {
+  if (!stem) return 'Describe one feature of Elizabethan England.';
+  return stem
+    .replace(/^Describe one key feature of /i, 'Describe one feature of ')
+    .replace(/^Describe two features of /i, 'Describe one feature of ')
+    .trim();
+}
+
 function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
   let stagesHtml = '';
   const stages = cfg.stages || [];
@@ -478,31 +462,31 @@ function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
     let bulletsHtml = st.bullets
       .map(
         (b) =>
-          `<div style="margin-bottom: 2px;"><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`,
+          `<div style="margin-bottom: 2px; display: flex; align-items: baseline;"><span style="font-weight: 900; color: #000000; margin-right: 4px;">&bull;</span><span style="font-size: 8.2pt; font-weight: 700; color: #000000; line-height: 1.22;">${b}</span></div>`,
       )
       .join('');
     stagesHtml += `
           <!-- Stage ${idx + 1} -->
           <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0; border-bottom: 1.5px solid #000000;">
-            <!-- Left: Factual Chronology Spine (38mm) with strong black font -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 2px 4px 2px 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
+            <!-- Left: Factual Chronology Spine (44mm) with strong black font -->
+            <div style="width: 44mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 2.5px 5px 2.5px 6px; display: flex; flex-direction: column; justify-content: center; position: relative;">
               <div style="position: absolute; left: -5.5px; top: 12px; width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1.5px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000;">${st.dates}</span>
+              <div style="display: flex; align-items: center; gap: 4px; margin-bottom: 2px;">
+                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; padding: 0.5px 5px; border-radius: 2px;">${idx + 1}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; color: #000000; letter-spacing: 0.3px;">${st.dates}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 900; color: #000000; line-height: 1.12; margin-bottom: 2.5px;">
+              <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000; line-height: 1.15; margin-bottom: 2.5px;">
                 ${st.title}
               </div>
-              <div style="display: flex; flex-direction: column; font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; line-height: 1.20; color: #000000;">
+              <div style="display: flex; flex-direction: column; font-family: 'Inter', sans-serif;">
                 ${bulletsHtml}
               </div>
             </div>
 
             <!-- Right: Enquiry Prompt + Exact 6 Ruled Lines (Preserving teacher exposition notes) -->
             <div style="flex: 1; display: flex; flex-direction: column; border-left: 1.5px solid #000000; margin: 0; padding: 0;">
-              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 2.5px 8px; display: flex; align-items: center;">
-                <span style="font-family: 'Georgia', serif; font-size: 7.8pt; font-weight: 700; color: #000000; line-height: 1.18; font-style: italic;">
+              <div style="background: #f1f5f9; border-bottom: 1.5px solid #000000; padding: 3px 8px; display: flex; align-items: center;">
+                <span style="font-family: 'Georgia', serif; font-size: 8.6pt; font-weight: 700; color: #000000; line-height: 1.2; font-style: italic;">
                   ${st.focusClue}
                 </span>
               </div>
@@ -520,7 +504,7 @@ function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
 
   return `
   <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum}) -->
-  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 2.5mm 6mm 2mm 6mm;">
+  <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 2.5mm 6mm 2mm 6mm;">
     <div class="page-body-full">
       <!-- Lesson Header -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
@@ -554,15 +538,17 @@ function renderSpinePage(cfg, pageNum, quip, keyTopicNum) {
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, quip, 24)}
+      ${renderFooterStrip(pageNum, quip, 16)}
     </div>
   </div>`;
 }
 
 /**
- * MODULE PAGE 2: Extended Writing Assessment (Recto)
+ * ENQUIRY EXTENDED WRITING PART 1 (Page 1 of response - 22 Ruled Lines)
  */
-function renderModulePage2(cfg, pageNum, quip, keyTopicNum) {
+function renderEnquiryWritingPart1(cfg, pageNum, quip, keyTopicNum) {
+  const isEssay = cfg.tariff && cfg.tariff.includes('16');
+  const extTariff = isEssay ? '20' : '12';
   const flexTaskLines = Array.from(
     { length: 22 },
     () => `
@@ -570,9 +556,9 @@ function renderModulePage2(cfg, pageNum, quip, keyTopicNum) {
   ).join('');
 
   return `
-  <!-- MODULE PAGE 2: EXTENDED WRITING ASSESSMENT (PAGE ${pageNum}) -->
-  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
+  <!-- ENQUIRY EXTENDED WRITING PART 1 (PAGE ${pageNum}) -->
+  <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       <div>
         <!-- Exam Header -->
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
@@ -584,8 +570,8 @@ function renderModulePage2(cfg, pageNum, quip, keyTopicNum) {
               EDEXCEL PAPER 2 (1HI0/2B)
             </span>
           </div>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${cfg.scoreMax} ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 8px; border-radius: 2px;">
+            Score: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong>
           </span>
         </div>
 
@@ -623,79 +609,34 @@ function renderModulePage2(cfg, pageNum, quip, keyTopicNum) {
         </div>
 
         <!-- Ruled Task Lines Prompt -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0; display: flex; justify-content: space-between;">
           <span><strong>Write your response in the space provided below:</strong></span>
           <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
         </div>
       </div>
 
-      <!-- 22 Ruled Task Lines for Extended Writing -->
+      <!-- 22 Ruled Task Lines for Extended Writing Part 1 -->
       <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
 ${flexTaskLines}
       </div>
 
-      <!-- Timeline Mission (Medicine-Style Analytical Navigation Strip) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 3px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
-            Timeline Mission
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; line-height: 1.2;">
-            ${cfg.timelineMission}
-          </span>
-        </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
-          &larr; Pages 2–3
-        </span>
-      </div>
-
-      ${renderFooterStrip(pageNum, quip, 24)}
+      ${renderFooterStrip(pageNum, quip, 16)}
     </div>
   </div>`;
 }
 
 /**
- * MODULE PAGE 3: Extended Writing Continued (Verso)
+ * ENQUIRY EXTENDED WRITING PART 2 & QUESTION 1 FEATURE PRACTICE
+ * Top Half: Concluding Extended Writing (~13 Ruled Lines)
+ * Bottom Half (Starts halfway down page): Q1(a) [2m] stacked vertically on top of Q1(b) [2m] (3 blank lines each) + Timeline Mission
  */
-function renderModulePage3(cfg, pageNum, quip, keyTopicNum) {
-  const continuationTaskLines = Array.from(
-    { length: 31 },
-    () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
-  ).join('');
+function renderEnquiryWritingPart2AndFeatures(cfg, pageNum, quip, keyTopicNum) {
+  const isEssay = cfg.tariff && cfg.tariff.includes('16');
+  const extTariff = isEssay ? '20' : '12';
+  const tariffLabel = isEssay ? 'Question 3 Evaluative Essay' : 'Question 2 Explain Why';
 
-  return `
-  <!-- MODULE PAGE 3: EXTENDED WRITING CONTINUED (PAGE ${pageNum}) -->
-  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          Enquiry ${keyTopicNum}.${cfg.enquiryNum}: ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${cfg.tariff.split(':')[0]} Continued &bull; Independent Timed Response
-        </span>
-      </div>
-
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-        Continue your response to ${cfg.tariff.split(':')[0]} below:
-      </div>
-
-      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
-${continuationTaskLines}
-      </div>
-
-      ${renderFooterStrip(pageNum, quip, 24)}
-    </div>
-  </div>`;
-}
-
-/**
- * MODULE PAGE 4: Essay Synthesis & 4-Mark Feature Practice (Recto)
- */
-function renderModulePage4(cfg, pageNum, quip, keyTopicNum) {
-  const conclusionTaskLines = Array.from(
-    { length: 24 },
+  const continuationLines = Array.from(
+    { length: 13 },
     () => `
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
@@ -703,108 +644,126 @@ function renderModulePage4(cfg, pageNum, quip, keyTopicNum) {
   const featLinesA = Array.from(
     { length: 3 },
     () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+        <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
 
   const featLinesB = Array.from(
     { length: 3 },
     () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+        <div class="task-line" style="height: 6.8mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
   ).join('');
 
+  const stemA = formatFeatureStem(cfg.featureA?.stem);
+  const stemB = formatFeatureStem(cfg.featureB?.stem);
+
   return `
-  <!-- MODULE PAGE 4: ESSAY SYNTHESIS & 4-MARK FEATURE PRACTICE (PAGE ${pageNum}) -->
-  <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
+  <!-- ENQUIRY PART 2 & QUESTION 1 FEATURE PRACTICE (PAGE ${pageNum}) -->
+  <div class="page page-container ${pageNum % 2 === 0 ? 'verso-page' : 'recto-page'}" id="page-${pageNum}" style="padding: 3.5mm 6mm 3mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
-      
-      <!-- Top Section: Final Essay Synthesis (Flex 2.2) -->
-      <div style="flex: 2.2; display: flex; flex-direction: column; min-height: 0;">
+
+      <!-- TOP HALF: Extended Writing Conclusion & Verdict (~13 Ruled Lines) -->
+      <div style="flex: 1.15; display: flex; flex-direction: column; min-height: 0; margin-bottom: 3px;">
         <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px; display: flex; justify-content: space-between; align-items: baseline;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-            Enquiry ${keyTopicNum}.${cfg.enquiryNum}: ${cfg.title} &bull; Final Historical Verdict
+            Enquiry ${keyTopicNum}.${cfg.enquiryNum}: ${cfg.title} &bull; ${tariffLabel} Continued
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 4px; border-radius: 2px; text-transform: uppercase;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${cfg.scoreMax} ]
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 6px; border-radius: 2px;">
+            Score: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong>
           </span>
         </div>
 
         <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          Conclude your extended response and provide your sustained historical judgment below:
+          Conclude your ${tariffLabel.toLowerCase()} and provide your sustained historical verdict below:
         </div>
 
-        <div style="flex: 1; display: flex; flex-direction: column; margin: 0 0 2px 0;">
-${conclusionTaskLines}
+        <div style="flex: 1; display: flex; flex-direction: column; margin: 1px 0 2px 0;">
+${continuationLines}
         </div>
       </div>
 
-      <!-- Bottom Section: Question 1 Practice: Describe Two Key Features [2x2m = 4m] (Flex 1.5) -->
-      <div style="border-top: 2px solid #000000; padding-top: 3px; margin-top: 2px; flex: 1.5; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <div style="display: flex; align-items: center; gap: 5px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.0pt; text-transform: uppercase; letter-spacing: 0.5px;">
-                &bull; Question 1 Practice: Describe Two Key Features [4 marks &bull; 6 mins]
-              </strong>
+      <!-- BOTTOM HALF (STARTS HALFWAY DOWN PAGE): QUESTION 1 PRACTICE: DESCRIBE ONE FEATURE (STACKED) -->
+      <div style="border-top: 2px solid #000000; padding-top: 3px; display: flex; flex-direction: column; gap: 4px;">
+        
+        <!-- Section Header Bar -->
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+            &bull; Question 1 Practice: Describe One Feature [2 &times; 2m = 4 marks &bull; 6 mins]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 6px; border-radius: 2px;">
+            Q1 Total: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong>
+          </span>
+        </div>
+
+        <!-- Feature Question 1(a) -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; background: #000000; color: #ffffff; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase;">
+                Q1(a)
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #1e293b; text-transform: uppercase;">
+                ${cfg.featureA?.provenance || 'Edexcel Exam Specification'}
+              </span>
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
-              Total Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4 ]
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800;">
+              Mark: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong>
             </span>
           </div>
-        </div>
-
-        <!-- 2 Features Grid -->
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; flex: 1; min-height: 0;">
-          
-          <!-- Feature (a) -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">
-                  Q1(a) [2 marks]
-                </span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
-                  ${cfg.featureA.provenance}
-                </span>
-              </div>
-              <p style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.15;">
-                ${cfg.featureA.stem}
-              </p>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.12; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 3px; border-radius: 2px; margin-bottom: 1px;">
-                <strong>Target: AO1 &bull;</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-              </div>
-            </div>
-            <div style="flex: 1; display: flex; flex-direction: column; margin: 0;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+            ${stemA} <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #475569;">[2 marks]</span>
+          </p>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px; margin-bottom: 2px;">
+            <strong>Target: AO1 (2m) &bull;</strong> <em>Feature: One key feature was that... &bull; Detail: Specifically, this was evident when...</em>
+          </div>
+          <div style="display: flex; flex-direction: column;">
 ${featLinesA}
-            </div>
           </div>
-
-          <!-- Feature (b) -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 5px; background: #ffffff; display: flex; flex-direction: column; justify-content: space-between;">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 1px; margin-bottom: 1px;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase;">
-                  Q1(b) [2 marks]
-                </span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; border: 1px solid #000000; padding: 0 3px; border-radius: 2px; background: #f8fafc;">
-                  ${cfg.featureB.provenance}
-                </span>
-              </div>
-              <p style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; margin: 0 0 1px 0; line-height: 1.15;">
-                ${cfg.featureB.stem}
-              </p>
-              <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.12; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1px 3px; border-radius: 2px; margin-bottom: 1px;">
-                <strong>Target: AO1 &bull;</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-              </div>
-            </div>
-            <div style="flex: 1; display: flex; flex-direction: column; margin: 0;">
-${featLinesB}
-            </div>
-          </div>
-
         </div>
+
+        <!-- Feature Question 1(b) (Stacked Vertically on top of each other) -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; background: #000000; color: #ffffff; padding: 0.5px 5px; border-radius: 2px; text-transform: uppercase;">
+                Q1(b)
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; color: #1e293b; text-transform: uppercase;">
+                ${cfg.featureB?.provenance || 'Edexcel Exam Specification'}
+              </span>
+            </div>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800;">
+              Mark: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong>
+            </span>
+          </div>
+          <p style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.2;">
+            ${stemB} <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; color: #475569;">[2 marks]</span>
+          </p>
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 1.5px 5px; border-radius: 2px; margin-bottom: 2px;">
+            <strong>Target: AO1 (2m) &bull;</strong> <em>Feature: One key feature was that... &bull; Detail: Specifically, this meant that...</em>
+          </div>
+          <div style="display: flex; flex-direction: column;">
+${featLinesB}
+          </div>
+        </div>
+
+        <!-- Timeline Mission Navigation Strip -->
+        <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 2.5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+              Timeline Mission
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #000000; line-height: 1.2;">
+              ${cfg.timelineMission}
+            </span>
+          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; white-space: nowrap; margin-left: 8px;">
+            &larr; Pages 2–3
+          </span>
+        </div>
+
       </div>
 
-      ${renderFooterStrip(pageNum, quip, 24)}
+      ${renderFooterStrip(pageNum, quip, 16)}
     </div>
   </div>`;
 }
@@ -1466,12 +1425,13 @@ function buildEeeKeyTopicWorkbook(ktId) {
     heroImage: data.heroImage,
     specBox: data.specBox,
     footerQuip: footers[0],
-    totalPageCount: 24,
+    totalPageCount: 16,
     renderFooterStrip,
   });
 
   // ====================================================================
   // PAGES 2–3: LIVING TIMELINE (6 MILESTONES)
+  // Clean full-width dual-coding sketchpads without restrictive outer borders
   // ====================================================================
   const msPart1 = data.milestones.slice(0, 3);
   const msPart2 = data.milestones.slice(3, 6);
@@ -1491,11 +1451,11 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between;">
         ${msPart1
           .map(
-            (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            (m, mIdx) => `
+        <div style="border: none; padding: 2px 0 4px 0; ${mIdx < 2 ? 'border-bottom: 1.5px solid #000000;' : ''} flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; color: #000000;">
@@ -1503,18 +1463,18 @@ function buildEeeKeyTopicWorkbook(ktId) {
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.tag}</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 9.0pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
+            <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0 0 2px 0; line-height: 1.22;">
               ${m.text}
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 52mm; width: 100%; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
         `,
           )
           .join('')}
       </div>
 
-      ${renderFooterStrip(2, footers[1], 24)}
+      ${renderFooterStrip(2, footers[1], 16)}
     </div>
   </div>
 
@@ -1532,11 +1492,11 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
+      <div style="display: flex; flex-direction: column; gap: 4px; flex: 1; justify-content: space-between;">
         ${msPart2
           .map(
-            (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            (m, mIdx) => `
+        <div style="border: none; padding: 2px 0 4px 0; ${mIdx < 2 ? 'border-bottom: 1.5px solid #000000;' : ''} flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
           <div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
               <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; color: #000000;">
@@ -1544,75 +1504,55 @@ function buildEeeKeyTopicWorkbook(ktId) {
               </strong>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.tag}</span>
             </div>
-            <p style="font-family: 'Georgia', serif; font-size: 9.0pt; color: #000000; margin: 0 0 3px 0; line-height: 1.24;">
+            <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0 0 2px 0; line-height: 1.22;">
               ${m.text}
             </p>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <div style="border-top: 1px dashed #000000; min-height: 52mm; width: 100%; flex: 1; background: #ffffff; margin-top: 2px;"></div>
         </div>
         `,
           )
           .join('')}
       </div>
 
-      ${renderFooterStrip(3, footers[2], 24)}
+      ${renderFooterStrip(3, footers[2], 16)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–19: 4 DEDICATED FOUR-PAGE ENQUIRY MODULES (MEDICINE-STYLE)
-  // Page 1: 5-Stage Chronological Inquiry Spine & Lecture Notes (Verso)
-  // Page 2: Short-Tariff Exam Practice & Concept Bridge (Recto)
-  // Pages 3 & 4: Extended Writing Timed Assessment (Facing Spread)
+  // PAGES 4–15: 4 DEDICATED THREE-PAGE ENQUIRY MODULES (12 PAGES TOTAL)
+  // Page 1: 5-Stage Chronological Inquiry Spine & Exposition Notes (30 ruled lines)
+  // Page 2: Extended Writing Part 1 (22 ruled lines, stimulus, frames, vocab)
+  // Page 3: Extended Writing Part 2 (~13 lines) + Q1 Feature Practice (3 lines each) + Timeline Mission
   // ====================================================================
   data.enquiries.forEach((enq, idx) => {
-    const leftPageNum = 4 + idx * 4; // 4, 8, 12, 16
-    const rightPageNum = leftPageNum + 1; // 5, 9, 13, 17
-    const linedLeftPageNum = leftPageNum + 2; // 6, 10, 14, 18
-    const linedRightPageNum = leftPageNum + 3; // 7, 11, 15, 19
+    const spinePageNum = 4 + idx * 3; // 4, 7, 10, 13
+    const writePart1PageNum = spinePageNum + 1; // 5, 8, 11, 14
+    const writePart2PageNum = spinePageNum + 2; // 6, 9, 12, 15
 
-    // Page 1 of module (Verso): Chronological Inquiry Spine & Exposition Notes (30 ruled lines)
-    html += renderSpinePage(enq, leftPageNum, footers[leftPageNum - 1], data.keyTopicNum);
+    // Page 1 of enquiry: Chronological Inquiry Spine & Exposition Notes
+    html += renderSpinePage(enq, spinePageNum, footers[spinePageNum - 1], data.keyTopicNum);
 
-    // Page 2 of module (Recto): Extended Writing Assessment (Stimulus, Accessible Writing Frames, Key Vocab Bank, 22 flex lines, Timeline Mission)
-    html += renderModulePage2(enq, rightPageNum, footers[rightPageNum - 1], data.keyTopicNum);
-
-    // Page 3 of module (Verso): Extended Writing Continued (31 ruled lines with 22mm margin)
-    html += renderModulePage3(
+    // Page 2 of enquiry: Extended Writing Part 1 (Stimulus, Accessible Writing Frames, Key Vocab Bank, 22 flex lines)
+    html += renderEnquiryWritingPart1(
       enq,
-      linedLeftPageNum,
-      footers[linedLeftPageNum - 1],
+      writePart1PageNum,
+      footers[writePart1PageNum - 1],
       data.keyTopicNum,
     );
 
-    // Page 4 of module (Recto): Essay Synthesis (24 lines) + Q1 Feature Practice [Q1a 2m + Q1b 2m = 4m]
-    html += renderModulePage4(
+    // Page 3 of enquiry: Extended Writing Part 2 (~13 lines) + Stacked Feature Practice Q1(a)&(b) [3 lines each] + Timeline Mission
+    html += renderEnquiryWritingPart2AndFeatures(
       enq,
-      linedRightPageNum,
-      footers[linedRightPageNum - 1],
+      writePart2PageNum,
+      footers[writePart2PageNum - 1],
       data.keyTopicNum,
     );
   });
 
   // ====================================================================
-  // PAGE 20: GRADE 9 LEVEL 4 (12/12) MASTERCLASS & CAUSATION ESSAY (VERSO)
-  // ====================================================================
-  html += renderGrade9ModelAnswerPage(ktId, footers[19]);
-
-  // ====================================================================
-  // PAGE 21: UNSEEN SYNOPTIC EXAM PRACTICE (RECTO)
-  // ====================================================================
-  html += renderSynopticExamPracticePage(ktId, footers[20]);
-
-  // ====================================================================
-  // PAGES 22 & 23: THE 40-QUESTION SYNOPTIC RETRIEVAL VAULT
-  // ====================================================================
-  html += renderSynopticVaultPages(data, footers);
-
-  // ====================================================================
-  // ====================================================================
-  // PAGE 24: OUTSIDE BACK COVER
+  // PAGE 16: OUTSIDE BACK COVER (ASSESSMENT RECORD LEDGER & 4 DUAL-QR CARDS)
   // ====================================================================
 
   function cleanStem(stem) {
@@ -1620,17 +1560,18 @@ function buildEeeKeyTopicWorkbook(ktId) {
     return stem
       .replace(/^Describe one key feature of /i, '')
       .replace(/^Describe one feature of /i, '')
+      .replace(/^Describe two features of /i, '')
       .replace(/\.$/, '');
   }
 
   let examRowsHtml = '';
 
   data.enquiries.forEach((enq, idx) => {
-    const leftPageNum = idx * 4 + 4;
-    const rightPageNum = idx * 4 + 5;
-    const linedRightPageNum = idx * 4 + 7;
-    const extTariff = enq.tariff && enq.tariff.includes('12') ? 12 : 20;
-    const extLabel = enq.tariff && enq.tariff.includes('12') ? 'Q2 Explain Why' : 'Q3 Essay';
+    const spinePageNum = 4 + idx * 3;
+    const writePart1PageNum = spinePageNum + 1;
+    const writePart2PageNum = spinePageNum + 2;
+    const extTariff = enq.tariff && enq.tariff.includes('16') ? 20 : 12;
+    const extLabel = enq.tariff && enq.tariff.includes('16') ? 'Q3 Essay' : 'Q2 Explain Why';
 
     const featAText = cleanStem(enq.featureA?.stem);
     const featBText = cleanStem(enq.featureB?.stem);
@@ -1647,42 +1588,42 @@ function buildEeeKeyTopicWorkbook(ktId) {
             Enquiry ${data.keyTopicNum}.${enq.enquiryNum}: ${enq.title}
           </strong>
           <span style="font-size: 7.2pt; color: #475569; display: block; margin-top: 2px;">
-            Spine Lecture Notes (p. ${leftPageNum}): [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
+            Spine Lecture Notes (p. ${spinePageNum}): &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong>
           </span>
         </td>
         <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${rightPageNum}–${linedRightPageNum}
+          p. ${writePart1PageNum}–${writePart2PageNum}
         </td>
         <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>${extLabel}:</strong> ${extText} [${extTariff}m]
         </td>
         <td rowspan="4" style="padding: 4px 6px; text-align: center; border-right: 1.2px solid #000000; font-size: 8.5pt; font-weight: 800; vertical-align: middle; background: #ffffff;">
-          [ &nbsp;&nbsp;&nbsp;<strong>___ / ___</strong>&nbsp;&nbsp;&nbsp; ]
+          &nbsp;&nbsp;&nbsp;<strong>___ / ___</strong>&nbsp;&nbsp;&nbsp;
         </td>
         <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong> ]
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff}</strong>
         </td>
       </tr>
       <tr style="border-bottom: 1px solid #cbd5e1; background: #ffffff;">
         <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${linedRightPageNum}
+          p. ${writePart2PageNum}
         </td>
         <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>Q1(a) Feature:</strong> ${featAText} [2m]
         </td>
         <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong>
         </td>
       </tr>
       <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
         <td style="padding: 3px 4px; text-align: center; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 800; background: #fafafa;">
-          p. ${linedRightPageNum}
+          p. ${writePart2PageNum}
         </td>
         <td style="padding: 3px 8px; border-right: 1px solid #000000; font-size: 7.4pt; font-weight: 600;">
           <strong>Q1(b) Feature:</strong> ${featBText} [2m]
         </td>
         <td style="padding: 3px 6px; text-align: center; font-size: 9.0pt; font-weight: 800; white-space: nowrap;">
-          [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong> ]
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 2</strong>
         </td>
       </tr>
       <tr style="border-bottom: 1.5px solid #000000; background: #f8fafc;">
@@ -1693,7 +1634,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
           Total Module Enquiry Assessment Mark
         </td>
         <td style="padding: 2px 6px; text-align: center; font-size: 8.5pt; font-weight: 900; white-space: nowrap; color: #000000;">
-          [ &nbsp;&nbsp;&nbsp;<strong>/ ${extTariff + 4}</strong> ]
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${extTariff + 4}</strong>
         </td>
       </tr>
     `;
@@ -1769,7 +1710,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
 
         </div>
 
-        <!-- Retrieval Attempts Log & Score Box -->
+        <!-- Retrieval Attempts Log & Score Box (No brackets around score!) -->
         <div style="border-top: 1.2px solid #000000; padding: 2.5px 3px; margin-top: 2px; font-family: 'Inter', sans-serif; background: #f8fafc; border-radius: 2px; box-sizing: border-box;">
           <div style="display: flex; justify-content: space-between; align-items: center; font-size: 5.6pt; font-weight: 700; color: #475569; margin-bottom: 2px;">
             <span>Quiz Attempt:</span>
@@ -1777,7 +1718,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
           </div>
           <div style="display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; font-weight: 900; color: #000000;">
             <span style="font-size: 6.0pt; font-weight: 700;">Score:</span>
-            <span>[ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong> ]</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 20</strong></span>
             <span style="font-size: 5.8pt; font-weight: 600; color: #64748b;">Date: ___/___</span>
           </div>
         </div>
@@ -1787,7 +1728,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
     .join('');
 
   html += `
-  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm; box-sizing: border-box;">
+  <div class="page page-container verso-page" id="page-16" style="padding: 4mm 6mm; box-sizing: border-box;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%; box-sizing: border-box;">
       
       <!-- Top Department Header -->
@@ -1824,7 +1765,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      <!-- Master Exam Practice & Homework Assessment Tracker Table -->
+      <!-- Master Exam Practice & Homework Assessment Tracker Table (No brackets around scores!) -->
       <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px; box-sizing: border-box;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
@@ -1836,7 +1777,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
             <tr style="border-bottom: 1.5px solid #000000; background: #ffffff;">
               <th style="padding: 3px 4px; width: 28px; text-align: center; font-size: 7.6pt; font-weight: 900; border-right: 1.2px solid #000000;">#</th>
               <th style="padding: 3px 8px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1.2px solid #000000;">Enquiry &amp; Specification Topic</th>
-              <th style="padding: 3px 4px; width: 36px; text-align: center; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Page</th>
+              <th style="padding: 3px 4px; width: 44px; text-align: center; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Page</th>
               <th style="padding: 3px 8px; text-align: left; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1px solid #000000;">Exam Practice Question &amp; Focus</th>
               <th style="padding: 4px 6px; width: 100px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; border-right: 1.2px solid #000000;">Homework Deadline</th>
               <th style="padding: 4px 6px; width: 125px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase;">Mark Awarded</th>
@@ -1863,7 +1804,7 @@ function buildEeeKeyTopicWorkbook(ktId) {
         </div>
       </div>
 
-      ${renderFooterStrip(24, footers[23], 24)}
+      ${renderFooterStrip(16, footers[15], 16)}
     </div>
   </div>
 `;
@@ -1934,7 +1875,7 @@ async function compilePdf(htmlPath, pdfPath, v17Path) {
 // WORKBOOK COMPILATION & PDF ASSEMBLY
 // ============================================================================
 async function renderKeyTopicWorkbook(kt) {
-  console.log(`\n▶ Generating 24-page workbook for Key Topic ${kt}...`);
+  console.log(`\n▶ Generating 16-page workbook for Key Topic ${kt}...`);
   const html = buildEeeKeyTopicWorkbook(kt);
 
   const publicHtml = path.join(
@@ -1973,7 +1914,7 @@ async function renderKeyTopicWorkbook(kt) {
 
 async function mergeMasterWorkbook() {
   console.log('\n=============================================================');
-  console.log('📚 MERGING 72-PAGE EARLY ELIZABETHAN ENGLAND MASTER WORKBOOK...');
+  console.log('📚 MERGING 48-PAGE EARLY ELIZABETHAN ENGLAND MASTER WORKBOOK...');
   console.log('=============================================================');
 
   const kt1PdfPath = path.join(ROOT_DIR, 'public', 'units', 'eee', 'pupil_workbook_kt1.pdf');
