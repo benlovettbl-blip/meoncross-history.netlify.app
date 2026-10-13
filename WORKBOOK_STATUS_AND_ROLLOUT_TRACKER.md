@@ -38,7 +38,8 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 | :--- | :---: | :--- | :--- | :--- |
 | `medieval_england` | KS3 (Y7) | Medieval England, 1066–1485 | [`scripts/render_medieval_england_workbook.cjs`](./scripts/render_medieval_england_workbook.cjs)<br>• `public/pdfs/medieval_england_16p_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Bayeux plate, monochrome interior, 7.8–8.0mm line pitch, `[1.1]`–`[5.5]` para badges, zero giveaways, 32-line exercise notes pages, 100% `✅ OPTIMAL` audit. (Commit `d62781c2`). |
 | `monarchy_religion_power` | KS3 (Y8) | Crown, Church, or Parliament (1517–1689) | [`scripts/render_monarchy_religion_power_workbook.cjs`](./scripts/render_monarchy_religion_power_workbook.cjs)<br>• `public/pdfs/monarchy_religion_power_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Holbein portrait with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `4024a9fd`). |
-| `first_british_empire` | KS3 (Y8) | The First British Empire (1600–1783) | [`scripts/render_first_british_empire_workbook.cjs`](./scripts/render_first_british_empire_workbook.cjs)<br>• `public/pdfs/first_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Nathaniel Dance portrait of Clive with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `first_british_empire` | KS3 (Y8) | The First British Empire (1600–1783) | [`scripts/render_first_british_empire_workbook.cjs`](./scripts/render_first_british_empire_workbook.cjs)<br>• `public/pdfs/first_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Nathaniel Dance portrait of Clive with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `727315bf`). |
+| `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath (1914–1919) | [`scripts/render_great_war_part2_twopage_workbook.cjs`](./scripts/render_great_war_part2_twopage_workbook.cjs)<br>• `public/pdfs/great_war_part2_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 108mm Sir William Orpen plate (*The Signing of Peace in the Hall of Mirrors*), pure `#000000` monochrome interior (P2–13), 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
 
 ---
 
@@ -47,9 +48,8 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 
 | Rollout Priority | Unit ID | Key Stage | Unit Title | Current Generator Script | Missing Gold Standard Elements (To-Do) |
 | :---: | :--- | :---: | :--- | :--- | :--- |
-| **#1** | `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath (1914–1919) | [`scripts/render_great_war_part2_twopage_workbook.cjs`](./scripts/render_great_war_part2_twopage_workbook.cjs) | 1. Convert interior to pure `#000000` monochrome.<br>2. Add British exercise notes spread to P14–15.<br>3. Calibrate line pitch to `~7.8mm–8.0mm`.<br>4. Zero-knowledge connective audit. |
-| **#2** | `second_british_empire` | KS3 (Y8) | The Second British Empire & Imperialism | [`scripts/render_second_british_empire_workbook.cjs`](./scripts/render_second_british_empire_workbook.cjs) | 1. Convert interior to pure `#000000` monochrome.<br>2. Add paragraph badges `[1.1]`–`[5.5]`.<br>3. Add British exercise notes spread to P14–15.<br>4. Calibrate line pitch to `~7.8mm–8.0mm`. |
-| **#3** | `industrialisation_and_empire` | KS3 (Y8) | Industrialisation, Empire & Power (1750–1900) | [`scripts/render_industrialisation_twopage_workbook.cjs`](./scripts/render_industrialisation_twopage_workbook.cjs) | Currently a 20-page double-page workbook across 8 lessons. Needs refactoring to the new 16-page Gold Standard architecture (or curated 8-enquiry 20p standard with monochrome interior and ~8.0mm lines). |
+| **#1** | `second_british_empire` | KS3 (Y8) | The Second British Empire & Imperialism | [`scripts/render_second_british_empire_workbook.cjs`](./scripts/render_second_british_empire_workbook.cjs) | 1. Convert interior to pure `#000000` monochrome.<br>2. Add paragraph badges `[1.1]`–`[5.5]`.<br>3. Add British exercise notes spread to P14–15.<br>4. Calibrate line pitch to `~7.8mm–8.0mm`. |
+| **#2** | `industrialisation_and_empire` | KS3 (Y8) | Industrialisation, Empire & Power (1750–1900) | [`scripts/render_industrialisation_twopage_workbook.cjs`](./scripts/render_industrialisation_twopage_workbook.cjs) | Currently a 20-page double-page workbook across 8 lessons. Needs refactoring to the new 16-page Gold Standard architecture (or curated 8-enquiry 20p standard with monochrome interior and ~8.0mm lines). |
 
 ---
 
@@ -105,10 +105,10 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 [STEP 3] ─── Year 8: The First British Empire (first_british_empire) ───────── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[STEP 4] ─── Year 9: The Great War: Western Front & Aftermath (great_war_part2) 🟡 NEXT UP (READY)
+[STEP 4] ─── Year 9: The Great War: Western Front & Aftermath (great_war_part2) ── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[STEP 5] ─── Year 8: The Second British Empire (second_british_empire) ─────── 🟡 QUEUED
+[STEP 5] ─── Year 8: The Second British Empire (second_british_empire) ─────── 🟡 NEXT UP (READY)
    │
    ▼
 [STEP 6] ─── Year 8: Industrialisation, Empire & Power (industrialisation) ──── 🟡 QUEUED
@@ -128,6 +128,6 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Workbook Rollout Compass:**  
 > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
-> **KS3 Perfected:** Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next Target:** Year 9: *The Great War Part 2* (`great_war_part2`) 🎯 (or GCSE Medicine Medieval & Renaissance Dual-QR Parity)  
-> **KS3 Ladder:** *Great War Part 2* ➔ *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
+> **KS3 Perfected:** Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
+> **Next Target:** Year 8: *The Second British Empire* (`second_british_empire`) 🎯 (or GCSE Medicine Medieval & Renaissance Dual-QR Parity)  
+> **KS3 Ladder:** *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
