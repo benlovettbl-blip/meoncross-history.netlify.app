@@ -377,6 +377,25 @@ const KEY_TOPICS_DATA = {
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
       heightMm: 90,
+      layout: 'curatorial_triptych',
+      triptych: {
+        leftTag: 'Roanoke Colony Expedition &bull; 1585',
+        leftTitle: 'The Secotan Leader',
+        leftText:
+          'Painted from life by English artist and governor <strong>John White</strong> during Sir Walter Raleigh’s first Virginian expedition to Roanoke Island in 1585.',
+        specAnchor:
+          'Early contacts, Algonquian governance, and the causes of friction in Elizabethan overseas exploration.',
+        centerWidthMm: 52,
+        centerBg: '#cdbfae',
+        rightTag: 'Visual Primary Evidence',
+        rightTitle: 'Material Culture & Regalia',
+        evidenceBullets: [
+          '<strong>Copper Gorget:</strong> Prestigious trade adornment denoting high Algonquian social rank.',
+          '<strong>Hair & Feathers:</strong> Traditional roach hairstyle with copper bead and shaved right side for archery.',
+          '<strong>Fringed Deerskin:</strong> Tanned apron denoting ceremonial warrior status.',
+        ],
+        collectionFootnote: 'British Museum Collection &bull; Registration 1906,0509.1.21',
+      },
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',

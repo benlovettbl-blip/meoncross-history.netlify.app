@@ -104,17 +104,92 @@ function renderStandardFrontCover({
       </div>`;
 
     // Master Photographic Plate: Full-Colour (no grayscale filter)
-    const photoPlateHtml = `
-      <!-- Master Wide Photographic Plate (Full Colour) -->
+    let photoPlateHtml = '';
+    if (heroImage.layout === 'curatorial_triptych' || heroImage.triptych) {
+      const trip = heroImage.triptych || {};
+      const leftTag = trip.leftTag || 'Roanoke Colony Expedition &bull; 1585';
+      const leftTitle = trip.leftTitle || 'The Secotan Leader';
+      const leftText =
+        trip.leftText ||
+        'Painted from life by English artist and governor <strong>John White</strong> during Sir Walter Raleigh’s first Virginian expedition to Roanoke Island in 1585.';
+      const specAnchor =
+        trip.specAnchor ||
+        'Early contacts, Algonquian governance, and the causes of friction in Elizabethan overseas exploration.';
+      const centerWidthMm = trip.centerWidthMm || 52;
+      const centerBg = trip.centerBg || '#cdbfae';
+      const rightTag = trip.rightTag || 'Visual Primary Evidence';
+      const rightTitle = trip.rightTitle || 'Material Culture & Regalia';
+      const bullets = trip.evidenceBullets || [
+        '<strong>Copper Gorget:</strong> Prestigious trade adornment denoting high Algonquian social rank.',
+        '<strong>Hair & Feathers:</strong> Traditional roach hairstyle with copper bead and shaved right side for archery.',
+        '<strong>Fringed Deerskin:</strong> Tanned apron denoting ceremonial warrior status.',
+      ];
+      const rightFootnote =
+        trip.collectionFootnote || 'British Museum Collection &bull; Registration 1906,0509.1.21';
+
+      photoPlateHtml = `
+      <!-- Master Curatorial Triptych Plate (Uncropped Full Artwork with Curatorial Context Panels) -->
       <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
-        <div style="height: ${photoHeight}mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
-          <img src="${heroImage.src}" alt="${heroImage.alt}" style="width: 100%; height: 100%; object-fit: cover; object-position: ${objectPos}; display: block;">
+        <div style="height: ${photoHeight}mm; background: #f8fafc; display: flex; align-items: stretch; overflow: hidden;">
+          <!-- Left Panel: Historical Context & Expedition -->
+          <div style="flex: 1; padding: 10px 14px; display: flex; flex-direction: column; justify-content: space-between; border-right: 1.2px solid #cbd5e1; background: #ffffff;">
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0284c7; letter-spacing: 0.8px; margin-bottom: 3px;">
+                ${leftTag}
+              </div>
+              <h3 style="margin: 0 0 5px 0; font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #0f172a; line-height: 1.2;">
+                ${leftTitle}
+              </h3>
+              <p style="margin: 0; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.4; color: #334155; font-weight: 500;">
+                ${leftText}
+              </p>
+            </div>
+            <div style="background: #f1f5f9; padding: 5px 9px; border-radius: 4px; border-left: 3px solid #0f172a; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b; line-height: 1.35;">
+              <strong>Specification Anchor:</strong> ${specAnchor}
+            </div>
+          </div>
+
+          <!-- Center: Complete Full-Length Artwork (Uncropped) -->
+          <div style="width: ${centerWidthMm}mm; background: ${centerBg}; display: flex; justify-content: center; align-items: center; border-right: 1.2px solid #cbd5e1; box-shadow: inset 0 0 10px rgba(0,0,0,0.08);">
+            <img src="${heroImage.src}" alt="${heroImage.alt}" style="height: 100%; width: auto; object-fit: contain; display: block;">
+          </div>
+
+          <!-- Right Panel: Disciplinary Visual Analysis -->
+          <div style="flex: 1; padding: 10px 14px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff;">
+            <div>
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0284c7; letter-spacing: 0.8px; margin-bottom: 3px;">
+                ${rightTag}
+              </div>
+              <h3 style="margin: 0 0 5px 0; font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #0f172a; line-height: 1.2;">
+                ${rightTitle}
+              </h3>
+              <div style="display: flex; flex-direction: column; gap: 3.5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.35; color: #334155;">
+                ${bullets.map((b) => `<div>&bull; ${b}</div>`).join('')}
+              </div>
+            </div>
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #64748b; font-style: italic; border-top: 1px dashed #cbd5e1; padding-top: 3px;">
+              ${rightFootnote}
+            </div>
+          </div>
         </div>
         <div style="border-top: 1.5px solid #000; padding: 2.5px 8px; background: #fff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111;">
           <span><strong style="text-transform: uppercase; letter-spacing: 0.4px;">Historical Primary Record:</strong> ${heroImage.title} (${heroImage.date})</span>
           <span style="font-weight: 800; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.5px;">${heroImage.shelfmark}</span>
         </div>
       </div>`;
+    } else {
+      photoPlateHtml = `
+      <!-- Master Wide Photographic Plate (Full Colour) -->
+      <div style="border: 1.8px solid #000; border-radius: 4px; overflow: hidden; background: #fff; margin-bottom: 3px; display: flex; flex-direction: column;">
+        <div style="height: ${photoHeight}mm; background: #000; display: flex; justify-content: center; align-items: center; overflow: hidden;">
+          <img src="${heroImage.src}" alt="${heroImage.alt}" style="width: 100%; height: 100%; object-fit: ${heroImage.objectFit || 'cover'}; object-position: ${objectPos}; display: block;">
+        </div>
+        <div style="border-top: 1.5px solid #000; padding: 2.5px 8px; background: #fff; display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #111;">
+          <span><strong style="text-transform: uppercase; letter-spacing: 0.4px;">Historical Primary Record:</strong> ${heroImage.title} (${heroImage.date})</span>
+          <span style="font-weight: 800; background: #000; color: #fff; padding: 1px 6px; border-radius: 2px; font-size: 6.2pt; text-transform: uppercase; letter-spacing: 0.5px;">${heroImage.shelfmark}</span>
+        </div>
+      </div>`;
+    }
 
     // Exam Architecture & Revision Target Ribbon (Edexcel Paper 2 Feature & Causation timings)
     const examRibbonHtml = `
