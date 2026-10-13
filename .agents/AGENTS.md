@@ -84,7 +84,7 @@ Act as an experienced app builder and an experienced history teacher. Maintain a
    > 🧭 **Workbook Rollout Compass:**  
    > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
    > **KS3 Perfected:** Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-   > **Next Target:** Year 8: *The Second British Empire* (`second_british_empire`) 🎯 (or GCSE Medicine Medieval & Renaissance Dual-QR Parity)  
+   > **Next Target:** Year 8: *The Second British Empire* (`second_british_empire`) 🎯 (or GCSE Medicine Renaissance Dual-QR Parity)  
    > **KS3 Ladder:** *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
 4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, not as per-response conversational boilerplate.
