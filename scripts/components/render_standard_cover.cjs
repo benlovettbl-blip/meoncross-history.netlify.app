@@ -152,25 +152,25 @@ function renderStandardFrontCover({
           const spanStyle = !isFour && rIdx === 2 ? 'grid-column: span 2;' : '';
           const bodyLayout =
             !isFour && rIdx === 2
-              ? 'display: grid; grid-template-columns: 1fr 1fr; gap: 12px;'
-              : 'display: flex; flex-direction: column; justify-content: space-around;';
+              ? 'display: grid; grid-template-columns: 1fr 1fr; gap: 12px; align-content: space-evenly;'
+              : 'display: flex; flex-direction: column; justify-content: space-evenly;';
 
           const bulletsHtml = row.bullets
             .map(
               (b) => `
-            <div style="display: flex; align-items: baseline; margin-bottom: 3px;">
-              <span style="font-weight: 900; margin-right: 7px; color: #1e293b; font-size: 9.5pt; flex-shrink: 0; line-height: 1;">&bull;</span>
-              <span style="font-size: 8.6pt; line-height: 1.34; color: #0f172a; font-weight: 500;">${b}</span>
+            <div style="display: flex; align-items: flex-start; margin-bottom: 2px;">
+              <span style="display: inline-block; width: 7.5px; height: 7.5px; border-radius: 50%; background: #0f172a; margin-right: 8px; flex-shrink: 0; margin-top: 5px;"></span>
+              <span style="font-size: 11.0pt; line-height: 1.30; color: #0f172a; font-weight: 600; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">${b}</span>
             </div>`,
             )
             .join('');
 
           return `
-          <div style="border: 1.2px solid #000; border-radius: 3px; background: #fff; display: flex; flex-direction: column; overflow: hidden; ${spanStyle}">
-            <div style="background: #1e293b; color: #fff; padding: 4px 9px; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+          <div style="border: 1.3px solid #000; border-radius: 4px; background: #fff; display: flex; flex-direction: column; overflow: hidden; ${spanStyle}">
+            <div style="background: #1e293b; color: #fff; padding: 4px 10px; font-size: 9.0pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.4px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
               <span>Topic ${keyTopicNum}.${rIdx + 1} &bull; ${row.numTitle.replace(/^\d+\s+/, '')}</span>
             </div>
-            <div style="padding: 7px 11px; flex: 1; ${bodyLayout} background: #f8fafc;">
+            <div style="padding: 8px 12px; flex: 1; ${bodyLayout} background: #f8fafc; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
               ${bulletsHtml}
             </div>
           </div>`;
@@ -182,9 +182,9 @@ function renderStandardFrontCover({
       specTableHtml = `
       <!-- Pearson Edexcel Specification (Modular Card Grid Architecture) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
-        <div style="background: #0f172a; color: #ffffff; padding: 3.5px 10px; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; border-bottom: 1.5px solid #000; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+        <div style="background: #0f172a; color: #ffffff; padding: 4px 10px; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; font-size: 9.4pt; font-weight: 800; letter-spacing: 0.6px; text-transform: uppercase; border-bottom: 1.5px solid #000; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
           <span>Pearson Edexcel GCSE Specification Framework &bull; Key Topic ${keyTopicNum}</span>
-          <span style="font-size: 6.8pt; background: #334155; padding: 1.5px 6px; border-radius: 2px; font-weight: 700; letter-spacing: 0.5px;">${count} Modular Enquiries</span>
+          <span style="font-size: 7.2pt; background: #334155; padding: 2px 7px; border-radius: 2px; font-weight: 700; letter-spacing: 0.5px;">${count} Modular Enquiries</span>
         </div>
         <div style="padding: 5px; flex: 1; display: grid; ${gridStyle} gap: 5px; box-sizing: border-box;">
           ${cardsHtml}

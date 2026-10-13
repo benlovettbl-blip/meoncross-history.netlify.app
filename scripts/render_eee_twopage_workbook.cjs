@@ -182,7 +182,7 @@ const KEY_TOPICS_DATA = {
         'Unknown English Artist • Queen Elizabeth I depicted in her patterned cloth of gold coronation robes, holding the sovereign orb and sceptre. National Portrait Gallery, London (NPG 2607).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 102,
+      heightMm: 90,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
@@ -279,7 +279,7 @@ const KEY_TOPICS_DATA = {
         'Attributed to George Gower • Queen Elizabeth I sits in triumph with her right hand resting on a global orb. Behind her, windows depict the English fireships assaulting the Spanish fleet at Gravelines and the Armada wrecked on stormy rocks. Accession Shelfmark WA-INV-042.',
       sourceTag: 'Historical Primary Source',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 102,
+      heightMm: 90,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
@@ -376,7 +376,7 @@ const KEY_TOPICS_DATA = {
         'John White • A Cheife Herowan of the Secotan, painted in watercolour during the first Roanoke expedition (1585). Depicts an indigenous Algonquian leader wearing a copper gorget, feather, and fringed deerskin apron. British Museum, London (1906,0509.1.21).',
       sourceTag: 'Historical Primary Record',
       archiveTag: 'Edexcel Paper 2 Master Archive',
-      heightMm: 102,
+      heightMm: 90,
     },
     specBox: {
       title: 'Pearson Edexcel GCSE (9–1) History Specification Content',
