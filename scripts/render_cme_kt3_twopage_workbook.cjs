@@ -296,45 +296,33 @@ const kt3Configs = [
       stems:
         'One major consequence was... • Specifically, under the terms of the 1979 Treaty of Washington, Israel had to... • Consequently, this forced the Israeli government to...',
     },
-    // Right Page: Question 3 Source Utility [8 marks]
+    // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
-      type: 'utility_8',
-      tariff: 'Question 3: Source Utility [8 marks • 12 mins]',
-      stem: 'How useful are Sources A and B for an enquiry into the international and regional impact of the 1978 Camp David Accords? [8 marks]',
-      sourceA: {
-        letter: 'A',
-        shelfmark: 'EGY-PRES-1978-09',
-        tag: 'Official Egyptian Presidential Speech',
-        title: 'President Anwar Sadat, Speech to the People’s Assembly, Cairo (October 1978)',
-        quote:
-          'We did not go to Camp David to seek a separate peace, nor did we abandon the Palestinian cause. We recovered every inch of Egyptian sacred soil in the Sinai without firing a single bullet, opening our canal and restoring our oil fields to our impoverished people. We secured for the Palestinians a framework for full autonomy and self-government within five years. Those who shout slogans from luxury hotels in Baghdad and Damascus have never shed one drop of blood for the liberation of our lands.',
-      },
-      sourceB: {
-        letter: 'B',
-        shelfmark: 'ARAB-LEAGUE-RES-1978-11',
-        tag: 'Official Arab League Summit Communiqué',
-        title: 'Final Declaration of the Ninth Arab League Summit, Baghdad, Iraq (5 November 1978)',
-        quote:
-          'The conference affirms that the Camp David agreements harm the rights of the Palestinian people and the Arab nation. By concluding a separate bilateral deal with the Zionist enemy, the Egyptian government has deviated from the unified Arab ranks and surrendered Arab sovereignty over Jerusalem and the West Bank. The summit decides to reject these accords, to sever all diplomatic ties with Cairo, to suspend Egypt’s membership in the Arab League, and to relocate the headquarters from Cairo to Tunis.',
-      },
+      type: 'importance_8',
+      tariff: 'Question 3: Explain the Importance [8 marks • 12 mins]',
+      stem: 'Explain the importance of the Camp David Accords (1978) for Arab-Israeli relations. [8 marks]',
+      focusAspects: [
+        'Breaking 30 Years of War & Land-for-Peace Formula with Egypt',
+        'Pan-Arab Fury, Boycott, and the Isolation of Egypt',
+      ],
       structureStrip: [
         {
-          col: '1. SOURCE A UTILITY & PROVENANCE',
-          text: 'Analyse Source A’s content (recovering Sinai soil, Palestinian autonomy framework) and evaluate provenance: Sadat defending his deal to Egyptian MPs against accusations of Arab betrayal.',
+          col: '1. THE STRATEGIC BREAKTHROUGH',
+          text: 'Explain how the bilateral deal broken by Carter removed the Arab world’s largest army from the conflict and returned the Sinai Peninsula to Egypt.',
         },
         {
-          col: '2. SOURCE B UTILITY & PROVENANCE',
-          text: 'Analyse Source B’s content (rejection of separate deal, suspension of Egypt, moving HQ to Tunis) and evaluate provenance: unanimous Arab League resolution showing profound diplomatic fury.',
+          col: '2. THE PAN-ARAB & PALESTINIAN BACKLASH',
+          text: 'Explain how the lack of a guarantee for Palestinian statehood provoked unanimous fury at the Baghdad Summit, expelling Egypt from the Arab League.',
         },
         {
-          col: '3. COMPARATIVE VERDICT & KNOWLEDGE',
-          text: "Compare how both sources together expose the core regional dilemma: Egyptian national territorial recovery vs pan-Arab condemnation leading directly to Sadat's 1981 assassination.",
+          col: '3. EVALUATIVE VERDICT / REGIONAL BALANCE',
+          text: 'Explain how the Accords established a lasting peace treaty between Egypt and Israel but deepened divisions across the Middle East, leading to Sadat’s assassination.',
         },
       ],
       connectives:
-        'Source A is valuable for revealing... • The content is corroborated by historical evidence that Egypt regained... • However, its utility is shaped by its provenance, as Sadat needed to... • In contrast, Source B is useful for demonstrating... • This reflects the genuine Arab fury because... • Taken together, both sources are highly useful because they illustrate...',
+        'The Camp David Accords were important for Arab-Israeli relations because... • In particular, by securing peace with Egypt, Israel... • Furthermore, the agreement established the principle of "land for peace" by... • On the other hand, for the wider Arab world and Palestinians, the accords caused... • Consequently, this transformed the Middle East because...',
       wordBank:
-        'Camp David Accords (1978) • Jimmy Carter • Menachem Begin • Anwar Sadat • Treaty of Washington (1979) • Sinai recovery • Yamit evacuation (1982) • Baghdad Summit • Arab League suspension • Tunis HQ • October 1981 assassination',
+        'Camp David Accords (1978) • Jimmy Carter • Menachem Begin • Anwar Sadat • Treaty of Washington (1979) • Sinai recovery • land for peace • Baghdad Summit • Arab League expulsion • Tunis HQ • Sadat assassination (1981)',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 3.2). In Milestones 2 and 3, sketch the three-way handshake on the White House lawn and annotate the return of the Sinai Peninsula to Egypt.',
     },
@@ -482,7 +470,7 @@ const kt3Configs = [
           'Funerals explode into mass rioting',
           'Spontaneous uprising across Gaza & West Bank',
         ],
-        clue: 'Why did a traffic collision at the Erez checkpoint spark the First Intifada?',
+        clue: 'Why did a traffic collision in the Gaza Strip spark the First Intifada?',
         date: '8 Dec 1987',
         title: 'The Jabalia Traffic Spark',
       },
@@ -557,46 +545,33 @@ const kt3Configs = [
       stems:
         'One major consequence was... • Specifically, when Arafat backed Saddam Hussein’s invasion of Kuwait, Gulf states... • Consequently, this financial bankruptcy forced the PLO to...',
     },
-    // Right Page: Question 3 Source Utility [8 marks]
+    // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
-      type: 'utility_8',
-      tariff: 'Question 3: Source Utility [8 marks • 12 mins]',
-      stem: 'How useful are Sources A and B for an enquiry into Palestinian political attitudes towards peace and armed struggle between 1987 and 1990? [8 marks]',
-      sourceA: {
-        letter: 'A',
-        shelfmark: 'UN-GA-GENEVA-1988-12',
-        tag: 'Official Address to UN General Assembly',
-        title:
-          'Yasser Arafat, Chairman of the PLO, Speech to the UN General Assembly in Geneva (13 December 1988)',
-        quote:
-          'The PLO completely and categorically renounces all forms of terrorism, including individual, group, and state terrorism. We accept United Nations Resolutions 242 and 338 as the basis for negotiations with Israel within an international peace conference. We desire peace, and we seek a state of Palestine living side by side with the State of Israel in peace, harmony, and security. We stretch out our hands to the leaders of Israel: let us build the peace of the brave.',
-      },
-      sourceB: {
-        letter: 'B',
-        shelfmark: 'HAMAS-COV-1988-08',
-        tag: 'Official Charter of Hamas',
-        title: 'The Covenant of the Islamic Resistance Movement (Hamas), Article 13 (August 1988)',
-        quote:
-          'There is no solution for the Palestinian problem except by Jihad. Initiatives, proposals, and international conferences are but a waste of time, an exercise in futility. The land of Palestine is an Islamic Waqf consecrated for Muslim generations until Judgement Day. Renouncing any part of Palestine means renouncing part of the religion; our nationalism is part of our religious faith. Peaceful conferences are an illusion that cannot return the rights of the dispossessed.',
-      },
+      type: 'importance_8',
+      tariff: 'Question 3: Explain the Importance [8 marks • 12 mins]',
+      stem: 'Explain the importance of the First Intifada (1987–93) for international attitudes towards the Palestine issue. [8 marks]',
+      focusAspects: [
+        'Television Exposure of the "Iron Fist" & Shift in World Sympathy',
+        'Pressure on Arafat & US Dialogue via the 1988 Geneva Renunciation',
+      ],
       structureStrip: [
         {
-          col: '1. SOURCE A UTILITY & PROVENANCE',
-          text: 'Analyse Source A’s content (renouncing terrorism, accepting Res 242, two-state vision) and evaluate provenance: Arafat pivoting to diplomacy in Geneva to open direct dialogue with Washington.',
+          col: '1. SHATTERING THE MILITARY NARRATIVE',
+          text: 'Explain how global television images of armed Israeli soldiers using batons against stone-throwing youths transformed Palestinians from "terrorists" to an occupied people.',
         },
         {
-          col: '2. SOURCE B UTILITY & PROVENANCE',
-          text: 'Analyse Source B’s content (rejecting international conferences, sacred Waqf land, Jihad) and evaluate provenance: founding Hamas covenant emerging from the Intifada to challenge PLO secularism.',
+          col: '2. DIPLOMATIC REALIGNMENT & GENEVA 1988',
+          text: 'Explain how the grassroots uprising forced Arafat to renounce terrorism and accept Resolution 242, enabling direct diplomatic dialogue with the United States.',
         },
         {
-          col: '3. COMPARATIVE VERDICT & SYNTHESIS',
-          text: 'Assess how the sources together reveal the profound, irreconcilable split within Palestinian politics between secular diplomatic accommodation (PLO) and uncompromising Islamist resistance (Hamas).',
+          col: '3. COLLAPSE OF THE STATUS QUO',
+          text: 'Explain how the Intifada convinced Israeli leaders that permanent military rule was unsustainable, directly forcing the road to the Madrid and Oslo peace talks.',
         },
       ],
       connectives:
-        'Source A is valuable for understanding... • The content demonstrates that by December 1988, Arafat was willing to... • In terms of provenance, Arafat was addressing the UN in Geneva because... • On the other hand, Source B provides vital evidence of... • The charter reflects the ideology of Hamas, which arose during the Intifada to... • Together, both sources are highly useful because they capture the deep ideological fracture between...',
+        'The First Intifada was important for international attitudes because... • Prior to 1987, the international community largely viewed the issue as... • However, global broadcasts of the "Iron Fist" policy demonstrated that... • Furthermore, this diplomatic pressure compelled Yasser Arafat to... • Ultimately, the uprising transformed relations by forcing Israel and the US to...',
       wordBank:
-        'First Intifada (1987) • Jabalia camp • Iron Fist policy • Yitzhak Rabin • PLO • Yasser Arafat • Geneva speech (1988) • UN Resolution 242 • Hamas Covenant (1988) • Sheikh Ahmed Yassin • Islamic Waqf • Gulf War bankruptcy',
+        'First Intifada (1987) • Jabalia camp • Iron Fist policy • Yitzhak Rabin • stone-throwing youths • global television broadcast • Arafat Geneva speech (1988) • renunciation of terrorism • US dialogue • Madrid Conference (1991)',
       timelineMission:
         'Turn to Pages 2–3 (Key Topic 3.4). In Milestone 5, sketch the stone-throwing youth facing an Israeli tank and annotate Arafat’s 1988 Geneva renunciation of terrorism.',
     },
@@ -1178,7 +1153,6 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
     const linedLeftPageNum = leftPageNum + 2; // Spread 2 Left (Verso): Exam Practice & Planning Scaffold
     const linedRightPageNum = leftPageNum + 3; // Spread 2 Right (Recto): Extended Response & Band 4 Rubric
     const rx = cfg.rightExam || cfg.extendedPractice;
-    const isUtility = rx.type === 'utility_8';
 
     // ------------------------------------------------------------------
     // SPREAD 1, LEFT PAGE (VERSO): 5-STAGE CAUSAL DOMINO SPINE & CORE VOCABULARY
@@ -1366,35 +1340,19 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
             ${rx.stem}
           </div>
           ${
-            isUtility
+            rx.type === 'importance_8'
               ? `
-          <!-- Two Compact Sources for Q3 Utility -->
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 2px;">
-            <div style="border: 1px solid #000; border-radius: 2px; padding: 2px 4px; background: #fafafa;">
-              <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-bottom: 1px;">
-                <span>SOURCE A: ${rx.sourceA.tag}</span>
-                <span>${rx.sourceA.shelfmark}</span>
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; line-height: 1.15; color: #111;">
-                "${rx.sourceA.quote}"
-              </div>
-            </div>
-            <div style="border: 1px solid #000; border-radius: 2px; padding: 2px 4px; background: #fafafa;">
-              <div style="display: flex; justify-content: space-between; font-family: 'Inter', sans-serif; font-size: 6.0pt; font-weight: 800; border-bottom: 1px solid #ddd; padding-bottom: 1px; margin-bottom: 1px;">
-                <span>SOURCE B: ${rx.sourceB.tag}</span>
-                <span>${rx.sourceB.shelfmark}</span>
-              </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.2pt; font-style: italic; line-height: 1.15; color: #111;">
-                "${rx.sourceB.quote}"
-              </div>
-            </div>
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
+            <strong>Structure across two distinct analytical aspects:</strong> &bull; ${rx.focusAspects[0]} &bull; ${rx.focusAspects[1]}
           </div>
           `
-              : `
+              : rx.type === 'narrative_8'
+                ? `
           <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 1.5px 5px; margin-top: 1.5px; font-family: 'Inter', sans-serif; font-size: 7.5pt; line-height: 1.18;">
             <strong>You may use the following in your answer:</strong> &bull; ${rx.stimulus[0]} &bull; ${rx.stimulus[1]} &bull; <em>You must also use information of your own.</em>
           </div>
           `
+                : ''
           }
         </div>
 

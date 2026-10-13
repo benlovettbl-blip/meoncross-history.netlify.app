@@ -222,6 +222,13 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'cme_new') {
+        console.log(`\n📚 Compiling KT3 pupil workbook for [cme_new]...`);
+        execSync(`node scripts/render_cme_kt3_twopage_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

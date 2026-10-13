@@ -10206,7 +10206,8 @@ export const unitData = {
       exam_practice: {
         type: 'consequence_and_extended',
         title: 'Edexcel GCSE (9–1) Paper 2 Exam Practice',
-        tariff: '16 marks (Q1 Consequence & Question 2: Narrative Account [8 marks)',
+        tariff:
+          '24 marks (Q1 Consequence [4m], Q2 Narrative Account [8m], Q3 Explain Importance [8m])',
         questions: [
           {
             tariff: '4 marks',
@@ -10319,6 +10320,67 @@ export const unitData = {
                 'Ben Gurion Airport',
                 'Knesset speech',
                 'Ismailia summit (Dec 1977)',
+              ],
+            },
+          },
+          {
+            tariff: 'Question 3: Explain the Importance [8 marks',
+            type: 'importance_8',
+            marks: 8,
+            question:
+              '3. Explain the importance of the Camp David Accords (1978) for Arab-Israeli relations. [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and causal connectives below to structure your response.',
+            model:
+              'The Camp David Accords were of profound historical importance because they achieved the first formal peace agreement between Israel and a frontline Arab state, breaking thirty years of continuous warfare. Under the bilateral framework brokered by President Jimmy Carter, Israel agreed to return the entire 60,000 square kilometre Sinai Peninsula to Egypt and dismantle all Jewish settlements, while Egypt granted full diplomatic recognition, free maritime passage through the Straits of Tiran, and permanently demilitarised the Sinai desert. This established the crucial precedent of "land for peace" and neutralised the Arab world’s largest and most formidable standing army, ensuring Israel no longer faced a credible two-front existential military threat.<br><br>Furthermore, the Accords were of equal importance for dividing the Arab world and radicalising Palestinian resistance. Because the second framework for Palestinian self-government in the West Bank and Gaza Strip lacked binding timetables or enforcement mechanisms, Arab leaders branded Anwar Sadat a traitor. Meeting at the Baghdad Summit in November 1978, Arab League states voted unanimously to sever diplomatic ties with Egypt, suspend its membership, and relocate Arab League headquarters to Tunis. Consequently, while the Accords secured a durable bilateral peace along Israel’s southern border, they isolated Egypt, inflamed Islamist opposition culminating in Sadat’s assassination in October 1981, and entrenched regional instability across the wider Middle East.',
+            scaffolding: {
+              acronym: 'Analytical Importance Framework',
+              acronym_title: 'Question 3: Explain the Importance [8 marks • 12 mins]',
+              guidance:
+                'The Camp David Accords were important for Arab-Israeli relations because... • In particular, by securing peace with Egypt, Israel... • Furthermore, the agreement established the principle of "land for peace" by... • On the other hand, for the wider Arab world and Palestinians, the accords caused... • Consequently, this transformed the Middle East because...',
+              steps: [
+                {
+                  letter: 'POINT 1',
+                  name: 'THE STRATEGIC BREAKTHROUGH',
+                  prompt:
+                    'Explain how the bilateral deal broken by Carter removed the Arab world’s largest army from the conflict and returned the Sinai Peninsula to Egypt.',
+                  starter: '',
+                },
+                {
+                  letter: 'POINT 2',
+                  name: 'PAN-ARAB & PALESTINIAN BACKLASH',
+                  prompt:
+                    'Explain how the lack of a guarantee for Palestinian statehood provoked unanimous fury at the Baghdad Summit, expelling Egypt from the Arab League.',
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATIVE SUMMARY',
+                  name: 'REGIONAL BALANCE & ASSASSINATION',
+                  prompt:
+                    'Explain how the Accords established a lasting peace treaty between Egypt and Israel but deepened divisions across the Middle East, leading to Sadat’s assassination.',
+                  starter: '',
+                },
+              ],
+              sentence_starters: [
+                'The Camp David Accords were important for Arab-Israeli relations because...',
+                'In particular, by securing peace with Egypt, Israel...',
+                'Furthermore, the agreement established the principle of "land for peace" by...',
+                'On the other hand, for the wider Arab world and Palestinians, the accords caused...',
+                'Consequently, this transformed the Middle East because...',
+              ],
+              connectives_bank: [
+                'Camp David Accords (1978)',
+                'Jimmy Carter',
+                'Menachem Begin',
+                'Anwar Sadat',
+                'Treaty of Washington (1979)',
+                'Sinai recovery',
+                'land for peace',
+                'Baghdad Summit',
+                'Arab League expulsion',
+                'Tunis HQ',
+                'Sadat assassination (1981)',
               ],
             },
           },
@@ -11659,25 +11721,26 @@ export const unitData = {
       exam_practice: {
         type: 'consequence_and_extended',
         title: 'Edexcel GCSE (9–1) Paper 2 Exam Practice',
-        tariff: '16 marks (Q1 Consequence & Question 3: Source Utility [8 marks)',
+        tariff:
+          '24 marks (Q1 Consequence [4m], Q2 Narrative Account [8m], Q3 Explain Importance [8m])',
         questions: [
           {
             tariff: '4 marks',
             type: '4-mark',
             marks: 4,
             question:
-              '1(a). Explain one consequence of the Camp David Accords (1978) for Egyptian-Arab relations. [4 marks]. (4 marks)',
+              '1(a). Explain one consequence of Operation Litani in March 1978. [4 marks]. (4 marks)',
             prompt:
-              "Point (Led to Egypt's complete diplomatic isolation and expulsion from the Arab League) • Fact (Arab states meeting in Baghdad branded Sadat a traitor for signing a separate peace without securing Palestinian statehood; suspended Egypt's membership and moved Arab League HQ to Tunis) • Consequence (Severed Egypt's diplomatic leadership of the Arab world and isolated Sadat domestically).",
+              'Point (Established a permanent UN buffer zone and proxy security belt in southern Lebanon) • Fact (Over 25,000 IDF troops pushed PLO fighters north of the Litani River; UN passed Resolution 425 creating UNIFIL while Israel armed Major Haddad’s Christian South Lebanon Army) • Consequence (Failed to stop rocket fire and laid the groundwork for the wider 1982 invasion).',
             model:
-              "One major consequence was point (Led to Egypt's complete diplomatic isolation and expulsion from the Arab League) • Fact (Arab states meeting in Baghdad branded Sadat a traitor for signing a separate peace without securing Palestinian statehood; suspended Egypt's membership and moved Arab League HQ to Tunis) • Consequence (Severed Egypt's diplomatic leadership of the Arab world and isolated Sadat domestically). • Specifically, following the 1978 Camp David Accords, Arab nations this altered the strategic situation by creating long-term political friction and entrenching hostility between the opposing parties. Consequently, this directly prevented peaceful negotiation and accelerated the cycle of regional conflict.",
+              "One major consequence was the establishment of a permanent international buffer zone and a proxy security belt along Israel's northern border. Specifically, in March 1978, over 25,000 Israeli soldiers launched Operation Litani following the Coastal Road attack, advancing to the Litani River to push PLO guerrilla bases away from the border. Consequently, UN Security Council Resolution 425 deployed UNIFIL peacekeepers while Israel established a southern security belt manned by the Christian South Lebanon Army, though this failed to halt cross-border artillery strikes.",
             scaffolding: {
               acronym: 'P-F-C (Point • Fact • Consequence)',
               acronym_title: 'The P-F-C High-Yield Consequence Formula (1 Concise Paragraph)',
               guidance:
                 'Write 1 concise paragraph (approx. 3–4 sentences). State one clear consequence (Point), support with accurate historical facts (Fact), and explain the causal link to the event (Consequence Link).',
               sentence_starters: [
-                'One major consequence was... • Specifically, following the 1978 Camp David Accords, Arab nations... • Consequently, this resulted in Egypt being...',
+                'One major consequence was... • Specifically, during Operation Litani in March 1978, the IDF... • Consequently, this led directly to...',
               ],
               connectives_bank: [
                 'One consequence was',
@@ -11692,18 +11755,18 @@ export const unitData = {
             type: '4-mark',
             marks: 4,
             question:
-              '1(b). Explain one consequence of the Treaty of Washington (1979) for the Israeli settlement of Yamit. [4 marks]. (4 marks)',
+              '1(b). Explain one consequence of the Sabra and Shatila massacre (September 1982). [4 marks]. (4 marks)',
             prompt:
-              'Point (Forced the complete evacuation and destruction of the Jewish settlement by the Israeli military in April 1982) • Fact (Prime Minister Begin deployed the IDF to forcibly remove protesting nationalist settlers, bulldozing 2,500 homes to return northern Sinai to Egypt) • Consequence (Demonstrated that Israel was willing to dismantle permanent settlements in exchange for full treaty peace and demilitarisation).',
+              'Point (Triggered unprecedented domestic Israeli moral outrage and forced the resignation of Ariel Sharon) • Fact (400,000 Israelis rallied in Tel Aviv demanding accountability; the Kahan Commission ruled Sharon bore "personal responsibility" for permitting Phalangist militias into the refugee camps) • Consequence (Shattered Sharon’s military career temporarily and contributed to Menachem Begin’s resignation in 1983).',
             model:
-              'One major consequence was point (Forced the complete evacuation and destruction of the Jewish settlement by the Israeli military in April 1982) • Fact (Prime Minister Begin deployed the IDF to forcibly remove protesting nationalist settlers, bulldozing 2,500 homes to return northern Sinai to Egypt) • Consequence (Demonstrated that Israel was willing to dismantle permanent settlements in exchange for full treaty peace and demilitarisation). • Specifically, under the terms of the 1979 Treaty of Washington, Israel had to this altered the strategic situation by creating long-term political friction and entrenching hostility between the opposing parties. Consequently, this directly prevented peaceful negotiation and accelerated the cycle of regional conflict.',
+              'One major consequence was unprecedented domestic moral outrage in Israel and the forced removal of Defence Minister Ariel Sharon from office. Specifically, following the slaughter of up to 2,000 Palestinian civilians by Lebanese Christian Phalangist militias while the IDF illuminated the camps, 400,000 Israelis rallied in Tel Aviv demanding accountability. Consequently, the independent Kahan Commission concluded Sharon bore "personal responsibility" for failing to foresee the massacre, forcing his immediate resignation and damaging Begin\'s government.',
             scaffolding: {
               acronym: 'P-F-C (Point • Fact • Consequence)',
               acronym_title: 'The P-F-C High-Yield Consequence Formula (1 Concise Paragraph)',
               guidance:
                 'Write 1 concise paragraph (approx. 3–4 sentences). State one clear consequence (Point), support with accurate historical facts (Fact), and explain the causal link to the event (Consequence Link).',
               sentence_starters: [
-                'One major consequence was... • Specifically, under the terms of the 1979 Treaty of Washington, Israel had to... • Consequently, this forced the Israeli government to...',
+                'One major consequence was... • Specifically, following the slaughter of up to 2,000 civilians by Phalangist militias, the Israeli public... • Consequently, the Kahan Commission concluded that...',
               ],
               connectives_bank: [
                 'One consequence was',
@@ -11714,64 +11777,151 @@ export const unitData = {
             },
           },
           {
-            tariff: 'Question 3: Source Utility [8 marks',
-            type: 'utility_8',
+            tariff: '4 marks',
+            type: '4-mark',
+            marks: 4,
+            question:
+              '1(c). Explain one consequence of the outbreak of the First Intifada in December 1987. [4 marks]. (4 marks)',
+            prompt:
+              'Point (A spontaneous grassroots uprising ignited across the Gaza Strip and West Bank against 20 years of military occupation) • Fact (On 8 December 1987, an IDF tank transporter crashed into Palestinian cars in the Gaza Strip, killing four workers from Jabalia camp; rumors of deliberate retaliation triggered widespread strikes, barricades, and stone-throwing) • Consequence (Shattered Israeli complacency that the occupied territories were docile and created a new form of mass civil resistance).',
+            model:
+              'One major consequence was the shattering of Israeli complacency and the emergence of a mass grassroots civil uprising across the occupied territories. Specifically, following the fatal crash in the Gaza Strip that killed four workers from Jabalia camp, Palestinian youths mobilized strikes, commercial boycotts, and barricades, using stones against armed soldiers. Consequently, the uprising demonstrated to Israeli military commanders and the world that 20 years of military rule could not be maintained indefinitely.',
+            scaffolding: {
+              acronym: 'P-F-C (Point • Fact • Consequence)',
+              acronym_title: 'The P-F-C High-Yield Consequence Formula (1 Concise Paragraph)',
+              guidance:
+                'Write 1 concise paragraph (approx. 3–4 sentences). State one clear consequence (Point), support with accurate historical facts (Fact), and explain the causal link to the event (Consequence Link).',
+              sentence_starters: [
+                'One major consequence was... • Specifically, following the Jabalia checkpoint incident, Palestinian communities... • Consequently, this uprising proved that...',
+              ],
+              connectives_bank: [
+                'One consequence was',
+                'Specifically, this meant that',
+                'Consequently, this directly led to',
+                'As a result of this',
+              ],
+            },
+          },
+          {
+            tariff: 'Question 2: Narrative Account [8 marks',
+            type: 'narrative_8',
             marks: 8,
             question:
-              '3. How useful are Sources A and B for an enquiry into the international and regional impact of the 1978 Camp David Accords? [8 marks]',
-            stimulus: [],
+              '2. Write a narrative account analysing Israeli military involvement in Lebanon between 1978 and 1983. [8 marks]',
+            stimulus: ['Operation Litani (1978)', 'The Sabra and Shatila massacre (1982)'],
             prompt:
               'Use the structure strip and causal connectives below to structure your response.',
             model:
-              'Source A is useful for an enquiry into this topic because it provides valuable contemporary insight into the perspectives and operational priorities of the period. From my own knowledge, I know that contemporary actors were under immense pressure to justify their actions to both domestic and international audiences. The provenance of Source A is particularly valuable because, as a direct contemporary record, it reveals the official rationale and mindset of the leadership at that precise historical moment.<br><br>Similarly, Source B is useful because it corroborates these findings while illuminating the tangible human and strategic impact on the ground. When evaluated against the broader context of the conflict, the details in Source B provide reliable evidence of how policy decisions were implemented and perceived. Consequently, while each source reflects the subjective motives of its author, combined they provide high historical utility for understanding both the official motivations and the concrete realities of the crisis.',
+              "Israeli military intervention began in March 1978 following the Fatah Coastal Road attack, when Prime Minister Menachem Begin launched Operation Litani. Over 25,000 Israeli troops advanced to the Litani River to push PLO artillery positions away from the northern Israeli border. Although UN Security Council Resolution 425 established UNIFIL peacekeepers and a Christian militia buffer zone, PLO rocket attacks resumed, convincing Defence Minister Ariel Sharon that only a total destruction of the PLO infrastructure in Lebanon could guarantee security.<br><br>The conflict escalated into total war in June 1982 following the attempted assassination of Israeli Ambassador Shlomo Argov in London. Sharon launched Operation Peace for Galilee, deceptively telling the Israeli cabinet the military would advance only 40 kilometres to create a safe zone. Instead, armoured columns drove sixty miles north to lay siege to West Beirut. For ten weeks, Israeli forces subjected the Lebanese capital to relentless artillery bombardment and air strikes, eventually forcing Yasser Arafat and thousands of PLO fighters to evacuate Lebanon under international supervision and relocate their headquarters to Tunis.<br><br>Finally, the operation culminated in moral and political catastrophe in September 1982. Following the assassination of Lebanese President-elect Bachir Gemayel, Israeli forces allowed Lebanese Christian Phalangist militias into the Sabra and Shatila refugee camps. Over three days, the militias slaughtered between 800 and 2,000 defenceless Palestinian civilians while the IDF fired illumination flares. The massacre triggered a massive demonstration of 400,000 people in Tel Aviv, and the subsequent Kahan Commission inquiry ruled Sharon bore personal responsibility, forcing his resignation. Ultimately, the Lebanon intervention fractured Israeli domestic consensus, cost hundreds of soldiers' lives, and bogged Israel down in an eighteen-year guerrilla war against the newly formed Hezbollah.",
             scaffolding: {
-              acronym: 'Analytical Importance Framework',
-              acronym_title: 'Question 3: Source Utility [8 marks • 12 mins]',
+              acronym: 'Chronological Narrative Framework',
+              acronym_title: 'Question 2: Narrative Account [8 marks • 12 mins]',
               guidance:
-                'Source A is valuable for revealing... • The content is corroborated by historical evidence that Egypt regained... • However, its utility is shaped by its provenance, as Sadat needed to... • In contrast, Source B is useful for demonstrating... • This reflects the genuine Arab fury because... • Taken together, both sources are highly useful because they illustrate...',
+                'Israeli military intervention began in March 1978 when... • In response to PLO cross-border rocket fire, Prime Minister Begin launched... • Tensions escalated into total war in June 1982 when Ariel Sharon... • Rather than halting at the 40km boundary, Israeli forces advanced directly to... • This culminated in tragedy following the assassination of Bachir Gemayel when... • Ultimately, the aftermath in Israel resulted in...',
               steps: [
                 {
-                  letter: 'SOURCE A UTILITY & PROVENANCE',
-                  name: '',
+                  letter: 'PHASE 1',
+                  name: 'OPERATION LITANI (1978)',
                   prompt:
-                    'Analyse Source A’s content (recovering Sinai soil, Palestinian autonomy framework) and evaluate provenance: Sadat defending his deal to Egyptian MPs against accusations of Arab betrayal.',
+                    'Explain the Coastal Road massacre, Begin launching Operation Litani to push PLO north of the river, and the creation of UNIFIL and the South Lebanon Army.',
                   starter: '',
                 },
                 {
-                  letter: 'SOURCE B UTILITY & PROVENANCE',
-                  name: '',
+                  letter: 'PHASE 2',
+                  name: 'INVASION & SIEGE OF BEIRUT (1982)',
                   prompt:
-                    'Analyse Source B’s content (rejection of separate deal, suspension of Egypt, moving HQ to Tunis) and evaluate provenance: unanimous Arab League resolution showing profound diplomatic fury.',
+                    'Explain the Argov shooting pretext, Sharon launching Operation Peace for Galilee, driving 60 miles to Beirut, 10-week siege, and PLO evacuation to Tunis.',
                   starter: '',
                 },
                 {
-                  letter: 'COMPARATIVE VERDICT & KNOWLEDGE',
-                  name: '',
+                  letter: 'PHASE 3',
+                  name: 'SABRA-SHATILA & FALLOUT (1982–83)',
                   prompt:
-                    "Compare how both sources together expose the core regional dilemma: Egyptian national territorial recovery vs pan-Arab condemnation leading directly to Sadat's 1981 assassination.",
+                    "Explain Bachir Gemayel's assassination, Phalangist massacre in refugee camps under IDF illumination flares, 400,000-strong Tel Aviv protest, and Kahan Commission findings.",
                   starter: '',
                 },
               ],
               sentence_starters: [
-                'Source A is valuable for revealing...',
-                'The content is corroborated by historical evidence that Egypt regained...',
-                'However, its utility is shaped by its provenance, as Sadat needed to...',
-                'In contrast, Source B is useful for demonstrating...',
-                'This reflects the genuine Arab fury because...',
-                'Taken together, both sources are highly useful because they illustrate...',
+                'Israeli military intervention began in March 1978 when...',
+                'In response to PLO cross-border rocket fire, Prime Minister Begin launched...',
+                'Tensions escalated into total war in June 1982 when Ariel Sharon...',
+                'Rather than halting at the 40km boundary, Israeli forces advanced directly to...',
+                'This culminated in tragedy following the assassination of Bachir Gemayel when...',
+                'Ultimately, the aftermath in Israel resulted in...',
               ],
               connectives_bank: [
-                'Camp David Accords (1978)',
-                'Jimmy Carter',
-                'Menachem Begin',
-                'Anwar Sadat',
-                'Treaty of Washington (1979)',
-                'Sinai recovery',
-                'Yamit evacuation (1982)',
-                'Baghdad Summit',
-                'Arab League suspension',
-                'Tunis HQ',
-                'October 1981 assassination',
+                'Operation Litani (1978)',
+                'Litani River',
+                'UNIFIL (Res 425)',
+                'South Lebanon Army',
+                'Ariel Sharon',
+                'Operation Peace for Galilee (1982)',
+                'Siege of Beirut',
+                'Philip Habib',
+                'PLO evacuation to Tunis',
+                'Bachir Gemayel',
+                'Sabra and Shatila',
+                'Kahan Commission',
+              ],
+            },
+          },
+          {
+            tariff: 'Question 3: Explain the Importance [8 marks',
+            type: 'importance_8',
+            marks: 8,
+            question:
+              '3. Explain the importance of the First Intifada (1987–93) for international attitudes towards the Palestine issue. [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and causal connectives below to structure your response.',
+            model:
+              'The First Intifada was of paramount historical importance because television broadcasts of the uprising fundamentally transformed global perceptions of the Israeli-Palestinian conflict. Before December 1987, Western governments and the international public had largely viewed the conflict through the lens of Palestinian terrorism, aircraft hijackings, and cross-border guerrilla warfare. However, daily international news broadcasts showing unarmed Palestinian youths armed only with stones confronting heavily armed Israeli Defence Forces soldiers—and Defense Minister Yitzhak Rabin’s controversial "Iron Fist" policy of breaking the bones of protesters—shattered Israel’s moral image abroad and generated widespread international sympathy for Palestinians living under military occupation.<br><br>Furthermore, the Intifada was of crucial importance because it forced a dramatic diplomatic realignment on the part of both Yasser Arafat and the United States. Recognizing that the grassroots leadership inside the West Bank and Gaza was outpacing the exiled PLO leadership in Tunis, Arafat addressed the United Nations General Assembly in Geneva in December 1988, where he formally renounced all forms of terrorism and accepted UN Resolutions 242 and 338. This concession met longstanding US conditions and prompted President Ronald Reagan to authorize the first formal diplomatic dialogue between Washington and the PLO. Consequently, the Intifada proved to Israeli and American leaders that permanent military rule over two million Palestinians was politically unsustainable, directly setting the diplomatic stage for the 1991 Madrid Conference and the subsequent Oslo peace negotiations.',
+            scaffolding: {
+              acronym: 'Analytical Importance Framework',
+              acronym_title: 'Question 3: Explain the Importance [8 marks • 12 mins]',
+              guidance:
+                'The First Intifada was important for international attitudes because... • Prior to 1987, the international community largely viewed the issue as... • However, global broadcasts of the "Iron Fist" policy demonstrated that... • Furthermore, this diplomatic pressure compelled Yasser Arafat to... • Ultimately, the uprising transformed relations by forcing Israel and the US to...',
+              steps: [
+                {
+                  letter: 'POINT 1',
+                  name: 'SHATTERING THE MILITARY NARRATIVE',
+                  prompt:
+                    'Explain how global television images of armed Israeli soldiers using batons against stone-throwing youths transformed Palestinians from "terrorists" to an occupied people.',
+                  starter: '',
+                },
+                {
+                  letter: 'POINT 2',
+                  name: 'DIPLOMATIC REALIGNMENT & GENEVA 1988',
+                  prompt:
+                    'Explain how the grassroots uprising forced Arafat to renounce terrorism and accept Resolution 242, enabling direct diplomatic dialogue with the United States.',
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATIVE SUMMARY',
+                  name: 'COLLAPSE OF THE STATUS QUO',
+                  prompt:
+                    'Explain how the Intifada convinced Israeli leaders that permanent military rule was unsustainable, directly forcing the road to the Madrid and Oslo peace talks.',
+                  starter: '',
+                },
+              ],
+              sentence_starters: [
+                'The First Intifada was important for international attitudes because...',
+                'Prior to 1987, the international community largely viewed the issue as...',
+                'However, global broadcasts of the "Iron Fist" policy demonstrated that...',
+                'Furthermore, this diplomatic pressure compelled Yasser Arafat to...',
+                'Ultimately, the uprising transformed relations by forcing Israel and the US to...',
+              ],
+              connectives_bank: [
+                'First Intifada (1987)',
+                'Jabalia camp',
+                'Iron Fist policy',
+                'Yitzhak Rabin',
+                'stone-throwing youths',
+                'global television broadcast',
+                'Arafat Geneva speech (1988)',
+                'renunciation of terrorism',
+                'US dialogue',
+                'Madrid Conference (1991)',
               ],
             },
           },
@@ -12897,25 +13047,26 @@ export const unitData = {
       exam_practice: {
         type: 'consequence_and_extended',
         title: 'Edexcel GCSE (9–1) Paper 2 Exam Practice',
-        tariff: '16 marks (Q1 Consequence & Question 2: Narrative Account [8 marks)',
+        tariff:
+          '24 marks (Q1 Consequence [4m], Q2 Narrative Account [8m], Q3 Explain Importance [8m])',
         questions: [
           {
             tariff: '4 marks',
             type: '4-mark',
             marks: 4,
             question:
-              '1(a). Explain one consequence of Operation Litani in March 1978. [4 marks]. (4 marks)',
+              '1(a). Explain one consequence of the secret Oslo back-channel negotiations in 1993. [4 marks]. (4 marks)',
             prompt:
-              'Point (Established a permanent UN buffer zone and proxy security belt in southern Lebanon) • Fact (Over 25,000 IDF troops pushed PLO fighters north of the Litani River; UN passed Resolution 425 creating UNIFIL while Israel armed Major Haddad’s Christian South Lebanon Army) • Consequence (Failed to stop rocket fire and laid the groundwork for the wider 1982 invasion).',
+              "Point (Produced the historic breakthrough of mutual recognition between Israel and the PLO) • Fact (Rabin officially recognized the PLO as the representative of the Palestinian people; Arafat recognized Israel's right to exist in peace and renounced terrorism) • Consequence (Ended decades of non-recognition, leading directly to the signing of Oslo I on the White House lawn).",
             model:
-              'One major consequence was point (Established a permanent UN buffer zone and proxy security belt in southern Lebanon) • Fact (Over 25,000 IDF troops pushed PLO fighters north of the Litani River; UN passed Resolution 425 creating UNIFIL while Israel armed Major Haddad’s Christian South Lebanon Army) • Consequence (Failed to stop rocket fire and laid the groundwork for the wider 1982 invasion). • Specifically, during Operation Litani in March 1978, the IDF this altered the strategic situation by creating long-term political friction and entrenching hostility between the opposing parties. Consequently, this directly prevented peaceful negotiation and accelerated the cycle of regional conflict.',
+              "One major consequence was the historic diplomatic breakthrough of mutual recognition between Israel and the Palestine Liberation Organization. Specifically, the secret Norwegian back-channel negotiations enabled Israeli and Palestinian envoys to draft Letters of Mutual Recognition, in which Prime Minister Yitzhak Rabin officially recognized the PLO as the legitimate representative of the Palestinian people, and Yasser Arafat recognized Israel's right to exist in peace and security while renouncing all forms of terrorism. Consequently, this breakthrough ended 45 years of diplomatic denial and paved the way directly for the signing of the Oslo I Accord and the iconic White House handshake on 13 September 1993.",
             scaffolding: {
               acronym: 'P-F-C (Point • Fact • Consequence)',
               acronym_title: 'The P-F-C High-Yield Consequence Formula (1 Concise Paragraph)',
               guidance:
                 'Write 1 concise paragraph (approx. 3–4 sentences). State one clear consequence (Point), support with accurate historical facts (Fact), and explain the causal link to the event (Consequence Link).',
               sentence_starters: [
-                'One major consequence was... • Specifically, during Operation Litani in March 1978, the IDF... • Consequently, this led directly to...',
+                'One major consequence was... • Specifically, the secret talks in Norway resulted in Letters of Mutual Recognition where... • Consequently, this breakthrough paved the way for...',
               ],
               connectives_bank: [
                 'One consequence was',
@@ -12930,18 +13081,18 @@ export const unitData = {
             type: '4-mark',
             marks: 4,
             question:
-              '1(b). Explain one consequence of the Sabra and Shatila massacre (September 1982). [4 marks]. (4 marks)',
+              '1(b). Explain one consequence of the assassination of Yitzhak Rabin on 4 November 1995. [4 marks]. (4 marks)',
             prompt:
-              'Point (Triggered unprecedented domestic Israeli moral outrage and forced the resignation of Ariel Sharon) • Fact (400,000 Israelis rallied in Tel Aviv demanding accountability; the Kahan Commission ruled Sharon bore "personal responsibility" for permitting Phalangist militias into the refugee camps) • Consequence (Shattered Sharon’s military career temporarily and contributed to Menachem Begin’s resignation in 1983).',
+              'Point (Derailment of the peace process and the election of a right-wing Likud government opposed to Oslo) • Fact (Right-wing Jewish extremist Yigal Amir shot Rabin at a Tel Aviv peace rally; subsequent Hamas bus bombings eroded public confidence in peace) • Consequence (Led directly to the narrow election of Benjamin Netanyahu in May 1996, who halted further territorial handovers).',
             model:
-              'One major consequence was point (Triggered unprecedented domestic Israeli moral outrage and forced the resignation of Ariel Sharon) • Fact (400,000 Israelis rallied in Tel Aviv demanding accountability; the Kahan Commission ruled Sharon bore "personal responsibility" for permitting Phalangist militias into the refugee camps) • Consequence (Shattered Sharon’s military career temporarily and contributed to Menachem Begin’s resignation in 1983). • Specifically, following the slaughter of up to 2,000 civilians by Phalangist militias, the Israeli public this altered the strategic situation by creating long-term political friction and entrenching hostility between the opposing parties. Consequently, this directly prevented peaceful negotiation and accelerated the cycle of regional conflict.',
+              "One major consequence was the severe derailment of the peace process and the rise of right-wing Israeli political opposition to territorial concessions. Specifically, on 4 November 1995, Jewish religious extremist Yigal Amir shot Prime Minister Rabin point-blank following a massive peace rally in Tel Aviv, believing that ceding biblical land to Palestinians violated Jewish religious law. Consequently, Rabin's death shattered the political momentum of the peace movement and, combined with subsequent Hamas suicide bombings, contributed to the narrow election of Likud leader Benjamin Netanyahu in May 1996, who halted further territorial handovers.",
             scaffolding: {
               acronym: 'P-F-C (Point • Fact • Consequence)',
               acronym_title: 'The P-F-C High-Yield Consequence Formula (1 Concise Paragraph)',
               guidance:
                 'Write 1 concise paragraph (approx. 3–4 sentences). State one clear consequence (Point), support with accurate historical facts (Fact), and explain the causal link to the event (Consequence Link).',
               sentence_starters: [
-                'One major consequence was... • Specifically, following the slaughter of up to 2,000 civilians by Phalangist militias, the Israeli public... • Consequently, the Kahan Commission concluded that...',
+                'One major consequence was... • Specifically, following Rabin’s murder by Yigal Amir at a peace rally... • Consequently, this traumatic loss resulted in...',
               ],
               connectives_bank: [
                 'One consequence was',
@@ -12956,61 +13107,122 @@ export const unitData = {
             type: 'narrative_8',
             marks: 8,
             question:
-              '2. Write a narrative account analysing Israeli military involvement in Lebanon between 1978 and 1983. [8 marks]',
-            stimulus: ['Operation Litani (1978)', 'The Sabra and Shatila massacre (1982)'],
+              '2. Write a narrative account analysing the peace process between Israel and the Palestinians from 1992 to the assassination of Yitzhak Rabin in 1995. [8 marks]',
+            stimulus: ['The Oslo I Accords (1993)', 'Extremist opposition to the peace process'],
             prompt:
               'Use the structure strip and causal connectives below to structure your response.',
             model:
-              "The chain of events began with phase 1: operation litani (1978). Explain the Coastal Road massacre, Begin launching Operation Litani to push PLO north of the river, and the creation of UNIFIL and the South Lebanon Army. This directly altered relations by creating an immediate sense of crisis and prompting rapid military mobilisation.<br><br>Following this, the situation escalated into phase 2: invasion & siege of beirut (1982). Explain the Argov shooting pretext, Sharon launching Operation Peace for Galilee, driving 60 miles to Beirut, 10-week siege, and PLO evacuation to Tunis. In direct response, the opposing sides hardened their stances, preventing diplomatic compromise and making active conflict virtually unavoidable.<br><br>Finally, this culminated in phase 3: sabra-shatila & fallout (1982–83). Explain Bachir Gemayel's assassination, Phalangist massacre in refugee camps under IDF illumination flares, 400,000-strong Tel Aviv protest, and Kahan Commission findings. Consequently, this fundamentally transformed the balance of power in the Middle East and established enduring geopolitical realities that shaped all subsequent decades of conflict.",
+              'The peace process began to gather momentum in 1992 following the election of Israeli Prime Minister Yitzhak Rabin on a platform of territorial compromise. In complete secrecy, Israeli academics and PLO officials met in Norway for informal back-channel negotiations, culminating in the historic Letters of Mutual Recognition where Israel recognized the PLO and Arafat renounced terrorism. On 13 September 1993, Rabin and Arafat signed the Oslo I Accord on the White House lawn, agreeing to phased Palestinian self-government starting with Gaza and Jericho.<br><br>Following this initial breakthrough, negotiations expanded into implementation with the May 1994 Cairo Agreement and the October 1994 Israel-Jordan Peace Treaty. Arafat returned to Palestinian territory to establish the Palestinian National Authority (PNA). In September 1995, the parties signed the Oslo II Agreement, dividing the West Bank into Areas A (Palestinian civil and security control), B (Palestinian civil and joint Israeli security control), and C (exclusive Israeli control).<br><br>Finally, this fragile progress was shattered by escalating extremist violence from both sides. In February 1994, Jewish extremist Baruch Goldstein massacred 29 Muslim worshippers at the Cave of the Patriarchs in Hebron, prompting retaliatory suicide bus bombings by Hamas that turned Israeli public opinion against the peace process. The crisis culminated on 4 November 1995 when Jewish religious extremist Yigal Amir assassinated Prime Minister Rabin at a Tel Aviv peace rally. Consequently, Rabin’s murder shattered the political trust required for peace and brought the momentum of the Oslo peace process to a tragic halt.',
             scaffolding: {
               acronym: 'Chronological Narrative Framework',
               acronym_title: 'Question 2: Narrative Account [8 marks • 12 mins]',
               guidance:
-                'Israeli military intervention began in March 1978 when... • In response to PLO cross-border rocket fire, Prime Minister Begin launched... • Tensions escalated into total war in June 1982 when Ariel Sharon... • Rather than halting at the 40km boundary, Israeli forces advanced directly to... • This culminated in tragedy following the assassination of Bachir Gemayel when... • Ultimately, the aftermath in Israel resulted in...',
+                'The peace process was revived in 1992 when Yitzhak Rabin was elected on a pledge to... • In complete secrecy, Israeli and Palestinian negotiators met in Norway, leading to... • This culminated on 13 September 1993 when Rabin and Arafat signed... • Over the following year, progress continued as the Cairo Agreement enabled... • However, violent extremism emerged from both sides when... • Ultimately, the peace momentum was shattered on 4 November 1995 when...',
               steps: [
                 {
                   letter: 'PHASE 1',
-                  name: 'OPERATION LITANI (1978)',
+                  name: 'THE OSLO BREAKTHROUGH (1992–93)',
                   prompt:
-                    'Explain the Coastal Road massacre, Begin launching Operation Litani to push PLO north of the river, and the creation of UNIFIL and the South Lebanon Army.',
+                    'Explain the 1992 election of Rabin, secret Norway talks, Letters of Mutual Recognition, and the 13 September 1993 White House signing of Oslo I.',
                   starter: '',
                 },
                 {
                   letter: 'PHASE 2',
-                  name: 'INVASION & SIEGE OF BEIRUT (1982)',
+                  name: 'IMPLEMENTATION & EXTENSION (1994)',
                   prompt:
-                    'Explain the Argov shooting pretext, Sharon launching Operation Peace for Galilee, driving 60 miles to Beirut, 10-week siege, and PLO evacuation to Tunis.',
+                    'Explain Cairo Agreement (Gaza-Jericho), Arafat’s return to Palestine, Jordan-Israel Peace Treaty (Oct 1994), and the Nobel Peace Prize.',
                   starter: '',
                 },
                 {
                   letter: 'PHASE 3',
-                  name: 'SABRA-SHATILA & FALLOUT (1982–83)',
+                  name: 'EXTREMISM & TRAGEDY (1994–95)',
                   prompt:
-                    "Explain Bachir Gemayel's assassination, Phalangist massacre in refugee camps under IDF illumination flares, 400,000-strong Tel Aviv protest, and Kahan Commission findings.",
+                    'Explain Hebron massacre (Goldstein), Hamas suicide bombings, Oslo II partition into Areas A/B/C, and the 4 Nov 1995 assassination of Rabin by Yigal Amir.',
                   starter: '',
                 },
               ],
               sentence_starters: [
-                'Israeli military intervention began in March 1978 when...',
-                'In response to PLO cross-border rocket fire, Prime Minister Begin launched...',
-                'Tensions escalated into total war in June 1982 when Ariel Sharon...',
-                'Rather than halting at the 40km boundary, Israeli forces advanced directly to...',
-                'This culminated in tragedy following the assassination of Bachir Gemayel when...',
-                'Ultimately, the aftermath in Israel resulted in...',
+                'The peace process was revived in 1992 when Yitzhak Rabin was elected on a pledge to...',
+                'In complete secrecy, Israeli and Palestinian negotiators met in Norway, leading to...',
+                'This culminated on 13 September 1993 when Rabin and Arafat signed...',
+                'Over the following year, progress continued as the Cairo Agreement enabled...',
+                'However, violent extremism emerged from both sides when...',
+                'Ultimately, the peace momentum was shattered on 4 November 1995 when...',
               ],
               connectives_bank: [
-                'Operation Litani (1978)',
-                'Litani River',
-                'UNIFIL (Res 425)',
-                'South Lebanon Army',
-                'Ariel Sharon',
-                'Operation Peace for Galilee (1982)',
-                'Siege of Beirut',
-                'Philip Habib',
-                'PLO evacuation to Tunis',
-                'Bachir Gemayel',
-                'Sabra and Shatila',
-                'Kahan Commission',
+                'Yitzhak Rabin',
+                'Shimon Peres',
+                'Yasser Arafat',
+                'Bill Clinton',
+                'Oslo I Accord (1993)',
+                'Letters of Mutual Recognition',
+                'Gaza-Jericho First',
+                'Jordan Treaty (1994)',
+                'Baruch Goldstein (Hebron 1994)',
+                'Hamas suicide bombings',
+                'Oslo II (1995: Areas A, B, C)',
+                'Yigal Amir (4 Nov 1995)',
+              ],
+            },
+          },
+          {
+            tariff: 'Question 3: Explain the Importance [8 marks',
+            type: 'importance_8',
+            marks: 8,
+            question:
+              '3. Explain the importance of the Oslo I Accord (1993) for relations between Israel and the PLO. [8 marks]',
+            stimulus: [],
+            prompt:
+              'Use the structure strip and causal connectives below to structure your response.',
+            model:
+              'The Oslo I Accord was of decisive historical importance because it shattered decades of mutual denial and established the unprecedented principle of official mutual recognition between Israel and the Palestine Liberation Organization (PLO). In the Letters of Mutual Recognition exchanged in September 1993, Yitzhak Rabin formally recognised the PLO as the legitimate representative of the Palestinian people, while Yasser Arafat officially recognised Israel’s right to exist in peace and security and unequivocally renounced all forms of terrorism. This historic breakthrough ended 45 years of non-recognition, transformed former mortal enemies into diplomatic negotiating partners, and paved the way for the dramatic handshake on the White House lawn between Rabin and Arafat on 13 September 1993.<br><br>Furthermore, the Accord was of critical importance because it established the framework for Palestinian self-government through the creation of the Palestinian National Authority (PNA). Under the "Gaza-Jericho First" formula agreed in the 1994 Cairo Agreement, Israeli troops redeployed out of populated Palestinian cities, enabling Arafat to return to Palestinian territory to head the newly formed PNA administration. However, the agreement was also important because its fatal ambiguities—deferring final status issues such as Jerusalem, Jewish settlements, and refugee right of return for five years—provoked violent opposition from extremists on both sides. Hamas and Palestinian Islamic Jihad launched deadly suicide bombings to derail the peace, while right-wing Israeli nationalists denounced Rabin as a traitor, creating the political climate that led directly to Rabin’s assassination in November 1995.',
+            scaffolding: {
+              acronym: 'Analytical Importance Framework',
+              acronym_title: 'Question 3: Explain the Importance [8 marks • 12 mins]',
+              guidance:
+                'The Oslo I Accord was important for relations between Israel and the PLO because... • In particular, the Letters of Mutual Recognition meant that... • Furthermore, the agreement established Palestinian self-government by... • On the other hand, the accord also provoked intense opposition because... • Consequently, this transformed Middle Eastern diplomacy because...',
+              steps: [
+                {
+                  letter: 'POINT 1',
+                  name: 'MUTUAL RECOGNITION',
+                  prompt:
+                    'Explain how the Letters of Mutual Recognition ended 45 years of non-recognition, with Rabin recognizing the PLO and Arafat recognizing Israel and renouncing terrorism.',
+                  starter: '',
+                },
+                {
+                  letter: 'POINT 2',
+                  name: 'CREATION OF THE PALESTINIAN NATIONAL AUTHORITY',
+                  prompt:
+                    'Explain how the "Gaza-Jericho First" formula and 1994 Cairo Agreement established Palestinian self-government and allowed Arafat\'s return.',
+                  starter: '',
+                },
+                {
+                  letter: 'EVALUATIVE SUMMARY',
+                  name: 'EXTREMIST BACKLASH & UNRESOLVED ISSUES',
+                  prompt:
+                    'Assess why deferring final-status questions like Jerusalem and settlements fueled violent opposition from Hamas suicide bombers and Israeli extremists, culminating in Rabin’s assassination.',
+                  starter: '',
+                },
+              ],
+              sentence_starters: [
+                'The Oslo I Accord was important for relations between Israel and the PLO because...',
+                'In particular, the Letters of Mutual Recognition meant that...',
+                'Furthermore, the agreement established Palestinian self-government by...',
+                'On the other hand, the accord also provoked intense opposition because...',
+                'Consequently, this transformed Middle Eastern diplomacy because...',
+              ],
+              connectives_bank: [
+                'Oslo I Accord (1993)',
+                'Yitzhak Rabin',
+                'Yasser Arafat',
+                'Letters of Mutual Recognition',
+                'renunciation of terrorism',
+                'Palestinian National Authority (PNA)',
+                'Gaza-Jericho First',
+                'Cairo Agreement (1994)',
+                'Baruch Goldstein',
+                'Hamas suicide bombings',
+                'Yigal Amir (Nov 1995)',
               ],
             },
           },
