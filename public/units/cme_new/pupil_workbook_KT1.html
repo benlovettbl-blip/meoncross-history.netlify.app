@@ -5,7 +5,7 @@
   <title>Key Topic 1: The Birth of the State of Israel, 1945–1963 Workbook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
     /* Uniform Page Margins for Booklet Imposition & Printing */
@@ -52,48 +52,86 @@
       height: 100%;
       overflow: hidden;
     }
-    /* 5-Stage Domino Causal Chain Styling */
-    .domino-chain-container {
+    /* 5-Stage Chronological Note-Taking Block Styling (KS3 Enquiry Architecture) */
+    .spine-notes-container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 2.2mm;
+      margin-top: 1.5mm;
       flex: 1;
-      margin: 2px 0;
     }
-    .domino-card-compact {
-      border: 1.2px solid #000000;
-      border-radius: 3px;
-      padding: 2.5px 6px;
-      background: #ffffff;
+    .spine-stage-block {
+      border: 1.2px solid #000;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .stage-banner {
+      background: #000;
+      color: #fff;
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1.2mm 2mm;
+      display: flex;
+      align-items: center;
+      gap: 1.8mm;
+      border-bottom: 1px solid #000;
+      letter-spacing: 0.1px;
+    }
+    .stage-banner .stage-badge {
+      background: #fff;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 800;
+      padding: 0.2mm 1.4mm;
+      border-radius: 1.5px;
+      line-height: 1;
+    }
+    .stage-content-row {
+      display: flex;
+      flex-direction: row;
+      min-height: 38mm;
+    }
+    .stage-trigger-col {
+      width: 26mm;
+      background: #fbfbfb;
+      border-right: 1.2px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 1mm 1.5mm;
+      box-sizing: border-box;
+    }
+    .trigger-fact-cell {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 5.6pt;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.15;
+    }
+    .trigger-fact-cell .fact-dot {
+      color: #000;
+      font-size: 6.5pt;
+      margin-right: 0.8mm;
+    }
+    .stage-writing-col {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      background: #fff;
       box-sizing: border-box;
     }
-    .domino-connector {
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1;
-      padding: 1px 0;
-    }
-    .task-section {
-      margin-bottom: 2px;
-    }
-    /* Thick Black Writing Lines for Accessibility & SEND Legibility */
-    .task-line {
-      border-bottom: 1.5px solid #000000;
-      height: 7.0mm;
-      margin: 0;
+    .ruled-line {
+      height: 6.33mm;
+      border-bottom: 0.5px solid #000000;
       box-sizing: border-box;
     }
-    .task-line-dotted {
-      border-bottom: 1.2px dotted #000000;
-      height: 6.0mm;
-      margin: 0;
-      box-sizing: border-box;
+    .ruled-line:last-child {
+      border-bottom: none;
     }
     /* Clean Lined Paper Grid for Extended Writing Pages (8mm margin, thick 1.5px black lines for photocopying) */
     .lined-page-grid {
@@ -530,205 +568,168 @@
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1915–1916</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The McMahon-Hussein Correspondence
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Sherif Hussein of Mecca</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> High Commissioner McMahon</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Arab Revolt against Ottomans</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Pledge of Arab independence</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Arabs believe Britain promised them Palestine in 1915?
-                </div>
-              </div>
+      <div class="spine-notes-container">
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">1</span>
+              <span>1915–1916 • Why did Arabs believe Britain promised them independent sovereignty in 1915?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Sherif Hussein of Mecca
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>High Commissioner McMahon
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Pledge of Arab Independence
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">May 1916</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Secret Sykes-Picot Agreement
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Mark Sykes & François Picot</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Secret British-French treaty</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Middle East imperial carve-up</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> International administration zone</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why was the secret Sykes-Picot deal seen as an imperial betrayal?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">2</span>
+              <span>May 1916 • Why was the secret Sykes-Picot Agreement viewed as an imperial betrayal?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Mark Sykes & François Picot
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Secret Anglo-French Carve-Up
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>International Palestine Zone
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">November 1917</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Balfour Declaration
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Foreign Sec Arthur Balfour</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Lord Walter Rothschild</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> "National home for Jewish people"</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Safeguard civil & religious rights</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why was the Balfour Declaration contradictory to McMahon’s pledge?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">3</span>
+              <span>November 1917 • How did the Balfour Declaration create contradictory British commitments?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Foreign Sec Arthur Balfour
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>"National Home for Jewish People"
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Non-Jewish Civil Rights Clause
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1920–1936</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The British Mandate & Rising Immigration
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> League of Nations Mandate</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 1929 Jaffa & Hebron riots</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 1936–39 Arab Great Revolt</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Haganah Jewish defence militia</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did rising Jewish immigration spark the 1936 Arab Revolt?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">4</span>
+              <span>1920–1936 • Why did rising Jewish immigration spark communal violence under the Mandate?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>League of Nations Mandate
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>1929 Jaffa & Hebron Riots
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Haganah Self-Defence Militia
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1936–1939</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Arab Revolt & The 1939 White Paper
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Colonial Sec Malcolm MacDonald</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 75,000 Jewish entry cap (5 yrs)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Arab consent for future entry</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Zionist sense of betrayal</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did the 1939 White Paper turn Zionists against Britain?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">5</span>
+              <span>1936–1939 • Why did the 1939 White Paper turn Zionists against British rule?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>1936–39 Arab Great Revolt
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>75,000 Entry Cap (5 Years)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Arab Veto on Future Entry
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-        </div>
+        
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
@@ -1256,205 +1257,168 @@
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1945–1946</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Holocaust Survivors & Immigration Caps
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> 250,000 Displaced Persons (DPs)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Foreign Sec Ernest Bevin</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 1,500 monthly entry quota</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Truman calls for 100,000 visas</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Bevin strictly enforce the 1,500 monthly refugee limit?
-                </div>
-              </div>
+      <div class="spine-notes-container">
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">1</span>
+              <span>1945–1946 • Why did Bevin strictly enforce the 1,500 monthly refugee immigration limit?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>250,000 Displaced Persons (DPs)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Foreign Sec Ernest Bevin
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>1,500 Monthly Entry Cap
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Nov 1945 – 1946</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Jewish Insurgency & Night of the Trains
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> United Resistance Movement</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Haganah, Irgun & Lehi alliance</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Night of Trains (153 rail cuts)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Guerilla raids & oil sabotage</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did Zionist paramilitaries paralyze British transport networks?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">2</span>
+              <span>Nov 1945 – 1946 • How did Zionist paramilitaries paralyze British infrastructure in Palestine?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>United Resistance Movement
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Night of Trains (153 Rail Cuts)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Irgun & Lehi Guerilla Raids
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">22 July 1946</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Bombing of the King David Hotel
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Menachem Begin (Irgun commander)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 350kg explosives in milk churns</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> British military & civil HQ</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 91 officials & staff killed</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did targeting the King David Hotel prove Palestine was ungovernable?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">3</span>
+              <span>22 July 1946 • Why did targeting the King David Hotel prove Palestine was ungovernable?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Menachem Begin & Irgun
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>350kg Explosives in Milk Churns
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>91 British, Arab & Jewish Dead
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">July 1947</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Sergeants Affair & Public Backlash
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Sgts Clifford Martin & Mervyn Paice</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Retaliation for Acre hangings</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Booby-trapped bodies in grove</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> UK anti-Jewish riots & outcry</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did the hanged sergeants trigger "bring our boys home" demands?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">4</span>
+              <span>July 1947 • Why did the Sergeants Affair trigger public outrage in Britain?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Sgts Clifford Martin & Mervyn Paice
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Retaliation for Acre Hangings
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Booby-Trapped Bodies in Grove
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Summer–Nov 1947</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The SS Exodus & UN Referral
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> SS Exodus (4,500 refugees)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Royal Navy forced German return</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> US outrage & loan threats</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> UNSCOP recommendation (Feb 1947)</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did the SS Exodus PR disaster force Britain to surrender the Mandate?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">5</span>
+              <span>Summer–Nov 1947 • How did the SS Exodus crisis force Britain to surrender the Mandate to the UN?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>SS Exodus (4,500 Refugees)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Royal Navy Forced Return to Germany
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>UNSCOP Partition Referral
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-        </div>
+        
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
@@ -1982,205 +1946,168 @@
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Dec 1947 – May 1948</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Communal Civil War & Plan Dalet
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> UN Resolution 181 partition (55%/45%)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Plan Dalet (Plan D offensive)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Tel Aviv–Jerusalem convoy ambushes</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Deir Yassin massacre & panic</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> British military non-intervention</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why was securing the Tel Aviv–Jerusalem road vital before 14 May?
-                </div>
-              </div>
+      <div class="spine-notes-container">
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">1</span>
+              <span>Dec 1947 – May 1948 • Why did Plan Dalet ignite intense fighting along the Tel Aviv–Jerusalem corridor?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>UN Resolution 181 Partition
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Plan Dalet Road Offensives
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Deir Yassin & Arab Evacuation
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">14 May 1948</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Proclamation of the State of Israel
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> David Ben-Gurion declaration</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Tel Aviv Museum of Art</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Theodor Herzl portrait</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> US Truman recognition in 11 mins</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> British Mandate expires at midnight</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Ben-Gurion insist on declaring statehood hours before the British left?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">2</span>
+              <span>14 May 1948 • Why did Ben-Gurion proclaim statehood hours before the British Mandate expired?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>David Ben-Gurion Declaration
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Tel Aviv Museum Proclamation
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>US Truman Recognition (11 Mins)
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">15 May 1948</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Five Arab Armies Invade
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Egypt, Transjordan, Syria, Iraq, Lebanon</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Multi-front coordinated assault</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Glubb Pasha & Arab Legion</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Old City of Jerusalem captured</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Severe Israeli heavy weapons deficit</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Which strategic areas did Transjordan’s Arab Legion seize immediately?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">3</span>
+              <span>15 May 1948 • Which strategic sectors did the five invading Arab armies seize in May 1948?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Five Invading Arab Armies
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Glubb Pasha & Arab Legion
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Old City of Jerusalem Captured
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">June–July 1948</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The First UN Truce & Czech Arms Resupply
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Count Folke Bernadotte 28-day truce</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Operation Balak Czech arms airlift</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 25,000 rifles & Avia fighter planes</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Unified IDF command established</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Bernadotte assassinated by Lehi</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did the 4-week UN truce decisively tip military firepower to Israel?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">4</span>
+              <span>June–July 1948 • How did the 4-week UN truce enable Israel to decisively shift military momentum?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Count Bernadotte 28-Day Truce
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Czech Arms Airlift (Operation Balak)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Unified IDF Command Structure
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Feb–July 1949</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Rhodes Armistices & The Green Line
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> UN mediator Ralph Bunche</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 1949 Rhodes Armistice Agreements</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Green Line borders (Israel 79%)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Transjordan annexes West Bank</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Egypt controls Gaza Strip</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did the 1949 Green Line transform the borders allocated by UN 181?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">5</span>
+              <span>Feb–July 1949 • How did the 1949 Green Line transform the territory allocated by the UN?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>1949 Rhodes Armistices
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Green Line Borders (Israel 79%)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>West Bank (Jordan) & Gaza (Egypt)
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-        </div>
+        
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
@@ -2708,205 +2635,168 @@
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1948–1949</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Palestinian Refugee Flight (Al-Nakba)
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> 700,000+ Palestinians displaced</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Contested causes: flight vs expulsion</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Destruction of 400+ Arab villages</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Loss of homes, farmland & property</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Al-Nakba ("The Catastrophe")</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why is the cause of the 1948 Palestinian refugee exodus still contested?
-                </div>
-              </div>
+      <div class="spine-notes-container">
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">1</span>
+              <span>1948–1949 • Why is the cause of the 1948 Palestinian refugee flight (Al-Nakba) contested?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>700,000+ Displaced Arabs
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Al-Nakba ("The Catastrophe")
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Destruction of 400+ Villages
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Dec 1949</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                UN Resolution 194 & Creation of UNRWA
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> UN General Assembly Res 194</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Palestinian "Right of Return" principle</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Creation of UNRWA relief agency</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Camps in Gaza, West Bank, Jordan, Lebanon</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Refugees denied resettlement</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Arab states and Israel disagree over UN Resolution 194?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">2</span>
+              <span>Dec 1949 • Why did Arab states and Israel disagree over UN Resolution 194 and UNRWA?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>UN Resolution 194 (Return Principle)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>UNRWA Relief Camps Established
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Permanent Refugee Standoff
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">July 1950</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Israeli Law of Return & Immigration Boom
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Law of Return enacted (Knesset)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Automatic citizenship for any Jew</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Holocaust survivors & Mizrahi Jews</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Jewish population doubles in 3 yrs</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Ma'abarot transit tent camps</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did the Law of Return transform Israel’s demographics by 1953?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">3</span>
+              <span>July 1950 • How did the Law of Return transform Israel’s demographics and economy by 1953?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Law of Return (July 1950)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Automatic Jewish Citizenship
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Population Doubles in 3 Years
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1948–1953</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                IDF Military Consolidation & US Aid
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Integration of Haganah, Irgun & Lehi</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Universal compulsory military service</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> US government grants & soft loans</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> American Jewish diaspora fundraising</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Technological & defensive edge</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why was universal conscription essential for Israel’s survival?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">4</span>
+              <span>1948–1953 • Why was universal military conscription and US aid essential for Israeli survival?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>IDF Conscription (Men & Women)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>US Economic Grants & Loans
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Permanent Defensive Readiness
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1949–1954</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Border Infiltration & Retaliatory Raids
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Palestinian refugee border crossers</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Stealing crops vs armed sabotage</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> IDF Unit 101 (Ariel Sharon)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 1953 Qibya raid (69 civilians killed)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Severe international condemnation</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Israeli border crossers trigger Sharon’s Unit 101 raid on Qibya?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">5</span>
+              <span>1949–1954 • Why did cross-border infiltration trigger Sharon’s Unit 101 raid on Qibya?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Palestinian Border Infiltrators
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Unit 101 (Ariel Sharon)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>1953 Qibya Raid (69 Civilians Killed)
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-        </div>
+        
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
@@ -3434,205 +3324,168 @@
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Feb 1955</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Gaza Raid & Escalating Fedayeen Clashes
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> President Gamal Abdel Nasser</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> IDF Gaza Raid (37 Egyptians killed)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Egyptian army humiliation</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> State-sponsored fedayeen attacks</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Voice of the Arabs radio propaganda</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Ben-Gurion’s Gaza raid convince Nasser he needed heavy weapons?
-                </div>
-              </div>
+      <div class="spine-notes-container">
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">1</span>
+              <span>Feb 1955 • Why did Ben-Gurion’s Gaza raid convince Nasser he needed modern heavy weapons?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>President Gamal Abdel Nasser
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>IDF Gaza Raid (37 Egyptians Dead)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>State-Sponsored Fedayeen Raids
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Sept 1955</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Czech Arms Deal & Cold War Realignment
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Czech Arms Deal via USSR</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> MiG-15 fighters & T-34 tanks</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Western arms monopoly broken</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> US cancels Aswan High Dam loans</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Soviet geopolitical entry to Mideast</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did the Czech arms deal alarm Britain, France, and Israel?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">2</span>
+              <span>Sept 1955 • Why did the Czech arms deal alarm Britain, France, and Israel in 1955?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Czech Arms Deal via USSR
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>MiG-15 Jet Fighters & T-34 Tanks
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>US Cancels Aswan Dam Loans
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">26 July 1956</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Nasser Nationalises the Suez Canal
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Alexandria speech ("de Lesseps" codeword)</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Canal revenues fund Aswan Dam</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Anglo-French maritime lifeline seized</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Closure of Straits of Tiran</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> PM Anthony Eden vows to remove Nasser</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did Britain and France view canal nationalisation as an act of theft?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">3</span>
+              <span>26 July 1956 • Why did Britain and France view canal nationalisation as an intolerable threat?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Alexandria Canal Seizure Speech
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Canal Tolls Fund Aswan High Dam
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>PM Eden Resolves to Topple Nasser
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Oct–Nov 1956</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Secret Protocol of Sèvres & Sinai Blitz
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Secret Protocol of Sèvres collusion</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Britain, France & Israel plot</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Operation Kadesh IDF Sinai assault</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Anglo-French ultimatum & Port Said bombs</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Paratroopers at Mitla Pass</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  How did the secret Protocol of Sèvres orchestrate a fake pretext for war?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">4</span>
+              <span>Oct–Nov 1956 • How did the secret Protocol of Sèvres orchestrate a pretext for invading Egypt?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Secret Protocol of Sèvres Collusion
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Israeli Sinai Blitz (Operation Kadesh)
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Anglo-French Ultimatum & Port Said
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">Nov 1956 – 1958</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                US Ultimatum, UNEF & Arab Leadership
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> President Eisenhower financial threats</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Sterling run forces UK ceasefire</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> UNEF peacekeepers in Sinai</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Nasser emerges as Pan-Arab hero</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> United Arab Republic formed (1958)</div>
-                </div>
-              </div>
-              
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  Why did the Suez Crisis end in political triumph for Nasser despite military defeat?
-                </div>
-              </div>
+        
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">5</span>
+              <span>Nov 1956 – 1958 • Why did the Suez Crisis end in political triumph for Nasser despite military defeat?</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Eisenhower Financial Ultimatum
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>UNEF Blue Helmets in Sinai
+                  </div>
+                
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>Nasser Hailed as Pan-Arab Hero
+                  </div>
+                
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          
-        </div>
+        
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->

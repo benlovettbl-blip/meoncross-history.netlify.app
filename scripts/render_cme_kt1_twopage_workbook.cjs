@@ -91,7 +91,16 @@ const kt1Configs = [
     specAnchor: `<strong>Conflicting interests and demands of Jews and Arabs within the British Mandate</strong>; contextualised by the McMahon-Hussein Correspondence (1915), the secret Sykes-Picot Agreement (1916), the Balfour Declaration (1917), and the 1939 British White Paper.`,
     stages: [
       {
+        num: 1,
         step: 1,
+        date: '1915–1916',
+        questionHeading:
+          'Why did Arabs believe Britain promised them independent sovereignty in 1915?',
+        bullets: [
+          'Sherif Hussein of Mecca',
+          'High Commissioner McMahon',
+          'Pledge of Arab Independence',
+        ],
         keywords: [
           'Sherif Hussein of Mecca',
           'High Commissioner McMahon',
@@ -99,11 +108,18 @@ const kt1Configs = [
           'Pledge of Arab independence',
         ],
         clue: 'Why did Arabs believe Britain promised them Palestine in 1915?',
-        date: '1915–1916',
         title: 'The McMahon-Hussein Correspondence',
       },
       {
+        num: 2,
         step: 2,
+        date: 'May 1916',
+        questionHeading: 'Why was the secret Sykes-Picot Agreement viewed as an imperial betrayal?',
+        bullets: [
+          'Mark Sykes & François Picot',
+          'Secret Anglo-French Carve-Up',
+          'International Palestine Zone',
+        ],
         keywords: [
           'Mark Sykes & François Picot',
           'Secret British-French treaty',
@@ -111,11 +127,19 @@ const kt1Configs = [
           'International administration zone',
         ],
         clue: 'Why was the secret Sykes-Picot deal seen as an imperial betrayal?',
-        date: 'May 1916',
         title: 'The Secret Sykes-Picot Agreement',
       },
       {
+        num: 3,
         step: 3,
+        date: 'November 1917',
+        questionHeading:
+          'How did the Balfour Declaration create contradictory British commitments?',
+        bullets: [
+          'Foreign Sec Arthur Balfour',
+          '"National Home for Jewish People"',
+          'Non-Jewish Civil Rights Clause',
+        ],
         keywords: [
           'Foreign Sec Arthur Balfour',
           'Lord Walter Rothschild',
@@ -123,11 +147,19 @@ const kt1Configs = [
           'Safeguard civil & religious rights',
         ],
         clue: 'Why was the Balfour Declaration contradictory to McMahon’s pledge?',
-        date: 'November 1917',
         title: 'The Balfour Declaration',
       },
       {
+        num: 4,
         step: 4,
+        date: '1920–1936',
+        questionHeading:
+          'Why did rising Jewish immigration spark communal violence under the Mandate?',
+        bullets: [
+          'League of Nations Mandate',
+          '1929 Jaffa & Hebron Riots',
+          'Haganah Self-Defence Militia',
+        ],
         keywords: [
           'League of Nations Mandate',
           '1929 Jaffa & Hebron riots',
@@ -135,11 +167,18 @@ const kt1Configs = [
           'Haganah Jewish defence militia',
         ],
         clue: 'How did rising Jewish immigration spark the 1936 Arab Revolt?',
-        date: '1920–1936',
         title: 'The British Mandate & Rising Immigration',
       },
       {
+        num: 5,
         step: 5,
+        date: '1936–1939',
+        questionHeading: 'Why did the 1939 White Paper turn Zionists against British rule?',
+        bullets: [
+          '1936–39 Arab Great Revolt',
+          '75,000 Entry Cap (5 Years)',
+          'Arab Veto on Future Entry',
+        ],
         keywords: [
           'Colonial Sec Malcolm MacDonald',
           '75,000 Jewish entry cap (5 yrs)',
@@ -147,7 +186,6 @@ const kt1Configs = [
           'Zionist sense of betrayal',
         ],
         clue: 'Why did the 1939 White Paper turn Zionists against Britain?',
-        date: '1936–1939',
         title: 'The Arab Revolt & The 1939 White Paper',
       },
     ],
@@ -205,7 +243,16 @@ const kt1Configs = [
     specAnchor: `<strong>Conflicting interests and demands of Jews and Arabs within the British Mandate</strong>; <strong>Jewish insurgency</strong> (the <strong>Irgun</strong> and <strong>Lehi</strong>); the <strong>bombing of the King David Hotel (July 1946)</strong>; British economic and military exhaustion; the <strong>SS Exodus affair (1947)</strong>; and <strong>UNSCOP recommendations</strong>.`,
     stages: [
       {
+        num: 1,
         step: 1,
+        date: '1945–1946',
+        questionHeading:
+          'Why did Bevin strictly enforce the 1,500 monthly refugee immigration limit?',
+        bullets: [
+          '250,000 Displaced Persons (DPs)',
+          'Foreign Sec Ernest Bevin',
+          '1,500 Monthly Entry Cap',
+        ],
         keywords: [
           '250,000 Displaced Persons (DPs)',
           'Foreign Sec Ernest Bevin',
@@ -213,11 +260,19 @@ const kt1Configs = [
           'Truman calls for 100,000 visas',
         ],
         clue: 'Why did Bevin strictly enforce the 1,500 monthly refugee limit?',
-        date: '1945–1946',
         title: 'Holocaust Survivors & Immigration Caps',
       },
       {
+        num: 2,
         step: 2,
+        date: 'Nov 1945 – 1946',
+        questionHeading:
+          'How did Zionist paramilitaries paralyze British infrastructure in Palestine?',
+        bullets: [
+          'United Resistance Movement',
+          'Night of Trains (153 Rail Cuts)',
+          'Irgun & Lehi Guerilla Raids',
+        ],
         keywords: [
           'United Resistance Movement',
           'Haganah, Irgun & Lehi alliance',
@@ -225,11 +280,18 @@ const kt1Configs = [
           'Guerilla raids & oil sabotage',
         ],
         clue: 'How did Zionist paramilitaries paralyze British transport networks?',
-        date: 'Nov 1945 – 1946',
         title: 'The Jewish Insurgency & Night of the Trains',
       },
       {
+        num: 3,
         step: 3,
+        date: '22 July 1946',
+        questionHeading: 'Why did targeting the King David Hotel prove Palestine was ungovernable?',
+        bullets: [
+          'Menachem Begin & Irgun',
+          '350kg Explosives in Milk Churns',
+          '91 British, Arab & Jewish Dead',
+        ],
         keywords: [
           'Menachem Begin (Irgun commander)',
           '350kg explosives in milk churns',
@@ -237,11 +299,18 @@ const kt1Configs = [
           '91 officials & staff killed',
         ],
         clue: 'Why did targeting the King David Hotel prove Palestine was ungovernable?',
-        date: '22 July 1946',
         title: 'Bombing of the King David Hotel',
       },
       {
+        num: 4,
         step: 4,
+        date: 'July 1947',
+        questionHeading: 'Why did the Sergeants Affair trigger public outrage in Britain?',
+        bullets: [
+          'Sgts Clifford Martin & Mervyn Paice',
+          'Retaliation for Acre Hangings',
+          'Booby-Trapped Bodies in Grove',
+        ],
         keywords: [
           'Sgts Clifford Martin & Mervyn Paice',
           'Retaliation for Acre hangings',
@@ -249,11 +318,19 @@ const kt1Configs = [
           'UK anti-Jewish riots & outcry',
         ],
         clue: 'Why did the hanged sergeants trigger "bring our boys home" demands?',
-        date: 'July 1947',
         title: 'The Sergeants Affair & Public Backlash',
       },
       {
+        num: 5,
         step: 5,
+        date: 'Summer–Nov 1947',
+        questionHeading:
+          'How did the SS Exodus crisis force Britain to surrender the Mandate to the UN?',
+        bullets: [
+          'SS Exodus (4,500 Refugees)',
+          'Royal Navy Forced Return to Germany',
+          'UNSCOP Partition Referral',
+        ],
         keywords: [
           'SS Exodus (4,500 refugees)',
           'Royal Navy forced German return',
@@ -261,7 +338,6 @@ const kt1Configs = [
           'UNSCOP recommendation (Feb 1947)',
         ],
         clue: 'How did the SS Exodus PR disaster force Britain to surrender the Mandate?',
-        date: 'Summer–Nov 1947',
         title: 'The SS Exodus & UN Referral',
       },
     ],
@@ -321,7 +397,16 @@ const kt1Configs = [
     specAnchor: `<strong>UN Resolution 181 (Partition Plan, November 1947)</strong>; <strong>outbreak of civil war</strong>; <strong>the British evacuation</strong>; <strong>David Ben-Gurion’s declaration of the State of Israel (14 May 1948)</strong>; <strong>invasion by five Arab armies</strong>; <strong>the UN truces</strong>; and the <strong>1949 Armistice Agreements (Green Line)</strong>.`,
     stages: [
       {
+        num: 1,
         step: 1,
+        date: 'Dec 1947 – May 1948',
+        questionHeading:
+          'Why did Plan Dalet ignite intense fighting along the Tel Aviv–Jerusalem corridor?',
+        bullets: [
+          'UN Resolution 181 Partition',
+          'Plan Dalet Road Offensives',
+          'Deir Yassin & Arab Evacuation',
+        ],
         keywords: [
           'UN Resolution 181 partition (55%/45%)',
           'Plan Dalet (Plan D offensive)',
@@ -330,11 +415,19 @@ const kt1Configs = [
           'British military non-intervention',
         ],
         clue: 'Why was securing the Tel Aviv–Jerusalem road vital before 14 May?',
-        date: 'Dec 1947 – May 1948',
         title: 'Communal Civil War & Plan Dalet',
       },
       {
+        num: 2,
         step: 2,
+        date: '14 May 1948',
+        questionHeading:
+          'Why did Ben-Gurion proclaim statehood hours before the British Mandate expired?',
+        bullets: [
+          'David Ben-Gurion Declaration',
+          'Tel Aviv Museum Proclamation',
+          'US Truman Recognition (11 Mins)',
+        ],
         keywords: [
           'David Ben-Gurion declaration',
           'Tel Aviv Museum of Art',
@@ -343,11 +436,19 @@ const kt1Configs = [
           'British Mandate expires at midnight',
         ],
         clue: 'Why did Ben-Gurion insist on declaring statehood hours before the British left?',
-        date: '14 May 1948',
         title: 'Proclamation of the State of Israel',
       },
       {
+        num: 3,
         step: 3,
+        date: '15 May 1948',
+        questionHeading:
+          'Which strategic sectors did the five invading Arab armies seize in May 1948?',
+        bullets: [
+          'Five Invading Arab Armies',
+          'Glubb Pasha & Arab Legion',
+          'Old City of Jerusalem Captured',
+        ],
         keywords: [
           'Egypt, Transjordan, Syria, Iraq, Lebanon',
           'Multi-front coordinated assault',
@@ -356,11 +457,19 @@ const kt1Configs = [
           'Severe Israeli heavy weapons deficit',
         ],
         clue: 'Which strategic areas did Transjordan’s Arab Legion seize immediately?',
-        date: '15 May 1948',
         title: 'Five Arab Armies Invade',
       },
       {
+        num: 4,
         step: 4,
+        date: 'June–July 1948',
+        questionHeading:
+          'How did the 4-week UN truce enable Israel to decisively shift military momentum?',
+        bullets: [
+          'Count Bernadotte 28-Day Truce',
+          'Czech Arms Airlift (Operation Balak)',
+          'Unified IDF Command Structure',
+        ],
         keywords: [
           'Count Folke Bernadotte 28-day truce',
           'Operation Balak Czech arms airlift',
@@ -369,11 +478,18 @@ const kt1Configs = [
           'Bernadotte assassinated by Lehi',
         ],
         clue: 'How did the 4-week UN truce decisively tip military firepower to Israel?',
-        date: 'June–July 1948',
         title: 'The First UN Truce & Czech Arms Resupply',
       },
       {
+        num: 5,
         step: 5,
+        date: 'Feb–July 1949',
+        questionHeading: 'How did the 1949 Green Line transform the territory allocated by the UN?',
+        bullets: [
+          '1949 Rhodes Armistices',
+          'Green Line Borders (Israel 79%)',
+          'West Bank (Jordan) & Gaza (Egypt)',
+        ],
         keywords: [
           'UN mediator Ralph Bunche',
           '1949 Rhodes Armistice Agreements',
@@ -382,7 +498,6 @@ const kt1Configs = [
           'Egypt controls Gaza Strip',
         ],
         clue: 'How did the 1949 Green Line transform the borders allocated by UN 181?',
-        date: 'Feb–July 1949',
         title: 'Rhodes Armistices & The Green Line',
       },
     ],
@@ -444,7 +559,16 @@ const kt1Configs = [
     specAnchor: `<strong>Territorial changes and the refugee status of approximately 700,000 Palestinian Arabs (Al-Nakba)</strong>; creation and role of <strong>UNRWA</strong>; the development of the State of Israel: the <strong>Law of Return (1950)</strong>; the <strong>creation of the Israeli Defence Forces (IDF)</strong>; the role of <strong>US financial aid</strong>; and <strong>early relations between Israel and its Arab neighbours</strong>.`,
     stages: [
       {
+        num: 1,
         step: 1,
+        date: '1948–1949',
+        questionHeading:
+          'Why is the cause of the 1948 Palestinian refugee flight (Al-Nakba) contested?',
+        bullets: [
+          '700,000+ Displaced Arabs',
+          'Al-Nakba ("The Catastrophe")',
+          'Destruction of 400+ Villages',
+        ],
         keywords: [
           '700,000+ Palestinians displaced',
           'Contested causes: flight vs expulsion',
@@ -453,11 +577,19 @@ const kt1Configs = [
           'Al-Nakba ("The Catastrophe")',
         ],
         clue: 'Why is the cause of the 1948 Palestinian refugee exodus still contested?',
-        date: '1948–1949',
         title: 'The Palestinian Refugee Flight (Al-Nakba)',
       },
       {
+        num: 2,
         step: 2,
+        date: 'Dec 1949',
+        questionHeading:
+          'Why did Arab states and Israel disagree over UN Resolution 194 and UNRWA?',
+        bullets: [
+          'UN Resolution 194 (Return Principle)',
+          'UNRWA Relief Camps Established',
+          'Permanent Refugee Standoff',
+        ],
         keywords: [
           'UN General Assembly Res 194',
           'Palestinian "Right of Return" principle',
@@ -466,11 +598,19 @@ const kt1Configs = [
           'Refugees denied resettlement',
         ],
         clue: 'Why did Arab states and Israel disagree over UN Resolution 194?',
-        date: 'Dec 1949',
         title: 'UN Resolution 194 & Creation of UNRWA',
       },
       {
+        num: 3,
         step: 3,
+        date: 'July 1950',
+        questionHeading:
+          'How did the Law of Return transform Israel’s demographics and economy by 1953?',
+        bullets: [
+          'Law of Return (July 1950)',
+          'Automatic Jewish Citizenship',
+          'Population Doubles in 3 Years',
+        ],
         keywords: [
           'Law of Return enacted (Knesset)',
           'Automatic citizenship for any Jew',
@@ -479,11 +619,19 @@ const kt1Configs = [
           "Ma'abarot transit tent camps",
         ],
         clue: 'How did the Law of Return transform Israel’s demographics by 1953?',
-        date: 'July 1950',
         title: 'The Israeli Law of Return & Immigration Boom',
       },
       {
+        num: 4,
         step: 4,
+        date: '1948–1953',
+        questionHeading:
+          'Why was universal military conscription and US aid essential for Israeli survival?',
+        bullets: [
+          'IDF Conscription (Men & Women)',
+          'US Economic Grants & Loans',
+          'Permanent Defensive Readiness',
+        ],
         keywords: [
           'Integration of Haganah, Irgun & Lehi',
           'Universal compulsory military service',
@@ -492,11 +640,19 @@ const kt1Configs = [
           'Technological & defensive edge',
         ],
         clue: 'Why was universal conscription essential for Israel’s survival?',
-        date: '1948–1953',
         title: 'IDF Military Consolidation & US Aid',
       },
       {
+        num: 5,
         step: 5,
+        date: '1949–1954',
+        questionHeading:
+          'Why did cross-border infiltration trigger Sharon’s Unit 101 raid on Qibya?',
+        bullets: [
+          'Palestinian Border Infiltrators',
+          'Unit 101 (Ariel Sharon)',
+          '1953 Qibya Raid (69 Civilians Killed)',
+        ],
         keywords: [
           'Palestinian refugee border crossers',
           'Stealing crops vs armed sabotage',
@@ -505,7 +661,6 @@ const kt1Configs = [
           'Severe international condemnation',
         ],
         clue: 'Why did Israeli border crossers trigger Sharon’s Unit 101 raid on Qibya?',
-        date: '1949–1954',
         title: 'Border Infiltration & Retaliatory Raids',
       },
     ],
@@ -566,7 +721,16 @@ const kt1Configs = [
     specAnchor: `<strong>Gamal Abdel Nasser and Egypt’s leadership of the Arab world</strong>; cross-border fedayeen raids; the <strong>Israeli raid on Gaza (Feb 1955)</strong>; the <strong>Czech arms deal (1955)</strong>; the <strong>nationalisation of the Suez Canal (July 1956)</strong>; the <strong>secret Protocol of Sèvres</strong>; the <strong>Sinai campaign</strong>; <strong>US and Soviet intervention</strong>; and the <strong>creation of the United Arab Republic (1958)</strong>.`,
     stages: [
       {
+        num: 1,
         step: 1,
+        date: 'Feb 1955',
+        questionHeading:
+          'Why did Ben-Gurion’s Gaza raid convince Nasser he needed modern heavy weapons?',
+        bullets: [
+          'President Gamal Abdel Nasser',
+          'IDF Gaza Raid (37 Egyptians Dead)',
+          'State-Sponsored Fedayeen Raids',
+        ],
         keywords: [
           'President Gamal Abdel Nasser',
           'IDF Gaza Raid (37 Egyptians killed)',
@@ -575,11 +739,18 @@ const kt1Configs = [
           'Voice of the Arabs radio propaganda',
         ],
         clue: 'Why did Ben-Gurion’s Gaza raid convince Nasser he needed heavy weapons?',
-        date: 'Feb 1955',
         title: 'The Gaza Raid & Escalating Fedayeen Clashes',
       },
       {
+        num: 2,
         step: 2,
+        date: 'Sept 1955',
+        questionHeading: 'Why did the Czech arms deal alarm Britain, France, and Israel in 1955?',
+        bullets: [
+          'Czech Arms Deal via USSR',
+          'MiG-15 Jet Fighters & T-34 Tanks',
+          'US Cancels Aswan Dam Loans',
+        ],
         keywords: [
           'Czech Arms Deal via USSR',
           'MiG-15 fighters & T-34 tanks',
@@ -588,11 +759,19 @@ const kt1Configs = [
           'Soviet geopolitical entry to Mideast',
         ],
         clue: 'Why did the Czech arms deal alarm Britain, France, and Israel?',
-        date: 'Sept 1955',
         title: 'The Czech Arms Deal & Cold War Realignment',
       },
       {
+        num: 3,
         step: 3,
+        date: '26 July 1956',
+        questionHeading:
+          'Why did Britain and France view canal nationalisation as an intolerable threat?',
+        bullets: [
+          'Alexandria Canal Seizure Speech',
+          'Canal Tolls Fund Aswan High Dam',
+          'PM Eden Resolves to Topple Nasser',
+        ],
         keywords: [
           'Alexandria speech ("de Lesseps" codeword)',
           'Canal revenues fund Aswan Dam',
@@ -601,11 +780,19 @@ const kt1Configs = [
           'PM Anthony Eden vows to remove Nasser',
         ],
         clue: 'Why did Britain and France view canal nationalisation as an act of theft?',
-        date: '26 July 1956',
         title: 'Nasser Nationalises the Suez Canal',
       },
       {
+        num: 4,
         step: 4,
+        date: 'Oct–Nov 1956',
+        questionHeading:
+          'How did the secret Protocol of Sèvres orchestrate a pretext for invading Egypt?',
+        bullets: [
+          'Secret Protocol of Sèvres Collusion',
+          'Israeli Sinai Blitz (Operation Kadesh)',
+          'Anglo-French Ultimatum & Port Said',
+        ],
         keywords: [
           'Secret Protocol of Sèvres collusion',
           'Britain, France & Israel plot',
@@ -614,11 +801,19 @@ const kt1Configs = [
           'Paratroopers at Mitla Pass',
         ],
         clue: 'How did the secret Protocol of Sèvres orchestrate a fake pretext for war?',
-        date: 'Oct–Nov 1956',
         title: 'The Secret Protocol of Sèvres & Sinai Blitz',
       },
       {
+        num: 5,
         step: 5,
+        date: 'Nov 1956 – 1958',
+        questionHeading:
+          'Why did the Suez Crisis end in political triumph for Nasser despite military defeat?',
+        bullets: [
+          'Eisenhower Financial Ultimatum',
+          'UNEF Blue Helmets in Sinai',
+          'Nasser Hailed as Pan-Arab Hero',
+        ],
         keywords: [
           'President Eisenhower financial threats',
           'Sterling run forces UK ceasefire',
@@ -627,7 +822,6 @@ const kt1Configs = [
           'United Arab Republic formed (1958)',
         ],
         clue: 'Why did the Suez Crisis end in political triumph for Nasser despite military defeat?',
-        date: 'Nov 1956 – 1958',
         title: 'US Ultimatum, UNEF & Arab Leadership',
       },
     ],
@@ -691,7 +885,7 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
   <title>Key Topic 1: The Birth of the State of Israel, 1945–1963 Workbook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
     *, *:before, *:after { box-sizing: border-box; }
     /* Uniform Page Margins for Booklet Imposition & Printing */
@@ -738,48 +932,86 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       height: 100%;
       overflow: hidden;
     }
-    /* 5-Stage Domino Causal Chain Styling */
-    .domino-chain-container {
+    /* 5-Stage Chronological Note-Taking Block Styling (KS3 Enquiry Architecture) */
+    .spine-notes-container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      gap: 2.2mm;
+      margin-top: 1.5mm;
       flex: 1;
-      margin: 2px 0;
     }
-    .domino-card-compact {
-      border: 1.2px solid #000000;
-      border-radius: 3px;
-      padding: 2.5px 6px;
-      background: #ffffff;
+    .spine-stage-block {
+      border: 1.2px solid #000;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .stage-banner {
+      background: #000;
+      color: #fff;
+      font-family: 'Cinzel', 'Times New Roman', serif;
+      font-size: 7.5pt;
+      font-weight: 700;
+      padding: 1.2mm 2mm;
+      display: flex;
+      align-items: center;
+      gap: 1.8mm;
+      border-bottom: 1px solid #000;
+      letter-spacing: 0.1px;
+    }
+    .stage-banner .stage-badge {
+      background: #fff;
+      color: #000;
+      font-family: 'Inter', sans-serif;
+      font-size: 6.5pt;
+      font-weight: 800;
+      padding: 0.2mm 1.4mm;
+      border-radius: 1.5px;
+      line-height: 1;
+    }
+    .stage-content-row {
+      display: flex;
+      flex-direction: row;
+      min-height: 38mm;
+    }
+    .stage-trigger-col {
+      width: 26mm;
+      background: #fbfbfb;
+      border-right: 1.2px solid #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: 1mm 1.5mm;
+      box-sizing: border-box;
+    }
+    .trigger-fact-cell {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 5.6pt;
+      font-weight: 700;
+      color: #111;
+      line-height: 1.15;
+    }
+    .trigger-fact-cell .fact-dot {
+      color: #000;
+      font-size: 6.5pt;
+      margin-right: 0.8mm;
+    }
+    .stage-writing-col {
+      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      background: #fff;
       box-sizing: border-box;
     }
-    .domino-connector {
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1;
-      padding: 1px 0;
-    }
-    .task-section {
-      margin-bottom: 2px;
-    }
-    /* Thick Black Writing Lines for Accessibility & SEND Legibility */
-    .task-line {
-      border-bottom: 1.5px solid #000000;
-      height: 7.0mm;
-      margin: 0;
+    .ruled-line {
+      height: 6.33mm;
+      border-bottom: 0.5px solid #000000;
       box-sizing: border-box;
     }
-    .task-line-dotted {
-      border-bottom: 1.2px dotted #000000;
-      height: 6.0mm;
-      margin: 0;
-      box-sizing: border-box;
+    .ruled-line:last-child {
+      border-bottom: none;
     }
     /* Clean Lined Paper Grid for Extended Writing Pages (8mm margin, thick 1.5px black lines for photocopying) */
     .lined-page-grid {
@@ -1161,68 +1393,45 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
       </div>
 
       <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          ${cfg.stages
-            .map(
-              (s, sIdx) => `
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${s.title}
-              </div>
-              ${
-                (s.keywords && s.keywords.length > 0) ||
-                (s.coreKeywords && s.coreKeywords.length > 0) ||
-                (s.stretchKeywords && s.stretchKeywords.length > 0)
-                  ? `
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${(s.keywords || [...(s.coreKeywords || []), ...(s.stretchKeywords || [])])
-                    .map(
-                      (kw) =>
-                        `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
-                    )
-                    .join('')}
-                </div>
-              </div>`
-                  : ''
-              }
-              ${
-                s.clue
-                  ? `
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${s.clue}
-                </div>
-              </div>`
-                  : ''
-              }
+      <div class="spine-notes-container">
+        ${cfg.stages
+          .map((stg) => {
+            const bullets =
+              stg.bullets && stg.bullets.length
+                ? stg.bullets
+                : stg.keywords || [stg.clue || stg.title];
+            return `
+          <div class="spine-stage-block">
+            <div class="stage-banner">
+              <span class="stage-badge">${stg.num || stg.step}</span>
+              <span>${stg.date ? `${stg.date} • ` : ''}${stg.questionHeading || stg.title || stg.clue}</span>
             </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div class="stage-content-row">
+              <div class="stage-trigger-col">
+                ${bullets
+                  .slice(0, 3)
+                  .map(
+                    (b) => `
+                  <div class="trigger-fact-cell">
+                    <span class="fact-dot">•</span>${b}
+                  </div>
+                `,
+                  )
+                  .join('')}
+              </div>
+              <div class="stage-writing-col">
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+                <div class="ruled-line"></div>
+              </div>
             </div>
           </div>
-          `,
-            )
-            .join('')}
-        </div>
+        `;
+          })
+          .join('')}
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
