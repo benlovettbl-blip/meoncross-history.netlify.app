@@ -194,16 +194,20 @@ const kt1Configs = [
     consequenceA: {
       question: 'Explain one consequence of the Balfour Declaration (November 1917).',
       guidance:
-        'Identify a clear consequence (e.g. Arab sense of betrayal or international legitimisation of a Jewish homeland), cite specific factual detail, and explain its long-term impact on tensions in Palestine.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the Balfour Declaration was... Specifically, Foreign Secretary Arthur Balfour promised... This directly resulted in Arab opposition because...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Identify a clear consequence (e.g. Arab sense of betrayal or international legitimisation of a Jewish homeland), cite specific factual detail, and explain its long-term impact on tensions in Palestine.',
     },
     consequenceB: {
       question: 'Explain one consequence of the British White Paper of 1939.',
       guidance:
-        'Explain how limiting Jewish immigration to 75,000 over five years alienated Jewish leaders during the Holocaust and triggered armed resistance against British rule.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the 1939 White Paper was... In particular, Britain restricted... Consequently, the Jewish community (Yishuv) felt betrayed and...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Explain how limiting Jewish immigration to 75,000 over five years alienated Jewish leaders during the Holocaust and triggered armed resistance against British rule.',
     },
     extendedPractice: {
       type: 'narrative_8',
@@ -225,7 +229,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The conflict originated during WWI when Britain... &bull; In direct reaction, Arab forces launched... &bull; Crucially, contradictory promises emerged because... &bull; Consequently, when the League of Nations ratified... &bull; This fundamentally altered relations because... &bull; Ultimately, this resulted in unresolvable conflict because...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'McMahon-Hussein (1915) &bull; Sharif Hussein &bull; Sykes-Picot (1916) &bull; Balfour Declaration (1917) &bull; Arthur Balfour &bull; Lord Rothschild &bull; "national home" &bull; League of Nations Mandate (1922) &bull; Yishuv &bull; Arab Nationalism &bull; Jewish immigration',
       timelineMission:
@@ -346,16 +350,20 @@ const kt1Configs = [
     consequenceA: {
       question: 'Explain one consequence of the bombing of the King David Hotel (July 1946).',
       guidance:
-        'Focus on the 91 deaths, the destruction of British military headquarters, and the hardening of British domestic public opinion demanding troop withdrawal from Palestine.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the bombing of the King David Hotel was... Specifically, the Irgun detonated explosives that killed 91 people, which caused... As a result, the British public and government...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Focus on the 91 deaths, the destruction of British military headquarters, and the hardening of British domestic public opinion demanding troop withdrawal from Palestine.',
     },
     consequenceB: {
       question: 'Explain one consequence of the SS Exodus affair (July 1947).',
       guidance:
-        'Explain how turning 4,500 Holocaust survivors back to Europe caused an international public relations disaster for Britain, severely alienating US President Truman and global opinion.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the SS Exodus affair was... In particular, British warships boarded the ship and returned refugees to Germany, causing... Consequently, international and US pressure on Britain to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Explain how turning 4,500 Holocaust survivors back to Europe caused an international public relations disaster for Britain, severely alienating US President Truman and global opinion.',
     },
     extendedPractice: {
       type: 'importance_8',
@@ -380,7 +388,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'This was of paramount importance because... &bull; Specifically, the bombing destroyed... &bull; Furthermore, British public opinion hardened when... &bull; Crucially, maintaining 100,000 troops cost... &bull; Consequently, Prime Minister Attlee decided to... &bull; Ultimately, this was important because it made British withdrawal inevitable.',
+        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
       wordBank:
         'King David Hotel (July 1946) &bull; Irgun &bull; Menachem Begin &bull; 91 casualties &bull; British Military HQ &bull; Secretariat &bull; Clement Attlee &bull; Ernest Bevin &bull; financial cost &bull; 100,000 troops &bull; UNSCOP &bull; February 1947 handover',
       timelineMission:
@@ -506,16 +514,20 @@ const kt1Configs = [
     consequenceA: {
       question: 'Explain one consequence of United Nations Resolution 181 (November 1947).',
       guidance:
-        'Detail how the UN vote to partition Palestine granted international legitimacy to the creation of a Jewish state, but provoked immediate violent rejection and civil war by Palestinian Arabs.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of UN Resolution 181 was... Specifically, the UN voted to allocate 55% of Palestine to a Jewish state, which resulted in... Consequently, civil conflict broke out immediately between...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Detail how the UN vote to partition Palestine granted international legitimacy to the creation of a Jewish state, but provoked immediate violent rejection and civil war by Palestinian Arabs.',
     },
     consequenceB: {
       question: 'Explain one consequence of the first United Nations truce (June–July 1948).',
       guidance:
-        'Explain how Israel used the four-week ceasefire to reorganise command, mobilise recruits, and smuggle in heavy Czechoslovakian weaponry, transforming its military balance against Arab armies.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the June 1948 UN truce was... During the four-week pause, Israeli forces... This directly resulted in Israel gaining military superiority because...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Explain how Israel used the four-week ceasefire to reorganise command, mobilise recruits, and smuggle in heavy Czechoslovakian weaponry, transforming its military balance against Arab armies.',
     },
     extendedPractice: {
       type: 'narrative_8',
@@ -540,7 +552,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The war commenced on 14 May 1948 when... &bull; Immediately on 15 May, five Arab armies... &bull; The vital turning point occurred during the June truce when... &bull; With Czechoslovakian weapons secured, the IDF launched... &bull; Consequently, Arab armies were pushed back because... &bull; Ultimately, the 1949 Armistices established...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'David Ben-Gurion &bull; 14 May 1948 &bull; Tel Aviv Museum &bull; Arab invasion &bull; Egypt, Jordan, Syria, Iraq, Lebanon &bull; Arab Legion &bull; Glubb Pasha &bull; June 1948 truce &bull; Count Folke Bernadotte &bull; Czech arms deal &bull; Operation Dani &bull; Operation Yoav &bull; 1949 Armistices &bull; Green Line',
       timelineMission:
@@ -669,16 +681,20 @@ const kt1Configs = [
     consequenceA: {
       question: 'Explain one consequence of the 1948–49 War for Palestinian Arabs.',
       guidance:
-        'Focus on the displacement of approximately 700,000 people, the loss of land, exile into squalid refugee camps in Gaza, the West Bank, Lebanon, and Syria, and their denial of a right of return.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the 1948–49 War for Palestinian Arabs was the creation of a permanent refugee crisis. Specifically, over 700,000 Palestinians fled or were expelled, resulting in... Consequently, generations of Palestinians were forced to live in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Focus on the displacement of approximately 700,000 people, the loss of land, exile into squalid refugee camps in Gaza, the West Bank, Lebanon, and Syria, and their denial of a right of return.',
     },
     consequenceB: {
       question: 'Explain one consequence of the Israeli Law of Return (1950).',
       guidance:
-        'Explain how guaranteeing automatic citizenship to any Jewish immigrant doubled Israel’s population within four years, creating severe housing shortages but securing manpower for national defence.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the Law of Return was a massive demographic explosion in Israel. In particular, the law granted every Jewish person the right to settle, causing... This directly resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Explain how guaranteeing automatic citizenship to any Jewish immigrant doubled Israel’s population within four years, creating severe housing shortages but securing manpower for national defence.',
     },
     extendedPractice: {
       type: 'importance_8',
@@ -703,7 +719,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'This was crucial for Israel’s development because... &bull; Specifically, the 1950 Law guaranteed... &bull; Consequently, over 700,000 immigrants arrived, which... &bull; Furthermore, this demographic influx enabled the IDF to... &bull; Crucially, placing new arrivals in border kibbutzim ensured... &bull; Ultimately, this transformed Israel from a fragile enclave into...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Law of Return (1950) &bull; David Ben-Gurion &bull; Jewish diaspora &bull; Holocaust survivors &bull; Displaced Persons camps &bull; Mizrahi Jews &bull; ma’abarot (transit camps) &bull; population doubled &bull; IDF universal conscription &bull; kibbutzim border defense',
       timelineMission:
@@ -830,17 +846,21 @@ const kt1Configs = [
     consequenceA: {
       question: 'Explain one consequence of the Israeli raid on Gaza (February 1955).',
       guidance:
-        'Explain how the death of 37 Egyptian soldiers shattered Nasser’s illusion of military strength, prompting him to seek Soviet weapons through the 1955 Czech arms deal.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the Israeli raid on Gaza was Nasser’s decision to rearm Egypt with Soviet weapons. In particular, Israeli paratroopers killed 37 Egyptian soldiers, which humiliated Nasser and proved Egyptian weakness. Consequently, Nasser turned to the Soviet bloc and signed the September 1955 Czech arms deal...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Explain how the death of 37 Egyptian soldiers shattered Nasser’s illusion of military strength, prompting him to seek Soviet weapons through the 1955 Czech arms deal.',
     },
     consequenceB: {
       question:
         'Explain one consequence of the 1956 Suez Crisis for Britain and France as global powers.',
       guidance:
-        'Detail how US financial pressure forced an ignominious retreat, proving that European imperial powers could no longer act independently on the world stage without US approval.',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One consequence of the Suez Crisis was the collapse of British and French imperial prestige. Specifically, US President Eisenhower threatened to collapse the British pound unless forces withdrew immediately. This directly resulted in the humiliation of Britain and France, proving that they were no longer...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Detail how US financial pressure forced an ignominious retreat, proving that European imperial powers could no longer act independently on the world stage without US approval.',
     },
     extendedPractice: {
       type: 'narrative_8',
@@ -865,7 +885,7 @@ const kt1Configs = [
         },
       ],
       connectives:
-        'The crisis began on 26 July 1956 when President Nasser... &bull; In response, Britain and France secretly allied with Israel through... &bull; On 29 October 1956, the plan unfolded when Israeli forces invaded... &bull; Under the pretext of separating the combatants, Anglo-French paratroopers... &bull; However, US President Eisenhower intervened decisively by... &bull; Consequently, Britain and France were forced into a humiliating retreat, resulting in...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Gamal Abdel Nasser &bull; Aswan High Dam &bull; nationalisation &bull; 26 July 1956 &bull; Anthony Eden &bull; Protocol of Sèvres &bull; Operation Musketeer &bull; Sinai Peninsula &bull; Port Said paratroopers &bull; Dwight D. Eisenhower &bull; oil sanctions &bull; run on the pound &bull; UN Emergency Force (UNEF) &bull; United Arab Republic (1958)',
       timelineMission:
@@ -1494,11 +1514,11 @@ function buildCmeKt1TwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1.5px; line-height: 1.15;">
+          <strong>P-F-C Structure:</strong> <strong>Point</strong> (State one direct consequence) &bull; <strong>Fact</strong> (Support with precise historical evidence and dates) &bull; <strong>Consequence</strong> (Explain how this altered subsequent developments/relations).
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
+          <strong>Sentence Stems:</strong> One major consequence was that... &bull; Specifically, this was evident when... &bull; Consequently, this directly resulted in... / altered relations because...
         </div>
         <div class="task-line" style="height: 6.8mm;"></div>
         <div class="task-line" style="height: 6.8mm;"></div>

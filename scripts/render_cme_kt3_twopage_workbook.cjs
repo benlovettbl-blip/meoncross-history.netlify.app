@@ -146,17 +146,21 @@ const kt3Configs = [
       question:
         'Explain one consequence of the 1973 OPEC oil embargo for American foreign policy in the Middle East. [4 marks]',
       guidance:
-        'Point (Forced the United States to actively mediate in the Middle East to prevent future wars) • Fact (Quadrupling oil prices and domestic fuel queues caused stagflation, proving Western economic survival depended on Arab oil) • Consequence (Convinced Secretary of State Henry Kissinger that the US could not afford a frozen status quo, launching intense shuttle diplomacy).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, the OPEC embargo quadrupled oil prices, which caused... • Consequently, this compelled the US government to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Forced the United States to actively mediate in the Middle East to prevent future wars) • Fact (Quadrupling oil prices and domestic fuel queues caused stagflation, proving Western economic survival depended on Arab oil) • Consequence (Convinced Secretary of State Henry Kissinger that the US could not afford a frozen status quo, launching intense shuttle diplomacy).',
     },
     consequenceB: {
       question:
         'Explain one consequence of Anwar Sadat’s visit to Jerusalem in November 1977. [4 marks]',
       guidance:
-        'Point (Shattered thirty years of psychological taboos and opened direct bilateral peace negotiations) • Fact (Sadat addressed the Knesset directly, declaring "No more war, no more bloodshed", offering full diplomatic peace in return for Arab land) • Consequence (Bypassed multilateral stalemates and laid the direct foundation for the 1978 Camp David summit).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, on 19 November 1977, Sadat landed at Ben Gurion Airport and... • Consequently, this historic gesture directly resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Shattered thirty years of psychological taboos and opened direct bilateral peace negotiations) • Fact (Sadat addressed the Knesset directly, declaring "No more war, no more bloodshed',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
@@ -179,7 +183,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The diplomatic process began following the 1973 war when... • In response to Western economic paralysis, Henry Kissinger... • Tensions shifted dramatically in May 1977 when the election of Menachem Begin... • Crucially, this deadlock was broken when Anwar Sadat decided to... • Consequently, by addressing the Knesset in November 1977... • Ultimately, this transformed relations because...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'OPEC oil embargo • Henry Kissinger • shuttle diplomacy • Sinai I & II • Suez Canal reopening (1975) • Likud election (1977) • Menachem Begin • Anwar Sadat • Ben Gurion Airport • Knesset speech • Ismailia summit (Dec 1977)',
       timelineMission:
@@ -251,17 +255,21 @@ const kt3Configs = [
       question:
         'Explain one consequence of the Camp David Accords (1978) for Egyptian-Arab relations. [4 marks]',
       guidance:
-        "Point (Led to Egypt's complete diplomatic isolation and expulsion from the Arab League) • Fact (Arab states meeting in Baghdad branded Sadat a traitor for signing a separate peace without securing Palestinian statehood; suspended Egypt's membership and moved Arab League HQ to Tunis) • Consequence (Severed Egypt's diplomatic leadership of the Arab world and isolated Sadat domestically).",
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, following the 1978 Camp David Accords, Arab nations... • Consequently, this resulted in Egypt being...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        "Point (Led to Egypt's complete diplomatic isolation and expulsion from the Arab League) • Fact (Arab states meeting in Baghdad branded Sadat a traitor for signing a separate peace without securing Palestinian statehood; suspended Egypt's membership and moved Arab League HQ to Tunis) • Consequence (Severed Egypt's diplomatic leadership of the Arab world and isolated Sadat domestically).",
     },
     consequenceB: {
       question:
         'Explain one consequence of the Treaty of Washington (1979) for the Israeli settlement of Yamit. [4 marks]',
       guidance:
-        'Point (Forced the complete evacuation and destruction of the Jewish settlement by the Israeli military in April 1982) • Fact (Prime Minister Begin deployed the IDF to forcibly remove protesting nationalist settlers, bulldozing 2,500 homes to return northern Sinai to Egypt) • Consequence (Demonstrated that Israel was willing to dismantle permanent settlements in exchange for full treaty peace and demilitarisation).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, under the terms of the 1979 Treaty of Washington, Israel had to... • Consequently, this forced the Israeli government to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Forced the complete evacuation and destruction of the Jewish settlement by the Israeli military in April 1982) • Fact (Prime Minister Begin deployed the IDF to forcibly remove protesting nationalist settlers, bulldozing 2,500 homes to return northern Sinai to Egypt) • Consequence (Demonstrated that Israel was willing to dismantle permanent settlements in exchange for full treaty peace and demilitarisation).',
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
@@ -287,7 +295,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The Camp David Accords were important for Arab-Israeli relations because... • In particular, by securing peace with Egypt, Israel... • Furthermore, the agreement established the principle of "land for peace" by... • On the other hand, for the wider Arab world and Palestinians, the accords caused... • Consequently, this transformed the Middle East because...',
+        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
       wordBank:
         'Camp David Accords (1978) • Jimmy Carter • Menachem Begin • Anwar Sadat • Treaty of Washington (1979) • Sinai recovery • land for peace • Baghdad Summit • Arab League expulsion • Tunis HQ • Sadat assassination (1981)',
       timelineMission:
@@ -360,17 +368,21 @@ const kt3Configs = [
     consequenceA: {
       question: 'Explain one consequence of Operation Litani in March 1978. [4 marks]',
       guidance:
-        'Point (Established a permanent UN buffer zone and proxy security belt in southern Lebanon) • Fact (Over 25,000 IDF troops pushed PLO fighters north of the Litani River; UN passed Resolution 425 creating UNIFIL while Israel armed Major Haddad’s Christian South Lebanon Army) • Consequence (Failed to stop rocket fire and laid the groundwork for the wider 1982 invasion).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, during Operation Litani in March 1978, the IDF... • Consequently, this led directly to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Established a permanent UN buffer zone and proxy security belt in southern Lebanon) • Fact (Over 25,000 IDF troops pushed PLO fighters north of the Litani River; UN passed Resolution 425 creating UNIFIL while Israel armed Major Haddad’s Christian South Lebanon Army) • Consequence (Failed to stop rocket fire and laid the groundwork for the wider 1982 invasion).',
     },
     consequenceB: {
       question:
         'Explain one consequence of the Sabra and Shatila massacre (September 1982). [4 marks]',
       guidance:
-        'Point (Triggered unprecedented domestic Israeli moral outrage and forced the resignation of Ariel Sharon) • Fact (400,000 Israelis rallied in Tel Aviv demanding accountability; the Kahan Commission ruled Sharon bore "personal responsibility" for permitting Phalangist militias into the refugee camps) • Consequence (Shattered Sharon’s military career temporarily and contributed to Menachem Begin’s resignation in 1983).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, following the slaughter of up to 2,000 civilians by Phalangist militias, the Israeli public... • Consequently, the Kahan Commission concluded that...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Triggered unprecedented domestic Israeli moral outrage and forced the resignation of Ariel Sharon) • Fact (400,000 Israelis rallied in Tel Aviv demanding accountability; the Kahan Commission ruled Sharon bore "personal responsibility" for permitting Phalangist militias into the refugee camps) • Consequence (Shattered Sharon’s military career temporarily and contributed to Menachem Begin’s resignation in 1983).',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
@@ -393,7 +405,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'Israeli military intervention began in March 1978 when... • In response to PLO cross-border rocket fire, Prime Minister Begin launched... • Tensions escalated into total war in June 1982 when Ariel Sharon... • Rather than halting at the 40km boundary, Israeli forces advanced directly to... • This culminated in tragedy following the assassination of Bachir Gemayel when... • Ultimately, the aftermath in Israel resulted in...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Operation Litani (1978) • Litani River • UNIFIL (Res 425) • South Lebanon Army • Ariel Sharon • Operation Peace for Galilee (1982) • Siege of Beirut • Philip Habib • PLO evacuation to Tunis • Bachir Gemayel • Sabra and Shatila • Kahan Commission',
       timelineMission:
@@ -475,17 +487,21 @@ const kt3Configs = [
       question:
         'Explain one consequence of the outbreak of the First Intifada in December 1987. [4 marks]',
       guidance:
-        'Point (Transformed international public opinion and proved that military occupation was unsustainable) • Fact (Images of teenage Palestinians throwing stones being beaten by heavily armed IDF soldiers under Rabin\'s "Iron Fist" policy broadcast on global TV) • Consequence (Shattered the Israeli assumption that the status quo could endure, forcing Israeli leaders to seek a political solution).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, following the Jabalia spark in December 1987, Palestinian youths... • Consequently, television footage of Israeli soldiers using the Iron Fist policy resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Transformed international public opinion and proved that military occupation was unsustainable) • Fact (Images of teenage Palestinians throwing stones being beaten by heavily armed IDF soldiers under Rabin’s "Iron Fist" policy broadcast on global TV) • Consequence (Shattered the Israeli assumption that the status quo could endure, forcing Israeli leaders to seek a political solution).',
     },
     consequenceB: {
       question:
         'Explain one consequence of Yasser Arafat supporting Saddam Hussein during the 1990–91 Gulf War. [4 marks]',
       guidance:
-        'Point (Catastrophic diplomatic isolation and financial bankruptcy for the PLO) • Fact (Gulf monarchies expelled 300,000 Palestinian workers from Kuwait and cut off tens of millions in funding; Arab states severed diplomatic relations) • Consequence (Left Arafat desperate for international rehabilitation, forcing him to accept direct compromise with Israel).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, when Arafat backed Saddam Hussein’s invasion of Kuwait, Gulf states... • Consequently, this financial bankruptcy forced the PLO to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Catastrophic diplomatic isolation and financial bankruptcy for the PLO) • Fact (Gulf monarchies expelled 300,000 Palestinian workers from Kuwait and cut off tens of millions in funding; Arab states severed diplomatic relations) • Consequence (Left Arafat desperate for international rehabilitation, forcing him to accept direct compromise with Israel).',
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
@@ -511,7 +527,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The First Intifada was important for international attitudes because... • Prior to 1987, the international community largely viewed the issue as... • However, global broadcasts of the "Iron Fist" policy demonstrated that... • Furthermore, this diplomatic pressure compelled Yasser Arafat to... • Ultimately, the uprising transformed relations by forcing Israel and the US to...',
+        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
       wordBank:
         'First Intifada (1987) • Jabalia camp • Iron Fist policy • Yitzhak Rabin • stone-throwing youths • global television broadcast • Arafat Geneva speech (1988) • renunciation of terrorism • US dialogue • Madrid Conference (1991)',
       timelineMission:
@@ -591,17 +607,21 @@ const kt3Configs = [
       question:
         'Explain one consequence of the secret Oslo back-channel negotiations in 1993. [4 marks]',
       guidance:
-        "Point (Produced the historic breakthrough of mutual recognition between Israel and the PLO) • Fact (Rabin officially recognized the PLO as the representative of the Palestinian people; Arafat recognized Israel's right to exist in peace and renounced terrorism) • Consequence (Ended decades of non-recognition, leading directly to the signing of Oslo I on the White House lawn).",
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, the secret talks in Norway resulted in Letters of Mutual Recognition where... • Consequently, this breakthrough paved the way for...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        "Point (Produced the historic breakthrough of mutual recognition between Israel and the PLO) • Fact (Rabin officially recognized the PLO as the representative of the Palestinian people; Arafat recognized Israel's right to exist in peace and renounced terrorism) • Consequence (Ended decades of non-recognition, leading directly to the signing of Oslo I on the White House lawn).",
     },
     consequenceB: {
       question:
         'Explain one consequence of the assassination of Yitzhak Rabin on 4 November 1995. [4 marks]',
       guidance:
-        'Point (Derailment of the peace process and the election of a right-wing Likud government opposed to Oslo) • Fact (Right-wing Jewish extremist Yigal Amir shot Rabin at a Tel Aviv peace rally; subsequent Hamas bus bombings eroded public confidence in peace) • Consequence (Led directly to the narrow election of Benjamin Netanyahu in May 1996, who halted further territorial handovers).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... • Specifically, following Rabin’s murder by Yigal Amir at a peace rally... • Consequently, this traumatic loss resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Derailment of the peace process and the election of a right-wing Likud government opposed to Oslo) • Fact (Right-wing Jewish extremist Yigal Amir shot Rabin at a Tel Aviv peace rally; subsequent Hamas bus bombings eroded public confidence in peace) • Consequence (Led directly to the narrow election of Benjamin Netanyahu in May 1996, who halted further territorial handovers).',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
@@ -624,7 +644,7 @@ const kt3Configs = [
         },
       ],
       connectives:
-        'The peace process was revived in 1992 when Yitzhak Rabin was elected on a pledge to... • In complete secrecy, Israeli and Palestinian negotiators met in Norway, leading to... • This culminated on 13 September 1993 when Rabin and Arafat signed... • Over the following year, progress continued as the Cairo Agreement enabled... • However, violent extremism emerged from both sides when... • Ultimately, the peace momentum was shattered on 4 November 1995 when...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Yitzhak Rabin • Shimon Peres • Yasser Arafat • Bill Clinton • Oslo I Accord (1993) • Letters of Mutual Recognition • Gaza-Jericho First • Jordan Treaty (1994) • Baruch Goldstein (Hebron 1994) • Hamas suicide bombings • Oslo II (1995: Areas A, B, C) • Yigal Amir (4 Nov 1995)',
       timelineMission:
@@ -1274,11 +1294,11 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1.5px; line-height: 1.15;">
+          <strong>P-F-C Structure:</strong> <strong>Point</strong> (State one direct consequence) &bull; <strong>Fact</strong> (Support with precise historical evidence and dates) &bull; <strong>Consequence</strong> (Explain how this altered subsequent developments/relations).
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
+          <strong>Sentence Stems:</strong> One major consequence was that... &bull; Specifically, this was evident when... &bull; Consequently, this directly resulted in... / altered relations because...
         </div>
         <div class="task-line" style="height: 6.8mm;"></div>
         <div class="task-line" style="height: 6.8mm;"></div>

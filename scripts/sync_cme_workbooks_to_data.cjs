@@ -54,6 +54,7 @@ function sanitizeSpecFacts(str) {
 }
 
 function generateConsequenceModel(consq) {
+  if (consq.modelAnswer) return cleanText(consq.modelAnswer);
   const q = consq.question || '';
   const guidance = cleanText(consq.guidance || '');
   const stems = cleanText(consq.stems || '');

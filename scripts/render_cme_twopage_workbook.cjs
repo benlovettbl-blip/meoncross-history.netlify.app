@@ -174,17 +174,21 @@ const kt2Configs = [
       ref: '[Textbook §1.1 &amp; Source A]',
       question: 'Explain one consequence of the Cairo Conference (1964). [4 marks]',
       guidance:
-        'Point (Creation of the Palestine Liberation Organisation and unified Arab command) &bull; Fact (Arab League heads of state authorized the Palestinian National Charter and water diversion) &bull; Consequence (United Arab resistance and established armed fedayeen factions like Fatah to actively challenge Israel).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, following the Cairo Conference in 1964... &bull; Consequently, this led directly to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Creation of the Palestine Liberation Organisation and unified Arab command) &bull; Fact (Arab League heads of state authorized the Palestinian National Charter and water diversion) &bull; Consequence (United Arab resistance and established armed fedayeen factions like Fatah to actively challenge Israel).',
     },
     consequenceB: {
       ref: '[Textbook §2.2, §3.1–§3.2 &amp; Source C]',
       question: 'Explain one consequence of the events of 7 April 1967. [4 marks]',
       guidance:
-        'Point (Humiliating defeat for the Syrian Air Force and sharp escalation towards war) &bull; Fact (Israeli Mirage jets shot down six Syrian MiG-21s and flew victory passes over Damascus) &bull; Consequence (Provoked false Soviet intelligence reports in May 1967, pressuring Nasser to mobilise in Sinai).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, during the aerial clash on 7 April 1967... &bull; Consequently, this directly triggered...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Humiliating defeat for the Syrian Air Force and sharp escalation towards war) &bull; Fact (Israeli Mirage jets shot down six Syrian MiG-21s and flew victory passes over Damascus) &bull; Consequence (Provoked false Soviet intelligence reports in May 1967, pressuring Nasser to mobilise in Sinai).',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
@@ -211,7 +215,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The escalation began when... &bull; In response to Syrian support for Fatah, Israel... &bull; Tensions heightened in May 1967 when the actions of Nasser... &bull; Consequently, Israel viewed the Straits blockade as a casus belli... &bull; Ultimately, this culminated on 5 June 1967 when...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Cairo Conference (1964) &bull; Syria’s support for Fatah &bull; Samu raid &bull; events of 7 April 1967 &bull; Soviet false warnings &bull; actions of Nasser &bull; UNEF withdrawal &bull; Straits of Tiran &bull; Sharm el-Sheikh &bull; pre-emptive strike',
       timelineMission:
@@ -308,17 +312,21 @@ const kt2Configs = [
       question:
         'Explain one consequence of the actions of Nasser in the period leading to war. [4 marks]',
       guidance:
-        'Point (Forced Israel into launching a pre-emptive strike) &bull; Fact (Nasser mobilized troops in Sinai, expelled UNEF, and blockaded the Straits of Tiran at Sharm el-Sheikh) &bull; Consequence (Convinced Israeli leaders that war was imminent, prompting the surprise destruction of Arab air forces on 5 June 1967).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, when President Nasser took the decision to... &bull; Consequently, this resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Forced Israel into launching a pre-emptive strike) &bull; Fact (Nasser mobilized troops in Sinai, expelled UNEF, and blockaded the Straits of Tiran at Sharm el-Sheikh) &bull; Consequence (Convinced Israeli leaders that war was imminent, prompting the surprise destruction of Arab air forces on 5 June 1967).',
     },
     consequenceB: {
       ref: '[Textbook §2.1–§3.2 &amp; Sources A &amp; B]',
       question: 'Explain one consequence of the outbreak of the Six-Day War (1967). [4 marks]',
       guidance:
-        'Point (Total Israeli military victory and capture of strategic territory) &bull; Fact (Israel destroyed Arab air forces within three hours, capturing the Sinai, Gaza Strip, West Bank, East Jerusalem, and Golan Heights) &bull; Consequence (Tripled the land under Israeli control and placed over 1 million Palestinian Arabs under military occupation).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, when war broke out on 5 June 1967... &bull; Consequently, this transformed the region because...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Total Israeli military victory and capture of strategic territory) &bull; Fact (Israel destroyed Arab air forces within three hours, capturing the Sinai, Gaza Strip, West Bank, East Jerusalem, and Golan Heights) &bull; Consequence (Tripled the land under Israeli control and placed over 1 million Palestinian Arabs under military occupation).',
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
@@ -348,7 +356,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The Golan Heights were important for Israeli security because... &bull; In particular, for 19 years Syrian forces had... &bull; By capturing the volcanic escarpment, the IDF... &bull; Furthermore, holding the high plateau provided... &bull; Ultimately, this transformed Israel’s security by...',
+        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
       wordBank:
         'Golan Heights &bull; Galilee kibbutzim &bull; Hula Valley &bull; Syrian artillery bunkers &bull; General David Elazar &bull; Mt Hermon &bull; radar early warning &bull; Damascus buffer &bull; strategic depth &bull; 9–10 June assault',
       timelineMission:
@@ -460,17 +468,21 @@ const kt2Configs = [
       ref: '[Textbook §3.1–§3.2 &amp; Source C]',
       question: 'Explain one consequence of UN Resolution 242. [4 marks]',
       guidance:
-        'Point (Established the principle of "Land for Peace" but created lasting diplomatic stalemate) &bull; Fact (The resolution called for withdrawal from "territories occupied", leaving deliberate ambiguity between English and French texts) &bull; Consequence (Arab states insisted on total withdrawal, while Israel insisted on direct peace treaties and retained the lands).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, when the UN Security Council passed Resolution 242 in November 1967... &bull; Consequently, this created deadlock because...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Established the principle of "Land for Peace" but created lasting diplomatic stalemate) &bull; Fact (The resolution called for withdrawal from "territories occupied',
     },
     consequenceB: {
       ref: '[Textbook §1.1 &amp; §4.1–§4.2]',
       question: 'Explain one consequence of the continued dispute over the Suez Canal. [4 marks]',
       guidance:
-        'Point (Triggered the War of Attrition and long-term economic disruption) &bull; Fact (The Suez Canal became the ceasefire frontline, remaining closed to international shipping from 1967 to 1975) &bull; Consequence (Led Israel to construct the fortified Bar-Lev Line and prompted persistent artillery and commando duels with Egypt).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, with the Suez Canal closed as a hostile frontline... &bull; Consequently, this resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Triggered the War of Attrition and long-term economic disruption) &bull; Fact (The Suez Canal became the ceasefire frontline, remaining closed to international shipping from 1967 to 1975) &bull; Consequence (Led Israel to construct the fortified Bar-Lev Line and prompted persistent artillery and commando duels with Egypt).',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
@@ -497,7 +509,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'Following the swift conclusion of the June 1967 war... &bull; This territorial transformation displaced 300,000 refugees and prompted... &bull; In response to the growing diplomatic impasse, the UN drafted... &bull; Consequently, Resolution 242 formulated... &bull; Ultimately, this established...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Occupied territories &bull; 300,000 refugees &bull; West Bank &bull; Gaza Strip &bull; Golan Heights &bull; Khartoum Conference &bull; "Three Noes" &bull; UN Resolution 242 &bull; "Land for Peace" &bull; diplomatic deadlock',
       timelineMission:
@@ -610,17 +622,21 @@ const kt2Configs = [
       ref: '[Textbook §2.1–§2.2 &amp; Source A]',
       question: 'Explain one consequence of the PFLP airplane hijacks of 1970. [4 marks]',
       guidance:
-        'Point (Directly triggered King Hussein’s military crackdown against Palestinian militias in Jordan) &bull; Fact (PFLP militants blew up three hijacked Western airliners at Dawson’s Field in front of international TV cameras) &bull; Consequence (King Hussein declared martial law in September 1970, launching the Black September civil war to expel armed Palestinian groups).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, when the PFLP hijacked Western airliners to Dawson’s Field... &bull; Consequently, this provoked King Hussein to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Directly triggered King Hussein’s military crackdown against Palestinian militias in Jordan) &bull; Fact (PFLP militants blew up three hijacked Western airliners at Dawson’s Field in front of international TV cameras) &bull; Consequence (King Hussein declared martial law in September 1970, launching the Black September civil war to expel armed Palestinian groups).',
     },
     consequenceB: {
       ref: '[Textbook §2.2]',
       question: 'Explain one consequence of the expulsion of the PLO from Jordan (1970). [4 marks]',
       guidance:
-        'Point (Relocation of PLO headquarters to southern Lebanon and rise of clandestine terror cells) &bull; Fact (Jordanian forces crushed PLO resistance and expelled armed guerrillas to Lebanon by 1971) &bull; Consequence (The PLO lost its direct border with Israel, created "Fatahland" in Lebanon, and radical elements formed the "Black September" terror group).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, following the expulsion of the PLO from Jordan... &bull; Consequently, this forced the movement to...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Relocation of PLO headquarters to southern Lebanon and rise of clandestine terror cells) &bull; Fact (Jordanian forces crushed PLO resistance and expelled armed guerrillas to Lebanon by 1971) &bull; Consequence (The PLO lost its direct border with Israel, created "Fatahland" in Lebanon, and radical elements formed the "Black September" terror group).',
     },
     // Right Page: Question 3 Explain Importance [8 marks]
     rightExam: {
@@ -650,7 +666,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The Munich Olympics was important for international attitudes because... &bull; By striking a global sporting event broadcast live... &bull; However, the murder of eleven athletes provoked... &bull; In response, Israeli Prime Minister Golda Meir... &bull; Ultimately, this forced the world community to...',
+        'This was of paramount historical importance because... • In particular, a decisive factor was that... • Furthermore, this directly altered developments by... • On the other hand, an alternative critical perspective is that... • Consequently, this transformed relations because... • Ultimately, this was important because...',
       wordBank:
         'Munich Olympics &bull; Black September &bull; 5 September 1972 &bull; 11 Israeli athletes &bull; Olympic Village &bull; 900 million viewers &bull; international attitudes &bull; Palestine issue &bull; Operation Wrath of God &bull; 1974 UN speech',
       timelineMission:
@@ -762,17 +778,21 @@ const kt2Configs = [
       question:
         'Explain one consequence of Israel’s consolidation of control of the occupied territories. [4 marks]',
       guidance:
-        'Point (Deepened Arab determination to launch a military attack to reclaim occupied lands) &bull; Fact (Israel constructed the Bar-Lev Line along the Suez Canal and established permanent settlements in Sinai, Golan, and the West Bank) &bull; Consequence (Convinced Egyptian President Anwar Sadat that diplomacy had failed, leading directly to the coordinated surprise attack on Yom Kippur 1973).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, as Israel consolidated control by building the Bar-Lev Line... &bull; Consequently, this convinced Arab leaders that...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Deepened Arab determination to launch a military attack to reclaim occupied lands) &bull; Fact (Israel constructed the Bar-Lev Line along the Suez Canal and established permanent settlements in Sinai, Golan, and the West Bank) &bull; Consequence (Convinced Egyptian President Anwar Sadat that diplomacy had failed, leading directly to the coordinated surprise attack on Yom Kippur 1973).',
     },
     consequenceB: {
       ref: '[Textbook §2.1–§4.2 &amp; Sources A &amp; B]',
       question: 'Explain one consequence of the Yom Kippur War (1973). [4 marks]',
       guidance:
-        'Point (Shattered the myth of Israeli invincibility and triggered the global energy crisis) &bull; Fact (Arab states launched an oil embargo quadrupling crude oil prices; Israel suffered heavy casualties before counter-crossing the canal) &bull; Consequence (Forced the United States and Israel to recognise that military superiority alone could not guarantee security, paving the way for peace negotiations).',
+        'Identify one direct consequence (Point), support with precise factual evidence (Fact), and explain how this altered subsequent developments (Consequence).',
       stems:
-        'One major consequence was... &bull; Specifically, the initial surprise attack on 6 October 1973... &bull; Consequently, the aftermath of the war resulted in...',
+        'One major consequence was that... • Specifically, this was evident when... • Consequently, this directly resulted in...',
+      modelAnswer:
+        'Point (Shattered the myth of Israeli invincibility and triggered the global energy crisis) &bull; Fact (Arab states launched an oil embargo quadrupling crude oil prices; Israel suffered heavy casualties before counter-crossing the canal) &bull; Consequence (Forced the United States and Israel to recognise that military superiority alone could not guarantee security, paving the way for peace negotiations).',
     },
     // Right Page: Question 2 Analytical Narrative [8 marks]
     rightExam: {
@@ -799,7 +819,7 @@ const kt2Configs = [
         },
       ],
       connectives:
-        'The war began on 6 October 1973 when Egypt and Syria launched... &bull; This coordinated assault achieved tactical surprise because... &bull; As early losses threatened Israel, the United States... &bull; Consequently, General Sharon was able to... &bull; In response, Arab oil nations deployed the oil weapon by... &bull; Ultimately, the aftermath resulted in...',
+        'The sequence of events was initiated when... • In response to this development... • A decisive turning point occurred when... • Furthermore, tensions escalated because... • As a direct consequence of this... • Ultimately, this culminated in...',
       wordBank:
         'Yom Kippur War (1973) &bull; Bar-Lev Line &bull; water monitors &bull; SAM-6 missiles &bull; Golan Heights &bull; Operation Nickel Grass &bull; Ariel Sharon &bull; Third Army encirclement &bull; OPEC oil embargo &bull; DEFCON 3 &bull; Henry Kissinger',
       timelineMission:
@@ -1429,11 +1449,11 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <p style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.2;">
           ${cfg.consequenceA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1px; line-height: 1.15;">
-          <strong>PFC Guidance:</strong> ${cfg.consequenceA.guidance}
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-style: italic; color: #222222; margin-bottom: 1.5px; line-height: 1.15;">
+          <strong>P-F-C Structure:</strong> <strong>Point</strong> (State one direct consequence) &bull; <strong>Fact</strong> (Support with precise historical evidence and dates) &bull; <strong>Consequence</strong> (Explain how this altered subsequent developments/relations).
         </div>
         <div style="font-family: 'Inter', sans-serif; font-size: 7.3pt; font-weight: 700; margin-bottom: 2px;">
-          <strong>Sentence Stems:</strong> ${cfg.consequenceA.stems}
+          <strong>Sentence Stems:</strong> One major consequence was that... &bull; Specifically, this was evident when... &bull; Consequently, this directly resulted in... / altered relations because...
         </div>
         <div class="task-line" style="height: 6.8mm;"></div>
         <div class="task-line" style="height: 6.8mm;"></div>
