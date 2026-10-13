@@ -63,7 +63,7 @@ const enquiryConfigs = [
         date: '1783–1805',
         paraRef: '[1.1]',
         questionHeading: 'Why did Britain rely on mercantilism and navigation laws?',
-        bullets: ['Colonial Raw Materials', 'Protected Trade Routes', 'Bullion Accumulation'],
+        bullets: ['Raw Sugar and Cotton', 'Armed Merchant Fleets', 'Piles of Gold Coins'],
         focusClue:
           'How did mercantilist regulations ensure that imperial wealth flowed directly into the British Treasury?',
       },
@@ -73,7 +73,11 @@ const enquiryConfigs = [
         paraRef: '[1.2]',
         questionHeading:
           'How did naval dominance at Trafalgar secure Britain’s maritime supremacy?',
-        bullets: ['Battle of Trafalgar', 'Nelson’s Fleet', 'Unchallenged Seas'],
+        bullets: [
+          'Twenty-Seven Battleships',
+          'Smashing Enemy Flagships',
+          'Controlling Global Sea Lanes',
+        ],
         focusClue:
           'Why did total command of ocean trading routes protect British shipping from European rivals?',
       },
@@ -82,7 +86,11 @@ const enquiryConfigs = [
         date: '1815–1850',
         paraRef: '[1.3]',
         questionHeading: 'Why was Portsmouth Royal Dockyard the industrial heart of global empire?',
-        bullets: ['World’s Largest Factory', 'Brunel’s Block Mills', 'Steam & Iron Testing'],
+        bullets: [
+          'Ten Thousand Dockyard Smiths',
+          'Steam Wooden Block Mills',
+          'Forging Iron Anchors',
+        ],
         focusClue:
           'How did Portsmouth Dockyard combine mass production with naval engineering to maintain the Royal Navy?',
       },
@@ -91,7 +99,7 @@ const enquiryConfigs = [
         date: '1860',
         paraRef: '[2.1–2.2]',
         questionHeading: 'How did HMS Warrior render all wooden naval fleets obsolete overnight?',
-        bullets: ['HMS Warrior', '4.5-inch Wrought Iron', 'Steam & Armoured Hull'],
+        bullets: ['Four-Inch Iron Armour Plates', 'Twin Steam Engines', 'Bouncing Cannon Shells'],
         focusClue:
           'Why did the launch of HMS Warrior in 1860 trigger a worldwide naval revolution in ironclad technology?',
       },
@@ -101,7 +109,11 @@ const enquiryConfigs = [
         paraRef: '[2.3]',
         questionHeading:
           'How did the Two-Power Standard doctrine formalize British naval dominance?',
-        bullets: ['Naval Defence Act', 'Two-Power Standard', 'Deterrent Pax Britannica'],
+        bullets: [
+          'Naval Defence Act Law',
+          'Matching Two Foreign Fleets',
+          'Dozens of New Battleships',
+        ],
         focusClue:
           'Why did Parliament legislate that the Royal Navy must equal the combined strength of the next two strongest fleets?',
       },
@@ -118,7 +130,7 @@ const enquiryConfigs = [
         'The technological breakthrough of HMS Warrior (1860) and the Two-Power Standard',
       ],
       connectives:
-        'A primary factor in sustaining the British Empire was... &bull; In particular, Portsmouth Royal Dockyard... &bull; Furthermore, the technological breakthrough of HMS Warrior... &bull; Crucially, the Two-Power Standard ensured that... &bull; Consequently, British maritime hegemony...',
+        'A primary reason for sustaining imperial power was that... &bull; In particular, manufacturing infrastructure allowed... &bull; Furthermore, technological innovations meant that... &bull; Crucially, defence policies ensured that... &bull; Consequently, naval supremacy was preserved because...',
       wordBank:
         'Portsmouth Dockyard &bull; HMS Warrior &bull; Two-Power Standard &bull; mercantilism &bull; ironclad &bull; Royal Navy &bull; Pax Britannica &bull; naval supremacy',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
@@ -144,7 +156,11 @@ const enquiryConfigs = [
         date: '1700–1757',
         paraRef: '[1.1]',
         questionHeading: 'Why was Mughal India the world’s leading textile workshop in 1700?',
-        bullets: ['25% of Global Output', 'Bengal Muslins & Calicos', 'European Bullion Flow'],
+        bullets: [
+          'Quarter of World Output',
+          'Fine Village Handloom Silk',
+          'Paying in Silver Ingots',
+        ],
         focusClue:
           'Why were Indian hand-woven textiles so superior that European trading companies paid in gold and silver?',
       },
@@ -153,7 +169,11 @@ const enquiryConfigs = [
         date: '1721',
         paraRef: '[1.2]',
         questionHeading: 'Why did the British Parliament pass the protectionist Calico Acts?',
-        bullets: ['Banned Indian Cottons', 'Protected English Wool', 'Domestic Protectionism'],
+        bullets: [
+          'Protesting English Weavers',
+          'Banning Printed Cotton Cloth',
+          'Protecting Home Wool Sales',
+        ],
         focusClue:
           'Why did Parliament legally ban dyed Indian cloth in Britain while claiming to believe in free commerce?',
       },
@@ -163,7 +183,11 @@ const enquiryConfigs = [
         paraRef: '[1.3]',
         questionHeading:
           'How did the Diwani of Bengal invert the financial flow between Britain and India?',
-        bullets: ['Land Tax Extraction', 'Financed from Indian Taxes', 'Coerced Weavers'],
+        bullets: [
+          'Collecting Peasant Crop Taxes',
+          'Buying Silk with Local Taxes',
+          'Halting Silver Shipments',
+        ],
         focusClue:
           'How did using local peasant taxes to buy Indian textiles eliminate Britain’s need to import silver bullion?',
       },
@@ -174,9 +198,9 @@ const enquiryConfigs = [
         questionHeading:
           'How did steam machinery and rigged tariffs dismantle Indian handloom weaving?',
         bullets: [
-          'Manchester Steam Looms',
-          '70% British Import Duty',
-          '2.5% Duty on English Cloth',
+          'Lancashire Factory Mills',
+          'Seventy Percent Border Tax',
+          'Flooding Bazaars with Cheap Cotton',
         ],
         focusClue:
           'Why did unequal tariffs allow British machine cloth to flood India while blocking Indian cloth from Britain?',
@@ -187,7 +211,11 @@ const enquiryConfigs = [
         paraRef: '[3.1–3.3]',
         questionHeading:
           'Why did Governor-General Bentinck write that "the bones of weavers bleach the plains"?',
-        bullets: ['Dhaka Depopulated', 'Artisans Forced to Land', 'India as Captive Market'],
+        bullets: [
+          'Dhaka Loom City Deserted',
+          'Starving Handloom Families',
+          'Forced into Farm Labour',
+        ],
         focusClue:
           'How did de-industrialisation reduce skilled urban artisans to destitute rural farm labourers vulnerable to famine?',
       },
@@ -204,7 +232,7 @@ const enquiryConfigs = [
         'The unequal tariff regime imposed by the British Parliament',
       ],
       connectives:
-        'A primary cause of Indian de-industrialisation was... &bull; In particular, Lancashire steam mills... &bull; Furthermore, Parliament imposed rigged tariffs because... &bull; Crucially, the grant of the 1765 Diwani allowed... &bull; Consequently, millions of traditional handloom weavers...',
+        'A primary cause of this economic transformation was that... &bull; In particular, new industrial methods meant that... &bull; Furthermore, official trade policies contributed because... &bull; Crucially, changes in taxation and control allowed... &bull; Consequently, traditional craftsmen were affected because...',
       wordBank:
         'De-industrialisation &bull; captive market &bull; Calico Acts &bull; Dhaka muslin &bull; tariff disparity &bull; Lancashire cotton &bull; Diwani &bull; Lord William Bentinck',
       timelineMissionTitle: 'Centrefold Sketch Challenges 3 &amp; 4',
@@ -231,7 +259,7 @@ const enquiryConfigs = [
         paraRef: '[1.1–1.2]',
         questionHeading:
           'Why did Lord Dalhousie’s Doctrine of Lapse alienate Indian royal dynasties?',
-        bullets: ['Doctrine of Lapse', 'Satara, Nagpur, Jhansi', 'Annexation of Awadh'],
+        bullets: ['Seizing Heirless Kingdoms', 'Satara, Nagpur, Jhansi', 'Annexing Wealthy Awadh'],
         focusClue:
           'Why did confiscating kingdoms lacking biological male heirs provoke fury among Indian aristocrats and soldiers?',
       },
@@ -241,7 +269,7 @@ const enquiryConfigs = [
         paraRef: '[1.3]',
         questionHeading:
           'Why was the Enfield rifle cartridge the explosive catalyst for rebellion?',
-        bullets: ['Enfield Cartridge', 'Cow & Pig Tallow', 'Religious Defilement'],
+        bullets: ['Greased Paper Tubes', 'Biting Cow and Pig Fat', 'Fear of Forced Conversion'],
         focusClue:
           'Why did biting animal grease confirm sepoy fears that the Company planned forced Christian conversion?',
       },
@@ -251,7 +279,11 @@ const enquiryConfigs = [
         paraRef: '[2.1–2.2]',
         questionHeading:
           'Why was the march from Meerut to Delhi a political masterstroke for the rebels?',
-        bullets: ['Meerut Mutiny', 'Restoration of Zafar II', 'Hindu-Muslim Unity'],
+        bullets: [
+          'Breaking Open Jail Cells',
+          'Aged Emperor Bahadur Shah',
+          'Hindu and Muslim Unity',
+        ],
         focusClue:
           'How did placing 82-year-old Mughal Emperor Bahadur Shah Zafar at the head of the uprising legitimize the war?',
       },
@@ -261,7 +293,11 @@ const enquiryConfigs = [
         paraRef: '[2.2–2.3]',
         questionHeading:
           'How did Rani Lakshmibai of Jhansi become an enduring symbol of resistance?',
-        bullets: ['Rani Lakshmibai', 'Defense of Jhansi', 'Killed at Gwalior'],
+        bullets: [
+          'Riding Battle Horseback',
+          'Swinging Curved Talwar Sword',
+          'Killed in Action at Gwalior',
+        ],
         focusClue:
           'Why did the warrior queen riding into battle on horseback inspire generations of anti-colonial resistance?',
       },
@@ -271,7 +307,11 @@ const enquiryConfigs = [
         paraRef: '[3.1–3.3]',
         questionHeading:
           'How did the Government of India Act 1858 permanently reshape British governance?',
-        bullets: ['EIC Liquidated', 'Direct Crown Rule', 'Queen Victoria’s Proclamation'],
+        bullets: [
+          'Dissolving Company Rule',
+          'Viceroy Direct Crown Command',
+          'Queen Victoria Proclamation',
+        ],
         focusClue:
           'Why did Parliament dissolve the private East India Company and establish the direct rule of the British Raj?',
       },
@@ -288,7 +328,7 @@ const enquiryConfigs = [
         'The introduction of the greased Enfield rifle cartridge in 1857',
       ],
       connectives:
-        'A primary structural cause of the 1857 Rebellion was... &bull; In particular, Dalhousie’s Doctrine of Lapse... &bull; Furthermore, the immediate spark was the Enfield rifle because... &bull; Crucially, rebel leaders marched on Delhi to... &bull; Consequently, the conflict transformed from...',
+        'A primary long-term cause of the uprising was that... &bull; In particular, territorial policies caused grievance because... &bull; Furthermore, an immediate trigger arose when... &bull; Crucially, the movement gained momentum because... &bull; Consequently, the conflict escalated when...',
       wordBank:
         'Sepoy &bull; Doctrine of Lapse &bull; Awadh &bull; Enfield rifle &bull; Rani Lakshmibai &bull; Bahadur Shah Zafar &bull; Azamgarh Proclamation &bull; British Raj &bull; Queen Victoria',
       timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
@@ -314,7 +354,11 @@ const enquiryConfigs = [
         date: '1884–1885',
         paraRef: '[1.1–1.3]',
         questionHeading: 'Why did European powers convene the 1884 Berlin West Africa Conference?',
-        bullets: ['Bismarck & Leopold II', 'Carving the Continent', 'Zero Africans Invited'],
+        bullets: [
+          'Chancellor Otto von Bismarck',
+          'Drawing Lines Across Maps',
+          'Zero Africans Invited',
+        ],
         focusClue:
           'Why did fourteen European nations partition 90% of Africa without consulting a single African representative?',
       },
@@ -324,7 +368,11 @@ const enquiryConfigs = [
         paraRef: '[1.3]',
         questionHeading:
           'How did the principle of Effective Occupation accelerate military conquest?',
-        bullets: ['Effective Occupation', 'Rush to Plant Flags', 'Subjugation of Tribes'],
+        bullets: [
+          'Building Coastal Forts',
+          'Marching Troops into Interior',
+          'Planting National Flags',
+        ],
         focusClue:
           'Why did requiring physical administrative and military occupation trigger a violent race into the African interior?',
       },
@@ -333,7 +381,11 @@ const enquiryConfigs = [
         date: '1884–1898',
         paraRef: '[2.1–2.3]',
         questionHeading: 'How did the Maxim gun and quinine make conquest militarily irresistible?',
-        bullets: ['Maxim Gun (600 rpm)', 'Quinine vs Malaria', 'Battle of Omdurman'],
+        bullets: [
+          'Six Hundred Rounds per Minute',
+          'Bitter Bark Fever Medicine',
+          'Ten Thousand Dead at Omdurman',
+        ],
         focusClue:
           'Why did automatic machine guns allow tiny expeditionary forces to annihilate massive traditional armies?',
       },
@@ -343,7 +395,7 @@ const enquiryConfigs = [
         paraRef: '[3.1]',
         questionHeading:
           'How did Rudyard Kipling construct the moral myth of "The White Man\'s Burden"?',
-        bullets: ['Civilising Mission', 'Selfless Sacrifice', '"Half-Devil & Half-Child"'],
+        bullets: ['Poem in The Times', 'Claiming Selfless Duty', 'Racist Slur Half-Devil'],
         focusClue:
           'Why did Victorian imperialists claim colonial rule was a moral duty rather than a profitable business?',
       },
@@ -353,7 +405,11 @@ const enquiryConfigs = [
         paraRef: '[3.2–3.3]',
         questionHeading:
           'How did E. D. Morel’s "The Black Man\'s Burden" expose colonial capitalism?',
-        bullets: ['E. D. Morel', 'Rubber, Gold, Palm Oil', 'Armed Resource Theft'],
+        bullets: [
+          'Stealing Rubber and Palm Oil',
+          'Severed Hands in Congo',
+          'Enriching European Tycoons',
+        ],
         focusClue:
           'How did Morel prove that the "civilising mission" was merely a mask for violent corporate plunder?',
       },
@@ -370,7 +426,7 @@ const enquiryConfigs = [
         'Technological breakthroughs including the Maxim machine gun and quinine',
       ],
       connectives:
-        'A primary cause of the Scramble for Africa was... &bull; In particular, the 1884 Berlin Conference established... &bull; Furthermore, military and medical innovations such as... &bull; Crucially, the Maxim gun gave colonial forces... &bull; Consequently, European empires partitioned...',
+        'A primary reason for rapid partition was that... &bull; In particular, diplomatic agreements established... &bull; Furthermore, technological advantages contributed because... &bull; Crucially, decisive military equipment allowed... &bull; Consequently, territorial control was achieved because...',
       wordBank:
         'Scramble for Africa &bull; Berlin Conference &bull; Effective Occupation &bull; Maxim gun &bull; quinine &bull; Battle of Omdurman &bull; Rudyard Kipling &bull; E. D. Morel &bull; resource extraction',
       timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
@@ -397,7 +453,11 @@ const enquiryConfigs = [
         paraRef: '[1.1]',
         questionHeading:
           'How did the 1851 Great Exhibition proclaim Britain the Workshop of the World?',
-        bullets: ['Crystal Palace', '6 Million Visitors', 'Imperial Trophies'],
+        bullets: [
+          'Glass and Iron Crystal Palace',
+          'Six Million Ticket Holders',
+          'Looted Koh-i-Noor Diamond',
+        ],
         focusClue:
           'How did Prince Albert’s exhibition celebrate British industrial technology and global imperial dominion?',
       },
@@ -407,7 +467,11 @@ const enquiryConfigs = [
         paraRef: '[1.2]',
         questionHeading:
           'What modern infrastructure did British colonial administration construct across India?',
-        bullets: ['25,000 Miles of Rail', 'Irrigation Canals', 'Telegraph Network'],
+        bullets: [
+          'Twenty-Five Thousand Rail Miles',
+          'Digging River Canals',
+          'Electric Telegraph Wires',
+        ],
         focusClue:
           'How did colonial infrastructure physically integrate territories into global trade and administrative control?',
       },
@@ -417,7 +481,11 @@ const enquiryConfigs = [
         paraRef: '[2.1–2.2]',
         questionHeading:
           'Why did catastrophic famines strike India while grain was exported to Britain?',
-        bullets: ['Great Famine 1876–78', 'Laissez-Faire Relief', 'Grain Exported for Cash'],
+        bullets: [
+          'Viceroy Lytton Market Dogma',
+          'Hard Labour Relief Camps',
+          'Ten Million Starved to Death',
+        ],
         focusClue:
           'Why did British adherence to free-market dogma prevent famine relief while millions starved?',
       },
@@ -427,7 +495,11 @@ const enquiryConfigs = [
         paraRef: '[3.1–3.3]',
         questionHeading:
           'How did Dadabhai Naoroji calculate the systematic "Drain of Wealth" from India?',
-        bullets: ['Dadabhai Naoroji', 'Drain of Wealth', 'Poverty & Un-British Rule'],
+        bullets: [
+          'London Book on Poverty',
+          'Millions Siphoned in Tax Money',
+          'First Indian Westminster MP',
+        ],
         focusClue:
           'How did Naoroji prove that millions in tax revenue were siphoned out of India without any economic return?',
       },
@@ -438,9 +510,9 @@ const enquiryConfigs = [
         questionHeading:
           'How do "Optimist" and "Pessimist" historians evaluate the British Empire today?',
         bullets: [
-          'Modernisation vs Theft',
-          'Niall Ferguson (Optimist)',
-          'Walter Rodney (Pessimist)',
+          'Global Free Trade and Laws',
+          'Crushing Local Industries',
+          'Clashing Moral Judgments',
         ],
         focusClue:
           'Can an historian reach a single verdict, or was the Empire simultaneously modernizing and profoundly destructive?',
@@ -458,7 +530,7 @@ const enquiryConfigs = [
         'Dadabhai Naoroji’s Drain of Wealth theory and recurring late Victorian colonial famines',
       ],
       connectives:
-        'A primary argument for the positive impact of the Empire is... &bull; In particular, British administrators built... &bull; Conversely, anti-colonial and nationalist historians argue that... &bull; Crucially, Dadabhai Naoroji demonstrated that... &bull; Ultimately, the historical debate centers upon...',
+        'One significant perspective in this debate is that... &bull; In particular, evidence of development highlights... &bull; Conversely, critical historians argue that... &bull; Crucially, economic analysis demonstrated that... &bull; Ultimately, historians disagree because...',
       wordBank:
         'Drain of Wealth &bull; Dadabhai Naoroji &bull; Crystal Palace &bull; Great Exhibition &bull; famine &bull; infrastructure &bull; railways &bull; Optimist vs Pessimist &bull; historiography',
       timelineMissionTitle: 'Centrefold Sketch Challenges 9 &amp; 10',
@@ -2347,6 +2419,12 @@ async function main() {
   const html = compileEmpireWorkbook();
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`[OK] HTML written to: ${outHtmlPath}`);
+
+  const altUnitsDir = path.join(ROOT_DIR, 'units', 'second_british_empire');
+  if (fs.existsSync(altUnitsDir)) {
+    fs.writeFileSync(path.join(altUnitsDir, 'pupil_workbook.html'), html, 'utf8');
+    console.log(`[OK] HTML mirrored to: ${path.join(altUnitsDir, 'pupil_workbook.html')}`);
+  }
 
   // Compile PDF via Puppeteer
   const pdfDir = path.join(ROOT_DIR, 'public', 'pdfs');
