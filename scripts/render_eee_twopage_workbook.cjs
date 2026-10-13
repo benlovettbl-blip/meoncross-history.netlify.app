@@ -1945,11 +1945,9 @@ function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
             <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
               ${enq.featureA.stem}
             </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-              <strong>Target Guidance:</strong> ${enq.featureA.guidance}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-              <strong>Sentence Stems:</strong> ${enq.featureA.stems}
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 2px; margin-bottom: 2px;">
+              <strong>Target: AO1 [2 marks] &bull;</strong> Point (State one clear, valid historical feature) &bull; Detail (Support with precise factual context).<br>
+              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
             </div>
           </div>
           <div style="display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
@@ -1979,11 +1977,9 @@ function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
             <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
               ${enq.featureB.stem}
             </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-              <strong>Target Guidance:</strong> ${enq.featureB.guidance}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-              <strong>Sentence Stems:</strong> ${enq.featureB.stems}
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 2px; margin-bottom: 2px;">
+              <strong>Target: AO1 [2 marks] &bull;</strong> Point (State one clear, valid historical feature) &bull; Detail (Support with precise factual context).<br>
+              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
             </div>
           </div>
           <div style="display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
@@ -2013,11 +2009,9 @@ function renderFeaturePage(enq, pageNum, quip, keyTopicNum) {
             <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 800; color: #000000; margin: 1px 0 2px 0; line-height: 1.18;">
               ${enq.featureC?.stem}
             </p>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 1px; line-height: 1.15;">
-              <strong>Target Guidance:</strong> ${enq.featureC?.guidance}
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; margin-bottom: 2px;">
-              <strong>Sentence Stems:</strong> ${enq.featureC?.stems}
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.15; background: #f8fafc; border: 1px solid #cbd5e1; padding: 2px 4px; border-radius: 2px; margin-bottom: 2px;">
+              <strong>Target: AO1 [2 marks] &bull;</strong> Point (State one clear, valid historical feature) &bull; Detail (Support with precise factual context).<br>
+              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
             </div>
           </div>
           <div style="display: flex; flex-direction: column; justify-content: space-between; margin-top: 1px;">
