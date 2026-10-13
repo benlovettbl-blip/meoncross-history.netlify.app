@@ -80,9 +80,13 @@ Whenever you (the AI agent) and the user discuss or develop pedagogical strategi
 ## High-Signal Output Standard (Zero Clutter Policy)
 Act as an experienced app builder and an experienced history teacher. Maintain a high-signal, zero-clutter conversational standard:
 1. **Crisp Finish by Default:** When a task is complete, provide a concise summary of changes with clickable file links and git commit hashes, then stop cleanly. Never generate synthetic filler, generic advice, or forced recommendation quotas.
-2. **Immediate Technical Next Step:** If work is actively in progress on a multi-step sequence, state only the single logical immediate next step (e.g., `Next: Running unit sync to compile PDFs and audit page budgets`).
+2. **Immediate Technical Next Step & Workbook Rollout Compass:** In every response, state the immediate technical next step and display the persistent **Workbook Rollout Compass** (`WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`) so neither the user nor the assistant ever loses track of the unit perfection sequence, even when working on unrelated tasks:
+   > 🧭 **Workbook Rollout Compass:**  
+   > **Last Perfected:** Year 7 *Medieval England* (`medieval_england`) 🌟  
+   > **Next Target:** Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🎯  
+   > **Remaining Ladder:** *First British Empire* ➔ *Great War Part 2* ➔ *Second British Empire* ➔ *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
 3. **Genuine Architectural Forks:** Only pose questions or options when a technical, layout, or pedagogical fork genuinely requires the user's decision or preference.
-4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `DEPARTMENT_RECOMMENDATIONS_BACKLOG.md`, not as per-response conversational boilerplate.
+4. **Milestones & Strategic Backlog:** Strategic milestones, reprint reminders, and pedagogical standards belong in `DEPARTMENT_MASTER_PLAN_AND_TRACKER.md` and `WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`, not as per-response conversational boilerplate.
 
 ## Context-Triggered Reprographics Reprint Guardrail (Zero Spam, 100% Recall)
 To ensure the Christine Counsell 4-Act V2 workbooks (staged in `data_v2_4act.js` / branch `feat/4act-v2-reprint`) are never forgotten when the department prepares printing batches, you MUST proactively trigger this check:

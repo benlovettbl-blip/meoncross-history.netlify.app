@@ -34,26 +34,33 @@ The following ledger tracks the departmental shift to **Christine Counsell 4-Act
 > Three KS3 units are currently in daily classroom use in physical printed workbooks: Year 7 Sanitation, Year 8 Early Modern, and Year 9 Causes of the Great War.  
 > To guarantee 100% textbook-to-workbook parity for lessons and cover teachers, the active `data.js` files served to Netlify strictly match the printed workbooks. The modern Christine Counsell 4-Act architecture is preserved and staged in `data_v2_4act.js` and branch `feat/4act-v2-reprint`, ready to be promoted during the end-of-term reprographics reprint window!
 
-| Unit ID | Key Stage / Year | Unit Title | 4-Act Christine Counsell Lessons | Double-Page Booklet Architecture | Classroom Reprographics State | Priority & Next Action |
+> [!TIP]
+> **🌟 SINGLE SOURCE OF TRUTH FOR ALL WORKBOOKS:**  
+> For the comprehensive, page-by-page audit, exact missing elements, and the step-by-step KS3 Rollout Ladder, see:  
+> 👉 **[`WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md`](./WORKBOOK_STATUS_AND_ROLLOUT_TRACKER.md)**
+
+| Unit ID | Key Stage / Year | Unit Title | 4-Act Lessons | Double-Page Workbook Architecture | Classroom Reprographics State | Priority & Next Action |
 | :--- | :---: | :--- | :---: | :---: | :---: | :--- |
-| `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present & Western Front | 🟩 **GREEN**<br>(100% Complete — All 4 Eras + Section A) | 🟩 **GREEN**<br>(3-Pillar Master Packs Complete) | Production Ready / Active | **COMPLETE:** Maintenance and ongoing retrieval testing only. |
-| `cme_new` (KT1) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 1 (1945–1963) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook & 12-page publisher textbook compiled with 0px overflow. |
-| `cme_new` (KT2) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 2 (1964–1973) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook & 12-page publisher textbook compiled with 0px overflow. |
-| `cme_new` (KT3) | GCSE (Y10–11) | Conflict in the Middle East: Key Topic 3 (1973–1995) | 🟩 **GREEN**<br>(100% Complete — 5 Enquiries) | 🟩 **GREEN**<br>(16-Page Publisher Standard) | Production Ready / Active | **COMPLETE:** 16-page double-page spread workbook & 12-page publisher textbook compiled with 0px overflow. |
-| `industrialisation_and_empire` | KS3 (Year 8) | Industrialisation, Empire, and Power (1750–1900) | 🟩 **GREEN**<br>(100% Complete — 8 Lessons 🌟 GOLD) | 🟩 **GREEN**<br>(20-Page Double-Page Master) | Production Ready (Term 2) | **COMPLETE:** All 8 lessons upgraded with 2-lesson delivery plans, 4-card chronology spines, and 0px overflow workbook & textbook. |
+| `medieval_england` | KS3 (Year 7) | Medieval England, 1066–1485 | 🟩 **GREEN**<br>(5 Core Enquiries) | 🌟 **GOLD STANDARD**<br>(16-Page Saddle-Stitch) | Production Ready (Term 2) | 🌟 **100% PERFECTED:** Color covers, 118mm Bayeux plate, pure `#000000` monochrome interior, ~8.0mm ruled lines, `[1.1]`–`[5.5]` para badges, 32-line notes spread, 100% `✅ OPTIMAL` audit. (Commit `d62781c2`). |
+| `monarchy_religion_power` | KS3 (Year 8) | Crown, Church, or Parliament (1517–1689) | 🟩 **GREEN**<br>(5 Enquiries Authored) | 🟡 **TIER 2: STAGED**<br>(16-Page Prototype) | Production Ready (Term 2) | 🎯 **PRIORITY #1 NEXT UP:** Upgrade to Gold Standard: remove interior navy `#0f284e`, calibrate lines to ~8.0mm, add P14–15 notes spread, enlarge typography. |
+| `first_british_empire` | KS3 (Year 8) | The First British Empire (1600–1783) | 🟩 **GREEN**<br>(5 Enquiries Authored) | 🟡 **TIER 2: STAGED**<br>(16-Page Prototype) | Production Ready (Term 2) | 🎯 **PRIORITY #2 NEXT UP:** Upgrade to Gold Standard: pure monochrome interior, `[1.1]`–`[5.5]` para badges, P14–15 notes spread, ~8.0mm line pitch. |
+| `great_war_part2` | KS3 (Year 9) | The Great War: Western Front & Aftermath (1914–1919) | 🟩 **GREEN**<br>(5 Enquiries Authored) | 🟡 **TIER 2: STAGED**<br>(16-Page Prototype) | Production Ready (Term 2) | 🎯 **PRIORITY #3 NEXT UP:** Upgrade to Gold Standard: pure monochrome interior, P14–15 notes spread, ~8.0mm line pitch, zero-knowledge connective audit. |
+| `second_british_empire` | KS3 (Year 8) | The Second British Empire & Imperialism | 🟩 **GREEN**<br>(5 Enquiries Authored) | 🟡 **TIER 2: STAGED**<br>(16-Page Prototype) | Production Ready (Term 2) | 🎯 **PRIORITY #4 NEXT UP:** Upgrade to Gold Standard: monochrome interior, `[1.1]`–`[5.5]` badges, P14–15 notes spread, ~8.0mm lines. |
+| `industrialisation_and_empire` | KS3 (Year 8) | Industrialisation, Empire, and Power (1750–1900) | 🟩 **GREEN**<br>(8 Lessons Authored) | 🟡 **TIER 2: STAGED**<br>(20-Page Double-Page) | Production Ready (Term 2) | 🎯 **PRIORITY #5 NEXT UP:** Refactor into Gold Standard 16-page format (or curated 20p) with monochrome interior and ~8.0mm lines. |
 | `water_and_sanitation` | KS3 (Year 7) | Water and Sanitation Through Time | 🔒 **CLASSROOM PROTECTED**<br>(Active Printed Booklet) | 🔒 **CLASSROOM FROZEN**<br>(Printed & on Desks) | In Pupils' Hands (Live) | 🛡️ **CLASSROOM SAFE:** Netlify serves active workbook-matching questions. 4-Act V2 staged in `data_v2_4act.js` & branch `feat/4act-v2-reprint` for Term 2 reprint. |
 | `early_modern_world` | KS3 (Year 8) | Early Modern World & Global Encounters (1450–1750) | 🔒 **CLASSROOM PROTECTED**<br>(Active Printed Booklet) | 🔒 **CLASSROOM FROZEN**<br>(Printed & on Desks) | In Pupils' Hands (Live) | 🛡️ **CLASSROOM SAFE:** Netlify serves active workbook-matching questions. 4-Act V2 staged in `data_v2_4act.js` & branch `feat/4act-v2-reprint` for Term 2 reprint. |
 | `great_war` | KS3 (Year 9) | Causes of the Great War (1870–1914) | 🔒 **CLASSROOM PROTECTED**<br>(Active Printed Booklet) | 🔒 **CLASSROOM FROZEN**<br>(Printed & on Desks) | In Pupils' Hands (Live) | 🛡️ **CLASSROOM SAFE:** Netlify serves active workbook-matching questions. 4-Act V2 staged in `data_v2_4act.js` & branch `feat/4act-v2-reprint` for Term 2 reprint. |
-| `great_war_part2` | KS3 (Year 9) | The Great War: Western Front & Aftermath (1914–1919) | 🟩 **GREEN**<br>(100% Complete — 6 Enquiries) | 🟩 **GREEN**<br>(16-Page Double-Page Master) | Production Ready (Term 2) | **COMPLETE:** 14-page Two-Pillar textbook & 16-page double-page spread workbook compiled with 0px overflow. |
-| `medieval_england` | KS3 (Year 7) | Medieval England & Struggle for Power (1066–1485) | 🟩 **GREEN**<br>(100% Complete — 8 Enquiries) | 🟩 **GREEN**<br>(20-Page Double-Page Master) | Production Ready (Term 2) | **COMPLETE:** 18-page Two-Pillar textbook & 20-page double-page spread workbook compiled with 0px overflow. |
-| `eee` | GCSE (Y10–11) | Early Elizabethan England, 1558–1588 | 🟩 **GREEN**<br>(All 12 Core Enquiries Authored) | 🟩 **GREEN**<br>(72-Page Master & KT1–KT3 24-Page Workbooks) | Production Ready (Term 2) | **COMPLETE:** Upgraded across KT1–KT3 to 5-stage chronological inquiry spine, accessible writing frames, 4-mark Q1 practice, and 0px overflow across all 72 pages. |
-| `usa` | GCSE (Y10–11) | The USA, 1954–75: Conflict at Home & Abroad | 🟨 **AMBER**<br>(Core Specification Complete) | 🟩 **GREEN**<br>(16 Spreads, 4-4-4-4 Matrix) | Production Ready / Active | Master 3-pillar volumes compiled. Ongoing exam coaching. |
-| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany, 1918–1939 | 🟩 **GREEN**<br>(All 16 Core Enquiries Authored) | 🟩 **GREEN**<br>(96-Page Master & KT1–KT4 24-Page Workbooks) | Production Ready (Term 2) | **COMPLETE:** Upgraded across KT1–KT4 to 5-stage chronological inquiry spine, accessible writing frames, 0 knowledge leaks, and 0px overflow across all 96 pages. |
-| `the_shoah` | KS3 (Year 9) | The Shoah (Holocaust Education) | 🟥 **RED**<br>(Core Text Drafted) | 🟥 **RED**<br>(Legacy Standalone Format) | Queued for Year 9 Term 2/3 | Scheduled for 4-Act refactoring. |
-| `cold_war` | KS3 (Year 9) | The Cold War (1945–1991) | 🟥 **RED**<br>(Prose Drafted) | 🟥 **RED**<br>(Legacy Standalone Format) | Queued for Year 9 Term 3 | Scheduled for 4-Act refactoring. |
-| `post_war_britain` | KS3 (Year 9) | Rights, Protest, and Post-War Britain | 🟥 **RED**<br>(Prose Drafted) | 🟥 **RED**<br>(Legacy Standalone Format) | Queued for Year 9 Term 3 | Scheduled for 4-Act refactoring. |
-| `australia` | KS3 (Year 8/9) | History of Australia | 🟥 **RED**<br>(Draft Modules) | 🟥 **RED**<br>(Legacy Standalone Format) | Elective Depth Study | Queued for 4-Act refactoring. |
-| `trip_ypres` | GCSE Field Trip | Battlefield Tour: Ypres & The Somme | 🟩 **GREEN**<br>(14 Field Stops Complete) | 🟩 **GREEN**<br>(Digital Companion Complete) | Live Interactive Field Web App | Digital field guide intentionally bypassed from print booklet pipeline. |
+| `the_shoah` | KS3 (Year 9) | The Shoah (Holocaust Education) | 🟥 **RED**<br>(Core Text Drafted) | 🔴 **TIER 3: UNCONVERTED**<br>(0 Double-Page Workbook) | Queued for Year 9 Term 2/3 | Author bespoke `scripts/render_the_shoah_workbook.cjs` (16-Page Gold Standard). |
+| `cold_war` | KS3 (Year 9) | The Cold War (1945–1991) | 🟥 **RED**<br>(Prose Drafted) | 🔴 **TIER 3: UNCONVERTED**<br>(0 Double-Page Workbook) | Queued for Year 9 Term 3 | Author bespoke `scripts/render_cold_war_workbook.cjs` (16-Page Gold Standard). |
+| `post_war_britain` | KS3 (Year 9) | Rights, Protest, and Post-War Britain | 🟥 **RED**<br>(Prose Drafted) | 🔴 **TIER 3: UNCONVERTED**<br>(0 Double-Page Workbook) | Queued for Year 9 Term 3 | Author bespoke `scripts/render_post_war_britain_workbook.cjs` (16-Page Gold Standard). |
+| `second_world_war` | KS3 (Year 9) | Second World War | 🟥 **RED**<br>(Curriculum Draft) | 🔴 **TIER 3: UNCONVERTED**<br>(0 Double-Page Workbook) | Queued for Development | Complete curriculum drafting and author 16-page Gold Standard workbook. |
+| `australia` | KS3 (Year 8/9) | History of Australia | 🟥 **RED**<br>(Draft Modules) | 🔴 **TIER 3: UNCONVERTED**<br>(0 Modern Workbook) | Elective Depth Study | Author 16-page elective workbook when scheduled. |
+| `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present & Western Front | 🟩 **GREEN**<br>(100% Complete — 26 Lessons) | 🟩 **GREEN**<br>(5x 16-Page Workbooks + Master) | Production Ready / Active | **COMPLETE:** 5 period workbooks + 28p Thematic Master Companion + 12p Western Front Master Companion compiled. |
+| `cme_new` (KT1–3) | GCSE (Y10–11) | Conflict in the Middle East: KT1–3 (1945–1995) | 🟩 **GREEN**<br>(100% Complete — 15 Enquiries) | 🟩 **GREEN**<br>(3x 16-Page Workbooks) | Production Ready / Active | **COMPLETE:** 16-page workbooks & 12-page publisher textbooks + 20-page Master Companion compiled with 0px overflow. |
+| `eee` (KT1–3) | GCSE (Y10–11) | Early Elizabethan England, 1558–1588 | 🟩 **GREEN**<br>(All 12 Enquiries Authored) | 🟩 **GREEN**<br>(3x 16-Page Workbooks) | Production Ready (Term 2) | **COMPLETE:** 3x 16-page workbooks & 72-page master workbook compiled with 0px overflow. |
+| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany, 1918–1939 | 🟩 **GREEN**<br>(All 16 Enquiries Authored) | 🟩 **GREEN**<br>(4x 16-Page Workbooks) | Production Ready (Term 2) | **COMPLETE:** 4x 16-page workbooks & 96-page master workbook compiled with 0px overflow. |
+| `usa` (KT1–4) | GCSE (Y10–11) | The USA, 1954–75: Conflict at Home & Abroad | 🟩 **GREEN**<br>(Core Specification Complete) | 🟩 **GREEN**<br>(4x Key Topic Workbooks) | Production Ready / Active | **COMPLETE:** 4 Key Topic workbooks & 24-page Master Knowledge Retrieval Companion compiled. |
+| `trip_ypres` | GCSE Field Trip | Battlefield Tour: Ypres & The Somme | 🟩 **GREEN**<br>(14 Field Stops Complete) | ⚪ **DIGITAL COMPANION ONLY** | Live Interactive Field Web App | Digital field guide intentionally bypassed from print booklet pipeline. |
 
 ---
 
@@ -199,28 +206,38 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 
 ---
 
-## 6. Implementation Roadmap & Immediate Next Steps
+## 6. Implementation Roadmap & KS3 Workbook Rollout Ladder
 
-1. **Step 1 (COMPLETED):** Conflict in the Middle East (`cme_new`) is 100% complete and up to date:
-   - **Key Individuals:** All 12 key individual profile cards hard-coded, vetted, and synchronized across `data.js`, `database.json`, and web app.
-   - **Publisher Textbooks (12 Pages Each):** Key Topics 1, 2, and 3 compiled into strictly 12-page publisher-grade textbooks (`public/pdfs/cme_new_textbook_KT1_PUBLISHER.pdf`, `KT2_PUBLISHER.pdf`, `KT3_PUBLISHER.pdf`) featuring 2-column Cambridge/OUP academic measure, uncropped archival photographic plates, and embedded Key Figure boxes.
-   - **Pupil Workbooks (16 Pages Each):** Full V17 16-page double-page spread workbooks for KT1, KT2, and KT3.
-   - **Mastery Packs:** Key Topics 1, 2, and 3 mastery packs fully compiled.
-2. **Step 2 (COMPLETED):** Universal KS3 Two-Pillar Master Textbooks & Double-Page Spread Workbooks:
-   - **Two-Pillar Engine:** Codified permanently in `.agents/skills/ks3-publishing-engine/SKILL.md` and rolled out across all 6 KS3 master textbooks (`great_war_part2`, `great_war`, `medieval_england`, `industrialisation_and_empire`, `water_and_sanitation`, `early_modern_world`), eliminating dead chasms to crisp 6px gaps with 0px overflow and 96%–98% budget utilization.
-   - **Double-Page Workbooks:** `industrialisation_and_empire` (20 pages), `great_war_part2` (16 pages), and `medieval_england` (20 pages) fully compiled with 0px overflow and synchronized.
-3. **Step 3 (SCHEDULED - IMMEDIATE ROADMAP):** Year 8 Early Modern Restructuring & 20-Page Saddle-Stitch Dual-Coding Standard:
-   - **Curriculum Architecture:** Split sprawling 9-lesson unit into two laser-focused 5-lesson units (10 lessons total):
-     - **Unit 1 (Autumn Term):** *Crown, Church, or Parliament (1517–1689)* – 5 Lessons (L1: Reformation & Break with Rome; L2: Elizabeth's Divided Realm & Middle Way; L3: Elizabeth, Spain & The Armada; L4: Civil War, Regicide & 1689 Bill of Rights; L5: Synoptic Extent of Change Enquiry).
-     - **Unit 2 (Spring Term):** *The First British Empire (1600–1783)* – 5 Lessons (L1: East India Company & Bengal; L2: Transatlantic Slave Trade & Middle Passage; L3: Plantation Reality, Queen Nanny & Maroon Resistance; L4: 13 Colonies, Proclamation of 1763 & Boston Tea Party; L5: 1776 Declaration of Independence & The Black Loyalists).
-   - **20-Page Saddle-Stitch Signature (5 Folded A3 Sheets):**
-     - *Verso (Left Page):* Large font (10–11pt), vertical chronological margin spine, exactly 4 Act headings with targeted note-making prompts (eliminating 7pt micro-clutter).
-     - *Recto (Right Page):* Rotating historical disciplinary skills (Source Utility $\rightarrow$ Historical Interpretations $\rightarrow$ Causal Reasoning $\rightarrow$ Change & Continuity $\rightarrow$ Evaluative Significance).
-     - *Centre Fold (Pages 9–10):* Panoramic Dual-Coding Timeline Canvas (lays 100% flat down the staple line).
-     - *Back Matter (Pages 15–20):* Synoptic Essay Planning Matrix (15–16), Knowledge Companion 20-Question Quizzing Pack (17–18), Complete Answer Key & Back Archival Seal (19–20).
-4. **Step 4 (ACTIVE):** Roll out the 24-Page Master Knowledge Retrieval & Homework Companion for *The USA, 1954–75* (`usa`) to match the GCSE standard established in Middle East and Medicine.
-5. **Step 5:** Consolidate GCSE *Early Elizabethan England* (`eee`) from 3 split booklets into the single unified master volume and 16-page key topic workbooks.
-6. **Step 6:** Maintain strict protection over active printed booklets (Year 7 Sanitation, Year 8 Early Modern, Year 9 Causes of the Great War) until the scheduled vacation reprint cycle.
+1. **Step 1 (COMPLETED 🌟 GOLD STANDARD):** Year 7 *Medieval England* (`medieval_england`):
+   - **Status: 100% PERFECTED.**
+   - Upgraded to full 16-Page KS3 Publishing Engine Gold Standard: Color covers (P1 & P16) with 118mm Bayeux plate, museum provenance, and 3-pillar decoding matrix; pure `#000000` monochrome interior; ~8.0mm ruled lines; `[1.1]`–`[5.5]` paragraph badges; pure zero-knowledge connectives; 32-line British exercise notes spread (P14–15); 100% `✅ OPTIMAL` page budget audit. (Commit `d62781c2`).
+
+2. **Step 2 (NEXT IN QUEUE 🎯):** Year 8 *Crown, Church, or Parliament (1517–1689)* (`monarchy_religion_power`):
+   - **Target:** Upgrade existing 16-page workbook (`scripts/render_monarchy_religion_power_workbook.cjs`) to the latest Gold Standard:
+     - Remove interior navy `#0f284e` styling (convert to pure `#000000` monochrome).
+     - Replace Pages 14–15 retrieval test with authentic 32-line British exercise notes spread.
+     - Calibrate handwriting pitch to `~7.8mm–8.0mm` with dynamic height fill.
+     - Enlarge typography (Playfair 11.4–12pt headers, Inter 10.8–11.2pt stems).
+     - Redesign Page 1 front cover with enlarged archival plate, metadata, and 3-pillar decoding matrix.
+     - Zero-knowledge connective and sentence stem audit.
+
+3. **Step 3 (QUEUED):** Year 8 *The First British Empire (1600–1783)* (`first_british_empire`):
+   - Upgrade existing 16-page workbook (`scripts/render_first_british_empire_workbook.cjs`) to the Gold Standard (monochrome interior, `[1.1]`–`[5.5]` badges, P14–15 notes spread, ~8.0mm line pitch).
+
+4. **Step 4 (QUEUED):** Year 9 *The Great War: Western Front & Aftermath (1914–1919)* (`great_war_part2`):
+   - Upgrade existing 16-page workbook (`scripts/render_great_war_part2_twopage_workbook.cjs`) to the Gold Standard (monochrome interior, P14–15 notes spread, ~8.0mm line pitch, zero-knowledge connective audit).
+
+5. **Step 5 (QUEUED):** Year 8 *The Second British Empire & Imperialism* (`second_british_empire`):
+   - Upgrade existing 16-page workbook (`scripts/render_second_british_empire_workbook.cjs`) to the Gold Standard (monochrome interior, `[1.1]`–`[5.5]` badges, P14–15 notes spread, ~8.0mm line pitch).
+
+6. **Step 6 (QUEUED):** Year 8 *Industrialisation, Empire & Power (1750–1900)* (`industrialisation_and_empire`):
+   - Refactor 20-page double-page workbook (`scripts/render_industrialisation_twopage_workbook.cjs`) into the clean 16-page Gold Standard architecture.
+
+7. **Step 7 (QUEUED):** Year 9 Unconverted Units (`the_shoah`, `cold_war`, `post_war_britain`):
+   - Author bespoke 16-page Gold Standard workbooks from scratch using lesson prose in `data.js`.
+
+8. **Step 8 (VACATION REPRINT WINDOW):** Classroom-Frozen Units (`water_and_sanitation`, `early_modern_world`, `great_war`):
+   - Promote staged V2 double-page workbooks (staged on branch `feat/4act-v2-reprint`) during the scheduled end-of-term reprographics window.
 
 ---
 
