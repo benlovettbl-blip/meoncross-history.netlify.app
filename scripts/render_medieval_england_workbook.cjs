@@ -61,7 +61,7 @@ const enquiryConfigs = [
         step: 1,
         date: 'Jan 1066',
         questionHeading: 'Why did the death of Edward the Confessor trigger a succession crisis?',
-        bullets: ['Confessor Dies', 'No Direct Heir', 'Witan Backs Harold'],
+        bullets: ['Childless English King', 'Three Rival Claimants', 'Witan Backs Harold'],
         focusClue:
           'How did Edward’s childless death leave the English throne vulnerable to foreign invasion?',
       },
@@ -69,7 +69,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1066',
         questionHeading: 'Who were the three rival claimants contending for the English crown?',
-        bullets: ['Harold Godwinson', 'Harald Hardrada', 'William of Normandy'],
+        bullets: ['English Earl Takes Crown', 'Fierce Viking Giant', 'Duke Promised the Throne'],
         focusClue:
           'Why did Harold Godwinson, Harald Hardrada, and William of Normandy each claim legitimate right to the throne?',
       },
@@ -78,7 +78,7 @@ const enquiryConfigs = [
         date: 'Sept 1066',
         questionHeading:
           'How did the Battle of Stamford Bridge exhaust King Harold’s northern forces?',
-        bullets: ['Viking Invasion', 'Stamford Bridge', '200-Mile March South'],
+        bullets: ['300 Viking Longships', 'Fierce River Clash', 'Marching Night and Day'],
         focusClue:
           'Why did marching 200 miles to defeat the Vikings leave Harold’s army dangerously weakened for Hastings?',
       },
@@ -87,7 +87,7 @@ const enquiryConfigs = [
         date: '14 Oct 1066',
         questionHeading:
           'How did the Anglo-Saxon shield wall withstand repeated Norman charges on Senlac Hill?',
-        bullets: ['Senlac Hill Ridge', 'Impenetrable Wall', 'Housecarl Battleaxes'],
+        bullets: ['Steep Slippery Ridge', 'Locked Wooden Shields', 'Two-Handed Battleaxes'],
         focusClue:
           'Why was the Saxon shield wall atop Senlac Hill almost impossible for Norman cavalry and archers to break?',
       },
@@ -96,7 +96,7 @@ const enquiryConfigs = [
         date: 'Oct 1066',
         questionHeading:
           'How did the feigned retreat tactic break the shield wall and secure Norman victory?',
-        bullets: ['Feigned Retreat', 'Saxons Break Ranks', 'Harold Slain'],
+        bullets: ['Pretending to Run Away', 'Chasing Down the Hill', 'Arrow Strikes Harold'],
         focusClue:
           'Did Duke William plan the retreat, or did he brilliantly exploit the undisciplined Saxon pursuit?',
       },
@@ -113,7 +113,7 @@ const enquiryConfigs = [
         'Anglo-Saxon exhaustion and loss of shield-wall discipline',
       ],
       connectives:
-        'A primary cause of William’s victory was... &bull; Most decisively, the Norman tactic of the feigned retreat... &bull; Furthermore, King Harold’s Saxon army was critically weakened by... &bull; This exhaustion meant that when the shield wall broke... &bull; On balance, while Harold fought bravely, William’s victory was secured by...',
+        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
       wordBank:
         'Senlac Hill &bull; shield wall &bull; feigned retreat &bull; heavy cavalry &bull; housecarls &bull; Harold Godwinson &bull; Stamford Bridge &bull; Duke William &bull; Norman archers',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
@@ -138,7 +138,7 @@ const enquiryConfigs = [
         date: '1066–1068',
         questionHeading:
           'How did the motte-and-bailey blitz allow 10,000 Normans to dominate 2 million Saxons?',
-        bullets: ['Earthwork Mottes', 'Pre-Cut Timber', '500 Castles in 20 Yrs'],
+        bullets: ['High Earth Mounds', 'Quick Timber Walls', '500 Castles Built Fast'],
         focusClue:
           'Why were motte-and-bailey castles the ultimate instrument of rapid military psychological shock and awe?',
       },
@@ -146,7 +146,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1069–1070',
         questionHeading: 'Why did William unleash the brutal scorched-earth Harrying of the North?',
-        bullets: ['Northern Rebellion', 'Salted Fields & Crops', '100,000 Starved'],
+        bullets: ['Rebels Attack York', 'Burning Every Crop', '100,000 Starve to Death'],
         focusClue:
           'Why did Anglo-Norman chronicler Orderic Vitalis condemn William’s brutal devastation of Yorkshire?',
       },
@@ -155,7 +155,7 @@ const enquiryConfigs = [
         date: '1070–1100',
         questionHeading:
           'How did massive stone keeps like Portchester Castle project permanent imperial permanence?',
-        bullets: ['Roman Shore Fort', 'Norman Stone Keep', 'Solent Deep Water'],
+        bullets: ['Ancient Roman Walls', 'Thick Limestone Keep', 'Deep Warship Harbour'],
         focusClue:
           'Why did William build Portchester Castle’s stone keep directly inside an ancient Roman shore fort?',
       },
@@ -164,7 +164,11 @@ const enquiryConfigs = [
         date: '1085–1086',
         questionHeading:
           'Why did William commission the exhaustive Domesday Book audit at Gloucester?',
-        bullets: ['Gloucester Deep Speech', 'Every Ox & Mill', 'Feudal Tax Extraction'],
+        bullets: [
+          'Fearing Viking Invasion',
+          'Counting Every Cow and Pig',
+          'Paying Every Penny in Tax',
+        ],
         focusClue:
           'Why did Anglo-Saxons name it Domesday, believing its royal verdicts were as inescapable as the Day of Judgement?',
       },
@@ -173,7 +177,11 @@ const enquiryConfigs = [
         date: '1086',
         questionHeading:
           'What does the local Domesday hundred reveal about Anglo-Saxon land dispossession?',
-        bullets: ['Portchester & Fareham', 'Saxon Thegns Displaced', 'Norman Tenants-in-Chief'],
+        bullets: [
+          'Hundred of Fareham Survey',
+          'English Landlords Kicked Out',
+          'Barons Take the Manors',
+        ],
         focusClue:
           'How did local manorial surveys record the total replacement of English landholders by Norman barons?',
       },
@@ -224,7 +232,7 @@ const enquiryConfigs = [
         date: '1154–1162',
         questionHeading:
           'Why did Henry II appoint his worldly drinking companion Becket as Archbishop?',
-        bullets: ['King’s Chancellor', 'Lavish Courtier', 'Crown Control of Church'],
+        bullets: ['King’s Hunting Friend', 'Silk Robes and Feasting', 'Hoping for an Easy Puppet'],
         focusClue:
           'Why did Henry expect Becket to be a pliant puppet who would bring the wealthy English Church under royal control?',
       },
@@ -232,7 +240,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1162',
         questionHeading: 'How did Becket’s sudden spiritual transformation shock King Henry?',
-        bullets: ['Resigns Chancellorship', 'Hairshirt & Fasting', 'Sole Loyalty to Christ'],
+        bullets: ['Throws Off Silk Robes', 'Scratchy Goat Hairshirt', 'Loyal Only to the Pope'],
         focusClue:
           'Why did Becket instantly discard his silk robes and declare that his absolute allegiance belonged to God alone?',
       },
@@ -241,7 +249,11 @@ const enquiryConfigs = [
         date: '1164',
         questionHeading:
           'Why did the Constitutions of Clarendon and ‘criminous clerks’ provoke an open rift?',
-        bullets: ['Benefit of Clergy', 'Clarendon Decrees', 'Secular vs Canon Courts'],
+        bullets: [
+          'Priests Escaping Punishment',
+          'Reading a Latin Verse',
+          'King Demands Royal Trials',
+        ],
         focusClue:
           'Why did Henry insist that priests who committed murder must be punished by royal judges rather than church courts?',
       },
@@ -249,7 +261,7 @@ const enquiryConfigs = [
         step: 4,
         date: '29 Dec 1170',
         questionHeading: 'How did royal rage culminate in brutal murder in Canterbury Cathedral?',
-        bullets: ['‘Turbulent Priest!’', 'Four Armed Knights', 'Sword Blows at Altar'],
+        bullets: ['King Shouts in Fury', 'Four Knights Gallop Away', 'Swords Smashed at the Altar'],
         focusClue:
           'Did Henry II order Becket’s murder, or did his barons interpret a king’s reckless temper as a royal execution order?',
       },
@@ -258,7 +270,7 @@ const enquiryConfigs = [
         date: '1170–1174',
         questionHeading:
           'Why was Henry II forced to perform barefoot public penance at Canterbury?',
-        bullets: ['European Outrage', 'Becket Canonised Saint', 'Barefoot Scourging'],
+        bullets: ['Miracles at the Tomb', 'Whipping with Birch Rods', 'Church Courts Kept Intact'],
         focusClue:
           'How did Becket’s martyrdom transform him into a saint and force Henry to abandon his claims over canon law?',
       },
@@ -307,7 +319,7 @@ const enquiryConfigs = [
         date: '1199–1204',
         questionHeading:
           'Why did the loss of Normandy earn King John the mocking nickname ‘Softsword’?',
-        bullets: ['Loss of Normandy', '‘John Lackland’', 'Desperate for Revenue'],
+        bullets: ['Losing French Castles', 'Barons Laugh at Softsword', 'Desperate for Silver'],
         focusClue:
           'Why did losing ancestral duchies in France make King John obsessed with wringing money from English barons?',
       },
@@ -316,7 +328,7 @@ const enquiryConfigs = [
         date: '1205–1213',
         questionHeading:
           'How did scutage tax extortion and the papal interdict alienate the realm?',
-        bullets: ['11 Scutages in 16 Yrs', 'Papal Interdict', 'Church Bells Silenced'],
+        bullets: ['Shield Money Demands', 'Locked Church Doors', 'Dead Buried in Ditches'],
         focusClue:
           'Why did levying exorbitant shield money on barons who didn’t want to fight in France push the aristocracy to rebellion?',
       },
@@ -325,7 +337,7 @@ const enquiryConfigs = [
         date: '1214',
         questionHeading:
           'How did the catastrophic defeat at the Battle of Bouvines shatter John’s authority?',
-        bullets: ['Battle of Bouvines', '£135,000 Wasted', 'Barons Refuse Taxes'],
+        bullets: ['Huge War Chest Emptied', 'Allies Smashed in France', 'Barons Refuse More Taxes'],
         focusClue:
           'Why did the total destruction of John’s French coalition leave him bankrupt, discredited, and defenceless at home?',
       },
@@ -334,7 +346,11 @@ const enquiryConfigs = [
         date: '15 June 1215',
         questionHeading:
           'What revolutionary legal principle was enshrined in Clause 39 at Runnymede?',
-        bullets: ['Meadow of Runnymede', 'Great Charter Sealed', 'Clause 39: Lawful Trial'],
+        bullets: [
+          'Barons Draw Their Swords',
+          'No Jail Without Fair Trial',
+          'King Bound by the Law',
+        ],
         focusClue:
           'How did declaring that "no free man shall be imprisoned except by lawful judgment of peers" invent the Rule of Law?',
       },
@@ -343,7 +359,11 @@ const enquiryConfigs = [
         date: '1215–1216',
         questionHeading:
           'Why did the First Barons’ War erupt immediately after the charter was sealed?',
-        bullets: ['Pope Annuls Charter', 'Civil War & French Invade', 'John Dies at Newark'],
+        bullets: [
+          'Pope Tears Up the Treaty',
+          'French Prince Invited In',
+          'Crown Jewels Lost in the Wash',
+        ],
         focusClue:
           'Why did John instantly convince the Pope to annul Magna Carta as a shameful agreement extracted by force?',
       },
@@ -398,7 +418,11 @@ const enquiryConfigs = [
         step: 1,
         date: '1348–1349',
         questionHeading: 'How did the Black Death wipe out nearly half the population of England?',
-        bullets: ['Yersinia Pestis', 'Fleas on Black Rats', '35–50% Dead in 18 Mos'],
+        bullets: [
+          'Sailor Ship at Weymouth',
+          'Buboes Under the Arms',
+          'Nearly Half the Country Dead',
+        ],
         focusClue:
           'Why were medieval doctors completely helpless against bubonic and pneumonic plague, blaming foul mists (miasma)?',
       },
@@ -407,7 +431,11 @@ const enquiryConfigs = [
         date: '1349–1351',
         questionHeading:
           'Why did demographic collapse trigger an unprecedented economic power shift?',
-        bullets: ['Labour Shortage', 'Crops Rot in Fields', 'Peasants Demand Wages'],
+        bullets: [
+          'Empty Village Cottages',
+          'Wheat Rotting on the Ground',
+          'Workers Demanding Double Pay',
+        ],
         focusClue:
           'How did the sudden shortage of farm labourers allow serfs to demand double wages or leave their manors?',
       },
@@ -416,7 +444,11 @@ const enquiryConfigs = [
         date: '1351–1377',
         questionHeading:
           'How did the Statute of Labourers and sumptuary laws provoke bitter class resentment?',
-        bullets: ['Statute of Labourers', 'Wages Frozen to 1346', 'Branded with "F"'],
+        bullets: [
+          'Wages Frozen by Lords',
+          'Iron "F" Burned on Foreheads',
+          'Banned from Wearing Fur',
+        ],
         focusClue:
           'Why did the ruling class try to use statutory laws and dress restrictions to force peasants back into feudal submission?',
       },
@@ -425,7 +457,11 @@ const enquiryConfigs = [
         date: '1377–1381',
         questionHeading:
           'Why did the regressive Poll Taxes of 1377–1381 spark armed peasant uprising?',
-        bullets: ['Hundred Years’ War Debt', 'Three Hated Poll Taxes', 'Every Adult Pays 12d'],
+        bullets: [
+          'French War Debt Bill',
+          'Twelve Pence from Every Head',
+          'Tax Collector Chased with Pitchforks',
+        ],
         focusClue:
           'Why did making a starving farm labourer pay the exact same tax as an earl spark furious tax resistance in Essex and Kent?',
       },
@@ -434,7 +470,11 @@ const enquiryConfigs = [
         date: 'June 1381',
         questionHeading:
           'How did the showdown at Smithfield shatter the myth of unquestioned feudal authority?',
-        bullets: ['Wat Tyler & John Ball', 'March on London', 'Richard II Promises'],
+        bullets: [
+          'Peasants Swarm the Capital',
+          'Tyler Stabbed at the Peace Talks',
+          'Boy King Promises Freedom',
+        ],
         focusClue:
           'How did preacher John Ball’s sermon—"When Adam delved and Eve span, who was then the gentleman?"—undermine feudal hierarchy?',
       },
@@ -465,7 +505,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'To some extent I agree that the Black Death of 1348 was the main cause of the breakdown of the feudal system in medieval England because... &bull; On the other hand, it can also be argued that feudalism collapsed because of... &bull; Furthermore, long-term social changes such as... &bull; In conclusion, the most significant factor in the breakdown of the feudal system was... because...',
+        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
       wordBank:
         'Black Death (1348) &bull; Yersinia pestis &bull; labour shortage &bull; Statute of Labourers (1351) &bull; sumptuary laws &bull; Poll Tax &bull; Wat Tyler &bull; John Ball &bull; serfdom / villeinage',
       timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
@@ -1908,6 +1948,13 @@ async function main() {
   const html = compileMedievalWorkbook();
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`[OK] HTML written to: ${outHtmlPath}`);
+
+  // Mirror to units directory
+  const altUnitsDir = path.join(ROOT_DIR, 'units', 'medieval_england');
+  if (fs.existsSync(altUnitsDir)) {
+    fs.writeFileSync(path.join(altUnitsDir, 'pupil_workbook.html'), html, 'utf8');
+    console.log(`[OK] HTML mirrored to: ${path.join(altUnitsDir, 'pupil_workbook.html')}`);
+  }
 
   // Compile PDFs via Puppeteer
   const pdfDir = path.join(ROOT_DIR, 'public', 'pdfs');
