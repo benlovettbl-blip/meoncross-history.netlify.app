@@ -10215,8 +10215,8 @@ export const unitData = {
     {
       id: 'lesson_11',
       key_individual: {
-        anchor_act: 6,
-        anchor_title: 'The Historic Election of Menachem Begin & Likud Victory (May 1977)',
+        anchor_act: 2,
+        anchor_title: 'Act 2: The Historic Election of Menachem Begin & Likud Victory (May 1977)',
         anchor_rationale:
           'Anchored adjacent to the historic May 1977 Likud election victory ending 29 years of Labour hegemony and setting the stage for Camp David.',
         name: 'Menachem Begin',
@@ -10783,165 +10783,216 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          text: '**The Geopolitical Shock of 1973 & The OPEC Oil Embargo:** The **1973 Yom Kippur War** caused an unprecedented global economic crisis. Angered by emergency US military airlifts to Israel, Arab **OPEC** members enacted the "oil weapon," imposing an embargo on the US and the Netherlands while cutting production. Consequently, crude oil prices quadrupled from $3 to $12 a barrel, triggering Western fuel shortages and soaring inflation. For Washington, resolving the Arab-Israeli conflict became an urgent economic and strategic imperative.',
-          level_4:
-            'The Yom Kippur War of October 1973 was a military conflict that triggered a global economic and geopolitical revolution. As oil prices rose, production costs increased, making goods more expensive; consequently, consumers bought fewer items, leading to factory bankruptcies and mass layoffs.',
-          image: '/units/cme_new/assets/anwar_sadat.jpg',
-          caption: 'President Anwar Sadat of Egypt addressing the Israeli Knesset in Jerusalem.',
-        },
-        {
-          text: '**The Strategic & Psychological Impact of the 1973 Shock:** <img src="/units/cme_new/assets/cognitive_impact.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="cognitive_impact">',
-          level_4:
-            '<img src="/units/cme_new/assets/cognitive_impact.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="cognitive_impact">',
-        },
-        {
-          text: '**Henry Kissinger’s "Shuttle Diplomacy" (1974–1975):** To prevent superpower confrontation and secure peace, US Secretary of State **Henry Kissinger** launched **"shuttle diplomacy"**. Flying repeatedly between Cairo, Damascus, and Tel Aviv, Kissinger acted as a neutral intermediary between hostile leaders who refused direct meetings. Rather than pursuing an impossible comprehensive treaty, Kissinger pioneered **"step-by-step diplomacy,"** negotiating phased military disengagements to defuse frontline tensions.',
-          level_4:
-            'For the superpowers, the crisis changed the calculation of Middle Eastern diplomacy. Kissinger pioneered a form of negotiation known as "shuttle diplomacy," flying back and forth between Cairo, Damascus, and Tel Aviv for two months to relay messages, draft proposals, and bridge the deep psychological divide between the hostile states.',
-        },
-        {
-          text: '**Henry Kissinger’s "Shuttle Diplomacy" Architecture:** <img src="/units/cme_new/assets/shuttle_diplomacy.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="shuttle_diplomacy">',
-          level_4:
-            '<img src="/units/cme_new/assets/shuttle_diplomacy.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="shuttle_diplomacy">',
-        },
-        {
-          text: "**The Disengagement Accords & The Suez Reopened (1974–1975):** Kissinger's diplomacy secured vital interim agreements:\n<ul>\n  <li><strong>Sinai I (January 1974):</strong> Israeli forces pulled back 20 miles east of the Suez Canal, allowing Egypt to control both banks separated by a UN buffer zone.</li>\n  <li><strong>Syrian Disengagement (May 1974):</strong> Established a ceasefire line on the Golan Heights under UN supervision.</li>\n  <li><strong>Sinai II (September 1975):</strong> Israel withdrew further into Sinai, returning the strategic passes and oil fields in exchange for US electronic monitoring and financial aid.</li>\n</ul>\nConsequently, the **Suez Canal reopened** on **5 June 1975** after an eight-year closure, providing a vital economic lifeline for Egypt.",
-          level_4:
-            'Kissinger’s efforts produced three highly important interim agreements. On 5 June 1975—exactly eight years to the day after its closure—President Anwar Sadat officially reopened the Suez Canal to international trade, providing a major boost to the Egyptian economy.',
+          title:
+            "Act 1: Context & Catalyst — The 1973 Oil Shock & Kissinger's Shuttle Diplomacy (1973–1975)",
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> The **1973 Yom Kippur War** caused an unprecedented global economic crisis. Angered by emergency US military airlifts to Israel, Arab **OPEC** members enacted the "oil weapon," cutting oil production and imposing a total embargo on the United States and the Netherlands. Consequently, crude oil prices quadrupled from $3 to $12 a barrel, triggering fuel shortages, soaring inflation, and severe "stagflation" across Western economies. For Washington, resolving the Arab-Israeli conflict shifted from a distant regional issue into an urgent strategic and economic imperative.',
+            '<span class="para-ref">[1.2]</span> To defuse frontline flashpoints and prevent a superpower confrontation, US Secretary of State **Henry Kissinger** launched **"shuttle diplomacy"**. Flying tirelessly between Cairo, Damascus, and Jerusalem to relay messages between hostile leaders who refused direct talks, Kissinger pioneered **"step-by-step diplomacy."** Rather than seeking an impossible comprehensive peace, he brokered phased military disengagements: **Sinai I** (January 1974), the **Golan Disengagement** (May 1974), and **Sinai II** (September 1975). These pacts returned strategic passes and oil fields to Egypt, allowing the **Suez Canal to officially reopen on 5 June 1975** after an eight-year closure and providing a vital economic lifeline.',
+          ],
           tasks: [
             {
-              type: 'written',
-              text: "How did Henry Kissinger's 'shuttle diplomacy' and the Sinai Disengagement Agreements (1974–75) lay the foundation for peace between Egypt and Israel? (P5)",
-              starter: "Kissinger's shuttle diplomacy laid the groundwork for peace by...",
-              model:
-                "Rather than attempting a comprehensive peace conference, Kissinger pursued 'step-by-step' diplomacy, flying tirelessly between Cairo, Jerusalem, and Damascus. His Sinai I and Sinai II agreements secured Israeli withdrawal from the Suez Canal and the Abu Rudeis oil fields, established UN buffer zones, and extracted a pledge from Egypt to resolve future disputes peacefully without resorting to force.",
+              id: 'task_11_1',
+              title: 'Task 1: Word Scalpel & Strategic Mediation',
+              instructions:
+                "Using paragraphs [1.1] and [1.2], explain what 'shuttle diplomacy' was and why Henry Kissinger pursued a 'step-by-step' approach rather than attempting a single comprehensive peace treaty.",
+              scaffolding: {
+                sentence_starter:
+                  "Henry Kissinger's 'shuttle diplomacy' was a mediation technique characterized by...",
+                connectives: [
+                  'Rather than attempting an immediate comprehensive treaty, Kissinger recognized that...',
+                  'Consequently, step-by-step agreements such as Sinai I and Sinai II helped build trust by...',
+                ],
+              },
               model_answer:
-                "Rather than attempting a comprehensive peace conference, Kissinger pursued 'step-by-step' diplomacy, flying tirelessly between Cairo, Jerusalem, and Damascus. His Sinai I and Sinai II agreements secured Israeli withdrawal from the Suez Canal and the Abu Rudeis oil fields, established UN buffer zones, and extracted a pledge from Egypt to resolve future disputes peacefully without resorting to force.",
+                "Henry Kissinger's 'shuttle diplomacy' was a mediation technique where the US Secretary of State flew repeatedly back and forth between Cairo, Damascus, and Jerusalem, acting as a direct intermediary between hostile leaders who refused to meet face-to-face. Kissinger recognized that decades of deep psychological distrust made an immediate, comprehensive peace treaty impossible. Consequently, he pursued 'step-by-step diplomacy', focusing on practical military disengagements. By brokering phased Israeli pullbacks in Sinai and the Golan Heights, establishing UN buffer zones, and enabling the reopening of the Suez Canal in 1975, Kissinger defused active battlefield flashpoints and built the essential baseline confidence required for future negotiations.",
+              question:
+                "Using paragraphs [1.1] and [1.2], explain what 'shuttle diplomacy' was and why Henry Kissinger pursued a 'step-by-step' approach rather than attempting a single comprehensive peace treaty.",
+              text: "Using paragraphs [1.1] and [1.2], explain what 'shuttle diplomacy' was and why Henry Kissinger pursued a 'step-by-step' approach rather than attempting a single comprehensive peace treaty.",
+              model:
+                "Henry Kissinger's 'shuttle diplomacy' was a mediation technique where the US Secretary of State flew repeatedly back and forth between Cairo, Damascus, and Jerusalem, acting as a direct intermediary between hostile leaders who refused to meet face-to-face. Kissinger recognized that decades of deep psychological distrust made an immediate, comprehensive peace treaty impossible. Consequently, he pursued 'step-by-step diplomacy', focusing on practical military disengagements. By brokering phased Israeli pullbacks in Sinai and the Golan Heights, establishing UN buffer zones, and enabling the reopening of the Suez Canal in 1975, Kissinger defused active battlefield flashpoints and built the essential baseline confidence required for future negotiations.",
             },
           ],
+          act: 1,
+          act_title:
+            "Context & Catalyst — The 1973 Oil Shock & Kissinger's Shuttle Diplomacy (1973–1975)",
+          text: '<span class="para-ref">[1.1]</span> The **1973 Yom Kippur War** caused an unprecedented global economic crisis. Angered by emergency US military airlifts to Israel, Arab **OPEC** members enacted the "oil weapon," cutting oil production and imposing a total embargo on the United States and the Netherlands. Consequently, crude oil prices quadrupled from $3 to $12 a barrel, triggering fuel shortages, soaring inflation, and severe "stagflation" across Western economies. For Washington, resolving the Arab-Israeli conflict shifted from a distant regional issue into an urgent strategic and economic imperative.\n\n<span class="para-ref">[1.2]</span> To defuse frontline flashpoints and prevent a superpower confrontation, US Secretary of State **Henry Kissinger** launched **"shuttle diplomacy"**. Flying tirelessly between Cairo, Damascus, and Jerusalem to relay messages between hostile leaders who refused direct talks, Kissinger pioneered **"step-by-step diplomacy."** Rather than seeking an impossible comprehensive peace, he brokered phased military disengagements: **Sinai I** (January 1974), the **Golan Disengagement** (May 1974), and **Sinai II** (September 1975). These pacts returned strategic passes and oil fields to Egypt, allowing the **Suez Canal to officially reopen on 5 June 1975** after an eight-year closure and providing a vital economic lifeline.',
         },
         {
-          text: '**The Election of Menachem Begin & The Likud Government (May 1977):** In May 1977, Israel experienced a political turning point when the right-wing Likud coalition, led by former Irgun commander **Menachem Begin**, was elected to power. Begin held deep ideological beliefs in the biblical "Greater Land of Israel," viewing the West Bank (Judea and Samaria) as non-negotiable Jewish territory. Observers feared his election had permanently halted peace prospects.',
-          level_4:
-            "By 1977, the momentum of Kissinger’s shuttle diplomacy had stalled. Most observers assumed Begin's election would end all hopes of peace.",
-          source: {
-            title: 'Source B: Begin, Carter, and Sadat at the Camp David Summit (September 1978)',
-            src: '/units/cme_new/assets/camp_david_accords.png',
-            caption:
-              'US President Jimmy Carter joins hands with Israeli Prime Minister Menachem Begin and Egyptian President Anwar Sadat following 13 days of secluded negotiations at Camp David.',
-            teacher_notes: {
-              primer: "Highlight Jimmy Carter's relentless mediation over 13 days in isolation.",
-              objectives: [
-                {
-                  objective: 'Analyze the Camp David framework',
-                  primer:
-                    'Discuss the two frameworks: peace with Egypt and the vague framework for Palestinian autonomy.',
-                  question:
-                    'What does this source reveal about the role of the USA in brokering Middle East peace?',
-                },
-              ],
-            },
-            question:
-              "Study Source B. Why was US President Jimmy Carter's personal mediation at Camp David indispensable in brokering a compromise between Menachem Begin and Anwar Sadat?",
-            model_answer:
-              'Source B illustrates the crucial role of third-party US mediation. Begin and Sadat harboured deep personal distrust and refused to speak to each other directly for several days during the 13-day summit. Carter conducted exhausting "shuttle diplomacy" between their private cabins, drafting over 20 peace proposals himself. Carter persuaded Begin to dismantle all Israeli settlements in the Sinai in exchange for Egyptian demilitarization and recognition, while promising billions of dollars in annual US economic and military aid to both nations to seal the agreement.',
-          },
-        },
-        {
-          text: '<img src="/units/cme_new/assets/sadat_faces.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sadat_faces">',
-          level_4:
-            '<img src="/units/cme_new/assets/sadat_faces.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sadat_faces">',
-        },
-        {
-          text: '**Sadat’s Dramatic Gamble: The Historic Knesset Speech (November 1977):** Facing domestic economic riots, **Anwar Sadat** made a dramatic diplomatic breakthrough. On 19 November 1977, Sadat landed in Tel Aviv—becoming the first Arab leader to visit Israel. Addressing the Israeli parliament in his historic **Knesset speech**, Sadat declared: *"We accept to live with you in permanent peace based on justice... No more war, no more bloodshed!"* This bold gesture shattered 30 years of psychological hostility.',
-          level_4:
-            "However, Anwar Sadat was facing severe internal pressures, a failing economy, and food riots in Cairo. Following Sadat's trip to Israel and Begin's reciprocal visit to Egypt in 1977, direct talks stalled. To rescue the process, US President Jimmy Carter took a massive political risk, inviting both Sadat and Begin to the presidential retreat at Camp David, Maryland, for face-to-face negotiations.",
-          tasks: [
-            {
-              type: 'written',
-              text: 'What historic gamble did Anwar Sadat take on 19 November 1977, and why did it break the diplomatic deadlock? (P8)',
-              starter: 'Sadat took an extraordinary gamble by...',
-              model:
-                "Frustrated by stalled multilateral talks, Sadat bypassed all diplomatic protocols and flew directly to Jerusalem to address the Israeli Knesset. By publicly recognizing Israel's right to exist in peace and security, Sadat shattered 30 years of psychological barrier and hostility in a single day, convincing the Israeli public and hawkish Prime Minister Menachem Begin that Egypt was genuinely committed to peace.",
-              model_answer:
-                "Frustrated by stalled multilateral talks, Sadat bypassed all diplomatic protocols and flew directly to Jerusalem to address the Israeli Knesset. By publicly recognizing Israel's right to exist in peace and security, Sadat shattered 30 years of psychological barrier and hostility in a single day, convincing the Israeli public and hawkish Prime Minister Menachem Begin that Egypt was genuinely committed to peace.",
-            },
+          title:
+            "Act 2: Escalation & Breakthrough — The Likud Election & Sadat's Historic Knesset Speech (1977)",
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> In **May 1977**, Israeli politics underwent a seismic shock when the right-wing Likud coalition, led by former Irgun commander **Menachem Begin**, won the national election, ending 29 unbroken years of Labour Party dominance. Begin held fierce ideological convictions regarding the biblical "Greater Land of Israel" (*Eretz Yisrael*), viewing the West Bank (Judea and Samaria) as non-negotiable Jewish land. International observers feared that Begin’s hawkish ideology had permanently halted any hope of regional peacemaking.',
+            '<span class="para-ref">[2.2]</span> However, Egyptian President **Anwar Sadat** faced desperate internal pressures: a bankrupt national economy, crippling foreign debt, and violent food riots in Cairo. Concluding that Egypt could never develop economically while locked in perpetual mobilization, Sadat made an astonishing gamble. On **19 November 1977**, Sadat flew directly to Tel Aviv—becoming the first Arab head of state to visit Israel. Addressing the Israeli parliament in his historic **Knesset speech** (<span class="archival-meta-tag">Source A</span>), Sadat announced: *"We accept to live with you in permanent peace based on justice... No more war, no more bloodshed!"* This bold act shattered thirty years of psychological taboo in a single afternoon.',
           ],
-        },
-        {
-          text: '<img src="/units/cme_new/assets/camp_david.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="camp_david">',
-          level_4:
-            '<img src="/units/cme_new/assets/camp_david.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="camp_david">',
-        },
-        {
-          text: '**The Camp David Summit & The Two Frameworks (September 1978):** When direct talks stalled, US President **Jimmy Carter** hosted Sadat and Begin at **Camp David** in September 1978 for 13 days of intensive negotiations. On 17 September 1978, they signed the historic **Camp David Accords**, structured into **Two Distinct Frameworks**:\n<ol>\n  <li><strong>Framework for Peace in the Middle East:</strong> Proposed a five-year transitional period of self-government for Palestinians in the West Bank and Gaza Strip. However, it lacked precise timetables, and Begin continued expanding Israeli settlements.</li>\n  <li><strong>Framework for an Egyptian-Israeli Peace Treaty:</strong> Israel agreed to completely withdraw from the **Sinai Peninsula**, dismantling settlements and returning oil fields, in exchange for Egypt granting full diplomatic recognition, free transit through the Suez Canal, and demilitarisation.</li>\n</ol>',
-          level_4:
-            'For 13 days, Carter acted as a tireless mediator. The Suez Canal and the Straits of Tiran were permanently open to Israeli maritime shipping.',
           source: {
-            title: 'Source C: Map of the Sinai Peninsula: Camp David Settlement (1979)',
-            src: '/images/cme_sinai_peninsula_map.jpg',
+            letter: 'A',
+            title:
+              'Source A: Archival Photograph: President Anwar Sadat Addressing the Israeli Knesset in Jerusalem (20 November 1977)',
             caption:
-              'Official cartographic map showing the 60,000 square kilometre Sinai Peninsula returned in phases by Israel to Egypt between 1979 and 1982 in exchange for diplomatic recognition and free passage through the Straits of Tiran.',
+              'Egyptian President Anwar Sadat addressing members of the Israeli Knesset in Jerusalem, with Prime Minister Menachem Begin seated behind him.',
+            provenance:
+              'Israel Government Press Office (GPO) Photographic Archive (Accession Ref: GPO-1977-1120).',
+            source_context:
+              'This primary photograph captures Egyptian President Anwar Sadat delivering his historic address to the Israeli Knesset in Jerusalem on 20 November 1977. By travelling to the heart of the Jewish state and speaking directly to Israeli lawmakers, Sadat bypassed decades of diplomatic deadlock and proved to a skeptical Israeli public that Egypt was genuinely willing to pursue peace.',
+            hinge_question:
+              'How does Source A help explain why Anwar Sadat’s visit to Jerusalem was viewed across the world as a dramatic psychological turning point in the Arab-Israeli conflict?',
             question:
-              'Study Source C. Using the map, explain why Israeli withdrawal from the Sinai Peninsula and guaranteed free passage through the Strait of Tiran were the twin territorial cornerstones of the Egypt-Israel Peace Treaty.',
-            model_answer:
-              'Source C illustrates the strict geopolitical bargain of "land for peace." Israel returned the entire 60,000 sq km Sinai desert (including the Alma oil fields and airbases), securing Egypt\'s withdrawal from the anti-Israel coalition. In exchange, Egypt demilitarized the peninsula into strict monitoring zones, permitted a UN observer force (MFO), and legally guaranteed unimpeded Israeli passage through the Suez Canal and Straits of Tiran, permanently removing the primary flashpoint that had triggered wars in 1956 and 1967.',
+              'Study Source A. How does Source A help explain why Anwar Sadat’s visit to Jerusalem was viewed across the world as a dramatic psychological turning point in the Arab-Israeli conflict?',
+            type: 'visual',
+            src: '/units/cme_new/assets/anwar_sadat.jpg',
+            image: '/units/cme_new/assets/anwar_sadat.jpg',
           },
           tasks: [
             {
-              type: 'written',
-              text: 'Outline the key compromises made by Menachem Begin and Anwar Sadat during the 13 days of secret negotiations at Camp David (1978). (P10)',
-              starter: 'At Camp David, the key compromises agreed were...',
-              model:
-                'Under intense mediation by US President Jimmy Carter, Israel agreed to completely evacuate the Sinai Peninsula, dismantle all 18 Jewish settlements, and return the territory to Egypt. In return, Egypt became the first Arab nation to formally recognize Israel, sign a peace treaty, open diplomatic embassies, and guarantee Israeli shipping through the Straits of Tiran and Suez Canal.',
+              id: 'task_11_2',
+              title: "Task 2: Turning Point Analysis — Sadat's Historic Gamble",
+              instructions:
+                'Using Source A and paragraphs [2.1]–[2.2], explain why Anwar Sadat decided to visit Jerusalem in November 1977 and how his Knesset speech broke the diplomatic deadlock.',
+              scaffolding: {
+                sentence_starter:
+                  'Anwar Sadat took the extraordinary gamble of flying to Jerusalem in November 1977 because...',
+                connectives: [
+                  'Even though the election of Menachem Begin seemed to block peace, Sadat recognized that...',
+                  'Consequently, by addressing the Knesset directly as shown in Source A, he shattered...',
+                ],
+              },
               model_answer:
-                'Under intense mediation by US President Jimmy Carter, Israel agreed to completely evacuate the Sinai Peninsula, dismantle all 18 Jewish settlements, and return the territory to Egypt. In return, Egypt became the first Arab nation to formally recognize Israel, sign a peace treaty, open diplomatic embassies, and guarantee Israeli shipping through the Straits of Tiran and Suez Canal.',
+                'Anwar Sadat took the extraordinary gamble of flying to Jerusalem in November 1977 because Egypt was economically exhausted, burdened by huge military spending, and shaken by widespread food riots in Cairo. Sadat understood that conventional multilateral negotiations were stalled and that Israel would not yield territory without absolute security guarantees. Even though the election of hardline Likud leader Menachem Begin appeared to doom diplomacy, Sadat decided to bypass conventional channels. As shown in Source A, by travelling to Jerusalem and addressing the Knesset directly with the declaration "no more war, no more bloodshed", Sadat broke 30 years of psychological barrier, proving to both the Israeli public and Prime Minister Begin that Egypt was genuinely committed to a peaceful settlement.',
+              question:
+                'Using Source A and paragraphs [2.1]–[2.2], explain why Anwar Sadat decided to visit Jerusalem in November 1977 and how his Knesset speech broke the diplomatic deadlock.',
+              text: 'Using Source A and paragraphs [2.1]–[2.2], explain why Anwar Sadat decided to visit Jerusalem in November 1977 and how his Knesset speech broke the diplomatic deadlock.',
+              model:
+                'Anwar Sadat took the extraordinary gamble of flying to Jerusalem in November 1977 because Egypt was economically exhausted, burdened by huge military spending, and shaken by widespread food riots in Cairo. Sadat understood that conventional multilateral negotiations were stalled and that Israel would not yield territory without absolute security guarantees. Even though the election of hardline Likud leader Menachem Begin appeared to doom diplomacy, Sadat decided to bypass conventional channels. As shown in Source A, by travelling to Jerusalem and addressing the Knesset directly with the declaration "no more war, no more bloodshed", Sadat broke 30 years of psychological barrier, proving to both the Israeli public and Prime Minister Begin that Egypt was genuinely committed to a peaceful settlement.',
             },
           ],
+          act: 2,
+          act_title:
+            "Escalation & Breakthrough — The Likud Election & Sadat's Historic Knesset Speech (1977)",
+          text: '<span class="para-ref">[2.1]</span> In **May 1977**, Israeli politics underwent a seismic shock when the right-wing Likud coalition, led by former Irgun commander **Menachem Begin**, won the national election, ending 29 unbroken years of Labour Party dominance. Begin held fierce ideological convictions regarding the biblical "Greater Land of Israel" (*Eretz Yisrael*), viewing the West Bank (Judea and Samaria) as non-negotiable Jewish land. International observers feared that Begin’s hawkish ideology had permanently halted any hope of regional peacemaking.\n\n<span class="para-ref">[2.2]</span> However, Egyptian President **Anwar Sadat** faced desperate internal pressures: a bankrupt national economy, crippling foreign debt, and violent food riots in Cairo. Concluding that Egypt could never develop economically while locked in perpetual mobilization, Sadat made an astonishing gamble. On **19 November 1977**, Sadat flew directly to Tel Aviv—becoming the first Arab head of state to visit Israel. Addressing the Israeli parliament in his historic **Knesset speech** (<span class="archival-meta-tag">Source A</span>), Sadat announced: *"We accept to live with you in permanent peace based on justice... No more war, no more bloodshed!"* This bold act shattered thirty years of psychological taboo in a single afternoon.',
         },
         {
-          text: '<img src="/units/cme_new/assets/sinai_returned.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sinai_returned">',
-          level_4:
-            '<img src="/units/cme_new/assets/sinai_returned.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sinai_returned">',
+          title:
+            'Act 3: Forensic Evidence & Negotiation — The Camp David Summit & The Two Frameworks (September 1978)',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> Following Sadat’s visit, direct bilateral negotiations quickly deadlocked over Israeli settlements in Sinai and Palestinian self-rule. To rescue the peace initiative, US President **Jimmy Carter** invited Begin and Sadat to the secluded presidential retreat at **Camp David**, Maryland, in September 1978. For thirteen grueling days, Carter mediated between the two leaders, who grew so personally antagonistic that they refused to meet face-to-face for days. Carter conducted relentless single-text diplomacy, personally drafting and revising over twenty proposals between their private cabins (<span class="archival-meta-tag">Source B</span>).',
+            '<span class="para-ref">[3.2]</span> On **17 September 1978**, the summit concluded with the historic **Camp David Accords**, structured into **Two Distinct Frameworks**. The first, a vague "Framework for Peace in the Middle East," proposed a five-year transitional self-governing authority for Palestinians in the West Bank and Gaza, but lacked precise timetables and was largely disregarded by Begin. The second, a concrete "Framework for an Egyptian-Israeli Peace Treaty," established a historic trade-off of "land for peace": Israel agreed to completely evacuate the **Sinai Peninsula**, dismantle all 18 Jewish settlements, and return oil fields to Egypt (as mapped in the Sinai Peninsula territory agreement), in exchange for full diplomatic recognition, demilitarised buffer zones, and guaranteed Israeli passage through the Suez Canal and Straits of Tiran.',
+          ],
           source: {
-            title: 'Source D: The Egypt-Israel Peace Treaty Signing in Washington (26 March 1979)',
-            src: '/images/cme_treaty_triple_handshake_1979.jpg',
+            letter: 'B',
+            title:
+              'Source B: Archival Photograph: Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David (September 1978)',
             caption:
-              'Anwar Sadat, Jimmy Carter, and Menachem Begin sign the Egypt-Israel Peace Treaty on the North Lawn of the White House on 26 March 1979.',
-            teacher_notes: {
-              primer:
-                'Discuss the consequences: Israel gives up the Sinai, Egypt is expelled from the Arab League.',
-              objectives: [
-                {
-                  objective: 'Assess the impact of the peace treaty',
-                  primer:
-                    'Explain the long-term strategic benefits and the eventual assassination of Sadat.',
-                  question:
-                    'What does this source reveal about the culmination of the Camp David negotiations?',
-                },
-              ],
-            },
+              'US President Jimmy Carter confers with Israeli Prime Minister Menachem Begin and Egyptian President Anwar Sadat on the porch at Aspen Lodge during the Camp David summit.',
+            provenance:
+              'White House Photographic Office / Jimmy Carter Presidential Library (Accession Ref: WHPO-1978-0912).',
+            source_context:
+              'This primary photograph records the intense, isolated trilateral diplomacy conducted at the Camp David presidential retreat in Maryland in September 1978. When personal tensions between Begin and Sadat brought talks to the verge of total collapse, Carter’s personal intervention and continuous mediation kept both leaders at the table.',
+            hinge_question:
+              'Why was the personal intervention of US President Jimmy Carter shown in Source B indispensable to achieving a negotiated compromise between Begin and Sadat?',
             question:
-              "Study Source D. How did the signing of the peace treaty transform regional alliances, and why did it lead directly to Egypt's suspension from the Arab League and the assassination of Sadat?",
-            model_answer:
-              'The formal peace treaty in Source D fundamentally transformed Middle Eastern geopolitics. By signing a separate peace that took Egypt (the largest and most powerful Arab military power) out of the conflict, Sadat ensured that a unified Arab war against Israel was no longer militarily viable. However, other Arab nations viewed this as a traitorous betrayal of the Palestinian cause. The Arab League expelled Egypt, moved its headquarters from Cairo to Tunis, and suspended diplomatic ties. Domestically, radical Islamist groups condemned Sadat as an apostate, leading directly to his assassination during a military parade in Cairo on 6 October 1981.',
+              'Study Source B. Why was the personal intervention of US President Jimmy Carter shown in Source B indispensable to achieving a negotiated compromise between Begin and Sadat?',
+            type: 'visual',
+            src: '/images/cme_camp_david_1978.jpg',
+            image: '/images/cme_camp_david_1978.jpg',
           },
-        },
-        {
-          text: "**The Treaty of Washington (1979), Arab Backlash & Sadat Assassinated (1981):** On **26 March 1979**, Begin and Sadat signed the formal **Treaty of Washington** (Egyptian-Israeli Peace Treaty), backed by billions in annual **US financial aid**. However, Arab nations condemned Sadat as a traitor to the Palestinian cause, suspending Egypt from the Arab League and cutting ties. On **6 October 1981**, radical Islamist soldiers assassinated Sadat during a military parade. Despite his murder, Egypt\'s new leadership honoured the treaty, cementing peace with Israel.",
-          level_4:
-            'While celebrated in the West, the peace treaty triggered a massive geopolitical backlash in the Middle East. Begin also faced furious opposition from hardline settlers, but the Knesset approved the treaty with a massive majority of 84 votes to 19.',
           tasks: [
             {
-              type: 'written',
-              text: "Why did the 1979 Washington Peace Treaty lead to Egypt's expulsion from the Arab League and the assassination of Anwar Sadat in 1981? (P12)",
-              starter: 'The peace treaty provoked outrage across the Arab world because...',
-              model:
-                "Arab nations and the PLO viewed Sadat's separate peace as a treacherous betrayal that abandoned the Palestinian cause in exchange for bilateral territorial return. The Arab League expelled Egypt and moved its headquarters from Cairo to Tunis. Domestically, radical Islamist groups inside Egypt condemned Sadat's secular compromise with Israel, culminating in his assassination by army officers during a military parade on 6 October 1981.",
+              id: 'task_11_3',
+              title: 'Task 3: Forensic Source Analysis — The Camp David Compromises',
+              instructions:
+                'Using Source B and paragraphs [3.1]–[3.2], outline the key compromises made by Menachem Begin and Anwar Sadat during the 13 days of secret negotiations at Camp David.',
+              scaffolding: {
+                sentence_starter:
+                  'At the Camp David summit in September 1978, the core compromise achieved between Begin and Sadat was...',
+                connectives: [
+                  'To secure peace, Menachem Begin agreed to make significant territorial concessions by...',
+                  'In return, Anwar Sadat agreed to grant Israel crucial strategic and diplomatic guarantees by...',
+                  'However, the agreement regarding the Palestinians remained controversial because...',
+                ],
+              },
               model_answer:
-                "Arab nations and the PLO viewed Sadat's separate peace as a treacherous betrayal that abandoned the Palestinian cause in exchange for bilateral territorial return. The Arab League expelled Egypt and moved its headquarters from Cairo to Tunis. Domestically, radical Islamist groups inside Egypt condemned Sadat's secular compromise with Israel, culminating in his assassination by army officers during a military parade on 6 October 1981.",
+                'At the Camp David summit in September 1978, the core compromise achieved between Begin and Sadat was founded on the principle of "land for peace". Under intense mediation from President Carter (shown in Source B), Menachem Begin agreed to completely evacuate the entire 60,000 square kilometre Sinai Peninsula, return the productive Abu Rudeis oil fields, and dismantle all 18 Israeli settlements and military airbases. In return, Anwar Sadat became the first Arab leader to grant Israel full diplomatic recognition, establish normal bilateral relations, demilitarize the Sinai with international peacekeepers, and guarantee unimpeded Israeli passage through the Suez Canal and Straits of Tiran. However, the first framework regarding Palestinian autonomy remained deeply flawed, containing vague promises of a five-year transitional self-government without any binding timetable or halt to West Bank settlements.',
+              question:
+                'Using Source B and paragraphs [3.1]–[3.2], outline the key compromises made by Menachem Begin and Anwar Sadat during the 13 days of secret negotiations at Camp David.',
+              text: 'Using Source B and paragraphs [3.1]–[3.2], outline the key compromises made by Menachem Begin and Anwar Sadat during the 13 days of secret negotiations at Camp David.',
+              model:
+                'At the Camp David summit in September 1978, the core compromise achieved between Begin and Sadat was founded on the principle of "land for peace". Under intense mediation from President Carter (shown in Source B), Menachem Begin agreed to completely evacuate the entire 60,000 square kilometre Sinai Peninsula, return the productive Abu Rudeis oil fields, and dismantle all 18 Israeli settlements and military airbases. In return, Anwar Sadat became the first Arab leader to grant Israel full diplomatic recognition, establish normal bilateral relations, demilitarize the Sinai with international peacekeepers, and guarantee unimpeded Israeli passage through the Suez Canal and Straits of Tiran. However, the first framework regarding Palestinian autonomy remained deeply flawed, containing vague promises of a five-year transitional self-government without any binding timetable or halt to West Bank settlements.',
             },
           ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Negotiation — The Camp David Summit & The Two Frameworks (September 1978)',
+          text: '<span class="para-ref">[3.1]</span> Following Sadat’s visit, direct bilateral negotiations quickly deadlocked over Israeli settlements in Sinai and Palestinian self-rule. To rescue the peace initiative, US President **Jimmy Carter** invited Begin and Sadat to the secluded presidential retreat at **Camp David**, Maryland, in September 1978. For thirteen grueling days, Carter mediated between the two leaders, who grew so personally antagonistic that they refused to meet face-to-face for days. Carter conducted relentless single-text diplomacy, personally drafting and revising over twenty proposals between their private cabins (<span class="archival-meta-tag">Source B</span>).\n\n<span class="para-ref">[3.2]</span> On **17 September 1978**, the summit concluded with the historic **Camp David Accords**, structured into **Two Distinct Frameworks**. The first, a vague "Framework for Peace in the Middle East," proposed a five-year transitional self-governing authority for Palestinians in the West Bank and Gaza, but lacked precise timetables and was largely disregarded by Begin. The second, a concrete "Framework for an Egyptian-Israeli Peace Treaty," established a historic trade-off of "land for peace": Israel agreed to completely evacuate the **Sinai Peninsula**, dismantle all 18 Jewish settlements, and return oil fields to Egypt (as mapped in the Sinai Peninsula territory agreement), in exchange for full diplomatic recognition, demilitarised buffer zones, and guaranteed Israeli passage through the Suez Canal and Straits of Tiran.',
+        },
+        {
+          title:
+            'Act 4: The Historical Verdict & Extended Writing — The 1979 Peace Treaty & The Deadly Backlash',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> On **26 March 1979**, Begin, Sadat, and Carter signed the formal **Egypt-Israel Peace Treaty** (Treaty of Washington) on the White House lawn. Backed by billions of dollars in annual US economic and military subsidies to both nations, the treaty saw Israel complete its phased withdrawal from Sinai by **April 1982**. Crucially, the pact achieved a massive strategic transformation: it detached the Arab world’s largest and most formidable military power from the conflict, rendering another unified Arab multi-front war against Israel virtually impossible.',
+            '<span class="para-ref">[4.2]</span> However, this separate peace provoked furious outrage across the Arab world. Arab governments and the PLO denounced Sadat as a traitor who had abandoned the Palestinian struggle in exchange for Egyptian desert. The **Arab League expelled Egypt**, moved its headquarters from Cairo to Tunis, and severed diplomatic ties. Domestically, radical Islamist groups inside Egypt condemned Sadat’s secular compromise. On **6 October 1981**, during a military parade in Cairo, radical soldiers assassinated Sadat in a hail of gunfire. Although the new Egyptian government honoured the peace treaty, Sadat’s assassination proved the extreme domestic and regional perils facing Arab leaders who compromised with Israel.',
+          ],
+          tasks: [
+            {
+              id: 'task_11_4',
+              title: 'Task 4: Edexcel Paper 2 Exam Practice — Question 1 (Consequence) [4 marks]',
+              instructions:
+                'Explain one consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world. [4 marks]',
+              scaffolding: {
+                acronym: 'P-F-C (Point • Fact • Consequence)',
+                acronym_title: "The 'P-F-C' High-Yield Consequence Formula (1 Concise Paragraph)",
+                guidance:
+                  'Write exactly 1 punchy paragraph (approx. 4–5 minutes, 50–70 words). Directly answer the question in the first sentence.',
+                steps: [
+                  {
+                    letter: 'P',
+                    name: 'Point (Identify Consequence)',
+                    prompt: 'State the consequence for the Arab world clearly in sentence 1.',
+                    starter:
+                      'One major consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world was...',
+                  },
+                  {
+                    letter: 'F',
+                    name: 'Fact (Historical Detail)',
+                    prompt:
+                      'Provide specific facts (expulsion from the Arab League, relocation of headquarters to Tunis, severing of diplomatic ties).',
+                    starter:
+                      'Following the signing of the treaty in Washington, Arab nations viewed Sadat’s separate peace as a betrayal of the Palestinians, leading the Arab League to...',
+                  },
+                  {
+                    letter: 'C',
+                    name: 'Consequence Link (Result for Regional Balance)',
+                    prompt:
+                      'Explain the ongoing impact (Egypt’s diplomatic isolation, collapse of the unified Arab military coalition against Israel).',
+                    starter: 'Consequently, this permanently fractured Arab unity because...',
+                  },
+                ],
+                sentence_starters: [
+                  'One major consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world was the complete diplomatic isolation of Egypt and the fracturing of Arab unity...',
+                  'This occurred because Arab states and the PLO viewed Sadat’s separate peace deal as a treacherous betrayal of the Palestinian cause...',
+                  'Consequently, the Arab League expelled Egypt, severed diplomatic ties, and moved its headquarters from Cairo to Tunis...',
+                  'This directly transformed Middle Eastern geopolitics because removing Egypt’s powerful army made a coordinated Arab war against Israel virtually impossible...',
+                ],
+                connectives_bank: [
+                  'One major consequence was',
+                  'Specifically',
+                  'Consequently',
+                  'This directly resulted in',
+                  'As a result',
+                ],
+              },
+              model_answer:
+                'One major consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world was the severe diplomatic isolation of Egypt and the permanent fracturing of the anti-Israel Arab coalition. Arab states and the PLO viewed Anwar Sadat’s separate peace as a treacherous betrayal of the Palestinian cause, because Egypt secured the return of its own territory while leaving the West Bank and Gaza under Israeli control. Consequently, the Arab League suspended Egypt’s membership, moved its headquarters from Cairo to Tunis, and broke off official diplomatic ties. This transformed Middle Eastern geopolitics, as removing the Arab world’s largest and most powerful military from the conflict made a future unified multi-front Arab war against Israel virtually impossible.',
+              question:
+                'Explain one consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world. [4 marks]',
+              text: 'Explain one consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world. [4 marks]',
+              model:
+                'One major consequence of the 1979 Egypt-Israel Peace Treaty for the Arab world was the severe diplomatic isolation of Egypt and the permanent fracturing of the anti-Israel Arab coalition. Arab states and the PLO viewed Anwar Sadat’s separate peace as a treacherous betrayal of the Palestinian cause, because Egypt secured the return of its own territory while leaving the West Bank and Gaza under Israeli control. Consequently, the Arab League suspended Egypt’s membership, moved its headquarters from Cairo to Tunis, and broke off official diplomatic ties. This transformed Middle Eastern geopolitics, as removing the Arab world’s largest and most powerful military from the conflict made a future unified multi-front Arab war against Israel virtually impossible.',
+            },
+          ],
+          act: 4,
+          act_title:
+            'The Historical Verdict & Extended Writing — The 1979 Peace Treaty & The Deadly Backlash',
+          text: '<span class="para-ref">[4.1]</span> On **26 March 1979**, Begin, Sadat, and Carter signed the formal **Egypt-Israel Peace Treaty** (Treaty of Washington) on the White House lawn. Backed by billions of dollars in annual US economic and military subsidies to both nations, the treaty saw Israel complete its phased withdrawal from Sinai by **April 1982**. Crucially, the pact achieved a massive strategic transformation: it detached the Arab world’s largest and most formidable military power from the conflict, rendering another unified Arab multi-front war against Israel virtually impossible.\n\n<span class="para-ref">[4.2]</span> However, this separate peace provoked furious outrage across the Arab world. Arab governments and the PLO denounced Sadat as a traitor who had abandoned the Palestinian struggle in exchange for Egyptian desert. The **Arab League expelled Egypt**, moved its headquarters from Cairo to Tunis, and severed diplomatic ties. Domestically, radical Islamist groups inside Egypt condemned Sadat’s secular compromise. On **6 October 1981**, during a military parade in Cairo, radical soldiers assassinated Sadat in a hail of gunfire. Although the new Egyptian government honoured the peace treaty, Sadat’s assassination proved the extreme domestic and regional perils facing Arab leaders who compromised with Israel.',
         },
       ],
       draw_tasks: [],
@@ -10997,22 +11048,75 @@ export const unitData = {
       ],
       sources: [
         {
-          title: 'Source A: Begin, Carter, and Sadat at the Camp David Accords (September 1978)',
-          src: '/images/cme_camp_david_1978.jpg',
-          source: '/images/cme_camp_david_1978.jpg',
-          caption: 'Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David in September 1978.',
+          letter: 'A',
+          title:
+            'Source A: Archival Photograph: President Anwar Sadat Addressing the Israeli Knesset in Jerusalem (20 November 1977)',
+          caption:
+            'Egyptian President Anwar Sadat addressing members of the Israeli Knesset in Jerusalem, with Prime Minister Menachem Begin seated behind him.',
+          provenance:
+            'Israel Government Press Office (GPO) Photographic Archive (Accession Ref: GPO-1977-1120).',
+          source_context:
+            'This primary photograph captures Egyptian President Anwar Sadat delivering his historic address to the Israeli Knesset in Jerusalem on 20 November 1977. By travelling to the heart of the Jewish state and speaking directly to Israeli lawmakers, Sadat bypassed decades of diplomatic deadlock and proved to a skeptical Israeli public that Egypt was genuinely willing to pursue peace.',
+          hinge_question:
+            'How does Source A help explain why Anwar Sadat’s visit to Jerusalem was viewed across the world as a dramatic psychological turning point in the Arab-Israeli conflict?',
+          type: 'visual',
+          src: '/units/cme_new/assets/anwar_sadat.jpg',
+          image: '/units/cme_new/assets/anwar_sadat.jpg',
           question:
-            'What major compromises did Sadat and Begin make in order to reach the Camp David framework?',
+            'Study Source A. How does Source A help explain why Anwar Sadat’s visit to Jerusalem was viewed across the world as a dramatic psychological turning point in the Arab-Israeli conflict?',
         },
         {
+          letter: 'B',
           title:
-            'Source B: The Triple Handshake at the Washington Peace Treaty Signing (26 March 1979)',
-          src: '/images/cme_treaty_triple_handshake_1979.jpg',
-          source: '/images/cme_treaty_triple_handshake_1979.jpg',
+            'Source B: Archival Photograph: Menachem Begin, Jimmy Carter, and Anwar Sadat at Camp David (September 1978)',
           caption:
-            'Sadat, Carter, and Begin joining hands on the White House lawn following the formal signing of the historic Egypt-Israel Peace Treaty.',
+            'US President Jimmy Carter confers with Israeli Prime Minister Menachem Begin and Egyptian President Anwar Sadat on the porch at Aspen Lodge during the Camp David summit.',
+          provenance:
+            'White House Photographic Office / Jimmy Carter Presidential Library (Accession Ref: WHPO-1978-0912).',
+          source_context:
+            'This primary photograph records the intense, isolated trilateral diplomacy conducted at the Camp David presidential retreat in Maryland in September 1978. When personal tensions between Begin and Sadat brought talks to the verge of total collapse, Carter’s personal intervention and continuous mediation kept both leaders at the table.',
+          hinge_question:
+            'Why was the personal intervention of US President Jimmy Carter shown in Source B indispensable to achieving a negotiated compromise between Begin and Sadat?',
+          type: 'visual',
+          src: '/images/cme_camp_david_1978.jpg',
+          image: '/images/cme_camp_david_1978.jpg',
           question:
-            "Why did the signing of a separate peace treaty with Israel lead to Egypt's expulsion from the Arab League and Sadat's assassination in 1981?",
+            'Study Source B. Why was the personal intervention of US President Jimmy Carter shown in Source B indispensable to achieving a negotiated compromise between Begin and Sadat?',
+        },
+        {
+          letter: 'C',
+          title:
+            'Source C: Cartographic Map: The Sinai Peninsula and Camp David Demilitarization Zones (1979)',
+          caption:
+            'Official map showing the 60,000 square kilometre Sinai Peninsula returned by Israel to Egypt in phases between 1979 and 1982, establishing demilitarised buffer zones and free passage through the Straits of Tiran.',
+          provenance:
+            'US Department of State Cartographic Division (Accession Ref: DOS-SINAI-1979).',
+          source_context:
+            'This official map delineates the territorial terms of the 1979 Egypt-Israel Peace Treaty. Israel returned the entire Sinai Peninsula, while Egypt agreed to strict demilitarized zones monitored by international peacekeepers and guaranteed free passage for Israeli shipping through the Suez Canal and the Straits of Tiran.',
+          hinge_question:
+            'How does Source C demonstrate the geopolitical bargain of "land for peace" agreed in the 1979 Treaty of Washington?',
+          type: 'visual',
+          src: '/images/cme_sinai_peninsula_map.jpg',
+          image: '/images/cme_sinai_peninsula_map.jpg',
+          question:
+            'Study Source C. Using the map, explain why Israeli withdrawal from the Sinai Peninsula and guaranteed free passage through the Strait of Tiran were the twin territorial cornerstones of the Egypt-Israel Peace Treaty.',
+        },
+        {
+          letter: 'D',
+          title:
+            'Source D: Archival Photograph: The Triple Handshake at the Egypt-Israel Peace Treaty Signing (26 March 1979)',
+          caption:
+            'Anwar Sadat, Jimmy Carter, and Menachem Begin join hands on the North Lawn of the White House following the formal signing of the historic Egypt-Israel Peace Treaty.',
+          provenance: 'White House Photographic Office (Accession Ref: WHPO-1979-0326).',
+          source_context:
+            'This iconic primary photograph captures Sadat, Carter, and Begin celebrating the formal signing of the Egypt-Israel Peace Treaty on 26 March 1979. The treaty formally ended 30 years of war between Israel and Egypt and detached the Arab world’s largest army from the military conflict.',
+          hinge_question:
+            'How did the public spectacle of the triple handshake in Source D represent both a historic triumph for US diplomacy and a direct cause of Egypt’s subsequent isolation in the Arab world?',
+          type: 'visual',
+          src: '/images/cme_treaty_triple_handshake_1979.jpg',
+          image: '/images/cme_treaty_triple_handshake_1979.jpg',
+          question:
+            'Study Source D. How did the signing of the peace treaty transform regional alliances, and why did it lead directly to Egypt’s suspension from the Arab League and the assassination of Sadat?',
         },
       ],
       learning_objectives: {
@@ -11501,16 +11605,6 @@ export const unitData = {
         guidance:
           'Task: Identify the false statement (Statement B: the massacre was committed by Christian Phalangist militiamen, though Israeli forces encircled the camps) and write the correction.',
       },
-      primary_source: {
-        title: 'Source A: President Anwar Sadat Addresses the Israeli Knesset (20 November 1977)',
-        src: '/units/cme_new/assets/anwar_sadat.jpg',
-        caption:
-          'Primary Photograph: Egyptian President Anwar Sadat speaking at the podium of the Israeli Knesset in Jerusalem on 20 November 1977.',
-        question:
-          "Study Source A. Why was President Sadat's historic speech to the Israeli parliament in Jerusalem considered an astonishing psychological and diplomatic breakthrough for Middle East peace?",
-        model_answer:
-          "Source A captures an unprecedented moment: for 30 years, Arab states had refused to recognize Israel's existence or negotiate directly. By flying directly to Jerusalem and speaking directly to the Israeli parliament and public, Sadat broke the deep-seated psychological barrier of fear and mutual denial. He offered full diplomatic recognition and permanent peace in exchange for the total return of the occupied Sinai Peninsula and self-determination for the Palestinians, proving to the Israeli public that an Arab leader was genuinely willing to make peace.",
-      },
       timeline_anchor: [
         {
           date: '1974–1975',
@@ -11581,8 +11675,9 @@ export const unitData = {
     {
       id: 'lesson_12',
       key_individual: {
-        anchor_act: 9,
-        anchor_title: 'The 10-Week Siege of Beirut & Operation Peace for Galilee (Summer 1982)',
+        anchor_act: 2,
+        anchor_title:
+          'Act 2: The 10-Week Siege of Beirut & Operation Peace for Galilee (Summer 1982)',
         anchor_rationale:
           'Anchored directly adjacent to the 1982 Siege of Beirut where Defence Minister Sharon drove IDF forces past the 40km limit into Lebanon.',
         name: 'Ariel Sharon',
@@ -12154,172 +12249,206 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          text: '**The PLO’s Diplomatic Ascent: Arafat’s 1974 "Olive Branch" Speech:** Following the 1973 war, the Arab League recognized the **PLO as the "sole legitimate representative of the Palestinian people"**. In November 1974, **Yasser Arafat** became the first non-state leader invited to address the UN General Assembly. He famously stated: *"I have come bearing an olive branch and a freedom-fighter\'s gun. Do not let the olive branch fall from my hand."* Consequently, the UN granted the PLO permanent observer status.',
-          level_4:
-            'Following the 1973 Yom Kippur War, the Palestine Liberation Organisation (PLO) sought to capitalize on the shifting geopolitical landscape to advance its diplomatic standing. Do not let the olive branch fall from my hand."',
-          image: '/units/cme_new/assets/ariel_sharon.webp',
-          caption: 'Defence Minister Ariel Sharon during the 1982 Lebanon War.',
-        },
-        {
-          text: '**Yasser Arafat’s 1974 UN "Olive Branch" Address:** <img src="/units/cme_new/assets/arafat_1974.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_1974">',
-          level_4:
-            '<img src="/units/cme_new/assets/arafat_1974.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_1974">',
-        },
-        {
-          text: '**The Lebanese Civil War & The Creation of "Fatahland":** After expulsion from Jordan in 1971, the PLO relocated to southern Lebanon. Exploiting Lebanon’s fragile sectarian divides, the PLO established an autonomous armed enclave in the south known as **"Fatahland"**. From these border bases, Palestinian guerrillas launched frequent rocket attacks and cross-border raids into northern Israeli towns, prompting fierce IDF artillery reprisals.',
-          level_4:
-            'This dual-track message signaled that while the PLO was prepared to engage in international diplomacy to secure a sovereign Palestinian state, it would not abandon its armed struggle if diplomatic avenues were blocked. Lebanon was an ideal haven: its central government in Beirut was weak, and the country already hosted over 400,000 Palestinian refugees living in camps.',
-        },
-        {
-          text: '**The Lebanese Civil War & The "Fatahland" Enclave:** <img src="/units/cme_new/assets/fatahland.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="fatahland">',
-          level_4:
-            '<img src="/units/cme_new/assets/fatahland.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="fatahland">',
-        },
-        {
-          text: '**The 1978 Coastal Road Massacre & Operation Litani:** On **11 March 1978**, Fatah militants landed by sea and hijacked a civilian bus on the **Coastal Road**, killing 38 Israeli civilians. In response, Prime Minister Begin launched **Operation Litani**, invading southern Lebanon with 25,000 troops to push the PLO north of the Litani River. UN Security Council **Resolution 425** established the UNIFIL peacekeeping force, but guerrilla raids soon resumed.',
-          level_4:
-            'By the mid-1970s, the PLO had established a powerful "state-within-a-state" in southern Lebanon, widely known as "Fatahland". In direct retaliation, Prime Minister Menachem Begin ordered the IDF to launch Operation Litani on 15 March 1978.',
-        },
-        {
-          text: '**The 1978 Coastal Road Massacre & Operation Litani:** <img src="/units/cme_new/assets/coastal_road.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="coastal_road">',
-          level_4:
-            '<img src="/units/cme_new/assets/coastal_road.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="coastal_road">',
-        },
-        {
-          text: '**The Argov Shooting & Operation Peace for Galilee (June 1982):** On 3 June 1982, militants in London critically wounded Israeli Ambassador **Shlomo Argov**. Although the PLO had not ordered the shooting, Defence Minister **Ariel Sharon** used it as a justification to destroy the PLO infrastructure. On **6 June 1982**, Israel launched **Operation Peace for Galilee**, invading Lebanon with 76,000 troops. Sharon rapidly pushed beyond the approved 25-mile defensive zone, advancing directly to Beirut.',
-          level_4:
-            'Over 26,000 IDF troops invaded southern Lebanon, occupying a 10-kilometer-wide security strip. Although British intelligence confirmed the PLO was not responsible, Israeli Defense Minister Ariel Sharon used the assassination attempt as the necessary pretext to launch a long-planned, total invasion of Lebanon: Operation Peace for Galilee.',
-          tasks: [
-            {
-              type: 'written',
-              text: "What were Defense Minister Ariel Sharon's strategic goals during Operation Peace for Galilee in June 1982? (P7)",
-              starter: "Ariel Sharon's true strategic goals in invading Lebanon were...",
-              model:
-                "While publically announcing a 40-kilometer buffer zone to protect northern Israel from Katyusha rockets, Sharon's secret plan was to push all the way to Beirut, completely destroy the PLO's military and political infrastructure in Lebanon, force Syrian troops to withdraw, and install a pro-Israeli Christian Maronite government under Bashir Gemayel.",
-              model_answer:
-                "While publically announcing a 40-kilometer buffer zone to protect northern Israel from Katyusha rockets, Sharon's secret plan was to push all the way to Beirut, completely destroy the PLO's military and political infrastructure in Lebanon, force Syrian troops to withdraw, and install a pro-Israeli Christian Maronite government under Bashir Gemayel.",
-            },
+          title: 'Act 1: Context & Catalyst — Arafat at the UN & The Lebanese Frontier (1974–1978)',
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> Following the 1973 Yom Kippur War, the Arab League formally recognized the **PLO as the "sole legitimate representative of the Palestinian people."** In **November 1974**, PLO Chairman **Yasser Arafat** made history as the first representative of a non-state movement invited to address the **UN General Assembly** in New York (<span class="archival-meta-tag">Source A</span>). Wearing a holster, Arafat famously concluded: *"I have come bearing an olive branch and a freedom-fighter\'s gun. Do not let the olive branch fall from my hand."* This landmark address marked the PLO’s emergence onto the global diplomatic stage, securing permanent UN observer status while maintaining armed struggle.',
+            '<span class="para-ref">[1.2]</span> However, following their violent expulsion from Jordan during Black September (1970–71), armed Palestinian factions relocated to southern Lebanon. Exploiting Lebanon’s weak central government and sectarian fractures, the PLO constructed an autonomous, heavily fortified border enclave known as **"Fatahland"**. From these southern bases, guerrillas launched rocket barrages and cross-border raids into northern Israel. On **11 March 1978**, Fatah commandos landed by boat and hijacked a civilian bus on Israel\'s **Coastal Road**, killing 38 Israeli civilians. In direct retaliation, Prime Minister Menachem Begin ordered **Operation Litani**, deploying 25,000 Israeli troops into southern Lebanon to push the PLO north of the Litani River. Although **UN Security Council Resolution 425** established the UNIFIL peacekeeping buffer, cross-border skirmishes continued.',
           ],
           source: {
+            letter: 'A',
+            title:
+              'Source A: Archival Photograph: Yasser Arafat Addressing the United Nations General Assembly in New York (13 November 1974)',
+            caption:
+              'PLO Chairman Yasser Arafat addressing the UN General Assembly in New York, becoming the first non-state leader to speak before the world body.',
+            provenance:
+              'United Nations Department of Public Information Photo Archive (Accession Ref: UN-1974-1113).',
+            source_context:
+              'This historic primary photograph records Yasser Arafat addressing the UN General Assembly on 13 November 1974. Arafat presented his famous dual-track doctrine, declaring that he held both an "olive branch and a freedom-fighter\'s gun," signaling that the PLO would pursue sovereign statehood through international diplomacy while refusing to abandon armed resistance.',
+            hinge_question:
+              'Why did Yasser Arafat’s speech to the United Nations in Source A provoke both diplomatic breakthrough and intense controversy across the international community?',
+            question:
+              'Study Source A. Why did Yasser Arafat’s speech to the United Nations in Source A provoke both diplomatic breakthrough and intense controversy across the international community?',
+            type: 'visual',
+            src: '/images/cme_arafat_un_1974.png',
+            image: '/images/cme_arafat_un_1974.png',
+          },
+          tasks: [
+            {
+              id: 'task_12_1',
+              title: "Task 1: Word Scalpel & Strategic Dilemma — Arafat's Dual Message",
+              instructions:
+                "Using Source A and paragraphs [1.1] and [1.2], explain the dual message of Arafat's 'olive branch and gun' speech and why southern Lebanon became known as 'Fatahland'.",
+              scaffolding: {
+                sentence_starter:
+                  'In his landmark 1974 address to the United Nations, Yasser Arafat delivered a dual message that...',
+                connectives: [
+                  'By stating he carried an olive branch, Arafat indicated that the PLO was prepared to...',
+                  "However, by referencing the freedom fighter's gun, he made it clear that...",
+                  'Consequently, southern Lebanon became known as "Fatahland" because...',
+                ],
+              },
+              model_answer:
+                'In his landmark 1974 address to the United Nations General Assembly (shown in Source A), Yasser Arafat delivered a dual message combining diplomatic moderation with armed defiance. By offering an "olive branch", Arafat indicated that the PLO was prepared to engage in international diplomacy to achieve a sovereign Palestinian state. However, by emphasizing the "freedom fighter\'s gun", he signaled that Palestinians would not abandon armed resistance if their national rights were denied. Following their expulsion from Jordan in 1971, Palestinian factions relocated to southern Lebanon, where they exploited the weak central government to establish a heavily fortified border sanctuary widely dubbed "Fatahland". From this autonomous enclave, the PLO operated an armed state-within-a-state, launching rocket attacks and cross-border raids into northern Israel that triggered devastating Israeli counter-strikes like Operation Litani.',
+              question:
+                "Using Source A and paragraphs [1.1] and [1.2], explain the dual message of Arafat's 'olive branch and gun' speech and why southern Lebanon became known as 'Fatahland'.",
+              text: "Using Source A and paragraphs [1.1] and [1.2], explain the dual message of Arafat's 'olive branch and gun' speech and why southern Lebanon became known as 'Fatahland'.",
+              model:
+                'In his landmark 1974 address to the United Nations General Assembly (shown in Source A), Yasser Arafat delivered a dual message combining diplomatic moderation with armed defiance. By offering an "olive branch", Arafat indicated that the PLO was prepared to engage in international diplomacy to achieve a sovereign Palestinian state. However, by emphasizing the "freedom fighter\'s gun", he signaled that Palestinians would not abandon armed resistance if their national rights were denied. Following their expulsion from Jordan in 1971, Palestinian factions relocated to southern Lebanon, where they exploited the weak central government to establish a heavily fortified border sanctuary widely dubbed "Fatahland". From this autonomous enclave, the PLO operated an armed state-within-a-state, launching rocket attacks and cross-border raids into northern Israel that triggered devastating Israeli counter-strikes like Operation Litani.',
+            },
+          ],
+          act: 1,
+          act_title: 'Context & Catalyst — Arafat at the UN & The Lebanese Frontier (1974–1978)',
+          text: '<span class="para-ref">[1.1]</span> Following the 1973 Yom Kippur War, the Arab League formally recognized the **PLO as the "sole legitimate representative of the Palestinian people."** In **November 1974**, PLO Chairman **Yasser Arafat** made history as the first representative of a non-state movement invited to address the **UN General Assembly** in New York (<span class="archival-meta-tag">Source A</span>). Wearing a holster, Arafat famously concluded: *"I have come bearing an olive branch and a freedom-fighter\'s gun. Do not let the olive branch fall from my hand."* This landmark address marked the PLO’s emergence onto the global diplomatic stage, securing permanent UN observer status while maintaining armed struggle.\n\n<span class="para-ref">[1.2]</span> However, following their violent expulsion from Jordan during Black September (1970–71), armed Palestinian factions relocated to southern Lebanon. Exploiting Lebanon’s weak central government and sectarian fractures, the PLO constructed an autonomous, heavily fortified border enclave known as **"Fatahland"**. From these southern bases, guerrillas launched rocket barrages and cross-border raids into northern Israel. On **11 March 1978**, Fatah commandos landed by boat and hijacked a civilian bus on Israel\'s **Coastal Road**, killing 38 Israeli civilians. In direct retaliation, Prime Minister Menachem Begin ordered **Operation Litani**, deploying 25,000 Israeli troops into southern Lebanon to push the PLO north of the Litani River. Although **UN Security Council Resolution 425** established the UNIFIL peacekeeping buffer, cross-border skirmishes continued.',
+        },
+        {
+          title:
+            'Act 2: Escalation & Conflict — Operation Peace for Galilee & The Siege of Beirut (1982)',
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> On **3 June 1982**, the rogue Abu Nidal faction critically wounded Israeli Ambassador **Shlomo Argov** in London. Although British intelligence confirmed that Arafat\'s PLO was not involved, hawkish Israeli Defence Minister **Ariel Sharon** seized upon the assassination attempt as the pretext to launch a long-planned, total military offensive: **Operation Peace for Galilee**. On **6 June 1982**, Israel launched an invasion with 76,000 troops. While Prime Minister Begin publicly announced a limited 40-kilometre security buffer to protect northern Galilee from artillery fire, Sharon systematically drove his armored divisions over 80 kilometres north, advancing all the way to encircle the Lebanese capital, **Beirut** (<span class="archival-meta-tag">Source B</span>).',
+            '<span class="para-ref">[2.2]</span> For ten brutal weeks during the summer of 1982, Israeli forces placed **West Beirut under siege**, trapping **14,000 PLO fighters** and hundreds of thousands of Lebanese and Palestinian civilians. Sharon cut off municipal water, electricity, and food supplies while unleashing ferocious air and artillery bombardments. Sharon’s secret strategic objective was total: to eradicate the PLO’s political and military infrastructure, expel Syrian forces from Lebanon, and install a pro-Israeli Christian Maronite government under **Bachir Gemayel**. Facing mounting civilian casualties and global moral outcry, an American-brokered multinational peacekeeping force supervised the evacuation of Yasser Arafat and over 14,000 fighters by sea in August 1982, scattering the PLO leadership into distant exile in **Tunis, Tunisia**, 1,500 miles away from Israel\'s borders.',
+          ],
+          source: {
+            letter: 'B',
             title: 'Source B: Military Map: 1982 Lebanon War (Operation Peace for Galilee)',
-            src: '/images/cme_lebanon_1982_campaign_map.png',
             caption:
               'Map illustrating the three Israeli advancing columns north through southern Lebanon to encircle Beirut in June 1982.',
+            provenance: 'IDF Southern Command Cartographic Records (Accession Ref: IDF-LEB-1982).',
+            source_context:
+              'This military map illustrates the multi-pronged Israeli armored invasion of Lebanon in June 1982. While Prime Minister Begin had publicly pledged that Israeli troops would advance no further than 40 kilometres to create a security buffer for northern Galilee, the map proves that Sharon drove columns over 80 kilometres north, confronting Syrian forces and encircling Beirut.',
+            hinge_question:
+              'How does the operational map in Source B demonstrate why Ariel Sharon was accused of deceiving the Israeli Cabinet regarding the true objectives of Operation Peace for Galilee?',
             question:
-              'Study Source B. Study the arrows marking the Israeli advance northward on the map. How does the map demonstrate that Sharon pushed the invasion far beyond the initial 40-kilometre security zone to encircle Beirut?',
-            model_answer:
-              'The map clearly proves that Israeli forces advanced far beyond the 40-kilometre limit publicly announced by Prime Minister Begin. The three armoured prongs drove over 80 kilometres north along the Mediterranean coast, through the Shouf mountains, and into the Bekaa Valley, confronting Syrian forces and cutting off the Beirut-Damascus highway to completely encircle West Beirut, transforming a border-security operation into an all-out regime-change war.',
+              'Study Source B. How does the operational map in Source B demonstrate why Ariel Sharon was accused of deceiving the Israeli Cabinet regarding the true objectives of Operation Peace for Galilee?',
+            type: 'visual',
+            src: '/images/cme_lebanon_1982_campaign_map.png',
+            image: '/images/cme_lebanon_1982_campaign_map.png',
           },
-        },
-        {
-          text: '**Operation Peace for Galilee: Invasion of Lebanon (1982):** <img src="/units/cme_new/assets/lebanese_invasion.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="lebanese_invasion">',
-          level_4:
-            '<img src="/units/cme_new/assets/lebanese_invasion.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="lebanese_invasion">',
-        },
-        {
-          text: '**The 10-Week Siege of Beirut & PLO Evacuation to Tunis (Summer 1982):** Israeli forces surrounded West Beirut, trapping **14,000 PLO fighters** and hundreds of thousands of civilians. A ten-week bombardment cut off water, electricity, and food, causing widespread civilian casualties and global condemnation. In August 1982, an American-brokered ceasefire supervised by a Western **Multinational Force** oversaw the evacuation of Arafat and his fighters by sea to distant exile in **Tunis, Tunisia**.',
-          level_4:
-            'On 6 June 1982, Israeli forces launched a massive armored invasion. To prevent total destruction, a multinational peacekeeping force supervised the evacuation of Yasser Arafat and over 14,000 fighters by ship to Tunis, Tunisia.',
-          source: {
-            title: 'Source C: PLO Fighters Evacuating Beirut by Sea to Tunisia (August 1982)',
-            src: '/units/cme_new/assets/arafat_1999.jpg',
-            caption:
-              'Palestinian PLO fighters flashing victory signs as they board evacuation ships in Beirut harbour bound for Tunisia under multinational protection in August 1982.',
-            question:
-              'Study Source C. Why was the forced evacuation of Yasser Arafat and thousands of PLO fighters from Lebanon to Tunis both a military defeat and a catalyst for the First Intifada?',
-            model_answer:
-              "Source C captures the expulsion of over 14,000 PLO fighters from Lebanon following the brutal two-month Israeli siege. While celebrated defiantly as survival, the evacuation was a crushing military setback: the PLO lost its armed border sanctuary next to Israel and was exiled 1,500 miles away to Tunis, severely weakening Arafat's ability to conduct cross-border warfare. Because the exiled leadership in Tunis became distant and ineffective, leadership of the Palestinian national struggle shifted directly to the grassroots population living under occupation in the West Bank and Gaza, paving the way for the outbreak of the First Intifada in 1987.",
-          },
-        },
-        {
-          text: "**The Assassination of Bachir Gemayel & The Sabra and Shatila Massacre (September 1982):** On 14 September 1982, Lebanon\'s newly elected Christian President, **Bachir Gemayel**, was assassinated in a bombing. Seeking vengeance, Lebanese **Christian Phalangist militias** demanded access to the **Sabra and Shatila refugee camps** in West Beirut. Israeli forces surrounded the camps and allowed roughly 150 Phalangists to enter. Over the next 36 hours, Phalangist gunmen slaughtered between **800 and 2,000 unarmed Palestinian refugees** while Israeli troops guarded the perimeter.",
-          level_4:
-            "Having successfully expelled the PLO, Israel's close Maronite ally, Bashir Gemayel, was elected President of Lebanon. However, on 14 September 1982, Gemayel was assassinated in a massive bomb blast by Syrian agents.",
-        },
-        {
-          text: '<img src="/units/cme_new/assets/sabra_shatila.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sabra_shatila">',
-          level_4:
-            '<img src="/units/cme_new/assets/sabra_shatila.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="sabra_shatila">',
-        },
-        {
-          text: '**The Kahan Commission, Domestic Israeli Outrage & Sharon’s Resignation:** The massacre provoked moral outrage in Israel, sparking a 400,000-person protest in Tel Aviv. The Israeli government established the independent **Kahan Commission** in 1983. It concluded that while Phalangists bore direct guilt, Defence Minister **Ariel Sharon** bore *"personal responsibility"* for failing to foresee and prevent the slaughter. Sharon was forced to resign as Defence Minister, and Prime Minister Begin resigned later that year.',
-          level_4:
-            'In response to the assassination, the IDF occupied West Beirut. He was forced to resign.',
           tasks: [
             {
-              type: 'written',
-              text: 'Describe the events of the September 1982 Sabra and Shatila massacre and explain why the Kahan Commission held Ariel Sharon indirectly responsible. (P12)',
-              starter:
-                'Following the assassination of Bashir Gemayel, Lebanese Phalangist militias...',
-              model:
-                "Israeli forces allowed Lebanese Christian Phalangist militias into the Sabra and Shatila refugee camps to 'cleanse terrorists'. Over 36 hours, the militias massacred between 800 and 3,500 unarmed Palestinian civilians while the IDF fired illumination flares. The outrage led to massive protests of 400,000 Israelis in Tel Aviv; the official Kahan Commission ruled that Sharon was personally negligent and held indirect responsibility, forcing his resignation as Defense Minister.",
+              id: 'task_12_2',
+              title: "Task 2: Strategic Goals & Tactical Shift — Sharon's Lebanon Incursion",
+              instructions:
+                "Using Source B and paragraphs [2.1]–[2.2], explain why Ariel Sharon pushed the Israeli invasion far beyond its publicly announced 40km limit and how the siege of Beirut resulted in the PLO's exile to Tunis.",
+              scaffolding: {
+                sentence_starter:
+                  'While Prime Minister Menachem Begin publicly claimed the invasion was limited to a 40-kilometre buffer zone...',
+                connectives: [
+                  'As demonstrated by the advance arrows in Source B, Defence Minister Ariel Sharon secretly intended to...',
+                  'During the 10-week siege of Beirut, the IDF applied overwhelming military pressure by...',
+                  'Consequently, the international community intervened to evacuate the PLO leadership to...',
+                ],
+              },
               model_answer:
-                "Israeli forces allowed Lebanese Christian Phalangist militias into the Sabra and Shatila refugee camps to 'cleanse terrorists'. Over 36 hours, the militias massacred between 800 and 3,500 unarmed Palestinian civilians while the IDF fired illumination flares. The outrage led to massive protests of 400,000 Israelis in Tel Aviv; the official Kahan Commission ruled that Sharon was personally negligent and held indirect responsibility, forcing his resignation as Defense Minister.",
+                'While Prime Minister Begin publicly announced that Operation Peace for Galilee was a limited defensive operation to push Palestinian artillery 40 kilometres away from northern border towns, Defence Minister Ariel Sharon pursued far more ambitious, unannounced objectives. As shown by the advancing columns in Source B, Sharon drove armored forces over 80 kilometres north, deliberately confronting Syrian forces in the Bekaa Valley and surrounding the Lebanese capital of Beirut. Sharon’s strategic goal was to completely eliminate the PLO as a political and military entity and install a friendly Christian Maronite government under Bachir Gemayel. During the ten-week siege of West Beirut, the IDF cut off electricity, water, and food while bombarding the city, creating severe civilian suffering. Ultimately, to halt the destruction, the US brokered an evacuation deal in August 1982, forcing Yasser Arafat and 14,000 fighters to surrender their arms and evacuate by sea to distant exile in Tunis, Tunisia.',
+              question:
+                "Using Source B and paragraphs [2.1]–[2.2], explain why Ariel Sharon pushed the Israeli invasion far beyond its publicly announced 40km limit and how the siege of Beirut resulted in the PLO's exile to Tunis.",
+              text: "Using Source B and paragraphs [2.1]–[2.2], explain why Ariel Sharon pushed the Israeli invasion far beyond its publicly announced 40km limit and how the siege of Beirut resulted in the PLO's exile to Tunis.",
+              model:
+                'While Prime Minister Begin publicly announced that Operation Peace for Galilee was a limited defensive operation to push Palestinian artillery 40 kilometres away from northern border towns, Defence Minister Ariel Sharon pursued far more ambitious, unannounced objectives. As shown by the advancing columns in Source B, Sharon drove armored forces over 80 kilometres north, deliberately confronting Syrian forces in the Bekaa Valley and surrounding the Lebanese capital of Beirut. Sharon’s strategic goal was to completely eliminate the PLO as a political and military entity and install a friendly Christian Maronite government under Bachir Gemayel. During the ten-week siege of West Beirut, the IDF cut off electricity, water, and food while bombarding the city, creating severe civilian suffering. Ultimately, to halt the destruction, the US brokered an evacuation deal in August 1982, forcing Yasser Arafat and 14,000 fighters to surrender their arms and evacuate by sea to distant exile in Tunis, Tunisia.',
             },
           ],
+          act: 2,
+          act_title:
+            'Escalation & Conflict — Operation Peace for Galilee & The Siege of Beirut (1982)',
+          text: '<span class="para-ref">[2.1]</span> On **3 June 1982**, the rogue Abu Nidal faction critically wounded Israeli Ambassador **Shlomo Argov** in London. Although British intelligence confirmed that Arafat\'s PLO was not involved, hawkish Israeli Defence Minister **Ariel Sharon** seized upon the assassination attempt as the pretext to launch a long-planned, total military offensive: **Operation Peace for Galilee**. On **6 June 1982**, Israel launched an invasion with 76,000 troops. While Prime Minister Begin publicly announced a limited 40-kilometre security buffer to protect northern Galilee from artillery fire, Sharon systematically drove his armored divisions over 80 kilometres north, advancing all the way to encircle the Lebanese capital, **Beirut** (<span class="archival-meta-tag">Source B</span>).\n\n<span class="para-ref">[2.2]</span> For ten brutal weeks during the summer of 1982, Israeli forces placed **West Beirut under siege**, trapping **14,000 PLO fighters** and hundreds of thousands of Lebanese and Palestinian civilians. Sharon cut off municipal water, electricity, and food supplies while unleashing ferocious air and artillery bombardments. Sharon’s secret strategic objective was total: to eradicate the PLO’s political and military infrastructure, expel Syrian forces from Lebanon, and install a pro-Israeli Christian Maronite government under **Bachir Gemayel**. Facing mounting civilian casualties and global moral outcry, an American-brokered multinational peacekeeping force supervised the evacuation of Yasser Arafat and over 14,000 fighters by sea in August 1982, scattering the PLO leadership into distant exile in **Tunis, Tunisia**, 1,500 miles away from Israel\'s borders.',
         },
         {
-          text: '<img src="/units/cme_new/assets/longterm_lebanon.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="longterm_lebanon">',
-          level_4:
-            '<img src="/units/cme_new/assets/longterm_lebanon.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="longterm_lebanon">',
-        },
-        {
-          text: '**The Spark at Jabalia (8 December 1987): The First Intifada Erupts:** By late 1987, twenty years of military occupation had created deep Palestinian despair over land confiscations and military curfews. On **8 December 1987**, an Israeli military vehicle collided with Palestinian cars near the **Jabalia refugee camp** in Gaza, killing four workers. Believing the crash was deliberate revenge, mass protests erupted at their funerals. Israeli gunfire killed a teenage demonstrator, triggering the **First Palestinian Intifada** ("shaking off") across Gaza and the West Bank.',
-          level_4:
-            'While the PLO leadership remained isolated in Tunis, the core of the Palestinian struggle shifted back to the occupied territories. The local population erupted in massive demonstrations that swept across Gaza and the West Bank, marking the start of the First Palestinian Intifada ("The Shaking Off").',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Explain why the First Intifada broke out spontaneously in December 1987, and how it differed from earlier PLO military operations. (P14)',
-              starter: 'The First Intifada differed from previous PLO resistance because...',
-              model:
-                'Sparked by a traffic collision in Gaza that killed four Palestinian workers, the uprising was a spontaneous, grassroots civil rebellion driven by local youths who had lived their entire lives under military occupation. Unlike previous cross-border armed incursions by PLO guerrillas based in exile, the Intifada relied on mass general strikes, commercial boycotts, barricades, and stone-throwing directed by the Unified National Leadership of the Uprising (UNLU).',
-              model_answer:
-                'Sparked by a traffic collision in Gaza that killed four Palestinian workers, the uprising was a spontaneous, grassroots civil rebellion driven by local youths who had lived their entire lives under military occupation. Unlike previous cross-border armed incursions by PLO guerrillas based in exile, the Intifada relied on mass general strikes, commercial boycotts, barricades, and stone-throwing directed by the Unified National Leadership of the Uprising (UNLU).',
-            },
-          ],
-        },
-        {
-          text: '<img src="/units/cme_new/assets/intifada_escalation.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="intifada_escalation">',
-          level_4:
-            '<img src="/units/cme_new/assets/intifada_escalation.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="intifada_escalation">',
-        },
-        {
-          text: '**Dynamics of the Uprising: UNLU, Hamas & Rabin’s "Iron Fist":** The Intifada was a grassroots uprising led by local underground committees (**UNLU**), featuring strikes, tax boycotts, and youth throwing stones at Israeli patrols. In December 1987, the militant Islamist movement **Hamas** was founded, rejecting peace and demanding armed struggle. Defence Minister **Yitzhak Rabin** enforced an **"Iron Fist"** policy, instructing troops to use force and "break their bones." Televised footage of Israeli soldiers beating youths damaged Israel’s international reputation and generated global sympathy for Palestinians.',
-          level_4:
-            'Unlike the PLO operations, the First Intifada was a grassroots, popular civilian uprising utilizing non-violent civil disobedience (strikes, boycotts) alongside low-level street violence. For the first time, global public sympathy shifted decisively toward the Palestinian cause, severely damaging Israel’s international moral standing.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'How did international television coverage of the First Intifada transform global perceptions of the Israeli-Palestinian conflict? (P16)',
-              starter: 'International television coverage transformed global opinion by...',
-              model:
-                "Television broadcasts showing unarmed Palestinian teenagers throwing stones against heavily armored Israeli tanks and soldiers enforcing Defense Minister Yitzhak Rabin's 'Iron Fist' policy (breaking bones of demonstrators) shattered the traditional image of Israel as a small, heroic David defending itself against Arab Goliaths. Israel was increasingly portrayed as an oppressive occupying power, generating intense diplomatic pressure from Washington to pursue a political settlement.",
-              model_answer:
-                "Television broadcasts showing unarmed Palestinian teenagers throwing stones against heavily armored Israeli tanks and soldiers enforcing Defense Minister Yitzhak Rabin's 'Iron Fist' policy (breaking bones of demonstrators) shattered the traditional image of Israel as a small, heroic David defending itself against Arab Goliaths. Israel was increasingly portrayed as an oppressive occupying power, generating intense diplomatic pressure from Washington to pursue a political settlement.",
-            },
+          title:
+            'Act 3: Forensic Evidence & Uprising — Sabra & Shatila and the Outbreak of the First Intifada (1982–1987)',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> On **14 September 1982**, Lebanon’s newly elected president, Bachir Gemayel, was assassinated in a massive bomb blast. Seeking revenge, Lebanese **Christian Phalangist militias** demanded access to the **Sabra and Shatila refugee camps** in West Beirut. Israeli forces surrounded the camps, sealed all exits, and permitted roughly 150 Phalangist gunmen to enter. Over the next 36 hours, Phalangists slaughtered between **800 and 2,000 unarmed Palestinian civilians** while Israeli troops fired illumination flares into the night sky. The atrocity ignited intense international condemnation and a massive protest of 400,000 Israelis in Tel Aviv. In 1983, the independent Israeli **Kahan Commission** ruled that while Phalangists committed the murders, Defence Minister Ariel Sharon bore *"personal and indirect responsibility"* for failing to anticipate the bloodshed, forcing his resignation.',
+            '<span class="para-ref">[3.2]</span> With the PLO leadership stranded in distant Tunis, the primary front of Palestinian resistance shifted directly to the 1.5 million Palestinians living under military occupation in the West Bank and Gaza Strip. After twenty years of occupation, land confiscations, and identity checks, local resentment reached boiling point. On **8 December 1987**, an Israeli military transport vehicle collided with civilian cars near the **Jabalia refugee camp** in Gaza, killing four Palestinian labourers. Convinced the crash was intentional revenge for a recent stabbing, thousands of Palestinians erupted in spontaneous protests at their funerals. When Israeli soldiers shot and killed a teenage demonstrator, the **First Palestinian Intifada** (*"the shaking off"*) erupted across Gaza and spread rapidly through the West Bank (<span class="archival-meta-tag">Source C</span>).',
           ],
           source: {
+            letter: 'C',
             title:
-              'Source D: Palestinian Youths Confronting Israeli Armoured Vehicles in Gaza (First Intifada, 1987)',
-            src: '/units/cme_new/assets/first_intifada.png',
+              'Source C: Archival Photograph: Palestinian Youths Confronting Israeli Armoured Vehicles in Gaza (First Intifada, December 1987)',
             caption:
-              'Palestinian youths armed with stones and slingshots confronting an Israeli Defense Forces armoured vehicle in the Gaza Strip in December 1987.',
+              'Palestinian youths armed with stones and slingshots confronting an Israeli Defense Forces armoured patrol in the Gaza Strip during the opening weeks of the First Intifada.',
+            provenance:
+              'Associated Press Photo Archive, Gaza Bureau (Accession Ref: AP-GAZ-1987-1215).',
+            source_context:
+              'This primary photograph records the asymmetric street fighting that characterized the First Intifada in December 1987. Unlike earlier cross-border guerrilla raids conducted by armed PLO commandos, the Intifada was a spontaneous, grassroots civil rebellion driven by local teenagers living under military occupation who used stones and civil disobedience against heavily armored Israeli soldiers.',
+            hinge_question:
+              'How does Source C illustrate why the First Intifada transformed the international image of the Israeli-Palestinian conflict from an Arab military threat into an unequal struggle between an occupying army and civilian youths?',
             question:
-              'Study Source D. How does the asymmetric confrontation between stone-throwing Palestinian youths and Israeli armored forces explain why the First Intifada created a public relations crisis for Israel?',
-            model_answer:
-              'Source D visualises the complete inversion of traditional media narratives: Israel was no longer seen as the David fighting Arab Goliaths, but as a heavily armed occupying power using tanks, tear gas, and live ammunition against unarmed teenagers and children armed only with stones. Television footage of Israeli soldiers enforcing Defence Minister Yitzhak Rabin\'s controversial "broken bones" policy shocked international public opinion and created unprecedented moral discomfort within Israeli society itself, proving that military force alone could never suppress Palestinian demands for self-determination.',
+              'Study Source C. How does Source C illustrate why the First Intifada transformed the international image of the Israeli-Palestinian conflict from an Arab military threat into an unequal struggle between an occupying army and civilian youths?',
+            type: 'visual',
+            src: '/units/cme_new/assets/first_intifada.png',
+            image: '/units/cme_new/assets/first_intifada.png',
           },
+          tasks: [
+            {
+              id: 'task_12_3',
+              title: 'Task 3: Forensic Source Analysis — The Grassroots Eruption of the Intifada',
+              instructions:
+                'Using Source C and paragraphs [3.1]–[3.2], explain why the First Intifada broke out spontaneously in December 1987 and how it differed fundamentally from earlier PLO cross-border operations.',
+              scaffolding: {
+                sentence_starter:
+                  'The First Intifada broke out spontaneously in December 1987 because twenty years of military occupation had created...',
+                connectives: [
+                  'The catalyst that triggered the explosion was the Jabalia traffic collision, which...',
+                  'Unlike earlier PLO military operations from Jordan or Lebanon, Source C demonstrates that the Intifada was...',
+                  'Consequently, this transformed the struggle because the exiled leadership in Tunis was...',
+                ],
+              },
+              model_answer:
+                'The First Intifada broke out spontaneously in December 1987 because twenty years of continuous Israeli military occupation had generated deep economic despair, daily humiliations at checkpoints, and anger over continuous Jewish settlement construction across the West Bank and Gaza. The immediate trigger was a traffic incident on 8 December 1987 at the Jabalia refugee camp in Gaza, where an Israeli military vehicle killed four Palestinian workers, sparking mass demonstrations that turned into an uncontrollable general rebellion. As shown in Source C, the Intifada differed fundamentally from earlier PLO operations: instead of cross-border incursions by armed commandos based in foreign capitals, it was a homegrown, grassroots civilian rebellion fought by local teenagers using stones, strikes, commercial boycotts, and barricades. Because the official PLO leadership was isolated 1,500 miles away in Tunis, local underground committees took charge, forcing Israel to confront a popular civil uprising rather than an external military adversary.',
+              question:
+                'Using Source C and paragraphs [3.1]–[3.2], explain why the First Intifada broke out spontaneously in December 1987 and how it differed fundamentally from earlier PLO cross-border operations.',
+              text: 'Using Source C and paragraphs [3.1]–[3.2], explain why the First Intifada broke out spontaneously in December 1987 and how it differed fundamentally from earlier PLO cross-border operations.',
+              model:
+                'The First Intifada broke out spontaneously in December 1987 because twenty years of continuous Israeli military occupation had generated deep economic despair, daily humiliations at checkpoints, and anger over continuous Jewish settlement construction across the West Bank and Gaza. The immediate trigger was a traffic incident on 8 December 1987 at the Jabalia refugee camp in Gaza, where an Israeli military vehicle killed four Palestinian workers, sparking mass demonstrations that turned into an uncontrollable general rebellion. As shown in Source C, the Intifada differed fundamentally from earlier PLO operations: instead of cross-border incursions by armed commandos based in foreign capitals, it was a homegrown, grassroots civilian rebellion fought by local teenagers using stones, strikes, commercial boycotts, and barricades. Because the official PLO leadership was isolated 1,500 miles away in Tunis, local underground committees took charge, forcing Israel to confront a popular civil uprising rather than an external military adversary.',
+            },
+          ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Uprising — Sabra & Shatila and the Outbreak of the First Intifada (1982–1987)',
+          text: '<span class="para-ref">[3.1]</span> On **14 September 1982**, Lebanon’s newly elected president, Bachir Gemayel, was assassinated in a massive bomb blast. Seeking revenge, Lebanese **Christian Phalangist militias** demanded access to the **Sabra and Shatila refugee camps** in West Beirut. Israeli forces surrounded the camps, sealed all exits, and permitted roughly 150 Phalangist gunmen to enter. Over the next 36 hours, Phalangists slaughtered between **800 and 2,000 unarmed Palestinian civilians** while Israeli troops fired illumination flares into the night sky. The atrocity ignited intense international condemnation and a massive protest of 400,000 Israelis in Tel Aviv. In 1983, the independent Israeli **Kahan Commission** ruled that while Phalangists committed the murders, Defence Minister Ariel Sharon bore *"personal and indirect responsibility"* for failing to anticipate the bloodshed, forcing his resignation.\n\n<span class="para-ref">[3.2]</span> With the PLO leadership stranded in distant Tunis, the primary front of Palestinian resistance shifted directly to the 1.5 million Palestinians living under military occupation in the West Bank and Gaza Strip. After twenty years of occupation, land confiscations, and identity checks, local resentment reached boiling point. On **8 December 1987**, an Israeli military transport vehicle collided with civilian cars near the **Jabalia refugee camp** in Gaza, killing four Palestinian labourers. Convinced the crash was intentional revenge for a recent stabbing, thousands of Palestinians erupted in spontaneous protests at their funerals. When Israeli soldiers shot and killed a teenage demonstrator, the **First Palestinian Intifada** (*"the shaking off"*) erupted across Gaza and spread rapidly through the West Bank (<span class="archival-meta-tag">Source C</span>).',
         },
         {
-          text: '<table class="table-auto w-full mt-4 text-left border-collapse" style="background-color: white; border: 1px solid #ddd;">\n  <caption style="font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style="background-color: #e9ecef;">\n      <th style="padding: 10px; border: 1px solid #ddd;">For the PLO</th>\n      <th style="padding: 10px; border: 1px solid #ddd;">For Israel</th>\n      <th style="padding: 10px; border: 1px solid #ddd;">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>',
-          level_4:
-            '\n<table class="table-auto w-full mt-4 text-left border-collapse" style="background-color: white; border: 1px solid #ddd;">\n  <caption style="font-weight: bold; padding: 10px; background-color: #f8f9fa; border: 1px solid #ddd; border-bottom: none;">CONSEQUENCES OF THE FIRST INTIFADA</caption>\n  <thead>\n    <tr style="background-color: #e9ecef;">\n      <th style="padding: 10px; border: 1px solid #ddd;">For the PLO</th>\n      <th style="padding: 10px; border: 1px solid #ddd;">For Israel</th>\n      <th style="padding: 10px; border: 1px solid #ddd;">The Rise of Hamas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;">Forced Yasser Arafat to renounce terrorism and officially accept the two-state solution (1988) to retain leadership.</td>\n      <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;">Convinced Yitzhak Rabin and military planners that there was no purely military solution to the Palestinian issue.</td>\n      <td style="padding: 10px; border: 1px solid #ddd; vertical-align: top;">Formed in 1987 as a rival to the PLO, Hamas rejected compromises and conducted violent armed attacks against Israelis.</td>\n    </tr>\n  </tbody>\n</table>',
-        },
-        {
-          text: '**Arafat’s Historic Concession: The 1988 Geneva Renunciation of Terrorism:** Recognising that the Intifada was sidelining the PLO leadership in exile, Yasser Arafat made a major diplomatic concession. In December 1988, addressing the UN General Assembly in **Geneva**, Arafat officially **renounced all forms of terrorism**, recognized the State of Israel’s right to exist, and accepted UN Resolutions 242 and 338. Consequently, the United States opened official diplomatic dialogue with the PLO for the first time.',
-          level_4:
-            'Writing Historically: Level 9 Stylistic Masterclass\nGCSE history examiners actively look for clear, sophisticated written expression that demonstrates analytical links between historical causes, events, and consequences. ',
+          title:
+            'Act 4: The Historical Verdict & Extended Writing — The Dynamics of the Intifada & The 1988 Geneva Turn',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> The First Intifada was a popular grassroots civil rebellion led by local underground committees (the **Unified National Leadership of the Uprising, UNLU**). It mobilized entire communities through general strikes, commercial closures, tax boycotts, barricades, and teenagers hurling stones at Israeli patrols. In December 1987, the rival militant Islamist faction **Hamas** was founded, rejecting diplomacy and demanding the complete liberation of historic Palestine through armed struggle. In response, Defence Minister **Yitzhak Rabin** enforced an uncompromising **"Iron Fist"** policy, instructing troops to use force and "break their bones." Global television broadcasts of heavily armed soldiers beating stone-throwing youths shattered Israel’s traditional image as an underdog, transforming it in world opinion into an oppressive occupying power.',
+            '<span class="para-ref">[4.2]</span> Crucially, the Intifada convinced Israeli military leaders, including Rabin, that permanent military occupation was unsustainable and that there was no purely military solution to the Palestinian question. Simultaneously, fearing that grassroots leaders inside the West Bank and Gaza were eclipsing his authority, Yasser Arafat seized the diplomatic initiative. Addressing the UN General Assembly in **Geneva** in **December 1988**, Arafat took the historic step of formally **renouncing all forms of terrorism**, recognizing the State of Israel’s right to exist in peace, and accepting UN Resolutions 242 and 338. This momentous concession satisfied longstanding American conditions, prompting the United States to open official diplomatic dialogue with the PLO for the first time.',
+          ],
+          tasks: [
+            {
+              id: 'task_12_4',
+              title:
+                'Task 4: Edexcel Paper 2 Exam Practice — Question 2 (Narrative Account) [8 marks]',
+              instructions:
+                "Write a narrative account analysing the key events of the Palestinian uprising (the First Intifada) between 1987 and 1988. [8 marks]\n\nYou may use the following in your answer:\n• The incident at Jabalia camp (December 1987)\n• Yasser Arafat's speech in Geneva (December 1988)\nYou must also use information of your own.",
+              scaffolding: {
+                stimulus_points: [
+                  'The incident at Jabalia camp (December 1987)',
+                  "Yasser Arafat's speech in Geneva (December 1988)",
+                ],
+                sentence_starters: [
+                  'The First Intifada began in December 1987 following a fatal vehicle collision at the Jabalia refugee camp in Gaza, which...',
+                  'In response to the spontaneous uprising, Israeli Defence Minister Yitzhak Rabin enforced the "Iron Fist" policy, leading to...',
+                  'This widespread civil unrest threatened to sideline the exiled PLO leadership, prompting Yasser Arafat to...',
+                ],
+                causal_connectives: [
+                  'As a direct consequence of this...',
+                  'This dramatically shifted the international perspective because...',
+                  'Ultimately, this resulted in...',
+                ],
+              },
+              model_answer:
+                'The First Intifada was a spontaneous, grassroots civilian uprising that fundamentally transformed the Israeli-Palestinian conflict and forced both sides towards political diplomacy.\n\nThe uprising began on 8 December 1987 when an Israeli military vehicle collided with Palestinian civilian cars near the Jabalia refugee camp in Gaza, killing four Palestinian workers. Rumours spread rapidly that the crash was deliberate retaliation for a fatal stabbing of an Israeli days earlier. At the victims\' funerals, spontaneous mass protests erupted against twenty years of military occupation, land confiscations, and curfews. When Israeli soldiers fired on the crowds, killing a 17-year-old demonstrator, riots engulfed the Gaza Strip and spread swiftly across the West Bank.\n\nThis explosion of anger rapidly organized into a structured civil rebellion directed by the Unified National Leadership of the Uprising (UNLU). Palestinians deployed civil disobedience, including general strikes, commercial closures, tax boycotts, and barricades, while youths threw stones and petrol bombs at Israeli patrols. In response, Israeli Defence Minister Yitzhak Rabin instituted an uncompromising "Iron Fist" policy, authorizing troops to use force, physical beatings ("broken bones"), mass arrests, and administrative detentions. However, international television news broadcasts of heavily armed Israeli soldiers beating unarmed teenagers created an immense public relations crisis for Israel, shattering its traditional reputation as an underdog defending itself and generating intense international diplomatic pressure.\n\nThis crisis also placed immense pressure on the official PLO leadership stranded in distant exile in Tunis. Fearing that local grassroots figures in the West Bank and Gaza—along with the newly formed Islamist group Hamas—were replacing his authority, Yasser Arafat made a historic diplomatic pivot. Addressing the UN General Assembly in Geneva in December 1988, Arafat officially renounced all forms of terrorism, recognised Israel\'s right to exist in peace, and accepted UN Resolutions 242 and 338. Consequently, the United States immediately ended its diplomatic freeze and opened direct dialogue with the PLO, laying the essential political foundation for future peace negotiations.',
+              question:
+                "Write a narrative account analysing the key events of the Palestinian uprising (the First Intifada) between 1987 and 1988. [8 marks]\n\nYou may use the following in your answer:\n• The incident at Jabalia camp (December 1987)\n• Yasser Arafat's speech in Geneva (December 1988)\nYou must also use information of your own.",
+              text: "Write a narrative account analysing the key events of the Palestinian uprising (the First Intifada) between 1987 and 1988. [8 marks]\n\nYou may use the following in your answer:\n• The incident at Jabalia camp (December 1987)\n• Yasser Arafat's speech in Geneva (December 1988)\nYou must also use information of your own.",
+              model:
+                'The First Intifada was a spontaneous, grassroots civilian uprising that fundamentally transformed the Israeli-Palestinian conflict and forced both sides towards political diplomacy.\n\nThe uprising began on 8 December 1987 when an Israeli military vehicle collided with Palestinian civilian cars near the Jabalia refugee camp in Gaza, killing four Palestinian workers. Rumours spread rapidly that the crash was deliberate retaliation for a fatal stabbing of an Israeli days earlier. At the victims\' funerals, spontaneous mass protests erupted against twenty years of military occupation, land confiscations, and curfews. When Israeli soldiers fired on the crowds, killing a 17-year-old demonstrator, riots engulfed the Gaza Strip and spread swiftly across the West Bank.\n\nThis explosion of anger rapidly organized into a structured civil rebellion directed by the Unified National Leadership of the Uprising (UNLU). Palestinians deployed civil disobedience, including general strikes, commercial closures, tax boycotts, and barricades, while youths threw stones and petrol bombs at Israeli patrols. In response, Israeli Defence Minister Yitzhak Rabin instituted an uncompromising "Iron Fist" policy, authorizing troops to use force, physical beatings ("broken bones"), mass arrests, and administrative detentions. However, international television news broadcasts of heavily armed Israeli soldiers beating unarmed teenagers created an immense public relations crisis for Israel, shattering its traditional reputation as an underdog defending itself and generating intense international diplomatic pressure.\n\nThis crisis also placed immense pressure on the official PLO leadership stranded in distant exile in Tunis. Fearing that local grassroots figures in the West Bank and Gaza—along with the newly formed Islamist group Hamas—were replacing his authority, Yasser Arafat made a historic diplomatic pivot. Addressing the UN General Assembly in Geneva in December 1988, Arafat officially renounced all forms of terrorism, recognised Israel\'s right to exist in peace, and accepted UN Resolutions 242 and 338. Consequently, the United States immediately ended its diplomatic freeze and opened direct dialogue with the PLO, laying the essential political foundation for future peace negotiations.',
+            },
+          ],
+          act: 4,
+          act_title:
+            'The Historical Verdict & Extended Writing — The Dynamics of the Intifada & The 1988 Geneva Turn',
+          text: '<span class="para-ref">[4.1]</span> The First Intifada was a popular grassroots civil rebellion led by local underground committees (the **Unified National Leadership of the Uprising, UNLU**). It mobilized entire communities through general strikes, commercial closures, tax boycotts, barricades, and teenagers hurling stones at Israeli patrols. In December 1987, the rival militant Islamist faction **Hamas** was founded, rejecting diplomacy and demanding the complete liberation of historic Palestine through armed struggle. In response, Defence Minister **Yitzhak Rabin** enforced an uncompromising **"Iron Fist"** policy, instructing troops to use force and "break their bones." Global television broadcasts of heavily armed soldiers beating stone-throwing youths shattered Israel’s traditional image as an underdog, transforming it in world opinion into an oppressive occupying power.\n\n<span class="para-ref">[4.2]</span> Crucially, the Intifada convinced Israeli military leaders, including Rabin, that permanent military occupation was unsustainable and that there was no purely military solution to the Palestinian question. Simultaneously, fearing that grassroots leaders inside the West Bank and Gaza were eclipsing his authority, Yasser Arafat seized the diplomatic initiative. Addressing the UN General Assembly in **Geneva** in **December 1988**, Arafat took the historic step of formally **renouncing all forms of terrorism**, recognizing the State of Israel’s right to exist in peace, and accepting UN Resolutions 242 and 338. This momentous concession satisfied longstanding American conditions, prompting the United States to open official diplomatic dialogue with the PLO for the first time.',
         },
       ],
       draw_tasks: [],
@@ -12494,22 +12623,56 @@ export const unitData = {
       ],
       sources: [
         {
-          title: 'Source A: Ariel Sharon Overlooking Beirut During the Lebanon Invasion (1982)',
-          src: '/images/sharon_yom_kippur.jpg',
-          source: '/images/sharon_yom_kippur.jpg',
-          caption: 'Ariel Sharon observing military positions on the outskirts of Beirut in 1982.',
+          letter: 'A',
+          title:
+            'Source A: Archival Photograph: Yasser Arafat Addressing the United Nations General Assembly in New York (13 November 1974)',
+          caption:
+            'PLO Chairman Yasser Arafat delivering his famous address to the UN General Assembly in New York, declaring: "Today I have come bearing an olive branch and a freedom fighter\'s gun. Do not let the olive branch fall from my hand."',
+          provenance: 'United Nations Audiovisual Photo Archive (Accession Ref: UN-DPI-1974-1113).',
+          source_context:
+            'This historic primary photograph records Yasser Arafat addressing the UN General Assembly on 13 November 1974. Arafat presented his famous dual-track doctrine, declaring that he held both an "olive branch and a freedom-fighter\'s gun," signaling that the PLO would pursue sovereign statehood through international diplomacy while refusing to abandon armed resistance.',
+          hinge_question:
+            'Why did Yasser Arafat’s speech to the United Nations in Source A provoke both diplomatic breakthrough and intense controversy across the international community?',
+          type: 'visual',
+          src: '/images/cme_arafat_un_1974.png',
+          image: '/images/cme_arafat_un_1974.png',
           question:
-            "What were Sharon's strategic goals in Lebanon, and how did the Kahan Commission hold him indirectly responsible for the Sabra and Shatila massacre?",
+            'Study Source A. Why did Yasser Arafat’s speech to the United Nations in Source A provoke both diplomatic breakthrough and intense controversy across the international community?',
         },
         {
+          letter: 'B',
           title:
-            'Source B: Palestinian Youths at Street Barricades During the First Intifada (December 1987)',
-          src: '/units/cme_new/assets/first_intifada.png',
-          source: '/units/cme_new/assets/first_intifada.png',
+            "Source B: Military Operations Map of the 1982 Lebanon Invasion ('Operation Peace for Galilee')",
           caption:
-            'Masked Palestinian youths throwing stones and confronting Israeli troops behind burning tyre barricades in the West Bank during the First Intifada.',
+            'Operational map showing Israeli advance routes into southern Lebanon in June 1982, pushing past the initial 40 km buffer zone to encircle West Beirut.',
+          provenance: 'IDF Southern Command Cartographic Records (Accession Ref: IDF-LEB-1982).',
+          source_context:
+            'This military map illustrates the multi-pronged Israeli armored invasion of Lebanon in June 1982. While Prime Minister Begin had publicly pledged that Israeli troops would advance no further than 40 kilometres to create a security buffer for northern Galilee, the map proves that Sharon drove columns over 80 kilometres north, confronting Syrian forces and encircling Beirut.',
+          hinge_question:
+            'How does the operational map in Source B demonstrate why Ariel Sharon was accused of deceiving the Israeli Cabinet regarding the true objectives of Operation Peace for Galilee?',
+          type: 'visual',
+          src: '/images/cme_lebanon_1982_campaign_map.png',
+          image: '/images/cme_lebanon_1982_campaign_map.png',
           question:
-            'How did the visual imagery of teenage stone-throwers confronting heavily armed IDF soldiers transform global public sympathy in favour of the Palestinians?',
+            'Study Source B. How does the operational map in Source B demonstrate why Ariel Sharon was accused of deceiving the Israeli Cabinet regarding the true objectives of Operation Peace for Galilee?',
+        },
+        {
+          letter: 'C',
+          title:
+            'Source C: Archival Photograph: Palestinian Youths at Barricades During the First Intifada (Gaza, December 1987)',
+          caption:
+            'Palestinian youths confronting Israeli armoured vehicles with stones behind burning tyre barricades in the Gaza Strip during the opening weeks of the First Intifada.',
+          provenance:
+            'Associated Press Photo Archive, Gaza Bureau (Accession Ref: AP-GAZ-1987-1215).',
+          source_context:
+            'This primary photograph records the asymmetric street fighting that characterized the First Intifada in December 1987. Unlike earlier cross-border guerrilla raids conducted by armed PLO commandos, the Intifada was a spontaneous, grassroots civil rebellion driven by local teenagers living under military occupation who used stones and civil disobedience against heavily armored Israeli soldiers.',
+          hinge_question:
+            'How does Source C illustrate why the First Intifada transformed the international image of the Israeli-Palestinian conflict from an Arab military threat into an unequal struggle between an occupying army and civilian youths?',
+          type: 'visual',
+          src: '/units/cme_new/assets/first_intifada.png',
+          image: '/units/cme_new/assets/first_intifada.png',
+          question:
+            'Study Source C. How does Source C illustrate why the First Intifada transformed the international image of the Israeli-Palestinian conflict from an Arab military threat into an unequal struggle between an occupying army and civilian youths?',
         },
       ],
       learning_objectives: {
@@ -12999,16 +13162,6 @@ export const unitData = {
         guidance:
           'Task: Where on the scale do you place the uprising, and what is your single piece of historical evidence justifying why the PLO in Tunis was caught off guard?',
       },
-      primary_source: {
-        title: 'Source A: Ariel Sharon Overlooking Beirut During the Lebanon Invasion (June 1982)',
-        src: '/units/cme_new/assets/ariel_sharon.webp',
-        caption:
-          'Primary Photograph: Israeli Defence Minister Ariel Sharon surveying the besieged Lebanese capital of Beirut through binoculars in June 1982.',
-        question:
-          'Study Source A. Why did Defence Minister Ariel Sharon push the Israeli military invasion all the way to Beirut, and why did the siege provoke intense domestic and international opposition?',
-        model_answer:
-          "Source A shows Ariel Sharon directing Operation Peace for Galilee. Although the Israeli cabinet had initially approved a limited 40-kilometre incursion to protect northern settlements from PLO Katyusha rockets, Sharon deliberately expanded the offensive to lay siege to Beirut. His goal was to destroy the PLO's military infrastructure completely and install a pro-Israeli Christian Maronite government under Bachir Gemayel. However, the relentless artillery bombardment of civilian areas in Beirut and the subsequent massacre of thousands of refugees by Phalangist militias at Sabra and Shatila provoked international outrage and a 400,000-strong protest in Tel Aviv.",
-      },
       timeline_anchor: [
         {
           date: '13 Nov 1974',
@@ -13058,9 +13211,8 @@ export const unitData = {
     {
       id: 'lesson_13',
       key_individual: {
-        anchor_act: 9,
-        anchor_title:
-          'Signing the Oslo I Accords: The Declaration of Principles (13 September 1993)',
+        anchor_act: 2,
+        anchor_title: 'Act 2: Escalation & Breakthrough — The Secret Oslo Channel & 1993 Handshake',
         anchor_rationale:
           'Anchored directly adjacent to the historic 13 September 1993 White House handshake between Rabin and Arafat signing Oslo I.',
         name: 'Yitzhak Rabin',
@@ -13335,240 +13487,221 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          text: "**The Demographic Influx: Soviet Jewish Immigration & US Pressure (1989–1992):** With the collapse of the Soviet Union, over **400,000 Soviet Jews** immigrated to Israel between 1989 and 1992. When Prime Minister **Yitzhak Shamir** directed immigrants into West Bank settlements, US President George H.W. Bush withheld **$10 billion in US loan guarantees** until settlement expansion ceased. This economic pressure contributed to Labour\'s election victory under **Yitzhak Rabin** in 1992 on a peace platform.",
-          level_4:
-            'By late 1988, PLO Chairman Yasser Arafat realized that the political landscape was shifting beneath his feet. Arafat faced a major dilemma: his leadership was being rapidly overshadowed by new, highly popular underground leaders in the Unified National Leadership of the Uprising (UNLU) and radical Islamist groups like Hamas and Islamic Jihad.',
-          image: '/images/oslo_handshake.jpg',
-          caption:
-            'Yitzhak Rabin, Bill Clinton, and Yasser Arafat at the White House in September 1993.',
-        },
-        {
-          text: '**Arafat\'s 1988 Geneva Renunciation of Terrorism:** <img src="/units/cme_new/assets/arafat_1988.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_1988">',
-          level_4:
-            '<img src="/units/cme_new/assets/arafat_1988.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_1988">',
-        },
-        {
-          text: '**The Gulf War 1991 & The Bankruptcy of the PLO:** During the **1990–1991 Gulf War**, Yasser Arafat made a disastrous strategic error by openly backing Saddam Hussein after Iraq invaded Kuwait. When the US-led coalition expelled Iraqi forces, wealthy Gulf states severed funding to the PLO and expelled 300,000 Palestinian workers from Kuwait. Bankrupted, diplomatically isolated, and weakened by the Intifada, Arafat was compelled to seek a negotiated settlement.',
-          level_4:
-            'To regain political control, Arafat enacted a historic shift in PLO strategy. This met the long-standing US conditions for official diplomatic contact, forcing the Reagan administration to open formal diplomatic talks with the PLO.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'How did Yasser Arafat enact a historic shift in PLO strategy in December 1988, and what was the international reaction? (P3)',
-              starter: 'In December 1988, Arafat shifted PLO strategy by...',
-              model:
-                "Addressing the UN General Assembly in Geneva, Arafat explicitly recognized Israel's right to exist in peace and security, accepted UN Resolutions 242 and 338, and renounced all forms of terrorism. This historic pivot accepted the 'Two-State Solution' and satisfied US conditions, prompting President Reagan to open the first direct, official diplomatic dialogue with the PLO.",
-              model_answer:
-                "Addressing the UN General Assembly in Geneva, Arafat explicitly recognized Israel's right to exist in peace and security, accepted UN Resolutions 242 and 338, and renounced all forms of terrorism. This historic pivot accepted the 'Two-State Solution' and satisfied US conditions, prompting President Reagan to open the first direct, official diplomatic dialogue with the PLO.",
-            },
+          title:
+            'Act 1: Context & Catalyst — Soviet Collapse, Gulf War Disaster & The Road to Madrid (1989–1992)',
+          paragraphs: [
+            '<span class="para-ref">[1.1]</span> The collapse of the Soviet Union (1989–1991) fundamentally transformed the geopolitical landscape of the Middle East. The PLO and hardline Arab states lost their primary diplomatic patron, arms supplier, and superpower shield. Simultaneously, over **400,000 Soviet Jews immigrated to Israel** between 1989 and 1992, placing massive financial strain on the Israeli state. When right-wing Prime Minister **Yitzhak Shamir** directed these immigrants into West Bank settlements, US President George H.W. Bush dramatically intervened by withholding **$10 billion in US loan guarantees** until settlement construction ceased. This unprecedented American financial pressure exposed Israel’s economic reliance on Washington and undermined Shamir’s Likud government.',
+            '<span class="para-ref">[1.2]</span> Concurrently, the PLO suffered a catastrophic self-inflicted blow during the **1990–1991 Gulf War**. When Iraqi dictator Saddam Hussein invaded Kuwait, PLO Chairman **Yasser Arafat made the disastrous decision to publicly endorse Saddam**, hoping Iraq would link its withdrawal to Palestinian statehood. Following the swift US-led coalition victory, infuriated Gulf monarchies—especially Saudi Arabia and Kuwait—severed all financial subsidies to the PLO and expelled over **300,000 Palestinian workers**. Bankrupt, diplomatically isolated, and outflanked by the grassroots momentum of the First Intifada inside the occupied territories, Arafat was in a desperate position. Leveraging this historic alignment of superpower dominance, the US and USSR co-sponsored the **Madrid Peace Conference in October 1991** (<span class="archival-meta-tag">Source A</span>), seating Israeli and Arab delegates together for the first time. Although formal public negotiations deadlocked, the June 1992 election of **Yitzhak Rabin\'s Labour government** on a peace platform created an opening for genuine diplomacy.',
           ],
-        },
-        {
-          text: "**The 1991 Madrid Conference & The 1992 Labour Election Victory:** In October 1991, the US and Soviet Union co-sponsored the **Madrid Peace Conference**, seating Israeli and Arab delegations at the same table for the first time. Although formal talks stalled, the election of **Yitzhak Rabin's** Labour government in June 1992 created real momentum for territorial compromise and direct diplomacy.",
-          level_4:
-            'The international geopolitical order was completely transformed between 1989 and 1991. The dissolution of the Soviet Union (USSR) in December 1991 brought an end to the Cold War and fundamentally altered the balance of power in the Middle East.',
-        },
-        {
-          text: '**The Collapse of the Soviet Union & Immigration Surge (1989–92):** <img src="/units/cme_new/assets/soviet_collapse.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="soviet_collapse">',
-          level_4:
-            '<img src="/units/cme_new/assets/soviet_collapse.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="soviet_collapse">',
-        },
-        {
-          type: 'causal_diagram',
-          id: 'road_to_oslo',
-          title: 'Causal Convergence: The Breakthrough to the 1993 Oslo Accords',
-          lead: 'The historic handshake between Yitzhak Rabin and Yasser Arafat resulted from the convergence of profound global shifts and mutual exhaustion.',
-          branches: [
-            {
-              category: '1. Demographic & Economic Pressures (1989–92)',
-              color: '#0284c7',
-              steps: [
-                'Collapse of the Soviet Union releases 400,000+ Soviet Jewish immigrants to Israel.',
-                'Israel desperately needs US loan guarantees ($10 billion) to absorb the new arrivals.',
-                'President Bush Sr. freezes loan guarantees until Israel halts West Bank settlement expansion.',
-              ],
-            },
-            {
-              category: '2. The First Intifada & Military Stalemate (1987–93)',
-              color: '#dc2626',
-              steps: [
-                'Grassroots Palestinian uprising proves the military occupation cannot be sustained by force.',
-                'Rabin\'s "Iron Fist" fails to break Palestinian resistance; moral cost shocks Israeli society.',
-                'Israel realizes dealing with moderate secular PLO leadership is better than rising Islamist Hamas.',
-              ],
-            },
-            {
-              category: '3. PLO Weakness & Diplomatic Isolation (1990–92)',
-              color: '#d97706',
-              steps: [
-                'Arafat makes catastrophic error backing Saddam Hussein in the 1990–91 Gulf War.',
-                'Gulf States expel 300,000 Palestinian workers and cut all financial aid to the PLO.',
-                'Bankrupt and sidelined by local West Bank leaders, Arafat needs a diplomatic lifeline.',
-              ],
-            },
-            {
-              category: '4. Norwegian Backchannel & Leadership Alignment (1992–93)',
-              color: '#16a34a',
-              steps: [
-                '1992 Israeli election: Labour\'s Yitzhak Rabin and Shimon Peres win on a "peace platform".',
-                'Official Madrid talks stall, but Norwegian diplomats Terje Rød-Larsen and Mona Juul open secret talks.',
-                'Secret meetings at a secluded farmhouse in Sarpsborg bypass public hardliners on both sides.',
-              ],
-            },
-          ],
-          convergence: {
-            date: '13 September 1993',
-            title: 'Signing of the Declaration of Principles (Oslo I)',
-            desc: 'On the White House Lawn, Rabin and Arafat shake hands before President Clinton, establishing mutual recognition and phased Palestinian self-rule in Gaza and Jericho.',
-          },
-        },
-        {
-          text: "**The Secret Oslo Backchannel: The Norwegian Farmhouse Negotiations (1993):** While official talks stalled in Washington, a secret backchannel was established near **Oslo, Norway**, hosted by Norwegian diplomats. Israeli academic Yair Hirschfeld met senior PLO official Ahmed Qurei in complete secrecy. In September 1993, Rabin and Arafat exchanged formal **Letters of Mutual Recognition**: Israel recognized the PLO as the representative of the Palestinian people, while the PLO recognized Israel's right to exist in peace and security.",
-          level_4:
-            'The collapse of the USSR was a devastating blow to the PLO, which lost its primary funding and diplomatic backing. Arafat made the disastrous decision to publicly support Saddam Hussein.',
-        },
-        {
-          text: '**The 1990–91 Gulf War Disaster & PLO Bankruptcy:** <img src="/units/cme_new/assets/arafat_saddam.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_saddam">',
-          level_4:
-            '<img src="/units/cme_new/assets/arafat_saddam.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="arafat_saddam">',
           source: {
+            letter: 'A',
             title:
-              'Source B: King Hussein and Yitzhak Rabin Signing the Israel-Jordan Peace Treaty (26 October 1994)',
-            src: '/images/king_hussein.jpg',
+              'Source A: Archival Photograph: The Opening Session of the Madrid Peace Conference (October 1991)',
             caption:
-              'King Hussein of Jordan and Israeli Prime Minister Yitzhak Rabin sign the Israel-Jordan Treaty of Peace in the Arava Valley on 26 October 1994, witnessed by President Bill Clinton.',
-            teacher_notes: {
-              primer: 'Discuss the momentum of the peace process following Oslo.',
-              objectives: [
-                {
-                  objective: 'Understand regional normalization',
-                  primer:
-                    'Explain how Jordan became the second Arab nation to make peace with Israel.',
-                  question:
-                    'What does this source reveal about the broader regional impacts of the Oslo Accords?',
-                },
-              ],
-            },
+              'Delegates from Israel, Egypt, Syria, Lebanon, and a joint Jordanian-Palestinian delegation convene in Madrid under the co-sponsorship of the United States and the Soviet Union.',
+            provenance:
+              'US Department of State Diplomatic Photographic Archive (Accession Ref: DOS-MADRID-1991).',
+            source_context:
+              'This primary photograph records the opening session of the historic Madrid Peace Conference on 30 October 1991. Following the 1991 Gulf War and the collapse of the Soviet Union, US President George H.W. Bush utilized unprecedented American geopolitical leverage to bring Israeli, Jordanian, Syrian, Lebanese, and Palestinian delegates into direct face-to-face negotiations for the first time in history. Hinge Question: Why did the convening of the Madrid Peace Conference in Source A represent a dramatic psychological turning point in Middle Eastern diplomacy despite producing few immediate formal treaties?',
+            hinge_question:
+              'Why did the convening of the Madrid Peace Conference in Source A represent a dramatic psychological turning point in Middle Eastern diplomacy despite producing few immediate formal treaties?',
+            type: 'visual',
+            src: '/images/cme_madrid_conference_1991.jpg',
+            image: '/images/cme_madrid_conference_1991.jpg',
             question:
-              'Study Source B. Why was King Hussein of Jordan willing to sign a formal peace treaty with Israel in 1994 following the momentum of the Oslo Accords?',
-            model_answer:
-              "Source B demonstrates the regional diplomatic momentum unleashed by Oslo. Once the PLO had formally recognized Israel, King Hussein felt politically free to normalize relations without being accused of betraying the Palestinians. Jordan shared Israel's longest land border and had maintained secret intelligence communications with Israeli leaders for decades. The treaty settled territorial disputes in the Arava Valley, secured vital water-sharing agreements for Jordan from the Sea of Galilee, recognized Jordan's special historic role over Muslim holy shrines in Jerusalem, and cemented Jordan's strategic alliance with the United States.",
+              'Study Source A. Why did the convening of the Madrid Peace Conference in Source A represent a dramatic psychological turning point in Middle Eastern diplomacy despite producing few immediate formal treaties?',
           },
-        },
-        {
-          text: '**Signing the Oslo I Accords: The Declaration of Principles (13 September 1993):** On **13 September 1993**, on the White House lawn, Rabin and Arafat signed the **Oslo I Accords (Declaration of Principles)**, sealed with an iconic handshake witnessed by President Bill Clinton. Oslo I established a five-year interim timetable:\n<ul>\n  <li>Israel agreed to withdraw from the **Gaza Strip and the West Bank town of Jericho** (formalized in the 1994 Cairo Agreement).</li>\n  <li>A newly established **Palestinian National Authority (PNA)**, headed by Arafat, would govern civil affairs and security in these areas.</li>\n  <li>Explosive permanent status issues—Jerusalem, refugees, borders, and settlements—were postponed to future final-status negotiations.</li>\n</ul>',
-          level_4:
-            "Outraged by Arafat's betrayal, wealthy Gulf Arab states cut off all financial donations. Rabin authorized secret, back-channel negotiations in Oslo, Norway.",
-        },
-        {
-          text: '**The Israel-Jordan Treaty 1994 & The Cairo Agreement (Gaza-Jericho):** In May 1994, Rabin and Arafat signed the Cairo Agreement, and on 1 July 1994, Arafat returned from exile to lead the Palestinian Authority. Five months later, on **26 October 1994**, King Hussein of Jordan and Yitzhak Rabin signed the formal **Israel-Jordan Peace Treaty**, resolving water rights and borders. Jordan became the second Arab state to normalize relations with Israel, and Rabin, Peres, and Arafat were jointly awarded the 1994 Nobel Peace Prize.',
-          level_4:
-            '<img src="/units/cme_new/assets/labour_govt.svg" class="svg-diagram" style="width: 100%; max-width: 350px; display: block; margin: 15px auto; border-radius: 8px;" alt="labour_govt">',
           tasks: [
             {
-              type: 'written',
-              text: 'Why did Yitzhak Rabin and Yasser Arafat agree to secret back-channel negotiations in Norway leading to the 1993 Oslo Accords? (P10)',
-              starter: 'Rabin and Arafat pursued secret talks in Oslo because...',
-              model:
-                'Both leaders faced mounting crises: Arafat was bankrupt and diplomatically isolated after backing Saddam Hussein in the 1991 Gulf War, while Rabin faced the rising threat of Islamic extremism from Hamas in Gaza. Bypassing rigid public diplomacy, secret talks in Oslo brokered mutual recognition (Letters of Mutual Recognition) and an interim framework for Palestinian self-government in Gaza and Jericho.',
+              id: 'task_13_1',
+              title: 'Task 1: Word Scalpel & Geopolitical Catalysts — The Road to Madrid',
+              instructions:
+                'Using Source A and paragraphs [1.1] and [1.2], explain how the collapse of the Soviet Union, US financial leverage, and the 1991 Gulf War compelled both Israel and the PLO to attend the Madrid Peace Conference.',
+              scaffolding: {
+                sentence_starter:
+                  'The end of the Cold War and the 1991 Gulf War compelled both Israel and the PLO to negotiate because...',
+                connectives: [
+                  'Following the collapse of the Soviet Union, the PLO lost...',
+                  'Meanwhile, US President George H.W. Bush exerted unprecedented financial leverage over Israel by...',
+                  "Arafat's catastrophic decision to support Saddam Hussein left the PLO...",
+                  'Consequently, the 1991 Madrid Peace Conference shown in Source A broke diplomatic taboos by...',
+                ],
+              },
               model_answer:
-                'Both leaders faced mounting crises: Arafat was bankrupt and diplomatically isolated after backing Saddam Hussein in the 1991 Gulf War, while Rabin faced the rising threat of Islamic extremism from Hamas in Gaza. Bypassing rigid public diplomacy, secret talks in Oslo brokered mutual recognition (Letters of Mutual Recognition) and an interim framework for Palestinian self-government in Gaza and Jericho.',
+                "The collapse of the Soviet Union and the 1991 Gulf War dramatically transformed the balance of power, forcing both sides to the negotiating table. For the PLO, the dissolution of the USSR removed its vital superpower sponsor and diplomatic shield. Arafat's disastrous public endorsement of Saddam Hussein's invasion of Kuwait alienated wealthy Gulf donor states, who halted financial subsidies and expelled 300,000 Palestinian workers, leaving the PLO bankrupted and isolated. Simultaneously, Israel was inundated by over 400,000 Soviet Jewish immigrants, requiring massive capital absorption. When Prime Minister Shamir directed settlement expansion in the West Bank, US President Bush withheld $10 billion in loan guarantees, using financial leverage to compel Israeli attendance. As shown in Source A, these converging pressures culminated in the October 1991 Madrid Peace Conference, which shattered decades of diplomatic deadlock by placing Israeli, Arab, and Palestinian representatives in direct face-to-face talks for the first time.",
+              question:
+                'Using Source A and paragraphs [1.1] and [1.2], explain how the collapse of the Soviet Union, US financial leverage, and the 1991 Gulf War compelled both Israel and the PLO to attend the Madrid Peace Conference.',
+              text: 'Using Source A and paragraphs [1.1] and [1.2], explain how the collapse of the Soviet Union, US financial leverage, and the 1991 Gulf War compelled both Israel and the PLO to attend the Madrid Peace Conference.',
+              model:
+                "The collapse of the Soviet Union and the 1991 Gulf War dramatically transformed the balance of power, forcing both sides to the negotiating table. For the PLO, the dissolution of the USSR removed its vital superpower sponsor and diplomatic shield. Arafat's disastrous public endorsement of Saddam Hussein's invasion of Kuwait alienated wealthy Gulf donor states, who halted financial subsidies and expelled 300,000 Palestinian workers, leaving the PLO bankrupted and isolated. Simultaneously, Israel was inundated by over 400,000 Soviet Jewish immigrants, requiring massive capital absorption. When Prime Minister Shamir directed settlement expansion in the West Bank, US President Bush withheld $10 billion in loan guarantees, using financial leverage to compel Israeli attendance. As shown in Source A, these converging pressures culminated in the October 1991 Madrid Peace Conference, which shattered decades of diplomatic deadlock by placing Israeli, Arab, and Palestinian representatives in direct face-to-face talks for the first time.",
             },
           ],
+          act: 1,
+          act_title:
+            'Context & Catalyst — Soviet Collapse, Gulf War Disaster & The Road to Madrid (1989–1992)',
+          text: '<span class="para-ref">[1.1]</span> The collapse of the Soviet Union (1989–1991) fundamentally transformed the geopolitical landscape of the Middle East. The PLO and hardline Arab states lost their primary diplomatic patron, arms supplier, and superpower shield. Simultaneously, over **400,000 Soviet Jews immigrated to Israel** between 1989 and 1992, placing massive financial strain on the Israeli state. When right-wing Prime Minister **Yitzhak Shamir** directed these immigrants into West Bank settlements, US President George H.W. Bush dramatically intervened by withholding **$10 billion in US loan guarantees** until settlement construction ceased. This unprecedented American financial pressure exposed Israel’s economic reliance on Washington and undermined Shamir’s Likud government.\n\n<span class="para-ref">[1.2]</span> Concurrently, the PLO suffered a catastrophic self-inflicted blow during the **1990–1991 Gulf War**. When Iraqi dictator Saddam Hussein invaded Kuwait, PLO Chairman **Yasser Arafat made the disastrous decision to publicly endorse Saddam**, hoping Iraq would link its withdrawal to Palestinian statehood. Following the swift US-led coalition victory, infuriated Gulf monarchies—especially Saudi Arabia and Kuwait—severed all financial subsidies to the PLO and expelled over **300,000 Palestinian workers**. Bankrupt, diplomatically isolated, and outflanked by the grassroots momentum of the First Intifada inside the occupied territories, Arafat was in a desperate position. Leveraging this historic alignment of superpower dominance, the US and USSR co-sponsored the **Madrid Peace Conference in October 1991** (<span class="archival-meta-tag">Source A</span>), seating Israeli and Arab delegates together for the first time. Although formal public negotiations deadlocked, the June 1992 election of **Yitzhak Rabin\'s Labour government** on a peace platform created an opening for genuine diplomacy.',
         },
         {
-          text: '<img src="/units/cme_new/assets/israel_jordan.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="israel_jordan">',
-          level_4:
-            '<img src="/units/cme_new/assets/israel_jordan.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="israel_jordan">',
-        },
-        {
-          text: '**The Rise of Extremism: The Hebron Mosque Massacre & Hamas Suicide Bombings (1994):** Extremists mobilized violently against the peace process. On **25 February 1994**, Jewish extremist settler **Baruch Goldstein** shot dead 29 Palestinian worshippers inside the Ibrahimi Mosque in Hebron. In retaliation, **Hamas** launched a wave of **suicide bus bombings** across Israeli cities, killing dozens of civilians and sparking intense fear among Israeli voters about their security.',
-          level_4:
-            'On 28 September 1995, Rabin and Arafat signed the Oslo II Accords, which detailed the expansion of Palestinian self-rule across the West Bank by dividing it into three zones.',
+          title: 'Act 2: Escalation & Breakthrough — The Secret Oslo Channel & 1993 Handshake',
+          paragraphs: [
+            '<span class="para-ref">[2.1]</span> Frustrated by public posturing and procedural deadlock at official talks in Washington, newly elected Israeli Prime Minister **Yitzhak Rabin** and Foreign Minister **Shimon Peres** authorized a deniable, secret diplomatic backchannel. Beginning in **January 1993**, Norwegian social scientist Terje Rød-Larsen and Foreign Minister Johan Jørgen Holst hosted 14 clandestine rounds of direct negotiations between Israeli academics and senior PLO representatives in isolated country houses near **Oslo, Norway**. Free from media scrutiny and political posturing, the negotiators forged personal bonds and crafted an unprecedented bilateral compromise: **mutual diplomatic recognition**.',
+            '<span class="para-ref">[2.2]</span> In early September 1993, Rabin and Arafat signed the historic **Letters of Mutual Recognition**: the PLO formally recognized Israel’s right to exist in peace and security, accepted UN Resolutions 242 and 338, and renounced all forms of terrorism; in return, Israel officially recognized the PLO as the legitimate representative of the Palestinian people. This paved the way for the signing of the **Declaration of Principles (Oslo I)** on **13 September 1993** on the South Lawn of the White House (<span class="archival-meta-tag">Source B</span>). Before 3,000 dignitaries and a global television audience, US President Bill Clinton gently nudged Rabin and Arafat into a historic handshake. Oslo I established a 5-year interim timetable for Palestinian self-government, beginning with Israeli withdrawal from the **Gaza Strip and the West Bank town of Jericho**, while deferring explosive "permanent status" issues—Jerusalem, refugees, borders, and Jewish settlements—to future talks.',
+          ],
           source: {
-            title: 'Source C: Map of the West Bank under the Oslo II Agreement (1995)',
+            letter: 'B',
+            title:
+              'Source B: Archival Photograph: The Historic Oslo I Handshake on the White House Lawn (13 September 1993)',
+            caption:
+              'Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shake hands on the South Lawn of the White House, hosted by US President Bill Clinton, following the signing of the Declaration of Principles.',
+            provenance: 'White House Photographic Office (Accession Ref: WHPO-1993-0913).',
+            source_context:
+              'This iconic primary photograph captures Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shaking hands on the South Lawn of the White House on 13 September 1993, with US President Bill Clinton standing between them. The handshake sealed the Declaration of Principles (Oslo I), following the secret Norwegian backchannel negotiations that produced mutual diplomatic recognition between Israel and the PLO. Hinge Question: How does Source B capture the psychological breakthrough of mutual recognition, and why did this iconic handshake provoke ferocious opposition from hardliners on both sides?',
+            hinge_question:
+              'How does Source B capture the psychological breakthrough of mutual recognition, and why did this iconic handshake provoke ferocious opposition from hardliners on both sides?',
+            type: 'visual',
+            src: '/images/oslo_handshake.jpg',
+            image: '/images/oslo_handshake.jpg',
+            question:
+              'Study Source B. How does Source B capture the psychological breakthrough of mutual recognition, and why did this iconic handshake provoke ferocious opposition from hardliners on both sides?',
+          },
+          tasks: [
+            {
+              id: 'task_13_2',
+              title: 'Task 2: Turning Point & The Architecture of Oslo I',
+              instructions:
+                'Using Source B and paragraphs [2.1]–[2.2], explain why the secret Norwegian backchannel succeeded where official talks had failed and how the Letters of Mutual Recognition transformed Arab-Israeli relations.',
+              scaffolding: {
+                sentence_starter:
+                  'The secret Oslo backchannel succeeded in achieving a historic breakthrough because...',
+                connectives: [
+                  'By conducting 14 rounds of secret talks in secluded Norwegian villas...',
+                  'The decisive diplomatic breakthrough occurred through the Letters of Mutual Recognition, in which...',
+                  'As visualised in the iconic White House handshake in Source B...',
+                  'However, the framework contained a fundamental structural risk by postponing...',
+                ],
+              },
+              model_answer:
+                "The secret Norwegian backchannel succeeded where official public diplomacy had stalled because it removed the talks from media sensationalism, political posturing, and hardline domestic scrutiny. By meeting in informal, secluded villas near Oslo, Israeli and PLO negotiators built genuine mutual trust over 14 rounds of talks. The decisive breakthrough came with the exchange of Letters of Mutual Recognition: Arafat formally committed the PLO to peaceful coexistence, renounced terrorism, and recognized Israel's right to exist, while Rabin officially recognized the PLO as the legitimate representative of the Palestinian people. As shown in Source B, this mutual recognition culminated in the historic 13 September 1993 White House handshake. However, while Oslo I successfully created the Palestinian National Authority and granted interim self-rule in Gaza and Jericho, it contained a critical flaw: it deferred the most combustible final-status questions—Jerusalem, Palestinian refugees, borders, and settlements—to later negotiations, leaving the fragile peace vulnerable to extremist disruption.",
+              question:
+                'Using Source B and paragraphs [2.1]–[2.2], explain why the secret Norwegian backchannel succeeded where official talks had failed and how the Letters of Mutual Recognition transformed Arab-Israeli relations.',
+              text: 'Using Source B and paragraphs [2.1]–[2.2], explain why the secret Norwegian backchannel succeeded where official talks had failed and how the Letters of Mutual Recognition transformed Arab-Israeli relations.',
+              model:
+                "The secret Norwegian backchannel succeeded where official public diplomacy had stalled because it removed the talks from media sensationalism, political posturing, and hardline domestic scrutiny. By meeting in informal, secluded villas near Oslo, Israeli and PLO negotiators built genuine mutual trust over 14 rounds of talks. The decisive breakthrough came with the exchange of Letters of Mutual Recognition: Arafat formally committed the PLO to peaceful coexistence, renounced terrorism, and recognized Israel's right to exist, while Rabin officially recognized the PLO as the legitimate representative of the Palestinian people. As shown in Source B, this mutual recognition culminated in the historic 13 September 1993 White House handshake. However, while Oslo I successfully created the Palestinian National Authority and granted interim self-rule in Gaza and Jericho, it contained a critical flaw: it deferred the most combustible final-status questions—Jerusalem, Palestinian refugees, borders, and settlements—to later negotiations, leaving the fragile peace vulnerable to extremist disruption.",
+            },
+          ],
+          act: 2,
+          act_title: 'Escalation & Breakthrough — The Secret Oslo Channel & 1993 Handshake',
+          text: '<span class="para-ref">[2.1]</span> Frustrated by public posturing and procedural deadlock at official talks in Washington, newly elected Israeli Prime Minister **Yitzhak Rabin** and Foreign Minister **Shimon Peres** authorized a deniable, secret diplomatic backchannel. Beginning in **January 1993**, Norwegian social scientist Terje Rød-Larsen and Foreign Minister Johan Jørgen Holst hosted 14 clandestine rounds of direct negotiations between Israeli academics and senior PLO representatives in isolated country houses near **Oslo, Norway**. Free from media scrutiny and political posturing, the negotiators forged personal bonds and crafted an unprecedented bilateral compromise: **mutual diplomatic recognition**.\n\n<span class="para-ref">[2.2]</span> In early September 1993, Rabin and Arafat signed the historic **Letters of Mutual Recognition**: the PLO formally recognized Israel’s right to exist in peace and security, accepted UN Resolutions 242 and 338, and renounced all forms of terrorism; in return, Israel officially recognized the PLO as the legitimate representative of the Palestinian people. This paved the way for the signing of the **Declaration of Principles (Oslo I)** on **13 September 1993** on the South Lawn of the White House (<span class="archival-meta-tag">Source B</span>). Before 3,000 dignitaries and a global television audience, US President Bill Clinton gently nudged Rabin and Arafat into a historic handshake. Oslo I established a 5-year interim timetable for Palestinian self-government, beginning with Israeli withdrawal from the **Gaza Strip and the West Bank town of Jericho**, while deferring explosive "permanent status" issues—Jerusalem, refugees, borders, and Jewish settlements—to future talks.',
+        },
+        {
+          title:
+            'Act 3: Forensic Evidence & Compromise — Regional Peace & The Oslo II Partition (1994–1995)',
+          paragraphs: [
+            '<span class="para-ref">[3.1]</span> The breakthrough of Oslo I unleashed immediate regional diplomatic momentum. In May 1994, Rabin and Arafat signed the **Cairo Agreement (Gaza-Jericho Agreement)**, initiating the withdrawal of Israeli forces and enabling Yasser Arafat to make a triumphant return from exile on 1 July 1994 to head the newly established **Palestinian National Authority (PNA)**. Recognizing that the PLO had made peace with Israel, **King Hussein of Jordan** felt politically liberated to formalize relations. On **26 October 1994**, Jordan and Israel signed a comprehensive **Peace Treaty** in the Arava Valley, settling border disputes, guaranteeing Jordanian water quotas from the Sea of Galilee, and recognizing Jordan’s historic custody over Islamic holy sites in Jerusalem. In December 1994, Rabin, Peres, and Arafat were jointly awarded the **Nobel Peace Prize**.',
+            '<span class="para-ref">[3.2]</span> However, translating interim principles into broader territorial self-rule across the West Bank proved intensely difficult. On **28 September 1995**, Rabin and Arafat signed the **Interim Agreement on the West Bank and Gaza Strip (Oslo II / Taba Agreement)**. Oslo II partitioned the West Bank into three distinct administrative categories (<span class="archival-meta-tag">Source C</span>): **Area A (18% of land, 55% of Palestinians)** encompassing major urban cities under full PNA civil and internal security control; **Area B (22% of land, 41% of Palestinians)** covering 450 rural towns and villages under PNA civil administration but joint Israeli military security; and **Area C (60% of land, 4% of Palestinians)** covering all open land, strategic aquifers, Jordan Valley borders, and all **130 Jewish settlements**, remaining under exclusive Israeli civil and military control. This created an archipelago of non-contiguous Palestinian enclaves surrounded by Israeli military checkpoints.',
+          ],
+          source: {
+            letter: 'C',
+            title:
+              'Source C: Cartographic Map: The Fragmentation of the West Bank into Areas A, B, and C under Oslo II (1995)',
+            caption:
+              'Official map illustrating the territorial division of the West Bank under the 1995 Oslo II Agreement: Area A (Palestinian civil & security control), Area B (Palestinian civil & Israeli security control), and Area C (full Israeli military & civil control covering 60% of the land).',
+            provenance:
+              'United Nations Office for the Coordination of Humanitarian Affairs (OCHA) Cartographic Section.',
+            source_context:
+              'This cartographic map illustrates the territorial fragmentation of the West Bank established under the September 1995 Oslo II Accord. Rather than establishing a contiguous territorial base for a future Palestinian state, the West Bank was carved into a complex patchwork: Area A (18% of land, covering Palestinian cities under full PA civil and security control), Area B (22% of land, under PA civil but shared Israeli security control), and Area C (60% of land, containing all Jewish settlements, military bases, bypass roads, and borders under exclusive Israeli control). Hinge Question: Why did the fragmented territorial distribution of Areas A, B, and C shown in Source C lead many Palestinians to conclude that Oslo II created an unviable patchwork of isolated cantons rather than a sovereign state?',
+            hinge_question:
+              'Why did the fragmented territorial distribution of Areas A, B, and C shown in Source C lead many Palestinians to conclude that Oslo II created an unviable patchwork of isolated cantons rather than a sovereign state?',
+            type: 'visual',
             src: '/images/cme_oslo_areas_map.png',
-            caption:
-              'Map illustrating the territorial fragmentation of the West Bank: Area A (green, Palestinian cities with civil and security control), Area B (red, joint Israeli-Palestinian control), and Area C (pink, full Israeli civil and military control covering 60% of the land).',
+            image: '/images/cme_oslo_areas_map.png',
             question:
-              'Study Source C. Study the distribution of Areas A, B, and C on the map. Why did this fragmented "archipelago" of isolated Palestinian enclaves lead many Palestinians to view Oslo II as an unworkable compromise?',
-            model_answer:
-              'Source C illustrates the fragmentation of the West Bank into three separate zones: Area A (full Palestinian civil and security control, covering only 3% of the land and major cities), Area B (Palestinian civil control but joint Israeli security control, 24%), and Area C (complete Israeli civil and military control, covering 73% including all Jewish settlements, bypass roads, and borders). This created a disconnected "archipelago" of isolated Palestinian enclaves surrounded by Israeli checkpoints and military zones, preventing contiguous travel and convincing many Palestinians that Oslo was institutionalizing permanent Israeli occupation rather than leading to a viable sovereign state.',
+              'Study Source C. Why did the fragmented territorial distribution of Areas A, B, and C shown in Source C lead many Palestinians to conclude that Oslo II created an unviable patchwork of isolated cantons rather than a sovereign state?',
           },
+          tasks: [
+            {
+              id: 'task_13_3',
+              title: 'Task 3: Forensic Partition Analysis — The Oslo II Tripartite Division',
+              instructions:
+                'Using Source C and paragraphs [3.1]–[3.2], explain how the Oslo II Accords divided the West Bank into Areas A, B, and C and why this territorial fragmentation generated fierce criticism from Palestinians.',
+              scaffolding: {
+                sentence_starter:
+                  'Under the 1995 Oslo II Agreement shown in Source C, the West Bank was partitioned into three distinct administrative zones...',
+                connectives: [
+                  'Area A granted the Palestinian Authority civil and security control over...',
+                  'In contrast, Area C remained under exclusive Israeli military control, covering...',
+                  'This territorial division generated severe Palestinian criticism because...',
+                  'Consequently, critics argued that the archipelago of checkpoints and enclaves...',
+                ],
+              },
+              model_answer:
+                "Under the 1995 Oslo II Agreement (Source C), the West Bank was carved into three separate administrative categories. Area A gave the Palestinian Authority full civil and security control over major Palestinian cities (comprising 18% of the land and over half the population). Area B (22% of the land) placed Palestinian towns under PA civil administration but maintained overriding Israeli military control. Crucially, Area C comprised 60% of the entire West Bank—including all agricultural open land, water aquifers, strategic borders, and Jewish settlements—under total Israeli civil and military authority. As shown on the map, this fragmentation divided Palestinian territory into isolated, non-contiguous enclaves ('cantons') entirely bisected by Israeli bypass roads and military checkpoints. Palestinians bitterly criticized Oslo II because it severely restricted freedom of movement, failed to halt ongoing Jewish settlement expansion, and appeared to institutionalize permanent Israeli occupation rather than pave the way for a viable, contiguous sovereign state.",
+              question:
+                'Using Source C and paragraphs [3.1]–[3.2], explain how the Oslo II Accords divided the West Bank into Areas A, B, and C and why this territorial fragmentation generated fierce criticism from Palestinians.',
+              text: 'Using Source C and paragraphs [3.1]–[3.2], explain how the Oslo II Accords divided the West Bank into Areas A, B, and C and why this territorial fragmentation generated fierce criticism from Palestinians.',
+              model:
+                "Under the 1995 Oslo II Agreement (Source C), the West Bank was carved into three separate administrative categories. Area A gave the Palestinian Authority full civil and security control over major Palestinian cities (comprising 18% of the land and over half the population). Area B (22% of the land) placed Palestinian towns under PA civil administration but maintained overriding Israeli military control. Crucially, Area C comprised 60% of the entire West Bank—including all agricultural open land, water aquifers, strategic borders, and Jewish settlements—under total Israeli civil and military authority. As shown on the map, this fragmentation divided Palestinian territory into isolated, non-contiguous enclaves ('cantons') entirely bisected by Israeli bypass roads and military checkpoints. Palestinians bitterly criticized Oslo II because it severely restricted freedom of movement, failed to halt ongoing Jewish settlement expansion, and appeared to institutionalize permanent Israeli occupation rather than pave the way for a viable, contiguous sovereign state.",
+            },
+          ],
+          act: 3,
+          act_title:
+            'Forensic Evidence & Compromise — Regional Peace & The Oslo II Partition (1994–1995)',
+          text: '<span class="para-ref">[3.1]</span> The breakthrough of Oslo I unleashed immediate regional diplomatic momentum. In May 1994, Rabin and Arafat signed the **Cairo Agreement (Gaza-Jericho Agreement)**, initiating the withdrawal of Israeli forces and enabling Yasser Arafat to make a triumphant return from exile on 1 July 1994 to head the newly established **Palestinian National Authority (PNA)**. Recognizing that the PLO had made peace with Israel, **King Hussein of Jordan** felt politically liberated to formalize relations. On **26 October 1994**, Jordan and Israel signed a comprehensive **Peace Treaty** in the Arava Valley, settling border disputes, guaranteeing Jordanian water quotas from the Sea of Galilee, and recognizing Jordan’s historic custody over Islamic holy sites in Jerusalem. In December 1994, Rabin, Peres, and Arafat were jointly awarded the **Nobel Peace Prize**.\n\n<span class="para-ref">[3.2]</span> However, translating interim principles into broader territorial self-rule across the West Bank proved intensely difficult. On **28 September 1995**, Rabin and Arafat signed the **Interim Agreement on the West Bank and Gaza Strip (Oslo II / Taba Agreement)**. Oslo II partitioned the West Bank into three distinct administrative categories (<span class="archival-meta-tag">Source C</span>): **Area A (18% of land, 55% of Palestinians)** encompassing major urban cities under full PNA civil and internal security control; **Area B (22% of land, 41% of Palestinians)** covering 450 rural towns and villages under PNA civil administration but joint Israeli military security; and **Area C (60% of land, 4% of Palestinians)** covering all open land, strategic aquifers, Jordan Valley borders, and all **130 Jewish settlements**, remaining under exclusive Israeli civil and military control. This created an archipelago of non-contiguous Palestinian enclaves surrounded by Israeli military checkpoints.',
         },
         {
-          text: '**Oslo II / The Taba Agreement (September 1995): Dividing the West Bank into Areas A, B, and C:** On **28 September 1995**, Rabin and Arafat signed the **Oslo II Accords**, dividing the West Bank into three administrative zones:\n<ul>\n  <li><strong>Area A (18% of land, 55% of Palestinian population):</strong> Full Palestinian Authority civil and security control over major Palestinian cities.</li>\n  <li><strong>Area B (22% of land, 41% of Palestinian population):</strong> Palestinian civil control with joint Israeli-Palestinian security control.</li>\n  <li><strong>Area C (60% of land, 4% of Palestinian population):</strong> Complete Israeli military and civil control, containing all Jewish settlements and strategic roads.</li>\n</ul>\nThis fragmentation disappointed Palestinians while angering right-wing Israelis who opposed yielding any biblical land.',
-          level_4:
-            'While Oslo II was celebrated, the division triggered a massive political backlash. Right-wing Israelis were outraged by Rabin\'s concessions.\n<img src="/units/cme_new/assets/oslo2.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="oslo2">',
+          title:
+            'Act 4: Historical Verdict & Extended Writing — Extremist Backlash, Rabin’s Assassination & Deadlock',
+          paragraphs: [
+            '<span class="para-ref">[4.1]</span> Territorial compromise provoked violent resistance from ideological extremists on both fringes who rejected any mutual coexistence. On **25 February 1994**, radical American-Israeli settler **Baruch Goldstein** opened fire with an automatic rifle inside Hebron’s **Ibrahimi Mosque**, murdering 29 Palestinian worshippers during Ramadan. In declared retaliation, the militant Islamist group **Hamas** and Palestinian Islamic Jihad launched a devastating campaign of **suicide bus bombings** inside Tel Aviv, Jerusalem, and Afula, killing scores of Israeli civilians and severely eroding the Israeli public’s faith in the peace process. Simultaneously, right-wing Israeli nationalist and religious factions mounted venomous campaigns against Prime Minister Rabin, depicting him at street rallies in Nazi SS uniforms and branding him a traitor for ceding biblical land ("Judea and Samaria").',
+            '<span class="para-ref">[4.2]</span> On the evening of **4 November 1995**, following a massive peace rally of over 100,000 citizens in Tel Aviv’s Kings of Israel Square under the banner "Yes to Peace, No to Violence" (<span class="archival-meta-tag">Source D</span>), **Yitzhak Rabin was assassinated**. As the Prime Minister walked toward his car having just sung "A Song for Peace," **Yigal Amir**, a 25-year-old right-wing Jewish law student and religious extremist, shot Rabin at point-blank range in the back. Amir declared that Jewish law sanctioned the murder of any leader who surrendered ancestral land to non-Jews. Rabin’s assassination dealt a devastating, fatal psychological blow to the peace process. Deprived of Rabin’s unmatched military credibility and stature, the peace movement foundered; in May 1996, following renewed Hamas bus bombings, Israeli voters narrowly elected right-wing Likud leader **Benjamin Netanyahu**, who opposed the Oslo Accords. By deferring permanent status issues and failing to curb extremist violence on either side, the Oslo framework collapsed into mutual recrimination and eventual deadlock.',
+          ],
           source: {
+            letter: 'D',
             title:
-              'Source D: Peace Rally in Tel Aviv Moments Before the Assassination of Yitzhak Rabin (4 November 1995)',
-            src: '/units/cme_new/assets/rabinovich_cover.png',
+              'Source D: Archival Photograph: The Tel Aviv Peace Rally Moments Before the Assassination of Yitzhak Rabin (4 November 1995)',
             caption:
-              'Yitzhak Rabin addresses over 100,000 Israelis at the Kings of Israel Square in Tel Aviv singing "A Song for Peace" moments before he was assassinated by a right-wing Jewish extremist.',
-            teacher_notes: {
-              primer:
-                'Focus on the devastating impact of this event on the momentum of the peace process.',
-              objectives: [
-                {
-                  objective: 'Assess the opposition to peace',
-                  primer:
-                    'Discuss the deep divisions within Israeli society over the Oslo Accords.',
-                  question:
-                    'What does this source reveal about the intense polarization in Israel regarding the peace process?',
-                },
-              ],
-            },
+              'Prime Minister Yitzhak Rabin addresses over 100,000 Israelis singing "A Song for Peace" at the Kings of Israel Square in Tel Aviv minutes before he was shot dead by a right-wing Jewish extremist.',
+            provenance:
+              'Israel Government Press Office (GPO) Photographic Archive (Accession Ref: GPO-1995-1104).',
+            source_context:
+              'This tragic primary photograph captures Prime Minister Yitzhak Rabin addressing an assembly of more than 100,000 Israelis in Tel Aviv on 4 November 1995 under the banner "Yes to Peace, No to Violence". Moments after singing "Shir LaShalom" ("A Song for Peace"), Rabin was shot at point-blank range by Yigal Amir, an ultranationalist Jewish extremist determined to stop territorial compromise. Hinge Question: How does Source D illustrate the tragic reality that the Oslo peace process was derailed not by external Arab armies, but by internal political violence and ideological polarization within Israeli society?',
+            hinge_question:
+              'How does Source D illustrate the tragic reality that the Oslo peace process was derailed not by external Arab armies, but by internal political violence and ideological polarization within Israeli society?',
+            type: 'visual',
+            src: '/units/cme_new/assets/rabinovich_cover.png',
+            image: '/units/cme_new/assets/rabinovich_cover.png',
             question:
-              'Study Source D. What does this massive peace rally reveal about the deep polarization within Israeli society between supporters of the peace process and right-wing extremists?',
-            model_answer:
-              'Source D captures the fragile climax of the peace movement. Over 100,000 Israelis gathered under the banner "Yes to Peace, No to Violence" to demonstrate public support for Rabin amid escalating venomous opposition from right-wing nationalist and religious groups who accused Rabin of treason for ceding biblical land. Minutes after singing "The Song for Peace", Rabin was shot dead by Yigal Amir, a religious Jewish extremist who believed killing the Prime Minister was divinely sanctioned to stop the peace accords. Rabin\'s assassination shattered the momentum of the Oslo peace process, demonstrating that internal violent extremism within both Israeli and Palestinian societies possessed the power to derail peace.',
+              'Study Source D. How does Source D illustrate the tragic reality that the Oslo peace process was derailed not by external Arab armies, but by internal political violence and ideological polarization within Israeli society?',
           },
           tasks: [
             {
-              type: 'written',
-              text: 'Explain how the Oslo II Accord (1995) divided the West Bank into Areas A, B, and C, and why this division drew fierce criticism. (P14)',
-              starter: 'Oslo II divided the West Bank into...',
-              model:
-                "The West Bank was divided into Area A (full Palestinian civil and security control, covering just 3% of the land in major cities), Area B (Palestinian civil control, shared Israeli security control, covering 24%), and Area C (full Israeli military and civil control over 73% of the territory, including all Jewish settlements and borders). Critics argued this created isolated, non-contiguous Palestinian 'cantons' or enclaves surrounded by Israeli checkpoints, rendering a genuine sovereign state impossible.",
+              id: 'task_13_4',
+              title:
+                'Task 4: Edexcel GCSE Paper 2 Consequence Practice (4 Marks) — The Assassination of Yitzhak Rabin',
+              instructions:
+                'Write a high-yield 4-mark consequence answer evaluating the impact of the assassination of Yitzhak Rabin on 4 November 1995 using the P-F-C (Point • Fact • Consequence) structure strip.',
+              scaffolding: {
+                acronym: 'P-F-C (Point • Fact • Consequence)',
+                sentence_starter:
+                  'One major consequence of the assassination of Yitzhak Rabin on 4 November 1995 was...',
+                connectives: [
+                  'Specifically, after addressing a 100,000-strong peace rally in Tel Aviv...',
+                  'Consequently, this dealt a mortal blow to the peace process because...',
+                ],
+              },
               model_answer:
-                "The West Bank was divided into Area A (full Palestinian civil and security control, covering just 3% of the land in major cities), Area B (Palestinian civil control, shared Israeli security control, covering 24%), and Area C (full Israeli military and civil control over 73% of the territory, including all Jewish settlements and borders). Critics argued this created isolated, non-contiguous Palestinian 'cantons' or enclaves surrounded by Israeli checkpoints, rendering a genuine sovereign state impossible.",
+                "One major consequence of the assassination of Yitzhak Rabin on 4 November 1995 was the collapse of momentum and mutual trust in the Oslo peace process. Specifically, following a massive Tel Aviv peace rally, Rabin was shot dead at point-blank range by Yigal Amir, a right-wing Jewish religious extremist determined to halt the surrender of biblical land to Palestinians. Consequently, this eliminated the only Israeli leader who possessed the immense military prestige and credibility necessary to convince the security establishment and public to accept territorial compromise. Rabin's death left the peace process fatally vulnerable, directly contributing to the May 1996 election of right-wing Likud leader Benjamin Netanyahu on a platform of security skepticism, effectively stalling further implementation of the Oslo Accords.",
+              question:
+                'Explain one consequence of the assassination of Yitzhak Rabin on 4 November 1995. [4 marks]',
+              text: 'Explain one consequence of the assassination of Yitzhak Rabin on 4 November 1995. [4 marks]',
+              model:
+                "One major consequence of the assassination of Yitzhak Rabin on 4 November 1995 was the collapse of momentum and mutual trust in the Oslo peace process. Specifically, following a massive Tel Aviv peace rally, Rabin was shot dead at point-blank range by Yigal Amir, a right-wing Jewish religious extremist determined to halt the surrender of biblical land to Palestinians. Consequently, this eliminated the only Israeli leader who possessed the immense military prestige and credibility necessary to convince the security establishment and public to accept territorial compromise. Rabin's death left the peace process fatally vulnerable, directly contributing to the May 1996 election of right-wing Likud leader Benjamin Netanyahu on a platform of security skepticism, effectively stalling further implementation of the Oslo Accords.",
             },
           ],
-        },
-        {
-          type: 'photo_slider',
-          tag: 'Diplomatic Partition (1993–1995)',
-          title: 'The Oslo Accords: From Undivided West Bank to Oslo II Areas A, B, and C (1995)',
-          description:
-            'Slide the divider to examine the territorial fragmentation of the West Bank under the 1995 Oslo II Agreement. While the 1994 Cairo Agreement granted limited self-rule only to Gaza and Jericho, Oslo II carved the West Bank into a patchwork of Area A (full Palestinian control over major cities), Area B (joint security control), and Area C (full Israeli military and civil control over 60% of the land, including settlements and the Jordan Valley).',
-          before_image: '/images/palestine_1967_six_day_war_map.png',
-          before_label: 'Pre-Oslo: Undivided West Bank Occupation',
-          after_image: '/images/cme_oslo_areas_map.png',
-          after_label: 'Oslo II (1995): Fragmented Areas A, B, and C',
-          aspect_ratio: '1 / 1',
-          object_fit: 'contain',
-        },
-        {
-          text: '**The Tragic Climax: The Assassination of Yitzhak Rabin (4 November 1995):** Right-wing opposition to Oslo surged in Israel, with ultranationalists denouncing Rabin as a traitor. On the evening of **4 November 1995**, following a massive peace rally of 100,000 people in Tel Aviv, Jewish religious extremist **Yigal Amir** assassinated Prime Minister **Yitzhak Rabin**, shooting him at point-blank range. Rabin’s assassination dealt a mortal blow to the peace process, shattering mutual trust and leaving the implementation of Oslo critically compromised.',
-          level_4:
-            'On 4 November 1995, Yitzhak Rabin was assassinated at a peace rally in Tel Aviv by Yigal Amir, a radical right-wing Jewish law student. The assassination dealt a fatal blow to the peace process, leaving the "permanent status" issues completely unresolved.\n<img src="/units/cme_new/assets/deadlock.svg" class="svg-diagram" style="width: 100%; max-width: 300px; display: block; margin: 15px auto; border-radius: 8px;" alt="deadlock">',
-          tasks: [
-            {
-              type: 'written',
-              text: 'How did extremists on both sides—Hamas suicide bombers and Jewish ultranationalists—attempt to sabotage the peace process between 1994 and 1995? (P15)',
-              starter: 'Extremists attempted to destroy the peace process through...',
-              model:
-                'In February 1994, Baruch Goldstein, a radical Jewish settler, murdered 29 Palestinians in Hebron. Hamas exploited this to launch a wave of devastating suicide bus bombings inside Israeli cities, killing dozens of civilians and swaying Israeli public opinion against concessions. The cycle of hatred culminated on 4 November 1995, when Israeli Prime Minister Yitzhak Rabin was assassinated at a Tel Aviv peace rally by Yigal Amir, a right-wing Jewish extremist, dealing a fatal blow to the momentum of the Oslo peace process.',
-              model_answer:
-                'In February 1994, Baruch Goldstein, a radical Jewish settler, murdered 29 Palestinians in Hebron. Hamas exploited this to launch a wave of devastating suicide bus bombings inside Israeli cities, killing dozens of civilians and swaying Israeli public opinion against concessions. The cycle of hatred culminated on 4 November 1995, when Israeli Prime Minister Yitzhak Rabin was assassinated at a Tel Aviv peace rally by Yigal Amir, a right-wing Jewish extremist, dealing a fatal blow to the momentum of the Oslo peace process.',
-            },
-          ],
-        },
-        {
-          text: '**Historical Verdict: The Flaws and Legacy of Oslo:** Rabin’s assassination exposed the fatal weakness of the Oslo Accords. By deferring the hardest permanent status issues—Jerusalem, refugees, final borders, and settlements—the Accords created a dangerous vacuum of uncertainty. Israeli hardliners viewed territorial concessions as a security threat, while Palestinians saw continued settlement growth and checkpoint fragmentation as a betrayal of true independence. Ultimately, peace could not survive without the mutual trust the framework postponed.',
-          level_4:
-            "The assassination of Rabin highlighted the deep structural flaws of the Oslo Accords. The agreement delayed the most difficult 'permanent status' issues—such as borders, Jerusalem, refugees, and settlements—to a later date. This delay created a dangerous vacuum of uncertainty. Right-wing Israelis viewed land concessions as a threat, while Palestinian hardliners argued the PNA failed to deliver true sovereignty or halt settlement expansion. The Accords required a high level of mutual trust that did not exist.",
+          act: 4,
+          act_title:
+            'Historical Verdict & Extended Writing — Extremist Backlash, Rabin’s Assassination & Deadlock',
+          text: '<span class="para-ref">[4.1]</span> Territorial compromise provoked violent resistance from ideological extremists on both fringes who rejected any mutual coexistence. On **25 February 1994**, radical American-Israeli settler **Baruch Goldstein** opened fire with an automatic rifle inside Hebron’s **Ibrahimi Mosque**, murdering 29 Palestinian worshippers during Ramadan. In declared retaliation, the militant Islamist group **Hamas** and Palestinian Islamic Jihad launched a devastating campaign of **suicide bus bombings** inside Tel Aviv, Jerusalem, and Afula, killing scores of Israeli civilians and severely eroding the Israeli public’s faith in the peace process. Simultaneously, right-wing Israeli nationalist and religious factions mounted venomous campaigns against Prime Minister Rabin, depicting him at street rallies in Nazi SS uniforms and branding him a traitor for ceding biblical land ("Judea and Samaria").\n\n<span class="para-ref">[4.2]</span> On the evening of **4 November 1995**, following a massive peace rally of over 100,000 citizens in Tel Aviv’s Kings of Israel Square under the banner "Yes to Peace, No to Violence" (<span class="archival-meta-tag">Source D</span>), **Yitzhak Rabin was assassinated**. As the Prime Minister walked toward his car having just sung "A Song for Peace," **Yigal Amir**, a 25-year-old right-wing Jewish law student and religious extremist, shot Rabin at point-blank range in the back. Amir declared that Jewish law sanctioned the murder of any leader who surrendered ancestral land to non-Jews. Rabin’s assassination dealt a devastating, fatal psychological blow to the peace process. Deprived of Rabin’s unmatched military credibility and stature, the peace movement foundered; in May 1996, following renewed Hamas bus bombings, Israeli voters narrowly elected right-wing Likud leader **Benjamin Netanyahu**, who opposed the Oslo Accords. By deferring permanent status issues and failing to curb extremist violence on either side, the Oslo framework collapsed into mutual recrimination and eventual deadlock.',
         },
       ],
       quiz: [
@@ -14095,21 +14228,79 @@ export const unitData = {
       ],
       sources: [
         {
-          title: 'Source A: The Oslo Handshake on the White House Lawn (13 September 1993)',
-          src: '/images/oslo_handshake.jpg',
-          source: '/images/oslo_handshake.jpg',
-          caption: 'Rabin, Clinton, and Arafat at the signing of the Declaration of Principles.',
+          letter: 'A',
+          title:
+            'Source A: Archival Photograph: The Opening Session of the Madrid Peace Conference (October 1991)',
+          caption:
+            'Delegates from Israel, Egypt, Syria, Lebanon, and a joint Jordanian-Palestinian delegation convene in Madrid under the co-sponsorship of the United States and the Soviet Union.',
+          provenance:
+            'US Department of State Diplomatic Photographic Archive (Accession Ref: DOS-MADRID-1991).',
+          source_context:
+            'This primary photograph records the opening session of the historic Madrid Peace Conference on 30 October 1991. Following the 1991 Gulf War and the collapse of the Soviet Union, US President George H.W. Bush utilized unprecedented American geopolitical leverage to bring Israeli, Jordanian, Syrian, Lebanese, and Palestinian delegates into direct face-to-face negotiations for the first time in history. Hinge Question: Why did the convening of the Madrid Peace Conference in Source A represent a dramatic psychological turning point in Middle Eastern diplomacy despite producing few immediate formal treaties?',
+          hinge_question:
+            'Why did the convening of the Madrid Peace Conference in Source A represent a dramatic psychological turning point in Middle Eastern diplomacy despite producing few immediate formal treaties?',
+          type: 'visual',
+          src: '/images/cme_madrid_conference_1991.jpg',
+          image: '/images/cme_madrid_conference_1991.jpg',
+          source: '/images/cme_madrid_conference_1991.jpg',
           question:
-            'What were the immediate achievements of the 1993 Oslo I Accord for both Israel and the PLO?',
+            'Study Source A. Why did the convening of the Madrid Peace Conference in Source A represent a dramatic psychological turning point in Middle Eastern diplomacy despite producing few immediate formal treaties?',
         },
         {
-          title: 'Source B: The Oslo II Map of West Bank Areas A, B, and C (1995)',
-          src: '/images/cme_oslo_areas_map.png',
-          source: '/images/cme_oslo_areas_map.png',
+          letter: 'B',
+          title:
+            'Source B: Archival Photograph: The Historic Oslo I Handshake on the White House Lawn (13 September 1993)',
           caption:
-            'Map showing the territorial fragmentation of the West Bank under the 1995 Oslo II Accord: Area A (green, Palestinian civil & security control), Area B (dark red, Palestinian civil & Israeli security control), and Area C (pink, full Israeli civil & military control).',
+            'Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shake hands on the South Lawn of the White House, hosted by US President Bill Clinton, following the signing of the Declaration of Principles.',
+          provenance: 'White House Photographic Office (Accession Ref: WHPO-1993-0913).',
+          source_context:
+            'This iconic primary photograph captures Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shaking hands on the South Lawn of the White House on 13 September 1993, with US President Bill Clinton standing between them. The handshake sealed the Declaration of Principles (Oslo I), following the secret Norwegian backchannel negotiations that produced mutual diplomatic recognition between Israel and the PLO. Hinge Question: How does Source B capture the psychological breakthrough of mutual recognition, and why did this iconic handshake provoke ferocious opposition from hardliners on both sides?',
+          hinge_question:
+            'How does Source B capture the psychological breakthrough of mutual recognition, and why did this iconic handshake provoke ferocious opposition from hardliners on both sides?',
+          type: 'visual',
+          src: '/images/oslo_handshake.jpg',
+          image: '/images/oslo_handshake.jpg',
+          source: '/images/oslo_handshake.jpg',
           question:
-            'Why did the division into separate enclaves (Areas A, B, and C) lead critics to argue that Oslo created a permanent patchwork of non-contiguous cantons rather than a viable sovereign state?',
+            'Study Source B. How does Source B capture the psychological breakthrough of mutual recognition, and why did this iconic handshake provoke ferocious opposition from hardliners on both sides?',
+        },
+        {
+          letter: 'C',
+          title:
+            'Source C: Cartographic Map: The Fragmentation of the West Bank into Areas A, B, and C under Oslo II (1995)',
+          caption:
+            'Official map illustrating the territorial division of the West Bank under the 1995 Oslo II Agreement: Area A (Palestinian civil & security control), Area B (Palestinian civil & Israeli security control), and Area C (full Israeli military & civil control covering 60% of the land).',
+          provenance:
+            'United Nations Office for the Coordination of Humanitarian Affairs (OCHA) Cartographic Section.',
+          source_context:
+            'This cartographic map illustrates the territorial fragmentation of the West Bank established under the September 1995 Oslo II Accord. Rather than establishing a contiguous territorial base for a future Palestinian state, the West Bank was carved into a complex patchwork: Area A (18% of land, covering Palestinian cities under full PA civil and security control), Area B (22% of land, under PA civil but shared Israeli security control), and Area C (60% of land, containing all Jewish settlements, military bases, bypass roads, and borders under exclusive Israeli control). Hinge Question: Why did the fragmented territorial distribution of Areas A, B, and C shown in Source C lead many Palestinians to conclude that Oslo II created an unviable patchwork of isolated cantons rather than a sovereign state?',
+          hinge_question:
+            'Why did the fragmented territorial distribution of Areas A, B, and C shown in Source C lead many Palestinians to conclude that Oslo II created an unviable patchwork of isolated cantons rather than a sovereign state?',
+          type: 'visual',
+          src: '/images/cme_oslo_areas_map.png',
+          image: '/images/cme_oslo_areas_map.png',
+          source: '/images/cme_oslo_areas_map.png',
+          question:
+            'Study Source C. Why did the fragmented territorial distribution of Areas A, B, and C shown in Source C lead many Palestinians to conclude that Oslo II created an unviable patchwork of isolated cantons rather than a sovereign state?',
+        },
+        {
+          letter: 'D',
+          title:
+            'Source D: Archival Photograph: The Tel Aviv Peace Rally Moments Before the Assassination of Yitzhak Rabin (4 November 1995)',
+          caption:
+            'Prime Minister Yitzhak Rabin addresses over 100,000 Israelis singing "A Song for Peace" at the Kings of Israel Square in Tel Aviv minutes before he was shot dead by a right-wing Jewish extremist.',
+          provenance:
+            'Israel Government Press Office (GPO) Photographic Archive (Accession Ref: GPO-1995-1104).',
+          source_context:
+            'This tragic primary photograph captures Prime Minister Yitzhak Rabin addressing an assembly of more than 100,000 Israelis in Tel Aviv on 4 November 1995 under the banner "Yes to Peace, No to Violence". Moments after singing "Shir LaShalom" ("A Song for Peace"), Rabin was shot at point-blank range by Yigal Amir, an ultranationalist Jewish extremist determined to stop territorial compromise. Hinge Question: How does Source D illustrate the tragic reality that the Oslo peace process was derailed not by external Arab armies, but by internal political violence and ideological polarization within Israeli society?',
+          hinge_question:
+            'How does Source D illustrate the tragic reality that the Oslo peace process was derailed not by external Arab armies, but by internal political violence and ideological polarization within Israeli society?',
+          type: 'visual',
+          src: '/units/cme_new/assets/rabinovich_cover.png',
+          image: '/units/cme_new/assets/rabinovich_cover.png',
+          source: '/units/cme_new/assets/rabinovich_cover.png',
+          question:
+            'Study Source D. How does Source D illustrate the tragic reality that the Oslo peace process was derailed not by external Arab armies, but by internal political violence and ideological polarization within Israeli society?',
         },
       ],
       hook_text:
@@ -14465,16 +14656,6 @@ export const unitData = {
           'Headline B (Skeptical / Militant View - Hamas or Right-Wing Israeli Settler): Condemning the accords as a fatal betrayal.',
         ],
         guidance: 'Strict constraint: Exactly 6 words per headline!',
-      },
-      primary_source: {
-        title: 'Source A: The Historic Oslo Handshake on the White House Lawn (13 September 1993)',
-        src: '/images/oslo_handshake.jpg',
-        caption:
-          'Primary Photograph: Israeli Prime Minister Yitzhak Rabin and PLO Chairman Yasser Arafat shake hands on the White House lawn, encouraged by US President Bill Clinton, following the signing of the Oslo Accord on 13 September 1993.',
-        question:
-          'Study Source A. Why did the visual handshake between Rabin and Arafat symbolize an astonishing diplomatic breakthrough, and what major obstacles remained unresolved?',
-        model_answer:
-          "Source A was an extraordinary visual turning point: for decades, Israel had officially branded the PLO a terrorist organization, while the PLO's charter had called for Israel's destruction. The handshake symbolized mutual recognition: the PLO formally recognized Israel's right to exist in peace and renounced terrorism, while Israel recognized the PLO as the legitimate representative of the Palestinian people and agreed to phased self-rule in Gaza and Jericho. However, the accord left the four most volatile \"final status\" issues unresolved: the status of Jerusalem, the right of return for refugees, Jewish settlements, and final sovereign borders.",
       },
       timeline_anchor: [
         {
