@@ -111,13 +111,13 @@ const kt3Configs = [
       },
       {
         step: 3,
-        date: 'Sept 1975',
+        date: '5 June 1975',
         questionHeading:
-          'Why was the return of the Abu Rudeis oilfields so vital for Egypt’s economy?',
-        bullets: ['Sinai II Accord', 'Abu Rudeis Oilfields', 'Renounce Armed Force'],
-        keywords: ['Sinai II Accord', 'Abu Rudeis Oilfields', 'Renounce Armed Force'],
-        clue: "Why was the return of the Abu Rudeis oilfields so vital for Egypt's economy?",
-        title: 'The Sinai II Agreement',
+          'Why was the reopening of the Suez Canal in 1975 a vital economic and symbolic breakthrough?',
+        bullets: ['Suez Reopened 1975', '8-Year Blockade Ends', 'Vital Toll Revenues'],
+        keywords: ['Suez Reopened 1975', '8-Year Blockade Ends', 'Vital Toll Revenues'],
+        clue: 'Why was the reopening of the Suez Canal in 1975 a vital economic and symbolic breakthrough?',
+        title: 'Reopening the Suez Canal (1975)',
       },
       {
         step: 4,

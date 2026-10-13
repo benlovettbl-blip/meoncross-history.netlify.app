@@ -17,8 +17,6 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
     protocolTimeout: 600000,
     args: ['--allow-file-access-from-files', '--no-sandbox', '--disable-setuid-sandbox'],
   });
-  const page = await browser.newPage();
-  await page.setViewport({ width: 1200, height: 1600 });
 
   const targetFiles = [];
 
@@ -103,7 +101,10 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
     const docName = path.basename(htmlPath);
     console.log(`\n🔍 Auditing Page Budget & Layout: ${docName}...`);
 
+    let page;
     try {
+      page = await browser.newPage();
+      await page.setViewport({ width: 1200, height: 1600 });
       await page.goto(localUrl, { waitUntil: 'domcontentloaded', timeout: 300000 });
       await new Promise((r) => setTimeout(r, 600));
 
@@ -165,10 +166,16 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
     } catch (err) {
       console.error(`❌ Failed to audit ${docName}:`, err.message);
       totalErrors++;
+    } finally {
+      if (page && !page.isClosed()) {
+        await page.close().catch(() => {});
+      }
     }
   }
 
-  await browser.close();
+  try {
+    await Promise.race([browser.close(), new Promise((resolve) => setTimeout(resolve, 2000))]);
+  } catch (_) {}
 
   if (totalErrors > 0) {
     console.error(`\n❌ Layout Overflows or Critical Voids detected! Total errors: ${totalErrors}`);
@@ -191,4 +198,5 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
       `\n🎉 Space Budget Gate Passed: 0 overflows and 0 pages exceeding ${maxAllowedDeadSpace}px dead space!`,
     );
   }
+  process.exit(0);
 })();

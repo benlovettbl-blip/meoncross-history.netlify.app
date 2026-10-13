@@ -9699,7 +9699,7 @@ export const unitData = {
             'It regained its full sovereign territory, oil fields, and total control over both banks of the Suez Canal',
           a: 'It regained its full sovereign territory, oil fields, and total control over both banks of the Suez Canal',
           explanation:
-            'Egypt recovered all the land it lost in 1967, reclaimed the Abu Rudeis oil fields, and removed the existential threat of Israeli military strikes across the Suez Canal.',
+            'Egypt recovered all the land it lost in 1967, reclaimed the Sinai Peninsula, and removed the existential threat of Israeli military strikes across the Suez Canal.',
         },
         {
           question:
