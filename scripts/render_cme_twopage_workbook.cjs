@@ -91,118 +91,80 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Arab leaders meet in Cairo',
-          'President Nasser',
-          'PLO created',
-          'Palestinian fighters (Fatah)',
-        ],
         date: 'January 1964',
+        questionHeading: 'Why did Arab leaders meet in Cairo and create the PLO in 1964?',
+        bullets: [
+          'Cairo Arab Summit (1964)',
+          'President Nasser leadership',
+          'PLO & Fatah armed resistance',
+        ],
+        keywords: [
+          'Cairo Arab Summit (1964)',
+          'President Nasser leadership',
+          'PLO & Fatah armed resistance',
+        ],
+        clue: 'Why did Arab leaders meet in Cairo and create the PLO in 1964?',
         title: 'The 1964 Cairo Conference & PLO Founded',
-        actor: 'President Nasser & The Arab League',
-        tag: 'Arab Resistance',
-        trigger:
-          'President Nasser hosts Arab heads of state in Cairo to coordinate opposition to Israel and establish the Palestine Liberation Organisation (PLO).',
-        because:
-          'Arab leaders wanted to show leadership on the Palestinian issue and control growing Palestinian guerrilla activity.',
-        therefore:
-          'Put the Palestinian cause back on the world stage; Yasser Arafat’s guerrilla group, Fatah, began launching independent sabotage raids into Israel.',
-        connective:
-          'Disputes over vital water supplies soon escalated border clashes between Israel and Syria...',
-        exam_link:
-          'Q2 Narrative Account: Marked the formal revival of Palestinian national resistance, leading to cross-border guerrilla raids.',
       },
       {
         step: 2,
-        keywords: [
-          'Dispute over river water',
-          'Syria tries to divert river',
-          'Israel shells diggers',
-          'Water needed for farms',
-        ],
         date: '1964–1965',
+        questionHeading: 'How did the dispute over River Jordan water spark military conflict?',
+        bullets: [
+          'Headwater Diversion Plan',
+          'National Water Carrier',
+          'IDF artillery shells diggers',
+        ],
+        keywords: [
+          'Headwater Diversion Plan',
+          'National Water Carrier',
+          'IDF artillery shells diggers',
+        ],
+        clue: 'How did the dispute over River Jordan water spark military conflict?',
         title: 'The Dispute Over the River Jordan Waterways',
-        actor: 'Israel & Syria',
-        tag: 'The Battle for Water',
-        trigger:
-          'Syria attempts to divert the headwaters feeding the River Jordan; Israeli artillery and tanks shell Syrian engineering machinery to stop construction.',
-        because:
-          'Israel relied on the River Jordan to irrigate its farms and towns, while Arab states sought to cut Israel’s fresh water supply.',
-        therefore:
-          'Showed that Israel was prepared to use pre-emptive military force to protect essential resources, making border shootouts a regular occurrence.',
-        connective:
-          'A radical new government in Syria began actively funding guerrilla attacks against Israel...',
-        exam_link:
-          'Q1 Consequence: Escalated border tensions between Israel and Syria, making military clashes frequent on the northern frontier.',
       },
       {
         step: 3,
-        keywords: [
-          'Syria helps guerrillas',
-          'Guns and money for Fatah',
-          'Landmines on border',
-          'Deadly border hotspot',
-        ],
         date: '1966',
+        questionHeading: 'Why did Syria sponsor Fatah guerrilla raids across the border?',
+        bullets: [
+          'Radical Syrian Ba’ath regime',
+          'Bases & arms for Fatah',
+          'Galilee landmine sabotage',
+        ],
+        keywords: [
+          'Radical Syrian Ba’ath regime',
+          'Bases & arms for Fatah',
+          'Galilee landmine sabotage',
+        ],
+        clue: 'Why did Syria sponsor Fatah guerrilla raids across the border?',
         title: 'Syrian Support for Fatah Border Raids',
-        actor: 'Syrian Government & Palestinian Guerrillas',
-        tag: 'Border Guerrilla Attacks',
-        trigger:
-          'The Syrian government begins openly supplying money, weapons, and bases to Fatah fighters launching landmine raids into northern Israel.',
-        because:
-          'Syrian leaders wanted to prove they were the most radical opponents of Israel and pressure other Arab states to take action.',
-        therefore:
-          'Cross-border guerrilla attacks into northern Israel multiplied, turning the Israeli-Syrian border into the most dangerous hotspot in the region.',
-        connective:
-          'Israel launched a large retaliatory raid across the Jordanian border to deter infiltrators...',
-        exam_link:
-          'Q2 Narrative Account: Syrian state backing for Fatah provoked heavy Israeli retaliation, bringing the region closer to war.',
       },
       {
         step: 4,
-        keywords: [
-          'Samu village raid',
-          'Israeli tanks cross border',
-          'Jordanian soldiers fight',
-          'Three Israeli police killed',
-        ],
         date: '13 November 1966',
+        questionHeading: 'What were the consequences of the Israeli reprisal raid on Samu?',
+        bullets: ['West Bank Samu raid', 'Jordanian soldiers clash', 'Arab unity fractured'],
+        keywords: ['West Bank Samu raid', 'Jordanian soldiers clash', 'Arab unity fractured'],
+        clue: 'What were the consequences of the Israeli reprisal raid on Samu?',
         title: 'The Israeli Raid on Samu',
-        actor: 'Israeli Defence Forces (IDF) & Jordan',
-        tag: 'The Reprisal Strike',
-        trigger:
-          'Israeli tanks and troops raid the village of Samu in the Jordanian-controlled West Bank, destroying houses and clashing with Jordanian soldiers.',
-        because:
-          'Israel retaliated after a Fatah landmine killed three Israeli border police near the frontier.',
-        therefore:
-          'Damaged relations between Arab states: Jordan’s King Hussein blamed Nasser for failing to support him, raising public pressure on Nasser to act tough.',
-        connective:
-          'Tensions reached boiling point in a major aerial clash over the Syrian border...',
-        exam_link:
-          'Q1 Consequence: Deepened divisions between Arab leaders and pressured Nasser into taking aggressive action to restore his leadership.',
       },
       {
         step: 5,
-        keywords: [
-          'Dogfight in the sky',
-          'Six Syrian jets shot down',
-          'Israeli planes fly over capital',
-          'Syria asks Egypt for help',
-        ],
         date: '7 April 1967',
+        questionHeading: 'How did the 7 April dogfight escalate tensions toward all-out war?',
+        bullets: [
+          '6 Syrian MiGs shot down',
+          'Mirage flights over Damascus',
+          'Soviet false warning triggered',
+        ],
+        keywords: [
+          '6 Syrian MiGs shot down',
+          'Mirage flights over Damascus',
+          'Soviet false warning triggered',
+        ],
+        clue: 'How did the 7 April dogfight escalate tensions toward all-out war?',
         title: 'The Aerial Battle of 7 April 1967',
-        actor: 'Israeli & Syrian Air Forces',
-        tag: 'The Final Spark',
-        trigger:
-          'After Syrian guns shell Israeli tractors in the border zone, Israeli fighter jets shoot down six Syrian MiG fighter planes and fly low over Damascus.',
-        because:
-          'Israel wanted to silence Syrian gun positions and demonstrate total command of the skies.',
-        therefore:
-          'Humiliated the Syrian government, leaving Syrian leaders demanding military help from Egypt and setting the stage for war in May 1967.',
-        connective:
-          'Desperate to deter another Israeli attack on Syria, the Soviet Union issued a fateful false warning to Nasser...',
-        exam_link:
-          'Q2 Narrative Account: The destruction of Syrian jets pushed Syria and the USSR to provoke the crisis that started the Six-Day War.',
       },
     ],
     vocabRef: '[Textbook §1.1–§1.2]',
@@ -268,118 +230,74 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'False Soviet warning',
-          '100,000 soldiers in Sinai',
-          'Egypt moves tanks to border',
-          'Tensions rise',
-        ],
         date: '13–15 May 1967',
+        questionHeading:
+          'How did Soviet false warnings trigger Egyptian troop mobilisation in Sinai?',
+        bullets: [
+          'Soviet false intelligence',
+          '100,000 troops into Sinai',
+          'Nasser reasserts leadership',
+        ],
+        keywords: [
+          'Soviet false intelligence',
+          '100,000 troops into Sinai',
+          'Nasser reasserts leadership',
+        ],
+        clue: 'How did Soviet false warnings trigger Egyptian troop mobilisation in Sinai?',
         title: 'Soviet False Reports & Egyptian Mobilisation',
-        actor: 'The Soviet Union & President Nasser',
-        tag: 'The False Warning',
-        trigger:
-          'The Soviet Union falsely tells Nasser that Israel is massing troops on the Syrian border; Nasser moves 100,000 Egyptian soldiers into the Sinai Desert.',
-        because:
-          'The Soviets wanted to deter an Israeli strike against Syria, while Nasser wanted to reassert his position as the leader of the Arab world.',
-        therefore:
-          'Started a rapid military buildup in Sinai that quickly spiraled out of control as both sides prepared for war.',
-        connective:
-          'To prove he was serious, Nasser took two dramatic steps that directly provoked Israel...',
-        exam_link:
-          'Q2 Narrative Account: Triggered the rapid chain of events in May 1967 that made a pre-emptive strike by Israel inevitable.',
       },
       {
         step: 2,
-        keywords: [
-          'UN peacekeepers kicked out',
-          'Straits of Tiran closed',
-          'Eilat port blocked',
-          'Jordan joins Egypt',
-        ],
         date: '16–23 May 1967',
+        questionHeading: 'Why was closing the Straits of Tiran treated by Israel as a casus belli?',
+        bullets: [
+          'UNEF peacekeepers expelled',
+          'Straits of Tiran blockaded',
+          'Eilat oil route severed',
+        ],
+        keywords: [
+          'UNEF peacekeepers expelled',
+          'Straits of Tiran blockaded',
+          'Eilat oil route severed',
+        ],
+        clue: 'Why was closing the Straits of Tiran treated by Israel as a casus belli?',
         title: 'UN Peacekeepers Expelled & Straits of Tiran Closed',
-        actor: 'Egypt & The United Nations',
-        tag: 'The Cause for War',
-        trigger:
-          'Nasser orders UN peacekeepers (UNEF) to leave the Sinai border and closes the Straits of Tiran to all Israeli shipping.',
-        because:
-          'Nasser believed this aggressive show of force would force Israel into a diplomatic climbdown without full-scale war.',
-        therefore:
-          'Cut off Israel’s oil supply route through the port of Eilat; Israel had warned since 1957 that closing the Straits would be treated as an act of war.',
-        connective:
-          'Jordan then signed a joint military alliance with Egypt, completely surrounding Israel on three sides...',
-        exam_link:
-          'Q1 Consequence: Closing the Straits of Tiran cut off vital oil supplies and provided Israel with the immediate justification for war.',
       },
       {
         step: 3,
-        keywords: [
-          'King Hussein joins Nasser',
-          'Jordan-Egypt military pact',
-          'Encirclement on three fronts',
-          'Moshe Dayan appointed',
-        ],
         date: '30 May 1967',
+        questionHeading:
+          'How did the Egyptian-Jordanian Defence Pact encircle Israel on three fronts?',
+        bullets: ['King Hussein signs pact', 'Three-front encirclement', 'Moshe Dayan appointed'],
+        keywords: ['King Hussein signs pact', 'Three-front encirclement', 'Moshe Dayan appointed'],
+        clue: 'How did the Egyptian-Jordanian Defence Pact encircle Israel on three fronts?',
         title: 'The Arab Defence Pact (Israel Encircled)',
-        actor: 'Egypt, Jordan & Syria',
-        tag: 'Three-Front Encirclement',
-        trigger:
-          'King Hussein of Jordan flies to Cairo and places the Jordanian army under Egyptian command, completing an encirclement of Israel on three sides.',
-        because:
-          'Hussein feared an uprising at home if he did not join the growing Arab coalition against Israel.',
-        therefore:
-          'Created panic among Israeli civilians, leading to the appointment of popular war hero Moshe Dayan as Defence Minister.',
-        connective:
-          'Fearing an imminent attack from three sides, Israel decided to launch a surprise pre-emptive strike...',
-        exam_link:
-          'Q2 Narrative Account: Convinced Israeli leaders that waiting would lead to national destruction, prompting the pre-emptive air strike.',
       },
       {
         step: 4,
-        keywords: [
-          'Surprise air attack',
-          'Flying under radar',
-          '300 Egyptian planes destroyed',
-          'Airfields bombed',
-        ],
         date: '5 June 1967',
+        questionHeading: 'How did Operation Focus destroy Arab air power on the first morning?',
+        bullets: [
+          'Operation Focus airstrikes',
+          '300+ aircraft destroyed',
+          'Total IDF air supremacy',
+        ],
+        keywords: [
+          'Operation Focus airstrikes',
+          '300+ aircraft destroyed',
+          'Total IDF air supremacy',
+        ],
+        clue: 'How did Operation Focus destroy Arab air power on the first morning?',
         title: 'The Pre-Emptive Air Strike',
-        actor: 'The Israeli Air Force',
-        tag: 'Three Hours to Victory',
-        trigger:
-          'Nearly 200 Israeli fighter jets fly low beneath Egyptian radar, destroying over 300 Egyptian combat aircraft on the ground in less than three hours.',
-        because:
-          'Israel was heavily outnumbered on the ground and needed complete control of the skies to protect its soldiers and cities.',
-        therefore:
-          'Decided the war on the first morning; subsequent strikes wiped out the Syrian and Jordanian air forces, leaving Arab ground armies defenseless.',
-        connective:
-          'With total air superiority, Israeli ground forces advanced rapidly on all three fronts...',
-        exam_link:
-          'Q1 Consequence: Destroyed Arab air power in three hours, guaranteeing Israel’s total battlefield victory in the Six-Day War.',
       },
       {
         step: 5,
-        keywords: [
-          'Sinai and Gaza captured',
-          'Old City and Western Wall',
-          'Golan Heights taken',
-          'Six-day victory',
-        ],
         date: '5–10 June 1967',
+        questionHeading: 'What territories did Israel conquer during the six days of fighting?',
+        bullets: ['Sinai & Gaza captured', 'West Bank & Old City seized', 'Golan Heights taken'],
+        keywords: ['Sinai & Gaza captured', 'West Bank & Old City seized', 'Golan Heights taken'],
+        clue: 'What territories did Israel conquer during the six days of fighting?',
         title: 'The Six-Day Victory & The Conquered Territories',
-        actor: 'Israeli Defence Forces (IDF)',
-        tag: 'The Redrawn Map',
-        trigger:
-          'In just six days, Israel captures the Sinai Peninsula and Gaza Strip from Egypt, the West Bank and East Jerusalem from Jordan, and the Golan Heights from Syria.',
-        because:
-          'Arab ground armies were thrown into chaotic retreat by relentless Israeli air attacks and coordinated tank columns.',
-        therefore:
-          'Tripled the size of Israeli-controlled territory and brought over 1 million Palestinian Arabs under direct Israeli military occupation.',
-        connective:
-          'The stunning conquest of vast Arab lands created the central dilemma of modern Middle Eastern history...',
-        exam_link:
-          'Q1 Consequence: Transformed the geography of the conflict by giving Israel the occupied territories of Sinai, Gaza, the West Bank, and Golan Heights.',
       },
     ],
     vocabRef: '[Textbook §1.1–§2.1 &amp; Source A]',
@@ -449,118 +367,90 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Holy sites captured',
-          'Western Wall',
-          'Jerusalem united under Israel',
-          'Arab outcry',
-        ],
         date: '7 June 1967',
+        questionHeading:
+          'Why did the capture and annexation of East Jerusalem cause global outcry?',
+        bullets: [
+          '7 June Old City taken',
+          'Western Wall & holy sites',
+          'Knesset annexes East Jerusalem',
+        ],
+        keywords: [
+          '7 June Old City taken',
+          'Western Wall & holy sites',
+          'Knesset annexes East Jerusalem',
+        ],
+        clue: 'Why did the capture and annexation of East Jerusalem cause global outcry?',
         title: 'The Capture of East Jerusalem',
-        actor: 'Israeli Forces (IDF)',
-        tag: 'The Holy City Captured',
-        trigger:
-          'Israeli paratroopers capture the Old City of Jerusalem and the Western Wall; the Israeli parliament quickly annexes East Jerusalem under Israeli law.',
-        because:
-          'Jordan had opened artillery fire on West Jerusalem on the first day of the war, giving Israel the opportunity to capture the sacred holy sites.',
-        therefore:
-          'Reunited Jerusalem under Israeli control, but was condemned by the UN and became the most emotional, contested issue in the entire conflict.',
-        connective:
-          'Stunned by their catastrophic battlefield defeat, Arab leaders gathered to coordinate a response...',
-        exam_link:
-          'Q1 Consequence: Made Jerusalem the most sacred and intractable dispute between Israelis and Palestinians.',
       },
       {
         step: 2,
-        keywords: [
-          'Arab leaders meet in Sudan',
-          'The "Three Noes"',
-          'No peace, no recognition',
-          'No talks with Israel',
-        ],
         date: 'September 1967',
+        questionHeading: 'Why did the Arab League issue the "Three Noes" at the Khartoum Summit?',
+        bullets: [
+          'Khartoum Summit (Sept 1967)',
+          'Three Noes declaration',
+          'Refusal of peace/recognition',
+        ],
+        keywords: [
+          'Khartoum Summit (Sept 1967)',
+          'Three Noes declaration',
+          'Refusal of peace/recognition',
+        ],
+        clue: 'Why did the Arab League issue the "Three Noes" at the Khartoum Summit?',
         title: 'The Khartoum Summit & The "Three No’s"',
-        actor: 'Arab Leaders (Led by Egypt’s Nasser)',
-        tag: 'The Rejectionist Stance',
-        trigger:
-          'Arab heads of state meet in Khartoum and declare the famous "Three No’s": no peace with Israel, no recognition of Israel, no negotiations with Israel.',
-        because:
-          'Defeated Arab leaders could not recognize Israel or accept the permanent loss of Arab land without being overthrown by their own people.',
-        therefore:
-          'Destroyed Israeli hopes of quickly trading captured land for permanent peace treaties, locking both sides into a bitter stalemate.',
-        connective:
-          'To break the diplomatic deadlock, the United Nations drafted a historic peace formula...',
-        exam_link:
-          'Q1 Consequence: Blocked early peace negotiations and entrenched the diplomatic stalemate after the 1967 war.',
       },
       {
         step: 3,
-        keywords: [
-          'UN Resolution 242',
-          'Give land back for peace',
-          'Both sides disagree',
-          'Vague wording',
-        ],
         date: '22 November 1967',
+        questionHeading: 'How did UN Resolution 242 establish the principle of "Land for Peace"?',
+        bullets: [
+          'UN Resolution 242 passed',
+          'Land for Peace formula',
+          'Ambiguous English phrasing',
+        ],
+        keywords: [
+          'UN Resolution 242 passed',
+          'Land for Peace formula',
+          'Ambiguous English phrasing',
+        ],
+        clue: 'How did UN Resolution 242 establish the principle of "Land for Peace"?',
         title: 'UN Resolution 242: "Land for Peace"',
-        actor: 'The United Nations Security Council',
-        tag: 'The Diplomatic Formula',
-        trigger:
-          'The UN passes Resolution 242, establishing the principle of "Land for Peace": Israel should withdraw from occupied lands in return for Arab recognition of its right to live in peace.',
-        because:
-          'The superpowers (USA and USSR) wanted to prevent another regional war while resolving the refugee and territorial crisis.',
-        therefore:
-          'Became the basis for all future peace negotiations, but vague English phrasing ("withdrawal from territories" rather than "all territories") led to years of disagreement.',
-        connective:
-          'Expecting no quick peace deal, Israel built heavy military fortifications along the new borders...',
-        exam_link:
-          'Q1 Consequence: Established the international framework of "Land for Peace" that underpinned all subsequent peace talks (Camp David and Oslo).',
       },
       {
         step: 4,
-        keywords: [
-          'Giant sand wall on canal',
-          'Concrete forts',
-          'Canal closed to ships',
-          'Artillery shootouts',
-        ],
         date: '1968–1969',
+        questionHeading: 'Why did Israel build the fortified Bar-Lev Line along the Suez Canal?',
+        bullets: [
+          'Massive sand wall barrier',
+          'Concrete canal fortresses',
+          'Strategic depth & overconfidence',
+        ],
+        keywords: [
+          'Massive sand wall barrier',
+          'Concrete canal fortresses',
+          'Strategic depth & overconfidence',
+        ],
+        clue: 'Why did Israel build the fortified Bar-Lev Line along the Suez Canal?',
         title: 'The Bar-Lev Line on the Suez Canal',
-        actor: 'Israeli Military (IDF)',
-        tag: 'Fortress Defense',
-        trigger:
-          'Israel builds a massive defensive barrier of giant sand walls and concrete fortresses along the entire eastern bank of the Suez Canal.',
-        because:
-          'The Sinai Desert provided Israel with strategic depth to absorb any future Egyptian attack and protect mainland Israeli cities.',
-        therefore:
-          'Created a false sense of security among Israeli commanders, who believed Egyptian forces could never cross the canal, setting the stage for surprise in 1973.',
-        connective:
-          'Alongside military forts, Israeli civilians began settling inside the captured Arab territories...',
-        exam_link:
-          'Q2 Narrative Account: Bred the military overconfidence that left Israeli forces unprepared for the surprise Egyptian canal crossing in 1973.',
       },
       {
         step: 5,
-        keywords: [
-          'Building new towns',
-          'West Bank settlements',
-          'Golan Heights farms',
-          'Land taken for homes',
-        ],
         date: '1968–1973',
+        questionHeading:
+          'How did permanent Israeli settlements transform the occupied territories?',
+        bullets: [
+          'West Bank & Golan outposts',
+          'Security & religious motives',
+          'Permanent facts on ground',
+        ],
+        keywords: [
+          'West Bank & Golan outposts',
+          'Security & religious motives',
+          'Permanent facts on ground',
+        ],
+        clue: 'How did permanent Israeli settlements transform the occupied territories?',
         title: 'The Beginning of Israeli Settlements',
-        actor: 'Israeli Government & Jewish Settlers',
-        tag: 'Settlements in Occupied Land',
-        trigger:
-          'Israel begins building permanent civilian settlements in the newly captured territories: the West Bank, Golan Heights, and Gaza Strip.',
-        because:
-          'The Israeli government sought security buffer zones, while religious settlers believed the land belonged to the historic Jewish homeland.',
-        therefore:
-          'Created permanent Jewish communities inside Palestinian areas, establishing "facts on the ground" that made future territorial compromise far harder.',
-        connective:
-          'Faced with permanent occupation and defeated Arab armies, Palestinians turned to armed guerrilla warfare...',
-        exam_link:
-          'Q1 Consequence: Created permanent Jewish settlements in Palestinian territory, which became a major barrier to a two-state solution.',
       },
     ],
     vocabRef: '[Textbook §3.1–§3.2 &amp; Source C]',
@@ -628,118 +518,89 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Battle of Karameh',
-          'Fighters stand their ground',
-          'Yasser Arafat',
-          'New recruits join PLO',
-        ],
         date: '21 March 1968',
+        questionHeading:
+          'How did the Battle of Karameh establish Yasser Arafat as leader of the PLO?',
+        bullets: [
+          '21 Mar 1968 Karameh battle',
+          'Fedayeen fighters stand ground',
+          'Yasser Arafat elected PLO Chair',
+        ],
+        keywords: [
+          '21 Mar 1968 Karameh battle',
+          'Fedayeen fighters stand ground',
+          'Yasser Arafat elected PLO Chair',
+        ],
+        clue: 'How did the Battle of Karameh establish Yasser Arafat as leader of the PLO?',
         title: 'The Battle of Karameh',
-        actor: 'Palestinian Fighters (Fatah) & Jordanian Army vs. Israel',
-        tag: 'The Rise of the Fedayeen',
-        trigger:
-          'Israeli tanks cross the Jordan River to attack a Palestinian guerrilla base at Karameh; Palestinian fighters stand their ground and inflict heavy Israeli casualties.',
-        because:
-          'Israel launched the punitive raid to crush guerrilla camps carrying out sabotage attacks inside Israel.',
-        therefore:
-          'Celebrated as an inspiring moral victory across the Arab world; thousands rushed to join the guerrilla resistance, and Yasser Arafat became Chairman of the PLO in 1969.',
-        connective:
-          'Radical Palestinian factions turned to international terrorism to gain worldwide television attention...',
-        exam_link:
-          'Q2 Narrative Account: Established Yasser Arafat and Fatah as the dominant leaders of the Palestinian national struggle.',
       },
       {
         step: 2,
-        keywords: [
-          'Airplanes hijacked',
-          'Desert runway in Jordan',
-          'Planes blown up on TV',
-          'King of Jordan angered',
-        ],
         date: 'September 1970',
+        questionHeading: 'Why did the PFLP hijack Western airliners to Dawson’s Field in 1970?',
+        bullets: [
+          'PFLP airliner hijackings',
+          'Dawson’s Field explosions',
+          'Armed state within a state',
+        ],
+        keywords: [
+          'PFLP airliner hijackings',
+          'Dawson’s Field explosions',
+          'Armed state within a state',
+        ],
+        clue: 'Why did the PFLP hijack Western airliners to Dawson’s Field in 1970?',
         title: 'The Dawson’s Field Airline Hijackings',
-        actor: 'PFLP (Militant Palestinian Group)',
-        tag: 'Hijackings on TV',
-        trigger:
-          'Palestinian militants hijack four Western passenger airliners, force three to land in the Jordanian desert, and blow up the empty planes on live television.',
-        because:
-          'Militants wanted to force the release of Palestinian prisoners in Europe and Israel, and draw global attention to the Palestinian cause.',
-        therefore:
-          'Directly challenged the authority of Jordan’s King Hussein, creating an armed "state within a state" that openly threatened to overthrow the Jordanian monarchy.',
-        connective:
-          'Furious at being humiliated in his own country, King Hussein ordered his army to crush the PLO...',
-        exam_link:
-          'Q1 Consequence: Brought the Palestinian issue to global attention, but provoked King Hussein into launching military action against the PLO.',
       },
       {
         step: 3,
-        keywords: [
-          'Civil war in Jordan',
-          'King Hussein uses tanks',
-          'PLO defeated',
-          'Fighters expelled to Lebanon',
-        ],
         date: 'September 1970',
+        questionHeading: 'Why did King Hussein expel the PLO during Black September in 1970?',
+        bullets: [
+          'King Hussein declares martial law',
+          'Jordanian army crackdown',
+          'PLO expelled to Lebanon',
+        ],
+        keywords: [
+          'King Hussein declares martial law',
+          'Jordanian army crackdown',
+          'PLO expelled to Lebanon',
+        ],
+        clue: 'Why did King Hussein expel the PLO during Black September in 1970?',
         title: 'Black September (Civil War in Jordan)',
-        actor: 'The Jordanian Army vs. The PLO',
-        tag: 'The Expulsion from Jordan',
-        trigger:
-          'King Hussein sends Jordanian tanks and troops into Amman to crush PLO bases and refugee camps, killing thousands of fighters and civilians.',
-        because:
-          'The PLO had set up its own armed checkpoints in Jordan, disregarded police authority, and attempted to assassinate King Hussein.',
-        therefore:
-          'The PLO was completely defeated and expelled from Jordan; Arafat moved his fighters and headquarters to Beirut and southern Lebanon.',
-        connective:
-          'A vengeful new faction named after the Jordanian defeat carried out a shocking attack on the world stage...',
-        exam_link:
-          'Q1 Consequence: Led to the expulsion of the PLO from Jordan and the relocation of their bases to Lebanon.',
       },
       {
         step: 4,
-        keywords: [
-          'Munich Olympic Games',
-          'Black September group',
-          '11 Israeli athletes killed',
-          'Live TV broadcast',
-        ],
         date: '5–6 September 1972',
+        questionHeading: 'What was the global impact of the Munich Olympics massacre in 1972?',
+        bullets: [
+          '5–6 Sept 1972 Olympic Village',
+          '11 Israeli athletes murdered',
+          '900m live TV viewers',
+        ],
+        keywords: [
+          '5–6 Sept 1972 Olympic Village',
+          '11 Israeli athletes murdered',
+          '900m live TV viewers',
+        ],
+        clue: 'What was the global impact of the Munich Olympics massacre in 1972?',
         title: 'The Munich Olympics Massacre',
-        actor: 'Black September Militants',
-        tag: 'Terror at the Games',
-        trigger:
-          'Eight Palestinian terrorists break into the Munich Olympic Village, killing two Israeli athletes and taking nine hostage; all nine hostages die during a botched German rescue attempt.',
-        because:
-          'The group demanded the release of over 200 Palestinian prisoners held in Israel and worldwide television publicity for the Palestinian cause.',
-        therefore:
-          'Horrified the global public, heavily damaged the international reputation of the Palestinian movement, and led Israel to launch undercover retaliation.',
-        connective:
-          'In response to Munich, Israeli Prime Minister Golda Meir ordered a covert campaign against those responsible...',
-        exam_link:
-          'Q1 Consequence: Branded the Palestinian cause with international terrorism and prompted Israel to launch covert retaliatory strikes.',
       },
       {
         step: 5,
-        keywords: [
-          'Israel tracks down attackers',
-          'Golda Meir orders revenge',
-          'Secret agents in Europe',
-          'Targeted killings',
-        ],
         date: '1972–1979',
+        questionHeading: 'How did Israel retaliate through Operation Wrath of God covert strikes?',
+        bullets: [
+          'Golda Meir orders reprisal',
+          'Mossad targeted assassinations',
+          'Lillehammer misidentification',
+        ],
+        keywords: [
+          'Golda Meir orders reprisal',
+          'Mossad targeted assassinations',
+          'Lillehammer misidentification',
+        ],
+        clue: 'How did Israel retaliate through Operation Wrath of God covert strikes?',
         title: 'Israeli Retaliation (Operation Wrath of God)',
-        actor: 'Israeli Intelligence (Mossad)',
-        tag: 'The Covert War',
-        trigger:
-          'Israeli secret agents track down and assassinate Palestinian militants linked to the Munich attack across Europe and the Middle East.',
-        because:
-          'Prime Minister Golda Meir was determined to re-establish deterrence and prove that terrorist attacks on Israelis would never go unpunished.',
-        therefore:
-          'Eliminated many militant leaders, but sparked cycles of counter-attacks and drew international criticism when an innocent man was killed by mistake.',
-        connective:
-          'While the covert war raged, Egypt and Syria prepared a massive conventional surprise attack on Israel...',
-        exam_link:
-          'Q2 Narrative Account: Shows how Israel used targeted assassinations in Europe to restore deterrence after the Munich attack.',
       },
     ],
     vocabRef: '[Textbook §1.1–§2.2 &amp; Source A]',
@@ -808,118 +669,89 @@ const kt2Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Artillery along the canal',
-          'Egyptian bombing raids',
-          'Soviet missiles',
-          'Nasser dies',
-        ],
         date: '1969–1970',
+        questionHeading: 'Why did Nasser launch the War of Attrition along the Suez Canal?',
+        bullets: [
+          '18-month canal artillery duels',
+          'Soviet SAM missile umbrella',
+          'Nasser dies; Sadat takes power',
+        ],
+        keywords: [
+          '18-month canal artillery duels',
+          'Soviet SAM missile umbrella',
+          'Nasser dies; Sadat takes power',
+        ],
+        clue: 'Why did Nasser launch the War of Attrition along the Suez Canal?',
         title: 'The War of Attrition',
-        actor: 'Egypt vs. Israel',
-        tag: 'Canal Artillery Duels',
-        trigger:
-          'Nasser launches an 18-month campaign of heavy artillery shelling and commando raids across the Suez Canal; Israel responds with massive air strikes.',
-        because:
-          'Egypt refused to accept the Israeli occupation of the Sinai Peninsula and wanted to wear down the Israeli military and economy.',
-        therefore:
-          'Cost thousands of lives, damaged towns along the canal, and brought Soviet surface-to-air missiles to the Egyptian side of the canal.',
-        connective:
-          'Egypt’s new president tried diplomacy to regain Sinai, but his overtures were ignored...',
-        exam_link:
-          'Q2 Narrative Account: Showed Egypt’s refusal to accept the loss of Sinai, setting the stage for the Yom Kippur War.',
       },
       {
         step: 2,
-        keywords: [
-          'Sadat sends Russians home',
-          '15,000 Soviet advisers leave',
-          'Peace offers ignored',
-          'Planning surprise war',
-        ],
         date: '1971–1972',
+        questionHeading: 'Why did Anwar Sadat expel 15,000 Soviet advisers from Egypt in 1972?',
+        bullets: [
+          '15,000 Soviet advisers expelled',
+          'Peace proposals ignored',
+          'Decision for surprise attack',
+        ],
+        keywords: [
+          '15,000 Soviet advisers expelled',
+          'Peace proposals ignored',
+          'Decision for surprise attack',
+        ],
+        clue: 'Why did Anwar Sadat expel 15,000 Soviet advisers from Egypt in 1972?',
         title: 'Sadat Expels Soviet Advisers',
-        actor: 'President Anwar Sadat of Egypt',
-        tag: 'The Diplomatic Turn',
-        trigger:
-          'Anwar Sadat expels 15,000 Soviet military advisers from Egypt after his peace proposals to return Sinai are ignored by Israel and the USA.',
-        because:
-          'Israel felt completely secure behind the Bar-Lev Line, while the Soviets refused to provide offensive weapons to attack Israel.',
-        therefore:
-          'Convinced Sadat that only a surprise military strike could break the stalemate and force the USA and Israel to take peace talks seriously.',
-        connective:
-          'Sadat coordinated with Syria to launch a shock attack on the holiest day of the Jewish year...',
-        exam_link:
-          'Q1 Consequence: Convinced Sadat that war was the only way to shatter Israeli complacency and force diplomatic negotiations.',
       },
       {
         step: 3,
-        keywords: [
-          'Surprise attack on holy day',
-          'Water cannons cut sand walls',
-          'Crossing Suez Canal',
-          'Syrian tanks attack Golan',
-        ],
         date: '6 October 1973',
+        questionHeading:
+          'How did Egyptian and Syrian forces achieve tactical surprise on Yom Kippur?',
+        bullets: [
+          'Operation Badr canal crossing',
+          'Water monitors breach Bar-Lev',
+          'Syrian tank assault on Golan',
+        ],
+        keywords: [
+          'Operation Badr canal crossing',
+          'Water monitors breach Bar-Lev',
+          'Syrian tank assault on Golan',
+        ],
+        clue: 'How did Egyptian and Syrian forces achieve tactical surprise on Yom Kippur?',
         title: 'The Surprise Attack on Yom Kippur',
-        actor: 'Egypt & Syria vs. Israel',
-        tag: 'The Two-Front Surprise',
-        trigger:
-          'Egyptian troops cross the Suez Canal and blast through the Bar-Lev Line, while hundreds of Syrian tanks storm the Golan Heights.',
-        because:
-          'Launched on Yom Kippur (the Jewish Day of Atonement), catching Israeli forces completely off-guard with reserve troops not yet mobilised.',
-        therefore:
-          'Overran Israeli defenses, destroyed hundreds of Israeli tanks, and shattered the myth of Israeli military invincibility.',
-        connective:
-          'Facing catastrophic losses, Israel turned to the United States for an emergency resupply...',
-        exam_link:
-          'Q1 Consequence: Shattered Israeli military overconfidence and proved that Arab armies could mount sophisticated, coordinated offensives.',
       },
       {
         step: 4,
-        keywords: [
-          'US flies in weapons',
-          'Emergency tanks and shells',
-          'Israel crosses canal',
-          'Egyptian army trapped',
-        ],
         date: '12–16 October 1973',
+        questionHeading: 'How did the US airlift enable General Sharon’s canal counter-crossing?',
+        bullets: [
+          'US Operation Nickel Grass',
+          'Sharon crosses Suez Canal',
+          'Egyptian 3rd Army encircled',
+        ],
+        keywords: [
+          'US Operation Nickel Grass',
+          'Sharon crosses Suez Canal',
+          'Egyptian 3rd Army encircled',
+        ],
+        clue: 'How did the US airlift enable General Sharon’s canal counter-crossing?',
         title: 'The US Emergency Airlift & Israeli Counter-Attack',
-        actor: 'The USA & Israeli Army (IDF)',
-        tag: 'The Battlefield Turn',
-        trigger:
-          'The US flies thousands of tons of emergency military supplies to Israel; Israeli forces counter-attack, crossing the Suez Canal and cutting off Egypt’s Third Army.',
-        because:
-          'The USA feared Israel was running out of tanks and ammunition and might face total military collapse.',
-        therefore:
-          'Turned the tide of battle in Israel’s favor, but brought the USA and USSR dangerously close to a direct Cold War confrontation.',
-        connective:
-          'To stop the Israeli advance and punish Western allies, Arab oil producers deployed an economic weapon...',
-        exam_link:
-          'Q2 Narrative Account: Massive US military aid saved Israel from defeat, while Israeli counter-attacks forced the superpowers to broker a ceasefire.',
       },
       {
         step: 5,
-        keywords: [
-          'Arab oil embargo',
-          'Oil prices jump four times',
-          'Petrol queues in the West',
-          'UN stops the war',
-        ],
         date: 'October 1973',
+        questionHeading: 'How did the Arab OPEC oil embargo transform global superpower diplomacy?',
+        bullets: [
+          'OPEC cuts crude exports',
+          'World oil prices quadruple',
+          'Kissinger shuttle diplomacy',
+        ],
+        keywords: [
+          'OPEC cuts crude exports',
+          'World oil prices quadruple',
+          'Kissinger shuttle diplomacy',
+        ],
+        clue: 'How did the Arab OPEC oil embargo transform global superpower diplomacy?',
         title: 'The Arab Oil Embargo & Ceasefire',
-        actor: 'Arab Oil Producers (OPEC) & The UN',
-        tag: 'The Oil Weapon',
-        trigger:
-          'Arab oil-producing nations cut oil production and embargo crude oil exports to the USA and the Netherlands; the UN enforces a ceasefire.',
-        because:
-          'Arab nations wanted to punish Western supporters of Israel and force the West to pressure Israel into returning captured Arab territories.',
-        therefore:
-          'Quadrupled world oil prices, triggered global fuel shortages, and convinced the USA that resolving the Middle East conflict was an urgent priority.',
-        connective:
-          'The oil shock forced the US government to lead intense diplomatic negotiations to prevent future wars...',
-        exam_link:
-          'Q1 Consequence: The oil crisis made Middle Eastern peace an urgent priority for US foreign policy, leading directly to Kissinger’s shuttle diplomacy.',
       },
     ],
     vocabRef: '[Textbook §1.1–§2.1 &amp; Source A]',
@@ -1029,32 +861,53 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
       padding: 4mm 6mm;
     }
     
-    /* 5-Stage Domino Causal Chain Styling */
-    .domino-chain-container {
+    /* 5-Stage Full-Width Question Banner & 3-Fact Trigger Spine (KS3 Golden Standard for GCSE) */
+    .spine-notes-container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       flex: 1;
-      margin: 2px 0;
+      min-height: 0;
+      margin: 2px 0 2px 0;
+      gap: 2px;
     }
-    .domino-card-compact {
-      border: 1.2px solid #000000;
-      border-radius: 3px;
-      padding: 2.5px 6px;
-      background: #ffffff;
+    .spine-stage-block {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      flex: 1;
+      min-height: 0;
+      border: 1.2px solid #000000;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .stage-banner {
+      background: #000000;
+      color: #ffffff;
+      padding: 1.5px 6px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1.2px solid #000000;
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+    .stage-trigger-col {
+      width: 26mm;
+      flex-shrink: 0;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      border-right: 1.2px solid #000000;
       box-sizing: border-box;
     }
-    .domino-connector {
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1;
-      padding: 1px 0;
+    .trigger-fact-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 3px;
+      box-sizing: border-box;
+    }
+    .trigger-fact-cell:not(:last-child) {
+      border-bottom: 0.8px solid #cbd5e1;
     }
     .page-body-full {
       flex: 1;
@@ -1459,68 +1312,61 @@ function buildCmeKt2TwoPageWorkbook(unitData, period) {
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          ${cfg.stages
-            .map(
-              (s, sIdx) => `
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${s.title}
-              </div>
-              ${
-                (s.coreKeywords && s.coreKeywords.length > 0) ||
-                (s.keywords && s.keywords.length > 0)
-                  ? `
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${(s.coreKeywords || s.keywords || [])
-                    .map(
-                      (kw) =>
-                        `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
-                    )
-                    .join('')}
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        ${cfg.stages
+          .map((st) => {
+            const questionHeading = st.questionHeading || st.clue || st.title;
+            const bullets = st.bullets || (st.keywords ? st.keywords.slice(0, 3) : []);
+            const bulletsHtml = bullets
+              .map(
+                (b, bIdx) => `
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ${bIdx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">${b}</span>
                 </div>
-              </div>`
-                  : ''
-              }
-              ${
-                s.clue
-                  ? `
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${s.clue}
-                </div>
-              </div>`
-                  : ''
-              }
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              </div>`,
+              )
+              .join('');
+            return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                ${st.step}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                ${st.date}
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                ${questionHeading}
+              </span>
             </div>
           </div>
-          `,
-            )
-            .join('')}
-        </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>`;
+          })
+          .join('')}
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->

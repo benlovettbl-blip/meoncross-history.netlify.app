@@ -45,32 +45,53 @@
       padding: 4mm 6mm;
     }
     
-    /* 5-Stage Domino Causal Chain Styling */
-    .domino-chain-container {
+    /* 5-Stage Full-Width Question Banner & 3-Fact Trigger Spine (KS3 Golden Standard for GCSE) */
+    .spine-notes-container {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
       flex: 1;
-      margin: 2px 0;
+      min-height: 0;
+      margin: 2px 0 2px 0;
+      gap: 2px;
     }
-    .domino-card-compact {
-      border: 1.2px solid #000000;
-      border-radius: 3px;
-      padding: 2.5px 6px;
-      background: #ffffff;
+    .spine-stage-block {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      flex: 1;
+      min-height: 0;
+      border: 1.2px solid #000000;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .stage-banner {
+      background: #000000;
+      color: #ffffff;
+      padding: 1.5px 6px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1.2px solid #000000;
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+    .stage-trigger-col {
+      width: 26mm;
+      flex-shrink: 0;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      border-right: 1.2px solid #000000;
       box-sizing: border-box;
     }
-    .domino-connector {
-      text-align: center;
-      font-family: 'Inter', sans-serif;
-      font-size: 6.2pt;
-      font-weight: 700;
-      color: #000000;
-      line-height: 1;
-      padding: 1px 0;
+    .trigger-fact-cell {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 0 3px;
+      box-sizing: border-box;
+    }
+    .trigger-fact-cell:not(:last-child) {
+      border-bottom: 0.8px solid #cbd5e1;
     }
     .page-body-full {
       flex: 1;
@@ -529,165 +550,273 @@
         <strong>Key Specification Focus:</strong> The <strong>founding of the Palestine Liberation Organization (PLO) in 1964 and its aims</strong>; <strong>Fatah guerrilla raids</strong>; the <strong>Samu raid (1966)</strong>; <strong>Syrian border disputes and the Golan Heights</strong>; the <strong>April 1967 air skirmish</strong>; and <strong>Soviet false intelligence warnings</strong>.
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">January 1964</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The 1964 Cairo Conference & PLO Founded
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Arab leaders meet in Cairo</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> President Nasser</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> PLO created</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Palestinian fighters (Fatah)</div>
-                </div>
-              </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                1
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                January 1964
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did Arab leaders meet in Cairo and create the PLO in 1964?
+              </span>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1964–1965</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Dispute Over the River Jordan Waterways
-              </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Dispute over river water</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Syria tries to divert river</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Israel shells diggers</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Water needed for farms</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Cairo Arab Summit (1964)</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1966</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Syrian Support for Fatah Border Raids
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Syria helps guerrillas</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Guns and money for Fatah</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Landmines on border</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Deadly border hotspot</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">President Nasser leadership</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">13 November 1966</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Israeli Raid on Samu
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Samu village raid</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Israeli tanks cross border</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Jordanian soldiers fight</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Three Israeli police killed</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">PLO & Fatah armed resistance</span>
                 </div>
               </div>
-              
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">7 April 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Aerial Battle of 7 April 1967
-              </div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                2
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1964–1965
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did the dispute over River Jordan water spark military conflict?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Dogfight in the sky</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Six Syrian jets shot down</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Israeli planes fly over capital</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Syria asks Egypt for help</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Headwater Diversion Plan</span>
                 </div>
               </div>
-              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">National Water Carrier</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">IDF artillery shells diggers</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                3
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1966
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did Syria sponsor Fatah guerrilla raids across the border?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Radical Syrian Ba’ath regime</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Bases & arms for Fatah</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Galilee landmine sabotage</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                4
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                13 November 1966
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                What were the consequences of the Israeli reprisal raid on Samu?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">West Bank Samu raid</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Jordanian soldiers clash</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Arab unity fractured</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                5
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                7 April 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did the 7 April dogfight escalate tensions toward all-out war?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">6 Syrian MiGs shot down</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Mirage flights over Damascus</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Soviet false warning triggered</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -1215,165 +1344,273 @@
         <strong>Key Specification Focus:</strong> <strong>Causes of the Six-Day War</strong>: <strong>Nasser's remilitarisation of the Sinai and expulsion of UNEF</strong>; <strong>closure of the Straits of Tiran</strong>; the <strong>Egyptian-Jordanian Defence Pact</strong>; the <strong>Israeli pre-emptive air strike (Operation Focus, 5 June 1967)</strong>; <strong>air supremacy</strong>; and the <strong>rapid IDF tank blitzkrieg in Sinai, Jerusalem, the West Bank, and the Golan Heights</strong>.
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">13–15 May 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Soviet False Reports & Egyptian Mobilisation
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> False Soviet warning</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 100,000 soldiers in Sinai</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Egypt moves tanks to border</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Tensions rise</div>
-                </div>
-              </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                1
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                13–15 May 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did Soviet false warnings trigger Egyptian troop mobilisation in Sinai?
+              </span>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">16–23 May 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                UN Peacekeepers Expelled & Straits of Tiran Closed
-              </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> UN peacekeepers kicked out</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Straits of Tiran closed</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Eilat port blocked</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Jordan joins Egypt</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Soviet false intelligence</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">30 May 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Arab Defence Pact (Israel Encircled)
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> King Hussein joins Nasser</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Jordan-Egypt military pact</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Encirclement on three fronts</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Moshe Dayan appointed</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">100,000 troops into Sinai</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">5 June 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Pre-Emptive Air Strike
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Surprise air attack</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Flying under radar</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 300 Egyptian planes destroyed</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Airfields bombed</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Nasser reasserts leadership</span>
                 </div>
               </div>
-              
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">5–10 June 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Six-Day Victory & The Conquered Territories
-              </div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                2
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                16–23 May 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why was closing the Straits of Tiran treated by Israel as a casus belli?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Sinai and Gaza captured</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Old City and Western Wall</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Golan Heights taken</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Six-day victory</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">UNEF peacekeepers expelled</span>
                 </div>
               </div>
-              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Straits of Tiran blockaded</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Eilat oil route severed</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                3
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                30 May 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did the Egyptian-Jordanian Defence Pact encircle Israel on three fronts?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">King Hussein signs pact</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Three-front encirclement</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Moshe Dayan appointed</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                4
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                5 June 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did Operation Focus destroy Arab air power on the first morning?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Operation Focus airstrikes</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">300+ aircraft destroyed</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Total IDF air supremacy</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                5
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                5–10 June 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                What territories did Israel conquer during the six days of fighting?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Sinai & Gaza captured</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">West Bank & Old City seized</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Golan Heights taken</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -1901,165 +2138,273 @@
         <strong>Key Specification Focus:</strong> <strong>Consequences of the Six-Day War</strong>: <strong>territorial gains (Sinai, Gaza Strip, West Bank, East Jerusalem, and the Golan Heights)</strong>; the <strong>refugee crisis</strong>; the <strong>Khartoum Resolution ("Three No's")</strong>; <strong>UN Resolution 242 ("Land for Peace")</strong>; and the <strong>start of Israeli settlement building</strong>.
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">7 June 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Capture of East Jerusalem
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Holy sites captured</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Western Wall</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Jerusalem united under Israel</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Arab outcry</div>
-                </div>
-              </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                1
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                7 June 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did the capture and annexation of East Jerusalem cause global outcry?
+              </span>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">September 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Khartoum Summit & The "Three No’s"
-              </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Arab leaders meet in Sudan</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> The "Three Noes"</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> No peace, no recognition</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> No talks with Israel</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">7 June Old City taken</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">22 November 1967</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                UN Resolution 242: "Land for Peace"
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> UN Resolution 242</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Give land back for peace</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Both sides disagree</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Vague wording</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Western Wall & holy sites</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1968–1969</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Bar-Lev Line on the Suez Canal
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Giant sand wall on canal</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Concrete forts</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Canal closed to ships</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Artillery shootouts</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Knesset annexes East Jerusalem</span>
                 </div>
               </div>
-              
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1968–1973</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Beginning of Israeli Settlements
-              </div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                2
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                September 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did the Arab League issue the "Three Noes" at the Khartoum Summit?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Building new towns</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> West Bank settlements</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Golan Heights farms</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Land taken for homes</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Khartoum Summit (Sept 1967)</span>
                 </div>
               </div>
-              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Three Noes declaration</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Refusal of peace/recognition</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                3
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                22 November 1967
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did UN Resolution 242 establish the principle of "Land for Peace"?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">UN Resolution 242 passed</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Land for Peace formula</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Ambiguous English phrasing</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                4
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1968–1969
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did Israel build the fortified Bar-Lev Line along the Suez Canal?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Massive sand wall barrier</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Concrete canal fortresses</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Strategic depth & overconfidence</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                5
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1968–1973
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did permanent Israeli settlements transform the occupied territories?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">West Bank & Golan outposts</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Security & religious motives</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Permanent facts on ground</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -2587,165 +2932,273 @@
         <strong>Key Specification Focus:</strong> The <strong>War of Attrition along the Suez Canal (1969–70)</strong>; the <strong>Battle of Karameh (1968)</strong>; the <strong>rise of Yasser Arafat</strong>; <strong>international aircraft hijackings (Dawson's Field, Sept 1970)</strong>; <strong>Black September in Jordan (1970)</strong>; and the <strong>Munich Olympics massacre (Sept 1972)</strong> followed by <strong>Operation Wrath of God</strong>.
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">21 March 1968</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Battle of Karameh
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Battle of Karameh</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Fighters stand their ground</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Yasser Arafat</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> New recruits join PLO</div>
-                </div>
-              </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                1
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                21 March 1968
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did the Battle of Karameh establish Yasser Arafat as leader of the PLO?
+              </span>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">September 1970</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Dawson’s Field Airline Hijackings
-              </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Airplanes hijacked</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Desert runway in Jordan</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Planes blown up on TV</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> King of Jordan angered</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">21 Mar 1968 Karameh battle</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">September 1970</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Black September (Civil War in Jordan)
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Civil war in Jordan</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> King Hussein uses tanks</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> PLO defeated</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Fighters expelled to Lebanon</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Fedayeen fighters stand ground</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">5–6 September 1972</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Munich Olympics Massacre
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Munich Olympic Games</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Black September group</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 11 Israeli athletes killed</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Live TV broadcast</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Yasser Arafat elected PLO Chair</span>
                 </div>
               </div>
-              
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1972–1979</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Israeli Retaliation (Operation Wrath of God)
-              </div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                2
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                September 1970
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did the PFLP hijack Western airliners to Dawson’s Field in 1970?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Israel tracks down attackers</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Golda Meir orders revenge</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Secret agents in Europe</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Targeted killings</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">PFLP airliner hijackings</span>
                 </div>
               </div>
-              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Dawson’s Field explosions</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Armed state within a state</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                3
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                September 1970
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did King Hussein expel the PLO during Black September in 1970?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">King Hussein declares martial law</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Jordanian army crackdown</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">PLO expelled to Lebanon</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                4
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                5–6 September 1972
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                What was the global impact of the Munich Olympics massacre in 1972?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">5–6 Sept 1972 Olympic Village</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">11 Israeli athletes murdered</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">900m live TV viewers</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                5
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1972–1979
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did Israel retaliate through Operation Wrath of God covert strikes?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Golda Meir orders reprisal</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Mossad targeted assassinations</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Lillehammer misidentification</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -3273,165 +3726,273 @@
         <strong>Key Specification Focus:</strong> <strong>Causes of the Yom Kippur War (1973)</strong>: <strong>Sadat’s diplomacy and Egyptian-Syrian desire to regain lost land</strong>; <strong>Operation Badr surprise crossing on Yom Kippur</strong>; <strong>Syrian offensive on Mount Hermon</strong>; the <strong>Israeli counter-offensive (Sharon crossing the Suez Canal)</strong>; <strong>superpower resupply airlifts (US Operation Nickel Grass vs Soviet airlift)</strong>; <strong>nuclear alert DEFCON 3</strong>; the <strong>ceasefire (UN Res 338)</strong>; and the <strong>OPEC oil embargo</strong>.
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">1</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1969–1970</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The War of Attrition
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Artillery along the canal</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Egyptian bombing raids</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Soviet missiles</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Nasser dies</div>
-                </div>
-              </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                1
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1969–1970
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did Nasser launch the War of Attrition along the Suez Canal?
+              </span>
             </div>
           </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">2</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">1971–1972</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                Sadat Expels Soviet Advisers
-              </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Sadat sends Russians home</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> 15,000 Soviet advisers leave</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Peace offers ignored</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Planning surprise war</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">18-month canal artillery duels</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">3</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">6 October 1973</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Surprise Attack on Yom Kippur
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Surprise attack on holy day</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Water cannons cut sand walls</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Crossing Suez Canal</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Syrian tanks attack Golan</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Soviet SAM missile umbrella</span>
                 </div>
               </div>
-              
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-            </div>
-          </div>
-          
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">4</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">12–16 October 1973</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The US Emergency Airlift & Israeli Counter-Attack
-              </div>
-              
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> US flies in weapons</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Emergency tanks and shells</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Israel crosses canal</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Egyptian army trapped</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Nasser dies; Sadat takes power</span>
                 </div>
               </div>
-              
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">5</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">October 1973</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                The Arab Oil Embargo & Ceasefire
-              </div>
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                2
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                1971–1972
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                Why did Anwar Sadat expel 15,000 Soviet advisers from Egypt in 1972?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  <div><span style="font-weight: 900; color: #000000;">&bull;</span> Arab oil embargo</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Oil prices jump four times</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> Petrol queues in the West</div><div><span style="font-weight: 900; color: #000000;">&bull;</span> UN stops the war</div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">15,000 Soviet advisers expelled</span>
                 </div>
               </div>
-              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Peace proposals ignored</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Decision for surprise attack</span>
+                </div>
+              </div>
             </div>
 
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
           </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                3
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                6 October 1973
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did Egyptian and Syrian forces achieve tactical surprise on Yom Kippur?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Operation Badr canal crossing</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Water monitors breach Bar-Lev</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Syrian tank assault on Golan</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                4
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                12–16 October 1973
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did the US airlift enable General Sharon’s canal counter-crossing?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">US Operation Nickel Grass</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Sharon crosses Suez Canal</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Egyptian 3rd Army encircled</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                5
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                October 1973
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                How did the Arab OPEC oil embargo transform global superpower diplomacy?
+              </span>
+            </div>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">OPEC cuts crude exports</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; border-bottom: 0.8px solid #cbd5e1;">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">World oil prices quadruple</span>
+                </div>
+              </div>
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">Kissinger shuttle diplomacy</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
         </div>
       </div>
 
