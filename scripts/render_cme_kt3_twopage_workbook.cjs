@@ -91,67 +91,52 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'OPEC crude oil embargo against US',
-          'World oil prices quadruple',
-          'Western petrol rationing & queues',
-          'Middle East stability vital for US economy',
-          'USSR displaced as primary peace broker',
-        ],
-        clue: 'Why did the OPEC oil shock force the US to prioritize Middle East diplomacy?',
         date: 'Oct 1973',
+        questionHeading:
+          'Why did the OPEC oil shock force the US to prioritize Middle East diplomacy?',
+        bullets: ['OPEC Oil Embargo', 'World Oil Prices 4x', 'US Economic Threat'],
+        keywords: ['OPEC Oil Embargo', 'World Oil Prices 4x', 'US Economic Threat'],
+        clue: 'Why did the OPEC oil shock force the US to prioritize Middle East diplomacy?',
         title: 'The Arab Oil Shock & Superpower Realignment',
       },
       {
         step: 2,
-        keywords: [
-          'US Sec of State Henry Kissinger',
-          'Shuttle diplomacy between Cairo & Tel Aviv',
-          'Sinai Disengagement Accord I signed',
-          'UN buffer zone created along canal',
-          'Suez Canal cleared & reopened (1975)',
-        ],
-        clue: 'How did Kissinger’s step-by-step shuttle diplomacy separate the frontline armies?',
         date: 'Jan 1974',
+        questionHeading:
+          'How did Kissinger’s step-by-step shuttle diplomacy separate the frontline armies?',
+        bullets: ['Henry Kissinger', 'Shuttle Diplomacy', 'Sinai I Disengagement'],
+        keywords: ['Henry Kissinger', 'Shuttle Diplomacy', 'Sinai I Disengagement'],
+        clue: 'How did Kissinger’s step-by-step shuttle diplomacy separate the frontline armies?',
         title: 'Kissinger’s Shuttle Diplomacy & Sinai I',
       },
       {
         step: 3,
-        keywords: [
-          'Sinai II bilateral agreement signed',
-          'Israel withdraws further into Sinai desert',
-          'Abu Rudeis oilfields returned to Egypt',
-          'Formal pledge to renounce military force',
-          'Egypt begins detachment from Arab war coalition',
-        ],
-        clue: "Why was the return of the Abu Rudeis oilfields so vital for Egypt's economy?",
         date: 'Sept 1975',
+        questionHeading:
+          'Why was the return of the Abu Rudeis oilfields so vital for Egypt’s economy?',
+        bullets: ['Sinai II Accord', 'Abu Rudeis Oilfields', 'Renounce Armed Force'],
+        keywords: ['Sinai II Accord', 'Abu Rudeis Oilfields', 'Renounce Armed Force'],
+        clue: "Why was the return of the Abu Rudeis oilfields so vital for Egypt's economy?",
         title: 'The Sinai II Agreement',
       },
       {
         step: 4,
-        keywords: [
-          'Menachem Begin (Likud leader) elected',
-          'Ends 29 years of unbroken Labour rule',
-          'Revisionist Zionist ideology',
-          'West Bank claimed as Judea and Samaria',
-          'Fears of renewed Middle East war',
-        ],
-        clue: 'Why did Menachem Begin’s 1977 election make a peace agreement seem impossible?',
         date: 'May 1977',
+        questionHeading:
+          'Why did Menachem Begin’s 1977 election make a peace agreement seem impossible?',
+        bullets: ['Likud Election Victory', 'Menachem Begin', 'Biblical Judea & Samaria'],
+        keywords: ['Likud Election Victory', 'Menachem Begin', 'Biblical Judea & Samaria'],
+        clue: 'Why did Menachem Begin’s 1977 election make a peace agreement seem impossible?',
         title: 'Likud Election Victory (Menachem Begin)',
       },
       {
         step: 5,
-        keywords: [
-          'Anwar Sadat lands at Ben-Gurion Airport',
-          'Historic address to the Israeli Knesset',
-          '"No more war, no more bloodshed"',
-          'Shatters 30 years of Arab diplomatic taboos',
-          'Paves direct way to Camp David Summit',
-        ],
-        clue: 'Why was Sadat’s speech to the Israeli Knesset such a profound psychological breakthrough?',
         date: '19–21 Nov 1977',
+        questionHeading:
+          'Why was Sadat’s speech to the Israeli Knesset such a profound psychological breakthrough?',
+        bullets: ['Sadat Lands in Jerusalem', 'Knesset Address', '"No More Bloodshed"'],
+        keywords: ['Sadat Lands in Jerusalem', 'Knesset Address', '"No More Bloodshed"'],
+        clue: 'Why was Sadat’s speech to the Israeli Knesset such a profound psychological breakthrough?',
         title: 'Sadat’s Historic Journey to Jerusalem',
       },
     ],
@@ -214,67 +199,49 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'President Jimmy Carter presidential retreat',
-          '13 days of intense secret isolation',
-          'Near collapse over settlements & West Bank',
-          "Carter's personal shuttle diplomacy",
-          'Billions in US financial & military aid promised',
-        ],
-        clue: 'How did Jimmy Carter prevent the 13-day Camp David summit from collapsing?',
         date: '5–17 Sept 1978',
+        questionHeading:
+          'How did Jimmy Carter prevent the 13-day Camp David summit from collapsing?',
+        bullets: ['Jimmy Carter', '13 Days Seclusion', 'Personal Mediation'],
+        keywords: ['Jimmy Carter', '13 Days Seclusion', 'Personal Mediation'],
+        clue: 'How did Jimmy Carter prevent the 13-day Camp David summit from collapsing?',
         title: 'The Camp David Summit',
       },
       {
         step: 2,
-        keywords: [
-          'Framework for Egyptian-Israeli peace',
-          'Second framework for Palestinian autonomy',
-          'Begin refuses to surrender West Bank',
-          'PLO & Palestinians reject framework as sham',
-          'Arab world brands deal a betrayal',
-        ],
-        clue: 'Why did Palestinian leaders reject the second Camp David framework?',
         date: 'Sept 1978',
+        questionHeading: 'Why did Palestinian leaders reject the second Camp David framework?',
+        bullets: ['Two Framework Accords', 'Sinai vs Palestine', 'PLO Rejects Autonomy'],
+        keywords: ['Two Framework Accords', 'Sinai vs Palestine', 'PLO Rejects Autonomy'],
+        clue: 'Why did Palestinian leaders reject the second Camp David framework?',
         title: 'The Dual Framework Agreements',
       },
       {
         step: 3,
-        keywords: [
-          'Treaty of Washington signed on White House lawn',
-          'Sadat, Begin & Carter historic handshake',
-          '31 years of official war ended',
-          'Phased return of entire Sinai to 1982',
-          'Yamit Jewish settlement bulldozed',
-        ],
-        clue: 'What territorial concessions did Israel make under the 1979 Peace Treaty?',
         date: '26 March 1979',
+        questionHeading:
+          'What territorial concessions did Israel make under the 1979 Peace Treaty?',
+        bullets: ['Treaty of Washington', 'Sinai Phased Return', 'Yamit Bulldozed (1982)'],
+        keywords: ['Treaty of Washington', 'Sinai Phased Return', 'Yamit Bulldozed (1982)'],
+        clue: 'What territorial concessions did Israel make under the 1979 Peace Treaty?',
         title: 'The Egypt-Israel Peace Treaty',
       },
       {
         step: 4,
-        keywords: [
-          'Baghdad Arab Summit condemns Sadat',
-          'Egypt expelled from the Arab League',
-          'Arab League headquarters moved to Tunis',
-          'Arab diplomatic & economic embargo',
-          'Egypt totally isolated in the Arab world',
-        ],
-        clue: 'Why did the Arab League expel Egypt after the Treaty of Washington?',
         date: 'March–Nov 1979',
+        questionHeading: 'Why did the Arab League expel Egypt after the Treaty of Washington?',
+        bullets: ['Baghdad Arab Summit', 'Egypt Expelled', 'Arab League HQ to Tunis'],
+        keywords: ['Baghdad Arab Summit', 'Egypt Expelled', 'Arab League HQ to Tunis'],
+        clue: 'Why did the Arab League expel Egypt after the Treaty of Washington?',
         title: 'The Arab League Boycott of Egypt',
       },
       {
         step: 5,
-        keywords: [
-          'Cairo military victory parade',
-          'Egyptian Islamic Jihad assassins open fire',
-          'Sadat shot dead on review stand',
-          'Revenge for peace with Israel & mass arrests',
-          'Hosni Mubarak takes over & upholds treaty',
-        ],
-        clue: 'Why did Egyptian Islamic Jihad target Anwar Sadat in October 1981?',
         date: '6 October 1981',
+        questionHeading: 'Why did Egyptian Islamic Jihad assassinate Anwar Sadat in October 1981?',
+        bullets: ['Cairo Military Parade', 'Islamic Jihad Gunmen', 'Sadat Shot Dead'],
+        keywords: ['Cairo Military Parade', 'Islamic Jihad Gunmen', 'Sadat Shot Dead'],
+        clue: 'Why did Egyptian Islamic Jihad target Anwar Sadat in October 1981?',
         title: 'The Assassination of Anwar Sadat',
       },
     ],
@@ -341,67 +308,50 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Fatah Coastal Road bus hijack (38 dead)',
-          'Operation Litani IDF invasion',
-          '25,000 troops advance to Litani River',
-          'UN Security Council Resolution 425',
-          'UNIFIL peacekeepers & Christian militia buffer',
-        ],
-        clue: 'What was the military objective of Operation Litani in southern Lebanon?',
         date: 'March 1978',
+        questionHeading: 'What was the military objective of Operation Litani in southern Lebanon?',
+        bullets: ['Coastal Road Hijack', 'Operation Litani (IDF)', 'UNIFIL Buffer Zone'],
+        keywords: ['Coastal Road Hijack', 'Operation Litani (IDF)', 'UNIFIL Buffer Zone'],
+        clue: 'What was the military objective of Operation Litani in southern Lebanon?',
         title: 'Operation Litani & The Border Buffer',
       },
       {
         step: 2,
-        keywords: [
-          'Ambassador Shlomo Argov shot in London',
-          'Full-scale invasion of Lebanon launched',
-          'Defence Minister Ariel Sharon',
-          'Armored columns advance 60 miles to Beirut',
-          'Cabinet 40km limit secretly bypassed',
-        ],
-        clue: "Why did Ariel Sharon expand the invasion far beyond the cabinet's 40km limit?",
         date: '6 June 1982',
+        questionHeading:
+          'Why did Ariel Sharon expand the invasion far beyond the cabinet’s 40km limit?',
+        bullets: ['Ambassador Argov Shot', 'Ariel Sharon (Defence)', '60-Mile Drive to Beirut'],
+        keywords: ['Ambassador Argov Shot', 'Ariel Sharon (Defence)', '60-Mile Drive to Beirut'],
+        clue: "Why did Ariel Sharon expand the invasion far beyond the cabinet's 40km limit?",
         title: 'Operation Peace for Galilee Launched',
       },
       {
         step: 3,
-        keywords: [
-          'Ten-week siege of West Beirut',
-          'Heavy IDF shelling & aerial bombardment',
-          'US envoy Philip Habib brokers ceasefire',
-          '14,000 PLO fighters evacuated by ship',
-          'Arafat moves headquarters to Tunis (1,500 mi)',
-        ],
-        clue: 'Why did the evacuation of the PLO to Tunis weaken Arafat’s military power?',
         date: 'June–Aug 1982',
+        questionHeading:
+          'Why did the evacuation of the PLO to Tunis weaken Arafat’s military power?',
+        bullets: ['Siege of West Beirut', '14,000 PLO Evacuated', 'Arafat Exiled to Tunis'],
+        keywords: ['Siege of West Beirut', '14,000 PLO Evacuated', 'Arafat Exiled to Tunis'],
+        clue: 'Why did the evacuation of the PLO to Tunis weaken Arafat’s military power?',
         title: 'The Siege of Beirut & PLO Evacuation',
       },
       {
         step: 4,
-        keywords: [
-          'Lebanese President Gemayel assassinated',
-          'Christian Phalangist militiamen enter camps',
-          '800 to 3,500 unarmed refugees slaughtered',
-          'IDF controls perimeter & fires night flares',
-          'Worldwide moral outrage at Israeli complicity',
-        ],
-        clue: 'Why was Israel held internationally accountable for the Phalangist massacre?',
         date: '16–18 Sept 1982',
+        questionHeading:
+          'Why was Israel held internationally accountable for the Phalangist massacre?',
+        bullets: ['Bachir Gemayel Killed', 'Phalangists Enter Camps', 'Sabra & Shatila Slain'],
+        keywords: ['Bachir Gemayel Killed', 'Phalangists Enter Camps', 'Sabra & Shatila Slain'],
+        clue: 'Why was Israel held internationally accountable for the Phalangist massacre?',
         title: 'The Sabra and Shatila Massacre',
       },
       {
         step: 5,
-        keywords: [
-          '400,000 Israelis protest in Tel Aviv',
-          'Judicial Kahan Commission of Inquiry',
-          'Sharon found "personally responsible"',
-          'Sharon forced to resign as Defence Minister',
-          'Begin resigns as Prime Minister (Aug 1983)',
-        ],
-        clue: 'What were the findings of the Kahan Commission regarding Ariel Sharon?',
         date: 'Feb 1983',
+        questionHeading: 'What were the findings of the Kahan Commission regarding Ariel Sharon?',
+        bullets: ['400,000 Tel Aviv Rally', 'Kahan Commission', 'Sharon "Personally Responsible"'],
+        keywords: ['400,000 Tel Aviv Rally', 'Kahan Commission', 'Sharon "Personally Responsible"'],
+        clue: 'What were the findings of the Kahan Commission regarding Ariel Sharon?',
         title: 'The Kahan Commission & Israeli Protests',
       },
     ],
@@ -463,67 +413,59 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'IDF tank transporter crashes at checkpoint',
-          'Four Palestinian workers from Jabalia killed',
-          'Rumors of deliberate Israeli retaliation',
-          'Funerals explode into mass rioting',
-          'Spontaneous uprising across Gaza & West Bank',
-        ],
-        clue: 'Why did a traffic collision in the Gaza Strip spark the First Intifada?',
         date: '8 Dec 1987',
+        questionHeading: 'Why did a traffic collision in the Gaza Strip spark the First Intifada?',
+        bullets: ['IDF Transporter Crash', '4 Jabalia Workers Killed', 'Spontaneous Uprising'],
+        keywords: ['IDF Transporter Crash', '4 Jabalia Workers Killed', 'Spontaneous Uprising'],
+        clue: 'Why did a traffic collision in the Gaza Strip spark the First Intifada?',
         title: 'The Jabalia Traffic Spark',
       },
       {
         step: 2,
-        keywords: [
-          'Youths throwing stones vs armed soldiers',
-          'Commercial strikes & tax boycotts',
-          'Defence Minister Rabin "break their bones"',
-          'Global TV footage of soldiers beating youths',
-          'IDF moral authority & image shattered',
-        ],
-        clue: 'How did global television broadcasts of the "Iron Fist" policy damage Israel?',
         date: '1987–1988',
+        questionHeading:
+          'How did global television broadcasts of the "Iron Fist" policy damage Israel?',
+        bullets: ['Stones vs Assault Rifles', 'Rabin "Break Their Bones"', 'Global TV Outrage'],
+        keywords: ['Stones vs Assault Rifles', 'Rabin "Break Their Bones"', 'Global TV Outrage'],
+        clue: 'How did global television broadcasts of the "Iron Fist" policy damage Israel?',
         title: 'Popular Uprising & The "Iron Fist" Policy',
       },
       {
         step: 3,
-        keywords: [
-          'Sheikh Ahmed Yassin (Muslim Brotherhood)',
-          'Hamas founded as Islamic Resistance',
-          '1988 Hamas Covenant: all Palestine Islamic Waqf',
-          'Rejection of any diplomatic compromise',
-          'Challenges secular authority of the PLO',
-        ],
-        clue: 'Why did the rise of Hamas threaten Yasser Arafat and the PLO’s leadership?',
         date: 'Dec 1987',
+        questionHeading:
+          'Why did the rise of Hamas threaten Yasser Arafat and the PLO’s leadership?',
+        bullets: ['Sheikh Ahmed Yassin', 'Hamas Founded (1987)', '1988 Islamic Covenant'],
+        keywords: ['Sheikh Ahmed Yassin', 'Hamas Founded (1987)', '1988 Islamic Covenant'],
+        clue: 'Why did the rise of Hamas threaten Yasser Arafat and the PLO’s leadership?',
         title: 'The Founding of Hamas in Gaza',
       },
       {
         step: 4,
-        keywords: [
-          'UN General Assembly moves to Geneva',
-          'Arafat explicitly renounces terrorism',
-          'Accepts UN Resolutions 242 & 338',
-          'Recognises State of Israel’s right to exist',
-          'US opens direct diplomatic dialogue with PLO',
-        ],
-        clue: 'Why was Arafat’s 1988 Geneva speech a historic turning point for the PLO?',
         date: '13 Dec 1988',
+        questionHeading:
+          'Why was Arafat’s 1988 Geneva speech a historic turning point for the PLO?',
+        bullets: ['Geneva UN Address', 'Renounces Terrorism', 'US Opens Dialogue'],
+        keywords: ['Geneva UN Address', 'Renounces Terrorism', 'US Opens Dialogue'],
+        clue: 'Why was Arafat’s 1988 Geneva speech a historic turning point for the PLO?',
         title: 'Arafat’s Geneva Speech to the UN',
       },
       {
         step: 5,
+        date: 'Oct 1991',
+        questionHeading:
+          'Why did the end of the Cold War and the Gulf War make the Madrid Conference possible?',
+        bullets: [
+          'Cold War & Gulf War End',
+          'Madrid Peace Conference',
+          'Direct Face-to-Face Talks',
+        ],
         keywords: [
-          'US victory in 1991 Gulf War',
-          'Pres Bush & Gorbachev convene summit',
-          'Arabs & Israelis face-to-face for first time',
-          'Palestinians represented in Jordanian delegation',
-          'Framework established for future bilateral talks',
+          'Cold War & Gulf War End',
+          'Madrid Peace Conference',
+          'Direct Face-to-Face Talks',
         ],
         clue: 'Why did the end of the Cold War and the Gulf War make the Madrid Conference possible?',
-        date: 'Oct 1991',
         title: 'The Madrid Peace Conference',
       },
     ],
@@ -589,67 +531,57 @@ const kt3Configs = [
     stages: [
       {
         step: 1,
-        keywords: [
-          'Yitzhak Rabin elected Prime Minister',
-          'Ends 15 years of Likud dominance',
-          'Pledges peace within nine months',
-          'Freeze on political West Bank settlements',
-          'Public exhaustion with the First Intifada',
-        ],
-        clue: 'What mandate did Israeli voters give Yitzhak Rabin and Labour in 1992?',
         date: 'June 1992',
+        questionHeading: 'What mandate did Israeli voters give Yitzhak Rabin and Labour in 1992?',
+        bullets: ['Yitzhak Rabin Elected', 'Labour Peace Mandate', 'Settlement Freeze Pledge'],
+        keywords: ['Yitzhak Rabin Elected', 'Labour Peace Mandate', 'Settlement Freeze Pledge'],
+        clue: 'What mandate did Israeli voters give Yitzhak Rabin and Labour in 1992?',
         title: 'The Election of Yitzhak Rabin',
       },
       {
         step: 2,
+        date: 'Jan–Aug 1993',
+        questionHeading: 'Why was strict secrecy essential for the Oslo negotiators in Norway?',
+        bullets: [
+          'Secret Norway Backchannel',
+          'Mutual Recognition Letters',
+          'PLO & Israel Recognise',
+        ],
         keywords: [
-          'Covert talks in Norwegian farmhouses',
-          'Away from media grandstanding & leaks',
-          'Letters of Mutual Recognition signed',
-          'Rabin recognises PLO as Palestinian representative',
-          'Arafat recognises Israel & renounces violence',
+          'Secret Norway Backchannel',
+          'Mutual Recognition Letters',
+          'PLO & Israel Recognise',
         ],
         clue: 'Why was strict secrecy essential for the Oslo negotiators in Norway?',
-        date: 'Jan–Aug 1993',
         title: 'Secret Backchannel Negotiations in Oslo',
       },
       {
         step: 3,
-        keywords: [
-          'Declaration of Principles (Oslo I)',
-          'Signing ceremony on White House lawn',
-          'Historic Rabin-Arafat handshake (Clinton)',
-          'Palestinian Authority (PA) established',
-          '"Gaza-Jericho First" interim self-rule',
-        ],
-        clue: 'What did the "Gaza-Jericho First" formula provide for Palestinians?',
         date: '13 Sept 1993',
+        questionHeading: 'What did the "Gaza-Jericho First" formula provide for Palestinians?',
+        bullets: ['Oslo I Accord Signed', 'White House Handshake', '"Gaza-Jericho First" PA'],
+        keywords: ['Oslo I Accord Signed', 'White House Handshake', '"Gaza-Jericho First" PA'],
+        clue: 'What did the "Gaza-Jericho First" formula provide for Palestinians?',
         title: 'Oslo I (Declaration of Principles) & Handshake',
       },
       {
         step: 4,
-        keywords: [
-          'Hebron Cave of Patriarchs massacre (29 dead)',
-          'Hamas bus suicide bombing campaign',
-          'Israel-Jordan Peace Treaty signed (1994)',
-          'Oslo II Accord: West Bank divided',
-          'Area A (PA), Area B (Joint), Area C (IDF)',
-        ],
-        clue: 'How did the division of the West Bank into Areas A, B, and C leave territory fragmented?',
         date: '1994–1995',
+        questionHeading:
+          'How did the division of the West Bank into Areas A, B, and C leave territory fragmented?',
+        bullets: ['Hebron Mosque Massacre', 'Hamas Suicide Bombings', 'Oslo II: Areas A, B, C'],
+        keywords: ['Hebron Mosque Massacre', 'Hamas Suicide Bombings', 'Oslo II: Areas A, B, C'],
+        clue: 'How did the division of the West Bank into Areas A, B, and C leave territory fragmented?',
         title: 'Extremist Violence, Jordan Peace & Oslo II',
       },
       {
         step: 5,
-        keywords: [
-          'Massive peace rally in Tel Aviv',
-          'Yigal Amir Jewish religious extremist',
-          'Rabin shot point-blank walking to car',
-          'Religious opposition to ceding biblical land',
-          'Shatters the momentum of the Oslo peace process',
-        ],
-        clue: 'Why did Jewish extremist Yigal Amir assassinate Prime Minister Yitzhak Rabin?',
         date: '4 Nov 1995',
+        questionHeading:
+          'Why did Jewish extremist Yigal Amir assassinate Prime Minister Yitzhak Rabin?',
+        bullets: ['Tel Aviv Peace Rally', 'Yigal Amir (Extremist)', 'Rabin Assassinated'],
+        keywords: ['Tel Aviv Peace Rally', 'Yigal Amir (Extremist)', 'Rabin Assassinated'],
+        clue: 'Why did Jewish extremist Yigal Amir assassinate Prime Minister Yitzhak Rabin?',
         title: 'The Assassination of Yitzhak Rabin',
       },
     ],
@@ -859,12 +791,53 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
       padding-left: 1px;
       box-sizing: border-box;
     }
-    .lined-content-cell {
+    /* 5-Stage Full-Width Question Banner & 3-Fact Trigger Spine (KS3 Golden Standard for GCSE) */
+    .spine-notes-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+      margin: 2px 0 2px 0;
+      gap: 2px;
+    }
+    .spine-stage-block {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+      border: 1.2px solid #000000;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .stage-banner {
+      background: #000000;
+      color: #ffffff;
+      padding: 1.5px 6px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1.2px solid #000000;
+      line-height: 1.15;
+      flex-shrink: 0;
+    }
+    .stage-trigger-col {
+      width: 26mm;
+      flex-shrink: 0;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      border-right: 1.2px solid #000000;
+      box-sizing: border-box;
+    }
+    .trigger-fact-cell {
       flex: 1;
       display: flex;
       align-items: center;
-      padding-left: 5px;
+      padding: 0 3px;
       box-sizing: border-box;
+    }
+    .trigger-fact-cell:not(:last-child) {
+      border-bottom: 0.8px solid #cbd5e1;
     }
   </style>
 </head>
@@ -1184,69 +1157,61 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
         <strong>Key Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
-      <!-- Chronological Lesson Spine (Down the Left) with Pupil Note-Taking Canvas -->
-      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; margin: 2px 0 3px 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; border-top: 1.5px solid #000000;">
-          ${cfg.stages
-            .map(
-              (s, sIdx) => `
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <!-- Spine Node Down The Left (Number, Date, Title, Keywords & Focus Clue • 38mm Width) -->
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${s.step}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${s.date}</span>
-              </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${s.title}
-              </div>
-              ${
-                (s.keywords && s.keywords.length > 0) ||
-                (s.coreKeywords && s.coreKeywords.length > 0) ||
-                (s.stretchKeywords && s.stretchKeywords.length > 0)
-                  ? `
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${(s.keywords || [...(s.coreKeywords || []), ...(s.stretchKeywords || [])])
-                    .map(
-                      (kw) =>
-                        `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${kw}</div>`,
-                    )
-                    .join('')}
+      <!-- 5-Stage Chronological Inquiry Spine with Full-Width Question Banners (KS3 Golden Standard for GCSE) -->
+      <div class="spine-notes-container" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin: 2px 0 2px 0; gap: 2px;">
+        ${cfg.stages
+          .map((st) => {
+            const questionHeading = st.questionHeading || st.clue || st.title;
+            const bullets = st.bullets || (st.keywords ? st.keywords.slice(0, 3) : []);
+            const bulletsHtml = bullets
+              .map(
+                (b, bIdx) => `
+              <div class="trigger-fact-cell" style="flex: 1; display: flex; align-items: center; padding: 0 3px; ${bIdx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
+                <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.12;">
+                  <span style="font-weight: 900; color: #000000; font-size: 5pt; line-height: 1.3;">&bull;</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.3pt; font-weight: 700; color: #000000; word-break: break-word;">${b}</span>
                 </div>
-              </div>`
-                  : ''
-              }
-              ${
-                s.clue
-                  ? `
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${s.clue}
-                </div>
-              </div>`
-                  : ''
-              }
-            </div>
-
-            <!-- Ruled Note-Taking Lines (6 Lines per stage • Tighter Line Spacing ~8.0mm • Thick 1.5px Black Lines) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+              </div>`,
+              )
+              .join('');
+            return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 1.5px 6px; display: flex; align-items: center; border-bottom: 1.2px solid #000000;">
+            <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">
+                ${st.step}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #e2e8f0; white-space: nowrap;">
+                ${st.date}
+              </span>
+              <span style="color: #94a3b8; font-size: 7pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 8.5pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                ${questionHeading}
+              </span>
             </div>
           </div>
-          `,
-            )
-            .join('')}
-        </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (26mm) & Right Ruled Writing Lines (~172mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            <div class="stage-trigger-col" style="width: 26mm; flex-shrink: 0; background: #f8fafc; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
+            </div>
+
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+            </div>
+          </div>
+
+        </div>`;
+          })
+          .join('')}
       </div>
 
       <!-- Key Vocabulary (Core Disciplinary Distinction) -->
