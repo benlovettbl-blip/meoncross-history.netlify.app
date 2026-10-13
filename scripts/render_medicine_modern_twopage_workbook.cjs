@@ -67,15 +67,19 @@ const modernConfigs = [
     examStem:
       'Explain why there was rapid progress in understanding the causes of disease in the period c1950 to the present. [12 marks]',
     stimulus: ["Rosalind Franklin's Photograph 51 (1952)", 'The Human Genome Project (1990–2003)'],
+    connectives:
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+    wordBank:
+      'Gregor Mendel &bull; Rosalind Franklin &bull; Photograph 51 (1952) &bull; Watson & Crick &bull; double helix model &bull; Human Genome Project (1990–2003) &bull; gene screening &bull; hereditary disease',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.1). In the drawing box, sketch Franklin’s Photograph 51 cross pattern and Watson & Crick’s double helix model. Annotate how base pairing unlocked the causes of hereditary disease!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which scientific methods for investigating disease causes in the late twentieth century (c1950–c2000) were different from methods used in the late nineteenth century (c1870–c1900). [4 marks]',
-      hint: 'Contrast computerized biochemical DNA sequencing and electron microscopy with Robert Koch’s manual microscopic staining with aniline dyes.',
+      hint: 'Contrast computerized DNA sequencing with manual microscopic staining with chemical dyes.',
       stems:
-        'One way methods differed was the use of molecular genetics... &bull; In the late nineteenth century, Koch relied on... &bull; In contrast, by the late twentieth century, scientists used...',
+        'One way methods differed was... &bull; In the late nineteenth century... &bull; In contrast, by the late twentieth century...',
     },
     leftPageQuip:
       '<em>Franklin’s 62-hour X-ray exposure revealed the double helix; Watson and Crick celebrated in The Eagle pub.</em>',
@@ -83,17 +87,16 @@ const modernConfigs = [
       '<em>Sequencing 3 billion base pairs in the human genome took 13 years; now geneticists can read our biological code.</em>',
     linedLeftQuip:
       '<em>X-ray crystallography transformed genetics from abstract heredity into precise molecular biology.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Evaluate both breakthroughs: explain how Photograph 51 provided the structural foundation for the Human Genome Project.</em>',
     stages: [
       {
         dates: 'c1900–1940s',
         title: 'Mendel & Early Genetics',
         bullets: [
-          'Mendel’s pea plant laws rediscovered',
-          'Chromosomes observed in cell nuclei',
-          'Garrod links genes to metabolism',
-          'Proteins wrongly assumed to carry code',
+          'Growing wrinkled green garden peas',
+          'Spotting dark rod shapes inside cells',
+          'Assuming heavy protein chains hold secrets',
         ],
         focusClue: 'Why did doctors assume proteins carried hereditary traits?',
       },
@@ -101,10 +104,9 @@ const modernConfigs = [
         dates: '1951–1952',
         title: 'Franklin & Photograph 51',
         bullets: [
-          'Rosalind Franklin at King’s College',
-          'Expert in X-ray crystallography',
-          'May 1952: Captures Photograph 51',
-          'X-shaped diffraction proves double helix',
+          'Beaming invisible rays through wet DNA fibers',
+          'Exposing glass photographic plates for sixty hours',
+          'Revealing clear fuzzy X-shaped shadow marks',
         ],
         focusClue: 'How did Photograph 51 prove DNA’s helical structure?',
       },
@@ -112,10 +114,9 @@ const modernConfigs = [
         dates: '1953',
         title: 'Watson & Crick’s Model',
         bullets: [
-          'Cavendish Laboratory, Cambridge',
-          'Wilkins shares Franklin’s data',
-          'March 1953: 3D wire & metal model built',
-          'Base pairing: A-T and C-G replication',
+          'Twisting thin metal wire into spirals',
+          'Locking four chemical pairs like puzzle pieces',
+          'Rushing to celebratory pints at The Eagle pub',
         ],
         focusClue: 'How did base pairing explain hereditary replication?',
       },
@@ -123,10 +124,9 @@ const modernConfigs = [
         dates: '1990–2003',
         title: 'Human Genome Project',
         bullets: [
-          'International public consortium (1990)',
-          'Mapped all 3 billion base pairs in DNA',
-          'Identified 20,000–25,000 human genes',
-          'Completed 2003: genetic blueprint open',
+          'Linking laboratory supercomputers across six nations',
+          'Reading three billion chemical letters in blood',
+          'Publishing complete human code free online',
         ],
         focusClue: 'Why was mapping 3 billion base pairs a medical milestone?',
       },
@@ -134,10 +134,9 @@ const modernConfigs = [
         dates: '2000s–Present',
         title: 'Screening & Treatment Gap',
         bullets: [
-          'Screening faulty genes (BRCA1/2, CF)',
-          'Tailored targeted pharmacogenomics',
-          'Treatment gap: cause known, cure hard',
-          'CRISPR gene editing ethical debates',
+          'Testing saliva drops for faulty breast genes',
+          'Matching targeted pills to personal body code',
+          'Struggling to fix broken genetic code inside bodies',
         ],
         focusClue: 'Why did understanding causes outpace finding cures?',
       },
@@ -155,15 +154,19 @@ const modernConfigs = [
     examStem:
       '‘Technological innovations in medical diagnosis were more important than public health lifestyle campaigns in improving health in Britain c1900–present.’ How far do you agree? [16+4 marks]',
     stimulus: ['Wilhelm Röntgen’s X-rays (1895)', 'The 2007 smoking ban in public places'],
+    connectives:
+      'On the one hand, high-tech diagnosis was vital because... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, lifestyle campaigns mattered because... &bull; In particular, ... &bull; Overall, the most decisive factor was... because...',
+    wordBank:
+      'Wilhelm Röntgen (1895) &bull; X-rays &bull; CT scanner (1971) &bull; Godfrey Hounsfield &bull; MRI &bull; non-invasive imaging &bull; 2007 smoking ban &bull; Change4Life',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.2). In the drawing box, sketch Bertha Röntgen’s hand X-ray and Godfrey Hounsfield’s circular CT scanner. Annotate how scanning permanently ended blind exploratory surgery!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which methods of diagnosing illness in the late twentieth century (c1970–present) were different from methods used in the nineteenth century (c1800–c1900). [4 marks]',
-      hint: 'Contrast non-invasive 3D digital imaging (CT, MRI, ultrasound) and automated blood chemistry with external bedside observation and dangerous exploratory surgery.',
+      hint: 'Contrast non-invasive 3D internal scanning and blood labs with external observation and exploratory surgery.',
       stems:
-        'One way diagnosis differed was the use of non-invasive internal scanning... &bull; In the nineteenth century, doctors relied on... &bull; In contrast, by the late twentieth century, clinicians utilized...',
+        'One way diagnosis differed was... &bull; In the nineteenth century... &bull; In contrast, by the late twentieth century...',
     },
     leftPageQuip:
       '<em>Bertha Röntgen cried "I have seen my death!" upon seeing her bones; doctors saw the dawn of non-invasive diagnosis.</em>',
@@ -171,17 +174,16 @@ const modernConfigs = [
       '<em>Hounsfield’s CT scanner combined rotating X-rays with digital computers to slice through soft body tissue.</em>',
     linedLeftQuip:
       '<em>From Wilhelm Röntgen’s 1895 X-ray to Godfrey Hounsfield’s 1971 CT scanner: imaging banished exploratory surgery.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Establish clear criteria: high-tech machines detect existing illness; public health campaigns prevent illness before it occurs.</em>',
     stages: [
       {
         dates: '1895–1918',
         title: 'Röntgen & Early X-Rays',
         bullets: [
-          'Wilhelm Röntgen discovers X-rays (1895)',
-          'Passes through tissue; dense bones show',
-          'Marie Curie runs mobile WWI X-ray cars',
-          'Ended blind probing for bullets in war',
+          'Photographing wife Bertha’s hand and gold wedding ring',
+          'Driving mobile medical vans to muddy trenches',
+          'Finding jagged lead shrapnel without deep cuts',
         ],
         focusClue: 'How did X-rays transform surgical trauma diagnosis in WWI?',
       },
@@ -189,10 +191,9 @@ const modernConfigs = [
         dates: '1930s–1960s',
         title: 'Blood Labs & Endoscopy',
         bullets: [
-          'Automated blood labs track chemistry',
-          'Cellular staining detects abnormalities',
-          'Harold Hopkins invents fiber endoscope',
-          'Visual inspection of gut without surgery',
+          'Spinning red test tubes in fast centrifuges',
+          'Counting abnormal white cells on glass slides',
+          'Sliding flexible glass cables down throat tubes',
         ],
         focusClue: 'Why was fiber-optic endoscopy superior to exploratory surgery?',
       },
@@ -200,10 +201,9 @@ const modernConfigs = [
         dates: '1971–1980s',
         title: 'Hounsfield’s CT & MRI',
         bullets: [
-          'Godfrey Hounsfield invents CT scan (1971)',
-          'Rotating X-rays form 3D body slices',
-          'Mansfield & Lauterbur develop MRI',
-          'Radio waves image soft brain tumours',
+          'Spinning heavy donut scanners around hospital beds',
+          'Combining computer pictures into 3D body slices',
+          'Using magnetic radio waves to find brain lumps',
         ],
         focusClue: 'Why did CT scans transform internal soft-tissue diagnosis?',
       },
@@ -211,10 +211,9 @@ const modernConfigs = [
         dates: 'c1950–1980s',
         title: 'Epidemiological Shift',
         bullets: [
-          'Antibiotics conquer infectious killers',
-          'Life expectancy rises above 75 years',
-          'Rise of chronic non-communicable disease',
-          'Smoking, diet, and alcohol blamed',
+          'Banishing deadly childhood fevers with wonder drugs',
+          'People living past seventy years of age',
+          'Rising chest tumours and clogged heart arteries',
         ],
         focusClue: 'What drove the shift from infectious to lifestyle diseases?',
       },
@@ -222,10 +221,9 @@ const modernConfigs = [
         dates: '1980s–Present',
         title: 'State Lifestyle Campaigns',
         bullets: [
-          'Compulsory laws: seatbelts (1983)',
-          'Health Act 2006: 2007 public smoking ban',
-          'Fiscal nudge: 2018 Sugar Tax on drinks',
-          'Education: "5 A Day" & "Change4Life"',
+          'Clicking compulsory car seatbelts across chests',
+          'Extinguishing glowing cigarettes outside pub doors',
+          'Taxing sugary fizzy cans and advertising fruit',
         ],
         focusClue: 'Why do governments favour lifestyle prevention over treatment?',
       },
@@ -243,15 +241,19 @@ const modernConfigs = [
     examStem:
       '‘The establishment of the National Health Service in 1948 was the most significant turning point in medical care in the period c1900–present.’ How far do you agree? [16+4 marks]',
     stimulus: ['The National Health Service (1948)', 'The discovery of Salvarsan 606 (1909)'],
+    connectives:
+      'On the one hand, the NHS was transformative because... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, magic bullets were crucial because... &bull; In particular, ... &bull; Overall, the most decisive factor was... because...',
+    wordBank:
+      'Paul Ehrlich &bull; Salvarsan 606 (1909) &bull; Gerhard Domagk &bull; Prontosil (1932) &bull; William Beveridge (1942) &bull; Aneurin Bevan &bull; NHS (1948) &bull; free at point of delivery',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.3). In the drawing box, sketch Ehrlich’s test tube of Salvarsan 606 and the 1948 NHS information leaflet. Annotate how free healthcare abolished medical poverty!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which healthcare access in Britain after 1948 was different from healthcare access in the 1930s. [4 marks]',
-      hint: 'Contrast universal care free at the point of delivery funded by general taxation with the 1911 National Insurance scheme (which excluded women and children) and bankrupt voluntary hospitals.',
+      hint: 'Contrast free universal healthcare funded by taxation with private fees and voluntary charity hospitals.',
       stems:
-        'One way healthcare access differed was the removal of financial charges at the point of treatment... &bull; In the 1930s, working-class families... &bull; In contrast, after 1948, the NHS guaranteed that...',
+        'One way healthcare access differed was... &bull; In the 1930s... &bull; In contrast, after 1948...',
     },
     leftPageQuip:
       '<em>Ehrlich tested 605 failed arsenic compounds before compound 606 finally cured syphilis in 1909.</em>',
@@ -259,17 +261,16 @@ const modernConfigs = [
       '<em>Bevan overcame doctor opposition by "stuffing their mouths with gold," launching the NHS on 5 July 1948.</em>',
     linedLeftQuip:
       '<em>Salvarsan 606 and Prontosil proved chemicals could destroy specific internal microbes without destroying the patient.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Weigh institutional reform against pharmacology: free healthcare means little without effective drugs to prescribe.</em>',
     stages: [
       {
         dates: '1906–1909',
         title: 'Ehrlich & Salvarsan 606',
         bullets: [
-          'Paul Ehrlich tests bacterial chemical dyes',
-          'Conceives synthetic "magic bullets"',
-          'Sahachiro Hata joins team (1909)',
-          'Compound 606 cures syphilis in humans',
+          'Testing hundreds of toxic yellow arsenic mixtures',
+          'Hunting chemical bullets that only hit germs',
+          'Curing deadly human syphilis with magic bullet',
         ],
         focusClue: 'Why was Salvarsan 606 termed the first "magic bullet"?',
       },
@@ -277,10 +278,9 @@ const modernConfigs = [
         dates: '1932–1935',
         title: 'Domagk & Prontosil',
         bullets: [
-          'Gerhard Domagk tests red industrial dye',
-          '1932: Prontosil kills strep in mice',
-          'Cures daughter’s severe blood poisoning',
-          'Active ingredient: sulfonamide drugs',
+          'Injecting bright red leather dye into mice',
+          'Saving sick daughter from arm-amputation death',
+          'Discovering active white sulfa medicine powder',
         ],
         focusClue: 'How did Prontosil prove synthetic drugs could kill microbes?',
       },
@@ -288,10 +288,9 @@ const modernConfigs = [
         dates: '1942',
         title: 'The Beveridge Report',
         bullets: [
-          'Sir William Beveridge social report',
-          'Tackles "Five Giants" including Disease',
-          'Proposes universal state social care',
-          'Wartime collectivism spurs support',
+          'Listing Five Giants that crush poor workers',
+          'Surviving Nazi air bombs with community spirit',
+          'Demanding free medical care for every citizen',
         ],
         focusClue: 'How did WWII unity create momentum for state healthcare?',
       },
@@ -299,10 +298,9 @@ const modernConfigs = [
         dates: '1945–1948',
         title: 'Bevan & Launch of the NHS',
         bullets: [
-          'Aneurin Bevan appointed Health Minister',
-          'BMA doctors resist state salaries (90%)',
-          'Bevan lets consultants keep private beds',
-          '5 July 1948: NHS free at point of care',
+          'Offering private bed perks to stubborn doctors',
+          'Delivering free spectacles and dentures to families',
+          'Abolishing terrifying doctor bills forever',
         ],
         focusClue: 'How did Bevan compromise to persuade resistant doctors?',
       },
@@ -310,10 +308,9 @@ const modernConfigs = [
         dates: '1950s–Present',
         title: 'High-Tech Care & Costs',
         bullets: [
-          'Dialysis, hip replacements & transplants',
-          'Keyhole surgery & chemotherapy units',
-          '1951 prescription charges divide party',
-          'Aging population strains tax funding',
+          'Pumping blood through giant artificial kidney filters',
+          'Replacing worn hip joints with metal balls',
+          'Charging small fees for paper medicine slips',
         ],
         focusClue: 'Why has modern medical success created financial strain?',
       },
@@ -331,15 +328,19 @@ const modernConfigs = [
     examStem:
       'Explain why penicillin was successfully developed and mass-produced in the period 1928–1945. [12 marks]',
     stimulus: ['Alexander Fleming’s discovery (1928)', 'The impact of the Second World War'],
+    connectives:
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+    wordBank:
+      'Alexander Fleming (1928) &bull; penicillin &bull; Howard Florey &bull; Ernst Chain &bull; Norman Heatley &bull; Albert Alexander (1941) &bull; Peoria fermentation &bull; mass production (1944)',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.4). In the drawing box, sketch Fleming’s contaminated petri dish and an American 10,000-gallon deep-tank vat. Annotate how penicillin saved Allied troops on D-Day!',
     fourMark: {
       type: 'Similarity',
       question:
         'Explain one way in which Alexander Fleming’s discovery of penicillin in 1928 was similar to Edward Jenner’s discovery of the smallpox vaccine in 1796. [4 marks]',
-      hint: 'Focus on both breakthroughs relying on accidental observation of natural living organisms protecting against disease, followed by initial difficulty in proving how they worked.',
+      hint: 'Focus on both breakthroughs relying on accidental observations of natural organisms protecting against disease.',
       stems:
-        'One way both discoveries were similar was the reliance on serendipitous observation... &bull; In 1796, Jenner observed that... &bull; Similarly, in 1928, Fleming noticed that...',
+        'One way both discoveries were similar was... &bull; In 1796, Jenner... &bull; Similarly, in 1928, Fleming...',
     },
     leftPageQuip:
       '<em>Fleming almost washed his petri dish in Lysol, but noticed a clear halo where mould destroyed golden staphylococci.</em>',
@@ -347,17 +348,16 @@ const modernConfigs = [
       '<em>The Oxford team grew penicillin in bedpans; American factories brewed it in 10,000-gallon fermentation vats.</em>',
     linedLeftQuip:
       '<em>Fleming observed penicillin in 1928; Florey and Chain purified it in 1940; US wartime industry mass-produced it in 1944.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Show how individual observation, scientific teamwork, wartime necessity, and US capital combined to create mass antibiotics.</em>',
     stages: [
       {
         dates: '1928–1929',
         title: 'Fleming’s Discovery',
         bullets: [
-          'St Mary’s Hospital, London (1928)',
-          'Contaminated staphylococcus petri dish',
-          'Penicillium notatum mould dissolves germs',
-          'Publishes 1929; cannot chemically purify',
+          'Finding fluffy mould on dirty glass dish',
+          'Golden germs dissolving in clear circle halos',
+          'Failing to separate fragile liquid juice',
         ],
         focusClue: 'Why could Fleming not turn mould into a clinical medicine?',
       },
@@ -365,10 +365,9 @@ const modernConfigs = [
         dates: '1938–1940',
         title: 'Florey & Chain at Oxford',
         bullets: [
-          'Oxford team reviews Fleming’s paper',
-          'Rockefeller Foundation funds research',
-          'Norman Heatley builds bedpan apparatus',
-          'Freeze-drying extracts pure penicillin',
+          'Brewing fungus inside hospital bedpans and milk churns',
+          'Winning American dollar grants during air raids',
+          'Freezing brown liquid into precious yellow crystals',
         ],
         focusClue: 'How did Norman Heatley solve the purification challenge?',
       },
@@ -376,10 +375,9 @@ const modernConfigs = [
         dates: '1940–1941',
         title: 'Mice Trials & Albert Alexander',
         bullets: [
-          'May 1940: 4 treated infected mice survive',
-          '1941: Policeman Albert Alexander treated',
-          'Fatal facial septicaemia clears rapidly',
-          'Drug runs out; patient dies; proof clear',
+          'Infecting eight mice and keeping treated four alive',
+          "Scraping rose thorn scratches on policeman's face",
+          'Running out of drops before patient recovers',
         ],
         focusClue: 'Why was Alexander’s trial both a success and a tragedy?',
       },
@@ -387,10 +385,9 @@ const modernConfigs = [
         dates: '1941–1944',
         title: 'Peoria & US Mass Production',
         bullets: [
-          'Florey & Heatley travel to USA (1941)',
-          'Peoria lab uses corn-steep liquor boost',
-          'Cantaloupe mould strain yields 200x',
-          '10,000-gallon deep-tank vats built',
+          'Feeding corn beer wash to rotting melon mould',
+          'Pumping sterile air through giant ten-thousand-gallon vats',
+          'Brewing million doses for D-Day landing craft',
         ],
         focusClue: 'How did US industrial fermentation enable mass production?',
       },
@@ -398,10 +395,9 @@ const modernConfigs = [
         dates: '1944–Present',
         title: 'D-Day & Superbugs',
         bullets: [
-          '2.3m doses produced for D-Day (1944)',
-          'Wound fatality drops from 15% to 1%',
-          'Fleming, Florey, Chain win Nobel (1945)',
-          'Overuse drives resistant MRSA superbugs',
+          "Spraying white powder directly into torn soldiers' limbs",
+          'Three scientists sharing golden Nobel prize medal',
+          'Overusing capsules creating tough hospital superbugs',
         ],
         focusClue: 'Why did Fleming warn that antibiotic overuse causes resistance?',
       },
@@ -422,15 +418,19 @@ const modernConfigs = [
       'Doll and Hill’s research (1950)',
       'Technological treatments (radiotherapy, surgery, immunotherapy)',
     ],
+    connectives:
+      'On the one hand, government legislation was decisive because... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, high-tech treatments mattered because... &bull; In particular, ... &bull; Overall, the most decisive factor was... because...',
+    wordBank:
+      'Richard Doll &bull; Austin Bradford Hill (1950) &bull; British Doctors Study &bull; 1965 TV ad ban &bull; 2007 public smoking ban &bull; plain packaging (2016) &bull; radiotherapy &bull; immunotherapy',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 4.5). In the drawing box, sketch a 1950s doctor cigarette advert and a 2016 olive-green plain pack. Annotate how state legislation slashed smoking from 65% to under 13%!',
     fourMark: {
       type: 'Similarity',
       question:
         'Explain one way in which government intervention against lung cancer after 1965 was similar to government action in the 1875 Public Health Act. [4 marks]',
-      hint: 'Focus on both interventions representing the abandonment of laissez-faire in favour of compulsory national legislation to protect public health.',
+      hint: 'Focus on both representing state intervention and compulsory legislation replacing laissez-faire.',
       stems:
-        'One way government intervention was similar was the rejection of laissez-faire... &bull; In 1875, Parliament compelled local authorities to... &bull; Similarly, after 1965, the government used compulsory laws to ban advertising and...',
+        'One way government action was similar was... &bull; In 1875, Parliament... &bull; Similarly, after 1965...',
     },
     leftPageQuip:
       '<em>Doll and Hill proved smoking caused lung cancer in 1950; Doll immediately extinguished his pipe and lived to age 92.</em>',
@@ -438,17 +438,16 @@ const modernConfigs = [
       '<em>From TV ad bans in 1965 to plain olive-green packs in 2016: government compulsion slashed smoking from 65% to 13%.</em>',
     linedLeftQuip:
       '<em>Doll and Hill’s statistical epidemiology gave the British government the empirical evidence to dismantle tobacco marketing.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Compare 1875 sewers with 2007 smoking bans: state compulsion consistently achieves greater public health impact than laissez-faire.</em>',
     stages: [
       {
         dates: '1920s–1950',
         title: 'The Mysterious Epidemic',
         bullets: [
-          'British lung cancer deaths surge 15-fold',
-          'Doctors blame tarmac dust or motor fumes',
-          'Tobacco companies market cigarettes',
-          'By 1950: 65% of adult British males smoke',
+          'Men coughing black blood into hospital basins',
+          'Blaming smelly road tarmac and lorry exhaust fumes',
+          'Colourful billboards showing smiling smoking doctors',
         ],
         focusClue: 'Why did early doctors fail to link smoking to lung cancer?',
       },
@@ -456,10 +455,9 @@ const modernConfigs = [
         dates: '1950–1954',
         title: 'Doll & Hill’s Proof',
         bullets: [
-          'Doll & Hill survey 20 London hospitals',
-          '1950 BMJ paper links smoking to tumors',
-          'British Doctors Study tracks 40,000 GPs',
-          'Proves heavy smokers face 50x risk',
+          'Interviewing sick patients across twenty London wards',
+          'Tracking forty thousand real family doctors over years',
+          'Proving heavy smokers face fifty-times higher risk',
         ],
         focusClue: 'How did statistical epidemiology prove the causal link?',
       },
@@ -467,10 +465,9 @@ const modernConfigs = [
         dates: '1962–1971',
         title: 'Royal College & Ad Bans',
         bullets: [
-          '1962: Royal College report sounds alarm',
-          '1965: TV cigarette advertising banned',
-          '1971: Warning labels on tobacco packets',
-          'Industry sponsors sports to bypass bans',
+          'Banning glowing cigarette commercials on evening television',
+          'Printing bold black warning text on cardboard cartons',
+          'Sponsoring fast racing cars to keep brands famous',
         ],
         focusClue: 'Why did government action encounter strong tobacco lobbying?',
       },
@@ -478,10 +475,9 @@ const modernConfigs = [
         dates: '2000s',
         title: 'Public Smoking Ban',
         bullets: [
-          'Second-hand passive smoke proven toxic',
-          'Health Act 2006: July 2007 indoor ban',
-          'Legal buying age raised from 16 to 18',
-          'UK smoking falls from 65% to under 13%',
+          'Breathing toxic secondhand smoke in crowded rooms',
+          'Padlocking pub ashtrays and stepping outside into cold',
+          'Raising legal counter buying age to eighteen',
         ],
         focusClue: 'Why was passive smoking crucial in banning public smoking?',
       },
@@ -489,10 +485,9 @@ const modernConfigs = [
         dates: '2010s–Present',
         title: 'Plain Packs & Oncology',
         bullets: [
-          '2016: Plain drab-olive packaging law',
-          'Low-dose spiral CT & bronchoscopy',
-          'Robotic VATS lobectomies & immunotherapy',
-          '16% 5-year survival: prevention vital',
+          'Selling plain ugly mud-green packets with graphic photos',
+          'Guiding tiny robotic camera pincers between chest ribs',
+          'Boosting immune soldier cells to attack hidden tumours',
         ],
         focusClue: 'Why does low cancer survival prove prevention beats cure?',
       },
@@ -1068,9 +1063,9 @@ function buildModernTwoPageWorkbook(unitData, period) {
     // PAGE 1 OF MODULE: CHRONOLOGICAL INQUIRY SPINE
     html += renderSpinePage({ ...cfg, pageNum: leftPageNum });
 
-    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 28 FLEX TASK LINES, TIMELINE MISSION)
+    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 22 FLEX TASK LINES, TIMELINE MISSION)
     const flexTaskLines = Array.from(
-      { length: 28 },
+      { length: 22 },
       () => `
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
     ).join('');
@@ -1099,6 +1094,18 @@ function buildModernTwoPageWorkbook(unitData, period) {
             <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
             <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
             <span style="font-style: italic;">(You must also use information of your own)</span>
+          </div>
+        </div>
+
+        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Accessible Writing Frames:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${cfg.wordBank}</span>
           </div>
         </div>
 

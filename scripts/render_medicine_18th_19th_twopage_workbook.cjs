@@ -67,15 +67,19 @@ const eighteenthNineteenthConfigs = [
     examStem:
       'Explain why there was rapid progress in understanding the causes of disease in the period c1860–c1890. [12 marks]',
     stimulus: ["Louis Pasteur's Germ Theory (1861)", "Robert Koch's work on bacteria"],
+    connectives:
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+    wordBank:
+      'swan-neck flask &bull; Germ Theory (1861) &bull; spontaneous generation &bull; Robert Koch &bull; agar jelly &bull; methyl violet dye &bull; tuberculosis (1882) &bull; microphotography',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.1). In the drawing box, sketch Pasteur’s swan-neck flask experiment and Koch’s agar plate. Annotate how identifying specific bacteria ended miasma theory forever!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which ideas about the cause of disease in the late nineteenth century (c1860–c1890) were different from ideas in the Renaissance (c1500–c1700). [4 marks]',
-      hint: 'Contrast Pasteur and Koch’s laboratory discovery that specific microbes cause disease with the persistent Renaissance belief in miasma and spontaneous generation.',
+      hint: 'Contrast laboratory discoveries of specific microbes with earlier beliefs in miasma and spontaneous generation.',
       stems:
-        'One way ideas about causes differed was... &bull; In the Renaissance period (c1500–c1700)... &bull; In contrast, in the late nineteenth century, Pasteur and Koch...',
+        'One way ideas about causes differed was... &bull; In the Renaissance period... &bull; In contrast, in the late nineteenth century...',
     },
     leftPageQuip:
       '<em>Pasteur proved that rotting soup doesn’t spontaneously create germs; Koch proved which specific germs caused tuberculosis.</em>',
@@ -83,17 +87,16 @@ const eighteenthNineteenthConfigs = [
       '<em>Robert Koch photographed bacteria so clearly that British doctors could no longer blame bad smells for tuberculosis.</em>',
     linedLeftQuip:
       '<em>Pasteur proved microbes cause decay (1861); Koch proved specific bacteria cause specific diseases (1876–83).</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Structure your causal argument: demonstrate how Koch built directly upon Pasteur’s Germ Theory to revolutionize diagnosis.</em>',
     stages: [
       {
         dates: 'c1700–1850s',
         title: 'Spontaneous Generation & Miasma',
         bullets: [
-          'Miasma: airborne decay blamed for disease',
-          'Spontaneous generation: rotting creates microbes',
-          'Animalcules observed without disease link',
-          'Anti-contagionist medical orthodoxy',
+          'Smelling rotting meat and open cesspools',
+          'Foul airborne damp blamed for illness',
+          'Microscopes seeing tiny swimming creatures',
         ],
         focusClue: 'Why did doctors believe disease created germs, rather than vice versa?',
       },
@@ -101,10 +104,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1861',
         title: 'Louis Pasteur & Germ Theory',
         bullets: [
-          'Investigates beer & wine souring in Lille',
-          'Swan-neck flask traps airborne dust',
-          'Microbes cause decay and fermentation',
-          '1861: Publishes Germ Theory of decay',
+          'Heating sour beer inside glass flasks',
+          'Bent swan necks trapping airborne dust',
+          'Boiled broth staying clear and fresh',
         ],
         focusClue: 'How did the swan-neck flask disprove spontaneous generation?',
       },
@@ -112,10 +114,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1867–1876',
         title: 'British Scepticism & John Tyndall',
         bullets: [
-          'Dr Charlton Bastian defends miasma theory',
-          'Pasteur dismissed in Britain as "mere chemist"',
-          '1876: Tyndall lectures on dust and germs',
-          'Joseph Lister applies theory to carbolic spray',
+          'London doctors defending bad air theory',
+          'Shining light beams through dusty boxes',
+          'Spraying smelly carbolic acid on cut flesh',
         ],
         focusClue: 'Why did British doctors refuse to believe germs caused human illness?',
       },
@@ -123,10 +124,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1876–1882',
         title: 'Robert Koch & Specific Bacteria',
         bullets: [
-          '1876: Isolates specific anthrax bacillus',
-          'Agar jelly grows pure bacterial cultures',
-          'Methyl violet industrial dye stains bacteria',
-          '1882: Discovers Mycobacterium tuberculosis',
+          'Solid seaweed agar jelly in shallow dishes',
+          'Staining microbes with bright purple dyes',
+          'Photographing deadly tuberculosis under glass lenses',
         ],
         focusClue: "How did Koch's staining and culture methods prove specificity?",
       },
@@ -134,10 +134,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1883–1890',
         title: 'Postulates & Microphotography',
         bullets: [
-          '1883: Identifies cholera microbe in Egypt/India',
-          'High-resolution photomicrography proves facts',
-          '4 Postulates: scientific gold standard',
-          'Permanent scientific defeat of miasma theory',
+          'Tracking curved cholera germs in river water',
+          'Taking crisp black-and-white photos of germs',
+          'Injecting farm animals to test poisons',
         ],
         focusClue: 'Why was photomicrography crucial in winning British doctors over?',
       },
@@ -155,15 +154,19 @@ const eighteenthNineteenthConfigs = [
     examStem:
       '‘Edward Jenner’s development of the smallpox vaccine was the most significant breakthrough in the prevention of disease in the period c1700–c1900.’ How far do you agree? [16+4 marks]',
     stimulus: ['Inoculation', 'The Public Health Act (1875)'],
+    connectives:
+      'On the one hand, a major breakthrough was... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, an alternative factor was... &bull; In particular, ... &bull; Overall, the most decisive factor was... because...',
+    wordBank:
+      'Edward Jenner (1796) &bull; cowpox &bull; James Phipps &bull; smallpox &bull; variolation &bull; inoculation &bull; compulsory vaccination (1852) &bull; Anti-Vaccination League',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.2). In the drawing box, sketch Jenner inoculating James Phipps with cowpox. Annotate how this empirical experiment laid the foundation for modern immunology!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which methods of preventing smallpox in the late eighteenth century were different from methods used in the seventeenth century. [4 marks]',
-      hint: 'Contrast Edward Jenner’s safe cowpox vaccination (1796) with earlier seventeenth-century reliance on prayer, quarantine, and risky smallpox inoculation (variolation).',
+      hint: 'Contrast safe cowpox vaccination with earlier reliance on prayer, quarantine, and risky variolation.',
       stems:
-        'One way prevention of smallpox differed was... &bull; In the seventeenth century... &bull; In contrast, in the late eighteenth century, Edward Jenner...',
+        'One way prevention of smallpox differed was... &bull; In the seventeenth century... &bull; In contrast, in the late eighteenth century...',
     },
     leftPageQuip:
       '<em>Cartoons showed vaccinated people growing cow heads and horns: proof that anti-vax memes existed long before social media.</em>',
@@ -171,17 +174,16 @@ const eighteenthNineteenthConfigs = [
       '<em>Jenner saved millions with cowpox, yet died before anyone could explain what a virus actually was.</em>',
     linedLeftQuip:
       '<em>Contrast Jenner’s empirical cowpox observation with Pasteur and Koch’s laboratory bacteriology a century later.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Balance Jenner’s individual genius against the necessity of state legislation: vaccination only conquered smallpox when made compulsory in 1852.</em>',
     stages: [
       {
         dates: '1721–1795',
         title: 'Smallpox & Inoculation',
         bullets: [
-          'Smallpox killed 40,000+ Britons each year',
-          'Lady Montagu introduced Turkish variolation',
-          'Inoculation risked triggering deadly epidemics',
-          'Suttonian commercial method charged high fees',
+          'Scabbing sores blinding young children',
+          'Scratching live pus into healthy arms',
+          'Paying rich doctors high guinea fees',
         ],
         focusClue: 'Why was inoculation dangerous for poor urban communities?',
       },
@@ -189,10 +191,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1796–1798',
         title: 'Edward Jenner & The Cowpox Vaccine',
         bullets: [
-          'Gloucestershire dairy milkmaids immune to smallpox',
-          'May 1796: Inoculates James Phipps with cowpox',
-          'July 1796: Variolates Phipps—no smallpox develops',
-          '1798: Publishes empirical findings at own expense',
+          'Milking cows with clear smooth skin',
+          'Scraping blister liquid into boy James Phipps',
+          'Dosing boy with deadly pox without illness',
         ],
         focusClue: 'How did Jenner use scientific experimentation to test folklore?',
       },
@@ -200,10 +201,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1798–1810s',
         title: 'Medical & Religious Opposition',
         bullets: [
-          'Royal Society refuses to publish Jenner’s paper',
-          'Dr Woodville uses contaminated hospital needles',
-          'Clergy condemn injecting beast matter into humans',
-          'Anti-vaccine cartoons depict cow heads sprouting',
+          'Printing scary cartoons with sprouting cow horns',
+          'Church pulpits warning against beast blood',
+          'Dirty hospital needles passing deadly infections',
         ],
         focusClue: 'Why did London doctors and church leaders resist vaccination?',
       },
@@ -211,10 +211,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1802–1840',
         title: 'Parliamentary Funding & Adoption',
         bullets: [
-          '1802 & 1807: Parliament grants Jenner £30,000',
-          'Napoleon vaccinates entire French grand army',
-          '1808: Royal Jennerian Society founded',
-          '1840: Vaccination Act bans dangerous inoculation',
+          'Voting thirty thousand pounds in gold coins',
+          'Giving free scratches to village babies',
+          'Banning old dangerous pus cuts by law',
         ],
         focusClue: 'Why did the British government abandon laissez-faire for vaccination?',
       },
@@ -222,10 +221,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1852–1871',
         title: 'Compulsory Acts & Anti-Vaccine League',
         bullets: [
-          '1852: Vaccination made compulsory for all infants',
-          '1871: Vaccination officers enforce mandatory fines',
-          'Anti-Vaccination League marches for civil liberty',
-          'Jenner’s limit: unable to explain viral mechanism',
+          'Fining poor parents for refusing jabs',
+          'Angry street protests marching with banners',
+          'Plunging death rates as smallpox disappears',
         ],
         focusClue: 'Why did making vaccination compulsory spark fierce public protests?',
       },
@@ -243,15 +241,19 @@ const eighteenthNineteenthConfigs = [
     examStem:
       'Explain why the standard of hospital care and nursing improved so significantly in the second half of the nineteenth century. [12 marks]',
     stimulus: ["Florence Nightingale's work in the Crimea (1854–56)", 'The pavilion hospital plan'],
+    connectives:
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+    wordBank:
+      "Florence Nightingale &bull; Scutari (1854) &bull; Notes on Nursing (1859) &bull; pavilion plan &bull; cross-ventilation &bull; St Thomas' Hospital &bull; trained nurses &bull; sanitation",
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.3). In the drawing box, sketch the Pavilion Hospital plan with its separate, ventilated pavilions. Annotate how cross-ventilation prevented hospital gangrene!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which hospital care in the late nineteenth century was different from hospital care in the Medieval period. [4 marks]',
-      hint: 'Contrast Florence Nightingale’s sanitary pavilion hospitals staffed by trained nurses providing medical cure with medieval monastic hospitals offering spiritual care and rest (‘care not cure’).',
+      hint: 'Contrast modern sanitary pavilion wards and trained medical care with medieval monastic care.',
       stems:
-        'One way hospital care differed was... &bull; In the Medieval period, hospitals... &bull; In contrast, in the late nineteenth century, Florence Nightingale...',
+        'One way hospital care differed was... &bull; In the Medieval period... &bull; In contrast, in the late nineteenth century...',
     },
     leftPageQuip:
       '<em>Nightingale believed miasma caused disease, yet her obsession with fresh air, scrubbing, and clean drains saved thousands of lives.</em>',
@@ -259,17 +261,16 @@ const eighteenthNineteenthConfigs = [
       '<em>Florence Nightingale proved that clean sheets, fresh soup, and opening windows were deadlier to infection than any Victorian medicine.</em>',
     linedLeftQuip:
       '<em>Nightingale transformed nursing from Dickensian drunken disrepute into a disciplined, respected medical profession.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Explain how architectural design (pavilion wards) worked in tandem with trained matrons to drive down hospital mortality.</em>',
     stages: [
       {
         dates: 'c1700–1850',
         title: 'Voluntary Hospitals & Pre-Modern Nursing',
         bullets: [
-          'Voluntary hospitals funded by private charity',
-          'Shifted from religious rest to medical treatment',
-          'Nurses untrained, illiterate, paid less than servants',
-          'Dickensian "Sairey Gamp" stereotype: drunk and dirty',
+          'Crowded dark rooms smelling of festering wounds',
+          'Drunk ward women sleeping on dirty rags',
+          'Sharing blood-soaked blankets between beds',
         ],
         focusClue: 'Why were early Victorian hospital wards notorious death traps?',
       },
@@ -277,10 +278,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1854–1856',
         title: 'Scutari & The Crimean War',
         bullets: [
-          'Sidney Herbert sends Nightingale and 38 nurses',
-          'Scutari built over open sewers; filth, typhus, cholera',
-          'Scrubbed wards, clean linen, nutritious food, drains',
-          'Mortality rate plunged from 42% to under 2%',
+          'Sewers overflowing beneath wooden ward floors',
+          'Scrubbing dirty walls with boiling water and soap',
+          'Feeding wounded soldiers hot fresh stew',
         ],
         focusClue: 'How did Nightingale’s sanitary reforms drastically cut the death rate?',
       },
@@ -288,10 +288,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1859',
         title: 'Notes on Nursing & Sanitary Science',
         bullets: [
-          '1859: Publishes bestselling *Notes on Nursing*',
-          'Insists on light, fresh air, warmth, cleanliness, diet',
-          'Believed in miasma; hygiene worked despite wrong theory',
-          'Used polar area pie charts to convince MPs',
+          'Opening high windows for fresh river breezes',
+          'Drawing colourful polar pie charts for MPs',
+          'Demanding clean white cotton bandages',
         ],
         focusClue: 'Why did Nightingale’s belief in miasma still produce effective hygiene?',
       },
@@ -299,10 +298,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1860s',
         title: 'The Pavilion Plan Hospital Design',
         bullets: [
-          'Rebuilt hospitals (e.g. St Thomas’ Hospital, London)',
-          'Separate ward blocks to isolate infectious diseases',
-          'High ceilings, large cross-ventilating windows',
-          'Glazed, washable wall tiles to prevent filth build-up',
+          'Building long narrow brick ward pavilions',
+          'Washing smooth glazed walls with water',
+          'Cross-ventilation blowing stale room air away',
         ],
         focusClue: 'How did the pavilion plan prevent cross-infection between wards?',
       },
@@ -310,10 +308,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1860–1890s',
         title: 'Professional Nurse Training & Asepsis',
         bullets: [
-          '1860: Nightingale Training School at St Thomas’',
-          'Nursing established as respected middle-class career',
-          'Matrons enforced strict hygiene and moral discipline',
-          'Late 19th c.: Germ Theory fused with nursing hygiene',
+          "Uniformed women learning medical rules at St Thomas'",
+          'Stern matrons inspecting spotless bedside tables',
+          'Fusing clean hands with microbe science',
         ],
         focusClue: 'How did nurse training permanently raise the standard of hospital care?',
       },
@@ -334,13 +331,17 @@ const eighteenthNineteenthConfigs = [
       "James Simpson's discovery of chloroform (1847)",
       "Joseph Lister's use of carbolic acid (1865)",
     ],
+    connectives:
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
+    wordBank:
+      'James Simpson &bull; chloroform (1847) &bull; Black Period &bull; Joseph Lister &bull; carbolic acid spray (1865) &bull; antiseptics &bull; steam sterilisation &bull; aseptic surgery',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.4). In the drawing box, sketch Lister’s carbolic donkey engine spraying mist over an open wound. Annotate the difference between antiseptic and aseptic surgery!',
     fourMark: {
       type: 'Similarity',
       question:
         'Explain one way in which surgical operations in the early nineteenth century (before 1846) were similar to surgery in the Medieval period. [4 marks]',
-      hint: 'Focus on the absolute necessity of raw surgical speed (e.g. Liston’s 28-second amputations) and physical restraint, as effective chemical anaesthetics had not yet been discovered.',
+      hint: 'Focus on raw surgical speed and physical restraint before effective chemical anaesthetics were discovered.',
       stems:
         'One way surgical operations were similar was... &bull; In the Medieval period... &bull; Similarly, in the early nineteenth century before 1846...',
     },
@@ -350,17 +351,16 @@ const eighteenthNineteenthConfigs = [
       '<em>Surgeons used to take pride in blood-caked frock coats; Lister forced them to wash their hands and operate in carbolic acid mist.</em>',
     linedLeftQuip:
       '<em>The "Black Period" of surgery proved that removing pain alone was dangerous until antisepsis solved internal infection.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Trace the surgical progression: from Liston’s raw speed, to Simpson’s chloroform, to Lister’s carbolic spray, to Koch’s steam sterilisation.</em>',
     stages: [
       {
         dates: 'c1700–1846',
         title: 'Pre-Anaesthetic Surgery: Speed & Shock',
         bullets: [
-          'Patients held down; trauma and shock caused heart failure',
-          'Surgeons prized raw speed (Liston: 28-second amputation)',
-          '1799: Humphry Davy discovers laughing gas',
-          '1846: William Morton demonstrates ether in Boston',
+          'Holding down screaming patients with leather straps',
+          'Sawing off broken legs in thirty seconds',
+          'Breathing sweet laughing gas at fairgrounds',
         ],
         focusClue: 'Why was surgical speed essential before the discovery of anaesthetics?',
       },
@@ -368,10 +368,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1847–1853',
         title: 'James Simpson & Chloroform',
         bullets: [
-          'Nov 1847: Simpson discovers chloroform at dinner',
-          'Relieved agony of childbirth; safer than volatile ether',
-          '1848: Hannah Greener dies from fatal overdose',
-          '1853: Queen Victoria uses chloroform for Prince Leopold',
+          'Sniffing heavy liquid vapour under dinner table',
+          'Young Hannah Greener dying from cold overdose',
+          'Queen Victoria giving birth with zero pain',
         ],
         focusClue: 'Why did the death of Hannah Greener cause panic among surgeons?',
       },
@@ -379,10 +378,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1846–1865',
         title: 'The "Black Period" of Surgery',
         bullets: [
-          'Anaesthetics allowed surgeons to operate deeper & longer',
-          'Surgeons wore pus-stained frock coats as badges of pride',
-          'Unwashed hands and catgut ligatures introduced germs',
-          'Hospital gangrene and sepsis mortality surged dramatically',
+          'Wearing stiff dried blood coats as badges',
+          'Cutting deeper into belly flesh for longer',
+          'Black rotting gangrene killing feverish patients',
         ],
         focusClue: 'Why did conquering surgical pain lead to higher patient death rates?',
       },
@@ -390,10 +388,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1865–1870s',
         title: 'Joseph Lister & Carbolic Acid Spray',
         bullets: [
-          'Lister reads Pasteur; links cattle sewage treatment to wounds',
-          '1865: Uses carbolic acid on Jamie Greenlees’ compound fracture',
-          'Glasgow Infirmary amputee mortality drops from 46% to 15%',
-          '1867: Publishes antiseptic technique in *The Lancet*',
+          'Treating green sewage water with smelly chemicals',
+          "Wrapping boy Jamie Greenlees' fractured leg",
+          'Pumping fine acid mist over open surgical wounds',
         ],
         focusClue: 'How did Lister apply Germ Theory to solve hospital gangrene?',
       },
@@ -401,10 +398,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1880s–1890s',
         title: 'From Antiseptic to Aseptic Surgery',
         bullets: [
-          'Antiseptic: kills germs present (carbolic cracked hands)',
-          'Aseptic: excludes all microbes from operating theatre',
-          '1881: Robert Koch invents high-pressure steam sterilizer',
-          '1890s: Rubber gloves (Halsted), surgical masks, sterile gowns',
+          'Boiling metal scalpels in pressurized steam kettles',
+          'Pulling on thin sterile rubber gloves',
+          'Tying white cotton masks over mouths and noses',
         ],
         focusClue: 'What is the crucial difference between antiseptic and aseptic surgery?',
       },
@@ -422,15 +418,19 @@ const eighteenthNineteenthConfigs = [
     examStem:
       '‘The work of John Snow was the main reason for improvements in public health in the nineteenth century.’ How far do you agree? [16+4 marks]',
     stimulus: ['Edwin Chadwick’s 1842 Report', 'The Public Health Act (1875)'],
+    connectives:
+      'On the one hand, a major breakthrough was... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, an alternative factor was... &bull; In particular, ... &bull; Overall, the most decisive factor was... because...',
+    wordBank:
+      'John Snow (1854) &bull; Broad Street pump &bull; waterborne cholera &bull; Edwin Chadwick (1842) &bull; Great Stink (1858) &bull; Joseph Bazalgette &bull; Public Health Act (1875) &bull; laissez-faire',
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 3.5). In the drawing box, sketch John Snow’s Broad Street pump map and Bazalgette’s sewer network. Annotate how cholera forced Parliament to abandon laissez-faire!',
     fourMark: {
       type: 'Difference',
       question:
         'Explain one way in which government action on public health in the late nineteenth century was different from government action in the Renaissance. [4 marks]',
-      hint: 'Contrast the compulsory 1875 Public Health Act forcing local councils to provide clean water and sewers with Renaissance monarchs who only took temporary, reactive emergency measures during plague outbreaks.',
+      hint: 'Contrast compulsory public health legislation with earlier temporary emergency measures.',
       stems:
-        'One way government action differed was... &bull; In the Renaissance period... &bull; In contrast, under the 1875 Public Health Act, the government...',
+        'One way government action differed was... &bull; In the Renaissance period... &bull; In contrast, under the 1875 Public Health Act...',
     },
     leftPageQuip:
       '<em>Snow removed the Broad Street pump handle in 1854, proving cholera was water-borne seven years before Germ Theory.</em>',
@@ -438,17 +438,16 @@ const eighteenthNineteenthConfigs = [
       '<em>John Snow solved cholera with a street map and a wrench, proving forensic detective work is as powerful as a microscope.</em>',
     linedLeftQuip:
       '<em>Snow established waterborne transmission in 1854, but it took the Great Stink of 1858 and the 1867 Reform Act to compel government action.</em>',
-    linedRightQuip:
+    rightPageLinedQuip:
       '<em>Weigh Snow’s epidemiological genius against Chadwick’s sanitary report, Bazalgette’s sewers, and Disraeli’s compulsory 1875 Act.</em>',
     stages: [
       {
         dates: '1831–1848',
         title: 'Epidemic Terror & Edwin Chadwick',
         bullets: [
-          '1831: First cholera epidemic kills 50,000 Britons',
-          'Violent vomiting, diarrhoea, blue skin; death within hours',
-          '1842: Edwin Chadwick links filth to poverty and disease',
-          '1848: Public Health Act creates local health boards (optional)',
+          'Violent watery sickness turning human skin blue',
+          'Piles of human excrement rotting near houses',
+          'Parliament passing optional town health boards',
         ],
         focusClue: 'Why did towns refuse to set up health boards under the 1848 Act?',
       },
@@ -456,10 +455,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1854',
         title: 'John Snow & The Broad Street Pump',
         bullets: [
-          'August 1854: Severe cholera strikes Soho (500 die in 10 days)',
-          'Snow plots deaths on spot map; clusters around Broad St pump',
-          'Brewery workers drank beer, had private well—0 deaths',
-          'Convinces parish vestry to remove the pump handle',
+          'Plotting black death bars on street map',
+          'Brewery men drinking ale staying completely healthy',
+          'Unscrewing heavy iron pump handle with wrench',
         ],
         focusClue: 'How did Snow use epidemiological mapping to prove water transmission?',
       },
@@ -467,10 +465,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1854–1858',
         title: 'Board of Health & Miasma Orthodoxy',
         bullets: [
-          'General Board of Health and *The Lancet* reject Snow',
-          'Orthodoxy claimed cholera arose from foul cesspool miasma',
-          'Snow lacked bacteriological proof (Koch found cholera in 1883)',
-          'Cesspool leaking into pump well discovered too late',
+          'Cracked brick cesspool leaking into drinking well',
+          'Medical journals laughing at dirty water theory',
+          'Doctors burning pitch barrels in foggy streets',
         ],
         focusClue: 'Why did the medical establishment refuse to accept Snow’s water theory?',
       },
@@ -478,10 +475,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1858–1865',
         title: 'The Great Stink & Bazalgette’s Sewers',
         bullets: [
-          'Summer 1858: Unbearable Thames stench closes Parliament',
-          'MPs fear miasma; fund Joseph Bazalgette’s sewer network',
-          '1,300 miles of underground sewers divert waste to Thames estuary',
-          '1866: East London is only area to get cholera (unconnected)',
+          'Boiling brown river mud halting Parliament debates',
+          'Soaking courtroom window curtains in lime juice',
+          'Digging thousand miles of underground brick tunnels',
         ],
         focusClue: 'Why did fear of miasma paradoxically save thousands from cholera?',
       },
@@ -489,10 +485,9 @@ const eighteenthNineteenthConfigs = [
         dates: '1875',
         title: 'The 1875 Public Health Act: End of Laissez-Faire',
         bullets: [
-          '1867 Reform Act gives working-class men the vote',
-          'Disraeli’s government passes landmark 1875 Public Health Act',
-          'Compulsory: clean piped water, sewers, street cleaning, food checks',
-          'Each council required to appoint a Medical Officer of Health',
+          'Working factory men winning parliamentary votes',
+          'Forcing town councils to pipe clean fresh water',
+          'Hiring official medical inspectors for bad food',
         ],
         focusClue: 'Why was the 1875 Act the definitive death blow to laissez-faire?',
       },
@@ -1062,9 +1057,9 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     // PAGE 1 OF MODULE: CHRONOLOGICAL INQUIRY SPINE
     html += renderSpinePage({ ...cfg, pageNum: leftPageNum });
 
-    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 28 FLEX TASK LINES, TIMELINE MISSION)
+    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 22 FLEX TASK LINES, TIMELINE MISSION)
     const flexTaskLines = Array.from(
-      { length: 28 },
+      { length: 22 },
       () => `
         <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
     ).join('');
@@ -1093,6 +1088,18 @@ function build18th19thTwoPageWorkbook(unitData, period) {
             <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
             <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
             <span style="font-style: italic;">(You must also use information of your own)</span>
+          </div>
+        </div>
+
+        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Accessible Writing Frames:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${cfg.wordBank}</span>
           </div>
         </div>
 

@@ -80,7 +80,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A decisive factor was that... &bull; In particular, this was reinforced by... &bull; Furthermore, this belief persisted because... &bull; Crucially, challenges were suppressed because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       'divine retribution &bull; biblical leprosy &bull; Lazar houses &bull; teleology &bull; heresy &bull; Roger Bacon (1277) &bull; monastic scriptoria &bull; 1345 planetary conjunction &bull; astrological almanacs',
     doNow: [
@@ -131,17 +131,17 @@ const medievalConfigs = [
       type: 'Similarity',
       question:
         'Explain one way in which ideas about the cause of disease in the Medieval period (c1250–c1500) were similar to ideas in the Renaissance period (c1500–c1700). [4 marks]',
-      hint: 'Focus on the persistent belief that epidemics (such as the 1348 Black Death and the 1665 Great Plague) were sent by God to punish human sin.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way ideas were similar was the continued belief in divine punishment... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+        'One way ideas were similar was that... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
     },
     fourMarkB: {
       type: 'Difference',
       question:
         'Explain one way in which ideas about the cause of disease in the Medieval period (c1250–c1500) were different from ideas in the Modern period (c1900–present). [4 marks]',
-      hint: 'Contrast medieval supernatural beliefs (God, sin, and astrology) with the modern scientific understanding of microscopic pathogens (bacteria and viruses).',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way ideas differed was the understanding of causes... &bull; In the Medieval period, people believed... &bull; In contrast, in the Modern period...',
+        'One way ideas differed was that... &bull; In the Medieval period... &bull; In contrast, in the Modern period...',
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.1). In the drawing box, sketch a monk copying Galen’s medical book in a scriptorium. Add two speech bubbles explaining why the Church banned new medical experiments and imprisoned Roger Bacon in 1277.',
@@ -180,7 +180,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A primary reason for this dominance was... &bull; In particular, this framework was extended when... &bull; Furthermore, diagnostic methods supported this because... &bull; Crucially, this belief endured because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       'Four Humours &bull; Theory of Opposites &bull; blood (sanguine) &bull; phlegm (phlegmatic) &bull; yellow bile (choleric) &bull; black bile (melancholic) &bull; uroscopy &bull; matula flask &bull; Vademecum &bull; Zodiac Man',
     doNow: [
@@ -228,17 +228,17 @@ const medievalConfigs = [
       type: 'Similarity',
       question:
         'Explain one way in which rational ideas about the cause of disease in the Medieval period were similar to ideas in the Renaissance period. [4 marks]',
-      hint: 'Focus on the persistent reliance on miasma (foul-smelling air from swamps and filth) among both physicians and ordinary people across both eras.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way rational ideas were similar was the continued belief in miasma... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+        'One way rational ideas were similar was that... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
     },
     fourMarkB: {
       type: 'Difference',
       question:
         'Explain one way in which methods of diagnosing illness in the Medieval period were different from methods of diagnosis in the Modern period. [4 marks]',
-      hint: 'Contrast medieval physicians inspecting urine in a glass matula and checking zodiac charts with modern laboratory blood tests, X-rays, and scans.',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way methods of diagnosis differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Modern period...',
+        'One way methods of diagnosis differed was that... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Modern period...',
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.2). In the drawing box, sketch a physician holding a urine flask (matula) up to the light. Label two reasons why physicians checked star charts (the Zodiac Man) before treating a patient.',
@@ -277,7 +277,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A primary reason this treatment was widespread was... &bull; Furthermore, practitioners believed that... &bull; In particular, alternative methods were used to... &bull; Crucially, this aligned with contemporary theory because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       'phlebotomy (bloodletting) &bull; fleam &bull; scarification &bull; cupping &bull; leeches (Hirudo medicinalis) &bull; purging &bull; emetics &bull; clyster (enema) &bull; Theriac &bull; Regimen Sanitatis &bull; pilgrimages &bull; relics',
     doNow: [
@@ -328,17 +328,17 @@ const medievalConfigs = [
       type: 'Similarity',
       question:
         'Explain one way in which approaches to medical treatment in the Medieval period were similar to approaches to treatment in the Renaissance period. [4 marks]',
-      hint: 'Focus on the persistent reliance on humoural bloodletting and herbal infusions among ordinary households, despite elite debates.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way treatments were similar was the continued reliance on bloodletting... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+        'One way treatments were similar was that... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
     },
     fourMarkB: {
       type: 'Difference',
       question:
         'Explain one way in which medical treatments in the Medieval period were different from treatments in the Renaissance period. [4 marks]',
-      hint: 'Contrast medieval herbal Theriacs and humoural bleeding with new Renaissance chemical remedies pioneered by Paracelsus (e.g. antimony, mercury).',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way medical treatments differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Renaissance...',
+        'One way medical treatments differed was that... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Renaissance...',
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.3). In the drawing box, draw a barber-surgeon’s bleeding bowl, fleam, and leeches. Write a 2-sentence explanation of how bloodletting was believed to restore humoural balance.',
@@ -377,7 +377,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'A central reason for this approach was... &bull; In particular, institutional rules dictated that... &bull; Furthermore, specific limitations meant that... &bull; Crucially, certain categories of patient were excluded because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       '‘care not cure’ &bull; hospitium &bull; St Bartholomew’s (1123) &bull; Augustinian nuns &bull; chapel altar &bull; university physician &bull; barber-surgeon &bull; apothecary &bull; wise woman &bull; Guild of Surgeons (1368) &bull; Lazar houses',
     doNow: [
@@ -428,17 +428,17 @@ const medievalConfigs = [
       type: 'Similarity',
       question:
         'Explain one way in which the types of medical practitioners available to ordinary people in the Medieval period were similar to those in the Renaissance period. [4 marks]',
-      hint: 'Focus on the continuous reliance on barber-surgeons for tooth-pulling and bloodletting, apothecaries for herbs, and wise women for home remedies.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way practitioners were similar was ordinary people’s reliance on... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+        'One way practitioners were similar was that... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
     },
     fourMarkB: {
       type: 'Difference',
       question:
         'Explain one way in which hospital care in the Medieval period was different from hospital care in the 18th or 19th century. [4 marks]',
-      hint: 'Contrast medieval monastic hospitals run by nuns offering rest and prayer without doctors, with 18th/19th century voluntary hospitals employing trained doctors to cure disease.',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way hospital care differed was... &bull; In the Medieval period, hospitals... &bull; In contrast, in the 18th and 19th centuries...',
+        'One way hospital care differed was that... &bull; In the Medieval period, hospitals... &bull; In contrast, in the 18th and 19th centuries...',
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 1.4). In the drawing box, sketch medieval hospital beds facing a chapel altar. Write two bullet points explaining why monastic hospitals focused on spiritual ‘care, not cure’.',
@@ -477,7 +477,7 @@ const medievalConfigs = [
       },
     ],
     connectives:
-      'On the one hand, a major contemporary explanation was that... &bull; In particular, this led people to... &bull; On the other hand, an alternative belief was that... &bull; Crucially, attempts to prevent spread failed because... &bull; In conclusion, the decisive barrier to effective treatment was...',
+      'One main argument is that... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, another factor was... &bull; In particular, ... &bull; In conclusion, the most decisive reason was... because...',
     wordBank:
       'The Black Death (1348–49) &bull; Melcombe Regis &bull; Yersinia pestis &bull; bubonic plague (rat fleas) &bull; pneumonic plague (cough droplets) &bull; buboes &bull; 30–50% mortality &bull; flagellants &bull; sweet posies &bull; street fires &bull; Edward III (1349) &bull; East Smithfield plague pits',
     doNow: [
@@ -658,14 +658,14 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     /* Thick Black Writing Lines for Handwriting */
     .task-line {
       border-bottom: 1.2px solid #000000;
-      height: 7.8mm;
+      height: 9.0mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
-      height: 7.4mm;
+      height: 7.9mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;

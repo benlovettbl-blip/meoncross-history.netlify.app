@@ -80,7 +80,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'A primary catalyst for change was... &bull; In particular, new technology enabled... &bull; Furthermore, institutional support expanded because... &bull; However, the wider impact was limited because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       'Gutenberg press (c1440) &bull; William Caxton (1476) &bull; clerical monopoly &bull; vernacular translations &bull; Royal Society (1660) &bull; Royal Charter (1662) &bull; Nullius in Verba &bull; Philosophical Transactions (1665) &bull; peer review &bull; animalcules &bull; Robert Hooke (1665)',
     doNow: [
@@ -131,17 +131,17 @@ const renaissanceConfigs = [
       type: 'Similarity',
       question:
         'Explain one way in which ideas about the cause of disease in the Renaissance (c1500–c1700) were similar to ideas in the Medieval period (c1250–c1500). [4 marks]',
-      hint: "Focus on the persistent reliance on miasma (foul air) and God's will among ordinary people, despite elite scientific debates.",
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way ideas about causes were similar was the continued belief in... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
+        'One way ideas about causes were similar was that... &bull; In the Medieval period... &bull; Similarly, in the Renaissance...',
     },
     fourMarkB: {
       type: 'Difference',
       question:
         'Explain one way in which the communication of medical ideas in the Renaissance was different from the Medieval period. [4 marks]',
-      hint: 'Contrast the mass-production of identical medical texts on printing presses with hand-copied manuscripts controlled by monks in scriptoria.',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way communication differed was... &bull; In the Medieval period, books were... &bull; In contrast, in the Renaissance, the printing press...',
+        'One way communication differed was that... &bull; In the Medieval period, books were... &bull; In contrast, in the Renaissance...',
     },
     timelineMission:
       "Turn to Pages 2–3 (Key Topic 2.1). In the drawing box, sketch Gutenberg’s screw press producing identical anatomical plates and annotate the Royal Society's motto: 'Nullius in Verba' (Take nobody's word for it)!",
@@ -180,7 +180,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'A primary reason for this significance was... &bull; In particular, this empirical approach demonstrated that... &bull; Furthermore, systematically categorising evidence showed... &bull; However, practical treatment remained limited because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       'English Hippocrates &bull; bedside observation &bull; Observationes Medicae (1676) &bull; clinical symptoms &bull; disease species &bull; scarlet fever vs measles &bull; cinchona bark (quinine) &bull; cooling regime &bull; fresh air &bull; continued bloodletting &bull; purging',
     doNow: [
@@ -231,17 +231,17 @@ const renaissanceConfigs = [
       type: 'Difference',
       question:
         "Explain one way in which Thomas Sydenham's approach to diagnosis was different from medieval physicians. [4 marks]",
-      hint: 'Contrast Sydenham’s detailed bedside observation of clinical symptoms with medieval reliance on urine flasks (matula) and astrological charts.',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way diagnosis differed was... &bull; In the Medieval period, doctors relied on... &bull; In contrast, Sydenham insisted on...',
+        'One way diagnosis differed was that... &bull; In the Medieval period, doctors relied on... &bull; In contrast, in the Renaissance, Sydenham...',
     },
     fourMarkB: {
       type: 'Similarity',
       question:
         'Explain one way in which medical treatments prescribed by Thomas Sydenham were similar to medieval treatments. [4 marks]',
-      hint: 'Focus on his continued reliance on traditional humoural purging and bloodletting (phlebotomy) to deplete patient fluids.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way treatments were similar was the continued use of... &bull; In the Medieval period... &bull; Similarly, Sydenham continued to prescribe...',
+        'One way treatments were similar was that... &bull; In the Medieval period... &bull; Similarly, in the Renaissance, Sydenham...',
     },
     timelineMission:
       "Turn to Pages 2–3 (Key Topic 2.2). In the drawing box, sketch Sydenham recording clinical symptoms at a patient's bedside and annotate his landmark book: Observationes Medicae (1676)!",
@@ -280,7 +280,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'On the one hand, this work transformed understanding because... &bull; Crucially, direct empirical observation proved that... &bull; Furthermore, wider dissemination was achieved because... &bull; However, in terms of therapeutic cures... &bull; Therefore, the overall significance was...',
+      'One main argument is that... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, another factor was... &bull; In particular, ... &bull; In conclusion, the most decisive reason was... because...',
     wordBank:
       'Andreas Vesalius &bull; University of Padua &bull; De Humani Corporis Fabrica (1543) &bull; human dissection &bull; 300+ Galenic errors &bull; mandible (jawbone) &bull; sternum (3 parts not 7) &bull; septum pores &bull; anatomical plates &bull; lack of medical cures &bull; continued humoural bleeding',
     doNow: [
@@ -331,17 +331,17 @@ const renaissanceConfigs = [
       type: 'Difference',
       question:
         'Explain one way in which methods of investigating the human body in the Renaissance were different from methods in the Medieval period. [4 marks]',
-      hint: 'Contrast medieval professors lecturing from Galenic texts while barbers cut with Vesalius performing human dissections himself at Padua.',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        'One way methods of investigation differed was... &bull; In the Medieval period, professors... &bull; In contrast, in the Renaissance, Vesalius...',
+        'One way methods of investigation differed was that... &bull; In the Medieval period... &bull; In contrast, in the Renaissance, Vesalius...',
     },
     fourMarkB: {
       type: 'Similarity',
       question:
         'Explain one way in which the effectiveness of surgical treatments in the 16th century was similar to the Medieval period. [4 marks]',
-      hint: 'Focus on the fact that despite accurate anatomical diagrams, surgeons still lacked anesthetics, antiseptics, and effective treatments, leaving surgery agonizing and fatal.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way the effectiveness of surgery was similar was... &bull; In the Medieval period... &bull; Similarly, in the 16th century...',
+        'One way the effectiveness of surgery was similar was that... &bull; In the Medieval period... &bull; Similarly, in the 16th century...',
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 2.3). In the drawing box, sketch Vesalius dissecting the human muscular system and annotate his landmark masterwork: De Humani Corporis Fabrica (1543)!',
@@ -380,7 +380,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'This discovery represented a major turning point because... &bull; By applying mechanical experimentation, it proved that... &bull; Crucially, quantitative evidence demonstrated that... &bull; However, the immediate practical impact was limited because... &bull; Consequently...',
+      'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
     wordBank:
       'William Harvey &bull; De Motu Cordis (1628) &bull; circulation of the blood &bull; mechanical pump &bull; arteries &bull; veins &bull; vein valves (Fabricius) &bull; ligature experiment &bull; 540 pints per hour &bull; capillaries &bull; conservative backlash',
     doNow: [
@@ -431,17 +431,17 @@ const renaissanceConfigs = [
       type: 'Difference',
       question:
         "Explain one way in which William Harvey's understanding of the circulatory system was different from Galen's theories. [4 marks]",
-      hint: 'Contrast Galen’s idea that blood is constantly manufactured in the liver and burned as fuel with Harvey’s proof of a closed, continuous circulation pumped by the heart.',
+      hint: 'Identify 1 valid difference, then explain with specific historical detail from both named eras.',
       stems:
-        "One way Harvey's ideas differed was... &bull; Galen claimed that blood was... &bull; In contrast, Harvey proved that...",
+        "One way Harvey's ideas differed was that... &bull; Galen claimed that blood was... &bull; In contrast, Harvey proved that...",
     },
     fourMarkB: {
       type: 'Similarity',
       question:
         'Explain one way in which medical treatments after Harvey’s discovery were similar to treatments in the Medieval period. [4 marks]',
-      hint: 'Focus on the fact that physicians continued to practice bloodletting (phlebotomy) to balance humours because Harvey’s discovery offered zero practical cures.',
+      hint: 'Identify 1 valid similarity, then explain with specific historical detail from both named eras.',
       stems:
-        'One way medical treatments remained similar was... &bull; In the Medieval period... &bull; Similarly, after Harvey’s discovery...',
+        'One way medical treatments remained similar was that... &bull; In the Medieval period... &bull; Similarly, after Harvey...',
     },
     timelineMission:
       'Turn to Pages 2–3 (Key Topic 2.4). In the drawing box, sketch the famous arm ligature experiment showing vein valves and annotate: De Motu Cordis (1628)!',
@@ -480,7 +480,7 @@ const renaissanceConfigs = [
       },
     ],
     connectives:
-      'On the one hand, contemporary responses showed clear change because... &bull; For example, local civic authorities enforced... &bull; On the other hand, there was substantial continuity in... &bull; Crucially, underlying medical beliefs remained unchanged because... &bull; Overall, while administrative methods adapted...',
+      'One main argument is that... &bull; For example, ... &bull; This was significant because... &bull; On the other hand, another factor was... &bull; In particular, ... &bull; In conclusion, the most decisive reason was... because...',
     wordBank:
       'The Great Plague (1665) &bull; London Bills of Mortality &bull; 28-day house quarantine &bull; red crosses &bull; Lord have mercy upon us &bull; searchers of the dead &bull; mass plague pits &bull; parish watchmen &bull; miasma &bull; pomanders &bull; smoking tobacco &bull; continued bloodletting',
     doNow: [
@@ -651,14 +651,14 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
     /* Standard Handwriting Writing Lines */
     .task-line {
       border-bottom: 1.2px solid #000000;
-      height: 8.0mm;
+      height: 9.0mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
-      height: 7.4mm;
+      height: 7.9mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
