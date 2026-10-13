@@ -159,27 +159,25 @@ function renderStandardFrontCover({
             .map(
               (b) => `
             <div style="display: flex; align-items: baseline; margin-bottom: 3px;">
-              <span style="font-weight: 900; margin-right: 6px; color: #1e293b; font-size: 8.5pt; flex-shrink: 0;">&bull;</span>
-              <span style="font-size: 7.8pt; line-height: 1.3; color: #111; font-weight: 500;">${b}</span>
+              <span style="font-weight: 900; margin-right: 7px; color: #1e293b; font-size: 9.5pt; flex-shrink: 0; line-height: 1;">&bull;</span>
+              <span style="font-size: 8.6pt; line-height: 1.34; color: #0f172a; font-weight: 500;">${b}</span>
             </div>`,
             )
             .join('');
 
           return `
           <div style="border: 1.2px solid #000; border-radius: 3px; background: #fff; display: flex; flex-direction: column; overflow: hidden; ${spanStyle}">
-            <div style="background: #1e293b; color: #fff; padding: 3.5px 8px; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+            <div style="background: #1e293b; color: #fff; padding: 4px 9px; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
               <span>Topic ${keyTopicNum}.${rIdx + 1} &bull; ${row.numTitle.replace(/^\d+\s+/, '')}</span>
             </div>
-            <div style="padding: 6px 10px; flex: 1; ${bodyLayout} background: #f8fafc;">
+            <div style="padding: 7px 11px; flex: 1; ${bodyLayout} background: #f8fafc;">
               ${bulletsHtml}
             </div>
           </div>`;
         })
         .join('');
 
-      const gridStyle = isFour
-        ? 'grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;'
-        : 'grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;';
+      const gridStyle = 'grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;';
 
       specTableHtml = `
       <!-- Pearson Edexcel Specification (Modular Card Grid Architecture) -->

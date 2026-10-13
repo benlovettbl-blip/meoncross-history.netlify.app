@@ -194,28 +194,27 @@ const KEY_TOPICS_DATA = {
             bullets: [
               'Elizabethan England in 1558: society and government.',
               'The Virgin Queen: the problem of her legitimacy, gender, marriage. Her character and strengths.',
-              'Challenges at home and abroad: financial weaknesses, Mary, Queen of Scots, and the French threat.',
+              'Challenges at home and from abroad: financial weaknesses, religious divisions, the French threat.',
             ],
           },
           {
-            numTitle: "2 The 'settlement' of religion",
+            numTitle: '2 The ‘settlement’ of religion',
             bullets: [
-              'Religious divisions in England in 1558.',
-              'Elizabeth’s Religious Settlement (1559): its features and impact.',
-              'The Church of England’s role in society.',
+              'Elizabeth’s religious settlement (1559): its features and impact.',
+              'The Church of England: its role in society.',
             ],
           },
           {
             numTitle: '3 Challenge to the religious settlement',
             bullets: [
               'The nature and extent of the Puritan challenge.',
-              'The nature and extent of the Catholic challenge, including the role of the Papacy.',
+              'The nature and extent of the Catholic challenge, including the role of the nobility, Papacy and foreign powers.',
             ],
           },
           {
             numTitle: '4 The problem of Mary, Queen of Scots',
             bullets: [
-              'Mary, Queen of Scots: her claim to the English throne, her arrival in England, 1568.',
+              'Mary, Queen of Scots: her claim to the English throne.',
               'Relations between Elizabeth and Mary, 1568–69.',
             ],
           },
@@ -290,23 +289,30 @@ const KEY_TOPICS_DATA = {
           {
             numTitle: '1 Plots and revolts at home',
             bullets: [
-              'The reasons for, and significance of, the Revolt of the Northern Earls (1569).',
-              'The features and significance of the Ridolfi, Throckmorton and Babington Plots. Walsingham and his spy network.',
-              'The reasons for, and significance of, Mary, Queen of Scots’ execution in 1587.',
+              'The reasons for, and significance of, the Revolt of the Northern Earls, 1569–70.',
+              'The features and significance of the Ridolfi, Throckmorton and Babington plots. Walsingham and the use of spies.',
+              'The reasons for, and significance of, Mary Queen of Scots’ execution in 1587.',
             ],
           },
           {
             numTitle: '2 Relations with Spain',
             bullets: [
-              'Political and religious rivalry, including commercial rivalry and the activities of Drake in the New World.',
-              'Direct English involvement in the Netherlands, 1585–88. The role of Robert Dudley.',
+              'Political, religious and commercial rivalry.',
+              'The significance of privateering and the activities of Drake.',
             ],
           },
           {
-            numTitle: '3 The Spanish Armada',
+            numTitle: '3 Outbreak of war with Spain, 1585–88',
             bullets: [
-              'Drake’s raid on Cadiz (1587) – ‘singeing the King of Spain’s beard’.',
-              'The reasons why Philip II launched the Armada, English and Spanish naval tactics, the defeat of the Armada.',
+              'Reasons for deteriorating relations with Spain: English direct involvement in the Netherlands and the actions of Robert Dudley.',
+              'Drake and the raid on Cadiz: ‘Singeing the King of Spain’s beard’.',
+            ],
+          },
+          {
+            numTitle: '4 The Armada',
+            bullets: [
+              'Spanish invasion plans. Key events of the Spanish Armada.',
+              'The reasons for the English victory.',
             ],
           },
         ],
