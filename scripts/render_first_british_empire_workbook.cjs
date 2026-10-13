@@ -62,7 +62,7 @@ const enquiryConfigs = [
         step: 1,
         date: '1600–1615',
         questionHeading: 'Why did Queen Elizabeth I grant a royal monopoly charter?',
-        bullets: ['218 London Merchants', 'Spices & Calico', '300% Voyage Return'],
+        bullets: ['218 London Merchants', 'Pepper and Cotton Sacks', 'Huge Gold Profits'],
         focusClue:
           'How did private capital combine with royal prerogative to create a commercial monopoly?',
       },
@@ -70,7 +70,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1615–1700',
         questionHeading: 'How did the Company establish fortified coastal factories in India?',
-        bullets: ['Emperor Jahangir', 'Surat, Madras, Calcutta', 'Sepoy Regiments'],
+        bullets: ['Emperor Jahangir', 'Surat, Madras, Calcutta', 'Armed Sepoy Guards'],
         focusClue:
           'Why did Mughal emperors permit foreign merchants to build armed trading warehouses?',
       },
@@ -78,7 +78,7 @@ const enquiryConfigs = [
         step: 3,
         date: '1756',
         questionHeading: 'Why did tensions erupt into crisis with Nawab Siraj ud-Daulah?',
-        bullets: ['Siraj ud-Daulah', 'Fort William Seized', '‘Black Hole’ Legend'],
+        bullets: ['Mounting Heavy Cannons', 'Attacking Fort William', 'Black Hole Dungeon'],
         focusClue:
           'Why did the Company’s unauthorised military expansion provoke the ruler of Bengal?',
       },
@@ -86,7 +86,7 @@ const enquiryConfigs = [
         step: 4,
         date: 'June 1757',
         questionHeading: 'How did Robert Clive achieve victory at the Battle of Plassey?',
-        bullets: ['Robert Clive', 'Mir Jafar Bribed', 'Monsoon Gunpowder'],
+        bullets: ['Secret Gold Bribes', 'Heavy Monsoon Rain', 'Mir Jafar Betrayal'],
         focusClue:
           'Was Plassey won by superior military power or political betrayal and dry powder?',
       },
@@ -94,7 +94,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1765–1770',
         questionHeading: 'How did the 1765 Diwani transform a company into a sovereign ruler?',
-        bullets: ['Shah Alam II', 'Tax Rights (Diwani)', '1770 Bengal Famine'],
+        bullets: ['Emperor Shah Alam', 'Collecting Land Taxes', 'Starving Bengali Millions'],
         focusClue:
           'What happened when a profit-seeking corporation gained the power to tax 20 million people?',
       },
@@ -111,7 +111,7 @@ const enquiryConfigs = [
         'The grant of the Diwani (1765) by Mughal Emperor Shah Alam II',
       ],
       connectives:
-        'A primary cause of the East India Company’s expansion was... &bull; In particular, royal charters granted... &bull; Furthermore, military victories such as the Battle of Plassey... &bull; Crucially, the 1765 Diwani granted the Company... &bull; Consequently, corporate merchants became...',
+        'A primary reason for this development was that... &bull; In particular, a decisive factor was... &bull; Furthermore, military events demonstrated that... &bull; Crucially, an important turning point occurred when... &bull; Consequently, this resulted in...',
       wordBank:
         'East India Company &bull; Robert Clive &bull; Battle of Plassey (1757) &bull; Diwani (1765) &bull; Shah Alam II &bull; Bengal &bull; private army &bull; corporate monopoly &bull; tax extraction',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
@@ -135,7 +135,7 @@ const enquiryConfigs = [
         step: 1,
         date: '1619–1672',
         questionHeading: 'How did the Triangular Trade connect Britain, Africa, and the Americas?',
-        bullets: ['Manufactured Goods', 'Middle Passage', 'Sugar & Tobacco'],
+        bullets: ['Guns and Iron Bars', 'Kidnapped African Captives', 'Raw Sugar Barrels'],
         focusClue:
           'How did British ports like Bristol and Liverpool grow immensely wealthy from the slave trade?',
       },
@@ -143,7 +143,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1672–1713',
         questionHeading: 'How did royal monopolies and the Asiento expand British slaving?',
-        bullets: ['Royal African Co.', 'Branded "DY"', '1713 Asiento Treaty'],
+        bullets: ['Duke of York', 'Branded Hot Iron', 'Spanish Empire Contract'],
         focusClue:
           'Why did the British Crown treat the trade in human beings as a core national economic asset?',
       },
@@ -152,7 +152,7 @@ const enquiryConfigs = [
         date: '1713–1781',
         questionHeading:
           'What forensic conditions characterised the horrors of the Middle Passage?',
-        bullets: ['Tight Packing', 'Chained in Pairs', '12–15% Mortality'],
+        bullets: ['Lying on Shelves', 'Chained in Leg Irons', 'Dying of Dysentery'],
         focusClue:
           'Why did slave ship captains treat enslaved human beings as literal inanimate cargo?',
       },
@@ -161,7 +161,7 @@ const enquiryConfigs = [
         date: '1781',
         questionHeading:
           'How did the Zong massacre expose the dehumanising logic of chattel slavery?',
-        bullets: ['Captain Collingwood', '133 Thrown Overboard', 'Insurance Claim'],
+        bullets: ['Captain Luke Collingwood', '133 Thrown Overboard', 'Claiming Thirty Pounds'],
         focusClue:
           'Why was the Zong case fought in London courts as an insurance claim rather than a murder trial?',
       },
@@ -169,7 +169,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1788–1807',
         questionHeading: 'How did the Brookes diagram and Equiano’s voice ignite abolitionism?',
-        bullets: ['Brookes Plan (1788)', 'Olaudah Equiano', '1807 Abolition Act'],
+        bullets: ['Printed Cross-Section', 'Bestselling Life Story', 'Banning the Sea Trade'],
         focusClue:
           'How did forensic architectural evidence and first-person African testimony change public opinion?',
       },
@@ -191,11 +191,11 @@ const enquiryConfigs = [
         badge: 'STRUCTURED WRITING',
         question:
           'Explain one consequence of the Zong massacre (1781) for the British abolitionist movement. [4 marks]',
-        hint: 'Focus on how Granville Sharp used court transcripts to shock the public and expose the legal classification of human beings as insured cargo.',
+        hint: 'Focus on how legal evidence from the trial influenced public debate and aided the campaign against the trade.',
         stems:
           'One consequence was that... &bull; Specifically, this event revealed... &bull; This galvanised abolitionists because...',
         connectives:
-          'A significant consequence was... &bull; For instance, legal proceedings demonstrated that... &bull; This directly led to... &bull; Consequently, public reaction...',
+          'A significant consequence was that... &bull; For instance, evidence demonstrated that... &bull; Furthermore, this led directly to... &bull; Consequently, public opinion...',
         wordBank:
           'Zong massacre (1781) &bull; Captain Collingwood &bull; Granville Sharp &bull; Gregson v Gilbert &bull; human cargo &bull; insurance fraud &bull; abolitionist movement',
       },
@@ -220,7 +220,7 @@ const enquiryConfigs = [
         step: 1,
         date: '1655',
         questionHeading: 'How did Cromwell’s conquest of Jamaica birth the Maroon communities?',
-        bullets: ['Western Design', 'Spanish Enslaved Flee', 'Blue Mountains'],
+        bullets: ['Invasion Fleet', 'Escaping into Rainforests', 'Blue Mountain Hideouts'],
         focusClue:
           'How did the rugged geography of Jamaica allow self-liberated Africans to establish free societies?',
       },
@@ -228,7 +228,7 @@ const enquiryConfigs = [
         step: 2,
         date: '1670–1730',
         questionHeading: 'Why was sugar cultivation described as an agro-industrial death machine?',
-        bullets: ['White Gold', 'The Gang System', 'Under 7-Yr Lifespan'],
+        bullets: ['Iron Crushing Rollers', 'Overseer Cowhide Whip', 'Dying Within Seven Years'],
         focusClue:
           'Why did Caribbean sugar planters find it cheaper to work enslaved people to death than sustain them?',
       },
@@ -237,7 +237,7 @@ const enquiryConfigs = [
         date: '1680–1720',
         questionHeading:
           'How did enslaved labourers engage in daily sabotage and cultural survival?',
-        bullets: ['Breaking Tools', 'Slow Work Pace', 'Anansi Folklore & Songs'],
+        bullets: ['Snapping Hoe Handles', 'Feigning Sudden Illness', 'Anansi Spider Stories'],
         focusClue:
           'Why were cultural practices and secret spiritual ceremonies powerful forms of resistance?',
       },
@@ -245,7 +245,11 @@ const enquiryConfigs = [
         step: 4,
         date: '1720–1734',
         questionHeading: 'How did Queen Nanny lead the Windward Maroons to military victory?',
-        bullets: ['Queen Nanny', 'Guerrilla Warfare', 'Abeng Horn Signals'],
+        bullets: [
+          'Branch and Leaf Camouflage',
+          'Blowing the Abeng Horn',
+          'Ambushing Redcoat Soldiers',
+        ],
         focusClue:
           'How did camouflage and knowledge of mountain terrain neutralise British regular army firepower?',
       },
@@ -253,7 +257,7 @@ const enquiryConfigs = [
         step: 5,
         date: '1739–1740',
         questionHeading: 'Why was the 1739 Peace Treaty both a triumph and a painful compromise?',
-        bullets: ['1,500 Sovereign Acres', 'Tax Exemption', 'Return Runaway Clause'],
+        bullets: ['1,500 Free Acres', 'British White Flag', 'Hunting Runaway Fugitives'],
         focusClue:
           'Did the 1739 Treaty represent sovereign victory, or a tragic bargain with the colonial slave state?',
       },
@@ -276,7 +280,7 @@ const enquiryConfigs = [
       questionC:
         'Suggest one reason why Interpretations 1 and 2 differ on the reality of plantation control. [4 marks]',
       stems:
-        'Interpretations 1 and 2 differ on... &bull; Interpretation 1 argues that enslaved people were... &bull; In contrast, Interpretation 2 emphasizes... &bull; One reason they differ is the author’s perspective: Long was a slave-owning planter who wanted to justify..., whereas Beckles is a modern historian using...',
+        'Interpretations 1 and 2 differ regarding... &bull; Interpretation 1 argues that... &bull; In contrast, Interpretation 2 suggests that... &bull; One reason they differ is the provenance of each source: the author of Interpretation 1 was writing as... to justify..., whereas the author of Interpretation 2 is evaluating...',
       timelineMissionTitle: 'Centrefold Sketch Challenge 4',
       timelineMission:
         '<strong>Milestone 4 (The Abeng in the Blue Mountains &bull; 1739):</strong> Sketch Queen Nanny of the Maroons on a high mountain crag sounding the curved cow-horn abeng, while camouflaged warriors observe advancing British soldiers [📯 curved cow horn &bull; 🌿 leafy camouflage &bull; ⛰️ rugged Blue Mountain peak].',
@@ -301,7 +305,7 @@ const enquiryConfigs = [
         date: '1763',
         questionHeading:
           'Why did British victory in the Seven Years’ War create imperial conflict?',
-        bullets: ['£133m War Debt', 'Grenville Taxes', '1763 Proclamation Line'],
+        bullets: ['£133m War Debt', 'Banning Westward Farmland', 'Taxing American Colonies'],
         focusClue:
           'Why did banning westward settlement across the Appalachians outrage colonial frontiersmen?',
       },
@@ -310,7 +314,11 @@ const enquiryConfigs = [
         date: '1765–1766',
         questionHeading:
           'Why did the Stamp Act provoke the cry "No taxation without representation"?',
-        bullets: ['Embossed Stamps', 'Sons of Liberty', 'Boycotts & Repeal'],
+        bullets: [
+          'Taxing Wills and Newspapers',
+          'Hanging Tax Collectors',
+          'Boycotting British Imports',
+        ],
         focusClue:
           'How did colonists invoke the 1689 Bill of Rights to argue that Parliament had exceeded its authority?',
       },
@@ -318,7 +326,7 @@ const enquiryConfigs = [
         step: 3,
         date: 'March 1770',
         questionHeading: 'How was the Boston Massacre transformed into revolutionary propaganda?',
-        bullets: ['Custom House Clash', 'Crispus Attucks Dies', 'Paul Revere’s Print'],
+        bullets: ['Throwing Snowballs and Oysters', 'Five Dead Colonists', 'Paul Revere Engraving'],
         focusClue:
           'How did Paul Revere’s engraving turn a chaotic, violent mob brawl into an orderly execution?',
       },
@@ -327,7 +335,11 @@ const enquiryConfigs = [
         date: 'May 1773',
         questionHeading:
           'Why did the 1773 Tea Act provoke outrage even though it lowered tea prices?',
-        bullets: ['East India Co. Bailout', '18m lbs Surplus Tea', 'Monopoly Threat'],
+        bullets: [
+          '18m Pounds of Surplus Leaves',
+          'East India Company Bailout',
+          'Threat to Local Merchants',
+        ],
         focusClue:
           'Why did colonial merchants fear that a monopoly on tea would lead to monopolies on all trade?',
       },
@@ -336,7 +348,11 @@ const enquiryConfigs = [
         date: 'Dec 1773',
         questionHeading:
           'How did the Boston Tea Party shatter relations between Britain and America?',
-        bullets: ['Mohawk Disguises', '342 Chests (£1.5m)', '1774 Coercive Acts'],
+        bullets: [
+          'Mohawk Indian Headdresses',
+          'Chopping 342 Wooden Chests',
+          'Closing Boston Harbour',
+        ],
         focusClue:
           'Why did King George III declare that "the die is cast" and the colonies must submit or face war?',
       },
@@ -352,20 +368,20 @@ const enquiryConfigs = [
         stimulus: ['The Stamp Act protests (1765)', 'The Boston Massacre (1770)'],
         structureStrip: [
           {
-            col: '1. STAMP ACT & BOYCOTTS',
-            text: 'Explain colonial resistance to internal taxation; Sons of Liberty organized boycotts that forced Parliament to repeal the act.',
+            col: '1. INITIAL OPPOSITION',
+            text: 'Explain how colonists first protested new parliamentary duties and the collective pressure they applied.',
           },
           {
-            col: '2. OCCUPATION & MASSACRE',
-            text: 'Explain Townshend duties and military occupation of Boston; 1770 clash on King Street used as propaganda by Paul Revere.',
+            col: '2. VIOLENCE & ESCALATION',
+            text: 'Explain how military presence in the town led to confrontation and how this was represented to the public.',
           },
           {
-            col: '3. TEA ACT & HARBOUR RAID',
-            text: 'Explain 1773 East India Company monopoly; Sons of Liberty boarded three ships and dumped 342 chests into the harbour.',
+            col: '3. DIRECT RESISTANCE',
+            text: 'Explain how commercial intervention prompted organised physical retaliation in the port.',
           },
         ],
         connectives:
-          'The crisis began in 1765 when... &bull; This led to immediate outrage because... &bull; Tensions escalated further in 1770 when... &bull; The decisive catalyst occurred in 1773 when... &bull; As a direct result...',
+          'The sequence began when... &bull; This produced immediate opposition because... &bull; Tensions escalated further when... &bull; A decisive turning point occurred when... &bull; As a direct result...',
         wordBank:
           'Stamp Act (1765) &bull; Sons of Liberty &bull; boycotts &bull; Townshend Acts &bull; Boston Massacre (1770) &bull; Paul Revere &bull; East India Company &bull; Tea Act (1773) &bull; 342 chests &bull; Coercive Acts',
       },
@@ -375,16 +391,16 @@ const enquiryConfigs = [
           'Explain the importance of the Boston Tea Party (1773) for relations between Britain and the American colonies. [8 marks]',
         structureStrip: [
           {
-            col: '1. BRITISH RETALIATION',
-            text: 'Explain how Parliament passed the punitive Coercive Acts (1774), closing Boston Harbour and imposing military rule.',
+            col: '1. RETALIATORY LAWS',
+            text: 'Explain the punitive measures enacted by the British authorities in response to the disturbance.',
           },
           {
-            col: '2. COLONIAL UNITY',
-            text: 'Explain how the punishment united all thirteen colonies to form the Continental Congress, making war inevitable.',
+            col: '2. INTER-COLONIAL ALLIANCE',
+            text: 'Explain how these punishments altered cooperation and solidarity across the other colonies.',
           },
         ],
         connectives:
-          'The primary importance of this event was... &bull; In particular, the British response was to... &bull; Crucially, this had the unexpected effect of... &bull; Consequently, the long-term impact on relations was...',
+          'The primary importance was that... &bull; In response, imperial authorities decided to... &bull; Crucially, this had the effect of... &bull; Consequently, relations deteriorated because...',
         wordBank:
           'Boston Tea Party &bull; King George III &bull; Coercive Acts (Intolerable Acts) &bull; Boston Harbour &bull; General Gage &bull; Continental Congress',
       },
@@ -410,7 +426,11 @@ const enquiryConfigs = [
         step: 1,
         date: '1775',
         questionHeading: 'How did Lexington, Concord, and Dunmore’s Proclamation start the war?',
-        bullets: ['Shot Heard Round World', 'George Washington', 'Dunmore’s Proclamation'],
+        bullets: [
+          'Midnight Lantern Ride',
+          'Minutemen Fire at Redcoats',
+          'Promising Slaves Freedom',
+        ],
         focusClue:
           'Why did Lord Dunmore’s offer of freedom to enslaved people strike terror into American rebel slaveholders?',
       },
@@ -418,7 +438,11 @@ const enquiryConfigs = [
         step: 2,
         date: 'July 1776',
         questionHeading: 'What central moral paradox lay at the heart of the 1776 Declaration?',
-        bullets: ['Thomas Jefferson', '‘All Men Created Equal’', '41/56 Slaveholders'],
+        bullets: [
+          'Thomas Jefferson Quill',
+          'All Men Created Equal',
+          'Forty-One Slaveholder Signers',
+        ],
         focusClue:
           'How did Dr Samuel Johnson expose the hypocrisy of slaveholders demanding liberty from King George?',
       },
@@ -427,7 +451,11 @@ const enquiryConfigs = [
         date: '1777–1780',
         questionHeading:
           'How did Saratoga and the French alliance turn the rebellion into a global war?',
-        bullets: ['Saratoga Surrender', 'French & Spanish Fleet', 'Caribbean Diverted'],
+        bullets: [
+          'Capturing Burgoyne Army',
+          'King Louis Sends Warships',
+          'Defending Caribbean Sugar Islands',
+        ],
         focusClue:
           'Why was Britain unable to concentrate its military forces solely in North America?',
       },
@@ -436,7 +464,11 @@ const enquiryConfigs = [
         date: 'October 1781',
         questionHeading:
           'How did French naval power force General Cornwallis to surrender at Yorktown?',
-        bullets: ['Yorktown Peninsula', 'De Grasse Blockade', '‘World Turned Upside Down’'],
+        bullets: [
+          'Trapped on the Coast',
+          'Admiral De Grasse Blockade',
+          'World Turned Upside Down Band',
+        ],
         focusClue: 'Why was Cornwallis trapped, and how did French battleships decide the siege?',
       },
       {
@@ -444,7 +476,11 @@ const enquiryConfigs = [
         date: '1783',
         questionHeading:
           'How did the Treaty of Paris and the Black Loyalists conclude the First Empire?',
-        bullets: ['Treaty of Paris (1783)', '3,000 Black Loyalists', 'Book of Negroes'],
+        bullets: [
+          'Recognising American Independence',
+          'Names in Book of Negroes',
+          'Evacuation Ships to Nova Scotia',
+        ],
         focusClue:
           'Why did British commanders honour their promise to evacuate Black Loyalists despite Washington’s demands?',
       },
@@ -462,20 +498,20 @@ const enquiryConfigs = [
       ],
       structureStrip: [
         {
-          col: '1. FRENCH ALLIANCE & GLOBAL WAR',
-          text: 'Explain how French naval power at Yorktown blockaded Cornwallis; French and Spanish intervention forced Britain to defend sugar colonies worldwide.',
+          col: '1. EXTERNAL INTERVENTION',
+          text: 'Explain how international military and naval intervention affected Britain’s ability to conduct the war.',
         },
         {
-          col: '2. AMERICAN RESOLVE & TACTICS',
-          text: 'Explain Washington’s war of attrition, surviving Valley Forge, and colonial militia guerrilla warfare in the rugged wilderness.',
+          col: '2. COLONIAL CAMPAIGN',
+          text: 'Explain how local military tactics, strategic leadership, and resilience sustained the conflict.',
         },
         {
           col: '3. COMPARATIVE VERDICT',
-          text: 'Weigh whether Washington could have won without French battleships, money, and troops trapping Cornwallis at Yorktown.',
+          text: 'Weigh which factor was more decisive in bringing about imperial surrender and the recognition of independence.',
         },
       ],
       connectives:
-        'A compelling argument supporting this statement is... &bull; In particular, naval intervention was decisive because... &bull; On the other hand, an alternative perspective is that... &bull; Crucially, military resilience ensured that... &bull; In conclusion, the decisive factor was... because...',
+        'A compelling argument supporting this statement is that... &bull; In particular, naval factors were significant because... &bull; On the other hand, an alternative perspective is that... &bull; Crucially, ground campaigns demonstrated that... &bull; In conclusion, the decisive reason was... because...',
       wordBank:
         'George Washington &bull; Continental Army &bull; Saratoga (1777) &bull; French Alliance &bull; King Louis XVI &bull; Admiral de Grasse &bull; General Cornwallis &bull; Siege of Yorktown (1781) &bull; Treaty of Paris (1783)',
       timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
@@ -2538,6 +2574,12 @@ async function main() {
   const html = compileEmpireWorkbook();
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`[OK] HTML written to: ${outHtmlPath}`);
+
+  const altUnitsDir = path.join(ROOT_DIR, 'units', 'first_british_empire');
+  if (fs.existsSync(altUnitsDir)) {
+    fs.writeFileSync(path.join(altUnitsDir, 'pupil_workbook.html'), html, 'utf8');
+    console.log(`[OK] HTML mirrored to: ${path.join(altUnitsDir, 'pupil_workbook.html')}`);
+  }
 
   // Compile PDF via Puppeteer
   const pdfDir = path.join(ROOT_DIR, 'public', 'pdfs');
