@@ -64,8 +64,9 @@ function renderStandardFrontCover({
   const isEee = unitId === 'eee';
 
   if (isEee) {
-    const defaultPhotoHeight = 74;
-    const photoHeight = heroImage.heightMm || defaultPhotoHeight;
+    const defaultPhotoHeight = 102;
+    const photoHeight =
+      heroImage.heightMm && heroImage.heightMm >= 90 ? heroImage.heightMm : defaultPhotoHeight;
     const objectPos = heroImage.objectPosition || 'center 15%';
 
     // Clean Pupil Card: strictly Name, Class, Teacher (no extra headers or paper title duplication)
@@ -115,6 +116,24 @@ function renderStandardFrontCover({
         </div>
       </div>`;
 
+    // Exam Architecture & Revision Target Ribbon (Edexcel Paper 2 Feature & Causation timings)
+    const examRibbonHtml = `
+      <!-- Exam Architecture & Revision Target Ribbon -->
+      <div style="border: 1.5px solid #000; border-radius: 4px; padding: 3px 8px; background: #f8fafc; margin-bottom: 3px; display: flex; justify-content: space-between; align-items: center; font-size: 7.2pt; flex-shrink: 0;">
+        <div style="display: flex; gap: 10px; align-items: center;">
+          <span style="font-weight: 900; text-transform: uppercase; background: #000; color: #fff; padding: 1.5px 6px; border-radius: 2px; font-size: 6.8pt; letter-spacing: 0.5px;">Exam Focus</span>
+          <span><strong>Q1(a) Feature:</strong> 2m [3 min]</span>
+          <span>&bull;</span>
+          <span><strong>Q1(b) Feature:</strong> 2m [3 min]</span>
+          <span>&bull;</span>
+          <span><strong>Q2 Causation:</strong> 12m [18 min]</span>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <strong style="text-transform: uppercase; font-size: 6.8pt;">Target Grade:</strong>
+          <div style="border: 1.2px solid #000; width: 28px; height: 17px; border-radius: 2px; background: #fff;"></div>
+        </div>
+      </div>`;
+
     let specTableHtml = '';
     if (specBox.specImageSrc) {
       specTableHtml = `
@@ -123,42 +142,54 @@ function renderStandardFrontCover({
         <img src="${specBox.specImageSrc}" alt="Pearson Edexcel GCSE History Specification Content" style="width: 100%; height: auto; display: block;">
       </div>`;
     } else {
-      // Edexcel Table (Approach B): 2-Column official specification table
-      const tableHeader = specBox.edexcelTable
-        ? specBox.edexcelTable.header
-        : `Key topic ${keyTopicNum}: ${title}`;
+      // Edexcel Table: 2x2 Modular Card Grid (Zero Dead Void, Balanced Content Fill)
       const tableRows = specBox.edexcelTable ? specBox.edexcelTable.rows : [];
+      const count = tableRows.length;
+      const isFour = count === 4;
+
+      const cardsHtml = tableRows
+        .map((row, rIdx) => {
+          const spanStyle = !isFour && rIdx === 2 ? 'grid-column: span 2;' : '';
+          const bodyLayout =
+            !isFour && rIdx === 2
+              ? 'display: grid; grid-template-columns: 1fr 1fr; gap: 12px;'
+              : 'display: flex; flex-direction: column; justify-content: space-around;';
+
+          const bulletsHtml = row.bullets
+            .map(
+              (b) => `
+            <div style="display: flex; align-items: baseline; margin-bottom: 3px;">
+              <span style="font-weight: 900; margin-right: 6px; color: #1e293b; font-size: 8.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-size: 7.8pt; line-height: 1.3; color: #111; font-weight: 500;">${b}</span>
+            </div>`,
+            )
+            .join('');
+
+          return `
+          <div style="border: 1.2px solid #000; border-radius: 3px; background: #fff; display: flex; flex-direction: column; overflow: hidden; ${spanStyle}">
+            <div style="background: #1e293b; color: #fff; padding: 3.5px 8px; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+              <span>Topic ${keyTopicNum}.${rIdx + 1} &bull; ${row.numTitle.replace(/^\d+\s+/, '')}</span>
+            </div>
+            <div style="padding: 6px 10px; flex: 1; ${bodyLayout} background: #f8fafc;">
+              ${bulletsHtml}
+            </div>
+          </div>`;
+        })
+        .join('');
+
+      const gridStyle = isFour
+        ? 'grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;'
+        : 'grid-template-columns: 1fr 1fr; grid-template-rows: 1fr 1fr;';
 
       specTableHtml = `
-      <!-- Pearson Edexcel Specification (Approach B: Official 2-Column Vector Table) -->
+      <!-- Pearson Edexcel Specification (Modular Card Grid Architecture) -->
       <div style="border: 1.5px solid #000; border-radius: 4px; overflow: hidden; background: #fff; flex: 1; display: flex; flex-direction: column; margin-bottom: 3px;">
-        <!-- Slate Header Bar matching Edexcel Specification -->
-        <div style="background: #1e293b; color: #ffffff; padding: 4px 10px; font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; flex-shrink: 0; border-bottom: 1.5px solid #000;">
-          ${tableHeader}
+        <div style="background: #0f172a; color: #ffffff; padding: 3.5px 10px; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; letter-spacing: 0.5px; text-transform: uppercase; border-bottom: 1.5px solid #000; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+          <span>Pearson Edexcel GCSE Specification Framework &bull; Key Topic ${keyTopicNum}</span>
+          <span style="font-size: 6.8pt; background: #334155; padding: 1.5px 6px; border-radius: 2px; font-weight: 700; letter-spacing: 0.5px;">${count} Modular Enquiries</span>
         </div>
-
-        <div style="display: flex; flex-direction: column; flex: 1; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.28; color: #111;">
-          ${tableRows
-            .map((row, rIdx, arr) => {
-              const isLast = rIdx === arr.length - 1;
-              const borderBottom = isLast ? '' : 'border-bottom: 1.2px solid #cbd5e1;';
-              const bulletsHtml = row.bullets
-                .map(
-                  (b) =>
-                    `<div style="margin-bottom: 2.5px; display: flex; align-items: baseline;"><span style="margin-right: 6px; font-weight: 900; color: #000; flex-shrink: 0;">&bull;</span><span style="font-size: 8.1pt; color: #000; font-weight: 500;">${b}</span></div>`,
-                )
-                .join('');
-              return `
-            <div style="display: flex; flex: 1; ${borderBottom}">
-              <div style="width: 30%; font-weight: 800; color: #000; padding: 4.5px 8px; border-right: 1.2px solid #cbd5e1; background: #f8fafc; display: flex; align-items: center; font-size: 8.3pt; line-height: 1.22;">
-                ${row.numTitle}
-              </div>
-              <div style="width: 70%; padding: 4px 10px; display: flex; flex-direction: column; justify-content: center; background: #fff;">
-                ${bulletsHtml}
-              </div>
-            </div>`;
-            })
-            .join('')}
+        <div style="padding: 5px; flex: 1; display: grid; ${gridStyle} gap: 5px; box-sizing: border-box;">
+          ${cardsHtml}
         </div>
       </div>`;
     }
@@ -173,7 +204,7 @@ function renderStandardFrontCover({
 
     return `
   <!-- ====================================================================
-       PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover - EEE Approach B)
+       PAGE 1: OUTSIDE FRONT COVER (Master Architectural Cover - EEE Modular Grid)
        ==================================================================== -->
   <div class="page page-container recto-page" id="page-1" style="padding: 4mm 6mm;">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
@@ -199,7 +230,10 @@ function renderStandardFrontCover({
       <!-- Master Wide Photographic Plate (Full Colour) -->
       ${photoPlateHtml}
 
-      <!-- Pearson Edexcel Specification (Approach B: Official 2-Column Vector Table) -->
+      <!-- Exam Architecture & Revision Target Ribbon -->
+      ${examRibbonHtml}
+
+      <!-- Pearson Edexcel Specification (Modular Card Grid Architecture) -->
       ${specTableHtml}
 
       ${footerHtml}
