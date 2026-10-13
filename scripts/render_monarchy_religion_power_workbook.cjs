@@ -129,7 +129,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'A primary catalyst for religious divergence was... &bull; In particular, dynastic vulnerabilities created... &bull; Furthermore, legal manoeuvres demonstrated that... &bull; Crucially, statutory enactments established... &bull; Consequently, long-term sovereignty...',
+        'A primary factor was... &bull; In particular, this caused... &bull; Furthermore, this was significant because... &bull; As a direct result... &bull; Consequently, this led to...',
       wordBank:
         'Royal Supremacy &bull; Act of Supremacy (1534) &bull; annulment &bull; Catherine of Aragon &bull; Anne Boleyn &bull; Thomas Cromwell &bull; Pope Clement VII &bull; Emperor Charles V &bull; Valor Ecclesiasticus &bull; Act in Restraint of Appeals (1533)',
       timelineMission:
@@ -213,7 +213,7 @@ const enquiryConfigs = [
           'Explain one way in which Elizabeth I’s religious policy in 1559 was different from Mary I’s religious policy (1553–1558). [4 marks]',
         hint: 'Consider the extent to which state enforcement shifted from active heresy persecutions to formal demands for outward legal conformity.',
         stems:
-          'One way religious policy differed was... &bull; Under Mary I, religious dissent was punished by... &bull; In contrast, Elizabeth I...',
+          'One key difference was that... &bull; In the earlier period... &bull; In contrast, in the later period... &bull; This was a difference because...',
       },
       partB: {
         tariff: 'Question 3(b): Explain Importance [8 marks &bull; 10 mins]',
@@ -230,7 +230,7 @@ const enquiryConfigs = [
           },
         ],
         connectives:
-          'This was of paramount importance because... &bull; Specifically, structural compromise prevented... &bull; Furthermore, the statutory settlement established that... &bull; Crucially, national stability was secured because...',
+          'This was of significant importance because... &bull; In particular, this meant that... &bull; Furthermore, this led to... &bull; Consequently, the impact was...',
         wordBank:
           'Via Media &bull; Act of Supremacy (1559) &bull; Supreme Governor &bull; Act of Uniformity &bull; Book of Common Prayer &bull; Recusancy fines &bull; outward conformity',
       },
@@ -318,7 +318,7 @@ const enquiryConfigs = [
           'Describe one key feature of the English race-built warships designed by Sir John Hawkins. [4 marks]',
         hint: 'Consider naval architectural design, hull profiles, and how artillery battery configurations influenced manoeuvrability and reload rates.',
         stems:
-          'One key feature of English race-built galleons was... &bull; Specifically, they were designed with... &bull; This gave the English an advantage because...',
+          'One key feature was... &bull; In detail, this involved... &bull; This meant that...',
       },
       partB: {
         tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
@@ -340,7 +340,7 @@ const enquiryConfigs = [
           },
         ],
         connectives:
-          'The naval campaign commenced when... &bull; In response, maritime tactical operations... &bull; The decisive operational turning point occurred when... &bull; Following tactical disruption, subsequent engagements resulted in... &bull; Finally, severe environmental conditions...',
+          'Initially, the events began when... &bull; Following this, the next development was... &bull; A turning point occurred when... &bull; Consequently... &bull; This ultimately resulted in...',
         wordBank:
           'Spanish Armada &bull; Medina Sidonia &bull; crescent formation &bull; Calais &bull; fireships (hellburners) &bull; Battle of Gravelines &bull; race-built galleons &bull; culverins &bull; Protestant Wind',
       },
@@ -449,7 +449,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'A primary catalyst for unprecedented judicial retribution was... &bull; In particular, adherence to absolute prerogative provoked... &bull; Furthermore, renewed armed conflict demonstrated that... &bull; Crucially, legislative purges ensured that... &bull; Consequently, judicial proceedings culminated in...',
+        'A decisive factor was... &bull; In particular, this led to... &bull; Furthermore, an additional cause was... &bull; Crucially, this exacerbated tensions because... &bull; Consequently, this culminated in...',
       wordBank:
         'Divine Right of Kings &bull; Personal Rule (1629–1640) &bull; Ship Money &bull; Oliver Cromwell &bull; New Model Army &bull; Battle of Naseby &bull; ‘Man of Blood’ &bull; Second Civil War (1648) &bull; Pride’s Purge &bull; Rump Parliament &bull; Regicide (30 Jan 1649)',
       timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
@@ -544,7 +544,7 @@ const enquiryConfigs = [
           'Explain one consequence of the Bill of Rights passed by Parliament in 1689. [4 marks]',
         hint: 'Consider the permanent transfer of sovereign authority over taxation, standing armies, and legislative suspension to the elected assembly.',
         stems:
-          'One major consequence was... &bull; Specifically, the Bill of Rights established that... &bull; Consequently, this permanently altered the constitution because...',
+          'One major consequence was that... &bull; In detail, this occurred because... &bull; As a direct result...',
       },
       partB: {
         tariff: 'Question 5: Evaluative Judgement [12 marks &bull; 12 mins]',
@@ -565,7 +565,7 @@ const enquiryConfigs = [
           },
         ],
         connectives:
-          'A compelling argument supporting this statement is... &bull; On one hand, evidence suggests that... &bull; However, an alternative perspective is that... &bull; Crucially, enduring systemic reform was secured when... &bull; In conclusion, the decisive constitutional turning point was... because...',
+          'To a large extent, it can be argued that... &bull; On the one hand, a key factor was... &bull; Furthermore, this was significant because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive turning point was... because...',
         wordBank:
           'Regicide (1649) &bull; Divine Right of Kings &bull; High Court of Justice &bull; Glorious Revolution (1688) &bull; Bill of Rights (1689) &bull; William and Mary &bull; Constitutional Monarchy &bull; Parliamentary Sovereignty',
       },
@@ -1449,14 +1449,14 @@ function renderRightPage(cfg, pageNum) {
     </div>
   </div>`;
   } else {
-    // TWO-PART ROTATING SKILLS WRITING (ENQUIRIES 2, 3, AND 5)
+    // TWO-PART ROTATING SKILLS WRITING (ENQUIRIES 2, 3, AND 5 - PAGES 5, 7, 13)
     return `
   <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • ROTATING DISCIPLINARY SKILLS -->
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
       <!-- PART A: SHORT-FORM DISCIPLINARY PRACTICE [4 MARKS] -->
-      <div style="border-bottom: 1.5px solid #000000; padding-bottom: 4px; margin-bottom: 5px;">
+      <div style="margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 11.4pt; color: #000000; margin: 0; font-weight: 900;">
             ${rp.partA.tariff}
@@ -1479,8 +1479,11 @@ function renderRightPage(cfg, pageNum) {
         </div>
       </div>
 
+      <!-- CLEAN SOLID SECTION SEPARATOR -->
+      <div style="border-top: 1.5px solid #000000; margin: 5px 0 5px 0;"></div>
+
       <!-- PART B: EXTENDED SKILL WRITING [8 OR 12 MARKS] -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0;">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
             <h2 style="font-family: 'Playfair Display', serif; font-size: 11.4pt; color: #000000; margin: 0; font-weight: 900;">
@@ -1505,14 +1508,20 @@ function renderRightPage(cfg, pageNum) {
           }
 
           <!-- Connectives & Word Bank -->
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 8.3pt; line-height: 1.26;">
+          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 8px; background: #ffffff; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 8.3pt; line-height: 1.26;">
             <div><strong style="color: #000000;">Analytical Connectives:</strong> <em style="color: #000000;">${rp.partB.connectives}</em></div>
             <div style="margin-top: 2px;"><strong style="color: #000000;">Key Terms:</strong> <span style="color: #000000;">${rp.partB.wordBank}</span></div>
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (17 Lines • Generous Pitch for Pupil Handwriting) -->
-        <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+        <!-- Task Instruction Prompt -->
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; color: #000000; margin: 3px 0 2px 0;">
+          <strong style="color: #000000;">Task:</strong> Using the vocabulary and connectives above, write your structured response below:
+        </div>
+
+        <!-- Ruled Writing Lines (18 Lines • Generous ~8mm Pitch for Pupil Handwriting) -->
+        <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 3px; flex: 1; min-height: 0;">
+          <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
           <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>
@@ -1533,7 +1542,7 @@ function renderRightPage(cfg, pageNum) {
         </div>
 
         <!-- Timeline Mission Box -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-top: 2px;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3.5px 7px; background: #ffffff; margin-top: 3px; margin-bottom: 3px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
             <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
               🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
@@ -1887,191 +1896,191 @@ function compileMonarchyWorkbook() {
       </div>
 
       <!-- Prominent Primary Visual Source Centerpiece (Enlarged Holbein Full Canvas in Authentic Color + Disciplinary Iconography Plate) -->
-      <div style="margin: 2px 0 6px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <div style="display: grid; grid-template-columns: 78mm 1fr; background: #ffffff;">
+      <div style="margin: 2px 0 4px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="display: grid; grid-template-columns: 70mm 1fr; background: #ffffff;">
           <!-- Left: Full-Length Uncropped Portrait in Rich Authentic Color (Enlarged Display) -->
           <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 4px;">
-            <img src="${coverImgBase64}" alt="King Henry VIII Full-Length Portrait by Hans Holbein" style="height: 123mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+            <img src="${coverImgBase64}" alt="King Henry VIII Full-Length Portrait by Hans Holbein" style="height: 118mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
           </div>
           <!-- Right: Visual Iconography & Historical Significance for Year 8 (Enlarged Typography) -->
-          <div style="padding: 7px 12px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
+          <div style="padding: 5px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
             <!-- 1. Header -->
             <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
                 Primary Visual Evidence &bull; Tudor Royal Propaganda
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; color: #64748b;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #64748b;">
                 Hans Holbein the Younger (c. 1537)
               </span>
             </div>
 
             <!-- 2. Statecraft Context -->
-            <p style="font-family: 'Georgia', serif; font-size: 8.2pt; line-height: 1.34; color: #1e293b; margin: 0;">
+            <p style="font-family: 'Georgia', serif; font-size: 7.9pt; line-height: 1.25; color: #1e293b; margin: 0;">
               Following the 1534 Act of Supremacy, Henry VIII commissioned Hans Holbein to project an overwhelming image of absolute monarchical sovereignty. Every visual element was calculated statecraft:
             </p>
 
             <!-- 3. Four Core Propaganda Features -->
-            <div style="display: flex; flex-direction: column; gap: 4px;">
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 7px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f284e;">1. Stance of Absolute Dominance:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.28; color: #222222;">
+            <div style="display: flex; flex-direction: column; gap: 2.5px;">
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">1. Stance of Absolute Dominance:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
                   Facing the viewer squarely with feet planted wide, elbows flared, and hands gripping dagger and gloves, Henry occupies maximum physical space to intimidate foreign ambassadors and subjects.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 7px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f284e;">2. Imperial Splendour &amp; Monastic Wealth:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.28; color: #222222;">
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">2. Imperial Splendour &amp; Monastic Wealth:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
                   Exaggerated square shoulders padded in ermine fur, gold-embroidered silver doublet, and heavy ruby collars—lavishly financed by Thomas Cromwell’s Dissolution of the Monasteries (1536–40).
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 7px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f284e;">3. Dynastic Virility &amp; Tudor Succession:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.28; color: #222222;">
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">3. Dynastic Virility &amp; Tudor Succession:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
                   The prominent codpiece and muscular posture were deliberate visual propaganda, asserting vitality and the promise of a legitimate male Tudor heir following the break with Rome.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 7px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; text-transform: uppercase; color: #0f284e;">4. The Absent Pope (Sovereignty Unchallenged):</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; line-height: 1.28; color: #222222;">
+              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">4. The Absent Pope (Sovereignty Unchallenged):</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
                   Depicted with zero papal, cross, or Roman Catholic emblems. The King stands solitary on English ground—the undisputed Supreme Head on Earth of the Church of England.
                 </div>
               </div>
             </div>
 
             <!-- 4. Three-Pillar Propaganda Decoding Matrix -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 3px 6px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">The Dagger</div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">Immediate physical violence against papal traitors.</div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 2px; border-top: 1px solid #cbd5e1;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">The Dagger</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Immediate physical violence against papal traitors.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 3px 6px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Ermine &amp; Gold</div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">Imperial status equal to Holy Roman Emperor.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Ermine &amp; Gold</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Imperial status equal to Holy Roman Emperor.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 3px 6px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Turkish Carpet</div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.0pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">Global trade connections &amp; Renaissance wealth.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 5px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Turkish Carpet</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Global trade connections &amp; Renaissance wealth.</div>
               </div>
             </div>
 
             <!-- 5. Disciplinary Significance Anchor -->
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b; line-height: 1.3; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 3px 8px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; line-height: 1.22; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2.5px 7px;">
               <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> In 16th-century England, lacking a standing army or police force, visual portraiture was essential constitutional statecraft to enforce Royal Supremacy.
             </div>
 
             <!-- 6. Targeted Disciplinary Hinge Question -->
-            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 8px;">
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 7px;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
               </div>
-              <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #1e293b; line-height: 1.26; margin-top: 1px;">
+              <div style="font-family: 'Georgia', serif; font-size: 7.3pt; font-style: italic; color: #1e293b; line-height: 1.20; margin-top: 1px;">
                 Does this portrait show a monarch completely confident in his sovereign power, or a ruler using theatrical spectacle to mask profound dynastic and religious vulnerability?
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #ffffff; padding: 4px 10px; border-top: 1.5px solid #0f284e; background: #0f284e;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
           <span><strong>Primary Visual Evidence:</strong> <em>Full-Length Portrait of King Henry VIII</em> &bull; Workshop of Hans Holbein the Younger (c. 1537–1540)</span>
-          <span style="font-weight: 700; color: #93c5fd;">ROYAL COLLECTION ARCHIVE &bull; WALKER ART GALLERY</span>
+          <span style="font-weight: 700; color: #93c5fd; white-space: nowrap;">ROYAL COLLECTION ARCHIVE &bull; WALKER ART GALLERY</span>
         </div>
       </div>
 
       <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin: 3px 0 2px 0;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin: 3px 0 4px 0;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="border-bottom: 1.5px solid #0f284e; background: #0f284e;">
-              <th style="padding: 7px 10px; text-align: left; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
+              <th style="padding: 5px 8px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
                 Course Specification &bull; Key Enquiry Sequence
               </th>
-              <th style="padding: 7px 4px; width: 68px; text-align: center; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
+              <th style="padding: 5px 4px; width: 62px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
                 Learnt
               </th>
-              <th style="padding: 7px 4px; width: 68px; text-align: center; font-size: 8.0pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
+              <th style="padding: 5px 4px; width: 62px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
                 Revised
               </th>
             </tr>
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 8px 10px; border-right: 1.2px solid #cbd5e1;">
-                <div style="font-size: 9.0pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 1: Henry VIII &amp; The English Reformation (1517–1534)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8.0pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.24;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.18;">
                   Why did Henry VIII break with the Roman Catholic Church, and how did the Act of Supremacy reshape sovereign power?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 8px 10px; border-right: 1.2px solid #cbd5e1;">
-                <div style="font-size: 9.0pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 2: Elizabeth I &amp; The Middle Way (1558–1588)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8.0pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.24;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.18;">
                   How did Elizabeth I navigate deep religious divisions, and why did she reject religious extremism in 1559?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 8px 10px; border-right: 1.2px solid #cbd5e1;">
-                <div style="font-size: 9.0pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 3: The Spanish Armada &amp; Naval Power (1588)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8.0pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.24;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.18;">
                   Why was Philip II’s enterprise of England defeated, and how did fireships and weather decide the outcome?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 8px 10px; border-right: 1.2px solid #cbd5e1;">
-                <div style="font-size: 9.0pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 4: The English Civil War, Regicide &amp; The Republic (1642–1649)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8.0pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.24;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.18;">
                   Why did constitutional collision over Divine Right culminate in the execution of Charles I and England's republic?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr>
-              <td style="padding: 8px 10px; border-right: 1.2px solid #cbd5e1;">
-                <div style="font-size: 9.0pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
+              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 5: The Glorious Revolution &amp; The Bill of Rights (1688–1689)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8.0pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.24;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.18;">
                   Why did Parliament invite William of Orange in 1688, and how did the Bill of Rights establish parliamentary rule?
                 </div>
               </td>
               <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.4px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
           </tbody>
