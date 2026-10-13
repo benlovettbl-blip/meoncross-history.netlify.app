@@ -1254,10 +1254,10 @@ function renderSpinePage(cfg, pageNum) {
       const bulletsHtml = st.bullets
         .map(
           (b, idx) => `
-            <div style="flex: 1; display: flex; align-items: center; padding: 0 2.5px; ${idx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
-              <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.15;">
-                <span style="font-weight: 900; color: #0f284e; font-size: 5pt; line-height: 1.3;">&bull;</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #0f284e; word-break: break-word;">${b}</span>
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 4px; ${idx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 3.5px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #0f284e; font-size: 6pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; color: #0f284e; word-break: break-word;">${b}</span>
               </div>
             </div>`,
         )
@@ -1268,29 +1268,28 @@ function renderSpinePage(cfg, pageNum) {
           <!-- Full-Width Banner with Key Question Across Page -->
           <div class="stage-banner" style="background: #0f284e; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #0f284e;">
             <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1;">
-              <span style="background: #ffffff; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
+              <span style="background: #ffffff; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; padding: 0.8px 6px; border-radius: 2px; white-space: nowrap;">
                 ${st.step}
               </span>
-              ${st.paraRef ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: 'Inter', monospace; font-size: 6.8pt; font-weight: 800; padding: 0.5px 4.5px; border-radius: 2px; white-space: nowrap;">Text ${st.paraRef}</span>` : ''}
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #93c5fd; white-space: nowrap;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; color: #93c5fd; white-space: nowrap;">
                 ${st.date}
               </span>
-              <span style="color: #60a5fa; font-size: 7pt;">&bull;</span>
-              <span style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              <span style="color: #60a5fa; font-size: 7.5pt;">&bull;</span>
+              <span style="font-family: 'Playfair Display', serif; font-size: 9.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                 ${st.questionHeading}
               </span>
             </div>
           </div>
 
-          <!-- Content Row: Left 3-Zone Trigger Spine (25mm) & Right Ruled Writing Lines (173mm) -->
+          <!-- Content Row: Left 3-Zone Trigger Spine (36mm) & Right Ruled Writing Lines (~162mm) -->
           <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
             
-            <!-- Left Column: Ultra-Compact 25mm Trigger Spine (Each Zone Aligns to 2 Ruled Lines) -->
-            <div style="width: 25mm; flex-shrink: 0; background: #f0f4f9; display: flex; flex-direction: column; border-right: 1.2px solid #0f284e; box-sizing: border-box;">
+            <!-- Left Column: High-Visibility 36mm Trigger Spine (Each Zone Aligns to 2 Ruled Lines) -->
+            <div style="width: 36mm; flex-shrink: 0; background: #f0f4f9; display: flex; flex-direction: column; border-right: 1.2px solid #0f284e; box-sizing: border-box;">
               ${bulletsHtml}
             </div>
 
-            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Width ~173mm for Maximum Student Writing Space) -->
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
             <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
@@ -1316,30 +1315,30 @@ function renderSpinePage(cfg, pageNum) {
       <!-- Lesson Header with Inquiry Question Title -->
       <div style="border-bottom: 2px solid #0f284e; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #0f284e; color: #ffffff; border: 1.2px solid #0f284e; padding: 1px 6px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #0f284e; color: #ffffff; border: 1.2px solid #0f284e; padding: 1px 6px; border-radius: 2px;">
             ENQUIRY ${cfg.lessonNum} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
             YEAR 8 &bull; CROWN, CHURCH, OR PARLIAMENT? (1517–1689)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f284e; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${cfg.enquiryQuestion}
         </h2>
       </div>
 
       <!-- Specification Focus Strip -->
-      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; padding: 2px 6px; background: #f0f4f9; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; color: #1e293b;">
+      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; padding: 2px 6px; background: #f0f4f9; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.8pt; line-height: 1.24; color: #1e293b;">
         <strong style="color: #0f284e;">Core Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
       <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             Chronological Inquiry Spine &bull; Core Causal Narrative
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #475569;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; color: #475569;">
             Construct your causal explanation for each stage incorporating the core trigger terms
           </span>
         </div>
@@ -1370,23 +1369,23 @@ function renderRightPage(cfg, pageNum) {
     <div class="page-body-full">
       <!-- Exam Header -->
       <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 0; font-weight: 800;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #0f284e; margin: 0; font-weight: 900;">
           ${rp.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
           Extended Writing Practice
         </span>
       </div>
 
       <!-- Question Stem & Stimulus Box -->
       <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #f0f4f9; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #0f284e; margin-bottom: 3px; line-height: 1.25;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #0f284e; margin-bottom: 4px; line-height: 1.28;">
           ${rp.examStem}
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b;">
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e293b;">
           <strong style="color: #0f284e;">Stimulus:</strong>
-          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[0]}</span>
-          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[1]}</span>
+          <span style="border: 1px solid #0f284e; padding: 1.5px 7px; border-radius: 2px; font-weight: 800; color: #0f284e; background: #ffffff;">${rp.stimulus[0]}</span>
+          <span style="border: 1px solid #0f284e; padding: 1.5px 7px; border-radius: 2px; font-weight: 800; color: #0f284e; background: #ffffff;">${rp.stimulus[1]}</span>
           <span style="font-style: italic; color: #475569;">(You must also use information of your own)</span>
         </div>
       </div>
@@ -1394,17 +1393,17 @@ function renderRightPage(cfg, pageNum) {
       <!-- Connectives & Key Vocabulary Bank -->
       <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.22; display: block; color: #1e293b;">${rp.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-style: italic; line-height: 1.24; display: block; color: #1e293b;">${rp.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; display: block; color: #1e293b;">${rp.wordBank}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; line-height: 1.24; display: block; color: #1e293b;">${rp.wordBank}</span>
         </div>
       </div>
 
       <!-- Ruled Task Lines for Extended Writing -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin-bottom: 2px;">
+      <div style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-style: italic; color: #222222; margin-bottom: 2px;">
         <strong style="color: #0f284e;">Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
@@ -1438,14 +1437,14 @@ function renderRightPage(cfg, pageNum) {
       <!-- Timeline Mission Box -->
       <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
             🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f284e;">
             Turn to Centrefold &bull; Pages 8–9 &rarr;
           </span>
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+        <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #111111; line-height: 1.24;">
           ${rp.timelineMission}
         </div>
       </div>
@@ -1463,17 +1462,17 @@ function renderRightPage(cfg, pageNum) {
       <!-- PART A: SHORT-FORM DISCIPLINARY PRACTICE [4 MARKS] -->
       <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 4px; margin-bottom: 5px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.8pt; color: #0f284e; margin: 0; font-weight: 900;">
             ${rp.partA.tariff}
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
             DISCIPLINARY DRILL
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 10.2pt; font-weight: 900; color: #0f284e; margin: 0 0 3px 0; line-height: 1.28;">
           ${rp.partA.question}
         </p>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px; color: #1e293b;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 700; margin-bottom: 2px; color: #1e293b; line-height: 1.22;">
           <strong style="color: #0f284e;">Sentence Stems:</strong> ${rp.partA.stems}
         </div>
         <div class="ruled-lines-block">
@@ -1488,29 +1487,29 @@ function renderRightPage(cfg, pageNum) {
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
         <div>
           <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 10.8pt; color: #0f284e; margin: 0; font-weight: 900;">
               ${rp.partB.tariff}
             </h2>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
               STRUCTURED WRITING
             </span>
           </div>
-          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #0f284e; margin: 0 0 3px 0; line-height: 1.25;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 10.2pt; font-weight: 900; color: #0f284e; margin: 0 0 4px 0; line-height: 1.28;">
             ${rp.partB.question}
           </p>
           ${
             rp.partB.stimulus
               ? `
-          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; margin-bottom: 3px;">
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #1e293b; margin-bottom: 3px;">
             <strong style="color: #0f284e;">Stimulus:</strong>
-            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${rp.partB.stimulus[0]}</span>
-            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${rp.partB.stimulus[1]}</span>
+            <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #0f284e; background: #f0f4f9;">${rp.partB.stimulus[0]}</span>
+            <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #0f284e; background: #f0f4f9;">${rp.partB.stimulus[1]}</span>
           </div>`
               : ''
           }
 
           <!-- Connectives & Word Bank -->
-          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 4px 7px; background: #f0f4f9; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
+          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 4px 7px; background: #f0f4f9; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.6pt; line-height: 1.24;">
             <div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${rp.partB.connectives}</em></div>
             <div style="margin-top: 2px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${rp.partB.wordBank}</span></div>
           </div>
@@ -1544,14 +1543,14 @@ function renderRightPage(cfg, pageNum) {
         <!-- Timeline Mission Box -->
         <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
               🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #0f284e;">
               Turn to Centrefold &bull; Pages 8–9 &rarr;
             </span>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #111111; line-height: 1.24;">
             ${rp.timelineMission}
           </div>
         </div>
@@ -2147,12 +2146,12 @@ function compileMonarchyWorkbook() {
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.8pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
             Living Timeline &bull; Part 1: Reformation, Royal Supremacy &amp; The Middle Way (1517–1588)
           </h2>
         </div>
 
-        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
           <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
@@ -2163,12 +2162,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 1: 1517 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1517 &bull; Martin Luther &amp; The Protestant Reformation
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Martin Luther nails his 95 Theses to the Wittenberg church door, attacking corrupt papal indulgences and shattering Catholic unity; King Henry VIII writes in defence of the Pope, earning the title ‘Defender of the Faith’.
           </p>
         </div>
@@ -2176,12 +2175,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 2: 1534–1540 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1534–1540 &bull; Royal Supremacy &amp; Dissolution of the Monasteries
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Parliament passes the Act of Supremacy declaring Henry VIII ‘Supreme Head’ of the Church; Thomas Cromwell surveys and dissolves over 800 monasteries, confiscating gold, lead, and church lands for the Crown.
           </p>
         </div>
@@ -2189,12 +2188,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 3: 1559 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1559 &bull; Elizabeth I &amp; The Religious Settlement
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 2</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             The Acts of Supremacy and Uniformity establish the Via Media (‘Middle Way’), making Elizabeth ‘Supreme Governor’ and enforcing the 1559 Book of Common Prayer.
           </p>
         </div>
@@ -2202,12 +2201,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 4: 1588 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1588 &bull; Defeat of the Spanish Armada
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             English fireships scatter King Philip II’s 130-ship Armada off Calais; broadside cannons and fierce North Sea gales destroy Spanish hopes of restoring Catholicism.
           </p>
         </div>
@@ -2223,12 +2222,12 @@ function compileMonarchyWorkbook() {
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.8pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
             Living Timeline &bull; Part 2: Civil War, Regicide &amp; The Bill of Rights (1603–1689)
           </h2>
         </div>
 
-        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
+        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #1e293b;">
           <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
@@ -2239,12 +2238,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 5: 1629–1640 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1629–1640 &bull; Charles I’s ‘Personal Rule’ &amp; Ship Money
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Charles I rules without Parliament for eleven years, raising unparliamentary funds through Ship Money; John Hampden’s refusal to pay sparks nationwide tax resistance.
           </p>
         </div>
@@ -2252,12 +2251,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 6: 1649 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1649 &bull; Trial &amp; Execution of King Charles I
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Pride’s Purge clears moderate MPs; the Rump Parliament convicts Charles I of high treason as a ‘tyrant, traitor, and murderer’; the King is beheaded on 30 January 1649.
           </p>
         </div>
@@ -2265,12 +2264,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 7: 1688 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1688 &bull; The Glorious Revolution
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Fearing a permanent Catholic dynasty under James II, seven prominent peers invite Dutch Prince William of Orange; James flees and William lands with 15,000 troops.
           </p>
         </div>
@@ -2278,12 +2277,12 @@ function compileMonarchyWorkbook() {
         <!-- Milestone 8: 1689 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #0f284e;">
               1689 &bull; The Bill of Rights &amp; Constitutional Monarchy
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 5</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             William III and Mary II accept the Crown subject to the Bill of Rights, establishing that the King cannot raise taxes, suspend laws, or keep a standing army without Parliament.
           </p>
         </div>
