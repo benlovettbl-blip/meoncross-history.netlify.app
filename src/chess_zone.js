@@ -555,9 +555,11 @@ let chessState = {
   lastRoundByePlayerId: null,
   leagueTableViewMode: 'matrix', // 'matrix' | 'table'
   knockoutBracket: null,
-  activeTab: 'signin', // Default to Match Day & Pairings Hub for immediate Period 6 readiness
+  activeTab: 'ladder', // Pure Single-Screen Live Ladder
   filterHouse: 'all', // 'all' | houseId
   userRole: getInitialRole(), // 'teacher' | 'pupil'
+  quickDeskP1Id: '',
+  quickDeskP2Id: '',
   airgapMode: isAirgapModeActive(), // Safe by default on school laptop
   projectorMode: false,
   isPupilPreview: false,
@@ -1104,8 +1106,11 @@ export function renderChessHubView() {
   }
   filteredPlayers.sort((a, b) => a.rank - b.rank);
 
-  // In Pupil View, prevent attendance tab from showing
-  if (chessState.userRole === 'pupil' && chessState.activeTab === 'signin') {
+  // In Pupil View, prevent teacher tabs from showing
+  if (
+    chessState.userRole === 'pupil' &&
+    (chessState.activeTab === 'signin' || chessState.activeTab === 'quickdesk')
+  ) {
     chessState.activeTab = 'ladder';
   }
 
@@ -1151,28 +1156,32 @@ export function renderChessHubView() {
               ? `
             <!-- Teacher Action Controls -->
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
-              <!-- Cloud Sync Indicator -->
               ${renderCloudSyncStatusPill('teacher')}
 
-              <!-- Button 1: Master Whiteboard Launch (Main Projector Screen) -->
-              <button onclick="window.toggleChessWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.92rem; padding: 11px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
-                <span style="font-size: 1.2rem; line-height: 1;">📺</span> Whiteboard (W)
+              <!-- Role Active Badge -->
+              <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(16, 185, 129, 0.18); border: 1.5px solid #10b981; padding: 9px 14px; border-radius: 8px; font-size: 0.85rem; font-weight: 800; color: #34d399;">
+                <span>🔓</span> Teacher Active
+              </div>
+
+              <!-- Button: Lock Back to Pupil View -->
+              <button onclick="window.lockTeacherMode()" style="background: #292524; color: #fca5a5; border: 1.5px solid #7f1d1d; font-weight: 700; font-size: 0.84rem; padding: 9px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Lock Teacher Mode (Return to Read-Only Pupil View)">
+                <span>🔒</span> Lock
               </button>
 
-              <!-- Button 2: Pupil QR Code -->
-              <button onclick="window.openPupilQrModal()" style="background: #065f46; color: #a7f3d0; border: 1.5px solid #059669; font-weight: 700; font-size: 0.88rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 7px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" title="Display QR Code for pupils to join live room on their Chromebooks/phones">
-                <span>📱</span> Pupil QR Code
+              <!-- Button: Master Whiteboard Launch (Main Projector Screen) -->
+              <button onclick="window.toggleChessWhiteboardMode()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.86rem; padding: 9px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.4); transition: all 0.15s;" title="Launch Big Screen Whiteboard Display for Interactive Projector (Press W)">
+                <span>📺</span> Whiteboard (W)
               </button>
 
-              <!-- Button 3: Quick Record Result -->
-              <button onclick="window.openLogMatchModal()" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.25); transition: all 0.15s;" onmouseover="this.style.borderColor='#d4af37';this.style.color='#d4af37'" onmouseout="this.style.borderColor='#78716c';this.style.color='#fafaf9'">
-                <span style="font-size: 1.05rem; line-height: 1;">⚔</span> Record Game Result
+              <!-- Button: Pupil QR Code -->
+              <button onclick="window.openPupilQrModal()" style="background: rgba(255, 255, 255, 0.08); color: #cbd5e1; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 9px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Display QR Code for pupils to view standings on their devices">
+                <span>📱</span> Pupil QR
               </button>
 
-              <!-- Button 4: Clean Teacher Tools Dropdown -->
+              <!-- Clean Teacher Tools Dropdown -->
               <div style="position: relative; display: inline-block;">
-                <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 11px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Administrative & Backup Tools">
-                  <span>⚙️</span> Teacher Tools ▾
+                <button id="btn-chess-admin-menu" onclick="window.toggleChessAdminDropdown(event)" style="background: rgba(255, 255, 255, 0.08); color: #e7e5e4; border: 1.5px solid #57534e; font-weight: 700; font-size: 0.84rem; padding: 9px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
+                  <span>⚙️</span> Tools ▾
                 </button>
                 <div id="chess-admin-dropdown" style="display: ${chessState.showAdminDropdown ? 'block' : 'none'}; position: absolute; right: 0; top: calc(100% + 8px); background: #292524; border: 1.5px solid #57534e; border-radius: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.65); z-index: 9999; min-width: 250px; overflow: hidden;">
                   <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openAirgapInfoModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${isAirgapModeActive() ? '#86efac' : '#fde68a'}; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
@@ -1190,9 +1199,6 @@ export function renderChessHubView() {
                   <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openAssemblySlideModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fef08a; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>⚑</span> Assembly Presentation Slide
                   </button>
-                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.toggleAutoRePair();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: ${chessState.autoRePairEnabled ? '#86efac' : '#fca5a5'}; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                    <span>⚡</span> Auto Re-Pairing: ${chessState.autoRePairEnabled ? 'Active (ON)' : 'Paused'}
-                  </button>
                   <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.openDataVaultModal();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #cbd5e1; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>💾</span> Backup Data Vault
                   </button>
@@ -1205,9 +1211,6 @@ export function renderChessHubView() {
                   `
                       : ''
                   }
-                  <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.togglePupilPreview();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #a5b4fc; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
-                    <span>👁</span> Preview as Pupil
-                  </button>
                   <button type="button" onclick="window.closeChessAdminDropdownOnly(); window.lockTeacherMode();" onmouseover="this.style.background='rgba(255,255,255,0.08)'" onmouseout="this.style.background='transparent'" style="width: 100%; text-align: left; background: transparent; border: none; border-bottom: 1px solid #3e3835; color: #fbcfe8; padding: 11px 14px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.15s;">
                     <span>🔒</span> Lock Teacher Mode
                   </button>
@@ -1222,28 +1225,14 @@ export function renderChessHubView() {
                   }
                 </div>
               </div>
-
-              <!-- Preview Pupil View Pill -->
-              <button onclick="window.togglePupilPreview()" style="background: rgba(255, 255, 255, 0.05); color: #cbd5e1; border: 1px solid #57534e; font-weight: 600; font-size: 0.8rem; padding: 11px 14px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s;" title="Preview the hub exactly as seen by pupils on their phones">
-                <span>👁</span> View as Pupil
-              </button>
             </div>
           `
               : `
-            <!-- Pupil View Controls: Safe & Clutter-Free -->
+            <!-- Pupil View Controls: Clean & Clear Teacher Unlock -->
             <div style="display: flex; gap: 10px; align-items: center; flex-wrap: wrap;">
               ${renderCloudSyncStatusPill('pupil')}
-              <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(212, 175, 55, 0.15); border: 1px solid rgba(212, 175, 55, 0.4); padding: 8px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; color: #d4af37;">
-                <span>🎓</span> Pupil Academy &amp; Standings
-              </div>
-              <button onclick="window.switchChessTab('beginners')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: 1.5px solid #34d399; font-weight: 800; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
-                <span>🌱</span> Rookie Academy
-              </button>
-              <button onclick="window.switchChessTab('ladder')" style="background: #292524; color: #fafaf9; border: 1.5px solid #78716c; font-weight: 700; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px;">
-                <span>🪜</span> Master Ladder
-              </button>
-              <button onclick="window.promptTeacherUnlock()" style="background: transparent; color: #78716c; border: 1px solid #44403c; font-weight: 600; font-size: 0.76rem; padding: 10px 12px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;" title="Teacher administrative access (Passkey: Drake.30!)">
-                <span>🔒</span> Teacher Access
+              <button onclick="window.openTeacherUnlockModal()" style="background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color: #ffffff; border: 1.5px solid #60a5fa; font-weight: 800; font-size: 0.9rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4); transition: all 0.15s;" title="Teacher administrative access (Passkey: drake.30)">
+                <span style="font-size: 1.05rem; line-height: 1;">🔒</span> Teacher Login
               </button>
             </div>
           `
@@ -1410,68 +1399,41 @@ export function renderChessHubView() {
           : ''
       }
 
-      <!-- Main Navigation Tabs: Simplified Classroom Layout -->
-      <div style="display: flex; gap: 4px; border-bottom: 2px solid #e7e5e4; margin-bottom: 20px; overflow-x: auto; max-width: 100%; -webkit-overflow-scrolling: touch; padding-bottom: 2px; scrollbar-width: thin;">
-        ${
-          chessState.userRole === 'teacher'
-            ? `
-        <button onclick="window.switchChessTab('signin')" style="${getTabStyle(chessState.activeTab === 'signin')}">
-          <span style="font-size: 1.1rem; line-height: 1;">⚔️</span> Match Day &amp; Pairings
-        </button>
-        `
-            : ''
-        }
-        <button onclick="window.switchChessTab('ladder')" style="${getTabStyle(chessState.activeTab === 'ladder')}">
-          <span style="font-size: 1.05rem; line-height: 1;">🏆</span> House Standings (${chessState.players.length})
-        </button>
-        <button onclick="window.switchChessTab('table')" style="${getTabStyle(chessState.activeTab === 'table')}">
-          <span style="font-size: 1.05rem; line-height: 1;">📊</span> Cross-Table
-        </button>
-        <button onclick="window.switchChessTab('matches')" style="${getTabStyle(chessState.activeTab === 'matches')}">
-          <span style="font-size: 1.05rem; line-height: 1;">📜</span> Match History (${chessState.matches.length})
-        </button>
-        <button onclick="window.switchChessTab('drills')" style="${getTabStyle(chessState.activeTab === 'drills')}">
-          <span style="font-size: 1.05rem; line-height: 1;">🧩</span> Tactical Puzzles
-        </button>
-        <button onclick="window.switchChessTab('beginners')" style="${getTabStyle(chessState.activeTab === 'beginners')}">
-          <span style="font-size: 1.05rem; line-height: 1;">🌱</span> Rookie Academy
-        </button>
+      <!-- Teacher Quick Desk (1-Tap Match & Points Logger - Authenticated Teachers Only) -->
+      ${chessState.userRole === 'teacher' ? renderTeacherQuickDeskSection(filteredPlayers) : ''}
+
+      <!-- House Filter Controls Bar -->
+      <div style="display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; background: #ffffff; padding: 10px 14px; border-radius: 10px; border: 1.5px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">
+          <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> House Filter:
+        </div>
+        <button onclick="window.setChessHouseFilter('all')" style="${getFilterPillStyle(chessState.filterHouse === 'all')}">All Houses (${chessState.players.length})</button>
+        ${Object.values(HOUSES)
+          .map(
+            (h) => `
+          <button onclick="window.setChessHouseFilter('${h.id}')" style="${getFilterPillStyle(chessState.filterHouse === h.id)}">
+            ${h.name} (${chessState.players.filter((p) => p.house === h.id).length})
+          </button>
+        `,
+          )
+          .join('')}
+
+        <div style="margin-left: auto;">
+          ${
+            chessState.userRole === 'teacher'
+              ? `
+            <button onclick="window.openAddPlayerModal()" style="background: #10b981; color: #ffffff; border: none; padding: 7px 14px; border-radius: 6px; font-size: 0.82rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(16, 185, 129, 0.3);">
+              <span>+</span> Register Pupil
+            </button>
+          `
+              : ''
+          }
+        </div>
       </div>
 
-      <!-- Year & House Filter Controls Bar (Visible on Ladder & Table) -->
-      ${
-        chessState.activeTab === 'ladder' || chessState.activeTab === 'table'
-          ? `
-        <div style="display: flex; gap: 10px; margin-bottom: 18px; flex-wrap: wrap; align-items: center; background: #ffffff; padding: 10px 14px; border-radius: 10px; border: 1.5px solid #e2e8f0; box-shadow: 0 2px 5px rgba(0,0,0,0.02);">
-          
-
-          <div style="display: flex; align-items: center; gap: 6px; font-size: 0.8rem; font-weight: 700; color: #64748b; text-transform: uppercase;">
-            <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> House:
-          </div>
-          <button onclick="window.setChessHouseFilter('all')" style="${getFilterPillStyle(chessState.filterHouse === 'all')}">All</button>
-          ${Object.values(HOUSES)
-            .map(
-              (h) => `
-            <button onclick="window.setChessHouseFilter('${h.id}')" style="${getFilterPillStyle(chessState.filterHouse === h.id)}">
-              ${h.name}
-            </button>
-          `,
-            )
-            .join('')}
-
-          <div style="margin-left: auto;">
-            <button onclick="window.openAddPlayerModal()" style="background: #10b981; color: #ffffff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-user-plus"></i> Register Pupil
-            </button>
-          </div>
-        </div>
-      `
-          : ''
-      }
-
-      <!-- Tab Content Panels -->
+      <!-- Live Master Ladder (Pure Single-Screen Classroom View) -->
       <div id="chess-tab-content">
-        ${renderActiveTabContent(filteredPlayers)}
+        ${renderLadderTab(filteredPlayers)}
       </div>
 
     </div>
@@ -1480,26 +1442,112 @@ export function renderChessHubView() {
   container.innerHTML = html;
 }
 
-// Tab Content Router
-function renderActiveTabContent(filteredPlayers) {
-  if (chessState.activeTab === 'signin') {
-    return renderSignInTab(filteredPlayers);
-  } else if (chessState.activeTab === 'beginners') {
-    return renderBeginnersTab();
-  } else if (chessState.activeTab === 'ladder') {
-    return renderLadderTab(filteredPlayers);
-  } else if (chessState.activeTab === 'table') {
-    return renderLeagueTableTab(filteredPlayers);
-  } else if (chessState.activeTab === 'pairings') {
-    return renderPairingsTab();
-  } else if (chessState.activeTab === 'knockout') {
-    return renderKnockoutTab();
-  } else if (chessState.activeTab === 'drills') {
-    return renderDrillsTab();
-  } else if (chessState.activeTab === 'matches') {
-    return renderMatchesTab();
-  }
-  return '';
+// 0. Teacher Quick Desk Section (1-Tap Match & Points Logger)
+function renderTeacherQuickDeskSection(players) {
+  const allPlayers = [...chessState.players].sort((a, b) => a.rank - b.rank);
+  const p1Id = chessState.quickDeskP1Id || '';
+  const p2Id = chessState.quickDeskP2Id || '';
+  const lastMatch = chessState.matches && chessState.matches[0];
+
+  return `
+    <div id="teacher-quick-desk" style="background: linear-gradient(135deg, #1c1917 0%, #292524 100%); border: 2px solid #38bdf8; border-radius: 14px; padding: 20px 22px; margin-bottom: 22px; color: #ffffff; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35); animation: fadeIn 0.2s ease-out;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; flex-wrap: wrap; gap: 10px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <div style="width: 38px; height: 38px; border-radius: 8px; background: #0284c7; border: 1.5px solid #38bdf8; display: flex; align-items: center; justify-content: center; font-size: 1.3rem;">
+            ⚡
+          </div>
+          <div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.28rem; color: #fafaf9; font-weight: 700;">
+              Teacher Quick Desk · 1-Tap Match &amp; Points Logger
+            </h3>
+            <div style="font-size: 0.78rem; color: #a8a29e;">
+              Select two pupils and tap the winner or draw. Standings, ELO, and House Points update instantly!
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 8px; align-items: center;">
+          <button onclick="window.openAddPlayerModal()" style="background: #10b981; color: #ffffff; border: 1px solid #34d399; font-weight: 800; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);">
+            <span>+</span> Register Pupil
+          </button>
+        </div>
+      </div>
+
+      <!-- Player Selector Grid -->
+      <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 12px; align-items: center; margin-bottom: 16px;">
+        <div>
+          <label style="display: block; font-size: 0.74rem; font-weight: 800; color: #93c5fd; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 0.05em;">
+            Player 1 (White ♔)
+          </label>
+          <select id="quickdesk-p1" onchange="chessState.quickDeskP1Id = this.value" style="width: 100%; background: #0c0a09; border: 1.5px solid #57534e; color: #f8fafc; border-radius: 8px; padding: 11px 12px; font-size: 0.95rem; font-weight: 700; outline: none;">
+            <option value="">-- Choose Player 1 --</option>
+            ${allPlayers
+              .map((p) => {
+                const h = HOUSES[p.house];
+                const isSelected = p.id === p1Id ? 'selected' : '';
+                return `<option value="${p.id}" ${isSelected}>#${p.rank} ${p.name} (${h ? h.name : p.house} · Elo ${p.rating})</option>`;
+              })
+              .join('')}
+          </select>
+        </div>
+
+        <div style="text-align: center; padding-top: 18px;">
+          <button type="button" onclick="window.swapQuickDeskPlayers()" title="Swap White and Black" style="background: #292524; color: #cbd5e1; border: 1.5px solid #57534e; width: 42px; height: 42px; border-radius: 50%; font-size: 1.2rem; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; transition: all 0.15s;">
+            ⇄
+          </button>
+        </div>
+
+        <div>
+          <label style="display: block; font-size: 0.74rem; font-weight: 800; color: #fdba74; text-transform: uppercase; margin-bottom: 5px; letter-spacing: 0.05em;">
+            Player 2 (Black ♚)
+          </label>
+          <select id="quickdesk-p2" onchange="chessState.quickDeskP2Id = this.value" style="width: 100%; background: #0c0a09; border: 1.5px solid #57534e; color: #f8fafc; border-radius: 8px; padding: 11px 12px; font-size: 0.95rem; font-weight: 700; outline: none;">
+            <option value="">-- Choose Player 2 --</option>
+            ${allPlayers
+              .map((p) => {
+                const h = HOUSES[p.house];
+                const isSelected = p.id === p2Id ? 'selected' : '';
+                return `<option value="${p.id}" ${isSelected}>#${p.rank} ${p.name} (${h ? h.name : p.house} · Elo ${p.rating})</option>`;
+              })
+              .join('')}
+          </select>
+        </div>
+      </div>
+
+      <!-- 3 Instant Result Buttons -->
+      <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 14px;">
+        <button type="button" onclick="window.recordDirectTeacherMatch('p1')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: 1.5px solid #34d399; border-radius: 8px; padding: 13px 10px; font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+          <span>🏆 Player 1 Won</span>
+          <span style="font-size: 0.72rem; color: #d1fae5; font-family: monospace;">+3 House Pts</span>
+        </button>
+
+        <button type="button" onclick="window.recordDirectTeacherMatch('draw')" style="background: linear-gradient(135deg, #44403c 0%, #292524 100%); color: #ffffff; border: 1.5px solid #78716c; border-radius: 8px; padding: 13px 10px; font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px;">
+          <span>🤝 Draw</span>
+          <span style="font-size: 0.72rem; color: #fde68a; font-family: monospace;">+2 Pts Each</span>
+        </button>
+
+        <button type="button" onclick="window.recordDirectTeacherMatch('p2')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: 1.5px solid #34d399; border-radius: 8px; padding: 13px 10px; font-weight: 800; font-size: 0.95rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; gap: 3px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);">
+          <span>🏆 Player 2 Won</span>
+          <span style="font-size: 0.72rem; color: #d1fae5; font-family: monospace;">+3 House Pts</span>
+        </button>
+      </div>
+
+      <!-- Desk Footer: Undo & Hint -->
+      <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.78rem; color: #a8a29e; flex-wrap: wrap; gap: 8px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,0.1);">
+        <div>
+          💡 <em>Tip: Tap <strong>[ ⚡ Match ]</strong> on any pupil in the ladder below to load them into Player 1!</em>
+        </div>
+        ${
+          lastMatch
+            ? `
+          <button type="button" onclick="window.undoQuickDeskMatch('${lastMatch.id}')" style="background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.4); padding: 5px 12px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
+            <span>↺</span> Undo: ${lastMatch.white} vs ${lastMatch.black} (${lastMatch.result})
+          </button>
+        `
+            : ''
+        }
+      </div>
+    </div>
+  `;
 }
 
 // 1. Master Ladder View (King of the Hill)
@@ -1754,23 +1802,14 @@ function renderLadderTab(players) {
                 ${
                   chessState.userRole === 'teacher'
                     ? `
-                  ${
-                    isCheckedIn
-                      ? `<button onclick="window.checkOutPlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 6px 10px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; cursor: pointer;">Check Out</button>`
-                      : `<button onclick="window.checkInPlayer('${p.id}')" style="background: #ecfdf5; border: 1px solid #a7f3d0; color: #059669; padding: 6px 10px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; cursor: pointer;">+ Check In</button>`
-                  }
-                  <button onclick="window.quickChallengePlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                    ⚔ Challenge
+                  <button onclick="window.selectPlayerForQuickDesk('${p.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 7px 14px; border-radius: 6px; font-size: 0.8rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 6px rgba(2, 132, 199, 0.25);" title="Load ${p.name} as Player 1 in Quick Desk">
+                    ⚡ Match
                   </button>
                   <button onclick="window.removePlayer('${p.id}')" title="Remove pupil" style="background: none; border: none; color: #cbd5e1; cursor: pointer; padding: 4px 6px; font-size: 0.9rem;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#cbd5e1'">
                     ✕
                   </button>
                 `
-                    : `
-                  <button onclick="window.quickChallengePlayer('${p.id}')" style="background: #f8fafc; border: 1px solid #cbd5e1; color: #1e3a8a; padding: 6px 12px; border-radius: 6px; font-size: 0.78rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 5px;">
-                    ⚔ Challenge
-                  </button>
-                `
+                    : ''
                 }
               </div>
 
@@ -3197,6 +3236,267 @@ function renderActiveBoardPairingsGrid() {
   `;
 }
 
+// ============================================================================
+// ⚡ TEACHER QUICK DESK (Simplified Match Logger & Instant Pupil Register)
+// Designed for fast, 1-handed match logging during lively Period 6 classroom play
+// ============================================================================
+function renderQuickDeskTab(players = []) {
+  if (chessState.userRole !== 'teacher') {
+    return `
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 48px 24px; text-align: center; color: #64748b;">
+        <div style="font-size: 2rem; margin-bottom: 12px;">🔒</div>
+        <h3 style="margin: 0 0 8px 0; color: #0f172a; font-size: 1.25rem;">Teacher Mode Required</h3>
+        <p style="margin: 0 0 16px 0; font-size: 0.88rem;">Only verified teachers can record match scores or register pupils.</p>
+        <button onclick="window.promptTeacherUnlock()" style="background: #0f172a; color: #ffffff; border: none; font-weight: 700; padding: 10px 20px; border-radius: 8px; cursor: pointer;">
+          Unlock Teacher Console
+        </button>
+      </div>
+    `;
+  }
+
+  const allPlayers = [...chessState.players].sort((a, b) => a.name.localeCompare(b.name));
+  const recentMatches = (chessState.matches || []).slice(0, 8);
+
+  const renderPlayerSelectOptions = (selectedId) => {
+    return `
+      <option value="">-- Choose Pupil --</option>
+      ${allPlayers
+        .map((p) => {
+          const house = HOUSES[p.house]?.name || p.house;
+          const isSel = p.id === selectedId ? 'selected' : '';
+          return `<option value="${p.id}" ${isSel}>${p.name} (${house} • Rtg ${p.rating})</option>`;
+        })
+        .join('')}
+    `;
+  };
+
+  return `
+    <div style="display: flex; flex-direction: column; gap: 20px; font-family: 'Outfit', sans-serif;">
+      
+      <!-- Top Alert / Security Badge Strip -->
+      <div style="background: #0f172a; border-left: 4px solid #10b981; border-radius: 10px; padding: 14px 20px; color: #ffffff; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; box-shadow: 0 4px 14px rgba(0,0,0,0.18);">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span style="font-size: 1.4rem; line-height: 1;">⚡</span>
+          <div>
+            <div style="font-weight: 800; font-size: 1rem; color: #f8fafc; letter-spacing: 0.02em;">
+              Teacher Quick Desk · Period 6 Match &amp; Pupil Logger
+            </div>
+            <div style="font-size: 0.8rem; color: #94a3b8; line-height: 1.4;">
+              🔒 <strong>Strict Teacher Lock:</strong> Only this authenticated teacher laptop can award points. Pupil phones see read-only standings.
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #6ee7b7; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">
+            Teacher Verified ✓
+          </span>
+          <button onclick="window.switchChessTab('signin')" style="background: rgba(255,255,255,0.08); color: #cbd5e1; border: 1px solid #475569; font-size: 0.76rem; font-weight: 700; padding: 6px 12px; border-radius: 6px; cursor: pointer; transition: all 0.15s;" title="Switch to the automated Swiss round pairing generator">
+            Swiss Pairings Grid ➔
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Two-Column Quick Action Panel -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 20px;">
+        
+        <!-- CARD 1: 3-Tap Direct Match Scorer -->
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 22px; box-shadow: 0 6px 16px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: #eff6ff; color: #2563eb; width: 34px; height: 34px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.15rem; font-weight: 800;">⚔</span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.1rem; font-weight: 800; color: #0f172a;">1-Tap Match Result Logger</h3>
+                  <div style="font-size: 0.75rem; color: #64748b;">Select any two pupils and tap the winner — awards points instantly</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Player Pickers -->
+            <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-bottom: 16px;">
+              <div style="margin-bottom: 10px;">
+                <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">
+                  ♔ Player 1 (White / First Pupil):
+                </label>
+                <select id="quickdesk-p1" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; font-weight: 700; color: #0f172a; background: #ffffff;">
+                  ${renderPlayerSelectOptions(chessState.quickDeskP1Id || '')}
+                </select>
+              </div>
+
+              <div style="display: flex; justify-content: center; margin: -2px 0 6px 0;">
+                <button type="button" onclick="window.swapQuickDeskPlayers()" style="background: #ffffff; border: 1px solid #cbd5e1; color: #475569; padding: 3px 12px; border-radius: 20px; font-size: 0.74rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
+                  ⇄ Swap Players
+                </button>
+              </div>
+
+              <div>
+                <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 4px;">
+                  ♚ Player 2 (Black / Opponent):
+                </label>
+                <select id="quickdesk-p2" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; font-weight: 700; color: #0f172a; background: #ffffff;">
+                  ${renderPlayerSelectOptions(chessState.quickDeskP2Id || '')}
+                </select>
+              </div>
+            </div>
+
+            <!-- Instant Outcome Buttons (3 Big Tap Targets) -->
+            <div>
+              <div style="font-size: 0.76rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 8px;">
+                Tap Game Outcome (Instant Save):
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px;">
+                <button type="button" onclick="window.recordDirectTeacherMatch('p1')" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: none; padding: 14px 8px; border-radius: 8px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3); transition: transform 0.1s;" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                  <span style="font-size: 1.25rem;">🏆</span>
+                  <span>Player 1 Won</span>
+                  <span style="font-size: 0.68rem; opacity: 0.9; font-weight: 600;">+3 / +1 Pts</span>
+                </button>
+
+                <button type="button" onclick="window.recordDirectTeacherMatch('draw')" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; border: none; padding: 14px 8px; border-radius: 8px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3); transition: transform 0.1s;" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                  <span style="font-size: 1.25rem;">🤝</span>
+                  <span>Match Draw</span>
+                  <span style="font-size: 0.68rem; opacity: 0.9; font-weight: 600;">+2 / +2 Pts</span>
+                </button>
+
+                <button type="button" onclick="window.recordDirectTeacherMatch('p2')" style="background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%); color: #ffffff; border: none; padding: 14px 8px; border-radius: 8px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3); transition: transform 0.1s;" onmousedown="this.style.transform='scale(0.98)'" onmouseup="this.style.transform='scale(1)'">
+                  <span style="font-size: 1.25rem;">🏆</span>
+                  <span>Player 2 Won</span>
+                  <span style="font-size: 0.68rem; opacity: 0.9; font-weight: 600;">+3 / +1 Pts</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 16px; font-size: 0.73rem; color: #64748b; line-height: 1.4; border-top: 1px solid #f1f5f9; padding-top: 10px;">
+            💡 <strong>Points rules:</strong> Winners score 3 points for their House; draws earn 2 points each; completing a match scores 1 participation point.
+          </div>
+        </div>
+
+        <!-- CARD 2: Quick Register New Pupil -->
+        <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 22px; box-shadow: 0 6px 16px rgba(0,0,0,0.04); display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 10px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="background: #ecfdf5; color: #059669; width: 34px; height: 34px; border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; font-size: 1.15rem; font-weight: 800;">👤</span>
+                <div>
+                  <h3 style="margin: 0; font-size: 1.1rem; font-weight: 800; color: #0f172a;">Quick Pupil Register</h3>
+                  <div style="font-size: 0.75rem; color: #64748b;">Add a new pupil in 3 seconds · auto-checked in for today</div>
+                </div>
+              </div>
+            </div>
+
+            <form id="quickdesk-reg-form" onsubmit="window.handleQuickDeskRegister(event)">
+              <div style="margin-bottom: 14px;">
+                <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px;">
+                  Pupil Name:
+                </label>
+                <input type="text" id="quickdesk-reg-name" required placeholder="e.g. Oliver M. or Emily T." style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.95rem; font-weight: 600; color: #0f172a;" autocomplete="off">
+                <div style="font-size: 0.72rem; color: #64748b; margin-top: 4px;">
+                  🔒 Auto-sanitises full surnames to <strong>First Name + Last Initial</strong> for student privacy.
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <label style="display: block; font-size: 0.78rem; font-weight: 800; color: #334155; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 5px;">
+                  School House:
+                </label>
+                <select id="quickdesk-reg-house" style="width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 6px; border: 1.5px solid #cbd5e1; font-size: 0.92rem; font-weight: 700; color: #0f172a; background: #ffffff;">
+                  <option value="victory">Victory (Blue · Trafalgar / Nelson)</option>
+                  <option value="warrior" selected>Warrior (Red · Ironclad / Fortitude)</option>
+                  <option value="dreadnought">Dreadnought (Green · Grand Fleet / Fisher)</option>
+                  <option value="invincible">Invincible (Yellow · Battlecruiser / Speed)</option>
+                </select>
+              </div>
+
+              <button type="submit" style="width: 100%; background: #0f172a; color: #ffffff; border: none; padding: 12px; border-radius: 8px; font-weight: 800; font-size: 0.92rem; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 12px rgba(15, 23, 42, 0.25); transition: background 0.15s;" onmouseover="this.style.background='#1e293b'" onmouseout="this.style.background='#0f172a'">
+                <span>+</span> Register &amp; Select for Match
+              </button>
+            </form>
+          </div>
+
+          <div style="margin-top: 16px; background: #f8fafc; border-radius: 8px; padding: 10px 14px; border: 1px solid #e2e8f0; font-size: 0.75rem; color: #475569; display: flex; justify-content: space-between; align-items: center;">
+            <span>Enrolled Pupils: <strong>${chessState.players.length}</strong></span>
+            <span>Total Games Logged: <strong>${chessState.matches.length}</strong></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CARD 3: Recent Matches Feed with 1-Click Undo -->
+      <div style="background: #ffffff; border: 1.5px solid #cbd5e1; border-radius: 12px; padding: 20px; box-shadow: 0 6px 16px rgba(0,0,0,0.04);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 10px;">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <span style="font-size: 1.15rem;">📋</span>
+            <h3 style="margin: 0; font-size: 1.05rem; font-weight: 800; color: #0f172a;">
+              Recent Matches Logged Today
+            </h3>
+          </div>
+          <span style="font-size: 0.75rem; color: #64748b; font-weight: 600;">
+            Showing last ${recentMatches.length} games
+          </span>
+        </div>
+
+        ${
+          recentMatches.length === 0
+            ? `
+          <div style="text-align: center; padding: 26px 16px; color: #94a3b8; font-size: 0.88rem;">
+            No matches logged yet this session. When pupils finish a game, pick their names above and tap who won!
+          </div>
+        `
+            : `
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            ${recentMatches
+              .map((m) => {
+                const wHouse = HOUSES[m.whiteHouse] || { name: m.whiteHouse, color: '#2563eb' };
+                const bHouse = HOUSES[m.blackHouse] || { name: m.blackHouse, color: '#dc2626' };
+                const isDraw = m.result === '½-½' || m.result === '1/2-1/2';
+                const whiteWon = m.result === '1-0';
+                const blackWon = m.result === '0-1';
+
+                return `
+                <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; flex-wrap: wrap; gap: 10px;">
+                  <div style="display: flex; align-items: center; gap: 10px; font-size: 0.88rem;">
+                    <!-- Result badge -->
+                    <span style="font-family: monospace; font-weight: 900; font-size: 0.85rem; padding: 3px 8px; border-radius: 4px; background: ${isDraw ? '#fef3c7; color: #92400e; border: 1px solid #fde68a;' : '#0f172a; color: #ffffff;'}">
+                      ${m.result}
+                    </span>
+
+                    <!-- Match Details -->
+                    <div style="display: flex; align-items: center; gap: 6px; font-weight: 700;">
+                      <span style="color: ${wHouse.color}; ${whiteWon ? 'text-decoration: underline; font-weight: 900;' : ''}">${m.white}</span>
+                      <span style="font-size: 0.7rem; color: #94a3b8; font-weight: 500;">(${wHouse.name})</span>
+                      <span style="color: #64748b; font-weight: 500; font-size: 0.78rem;">vs</span>
+                      <span style="color: ${bHouse.color}; ${blackWon ? 'text-decoration: underline; font-weight: 900;' : ''}">${m.black}</span>
+                      <span style="font-size: 0.7rem; color: #94a3b8; font-weight: 500;">(${bHouse.name})</span>
+                    </div>
+
+                    ${
+                      whiteWon
+                        ? `<span style="font-size: 0.72rem; color: #059669; font-weight: 800; background: #ecfdf5; padding: 2px 6px; border-radius: 4px;">🏆 ${m.white} Won</span>`
+                        : blackWon
+                          ? `<span style="font-size: 0.72rem; color: #059669; font-weight: 800; background: #ecfdf5; padding: 2px 6px; border-radius: 4px;">🏆 ${m.black} Won</span>`
+                          : `<span style="font-size: 0.72rem; color: #d97706; font-weight: 800; background: #fffbeb; padding: 2px 6px; border-radius: 4px;">🤝 Draw</span>`
+                    }
+                  </div>
+
+                  <!-- Safety Undo Button -->
+                  <div>
+                    <button type="button" onclick="window.undoQuickDeskMatch('${m.id}')" style="background: #ffffff; border: 1px solid #cbd5e1; color: #dc2626; font-size: 0.74rem; font-weight: 700; padding: 5px 10px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Rollback this result if misreported or entered in error">
+                      <span>✕</span> Undo Result
+                    </button>
+                  </div>
+                </div>
+              `;
+              })
+              .join('')}
+          </div>
+        `
+        }
+      </div>
+
+    </div>
+  `;
+}
+
 // 3. Pupil Self-Check-In & Attendance Management (Unified Period 6 Hub)
 function renderSignInTab(players = []) {
   const notCheckedIn = chessState.players.filter(
@@ -4459,27 +4759,116 @@ if (typeof window !== 'undefined') {
 }
 
 // Teacher Authentication & Pupil Safeguard Handlers
-window.promptTeacherUnlock = function () {
-  const passkey = prompt('Enter Teacher Passkey:');
-  if (!passkey) return;
-  const clean = passkey.trim().toLowerCase();
-  const validPasskeys = ['drake.30!', 'drake.30'];
-  if (validPasskeys.includes(clean)) {
+window.openTeacherUnlockModal = function () {
+  const modalCont = getChessModalContainer();
+  if (!modalCont) return;
+
+  modalCont.innerHTML = `
+    <div style="position: fixed; inset: 0; background: rgba(15, 23, 42, 0.78); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; z-index: 99999; padding: 20px;" onclick="if(event.target === this) window.closeChessModal();">
+      <div style="background: #1c1917; border: 2px solid #d4af37; border-radius: 14px; max-width: 440px; width: 100%; padding: 26px 24px; box-shadow: 0 20px 50px rgba(0,0,0,0.6); color: #f8fafc; font-family: 'Outfit', sans-serif; animation: zoomIn 0.18s ease-out;">
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <div style="width: 44px; height: 44px; border-radius: 10px; background: rgba(212, 175, 55, 0.15); border: 1.5px solid #d4af37; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #d4af37; flex-shrink: 0;">
+            🔒
+          </div>
+          <div>
+            <h3 style="margin: 0; font-family: 'Playfair Display', Georgia, serif; font-size: 1.35rem; color: #fafaf9; font-weight: 700;">
+              Teacher Access Lock
+            </h3>
+            <div style="font-size: 0.78rem; color: #a8a29e; margin-top: 2px;">
+              Enter the teacher passkey to unlock match logging &amp; point controls on this device.
+            </div>
+          </div>
+        </div>
+
+        <form onsubmit="window.handleTeacherUnlockSubmit(event)" style="margin: 0;">
+          <div style="margin-bottom: 16px;">
+            <label for="teacher-passkey-input" style="display: block; font-size: 0.78rem; font-weight: 700; color: #e7e5e4; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px;">
+              Passkey:
+            </label>
+            <input
+              id="teacher-passkey-input"
+              type="password"
+              autofocus
+              autocomplete="off"
+              placeholder="Enter passkey (e.g. drake.30)"
+              style="width: 100%; box-sizing: border-box; background: #0c0a09; border: 1.5px solid #57534e; border-radius: 8px; padding: 12px 14px; color: #ffffff; font-size: 1.05rem; font-family: monospace; outline: none; transition: border-color 0.2s;"
+              onfocus="this.style.borderColor='#d4af37'"
+              onblur="this.style.borderColor='#57534e'"
+            />
+            <div id="teacher-unlock-error" style="display: none; color: #f87171; font-size: 0.78rem; font-weight: 700; margin-top: 6px;">
+              ⚠️ Incorrect passkey. Please check and try again.
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; justify-content: flex-end;">
+            <button type="button" onclick="window.closeChessModal()" style="background: transparent; color: #a8a29e; border: 1px solid #44403c; padding: 10px 16px; border-radius: 8px; font-weight: 700; font-size: 0.85rem; cursor: pointer;">
+              Cancel
+            </button>
+            <button type="submit" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%); color: #ffffff; border: 1px solid #34d399; padding: 10px 20px; border-radius: 8px; font-weight: 800; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);">
+              <span>🔓</span> Unlock Teacher Mode
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  `;
+
+  setTimeout(() => {
+    const inp = document.getElementById('teacher-passkey-input');
+    if (inp) inp.focus();
+  }, 60);
+};
+
+window.handleTeacherUnlockSubmit = function (e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const inp = document.getElementById('teacher-passkey-input');
+  const err = document.getElementById('teacher-unlock-error');
+  if (!inp) return false;
+
+  const val = inp.value.trim().toLowerCase();
+  const validPasskeys = ['drake.30', 'drake.30!'];
+
+  if (validPasskeys.includes(val)) {
     localStorage.setItem('history_chess_teacher_auth', 'true');
     chessState.userRole = 'teacher';
     chessState.isPupilPreview = false;
-    showChessToast('🔓 Teacher Mode Unlocked!', 'success');
+    chessState.activeTab = 'ladder';
+    window.closeChessModal();
     renderChessHubView();
+    showChessToast('🔓 Teacher Mode Unlocked! Quick Desk ready.', 'success');
   } else {
-    showChessToast('Incorrect passkey. Please try again.', 'error');
+    if (err) err.style.display = 'block';
+    inp.style.borderColor = '#ef4444';
+    inp.select();
+  }
+  return false;
+};
+
+window.promptTeacherUnlock = window.openTeacherUnlockModal;
+
+window.selectPlayerForQuickDesk = function (playerId) {
+  if (chessState.userRole !== 'teacher') return;
+  const p1Select = document.getElementById('quickdesk-p1');
+  const p2Select = document.getElementById('quickdesk-p2');
+  if (!chessState.quickDeskP1Id || (p1Select && !p1Select.value)) {
+    chessState.quickDeskP1Id = playerId;
+  } else if (chessState.quickDeskP1Id === playerId) {
+    chessState.quickDeskP1Id = playerId;
+  } else {
+    chessState.quickDeskP2Id = playerId;
+  }
+  renderChessHubView();
+  const desk = document.getElementById('teacher-quick-desk');
+  if (desk) {
+    desk.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 };
 
 window.togglePupilPreview = function () {
   chessState.isPupilPreview = true;
   chessState.userRole = 'pupil';
-  if (chessState.activeTab === 'signin') {
-    chessState.activeTab = 'beginners';
+  if (chessState.activeTab === 'signin' || chessState.activeTab === 'quickdesk') {
+    chessState.activeTab = 'ladder';
   }
   showChessToast('👁 Switched to Pupil Preview (Teacher tools hidden)', 'info');
   renderChessHubView();
@@ -4488,7 +4877,7 @@ window.togglePupilPreview = function () {
 window.exitPupilPreview = function () {
   chessState.isPupilPreview = false;
   chessState.userRole = 'teacher';
-  chessState.activeTab = 'signin';
+  chessState.activeTab = 'quickdesk';
   showChessToast('✏️ Returned to Teacher Mode', 'success');
   renderChessHubView();
 };
@@ -4508,8 +4897,8 @@ window.lockTeacherMode = function () {
   localStorage.removeItem('history_chess_teacher_auth');
   chessState.isPupilPreview = false;
   chessState.userRole = 'pupil';
-  if (chessState.activeTab === 'signin') {
-    chessState.activeTab = 'beginners';
+  if (chessState.activeTab === 'signin' || chessState.activeTab === 'quickdesk') {
+    chessState.activeTab = 'ladder';
   }
   showChessToast('🔒 Teacher mode locked (Pupil View active)', 'info');
   renderChessHubView();
@@ -4535,6 +4924,13 @@ function getChessModalContainer() {
 
 // Navigation Handlers
 window.switchChessTab = function (tabName) {
+  if (
+    chessState.userRole === 'pupil' &&
+    (tabName === 'quickdesk' || tabName === 'signin' || tabName === 'pairings' || tabName === 'knockout')
+  ) {
+    showChessToast('🔒 Access Restricted: Teacher mode required.', 'error');
+    return;
+  }
   chessState.activeTab = tabName;
   if (tabName === 'beginners') {
     chessState.puzzleCategory = 'beginner';
@@ -4689,6 +5085,15 @@ window.restoreChessBackup = function () {
 
 window.handleSelfRegister = function (e) {
   if (e && e.preventDefault) e.preventDefault();
+
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only teachers can register pupils.', 'error');
+    return false;
+  }
+
   const nameInput = document.getElementById('reg-name');
   if (!nameInput) return false;
   const rawName = nameInput.value.trim();
@@ -5113,8 +5518,263 @@ window.generateThursdayPairings = function (force = false) {
   }
 };
 
+// ============================================================================
+// ⚡ TEACHER QUICK DESK EVENT HANDLERS & SECURITY GUARDRAILS
+// ============================================================================
+
+window.swapQuickDeskPlayers = function () {
+  const p1Select = document.getElementById('quickdesk-p1');
+  const p2Select = document.getElementById('quickdesk-p2');
+  if (p1Select && p2Select) {
+    const temp = p1Select.value;
+    p1Select.value = p2Select.value;
+    p2Select.value = temp;
+    chessState.quickDeskP1Id = p1Select.value;
+    chessState.quickDeskP2Id = p2Select.value;
+  }
+};
+
+window.recordDirectTeacherMatch = function (outcome) {
+  // STRICT TEACHER SECURITY GUARDRAIL
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can award points.', 'error');
+    return;
+  }
+
+  const p1Select = document.getElementById('quickdesk-p1');
+  const p2Select = document.getElementById('quickdesk-p2');
+  const p1Id = p1Select?.value;
+  const p2Id = p2Select?.value;
+
+  if (!p1Id || !p2Id) {
+    showChessToast('⚠️ Please select both Player 1 and Player 2 before tapping an outcome.', 'warning');
+    return;
+  }
+
+  if (p1Id === p2Id) {
+    showChessToast('⚠️ Player 1 and Player 2 cannot be the same pupil.', 'warning');
+    return;
+  }
+
+  const p1 = chessState.players.find((x) => x.id === p1Id);
+  const p2 = chessState.players.find((x) => x.id === p2Id);
+  if (!p1 || !p2) {
+    showChessToast('Selected pupil not found in active roster.', 'error');
+    return;
+  }
+
+  p1.games = (p1.games || 0) + 1;
+  p2.games = (p2.games || 0) + 1;
+
+  let resultStr = '1-0';
+  let toastMsg = '';
+
+  if (outcome === 'p1') {
+    resultStr = '1-0';
+    p1.won = (p1.won || 0) + 1;
+    p2.lost = (p2.lost || 0) + 1;
+    p1.rating = (p1.rating || 1000) + 15;
+    p2.rating = Math.max(800, (p2.rating || 1000) - 15);
+    if (p1.rank > p2.rank) {
+      const t = p1.rank;
+      p1.rank = p2.rank;
+      p2.rank = t;
+    }
+    const h1 = HOUSES[p1.house]?.name || p1.house;
+    const h2 = HOUSES[p2.house]?.name || p2.house;
+    toastMsg = `🏆 ${p1.name} (${h1}) won vs ${p2.name} (${h2})! +3 House Pts`;
+  } else if (outcome === 'p2') {
+    resultStr = '0-1';
+    p2.won = (p2.won || 0) + 1;
+    p1.lost = (p1.lost || 0) + 1;
+    p2.rating = (p2.rating || 1000) + 15;
+    p1.rating = Math.max(800, (p1.rating || 1000) - 15);
+    if (p2.rank > p1.rank) {
+      const t = p2.rank;
+      p2.rank = p1.rank;
+      p1.rank = t;
+    }
+    const h1 = HOUSES[p1.house]?.name || p1.house;
+    const h2 = HOUSES[p2.house]?.name || p2.house;
+    toastMsg = `🏆 ${p2.name} (${h2}) won vs ${p1.name} (${h1})! +3 House Pts`;
+  } else {
+    resultStr = '½-½';
+    p1.drawn = (p1.drawn || 0) + 1;
+    p2.drawn = (p2.drawn || 0) + 1;
+    const h1 = HOUSES[p1.house]?.name || p1.house;
+    const h2 = HOUSES[p2.house]?.name || p2.house;
+    toastMsg = `🤝 Draw: ${p1.name} (${h1}) ½–½ ${p2.name} (${h2})! +2 House Pts each`;
+  }
+
+  chessState.players.sort((a, b) => a.rank - b.rank);
+  chessState.players.forEach((player, idx) => (player.rank = idx + 1));
+
+  const matchId = 'm_' + Date.now();
+  chessState.matches.unshift({
+    id: matchId,
+    date: 'Thursday Period 6',
+    timestamp: Date.now(),
+    round: 'Period 6 Match',
+    white: p1.name,
+    black: p2.name,
+    whiteId: p1.id,
+    blackId: p2.id,
+    whiteHouse: p1.house,
+    blackHouse: p2.house,
+    result: resultStr,
+    opening: 'Period 6 Match',
+  });
+
+  // Keep the winner as Player 1 so teacher is ready for next challenger
+  chessState.quickDeskP1Id = outcome === 'p1' ? p1.id : outcome === 'p2' ? p2.id : '';
+  chessState.quickDeskP2Id = '';
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(toastMsg, 'success');
+};
+
+window.handleQuickDeskRegister = function (e) {
+  if (e && e.preventDefault) e.preventDefault();
+
+  // STRICT TEACHER SECURITY GUARDRAIL
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can register pupils.', 'error');
+    return false;
+  }
+
+  const nameInput = document.getElementById('quickdesk-reg-name');
+  const houseSelect = document.getElementById('quickdesk-reg-house');
+  if (!nameInput) return false;
+
+  const rawName = nameInput.value.trim();
+  const cleanName = sanitizePupilName(rawName);
+  const house = houseSelect?.value || 'warrior';
+
+  if (!cleanName) {
+    showChessToast("Please enter the pupil's name.", 'warning');
+    return false;
+  }
+
+  // Check if already registered
+  const existing = chessState.players.find(
+    (p) =>
+      (p.realName && p.realName.toLowerCase() === cleanName.toLowerCase()) ||
+      p.name.toLowerCase() === cleanName.toLowerCase() ||
+      (p.nickname && p.nickname.toLowerCase() === cleanName.toLowerCase()),
+  );
+
+  if (existing) {
+    if (!chessState.checkedInPlayerIds.includes(existing.id)) {
+      chessState.checkedInPlayerIds.push(existing.id);
+    }
+    chessState.quickDeskP1Id = existing.id;
+    saveChessState();
+    renderChessHubView();
+    showChessToast(`Welcome back, ${existing.name}! Selected as Player 1.`, 'success');
+    return false;
+  }
+
+  const newId = 'p_' + Date.now();
+  const newRank = chessState.players.length + 1;
+  const newPlayer = {
+    id: newId,
+    name: cleanName,
+    nickname: cleanName,
+    realName: cleanName,
+    house: house,
+    rating: 1000,
+    games: 0,
+    won: 0,
+    drawn: 0,
+    lost: 0,
+    rank: newRank,
+  };
+
+  chessState.players.push(newPlayer);
+  chessState.checkedInPlayerIds.push(newId);
+  savePlayerRealName(newId, cleanName);
+
+  // Automatically select this new pupil as Player 1 for immediate play
+  chessState.quickDeskP1Id = newId;
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast(
+    `🎉 Registered ${cleanName} (${HOUSES[house]?.name || house}) and selected as Player 1!`,
+    'success',
+  );
+  return false;
+};
+
+window.undoQuickDeskMatch = function (matchId) {
+  // STRICT TEACHER SECURITY GUARDRAIL
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can undo matches.', 'error');
+    return;
+  }
+
+  const match = chessState.matches.find((m) => m.id === matchId);
+  if (!match) return;
+
+  const p1 = chessState.players.find((p) => p.id === match.whiteId || p.name === match.white);
+  const p2 = chessState.players.find((p) => p.id === match.blackId || p.name === match.black);
+
+  if (p1) {
+    p1.games = Math.max(0, (p1.games || 1) - 1);
+    if (match.result === '1-0') {
+      p1.won = Math.max(0, (p1.won || 1) - 1);
+      p1.rating = Math.max(800, (p1.rating || 1000) - 15);
+    } else if (match.result === '0-1') {
+      p1.lost = Math.max(0, (p1.lost || 1) - 1);
+      p1.rating = (p1.rating || 1000) + 15;
+    } else if (match.result === '½-½' || match.result === '1/2-1/2') {
+      p1.drawn = Math.max(0, (p1.drawn || 1) - 1);
+    }
+  }
+
+  if (p2) {
+    p2.games = Math.max(0, (p2.games || 1) - 1);
+    if (match.result === '0-1') {
+      p2.won = Math.max(0, (p2.won || 1) - 1);
+      p2.rating = Math.max(800, (p2.rating || 1000) - 15);
+    } else if (match.result === '1-0') {
+      p2.lost = Math.max(0, (p2.lost || 1) - 1);
+      p2.rating = (p2.rating || 1000) + 15;
+    } else if (match.result === '½-½' || match.result === '1/2-1/2') {
+      p2.drawn = Math.max(0, (p2.drawn || 1) - 1);
+    }
+  }
+
+  chessState.matches = chessState.matches.filter((m) => m.id !== matchId);
+
+  chessState.players.sort((a, b) => a.rank - b.rank);
+  chessState.players.forEach((player, idx) => (player.rank = idx + 1));
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast('↺ Match undone and points safely rolled back.', 'info');
+};
+
 // 1-Click Direct Board Scoring Engine
 window.recordQuickMatchResult = function (boardNum, resultWinner) {
+  // STRICT TEACHER SECURITY GUARDRAIL
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can record matches.', 'error');
+    return;
+  }
   if (!chessState.activePairings) return;
   const p = chessState.activePairings.find((x) => x.board === boardNum);
   if (!p || !p.white || !p.black) return;
@@ -5201,6 +5861,13 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
 
 // Undo Board Result (Emergency Teacher Safety Net)
 window.undoBoardResult = function (boardNum) {
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can undo results.', 'error');
+    return;
+  }
   if (!chessState.activePairings) return;
   const p = chessState.activePairings.find((x) => x.board === boardNum);
   if (!p || !p.completed) return;
@@ -7206,6 +7873,15 @@ window.closeChessModal = function () {
 
 window.handleMatchSubmit = function (e) {
   if (e && e.preventDefault) e.preventDefault();
+
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can record matches.', 'error');
+    return;
+  }
+
   const wId = document.getElementById('match-white-player')?.value;
   const bId = document.getElementById('match-black-player')?.value;
   const result = document.getElementById('match-result')?.value;
@@ -8811,6 +9487,15 @@ window.openAddPlayerModal = function () {
 
 window.handleAddPlayerSubmit = function (e) {
   if (e && e.preventDefault) e.preventDefault();
+
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only authenticated teachers can register pupils.', 'error');
+    return;
+  }
+
   const rawName = document.getElementById('new-player-name')?.value.trim();
   const name = sanitizePupilName(rawName);
   const house = document.getElementById('new-player-house')?.value || 'warrior';
