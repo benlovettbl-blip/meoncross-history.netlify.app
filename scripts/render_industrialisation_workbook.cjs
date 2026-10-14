@@ -156,81 +156,85 @@ const enquiryConfigs = [
   {
     lessonNum: 2,
     id: 'lesson_2',
-    title: 'Enquiry 2: The Dark Satanic Mills: Child Labour, Slums & Public Health',
+    title: 'Enquiry 2: Factory Work & Child Labour: Progress or Punishment?',
     enquiryQuestion:
-      'Was industrialisation a triumph of human progress or a catastrophe of urban suffering for the working class?',
+      'Was industrial factory work a triumph of productive progress or a system of child exploitation?',
     specAnchor:
-      'Factory system; factory clock & fines; child labour in textile mills & coal mines; 1832 Sadler Committee; Matthew Crabtree testimony; rapid urban growth & back-to-back housing; cholera epidemics (1831–1854); Edwin Chadwick’s 1842 Report; 1858 Great Stink & Joseph Bazalgette’s London sewer network.',
+      'The factory system; textile mills; transition from the domestic system; factory clock, overtime & draconian fines; child labour (piecers and scavengers); physical hazards and unguarded machinery; 1832 Sadler Committee; Matthew Crabtree testimony; 1833 Factory Act & four factory inspectors; limits of legislative reform.',
     stages: [
       {
         step: 1,
         date: '1780–1820',
         paraRef: '[2.1]',
         questionHeading:
-          'How did the factory clock and machine discipline destroy traditional working rhythms?',
-        bullets: ['Fourteen-Hour Work Days', 'Draconian Lateness Fines', 'Choking Fibres and Dust'],
+          'How did the factory system displace traditional domestic craft production?',
+        bullets: [
+          'Domestic Home Handlooms',
+          'Centralised Steam Factories',
+          'Relentless Machine Speed',
+        ],
         focusClue:
-          'Why did industrial mill owners enforce rigid 14-hour working shifts under constant threat of wage deductions?',
+          'Why did steam-powered textile mills force artisan weavers to abandon home cottages for centralized urban factories?',
       },
       {
         step: 2,
-        date: '1832',
+        date: '1800–1830',
         paraRef: '[2.2]',
         questionHeading:
-          'What shocking abuses of child labour were exposed by the parliamentary Sadler Committee?',
+          'How did the factory clock and draconian fines enforce strict industrial discipline?',
         bullets: [
-          'Crawling Under Fast Looms',
-          'Corporal Strap Punishment',
-          'Physical Stunting and Deformity',
+          'Rigid Fourteen-Hour Shifts',
+          'Pence-Deduction Lateness Fines',
+          'Choking Dust & Locked Doors',
         ],
         focusClue:
-          'How did 22-year-old former child worker Matthew Crabtree expose beatings, stunted growth, and exhaustion in Yorkshire mills?',
+          'Why did mill owners impose strict fines for opening windows, whistling, or being two minutes late to work?',
       },
       {
         step: 3,
-        date: '1800–1840',
+        date: '1810–1832',
         paraRef: '[2.3]',
         questionHeading:
-          'How did explosive urban growth create deadly back-to-back slums and cellar dwellings?',
+          'Why were pauper apprentice children systematically exploited in northern textile mills?',
         bullets: [
-          'Shared Privy Contamination',
-          'Accumulating Human Waste Heaps',
-          'Flooded Cellar Basements',
+          'Workhouse Apprentice Trafficking',
+          'Crawling Under Spinning Mules',
+          'Crushed Fingers & Hair Scalpings',
         ],
         focusClue:
-          'Why did cities like Manchester and Leeds grow tenfold without clean water pipes, drainage, or sewage disposal?',
+          'Why did factory masters employ tiny children as piecers and scavengers beneath fast-moving, unguarded spinning mules?',
       },
       {
         step: 4,
-        date: '1831–1842',
+        date: '1832',
         paraRef: '[2.4]',
         questionHeading:
-          'Why did devastating cholera epidemics shatter the laissez-faire belief in minimal government?',
+          'What shocking physical abuses did Matthew Crabtree reveal to the Sadler Committee?',
         bullets: [
-          'Waterborne Dehydration Fatalities',
-          'Sudden Twelve-Hour Collapse',
-          'Chadwick Sanitary Intervention',
+          'Sixteen-Hour Daily Fatigue',
+          'Overlooker Leather Strap Beatings',
+          'Permanent Spinal Stunting',
         ],
         focusClue:
-          'How did Chadwick’s 1842 Sanitary Report prove that filth in working-class slums generated disease that threatened all classes?',
+          'How did 22-year-old former child worker Matthew Crabtree prove that mill labour caused permanent bodily deformity?',
       },
       {
         step: 5,
-        date: '1858–1865',
+        date: '1833',
         paraRef: '[2.5]',
         questionHeading:
-          'How did the 1858 Great Stink force Parliament to construct modern underground sewers?',
+          'How did the 1833 Factory Act introduce the first legal regulation of child labour?',
         bullets: [
-          'Midsummer Thames Fermentation',
-          'Commons Chloride Curtains',
-          'Bazalgette Interceptor Tunnels',
+          'Ban on Children Under Nine',
+          'Eight-Hour Workday Limits',
+          'Four Statutory Factory Inspectors',
         ],
         focusClue:
-          'Why did Victorian MPs ignore cholera for thirty years until the suffocating stench of the River Thames invaded the Commons chamber?',
+          'Why did the appointment of four government inspectors establish the precedent of state intervention in private factories?',
       },
     ],
     vocabPrompt:
-      'Define <strong>Laissez-faire</strong> and explain why early Victorian governments were reluctant to regulate factories or slums:',
+      'Define <strong>The Factory System</strong> and explain why mill owners enforced rigid clockwork discipline:',
     rightPage: {
       type: 'split',
       partA: {
@@ -245,8 +249,122 @@ const enquiryConfigs = [
         tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
         badge: 'STRUCTURED WRITING',
         question:
+          'Explain one consequence of the 1833 Factory Act for working children in Britain. [4 marks]',
+        hint: 'Focus on how banning work for children under nine and creating government inspectors established state regulation of private factory conditions.',
+        stems:
+          'One consequence was that... &bull; Specifically, this meant that... &bull; This affected child workers because... &bull; As a result, factory masters...',
+        connectives:
+          'A significant consequence was... &bull; For instance, this meant that... &bull; This directly led to... &bull; Consequently, the overall outcome was...',
+        wordBank:
+          'Factory Act (1833) &bull; child piecers &bull; textile mills &bull; eight-hour day &bull; factory inspectors &bull; Sadler Committee &bull; state regulation',
+      },
+      timelineMissionTitle: 'Centrefold Sketch Challenge 5',
+      timelineMission:
+        '<strong>Milestone 5 (The Sadler Committee on Child Labour &bull; 1832):</strong> Sketch young child piecers crawling beneath spinning mules while parliamentary commissioners record eyewitness testimonies [🧵 textile spinning mule &bull; 👶 child piecer crawling &bull; 📋 parliamentary report ledger].',
+    },
+    leftPageQuip:
+      'Child piecers in northern textile mills often walked up to thirty miles a day between spinning frames.',
+    rightPageQuip:
+      'The 1833 Factory Act established the revolutionary legal principle that the state has a duty to protect vulnerable children from industrial exploitation.',
+  },
+  {
+    lessonNum: 3,
+    id: 'lesson_3',
+    title: 'Enquiry 3: Urban Slums & Public Health: Did Towns Become Unlivable?',
+    enquiryQuestion:
+      'Did rapid industrial urbanisation create an unlivable catastrophe of disease and filth for British workers?',
+    specAnchor:
+      'Explosive urban demographic growth (Manchester, Leeds, Birmingham); back-to-back housing & damp cellar dwellings; shared privies, nightsoil heaps & water contamination; 1831–1854 cholera epidemics; miasma theory vs contagion; Edwin Chadwick’s 1842 Sanitary Report; Dr John Snow & 1854 Broad Street water pump; 1858 Great Stink of the River Thames; Sir Joseph Bazalgette’s London interceptor sewer network.',
+    stages: [
+      {
+        step: 1,
+        date: '1800–1830',
+        paraRef: '[3.1]',
+        questionHeading:
+          'How did explosive urban population growth create deadly back-to-back slums?',
+        bullets: [
+          'Unregulated Speculative Building',
+          'Windowless Shared Party Walls',
+          'Flooded Earthen Cellars',
+        ],
+        focusClue:
+          'Why did cities grow tenfold without building regulations, trapping working families in airless, lightless brick courts?',
+      },
+      {
+        step: 2,
+        date: '1830–1840',
+        paraRef: '[3.2]',
+        questionHeading:
+          'Why did primitive sanitation turn working-class courts into festering cesspools?',
+        bullets: [
+          'Shared Privy Overflow',
+          'Towering Nightsoil Dunghills',
+          'Seeping Groundwater Wells',
+        ],
+        focusClue:
+          'How did hundreds of residents sharing a single open privy contaminate the shallow pump wells used for daily drinking water?',
+      },
+      {
+        step: 3,
+        date: '1831–1848',
+        paraRef: '[3.3]',
+        questionHeading:
+          'Why did terrifying cholera epidemics shatter complacent beliefs in laissez-faire?',
+        bullets: [
+          'Waterborne Bacterial Agony',
+          'Blue-Skinned Twelve-Hour Collapse',
+          'Terrified Wealthy Elites',
+        ],
+        focusClue:
+          'Why did sudden cholera outbreaks killing thousands in days force Victorian authorities to confront public squalor?',
+      },
+      {
+        step: 4,
+        date: '1842',
+        paraRef: '[3.4]',
+        questionHeading:
+          'How did Edwin Chadwick’s 1842 Report prove that filth caused disease and premature death?',
+        bullets: [
+          'Statistical Lifespan Comparison',
+          'Nineteen-Year Manchester Average',
+          'Economic Cost of Epidemics',
+        ],
+        focusClue:
+          'How did Chadwick use mortality statistics to prove that dirty water and rotting sewage cost taxpayers more than building sewers?',
+      },
+      {
+        step: 5,
+        date: '1858–1865',
+        paraRef: '[3.5]',
+        questionHeading:
+          'How did the 1858 Great Stink compel Parliament to fund Joseph Bazalgette’s sewers?',
+        bullets: [
+          'Midsummer Thames Fermentation',
+          'Commons Chloride Curtains',
+          'Bazalgette Interceptor Tunnels',
+        ],
+        focusClue:
+          'Why did Parliament pass sewer legislation in eighteen days only after toxic river stench invaded the House of Commons?',
+      },
+    ],
+    vocabPrompt:
+      'Define <strong>Back-to-Back Housing</strong> and explain why rapid urbanisation created catastrophic sanitary hazards:',
+    rightPage: {
+      type: 'split',
+      partA: {
+        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
+        badge: 'FEATURE DRILL',
+        question:
+          'Describe two features of back-to-back housing in 19th-century industrial towns. [4 marks]',
+        stems:
+          'One key feature was... &bull; Specifically, this meant that... &bull; A second key feature was... &bull; For instance, this involved...',
+      },
+      partB: {
+        tariff: 'Question 2: Explain One Consequence [4 marks &bull; 5 mins]',
+        badge: 'STRUCTURED WRITING',
+        question:
           'Explain one consequence of the 1858 Great Stink for public health in Victorian London. [4 marks]',
-        hint: 'Focus on how the intolerable stench of the River Thames forced Parliament to fund Joseph Bazalgette’s monumental 1,100-mile underground interceptor sewer network.',
+        hint: 'Focus on how the intolerable stench of the River Thames forced Parliament to fund Joseph Bazalgette’s monumental underground interceptor sewer network.',
         stems:
           'One consequence was that... &bull; Specifically, this meant that... &bull; This affected public health because... &bull; As a result, waterborne disease...',
         connectives:
@@ -254,9 +372,9 @@ const enquiryConfigs = [
         wordBank:
           'Great Stink (1858) &bull; River Thames &bull; Joseph Bazalgette &bull; interceptor sewers &bull; cholera &bull; Edwin Chadwick &bull; public health',
       },
-      timelineMissionTitle: 'Centrefold Sketch Challenge 4',
+      timelineMissionTitle: 'Centrefold Sketch Challenge 7',
       timelineMission:
-        '<strong>Milestone 4 (The Sadler Committee on Child Labour &bull; 1832):</strong> Sketch young piecers crawling beneath spinning mules while parliamentary commissioners record child testimonies [🧵 textile spinning mule &bull; 👶 child piecer crawling &bull; 📋 parliamentary report ledger].',
+        '<strong>Milestone 7 (The Great Stink &amp; Bazalgette’s Sewers &bull; 1858):</strong> Sketch the muddy, steaming River Thames beside Parliament and the arched brickwork of Joseph Bazalgette’s subterranean interceptor sewer [🏛️ Palace of Westminster &bull; 👃 gentleman covering nose &bull; 🧱 underground brick sewer tunnel].',
     },
     leftPageQuip:
       'During the 1832 cholera epidemic, life expectancy for labourers in industrial Manchester dropped to just 19 years.',
@@ -264,31 +382,46 @@ const enquiryConfigs = [
       'Sir Joseph Bazalgette’s 82 miles of underground brick interceptor sewers permanently banished waterborne cholera from London.',
   },
   {
-    lessonNum: 3,
-    id: 'lesson_3',
-    title: 'Enquiry 3: Blood, Machines & Ballots: The Hampshire Swing Riots to Chartism',
+    lessonNum: 4,
+    id: 'lesson_4',
+    title: 'Enquiry 4: Blood, Machines & Ballots: Radical Protest & The Swing Riots',
     enquiryQuestion:
-      'Why did British workers turn to machine-breaking and mass petitions to demand a political voice?',
+      'Why did British workers turn to machine-breaking and secret oaths to resist starvation and oppression?',
     specAnchor:
-      'Post-Napoleonic distress; Peterloo Massacre (1819); Six Acts; 1830 Hampshire Swing Riots (Meon Valley, Selborne, Headley, Fareham); threshing machine destruction; Winchester Special Assizes trials & penal transportation; 1832 Great Reform Act; 1834 Tolpuddle Martyrs; 1838 People’s Charter; Moral vs Physical Force Chartism; 1839 Newport Rising.',
+      'Post-Napoleonic economic distress & 1815 Corn Laws; Luddite machine-breaking raids (1811–1816); Peterloo Massacre at St Peter’s Field, Manchester (1819); Yeomanry cavalry sabre charge & repressive Six Acts; 1830 Hampshire Swing Riots in the Meon Valley (Selborne, Headley, Fareham); threshing machine destruction & rick-burning; Winchester Special Assizes trials & Australian penal transportation; 1834 Tolpuddle Martyrs & unlawful secret oaths.',
     stages: [
       {
         step: 1,
-        date: '1819',
-        paraRef: '[3.1]',
-        questionHeading: 'Why did the Peterloo Massacre ignite widespread working-class outrage?',
+        date: '1811–1816',
+        paraRef: '[4.1]',
+        questionHeading:
+          'Why did textile croppers and knitters turn to nocturnal machine-breaking under "General Ludd"?',
         bullets: [
-          'Peaceful St Peter’s Field Crowd',
-          'Magistrate Cavalry Sabre Charge',
-          'Trampled Reform Protesters',
+          'Powerloom Wage Collapses',
+          'Sledgehammer Midnight Raids',
+          'Capital Frame-Breaking Act',
         ],
         focusClue:
-          'Why did magistrates order cavalry to charge a peaceful meeting of 60,000 cotton workers calling for parliamentary reform?',
+          'Why did skilled handloom weavers destroy automated spinning frames that slashed their wages and made craft skills worthless?',
       },
       {
         step: 2,
+        date: 'Aug 1819',
+        paraRef: '[4.2]',
+        questionHeading:
+          'Why did the Peterloo Massacre ignite widespread working-class fury against the state?',
+        bullets: [
+          'Peaceful St Peter’s Field Crowd',
+          'Manchester Yeomanry Sabre Charge',
+          'Repressive Tory Six Acts',
+        ],
+        focusClue:
+          'Why did magistrates order cavalry to charge 60,000 peaceful cotton workers listening to orator Henry Hunt in Manchester?',
+      },
+      {
+        step: 3,
         date: 'Nov 1830',
-        paraRef: '[3.2]',
+        paraRef: '[4.3]',
         questionHeading:
           'How did the "Captain Swing" riots sweep through Hampshire and the Meon Valley?',
         bullets: [
@@ -297,314 +430,188 @@ const enquiryConfigs = [
           'Nocturnal Hayrick Arson',
         ],
         focusClue:
-          'Why did starving agricultural labourers target threshing machines that stole their winter wages across Hampshire villages?',
+          'Why did starving farm labourers in Selborne and the Meon Valley smash threshing machines that stole their winter wages?',
       },
       {
-        step: 3,
+        step: 4,
         date: 'Dec 1830',
-        paraRef: '[3.3]',
+        paraRef: '[4.4]',
         questionHeading:
           'How brutally did the Winchester Special Assizes punish Hampshire machine-breakers?',
         bullets: [
           'Winchester Great Hall Trials',
+          'Micheldever Youth Execution',
           'Australian Penal Transportation',
-          'Micheldever Ploughboy Execution',
         ],
         focusClue:
-          'Why did the British state impose draconian death and transportation sentences on rural workers at Winchester Great Hall?',
-      },
-      {
-        step: 4,
-        date: '1832',
-        paraRef: '[3.4]',
-        questionHeading:
-          'Why was the 1832 Great Reform Act condemned as a betrayal of working men?',
-        bullets: [
-          'Disenfranchised Rotten Boroughs',
-          'Ten-Pound Property Threshold',
-          'Working-Class Disenfranchisement',
-        ],
-        focusClue:
-          'Why did industrial workers who fought for the Reform Bill find themselves completely disenfranchised by property qualifications?',
+          'Why did the British state impose draconian death and transportation sentences on 101 Hampshire agricultural workers?',
       },
       {
         step: 5,
-        date: '1838–1848',
-        paraRef: '[3.5]',
+        date: '1834',
+        paraRef: '[4.5]',
         questionHeading:
-          'How did the Chartist movement mobilize millions to demand universal democracy?',
+          'Why did the harsh punishment of the Tolpuddle Martyrs provoke a national outcry?',
         bullets: [
-          'Six-Point Democratic Charter',
-          'Million-Signature Monster Petitions',
-          'State Troops Guarding Westminster',
+          'Friendly Society Mutual Aid',
+          'Obscure Secret Oaths Law',
+          'Massive London Protest Marches',
         ],
         focusClue:
-          'How did William Lovett and Feargus O’Connor unite British workers around secret ballots, equal constituencies, and salaries for MPs?',
+          'Why did sentencing six peaceful Dorset farm labourers to Australian exile spark the first national trade union solidarity movement?',
       },
     ],
     vocabPrompt:
-      'Define <strong>Captain Swing</strong> and explain why agricultural workers in the Meon Valley turned to machine-breaking in 1830:',
+      'Define <strong>Captain Swing</strong> and explain why agricultural workers across Hampshire turned to machine-breaking in 1830:',
     rightPage: {
       type: 'split',
       partA: {
+        tariff: 'Question 1: Describe Two Features [4 marks &bull; 5 mins]',
+        badge: 'FEATURE DRILL',
+        question: 'Describe two features of the 1830 Hampshire Swing Riots. [4 marks]',
+        stems:
+          'One key feature was... &bull; Specifically, this involved... &bull; A second key feature was... &bull; For example, this meant that...',
+      },
+      partB: {
         tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
-        badge: 'PART A &bull; NARRATIVE',
+        badge: 'STRUCTURED WRITING',
         question:
-          'Write a narrative account analysing the key events leading from the Peterloo Massacre (1819) and Hampshire Swing Riots (1830) to the publication of the People’s Charter (1838). [8 marks]',
+          'Write a narrative account analysing the key events leading from the Peterloo Massacre (1819) and Hampshire Swing Riots (1830) to the Tolpuddle Martyrs (1834). [8 marks]',
         stimulus: [
-          'The Hampshire Swing Riots and machine-breaking (1830)',
-          'The 1832 Great Reform Act and exclusion of working men',
+          'The cavalry charge at St Peter’s Field, Manchester (1819)',
+          'The destruction of threshing machines across Hampshire (1830)',
         ],
         connectives:
           'The sequence began when... &bull; This led to increasing conflict because... &bull; A decisive turning point occurred when... &bull; This directly caused... &bull; Consequently, this culminated in...',
         wordBank:
-          'Peterloo (1819) &bull; Hampshire Swing Riots (1830) &bull; threshing machines &bull; Winchester Assizes &bull; 1832 Great Reform Act &bull; People’s Charter (1838) &bull; William Lovett',
+          'Peterloo (1819) &bull; Six Acts &bull; Hampshire Swing Riots (1830) &bull; threshing machines &bull; Winchester Assizes &bull; Tolpuddle Martyrs (1834) &bull; penal transportation &bull; trade unions',
       },
-      partB: {
-        tariff: 'Question 3: Explain Importance [8 marks &bull; 10 mins]',
-        badge: 'PART B &bull; IMPORTANCE',
-        question:
-          'Explain the importance of the Hampshire Swing Riots (1830) and the Chartist movement for the growth of working-class democracy in 19th-century Britain. [8 marks]',
-        connectives:
-          'This was of vital importance because... &bull; Prior to this development, the situation had been... &bull; As a result of this action, the response was... &bull; Consequently, the long-term impact was...',
-        wordBank:
-          'Captain Swing &bull; Meon Valley &bull; machine-breaking &bull; Winchester Assizes &bull; universal male suffrage &bull; secret ballot &bull; working-class solidarity',
-      },
-      timelineMissionTitle: 'Centrefold Sketch Challenges 3 &amp; 5',
+      timelineMissionTitle: 'Centrefold Sketch Challenges 3 &amp; 4',
       timelineMission:
-        '<strong>Milestone 3 (The Hampshire Swing Riots &bull; 1830):</strong> Sketch farm labourers with sledgehammers breaking a wooden threshing machine beside a Hampshire barn [🔨 heavy sledgehammer &bull; 🌾 shattered threshing drum &bull; ✉️ threatening "Swing" letter].<br style="display:block; margin-top:2px;"><strong>Milestone 5 (The People’s Charter &bull; 1838):</strong> Sketch William Lovett presenting the six-point People’s Charter petition roll to a crowd of industrial workers [📜 six-point charter petition &bull; 👥 assembled crowd of factory workers &bull; 🗳️ secret ballot box].',
+        '<strong>Milestone 3 (The Peterloo Massacre &bull; 1819):</strong> Sketch the Manchester Yeomanry cavalry charging into unarmed demonstrators listening to Henry Hunt [🏇 mounted cavalry with drawn sabres &bull; 🎩 "Orator" Hunt on hustings &bull; 🚩 reform banner].<br style="display:block; margin-top:2px;"><strong>Milestone 4 (The Hampshire Swing Riots &bull; 1830):</strong> Sketch farm labourers with sledgehammers breaking a wooden threshing machine beside a Hampshire barn [🔨 heavy sledgehammer &bull; 🌾 shattered threshing drum &bull; ✉️ threatening "Swing" letter].',
     },
     leftPageQuip:
       'At the 1830 Winchester Assizes, 19-year-old Henry Cook of Micheldever was hanged for striking a magistrate’s hat during the Swing Riots.',
     rightPageQuip:
-      'Although Parliament rejected all three Chartist petitions, five of the Six Points eventually became British law.',
-  },
-  {
-    lessonNum: 4,
-    id: 'lesson_4',
-    title: 'Enquiry 4: Steam, Steel & Empire: HMS Warrior & The 1857 Indian Rebellion',
-    enquiryQuestion:
-      'How did industrial technology sustain the British Empire, and why did Indian soldiers rebel in 1857?',
-    specAnchor:
-      'British imperial expansion; East India Company corporate rule; doctrine of lapse; 1857 Indian Rebellion (First War of Independence); greased Enfield cartridges; Meerut outbreak; Rani Lakshmibai of Jhansi; 1858 Government of India Act (The British Raj); steam power, telegraph cables & railways; 1860 HMS Warrior at Portsmouth Royal Dockyard.',
-    stages: [
-      {
-        step: 1,
-        date: '1757–1850',
-        paraRef: '[4.1]',
-        questionHeading:
-          'How did the East India Company transform from commercial merchants into imperial rulers?',
-        bullets: [
-          'Chartered Corporate Monopolies',
-          'Doctrine of Lapse Annexations',
-          'Mercenary Sepoy Armed Subjugation',
-        ],
-        focusClue:
-          'How did corporate rule through 200,000 Indian sepoys subjugate a subcontinent of 200 million people?',
-      },
-      {
-        step: 2,
-        date: 'May 1857',
-        paraRef: '[4.2]',
-        questionHeading: 'Why did greased cartridges spark the spontaneous rebellion at Meerut?',
-        bullets: [
-          'Animal Fat Rifle Envelopes',
-          'Religious Desecration Fears',
-          'Meerut Cantonment Mutiny',
-        ],
-        focusClue:
-          'Why did Indian soldiers believe the new rifle cartridges were a deliberate British plot to destroy their Hindu and Muslim faiths?',
-      },
-      {
-        step: 3,
-        date: '1857–1858',
-        paraRef: '[4.3]',
-        questionHeading:
-          'How did the rebellion spread and how did Rani of Jhansi resist British forces?',
-        bullets: [
-          'Northern Gangetic Plain Uprising',
-          'Jhansi Armed Fortress Resistance',
-          'Cavalry Martyrdom in Battle',
-        ],
-        focusClue:
-          'Why did the 29-year-old Rani of Jhansi ride into battle against British forces after her kingdom was illegally annexed?',
-      },
-      {
-        step: 4,
-        date: '1858',
-        paraRef: '[4.4]',
-        questionHeading:
-          'Why did the rebellion force Parliament to dismantle the East India Company and declare the British Raj?',
-        bullets: [
-          'Dissolution of Corporate Rule',
-          'Government of India Act',
-          'Direct Crown Imperial Governance',
-        ],
-        focusClue:
-          'Why did the British state strip the company of power and promise religious neutrality under direct royal rule?',
-      },
-      {
-        step: 5,
-        date: '1860',
-        paraRef: '[4.5]',
-        questionHeading:
-          'How did HMS Warrior at Portsmouth Dockyard demonstrate unbeatable British naval dominance?',
-        bullets: [
-          'Armoured Ironclads in the Solent',
-          'High-Speed Rotary Steam Propulsion',
-          'Deterrence of Foreign European Fleets',
-        ],
-        focusClue:
-          'How did Henry Cort’s wrought iron metallurgy enable Britain to build an invincible warship that secured global empire?',
-      },
-    ],
-    vocabPrompt:
-      'Define <strong>The British Raj</strong> and explain why direct Crown control replaced East India Company rule after 1857:',
-    rightPage: {
-      type: 'interpretations',
-      tariff: 'Question 3(b) & 3(c): Contrasting Interpretations [8 marks &bull; 10 mins]',
-      interpretation1: {
-        author: 'Historian Niall Ferguson, Empire: How Britain Made the Modern World (2003)',
-        text: '“The British Empire was the pioneer of global modernization. By constructing railways, telegraph networks, steamship routes, and establishing common law, Britain brought governance, modern infrastructure, and global trade to a quarter of the world’s population. Without the Pax Britannica, the globalization of free markets and technology would have been delayed by generations.”',
-      },
-      interpretation2: {
-        author: 'Historian Shashi Tharoor, Inglorious Empire: What the British Did to India (2017)',
-        text: '“British rule was not a philanthropic modernization project; it was ruthless economic extraction enforced by military terror. India’s share of the global economy fell from 27% to under 3% under British rule, as indigenous textile weaving was destroyed to serve British cotton mills. The railways were built not to benefit Indians, but to rush British troops to quell rebellions and extract raw commodities to ports.”',
-      },
-      questionB:
-        'Explain how Interpretations 1 and 2 differ on the motives and consequences of the British Empire. [4 marks]',
-      stemsB:
-        'Interpretations 1 and 2 differ on... &bull; Interpretation 1 portrays the British Empire as... &bull; In contrast, Interpretation 2 argues that British rule was...',
-      questionC:
-        'Suggest one reason why Interpretations 1 and 2 differ on British imperial rule. [4 marks]',
-      stemsC:
-        'One reason why Interpretations 1 and 2 differ is because of the authors’ distinct historical perspectives and selection of evidence... &bull; Specifically, the author of Interpretation 1 emphasizes... whereas the author of Interpretation 2 focuses upon... &bull; Consequently, their conclusions differ because...',
-      timelineMissionTitle: 'Centrefold Sketch Challenges 7 &amp; 8',
-      timelineMission:
-        '<strong>Milestone 7 (The 1857 Indian Rebellion at Meerut):</strong> Sketch sepoys breaking open the ammunition depot at Meerut refusing greased rifle cartridges [🔫 Enfield rifle &amp; cartridge &bull; 🚩 sepoy rebel standard &bull; 🏛️ Meerut cantonment gates].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (HMS Warrior at Portsmouth &bull; 1860):</strong> Sketch the black ironclad hull and steam-funnel of HMS Warrior sailing into the Solent off Portsmouth [🚢 iron-hulled warship HMS Warrior &bull; ☁️ steam engine smokestack &bull; 🌊 Solent waves].',
-    },
-    leftPageQuip:
-      'HMS Warrior at Portsmouth was so heavily armoured and fast that no enemy warship in the world ever dared fire a single shot at her.',
-    rightPageQuip:
-      'By 1900, the British Empire encompassed 400 million subjects across five continents, protected by the Royal Navy’s iron fleet.',
+      'The public outrage over the Tolpuddle Martyrs forced the British government to grant full royal pardons within two years.',
   },
   {
     lessonNum: 5,
     id: 'lesson_5',
-    title: 'Enquiry 5: The Victorian Verdict: Workshop of the World or Age of Exploitation?',
+    title: 'Enquiry 5: The Road to Democracy: Rotten Boroughs to the Secret Ballot',
     enquiryQuestion:
-      'Did the Industrial Revolution bring unprecedented progress or human catastrophe to the British people?',
+      'How did the British people dismantle the corrupt unreformed parliament to win democratic rights?',
     specAnchor:
-      '1851 Great Exhibition at Crystal Palace; Prince Albert & industrial prestige; British railway boom (Brunel & Stephenson); rise of the middle class; enduring poverty & Charles Booth’s London poverty maps (1889); Factory Acts & trade unions; synoptic evaluation of industrial capitalism.',
+      'The unreformed House of Commons; rotten boroughs (Old Sarum, Dunwich, Newtown); industrial disenfranchisement (Manchester, Birmingham, Leeds); 1831–1832 Reform crisis & Bristol riots; "Days of May" run on the Bank of England; 1832 Great Reform Act (£10 borough qualification & 56 abolished rotten boroughs); working-class exclusion & betrayal; open-air hustings & landlord intimidation; 1838–1848 People’s Charter & three monster petitions; 1872 Ballot Act at Pontefract; incremental enfranchisement (1867 & 1884 Acts).',
     stages: [
       {
         step: 1,
-        date: '1851',
+        date: '1800–1830',
         paraRef: '[5.1]',
         questionHeading:
-          'How did the 1851 Great Exhibition proclaim Britain "Workshop of the World"?',
+          'Why was Britain’s unreformed parliamentary system condemned as a corrupt oligarchy?',
         bullets: [
-          'Cast Iron and Glass Crystal Palace',
-          'Six Million Astonished Spectators',
-          'Steam Locomotives and Machine Tools',
+          'Under-Five-Percent Electorate',
+          'Old Sarum & Newtown Rotten Boroughs',
+          'Unrepresented Industrial Cities',
         ],
         focusClue:
-          'How did Joseph Paxton’s revolutionary glass-and-iron palace showcase British technological supremacy to the globe?',
+          'Why did uninhabited grassy mounds send two MPs to Westminster while industrial powerhouses like Manchester had zero?',
       },
       {
         step: 2,
-        date: '1840–1880',
+        date: '1831–1832',
         paraRef: '[5.2]',
         questionHeading:
-          'How did the railway boom transform British commerce, landscape, and society?',
+          'How did public rebellion and economic panic force the passage of the 1832 Great Reform Act?',
         bullets: [
-          'Nationwide Permanent Iron Rails',
-          'Perishable Goods Rapid Transit',
-          'Greenwich Standard Railway Time',
+          'Bristol Reform Riots & Fires',
+          '"Days of May" Bank Run Gold Panic',
+          'Tory House of Lords Surrender',
         ],
         focusClue:
-          'How did 20,000 miles of iron tracks knit Britain into a single, high-speed national economy?',
+          'Why was the middle-class run on the Bank of England ("Stop the Duke, Go for Gold!") more terrifying than street riots?',
       },
       {
         step: 3,
-        date: '1860–1890',
+        date: '1832',
         paraRef: '[5.3]',
         questionHeading:
-          'How did the rise of the Victorian middle class reshape wealth and social power?',
+          'Which industrial cities were granted MPs, and why did workers call the Act the "Great Betrayal"?',
         bullets: [
-          'Manufacturing Bourgeois Wealth',
-          'Suburban Villas and Domestic Staff',
-          'Displacement of Landed Aristocracy',
+          'Manchester, Birmingham & Leeds MPs',
+          'Ten-Pound Property Qualification',
+          'Deliberate Working-Class Exclusion',
         ],
         focusClue:
-          'Why did industrialists and merchants displace the landed aristocracy as the true rulers of Victorian Britain?',
+          'How did Earl Grey "reform in order to preserve", enfranchising the wealthy middle class while locking out working men?',
       },
       {
         step: 4,
-        date: '1889',
+        date: '1838–1848',
         paraRef: '[5.4]',
         questionHeading:
-          'How did Charles Booth’s poverty maps expose persistent deprivation in Victorian London?',
+          'How did the Chartist movement unite millions of workers behind the Six Points?',
         bullets: [
-          'Empirical Door-to-Door Social Survey',
-          'Black-Striped Chronic Poverty Maps',
-          'Thirty-Percent Squalor Reality',
+          'Universal Male Suffrage & Secret Ballot',
+          'Abolition of Property Requirements',
+          'Three Mammoth Rejected Petitions',
         ],
         focusClue:
-          'How did Booth’s scientific colour-coded street maps shatter complacency by proving millions lived in chronic squalor?',
+          'How did William Lovett and Feargus O’Connor mobilize millions of signatures demanding salaries for working MPs?',
       },
       {
         step: 5,
-        date: '1750–1901',
+        date: '1872',
         paraRef: '[5.5]',
         questionHeading:
-          'The Victorian Verdict: How do historians judge the balance of progress versus human suffering?',
+          'How did the 1872 Secret Ballot Act at Pontefract destroy landlord political coercion?',
         bullets: [
-          'Global Mass Manufactured Goods',
-          'Stunted Lifespans in Urban Smog',
-          'Statutory Factory Act Protections',
+          'Abolition of Public Hustings',
+          'Private Booths & Liquorice Wax Seals',
+          'Freedom from Landlord Eviction',
         ],
         focusClue:
-          'Did the long-term gains of modern medicine, technology, and democracy justify four generations of working-class sacrifice?',
+          'Why did casting votes in private booths prevent factory bosses and landowners from intimidating working voters?',
       },
     ],
     vocabPrompt:
-      'Define the <strong>Standard of Living Debate</strong> and contrast the "Optimist" and "Pessimist" historical perspectives:',
+      'Define <strong>Rotten Borough</strong> and explain why the 1832 Great Reform Act was seen as a historic breakthrough by the middle class:',
     rightPage: {
       type: 'single_12',
-      tariff: 'Question 5: Evaluative Statement Essay [12 marks &bull; 15 mins]',
+      tariff: 'Question 3: Evaluative Statement Essay [12 marks &bull; 15 mins]',
       examStem:
-        '“The Industrial Revolution was a triumphant era of human progress and national prosperity for the British people.” How far do you agree with this statement? Explain your answer. [12 marks]',
+        '“The 1832 Great Reform Act was passed because the ruling aristocracy feared violent revolution, rather than from a desire for democratic justice.” How far do you agree with this statement? Explain your answer. [12 marks]',
       stimulus: [
-        'James Watt’s steam engines, Cort’s Funtley iron & the 1851 Great Exhibition',
-        'Child labour in textile mills, back-to-back slums & Charles Booth’s poverty map',
+        'The burning of Bristol and the "Days of May" run on the Bank of England (1831–1832)',
+        'Earl Grey’s £10 property qualification deliberately excluding the working class',
       ],
       rubricCards: [
         {
-          col: '1. INDUSTRIAL PROGRESS & WEALTH',
-          text: 'Explain how steam power, Cort’s Funtley iron, railways, and mechanisation transformed Britain into the ‘Workshop of the World’ with cheap goods.',
+          col: '1. FEAR OF ARMED REVOLUTION',
+          text: 'Explain how the Bristol riots, the burning of Nottingham Castle, and the £1.5m gold bank run terrified ruling elites into passing reform.',
         },
         {
-          col: '2. HUMAN SUFFERING & EXPLOITATION',
-          text: 'Explain how factory discipline, child labour (Sadler Report), deadly slums, and cholera epidemics devastated working-class health and lives.',
+          col: '2. ARISTOCRATIC COMPROMISE',
+          text: 'Explain how Earl Grey standardized the £10 franchise to attach the wealthy middle class to the constitution while shutting out working men.',
         },
         {
           col: '3. COMPARATIVE VERDICT',
-          text: 'Weigh whether immediate human suffering outweighed long-term societal progress, considering class divisions and government reforms.',
+          text: 'Weigh whether the Act was a reluctant aristocratic concession to preserve oligarchy or a vital stepping stone toward democracy.',
         },
       ],
       connectives:
         'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
       wordBank:
-        'Henry Cort &bull; Funtley Ironworks &bull; puddling furnace &bull; steam power &bull; Sadler Committee &bull; back-to-back slums &bull; cholera &bull; Great Exhibition &bull; Charles Booth &bull; Standard of Living debate',
-      timelineMissionTitle: 'Centrefold Sketch Challenge 6',
+        'Earl Grey &bull; Great Reform Act (1832) &bull; rotten boroughs &bull; Old Sarum &bull; Manchester &amp; Birmingham &bull; £10 property qualification &bull; Bristol riots &bull; Days of May &bull; People’s Charter &bull; Secret Ballot (1872)',
+      timelineMissionTitle: 'Centrefold Sketch Challenges 6 &amp; 8',
       timelineMission:
-        '<strong>Milestone 6 (The Great Exhibition at Crystal Palace &bull; 1851):</strong> Sketch the towering cast-iron and glass arches of the Crystal Palace with Victorian visitors marveling at steam engines [🏛️ glass Crystal Palace transept &bull; ⚙️ giant steam engine flywheel &bull; 🎩 Victorian gentlemen &amp; ladies].',
+        '<strong>Milestone 6 (The 1832 Great Reform Act):</strong> Sketch Earl Grey presenting the new parliamentary map granting seats to industrial Manchester while rotten boroughs are erased [📜 1832 Reform Act roll &bull; 🏭 Manchester textile chimney &bull; 🏛️ Westminster chamber].<br style="display:block; margin-top:2px;"><strong>Milestone 8 (The Secret Ballot Act at Pontefract &bull; 1872):</strong> Sketch a working man privately dropping a folded paper into a locked ballot box sealed with red wax [🗳️ locked metal ballot box &bull; 👤 voter inside wooden privacy booth &bull; 🔴 liquorice wax seal].',
     },
     leftPageQuip:
-      'At the 1851 Great Exhibition, six million people—a third of Britain’s entire population—visited the Crystal Palace in London.',
+      'Before 1832, Old Sarum was an empty mound that sent two MPs to Parliament, while industrial Manchester had zero.',
     rightPageQuip:
-      'The debate between "Optimist" and "Pessimist" historians over the Industrial Revolution remains one of the fiercest arguments in modern history.',
+      'The 1872 Secret Ballot Act at Pontefract permanently ended open-air hustings and landlord intimidation in British elections.',
   },
 ];
 
@@ -1495,13 +1502,13 @@ function compileIndustrialisationWorkbook() {
   // PAGES 8–9: LIVING TIMELINE IN THE EXACT PHYSICAL CENTREFOLD!
   // ====================================================================
   html += `
-  <!-- PAGE 8: LIVING TIMELINE PART 1 (MILESTONES 1–4: 1784–1832) (MONOCHROME) -->
+  <!-- PAGE 8: LIVING TIMELINE PART 1 (MILESTONES 1–4: 1784–1830) (MONOCHROME) -->
   <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
           <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.8pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
-            Living Timeline &bull; Part 1: Metallurgy, Machine Power &amp; Agrarian Revolt (1784–1832)
+            Living Timeline &bull; Part 1: Metallurgy, Machine Power &amp; Agrarian Revolt (1784–1830)
           </h2>
         </div>
 
@@ -1539,29 +1546,29 @@ function compileIndustrialisationWorkbook() {
           </p>
         </div>
 
-        <!-- Milestone 3: 1830 -->
+        <!-- Milestone 3: 1819 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
-              1830 &bull; The Hampshire "Captain Swing" Riots
+              1819 &bull; The Peterloo Massacre at St Peter's Field, Manchester
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
-            Starving farm labourers in the Meon Valley, Selborne, and Fareham smash threshing machines and burn ricks under the mythical name "Captain Swing"; the Winchester Assizes sentences 101 men to penal transportation to Australia.
+            Manchester magistrates order Yeomanry cavalry to charge 60,000 peaceful cotton workers demanding universal suffrage, killing 18 and injuring 650; Parliament responds with the repressive Six Acts.
           </p>
         </div>
 
-        <!-- Milestone 4: 1832 -->
+        <!-- Milestone 4: 1830 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
-              1832 &bull; The Sadler Committee on Child Labour
+              1830 &bull; The Hampshire "Captain Swing" Riots Across the Meon Valley
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
-            Michael Sadler’s parliamentary committee publishes horrifying eyewitness testimony of 14-hour days, physical beatings, and crippling injuries suffered by child piecers and scavengers in northern textile mills, spurring the Factory Acts.
+            Starving farm labourers in the Meon Valley, Selborne, and Fareham smash threshing machines and burn ricks under the mythical name "Captain Swing"; the Winchester Assizes sentences 101 men to penal transportation to Australia.
           </p>
         </div>
 
@@ -1571,13 +1578,13 @@ function compileIndustrialisationWorkbook() {
     </div>
   </div>
 
-  <!-- PAGE 9: LIVING TIMELINE PART 2 (MILESTONES 5–8: 1838–1860) (MONOCHROME) -->
+  <!-- PAGE 9: LIVING TIMELINE PART 2 (MILESTONES 5–8: 1832–1872) (MONOCHROME) -->
   <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
         <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
           <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.8pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
-            Living Timeline &bull; Part 2: Reform, Rebellion &amp; Ironclad Supremacy (1838–1860)
+            Living Timeline &bull; Part 2: Factory Reform, Slum Sanitation &amp; The Ballot (1832–1872)
           </h2>
         </div>
 
@@ -1589,61 +1596,61 @@ function compileIndustrialisationWorkbook() {
       <!-- 4 Milestones with Open Drawing Area Across Full A4 Page -->
       <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between;">
         
-        <!-- Milestone 5: 1838 -->
+        <!-- Milestone 5: 1832 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
-              1838 &bull; The People’s Charter &amp; Chartist Petitions
+              1832 &bull; The Sadler Committee Eyewitness Report on Child Labour
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
-            William Lovett and the London Working Men’s Association publish the People’s Charter demanding six points: universal male suffrage, secret ballots, equal constituencies, and salaries for MPs; uniting millions of industrial workers.
+            Michael Sadler’s parliamentary committee publishes horrifying eyewitness testimony of 14-hour days, physical beatings, and crippling injuries suffered by child piecers in northern textile mills, forcing the passage of the 1833 Factory Act.
           </p>
         </div>
 
-        <!-- Milestone 6: 1851 -->
+        <!-- Milestone 6: 1832 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
-              1851 &bull; The Great Exhibition at Crystal Palace
+              1832 &bull; Passage of the Great Reform Act Enfranchising Manchester
             </strong>
             <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
-            Prince Albert opens the monumental glass-and-iron Crystal Palace in Hyde Park; six million visitors marvel at steam engines, machine tools, and imperial exhibits, proclaiming Victorian Britain the "Workshop of the World".
+            Terrified of revolution and a run on the Bank of England, Parliament abolishes 56 rotten boroughs and grants MPs to Manchester, Birmingham, and Leeds, though the £10 franchise deliberately excludes the working class.
           </p>
         </div>
 
-        <!-- Milestone 7: 1857 -->
+        <!-- Milestone 7: 1858 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
-              1857 &bull; The Indian Rebellion &amp; End of Company Rule
+              1858 &bull; The Great Stink of the Thames &amp; Bazalgette's Sewers
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
-            Indian sepoys at Meerut mutiny over greased cartridges and corporate exploitation, spreading rebellion across northern India; Parliament abolishes the East India Company in 1858 and establishes direct British Crown rule (The Raj).
+            A boiling heatwave turns the sewage-filled Thames into an unbearable stench that invades Parliament; MPs immediately fund Joseph Bazalgette’s 82-mile underground brick sewer network, permanently ending waterborne cholera.
           </p>
         </div>
 
-        <!-- Milestone 8: 1860 -->
+        <!-- Milestone 8: 1872 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
-              1860 &bull; Launch of HMS Warrior at Portsmouth
+              1872 &bull; The Secret Ballot Act First Deployed at Pontefract
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 5</span>
           </div>
           <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
-            Britain launches the world’s first all-iron-hulled, armoured warship at Portsmouth Historic Dockyard; powered by steam and Cort’s wrought iron armour, HMS Warrior renders all existing wooden navies instantaneously obsolete.
+            William Gladstone’s government passes the Ballot Act, abolishing corrupt open hustings and requiring private voting in wooden booths, permanently eliminating landlord coercion and employer intimidation of working voters.
           </p>
         </div>
 
       </div>
 
-      ${renderFooterStrip(9, 'Between 1784 and 1860, British power was transformed by industrial metallurgy, political protest, and global imperial expansion.', 16)}
+      ${renderFooterStrip(9, 'Between 1784 and 1872, British power was transformed by industrial metallurgy, political protest, and democratic expansion.', 16)}
     </div>
   </div>
 `;
@@ -1785,7 +1792,7 @@ function compileIndustrialisationWorkbook() {
               <td style="padding: 18.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 18.5px 8px; border-right: 1px solid #cbd5e1;">
                 <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 1: Henry Cort &amp; Funtley Ironworks</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Inference &amp; Causation: Naval Metallurgy (1775–1787)</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Explain Why: Naval Metallurgy &amp; Steam Power (1775–1787)</div>
               </td>
               <td style="padding: 18.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
               <td style="padding: 18.5px 8px; background: #ffffff;">&nbsp;</td>
@@ -1793,8 +1800,8 @@ function compileIndustrialisationWorkbook() {
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 18.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 18.5px 8px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 2: Child Labour, Slums &amp; Public Health</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Feature Drill &amp; Consequence: Child Labour &amp; Bazalgette</div>
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 2: Factory Work &amp; Child Labour</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Feature Drill &amp; Consequence: Sadler Committee &amp; 1833 Factory Act</div>
               </td>
               <td style="padding: 18.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
               <td style="padding: 18.5px 8px; background: #ffffff;">&nbsp;</td>
@@ -1802,8 +1809,8 @@ function compileIndustrialisationWorkbook() {
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 18.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 18.5px 8px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 3: Hampshire Swing Riots to Chartism</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Narrative Account &amp; Importance: Swing Riots &amp; People’s Charter</div>
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 3: Urban Slums &amp; Public Health</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Feature Drill &amp; Consequence: Back-to-Backs &amp; Bazalgette Sewers</div>
               </td>
               <td style="padding: 18.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
               <td style="padding: 18.5px 8px; background: #ffffff;">&nbsp;</td>
@@ -1811,8 +1818,8 @@ function compileIndustrialisationWorkbook() {
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 18.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 18.5px 8px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 4: HMS Warrior &amp; 1857 Indian Rebellion</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Contrasting Interpretations: Pax Britannica vs Violent Extraction</div>
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 4: Radical Protest &amp; The Swing Riots</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Feature Drill &amp; Narrative: Peterloo, Hampshire Swing Riots &amp; Tolpuddle</div>
               </td>
               <td style="padding: 18.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
               <td style="padding: 18.5px 8px; background: #ffffff;">&nbsp;</td>
@@ -1820,8 +1827,8 @@ function compileIndustrialisationWorkbook() {
             <tr style="border-bottom: 1px solid #e2e8f0;">
               <td style="padding: 18.5px 4px; border-right: 1px solid #cbd5e1; text-align: center;">&nbsp;</td>
               <td style="padding: 18.5px 8px; border-right: 1px solid #cbd5e1;">
-                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 5: The Victorian Verdict</div>
-                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Evaluative Statement Essay: Progress vs Exploitation (1750–1901)</div>
+                <div style="font-weight: 900; font-size: 8.5pt; color: #0f284e;">Enquiry 5: The Road to Democracy</div>
+                <div style="font-size: 7.5pt; color: #475569; margin-top: 2px;">Evaluative Statement Essay: Rotten Boroughs, 1832 Reform Act &amp; Secret Ballot</div>
               </td>
               <td style="padding: 18.5px 6px; border-right: 1px solid #cbd5e1; text-align: center; vertical-align: middle;">&nbsp;</td>
               <td style="padding: 18.5px 8px; background: #ffffff;">&nbsp;</td>
@@ -1864,14 +1871,14 @@ function compileIndustrialisationWorkbook() {
               const quizUrl =
                 'https://the-history-revision-hub.netlify.app/?unit=industrialisation_and_empire&lesson=' +
                 (idx + 1) +
-                '&quiz=true';
+                '&quiz=true&count=10';
               const qrSvg = generateQrSvg(quizUrl);
               const shortLabels = [
-                'Cort &amp; Funtley',
-                'Slums &amp; Health',
-                'Swing &amp; Chartism',
-                'Warrior &amp; India',
-                'Victorian Verdict',
+                'Cort &amp; Steam',
+                'Factory &amp; Child Labour',
+                'Slums &amp; Cholera',
+                'Protest &amp; Swing Riots',
+                'Road to Democracy',
               ];
               return `
               <div data-qr-url="${quizUrl}" style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 5px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">

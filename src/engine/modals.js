@@ -1676,7 +1676,16 @@ window.startQuiz = function (lessonId, isFullscreen = false) {
     badge.innerText = cleanBadge;
   }
 
-  window.currentQuizData = rawQuiz.map((q) => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const countParam = parseInt(urlParams.get('count'), 10);
+  let activeQuestions = rawQuiz;
+  if (!isNaN(countParam) && countParam > 0) {
+    activeQuestions = rawQuiz.slice(0, countParam);
+  } else if (urlParams.get('quiz') === 'true' && rawQuiz.length >= 10) {
+    activeQuestions = rawQuiz.slice(0, 10);
+  }
+
+  window.currentQuizData = activeQuestions.map((q) => {
     let options = q.options ? [...q.options] : [];
     let correctIdx = -1;
     const rawAns = q.answer !== undefined ? q.answer : q.a;
