@@ -45,12 +45,54 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-function renderFooterStrip(pageNum, quip, totalPages = 24) {
-  return `
+function renderFooterStrip(pageNum, quip, totalPages = 20) {
+  const isEven = pageNum % 2 === 0;
+  if (isEven) {
+    return `
       <div class="page-footer-strip">
         <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">${quip}</span>
       </div>`;
+  } else {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${quip}</span>
+        <span class="footer-page-num">${pageNum}/${totalPages}</span>
+      </div>`;
+  }
+}
+
+function renderNotesPage(pageNum, quip, totalPages = 20) {
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
+  const numLines = 32;
+  let linesHtml = '';
+  for (let i = 0; i < numLines; i++) {
+    linesHtml += `          <div class="note-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>\n`;
+  }
+
+  return `
+  <!-- PAGE ${pageNum}: DEDICATED BRITISH EXERCISE NOTES PAGE -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 12pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Key Topic 1 Notes &amp; Examination Strategy
+        </h2>
+      </div>
+
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #000000; margin-bottom: 4px;">
+        <!-- Vertical Margin Line (26mm from left edge of lines) - British Exercise Book Standard Margin -->
+        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #000000; z-index: 2;"></div>
+        
+        <!-- Ruled Horizontal Lines (Standard ~8mm school pitch, flex-filled) -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+${linesHtml}        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, totalPages)}
+    </div>
+  </div>`;
 }
 
 // ============================================================================
@@ -653,23 +695,14 @@ function renderSpinePage(cfg) {
       </div>
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
-      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
-            CHRONOLOGICAL INQUIRY SPINE &bull; 5 CAUSAL MILESTONES
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #000000;">
-            PUPIL NOTE-TAKING ZONE &bull; <span style="font-style: italic; font-weight: 500; color: #222222;">Construct concise causal notes alongside each milestone prompt</span>
-          </span>
-        </div>
-
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 2px;">
         <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
           ${stagesHtml}
         </div>
       </div>
 
-      ${renderFooterStrip(pageNum, leftPageQuip, 24)}
+      ${renderFooterStrip(pageNum, leftPageQuip, 20)}
     </div>
   </div>`;
 }
@@ -812,7 +845,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
       <!-- Unit Title & Subtitle Banner -->
       <div style="text-align: center; margin-bottom: 8px;">
         <span style="display: inline-block; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; border: 1.5px solid #0f284e; background: #0f284e; color: #ffffff; padding: 2px 10px; border-radius: 3px; margin-bottom: 4px;">
-          KEY TOPIC 1 &bull; REVISION &amp; PRACTICE COMPANION
+          KEY TOPIC 1 &bull; PUPIL WORKBOOK
         </span>
         <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 900; color: #0f284e; margin: 4px 0 2px 0; line-height: 1.15; letter-spacing: -0.5px;">
           Medicine in Medieval Britain, c1250–c1500
@@ -950,7 +983,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </table>
       </div>
 
-      ${renderFooterStrip(1, 'The History Revision Hub &bull; GCSE History Paper 1 &bull; Key Topic 1 Revision Companion', 24)}
+      ${renderFooterStrip(1, 'The History Revision Hub &bull; GCSE History Paper 1 &bull; Key Topic 1 Pupil Workbook', 20)}
     </div>
   </div>
 `;
@@ -1033,7 +1066,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(2, 'Roger Bacon spent years in a prison cell for suggesting doctors should actually test things. Remember that when your teacher asks you to write an extra paragraph!', 24)}
+      ${renderFooterStrip(2, 'Roger Bacon spent years in a prison cell for suggesting doctors should actually test things. Remember that when your teacher asks you to write an extra paragraph!', 20)}
     </div>
   </div>
 
@@ -1112,34 +1145,37 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       </div>
 
-      ${renderFooterStrip(3, 'King Edward III ordered Londoners to clean human filth off the streets in 1349. Outstanding for civic smell, totally useless against Yersinia pestis fleas.', 24)}
+      ${renderFooterStrip(3, 'King Edward III ordered Londoners to clean human filth off the streets in 1349. Outstanding for civic smell, totally useless against Yersinia pestis fleas.', 20)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–23: 5 DEDICATED 4-PAGE MODULES
+  // PAGES 4–18: 5 DEDICATED THREE-PAGE ENQUIRY MODULES (15 PAGES TOTAL)
+  // Page 1: Chronological Inquiry Spine & Exposition Notes (Left/Right)
+  // Page 2: Extended Writing Part 1 (18 task lines, stimulus, writing frames & vocab @ 8.2pt)
+  // Page 3: Extended Writing Part 2 (16 continuation lines + Question 3 Similarity/Difference [4 marks])
   // ====================================================================
-  medievalConfigs.forEach((cfg) => {
-    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
-    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5;
-    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
-    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
+  medievalConfigs.forEach((cfg, idx) => {
+    const spinePageNum = 4 + idx * 3; // 4, 7, 10, 13, 16
+    const questionPart1PageNum = spinePageNum + 1; // 5, 8, 11, 14, 17
+    const questionPart2PageNum = spinePageNum + 2; // 6, 9, 12, 15, 18
 
-    // PAGE 1 OF MODULE: CHRONOLOGICAL INQUIRY SPINE
-    html += renderSpinePage({ ...cfg, pageNum: leftPageNum });
+    // PAGE 1 OF ENQUIRY: CHRONOLOGICAL INQUIRY SPINE
+    html += renderSpinePage({ ...cfg, pageNum: spinePageNum });
 
-    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 25 TASK LINES, TIMELINE MISSION)
-    const flexTaskLines = Array.from({ length: 25 }, () => '<div class="task-line"></div>').join(
-      '',
-    );
+    // PAGE 2 OF ENQUIRY: EXAM QUESTION PART 1 (18 TASK LINES, TIMELINE MISSION, PROMINENT TYPOGRAPHY)
+    const part1TaskLines = Array.from(
+      { length: 18 },
+      () => '<div class="task-line" style="height: 7.8mm;"></div>',
+    ).join('');
 
     html += `
-  <div class="page page-container" id="page-${rightPageNum}">
+  <div class="page page-container" id="page-${questionPart1PageNum}">
     <div class="page-body-full">
       <div>
         <!-- Exam Header -->
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
             ${cfg.tariff}
           </h2>
@@ -1149,49 +1185,49 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Question Stem & Stimulus Box -->
-        <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin-bottom: 4px; line-height: 1.28;">
             ${cfg.examStem}
           </div>
-          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
             <strong>Stimulus:</strong>
-            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
-            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
-            <span style="font-style: italic;">(You must also use information of your own)</span>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 700;">${cfg.stimulus[0]}</span>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 700;">${cfg.stimulus[1]}</span>
+            <span style="font-style: italic; color: #333333;">(You must also use information of your own)</span>
           </div>
         </div>
 
-        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <!-- Accessible Writing Frames & Key Vocabulary Bank (High-Legibility 8.2pt Font) -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Accessible Writing Frames:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Accessible Writing Frames:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; line-height: 1.32; display: block; color: #111111;">${cfg.connectives}</span>
           </div>
           <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${cfg.wordBank}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.32; display: block; color: #111111;">${cfg.wordBank}</span>
           </div>
         </div>
 
         <!-- Ruled Task Lines Prompt -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
           <span><strong>Write your response in the space provided below:</strong></span>
-          <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
+          <span style="font-size: 7.0pt; color: #555555; font-weight: 600;">(Response continues on facing page)</span>
         </div>
       </div>
 
-      <!-- 25 Ruled Task Lines for Extended Writing -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 2px 0 4px 0;">
-${flexTaskLines}
+      <!-- 18 Ruled Task Lines for Extended Writing -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 3px 0;">
+${part1TaskLines}
       </div>
 
       <!-- Timeline Mission -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
             Timeline Mission
           </span>
-          <span style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.25; color: #000000;">
+          <span style="font-family: 'Georgia', serif; font-size: 7.4pt; line-height: 1.25; color: #000000;">
             ${cfg.timelineMission}
           </span>
         </div>
@@ -1200,55 +1236,24 @@ ${flexTaskLines}
         </div>
       </div>
 
-      <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${cfg.rightPageQuip}</span>
-        <span class="footer-page-num">${rightPageNum}/24</span>
-      </div>
+      ${renderFooterStrip(questionPart1PageNum, cfg.rightPageQuip, 20)}
     </div>
   </div>
 `;
 
-    // PAGE 3 OF MODULE: LINED WRITING (VERSO) - FULL CONTINUATION PAGE (31 LINES)
-    const continuationTaskLines = Array.from(
-      { length: 31 },
-      () => '<div class="task-line"></div>',
+    // PAGE 3 OF ENQUIRY: EXAM QUESTION PART 2 (16 CONTINUATION LINES + QUESTION 3 [4 MARKS] AT BOTTOM)
+    const part2ContinuationLines = Array.from(
+      { length: 16 },
+      () => '<div class="task-line" style="height: 7.8mm;"></div>',
+    ).join('');
+
+    const q3TaskLines = Array.from(
+      { length: 6 },
+      () => '<div class="task-line" style="height: 7.8mm;"></div>',
     ).join('');
 
     html += `
-  <div class="page page-container" id="page-${linedLeftPageNum}">
-    <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${cfg.tariff.split(':')[0]} Continued
-        </span>
-      </div>
-
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-        Continue your response to ${cfg.tariff.split(':')[0]} below:
-      </div>
-
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 2px 0 4px 0;">
-        ${continuationTaskLines}
-      </div>
-
-      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
-    </div>
-  </div>
-`;
-
-    // PAGE 4 OF MODULE: LINED WRITING (RECTO) - ESSAY SYNTHESIS & HISTORICAL VERDICT (23 LINES) + QUESTION 3 [4 MARKS] (7 LINES)
-    const conclusionTaskLines = Array.from(
-      { length: 23 },
-      () => '<div class="task-line"></div>',
-    ).join('');
-
-    const q3TaskLines = Array.from({ length: 7 }, () => '<div class="task-line"></div>').join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedRightPageNum}">
+  <div class="page page-container" id="page-${questionPart2PageNum}">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       <div>
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
@@ -1256,48 +1261,61 @@ ${flexTaskLines}
             ${cfg.title}
           </h2>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-            Assessment Synthesis &amp; Question 3
+            ${cfg.tariff.split(':')[0]} Continued
           </span>
         </div>
 
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          Final analytical evaluation &amp; concluding historical verdict:
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Continue your response to ${cfg.tariff.split(':')[0]} below:
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; margin: 2px 0 6px 0;">
-        ${conclusionTaskLines}
+      <!-- 16 Continuation Lines -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 4px 0;">
+        ${part2ContinuationLines}
       </div>
 
-      <!-- Question 3: Similarity / Difference [4 marks] -->
+      <!-- Question 3: Similarity / Difference [4 marks] At Bottom of Page -->
       <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; display: flex; flex-direction: column;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
-            [4 MARKS &bull; 5 MINS]
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4 ] &bull; 5 Mins
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
           ${cfg.fourMark.question}
         </p>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #475569; margin-bottom: 2px;">
+          ${cfg.fourMark.hint}
+        </div>
         <div style="display: flex; flex-direction: column; margin: 1px 0 0 0;">
           ${q3TaskLines}
         </div>
       </div>
 
-      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
+      ${renderFooterStrip(questionPart2PageNum, cfg.linedRightQuip, 20)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 24: OUTSIDE BACK COVER
+  // PAGE 19: DEDICATED BRITISH EXERCISE NOTES & REVISION STRATEGY PAGE
+  // ====================================================================
+  html += renderNotesPage(
+    19,
+    'Notes: Record key causal links, essay plans, and teacher feedback for this unit.',
+    20,
+  );
+
+  // ====================================================================
+  // PAGE 20: OUTSIDE BACK COVER
   // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 3px;">
@@ -1328,7 +1346,7 @@ ${flexTaskLines}
       </div>
 
       <!-- Expanded Key Topic 1 Assessment Record Table (10 Questions + Cumulative Total) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="background: #0f284e; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -1349,19 +1367,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Church Dominated Explanations c1250–c1500
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 5–7
+                p. 5–6
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1370,7 +1385,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Similarity (Causes: Medieval vs Renaissance)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 7
+                p. 6
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1386,19 +1401,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Four Humours Remained Dominant c1250–c1500
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 9–11
+                p. 8–9
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1407,7 +1419,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Difference (Causes: Medieval vs Modern)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 11
+                p. 9
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1423,19 +1435,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Treatments Focused on Humours &amp; Repentance
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 13–15
+                p. 11–12
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1444,7 +1453,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Similarity (Prevention: Medieval vs Renaissance)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 15
+                p. 12
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1460,19 +1469,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Hospital Care Was Based on ‘Care Not Cure’
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 17–19
+                p. 14–15
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1481,7 +1487,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Difference (Hospitals: Medieval vs 19th Century)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 19
+                p. 15
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1497,19 +1503,16 @@ ${flexTaskLines}
                 <strong>Q5/6:</strong> Evaluative Essay: Black Death &amp; Government Prevention
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 21–23
+                p. 17–18
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1518,7 +1521,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Similarity (Plague Responses: 1348 vs 1665)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 23
+                p. 18
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1534,7 +1537,7 @@ ${flexTaskLines}
                 Key Topic 1 Cumulative Examination Assessment Portfolio (10 Tasks)
               </td>
               <td style="padding: 12px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; color: #0f284e;">
-                p. 4–23
+                p. 4–18
               </td>
               <td style="padding: 12px 6px; text-align: center; font-size: 11pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 88
@@ -1551,7 +1554,7 @@ ${flexTaskLines}
       </div>
 
       <!-- 5 Verified Micro-QR Codes with Dual QR (Lesson + Quiz) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 5px 6px; background: #f0f4f9;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 6px; background: #f0f4f9;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
@@ -1613,7 +1616,7 @@ ${flexTaskLines}
         </div>
       </div>
 
-      ${renderFooterStrip(24, 'Superstition, humours, and herbal mixtures gave way to observation; retrieval practice will guarantee your GCSE exam success.', 24)}
+      ${renderFooterStrip(20, 'Superstition, humours, and herbal mixtures gave way to observation; retrieval practice will guarantee your GCSE exam success.', 20)}
     </div>
   </div>
 </body>
@@ -1625,7 +1628,7 @@ ${flexTaskLines}
 
 async function main() {
   console.log(
-    'Rendering 24-Page A4 Pupil Workbook (Dual QR & Assessment Portfolio): Key Topic 1: Medieval Britain (c1250–c1500)...',
+    'Rendering 20-Page A4 Pupil Workbook (Dual QR & Assessment Portfolio): Key Topic 1: Medieval Britain (c1250–c1500)...',
   );
   const puppeteer = require('puppeteer');
   const customHtml = buildMedievalTwoPageWorkbook({}, {});
@@ -1644,8 +1647,15 @@ async function main() {
   console.log(`[OK] HTML written to: ${pubHtmlPath}`);
 
   console.log('Launching Puppeteer to generate high-resolution print PDF...');
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     args: ['--allow-file-access-from-files', '--disable-web-security', '--no-sandbox'],
   });
 

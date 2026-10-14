@@ -45,12 +45,54 @@ function generateQrSvg(url) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges" style="width: 100%; height: 100%;"><path fill="#ffffff" d="M0,0h${size}v${size}H0z"/><path fill="#000000" d="${pathD.trim()}"/></svg>`;
 }
 
-function renderFooterStrip(pageNum, quip, totalPages = 24) {
-  return `
+function renderFooterStrip(pageNum, quip, totalPages = 20) {
+  const isEven = pageNum % 2 === 0;
+  if (isEven) {
+    return `
       <div class="page-footer-strip">
         <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/${totalPages}</span>
         <span class="footer-quip" style="text-align: right; flex: 1;">${quip}</span>
       </div>`;
+  } else {
+    return `
+      <div class="page-footer-strip">
+        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${quip}</span>
+        <span class="footer-page-num">${pageNum}/${totalPages}</span>
+      </div>`;
+  }
+}
+
+function renderNotesPage(pageNum, quip, totalPages = 20) {
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
+  const numLines = 32;
+  let linesHtml = '';
+  for (let i = 0; i < numLines; i++) {
+    linesHtml += `          <div class="note-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>\n`;
+  }
+
+  return `
+  <!-- PAGE ${pageNum}: DEDICATED BRITISH EXERCISE NOTES PAGE -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 12pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Key Topic 3 Notes &amp; Examination Strategy
+        </h2>
+      </div>
+
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #000000; margin-bottom: 4px;">
+        <!-- Vertical Margin Line (26mm from left edge of lines) - British Exercise Book Standard Margin -->
+        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #000000; z-index: 2;"></div>
+        
+        <!-- Ruled Horizontal Lines (Standard ~8mm school pitch, flex-filled) -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+${linesHtml}        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, totalPages)}
+    </div>
+  </div>`;
 }
 
 // 5 Enquiry configs with Chronological Inquiry Spines
@@ -63,6 +105,8 @@ const eighteenthNineteenthConfigs = [
     title: 'KT3.1: Ideas on Causes: Pasteur’s Germ Theory & Koch’s Bacteriology',
     enquiryQuestion:
       'Why did it take 30 years for Germ Theory to transform medical understanding in Britain?',
+    specAnchor:
+      'Germ Theory (1861); Louis Pasteur; Robert Koch; bacteriology; agar cultures, chemical dyes, and microscopes; impact on Britain.',
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
       'Explain why there was rapid progress in understanding the causes of disease in the period c1860–c1890. [12 marks]',
@@ -82,63 +126,73 @@ const eighteenthNineteenthConfigs = [
         'One way ideas about causes differed was... &bull; In the Renaissance period... &bull; In contrast, in the late nineteenth century...',
     },
     leftPageQuip:
-      '<em>Pasteur proved that rotting soup doesn’t spontaneously create germs; Koch proved which specific germs caused tuberculosis.</em>',
+      'Pasteur proved that rotting soup doesn’t spontaneously create germs; Koch proved which specific germs caused tuberculosis.',
     rightPageQuip:
-      '<em>Robert Koch photographed bacteria so clearly that British doctors could no longer blame bad smells for tuberculosis.</em>',
+      'Robert Koch photographed bacteria so clearly that British doctors could no longer blame bad smells for tuberculosis.',
     linedLeftQuip:
-      '<em>Pasteur proved microbes cause decay (1861); Koch proved specific bacteria cause specific diseases (1876–83).</em>',
-    rightPageLinedQuip:
-      '<em>Structure your causal argument: demonstrate how Koch built directly upon Pasteur’s Germ Theory to revolutionize diagnosis.</em>',
+      'Pasteur proved microbes cause decay (1861); Koch proved specific bacteria cause specific diseases (1876–83).',
+    linedRightQuip:
+      'Structure your causal argument: demonstrate how Koch built directly upon Pasteur’s Germ Theory to revolutionize diagnosis.',
     stages: [
       {
+        step: 1,
         dates: 'c1700–1850s',
         title: 'Spontaneous Generation & Miasma',
+        questionHeading: 'Why did doctors believe disease created germs, rather than vice versa?',
+        paraBadge: '[1.1]',
         bullets: [
           'Smelling rotting meat and open cesspools',
           'Foul airborne damp blamed for illness',
           'Microscopes seeing tiny swimming creatures',
         ],
-        focusClue: 'Why did doctors believe disease created germs, rather than vice versa?',
       },
       {
+        step: 2,
         dates: '1861',
         title: 'Louis Pasteur & Germ Theory',
+        questionHeading: 'How did the swan-neck flask disprove spontaneous generation?',
+        paraBadge: '[1.2]',
         bullets: [
           'Heating sour beer inside glass flasks',
           'Bent swan necks trapping airborne dust',
           'Boiled broth staying clear and fresh',
         ],
-        focusClue: 'How did the swan-neck flask disprove spontaneous generation?',
       },
       {
+        step: 3,
         dates: '1867–1876',
         title: 'British Scepticism & John Tyndall',
+        questionHeading: 'Why did British doctors refuse to believe germs caused human illness?',
+        paraBadge: '[1.3]',
         bullets: [
           'London doctors defending bad air theory',
           'Shining light beams through dusty boxes',
           'Spraying smelly carbolic acid on cut flesh',
         ],
-        focusClue: 'Why did British doctors refuse to believe germs caused human illness?',
       },
       {
+        step: 4,
         dates: '1876–1882',
         title: 'Robert Koch & Specific Bacteria',
+        questionHeading: 'How did Koch’s staining and culture methods prove specificity?',
+        paraBadge: '[1.4]',
         bullets: [
           'Solid seaweed agar jelly in shallow dishes',
           'Staining microbes with bright purple dyes',
           'Photographing deadly tuberculosis under glass lenses',
         ],
-        focusClue: "How did Koch's staining and culture methods prove specificity?",
       },
       {
+        step: 5,
         dates: '1883–1890',
         title: 'Postulates & Microphotography',
+        questionHeading: 'Why was photomicrography crucial in winning British doctors over?',
+        paraBadge: '[1.5]',
         bullets: [
           'Tracking curved cholera germs in river water',
           'Taking crisp black-and-white photos of germs',
           'Injecting farm animals to test poisons',
         ],
-        focusClue: 'Why was photomicrography crucial in winning British doctors over?',
       },
     ],
   },
@@ -150,6 +204,8 @@ const eighteenthNineteenthConfigs = [
     title: 'KT3.2: Approaches to Prevention: Edward Jenner & The Smallpox Vaccine',
     enquiryQuestion:
       'Why did Edward Jenner face fierce resistance despite discovering the smallpox vaccine?',
+    specAnchor:
+      'Edward Jenner; development of smallpox vaccination (1796); opposition from doctors, church, and variolators; government funding and compulsory vaccination (1852).',
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘Edward Jenner’s development of the smallpox vaccine was the most significant breakthrough in the prevention of disease in the period c1700–c1900.’ How far do you agree? [16+4 marks]',
@@ -169,63 +225,73 @@ const eighteenthNineteenthConfigs = [
         'One way prevention of smallpox differed was... &bull; In the seventeenth century... &bull; In contrast, in the late eighteenth century...',
     },
     leftPageQuip:
-      '<em>Cartoons showed vaccinated people growing cow heads and horns: proof that anti-vax memes existed long before social media.</em>',
+      'Cartoons showed vaccinated people growing cow heads and horns: proof that anti-vax memes existed long before social media.',
     rightPageQuip:
-      '<em>Jenner saved millions with cowpox, yet died before anyone could explain what a virus actually was.</em>',
+      'Jenner saved millions with cowpox, yet died before anyone could explain what a virus actually was.',
     linedLeftQuip:
-      '<em>Contrast Jenner’s empirical cowpox observation with Pasteur and Koch’s laboratory bacteriology a century later.</em>',
-    rightPageLinedQuip:
-      '<em>Balance Jenner’s individual genius against the necessity of state legislation: vaccination only conquered smallpox when made compulsory in 1852.</em>',
+      'Contrast Jenner’s empirical cowpox observation with Pasteur and Koch’s laboratory bacteriology a century later.',
+    linedRightQuip:
+      'Balance Jenner’s individual genius against state legislation: vaccination only conquered smallpox when made compulsory in 1852.',
     stages: [
       {
+        step: 1,
         dates: '1721–1795',
         title: 'Smallpox & Inoculation',
+        questionHeading: 'Why was inoculation dangerous for poor urban communities?',
+        paraBadge: '[2.1]',
         bullets: [
           'Scabbing sores blinding young children',
           'Scratching live pus into healthy arms',
           'Paying rich doctors high guinea fees',
         ],
-        focusClue: 'Why was inoculation dangerous for poor urban communities?',
       },
       {
+        step: 2,
         dates: '1796–1798',
         title: 'Edward Jenner & The Cowpox Vaccine',
+        questionHeading: 'How did Jenner use scientific experimentation to test folklore?',
+        paraBadge: '[2.2]',
         bullets: [
           'Milking cows with clear smooth skin',
           'Scraping blister liquid into boy James Phipps',
           'Dosing boy with deadly pox without illness',
         ],
-        focusClue: 'How did Jenner use scientific experimentation to test folklore?',
       },
       {
+        step: 3,
         dates: '1798–1810s',
         title: 'Medical & Religious Opposition',
+        questionHeading: 'Why did London doctors and church leaders resist vaccination?',
+        paraBadge: '[2.3]',
         bullets: [
           'Printing scary cartoons with sprouting cow horns',
           'Church pulpits warning against beast blood',
           'Dirty hospital needles passing deadly infections',
         ],
-        focusClue: 'Why did London doctors and church leaders resist vaccination?',
       },
       {
+        step: 4,
         dates: '1802–1840',
         title: 'Parliamentary Funding & Adoption',
+        questionHeading: 'Why did the British government abandon laissez-faire for vaccination?',
+        paraBadge: '[2.4]',
         bullets: [
           'Voting thirty thousand pounds in gold coins',
           'Giving free scratches to village babies',
           'Banning old dangerous pus cuts by law',
         ],
-        focusClue: 'Why did the British government abandon laissez-faire for vaccination?',
       },
       {
+        step: 5,
         dates: '1852–1871',
         title: 'Compulsory Acts & Anti-Vaccine League',
+        questionHeading: 'Why did making vaccination compulsory spark fierce public protests?',
+        paraBadge: '[2.5]',
         bullets: [
           'Fining poor parents for refusing jabs',
           'Angry street protests marching with banners',
           'Plunging death rates as smallpox disappears',
         ],
-        focusClue: 'Why did making vaccination compulsory spark fierce public protests?',
       },
     ],
   },
@@ -237,6 +303,8 @@ const eighteenthNineteenthConfigs = [
     title: 'KT3.3: Improvements in Hospital Care: Florence Nightingale & Professional Nursing',
     enquiryQuestion:
       'How did Florence Nightingale transform hospitals from death traps into places of cure?',
+    specAnchor:
+      'Florence Nightingale; hospital conditions at Scutari (1854–56); Notes on Hospitals and Notes on Nursing (1859); pavilion hospital plan; professional nursing training.',
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
       'Explain why the standard of hospital care and nursing improved so significantly in the second half of the nineteenth century. [12 marks]',
@@ -256,63 +324,73 @@ const eighteenthNineteenthConfigs = [
         'One way hospital care differed was... &bull; In the Medieval period... &bull; In contrast, in the late nineteenth century...',
     },
     leftPageQuip:
-      '<em>Nightingale believed miasma caused disease, yet her obsession with fresh air, scrubbing, and clean drains saved thousands of lives.</em>',
+      'Nightingale believed miasma caused disease, yet her obsession with fresh air, scrubbing, and clean drains saved thousands of lives.',
     rightPageQuip:
-      '<em>Florence Nightingale proved that clean sheets, fresh soup, and opening windows were deadlier to infection than any Victorian medicine.</em>',
+      'Florence Nightingale proved that clean sheets, fresh soup, and opening windows were deadlier to infection than any Victorian medicine.',
     linedLeftQuip:
-      '<em>Nightingale transformed nursing from low-status domestic drudgery into a disciplined, respected medical profession.</em>',
-    rightPageLinedQuip:
-      '<em>Explain how architectural design (pavilion wards) worked in tandem with trained matrons to drive down hospital mortality.</em>',
+      'Nightingale transformed nursing from low-status domestic drudgery into a disciplined, respected medical profession.',
+    linedRightQuip:
+      'Explain how architectural design (pavilion wards) worked in tandem with trained matrons to drive down hospital mortality.',
     stages: [
       {
+        step: 1,
         dates: 'c1700–1850',
         title: 'Voluntary Hospitals & Pre-Modern Nursing',
+        questionHeading: 'Why were early Victorian hospital wards notorious death traps?',
+        paraBadge: '[3.1]',
         bullets: [
           'Crowded dark rooms smelling of festering wounds',
           'Drunk ward women sleeping on dirty rags',
           'Sharing blood-soaked blankets between beds',
         ],
-        focusClue: 'Why were early Victorian hospital wards notorious death traps?',
       },
       {
+        step: 2,
         dates: '1854–1856',
         title: 'Scutari & The Crimean War',
+        questionHeading: 'How did Nightingale’s sanitary reforms drastically cut the death rate?',
+        paraBadge: '[3.2]',
         bullets: [
           'Sewers overflowing beneath wooden ward floors',
           'Scrubbing dirty walls with boiling water and soap',
           'Feeding wounded soldiers hot fresh stew',
         ],
-        focusClue: 'How did Nightingale’s sanitary reforms drastically cut the death rate?',
       },
       {
+        step: 3,
         dates: '1859',
         title: 'Notes on Nursing & Sanitary Science',
+        questionHeading: 'Why did Nightingale’s belief in miasma still produce effective hygiene?',
+        paraBadge: '[3.3]',
         bullets: [
           'Opening high windows for fresh river breezes',
           'Drawing colourful polar pie charts for MPs',
           'Demanding clean white cotton bandages',
         ],
-        focusClue: 'Why did Nightingale’s belief in miasma still produce effective hygiene?',
       },
       {
+        step: 4,
         dates: '1860s',
         title: 'The Pavilion Plan Hospital Design',
+        questionHeading: 'How did the pavilion plan prevent cross-infection between wards?',
+        paraBadge: '[3.4]',
         bullets: [
           'Building long narrow brick ward pavilions',
           'Washing smooth glazed walls with water',
           'Cross-ventilation blowing stale room air away',
         ],
-        focusClue: 'How did the pavilion plan prevent cross-infection between wards?',
       },
       {
+        step: 5,
         dates: '1860–1890s',
         title: 'Professional Nurse Training & Asepsis',
+        questionHeading: 'How did nurse training permanently raise the standard of hospital care?',
+        paraBadge: '[3.5]',
         bullets: [
           "Uniformed women learning medical rules at St Thomas'",
           'Stern matrons inspecting spotless bedside tables',
           'Fusing clean hands with microbe science',
         ],
-        focusClue: 'How did nurse training permanently raise the standard of hospital care?',
       },
     ],
   },
@@ -324,6 +402,8 @@ const eighteenthNineteenthConfigs = [
     title: 'KT3.4: The Surgical Revolution: Simpson’s Chloroform & Lister’s Antiseptics',
     enquiryQuestion:
       'Why did the conquest of pain in surgery temporarily increase the patient death rate?',
+    specAnchor:
+      'Surgical breakthroughs: pain (anaesthetics: nitrous oxide, ether, James Simpson and chloroform); infection (Joseph Lister and carbolic acid; asepsis); bleeding.',
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
       'Explain why surgery became significantly safer in the period c1840–c1900. [12 marks]',
@@ -346,63 +426,73 @@ const eighteenthNineteenthConfigs = [
         'One way surgical operations were similar was... &bull; In the Medieval period... &bull; Similarly, in the early nineteenth century before 1846...',
     },
     leftPageQuip:
-      '<em>Chloroform conquered pain, but Lister conquered the invisible enemy: the rotting microbes thriving on surgeons’ unwashed hands.</em>',
+      'Chloroform conquered pain, but Lister conquered the invisible enemy: the rotting microbes thriving on surgeons’ unwashed hands.',
     rightPageQuip:
-      '<em>Surgeons used to take pride in blood-caked frock coats; Lister forced them to wash their hands and operate in carbolic acid mist.</em>',
+      'Surgeons used to take pride in blood-caked frock coats; Lister forced them to wash their hands and operate in carbolic acid mist.',
     linedLeftQuip:
-      '<em>The "Black Period" of surgery proved that removing pain alone was dangerous until antisepsis solved internal infection.</em>',
-    rightPageLinedQuip:
-      '<em>Trace the surgical progression: from Liston’s raw speed, to Simpson’s chloroform, to Lister’s carbolic spray, to Koch’s steam sterilisation.</em>',
+      'The "Black Period" of surgery proved that removing pain alone was dangerous until antisepsis solved internal infection.',
+    linedRightQuip:
+      'Trace the surgical progression: from Liston’s raw speed, to Simpson’s chloroform, to Lister’s carbolic spray, to Koch’s steam sterilisation.',
     stages: [
       {
+        step: 1,
         dates: 'c1700–1846',
         title: 'Pre-Anaesthetic Surgery: Speed & Shock',
+        questionHeading: 'Why was surgical speed essential before the discovery of anaesthetics?',
+        paraBadge: '[4.1]',
         bullets: [
           'Holding down screaming patients with leather straps',
           'Sawing off broken legs in thirty seconds',
           'Breathing sweet laughing gas at fairgrounds',
         ],
-        focusClue: 'Why was surgical speed essential before the discovery of anaesthetics?',
       },
       {
+        step: 2,
         dates: '1847–1853',
         title: 'James Simpson & Chloroform',
+        questionHeading: 'Why did the death of Hannah Greener cause panic among surgeons?',
+        paraBadge: '[4.2]',
         bullets: [
           'Sniffing heavy liquid vapour under dinner table',
           'Young Hannah Greener dying from cold overdose',
           'Queen Victoria giving birth with zero pain',
         ],
-        focusClue: 'Why did the death of Hannah Greener cause panic among surgeons?',
       },
       {
+        step: 3,
         dates: '1846–1865',
         title: 'The "Black Period" of Surgery',
+        questionHeading: 'Why did conquering surgical pain lead to higher patient death rates?',
+        paraBadge: '[4.3]',
         bullets: [
           'Wearing stiff dried blood coats as badges',
           'Cutting deeper into belly flesh for longer',
           'Black rotting gangrene killing feverish patients',
         ],
-        focusClue: 'Why did conquering surgical pain lead to higher patient death rates?',
       },
       {
+        step: 4,
         dates: '1865–1870s',
         title: 'Joseph Lister & Carbolic Acid Spray',
+        questionHeading: 'How did Lister apply Germ Theory to solve hospital gangrene?',
+        paraBadge: '[4.4]',
         bullets: [
           'Treating green sewage water with smelly chemicals',
           "Wrapping boy Jamie Greenlees' fractured leg",
           'Pumping fine acid mist over open surgical wounds',
         ],
-        focusClue: 'How did Lister apply Germ Theory to solve hospital gangrene?',
       },
       {
+        step: 5,
         dates: '1880s–1890s',
         title: 'From Antiseptic to Aseptic Surgery',
+        questionHeading: 'What is the crucial difference between antiseptic and aseptic surgery?',
+        paraBadge: '[4.5]',
         bullets: [
           'Boiling metal scalpels in pressurized steam kettles',
           'Pulling on thin sterile rubber gloves',
           'Tying white cotton masks over mouths and noses',
         ],
-        focusClue: 'What is the crucial difference between antiseptic and aseptic surgery?',
       },
     ],
   },
@@ -414,6 +504,8 @@ const eighteenthNineteenthConfigs = [
     title: 'KT3.5: Public Health & Cholera: John Snow & The 1875 Public Health Act',
     enquiryQuestion:
       'Why did it take 20 years for John Snow’s cholera discovery to change government policy?',
+    specAnchor:
+      'Public health: cholera epidemics; John Snow and Broad Street pump (1854); public health acts (1848 permissive vs 1875 compulsory); Bazalgette and London sewers.',
     tariff: 'Question 5/6: Evaluative Essay [16+4 marks &bull; 20 mins]',
     examStem:
       '‘The work of John Snow was the main reason for improvements in public health in the nineteenth century.’ How far do you agree? [16+4 marks]',
@@ -433,157 +525,180 @@ const eighteenthNineteenthConfigs = [
         'One way government action differed was... &bull; In the Renaissance period... &bull; In contrast, under the 1875 Public Health Act...',
     },
     leftPageQuip:
-      '<em>Snow removed the Broad Street pump handle in 1854, proving cholera was water-borne seven years before Germ Theory.</em>',
+      'Snow removed the Broad Street pump handle in 1854, proving cholera was water-borne seven years before Germ Theory.',
     rightPageQuip:
-      '<em>John Snow solved cholera with a street map and a wrench, proving forensic detective work is as powerful as a microscope.</em>',
+      'John Snow solved cholera with a street map and a wrench, proving forensic detective work is as powerful as a microscope.',
     linedLeftQuip:
-      '<em>Snow established waterborne transmission in 1854, but it took the Great Stink of 1858 and the 1867 Reform Act to compel government action.</em>',
-    rightPageLinedQuip:
-      '<em>Weigh Snow’s epidemiological genius against Chadwick’s sanitary report, Bazalgette’s sewers, and Disraeli’s compulsory 1875 Act.</em>',
+      'Snow established waterborne transmission in 1854, but it took the Great Stink of 1858 and the 1867 Reform Act to compel government action.',
+    linedRightQuip:
+      'Weigh Snow’s epidemiological genius against Chadwick’s sanitary report, Bazalgette’s sewers, and Disraeli’s compulsory 1875 Act.',
     stages: [
       {
+        step: 1,
         dates: '1831–1848',
         title: 'Epidemic Terror & Edwin Chadwick',
+        questionHeading: 'Why did towns refuse to set up health boards under the 1848 Act?',
+        paraBadge: '[5.1]',
         bullets: [
           'Violent watery sickness turning human skin blue',
           'Piles of human excrement rotting near houses',
           'Parliament passing optional town health boards',
         ],
-        focusClue: 'Why did towns refuse to set up health boards under the 1848 Act?',
       },
       {
+        step: 2,
         dates: '1854',
         title: 'John Snow & The Broad Street Pump',
+        questionHeading: 'How did Snow use epidemiological mapping to prove water transmission?',
+        paraBadge: '[5.2]',
         bullets: [
           'Plotting black death bars on street map',
           'Brewery men drinking ale staying completely healthy',
           'Unscrewing heavy iron pump handle with wrench',
         ],
-        focusClue: 'How did Snow use epidemiological mapping to prove water transmission?',
       },
       {
+        step: 3,
         dates: '1854–1858',
         title: 'Board of Health & Miasma Orthodoxy',
+        questionHeading: 'Why did the medical establishment refuse to accept Snow’s water theory?',
+        paraBadge: '[5.3]',
         bullets: [
           'Cracked brick cesspool leaking into drinking well',
           'Medical journals laughing at dirty water theory',
           'Doctors burning pitch barrels in foggy streets',
         ],
-        focusClue: 'Why did the medical establishment refuse to accept Snow’s water theory?',
       },
       {
+        step: 4,
         dates: '1858–1865',
         title: 'The Great Stink & Bazalgette’s Sewers',
+        questionHeading: 'Why did fear of miasma paradoxically save thousands from cholera?',
+        paraBadge: '[5.4]',
         bullets: [
           'Boiling brown river mud halting Parliament debates',
           'Soaking courtroom window curtains in lime juice',
           'Digging thousand miles of underground brick tunnels',
         ],
-        focusClue: 'Why did fear of miasma paradoxically save thousands from cholera?',
       },
       {
+        step: 5,
         dates: '1875',
         title: 'The 1875 Public Health Act: End of Laissez-Faire',
+        questionHeading: 'Why was the 1875 Act the definitive death blow to laissez-faire?',
+        paraBadge: '[5.5]',
         bullets: [
           'Working factory men winning parliamentary votes',
           'Forcing town councils to pipe clean fresh water',
           'Hiring official medical inspectors for bad food',
         ],
-        focusClue: 'Why was the 1875 Act the definitive death blow to laissez-faire?',
       },
     ],
   },
 ];
 
 function renderSpinePage(cfg) {
-  const { pageNum, keyTopicBadge, enquiryQuestion, stages, leftPageQuip } = cfg;
+  const { pageNum, lessonNum, keyTopicBadge, enquiryQuestion, specAnchor, stages, leftPageQuip } =
+    cfg;
 
-  let stagesHtml = '';
-  stages.forEach((st, idx) => {
-    let bulletsHtml = st.bullets
-      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
-      .join('\n');
-    stagesHtml += `
-          <!-- Stage ${idx + 1} -->
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+  const stagesHtml = stages
+    .map((st, sIdx) => {
+      const bulletsHtml = st.bullets
+        .map(
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${st.title}
-              </div>
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${st.focusClue}
-                </div>
-              </div>
+            </div>`,
+        )
+        .join('');
+
+      const questionText = st.questionHeading || st.focusClue || st.title;
+      const paraBadge = st.paraBadge || `[${lessonNum}.${sIdx + 1}]`;
+
+      return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page (Strict Single-Line Fit) -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000; min-height: 20px; box-sizing: border-box;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1; overflow: hidden;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; padding: 0.6px 6px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">
+                ${st.step || sIdx + 1}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #ffffff; white-space: nowrap; flex-shrink: 0;">
+                ${st.dates}
+              </span>
+              <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
+                ${questionText}
+              </span>
+            </div>
+            <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; padding: 0.5px 5px; border-radius: 2px; margin-left: 6px; white-space: nowrap; flex-shrink: 0;">
+              ${paraBadge}
+            </span>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (44mm) & Right Ruled Writing Lines (~154mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <!-- Left Column: High-Visibility 44mm Trigger Spine (Pure White Canvas, Zero Grey Dithering) -->
+            <div style="width: 44mm; flex-shrink: 0; background: #ffffff; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
             </div>
 
-            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
-          </div>`;
-  });
+
+          </div>
+        </div>`;
+    })
+    .join('');
 
   return `
   <!-- ------------------------------------------------------------------ -->
   <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum})         -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-${pageNum}" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
+      
       <!-- Lesson Header with Inquiry Question Title -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            ${keyTopicBadge} &bull; ENQUIRY LESSON NOTEBOOK
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+            ${keyTopicBadge} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 1 (1HI0/11) &bull; THEMATIC STUDY
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 (1HI0/11)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${enquiryQuestion}
         </h2>
       </div>
 
-      <!-- Active Lesson Note-Taking Spine -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Take precise, structured notes alongside each milestone as your teacher narrates the history
-          </span>
-        </div>
+      <!-- Core Specification Focus Strip -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
+        <strong style="color: #000000;">Core Specification Focus:</strong> ${specAnchor}
+      </div>
 
+      <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 2px;">
         <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
-${stagesHtml}
+          ${stagesHtml}
         </div>
       </div>
 
-      <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/24</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;">${leftPageQuip}</span>
-      </div>
+      ${renderFooterStrip(pageNum, leftPageQuip, 20)}
     </div>
   </div>`;
 }
@@ -603,7 +718,11 @@ function build18th19thTwoPageWorkbook(unitData, period) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
   <style>
-    *, *:before, *:after { box-sizing: border-box; }
+    *, *:before, *:after {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
     @page {
       size: A4 portrait;
       margin: 10mm 10mm 12mm 10mm;
@@ -616,8 +735,6 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       margin: 0;
       padding: 0;
       background: #ffffff;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
     }
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -657,9 +774,12 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     .task-line {
       border-bottom: 1.2px solid #000000;
       height: 7.8mm;
+      min-height: 7.8mm;
+      max-height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
+      flex-shrink: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
@@ -667,43 +787,6 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       width: 100%;
       box-sizing: border-box;
       margin: 0;
-    }
-    .ruled-lines-block {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      margin: 1px 0;
-    }
-    .lined-page-grid {
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      margin: 2px 0 3px 0;
-      border-top: 1.2px solid #000000;
-    }
-    .lined-row {
-      display: flex;
-      flex: 1;
-      min-height: 0;
-      border-bottom: 1.2px solid #000000;
-      box-sizing: border-box;
-    }
-    .lined-margin-cell {
-      width: 12mm;
-      border-right: 1.2px solid #000000;
-      flex-shrink: 0;
-      display: flex;
-      align-items: center;
-      padding-left: 1mm;
-      padding-right: 0.5mm;
-      box-sizing: border-box;
-    }
-    .lined-content-cell {
-      flex: 1;
-      display: flex;
-      align-items: center;
-      padding-left: 6px;
-      box-sizing: border-box;
     }
     .page-footer-strip {
       display: flex;
@@ -757,7 +840,7 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       <!-- Unit Title & Subtitle Banner -->
       <div style="text-align: center; margin-bottom: 8px;">
         <span style="display: inline-block; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; border: 1.5px solid #0f284e; background: #0f284e; color: #ffffff; padding: 2px 10px; border-radius: 3px; margin-bottom: 4px;">
-          KEY TOPIC 3 &bull; REVISION &amp; PRACTICE COMPANION
+          KEY TOPIC 3 &bull; PUPIL WORKBOOK
         </span>
         <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 900; color: #0f284e; margin: 4px 0 2px 0; line-height: 1.15; letter-spacing: -0.5px;">
           Medicine in 18th &amp; 19th Century Britain
@@ -770,10 +853,10 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       <!-- Prominent Primary Visual Source Centerpiece (Rich Authentic Colour) -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
         <div style="background: #fcfbf9; display: flex; justify-content: center; align-items: center; padding: 2px 4px;">
-          <img src="${coverImgBase64}" alt="James Gillray, The Cow-Pock—or—the Wonderful Effects of the New Inoculation! (1802)" style="width: 100%; height: 93mm; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+          <img src="${coverImgBase64}" alt="James Gillray, The Cow-Pock (1802)" style="width: 100%; height: 93mm; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0f284e; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #ffffff;">
-          <span><strong>Primary Visual Evidence:</strong> James Gillray, <em>The Cow-Pock—or—the Wonderful Effects of the New Inoculation!</em> (1802 satire of Edward Jenner's cowpox vaccine)</span>
+          <span><strong>Primary Visual Evidence:</strong> James Gillray, <em>The Cow-Pock—or—the Wonderful Effects of the New Inoculation!</em> (1802 satire of Edward Jenner)</span>
           <span style="font-weight: 700; color: #475569; white-space: nowrap; margin-left: 8px;">HISTORICAL SATIRE ARCHIVE</span>
         </div>
       </div>
@@ -895,185 +978,200 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         </table>
       </div>
 
-      ${renderFooterStrip(1, 'Keep this workbook complete and clean for final GCSE Paper 1 revision.')}
+      ${renderFooterStrip(1, 'The History Revision Hub &bull; GCSE History Paper 1 &bull; Key Topic 3 Pupil Workbook', 20)}
     </div>
   </div>
 `;
 
   // ====================================================================
   // PAGES 2 & 3: LIVING UNIT TIMELINE SPREAD (1700–1900)
+  // OPEN DRAWING CANVAS (ZERO ENCLOSING BOX BORDERS)
   // ====================================================================
-  const timelineMilestonesLeft = [
-    {
-      year: '1796',
-      title: 'Edward Jenner: Smallpox Vaccination & Immunology',
-      kt: 'Key Topic 3.2',
-      desc: 'Jenner inoculates James Phipps with cowpox pus from Sarah Nelmes, proving cowpox confers immunity against smallpox. Publishes findings in 1798. Despite initial Royal Society scepticism, vaccination eradicates inoculator infection risks and founds immunology.',
-    },
-    {
-      year: '1847',
-      title: 'James Young Simpson: Chloroform & Anesthesia',
-      kt: 'Key Topic 3.4',
-      desc: 'Simpson discovers the potent anaesthetic properties of chloroform in Edinburgh, ending agony during surgery. Queen Victoria’s use of chloroform during childbirth (1853) popularises it, enabling complex operations despite the initial ‘Black Period’ of surgery.',
-    },
-    {
-      year: '1848',
-      title: 'First Public Health Act & The General Board of Health',
-      kt: 'Key Topic 3.5',
-      desc: 'Spurred by Chadwick’s 1842 report and epidemic cholera, Parliament passes the permissive 1848 Act. Towns can create local boards of health to supply clean water and drainage, though lack of compulsion leaves most cities vulnerable to filth and contagion.',
-    },
-    {
-      year: '1854',
-      title: 'John Snow: Broad Street Pump & Waterborne Cholera',
-      kt: 'Key Topic 3.5',
-      desc: 'During the Soho epidemic, Snow compiles his famous spot map linking 500+ fatal cholera cases to the Broad Street pump. Removing the handle immediately halts the outbreak, mathematically disproving the miasma theory seven years before Pasteur’s Germ Theory.',
-    },
-  ];
-
-  const timelineMilestonesRight = [
-    {
-      year: '1854–56',
-      title: 'Florence Nightingale: Hospital Sanitation at Scutari',
-      kt: 'Key Topic 3.3',
-      desc: 'During the Crimean War, Nightingale enforces rigorous cleanliness, ventilation, and fresh nutrition at Scutari hospital, slashing soldier death rates from 40% to 2%. Returns to Britain to establish the Nightingale Training School and author Notes on Nursing (1859).',
-    },
-    {
-      year: '1861',
-      title: 'Louis Pasteur: Germ Theory & Swan-Neck Flask Experiments',
-      kt: 'Key Topic 3.1',
-      desc: 'Commissioned by Lille brewers, Pasteur disproves spontaneous generation using swan-neck flasks, demonstrating that airborne microbes cause fermentation and decay. In 1861, he publishes Germ Theory, proving microscopic germs cause specific diseases in living organisms.',
-    },
-    {
-      year: '1865–67',
-      title: 'Joseph Lister: Carbolic Acid Spray & Antiseptic Surgery',
-      kt: 'Key Topic 3.4',
-      desc: 'Applying Pasteur’s Germ Theory to wound sepsis, Lister uses carbolic acid sprays, dressings, and hand-washing during surgery at Glasgow Infirmary. His antiseptic techniques reduce amputee mortality from 46% to 15%, paving the way for modern aseptic operating theatres.',
-    },
-    {
-      year: '1875',
-      title: 'The Second Public Health Act: End of Laissez-Faire',
-      kt: 'Key Topic 3.5',
-      desc: 'Disraeli’s government ends laissez-faire by making public health compulsory. Municipal councils are legally required to provide clean piped water, subterranean sewer drainage, street lighting, and medical officers of health, transforming urban life expectancy.',
-    },
-  ];
-
-  // PAGE 2 (Timeline Verso: 1700–1854)
   html += `
-  <div class="page page-container" id="page-2" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-2" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
             Living Timeline &bull; Part 1: Vaccines, Anaesthetics &amp; Early Sanitation (1700–1854)
           </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry &bull; Milestones 1–4
+          </span>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> Complete the timeline sketches and notes as you master each enquiry lesson.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
-        ${timelineMilestonesLeft
-          .map(
-            (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                ${m.year} &bull; ${m.title}
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.kt}</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              ${m.desc}
-            </p>
+      <!-- 4 Milestones with Open Drawing Area (Zero Box Lines) -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; min-height: 0;">
+        
+        <!-- Milestone 1: 1796 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1796 &bull; Edward Jenner: Smallpox Vaccination &amp; Immunology
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.2</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Jenner inoculates James Phipps with cowpox pus from Sarah Nelmes, proving cowpox confers immunity against smallpox. Publishes findings in 1798. Despite initial Royal Society scepticism, vaccination eradicates inoculator infection risks and founds immunology.
+          </p>
         </div>
-        `,
-          )
-          .join('')}
+
+        <!-- Milestone 2: 1847 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1847 &bull; James Young Simpson: Chloroform &amp; Anaesthesia
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.4</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Simpson discovers the potent anaesthetic properties of chloroform in Edinburgh, ending agony during surgery. Queen Victoria’s use of chloroform during childbirth (1853) popularises it, enabling complex operations despite the initial ‘Black Period’ of surgery.
+          </p>
+        </div>
+
+        <!-- Milestone 3: 1848 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1848 &bull; First Public Health Act &amp; The General Board of Health
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.5</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Spurred by Chadwick’s 1842 report and epidemic cholera, Parliament passes the permissive 1848 Act. Towns can create local boards of health to supply clean water and drainage, though lack of compulsion leaves most cities vulnerable to filth and contagion.
+          </p>
+        </div>
+
+        <!-- Milestone 4: 1854 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1854 &bull; John Snow: Broad Street Pump &amp; Waterborne Cholera
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.5</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            During the Soho epidemic, Snow compiles his famous spot map linking 500+ fatal cholera cases to the Broad Street pump. Removing the handle immediately halts the outbreak, mathematically disproving the miasma theory seven years before Pasteur’s Germ Theory.
+          </p>
+        </div>
+
       </div>
 
-      ${renderFooterStrip(2, 'The 18th century relied on empirical observation; the 19th century unlocked the laboratory.')}
+      ${renderFooterStrip(2, 'The 18th century relied on empirical observation; the 19th century unlocked the laboratory.', 20)}
     </div>
   </div>
-`;
 
-  // PAGE 3 (Timeline Recto: 1854–1900)
-  html += `
-  <div class="page page-container" id="page-3" style="padding: 4mm 6mm;">
+  <!-- PAGE 3: LIVING TIMELINE PART 2 -->
+  <div class="page page-container recto-page" id="page-3" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
-        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #000000; text-transform: uppercase; font-weight: 800;">
-            Living Timeline &bull; Part 2: Germ Theory, Antiseptics &amp; Compulsory Public Health (1854–1900)
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+            Living Timeline &bull; Part 2: Nursing, Microbes &amp; Antiseptics (1854–1875)
           </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry &bull; Milestones 5–8
+          </span>
         </div>
 
-        <div style="border-bottom: 1px solid #000000; padding-bottom: 4px; margin-bottom: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
-          <strong>Instructions:</strong> Complete the timeline sketches and notes as you master each enquiry lesson.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Draw visual symbols for Crimean hospital sanitation, swan-neck flasks, Lister carbolic sprays, and municipal sewers across the timeline below.
         </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
-        ${timelineMilestonesRight
-          .map(
-            (m) => `
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                ${m.year} &bull; ${m.title}
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">${m.kt}</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              ${m.desc}
-            </p>
+      <!-- 4 Milestones with Open Drawing Area (Zero Box Lines) -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; min-height: 0;">
+        
+        <!-- Milestone 5: 1854–56 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1854–56 &bull; Florence Nightingale: Hospital Sanitation at Scutari
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.3</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            During the Crimean War, Nightingale enforces rigorous cleanliness, ventilation, and fresh nutrition at Scutari hospital, slashing soldier death rates from 40% to 2%. Returns to Britain to establish the Nightingale Training School and author Notes on Nursing (1859).
+          </p>
         </div>
-        `,
-          )
-          .join('')}
+
+        <!-- Milestone 6: 1861 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1861 &bull; Louis Pasteur: Germ Theory &amp; Swan-Neck Flask Experiments
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.1</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Commissioned by Lille brewers, Pasteur disproves spontaneous generation using swan-neck flasks, demonstrating that airborne microbes cause fermentation and decay. In 1861, he publishes Germ Theory, proving microscopic germs cause specific diseases in living organisms.
+          </p>
+        </div>
+
+        <!-- Milestone 7: 1865–67 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1865–67 &bull; Joseph Lister: Carbolic Acid Spray &amp; Antiseptic Surgery
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.4</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Applying Pasteur’s Germ Theory to wound sepsis, Lister uses carbolic acid sprays, dressings, and hand-washing during surgery at Glasgow Infirmary. His antiseptic techniques reduce amputee mortality from 46% to 15%, paving the way for modern aseptic operating theatres.
+          </p>
+        </div>
+
+        <!-- Milestone 8: 1875 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1875 &bull; The Second Public Health Act: End of Laissez-Faire
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 3.5</span>
+          </div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Disraeli’s government ends laissez-faire by making public health compulsory. Municipal councils are legally required to provide clean piped water, subterranean sewer drainage, street lighting, and medical officers of health, transforming urban life expectancy.
+          </p>
+        </div>
+
       </div>
 
-      ${renderFooterStrip(3, 'Pasteur opened the door; Lister, Koch, and Bazalgette marched through it.')}
+      ${renderFooterStrip(3, 'Pasteur and Koch unlocked microbiology; Joseph Bazalgette engineered the sewers that saved millions.', 20)}
     </div>
   </div>
 `;
 
   // ====================================================================
-  // PAGES 4–23: 5 DEDICATED 4-PAGE MODULES
-  // Page 1: 5-Stage Chronological Inquiry Spine
-  // Page 2: Exam Question + 28 flex task lines
-  // Page 3: Lined Grid (28 lines)
-  // Page 4: Lined Grid (28 lines)
+  // PAGES 4–18: 5 DEDICATED THREE-PAGE ENQUIRY MODULES (15 PAGES TOTAL)
+  // Page 1: Chronological Inquiry Spine & Exposition Notes (Left/Right)
+  // Page 2: Extended Writing Part 1 (18 task lines, stimulus, writing frames & vocab @ 8.2pt)
+  // Page 3: Extended Writing Part 2 (16 continuation lines + Question 3 Similarity/Difference [4 marks])
   // ====================================================================
-  eighteenthNineteenthConfigs.forEach((cfg) => {
-    const leftPageNum = (cfg.lessonNum - 1) * 4 + 4;
-    const rightPageNum = (cfg.lessonNum - 1) * 4 + 5;
-    const linedLeftPageNum = (cfg.lessonNum - 1) * 4 + 6;
-    const linedRightPageNum = (cfg.lessonNum - 1) * 4 + 7;
+  eighteenthNineteenthConfigs.forEach((cfg, idx) => {
+    const spinePageNum = 4 + idx * 3; // 4, 7, 10, 13, 16
+    const questionPart1PageNum = spinePageNum + 1; // 5, 8, 11, 14, 17
+    const questionPart2PageNum = spinePageNum + 2; // 6, 9, 12, 15, 18
 
-    // PAGE 1 OF MODULE: CHRONOLOGICAL INQUIRY SPINE
-    html += renderSpinePage({ ...cfg, pageNum: leftPageNum });
+    // PAGE 1 OF ENQUIRY: CHRONOLOGICAL INQUIRY SPINE
+    html += renderSpinePage({ ...cfg, pageNum: spinePageNum });
 
-    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 22 FLEX TASK LINES, TIMELINE MISSION)
-    const flexTaskLines = Array.from(
-      { length: 22 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    // PAGE 2 OF ENQUIRY: EXAM QUESTION PART 1 (18 TASK LINES, TIMELINE MISSION, PROMINENT TYPOGRAPHY)
+    const part1TaskLines = Array.from(
+      { length: 18 },
+      () => '<div class="task-line" style="height: 7.8mm;"></div>',
     ).join('');
 
     html += `
-  <div class="page page-container" id="page-${rightPageNum}">
+  <div class="page page-container" id="page-${questionPart1PageNum}">
     <div class="page-body-full">
       <div>
         <!-- Exam Header -->
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
             ${cfg.tariff}
           </h2>
@@ -1083,49 +1181,49 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         </div>
 
         <!-- Question Stem & Stimulus Box -->
-        <div style="border: 1px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin-bottom: 3px; line-height: 1.25;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 5px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.2pt; font-weight: 800; color: #000000; margin-bottom: 4px; line-height: 1.28;">
             ${cfg.examStem}
           </div>
-          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #000000;">
+          <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
             <strong>Stimulus:</strong>
-            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[0]}</span>
-            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 600;">${cfg.stimulus[1]}</span>
-            <span style="font-style: italic;">(You must also use information of your own)</span>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 700;">${cfg.stimulus[0]}</span>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 700;">${cfg.stimulus[1]}</span>
+            <span style="font-style: italic; color: #333333;">(You must also use information of your own)</span>
           </div>
         </div>
 
-        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+        <!-- Accessible Writing Frames & Key Vocabulary Bank (High-Legibility 8.2pt Font) -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 4px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
           <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Accessible Writing Frames:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.2; display: block;">${cfg.connectives}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Accessible Writing Frames:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; line-height: 1.32; display: block; color: #111111;">${cfg.connectives}</span>
           </div>
           <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 7pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.2; display: block;">${cfg.wordBank}</span>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.32; display: block; color: #111111;">${cfg.wordBank}</span>
           </div>
         </div>
 
         <!-- Ruled Task Lines Prompt -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin: 2px 0 2px 0; display: flex; justify-content: space-between;">
           <span><strong>Write your response in the space provided below:</strong></span>
-          <span style="font-size: 6.8pt; color: #555555;">(Response continues on facing page)</span>
+          <span style="font-size: 7.0pt; color: #555555; font-weight: 600;">(Response continues on facing page)</span>
         </div>
       </div>
 
-      <!-- 28 Ruled Task Lines for Extended Writing (Authentic 8.0mm Line Budget) -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
-${flexTaskLines}
+      <!-- 18 Ruled Task Lines for Extended Writing -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 3px 0;">
+${part1TaskLines}
       </div>
 
-      <!-- Timeline Mission (Deep Historical Analytical Task) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 5px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+      <!-- Timeline Mission -->
+      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 8px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 2px 6px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
             Timeline Mission
           </span>
-          <span style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.25; color: #000000;">
+          <span style="font-family: 'Georgia', serif; font-size: 7.4pt; line-height: 1.25; color: #000000;">
             ${cfg.timelineMission}
           </span>
         </div>
@@ -1134,117 +1232,86 @@ ${flexTaskLines}
         </div>
       </div>
 
-      <div class="page-footer-strip">
-        <span class="footer-quip" style="text-align: left; flex: 1; margin-right: 8px;">${cfg.rightPageQuip}</span>
-        <span class="footer-page-num">${rightPageNum}/24</span>
-      </div>
+      ${renderFooterStrip(questionPart1PageNum, cfg.rightPageQuip, 20)}
     </div>
   </div>
 `;
 
-    // PAGE 3 OF MODULE: LINED WRITING (VERSO) - FULL CONTINUATION PAGE FOR WHY / ESSAY (31 FULL-WIDTH LINES AT 8.0mm PITCH)
-    const continuationTaskLines = Array.from(
-      { length: 31 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
-    ).join('');
-
-    html += `
-  <div class="page page-container" id="page-${linedLeftPageNum}">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          ${cfg.tariff.split(':')[0]} Continued
-        </span>
-      </div>
-
-      <!-- Continuation Prompt -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-        Continue your response to ${cfg.tariff.split(':')[0]} below:
-      </div>
-
-      <!-- 31 Ruled Lines (Exact 8.0mm line pitch matching Page 5) -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
-        ${continuationTaskLines}
-      </div>
-
-      ${renderFooterStrip(linedLeftPageNum, cfg.linedLeftQuip)}
-    </div>
-  </div>
-`;
-
-    // PAGE 4 OF MODULE: LINED WRITING (RECTO) - ESSAY SYNTHESIS & HISTORICAL VERDICT (24 LINES) + QUESTION 3 [4 MARKS] (6 LINES)
-    const conclusionTaskLines = Array.from(
-      { length: 24 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+    // PAGE 3 OF ENQUIRY: EXAM QUESTION PART 2 (16 CONTINUATION LINES + QUESTION 3 [4 MARKS] AT BOTTOM)
+    const part2ContinuationLines = Array.from(
+      { length: 16 },
+      () => '<div class="task-line" style="height: 7.8mm;"></div>',
     ).join('');
 
     const q3TaskLines = Array.from(
       { length: 6 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+      () => '<div class="task-line" style="height: 7.8mm;"></div>',
     ).join('');
 
     html += `
-  <div class="page page-container" id="page-${linedRightPageNum}">
+  <div class="page page-container" id="page-${questionPart2PageNum}">
     <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
       <div>
-        <!-- Running Header -->
         <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
           <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
             ${cfg.title}
           </h2>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-            Assessment Synthesis &amp; Question 3
+            ${cfg.tariff.split(':')[0]} Continued
           </span>
         </div>
 
-        <!-- Conclusion Prompt -->
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-style: italic; color: #333333; margin-bottom: 2px;">
-          Final analytical evaluation &amp; concluding historical verdict:
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Continue your response to ${cfg.tariff.split(':')[0]} below:
         </div>
       </div>
 
-      <!-- 24 Ruled Lines for Essay Synthesis / Conclusion (Exact 8.0mm pitch) -->
-      <div style="flex: 3.6; display: flex; flex-direction: column; margin: 2px 0 6px 0;">
-        ${conclusionTaskLines}
+      <!-- 16 Continuation Lines -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 4px 0;">
+        ${part2ContinuationLines}
       </div>
 
-      <!-- Question 3: Similarity / Difference [4 marks] (Authentic Cross-Era Exam Practice at end of module) -->
-      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; flex: 1.4; display: flex; flex-direction: column;">
+      <!-- Question 3: Similarity / Difference [4 marks] At Bottom of Page -->
+      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; display: flex; flex-direction: column;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 700; border: 1px solid #000000; padding: 0 5px; border-radius: 2px; text-transform: uppercase;">
-            [4 MARKS &bull; 5 MINS]
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4 ] &bull; 5 Mins
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
           ${cfg.fourMark.question}
         </p>
-        <!-- 6 Ruled Lines for Question 3 (Exact 8.0mm pitch) -->
-        <div style="flex: 1; display: flex; flex-direction: column; margin: 1px 0 0 0;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #475569; margin-bottom: 2px;">
+          ${cfg.fourMark.hint}
+        </div>
+        <div style="display: flex; flex-direction: column; margin: 1px 0 0 0;">
           ${q3TaskLines}
         </div>
       </div>
 
-      ${renderFooterStrip(linedRightPageNum, cfg.linedRightQuip)}
+      ${renderFooterStrip(questionPart2PageNum, cfg.linedRightQuip, 20)}
     </div>
   </div>
 `;
   });
 
   // ====================================================================
-  // PAGE 24: OUTSIDE BACK COVER
+  // PAGE 19: DEDICATED BRITISH EXERCISE NOTES & REVISION STRATEGY PAGE
+  // ====================================================================
+  html += renderNotesPage(
+    19,
+    'Notes: Record key causal links, essay plans, and teacher feedback for this unit.',
+    20,
+  );
+
+  // ====================================================================
+  // PAGE 20: OUTSIDE BACK COVER
   // ====================================================================
   html += `
-  <div class="page page-container" id="page-24" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-20" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding -->
       <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 3px;">
@@ -1253,7 +1320,7 @@ ${flexTaskLines}
             <span class="school-brand-target">The History Department</span>
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: #0f284e;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #0f284e;">
           KEY TOPIC 3 ASSESSMENT RECORD &bull; c1700–c1900
         </div>
       </div>
@@ -1275,7 +1342,7 @@ ${flexTaskLines}
       </div>
 
       <!-- Expanded Key Topic 3 Assessment Record Table (10 Questions + Cumulative Total) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 6px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
             <tr style="background: #0f284e; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -1296,19 +1363,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Rapid Progress in Causes c1860–c1890
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 5–7
+                p. 5–6
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1317,7 +1381,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Difference (Causes: c1700 vs c1900)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 7
+                p. 6
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1333,19 +1397,16 @@ ${flexTaskLines}
                 <strong>Q5/6:</strong> Evaluative Essay on Jenner Smallpox Vaccine c1700–c1900
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 9–11
+                p. 8–9
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1354,7 +1415,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Difference (Smallpox Prevention Methods)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 11
+                p. 9
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1370,19 +1431,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Hospital Care &amp; Nursing Improved c1850–c1900
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 13–15
+                p. 11–12
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1391,7 +1449,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Difference (Hospital Care: Medieval vs c1900)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 15
+                p. 12
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1407,19 +1465,16 @@ ${flexTaskLines}
                 <strong>Q4:</strong> Explain Why Surgery Became Safer c1840–c1900
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 17–19
+                p. 14–15
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1428,7 +1483,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Similarity in Surgery (Medieval vs Pre-1846)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 19
+                p. 15
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1444,19 +1499,16 @@ ${flexTaskLines}
                 <strong>Q5/6:</strong> Evaluative Essay on John Snow &amp; 1875 Public Health Act
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 21–23
+                p. 17–18
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
               </td>
-              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
-                  Marking Feedback &bull; Targets:
-                </div>
-                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
-                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: middle; font-size: 8pt; background: #ffffff;">
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 20.5mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6.8mm;"></div>
                 </div>
               </td>
             </tr>
@@ -1465,7 +1517,7 @@ ${flexTaskLines}
                 <strong>Q3:</strong> Explain One Difference in Public Health Action (1848 vs 1875)
               </td>
               <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                p. 23
+                p. 18
               </td>
               <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
@@ -1481,10 +1533,10 @@ ${flexTaskLines}
                 Key Topic 3 Cumulative Examination Assessment Portfolio (10 Tasks)
               </td>
               <td style="padding: 12px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; color: #0f284e;">
-                p. 4–23
+                p. 4–18
               </td>
               <td style="padding: 12px 6px; text-align: center; font-size: 11pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 96
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 88
               </td>
               <td style="padding: 12px 10px; font-weight: 800; font-size: 8.5pt; background: #f0f4f9; color: #0f284e;">
                 <div style="display: flex; justify-content: space-between; align-items: baseline;">
@@ -1498,7 +1550,7 @@ ${flexTaskLines}
       </div>
 
       <!-- 5 Verified Micro-QR Codes with Dual QR (Lesson + Quiz) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 5px 6px; background: #f0f4f9;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 6px; background: #f0f4f9;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
@@ -1560,12 +1612,9 @@ ${flexTaskLines}
         </div>
       </div>
 
-      ${renderFooterStrip(24, 'Sanitation, antiseptics, and vaccinations conquered disease; retrieval practice will conquer your GCSE exam.', 24)}
+      ${renderFooterStrip(20, 'Sanitation, antiseptics, and vaccinations conquered disease; retrieval practice will conquer your GCSE exam.', 20)}
     </div>
   </div>
-`;
-
-  html += `
 </body>
 </html>
 `;
@@ -1573,23 +1622,74 @@ ${flexTaskLines}
   return html;
 }
 
-if (require.main === module) {
+async function main() {
+  console.log(
+    'Rendering 20-Page A4 Pupil Workbook (Dual QR & Assessment Portfolio): Key Topic 3: 18th & 19th Century Britain (c1700–c1900)...',
+  );
+  const puppeteer = require('puppeteer');
   const customHtml = build18th19thTwoPageWorkbook({}, {});
-  const unitPath = path.resolve(
-    __dirname,
-    '../units/edexcel_medicine/pupil_workbook_18th_19th.html',
-  );
-  const pubPath = path.resolve(
-    __dirname,
-    '../public/units/edexcel_medicine/pupil_workbook_18th_19th.html',
-  );
-  fs.writeFileSync(unitPath, customHtml, 'utf8');
-  fs.writeFileSync(pubPath, customHtml, 'utf8');
-  console.log('Successfully generated pupil_workbook_18th_19th.html to:');
-  console.log(' -', unitPath);
-  console.log(' -', pubPath);
+
+  const unitDir = path.resolve(__dirname, '../units/edexcel_medicine');
+  const publicUnitDir = path.resolve(__dirname, '../public/units/edexcel_medicine');
+  const pdfsDir = path.resolve(__dirname, '../public/pdfs');
+
+  const unitHtmlPath = path.join(unitDir, 'pupil_workbook_18th_19th.html');
+  const pubHtmlPath = path.join(publicUnitDir, 'pupil_workbook_18th_19th.html');
+  const outPdfPath = path.join(pdfsDir, 'edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf');
+  const pubPdfCopy = path.join(publicUnitDir, 'pupil_workbook_18th_19th.pdf');
+
+  fs.writeFileSync(unitHtmlPath, customHtml, 'utf8');
+  fs.writeFileSync(pubHtmlPath, customHtml, 'utf8');
+  console.log(`[OK] HTML written to: ${pubHtmlPath}`);
+
+  console.log('Launching Puppeteer to generate high-resolution print PDF...');
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
+  const browser = await puppeteer.launch({
+    headless: 'new',
+    executablePath: chromePath,
+    args: ['--allow-file-access-from-files', '--disable-web-security', '--no-sandbox'],
+  });
+
+  const page = await browser.newPage();
+  await page.setViewport({ width: 794, height: 1123, deviceScaleFactor: 2 });
+  await page.setContent(customHtml, { waitUntil: 'networkidle0', timeout: 60000 });
+
+  await page.pdf({
+    path: outPdfPath,
+    format: 'A4',
+    printBackground: true,
+    margin: {
+      top: '0mm',
+      bottom: '0mm',
+      left: '0mm',
+      right: '0mm',
+    },
+  });
+
+  await browser.close();
+  console.log(`[OK] PDF successfully compiled: ${outPdfPath}`);
+
+  fs.copyFileSync(outPdfPath, pubPdfCopy);
+  console.log(`[OK] PDF copy written: ${pubPdfCopy}`);
+
+  const outPdfStandardPath = path.join(pdfsDir, 'edexcel_medicine_pupil_workbook_18th_19th.pdf');
+  fs.copyFileSync(outPdfPath, outPdfStandardPath);
+  console.log(`[OK] PDF standard copy written: ${outPdfStandardPath}`);
+}
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error('❌ Error compiling 18th-19th Century workbook:', err);
+    process.exit(1);
+  });
 }
 
 module.exports = {
   build18th19thTwoPageWorkbook,
+  eighteenthNineteenthConfigs,
 };
