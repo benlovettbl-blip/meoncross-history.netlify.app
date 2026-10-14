@@ -260,7 +260,7 @@ const eighteenthNineteenthConfigs = [
     rightPageQuip:
       '<em>Florence Nightingale proved that clean sheets, fresh soup, and opening windows were deadlier to infection than any Victorian medicine.</em>',
     linedLeftQuip:
-      '<em>Nightingale transformed nursing from Dickensian drunken disrepute into a disciplined, respected medical profession.</em>',
+      '<em>Nightingale transformed nursing from low-status domestic drudgery into a disciplined, respected medical profession.</em>',
     rightPageLinedQuip:
       '<em>Explain how architectural design (pavilion wards) worked in tandem with trained matrons to drive down hospital mortality.</em>',
     stages: [

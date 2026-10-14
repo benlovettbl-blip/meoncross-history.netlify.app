@@ -28959,12 +28959,12 @@
                 {
                   "time": "00–10m",
                   "label": "Spaced Retrieval & Do Now",
-                  "instruction": "Complete retrieval on Medieval care not cure, Renaissance hospitals, and Jenner. Inspect Source A (Nightingale photograph)."
+                  "instruction": "Complete retrieval on Medieval care not cure, Renaissance hospitals, and Jenner. Inspect Source A (Pre-Nightingale hospital conditions reconstruction)."
                 },
                 {
                   "time": "10–30m",
                   "label": "Modelled Shared Reading & Discussion",
-                  "instruction": "Read Acts 1 & 2 ([1.1] to [2.3]). Contrast the Victorian hospital \"death house\" and Dickens’s Mrs Gamp with Nightingale’s reforms at Scutari and Mary Seacole’s battlefield nursing."
+                  "instruction": "Read Acts 1 & 2 ([1.1] to [2.3]). Contrast the Victorian hospital \"death house\" and untrained pre-reform nurses with Nightingale’s reforms at Scutari (Source B) and Mary Seacole’s battlefield nursing (Source D)."
                 },
                 {
                   "time": "30–45m",
@@ -28974,7 +28974,7 @@
                 {
                   "time": "45–50m",
                   "label": "Formative Check & Plenary",
-                  "instruction": "Teacher poses Hinge Question on Source A. Pupils log Scutari details on Living Timeline."
+                  "instruction": "Teacher poses Hinge Question on Sources A and B. Pupils log Scutari details on Living Timeline."
                 }
               ]
             },
@@ -28984,7 +28984,7 @@
                 {
                   "time": "00–10m",
                   "label": "Visual Forensic Inspection",
-                  "instruction": "Inspect Source B (Nightingale’s Coxcomb) and Source C (Mary Seacole). Discuss how data visualization swayed Queen Victoria and Parliament."
+                  "instruction": "Inspect Source C (Nightingale’s Coxcomb) and Source D (Mary Seacole). Discuss how data visualization swayed Queen Victoria and Parliament."
                 },
                 {
                   "time": "10–25m",
@@ -29025,8 +29025,10 @@
               }
             ],
             "source_context": {
-              "Source A": "Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment. **Hinge Question:** Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?",
-              "Source B": "Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus. **Hinge Question:** Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?"
+              "Source A": "Prior to 1854, military and civilian hospital wards lacked sanitation, clean bedding, and trained nursing staff. Soldiers suffering from typhus, cholera, and frostbite lay on blood-soaked straw pallets on bare stone floors. Hospital gangrene and sepsis spread rapidly from unwashed hands and shared linens, making hospital admission more fatal than the battlefield. **Hinge Question:** Why was entering a military hospital during the Crimean War in 1854 once more likely to kill a sick or wounded soldier than to cure him?",
+              "Source B": "Commissioned during the Crimean War and dedicated to Queen Victoria, William Simpson’s celebrated 1856 lithograph depicted the dramatic transformation achieved by Nightingale’s sanitary regime: spacious whitewashed wards, iron heating stoves, clean sheets, and disciplined nursing care. **Hinge Question:** How does this idealized depiction of the reformed hospital ward contrast with the squalor and overflowing sewage that Nightingale originally discovered upon her arrival in November 1854?",
+              "Source C": "Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus. **Hinge Question:** Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?",
+              "Source D": "Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment. **Hinge Question:** Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?"
             }
           },
           "do_now": [
@@ -29063,8 +29065,8 @@
               "a": "Hospital gangrene / sepsis (erysipelas)"
             },
             {
-              "q": "What Charles Dickens character typified the drunken, untrained, neglectful pre-reform nurse?",
-              "a": "Sairey Gamp (from Martin Chuzzlewit)"
+              "q": "What was the general reputation and social status of hospital nurses in Britain prior to the 1850s?",
+              "a": "Untrained, poorly paid, and widely regarded as uneducated, neglectful domestic drudges"
             },
             {
               "q": "What was the primary function of medieval monastic hospitals in England?",
@@ -29102,31 +29104,44 @@
           "narrative_blocks": [
             {
               "title": "Act 1: Context & Catalyst (The Victorian Death Houses & The Crimean Scandal)",
-              "text": "<span class=\"para-ref\">[1.1]</span> In the first half of the nineteenth century, British hospitals were squalid, dangerous institutions. Rather than centers of cure, municipal voluntary hospitals and poor law infirmaries were regarded by the working classes as \"death houses\" of last resort. Wards were cramped, airless, and dark; beds were pushed tightly together with three or four patients sharing a single straw mattress contaminated with blood, feces, and vomit. Surgeons operated in filthy, blood-stiffened frock coats without washing hands or sterilizing equipment, moving directly from post-mortem autopsies to open surgical wounds. Consequently, patients who survived operations almost universally died from post-operative infections known collectively as \"hospitalism\": lethal hospital gangrene, erysipelas, septicaemia, and pyaemia.<br><br><span class=\"para-ref\">[1.2]</span> The standard of nursing was equally disgraceful. Nurses were completely untrained, illiterate, poorly paid, and widely regarded as drunken, disreputable domestic servants—immortalized in Charles Dickens’s 1843 novel *Martin Chuzzlewit* through the grotesque character of Mrs Sarah Gamp, who neglected patients while drinking gin. In 1854, Britain entered the Crimean War against Russia. Sensational eyewitness dispatches published in *The Times* by William Howard Russell ignited public fury in London: British soldiers were dying in thousands not on the battlefield, but from rampant cholera, dysentery, and frostbite inside military hospitals that lacked bandages, food, soap, or clean water."
+              "text": "<span class=\"para-ref\">[1.1]</span> In the first half of the nineteenth century, British hospitals were squalid, dangerous institutions. Rather than centers of cure, municipal voluntary hospitals and poor law infirmaries were regarded by the working classes as \"death houses\" of last resort. Wards were cramped, airless, and dark; beds were pushed tightly together with three or four patients sharing a single straw mattress contaminated with blood, feces, and vomit (<span class=\"archival-meta-tag\">Source A</span>). Surgeons operated in filthy, blood-stiffened frock coats without washing hands or sterilizing equipment, moving directly from post-mortem autopsies to open surgical wounds. Consequently, patients who survived operations almost universally died from post-operative infections known collectively as \"hospitalism\": lethal hospital gangrene, erysipelas, septicaemia, and pyaemia.<br><br><span class=\"para-ref\">[1.2]</span> The standard of nursing was equally disgraceful. Nurses were completely untrained, illiterate, poorly paid, and widely regarded as drunken, disreputable domestic servants who neglected vulnerable patients. Middle-class women refused to enter the trade, leaving ward care to uneducated drudges who lacked any basic understanding of hygiene, dressing wounds, or infection control. In 1854, Britain entered the Crimean War against Russia. Sensational eyewitness dispatches published in *The Times* by William Howard Russell ignited public fury in London: British soldiers were dying in thousands not on the battlefield, but from rampant cholera, dysentery, and frostbite inside military hospitals that lacked bandages, food, soap, or clean water.",
+              "source": {
+                "id": "source_a_pre_nightingale_hospital",
+                "letter": "A",
+                "title": "Source A: Museum Reconstruction & Historical Plaque: Pre-Nightingale Hospital Conditions",
+                "src": "/images/pre_nightingale_hospital_conditions.jpg",
+                "source": "/images/pre_nightingale_hospital_conditions.jpg",
+                "image": "/images/pre_nightingale_hospital_conditions.jpg",
+                "caption": "Museum reconstruction displaying the blood-stained canvas and straw pallet used by sick and wounded soldiers prior to Florence Nightingale’s reforms, alongside an archival print showing doctors attending casualties packed onto filthy floors in the Crimean War.",
+                "provenance": "Exhibition installation and historical interpretive display, Florence Nightingale Museum / Army Medical Services Museum.",
+                "context": "Prior to 1854, military and civilian hospital wards lacked sanitation, clean bedding, and trained nursing staff. Soldiers suffering from typhus, cholera, and frostbite lay on blood-soaked straw pallets on bare stone floors. Hospital gangrene and sepsis spread rapidly from unwashed hands and shared linens, making hospital admission more fatal than the battlefield.",
+                "question": "Why was entering a military hospital during the Crimean War in 1854 once more likely to kill a sick or wounded soldier than to cure him?",
+                "hinge_question": "Why was entering a military hospital during the Crimean War in 1854 once more likely to kill a sick or wounded soldier than to cure him?"
+              }
             },
             {
               "title": "Act 2: Escalation & Conflict (Scutari & The Battle of Sanitation)",
-              "text": "<span class=\"para-ref\">[2.1]</span> In response to the Crimean crisis, Secretary at War Sidney Herbert commissioned Florence Nightingale—an educated, upper-class woman who had studied nursing in Germany—to lead an official mission of thirty-eight volunteer nurses to the British army base hospital at Scutari near Constantinople in November 1854. What Nightingale discovered was an administrative nightmare: the massive Barrack Hospital was constructed directly over a gigantic, blocked cesspool; raw sewage backed up onto the floor; drinking water was contaminated; and hundreds of soldiers lay in lice-infested uniforms on bare flagstones alongside rotting carcasses of dead horses.<br><br><span class=\"para-ref\">[2.2]</span> Nightingale encountered fierce hostility from military doctors, who resented female civilian interference in army discipline. Undaunted, Nightingale used her personal fortune and Times relief funds to purchase clean shirts, bandages, and scrubbing brushes. She organized military-style sanitary discipline: cleaning wards with boiling water, operating kitchens to serve nourishing broths, washing soldiers’ clothes in separate laundry facilities, and opening windows for fresh air. In March 1855, after Nightingale lobbied Parliament, a government Sanitary Commission arrived in Scutari and flushed the underground sewers. Within months, the hospital mortality rate plummeted spectacularly from over 42% to just 2%.<br><br><span class=\"para-ref\">[2.3]</span> Meanwhile, Mary Seacole (<span class=\"archival-meta-tag\">Source A</span>), a mixed-race Jamaican-Scottish doctress experienced in treating cholera and yellow fever in the Caribbean, traveled to London to volunteer for Nightingale’s team. Rejected by the War Office and Nightingale’s associates due to racial prejudice, Seacole refused to yield. Financing her own voyage to the Crimea in 1855, Seacole opened the \"British Hotel\" near Balaclava, offering hot food, shelter, and medical treatment directly to troops on the front lines. Seacole rode into battlefields under heavy Russian gunfire to dress bullet wounds and treat dysentery with herbal remedies, earning the deep devotion of British troops as \"Mother Seacole\".",
+              "text": "<span class=\"para-ref\">[2.1]</span> In response to the Crimean crisis, Secretary at War Sidney Herbert commissioned Florence Nightingale—an educated, upper-class woman who had studied nursing in Germany—to lead an official mission of thirty-eight volunteer nurses to the British army base hospital at Scutari near Constantinople in November 1854. What Nightingale discovered was an administrative nightmare: the massive Barrack Hospital was constructed directly over a gigantic, blocked cesspool; raw sewage backed up onto the floor; drinking water was contaminated; and hundreds of soldiers lay in lice-infested uniforms on bare flagstones alongside rotting carcasses of dead horses.<br><br><span class=\"para-ref\">[2.2]</span> Nightingale encountered fierce hostility from military doctors, who resented female civilian interference in army discipline. Undaunted, Nightingale used her personal fortune and Times relief funds to purchase clean shirts, bandages, and scrubbing brushes. She organized military-style sanitary discipline: cleaning wards with boiling water, operating kitchens to serve nourishing broths, washing soldiers’ clothes in separate laundry facilities, and opening windows for fresh air (<span class=\"archival-meta-tag\">Source B</span>). In March 1855, after Nightingale lobbied Parliament, a government Sanitary Commission arrived in Scutari and flushed the underground sewers. Within months, the hospital mortality rate plummeted spectacularly from over 42% to just 2%.<br><br><span class=\"para-ref\">[2.3]</span> Meanwhile, Mary Seacole, a mixed-race Jamaican-Scottish doctress experienced in treating cholera and yellow fever in the Caribbean, traveled to London to volunteer for Nightingale’s team. Rejected by the War Office and Nightingale’s associates due to racial prejudice, Seacole refused to yield. Financing her own voyage to the Crimea in 1855, Seacole opened the \"British Hotel\" near Balaclava, offering hot food, shelter, and medical treatment directly to troops on the front lines. Seacole rode into battlefields under heavy Russian gunfire to dress bullet wounds and treat dysentery with herbal remedies, earning the deep devotion of British troops as \"Mother Seacole\".",
               "source": {
-                "id": "source_a_mary_seacole",
-                "letter": "A",
-                "title": "Source A: Studio Portrait of Mary Seacole wearing Crimean Campaign Medals (c.1873)",
-                "src": "/images/mary_seacole.jpg",
-                "source": "/images/mary_seacole.jpg",
-                "image": "/images/mary_seacole.jpg",
-                "caption": "Carte-de-visite portrait of Jamaican doctress Mary Seacole wearing four military medals awarded for her frontline nursing during the Crimean War.",
-                "provenance": "Carte-de-visite photograph by Maull & Company, London, c. 1873. National Portrait Gallery, London (NPG x45330).",
-                "context": "Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment.",
-                "question": "Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?",
-                "hinge_question": "Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?"
+                "id": "source_b_scutari_hospital_ward",
+                "letter": "B",
+                "title": "Source B: Florence Nightingale in the Barrack Hospital at Scutari (William Simpson, 1856)",
+                "src": "/images/nightingale_scutari_hospital_ward.jpg",
+                "source": "/images/nightingale_scutari_hospital_ward.jpg",
+                "image": "/images/nightingale_scutari_hospital_ward.jpg",
+                "caption": "Colour lithograph by war artist William Simpson showing Florence Nightingale and her nurses attending wounded Crimean soldiers in one of the reformed, whitewashed wards at Scutari Barrack Hospital, with spaced beds, clean linen, and stove ventilation.",
+                "provenance": "The Seat of War in the East, lithograph by William Simpson, printed by Day & Son, published by Paul & Dominic Colnaghi, London, 1856. National Army Museum, London.",
+                "context": "Commissioned during the Crimean War and dedicated to Queen Victoria, William Simpson’s celebrated lithograph depicted the dramatic transformation achieved by Nightingale’s sanitary regime: spacious wards, iron heating stoves, clean sheets, and disciplined nursing care.",
+                "question": "How does this idealized depiction of the reformed hospital ward contrast with the squalor and overflowing sewage that Nightingale originally discovered upon her arrival in November 1854?",
+                "hinge_question": "How does this idealized depiction of the reformed hospital ward contrast with the squalor and overflowing sewage that Nightingale originally discovered upon her arrival in November 1854?"
               }
             },
             {
               "title": "Act 3: Forensic Evidence (The Coxcomb Diagram & The Pavilion Plan)",
               "source": {
-                "id": "source_b_nightingale_coxcomb",
-                "letter": "B",
-                "title": "Source B: Florence Nightingale’s ‘Coxcomb’ Mortality Diagram (1858)",
+                "id": "source_c_nightingale_coxcomb",
+                "letter": "C",
+                "title": "Source C: Florence Nightingale’s ‘Coxcomb’ Mortality Diagram (1858)",
                 "src": "/images/nightingale_coxcomb.jpg",
                 "source": "/images/nightingale_coxcomb.jpg",
                 "image": "/images/nightingale_coxcomb.jpg",
@@ -29136,11 +29151,24 @@
                 "question": "Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?",
                 "hinge_question": "Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?"
               },
-              "text": "<span class=\"para-ref\">[3.1]</span> Upon returning to England in 1856 as a national heroine, Nightingale refused romantic celebrity and launched a ruthless political campaign to reform the British army and civilian hospitals. Realizing that dense statistical tables were ignored by politicians, Nightingale invented the <em>Polar Area Diagram</em> (the famous \"Coxcomb\", <span class=\"archival-meta-tag\">Source B</span>). Published in her 1858 Royal Commission report, the chart used expanding concentric wedges to demonstrate visually that the vast majority of military deaths (large blue wedges) were caused by preventable zymotic diseases—cholera, typhus, and dysentery—resulting from bad drainage, while combat wounds (red wedges) accounted for only a fraction of casualties.<br><br><span class=\"para-ref\">[3.2]</span> Nightingale codified her architectural and medical principles in two influential bestsellers: <em>Notes on Nursing</em> (1859) and <em>Notes on Hospitals</em> (1863). She advocated the <em>Pavilion Hospital Plan</em>: hospitals were to be constructed as separate detached wings (pavilions) connected by covered walkways. Wards had to be long, narrow, and high-ceilinged, lined with large facing windows ensuring constant cross-ventilation to dilute foul miasma. Walls were finished with wipeable glazed ceramic tiles, floors were polished hardwood rather than absorbent timber, and beds were spaced strictly eight feet apart to prevent airborne contamination. When London’s St Thomas’ Hospital was rebuilt on the Thames in 1871, it was constructed strictly according to Nightingale’s pavilion design."
+              "text": "<span class=\"para-ref\">[3.1]</span> Upon returning to England in 1856 as a national heroine, Nightingale refused romantic celebrity and launched a ruthless political campaign to reform the British army and civilian hospitals. Realizing that dense statistical tables were ignored by politicians, Nightingale invented the <em>Polar Area Diagram</em> (the famous \"Coxcomb\", <span class=\"archival-meta-tag\">Source C</span>). Published in her 1858 Royal Commission report, the chart used expanding concentric wedges to demonstrate visually that the vast majority of military deaths (large blue wedges) were caused by preventable zymotic diseases—cholera, typhus, and dysentery—resulting from bad drainage, while combat wounds (red wedges) accounted for only a fraction of casualties.<br><br><span class=\"para-ref\">[3.2]</span> Nightingale codified her architectural and medical principles in two influential bestsellers: <em>Notes on Nursing</em> (1859) and <em>Notes on Hospitals</em> (1863). She advocated the <em>Pavilion Hospital Plan</em>: hospitals were to be constructed as separate detached wings (pavilions) connected by covered walkways. Wards had to be long, narrow, and high-ceilinged, lined with large facing windows ensuring constant cross-ventilation to dilute foul miasma. Walls were finished with wipeable glazed ceramic tiles, floors were polished hardwood rather than absorbent timber, and beds were spaced strictly eight feet apart to prevent airborne contamination. When London’s St Thomas’ Hospital was rebuilt on the Thames in 1871, it was constructed strictly according to Nightingale’s pavilion design."
             },
             {
               "title": "Act 4: The Historical Verdict & Historiographical Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> In 1860, using £44,000 raised by public subscription via the Nightingale Fund, she established the <em>Nightingale Training School for Nurses</em> at St Thomas’ Hospital in London. Nightingale transformed nursing from a reviled menial chore into an elite, respected, female-led medical profession. Candidates were subjected to rigorous moral vetting, received systematic scientific training in anatomy, hygiene, and patient observation, and wore clean, professional uniforms. Nightingale matrons were soon recruited to superintend major voluntary hospitals across Britain and the British Empire, spreading uniform sanitary standards.<br><br><span class=\"para-ref\">[4.2]</span> Historiographically, historians note a fascinating medical paradox: Florence Nightingale achieved her revolutionary transformation of hospital survival while remaining a staunch believer in *miasma theory* and fiercely rejecting Louis Pasteur’s Germ Theory. Nightingale insisted throughout her life that \"there are no specific diseases; disease is a reparative effort of nature against filth and foul air.\" Yet, because her sanitary crusade was ruthlessly dedicated to fresh air, scrubbed floors, boiled linens, clean drainage, and spacious wards, she unwittingly eradicated the exact bacterial environments where pathogens bred. Consequently, Nightingale’s empirical obsession with cleanliness saved hundreds of thousands of lives long before British doctors accepted the reality of germs."
+              "source": {
+                "id": "source_d_mary_seacole",
+                "letter": "D",
+                "title": "Source D: Studio Portrait of Mary Seacole wearing Crimean Campaign Medals (c.1873)",
+                "src": "/images/mary_seacole.jpg",
+                "source": "/images/mary_seacole.jpg",
+                "image": "/images/mary_seacole.jpg",
+                "caption": "Carte-de-visite portrait of Jamaican doctress Mary Seacole wearing four military medals awarded for her frontline nursing during the Crimean War.",
+                "provenance": "Carte-de-visite photograph by Maull & Company, London, c. 1873. National Portrait Gallery, London (NPG x45330).",
+                "context": "Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment.",
+                "question": "Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?",
+                "hinge_question": "Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?"
+              },
+              "text": "<span class=\"para-ref\">[4.1]</span> In 1860, using £44,000 raised by public subscription via the Nightingale Fund, she established the <em>Nightingale Training School for Nurses</em> at St Thomas’ Hospital in London. Nightingale transformed nursing from a reviled menial chore into an elite, respected, female-led medical profession. Candidates were subjected to rigorous moral vetting, received systematic scientific training in anatomy, hygiene, and patient observation, and wore clean, professional uniforms. Nightingale matrons were soon recruited to superintend major voluntary hospitals across Britain and the British Empire, spreading uniform sanitary standards.<br><br><span class=\"para-ref\">[4.2]</span> Historiographically, modern historians assess both Nightingale’s sanitary revolution and the frontline contribution of Mary Seacole (<span class=\"archival-meta-tag\">Source D</span>). While Nightingale achieved systemic institutional change through statistics and hospital architecture despite rejecting Germ Theory in favor of miasma, Seacole delivered essential battlefield trauma care and herbal remedies directly under fire. Furthermore, because Nightingale’s sanitary crusade was ruthlessly dedicated to fresh air, scrubbed floors, boiled linens, clean drainage, and spacious wards, she unwittingly eradicated the exact bacterial environments where pathogens bred, saving countless lives long before British medicine accepted the germ theory of disease."
             }
           ],
           "tasks": [
@@ -29210,7 +29238,7 @@
               },
               {
                 "para": "3. PROFESSIONAL NURSING & TRAINING (1860)",
-                "focus": "Nightingale School at St Thomas’, scientific training, moral discipline, replacing Dickensian \"Mrs Gamp\" with elite professionals."
+                "focus": "Nightingale School at St Thomas’, scientific training, moral discipline, replacing untrained domestic drudges with elite professionals."
               }
             ],
             "causal_connectives": [
@@ -29220,7 +29248,7 @@
               "Consequently, civilian hospitals transformed from...",
               "This directly resulted in..."
             ],
-            "model_answer": "One major reason hospital care and nursing improved was Florence Nightingale's work during the Crimean War (1854–1856). When Nightingale arrived at Scutari Barrack Hospital in 1854, she found wounded soldiers lying in filthy uniforms on beds above blocked sewers, with dirt, lice, and gangrene causing a 42% death rate. Nightingale introduced strict hygiene routines: scrubbing wards with boiling water, providing clean linen and bandages, improving ventilation, and serving nutritious food. When the government Sanitary Commission flushed the sewers, the death rate dropped to just 2%. Nightingale proved to the government and the public that high hospital death rates were caused by filth and poor nursing rather than being unavoidable. Therefore, Nightingale improved hospital care because her work in the Crimea proved that clean wards and strict hygiene directly saved patients' lives.<br><br>Another reason for improvement was the redesign of hospital buildings using Nightingale's 'pavilion plan'. In her books *Notes on Nursing* (1859) and *Notes on Hospitals* (1863), Nightingale used statistics to show that dark, cramped hospital wards trapped foul air and spread disease. She advocated the pavilion plan, where hospitals were built with separate wings (pavilions) connected by airy corridors. Each ward had high ceilings, large windows on opposite sides for continuous cross-ventilation, wipeable tiled walls, and beds placed at least eight feet apart. Hospitals like St Thomas’ Hospital in London were rebuilt to this design in 1871, stopping infections from passing from bed to bed. Therefore, the pavilion plan improved hospital standards because modern hospital design physically prevented the build-up and spread of deadly infections between patients.<br><br>Finally, nursing improved dramatically because it was transformed from low-status domestic work into a respected, trained profession. Before the 1860s, nurses were often untrained, illiterate, and stereotyped as drunken and uncaring like Charles Dickens' fictional character Mrs Gamp. In 1860, Nightingale set up the Nightingale School for Nurses at St Thomas' Hospital using £44,000 of public donations. Student nurses underwent rigorous training in hygiene, anatomy, and patient care, and were held to strict moral and professional standards. Matrons trained at the school were sent out to run hospitals across Britain and the Empire. Therefore, the standard of nursing improved because formal training turned nursing into a skilled, disciplined profession that ensured high standards of patient care."
+            "model_answer": "One major reason hospital care and nursing improved was Florence Nightingale's work during the Crimean War (1854–1856). When Nightingale arrived at Scutari Barrack Hospital in 1854, she found wounded soldiers lying in filthy uniforms on beds above blocked sewers, with dirt, lice, and gangrene causing a 42% death rate. Nightingale introduced strict hygiene routines: scrubbing wards with boiling water, providing clean linen and bandages, improving ventilation, and serving nutritious food. When the government Sanitary Commission flushed the sewers, the death rate dropped to just 2%. Nightingale proved to the government and the public that high hospital death rates were caused by filth and poor nursing rather than being unavoidable. Therefore, Nightingale improved hospital care because her work in the Crimea proved that clean wards and strict hygiene directly saved patients' lives.<br><br>Another reason for improvement was the redesign of hospital buildings using Nightingale's 'pavilion plan'. In her books *Notes on Nursing* (1859) and *Notes on Hospitals* (1863), Nightingale used statistics to show that dark, cramped hospital wards trapped foul air and spread disease. She advocated the pavilion plan, where hospitals were built with separate wings (pavilions) connected by airy corridors. Each ward had high ceilings, large windows on opposite sides for continuous cross-ventilation, wipeable tiled walls, and beds placed at least eight feet apart. Hospitals like St Thomas’ Hospital in London were rebuilt to this design in 1871, stopping infections from passing from bed to bed. Therefore, the pavilion plan improved hospital standards because modern hospital design physically prevented the build-up and spread of deadly infections between patients.<br><br>Finally, nursing improved dramatically because it was transformed from low-status domestic work into a respected, trained profession. Before the 1860s, nurses were often untrained, illiterate, and widely regarded as drunken, neglectful, and disreputable domestic servants. In 1860, Nightingale set up the Nightingale School for Nurses at St Thomas' Hospital using £44,000 of public donations. Student nurses underwent rigorous training in hygiene, anatomy, and patient care, and were held to strict moral and professional standards. Matrons trained at the school were sent out to run hospitals across Britain and the Empire. Therefore, the standard of nursing improved because formal training turned nursing into a skilled, disciplined profession that ensured high standards of patient care."
           },
           "learning_objectives": [
             "Detail the conditions at Scutari and how Nightingale and the Sanitary Commission reduced mortality.",
@@ -29295,15 +29323,15 @@
               "explanation": "Nightingale used expanding concentric colored wedges to prove visually that zymotic diseases (blue wedges) dwarfed battlefield casualties (red wedges)."
             },
             {
-              "question": "Which fictional Charles Dickens character popularized the pre-1860 stereotype of nurses as drunken, negligent, and dishonest domestic drudges?",
+              "question": "What was the public reputation and social status of hospital nurses in Britain prior to Florence Nightingale’s reforms?",
               "options": [
-                "Nancy in Oliver Twist.",
-                "Mrs Sarah Gamp in Martin Chuzzlewit.",
-                "Estella in Great Expectations.",
-                "Miss Havisham."
+                "Untrained, poorly paid domestic workers who were often viewed as drunken and neglectful.",
+                "Highly paid university graduates trained in scientific surgery and anatomy.",
+                "Specialist military officers commissioned directly by the War Office.",
+                "Licensed apothecaries who held formal surgical diplomas."
               ],
-              "answer": "Mrs Sarah Gamp in Martin Chuzzlewit.",
-              "explanation": "Mrs Gamp typified the public perception of Victorian nurses before Nightingale’s professional training school elevated nursing into a respected career."
+              "answer": "Untrained, poorly paid domestic workers who were often viewed as drunken and neglectful.",
+              "explanation": "Before the 1860s, nursing was regarded as menial, low-status domestic work carried out by uneducated drudges without formal training in hygiene."
             },
             {
               "question": "Why did Nightingale mandate that hospital walls be finished with glazed ceramic tiles and floors with polished hardwood?",
@@ -29358,7 +29386,7 @@
             },
             {
               "q": "What was the significance of the Nightingale School at St Thomas’ (1860)?",
-              "a": "It established nursing as an elite, scientifically trained, and respected profession, replacing the uneducated \"Mrs Gamp\" stereotype."
+              "a": "It established nursing as an elite, scientifically trained, and respected profession, transforming nursing from menial domestic work into a disciplined medical career."
             }
           ],
           "draw_tasks": [
@@ -29369,21 +29397,33 @@
           ],
           "sources": [
             {
-              "id": "source_a_mary_seacole",
+              "id": "source_a_pre_nightingale_hospital",
               "letter": "A",
-              "title": "Source A: Studio Portrait of Mary Seacole wearing Crimean Campaign Medals (c.1873)",
-              "src": "/images/mary_seacole.jpg",
-              "source": "/images/mary_seacole.jpg",
-              "image": "/images/mary_seacole.jpg",
-              "caption": "Carte-de-visite portrait of Jamaican doctress Mary Seacole wearing four military medals awarded for her frontline nursing during the Crimean War.",
-              "provenance": "Carte-de-visite photograph by Maull & Company, London, c. 1873. National Portrait Gallery, London (NPG x45330).",
-              "context": "Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment.",
-              "hinge_question": "Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?"
+              "title": "Source A: Museum Reconstruction & Historical Plaque: Pre-Nightingale Hospital Conditions",
+              "src": "/images/pre_nightingale_hospital_conditions.jpg",
+              "source": "/images/pre_nightingale_hospital_conditions.jpg",
+              "image": "/images/pre_nightingale_hospital_conditions.jpg",
+              "caption": "Museum reconstruction displaying the blood-stained canvas and straw pallet used by sick and wounded soldiers prior to Florence Nightingale’s reforms, alongside an archival print showing doctors attending casualties packed onto filthy floors in the Crimean War.",
+              "provenance": "Exhibition installation and historical interpretive display, Florence Nightingale Museum / Army Medical Services Museum.",
+              "context": "Prior to 1854, military and civilian hospital wards lacked sanitation, clean bedding, and trained nursing staff. Soldiers suffering from typhus, cholera, and frostbite lay on blood-soaked straw pallets on bare stone floors. Hospital gangrene and sepsis spread rapidly from unwashed hands and shared linens, making hospital admission more fatal than the battlefield.",
+              "hinge_question": "Why was entering a military hospital during the Crimean War in 1854 once more likely to kill a sick or wounded soldier than to cure him?"
             },
             {
-              "id": "source_b_nightingale_coxcomb",
+              "id": "source_b_scutari_hospital_ward",
               "letter": "B",
-              "title": "Source B: Florence Nightingale’s ‘Coxcomb’ Mortality Diagram (1858)",
+              "title": "Source B: Florence Nightingale in the Barrack Hospital at Scutari (William Simpson, 1856)",
+              "src": "/images/nightingale_scutari_hospital_ward.jpg",
+              "source": "/images/nightingale_scutari_hospital_ward.jpg",
+              "image": "/images/nightingale_scutari_hospital_ward.jpg",
+              "caption": "Colour lithograph by war artist William Simpson showing Florence Nightingale and her nurses attending wounded Crimean soldiers in one of the reformed, whitewashed wards at Scutari Barrack Hospital, with spaced beds, clean linen, and stove ventilation.",
+              "provenance": "The Seat of War in the East, lithograph by William Simpson, printed by Day & Son, published by Paul & Dominic Colnaghi, London, 1856. National Army Museum, London.",
+              "context": "Commissioned during the Crimean War and dedicated to Queen Victoria, William Simpson’s celebrated lithograph depicted the dramatic transformation achieved by Nightingale’s sanitary regime: spacious wards, iron heating stoves, clean sheets, and disciplined nursing care.",
+              "hinge_question": "How does this idealized depiction of the reformed hospital ward contrast with the squalor and overflowing sewage that Nightingale originally discovered upon her arrival in November 1854?"
+            },
+            {
+              "id": "source_c_nightingale_coxcomb",
+              "letter": "C",
+              "title": "Source C: Florence Nightingale’s ‘Coxcomb’ Mortality Diagram (1858)",
               "src": "/images/nightingale_coxcomb.jpg",
               "source": "/images/nightingale_coxcomb.jpg",
               "image": "/images/nightingale_coxcomb.jpg",
@@ -29391,6 +29431,18 @@
               "provenance": "Diagram of the Causes of Mortality in the Army in the East, Royal Commission on the Health of the Army, London, 1858. The National Archives, Kew (Catalogue Ref: WO 33/6) / Wellcome Collection L0032240.",
               "context": "Published in Nightingale’s 1858 Royal Commission report, this chart revolutionized statistical data visualization. Nightingale used math and design as political weapons to prove that army deaths were caused by preventable filth and typhus.",
               "hinge_question": "Florence Nightingale invented the Polar Area Diagram to present military mortality data to Queen Victoria. The large outer blue wedges represent preventable sanitary diseases, while the small inner red wedges represent battlefield combat wounds. How did this visual data convince Parliament that bad hospital sanitation was far more deadly than Russian weapons?"
+            },
+            {
+              "id": "source_d_mary_seacole",
+              "letter": "D",
+              "title": "Source D: Studio Portrait of Mary Seacole wearing Crimean Campaign Medals (c.1873)",
+              "src": "/images/mary_seacole.jpg",
+              "source": "/images/mary_seacole.jpg",
+              "image": "/images/mary_seacole.jpg",
+              "caption": "Carte-de-visite portrait of Jamaican doctress Mary Seacole wearing four military medals awarded for her frontline nursing during the Crimean War.",
+              "provenance": "Carte-de-visite photograph by Maull & Company, London, c. 1873. National Portrait Gallery, London (NPG x45330).",
+              "context": "Mary Seacole funded her own voyage to the Crimea after the War Office rejected her application. Operating the British Hotel at Spring Hill near Sevastopol, Seacole rode directly onto battlefields to treat wounded and dying soldiers with traditional herbal medicines, bandages, and nourishment.",
+              "hinge_question": "Mary Seacole proudly wears four military campaign medals awarded for treating wounded soldiers under fire. How did Seacole’s frontline herbal and battlefield care contrast with Nightingale’s administrative hospital reforms at Scutari?"
             }
           ],
           "video": [
@@ -29838,7 +29890,7 @@
                 "James Phipps.",
                 "James Greenlees.",
                 "Hannah Greener.",
-                "Sarah Gamp."
+                "Mary Seacole."
               ],
               "answer": "Hannah Greener.",
               "explanation": "Hannah Greener’s death in January 1848 was the first recorded fatality from chloroform anaesthesia, sparking furious debates about dangerous dosages."
