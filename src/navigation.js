@@ -435,7 +435,8 @@ export async function switchView(viewName, param = null, skipHistory = false, op
     await loadUnit(targetUnit);
     renderInteractiveQuiz();
   } else if (viewName === 'timeline') {
-    if (param) await loadUnit(param);
+    const targetUnit = param || state.selectedUnitId || window.currentUnitId || 'cme_new';
+    await loadUnit(targetUnit);
     renderTimeline();
   } else if (viewName === 'booklet') {
     if (param && param !== 'all') {
@@ -829,6 +830,25 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     };
   }
 
+  // Living Chronological Timeline (promoted for Middle East and units with timelines)
+  const hasTimeline =
+    unitId === 'cme_new' ||
+    unitId === 'gcse_middle_east_1945_1995' ||
+    Boolean(unitData.timelineEvents && unitData.timelineEvents.length > 0) ||
+    Boolean(unitData.timeline && unitData.timeline.length > 0);
+
+  if (navTimeline && hasTimeline) {
+    navTimeline.style.display = 'flex';
+    navTimeline.dataset.action = 'switch-view';
+    navTimeline.dataset.view = 'timeline';
+    navTimeline.dataset.unit = unitId;
+    navTimeline.innerHTML =
+      '<i class="fa-solid fa-clock-rotate-left" style="color: #10b981;"></i><span>Living Chronology</span>';
+    navTimeline.onclick = () => switchView('timeline', unitId);
+  } else if (navTimeline) {
+    navTimeline.style.display = 'none';
+  }
+
   const hasMasteryRecall = !isTrip;
   if (navInteractive && hasMasteryRecall) {
     navInteractive.style.display = 'flex';
@@ -869,8 +889,7 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     navMockExams.style.display = 'none';
   }
 
-  // Hide secondary / fragmented tabs to preserve clean 3/4-tab hierarchy
-  if (navTimeline) navTimeline.style.display = 'none';
+  // Hide secondary / fragmented tabs to preserve clean hierarchy
   if (navIndividuals) navIndividuals.style.display = 'none';
   if (navReading) navReading.style.display = 'none';
   if (navDecisions) navDecisions.style.display = 'none';

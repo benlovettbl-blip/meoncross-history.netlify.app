@@ -1947,6 +1947,17 @@ export async function renderLessonsView() {
             ${data.title}
           </h2>
           ${launchpadHTML}
+          ${
+            unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995'
+              ? `
+          <div style="margin-top: 14px; display: flex; justify-content: center;">
+            <button type="button" onclick="if(window.switchView){window.switchView('timeline', '${unitId}');}" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.95) 100%); color: #ffffff; border: 1px solid rgba(52, 211, 153, 0.6); padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); backdrop-filter: blur(4px); transition: all 0.2s ease;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 6px 16px rgba(16,185,129,0.4)';" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';">
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <span>Launch Living Chronological Timeline (24 Milestones)</span>
+            </button>
+          </div>`
+              : ''
+          }
           ${data.cover_caption ? `<p style="margin-top: 20px; margin-bottom: 0; font-style: italic; color: #94a3b8; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
         </div>
       </div>
@@ -1960,6 +1971,17 @@ export async function renderLessonsView() {
           ${data.title}
         </h2>
         ${launchpadHTML}
+        ${
+          unitId === 'cme_new' || unitId === 'gcse_middle_east_1945_1995'
+            ? `
+        <div style="margin-top: 14px; display: flex; justify-content: center;">
+          <button type="button" onclick="if(window.switchView){window.switchView('timeline', '${unitId}');}" style="background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.95) 100%); color: #ffffff; border: 1px solid rgba(52, 211, 153, 0.6); padding: 8px 18px; border-radius: 20px; font-weight: 700; font-size: 0.88rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); backdrop-filter: blur(4px); transition: all 0.2s ease;">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>Launch Living Chronological Timeline (24 Milestones)</span>
+          </button>
+        </div>`
+            : ''
+        }
         ${renderCoverSourcesHTML(data)}
         
         ${data.cover_caption ? `<p style="margin-top: 5px; margin-bottom: 0; font-style: italic; color: #64748b; font-size: 0.95rem; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">${data.cover_caption}</p>` : ''}
