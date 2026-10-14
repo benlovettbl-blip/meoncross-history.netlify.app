@@ -54225,46 +54225,22 @@
           ],
           "tasks": [
             {
-              "type": "short_answer",
-              "act": 1,
-              "qNum": 1,
-              "text": "Why did the death of Edward the Confessor trigger a national succession crisis in January 1066?",
-              "starter": "Edward the Confessor’s death triggered a crisis because...",
-              "answer": "Edward died childless without leaving a direct heir, leaving rival claimants with blood, oaths, or military power to contest the throne.",
-              "model_answer": "Edward the Confessor died without leaving a direct heir, creating a power vacuum. While the Anglo-Saxon Witan elected Harold Godwinson, rival foreign rulers claimed prior promises and military legitimacy, sparking an international invasion crisis."
-            },
-            {
-              "type": "short_answer",
-              "act": 3,
-              "qNum": 2,
-              "text": "Explain how King Harold’s victory at Stamford Bridge weakened his defence against William at Hastings.",
-              "starter": "Harold’s victory at Stamford Bridge weakened him because...",
-              "answer": "Harold lost many elite housecarls fighting Hardrada, and his men had to force-march 250 miles south in two weeks, leaving them physically exhausted.",
-              "model_answer": "Harold’s victory at Stamford Bridge proved costly: his finest housecarls suffered heavy casualties, and his surviving men had to endure a gruelling 250-mile forced march south, entering the Battle of Hastings severely fatigued."
-            },
-            {
-              "type": "short_answer",
-              "act": 5,
-              "qNum": 3,
-              "text": "Describe how the Norman tactic of the \"feigned retreat\" broke the Anglo-Saxon shield wall.",
-              "starter": "The feigned retreat broke the shield wall by...",
-              "answer": "Norman cavalry pretended to flee downhill, tempting undisciplined Saxon militia to break ranks, whereupon the cavalry wheeled around and slaughtered them.",
-              "model_answer": "The feigned retreat deceived the Saxon fyrd into believing the Normans were fleeing in panic. When inexperienced English fighters broke rank to pursue them downhill, Norman cavalry encircled them on open ground, opening lethal gaps in the shield wall."
-            },
-            {
-              "type": "source_utility",
-              "qNum": 4,
-              "source_letter": "B",
-              "text": "How useful is Source B for an enquiry into why William won the Battle of Hastings?",
-              "starter": "Source B is useful because it visually demonstrates...",
-              "model_answer": "Source B is exceptionally useful because it provides contemporary visual evidence of the clash between Norman heavy cavalry and the disintegrating Anglo-Saxon shield wall. It highlights how mounted knights armed with lances overwhelmed foot soldiers once the defensive formation broke. However, its utility is shaped by its provenance: commissioned by the conquerors, it glorifies Norman martial prowess while ignoring William’s immense good fortune and Harold’s exhausted troops."
-            },
-            {
+              "id": "me_l1_q2_explain_why",
               "type": "extended_writing",
-              "qNum": 5,
-              "text": "Enquiry Essay: \"William won the Battle of Hastings purely because of superior military tactics.\" How far do you agree?",
-              "guidance": "Structure a balanced argument: evaluate Norman cavalry and the feigned retreat on the one hand, versus Harold’s exhaustion, bad luck, and Stamford Bridge casualties on the other.",
-              "model_answer": "While Norman military tactics were vital, William’s victory was equally driven by Harold’s severe exhaustion and strategic misfortune.\n\nOn the one hand, William demonstrated tactical flexibility. Unlike the static Saxon army, William commanded a combined-arms force of archers, heavy infantry, and mounted cavalry. When frontal charges failed to crack the shield wall, William deployed the feigned retreat, exploiting Saxon lack of discipline to break their defensive perimeter.\n\nOn the other hand, Harold was defeated by circumstance and fatigue. Harold had been forced to fight Harald Hardrada at Stamford Bridge in Yorkshire, losing elite housecarls before marching 250 miles south in October. His men were physically depleted, and had Harold waited in London to gather reinforcements, the outcome may have differed.\n\nIn conclusion, tactics unlocked the shield wall, but Harold’s exhaustion created the vulnerability William exploited."
+              "topic": "Question 2: Explain Why [12 marks • 15 mins]",
+              "title": "Question 2: Explain Why [12 marks • 15 mins]",
+              "question": "Explain why William of Normandy achieved victory at the Battle of Hastings in 1066. [12 marks]",
+              "stimulus": [
+                "Norman military tactics, heavy cavalry, and the feigned retreat",
+                "Anglo-Saxon exhaustion and loss of shield-wall discipline"
+              ],
+              "hints": [
+                "Point: State your central thesis: weigh whether Norman combined-arms tactics (heavy cavalry and feigned retreat) or Anglo-Saxon exhaustion and loss of shield-wall discipline proved more decisive on Senlac Hill [1.4, 1.5].",
+                "Evidence: Deploy specific factual evidence: the 200-mile forced march after Stamford Bridge, the shield wall on Senlac Hill, Breton cavalry charges, feigned retreats, and Harold's death [1.3–1.5].",
+                "Explanation: Explain the causal connection: show how the feigned retreat lured undisciplined Saxon fyrd militia off the hill, opening fatal gaps in the shield wall that cavalry exploited [1.5].",
+                "Link: Conclude with a sustained comparative judgment: evaluate whether superior tactical flexibility or Saxon fatigue was the ultimate reason for William’s victory [1.1–1.5]."
+              ],
+              "model_answer": "While Norman military tactics were vital, William’s victory was equally driven by Harold’s severe exhaustion and strategic misfortune.<br><br>On the one hand, William demonstrated tactical flexibility. Unlike the static Saxon army, William commanded a combined-arms force of archers, heavy infantry, and mounted cavalry. When frontal charges failed to crack the shield wall, William deployed the feigned retreat, exploiting Saxon lack of discipline to break their defensive perimeter.<br><br>On the other hand, Harold was defeated by circumstance and fatigue. Harold had been forced to fight Harald Hardrada at Stamford Bridge in Yorkshire, losing elite housecarls before marching 250 miles south in October. His men were physically depleted, and had Harold waited in London to gather reinforcements, the outcome may have differed.<br><br>In conclusion, tactics unlocked the shield wall, but Harold’s exhaustion created the vulnerability William exploited."
             }
           ],
           "teacher_notes": {
@@ -54518,46 +54494,34 @@
           ],
           "tasks": [
             {
-              "type": "short_answer",
-              "act": 2,
-              "qNum": 1,
-              "text": "Why did motte-and-bailey castles allow a tiny Norman minority to police an entire English district?",
-              "starter": "Motte-and-bailey castles allowed Normans to police districts because...",
-              "answer": "They could be built in under two weeks using forced labour, gave 360-degree arrow sightlines, and housed mounted knights who could ride out to crush local uprisings within hours.",
-              "model_answer": "Motte-and-bailey castles served as impregnable regional police stations. Built in under two weeks using forced Saxon labour, their elevated keeps gave archers 360-degree sightlines, while a small garrison of thirty mounted knights could ride out rapidly to extinguish spontaneous Saxon rebellions."
-            },
-            {
-              "type": "short_answer",
-              "act": 3,
-              "qNum": 2,
-              "text": "What was the purpose and human consequence of the Harrying of the North (1069–1070)?",
-              "starter": "The purpose of the Harrying was... and the consequence was...",
-              "answer": "The purpose was to destroy northern rebellion through terror; the consequence was 100,000 civilian deaths from artificial famine and decades of depopulation.",
-              "model_answer": "The purpose was to terrorize northern rebels and eliminate any possibility of future resistance. By systematically burning crops, smashing farming tools, and salting soil, William triggered an artificial famine that caused 100,000 deaths and left Yorkshire largely desolate for decades."
-            },
-            {
-              "type": "short_answer",
-              "act": 5,
-              "qNum": 3,
-              "text": "How does the surviving physical architecture at Portchester Castle prove Norman strategic priorities?",
-              "starter": "Portchester Castle demonstrates Norman priorities because...",
-              "answer": "It shows how Normans repurposed Roman coastal fortresses with high stone keeps to command Portsmouth Harbour and secure sea supply routes back to Normandy.",
-              "model_answer": "Portchester Castle demonstrates that the Normans prioritized securing maritime communication with their homeland. By embedding a colossal stone keep inside existing Roman fort walls, they established an impregnable naval bastion commanding Portsmouth Harbour and the Solent."
-            },
-            {
-              "type": "source_utility",
-              "qNum": 4,
-              "source_letter": "B",
-              "text": "How useful is Source B (Domesday Book) for an enquiry into the impact of the Norman Conquest on English society?",
-              "starter": "Source B is exceptionally useful because...",
-              "model_answer": "Source B is exceptionally useful because it provides verbatim, quantitative administrative evidence showing the total transfer of wealth from Anglo-Saxon thegns to Norman barons. It records every plough, mill, and woodland pig, demonstrating the invasive surveillance used by the Crown to extract taxation. However, as an exchequer ledger, it records only economic value and landowner names, omitting the human suffering, dispossession, and bonded serfdom endured by ordinary English peasants."
-            },
-            {
+              "id": "me_l2_q1_features",
               "type": "extended_writing",
-              "qNum": 5,
-              "text": "Enquiry Essay: \"Castles were more important than terror or the Domesday Book in establishing Norman control over England.\" How far do you agree?",
-              "guidance": "Evaluate the physical role of 500 motte-and-bailey castles on the one hand, versus psychological terror (Harrying of the North) and bureaucratic surveillance (Domesday) on the other.",
-              "model_answer": "While castles provided the indispensable physical frontline of control, Norman subjugation was achieved only through the combined triad of military architecture, psychological terror, and fiscal surveillance.\n\nOn the one hand, castles were the immediate foundation of conquest. Erecting over 500 timber motte-and-bailey castles across England in twenty years allowed small garrisons of mounted knights to dominate local shires. Castles acted as physical fortresses, administrative prisons, and psychological symbols of foreign dominance.\n\nOn the other hand, architecture alone was insufficient to extinguish northern rebellion. The Harrying of the North deployed deliberate state terror and artificial famine, starving 100,000 civilians to render resistance impossible. Furthermore, permanent control required the 1086 Domesday Book, which disinherited over 80% of English thegns, transferring land to 200 Norman barons and binding them to the Crown through feudal tenure.\n\nIn conclusion, castles held the land physically, terror broke the will to resist, and Domesday institutionalised Norman power permanently."
+              "qNum": 1,
+              "topic": "Question 1: Describe Two Features [4 marks • 5 mins]",
+              "title": "Question 1: Describe Two Features [4 marks • 5 mins]",
+              "question": "Describe two features of Norman motte-and-bailey castles. [4 marks]",
+              "hints": [
+                "Point (Feature 1): One key feature was the raised earth mound or motte, topped by a timber keep and watchtower [2.2].",
+                "Evidence (Detail 1): Specifically, this elevated position gave Norman sentries 360-degree sightlines to spot approaching rebel forces miles away and shoot downward with complete tactical advantage [2.2].",
+                "Explanation (Feature 2): A second key feature was the enclosed courtyard or bailey at the base of the motte, surrounded by a deep ditch and timber palisade [2.2].",
+                "Link (Detail 2): This served the purpose of safely sheltering up to thirty mounted knights, warhorses, armouries, and food stores, allowing a tiny Norman garrison to live securely inside hostile territory and ride out rapidly to extinguish spontaneous revolts [2.2]."
+              ],
+              "model_answer": "Feature 1: One key feature of a motte-and-bailey castle was the motte, an artificial earth mound up to thirty feet high topped by a wooden keep and watchtower. Specifically, this elevated position gave Norman sentries 360-degree sightlines to spot approaching rebel Saxon forces miles away and shoot downward with complete tactical advantage.<br><br>Feature 2: A second key feature was the bailey, an enclosed courtyard at the base of the motte surrounded by a deep ditch and timber palisade. Specifically, the bailey served the purpose of safely sheltering up to thirty mounted knights, warhorses, armouries, and food stores, allowing a tiny Norman garrison to live securely inside hostile English territory and ride out rapidly to extinguish spontaneous local revolts."
+            },
+            {
+              "id": "me_l2_q2_consequence",
+              "type": "extended_writing",
+              "qNum": 2,
+              "topic": "Question 2: Explain One Consequence [4 marks • 5 mins]",
+              "title": "Question 2: Explain One Consequence [4 marks • 5 mins]",
+              "question": "Explain one consequence of the motte-and-bailey blitz for Anglo-Saxon resistance against Norman rule. [4 marks]",
+              "hints": [
+                "Point: A significant consequence of the motte-and-bailey blitz was the fatal fracturing and paralysis of Anglo-Saxon ability to organize sustained guerrilla resistance [2.2].",
+                "Evidence: Over 500 timber motte-and-bailey castles were thrown up across England in under twenty years, each housing thirty heavily armoured Norman cavalrymen [2.2].",
+                "Explanation: Because castles could be erected in under a fortnight using forced Saxon labour, mounted Norman patrols could ride out to extinguish spontaneous revolts within hours before rebellions could coalesce into regional armies [2.2].",
+                "Link: Consequently, the castle network broke the territorial unity of England, locking each shire under permanent military surveillance and cementing Norman rule [2.2, 2.5]."
+              ],
+              "model_answer": "A significant consequence of the motte-and-bailey castle blitz was the fatal fracturing and paralysis of Anglo-Saxon resistance across England. By constructing over 500 fortified outposts within two decades, a tiny foreign elite of roughly 10,000 Normans was able to dominate two million hostile English subjects. Impregnable keeps provided elevated sightlines and secure bases for garrisons of thirty mounted knights, who could deploy within hours to crush spontaneous local revolts before they could coalesce into coordinated regional rebellions. Furthermore, the psychological intimidation of colossal earthworks built by forced Saxon labour reinforced Norman supremacy. Consequently, the English lost the physical and strategic ability to mount sustained guerrilla warfare, locking the shires under permanent military subjugation."
             }
           ],
           "teacher_notes": {
@@ -54785,46 +54749,47 @@
           ],
           "tasks": [
             {
-              "type": "short_answer",
-              "act": 1,
-              "qNum": 1,
-              "text": "Why did King Henry II object so strongly to \"Benefit of Clergy\" and Church courts?",
-              "starter": "Henry II objected to Church courts because...",
-              "answer": "Church courts could not impose the death penalty, allowing thousands of clergymen to escape execution for crimes like murder and rape, undermining royal law.",
-              "model_answer": "Henry II objected because Church courts operated under Canon Law, which prohibited executions. Consequently, thousands of clerics accused of murder and theft claimed Benefit of Clergy, receiving light punishments like defrocking and completely evading royal hanging."
-            },
-            {
-              "type": "short_answer",
-              "act": 2,
-              "qNum": 2,
-              "text": "Why was Henry II shocked by Thomas Becket’s sudden change in behaviour upon becoming Archbishop?",
-              "starter": "Henry II was shocked because...",
-              "answer": "Becket had been Henry’s loyal, luxury-loving Chancellor who lived extravagantly, but as Archbishop he gave up worldly wealth and prioritized loyalty to the Pope over the King.",
-              "model_answer": "Henry was stunned because Becket had spent years as his fun-loving, loyal Chancellor who championed royal interests. Upon becoming Archbishop, Becket unexpectedly renounced his luxury, donned ascetic sackcloth, and insisted that his ultimate loyalty belonged to God rather than the King."
-            },
-            {
-              "type": "short_answer",
-              "act": 5,
+              "id": "me_l3_q3_interpretations",
+              "type": "historical_interpretations",
               "qNum": 3,
-              "text": "Why was King Henry II forced to undergo public flogging at Canterbury Cathedral in 1174?",
-              "starter": "Henry II underwent public flogging because...",
-              "answer": "He was blamed across Europe for inciting Becket’s murder and had to perform public penance to appease the Pope and end the threat of papal excommunication.",
-              "model_answer": "Henry had to submit to public whipping to save his throne. The murder of an archbishop in his own cathedral horrified Christian Europe; Henry risked papal excommunication and baronial rebellion unless he demonstrated genuine, humiliating royal penance."
-            },
-            {
-              "type": "source_utility",
-              "qNum": 4,
-              "source_letter": "B",
-              "text": "How useful is Source B (Edward Grim’s eyewitness account) for an enquiry into what happened in Canterbury Cathedral on 29 December 1170?",
-              "starter": "Source B is exceptionally useful because Edward Grim was...",
-              "model_answer": "Source B is exceptionally useful because it is written by a direct eyewitness who stood beside Becket at the altar and suffered a broken arm attempting to protect him. Grim captures the sheer violence, verbatim words, and brutality of the four knights. However, Grim wrote as an adoring Christian biographer intent on demonstrating that Becket died as a holy martyr, which leads him to portray Becket’s conduct as perfectly calm and Christ-like while possibly downplaying Becket’s angry insults toward the knights."
-            },
-            {
-              "type": "extended_writing",
-              "qNum": 5,
-              "text": "Enquiry Essay: \"Thomas Becket was more responsible than Henry II for his own violent death.\" How far do you agree?",
-              "guidance": "Weigh Becket’s unbending stubbornness, excommunications, and insults on the one hand, against Henry II’s tyrannical temper, overreaching demands, and fatal outburst on the other.",
-              "model_answer": "While Becket’s uncompromising fanaticism provoked the crisis, Henry II’s volatile authoritarian temper and ambiguous royal outburst bear primary responsibility for the murder.\n\nOn the one hand, Becket acted with extreme provocation. Even after Henry attempted reconciliation in 1170, Becket immediately ignited conflict by excommunicating the Archbishop of York upon landing in England. When the four knights confronted him in Canterbury Cathedral, Becket refused sanctuary and hurled furious personal insults at Reginald FitzUrse, escalating a tense standoff into a fatal slaughter.\n\nOn the other hand, Henry created the conditions for assassination. Henry demanded absolute subordination of Church courts at Clarendon, attempting to strip ancient ecclesiastical liberties. Most decisively, when Henry exploded into uncontrolled rage at Christmas 1170, shouting his famous complaint about the \"low-born clerk,\" he incited his knights to violent action.\n\nIn conclusion, while Becket actively sought martyrdom, Henry II’s explosive royal temper was the decisive trigger of the murder."
+              "topic": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+              "title": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+              "text": "Explain how Interpretations 1 and 2 differ on Thomas Becket’s motives and character, and suggest one reason why they differ. [8 marks]",
+              "interp1": {
+                "title": "Interpretation 1",
+                "badge": "Contemporary Hagiography (c. 1175)",
+                "author": "Edward Grim, Eyewitness Monk & Chronicler, Life of St Thomas (c. 1175)",
+                "text": "“The glorious martyr Thomas stood like a rock before the altar, refusing to yield the sacred liberties of Christ’s holy Church to earthly tyrants. He offered his neck to the wicked swords of the four knights, dying willingly so that God’s law might triumph over royal pride.”"
+              },
+              "interp2": {
+                "title": "Interpretation 2",
+                "badge": "Modern Critical Revisionism (1986)",
+                "author": "Historian Frank Barlow, Thomas Becket (1986)",
+                "text": "“Becket was vain, stubborn, and obsessively confrontational. Having served Henry faithfully as chancellor, his dramatic conversion into an unbending champion of clerical privilege was theatrical extremism. By shielding rapists and murderers in holy orders from secular law, Becket provoked a needless crisis.”"
+              },
+              "matrix": [
+                {
+                  "col": "1. INTERPRETATION 1 CLAIMS",
+                  "text": "Portrays Becket as a holy martyr defending divine law and Church liberties against royal tyranny."
+                },
+                {
+                  "col": "2. INTERPRETATION 2 CRITIQUE",
+                  "text": "Portrays Becket as a stubborn, vain fanatic defending corrupt clerical immunities (criminous clerks)."
+                },
+                {
+                  "col": "3. HISTORIOGRAPHICAL REASON",
+                  "text": "Differs due to Grim writing contemporary hagiography to celebrate a saint vs Barlow analysing statecraft objectively."
+                }
+              ],
+              "connectives": [
+                "Interpretations 1 and 2 differ on...",
+                "Interpretation 1 argues that...",
+                "In sharp contrast, Interpretation 2 suggests that...",
+                "This is a difference because...",
+                "One reason why Interpretations 1 and 2 differ is because of the authors’ backgrounds and purposes...",
+                "Specifically, Grim was an eyewitness churchman seeking to venerate a martyr, whereas Barlow is an objective modern historian..."
+              ],
+              "model_answer": "Interpretations 1 and 2 differ fundamentally over Thomas Becket’s character and motivation during the crisis with King Henry II.<br><br>Interpretation 1 presents Becket as a pious, principled Christian martyr who heroically defended Church liberties against secular tyranny, offering his life willingly for divine law. In sharp contrast, Interpretation 2 depicts Becket as an arrogant, theatrical extremist whose obstinacy precipitated a pointless constitutional crisis by shielding criminal clergy from the King's courts.<br><br>A primary reason for this sharp divergence is the contrasting backgrounds and purposes of the authors. Edward Grim was a medieval monk who personally witnessed Becket’s horrific murder in Canterbury Cathedral; writing in the 1170s shortly after Becket's canonisation, his explicit purpose was hagiographical—to celebrate Becket as a saint and glorify the Church against secular aggression. Conversely, Frank Barlow, writing over eight centuries later in 1986, is an academic historian evaluating secular governance and the practical administration of justice in Angevin England, leading him to view Becket’s absolute refusal to compromise as destructive egotism."
             }
           ],
           "teacher_notes": {
@@ -55052,46 +55017,23 @@
           ],
           "tasks": [
             {
-              "type": "short_answer",
-              "act": 1,
-              "qNum": 1,
-              "text": "Why did King John’s loss of Normandy in 1204 lead directly to intense friction with his English barons?",
-              "starter": "The loss of Normandy caused friction because...",
-              "answer": "Barons lost ancestral estates, and John spent the next decade demanding crushing scutage taxes and loans to fund an expensive war to win it back.",
-              "model_answer": "The loss of Normandy stripped English barons of their ancestral estates. Furthermore, John spent the next ten years imposing unprecedented feudal scutage taxes and extortionate fines to finance a massive mercenary army, pushing baronial patience to breaking point."
-            },
-            {
-              "type": "short_answer",
-              "act": 4,
-              "qNum": 2,
-              "text": "Explain the revolutionary legal principle established by Clause 39 of Magna Carta.",
-              "starter": "Clause 39 established the principle that...",
-              "answer": "No free man could be imprisoned or punished arbitrarily without lawful trial by his peers or by the law of the land.",
-              "model_answer": "Clause 39 established the constitutional principle of Habeas Corpus and the Rule of Law: the monarch could no longer arrest, execute, or seize the property of any free man arbitrarily without a lawful trial by his peers and the established law of the land."
-            },
-            {
-              "type": "short_answer",
-              "act": 5,
-              "qNum": 3,
-              "text": "Why did the regency council of nine-year-old King Henry III repeatedly reissue Magna Carta after 1216?",
-              "starter": "The regency council reissued Magna Carta because...",
-              "answer": "To persuade rebellious barons to desert the French Prince Louis and unite behind the legitimate child-king.",
-              "model_answer": "The regency council, led by William Marshal, reissued Magna Carta to demonstrate that the new child-king would rule under the law, successfully persuading rebellious English barons to abandon Prince Louis of France and defend Henry III."
-            },
-            {
-              "type": "source_utility",
-              "qNum": 4,
-              "source_letter": "B",
-              "text": "How useful is Source B (Clauses 39 & 40 of Magna Carta) for an enquiry into the limitations placed on King John’s power in 1215?",
-              "starter": "Source B is exceptionally useful because it provides verbatim legal proof that...",
-              "model_answer": "Source B is exceptionally useful because it provides primary, contractual evidence of the exact legal boundaries forced upon King John. Clauses 39 and 40 explicitly forbid arbitrary imprisonment, denial of justice, and monarchical autocracy. However, its utility is qualified by medieval social reality: in 1215, \"free men\" represented only the narrow aristocratic elite and merchant class, completely excluding the unfree peasant serfs who formed over 75% of England’s population."
-            },
-            {
+              "id": "me_l4_q2_narrative_account",
               "type": "extended_writing",
-              "qNum": 5,
-              "text": "Enquiry Essay: \"Magna Carta was a selfish act of baronial extortion rather than a victory for human liberty.\" How far do you agree?",
-              "guidance": "Contrast the selfish, class-based motives of the 25 rebel barons on the one hand, against the enduring constitutional precedent of placing the Crown under the Rule of Law on the other.",
-              "model_answer": "While Magna Carta was drafted by selfish aristocrats to protect their private property, its foundational clauses established the permanent constitutional principle that the Crown is subject to the rule of law.\n\nOn the one hand, Magna Carta was an act of baronial self-interest. The 25 rebel barons were not modern democrats fighting for universal human rights; they were wealthy warlords furious at King John’s scutage taxes and loss of Normandy. The charter protected baronial inheritances, reduced royal wardship fines, and safeguarded feudal privileges. Most tellingly, its provisions applied exclusively to \"free men,\" entirely ignoring the bonded peasant serfs who made up the vast majority of medieval England.\n\nOn the other hand, the charter created a revolutionary constitutional precedent. By forcing King John to seal Clause 39, the barons permanently shattered the doctrine of absolute monarchical autocracy. The king was no longer above the law. When reissued by Henry III in 1225, Magna Carta became the foundational cornerstone of English common law, inspiring Habeas Corpus, the American Constitution, and the Universal Declaration of Human Rights.\n\nIn conclusion, while born of feudal extortion, Magna Carta’s enduring historical significance lies in establishing the universal principle of the Rule of Law."
+              "qNum": 2,
+              "topic": "Question 2: Narrative Account [8 marks • 12 mins]",
+              "title": "Question 2: Narrative Account [8 marks • 12 mins]",
+              "question": "Write a narrative account analysing the key events leading from the loss of Normandy (1204) to the sealing of Magna Carta (1215). [8 marks]",
+              "stimulus": [
+                "The loss of Normandy and heavy scutage taxation",
+                "The defeat at the Battle of Bouvines (1214)"
+              ],
+              "hints": [
+                "Point: Sequence begins with the collapse of the Angevin Empire: in 1204, King John lost Normandy to King Philip Augustus of France, stripping English barons of ancestral lands [4.1].",
+                "Evidence: Following this, John spent a decade imposing eleven crushing scutage levies (shield money) and clashing with Pope Innocent III to finance an army to reconquer Normandy [4.1, 4.2].",
+                "Explanation: A decisive turning point occurred in July 1214 at the Battle of Bouvines, where John’s lavishly funded continental coalition was crushed, leaving John bankrupt and militarily humiliated [4.3].",
+                "Link: Consequently, northern barons led by Robert Fitzwalter renounced their homage, seized London, and cornered John at Runnymede in June 1215, forcing his seal onto Magna Carta and establishing Clause 39 [4.3, 4.4]."
+              ],
+              "model_answer": "Initially, the sequence began in 1204 when King John suffered the humiliating loss of Normandy to King Philip Augustus of France. This disaster stripped English barons of their ancestral cross-Channel estates and provoked bitter resentment against the Crown. Determined to reconquer his lost duchy, John spent the next decade demanding unprecedented financial extortion, levying eleven crushing scutage taxes (shield money) in sixteen years, seizing church property during a five-year papal interdict, and abusing royal feudal wardship fines to amass a massive war chest.<br><br>Following this period of financial coercion, the decisive military turning point occurred in July 1214 at the Battle of Bouvines in Flanders. John’s lavishly funded continental coalition was catastrophically defeated by Philip Augustus. Bouvines destroyed John’s master strategy in a single afternoon: John returned to England completely bankrupt, militarily discredited, and stripped of royal prestige, with nothing to show for over £130,000 of extorted funds.<br><br>Consequently, rebellious northern barons (the \"Northerners\") seized the moment of royal weakness. In May 1215, led by Robert Fitzwalter styling himself \"Marshal of the Army of God,\" the rebel barons renounced their feudal homage and marched into London, winning the financial and military support of the capital’s wealthy merchant oligarchy. Completely isolated and devoid of military leverage, King John was forced to agree to negotiations beside the River Thames at Runnymede. On 15 June 1215, John pressed his Great Seal onto the parchment of Magna Carta, conceding Clause 39 and agreeing that royal power was permanently subject to the rule of law."
             }
           ],
           "teacher_notes": {
@@ -55319,46 +55261,23 @@
           ],
           "tasks": [
             {
-              "type": "short_answer",
-              "act": 1,
-              "qNum": 1,
-              "text": "How did the demographic loss of one-third of England’s population during the Black Death alter the balance of power between lords and peasants?",
-              "starter": "The Black Death altered the balance of power because...",
-              "answer": "With half the workforce dead, labour became scarce; surviving peasants could demand higher wages and leave estates if lords refused to pay.",
-              "model_answer": "The Black Death created an acute labour shortage. Landlords faced rotting harvests and were forced to compete for surviving workers. Peasants gained bargaining power, demanding higher cash wages and lower rents, breaking the strict feudal subservience of serfdom."
-            },
-            {
-              "type": "short_answer",
-              "act": 3,
-              "qNum": 2,
-              "text": "Why did the 1381 Poll Tax cause far more widespread fury than earlier feudal taxes?",
-              "starter": "The 1381 Poll Tax caused intense fury because...",
-              "answer": "It was a flat tax of one shilling on every person over 15 regardless of wealth, hurting impoverished peasants far more than rich lords.",
-              "model_answer": "The 1381 Poll Tax caused intense outrage because it was a regressive flat tax: every person over fifteen had to pay one shilling, regardless of whether they were a wealthy merchant or an impoverished peasant, demanding two weeks’ hard wages from starving families."
-            },
-            {
-              "type": "short_answer",
-              "act": 5,
-              "qNum": 3,
-              "text": "What did Richard II say to the peasants once the rebellion was safely crushed?",
-              "starter": "Richard II told the peasants...",
-              "answer": "He revoked all promised charters of freedom and told them: \"Serfs you were, and serfs you shall remain.\"",
-              "model_answer": "Once the peasants had dispersed, Richard II betrayed his promises, revoking all charters of freedom and telling them: \"Serfs you were, and serfs you shall remain, in yet harder bondage.\""
-            },
-            {
-              "type": "source_utility",
-              "qNum": 4,
-              "source_letter": "B",
-              "text": "How useful is Source B (Jean Froissart’s account of Wat Tyler’s death) for an enquiry into the climax of the Peasants’ Revolt at Smithfield?",
-              "starter": "Source B is useful because it vividly portrays...",
-              "model_answer": "Source B is useful because it provides contemporary narrative detail and visual evidence of the dramatic confrontation at Smithfield, capturing the slaying of Wat Tyler by Mayor Walworth and Richard II’s intervention. However, its utility is shaped by Froissart’s extreme aristocratic bias: writing for royal and noble patrons, Froissart portrays the peasant rebels as arrogant, insolent villains and presents the royal court as noble heroes, omitting the broken royal promises that followed."
-            },
-            {
+              "id": "me_l5_q5_evaluative_essay",
               "type": "extended_writing",
               "qNum": 5,
-              "text": "Enquiry Essay: \"The Peasants’ Revolt of 1381 was a complete failure.\" How far do you agree?",
-              "guidance": "Weigh the immediate military collapse, execution of leaders, and revocation of charters on the one hand, against the permanent death of poll taxes and the decline of serfdom on the other.",
-              "model_answer": "In the immediate term, the Peasants’ Revolt was brutally crushed; however, in the long term, it achieved a historic victory by permanently breaking the economic viability of serfdom.\n\nOn the one hand, the rebellion was a catastrophic short-term failure. Wat Tyler was assassinated at Smithfield, John Ball was hanged, drawn, and quartered, and Richard II ruthlessly revoked all promised charters of freedom. Over 1,500 rebels were executed, and the monarch reasserted that serfs would remain in bondage.\n\nOn the other hand, the revolt achieved profound long-term success. Parliament was terrified by the storming of London and never dared levy another poll tax. Furthermore, manorial lords recognized that attempting to enforce the Statute of Labourers was suicidal. Over the next century, lords abandoned forced feudal labour, commuting serfdom dues into cash wages and free tenancies. By 1485, serfdom had effectively vanished from England.\n\nIn conclusion, while the rebels lost the military battle of 1381, their uprising dealt the mortal blow that doomed the feudal system."
+              "topic": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+              "title": "Question 5: Evaluative Statement Essay [12 marks • 15 mins]",
+              "question": "‘The Black Death of 1348 was the main cause of the breakdown of the feudal system in medieval England.’ How far do you agree? [12 marks]",
+              "stimulus": [
+                "The demographic collapse and labour shortage caused by the Black Death (1348–1350)",
+                "The 1351 Statute of Labourers and the Peasants’ Revolt of 1381"
+              ],
+              "hints": [
+                "Point: State your thesis: evaluate whether biological demographic collapse (Black Death 1348) or political peasant resistance (1381 Peasants’ Revolt) was the primary cause of feudal breakdown [5.1, 5.5].",
+                "Evidence (Plague & Economic Leverage): Between 1348 and 1350, Yersinia pestis wiped out 40–50% of England’s population, triggering an acute labour shortage where crops rotted and manorial lords were forced to pay competitive cash wages [5.1, 5.2].",
+                "Explanation (Repression & Social Rebellion): In response, the ruling elite attempted to freeze wages via the 1351 Statute of Labourers and extract money through regressive Poll Taxes, sparking explosive armed rebellion in 1381 led by Wat Tyler and John Ball [5.3, 5.4].",
+                "Link (Comparative Verdict): Conclude with a sustained judgment: the plague created irreversible economic conditions for free wage labour, but the 1381 revolt broke the political resolve of lords to enforce serfdom [5.1–5.5]."
+              ],
+              "model_answer": "To a large extent, the Black Death of 1348 was the foundational catalyst for the collapse of feudalism, although political resistance during the Peasants’ Revolt of 1381 was necessary to seal its demise.<br><br>On the one hand, the Black Death dealt an insurmountable biological shock to the feudal economy. Between 1348 and 1350, bubonic plague wiped out nearly half of England’s population. This demographic catastrophe triggered an acute labour shortage: with fields unploughed and harvests rotting, surviving peasants possessed unprecedented economic bargaining leverage. In defiance of feudal tradition, villeins demanded cash wages, lower rents, and the freedom to move to rival estates offering higher pay. Although the ruling elite attempted to restore feudal control through the 1351 Statute of Labourers and sumptuary laws, the inexorable economic reality of supply and demand rendered serfdom increasingly unenforceable.<br><br>On the other hand, the feudal system did not crumble through economic forces alone; armed political rebellion by ordinary peasants proved decisive. When royal governments attempted to finance the Hundred Years’ War through repeated, regressive Poll Taxes, simmering peasant fury erupted into the Peasants’ Revolt of 1381. Led by Wat Tyler and inspired by John Ball’s egalitarian sermons, thousands of rebels stormed London, burned tax rolls in the Savoy Palace, and demanded the immediate abolition of serfdom. While King Richard II brutally executed over 1,500 rebels after Smithfield, the ruling elite was thoroughly traumatised. Parliament never dared levy another poll tax, and landlords quietly abandoned compulsory feudal labour services in favour of paid tenancies.<br><br>In conclusion, while the Black Death supplied the underlying economic death blow to serfdom by making labour scarce, the Peasants’ Revolt of 1381 shattered the political will of the aristocracy to maintain feudal bondage."
             }
           ],
           "teacher_notes": {
