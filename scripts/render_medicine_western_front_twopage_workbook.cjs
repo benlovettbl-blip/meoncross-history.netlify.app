@@ -1382,39 +1382,39 @@ function renderWfBackCover(cfgList, quipText) {
     .map(
       (item) => `
       <!-- ${item.enquiry}: ${item.title} -->
-      <tr style="border-bottom: 1px dashed #d1d5db;">
-        <td rowspan="2" style="padding: 10px 4px; text-align: center; font-weight: 900; font-size: 9pt; border-right: 1.5px solid #000000; background: #f8fafc; vertical-align: middle;">
+      <tr style="border-bottom: 1px dashed #cbd5e1;">
+        <td rowspan="2" style="padding: 10px 4px; text-align: center; font-weight: 900; font-size: 9pt; border-right: 1.2px solid #cbd5e1; background: #f0f4f9; color: #0f284e; vertical-align: middle;">
           ${item.enquiry}
         </td>
-        <td style="padding: 10px 8px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 7.8pt;">
+        <td style="padding: 10px 8px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 7.8pt; color: #0f284e;">
           ${item.q1}
         </td>
-        <td style="padding: 10px 4px; text-align: center; font-weight: 800; font-size: 8pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+        <td style="padding: 10px 4px; text-align: center; font-weight: 800; font-size: 8pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
           ${item.p1}
         </td>
-        <td style="padding: 10px 4px; text-align: center; font-size: 9pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+        <td style="padding: 10px 4px; text-align: center; font-size: 9pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${item.max1}
         </td>
         <td rowspan="2" style="padding: 6px 8px; vertical-align: top; font-size: 7pt; background: #ffffff;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #777777; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 6pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 2px;">
             Marking Feedback &bull; Targets:
           </div>
           <div style="display: flex; flex-direction: column; justify-content: space-around; height: 18.5mm;">
-            <div style="border-bottom: 1px dotted #d1d5db; height: 4.5mm;"></div>
-            <div style="border-bottom: 1px dotted #d1d5db; height: 4.5mm;"></div>
-            <div style="border-bottom: 1px dotted #d1d5db; height: 4.5mm;"></div>
-            <div style="border-bottom: 1px dotted #d1d5db; height: 4.5mm;"></div>
+            <div style="border-bottom: 1px dotted #cbd5e1; height: 4.5mm;"></div>
+            <div style="border-bottom: 1px dotted #cbd5e1; height: 4.5mm;"></div>
+            <div style="border-bottom: 1px dotted #cbd5e1; height: 4.5mm;"></div>
+            <div style="border-bottom: 1px dotted #cbd5e1; height: 4.5mm;"></div>
           </div>
         </td>
       </tr>
-      <tr style="border-bottom: 2px solid #000000;">
-        <td style="padding: 10px 8px; font-weight: 600; line-height: 1.35; border-right: 1.5px solid #000000; font-size: 7.8pt;">
+      <tr style="border-bottom: 1.5px solid #0f284e;">
+        <td style="padding: 10px 8px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 7.8pt; color: #0f284e;">
           ${item.q2}
         </td>
-        <td style="padding: 10px 4px; text-align: center; font-weight: 800; font-size: 8pt; border-right: 1.5px solid #000000; white-space: nowrap;">
+        <td style="padding: 10px 4px; text-align: center; font-weight: 800; font-size: 8pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
           ${item.p2}
         </td>
-        <td style="padding: 10px 4px; text-align: center; font-size: 9pt; font-weight: 900; border-right: 1.5px solid #000000; white-space: nowrap;">
+        <td style="padding: 10px 4px; text-align: center; font-size: 9pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / ${item.max2}
         </td>
       </tr>
@@ -1429,43 +1429,43 @@ function renderWfBackCover(cfgList, quipText) {
   <div class="page page-container" id="page-28" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px;">
         <div data-department-name="The History Department">
-          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 0.8px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 9.5pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 0.8px;">
             <span class="school-brand-target">The History Department</span>
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 700; color: #000000;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; color: #0f284e;">
           KEY TOPIC 5 ASSESSMENT RECORD &bull; 6 CURRICULUM HOURS &bull; 1914–1918
         </div>
       </div>
 
       <!-- Student Target Grade Strip -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 7px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 4px;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Current Grade:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 14px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Current Grade:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
       </div>
 
       <!-- Expanded Key Topic 5 Assessment Record Table (12 Exam Tasks) -->
-      <div style="border: 2px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
-            <tr style="background: #000000; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
+            <tr style="background: #0f284e; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
               <th style="padding: 6px 4px; text-align: center; width: 8%; font-size: 7.2pt; font-weight: 800;">Enquiry</th>
-              <th style="padding: 6px 8px; text-align: left; width: 42%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Assessment Component Focus</th>
-              <th style="padding: 6px 4px; text-align: center; width: 8%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Page</th>
-              <th style="padding: 6px 4px; text-align: center; width: 10%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Score</th>
-              <th style="padding: 6px 8px; text-align: left; width: 32%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid #444444;">Teacher Comment &amp; Next Steps</th>
+              <th style="padding: 6px 8px; text-align: left; width: 42%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Assessment Component Focus</th>
+              <th style="padding: 6px 4px; text-align: center; width: 8%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Page</th>
+              <th style="padding: 6px 4px; text-align: center; width: 10%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Score</th>
+              <th style="padding: 6px 8px; text-align: left; width: 32%; font-size: 7.2pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Teacher Comment &amp; Next Steps</th>
             </tr>
           </thead>
           <tbody>
@@ -1475,12 +1475,12 @@ function renderWfBackCover(cfgList, quipText) {
       </div>
 
       <!-- 6 Verified Micro-QR Codes with Dual QR (Lesson + Quiz) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 6px; background: #f8fafc;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 4px 6px; background: #f0f4f9;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #000000;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700; color: #475569;">
             Interactive Textbook &bull; 10/20 Questions Per Enquiry
           </span>
         </div>
@@ -1500,11 +1500,11 @@ function renderWfBackCover(cfgList, quipText) {
                 'Blood & Plastic',
               ];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px; color: #0f284e;">
               KT5.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 700; color: #475569; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
 
@@ -1513,22 +1513,22 @@ function renderWfBackCover(cfgList, quipText) {
               <div style="width: 16.5mm; height: 16.5mm; margin: 0 auto 1px auto;">
                 ${lessonQrSvg}
               </div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 3px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1px 3px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
                 Lesson Hub
               </span>
             </div>
 
-            <!-- Bottom QR: Mastery Quiz -->
+            <!-- Bottom QR: Practice Quiz -->
             <div style="display: flex; flex-direction: column; align-items: center; width: 100%;">
               <div style="width: 16.5mm; height: 16.5mm; margin: 0 auto 1px auto;">
                 ${quizQrSvg}
               </div>
-              <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 800; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 3px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
-                Mastery Quiz
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1px 3px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Practice Quiz
               </span>
             </div>
 
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #000000; margin-top: 2px; white-space: nowrap; border: 1px solid #000000; border-radius: 2px; padding: 1px 3px; background: #f8fafc;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; color: #0f284e; margin-top: 2px; white-space: nowrap; border: 1px solid #0f284e; border-radius: 2px; padding: 1px 3px; background: #f0f4f9;">
               Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
           </div>
@@ -1716,92 +1716,92 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
     <div class="page-body-full">
       
       <!-- Top Department & Specification Header Strip -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 6px;">
-        <span data-department-name="The History Department" style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 4px; margin-bottom: 6px;">
+        <span data-department-name="The History Department" style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; color: #0f284e;">
           <span class="school-brand-target">The History Department</span> &bull; GCSE Revision Hub
         </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
           Edexcel GCSE (9-1) History &bull; Paper 1 Section A
         </span>
       </div>
 
       <!-- Student Identification Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4.5px 12px; margin-bottom: 4px; background: #ffffff; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 4.5px 12px; margin-bottom: 4px; background: #ffffff; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 13px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 13px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 13px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 13px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 13px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 13px;"></div>
         </div>
       </div>
 
       <!-- Main Title Block -->
       <div style="text-align: center; margin: 2px 0 4px 0;">
-        <div style="display: inline-block; border: 1.5px solid #000000; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; padding: 1.5px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; background: #ffffff;">
+        <div style="display: inline-block; border: 1.5px solid #0f284e; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; padding: 1.5px 10px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 2px; background: #ffffff;">
           Key Topic 5 &bull; 6 Enquiry Hours &bull; 1914–1918
         </div>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; line-height: 1.12; color: #000000; margin: 1px 0 1px 0; font-weight: 900;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; line-height: 1.12; color: #0f284e; margin: 1px 0 1px 0; font-weight: 900;">
           The British Sector of the Western Front, 1914–1918
         </h1>
-        <div style="font-family: 'Georgia', serif; font-size: 9.5pt; color: #222222; font-style: italic; font-weight: 600;">
+        <div style="font-family: 'Georgia', serif; font-size: 9.5pt; color: #334155; font-style: italic; font-weight: 600;">
           Injuries, Treatment and the Trenches in the British Sector
         </div>
       </div>
 
       <!-- Prominent Primary Visual Source Centerpiece (Base64 Inlined, Uncropped Full Canvas) -->
-      <div style="margin: 2px 0 4px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
+      <div style="margin: 2px 0 4px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
         <div style="display: flex; justify-content: center; align-items: center; background: #fafafa; padding: 2px 0;">
-          <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="height: 104mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #000000; border-radius: 2px; box-shadow: 0 1px 4px rgba(0,0,0,0.15);">
+          <img src="${coverImgBase64}" alt="Stretcher Bearers of the Royal Army Medical Corps (RAMC) Lifting a Wounded Man out of a Trench by Gilbert Rogers (c1919)" style="height: 104mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0f284e; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #ffffff;">
           <span><strong>Primary Visual Evidence:</strong> <em>Stretcher Bearers of the RAMC Lifting a Wounded Man out of a Trench</em> &bull; Gilbert Rogers (c. 1919)</span>
-          <span style="font-weight: 700;">OFFICIAL EDEXCEL SOURCE ARCHIVE &bull; IWM ART 2485 / RAMC HISTORIC COLLECTION</span>
+          <span style="font-weight: 700; color: #475569;">OFFICIAL EDEXCEL SOURCE ARCHIVE &bull; IWM ART 2485 / RAMC HISTORIC COLLECTION</span>
         </div>
       </div>
 
       <!-- Edexcel Paper 1 Section A Specification Overview & Exam Strategy -->
-      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; background: #fbfbfb; margin: 3px 0 4px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        <div style="border-right: 1px solid #000000; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 5px 8px; background: #f0f4f9; margin: 3px 0 4px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
+        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             1. Feature Drills [4m]
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #334155; margin-top: 1px;">
             Q1(a) &amp; Q1(b): Two 2-mark questions. Identify 1 specific feature + 1 supporting factual detail (5 mins).
           </div>
         </div>
-        <div style="border-right: 1px solid #000000; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             2. Source Utility [8m]
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #334155; margin-top: 1px;">
             Q2(a): 3-step evaluation of Content, Provenance (Nature, Origin, Motive), and Contextual Limitations (10 mins).
           </div>
         </div>
         <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
             3. Follow-Up Enquiry [4m]
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #222222; margin-top: 1px;">
+          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #334155; margin-top: 1px;">
             Q2(b): 4-row tabular enquiry: Detail, Historical Question, Source Type, and Clinical Value (5 mins).
           </div>
         </div>
       </div>
 
       <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin: 2px 0 2px 0;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin: 2px 0 2px 0;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
           <thead>
-            <tr style="border-bottom: 1.5px solid #000000; background: #000000; color: #ffffff;">
-              <th style="padding: 6px 10px; text-align: left; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #444444;">
+            <tr style="border-bottom: 1.5px solid #0f284e; background: #0f284e; color: #ffffff;">
+              <th style="padding: 6px 10px; text-align: left; font-size: 8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25);">
                 Course Specification &bull; Key Enquiry Sequence (1914–1918)
               </th>
-              <th style="padding: 4px; width: 68px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid #444444;">
+              <th style="padding: 4px; width: 68px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25);">
                 Learnt
               </th>
               <th style="padding: 4px; width: 68px; text-align: center; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
@@ -1810,100 +1810,100 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.2;">
                   Key Topic 5.1: The Theatre of War: The British Sector, Trench Geography &amp; Battles
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   Why were trenches designed in zig-zag traverses, and how did terrain at Ypres, Somme, and Arras affect medical treatment?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.2;">
                   Key Topic 5.2: The Trench Environment: Mud, Vermin &amp; Non-Combat Illnesses
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   How did frontline conditions cause trench foot, trench fever, and dysentery, and what preventive routines were enforced?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.2;">
                   Key Topic 5.3: Battlefield Trauma: High Explosive Shrapnel, Gas Attacks &amp; Infection
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   Why did explosive artillery produce gas gangrene, and how did the Brodie steel helmet and respirators reduce fatalities?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.2;">
                   Key Topic 5.4: The Chain of Evacuation: Stretcher Bearers, RAP, Dressing Stations &amp; CCS
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   How did the RAMC and FANY evacuate wounded soldiers through six stations, and why was triage critical at CCSs?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.2;">
                   Key Topic 5.5: Surgical Breakthroughs: The Thomas Splint, Wound Debridement &amp; Mobile X-Rays
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   How did the Thomas Splint slash femur mortality from 80% to 20%, and why was Carrel-Dakin irrigation necessary?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
             <tr>
-              <td style="padding: 6px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.2pt; font-weight: 800; color: #000000; line-height: 1.2;">
+              <td style="padding: 6px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.2pt; font-weight: 800; color: #0f284e; line-height: 1.2;">
                   Key Topic 5.6: Lifesaving Innovations: Blood Storage, Brain Surgery &amp; Plastic Reconstruction
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #333333; margin-top: 1px; line-height: 1.2;">
+                <div style="font-family: 'Georgia', serif; font-size: 7.5pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.2;">
                   How did Oswald Robertson establish the first blood bank at Cambrai, and how did Gillies rebuild shattered faces at Sidcup?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 14px; height: 14px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 14px; height: 14px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
           </tbody>

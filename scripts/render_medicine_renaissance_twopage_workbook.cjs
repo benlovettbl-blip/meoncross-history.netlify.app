@@ -633,6 +633,8 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
       margin: 0;
       padding: 0;
       background: #ffffff;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     h1, h2, h3, h4, h5, h6, strong, th, .sans {
       font-family: 'Inter', -apple-system, sans-serif;
@@ -721,150 +723,152 @@ function buildRenaissanceTwoPageWorkbook(unitData, period) {
   <div class="page page-container" id="page-1" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Top Departmental Branding with Customizer Hook -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 4px; margin-bottom: 8px;">
         <div data-department-name="The History Department">
-          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 1px;">
             <span class="school-brand-target">The History Department</span>
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #000000;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: #0f284e;">
           EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1
         </div>
       </div>
 
       <!-- Unit Title & Subtitle Banner -->
       <div style="text-align: center; margin-bottom: 8px;">
-        <span style="display: inline-block; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; border: 1.5px solid #000000; padding: 2px 10px; border-radius: 3px; margin-bottom: 4px;">
+        <span style="display: inline-block; font-family: 'Inter', sans-serif; font-size: 8pt; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; border: 1.5px solid #0f284e; background: #0f284e; color: #ffffff; padding: 2px 10px; border-radius: 3px; margin-bottom: 4px;">
           KEY TOPIC 2 &bull; REVISION &amp; PRACTICE COMPANION
         </span>
-        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 900; color: #000000; margin: 4px 0 2px 0; line-height: 1.15; letter-spacing: -0.5px;">
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 20pt; font-weight: 900; color: #0f284e; margin: 4px 0 2px 0; line-height: 1.15; letter-spacing: -0.5px;">
           The Medical Renaissance in Britain, c1500–c1700
         </h1>
-        <p style="font-family: 'Georgia', serif; font-size: 9pt; color: #222222; margin: 0; font-style: italic;">
+        <p style="font-family: 'Georgia', serif; font-size: 9pt; color: #334155; margin: 0; font-style: italic; font-weight: 600;">
           Humanism, Anatomy (Vesalius), Circulation (Harvey), Observation (Sydenham) &amp; The Great Plague
         </p>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece -->
-      <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="Andreas Vesalius Dissecting a Female Cadaver (1543)" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; filter: grayscale(100%);">
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
+      <!-- Prominent Primary Visual Source Centerpiece (Rich Authentic Colour) -->
+      <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="background: #fcfbf9; display: flex; justify-content: center; align-items: center; padding: 2px 4px;">
+          <img src="${coverImgBase64}" alt="Andreas Vesalius Dissecting a Female Cadaver (1543)" style="width: 100%; height: 93mm; object-fit: cover; object-position: center 30%; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #0f284e; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #ffffff;">
           <span><strong>Primary Visual Evidence:</strong> Title Page of Andreas Vesalius, <em>De Humani Corporis Fabrica</em> (1543)</span>
-          <span style="font-weight: 700;">CONTEMPORARY PRINT ARCHIVE</span>
+          <span style="font-weight: 700; color: #475569;">CONTEMPORARY PRINT ARCHIVE</span>
         </div>
       </div>
 
       <!-- Pupil Identification & Target Setting Box -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 6px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 4px 10px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 6px;">
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 12px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Target:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 12px;"></div>
         </div>
         <div style="display: flex; align-items: baseline;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #000000; text-transform: uppercase; margin-right: 8px;">Class:</strong>
-          <div style="flex: 1; border-bottom: 1.5px solid #000000; height: 12px;"></div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 12px;"></div>
         </div>
       </div>
 
       <!-- Course Specification Curriculum Tracking Table -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
         <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 8pt;">
           <thead>
-            <tr style="background: #000000; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
+            <tr style="background: #0f284e; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
               <th style="padding: 4px 8px; text-align: left; width: 78%; font-size: 7.5pt; font-weight: 800;">
                 Key Topic 2 Specification Framework (1HI0/11)
               </th>
-              <th style="padding: 4px 8px; text-align: center; width: 11%; font-size: 7.5pt; font-weight: 800; border-left: 1px solid #444444;">
+              <th style="padding: 4px 8px; text-align: center; width: 11%; font-size: 7.5pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">
                 Lesson Done
               </th>
-              <th style="padding: 4px 8px; text-align: center; width: 11%; font-size: 7.5pt; font-weight: 800; border-left: 1px solid #444444;">
+              <th style="padding: 4px 8px; text-align: center; width: 11%; font-size: 7.5pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">
                 Quiz [10]
               </th>
             </tr>
           </thead>
           <tbody>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Key Topic 2.1: The New Spirit of Enquiry: Humanism, The Printing Press &amp; The Royal Society
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #475569; margin-top: 1.5px; line-height: 1.25;">
                   How did movable type (c1440), humanism, and the Royal Society (1660) challenge ancient dogma?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Key Topic 2.2: Thomas Sydenham &amp; The Art of Bedside Observation
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #475569; margin-top: 1.5px; line-height: 1.25;">
                   Why was Sydenham called the ‘English Hippocrates’, and how did Observationes Medicae classify illness?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Key Topic 2.3: Andreas Vesalius &amp; The Anatomical Revolution
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #475569; margin-top: 1.5px; line-height: 1.25;">
                   How did De Humani Corporis Fabrica (1543) correct over 200 of Galen’s anatomical errors?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Key Topic 2.4: William Harvey &amp; The Circulation of the Blood
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #475569; margin-top: 1.5px; line-height: 1.25;">
                   How did De Motu Cordis (1628) prove blood circulates through the heart as a mechanical pump?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
-            <tr style="border-bottom: 1px solid #000000;">
-              <td style="padding: 18.5px 10px; border-right: 1.2px solid #000000;">
-                <div style="font-size: 8.8pt; font-weight: 800; color: #000000; line-height: 1.25;">
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 18.5px 10px; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.8pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Key Topic 2.5: Continuity in Treatment &amp; The Great Plague of London (1665)
                 </div>
-                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #333333; margin-top: 1.5px; line-height: 1.25;">
+                <div style="font-family: 'Georgia', serif; font-size: 8pt; font-style: italic; color: #475569; margin-top: 1.5px; line-height: 1.25;">
                   Why did red crosses, quarantine, and humoral remedies in 1665 show so much continuity with 1348?
                 </div>
               </td>
-              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #000000;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
               <td style="text-align: center; vertical-align: middle;">
-                <div style="width: 16px; height: 16px; border: 1.5px solid #000000; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+                <div style="width: 16px; height: 16px; border: 1.5px solid #0f284e; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
               </td>
             </tr>
           </tbody>
@@ -1226,39 +1230,39 @@ ${flexTaskLines}
   html += `
   <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #000000; padding-bottom: 4px; margin-bottom: 8px;">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 4px; margin-bottom: 8px;">
         <div data-department-name="The History Department">
-          <span style="font-family: 'Inter', sans-serif; font-size: 10pt; font-weight: 900; color: #000000; text-transform: uppercase; letter-spacing: 1px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 10pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 1px;">
             <span class="school-brand-target">The History Department</span> &bull; REVISION LEDGER
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #000000;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #0f284e;">
           FINAL SYNOPTIC REVIEW
         </div>
       </div>
 
       <!-- Core Knowledge Ledger (Top Half) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 8px 10px; background: #ffffff; margin-bottom: 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 8px 10px; background: #ffffff; margin-bottom: 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.5px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 6px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
               Key Topic 2 &bull; Master Knowledge Ledger
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #0f284e; background: #0f284e; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
               Specification Audit
             </span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 6px 0; line-height: 1.3;">
+          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; margin: 0 0 6px 0; line-height: 1.3;">
             Before sitting Edexcel Paper 1 (Section B), you must be able to deploy precise historical evidence across all five areas of the Medical Renaissance in Britain (c1500–c1700). Use this ledger for spaced retrieval practice.
           </p>
         </div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
               1. The Printing Press &amp; The Royal Society
             </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #000000;">
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
               <li>Movable type (c1440) ended Church control of manuscripts.</li>
               <li>Royal Society (1660) received Royal Charter from Charles II.</li>
               <li>Motto Nullius in Verba: "Take nobody’s word for it".</li>
@@ -1266,10 +1270,10 @@ ${flexTaskLines}
             </ul>
           </div>
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
               2. Thomas Sydenham (English Hippocrates)
             </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #000000;">
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
               <li>Pioneered bedside observation over ancient book-learning.</li>
               <li>Observationes Medicae (1676) classified disease species.</li>
               <li>Distinguished scarlet fever from measles symptoms.</li>
@@ -1277,10 +1281,10 @@ ${flexTaskLines}
             </ul>
           </div>
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
               3. Andreas Vesalius &amp; Human Anatomy
             </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #000000;">
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
               <li>Professor at Padua; dissected human corpses directly.</li>
               <li>De Humani Corporis Fabrica (1543) disproved 200+ Galen errors.</li>
               <li>Human jawbone is one piece; breastbone has three parts.</li>
@@ -1288,10 +1292,10 @@ ${flexTaskLines}
             </ul>
           </div>
           <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000000; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
               4. William Harvey &amp; Circulation of Blood
             </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #000000;">
+            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
               <li>Dissected cold-blooded animals; proved heart is a mechanical pump.</li>
               <li>De Motu Cordis (1628) proved blood circulates through one-way valves.</li>
               <li>Mathematical calculations proved liver could not make blood daily.</li>
@@ -1300,23 +1304,23 @@ ${flexTaskLines}
           </div>
         </div>
 
-        <div style="border-top: 1px solid #000000; padding-top: 5px; margin-top: 4px; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase;">
+        <div style="border-top: 1px solid #0f284e; padding-top: 5px; margin-top: 4px; display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
             Cumulative Revision Sign-off:
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #475569;">
             Teacher Initial: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ] &bull; Date: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
           </span>
         </div>
       </div>
 
       <!-- 5 QR Codes for Digital Quizzing Hub (Bottom Half) -->
-      <div style="border: 1.5px solid #000000; border-radius: 4px; padding: 6px 8px; background: #ffffff;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 5px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 8px; background: #f0f4f9;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px; margin-bottom: 5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
             📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #0f284e; background: #0f284e; color: #ffffff; padding: 0 4px; border-radius: 2px;">
             ONLINE RECALL
           </span>
         </div>
@@ -1328,20 +1332,20 @@ ${flexTaskLines}
               const qrSvg = generateQrSvg(quizUrl);
               const shortLabels = ['New Spirit', 'Sydenham', 'Vesalius', 'Harvey', 'Great Plague'];
               return `
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px;">
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px; color: #0f284e;">
               KT2.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #333333; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #475569; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
             <div style="width: 21.5mm; height: 21.5mm; margin: 0 auto 2px auto;">
               ${qrSvg}
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; text-transform: uppercase; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
               Scan to Quiz
             </span>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #000000; margin-top: 1px; white-space: nowrap;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #0f284e; margin-top: 1px; white-space: nowrap;">
               Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
             </div>
           </div>
