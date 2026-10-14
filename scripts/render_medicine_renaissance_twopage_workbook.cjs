@@ -513,87 +513,112 @@ const renaissanceConfigs = [
 ];
 
 function renderSpinePage(cfg) {
-  const { pageNum, keyTopicBadge, enquiryQuestion, stages, leftPageQuip } = cfg;
+  const { pageNum, lessonNum, keyTopicBadge, enquiryQuestion, specAnchor, stages, leftPageQuip } =
+    cfg;
 
-  let stagesHtml = '';
-  stages.forEach((st, idx) => {
-    let bulletsHtml = st.bullets
-      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
-      .join('\n');
-    stagesHtml += `
-          <!-- Stage ${idx + 1} -->
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+  const stagesHtml = stages
+    .map((st, sIdx) => {
+      const bulletsHtml = st.bullets
+        .map(
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${st.title}
-              </div>
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${st.focusClue}
-                </div>
-              </div>
+            </div>`,
+        )
+        .join('');
+
+      const questionText = st.questionHeading || st.focusClue || st.title;
+      const paraBadge = st.paraBadge || `[${lessonNum}.${sIdx + 1}]`;
+
+      return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page (Strict Single-Line Fit) -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000; min-height: 20px; box-sizing: border-box;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1; overflow: hidden;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; padding: 0.6px 6px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">
+                ${st.step || sIdx + 1}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #ffffff; white-space: nowrap; flex-shrink: 0;">
+                ${st.dates}
+              </span>
+              <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
+                ${questionText}
+              </span>
+            </div>
+            <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; padding: 0.5px 5px; border-radius: 2px; margin-left: 6px; white-space: nowrap; flex-shrink: 0;">
+              ${paraBadge}
+            </span>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (44mm) & Right Ruled Writing Lines (~154mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <!-- Left Column: High-Visibility 44mm Trigger Spine (Pure White Canvas, Zero Grey Dithering) -->
+            <div style="width: 44mm; flex-shrink: 0; background: #ffffff; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
             </div>
 
-            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
-          </div>`;
-  });
+
+          </div>
+        </div>`;
+    })
+    .join('');
 
   return `
   <!-- ------------------------------------------------------------------ -->
   <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum})         -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-${pageNum}" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
+      
       <!-- Lesson Header with Inquiry Question Title -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            ${keyTopicBadge} &bull; ENQUIRY LESSON NOTEBOOK
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+            ${keyTopicBadge} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 1 (1HI0/11) &bull; THEMATIC STUDY
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 (1HI0/11)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${enquiryQuestion}
         </h2>
       </div>
 
-      <!-- Active Lesson Note-Taking Spine -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
+      <!-- Core Specification Focus Strip -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
+        <strong style="color: #000000;">Core Specification Focus:</strong> ${specAnchor}
+      </div>
+
+      <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+            CHRONOLOGICAL INQUIRY SPINE &bull; 5 CAUSAL MILESTONES
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Take precise, structured notes alongside each milestone as your teacher narrates the history
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #000000;">
+            PUPIL NOTE-TAKING ZONE &bull; <span style="font-style: italic; font-weight: 500; color: #222222;">Construct concise causal notes alongside each milestone prompt</span>
           </span>
         </div>
 
         <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
-${stagesHtml}
+          ${stagesHtml}
         </div>
       </div>
 
@@ -1230,123 +1255,312 @@ ${flexTaskLines}
   html += `
   <div class="page page-container verso-page" id="page-24" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 4px; margin-bottom: 8px;">
+      <!-- Top Departmental Branding -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #0f284e; padding-bottom: 3px;">
         <div data-department-name="The History Department">
-          <span style="font-family: 'Inter', sans-serif; font-size: 10pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 1px;">
-            <span class="school-brand-target">The History Department</span> &bull; REVISION LEDGER
+          <span style="font-family: 'Inter', sans-serif; font-size: 10pt; font-weight: 900; color: #0f284e; text-transform: uppercase; letter-spacing: 0.8px;">
+            <span class="school-brand-target">The History Department</span>
           </span>
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; color: #0f284e;">
-          FINAL SYNOPTIC REVIEW
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 700; color: #0f284e;">
+          KEY TOPIC 2 ASSESSMENT RECORD &bull; c1500–c1700
         </div>
       </div>
 
-      <!-- Core Knowledge Ledger (Top Half) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 8px 10px; background: #ffffff; margin-bottom: 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding-bottom: 3px; margin-bottom: 6px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
-              Key Topic 2 &bull; Master Knowledge Ledger
-            </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; border: 1px solid #0f284e; background: #0f284e; color: #ffffff; padding: 1px 6px; border-radius: 2px;">
-              Specification Audit
-            </span>
-          </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #334155; margin: 0 0 6px 0; line-height: 1.3;">
-            Before sitting Edexcel Paper 1 (Section B), you must be able to deploy precise historical evidence across all five areas of the Medical Renaissance in Britain (c1500–c1700). Use this ledger for spaced retrieval practice.
-          </p>
+      <!-- Student Target Grade Strip -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 12px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; align-items: center;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
-
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px;">
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              1. The Printing Press &amp; The Royal Society
-            </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
-              <li>Movable type (c1440) ended Church control of manuscripts.</li>
-              <li>Royal Society (1660) received Royal Charter from Charles II.</li>
-              <li>Motto Nullius in Verba: "Take nobody’s word for it".</li>
-              <li>Philosophical Transactions (1665) established peer review.</li>
-            </ul>
-          </div>
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              2. Thomas Sydenham (English Hippocrates)
-            </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
-              <li>Pioneered bedside observation over ancient book-learning.</li>
-              <li>Observationes Medicae (1676) classified disease species.</li>
-              <li>Distinguished scarlet fever from measles symptoms.</li>
-              <li>Introduced cool therapy for smallpox; cinchona bark for ague.</li>
-            </ul>
-          </div>
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              3. Andreas Vesalius &amp; Human Anatomy
-            </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
-              <li>Professor at Padua; dissected human corpses directly.</li>
-              <li>De Humani Corporis Fabrica (1543) disproved 200+ Galen errors.</li>
-              <li>Human jawbone is one piece; breastbone has three parts.</li>
-              <li>Thomas Geminus copied anatomical woodcuts for London.</li>
-            </ul>
-          </div>
-          <div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #0f284e; border-bottom: 1px solid #cbd5e1; padding-bottom: 2px; margin-bottom: 3px;">
-              4. William Harvey &amp; Circulation of Blood
-            </div>
-            <ul style="margin: 0; padding-left: 14px; font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #334155;">
-              <li>Dissected cold-blooded animals; proved heart is a mechanical pump.</li>
-              <li>De Motu Cordis (1628) proved blood circulates through one-way valves.</li>
-              <li>Mathematical calculations proved liver could not make blood daily.</li>
-              <li>Marcello Malpighi (1661) confirmed capillaries with microscope.</li>
-            </ul>
-          </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Target:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
-
-        <div style="border-top: 1px solid #0f284e; padding-top: 5px; margin-top: 4px; display: flex; justify-content: space-between; align-items: center;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
-            Cumulative Revision Sign-off:
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; color: #475569;">
-            Teacher Initial: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ] &bull; Date: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ]
-          </span>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.5pt; color: #0f284e; text-transform: uppercase; margin-right: 8px;">Current Grade:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid #0f284e; height: 14px;"></div>
         </div>
       </div>
 
-      <!-- 5 QR Codes for Digital Quizzing Hub (Bottom Half) -->
-      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 6px 8px; background: #f0f4f9;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px; margin-bottom: 5px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
-            📱 Interactive Digital Quizzing Hub &bull; Scan for Instant Retrieval Practice
+      <!-- Expanded Key Topic 2 Assessment Record Table (10 Questions + Cumulative Total) -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; margin-bottom: 4px;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
+          <thead>
+            <tr style="background: #0f284e; color: #ffffff; text-transform: uppercase; letter-spacing: 0.5px;">
+              <th style="padding: 7px 6px; text-align: center; width: 8%; font-size: 7.8pt; font-weight: 800;">Enquiry</th>
+              <th style="padding: 7px 10px; text-align: left; width: 36%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Assessment Component Focus</th>
+              <th style="padding: 7px 6px; text-align: center; width: 7%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Page</th>
+              <th style="padding: 7px 6px; text-align: center; width: 12%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Score</th>
+              <th style="padding: 7px 10px; text-align: left; width: 37%; font-size: 7.8pt; font-weight: 800; border-left: 1px solid rgba(255,255,255,0.25);">Teacher Comment &amp; Next Steps</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- KT2.1: The New Spirit of Enquiry -->
+            <tr style="border-bottom: 1px dashed #cbd5e1;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.2px solid #cbd5e1; background: #f0f4f9; color: #0f284e; vertical-align: middle;">
+                KT2.1
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q4:</strong> Explain Why New Medical Ideas Spread More Rapidly c1500–c1700
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 5–7
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1.5px solid #0f284e;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q3:</strong> Explain One Similarity (Ideas on Cause: Renaissance vs Medieval)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 7
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- KT2.2: Thomas Sydenham -->
+            <tr style="border-bottom: 1px dashed #cbd5e1;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.2px solid #cbd5e1; background: #f0f4f9; color: #0f284e; vertical-align: middle;">
+                KT2.2
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q4:</strong> Explain Why Thomas Sydenham Was an Important Figure
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 9–11
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1.5px solid #0f284e;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q3:</strong> Explain One Difference (Treatments: Renaissance vs Medieval)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 11
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- KT2.3: Andreas Vesalius -->
+            <tr style="border-bottom: 1px dashed #cbd5e1;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.2px solid #cbd5e1; background: #f0f4f9; color: #0f284e; vertical-align: middle;">
+                KT2.3
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q4:</strong> Explain Why Andreas Vesalius Made Anatomical Breakthroughs
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 13–15
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1.5px solid #0f284e;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q3:</strong> Explain One Similarity (Anatomical Training: Renaissance vs 19th C)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 15
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- KT2.4: William Harvey -->
+            <tr style="border-bottom: 1px dashed #cbd5e1;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.2px solid #cbd5e1; background: #f0f4f9; color: #0f284e; vertical-align: middle;">
+                KT2.4
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q4:</strong> Explain Why William Harvey’s Circulation Discovery Was Major Breakthrough
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 17–19
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 12
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1.5px solid #0f284e;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q3:</strong> Explain One Difference (Ideas About Human Body: Renaissance vs Medieval)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 19
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- KT2.5: The Great Plague of 1665 -->
+            <tr style="border-bottom: 1px dashed #cbd5e1;">
+              <td rowspan="2" style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 9.5pt; border-right: 1.2px solid #cbd5e1; background: #f0f4f9; color: #0f284e; vertical-align: middle;">
+                KT2.5
+              </td>
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q5/6:</strong> Evaluative Essay: Great Plague (1665) vs Black Death (1348)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 21–23
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 20
+              </td>
+              <td rowspan="2" style="padding: 10px 10px; vertical-align: top; font-size: 8pt; background: #ffffff;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #475569; font-weight: 700; text-transform: uppercase; margin-bottom: 4px;">
+                  Marking Feedback &bull; Targets:
+                </div>
+                <div style="display: flex; flex-direction: column; justify-content: space-around; height: 19mm;">
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                  <div style="border-bottom: 1px dotted #cbd5e1; height: 6mm;"></div>
+                </div>
+              </td>
+            </tr>
+            <tr style="border-bottom: 1.5px solid #0f284e;">
+              <td style="padding: 13px 10px; font-weight: 600; line-height: 1.35; border-right: 1.2px solid #cbd5e1; font-size: 8.2pt; color: #0f284e;">
+                <strong>Q3:</strong> Explain One Difference (Government Responses: 1665 vs 1348)
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                p. 23
+              </td>
+              <td style="padding: 13px 6px; text-align: center; font-size: 10pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 4
+              </td>
+            </tr>
+
+            <!-- Total Row -->
+            <tr style="background: #f0f4f9; border-top: 2px solid #0f284e;">
+              <td style="padding: 12px 6px; text-align: center; font-weight: 900; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; background: #0f284e; color: #ffffff;">
+                TOTAL
+              </td>
+              <td style="padding: 12px 10px; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; color: #0f284e;">
+                Key Topic 2 Cumulative Examination Assessment Portfolio (10 Tasks)
+              </td>
+              <td style="padding: 12px 6px; text-align: center; font-weight: 800; font-size: 8.5pt; border-right: 1.2px solid #cbd5e1; color: #0f284e;">
+                p. 4–23
+              </td>
+              <td style="padding: 12px 6px; text-align: center; font-size: 11pt; font-weight: 900; border-right: 1.2px solid #cbd5e1; white-space: nowrap; color: #0f284e;">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; / 88
+              </td>
+              <td style="padding: 12px 10px; font-weight: 800; font-size: 8.5pt; background: #f0f4f9; color: #0f284e;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <span>Overall Grade: <span style="display: inline-block; width: 45px; border-bottom: 1.5px solid #0f284e;"></span></span>
+                  <span style="font-size: 7.5pt; color: #475569;">Teacher Target: <span style="display: inline-block; width: 40px; border-bottom: 1px solid #475569;"></span></span>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 5 Verified Micro-QR Codes with Dual QR (Lesson + Quiz) -->
+      <div style="border: 1.5px solid #0f284e; border-radius: 4px; padding: 5px 6px; background: #f0f4f9;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
+            &bull; Digital Learning &amp; Retrieval Hub &bull; Interactive Lessons &amp; Quizzes
           </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; border: 1px solid #0f284e; background: #0f284e; color: #ffffff; padding: 0 4px; border-radius: 2px;">
-            ONLINE RECALL
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #475569;">
+            Interactive Textbook &bull; 10 Questions Per Enquiry
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px;">
           ${renaissanceConfigs
             .map((cfg, idx) => {
-              const quizLessonIndex = idx + 5;
-              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${quizLessonIndex}&quiz=true`;
-              const qrSvg = generateQrSvg(quizUrl);
-              const shortLabels = ['New Spirit', 'Sydenham', 'Vesalius', 'Harvey', 'Great Plague'];
+              const lessonUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.id}&view=lessons`;
+              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=edexcel_medicine&lesson=${cfg.id}&quiz=true`;
+              const lessonQrSvg = generateQrSvg(lessonUrl);
+              const quizQrSvg = generateQrSvg(quizUrl);
+              const shortLabels = [
+                'New Spirit',
+                'Thomas Sydenham',
+                'Andreas Vesalius',
+                'William Harvey',
+                'Great Plague',
+              ];
               return `
-          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 2px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px; color: #0f284e;">
+          <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 3px; background: #ffffff; display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; margin-bottom: 1px; color: #0f284e;">
               KT2.${cfg.lessonNum}
             </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #475569; margin-bottom: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #475569; margin-bottom: 4px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
               ${shortLabels[idx]}
             </div>
-            <div style="width: 21.5mm; height: 21.5mm; margin: 0 auto 2px auto;">
-              ${qrSvg}
+
+            <!-- Top QR: Interactive Lesson Hub -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 4px; width: 100%;">
+              <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
+                ${lessonQrSvg}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Lesson Hub
+              </span>
             </div>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; margin-bottom: 2px;">
-              Scan to Quiz
-            </span>
-            <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 900; color: #0f284e; margin-top: 1px; white-space: nowrap;">
-              Best Score: [ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 8</strong> ]
+
+            <!-- Bottom QR: Practice Quiz -->
+            <div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 3px; width: 100%;">
+              <div style="width: 17.5mm; height: 17.5mm; margin: 0 auto 1px auto;">
+                ${quizQrSvg}
+              </div>
+              <span style="font-family: 'Inter', sans-serif; font-size: 5.6pt; font-weight: 800; text-transform: uppercase; background: #0f284e; color: #ffffff; padding: 1.5px 4px; border-radius: 2px; letter-spacing: 0.2px; white-space: nowrap;">
+                Practice Quiz
+              </span>
+            </div>
+
+            <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; color: #0f284e; margin-top: 2px; white-space: nowrap; border: 1px solid #0f284e; border-radius: 2px; padding: 1px 3px; background: #f0f4f9;">
+              Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 10</strong> ]
             </div>
           </div>
           `;
@@ -1355,7 +1569,7 @@ ${flexTaskLines}
         </div>
       </div>
 
-      ${renderFooterStrip(24, 'Nullius in Verba: scanning these quiz QR codes will prove whether your memory holds up under exam pressure.', 24)}
+      ${renderFooterStrip(24, 'Nullius in Verba: "Take nobody’s word for it." Scanning these quiz QR codes will prove whether your memory holds up under exam pressure.', 24)}
     </div>
   </div>
 </body>
@@ -1365,4 +1579,7 @@ ${flexTaskLines}
   return html;
 }
 
-module.exports = { buildRenaissanceTwoPageWorkbook };
+module.exports = {
+  buildRenaissanceTwoPageWorkbook,
+  buildMedicineTwoPageWorkbook: buildRenaissanceTwoPageWorkbook,
+};

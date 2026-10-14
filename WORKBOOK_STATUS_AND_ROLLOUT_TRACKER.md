@@ -83,7 +83,7 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 | Unit ID | Specification Tier | Topic / Coverage | State of Workbooks & Companions |
 | :--- | :--- | :--- | :--- |
 | `cme_new` | Paper 2 (Conflict in Middle East) | KT1, KT2, KT3 (1945–1995) | 🟢 **COMPLETE:** 3x 16-page double-page workbooks + 20-page Master Companion (`Conflict_in_the_Middle_East_Master_Knowledge_Retrieval_Companion.pdf`). |
-| `edexcel_medicine` | Paper 1 (Medicine & Western Front) | Medieval, Renaissance, 18th-19th, Modern, Western Front | 🟢 **24-PAGE WORKBOOKS COMPILED:** 5x 24-page period workbooks + 124-page merged master (`edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf`) + 28p Thematic Master Companion + 12p Western Front Companion.<br>*(Note: Medieval upgraded to Gold Standard 44mm white trigger spine, single-line stage banners across page & decimal paragraph badges [1.1]–[5.5]; Dual QR codes & 10-task assessment portfolio verified; 18th/19th & Modern have Dual QR; Renaissance remains on Single QR).* |
+| `edexcel_medicine` | Paper 1 (Medicine & Western Front) | Medieval, Renaissance, 18th-19th, Modern, Western Front | 🟢 **24-PAGE WORKBOOKS COMPILED:** 5x 24-page period workbooks + 124-page merged master (`edexcel_medicine_pupil_workbook_master_FINAL_V17.pdf`) + 28p Thematic Master Companion + 12p Western Front Companion.<br>*(Note: 100% Dual-QR & Gold Standard parity achieved across all thematic workbooks—Medieval, Renaissance, 18th-19th, Modern: 44mm white trigger spines, single-line stage banners across page, decimal paragraph badges [1.1]–[5.5], 10-task assessment portfolios [88m/period], and 5x Dual-QR codes [Lesson Hub + Quiz] on Page 24).* |
 | `eee` | Paper 2 (Early Elizabethan England) | Key Topics 1, 2, 3 (1558–1588) | 🟢 **COMPLETE:** 3x 16-page workbooks + 72-page Master Workbook. |
 | `weimar_nazi_germany` | Paper 3 (Weimar & Nazi Germany) | Key Topics 1, 2, 3, 4 (1918–1939) | 🟢 **COMPLETE:** 4x 16-page workbooks + 96-page Master Workbook. |
 | `usa` | Paper 3 (The USA, 1954–1975) | Key Topics 1, 2, 3, 4 | 🟢 **COMPLETE:** 4x Key Topic workbooks + 24-page Master Knowledge Retrieval Companion. |
@@ -127,7 +127,7 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Workbook Rollout Compass:**  
-> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
+> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 100% Dual-QR Parity) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
 > **KS3 Perfected:** Year 8 *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next Target:** Year 9: *The Shoah (Holocaust Education)* (`the_shoah`) 🎯 (or GCSE Medicine Renaissance Dual-QR Parity)  
+> **Next Target:** Year 9: *The Shoah (Holocaust Education)* (`the_shoah`) 🎯  
 > **KS3 Ladder:** *The Shoah* ➔ *The Cold War* ➔ *Post-War Britain*
