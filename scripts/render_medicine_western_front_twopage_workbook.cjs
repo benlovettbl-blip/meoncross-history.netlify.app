@@ -758,92 +758,111 @@ const wfConfigs = [
 function renderWfSpinePage(cfg, pageNum) {
   const { keyTopicBadge, enquiryQuestion, specAnchor, stages, leftPageQuip } = cfg;
 
-  let stagesHtml = '';
-  stages.forEach((st, idx) => {
-    let bulletsHtml = st.bullets
-      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
-      .join('\n');
-    stagesHtml += `
-          <!-- Stage ${idx + 1} -->
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+  const stagesHtml = stages
+    .map((st, sIdx) => {
+      const bulletsHtml = st.bullets
+        .map(
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${st.title}
-              </div>
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${st.focusClue}
-                </div>
-              </div>
+            </div>`,
+        )
+        .join('');
+
+      const questionText = st.questionHeading || st.focusClue || st.title;
+      const paraBadge = st.paraBadge || `[5.${cfg.lessonNum}.${sIdx + 1}]`;
+
+      return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page (Strict Single-Line Fit) -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000; min-height: 20px; box-sizing: border-box;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1; overflow: hidden;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; padding: 0.6px 6px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">
+                ${st.step || sIdx + 1}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #ffffff; white-space: nowrap; flex-shrink: 0;">
+                ${st.dates}
+              </span>
+              <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; letter-spacing: -0.1px;">
+                ${questionText}
+              </span>
+            </div>
+            <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; padding: 0.5px 5px; border-radius: 2px; margin-left: 6px; white-space: nowrap; flex-shrink: 0;">
+              ${paraBadge}
+            </span>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (44mm) & Right Ruled Writing Lines (~154mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <!-- Left Column: High-Visibility 44mm Trigger Spine (Pure White Canvas, Zero Grey Dithering) -->
+            <div style="width: 44mm; flex-shrink: 0; background: #ffffff; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
             </div>
 
-            <!-- Ruled Handwriting Lines (6 Lines per stage • 30 lines total) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
-          </div>`;
-  });
+
+          </div>
+        </div>`;
+    })
+    .join('');
 
   return `
   <!-- ------------------------------------------------------------------ -->
   <!-- LESSON ENVIRONMENTAL INQUIRY NOTEBOOK (PAGE ${pageNum})            -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Lesson Header with Inquiry Question Title -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            ${keyTopicBadge} &bull; ENVIRONMENTAL INQUIRY NOTEBOOK
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 1 (1HI0/11) &bull; HISTORIC ENVIRONMENT
-          </span>
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Lesson Header with Inquiry Question Title -->
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+              ${keyTopicBadge} &bull; ENVIRONMENTAL INQUIRY NOTEBOOK
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+              EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 SECTION A
+            </span>
+          </div>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+            ${enquiryQuestion}
+          </h2>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
-          ${enquiryQuestion}
-        </h2>
-        <div style="font-family: 'Georgia', serif; font-size: 6.8pt; color: #333333; line-height: 1.2; font-style: italic;">
-          <strong>Specification Requirement:</strong> ${specAnchor}
+
+        <!-- Core Specification Focus Strip -->
+        <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.24; color: #000000;">
+          <strong style="color: #000000;">Core Specification Focus:</strong> ${specAnchor}
         </div>
       </div>
 
       <!-- Chronological & Environmental Inquiry Spine (5 Stages • Full Page Height) -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; margin: 1px 0; min-height: 0;">
-        ${stagesHtml}
-      </div>
-
-      <!-- Bottom Timeline Mission Pointer -->
-      <div style="border: 1.2px solid #000000; border-radius: 2px; padding: 2px 5px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 1.5px;">
-        <div style="display: flex; align-items: center; gap: 4px;">
-          <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 900; padding: 1px 4px; border-radius: 2px; text-transform: uppercase;">
-            Timeline Mission
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+            CHRONOLOGICAL INQUIRY SPINE &bull; 5 CAUSAL MILESTONES
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000;">
-            ${cfg.timelineMission}
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #000000;">
+            PUPIL NOTE-TAKING ZONE &bull; <span style="font-style: italic; font-weight: 500; color: #222222;">Construct concise causal notes alongside each milestone prompt</span>
           </span>
         </div>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; white-space: nowrap; margin-left: 6px;">
-          &larr; Pages 2–3
-        </span>
+
+        <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
+        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
+          ${stagesHtml}
+        </div>
       </div>
 
       ${renderFooterStrip(pageNum, leftPageQuip, 28)}
@@ -852,218 +871,177 @@ function renderWfSpinePage(cfg, pageNum) {
 }
 
 // ============================================================================
-// HELPER: RENDER SECTION A EXAM BLUEPRINT PAGE (PAGE 2 OF LESSON)
+// HELPER: RENDER SECTION A EXAM QUESTION PAGE (PAGE 2 OF LESSON)
 // ============================================================================
-function renderWfExamBlueprintPage(
-  cfg,
-  pageNum,
-  primarySource,
-  b64Img,
-  linedLeftPageNum,
-  linedRightPageNum,
-) {
+function renderWfExamQuestionPage(cfg, pageNum, primarySource, b64Img) {
   const isQ2a = cfg.tariff.includes('2(a)');
 
-  // Exam Question 2 Enquiry Blueprint Section
-  let q2Html = '';
+  let writingAreaHtml = '';
   if (isQ2a) {
-    q2Html = `
-      <!-- Question 2(a) Source Utility Blueprint [8 marks] -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            &bull; Question 2(a): Source Utility Assessment [8 marks &bull; 10 mins]
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
-            AO3 EVALUATION
-          </span>
-        </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.18;">
-          ${cfg.examStem}
-        </div>
-        <div style="background: #f4f4f4; border-left: 2px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; margin-bottom: 2px;">
-          <strong>Provenance Clue:</strong> ${cfg.provenanceClue}
-        </div>
-
-
-        <!-- Connectives & Key Vocabulary Bank -->
-        <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 4px; margin-top: 3px; border-top: 1px dashed #000000; padding-top: 2px;">
-          <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.2pt; text-transform: uppercase;">Analytical Connectives:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6pt; font-style: italic; line-height: 1.12; display: block;">${cfg.connectives}</span>
-          </div>
-          <div>
-            <strong style="font-family: 'Inter', sans-serif; font-size: 6.2pt; text-transform: uppercase;">Key Vocabulary:</strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6pt; line-height: 1.12; display: block;">${cfg.wordBank}</span>
-          </div>
-        </div>
+    const linesHtml = Array.from(
+      { length: 14 },
+      () => '<div class="task-line" style="height: 7.2mm;"></div>',
+    ).join('');
+    writingAreaHtml = `
+      <!-- Question 2(a) Ruled Writing Lines (14 Lines) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #222222; margin: 2px 0 1px 0; display: flex; justify-content: space-between;">
+        <span><strong>Write your response to Question 2(a) in the space provided below:</strong></span>
+        <span style="font-size: 6.6pt; color: #555555;">(Response continues on facing page &rarr;)</span>
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 2px 0;">
+        ${linesHtml}
       </div>
     `;
   } else {
-    q2Html = `
-      <!-- Question 2(b) 4-Prompt Follow-Up Blueprint [4 marks] -->
-      <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            &bull; Question 2(b): 4-Prompt Follow-Up Enquiry [4 marks &bull; 5 mins]
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
-            AO3 HISTORICAL ENQUIRY
-          </span>
-        </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 8pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.18;">
-          ${cfg.examStem}
-        </div>
-        <div style="background: #f4f4f4; border-left: 2px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; margin-bottom: 2px;">
-          <strong>Examiner Strategy:</strong> Follow up an exact quotation or visual detail. Your question must directly target your chosen detail. Your named source type must be authentic and specific (e.g. RAMC casualty returns, battalion war diaries).
-        </div>
-
-        <!-- 4-Prompt Disciplinary Enquiry Framework -->
-        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif; font-size: 6.2pt; margin-top: 2px;">
-          <thead>
-            <tr style="background: #000000; color: #ffffff;">
-              <th style="padding: 2px 4px; text-align: left; width: 34%;">Official Edexcel Prompt</th>
-              <th style="padding: 2px 4px; text-align: left;">AO3 Disciplinary Enquiry Strategy &bull; Exam Standard</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr style="border-bottom: 1px solid #cccccc;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">1. Detail in Source ${cfg.q2bData.sourceLetter} to follow up:</td>
-              <td style="padding: 2px 4px; font-style: italic;">Select a precise, verifiable fact or visual detail directly related to the enquiry.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #cccccc;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">2. Question I would ask:</td>
-              <td style="padding: 2px 4px; font-style: italic;">Frame a focused historical question that directly investigates your chosen detail.</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #cccccc;">
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">3. Type of source I would use:</td>
-              <td style="padding: 2px 4px; font-style: italic;">Name a specific contemporary record (e.g. RAMC war diaries, casualty logs, medical records).</td>
-            </tr>
-            <tr>
-              <td style="padding: 2px 4px; font-weight: 700; border-right: 1px solid #000000;">4. How this would help me:</td>
-              <td style="padding: 2px 4px; font-style: italic;">Explain what unique statistical or medical data this source provides to answer your question.</td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- Vocabulary & Connectives -->
-        <div style="margin-top: 2.5px; border-top: 1px dashed #000000; padding-top: 2px; display: flex; justify-content: space-between; font-size: 6pt; font-family: 'Inter', sans-serif;">
-          <span><strong>Key Vocabulary:</strong> ${cfg.wordBank}</span>
-          <span style="font-style: italic; color: #444444;">${cfg.connectives}</span>
-        </div>
+    const q2bCommentaryLines = Array.from(
+      { length: 5 },
+      () => '<div class="task-line" style="height: 7.2mm;"></div>',
+    ).join('');
+    writingAreaHtml = `
+      <!-- Question 2(b) 4-Prompt Follow-Up Matrix [4 marks] -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #222222; margin: 2px 0 1px 0; display: flex; justify-content: space-between;">
+        <span><strong>Complete the 4-prompt historical enquiry matrix below:</strong></span>
+        <span style="font-size: 6.6pt; color: #555555;">(Response continues on facing page &rarr;)</span>
+      </div>
+      <table style="width: 100%; border-collapse: collapse; border: 1.5px solid #000000; font-family: 'Inter', sans-serif; font-size: 6.7pt; margin-bottom: 2px;">
+        <tbody>
+          <tr style="border-bottom: 1.2px solid #000000;">
+            <td style="width: 38%; padding: 2.5px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
+              Detail in Source ${cfg.q2bData.sourceLetter} that I would follow up:
+            </td>
+            <td style="padding: 2px 4px;">
+              <div class="task-line" style="height: 6.5mm;"></div>
+              <div class="task-line" style="height: 6.5mm;"></div>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1.2px solid #000000;">
+            <td style="padding: 2.5px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
+              Question I would ask:
+            </td>
+            <td style="padding: 2px 4px;">
+              <div class="task-line" style="height: 6.5mm;"></div>
+              <div class="task-line" style="height: 6.5mm;"></div>
+            </td>
+          </tr>
+          <tr style="border-bottom: 1.2px solid #000000;">
+            <td style="padding: 2.5px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
+              Type of source I would use:
+            </td>
+            <td style="padding: 2px 4px;">
+              <div class="task-line" style="height: 6.5mm;"></div>
+              <div class="task-line" style="height: 6.5mm;"></div>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding: 2.5px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
+              How this would help me find out more:
+            </td>
+            <td style="padding: 2px 4px;">
+              <div class="task-line" style="height: 6.5mm;"></div>
+              <div class="task-line" style="height: 6.5mm;"></div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #444444; margin: 1px 0;">
+        Disciplinary Commentary &bull; Clinical Justification of Chosen Source Type:
+      </div>
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 0 0 2px 0;">
+        ${q2bCommentaryLines}
       </div>
     `;
   }
 
   return `
   <!-- ------------------------------------------------------------------ -->
-  <!-- LESSON EXAM BLUEPRINT & SOURCE INVESTIGATION (PAGE ${pageNum})      -->
+  <!-- LESSON EXAM QUESTION & SOURCE INVESTIGATION (PAGE ${pageNum})      -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            ${cfg.keyTopicBadge} &bull; SECTION A EXAM BLUEPRINT
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            HISTORIC ENVIRONMENT &bull; PAPER 1 SECTION A
-          </span>
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Running Header -->
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+              ${cfg.keyTopicBadge} &bull; SECTION A EXAM PRACTICE
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+              EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 SECTION A
+            </span>
+          </div>
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0; font-weight: 900; line-height: 1.15;">
+            ${cfg.tariff}
+          </h2>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 1px 0; font-weight: 900; line-height: 1.15;">
-          ${cfg.title}
-        </h2>
-      </div>
 
-      <!-- Primary Archival Source Investigation Box (Compact, Base64 Inlined) -->
-      <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 900; text-transform: uppercase; color: #000000;">
-            ${cfg.sourceBadge} &bull; ${cfg.sourceSubtitle}
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #333333;">
-            ORIGIN: ${cfg.sourceDate}
-          </span>
-        </div>
-        <div style="display: flex; gap: 8px; align-items: center;">
-          <div style="width: 44mm; height: 32mm; border: 1px solid #000000; border-radius: 2px; overflow: hidden; flex-shrink: 0; background: #f0f0f0;">
-            <img src="${b64Img}" alt="${primarySource.caption || 'Primary Source Evidence'}" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); display: block;">
+        <!-- Primary Archival Source Investigation Box (Compact, Base64 Inlined) -->
+        <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 3px 5px; background: #ffffff; margin-bottom: 3px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #000000;">
+              ${cfg.sourceBadge} &bull; ${cfg.sourceSubtitle}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #333333;">
+              ORIGIN: ${cfg.sourceDate}
+            </span>
           </div>
-          <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; height: 32mm;">
-            <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.25; color: #000000;">
-              ${primarySource.caption || 'Official photographic and archival evidence documenting medical facilities and conditions in the British sector of the Western Front.'}
+          <div style="display: flex; gap: 7px; align-items: center;">
+            <div style="width: 42mm; height: 30mm; border: 1px solid #000000; border-radius: 2px; overflow: hidden; flex-shrink: 0; background: #f0f0f0;">
+              <img src="${b64Img}" alt="${primarySource.caption || 'Primary Source Evidence'}" style="width: 100%; height: 100%; object-fit: cover; filter: grayscale(100%); display: block;">
             </div>
-            <div style="border-top: 1px dashed #000000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #333333; line-height: 1.15;">
-              <strong>Historical Provenance:</strong> ${primarySource.provenance || 'Imperial War Museum / Contemporary Photographic Record (1914–1918).'}
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; height: 30mm;">
+              <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.25; color: #000000;">
+                ${primarySource.caption || 'Official photographic and archival evidence documenting medical facilities and conditions in the British sector of the Western Front.'}
+              </div>
+              <div style="border-top: 1px dashed #000000; padding-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #333333; line-height: 1.15;">
+                <strong>Historical Provenance:</strong> ${primarySource.provenance || 'Imperial War Museum / Contemporary Photographic Record (1914–1918).'}
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Question 1 Feature Drills Blueprint [2 x 2 = 4 marks] -->
-      <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 4px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Edexcel Section A: Question 1 Feature Drills [4 marks &bull; 5 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 4px; border-radius: 2px;">
-            2 SEPARATE QUESTIONS &bull; 2 MARKS EACH
-          </span>
-        </div>
-        <div style="background: #f4f4f4; border-left: 2px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; margin-bottom: 3px;">
-          <strong>Examiner Mark Scheme:</strong> Award 1 mark for identifying a valid historical feature + 1 mark for supporting factual detail. To score 2/2, the supporting detail must directly explain and develop the named feature.
-        </div>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
-          <!-- Q1(a) Prompt -->
-          <div style="border: 1px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.15; margin-bottom: 1.5px;">
-              1(a) ${cfg.q1Features.a.q} [2 marks]
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #333333; line-height: 1.15;">
-              <strong>Target: AO1 [2 marks]</strong> &bull; Point (1m) + Detail (1m)<br>
-              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-            </div>
+        <!-- Question Stem & Strategy Box -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #000000; margin-bottom: 2px; line-height: 1.2;">
+            ${cfg.examStem}
           </div>
-          <!-- Q1(b) Prompt -->
-          <div style="border: 1px solid #000000; border-radius: 2px; padding: 3px 5px; background: #ffffff;">
-            <div style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000; line-height: 1.15; margin-bottom: 1.5px;">
-              1(b) ${cfg.q1Features.b.q} [2 marks]
-            </div>
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.2pt; color: #333333; line-height: 1.15;">
-              <strong>Target: AO1 [2 marks]</strong> &bull; Point (1m) + Detail (1m)<br>
-              <strong>Sentence Stems:</strong> <em>One key feature was that... &bull; Specifically, this was evident when...</em>
-            </div>
+          <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.6pt; line-height: 1.15;">
+            ${
+              isQ2a
+                ? `<strong>Provenance Clue:</strong> ${cfg.provenanceClue}`
+                : `<strong>Examiner Strategy:</strong> Follow up an exact quotation or visual detail. Your question must directly target your chosen detail. Your named source type must be authentic and specific (e.g. RAMC casualty returns, battalion war diaries).`
+            }
+          </div>
+        </div>
+
+        <!-- Accessible Writing Frames & Key Vocabulary Bank -->
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 6px;">
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Accessible Writing Frames:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-style: italic; line-height: 1.15; display: block;">${cfg.connectives}</span>
+          </div>
+          <div>
+            <strong style="font-family: 'Inter', sans-serif; font-size: 6.6pt; text-transform: uppercase; display: block; margin-bottom: 1px;">Key Vocabulary Bank:</strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.15; display: block;">${cfg.wordBank}</span>
           </div>
         </div>
       </div>
 
-      <!-- Question 2 Enquiry Blueprint Section -->
-      ${q2Html}
+      <!-- Writing / Answering Area -->
+      ${writingAreaHtml}
 
-      <!-- Source Evidence & Planning Notes (Standard Ruled Lines) -->
-      <div style="margin: 6px 0 5px 0; border: 1px solid #000000; border-radius: 3px; padding: 3.5px 5px; background: #ffffff;">
-        <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800; text-transform: uppercase; color: #000000; margin-bottom: 2px;">
-          Source Evidence, Contextual Knowledge &amp; Disciplinary Analysis Notes:
+      <!-- Timeline Mission Box -->
+      <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px;">
+        <div style="display: flex; align-items: center; gap: 6px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; white-space: nowrap;">
+            Timeline Mission
+          </span>
+          <span style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.2; color: #000000;">
+            ${cfg.timelineMission}
+          </span>
         </div>
-        <div style="display: flex; flex-direction: column; width: 100%;">
-          ${Array.from(
-            { length: isQ2a ? 14 : 12 },
-            () =>
-              `<div style="height: 7.9mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%;"></div>`,
-          ).join('')}
+        <div style="border: 1.2px solid #000000; border-radius: 2px; padding: 1.5px 5px; font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; white-space: nowrap;">
+          [ &nbsp;&nbsp; ] Done
         </div>
-      </div>
-
-      <!-- Page Pointer Callout -->
-      <div style="border: 1.2px solid #000000; border-radius: 2px; padding: 2.5px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 1px;">
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; text-transform: uppercase;">
-          Formal Examination Practice
-        </span>
-        <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #000000;">
-          Write your formal answers on Pages ${linedLeftPageNum}–${linedRightPageNum} &rarr;
-        </span>
       </div>
 
       ${renderFooterStrip(pageNum, cfg.rightPageQuip, 28)}
@@ -1072,181 +1050,41 @@ function renderWfExamBlueprintPage(
 }
 
 // ============================================================================
-// HELPER: RENDER OFFICIAL EXAM RESPONSE PAGE 1 (PAGE 3 OF LESSON)
+// HELPER: RENDER OFFICIAL EXAM CONTINUATION PAGE (PAGE 3 OF LESSON)
 // ============================================================================
-function renderWfExamResponsePage1(cfg, pageNum) {
-  const isQ2a = cfg.tariff.includes('2(a)');
-
-  let q2ResponseArea = '';
-  if (isQ2a) {
-    const q2Lines = Array.from({ length: 22 }, (_, idx) => {
-      const linePrompt =
-        idx === 0
-          ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #777777;">[ Begin Question 2(a) Utility Evaluation &bull; Content &bull; Provenance &bull; Context ]</span>`
-          : `&nbsp;`;
-      return `
-        <div class="lined-row" style="height: 7.3mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
-          ${linePrompt}
-        </div>`;
-    }).join('');
-
-    q2ResponseArea = `
-      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.2px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 2(a): Source Utility Response [8 marks &bull; 10 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 700;">
-            Continue on next page &rarr;
-          </span>
-        </div>
-        <div class="lined-page-grid" style="flex: 1; min-height: 0; display: flex; flex-direction: column; margin: 0;">
-          ${q2Lines}
-        </div>
-      </div>
-    `;
-  } else {
-    const q2bLines = Array.from({ length: 14 }, (_, idx) => {
-      const linePrompt =
-        idx === 0
-          ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #777777;">[ Disciplinary Commentary: Justify why this source type is authoritative for your historical enquiry ]</span>`
-          : `&nbsp;`;
-      return `
-        <div class="lined-row" style="height: 7.45mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
-          ${linePrompt}
-        </div>`;
-    }).join('');
-
-    q2ResponseArea = `
-      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.2px solid #000000; padding-bottom: 1px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; letter-spacing: 0.5px;">
-            &bull; Question 2(b): 4-Prompt Follow-Up Matrix [4 marks &bull; 5 mins]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 4px; border-radius: 2px;">
-            Score: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]
-          </span>
-        </div>
-
-        <table style="width: 100%; border-collapse: collapse; border: 1.5px solid #000000; font-family: 'Inter', sans-serif; font-size: 6.8pt; margin-bottom: 2px;">
-          <tbody>
-            <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="width: 38%; padding: 3px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
-                Detail in Source ${cfg.q2bData.sourceLetter} that I would follow up:
-              </td>
-              <td style="padding: 2px 4px;">
-                <div class="task-line" style="height: 6.8mm;"></div>
-                <div class="task-line" style="height: 6.8mm;"></div>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 3px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
-                Question I would ask:
-              </td>
-              <td style="padding: 2px 4px;">
-                <div class="task-line" style="height: 6.8mm;"></div>
-                <div class="task-line" style="height: 6.8mm;"></div>
-              </td>
-            </tr>
-            <tr style="border-bottom: 1.2px solid #000000;">
-              <td style="padding: 3px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
-                Type of source I would use:
-              </td>
-              <td style="padding: 2px 4px;">
-                <div class="task-line" style="height: 6.8mm;"></div>
-                <div class="task-line" style="height: 6.8mm;"></div>
-              </td>
-            </tr>
-            <tr>
-              <td style="padding: 3px 5px; font-weight: 800; background: #f9f9f9; border-right: 1.2px solid #000000; vertical-align: top;">
-                How this would help me find out more:
-              </td>
-              <td style="padding: 2px 4px;">
-                <div class="task-line" style="height: 6.8mm;"></div>
-                <div class="task-line" style="height: 6.8mm;"></div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <!-- Additional Disciplinary Extension Lines -->
-        <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
-          <div class="lined-page-grid" style="flex: 1; min-height: 0; display: flex; flex-direction: column; margin: 0;">
-            ${q2bLines}
-          </div>
-        </div>
-      </div>
-    `;
-  }
+function renderWfExamContinuationPage(cfg, pageNum) {
+  const continuationTaskLines = Array.from(
+    { length: 31 },
+    () => '<div class="task-line" style="height: 7.3mm;"></div>',
+  ).join('');
 
   return `
   <!-- ------------------------------------------------------------------ -->
-  <!-- LESSON OFFICIAL EXAM RESPONSE (PAGE ${pageNum})                    -->
+  <!-- LESSON OFFICIAL EXAM CONTINUATION (PAGE ${pageNum})                -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Official Examination Response &bull; Question 1 &amp; Question 2
-        </span>
-      </div>
-
-      <!-- Question 1 Official Answering Frame [4 marks] -->
-      <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase;">
-            &bull; Question 1: Feature Drills [2 x 2 = 4 marks]
-          </strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; border: 1.2px solid #000000; padding: 0 5px; border-radius: 2px;">
-            Q1 Total: [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ 4</strong> ]
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Running Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.title}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            ${cfg.tariff.split(':')[0]} Continued
           </span>
         </div>
 
-        <!-- 1(a) Response Area -->
-        <div style="margin-bottom: 3px; border-bottom: 1px dashed #cccccc; padding-bottom: 2px;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000;">
-              1(a) ${cfg.q1Features.a.q}
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800;">[ &nbsp;&nbsp; <strong>/ 2</strong> ]</span>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 2px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Feature:</span>
-            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.2mm;"></div>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 2px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Detail:</span>
-            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.2mm;"></div>
-          </div>
-          <div style="border-bottom: 1.2px solid #000000; height: 7.2mm; width: 100%;"></div>
-        </div>
-
-        <!-- 1(b) Response Area -->
-        <div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline;">
-            <span style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000;">
-              1(b) ${cfg.q1Features.b.q}
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800;">[ &nbsp;&nbsp; <strong>/ 2</strong> ]</span>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 2px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Feature:</span>
-            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.2mm;"></div>
-          </div>
-          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 2px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Detail:</span>
-            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.2mm;"></div>
-          </div>
-          <div style="border-bottom: 1.2px solid #000000; height: 7.2mm; width: 100%;"></div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #333333; margin-bottom: 2px; display: flex; justify-content: space-between;">
+          <span>Continue your response to ${cfg.tariff.split(':')[0]} below:</span>
+          <span style="font-size: 6.6pt; color: #666666;">(Concludes on next page &rarr;)</span>
         </div>
       </div>
 
-      <!-- Question 2 Response Area -->
-      ${q2ResponseArea}
+      <!-- 31 Uninterrupted Ruled Writing Lines -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 2px 0;">
+        ${continuationTaskLines}
+      </div>
 
       ${renderFooterStrip(pageNum, cfg.linedLeftQuip, 28)}
     </div>
@@ -1254,55 +1092,89 @@ function renderWfExamResponsePage1(cfg, pageNum) {
 }
 
 // ============================================================================
-// HELPER: RENDER OFFICIAL EXAM RESPONSE PAGE 2 (PAGE 4 OF LESSON)
+// HELPER: RENDER OFFICIAL EXAM SYNTHESIS & QUESTION 1 FEATURES (PAGE 4)
 // ============================================================================
-function renderWfExamResponsePage2(cfg, pageNum) {
-  const isQ2a = cfg.tariff.includes('2(a)');
-  const q2Mark = isQ2a ? '8' : '4';
-  const totalMark = isQ2a ? '12' : '8';
-
-  // 32 ruled lines edge-to-edge (no margin cell) with exact 7.4mm height to utilize full page budget
-  const linedRows = Array.from({ length: 32 }, (_, idx) => {
-    const linePrompt =
-      idx === 0
-        ? `<span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #777777;">[ Question 2 Sustained Analysis Continued &bull; Contextual Knowledge &bull; Conclusion ]</span>`
-        : `&nbsp;`;
-    return `
-      <div class="lined-row" style="height: 7.4mm; border-bottom: 1.2px solid #000000; box-sizing: border-box; width: 100%; display: flex; align-items: center;">
-        ${linePrompt}
-      </div>`;
-  }).join('');
+function renderWfExamSynthesisAndFeaturesPage(cfg, pageNum) {
+  const conclusionTaskLines = Array.from(
+    { length: 24 },
+    () => '<div class="task-line" style="height: 7.3mm;"></div>',
+  ).join('');
 
   return `
   <!-- ------------------------------------------------------------------ -->
-  <!-- LESSON SUSTAINED RESPONSE & FINAL VERDICT (PAGE ${pageNum})        -->
+  <!-- LESSON SYNTHESIS & QUESTION 1 FEATURE DRILLS (PAGE ${pageNum})      -->
   <!-- ------------------------------------------------------------------ -->
   <div class="page page-container recto-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Running Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
-          ${cfg.title}
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Sustained Evaluation &bull; Disciplinary Context &bull; Historic Environment
-        </span>
-      </div>
-
-      <!-- 30 Ruled Lines Across Page Width -->
-      <div class="lined-page-grid" style="margin-top: 1px;">
-        ${linedRows}
-      </div>
-
-      <!-- Teacher Feedback & Lesson Score Ledger Strip -->
-      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; display: flex; justify-content: space-between; align-items: center; margin-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.8pt;">
-        <div>
-          <span><strong>Q2 Score:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${q2Mark}</strong> ]</span>
-          <span style="margin-left: 8px;"><strong>Lesson Total:</strong> [ &nbsp;&nbsp;&nbsp;&nbsp; <strong>/ ${totalMark}</strong> ]</span>
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <div>
+        <!-- Running Header -->
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 800;">
+            ${cfg.title}
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Assessment Synthesis &amp; Question 1 Feature Drills
+          </span>
         </div>
-        <div style="flex: 1; margin-left: 12px; display: flex; align-items: baseline;">
-          <span style="font-weight: 700; margin-right: 6px;">Teacher Feedback / Target:</span>
-          <div style="flex: 1; border-bottom: 1px dotted #888888; height: 12px;"></div>
+
+        <div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #333333; margin-bottom: 2px;">
+          Final analytical evaluation &amp; concluding historical verdict for ${cfg.tariff.split(':')[0]}:
+        </div>
+      </div>
+
+      <!-- 15 Ruled Writing Lines for Sustained Analysis & Final Verdict -->
+      <div style="display: flex; flex-direction: column; margin: 1px 0 4px 0;">
+        ${conclusionTaskLines}
+      </div>
+
+      <!-- Question 1 Feature Drills [2 x 2 = 4 marks] Strictly 2 Lines per Feature -->
+      <div style="border: 1.5px solid #000000; border-radius: 3px; padding: 4px 6px; background: #ffffff; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 7.6pt; text-transform: uppercase; letter-spacing: 0.5px;">
+            &bull; Edexcel Section A: Question 1 Feature Drills [4 marks &bull; 5 mins]
+          </strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; border: 1px solid #000000; padding: 0 5px; border-radius: 2px;">
+            2 SEPARATE QUESTIONS &bull; 2 MARKS EACH
+          </span>
+        </div>
+        <div style="background: #f4f4f4; border-left: 2.5px solid #000000; padding: 2px 5px; font-family: 'Inter', sans-serif; font-size: 6.4pt; line-height: 1.15; margin-bottom: 4px;">
+          <strong>Examiner Mark Scheme:</strong> Award 1 mark for identifying a valid historical feature + 1 mark for supporting factual detail. Supporting detail must directly develop the named feature.
+        </div>
+
+        <!-- 1(a) Response Area: STRICTLY 2 LINES (1 Feature, 1 Detail) -->
+        <div style="margin-bottom: 4px; border-bottom: 1px dashed #cccccc; padding-bottom: 3px;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000;">
+              1(a) ${cfg.q1Features.a.q}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800;">[ &nbsp;&nbsp; <strong>/ 2</strong> ]</span>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Feature:</span>
+            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.0mm;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Detail:</span>
+            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.0mm;"></div>
+          </div>
+        </div>
+
+        <!-- 1(b) Response Area: STRICTLY 2 LINES (1 Feature, 1 Detail) -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px;">
+            <span style="font-family: 'Playfair Display', serif; font-size: 7.8pt; font-weight: 800; color: #000000;">
+              1(b) ${cfg.q1Features.b.q}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 800;">[ &nbsp;&nbsp; <strong>/ 2</strong> ]</span>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Feature:</span>
+            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.0mm;"></div>
+          </div>
+          <div style="display: flex; align-items: baseline; gap: 6px; margin-top: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 800; text-transform: uppercase; width: 14mm;">Detail:</span>
+            <div style="flex: 1; border-bottom: 1.2px solid #000000; height: 7.0mm;"></div>
+          </div>
         </div>
       </div>
 
@@ -1310,7 +1182,6 @@ function renderWfExamResponsePage2(cfg, pageNum) {
     </div>
   </div>`;
 }
-
 // ============================================================================
 // HELPER: RENDER EXPANDED ASSESSMENT RECORD & BACK COVER (PAGE 28)
 // ============================================================================
@@ -1320,60 +1191,60 @@ function renderWfBackCover(cfgList, quipText) {
       enquiry: 'KT5.1',
       title: 'Trench Geography & Battles',
       q1: '<strong>Q1:</strong> Describe Two Features of Trenches / Arras [4m]',
-      p1: 'p. 6',
+      p1: 'p. 7',
       max1: 4,
       q2: '<strong>Q2(a):</strong> Source Utility Assessment (Trench Design) [8m]',
-      p2: 'p. 6–7',
+      p2: 'p. 5–7',
       max2: 8,
     },
     {
       enquiry: 'KT5.2',
       title: 'Trench Environment & Illnesses',
       q1: '<strong>Q1:</strong> Describe Two Features of Trench Foot / Fever [4m]',
-      p1: 'p. 10',
+      p1: 'p. 11',
       max1: 4,
       q2: '<strong>Q2(b):</strong> 4-Prompt Follow-Up Matrix (Living Conditions) [4m]',
-      p2: 'p. 10–11',
+      p2: 'p. 9–11',
       max2: 4,
     },
     {
       enquiry: 'KT5.3',
       title: 'Trauma, Shrapnel & Gas Attacks',
       q1: '<strong>Q1:</strong> Describe Two Features of Shrapnel / Poison Gas [4m]',
-      p1: 'p. 14',
+      p1: 'p. 15',
       max1: 4,
       q2: '<strong>Q2(a):</strong> Source Utility Assessment (Artillery Trauma) [8m]',
-      p2: 'p. 14–15',
+      p2: 'p. 13–15',
       max2: 8,
     },
     {
       enquiry: 'KT5.4',
       title: 'The Evacuation Chain & Transport',
       q1: '<strong>Q1:</strong> Describe Two Features of Dressing Station / FANY [4m]',
-      p1: 'p. 18',
+      p1: 'p. 19',
       max1: 4,
       q2: '<strong>Q2(b):</strong> 4-Prompt Follow-Up Matrix (Stretcher Transport) [4m]',
-      p2: 'p. 18–19',
+      p2: 'p. 17–19',
       max2: 4,
     },
     {
       enquiry: 'KT5.5',
       title: 'Splints, Antiseptics & Mobile X-Rays',
       q1: '<strong>Q1:</strong> Describe Two Features of Thomas Splint / X-Rays [4m]',
-      p1: 'p. 22',
+      p1: 'p. 23',
       max1: 4,
       q2: '<strong>Q2(a):</strong> Source Utility Assessment (Mobile X-Rays) [8m]',
-      p2: 'p. 22–23',
+      p2: 'p. 21–23',
       max2: 8,
     },
     {
       enquiry: 'KT5.6',
       title: 'Blood Storage, Brain & Plastic Surgery',
       q1: '<strong>Q1:</strong> Describe Two Features of Cushing / Gillies Surgery [4m]',
-      p1: 'p. 26',
+      p1: 'p. 27',
       max1: 4,
       q2: '<strong>Q2(b):</strong> 4-Prompt Follow-Up Matrix (Cambrai Blood Bank) [4m]',
-      p2: 'p. 26–27',
+      p2: 'p. 25–27',
       max2: 4,
     },
   ];
@@ -1639,6 +1510,27 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       margin-bottom: 4px;
     }
     /* Standard Handwriting Writing Lines */
+    .spine-stage-block {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      min-height: 0;
+      margin-bottom: 2.5px;
+      border: 1.2px solid #000000;
+      border-radius: 2px;
+      overflow: hidden;
+      background: #ffffff;
+    }
+    .stage-banner {
+      background: #000000;
+      color: #ffffff;
+      padding: 2px 7px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1.2px solid #000000;
+      min-height: 20px;
+      box-sizing: border-box;
+    }
     .task-line {
       border-bottom: 1.2px solid #000000;
       height: 7.4mm;
@@ -1938,51 +1830,42 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       <div style="display: flex; flex-direction: column; gap: 7px; flex: 1;">
         
         <!-- Milestone 1: OCT 1914 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                OCT 1914 &bull; Flanders Mud &amp; The 1st Battle of Ypres
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 5.1</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              The British Expeditionary Force (BEF) holds the Ypres Salient. Low-lying Flanders clay creates a dangerously high water table; trenches fill with liquid mud. Shelling smashes all natural drainage canals, leaving men standing waist-deep in water and giving rise to the first epidemics of trench foot and dysentery.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              OCT 1914 &bull; Flanders Mud &amp; The 1st Battle of Ypres
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 5.1</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            The British Expeditionary Force (BEF) holds the Ypres Salient. Low-lying Flanders clay creates a dangerously high water table; trenches fill with liquid mud. Shelling smashes all natural drainage canals, leaving men standing waist-deep in water and giving rise to the first epidemics of trench foot and dysentery.
+          </p>
         </div>
 
         <!-- Milestone 2: APR 1915 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                APR 1915 &bull; 2nd Battle of Ypres: The First Poison Gas Attack
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 5.2 &bull; 5.3</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              German forces release 160 tons of chlorine gas across a 4-mile front. British troops suffer suffocation and fluid in the lungs; soldiers improvise with urine-soaked pads before chemically impregnated cotton-pad respirators (the Hypo Helmet) are rushed to the front. Lice-borne trench fever breaks out across all divisions.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              APR 1915 &bull; 2nd Battle of Ypres: The First Poison Gas Attack
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 5.2 &bull; 5.3</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            German forces release 160 tons of chlorine gas across a 4-mile front. British troops suffer suffocation and fluid in the lungs; soldiers improvise with urine-soaked pads before chemically impregnated cotton-pad respirators (the Hypo Helmet) are rushed to the front. Lice-borne trench fever breaks out across all divisions.
+          </p>
         </div>
 
         <!-- Milestone 3: DEC 1915 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                DEC 1915 &bull; The Thomas Splint &amp; Introduction of the Brodie Helmet
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 5.3 &bull; 5.5</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Robert Jones introduces the Thomas Splint to frontline medical posts, stabilizing compound fractures and reducing femur mortality from 80% to 20%. Simultaneously, the War Office begins issuing John Brodie’s stamped steel helmet, reducing penetrating shrapnel head trauma by an estimated 75–80%.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              DEC 1915 &bull; The Thomas Splint &amp; Introduction of the Brodie Helmet
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 5.3 &bull; 5.5</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Robert Jones introduces the Thomas Splint to frontline medical posts, stabilizing compound fractures and reducing femur mortality from 80% to 20%. Simultaneously, the War Office begins issuing John Brodie’s stamped steel helmet, reducing penetrating shrapnel head trauma by an estimated 75–80%.
+          </p>
         </div>
 
       </div>
@@ -2010,51 +1893,42 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
       <div style="display: flex; flex-direction: column; gap: 7px; flex: 1;">
         
         <!-- Milestone 4: JULY 1916 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                JULY 1916 &bull; The Battle of the Somme: The Triage Crisis
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 5.4</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              The BEF suffers 57,000 casualties on 1 July 1916. Stretcher bearers and Casualty Clearing Stations are overwhelmed; motor ambulances struggle along single rutted roads. As a direct result, the RAMC enforces a strict three-tier triage system (Walking Wounded, Immediate Surgery, Moribund) to prevent total collapse.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              JULY 1916 &bull; The Battle of the Somme: The Triage Crisis
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 5.4</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            The BEF suffers 57,000 casualties on 1 July 1916. Stretcher bearers and Casualty Clearing Stations are overwhelmed; motor ambulances struggle along single rutted roads. As a direct result, the RAMC enforces a strict three-tier triage system (Walking Wounded, Immediate Surgery, Moribund) to prevent total collapse.
+          </p>
         </div>
 
         <!-- Milestone 5: APR–NOV 1917 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                APR–NOV 1917 &bull; Arras Underground Hospital &amp; Passchendaele Mud
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 5.1 &bull; 5.4</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              At Arras, New Zealand tunnelers excavate Thompson’s Cave—a 700-bed underground hospital with operating theatres, running water, and electric lights 20m beneath the chalk. At 3rd Ypres (Passchendaele), artillery destroys all drainage systems, creating knee-deep liquid mud requiring 6 bearers per stretcher.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              APR–NOV 1917 &bull; Arras Underground Hospital &amp; Passchendaele Mud
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 5.1 &bull; 5.4</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            At Arras, New Zealand tunnelers excavate Thompson’s Cave—a 700-bed underground hospital with operating theatres, running water, and electric lights 20m beneath the chalk. At 3rd Ypres (Passchendaele), artillery destroys all drainage systems, creating knee-deep liquid mud requiring 6 bearers per stretcher.
+          </p>
         </div>
 
         <!-- Milestone 6: NOV 1917 -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 5px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                NOV 1917 &bull; Oswald Robertson’s Blood Depot &amp; Gillies Facial Reconstruction
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 5.6</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              At the Battle of Cambrai, Captain Oswald Robertson deploys the world’s first blood bank, using sodium citrate to stop clotting, glucose to preserve red cells, and ice chests to store Group O blood for 28 days. In Britain, Harold Gillies pioneers plastic facial surgery using tubed pedicles at Queen’s Hospital, Sidcup.
-            </p>
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              NOV 1917 &bull; Oswald Robertson’s Blood Depot &amp; Gillies Facial Reconstruction
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 5.6</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 48mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            At the Battle of Cambrai, Captain Oswald Robertson deploys the world’s first blood bank, using sodium citrate to stop clotting, glucose to preserve red cells, and ice chests to store Group O blood for 28 days. In Britain, Harold Gillies pioneers plastic facial surgery using tubed pedicles at Queen’s Hospital, Sidcup.
+          </p>
         </div>
 
       </div>
@@ -2092,24 +1966,17 @@ function buildWesternFrontTwoPageWorkbook(unitData, period) {
     // Resolve base64 image
     const b64Img = primarySource.src ? getBase64Image(primarySource.src) || primarySource.src : '';
 
-    // Page 1: Environmental Inquiry Spine
+    // Page 1: Environmental Inquiry Spine (5 Stages • Full Spec Coverage)
     html += renderWfSpinePage(cfg, leftPageNum);
 
-    // Page 2: Section A Exam Blueprint & Source Investigation
-    html += renderWfExamBlueprintPage(
-      cfg,
-      rightPageNum,
-      primarySource,
-      b64Img,
-      linedLeftPageNum,
-      linedRightPageNum,
-    );
+    // Page 2: Section A Exam Question & Primary Source Investigation
+    html += renderWfExamQuestionPage(cfg, rightPageNum, primarySource, b64Img);
 
-    // Page 3: Official Exam Response Page 1 (Q1 Feature Drills + Q2 Start)
-    html += renderWfExamResponsePage1(cfg, linedLeftPageNum);
+    // Page 3: Official Exam Continuation Page (31 Ruled Lines)
+    html += renderWfExamContinuationPage(cfg, linedLeftPageNum);
 
-    // Page 4: Official Exam Response Page 2 (Sustained Evaluation & Conclusion)
-    html += renderWfExamResponsePage2(cfg, linedRightPageNum);
+    // Page 4: Official Exam Synthesis & Question 1 Feature Drills
+    html += renderWfExamSynthesisAndFeaturesPage(cfg, linedRightPageNum);
   });
 
   // ====================================================================

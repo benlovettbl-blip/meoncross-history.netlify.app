@@ -33201,6 +33201,11 @@
             "title": "Exam Practice: Section A (The Western Front)",
             "tasks": [
               {
+                "tariff": "Question 1: Feature Drills [4 marks]",
+                "stem": "Describe two features of trench systems and medical facilities on the Western Front:\n(a) Describe one feature of the system of communication trenches on the Western Front. [2 marks]\n(b) Describe one feature of the underground hospital at Arras (Thompson’s Cave). [2 marks]",
+                "model_answer": "1(a) Feature: Communication trenches were dug at right angles connecting frontline, support, and reserve trenches.\nDetail: This allowed fresh troops, ammunition, food supplies, and stretcher-borne casualties to be transported to and from the frontline safely under cover from enemy artillery shellfire and rifle snipers.\n\n1(b) Feature: Thompson’s Cave at Arras was an expansive 700-bed subterranean British hospital constructed inside ancient chalk quarries.\nDetail: It was equipped with electric lighting, piped running water, kitchens, and fully functional operating theatres 20 metres underground, allowing RAMC surgeons to operate safely without fear of surface artillery bombardments."
+              },
+              {
                 "tariff": "Question 2(a) [4 marks]",
                 "stem": "Study Source A. How useful is Source A for an enquiry into the defensive layout and design of the trench system on the Western Front? Explain your answer, using Source A and your knowledge of the historical context. [4 marks]",
                 "provenance_clue": "Consider the nature of an official military aerial reconnaissance photograph taken by the Royal Flying Corps in 1917. What objective details does it capture from above, and what limitations does an aerial perspective have regarding internal trench conditions?",
@@ -33611,6 +33616,11 @@
           "gcse_task": {
             "title": "Exam Practice: Section A (The Western Front)",
             "tasks": [
+              {
+                "tariff": "Question 1: Feature Drills [4 marks]",
+                "stem": "Describe two features of ill health arising from the trench environment:\n(a) Describe one feature of the methods used to prevent trench foot on the Western Front. [2 marks]\n(b) Describe one feature of the causes of trench fever among British troops. [2 marks]",
+                "model_answer": "1(a) Feature: The British Army enforced a mandatory buddy-system routine where soldiers washed, dried, and massaged each other’s feet with whale oil.\nDetail: Officers conducted daily sock inspections, and men were ordered to change into dry socks at least three times a day to maintain blood circulation and prevent gangrenous numbness from waterlogged mud.\n\n1(b) Feature: Trench fever was an infectious disease transmitted through the excrement of body lice (Pediculus humanus) infesting uniform seams.\nDetail: When soldiers scratched itchy bite wounds, dried louse faeces were rubbed into the broken skin, causing high relapsing fevers, severe headaches, and shooting shin pains that put troops out of action for over a month."
+              },
               {
                 "tariff": "Question 2(a) [4 marks]",
                 "stem": "Study Source A. How useful is Source A for an enquiry into the methods used by the British Army to prevent trench foot on the Western Front? Explain your answer, using Source A and your knowledge of the historical context. [4 marks]",
@@ -34023,6 +34033,11 @@
             "title": "Exam Practice: Section A (The Western Front)",
             "tasks": [
               {
+                "tariff": "Question 1: Feature Drills [4 marks]",
+                "stem": "Describe two features of battlefield trauma and protective equipment on the Western Front:\n(a) Describe one feature of the effects of poison gas attacks on soldiers on the Western Front. [2 marks]\n(b) Describe one feature of the design of the British Brodie steel helmet. [2 marks]",
+                "model_answer": "1(a) Feature: Chemical poison gases like chlorine and phosgene attacked the respiratory tract, causing severe asphyxiation and fluid build-up in the lungs.\nDetail: Inhaling chlorine gas reacted with moisture in the respiratory system to form hydrochloric acid, stripping the bronchial lining and causing casualties to suffocate and drown in their own secretions, while mustard gas caused agonizing internal and external chemical blisters.\n\n1(b) Feature: The Brodie helmet was pressed from a single sheet of hardened Hadfield manganese steel with a wide, shallow protective brim.\nDetail: The wide rim was engineered specifically to deflect shrapnel balls, falling debris, and shell splinters exploding overhead, which reduced fatal penetrating head trauma by an estimated 75–80%."
+              },
+              {
                 "tariff": "Question 2(a) [4 marks]",
                 "stem": "Study Source B. How useful is Source B for an enquiry into the methods used to protect British soldiers from poison gas attacks on the Western Front? Explain your answer, using Source B and your knowledge of the historical context. [4 marks]",
                 "provenance_clue": "Consider the nature of an authentic surviving piece of military protective equipment manufactured by the British War Office in 1915–1916. What does it reveal about chemical protection technology, and what limitations did this early cloth design possess?",
@@ -34427,6 +34442,11 @@
           "gcse_task": {
             "title": "Exam Practice: Section A (The Western Front)",
             "tasks": [
+              {
+                "tariff": "Question 1: Feature Drills [4 marks]",
+                "stem": "Describe two features of the casualty evacuation chain on the Western Front:\n(a) Describe one feature of the triage system used at Casualty Clearing Stations on the Western Front. [2 marks]\n(b) Describe one feature of the work of the First Aid Nursing Yeomanry (FANY) on the Western Front. [2 marks]",
+                "model_answer": "1(a) Feature: Casualty Clearing Stations operated a strict three-tier triage system to categorize wounded arrivals based on clinical urgency.\nDetail: Medical officers divided incoming casualties into Walking Wounded (minor injuries patched up), Immediate Surgery (urgent operations to stop haemorrhage or amputate shattered limbs), and Moribund (hopeless cases given comfort care and morphine), ensuring overworked surgical teams prioritized patients with the greatest chance of survival.\n\n1(b) Feature: FANY volunteer women served as front-line motorized ambulance drivers transporting wounded soldiers.\nDetail: Arriving in 1914, FANY personnel drove and maintained ambulance convoys over cratered roads under shellfire, evacuating casualties from Regimental Aid Posts and Dressing Stations to CCSs and hospital barges."
+              },
               {
                 "tariff": "Question 2(a) [4 marks]",
                 "stem": "Study Source A. How useful is Source A for an enquiry into the difficulties of evacuating wounded soldiers from the battlefield on the Western Front? Explain your answer, using Source A and your knowledge of the historical context. [4 marks]",
@@ -34845,6 +34865,11 @@
             "title": "Exam Practice: Section A (The Western Front)",
             "tasks": [
               {
+                "tariff": "Question 1: Feature Drills [4 marks]",
+                "stem": "Describe two features of surgical breakthroughs on the Western Front:\n(a) Describe one feature of the Thomas Splint used on the Western Front. [2 marks]\n(b) Describe one feature of the Carrel-Dakin method of treating infected wounds. [2 marks]",
+                "model_answer": "1(a) Feature: The Thomas Splint was an elongated rigid metal frame designed to stabilize and apply continuous traction to fractured femurs.\nDetail: Introduced to the front by Robert Jones in late 1915, it immobilized the thigh bone during stretcher transit, preventing fractured bone ends from grinding and severing the femoral artery, slashing femur mortality from 80% to under 20%.\n\n1(b) Feature: The Carrel-Dakin method was an antiseptic wound irrigation system that used a dilute sodium hypochlorite solution to treat deep open wounds.\nDetail: Perforated rubber tubes were stitched directly into lacerated muscle tissue, continuously flushing the wound with antiseptic fluid to kill anaerobic gas gangrene bacteria (Clostridium welchii) without destroying healthy human tissue."
+              },
+              {
                 "tariff": "Question 2(a) [4 marks]",
                 "stem": "Study Source A. How useful is Source A for an enquiry into the treatments used for wounded soldiers suffering from fractured limbs on the Western Front? Explain your answer, using Source A and your knowledge of the historical context. [4 marks]",
                 "provenance_clue": "Consider the nature of an authentic instructional photograph produced for the Royal Army Medical Corps training archive c.1916. What does it reveal about the practical application of medical equipment, and what limitations does a staged instructional photograph possess?",
@@ -35255,6 +35280,11 @@
           "gcse_task": {
             "title": "Exam Practice: Section A (The Western Front)",
             "tasks": [
+              {
+                "tariff": "Question 1: Feature Drills [4 marks]",
+                "stem": "Describe two features of lifesaving medical and surgical innovations on the Western Front:\n(a) Describe one feature of Harvey Cushing’s surgical techniques in operating on head wounds on the Western Front. [2 marks]\n(b) Describe one feature of the surgical methods used by Harold Gillies at Queen’s Hospital, Sidcup. [2 marks]",
+                "model_answer": "1(a) Feature: Harvey Cushing utilized local anaesthetic rather than general chloroform anaesthesia when conducting delicate brain surgery.\nDetail: Operating under local anaesthesia prevented brain swelling and reduced intra-cranial pressure, allowing Cushing to use a surgical electromagnet to extract deep metallic shell fragments carefully, reducing brain surgery mortality to 29%.\n\n1(b) Feature: Harold Gillies developed facial plastic reconstruction using the ‘tubed pedicle’ skin-grafting technique.\nDetail: Skin flaps from the chest or forehead were rolled into living cylinders of tissue with blood supply intact at both ends before being stitched to damaged facial areas, preventing graft necrosis and enabling surgeons to rebuild shattered noses, jaws, and cheeks."
+              },
               {
                 "tariff": "Question 2(a) [4 marks]",
                 "stem": "Study Source A. How useful is Source A for an enquiry into advances in blood transfusion on the Western Front? Explain your answer, using Source A and your knowledge of the historical context. [4 marks]",
