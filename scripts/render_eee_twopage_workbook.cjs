@@ -1882,8 +1882,15 @@ function buildEeeKeyTopicWorkbook(ktId) {
 // PDF COMPILER HELPER (WITH AUDIT)
 // ============================================================================
 async function compilePdf(htmlPath, pdfPath, v17Path) {
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage', '--disable-gpu'],
   });
   const page = await browser.newPage();

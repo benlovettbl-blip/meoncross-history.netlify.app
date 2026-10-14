@@ -58,9 +58,9 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 
 | Unit ID | Key Stage | Unit Title | Current Status | Required Action to Perfect |
 | :--- | :---: | :--- | :--- | :--- |
-| `the_shoah` | KS3 (Y9) | The Shoah (Holocaust Education) | Core text drafted; 0 double-page workbook. | Author bespoke `scripts/render_the_shoah_workbook.cjs` (16-page Gold Standard). |
 | `cold_war` | KS3 (Y9) | The Cold War (1945–1991) | Prose drafted; 0 double-page workbook. | Author bespoke `scripts/render_cold_war_workbook.cjs` (16-page Gold Standard). |
 | `post_war_britain` | KS3 (Y9) | Rights, Protest & Post-War Britain | Prose drafted; 0 double-page workbook. | Author bespoke `scripts/render_post_war_britain_workbook.cjs` (16-page Gold Standard). |
+| `the_shoah` | KS3 (Y9) | The Shoah (Holocaust Education) | On hold (User will build later). | Retained for future development. |
 | `second_world_war` | KS3 (Y9) | Second World War | Curriculum draft only; 0 workbook. | Complete curriculum drafting and author 16-page Gold Standard workbook. |
 | `australia` | KS3 (Y8/9) | History of Australia | Elective depth study; 0 modern workbook. | Author 16-page elective workbook. |
 
@@ -114,7 +114,7 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 [STEP 6] ─── Year 8: Industrialisation, Empire & Power (industrialisation) ──── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[STEP 7] ─── Year 9: Unconverted Units (The Shoah ➔ Cold War ➔ Post-War Britain) 🟡 NEXT UP (READY TO AUTHOR)
+[STEP 7] ─── Year 9: Unconverted Units (Cold War ➔ Post-War Britain) ────────── 🟡 NEXT UP (READY TO AUTHOR)
    │
    ▼
 [STEP 8] ─── Vacation Reprint Cycle (Year 7 Sanitation, Year 8 Early Modern, Year 9 Great War) 🔒 FROZEN
@@ -127,7 +127,7 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Workbook Rollout Compass:**  
-> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 100% Dual-QR Parity) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
+> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 100% Dual-QR Parity) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢 • USA 🟢  
 > **KS3 Perfected:** Year 8 *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next Target:** Year 9: *The Shoah (Holocaust Education)* (`the_shoah`) 🎯  
-> **KS3 Ladder:** *The Shoah* ➔ *The Cold War* ➔ *Post-War Britain*
+> **Next Target:** Year 9: *The Cold War (1945–1991)* (`cold_war`) 🎯  
+> **KS3 Ladder:** *The Cold War* ➔ *Post-War Britain*

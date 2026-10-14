@@ -1718,10 +1718,16 @@ function buildCmeKt3TwoPageWorkbook(unitData, period) {
 // ============================================================================
 async function compilePdf(htmlPath, pdfPath, v17Path) {
   const puppeteer = require('puppeteer');
-  const browser = await puppeteer.launch({
+  const fs = require('fs');
+  const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+  const launchOptions = {
     headless: true,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
-  });
+  };
+  if (fs.existsSync(chromePath)) {
+    launchOptions.executablePath = chromePath;
+  }
+  const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
   await page.goto('file:///' + htmlPath.replace(/\\/g, '/'), {
     waitUntil: 'networkidle0',
