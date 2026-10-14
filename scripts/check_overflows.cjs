@@ -12,8 +12,15 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
   const nonFlagArgs = args.filter((a) => !a.startsWith('--'));
   const arg = nonFlagArgs[0] || 'great_war';
 
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     protocolTimeout: 600000,
     args: ['--allow-file-access-from-files', '--no-sandbox', '--disable-setuid-sandbox'],
   });
