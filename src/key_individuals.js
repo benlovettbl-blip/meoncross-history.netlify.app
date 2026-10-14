@@ -1,6 +1,13 @@
 import { getAssetUrl } from './engine/assets.js';
 
-export function generateKeyIndividualEmbedHTML(person) {
+export function generateKeyIndividualEmbedHTML(person, anchorTitle = null) {
+  const anchor = anchorTitle || person.anchor_title || '';
+  const anchorSubtext = anchor
+    ? ` &bull; Anchored to ${anchor}`
+    : person.role
+      ? ` &bull; ${person.role}`
+      : '';
+
   let imgSrcHtml = '';
   if (person.image || person.image_url) {
     const imgSrc = person.image_url
@@ -31,57 +38,84 @@ export function generateKeyIndividualEmbedHTML(person) {
     achievementsList = `<ul style="margin: 0; padding-left: 18px; font-size: 0.88rem; color: #15803d; line-height: 1.5;">${items.map((a) => `<li style="margin-bottom: 4px;">${a}</li>`).join('')}</ul>`;
   }
 
-  return `
-    <div class="key-individual-dossier-card" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #1e40af; border-radius: 8px; padding: 16px 20px; margin: 18px 0; box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);">
-      <div style="display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
-        ${imgSrcHtml}
-        <div style="flex: 1; min-width: 240px;">
-          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;">
-            <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #1e40af; background: #eff6ff; padding: 2px 7px; border-radius: 3px; border: 1px solid #bfdbfe;">
-              Historical Figure Dossier
-            </span>
-            ${person.lifespan ? `<span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">(${person.lifespan})</span>` : ''}
-          </div>
-          <h3 style="margin: 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; line-height: 1.3;">
-            ${person.name}
-          </h3>
-          ${person.role ? `<div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 2px;">${person.role}</div>` : ''}
-          ${
-            person.significance || person.bio
-              ? `
-            <div style="margin-top: 8px; font-size: 0.9rem; color: #334155; line-height: 1.5; background: #f8fafc; border-left: 3px solid #3b82f6; padding: 8px 12px; border-radius: 0 4px 4px 0;">
-              <strong>Historical Significance:</strong> ${person.significance || person.bio}
-            </div>
-          `
-              : ''
-          }
-        </div>
-      </div>
-      ${
-        actionsList
-          ? `
-        <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e2e8f0;">
-          <strong style="color: #1e40af; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">
-            Key Strategic Decisions &amp; Actions:
-          </strong>
-          ${actionsList}
-        </div>
-      `
-          : ''
-      }
-      ${
-        achievementsList
-          ? `
-        <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed #e2e8f0;">
-          <strong style="color: #15803d; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">
-            Impact &amp; Achievements:
-          </strong>
-          ${achievementsList}
-        </div>
-      `
-          : ''
-      }
+  const anchorBannerInside = anchor
+    ? `
+    <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px dashed #e2e8f0; font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">
+      <span style="background: #1e40af; color: #ffffff; padding: 2px 7px; border-radius: 3px; display: inline-flex; align-items: center; gap: 4px;">
+        <i class="fa-solid fa-user-tie"></i> Decisive Historical Agent
+      </span>
+      <span style="color: #1e3a8a;">Anchored to ${anchor}</span>
     </div>
+  `
+    : '';
+
+  return `
+    <details class="key-individual-drawer archival-drawer gcse-source-container archival-source-box" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
+      <summary style="padding: 4px 10px; min-height: 26px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; min-width: 0; flex: 1; margin-right: 8px;">
+          <span class="archival-meta-tag" style="background: #1e40af; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2; white-space: nowrap; flex-shrink: 0;">
+            <i class="fa-solid fa-user-tie" style="margin-right: 3px;"></i>${anchor ? 'HISTORICAL AGENT' : 'FIGURE DOSSIER'}
+          </span>
+          <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.82rem; color: #1e293b; font-weight: 700; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+            ${person.name}${person.lifespan ? ` (${person.lifespan})` : ''}${anchorSubtext}
+          </span>
+        </div>
+        <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0; white-space: nowrap;">
+          Figure Dossier &bull; Expand <span class="drawer-caret">&#9660;</span>
+        </span>
+      </summary>
+      <div class="key-individual-dossier-card archival-drawer-content" style="padding: 16px 20px; background: #ffffff; border-top: 1px solid #e2e8f0;">
+        ${anchorBannerInside}
+        <div style="display: flex; align-items: flex-start; gap: 16px; flex-wrap: wrap;">
+          ${imgSrcHtml}
+          <div style="flex: 1; min-width: 240px;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px;">
+              <span class="archival-meta-tag accent-blue" style="font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #1e40af; background: #eff6ff; padding: 2px 7px; border-radius: 3px; border: 1px solid #bfdbfe;">
+                Historical Figure Dossier
+              </span>
+              ${person.lifespan ? `<span style="font-size: 0.8rem; color: #64748b; font-weight: 600;">(${person.lifespan})</span>` : ''}
+            </div>
+            <h3 style="margin: 0; color: #0f172a; font-family: 'Playfair Display', Georgia, serif; font-size: 1.25rem; font-weight: 700; line-height: 1.3;">
+              ${person.name}
+            </h3>
+            ${person.role ? `<div style="font-size: 0.85rem; color: #475569; font-weight: 600; margin-top: 2px;">${person.role}</div>` : ''}
+            ${
+              person.significance || person.bio
+                ? `
+              <div style="margin-top: 8px; font-size: 0.9rem; color: #334155; line-height: 1.5; background: #f8fafc; border-left: 3px solid #3b82f6; padding: 8px 12px; border-radius: 0 4px 4px 0;">
+                <strong>Historical Significance:</strong> ${person.significance || person.bio}
+              </div>
+            `
+                : ''
+            }
+          </div>
+        </div>
+        ${
+          actionsList
+            ? `
+          <div style="margin-top: 12px; padding-top: 10px; border-top: 1px dashed #e2e8f0;">
+            <strong style="color: #1e40af; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 6px;">
+              Key Strategic Decisions &amp; Actions:
+            </strong>
+            ${actionsList}
+          </div>
+        `
+            : ''
+        }
+        ${
+          achievementsList
+            ? `
+          <div style="margin-top: 10px; padding-top: 8px; border-top: 1px dashed #e2e8f0;">
+            <strong style="color: #15803d; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 4px;">
+              Impact &amp; Achievements:
+            </strong>
+            ${achievementsList}
+          </div>
+        `
+            : ''
+        }
+      </div>
+    </details>
   `;
 }
 

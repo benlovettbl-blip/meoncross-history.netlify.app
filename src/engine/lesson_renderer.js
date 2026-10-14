@@ -2415,13 +2415,19 @@ export function renderTextbookSpotlightDrawers(lesson) {
     const kf = lesson.key_figure;
     const initials = getMonogramInitials(kf.name);
     html += `
-      <details class="spotlight-drawer spotlight-drawer-figure" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #2563eb; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); overflow: hidden;">
-        <summary style="padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #0f172a; list-style: none; user-select: none;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="background: #eff6ff; color: #1d4ed8; padding: 3px 8px; border-radius: 4px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Key Figure</span>
-            <span style="font-size: 0.98rem; color: #1e293b; font-weight: 700;">${kf.name} ${kf.lifespan ? `<span style="font-weight: 500; font-size: 0.85rem; color: #64748b;">(${kf.lifespan})</span>` : ''}</span>
+      <details class="spotlight-drawer spotlight-drawer-figure archival-drawer" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
+        <summary style="padding: 4px 10px; min-height: 26px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; min-width: 0; flex: 1; margin-right: 8px;">
+            <span class="archival-meta-tag" style="background: #1d4ed8; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2; white-space: nowrap; flex-shrink: 0;">
+              <i class="fa-solid fa-user" style="margin-right: 3px;"></i>KEY FIGURE
+            </span>
+            <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.82rem; color: #1e293b; font-weight: 700; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              ${kf.name} ${kf.lifespan ? `(${kf.lifespan})` : ''}${kf.epithet ? ` &bull; ${kf.epithet}` : ''}
+            </span>
           </div>
-          <span style="font-size: 0.82rem; color: #64748b;"><i class="fa-solid fa-chevron-down"></i></span>
+          <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0; white-space: nowrap;">
+            Figure Spotlight &bull; Expand <span class="drawer-caret">&#9660;</span>
+          </span>
         </summary>
         <div style="padding: 16px 20px 20px 20px; border-top: 1px solid #f1f5f9; background: #f8fafc;">
           <div style="display: flex; gap: 16px; align-items: flex-start; margin-bottom: 12px;">
@@ -2471,13 +2477,19 @@ export function renderTextbookSpotlightDrawers(lesson) {
   if (lesson.concept_spotlight) {
     const cs = lesson.concept_spotlight;
     html += `
-      <details class="spotlight-drawer spotlight-drawer-concept" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #b45309; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); overflow: hidden;">
-        <summary style="padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #0f172a; list-style: none; user-select: none;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="background: #fffbeb; color: #92400e; padding: 3px 8px; border-radius: 4px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Concept Spotlight</span>
-            <span style="font-size: 0.98rem; color: #1e293b; font-weight: 700;">${cs.title}</span>
+      <details class="spotlight-drawer spotlight-drawer-concept archival-drawer" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
+        <summary style="padding: 4px 10px; min-height: 26px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; min-width: 0; flex: 1; margin-right: 8px;">
+            <span class="archival-meta-tag" style="background: #b45309; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2; white-space: nowrap; flex-shrink: 0;">
+              <i class="fa-solid fa-lightbulb" style="margin-right: 3px;"></i>CONCEPT SPOTLIGHT
+            </span>
+            <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.82rem; color: #1e293b; font-weight: 700; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              ${cs.title}${cs.category ? ` &bull; ${cs.category}` : ''}
+            </span>
           </div>
-          <span style="font-size: 0.82rem; color: #64748b;"><i class="fa-solid fa-chevron-down"></i></span>
+          <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0; white-space: nowrap;">
+            Core Concept &bull; Expand <span class="drawer-caret">&#9660;</span>
+          </span>
         </summary>
         <div style="padding: 16px 20px 20px 20px; border-top: 1px solid #f1f5f9; background: #fdfcf9;">
           ${cs.category ? `<div style="font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px; color: #92400e; margin-bottom: 8px;">${cs.category}</div>` : ''}
@@ -2511,13 +2523,19 @@ export function renderTextbookSpotlightDrawers(lesson) {
   if (lesson.archival_dispatch) {
     const ad = lesson.archival_dispatch;
     html += `
-      <details class="spotlight-drawer spotlight-drawer-dispatch" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-left: 5px solid #475569; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.03); overflow: hidden;">
-        <summary style="padding: 12px 16px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 700; color: #0f172a; list-style: none; user-select: none;">
-          <div style="display: flex; align-items: center; gap: 10px;">
-            <span style="background: #f1f5f9; color: #334155; padding: 3px 8px; border-radius: 4px; font-size: 0.74rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">Archival Dispatch</span>
-            <span style="font-size: 0.98rem; color: #1e293b; font-weight: 700;">${ad.title}</span>
+      <details class="spotlight-drawer spotlight-drawer-dispatch archival-drawer" style="margin: 6px 0; border: 1px solid #cbd5e1; border-radius: 6px; background: #f8fafc; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.02); transition: all 0.25s ease;">
+        <summary style="padding: 4px 10px; min-height: 26px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: space-between; background: #f8fafc; color: #0f172a; list-style: none; user-select: none; transition: background 0.15s ease;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; min-width: 0; flex: 1; margin-right: 8px;">
+            <span class="archival-meta-tag" style="background: #475569; color: #ffffff; padding: 2px 6px; border-radius: 3px; font-size: 0.62rem; font-weight: 800; letter-spacing: 0.4px; line-height: 1.2; white-space: nowrap; flex-shrink: 0;">
+              <i class="fa-solid fa-scroll" style="margin-right: 3px;"></i>ARCHIVAL DISPATCH
+            </span>
+            <span class="archival-drawer-title" style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.82rem; color: #1e293b; font-weight: 700; line-height: 1.2; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+              ${ad.title}${ad.origin_and_date ? ` &bull; ${ad.origin_and_date}` : ''}
+            </span>
           </div>
-          <span style="font-size: 0.82rem; color: #64748b;"><i class="fa-solid fa-chevron-down"></i></span>
+          <span class="drawer-toggle-indicator" style="font-size: 0.68rem; color: #64748b; display: inline-flex; align-items: center; gap: 4px; font-weight: 600; flex-shrink: 0; white-space: nowrap;">
+            Primary Dispatch &bull; Expand <span class="drawer-caret">&#9660;</span>
+          </span>
         </summary>
         <div style="padding: 16px 20px 20px 20px; border-top: 1px solid #f1f5f9; background: #fafaf9;">
           ${ad.origin_and_date ? `<div style="font-size: 0.78rem; font-weight: 700; color: #475569; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px;">${ad.origin_and_date}</div>` : ''}
@@ -4825,7 +4843,7 @@ export function renderLesson(lesson) {
             ? generateKeyIndividualEmbedHTML(person)
             : `<div>${person.name}</div>`;
           htmlNarrative += `
-               <div class="key-individual-embed" style="margin-bottom: 25px;">
+               <div class="key-individual-embed" style="margin: 6px 0;">
                  ${cardHtml}
                </div>
              `;
@@ -6632,22 +6650,11 @@ export function renderLesson(lesson) {
 
         if (isAnchor) {
           const kiCardHtml = generateKeyIndividualEmbedHTML
-            ? generateKeyIndividualEmbedHTML(ki)
+            ? generateKeyIndividualEmbedHTML(ki, ki.anchor_title)
             : `<div>${ki.name}</div>`;
-          const anchorBadge = ki.anchor_title
-            ? `
-              <div class="key-individual-anchor-banner" style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;">
-                <span class="key-individual-anchor-badge" style="background: #1e40af; color: #fff; padding: 2px 7px; border-radius: 3px; display: inline-flex; align-items: center; gap: 5px;">
-                  <i class="fa-solid fa-user-tie"></i> Decisive Historical Agent
-                </span>
-                <span class="key-individual-anchor-text" style="color: #1e3a8a;">Anchored to ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(ki.anchor_title) : ki.anchor_title}</span>
-              </div>
-            `
-            : '';
           htmlNarrative += `
-            <div class="key-individual-lesson-section" data-anchor-act="${index + 1}" style="margin-top: 30px; margin-bottom: 25px;">
-              ${anchorBadge}
-              <div class="key-individual-embed">
+            <div class="key-individual-lesson-section" data-anchor-act="${index + 1}" style="margin: 6px 0;">
+              <div class="key-individual-embed" style="margin: 0;">
                 ${kiCardHtml}
               </div>
             </div>
@@ -6661,11 +6668,11 @@ export function renderLesson(lesson) {
     if (lesson.key_individual && !renderedKeyIndividual) {
       const ki = lesson.key_individual;
       const kiCardHtml = generateKeyIndividualEmbedHTML
-        ? generateKeyIndividualEmbedHTML(ki)
+        ? generateKeyIndividualEmbedHTML(ki, ki.anchor_title)
         : `<div>${ki.name}</div>`;
       htmlNarrative += `
-        <div class="key-individual-lesson-section" style="margin-top: 30px; margin-bottom: 25px;">
-          <div class="key-individual-embed">
+        <div class="key-individual-lesson-section" style="margin: 6px 0;">
+          <div class="key-individual-embed" style="margin: 0;">
             ${kiCardHtml}
           </div>
         </div>

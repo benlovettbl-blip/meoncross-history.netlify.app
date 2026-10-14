@@ -5034,7 +5034,9 @@ details.archival-drawer,
 details.cme-source-drawer,
 details.weimar-source-drawer,
 details.medicine-source-drawer,
-details.eee-source-drawer {
+details.eee-source-drawer,
+details.key-individual-drawer,
+details.spotlight-drawer {
   margin: 6px 0 !important;
   padding: 0 !important;
   border: 1px solid #cbd5e1 !important;
@@ -5049,7 +5051,9 @@ details.archival-drawer[open],
 details.cme-source-drawer[open],
 details.weimar-source-drawer[open],
 details.medicine-source-drawer[open],
-details.eee-source-drawer[open] {
+details.eee-source-drawer[open],
+details.key-individual-drawer[open],
+details.spotlight-drawer[open] {
   margin: 10px 0 16px 0 !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05) !important;
 }
@@ -5058,7 +5062,9 @@ details.archival-drawer > summary,
 details.cme-source-drawer > summary,
 details.weimar-source-drawer > summary,
 details.medicine-source-drawer > summary,
-details.eee-source-drawer > summary {
+details.eee-source-drawer > summary,
+details.key-individual-drawer > summary,
+details.spotlight-drawer > summary {
   padding: 4px 10px !important;
   min-height: 26px !important;
   background: #f8fafc !important;
@@ -5077,12 +5083,16 @@ details.archival-drawer > summary:hover,
 details.cme-source-drawer > summary:hover,
 details.weimar-source-drawer > summary:hover,
 details.medicine-source-drawer > summary:hover,
-details.eee-source-drawer > summary:hover {
+details.eee-source-drawer > summary:hover,
+details.key-individual-drawer > summary:hover,
+details.spotlight-drawer > summary:hover {
   background: #f1f5f9 !important;
 }
 
 details.archival-drawer > summary::-webkit-details-marker,
-details.cme-source-drawer > summary::-webkit-details-marker {
+details.cme-source-drawer > summary::-webkit-details-marker,
+details.key-individual-drawer > summary::-webkit-details-marker,
+details.spotlight-drawer > summary::-webkit-details-marker {
   display: none !important;
 }
 
@@ -5090,7 +5100,9 @@ details.archival-drawer summary > div:first-child,
 details.cme-source-drawer summary > div:first-child,
 details.weimar-source-drawer summary > div:first-child,
 details.medicine-source-drawer summary > div:first-child,
-details.eee-source-drawer summary > div:first-child {
+details.eee-source-drawer summary > div:first-child,
+details.key-individual-drawer summary > div:first-child,
+details.spotlight-drawer summary > div:first-child {
   display: flex !important;
   align-items: center !important;
   gap: 8px !important;
@@ -5101,7 +5113,9 @@ details.eee-source-drawer summary > div:first-child {
 }
 
 details.archival-drawer .archival-meta-tag,
-details.cme-source-drawer .archival-meta-tag {
+details.cme-source-drawer .archival-meta-tag,
+details.key-individual-drawer .archival-meta-tag,
+details.spotlight-drawer .archival-meta-tag {
   padding: 2px 6px !important;
   border-radius: 3px !important;
   font-size: 0.62rem !important;
@@ -5115,7 +5129,9 @@ details.cme-source-drawer .archival-meta-tag {
 details.archival-drawer summary span[style*='Playfair Display'],
 details.archival-drawer summary .archival-drawer-title,
 details.cme-source-drawer summary span[style*='Playfair Display'],
-details.cme-source-drawer summary .archival-drawer-title {
+details.cme-source-drawer summary .archival-drawer-title,
+details.key-individual-drawer summary .archival-drawer-title,
+details.spotlight-drawer summary .archival-drawer-title {
   font-size: 0.82rem !important;
   line-height: 1.2 !important;
   font-weight: 700 !important;
@@ -5125,7 +5141,9 @@ details.cme-source-drawer summary .archival-drawer-title {
 }
 
 details.archival-drawer .drawer-toggle-indicator,
-details.cme-source-drawer .drawer-toggle-indicator {
+details.cme-source-drawer .drawer-toggle-indicator,
+details.key-individual-drawer .drawer-toggle-indicator,
+details.spotlight-drawer .drawer-toggle-indicator {
   font-size: 0.68rem !important;
   color: #64748b !important;
   gap: 4px !important;
@@ -5134,8 +5152,22 @@ details.cme-source-drawer .drawer-toggle-indicator {
 }
 
 details.archival-drawer .drawer-caret,
-details.cme-source-drawer .drawer-caret {
+details.cme-source-drawer .drawer-caret,
+details.key-individual-drawer .drawer-caret,
+details.spotlight-drawer .drawer-caret {
   font-size: 0.62rem !important;
+}
+
+.key-individual-lesson-section {
+  margin: 6px 0 !important;
+}
+
+.key-individual-embed {
+  margin: 0 !important;
+}
+
+.key-individual-anchor-banner {
+  display: none !important;
 }
 
 /* ==========================================================================
@@ -5765,24 +5797,36 @@ details.cme-source-drawer summary:hover {
   background: #e2e8f0 !important;
 }
 
-details.cme-source-drawer[open] summary {
+details.archival-drawer[open] summary,
+details.cme-source-drawer[open] summary,
+details.key-individual-drawer[open] summary,
+details.spotlight-drawer[open] summary {
   background: #e2e8f0 !important;
   border-bottom: 1px solid #cbd5e1 !important;
 }
 
-details.cme-source-drawer summary .drawer-caret {
+details.archival-drawer summary .drawer-caret,
+details.cme-source-drawer summary .drawer-caret,
+details.key-individual-drawer summary .drawer-caret,
+details.spotlight-drawer summary .drawer-caret {
   display: inline-block;
   transition: transform 0.25s ease;
-  font-size: 0.75rem;
-  margin-left: 6px;
+  font-size: 0.65rem;
+  margin-left: 4px;
   color: #1e40af;
 }
 
-details.cme-source-drawer[open] summary .drawer-caret {
+details.archival-drawer[open] summary .drawer-caret,
+details.cme-source-drawer[open] summary .drawer-caret,
+details.key-individual-drawer[open] summary .drawer-caret,
+details.spotlight-drawer[open] summary .drawer-caret {
   transform: rotate(180deg);
 }
 
-details.cme-source-drawer[open] {
+details.archival-drawer[open],
+details.cme-source-drawer[open],
+details.key-individual-drawer[open],
+details.spotlight-drawer[open] {
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06) !important;
 }
 
