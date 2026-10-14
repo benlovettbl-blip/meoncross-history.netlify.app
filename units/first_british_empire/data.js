@@ -1133,6 +1133,55 @@ export const unitData = {
         },
       ],
 
+      tasks: [
+        {
+          id: 'fbe_l3_q3_interpretations',
+          type: 'historical_interpretations',
+          qNum: 3,
+          topic: 'Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]',
+          title: 'Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]',
+          text: 'Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance, and suggest one reason why they differ on the reality of plantation control. [8 marks]',
+          interp1: {
+            title: 'Interpretation 1',
+            badge: 'Colonial Planter Perspective (1774)',
+            author: 'Planter Edward Long, History of Jamaica (1774)',
+            text: '“The plantation negroes are naturally indolent and require the perpetual surveillance and discipline of the driver’s whip to extract labour. Without European mastery, order would instantly dissolve into ruin.”',
+          },
+          interp2: {
+            title: 'Interpretation 2',
+            badge: 'Modern Caribbean Historiography (2004)',
+            author: 'Historian Hilary Beckles, Caribbean Freedom (2004)',
+            text: '“Enslaved Africans waged an unrelenting war of resistance through daily sabotage, spiritual preservation, and armed guerrilla struggle. Queen Nanny proved that African military strategy could humble the British imperial army.”',
+          },
+          matrix: [
+            {
+              col: '1. QUESTION 3(B): CONTENT & DIFFERENCE [4 MARKS]',
+              text: 'Contrast the main arguments: Long depicts enslaved Africans as passive and dependent on European control, whereas Beckles emphasizes continuous, organized resistance and strategic military defiance.',
+            },
+            {
+              col: '2. QUESTION 3(C): DIFFERENT FOCUS & EMPHASIS [4 MARKS]',
+              text: 'Explain why they differ: Long focuses primarily on planter disciplinary mechanisms and justifying colonial control, whereas Beckles focuses on enslaved agency, daily resistance, and Maroon guerrilla victories.',
+            },
+            {
+              col: '3. HISTORICAL JUDGEMENT',
+              text: 'Evaluate which interpretation provides a more historically rigorous analysis of Caribbean plantation realities.',
+            },
+          ],
+          connectives: [
+            'Interpretations 1 and 2 differ regarding...',
+            'Interpretation 1 argues that...',
+            'In sharp contrast, Interpretation 2 suggests that...',
+            'This is a difference because...',
+            'One reason why Interpretations 1 and 2 differ is because they have a different focus...',
+            'Specifically, Interpretation 1 focuses primarily on...',
+            'In contrast, Interpretation 2 focuses more on...',
+            'As a result, the authors reach different conclusions because...',
+          ],
+          model_answer:
+            "<strong>Part B (Difference between Interpretations):</strong><br>Interpretations 1 and 2 differ fundamentally over the nature of enslaved African resistance and plantation control.<br><br>Interpretation 1 portrays enslaved people as passive, claiming that order and labour were solely maintained through European surveillance and discipline. In sharp contrast, Interpretation 2 argues that enslaved Africans engaged in an unrelenting, active struggle against slavery through cultural preservation, sabotage, and armed guerrilla warfare.<br><br><strong>Part C (Reason Why Interpretations Differ):</strong><br>A primary reason why Interpretations 1 and 2 differ is that the authors have a different focus. Interpretation 1 focuses primarily on the planters' mechanisms of colonial surveillance, viewing plantation life through the disciplinary framework of the slave-owners. In contrast, Interpretation 2 focuses primarily on African resistance, agency, and military strategy, highlighting Queen Nanny and the Maroons' victories against the British imperial army. Because the authors focus on entirely different aspects of the plantation system (planter control mechanisms versus enslaved resistance and rebellion), they reach opposing conclusions.",
+        },
+      ],
+
       teacher_notes: {
         primer:
           'This enquiry challenges the misconception that enslaved Africans were passive victims of empire. Students explore the industrial brutality of Caribbean sugar plantations, examine how daily cultural survival and sabotage undermined planter authority, and analyse how Queen Nanny and the Jamaican Maroons used terrain, camouflage, and guerrilla tactics to force the British Crown into signing a formal peace treaty in 1739.',

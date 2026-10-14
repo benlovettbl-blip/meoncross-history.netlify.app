@@ -1037,7 +1037,9 @@ const great_war = {
             'Paul Kennedy emphasizes that naval supremacy was...',
             'In sharp contrast, Interpretation 2 argues that...',
             'Christopher Clark maintains that by 1912...',
-            'The fundamental reason the interpretations differ is...',
+            'One reason why Interpretations 1 and 2 differ is because they have a different focus...',
+            'Specifically, Interpretation 1 focuses primarily on the long-term diplomatic polarization between 1898 and 1911...',
+            'In contrast, Interpretation 2 focuses more on the immediate short-term Balkan triggers of 1912–1914...',
             'Weighing both perspectives against historical evidence, I conclude that...',
           ],
           model_answer:

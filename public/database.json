@@ -43959,6 +43959,53 @@
               "citation": "National Heroes Park, Kingston, Jamaica."
             }
           ],
+          "tasks": [
+            {
+              "id": "fbe_l3_q3_interpretations",
+              "type": "historical_interpretations",
+              "qNum": 3,
+              "topic": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+              "title": "Question 3(b) & 3(c): Contrasting Interpretations [8 marks • 10 mins]",
+              "text": "Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance, and suggest one reason why they differ on the reality of plantation control. [8 marks]",
+              "interp1": {
+                "title": "Interpretation 1",
+                "badge": "Colonial Planter Perspective (1774)",
+                "author": "Planter Edward Long, History of Jamaica (1774)",
+                "text": "“The plantation negroes are naturally indolent and require the perpetual surveillance and discipline of the driver’s whip to extract labour. Without European mastery, order would instantly dissolve into ruin.”"
+              },
+              "interp2": {
+                "title": "Interpretation 2",
+                "badge": "Modern Caribbean Historiography (2004)",
+                "author": "Historian Hilary Beckles, Caribbean Freedom (2004)",
+                "text": "“Enslaved Africans waged an unrelenting war of resistance through daily sabotage, spiritual preservation, and armed guerrilla struggle. Queen Nanny proved that African military strategy could humble the British imperial army.”"
+              },
+              "matrix": [
+                {
+                  "col": "1. QUESTION 3(B): CONTENT & DIFFERENCE [4 MARKS]",
+                  "text": "Contrast the main arguments: Long depicts enslaved Africans as passive and dependent on European control, whereas Beckles emphasizes continuous, organized resistance and strategic military defiance."
+                },
+                {
+                  "col": "2. QUESTION 3(C): DIFFERENT FOCUS & EMPHASIS [4 MARKS]",
+                  "text": "Explain why they differ: Long focuses primarily on planter disciplinary mechanisms and justifying colonial control, whereas Beckles focuses on enslaved agency, daily resistance, and Maroon guerrilla victories."
+                },
+                {
+                  "col": "3. HISTORICAL JUDGEMENT",
+                  "text": "Evaluate which interpretation provides a more historically rigorous analysis of Caribbean plantation realities."
+                }
+              ],
+              "connectives": [
+                "Interpretations 1 and 2 differ regarding...",
+                "Interpretation 1 argues that...",
+                "In sharp contrast, Interpretation 2 suggests that...",
+                "This is a difference because...",
+                "One reason why Interpretations 1 and 2 differ is because they have a different focus...",
+                "Specifically, Interpretation 1 focuses primarily on...",
+                "In contrast, Interpretation 2 focuses more on...",
+                "As a result, the authors reach different conclusions because..."
+              ],
+              "model_answer": "<strong>Part B (Difference between Interpretations):</strong><br>Interpretations 1 and 2 differ fundamentally over the nature of enslaved African resistance and plantation control.<br><br>Interpretation 1 portrays enslaved people as passive, claiming that order and labour were solely maintained through European surveillance and discipline. In sharp contrast, Interpretation 2 argues that enslaved Africans engaged in an unrelenting, active struggle against slavery through cultural preservation, sabotage, and armed guerrilla warfare.<br><br><strong>Part C (Reason Why Interpretations Differ):</strong><br>A primary reason why Interpretations 1 and 2 differ is that the authors have a different focus. Interpretation 1 focuses primarily on the planters' mechanisms of colonial surveillance, viewing plantation life through the disciplinary framework of the slave-owners. In contrast, Interpretation 2 focuses primarily on African resistance, agency, and military strategy, highlighting Queen Nanny and the Maroons' victories against the British imperial army. Because the authors focus on entirely different aspects of the plantation system (planter control mechanisms versus enslaved resistance and rebellion), they reach opposing conclusions."
+            }
+          ],
           "teacher_notes": {
             "primer": "This enquiry challenges the misconception that enslaved Africans were passive victims of empire. Students explore the industrial brutality of Caribbean sugar plantations, examine how daily cultural survival and sabotage undermined planter authority, and analyse how Queen Nanny and the Jamaican Maroons used terrain, camouflage, and guerrilla tactics to force the British Crown into signing a formal peace treaty in 1739.",
             "objectives": [
@@ -45466,7 +45513,9 @@
                 "Paul Kennedy emphasizes that naval supremacy was...",
                 "In sharp contrast, Interpretation 2 argues that...",
                 "Christopher Clark maintains that by 1912...",
-                "The fundamental reason the interpretations differ is...",
+                "One reason why Interpretations 1 and 2 differ is because they have a different focus...",
+                "Specifically, Interpretation 1 focuses primarily on the long-term diplomatic polarization between 1898 and 1911...",
+                "In contrast, Interpretation 2 focuses more on the immediate short-term Balkan triggers of 1912–1914...",
                 "Weighing both perspectives against historical evidence, I conclude that..."
               ],
               "model_answer": "Interpretations 1 and 2 differ fundamentally about the significance of the Anglo-German naval arms race in causing the outbreak of the First World War.\n\nInterpretation 1, by Paul Kennedy, argues that the naval race was the single most dangerous factor in pre-1914 European diplomacy. Kennedy emphasizes that British naval dominance was existential for national survival and food supply; consequently, Germany’s construction of a High Seas Fleet directly opposite the British coast poisoned friendly commercial ties and convinced British leaders that Berlin was bent on European hegemony.\n\nIn sharp contrast, Interpretation 2, by Christopher Clark, argues that historians have exaggerated the impact of the naval race. Clark stresses that by 1912 the contest was effectively over, as Germany conceded naval defeat to fund its army and Britain held an insurmountable lead. Instead, Clark identifies Balkan ethnic nationalism and rigid alliances as the true triggers of the war.\n\nThese interpretations differ because the historians focus on different chronological periods and causal mechanisms: Kennedy focuses on the long-term diplomatic polarization between 1898 and 1911 that drove Britain into the Entente with France and Russia, whereas Clark focuses on the immediate short-term triggers of 1912–1914 in south-eastern Europe."
@@ -49223,6 +49272,7 @@
               ],
               "model_answer_b": "Interpretations 1 and 2 differ fundamentally over the treatment and motivation of imperial troops in the First World War [1.1, 5.1]. Interpretation 1 portrays colonial involvement as a harmonious, voluntary display of \"imperial brotherhood\", asserting that Indian and dominion soldiers fought out of deep devotion and \"mutual love\" for the King-Emperor. In sharp contrast, Interpretation 2 argues that the reality for non-white troops was defined by systemic institutional racism, physical abuse, and unequal pay. While Curzon presents imperial sacrifice as celebrated and unified, Olusoga reveals that non-white troops were barred from officer ranks and deliberately whitewashed from British national remembrance after 1918 [5.1].",
               "model_answer_c": "Interpretations 1 and 2 differ primarily because the two historians have chosen to focus on different aspects of the colonial war effort. Interpretation 1 focuses on wartime imperial mobilization, diplomatic loyalty, and frontline camaraderie during active combat, highlighting how soldiers from across the British Empire fought alongside British troops in Flanders, Gallipoli, and Egypt. In sharp contrast, Interpretation 2 focuses on institutional racism, military hierarchies, and postwar commemoration. Olusoga concentrates on the systemic barriers faced by non-white troops—such as exclusion from officer commissions, inferior wages, and severe corporal punishment—as well as the deliberate postwar refusal by imperial authorities to grant African dead individual headstones. Because Curzon and Olusoga focus on entirely different dimensions of the imperial experience (wartime solidarity versus institutional discrimination and memory), they arrive at opposing conclusions about the reality of the colonial soldier’s experience.",
+              "model_answer": "<strong>Part B (Difference between Interpretations):</strong><br>Interpretations 1 and 2 differ fundamentally over the treatment and motivation of imperial troops in the First World War [1.1, 5.1]. Interpretation 1 portrays colonial involvement as a harmonious, voluntary display of \"imperial brotherhood\", asserting that Indian and dominion soldiers fought out of deep devotion and \"mutual love\" for the King-Emperor. In sharp contrast, Interpretation 2 argues that the reality for non-white troops was defined by systemic institutional racism, physical abuse, and unequal pay. While Curzon presents imperial sacrifice as celebrated and unified, Olusoga reveals that non-white troops were barred from officer ranks and deliberately whitewashed from British national remembrance after 1918 [5.1].<br><br><strong>Part C (Reason Why Interpretations Differ):</strong><br>Interpretations 1 and 2 differ primarily because the two historians have chosen to focus on different aspects of the colonial war effort. Interpretation 1 focuses on wartime imperial mobilization, diplomatic loyalty, and frontline camaraderie during active combat, highlighting how soldiers from across the British Empire fought alongside British troops in Flanders, Gallipoli, and Egypt. In sharp contrast, Interpretation 2 focuses on institutional racism, military hierarchies, and postwar commemoration. Olusoga concentrates on the systemic barriers faced by non-white troops—such as exclusion from officer commissions, inferior wages, and severe corporal punishment—as well as the deliberate postwar refusal by imperial authorities to grant African dead individual headstones. Because Curzon and Olusoga focus on entirely different dimensions of the imperial experience (wartime solidarity versus institutional discrimination and memory), they arrive at opposing conclusions about the reality of the colonial soldier’s experience.",
               "topic": "Enquiry Writing Task [8 marks • 10 mins]"
             }
           ]
