@@ -34,8 +34,15 @@ function getFileHash(filePath) {
 }
 
 (async () => {
+  const chromePath =
+    process.env.PUPPETEER_EXECUTABLE_PATH ||
+    (fs.existsSync('C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe')
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
+
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     protocolTimeout: 600000,
     timeout: 300000,
     args: ['--allow-file-access-from-files', '--disable-web-security'],
