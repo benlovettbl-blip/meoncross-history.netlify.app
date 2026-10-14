@@ -12,11 +12,12 @@ Every perfected workbook strictly enforces the architecture established in **Yea
    - **Pages 1 & 16 (Color Covers):** High-resolution primary artifact/plate (110–118mm height), museum accession metadata (e.g. UNESCO Memory of the World), 4 core features, 3-pillar decoding matrix, disciplinary significance statement, targeted hinge question, and calibrated enrollment/tracking grid.
    - **Pages 2–15 (Monochrome Interior):** Pure `#000000` text, borders, and ruled lines (eliminating all interior navy `#0f284e`, slate `#1e293b`, or gray backgrounds to guarantee crisp, zero-dithering reprographics).
 2. **Handwriting Pitch & Page Budget Calibration:**
-   - Ruled line pitch calibrated to **`~7.8mm–8.0mm`** across all response areas:
-     * `single_12`: 21 lines
-     * `split` (4m + 8m / 4m + 12m): 18 lines
-     * `interpretations` (8m + 8m): 12 + 12 lines
-     * `equal_split` (8m + 8m): 13 + 13 lines
+   - Ruled line pitch calibrated to **`~7.8mm–8.1mm`** across all response areas:
+     * `single_12`: 21 lines (~7.9mm pitch)
+     * `narrative_8` / single extended writing: 22 lines (~8.05mm pitch; whole-page format)
+     * `split` (short drills only: 4m feature + 4m consequence): 4 + 18 lines (~8.0mm pitch)
+     * `interpretations` (8m + 8m): 12 + 12 lines (~7.8mm pitch)
+     * **Extended Question Sizing Principle:** When questions are short drills (e.g. 4m features + 4m consequence), two questions fit cleanly. But whenever a larger extended question is set (e.g. 8m narrative account, 8m importance, 12m essay), it MUST occupy the entire page alone to avoid condensed line pitch.
    - **100% `✅ OPTIMAL` Page Budgets:** Zero page overflows (0px) and zero dead void gaps (<30px footer space) verified via automated Puppeteer audits.
 3. **Disciplinary Architecture & Stage Paragraph Indexing:**
    - **Verso (Left Page):** 5-Stage Chronological Inquiry Spine with 3 high-yield specification trigger bullets per stage, and prominent paragraph anchor badges (`[1.1]`–`[5.5]`) directly matching the master textbook and projected smartboard reading text.
@@ -36,7 +37,7 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 
 | Unit ID | Key Stage | Unit Title | Workbook Script & Artifact | Status & Notes |
 | :--- | :---: | :--- | :--- | :--- |
-| `medieval_england` | KS3 (Y7) | Medieval England, 1066–1485 | [`scripts/render_medieval_england_workbook.cjs`](./scripts/render_medieval_england_workbook.cjs)<br>• `public/pdfs/medieval_england_16p_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Bayeux plate, monochrome interior, 7.8–8.0mm line pitch, `[1.1]`–`[5.5]` para badges, zero giveaways, 32-line exercise notes pages, 100% `✅ OPTIMAL` audit. (Commit `d62781c2`). |
+| `medieval_england` | KS3 (Y7) | Medieval England, 1066–1485 | [`scripts/render_medieval_england_workbook.cjs`](./scripts/render_medieval_england_workbook.cjs)<br>• `public/pdfs/medieval_england_16p_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Bayeux plate, monochrome interior, 7.8–8.1mm line pitch, `[1.1]`–`[5.5]` para badges, zero giveaways, dedicated full-page 8m narrative account on P11 (22 lines @ 8.05mm pitch; removed crowded Part B), 32-line exercise notes pages, 100% `✅ OPTIMAL` audit. |
 | `monarchy_religion_power` | KS3 (Y8) | Crown, Church, or Parliament (1517–1689) | [`scripts/render_monarchy_religion_power_workbook.cjs`](./scripts/render_monarchy_religion_power_workbook.cjs)<br>• `public/pdfs/monarchy_religion_power_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Holbein portrait with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `4024a9fd`). |
 | `first_british_empire` | KS3 (Y8) | The First British Empire (1600–1783) | [`scripts/render_first_british_empire_workbook.cjs`](./scripts/render_first_british_empire_workbook.cjs)<br>• `public/pdfs/first_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Nathaniel Dance portrait of Clive with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `727315bf`). |
 | `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath (1914–1919) | [`scripts/render_great_war_part2_twopage_workbook.cjs`](./scripts/render_great_war_part2_twopage_workbook.cjs)<br>• `public/pdfs/great_war_part2_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 108mm Sir William Orpen plate (*The Signing of Peace in the Hall of Mirrors*), pure `#000000` monochrome interior (P2–13), 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |

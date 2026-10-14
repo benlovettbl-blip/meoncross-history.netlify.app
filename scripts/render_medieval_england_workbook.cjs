@@ -405,31 +405,19 @@ const enquiryConfigs = [
     vocabPrompt:
       'Define <strong>The Rule of Law</strong> and explain how Clause 39 of Magna Carta restricted arbitrary royal power:',
     rightPage: {
-      type: 'equal_split',
-      partA: {
-        tariff: 'Question 2: Narrative Account [8 marks &bull; 10 mins]',
-        badge: 'PART A &bull; NARRATIVE',
-        question:
-          'Write a narrative account analysing the key events leading from the loss of Normandy (1204) to the sealing of Magna Carta (1215). [8 marks]',
-        stimulus: [
-          'The loss of Normandy and heavy scutage taxation',
-          'The defeat at the Battle of Bouvines (1214)',
-        ],
-        connectives:
-          'Initially, the events began when... &bull; Following this, the next development was... &bull; A turning point occurred when... &bull; Consequently... &bull; This ultimately resulted in...',
-        wordBank:
-          'Normandy &bull; scutage &bull; Pope Innocent III &bull; Battle of Bouvines (1214) &bull; Runnymede &bull; Clause 39 &bull; Magna Carta &bull; Robert Fitzwalter',
-      },
-      partB: {
-        tariff: 'Question 3: Explain Importance [8 marks &bull; 10 mins]',
-        badge: 'PART B &bull; IMPORTANCE',
-        question:
-          'Explain the importance of Clause 39 of Magna Carta for the development of the English legal system. [8 marks]',
-        connectives:
-          'This was of significant importance because... &bull; In particular, this meant that... &bull; Furthermore, this led to... &bull; Consequently, the impact was...',
-        wordBank:
-          'Clause 39 &bull; arbitrary power &bull; lawful judgment of peers &bull; due process &bull; trial by jury &bull; rule of law',
-      },
+      type: 'narrative_8',
+      tariff: 'Question 2: Narrative Account [8 marks &bull; 12 mins]',
+      badge: 'NARRATIVE ACCOUNT',
+      examStem:
+        'Write a narrative account analysing the key events leading from the loss of Normandy (1204) to the sealing of Magna Carta (1215). [8 marks]',
+      stimulus: [
+        'The loss of Normandy and heavy scutage taxation',
+        'The defeat at the Battle of Bouvines (1214)',
+      ],
+      connectives:
+        'Initially, the sequence began when... &bull; Following this, the next development was... &bull; A turning point occurred when... &bull; Consequently... &bull; This ultimately resulted in...',
+      wordBank:
+        'Normandy &bull; scutage &bull; Pope Innocent III &bull; Battle of Bouvines (1214) &bull; Runnymede &bull; Clause 39 &bull; Magna Carta &bull; Robert Fitzwalter',
       timelineMissionTitle: 'Centrefold Sketch Challenges 5 &amp; 6',
       timelineMission:
         '<strong>Milestone 5 (Runnymede &amp; The Great Charter &bull; 1215):</strong> Sketch King John seated reluctantly in a pavilion beside the River Thames pressing his Great Seal onto the parchment of Magna Carta [⛺ royal pavilion &bull; 📜 wax-sealed charter &bull; 🛡️ rebel baron banner].<br style="display:block; margin-top:2px;"><strong>Milestone 6 (Simon de Montfort’s Parliament &bull; 1265):</strong> Sketch knights from the shires and burgesses from the towns gathering for the first representative English Parliament [🏛️ Parliament hall &bull; 📜 writ of summons &bull; 👥 knights and townsmen].',
@@ -931,123 +919,71 @@ function renderRightPage(cfg, pageNum) {
       ${renderFooterStrip(pageNum, cfg.rightPageQuip, 16)}
     </div>
   </div>`;
-  } else if (rp.type === 'equal_split') {
-    // EQUAL-SPLIT ROTATING SKILLS WRITING (ENQUIRY 4: MAGNA CARTA - PAGE 11)
-    const partA = rp.partA || {};
-    const partB = rp.partB || {};
-
+  } else if (rp.type === 'narrative_8') {
+    // SINGLE 8-MARK NARRATIVE ACCOUNT WRITING (ENQUIRY 4: MAGNA CARTA - PAGE 11)
     return `
-  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • EQUAL SPLIT WRITING [8 MARKS + 8 MARKS] -->
+  <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • 8-MARK NARRATIVE ACCOUNT -->
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      
-      <!-- PART A: QUESTION 2 NARRATIVE ACCOUNT [8 MARKS] -->
-      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.4pt; color: #000000; margin: 0; font-weight: 900;">
-            ${partA.tariff || 'Question 1: Structured Writing [8 marks]'}
-          </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase;">
-            ${partA.badge || 'PART A &bull; NARRATIVE'}
-          </span>
+      <!-- Exam Header -->
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.0pt; color: #000000; margin: 0; font-weight: 900;">
+          ${rp.tariff}
+        </h2>
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px;">
+          ${rp.badge || 'NARRATIVE ACCOUNT'}
+        </span>
+      </div>
+
+      <!-- Question Stem & Stimulus Box -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 5px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.32;">
+          ${rp.examStem}
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
-          ${partA.question || ''}
-        </p>
-        ${
-          partA.stimulus
-            ? `
-        <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; margin-bottom: 2px;">
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #000000;">
           <strong style="color: #000000;">Stimulus:</strong>
-          <span style="border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${partA.stimulus[0]}</span>
-          <span style="border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${partA.stimulus[1]}</span>
-        </div>`
-            : ''
-        }
-        ${
-          partA.connectives || partA.wordBank || partA.stems
-            ? `
-        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.25;">
-          ${partA.connectives ? `<div><strong style="color: #000000;">Analytical Connectives:</strong> <em style="color: #000000;">${partA.connectives}</em></div>` : ''}
-          ${partA.stems ? `<div><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${partA.stems}</span></div>` : ''}
-          ${partA.wordBank ? `<div style="margin-top: 1.5px;"><strong style="color: #000000;">Key Terms:</strong> <span style="color: #000000;">${partA.wordBank}</span></div>` : ''}
-        </div>`
-            : ''
-        }
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #000000; margin-bottom: 1px;">
-          <strong style="color: #000000;">Task:</strong> Write your narrative account below:
-        </div>
-        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
-          ${Array(13)
-            .fill(
-              '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
-            )
-            .join('')}
+          <span style="border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${rp.stimulus[0]}</span>
+          <span style="border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${rp.stimulus[1]}</span>
+          <span style="font-style: italic; color: #000000;">(You must also use information of your own)</span>
         </div>
       </div>
 
-      <!-- CLEAN SOLID SECTION SEPARATOR -->
-      <div style="border-top: 1.5px solid #000000; margin: 4px 0 4px 0;"></div>
-
-      <!-- PART B: QUESTION 3 EXPLAIN IMPORTANCE [8 MARKS] -->
-      <div style="flex: 1.1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-        <div style="display: flex; flex-direction: column; flex: 1; min-height: 0;">
-          <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 11.4pt; color: #000000; margin: 0; font-weight: 900;">
-              ${partB.tariff || 'Question 2: Structured Writing [8 marks]'}
-            </h2>
-            <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase;">
-              ${partB.badge || 'PART B &bull; IMPORTANCE'}
-            </span>
-          </div>
-          <p style="font-family: 'Playfair Display', serif; font-size: 10.4pt; font-weight: 900; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
-            ${partB.question || ''}
-          </p>
-          ${
-            partB.stimulus
-              ? `
-          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000; margin-bottom: 2px;">
-            <strong style="color: #000000;">Stimulus:</strong>
-            <span style="border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${partB.stimulus[0]}</span>
-            <span style="border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${partB.stimulus[1]}</span>
-          </div>`
-              : ''
-          }
-          ${
-            partB.connectives || partB.wordBank || partB.stems
-              ? `
-          <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 3.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.25;">
-            ${partB.connectives ? `<div><strong style="color: #000000;">Analytical Connectives:</strong> <em style="color: #000000;">${partB.connectives}</em></div>` : ''}
-            ${partB.stems ? `<div><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${partB.stems}</span></div>` : ''}
-            ${partB.wordBank ? `<div style="margin-top: 1.5px;"><strong style="color: #000000;">Key Terms:</strong> <span style="color: #000000;">${partB.wordBank}</span></div>` : ''}
-          </div>`
-              : ''
-          }
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #000000; margin-bottom: 1px;">
-            <strong style="color: #000000;">Task:</strong> Write your explanation of importance below:
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
-            ${Array(13)
-              .fill(
-                '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
-              )
-              .join('')}
-          </div>
+      <!-- Chronological Connectives & Key Vocabulary Bank -->
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Chronological Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-style: italic; line-height: 1.28; display: block; color: #000000;">${rp.connectives}</span>
         </div>
+        <div>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.28; display: block; color: #000000;">${rp.wordBank}</span>
+        </div>
+      </div>
 
-        <!-- Timeline Mission Box -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3.5px 7px; background: #ffffff; margin-top: 2px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
-              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #000000;">
-              Turn to Centrefold &bull; Pages 8–9 &rarr;
-            </span>
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; line-height: 1.26;">
-            ${rp.timelineMission}
-          </div>
+      <!-- Task Instructions -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; color: #000000; margin-bottom: 2px;">
+        <strong style="color: #000000;">Task:</strong> Using the vocabulary and connectives above, write your continuous narrative account below:
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
+        ${Array(22)
+          .fill(
+            '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
+          )
+          .join('')}
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+            🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #000000;">
+            Turn to Centrefold &bull; Pages 8–9 &rarr;
+          </span>
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; line-height: 1.26;">
+          ${rp.timelineMission}
         </div>
       </div>
 

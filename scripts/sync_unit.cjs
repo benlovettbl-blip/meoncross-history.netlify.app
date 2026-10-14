@@ -178,13 +178,13 @@ async function runSync() {
       }
       if (unitId === 'medieval_england') {
         console.log(
-          `\n📚 Compiling 18-page publisher textbook & universal KS3 engine workbook for [medieval_england]...`,
+          `\n📚 Compiling 18-page publisher textbook & 16-page pupil workbook for [medieval_england]...`,
         );
         execSync(`node scripts/render_standard_textbook_medieval_england.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
-        execSync(`node scripts/generate_ks3_workbook.cjs medieval_england`, {
+        execSync(`node scripts/render_medieval_england_workbook.cjs`, {
           stdio: 'inherit',
           cwd: ROOT_DIR,
         });
