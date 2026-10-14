@@ -118,12 +118,17 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
       const overflowPages = audit.results.filter((r) => r.isOverflow);
       const textClippedPages = audit.results.filter((r) => r.isTextClipped);
       const backCoverVoidPages = audit.results.filter((r) => r.isVoidBackCover);
+      const linePitchPages = audit.results.filter(
+        (r) => r.isLinePitchDistorted || r.isLinePitchMismatched,
+      );
       const criticalErrors = audit.results.filter(
         (r) =>
           r.isOverflow ||
           r.isTextClipped ||
           r.isVoidBackCover ||
           r.isCroppedSource ||
+          r.isLinePitchDistorted ||
+          r.isLinePitchMismatched ||
           (isStrict &&
             (r.isVoidSection ||
               r.isVoidInternalProse ||
@@ -131,6 +136,14 @@ const { auditPageBudget, printSpaceAuditReport } = require('./audit_page_budget.
               r.isVoidInterTask ||
               r.isClutterError)),
       );
+
+      if (linePitchPages.length > 0) {
+        linePitchPages.forEach((p) => {
+          console.error(
+            `  ❌ Line Pitch / Spacing Distortion Gate: ${p.pageId} has distorted handwriting lines (${p.linePitchErrorMsg})!`,
+          );
+        });
+      }
 
       if (textClippedPages.length > 0) {
         textClippedPages.forEach((p) => {

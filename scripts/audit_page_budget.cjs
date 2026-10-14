@@ -381,6 +381,41 @@ async function auditPageBudget(page, options = {}) {
             backCoverBottomVoid = Math.max(0, Math.round(rFooter.top - rLast.bottom));
           }
 
+          // 7. Ruled Line Pitch & Handwriting Spacing Consistency Audit
+          const taskLines = Array.from(p.querySelectorAll('.task-line'));
+          let isLinePitchDistorted = false;
+          let isLinePitchMismatched = false;
+          let linePitchErrorMsg = '';
+          let maxLineHeightMm = 0;
+          let minLineHeightMm = 0;
+          let linePitchVarianceMm = 0;
+
+          if (taskLines.length > 0) {
+            const lineHeightsMm = taskLines.map((l) => l.getBoundingClientRect().height / 3.7795);
+            maxLineHeightMm = Math.max(...lineHeightsMm);
+            minLineHeightMm = Math.min(...lineHeightsMm);
+            linePitchVarianceMm = maxLineHeightMm - minLineHeightMm;
+
+            const is16PageGoldStandard =
+              pageNodes.length === 16 &&
+              (p.classList.contains('verso-page') ||
+                p.classList.contains('recto-page') ||
+                p.querySelector('.page-body-full') !== null);
+
+            if (is16PageGoldStandard) {
+              if (maxLineHeightMm > 10.5) {
+                isLinePitchDistorted = true;
+                linePitchErrorMsg = `Max line pitch (${maxLineHeightMm.toFixed(1)}mm) exceeds 10.5mm threshold`;
+              } else if (taskLines.length >= 8 && linePitchVarianceMm > 3.0) {
+                isLinePitchMismatched = true;
+                linePitchErrorMsg = `Line pitch mismatch (${linePitchVarianceMm.toFixed(1)}mm: min ${minLineHeightMm.toFixed(1)}mm vs max ${maxLineHeightMm.toFixed(1)}mm)`;
+              }
+            } else if (maxLineHeightMm > 13.0) {
+              isLinePitchDistorted = true;
+              linePitchErrorMsg = `Max line pitch (${maxLineHeightMm.toFixed(1)}mm) exceeds 13.0mm threshold`;
+            }
+          }
+
           const utilizationPct =
             clientH > 0
               ? Math.min(100, Math.max(0, Math.round(((clientH - unusedBottom) / clientH) * 100)))
@@ -409,7 +444,9 @@ async function auditPageBudget(page, options = {}) {
             isVoidSection ||
             isVoidBackCover ||
             isTextClipped ||
-            isCroppedSource
+            isCroppedSource ||
+            isLinePitchDistorted ||
+            isLinePitchMismatched
           ) {
             hasErrors = true;
           }
@@ -451,6 +488,12 @@ async function auditPageBudget(page, options = {}) {
             clippedElements,
             isCroppedSource,
             croppedSources,
+            isLinePitchDistorted,
+            isLinePitchMismatched,
+            linePitchErrorMsg,
+            maxLineHeightMm,
+            minLineHeightMm,
+            linePitchVarianceMm,
             pageId: p.id || `Page ${pageNum}`,
           });
         });
@@ -472,6 +515,9 @@ async function auditPageBudget(page, options = {}) {
           isUnderflow: false,
           isVoidFooter: false,
           isVoidInterTask: false,
+          isLinePitchDistorted: false,
+          isLinePitchMismatched: false,
+          linePitchErrorMsg: '',
           isClutterError: false,
           clutterViolations: [],
           pageId: `Continuous (${estPages} estimated pages)`,
@@ -510,6 +556,11 @@ function printSpaceAuditReport(audit, title = 'DOCUMENT') {
     const issues = [];
     if (res.isClutterError) {
       issues.push(`❌ CLUTTER [${res.clutterViolations.join(', ')}]`);
+    }
+    if (res.isLinePitchDistorted) {
+      issues.push(`❌ LINE PITCH DISTORTED (${res.linePitchErrorMsg})`);
+    } else if (res.isLinePitchMismatched) {
+      issues.push(`❌ LINE PITCH MISMATCHED (${res.linePitchErrorMsg})`);
     }
     if (res.isFooterCollision) {
       issues.push(

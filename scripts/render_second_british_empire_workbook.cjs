@@ -787,50 +787,60 @@ function renderRightPage(cfg, pageNum) {
       </div>
 
       <!-- Task B: Question 3(b) -->
-      <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000; margin-bottom: 2px;">
-          ${rp.questionB}
-        </div>
-        <div class="ruled-lines-block">
-          <div class="task-line" style="height: 7.8mm;"></div>
-          <div class="task-line" style="height: 7.8mm;"></div>
-          <div class="task-line" style="height: 7.8mm;"></div>
-          <div class="task-line" style="height: 7.8mm;"></div>
-          <div class="task-line" style="height: 7.8mm;"></div>
-        </div>
-      </div>
-
-      <!-- Task C: Question 3(c) -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-        <div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000; margin-bottom: 2px;">
-            ${rp.questionC}
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000;">
+            ${rp.questionB}
           </div>
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.22; margin-bottom: 3px;">
-            <strong style="color: #000000;">Scaffolded Sentence Stems:</strong> <span style="color: #000000;">${rp.stems}</span>
-          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            PART B
+          </span>
         </div>
-        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
-          ${Array(8)
+        ${rp.stemsB ? `<div style="border: 1px solid #000000; border-radius: 2px; padding: 2px 5px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.2; margin-bottom: 2px;"><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${rp.stemsB}</span></div>` : ''}
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
+          ${Array(12)
             .fill(
               '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
             )
             .join('')}
         </div>
+      </div>
 
-        <!-- Timeline Mission Box -->
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
-              🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
-            </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000;">
-              Turn to Centrefold &bull; Pages 8–9 &rarr;
-            </span>
+      <!-- Clean Separator -->
+      <div style="border-top: 1.2px solid #000000; margin: 3px 0;"></div>
+
+      <!-- Task C: Question 3(c) -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000;">
+            ${rp.questionC}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.22;">
-            ${rp.timelineMission}
-          </div>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            PART C
+          </span>
+        </div>
+        ${rp.stemsC || rp.stems ? `<div style="border: 1px solid #000000; border-radius: 2px; padding: 2px 5px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.2; margin-bottom: 2px;"><strong style="color: #000000;">Scaffolded Sentence Stems:</strong> <span style="color: #000000;">${rp.stemsC || rp.stems}</span></div>` : ''}
+        <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
+          ${Array(12)
+            .fill(
+              '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
+            )
+            .join('')}
+        </div>
+      </div>
+
+      <!-- Timeline Mission Box -->
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px; margin-bottom: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+            🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
+          </span>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000;">
+            Turn to Centrefold &bull; Pages 8–9 &rarr;
+          </span>
+        </div>
+        <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.22;">
+          ${rp.timelineMission}
         </div>
       </div>
 
