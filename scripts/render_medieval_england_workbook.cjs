@@ -324,7 +324,7 @@ const enquiryConfigs = [
       questionC:
         'Suggest one reason why Interpretations 1 and 2 differ on Becket’s clash with King Henry II. [4 marks]',
       stemsC:
-        'One reason why Interpretations 1 and 2 differ is because of the authors’ backgrounds and purposes... &bull; Specifically, the author of Interpretation 1 was... whereas the author of Interpretation 2 is... &bull; As a result, their emphasis differs because...',
+        'One reason why Interpretations 1 and 2 differ is because they have a different focus... &bull; Specifically, Interpretation 1 focuses primarily on... &bull; In contrast, Interpretation 2 focuses more on... &bull; As a result, the authors reach different conclusions because...',
       timelineMissionTitle: 'Centrefold Sketch Challenge 4',
       timelineMission:
         '<strong>Milestone 4 (The Murder in Canterbury Cathedral &bull; 1170):</strong> Sketch Archbishop Thomas Becket standing defiant before the cathedral altar while four Norman knights draw their swords in the shadows [⛪ cathedral arch &bull; 🗡️ four knights’ swords &bull; ✝️ altar cross].',
@@ -880,7 +880,7 @@ function renderRightPage(cfg, pageNum) {
           </div>
           ${stemsC ? `<div style="border: 1.2px solid #000000; border-radius: 3px; padding: 2.5px 6px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.24; margin-bottom: 2px;"><strong style="color: #000000;">Scaffolded Sentence Stems:</strong> <span style="color: #000000;">${stemsC}</span></div>` : ''}
           <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #000000; margin-bottom: 1px;">
-            <strong style="color: #000000;">Task:</strong> Explain why the authors hold differing perspectives using provenance and purpose:
+            <strong style="color: #000000;">Task:</strong> Explain why the interpretations differ by analysing their different points of focus:
           </div>
           <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
             ${Array(12)

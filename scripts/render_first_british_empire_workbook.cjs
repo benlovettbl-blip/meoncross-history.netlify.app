@@ -300,10 +300,12 @@ const enquiryConfigs = [
       },
       questionB:
         'Explain how Interpretations 1 and 2 differ on the nature of enslaved African resistance. [4 marks]',
+      stemsB:
+        'Interpretations 1 and 2 differ on... &bull; Interpretation 1 argues that... &bull; In contrast, Interpretation 2 suggests that... &bull; This is a difference because...',
       questionC:
         'Suggest one reason why Interpretations 1 and 2 differ on the reality of plantation control. [4 marks]',
-      stems:
-        'Interpretations 1 and 2 differ regarding... &bull; Interpretation 1 argues that... &bull; In contrast, Interpretation 2 suggests that... &bull; One reason they differ is the provenance of each source: the author of Interpretation 1 was writing as... to justify..., whereas the author of Interpretation 2 is evaluating...',
+      stemsC:
+        'One reason why Interpretations 1 and 2 differ is because they have a different focus... &bull; Specifically, Interpretation 1 focuses primarily on... &bull; In contrast, Interpretation 2 focuses more on... &bull; As a result, the authors reach different conclusions because...',
       timelineMissionTitle: 'Centrefold Sketch Challenge 4',
       timelineMission:
         '<strong>Milestone 4 (The Abeng in the Blue Mountains &bull; 1739):</strong> Sketch Queen Nanny of the Maroons on a high mountain crag sounding the curved cow-horn abeng, while camouflaged warriors observe advancing British soldiers [📯 curved cow horn &bull; 🌿 leafy camouflage &bull; ⛰️ rugged Blue Mountain peak].',

@@ -316,7 +316,7 @@ const enquiryConfigs = [
       questionC:
         'Task B: Suggest one reason why Interpretations 1 and 2 differ about the role of empire soldiers. [4 marks]',
       stemsC:
-        'One reason why the interpretations differ is because the authors have different perspectives and purposes. The author of Interpretation 1 was writing from the perspective of... with the purpose of... &bull; On the other hand, the author of Interpretation 2 is evaluating the events from the perspective of... &bull; Consequently, this shaped their conclusions because...',
+        'One reason why Interpretations 1 and 2 differ is because they have a different focus... &bull; Specifically, Interpretation 1 focuses primarily on... &bull; In contrast, Interpretation 2 focuses more on... &bull; As a result, the authors reach different conclusions because...',
       timelineMissionTitle: 'Centrefold Sketch Challenges 2 &amp; 6',
       timelineMission:
         '<strong>Milestone 2 (April 1915 &bull; Gallipoli &amp; Empire):</strong> Turn to Centrefold (Pages 8–9). In Milestone 2, sketch Indian cavalry and ANZAC troops landing under Turkish fire on the steep cliffs of Gallipoli [🌊 landing boat &bull; ⛰️ rugged cliffs &bull; 👳‍♂️ Indian turban &amp; slouch hat].',

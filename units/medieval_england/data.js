@@ -1095,7 +1095,7 @@ export const unitData = {
             },
             {
               col: '3. HISTORIOGRAPHICAL REASON',
-              text: 'Differs due to Grim writing contemporary hagiography to celebrate a saint vs Barlow analysing statecraft objectively.',
+              text: 'Differs because the historians focus on different aspects: Becket’s spiritual martyrdom vs his political obstinacy over royal law.',
             },
           ],
           connectives: [
@@ -1103,11 +1103,12 @@ export const unitData = {
             'Interpretation 1 argues that...',
             'In sharp contrast, Interpretation 2 suggests that...',
             'This is a difference because...',
-            'One reason why Interpretations 1 and 2 differ is because of the authors’ backgrounds and purposes...',
-            'Specifically, Grim was an eyewitness churchman seeking to venerate a martyr, whereas Barlow is an objective modern historian...',
+            'One reason why Interpretations 1 and 2 differ is because they have a different focus...',
+            'Specifically, Interpretation 1 focuses primarily on Becket’s spiritual devotion and defence of sacred liberties, whereas Interpretation 2 focuses on...',
+            'As a result, they reach contrasting conclusions because...',
           ],
           model_answer:
-            "Interpretations 1 and 2 differ fundamentally over Thomas Becket’s character and motivation during the crisis with King Henry II.<br><br>Interpretation 1 presents Becket as a pious, principled Christian martyr who heroically defended Church liberties against secular tyranny, offering his life willingly for divine law. In sharp contrast, Interpretation 2 depicts Becket as an arrogant, theatrical extremist whose obstinacy precipitated a pointless constitutional crisis by shielding criminal clergy from the King's courts.<br><br>A primary reason for this sharp divergence is the contrasting backgrounds and purposes of the authors. Edward Grim was a medieval monk who personally witnessed Becket’s horrific murder in Canterbury Cathedral; writing in the 1170s shortly after Becket's canonisation, his explicit purpose was hagiographical—to celebrate Becket as a saint and glorify the Church against secular aggression. Conversely, Frank Barlow, writing over eight centuries later in 1986, is an academic historian evaluating secular governance and the practical administration of justice in Angevin England, leading him to view Becket’s absolute refusal to compromise as destructive egotism.",
+            "Interpretations 1 and 2 differ fundamentally over Thomas Becket’s character and motivation during the crisis with King Henry II.<br><br>Interpretation 1 presents Becket as a pious, principled Christian martyr who heroically defended Church liberties against secular tyranny, offering his life willingly for divine law. In sharp contrast, Interpretation 2 depicts Becket as an arrogant, theatrical extremist whose obstinacy precipitated a pointless constitutional crisis by shielding criminal clergy from the King's courts.<br><br>A primary reason why Interpretations 1 and 2 differ is that the authors have a different focus. Interpretation 1 focuses primarily on Becket's religious conviction, spiritual devotion, and steadfast martyrdom at the altar of Canterbury Cathedral, portraying him as a selfless defender of God’s law against earthly tyranny. In contrast, Interpretation 2 focuses primarily on the constitutional and legal crisis caused by Becket's resistance to royal justice, emphasising his shielding of criminous clerks from the King's common law courts and viewing his conversion as destructive obstinacy. Because the two authors focus on entirely different aspects of Becket’s actions, they arrive at contrasting interpretations.",
         },
       ],
 

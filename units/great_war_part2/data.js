@@ -2397,8 +2397,8 @@ export const unitData = {
               text: 'Contrast the main arguments: Curzon emphasizes voluntary devotion, mutual brotherhood, and shared imperial loyalty, whereas Olusoga emphasizes systemic racism, unequal treatment, and post-war whitewashing.',
             },
             {
-              col: '2. QUESTION 3(C): PROVENANCE & MOTIVATION [4 MARKS]',
-              text: 'Explain why they differ: Curzon was a wartime imperial politician whose purpose was to boost civilian morale and justify British imperial rule; Olusoga is a 21st-century historian using declassified military records and the Unremembered Report to challenge racial amnesia.',
+              col: '2. QUESTION 3(C): DIFFERENT FOCUS & EMPHASIS [4 MARKS]',
+              text: 'Explain why they differ: Curzon focuses primarily on wartime imperial mobilization and official battlefield solidarity, whereas Olusoga focuses on institutional inequality, postwar discrimination, and the erasure of colonial casualties from national memory.',
             },
             {
               col: '3. HISTORICAL JUDGEMENT',
@@ -2409,14 +2409,14 @@ export const unitData = {
             'Interpretation 1 emphasizes that colonial troops were treated with...',
             'In sharp contrast, Interpretation 2 argues that their service was characterized by...',
             'Specifically, Interpretation 1 claims that... whereas Interpretation 2 reveals that...',
-            'One primary reason why the interpretations differ is because the authors have different purposes and access to evidence...',
-            'Lord Curzon was writing as a wartime minister in 1917, meaning his purpose was to...',
-            'On the other hand, David Olusoga is a modern historian writing in 2014 with access to unclassified military archives...',
+            'One primary reason why the interpretations differ is because they have a different focus...',
+            'Interpretation 1 focuses primarily on wartime imperial mobilization and battlefield camaraderie...',
+            'In contrast, Interpretation 2 focuses more on institutional racism, military hierarchies, and postwar commemoration...',
           ],
           model_answer_b:
             'Interpretations 1 and 2 differ fundamentally over the treatment and motivation of imperial troops in the First World War [1.1, 5.1]. Interpretation 1 portrays colonial involvement as a harmonious, voluntary display of "imperial brotherhood", asserting that Indian and dominion soldiers fought out of deep devotion and "mutual love" for the King-Emperor. In sharp contrast, Interpretation 2 argues that the reality for non-white troops was defined by systemic institutional racism, physical abuse, and unequal pay. While Curzon presents imperial sacrifice as celebrated and unified, Olusoga reveals that non-white troops were barred from officer ranks and deliberately whitewashed from British national remembrance after 1918 [5.1].',
           model_answer_c:
-            'Interpretations 1 and 2 differ primarily because the authors wrote in completely different historical eras with conflicting purposes and access to evidence. Lord Curzon was a British War Cabinet minister speaking during the war in 1917. His primary objective was political propaganda: maintaining public morale, encouraging continued recruitment across the Empire, and justifying British imperial rule as benevolent and righteous. Consequently, Curzon ignored racial inequality to promote imperial unity. Conversely, David Olusoga is a modern historian writing in 2014 with access to declassified War Office records and the Unremembered Report [5.2]. Olusoga’s purpose is to recover marginalized historical truth, analyzing previously suppressed evidence of racial curfews, the 1918 Taranto Mutiny, and the denial of individual headstones to reveal how imperial authorities deliberately erased non-white sacrifice from post-war history.',
+            'Interpretations 1 and 2 differ primarily because the two historians have chosen to focus on different aspects of the colonial war effort. Interpretation 1 focuses on wartime imperial mobilization, diplomatic loyalty, and frontline camaraderie during active combat, highlighting how soldiers from across the British Empire fought alongside British troops in Flanders, Gallipoli, and Egypt. In sharp contrast, Interpretation 2 focuses on institutional racism, military hierarchies, and postwar commemoration. Olusoga concentrates on the systemic barriers faced by non-white troops—such as exclusion from officer commissions, inferior wages, and severe corporal punishment—as well as the deliberate postwar refusal by imperial authorities to grant African dead individual headstones. Because Curzon and Olusoga focus on entirely different dimensions of the imperial experience (wartime solidarity versus institutional discrimination and memory), they arrive at opposing conclusions about the reality of the colonial soldier’s experience.',
           topic: 'Enquiry Writing Task [8 marks • 10 mins]',
         },
       ],
