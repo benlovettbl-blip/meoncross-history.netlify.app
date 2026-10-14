@@ -676,8 +676,9 @@ function renderSpinePage(cfg) {
 
 function buildMedievalTwoPageWorkbook(unitData, period) {
   const coverImgBase64 =
+    getBase64Image('public/images/plague_toggenburg_clean.jpg') ||
+    getBase64Image('/images/plague_toggenburg_clean.jpg') ||
     getBase64Image('units/edexcel_medicine/assets/authentic_medieval.jpg') ||
-    getBase64Image('/images/authentic_medieval.jpg') ||
     '';
 
   let html = `<!DOCTYPE html>
@@ -741,9 +742,12 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     .task-line {
       border-bottom: 1.2px solid #000000;
       height: 7.8mm;
+      min-height: 7.8mm;
+      max-height: 7.8mm;
       width: 100%;
       box-sizing: border-box;
       margin: 0;
+      flex-shrink: 0;
     }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
@@ -816,7 +820,7 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
 
       <!-- Prominent Primary Visual Source Centerpiece -->
       <div style="margin: 2px 0 5px 0; border: 1.5px solid #000000; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <img src="${coverImgBase64}" alt="Medieval Plague Sufferers in Bed with Buboes" style="width: 100%; height: 93.5mm; object-fit: cover; object-position: center 40%; display: block; margin: 0 auto; filter: grayscale(100%);">
+        <img src="${coverImgBase64}" alt="Medieval Plague Sufferers in Bed with Buboes" style="width: 100%; height: 93.5mm; object-fit: contain; background: #ffffff; display: block; margin: 0 auto; filter: grayscale(100%) contrast(115%);">
         <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #000000; padding: 3px 8px; border-top: 1.5px solid #000000; background: #ffffff;">
           <span><strong>Primary Visual Evidence:</strong> <em>Medieval Plague Sufferers in Bed with Buboes</em> &bull; Toggenburg Bible MS (1411)</span>
           <span style="font-weight: 700;">CONTEMPORARY PRINT ARCHIVE</span>
@@ -949,77 +953,78 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   // PAGES 2–3: PANORAMIC LIVING TIMELINE (8 HISTORICAL MILESTONES)
   // ====================================================================
   html += `
-  <div class="page page-container verso-page" id="page-2">
+  <div class="page page-container verso-page" id="page-2" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Living Timeline &bull; Part 1: Medieval Ideas &amp; Medical Hierarchy (c1250–c1350)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Inquiry &bull; Milestones 1–4
-        </span>
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+            Living Timeline &bull; Part 1: Medieval Ideas &amp; Medical Hierarchy (c1250–c1350)
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry &bull; Milestones 1–4
+          </span>
+        </div>
+
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                c. 1250 &bull; The Church &amp; The Monopoly on Medical Learning
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.1</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              The Catholic Church controls all English universities (Oxford, Cambridge) and hospital foundations. Monks hand-copy medical manuscripts in scriptoria, preserving Galen’s anatomical writings because his teleological view—that the body had a single divine Creator—aligned with Christian dogma.
-            </p>
+      <!-- 4 Milestones with Open Drawing Area (Zero Box Lines) -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; min-height: 0;">
+        
+        <!-- Milestone 1: c. 1250 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              c. 1250 &bull; The Church &amp; The Monopoly on Medical Learning
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.1</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            The Catholic Church controls all English universities (Oxford, Cambridge) and hospital foundations. Monks hand-copy medical manuscripts in scriptoria, preserving Galen’s anatomical writings because his teleological view—that the body had a single divine Creator—aligned with Christian dogma.
+          </p>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1277 &bull; The Imprisonment of Roger Bacon
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.1</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Franciscan friar and Oxford scholar Roger Bacon is imprisoned by church leaders for heresy after writing that physicians should conduct original scientific experiments rather than blindly copying Galen. This imprisonment effectively halts independent anatomical inquiry for over two centuries.
-            </p>
+        <!-- Milestone 2: 1277 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1277 &bull; The Imprisonment of Roger Bacon
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.1</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Franciscan friar and Oxford scholar Roger Bacon is imprisoned by church leaders for heresy after writing that physicians should conduct original scientific experiments rather than blindly copying Galen. This imprisonment effectively halts independent anatomical inquiry for over two centuries.
+          </p>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                c. 1300 &bull; The Diagnostic Tools: Matula Flasks &amp; The Zodiac Man
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.2</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Physicians practice uroscopy using glass matula flasks, comparing urine colour, density, and smell against 20-shade charts to diagnose humoral imbalance. They carry Vademecum pocketbooks containing the Zodiac Man to determine safe planetary alignments for phlebotomy (bloodletting).
-            </p>
+        <!-- Milestone 3: c. 1300 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              c. 1300 &bull; The Diagnostic Tools: Matula Flasks &amp; The Zodiac Man
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.2</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Physicians practice uroscopy using glass matula flasks, comparing urine colour, density, and smell against 20-shade charts to diagnose humoral imbalance. They carry Vademecum pocketbooks containing the Zodiac Man to determine safe planetary alignments for phlebotomy (bloodletting).
+          </p>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                c. 1320 &bull; The Medical Hierarchy: Physicians, Barber-Surgeons &amp; Apothecaries
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.4</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              A rigid division of medical labour establishes in England. Fewer than 100 elite university-trained physicians diagnose wealthy nobility. Town apothecaries mix theriac and herbal compounds, while lower-status barber-surgeons perform tooth-pulling, wound-cautery, and bloodletting.
-            </p>
+        <!-- Milestone 4: c. 1320 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              c. 1320 &bull; The Medical Hierarchy: Physicians, Barber-Surgeons &amp; Apothecaries
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.4</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            A rigid division of medical labour establishes in England. Fewer than 100 elite university-trained physicians diagnose wealthy nobility. Town apothecaries mix theriac and herbal compounds, while lower-status barber-surgeons perform tooth-pulling, wound-cautery, and bloodletting.
+          </p>
         </div>
+
       </div>
 
       ${renderFooterStrip(2, 'Roger Bacon spent years in a prison cell for suggesting doctors should actually test things. Remember that when your teacher asks you to write an extra paragraph!', 24)}
@@ -1027,77 +1032,78 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
   </div>
 
   <!-- PAGE 3: LIVING TIMELINE PART 2 -->
-  <div class="page page-container recto-page" id="page-3">
+  <div class="page page-container recto-page" id="page-3" style="padding: 4mm 6mm;">
     <div class="page-body-full">
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 6px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
-          Living Timeline &bull; Part 2: Hospitals, Planetary Conjunctions &amp; The Black Death (c1345–1350)
-        </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
-          Chronological Inquiry &bull; Milestones 5–8
-        </span>
+      <div>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #000000; margin: 0; font-weight: 800;">
+            Living Timeline &bull; Part 2: Hospitals, Planetary Conjunctions &amp; The Black Death (c1345–1350)
+          </h2>
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+            Chronological Inquiry &bull; Milestones 5–8
+          </span>
+        </div>
+
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 5px; font-family: 'Inter', sans-serif; font-size: 7.8pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        </div>
       </div>
 
-      <div style="display: flex; flex-direction: column; gap: 6px; flex: 1; justify-content: space-between;">
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                c. 1350 &bull; Monastic Hospitals: The Era of ‘Care Not Cure’
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.4</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
-            </p>
+      <!-- 4 Milestones with Open Drawing Area (Zero Box Lines) -->
+      <div style="display: flex; flex-direction: column; flex: 1; justify-content: space-between; min-height: 0;">
+        
+        <!-- Milestone 5: c. 1350 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              c. 1350 &bull; Monastic Hospitals: The Era of ‘Care Not Cure’
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.4</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Over 1,200 hospitals run by monks and nuns operate in England (e.g. St Bartholomew’s, 1123). Patients receive clean bedding, warmth, food, and continuous prayer facing a chapel altar. Zero surgery or medical cure is attempted; lepers and plague victims are strictly barred.
+          </p>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1345 &bull; The Great Planetary Conjunction in Aquarius
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.5</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
-            </p>
+        <!-- Milestone 6: 1345 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1345 &bull; The Great Planetary Conjunction in Aquarius
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.5</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            In March 1345, Mars, Jupiter, and Saturn align in Aquarius. University of Paris physicians state this celestial conjunction drew up poisonous vapours from the earth, corrupting the air with deadly miasma, preparing Europe for the Black Death.
+          </p>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1348 &bull; The Black Death Reaches Melcombe Regis, Dorset
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.5</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
-            </p>
+        <!-- Milestone 7: 1348 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1348 &bull; The Black Death Reaches Melcombe Regis, Dorset
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.5</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            In June 1348, the pestilence arrives on trade ships carrying black rats and fleas. The dual epidemic—bubonic plague (flea bites, agonizing buboes) and pneumonic plague (airborne coughing droplets)—kills 30–50% of England’s population within 18 months.
+          </p>
         </div>
 
-        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 8px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-              <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; color: #000000;">
-                1349 &bull; King Edward III’s Cleanliness Order &amp; East Smithfield Mass Pits
-              </strong>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; border: 1px solid #000000; padding: 1px 5px; border-radius: 2px;">Key Topic 1.5</span>
-            </div>
-            <p style="font-family: 'Georgia', serif; font-size: 8pt; color: #000000; margin: 0 0 3px 0; line-height: 1.22;">
-              Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
-            </p>
+        <!-- Milestone 8: 1349 -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 9.6pt; font-weight: 900; color: #000000;">
+              1349 &bull; King Edward III’s Cleanliness Order &amp; East Smithfield Mass Pits
+            </strong>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Key Topic 1.5</span>
           </div>
-          <div style="border-top: 1px dashed #000000; min-height: 38mm; flex: 1; background: #ffffff; margin-top: 2px;"></div>
+          <p style="font-family: 'Georgia', serif; font-size: 8.6pt; color: #000000; margin: 0; line-height: 1.3;">
+            Alarmed by rotting waste and stench, Edward III orders London streets cleared of dung to remove miasma. Churchyards overflow; emergency mass burial trenches are dug outside city walls at East Smithfield to bury hundreds of corpses daily.
+          </p>
         </div>
+
       </div>
 
       ${renderFooterStrip(3, 'King Edward III ordered Londoners to clean human filth off the streets in 1349. Outstanding for civic smell, totally useless against Yersinia pestis fleas.', 24)}
@@ -1117,12 +1123,10 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
     // PAGE 1 OF MODULE: CHRONOLOGICAL INQUIRY SPINE
     html += renderSpinePage({ ...cfg, pageNum: leftPageNum });
 
-    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 22 FLEX TASK LINES, TIMELINE MISSION)
-    const flexTaskLines = Array.from(
-      { length: 22 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
-    ).join('');
+    // PAGE 2 OF MODULE: EXAM QUESTION (STEM, STIMULUS, 25 TASK LINES, TIMELINE MISSION)
+    const flexTaskLines = Array.from({ length: 25 }, () => '<div class="task-line"></div>').join(
+      '',
+    );
 
     html += `
   <div class="page page-container" id="page-${rightPageNum}">
@@ -1170,8 +1174,8 @@ function buildMedievalTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- 22 Ruled Task Lines for Extended Writing -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+      <!-- 25 Ruled Task Lines for Extended Writing -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 2px 0 4px 0;">
 ${flexTaskLines}
       </div>
 
@@ -1201,8 +1205,7 @@ ${flexTaskLines}
     // PAGE 3 OF MODULE: LINED WRITING (VERSO) - FULL CONTINUATION PAGE (31 LINES)
     const continuationTaskLines = Array.from(
       { length: 31 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+      () => '<div class="task-line"></div>',
     ).join('');
 
     html += `
@@ -1221,7 +1224,7 @@ ${flexTaskLines}
         Continue your response to ${cfg.tariff.split(':')[0]} below:
       </div>
 
-      <div style="flex: 1; display: flex; flex-direction: column; margin: 2px 0 4px 0;">
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 2px 0 4px 0;">
         ${continuationTaskLines}
       </div>
 
@@ -1230,18 +1233,13 @@ ${flexTaskLines}
   </div>
 `;
 
-    // PAGE 4 OF MODULE: LINED WRITING (RECTO) - ESSAY SYNTHESIS & HISTORICAL VERDICT (24 LINES) + QUESTION 3 [4 MARKS] (6 LINES)
+    // PAGE 4 OF MODULE: LINED WRITING (RECTO) - ESSAY SYNTHESIS & HISTORICAL VERDICT (23 LINES) + QUESTION 3 [4 MARKS] (7 LINES)
     const conclusionTaskLines = Array.from(
-      { length: 24 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
+      { length: 23 },
+      () => '<div class="task-line"></div>',
     ).join('');
 
-    const q3TaskLines = Array.from(
-      { length: 6 },
-      () => `
-        <div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>`,
-    ).join('');
+    const q3TaskLines = Array.from({ length: 7 }, () => '<div class="task-line"></div>').join('');
 
     html += `
   <div class="page page-container" id="page-${linedRightPageNum}">
@@ -1261,12 +1259,12 @@ ${flexTaskLines}
         </div>
       </div>
 
-      <div style="flex: 3.6; display: flex; flex-direction: column; margin: 2px 0 6px 0;">
+      <div style="display: flex; flex-direction: column; margin: 2px 0 6px 0;">
         ${conclusionTaskLines}
       </div>
 
       <!-- Question 3: Similarity / Difference [4 marks] -->
-      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; flex: 1.4; display: flex; flex-direction: column;">
+      <div style="border-top: 2px solid #000000; padding-top: 4px; margin-top: 2px; display: flex; flex-direction: column;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
           <strong style="font-family: 'Inter', sans-serif; font-size: 8pt; text-transform: uppercase; letter-spacing: 0.5px;">
             &bull; Question 3: Explain One ${cfg.fourMark.type} [4 marks]
@@ -1278,7 +1276,7 @@ ${flexTaskLines}
         <p style="font-family: 'Playfair Display', serif; font-size: 8.3pt; font-weight: 800; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
           ${cfg.fourMark.question}
         </p>
-        <div style="flex: 1; display: flex; flex-direction: column; margin: 1px 0 0 0;">
+        <div style="display: flex; flex-direction: column; margin: 1px 0 0 0;">
           ${q3TaskLines}
         </div>
       </div>
