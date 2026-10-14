@@ -662,15 +662,6 @@ function renderSpinePage(cfg, pageNum) {
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
       <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #000000;">
-            Construct your causal explanation for each stage incorporating the core trigger terms
-          </span>
-        </div>
-
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
           ${stagesHtml}
         </div>
@@ -1871,6 +1862,12 @@ async function main() {
   const html = compileEmpireWorkbook();
   fs.writeFileSync(outHtmlPath, html, 'utf8');
   console.log(`[OK] HTML written to: ${outHtmlPath}`);
+
+  const altUnitsDir = path.join(ROOT_DIR, 'units', 'first_british_empire');
+  if (fs.existsSync(altUnitsDir)) {
+    fs.writeFileSync(path.join(altUnitsDir, 'pupil_workbook.html'), html, 'utf8');
+    console.log(`[OK] HTML mirrored to: ${path.join(altUnitsDir, 'pupil_workbook.html')}`);
+  }
 
   // Compile PDF via Puppeteer
   const pdfDir = path.join(ROOT_DIR, 'public', 'pdfs');

@@ -694,15 +694,6 @@ function renderSpinePage(cfg, pageNum) {
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
       <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #475569;">
-            Construct your causal explanation for each stage incorporating the core trigger terms
-          </span>
-        </div>
-
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
           ${stagesHtml}
         </div>
