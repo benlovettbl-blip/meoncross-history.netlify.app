@@ -1512,7 +1512,6 @@ function renderLadderTab(players) {
         ${players
           .map((p) => {
             const h = HOUSES[p.house];
-            const isCheckedIn = chessState.checkedInPlayerIds.includes(p.id);
             const totalPts =
               p.won * SCORING_RULES.WIN +
               p.drawn * SCORING_RULES.DRAW +
@@ -1520,7 +1519,7 @@ function renderLadderTab(players) {
 
             let rankBadgeBg = '#f1f5f9';
             let rankBadgeColor = '#334155';
-            let rowBorder = isCheckedIn ? '#86efac' : '#e2e8f0';
+            let rowBorder = '#e2e8f0';
 
             if (p.rank === 1) {
               rankBadgeBg = '#fde047';
@@ -1537,6 +1536,7 @@ function renderLadderTab(players) {
             } else if (p.rank <= 5) {
               rankBadgeBg = '#e0e7ff';
               rankBadgeColor = '#3730a3';
+              rowBorder = '#c7d2fe';
             }
 
             return `
@@ -1556,11 +1556,6 @@ function renderLadderTab(players) {
                     <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 0 5px; border-radius: 6px; font-size: 0.64rem; font-weight: 800; flex-shrink: 0;">
                       ${h.name}
                     </span>
-                    ${
-                      isCheckedIn
-                        ? `<span style="background: #dcfce7; color: #15803d; font-size: 0.6rem; font-weight: 700; padding: 0 4px; border-radius: 3px; flex-shrink: 0;">✓ In</span>`
-                        : ''
-                    }
                   </div>
                   <div style="font-size: 0.67rem; color: #64748b; font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
                     ELO: <strong>${p.rating}</strong> · <strong>${p.won}W/${p.drawn}D/${p.lost}L</strong> (${p.games}P)
@@ -4625,20 +4620,17 @@ window.promptTeacherUnlock = window.openTeacherUnlockModal;
 window.selectPlayerForQuickDesk = function (playerId) {
   if (chessState.userRole !== 'teacher') return;
   chessState.showQuickDesk = true;
-  const p1Select = document.getElementById('quickdesk-p1');
-  const p2Select = document.getElementById('quickdesk-p2');
-  if (!chessState.quickDeskP1Id || (p1Select && !p1Select.value)) {
+  if (!chessState.quickDeskP1Id) {
     chessState.quickDeskP1Id = playerId;
-  } else if (chessState.quickDeskP1Id === playerId) {
-    chessState.quickDeskP1Id = playerId;
-  } else {
+  } else if (!chessState.quickDeskP2Id && chessState.quickDeskP1Id !== playerId) {
     chessState.quickDeskP2Id = playerId;
+  } else if (chessState.quickDeskP1Id === playerId) {
+    chessState.quickDeskP1Id = '';
+  } else {
+    chessState.quickDeskP1Id = playerId;
+    chessState.quickDeskP2Id = '';
   }
   renderChessHubView();
-  const desk = document.getElementById('teacher-quick-desk');
-  if (desk) {
-    desk.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  }
 };
 
 window.toggleQuickDeskDrawer = function () {
