@@ -359,7 +359,7 @@ export const unitData = {
       card_image: '/images/william_the_conqueror.jpg',
       card_position: 'center 20%',
       banner: {
-        image: '/images/battle_of_hastings_bayeux.jpg',
+        image: '/images/bayeux_norman_cavalry.jpg',
         position: 'center 35%',
         caption:
           'Norman heavy cavalry crashing against the Anglo-Saxon shield wall at the Battle of Hastings (14 October 1066), as depicted in the Bayeux Tapestry.',
@@ -455,7 +455,7 @@ export const unitData = {
             letter: 'A',
             title:
               'Source A: The Bayeux Tapestry: Harold Swearing the Sacred Oath to William (c. 1070s)',
-            image: '/images/battle_of_hastings_bayeux.jpg',
+            image: '/images/bayeux_harold_oath.jpg',
             caption:
               'Harold Godwinson stands between two holy reliquaries, with hands outstretched, swearing an oath of allegiance to Duke William of Normandy in 1064.',
             source_context:
@@ -490,13 +490,13 @@ export const unitData = {
             letter: 'B',
             title:
               'Source B: The Bayeux Tapestry: Death of King Harold & Flight of the Saxons (1066)',
-            image: '/images/bayeux_norman_cavalry.jpg',
+            image: '/images/battle_of_hastings_bayeux.jpg',
             caption:
-              'Norman cavalry armed with couched lances trampling broken Anglo-Saxon warriors as King Harold is struck down beside the royal dragon standard.',
+              'Under the Latin inscription "HAROLD REX INTERFECTUS EST", King Harold is struck in the eye with an arrow before being cut down by a mounted Norman knight beside the Anglo-Saxon dragon standard.',
             source_context:
               'The climactic scene of the Battle of Hastings embroidered under Latin text: "HAROLD REX INTERFECTUS EST" (King Harold is killed).',
             how_useful_question:
-              'How useful is Source B for an enquiry into how Norman cavalry tactics overcame Anglo-Saxon defensive positions at Hastings?',
+              'How useful is Source B for an enquiry into the death of King Harold and the collapse of the Anglo-Saxon army at Hastings?',
             provenance_clues: [
               'Author: Anglo-Saxon embroiderers working under Norman supervision in Canterbury.',
               'Audience: Contemporary Norman aristocracy celebrating their battlefield supremacy.',
