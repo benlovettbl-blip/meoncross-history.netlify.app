@@ -97,7 +97,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1860',
-        paraRef: '[2.1–2.2]',
+        paraRef: '[1.4]',
         questionHeading: 'How did HMS Warrior render all wooden naval fleets obsolete overnight?',
         bullets: ['Four-Inch Iron Armour Plates', 'Twin Steam Engines', 'Bouncing Cannon Shells'],
         focusClue:
@@ -106,7 +106,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1889',
-        paraRef: '[2.3]',
+        paraRef: '[1.5]',
         questionHeading:
           'How did the Two-Power Standard doctrine formalize British naval dominance?',
         bullets: [
@@ -154,7 +154,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1700–1757',
-        paraRef: '[1.1]',
+        paraRef: '[2.1]',
         questionHeading: 'Why was Mughal India the world’s leading textile workshop in 1700?',
         bullets: [
           'Quarter of World Output',
@@ -167,7 +167,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1721',
-        paraRef: '[1.2]',
+        paraRef: '[2.2]',
         questionHeading: 'Why did the British Parliament pass the protectionist Calico Acts?',
         bullets: [
           'Protesting English Weavers',
@@ -180,7 +180,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1765',
-        paraRef: '[1.3]',
+        paraRef: '[2.3]',
         questionHeading:
           'How did the Diwani of Bengal invert the financial flow between Britain and India?',
         bullets: [
@@ -194,7 +194,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1813–1835',
-        paraRef: '[2.1–2.2]',
+        paraRef: '[2.4]',
         questionHeading:
           'How did steam machinery and rigged tariffs dismantle Indian handloom weaving?',
         bullets: [
@@ -208,7 +208,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1834',
-        paraRef: '[3.1–3.3]',
+        paraRef: '[2.5]',
         questionHeading:
           'Why did Governor-General Bentinck write that "the bones of weavers bleach the plains"?',
         bullets: [
@@ -256,7 +256,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1848–1856',
-        paraRef: '[1.1–1.2]',
+        paraRef: '[3.1]',
         questionHeading:
           'Why did Lord Dalhousie’s Doctrine of Lapse alienate Indian royal dynasties?',
         bullets: ['Seizing Heirless Kingdoms', 'Satara, Nagpur, Jhansi', 'Annexing Wealthy Awadh'],
@@ -266,7 +266,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: 'Early 1857',
-        paraRef: '[1.3]',
+        paraRef: '[3.2]',
         questionHeading:
           'Why was the Enfield rifle cartridge the explosive catalyst for rebellion?',
         bullets: ['Greased Paper Tubes', 'Biting Cow and Pig Fat', 'Fear of Forced Conversion'],
@@ -276,7 +276,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: 'May 1857',
-        paraRef: '[2.1–2.2]',
+        paraRef: '[3.3]',
         questionHeading:
           'Why was the march from Meerut to Delhi a political masterstroke for the rebels?',
         bullets: [
@@ -290,7 +290,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1857–1858',
-        paraRef: '[2.2–2.3]',
+        paraRef: '[3.4]',
         questionHeading:
           'How did Rani Lakshmibai of Jhansi become an enduring symbol of resistance?',
         bullets: [
@@ -304,7 +304,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: 'August 1858',
-        paraRef: '[3.1–3.3]',
+        paraRef: '[3.5]',
         questionHeading:
           'How did the Government of India Act 1858 permanently reshape British governance?',
         bullets: [
@@ -352,7 +352,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1884–1885',
-        paraRef: '[1.1–1.3]',
+        paraRef: '[4.1]',
         questionHeading: 'Why did European powers convene the 1884 Berlin West Africa Conference?',
         bullets: [
           'Chancellor Otto von Bismarck',
@@ -365,7 +365,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1884',
-        paraRef: '[1.3]',
+        paraRef: '[4.2]',
         questionHeading:
           'How did the principle of Effective Occupation accelerate military conquest?',
         bullets: [
@@ -379,7 +379,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1884–1898',
-        paraRef: '[2.1–2.3]',
+        paraRef: '[4.3]',
         questionHeading: 'How did the Maxim gun and quinine make conquest militarily irresistible?',
         bullets: [
           'Six Hundred Rounds per Minute',
@@ -392,7 +392,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1899',
-        paraRef: '[3.1]',
+        paraRef: '[4.4]',
         questionHeading:
           'How did Rudyard Kipling construct the moral myth of "The White Man\'s Burden"?',
         bullets: ['Poem in The Times', 'Claiming Selfless Duty', 'Racist Slur Half-Devil'],
@@ -402,7 +402,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: '1920',
-        paraRef: '[3.2–3.3]',
+        paraRef: '[4.5]',
         questionHeading:
           'How did E. D. Morel’s "The Black Man\'s Burden" expose colonial capitalism?',
         bullets: [
@@ -450,7 +450,7 @@ const enquiryConfigs = [
       {
         step: 1,
         date: '1851',
-        paraRef: '[1.1]',
+        paraRef: '[5.1]',
         questionHeading:
           'How did the 1851 Great Exhibition proclaim Britain the Workshop of the World?',
         bullets: [
@@ -464,7 +464,7 @@ const enquiryConfigs = [
       {
         step: 2,
         date: '1870–1900',
-        paraRef: '[1.2]',
+        paraRef: '[5.2]',
         questionHeading:
           'What modern infrastructure did British colonial administration construct across India?',
         bullets: [
@@ -478,7 +478,7 @@ const enquiryConfigs = [
       {
         step: 3,
         date: '1876–1900',
-        paraRef: '[2.1–2.2]',
+        paraRef: '[5.3]',
         questionHeading:
           'Why did catastrophic famines strike India while grain was exported to Britain?',
         bullets: [
@@ -492,7 +492,7 @@ const enquiryConfigs = [
       {
         step: 4,
         date: '1901',
-        paraRef: '[3.1–3.3]',
+        paraRef: '[5.4]',
         questionHeading:
           'How did Dadabhai Naoroji calculate the systematic "Drain of Wealth" from India?',
         bullets: [
@@ -506,7 +506,7 @@ const enquiryConfigs = [
       {
         step: 5,
         date: 'Historiography',
-        paraRef: '[4.1–4.3]',
+        paraRef: '[5.5]',
         questionHeading:
           'How do "Optimist" and "Pessimist" historians evaluate the British Empire today?',
         bullets: [
@@ -544,44 +544,6 @@ const enquiryConfigs = [
   },
 ];
 
-// Helper to render a dedicated Lined Notes Page with margin (Pages 14 & 15 of 16-page workbook)
-function renderNotesPage(pageNum, quip) {
-  const isEven = pageNum % 2 === 0;
-  const pageClass = isEven ? 'verso-page' : 'recto-page';
-
-  // 32 ruled lines for standard ~8mm pitch filling the page perfectly
-  const numLines = 32;
-  let linesHtml = '';
-  for (let i = 0; i < numLines; i++) {
-    linesHtml += `          <div class="note-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>\n`;
-  }
-
-  return `
-  <!-- PAGE ${pageNum}: NOTES PAGE -->
-  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
-    <div class="page-body-full">
-      <!-- Notes Header -->
-      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 13pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
-          Notes
-        </h2>
-      </div>
-
-      <!-- Ruled Lined Canvas with Left Margin (Exercise Book Standard) -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #0f284e; margin-bottom: 4px;">
-        <!-- Vertical Margin Line (26mm from left edge of lines) - British Exercise Book Red Margin -->
-        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #dc2626; z-index: 2;"></div>
-        
-        <!-- Ruled Horizontal Lines (Standard 8mm school pitch, flex-filled) -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
-${linesHtml}        </div>
-      </div>
-
-      ${renderFooterStrip(pageNum, quip, 16)}
-    </div>
-  </div>`;
-}
-
 function renderFooterStrip(pageNum, quip, totalPages = 16) {
   const isEven = pageNum % 2 === 0;
   if (isEven) {
@@ -600,7 +562,7 @@ function renderFooterStrip(pageNum, quip, totalPages = 16) {
 }
 
 // ============================================================================
-// LEFT PAGE RENDERER: 5-STAGE CHRONOLOGICAL INQUIRY SPINE (MEDICINE/CME STYLE)
+// LEFT PAGE RENDERER: 5-STAGE CHRONOLOGICAL INQUIRY SPINE (PURE MONOCHROME)
 // ============================================================================
 function renderSpinePage(cfg, pageNum) {
   const stagesHtml = cfg.stages
@@ -609,42 +571,43 @@ function renderSpinePage(cfg, pageNum) {
       const bulletsHtml = st.bullets
         .map(
           (b, idx) => `
-            <div style="flex: 1; display: flex; align-items: center; padding: 0 2.5px; ${idx < 2 ? 'border-bottom: 0.8px solid #cbd5e1;' : ''}">
-              <div style="display: flex; align-items: flex-start; gap: 2.5px; line-height: 1.15;">
-                <span style="font-weight: 900; color: #0f284e; font-size: 5pt; line-height: 1.3;">&bull;</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 700; color: #0f284e; word-break: break-word;">${b}</span>
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
             </div>`,
         )
         .join('');
       return `
-        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #0f284e; border-radius: 2px; overflow: hidden; background: #ffffff;">
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
           
-          <!-- Full-Width Banner with Key Question Across Page -->
-          <div class="stage-banner" style="background: #0f284e; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #0f284e;">
-            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1;">
-              <span style="background: #ffffff; color: #0f284e; font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; padding: 0.5px 5.5px; border-radius: 2px; white-space: nowrap;">
+          <!-- Full-Width Banner with Key Question Across Page (Strict Single-Line Fit) -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000; min-height: 20px; box-sizing: border-box;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1; overflow: hidden;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; padding: 0.6px 6px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">
                 ${st.step}
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 800; color: #93c5fd; white-space: nowrap;">
+              ${st.paraRef ? `<span style="background: #222222; color: #ffffff; border: 1px solid #ffffff; font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; padding: 0.5px 4px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">${st.paraRef}</span>` : ''}
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #ffffff; white-space: nowrap; flex-shrink: 0;">
                 ${st.date}
               </span>
-              <span style="color: #60a5fa; font-size: 7pt;">&bull;</span>
-              <span style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+              <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
                 ${st.questionHeading}
               </span>
             </div>
           </div>
 
-          <!-- Content Row: Left 3-Zone Trigger Spine (25mm) & Right Ruled Writing Lines (173mm) -->
+          <!-- Content Row: Left 3-Zone Trigger Spine (44mm) & Right Ruled Writing Lines (~154mm) -->
           <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
             
-            <!-- Left Column: Ultra-Compact 25mm Trigger Spine (Each Zone Aligns to 2 Ruled Lines) -->
-            <div style="width: 25mm; flex-shrink: 0; background: #f0f4f9; display: flex; flex-direction: column; border-right: 1.2px solid #0f284e; box-sizing: border-box;">
+            <!-- Left Column: High-Visibility 44mm Trigger Spine (Pure White Canvas, Zero Grey Dithering) -->
+            <div style="width: 44mm; flex-shrink: 0; background: #ffffff; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
               ${bulletsHtml}
             </div>
 
-            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Width ~173mm for Maximum Student Writing Space) -->
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
             <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
@@ -668,32 +631,32 @@ function renderSpinePage(cfg, pageNum) {
     <div class="page-body-full">
       
       <!-- Lesson Header with Inquiry Question Title -->
-      <div style="border-bottom: 2px solid #0f284e; padding-bottom: 2px; margin-bottom: 2px;">
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #0f284e; color: #ffffff; border: 1.2px solid #0f284e; padding: 1px 6px; border-radius: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
             ENQUIRY ${cfg.lessonNum} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #0f284e;">
-            YEAR 8 &bull; THE SECOND BRITISH EMPIRE &amp; INDUSTRIAL HEGEMONY (1783–1914)
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            YEAR 8 &bull; THE SECOND BRITISH EMPIRE (1783–1914)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${cfg.enquiryQuestion}
         </h2>
       </div>
 
       <!-- Specification Focus Strip -->
-      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; padding: 2px 6px; background: #f0f4f9; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.2; color: #1e293b;">
-        <strong style="color: #0f284e;">Core Specification Focus:</strong> ${cfg.specAnchor}
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
+        <strong style="color: #000000;">Core Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
       <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #0f284e; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #0f284e;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
             Chronological Inquiry Spine &bull; Core Causal Narrative
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #475569;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #000000;">
             Construct your causal explanation for each stage incorporating the core trigger terms
           </span>
         </div>
@@ -709,7 +672,7 @@ function renderSpinePage(cfg, pageNum) {
 }
 
 // ============================================================================
-// RIGHT PAGE RENDERER: ROTATING DISCIPLINARY SKILLS WRITING (PAGES 3, 5, 9, 11, 15)
+// RIGHT PAGE RENDERER: ROTATING DISCIPLINARY SKILLS WRITING (MONOCHROME INTERIOR)
 // ============================================================================
 function renderRightPage(cfg, pageNum) {
   const rp = cfg.rightPage;
@@ -723,59 +686,63 @@ function renderRightPage(cfg, pageNum) {
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11pt; color: #0f284e; margin: 0; font-weight: 800;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.0pt; color: #000000; margin: 0; font-weight: 900;">
           ${rp.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #000000; color: #ffffff; padding: 2px 7px; border-radius: 2px;">
           Extended Writing Practice
         </span>
       </div>
 
       <!-- Question Stem & Stimulus Box -->
-      <div style="border: 1px solid #0f284e; border-left: 3.5px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #f0f4f9; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 800; color: #0f284e; margin-bottom: 3px; line-height: 1.25;">
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 5px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.32;">
           ${rp.examStem}
         </div>
-        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 7.4pt; color: #1e293b;">
-          <strong style="color: #0f284e;">Stimulus:</strong>
-          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[0]}</span>
-          <span style="border: 1px solid #0f284e; padding: 1px 6px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #ffffff;">${rp.stimulus[1]}</span>
-          <span style="font-style: italic; color: #475569;">(You must also use information of your own)</span>
+        <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #000000;">
+          <strong style="color: #000000;">Stimulus:</strong>
+          <span style="border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${rp.stimulus[0]}</span>
+          <span style="border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${rp.stimulus[1]}</span>
+          <span style="font-style: italic; color: #000000;">(You must also use information of your own)</span>
         </div>
       </div>
 
       <!-- Connectives & Key Vocabulary Bank -->
-      <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 5px 8px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+      <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Sentence Starters:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-style: italic; line-height: 1.22; display: block; color: #1e293b;">${rp.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-style: italic; line-height: 1.28; display: block; color: #000000;">${rp.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 7.2pt; text-transform: uppercase; display: block; margin-bottom: 2px; color: #0f284e;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; display: block; color: #1e293b;">${rp.wordBank}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.28; display: block; color: #000000;">${rp.wordBank}</span>
         </div>
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing -->
-      <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #222222; margin-bottom: 2px;">
-        <strong style="color: #0f284e;">Task:</strong> Using the vocabulary and sentence starters above, write your analytical response below:
+      <!-- Ruled Task Lines for Extended Writing (21 Lines • Generous Pitch for Pupil Handwriting) -->
+      <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; color: #000000; margin-bottom: 2px;">
+        <strong style="color: #000000;">Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
-        ${Array(25).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+        ${Array(21)
+          .fill(
+            '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
+          )
+          .join('')}
       </div>
 
       <!-- Timeline Mission Box -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+      <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 4px 7px; background: #ffffff; margin-top: 2px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
             🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; color: #000000;">
             Turn to Centrefold &bull; Pages 8–9 &rarr;
           </span>
         </div>
-        <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+        <div style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; line-height: 1.26;">
           ${rp.timelineMission}
         </div>
       </div>
@@ -784,80 +751,84 @@ function renderRightPage(cfg, pageNum) {
     </div>
   </div>`;
   } else if (rp.type === 'interpretations') {
-    // DUAL HISTORIOGRAPHICAL INTERPRETATIONS WRITING (ENQUIRY 3)
+    // DUAL HISTORIOGRAPHICAL INTERPRETATIONS WRITING
     return `
   <!-- LESSON SPREAD: ${isEven ? 'LEFT PAGE (VERSO)' : 'RIGHT PAGE (RECTO)'} • CONTRASTING INTERPRETATIONS -->
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <!-- Exam Header -->
-      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 4px;">
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #0f284e; margin: 0; font-weight: 800;">
+      <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.4pt; color: #000000; margin: 0; font-weight: 900;">
           ${rp.tariff}
         </h2>
-        <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #0f284e; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
+        <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; background: #000000; color: #ffffff; padding: 1.5px 6px; border-radius: 2px;">
           HISTORIOGRAPHICAL ANALYSIS
         </span>
       </div>
 
       <!-- Competing Historical Interpretations Box -->
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 4px;">
-        <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 6px; background: #fdfbf7;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 4px;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; color: #000000; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
             Interpretation 1 &bull; ${rp.interpretation1.author}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.22;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; font-style: italic; color: #000000; line-height: 1.22;">
             ${rp.interpretation1.text}
           </div>
         </div>
-        <div style="border: 1.2px solid #0f284e; border-radius: 3px; padding: 4px 6px; background: #f0f4f9;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e; text-transform: uppercase; border-bottom: 1px solid #cbd5e1; padding-bottom: 1.5px; margin-bottom: 2px;">
+        <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff;">
+          <div style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; color: #000000; text-transform: uppercase; border-bottom: 1px solid #000000; padding-bottom: 1.5px; margin-bottom: 2px;">
             Interpretation 2 &bull; ${rp.interpretation2.author}
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.22;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.2pt; font-style: italic; color: #000000; line-height: 1.22;">
             ${rp.interpretation2.text}
           </div>
         </div>
       </div>
 
       <!-- Task B: Question 3(b) -->
-      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 2px; margin-bottom: 4px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin-bottom: 2px;">
+      <div style="border-bottom: 1.2px solid #000000; padding-bottom: 2px; margin-bottom: 4px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000; margin-bottom: 2px;">
           ${rp.questionB}
         </div>
         <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
         </div>
       </div>
 
       <!-- Task C: Question 3(c) -->
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
         <div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin-bottom: 2px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 8.8pt; font-weight: 900; color: #000000; margin-bottom: 2px;">
             ${rp.questionC}
           </div>
-          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 3px 6px; background: #f0f4f9; font-family: 'Inter', sans-serif; font-size: 6.7pt; line-height: 1.22; margin-bottom: 3px;">
-            <strong style="color: #0f284e;">Scaffolded Sentence Stems:</strong> <span style="color: #1e293b;">${rp.stems}</span>
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.22; margin-bottom: 3px;">
+            <strong style="color: #000000;">Scaffolded Sentence Stems:</strong> <span style="color: #000000;">${rp.stems}</span>
           </div>
         </div>
         <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0; margin-bottom: 3px;">
-          ${Array(6).fill('<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>').join('')}
+          ${Array(8)
+            .fill(
+              '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
+            )
+            .join('')}
         </div>
 
         <!-- Timeline Mission Box -->
-        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
               🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000;">
               Turn to Centrefold &bull; Pages 8–9 &rarr;
             </span>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.22;">
             ${rp.timelineMission}
           </div>
         </div>
@@ -877,51 +848,51 @@ function renderRightPage(cfg, pageNum) {
     <div class="page-body-full">
       
       <!-- PART A: SHORT-FORM DISCIPLINARY PRACTICE [4 OR 8 MARKS] -->
-      <div style="border-bottom: 1.5px solid #0f284e; padding-bottom: 4px; margin-bottom: 5px;">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 3px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
+      <div style="border-bottom: 1.5px solid #000000; padding-bottom: 4px; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 900;">
             ${partA.tariff || 'Question 1: Disciplinary Drill'}
           </h2>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
-            DISCIPLINARY DRILL
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
+            ${partA.badge || 'DISCIPLINARY DRILL'}
           </span>
         </div>
-        <p style="font-family: 'Playfair Display', serif; font-size: 8.2pt; font-weight: 800; color: #0f284e; margin: 0 0 2px 0;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 900; color: #000000; margin: 0 0 2px 0; line-height: 1.25;">
           ${partA.question || ''}
         </p>
-        ${partA.hint ? `<div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #475569; margin-bottom: 2px;">${partA.hint}</div>` : ''}
-        ${partA.stems ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.1pt; font-weight: 700; margin-bottom: 2px; color: #1e293b;"><strong style="color: #0f284e;">Sentence Stems:</strong> ${partA.stems}</div>` : ''}
-        ${partA.connectives ? `<div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.22; background: #f0f4f9; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;"><strong style="color: #0f284e;">Connectives:</strong> ${partA.connectives}</div>` : ''}
+        ${partA.hint ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">${partA.hint}</div>` : ''}
+        ${partA.stems ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 700; margin-bottom: 2px; color: #000000;"><strong style="color: #000000;">Sentence Stems:</strong> ${partA.stems}</div>` : ''}
+        ${partA.connectives ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.22; background: #ffffff; border: 1px solid #000000; padding: 2px 5px; border-radius: 2px; margin-bottom: 2px;"><strong style="color: #000000;">Connectives:</strong> ${partA.connectives}</div>` : ''}
         <div class="ruled-lines-block">
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
-          <div class="task-line"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
+          <div class="task-line" style="height: 7.8mm;"></div>
         </div>
       </div>
 
       <!-- PART B: EXTENDED SKILL WRITING [4, 8 OR 12 MARKS] -->
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
         <div>
-          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #0f284e; padding-bottom: 2px; margin-bottom: 3px;">
-            <h2 style="font-family: 'Playfair Display', serif; font-size: 10pt; color: #0f284e; margin: 0; font-weight: 800;">
+          <div style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1.5px solid #000000; padding-bottom: 2px; margin-bottom: 3px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 900;">
               ${partB.tariff || 'Question 2: Structured Writing'}
             </h2>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7pt; font-weight: 800; background: #0f284e; color: #ffffff; padding: 1px 5px; border-radius: 2px; text-transform: uppercase;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
               STRUCTURED WRITING
             </span>
           </div>
-          <p style="font-family: 'Playfair Display', serif; font-size: 8.4pt; font-weight: 800; color: #0f284e; margin: 0 0 3px 0; line-height: 1.25;">
+          <p style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 900; color: #000000; margin: 0 0 3px 0; line-height: 1.25;">
             ${partB.question || ''}
           </p>
-          ${partB.hint ? `<div style="font-family: 'Inter', sans-serif; font-size: 7pt; font-style: italic; color: #475569; margin-bottom: 2px;">${partB.hint}</div>` : ''}
+          ${partB.hint ? `<div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-style: italic; color: #333333; margin-bottom: 2px;">${partB.hint}</div>` : ''}
           ${
             partB.stimulus
               ? `
-          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; margin-bottom: 3px;">
-            <strong style="color: #0f284e;">Stimulus:</strong>
-            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[0]}</span>
-            <span style="border: 1px solid #0f284e; padding: 0.5px 5px; border-radius: 2px; font-weight: 700; color: #0f284e; background: #f0f4f9;">${partB.stimulus[1]}</span>
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; margin-bottom: 3px;">
+            <strong style="color: #000000;">Stimulus:</strong>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${partB.stimulus[0]}</span>
+            <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${partB.stimulus[1]}</span>
           </div>`
               : ''
           }
@@ -930,10 +901,10 @@ function renderRightPage(cfg, pageNum) {
           ${
             partB.connectives || partB.stems || partB.wordBank
               ? `
-          <div style="border: 1px solid #0f284e; border-radius: 3px; padding: 4px 7px; background: #f0f4f9; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 6.8pt; line-height: 1.24;">
-            ${partB.connectives ? `<div><strong style="color: #0f284e;">Analytical Connectives:</strong> <em style="color: #1e293b;">${partB.connectives}</em></div>` : ''}
-            ${partB.stems ? `<div><strong style="color: #0f284e;">Sentence Stems:</strong> <span style="color: #1e293b;">${partB.stems}</span></div>` : ''}
-            ${partB.wordBank ? `<div style="margin-top: 2px;"><strong style="color: #0f284e;">Key Terms:</strong> <span style="color: #1e293b;">${partB.wordBank}</span></div>` : ''}
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 7.4pt; line-height: 1.24;">
+            ${partB.connectives ? `<div><strong style="color: #000000;">Analytical Connectives:</strong> <em style="color: #000000;">${partB.connectives}</em></div>` : ''}
+            ${partB.stems ? `<div><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${partB.stems}</span></div>` : ''}
+            ${partB.wordBank ? `<div style="margin-top: 2px;"><strong style="color: #000000;">Key Terms:</strong> <span style="color: #000000;">${partB.wordBank}</span></div>` : ''}
           </div>`
               : ''
           }
@@ -945,16 +916,16 @@ function renderRightPage(cfg, pageNum) {
         </div>
 
         <!-- Timeline Mission Box -->
-        <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.9pt; font-weight: 900; background: #0f284e; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
+        <div style="border: 1.2px solid #000000; border-radius: 4px; padding: 3px 6px; background: #ffffff; margin-top: 2px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px; border-bottom: 1px solid #000000; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; background: #000000; color: #ffffff; padding: 1.5px 5px; border-radius: 2px; text-transform: uppercase; letter-spacing: 0.3px;">
               🎨 ${rp.timelineMissionTitle || 'Timeline Mission'}
             </span>
-            <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #0f284e;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; color: #000000;">
               Turn to Centrefold &bull; Pages 8–9 &rarr;
             </span>
           </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.9pt; color: #111111; line-height: 1.22;">
+          <div style="font-family: 'Georgia', serif; font-size: 7.4pt; color: #000000; line-height: 1.22;">
             ${rp.timelineMission}
           </div>
         </div>
@@ -966,6 +937,43 @@ function renderRightPage(cfg, pageNum) {
   }
 }
 
+// Helper to render a dedicated Lined Notes Page with margin (Pages 14 & 15 of 16-page workbook)
+function renderNotesPage(pageNum, quip) {
+  const isEven = pageNum % 2 === 0;
+  const pageClass = isEven ? 'verso-page' : 'recto-page';
+
+  // 32 ruled lines for standard ~8mm pitch filling the page perfectly
+  const numLines = 32;
+  let linesHtml = '';
+  for (let i = 0; i < numLines; i++) {
+    linesHtml += `          <div class="note-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>\n`;
+  }
+
+  return `
+  <!-- PAGE ${pageNum}: NOTES PAGE -->
+  <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
+    <div class="page-body-full">
+      <!-- Notes Header -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+        <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 13pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+          Notes &bull; Revision &amp; Assessment Planning
+        </h2>
+      </div>
+
+      <!-- Ruled Lined Canvas with Left Margin (Exercise Book Standard) -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; position: relative; border-top: 1.2px solid #000000; margin-bottom: 4px;">
+        <!-- Vertical Margin Line (26mm from left edge of lines) - British Exercise Book Red Margin -->
+        <div style="position: absolute; top: 0; bottom: 0; left: 26mm; width: 1.5px; background: #dc2626; z-index: 2;"></div>
+        
+        <!-- Ruled Horizontal Lines (Standard 8mm school pitch, flex-filled) -->
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0;">
+${linesHtml}        </div>
+      </div>
+
+      ${renderFooterStrip(pageNum, quip, 16)}
+    </div>
+  </div>`;
+}
 // ============================================================================
 // MAIN COMPILATION FUNCTION
 // ============================================================================
@@ -1089,7 +1097,7 @@ function compileEmpireWorkbook() {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-top: 0.8px solid #0f284e;
+      border-top: 0.8px solid #000000;
       padding-top: 1.5px;
       margin-top: 2px;
       font-family: 'Inter', sans-serif;
@@ -1099,14 +1107,14 @@ function compileEmpireWorkbook() {
     }
     .footer-quip {
       font-style: italic;
-      color: #475569;
+      color: #000000;
       white-space: nowrap;
     }
     .footer-page-num {
       font-family: 'Inter', sans-serif;
       font-weight: 800;
       white-space: nowrap;
-      color: #0f284e;
+      color: #000000;
       font-size: 6.8pt;
       flex-shrink: 0;
     }
@@ -1388,19 +1396,19 @@ function compileEmpireWorkbook() {
 `;
 
   // ====================================================================
-  // PAGES 2–3: ENQUIRY 1 (HENRY VIII & BREAK WITH ROME)
+  // PAGES 2–3: ENQUIRY 1 (ENGINES OF EMPIRE & MARITIME SUPREMACY)
   // ====================================================================
   html += renderSpinePage(enquiryConfigs[0], 2);
   html += renderRightPage(enquiryConfigs[0], 3);
 
   // ====================================================================
-  // PAGES 4–5: ENQUIRY 2 (THE ELIZABETHAN SETTLEMENT)
+  // PAGES 4–5: ENQUIRY 2 (THE DE-INDUSTRIALISATION OF INDIA)
   // ====================================================================
   html += renderSpinePage(enquiryConfigs[1], 4);
   html += renderRightPage(enquiryConfigs[1], 5);
 
   // ====================================================================
-  // PAGES 6–7: ENQUIRY 3 (THE SPANISH ARMADA & MARITIME POWER)
+  // PAGES 6–7: ENQUIRY 3 (THE 1857 INDIAN REBELLION & THE RAJ)
   // ====================================================================
   html += renderSpinePage(enquiryConfigs[2], 6);
   html += renderRightPage(enquiryConfigs[2], 7);
@@ -1409,18 +1417,18 @@ function compileEmpireWorkbook() {
   // PAGES 8–9: THE LIVING TIMELINE IN THE EXACT PHYSICAL CENTREFOLD!
   // ====================================================================
   html += `
-  <!-- PAGE 8: LIVING TIMELINE PART 1 (MILESTONES 1–4: 1783–1858) -->
+    <!-- PAGE 8: LIVING TIMELINE PART 1 (MILESTONES 1–4: 1783–1858) -->
   <div class="page page-container verso-page" id="page-8" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
-        <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.8pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
             Living Timeline &bull; Part 1: Naval Power, Handlooms &amp; The 1857 Rebellion (1783–1858)
           </h2>
         </div>
 
-        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
-          <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
@@ -1430,12 +1438,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 1: 1783–1805 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1783–1805 &bull; Portsmouth Royal Dockyard &amp; Naval Hegemony
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Portsmouth Royal Dockyard operates as the world’s largest industrial factory complex, building and maintaining the Royal Navy fleet that secures total command of global sea lanes at Trafalgar.
           </p>
         </div>
@@ -1443,12 +1451,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 2: 1813–1834 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1813–1834 &bull; The De-industrialisation of Bengal Handlooms
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 2</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 2</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             British protectionist tariffs and steam-powered Lancashire mills flood India with cheap machine cloth; Dhaka’s historic handloom weaving collapses, impoverishing millions of weavers.
           </p>
         </div>
@@ -1456,12 +1464,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 3: 1857 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1857 &bull; The Enfield Rifle Cartridge &amp; Meerut Uprising
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Sepoys at Meerut revolt after being forced to bite paper cartridges greased with cow and pig fat, marching on Delhi to restore Emperor Bahadur Shah Zafar as symbolic head of the rebellion.
           </p>
         </div>
@@ -1469,12 +1477,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 4: 1858 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1858 &bull; Rani Lakshmibai of Jhansi &amp; The British Raj
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 3</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 3</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             The Queen of Jhansi is killed fighting on horseback at Gwalior; Parliament abolishes the East India Company and passes the 1858 Government of India Act, inaugurating the direct British Raj.
           </p>
         </div>
@@ -1489,14 +1497,14 @@ function compileEmpireWorkbook() {
   <div class="page page-container recto-page" id="page-9" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       <div>
-        <div style="border-bottom: 2px solid #0f284e; padding-bottom: 3px; margin-bottom: 5px;">
-          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11pt; color: #0f284e; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
+        <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 5px;">
+          <h2 style="margin: 0; font-family: 'Inter', sans-serif; font-size: 11.8pt; color: #000000; text-transform: uppercase; font-weight: 900; letter-spacing: 0.5px;">
             Living Timeline &bull; Part 2: Ironclads, The Scramble for Africa &amp; The Drain of Wealth (1860–1901)
           </h2>
         </div>
 
-        <div style="border: 1px solid #0f284e; border-radius: 3px; background: #f0f4f9; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #1e293b;">
-          <strong style="color: #0f284e;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
+        <div style="border: 1.2px solid #000000; border-radius: 3px; background: #ffffff; padding: 3px 6px; margin-bottom: 6px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
+          <strong style="color: #000000;">Living Timeline Dual-Coding Protocol:</strong> Complete each milestone sketchpad using dual-coding (combining visual storytelling symbols, causal arrows, and dates) to master the chronological spine across the centre-fold.
         </div>
       </div>
 
@@ -1506,12 +1514,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 5: 1860 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1860 &bull; Launch of HMS Warrior at Portsmouth
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Britain launches the revolutionary iron-hulled steam warship HMS Warrior; protected by four-inch wrought iron armour plates, it renders all existing wooden navies instantaneously obsolete.
           </p>
         </div>
@@ -1519,12 +1527,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 6: 1884–1885 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1884–1885 &bull; The Berlin West Africa Conference
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 4</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 4</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Fourteen European powers meet in Berlin to partition Africa under the principle of Effective Occupation; zero African leaders are invited as Europeans draw arbitrary border lines across the continent.
           </p>
         </div>
@@ -1532,12 +1540,12 @@ function compileEmpireWorkbook() {
         <!-- Milestone 7: 1889 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1889 &bull; The Two-Power Standard Naval Defence Act
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiry 1</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiry 1</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Parliament passes the Naval Defence Act, legally requiring the Royal Navy to maintain a fleet of battleships equal to or greater than the combined naval strength of the next two strongest world navies.
           </p>
         </div>
@@ -1545,31 +1553,31 @@ function compileEmpireWorkbook() {
         <!-- Milestone 8: 1898–1901 -->
         <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; min-height: 0;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
-            <strong style="font-family: 'Inter', sans-serif; font-size: 9.0pt; color: #0f284e;">
+            <strong style="font-family: 'Inter', sans-serif; font-size: 10.0pt; font-weight: 900; color: #000000;">
               1898–1901 &bull; Maxim Guns at Omdurman &amp; The Drain of Wealth
             </strong>
-            <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 800; background: #0f284e; color: #ffffff; border: 1px solid #0f284e; padding: 1px 5px; border-radius: 2px;">Enquiries 4 &amp; 5</span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 800; background: #000000; color: #ffffff; border: 1px solid #000000; padding: 1px 6px; border-radius: 2px;">Enquiries 4 &amp; 5</span>
           </div>
-          <p style="font-family: 'Georgia', serif; font-size: 8.0pt; color: #000000; margin: 0; line-height: 1.25;">
+          <p style="font-family: 'Georgia', serif; font-size: 8.8pt; color: #000000; margin: 0; line-height: 1.3;">
             Automatic Maxim guns slaughter 10,000 Sudanese warriors at Omdurman; Dadabhai Naoroji publishes his book proving Britain extracted millions in unreturned taxes from India.
           </p>
         </div>
 
       </div>
 
-      ${renderFooterStrip(9, 'From Portsmouth Royal Dockyard to the bazaars of Bengal and plains of Omdurman, imperial hegemony transformed the modern world.', 16)}
+      ${renderFooterStrip(9, 'From Portsmouth Royal Dockyard to the plains of Bengal, imperial hegemony transformed the modern world.', 16)}
     </div>
   </div>
   `;
 
   // ====================================================================
-  // PAGES 10–11: ENQUIRY 4 (CIVIL WAR & REGICIDE)
+  // PAGES 10–11: ENQUIRY 4 (THE SCRAMBLE FOR AFRICA & IMPERIAL IDEOLOGY)
   // ====================================================================
   html += renderSpinePage(enquiryConfigs[3], 10);
   html += renderRightPage(enquiryConfigs[3], 11);
 
   // ====================================================================
-  // PAGES 12–13: ENQUIRY 5 (CROWN, CHURCH, OR PARLIAMENT?)
+  // PAGES 12–13: ENQUIRY 5 (THE IMPERIAL VERDICT: WORKSHOP OR EXPLOITATION?)
   // ====================================================================
   html += renderSpinePage(enquiryConfigs[4], 12);
   html += renderRightPage(enquiryConfigs[4], 13);
@@ -1786,10 +1794,11 @@ function compileEmpireWorkbook() {
             ONLINE RECALL
           </span>
         </div>
-        <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
+                <div style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; text-align: center;">
           ${enquiryConfigs
             .map((cfg, idx) => {
-              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=second_british_empire&lesson=${idx}&quiz=true`;
+              const lessonIndices = [0, 1, 1, 3, 4];
+              const quizUrl = `https://the-history-revision-hub.netlify.app/?unit=second_british_empire&lesson=${lessonIndices[idx]}&quiz=true`;
               const qrSvg = generateQrSvg(quizUrl);
               const shortLabels = [
                 'Portsmouth & Navy',
