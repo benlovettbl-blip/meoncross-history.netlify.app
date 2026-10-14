@@ -94,54 +94,64 @@ const medievalConfigs = [
       'Explain the monopoly: monks hand-copied manuscripts in scriptoria, so Christian ideas of divine punishment went unchallenged.',
     stages: [
       {
+        step: 1,
         dates: 'c1250',
         title: 'Scriptoria & Church Monopoly on Learning',
+        questionHeading: 'How did church scriptoria prevent new medical ideas from spreading?',
+        paraBadge: '[1.1]',
         bullets: [
           'Hand-copying Latin manuscripts by candle-light',
           'Training university priests in Church doctrine',
           'Punishing medical heretics like Roger Bacon',
         ],
-        focusClue: 'How did church scriptoria prevent new medical ideas from spreading?',
       },
       {
+        step: 2,
         dates: 'c1280',
         title: 'Biblical Leprosy & Divine Retribution',
+        questionHeading: 'Why was leprosy viewed as visible proof of divine judgment?',
+        paraBadge: '[1.2]',
         bullets: [
           'Sending sickness to punish human sin',
           'Exiling lepers to isolated Lazar houses',
           'Ringing warning bells in dirt lanes',
         ],
-        focusClue: 'Why was leprosy viewed as visible proof of divine judgment?',
       },
       {
+        step: 3,
         dates: '1345',
         title: 'Christian Astrology & Planetary Conjunction',
+        questionHeading: 'How did the Church reconcile astrology with Christian doctrine?',
+        paraBadge: '[1.3]',
         bullets: [
           'Consulting parchment zodiac almanac wheels',
           'Aligning Mars, Jupiter, and Saturn in Aquarius',
           'Blaming corrupted night air for fever',
         ],
-        focusClue: 'How did the Church reconcile astrology with Christian doctrine?',
       },
       {
+        step: 4,
         dates: 'c1350',
         title: 'Purgatory, Saints & Holy Relics',
+        questionHeading: 'Why did sick people turn to pilgrimage shrines rather than doctors?',
+        paraBadge: '[1.4]',
         bullets: [
           'Lighting beeswax candles before parish shrines',
           'Kissing holy bone relics of saints',
           'Selling paper indulgences to wealthy barons',
         ],
-        focusClue: 'Why did sick people turn to pilgrimage shrines rather than doctors?',
       },
       {
+        step: 5,
         dates: 'c1400',
         title: 'Censorship & The Ban on Dissection',
+        questionHeading: 'Why did church enforcement of Galen prevent medical progress?',
+        paraBadge: '[1.5]',
         bullets: [
           'Treating Galen’s pagan texts as sacred truth',
           'Banning human dissections in English towns',
           'Threatening curious scholars with church excommunication',
         ],
-        focusClue: 'Why did church enforcement of Galen prevent medical progress?',
       },
     ],
   },
@@ -164,7 +174,7 @@ const medievalConfigs = [
     wordBank:
       'Four Humours &bull; blood, phlegm, yellow bile, black bile &bull; Theory of Opposites &bull; Galen &bull; clinical observation &bull; Hippocratic Oath &bull; matula &bull; uroscopy wheel &bull; Zodiac Man &bull; miasma',
     timelineMission:
-      'Turn to Pages 2–3 (Key Topic 1.2). In the drawing box, sketch a physician holding up a glass matula flask to the sunlight. Annotate the four bodily fluids and explain how Galen’s Theory of Opposites balanced them.',
+      'Turn to Pages 2–3 (Key Topic 1.2). In the drawing box, sketch a four-part diagram of the Four Humours (Blood, Phlegm, Yellow Bile, Black Bile) showing their seasons and qualities. Annotate Galen’s Theory of Opposites alongside a flask of urine.',
     fourMark: {
       type: 'Difference',
       question:
@@ -183,54 +193,64 @@ const medievalConfigs = [
       'Explain the logic: the Theory of Opposites provided clear, practical action for every physician, even when the patient grew worse.',
     stages: [
       {
+        step: 1,
         dates: 'c460 BC',
         title: 'Hippocrates & Natural Observation',
+        questionHeading: 'How did Hippocrates separate medicine from superstition?',
+        paraBadge: '[2.1]',
         bullets: [
           'Rejecting anger of gods at the bedside',
           'Writing case charts on fever symptoms',
           'Swearing ethical oath to protect patients',
         ],
-        focusClue: 'How did Hippocrates separate medicine from superstition?',
       },
       {
+        step: 2,
         dates: 'c1250',
         title: 'The Four Bodily Humours',
+        questionHeading: 'Why did humoral theory seem logical to medieval people?',
+        paraBadge: '[2.2]',
         bullets: [
           'Balancing blood, phlegm, and two biles',
           'Linking fluids to four earthly elements',
           'Associating cold damp seasons with winter coughs',
         ],
-        focusClue: 'Why did humoral theory seem logical to medieval people?',
       },
       {
+        step: 3,
         dates: 'c1280',
         title: 'Galen’s Theory of Opposites',
+        questionHeading: 'How did the Theory of Opposites provide practical treatment rules?',
+        paraBadge: '[2.3]',
         bullets: [
           'Cooling burning summer fever with cold cucumber',
           'Treating excess phlegm with dry hot pepper',
           'Dissecting Barbary apes to map organs',
         ],
-        focusClue: 'How did the Theory of Opposites provide practical treatment rules?',
       },
       {
+        step: 4,
         dates: 'c1300',
         title: 'The Matula & Diagnostic Uroscopy',
+        questionHeading: 'Why did uroscopy give physicians great diagnostic authority?',
+        paraBadge: '[2.4]',
         bullets: [
           'Holding glass flasks up to window sunlight',
           'Comparing urine colours against twenty-shade wheels',
           'Sniffing and tasting samples for sweetness',
         ],
-        focusClue: 'Why did uroscopy give physicians great diagnostic authority?',
       },
       {
+        step: 5,
         dates: 'c1350',
         title: 'Miasma Theory & Foul Vapours',
+        questionHeading: 'Why did rational physicians link bad smells directly to epidemics?',
+        paraBadge: '[2.5]',
         bullets: [
           'Fearing stench from open roadside cesspools',
           'Smelling rotting town refuse heaps',
           'Believing toxic smells unbalanced bodily fluids',
         ],
-        focusClue: 'Why did rational physicians link bad smells directly to epidemics?',
       },
     ],
   },
@@ -241,12 +261,12 @@ const medievalConfigs = [
     keyTopicBadge: 'KEY TOPIC 1.3',
     title: 'KT1.3: Approaches to Prevention & Treatment: Rituals, Bleeding & Purging',
     enquiryQuestion:
-      'How did medieval treatments balance religious rituals against physical remedies?',
+      'How did medieval people attempt to treat and prevent disease, and why did rational and religious methods coexist?',
     specAnchor:
-      'Approaches to prevention and treatment: religious rituals, bloodletting, purging, herbal remedies, regimen sanitatis, flagellants.',
+      'Approaches to treatment and prevention; religious & supernatural treatments; humoral treatments (phlebotomy, purging); herbal remedies; regimens.',
     tariff: 'Question 4: Explain Why [12 marks &bull; 15 mins]',
     examStem:
-      'Explain why medieval treatments for disease focused heavily on restoring humoral balance and religious repentance in the period c1250–c1500. [12 marks]',
+      'Explain why bloodletting and purging remained the most common medical treatments throughout the period c1250–c1500. [12 marks]',
     stimulus: ['Phlebotomy (bloodletting by fleam or leeches)', 'The Regimen Sanitatis'],
     connectives:
       'One main reason was that... &bull; For example, ... &bull; This was important because... &bull; Another key factor was... &bull; In particular, ... &bull; Overall, the most decisive reason was... because...',
@@ -272,54 +292,64 @@ const medievalConfigs = [
       'Explain the dual approach: medieval treatments treated the mortal body through purging humours and the immortal soul through fasting and penance.',
     stages: [
       {
+        step: 1,
         dates: 'c1250',
         title: 'Religious Prayers, Fasting & Flagellation',
+        questionHeading: 'Why did ordinary people consider prayer more vital than medicine?',
+        paraBadge: '[3.1]',
         bullets: [
           'Chanting Latin prayers beside the sickbed',
           'Fasting on bread and well water',
           'Whipping bare backs to beg God for mercy',
         ],
-        focusClue: 'Why did ordinary people consider prayer more vital than medicine?',
       },
       {
+        step: 2,
         dates: 'c1300',
         title: 'Humoral Phlebotomy (Bloodletting)',
+        questionHeading: 'Why was bloodletting the most universal physical treatment?',
+        paraBadge: '[3.2]',
         bullets: [
           'Slicing vein walls with iron fleams',
           'Applying fat swamp leeches to temples',
           'Catching warm dark blood in pewter bowls',
         ],
-        focusClue: 'Why was bloodletting the most universal physical treatment?',
       },
       {
+        step: 3,
         dates: 'c1320',
         title: 'Purging, Vomiting & Enemas',
+        questionHeading: 'How was purging believed to restore bodily equilibrium?',
+        paraBadge: '[3.3]',
         bullets: [
           'Swallowing poisonous black hellebore seeds',
           'Pumping warm mallow tea through boar-bladder clysters',
           'Emptying bowels to balance bodily humours',
         ],
-        focusClue: 'How was purging believed to restore bodily equilibrium?',
       },
       {
+        step: 4,
         dates: 'c1350',
         title: 'Herbal Apothecary Remedies & Theriac',
+        questionHeading: 'Why did herbal recipes remain popular across all social classes?',
+        paraBadge: '[3.4]',
         bullets: [
           'Grinding crushed mint and sage in stone mortars',
           'Mixing seventy ingredients into treacle theriac',
           'Brewing bitter willow bark teas for fever',
         ],
-        focusClue: 'Why did herbal recipes remain popular across all social classes?',
       },
       {
+        step: 5,
         dates: 'c1400',
         title: 'The Regimen Sanitatis & Clean Air',
+        questionHeading: 'How did wealthy barons attempt to prevent sickness before it struck?',
+        paraBadge: '[3.5]',
         bullets: [
           'Following private Latin health rulebooks',
           'Burning sweet lavender sticks indoors',
           'Carrying fragrant posy flowers through smelly streets',
         ],
-        focusClue: 'How did wealthy barons attempt to prevent sickness before it struck?',
       },
     ],
   },
@@ -364,54 +394,64 @@ const medievalConfigs = [
       'Explain the hierarchy: wealthy barons hired Oxford-trained physicians; town merchants visited guild apothecaries; ordinary peasants relied on wise women.',
     stages: [
       {
+        step: 1,
         dates: 'c1250',
         title: 'University-Trained Physicians',
+        questionHeading: 'Why were university physicians accessible only to the ultra-wealthy?',
+        paraBadge: '[4.1]',
         bullets: [
           'Studying Latin texts for ten years in Oxford',
           'Consulting astronomical star charts for baronial clients',
           'Charging heavy silver fees without touching patients',
         ],
-        focusClue: 'Why were university physicians accessible only to the ultra-wealthy?',
       },
       {
+        step: 2,
         dates: 'c1300',
         title: 'Guild Apothecaries & Spicers',
+        questionHeading: 'How did apothecaries provide accessible medicines to townspeople?',
+        paraBadge: '[4.2]',
         bullets: [
           'Weighing dried poppy roots on brass scales',
           'Selling cheap herbal pills to town weavers',
           'Learning trade secrets through guild apprenticeships',
         ],
-        focusClue: 'How did apothecaries provide accessible medicines to townspeople?',
       },
       {
+        step: 3,
         dates: 'c1320',
         title: 'Barber-Surgeons & Wound Care',
+        questionHeading: 'Why were barber-surgeons viewed as lower-status craftsmen?',
+        paraBadge: '[4.3]',
         bullets: [
           'Pulling rotten teeth with iron pliers',
           'Setting broken arm bones with wooden splints',
           'Cauterising bleeding flesh wounds with red-hot irons',
         ],
-        focusClue: 'Why were barber-surgeons viewed as lower-status craftsmen?',
       },
       {
+        step: 4,
         dates: 'c1350',
         title: 'Monastic Hospitals: Care Not Cure',
+        questionHeading: 'Why did monastic hospitals deliberately avoid medical treatment?',
+        paraBadge: '[4.4]',
         bullets: [
           'Sheltering bedridden pilgrims in monastic wards',
           'Providing warm woollen blankets and fresh vegetable stew',
           'Hearing Latin mass through chapel chancel screens',
         ],
-        focusClue: 'Why did monastic hospitals deliberately avoid medical treatment?',
       },
       {
+        step: 5,
         dates: 'c1400',
         title: 'Women Healers & Household Care',
+        questionHeading: 'Why did the vast majority of sick people rely on female family members?',
+        paraBadge: '[4.5]',
         bullets: [
           'Gathering wild chamomile in country hedgerows',
           'Delivering newborn babies in village cottages',
           'Applying warm bread poultices to swollen skin',
         ],
-        focusClue: 'Why did the vast majority of sick people rely on female family members?',
       },
     ],
   },
@@ -456,148 +496,180 @@ const medievalConfigs = [
       'Weigh the factors: did mortality explode because of scientific ignorance, municipal filth, or the sheer biological ferocity of pneumonic infection?',
     stages: [
       {
+        step: 1,
         dates: 'June 1348',
         title: 'Arrival at Melcombe Regis',
+        questionHeading: 'How did trade routes unwittingly bring the plague to England?',
+        paraBadge: '[5.1]',
         bullets: [
           'Docking trade cogs from Gascony in Dorset',
           'Unloading flea-infested wool sacks onto wharves',
           'Spreading black rats into crowded timber cottages',
         ],
-        focusClue: 'How did trade routes unwittingly bring the plague to England?',
       },
       {
+        step: 2,
         dates: 'Autumn 1348',
         title: 'Buboes & Pneumonic Terror',
+        questionHeading: 'Why was the pneumonic strain far deadlier than the bubonic form?',
+        paraBadge: '[5.2]',
         bullets: [
           'Swelling agonizing egg-sized groin lumps',
           'Coughing bloody phlegm across family rooms',
           'Killing infected farm labourers within three days',
         ],
-        focusClue: 'Why was the pneumonic strain far deadlier than the bubonic form?',
       },
       {
+        step: 3,
         dates: 'Winter 1348',
         title: 'Desperate Treatments & Strapped Chickens',
+        questionHeading: 'Why were medical treatments completely useless against the plague?',
+        paraBadge: '[5.3]',
         bullets: [
           'Lancing hard neck swellings with hot knives',
           'Strapping plucked live hens to dark sores',
           'Drinking crushed emerald stones dissolved in vinegar',
         ],
-        focusClue: 'Why were medical treatments completely useless against the plague?',
       },
       {
+        step: 4,
         dates: '1349',
         title: 'King Edward III’s Cleanliness Order',
+        questionHeading: 'How did belief in miasma shape royal prevention orders?',
+        paraBadge: '[5.4]',
         bullets: [
           'Ordering town bailiffs to clear butchered animal entrails',
           'Shovelling horse dung out of unpaved London streets',
           'Lighting smoking pitch fires at road corners',
         ],
-        focusClue: 'How did belief in miasma shape royal prevention orders?',
       },
       {
+        step: 5,
         dates: '1349–1350',
         title: 'Mass Burial Pits & Demographic Collapse',
+        questionHeading: 'Why did the Black Death trigger a long-term social and economic crisis?',
+        paraBadge: '[5.5]',
         bullets: [
           'Digging vast emergency trenches at East Smithfield',
           'Piling stacked corpses under thin river clay',
           'Losing half of England’s agricultural workforce',
         ],
-        focusClue: 'Why did the Black Death trigger a long-term social and economic crisis?',
       },
     ],
   },
 ];
 
 function renderSpinePage(cfg) {
-  const { pageNum, keyTopicBadge, enquiryQuestion, stages, leftPageQuip } = cfg;
+  const { pageNum, lessonNum, keyTopicBadge, enquiryQuestion, specAnchor, stages, leftPageQuip } =
+    cfg;
 
-  let stagesHtml = '';
-  stages.forEach((st, idx) => {
-    let bulletsHtml = st.bullets
-      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
-      .join('\n');
-    stagesHtml += `
-          <!-- Stage ${idx + 1} -->
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0;">
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+  const stagesHtml = stages
+    .map((st, sIdx) => {
+      const bulletsHtml = st.bullets
+        .map(
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${st.title}
-              </div>
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${st.focusClue}
-                </div>
-              </div>
+            </div>`,
+        )
+        .join('');
+
+      const questionText = st.questionHeading || st.focusClue || st.title;
+      const paraBadge = st.paraBadge || `[${lessonNum}.${sIdx + 1}]`;
+
+      return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page (Strict Single-Line Fit) -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000; min-height: 20px; box-sizing: border-box;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1; overflow: hidden;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; padding: 0.6px 6px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">
+                ${st.step || sIdx + 1}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #ffffff; white-space: nowrap; flex-shrink: 0;">
+                ${st.dates}
+              </span>
+              <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
+                ${questionText}
+              </span>
+            </div>
+            <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; padding: 0.5px 5px; border-radius: 2px; margin-left: 6px; white-space: nowrap; flex-shrink: 0;">
+              ${paraBadge}
+            </span>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (44mm) & Right Ruled Writing Lines (~154mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <!-- Left Column: High-Visibility 44mm Trigger Spine (Pure White Canvas, Zero Grey Dithering) -->
+            <div style="width: 44mm; flex-shrink: 0; background: #ffffff; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
             </div>
 
-            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
-              <div style="flex: 1; min-height: 0; border-bottom: 1.5px solid #000000; box-sizing: border-box;"></div>
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
+              <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
-          </div>`;
-  });
+
+          </div>
+        </div>`;
+    })
+    .join('');
 
   return `
   <!-- ------------------------------------------------------------------ -->
   <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum})         -->
   <!-- ------------------------------------------------------------------ -->
-  <div class="page page-container" id="page-${pageNum}" style="padding: 4mm 6mm;">
+  <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
+      
       <!-- Lesson Header with Inquiry Question Title -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            ${keyTopicBadge} &bull; ENQUIRY LESSON NOTEBOOK
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+            ${keyTopicBadge} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 1 (1HI0/11) &bull; THEMATIC STUDY
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 1 (1HI0/11)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${enquiryQuestion}
         </h2>
       </div>
 
-      <!-- Active Lesson Note-Taking Spine -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
+      <!-- Core Specification Focus Strip -->
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
+        <strong style="color: #000000;">Core Specification Focus:</strong> ${specAnchor}
+      </div>
+
+      <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 1px;">
         <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #000000;">
+            CHRONOLOGICAL INQUIRY SPINE &bull; 5 CAUSAL MILESTONES
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Take precise, structured notes alongside each milestone as your teacher narrates the history
+          <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 700; color: #000000;">
+            PUPIL NOTE-TAKING ZONE &bull; <span style="font-style: italic; font-weight: 500; color: #222222;">Construct concise causal notes alongside each milestone prompt</span>
           </span>
         </div>
 
         <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
-${stagesHtml}
+          ${stagesHtml}
         </div>
       </div>
 
-      <div class="page-footer-strip">
-        <span class="footer-page-num" style="margin-right: 8px;">${pageNum}/24</span>
-        <span class="footer-quip" style="text-align: right; flex: 1;">${leftPageQuip}</span>
-      </div>
+      ${renderFooterStrip(pageNum, leftPageQuip, 24)}
     </div>
   </div>`;
 }
@@ -1594,6 +1666,10 @@ async function main() {
 
   fs.copyFileSync(outPdfPath, pubPdfCopy);
   console.log(`[OK] PDF copy written: ${pubPdfCopy}`);
+
+  const outPdfStandardPath = path.join(pdfsDir, 'edexcel_medicine_pupil_workbook_medieval.pdf');
+  fs.copyFileSync(outPdfPath, outPdfStandardPath);
+  console.log(`[OK] PDF standard copy written: ${outPdfStandardPath}`);
 }
 
 if (require.main === module) {
