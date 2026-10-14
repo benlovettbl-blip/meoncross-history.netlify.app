@@ -41,15 +41,14 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 | `first_british_empire` | KS3 (Y8) | The First British Empire (1600–1783) | [`scripts/render_first_british_empire_workbook.cjs`](./scripts/render_first_british_empire_workbook.cjs)<br>• `public/pdfs/first_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 118mm Nathaniel Dance portrait of Clive with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–13), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. (Commit `727315bf`). |
 | `great_war_part2` | KS3 (Y9) | The Great War: Western Front & Aftermath (1914–1919) | [`scripts/render_great_war_part2_twopage_workbook.cjs`](./scripts/render_great_war_part2_twopage_workbook.cjs)<br>• `public/pdfs/great_war_part2_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 108mm Sir William Orpen plate (*The Signing of Peace in the Hall of Mirrors*), pure `#000000` monochrome interior (P2–13), 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
 | `second_british_empire` | KS3 (Y8) | The Second British Empire (1783–1914) | [`scripts/render_second_british_empire_workbook.cjs`](./scripts/render_second_british_empire_workbook.cjs)<br>• `public/pdfs/second_british_empire_pupil_workbook.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 103mm Walter Crane 1886 Imperial Federation map plate with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
+| `industrialisation_and_empire` | KS3 (Y8) | Industrialisation, Empire & Power (1750–1900) | [`scripts/render_industrialisation_workbook.cjs`](./scripts/render_industrialisation_workbook.cjs)<br>• `public/pdfs/industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf` | 🌟 **100% PERFECTED (GOLD STANDARD)**<br>Color covers, 110mm Philip James de Loutherbourg plate (*Coalbrookdale by Night*, 1801; Science Museum Object No. 1952-452) with 4 Core Features & 3-Pillar Matrix, pure `#000000` monochrome interior (P2–15), `[1.1]`–`[5.5]` decimal paragraph badges, 44mm left trigger spine, 7.8mm line pitch, centrefold Living Timeline (P8–9), 32-line British exercise notes spread (P14–15), Progress Ledger & 5 QR codes (P16). 100% `✅ OPTIMAL` audit across all 16 pages. |
 
 ---
 
 ### Tier 2: 🟡 Staged 16-Page / Double-Page (Requires Upgrade to Latest Gold Standard)
 *Units with active double-page workbook generators, but built on earlier iterations (e.g. navy interior `#0f284e`, missing paragraph badges, missing exercise notes spread, or older line pitch).*
 
-| Rollout Priority | Unit ID | Key Stage | Unit Title | Current Generator Script | Missing Gold Standard Elements (To-Do) |
-| :---: | :--- | :---: | :--- | :--- | :--- |
-| **#1** | `industrialisation_and_empire` | KS3 (Y8) | Industrialisation, Empire & Power (1750–1900) | [`scripts/render_industrialisation_twopage_workbook.cjs`](./scripts/render_industrialisation_twopage_workbook.cjs) | Currently a 20-page double-page workbook across 8 lessons. Needs refactoring to the new 16-page Gold Standard architecture (or curated 8-enquiry 20p standard with monochrome interior and ~8.0mm lines). |
+*None currently in Tier 2 — all active non-frozen KS3 units have now graduated to Tier 1 Gold Standard perfection.*
 
 ---
 
@@ -111,10 +110,10 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 [STEP 5] ─── Year 8: The Second British Empire (second_british_empire) ─────── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[STEP 6] ─── Year 8: Industrialisation, Empire & Power (industrialisation) ──── 🟡 NEXT UP (READY)
+[STEP 6] ─── Year 8: Industrialisation, Empire & Power (industrialisation) ──── 🌟 100% PERFECTED (DONE)
    │
    ▼
-[STEP 7] ─── Year 9: Unconverted Units (The Shoah ➔ Cold War ➔ Post-War Britain) 🔴 QUEUED
+[STEP 7] ─── Year 9: Unconverted Units (The Shoah ➔ Cold War ➔ Post-War Britain) 🟡 NEXT UP (READY TO AUTHOR)
    │
    ▼
 [STEP 8] ─── Vacation Reprint Cycle (Year 7 Sanitation, Year 8 Early Modern, Year 9 Great War) 🔒 FROZEN
@@ -128,6 +127,6 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Workbook Rollout Compass:**  
 > **GCSE Track:** Edexcel Medicine (5x 24p Workbooks) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢  
-> **KS3 Perfected:** Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next Target:** Year 8: *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🎯 (or GCSE Medicine Renaissance Dual-QR Parity)  
-> **KS3 Ladder:** *Industrialisation* ➔ *The Shoah / Cold War / Post-War Britain*
+> **KS3 Perfected:** Year 8 *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
+> **Next Target:** Year 9: *The Shoah (Holocaust Education)* (`the_shoah`) 🎯 (or GCSE Medicine Renaissance Dual-QR Parity)  
+> **KS3 Ladder:** *The Shoah* ➔ *The Cold War* ➔ *Post-War Britain*

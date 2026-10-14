@@ -251,6 +251,20 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'second_british_empire') {
+        console.log(`\n📚 Compiling 16-page pupil workbook for [second_british_empire]...`);
+        execSync(`node scripts/render_second_british_empire_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
+      if (unitId === 'industrialisation_and_empire') {
+        console.log(`\n📚 Compiling 16-page pupil workbook for [industrialisation_and_empire]...`);
+        execSync(`node scripts/render_industrialisation_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);
