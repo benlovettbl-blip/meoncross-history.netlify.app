@@ -3134,9 +3134,9 @@ function renderActiveBoardPairingsGrid() {
                 </div>
               </div>
               <div style="display: flex; gap: 8px; align-items: center;">
-                <button type="button" onclick="window.playCoachGame(${p.board})" style="background: #1e293b; color: #ffffff; border: 1.5px solid #334155; border-radius: 6px; padding: 8px 14px; font-weight: 800; font-size: 0.82rem; cursor: pointer; display: flex; align-items: center; gap: 6px;" title="Convert this board into a live game against teacher or coach">
-                  <span>♟️</span> Play Teacher / Coach
-                </button>
+                <span style="background: #e0f2fe; color: #0369a1; border: 1px solid #bae6fd; font-size: 0.75rem; font-weight: 800; padding: 6px 12px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.04em;">
+                  Rotating Bye · +1 Pt
+                </span>
               </div>
             </div>
           `;
@@ -5284,7 +5284,7 @@ window.pairFreePupilsOnMatchGrid = function () {
   );
 };
 
-// 1-Click Play Teacher / Coach (for pupil on a Bye so they never sit idle)
+// Helper: Convert bye card into practice match if manually requested
 window.playCoachGame = function (boardNum) {
   if (!chessState.activePairings) return;
   const p = chessState.activePairings.find((x) => x.board === boardNum && x.isBye);
