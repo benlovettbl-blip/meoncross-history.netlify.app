@@ -1738,6 +1738,10 @@ function renderLadderTab(players) {
                     </button>
                   `
                   }
+                  <div style="display: inline-flex; gap: 2px;">
+                    <button type="button" onclick="window.movePlayerLadderRank('${p.id}', 'up')" title="Nudge rank up" style="background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; font-size: 0.68rem; font-weight: 800; cursor: pointer; line-height: 1;">▲</button>
+                    <button type="button" onclick="window.movePlayerLadderRank('${p.id}', 'down')" title="Nudge rank down" style="background: #f1f5f9; color: #1e293b; border: 1px solid #cbd5e1; border-radius: 4px; padding: 3px 6px; font-size: 0.68rem; font-weight: 800; cursor: pointer; line-height: 1;">▼</button>
+                  </div>
                   <button onclick="window.selectPlayerForQuickDesk('${p.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 4px 8px; border-radius: 5px; font-size: 0.72rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;" title="Load ${p.name} into Quick Desk">
                     ⚡ Desk
                   </button>
@@ -5042,6 +5046,39 @@ window.removePlayer = function (id) {
   showChessToast(`Removed ${name} from the club`, 'info');
 };
 
+// Teacher Ladder Rung Nudge (Immediate 1-Click Rank Calibration)
+window.movePlayerLadderRank = function (id, direction) {
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only teachers can adjust ladder ranks.', 'error');
+    return;
+  }
+  const players = chessState.players;
+  players.sort((a, b) => a.rank - b.rank);
+  const idx = players.findIndex((p) => p.id === id);
+  if (idx === -1) return;
+
+  if (direction === 'up' && idx > 0) {
+    const tempRank = players[idx].rank;
+    players[idx].rank = players[idx - 1].rank;
+    players[idx - 1].rank = tempRank;
+  } else if (direction === 'down' && idx < players.length - 1) {
+    const tempRank = players[idx].rank;
+    players[idx].rank = players[idx + 1].rank;
+    players[idx + 1].rank = tempRank;
+  } else {
+    return;
+  }
+
+  players.sort((a, b) => a.rank - b.rank);
+  players.forEach((p, i) => (p.rank = i + 1));
+  saveChessState();
+  renderChessHubView();
+  showChessToast('Ladder rank adjusted.', 'info');
+};
+
 window.resetClubDataToCleanSlate = function () {
   const count = chessState.players.length;
   const matchCount = chessState.matches.length;
@@ -5668,6 +5705,33 @@ window.handleQuickAutoPair = function () {
 // ⚡ TEACHER QUICK DESK EVENT HANDLERS & SECURITY GUARDRAILS
 // ============================================================================
 
+/**
+ * Classic Ladder Tournament Cascade Bump-Down Rule:
+ * When a lower-ranked challenger defeats a higher-ranked player:
+ * 1. The winner claims the loser's ladder rung.
+ * 2. The loser drops down only ONE position (preventing brutal relegation).
+ * 3. All intermediate players shift down by exactly ONE position.
+ */
+export function applyLadderVictory(winner, loser) {
+  if (!winner || !loser) return;
+  if (typeof winner.rank !== 'number' || typeof loser.rank !== 'number') return;
+
+  if (winner.rank > loser.rank) {
+    const targetRank = loser.rank;
+    const oldWinnerRank = winner.rank;
+
+    // Shift the defeated player and everyone in between down by 1 spot
+    chessState.players.forEach((p) => {
+      if (p.id !== winner.id && p.rank >= targetRank && p.rank < oldWinnerRank) {
+        p.rank += 1;
+      }
+    });
+
+    // Award the conquered rank to the winner
+    winner.rank = targetRank;
+  }
+}
+
 window.swapQuickDeskPlayers = function () {
   const p1Select = document.getElementById('quickdesk-p1');
   const p2Select = document.getElementById('quickdesk-p2');
@@ -5727,11 +5791,7 @@ window.recordDirectTeacherMatch = function (outcome) {
     p2.lost = (p2.lost || 0) + 1;
     p1.rating = (p1.rating || 1000) + 15;
     p2.rating = Math.max(800, (p2.rating || 1000) - 15);
-    if (p1.rank > p2.rank) {
-      const t = p1.rank;
-      p1.rank = p2.rank;
-      p2.rank = t;
-    }
+    applyLadderVictory(p1, p2);
     const h1 = HOUSES[p1.house]?.name || p1.house;
     const h2 = HOUSES[p2.house]?.name || p2.house;
     toastMsg = `🏆 ${p1.name} (${h1}) won vs ${p2.name} (${h2})! +3 House Pts`;
@@ -5741,11 +5801,7 @@ window.recordDirectTeacherMatch = function (outcome) {
     p1.lost = (p1.lost || 0) + 1;
     p2.rating = (p2.rating || 1000) + 15;
     p1.rating = Math.max(800, (p1.rating || 1000) - 15);
-    if (p2.rank > p1.rank) {
-      const t = p2.rank;
-      p2.rank = p1.rank;
-      p1.rank = t;
-    }
+    applyLadderVictory(p2, p1);
     const h1 = HOUSES[p1.house]?.name || p1.house;
     const h2 = HOUSES[p2.house]?.name || p2.house;
     toastMsg = `🏆 ${p2.name} (${h2}) won vs ${p1.name} (${h1})! +3 House Pts`;
@@ -5947,11 +6003,7 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     if (!isCoachMatch) {
       pBlack.lost = (pBlack.lost || 0) + 1;
       pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
-      if (pWhite.rank > pBlack.rank) {
-        const t = pWhite.rank;
-        pWhite.rank = pBlack.rank;
-        pBlack.rank = t;
-      }
+      applyLadderVictory(pWhite, pBlack);
     }
     const hName = HOUSES[pWhite.house]?.name || pWhite.house;
     showChessToast(`🏆 Board ${boardNum}: ${pWhite.name} (${hName}) won! +3 House Pts`, 'success');
@@ -5964,11 +6016,7 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     if (!isCoachMatch) {
       pBlack.won = (pBlack.won || 0) + 1;
       pBlack.rating = (pBlack.rating || 1000) + 15;
-      if (pBlack.rank > pWhite.rank) {
-        const t = pBlack.rank;
-        pBlack.rank = pWhite.rank;
-        pWhite.rank = t;
-      }
+      applyLadderVictory(pBlack, pWhite);
     }
     const hName = isCoachMatch ? 'Coach' : HOUSES[pBlack.house]?.name || pBlack.house;
     showChessToast(`🏆 Board ${boardNum}: ${pBlack.name} (${hName}) won!`, 'success');
@@ -8058,21 +8106,13 @@ window.handleMatchSubmit = function (e) {
     pBlack.lost++;
     pWhite.rating += 15;
     pBlack.rating = Math.max(800, pBlack.rating - 15);
-    if (pWhite.rank > pBlack.rank) {
-      const tempRank = pWhite.rank;
-      pWhite.rank = pBlack.rank;
-      pBlack.rank = tempRank;
-    }
+    applyLadderVictory(pWhite, pBlack);
   } else if (result === '0-1') {
     pBlack.won++;
     pWhite.lost++;
     pBlack.rating += 15;
     pWhite.rating = Math.max(800, pWhite.rating - 15);
-    if (pBlack.rank > pWhite.rank) {
-      const tempRank = pBlack.rank;
-      pBlack.rank = pWhite.rank;
-      pWhite.rank = tempRank;
-    }
+    applyLadderVictory(pBlack, pWhite);
   } else {
     pWhite.drawn++;
     pBlack.drawn++;
