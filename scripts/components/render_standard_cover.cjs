@@ -12,6 +12,8 @@
  * - Strict institutional neutrality (data-department-name customizer standard)
  */
 
+const fs = require('fs');
+const path = require('path');
 const QRCode = require('qrcode');
 
 function generateQrSvg(url) {
@@ -1318,10 +1320,486 @@ function renderKs3BackCover({
   </div>`;
 }
 
+/**
+ * Detects artwork aspect ratio (width / height) synchronously from a file path or Buffer.
+ * Supports PNG, JPEG (baseline & progressive), and WebP (lossy, lossless, extended).
+ * Returns null if format is unrecognized.
+ */
+function detectArtworkAspectRatioSync(input) {
+  let buf;
+  if (typeof input === 'string') {
+    if (!fs.existsSync(input)) return null;
+    buf = fs.readFileSync(input);
+  } else if (Buffer.isBuffer(input)) {
+    buf = input;
+  } else {
+    return null;
+  }
+  if (!buf || buf.length < 32) return null;
+
+  // PNG: signature 89 50 4E 47
+  if (buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4e && buf[3] === 0x47) {
+    const w = buf.readUInt32BE(16);
+    const h = buf.readUInt32BE(20);
+    return h > 0 ? w / h : null;
+  }
+
+  // JPEG: starts with FF D8
+  if (buf[0] === 0xff && buf[1] === 0xd8) {
+    let offset = 2;
+    while (offset < buf.length) {
+      while (offset < buf.length && buf[offset] === 0xff) offset++;
+      if (offset >= buf.length) break;
+      const marker = buf[offset++];
+      if (marker === 0xd9 || marker === 0xda) break; // EOI or SOS
+      if (
+        (marker >= 0xc0 && marker <= 0xc3) ||
+        (marker >= 0xc5 && marker <= 0xc7) ||
+        (marker >= 0xc9 && marker <= 0xcb) ||
+        (marker >= 0xcd && marker <= 0xcf)
+      ) {
+        if (offset + 7 > buf.length) break;
+        const h = buf.readUInt16BE(offset + 3);
+        const w = buf.readUInt16BE(offset + 5);
+        return h > 0 ? w / h : null;
+      }
+      if (offset + 2 > buf.length) break;
+      const len = buf.readUInt16BE(offset);
+      offset += len;
+    }
+  }
+
+  // WebP: RIFF ... WEBP
+  if (buf.toString('ascii', 0, 4) === 'RIFF' && buf.toString('ascii', 8, 12) === 'WEBP') {
+    const chunk = buf.toString('ascii', 12, 16);
+    if (chunk === 'VP8 ' && buf.length >= 30) {
+      const w = (buf[26] | (buf[27] << 8)) & 0x3fff;
+      const h = (buf[28] | (buf[29] << 8)) & 0x3fff;
+      return h > 0 ? w / h : null;
+    }
+    if (chunk === 'VP8X' && buf.length >= 30) {
+      const w = 1 + (buf[24] | (buf[25] << 8) | (buf[26] << 16));
+      const h = 1 + (buf[27] | (buf[28] << 8) | (buf[29] << 16));
+      return h > 0 ? w / h : null;
+    }
+    if (chunk === 'VP8L' && buf.length >= 25) {
+      const b0 = buf[21],
+        b1 = buf[22],
+        b2 = buf[23],
+        b3 = buf[24];
+      const w = 1 + (((b1 & 0x3f) << 8) | b0);
+      const h = 1 + (((b3 & 0x0f) << 10) | (b2 << 2) | ((b1 & 0xc0) >> 6));
+      return h > 0 ? w / h : null;
+    }
+  }
+
+  return null;
+}
+
+/**
+ * Detects artwork aspect ratio (width / height) asynchronously using Sharp.
+ */
+async function detectArtworkAspectRatio(input) {
+  try {
+    const sharp = require('sharp');
+    const meta = await sharp(input).metadata();
+    if (meta && meta.width && meta.height) {
+      return meta.width / meta.height;
+    }
+  } catch (_) {}
+  return detectArtworkAspectRatioSync(input);
+}
+
+/**
+ * Universal Master Artwork Centerpiece Component
+ *
+ * Automatically switches between:
+ * - 'top-showcase': Full-width cinematic banner (89–90mm) + dual-column analytical deck underneath (aspect ratio >= 1.15)
+ * - 'split-column': 70mm side-by-side portrait plate + vertical analytical deck (aspect ratio < 1.15)
+ */
+function renderWorkbookCoverCenterpiece({
+  layout = 'auto',
+  aspectRatio = null,
+  imagePath = null,
+  imageSrc = '',
+  imageAlt = '',
+  bannerHeightMm = null,
+  themeColor = '#0f284e',
+  accentColor = '#f0f4f9',
+  borderColor = '#0f284e',
+  artist = '',
+  year = '',
+  tag = 'Visual Decoding • 4 Core Features',
+  context = '',
+  features = [],
+  pillars = [],
+  significance = '',
+  hingeQuestion = null,
+  provenance = null,
+}) {
+  let resolvedRatio = aspectRatio;
+  if (resolvedRatio === null && imagePath) {
+    resolvedRatio = detectArtworkAspectRatioSync(imagePath);
+  }
+
+  const effectiveLayout =
+    layout === 'auto'
+      ? resolvedRatio !== null && resolvedRatio < 1.15
+        ? 'split-column'
+        : 'top-showcase'
+      : layout;
+
+  if (effectiveLayout === 'split-column') {
+    const plateHeight = bannerHeightMm || 118;
+    return `
+      <!-- Prominent Primary Visual Source Centerpiece (Portrait Split-Column Plate) -->
+      <div style="margin: 2px 0 4px 0; border: 1.5px solid ${borderColor}; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        <div style="display: grid; grid-template-columns: 70mm 1fr; background: #ffffff;">
+          <!-- Left: Full Visual Canvas in Rich Authentic Color -->
+          <div style="background: #fcfbf9; border-right: 1.5px solid ${borderColor}; display: flex; justify-content: center; align-items: center; padding: 2px 4px;">
+            <img src="${imageSrc}" alt="${imageAlt}" style="height: ${plateHeight}mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid ${borderColor}; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+          </div>
+          <!-- Right: Visual Iconography & Historical Significance -->
+          <div style="padding: 5px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid ${borderColor}; padding-bottom: 2px;">
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; text-transform: uppercase; color: ${themeColor}; letter-spacing: 0.5px;">
+                  ${tag}
+                </span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #64748b;">
+                  ${artist}${year ? ` (${year})` : ''}
+                </span>
+              </div>
+              ${context ? `<p style="font-family: 'Georgia', serif; font-size: 7.8pt; line-height: 1.22; color: #1e293b; margin: 2px 0 3px 0;">${context}</p>` : ''}
+              <div style="display: flex; flex-direction: column; gap: 2.5px;">
+                ${features
+                  .map(
+                    (f) => `
+                  <div style="border-left: 2.5px solid ${borderColor}; padding-left: 6px;">
+                    <strong style="font-family: 'Inter', sans-serif; font-size: 7.4pt; text-transform: uppercase; color: ${themeColor};">${f.label}:</strong>
+                    <div style="font-family: 'Georgia', serif; font-size: 7.1pt; line-height: 1.18; color: #222222;">
+                      ${f.text}
+                    </div>
+                  </div>`,
+                  )
+                  .join('')}
+              </div>
+            </div>
+            <div>
+              ${
+                pillars.length > 0
+                  ? `
+              <div style="display: grid; grid-template-columns: repeat(${pillars.length}, 1fr); gap: 4px; margin-bottom: 3px;">
+                ${pillars
+                  .map(
+                    (p) => `
+                  <div style="border: 1px solid ${borderColor}; border-radius: 2px; padding: 2px 4px; background: ${accentColor};">
+                    <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: ${themeColor};">${p.title}</div>
+                    <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">${p.text}</div>
+                  </div>`,
+                  )
+                  .join('')}
+              </div>`
+                  : ''
+              }
+              ${
+                significance
+                  ? `
+              <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #1e293b; line-height: 1.2; background: ${accentColor}; border-left: 2.5px solid ${borderColor}; padding: 2px 6px; margin-bottom: 3px;">
+                <strong style="text-transform: uppercase; color: ${themeColor};">Disciplinary Significance:</strong> ${significance}
+              </div>`
+                  : ''
+              }
+              ${
+                hingeQuestion
+                  ? `
+              <div style="background: #ffffff; border: 1.2px solid ${borderColor}; border-radius: 3px; padding: 2.5px 6px;">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: ${themeColor};">Disciplinary Hinge Question:</span>
+                  <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; text-transform: uppercase;">${typeof hingeQuestion === 'object' ? hingeQuestion.badge || 'Evaluation' : 'Evaluation'}</span>
+                </div>
+                <div style="font-family: 'Georgia', serif; font-size: 7.0pt; font-style: italic; color: #1e293b; line-height: 1.18; margin-top: 1px;">
+                  ${typeof hingeQuestion === 'object' ? hingeQuestion.question : hingeQuestion}
+                </div>
+              </div>`
+                  : ''
+              }
+            </div>
+          </div>
+        </div>
+        ${
+          provenance && (provenance.left || provenance.right)
+            ? `
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #ffffff; padding: 2.5px 8px; border-top: 1.5px solid ${borderColor}; background: ${themeColor};">
+          <span>${provenance.left || ''}</span>
+          <span style="font-weight: 700; color: #93c5fd; white-space: nowrap;">${provenance.right || ''}</span>
+        </div>`
+            : ''
+        }
+      </div>`;
+  }
+
+  // Default: 'top-showcase' (Panoramic / Landscape)
+  const bannerHeight = bannerHeightMm || 89;
+  return `
+    <!-- Prominent Primary Visual Source Centerpiece (Landscape Showcase + Underneath Analytical Deck) -->
+    <div style="margin: 2px 0 4px 0; border: 1.5px solid ${borderColor}; border-radius: 4px; overflow: hidden; background: #ffffff;">
+      
+      <!-- 1. Top Artwork Showcase (Full-Width Cinematic Landscape Banner) -->
+      <div style="background: #fcfbf9; border-bottom: 1.5px solid ${borderColor}; display: flex; justify-content: center; align-items: center; padding: 4px 6px; height: ${bannerHeight}mm; box-sizing: border-box;">
+        <img src="${imageSrc}" alt="${imageAlt}" style="height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid ${borderColor}; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+      </div>
+
+      <!-- 2. Analytical Decomposition Deck (Arranged Underneath in Clean Dual Columns) -->
+      <div style="padding: 5px 8px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 1fr; gap: 8px; box-sizing: border-box;">
+        
+        <!-- Left Column: Context & 4 Core Features -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid ${borderColor}; padding-bottom: 1.5px;">
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: ${themeColor}; letter-spacing: 0.5px;">
+              ${tag}
+            </span>
+            <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
+              ${artist}${year ? ` (${year})` : ''}
+            </span>
+          </div>
+          
+          ${context ? `<p style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.2; color: #1e293b; margin: 0;">${context}</p>` : ''}
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px;">
+            ${features
+              .map(
+                (f) => `
+              <div style="border-left: 2px solid ${borderColor}; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: ${themeColor}; display: block;">${f.label}:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  ${f.text}
+                </div>
+              </div>`,
+              )
+              .join('')}
+          </div>
+        </div>
+
+        <!-- Right Column: 3-Pillar Matrix + Significance + Hinge Question -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+          ${
+            pillars.length > 0
+              ? `
+          <div style="display: grid; grid-template-columns: repeat(${pillars.length}, 1fr); gap: 4px;">
+            ${pillars
+              .map(
+                (p) => `
+              <div style="border: 1px solid ${borderColor}; border-radius: 2px; padding: 2px 4px; background: ${accentColor};">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: ${themeColor};">${p.title}</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">${p.text}</div>
+              </div>`,
+              )
+              .join('')}
+          </div>`
+              : ''
+          }
+
+          ${
+            significance
+              ? `
+          <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.2; background: ${accentColor}; border-left: 2.5px solid ${borderColor}; padding: 2px 6px;">
+            <strong style="text-transform: uppercase; color: ${themeColor};">Disciplinary Significance:</strong> ${significance}
+          </div>`
+              : ''
+          }
+
+          ${
+            hingeQuestion
+              ? `
+          <div style="background: #ffffff; border: 1.2px solid ${borderColor}; border-radius: 3px; padding: 2.5px 6px;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: ${themeColor};">Disciplinary Hinge Question:</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; text-transform: uppercase;">${typeof hingeQuestion === 'object' ? hingeQuestion.badge || 'Evaluation' : 'Evaluation'}</span>
+            </div>
+            <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.18; margin-top: 1px;">
+              ${typeof hingeQuestion === 'object' ? hingeQuestion.question : hingeQuestion}
+            </div>
+          </div>`
+              : ''
+          }
+        </div>
+      </div>
+
+      <!-- 3. Bottom Museum Provenance Banner -->
+      ${
+        provenance && (provenance.left || provenance.right)
+          ? `
+      <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #ffffff; padding: 2.5px 8px; border-top: 1.5px solid ${borderColor}; background: ${themeColor};">
+        <span>${provenance.left || ''}</span>
+        <span style="font-weight: 700; color: #93c5fd; white-space: nowrap;">${provenance.right || ''}</span>
+      </div>`
+          : ''
+      }
+    </div>`;
+}
+
+/**
+ * Universal KS3 Master Front Cover (Page 1) Engine
+ * Produces full publisher-grade Page 1 with institutional neutrality customizer,
+ * pupil details strip, main title block, responsive artwork centerpiece,
+ * course specification checklist table, and academic footer.
+ */
+function renderMasterKs3FrontCover({
+  unitId = 'unit',
+  departmentName = 'The History Department',
+  keyStage = 'KEY STAGE 3 HISTORICAL STUDIES',
+  yearGroup = 'Year 8',
+  dateRange = '',
+  title = '',
+  subtitle = '',
+  themeColor = '#0f284e',
+  centerpiece = {},
+  courseSpec = [],
+  footerQuip = '',
+  totalPageCount = 16,
+  pageId = 'page-1',
+  renderFooterStrip = null,
+  cellPadding = null,
+}) {
+  const pad =
+    cellPadding ||
+    (courseSpec.length <= 4 ? '9.0px 8px' : courseSpec.length === 5 ? '7.5px 8px' : '6.2px 8px');
+
+  const centerpieceHtml = renderWorkbookCoverCenterpiece({
+    ...centerpiece,
+    themeColor: centerpiece.themeColor || themeColor,
+    borderColor: centerpiece.borderColor || themeColor,
+  });
+
+  const footerHtml = renderFooterStrip
+    ? renderFooterStrip(
+        1,
+        footerQuip || `${departmentName} • ${title} • Official Departmental Record`,
+        totalPageCount,
+      )
+    : `
+      <div class="page-footer-strip" style="display: flex; justify-content: space-between; align-items: center; border-top: 0.8px solid #000000; padding-top: 1.5px; margin-top: 2px; font-family: 'Inter', sans-serif; font-size: 6.2pt; line-height: 1.15; color: #000000;">
+        <span style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 6.8pt; color: #000000;">1/${totalPageCount}</span>
+        <span style="font-style: italic; color: #000000;">${footerQuip || `${departmentName} • ${title} • Official Departmental Record`}</span>
+        <span style="font-weight: 800; text-transform: uppercase;">Official Departmental Record</span>
+      </div>`;
+
+  return `
+  <!-- ====================================================================
+       PAGE 1: MASTER FRONT COVER (Universal Publisher Architecture)
+       ==================================================================== -->
+  <div class="page page-container recto-page" id="${pageId}" style="padding: 4mm 6mm;">
+    <div class="page-body-full" style="display: flex; flex-direction: column; justify-content: space-between; height: 100%;">
+      <!-- Top Departmental Branding with Customizer Hook -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid ${themeColor}; padding-bottom: 4px; margin-bottom: 8px;">
+        <div data-department-name="${departmentName}">
+          <span style="font-family: 'Inter', sans-serif; font-size: 11pt; font-weight: 900; color: ${themeColor}; text-transform: uppercase; letter-spacing: 1px;">
+            <span class="school-brand-target">${departmentName}</span>
+          </span>
+        </div>
+        <div style="font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; color: ${themeColor}; text-transform: uppercase;">
+          ${keyStage} &bull; ${yearGroup.toUpperCase()}
+        </div>
+      </div>
+
+      <!-- Pupil Details Strip -->
+      <div style="border: 1.5px solid ${themeColor}; border-radius: 4px; padding: 7px 14px; background: #ffffff; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 14px; align-items: center; margin-bottom: 8px;">
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; color: ${themeColor}; text-transform: uppercase; margin-right: 8px;">Pupil Name:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid ${themeColor}; height: 16px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; color: ${themeColor}; text-transform: uppercase; margin-right: 8px;">Class:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid ${themeColor}; height: 16px;"></div>
+        </div>
+        <div style="display: flex; align-items: baseline;">
+          <strong style="font-family: 'Inter', sans-serif; font-size: 9pt; color: ${themeColor}; text-transform: uppercase; margin-right: 8px;">Teacher:</strong>
+          <div style="flex: 1; border-bottom: 1.5px solid ${themeColor}; height: 16px;"></div>
+        </div>
+      </div>
+
+      <!-- Main Title Block -->
+      <div style="text-align: center; margin: 2px 0 6px 0;">
+        <div style="display: inline-block; border: 1.5px solid ${themeColor}; color: #ffffff; background: ${themeColor}; font-family: 'Inter', sans-serif; font-size: 8.5pt; font-weight: 800; padding: 2.5px 12px; border-radius: 3px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">
+          ${yearGroup} Enquiry${dateRange ? ` &bull; ${dateRange}` : ''}
+        </div>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 24pt; line-height: 1.15; color: ${themeColor}; margin: 2px 0 3px 0; font-weight: 900;">
+          ${title}
+        </h1>
+        ${
+          subtitle
+            ? `
+        <div style="font-family: 'Georgia', serif; font-size: 10.5pt; color: #334155; font-style: italic; font-weight: 600;">
+          ${subtitle}
+        </div>`
+            : ''
+        }
+      </div>
+
+      <!-- Prominent Primary Visual Source Centerpiece -->
+      ${centerpieceHtml}
+
+      <!-- Course Specification Curriculum Tracking Table -->
+      <div style="border: 1.5px solid ${themeColor}; border-radius: 4px; overflow: hidden; margin: 3px 0 4px 0;">
+        <table style="width: 100%; border-collapse: collapse; font-family: 'Inter', sans-serif;">
+          <thead>
+            <tr style="border-bottom: 1.5px solid ${themeColor}; background: ${themeColor};">
+              <th style="padding: 6px 10px; text-align: left; font-size: 8.2pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
+                Course Specification &bull; Key Enquiry Sequence
+              </th>
+              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; border-right: 1.2px solid rgba(255,255,255,0.25); color: #ffffff;">
+                Learnt
+              </th>
+              <th style="padding: 6px 4px; width: 64px; text-align: center; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff;">
+                Revised
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            ${courseSpec
+              .map(
+                (row) => `
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: ${pad}; border-right: 1.2px solid #cbd5e1;">
+                <div style="font-size: 8.6pt; font-weight: 800; color: ${themeColor}; line-height: 1.20;">
+                  ${row.title}
+                </div>
+                ${
+                  row.question
+                    ? `
+                <div style="font-family: 'Georgia', serif; font-size: 7.6pt; font-style: italic; color: #334155; margin-top: 1px; line-height: 1.18;">
+                  ${row.question}
+                </div>`
+                    : ''
+                }
+              </td>
+              <td style="text-align: center; vertical-align: middle; border-right: 1.2px solid #cbd5e1;">
+                <div style="width: 14px; height: 14px; border: 1.4px solid ${themeColor}; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+              <td style="text-align: center; vertical-align: middle;">
+                <div style="width: 14px; height: 14px; border: 1.4px solid ${themeColor}; border-radius: 2px; margin: 0 auto; background: #ffffff;"></div>
+              </td>
+            </tr>`,
+              )
+              .join('')}
+          </tbody>
+        </table>
+      </div>
+
+      ${footerHtml}
+    </div>
+  </div>`;
+}
+
 module.exports = {
   renderStandardFrontCover,
   renderStandardBackCover,
   renderKs3FrontCover,
   renderKs3BackCover,
+  renderWorkbookCoverCenterpiece,
+  renderMasterKs3FrontCover,
+  detectArtworkAspectRatioSync,
+  detectArtworkAspectRatio,
   generateQrSvg,
 };

@@ -207,3 +207,35 @@ All 16-page saddle-stitch pupil workbooks (e.g. `render_great_war_twopage_workbo
 6. **Chronological Spine Stage Question Variety:**
    - Left-page chronological spine stages (5 stages per enquiry) must strictly rotate question stems across the unit. Avoid repeating "Why did..." or "How did..." on consecutive stages; use varied high-cognitive stems (`What factors led to...`, `In what ways did...`, `Explain why...`, `What forced [X] to...`, `To what extent did...`, `Evaluate why...`).
 
+---
+
+## 6. Cover Visual Architecture Automation Standard (Responsive Artwork Dual-Layout)
+All KS3 pupil workbooks and PDF export pipelines must enforce the responsive artwork architecture:
+
+1. **Aspect Ratio Decision Gate:**
+   Primary artworks on Page 1 front covers must dynamically adapt to the aspect ratio of the historical artifact:
+   - **Landscape / Panoramic Showcase (`top-showcase`):** Aspect Ratio $\ge 1.15$
+     * Examples: John Singer Sargent’s *Gassed (1919)* (2.65:1), Loutherbourg’s *Coalbrookdale by Night (1801)* (1.56:1), Walter Crane’s *Imperial Federation Map (1886)* (1.34:1), Francis Fowkes’ *Sydney Cove (1788)* (1.27:1).
+     * Structure: 89–90mm full-width cinematic top banner (`object-fit: contain;`) + clean dual-column analytical decomposition deck directly underneath.
+     * Left Column: Visual Decoding header, historical context, and 4 Core Features in a balanced 2×2 grid (`border-left: 2px solid #0f284e`).
+     * Right Column: 3-Pillar Visual Matrix (`grid-template-columns: 1fr 1fr 1fr;`), Disciplinary Significance Anchor (`border-left: 2.5px solid #0f284e`), and Targeted Disciplinary Hinge Question.
+     * Bottom Strip: Museum provenance and collection shelfmark banner.
+   - **Portrait Split-Column Plate (`split-column`):** Aspect Ratio $< 1.15$
+     * Examples: Nathaniel Dance’s *Robert Clive (c. 1773)* (0.79:1), Hans Holbein’s *Henry VIII (c. 1537)* (0.57:1), Sir William Orpen’s *Signing of Peace (1919)* (0.75:1).
+     * Structure: Side-by-side 70mm split grid (`grid-template-columns: 70mm 1fr`).
+     * Left Column: 118–122mm framed portrait plate (`object-fit: contain;`).
+     * Right Column: Stacked vertical analytical deck (Visual Decoding header, historical context, 4 Core Features vertical stack, 3-Pillar Visual Matrix, Disciplinary Significance Anchor, Targeted Disciplinary Hinge Question, and Museum Provenance banner).
+
+2. **Automated Shared Components (`scripts/components/render_standard_cover.cjs`):**
+   - `renderWorkbookCoverCenterpiece({ layout: 'auto', ... })`: Automatically detects aspect ratio via `detectArtworkAspectRatioSync(filePath)` (supporting JPEG, PNG, and WebP) and renders the appropriate layout.
+   - `renderMasterKs3FrontCover({ ... })`: Generates the entire publisher-grade Page 1 (Departmental Branding with customizer hook, Pupil Details Strip, Main Title Block, Centerpiece, Course Specification Table, and Academic Footer).
+
+3. **Page Budget & Table Padding Gate:**
+   - Never include the redundant 3-column "Disciplinary Strategy Overview & Workbook Blueprint" on Page 1; removing it provides clean vertical space for the Course Specification Checklist table.
+   - Course Specification Table cell padding must calibrate dynamically based on enquiry count:
+     * 4 Enquiries: `9.0px 8px`
+     * 5 Enquiries: `7.4px–7.8px 8px`
+     * 6 Enquiries: `6.0px–6.4px 8px`
+   - Enforce Page 1 space budget: $\ge 98\%$ utilization, $0\text{px}$ overflow, and $< 25\text{px}$ footer void.
+
+
