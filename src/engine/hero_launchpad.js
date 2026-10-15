@@ -54,7 +54,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Course of the Great War Pupil Workbook',
       label: 'Pupil Workbook',
       htmlUrl: '/units/great_war_part2/pupil_workbook.html',
-      pdfUrl: '/pdfs/great_war_part2_pupil_workbook_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/great_war_part2_pupil_workbook.pdf',
     },
     retrieval: {
       title: 'Course of the Great War Knowledge Retrieval Companion',

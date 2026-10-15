@@ -596,7 +596,7 @@ function renderSpinePage(cfg, pageNum) {
                 ${st.date}
               </span>
               <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 9.2pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
                 ${st.questionHeading}
               </span>
             </div>
@@ -643,14 +643,9 @@ function renderSpinePage(cfg, pageNum) {
             YEAR 9 &bull; THE GREAT WAR: WESTERN FRONT &amp; AFTERMATH (1914–1919)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 13.0pt; color: #000000; margin: 2px 0 2px 0; font-weight: 900; line-height: 1.22;">
           ${cfg.enquiryQuestion}
         </h2>
-      </div>
-
-      <!-- Specification Focus Strip -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
-        <strong style="color: #000000;">Core Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
@@ -691,7 +686,7 @@ function renderRightPage(cfg, pageNum) {
 
       <!-- Question Stem & Stimulus Box -->
       <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 11.2pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.32;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 11.6pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.32;">
           ${rp.examStem}
         </div>
         <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 8.4pt; color: #000000;">
@@ -723,21 +718,21 @@ function renderRightPage(cfg, pageNum) {
       <!-- Connectives & Key Vocabulary Bank -->
       <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-style: italic; line-height: 1.28; display: block; color: #000000;">${rp.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-style: italic; line-height: 1.28; display: block; color: #000000;">${rp.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.28; display: block; color: #000000;">${rp.wordBank}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; line-height: 1.28; display: block; color: #000000;">${rp.wordBank}</span>
         </div>
       </div>
 
-      <!-- Ruled Task Lines for Extended Writing (21 Lines • Generous Pitch for Pupil Handwriting) -->
+      <!-- Ruled Task Lines for Extended Writing (20 Lines • Calibrated ~9.4mm British Pitch) -->
       <div style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; color: #000000; margin-bottom: 2px;">
         <strong style="color: #000000;">Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
       </div>
       <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 4px; flex: 1; min-height: 0;">
-        ${Array(21)
+        ${Array(20)
           .fill(
             '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
           )
@@ -2063,12 +2058,17 @@ async function main() {
     fs.mkdirSync(pdfDir, { recursive: true });
   }
   const outPdfPath = path.join(pdfDir, 'great_war_part2_pupil_workbook.pdf');
-  const outPdf16pPath = path.join(pdfDir, 'great_war_part2_16p_workbook.pdf');
-  const outPdfV17Path = path.join(pdfDir, 'great_war_part2_pupil_workbook_FINAL_V17.pdf');
+
+  const chromePath =
+    process.env.CHROME_PATH ||
+    (process.platform === 'win32'
+      ? 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+      : undefined);
 
   console.log('Launching Puppeteer to generate high-resolution print PDF...');
   const browser = await puppeteer.launch({
     headless: 'new',
+    executablePath: chromePath,
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   });
 
@@ -2091,13 +2091,7 @@ async function main() {
   });
 
   await browser.close();
-  console.log(`[OK] PDF successfully compiled: ${outPdfPath}`);
-
-  fs.copyFileSync(outPdfPath, outPdf16pPath);
-  console.log(`[OK] PDF copy written: ${outPdf16pPath}`);
-
-  fs.copyFileSync(outPdfPath, outPdfV17Path);
-  console.log(`[OK] PDF copy written: ${outPdfV17Path}`);
+  console.log(`[OK] Single canonical PDF compiled: ${outPdfPath}`);
 }
 
 if (require.main === module) {

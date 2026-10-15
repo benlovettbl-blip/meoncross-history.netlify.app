@@ -879,7 +879,7 @@ const UNIT_PUBLICATIONS = {
           pages: 'Photocopier Ready',
           desc: 'Trench warfare, key battles, weaponry, and the Armistice of 1918. Complete pupil consumable workbook.',
           readUrl: '/units/great_war_part2/pupil_workbook.html',
-          pdfUrl: '/pdfs/great_war_part2_pupil_workbook_FINAL_V17.pdf',
+          pdfUrl: '/pdfs/great_war_part2_pupil_workbook.pdf',
         },
       ],
     },

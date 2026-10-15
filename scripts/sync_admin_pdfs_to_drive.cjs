@@ -266,7 +266,7 @@ const PDF_MAPPINGS = [
   },
   {
     folder: path.join('Year 8', 'The Great War', '01_Live_Classroom_Editions (In Use Sept 2026)'),
-    src: 'great_war_part2_pupil_workbook_FINAL_V17.pdf',
+    src: 'great_war_part2_pupil_workbook.pdf',
     dest: 'The Great War (Part 2 - 1917-1918) Pupil Workbook [LIVE CLASSROOM EDITION].pdf',
     category: 'Year 8',
   },
