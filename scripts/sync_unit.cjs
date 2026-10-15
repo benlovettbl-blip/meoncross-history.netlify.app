@@ -18,6 +18,13 @@ if (!unitId || unitId.startsWith('-')) {
 const ROOT_DIR = path.join(__dirname, '..');
 const dataJsPath = path.join(ROOT_DIR, 'units', unitId, 'data.js');
 
+if (!process.env.PUPPETEER_EXECUTABLE_PATH) {
+  const chromePath = 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe';
+  if (fs.existsSync(chromePath)) {
+    process.env.PUPPETEER_EXECUTABLE_PATH = chromePath;
+  }
+}
+
 if (!fs.existsSync(dataJsPath)) {
   console.error(`❌ Error: Unit data file not found at: ${dataJsPath}`);
   process.exit(1);

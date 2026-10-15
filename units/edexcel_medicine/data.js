@@ -14538,6 +14538,13 @@ export const unitData = {
       ],
       video: [
         {
+          url: 'https://www.youtube.com/watch?v=-jTZ7AwCyug',
+          title: 'Women Medics - WW1 Uncut (BBC)',
+          duration: '6 mins 19 secs',
+          teacher_guidance:
+            'Dan Snow and medical historians explore the volunteer work of FANY ambulance drivers and VAD nurses under fire on the Western Front.',
+        },
+        {
           url: 'https://www.youtube.com/watch?v=4xKWnE63E8U',
           title: '[STARTER HOOK] How the RAMC Worked: The Chain of Evacuation Explained',
           duration: '6 mins 12 secs',

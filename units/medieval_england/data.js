@@ -188,6 +188,15 @@ export const unitData = {
     enquiries: [
       {
         lesson_id: 'lesson_1',
+        video: [
+          {
+            url: 'https://www.youtube.com/watch?v=PE0RAgHr06U',
+            title: 'Norman Conquest - Timelines.tv History of Britain B01',
+            duration: '7 mins 34 secs',
+            teacher_guidance:
+              "Andrew Chater explains the crisis of 1066, Harold Godwinson's forced march north to Stamford Bridge, and the tactical turning points at Senlac Hill.",
+          },
+        ],
         title: 'Lesson 1 Retrieval: 1066 & The Battle of Hastings',
         questions: [
           {
@@ -219,6 +228,15 @@ export const unitData = {
       },
       {
         lesson_id: 'lesson_2',
+        video: [
+          {
+            url: 'https://www.youtube.com/watch?v=BEU_xPJd7Yo',
+            title: 'The Norman Conquest - Timelines.tv',
+            duration: '7 mins 34 secs',
+            teacher_guidance:
+              'Focuses on the Harrying of the North, motte-and-bailey castle construction, and the administrative surveillance of the Domesday Book.',
+          },
+        ],
         title: 'Lesson 2 Retrieval: Castles, Terror & Domesday',
         questions: [
           {
@@ -250,6 +268,15 @@ export const unitData = {
       },
       {
         lesson_id: 'lesson_3',
+        video: [
+          {
+            url: 'https://www.youtube.com/watch?v=_EKUIBz_po0',
+            title: 'Church & Crown - Timelines.tv',
+            duration: '3 mins 53 secs',
+            teacher_guidance:
+              'Explores the Constitutions of Clarendon, criminous clerks, and the shocking martyrdom of Archbishop Thomas Becket in Canterbury Cathedral in 1170.',
+          },
+        ],
         title: 'Lesson 3 Retrieval: Crown vs Church (Henry II & Becket)',
         questions: [
           {
@@ -281,6 +308,15 @@ export const unitData = {
       },
       {
         lesson_id: 'lesson_4',
+        video: [
+          {
+            url: 'https://www.youtube.com/watch?v=7xo4tUMdAMw',
+            title: 'What is Magna Carta?',
+            duration: '3 mins 33 secs',
+            teacher_guidance:
+              "Clear overview of King John's abuses, the feudal revolt of the barons, and the key clauses at Runnymede establishing the rule of law.",
+          },
+        ],
         title: 'Lesson 4 Retrieval: Magna Carta (1215) & Medieval Kingship',
         questions: [
           {
@@ -312,6 +348,36 @@ export const unitData = {
       },
       {
         lesson_id: 'lesson_5',
+        video: [
+          {
+            url: 'https://www.youtube.com/watch?v=YhsPPBGtquo',
+            title: 'Black Death - Timelines.tv',
+            duration: '6 mins 33 secs',
+            teacher_guidance:
+              'Examines the catastrophic social and economic impact of the 1348 bubonic plague, labour shortages, and the collapse of the feudal hierarchy.',
+          },
+          {
+            url: 'https://www.youtube.com/watch?v=fgd9eI8dk6U',
+            title: 'Medieval Manor - Timelines.tv',
+            duration: '7 mins 21 secs',
+            teacher_guidance:
+              'Everyday life in a medieval village: open field farming, tithes, church control, and serfdom.',
+          },
+          {
+            url: 'https://www.youtube.com/watch?v=D3EzLF2rOKY',
+            title: 'Peasants Revolt - Timelines.tv',
+            duration: '8 mins 44 secs',
+            teacher_guidance:
+              'Explores the 1381 poll tax crisis, Wat Tyler, John Ball, and the dramatic march of the peasants on London.',
+          },
+          {
+            url: 'https://www.youtube.com/watch?v=uNcBrrMoyL8',
+            title: 'Ten Minute English and British History #16 - The Wars of the Roses',
+            duration: '9 mins 59 secs',
+            teacher_guidance:
+              'Fast-paced overview of the dynastic clash between Lancaster and York culminating at the Battle of Bosworth Field (1485).',
+          },
+        ],
         title: 'Lesson 5 Retrieval: The Black Death & The Peasants’ Revolt',
         questions: [
           {

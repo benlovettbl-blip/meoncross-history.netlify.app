@@ -33,6 +33,36 @@ const great_war = {
   lessons: [
     {
       id: 'lesson_1',
+      video: [
+        {
+          url: 'https://www.youtube.com/watch?v=-PAEmgYv0DE',
+          title: 'German Unification and Empire - History in 5 Minutes',
+          duration: '5 mins 21 secs',
+          teacher_guidance:
+            'Crisp curriculum summary of Bismarck\'s "Blood and Iron" strategy, the three wars of unification, and the proclamation of the German Empire in the Hall of Mirrors.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=j1Yk0lzV40Q',
+          title: 'The Franco Prussian War - History Matters (Short Animated Documentary)',
+          duration: '3 mins 49 secs',
+          teacher_guidance:
+            'Fast-paced animated breakdown of the Ems Telegram, the Battle of Sedan, and the loss of Alsace-Lorraine creating French revanchism.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=o_PKusG7NFs',
+          title: 'The Great War: What Made Germany So Successful Before World War 1?',
+          duration: '23 mins 7 secs',
+          teacher_guidance:
+            'In-depth documentary exploring German industrial supremacy, military mobilization systems, and Bismarckian diplomacy.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=xVISzFmBiPU',
+          title: 'How Prussia Ended The French Empire: Franco-Prussian War | Animated History',
+          duration: '27 mins 56 secs',
+          teacher_guidance:
+            'Comprehensive military and political analysis of the Franco-Prussian War and the collapse of Napoleon III.',
+        },
+      ],
       skill: 'Change & Continuity: Balance of Power & Revanche',
       title: 'Enquiry 1: German Unification, Franco-Prussian War & Bismarck (1871–1890)',
       subtitle: 'From Blood & Iron to the Hall of Mirrors and the Seizure of Alsace-Lorraine',
@@ -467,6 +497,30 @@ const great_war = {
     },
     {
       id: 'lesson_2',
+      video: [
+        {
+          url: 'https://www.youtube.com/watch?v=DduN1cU2p9U',
+          title: "What was the 'Scramble for Africa'? - BBC What's New",
+          duration: '3 mins 0 secs',
+          teacher_guidance:
+            'Accessible summary of the 1884 Berlin Conference and the European carving up of the African continent.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=efV3uZqc3so',
+          title:
+            'The Scramble for Africa Explained: Imperialism, Empire, and the Road to World War I',
+          duration: '12 mins 49 secs',
+          teacher_guidance:
+            'Explores how colonial clashes in Africa, including the Moroccan Crises (1905, 1911), pushed Britain and France into diplomatic solidarity.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=0SEgckAL-xc',
+          title: 'Powder Keg: Europe 1900 to 1914 | Historical Documentary | Lucasfilm',
+          duration: '26 mins 6 secs',
+          teacher_guidance:
+            'Superb documentary overview of European imperial tensions, colonial rivalry, and the hardening of imperial ambitions.',
+        },
+      ],
       skill: 'Causation & Imperial Rivalry: The Scramble for Africa & Morocco',
       title:
         'Enquiry 2: Imperial Rivalry, the Scramble for Africa & the Moroccan Crises (1884–1911)',
@@ -835,6 +889,30 @@ const great_war = {
     },
     {
       id: 'lesson_3',
+      video: [
+        {
+          url: 'https://www.youtube.com/watch?v=yryey5NVODs',
+          title:
+            '14th June 1900: Anglo-German naval arms race triggered by the Second German Naval Law',
+          duration: '2 mins 35 secs',
+          teacher_guidance:
+            "Concise explanation of Tirpitz's Second Naval Law and Germany's deliberate challenge to Britain's \"Two-Power Standard\".",
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=-osfjjJuY6U',
+          title: 'Anglo-German Dreadnought Arms Race - Anything you can build I can build better!',
+          duration: '32 mins 1 secs',
+          teacher_guidance:
+            'In-depth military engineering history of HMS Dreadnought, naval budgets, and the political escalation between Fisher and Tirpitz.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=qmYJUYwsZqY',
+          title: 'Anglo-German Relations and the Naval Race',
+          duration: '52 mins 22 secs',
+          teacher_guidance:
+            'Detailed academic documentary on diplomatic breakdown, domestic press jingoism, and naval expenditure.',
+        },
+      ],
       skill: 'Technological Causation & Arms Race: The Anglo-German Naval Rivalry',
       title: 'Enquiry 3: The Anglo-German Naval Arms Race & HMS Dreadnought (1898–1914)',
       subtitle:
@@ -1151,6 +1229,36 @@ const great_war = {
     },
     {
       id: 'lesson_4',
+      video: [
+        {
+          url: 'https://www.youtube.com/watch?v=dYrofaDfMKI',
+          title: 'Tinderbox Europe - From Balkan Troubles to World War I | Prelude to WW1',
+          duration: '7 mins 37 secs',
+          teacher_guidance:
+            'Focuses on the Bosnian Crisis (1908), the Balkan Wars, and Pan-Slav nationalism threatening the Austro-Hungarian Empire.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=c7nUDLKKEBY',
+          title: 'How did WW1 Start? | Causes of the First World War',
+          duration: '9 mins 19 secs',
+          teacher_guidance:
+            'Broad overview illustrating how militarism, alliances, imperialism, and nationalism combined to ignite the conflict.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=f11CKYB2FCA',
+          title: 'Europe Prior to World War I: Alliances and Enemies | Prelude to WW1',
+          duration: '9 mins 47 secs',
+          teacher_guidance:
+            'Excellent breakdown of the Dual Alliance, Franco-Russian Alliance, Entente Cordiale, and Triple Entente.',
+        },
+        {
+          url: 'https://era.org.uk/streaming-service-resource/1-the-approach-of-war-history-file/',
+          title: 'History File: The Approach of War',
+          duration: '20 mins 0 secs',
+          teacher_guidance:
+            'BBC educational documentary tracing how entangling alliances transformed regional disputes into systemic continental risk.',
+        },
+      ],
       skill: 'Interpretation & Alliances: The Alliance System & The Balkan Powder Keg',
       title: 'Enquiry 4: The Alliance Systems & the Balkan Powder Keg (1879–1913)',
       subtitle:
@@ -1558,6 +1666,36 @@ const great_war = {
     },
     {
       id: 'lesson_5',
+      video: [
+        {
+          url: 'https://www.youtube.com/watch?v=OfO7TduevHA',
+          title: 'How the Assassination of Archduke Franz Ferdinand Unfolded with Dan Snow',
+          duration: '4 mins 12 secs',
+          teacher_guidance:
+            "Dan Snow narrates the exact sequence of events in Sarajevo on 28 June 1914 and Gavrilo Princip's fateful shots.",
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=Fmobm9pZtTg',
+          title: 'The Bullet that Started WWI',
+          duration: '10 mins 27 secs',
+          teacher_guidance:
+            'Dramatized forensic examination of the Black Hand conspiracy, the route mix-up, and the global diplomatic aftermath.',
+        },
+        {
+          url: 'https://era.org.uk/streaming-service-resource/learning-zone-britain-and-the-start-of-ww1-bbc-two/',
+          title: 'Britain and the Start of WW1 | Learning Zone (BBC Two)',
+          duration: '15 mins 0 secs',
+          teacher_guidance:
+            "Explores the Schlieffen Plan, the invasion of neutral Belgium, and Britain's ultimatum to Germany in August 1914.",
+        },
+        {
+          url: 'https://era.org.uk/streaming-service-resource/assassination-of-archduke-franz-ferdinand-days-that-shook-the-world/',
+          title: 'Days That Shook the World: Assassination of Archduke Franz Ferdinand',
+          duration: '28 mins 0 secs',
+          teacher_guidance:
+            'Gripping BBC docudrama detailing the minute-by-minute timeline of the Sarajevo assassination.',
+        },
+      ],
       skill: 'Short-Term Causation & The July Crisis: From Sarajevo to World War',
       title: 'Enquiry 5: The July Crisis: Sarajevo to the Outbreak of War (June–August 1914)',
       subtitle:

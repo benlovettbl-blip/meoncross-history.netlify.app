@@ -3193,6 +3193,14 @@ const early_modern_world = {
       ],
       video: [
         {
+          url: 'https://www.youtube.com/watch?v=IpgD2ehtMmM',
+          title:
+            "How Barbados became the first slave society | History - Britain's Forgotten Slave Owners",
+          duration: '4 mins 35 secs',
+          teacher_guidance:
+            'David Olusoga examines how 17th-century sugar plantations on Barbados established the legal and economic blueprint for chattel slavery.',
+        },
+        {
           url: 'https://www.youtube.com/watch?v=k7OQjNRsrvI',
           title:
             '[PRIMARY EVIDENCE] David Harewood Learns Horrifying Details of Barbados Slave Code (1661)',

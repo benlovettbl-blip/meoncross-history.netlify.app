@@ -1372,6 +1372,13 @@ export const unitData = {
       title: 'KT 1.1: The End of the British Mandate and the Creation of Israel, 1945–1949',
       video: [
         {
+          url: 'https://www.youtube.com/watch?v=IhfysdHgGh8',
+          title: 'Land Divided (1947-56) | The 50 Years War: Israel and the Arabs (Part 1)',
+          duration: '49 mins 26 secs',
+          teacher_guidance:
+            'Authoritative documentary on the UN partition resolution, British withdrawal, and the outbreak of the 1948–49 War.',
+        },
+        {
           url: 'https://www.youtube.com/watch?v=PgnQeDoypO8',
           title: '[STARTER HOOK] GCSE Rapid Revision: Creation of the State of Israel (1945–1949)',
           duration: '2 mins 0 secs',
@@ -6982,6 +6989,41 @@ export const unitData = {
       ],
       video: [
         {
+          url: 'https://www.youtube.com/watch?v=44u2JfQg9z8',
+          title: '1967: A Story of Occupation',
+          duration: '3 mins 22 secs',
+          teacher_guidance:
+            'Concise visual explanation of the territorial shifts following the war: West Bank, Gaza, Sinai Peninsula, and Golan Heights.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=jitbYp16w5w',
+          title: 'Who Will Fire First? (Survival of a Nation)',
+          duration: '7 mins 23 secs',
+          teacher_guidance:
+            "Focuses on Nasser's closure of the Straits of Tiran, mobilization in Sinai, and the diplomatic countdown to war.",
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=Jclz5Fq3y2w',
+          title: 'War on Three Fronts (Survival of a Nation)',
+          duration: '9 mins 56 secs',
+          teacher_guidance:
+            'Detailed breakdown of the simultaneous Egyptian, Jordanian, and Syrian combat operations.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=8i3uIz7hoYs',
+          title: 'Six Days of Miracles',
+          duration: '10 mins 9 secs',
+          teacher_guidance:
+            'Military analysis of the speed and air superiority of Israel’s pre-emptive strike on 5 June 1967.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=h7wiiKSYrv8',
+          title: 'Arab-Israeli War 1967 (Six-Day War Documentary)',
+          duration: '22 mins 55 secs',
+          teacher_guidance:
+            'Comprehensive documentary covering surprise Israeli air strikes and tank battles across Sinai, the West Bank, and Golan.',
+        },
+        {
           url: 'https://www.youtube.com/watch?v=B60O6Kcijso',
           title: '[STARTER HOOK] The Pre-emptive Israeli Air Strike (5 June 1967)',
           duration: '6 mins 45 secs',
@@ -9397,6 +9439,55 @@ export const unitData = {
         },
       ],
       video: [
+        {
+          url: 'https://www.youtube.com/watch?v=jENMO7-bFjs',
+          title: 'Golda Meir and Anwar Sadat Historical Encounter',
+          duration: '1 mins 2 secs',
+          teacher_guidance:
+            'Short historical newsreel clip of Golda Meir greeting President Sadat during his historic 1977 visit to Jerusalem.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=sFyFynucf7k',
+          title: 'Yom Kippur War Explained 1973: A Brief History',
+          duration: '3 mins 8 secs',
+          teacher_guidance:
+            'Rapid recap of the surprise Egyptian crossing of the Suez Canal and Syrian assault on the Golan Heights.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=Qzl1tWoPQnU',
+          title: 'Israel at War: 1973 | PragerU',
+          duration: '5 mins 52 secs',
+          teacher_guidance:
+            'Overview of the military intelligence failure (Agranat Commission context) and US airlift diplomacy.',
+        },
+        {
+          url: 'https://www.bbc.co.uk/programmes/w3cswsnv',
+          title: 'Sadat in Jerusalem | BBC Witness History',
+          duration: '9 mins 50 secs',
+          teacher_guidance:
+            'BBC Witness History radio documentary featuring eyewitness recollections of President Sadat’s breakthrough 1977 visit to Jerusalem.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=fwWdCNAgB9w',
+          title: 'The Yom Kippur War: How Israel Turned the Tide (Part 2) | Unpacked',
+          duration: '9 mins 58 secs',
+          teacher_guidance:
+            'Sharon’s counter-crossing of the Suez Canal, encirclement of the Egyptian Third Army, and the superpower nuclear alert.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=IHypjF9z8Ko',
+          title: 'The Yom Kippur War: Behind The Valley of Tears (Part 1) | Unpacked',
+          duration: '10 mins 49 secs',
+          teacher_guidance:
+            'Forensic narrative of the desperate Israeli tank defence against overwhelming Syrian armour on the Golan.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=bFiqwj0qFps',
+          title: 'Yom Kippur WAR of 1973 in GREAT HD',
+          duration: '36 mins 23 secs',
+          teacher_guidance:
+            'Archival combat footage documentary of air and land battles across Sinai and Golan.',
+        },
         {
           url: 'https://www.youtube.com/watch?v=iK729p_-ZRg',
           title: '[STARTER HOOK] GCSE Revision: The Yom Kippur War (October 1973)',
