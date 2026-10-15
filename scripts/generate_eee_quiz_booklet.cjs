@@ -1100,6 +1100,7 @@ function generateBookletHtml() {
       display: flex;
       flex-direction: column;
       margin-bottom: 4px;
+      min-height: 0;
     }
     .cover-table-title {
       font-size: 8.5pt;
@@ -1112,26 +1113,37 @@ function generateBookletHtml() {
     }
     .tracking-table {
       width: 100%;
+      height: 100%;
+      flex: 1;
       border-collapse: collapse;
-      font-size: 7.5pt;
+      font-size: 8pt;
+    }
+    .tracking-table thead tr {
+      height: 28px;
     }
     .tracking-table th {
       background: #1e3a8a;
       color: #ffffff;
-      padding: 3.5px 6px;
+      padding: 4px 6px;
       font-weight: 800;
       text-transform: uppercase;
-      font-size: 7pt;
+      font-size: 7.5pt;
       border: 1px solid #1e3a8a;
       text-align: center;
     }
+    .tracking-table tbody tr {
+      height: calc((100% - 28px) / 12);
+    }
+    .tracking-table tbody tr:nth-child(even) {
+      background: #f8fafc;
+    }
     .tracking-table td {
       border: 1px solid #cbd5e1;
-      padding: 3px 6px;
+      padding: 4px 6px;
       vertical-align: middle;
       color: #1e293b;
     }
-    .tb-hw { text-align: center; width: 55px; font-weight: 600; font-size: 7pt; }
+    .tb-hw { text-align: center; width: 55px; font-weight: 600; font-size: 7.5pt; }
     .tb-title { text-align: left; }
     .tb-box { text-align: center; width: 44px; font-weight: 700; }
     .tb-parent { width: 75px; }
