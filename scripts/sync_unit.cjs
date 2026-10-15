@@ -272,6 +272,13 @@ async function runSync() {
           cwd: ROOT_DIR,
         });
       }
+      if (unitId === 'australia') {
+        console.log(`\n📚 Compiling 16-page pupil workbook for [australia]...`);
+        execSync(`node scripts/render_australia_workbook.cjs`, {
+          stdio: 'inherit',
+          cwd: ROOT_DIR,
+        });
+      }
       console.log(`✅ Pupil workbooks and PDFs exported and verified in public/pdfs/.`);
     } catch (err) {
       console.error(`❌ PDF export failed:`, err.message);

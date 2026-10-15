@@ -94,7 +94,12 @@ function getFileHash(filePath) {
         unit === 'water_and_sanitation' ||
         unit === 'cme_new' ||
         unit === 'monarchy_religion_power' ||
-        unit === 'first_british_empire'
+        unit === 'first_british_empire' ||
+        unit === 'second_british_empire' ||
+        unit === 'industrialisation_and_empire' ||
+        unit === 'medieval_england' ||
+        unit === 'great_war_part2' ||
+        unit === 'australia'
       ) {
         files = files.filter((f) => !f.startsWith('pupil_workbook'));
       }

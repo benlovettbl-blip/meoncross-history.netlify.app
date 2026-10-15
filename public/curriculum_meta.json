@@ -57,13 +57,13 @@
         {
           "uid": "australia",
           "terms": ["Summer 1", "Summer 2"],
-          "shortTitle": "History of Australia",
-          "summary": "Pupils critically examine the British colonisation of Australia, from the decision to establish a penal colony to the devastating and lasting impact on Indigenous peoples and their enduring resistance.",
-          "vocab": "Terra Nullius, Convict, Indigenous, Dreaming, Dispossession, Penal Colony, First Fleet",
-          "skills": ["Empathy & Perspective", "Source Evaluation", "Historical Significance", "Causation"],
-          "assessment": "Analytical written response: \"How significant was the impact of British colonisation on Indigenous Australians?\"",
-          "smsc": "<strong>Cultural:</strong> Respect for Indigenous Australian heritage and traditions. <strong>Moral:</strong> Legacies of penal transportation and dispossession. <strong>Social:</strong> Long-term impact of colonialism on First Nations peoples.",
-          "careers": "Anthropologist, Human Rights Advocate, Social Worker, Journalist"
+          "shortTitle": "The History of Australia (1770–1901)",
+          "summary": "Pupils critically examine First Nations custodianship, Captain Cook's secret Admiralty voyage, the 1788 First Fleet penal colony, the devastating frontier wars and Pemulwuy's armed resistance, the 1851 Gold Rush and Eureka Stockade, and the enduring fight for First Nations sovereignty and Native Title.",
+          "vocab": "Terra Nullius, First Nations, Songlines, Transportation, Prison Hulk, Emancipist, Martial Law, Squatter, Eureka Stockade, White Australia Policy, Native Title",
+          "skills": ["Causation & Motive", "Source Utility & Perspective", "Causation & Turning Points", "Historical Interpretations", "Historical Significance"],
+          "assessment": "Formative source analysis and 25-question retrieval drill checks. Synoptic evaluative statement essay: 'The discovery of gold and the Eureka Stockade were the most important turning points in 19th-century Australian history.' How far do you agree? [12 marks]",
+          "smsc": "<strong>Cultural:</strong> Respect for 65,000 years of Indigenous heritage and Songlines. <strong>Moral:</strong> Legacies of penal transportation, terra nullius, and frontier warfare. <strong>Social:</strong> The birth of democracy at Eureka alongside the struggle for civil rights and Mabo.",
+          "careers": "Human Rights Advocate, Anthropologist, Diplomat, Legal Historian, Museum Curator"
         },
         {
           "uid": "monarchy_religion_power",
