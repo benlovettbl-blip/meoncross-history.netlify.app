@@ -127,9 +127,9 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Chronology Spine & Workbook Rollout Compass:**  
-> **Spines Completed (Option 1: Enquiry Roadmap & Master Toggle):** *Causes of the Great War* (`great_war`) 🌟 • *Conflict in the Middle East* (`cme_new`) 🌟 • *The Great War Part 2* (`great_war_part2`) 🌟 • *The Second British Empire* (`second_british_empire`) 🌟 • *The First British Empire* (`first_british_empire`) 🌟 • *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟  
-> **Immediate Spine Target:** Year 7: *Medieval England* (`medieval_england`) 🎯  
-> **Next in Spine Queue:** *Industrialisation* ➔ *Edexcel Medicine / Unconverted*  
+> **Spines Completed (Option 1: Enquiry Roadmap & Master Toggle):** *Causes of the Great War* (`great_war`) 🌟 • *Conflict in the Middle East* (`cme_new`) 🌟 • *The Great War Part 2* (`great_war_part2`) 🌟 • *The Second British Empire* (`second_british_empire`) 🌟 • *The First British Empire* (`first_british_empire`) 🌟 • *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • *Medieval England* (`medieval_england`) 🌟  
+> **Immediate Spine Target:** Year 8: *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🎯  
+> **Next in Spine Queue:** *Edexcel Medicine / Unconverted (Cold War / Post-War Britain)*  
 
 ---
 
@@ -153,8 +153,8 @@ In **every turn and recommendation**, regardless of the specific topic being wor
 | `second_british_empire` | Year 8 (KS3) | The Second British Empire & Imperialism | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
 | `first_british_empire` | Year 8 (KS3) | The First British Empire (1600–1783) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
 | `monarchy_religion_power` | Year 8 (KS3) | Crown, Church, or Parliament (1517–1689) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
-| `medieval_england` | Year 7 (KS3) | Medieval England (1066–1485) | 🎯 **PRIORITY #1 NEXT** | 5 lessons ready for extraction from `public/units/medieval_england/pupil_workbook.html`. |
-| `industrialisation_and_empire` | Year 8 (KS3) | Industrialisation, Empire & Power | 🟡 **QUEUED #2** | 5 lessons ready for extraction from `public/units/industrialisation_and_empire/pupil_workbook.html`. |
+| `medieval_england` | Year 7 (KS3) | Medieval England (1066–1485) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
+| `industrialisation_and_empire` | Year 8 (KS3) | Industrialisation, Empire & Power | 🎯 **PRIORITY #1 NEXT** | 5 lessons ready for extraction from `public/units/industrialisation_and_empire/pupil_workbook.html`. |
 | `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | ⚪ **QUEUED #7** | 7 lessons ready for extraction upon workbook alignment. |
 | `the_shoah` | Year 9 (KS3) | The Shoah (Holocaust Education) | ⚪ **QUEUED #8** | Lessons queued for spine authoring. |
 | `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | ⚪ **QUEUED #9** | Lessons queued for spine authoring. |
