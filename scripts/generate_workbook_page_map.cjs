@@ -5,34 +5,74 @@ const pdf = require('pdf-parse');
 const db = require('../public/database.json');
 const pdfsDir = path.join(__dirname, '..', 'public', 'pdfs');
 
+function resolvePdfFile(...candidates) {
+  for (const c of candidates) {
+    if (c && fs.existsSync(path.join(pdfsDir, c))) {
+      return c;
+    }
+  }
+  return candidates[0];
+}
+
 // Map of unit and booklet PDFs
 const unitPdfConfigs = {
-  australia: [{ booklet: 'Pupil Workbook', file: 'australia_pupil_workbook_FINAL_V17.pdf' }],
+  australia: [
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'australia_pupil_workbook.pdf',
+        'australia_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
+  ],
   cme_new: [
     {
       booklet: 'Key Topic 1 Booklet',
-      file: 'cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'cme_new_pupil_workbook_KT1.pdf',
+        'cme_new_pupil_workbook_KT1_FINAL_V17.pdf',
+      ),
       filter: (l, i) => (l.title || '').includes('KT 1') || (l.title || '').includes('KT1'),
     },
     {
       booklet: 'Key Topic 2 Booklet',
-      file: 'cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'cme_new_pupil_workbook_KT2.pdf',
+        'cme_new_pupil_workbook_KT2_FINAL_V17.pdf',
+      ),
       filter: (l, i) => (l.title || '').includes('KT 2') || (l.title || '').includes('KT2'),
     },
     {
       booklet: 'Key Topic 3 Booklet',
-      file: 'cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'cme_new_pupil_workbook_KT3.pdf',
+        'cme_new_pupil_workbook_KT3_FINAL_V17.pdf',
+      ),
       filter: (l, i) => (l.title || '').includes('KT 3') || (l.title || '').includes('KT3'),
     },
   ],
-  cold_war: [{ booklet: 'Pupil Workbook', file: 'cold_war_pupil_workbook_FINAL_V17.pdf' }],
+  cold_war: [
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile('cold_war_pupil_workbook.pdf', 'cold_war_pupil_workbook_FINAL_V17.pdf'),
+    },
+  ],
   early_modern_world: [
-    { booklet: 'Pupil Workbook', file: 'early_modern_world_pupil_workbook_FINAL_V17.pdf' },
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'early_modern_world_pupil_workbook.pdf',
+        'early_modern_world_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
   ],
   edexcel_medicine: [
     {
       booklet: 'Medieval Booklet',
-      file: 'edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'edexcel_medicine_pupil_workbook_medieval.pdf',
+        'edexcel_medicine_pupil_workbook_medieval_FINAL_V17.pdf',
+      ),
       filter: (l) =>
         (l.id || '').includes('1_') ||
         (l.title || '').toLowerCase().includes('c1250') ||
@@ -40,13 +80,19 @@ const unitPdfConfigs = {
     },
     {
       booklet: 'Renaissance Booklet',
-      file: 'edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'edexcel_medicine_pupil_workbook_renaissance.pdf',
+        'edexcel_medicine_pupil_workbook_renaissance_FINAL_V17.pdf',
+      ),
       filter: (l) =>
         (l.id || '').includes('2_') || (l.title || '').toLowerCase().includes('renaissance'),
     },
     {
       booklet: '18th & 19th C Booklet',
-      file: 'edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'edexcel_medicine_pupil_workbook_18th_19th.pdf',
+        'edexcel_medicine_pupil_workbook_18th_19th_FINAL_V17.pdf',
+      ),
       filter: (l) =>
         (l.id || '').includes('3_') ||
         (l.title || '').toLowerCase().includes('18th') ||
@@ -54,7 +100,10 @@ const unitPdfConfigs = {
     },
     {
       booklet: 'Modern Booklet',
-      file: 'edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'edexcel_medicine_pupil_workbook_modern.pdf',
+        'edexcel_medicine_pupil_workbook_modern_FINAL_V17.pdf',
+      ),
       filter: (l) =>
         (l.id || '').includes('4_') ||
         (l.title || '').toLowerCase().includes('modern') ||
@@ -62,7 +111,10 @@ const unitPdfConfigs = {
     },
     {
       booklet: 'Western Front Booklet',
-      file: 'edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'edexcel_medicine_pupil_workbook_western_front.pdf',
+        'edexcel_medicine_pupil_workbook_western_front_FINAL_V17.pdf',
+      ),
       filter: (l) =>
         (l.id || '').includes('5_') || (l.title || '').toLowerCase().includes('western front'),
     },
@@ -70,50 +122,103 @@ const unitPdfConfigs = {
   eee: [
     {
       booklet: 'Key Topic 1 Booklet',
-      file: 'eee_pupil_workbook_KT1_FINAL_V17.pdf',
+      file: resolvePdfFile('eee_pupil_workbook_KT1.pdf', 'eee_pupil_workbook_KT1_FINAL_V17.pdf'),
       filter: (l, i) => i < 4,
     },
     {
       booklet: 'Key Topic 2 Booklet',
-      file: 'eee_pupil_workbook_KT2_FINAL_V17.pdf',
+      file: resolvePdfFile('eee_pupil_workbook_KT2.pdf', 'eee_pupil_workbook_KT2_FINAL_V17.pdf'),
       filter: (l, i) => i >= 4 && i < 8,
     },
     {
       booklet: 'Key Topic 3 Booklet',
-      file: 'eee_pupil_workbook_KT3_FINAL_V17.pdf',
+      file: resolvePdfFile('eee_pupil_workbook_KT3.pdf', 'eee_pupil_workbook_KT3_FINAL_V17.pdf'),
       filter: (l, i) => i >= 8,
     },
   ],
   great_war: [
     {
       booklet: 'Pupil Workbook',
-      file: fs.existsSync(path.join(pdfsDir, 'great_war_pupil_workbook_V2.pdf'))
-        ? 'great_war_pupil_workbook_V2.pdf'
-        : 'great_war_pupil_workbook_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'great_war_pupil_workbook_V2.pdf',
+        'great_war_pupil_workbook.pdf',
+        'great_war_pupil_workbook_FINAL_V17.pdf',
+      ),
     },
   ],
   great_war_part2: [
-    { booklet: 'Pupil Workbook', file: 'great_war_part2_pupil_workbook_FINAL_V17.pdf' },
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'great_war_part2_pupil_workbook.pdf',
+        'great_war_part2_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
   ],
   industrialisation_and_empire: [
     {
       booklet: 'Pupil Workbook',
-      file: 'industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
+      file: resolvePdfFile(
+        'industrialisation_and_empire_pupil_workbook.pdf',
+        'industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
+      ),
     },
   ],
   first_british_empire: [
-    { booklet: 'Pupil Workbook', file: 'first_british_empire_pupil_workbook_FINAL_V17.pdf' },
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'first_british_empire_pupil_workbook.pdf',
+        'first_british_empire_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
+  ],
+  second_british_empire: [
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'second_british_empire_pupil_workbook.pdf',
+        'second_british_empire_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
   ],
   medieval_england: [
-    { booklet: 'Pupil Workbook', file: 'medieval_england_pupil_workbook_FINAL_V17.pdf' },
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'medieval_england_pupil_workbook.pdf',
+        'medieval_england_pupil_workbook_FINAL_V17.pdf',
+        'medieval_england_16p_workbook.pdf',
+      ),
+    },
   ],
   monarchy_religion_power: [
-    { booklet: 'Pupil Workbook', file: 'monarchy_religion_power_pupil_workbook_FINAL_V17.pdf' },
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'monarchy_religion_power_pupil_workbook.pdf',
+        'monarchy_religion_power_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
   ],
   post_war_britain: [
-    { booklet: 'Pupil Workbook', file: 'post_war_britain_pupil_workbook_FINAL_V17.pdf' },
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'post_war_britain_pupil_workbook.pdf',
+        'post_war_britain_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
   ],
-  the_shoah: [{ booklet: 'Pupil Workbook', file: 'the_shoah_pupil_workbook_FINAL_V17.pdf' }],
+  the_shoah: [
+    {
+      booklet: 'Pupil Workbook',
+      file: resolvePdfFile(
+        'the_shoah_pupil_workbook.pdf',
+        'the_shoah_pupil_workbook_FINAL_V17.pdf',
+      ),
+    },
+  ],
   trip_ypres: [],
   usa: [
     {

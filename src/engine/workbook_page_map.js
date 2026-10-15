@@ -2,31 +2,31 @@
 export const WORKBOOK_PAGE_MAP = {
   australia: {
     lesson_1: {
-      page: 3,
+      page: 16,
       booklet: 'Pupil Workbook',
       unitId: 'australia',
       lessonIndex: 0,
     },
     lesson_2: {
-      page: 9,
+      page: 4,
       booklet: 'Pupil Workbook',
       unitId: 'australia',
       lessonIndex: 1,
     },
     lesson_3: {
-      page: 14,
+      page: 6,
       booklet: 'Pupil Workbook',
       unitId: 'australia',
       lessonIndex: 2,
     },
     lesson_4: {
-      page: 19,
+      page: 10,
       booklet: 'Pupil Workbook',
       unitId: 'australia',
       lessonIndex: 3,
     },
     lesson_5: {
-      page: 27,
+      page: 12,
       booklet: 'Pupil Workbook',
       unitId: 'australia',
       lessonIndex: 4,
@@ -944,6 +944,38 @@ export const WORKBOOK_PAGE_MAP = {
       page: 12,
       booklet: 'Pupil Workbook',
       unitId: 'monarchy_religion_power',
+      lessonIndex: 4,
+    },
+  },
+  second_british_empire: {
+    lesson_1: {
+      page: 16,
+      booklet: 'Pupil Workbook',
+      unitId: 'second_british_empire',
+      lessonIndex: 0,
+    },
+    lesson_2: {
+      page: 4,
+      booklet: 'Pupil Workbook',
+      unitId: 'second_british_empire',
+      lessonIndex: 1,
+    },
+    lesson_3: {
+      page: 6,
+      booklet: 'Pupil Workbook',
+      unitId: 'second_british_empire',
+      lessonIndex: 2,
+    },
+    lesson_4: {
+      page: 10,
+      booklet: 'Pupil Workbook',
+      unitId: 'second_british_empire',
+      lessonIndex: 3,
+    },
+    lesson_5: {
+      page: 12,
+      booklet: 'Pupil Workbook',
+      unitId: 'second_british_empire',
       lessonIndex: 4,
     },
   },
