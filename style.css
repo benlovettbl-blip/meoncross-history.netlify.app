@@ -6497,6 +6497,11 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
 .cme-spine-causal-drawer[open] .drawer-chevron {
   transform: rotate(180deg);
 }
+.btn-toggle-all-spine-stages:hover {
+  background: #f0f9ff !important;
+  border-color: #0284c7 !important;
+  color: #0284c7 !important;
+}
 
 /* Elevated Domino Spark Footer */
 .cme-domino-spark-footer {

@@ -15,6 +15,30 @@ import {
 // Module-level fallback to ensure isGCSE never throws ReferenceError
 var isGCSE = false;
 
+if (typeof window !== 'undefined') {
+  window.toggleAllSpineDrawers = function (btn) {
+    const spine = btn
+      ? btn.closest('#lesson-chronology-spine')
+      : document.getElementById('lesson-chronology-spine');
+    if (!spine) return;
+    const drawers = spine.querySelectorAll('.cme-spine-causal-drawer');
+    const hasClosed = Array.from(drawers).some((d) => !d.open);
+    drawers.forEach((d) => {
+      d.open = hasClosed;
+    });
+    if (btn) {
+      const textSpan = btn.querySelector('.toggle-spine-text');
+      if (textSpan) {
+        textSpan.textContent = hasClosed ? 'Collapse All' : 'Expand All';
+      }
+      const icon = btn.querySelector('i');
+      if (icon) {
+        icon.className = hasClosed ? 'fa-solid fa-compress' : 'fa-solid fa-arrows-up-down';
+      }
+    }
+  };
+}
+
 window.formatBold = function (text) {
   if (!text) return '';
   if (typeof text !== 'string') {
@@ -4274,7 +4298,10 @@ export function renderLesson(lesson) {
               <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Chronology Spine</span>
               <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Key Turning Points &amp; Causal Dominoes</span>
             </span>
-            <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <button type="button" class="btn btn-toggle-all-spine-stages" onclick="event.stopPropagation(); window.toggleAllSpineDrawers(this);" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #0369a1; background: #ffffff; border: 1.2px solid #bae6fd; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Expand or collapse all 5 stage drawers at once">
+                <i class="fa-solid fa-arrows-up-down" style="font-size: 0.65rem;"></i> <span class="toggle-spine-text">Expand All</span>
+              </button>
               <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
               <i class="fa-solid fa-chevron-down" style="color: #64748b; font-size: 0.85rem;"></i>
             </div>
@@ -4294,7 +4321,7 @@ export function renderLesson(lesson) {
                     : ''
                 }
                 
-                <!-- Baseline Narrative Zone (Row 1) -->
+                <!-- Baseline Narrative Zone (Row 1: Enquiry Focus) -->
                 <div class="cme-spine-narrative-zone" style="display: flex; flex-direction: column; flex: 1; box-sizing: border-box;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
                     <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
@@ -4317,32 +4344,47 @@ export function renderLesson(lesson) {
                   </h5>
 
                   ${
-                    item.question
+                    item.question || item.exam_link
                       ? `
-                  <div class="cme-spine-question" style="font-size: 0.74rem; font-weight: 700; color: #0369a1; font-style: italic; line-height: 1.35; margin-bottom: 6px;">
-                    ${item.question}
+                  <div class="cme-spine-question" style="font-size: 0.74rem; font-weight: 700; color: #0369a1; font-style: italic; line-height: 1.35; margin-bottom: 6px; background: #f0f9ff; padding: 6px 8px; border-radius: 4px; border-left: 2.5px solid #0284c7;">
+                    ${item.question || item.exam_link}
                   </div>`
                       : ''
                   }
-
-                  <div class="cme-spine-desc" style="font-size: 0.74rem; color: #334155; line-height: 1.38; margin-bottom: 6px;">
-                    ${item.desc}
-                  </div>
                 </div>
 
-                <!-- Collapsible Causal Drawer (Arrow only, reveals consequence) -->
+                <!-- Collapsible Details: Narrative Evidence & Causal Consequence -->
                 ${
-                  item.connective
+                  item.desc || item.connective
                     ? `
-                <details class="cme-spine-causal-drawer" style="margin-top: auto; padding-top: 8px;">
-                  <summary style="cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 4px 8px; border-radius: 4px; border: 1px solid #bfdbfe; transition: all 0.15s ease;">
+                <details class="cme-spine-causal-drawer" style="margin-top: auto; padding-top: 6px;">
+                  <summary style="cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; font-size: 0.70rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 4px 8px; border-radius: 4px; border: 1px solid #bfdbfe; transition: all 0.15s ease;">
                     <span style="display: inline-flex; align-items: center; gap: 6px;">
                       <i class="fa-solid fa-arrow-right"></i>
+                      <span style="font-size: 0.68rem; letter-spacing: 0.2px;">Evidence &amp; Outcome</span>
                     </span>
                     <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.62rem; color: #3b82f6;"></i>
                   </summary>
-                  <div style="margin-top: 6px; font-size: 0.73rem; color: #1e3a8a; line-height: 1.38; background: #f8fafc; padding: 6px 8px; border-radius: 4px; border: 1px solid #dbeafe; border-left: 3px solid #2563eb;">
-                    ${item.connective}
+                  <div style="margin-top: 6px; display: flex; flex-direction: column; gap: 6px;">
+                    ${
+                      item.desc
+                        ? `
+                    <div class="cme-spine-desc" style="font-size: 0.73rem; color: #1e293b; line-height: 1.38; padding: 6px 8px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 4px;">
+                      ${item.desc}
+                    </div>`
+                        : ''
+                    }
+                    ${
+                      item.connective
+                        ? `
+                    <div class="cme-spine-consequence" style="font-size: 0.73rem; color: #1e3a8a; line-height: 1.38; padding: 6px 8px; background: #eff6ff; border: 1px solid #bfdbfe; border-left: 3px solid #2563eb; border-radius: 4px;">
+                      <strong style="color: #1d4ed8; font-size: 0.62rem; text-transform: uppercase; letter-spacing: 0.4px; display: block; margin-bottom: 2px;">
+                        <i class="fa-solid fa-arrow-right"></i> Consequence:
+                      </strong>
+                      ${item.connective}
+                    </div>`
+                        : ''
+                    }
                   </div>
                 </details>`
                     : ''

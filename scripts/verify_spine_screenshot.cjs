@@ -16,24 +16,33 @@ const path = require('path');
     timeout: 30000,
   });
 
-  // Open the spine and open Stage 1 & 2 causal drawers
+  // Open the main spine container
   await page.evaluate(() => {
     const spine = document.getElementById('lesson-chronology-spine');
     if (spine) spine.open = true;
-    const drawers = document.querySelectorAll('.cme-spine-causal-drawer');
-    if (drawers[0]) drawers[0].open = true;
   });
 
-  await new Promise((r) => setTimeout(r, 1000));
+  await new Promise((r) => setTimeout(r, 800));
 
-  const screenshotPath = path.join(__dirname, '..', 'scratch', 'spine_verification.png');
+  const screenshotPathDefault = path.join(__dirname, '..', 'scratch', 'spine_enquiry_roadmap.png');
   const spineElement = await page.$('#lesson-chronology-spine');
   if (spineElement) {
-    await spineElement.screenshot({ path: screenshotPath });
-    console.log('Saved spine screenshot to:', screenshotPath);
-  } else {
-    await page.screenshot({ path: screenshotPath, fullPage: false });
-    console.log('Spine element not found, saved page screenshot to:', screenshotPath);
+    await spineElement.screenshot({ path: screenshotPathDefault });
+    console.log('Saved default enquiry roadmap screenshot to:', screenshotPathDefault);
+  }
+
+  // Click the master "Expand All" button
+  await page.evaluate(() => {
+    const btn = document.querySelector('.btn-toggle-all-spine-stages');
+    if (btn) btn.click();
+  });
+
+  await new Promise((r) => setTimeout(r, 800));
+
+  const screenshotPathExpanded = path.join(__dirname, '..', 'scratch', 'spine_expanded_all.png');
+  if (spineElement) {
+    await spineElement.screenshot({ path: screenshotPathExpanded });
+    console.log('Saved expanded all screenshot to:', screenshotPathExpanded);
   }
 
   await browser.close();
