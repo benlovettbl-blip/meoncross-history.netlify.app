@@ -1634,7 +1634,7 @@ const industrialisation_and_empire = {
             title:
               'Source D: Sir Joseph Bazalgette’s London Interceptor Sewer Network Under Construction (1862)',
             context:
-              'Contemporary photograph of the cavernous Abbey Mills pumping station and underground brick interceptor sewers engineered by Sir Joseph Bazalgette following the 1858 Great Stink. **Hinge Question:** How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?',
+              'Contemporary photograph of the cavernous Abbey Mills pumping station and underground brick interceptor sewers engineered by Sir Joseph Bazalgette following the 1858 Great Stink.',
             hinge_question:
               'How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?',
             image: '/images/bazalgette_sewer.jpg',
@@ -2232,7 +2232,7 @@ const industrialisation_and_empire = {
             title:
               'Source C: The Threat of Captain Swing (National Archives HO 52/6, November 1830)',
             context:
-              'Authentic threatening letter preserved in the Home Office records at The National Archives, Kew (HO 52/6). Between October and December 1830, anonymous handwritten notices signed "Captain Swing" were delivered to Hampshire squires, parsons, and magistrates, warning that barns and hayricks would be burned if wages were not raised and threshing machines destroyed. **Hinge Question:** Why did agricultural labourers invoke a mythical military commander ("Captain Swing") rather than naming real village leaders?',
+              'Authentic threatening letter preserved in the Home Office records at The National Archives, Kew (HO 52/6). Between October and December 1830, anonymous handwritten notices signed "Captain Swing" were delivered to Hampshire squires, parsons, and magistrates, warning that barns and hayricks would be burned if wages were not raised and threshing machines destroyed.',
             hinge_question:
               'Why did agricultural labourers invoke a mythical military commander ("Captain Swing") rather than naming real village leaders?',
             image: '/images/captain_swing_letter.jpg',
@@ -2331,7 +2331,7 @@ const industrialisation_and_empire = {
             title:
               'Source D: Contemporary Report of the Winchester Special Assizes (Hampshire Chronicle, December 1830)',
             context:
-              'Newspaper report published in the Hampshire Chronicle during the Special Commission trials in Winchester Castle’s Great Hall. **Hinge Question:** Why did the British state choose transportation to Australia rather than imprisonment inside local English county gaols?',
+              'Newspaper report published in the Hampshire Chronicle during the Special Commission trials in Winchester Castle’s Great Hall.',
             hinge_question:
               'Why did the British state choose transportation to Australia rather than imprisonment inside local English county gaols?',
             text: '“The Special Assizes at Winchester concluded this week. The sentences passed upon the rioters who have disturbed the peace of this county demonstrate that His Majesty’s government will tolerate no acts of insubordination or destruction of property. Six prisoners have received sentence of death, and upwards of one hundred are to be transported beyond the seas for life or for fourteen years. It is hoped that this severe example will restore tranquility to our agricultural districts.”',
@@ -3002,7 +3002,7 @@ const industrialisation_and_empire = {
             letter: 'D',
             title: 'Source D: The Chartist Mass Demonstration at Kennington Common (10 April 1848)',
             context:
-              'Contemporary daguerreotype photograph by William Edward Kilburn showing the massive Chartist assembly at Kennington Common, London, gathered to present the third Monster Petition to Parliament. **Hinge Question:** Why did the British state assemble 85,000 special constables and deploy the Duke of Wellington to confront a crowd presenting a petition?',
+              'Contemporary daguerreotype photograph by William Edward Kilburn showing the massive Chartist assembly at Kennington Common, London, gathered to present the third Monster Petition to Parliament.',
             hinge_question:
               'Why did the British state assemble 85,000 special constables and deploy the Duke of Wellington to confront a crowd presenting a petition?',
             image: '/images/chartist_demo.jpg',

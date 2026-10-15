@@ -3144,10 +3144,12 @@ export function renderLesson(lesson) {
         const sourceText = (source.text || source.content || '').trim();
         let contextText = source.source_context || source.context || '';
         let hingeText = source.hinge_question || source.question || '';
-        if (!hingeText && contextText.includes('**Hinge Question:**')) {
-          const parts = contextText.split('**Hinge Question:**');
+        if (contextText.includes('Hinge Question:')) {
+          const parts = contextText.split(/\*{0,2}Hinge Question:\*{0,2}/i);
           contextText = parts[0].trim();
-          hingeText = parts[1].trim();
+          if (!hingeText && parts[1]) {
+            hingeText = parts[1].trim();
+          }
         }
         const citationText = source.citation || source.provenance || '';
 
@@ -3279,7 +3281,7 @@ export function renderLesson(lesson) {
                 hingeText
                   ? `
                 <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
+                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
                   <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
                     ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(hingeText)) : cleanQuestionText(hingeText)}
                   </div>
@@ -4589,11 +4591,9 @@ export function renderLesson(lesson) {
                     const isLeftAligned = (spot.x || 0) > 75 || spot.align === 'left';
                     return `
                   <div class="map-hotspot-pin ${isFirst ? 'active-pin' : ''} ${isLeftAligned ? 'pin-align-left' : ''}" id="${mapId}-pin-${spot.id}" data-spot-id="${spot.id}" style="left: ${spot.x}%; top: ${spot.y}%;" title="${spot.title}">
-                    <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'}; opacity: 0.45;"></div>
-                    <div class="pin-marker" style="background: ${spot.color || '#b91c1c'}; color: #ffffff; font-size: 0.65rem; font-weight: 900; width: 24px; height: 24px;">
-                      ${sIdx + 1}
-                    </div>
-                    <div class="pin-label" style="background: rgba(15, 23, 42, 0.94); border: 1px solid ${spot.color || '#3b82f6'}; color: #ffffff; padding: 2px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; white-space: nowrap;">
+                    <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'};"></div>
+                    <div class="pin-marker" style="background: ${spot.color || '#b91c1c'};"></div>
+                    <div class="pin-label">
                       ${spot.label || spot.title.split(':')[0]}
                     </div>
                   </div>
@@ -5347,7 +5347,7 @@ export function renderLesson(lesson) {
                                hingeText
                                  ? `
                                <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                                 <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
+                                 <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
                                  <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
                                    ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(hingeText)) : cleanQuestionText(hingeText)}
                                  </div>
@@ -5550,6 +5550,21 @@ export function renderLesson(lesson) {
           `
             : '';
 
+        let rawContextVal = rawSource.source_context || rawSource.context || '';
+        let cleanContextVal = rawContextVal;
+        if (cleanContextVal.includes('Hinge Question:')) {
+          const parts = cleanContextVal.split(/\*{0,2}Hinge Question:\*{0,2}/i);
+          cleanContextVal = parts[0].trim();
+          if (
+            !rawSource.hinge_question &&
+            !rawSource.question &&
+            !rawSource.source_question &&
+            parts[1]
+          ) {
+            rawSource.hinge_question = parts[1].trim();
+          }
+        }
+
         let sourceBodyHtml = '';
         if (isWrittenSource) {
           sourceBodyHtml = `
@@ -5573,10 +5588,10 @@ export function renderLesson(lesson) {
                 : ''
             }
             ${
-              rawSource.source_context || rawSource.context
+              cleanContextVal
                 ? `
               <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 15px; border-radius: 0 4px 4px 0; margin-top: 15px; color: #334155; font-size: 1.05rem; line-height: 1.6;">
-                <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.source_context || rawSource.context) : rawSource.source_context || rawSource.context}
+                <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
               </div>
             `
                 : ''
@@ -5642,10 +5657,10 @@ export function renderLesson(lesson) {
                       : ''
                   }
                   ${
-                    rawSource.source_context || rawSource.context
+                    cleanContextVal
                       ? `
                     <div style="background: #f8fafc; border-left: 4px solid #64748b; padding: 12px 16px; border-radius: 0 4px 4px 0; margin-bottom: 12px; color: #334155; font-size: 0.98rem; line-height: 1.6;">
-                      <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.source_context || rawSource.context) : rawSource.source_context || rawSource.context}
+                      <strong>Historical Context:</strong> ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanContextVal) : cleanContextVal}
                     </div>
                   `
                       : ''
@@ -5760,7 +5775,7 @@ export function renderLesson(lesson) {
                   rawSource.hinge_question || rawSource.question || rawSource.source_question
                     ? `
                   <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 14px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
+                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
                     <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
                       ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.hinge_question || rawSource.question || rawSource.source_question)) : cleanQuestionText(rawSource.hinge_question || rawSource.question || rawSource.source_question)}
                     </div>
@@ -5780,7 +5795,7 @@ export function renderLesson(lesson) {
                     rawSource.question || rawSource.hinge_question || rawSource.source_question
                       ? `
                     <div class="archival-source-discussion-box" style="background: #eff6ff; border: 1.5px solid #bfdbfe; border-left: 5px solid #1e40af; padding: 12px 16px; border-radius: 4px; margin-top: 12px; box-shadow: 0 2px 5px rgba(30, 58, 138, 0.06);">
-                      <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt (Teacher / Class Inquiry)</div>
+                      <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; margin-bottom: 4px; letter-spacing: 0.5px;">Hinge Discussion Prompt</div>
                       <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.02rem; color: #1e3a8a; line-height: 1.5; font-weight: 600;">
                         ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(cleanQuestionText(rawSource.question || rawSource.hinge_question || rawSource.source_question)) : cleanQuestionText(rawSource.question || rawSource.hinge_question || rawSource.source_question)}
                       </div>
@@ -9151,10 +9166,11 @@ export function initCrummackInteractiveFeatures() {
         left: 0;
         top: 0;
         transform: translate(-50%, -50%);
-        width: 22px !important;
-        height: 22px !important;
+        width: 16px !important;
+        height: 16px !important;
         border-radius: 50% !important;
         pointer-events: none !important;
+        opacity: 0.35 !important;
       }
       .pin-pulse-crimson {
         background: rgba(185, 28, 28, 0.45) !important;
@@ -9173,61 +9189,55 @@ export function initCrummackInteractiveFeatures() {
         left: 0;
         top: 0;
         transform: translate(-50%, -50%);
-        width: 22px !important;
-        height: 22px !important;
+        width: 9px !important;
+        height: 9px !important;
         border-radius: 50% !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.4) !important;
+        display: block !important;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.6) !important;
         z-index: 2 !important;
-        border: 2px solid #ffffff !important;
-        transition: all 0.2s ease !important;
+        border: 1.5px solid #ffffff !important;
+        transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
       }
       .pin-marker-crimson { background: #b91c1c !important; }
       .pin-marker-blue { background: #1d4ed8 !important; }
       .pin-marker-green { background: #047857 !important; }
       .pin-core {
-        width: 6px !important;
-        height: 6px !important;
-        border-radius: 50% !important;
-        background: #ffffff !important;
+        display: none !important;
       }
       .pin-label {
+        display: none !important;
         position: absolute !important;
-        left: 15px;
+        left: 10px;
         top: 50%;
         transform: translateY(-50%);
         font-family: 'Inter', sans-serif !important;
-        font-size: 0.72rem !important;
+        font-size: 0.70rem !important;
         font-weight: 700 !important;
         color: #ffffff !important;
-        background: rgba(15, 23, 42, 0.92) !important;
-        padding: 3px 8px !important;
+        background: rgba(15, 23, 42, 0.94) !important;
+        padding: 2px 7px !important;
         border-radius: 4px !important;
-        box-shadow: 0 3px 8px rgba(0,0,0,0.35) !important;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.45) !important;
         border: 1px solid rgba(255,255,255,0.25) !important;
         white-space: nowrap !important;
-        pointer-events: auto !important;
+        pointer-events: none !important;
         backdrop-filter: blur(4px) !important;
         letter-spacing: 0.02em !important;
+        z-index: 30 !important;
       }
       .map-hotspot-pin.pin-align-left .pin-label {
         left: auto !important;
-        right: 15px !important;
+        right: 10px !important;
       }
-      .pin-num {
-        display: inline-block !important;
-        background: rgba(255,255,255,0.22);
-        padding: 0 4px;
-        border-radius: 2px;
-        margin-right: 4px;
-        font-size: 0.68rem;
+      .map-hotspot-pin:hover .pin-label {
+        display: block !important;
       }
+      .map-hotspot-pin:hover .pin-marker,
       .map-hotspot-pin.active-pin .pin-marker {
-        transform: translate(-50%, -50%) scale(1.2) !important;
+        width: 13px !important;
+        height: 13px !important;
         border-color: #f59e0b !important;
-        box-shadow: 0 0 14px rgba(245, 158, 11, 0.8) !important;
+        box-shadow: 0 0 10px rgba(245, 158, 11, 0.9) !important;
       }
       .map-hotspot-pin.active-pin .pin-label {
         border-color: #f59e0b !important;
