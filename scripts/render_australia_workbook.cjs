@@ -1232,92 +1232,98 @@ function compileAustraliaWorkbook() {
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (First Fleet at Sydney Cove Canvas + Disciplinary Plate) -->
+      <!-- Prominent Primary Visual Source Centerpiece (Landscape Showcase + Underneath Analytical Deck) -->
       <div style="margin: 2px 0 4px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <div style="display: grid; grid-template-columns: 70mm 1fr; background: #ffffff;">
-          <!-- Left: Full Visual Canvas in Rich Authentic Color -->
-          <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 4px;">
-            <img src="${coverImgBase64}" alt="The First Fleet entering Botany Bay and Sydney Cove (1788)" style="height: 118mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
-          </div>
-          <!-- Right: Visual Iconography & Historical Significance for Year 8 -->
-          <div style="padding: 5px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
-            <!-- 1. Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
-              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
-                Primary Visual Evidence &bull; The Founding of Colonial Australia
+        
+        <!-- 1. Top Artwork Showcase (Full-Width Cinematic Landscape Banner) -->
+        <div style="background: #fcfbf9; border-bottom: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 4px 6px; height: 89mm; box-sizing: border-box;">
+          <img src="${coverImgBase64}" alt="The First Fleet entering Botany Bay and Sydney Cove (1788)" style="height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+        </div>
+
+        <!-- 2. Analytical Decomposition Deck (Arranged Underneath in Clean Dual Columns) -->
+        <div style="padding: 5px 8px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 1fr; gap: 8px; box-sizing: border-box;">
+          
+          <!-- Left Column: Context & 4 Core Features -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
+                Visual Decoding &bull; 4 Core Features
               </span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 700; color: #64748b;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
                 Francis Fowkes (1788)
               </span>
             </div>
-
-            <!-- 2. Historical Context -->
-            <p style="font-family: 'Georgia', serif; font-size: 7.9pt; line-height: 1.25; color: #1e293b; margin: 0;">
-              In January 1788, eleven British sailing ships commanded by Governor Arthur Phillip landed roughly 1,400 convicts, marines, and sailors at Sydney Cove. Fowkes’s contemporary survey records the vulnerable foothold of the penal colony on the edge of the Pacific:
+            
+            <p style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.2; color: #1e293b; margin: 0;">
+              In Jan 1788, eleven ships landed 1,400 convicts, marines, and sailors at Sydney Cove. Fowkes’s survey records the vulnerable foothold of the penal colony:
             </p>
 
-            <!-- 3. Four Core Historical Features -->
-            <div style="display: flex; flex-direction: column; gap: 2.5px;">
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">1. Sheltered Deep-Water Anchorage:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
-                  Transports ride at anchor in Sydney Cove, chosen after Phillip abandoned Botany Bay due to dangerous ocean surf and poor fresh water.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px;">
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">1. Deep-Water Anchorage:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Transports ride at anchor in Sydney Cove after Phillip abandoned surf-swept Botany Bay.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">2. The Convict Tent City:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
-                  Rough canvas tents and wattle-and-daub huts house 750 transported prisoners battling scurvy, dysentery, and near-starvation.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">2. Convict Tent City:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Canvas tents and wattle huts house 750 prisoners battling scurvy and near-starvation.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">3. The Freshwater Tank Stream:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
-                  The vital freshwater creek that determined the location of modern Sydney, carved through sandstone by convicts to store drinking water.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">3. Freshwater Creek:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  The vital Tank Stream creek carved through sandstone to store drinking water.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.5pt; text-transform: uppercase; color: #0f284e;">4. The Obscured Indigenous Reality:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.20; color: #222222;">
-                  The imperial map depicts the land as an empty canvas, systematically erasing the sovereign presence of the Gadigal and Eora clans.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">4. Indigenous Erasure:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Depicts empty land, erasing the sovereign presence of the Gadigal and Eora clans.
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- 4. Three-Pillar Visual Matrix -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 2px; border-top: 1px solid #cbd5e1;">
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Canvas Tents</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Fragile foothold on an isolated continent.</div>
+          <!-- Right Column: 3-Pillar Matrix + Significance + Hinge Question -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+            <!-- Three-Pillar Visual Matrix -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Canvas Tents</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Fragile foothold on an isolated continent.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Naval Transports</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">15,000-mile exile under the Bloody Code.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Naval Transports</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">15,000-mile exile under the Bloody Code.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Eora Country</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.7pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">65,000 years of custodianship erased.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Eora Country</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">65,000 years of custodianship erased.</div>
               </div>
             </div>
 
-            <!-- 5. Disciplinary Significance Anchor -->
-            <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #1e293b; line-height: 1.22; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2.5px 7px;">
-              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> In colonial history, surveying and cartography were weapons of imperial conquest that turned living Indigenous homelands into European property through the myth of terra nullius.
+            <!-- Disciplinary Significance Anchor -->
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.2; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
+              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> In colonial history, surveying and cartography turned living Indigenous homelands into European property through the myth of <em>terra nullius</em>.
             </div>
 
-            <!-- 6. Targeted Disciplinary Hinge Question -->
-            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 7px;">
+            <!-- Targeted Disciplinary Hinge Question -->
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 2.5px 6px;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 7.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Evaluation</span>
               </div>
-              <div style="font-family: 'Georgia', serif; font-size: 7.3pt; font-style: italic; color: #1e293b; line-height: 1.20; margin-top: 1px;">
+              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.18; margin-top: 1px;">
                 Does this contemporary survey depict the triumphant founding of a new nation, or the unauthorized military invasion of sovereign First Nations lands?
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
+
+        <!-- 3. Bottom Museum Provenance Banner -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #ffffff; padding: 2.5px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
           <span><strong>Primary Visual Evidence:</strong> <em>Sketch &amp; Description of the Settlement at Sydney Cove</em> &bull; Francis Fowkes (1788)</span>
           <span style="font-weight: 700; color: #93c5fd; white-space: nowrap;">STATE LIBRARY OF NEW SOUTH WALES &bull; SYDNEY</span>
         </div>
@@ -1341,7 +1347,7 @@ function compileAustraliaWorkbook() {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.2px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 1: Captain Cook, Tupaia &amp; Terra Nullius (1768–1770)
                 </div>
@@ -1357,7 +1363,7 @@ function compileAustraliaWorkbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.2px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 2: The First Fleet &amp; Convict Penal Colony (1783–1792)
                 </div>
@@ -1373,7 +1379,7 @@ function compileAustraliaWorkbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.2px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 3: Frontier Warfare: Smallpox, Bennelong &amp; Pemulwuy (1788–1802)
                 </div>
@@ -1389,7 +1395,7 @@ function compileAustraliaWorkbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.2px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 4: The Frontier Wars, Pastoralism &amp; The Black War (1803–1840)
                 </div>
@@ -1405,7 +1411,7 @@ function compileAustraliaWorkbook() {
               </td>
             </tr>
             <tr>
-              <td style="padding: 6.2px 8px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 7.2px 8px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.6pt; font-weight: 800; color: #0f284e; line-height: 1.20;">
                   Enquiry 5: The Gold Rush, Eureka Stockade &amp; Legacy (1851–1901)
                 </div>
@@ -1944,6 +1950,24 @@ async function main() {
       left: '0mm',
     },
   });
+
+  const coverElem = await page.$('#page-1');
+  if (coverElem) {
+    const previewPath = path.join(
+      ROOT_DIR,
+      'public',
+      'images',
+      'australia_cover_redesign_preview.png',
+    );
+    await coverElem.screenshot({ path: previewPath });
+    const artifactDest = path.join(
+      'C:\\Users\\fives\\.gemini\\antigravity-ide\\brain\\3b641322-c353-4e66-858d-2203cdb22b36',
+      'australia_cover_redesign_preview.png',
+    );
+    try {
+      fs.copyFileSync(previewPath, artifactDest);
+    } catch (_) {}
+  }
 
   await browser.close();
   console.log(`[OK] Single canonical PDF compiled: ${outPdfPath}`);
