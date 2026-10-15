@@ -293,6 +293,17 @@ All GCSE revision materials (Visual Revision Guides, Mastery Exam Practice Packs
      - **Pillar 3:** Knowledge Retrieval Quiz Pack (`<unit>_recall_quiz_FULL.pdf` / `<unit>_recall_quiz_pack_FULL.pdf`)
    - Split PDFs (by Key Topic or section) are strictly forbidden in public distributions.
 
+## Universal 3-Tier Cognitive Difficulty Ramp for Quiz Packs (The "Quiz Pack Standard")
+STRICT RULE: All knowledge retrieval booklets MUST be termed **"Quiz Packs"** and MUST strictly implement the **3-Tier Cognitive Difficulty Ramp**:
+1. **Universal Naming Convention:** Always refer to and title these resources as **"Quiz Packs"** (never "quiz booklets" or "recall packs").
+2. **Mandatory 3-Tier Cognitive Progression:** Every enquiry question set (typically 8–10 questions) must progress systematically through three difficulty tiers with color-coded symbol pips:
+   - **Tier 1 (Q1–Q4 • 1 Green Pip `▸` `#047857`):** *Core Substantive Recall (Foundation / Level 4).* Direct specification retrieval: names, dates, key acts, treaties, named individuals, definitions.
+   - **Tier 2 (Q5–Q7 • 2 Amber Pips `▸▸` `#b45309`):** *Causal Mechanism & Explanation (Intermediate / Grades 5–7).* Historical causation and consequence: motives, why policies were adopted, tensions, reactions.
+   - **Tier 3 (Q8–Q10 • 3 Crimson Pips `▸▸▸` `#b91c1c`):** *Synoptic Significance & Historical Evaluation (Higher / Grades 8–9).* Long-term turning points, relative significance, precedent, historical verdicts.
+3. **Discreet Header Legend:** Every question page must feature a compact progression legend strip (`[ ▸ Tier 1 (Q1–4): Core Recall • ▸▸ Tier 2 (Q5–7): Causal Mechanism • ▸▸▸ Tier 3 (Q8–10): Synoptic Significance ]`) positioned above the question block so pupils clearly understand the cognitive hierarchy without reducing handwriting space.
+4. **Synchronized Marking Banks:** Every model answer in the rear Marking Bank must display the identical color-coded pip badge (`.mb-pip`) to facilitate targeted DIRT triage and student self-diagnosis.
+5. **Universal Conversion Mandate:** All existing and newly developed Quiz Packs across both KS3 and GCSE must be upgraded/converted to this 3-tier pip standard.
+
 ## Classroom Delivery Roadmap Standard (2-Lesson Enquiry Choreography)
 Whenever authoring, enriching, or refactoring curriculum data (`data.js` or `data.json`) for any lesson across Key Stage 3 and GCSE:
 1. **Mandatory `delivery_plan` in `teacher_notes`:** You MUST automatically include a structured `delivery_plan` object inside `teacher_notes`.

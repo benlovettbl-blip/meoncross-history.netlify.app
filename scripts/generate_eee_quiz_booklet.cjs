@@ -821,6 +821,20 @@ const QUIZ_DATA = [
   },
 ];
 
+// Helper to render micro-pips for 10-question GCSE Quiz Packs:
+// Q1–Q4 (idx 0–3): Tier 1 (Core Substantive Recall - Foundation / Level 4) -> 1 pip (Green)
+// Q5–Q7 (idx 4–6): Tier 2 (Causal Mechanism & Consequence - Intermediate / Grades 5–7) -> 2 pips (Amber)
+// Q8–Q10 (idx 7–9): Tier 3 (Synoptic Significance & Judgment - Higher / Grades 8–9) -> 3 pips (Crimson)
+function getPipBadge(idx) {
+  if (idx < 4) {
+    return '<span class="pip-badge pip-t1" title="Tier 1: Core Substantive Recall (Foundation / Level 4)">&#9658;</span>';
+  } else if (idx < 7) {
+    return '<span class="pip-badge pip-t2" title="Tier 2: Causal Mechanism &amp; Explanation (Grades 5–7)">&#9658;&#9658;</span>';
+  } else {
+    return '<span class="pip-badge pip-t3" title="Tier 3: Synoptic Significance &amp; Evaluation (Grades 8–9)">&#9658;&#9658;&#9658;</span>';
+  }
+}
+
 // Helper to generate a single lesson question page (Pages 2–13)
 function renderLessonQuestionPage(lesson, pageNum) {
   const qrUrl = `https://thehistorydepartment.org/units/eee/?lesson=${lesson.lessonId}`;
@@ -829,10 +843,14 @@ function renderLessonQuestionPage(lesson, pageNum) {
   const questionsHtml = lesson.questions
     .map((item, idx) => {
       const qNum = idx + 1;
+      const pip = getPipBadge(idx);
       return `
       <div class="q-block">
         <div class="q-stem">
-          <span class="q-num">${qNum}.</span>
+          <div class="q-num-box">
+            <span class="q-num">${qNum}.</span>
+            <span class="q-pips">${pip}</span>
+          </div>
           <span class="q-text">${item.q}</span>
         </div>
         <div class="q-lines">
@@ -851,6 +869,13 @@ function renderLessonQuestionPage(lesson, pageNum) {
           <div class="spec-pill">${lesson.kt} &bull; EDEXCEL GCSE HISTORY</div>
           <h2 class="lesson-header-title">${lesson.lessonNum}. ${lesson.title}</h2>
           <div class="lesson-enquiry-subtitle">${lesson.enquiry}</div>
+          <div class="tier-legend-strip">
+            <span class="tier-legend-item"><span class="pip-badge pip-t1">&#9658;</span> <strong>Tier 1 (Q1–4):</strong> Core Recall</span>
+            <span class="tier-sep">&bull;</span>
+            <span class="tier-legend-item"><span class="pip-badge pip-t2">&#9658;&#9658;</span> <strong>Tier 2 (Q5–7):</strong> Causal Mechanism</span>
+            <span class="tier-sep">&bull;</span>
+            <span class="tier-legend-item"><span class="pip-badge pip-t3">&#9658;&#9658;&#9658;</span> <strong>Tier 3 (Q8–10):</strong> Synoptic Significance (Grade 8–9)</span>
+          </div>
         </div>
         <div class="header-right">
           <div class="qr-container">
@@ -885,6 +910,7 @@ function renderMarkingBankPage(ktTitle, lessons, pageNum) {
           (item, idx) => `
       <div class="mb-item">
         <span class="mb-qnum">Q${idx + 1}.</span>
+        <span class="mb-pip">${getPipBadge(idx)}</span>
         <strong class="mb-ans">${item.a}</strong>
         <span class="mb-exp">${item.exp}</span>
       </div>
@@ -1103,13 +1129,23 @@ function generateBookletHtml() {
       min-height: 0;
     }
     .cover-table-title {
-      font-size: 8.5pt;
+      font-size: 8.2pt;
       font-weight: 800;
       color: #1e3a8a;
       text-transform: uppercase;
       letter-spacing: 0.8px;
       margin-bottom: 4px;
       text-align: left;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-tier-badge {
+      font-size: 6.8pt;
+      font-weight: 700;
+      color: #475569;
+      letter-spacing: 0.2px;
+      text-transform: none;
     }
     .tracking-table {
       width: 100%;
@@ -1246,11 +1282,53 @@ function generateBookletHtml() {
       line-height: 1.22;
       margin-bottom: 2px;
     }
+    /* Header Tier Legend */
+    .tier-legend-strip {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 3px;
+      font-size: 6.8pt;
+      color: #334155;
+    }
+    .tier-legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .tier-sep {
+      color: #94a3b8;
+      font-size: 6pt;
+    }
+
+    /* Pips & Difficulty Tier System */
+    .q-num-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      min-width: 38px;
+      flex-shrink: 0;
+    }
     .q-num {
       color: #1e3a8a;
       font-weight: 900;
-      min-width: 18px;
+      font-size: 10.2pt;
     }
+    .q-pips {
+      display: inline-flex;
+      align-items: center;
+      line-height: 1;
+    }
+    .pip-badge {
+      font-size: 6.5pt;
+      line-height: 1;
+      letter-spacing: -0.5px;
+      font-weight: 900;
+    }
+    .pip-t1 { color: #047857; }
+    .pip-t2 { color: #b45309; }
+    .pip-t3 { color: #b91c1c; }
+
     .q-text {
       flex: 1;
     }
@@ -1258,7 +1336,7 @@ function generateBookletHtml() {
       display: flex;
       flex-direction: column;
       gap: 6px;
-      padding-left: 23px;
+      padding-left: 38px;
     }
     .write-line {
       display: flex;
@@ -1383,6 +1461,15 @@ function generateBookletHtml() {
       color: #047857;
       margin-right: 2px;
     }
+    .mb-pip {
+      margin-right: 3px;
+      display: inline-flex;
+      align-items: center;
+      vertical-align: middle;
+    }
+    .mb-pip .pip-badge {
+      font-size: 5.5pt;
+    }
     .mb-ans {
       color: #0f172a;
       font-weight: 800;
@@ -1433,7 +1520,10 @@ function generateBookletHtml() {
     </div>
 
     <div class="tracking-table-container">
-      <div class="cover-table-title">Formative Assessment Tracking Ledger (12 Enquiries &bull; 120 Questions)</div>
+      <div class="cover-table-title">
+        <span>Formative Assessment Tracking Ledger (12 Enquiries &bull; 120 Questions)</span>
+        <span class="cover-tier-badge">Cognitive Progression: <strong style="color: #047857;">&#9658; Tier 1 Core</strong> &bull; <strong style="color: #b45309;">&#9658;&#9658; Tier 2 Causal</strong> &bull; <strong style="color: #b91c1c;">&#9658;&#9658;&#9658; Tier 3 Synoptic</strong></span>
+      </div>
       <table class="tracking-table">
         <thead>
           <tr>

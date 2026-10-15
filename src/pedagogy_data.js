@@ -616,4 +616,53 @@ export const PEDAGOGY_RESEARCH_BANK = [
       },
     ],
   },
+  {
+    id: 'tiered_recall_pip_progression',
+    author: 'Dylan Wiliam & John Sweller',
+    affiliation: 'UCL Institute of Education & University of New South Wales',
+    category: 'Cognitive Science & Assessment',
+    categoryBadge: 'badge-amber',
+    title:
+      'The 3-Tier Cognitive Ramp: Scaffolding Recall from Direct Retrieval to Synoptic Evaluation',
+    subtitle:
+      'Preventing Mixed-Ability Retrieval Collapse via Color-Coded Micro-Pip Difficulty Progression',
+    overview:
+      'Traditional flat recall quizzes either frustrate lower-attaining pupils by demanding complex causal reasoning prematurely or under-challenge high-attaining pupils with basic factual definitions. Dylan Wiliam and cognitive load theory (Sweller, 1988) demonstrate that retrieval practice is most effective when explicitly tiered: securing core substantive schema (names, dates, acts) first before escalating to intermediate causal mechanisms and high-level synoptic evaluation.',
+    analysisHeading: 'The Classroom Dilemma',
+    analysisText:
+      'When teachers deliver un-tiered recall tests, lower-attaining and SEND pupils often disengage after question 2 or 3 because complex causal questions ("Explain why...") are mixed indiscriminately with direct recall ("What year was..."). Simultaneously, higher-ability students perceive recall drills as low-level busywork that fails to stretch them toward Grade 8–9 evaluative thinking.',
+    evidenceHeading: 'What the Evidence Proves',
+    evidenceText:
+      'Wiliam & Black (1998) show that formative assessment must provide clear, incremental progression horizons so all pupils experience authentic self-efficacy. Sweller’s Cognitive Load Theory demonstrates that automated retrieval of foundational schema (Tier 1) frees working memory for analytical problem-solving (Tier 2/3). Roediger & Karpicke (2006) on the Testing Effect prove that tiered retrieval consolidates memory pathways far more robustly when pupils are guided through graduated levels of cognitive challenge.',
+    applicationHeading: 'Revision Hub Architecture: Quiz Pack 3-Tier Pip Standard',
+    implementation: [
+      'Universal 3-Tier Micro-Pip Architecture: Every 10-question enquiry in departmental Quiz Packs is strictly stratified into Tier 1 (Q1–4: Core Substantive Recall • 1 green pip ▸), Tier 2 (Q5–7: Causal Mechanism • 2 amber pips ▸▸), and Tier 3 (Q8–10: Synoptic Significance • 3 crimson pips ▸▸▸).',
+      'Discreet Header Legend: Each question page features an unobtrusive progression key so pupils recognize the cognitive demand of each question without consuming writing space.',
+      'Marking Bank Synchronisation: Model answers on pages 14–16 display identical colour-coded pips, allowing immediate diagnostic DIRT: pupils identify whether errors stem from foundational knowledge gaps (Tier 1) or disciplinary explanation (Tier 2/3).',
+      'Handwriting Space Protection: Pips sit compactly alongside the question number in a dedicated .q-num-box, preserving a generous 22px ruled line height and 6px line gap.',
+    ],
+    protocolHeading: 'Practical Classroom Protocol for History Teachers',
+    teacherProtocols: [
+      '1. Low-Stakes Diagnostic Warm-Up: Allocate 4 minutes for all pupils to secure Tier 1 (Q1–4). SEND and lower-attaining pupils focus entirely on locking in these core facts.',
+      '2. Staged Challenge Extension: Instruct mid-attaining pupils to advance through Tier 2 (Q5–7), requiring them to substantiate "how" and "why". Direct high-attainers to prioritize Tier 3 (Q8–10) evaluative precision.',
+      '3. Targeted DIRT Triage: During green-pen marking with the Marking Bank, pupils tabulate their scores by tier: failing Tier 1 triggers targeted flashcard drill; failing Tier 3 triggers causal connective and evaluative scaffolding.',
+    ],
+    citations: [
+      "Black, P., & Wiliam, D. (1998). Inside the Black Box: Raising Standards Through Classroom Assessment. King's College London.",
+      'Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. Cognitive Science, 12(2), pp. 257–285.',
+      'Roediger, H. L., & Karpicke, J. D. (2006). The Power of Testing Memory: Basic Research and Implications for Practice. Perspectives on Psychological Science, 1(3), pp. 181–210.',
+    ],
+    links: [
+      {
+        title: 'Dylan Wiliam: Embedded Formative Assessment',
+        url: 'https://www.dylanwiliam.org/',
+        displayText: 'www.dylanwiliam.org/',
+      },
+      {
+        title: 'Cognitive Load Theory: Research and Applications (Sweller)',
+        url: 'https://www.instructionaldesign.org/theories/cognitive-load/',
+        displayText: 'www.instructionaldesign.org/theories/cognitive-load/',
+      },
+    ],
+  },
 ];
