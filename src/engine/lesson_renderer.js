@@ -1059,9 +1059,7 @@ function renderCausalDominoSpine(spine) {
             <div class="domino-content-model" style="font-size: 0.78rem; color: #713f12; line-height: 1.35;">
               ${s.because}
             </div>
-            <div class="domino-content-practice" style="display: none; font-size: 0.76rem; color: #854d0e; font-style: italic; line-height: 1.35;">
-              <span style="display: inline-block; background: #fef08a; padding: 1px 4px; border-radius: 3px; font-weight: 700; font-size: 0.7rem; margin-bottom: 2px;">✍️ Class Prompt:</span> Why did this actor act? Record motive...
-            </div>
+            
           </div>
 
           <!-- Row 3: The 'Therefore' (Consequence) -->
@@ -1072,17 +1070,10 @@ function renderCausalDominoSpine(spine) {
             <div class="domino-content-model" style="font-size: 0.78rem; color: #14532d; line-height: 1.35;">
               ${s.therefore}
             </div>
-            <div class="domino-content-practice" style="display: none; font-size: 0.76rem; color: #166534; font-style: italic; line-height: 1.35;">
-              <span style="display: inline-block; background: #bbf7d0; padding: 1px 4px; border-radius: 3px; font-weight: 700; font-size: 0.7rem; margin-bottom: 2px;">✍️ Class Prompt:</span> What did this trigger next? Record result...
-            </div>
+            
           </div>
 
-          <!-- Interactive Per-Card Reveal in Practice Mode -->
-          <div class="domino-card-reveal-btn" style="display: none; margin-bottom: 8px;">
-            <button type="button" class="btn-reveal-stage" onclick="window.revealSingleStage(${s.step})" id="btn-reveal-stage-${s.step}" style="width: 100%; padding: 4px 6px; font-size: 0.72rem; font-weight: 700; background: #0284c7; color: #ffffff; border: none; border-radius: 4px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
-              <i class="fa-solid fa-eye"></i> Reveal Stage ${s.step} Model
-            </button>
-          </div>
+          
 
           <!-- Connective Step Banner -->
           ${
@@ -1159,14 +1150,6 @@ function renderCausalDominoSpine(spine) {
 
         <!-- Mode Toggle & Copy Actions -->
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-          <div class="view-mode-toggle" style="background: #1e293b; padding: 3px; border-radius: 6px; display: inline-flex; border: 1px solid #334155; gap: 3px;">
-            <button type="button" class="btn-domino-mode active" onclick="window.switchDominoMode('model')" id="domino-btn-model" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 800; border-radius: 4px; border: none; cursor: pointer; background: #0284c7; color: #ffffff; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.2);">
-              <i class="fa-solid fa-eye"></i> Completed Model
-            </button>
-            <button type="button" class="btn-domino-mode" onclick="window.switchDominoMode('practice')" id="domino-btn-practice" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 800; border-radius: 4px; border: none; cursor: pointer; background: transparent; color: #94a3b8; display: inline-flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-pen-nib"></i> Student Practice
-            </button>
-          </div>
           <button type="button" onclick="window.copyDominoNotes()" id="btn-copy-domino" style="padding: 6px 12px; font-size: 0.74rem; font-weight: 700; background: #334155; color: #f8fafc; border: 1px solid #475569; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s ease;" title="Copy all 5 stages as text notes to paste into your book/OneNote">
             <i class="fa-solid fa-copy"></i> Copy Notes
           </button>
@@ -1533,9 +1516,6 @@ function renderLessonNoteScaffold(lesson, unitId) {
           <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Active Reading Notes &bull; 3 Core Enquiries</span>
         </span>
         <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
-          <button type="button" id="btn-note-scaffold-quiz-mode" onclick="window.toggleNoteScaffoldQuizMode('${lessonId}', event);" style="font-size: 0.82rem; padding: 3px 9px; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 700;">
-            <i class="fa-solid fa-graduation-cap"></i> <span id="note-scaffold-quiz-label">Self-Quiz Mode</span>
-          </button>
           <button type="button" onclick="window.copyNoteScaffoldToClipboard('${lessonId}', event);" id="btn-copy-notes-${lessonId}" style="font-size: 0.82rem; padding: 3px 9px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; font-weight: 700;" title="Copy notes to clipboard">
             <i class="fa-solid fa-copy"></i> <span id="copy-notes-label-${lessonId}">Copy Notes</span>
           </button>
@@ -4242,7 +4222,10 @@ export function renderLesson(lesson) {
       });
     }
 
-    if (isCme && (lesson.timeline_anchor || lesson.causal_domino_spine)) {
+    if (
+      (isCme || unitId === 'great_war' || isKs3) &&
+      (lesson.timeline_anchor || lesson.causal_domino_spine)
+    ) {
       const stages =
         lesson.causal_domino_spine && Array.isArray(lesson.causal_domino_spine.stages)
           ? lesson.causal_domino_spine.stages
@@ -4286,30 +4269,24 @@ export function renderLesson(lesson) {
         <details id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;" open>
           <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
             <span style="display: flex; align-items: center; gap: 10px;">
-              <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Core Task</span>
-              <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Chronology & Causal Domino Spine &bull; Key Turning Points</span>
+              <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Chronology Spine</span>
+              <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Key Turning Points &bull; Causal Dominoes</span>
             </span>
             <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
+              ${
+                !isKs3
+                  ? `
               <button type="button" id="btn-toggle-all-causal" onclick="window.toggleAllCausalSpineDrawers();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
                 <i class="fa-solid fa-code-branch"></i> <span id="toggle-causal-label">Expand Causal Analysis</span>
-              </button>
-              <button type="button" id="btn-cme-quiz-mode" onclick="window.toggleCmeSpineQuizMode();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; transition: all 0.15s ease;">
-                <i class="fa-solid fa-graduation-cap"></i> <span id="cme-quiz-label">Self-Quiz Mode</span>
-              </button>
+              </button>`
+                  : ''
+              }
               <span style="font-size: 0.76rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
+              <button type="button" onclick="window.copyDominoNotes();" style="padding: 4px 10px; font-size: 0.74rem; font-weight: 700; background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Copy 5-stage notes">
+                <i class="fa-solid fa-copy"></i> Copy Notes
+              </button>
             </div>
           </summary>
-          <div id="cme-quiz-subbar" style="display: none; padding: 8px 18px; background: #fefce8; border-bottom: 1px solid #fef08a; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px;">
-            <div style="display: flex; align-items: center; gap: 8px; font-size: 0.76rem; color: #854d0e; font-weight: 700;">
-              <i class="fa-solid fa-lightbulb" style="color: #ca8a04;"></i>
-              <span><strong>Active Recall Starter / Exit Ticket:</strong> Motives and consequences are masked. Click any masked prompt to test recall before revealing!</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <button type="button" id="btn-reveal-all-quiz" onclick="window.revealAllCmeQuizBlanks();" style="padding: 3px 9px; font-size: 0.72rem; font-weight: 700; background: #ffffff; color: #854d0e; border: 1px solid #fde047; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
-                <i class="fa-solid fa-eye"></i> Reveal All
-              </button>
-            </div>
-          </div>
           <div class="cme-chronology-spine-grid" style="padding: 16px 14px 14px 14px; display: grid; grid-template-columns: repeat(${spineItems.length}, minmax(0, 1fr)); gap: 14px; background: #ffffff; box-sizing: border-box;">
             ${spineItems
               .map((item, idx) => {
@@ -4352,10 +4329,36 @@ export function renderLesson(lesson) {
                   </div>
                 </div>
 
-                <!-- Causal Analysis Drawer (Starts at exact same baseline across all cards) -->
+                <!-- Causal Analysis Zone -->
                 ${
                   item.because || item.therefore
-                    ? `
+                    ? isKs3
+                      ? `
+                <div class="cme-causal-static-zone" style="border-top: 1px dashed #cbd5e1; padding: 8px 10px; background: #fafafa; display: flex; flex-direction: column; gap: 6px;">
+                  ${
+                    item.because
+                      ? `
+                  <div style="background: #fffbeb; border: 1px solid #fef08a; border-left: 3px solid #eab308; border-radius: 4px; padding: 6px 8px; font-size: 0.70rem; line-height: 1.35;">
+                    <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.60rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">
+                      <i class="fa-solid fa-lightbulb"></i> Motive (Why):
+                    </strong>
+                    <div style="color: #713f12;">${item.because}</div>
+                  </div>`
+                      : ''
+                  }
+                  ${
+                    item.therefore
+                      ? `
+                  <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 3px solid #22c55e; border-radius: 4px; padding: 6px 8px; font-size: 0.70rem; line-height: 1.35;">
+                    <strong style="color: #166534; text-transform: uppercase; font-size: 0.60rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">
+                      <i class="fa-solid fa-arrow-trend-up"></i> Consequence (Result):
+                    </strong>
+                    <div style="color: #14532d;">${item.therefore}</div>
+                  </div>`
+                      : ''
+                  }
+                </div>`
+                      : `
                 <details class="cme-causal-drawer" style="border-top: 1px dashed #cbd5e1; padding: 6px 8px 8px 8px; background: #fafafa; border-radius: 0;">
                   <summary style="font-size: 0.68rem; font-weight: 700; color: #0369a1; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; padding: 2px 2px;">
                     <span><i class="fa-solid fa-code-branch" style="font-size: 0.62rem;"></i> Causal Analysis</span>
@@ -4369,10 +4372,7 @@ export function renderLesson(lesson) {
                       <strong style="color: #854d0e; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">
                         <i class="fa-solid fa-lightbulb"></i> Motive:
                       </strong>
-                      <div class="cme-quiz-target" data-quiz-type="motive" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
-                        <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Motive</span>
-                        <span class="cme-quiz-content" style="color: #713f12;">${item.because}</span>
-                      </div>
+                      <div style="color: #713f12;">${item.because}</div>
                     </div>`
                         : ''
                     }
@@ -4383,10 +4383,7 @@ export function renderLesson(lesson) {
                       <strong style="color: #166534; text-transform: uppercase; font-size: 0.62rem; display: block; margin-bottom: 2px; letter-spacing: 0.4px;">
                         <i class="fa-solid fa-arrow-trend-up"></i> Consequence:
                       </strong>
-                      <div class="cme-quiz-target" data-quiz-type="result" onclick="window.revealQuizTarget(this, event);" title="Click to test recall">
-                        <span class="cme-quiz-mask"><i class="fa-solid fa-lightbulb"></i> Click to Reveal Result</span>
-                        <span class="cme-quiz-content" style="color: #14532d;">${item.therefore}</span>
-                      </div>
+                      <div style="color: #14532d;">${item.therefore}</div>
                     </div>`
                         : ''
                     }
@@ -4399,14 +4396,23 @@ export function renderLesson(lesson) {
                 ${
                   item.connective
                     ? `
-                <div class="cme-domino-spark-footer ${isLast ? 'cme-spark-climax' : ''}" style="padding: 7px 9px; background: ${isLast ? '#ecfdf5' : '#eff6ff'}; border-top: 1.5px solid ${isLast ? '#a7f3d0' : '#bfdbfe'}; border-radius: 0 0 7px 7px; font-size: 0.68rem; line-height: 1.35; margin-top: auto;">
+                <div class="cme-domino-spark-footer ${isLast ? 'cme-spark-climax' : ''}" style="padding: 7px 9px; background: ${isLast ? '#ecfdf5' : '#eff6ff'}; border-top: 1.5px solid ${isLast ? '#a7f3d0' : '#bfdbfe'}; border-radius: 0; font-size: 0.68rem; line-height: 1.35; margin-top: auto;">
                   <div style="font-weight: 800; text-transform: uppercase; font-size: 0.60rem; letter-spacing: 0.5px; color: ${isLast ? '#047857' : '#1d4ed8'}; margin-bottom: 2px; display: flex; align-items: center; gap: 4px;">
-                    <i class="fa-solid ${isLast ? 'fa-flag-checkered' : 'fa-bolt'}"></i>
-                    <span>${isLast ? 'Causal Climax & Spec Impact' : `Causal Domino Spark &rarr; Stage ${item.step + 1}`}</span>
+                    <i class="fa-solid ${isLast ? 'fa-flag-checkered' : 'fa-arrow-right'}"></i>
+                    <span>${isLast ? 'Enquiry Outcome' : `Domino Link &rarr; Stage ${item.step + 1}`}</span>
                   </div>
                   <div style="color: ${isLast ? '#065f46' : '#1e40af'}; font-weight: 600;">
                     ${item.connective}
                   </div>
+                </div>`
+                    : ''
+                }
+
+                ${
+                  item.exam_link
+                    ? `
+                <div style="border-top: 1px solid #e2e8f0; padding: 6px 9px; font-size: 0.66rem; font-weight: 700; color: #475569; background: #f8fafc; border-radius: 0 0 7px 7px;">
+                  <i class="fa-solid fa-bullseye" style="color: #dc2626; margin-right: 4px;"></i>${item.exam_link}
                 </div>`
                     : ''
                 }
@@ -4417,7 +4423,7 @@ export function renderLesson(lesson) {
 
             <div style="grid-column: 1 / -1; margin-top: 6px; padding-top: 8px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; font-size: 0.75rem; color: #475569;">
               <span>
-                <i class="fa-solid fa-graduation-cap" style="color: #0284c7;"></i> <strong>Edexcel Paper 2 Narrative Framework:</strong> Track how each stage's <em>consequence</em> directly sparks the next stage's <em>trigger</em> to write high-scoring 8-mark explanations.
+                <i class="fa-solid fa-graduation-cap" style="color: #0284c7;"></i> ${isKs3 ? "<strong>Chronology &amp; Causation Framework:</strong> Track how each milestone's <em>consequence</em> directly sparks the next stage's <em>trigger</em> to master multi-causal essay explanations." : "<strong>Edexcel Paper 2 Narrative Framework:</strong> Track how each stage's <em>consequence</em> directly sparks the next stage's <em>trigger</em> to write high-scoring 8-mark explanations."}
               </span>
               <button type="button" onclick="window.copyDominoNotes();" style="padding: 3px 8px; font-size: 0.72rem; font-weight: 700; background: #f8fafc; color: #334155; border: 1px solid #cbd5e1; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
                 <i class="fa-solid fa-copy"></i> Copy 5-Stage Causal Notes
