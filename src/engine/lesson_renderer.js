@@ -2858,7 +2858,7 @@ export function renderLesson(lesson) {
               }
               ${
                 lesson.causal_domino_spine
-                  ? `<button class="btn btn-causal-spine-jump" onclick="const sp = document.getElementById('${isCme ? 'lesson-chronology-spine' : 'causal-domino-scaffold'}'); if(sp) { sp.open = true; sp.scrollIntoView({ behavior: 'smooth' }); }" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Domino Spine"><i class="fa-solid ${isCme ? 'fa-clock-rotate-left' : 'fa-diagram-project'}" style="color: #ca8a04;"></i> ${isCme ? 'Core Causal Task' : 'Causal Domino Scaffold'}</button>`
+                  ? `<button class="btn btn-causal-spine-jump" onclick="const sp = document.getElementById('lesson-chronology-spine') || document.getElementById('causal-domino-scaffold'); if(sp) { sp.open = true; sp.scrollIntoView({ behavior: 'smooth' }); }" style="padding: 6px 12px; font-size: 0.88rem; background: #fefce8; color: #854d0e; border: 1.5px solid #fde047; font-weight: 700; border-radius: 6px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); display: inline-flex; align-items: center; gap: 6px; cursor: pointer;" title="Jump directly to the Chronology & Causal Domino Spine"><i class="fa-solid fa-clock-rotate-left" style="color: #ca8a04;"></i> Chronology Spine</button>`
                   : ''
               }
               ${
@@ -4223,7 +4223,7 @@ export function renderLesson(lesson) {
     }
 
     if (
-      (isCme || unitId === 'great_war' || isKs3) &&
+      (isCme || unitId === 'great_war' || isKs3 || lesson.causal_domino_spine) &&
       (lesson.timeline_anchor || lesson.causal_domino_spine)
     ) {
       const stages =
@@ -4241,12 +4241,13 @@ export function renderLesson(lesson) {
           step: s.step || i + 1,
           date: s.date || '',
           title: s.title || '',
-          desc: s.trigger || '',
+          desc: s.trigger || s.desc || '',
           actor: s.actor || '',
           tag: s.tag || '',
           because: s.because || '',
           therefore: s.therefore || '',
           connective: s.connective || '',
+          question: s.question || s.workbook_question || '',
           exam_link: s.exam_link || '',
         }));
       } else if (anchors.length > 0) {
@@ -4260,6 +4261,7 @@ export function renderLesson(lesson) {
           because: '',
           therefore: '',
           connective: '',
+          question: '',
           exam_link: '',
         }));
       }
@@ -4270,7 +4272,7 @@ export function renderLesson(lesson) {
           <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
             <span style="display: flex; align-items: center; gap: 10px;">
               <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Chronology Spine</span>
-              <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Key Turning Points &bull; 5 Milestones</span>
+              <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Key Turning Points &amp; Causal Dominoes</span>
             </span>
             <div style="display: flex; align-items: center; gap: 10px;">
               <span style="font-size: 0.74rem; font-weight: 700; color: #475569; background: #e2e8f0; padding: 2px 8px; border-radius: 12px;">${spineItems.length} Milestones</span>
@@ -4282,7 +4284,7 @@ export function renderLesson(lesson) {
               .map((item, idx) => {
                 const isLast = idx === spineItems.length - 1;
                 return `
-              <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 4px solid ${isLast ? '#10b981' : '#0284c7'}; border-radius: 8px; display: flex; flex-direction: column; justify-content: space-between; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative; overflow: visible;">
+              <div class="cme-spine-card" data-stage="${item.step}" style="background: #ffffff; border: 1.2px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; display: flex; flex-direction: column; min-width: 0; box-sizing: border-box; box-shadow: 0 1px 3px rgba(0,0,0,0.03); position: relative; overflow: visible; padding: 10px 10px 8px 10px;">
                 ${
                   !isLast
                     ? `
@@ -4292,13 +4294,13 @@ export function renderLesson(lesson) {
                     : ''
                 }
                 
-                <!-- Equalized Baseline Narrative Zone (Row 1) -->
-                <div class="cme-spine-narrative-zone" style="padding: 10px 10px 8px 10px; display: flex; flex-direction: column; box-sizing: border-box;">
+                <!-- Baseline Narrative Zone (Row 1) -->
+                <div class="cme-spine-narrative-zone" style="display: flex; flex-direction: column; flex: 1; box-sizing: border-box;">
                   <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
-                    <span style="background: ${isLast ? '#047857' : '#0f172a'}; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
+                    <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
                       STAGE ${item.step}
                     </span>
-                    <span style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 800; color: ${isLast ? '#059669' : '#0284c7'}; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
+                    <span style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
                   </div>
 
                   ${
@@ -4314,46 +4316,41 @@ export function renderLesson(lesson) {
                     ${item.title}
                   </h5>
 
+                  ${
+                    item.question
+                      ? `
+                  <div class="cme-spine-question" style="font-size: 0.74rem; font-weight: 700; color: #0369a1; font-style: italic; line-height: 1.35; margin-bottom: 6px;">
+                    ${item.question}
+                  </div>`
+                      : ''
+                  }
+
                   <div class="cme-spine-desc" style="font-size: 0.74rem; color: #334155; line-height: 1.38; margin-bottom: 6px;">
                     ${item.desc}
                   </div>
                 </div>
 
-                <!-- Option 1: Clean Causal Impact Micro-Drawer -->
+                <!-- Collapsible Causal Drawer (Arrow only, reveals consequence) -->
                 ${
-                  item.because || item.therefore || item.connective
+                  item.connective
                     ? `
-                <details class="causal-impact-drawer" style="margin: 0 8px 8px 8px; border-top: 1px dashed #cbd5e1; padding-top: 6px;">
-                  <summary style="font-size: 0.70rem; font-weight: 700; color: #0284c7; cursor: pointer; user-select: none; list-style: none; display: flex; align-items: center; justify-content: space-between; padding: 4px 8px; background: #f0f9ff; border-radius: 4px; border: 1px solid #bae6fd; transition: background 0.15s ease;">
-                    <span><i class="fa-solid fa-code-branch" style="font-size: 0.62rem; margin-right: 4px;"></i> Causal Impact</span>
-                    <span style="font-size: 0.65rem; color: #0284c7;">▾</span>
+                <details class="cme-spine-causal-drawer" style="margin-top: auto; padding-top: 8px;">
+                  <summary style="cursor: pointer; user-select: none; display: flex; align-items: center; justify-content: space-between; font-size: 0.72rem; font-weight: 700; color: #1d4ed8; background: #eff6ff; padding: 4px 8px; border-radius: 4px; border: 1px solid #bfdbfe; transition: all 0.15s ease;">
+                    <span style="display: inline-flex; align-items: center; gap: 6px;">
+                      <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+                    <i class="fa-solid fa-chevron-down drawer-chevron" style="font-size: 0.62rem; color: #3b82f6;"></i>
                   </summary>
-                  <div style="margin-top: 6px; padding: 7px 9px; background: #fafafa; border: 1px solid #e2e8f0; border-radius: 4px; font-size: 0.72rem; line-height: 1.4; color: #334155;">
-                    ${item.because ? `<p style="margin: 0 0 5px 0;"><strong>Why:</strong> ${item.because}</p>` : ''}
-                    ${item.therefore ? `<p style="margin: 0 0 ${item.connective ? '5px' : '0'};"><strong>Result:</strong> ${item.therefore}</p>` : ''}
-                    ${item.connective ? `<div style="padding-top: 5px; border-top: 1px dashed #e2e8f0; font-weight: 600; color: ${isLast ? '#047857' : '#1d4ed8'}; font-size: 0.68rem;"><i class="fa-solid ${isLast ? 'fa-flag-checkered' : 'fa-arrow-right'}" style="margin-right: 4px;"></i> ${item.connective}</div>` : ''}
+                  <div style="margin-top: 6px; font-size: 0.73rem; color: #1e3a8a; line-height: 1.38; background: #f8fafc; padding: 6px 8px; border-radius: 4px; border: 1px solid #dbeafe; border-left: 3px solid #2563eb;">
+                    ${item.connective}
                   </div>
                 </details>`
-                    : ''
-                }
-
-                ${
-                  item.exam_link
-                    ? `
-                <div style="border-top: 1px solid #e2e8f0; padding: 5px 8px; font-size: 0.66rem; font-weight: 700; color: #475569; background: #f8fafc; border-radius: 0 0 7px 7px; margin-top: auto;">
-                  <i class="fa-solid fa-bullseye" style="color: #dc2626; margin-right: 4px;"></i>${item.exam_link}
-                </div>`
                     : ''
                 }
               </div>
               `;
               })
               .join('')}
-
-            <div style="grid-column: 1 / -1; margin-top: 4px; padding-top: 8px; border-top: 1px dashed #cbd5e1; font-size: 0.74rem; color: #64748b; display: flex; align-items: center; gap: 6px;">
-              <i class="fa-solid fa-graduation-cap" style="color: #0284c7;"></i>
-              <span>${isKs3 ? '<strong>Chronology &amp; Causation:</strong> 5 key turning points forming the causal spine of this enquiry.' : '<strong>Edexcel Paper 2 Narrative Framework:</strong> 5 key turning points tracking how each consequence triggers the next event.'}</span>
-            </div>
           </div>
         </details>
         `;
@@ -7719,9 +7716,6 @@ export function renderLesson(lesson) {
   } else {
     // Universal GCSE Unified Layout
     let htmlDominoSpine = '';
-    if (lesson.causal_domino_spine && !isCme) {
-      htmlDominoSpine = renderCausalDominoSpine(lesson.causal_domino_spine);
-    }
 
     html +=
       htmlVideo +

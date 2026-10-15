@@ -6480,7 +6480,11 @@ details.spotlight-drawer[open] summary i.fa-chevron-down {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  min-height: 250px;
+  flex: 1;
+  min-height: 0;
+}
+.cme-spine-causal-drawer[open] .drawer-chevron {
+  transform: rotate(180deg);
 }
 
 /* Elevated Domino Spark Footer */
