@@ -130,6 +130,22 @@ STRICT RULE: The 3 trigger keywords on the left of any chronological enquiry sta
    - **Trigger 2 (Causal Friction / Catalyst):** The obstacle, conflict point, or pressure trigger (e.g. *Western Energy Shortages*, *Arab Refusal to Meet*).
    - **Trigger 3 (Significance / Outcome):** The conceptual turning point or long-term consequence (e.g. *Exclude Soviet Influence*, *Direct Economic Lifeline*).
 
+## Universal KS3 Workbook Typography, Scaffolding & Single-PDF Standard
+STRICT RULE: All Key Stage 3 printed pupil workbooks and PDF compilation scripts must enforce the following typographical, scaffolding, and naming standards:
+1. **Zero Adult Specification Clutter:** Never render the dense, semicolon-delimited `Core Specification Focus` strip on the left-hand pages of pupil workbooks. That syllabus audit data belongs strictly in teacher documentation (`SCHEME_OF_WORK.md` and the Department Portal). Removing it guarantees clean vertical headroom and eliminates pupil intimidation.
+2. **Single Clean Scaffolding (No Duplicate Stems):** Never present both `Sentence Stems:` and `Analytical Connectives:` stacked together in Part B tasks. Provide ONLY a single, clean `Analytical Connectives:` row alongside the `Key Terms:` vocabulary bank.
+3. **Authentic KS3 Phrasing (Zero Corporate / A-Level Jargon):** Connectives must be natural, accessible sentence builders suited to 11–14 year olds (e.g. `One key consequence was that... • For example, this meant that... • This directly led to... • As a result...`), completely avoiding pompous A-level filler like `To a large extent, it can be argued that...` or `Consequently, the overall outcome was...`.
+4. **High-Legibility Typographical Baselines:**
+   - Enquiry Question Title: `13.0pt` (Playfair Display, bold 900)
+   - Stage Question Prompt: `9.2pt` (Inter, bold 800)
+   - Left Trigger Keywords: `8.8pt–9.0pt` (Inter, bold 800)
+   - Task Question Stems: `9.8pt` (Playfair Display, bold 900)
+   - Scaffolding & Connectives Box: `8.4pt` (Inter, italic / regular)
+5. **Calibrated Exercise Book Line Pitch:** Ruled handwriting lines must enforce standard British exercise book / GCSE answer pitch (`~8.8mm–9.8mm`). Never allow lines to stretch beyond the `10.5mm` distortion gate in `audit_page_budget.cjs`.
+6. **Strict Single Canonical PDF Standard (Zero Alias Clones):** All compilers must generate ONLY one canonical PDF file: `<unit_id>_pupil_workbook.pdf` (and `<unit_id>_textbook.pdf`). Strictly forbid copying or cloning files into redundant aliases (`_16p_workbook.pdf`, `_FINAL_V17.pdf`, etc.). All web app links in `department_portal.js`, `scheme_of_work_data.js`, `hero_launchpad.js`, and `workbooks_zone.js` must link directly to the canonical PDF filename.
+
+
+
 
 
 ## Automated Database Sync (Safe Unit Mode)
