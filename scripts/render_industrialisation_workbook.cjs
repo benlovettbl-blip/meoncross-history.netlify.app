@@ -141,7 +141,7 @@ const enquiryConfigs = [
         'The innovative combination of the puddling furnace and grooved rollers',
       ],
       connectives:
-        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
+        'A decisive factor was... &bull; Furthermore, this was significant because... &bull; On the other hand, another important factor was... &bull; In conclusion, the main reason why...',
       wordBank:
         'Henry Cort &bull; Funtley Ironworks &bull; River Meon &bull; puddling furnace &bull; grooved rollers &bull; wrought iron &bull; Portsmouth Dockyard &bull; Royal Navy &bull; naval self-sufficiency',
       timelineMissionTitle: 'Centrefold Sketch Challenges 1 &amp; 2',
@@ -254,7 +254,7 @@ const enquiryConfigs = [
         stems:
           'One consequence was that... &bull; Specifically, this meant that... &bull; This affected child workers because... &bull; As a result, factory masters...',
         connectives:
-          'A significant consequence was... &bull; For instance, this meant that... &bull; This directly led to... &bull; Consequently, the overall outcome was...',
+          'One key consequence was that... &bull; For example, this meant that... &bull; This directly led to... &bull; As a result...',
         wordBank:
           'Factory Act (1833) &bull; child piecers &bull; textile mills &bull; eight-hour day &bull; factory inspectors &bull; Sadler Committee &bull; state regulation',
       },
@@ -368,7 +368,7 @@ const enquiryConfigs = [
         stems:
           'One consequence was that... &bull; Specifically, this meant that... &bull; This affected public health because... &bull; As a result, waterborne disease...',
         connectives:
-          'A significant consequence was... &bull; For instance, this meant that... &bull; This directly led to... &bull; Consequently, the overall outcome was...',
+          'One key consequence was that... &bull; For example, this meant that... &bull; This directly led to... &bull; As a result...',
         wordBank:
           'Great Stink (1858) &bull; River Thames &bull; Joseph Bazalgette &bull; interceptor sewers &bull; cholera &bull; Edwin Chadwick &bull; public health',
       },
@@ -482,7 +482,7 @@ const enquiryConfigs = [
           'The destruction of threshing machines across Hampshire (1830)',
         ],
         connectives:
-          'The sequence began when... &bull; This led to increasing conflict because... &bull; A decisive turning point occurred when... &bull; This directly caused... &bull; Consequently, this culminated in...',
+          'The sequence began when... &bull; This led to conflict because... &bull; A decisive turning point occurred when... &bull; As a result, this culminated in...',
         wordBank:
           'Peterloo (1819) &bull; Six Acts &bull; Hampshire Swing Riots (1830) &bull; threshing machines &bull; Winchester Assizes &bull; Tolpuddle Martyrs (1834) &bull; penal transportation &bull; trade unions',
       },
@@ -601,7 +601,7 @@ const enquiryConfigs = [
         },
       ],
       connectives:
-        'To a large extent, it can be argued that... &bull; In particular, a decisive factor was... &bull; Furthermore, this created severe consequences because... &bull; On the other hand, an alternative perspective is that... &bull; In conclusion, the decisive reason why...',
+        'A central argument is that... &bull; In particular, this mattered because... &bull; On the other hand, an alternative perspective is... &bull; In conclusion, the decisive reason was...',
       wordBank:
         'Earl Grey &bull; Great Reform Act (1832) &bull; rotten boroughs &bull; Old Sarum &bull; Manchester &amp; Birmingham &bull; £10 property qualification &bull; Bristol riots &bull; Days of May &bull; People’s Charter &bull; Secret Ballot (1872)',
       timelineMissionTitle: 'Centrefold Sketch Challenges 6 &amp; 8',
@@ -690,7 +690,7 @@ function renderSpinePage(cfg, pageNum) {
             <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
               <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
                 <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
             </div>`,
         )
@@ -709,7 +709,7 @@ function renderSpinePage(cfg, pageNum) {
                 ${st.date}
               </span>
               <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
-              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
+              <span style="font-family: 'Inter', sans-serif; font-size: 9.2pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
                 ${st.questionHeading}
               </span>
             </div>
@@ -746,24 +746,19 @@ function renderSpinePage(cfg, pageNum) {
   <div class="page page-container ${pageClass}" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
       
-      <!-- Lesson Header with Inquiry Question Title -->
-      <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+      <!-- Lesson Header with Inquiry Question Title (Expanded for High Legibility) -->
+      <div style="border-bottom: 2px solid #000000; padding-bottom: 3px; margin-bottom: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 2px 8px; border-radius: 2px;">
             ENQUIRY ${cfg.lessonNum} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
             YEAR 8 &bull; INDUSTRIALISATION, EMPIRE &amp; POWER (1750–1901)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 13.0pt; color: #000000; margin: 2px 0 2px 0; font-weight: 900; line-height: 1.22;">
           ${cfg.enquiryQuestion}
         </h2>
-      </div>
-
-      <!-- Specification Focus Strip -->
-      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
-        <strong style="color: #000000;">Core Specification Focus:</strong> ${cfg.specAnchor}
       </div>
 
       <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
@@ -804,7 +799,7 @@ function renderRightPage(cfg, pageNum) {
 
       <!-- Question Stem & Stimulus Box -->
       <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 5px;">
-        <div style="font-family: 'Playfair Display', serif; font-size: 11.0pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.3;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 11.6pt; font-weight: 900; color: #000000; margin-bottom: 4px; line-height: 1.3;">
           ${rp.examStem}
         </div>
         <div style="display: flex; align-items: center; gap: 8px; font-family: 'Inter', sans-serif; font-size: 8.2pt; color: #000000;">
@@ -818,12 +813,12 @@ function renderRightPage(cfg, pageNum) {
       <!-- Connectives & Key Vocabulary Bank -->
       <div style="border: 1.2px solid #000000; border-radius: 3px; padding: 5px 9px; background: #ffffff; margin-bottom: 6px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Analytical Connectives:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; font-style: italic; line-height: 1.26; display: block; color: #000000;">${rp.connectives}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Analytical Connectives:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-style: italic; line-height: 1.26; display: block; color: #000000;">${rp.connectives}</span>
         </div>
         <div>
-          <strong style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
-          <span style="font-family: 'Inter', sans-serif; font-size: 8.2pt; line-height: 1.26; display: block; color: #000000;">${rp.wordBank}</span>
+          <strong style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 900; text-transform: uppercase; display: block; margin-bottom: 2px; color: #000000;">Key Vocabulary Bank:</strong>
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; line-height: 1.26; display: block; color: #000000;">${rp.wordBank}</span>
         </div>
       </div>
 
@@ -832,7 +827,7 @@ function renderRightPage(cfg, pageNum) {
         <strong style="color: #000000;">Task:</strong> Using the vocabulary and connectives above, write your analytical response below:
       </div>
       <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; border-top: 1.2px solid #000000; margin-bottom: 4px;">
-        ${Array(21)
+        ${Array(20)
           .fill(
             '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
           )
@@ -920,7 +915,7 @@ function renderRightPage(cfg, pageNum) {
         </div>
         ${rp.stemsB ? `<div style="border: 1px solid #000000; border-radius: 2px; padding: 2px 5px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.2; margin-bottom: 2px;"><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${rp.stemsB}</span></div>` : ''}
         <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
-          ${Array(12)
+          ${Array(13)
             .fill(
               '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
             )
@@ -943,7 +938,7 @@ function renderRightPage(cfg, pageNum) {
         </div>
         ${rp.stemsC ? `<div style="border: 1px solid #000000; border-radius: 2px; padding: 2px 5px; background: #ffffff; font-family: 'Inter', sans-serif; font-size: 7.0pt; line-height: 1.2; margin-bottom: 2px;"><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${rp.stemsC}</span></div>` : ''}
         <div style="display: flex; flex-direction: column; gap: 0; flex: 1; min-height: 0;">
-          ${Array(12)
+          ${Array(13)
             .fill(
               '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
             )
@@ -993,17 +988,17 @@ function renderRightPage(cfg, pageNum) {
       <!-- PART A: SHORT-FORM DISCIPLINARY DRILL [4 OR 8 MARKS] -->
       <div style="border-bottom: 1.5px solid #000000; padding-bottom: 3px; margin-bottom: 3px;">
         <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 2px;">
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 10.5pt; color: #000000; margin: 0; font-weight: 900;">
+          <h2 style="font-family: 'Playfair Display', serif; font-size: 11.0pt; color: #000000; margin: 0; font-weight: 900;">
             ${rp.partA.tariff}
           </h2>
           <span style="font-family: 'Inter', sans-serif; font-size: 7.5pt; font-weight: 800; background: #000000; color: #ffffff; padding: 1px 6px; border-radius: 2px; text-transform: uppercase;">
             ${rp.partA.badge || 'DISCIPLINARY DRILL'}
           </span>
         </div>
-        <div style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 900; color: #000000; line-height: 1.24; margin-bottom: 1px;">
+        <div style="font-family: 'Playfair Display', serif; font-size: 9.8pt; font-weight: 900; color: #000000; line-height: 1.24; margin-bottom: 2px;">
           ${rp.partA.question}
         </div>
-        <div style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-style: italic; color: #000000; line-height: 1.18; margin-bottom: 2px;">
+        <div style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-style: italic; color: #000000; line-height: 1.2; margin-bottom: 3px;">
           ${rp.partA.stems}
         </div>
         <div class="ruled-lines-block">
@@ -1025,29 +1020,28 @@ function renderRightPage(cfg, pageNum) {
               ${rp.partB.badge || 'STRUCTURED WRITING'}
             </span>
           </div>
-          <div style="font-family: 'Playfair Display', serif; font-size: 9.0pt; font-weight: 900; color: #000000; line-height: 1.24; margin-bottom: 2px;">
+          <div style="font-family: 'Playfair Display', serif; font-size: 9.8pt; font-weight: 900; color: #000000; line-height: 1.26; margin-bottom: 3px;">
             ${rp.partB.question}
           </div>
           ${
             rp.partB.stimulus
               ? `
-          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 7.6pt; color: #000000; margin-bottom: 2px;">
+          <div style="display: flex; align-items: center; gap: 6px; font-family: 'Inter', sans-serif; font-size: 8.0pt; color: #000000; margin-bottom: 3px;">
             <strong style="color: #000000;">Stimulus:</strong>
             <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${rp.partB.stimulus[0]}</span>
             <span style="border: 1px solid #000000; padding: 1px 6px; border-radius: 2px; font-weight: 800; color: #000000; background: #ffffff;">${rp.partB.stimulus[1]}</span>
           </div>`
               : ''
           }
-          <div style="border: 1px solid #000000; border-radius: 3px; padding: 3px 6px; background: #ffffff; margin-bottom: 3px; font-family: 'Inter', sans-serif; font-size: 7.2pt; line-height: 1.22;">
+          <div style="border: 1px solid #000000; border-radius: 3px; padding: 4px 7px; background: #ffffff; margin-bottom: 4px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.28;">
             ${rp.partB.connectives ? `<div><strong style="color: #000000;">Analytical Connectives:</strong> <em style="color: #000000;">${rp.partB.connectives}</em></div>` : ''}
-            ${rp.partB.stems ? `<div><strong style="color: #000000;">Sentence Stems:</strong> <span style="color: #000000;">${rp.partB.stems}</span></div>` : ''}
-            ${rp.partB.wordBank ? `<div style="margin-top: 1px;"><strong style="color: #000000;">Key Terms:</strong> <span style="color: #000000;">${rp.partB.wordBank}</span></div>` : ''}
+            ${rp.partB.wordBank ? `<div style="margin-top: 2px;"><strong style="color: #000000;">Key Terms:</strong> <span style="color: #000000;">${rp.partB.wordBank}</span></div>` : ''}
           </div>
         </div>
 
-        <!-- Ruled Writing Lines (22 Lines • Calibrated ~8.2mm GCSE pitch) -->
+        <!-- Ruled Writing Lines (Calibrated ~9.2mm GCSE pitch: 21 Lines) -->
         <div style="display: flex; flex-direction: column; gap: 0; margin-bottom: 3px; flex: 1; min-height: 0;">
-          ${Array(22)
+          ${Array(21)
             .fill(
               '<div class="task-line" style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box; margin: 0;"></div>',
             )
