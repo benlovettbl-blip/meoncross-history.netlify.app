@@ -232,33 +232,6 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      timeline_anchor: [
-        {
-          date: '1750–1770',
-          title: 'The Charcoal Bottleneck & Pig Iron Crisis',
-          desc: 'Deforestation exhausted England’s oak forests, forcing ironmasters to use sulphur-rich pit coal that produced brittle, useless pig iron.',
-        },
-        {
-          date: '1769–1781',
-          title: 'James Watt & The Rotary Steam Engine',
-          desc: 'James Watt patented the separate condenser and adapted his engine for rotary motion, transforming coal combustion into continuous mechanical power.',
-        },
-        {
-          date: '1775–1784',
-          title: 'Cort’s Reverberatory Puddling Furnace',
-          desc: 'Cort perfected the reverberatory puddling furnace at Funtley, using an arched masonry roof to bounce pure radiant heat onto the molten metal without fuel contact.',
-        },
-        {
-          date: '1783–1784',
-          title: 'Patented Grooved Rollers & Slag Squeezing',
-          desc: 'Cort replaced exhausting manual forge hammering with water-powered grooved iron rollers that squeezed out glassy slag and shaped bars in seconds.',
-        },
-        {
-          date: '1787',
-          title: 'Portsmouth Dockyard Admiralty Trials',
-          desc: 'Admiralty hammer trials at Portsmouth Dockyard proved Funtley iron surpassed Swedish Orgrounds in tensile strength and shatter-resistance.',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -282,65 +255,6 @@ const industrialisation_and_empire = {
           title: 'Act 2: James Watt & The Rotary Steam Revolution (1769–1781)',
           theme_heading: 'Act 2: James Watt & The Rotary Steam Revolution (1769–1781)',
           text: '<span class="para-ref">[1.2]</span> While iron production floundered, a revolutionary power source erupted. In cramped cottages under the <strong class="vocab-highlight">domestic system</strong> <small class="vocab-gloss">(craft goods produced by hand in workers\' homes)</small>, spinning and weaving were limited by human muscle and waterwheels that froze in winter or dried up in summer. In 1769, Scottish instrument maker <strong class="vocab-highlight">James Watt</strong> patented his separate condenser, vastly improving early steam engines. Partnering with industrialist Matthew Boulton in Birmingham, Watt adapted his engine to produce continuous rotary motion. By converting the thermal energy of coal into mechanical power, Watt liberated factories from remote river valleys. Massive textile mills, deep mine pumps, and heavy iron hammers could now operate relentlessly anywhere coal was shipped.',
-          tasks: [
-            {
-              type: 'diagram_annotation',
-              text: "Visual Blueprint & Archival Anatomy: Henry Cort's Reverberatory Furnace (1783)",
-              instruction:
-                "Study the 18th-century architectural cross-section of Henry Cort's patented reverberatory furnace and rolling mill at Funtley Ironworks. Examine each numbered engineering hotspot and analyze how it solved Britain's pig iron crisis.",
-              image: '/images/funtley_ironworks.jpg',
-              caption:
-                "Technical cross-section diagram of Henry Cort's reverberatory puddling furnace and grooved rolling mill at Funtley Ironworks, Hampshire (Patent No. 1420, 1784).",
-              annotations: [
-                {
-                  num: 1,
-                  label: 'Separated Firebox (The Raised Grate)',
-                  prompt:
-                    'Identify feature [1] and explain why keeping the coal fire physically separate from the molten iron was revolutionary:',
-                  starter: 'The firebox was housed in a separate chamber to the left so that...',
-                  model:
-                    'Cort placed the pit coal fire on a raised grate physically separated by a fire-bridge masonry wall from the refining hearth. This revolutionary design ensured that sulphur and phosphorus in raw British pit coal never came into direct contact with the melting iron, completely solving the chemical flaw of brittle pig iron.',
-                },
-                {
-                  num: 2,
-                  label: 'Arched Masonry Ceiling (The Reverberator)',
-                  prompt:
-                    'Identify feature [2] and explain how the curved brick roof transferred heat without fuel contact:',
-                  starter: 'The arched refractory brick ceiling acted as a reverberator by...',
-                  model:
-                    'The curved brick roof acted as a giant radiant reflector, deflecting (reverberating) pure radiant flame and burning gases down onto the shallow iron bed like a colossal oven. This generated blistering temperatures of 1,200°C without contaminating the metal with coal ash.',
-                },
-                {
-                  num: 3,
-                  label: 'The Puddling Hearth & Working Rabble Porthole',
-                  prompt:
-                    'Identify feature [3] and describe the role of the artisan puddler operating through the porthole:',
-                  starter: 'The central shallow bowl was the puddling hearth where the artisan...',
-                  model:
-                    'The puddler stood before the furnace porthole, sliding a 10-foot iron paddle (rabble) through the aperture to stir the boiling metal in an oxidising atmosphere. Stirring exposed the molten soup to oxygen, burning away carbon until the iron thickened into glowing, decarburised balls of tough wrought iron.',
-                },
-                {
-                  num: 4,
-                  label: 'Adjustable Damper & Chimney Flue',
-                  prompt:
-                    'Identify feature [4] and explain how the tall chimney stack and damper regulated furnace draft:',
-                  starter:
-                    'The tall chimney stack and movable iron damper plate allowed the ironmaster to...',
-                  model:
-                    'The tall masonry stack created a strong natural thermal updraft, drawing combustion gases across the hearth. By adjusting the iron damper plate with chains, the ironmaster could precisely regulate the airflow, combustion velocity, and furnace temperature.',
-                },
-                {
-                  num: 5,
-                  label: 'Hydraulic Grooved Rollers (Rolling Mill)',
-                  prompt:
-                    'Identify feature [5] and explain why mechanised rolling was superior to traditional forge hammering:',
-                  starter: 'Driven by the River Meon waterwheel, the grooved rollers...',
-                  model:
-                    'Instead of slow, exhausting manual hammering by forge smiths, Cort fed the white-hot puddled iron balls directly between pairs of grooved iron rollers powered by the River Meon waterwheel. This squeezed out glassy silicate slag and compressed the grain into uniform naval bars at fifteen times the speed of tilt hammers.',
-                },
-              ],
-            },
-          ],
           source: {
             letter: 'B',
             title: 'Source B: Cort’s Reverberatory Puddling Furnace (1783)',
@@ -405,85 +319,6 @@ const industrialisation_and_empire = {
           title: 'Act 5: The Portsmouth Dockyard Trials & Naval Supremacy (1787–1800)',
           theme_heading: 'Act 5: The Portsmouth Dockyard Trials & Naval Supremacy (1787–1800)',
           text: '<span class="para-ref">[1.5]</span> In March 1787, Cort invited the Navy Board to Portsmouth Royal Dockyard for decisive stress tests. In front of skeptical Admiralty commissioners, master smiths bent Funtley iron double, twisted bars into cold corkscrews, and pounded anchor rings with twenty-pound sledgehammers. The iron did not crack. The official Admiralty minutes declared Funtley iron superior to any British metal and fully equal to top-grade Swedish Orgrounds iron. Domestic iron production surged 400%, armoring the Royal Navy on the eve of the Napoleonic Wars and forging the anchors of <em>HMS Victory</em>. Cort was hailed as the "father of the iron trade," though the embezzlement of naval funds by his financial partner Adam Jellicoe tragically stripped Cort of his patents, plunging him into bankruptcy before his death in 1800.',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Enquiry Essay: "How significant was Henry Cort’s puddling process to British industrial and naval supremacy?"',
-              scaffolding: {
-                guidance:
-                  'Write a structured 3-paragraph historical evaluation using the structure strip below. Use specific facts and vocabulary from Acts 1–4.',
-                structure_strip: [
-                  {
-                    col: '1. Immediate Impact',
-                    prompt:
-                      'Explain how Cort’s puddling furnace and grooved rollers boosted British iron production 15 times and stopped Britain relying on foreign Baltic iron [1.3, 2.3, 3.2].',
-                    starter:
-                      'The immediate significance of Henry Cort’s puddling process was that it solved Britain’s dangerous dependence on...',
-                  },
-                  {
-                    col: '2. Long-Term Changes',
-                    prompt:
-                      'Explain how cheap, strong wrought iron transformed Victorian Britain over time—making it possible to build steam engines, railways, and iron warships [1.2, 3.2, 4.1].',
-                    starter:
-                      'Over time, Cort’s mass-produced wrought iron transformed Victorian Britain by...',
-                  },
-                  {
-                    col: '3. Overall Evaluative Judgment',
-                    prompt:
-                      'Weigh whether Cort’s metallurgical breakthrough was the primary catalyst for British industrial supremacy, or whether coal and Watt’s steam engine were more foundational [1.2, 4.2].',
-                    starter:
-                      'Ultimately, I judge that Cort’s puddling process was [exceptionally / partly] significant because...',
-                  },
-                  {
-                    col: '★ Scholar’s Edge (Extension)',
-                    prompt:
-                      'Evaluate how Dr Jenny Bulstrode’s (2023) research into 76 enslaved Black metallurgists at Morant Bay, Jamaica challenges the traditional narrative of industrial innovation [4.3].',
-                    starter:
-                      'Furthermore, recent historiographical research by Dr Jenny Bulstrode reveals that this traditional narrative must be re-evaluated because...',
-                  },
-                ],
-                sentence_starters: [
-                  'The immediate breakthrough of Henry Cort’s puddling furnace (1783) at Funtley was...',
-                  'Prior to Cort’s patents, British blast furnaces produced brittle pig iron, which meant...',
-                  'As certified in the official 1787 Portsmouth Dockyard trials (Source C), Funtley iron was...',
-                  'Over time, mass-produced wrought iron transformed Britain’s infrastructure because...',
-                  'Without tough, malleable iron, key innovations such as Watt’s steam engines and railways would have...',
-                  'Ultimately, I judge that Cort was decisive because while coal and steam provided the power, iron provided the...',
-                  '★ Furthermore, research by Dr Jenny Bulstrode (2023) complicates this narrative by showing that...',
-                ],
-                connective_bank: [
-                  'The immediate breakthrough was...',
-                  'Consequently, this eliminated...',
-                  'This directly resulted in...',
-                  'In practical terms, this meant that...',
-                  'Over time, this changed Britain because...',
-                  'Crucially, this acted as an industrial catalyst for...',
-                  'Weighing these factors, it is evident that...',
-                  'Ultimately, the decisive reason was...',
-                ],
-                word_bank: [
-                  'Domestic System',
-                  'James Watt',
-                  'Rotative Steam Engine',
-                  'Pig Iron (Brittle, high-sulphur)',
-                  'Wrought Iron (Malleable, naval-grade)',
-                  'Baltic Import Bottleneck',
-                  'Sweden & Russia',
-                  'Reverberatory Puddling Furnace',
-                  'Grooved Rolling Mill',
-                  'River Meon / Funtley',
-                  'Portsmouth Royal Navy Dockyard',
-                  'Admiralty ADM 106/2347',
-                  'Swedish Orgrounds Gold Standard',
-                  'Naval Supremacy',
-                  'Adam Jellicoe Embezzlement',
-                ],
-              },
-              model_answer:
-                'The immediate breakthrough of Henry Cort’s puddling furnace (1783) and grooved rolling mill (1784) at Funtley transformed Britain from an iron-deficient island into an industrial superpower [2.3]. Prior to Cort’s patents, British blast furnaces could only produce brittle "pig iron" contaminated with coal sulphur; consequently, the Royal Navy depended dangerously on importing 50,000 tons of malleable iron annually from Sweden and Russia [1.3, 1.4]. By physically separating pit coal from melting iron in a reverberatory furnace and squeezing the white-hot blooms through mechanical rollers at fifteen times the speed of forge hammers, Cort solved this national crisis. As recorded in the Admiralty trials of March 1787 (Source C), Funtley iron was certified as "fully equal to the best Swedish Orgrounds iron." Within twenty years, domestic iron output multiplied by 400%, freeing the Royal Navy from Baltic blockades and equipping warships like HMS Victory with flawless hull bolts and anchors [3.2].<br><br>Over time, cheap, high-tensile wrought iron transformed the entire Victorian world [1.2]. Without Cort’s mass-produced malleable iron, the Industrial Revolution would have ground to a halt: James Watt’s steam engines required robust boiler plates, railways demanded thousands of miles of durable rails, and civil engineers required reliable structural girders for bridges and factory framing [4.1]. Iron was the physical skeleton of British imperial power, enabling the Royal Navy to project force globally and securing Britain’s title as "the workshop of the world."<br><br>Overall, Cort was exceptionally significant because he provided the indispensable material bridge connecting fossil fuel to industrial mechanisation [4.2]. While coal provided the thermal energy and Watt’s engine provided the motive force, neither could function without tough, non-brittle wrought iron. Cort’s innovation turned British raw materials into national self-sufficiency.<br><br>★ Scholar’s Edge Extension: However, this traditional "lone English genius" narrative has been critically re-evaluated by Dr Jenny Bulstrode (2023) [4.3]. Bulstrode revealed that years before Cort’s patents, seventy-six enslaved Black metallurgists at Morant Bay, Jamaica, were already refining scrap metal using grooved rollers adapted from sugar cane mills. When the British military dismantled the Jamaican foundry in 1782, equipment was shipped to Portsmouth Dockyard. Whether Cort appropriated this technology directly or developed his methods in Hampshire, this scholarship proves that Britain’s industrial transformation was deeply entangled with transatlantic slavery and the uncredited technological agency of enslaved Africans.',
-            },
-          ],
           source: {
             letter: 'D',
             title: 'Source D: Contemporary Dedication Portrait of Henry Cort (c. 1780s)',
@@ -763,15 +598,6 @@ const industrialisation_and_empire = {
             'Railways were needed to move massive tonnages of coal and iron, while tracks and locomotives themselves required thousands of tons of iron',
         },
       ],
-      pair_share: {
-        prompt:
-          'Discuss with your partner: What was the most important factor that powered the Industrial Revolution?',
-        think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
-        pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
-        share: "Share your pair's combined conclusion with the class.",
-      },
-      vocab_cloze_text:
-        'The early [Industrial Revolution] was initially hindered by a severe shortage of cheap, high-quality iron. Smelted [Pig Iron] was far too brittle for engineering, while producing tough [Wrought Iron] took days of manual hammering. In 1784, Fareham ironmaster [Henry Cort] perfected the [Puddling Process] to stir molten metal and eliminate impurities. He combined this with a steam-driven [Rolling Mill], allowing Britain to produce structural iron on an unprecedented global scale.',
       hook_text:
         "In the autumn of 1775, Henry Cort stood on the banks of the rushing River Meon at Funtley, gazing toward Portsmouth Harbour just fifteen miles away. Britain’s Royal Navy was locked in a perilous crisis: its colossal warships required thousands of tons of tough wrought iron for anchors and hull bolts, but British blast furnaces produced only brittle 'pig iron' that shattered like glass. With English oak forests cut down and Baltic shipping vulnerable to enemy blockade, Cort risked his entire fortune to lease an old Hampshire corn mill and master the chemistry of fire and iron.",
       causal_domino_spine: {
@@ -875,76 +701,65 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      workbook_stages: [
+      tasks: [
         {
-          step: 1,
-          date: '1750–1770',
-          para_ref: '[1.1]',
-          heading:
-            'Why was Britain’s early iron industry crippled by charcoal and timber shortages?',
-          bullets: [
-            'Deforestation of English Oaks',
-            'Brittle Impure Pig Iron',
-            'Dependence on Swedish Imports',
+          id: 'ie_l1_explain_why_cort',
+          type: 'extended_writing',
+          tariff: 'Question 2: Explain Why [12 marks • 15 mins]',
+          title: 'Question 2: Explain Why [12 marks • 15 mins]',
+          question:
+            'Explain why Henry Cort achieved his metallurgical breakthrough in wrought iron production at Funtley in 1784. [12 marks]',
+          stimulus: [
+            'The urgent naval demand for tough iron from Portsmouth Royal Dockyard',
+            'The innovative combination of the puddling furnace and grooved rollers',
           ],
-          focus_clue:
-            'How did the exhaustion of timber and sulphur in pit coal leave early British iron brittle and dependent on Baltic imports?',
-        },
-        {
-          step: 2,
-          date: '1769–1781',
-          para_ref: '[1.2]',
-          heading:
-            'How did James Watt’s rotary steam engine revolutionise heavy industrial manufacturing?',
-          bullets: [
-            'Separate Condenser Efficiency',
-            'Rotary Shaft Motion',
-            'Liberation from River Valleys',
+          hints: [
+            'Point: State how Britain’s naval vulnerability and dependence on Swedish iron created an urgent national need for domestic wrought iron.',
+            'Evidence: Cite the Admiralty naval trials at Portsmouth Royal Dockyard [1.5] and Britain importing 50,000 tons of Swedish Orgrounds iron annually [1.1].',
+            'Explanation: Explain how Cort’s puddling furnace kept pig iron separate from burning coal to burn off sulfur, and how his grooved rollers were 15 times faster than trip hammers [1.3, 1.4].',
+            'Link: Show how this metallurgical combination gave Britain complete naval independence and fueled the Industrial Revolution.',
           ],
-          focus_clue:
-            'Why did Watt’s separate condenser and rotary motion allow factories to move from remote rural rivers into crowded industrial cities?',
-        },
-        {
-          step: 3,
-          date: '1775–1784',
-          para_ref: '[1.3]',
-          heading:
-            'How did Henry Cort’s puddling furnace at Funtley chemically refine molten iron?',
-          bullets: [
-            'Reverberatory Furnace Chamber',
-            'Stirring Molten Decarburisation',
-            'Eliminating Harmful Sulphur',
-          ],
-          focus_clue:
-            'How did Cort’s arched brick roof bounce radiant heat onto the molten iron to burn away carbon without coal sulphur touching it?',
-        },
-        {
-          step: 4,
-          date: '1783–1784',
-          para_ref: '[1.4]',
-          heading:
-            'Why were Cort’s patented grooved rollers fifteen times faster than traditional trip hammers?',
-          bullets: [
-            'Mechanical Grooved Cylinders',
-            'Squeezing Out Slag Impurities',
-            'Uniform Naval Bar Production',
-          ],
-          focus_clue:
-            'Why did mechanised grooved rollers compress hot puddled iron fifteen times faster than traditional blacksmith forge hammers?',
-        },
-        {
-          step: 5,
-          date: '1787',
-          para_ref: '[1.5]',
-          heading:
-            'How did the Portsmouth Dockyard naval trials confirm Cort’s triumph for the Royal Navy?',
-          bullets: [
-            'Admiralty Smith Forge Tests',
-            'Shatter-Resistant Anchors',
-            'Complete Naval Independence',
-          ],
-          focus_clue:
-            'How did the 1787 Portsmouth hammer trials prove Funtley iron equaled Swedish imports and secured Royal Navy self-sufficiency?',
+          scaffolding: {
+            structure_strip: [
+              'Introduction: Outline Britain’s iron crisis—deforestation, brittle pig iron, and dangerous dependence on Swedish Orgrounds imports for the Royal Navy [1.1].',
+              'PEEL 1 (Strategic Naval Imperative): Explain how Portsmouth Royal Dockyard needed shatter-resistant iron for anchors, bolts, and cannons, prompting Admiralty trials [1.1, 1.5].',
+              'PEEL 2 (Technological Synthesis at Funtley): Explain how Cort combined the reverberatory puddling furnace with steam-powered grooved rollers to refine and roll iron 15 times faster [1.3, 1.4].',
+              'Conclusion: Evaluate Cort’s lasting significance—transforming Britain from an iron importer into the "Workshop of the World" and master of the seas.',
+            ],
+            sentence_starters: [
+              'A primary reason why Henry Cort achieved his breakthrough was the desperate naval demand from Portsmouth Dockyard...',
+              'At the time, British ironmasters could only produce brittle pig iron because...',
+              'Consequently, the Royal Navy was dangerously dependent on imports of...',
+              'To overcome this bottleneck, Cort innovated at Funtley Ironworks by combining...',
+              'In his reverberatory puddling furnace, molten iron was stirred so that...',
+              'Furthermore, Cort replaced traditional trip hammers with grooved rollers, which...',
+              'As proved during the 1787 Portsmouth naval trials, Funtley iron was...',
+              'In conclusion, Cort’s achievement was decisive because it combined chemical refinement with mechanical speed, securing British naval supremacy.',
+            ],
+            connective_bank: [
+              'To a large extent, it can be argued that...',
+              'In particular, a decisive factor was...',
+              'Furthermore, this created severe consequences because...',
+              'On the other hand, an alternative perspective is that...',
+              'In conclusion, the decisive reason why...',
+            ],
+            word_bank: [
+              'Henry Cort',
+              'Funtley Ironworks',
+              'River Meon',
+              'puddling furnace',
+              'grooved rollers',
+              'wrought iron',
+              'pig iron',
+              'Portsmouth Dockyard',
+              'Royal Navy',
+              'Swedish Orgrounds iron',
+              'decarburisation',
+            ],
+          },
+          model_answer:
+            'To a large extent, it can be argued that Henry Cort achieved his metallurgical breakthrough in wrought iron production at Funtley in 1784 because of the urgent strategic imperative to secure naval self-sufficiency for the Royal Navy [1.1, 1.5]. Prior to Cort’s innovations, British blast furnaces relied on pit coal that contaminated iron with sulfur, producing brittle pig iron that shattered under tension. Consequently, Britain was forced to import over 50,000 tons of high-grade Swedish Orgrounds iron every year to forge anchors, bolts, and cannon hoops for His Majesty’s Fleet. Situated close to Portsmouth Royal Dockyard along the River Meon, Cort directly observed this naval bottleneck and secured naval contracts from Admiralty commissioners who desperately needed domestic shatter-resistant iron during the American Revolutionary War. Therefore, the strategic demand and financial patronage of the Royal Navy provided the vital catalyst for Cort’s metallurgical experiments.\n\nIn particular, the decisive technological factor enabling Cort’s breakthrough was his revolutionary combination of the reverberatory puddling furnace and grooved rolling mill [1.3, 1.4]. Previous ironmasters had failed to purify pig iron without burning charcoal. In 1784, Cort perfected the puddling technique: he melted pig iron in an enclosed reverberatory furnace where heat reflected onto the metal while keeping it separate from the sulfurous burning coal. By stirring the molten bath with long iron rods, carbon and impurities were burned away, transforming the metal into pasty blooms of malleable wrought iron. Furthermore, instead of utilizing slow mechanical trip hammers, Cort passed the red-hot iron through heavy grooved rollers powered by a waterwheel on the River Meon. These grooved cylinders squeezed out trapped liquid slag and formed uniform bars fifteen times faster than traditional forging. As demonstrated during the 1787 Portsmouth Dockyard trials, Cort’s Funtley iron surpassed the finest Baltic imports in tensile strength. In conclusion, Cort’s breakthrough succeeded because he united chemical decarburisation with continuous mechanical rolling, emancipating Britain from foreign suppliers and laying the metallurgical foundations of global industrial supremacy.',
+          topic: 'Question 2: Explain Why [12 marks • 15 mins]',
         },
       ],
     },
@@ -1087,79 +902,12 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      timeline_anchor: [
-        {
-          date: '1780–1820',
-          title: 'The Rise of the Factory System',
-          desc: 'Steam powerlooms and mechanized spinning mules concentrated textile manufacturing into massive multi-storey urban factories.',
-        },
-        {
-          date: '1800–1830',
-          title: 'The Tyranny of the Factory Clock',
-          desc: 'Mill masters enforced fourteen-hour shifts governed by factory clocks, using punitive fines and locked doors to punish any loss of production.',
-        },
-        {
-          date: '1810–1832',
-          title: 'Pauper Apprentice Exploitation',
-          desc: 'Thousands of destitute workhouse orphans were legally bound as apprentice scavengers and piecers, crawling beneath active spinning mules.',
-        },
-        {
-          date: '1832',
-          title: 'Matthew Crabtree & The Sadler Committee',
-          desc: 'Former factory child Matthew Crabtree testified to Parliament, exposing brutal overlooker beatings with leather straps and extreme daily fatigue.',
-        },
-        {
-          date: '1833',
-          title: 'Lord Shaftesbury & The 1833 Factory Act',
-          desc: 'Parliament passed the landmark 1833 Factory Act, banning children under nine from textile mills and capping workday hours for older children.',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: The Death of Domestic Crafts & Rise of the Mill (1780–1820)',
           theme_heading: 'Act 1: The Death of Domestic Crafts & Rise of the Mill (1780–1820)',
           text: '<span class="para-ref">[2.1]</span> Before industrialisation, most British goods were crafted under the <strong class="vocab-highlight">domestic system</strong> in family cottages. Weavers worked on handlooms, pacing their labour to seasonal daylight and resting on "Saint Monday." The invention of mechanized spinning mules and steam powerlooms obliterated this ancient autonomy. Capitalist mill owners built colossal multi-storey brick factories housing hundreds of machines. Handloom weavers could not compete against the torrent of cheap, uniform cloth pouring from steam mills. Driven by destitution, thousands of rural families abandoned their cottages to seek wage labour in booming northern textile hubs like Manchester and Leeds.',
-          tasks: [
-            {
-              type: 'causal_domino',
-              title: 'Causal Chain: From Cottage Autonomy to the Factory Clock (1750–1830)',
-              text: 'The Factory System: Trace the kinetic chain from cottage industry to the loss of worker autonomy under steam power. Complete the missing causal link in Step 3.',
-              instruction:
-                'Using paragraphs [1.1] and [1.2], trace how steam mechanization dismantled traditional worker autonomy.',
-              steps: [
-                {
-                  stage: 'Step 1: Baseline',
-                  year: '1750',
-                  title: 'The Domestic System',
-                  desc: 'Families work in cottages by daylight and natural muscle, task-oriented and celebrating "Saint Monday".',
-                },
-                {
-                  stage: 'Step 2: Catalyst',
-                  year: '1771',
-                  title: 'Continuous Steam Power',
-                  desc: 'Rotary steam engines consume coal continuously, requiring constant machinery operation to justify costs.',
-                },
-                {
-                  stage: 'Step 3: Imposition',
-                  year: '1800',
-                  title: 'The Factory Clock',
-                  desc: 'Factory masters impose 14- to 15-hour shifts, enforcing strict punctuality with fines and corporal punishment.',
-                  blank: true,
-                  prompt:
-                    'Explain why continuous steam engine fuel costs forced mill owners to impose relentless clock discipline:',
-                },
-                {
-                  stage: 'Step 4: Consequence',
-                  year: '1830',
-                  title: 'Industrial Subordination',
-                  desc: 'Workers lose all autonomy over their time, becoming subordinate extensions of fast-moving, unguarded machinery.',
-                },
-              ],
-              model_answer:
-                'Because expensive steam engines consumed continuous coal whether running or idle, factory masters could not afford machine downtime. Consequently, they replaced natural daylight rhythms with the tyrannical factory clock, imposing fines and physical beatings to enforce maximum, continuous machine output.',
-            },
-          ],
           source: {
             letter: 'A',
             title: 'Source A: Powerloom Weaving in 1835',
@@ -1177,53 +925,16 @@ const industrialisation_and_empire = {
           title: 'Act 2: The Tyranny of the Factory Clock & Draconian Fines (1800–1830)',
           theme_heading: 'Act 2: The Tyranny of the Factory Clock & Draconian Fines (1800–1830)',
           text: '<span class="para-ref">[2.2]</span> Inside the mills, natural rhythms were replaced by the tyranny of the <strong class="vocab-highlight">factory clock</strong>. Operatives worked grueling fourteen- to sixteen-hour shifts, six days a week, surrounded by whirling unguarded iron belts and deafening machinery. Mill masters enforced military-style obedience through draconian rulebooks. Workers were fined two pence—a large fraction of daily wages—for arriving minutes late, opening a window to breathe amidst choking cotton lint, or speaking to a workmate. Mill gates were locked from the outside; anyone pausing from exhaustion faced immediate dismissal or corporal punishment.',
-          tasks: [
-            {
-              type: 'significance_diamond',
-              title: 'Priority Diamond: Key Drivers of the Fareham Red Brick Boom',
-              text: 'Evaluate and rank the four decisive factors that transformed local Hampshire clay pits into an imperial manufacturing powerhouse.',
-              instruction:
-                'Using paragraphs [2.1]–[2.3], rank the four drivers from Most Decisive (Rank 1) to Supporting (Rank 4). Justify your top choice.',
-              factors: [
-                {
-                  id: 'london_demand',
-                  label:
-                    'London Population Explosion (Insatiable imperial demand from 4.5m residents for building materials)',
-                },
-                {
-                  id: 'geological_clay',
-                  label:
-                    'Reading Formation Clay Geology (Iron-rich Hampshire clay firing into weather-resistant "Fareham Reds")',
-                },
-                {
-                  id: 'railway_transport',
-                  label:
-                    '1841 London & South Western Railway (Rapid, low-cost freight link directly connecting Fareham to London)',
-                },
-                {
-                  id: 'kiln_technology',
-                  label:
-                    'Coal-Fired Kiln Technology (High-temperature 1,000°C firing creating extraordinary structural hardness)',
-                },
-              ],
-              justification_prompt:
-                'Justify your Rank 1 selection: Why was this factor the primary catalyst for Fareham’s industrial boom?',
-              starter:
-                'London’s explosive population growth was the primary catalyst because without...',
-              model_answer:
-                'London’s rapid population surge to 4.5 million was the most decisive driver because without that colossal urban market and imperial construction boom (exemplified by the Royal Albert Hall), Fareham’s natural clay and railway connections would have lacked the commercial demand required to support commercial brick manufacturing at an industrial scale of twenty million bricks per year.',
-            },
-          ],
           source: {
             letter: 'B',
-            title: 'Source B: The Royal Albert Hall, London (1871)',
+            title: 'Source B: Tyldesley Cotton Mill Factory Rulebook & Fines Ledger (1823)',
             context:
-              'The Royal Albert Hall in London, opened in 1871, was constructed using over six million Fareham Red bricks manufactured in the clay pits of Funtley and Uplands. Dense iron-bearing Reading Formation clay fired into durable crimson bricks transported via the newly opened London & South Western Railway. **Hinge Question:** How does the construction of the Royal Albert Hall prove that Victorian imperial architecture relied directly on local Hampshire industrial manufacturing?',
+              'Official workplace regulations posted at the entrance of a Lancashire cotton mill in 1823. Mill masters enforced absolute obedience through monetary wage deductions and locked gates. **Hinge Question:** Why did factory owners choose monetary wage fines rather than dismissals to discipline industrial workers?',
             hinge_question:
-              'How does the construction of the Royal Albert Hall prove that Victorian imperial architecture relied directly on local Hampshire industrial manufacturing?',
-            image: '/images/royal_albert_hall.jpg',
+              'Why did factory owners choose monetary wage fines rather than dismissals to discipline industrial workers?',
+            text: '“1. The door of the lodge will be closed 5 minutes after the bell rings in the morning, and no person admitted till breakfast; any person absent after that time will forfeit 3d.\n2. Any person opening a window without permission of the overlooker will forfeit 1s.\n3. Any spinner found dirty at work will forfeit 1s.\n4. Any person whistling or singing at work will forfeit 1s.\n5. Any person found five minutes after the last bell rings in the evening will forfeit 1s.”',
             caption:
-              'Source B: The Royal Albert Hall in South Kensington, London (opened 1871). The iconic exterior of this world-famous concert hall was constructed using over six million "Fareham Red" bricks manufactured in Hampshire clay pits.',
+              'Source B: Extracts from the 1823 Rulebook posted inside Tyldesley Cotton Mill, illustrating the rigid clockwork discipline and severe monetary penalties imposed upon mill operatives.',
           },
         },
         {
@@ -1231,35 +942,6 @@ const industrialisation_and_empire = {
           title: 'Act 3: Pauper Apprentices & Northern Textile Exploitation (1810–1832)',
           theme_heading: 'Act 3: Pauper Apprentices & Northern Textile Exploitation (1810–1832)',
           text: '<span class="para-ref">[2.3]</span> Mill owners discovered that children made the cheapest, most compliant workforce. Thousands of orphan <strong class="vocab-highlight">pauper apprentices</strong> <small class="vocab-gloss">(destitute children legally bound by workhouses to factory owners)</small> were carted from London workhouses to remote northern mills. Employed as "scavengers" and "piecers," children crawled underneath moving spinning mules to sweep flyaway cotton while machinery roared inches above their heads. Horrific accidents were routine: fingers were crushed in gears, and girls were scalped when long hair caught in whirling drive shafts. Children slept in shifts in crowded apprentice dormitories, surviving on thin oatmeal porridge.',
-          tasks: [
-            {
-              type: 'ledger_audit',
-              title: 'Forensic Ledger: The Reality of 19th-Century Child Labour',
-              text: 'Audit qualitative national eyewitness testimony against quantitative local parish census records.',
-              instruction:
-                'Using Source C, Source D, and paragraphs [3.2]–[3.3], cross-reference national parliamentary testimony with local Fareham census evidence.',
-              left_title: 'Qualitative National Testimony (1832 Sadler Report)',
-              right_title: 'Quantitative Local Evidence (1881 Fareham Census)',
-              left_points: [
-                'Firsthand testimony given under oath by former child worker Matthew Crabtree.',
-                'Exhausting 14.5-hour shifts (6:00 am – 8:30 pm) without formal meal intervals.',
-                'Systematic corporal punishment with leather straps ("strapping") for minor lateness.',
-                'Lifelong skeletal deformities, collapsed arches, and rickets from continuous standing.',
-              ],
-              right_points: [
-                'Official parish census returns for Fareham and Funtley brickmaking districts.',
-                'Documentation of local boys aged 10 and 11 working as "pug boys" in clay pits.',
-                'Children driving blindfolded horses to grind dense Reading Formation clay.',
-                'Young "turners" walking up to 15 miles daily moving heavy 6lb wet bricks along hacks.',
-              ],
-              synthesis_prompt:
-                'Historical Audit: Why must a historian cross-reference BOTH national parliamentary reports AND local parish census returns to understand child labour?',
-              starter:
-                'A historian must examine both source types because while the Sadler Report provides...',
-              model_answer:
-                'A historian must examine both source types because they provide complementary qualitative and quantitative historical evidence [3.2, 3.3]. The 1832 Sadler Report provides vital qualitative, firsthand emotional testimony regarding the visceral daily cruelty of child labour—revealing the 14-hour days, physical beatings with leather straps, and bodily deformities. In complement to this, local census returns like the 1881 Fareham Census provide quantitative, factual proof that child labour was not an isolated northern textile problem, but a structural reality embedded in rural Hampshire clay pits, employing local 10-year-olds as pug boys and brick turners.',
-            },
-          ],
           source: {
             letter: 'C',
             title: 'Source C: Parliamentary Sadler Committee Report (1832)',
@@ -1283,30 +965,6 @@ const industrialisation_and_empire = {
           title: 'Act 5: Lord Shaftesbury & The 1833 Factory Act (1833)',
           theme_heading: 'Act 5: Lord Shaftesbury & The 1833 Factory Act (1833)',
           text: '<span class="para-ref">[2.5]</span> Shocked by Sadler’s revelations, humanitarian reformers led by <strong class="vocab-highlight">Lord Shaftesbury</strong> pressured Parliament into passing the historic <strong>1833 Factory Act</strong>. Defying capitalist owners who warned that state interference would ruin Britain’s economy, the Act banned textile work for children under nine, capped working hours at eight hours daily for children aged 9–13, and required two hours of compulsory schooling. Crucially, Parliament appointed the first four statutory factory inspectors to enforce the law. While mill masters often forged birth certificates, the Act set a vital constitutional precedent: the state possessed the legal right to protect vulnerable workers from unbridled industrial exploitation.',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Enquiry Essay: "To what extent was industrial work in 19th-century Britain an engine of human punishment rather than societal progress for the working classes?"',
-              scaffolding: {
-                structure_strip: [
-                  'PEE Paragraph 1 (Pessimist / Punishment): Argue that factory and brickfield labour was a brutal punishment, citing 14-hour days, physical beatings, deformities, and the exploitation of children in northern mills and Fareham clay pits [1.3, 3.2, 3.3].',
-                  'PEE Paragraph 2 (Optimist / Progress): Counter-argue that industrial work generated societal progress, citing the creation of mass national wealth, rising real wages, consumer goods, and parliamentary reform like the 1833 Factory Act [2.3, 4.3].',
-                  'Historiographical Verdict: Weigh the competing arguments to reach a balanced judgment on whether short-term generational sacrifice outweighed long-term societal advancement.',
-                ],
-                connective_bank: [
-                  'From a "Pessimist" historical perspective, industrial work was unquestionably a system of punishment because...',
-                  'As evidenced in paragraph [1.3] and Source C...',
-                  'Furthermore, in local Hampshire brickfields, archival evidence proves...',
-                  'Conversely, "Optimist" historians provide a powerful counter-interpretation, arguing that...',
-                  'As demonstrated in paragraph [4.3], industrial mechanization enabled...',
-                  'Ultimately, in evaluating whether industrialisation represented progress or punishment, one must distinguish between...',
-                ],
-              },
-              model_answer:
-                'From a "Pessimist" historical perspective, industrial work in nineteenth-century Britain was undeniably an engine of human punishment for the working classes. As documented in the 1832 Sadler Report (Source C) and paragraph [1.3], the factory system subordinated human beings to relentless machine-clock discipline, forcing eight-year-old children to labour for up to fifteen hours a day amid deafening noise, toxic dust, and unguarded machinery. Overseers enforced discipline through brutal physical violence ("strapping"), and years of continuous standing resulted in severe physical deformities such as collapsed arches and rickets. Furthermore, local archival evidence demonstrates that this exploitation was not confined to northern cotton mills: in the Funtley and Fareham clay pits, children as young as ten were employed as "pug boys" and brick turners, walking miles daily under extreme weather conditions to produce building materials for imperial London [3.3]. For the generations that endured these conditions, industrialisation destroyed traditional artisan independence and physically broke their bodies for capitalist profit.<br><br>Conversely, "Optimist" historians present a compelling counter-argument that industrial work was the indispensable catalyst for long-term societal progress. Prior to the Industrial Revolution, agrarian Britain was trapped in rural poverty, where periodic crop failures caused widespread starvation and children laboured from infancy without legal protection [1.1, 4.3]. The explosion of manufacturing—exemplified by Fareham producing over twenty million durable red bricks annually to construct vital national infrastructure like the Royal Albert Hall (Source B)—unlocked unprecedented national wealth [2.3]. Over time, this economic growth directly funded higher real wages, cheaper mass-produced clothing, improved domestic sanitation, and medical advancements. Crucially, the public outcry over working conditions forced Parliament to pass the landmark 1833 and 1844 Factory Acts, establishing the legal precedent for state regulation of child labour, mandatory schooling, and the modern welfare state [4.1].<br><br>Ultimately, in evaluating whether the Industrial Revolution represented progress or punishment, a historian must distinguish between the catastrophic short-term human cost and the undeniable long-term societal outcome. For the early nineteenth-century working classes who lived through the factory boom and Fareham clay pits, industrial labour was a brutal and traumatic punishment that exploited their labour without adequate compensation. However, for subsequent generations, that traumatic sacrifice laid the technological, architectural, and legislative foundations of the modern world. Therefore, industrialisation was a harrowing human punishment that ultimately generated profound civilizational progress.',
-            },
-          ],
           source: {
             letter: 'D',
             title: 'Source D: Contemporary Engraving of Factory Child Labour (1840)',
@@ -1532,12 +1190,6 @@ const industrialisation_and_empire = {
           answer: 'Under nine years old',
         },
       ],
-      pair_share: {
-        prompt: 'Discuss with your partner: Was factory work progress or punishment?',
-        think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
-        pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
-        share: "Share your pair's combined conclusion with the class.",
-      },
       vocab: [
         {
           term: 'Fareham Reds',
@@ -1570,8 +1222,6 @@ const industrialisation_and_empire = {
             'Grim institutions established under the Poor Law where the destitute endured harsh labor in exchange for food.',
         },
       ],
-      vocab_cloze_text:
-        'Victorian urban expansion was built upon industrial brickyards and mills. In Hampshire, workers produced millions of [Fareham Reds], mixing clay in a heavy [Pug Mill]. Throughout early factories and every northern [Textile Mill], employers relied heavily on cheap [Child Labour] to clean spinning machines. Desperate families took these hazardous jobs to avoid starvation in the dreaded [Workhouse]. Public outrage gradually forced Parliament to pass the [Factory Acts], legally restricting hours for young factory hands.',
       hook_text:
         "Dawn breaks over Leeds in 1830 as a piercing factory horn shatters the icy darkness. In freezing garrets, eight-year-old children stagger awake, terrified of arriving a minute past six o'clock, which brings the overseer's heavy leather strap or a docked wage. In the domestic workshops of the previous century, families spun wool at their own pace, pausing to tend crops or celebrate 'Saint Monday.' Now, towering brick textile mills dominate the horizon, filled with the deafening thunder of steam-driven powerlooms. For Britain's new working class, the machine has become a harsh, unyielding master.",
       causal_domino_spine: {
@@ -1674,75 +1324,75 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      workbook_stages: [
+      tasks: [
         {
-          step: 1,
-          date: '1780–1820',
-          para_ref: '[2.1]',
-          heading: 'How did the factory system displace traditional domestic craft production?',
-          bullets: [
-            'Shift from Domestic Workshops',
-            'Powered Textile Machinery',
-            'Relentless Factory Discipline',
-          ],
-          focus_clue:
-            'How did steam powerlooms and multi-storey mills destroy the independence of traditional domestic handloom weavers?',
+          id: 'ie_l2_two_features_child_labour',
+          type: 'two_features',
+          tariff: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          title: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          question:
+            'Describe two features of working conditions for child labourers in Victorian textile mills. [4 marks]',
+          feature_1: {
+            prompt:
+              'Feature 1: Identify one dangerous physical hazard or task endured by child mill workers and provide supporting detail.',
+            starter: 'One key feature of working conditions was... Specifically, this involved...',
+            model:
+              'One key feature of working conditions for child labourers was the extreme physical danger of working around unguarded machinery [2.3]. Specifically, young children were employed as "piecers" and "scavengers" who were forced to crawl beneath fast-moving spinning mules while the heavy frames were in motion to sweep up loose cotton fibres and tie broken threads. Because spinning frames lacked safety guards, children frequently suffered catastrophic injuries, including crushed fingers, broken limbs, and horrific scalpings when their hair was caught in turning iron shafts.',
+          },
+          feature_2: {
+            prompt:
+              'Feature 2: Identify a second feature regarding working hours, fatigue, or draconian factory discipline.',
+            starter: 'A second key feature was... For example, this meant that...',
+            model:
+              'A second key feature was the exhausting shift lengths enforced by brutal corporal punishment [2.2, 2.4]. For example, child apprentices typically worked fourteen- to sixteen-hour days, starting as early as 5:00 a.m. in stifling, lint-filled air with only forty minutes for meals. To prevent children from falling asleep or slowing production as extreme fatigue set in, overlookers routinely beat them with heavy leather straps ("strapping") and imposed harsh monetary fines for lateness, opening a window, or sitting down.',
+          },
+          topic: 'Question 1: Describe Two Features [4 marks • 5 mins]',
         },
         {
-          step: 2,
-          date: '1800–1830',
-          para_ref: '[2.2]',
-          heading:
-            'How did the factory clock and draconian fines enforce strict industrial discipline?',
-          bullets: [
-            'Rigid Fourteen-Hour Shifts',
-            'Pence-Deduction Lateness Fines',
-            'Choking Dust & Locked Doors',
+          id: 'ie_l2_consequence_factory_act',
+          type: 'extended_writing',
+          tariff: 'Question 2: Explain One Consequence [4 marks • 5 mins]',
+          title: 'Question 2: Explain One Consequence [4 marks • 5 mins]',
+          question:
+            'Explain one consequence of the 1833 Factory Act for working children in Britain. [4 marks]',
+          hints: [
+            'Point: State how the 1833 Factory Act established the legal principle of state regulation over private manufacturing.',
+            'Evidence: Cite specific statutory terms—banning work for children under nine, limiting 9–13 year olds to eight hours, and creating four factory inspectors [2.5].',
+            'Explanation: Explain why appointing independent government inspectors broke the unrestricted authority of mill owners.',
           ],
-          focus_clue:
-            'How did mill owners use locked gates, timed shifts, and wage-docking fines to impose strict industrial obedience?',
-        },
-        {
-          step: 3,
-          date: '1810–1832',
-          para_ref: '[2.3]',
-          heading:
-            'Why were pauper apprentice children systematically exploited in northern textile mills?',
-          bullets: [
-            'Workhouse Apprentice Trafficking',
-            'Crawling Under Spinning Mules',
-            'Crushed Fingers & Hair Scalpings',
-          ],
-          focus_clue:
-            'Why did factory masters exploit workhouse orphan children as scavengers and piecers in dangerous textile machinery?',
-        },
-        {
-          step: 4,
-          date: '1832',
-          para_ref: '[2.4]',
-          heading:
-            'What shocking physical abuses did Matthew Crabtree reveal to the Sadler Committee?',
-          bullets: [
-            'Sixteen-Hour Daily Fatigue',
-            'Overlooker Leather Strap Beatings',
-            'Permanent Spinal Stunting',
-          ],
-          focus_clue:
-            'What evidence did Matthew Crabtree give to Parliament regarding strap beatings, sixteen-hour days, and physical deformities?',
-        },
-        {
-          step: 5,
-          date: '1833',
-          para_ref: '[2.5]',
-          heading:
-            'How did the 1833 Factory Act introduce the first legal regulation of child labour?',
-          bullets: [
-            'Ban on Children Under Nine',
-            'Eight-Hour Workday Limits',
-            'Four Statutory Factory Inspectors',
-          ],
-          focus_clue:
-            'How did the 1833 Factory Act restrict child working hours and appoint the first four government inspectors?',
+          scaffolding: {
+            structure_strip: [
+              'Point: State the primary consequence—the introduction of statutory age/hour limits and government inspection.',
+              'Evidence: Cite the ban on under-nines, eight-hour limits for ages 9–13, and four factory inspectors [2.5].',
+              'Explanation: Explain how this broke laissez-faire and established state protection as a legal right.',
+            ],
+            sentence_starters: [
+              'One significant consequence of the 1833 Factory Act was...',
+              'Specifically, following the shocking testimonies delivered to the Sadler Committee, Parliament enacted...',
+              'This meant that for the first time in British history...',
+              'Furthermore, the Act appointed four statutory factory inspectors to...',
+              'Consequently, the long-term significance was that...',
+            ],
+            connective_bank: [
+              'A significant consequence was...',
+              'For instance, this meant that...',
+              'This directly led to...',
+              'Consequently, the overall outcome was...',
+            ],
+            word_bank: [
+              '1833 Factory Act',
+              'child piecers',
+              'textile mills',
+              'eight-hour workday',
+              'factory inspectors',
+              'Sadler Committee',
+              'state regulation',
+              'laissez-faire',
+            ],
+          },
+          model_answer:
+            'One significant consequence of the 1833 Factory Act was the historic establishment of state regulation and statutory legal protection for child workers in British textile mills [2.5]. Prior to 1833, British governments adhered strictly to laissez-faire, allowing mill masters to employ children of any age for unlimited hours without legal oversight. In response to the horrifying evidence of crippling deformities and beatings revealed by the Sadler Committee [2.4], the 1833 Act prohibited the employment of children under the age of nine in textile mills, capped the working hours of children aged nine to thirteen at eight hours per day, and mandated two hours of compulsory schooling daily. Crucially, the legislation appointed four statutory factory inspectors with legal powers to enter mills unannounced and prosecute offending masters. Although four inspectors were insufficient to police thousands of mills across Lancashire and Yorkshire, the Act established the revolutionary legal precedent that the state had a duty to intervene in private industry to protect vulnerable workers.',
+          topic: 'Question 2: Explain One Consequence [4 marks • 5 mins]',
         },
       ],
     },
@@ -1914,85 +1564,12 @@ const industrialisation_and_empire = {
             'Government measures, legislation, and civil engineering infrastructure aimed at providing clean water, sewage removal, and disease control.',
         },
       ],
-      timeline_anchor: [
-        {
-          date: '1800–1830',
-          title: 'The Urban Population Explosion & Slums',
-          desc: 'Rapid urbanisation forced millions into cramped, unregulated back-to-back terraced houses and flooded earthen cellars.',
-        },
-        {
-          date: '1830–1840',
-          title: 'Cesspools & Contaminated Water Pumps',
-          desc: 'Dozens of families shared single overflowing outdoor privies that drained into porous, unlined underground cesspools.',
-        },
-        {
-          date: '1831–1848',
-          title: 'The Blue Terror: Cholera Pandemics',
-          desc: 'Waterborne cholera struck British cities in terrifying waves, killing healthy adults within twelve hours through sudden dehydration.',
-        },
-        {
-          date: '1842',
-          title: 'Edwin Chadwick’s 1842 Sanitary Report',
-          desc: 'Chadwick published statistical evidence proving that industrial slum filth caused disease and cut Manchester life expectancy to 17–19 years.',
-        },
-        {
-          date: '1858–1865',
-          title: 'The Great Stink & Bazalgette’s Sewers',
-          desc: 'The blistering heat of 1858 fermented Thames sewage, forcing terrified MPs to grant Joseph Bazalgette £3 million for civil sewers.',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: The Slum Explosion: Back-to-Back Courts & Cellars (1800–1830)',
           theme_heading: 'Act 1: The Slum Explosion: Back-to-Back Courts & Cellars (1800–1830)',
           text: '<span class="para-ref">[3.1]</span> Between 1801 and 1851, the population of industrial cities like Manchester, Birmingham, and Leeds quadrupled. Speculative builders threw up thousands of cramped <strong class="vocab-highlight">back-to-back houses</strong> <small class="vocab-gloss">(terraced brick slums sharing rear and side party walls)</small> with zero municipal building regulations. These houses had no through-ventilation, no indoor plumbing, and shared thin walls that seeped dampness. In damp, unpaved courts, entire families crowded into single windowless earthen cellars beneath street level. In cities like Liverpool, up to 20,000 destitute Irish immigrants and mill hands lived packed twelve to a cellar, where stagnant sewage pooled on earthen floors.',
-          tasks: [
-            {
-              type: 'causal_domino',
-              title: 'Causal Chain: From Rural Migration to Epidemic Squalor (1800–1848)',
-              instruction:
-                'Draw arrows connecting the causal stages in the domino flowchart to explain how rapid, unregulated urbanisation created explosive cholera epidemics.',
-              events: [
-                {
-                  id: 'event_1',
-                  title: 'Agricultural Enclosure & Mechanisation',
-                  detail:
-                    'Displaced rural labourers abandon farm cottages to seek factory wages in burgeoning industrial towns [1.1].',
-                },
-                {
-                  id: 'event_2',
-                  title: 'Explosive Urban Migration',
-                  detail:
-                    'Town populations double in two decades without municipal planning, paving, drainage, or building codes [1.1].',
-                },
-                {
-                  id: 'event_3',
-                  title: 'Unregulated Speculative Housing',
-                  detail:
-                    'Landlords construct high-density back-to-back terraces with unlined brick cesspools beneath floors [1.2].',
-                },
-                {
-                  id: 'event_4',
-                  title: 'Cesspool Infiltration of Shallow Wells',
-                  detail:
-                    'Untreated human sewage continuously seeps through porous soil directly into communal drinking pumps [1.3].',
-                },
-                {
-                  id: 'event_5',
-                  title: 'Explosive Waterborne Epidemics',
-                  detail:
-                    'Lethal cholera bacteria spreads rapidly through contaminated drinking supplies, killing 130,000 Britons in four waves [1.3].',
-                },
-              ],
-              synthesis_prompt:
-                'Historical Causation: Why was the contamination of drinking water an unavoidable consequence of laissez-faire urbanisation?',
-              starter:
-                'Contamination was an unavoidable consequence under laissez-faire policies because...',
-              model_answer:
-                'Contamination was an unavoidable consequence of laissez-faire governance because speculative landlords and industrialists prioritized immediate rental profit over municipal sanitary infrastructure [1.2, 1.3]. Because the British government refused to impose building standards, inspect subsoil, or provide piped water, landlords dug cheap unlined cesspools directly adjacent to communal wells. Without municipal regulation, the geological saturation of shallow drinking water with human effluent was mathematically certain.',
-            },
-          ],
           source: {
             letter: 'A',
             title: 'Source A: Gustave Doré, Over London by Rail (1872)',
@@ -2010,54 +1587,6 @@ const industrialisation_and_empire = {
           title: 'Act 2: Cesspools, Privies & Contaminated Pumps (1830–1840)',
           theme_heading: 'Act 2: Cesspools, Privies & Contaminated Pumps (1830–1840)',
           text: '<span class="para-ref">[3.2]</span> Urban sanitation was almost medieval. A single wooden outdoor privy often served forty or more families in a crowded courtyard. Without municipal sewer pipes, human waste drained into porous underground cesspools that overflowed into gutters and streets. Towering mounds of decaying nightsoil accumulated in alleyways for months until sold to rural farmers as manure. Worse still, private water companies supplied water only two or three times a week for a few hours through shared public standpipes. Cesspool liquids seeped directly through the porous soil into shallow groundwater wells, contaminating the drinking water of entire neighbourhoods.',
-          tasks: [
-            {
-              type: 'visual_annotation',
-              title:
-                "Visual Blueprint & Archival Anatomy: Deconstructing 'A Court for King Cholera' (1852)",
-              text: "Analyse John Leech's famous 1852 satirical cartoon from Punch magazine (Source B). Identify the visual symbols illustrating how urban squalor incubated lethal epidemic disease.",
-              instruction:
-                'Match each numbered hotspot on Source B to its archival annotation, explaining how Leech represented the municipal failure of Victorian authorities.',
-              image: '/images/court_for_king_cholera.png',
-              image_alt: 'A Court for King Cholera cartoon from Punch magazine 1852',
-              annotations: [
-                {
-                  num: 1,
-                  label: 'Central Dunghill & Rotting Refuse',
-                  prompt:
-                    'What environmental hazard does this central mound represent in Source B?',
-                  starter: 'The central dunghill represents...',
-                  model:
-                    'An open mound of rotting domestic rubbish, offal, and night soil accumulated in the courtyard, illustrating the total absence of municipal street sweeping or waste collection.',
-                },
-                {
-                  num: 2,
-                  label: 'Contaminated Communal Water Pump',
-                  prompt: 'Why was the communal iron pump a deadly trap for slum inhabitants?',
-                  starter: 'The communal pump was a lethal trap because...',
-                  model:
-                    'The shallow pump stood immediately next to open gutters and unlined cesspools, delivering drinking water saturated with sewage and cholera bacteria directly to residents.',
-                },
-                {
-                  num: 3,
-                  label: 'Dilapidated Back-to-Back Tenements',
-                  prompt:
-                    'What does the crumbling housing reveal about speculative Victorian landlords?',
-                  starter: 'The crumbling tenements reveal that landlords...',
-                  model:
-                    'Speculative landlords crammed dozens of tenants into multi-story unventilated garrets without indoor plumbing or repairs, maximizing rental yield while ignoring basic sanitation.',
-                },
-                {
-                  num: 4,
-                  label: 'King Cholera Enthroned on Filth',
-                  prompt: 'Why does Leech personify the cholera epidemic as a skeletal monarch?',
-                  starter: 'Leech personifies cholera as a monarch because...',
-                  model:
-                    'Cholera is depicted as a reigning king ruling over squalor, demonstrating that through municipal neglect and laissez-faire apathy, lethal disease had become the true sovereign of British cities.',
-                },
-              ],
-            },
-          ],
           source: {
             letter: 'B',
             title: 'Source B: John Leech, A Court for King Cholera (Punch, 1852)',
@@ -2076,23 +1605,6 @@ const industrialisation_and_empire = {
           theme_heading:
             'Act 3: The Blue Terror: Cholera & The Collapse of Laissez-Faire (1831–1848)',
           text: '<span class="para-ref">[3.3]</span> In 1831, a terrifying new global pandemic landed on British shores: Asiatic <strong class="vocab-highlight">cholera</strong>. Spread through water contaminated with fecal bacteria, cholera struck victims with violent vomiting and diarrhea, causing extreme dehydration that turned skin a ghostly blue and killed healthy adults within twelve hours. Victorians, mistakenly believing in the <strong class="vocab-highlight">miasma theory</strong> <small class="vocab-gloss">(the false belief that epidemic disease was caused by breathing foul smells and toxic air)</small>, burned barrels of pitch in the streets. When cholera killed over 50,000 people in 1848, the terror of wealthy elites shattered their devotion to <strong class="vocab-highlight">laissez-faire</strong> <small class="vocab-gloss">(the political philosophy that government should never interfere in economic or civic life)</small>.',
-          tasks: [
-            {
-              type: 'word_scalpel',
-              title: "Forensic Scalpel: Interrogating Chadwick's 1842 Sanitary Report",
-              text: 'Interrogate Source C (Edwin Chadwick, Report on the Sanitary Condition of the Labouring Population, 1842). Extract the exact comparative phrase Chadwick used to shock Parliament into abandoning laissez-faire.',
-              instruction:
-                'Use your analytical scalpel on Source C to extract the exact 10-word military comparison Chadwick deployed to prove urban filth was deadlier than foreign battlefields.',
-              source_excerpt:
-                'The annual loss of life from filth and bad ventilation is greater than the loss from death or wounds in any wars in which the country has been engaged in modern times.',
-              model_quote: 'greater than the loss from death or wounds in any wars',
-              justification_prompt:
-                'Why was comparing slum mortality to military casualties a masterstroke of political persuasion in 1842?',
-              starter: 'Chadwick used this military comparison because...',
-              model_answer:
-                "Comparing slum deaths to military casualties was a masterstroke of political persuasion because it translated a public health issue into a national security crisis [3.2]. In 1842, Parliament was dominated by aristocratic landowners and industrialists who were indifferent to working-class suffering but fiercely proud of Britain's military prestige. By demonstrating that domestic squalor killed more British citizens annually than all the battlefields of the Napoleonic Wars, Chadwick stripped MPs of the excuse that public sanitation was a trivial matter of private charity.",
-            },
-          ],
           source: {
             letter: 'C',
             title:
@@ -2117,40 +1629,17 @@ const industrialisation_and_empire = {
           title: 'Act 5: The Great Stink & Bazalgette’s Sewer Triumph (1858–1865)',
           theme_heading: 'Act 5: The Great Stink & Bazalgette’s Sewer Triumph (1858–1865)',
           text: '<span class="para-ref">[3.5]</span> The turning point arrived in the stifling midsummer of 1858 with the <strong>"Great Stink"</strong>. The untreated sewage of three million Londoners fermenting in the Thames produced a reek so toxic that Parliament could barely function. Terrified MPs passed emergency legislation in eighteen days, granting civil engineer <strong class="vocab-highlight">Joseph Bazalgette</strong> £3 million to rebuild the capital’s sanitation. Between 1859 and 1865, Bazalgette constructed 1,100 miles of street sewers and 82 miles of colossal underground brick interceptor tunnels, using 318 million bricks and waterproof Portland cement. Bazalgette’s subterranean cathedrals permanently diverted 420 million gallons of sewage away from London, ending epidemic cholera forever and establishing the blueprint for the modern livable city.',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Enquiry Essay: "To what extent did industrialisation make 19th-century British towns unlivable death traps for the working classes?"',
-              scaffolding: {
-                structure_strip: [
-                  "PEE Paragraph 1 (Pessimist / Squalor & Disease): Argue that rapid urbanisation turned industrial towns into unlivable death traps, citing back-to-back housing, cesspools, cholera epidemics, and Doré's depiction of London [1.2, 2.1, Source A].",
-                  "PEE Paragraph 2 (Optimist / Infrastructure & Reform): Counter-argue that industrialisation generated the engineering technology and municipal legislation to create modern sanitation, citing Chadwick's report, Bazalgette's 1,100-mile sewer system, and the 1875 Public Health Act [3.2, 4.1].",
-                  'Historiographical Verdict: Reach a balanced, nuanced conclusion evaluating whether short-term urban misery outweighed the long-term civilizational creation of public health.',
-                ],
-                connective_bank: [
-                  "From a 'Pessimist' perspective, industrial towns were indisputably unlivable death traps because...",
-                  'As documented in paragraph [1.2] and Source A...',
-                  'This catastrophic squalor was compounded by...',
-                  "Conversely, 'Optimist' historians provide a vital counter-argument, contending that...",
-                  'As evidenced in paragraph [4.1] and Source C...',
-                  'Ultimately, in judging whether 19th-century towns were unlivable death traps, one must distinguish between...',
-                ],
-              },
-              model_answer:
-                "From a 'Pessimist' historical perspective, early nineteenth-century British industrial towns were indisputably unlivable death traps for the working classes. As documented in paragraph [1.2] and Gustave Doré's bleak 1872 engraving (Source A), the complete absence of town planning and municipal regulation allowed speculative landlords to pack millions of rural migrants into suffocating 'back-to-back' terraces sharing three walls with no ventilation. In towns like Manchester and Leeds, hundreds of residents shared single overflowing privies dug over porous, unlined cesspools. This structural squalor created the perfect incubation chamber for Asiatic Cholera, which swept through contaminated water supplies in four devastating epidemics, killing over 130,000 Britons and driving working-class life expectancy down to seventeen years in Liverpool [2.1, 3.1]. In local Hampshire market towns like Fareham, open sewage ran directly behind West Street breweries into Fareham Creek, proving that this unlivable reality was universal (Source D). For the generations of workers forced into these disease-ridden slums, industrialisation was an unmitigated physical and psychological torment.<br><br>Conversely, 'Optimist' historians provide a powerful counter-interpretation, arguing that nineteenth-century towns cannot be dismissed merely as death traps, but must be understood as the crucibles of modern public health. Prior to industrialisation, rural agrarian Britain suffered from chronic infant mortality, isolation, and untreated disease without any state intervention [4.3]. The urban crisis forced Victorian society to confront its laissez-faire dogma. Edwin Chadwick's pioneering 1842 Sanitary Report (Source C) and Dr John Snow's breakthrough on the Broad Street pump revolutionized epidemiology, compelling the state to abandon apathy. Furthermore, it was the immense wealth, steam-powered pumping machinery, and millions of Fareham Red bricks generated by the industrial economy that enabled Joseph Bazalgette to construct London's miraculous 1,100-mile underground intercepting sewer network [4.1]. This engineering feat, reinforced by the landmark 1875 Public Health Act, virtually eradicated waterborne epidemics and established the legal blueprint for the modern welfare state.<br><br>Ultimately, in evaluating whether Victorian towns were unlivable death traps, a historian must distinguish between the catastrophic short-term human cost and the monumental long-term societal legacy. For the working-class families who lived and died between 1800 and 1860, British cities were brutal, unlivable death traps where private profit took precedence over human life. However, without the terrifying shock of King Cholera and the Great Stink, Victorian Britain would never have developed the municipal governance, scientific infrastructure, and sanitary engineering that made modern urban life possible. Industrial towns were therefore deadly crucibles that ultimately forged the sanitary foundations of the modern world.",
-            },
-          ],
           source: {
             letter: 'D',
-            title: 'Source D: Fareham Local Board of Health Minute Book (1850)',
+            title:
+              'Source D: Sir Joseph Bazalgette’s London Interceptor Sewer Network Under Construction (1862)',
             context:
-              'Official minute book entry from the Fareham Local Board of Health in 1850, proving that public health crises were not confined to northern industrial capitals like Manchester, but directly plagued local Hampshire market towns. **Hinge Question:** What does local archival evidence in Hampshire reveal about the universal reach of 19th-century sanitary failure?',
+              'Contemporary photograph of the cavernous Abbey Mills pumping station and underground brick interceptor sewers engineered by Sir Joseph Bazalgette following the 1858 Great Stink. **Hinge Question:** How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?',
             hinge_question:
-              'What does local archival evidence in Hampshire reveal about the universal reach of 19th-century sanitary failure?',
-            text: '“Resolved: That the open ditch running from West Street behind the brewery into Fareham Creek constitutes an intolerable public nuisance and danger to health. Overflow from private cesspits and pigsties discharges continuously into the roadway, saturating the subsoil and poisoning adjacent wells from which inhabitants draw daily water. Cases of violent typhus fever have arisen immediately adjacent.”',
+              'How did the construction of underground interceptor sewers demonstrate a decisive shift from individual laissez-faire to collective state public health engineering?',
+            image: '/images/bazalgette_sewer.jpg',
             caption:
-              'Source D: Minutes of the Fareham Local Board of Health (1850, Hampshire Record Office 42M72/1), detailing sanitary conditions in West Street and Fareham Creek.',
+              'Source D: Construction of Sir Joseph Bazalgette’s subterranean interceptor sewer system beneath London (c. 1862). Over 318 million bricks and 82 miles of enclosed interceptor tunnels diverted London’s sewage away from the Thames, permanently eliminating waterborne cholera epidemics.',
           },
         },
       ],
@@ -2353,14 +1842,6 @@ const industrialisation_and_empire = {
             'It provided empirical, mapped epidemiological evidence that disease spread via contaminated water ingested into the digestive tract, not through airborne miasma',
         },
       ],
-      pair_share: {
-        prompt: 'Discuss with your partner: Did industrialisation make British towns unlivable?',
-        think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
-        pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
-        share: "Share your pair's combined conclusion with the class.",
-      },
-      vocab_cloze_text:
-        'During the nineteenth century, unmanaged [Urbanisation] turned British towns into crowded, pestilential centers. Factory owners and councils followed a policy of [Laissez-faire], refusing to spend taxes on sewers. Families crammed into back-to-back houses where a single overflowing [Cesspool] contaminated neighborhood drinking pumps. Most doctors subscribed to the [Miasma Theory], leaving cities defenseless against repeated outbreaks of waterborne [Cholera]. Only massive epidemics forced Parliament to pass compulsory legislation for [Public Health].',
       hook_text:
         "In July 1858, a suffocating heatwave settles over London. The River Thames, which receives the daily untreated sewage of three million citizens, transforms into a vast, bubbling open sewer. Inside the Palace of Westminster, the nauseating stench is so overpowering that MPs soak window curtains in chloride of lime and flee committee rooms with handkerchiefs pressed to their faces. For decades, politicians clung to the doctrine of laissez-faire, insisting that filthy industrial slums and cholera epidemics were none of the government's business. Now, the reek of their own neglect threatens Parliament itself, forcing the greatest engineering revolution in urban history.",
       causal_domino_spine: {
@@ -2463,75 +1944,76 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      workbook_stages: [
+      tasks: [
         {
-          step: 1,
-          date: '1800–1830',
-          para_ref: '[3.1]',
-          heading: 'How did explosive urban population growth create deadly back-to-back slums?',
-          bullets: [
-            'Unregulated Speculative Building',
-            'Windowless Shared Party Walls',
-            'Flooded Earthen Cellars',
-          ],
-          focus_clue:
-            'How did rapid population growth and lack of building rules lead to dark, damp back-to-back houses and cellar dwellings?',
+          id: 'ie_l3_two_features_slums',
+          type: 'two_features',
+          tariff: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          title: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          question:
+            'Describe two features of back-to-back housing in 19th-century industrial towns. [4 marks]',
+          feature_1: {
+            prompt:
+              'Feature 1: Identify one structural or architectural feature of back-to-back houses and describe its impact on living conditions.',
+            starter:
+              'One key feature of back-to-back housing was... Specifically, this meant that...',
+            model:
+              'One key feature of back-to-back housing was the shared party walls and total lack of through-ventilation [3.1]. Specifically, speculative builders constructed rows of narrow houses touching each other on three sides—sharing rear walls and both side walls—leaving only a single exterior wall with windows facing into a narrow, sunless court. This meant that fresh air could never circulate through the rooms, trapping dampness, toxic coal soot, and stale air inside crowded family living spaces.',
+          },
+          feature_2: {
+            prompt:
+              'Feature 2: Identify a second feature concerning sanitation, privies, or water supply.',
+            starter: 'A second key feature was... For instance, this involved...',
+            model:
+              'A second key feature was the primitive, overflowing communal sanitation [3.2]. For instance, entire courts containing upwards of a hundred working people shared a single outdoor cesspool privy or ash-pit located directly outside ground-floor doors. Because nightsoil was rarely cleared, human excrement piled into towering dunghills that seeped directly into the soil, fatally contaminating the shallow communal pump wells from which residents drew their daily drinking and cooking water.',
+          },
+          topic: 'Question 1: Describe Two Features [4 marks • 5 mins]',
         },
         {
-          step: 2,
-          date: '1830–1840',
-          para_ref: '[3.2]',
-          heading:
-            'Why did primitive sanitation turn working-class courts into festering cesspools?',
-          bullets: [
-            'Shared Privy Overflow',
-            'Towering Nightsoil Dunghills',
-            'Seeping Groundwater Wells',
+          id: 'ie_l3_consequence_great_stink',
+          type: 'extended_writing',
+          tariff: 'Question 2: Explain One Consequence [4 marks • 5 mins]',
+          title: 'Question 2: Explain One Consequence [4 marks • 5 mins]',
+          question:
+            'Explain one consequence of the 1858 Great Stink for public health in Victorian London. [4 marks]',
+          hints: [
+            'Point: State how the intolerable midsummer stench of the Thames forced Parliament to abandon laissez-faire and fund Joseph Bazalgette’s sewer network.',
+            'Evidence: Cite the 18-day passage of the Metropolis Local Management Amendment Act granting £3 million to build 82 miles of brick interceptor sewers [3.5].',
+            'Explanation: Explain how redirecting 400 million gallons of sewage away from the Thames permanently banished waterborne cholera from the capital.',
           ],
-          focus_clue:
-            'Why did shared privies, unlined cesspools, and leaking nightsoil contaminate urban groundwater and drinking wells?',
-        },
-        {
-          step: 3,
-          date: '1831–1848',
-          para_ref: '[3.3]',
-          heading:
-            'Why did terrifying cholera epidemics shatter complacent beliefs in laissez-faire?',
-          bullets: [
-            'Waterborne Bacterial Agony',
-            'Blue-Skinned Twelve-Hour Collapse',
-            'Terrified Wealthy Elites',
-          ],
-          focus_clue:
-            'How did the terrifying arrival and rapid mortality of Asiatic cholera compel politicians to abandon laissez-faire?',
-        },
-        {
-          step: 4,
-          date: '1842',
-          para_ref: '[3.4]',
-          heading:
-            'How did Edwin Chadwick’s 1842 Report prove that filth caused disease and premature death?',
-          bullets: [
-            'Statistical Lifespan Comparison',
-            'Nineteen-Year Manchester Average',
-            'Economic Cost of Epidemics',
-          ],
-          focus_clue:
-            'How did Edwin Chadwick use mortality statistics to prove that squalor shortened life expectancy and cost taxpayers money?',
-        },
-        {
-          step: 5,
-          date: '1858–1865',
-          para_ref: '[3.5]',
-          heading:
-            'How did the 1858 Great Stink compel Parliament to fund Joseph Bazalgette’s sewers?',
-          bullets: [
-            'Midsummer Thames Fermentation',
-            'Commons Chloride Curtains',
-            'Bazalgette Interceptor Tunnels',
-          ],
-          focus_clue:
-            'How did the 1858 Great Stink force Parliament to fund Bazalgette’s underground interceptor sewers and eradicate cholera?',
+          scaffolding: {
+            structure_strip: [
+              'Point: State the decisive consequence—Parliament funded Sir Joseph Bazalgette’s monumental underground interceptor sewer network.',
+              'Evidence: Cite the midsummer heat of June 1858, chloride-soaked curtains at Westminster, and £3 million allocated in 18 days [3.5].',
+              'Explanation: Explain how intercepting London’s waste and pumping it downriver permanently eliminated cholera epidemics.',
+            ],
+            sentence_starters: [
+              'One decisive consequence of the 1858 Great Stink was...',
+              'During the blistering summer heat of June 1858, the River Thames became so choked with human sewage that...',
+              'Politicians in the House of Commons were overwhelmed by the putrid stench, prompting them to...',
+              'In just eighteen days, Parliament passed emergency legislation empowering engineer Joseph Bazalgette to...',
+              'As a result, London’s public health was transformed because...',
+            ],
+            connective_bank: [
+              'A significant consequence was...',
+              'For instance, this meant that...',
+              'This directly led to...',
+              'Consequently, the overall outcome was...',
+            ],
+            word_bank: [
+              'Great Stink (1858)',
+              'River Thames',
+              'Sir Joseph Bazalgette',
+              'interceptor sewers',
+              'cholera epidemics',
+              'Edwin Chadwick',
+              'House of Commons',
+              'public health',
+            ],
+          },
+          model_answer:
+            'One decisive consequence of the 1858 Great Stink was that it compelled Parliament to overcome decades of political inertia and fully fund Sir Joseph Bazalgette’s monumental underground interceptor sewer network [3.5]. Prior to 1858, British politicians resisted municipal expenditure on sanitation, leaving over 200,000 cesspools to drain raw sewage directly into the River Thames, which also served as the capital’s primary drinking supply. During the scorching summer of June 1858, the river fermented into a toxic slough of effluvia so intolerable that MPs at Westminster soaked committee curtains in chloride of lime to stifle the stench and fled the building in terror. In just eighteen days, Parliament abandoned laissez-faire and passed the Metropolis Local Management Amendment Act, providing engineer Joseph Bazalgette with £3 million to construct 82 miles of subterranean brick interceptor sewers. Bazalgette’s system intercepted 400 million gallons of sewage daily before it could reach the central Thames, pumping it eastward to Beckton and Crossness. Consequently, by permanently separating London’s drinking water from contaminated effluent, this sewer infrastructure eradicated waterborne cholera from London and created the blueprint for modern sanitary engineering.',
+          topic: 'Question 2: Explain One Consequence [4 marks • 5 mins]',
         },
       ],
     },
@@ -2703,252 +2185,176 @@ const industrialisation_and_empire = {
             'The strategic divide within Chartism between those advocating peaceful petitions (William Lovett) and those advocating armed uprising (Feargus O’Connor).',
         },
       ],
-      timeline_anchor: [
-        {
-          date: '1811–1816',
-          title: 'The Luddite Rebellion & Machine-Breaking',
-          desc: 'Skilled textile croppers formed nocturnal bands under "General Ludd," using sledgehammers to destroy wage-cutting powerlooms.',
-        },
-        {
-          date: 'Aug 1819',
-          title: 'The Peterloo Massacre',
-          desc: 'Mounted yeomanry cavalry charged 60,000 peaceful reformers at St Peter’s Field, Manchester, killing eighteen and wounding over 650.',
-        },
-        {
-          date: 'Nov 1830',
-          title: 'Captain Swing & The Hampshire Harvest Riots',
-          desc: 'Starving farm hands swept across Hampshire and the Meon Valley, smashing threshing machines and burning landlords’ hayricks.',
-        },
-        {
-          date: 'Dec 1830',
-          title: 'The Winchester Special Assizes',
-          desc: 'Judges at Winchester Castle tried over 300 Hampshire rioters, hanging teenager Henry Cook and transporting over 100 men to Australia.',
-        },
-        {
-          date: '1834',
-          title: 'The Tolpuddle Martyrs & Trade Unionism',
-          desc: 'Six Dorset farm workers led by George Loveless were sentenced to seven years’ penal transportation for taking a friendly society oath.',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
           title: 'Act 1: The Sledgehammer of General Ludd (1811–1816)',
           theme_heading: 'Act 1: The Sledgehammer of General Ludd (1811–1816)',
-          text: '<span class="para-ref">[4.1]</span> In the early 1810s, skilled artisan textile workers faced catastrophic wage cuts as wide weaving frames and steam powerlooms flooded northern workshops. Led by the mythical figurehead <strong class="vocab-highlight">General Ned Ludd</strong>, groups of masked cloth croppers launched coordinated nocturnal raids across Yorkshire and Nottinghamshire. Armed with colossal blacksmith sledgehammers nicknamed "Great Enoch," Luddites smashed the machines they believed were ruining their trade and starving their families. Terrified by the insurrection, Parliament deployed 12,000 soldiers to northern England—more than Wellington commanded in Spain—and passed the 1812 Frame Breaking Act, making machine wrecking a capital crime punishable by hanging.',
-          tasks: [
-            {
-              type: 'causal_domino',
-              title: 'Causal Chain: From Napoleonic Demobilisation to Peterloo (1815–1819)',
-              instruction:
-                'Draw arrows connecting the causal stages in the domino flowchart to explain how post-war economic depression led to the Peterloo Massacre and state repression.',
-              events: [
-                {
-                  id: 'event_1',
-                  title: 'Napoleonic Demobilisation & 1815 Corn Laws',
-                  detail:
-                    '300,000 soldiers return to unemployment while high tariffs on foreign grain double bread prices for workers [1.1].',
-                },
-                {
-                  id: 'event_2',
-                  title: 'Disenfranchisement of Industrial Cities',
-                  detail:
-                    'Manchester and Birmingham house hundreds of thousands of factory workers but possess zero parliamentary MPs [1.2].',
-                },
-                {
-                  id: 'event_3',
-                  title: 'Mass Peaceful Gathering at St Peter’s Field',
-                  detail:
-                    '60,000 working-class reformers gather peacefully on 16 August 1819 to demand universal suffrage [1.2].',
-                },
-                {
-                  id: 'event_4',
-                  title: 'Manchester Yeomanry Cavalry Charge',
-                  detail:
-                    'Panic-stricken magistrates unleash mounted militia with drawn sabres, killing 18 and wounding over 600 [1.3, Source A].',
-                },
-                {
-                  id: 'event_5',
-                  title: 'Passage of the Repressive Six Acts',
-                  detail:
-                    'The Tory government bans unauthorized meetings over 50 people, censors the radical press, and criminalizes dissent [1.3].',
-                },
-              ],
-              synthesis_prompt:
-                'Historical Causation: Why did the ruling aristocracy view peaceful parliamentary reform meetings as an existential threat?',
-              starter: 'The aristocracy viewed reform meetings as an existential threat because...',
-              model_answer:
-                "The ruling aristocracy viewed mass reform meetings as an existential threat because they were traumatized by the memory of the French Revolution of 1789 [1.3]. Wealthy landowners feared that if working-class majorities gained the vote, they would dismantle aristocratic privileges, abolish the Corn Laws, and confiscate private property. The sheer discipline and size of the 60,000-strong crowd at St Peter's Field convinced panic-stricken magistrates that peaceful protest was merely a prelude to armed insurrection.",
-            },
-          ],
+          text: '<span class="para-ref">[4.1]</span> In the manufacturing valleys of Nottinghamshire, Yorkshire, and Lancashire, industrialisation threatened skilled artisan workers with wage collapse and deskilling. In 1811, textile hand-workers organized a clandestine guerilla campaign under the mythical figurehead <strong class="vocab-highlight">General Ned Ludd</strong>. Armed with heavy sledgehammers nicknamed "Great Enoch", nocturnal raiding parties blackened their faces, marched across moors, and broke into mills to smash the newly introduced wide-frame stocking looms and steam shearing frames that undercut artisan craft wages. The British ruling class reacted with existential panic: in 1812, Parliament passed the Frame Breaking Act, making machine destruction a capital crime punishable by public hanging, and deployed over 12,000 regular troops to the industrial North—a military force larger than the army the Duke of Wellington commanded against Napoleon in Spain.',
           source: {
             letter: 'A',
-            title: 'Source A: George Cruikshank, The Massacre of Peterloo (1819)',
+            title:
+              'Source A: Declaration of General Ned Ludd to the Framework Knitters (Nottinghamshire, 1811)',
             context:
-              "George Cruikshank's scathing 1819 cartoon attacked the Manchester magistrates and Yeomanry cavalry who charged 60,000 peaceful protesters listening to Henry Hunt. **Hinge Question:** How does Cruikshank's satirical caption connect parliamentary disenfranchisement to economic class oppression?",
+              'Contemporary warning handbill delivered to stocking manufacturers in Nottinghamshire during the height of the 1811 machine-breaking raids. **Hinge Question:** Why did skilled handloom weavers direct their rage at the machinery rather than solely demanding higher wages from factory owners?',
             hinge_question:
-              "How does Cruikshank's satirical caption connect parliamentary disenfranchisement to economic class oppression?",
-            text: '“Down with ’em! Chop ’em down, my brave boys! Give them no quarter! Remember, the more you kill, the less poor rates you will have to pay!”\n— Caption to Cruikshank’s satirical engraving, capturing the public outrage over the cavalry assault at St Peter’s Field.',
+              'Why did skilled handloom weavers direct their rage at the machinery rather than solely demanding higher wages from factory owners?',
+            text: '“Whereas it hath been represented to General Ludd that certain masters have introduced wide frames for making stockings, reducing prices and manufacturing deceitful goods to the ruin of the trade: We do hereby give notice to all such masters, that if they do not immediately take down such frames, General Ludd and his army will break and destroy the same without mercy. By order of the Well-Wisher to the Industrious Poor, General Ned Ludd.”',
             caption:
-              'Source A: George Cruikshank, satirical print published in London in September 1819, depicting the Manchester Yeomanry charging unarmed reform demonstrators.',
+              'Source A: Contemporary 1811 warning broadside circulated in Nottinghamshire, threatening machine-owning mill masters with nocturnal destruction.',
           },
         },
         {
           act: 2,
           title: 'Act 2: The Peterloo Massacre: Sabres at St Peter’s Field (August 1819)',
           theme_heading: 'Act 2: The Peterloo Massacre: Sabres at St Peter’s Field (August 1819)',
-          text: '<span class="para-ref">[4.2]</span> Following the Napoleonic Wars, economic depression and high bread prices under the Corn Laws brought working-class fury to boiling point. On 16 August 1819, 60,000 peaceful men, women, and children gathered in best Sunday clothes at St Peter’s Field, Manchester, to hear orator Henry Hunt demand parliamentary reform. Panicked local magistrates ordered the mounted Manchester Yeomanry—wealthy cotton merchants on horseback—to charge the unarmed crowd with drawn sabres. Eighteen demonstrators were killed and over 650 savagely maimed. Dubbed the <strong class="vocab-highlight">Peterloo Massacre</strong> in bitter mockery of Waterloo, the atrocity united national working-class fury, but the Tory government responded with the repressive "Six Acts," criminalizing protest meetings.',
-          tasks: [
-            {
-              type: 'visual_annotation',
-              title: 'Archival Anatomy: Deconstructing the Captain Swing Ultimatum (1830)',
-              text: 'Analyse the authentic 1830 threatening letter sent to Hampshire landowners (Source B). Interrogate how agricultural labourers used psychological warfare to combat mechanisation.',
-              instruction:
-                'Match each numbered feature of the Captain Swing letter to its archival analysis, explaining how rural workers organized collective resistance.',
-              image: '/images/victorian_slum.jpg',
-              annotations: [
-                {
-                  num: 1,
-                  label: 'The Mythical Pseudonym ("Captain Swing")',
-                  prompt:
-                    'Why did rural farmworkers sign their letters with a fictional military pseudonym?',
-                  starter: 'They used a fictional pseudonym because...',
-                  model:
-                    'A fictional persona concealed the identities of local labourers from magistrate informers, while creating the terrifying illusion of a disciplined, nationwide underground army operating across county borders.',
-                },
-                {
-                  num: 2,
-                  label: 'The Machine-Breaking Ultimatum',
-                  prompt: 'Why were threshing machines the primary target of rural fury in 1830?',
-                  starter: 'Threshing machines were targeted because...',
-                  model:
-                    'Mechanical threshers destroyed winter manual labour, depriving rural families of their only seasonal income and reducing them to pauperism on parish poor relief.',
-                },
-                {
-                  num: 3,
-                  label: 'The Living Wage Demand (2s a Day)',
-                  prompt:
-                    'What does the specific wage demand reveal about the goals of the rioters?',
-                  starter: 'The specific wage demand reveals that...',
-                  model:
-                    'The rioters were not mindless vandals, but desperate workers seeking economic survival; two shillings a day was the minimum calculation required to feed a family with bread.',
-                },
-                {
-                  num: 4,
-                  label: 'The Threat of Midnight Arson',
-                  prompt:
-                    'Why was the burning of hayricks and barns such an effective coercive weapon?',
-                  starter: 'Arson was an effective coercive weapon because...',
-                  model:
-                    'Hayricks and wooden barns were impossible to guard across vast rural estates; the threat of nighttime fire inflicted direct financial ruin on recalcitrant landlords without requiring open pitched battles.',
-                },
-              ],
-            },
-          ],
+          text: '<span class="para-ref">[4.2]</span> With direct industrial sabotage brutally suppressed by military force, working people turned toward constitutional political reform to demand parliamentary representation. On 16 August 1819, over 60,000 unarmed men, women, and children assembled peacefully in Sunday clothes at St Peter’s Field in Manchester. Led by the celebrated orator Henry "Orator" Hunt, the disciplined crowd carried banners demanding "Universal Suffrage" and "Vote by Ballot". Panicked local magistrates, watching from a nearby window, branded the peaceful assembly treasonous and ordered the Manchester and Salford Yeomanry—an untrained volunteer cavalry composed of wealthy cotton merchants and publicans—to charge the hustings. With drawn sabres, the mounted cavalry hacked through the densely packed throng, killing eighteen peaceful citizens and wounding over 650. The government of Lord Liverpool congratulated the magistrates and passed the draconian <strong class="vocab-highlight">Six Acts</strong>, banning unauthorized political meetings and heavily taxing radical newspapers.',
           source: {
             letter: 'B',
-            title: 'Source B: The Threat of Captain Swing (Hampshire, October 1830)',
+            title:
+              'Source B: George Cruikshank, The Massacre of Peterloo or Britains in Search of Liberty (1819)',
             context:
-              'Threatening letter delivered to a Hampshire parish magistrate during the Swing Riots of 1830. Between October and December, agricultural labourers across Hampshire and Sussex burned dozens of threshing machines. **Hinge Question:** Why did farmworkers target mechanised threshing machines rather than traditional farming tools?',
+              'George Cruikshank’s scathing satirical print attacked the Manchester magistrates and Yeomanry cavalry who charged 60,000 peaceful protesters listening to Henry Hunt. **Hinge Question:** How does Cruikshank’s satirical caption connect parliamentary disenfranchisement to economic class oppression?',
             hinge_question:
-              'Why did farmworkers target mechanised threshing machines rather than traditional farming tools?',
-            text: '“Sir, This is to inform you what will happen to you if you do not instantly destroy your threshing machines and raise the wages of your poor labourers to two shillings a day. We have sworn to endure this starvation no longer. If you do not break your machines yourself, we will come by night and burn them down, along with your barns and hayricks. Your injured servant, Captain Swing.”',
+              'How does Cruikshank’s satirical caption connect parliamentary disenfranchisement to economic class oppression?',
+            text: '“Down with ’em! Chop ’em down, my brave boys! Give them no quarter! Remember, the more you kill, the less poor rates you will have to pay!”\n— Caption to Cruikshank’s satirical engraving, capturing the public outrage over the cavalry assault at St Peter’s Field.',
             caption:
-              'Source B: Anonymous threatening letter delivered to Hampshire landowners during the peak of the machinery burnings (Hampshire Record Office).',
+              'Source B: George Cruikshank, satirical print published in London in September 1819, depicting the Manchester Yeomanry charging unarmed reform demonstrators.',
           },
         },
         {
           act: 3,
           title: 'Act 3: Captain Swing & The Hampshire Harvest Riots (November 1830)',
           theme_heading: 'Act 3: Captain Swing & The Hampshire Harvest Riots (November 1830)',
-          text: '<span class="para-ref">[4.3]</span> In the winter of 1830, agrarian rebellion exploded across southern England under the mysterious signature of <strong class="vocab-highlight">Captain Swing</strong>. In Hampshire and the Meon Valley, rural farm labourers faced winter starvation as newly invented horse-powered threshing machines stole their only winter wage. Desperate farm workers marched from farm to farm, smashing threshing machines with hammers, burning wheat ricks at night, and demanding a living wage of two shillings a day. In Fordingbridge and Selborne, crowds ransacked parish workhouses and forced magistrates to sign promises of wage increases. Landowners slept with pistols beneath their pillows, terrified that agricultural rebellion would engulf the kingdom.',
-          tasks: [
-            {
-              type: 'ledger_audit',
-              title: 'Forensic Ledger: The Battle of Chartist Strategy',
-              text: 'Audit the tactical debate between Moral Force and Physical Force Chartism.',
-              instruction:
-                'Using Source C, Source D, and paragraphs [3.1]–[3.3], cross-reference the competing strategies for achieving working-class democratic rights.',
-              left_title: 'Moral Force Chartism (William Lovett)',
-              right_title: "Physical Force Chartism (Feargus O'Connor)",
-              left_points: [
-                'Belief in peaceful constitutional persuasion, working-class education, and mass petitions.',
-                'Collection of millions of authentic signatures to prove moral readiness for the franchise.',
-                'Alliance with progressive middle-class reformers and temperance movements.',
-                'Avoidance of violent clashes that would justify military repression by the government.',
-              ],
-              right_points: [
-                'Belief that an aristocratic Parliament would never surrender power without threat of force.',
-                'Organization of armed drilling, midnight torchlight meetings, and the "Sacred Month" general strike.',
-                'Armed insurrection: The November 1839 Newport Rising led by John Frost (22 Chartists shot dead).',
-                'Rhetoric: "Peaceably if we may, forcibly if we must!"',
-              ],
-              synthesis_prompt:
-                'Historical Audit: Why was the tactical split between Moral Force and Physical Force fatal to the Chartist movement in the short term?',
-              starter: 'The tactical split was fatal in the short term because...',
-              model_answer:
-                "The tactical split was fatal to Chartism in the short term because it alienated moderate middle-class sympathizers while providing the government with the legal and military justification to crush the movement [3.3]. Violent rhetoric and armed uprisings like the Newport Rising terrified the ruling class, enabling the state to arrest leaders like William Lovett and Feargus O'Connor, ban rallies, and mobilize the army, while dismissing peaceful petitions containing millions of signatures as revolutionary front organizations.",
-            },
-          ],
+          text: '<span class="para-ref">[4.3]</span> A decade after Peterloo, agrarian rebellion exploded across southern England under the mysterious signature of <strong class="vocab-highlight">Captain Swing</strong>. In Hampshire and the Meon Valley, rural farm labourers faced winter starvation as newly invented horse-powered threshing machines stole their only winter wage. Desperate farm workers marched from farm to farm across downland parishes, smashing cast-iron threshing drums with sledgehammers, burning hayricks and wheat ricks under cover of night, and demanding a living wage of two shillings a day. At Selborne and Headley, mobilised crowds of over 200 labourers sacked the hated parish workhouses, dismantling punitive iron cages and burning parish pauper registers. In Fordingbridge, workers attacked the machinery at East Mills. Landowners and magistrates slept with loaded pistols, terrified that agricultural revolution was engulfing the kingdom.',
           source: {
             letter: 'C',
             title:
-              'Source C: George Loveless, Statement upon Sentencing at Dorchester Assizes (March 1834)',
+              'Source C: The Threat of Captain Swing (National Archives HO 52/6, November 1830)',
+            context:
+              'Authentic threatening letter preserved in the Home Office records at The National Archives, Kew (HO 52/6). Between October and December 1830, anonymous handwritten notices signed "Captain Swing" were delivered to Hampshire squires, parsons, and magistrates, warning that barns and hayricks would be burned if wages were not raised and threshing machines destroyed. **Hinge Question:** Why did agricultural labourers invoke a mythical military commander ("Captain Swing") rather than naming real village leaders?',
+            hinge_question:
+              'Why did agricultural labourers invoke a mythical military commander ("Captain Swing") rather than naming real village leaders?',
+            image: '/images/captain_swing_letter.jpg',
+            text: '“Sir, This is to inform you what will happen to you if you do not instantly destroy your threshing machines and raise the wages of your poor labourers to two shillings a day. We have sworn to endure this starvation no longer. If you do not break your machines yourself, we will come by night and burn them down, along with your barns and hayricks. Your injured servant, Captain Swing.”',
+            caption:
+              'Source C: Authentic 1830 "Captain Swing" threatening letter from Home Office file HO 52/6 (The National Archives, Kew). Chilling warnings delivered to Hampshire landlords demanded living wages of 2s a day under threat of nocturnal arson.',
+          },
+        },
+        {
+          type: 'interactive_hotspot_map',
+          title: 'Interactive Primary Map: The Hampshire Swing Riots & Rural Rebellion (1830)',
+          subtitle:
+            'Click the glowing pins to investigate key incident sites, workhouse riots, and the Winchester Special Assizes',
+          shelfmark: 'Hampshire Record Office & The National Archives HO 52/6',
+          image: '/images/hampshire_antique_map_1825.jpg',
+          hotspots: [
+            {
+              id: 'micheldever',
+              label: 'Micheldever',
+              title: 'Micheldever: Execution of Henry Cook',
+              x: 52,
+              y: 41,
+              date: 'November 1830',
+              badge: 'Martyr Execution',
+              color: '#dc2626',
+              details:
+                'Nineteen-year-old ploughboy Henry Cook joined crowds demanding a living wage of 2s a day. During a confrontation, he struck the hat of magistrate William Bingham Baring. Despite causing no physical injury and Baring pleading for mercy, the Crown executed Cook at Winchester on 24 January 1831 to terrify the rural working class.',
+              hinge:
+                'Hinge Question: Why did the Crown insist on executing a teenage ploughboy for merely knocking off a magistrate’s hat?',
+            },
+            {
+              id: 'winchester_assizes',
+              label: 'Winchester',
+              title: 'Winchester Castle: Special Assizes Trials',
+              x: 48,
+              y: 52,
+              date: 'December 1830',
+              badge: 'Judicial Retribution',
+              color: '#b91c1c',
+              details:
+                'A Special Commission of three judges sat in the Great Hall beneath the Arthurian Round Table. Over 300 Hampshire agricultural labourers were tried in a fortnight. Six were condemned to the gallows, and 101 men and boys were sentenced to 7 to 14 years’ penal transportation to Van Diemen’s Land (Tasmania), tearing families apart.',
+              hinge:
+                'Hinge Question: How did the state use the spectacle of trials in the ancient Norman Great Hall to reassert aristocratic authority?',
+            },
+            {
+              id: 'selborne_headley',
+              label: 'Selborne & Headley',
+              title: 'Selborne & Headley: Workhouse Demolition',
+              x: 74,
+              y: 44,
+              date: '22–23 Nov 1830',
+              badge: 'Workhouse Riot',
+              color: '#ea580c',
+              details:
+                'A mobilised crowd of over 200 labourers marched on the parish workhouses at Selborne and Headley. They ransacked the buildings, dismantled the punitive iron cages where pauper inmates were locked, smashed the furniture, burned the parish pauper registers, and forced the local vicar to reduce tithes by half.',
+              hinge:
+                'Hinge Question: Why did the rioters target parish registers and iron workhouse cages rather than stealing valuables?',
+            },
+            {
+              id: 'fordingbridge',
+              label: 'Fordingbridge',
+              title: 'Fordingbridge: East Mills Machine Breaking',
+              x: 18,
+              y: 64,
+              date: '23 Nov 1830',
+              badge: 'Machine Sabotage',
+              color: '#d97706',
+              details:
+                'Hundreds of farmworkers and textile artisans converged on East Mills in Fordingbridge, smashing iron threshing machines and spinning machinery with heavy sledgehammers. Local magistrates panicked, enrolling 200 special constables and calling in the 3rd Dragoon Guards and local yeomanry cavalry to disperse the crowd with drawn swords.',
+              hinge:
+                'Hinge Question: What does the alliance between agricultural labourers and factory artisans reveal about the shared impact of mechanisation?',
+            },
+            {
+              id: 'meon_valley',
+              label: 'Meon Valley',
+              title: 'Meon Valley & Fareham: Nocturnal Rick-Burning',
+              x: 60,
+              y: 68,
+              date: 'October–Dec 1830',
+              badge: 'Arson & Terror',
+              color: '#e11d48',
+              details:
+                'Across the downlands and farms of the Meon Valley, mysterious nighttime fires incinerated hayricks, wheat ricks, and barns. Threatening letters signed by "Captain Swing" warned magistrates and tenant farmers that any property harbouring threshing machines would burn. Terrified landowners mounted armed night patrols and slept with pistols.',
+              hinge:
+                'Hinge Question: Why was arson ("the fire-fiend") such an effective weapon of intimidation for impoverished labourers?',
+            },
+          ],
+        },
+        {
+          act: 4,
+          title: 'Act 4: The Winchester Special Assizes & State Vengeance (December 1830)',
+          theme_heading: 'Act 4: The Winchester Special Assizes & State Vengeance (December 1830)',
+          text: '<span class="para-ref">[4.4]</span> The ruling aristocracy reacted to the Swing Riots with pitiless vengeance. In December 1830, Home Secretary Lord Melbourne dispatched a Special Commission of judges to hold extraordinary trials in the Great Hall of Winchester Castle. Over 300 Hampshire agricultural labourers—many illiterate young men—were dragged from village lock-ups before the judges. Six men were sentenced to death; among them was nineteen-year-old ploughboy <strong class="vocab-highlight">Henry Cook</strong> of Micheldever, convicted of knocking off the hat of magistrate William Bingham Baring. Despite Baring himself begging the judges for mercy, the Crown hanged Cook at Winchester Prison on 24 January 1831 to intimidate rural labourers. A further 101 Hampshire men and boys were sentenced to transportation, torn from their families, and shipped in disease-ridden convict hulks to penal servitude in Van Diemen’s Land (Tasmania).',
+          source: {
+            letter: 'D',
+            title:
+              'Source D: Contemporary Report of the Winchester Special Assizes (Hampshire Chronicle, December 1830)',
+            context:
+              'Newspaper report published in the Hampshire Chronicle during the Special Commission trials in Winchester Castle’s Great Hall. **Hinge Question:** Why did the British state choose transportation to Australia rather than imprisonment inside local English county gaols?',
+            hinge_question:
+              'Why did the British state choose transportation to Australia rather than imprisonment inside local English county gaols?',
+            text: '“The Special Assizes at Winchester concluded this week. The sentences passed upon the rioters who have disturbed the peace of this county demonstrate that His Majesty’s government will tolerate no acts of insubordination or destruction of property. Six prisoners have received sentence of death, and upwards of one hundred are to be transported beyond the seas for life or for fourteen years. It is hoped that this severe example will restore tranquility to our agricultural districts.”',
+            caption:
+              'Source D: Report from the Hampshire Chronicle (December 1830), detailing the mass sentencing and penal transportation of over one hundred Hampshire farmworkers.',
+          },
+        },
+        {
+          act: 5,
+          title: 'Act 5: The Tolpuddle Martyrs & The Right to Combine (1834)',
+          theme_heading: 'Act 5: The Tolpuddle Martyrs & The Right to Combine (1834)',
+          text: '<span class="para-ref">[4.5]</span> Terrified by the memory of the Swing Riots, landowners and the state treated any working-class solidarity as treason. In 1833, six agricultural labourers in the Dorset village of Tolpuddle, led by Methodist lay preacher <strong class="vocab-highlight">George Loveless</strong>, founded the Friendly Society of Agricultural Labourers to resist wage cuts from nine shillings to six shillings a week. Although trade unions had been decriminalized in 1824, local magistrate James Frampton conspired with Home Secretary Melbourne to prosecute the men under an obscure 1797 statute designed to suppress naval mutinies: administering "unlawful secret oaths". At Dorchester Assizes in March 1834, the judge sentenced all six labourers to seven years’ penal transportation to Australia. Rather than crushing unionism, the injustice ignited national fury: over 100,000 trade unionists marched peacefully across London to present a mammoth petition of 250,000 signatures, compelling the government to grant full royal pardons within two years.',
+          source: {
+            letter: 'E',
+            title:
+              'Source E: George Loveless, Statement upon Sentencing at Dorchester Assizes (March 1834)',
             context:
               'George Loveless was the leader of the Tolpuddle Martyrs—six Dorset agricultural labourers prosecuted under an obscure 1797 naval mutiny statute against unlawful oaths. **Hinge Question:** Why did the British government treat the formation of a peaceful agricultural trade union as an act of treason?',
             hinge_question:
               'Why did the British government treat the formation of a peaceful agricultural trade union as an act of treason?',
             text: '“We have injured no man’s reputation, character, person, or property. We were uniting together to preserve ourselves, our wives, and our children from utter starvation, having had our wages reduced from nine shillings to six shillings a week. We have violated no just law, and if we are to be transported for seeking an honest living, we submit to our fate in the firm belief that justice will one day prevail.”',
             caption:
-              'Source C: Statement written by Methodist lay preacher George Loveless on a scrap of paper before being shipped to an Australian penal colony.',
-          },
-        },
-        {
-          act: 4,
-          title: 'Act 4: The Winchester Special Assizes & State Vengeance (December 1830)',
-          theme_heading: 'Act 4: The Winchester Special Assizes & State Vengeance (December 1830)',
-          text: '<span class="para-ref">[4.4]</span> The British state struck back with merciless judicial brutality. In December 1830, the government dispatched a Special Commission of judges to the Great Hall of Winchester Castle to try over 300 Hampshire Swing rioters. Nearly a hundred men were sentenced to death; nineteen-year-old labourer Henry Cook of Micheldever was publicly hanged at Winchester Gaol simply for knocking off a magistrate\'s hat during a scuffle. Over 100 Hampshire farm hands were torn from their weeping families and sentenced to <strong class="vocab-highlight">penal transportation</strong> <small class="vocab-gloss">(banishment to brutal forced labour colonies in Australia)</small>. State terror crushed the rural revolt, demonstrating the lengths to which the landowning ruling class would go to defend private property.',
-        },
-        {
-          act: 5,
-          title: 'Act 5: The Tolpuddle Martyrs & The Right to Combine (1834)',
-          theme_heading: 'Act 5: The Tolpuddle Martyrs & The Right to Combine (1834)',
-          text: '<span class="para-ref">[4.5]</span> Driven underground by repression, six Dorset farm labourers led by Methodist lay preacher <strong class="vocab-highlight">George Loveless</strong> formed the Friendly Society of Agricultural Labourers in Tolpuddle in 1834 to peacefully resist wage cuts. Landowners panicked, arresting the men under an obscure 1797 naval mutiny statute for administering an unlawful "secret oath." Sentenced to seven years\' penal transportation to Australia, the <strong class="vocab-highlight">Tolpuddle Martyrs</strong> triggered an explosion of public outrage. Over 100,000 trade unionists marched peacefully through London with an 800,000-signature petition, forcing the Crown to grant full pardons in 1836 and establishing the foundational right to peaceful trade union organisation in Britain.',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Enquiry Essay: "To what extent did working-class popular protests between 1819 and 1848 achieve their goals of securing political and economic rights?"',
-              scaffolding: {
-                structure_strip: [
-                  'PEE Paragraph 1 (Short-Term Failure & State Repression): Argue that protests were crushed with overwhelming state violence and achieved zero immediate democratic rights, citing the Peterloo Massacre, the Six Acts, Swing Riot executions, and the rejection of all three Chartist petitions [1.3, 2.3, 4.1, Source A].',
-                  'PEE Paragraph 2 (Long-Term Victory & Democratic Transformation): Counter-argue that working-class struggle achieved immense long-term triumph, creating trade union solidarity (Tolpuddle pardons) and laying the foundation for five of the Six Chartist points to become law [3.2, 4.3, Source C, Source D].',
-                  'Historiographical Verdict: Reach a nuanced conclusion evaluating whether short-term defeat was a necessary catalyst for long-term democratic triumph.',
-                ],
-                connective_bank: [
-                  'From a short-term historical perspective, working-class popular protests were an undeniable failure because...',
-                  'As evidenced in paragraph [1.3] and Source A...',
-                  'This brutal state repression was repeated during...',
-                  'Conversely, revisionist social historians provide a compelling counter-interpretation, demonstrating that...',
-                  'As documented in paragraph [3.2] and Source C...',
-                  'Furthermore, the legacy of Chartism proves that...',
-                  'Ultimately, in evaluating the success of working-class protest, one must distinguish between...',
-                ],
-              },
-              model_answer:
-                "From a short-term historical perspective, nineteenth-century working-class popular protests between 1819 and 1848 were an undeniable failure. At every turn, peaceful demands for democratic representation and living wages were met with brutal state violence, legal terror, and contemptuous rejection by the aristocratic ruling elite. As documented in paragraph [1.3] and George Cruikshank's scathing print (Source A), the peaceful gathering of 60,000 reformers at St Peter's Field in 1819 resulted in the Peterloo Massacre, where mounted cavalry sabred eighteen innocent protesters to death, followed by the draconian Six Acts criminalizing free assembly. Similarly, when starving Hampshire farm labourers smashed threshing machines during the 1830 Swing Riots (Source B), the state responded with merciless vengeance: nineteen men were hanged, nearly five hundred were transported to Australian penal colonies, and wages remained at starvation levels [2.3]. Furthermore, all three of the colossal Chartist petitions—boasting millions of working-class signatures—were overwhelmingly rejected by Parliament, culminating in the humiliation of Kennington Common in 1848 (Source D). By 1850, not a single point of the People's Charter had been enacted, and working people remained entirely excluded from the franchise.<br><br>Conversely, modern social historians present a powerful counter-argument that working-class resistance was a monumental long-term triumph that fundamentally transformed British society. While individual uprisings were crushed, collective solidarity forced the British state to recognize that working people could no longer be ruled by feudal coercion alone. The national outcry over the 1834 sentencing of the Tolpuddle Martyrs (Source C)—which mobilized 100,000 marchers in London and forced the Home Office to grant full royal pardons—established the permanent moral and legal precedent for trade unionism in Britain [3.2]. Furthermore, Chartism was the indispensable training ground for modern British democracy: it educated millions of working people, forged national newspapers like the Northern Star, and articulated a coherent constitutional manifesto. Over the subsequent seven decades, five of the Six Points of the People's Charter—including universal male suffrage, equal constituencies, the abolition of property qualifications, payment of MPs, and the secret ballot—became the bedrock of British constitutional law [4.3].<br><br>Ultimately, in evaluating whether working-class protests achieved their goals, a historian must distinguish between immediate tactical defeat and permanent strategic victory. In the short term, the British state's monopoly on cavalry, artillery, and legal repression prevented ordinary people from seizing power between 1819 and 1848. However, by demonstrating that millions of workers would endure imprisonment, transportation, and martyrdom for their rights, these brave movements proved that democracy could not be permanently denied. Their immediate defeat was therefore the necessary crucible that forged the democratic rights enjoyed by modern Britons.",
-            },
-          ],
-          source: {
-            letter: 'D',
-            title: 'Source D: The Chartist Mass Demonstration at Kennington Common (10 April 1848)',
-            context:
-              "On 10 April 1848, the Chartists organized a colossal rally at Kennington Common to present their Third National Petition to Parliament, boasting over five million signatures. The government mobilized 85,000 special constables and the Duke of Wellington's troops to block their march across the Thames. **Hinge Question:** Why did the sheer scale and discipline of this working-class crowd terrify the aristocratic government?",
-            hinge_question:
-              'Why did the sheer scale and discipline of this working-class crowd terrify the aristocratic government?',
-            image: '/images/chartist_demo.jpg',
-            caption:
-              'Source D: The earliest surviving photograph of a British political protest, showing tens of thousands of Chartists gathering at Kennington Common, London, on 10 April 1848.',
+              'Source E: Statement written by Methodist lay preacher George Loveless on a scrap of paper before being shipped to an Australian penal colony.',
           },
         },
       ],
@@ -3174,15 +2580,6 @@ const industrialisation_and_empire = {
             'By 1928, five of its six democratic demands had slowly become the law of the land.',
         },
       ],
-      pair_share: {
-        prompt:
-          'Discuss with your partner: Were the Luddites and Chartists successful in fighting for a voice?',
-        think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
-        pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
-        share: "Share your pair's combined conclusion with the class.",
-      },
-      vocab_cloze_text:
-        "Working-class Britons repeatedly fought for democratic rights during the nineteenth century. In 1819, magistrates unleashed cavalry on peaceful reform protesters in the infamous [Peterloo Massacre]. Workers organizing early unions faced severe state repression, demonstrated when the [Tolpuddle Martyrs] were sentenced to penal [Transportation] to Australia in 1834. In response, activists launched [Chartism], publishing the celebrated [People's Charter] in 1838 to demand the vote for all men and expand the parliamentary [Franchise].",
       hook_text:
         "In November 1830, a mysterious threatening letter arrives at a Hampshire manor house, written in rough handwriting and signed by the mythical leader 'Captain Swing.' Across the Meon Valley and the fields of Hampshire, starving farm labourers have watched mechanical threshing machines take away their winter earnings. Deprived of work and facing parish starvation, bands of desperate men assemble under cover of night, armed with sledgehammers, pitchforks, and firebrands. As midnight flames consume hayricks on the horizon and the sound of iron smashing machinery echoes through farmyards, the ruling class panics, fearing England stands on the brink of bloody French-style revolution.",
       causal_domino_spine: {
@@ -3286,75 +2683,89 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      workbook_stages: [
+      tasks: [
         {
-          step: 1,
-          date: '1811–1816',
-          para_ref: '[4.1]',
-          heading:
-            'Why did textile croppers and knitters turn to nocturnal machine-breaking under "General Ludd"?',
-          bullets: [
-            'Powerloom Wage Collapses',
-            'Sledgehammer Midnight Raids',
-            'Capital Frame-Breaking Act',
-          ],
-          focus_clue:
-            'Why did Yorkshire cloth workers use sledgehammers to destroy wide frames and powerlooms that threatened their wages?',
+          id: 'ie_l4_two_features_swing_riots',
+          type: 'two_features',
+          tariff: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          title: 'Question 1: Describe Two Features [4 marks • 5 mins]',
+          question: 'Describe two features of the 1830 Hampshire Swing Riots. [4 marks]',
+          feature_1: {
+            prompt:
+              'Feature 1: Identify the methods and tactics used by agricultural machine-breakers (e.g. nocturnal arson, sledgehammers, and threatening letters).',
+            starter:
+              'One key feature of the Hampshire Swing Riots was... Specifically, this involved...',
+            model:
+              'One key feature of the Hampshire Swing Riots was the systematic nocturnal destruction of farm machinery accompanied by anonymous threatening letters [4.3]. Specifically, impoverished agricultural labourers in the Meon Valley, Selborne, and Headley mobilized under the mythical figurehead "Captain Swing", sending chilling handwritten notices to squires and parsons demanding an end to wage reductions and the removal of horse-powered threshing machines. When landlords refused, bands of farmworkers armed with sledgehammers raided barns at night to smash iron threshing drums and set fire to valuable hayricks and grain barns, illuminating the Hampshire downlands with fires.',
+          },
+          feature_2: {
+            prompt:
+              'Feature 2: Identify the state’s draconian judicial response at the Winchester Special Assizes.',
+            starter: 'A second key feature was... For example, this meant that...',
+            model:
+              'A second key feature was the savage judicial retaliation imposed by the British state at the Winchester Special Assizes in December 1830 [4.4]. For example, the government appointed a special judicial commission that prosecuted over 300 Hampshire farmworkers in Winchester Castle’s Great Hall. The judges sentenced six men to death—including 19-year-old ploughboy Henry Cook of Micheldever, who was hanged for striking magistrate Bingham Baring’s hat—and transported 101 Hampshire labourers to Australian penal colonies in Van Diemen’s Land, devastating rural village communities.',
+          },
+          topic: 'Question 1: Describe Two Features [4 marks • 5 mins]',
         },
         {
-          step: 2,
-          date: 'Aug 1819',
-          para_ref: '[4.2]',
-          heading:
-            'Why did the Peterloo Massacre ignite widespread working-class fury against the state?',
-          bullets: [
-            'Peaceful St Peter’s Field Crowd',
-            'Manchester Yeomanry Sabre Charge',
-            'Repressive Tory Six Acts',
+          id: 'ie_l4_narrative_account_protest',
+          type: 'narrative_account',
+          tariff: 'Question 2: Narrative Account [8 marks • 10 mins]',
+          title: 'Question 2: Narrative Account [8 marks • 10 mins]',
+          question:
+            'Write a narrative account analysing the key events leading from the Peterloo Massacre (1819) and Hampshire Swing Riots (1830) to the Tolpuddle Martyrs (1834). [8 marks]',
+          stimulus: [
+            'The cavalry charge at St Peter’s Field, Manchester (1819)',
+            'The destruction of threshing machines across Hampshire (1830)',
           ],
-          focus_clue:
-            'How did the cavalry charge into 60,000 peaceful reformers at St Peter’s Field spark national outrage and repressive laws?',
-        },
-        {
-          step: 3,
-          date: 'Nov 1830',
-          para_ref: '[4.3]',
-          heading: 'How did the "Captain Swing" riots sweep through Hampshire and the Meon Valley?',
-          bullets: [
-            'Starvation Winter Destitution',
-            'Sledgehammer Threshing Destruction',
-            'Nocturnal Hayrick Arson',
+          hints: [
+            'Chronological Link 1: Begin with Peterloo (1819) where cavalry charged 60,000 peaceful reformers, leading to the repressive Six Acts [4.2].',
+            'Chronological Link 2: Explain how agrarian distress in 1830 triggered the Hampshire Swing Riots, crushing threshing machines and meeting brutal retribution at Winchester [4.3, 4.4].',
+            'Chronological Link 3: Show how this continuous repression culminated in the 1834 prosecution of the Tolpuddle Martyrs for secret oaths, sparking national trade union mobilization [4.5].',
           ],
-          focus_clue:
-            'Why did starving Hampshire farm labourers smash threshing machines and burn hayricks under the name Captain Swing?',
-        },
-        {
-          step: 4,
-          date: 'Dec 1830',
-          para_ref: '[4.4]',
-          heading:
-            'How brutally did the Winchester Special Assizes punish Hampshire machine-breakers?',
-          bullets: [
-            'Winchester Great Hall Trials',
-            'Micheldever Youth Execution',
-            'Australian Penal Transportation',
-          ],
-          focus_clue:
-            'What harsh penalties were handed down at Winchester Castle, including the execution of Henry Cook and transportation to Australia?',
-        },
-        {
-          step: 5,
-          date: '1834',
-          para_ref: '[4.5]',
-          heading:
-            'Why did the harsh punishment of the Tolpuddle Martyrs provoke a national outcry?',
-          bullets: [
-            'Friendly Society Mutual Aid',
-            'Obscure Secret Oaths Law',
-            'Massive London Protest Marches',
-          ],
-          focus_clue:
-            'How did the transportation of six Dorset labourers for taking secret oaths trigger mass national protests and trade union rights?',
+          scaffolding: {
+            structure_strip: [
+              'Phase 1 (Peterloo 1819 & Repression): Manchester Yeomanry sabre charge killing 18 peaceful protestors; Lord Liverpool’s government passes the Six Acts banning meetings [4.2].',
+              'Phase 2 (Hampshire Swing Riots 1830): Rural starvation and threshing machines trigger machine-wrecking and rick-burning; 101 transported at Winchester [4.3, 4.4].',
+              'Phase 3 (Tolpuddle Martyrs 1834 & National Backlash): Six Dorset farmworkers convicted under 1797 mutiny act for friendly society oaths; massive London protests force royal pardons [4.5].',
+            ],
+            sentence_starters: [
+              'The sequence of working-class protest began in August 1819 when...',
+              'Magistrates panicked and ordered the Manchester Yeomanry to charge into the unarmed crowd...',
+              'In response, the Tory government passed the repressive Six Acts, which drove radical protest underground until...',
+              'A decisive turning point occurred in November 1830 when the Hampshire Swing Riots erupted...',
+              'Starving agricultural labourers smashed newly introduced threshing machines that stole winter wages, prompting...',
+              'At the Winchester Special Assizes, the state demonstrated ruthless vengeance by sentencing 101 Hampshire men to transportation and hanging Henry Cook...',
+              'Consequently, to avoid violent retribution, workers turned to peaceful mutual aid, culminating in 1834 when six Dorset labourers formed a friendly society in Tolpuddle...',
+              'Landowners panicked and had them sentenced to seven years’ penal transportation under an obscure naval mutiny statute...',
+              'Ultimately, this sparked the first massive national trade union mobilization, forcing the government to grant full royal pardons.',
+            ],
+            connective_bank: [
+              'The sequence began when...',
+              'This led to increasing conflict because...',
+              'A decisive turning point occurred when...',
+              'This directly caused...',
+              'Consequently, this culminated in...',
+            ],
+            word_bank: [
+              'Peterloo Massacre (1819)',
+              'St Peter’s Field',
+              'Manchester Yeomanry',
+              'Six Acts',
+              'Captain Swing (1830)',
+              'threshing machines',
+              'Winchester Special Assizes',
+              'Henry Cook',
+              'penal transportation',
+              'Tolpuddle Martyrs (1834)',
+              'George Loveless',
+              'unlawful secret oaths',
+              'Grand National Consolidated Trades Union',
+            ],
+          },
+          model_answer:
+            'The sequence of radical working-class protest began in August 1819 with the Peterloo Massacre at St Peter’s Field, Manchester [4.2]. A crowd of 60,000 unarmed textile workers gathered peacefully to hear orator Henry Hunt demand universal male suffrage and the repeal of the Corn Laws. Terrified local magistrates panicked and ordered the mounted Manchester Yeomanry to charge into the dense crowd with drawn sabres, killing eighteen people and maiming over 650. In the immediate aftermath, Lord Liverpool’s Tory government endorsed the massacre and passed the repressive Six Acts, banning unauthorised political meetings and heavily taxing radical newspapers. This state violence suppressed overt political agitation, but economic misery continued to fester among industrial and agricultural workers alike.\n\nA decisive escalation occurred in the winter of 1830 when agrarian rebellion erupted across southern England in the Hampshire Swing Riots [4.3]. Starving agricultural labourers in villages such as Micheldever, Selborne, and the Meon Valley saw their winter threshing wages wiped out by horse-powered threshing machines. Operating under the pseudonym "Captain Swing", workers launched nocturnal raids to smash iron threshing drums, burn grain ricks, and demand living wages. The British state responded with ruthless severity: at the December 1830 Winchester Special Assizes, special judges tried over 300 Hampshire labourers, hanging nineteen-year-old Henry Cook for striking a magistrate and sentencing 101 men to penal transportation to Australia [4.4].\n\nConsequently, this brutal suppression convinced working-class leaders to abandon violent sabotage and organize peaceful, disciplined mutual aid societies, which directly culminated in the arrest of the Tolpuddle Martyrs in 1834 [4.5]. In Dorset, Methodist lay preacher George Loveless and five fellow farmworkers formed the Friendly Society of Agricultural Labourers to resist wage cuts from nine shillings to six shillings a week. Terrified by the spectre of coordinated rural unionism following the Swing Riots, local magistrates invoked an obscure 1797 naval mutiny statute prohibiting "unlawful secret oaths", sentencing the six labourers to seven years’ penal transportation to Van Diemen’s Land. However, rather than crushing trade unionism, this transparent injustice ignited massive national solidarity protests: 100,000 marchers gathered at Copenhagen Fields in London and presented a petition of 250,000 signatures to Parliament, successfully compelling the government to grant full royal pardons within two years. Thus, the arc from Peterloo and Captain Swing to Tolpuddle transformed isolated working-class uprisings into a formidable national trade union movement.',
+          topic: 'Question 2: Narrative Account [8 marks • 10 mins]',
         },
       ],
     },
@@ -3485,13 +2896,15 @@ const industrialisation_and_empire = {
           },
           {
             question:
-              'Name the 1838 working-class movement that published a six-point petition demanding universal male suffrage.',
-            answer: 'Chartism (The Chartist Movement).',
+              'Why were horse-powered threshing machines the primary target of Hampshire agricultural labourers during the 1830 Swing Riots?',
+            answer:
+              'Threshing machines destroyed the only winter employment and wages available to farm labourers, threatening their families with starvation.',
           },
           {
             question:
-              'What was the term for the Chartist strategy that advocated peaceful moral persuasion and parliamentary petitions?',
-            answer: 'Moral Force Chartism.',
+              'Under what obscure 1797 statute were the Tolpuddle Martyrs prosecuted in 1834 for forming a peaceful friendly society?',
+            answer:
+              'Administering unlawful secret oaths (originally passed to suppress the 1797 naval mutinies at Spithead and the Nore).',
           },
         ],
       },
@@ -3527,33 +2940,6 @@ const industrialisation_and_empire = {
             'The gradual parliamentary extension of voting rights from wealthy landowners (pre-1832) to urban workers (1867) and agricultural laborers (1884).',
         },
       ],
-      timeline_anchor: [
-        {
-          date: '1800–1830',
-          title: 'The Unreformed Parliament & Rotten Boroughs',
-          desc: 'Less than 5% of adult men could vote, while depopulated rural "rotten boroughs" like Old Sarum sent two MPs to Westminster.',
-        },
-        {
-          date: '1831–1832',
-          title: 'The Reform Crisis & The Days of May',
-          desc: 'Lords rejection of reform sparked violent riots in Bristol and a national bank run withdrawing £1.6 million in gold sovereigns.',
-        },
-        {
-          date: '1832',
-          title: 'The 1832 Reform Act & The "Great Betrayal"',
-          desc: 'The 1832 Act abolished 56 rotten boroughs and enfranchised industrial cities, but restricted the vote to wealthy £10 householders.',
-        },
-        {
-          date: '1838–1848',
-          title: 'Chartism & The Six Points for Democracy',
-          desc: 'Working-class leaders drafted the People’s Charter, demanding universal male suffrage, the secret ballot, and salaries for MPs.',
-        },
-        {
-          date: '1872',
-          title: 'The 1872 Secret Ballot Act',
-          desc: 'Parliament abolished open hustings and introduced confidential paper voting in private booths, sealed with wax at Pontefract.',
-        },
-      ],
       narrative_blocks: [
         {
           act: 1,
@@ -3561,51 +2947,6 @@ const industrialisation_and_empire = {
           theme_heading:
             'Act 1: The Rotten Oligarchy: Old Sarum & The Unrepresented Cities (1800–1830)',
           text: '<span class="para-ref">[5.1]</span> In 1830, Britain claimed to be the cradle of parliamentary liberty, but less than 5% of adult males could vote. Parliamentary seats were frozen in a medieval time warp. Dozens of <strong class="vocab-highlight">rotten boroughs</strong> <small class="vocab-gloss">(depopulated boroughs controlled by wealthy aristocratic patrons)</small> sent two MPs to Westminster: Old Sarum in Wiltshire was a deserted grass mound with three houses and seven voters, while Dunwich had eroded into the North Sea. In contrast, colossal industrial powerhouses like Manchester, Birmingham, and Leeds, home to over a million combined factory workers and merchants, did not have a single Member of Parliament.',
-          tasks: [
-            {
-              type: 'causal_domino',
-              title: 'Causal Chain: From Rotten Borough Crisis to the 1832 Reform Act',
-              instruction:
-                'Draw arrows connecting the causal stages in the domino flowchart to explain how public pressure and elite fear forced the passage of the 1832 Great Reform Act.',
-              events: [
-                {
-                  id: 'event_1',
-                  title: 'Industrial Metropolis Disenfranchisement',
-                  detail:
-                    'Manchester and Birmingham produce immense national wealth but possess zero MPs, while Old Sarum has two [1.2, Source A].',
-                },
-                {
-                  id: 'event_2',
-                  title: '1830 French July Revolution',
-                  detail:
-                    'The overthrow of King Charles X in Paris sparks intense revolutionary panic among British governing elites [1.3].',
-                },
-                {
-                  id: 'event_3',
-                  title: 'Bristol Reform Riots & Palace Burning',
-                  detail:
-                    'The House of Lords rejects reform in 1831, triggering violent riots, the burning of the Bishop’s Palace in Bristol, and Nottingham Castle [2.1].',
-                },
-                {
-                  id: 'event_4',
-                  title: 'The "Days of May" National Bank Run',
-                  detail:
-                    'Middle-class reformers launch financial rebellion under the slogan "Stop the Duke, Go for Gold!", draining £1.5m in gold reserves [2.2].',
-                },
-                {
-                  id: 'event_5',
-                  title: 'Passage of the 1832 Great Reform Act',
-                  detail:
-                    'King William IV threatens to create 50 Whig peers; the terrified Tory Lords surrender and pass the Act on 4 June 1832 [2.3].',
-                },
-              ],
-              synthesis_prompt:
-                'Historical Causation: Why was the threat of a run on the Bank of England ("Days of May") more terrifying to the government than street riots?',
-              starter: 'The run on the Bank was more terrifying because...',
-              model_answer:
-                'The run on the Bank of England was more terrifying because it was organized by wealthy industrial factory owners and merchants rather than working-class rioters [2.2]. By withdrawing £1.5 million in gold sovereigns within ten days under the slogan "Stop the Duke, Go for Gold!", middle-class reformers threatened to collapse Britain\'s financial banking system and sovereign credit. The government could deploy troops to shoot street rioters, but they could not shoot wealthy businessmen peacefully withdrawing their own bank deposits.',
-            },
-          ],
           source: {
             letter: 'A',
             title:
@@ -3624,41 +2965,6 @@ const industrialisation_and_empire = {
           title: 'Act 2: Bristol in Flames & The Days of May (1831–1832)',
           theme_heading: 'Act 2: Bristol in Flames & The Days of May (1831–1832)',
           text: '<span class="para-ref">[5.2]</span> When the unelected House of Lords rejected the Whig government\'s Reform Bill in October 1831, revolutionary rioting engulfed the country. In Bristol, a furious crowd burned the Bishop\'s Palace, the Mansion House, and three gaols to ashes. During the tense <strong>"Days of May"</strong> in 1832, radical reformer Francis Place coordinated a financial strike, distributing posters reading <em>"To stop the Duke, go for gold!"</em> Panic-stricken citizens withdrew £1.6 million in gold sovereigns from the Bank of England in days. Faced with imminent economic paralysis and armed uprising, King William IV agreed to flood the House of Lords with pro-reform peers, forcing the Tories to surrender and pass the Bill.',
-          tasks: [
-            {
-              type: 'significance_diamond',
-              title: 'Priority Diamond: Drivers of the 1832 Great Reform Act',
-              instruction:
-                'Evaluate and rank the four primary factors that forced the British ruling class to pass the 1832 Great Reform Act.',
-              factors: [
-                {
-                  id: 'fear_of_revolution',
-                  label:
-                    'Terror of Armed Revolution & Bristol Riots (The burning of Nottingham Castle and Bishop’s Palace terrifying landed elites)',
-                },
-                {
-                  id: 'economic_bank_run',
-                  label:
-                    'Economic Warfare & "Days of May" (Middle-class financial rebellion draining £1.5m in gold reserves from the Bank of England)',
-                },
-                {
-                  id: 'whig_strategy',
-                  label:
-                    'Whig Aristocratic Strategy (Earl Grey’s policy to "reform in order to preserve" by co-opting the wealthy middle class)',
-                },
-                {
-                  id: 'industrial_demographics',
-                  label:
-                    'Industrial Demographic Shifts (The untenable absurdity of Manchester having zero MPs while Old Sarum had two)',
-                },
-              ],
-              justification_prompt:
-                'Justify your Rank 1 selection: Why was this factor the primary catalyst for passing the 1832 Reform Act?',
-              starter: 'Fear of armed revolution was the primary catalyst because...',
-              model_answer:
-                "Fear of armed revolution was the primary catalyst because the ruling aristocracy was terrified of suffering the same bloody fate as the French nobility in 1789 [2.1]. The incinerations of Nottingham Castle and the Bishop's Palace in Bristol demonstrated that working-class patience had snapped. Lord Grey explicitly warned the House of Lords that unless they passed moderate reform to appease the industrial middle class, the entire aristocratic constitutional order would be swept away in a violent revolution.",
-            },
-          ],
           source: {
             letter: 'B',
             title: 'Source B: The School of Reform (Satirical Lithograph on the 1832 Reform Bill)',
@@ -3676,25 +2982,6 @@ const industrialisation_and_empire = {
           title: 'Act 3: The 1832 Great Reform Act: Triumph or "Great Betrayal"? (1832)',
           theme_heading: 'Act 3: The 1832 Great Reform Act: Triumph or "Great Betrayal"? (1832)',
           text: '<span class="para-ref">[5.3]</span> The landmark <strong>1832 Great Reform Act</strong> disenfranchised 56 rotten boroughs and redistributed 143 parliamentary seats to booming industrial cities like Manchester, Sheffield, and Newcastle. It expanded the electorate by 50% to roughly 800,000 men. However, the vote was strictly restricted to men occupying property worth £10 or more in rent annually. This deliberately enfranchised the prosperous middle-class factory owners while completely excluding the working class whose street protests had secured the victory. Bitterly betrayed, mill workers and handloom weavers denounced the Act as the "Great Betrayal," realizing that power had merely shifted from feudal landowners to capitalist mill owners.',
-          tasks: [
-            {
-              type: 'word_scalpel',
-              title:
-                'Forensic Scalpel: Interrogating the 1869 Select Committee on Corrupt Practices',
-              text: 'Interrogate Source C (Minutes of Evidence taken before the Parliamentary Select Committee on Elections, 1869). Extract the exact phrase proving landlord coercion at the polling hustings.',
-              instruction:
-                'Use your analytical scalpel on Source C to extract the exact 13-word phrase proving that tenant farmers faced economic destruction if they voted against their landlord’s orders.',
-              source_excerpt:
-                'Many tenants wished to vote for the Liberal reformer, but they were openly told that any man who voted contrary to his landlord’s orders would receive a notice to quit his farm at Michaelmas.',
-              model_quote:
-                'any man who voted contrary to his landlord’s orders would receive a notice to quit his farm',
-              justification_prompt:
-                'Why did the threat of a "notice to quit" completely nullify the democratic rights of 19th-century voters before 1872?',
-              starter: 'The threat of a notice to quit nullified democratic rights because...',
-              model_answer:
-                "The threat of a notice to quit nullified democratic rights because it tied a citizen's political conscience directly to their family's physical survival [3.1, 3.2]. In rural Victorian Britain, receiving a notice to quit meant immediate eviction from one's home, loss of livelihood, and agricultural destitution. By legally requiring voters to declare their vote aloud at open hustings, the system ensured that wealthy landlords exercised total ownership over their tenants' votes.",
-            },
-          ],
           source: {
             letter: 'C',
             title:
@@ -3713,49 +3000,35 @@ const industrialisation_and_empire = {
           title: 'Act 4: The People’s Charter: Six Points for Working-Class Power (1838–1848)',
           theme_heading:
             'Act 4: The People’s Charter: Six Points for Working-Class Power (1838–1848)',
-          text: '<span class="para-ref">[5.4]</span> Outraged by exclusion, cabinetmaker William Lovett and radical reformers drafted the <strong>People’s Charter of 1838</strong>, igniting the massive <strong class="vocab-highlight">Chartist movement</strong>. Chartists demanded the famous <strong>Six Points</strong>: universal male suffrage, the secret ballot, no property qualifications for MPs, salaries for MPs, equal constituencies, and annual parliaments. In 1839, 1842, and 1848, Chartists presented colossal monster petitions to Parliament—the 1842 petition bearing 3.3 million signatures, stretched for six miles through London. Although Parliament contemptuously rejected every petition and arrested leaders, Chartism created Britain\'s first unified mass working-class political identity.',
+          text: '<span class="para-ref">[5.4]</span> Outraged by exclusion, cabinetmaker William Lovett and radical reformers drafted the <strong>People’s Charter of 1838</strong>, igniting the massive <strong class="vocab-highlight">Chartist movement</strong>. Chartists demanded the famous <strong>Six Points</strong>: universal male suffrage, the secret ballot, no property qualifications for MPs, salaries for MPs, equal constituencies, and annual parliaments. In 1839, 1842, and 1848, Chartists presented colossal monster petitions to Parliament, culminating in the historic 1848 Kennington Common mass demonstration (<span class="archival-meta-tag">Source D</span>). Although Parliament contemptuously rejected every petition and arrested leaders, Chartism created Britain’s first unified mass working-class political identity.',
+          source: {
+            letter: 'D',
+            title: 'Source D: The Chartist Mass Demonstration at Kennington Common (10 April 1848)',
+            context:
+              'Contemporary daguerreotype photograph by William Edward Kilburn showing the massive Chartist assembly at Kennington Common, London, gathered to present the third Monster Petition to Parliament. **Hinge Question:** Why did the British state assemble 85,000 special constables and deploy the Duke of Wellington to confront a crowd presenting a petition?',
+            hinge_question:
+              'Why did the British state assemble 85,000 special constables and deploy the Duke of Wellington to confront a crowd presenting a petition?',
+            image: '/images/chartist_demo.jpg',
+            caption:
+              'Source D: Daguerreotype photograph of the historic Chartist rally at Kennington Common on 10 April 1848. Over 25,000 working-class supporters assembled under the leadership of Feargus O’Connor to present the six million signatures of the third People’s Charter to the House of Commons.',
+          },
         },
         {
           act: 5,
           title: 'Act 5: The Secret Ballot Act: The Death of Landlord Coercion (1872)',
           theme_heading: 'Act 5: The Secret Ballot Act: The Death of Landlord Coercion (1872)',
-          text: '<span class="para-ref">[5.5]</span> Under the unreformed system, voting took place on open wooden platforms called "hustings." Voters stood before shouting crowds, publicly declaring their choice to election clerks. Landlords and factory bosses routinely evicted tenants or fired workers who voted against the master\'s favoured candidate, while drunken mobs were paid in gin to intimidate rivals. In 1872, Gladstone\'s Liberal government passed the historic <strong>Secret Ballot Act</strong>. Tested at the Pontefract by-election in August 1872, voters cast confidential paper ballots stamped in private wooden booths and sealed with liquorice wax (<span class="archival-meta-tag">Source D</span>). By liberating electors from employer intimidation, the secret ballot laid the true foundation of modern British democracy.',
-          tasks: [
-            {
-              type: 'extended_writing',
-              question:
-                'Enquiry Essay: "To what extent was the expansion of British democracy between 1832 and 1884 granted as a tactical concession by ruling elites rather than won by popular working-class pressure?"',
-              scaffolding: {
-                structure_strip: [
-                  'PEE Paragraph 1 (Tactical Concession by Elites): Argue that reform was managed from above by aristocratic politicians (Earl Grey, Disraeli, Gladstone) as a tactical maneuver to avert revolution and gain partisan advantage [2.3, 4.2, Source B].',
-                  'PEE Paragraph 2 (Won by Popular Pressure from Below): Counter-argue that reform was forced upon reluctant elites by popular agitation, citing the Bristol Riots, Days of May bank run, Chartist campaigns, and the 1866 Hyde Park Riots [2.1, 2.2, 4.3, Source A].',
-                  'Historiographical Verdict: Reach a balanced, nuanced conclusion evaluating whether elite political calculation or working-class agitation was the decisive engine of democracy.',
-                ],
-                connective_bank: [
-                  "From a 'Top-Down' parliamentary perspective, the expansion of the franchise was primarily a tactical concession by ruling elites because...",
-                  'As demonstrated in paragraph [2.3] and Source B...',
-                  'Earl Grey explicitly admitted that the goal was...',
-                  "Conversely, 'Bottom-Up' social historians provide a vital counter-argument, demonstrating that...",
-                  'As evidenced in paragraph [2.1] and Source A...',
-                  'Furthermore, archival evidence from 1869 in Source C proves...',
-                  'Ultimately, in evaluating whether democracy was granted from above or won from below, one must recognize that...',
-                ],
-              },
-              model_answer:
-                "From a 'Top-Down' parliamentary perspective, the expansion of British democracy between 1832 and 1884 was primarily a tactical concession engineered by ruling aristocratic elites to preserve their own power. As demonstrated in paragraph [2.3] and Source B, the landmark 1832 Great Reform Act was never intended to create a genuine democracy. Prime Minister Earl Grey explicitly confessed to the House of Lords that his policy was to 'reform in order to preserve'—attaching the wealthy industrial middle class to the constitution while deliberately excluding factory workers through a high £10 property threshold. Similarly, Benjamin Disraeli’s Second Reform Act of 1867 was a daring, calculated party gamble ('a leap in the dark') designed to dish the Liberals and establish the Conservative Party as the champions of the patriotic working man [4.1, 4.2]. Ruling elites carefully controlled the pace of legislative reform, retaining the unelected House of Lords, plural voting for university graduates, and an electoral system that preserved massive landed wealth. Reform was therefore a calculated strategic retreat by elites seeking to defuse revolution without surrendering state authority.<br><br>Conversely, 'Bottom-Up' social historians provide a compelling counter-interpretation, proving that every single constitutional concession had to be relentlessly forced from reluctant ruling elites through popular agitation from below. As documented in paragraph [2.1], the House of Lords did not pass the 1832 Reform Act out of democratic enlightenment; they surrendered only after the rejection of the bill sparked nationwide insurrections, the burning of Nottingham Castle, the destruction of the Bishop's Palace in Bristol, and the 'Days of May' bank run that drained £1.5 million in gold from the Bank of England [2.2]. Furthermore, the enfranchisement of urban workers in 1867 was directly triggered by the Reform League’s massive demonstrations and the violent tearing down of the Hyde Park railings in July 1866. Without the immense moral and organizational pressure of the Chartist petitions, the sacrifices of the Tolpuddle Martyrs, and continuous working-class strikes, Parliament would have happily preserved the corrupt rotten borough oligarchy indefinitely [4.3]. Crucially, the 1872 Secret Ballot Act (Source D) was enacted only because popular exposure of systemic landlord coercion at open hustings (Source C) made open voting politically indefensible.<br><br>Ultimately, the democratization of Britain was not a simple binary between a gift from above or a revolution from below, but a dynamic dialectic between popular pressure and elite self-preservation. Popular working-class resistance provided the indispensable momentum, creating intolerable political crises, financial panics, and civil unrest that made the status quo unsustainable. However, it required pragmatic parliamentary leaders like Earl Grey, Gladstone, and Disraeli to recognize that obstinate resistance would provoke violent revolution, choosing instead to concede voting rights in measured stages. Therefore, while aristocratic elites drafted the legislation, British democracy was fundamentally won from below by the courageous, unrelenting pressure of ordinary working people.",
-            },
-          ],
+          text: '<span class="para-ref">[5.5]</span> Under the unreformed system, voting took place on open wooden platforms called "hustings." Voters stood before shouting crowds, publicly declaring their choice to election clerks. Landlords and factory bosses routinely evicted tenants or fired workers who voted against the master\'s favoured candidate, while drunken mobs were paid in gin to intimidate rivals. In 1872, Gladstone\'s Liberal government passed the historic <strong>Secret Ballot Act</strong>. Tested at the Pontefract by-election in August 1872, voters cast confidential paper ballots stamped in private wooden booths and sealed with liquorice wax (<span class="archival-meta-tag">Source E</span>). By liberating electors from employer intimidation, the secret ballot laid the true foundation of modern British democracy.',
           source: {
-            letter: 'D',
+            letter: 'E',
             title:
-              'Source D: The First Secret Ballot in the United Kingdom, Pontefract By-Election (1872)',
+              'Source E: The First Secret Ballot in the United Kingdom, Pontefract By-Election (1872)',
             context:
               'In August 1872, Hugh Childers won re-election in Pontefract in the first British election where voters cast their ballots in private voting compartments. The box was sealed with liquorice stamps from a local confectionery factory to prevent fraud. **Hinge Question:** Why was the introduction of the secret ballot box the decisive turning point that allowed the working class to vote freely?',
             hinge_question:
               'Why was the introduction of the secret ballot box the decisive turning point that allowed the working class to vote freely?',
             image: '/images/secret_ballot.jpg',
             caption:
-              'Source D: The historic tin ballot box and wax seals used at the Pontefract municipal by-election on 15 August 1872, the first election conducted under the Ballot Act.',
+              'Source E: The historic tin ballot box and wax seals used at the Pontefract municipal by-election on 15 August 1872, the first election conducted under the Ballot Act.',
           },
         },
       ],
@@ -3978,15 +3251,6 @@ const industrialisation_and_empire = {
           answer: '60%',
         },
       ],
-      pair_share: {
-        prompt:
-          'Discuss with your partner: Why did the government eventually expand the right to vote?',
-        think: 'Spend 1 minute quietly considering the question and forming your own opinion.',
-        pair: 'Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.',
-        share: "Share your pair's combined conclusion with the class.",
-      },
-      vocab_cloze_text:
-        "Before 1832, Britain's electoral map was notoriously corrupt: depopulated rural areas existed as a [Rotten Borough], while huge manufacturing cities like Birmingham had no MPs. After massive civil unrest, Parliament passed the [Great Reform Act 1832], disenfranchising corrupt towns and creating new urban [Constituency] seats. The law expanded the [Franchise] to middle-class property owners, though working men remained excluded. Full working-class male [Suffrage] developed gradually over the century, bolstered in 1872 by the introduction of the [Secret Ballot].",
       hook_text:
         "In May 1832, London awakens to giant placards plastered on every street corner: 'To stop the Duke, go for gold!' The Duke of Wellington, the hero of Waterloo, has attempted to form a hardline anti-reform government. In response, middle-class radicals and working-class leaders join forces to trigger a nationwide run on the banks, draining over £1.6 million in gold sovereigns from the Bank of England in ten days. In Bristol, Nottingham, and Derby, furious crowds burn down bishops' palaces and gaols. King William IV and aristocratic peers, staring into the abyss of national economic collapse and revolution, realize that the corrupt electoral system of medieval Britain must finally fall.",
       causal_domino_spine: {
@@ -4090,75 +3354,65 @@ const industrialisation_and_empire = {
           },
         ],
       },
-      workbook_stages: [
+      tasks: [
         {
-          step: 1,
-          date: '1800–1830',
-          para_ref: '[5.1]',
-          heading:
-            'Why was Britain’s unreformed parliamentary system condemned as a corrupt oligarchy?',
-          bullets: [
-            'Under-Five-Percent Electorate',
-            'Old Sarum & Newtown Rotten Boroughs',
-            'Unrepresented Industrial Cities',
+          id: 'ie_l5_evaluative_essay_reform_act',
+          type: 'extended_writing',
+          tariff: 'Question 3: Evaluative Statement Essay [12 marks • 15 mins]',
+          title: 'Question 3: Evaluative Statement Essay [12 marks • 15 mins]',
+          question:
+            '“The 1832 Great Reform Act was passed because the ruling aristocracy feared violent revolution, rather than from a desire for democratic justice.” How far do you agree with this statement? Explain your answer. [12 marks]',
+          stimulus: [
+            'The burning of Bristol and the "Days of May" run on the Bank of England (1831–1832)',
+            'Earl Grey’s £10 property qualification deliberately excluding the working class',
           ],
-          focus_clue:
-            'Why did critics condemn rotten boroughs like Old Sarum while industrial cities like Manchester had no MPs?',
-        },
-        {
-          step: 2,
-          date: '1831–1832',
-          para_ref: '[5.2]',
-          heading:
-            'How did public rebellion and economic panic force the passage of the 1832 Great Reform Act?',
-          bullets: [
-            'Bristol Reform Riots & Fires',
-            '"Days of May" Bank Run Gold Panic',
-            'Tory House of Lords Surrender',
+          hints: [
+            'Side 1 (Fear of Violent Revolution): Explain how the Bristol riots, the burning of Nottingham Castle, and the £1.5m gold bank run terrified ruling elites into passing reform [5.2].',
+            'Side 2 (Aristocratic Compromise & Preservation): Explain how Earl Grey standardized the £10 franchise to attach the wealthy middle class to the constitution while shutting out working men [5.1, 5.3].',
+            'Comparative Verdict: Weigh whether the Act was a reluctant aristocratic concession to preserve oligarchy or a vital stepping stone toward democracy.',
           ],
-          focus_clue:
-            'How did the Bristol riots and the "Days of May" run on gold force the House of Lords to pass the 1832 Reform Act?',
-        },
-        {
-          step: 3,
-          date: '1832',
-          para_ref: '[5.3]',
-          heading:
-            'Which industrial cities were granted MPs, and why did workers call the Act the "Great Betrayal"?',
-          bullets: [
-            'Manchester, Birmingham & Leeds MPs',
-            'Ten-Pound Property Qualification',
-            'Deliberate Working-Class Exclusion',
-          ],
-          focus_clue:
-            'Why did the £10 property qualification enfranchise middle-class factory masters but lead workers to call it the Great Betrayal?',
-        },
-        {
-          step: 4,
-          date: '1838–1848',
-          para_ref: '[5.4]',
-          heading: 'How did the Chartist movement unite millions of workers behind the Six Points?',
-          bullets: [
-            'Universal Male Suffrage & Secret Ballot',
-            'Abolition of Property Requirements',
-            'Three Mammoth Rejected Petitions',
-          ],
-          focus_clue:
-            'How did the People’s Charter unite millions behind demands for universal male suffrage, equal constituencies, and paid MPs?',
-        },
-        {
-          step: 5,
-          date: '1872',
-          para_ref: '[5.5]',
-          heading:
-            'How did the 1872 Secret Ballot Act at Pontefract destroy landlord political coercion?',
-          bullets: [
-            'Abolition of Public Hustings',
-            'Private Booths & Liquorice Wax Seals',
-            'Freedom from Landlord Eviction',
-          ],
-          focus_clue:
-            'How did the secret ballot at Pontefract end public voting intimidation and landlord bribery?',
+          scaffolding: {
+            structure_strip: [
+              'Introduction: Contextualize the 1832 Great Reform Act. Define the debate: was reform driven by existential terror of popular insurrection, or by a calculated Whig strategy to preserve the aristocratic constitution?',
+              'PEEL 1 (Fear of Insurrection & Economic Collapse): Analyze the Bristol riots, arson of Nottingham Castle, and Francis Place’s "Days of May" run on gold that paralyzed Wellington [5.2].',
+              'PEEL 2 (Aristocratic Preservation & Working-Class Exclusion): Analyze Earl Grey’s conservative philosophy—"reform in order to preserve"—and how the £10 property qualification deliberately locked out working men [5.3].',
+              'Conclusion & Historical Verdict: Synthesize both arguments. Conclude whether fear was the immediate trigger while aristocratic self-preservation determined the actual conservative architecture of the Act.',
+            ],
+            sentence_starters: [
+              'To a large extent, it can be argued that the 1832 Great Reform Act was conceded primarily because the ruling aristocracy feared an armed revolution...',
+              'In particular, when the Tory House of Lords rejected the Reform Bill in October 1831, widespread violence erupted across Britain...',
+              'In Bristol, rioters sacked the Mansion House, burned the Bishop’s Palace, and destroyed three prisons...',
+              'Furthermore, during the "Days of May" in 1832, radical leader Francis Place weaponized economic panic with the slogan "Stop the Duke, Go for Gold!", triggering...',
+              'This £1.5 million run on the Bank of England convinced King William IV and the Duke of Wellington that military rule was impossible...',
+              'On the other hand, an alternative perspective is that the Whig leadership under Earl Grey was motivated by aristocratic self-preservation rather than fear alone...',
+              'Earl Grey famously declared that he aimed to "reform in order to preserve", enfranchising only the respectable middle class with a strict £10 borough qualification...',
+              'Consequently, working-class men who had fought for the Bill found themselves completely disenfranchised, leading them to denounce the Act as the "Great Betrayal"...',
+              'In conclusion, the decisive reason why the Act passed in 1832 was that imminent threat of revolution forced the Lords to yield, but the resulting legislation was designed to protect aristocratic power rather than advance democratic justice.',
+            ],
+            connective_bank: [
+              'To a large extent, it can be argued that...',
+              'In particular, a decisive factor was...',
+              'Furthermore, this created severe consequences because...',
+              'On the other hand, an alternative perspective is that...',
+              'In conclusion, the decisive reason why...',
+            ],
+            word_bank: [
+              'Earl Grey',
+              'Great Reform Act (1832)',
+              'rotten boroughs',
+              'Old Sarum',
+              'Bristol Reform Riots',
+              'Days of May',
+              'Francis Place ("Go for Gold")',
+              '£10 property qualification',
+              'Great Betrayal',
+              'People’s Charter (1838)',
+              'Secret Ballot Act (1872)',
+            ],
+          },
+          model_answer:
+            'To a large extent, it can be argued that the 1832 Great Reform Act was passed because the ruling aristocracy feared violent revolution, rather than from any genuine desire for democratic justice [5.2]. In the early 1830s, Britain stood on the precipice of civil insurrection. When the reactionary Tory majority in the House of Lords rejected the second Reform Bill in October 1831, fury erupted across the nation. In Bristol, crowds rioted for three days, storming the Mansion House, sacking three prisons, and burning the Bishop’s Palace to ashes, requiring military cavalry charges to restore order. Similar riots erupted in Derby and Nottingham, where the historic castle belonging to the anti-reform Duke of Newcastle was incinerated. Furthermore, during the "Days of May" in 1832, when King William IV attempted to reinstall the anti-reform Duke of Wellington as Prime Minister, middle-class and working-class radicals joined forces to wage financial warfare. Organized by Francis Place under the rallying cry "Stop the Duke, Go for Gold!", reformers withdrew over £1.5 million in gold sovereigns from the Bank of England in ten days, bringing Britain’s financial system to the brink of collapse. Facing nationwide tax strikes, armed political unions drilling openly in Birmingham, and an impending run on the banks, Wellington conceded that military repression was impossible, and the King agreed to threaten the House of Lords with the creation of Whig peers to force the Bill through. Therefore, popular militancy and financial panic were the immediate, indispensable catalysts that compelled the aristocracy to yield.\n\nOn the other hand, an alternative perspective demonstrates that the specific structure and content of the Great Reform Act were dictated by a cynical aristocratic strategy to preserve oligarchic power, rather than to establish democratic fairness [5.1, 5.3]. Prime Minister Earl Grey and the Whig aristocrats had no faith in universal democracy; Grey explicitly declared to the House of Lords that his policy was to "reform in order to preserve" the constitution. Rather than enfranchising the people, the Act established a uniform £10 annual property qualification in parliamentary boroughs, which deliberately enfranchised the affluent middle class—merchants, factory owners, and professionals—while locking out the entire working class. By abolishing fifty-six depopulated rotten boroughs like Old Sarum and redistributing seats to industrial cities such as Manchester, Birmingham, and Leeds, the Whigs successfully detached the wealthy middle class from the revolutionary working class, binding commercial wealth to the aristocratic establishment. Working-class radicals who had manned the barricades in Bristol and risked starvation to pass the Bill realized they had been utterly excluded, bitterly denouncing the settlement as the "Great Betrayal" [5.3].\n\nIn conclusion, the statement is overwhelmingly accurate: fear of violent revolution and economic collapse was the decisive factor that broke the intransigence of the House of Lords in 1832. However, while existential dread of insurrection forced the ruling class to act, the Whig government drafted the legislation specifically to preserve aristocratic hegemony by dividing their opponents, granting power only to the propertied bourgeoisie while ensuring that genuine democratic justice for working people was delayed until the Chartist campaigns and the Secret Ballot Act of 1872.',
+          topic: 'Question 3: Evaluative Statement Essay [12 marks • 15 mins]',
         },
       ],
     },

@@ -64,9 +64,12 @@ function auditUnit(unitId) {
     const content = fs.readFileSync(dataPath, 'utf8');
     const hasWorkbookStages = content.includes('workbook_stages');
     const hasMarginSpine = content.includes('margin_spine');
+    const hasCausalDomino = content.includes('causal_domino_spine');
 
-    if (!hasWorkbookStages && !hasMarginSpine) {
-      errors.push(`Lesson data does not contain 'workbook_stages' or 'margin_spine' array.`);
+    if (!hasWorkbookStages && !hasMarginSpine && !hasCausalDomino) {
+      errors.push(
+        `Lesson data does not contain 'workbook_stages', 'margin_spine', or 'causal_domino_spine' array.`,
+      );
     }
     return { unitId, errors, warnings };
   }
@@ -86,8 +89,15 @@ function auditUnit(unitId) {
       matches.forEach((m) => existingParas.add(m.replace(/[\[\]]/g, '')));
     });
 
-    if (lesson.workbook_stages && Array.isArray(lesson.workbook_stages)) {
-      lesson.workbook_stages.forEach((st) => {
+    const stagesList =
+      lesson.workbook_stages && Array.isArray(lesson.workbook_stages)
+        ? lesson.workbook_stages
+        : lesson.causal_domino_spine && Array.isArray(lesson.causal_domino_spine.stages)
+          ? lesson.causal_domino_spine.stages
+          : null;
+
+    if (stagesList) {
+      stagesList.forEach((st) => {
         totalStagesChecked++;
         if (!st.para_ref && !st.paraRef) {
           errors.push(`${lId} -> Stage ${st.step || '?'}: Missing 'para_ref' badge property.`);

@@ -4273,6 +4273,7 @@ export function renderLesson(lesson) {
           connective: s.connective || '',
           question: s.question || s.workbook_question || '',
           exam_link: s.exam_link || '',
+          para_ref: s.para_ref || s.paraRef || '',
         }));
       } else if (anchors.length > 0) {
         spineItems = anchors.map((a, i) => ({
@@ -4287,18 +4288,29 @@ export function renderLesson(lesson) {
           connective: '',
           question: '',
           exam_link: '',
+          para_ref: a.para_ref || a.paraRef || '',
         }));
       }
 
       if (spineItems.length > 0) {
+        let lIdx = 0;
+        if (typeof unitData !== 'undefined' && unitData && Array.isArray(unitData.lessons)) {
+          lIdx = unitData.lessons.findIndex((l) =>
+            l.id && lesson.id ? l.id === lesson.id : l.title === lesson.title,
+          );
+          if (lIdx === -1) lIdx = 0;
+        }
+        const pageAnchor = getWorkbookPageAnchor(unitId || window.currentUnitId, lesson, lIdx);
+
         htmlNarrative += `
         <details id="lesson-chronology-spine" class="timeline-anchor-details cme-chronology-spine" style="background: #ffffff; border: 1.5px solid #cbd5e1; border-top: 4px solid #0284c7; border-radius: 8px; margin-bottom: 25px; box-shadow: 0 2px 6px rgba(0,0,0,0.04); overflow: hidden;">
           <summary style="padding: 12px 18px; font-weight: 700; color: #0f172a; cursor: pointer; display: flex; align-items: center; justify-content: space-between; user-select: none; background: #f8fafc; border-bottom: 1px solid #e2e8f0;">
-            <span style="display: flex; align-items: center; gap: 10px;">
+            <span style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
               <span style="background: #0284c7; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.68rem; font-weight: 800; padding: 2.5px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px;">Chronology Spine</span>
               <span style="font-weight: 800; font-size: 0.98rem; color: #0f172a; font-family: 'Inter', sans-serif;">Key Turning Points &amp; Causal Dominoes</span>
             </span>
-            <div style="display: flex; align-items: center; gap: 8px;">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;" onclick="event.stopPropagation();">
+              ${pageAnchor ? `<span style="font-size: 0.74rem; font-weight: 700; color: #0369a1; background: #f0f9ff; border: 1px solid #bae6fd; padding: 2px 8px; border-radius: 12px;"><i class="fa-solid fa-book-open" style="color: #0284c7; margin-right: 4px;"></i> Workbook: ${pageAnchor.label}</span>` : ''}
               <button type="button" class="btn btn-toggle-all-spine-stages" onclick="event.stopPropagation(); window.toggleAllSpineDrawers(this);" style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 700; color: #0369a1; background: #ffffff; border: 1.2px solid #bae6fd; padding: 2px 10px; border-radius: 12px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 2px rgba(0,0,0,0.04); transition: all 0.15s ease;" title="Expand or collapse all 5 stage drawers at once">
                 <i class="fa-solid fa-arrows-up-down" style="font-size: 0.65rem;"></i> <span class="toggle-spine-text">Expand All</span>
               </button>
@@ -4323,10 +4335,13 @@ export function renderLesson(lesson) {
                 
                 <!-- Baseline Narrative Zone (Row 1: Enquiry Focus) -->
                 <div class="cme-spine-narrative-zone" style="display: flex; flex-direction: column; flex: 1; box-sizing: border-box;">
-                  <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px;">
-                    <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
-                      STAGE ${item.step}
-                    </span>
+                  <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 4px; margin-bottom: 4px; flex-wrap: wrap;">
+                    <div style="display: inline-flex; align-items: center; gap: 4px;">
+                      <span style="background: #0f172a; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.62rem; font-weight: 800; padding: 2px 6px; border-radius: 4px; letter-spacing: 0.5px; white-space: nowrap;">
+                        STAGE ${item.step}
+                      </span>
+                      ${item.para_ref ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: monospace; font-size: 0.62rem; font-weight: 800; padding: 1px 5px; border-radius: 3px;" title="Corresponds to Paragraph ${item.para_ref} in narrative">Text ${item.para_ref}</span>` : ''}
+                    </div>
                     <span style="font-family: 'Inter', sans-serif; font-size: 0.70rem; font-weight: 800; color: #0284c7; text-align: right; line-height: 1.25;" title="${item.date}">${item.date}</span>
                   </div>
 
@@ -4389,6 +4404,25 @@ export function renderLesson(lesson) {
                 </details>`
                     : ''
                 }
+                ${
+                  item.para_ref
+                    ? `
+                <div style="margin-top: 6px; padding-top: 4px; border-top: 1px dashed #e2e8f0; display: flex; justify-content: flex-end;">
+                  <button type="button" onclick="
+                    const pNum = '${item.para_ref}'.match(/\\d+\\.\\d+/)?.[0] || '';
+                    const chunk = Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum))?.closest('.narrative-chunk') || Array.from(document.querySelectorAll('.para-ref')).find(el => el.textContent.includes(pNum));
+                    if (chunk) {
+                      chunk.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      chunk.style.transition = 'all 0.4s ease';
+                      chunk.style.boxShadow = '0 0 0 4px #0284c7, 0 8px 24px rgba(2,132,199,0.25)';
+                      setTimeout(() => { chunk.style.boxShadow = ''; }, 2500);
+                    }
+                  " style="font-size: 0.66rem; font-weight: 700; background: #f0f9ff; color: #0369a1; border: 1px solid #bae6fd; padding: 2px 6px; border-radius: 3px; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;" title="Scroll directly to Paragraph ${item.para_ref}">
+                    <i class="fa-solid fa-arrow-down" style="font-size: 0.58rem;"></i> Jump to Text
+                  </button>
+                </div>`
+                    : ''
+                }
               </div>
               `;
               })
@@ -4443,7 +4477,12 @@ export function renderLesson(lesson) {
     if (
       lesson.workbook_stages &&
       Array.isArray(lesson.workbook_stages) &&
-      lesson.workbook_stages.length > 0
+      lesson.workbook_stages.length > 0 &&
+      !(
+        lesson.causal_domino_spine &&
+        Array.isArray(lesson.causal_domino_spine.stages) &&
+        lesson.causal_domino_spine.stages.length > 0
+      )
     ) {
       let lIdx = 0;
       if (typeof unitData !== 'undefined' && unitData && Array.isArray(unitData.lessons)) {
@@ -4521,6 +4560,132 @@ export function renderLesson(lesson) {
 
     let renderedKeyIndividual = false;
     lesson.narrative_blocks.forEach((block, index) => {
+      if (block.type === 'interactive_hotspot_map') {
+        const mapId = block.id || 'hotspot-map-' + index;
+        const initialSpot = block.hotspots && block.hotspots[0] ? block.hotspots[0] : null;
+
+        htmlNarrative += `
+          <div class="interactive-hotspot-map-container" id="${mapId}-wrapper" style="margin: 32px 0; background: #0f172a; border: 1.5px solid #334155; border-radius: 12px; padding: 22px; color: #f8fafc; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.35);">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.12); padding-bottom: 12px; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+              <div>
+                <span style="background: rgba(14, 165, 233, 0.2); border: 1px solid #0ea5e9; color: #38bdf8; padding: 2.5px 10px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;">
+                  <i class="fa-solid fa-map-location-dot" style="margin-right: 5px;"></i> Interactive Primary Map
+                </span>
+                <h3 style="margin: 6px 0 0 0; font-size: 1.35rem; font-family: 'Playfair Display', Georgia, serif; color: #ffffff;">${block.title}</h3>
+                ${block.subtitle ? `<div style="font-size: 0.85rem; color: #94a3b8; margin-top: 4px;">${block.subtitle}</div>` : ''}
+              </div>
+              ${block.shelfmark ? `<span style="font-family: monospace; font-size: 0.70rem; color: #94a3b8; background: rgba(255,255,255,0.06); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1);">${block.shelfmark}</span>` : ''}
+            </div>
+
+            <!-- Map Viewport with Hotspots -->
+            <div class="hotspot-map-viewport" style="position: relative; width: 100%; height: 520px; background: #1e293b; border-radius: 8px; overflow: hidden; border: 1px solid #334155; margin-bottom: 16px; display: flex; justify-content: center; align-items: center;">
+              <img src="${getAssetUrl(block.image)}" alt="${block.title}" style="width: 100%; height: 100%; object-fit: contain; pointer-events: none; user-select: none; filter: contrast(1.05) brightness(0.95);" />
+              
+              <!-- Hotspot Pins -->
+              ${(block.hotspots || [])
+                .map((spot, sIdx) => {
+                  const isFirst = sIdx === 0;
+                  return `
+                <div class="map-hotspot-pin ${isFirst ? 'active-pin' : ''}" id="${mapId}-pin-${spot.id}" data-spot-id="${spot.id}" style="left: ${spot.x}%; top: ${spot.y}%;" title="${spot.title}">
+                  <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'}; opacity: 0.45;"></div>
+                  <div class="pin-marker" style="background: ${spot.color || '#b91c1c'}; color: #ffffff; font-size: 0.65rem; font-weight: 900; width: 24px; height: 24px;">
+                    ${sIdx + 1}
+                  </div>
+                  <div class="pin-label" style="background: rgba(15, 23, 42, 0.92); border: 1px solid ${spot.color || '#3b82f6'}; color: #ffffff; padding: 2px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; white-space: nowrap; margin-left: 14px; margin-top: -12px;">
+                    ${spot.label || spot.title.split(':')[0]}
+                  </div>
+                </div>
+                `;
+                })
+                .join('')}
+            </div>
+
+            <!-- Hotspot Dispatch Banner -->
+            <div id="${mapId}-intel-card" style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.12); border-left: 4px solid ${initialSpot ? initialSpot.color || '#38bdf8' : '#38bdf8'}; border-radius: 8px; padding: 16px 20px;">
+              ${
+                initialSpot
+                  ? `
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                  <div>
+                    <span style="background: ${initialSpot.color || '#0284c7'}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">${initialSpot.badge || 'Archival Incident'}</span>
+                    <h4 style="margin: 4px 0 0 0; font-size: 1.15rem; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${initialSpot.title}</h4>
+                  </div>
+                  <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${initialSpot.date || ''}</span>
+                </div>
+                <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${initialSpot.details}</p>
+                ${initialSpot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${initialSpot.hinge}</div>` : ''}
+              `
+                  : ''
+              }
+            </div>
+
+            <!-- Hotspot Buttons Row -->
+            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; justify-content: center;">
+              ${(block.hotspots || [])
+                .map((spot, sIdx) => {
+                  const isFirst = sIdx === 0;
+                  return `
+                <button type="button" class="btn btn-sm ${mapId}-nav-btn" data-spot-id="${spot.id}" style="background: ${isFirst ? spot.color || '#0284c7' : 'rgba(255,255,255,0.08)'}; color: #ffffff; border: 1px solid rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 12px; font-size: 0.74rem; font-weight: 700; cursor: pointer; transition: all 0.2s ease;">
+                  <span style="display: inline-block; width: 16px; height: 16px; border-radius: 50%; background: ${spot.color || '#0284c7'}; color: #fff; text-align: center; line-height: 16px; font-size: 0.62rem; margin-right: 5px;">${sIdx + 1}</span>
+                  ${spot.label || spot.title.split(':')[0]}
+                </button>
+                `;
+                })
+                .join('')}
+            </div>
+          </div>
+        `;
+
+        window.postRenderHooks.push(() => {
+          if (!document.getElementById('crummack-interactive-styles')) {
+            initCrummackInteractiveFeatures();
+          }
+          const container = document.getElementById(`${mapId}-wrapper`);
+          if (!container) return;
+          const pins = container.querySelectorAll('.map-hotspot-pin');
+          const navBtns = container.querySelectorAll(`.${mapId}-nav-btn`);
+          const card = document.getElementById(`${mapId}-intel-card`);
+          const spotMap = {};
+          (block.hotspots || []).forEach((s) => {
+            spotMap[s.id] = s;
+          });
+
+          function selectSpot(spotId) {
+            const spot = spotMap[spotId];
+            if (!spot || !card) return;
+
+            pins.forEach((p) => p.classList.toggle('active-pin', p.dataset.spotId === spotId));
+            navBtns.forEach((b) => {
+              const active = b.dataset.spotId === spotId;
+              b.style.background = active ? spot.color || '#0284c7' : 'rgba(255,255,255,0.08)';
+              b.style.borderColor = active ? '#ffffff' : 'rgba(255,255,255,0.15)';
+            });
+
+            card.style.borderLeftColor = spot.color || '#38bdf8';
+            card.innerHTML = `
+              <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 8px; margin-bottom: 8px;">
+                <div>
+                  <span style="background: ${spot.color || '#0284c7'}; color: #ffffff; font-size: 0.68rem; font-weight: 800; padding: 2px 7px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px;">${spot.badge || 'Archival Incident'}</span>
+                  <h4 style="margin: 4px 0 0 0; font-size: 1.15rem; color: #ffffff; font-family: 'Playfair Display', Georgia, serif;">${spot.title}</h4>
+                </div>
+                <span style="font-size: 0.8rem; font-weight: 700; color: #f59e0b;">${spot.date || ''}</span>
+              </div>
+              <p style="margin: 0 0 10px 0; font-size: 0.95rem; line-height: 1.6; color: #cbd5e1;">${spot.details}</p>
+              ${spot.hinge ? `<div style="background: rgba(245, 158, 11, 0.12); border-left: 3px solid #f59e0b; padding: 8px 12px; border-radius: 4px; font-size: 0.88rem; color: #fde68a; font-style: italic;">${spot.hinge}</div>` : ''}
+            `;
+          }
+
+          pins.forEach((p) => {
+            p.addEventListener('click', () => selectSpot(p.dataset.spotId));
+          });
+          navBtns.forEach((b) => {
+            b.addEventListener('click', () => selectSpot(b.dataset.spotId));
+          });
+        });
+
+        return;
+      }
+
       if (block.type === 'causal_diagram') {
         htmlNarrative += `
           <div class="causal-diagram-container" style="margin: 35px 0; background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 25px; color: #f8fafc; box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25); border: 1px solid #334155;">
@@ -6882,7 +7047,85 @@ export function renderLesson(lesson) {
             `;
             return;
           }
-          if (task.type === 'extended_writing') {
+          if (task.type === 'two_features') {
+            const taskTitle =
+              task.tariff ||
+              task.title ||
+              task.topic ||
+              'Question 1: Describe Two Features [4 marks • 5 mins]';
+            const f1 = task.feature_1 || {
+              prompt:
+                'Feature 1: Identify one key feature and provide supporting historical detail.',
+              starter: 'One key feature was... Specifically, this involved...',
+              model: '',
+            };
+            const f2 = task.feature_2 || {
+              prompt:
+                'Feature 2: Identify a second key feature and provide supporting historical detail.',
+              starter: 'A second key feature was... For example, this meant that...',
+              model: '',
+            };
+
+            htmlTasks += `
+              <div class="task-box two-features-task-card" style="margin-bottom: 25px; background: #ffffff; padding: 22px; border-radius: 10px; border: 2px solid #0284c7; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.1);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 2px solid #e0f2fe; padding-bottom: 12px; flex-wrap: wrap; gap: 8px;">
+                  <h4 style="margin: 0; color: #0369a1; font-size: 1.15rem; font-weight: 800; display: flex; align-items: center; gap: 8px;">
+                    <i class="fa-solid fa-list-check" style="color: #0284c7;"></i>
+                    <span>${taskTitle}</span>
+                  </h4>
+                  <span style="background: #0284c7; color: #ffffff; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;">
+                    <i class="fa-solid fa-clipboard-question"></i> 4 MARKS &bull; FEATURE DRILL
+                  </span>
+                </div>
+
+                <div class="two-features-prompt" style="font-size: 1.05rem; font-weight: 700; color: #0f172a; margin-bottom: 16px; line-height: 1.5; background: #f0f9ff; padding: 12px 16px; border-left: 4px solid #0284c7; border-radius: 0 6px 6px 0;">
+                  ${formatBold ? formatBold(task.question || '') : task.question || ''}
+                </div>
+
+                <!-- Feature 1 -->
+                <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px; margin-bottom: 14px;">
+                  <div style="font-weight: 800; color: #0369a1; font-size: 0.92rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                    <span style="background: #0284c7; color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem;">1</span>
+                    ${f1.prompt || 'Feature 1: Identify one key feature and provide supporting historical detail.'}
+                  </div>
+                  ${f1.starter ? `<div style="font-size: 0.82rem; color: #64748b; font-style: italic; margin-bottom: 6px;"><strong>Starter:</strong> &ldquo;${f1.starter}&rdquo;</div>` : ''}
+                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 75px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.92rem; line-height: 1.5;" placeholder="${f1.starter || 'One key feature was... Specifically, this involved...'}"></textarea>
+                  ${
+                    f1.model
+                      ? `
+                    <details style="margin-top: 8px;">
+                      <summary style="cursor: pointer; color: #0369a1; font-weight: 700; font-size: 0.82rem;"><i class="fa-solid fa-eye"></i> [ Reveal Feature 1 Model ]</summary>
+                      <div style="margin-top: 6px; padding: 10px; background: #ffffff; border-left: 3px solid #0284c7; border-radius: 4px; font-size: 0.88rem; color: #1e293b; line-height: 1.5;">${formatBold ? formatBold(f1.model) : f1.model}</div>
+                    </details>
+                  `
+                      : ''
+                  }
+                </div>
+
+                <!-- Feature 2 -->
+                <div style="background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; padding: 14px;">
+                  <div style="font-weight: 800; color: #0369a1; font-size: 0.92rem; margin-bottom: 6px; display: flex; align-items: center; gap: 6px;">
+                    <span style="background: #0284c7; color: #fff; width: 20px; height: 20px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 0.75rem;">2</span>
+                    ${f2.prompt || 'Feature 2: Identify a second key feature and provide supporting historical detail.'}
+                  </div>
+                  ${f2.starter ? `<div style="font-size: 0.82rem; color: #64748b; font-style: italic; margin-bottom: 6px;"><strong>Starter:</strong> &ldquo;${f2.starter}&rdquo;</div>` : ''}
+                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 75px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.92rem; line-height: 1.5;" placeholder="${f2.starter || 'A second key feature was... For example, this meant that...'}"></textarea>
+                  ${
+                    f2.model
+                      ? `
+                    <details style="margin-top: 8px;">
+                      <summary style="cursor: pointer; color: #0369a1; font-weight: 700; font-size: 0.82rem;"><i class="fa-solid fa-eye"></i> [ Reveal Feature 2 Model ]</summary>
+                      <div style="margin-top: 6px; padding: 10px; background: #ffffff; border-left: 3px solid #0284c7; border-radius: 4px; font-size: 0.88rem; color: #1e293b; line-height: 1.5;">${formatBold ? formatBold(f2.model) : f2.model}</div>
+                    </details>
+                  `
+                      : ''
+                  }
+                </div>
+              </div>
+            `;
+            return;
+          }
+          if (task.type === 'extended_writing' || task.type === 'narrative_account') {
             const hasTaskPrefix = task.topic && /^Task\s*\d+/i.test(task.topic);
             const isKs3 =
               window.currentUnitId === 'early_modern_world' ||
@@ -6894,23 +7137,26 @@ export function renderLesson(lesson) {
               (typeof unit !== 'undefined' && unit && unit.is_ks3);
             const qNumPrefix = task.qNum && !hasTaskPrefix && !isKs3 ? `Q${task.qNum}. ` : '';
             const taskTitle =
+              task.tariff ||
               task.title ||
               task.topic ||
               (isKs3 ? 'Enquiry Writing Task' : 'Task 4: Analytical Synthesis & Historical Essay');
-            const badgeText = isKs3
-              ? 'KS3 Enquiry Essay &bull; Structured Writing'
-              : 'GCSE Analytical Masterclass';
+            const badgeText =
+              task.badge ||
+              (isKs3
+                ? task.type === 'narrative_account'
+                  ? '8 MARKS &bull; NARRATIVE ACCOUNT'
+                  : 'KS3 Enquiry Essay &bull; Structured Writing'
+                : 'GCSE Analytical Masterclass');
             const questionPrompt = task.question || task.text || task.prompt || '';
             const hints = Array.isArray(task.hints) ? task.hints : [];
             const modelAnswer = task.model_answer || task.model || '';
-            const essayConnectives = [
-              'On the one hand...',
-              'For example...',
-              'Consequently...',
-              'Furthermore...',
-              'In contrast...',
-              'As a result...',
-              'Ultimately...',
+            const essayConnectives = (task.scaffolding && task.scaffolding.connective_bank) || [
+              'To a large extent, it can be argued that...',
+              'In particular, a decisive factor was...',
+              'Furthermore, this created severe consequences because...',
+              'On the other hand, an alternative perspective is that...',
+              'In conclusion, the decisive reason why...',
             ];
 
             let peelHtml = '';
