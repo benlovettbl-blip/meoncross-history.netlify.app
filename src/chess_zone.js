@@ -914,6 +914,21 @@ function initChessState(forceClean = false) {
     saveChessState();
   }
 
+  // Ensure all 13 canonical players from INITIAL_PLAYERS are present in chessState.players
+  if (Array.isArray(INITIAL_PLAYERS) && INITIAL_PLAYERS.length > 0) {
+    let addedCount = 0;
+    for (const initP of INITIAL_PLAYERS) {
+      if (!chessState.players.some((p) => p.id === initP.id)) {
+        chessState.players.push(JSON.parse(JSON.stringify(initP)));
+        addedCount++;
+      }
+    }
+    if (addedCount > 0) {
+      chessState.checkedInPlayerIds = chessState.players.map((p) => p.id);
+      saveChessState();
+    }
+  }
+
   // Hydrate real names and nicknames for all active players
   hydratePlayerRealNames(chessState.players);
 
@@ -1627,6 +1642,15 @@ function renderLadderTab(players) {
             <button type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; border-radius: 4px; padding: 3px 9px; font-size: 0.7rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);">
               <span>⚔️</span> Auto-Pair (${checkedInCount > 0 ? checkedInCount : players.length})
             </button>
+            ${
+              chessState.activePairings && chessState.activePairings.length > 0
+                ? `
+              <button type="button" onclick="window.resetPairings()" style="background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; border-radius: 4px; padding: 2px 7px; font-size: 0.68rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;" title="Reset and clear all board pairings if you made a mistake or want to start fresh">
+                <span>🧹</span> Reset Pairings
+              </button>
+            `
+                : ''
+            }
           </div>
         `
             : ''
@@ -2896,6 +2920,9 @@ function renderActiveBoardPairingsGrid() {
           <button type="button" onclick="window.undoPairings()" style="background: ${hasHistory ? '#fef3c7' : '#f8fafc'}; color: ${hasHistory ? '#92400e' : '#94a3b8'}; border: 1.5px solid ${hasHistory ? '#fde68a' : '#e2e8f0'}; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: ${hasHistory ? 'pointer' : 'not-allowed'}; display: inline-flex; align-items: center; gap: 6px;" ${!hasHistory ? 'disabled' : ''} title="Revert to previous board pairings">
             <span>↩️</span> Undo Re-Pair
           </button>
+          <button type="button" onclick="window.resetPairings()" style="background: #fef2f2; color: #dc2626; border: 1.5px solid #fca5a5; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Clear and reset all current board pairings if you made a mistake or want to start afresh">
+            <span>🧹</span> Reset Pairings
+          </button>
           <button type="button" onclick="window.confirmNewRoundAll()" style="background: #f8fafc; color: #334155; border: 1.5px solid #cbd5e1; font-weight: 700; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Start a fresh round for all checked-in pupils">
             <i class="fa-solid fa-shuffle"></i> New Round (All)
           </button>
@@ -3473,6 +3500,16 @@ function renderSignInTab(players = []) {
             <button onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1.5px solid #38bdf8; font-weight: 800; font-size: 0.88rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);">
               <span>⚔️</span> Generate Today's Board Pairings
             </button>
+
+            ${
+              hasPairings
+                ? `
+              <button onclick="window.resetPairings()" style="background: rgba(239, 68, 68, 0.2); color: #fca5a5; border: 1.5px solid #ef4444; font-weight: 700; font-size: 0.85rem; padding: 10px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(239, 68, 68, 0.2);" title="Reset and clear all current board pairings if you made a mistake or want to start fresh">
+                <span>🧹</span> Reset Pairings
+              </button>
+            `
+                : ''
+            }
 
             ${
               checkedInPlayers.length > 0
@@ -5338,6 +5375,43 @@ window.undoPairings = function () {
   saveChessState();
   renderChessHubView();
   showChessToast('↩️ Restored previous board pairings successfully!', 'success');
+};
+
+// Reset / Clear All Active Pairings (Teacher Safety Net)
+window.resetPairings = function (skipConfirm = false) {
+  const activePairings = chessState.activePairings || [];
+  if (activePairings.length === 0) {
+    showChessToast('No active board pairings to reset.', 'info');
+    return;
+  }
+
+  if (!skipConfirm) {
+    const activeBoards = activePairings.filter((b) => !b.isBye);
+    const incomplete = activeBoards.filter((b) => !b.completed).length;
+    const msg =
+      incomplete > 0
+        ? `Reset all ${activeBoards.length} board pairings? (${incomplete} game(s) are in-progress. Previously logged match history & points will NOT be lost).`
+        : `Reset and clear all ${activeBoards.length} board pairings so pupils can be paired afresh?`;
+    if (!confirm(msg)) return;
+  }
+
+  // Backup current pairings so Undo can restore if pressed accidentally
+  if (!Array.isArray(chessState.pairingsHistory)) {
+    chessState.pairingsHistory = [];
+  }
+  chessState.pairingsHistory.push(JSON.parse(JSON.stringify(chessState.activePairings)));
+
+  chessState.activePairings = [];
+  if (Array.isArray(chessState.players)) {
+    chessState.players.forEach((p) => {
+      p.lastRoundBye = false;
+    });
+  }
+  chessState.lastRoundByePlayerId = null;
+
+  saveChessState();
+  renderChessHubView();
+  showChessToast('🧹 All board pairings cleared! You can now pair pupils afresh.', 'success');
 };
 
 // Confirmation modal before re-pairing entire room from scratch
