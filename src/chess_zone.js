@@ -164,78 +164,99 @@ if (typeof window !== 'undefined') {
   window.sanitizePupilName = sanitizePupilName;
 }
 
-// Pupil First-Name Reference Registry (Clean First Names)
+// Pupil Callsign & Handle Reference Registry (100% GDPR Anonymous)
 export const DEFAULT_LOCAL_NAME_MAP = {
-  p_1789653842949: 'Ethan',
-  p_1789653874979: 'Austen',
-  p_1789653816754: 'Alex',
-  p_1789653887768: 'Will',
-  p_1789653828428: 'Woody',
-  p_1789653854856: 'Harry C.',
-  p_1789653903667: 'Jacob',
-  p_1789653983357: 'Thomas',
-  p_1789653925819: 'Tadhg',
-  p_1789653972946: 'Jake',
-  p_1789653960520: 'Ben',
-  p_1789653940195: 'Harry M.',
-  p_1791467946326: 'Dillon',
+  p_1789653842949: 'Super Dreadnought',
+  p_1789653874979: 'Jutland Raider',
+  p_1789653816754: 'The Iron Duke',
+  p_1789653887768: 'Trafalgar Knight',
+  p_1789653828428: 'Black Prince',
+  p_1789653854856: 'Armoured Rook',
+  p_1789653903667: 'Swift Battlecruiser',
+  p_1789653983357: 'Lightning Gambit',
+  p_1789653925819: 'Falkland Corsair',
+  p_1789653972946: 'Broadside King',
+  p_1789653960520: 'Battleship Bishop',
+  p_1789653940195: 'Fortress Sentinel',
+  p_1791467946326: 'Swift Rook',
 };
 
-export const CALLSIGN_TO_FIRST_NAME = {
-  // Legacy callsigns to First Name + Initial
-  Grandmaster_01: 'Ethan',
-  Grandmaster_02: 'Austen',
-  Grandmaster_04: 'Will',
-  Grandmaster_07: 'Jacob',
-  Grandmaster_12: 'Harry M.',
-  Knight_04: 'Will',
-  Knight_09: 'Tadhg',
-  Bishop_05: 'Woody',
-  Bishop_10: 'Jake',
-  Rook_03: 'Alex',
-  Rook_08: 'Thomas',
-  Pawn_06: 'Harry C.',
-  Pawn_11: 'Ben',
-  'Swift Rook': 'Dillon',
-  'Super Dreadnought': 'Ethan',
-  'Jutland Raider': 'Austen',
-  'The Iron Duke': 'Alex',
-  'Trafalgar Knight': 'Will',
-  'Black Prince': 'Woody',
-  'Armoured Rook': 'Harry C.',
-  'Swift Battlecruiser': 'Jacob',
-  'Lightning Gambit': 'Thomas',
-  'Falkland Corsair': 'Tadhg',
-  'Broadside King': 'Jake',
-  'Battleship Bishop': 'Ben',
-  'Fortress Sentinel': 'Harry M.',
-  'Ethan P.': 'Ethan',
-  'Austen C.': 'Austen',
-  'Alex R.': 'Alex',
-  'Will V.': 'Will',
-  'Woody R.': 'Woody',
-  'Harry C.': 'Harry C.',
-  'Jacob C.': 'Jacob',
-  'Jacob B.': 'Jacob',
-  'Thomas S.': 'Thomas',
-  'Thomas B.': 'Thomas',
-  'Tadhg D.': 'Tadhg',
-  'Tadhg F.': 'Tadhg',
-  'Jake B.': 'Jake',
-  'Ben T.': 'Ben',
-  'Harry M.': 'Harry M.',
-  Ethan: 'Ethan',
-  Austen: 'Austen',
-  Alex: 'Alex',
-  Will: 'Will',
-  Woody: 'Woody',
-  Jacob: 'Jacob',
-  Thomas: 'Thomas',
-  Tadhg: 'Tadhg',
-  Jake: 'Jake',
-  Ben: 'Ben',
-  Dillon: 'Dillon',
+// Pupil Username Handles (@username)
+export const PLAYER_USERNAMES = {
+  p_1789653842949: 'SuperDreadnought',
+  p_1789653874979: 'JutlandRaider',
+  p_1789653816754: 'IronDuke',
+  p_1789653887768: 'TrafalgarKnight',
+  p_1789653828428: 'BlackPrince',
+  p_1789653854856: 'ArmouredRook',
+  p_1789653903667: 'SwiftBattlecruiser',
+  p_1789653983357: 'LightningGambit',
+  p_1789653925819: 'FalklandCorsair',
+  p_1789653972946: 'BroadsideKing',
+  p_1789653960520: 'BattleshipBishop',
+  p_1789653940195: 'FortressSentinel',
+  p_1791467946326: 'SwiftRook',
 };
+
+export const CALLSIGN_MAP = {
+  // Legacy rank/piece callsigns to Canonical Callsigns
+  Grandmaster_01: 'Super Dreadnought',
+  Grandmaster_02: 'Jutland Raider',
+  Grandmaster_04: 'Trafalgar Knight',
+  Grandmaster_07: 'Swift Battlecruiser',
+  Grandmaster_12: 'Fortress Sentinel',
+  Knight_04: 'Trafalgar Knight',
+  Knight_09: 'Falkland Corsair',
+  Bishop_05: 'Black Prince',
+  Bishop_10: 'Broadside King',
+  Rook_03: 'The Iron Duke',
+  Rook_08: 'Lightning Gambit',
+  Pawn_06: 'Armoured Rook',
+  Pawn_11: 'Battleship Bishop',
+  Knight_13: 'Swift Rook',
+  'Swift Rook': 'Swift Rook',
+  'Super Dreadnought': 'Super Dreadnought',
+  'Jutland Raider': 'Jutland Raider',
+  'The Iron Duke': 'The Iron Duke',
+  'Trafalgar Knight': 'Trafalgar Knight',
+  'Black Prince': 'Black Prince',
+  'Armoured Rook': 'Armoured Rook',
+  'Swift Battlecruiser': 'Swift Battlecruiser',
+  'Lightning Gambit': 'Lightning Gambit',
+  'Falkland Corsair': 'Falkland Corsair',
+  'Broadside King': 'Broadside King',
+  'Battleship Bishop': 'Battleship Bishop',
+  'Fortress Sentinel': 'Fortress Sentinel',
+
+  // Automatic Migration for legacy pupil names to 100% GDPR anonymous callsigns
+  'Ethan P.': 'Super Dreadnought',
+  'Austen C.': 'Jutland Raider',
+  'Alex R.': 'The Iron Duke',
+  'Will V.': 'Trafalgar Knight',
+  'Woody R.': 'Black Prince',
+  'Harry C.': 'Armoured Rook',
+  'Jacob C.': 'Swift Battlecruiser',
+  'Jacob B.': 'Swift Battlecruiser',
+  'Thomas S.': 'Lightning Gambit',
+  'Thomas B.': 'Lightning Gambit',
+  'Tadhg D.': 'Falkland Corsair',
+  'Tadhg F.': 'Falkland Corsair',
+  'Jake B.': 'Broadside King',
+  'Ben T.': 'Battleship Bishop',
+  'Harry M.': 'Fortress Sentinel',
+  Ethan: 'Super Dreadnought',
+  Austen: 'Jutland Raider',
+  Alex: 'The Iron Duke',
+  Will: 'Trafalgar Knight',
+  Woody: 'Black Prince',
+  Jacob: 'Swift Battlecruiser',
+  Thomas: 'Lightning Gambit',
+  Tadhg: 'Falkland Corsair',
+  Jake: 'Broadside King',
+  Ben: 'Battleship Bishop',
+  Dillon: 'Swift Rook',
+};
+export const CALLSIGN_TO_FIRST_NAME = CALLSIGN_MAP; // Backwards-compatible alias ensuring 100% GDPR anonymity
 
 // Combinatorial Historical Naval Chess Themes
 export const HOUSE_NICKNAME_THEMES = {
@@ -385,26 +406,42 @@ export function hydratePlayerRealNames(players) {
   if (typeof window !== 'undefined') {
     try {
       const raw = localStorage.getItem('chess_local_roster_names');
-      if (raw) localMap = JSON.parse(raw);
+      if (raw) {
+        localMap = JSON.parse(raw);
+        // Automatically sanitize any legacy stored pupil names in local storage
+        let changed = false;
+        Object.keys(localMap).forEach((k) => {
+          if (CALLSIGN_MAP[localMap[k]]) {
+            localMap[k] = CALLSIGN_MAP[localMap[k]];
+            changed = true;
+          }
+        });
+        if (changed) {
+          localStorage.setItem('chess_local_roster_names', JSON.stringify(localMap));
+        }
+      }
     } catch (e) {}
   }
 
   players.forEach((p) => {
-    // 1. Check if name or nickname is a legacy callsign or initialed name
+    // 1. Resolve to GDPR-safe callsign & username
     const rawVal =
-      localMap[p.id] ||
       DEFAULT_LOCAL_NAME_MAP[p.id] ||
-      CALLSIGN_TO_FIRST_NAME[p.name] ||
-      CALLSIGN_TO_FIRST_NAME[p.nickname] ||
-      CALLSIGN_TO_FIRST_NAME[p.realName] ||
-      p.realName ||
+      CALLSIGN_MAP[p.name] ||
+      CALLSIGN_MAP[p.nickname] ||
+      CALLSIGN_MAP[p.realName] ||
+      CALLSIGN_MAP[localMap[p.id]] ||
+      localMap[p.id] ||
       p.name ||
       p.nickname;
 
-    const clean = typeof sanitizePupilName === 'function' ? sanitizePupilName(rawVal) : rawVal;
+    const clean =
+      CALLSIGN_MAP[rawVal] ||
+      (typeof sanitizePupilName === 'function' ? sanitizePupilName(rawVal) : rawVal);
     p.realName = clean;
     p.name = clean;
     p.nickname = clean;
+    p.username = PLAYER_USERNAMES[p.id] || clean.replace(/\s+/g, '');
 
     if (typeof p.byesReceived !== 'number') p.byesReceived = 0;
     if (typeof p.lastRoundBye !== 'boolean') p.lastRoundBye = false;
@@ -415,29 +452,33 @@ export function hydratePlayerRealNames(players) {
     chessState.activePairings.forEach((pair) => {
       if (pair.white) {
         const wVal =
-          localMap[pair.white.id] ||
           DEFAULT_LOCAL_NAME_MAP[pair.white.id] ||
-          CALLSIGN_TO_FIRST_NAME[pair.white.name] ||
-          CALLSIGN_TO_FIRST_NAME[pair.white.nickname] ||
-          pair.white.realName ||
+          CALLSIGN_MAP[pair.white.name] ||
+          CALLSIGN_MAP[pair.white.nickname] ||
+          CALLSIGN_MAP[localMap[pair.white.id]] ||
           pair.white.name;
-        const wClean = typeof sanitizePupilName === 'function' ? sanitizePupilName(wVal) : wVal;
+        const wClean =
+          CALLSIGN_MAP[wVal] ||
+          (typeof sanitizePupilName === 'function' ? sanitizePupilName(wVal) : wVal);
         pair.white.name = wClean;
         pair.white.nickname = wClean;
         pair.white.realName = wClean;
+        pair.white.username = PLAYER_USERNAMES[pair.white.id] || wClean.replace(/\s+/g, '');
       }
       if (pair.black) {
         const bVal =
-          localMap[pair.black.id] ||
           DEFAULT_LOCAL_NAME_MAP[pair.black.id] ||
-          CALLSIGN_TO_FIRST_NAME[pair.black.name] ||
-          CALLSIGN_TO_FIRST_NAME[pair.black.nickname] ||
-          pair.black.realName ||
+          CALLSIGN_MAP[pair.black.name] ||
+          CALLSIGN_MAP[pair.black.nickname] ||
+          CALLSIGN_MAP[localMap[pair.black.id]] ||
           pair.black.name;
-        const bClean = typeof sanitizePupilName === 'function' ? sanitizePupilName(bVal) : bVal;
+        const bClean =
+          CALLSIGN_MAP[bVal] ||
+          (typeof sanitizePupilName === 'function' ? sanitizePupilName(bVal) : bVal);
         pair.black.name = bClean;
         pair.black.nickname = bClean;
         pair.black.realName = bClean;
+        pair.black.username = PLAYER_USERNAMES[pair.black.id] || bClean.replace(/\s+/g, '');
       }
     });
   }
@@ -445,8 +486,8 @@ export function hydratePlayerRealNames(players) {
   // Also migrate matches
   if (typeof chessState !== 'undefined' && Array.isArray(chessState.matches)) {
     chessState.matches.forEach((m) => {
-      if (CALLSIGN_TO_FIRST_NAME[m.white]) m.white = CALLSIGN_TO_FIRST_NAME[m.white];
-      if (CALLSIGN_TO_FIRST_NAME[m.black]) m.black = CALLSIGN_TO_FIRST_NAME[m.black];
+      if (CALLSIGN_MAP[m.white]) m.white = CALLSIGN_MAP[m.white];
+      if (CALLSIGN_MAP[m.black]) m.black = CALLSIGN_MAP[m.black];
     });
   }
 }
@@ -455,24 +496,29 @@ export function getPlayerDisplayName(player, context = 'default') {
   if (!player) return 'Unknown Player';
   const name =
     DEFAULT_LOCAL_NAME_MAP[player.id] ||
-    CALLSIGN_TO_FIRST_NAME[player.name] ||
-    CALLSIGN_TO_FIRST_NAME[player.nickname] ||
-    player.realName ||
+    CALLSIGN_MAP[player.name] ||
+    CALLSIGN_MAP[player.nickname] ||
+    CALLSIGN_MAP[player.realName] ||
     player.name ||
     player.nickname;
 
-  const clean = typeof sanitizePupilName === 'function' ? sanitizePupilName(name) : name;
+  const clean =
+    CALLSIGN_MAP[name] ||
+    (typeof sanitizePupilName === 'function' ? sanitizePupilName(name) : name);
+  const username = player.username || PLAYER_USERNAMES[player.id] || clean.replace(/\s+/g, '');
 
   if (context === 'table') {
     return `
       <div style="display: flex; flex-direction: column; gap: 2px;">
         <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${clean}</span>
+        <span style="font-size: 0.72rem; color: #64748b; font-weight: 600; font-family: monospace;">@${username}</span>
       </div>
     `;
   }
   if (context === 'podium') {
     return `
       <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${clean}</div>
+      <div style="font-size: 0.76rem; color: #64748b; font-weight: 700; font-family: monospace;">@${username}</div>
     `;
   }
   return `<span style="font-weight: 700;">${clean}</span>`;
