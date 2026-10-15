@@ -4699,6 +4699,13 @@ body.sen-mode .read-aloud-playback-bar .read-aloud-btn.reading-paused {
   border-color: #f59e0b;
   box-shadow: 0 0 12px rgba(245, 158, 11, 0.6);
 }
+.map-hotspot-pin.pin-align-left {
+  flex-direction: row-reverse;
+}
+.map-hotspot-pin.pin-align-left .pin-label {
+  left: auto !important;
+  right: 15px !important;
+}
 
 /* Forensic Paleography Styles */
 .scribal-box {

@@ -4578,26 +4578,29 @@ export function renderLesson(lesson) {
             </div>
 
             <!-- Map Viewport with Hotspots -->
-            <div class="hotspot-map-viewport" style="position: relative; width: 100%; height: 520px; background: #1e293b; border-radius: 8px; overflow: hidden; border: 1px solid #334155; margin-bottom: 16px; display: flex; justify-content: center; align-items: center;">
-              <img src="${getAssetUrl(block.image)}" alt="${block.title}" style="width: 100%; height: 100%; object-fit: contain; pointer-events: none; user-select: none; filter: contrast(1.05) brightness(0.95);" />
-              
-              <!-- Hotspot Pins -->
-              ${(block.hotspots || [])
-                .map((spot, sIdx) => {
-                  const isFirst = sIdx === 0;
-                  return `
-                <div class="map-hotspot-pin ${isFirst ? 'active-pin' : ''}" id="${mapId}-pin-${spot.id}" data-spot-id="${spot.id}" style="left: ${spot.x}%; top: ${spot.y}%;" title="${spot.title}">
-                  <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'}; opacity: 0.45;"></div>
-                  <div class="pin-marker" style="background: ${spot.color || '#b91c1c'}; color: #ffffff; font-size: 0.65rem; font-weight: 900; width: 24px; height: 24px;">
-                    ${sIdx + 1}
+            <div class="hotspot-map-viewport" style="position: relative; width: 100%; min-height: 520px; background: #1e293b; border-radius: 8px; overflow: hidden; border: 1px solid #334155; margin-bottom: 16px; display: flex; justify-content: center; align-items: center; padding: 14px 10px;">
+              <div class="hotspot-map-stage" style="position: relative; display: inline-block; max-height: 520px; line-height: 0;">
+                <img src="${getAssetUrl(block.image)}" alt="${block.title}" style="max-height: 520px; max-width: 100%; width: auto; height: auto; display: block; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.5); filter: contrast(1.05) brightness(0.95); pointer-events: none; user-select: none;" />
+                
+                <!-- Hotspot Pins -->
+                ${(block.hotspots || [])
+                  .map((spot, sIdx) => {
+                    const isFirst = sIdx === 0;
+                    const isLeftAligned = (spot.x || 0) > 75 || spot.align === 'left';
+                    return `
+                  <div class="map-hotspot-pin ${isFirst ? 'active-pin' : ''} ${isLeftAligned ? 'pin-align-left' : ''}" id="${mapId}-pin-${spot.id}" data-spot-id="${spot.id}" style="left: ${spot.x}%; top: ${spot.y}%;" title="${spot.title}">
+                    <div class="pin-pulse" style="background: ${spot.color || '#b91c1c'}; opacity: 0.45;"></div>
+                    <div class="pin-marker" style="background: ${spot.color || '#b91c1c'}; color: #ffffff; font-size: 0.65rem; font-weight: 900; width: 24px; height: 24px;">
+                      ${sIdx + 1}
+                    </div>
+                    <div class="pin-label" style="background: rgba(15, 23, 42, 0.94); border: 1px solid ${spot.color || '#3b82f6'}; color: #ffffff; padding: 2px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; white-space: nowrap;">
+                      ${spot.label || spot.title.split(':')[0]}
+                    </div>
                   </div>
-                  <div class="pin-label" style="background: rgba(15, 23, 42, 0.92); border: 1px solid ${spot.color || '#3b82f6'}; color: #ffffff; padding: 2px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 700; white-space: nowrap; margin-left: 14px; margin-top: -12px;">
-                    ${spot.label || spot.title.split(':')[0]}
-                  </div>
-                </div>
-                `;
-                })
-                .join('')}
+                  `;
+                  })
+                  .join('')}
+              </div>
             </div>
 
             <!-- Hotspot Dispatch Banner -->
@@ -7161,6 +7164,7 @@ export function renderLesson(lesson) {
 
             let peelHtml = '';
             if (hints.length > 0) {
+              const isNarrative = task.type === 'narrative_account';
               const peelColors = [
                 { letter: 'P', label: 'Point', bg: '#eff6ff', border: '#93c5fd', text: '#1e40af' },
                 {
@@ -7179,11 +7183,35 @@ export function renderLesson(lesson) {
                 },
                 { letter: 'L', label: 'Link', bg: '#faf5ff', border: '#d8b4fe', text: '#6b21a8' },
               ];
+              const narrativeColors = [
+                {
+                  letter: '1',
+                  label: 'Beginning (1819)',
+                  bg: '#eff6ff',
+                  border: '#93c5fd',
+                  text: '#1e40af',
+                },
+                {
+                  letter: '2',
+                  label: 'Middle (1830)',
+                  bg: '#fffbeb',
+                  border: '#fcd34d',
+                  text: '#b45309',
+                },
+                {
+                  letter: '3',
+                  label: 'End (1834)',
+                  bg: '#f0fdf4',
+                  border: '#86efac',
+                  text: '#166534',
+                },
+              ];
+              const cfgList = isNarrative ? narrativeColors : peelColors;
               peelHtml = `
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px;">
                   ${hints
                     .map((hint, hIdx) => {
-                      const cfg = peelColors[hIdx % peelColors.length];
+                      const cfg = cfgList[hIdx % cfgList.length];
                       let cleanHint =
                         typeof hint === 'string'
                           ? hint
@@ -7191,10 +7219,10 @@ export function renderLesson(lesson) {
                       let label = typeof hint === 'object' && hint.label ? hint.label : cfg.label;
                       if (typeof hint === 'string' && typeof hint.match === 'function') {
                         const splitMatch = hint.match(
-                          /^(Point|Evidence|Explanation|Link):\s*(.*)/i,
+                          /^(Point|Evidence|Explanation|Link|Beginning|Middle|End)(?:\s*\([^)]*\))?:\s*(.*)/i,
                         );
                         if (splitMatch) {
-                          label = splitMatch[1];
+                          label = isNarrative ? cfg.label : splitMatch[1];
                           cleanHint = splitMatch[2];
                         }
                       }
@@ -7244,8 +7272,8 @@ export function renderLesson(lesson) {
                   <details class="peel-scaffolding-drawer no-print" style="margin-bottom: 16px; background: #f8fafc; border: 1.5px solid #cbd5e1; border-radius: 8px; overflow: hidden;" closed>
                     <summary style="padding: 10px 14px; cursor: pointer; font-size: 0.88rem; font-weight: 800; color: #0369a1; background: #f1f5f9; display: flex; align-items: center; justify-content: space-between; user-select: none;">
                       <span style="display: flex; align-items: center; gap: 8px;">
-                        <i class="fa-solid fa-chalkboard-user" style="color: #0284c7;"></i>
-                        <span>PEEL Analytical Writing Scaffolds &bull; Sentence Stems</span>
+                        <i class="${task.type === 'narrative_account' ? 'fa-solid fa-arrow-down-wide-short' : 'fa-solid fa-chalkboard-user'}" style="color: #0284c7;"></i>
+                        <span>${task.type === 'narrative_account' ? 'Chronological Narrative Scaffolding &bull; 3-Stage Sequence (Beginning, Middle, End)' : 'PEEL Analytical Writing Scaffolds &bull; Sentence Stems'}</span>
                       </span>
                       <span style="font-size: 0.75rem; font-weight: 700; background: #e0f2fe; color: #0369a1; padding: 3px 8px; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;">
                         <i class="fa-solid fa-eye"></i> Click to Reveal Scaffolding
@@ -7261,12 +7289,12 @@ export function renderLesson(lesson) {
 
                 <div style="background: #f8fafc; border: 1.5px solid #e2e8f0; border-radius: 8px; padding: 14px; margin-top: 12px;">
                   <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; align-items: center;">
-                    <span style="font-size: 0.78rem; font-weight: 700; color: #0369a1; text-transform: uppercase;">Analytical Connectives (Click to Insert):</span>
+                    <span style="font-size: 0.78rem; font-weight: 700; color: #0369a1; text-transform: uppercase;">${task.type === 'narrative_account' ? 'Chronological & Causal Connectives (Click to Insert):' : 'Analytical Connectives (Click to Insert):'}</span>
                     ${essayConnectives.map((c) => `<button type="button" class="connective-chip" data-connective="${c.replace(/"/g, '&quot;')}" style="background: #ffffff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.15s ease;" title="Click to insert at cursor">${c}</button>`).join('')}
                   </div>
 
-                  <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">Student Response &bull; Structured Historical Argument:</label>
-                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 140px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="Using the PEEL structure and historical evidence above, write your analytical essay paragraph..." oninput="window.updateProgress()"></textarea>
+                  <label style="display: block; font-size: 0.85rem; font-weight: 700; color: #1e293b; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">${task.type === 'narrative_account' ? 'Student Response &bull; Chronological 3-Paragraph Narrative Account (Beginning, Middle, End):' : 'Student Response &bull; Structured Historical Argument:'}</label>
+                  <textarea class="interactive-textarea student-answer-input" style="width: 100%; box-sizing: border-box; min-height: 140px; padding: 12px; border: 1.5px solid #cbd5e1; border-radius: 8px; font-size: 0.95rem; line-height: 1.6; font-family: inherit; resize: vertical;" placeholder="${task.type === 'narrative_account' ? 'Write your 3-paragraph narrative account following the chronological sequence (Beginning: Peterloo ➔ Middle: Swing Riots ➔ End: Tolpuddle)...' : 'Using the PEEL structure and historical evidence above, write your analytical essay paragraph...'}" oninput="window.updateProgress()"></textarea>
 
                   ${
                     modelAnswer
@@ -7276,7 +7304,19 @@ export function renderLesson(lesson) {
                         <i class="fa-solid fa-eye"></i> [ Show Examiner-Grade Model Response ]
                       </summary>
                       <div class="scaffold-box model-box" style="margin-top: 12px; padding: 14px 16px; background: #f8fafc; border-left: 4px solid #0284c7; border-radius: 4px; font-size: 0.95rem; color: #1e293b; line-height: 1.65; border: 1px solid #e2e8f0; font-family: 'Georgia', serif;">
-                        ${modelAnswer}
+                        ${
+                          modelAnswer.includes('\n\n')
+                            ? modelAnswer
+                                .split(/\n\s*\n/)
+                                .map(
+                                  (p) =>
+                                    `<p style="margin: 0 0 10px 0; line-height: 1.65;">${formatBold ? formatBold(p) : p}</p>`,
+                                )
+                                .join('')
+                            : formatBold
+                              ? formatBold(modelAnswer)
+                              : modelAnswer
+                        }
                       </div>
                     </details>
                   `
@@ -9171,6 +9211,10 @@ export function initCrummackInteractiveFeatures() {
         pointer-events: auto !important;
         backdrop-filter: blur(4px) !important;
         letter-spacing: 0.02em !important;
+      }
+      .map-hotspot-pin.pin-align-left .pin-label {
+        left: auto !important;
+        right: 15px !important;
       }
       .pin-num {
         display: inline-block !important;
