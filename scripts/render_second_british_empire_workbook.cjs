@@ -1165,122 +1165,100 @@ function compileEmpireWorkbook() {
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Imperial Federation Map Plate) -->
-      <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <div style="display: grid; grid-template-columns: 70mm 1fr; background: #ffffff;">
-          <!-- Left: Full Visual Canvas -->
-          <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
-            <img src="${coverImgBase64}" alt="Imperial Federation Map 1886" style="height: 103mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
-          </div>
-          <!-- Right: Visual Iconography & Historical Significance for Year 8 -->
-          <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
-            <!-- 1. Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
+      <!-- Prominent Primary Visual Source Centerpiece (Landscape Showcase + Underneath Analytical Deck) -->
+      <div style="margin: 2px 0 4px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        
+        <!-- 1. Top Artwork Showcase (Full-Width Cinematic Landscape Banner) -->
+        <div style="background: #fcfbf9; border-bottom: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 4px 6px; height: 89mm; box-sizing: border-box;">
+          <img src="${coverImgBase64}" alt="Imperial Federation Map 1886" style="height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+        </div>
+
+        <!-- 2. Analytical Decomposition Deck (Arranged Underneath in Clean Dual Columns) -->
+        <div style="padding: 5px 8px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 1fr; gap: 8px; box-sizing: border-box;">
+          
+          <!-- Left Column: Context & 4 Core Features -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
               <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
-                Primary Visual Evidence &bull; Victorian Imperial Cartography
+                Visual Decoding &bull; 4 Core Features
               </span>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
-                Walter Crane &amp; Sir John Colomb (1886)
+                Walter Crane (1886)
               </span>
             </div>
-
-            <!-- 2. Statecraft Context -->
-            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
-              Published as a colour supplement to <em>The Graphic</em> for Queen Victoria’s Golden Jubilee, the Imperial Federation Map presented British global dominion at its Victorian peak. Walter Crane illustrated Britannia enthroned atop the world, surrounded by personifications of colonial subjects and vast ocean trade routes:
+            
+            <p style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.2; color: #1e293b; margin: 0;">
+              Published for Queen Victoria’s Golden Jubilee, Walter Crane illustrated British global dominion, placing Britannia enthroned atop the world surrounded by colonial subjects:
             </p>
 
-            <!-- 3. Four Core Propaganda Features -->
-            <div style="display: flex; flex-direction: column; gap: 3px;">
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. Stance of Global Sovereignty:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Britannia sits enthroned upon the world holding trident and shield, commanding global oceans with the British lion at her feet.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px;">
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">1. Global Sovereignty:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Britannia enthroned with trident and shield, commanding world oceans with the British lion.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. Worldwide Imperial Red Shading:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Every British territory is tinted brilliant imperial red on Mercator projection, dramatically exaggerating British worldwide territory.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">2. Imperial Red Shading:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Every colony tinted red on Mercator projection, exaggerating British worldwide territory.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Naval Sea Lanes &amp; Steamer Routes:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Navigational lines trace global trade routes guarded by Royal Navy ironclads, symbolising industrial maritime hegemony.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">3. Naval Sea Lanes:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Global steam trade routes guarded by Royal Navy ironclads, asserting industrial hegemony.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. Subordinated Colonial Subjects:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Indigenous peoples of India, Africa, Canada, and Australia are depicted bearing commodities, legitimising racial hierarchy as natural order.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">4. Subordinated Peoples:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Colonial subjects depicted bearing commodities, legitimising racial hierarchy as natural order.
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- 4. Three-Pillar Propaganda Decoding Matrix -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Red Shading</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Territorial dominance on global Mercator maps.</div>
+          <!-- Right Column: 3-Pillar Matrix + Significance + Hinge Question -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+            <!-- Three-Pillar Visual Matrix -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Red Shading</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Dominance on global Mercator maps.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Britannia’s Trident</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Naval supremacy under Two-Power Standard.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Britannia’s Trident</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Naval supremacy under Two-Power Standard.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Labouring Subjects</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Moral justification for resource extraction.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Labouring Subjects</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Moral justification for resource extraction.</div>
               </div>
             </div>
 
-            <!-- 5. Disciplinary Significance Anchor -->
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.25; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
+            <!-- Disciplinary Significance Anchor -->
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.2; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
               <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> In late 19th-century Britain, popular cartography transformed colonial conquest into a glorious imperial federation, hiding the violent realities of exploitation behind colourful patriotic propaganda.
             </div>
 
-            <!-- 6. Targeted Disciplinary Hinge Question -->
-            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 6px;">
+            <!-- Targeted Disciplinary Hinge Question -->
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 2.5px 6px;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Evaluation</span>
               </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.2; margin-top: 1px;">
+              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.18; margin-top: 1px;">
                 Does this map celebrate a cooperative global commonwealth of mutual progress, or does it disguise a coercive racial empire sustained by naval dominance and economic extraction?
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
-          <span><strong>Primary Visual Evidence:</strong> <em>Imperial Federation: Map of the World Showing the Extent of the British Empire in 1886</em> &bull; Walter Crane</span>
-          <span style="font-weight: 700; color: #93c5fd;">BRITISH LIBRARY ARCHIVE &bull; MAPS 957.(46.)</span>
-        </div>
-      </div>
 
-      <!-- Disciplinary Strategy Overview & Workbook Blueprint -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 5px 8px; background: #f0f4f9; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            1. Chronological Spines [Enquiries 1–5]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Structured chronological note-taking on each left page: 5 causal stages guiding pupil understanding as the teacher narrates the history.
-          </div>
-        </div>
-        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            2. Disciplinary Writing Practice [4m, 8m, 12m]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Targeted extended writing on each right page: causal explanation, narrative account, difference, and constitutional evaluation.
-          </div>
-        </div>
-        <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            3. Centrefold Timeline &amp; Notes Portfolio
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and dedicated lined notes &amp; essay planning pages (pp. 14–15).
-          </div>
+        <!-- 3. Bottom Museum Provenance Banner -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #ffffff; padding: 2.5px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
+          <span><strong>Primary Visual Evidence:</strong> <em>Imperial Federation: Map of the World Showing the Extent of the British Empire in 1886</em> &bull; Walter Crane</span>
+          <span style="font-weight: 700; color: #93c5fd; white-space: nowrap;">BRITISH LIBRARY ARCHIVE &bull; MAPS 957.(46.)</span>
         </div>
       </div>
 
@@ -1896,6 +1874,24 @@ async function main() {
       left: '0mm',
     },
   });
+
+  const coverElem = await page.$('#page-1');
+  if (coverElem) {
+    const previewPath = path.join(
+      ROOT_DIR,
+      'public',
+      'images',
+      'second_british_empire_cover_redesign_preview.png',
+    );
+    await coverElem.screenshot({ path: previewPath });
+    const artifactDest = path.join(
+      'C:\\Users\\fives\\.gemini\\antigravity-ide\\brain\\3b641322-c353-4e66-858d-2203cdb22b36',
+      'second_british_empire_cover_redesign_preview.png',
+    );
+    try {
+      fs.copyFileSync(previewPath, artifactDest);
+    } catch (_) {}
+  }
 
   await browser.close();
   console.log(`[OK] Single canonical PDF compiled: ${outPdfPath}`);

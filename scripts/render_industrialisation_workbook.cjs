@@ -1240,122 +1240,100 @@ function compileIndustrialisationWorkbook() {
         </div>
       </div>
 
-      <!-- Prominent Primary Visual Source Centerpiece (Coalbrookdale by Night Plate) -->
-      <div style="margin: 2px 0 5px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
-        <div style="display: grid; grid-template-columns: 70mm 1fr; background: #ffffff;">
-          <!-- Left: Full Visual Canvas -->
-          <div style="background: #fcfbf9; border-right: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 2px 3px;">
-            <img src="${coverImgBase64}" alt="Coalbrookdale by Night 1801" style="height: 103mm; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
-          </div>
-          <!-- Right: Visual Iconography & Historical Significance for Year 8 -->
-          <div style="padding: 6px 10px; display: flex; flex-direction: column; justify-content: space-between; background: #ffffff; box-sizing: border-box;">
-            <!-- 1. Header -->
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.2px solid #0f284e; padding-bottom: 2px;">
+      <!-- Prominent Primary Visual Source Centerpiece (Landscape Showcase + Underneath Analytical Deck) -->
+      <div style="margin: 2px 0 4px 0; border: 1.5px solid #0f284e; border-radius: 4px; overflow: hidden; background: #ffffff;">
+        
+        <!-- 1. Top Artwork Showcase (Full-Width Cinematic Landscape Banner) -->
+        <div style="background: #fcfbf9; border-bottom: 1.5px solid #0f284e; display: flex; justify-content: center; align-items: center; padding: 4px 6px; height: 95mm; box-sizing: border-box;">
+          <img src="${coverImgBase64}" alt="Coalbrookdale by Night 1801" style="height: 100%; width: auto; max-width: 100%; object-fit: contain; display: block; margin: 0 auto; border: 1.2px solid #0f284e; border-radius: 2px; box-shadow: 0 2px 6px rgba(15,40,78,0.22);">
+        </div>
+
+        <!-- 2. Analytical Decomposition Deck (Arranged Underneath in Clean Dual Columns) -->
+        <div style="padding: 5px 8px; background: #ffffff; display: grid; grid-template-columns: 1.15fr 1fr; gap: 8px; box-sizing: border-box;">
+          
+          <!-- Left Column: Context & 4 Core Features -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #0f284e; padding-bottom: 1.5px;">
               <span style="font-family: 'Inter', sans-serif; font-size: 7.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e; letter-spacing: 0.5px;">
-                Primary Visual Evidence &bull; Industrial Sublime
+                Visual Decoding &bull; 4 Core Features
               </span>
               <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 700; color: #64748b;">
                 Philip James de Loutherbourg, RA (1801)
               </span>
             </div>
-
-            <!-- 2. Statecraft Context -->
-            <p style="font-family: 'Georgia', serif; font-size: 7.5pt; line-height: 1.3; color: #1e293b; margin: 0;">
-              In 1801, Philip James de Loutherbourg captured the Madeley Wood (Bedlam) ironworks in Coalbrookdale, Shropshire. Depicting the blazing coke blast furnaces illuminating the nighttime sky, the painting stands as the definitive visual monument of Britain’s dawn as the world’s first industrial superpower:
+            
+            <p style="font-family: 'Georgia', serif; font-size: 7.2pt; line-height: 1.2; color: #1e293b; margin: 0;">
+              In 1801, Philip James de Loutherbourg captured the Madeley Wood (Bedlam) blast furnaces in Shropshire illuminating the night sky—the definitive visual monument of Britain’s industrial dawn:
             </p>
 
-            <!-- 3. Four Core Analytical Features -->
-            <div style="display: flex; flex-direction: column; gap: 3px;">
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">1. Blazing Coke Blast Furnaces:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Violent orange and crimson flames erupt from open furnace tops, symbolising the substitution of timber by coal and coke smelting.
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px 6px;">
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">1. Coke Blast Furnaces:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Flames erupt from open furnace tops, symbolising the substitution of timber by coal smelting.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">2. Choking Plumes &amp; Nocturnal Sky:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Dense billowing black smoke obscures the moonlit sky, capturing the dramatic Sublime power and environmental reality of heavy industry.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">2. Choking Plumes &amp; Sky:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Dense black smoke obscures the night sky, capturing the Sublime power of heavy industry.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">3. Cast Engine Boilers &amp; Slag:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  Foreground heaps of newly cast cylindrical steam engine boilers, pipes, and cooling slag illustrate mass metallurgical production.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">3. Boilers, Pipes &amp; Slag:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Cast cylindrical steam engine boilers and cooling slag illustrate mass metallurgical output.
                 </div>
               </div>
-              <div style="border-left: 2.5px solid #0f284e; padding-left: 6px;">
-                <strong style="font-family: 'Inter', sans-serif; font-size: 7.1pt; text-transform: uppercase; color: #0f284e;">4. Horse Carter &amp; Muscle Power:</strong>
-                <div style="font-family: 'Georgia', serif; font-size: 7pt; line-height: 1.22; color: #222222;">
-                  A carter guiding workhorses hauling goods highlights the historic threshold between organic animal labor and mechanized steam power.
+              <div style="border-left: 2px solid #0f284e; padding-left: 4px;">
+                <strong style="font-family: 'Inter', sans-serif; font-size: 6.8pt; text-transform: uppercase; color: #0f284e; display: block;">4. Carter &amp; Workhorses:</strong>
+                <div style="font-family: 'Georgia', serif; font-size: 6.6pt; line-height: 1.15; color: #222222;">
+                  Workhorses hauling iron mark the historic threshold between muscle and steam power.
                 </div>
               </div>
             </div>
+          </div>
 
-            <!-- 4. Three-Pillar Analytical Matrix -->
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px; padding-top: 3px; border-top: 1px solid #cbd5e1;">
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Fossil &amp; Steam</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Coal, coke smelting &amp; Watt’s rotary steam engines.</div>
+          <!-- Right Column: 3-Pillar Matrix + Significance + Hinge Question -->
+          <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 3px;">
+            <!-- Three-Pillar Visual Matrix -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px;">
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Fossil &amp; Steam</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Coal, coke smelting &amp; Watt engines.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Metallurgy</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Cort’s puddling &amp; rolling at Funtley transforming iron.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Metallurgy</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Cort’s puddling &amp; rolling at Funtley.</div>
               </div>
-              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2.5px 5px; background: #f0f4f9;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Class Struggle</div>
-                <div style="font-family: 'Georgia', serif; font-size: 6.4pt; line-height: 1.15; color: #1e293b; margin-top: 1px;">Swing Riots, child labour &amp; the fight for democracy.</div>
+              <div style="border: 1px solid #0f284e; border-radius: 2px; padding: 2px 4px; background: #f0f4f9;">
+                <div style="font-family: 'Inter', sans-serif; font-size: 6.6pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Class Struggle</div>
+                <div style="font-family: 'Georgia', serif; font-size: 6.3pt; line-height: 1.12; color: #1e293b; margin-top: 1px;">Swing Riots, child labour &amp; democracy.</div>
               </div>
             </div>
 
-            <!-- 5. Disciplinary Significance Anchor -->
-            <div style="font-family: 'Inter', sans-serif; font-size: 6.4pt; color: #1e293b; line-height: 1.25; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
-              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> Loutherbourg’s masterpiece captures the Industrial Sublime—a fusion of awe and terror—symbolizing the dawn of an Anthropocene era in which human technological mastery eclipsed natural biological limits.
+            <!-- Disciplinary Significance Anchor -->
+            <div style="font-family: 'Inter', sans-serif; font-size: 6.8pt; color: #1e293b; line-height: 1.2; background: #f0f4f9; border-left: 2.5px solid #0f284e; padding: 2px 6px;">
+              <strong style="text-transform: uppercase; color: #0f284e;">Disciplinary Significance:</strong> Loutherbourg’s masterpiece captures the Industrial Sublime—a fusion of awe and terror—symbolizing the dawn of an Anthropocene era where human technology eclipsed biological limits.
             </div>
 
-            <!-- 6. Targeted Disciplinary Hinge Question -->
-            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 3px 6px;">
+            <!-- Targeted Disciplinary Hinge Question -->
+            <div style="background: #ffffff; border: 1.2px solid #0f284e; border-radius: 3px; padding: 2.5px 6px;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.2pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Historical Evaluation</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 7.0pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">Disciplinary Hinge Question:</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 700; color: #64748b; text-transform: uppercase;">Evaluation</span>
               </div>
-              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.2; margin-top: 1px;">
+              <div style="font-family: 'Georgia', serif; font-size: 6.9pt; font-style: italic; color: #1e293b; line-height: 1.18; margin-top: 1px;">
                 Does Loutherbourg depict Coalbrookdale as an apocalyptic vision of hell and human suffering, or as a heroic celebration of British technological mastery and industrial progress?
               </div>
             </div>
           </div>
         </div>
-        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.2pt; color: #ffffff; padding: 3px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
-          <span><strong>Primary Visual Evidence:</strong> <em>Coalbrookdale by Night</em> (1801) &bull; Philip James de Loutherbourg, RA</span>
-          <span style="font-weight: 700; color: #93c5fd;">SCIENCE MUSEUM, LONDON &bull; OBJECT NO. 1952-452 &bull; OIL ON CANVAS (68 &times; 107 CM)</span>
-        </div>
-      </div>
 
-      <!-- Disciplinary Strategy Overview & Workbook Blueprint -->
-      <div style="border: 1.2px solid #0f284e; border-radius: 4px; padding: 5px 8px; background: #f0f4f9; margin: 3px 0 6px 0; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px;">
-        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            1. Chronological Spines [Enquiries 1–5]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Structured chronological note-taking on each left page: 5 causal stages guiding pupil understanding as the teacher narrates the history.
-          </div>
-        </div>
-        <div style="border-right: 1px solid #cbd5e1; padding-right: 6px;">
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            2. Disciplinary Writing Practice [4m, 8m, 12m]
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Targeted extended writing on each right page: causal explanation, narrative account, difference, and evaluative statement essay.
-          </div>
-        </div>
-        <div>
-          <div style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; text-transform: uppercase; color: #0f284e;">
-            3. Centrefold Timeline &amp; Notes Portfolio
-          </div>
-          <div style="font-family: 'Georgia', serif; font-size: 6.8pt; line-height: 1.2; color: #1e293b; margin-top: 1px;">
-            Centrefold Living Timeline dual-coding sketchpads (pp. 8–9) and dedicated lined notes &amp; essay planning pages (pp. 14–15).
-          </div>
+        <!-- 3. Bottom Museum Provenance Banner -->
+        <div style="display: flex; justify-content: space-between; align-items: center; font-family: 'Inter', sans-serif; font-size: 7.0pt; color: #ffffff; padding: 2.5px 8px; border-top: 1.5px solid #0f284e; background: #0f284e;">
+          <span><strong>Primary Visual Evidence:</strong> <em>Coalbrookdale by Night</em> (1801) &bull; Philip James de Loutherbourg, RA</span>
+          <span style="font-weight: 700; color: #93c5fd; white-space: nowrap;">SCIENCE MUSEUM, LONDON &bull; OBJECT NO. 1952-452 &bull; OIL ON CANVAS</span>
         </div>
       </div>
 
@@ -1377,7 +1355,7 @@ function compileIndustrialisationWorkbook() {
           </thead>
           <tbody>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 10.5px 10px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 10.6px 10px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 1: The Iron &amp; Steam Revolution: Henry Cort &amp; Funtley Works
                 </div>
@@ -1393,7 +1371,7 @@ function compileIndustrialisationWorkbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 10.5px 10px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 10.6px 10px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 2: The Dark Satanic Mills: Child Labour, Slums &amp; Public Health
                 </div>
@@ -1409,7 +1387,7 @@ function compileIndustrialisationWorkbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 10.5px 10px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 10.6px 10px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 3: Blood, Machines &amp; Ballots: The Hampshire Swing Riots to Chartism
                 </div>
@@ -1425,7 +1403,7 @@ function compileIndustrialisationWorkbook() {
               </td>
             </tr>
             <tr style="border-bottom: 1px solid #e2e8f0;">
-              <td style="padding: 10.5px 10px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 10.6px 10px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 4: Steam, Steel &amp; Empire: HMS Warrior &amp; The 1857 Indian Rebellion
                 </div>
@@ -1441,7 +1419,7 @@ function compileIndustrialisationWorkbook() {
               </td>
             </tr>
             <tr>
-              <td style="padding: 10.5px 10px; border-right: 1.2px solid #cbd5e1;">
+              <td style="padding: 10.6px 10px; border-right: 1.2px solid #cbd5e1;">
                 <div style="font-size: 8.5pt; font-weight: 800; color: #0f284e; line-height: 1.25;">
                   Enquiry 5: The Victorian Verdict: Workshop of the World or Age of Exploitation?
                 </div>
@@ -1961,6 +1939,24 @@ async function main() {
       left: '0mm',
     },
   });
+
+  const coverElem = await page.$('#page-1');
+  if (coverElem) {
+    const previewPath = path.join(
+      ROOT_DIR,
+      'public',
+      'images',
+      'industrialisation_cover_redesign_preview.png',
+    );
+    await coverElem.screenshot({ path: previewPath });
+    const artifactDest = path.join(
+      'C:\\Users\\fives\\.gemini\\antigravity-ide\\brain\\3b641322-c353-4e66-858d-2203cdb22b36',
+      'industrialisation_cover_redesign_preview.png',
+    );
+    try {
+      fs.copyFileSync(previewPath, artifactDest);
+    } catch (_) {}
+  }
 
   await browser.close();
   console.log(`[OK] Single canonical PDF compiled: ${outPdfPath}`);
