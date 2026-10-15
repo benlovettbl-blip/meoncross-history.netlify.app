@@ -497,14 +497,12 @@ export function getPlayerDisplayName(player, context = 'default') {
     return `
       <div style="display: flex; flex-direction: column; gap: 2px;">
         <span style="font-weight: 800; color: #0f172a; font-size: 0.95rem;">${clean}</span>
-        <span style="font-size: 0.72rem; color: #64748b; font-weight: 600; font-family: monospace;">@${username}</span>
       </div>
     `;
   }
   if (context === 'podium') {
     return `
       <div style="font-size: 1.2rem; font-weight: 800; color: #0f172a; font-family: 'Playfair Display', serif;">${clean}</div>
-      <div style="font-size: 0.76rem; color: #64748b; font-weight: 700; font-family: monospace;">@${username}</div>
     `;
   }
   return `<span style="font-weight: 700;">${clean}</span>`;
@@ -1391,7 +1389,7 @@ function renderChampionshipPodium(players) {
           <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
             <span style="font-size: 0.8rem; font-weight: 900; background: #e2e8f0; color: #334155; border: 1px solid #94a3b8; border-radius: 5px; padding: 2px 6px; font-family: monospace; white-space: nowrap; flex-shrink: 0;">🥈 2nd</span>
             <div style="min-width: 0;">
-              <div style="font-size: 0.88rem; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${p2.name}">${p2.name}</div>
+              <div style="font-size: 0.88rem; font-weight: 800; color: #0f172a; line-height: 1.2;" title="${p2.name}">${p2.name}</div>
               <div style="display: flex; align-items: center; gap: 4px; font-size: 0.65rem; color: #64748b; margin-top: 1px;">
                 <span style="color: ${HOUSES[p2.house]?.color || '#334155'}; font-weight: 700;">${HOUSES[p2.house]?.name || p2.house}</span>
                 <span>•</span>
@@ -1410,7 +1408,7 @@ function renderChampionshipPodium(players) {
           <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
             <span style="font-size: 0.8rem; font-weight: 900; background: #fde047; color: #854d0e; border: 1px solid #ca8a04; border-radius: 5px; padding: 2px 6px; font-family: monospace; white-space: nowrap; flex-shrink: 0;">👑 1st</span>
             <div style="min-width: 0;">
-              <div style="font-size: 0.92rem; font-weight: 900; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${p1.name}">${p1.name}</div>
+              <div style="font-size: 0.92rem; font-weight: 900; color: #0f172a; line-height: 1.2;" title="${p1.name}">${p1.name}</div>
               <div style="display: flex; align-items: center; gap: 4px; font-size: 0.65rem; color: #64748b; margin-top: 1px;">
                 <span style="color: ${HOUSES[p1.house]?.color || '#334155'}; font-weight: 800;">${HOUSES[p1.house]?.name || p1.house}</span>
                 <span>•</span>
@@ -1429,7 +1427,7 @@ function renderChampionshipPodium(players) {
           <div style="display: flex; align-items: center; gap: 8px; min-width: 0;">
             <span style="font-size: 0.8rem; font-weight: 900; background: #ffedd5; color: #9a3412; border: 1px solid #fb923c; border-radius: 5px; padding: 2px 6px; font-family: monospace; white-space: nowrap; flex-shrink: 0;">🥉 3rd</span>
             <div style="min-width: 0;">
-              <div style="font-size: 0.88rem; font-weight: 800; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" title="${p3.name}">${p3.name}</div>
+              <div style="font-size: 0.88rem; font-weight: 800; color: #0f172a; line-height: 1.2;" title="${p3.name}">${p3.name}</div>
               <div style="display: flex; align-items: center; gap: 4px; font-size: 0.65rem; color: #64748b; margin-top: 1px;">
                 <span style="color: ${HOUSES[p3.house]?.color || '#334155'}; font-weight: 700;">${HOUSES[p3.house]?.name || p3.house}</span>
                 <span>•</span>
@@ -1635,11 +1633,16 @@ function renderLadderTab(players) {
         }
       </div>
 
-      <!-- Complete Ladder Roster: High-Density 2-Column Responsive Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 5px;">
+      <!-- Complete Ladder Roster: Single Vertical Column (Rungs 1 to N) -->
+      <div style="display: flex; flex-direction: column; gap: 8px; width: 100%; max-width: 920px; margin: 0 auto;">
         ${players
           .map((p) => {
-            const h = HOUSES[p.house];
+            const h = HOUSES[p.house] || {
+              name: p.house,
+              color: '#334155',
+              bgLight: '#f8fafc',
+              borderColor: '#cbd5e1',
+            };
             const isCheckedIn = checkedInSet.has(p.id);
             const totalPts = calculatePlayerPoints(p);
 
@@ -1666,33 +1669,33 @@ function renderLadderTab(players) {
             }
 
             return `
-            <div class="ladder-row" style="background: #ffffff; border: 1px solid ${rowBorder}; border-radius: 6px; padding: 4px 8px; display: flex; align-items: center; justify-content: space-between; gap: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.02); transition: all 0.15s ease;">
+            <div class="ladder-row" style="background: #ffffff; border: 1.5px solid ${rowBorder}; border-radius: 8px; padding: 9px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.03); transition: all 0.15s ease;">
               
-              <!-- Left: Rank Badge + Pupil Identity -->
-              <div style="display: flex; align-items: center; gap: 7px; min-width: 0;">
-                <div style="width: 24px; height: 24px; border-radius: 4px; background: ${rankBadgeBg}; color: ${rankBadgeColor}; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; flex-shrink: 0; font-family: monospace;">
+              <!-- Left: Rank Badge + Pupil Identity (Full Nickname Visible) -->
+              <div style="display: flex; align-items: center; gap: 12px; min-width: 0; flex: 1;">
+                <div style="width: 32px; height: 32px; border-radius: 6px; background: ${rankBadgeBg}; color: ${rankBadgeColor}; font-weight: 900; display: flex; align-items: center; justify-content: center; font-size: 0.95rem; flex-shrink: 0; font-family: monospace; border: 1px solid rgba(0,0,0,0.08);">
                   ${p.rank === 1 ? '👑' : `${p.rank}`}
                 </div>
 
-                <div style="min-width: 0;">
-                  <div style="display: flex; align-items: center; gap: 5px; flex-wrap: nowrap; overflow: hidden;">
-                    <span style="font-size: 0.82rem; color: #0f172a; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                <div style="min-width: 0; flex: 1;">
+                  <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+                    <span style="font-size: 0.98rem; color: #0f172a; font-weight: 800; letter-spacing: -0.01em;">
                       ${renderPlayerNameWithCallsign(p)}
                     </span>
-                    <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 0 5px; border-radius: 6px; font-size: 0.64rem; font-weight: 800; flex-shrink: 0;">
+                    <span style="background: ${h.bgLight}; color: ${h.color}; border: 1px solid ${h.borderColor}; padding: 1px 8px; border-radius: 6px; font-size: 0.68rem; font-weight: 800; flex-shrink: 0;">
                       ${h.name}
                     </span>
                   </div>
-                  <div style="font-size: 0.67rem; color: #64748b; font-family: monospace; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
-                    ELO: <strong>${p.rating}</strong> · <strong>${p.won}W/${p.drawn}D/${p.lost}L</strong> (${p.games}P)
+                  <div style="font-size: 0.72rem; color: #64748b; font-family: monospace; margin-top: 3px;">
+                    ELO: <strong style="color: #334155;">${p.rating}</strong> · <strong style="color: #16a34a;">${p.won}W</strong> / <strong style="color: #64748b;">${p.drawn}D</strong> / <strong style="color: #dc2626;">${p.lost}L</strong> (${p.games} played)
                   </div>
                 </div>
               </div>
 
               <!-- Right: Score + Actions -->
-              <div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;">
-                <div style="text-align: right; font-family: monospace;">
-                  <div style="font-size: 0.86rem; font-weight: 900; color: ${h.color};">${totalPts} <span style="font-size: 0.6rem; font-weight: 700;">pts</span></div>
+              <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0;">
+                <div style="text-align: right; font-family: monospace; padding-right: 6px;">
+                  <div style="font-size: 0.98rem; font-weight: 900; color: ${h.color};">${totalPts} <span style="font-size: 0.65rem; font-weight: 700; color: #64748b;">pts</span></div>
                 </div>
 
                 ${
@@ -1701,20 +1704,20 @@ function renderLadderTab(players) {
                   ${
                     isCheckedIn
                       ? `
-                    <button type="button" onclick="window.checkOutPlayer('${p.id}')" title="Click to mark absent" style="background: #dcfce7; color: #15803d; border: 1px solid #86efac; border-radius: 4px; padding: 2px 6px; font-size: 0.65rem; font-weight: 800; cursor: pointer; flex-shrink: 0;">
+                    <button type="button" onclick="window.checkOutPlayer('${p.id}')" title="Click to mark absent" style="background: #dcfce7; color: #15803d; border: 1px solid #86efac; border-radius: 5px; padding: 4px 8px; font-size: 0.72rem; font-weight: 800; cursor: pointer; flex-shrink: 0;">
                       ✓ Here
                     </button>
                   `
                       : `
-                    <button type="button" onclick="window.checkInPlayer('${p.id}')" title="Click to mark arrived/present" style="background: #f8fafc; color: #64748b; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px 6px; font-size: 0.65rem; font-weight: 700; cursor: pointer; flex-shrink: 0;">
+                    <button type="button" onclick="window.checkInPlayer('${p.id}')" title="Click to mark arrived/present" style="background: #f8fafc; color: #64748b; border: 1px solid #cbd5e1; border-radius: 5px; padding: 4px 8px; font-size: 0.72rem; font-weight: 700; cursor: pointer; flex-shrink: 0;">
                       + Arrived
                     </button>
                   `
                   }
-                  <button onclick="window.selectPlayerForQuickDesk('${p.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 2px 6px; border-radius: 4px; font-size: 0.66rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 2px;" title="Load ${p.name} into Quick Desk">
-                    ⚡
+                  <button onclick="window.selectPlayerForQuickDesk('${p.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 4px 8px; border-radius: 5px; font-size: 0.72rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;" title="Load ${p.name} into Quick Desk">
+                    ⚡ Desk
                   </button>
-                  <button onclick="window.removePlayer('${p.id}')" title="Remove pupil" style="background: none; border: none; color: #cbd5e1; cursor: pointer; padding: 2px 4px; font-size: 0.78rem;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#cbd5e1'">
+                  <button onclick="window.removePlayer('${p.id}')" title="Remove pupil" style="background: none; border: none; color: #cbd5e1; cursor: pointer; padding: 4px 6px; font-size: 0.85rem;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#cbd5e1'">
                     ✕
                   </button>
                 `
@@ -3642,7 +3645,7 @@ function renderSignInTab(players = []) {
                   <div style="display: flex; align-items: center; gap: 10px; min-width: 0;">
                     <span style="width: 10px; height: 10px; border-radius: 50%; background: #22c55e; flex-shrink: 0; box-shadow: 0 0 8px rgba(34, 197, 94, 0.6);"></span>
                     <div style="min-width: 0;">
-                      <div style="font-weight: 700; font-size: 0.95rem; color: #0f172a; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${renderPlayerNameWithCallsign(p)}</div>
+                      <div style="font-weight: 800; font-size: 0.95rem; color: #0f172a;">${renderPlayerNameWithCallsign(p)}</div>
                       <div style="font-size: 0.74rem; color: ${h.color}; font-weight: 700;"> · ${h.name}</div>
                     </div>
                   </div>
