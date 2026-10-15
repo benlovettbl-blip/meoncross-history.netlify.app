@@ -126,8 +126,42 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
-> 🧭 **Workbook Rollout Compass:**  
-> **GCSE Track:** Edexcel Medicine (4x 20p Thematic + 28p Western Front = 108p Master, 100% Dual-QR Parity) 🟢 • Middle East 🟢 • Early Elizabeth 🟢 • Weimar Germany 🟢 • USA 🟢  
-> **KS3 Perfected:** Year 8 *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🌟 • Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
-> **Next Target:** Year 9: *The Cold War (1945–1991)* (`cold_war`) 🎯  
-> **KS3 Ladder:** *The Cold War* ➔ *Post-War Britain*
+> 🧭 **Chronology Spine & Workbook Rollout Compass:**  
+> **Spines Completed (Option 1: Enquiry Roadmap & Master Toggle):** *Causes of the Great War* (`great_war`) 🌟 • *Conflict in the Middle East* (`cme_new`) 🌟  
+> **Immediate Spine Target:** Year 9 *The Great War Part 2* (`great_war_part2`) 🎯  
+> **Next in Spine Queue:** *Second British Empire* ➔ *First British Empire* ➔ *Crown, Church & Parliament* ➔ *Medieval England* ➔ *Industrialisation*
+
+---
+
+## 🧭 Digital Chronology Spine Rollout Ledger (Option 1: Enquiry Roadmap Standard)
+
+### Specification Standard:
+1. **Header Master Switch:** `[ ↕ Expand All / ☷ Collapse All ]` pill button adjacent to `${spineItems.length} Milestones` badge. Toggles all 5 stage drawers simultaneously.
+2. **Visible Card State (Enquiry Roadmap):** Stage # badge, date, category/actor tag, stage title, and exact physical workbook **Stage Enquiry Question** in light-blue accent box (`background: #f0f9ff; border-left: 2.5px solid #0284c7;`).
+3. **Collapsible Drawer (`[ ➜ Evidence & Outcome ▾ ]`):**
+   - **Paragraph 1:** 1-sentence core factual narrative (*what happened*).
+   - **Paragraph 2:** 1-sentence causal consequence in blue box (*➔ Consequence: [what it triggered next]*).
+4. **Visual Uniformity:** All 5 stages use uniform brand blue `#0284c7` (zero green on Stage 5). Zero "Domino Link" phrase, zero "Workbook Question" phrase, zero question mark icons, zero scholarly hat footer.
+
+### Unit-by-Unit Chronology Spine Progress:
+
+| Unit ID | Year / Key Stage | Title | Spine Status | Exact Source of Truth & Next Action |
+| :--- | :---: | :--- | :---: | :--- |
+| `great_war` | Year 9 (KS3) | Causes of the Great War (1870–1914) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from `public/units/great_war/pupil_workbook.html`. Rebuilt in `database.json`. |
+| `cme_new` | Year 10 (GCSE) | Conflict in the Middle East (1945–1995) | 🌟 **100% COMPLETE** | All 12 lessons (60 stages) active in `data.js` and rendered via master toggle engine. |
+| `great_war_part2` | Year 9 (KS3) | The Great War: Western Front & Aftermath | 🎯 **PRIORITY #1 NEXT** | 5 lessons (25 stages) ready for extraction from `public/units/great_war_part2/pupil_workbook.html`. |
+| `second_british_empire` | Year 8 (KS3) | The Second British Empire & Imperialism | 🟡 **QUEUED #2** | 5 lessons ready for extraction from `public/units/second_british_empire/pupil_workbook.html`. |
+| `first_british_empire` | Year 8 (KS3) | The First British Empire (1600–1783) | 🟡 **QUEUED #3** | 5 lessons ready for extraction from `public/units/first_british_empire/pupil_workbook.html`. |
+| `monarchy_religion_power` | Year 8 (KS3) | Crown, Church, or Parliament (1517–1689) | 🟡 **QUEUED #4** | 5 lessons ready for extraction from `public/units/monarchy_religion_power/pupil_workbook.html`. |
+| `medieval_england` | Year 7 (KS3) | Medieval England (1066–1485) | 🟡 **QUEUED #5** | 5 lessons ready for extraction from `public/units/medieval_england/pupil_workbook.html`. |
+| `industrialisation_and_empire` | Year 8 (KS3) | Industrialisation, Empire & Power | 🟡 **QUEUED #6** | 5 lessons ready for extraction from `public/units/industrialisation_and_empire/pupil_workbook.html`. |
+| `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | ⚪ **QUEUED #7** | 7 lessons ready for extraction upon workbook alignment. |
+| `the_shoah` | Year 9 (KS3) | The Shoah (Holocaust Education) | ⚪ **QUEUED #8** | Lessons queued for spine authoring. |
+| `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | ⚪ **QUEUED #9** | Lessons queued for spine authoring. |
+| `water_and_sanitation` | Year 7 (KS3) | Water & Sanitation Through Time | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
+| `early_modern_world` | Year 8 (KS3) | Early Modern World (1450–1750) | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
+| `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present | ⚪ **QUEUED (GCSE)** | 26 lessons queued for enquiry question parity across 5 period modules. |
+| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
+| `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | ⚪ **QUEUED (GCSE)** | 12 core lessons queued for enquiry question parity. |
+| `usa` | GCSE (Y11) | USA 1954–75: Conflict at Home & Abroad | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
+
