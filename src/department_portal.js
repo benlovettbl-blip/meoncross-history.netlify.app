@@ -192,7 +192,7 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (8 L)',
     mapStatus: 'embedded',
     mapText: '✅ British Empire & Canal Network',
-    workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook.pdf',
     textbookPdf: '/pdfs/industrialisation_and_empire_textbook_FINAL_V17.pdf',
   },
   {

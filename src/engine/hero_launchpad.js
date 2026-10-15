@@ -142,7 +142,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Industrialisation & Empire Pupil Workbook',
       label: 'Pupil Workbook',
       htmlUrl: '/units/industrialisation_and_empire/pupil_workbook.html',
-      pdfUrl: '/pdfs/industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/industrialisation_and_empire_pupil_workbook.pdf',
     },
     retrieval: {
       title: 'The Industrial Revolution Knowledge Retrieval Companion',

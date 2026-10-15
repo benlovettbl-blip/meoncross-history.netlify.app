@@ -339,7 +339,7 @@ export const SCHEMES_OF_WORK_DATA = {
     overarchingEnquiry:
       'How did industrial technology, colonial extraction, and popular radical protest transform Britain from an agrarian kingdom into the "Workshop of the World" between 1750 and 1901?',
     textbookPdf: '/pdfs/industrialisation_and_empire_textbook_PUBLISHER.pdf',
-    workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/industrialisation_and_empire_pupil_workbook.pdf',
     enquiries: [
       {
         num: 1,

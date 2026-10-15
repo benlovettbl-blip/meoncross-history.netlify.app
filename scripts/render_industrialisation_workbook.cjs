@@ -1930,11 +1930,6 @@ async function main() {
     fs.mkdirSync(pdfDir, { recursive: true });
   }
   const outPdfPath = path.join(pdfDir, 'industrialisation_and_empire_pupil_workbook.pdf');
-  const outPdf16pPath = path.join(pdfDir, 'industrialisation_and_empire_16p_workbook.pdf');
-  const outPdfFinalPath = path.join(
-    pdfDir,
-    'industrialisation_and_empire_pupil_workbook_FINAL_V17.pdf',
-  );
 
   console.log('Launching Puppeteer to generate high-resolution print PDF...');
   const chromePath =
@@ -1967,14 +1962,8 @@ async function main() {
     },
   });
 
-  // Also write 16p and FINAL_V17 aliases
-  fs.copyFileSync(outPdfPath, outPdf16pPath);
-  fs.copyFileSync(outPdfPath, outPdfFinalPath);
-
   await browser.close();
-  console.log(`[OK] PDF successfully compiled: ${outPdfPath}`);
-  console.log(`[OK] 16P PDF alias compiled: ${outPdf16pPath}`);
-  console.log(`[OK] FINAL_V17 PDF alias compiled: ${outPdfFinalPath}`);
+  console.log(`[OK] Single canonical PDF compiled: ${outPdfPath}`);
 }
 
 if (require.main === module) {
