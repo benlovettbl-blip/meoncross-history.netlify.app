@@ -932,6 +932,9 @@ function initChessState(forceClean = false) {
   // Hydrate real names and nicknames for all active players
   hydratePlayerRealNames(chessState.players);
 
+  // Auto-sort active roster strictly by points (largest to smallest) on load
+  autoSortPlayersByPoints();
+
   // 4. Fallback check from IndexedDB offline database if still empty
   if (!loaded && typeof window !== 'undefined') {
     loadFromIndexedDB().then((idbData) => {
@@ -945,6 +948,7 @@ function initChessState(forceClean = false) {
         chessState.matches = idbData.matches || [];
         chessState.checkedInPlayerIds = idbData.checkedInPlayerIds || [];
         chessState.knockoutBracket = idbData.knockoutBracket || null;
+        autoSortPlayersByPoints();
         saveChessState();
         renderChessHubView();
         showChessToast(
@@ -1036,6 +1040,22 @@ export function calculatePlayerPoints(p) {
     draws * SCORING_RULES.DRAW +
     (losses + byes) * SCORING_RULES.PARTICIPATION
   );
+}
+
+// Auto-Sort Pupils by Total Points (Largest to Smallest)
+export function autoSortPlayersByPoints() {
+  if (!chessState.players || chessState.players.length === 0) return;
+  chessState.players.sort((a, b) => {
+    const ptsA = calculatePlayerPoints(a);
+    const ptsB = calculatePlayerPoints(b);
+    if (ptsB !== ptsA) return ptsB - ptsA; // Largest points first
+    if ((b.rating || 1000) !== (a.rating || 1000)) return (b.rating || 1000) - (a.rating || 1000); // Higher Elo
+    if ((b.won || 0) !== (a.won || 0)) return (b.won || 0) - (a.won || 0); // More wins
+    return (a.name || '').localeCompare(b.name || '');
+  });
+  chessState.players.forEach((p, idx) => {
+    p.rank = idx + 1;
+  });
 }
 
 // Calculate House Totals dynamically
@@ -1463,7 +1483,11 @@ function renderChampionshipPodium(players) {
 
 // 0. Teacher Quick Desk Section (1-Tap Match & Points Logger - Compact)
 function renderTeacherQuickDeskSection(players) {
-  const allPlayers = [...chessState.players].sort((a, b) => a.rank - b.rank);
+  const allPlayers = [...chessState.players].sort((a, b) => {
+    const ptsDiff = calculatePlayerPoints(b) - calculatePlayerPoints(a);
+    if (ptsDiff !== 0) return ptsDiff;
+    return (a.rank || 99) - (b.rank || 99);
+  });
   const p1Id = chessState.quickDeskP1Id || '';
   const p2Id = chessState.quickDeskP2Id || '';
   const lastMatch = chessState.matches && chessState.matches[0];
@@ -1482,6 +1506,9 @@ function renderTeacherQuickDeskSection(players) {
           </div>
         </div>
         <div style="display: flex; gap: 6px; align-items: center;">
+          <button type="button" onclick="window.sortLadderByPoints()" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; border: 1px solid #fbbf24; font-weight: 800; font-size: 0.72rem; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;" title="Automatically sort all pupils by total points (largest to smallest)">
+            <span>⚡</span> Auto-Sort by Points
+          </button>
           <button onclick="window.openAddPlayerModal()" style="background: #10b981; color: #ffffff; border: 1px solid #34d399; font-weight: 800; font-size: 0.72rem; padding: 3px 8px; border-radius: 4px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
             <span>+</span> Register Pupil
           </button>
@@ -1500,7 +1527,8 @@ function renderTeacherQuickDeskSection(players) {
               .map((p) => {
                 const h = HOUSES[p.house];
                 const isSelected = p.id === p1Id ? 'selected' : '';
-                return `<option value="${p.id}" ${isSelected}>#${p.rank} ${p.name} (${h ? h.name : p.house} · Elo ${p.rating})</option>`;
+                const pts = calculatePlayerPoints(p);
+                return `<option value="${p.id}" ${isSelected}>#${p.rank} ${p.name} · ${pts} pts (${h ? h.name : p.house} · Elo ${p.rating})</option>`;
               })
               .join('')}
           </select>
@@ -1522,7 +1550,8 @@ function renderTeacherQuickDeskSection(players) {
               .map((p) => {
                 const h = HOUSES[p.house];
                 const isSelected = p.id === p2Id ? 'selected' : '';
-                return `<option value="${p.id}" ${isSelected}>#${p.rank} ${p.name} (${h ? h.name : p.house} · Elo ${p.rating})</option>`;
+                const pts = calculatePlayerPoints(p);
+                return `<option value="${p.id}" ${isSelected}>#${p.rank} ${p.name} · ${pts} pts (${h ? h.name : p.house} · Elo ${p.rating})</option>`;
               })
               .join('')}
           </select>
@@ -1639,6 +1668,9 @@ function renderLadderTab(players) {
             `
                 : ''
             }
+            <button type="button" onclick="window.sortLadderByPoints()" style="background: #ffffff; color: #b45309; border: 1px solid #fde68a; border-radius: 4px; padding: 2px 7px; font-size: 0.68rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 3px;" title="Automatically sort all pupils by total points (largest to smallest)">
+              <span>⚡</span> Auto-Sort by Points
+            </button>
             <button type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; border-radius: 4px; padding: 3px 9px; font-size: 0.7rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);">
               <span>⚔️</span> Auto-Pair (${checkedInCount > 0 ? checkedInCount : players.length})
             </button>
@@ -3197,7 +3229,11 @@ function renderQuickDeskTab(players = []) {
     `;
   }
 
-  const allPlayers = [...chessState.players].sort((a, b) => a.name.localeCompare(b.name));
+  const allPlayers = [...chessState.players].sort((a, b) => {
+    const ptsDiff = calculatePlayerPoints(b) - calculatePlayerPoints(a);
+    if (ptsDiff !== 0) return ptsDiff;
+    return (a.rank || 99) - (b.rank || 99);
+  });
   const recentMatches = (chessState.matches || []).slice(0, 8);
 
   const renderPlayerSelectOptions = (selectedId) => {
@@ -3207,7 +3243,8 @@ function renderQuickDeskTab(players = []) {
         .map((p) => {
           const house = HOUSES[p.house]?.name || p.house;
           const isSel = p.id === selectedId ? 'selected' : '';
-          return `<option value="${p.id}" ${isSel}>${p.name} (${house} • Rtg ${p.rating})</option>`;
+          const pts = calculatePlayerPoints(p);
+          return `<option value="${p.id}" ${isSel}>#${p.rank} ${p.name} · ${pts} pts (${house} • Elo ${p.rating})</option>`;
         })
         .join('')}
     `;
@@ -3230,6 +3267,9 @@ function renderQuickDeskTab(players = []) {
           </div>
         </div>
         <div style="display: flex; align-items: center; gap: 8px;">
+          <button type="button" onclick="window.sortLadderByPoints()" style="background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%); color: #ffffff; border: 1px solid #fbbf24; font-size: 0.76rem; font-weight: 800; padding: 6px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 2px 8px rgba(245, 158, 11, 0.25);" title="Automatically sort all pupils by total points (largest to smallest)">
+            <span>⚡</span> Auto-Sort by Points
+          </button>
           <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #6ee7b7; font-size: 0.72rem; font-weight: 800; padding: 4px 10px; border-radius: 20px; text-transform: uppercase; letter-spacing: 0.05em;">
             Teacher Verified ✓
           </span>
@@ -5079,6 +5119,21 @@ window.movePlayerLadderRank = function (id, direction) {
   showChessToast('Ladder rank adjusted.', 'info');
 };
 
+// Teacher 1-Click Auto-Sort by Points (Largest to Smallest)
+window.sortLadderByPoints = function () {
+  if (
+    chessState.userRole !== 'teacher' ||
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    showChessToast('🔒 Access Denied: Only teachers can adjust ladder ranks.', 'error');
+    return;
+  }
+  autoSortPlayersByPoints();
+  saveChessState();
+  renderChessHubView();
+  showChessToast('⚡ Pupils automatically sorted by points (largest to smallest)!', 'success');
+};
+
 window.resetClubDataToCleanSlate = function () {
   const count = chessState.players.length;
   const matchCount = chessState.matches.length;
@@ -5791,7 +5846,6 @@ window.recordDirectTeacherMatch = function (outcome) {
     p2.lost = (p2.lost || 0) + 1;
     p1.rating = (p1.rating || 1000) + 15;
     p2.rating = Math.max(800, (p2.rating || 1000) - 15);
-    applyLadderVictory(p1, p2);
     const h1 = HOUSES[p1.house]?.name || p1.house;
     const h2 = HOUSES[p2.house]?.name || p2.house;
     toastMsg = `🏆 ${p1.name} (${h1}) won vs ${p2.name} (${h2})! +3 House Pts`;
@@ -5801,7 +5855,6 @@ window.recordDirectTeacherMatch = function (outcome) {
     p1.lost = (p1.lost || 0) + 1;
     p2.rating = (p2.rating || 1000) + 15;
     p1.rating = Math.max(800, (p1.rating || 1000) - 15);
-    applyLadderVictory(p2, p1);
     const h1 = HOUSES[p1.house]?.name || p1.house;
     const h2 = HOUSES[p2.house]?.name || p2.house;
     toastMsg = `🏆 ${p2.name} (${h2}) won vs ${p1.name} (${h1})! +3 House Pts`;
@@ -5814,8 +5867,8 @@ window.recordDirectTeacherMatch = function (outcome) {
     toastMsg = `🤝 Draw: ${p1.name} (${h1}) ½–½ ${p2.name} (${h2})! +2 House Pts each`;
   }
 
-  chessState.players.sort((a, b) => a.rank - b.rank);
-  chessState.players.forEach((player, idx) => (player.rank = idx + 1));
+  // Automatically calibrate & sort all pupils by total points (largest to smallest)
+  autoSortPlayersByPoints();
 
   const matchId = 'm_' + Date.now();
   chessState.matches.unshift({
@@ -5962,8 +6015,8 @@ window.undoQuickDeskMatch = function (matchId) {
 
   chessState.matches = chessState.matches.filter((m) => m.id !== matchId);
 
-  chessState.players.sort((a, b) => a.rank - b.rank);
-  chessState.players.forEach((player, idx) => (player.rank = idx + 1));
+  // Auto-sort pupils by points (largest to smallest) after undo
+  autoSortPlayersByPoints();
 
   saveChessState();
   renderChessHubView();
@@ -6003,7 +6056,6 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     if (!isCoachMatch) {
       pBlack.lost = (pBlack.lost || 0) + 1;
       pBlack.rating = Math.max(800, (pBlack.rating || 1000) - 15);
-      applyLadderVictory(pWhite, pBlack);
     }
     const hName = HOUSES[pWhite.house]?.name || pWhite.house;
     showChessToast(`🏆 Board ${boardNum}: ${pWhite.name} (${hName}) won! +3 House Pts`, 'success');
@@ -6016,7 +6068,6 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     if (!isCoachMatch) {
       pBlack.won = (pBlack.won || 0) + 1;
       pBlack.rating = (pBlack.rating || 1000) + 15;
-      applyLadderVictory(pBlack, pWhite);
     }
     const hName = isCoachMatch ? 'Coach' : HOUSES[pBlack.house]?.name || pBlack.house;
     showChessToast(`🏆 Board ${boardNum}: ${pBlack.name} (${hName}) won!`, 'success');
@@ -6030,8 +6081,8 @@ window.recordQuickMatchResult = function (boardNum, resultWinner) {
     showChessToast(`🤝 Board ${boardNum}: Draw! +2 House Pts for ${wH}`, 'info');
   }
 
-  chessState.players.sort((a, b) => a.rank - b.rank);
-  chessState.players.forEach((player, idx) => (player.rank = idx + 1));
+  // Automate pupil ranking strictly by points (largest to smallest)
+  autoSortPlayersByPoints();
 
   const matchId = 'm_' + Date.now();
   chessState.matches.push({
@@ -7144,6 +7195,9 @@ window.undoLastMatchResult = function () {
     }
   }
 
+  // Auto-sort pupils by points (largest to smallest) after undo
+  autoSortPlayersByPoints();
+
   saveChessState();
   renderChessHubView();
   showChessToast(`↩️ Reopened Board: ${lastMatch.white} vs ${lastMatch.black}!`, 'success');
@@ -8106,20 +8160,18 @@ window.handleMatchSubmit = function (e) {
     pBlack.lost++;
     pWhite.rating += 15;
     pBlack.rating = Math.max(800, pBlack.rating - 15);
-    applyLadderVictory(pWhite, pBlack);
   } else if (result === '0-1') {
     pBlack.won++;
     pWhite.lost++;
     pBlack.rating += 15;
     pWhite.rating = Math.max(800, pWhite.rating - 15);
-    applyLadderVictory(pBlack, pWhite);
   } else {
     pWhite.drawn++;
     pBlack.drawn++;
   }
 
-  chessState.players.sort((a, b) => a.rank - b.rank);
-  chessState.players.forEach((p, idx) => (p.rank = idx + 1));
+  // Automate pupil ranking strictly by points (largest to smallest)
+  autoSortPlayersByPoints();
 
   chessState.matches.push({
     id: 'm_' + Date.now(),
