@@ -979,6 +979,20 @@ function saveChessState(isIntentionalReset = false) {
   }
 }
 
+// Helper: Calculate total individual pupil points consistently across all views
+export function calculatePlayerPoints(p) {
+  if (!p) return 0;
+  const wins = p.won || 0;
+  const draws = p.drawn || 0;
+  const losses = p.lost || 0;
+  const byes = p.byesReceived || 0;
+  return (
+    wins * SCORING_RULES.WIN +
+    draws * SCORING_RULES.DRAW +
+    (losses + byes) * SCORING_RULES.PARTICIPATION
+  );
+}
+
 // Calculate House Totals dynamically
 function calculateHouseTotals() {
   const totals = {
@@ -1048,6 +1062,13 @@ function calculateHouseTotals() {
     }
   });
 
+  // Also credit byes as participation points to house totals
+  chessState.players.forEach((p) => {
+    if (p.byesReceived && totals[p.house]) {
+      totals[p.house].points += p.byesReceived * SCORING_RULES.PARTICIPATION;
+    }
+  });
+
   return totals;
 }
 
@@ -1072,26 +1093,13 @@ export function renderChessHubView() {
 
   // Individual Leader (Rank 1 on ladder or highest points)
   const sortedByPoints = [...chessState.players].sort((a, b) => {
-    const ptsA =
-      (a.won || 0) * SCORING_RULES.WIN +
-      (a.drawn || 0) * SCORING_RULES.DRAW +
-      ((a.games || 0) - (a.won || 0) - (a.drawn || 0)) * SCORING_RULES.PARTICIPATION;
-    const ptsB =
-      (b.won || 0) * SCORING_RULES.WIN +
-      (b.drawn || 0) * SCORING_RULES.DRAW +
-      ((b.games || 0) - (b.won || 0) - (b.drawn || 0)) * SCORING_RULES.PARTICIPATION;
+    const ptsA = calculatePlayerPoints(a);
+    const ptsB = calculatePlayerPoints(b);
     if (ptsB !== ptsA) return ptsB - ptsA;
     return (a.rank || 99) - (b.rank || 99);
   });
   const individualLeader = chessState.players.find((p) => p.rank === 1) || sortedByPoints[0];
-  const individualLeaderPts = individualLeader
-    ? (individualLeader.won || 0) * SCORING_RULES.WIN +
-      (individualLeader.drawn || 0) * SCORING_RULES.DRAW +
-      ((individualLeader.games || 0) -
-        (individualLeader.won || 0) -
-        (individualLeader.drawn || 0)) *
-        SCORING_RULES.PARTICIPATION
-    : 0;
+  const individualLeaderPts = individualLeader ? calculatePlayerPoints(individualLeader) : 0;
 
   // Whiteboard Projector Mode View (Clean, High-Contrast Classroom Display)
   if (chessState.whiteboardMode) {
@@ -1107,13 +1115,19 @@ export function renderChessHubView() {
   }
   filteredPlayers.sort((a, b) => a.rank - b.rank);
 
-  // In Pupil View, prevent teacher tabs from showing
+  // In Pupil View, prevent teacher-only tabs from showing
   if (
     chessState.userRole === 'pupil' &&
-    (chessState.activeTab === 'signin' || chessState.activeTab === 'quickdesk')
+    (chessState.activeTab === 'signin' ||
+      chessState.activeTab === 'quickdesk' ||
+      chessState.activeTab === 'knockout')
   ) {
     chessState.activeTab = 'ladder';
   }
+
+  const currentTab = chessState.activeTab || 'ladder';
+  const checkedInCount = (chessState.checkedInPlayerIds || []).length;
+  const activePairingsCount = (chessState.activePairings || []).filter((p) => !p.isBye).length;
 
   let html = `
     <div id="chess-hub-root" style="max-width: 1200px; width: 100%; box-sizing: border-box; margin: 0 auto; padding: 0 12px 16px 12px; animation: fadeInUp 0.25s ease-out; font-family: 'Outfit', sans-serif;">
@@ -1146,7 +1160,7 @@ export function renderChessHubView() {
               The History Portal Chess League
             </h1>
             <div style="font-size: 0.65rem; color: #64748b; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;">
-              Autumn Term Master Ladder
+              Autumn Term Master Ladder · Period 6 Club
             </div>
           </div>
         </div>
@@ -1173,7 +1187,10 @@ export function renderChessHubView() {
           ${
             chessState.userRole === 'teacher'
               ? `
-            <button type="button" onclick="window.toggleQuickDeskDrawer()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; font-weight: 800; font-size: 0.72rem; padding: 4px 10px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(14, 165, 233, 0.25);">
+            <button type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; font-weight: 800; font-size: 0.72rem; padding: 4px 10px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(14, 165, 233, 0.25);" title="Auto-pair classroom boards for arrived pupils">
+              <span>⚔️</span> Auto-Pair Boards
+            </button>
+            <button type="button" onclick="window.toggleQuickDeskDrawer()" style="background: #1e293b; color: #ffffff; border: 1px solid #475569; font-weight: 800; font-size: 0.72rem; padding: 4px 10px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 4px;">
               <span>⚡</span> Quick Desk
             </button>
 
@@ -1223,50 +1240,95 @@ export function renderChessHubView() {
         </div>
       </div>
 
-      <!-- Championship Podium (Top 3 Contenders - Visible Immediately Above the Fold) -->
-      ${renderChampionshipPodium(filteredPlayers)}
+      <!-- Clean Navigation Tabs Strip -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 5px 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
+        <div style="display: flex; gap: 6px; align-items: center; flex-wrap: wrap;">
+          <button id="tab-btn-pairings" type="button" onclick="window.switchChessTab('pairings')" style="${getTabStyle(currentTab === 'pairings')}">
+            <span>⚔️</span> Period 6 Boards ${activePairingsCount > 0 ? `<span style="background: ${currentTab === 'pairings' ? 'rgba(255,255,255,0.25)' : '#e0f2fe'}; color: ${currentTab === 'pairings' ? '#ffffff' : '#0369a1'}; padding: 1px 6px; border-radius: 10px; font-size: 0.68rem; font-weight: 800;">${activePairingsCount} Active</span>` : ''}
+          </button>
+          <button id="tab-btn-ladder" type="button" onclick="window.switchChessTab('ladder')" style="${getTabStyle(currentTab === 'ladder')}">
+            <span>🏆</span> Master Ladder <span style="background: ${currentTab === 'ladder' ? 'rgba(255,255,255,0.25)' : '#f1f5f9'}; color: ${currentTab === 'ladder' ? '#ffffff' : '#475569'}; padding: 1px 6px; border-radius: 10px; font-size: 0.68rem; font-weight: 800;">${chessState.players.length}</span>
+          </button>
+          <button id="tab-btn-table" type="button" onclick="window.switchChessTab('table')" style="${getTabStyle(currentTab === 'table')}">
+            <span>📊</span> Cross-Table Grid
+          </button>
+        </div>
+
+        ${
+          chessState.userRole === 'teacher'
+            ? `
+          <div style="display: flex; gap: 6px; align-items: center;">
+            <button id="btn-quick-autopair-tabbar" type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; font-weight: 800; font-size: 0.74rem; padding: 5px 12px; border-radius: 5px; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 1px 4px rgba(14, 165, 233, 0.25);" title="Auto-pair boards for all arrived pupils">
+              <span>⚔️</span> Auto-Pair Boards (${checkedInCount > 0 ? checkedInCount : chessState.players.length})
+            </button>
+          </div>
+        `
+            : ''
+        }
+      </div>
+
+      <!-- Championship Podium (Top 3 Contenders - Visible on Ladder tab) -->
+      ${currentTab === 'ladder' ? renderChampionshipPodium(filteredPlayers) : ''}
 
       <!-- Teacher Quick Desk (1-Tap Match & Points Logger - Authenticated Teachers Only) -->
       ${chessState.userRole === 'teacher' && chessState.showQuickDesk ? renderTeacherQuickDeskSection(filteredPlayers) : ''}
 
-      <!-- House Filter Controls Bar (Ultra-Compact) -->
-      <div style="display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; background: #ffffff; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
-        <div style="display: flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase;">
-          <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> Filter:
-        </div>
-        <button onclick="window.setChessHouseFilter('all')" style="${getFilterPillStyle(chessState.filterHouse === 'all')}">All (${chessState.players.length})</button>
-        ${Object.values(HOUSES)
-          .map(
-            (h) => `
-          <button onclick="window.setChessHouseFilter('${h.id}')" style="${getFilterPillStyle(chessState.filterHouse === h.id)}">
-            ${h.name} (${chessState.players.filter((p) => p.house === h.id).length})
-          </button>
-        `,
-          )
-          .join('')}
-
-        <div style="margin-left: auto;">
-          ${
-            chessState.userRole === 'teacher'
-              ? `
-            <button onclick="window.openAddPlayerModal()" style="background: #10b981; color: #ffffff; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(16, 185, 129, 0.2);">
-              <span>+</span> Add Pupil
+      <!-- House Filter Controls Bar (Visible on Ladder & Cross-Table tabs) -->
+      ${
+        currentTab === 'ladder' || currentTab === 'table'
+          ? `
+        <div style="display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; align-items: center; background: #ffffff; padding: 4px 10px; border-radius: 6px; border: 1px solid #e2e8f0; box-shadow: 0 1px 2px rgba(0,0,0,0.02);">
+          <div style="display: flex; align-items: center; gap: 4px; font-size: 0.72rem; font-weight: 700; color: #64748b; text-transform: uppercase;">
+            <i class="fa-solid fa-shield-halved" style="color: #2563eb;"></i> Filter:
+          </div>
+          <button onclick="window.setChessHouseFilter('all')" style="${getFilterPillStyle(chessState.filterHouse === 'all')}">All (${chessState.players.length})</button>
+          ${Object.values(HOUSES)
+            .map(
+              (h) => `
+            <button onclick="window.setChessHouseFilter('${h.id}')" style="${getFilterPillStyle(chessState.filterHouse === h.id)}">
+              ${h.name} (${chessState.players.filter((p) => p.house === h.id).length})
             </button>
-          `
-              : ''
-          }
-        </div>
-      </div>
+          `,
+            )
+            .join('')}
 
-      <!-- Live Master Ladder (Pure Single-Screen Classroom View) -->
+          <div style="margin-left: auto;">
+            ${
+              chessState.userRole === 'teacher'
+                ? `
+              <button onclick="window.openAddPlayerModal()" style="background: #10b981; color: #ffffff; border: none; padding: 3px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(16, 185, 129, 0.2);">
+                <span>+</span> Add Pupil
+              </button>
+            `
+                : ''
+            }
+          </div>
+        </div>
+      `
+          : ''
+      }
+
+      <!-- Dynamic Tab Content Routing -->
       <div id="chess-tab-content">
-        ${renderLadderTab(filteredPlayers)}
+        ${renderActiveTabContent(filteredPlayers)}
       </div>
 
     </div>
   `;
 
   container.innerHTML = html;
+}
+
+// Router: Render active tab content cleanly
+function renderActiveTabContent(filteredPlayers) {
+  const tab = chessState.activeTab || 'ladder';
+  if (tab === 'pairings') {
+    return renderPairingsTab();
+  } else if (tab === 'table') {
+    return renderLeagueTableTab(filteredPlayers);
+  } else {
+    return renderLadderTab(filteredPlayers);
+  }
 }
 
 // Championship Podium (Top 3 Contenders - Ultra-Compact Horizontal Layout)
@@ -1306,7 +1368,7 @@ function renderChampionshipPodium(players) {
             </div>
           </div>
           <div style="text-align: right; flex-shrink: 0; font-family: monospace;">
-            <div style="font-size: 0.92rem; font-weight: 900; color: #0284c7;">${p2.won * SCORING_RULES.WIN + p2.drawn * SCORING_RULES.DRAW + p2.lost * SCORING_RULES.PARTICIPATION} <span style="font-size: 0.62rem;">pts</span></div>
+            <div style="font-size: 0.92rem; font-weight: 900; color: #0284c7;">${calculatePlayerPoints(p2)} <span style="font-size: 0.62rem;">pts</span></div>
             <div style="font-size: 0.62rem; color: #16a34a; font-weight: 700;">${p2.won}W/${p2.games}P</div>
           </div>
         </div>
@@ -1325,7 +1387,7 @@ function renderChampionshipPodium(players) {
             </div>
           </div>
           <div style="text-align: right; flex-shrink: 0; font-family: monospace;">
-            <div style="font-size: 1rem; font-weight: 900; color: #ca8a04;">${p1.won * SCORING_RULES.WIN + p1.drawn * SCORING_RULES.DRAW + p1.lost * SCORING_RULES.PARTICIPATION} <span style="font-size: 0.62rem;">pts</span></div>
+            <div style="font-size: 1rem; font-weight: 900; color: #ca8a04;">${calculatePlayerPoints(p1)} <span style="font-size: 0.62rem;">pts</span></div>
             <div style="font-size: 0.62rem; color: #15803d; font-weight: 800;">${p1.won}W/${p1.games}P</div>
           </div>
         </div>
@@ -1344,7 +1406,7 @@ function renderChampionshipPodium(players) {
             </div>
           </div>
           <div style="text-align: right; flex-shrink: 0; font-family: monospace;">
-            <div style="font-size: 0.92rem; font-weight: 900; color: #c2410c;">${p3.won * SCORING_RULES.WIN + p3.drawn * SCORING_RULES.DRAW + p3.lost * SCORING_RULES.PARTICIPATION} <span style="font-size: 0.62rem;">pts</span></div>
+            <div style="font-size: 0.92rem; font-weight: 900; color: #c2410c;">${calculatePlayerPoints(p3)} <span style="font-size: 0.62rem;">pts</span></div>
             <div style="font-size: 0.62rem; color: #64748b; font-weight: 700;">${p3.won}W/${p3.games}P</div>
           </div>
         </div>
@@ -1489,6 +1551,9 @@ function renderLadderTab(players) {
     `;
   }
 
+  const checkedInSet = new Set(chessState.checkedInPlayerIds || []);
+  const checkedInCount = players.filter((p) => checkedInSet.has(p.id)).length;
+
   return `
     <div>
 
@@ -1507,19 +1572,48 @@ function renderLadderTab(players) {
         </div>
       </div>
 
+      <!-- Period 6 Attendance & Auto-Pair Toolbar -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 6px 10px; margin-bottom: 6px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px;">
+        <div style="display: flex; align-items: center; gap: 6px; font-size: 0.72rem; color: #334155;">
+          <span><strong>Period 6 Attendance:</strong> <strong style="color: ${checkedInCount > 0 ? '#16a34a' : '#64748b'}; font-size: 0.78rem;">${checkedInCount}</strong> of ${players.length} Arrived</span>
+          ${checkedInCount > 0 ? (checkedInCount % 2 === 0 ? `<span style="color: #16a34a; font-weight: 700;">(✓ ${checkedInCount / 2} even boards)</span>` : `<span style="color: #0284c7; font-weight: 700;">(👑 ${Math.floor(checkedInCount / 2)} boards + 1 rotating bye)</span>`) : ''}
+        </div>
+        ${
+          chessState.userRole === 'teacher'
+            ? `
+          <div style="display: flex; align-items: center; gap: 6px;">
+            <button type="button" onclick="window.checkInAllPlayers()" style="background: #ffffff; color: #16a34a; border: 1px solid #86efac; border-radius: 4px; padding: 2px 7px; font-size: 0.68rem; font-weight: 700; cursor: pointer;" title="Mark all pupils present">
+              ✓ All Here (${players.length})
+            </button>
+            ${
+              checkedInCount > 0
+                ? `
+              <button type="button" onclick="window.clearAttendance()" style="background: #ffffff; color: #64748b; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px 7px; font-size: 0.68rem; font-weight: 600; cursor: pointer;" title="Reset attendance checklist">
+                Reset
+              </button>
+            `
+                : ''
+            }
+            <button type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; border-radius: 4px; padding: 3px 9px; font-size: 0.7rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; box-shadow: 0 1px 4px rgba(2, 132, 199, 0.25);">
+              <span>⚔️</span> Auto-Pair (${checkedInCount > 0 ? checkedInCount : players.length})
+            </button>
+          </div>
+        `
+            : ''
+        }
+      </div>
+
       <!-- Complete Ladder Roster: High-Density 2-Column Responsive Grid -->
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(330px, 1fr)); gap: 5px;">
         ${players
           .map((p) => {
             const h = HOUSES[p.house];
-            const totalPts =
-              p.won * SCORING_RULES.WIN +
-              p.drawn * SCORING_RULES.DRAW +
-              p.lost * SCORING_RULES.PARTICIPATION;
+            const isCheckedIn = checkedInSet.has(p.id);
+            const totalPts = calculatePlayerPoints(p);
 
             let rankBadgeBg = '#f1f5f9';
             let rankBadgeColor = '#334155';
-            let rowBorder = '#e2e8f0';
+            let rowBorder = isCheckedIn ? '#86efac' : '#e2e8f0';
 
             if (p.rank === 1) {
               rankBadgeBg = '#fde047';
@@ -1564,7 +1658,7 @@ function renderLadderTab(players) {
               </div>
 
               <!-- Right: Score + Actions -->
-              <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0;">
+              <div style="display: flex; align-items: center; gap: 5px; flex-shrink: 0;">
                 <div style="text-align: right; font-family: monospace;">
                   <div style="font-size: 0.86rem; font-weight: 900; color: ${h.color};">${totalPts} <span style="font-size: 0.6rem; font-weight: 700;">pts</span></div>
                 </div>
@@ -1572,7 +1666,20 @@ function renderLadderTab(players) {
                 ${
                   chessState.userRole === 'teacher'
                     ? `
-                  <button onclick="window.selectPlayerForQuickDesk('${p.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 2px 7px; border-radius: 4px; font-size: 0.68rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 2px;" title="Load ${p.name} as Player 1 in Quick Desk">
+                  ${
+                    isCheckedIn
+                      ? `
+                    <button type="button" onclick="window.checkOutPlayer('${p.id}')" title="Click to mark absent" style="background: #dcfce7; color: #15803d; border: 1px solid #86efac; border-radius: 4px; padding: 2px 6px; font-size: 0.65rem; font-weight: 800; cursor: pointer; flex-shrink: 0;">
+                      ✓ Here
+                    </button>
+                  `
+                      : `
+                    <button type="button" onclick="window.checkInPlayer('${p.id}')" title="Click to mark arrived/present" style="background: #f8fafc; color: #64748b; border: 1px solid #cbd5e1; border-radius: 4px; padding: 2px 6px; font-size: 0.65rem; font-weight: 700; cursor: pointer; flex-shrink: 0;">
+                      + Arrived
+                    </button>
+                  `
+                  }
+                  <button onclick="window.selectPlayerForQuickDesk('${p.id}')" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: 1px solid #38bdf8; padding: 2px 6px; border-radius: 4px; font-size: 0.66rem; font-weight: 800; cursor: pointer; display: inline-flex; align-items: center; gap: 2px;" title="Load ${p.name} into Quick Desk">
                     ⚡
                   </button>
                   <button onclick="window.removePlayer('${p.id}')" title="Remove pupil" style="background: none; border: none; color: #cbd5e1; cursor: pointer; padding: 2px 4px; font-size: 0.78rem;" onmouseover="this.style.color='#ef4444'" onmouseout="this.style.color='#cbd5e1'">
@@ -2854,7 +2961,7 @@ function renderActiveBoardPairingsGrid() {
               <!-- Board Header -->
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; border-bottom: 1px solid ${isDone ? '#bbf7d0' : '#f1f5f9'}; padding-bottom: 8px;">
                 <span style="background: ${isDone ? '#16a34a' : '#0284c7'}; color: #ffffff; font-family: monospace; font-size: 0.76rem; font-weight: 800; padding: 2px 8px; border-radius: 4px;">
-                  BOARD ${p.board} ${p.isCoachGame ? '· COACH MATCH' : ''}
+                  BOARD ${p.board} ${p.isCoachMatch || p.isCoachGame ? '· COACH MATCH' : ''}
                 </span>
                 <span style="font-size: 0.74rem; font-weight: 700; color: #64748b;">
                   ${wH.name} vs ${bH.name}
@@ -3675,54 +3782,105 @@ function renderSignInTab(players = []) {
 // 4. Automated Period 6 Thursday Matchmaker
 
 function renderPairingsTab() {
+  const checkedInCount = (chessState.checkedInPlayerIds || []).length;
+  const totalPlayers = chessState.players.length;
+  const isOdd = checkedInCount % 2 === 1;
+  const fullBoards = Math.floor(checkedInCount / 2);
+  const checkedInSet = new Set(chessState.checkedInPlayerIds || []);
+  const activeBoardsCount = (chessState.activePairings || []).filter((p) => !p.isBye).length;
+
   return `
-    <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
+    <div style="background: #ffffff; border: 1.5px solid #e2e8f0; border-radius: 12px; padding: 16px 18px; box-shadow: 0 4px 15px rgba(0,0,0,0.03);">
       
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+      <!-- Top Title & Action Bar -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; flex-wrap: wrap; gap: 10px; border-bottom: 1.5px solid #f1f5f9; padding-bottom: 10px;">
         <div>
-          <div style="display: inline-flex; align-items: center; gap: 6px; background: #e0f2fe; color: #0369a1; padding: 3px 10px; border-radius: 12px; font-size: 0.75rem; font-weight: 800; text-transform: uppercase;">
-            <i class="fa-solid fa-wand-magic-sparkles"></i> 1-Click Swiss / Ladder Algorithm
+          <div style="display: inline-flex; align-items: center; gap: 6px; background: #e0f2fe; color: #0284c7; padding: 2px 8px; border-radius: 10px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Period 6 Matchmaker
           </div>
-          <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: #0f172a; margin: 4px 0 0 0;">
+          <h2 style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.28rem; color: #0f172a; margin: 3px 0 0 0; font-weight: 800;">
             Thursday Period 6 Board Pairings
           </h2>
-        </div>
-
-        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-          <button onclick="window.generateThursdayPairings()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 700; font-size: 0.9rem; padding: 10px 18px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);">
-            <i class="fa-solid fa-shuffle"></i> Generate Balanced Pairings
-          </button>
-          <button onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; font-weight: 700; font-size: 0.88rem; padding: 10px 16px; border-radius: 8px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);" title="Print official A4 FIDE pairing sheet for classroom whiteboard">
-            <i class="fa-solid fa-print"></i> 🖨 Print FIDE Pairing Sheet (A4)
-          </button>
-        </div>
-      </div>
-
-      <p style="color: #475569; font-size: 0.95rem; margin: 0 0 20px 0; line-height: 1.5;">
-        Select the pupils present in the classroom for Period 6. The algorithm will automatically assign boards, balance player ratings, prioritise cross-house rivalries (e.g. Victory vs Warrior), and avoid repeat pairings from last week.
-      </p>
-
-      <!-- Player Presence Checklist -->
-      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px; margin-bottom: 24px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <span style="font-weight: 700; font-size: 0.85rem; color: #334155; text-transform: uppercase;">Pupil Attendance Checklist:</span>
-          <div>
-            <button onclick="window.toggleAllAttendance(true)" style="background: none; border: none; color: #2563eb; font-weight: 700; font-size: 0.8rem; cursor: pointer; margin-right: 10px;">Select All</button>
-            <button onclick="window.toggleAllAttendance(false)" style="background: none; border: none; color: #64748b; font-weight: 700; font-size: 0.8rem; cursor: pointer;">Deselect All</button>
+          <div style="font-size: 0.78rem; color: #64748b; margin-top: 1px;">
+            Auto-pairs arrived pupils by ranking and house rivalry · Record results directly on boards below!
           </div>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 8px;">
+        ${
+          chessState.userRole === 'teacher'
+            ? `
+          <div style="display: flex; gap: 6px; flex-wrap: wrap; align-items: center;">
+            <button type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 800; font-size: 0.82rem; padding: 8px 14px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 8px rgba(2, 132, 199, 0.3);">
+              <span>⚔️</span> Auto-Pair Boards (${checkedInCount > 0 ? checkedInCount : totalPlayers})
+            </button>
+            <button type="button" onclick="window.printFidePairingSheet()" style="background: #1c1917; color: #d4af37; border: 1.5px solid #44403c; font-weight: 700; font-size: 0.8rem; padding: 8px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Print official A4 pairing sheet">
+              <span>🖨</span> Print Sheet (A4)
+            </button>
+            <button type="button" onclick="window.toggleChessWhiteboardMode(true)" style="background: #f8fafc; color: #0284c7; border: 1.5px solid #bae6fd; font-weight: 800; font-size: 0.8rem; padding: 8px 12px; border-radius: 6px; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;" title="Project onto whiteboard">
+              <span>📺</span> Whiteboard (W)
+            </button>
+          </div>
+        `
+            : ''
+        }
+      </div>
+
+      <!-- Pupil Attendance & Arrival Checklist Strip -->
+      <div style="background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 8px; padding: 10px 12px; margin-bottom: 14px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+          <div style="font-size: 0.78rem; font-weight: 800; color: #1e293b; text-transform: uppercase; letter-spacing: 0.03em; display: flex; align-items: center; gap: 6px;">
+            <span>Arrived Pupils:</span>
+            <span style="background: ${checkedInCount > 0 ? '#dcfce7' : '#e2e8f0'}; color: ${checkedInCount > 0 ? '#15803d' : '#64748b'}; padding: 1px 7px; border-radius: 8px; font-family: monospace; font-size: 0.76rem;">
+              ${checkedInCount} of ${totalPlayers} Present
+            </span>
+            ${checkedInCount > 0 ? (isOdd ? `<span style="color: #0284c7; font-weight: 700; text-transform: none; font-size: 0.75rem;">(👑 ${fullBoards} boards + 1 rotating bye)</span>` : `<span style="color: #16a34a; font-weight: 700; text-transform: none; font-size: 0.75rem;">(✓ ${fullBoards} even boards)</span>`) : ''}
+          </div>
+          ${
+            chessState.userRole === 'teacher'
+              ? `
+            <div style="display: flex; gap: 6px; align-items: center;">
+              <button onclick="window.checkInAllPlayers()" style="background: none; border: none; color: #0284c7; font-weight: 700; font-size: 0.75rem; cursor: pointer;">Select All (${totalPlayers})</button>
+              <span style="color: #cbd5e1;">·</span>
+              <button onclick="window.clearAttendance()" style="background: none; border: none; color: #64748b; font-weight: 700; font-size: 0.75rem; cursor: pointer;">Deselect All</button>
+            </div>
+          `
+              : ''
+          }
+        </div>
+
+        <!-- 1-Tap Arrival Chips for Arriving Pupils -->
+        <div style="display: flex; flex-wrap: wrap; gap: 5px;">
           ${chessState.players
             .map((p) => {
-              const isChecked = chessState.checkedInPlayerIds.includes(p.id);
+              const isChecked = checkedInSet.has(p.id);
+              const h = HOUSES[p.house] || {
+                color: '#475569',
+                bgLight: '#f1f5f9',
+                borderColor: '#cbd5e1',
+                name: p.house,
+              };
+              const cleanName =
+                DEFAULT_LOCAL_NAME_MAP[p.id] ||
+                CALLSIGN_TO_FIRST_NAME[p.name] ||
+                p.realName ||
+                p.name;
+
+              if (chessState.userRole !== 'teacher') {
+                return `
+                  <div style="background: ${isChecked ? '#dcfce7' : '#ffffff'}; border: 1px solid ${isChecked ? '#86efac' : '#e2e8f0'}; border-radius: 16px; padding: 3px 8px; font-size: 0.72rem; font-weight: 700; color: ${isChecked ? '#15803d' : '#94a3b8'}; display: inline-flex; align-items: center; gap: 4px;">
+                    <span>${isChecked ? '✓' : '·'}</span>
+                    <span>${cleanName}</span>
+                  </div>
+                `;
+              }
+
               return `
-              <label style="display: flex; align-items: center; gap: 8px; background: #ffffff; padding: 6px 10px; border-radius: 6px; border: 1px solid #e2e8f0; font-size: 0.82rem; cursor: pointer;">
-                <input type="checkbox" class="attendance-check" data-player-id="${p.id}" ${isChecked ? 'checked' : ''} onchange="window.handleChecklistChange('${p.id}', this.checked)">
-                <span style="font-weight: 600; color: #0f172a;">${p.name}</span>
-                
-              </label>
-            `;
+                <button type="button" onclick="${isChecked ? `window.checkOutPlayer('${p.id}')` : `window.checkInPlayer('${p.id}')`}" style="background: ${isChecked ? '#dcfce7' : '#ffffff'}; border: 1.5px solid ${isChecked ? '#86efac' : '#cbd5e1'}; border-radius: 16px; padding: 3px 9px; font-size: 0.73rem; font-weight: 700; color: ${isChecked ? '#15803d' : '#475569'}; cursor: pointer; display: inline-flex; align-items: center; gap: 4px; transition: all 0.15s;" title="Click to toggle present/absent">
+                  <span style="font-weight: 900;">${isChecked ? '✓' : '+'}</span>
+                  <span>${cleanName}</span>
+                  <span style="font-size: 0.64rem; color: ${h.color}; opacity: 0.85;">(${h.name})</span>
+                </button>
+              `;
             })
             .join('')}
         </div>
@@ -3734,9 +3892,23 @@ function renderPairingsTab() {
           chessState.activePairings && chessState.activePairings.length > 0
             ? renderActiveBoardPairingsGrid()
             : `
-          <div style="text-align: center; padding: 40px 20px; border: 2px dashed #cbd5e1; border-radius: 10px; color: #64748b;">
-            <i class="fa-solid fa-chess-board" style="font-size: 2.5rem; color: #94a3b8; margin-bottom: 10px;"></i>
-            <div>Click <strong>"Generate Balanced Pairings"</strong> above to auto-assign boards for Period 6.</div>
+          <div style="text-align: center; padding: 32px 20px; border: 2px dashed #cbd5e1; border-radius: 10px; color: #64748b; background: #fafaf9;">
+            <div style="font-size: 2rem; margin-bottom: 6px;">⚔️</div>
+            <div style="font-size: 1rem; font-weight: 800; color: #0f172a; margin-bottom: 3px;">
+              No classroom boards currently paired.
+            </div>
+            <div style="font-size: 0.82rem; color: #64748b; max-width: 440px; margin: 0 auto 14px auto; line-height: 1.45;">
+              Mark arriving pupils above or click below to automatically balance player rankings and assign classroom boards for Period 6!
+            </div>
+            ${
+              chessState.userRole === 'teacher'
+                ? `
+              <button type="button" onclick="window.handleQuickAutoPair()" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%); color: #ffffff; border: none; font-weight: 800; font-size: 0.85rem; padding: 10px 20px; border-radius: 7px; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 3px 12px rgba(2, 132, 199, 0.35);">
+                <span>⚔️</span> Auto-Pair Arrived Pupils Now
+              </button>
+            `
+                : ''
+            }
           </div>
         `
         }
@@ -4465,25 +4637,24 @@ function renderMatchesTab() {
   `;
 }
 
-// Styling Helpers: Classic Chess Salon Aesthetic
+// Styling Helpers: Modern High-Contrast Navigation Tabs
 function getTabStyle(isActive) {
   return `
-    padding: 10px 18px;
-    font-size: 0.9rem;
+    padding: 6px 14px;
+    font-size: 0.8rem;
     font-weight: 800;
     font-family: 'Outfit', sans-serif;
-    letter-spacing: 0.02em;
-    border: 1.5px solid ${isActive ? '#d4af37' : 'rgba(255,255,255,0.12)'};
-    border-bottom: 3px solid ${isActive ? '#d4af37' : 'transparent'};
-    background: ${isActive ? '#ffffff' : 'rgba(255,255,255,0.08)'};
-    border-radius: 8px;
+    letter-spacing: 0.01em;
+    border: 1px solid ${isActive ? '#0284c7' : '#e2e8f0'};
+    background: ${isActive ? '#0284c7' : '#ffffff'};
+    border-radius: 6px;
     cursor: pointer;
-    color: ${isActive ? '#0f172a' : '#e2e8f0'};
+    color: ${isActive ? '#ffffff' : '#334155'};
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     white-space: nowrap;
-    box-shadow: ${isActive ? '0 4px 12px rgba(0,0,0,0.15)' : 'none'};
+    box-shadow: ${isActive ? '0 1px 3px rgba(2,132,199,0.3)' : '0 1px 2px rgba(0,0,0,0.02)'};
     transition: all 0.15s ease;
   `;
 }
@@ -4708,10 +4879,7 @@ function getChessModalContainer() {
 window.switchChessTab = function (tabName) {
   if (
     chessState.userRole === 'pupil' &&
-    (tabName === 'quickdesk' ||
-      tabName === 'signin' ||
-      tabName === 'pairings' ||
-      tabName === 'knockout')
+    (tabName === 'quickdesk' || tabName === 'signin' || tabName === 'knockout')
   ) {
     showChessToast('🔒 Access Restricted: Teacher mode required.', 'error');
     return;
@@ -5017,12 +5185,31 @@ window.pairFreePupilsOnMatchGrid = function () {
   while (pool.length >= 2) {
     const white = pool.shift();
     let bestOpponentIdx = 0;
+    let lowestCost = Infinity;
+
     for (let i = 0; i < pool.length; i++) {
-      if (pool[i].house !== white.house) {
+      const candidate = pool[i];
+      const ratingDiff = Math.abs((candidate.rating || 1000) - (white.rating || 1000));
+      const rankDiff = Math.abs((candidate.rank || 99) - (white.rank || 99));
+      const housePenalty = candidate.house === white.house ? 45 : 0;
+
+      // Penalize rematches that already happened today
+      const rematches = (chessState.matches || []).filter(
+        (m) =>
+          (m.winnerId === white.id && m.loserId === candidate.id) ||
+          (m.winnerId === candidate.id && m.loserId === white.id) ||
+          (m.p1Id === white.id && m.p2Id === candidate.id) ||
+          (m.p1Id === candidate.id && m.p2Id === white.id),
+      ).length;
+      const rematchPenalty = rematches * 180;
+
+      const cost = ratingDiff + rankDiff * 15 + housePenalty + rematchPenalty;
+      if (cost < lowestCost) {
+        lowestCost = cost;
         bestOpponentIdx = i;
-        break;
       }
     }
+
     const black = pool.splice(bestOpponentIdx, 1)[0];
     newPairings.push({
       board: nextBoard++,
@@ -5053,6 +5240,7 @@ window.pairFreePupilsOnMatchGrid = function () {
   }
 
   chessState.activePairings = [...existingActive, ...newPairings];
+  chessState.activeTab = 'pairings';
   saveChessState();
   renderChessHubView();
   showChessToast(
@@ -5173,7 +5361,16 @@ window.confirmNewRoundAll = function () {
 
 // 1-Click Thursday Period 6 Auto-Pairings Algorithm (With Guaranteed Fair Rotating Bye)
 window.generateThursdayPairings = function (force = false) {
-  const presentIds = chessState.checkedInPlayerIds;
+  let presentIds = chessState.checkedInPlayerIds;
+
+  // If no pupils are checked in yet, automatically default to all registered pupils
+  if (!presentIds || presentIds.length === 0) {
+    chessState.checkedInPlayerIds = chessState.players.map((p) => p.id);
+    presentIds = chessState.checkedInPlayerIds;
+    saveChessState();
+    showChessToast(`✓ Arrived checklist set to all ${chessState.players.length} pupils!`, 'info');
+  }
+
   if (presentIds.length < 2) {
     showChessToast('Please check in at least 2 pupils to generate pairings.', 'warning');
     return;
@@ -5212,12 +5409,14 @@ window.generateThursdayPairings = function (force = false) {
     );
     if (candidates.length === 0) candidates = [...presentPlayers];
 
-    // 2. Sort candidates by fewest byes received ascending
+    // 2. Sort candidates by fewest byes received ascending; secondary: games played descending
     candidates.sort((a, b) => {
       const byesA = a.byesReceived || 0;
       const byesB = b.byesReceived || 0;
       if (byesA !== byesB) return byesA - byesB;
-      return (a.games || 0) - (b.games || 0);
+      const gamesA = (a.won || 0) + (a.drawn || 0) + (a.lost || 0);
+      const gamesB = (b.won || 0) + (b.drawn || 0) + (b.lost || 0);
+      return gamesB - gamesA;
     });
 
     byePlayer = candidates[0];
@@ -5236,7 +5435,7 @@ window.generateThursdayPairings = function (force = false) {
     chessState.lastRoundByePlayerId = null;
   }
 
-  // Pool of players to pair (even length)
+  // Pool of players to pair (even length), sorted by rating descending for top boards
   const pool = presentPlayers
     .filter((p) => !byePlayer || p.id !== byePlayer.id)
     .sort((a, b) => (b.rating || 1000) - (a.rating || 1000));
@@ -5245,11 +5444,28 @@ window.generateThursdayPairings = function (force = false) {
   while (pool.length >= 2) {
     const white = pool.shift();
     let bestOpponentIdx = 0;
+    let lowestCost = Infinity;
 
     for (let i = 0; i < pool.length; i++) {
-      if (pool[i].house !== white.house) {
+      const candidate = pool[i];
+      const ratingDiff = Math.abs((candidate.rating || 1000) - (white.rating || 1000));
+      const rankDiff = Math.abs((candidate.rank || 99) - (white.rank || 99));
+      const housePenalty = candidate.house === white.house ? 45 : 0;
+
+      // Penalize rematches that already happened today
+      const rematches = (chessState.matches || []).filter(
+        (m) =>
+          (m.winnerId === white.id && m.loserId === candidate.id) ||
+          (m.winnerId === candidate.id && m.loserId === white.id) ||
+          (m.p1Id === white.id && m.p2Id === candidate.id) ||
+          (m.p1Id === candidate.id && m.p2Id === white.id),
+      ).length;
+      const rematchPenalty = rematches * 180;
+
+      const cost = ratingDiff + rankDiff * 15 + housePenalty + rematchPenalty;
+      if (cost < lowestCost) {
+        lowestCost = cost;
         bestOpponentIdx = i;
-        break;
       }
     }
 
@@ -5281,6 +5497,7 @@ window.generateThursdayPairings = function (force = false) {
   }
 
   chessState.activePairings = pairings;
+  chessState.activeTab = 'pairings';
   saveChessState();
   renderChessHubView();
 
@@ -5301,6 +5518,41 @@ window.generateThursdayPairings = function (force = false) {
       'success',
     );
   }
+};
+
+// ⚡ 1-Click Quick Auto-Pair Trigger (Works from Header Bar, Ladder Toolbar, and Matchmaker)
+window.handleQuickAutoPair = function () {
+  // If not teacher, prompt to unlock teacher mode first
+  if (
+    chessState.userRole !== 'teacher' &&
+    localStorage.getItem('history_chess_teacher_auth') !== 'true'
+  ) {
+    window.openTeacherUnlockModal();
+    return;
+  }
+
+  // If no pupils are checked in yet, auto-check in all registered pupils
+  if (!chessState.checkedInPlayerIds || chessState.checkedInPlayerIds.length === 0) {
+    chessState.checkedInPlayerIds = chessState.players.map((p) => p.id);
+    saveChessState();
+    showChessToast(
+      `✓ Checked in all ${chessState.players.length} pupils! Generating boards...`,
+      'info',
+    );
+  }
+
+  if (chessState.checkedInPlayerIds.length < 2) {
+    showChessToast('Please check in at least 2 pupils to generate pairings.', 'warning');
+    return;
+  }
+
+  const inProgress = (chessState.activePairings || []).filter((b) => !b.completed && !b.isBye);
+  if (inProgress.length > 0) {
+    window.confirmNewRoundAll();
+    return;
+  }
+
+  window.generateThursdayPairings(true);
 };
 
 // ============================================================================
