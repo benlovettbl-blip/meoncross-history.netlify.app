@@ -127,9 +127,9 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Chronology Spine & Workbook Rollout Compass:**  
-> **Spines Completed (Option 1: Enquiry Roadmap & Master Toggle):** *Causes of the Great War* (`great_war`) 🌟 • *Conflict in the Middle East* (`cme_new`) 🌟  
-> **Immediate Spine Target:** Year 9 *The Great War Part 2* (`great_war_part2`) 🎯  
-> **Next in Spine Queue:** *Second British Empire* ➔ *First British Empire* ➔ *Crown, Church & Parliament* ➔ *Medieval England* ➔ *Industrialisation*
+> **Spines Completed (Option 1: Enquiry Roadmap & Master Toggle):** *Causes of the Great War* (`great_war`) 🌟 • *Conflict in the Middle East* (`cme_new`) 🌟 • *The Great War Part 2* (`great_war_part2`) 🌟  
+> **Immediate Spine Target:** Year 8: *The Second British Empire* (`second_british_empire`) 🎯  
+> **Next in Spine Queue:** *First British Empire* ➔ *Crown, Church & Parliament* ➔ *Medieval England* ➔ *Industrialisation*
 
 ---
 
@@ -149,10 +149,10 @@ In **every turn and recommendation**, regardless of the specific topic being wor
 | :--- | :---: | :--- | :---: | :--- |
 | `great_war` | Year 9 (KS3) | Causes of the Great War (1870–1914) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from `public/units/great_war/pupil_workbook.html`. Rebuilt in `database.json`. |
 | `cme_new` | Year 10 (GCSE) | Conflict in the Middle East (1945–1995) | 🌟 **100% COMPLETE** | All 12 lessons (60 stages) active in `data.js` and rendered via master toggle engine. |
-| `great_war_part2` | Year 9 (KS3) | The Great War: Western Front & Aftermath | 🎯 **PRIORITY #1 NEXT** | 5 lessons (25 stages) ready for extraction from `public/units/great_war_part2/pupil_workbook.html`. |
-| `second_british_empire` | Year 8 (KS3) | The Second British Empire & Imperialism | 🟡 **QUEUED #2** | 5 lessons ready for extraction from `public/units/second_british_empire/pupil_workbook.html`. |
-| `first_british_empire` | Year 8 (KS3) | The First British Empire (1600–1783) | 🟡 **QUEUED #3** | 5 lessons ready for extraction from `public/units/first_british_empire/pupil_workbook.html`. |
-| `monarchy_religion_power` | Year 8 (KS3) | Crown, Church, or Parliament (1517–1689) | 🟡 **QUEUED #4** | 5 lessons ready for extraction from `public/units/monarchy_religion_power/pupil_workbook.html`. |
+| `great_war_part2` | Year 9 (KS3) | The Great War: Western Front & Aftermath | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
+| `second_british_empire` | Year 8 (KS3) | The Second British Empire & Imperialism | 🎯 **PRIORITY #1 NEXT** | 5 lessons ready for extraction from `public/units/second_british_empire/pupil_workbook.html`. |
+| `first_british_empire` | Year 8 (KS3) | The First British Empire (1600–1783) | 🟡 **QUEUED #2** | 5 lessons ready for extraction from `public/units/first_british_empire/pupil_workbook.html`. |
+| `monarchy_religion_power` | Year 8 (KS3) | Crown, Church, or Parliament (1517–1689) | 🟡 **QUEUED #3** | 5 lessons ready for extraction from `public/units/monarchy_religion_power/pupil_workbook.html`. |
 | `medieval_england` | Year 7 (KS3) | Medieval England (1066–1485) | 🟡 **QUEUED #5** | 5 lessons ready for extraction from `public/units/medieval_england/pupil_workbook.html`. |
 | `industrialisation_and_empire` | Year 8 (KS3) | Industrialisation, Empire & Power | 🟡 **QUEUED #6** | 5 lessons ready for extraction from `public/units/industrialisation_and_empire/pupil_workbook.html`. |
 | `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | ⚪ **QUEUED #7** | 7 lessons ready for extraction upon workbook alignment. |
