@@ -781,6 +781,14 @@ function build18th19thTwoPageWorkbook(unitData, period) {
       margin: 0;
       flex-shrink: 0;
     }
+    .task-line-flex {
+      border-bottom: 1.2px solid #000000;
+      flex: 1;
+      min-height: 0;
+      width: 100%;
+      box-sizing: border-box;
+      margin: 0;
+    }
     .task-line-dotted {
       border-bottom: 1.2px dotted #000000;
       height: 7.4mm;
@@ -1160,10 +1168,10 @@ function build18th19thTwoPageWorkbook(unitData, period) {
     // PAGE 1 OF ENQUIRY: CHRONOLOGICAL INQUIRY SPINE
     html += renderSpinePage({ ...cfg, pageNum: spinePageNum });
 
-    // PAGE 2 OF ENQUIRY: EXAM QUESTION PART 1 (18 TASK LINES, TIMELINE MISSION, PROMINENT TYPOGRAPHY)
+    // PAGE 2 OF ENQUIRY: EXAM QUESTION PART 1 (26 FLEX TASK LINES, TIMELINE MISSION, PROMINENT TYPOGRAPHY)
     const part1TaskLines = Array.from(
-      { length: 18 },
-      () => '<div class="task-line" style="height: 7.8mm;"></div>',
+      { length: 26 },
+      () => '<div class="task-line-flex"></div>',
     ).join('');
 
     html += `
@@ -1212,8 +1220,8 @@ function build18th19thTwoPageWorkbook(unitData, period) {
         </div>
       </div>
 
-      <!-- 18 Ruled Task Lines for Extended Writing -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 3px 0;">
+      <!-- 26 Ruled Task Lines for Extended Writing (Full Height to Timeline Mission) -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin: 1px 0 3px 0;">
 ${part1TaskLines}
       </div>
 
@@ -1237,10 +1245,10 @@ ${part1TaskLines}
   </div>
 `;
 
-    // PAGE 3 OF ENQUIRY: EXAM QUESTION PART 2 (16 CONTINUATION LINES + QUESTION 3 [4 MARKS] AT BOTTOM)
+    // PAGE 3 OF ENQUIRY: EXAM QUESTION PART 2 (23 CONTINUATION LINES + QUESTION 3 [4 MARKS] AT BOTTOM)
     const part2ContinuationLines = Array.from(
-      { length: 16 },
-      () => '<div class="task-line" style="height: 7.8mm;"></div>',
+      { length: 23 },
+      () => '<div class="task-line-flex"></div>',
     ).join('');
 
     const q3TaskLines = Array.from(
@@ -1266,8 +1274,8 @@ ${part1TaskLines}
         </div>
       </div>
 
-      <!-- 16 Continuation Lines -->
-      <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-start; margin: 1px 0 4px 0;">
+      <!-- 23 Continuation Lines (Full Height to Question 3) -->
+      <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between; min-height: 0; margin: 1px 0 4px 0;">
         ${part2ContinuationLines}
       </div>
 
