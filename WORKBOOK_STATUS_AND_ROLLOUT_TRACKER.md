@@ -160,7 +160,7 @@ In **every turn and recommendation**, regardless of the specific topic being wor
 | `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | ⚪ **QUEUED #9** | Lessons queued for spine authoring. |
 | `water_and_sanitation` | Year 7 (KS3) | Water & Sanitation Through Time | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
 | `early_modern_world` | Year 8 (KS3) | Early Modern World (1450–1750) | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
-| `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present | 🟢 **IN PROGRESS (KT1 & KT2 DONE)** | Key Topics 1 & 2 (Medieval & Renaissance, Lessons 1.1–2.5, 50 stages) 100% synchronized with Option 1 enquiry roadmap & master toggle. KT3 (18th–19th C), KT4 (Modern), KT5 (Western Front) queued. |
+| `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present | 🟢 **IN PROGRESS (KT1, KT2, KT3 & KT5 DONE)** | Key Topics 1, 2, 3 & 5 (Medieval, Renaissance, 18th–19th C, Western Front; 21 lessons, 105 stages) 100% synchronized with Option 1 enquiry roadmap & master toggle. KT4 (Modern Britain, 5 lessons) remaining. |
 | `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
 | `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | ⚪ **QUEUED (GCSE)** | 12 core lessons queued for enquiry question parity. |
 | `usa` | GCSE (Y11) | USA 1954–75: Conflict at Home & Abroad | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
