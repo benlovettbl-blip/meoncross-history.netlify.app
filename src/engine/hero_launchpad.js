@@ -108,7 +108,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Crown, Church, or Parliament 20-Page Pupil Workbook',
       label: 'Pupil Workbook (20 Pages)',
       htmlUrl: '/units/monarchy_religion_power/pupil_workbook.html',
-      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/monarchy_religion_power_pupil_workbook.pdf',
     },
     retrieval: {
       title: 'Crown, Church, or Parliament Knowledge Retrieval Companion',
