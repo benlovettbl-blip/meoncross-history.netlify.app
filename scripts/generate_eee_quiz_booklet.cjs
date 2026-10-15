@@ -836,8 +836,8 @@ function renderLessonQuestionPage(lesson, pageNum) {
           <span class="q-text">${item.q}</span>
         </div>
         <div class="q-lines">
-          <div class="write-line line-1"><span class="line-label">Answer:</span><span class="rule-line"></span></div>
-          <div class="write-line line-2"><span class="line-label">Detail / Why:</span><span class="rule-line"></span></div>
+          <div class="write-line line-1"><span class="line-label">Answer / Detail:</span><span class="rule-line"></span></div>
+          <div class="write-line line-2"><span class="rule-line full-rule"></span></div>
         </div>
       </div>
     `;
@@ -944,12 +944,12 @@ function generateBookletHtml() {
   const trackingRows = QUIZ_DATA.map(
     (l, i) => `
     <tr>
-      <td class="tb-num">${i + 1}</td>
+      <td class="tb-hw"></td>
       <td class="tb-title"><strong>${l.kt}:</strong> ${l.title}</td>
       <td class="tb-box">/ 10</td>
       <td class="tb-box">/ 10</td>
-      <td class="tb-box"></td>
-      <td class="tb-box"></td>
+      <td class="tb-box tb-parent"></td>
+      <td class="tb-box tb-teacher"></td>
     </tr>
   `,
   ).join('');
@@ -1131,9 +1131,11 @@ function generateBookletHtml() {
       vertical-align: middle;
       color: #1e293b;
     }
-    .tb-num { text-align: center; font-weight: 800; width: 22px; }
+    .tb-hw { text-align: center; width: 55px; font-weight: 600; font-size: 7pt; }
     .tb-title { text-align: left; }
     .tb-box { text-align: center; width: 44px; font-weight: 700; }
+    .tb-parent { width: 75px; }
+    .tb-teacher { width: 55px; }
 
     /* LESSON QUESTION PAGES (PAGES 2–13) */
     .page-header {
@@ -1243,27 +1245,31 @@ function generateBookletHtml() {
     .q-lines {
       display: flex;
       flex-direction: column;
-      gap: 3px;
+      gap: 6px;
       padding-left: 23px;
     }
     .write-line {
       display: flex;
       align-items: flex-end;
-      height: 15px;
+      height: 22px;
     }
     .line-label {
-      font-size: 7.5pt;
+      font-size: 8pt;
       font-weight: 700;
       color: #64748b;
       text-transform: uppercase;
       letter-spacing: 0.3px;
       margin-right: 6px;
       white-space: nowrap;
+      padding-bottom: 2px;
     }
     .rule-line {
       flex: 1;
       border-bottom: 1.2px solid #94a3b8;
       height: 100%;
+    }
+    .full-rule {
+      width: 100%;
     }
 
     /* MARKING BANK PAGES (PAGES 14–16) */
@@ -1419,12 +1425,12 @@ function generateBookletHtml() {
       <table class="tracking-table">
         <thead>
           <tr>
-            <th>#</th>
+            <th style="width: 55px;">H.W. Date</th>
             <th>Enquiry & Specification Focus</th>
-            <th>Attempt 1</th>
-            <th>Attempt 2</th>
-            <th>DIRT / Review</th>
-            <th>Teacher Sign</th>
+            <th style="width: 44px;">Att 1</th>
+            <th style="width: 44px;">Att 2</th>
+            <th style="width: 75px;">Parent Signature</th>
+            <th style="width: 55px;">Teacher Sign</th>
           </tr>
         </thead>
         <tbody>
