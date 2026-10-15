@@ -150,7 +150,7 @@ const PDF_MAPPINGS = [
   // Year 7
   {
     folder: path.join('Year 7', 'Medieval England'),
-    src: 'medieval_england_pupil_workbook_FINAL_V17.pdf',
+    src: 'medieval_england_pupil_workbook.pdf',
     dest: 'Medieval England Pupil Workbook.pdf',
     category: 'Year 7',
   },

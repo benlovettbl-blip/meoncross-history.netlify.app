@@ -21,7 +21,7 @@ export const SCHEMES_OF_WORK_DATA = {
     overarchingEnquiry:
       'How was royal power constructed, contested, and transformed in medieval England between Hastings and Bosworth?',
     textbookPdf: '/pdfs/medieval_england_textbook_PUBLISHER.pdf',
-    workbookPdf: '/pdfs/medieval_england_pupil_workbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/medieval_england_pupil_workbook.pdf',
     enquiries: [
       {
         num: 1,

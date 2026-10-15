@@ -160,7 +160,7 @@ const UNIT_HEALTH_DATA = [
     appText: '✅ 100% Synced (9 L)',
     mapStatus: 'embedded',
     mapText: '✅ Battle of Hastings & Castles',
-    workbookPdf: '/pdfs/medieval_england_pupil_workbook_FINAL_V17.pdf',
+    workbookPdf: '/pdfs/medieval_england_pupil_workbook.pdf',
     textbookPdf: '/pdfs/medieval_england_textbook_FINAL_V17.pdf',
   },
   {

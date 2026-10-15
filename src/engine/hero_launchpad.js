@@ -74,7 +74,7 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Medieval England Pupil Workbook',
       label: 'Pupil Workbook',
       htmlUrl: '/units/medieval_england/pupil_workbook.html',
-      pdfUrl: '/pdfs/medieval_england_pupil_workbook_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/medieval_england_pupil_workbook.pdf',
     },
     retrieval: {
       title: 'Medieval England Knowledge Retrieval Companion',
