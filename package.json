@@ -39,6 +39,7 @@
     "booklet:yr7": "node scripts/generate_water_sanitation_quiz_booklet.cjs",
     "booklet:yr8": "node scripts/generate_early_modern_quiz_booklet.cjs",
     "booklet:yr9": "node scripts/generate_great_war_quiz_booklet.cjs",
+    "booklet:eee": "node scripts/generate_eee_quiz_booklet.cjs",
     "booklet:all": "node scripts/generate_water_sanitation_quiz_booklet.cjs && node scripts/generate_early_modern_quiz_booklet.cjs && node scripts/generate_great_war_quiz_booklet.cjs",
     "sync:curriculum": "node scripts/sync_curriculum_documents.cjs",
     "sync:drive": "node scripts/sync_admin_pdfs_to_drive.cjs",

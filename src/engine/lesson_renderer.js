@@ -5097,7 +5097,11 @@ export function renderLesson(lesson) {
           unitId === 'monarchy_religion_power' ||
           window.currentUnitId === 'monarchy_religion_power' ||
           unitId === 'first_british_empire' ||
-          window.currentUnitId === 'first_british_empire'
+          window.currentUnitId === 'first_british_empire' ||
+          unitId === 'eee' ||
+          window.currentUnitId === 'eee' ||
+          unitId === 'cme_new' ||
+          window.currentUnitId === 'cme_new'
         ) {
           displayHeading = rawHeading;
         } else {

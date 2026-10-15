@@ -692,6 +692,15 @@ const UNIT_PUBLICATIONS = {
       tags: ['Core Recall Questions', 'Chronology Flowcharts', 'Marking Bank'],
       editions: [
         {
+          id: 'quiz_pack',
+          label: 'Master 16-Page Quiz Pack (120 Questions)',
+          title: 'Early Elizabethan England 16-Page Knowledge Retrieval Pack',
+          pages: '16 Pages',
+          desc: 'Streamlined large-font retrieval pack across all 12 lessons with dual write-in lines, 0% bloat, and marking bank at the back.',
+          readUrl: '/units/eee/quiz_pack.html',
+          pdfUrl: '/pdfs/Early_Elizabethan_England_Quiz_Pack.pdf',
+        },
+        {
           id: 'all',
           label: 'Complete Course (KT1–KT3 Combined)',
           title: 'Master Knowledge Retrieval & Assessment Companion',
