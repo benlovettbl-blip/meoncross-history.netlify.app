@@ -236,13 +236,13 @@ export const CURRICULAR_PILLARS_CATALOG = {
       title: 'Australia & The Pacific Pupil Workbook',
       label: 'Pupil Workbook',
       htmlUrl: '/units/australia/pupil_workbook.html',
-      pdfUrl: '/pdfs/australia_pupil_workbook_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/australia_pupil_workbook.pdf',
     },
     retrieval: {
       title: 'Australia Knowledge Retrieval Companion',
       label: 'Retrieval Companion',
       htmlUrl: '/units/australia/quiz_pack.html',
-      pdfUrl: '/pdfs/australia_pupil_workbook_FINAL_V17.pdf',
+      pdfUrl: '/pdfs/australia_pupil_workbook.pdf',
     },
   },
   cme_new: {
