@@ -39,6 +39,7 @@ const great_war = {
         stages: [
           {
             step: 1,
+            para_ref: '[1.1]',
             date: '1862–1866',
             title: 'Prussian Rise & "Blood and Iron"',
             actor: 'Kingdom of Prussia',
@@ -51,6 +52,7 @@ const great_war = {
           },
           {
             step: 2,
+            para_ref: '[1.2]',
             date: 'September 1870',
             title: 'The Battle of Sedan & French Defeat',
             actor: 'Prussia & France',
@@ -63,6 +65,7 @@ const great_war = {
           },
           {
             step: 3,
+            para_ref: '[1.3]',
             date: 'Jan–May 1871',
             title: 'Hall of Mirrors & Alsace-Lorraine Seized',
             actor: 'The German Empire',
@@ -75,6 +78,7 @@ const great_war = {
           },
           {
             step: 4,
+            para_ref: '[1.4]',
             date: '1871–1889',
             title: 'The Cult of French "Revanche"',
             actor: 'The French Republic',
@@ -87,6 +91,7 @@ const great_war = {
           },
           {
             step: 5,
+            para_ref: '[1.5]',
             date: '1873–1890',
             title: "Bismarck's Web & Two-Front Dread",
             actor: 'Chancellor Bismarck',
@@ -569,6 +574,7 @@ const great_war = {
         stages: [
           {
             step: 1,
+            para_ref: '[2.1]',
             date: '1884–1885',
             title: 'The Berlin Conference & Africa Carve-Up',
             actor: 'European Great Powers',
@@ -581,6 +587,7 @@ const great_war = {
           },
           {
             step: 2,
+            para_ref: '[2.2]',
             date: '1890–1897',
             title: 'Weltpolitik & "A Place in the Sun"',
             actor: 'Kaiser Wilhelm II',
@@ -593,6 +600,7 @@ const great_war = {
           },
           {
             step: 3,
+            para_ref: '[2.3]',
             date: 'March 1905',
             title: 'The First Moroccan Crisis (Tangier)',
             actor: 'Imperial Germany & France',
@@ -605,6 +613,7 @@ const great_war = {
           },
           {
             step: 4,
+            para_ref: '[2.4]',
             date: 'January–April 1906',
             title: 'The Algeciras Conference Humiliation',
             actor: 'Great Powers at Algeciras',
@@ -617,6 +626,7 @@ const great_war = {
           },
           {
             step: 5,
+            para_ref: '[2.5]',
             date: 'July 1911',
             title: 'The Agadir Crisis (The Panther’s Leap)',
             actor: 'Germany, France & Britain',
@@ -1027,6 +1037,7 @@ const great_war = {
         stages: [
           {
             step: 1,
+            para_ref: '[3.1]',
             date: '1889–1897',
             title: 'The British Two-Power Standard',
             actor: 'The British Empire',
@@ -1039,6 +1050,7 @@ const great_war = {
           },
           {
             step: 2,
+            para_ref: '[3.2]',
             date: '1898–1900',
             title: "Tirpitz's Naval Laws & Risk Fleet",
             actor: 'Admiral von Tirpitz & Germany',
@@ -1051,6 +1063,7 @@ const great_war = {
           },
           {
             step: 3,
+            para_ref: '[3.3]',
             date: 'February 1906',
             title: 'The Dreadnought Revolution',
             actor: 'Admiral Jackie Fisher (Britain)',
@@ -1063,6 +1076,7 @@ const great_war = {
           },
           {
             step: 4,
+            para_ref: '[3.4]',
             date: '1908–1909',
             title: 'The 1909 British Naval Panic',
             actor: 'British Public & Government',
@@ -1075,6 +1089,7 @@ const great_war = {
           },
           {
             step: 5,
+            para_ref: '[3.5]',
             date: '1912–1914',
             title: 'Haldane Mission Failure & Redeployment',
             actor: 'Lord Haldane & Imperial Germany',
@@ -1433,6 +1448,7 @@ const great_war = {
         stages: [
           {
             step: 1,
+            para_ref: '[4.1]',
             date: '1879–1882',
             title: 'The Triple Alliance Formed',
             actor: 'Germany, Austria-Hungary & Italy',
@@ -1445,6 +1461,7 @@ const great_war = {
           },
           {
             step: 2,
+            para_ref: '[4.2]',
             date: '1894–1907',
             title: 'The Triple Entente Emerges',
             actor: 'France, Russia & Great Britain',
@@ -1457,6 +1474,7 @@ const great_war = {
           },
           {
             step: 3,
+            para_ref: '[4.3]',
             date: '1900–1908',
             title: 'The Balkan Powder Keg',
             actor: 'Balkan States & Ottoman Empire',
@@ -1469,6 +1487,7 @@ const great_war = {
           },
           {
             step: 4,
+            para_ref: '[4.4]',
             date: 'October 1908',
             title: 'The Bosnian Annexation Crisis',
             actor: 'Austria-Hungary, Serbia & Russia',
@@ -1481,6 +1500,7 @@ const great_war = {
           },
           {
             step: 5,
+            para_ref: '[4.5]',
             date: '1912–1913',
             title: 'The Balkan Wars (Serbia Doubles)',
             actor: 'The Balkan League & Serbia',
@@ -1507,6 +1527,13 @@ const great_war = {
           duration: '9 mins 19 secs',
           teacher_guidance:
             'Broad overview illustrating how militarism, alliances, imperialism, and nationalism combined to ignite the conflict.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=y-TmbOy4Jwg',
+          title: '6 Key Steps to World War One',
+          duration: '24 mins 26 secs',
+          teacher_guidance:
+            'Comprehensive History Hit documentary breaking down the six critical turning points and diplomatic crises that plunged Europe into continental war.',
         },
         {
           url: 'https://www.youtube.com/watch?v=f11CKYB2FCA',
@@ -2014,6 +2041,7 @@ const great_war = {
         stages: [
           {
             step: 1,
+            para_ref: '[5.1]',
             date: '28 June 1914',
             title: 'The Sarajevo Assassination',
             actor: 'Gavrilo Princip & Franz Ferdinand',
@@ -2026,6 +2054,7 @@ const great_war = {
           },
           {
             step: 2,
+            para_ref: '[5.2]',
             date: '5 July 1914',
             title: 'The German "Blank Cheque"',
             actor: 'Kaiser Wilhelm II & Austria',
@@ -2038,6 +2067,7 @@ const great_war = {
           },
           {
             step: 3,
+            para_ref: '[5.3]',
             date: '23–28 July 1914',
             title: 'The Ultimatum & War Declared',
             actor: 'Austria-Hungary & Serbia',
@@ -2050,6 +2080,7 @@ const great_war = {
           },
           {
             step: 4,
+            para_ref: '[5.4]',
             date: '29–31 July 1914',
             title: 'Mobilisation & The Railway Trap',
             actor: 'Tsar Nicholas II & Germany',
@@ -2063,6 +2094,7 @@ const great_war = {
           },
           {
             step: 5,
+            para_ref: '[5.5]',
             date: '1–4 August 1914',
             title: 'Schlieffen Plan & British Entry',
             actor: 'Germany, Belgium & Britain',

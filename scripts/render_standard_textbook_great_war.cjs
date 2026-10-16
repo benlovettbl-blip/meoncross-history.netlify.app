@@ -33,9 +33,12 @@ if (!fs.existsSync(dataPath)) {
 
 // Parse units/great_war/data.js
 const dataContent = fs.readFileSync(dataPath, 'utf8');
-const startIndex = dataContent.indexOf('{');
-const endIndex = dataContent.lastIndexOf('}');
-const unitData = eval('(' + dataContent.substring(startIndex, endIndex + 1) + ')');
+const dataCleaned = dataContent
+  .replace(/export\s+default\s+unitData;?/g, '')
+  .replace(/export\s+\{\s*unitData\s*\};?/g, '');
+const startIndex = dataCleaned.indexOf('{');
+const endIndex = dataCleaned.lastIndexOf('}');
+const unitData = eval('(' + dataCleaned.substring(startIndex, endIndex + 1) + ')');
 
 const lessons = unitData.lessons || [];
 console.log(`Loaded ${lessons.length} Great War lessons for publisher textbook.`);
