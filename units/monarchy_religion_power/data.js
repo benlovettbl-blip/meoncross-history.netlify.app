@@ -587,6 +587,26 @@ export const unitData = {
           act: 2,
           title: '1.2 The King’s Dynastic Crisis (1525–1527)',
           text: '<span class="para-ref">[1.2]</span> Across the English Channel, King Henry VIII initially despised Luther, writing a book defending the Catholic sacraments that earned him the papal title <em>Defender of the Faith</em>. But by 1527, Henry faced an agonizing <strong>dynastic</strong> emergency. His Spanish wife, Catherine of Aragon, was past forty and had produced only one living child: a girl, Princess Mary. Convinced that England would collapse into bloody civil war without a legitimate male heir, Henry fell passionately in love with the clever, reform-minded Anne Boleyn. Believing his marriage was cursed by God because Catherine had previously been married to his deceased brother Arthur, Henry demanded an official <strong>annulment</strong> from Rome to ensure the Tudor royal <strong>succession</strong>.',
+          source: {
+            letter: 'B',
+            title:
+              'Source B: Unknown Anglo-Flemish Court Artist, The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)',
+            image: '/images/family_of_henry_viii_c1545.jpg',
+            caption:
+              'The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545). King Henry VIII sits enthroned beneath the royal canopy of estate, flanked by Prince Edward on his right and his third wife Jane Seymour (painted posthumously). Princess Mary stands on the left, Princess Elizabeth stands on the right, and the court fool Will Somers appears in the right archway.',
+            source_context:
+              'Painted toward the end of Henry VIII’s reign, this large dynastic painting was commissioned to confirm the royal succession and celebrate Prince Edward as the legitimate Tudor heir. Although Jane Seymour had died in 1537 shortly after giving birth to Edward, Henry had her painted beside him on the throne as his only wife who delivered a living male heir, completely erasing Catherine of Aragon and Anne Boleyn.',
+            how_useful_question:
+              'How useful is Source B for an enquiry into why securing a male heir and dynastic succession was Henry VIII’s central motive during the Break with Rome?',
+            provenance_clues: [
+              'Author: Unknown court artist working for the Royal Household at Whitehall Palace.',
+              'Audience: Visiting European ambassadors, Privy Councillors, and English nobility entering the royal presence chamber.',
+              'Motive: To project unshakeable Tudor dynastic permanence, celebrate Prince Edward as the undisputed heir, and justify the turmoil of the Break with Rome.',
+            ],
+            hinge_question:
+              'Hinge Question: Why did Henry VIII order Jane Seymour to be painted sitting beside him on the throne in 1545—eight years after her death—while Catherine of Aragon and Anne Boleyn were completely excluded?',
+            citation: 'Royal Collection Trust • Hampton Court Palace, London.',
+          },
         },
         {
           act: 3,
@@ -603,16 +623,16 @@ export const unitData = {
           title: '1.5 Royal Supremacy & Monastic Meltdown (1534–1540)',
           text: '<span class="para-ref">[1.5]</span> In November 1534, Parliament passed the historic <strong>Act of Supremacy</strong>, formally declaring King Henry VIII the sole "Supreme Head" of the Church of England. Refusing to swear the mandatory Oath of <strong>Supremacy</strong> was classified as high <strong>treason</strong>; Henry’s revered former Chancellor Sir Thomas More was promptly beheaded for remaining loyal to the Pope. Royal power was immense, but church wealth was even sweeter. Between 1536 and 1540, Cromwell orchestrated the systematic <strong>dissolution</strong> of over 800 Catholic monasteries, abbeys, and nunneries. Henry melted their lead roofs, confiscated their gold chalices, and sold their vast estates to wealthy nobles to fund national coastal defences and continental wars. Locally in Hampshire, Henry granted the dissolved Titchfield Abbey on the River Meon to his ruthless secretary Thomas Wriothesley, who demolished the abbey nave to construct "Place House"—a grand Tudor mansion whose four-turreted gatehouse still stands today. Along the coast, Henry used lead and stone stripped from dissolved religious houses to build Southsea Castle (1544) to defend Portsmouth Harbour.',
           source: {
-            letter: 'B',
+            letter: 'C',
             title:
-              'Source B: Hans Holbein the Younger, Whitehall Mural Portrait of King Henry VIII (c. 1537)',
+              'Source C: Hans Holbein the Younger, Whitehall Mural Portrait of King Henry VIII (c. 1537)',
             image: '/images/henry_viii.jpg',
             caption:
               'Hans Holbein’s colossal full-length Whitehall mural portrait of Henry VIII: feet planted wide, broad shoulders, adorned with cloth of gold and pearls, gripping his dagger.',
             source_context:
               'Commissioned shortly after the 1534 Act of Supremacy made Henry the Supreme Head of the Church of England and following the execution of Sir Thomas More, this painting hung in the Privy Chamber of Whitehall Palace.',
             how_useful_question:
-              'How useful is Source B for an enquiry into how Henry VIII projected supreme royal authority after breaking with the Pope?',
+              'How useful is Source C for an enquiry into how Henry VIII projected supreme royal authority after breaking with the Pope?',
             provenance_clues: [
               'Author: Hans Holbein the Younger, King’s Painter on the royal payroll employed specifically to project Tudor royal power.',
               'Audience: Visiting foreign ambassadors, English nobles, and courtiers entering the King’s private audience chamber.',
@@ -675,14 +695,33 @@ export const unitData = {
         },
         {
           title:
-            'Source B: Hans Holbein the Younger, Whitehall Mural Portrait of King Henry VIII (c. 1537)',
+            'Source B: Unknown Anglo-Flemish Court Artist, The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545)',
+          image: '/images/family_of_henry_viii_c1545.jpg',
+          caption:
+            'The Family of Henry VIII: An Allegory of the Tudor Succession (c. 1545). King Henry VIII sits enthroned beneath the royal canopy of estate, flanked by Prince Edward and his deceased third wife Jane Seymour, with Mary on the left and Elizabeth on the right.',
+          source_context:
+            'Painted toward the end of Henry VIII’s reign, this large dynastic painting was commissioned to confirm the royal succession and celebrate Prince Edward as the legitimate Tudor heir.',
+          how_useful_question:
+            'How useful is Source B for an enquiry into why securing a male heir and dynastic succession was Henry VIII’s central motive during the Break with Rome?',
+          provenance_clues: [
+            'Author: Unknown court artist working for the Royal Household at Whitehall Palace.',
+            'Audience: Visiting European ambassadors, Privy Councillors, and English nobility entering the royal presence chamber.',
+            'Motive: To project unshakeable Tudor dynastic permanence, celebrate Prince Edward as the undisputed heir, and justify the turmoil of the Break with Rome.',
+          ],
+          hinge_question:
+            'Hinge Question: Why did Henry VIII order Jane Seymour to be painted sitting beside him on the throne in 1545—eight years after her death—while Catherine of Aragon and Anne Boleyn were completely excluded?',
+          citation: 'Royal Collection Trust • Hampton Court Palace, London.',
+        },
+        {
+          title:
+            'Source C: Hans Holbein the Younger, Whitehall Mural Portrait of King Henry VIII (c. 1537)',
           image: '/images/henry_viii.jpg',
           caption:
             'Hans Holbein’s colossal full-length Whitehall mural portrait of Henry VIII: feet planted wide, gripping his dagger.',
           source_context:
             'Commissioned shortly after the 1534 Act of Supremacy made Henry the Supreme Head of the Church of England.',
           how_useful_question:
-            'How useful is Source B for an enquiry into how Henry VIII projected supreme royal authority after breaking with the Pope?',
+            'How useful is Source C for an enquiry into how Henry VIII projected supreme royal authority after breaking with the Pope?',
           provenance_clues: [
             'Author: Hans Holbein the Younger, royal court painter on the Crown payroll.',
             'Audience: Visiting foreign ambassadors and English nobles entering Whitehall Palace.',
@@ -698,6 +737,8 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This enquiry investigates the multi-causal catalysts behind Henry VIII’s Break with Rome. Students must evaluate how religious ideology (Lutheran anti-papalism), dynastic anxiety (lack of a male heir with Catherine of Aragon), international geopolitics (the Sack of Rome by Charles V), and legislative statecraft (Thomas Cromwell’s use of Parliament) converged to create the Royal Supremacy.',
+        source_context:
+          'Source B is The Family of Henry VIII (c. 1545), commissioned to project Tudor dynastic succession. Henry sits under the royal canopy flanked by Jane Seymour (painted posthumously eight years after her death), Prince Edward, Mary, Elizabeth, and the court jester Will Somers. Hinge Question: Why did Henry VIII order Jane Seymour to be painted sitting beside him on the throne in 1545 while leaving Catherine of Aragon and Anne Boleyn completely erased?',
         objectives: [
           {
             objective:
@@ -711,7 +752,7 @@ export const unitData = {
             objective:
               'Analyse why the dynastic succession made an annulment an existential crisis for Henry VIII.',
             primer:
-              'Examine Section 1.2. Emphasize Henry’s genuine fear of another civil war like the Wars of the Roses if he died without a male heir.',
+              'Examine Section 1.2. Emphasize Henry’s genuine fear of another civil war like the Wars of the Roses if he died without a male heir. Use Source B (The Family of Henry VIII) to explore how Henry obsessively promoted the male succession.',
             question:
               'Why did Henry believe that the lack of a surviving son was divine punishment rather than natural misfortune?',
           },
@@ -719,7 +760,7 @@ export const unitData = {
             objective:
               'Evaluate how Thomas Cromwell used parliamentary statutes to establish Royal Supremacy.',
             primer:
-              'Direct pupils to Sections 1.4 and 1.5. Contrast Wolsey’s failed papal appeals with Cromwell’s revolutionary doctrine of national empire and statute law.',
+              'Direct pupils to Sections 1.4 and 1.5. Contrast Wolsey’s failed papal appeals with Cromwell’s revolutionary doctrine of national empire and statute law. Use Source C (Holbein) to analyse the projection of absolute supremacy.',
             question:
               'How did passing the Act of Supremacy through Parliament give Henry’s personal religious power greater legal legitimacy?',
           },
@@ -1107,21 +1148,41 @@ export const unitData = {
           act: 2,
           title: '2.2 Restoring Control: Supreme Governor (1559)',
           text: '<span class="para-ref">[2.2]</span> Elizabeth was a moderate Protestant, but she was above all an exceptionally shrewd politician. In January 1559, she summoned Parliament to construct a lasting religious settlement. Her first landmark statute was the new Act of Supremacy. Instead of reclaiming Henry VIII’s provocative title of "Supreme Head," Elizabeth agreed to a diplomatic <strong>compromise</strong>, adopting the softer title of <strong>Supreme Governor</strong> of the Church of England. This clever wording defused Catholic theological objections that only Jesus Christ or the Pope could be head of the Church, while placating Puritan Protestants who fiercely opposed a woman holding spiritual supremacy over male bishops. All clergy were required to swear an oath accepting her governance or forfeit their jobs.',
+          source: {
+            letter: 'A',
+            title:
+              'Source A: Attributed to Robert Peake the Elder, The Procession Portrait of Queen Elizabeth I (c. 1601)',
+            image: '/images/elizabeth_procession_1601.jpg',
+            caption:
+              'The Procession Portrait of Queen Elizabeth I (c. 1601): Queen Elizabeth carried aloft on an open litter in triumphal procession through the streets of London, surrounded by her Knights of the Garter, Privy Councillors, and court ladies.',
+            source_context:
+              'Throughout her reign, Elizabeth I cultivated intense personal loyalty and projected magnificent royal majesty through public royal progresses and processions. By presenting herself directly to cheering crowds in open litters rather than hiding behind castle walls, Elizabeth transformed the English monarchy into a popular public institution.',
+            how_useful_question:
+              'How useful is Source A for an enquiry into how Elizabeth I maintained political stability and secured the loyalty of her subjects?',
+            provenance_clues: [
+              'Author: Attributed to Robert Peake the Elder, a leading English court painter of the late Elizabethan era.',
+              'Audience: The English court, foreign dignitaries, and provincial gentry demonstrating their loyalty to the Tudor crown.',
+              'Motive: To project unshakeable royal majesty, domestic harmony, and the divine popularity of the Protestant Virgin Queen.',
+            ],
+            hinge_question:
+              'Hinge Question: Why did Elizabeth choose to be carried through public streets in an open litter rather than moving surrounded by armoured soldiers inside enclosed carriages?',
+            citation: 'Private Collection, Sherborne Castle / National Portrait Gallery.',
+          },
         },
         {
           act: 3,
           title: '2.3 The Via Media & The Prayer Book (1559)',
           text: '<span class="para-ref">[2.3]</span> Alongside her supremacy, Elizabeth passed the 1559 Act of <strong>Uniformity</strong>, forging her famous <strong>Via Media</strong>—the "Middle Way." Church was made compulsory: every subject had to attend English Protestant services every Sunday or pay a steep 12d fine as a <strong>recusant</strong>. However, to avoid alienating Catholic subjects, the 1559 Book of Common Prayer deliberately retained traditional priestly vestments, church music, and ambiguous communion wording. A Catholic worshipper could take communion believing in the Real Presence of Christ, while a Protestant could take it as a simple remembrance. Elizabeth famously refused to "make windows into men’s souls"—demanding public loyalty rather than policing private conscience.',
           source: {
-            letter: 'A',
-            title: 'Source A: Antonis Mor, Portrait of Queen Mary I ("Bloody Mary") (1554)',
+            letter: 'B',
+            title: 'Source B: Antonis Mor, Portrait of Queen Mary I ("Bloody Mary") (1554)',
             image: '/images/queen_mary_i_mary_tudor.jpg',
             caption:
               'Contemporary portrait of Queen Mary I ("Bloody Mary"), whose systematic burning of Protestant martyrs created deep-seated anti-Catholic fear across Elizabethan England.',
             source_context:
               'Between 1553 and 1558, Mary I attempted to violently stamp out Protestantism, burning over 280 people at Smithfield. When Elizabeth came to power, she used public memory of these Marian burnings to justify her compromise Middle Way.',
             how_useful_question:
-              'How useful is Source A for an enquiry into why Elizabeth I sought a compromise religious settlement in 1559?',
+              'How useful is Source B for an enquiry into why Elizabeth I sought a compromise religious settlement in 1559?',
             provenance_clues: [
               'Author: Antonis Mor, official court portraitist to Mary I and Philip II of Spain.',
               'Audience: European royal courts, intended to project strict Catholic piety and dynastic Habsburg strength.',
@@ -1142,16 +1203,16 @@ export const unitData = {
           title: '2.5 Spies, Ciphers & The Scaffold (1571–1588)',
           text: '<span class="para-ref">[2.5]</span> With Elizabeth’s life under constant threat from foreign Catholic assassins and Jesuit infiltration, her brilliant spymaster Sir Francis Walsingham established an elite network of <strong>espionage</strong> across Europe. Walsingham’s cryptographers intercepted conspiratorial letters written in secret <strong>cipher</strong>, culminating in the 1586 Babington Plot. Deciphered letters proved that Mary Queen of Scots had explicitly approved Elizabeth’s assassination. In February 1587, Elizabeth reluctantly signed Mary’s death warrant; the Scottish queen was beheaded at Fotheringhay Castle. Outraged by the execution of a Catholic queen, King Philip II of Spain ordered his colossal Armada to sail for England, testing Elizabeth’s Protestant nation in total war.',
           source: {
-            letter: 'B',
+            letter: 'C',
             title:
-              'Source B: George Gower (attr.), The Armada Portrait of Queen Elizabeth I (c. 1588)',
+              'Source C: George Gower (attr.), The Armada Portrait of Queen Elizabeth I (c. 1588)',
             image: '/images/armada_portrait.jpg',
             caption:
               'The celebrated Armada Portrait of Elizabeth I: her hand resting upon the globe, pearls of purity adorning her dress, flanked by scenes of the English victory over the Spanish fleet.',
             source_context:
               'Painted immediately following the defeat of the Spanish Armada in 1588, this masterwork served as triumphant state propaganda, celebrating Elizabeth’s providential Protestant victory and global naval ambition.',
             how_useful_question:
-              'How useful is Source B for an enquiry into how Elizabeth I projected her authority after surviving Catholic assassination plots and foreign invasion?',
+              'How useful is Source C for an enquiry into how Elizabeth I projected her authority after surviving Catholic assassination plots and foreign invasion?',
             provenance_clues: [
               'Author: Attributed to George Gower, Serjeant Painter to Queen Elizabeth I.',
               'Audience: English nobility, courtiers, and foreign ambassadors visiting the royal court.',
@@ -1166,14 +1227,33 @@ export const unitData = {
 
       sources: [
         {
-          title: 'Source A: Antonis Mor, Portrait of Queen Mary I ("Bloody Mary") (1554)',
+          title:
+            'Source A: Attributed to Robert Peake the Elder, The Procession Portrait of Queen Elizabeth I (c. 1601)',
+          image: '/images/elizabeth_procession_1601.jpg',
+          caption:
+            'The Procession Portrait of Queen Elizabeth I (c. 1601): carried in triumph through London on an open litter surrounded by courtiers and cheering crowds.',
+          source_context:
+            'Throughout her reign, Elizabeth I cultivated intense personal loyalty and projected magnificent royal majesty through public royal progresses and processions.',
+          how_useful_question:
+            'How useful is Source A for an enquiry into how Elizabeth I maintained political stability and secured the loyalty of her subjects?',
+          provenance_clues: [
+            'Author: Attributed to Robert Peake the Elder, leading English court painter.',
+            'Audience: The English court and provincial gentry demonstrating loyalty to the Tudor crown.',
+            'Motive: To project unshakeable royal majesty, domestic harmony, and popular devotion.',
+          ],
+          hinge_question:
+            'Hinge Question: Why did Elizabeth choose to be carried through public streets in an open litter rather than moving surrounded by armoured soldiers inside enclosed carriages?',
+          citation: 'Private Collection, Sherborne Castle / National Portrait Gallery.',
+        },
+        {
+          title: 'Source B: Antonis Mor, Portrait of Queen Mary I ("Bloody Mary") (1554)',
           image: '/images/queen_mary_i_mary_tudor.jpg',
           caption:
             'Contemporary portrait of Queen Mary I, whose systematic burning of Protestant martyrs created deep anti-Catholic fear across England.',
           source_context:
             'Between 1553 and 1558, Mary I attempted to stamp out Protestantism, burning over 280 people at the stake.',
           how_useful_question:
-            'How useful is Source A for an enquiry into why Elizabeth I sought a compromise religious settlement in 1559?',
+            'How useful is Source B for an enquiry into why Elizabeth I sought a compromise religious settlement in 1559?',
           provenance_clues: [
             'Author: Antonis Mor, court painter to Mary I and Philip II.',
             'Audience: European courts and English subjects.',
@@ -1184,14 +1264,14 @@ export const unitData = {
           citation: 'Antonis Mor • Museo del Prado, Madrid.',
         },
         {
-          title: 'Source B: The Armada Portrait of Queen Elizabeth I (c. 1588)',
+          title: 'Source C: The Armada Portrait of Queen Elizabeth I (c. 1588)',
           image: '/images/armada_portrait.jpg',
           caption:
             'The celebrated Armada Portrait of Elizabeth I: hand on the globe, pearls of purity, flanked by the defeated Spanish fleet.',
           source_context:
             'Painted following the 1588 defeat of the Spanish Armada as triumphant state propaganda.',
           how_useful_question:
-            'How useful is Source B for an enquiry into how Elizabeth I projected authority after surviving foreign invasion?',
+            'How useful is Source C for an enquiry into how Elizabeth I projected authority after surviving foreign invasion?',
           provenance_clues: [
             'Author: George Gower (attributed), Serjeant Painter to the Queen.',
             'Audience: English nobles and foreign ambassadors.',
@@ -1206,19 +1286,21 @@ export const unitData = {
       teacher_notes: {
         primer:
           'This enquiry analyses Elizabeth I’s pragmatic statecraft in surviving the "Tudor Rollercoaster." Students must understand the mechanics of the 1559 Religious Settlement (the Via Media), how legislative compromise defused immediate civil rebellion, and how external Catholic hostility (the 1570 Papal Bull, Mary Queen of Scots, and Spanish espionage) forged a fiercely unified Protestant national identity.',
+        source_context:
+          'Source A is The Procession Portrait of Queen Elizabeth I (c. 1601), showing Elizabeth carried aloft through London. Elizabeth used these public spectacles to cultivate popular adoration and aristocratic loyalty without massive military expenditure. Hinge Question: Why did Elizabeth choose to be carried through public streets in an open litter rather than moving surrounded by armoured soldiers inside enclosed carriages?',
         objectives: [
           {
             objective:
               'Explain why England was religiously fractured in 1558 following Mary I’s reign.',
             primer:
-              'Examine Section 2.1. Discuss the psychological impact of Foxe’s Book of Martyrs and how Mary’s 284 burnings linked Roman Catholicism in the popular mind with foreign cruelty.',
+              'Examine Section 2.1. Discuss the psychological impact of Foxe’s Book of Martyrs and how Mary’s 284 burnings linked Roman Catholicism in the popular mind with foreign cruelty. Use Source B (Mary I) to understand the Marian background.',
             question:
               'Why did Mary’s persecution of Protestants harden resistance rather than restore Catholic loyalty?',
           },
           {
             objective: 'Analyse the key compromises of the 1559 Elizabethan Religious Settlement.',
             primer:
-              'Guide students through Sections 2.2 and 2.3. Unpack the difference between "Supreme Head" and "Supreme Governor", and examine how the 1559 Prayer Book allowed ambiguous communion beliefs.',
+              'Guide students through Sections 2.2 and 2.3. Unpack the difference between "Supreme Head" and "Supreme Governor", and examine how the 1559 Prayer Book allowed ambiguous communion beliefs. Use Source A (Procession Portrait) to analyse the projection of popular royal majesty.',
             question:
               'Why was Elizabeth’s decision not to "make windows into men’s souls" a political masterstroke?',
           },
@@ -1226,7 +1308,7 @@ export const unitData = {
             objective:
               'Evaluate how foreign plots and papal excommunication transformed English Catholics into suspected traitors.',
             primer:
-              'Study Sections 2.4 and 2.5. Highlight Pope Pius V’s bull Regnans in Excelsis and how Walsingham used intercepted ciphers to justify executing Mary Queen of Scots.',
+              'Study Sections 2.4 and 2.5. Highlight Pope Pius V’s bull Regnans in Excelsis and how Walsingham used intercepted ciphers to justify executing Mary Queen of Scots. Use Source C (Armada Portrait) to assess Protestant state propaganda.',
             question:
               'Did the 1570 Papal Bull protect English Catholics or place their lives in mortal danger?',
           },
@@ -2118,21 +2200,40 @@ export const unitData = {
           act: 3,
           title: '4.3 War & The New Model Army (1642–1648)',
           text: '<span class="para-ref">[4.3]</span> The English Civil War divided the kingdom between Royalist "Cavaliers" (nobles and traditional Anglicans) and Parliamentary "Roundheads" (merchants, yeomen, and Puritans). At first, Royalist cavalry had the upper hand. The tide turned decisively with the rise of Oliver Cromwell, who created the revolutionary <strong>New Model Army</strong> in 1645. Unlike aristocratic armies where officer commissions were bought, Cromwell promoted officers strictly on military talent and religious zeal. At the Battle of Naseby in June 1645, the disciplined Parliamentary cavalry smashed the King’s army. Charles surrendered to the Scots in 1646, but while negotiating peace terms, he secretly signed a pact with Scottish factions, igniting a bloody Second Civil War in 1648 that branded him a "man of blood."',
+          source: {
+            letter: 'B',
+            title: 'Source B: Contemporary Painting, The Battle of Naseby (14 June 1645)',
+            image: '/images/covers/unit_crown_parliament_revolution.jpg',
+            caption:
+              'The Battle of Naseby (14 June 1645): Oliver Cromwell’s disciplined New Model Army cavalry smashing the Royalist forces of King Charles I, capturing the royal artillery and proving the superiority of meritocratic military command.',
+            source_context:
+              'On 14 June 1645, Cromwell’s New Model Army decisively crushed Charles I’s main field army at Naseby in Northamptonshire. Beyond destroying the King’s military power, Parliament captured Charles’s private baggage cabinet, discovering secret letters where the King sought Catholic foreign troops from Ireland and France to defeat his own subjects.',
+            how_useful_question:
+              'How useful is Source B for an enquiry into why Oliver Cromwell’s New Model Army defeated King Charles I in the English Civil War?',
+            provenance_clues: [
+              'Author: Contemporary 17th-century civil war battle artist.',
+              'Audience: The English public and Parliament celebrating the crushing victory of the Parliamentary cause.',
+              'Motive: To dramatize the tactical discipline, religious zeal, and military dominance of the New Model Army.',
+            ],
+            hinge_question:
+              'Hinge Question: Why did the discovery of Charles I’s secret letters at the Battle of Naseby convince Parliament that the King could never be trusted?',
+            citation: 'National Army Museum Collection, London.',
+          },
         },
         {
           act: 4,
           title: '4.4 The Trial & Execution of Charles I (1648–1649)',
           text: '<span class="para-ref">[4.4]</span> Furious that Charles had provoked renewed bloodshed, the New Model Army purged Parliament of moderate MPs in Pride’s Purge, leaving a radical "Rump Parliament." In January 1649, this Rump established a High Court of Justice to try King Charles I for <strong>high treason</strong> against his own people. Charles boycotted the trial, refusing to remove his hat or enter a plea, insisting that no earthly court had the legal authority to try an anointed king. Found guilty of tyranny and treason, Charles was sentenced to death. On 30 January 1649, the world watched in stunned disbelief as Charles was publicly beheaded outside the Banqueting House at Whitehall. Monarchy was abolished, and England was declared a republican Commonwealth.',
           source: {
-            letter: 'B',
-            title: 'Source B: Contemporary German Broadside of the Execution of Charles I (1649)',
+            letter: 'C',
+            title: 'Source C: Contemporary German Broadside of the Execution of Charles I (1649)',
             image: '/images/charles_i_execution.jpg',
             caption:
               'Contemporary 1649 broadside engraving depicting the public beheading of King Charles I outside the Banqueting House at Whitehall, surrounded by soldiers and a horrified crowd.',
             source_context:
               'On 30 January 1649, Charles I was publicly executed for high treason. The broadside circulated across Europe, where monarchies reacted with horror to the execution of an anointed king.',
             how_useful_question:
-              'How useful is Source B for an enquiry into the public impact and military enforcement of the 1649 regicide?',
+              'How useful is Source C for an enquiry into the public impact and military enforcement of the 1649 regicide?',
             provenance_clues: [
               'Author: Contemporary 17th-century European printmaker (German/Dutch news broadside).',
               'Audience: European public fascinated and horrified by the execution of a reigning monarch.',
@@ -2170,14 +2271,32 @@ export const unitData = {
           citation: 'National Gallery, London / Royal Collection.',
         },
         {
-          title: 'Source B: Contemporary Broadside of the Execution of Charles I (1649)',
+          title: 'Source B: Contemporary Painting, The Battle of Naseby (14 June 1645)',
+          image: '/images/covers/unit_crown_parliament_revolution.jpg',
+          caption:
+            'The Battle of Naseby (14 June 1645): Cromwell’s New Model Army cavalry breaking the Royalists, sealing Parliament’s victory.',
+          source_context:
+            'Fought on 14 June 1645, Naseby broke the Royalist army and led to the capture of Charles I’s secret letters.',
+          how_useful_question:
+            'How useful is Source B for an enquiry into why the New Model Army defeated Charles I?',
+          provenance_clues: [
+            'Author: Contemporary 17th-century civil war battle artist.',
+            'Audience: The English public and Parliament celebrating victory.',
+            'Motive: To illustrate the discipline and military superiority of the New Model Army.',
+          ],
+          hinge_question:
+            'Hinge Question: Why did the discovery of Charles I’s secret letters at Naseby make compromise impossible?',
+          citation: 'National Army Museum Collection, London.',
+        },
+        {
+          title: 'Source C: Contemporary Broadside of the Execution of Charles I (1649)',
           image: '/images/charles_i_execution.jpg',
           caption:
             'Contemporary broadside depicting the public execution of King Charles I outside Whitehall on 30 January 1649.',
           source_context:
             'Charles I was executed on 30 January 1649 following his conviction for high treason by the High Court of Justice.',
           how_useful_question:
-            'How useful is Source B for an enquiry into the public impact of the regicide?',
+            'How useful is Source C for an enquiry into the public impact of the regicide?',
           provenance_clues: [
             'Author: Contemporary European news printmaker.',
             'Audience: European public shocked by the execution of an anointed king.',
@@ -2193,20 +2312,20 @@ export const unitData = {
         primer:
           'This enquiry examines the constitutional breakdown that culminated in the trial and public execution of Charles I. Students must trace the collision between the Stuart doctrine of the Divine Right of Kings and Parliament’s control over taxation. Emphasize that the regicide in 1649 was not inevitable, but resulted from Charles’s obstinate duplicity, the radicalization of the New Model Army, and the failure of negotiated compromises.',
         source_context:
-          'Source B is a contemporary European broadside print recording the public execution of King Charles I outside the Banqueting House at Whitehall on 30 January 1649. Notice the ranks of Parliamentary soldiers encircling the high scaffold to keep the stunned London crowd at bay. Hinge Question: Why are Parliamentary cavalry shown ringing the execution scaffold?',
+          'Source B is a contemporary depiction of the Battle of Naseby (14 June 1645), where Cromwell’s New Model Army smashed the Royalists and seized the King’s private cabinet of treasonous letters. Hinge Question: Why did the discovery of Charles I’s secret letters at Naseby convince Parliament that the King could never be trusted?',
         objectives: [
           {
             objective:
               'Explain why Charles I’s Personal Rule and Ship Money provoked constitutional outrage.',
             primer:
-              'Review Section 4.1. Discuss why extending coastal Ship Money to inland counties like Buckinghamshire made MPs believe Charles was attempting to rule permanently without Parliament.',
+              'Review Section 4.1. Discuss why extending coastal Ship Money to inland counties like Buckinghamshire made MPs believe Charles was attempting to rule permanently without Parliament. Use Source A (Van Dyck) to examine royal absolutist ideology.',
             question:
               'Why did John Hampden’s refusal to pay 20 shillings in Ship Money turn into a national test case?',
           },
           {
             objective: 'Analyse how the New Model Army defeated the King and radicalized politics.',
             primer:
-              'Examine Section 4.3. Highlight how meritocratic promotion and Puritan religious conviction made Cromwell’s army a revolutionary political force rather than a passive royal militia.',
+              'Examine Section 4.3. Highlight how meritocratic promotion and Puritan religious conviction made Cromwell’s army a revolutionary political force. Use Source B (Battle of Naseby) to evaluate military factors in the Royalist defeat.',
             question:
               'Why did Charles I’s secret pact with the Scots in 1648 make the New Model Army demand his execution as a "man of blood"?',
           },
@@ -2214,7 +2333,7 @@ export const unitData = {
             objective:
               'Evaluate how the 1689 Bill of Rights permanently limited royal sovereignty.',
             primer:
-              'Study Section 4.5. Contrast the divine absolutism of Charles I with the statutory, conditional monarchy accepted by William and Mary in 1689.',
+              'Study Section 4.5. Contrast the divine absolutism of Charles I with the statutory, conditional monarchy accepted by William and Mary in 1689. Use Source C (Regicide Broadside) to reflect on the trauma of regicide.',
             question:
               'How did the Bill of Rights ensure that no future British monarch could ever rule without Parliament?',
           },
@@ -2612,24 +2731,24 @@ export const unitData = {
           title: '5.5 The 1689 Bill of Rights: Parliamentary Supremacy (1689)',
           text: '<span class="para-ref">[5.5]</span> Although the monarchy was restored in 1660, the Stuart ambition for absolute power died forever in the 1688 Glorious Revolution. When James II attempted to rule by decree and promote Catholicism, Parliament expelled him and invited William and Mary to take the throne on statutory terms. By signing the 1689 Bill of Rights, William and Mary accepted a permanent <strong>constitutional monarchy</strong>. The Crown lost its royal <strong>veto</strong> over legislation, lost the power to levy taxes without parliamentary approval, and was barred from keeping a peacetime standing army. Over 170 years of violent conflict, sovereignty had shifted irreversibly: Britain was now ruled not by the personal will of a King, but by the King-in-Parliament.',
           source: {
-            letter: 'B',
+            letter: 'C',
             title:
-              'Source B: Contemporary Painting, Prince William of Orange Landing at Brixham (1688)',
-            image: '/images/william_landing_1688.jpg',
+              'Source C: Edward Matthew Ward (RA), The Presentation of the Crown and Declaration of Rights (1689)',
+            image: '/images/william_mary_declaration_of_rights_1689.jpg',
             caption:
-              'The landing of Prince William of Orange at Torbay on 5 November 1688: leading a Dutch invasion fleet to overthrow James II in the Glorious Revolution.',
+              'The Presentation of the Crown and Declaration of Rights to William III and Mary II in the Banqueting House at Whitehall (13 February 1689) by Edward Matthew Ward. The Speaker and peers offer the royal crown only after reading the Declaration of Rights limiting royal power.',
             source_context:
-              'Invited by seven leading English nobles, William’s armed landing led to the flight of James II and the establishment of the 1689 Bill of Rights, sealing parliamentary supremacy.',
+              'On 13 February 1689, in the Banqueting House at Whitehall—the exact hall outside which Charles I was executed forty years earlier—Parliament presented the Crown to William and Mary on strict statutory terms, creating a constitutional monarchy where Parliament reigns supreme under the law.',
             how_useful_question:
-              'How useful is Source B for an enquiry into how external intervention shaped the final constitutional settlement of 1688–1689?',
+              'How useful is Source C for an enquiry into how the 1689 Glorious Revolution finalized the constitutional shift from absolute monarchy to parliamentary supremacy?',
             provenance_clues: [
-              'Author: Contemporary Dutch/English maritime painter (c. 1688).',
-              'Audience: English and European public celebrating the Protestant succession.',
-              'Motive: To portray William as a peaceful deliverer of English religion and constitutional liberty.',
+              'Author: Edward Matthew Ward (RA), prominent 19th-century British historical painter commissioned for the Palace of Westminster.',
+              'Audience: The British public, MPs, and visitors to the Houses of Parliament.',
+              'Motive: To celebrate the historic triumph of parliamentary democracy, constitutional law, and the bloodless settlement of 1689.',
             ],
             hinge_question:
-              'Hinge Question: Was the Glorious Revolution of 1688 a genuine English revolution or a foreign military invasion accepted by Parliament?',
-            citation: 'National Maritime Museum, Greenwich.',
+              'Hinge Question: Look closely at the document held in the centre and the crown on the cushion. Who is dictating terms to whom in this room?',
+            citation: 'Palace of Westminster Collection, Houses of Parliament, London.',
           },
         },
       ],
@@ -2671,13 +2790,32 @@ export const unitData = {
             'Hinge Question: Was the Glorious Revolution a popular domestic revolt or an invited foreign invasion?',
           citation: 'National Maritime Museum, Greenwich.',
         },
+        {
+          title:
+            'Source C: Edward Matthew Ward (RA), The Presentation of the Crown and Declaration of Rights (1689)',
+          image: '/images/william_mary_declaration_of_rights_1689.jpg',
+          caption:
+            'The Presentation of the Crown and Declaration of Rights (1689) by Edward Matthew Ward: Parliament presenting the Crown and Declaration of Rights to William and Mary.',
+          source_context:
+            'On 13 February 1689, Parliament presented the Crown to William and Mary in the Banqueting House on condition of accepting statutory limits on royal power.',
+          how_useful_question:
+            'How useful is Source C for an enquiry into the final constitutional balance of power between King and Parliament?',
+          provenance_clues: [
+            'Author: Edward Matthew Ward (RA), Palace of Westminster historical painter.',
+            'Audience: British Parliament and public visiting Westminster.',
+            'Motive: To celebrate the constitutional foundation of parliamentary democracy.',
+          ],
+          hinge_question:
+            'Hinge Question: Look closely at the document held in the centre and the crown on the cushion. Who is dictating terms to whom in this room?',
+          citation: 'Palace of Westminster Collection, Houses of Parliament, London.',
+        },
       ],
 
       teacher_notes: {
         primer:
           'This synoptic capstone enquiry brings together the entire 170-year arc from 1517 to 1689. Students must evaluate the changing balance of power across three distinct institutions: the Crown (monarchy), the Church (papal authority vs national church), and Parliament (from tax-granting assembly to supreme law-maker). Push pupils to weigh which turning point was most transformative: Henry VIII’s Break with Rome (1534), the Regicide of Charles I (1649), or the Bill of Rights (1689).',
         source_context:
-          'Source A is Edward Matthew Ward’s historical painting depicting the Lords and Commons presenting the Declaration of Rights alongside the Crown to William III and Mary II in the Banqueting House at Whitehall on 13 February 1689. Note that the Banqueting House was the exact same hall outside which Charles I was executed forty years earlier. Hinge Question: Look closely at the document held in the center and the crown on the cushion. Who is dictating terms to whom in this room?',
+          'Source C is Edward Matthew Ward’s historical painting depicting the Lords and Commons presenting the Declaration of Rights alongside the Crown to William III and Mary II in the Banqueting House at Whitehall on 13 February 1689. Note that the Banqueting House was the exact same hall outside which Charles I was executed forty years earlier. Hinge Question: Look closely at the document held in the center and the crown on the cushion. Who is dictating terms to whom in this room?',
         objectives: [
           {
             objective:
@@ -2690,14 +2828,14 @@ export const unitData = {
           {
             objective: 'Contrast Tudor partnership with Stuart absolutism.',
             primer:
-              'Compare Section 5.2 (Elizabeth) with Section 5.3 (Charles I). Contrast Elizabeth’s consultation of MPs with Charles’s eleven-year Personal Rule.',
+              'Compare Section 5.2 (Elizabeth) with Section 5.3 (Charles I). Contrast Elizabeth’s consultation of MPs with Charles’s eleven-year Personal Rule. Use Source A (Bill of Rights scroll) to see the statutory limits placed on absolutism.',
             question:
               'Why was Elizabeth able to maintain royal power through cooperation while Charles I lost his head?',
           },
           {
             objective: 'Synthesize the synoptic extent of change between 1517 and 1689.',
             primer:
-              'Guide students through Sections 5.4 and 5.5. Use Source A (The Presentation of the Crown and Declaration of Rights) to demonstrate how Britain became a constitutional monarchy ruled by the King-in-Parliament.',
+              'Guide students through Sections 5.4 and 5.5. Use Source C (The Presentation of the Crown and Declaration of Rights) to demonstrate how Britain became a constitutional monarchy ruled by the King-in-Parliament.',
             question:
               'By 1689, had power truly shifted to "the people" or merely to wealthy aristocratic landowners in Parliament?',
           },
