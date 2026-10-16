@@ -63930,6 +63930,7 @@
             "stages": [
               {
                 "step": 1,
+                "para_ref": "[1.1]",
                 "date": "1517–1521",
                 "title": "Luther’s Protest & Indulgence Crisis",
                 "actor": "Martin Luther & Pope Leo X",
@@ -63940,6 +63941,7 @@
               },
               {
                 "step": 2,
+                "para_ref": "[1.2]",
                 "date": "1525–1527",
                 "title": "The Dynastic Succession Crisis",
                 "actor": "Henry VIII & Catherine of Aragon",
@@ -63950,6 +63952,7 @@
               },
               {
                 "step": 3,
+                "para_ref": "[1.3]",
                 "date": "1527–1529",
                 "title": "Roman Deadlock & Papal Imprisonment",
                 "actor": "Pope Clement VII & Emperor Charles V",
@@ -63960,6 +63963,7 @@
               },
               {
                 "step": 4,
+                "para_ref": "[1.4]",
                 "date": "1529–1533",
                 "title": "Cromwell’s Parliamentary Squeeze",
                 "actor": "Thomas Cromwell & Reformation Parliament",
@@ -63970,6 +63974,7 @@
               },
               {
                 "step": 5,
+                "para_ref": "[1.5]",
                 "date": "1534",
                 "title": "The Act of Supremacy & Royal Sovereignty",
                 "actor": "King Henry VIII & Parliament",
@@ -64092,6 +64097,7 @@
               "tier": "3"
             }
           ],
+          "prologue": "In 1527, King Henry VIII faced a desperate crisis: his queen had produced no surviving male heir. When the Pope refused to annul the marriage, Henry struck back. He severed ties with Rome, seized England’s wealthy monasteries, and declared himself Supreme Head. Was this break driven by faith, or by power and dynastic survival?",
           "narrative_blocks": [
             {
               "act": 1,
@@ -64488,6 +64494,7 @@
             "stages": [
               {
                 "step": 1,
+                "para_ref": "[2.1]",
                 "date": "1558–1559",
                 "title": "A Fractured Realm: The Marian Legacy",
                 "actor": "Queen Mary I & Protestant Returnees",
@@ -64498,6 +64505,7 @@
               },
               {
                 "step": 2,
+                "para_ref": "[2.2]",
                 "date": "1559",
                 "title": "The Act of Supremacy: Supreme Governor",
                 "actor": "Elizabeth I & House of Lords",
@@ -64508,6 +64516,7 @@
               },
               {
                 "step": 3,
+                "para_ref": "[2.3]",
                 "date": "1559",
                 "title": "The Act of Uniformity & The Via Media",
                 "actor": "Elizabeth I & Sir William Cecil",
@@ -64518,6 +64527,7 @@
               },
               {
                 "step": 4,
+                "para_ref": "[2.4]",
                 "date": "1568–1570",
                 "title": "Mary Queen of Scots & Papal Excommunication",
                 "actor": "Pope Pius V & Northern Earls",
@@ -64528,6 +64538,7 @@
               },
               {
                 "step": 5,
+                "para_ref": "[2.5]",
                 "date": "1571–1588",
                 "title": "Walsingham’s Espionage & The Babington Plot",
                 "actor": "Sir Francis Walsingham & Mary Stuart",
@@ -64643,6 +64654,7 @@
               "tier": "2"
             }
           ],
+          "prologue": "Elizabeth I inherited a kingdom torn apart by her siblings' violent religious swings. Protestant reformers demanded a total purge of Catholic rituals, while Catholic nobles plotted with Spain to depose her. Walking a dangerous tightrope, Elizabeth created the 'Middle Way'—a compromise church. Could she keep the peace without opening 'windows into men's souls'?",
           "narrative_blocks": [
             {
               "act": 1,
@@ -65006,6 +65018,7 @@
             "stages": [
               {
                 "step": 1,
+                "para_ref": "[3.1]",
                 "date": "1585–1587",
                 "title": "Imperial Friction & The Beheading of Mary",
                 "actor": "King Philip II & Queen Elizabeth I",
@@ -65016,6 +65029,7 @@
               },
               {
                 "step": 2,
+                "para_ref": "[3.2]",
                 "date": "1587",
                 "title": "The Singeing of the King of Spain’s Beard",
                 "actor": "Sir Francis Drake & English Raiders",
@@ -65026,6 +65040,7 @@
               },
               {
                 "step": 3,
+                "para_ref": "[3.3]",
                 "date": "July 1588",
                 "title": "The Channel Chase & Crescent Defence",
                 "actor": "Duke of Medina Sidonia & Lord Howard",
@@ -65036,6 +65051,7 @@
               },
               {
                 "step": 4,
+                "para_ref": "[3.4]",
                 "date": "7–8 August 1588",
                 "title": "Midnight Fireships at Calais Roads",
                 "actor": "English Sea Captains & Spanish Galleons",
@@ -65046,6 +65062,7 @@
               },
               {
                 "step": 5,
+                "para_ref": "[3.5]",
                 "date": "Aug–Sept 1588",
                 "title": "The Battle of Gravelines & The Protestant Wind",
                 "actor": "Lord Howard, Drake & Atlantic Gales",
@@ -65147,6 +65164,7 @@
               "tier": "2"
             }
           ],
+          "prologue": "In July 1588, Philip II of Spain launched 130 warships into the English Channel to conquer Protestant England and depose Elizabeth I. Armed with faster galleons and long-range cannon, English captains shadowed the crescent fleet. When fireships scattered the Spanish at Calais, ferocious storms finished the invasion. Was England saved by naval genius, or sheer luck?",
           "narrative_blocks": [
             {
               "act": 1,
@@ -65497,6 +65515,7 @@
             "stages": [
               {
                 "step": 1,
+                "para_ref": "[4.1]",
                 "date": "1629–1640",
                 "title": "The Eleven Years’ Tyranny & Ship Money",
                 "actor": "King Charles I & John Hampden",
@@ -65507,6 +65526,7 @@
               },
               {
                 "step": 2,
+                "para_ref": "[4.2]",
                 "date": "1640–1642",
                 "title": "The Armed Raid on the Commons",
                 "actor": "Charles I & The Five MPs",
@@ -65517,6 +65537,7 @@
               },
               {
                 "step": 3,
+                "para_ref": "[4.3]",
                 "date": "1645–1648",
                 "title": "The New Model Army & The Battle of Naseby",
                 "actor": "Oliver Cromwell & Sir Thomas Fairfax",
@@ -65527,6 +65548,7 @@
               },
               {
                 "step": 4,
+                "para_ref": "[4.4]",
                 "date": "1648–1649",
                 "title": "Pride’s Purge & The Trial of the King",
                 "actor": "Colonel Thomas Pride & High Court of Justice",
@@ -65537,6 +65559,7 @@
               },
               {
                 "step": 5,
+                "para_ref": "[4.5]",
                 "date": "1660–1689",
                 "title": "The Glorious Revolution & The Bill of Rights",
                 "actor": "William III, Mary II & Convention Parliament",
@@ -65638,6 +65661,7 @@
               "tier": "3"
             }
           ],
+          "prologue": "King Charles I believed he ruled by Divine Right, answering only to God. When he ruled without Parliament for eleven years, bitter distrust erupted into civil war. In January 1649, an English king was put on trial for treason against his own people and beheaded outside Whitehall. Who held ultimate power: the monarch, or Parliament?",
           "narrative_blocks": [
             {
               "act": 1,
@@ -65988,6 +66012,7 @@
             "stages": [
               {
                 "step": 1,
+                "para_ref": "[5.1]",
                 "date": "1517–1534",
                 "title": "Henry VIII & The Birth of King-in-Parliament",
                 "actor": "Henry VIII & The Reformation Parliament",
@@ -65998,6 +66023,7 @@
               },
               {
                 "step": 2,
+                "para_ref": "[5.2]",
                 "date": "1559–1588",
                 "title": "Elizabethan Compromise & Patriotic Solidarity",
                 "actor": "Elizabeth I & Elizabethan Parliaments",
@@ -66008,6 +66034,7 @@
               },
               {
                 "step": 3,
+                "para_ref": "[5.3]",
                 "date": "1603–1640",
                 "title": "Stuart Absolutism & The Divine Right Collision",
                 "actor": "James I, Charles I & Dissident MPs",
@@ -66018,6 +66045,7 @@
               },
               {
                 "step": 4,
+                "para_ref": "[5.4]",
                 "date": "1642–1649",
                 "title": "Civil War Cataclysm & Judicial Regicide",
                 "actor": "New Model Army & The Rump Parliament",
@@ -66028,6 +66056,7 @@
               },
               {
                 "step": 5,
+                "para_ref": "[5.5]",
                 "date": "1660–1689",
                 "title": "The Bill of Rights & Parliamentary Supremacy",
                 "actor": "William & Mary & The English Parliament",
@@ -66122,6 +66151,7 @@
               "tier": "2"
             }
           ],
+          "prologue": "Over two turbulent centuries, England was transformed by religious reformation, naval war, bloody regicide, and political revolution. Through every clash, one fundamental question tested the kingdom: where does supreme authority truly lie? In 1689, the Bill of Rights stripped monarchs of absolute power forever. Which turning point between 1517 and 1689 mattered most?",
           "narrative_blocks": [
             {
               "act": 1,
