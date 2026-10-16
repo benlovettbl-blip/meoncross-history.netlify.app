@@ -3873,27 +3873,43 @@ export const unitData = {
         objectives: [
           {
             objective:
-              'Explain how Gutenberg’s printing press transformed the communication of medical ideas across Europe.',
+              'Explain how Gutenberg’s movable-type printing press dismantled the Church’s scribal monopoly over medical literature.',
             primer:
-              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that hand-copying in monastic scriptoria was slow, expensive, and subject to Church censorship and distortion. Movable type made books mass-producible, cheaper, and identical.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that hand-copying in monastic scriptoria was slow, expensive, and subject to Church censorship, whereas movable metal type made anatomical texts mass-producible, cheaper, and identically accurate across Europe.',
             question:
               'Why did the Catholic Church find Gutenberg’s printing press such a profound threat to traditional Galenic medical authority?',
           },
           {
             objective:
-              'Assess how the Royal Society and its journal Philosophical Transactions established the empirical scientific method.',
+              'Analyse how Renaissance humanism inspired scholars to bypass medieval mistranslations and re-examine original Greek medical texts.',
             primer:
-              'Direct students to paragraphs [3.1] and [4.1]. Focus on Charles II’s 1662 Royal Charter, the motto Nullius in Verba, and the creation of Europe’s first peer-reviewed scientific journal in 1665.',
+              'Direct students to paragraphs [2.1]–[2.2]. Guide students to explain how humanist scholars sought original Greek manuscripts of Galen and Hippocrates, discovering that medieval Arab-Latin translations had introduced centuries of copyist errors and Church dogmatism.',
             question:
-              'How did the motto "Nullius in Verba" directly challenge the 1,400-year dominance of Galen’s writings?',
+              'How did Renaissance humanist scholars use the rediscovery of original Greek manuscripts to challenge medieval Church dogma?',
           },
           {
             objective:
-              'Analyze the Renaissance Paradox: why revolutionary scientific communication failed to improve everyday treatments.',
+              'Evaluate how Charles II’s 1662 Royal Charter and the motto "Nullius in Verba" established empirical experimentation over classical authority.',
             primer:
-              'Direct students to paragraphs [5.1]–[5.2]. Contrast Hooke’s Micrographia (1665) and Leeuwenhoek’s "animalcules" (1676) with the fact that neither understood microbes caused illness, leaving bloodletting and miasma untouched.',
+              'Direct students to paragraphs [3.1]–[3.2]. Focus on the Royal Society meeting at Gresham College, royal patronage under Charles II, and the defining motto "Nullius in Verba" (Take nobody’s word for it).',
             question:
-              'Why did Antonie van Leeuwenhoek’s discovery of microscopic bacteria fail to save a single life in the 17th century?',
+              'How did the motto "Nullius in Verba" directly challenge the 1,400-year dominance of Galen’s anatomical writings?',
+          },
+          {
+            objective:
+              'Assess how Henry Oldenburg’s Philosophical Transactions established the world’s first international peer-reviewed scientific network.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source B. Detail the 1665 launch of Philosophical Transactions, where experiments had to be witnessed, replicated, and peer-reviewed before publication, replacing secret alchemical formulas with open scientific debate.',
+            question:
+              'Why was international peer review essential for establishing the credibility of new empirical discoveries over ancient classical authority?',
+          },
+          {
+            objective:
+              'Analyze the Renaissance Paradox: why revolutionary microscopes and animalcules failed to transform ordinary medical treatments.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2] and Source C. Contrast Robert Hooke’s Micrographia and Leeuwenhoek’s discovery of "animalcules" with the persistent reliance on bloodletting, purging, and miasma, proving that scientific observation outpaced clinical therapy.',
+            question:
+              'Why did Antonie van Leeuwenhoek’s discovery of microscopic bacteria fail to save a single human life in the seventeenth century?',
           },
         ],
         source_context: {
@@ -15479,51 +15495,6 @@ export const unitData = {
     },
     {
       id: 'lesson_5_1',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to analyse the strategic geography and battle context of the Western Front:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'STRATEGY',
-            title: '1. Strategic Geography: The Ypres Salient & Channel Ports',
-            prompt:
-              'Explain the strategic importance of the Ypres Salient and why the British Army fought desperately to defend it:',
-            model_notes: [
-              'Defended vital English Channel supply ports (Calais, Boulogne, Dunkirk), keeping British reinforcement and hospital supply lines open.',
-              'The Salient projected dangerously into German lines; German forces held the surrounding high ground (Passchendaele, Messines Ridge) with clear artillery visibility.',
-              'The waterlogged Flanders clay soil and broken drainage canals created persistent, deep liquid mud that drowned men, horses, and equipment.',
-            ],
-            key_terms: ['Ypres Salient', 'Channel Ports Defence'],
-          },
-          {
-            num: 2,
-            badge: 'MAJOR BATTLES',
-            title: '2. Key Medical Challenges: Ypres, The Somme, Arras & Cambrai',
-            prompt:
-              'Compare the medical catastrophes at the Somme (July 1916: 57,000 casualties day 1), Arras (quarries), and Cambrai (tanks):',
-            model_notes: [
-              '1st July 1916 (Somme): 57,000 casualties on day one completely overwhelmed frontline Regimental Aid Posts and evacuation routes.',
-              "Arras (1917): British engineers excavated chalk quarries into an underground hospital city (Thompson's Cave) holding 700 hospital beds safely under shellfire.",
-              'Cambrai (1917): First mass tank breakthrough and first clinical test of stored refrigerated blood transfusions by Oswald Robertson.',
-            ],
-            key_terms: ['Battle of the Somme (1916)', 'Thompson’s Cave Arras'],
-          },
-          {
-            num: 3,
-            badge: 'TRENCH LAYOUT',
-            title: '3. Trench System Layout & Evacuation Obstacles',
-            prompt:
-              'Describe the physical layout of the trench system and why its design hindered stretcher-bearer evacuation:',
-            model_notes: [
-              'Built in parallel rows: Frontline fire trench, Support trench (80 yards back), and Reserve trench (several hundred yards back).',
-              'Connected by zig-zag communication trenches designed to prevent shrapnel and gunfire blasting straight down the line.',
-              'Zig-zag right angles made carrying rigid 6-foot stretchers round narrow, muddy corners excruciatingly slow, painful, and exhausting.',
-            ],
-            key_terms: ['Frontline and Support Trenches', 'Communication Trenches'],
-          },
-        ],
-      },
       title:
         'KT5.1: The Theatre of War: The British Sector, Trench Geography & Battles (1914–1918)',
       enquiry_question:
@@ -15536,27 +15507,55 @@ export const unitData = {
         'In autumn 1914, the mobile war of movement ground to a shuddering halt in the mud of northern France and Flanders. Confronted by lethal rapid-firing artillery and Vickers machine guns, British and German armies dug thousands of miles of opposing earthworks stretching from the Swiss border to the North Sea. The British sector—defending key Channel ports and the precarious Ypres Salient—forced military doctors to operate inside waterlogged, shell-smashed ditches where every geological feature dictated life, death, and casualty evacuation.',
       teacher_notes: {
         primer:
-          'Establish the physical, tactical, and geological environment of the British sector on the Western Front. Students must understand why static trench warfare developed in autumn 1914, how the four-tier trench system functioned (frontline, support, reserve, communication), and how the specific terrain of the Ypres Salient, the Somme, Arras, and Cambrai created distinct medical and tactical crises.',
+          'This enquiry explores the environmental, geological, and architectural realities of the British sector of the Western Front in Flanders and northern France between 1914 and 1918, examining how low-lying clay, shallow water tables, zig-zag trench engineering, subterranean chalk caverns at Arras, and mass-casualty offensives at the Somme and Cambrai dictated medical evacuation and care.',
         objectives: [
           {
             objective:
-              'Explain why armies constructed trench systems and describe the structural layout of the British sector.',
+              'Explain how the low-lying topography and clay geology of the Ypres Salient created an acute medical and logistical crisis.',
             primer:
-              'Direct students to paragraphs [1.1] and [2.1]. Emphasize the defensive power of machine guns and high-explosive artillery that forced soldiers underground. Highlight the zig-zag traverse pattern of trenches designed to localize shell blasts and prevent enfilade machine-gun fire.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that the Ypres Salient was a vulnerable bulge overlooked by German artillery on Messines Ridge, where dense clay and high water tables prevented deep trench construction and caused liquid mud that threatened wounded men with drowning.',
+            question:
+              'Why was the low-lying topography of Ypres a tactical and medical nightmare for the British Expeditionary Force?',
           },
           {
             objective:
-              'Analyze the strategic vulnerability of the Ypres Salient and the medical challenges of fighting in Flanders clay.',
+              'Analyse how the architectural design of zig-zag traverses limited shrapnel injuries and localized shell explosions.',
             primer:
-              'Guide students through paragraph [2.2] and Source A and Source B. Contrast the low-lying, clay-rich water table of the Ypres Salient—surrounded on three sides by German artillery on higher ridges—with the chalk tunnels of Arras. Focus on why duckboards and drainage pumps repeatedly failed under bombardment.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Aerial Reconnaissance Photograph). Guide them to identify the saw-tooth geometry designed to contain high-explosive blasts and prevent enfilade rifle fire along the firebays.',
+            question:
+              'How did the saw-tooth zig-zag design of trenches prevent artillery blasts and enfilade machine-gun fire from clearing entire sections of trench?',
           },
           {
             objective:
-              'Assess the medical impact of major British offensives at the Somme (1916), Arras (1917), and Cambrai (1917).',
+              'Examine why communication trenches created severe bottlenecks for stretcher bearers and casualty evacuation.',
             primer:
-              'Direct students to paragraphs [3.1]–[3.2] and [4.1]. Examine the catastrophic casualty crisis of 1 July 1916 (57,000 casualties) which exposed severe transport bottlenecks, contrasted with the subterranean medical fortress built inside the chalk quarries at Arras (Thompson’s Cave).',
+              'Direct students to paragraphs [3.1]–[3.2] and Source B (Flooded Communication Trench). Highlight the four-tier trench system and how narrow, waterlogged ditches jammed with incoming troops made stretcher transport agonizingly slow.',
+            question:
+              'Why did narrow, flooded communication trenches make the rapid evacuation of wounded casualties so difficult and dangerous?',
+          },
+          {
+            objective:
+              'Evaluate the strategic and medical significance of the subterranean chalk caverns and Thompson’s Cave hospital at Arras.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Contrast the dry, permeable chalk geology of Arras with the waterlogged clay of Flanders, detailing how miners constructed a 700-bed underground hospital with electricity and running water.',
+            question:
+              'How did the dry chalk geology at Arras allow the RAMC to construct safe, sterile surgical operating conditions underground?',
+          },
+          {
+            objective:
+              'Assess how mass-casualty battles at the Somme and Cambrai forced the RAMC to revolutionize trauma evacuation logistics.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Contrast the catastrophic collapse of evacuation on 1 July 1916 (57,470 casualties on day one) with the mechanized innovations, advance surgical units, and forward blood depots deployed at Cambrai in 1917.',
+            question:
+              'Why did the overwhelming volume of casualties at the Somme force the British military to transform its medical evacuation system?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Source A: Aerial Reconnaissance Photograph of British Trench System near Ypres (1917). Official military aerial photograph taken by the Royal Flying Corps over the British sector near Ypres in 1917, showing the intricate saw-tooth zig-zag traverses of frontline, support, and communication trenches criss-crossed with artillery shell craters. Hinge Question: How does the saw-tooth zig-zag design of the trenches shown in Source A explain why artillery shrapnel and enfilade fire were prevented from wiping out an entire platoon in a single blast?',
+          'Source B':
+            'Source B: Photograph of a Flooded Communication Trench in the Ypres Salient (1917). Official British Army photograph taken by Lieutenant Ernest Brooks in Flanders during the Third Battle of Ypres (Passchendaele) in 1917, showing British infantrymen wading through waist-deep liquid mud over submerged duckboards. Hinge Question: Why did the deep mud and flooded conditions shown in Source B make stretcher evacuation through communication trenches a life-threatening obstacle for wounded soldiers?',
+        },
       },
       learning_objectives: [
         'Explain the defensive layout of the trench system and why static warfare developed in autumn 1914.',
@@ -15608,13 +15607,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Context & Catalyst (The Race to the Sea & Static Warfare)',
-          text: '<span class="para-ref">[1.1]</span> In August 1914, the British Expeditionary Force (BEF) deployed to France expecting a war of rapid movement, sweeping cavalry maneuvers, and decisive open-field engagements. However, the lethal reality of industrialized firepower immediately shattered these nineteenth-century tactical assumptions. Modern breech-loading artillery firing high-explosive shells, combined with rapid-firing Vickers machine guns capable of discharging 500 rounds per minute, rendered open infantry advances suicidal. Following the Battle of the Marne and the subsequent "Race to the Sea," both armies attempted to outflank each other northwards until they collided with the Belgian coast.<br><br><span class="para-ref">[1.2]</span> By November 1914, with neither side able to break through, soldiers dug into the earth to escape the devastating hail of artillery shrapnel and rifle fire. What began as shallow, temporary scrape ditches evolved into an intricate, continuous defensive earthwork extending over 400 miles from the English Channel to the Swiss frontier. For the British Army, the Western Front was concentrated in northern France and Belgium, tasked with defending the critical Channel ports of Boulogne, Calais, and Dunkirk—the vital logistical lifeline through which food, ammunition, fresh reinforcements, and medical supplies flowed from Britain.',
+          title: 'Act 1: Flanders Terrain & The Ypres Salient (1914–1915)',
+          theme_heading: 'Act 1: Flanders Terrain & The Ypres Salient (1914–1915)',
+          text: '<span class="para-ref">[1.1]</span> In August 1914, the British Expeditionary Force (BEF) deployed to France expecting a war of rapid movement, sweeping cavalry maneuvers, and decisive open-field engagements. However, the lethal reality of modern industrialized firepower immediately shattered these nineteenth-century tactical assumptions. Heavy breech-loading artillery firing high-explosive shells, combined with rapid-firing Vickers machine guns capable of discharging 500 rounds per minute, rendered open infantry advances suicidal. Following the Battle of the Marne and the "Race to the Sea," both armies attempted to outflank each other northwards until they collided with the Belgian coast, establishing a static front line defending the vital Channel ports of Boulogne, Calais, and Dunkirk—the logistical lifeline through which fresh troops, ammunition, food, and medical supplies flowed from Britain.<br><br><span class="para-ref">[1.2]</span> The most contested and deadly sector held by British forces was the <strong>Ypres Salient</strong> in West Flanders. A "salient" is an outward military bulge into enemy territory, surrounded on three sides. At Ypres, the German army held the higher surrounding crescent of ridges (including Messines and Passchendaele), giving them commanding artillery observation over every British movement in the low-lying basin below. Geologically, Flanders consisted of dense, impermeable clay with a water table just two to three feet beneath the surface. When relentless artillery bombardments pulverized the ancient agricultural drainage dykes, the ground liquefied into an ocean of putrid mud. British frontline trenches could rarely be dug more than two feet deep; instead, soldiers were forced to pile sandbags into raised breastworks above ground level, exposed to constant artillery fire and the threat of drowning in liquid mud.',
         },
         {
           act: 2,
-          title: 'Act 2: Escalation & Conflict (Trench Architecture & The Flanders Salient)',
-          text: '<span class="para-ref">[2.1]</span> The British trench system was not a single ditch, but an elaborate four-tier network arranged in depth. The <em>frontline trench</em>, situated within 50 to 200 yards of the German lines, was where troops mounted guard on the raised firestep. Behind it lay the <em>support trench</em> (roughly 80 yards back) and the <em>reserve trench</em> (several hundred yards further behind), housing counter-attack battalions. Connecting these parallel tiers were deep, zig-zagging <em>communication trenches</em> through which stretcher bearers, food carriers, and relief troops moved under cover. To prevent enemy machine gunners from firing along the entire trench if they breached the parapet, trenches were deliberately dug with sharp right-angled bends called <em>traverses</em>. Aerial reconnaissance photographs (<span class="archival-meta-tag">Source A</span>) reveal this unmistakable saw-tooth geometry, designed to localize high-explosive shell bursts to a single firebay.<br><br><span class="para-ref">[2.2]</span> The most contested and deadly sector held by British forces was the <strong>Ypres Salient</strong> in West Flanders. A "salient" is an outward military bulge into enemy territory, surrounded on three sides. At Ypres, the German army held the higher, surrounding crescent of ridges (such as Passchendaele and Messines), giving them commanding artillery observation over every British movement in the low-lying basin below. Geologically, Flanders consisted of thick clay with a water table just two to three feet below the surface. When prolonged shelling pulverized the natural land drainage ditches, the ground liquefied into an ocean of putrid mud. British frontline trenches could rarely be dug more than two feet deep; instead, soldiers constructed sandbagged breastworks above ground level.',
+          title: 'Act 2: Trench Architecture & Zig-Zag Traverses (1914–1918)',
+          theme_heading: 'Act 2: Trench Architecture & Zig-Zag Traverses (1914–1918)',
           source: {
             id: 'source_a_aerial_trench_ypres',
             letter: 'A',
@@ -15625,23 +15625,26 @@ export const unitData = {
             image: '/images/aerial_trench_ypres.jpg',
             caption:
               'Royal Flying Corps aerial photograph showing the intricate zig-zag traverses of frontline, support, and communication trenches near Ypres, criss-crossed with artillery shell craters.',
-            desc: 'Aerial reconnaissance photograph capturing the geometric layout of British trenches and cratered terrain.',
+            desc: 'Official military aerial reconnaissance photograph of British trench network near Ypres.',
             provenance:
               'Official military aerial photograph taken by the Royal Flying Corps, British Sector near Ypres, 1917. Imperial War Museum Collection.',
             citation:
-              'Royal Flying Corps Aerial Reconnaissance, British Sector near Ypres, 1917 (Imperial War Museum Q 42231).',
-            source_context:
-              'An authentic aerial reconnaissance photograph taken by the Royal Flying Corps in 1917 showing the complex defensive network of British frontline, support, and communication trenches in the Ypres sector, displaying the characteristic zig-zag traverse design and dense shell cratering.',
-            context:
-              'An authentic aerial reconnaissance photograph taken by the Royal Flying Corps in 1917 showing the complex defensive network of British frontline, support, and communication trenches in the Ypres sector, displaying the characteristic zig-zag traverse design and dense shell cratering.',
+              'Royal Flying Corps Photographic Section, Western Front near Ypres, 1917 (IWM Collection).',
+            question:
+              'How does the saw-tooth zig-zag design of the trenches shown in Source A explain why artillery shrapnel and enfilade fire were prevented from wiping out an entire platoon in a single blast?',
             hinge_question:
-              'Study Source A. How does the zig-zag design of the trenches shown in the photograph explain how British defensive engineers sought to protect soldiers from artillery shrapnel and machine-gun fire?',
+              'How does the saw-tooth zig-zag design of the trenches shown in Source A explain why artillery shrapnel and enfilade fire were prevented from wiping out an entire platoon in a single blast?',
+            source_context:
+              'Official military aerial photograph taken by the Royal Flying Corps over the British sector near Ypres in 1917, showing the intricate saw-tooth zig-zag traverses of frontline, support, and communication trenches criss-crossed with artillery shell craters. Hinge Question: How does the saw-tooth zig-zag design of the trenches shown in Source A explain why artillery shrapnel and enfilade fire were prevented from wiping out an entire platoon in a single blast?',
+            context:
+              'Official military aerial photograph taken by the Royal Flying Corps over the British sector near Ypres in 1917, showing the intricate saw-tooth zig-zag traverses of frontline, support, and communication trenches criss-crossed with artillery shell craters.',
           },
+          text: '<span class="para-ref">[2.1]</span> By late 1914, soldiers dug into the earth to escape the devastating hail of high-explosive artillery shrapnel and machine-gun fire. What began as shallow rifle pits evolved into an elaborate defensive earthwork system extending over 400 miles from the English Channel to the Swiss border. Frontline trenches were engineered with precise structural features: a raised <em>firestep</em> allowed sentries to look over the parapet into No Man’s Land; thick revetments of wood, corrugated iron, and wire netting prevented trench walls from collapsing; and wooden <em>duckboards</em> were laid along trench floors to keep soldiers’ boots out of stagnant, contaminated water.<br><br><span class="para-ref">[2.2]</span> Crucially, British trenches were never dug in long, straight lines. To prevent an enemy attacker or enfilade machine gun from sweeping down the entire length of a trench, engineers designed frontline trenches with sharp, alternating right-angled bends called <strong>traverses</strong>. Aerial reconnaissance photographs (<span class="archival-meta-tag">Source A</span>) clearly reveal this distinctive saw-tooth geometry. Traverses divided the trench into short, isolated ten-yard compartments known as firebays. When an incoming high-explosive artillery shell detonated, the sharp earthen blast walls absorbed the supersonic concussion and contained hot flying metal fragments within that single bay, preventing shrapnel from slaughtering men in adjoining bays.',
         },
         {
           act: 3,
-          title: 'Act 3: Forensic Evidence (Battleground Sectors: Somme, Arras & Cambrai)',
-          text: '<span class="para-ref">[3.1]</span> Between 1915 and 1917, British commanders launched major offensives across distinct geographical sectors, each confronting the Royal Army Medical Corps (RAMC) with unprecedented trauma. In the Ypres Salient, incessant rain and artillery bombardment transformed communication trenches into impassable, waist-deep canals (<span class="archival-meta-tag">Source B</span>). Stretcher bearers took six to ten hours to haul a single wounded soldier through a few miles of liquefied mud, with many drowning in liquid-filled shell craters before reaching an aid post. At Hill 60, a man-made hillock near Ypres, British tunnelling companies burrowed deep into the sand and clay to detonate massive underground mines in April 1915, blasting craters that became immediate focal points of intense hand-to-hand combat and shattered limb wounds.<br><br><span class="para-ref">[3.2]</span> South in the Somme sector, chalky downland provided drier ground but no relief from industrial slaughter. On 1 July 1916—the catastrophic first day of the Battle of the Somme—the British Army suffered 57,470 casualties, including 19,240 dead. The sheer volume of wounded men completely swamped the chain of evacuation: motor ambulances broke down, dressing stations ran out of morphine and bandages, and casualties lay unattended on open stretchers for days. Conversely, at <strong>Arras</strong> in northern France, the British exploited ancient subterranean Roman and medieval chalk quarries. In 1916–17, New Zealand and British tunnelling companies linked these caverns into a vast underground city capable of sheltering 25,000 men. This subterranean fortress included electric lighting, running water, and an immense 700-bed underground hospital known as <em>Thompson’s Cave</em>, allowing surgeons to operate free from the terror of surface artillery bombardment.',
+          title: 'Act 3: Trench System & Evacuation Bottlenecks (1915–1918)',
+          theme_heading: 'Act 3: Trench System & Evacuation Bottlenecks (1915–1918)',
           source: {
             id: 'source_b_flooded_trench',
             letter: 'B',
@@ -15652,23 +15655,33 @@ export const unitData = {
             image: '/images/gw_flooded_trench.jpg',
             caption:
               'British soldiers navigating a communication trench submerged in muddy water during the Third Battle of Ypres (Passchendaele), showing duckboards floating and collapsed trench revetments.',
-            desc: 'Primary wartime photograph of British infantry navigating waist-deep water in a communication trench.',
+            desc: 'Official British Army photograph of soldiers wading through a flooded communication trench in Flanders.',
             provenance:
               'Official British Army photograph taken by Lieutenant Ernest Brooks, Western Front, Flanders, 1917. Imperial War Museum Collection (Shelfmark: Q 5935).',
             citation:
-              'Lieut. Ernest Brooks, Official British War Office Photograph, Flanders, 1917 (Imperial War Museum Q 5935).',
-            source_context:
-              'Official photograph taken by British war photographer Ernest Brooks in 1917 during the Third Battle of Ypres, documenting the extreme waterlogging of communication trenches caused by heavy autumn rainfall and the destruction of Flanders clay drainage systems by artillery fire.',
-            context:
-              'Official photograph taken by British war photographer Ernest Brooks in 1917 during the Third Battle of Ypres, documenting the extreme waterlogging of communication trenches caused by heavy autumn rainfall and the destruction of Flanders clay drainage systems by artillery fire.',
+              'Lt. Ernest Brooks, Official British War Office Photograph, Flanders, 1917 (IWM Q 5935).',
+            question:
+              'Why did the deep mud and flooded conditions shown in Source B make stretcher evacuation through communication trenches a life-threatening obstacle for wounded soldiers?',
             hinge_question:
-              'How does the physical state of the trench in Source B illustrate why carrying wounded soldiers by stretcher to dressing stations frequently took up to ten hours?',
+              'Why did the deep mud and flooded conditions shown in Source B make stretcher evacuation through communication trenches a life-threatening obstacle for wounded soldiers?',
+            source_context:
+              'Official British Army photograph taken by Lieutenant Ernest Brooks in Flanders during the Third Battle of Ypres (Passchendaele) in 1917, showing British infantrymen wading through waist-deep liquid mud over submerged duckboards. Hinge Question: Why did the deep mud and flooded conditions shown in Source B make stretcher evacuation through communication trenches a life-threatening obstacle for wounded soldiers?',
+            context:
+              'Official British Army photograph taken by Lieutenant Ernest Brooks in Flanders during the Third Battle of Ypres (Passchendaele) in 1917, showing British infantrymen wading through waist-deep liquid mud over submerged duckboards.',
           },
+          text: '<span class="para-ref">[3.1]</span> The British defensive line was arranged in four parallel tiers of depth. Nearest the enemy lay the <em>frontline trench</em> (50 to 200 yards from German lines), backed approximately 80 yards behind by the <em>support trench</em>, which housed reserve troops ready to reinforce the firestep during an assault. Several hundred yards further back lay the <em>reserve trench</em>, containing counter-attack battalions, supply depots, and battalion headquarters. Connecting these parallel tiers from front to rear were deep, winding <strong>communication trenches</strong>, through which relief troops, ammunition, hot rations, and medical supplies were transported under cover.<br><br><span class="para-ref">[3.2]</span> While communication trenches provided protection from direct rifle fire, they created acute logistical and medical bottlenecks. Communication trenches were exceedingly narrow—often barely wide enough for a single soldier carrying full kit. In rainy weather, drainage failed, submerging trenches in waist-deep liquid mud and turning duckboards into floating rafts (<span class="archival-meta-tag">Source B</span>). For Royal Army Medical Corps (RAMC) stretcher bearers, maneuvering rigid six-foot wooden stretchers around dozens of sharp right-angled traverses while squeezing past oncoming reinforcements was agonizingly slow. Evacuating a single haemorrhaging casualty often took six to eight exhausting hours, turning treatable flesh wounds into lethal cases of hypothermic shock and sepsis before the patient could reach a doctor.',
         },
         {
           act: 4,
-          title: 'Act 4: The Historical Verdict & Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> At the Battle of Cambrai in November 1917, the British deployed massed tank assaults across rolling, unbroken agricultural chalkland, demonstrating how terrain dictated tactical breakthroughs. Historiographers debate whether the horrific casualties of the Western Front were the inevitable consequence of industrial technology outstripping communications, or the result of rigid command doctrine. Early revisionist historians termed British generals "donkeys leading lions," emphasizing callous incompetence in ordering infantry against intact barbed wire in waterlogged terrain. Conversely, modern military and medical historians, such as Gary Sheffield and Mark Harrison, demonstrate that the British Army underwent a colossal, rapid learning curve. Operating on the Western Front required solving logistical, sanitary, and surgical challenges never before witnessed in human history.<br><br><span class="para-ref">[4.2]</span> Ultimately, the British sector was defined by its geological constraints. In the flooded clay of the Ypres Salient, medical evacuation was an excruciating battle against physical exhaustion and drowning; in the chalk caverns of Arras, medical teams created sophisticated subterranean operating wards; and at the Somme, the staggering volume of battlefield casualties forced the RAMC to transform from a rudimentary transport corps into a mechanized, triage-driven medical machine. The physical terrain of northern France and Flanders was not merely the background to the war—it was the active crucible that forged modern trauma medicine.',
+          title: 'Act 4: Thompson’s Cave & The Arras Underground Hospital (Nov 1916–1917)',
+          theme_heading: 'Act 4: Thompson’s Cave & The Arras Underground Hospital (Nov 1916–1917)',
+          text: '<span class="para-ref">[4.1]</span> In striking contrast to the waterlogged clay of Flanders, the terrain around the historic city of <strong>Arras</strong> in northern France was underlain by dry, permeable chalk. Centred on ancient Roman and medieval chalk quarries (known locally as <em>boves</em>), the British military discovered an extraordinary geological opportunity. In late 1916, ahead of the planned spring 1917 offensive, the British and New Zealand Tunnelling Corps were deployed to link these cavernous chalk quarries with miles of newly excavated subterranean tunnels, creating a hidden underground city capable of sheltering 25,000 soldiers within striking distance of the German lines.<br><br><span class="para-ref">[4.2]</span> Within this subterranean labyrinth, the RAMC constructed an immense, fully equipped underground medical complex known as <strong>Thompson’s Cave</strong>. Connected directly to the front line by covered chalk saps, this underground dressing station and hospital housed 700 hospital beds, operating theatres, rest stations, a mortuary, and a kitchen. Fitted with electric lighting, piped running water, and ventilation shafts, Thompson’s Cave operated entirely immune to surface artillery bombardment. Surgeons performed emergency debridement and stabilized severe casualties in dry, warm, and sterile conditions—an unprecedented achievement that demonstrated how the British Army exploited local geology to protect medical care.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Mass Trauma: The Somme & Cambrai (1916–1917)',
+          theme_heading: 'Act 5: Mass Trauma: The Somme & Cambrai (1916–1917)',
+          text: '<span class="para-ref">[5.1]</span> The scale of medical trauma on the Western Front was defined by massive, set-piece battles. On 1 July 1916—the catastrophic opening day of the <strong>Battle of the Somme</strong>—the British Army suffered 57,470 casualties, including 19,240 killed, as infantry advanced across rolling chalk downland against uncut barbed wire and fortified German machine-gun nests. The sheer tidal wave of wounded men completely overwhelmed the existing evacuation chain: frontline aid posts ran out of morphine and bandages, motor ambulances broke down on rutted roads, and thousands of casualties lay on open stretchers in clearing station fields for days awaiting emergency surgery.<br><br><span class="para-ref">[5.2]</span> The crisis of the Somme forced the British High Command and the RAMC to revolutionize their operational methods. By November 1917 at the <strong>Battle of Cambrai</strong>, where 450 British tanks broke through the Hindenburg Line on unbroken chalk ground, the medical service had evolved into a sophisticated, mechanized trauma pipeline. The RAMC deployed advance surgical teams closer to the front line, expanded fleets of motorized field ambulances, coordinated dedicated hospital trains, and established forward blood depot banks. From the flooded quagmires of Ypres to the chalk fortresses of Arras and the carnage of the Somme, the geography of the Western Front was the relentless crucible that forged modern emergency trauma medicine.',
         },
       ],
       sources: [
@@ -15978,7 +15991,7 @@ export const unitData = {
         {
           step: 2,
           date: '1914–1918',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
           heading:
             'How did zig-zag traverses limit shrapnel injuries and contain shell explosions?',
           bullets: [
@@ -15992,7 +16005,7 @@ export const unitData = {
         {
           step: 3,
           date: '1915–1918',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'Why did narrow communication trenches create acute bottlenecks for stretchers?',
           bullets: [
             "Guarding firing steps facing No Man's Land",
@@ -16005,7 +16018,7 @@ export const unitData = {
         {
           step: 4,
           date: 'Nov 1916–1917',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'How did the chalk geology at Arras allow safe, sterile surgical conditions?',
           bullets: [
             'Carving hospital wards deep into dry white chalk',
@@ -16017,7 +16030,7 @@ export const unitData = {
         {
           step: 5,
           date: '1916–1917',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why did mass-casualty offensives force the RAMC to reorganize evacuation?',
           bullets: [
             'Fifty-seven thousand men falling on first morning',
@@ -16048,7 +16061,7 @@ export const unitData = {
           {
             step: 2,
             date: '1914–1918',
-            para_ref: '[2.1]',
+            para_ref: '[2.1–2.2]',
             title: 'Trench Architecture & Traverses',
             actor: 'Frontline Infantrymen & Sappers',
             tag: '📐 ZIG-ZAG TRAVERSES',
@@ -16063,7 +16076,7 @@ export const unitData = {
           {
             step: 3,
             date: '1915–1918',
-            para_ref: '[2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Trench System: Front to Rear',
             actor: 'RAMC Stretcher Bearers & Battalion Runners',
             tag: '🚧 COMMUNICATION BOTTLENECKS',
@@ -16078,7 +16091,7 @@ export const unitData = {
           {
             step: 4,
             date: 'Nov 1916–1917',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Thompson’s Cave & Arras Tunnels',
             actor: 'New Zealand Tunnelling Corps & RAMC',
             tag: '⛏️ ARRAS UNDERGROUND HOSPITAL',
@@ -16092,7 +16105,7 @@ export const unitData = {
           {
             step: 5,
             date: '1916–1917',
-            para_ref: '[3.2, 4.1]',
+            para_ref: '[5.1–5.2]',
             title: 'Mass Trauma: Somme & Cambrai',
             actor: 'RAMC Directors & Field Ambulances',
             tag: '💥 MASS CASUALTY ATTRITION',
@@ -16116,75 +16129,30 @@ export const unitData = {
           date: '1914–1918',
           title: 'Trench Architecture & Traverses',
           desc: 'Engineers designed frontline trenches with sharp, alternating 90-degree zig-zag traverses rather than straight continuous firebays.',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
         },
         {
           date: '1915–1918',
           title: 'Trench System: Front to Rear',
           desc: 'The Western Front system comprised frontline firing trenches, support lines 80 yards back, reserve lines, and narrow zig-zag communication trenches connecting to the rear.',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: 'Nov 1916–1917',
           title: 'Thompson’s Cave & Arras Tunnels',
           desc: 'In late 1916, New Zealand and British miners connected ancient Roman chalk quarries beneath Arras, constructing Thompson’s Cave—a massive underground medical complex.',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
         },
         {
           date: '1916–1917',
           title: 'Mass Trauma: Somme & Cambrai',
           desc: 'Massive set-piece offensives like the Somme (57,000 British casualties on 1 July 1916) and Cambrai (November 1917) overwhelmed existing medical clearing lines.',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
         },
       ],
     },
     {
       id: 'lesson_5_2',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to examine the medical challenges of the trench environment:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'TRENCH FOOT',
-            title: '1. Trench Foot: Causes, Gangrene & Whale Oil Prevention',
-            prompt:
-              'Explain the causes, physical consequences, and preventive measures enforced for Trench Foot:',
-            model_notes: [
-              'Caused by standing for days in cold, waterlogged mud; constricted capillary circulation, leading to severe numbness, swelling, and tissue death (gangrene).',
-              'Required surgical amputation if gangrene took hold, permanently incapacitating thousands of combat troops.',
-              "Prevented by rubbing whale oil on feet, changing dry socks 2-3 times daily, installing wooden duckboards, and enforcing the mandatory 'buddy system'.",
-            ],
-            key_terms: ['Trench Foot', 'Whale Oil'],
-          },
-          {
-            num: 2,
-            badge: 'VERMIN & FEVER',
-            title: '2. Trench Fever: Body Lice & Divisional Disinfection Baths',
-            prompt:
-              'Explain how body lice spread Trench Fever and the disinfection measures used at divisional bathhouses:',
-            model_notes: [
-              'Caused by micro-organisms living in body lice feces, which soldiers rubbed into bite wounds while scratching itchy uniform seams.',
-              'Symptoms included agonizing pyrexia (fever), violent shivering, severe headaches, and deep shooting pain in the shins, lasting for weeks.',
-              'Combated by setting up mobile divisional bathhouses, washing uniforms in high-temperature steam vans, and burning lice eggs from seams with hot irons.',
-            ],
-            key_terms: ['Trench Fever', 'Body Lice'],
-          },
-          {
-            num: 3,
-            badge: 'SHELL SHOCK',
-            title: '3. Shell Shock (NYDN) vs. Military Discipline',
-            prompt:
-              'Explain the symptoms of Shell Shock and the conflicting medical versus disciplinary reactions of the British Army:',
-            model_notes: [
-              'Caused by relentless artillery concussions, sleep deprivation, and psychological terror; symptoms included tics, tremors, mutism, and mental collapse.',
-              "Over 80,000 British soldiers suffered; initial military diagnosis was 'NYDN' (Not Yet Diagnosed, Nervous) and often dismissed as cowardice.",
-              '306 soldiers were executed by firing squad for desertion; later in the war, specialist psychiatric hospitals (e.g. Craiglockhart) provided rest therapies.',
-            ],
-            key_terms: ['Shell Shock', 'NYDN (Not Yet Diagnosed Nervous)'],
-          },
-        ],
-      },
       title: 'KT5.2: The Trench Environment: Mud, Vermin & Non-Combat Illnesses (1914–1918)',
       enquiry_question:
         'How did the horrific physical environment of the trenches create widespread non-combat medical crises?',
@@ -16196,25 +16164,55 @@ export const unitData = {
         'Long before an infantryman faced enemy machine guns or artillery barrages, he fought an agonizing daily battle against the environment itself. Submerged in freezing, stagnant water saturated with human excrement and decomposing corpses, soldiers fell prey to devastating non-combat ailments. From the black, rotting necrosis of trench foot to the debilitating bone-pain of trench fever spread by swarms of body lice, maintaining the physical health of an army in the trenches demanded ruthless preventive medical discipline.',
       teacher_notes: {
         primer:
-          'Examine the non-combat environmental illnesses that incapacitated hundreds of thousands of British soldiers: Trench Foot, Trench Fever, and Dysentery. Emphasize that disease and infection threatened military manpower just as severely as enemy artillery. Focus on the preventive regimens enforced by the RAMC and combat officers—whale oil, buddy inspections, delousing stations, and chloride of lime water purification.',
+          'This enquiry investigates non-combat environmental health hazards on the Western Front, exploring the physiological pathology and command discipline of trench foot, the entomology and transmission of trench fever by body lice, water purification methods against dysentery, and the clinical recognition and psychological treatment of shell shock.',
         objectives: [
           {
-            objective: 'Explain the cause, symptoms, and medical treatment of Trench Foot.',
+            objective:
+              'Explain how prolonged immersion in freezing mud destroyed tissue and produced gangrene.',
             primer:
-              'Direct students to paragraphs [1.2] and [2.1]. Clarify that trench foot was caused by prolonged immersion in cold, damp conditions combined with tight puttees constricting blood circulation. Contrast the 20,000 casualties in winter 1914 with the dramatic reduction achieved through whale oil greasing, dry socks, and duckboards.',
-          },
-          {
-            objective: 'Analyze the transmission and impact of Trench Fever and Body Lice.',
-            primer:
-              'Examine paragraph [3.1]. Explain that body lice nested in the warm seams of woollen service uniforms and transmitted the bacterium Bartonella quintana through their faeces when soldiers scratched bites. Point out that trench fever was not fatal, but it put soldiers out of action for up to a month.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that trench foot was caused by vasoconstriction from tight puttees and continuous cold water immersion (even above freezing), leading to hypoxia, necrosis, and moist gangrene.',
+            question:
+              'How did prolonged cold water immersion and tight puttees combine to destroy living tissue and cause trench foot?',
           },
           {
             objective:
-              'Evaluate the role of underground dressing stations and sanitation measures.',
+              'Analyse why mandatory officer inspections and whale oil discipline succeeded in conquering trench foot.',
             primer:
-              'Guide students through paragraph [3.2], Source A, and Source B. Contrast surface trench squalor with secure underground facilities like the Ramparts Dressing Station at Ypres. Explain how chlorination of water carts with chloride of lime suppressed lethal waterborne dysentery.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Cheshire Regiment resting in trench). Guide them to discuss the "buddy system," three pairs of clean socks, raised duckboards, and the disciplinary consequences for neglect.',
+            question:
+              'Why did mandatory officer inspections and military discipline succeed in reducing trench foot where voluntary medical advice had failed?',
+          },
+          {
+            objective:
+              'Examine the transmission of trench fever by body lice and the deployment of steam delousing plants.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2]. Clarify that lice faeces rubbed into scratched skin transmitted Bartonella quintana, causing debilitating shin-bone pains that incapacitated thousands until steam "Serbian barrels" were introduced.',
+            question:
+              'Why did trench fever incapacitate so many soldiers until the body louse insect vector was scientifically proven in 1918?',
+          },
+          {
+            objective:
+              'Evaluate how RAMC sanitary sections and water chlorination prevented catastrophic dysentery epidemics.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source B (Ramparts Medical Station at Ypres). Emphasize how latrines treated with chloride of lime and chemically chlorinated water carts kept infectious deaths under 10% of total fatalities.',
+            question:
+              'How did strict sanitary policing and chemical water chlorination prevent lethal dysentery epidemics on the Western Front?',
+          },
+          {
+            objective:
+              'Assess how psychiatric trauma (shell shock) evolved from being stigmatized as cowardice to clinical medical treatment.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Detail Dr Charles Myers coining "shell shock," the official classification as "Not Yet Diagnosed, Nervous" (NYDN), and forward rest centres and hospitals like Craiglockhart.',
+            question:
+              'Why was shell shock initially punished as military cowardice before being recognized and treated as a medical psychiatric injury?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Source A: Soldiers of the Cheshire Regiment Resting in a Frontline Trench at Ovillers (1916). Official British War Office photograph taken by Lieutenant John Warwick Brooke during the Battle of the Somme in July 1916, showing infantrymen of ‘A’ Company, 11th Battalion, Cheshire Regiment, resting wrapped in waterproof groundsheets on duckboards in a captured trench. Hinge Question: How does Source A illustrate both the harsh environmental conditions of trench life and the practical measures, such as groundsheets and raised duckboards, adopted to protect soldier health?',
+          'Source B':
+            'Source B: Photograph of the Ramparts Underground Medical Dressing Station, Ypres (c.1916). Official British military photograph taken in the Ypres sector, c.1916, showing RAMC medical orderlies and stretcher bearers outside the subterranean vaulted brick entrance of the Ramparts Dressing Station built into 17th-century fortifications. Hinge Question: Why did fortified subterranean medical stations like the Ramparts at Ypres shown in Source B provide essential protection against both shellfire and the unsanitary environmental filth of surface trenches?',
+        },
       },
       learning_objectives: [
         'Explain the causes, symptoms, and preventive measures enforced against trench foot.',
@@ -16266,13 +16264,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Context & Catalyst (The Flanders Sludge & The Water Table)',
+          title: 'Act 1: The Flanders Water Table & Trench Foot Pathology (1914–1915)',
+          theme_heading: 'Act 1: The Flanders Water Table & Trench Foot Pathology (1914–1915)',
           text: '<span class="para-ref">[1.1]</span> The physical geography of northern France and Flanders exerted a relentless, hostile pressure on the health of the British Army. The coastal plains of Belgium and northern France were naturally low-lying, reclaimed marshland underlain by impermeable, dense clay. Beneath the soil, the water table sat mere feet below the surface. Before 1914, this rich agricultural land was maintained by an intricate, fragile system of underground ceramic drainage pipes, roadside ditches, and drainage dykes. Millions of high-explosive artillery shells systematically pulverized this drainage infrastructure, turning the topsoil into a liquid soup of putrid mud.<br><br><span class="para-ref">[1.2]</span> For British soldiers stationed in the trenches, standing in cold, stagnant water was an inescapable reality of daily life. In winter, temperatures regularly plunged below freezing, chilling the mud to ice. Furthermore, soldiers wore tight woollen puttees—long fabric strips wrapped tightly around the calves and ankles from the boot to the knee. When drenched in freezing mud, the wool shrank, acting as an unintended tourniquet that severely restricted peripheral blood flow to the lower extremities. By November 1914, medical officers noted an alarming epidemic: thousands of men were reporting to medical dugouts unable to walk, their feet swollen, numb, and drained of color.',
         },
         {
           act: 2,
-          title: 'Act 2: Escalation & Conflict (Trench Foot Pathology & Whale Oil Discipline)',
-          text: '<span class="para-ref">[2.1]</span> <strong>Trench Foot</strong> was a clinical condition caused by prolonged exposure to cold, damp, and unsanitary conditions, aggravated by poor circulation. Unlike frostbite, which occurs at sub-zero temperatures, trench foot developed in temperatures up to 15°C (60°F) if feet remained continuously immersed for over twelve hours. The cold caused peripheral vasoconstriction, starving skin and muscle tissue of oxygen. Feet became pale, cold, and numb; as circulation failed, the skin turned mottled blue, then necrotic black. If left untreated, secondary bacterial infections set in, leading to moist gangrene. To save the soldier’s life from fatal blood poisoning (septicemia), military surgeons had no choice but to amputate the necrotic toes or the entire foot.<br><br><span class="para-ref">[2.2]</span> During the harsh winter of 1914–1915, over 20,000 British soldiers were medically evacuated from the Western Front suffering from trench foot. Recognizing this colossal drain on fighting manpower, British High Command implemented ruthless preventive protocols. Combat units were issued barrels of <em>whale oil</em>—a thick, water-repellent animal grease. Soldiers were organized into mandatory "buddy pairs," inspecting each other’s feet daily, washing them in clean water, and vigorously rubbing them with whale oil to form a waterproof barrier (<span class="archival-meta-tag">Source A</span>). Every infantryman was required to carry three pairs of dry woollen socks, exchanging wet socks for dry ones twice daily. Units constructed raised wooden <em>duckboards</em> along trench floors to keep boots above stagnant water. Officers who permitted trench foot cases in their platoon faced severe disciplinary charges, transforming trench foot from an unavoidable medical malady into a punishable failure of military discipline.',
+          title: 'Act 2: Preventive Discipline: Whale Oil & The Buddy System (1915–1918)',
+          theme_heading: 'Act 2: Preventive Discipline: Whale Oil & The Buddy System (1915–1918)',
           source: {
             id: 'source_a_cheshire_regiment_trench',
             letter: 'A',
@@ -16283,23 +16282,32 @@ export const unitData = {
             image: '/images/cheshire_regiment_trench.png',
             caption:
               'British infantrymen of ‘A’ Company, 11th Battalion, Cheshire Regiment, resting wrapped in waterproof groundsheets on the duckboards and dugouts of a captured trench at Ovillers-la-Boisselle, while a sentry remains on duty on the parapet.',
-            desc: 'Primary photograph of British infantrymen performing compulsory foot inspections and greasing boots with whale oil.',
+            desc: 'Official British War Office photograph taken during the Battle of the Somme, July 1916.',
             provenance:
               'Official British War Office photograph taken by Lieutenant John Warwick Brooke during the Battle of the Somme, July 1916. Imperial War Museum Collection.',
             citation:
-              'Official British War Office Photograph, Western Front, 1916 (Imperial War Museum Q 5156).',
-            source_context:
-              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme, capturing the extreme physical exhaustion and cramped living conditions of British infantrymen in frontline trenches. Soldiers spent days without sleep or hot food, sheltering in shallow dugouts and on damp duckboards under waterproof groundsheets, creating conditions where body lice (which transmitted trench fever) and extreme physical exhaustion rapidly spread.',
-            context:
-              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme, capturing the extreme physical exhaustion and cramped living conditions of British infantrymen in frontline trenches. Soldiers spent days without sleep or hot food, sheltering in shallow dugouts and on damp duckboards under waterproof groundsheets, creating conditions where body lice (which transmitted trench fever) and extreme physical exhaustion rapidly spread.',
+              'Lt. John Warwick Brooke, Official British War Office Photograph, Somme, July 1916 (IWM Collection).',
+            question:
+              'How does Source A illustrate both the harsh environmental conditions of trench life and the practical measures, such as groundsheets and raised duckboards, adopted to protect soldier health?',
             hinge_question:
-              'Study Source A. How does this photograph illustrate the harsh living conditions in frontline trenches that made soldiers vulnerable to physical exhaustion and non-combat illnesses like trench fever?',
+              'How does Source A illustrate both the harsh environmental conditions of trench life and the practical measures, such as groundsheets and raised duckboards, adopted to protect soldier health?',
+            source_context:
+              'Official British War Office photograph taken by Lieutenant John Warwick Brooke during the Battle of the Somme in July 1916, showing infantrymen of ‘A’ Company, 11th Battalion, Cheshire Regiment, resting wrapped in waterproof groundsheets on duckboards in a captured trench. Hinge Question: How does Source A illustrate both the harsh environmental conditions of trench life and the practical measures, such as groundsheets and raised duckboards, adopted to protect soldier health?',
+            context:
+              'Official British War Office photograph taken by Lieutenant John Warwick Brooke during the Battle of the Somme in July 1916, showing infantrymen of ‘A’ Company, 11th Battalion, Cheshire Regiment, resting wrapped in waterproof groundsheets on duckboards in a captured trench.',
           },
+          text: '<span class="para-ref">[2.1]</span> <strong>Trench Foot</strong> was a clinical condition caused by prolonged exposure to cold, damp, and unsanitary conditions, aggravated by poor circulation. Unlike frostbite, which occurs at sub-zero temperatures, trench foot developed in temperatures up to 15°C (60°F) if feet remained continuously immersed for over twelve hours. The cold caused peripheral vasoconstriction, starving skin and muscle tissue of oxygen. Feet became pale, cold, and numb; as circulation failed, the skin turned mottled blue, then necrotic black. If left untreated, secondary bacterial infections set in, leading to moist gangrene. To save the soldier’s life from fatal blood poisoning (septicemia), military surgeons had no choice but to amputate the necrotic toes or the entire foot.<br><br><span class="para-ref">[2.2]</span> During the harsh winter of 1914–1915, over 20,000 British soldiers were medically evacuated from the Western Front suffering from trench foot. Recognizing this colossal drain on fighting manpower, British High Command implemented ruthless preventive protocols. Combat units were issued barrels of <em>whale oil</em>—a thick, water-repellent animal grease. Soldiers were organized into mandatory "buddy pairs," inspecting each other’s feet daily, washing them in clean water, and vigorously rubbing them with whale oil to form a waterproof barrier (<span class="archival-meta-tag">Source A</span>). Every infantryman was required to carry three pairs of dry woollen socks, exchanging wet socks for dry ones twice daily. Units constructed raised wooden <em>duckboards</em> along trench floors to keep boots above stagnant water. Officers who permitted trench foot cases in their platoon faced severe disciplinary charges, transforming trench foot from an unavoidable medical malady into a punishable failure of military discipline.',
         },
         {
           act: 3,
-          title: 'Act 3: Forensic Evidence (Vermin, Trench Fever & Dysentery)',
-          text: '<span class="para-ref">[3.1]</span> While trench foot assaulted the feet, a microscopic parasite besieged the body. <strong>Body lice</strong> (<em>Pediculus humanus corporis</em>) infested virtually every soldier on the Western Front. Living in the warm inner seams of woollen tunics and trousers, lice multiplied at an astonishing rate, laying pale eggs ("nits") in clothing fabric. Soldiers spent off-duty hours "chatting"—running candle flames along uniform seams to pop the lice. The constant itching caused severe sleep deprivation, but the primary medical danger was <strong>Trench Fever</strong> (Pyrexia of Unknown Origin). In 1918, medical researchers proved that trench fever was caused by the bacterium <em>Bartonella quintana</em>, transmitted through louse faeces. When soldiers scratched inflamed bite wounds, louse excrement was rubbed directly into the broken skin. Trench fever caused sudden shivering, splitting headaches, severe aching in the shins, and recurring high fevers lasting up to a month, incapacitating up to 15% of an army’s strength at any one time.<br><br><span class="para-ref">[3.2]</span> To combat lice, the RAMC established extensive divisional <em>delousing stations</em> behind the lines, where uniforms were baked inside pressurized steam autoclaves while soldiers bathed. Equally dangerous was <strong>dysentery</strong>—a severe intestinal infection causing violent abdominal cramps and bloody diarrhea. In the frontline, men were forced to defecate into open chloride of lime buckets or shallow latrine pits. Swarms of flies transferred pathogenic bacteria from human faeces directly onto soldiers’ rations. To prevent devastating cholera and typhoid outbreaks, the RAMC enforced strict sanitary policing: drinking water was rigorously purified by adding <em>chloride of lime</em> (chlorine) to mobile water carts, while subterranean shelters like the <strong>Ramparts Medical Station</strong> at Ypres (<span class="archival-meta-tag">Source B</span>) provided clean, dry, protected underground wards carved into medieval stone walls.',
+          title: 'Act 3: Trench Fever, Body Lice & Delousing (1914–1918)',
+          theme_heading: 'Act 3: Trench Fever, Body Lice & Delousing (1914–1918)',
+          text: '<span class="para-ref">[3.1]</span> While trench foot assaulted the feet, a microscopic parasite besieged the body. <strong>Body lice</strong> (<em>Pediculus humanus corporis</em>) infested virtually every soldier on the Western Front. Living in the warm inner seams of woollen tunics and trousers, lice multiplied at an astonishing rate, laying pale eggs ("nits") in clothing fabric. Soldiers spent off-duty hours "chatting"—running candle flames along uniform seams to pop the lice. The constant itching caused severe sleep deprivation, but the primary medical danger was <strong>Trench Fever</strong> (Pyrexia of Unknown Origin). In 1918, medical researchers proved that trench fever was caused by the bacterium <em>Bartonella quintana</em>, transmitted through louse faeces. When soldiers scratched inflamed bite wounds, louse excrement was rubbed directly into the broken skin.<br><br><span class="para-ref">[3.2]</span> Trench fever caused sudden shivering, splitting headaches, severe aching in the shins, and recurring high fevers lasting up to a month, incapacitating up to 15% of an army’s strength at any one time. Because sick soldiers required weeks of hospitalization in base facilities, the disease created an intolerable logistical burden. To eliminate lice, the RAMC established extensive divisional <em>delousing stations</em> behind the lines. Uniforms were baked inside pressurized steam autoclaves known as "Serbian barrels" while soldiers bathed in hot carbolic baths. While these measures temporarily eradicated vermin, soldiers were frequently re-infested within days of returning to the muddy dugouts of the frontline.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Dysentery, Water Chlorination & Sanitary Sections (1914–1918)',
+          theme_heading: 'Act 4: Dysentery, Water Chlorination & Sanitary Sections (1914–1918)',
           source: {
             id: 'source_b_ramparts_ww1',
             letter: 'B',
@@ -16310,23 +16318,26 @@ export const unitData = {
             image: '/images/ramparts_ww1.jpg',
             caption:
               'RAMC medical orderlies and stretcher bearers outside the subterranean vaulted brick entrance of the Ramparts Dressing Station, built deep into the 17th-century fortifications of Ypres.',
-            desc: 'Primary photograph of the entrance to the fortified underground Ramparts medical dressing station in Ypres.',
+            desc: 'Official British military photograph of the Ramparts Dressing Station at Ypres, c.1916.',
             provenance:
               'Official British military photograph taken in the Ypres sector, c.1916. Imperial War Museum Collection (Shelfmark: Q 10762).',
-            citation:
-              'Official British Military Photograph, Ypres, c.1916 (Imperial War Museum Q 10762).',
-            source_context:
-              'Photograph taken c.1916 showing the entrance to the Ramparts Advanced Dressing Station in Ypres. Carved deep into the massive 17th-century Vauban brick earthworks near the Lille Gate, it provided a bomb-proof, dry, subterranean refuge where medical staff could treat wounded men and sick soldiers free from direct artillery shell fire.',
-            context:
-              'Photograph taken c.1916 showing the entrance to the Ramparts Advanced Dressing Station in Ypres. Carved deep into the massive 17th-century Vauban brick earthworks near the Lille Gate, it provided a bomb-proof, dry, subterranean refuge where medical staff could treat wounded men and sick soldiers free from direct artillery shell fire.',
+            citation: 'Official British War Office Photograph, Ypres Sector, c.1916 (IWM Q 10762).',
+            question:
+              'Why did fortified subterranean medical stations like the Ramparts at Ypres shown in Source B provide essential protection against both shellfire and the unsanitary environmental filth of surface trenches?',
             hinge_question:
-              'How does the underground construction of the Ramparts Dressing Station in Source B explain how the RAMC adapted existing architecture to protect casualties from artillery fire and wet weather?',
+              'Why did fortified subterranean medical stations like the Ramparts at Ypres shown in Source B provide essential protection against both shellfire and the unsanitary environmental filth of surface trenches?',
+            source_context:
+              'Official British military photograph taken in the Ypres sector, c.1916, showing RAMC medical orderlies and stretcher bearers outside the subterranean vaulted brick entrance of the Ramparts Dressing Station built into 17th-century fortifications. Hinge Question: Why did fortified subterranean medical stations like the Ramparts at Ypres shown in Source B provide essential protection against both shellfire and the unsanitary environmental filth of surface trenches?',
+            context:
+              'Official British military photograph taken in the Ypres sector, c.1916, showing RAMC medical orderlies and stretcher bearers outside the subterranean vaulted brick entrance of the Ramparts Dressing Station built into 17th-century fortifications.',
           },
+          text: '<span class="para-ref">[4.1]</span> In flooded, static trench networks, basic human sanitation was a continuous life-or-death battle. Contaminated mud, unburied corpses, and open latrines spawned dangerous outbreaks of <strong>dysentery</strong>—a virulent bacterial infection causing agonizing stomach cramps, fever, and severe bloody diarrhea. In the frontline, men were forced to defecate into open chloride of lime buckets or shallow latrine trenches. In summer, dense swarms of bluebottle flies fed on human excrement and unburied bodies before landing directly on soldiers’ rations of corned beef and hard biscuits, spreading bacillary dysentery across entire battalions.<br><br><span class="para-ref">[4.2]</span> To prevent catastrophic epidemics, the RAMC created specialized <em>Sanitary Sections</em>. These pioneer orderlies inspected latrines, enforced deep burial of refuse, and treated waste pits with quicklime (calcium oxide). Crucially, the RAMC enforced rigorous water purification: drinking water collected from shell craters or local rivers was chemically treated with <em>chloride of lime</em> (calcium hypochlorite) in mobile water carts, killing deadly cholera and typhoid bacilli. Furthermore, subterranean shelters like the <strong>Ramparts Medical Station</strong> at Ypres (<span class="archival-meta-tag">Source B</span>), carved deep inside seventeenth-century brick fortifications, provided clean, dry, protected underground wards, keeping infectious disease deaths below 10% of total casualties—a historic military record.',
         },
         {
-          act: 4,
-          title: 'Act 4: The Historical Verdict & Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> Historiographers debate whether the non-combat medical crises on the Western Front represented an inevitable consequence of prolonged ditch warfare or a triumph of British preventive medicine. Early popular accounts portrayed soldiers as helpless victims abandoned to filthy, rat-infested squalor. However, modern medical historians, such as Mark Harrison in <em>The Medical War</em> (2010), highlight that the British Army achieved an extraordinary sanitary record compared to previous conflicts. In the Crimean War (1853–56) and the Boer War (1899–1902), disease killed four to five times more British soldiers than enemy bullets. On the Western Front, through relentless preventive discipline, deaths from infectious disease were kept below 10% of total fatalities—the first time in modern military history that combat trauma caused more deaths than disease.<br><br><span class="para-ref">[4.2]</span> Ultimately, the battle against the trench environment revealed that organizational discipline was just as vital as surgical skill. By enforcing whale oil foot routines, mandating clean socks, introducing mechanized steam delousing plants, and strictly chlorinating every drop of drinking water, the Royal Army Medical Corps preserved hundreds of thousands of combat soldiers who would otherwise have been crippled by environmental disease. While artillery pulverized the landscape, sanitary science prevented the Western Front from collapsing into a medieval pestilence.',
+          act: 5,
+          title: 'Act 5: Shell Shock & Psychological Trauma (1914–1918)',
+          theme_heading: 'Act 5: Shell Shock & Psychological Trauma (1914–1918)',
+          text: '<span class="para-ref">[5.1]</span> In addition to physical diseases, the unrelenting violence of industrial high-explosive artillery bombardments triggered an unprecedented psychological catastrophe: <strong>Shell Shock</strong>. Soldiers subjected to days of continuous concussive shelling suffered catastrophic neurological and psychiatric collapses. Symptoms varied dramatically: severe uncontrollable physical tremors, hysterical blindness, sudden mutism, complete amnesia, sleep paralysis, and catatonic stupor. Coined by British psychologist Dr Charles Myers in 1915, the condition affected an estimated 80,000 British soldiers during the war, demonstrating that the human nervous system had broken down under mechanized industrial warfare.<br><br><span class="para-ref">[5.2]</span> Initially, British military authorities severely stigmatized shell shock as cowardice, malingering, or a lack of moral fiber; tragically, over 300 British soldiers suffering from acute trauma were executed by firing squad for "desertion." However, as thousands of frontline officers and decorated veterans succumbed to identical breakdowns, the Army shifted toward a medical model. Cases were officially designated as <strong>Not Yet Diagnosed, Nervous (NYDN)</strong> to prevent court-martials. Forward rest stations were established behind the lines to provide immediate warm food, clean dry clothes, and rest; approximately 70% of traumatized soldiers returned to duty within weeks. For severe cases, specialized recovery facilities like <em>Craiglockhart War Hospital</em> in Edinburgh pioneered psychotherapy, dream analysis, and humane compassionate care, laying the groundwork for modern clinical understanding of Post-Traumatic Stress Disorder (PTSD).',
         },
       ],
       sources: [
@@ -16636,7 +16647,7 @@ export const unitData = {
         {
           step: 2,
           date: '1915–1918',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
           heading:
             'Why did mandatory officer inspections succeed where voluntary advice had failed?',
           bullets: [
@@ -16650,7 +16661,7 @@ export const unitData = {
         {
           step: 3,
           date: '1914–1918',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
           heading:
             'Why did trench fever persist until the body louse insect vector was proven in 1918?',
           bullets: [
@@ -16664,7 +16675,7 @@ export const unitData = {
         {
           step: 4,
           date: '1914–1918',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'How did strict sanitation and chemical water chlorination prevent epidemics?',
           bullets: [
             'Violent stomach cramps from dirty swamp water',
@@ -16677,7 +16688,7 @@ export const unitData = {
         {
           step: 5,
           date: '1914–1918',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading:
             'Why was shell shock initially stigmatised as cowardice before being treated medically?',
           bullets: [
@@ -16710,7 +16721,7 @@ export const unitData = {
           {
             step: 2,
             date: '1915–1918',
-            para_ref: '[2.1]',
+            para_ref: '[2.1–2.2]',
             title: 'Prevention: Whale Oil & Socks',
             actor: 'Battalion Officers & The Buddy System',
             tag: '🧴 WHALE OIL DISCIPLINE',
@@ -16725,7 +16736,7 @@ export const unitData = {
           {
             step: 3,
             date: '1914–1918',
-            para_ref: '[2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Trench Fever, Lice & Delousing',
             actor: 'Body Lice (Pediculus humanus) & RAMC Researchers',
             tag: '🪲 TRENCH FEVER DELOUSING',
@@ -16740,7 +16751,7 @@ export const unitData = {
           {
             step: 4,
             date: '1914–1918',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Dysentery & Water Chlorination',
             actor: 'RAMC Sanitary Sections & Regimental Pioneers',
             tag: '💧 CHLORIDE OF LIME PURIFICATION',
@@ -16755,7 +16766,7 @@ export const unitData = {
           {
             step: 5,
             date: '1914–1918',
-            para_ref: '[3.2, 4.1]',
+            para_ref: '[5.1–5.2]',
             title: 'Shell Shock & Psychological Trauma',
             actor: 'Dr Charles Myers & Craiglockhart War Hospital',
             tag: '🧠 NYDN & SHELL SHOCK',
@@ -16780,75 +16791,30 @@ export const unitData = {
           date: '1915–1918',
           title: 'Prevention: Whale Oil & Socks',
           desc: 'The British Army issued waterproof duckboards, provided three pairs of clean dry socks per soldier, and mandated the pairing of soldiers in a daily "buddy system" to rub feet with water-repellent whale oil.',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
         },
         {
           date: '1914–1918',
           title: 'Trench Fever, Lice & Delousing',
           desc: 'Over 95% of British soldiers harboured body lice thriving in uniform seams, suffering debilitating bouts of shaking chills, headaches, and acute shin-bone pain (trench fever).',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: '1914–1918',
           title: 'Dysentery & Water Chlorination',
           desc: 'Flooded trenches contaminated with human faeces and unburied corpses sparked widespread outbreaks of bacillary dysentery, causing severe dehydration and fever.',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
         },
         {
           date: '1914–1918',
           title: 'Shell Shock & Psychological Trauma',
           desc: 'Unrelenting high-explosive artillery bombardments caused severe psychiatric trauma: uncontrollable tremors, amnesia, mutism, and catatonic paralysis, termed "shell shock" by Charles Myers in 1915.',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
         },
       ],
     },
     {
       id: 'lesson_5_3',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to analyse battlefield trauma from artillery, infection, and poison gas:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'ARTILLERY TRAUMA',
-            title: '1. High Explosive Shrapnel & The Brodie Steel Helmet (1915)',
-            prompt:
-              'Explain why explosive shells caused 58% of all Western Front wounds, and how the Brodie helmet reduced fatalities:',
-            model_notes: [
-              'High explosive shells threw thousands of jagged steel fragments and balls at supersonic speeds, smashing bone and tearing flesh.',
-              'Early soldiers wore cloth caps; steel Brodie helmets introduced in late 1915 featured a wide protective rim, reducing fatal head wounds by 80%.',
-              'Artillery blasts caused severe compound fractures where broken bones pierced skin, triggering immediate fatal hemorrhage and shock.',
-            ],
-            key_terms: ['High Explosive Shrapnel', 'Brodie Steel Helmet'],
-          },
-          {
-            num: 2,
-            badge: 'GAS GANGRENE',
-            title: '2. Manured Belgian Soil, Gas Gangrene & Tetanus',
-            prompt:
-              'Explain why rich agricultural soil produced virulent anaerobic infections, and how anti-tetanus serum helped:',
-            model_notes: [
-              'Flanders and Somme farmland was heavily fertilised with animal manure for centuries, saturating the soil with deadly anaerobic bacteria.',
-              'Deep shrapnel wounds drove mud and filthy uniform cloth into airless muscle tissue, incubating deadly tetanus and gas gangrene.',
-              'Gas gangrene produced gas bubbles in rotting flesh and killed within hours; routine anti-tetanus serum injections at the RAP drastically reduced lockjaw deaths.',
-            ],
-            key_terms: ['Gas Gangrene', 'Anti-Tetanus Serum'],
-          },
-          {
-            num: 3,
-            badge: 'POISON GAS',
-            title: '3. Poison Gas: Chlorine, Phosgene & Mustard Gas (1915–1917)',
-            prompt:
-              'Contrast the effects of chlorine, phosgene, and mustard gas, and how British respirators evolved:',
-            model_notes: [
-              'Chlorine (1915): green cloud stripping bronchial lining, causing suffocation; phosgene: invisible, delayed killer; Mustard gas (1917): blistered skin, blinded, and rotted lungs.',
-              'Gas masks evolved rapidly: urine-soaked handkerchiefs -> Hypo helmets soaked in chemicals -> British Small Box Respirator (1916) with charcoal filter.',
-              'Gas produced psychological terror and clogged evacuation chains, though it caused less than 5% of total war fatalities.',
-            ],
-            key_terms: ['Chlorine and Phosgene', 'Mustard Gas'],
-          },
-        ],
-      },
       title:
         'KT5.3: Battlefield Trauma: High Explosive Shrapnel, Gas Attacks & Infection (1914–1918)',
       enquiry_question:
@@ -16861,27 +16827,55 @@ export const unitData = {
         'The First World War was an industrial collision between high-technology steel and fragile human flesh. Over 70% of all battlefield casualties were inflicted not by rifle bullets, but by high-explosive artillery shells that tore bodies apart with jagged metal fragments. Yet the most lethal enemy was often microscopic: Flanders agricultural soil, heavily manured for centuries with animal dung, teemed with deadly anaerobic bacteria that invaded ragged wounds, spawning lethal gas gangrene and tetanus within hours of injury.',
       teacher_notes: {
         primer:
-          'Analyze the traumatic wound profile of the Western Front: high-explosive artillery shrapnel, anaerobic soil contamination (gas gangrene and tetanus), head trauma (Brodie helmet), and chemical gas warfare (chlorine, phosgene, mustard gas). Emphasize the terrifying convergence of medieval soil contamination and 20th-century chemical technology.',
+          'This enquiry examines the lethal combat trauma generated by industrialized artillery shrapnel and chemical gas warfare on the Western Front, exploring compound fractures, cloth contamination, anaerobic gas gangrene caused by manured Flanders soil, the invention of the Brodie helmet, and the rapid British countermeasures developed to neutralize chlorine, phosgene, and mustard gas.',
         objectives: [
           {
             objective:
-              'Explain how high-explosive artillery shells caused catastrophic soft-tissue wounds and compound fractures.',
+              'Explain why high-explosive artillery shrapnel caused far more destructive and contaminated wounds than rifle bullets.',
             primer:
-              'Direct students to paragraphs [1.1] and [1.2]. Contrast clean bullet wounds with jagged shrapnel fragments that tore irregular flesh lacerations and dragged dirty uniform cloth and mud deep into internal wound cavities.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that jagged metal shrapnel accounted for 58% of wounds, tearing irregular tissue cavities and sucking dirty woollen uniform cloth and soil deep into broken bone marrow.',
+            question:
+              'Why did high-explosive shrapnel fragments produce far more lethal and infection-prone wounds than high-velocity rifle bullets?',
           },
           {
             objective:
-              'Analyze the microbiology of gas gangrene and tetanus in heavily manured Flanders soil.',
+              'Analyse why manured Flanders soil made anaerobic gas gangrene and tetanus such deadly complications in shrapnel wounds.',
             primer:
-              'Examine paragraph [2.1], paragraph [2.2], and Source A. Explain that anaerobic bacteria (Clostridium welchii and Clostridium tetani) thrived in deep wounds deprived of oxygen, producing gas bubbles and rotting muscle tissue. Emphasize why routine tetanus antitoxin injections were a life-saving breakthrough.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Clinical Record of Gangrene). Highlight Clostridium welchii thriving in oxygen-deprived tissue, gas bubbles under the skin, and the contrast between preventable tetanus and untreatable gas gangrene.',
+            question:
+              'Why did heavily fertilized farmland make anaerobic soil bacteria like Clostridium welchii so rapidly fatal in deep shrapnel wounds?',
           },
           {
             objective:
-              'Evaluate the physical effects and tactical evolution of chemical weapons and gas masks.',
+              'Assess how the introduction of the Brodie steel helmet in late 1915 transformed battlefield head trauma survival.',
             primer:
-              'Guide students through paragraphs [3.1]–[3.2], Source B, and the Brodie helmet. Trace the escalation from chlorine (2nd Ypres, 1915) to phosgene and blistering mustard gas (3rd Ypres, 1917). Contrast improvised urine pads with the British PH helmet and the Small Box Respirator.',
+              'Direct students to paragraphs [3.1]–[3.2]. Explain that replacing soft peaked cloth caps with pressed steel helmets deflected shrapnel, cutting fatal penetrating head wounds by 75–80% and paradoxically increasing hospital admissions for surviving head cases.',
+            question:
+              'Why did the introduction of the Brodie steel helmet cause a dramatic drop in battlefield deaths but an apparent rise in hospital head wound admissions?',
+          },
+          {
+            objective:
+              'Evaluate the chemical mechanisms and early British respiratory countermeasures to chlorine and phosgene gas attacks.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source B (Machine Gun Crew in PH Helmets). Detail the Second Ypres attack (April 1915), chlorine producing hydrochloric acid in the lungs, and the progression to phosgene and the Phenate-Hexamine hood.',
+            question:
+              'How did the rapid deployment of chemical respirators like the PH hood counter the lethal suffocating effects of chlorine and phosgene gas?',
+          },
+          {
+            objective:
+              'Compare the blister-agent properties of mustard gas with respiratory gases and explain the success of the Small Box Respirator.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Contrast blistering mustard gas penetrating damp uniforms with inhaled gases, explaining that while gas mortality was only 2.6% due to the Small Box Respirator, mustard gas caused massive medical exhaustion.',
+            question:
+              'Why was oily mustard gas far harder to counter and treat than earlier respiratory gases like chlorine and phosgene?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Source A: Clinical Medical Record Photograph of Severe Gangrene in Lower Limb (c.1916). Official clinical photograph produced for the British Medical Research Committee / RAMC Case Records, c.1916, documenting severe necrotic tissue damage and secondary gangrenous infection in the foot and leg of a British soldier admitted to a base hospital from the frontline trenches. Hinge Question: How does the blackened, necrotic tissue in Source A reveal the deadly danger of anaerobic bacterial infections like gas gangrene when soil spores contaminated deep shrapnel wounds?',
+          'Source B':
+            'Source B: British Machine Gun Crew in Combat Wearing PH Gas Helmets (1916). Official British War Office photograph taken by Lieutenant John Warwick Brooke near Ovillers during the Battle of the Somme, July 1916, showing a British Machine Gun Corps crew operating a Vickers machine gun while wearing issue Phenate-Hexamine (PH) anti-gas hoods with exhale valves. Hinge Question: How does Source B demonstrate how the British Army adapted technological protection to enable machine gun crews to fight continuously through deadly chemical gas attacks?',
+        },
       },
       learning_objectives: [
         'Describe the nature of wounds caused by high-explosive artillery shells and jagged shrapnel.',
@@ -16933,13 +16927,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Context & Catalyst (Industrialized Firepower: Shrapnel & Blast)',
-          text: '<span class="para-ref">[1.1]</span> The nature of battlefield wounds on the Western Front was dictated by the catastrophic supremacy of modern industrial artillery. Unlike previous nineteenth-century conflicts where rifle musket balls inflicted the majority of injuries, over 70% of British casualties in the First World War were caused by high-explosive artillery shells and fragmentation shrapnel. Artillery batteries discharged massive ordnance: high-explosive shells packed with trinitrotoluene (TNT) detonated on contact, creating a colossal supersonic blast wave and tearing thick steel casings into thousands of razor-sharp, jagged, red-hot metal fragments of irregular shapes and sizes.<br><br><span class="para-ref">[1.2]</span> When these jagged fragments struck human tissue at high velocity, they did not produce clean puncture wounds. Instead, they shredded flesh, severed major blood vessels, splintered bone structures into jagged fragments, and gouged out enormous craters of living tissue. Furthermore, the explosive vacuum and velocity of the metal fragment sucked foreign matter deep into the cavity: pieces of dirty woollen tunic, sodden khaki trousers, soil, and boot leather were buried into the wounded muscle. Until late 1915, British soldiers wore soft cloth peaked caps that offered zero ballistic protection. Exploding airburst shrapnel shells rained lead balls and metal shards straight down into trenches, causing horrific fractured skulls and fatal brain trauma, prompting British inventor John Brodie to patent the pressed-steel <strong>Brodie Helmet</strong> in autumn 1915, which reduced fatal head injuries by 80%.',
+          title: 'Act 1: Artillery Firepower & Jagged Shrapnel Trauma (1914–1918)',
+          theme_heading: 'Act 1: Artillery Firepower & Jagged Shrapnel Trauma (1914–1918)',
+          text: '<span class="para-ref">[1.1]</span> The nature of battlefield wounds on the Western Front was dictated by the catastrophic supremacy of modern industrial artillery. Unlike previous nineteenth-century conflicts where rifle musket balls inflicted the majority of injuries, over 58% of British casualties in the First World War were caused by high-explosive artillery shells and fragmentation shrapnel. Artillery batteries discharged massive ordnance: high-explosive shells packed with trinitrotoluene (TNT) detonated on contact, creating a colossal supersonic blast wave and tearing thick steel casings into thousands of razor-sharp, jagged, red-hot metal fragments of irregular shapes and sizes.<br><br><span class="para-ref">[1.2]</span> When these jagged fragments struck human tissue at high velocity, they did not produce clean puncture wounds. Instead, they shredded flesh, severed major blood vessels, splintered bone structures into jagged fragments, and gouged out enormous craters of living tissue. Furthermore, the explosive vacuum and velocity of the metal fragment sucked foreign matter deep into the cavity: pieces of dirty woollen tunic, sodden khaki trousers, soil, and boot leather were buried into the wounded muscle. These contaminated foreign materials carried millions of deadly bacteria straight into crushed, devitalized tissue, setting the stage for virulent, life-threatening wound infections.',
         },
         {
           act: 2,
-          title: 'Act 2: Escalation & Conflict (Anaerobic Soil Infection: Gas Gangrene & Tetanus)',
-          text: '<span class="para-ref">[2.1]</span> While artillery shattered bones, the soil itself delivered a lethal biological assault. Northern France and Flanders had been intensively cultivated agricultural farmland for centuries, heavily fertilized with massive deposits of cow, horse, and pig manure. Consequently, the soil was saturated with virulent, spore-forming bacteria, most notably <em>Clostridium welchii</em> (the cause of <strong>Gas Gangrene</strong>) and <em>Clostridium tetani</em> (the cause of <strong>Tetanus</strong>). Both microbes were strict anaerobes—organisms that thrive exclusively in environments completely devoid of oxygen. Deep, jagged shrapnel wounds containing dead muscle tissue, deprived of blood flow, provided the perfect incubator for these deadly bacteria.<br><br><span class="para-ref">[2.2]</span> Within hours of injury, anaerobic bacteria multiplied inside the devitalized tissue. Gas gangrene microbes produced foul-smelling gas that bubbled under the skin, destroying surrounding healthy muscle and releasing deadly toxins into the bloodstream (<span class="archival-meta-tag">Source A</span>). If untreated, gas gangrene killed a casualty within 24 to 48 hours. Tetanus caused violent, excruciating muscle spasms, lockjaw, and respiratory paralysis. Fortunately, British medical services introduced routine <strong>tetanus antitoxin</strong> injections at Regimental Aid Posts early in the war; by administering serum to every wounded man on the day of injury, tetanus was virtually eradicated by 1915. However, gas gangrene possessed no antitoxin, forcing surgeons to invent radical surgical techniques to save lives.',
+          title: 'Act 2: Soil Bacteria & The Gas Gangrene Crisis (1914–1918)',
+          theme_heading: 'Act 2: Soil Bacteria & The Gas Gangrene Crisis (1914–1918)',
           source: {
             id: 'source_a_trench_foot_clinical',
             letter: 'A',
@@ -16950,23 +16945,32 @@ export const unitData = {
             image: '/images/trench_foot_clinical.jpg',
             caption:
               'RAMC clinical photograph documenting severe necrotic tissue damage and secondary gangrenous infection in the foot of a British soldier admitted to a base hospital from the frontline trenches.',
-            desc: 'Clinical photograph showing severe necrotic tissue damage and gangrene in a soldier’s foot.',
+            desc: 'Official clinical photograph documenting necrotic gangrene produced for the Medical Research Committee, c.1916.',
             provenance:
               'Official clinical photograph produced for the British Medical Research Committee / RAMC Case Records, c.1916. Wellcome Collection, London (Shelfmark: RAMC 442/1).',
             citation:
-              'RAMC Clinical Medical Archive, Western Front Casebook (Wellcome Collection RAMC 442/1), c.1916.',
-            source_context:
-              'An official clinical photograph compiled for the Royal Army Medical Corps teaching archives c.1916, documenting the devastating progression of anaerobic necrosis and moist gangrene in a soldier’s lower limb following prolonged exposure to contaminated Flanders mud and untreated tissue trauma.',
-            context:
-              'An official clinical photograph compiled for the Royal Army Medical Corps teaching archives c.1916, documenting the devastating progression of anaerobic necrosis and moist gangrene in a soldier’s lower limb following prolonged exposure to contaminated Flanders mud and untreated tissue trauma.',
+              'RAMC Medical Research Committee Case Records, London, c.1916 (Wellcome Collection RAMC 442/1).',
+            question:
+              'How does the blackened, necrotic tissue in Source A reveal the deadly danger of anaerobic bacterial infections like gas gangrene when soil spores contaminated deep shrapnel wounds?',
             hinge_question:
-              'Study Source A. How does this clinical photograph illustrate the severity of anaerobic bacterial infections like gangrene when soil bacteria entered damaged, devitalized human flesh?',
+              'How does the blackened, necrotic tissue in Source A reveal the deadly danger of anaerobic bacterial infections like gas gangrene when soil spores contaminated deep shrapnel wounds?',
+            source_context:
+              'Official clinical photograph produced for the British Medical Research Committee / RAMC Case Records, c.1916, documenting severe necrotic tissue damage and secondary gangrenous infection in the foot and leg of a British soldier admitted to a base hospital from the frontline trenches. Hinge Question: How does the blackened, necrotic tissue in Source A reveal the deadly danger of anaerobic bacterial infections like gas gangrene when soil spores contaminated deep shrapnel wounds?',
+            context:
+              'Official clinical photograph produced for the British Medical Research Committee / RAMC Case Records, c.1916, documenting severe necrotic tissue damage and secondary gangrenous infection in the foot and leg of a British soldier admitted to a base hospital from the frontline trenches.',
           },
+          text: '<span class="para-ref">[2.1]</span> While artillery shattered bones, the soil itself delivered a lethal biological assault. Northern France and Flanders had been intensively cultivated agricultural farmland for centuries, heavily fertilized with massive deposits of cow, horse, and pig manure. Consequently, the soil was saturated with virulent, spore-forming bacteria, most notably <em>Clostridium welchii</em> (the cause of <strong>Gas Gangrene</strong>) and <em>Clostridium tetani</em> (the cause of <strong>Tetanus</strong>). Both microbes were strict anaerobes—organisms that thrive exclusively in environments completely devoid of oxygen. Deep, jagged shrapnel wounds containing dead muscle tissue, deprived of blood flow, provided the perfect incubator for these deadly bacteria.<br><br><span class="para-ref">[2.2]</span> Within hours of injury, anaerobic bacteria multiplied inside the devitalized tissue. Gas gangrene microbes produced foul-smelling gas that bubbled under the skin, destroying surrounding healthy muscle and releasing deadly toxins into the bloodstream (<span class="archival-meta-tag">Source A</span>). If untreated, gas gangrene killed a casualty within 24 to 48 hours. Tetanus caused violent, excruciating muscle spasms, lockjaw, and respiratory paralysis. Fortunately, British medical services introduced routine <strong>tetanus antitoxin</strong> injections at Regimental Aid Posts early in the war; by administering serum to every wounded man on the day of injury, tetanus was virtually eradicated by 1915. However, gas gangrene possessed no antitoxin, forcing surgeons to invent radical surgical techniques to save lives.',
         },
         {
           act: 3,
-          title: 'Act 3: Forensic Evidence (Chemical Warfare: Chlorine, Phosgene & Mustard Gas)',
-          text: '<span class="para-ref">[3.1]</span> On the afternoon of 22 April 1915, during the Second Battle of Ypres, German forces introduced a terrifying new weapon: <strong>chemical gas warfare</strong>. Over 5,700 cylinders released 160 tons of suffocating greenish-yellow chlorine gas across No Man’s Land toward French and Algerian positions. Chlorine reacted with moisture in the respiratory tract to produce hydrochloric acid, destroying lung tissue and causing victims to drown in their own secreted bodily fluids. Unprepared Allied troops initially soaked socks and cotton bandoliers in urine (ammonia neutralized chlorine) before the British issued the flannel <strong>Hypo Helmet</strong> and the chemical-impregnated <strong>Phenate-Hexamine (PH) Helmet</strong> (<span class="archival-meta-tag">Source B</span>) fitted with glass goggles and a rubber exhale valve.<br><br><span class="para-ref">[3.2]</span> Chemical warfare escalated rapidly. In December 1915, the Germans introduced <strong>Phosgene</strong>, a colorless gas smelling of moldy hay that was six times more toxic than chlorine; its lethal effects were insidious, often triggering delayed heart failure and pulmonary edema 24 to 48 hours after exposure. In July 1917, at the Third Battle of Ypres, Germany deployed <strong>Mustard Gas</strong> (Yellow Cross). Unlike chlorine or phosgene, mustard gas was an oily blister agent (vesicant) that penetrated clothing, burned through skin, caused immense weeping blisters, temporarily blinded soldiers, and contaminated trench mud for weeks. The British countered by issuing the <strong>Small Box Respirator (SBR)</strong> from 1916—a rubber face mask connected by a corrugated tube to a chest canister of activated charcoal and chemical filters, providing reliable, airtight protection.',
+          title: 'Act 3: Head Trauma & The Brodie Steel Helmet (Late 1915–1918)',
+          theme_heading: 'Act 3: Head Trauma & The Brodie Steel Helmet (Late 1915–1918)',
+          text: '<span class="para-ref">[3.1]</span> In the opening year of the war, head injuries represented the most lethal form of trauma on the battlefield. British soldiers entered the conflict wearing soft cloth peaked caps that offered zero ballistic protection. Because soldiers spent their days standing in trenches with their heads positioned just below the parapet, descending airburst artillery shells rained jagged iron balls and razor-sharp shell fragments directly onto their exposed skulls. In 1914 and early 1915, penetrating head trauma and fractured skulls accounted for a massive proportion of instant fatalities in the trenches.<br><br><span class="para-ref">[3.2]</span> To counter this carnage, British inventor John Leopold Brodie patented the pressed-steel <strong>Brodie Helmet</strong> in autumn 1915. Stamped from a single sheet of hardened manganese steel and lined with felt and canvas, the helmet featured a distinctive wide, shallow brim designed to deflect descending artillery shrapnel away from the wearer’s face, neck, and shoulders. Distributed to British frontline troops from early 1916, the Brodie helmet slashed fatal penetrating head wounds by an estimated 75% to 80%. Interestingly, hospital admissions for head injuries actually increased after the helmet’s introduction—a famous statistical anomaly caused by the fact that thousands of soldiers who previously would have died instantly in the trenches were now surviving to reach clearing stations for medical care.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Chemical Warfare: Chlorine & Phosgene Attacks (Apr 1915–1916)',
+          theme_heading: 'Act 4: Chemical Warfare: Chlorine & Phosgene Attacks (Apr 1915–1916)',
           source: {
             id: 'source_b_british_ph_gas_helmet',
             letter: 'B',
@@ -16976,23 +16980,27 @@ export const unitData = {
             image: '/images/british_ph_gas_helmet.jpg',
             caption:
               'A British Machine Gun Corps crew operating a Vickers machine gun from an improvised trench position near Ovillers on the Somme while wearing issue Phenate-Hexamine (PH) anti-gas helmets with exhale valves.',
-            desc: 'Primary artifact photograph of an issued British Phenate-Hexamine (PH) anti-gas helmet.',
+            desc: 'Official British War Office photograph of Vickers machine gun crew in PH gas helmets, Somme 1916.',
             provenance:
               'Official British War Office photograph taken by Lieutenant John Warwick Brooke near Ovillers during the Battle of the Somme, July 1916. Imperial War Museum Collection.',
             citation:
-              'British War Office Phenate-Hexamine Gas Helmet, 1915–1916 (Imperial War Museum EPH 4220).',
-            source_context:
-              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme showing British machine gunners in combat wearing the issue PH anti-gas helmet. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and deadly phosgene gas, the helmet was tucked into the tunic collar. While it prevented fatal lung damage, the mica eyepieces easily misted over and breathing through the tube during active combat was exhausting.',
-            context:
-              'An authentic wartime photograph taken in July 1916 during the Battle of the Somme showing British machine gunners in combat wearing the issue PH anti-gas helmet. Made of double-layered flannel impregnated with sodium phenate and hexamine to chemically neutralize chlorine and deadly phosgene gas, the helmet was tucked into the tunic collar. While it prevented fatal lung damage, the mica eyepieces easily misted over and breathing through the tube during active combat was exhausting.',
+              'Lt. John Warwick Brooke, Official War Office Photograph, Ovillers, Somme, July 1916 (IWM Collection).',
+            question:
+              'How does Source B demonstrate how the British Army adapted technological protection to enable machine gun crews to fight continuously through deadly chemical gas attacks?',
             hinge_question:
-              'Study Source B. How does this photograph illustrate both the vital protective value of early anti-gas helmets and the severe physical difficulties experienced by soldiers fighting while wearing them?',
+              'How does Source B demonstrate how the British Army adapted technological protection to enable machine gun crews to fight continuously through deadly chemical gas attacks?',
+            source_context:
+              'Official British War Office photograph taken by Lieutenant John Warwick Brooke near Ovillers during the Battle of the Somme, July 1916, showing a British Machine Gun Corps crew operating a Vickers machine gun while wearing issue Phenate-Hexamine (PH) anti-gas hoods with exhale valves. Hinge Question: How does Source B demonstrate how the British Army adapted technological protection to enable machine gun crews to fight continuously through deadly chemical gas attacks?',
+            context:
+              'Official British War Office photograph taken by Lieutenant John Warwick Brooke near Ovillers during the Battle of the Somme, July 1916, showing a British Machine Gun Corps crew operating a Vickers machine gun while wearing issue Phenate-Hexamine (PH) anti-gas hoods with exhale valves.',
           },
+          text: '<span class="para-ref">[4.1]</span> On the afternoon of 22 April 1915, during the Second Battle of Ypres, German forces introduced a terrifying new weapon: <strong>chemical gas warfare</strong>. Over 5,700 cylinders released 160 tons of suffocating greenish-yellow chlorine gas across No Man’s Land toward French and Algerian positions. Chlorine reacted with moisture in the respiratory tract to produce hydrochloric acid, destroying lung tissue and causing victims to drown in their own secreted bodily fluids. Unprepared Allied troops initially soaked socks and cotton bandoliers in urine (ammonia neutralized chlorine) before the British issued the flannel <strong>Hypo Helmet</strong> and the chemical-impregnated <strong>Phenate-Hexamine (PH) Helmet</strong> (<span class="archival-meta-tag">Source B</span>) fitted with glass goggles and a rubber exhale valve.<br><br><span class="para-ref">[4.2]</span> Chemical warfare escalated rapidly. In December 1915, the Germans introduced <strong>Phosgene</strong>, a colorless gas smelling of moldy hay that was six times more toxic than chlorine. Phosgene was particularly insidious because it caused little initial coughing or irritation; instead, its lethal effects were delayed, with casualties collapsing from acute pulmonary edema and heart failure 24 to 48 hours after exposure. The British upgraded the PH hood by chemically treating the flannel with hexamine to neutralize phosgene, ensuring British infantry could endure gas bombardments while maintaining frontline defensive firepower.',
         },
         {
-          act: 4,
-          title: 'Act 4: The Historical Verdict & Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> Although chemical gas attacks lived on in post-war literature as the supreme horror of trench warfare (immortalized by Wilfred Owen’s <em>Dulce et Decorum Est</em> and John Singer Sargent’s monumental painting <em>Gassed</em>), medical statistics reveal a striking historiographical reality. Gas attacks accounted for roughly 186,000 British casualties on the Western Front, but only 2.6% (around 6,000 men) proved fatal. Modern military historians emphasize that rapid medical and technological adaptation—primarily the widespread deployment of the British Small Box Respirator—transformed gas from a lethal killer into a tactical irritant and psychological terror weapon that exhausted troops and degraded combat efficiency without causing mass mortality.<br><br><span class="para-ref">[4.2]</span> The true existential medical crisis on the Western Front was the lethal synergy between high-explosive shrapnel and manured soil. High explosives created deep, necrotic, cloth-contaminated wounds that traditional peacetime antiseptics could not clean. The horrifying prevalence of gas gangrene shattered standard Victorian surgical practices, forcing military surgeons to recognize that battlefield wounds were fundamentally contaminated biological emergencies requiring immediate, radical surgical intervention before the casualty even reached a base hospital.',
+          act: 5,
+          title: 'Act 5: Mustard Gas & The Small Box Respirator (1916–1918)',
+          theme_heading: 'Act 5: Mustard Gas & The Small Box Respirator (1916–1918)',
+          text: '<span class="para-ref">[5.1]</span> The technological race between chemical delivery and protection culminated in the British invention of the <strong>Small Box Respirator (SBR)</strong>, introduced from late 1916. The SBR comprised a snug rubberized face mask with glass eyepieces, connected by a flexible corrugated hose to a metal chest canister containing chemical neutralizers and granules of activated vegetable charcoal. The charcoal trapped toxic gas molecules through physical adsorption, providing almost complete respiratory protection against all known suffocating gases and establishing the standard design for modern military gas masks.<br><br><span class="para-ref">[5.2]</span> However, in July 1917 at the Third Battle of Ypres (Passchendaele), the German army unleashed their most insidious weapon: <strong>Mustard Gas</strong> (Yellow Cross). Unlike chlorine or phosgene, mustard gas was an oily, persistent vesicant (blistering agent) that did not need to be inhaled to inflict horrific casualties. Fired in artillery shells, the oily liquid penetrated damp woollen uniforms, causing severe chemical burns, immense fluid-filled weeping blisters, temporary blindness, and respiratory tract destruction. Mustard gas contaminated muddy shell craters for days or weeks, forcing medical units to establish specialized decontamination showers and stripping stations. While chemical gas caused only 2.6% of British battlefield deaths due to effective respirators, its psychological terror and blistering injuries severely strained RAMC evacuation lines.',
         },
       ],
       sources: [
@@ -17300,7 +17308,7 @@ export const unitData = {
         {
           step: 2,
           date: '1914–1918',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
           heading: 'Why was Clostridium welchii so lethal in deep, airless shrapnel wounds?',
           bullets: [
             'Fertilising farmland with rotten animal manure',
@@ -17312,7 +17320,7 @@ export const unitData = {
         {
           step: 3,
           date: 'Late 1915',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
           heading:
             'Why did the introduction of the Brodie helmet cause an apparent rise in hospital head cases?',
           bullets: [
@@ -17326,7 +17334,7 @@ export const unitData = {
         {
           step: 4,
           date: 'Apr 1915–1916',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'How did the rapid evolution of chemical respirators counter suffocating gases?',
           bullets: [
             'Releasing green-yellow choking cloud over fields',
@@ -17339,7 +17347,7 @@ export const unitData = {
         {
           step: 5,
           date: '1916–1918',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why was mustard gas far harder to counter than chlorine or phosgene?',
           bullets: [
             'Sucking air through rubber tubes and charcoal canisters',
@@ -17371,7 +17379,7 @@ export const unitData = {
           {
             step: 2,
             date: '1914–1918',
-            para_ref: '[2.1]',
+            para_ref: '[2.1–2.2]',
             title: 'Soil Bacteria & Gas Gangrene',
             actor: 'Clostridium welchii & Anaerobic Bacteria',
             tag: '☣️ GAS GANGRENE CRISIS',
@@ -17385,7 +17393,7 @@ export const unitData = {
           {
             step: 3,
             date: 'Late 1915',
-            para_ref: '[2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Head Trauma & Brodie Helmet',
             actor: 'John Leopold Brodie & War Office',
             tag: '🪖 BRODIE STEEL HELMET',
@@ -17400,7 +17408,7 @@ export const unitData = {
           {
             step: 4,
             date: 'Apr 1915–1916',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Chlorine & Phosgene Attacks',
             actor: 'German Gas Regiments & RAMC Chemical Advisors',
             tag: '☁️ CHEMICAL RESPIRED DEFENCE',
@@ -17415,7 +17423,7 @@ export const unitData = {
           {
             step: 5,
             date: '1916–1918',
-            para_ref: '[3.2, 4.1]',
+            para_ref: '[5.1–5.2]',
             title: 'Mustard Gas & Box Respirators',
             actor: 'British War Office & Small Box Respirators',
             tag: '😷 SMALL BOX RESPIRATOR & MUSTARD GAS',
@@ -17439,75 +17447,30 @@ export const unitData = {
           date: '1914–1918',
           title: 'Soil Bacteria & Gas Gangrene',
           desc: 'Flanders farmland had been intensively manured for centuries, heavily saturating the damp soil with tetanus spores and anaerobic Clostridium welchii bacteria.',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
         },
         {
           date: 'Late 1915',
           title: 'Head Trauma & Brodie Helmet',
           desc: 'British soldiers entered the war wearing soft cloth peaked caps that offered zero protection against raining shrapnel and falling trench timber splinters.',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: 'Apr 1915–1916',
           title: 'Chlorine & Phosgene Attacks',
           desc: 'The German Army launched the first mass chemical gas attack at Second Ypres in April 1915, discharging cylinders of suffocation-inducing greenish-yellow chlorine gas.',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
         },
         {
           date: '1916–1918',
           title: 'Mustard Gas & Box Respirators',
           desc: 'The British introduced the Small Box Respirator in 1916 with activated charcoal canisters; however, in July 1917 Germans deployed oily, odorless blistering mustard gas.',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
         },
       ],
     },
     {
       id: 'lesson_5_4',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to examine the Chain of Evacuation from frontline to base:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'FRONTLINE RESCUE',
-            title: '1. Stretcher Bearers & The Regimental Aid Post (RAP)',
-            prompt:
-              'Describe the dangerous role of stretcher-bearers and the immediate emergency first-aid provided at the RAP:',
-            model_notes: [
-              '16 stretcher-bearers per battalion worked in pairs of four to haul heavy 6-foot stretchers across deep mud and shell-holes under heavy fire.',
-              'The Regimental Aid Post was located within 200m of the frontline in a dugout, cellar, or trench communication corner.',
-              'The Regimental Medical Officer (RMO) bandaged wounds, applied splints, administered anti-tetanus injections, and sorted men for rear evacuation.',
-            ],
-            key_terms: ['Regimental Aid Post (RAP)', 'Stretcher Bearers'],
-          },
-          {
-            num: 2,
-            badge: 'TRIAGE & CCS',
-            title: '2. Advanced Dressing Stations & Casualty Clearing Station (CCS) Triage',
-            prompt:
-              'Explain the triage system at Casualty Clearing Stations and why surgical capacity shifted closer to the frontline:',
-            model_notes: [
-              'Field Ambulances ran ADS and MDS 1-2 miles back; motor ambulances transported severe cases to Casualty Clearing Stations (7-12 miles back near railheads).',
-              'CCS operated strict surgical triage: 1) Walking wounded, 2) In urgent need of lifesaving surgery, 3) Hopeless cases (given comfort care).',
-              "CCS performed urgent surgeries (amputations, debridement) because operating within the first 12 hours ('golden window') stopped fatal gas gangrene.",
-            ],
-            key_terms: ['Casualty Clearing Station (CCS)', 'Surgical Triage'],
-          },
-          {
-            num: 3,
-            badge: 'BASE REAR',
-            title: '3. Base Hospitals, Ambulance Trains & The FANY Ambulance Drivers',
-            prompt:
-              'Trace the final evacuation stages: Base Hospitals, canal barges, ambulance trains, and FANY drivers:',
-            model_notes: [
-              'Large military Base Hospitals located on French coast (Boulogne, Étaples); patients evacuated via dedicated hospital trains and smooth canal barges.',
-              'First Aid Nursing Yeomanry (FANY) were volunteer women who drove motor ambulances, mobile soup kitchens, and canteen vans in hazardous combat zones.',
-              "Soldiers with disabling injuries requiring months of rehabilitation were shipped across the Channel on hospital ships for treatment in 'Blighty'.",
-            ],
-            key_terms: ['Base Hospitals', 'FANY Ambulance Drivers'],
-          },
-        ],
-      },
       title:
         'KT5.4: The Chain of Evacuation: Stretcher Bearers, RAP, Dressing Stations & CCS (1914–1918)',
       enquiry_question:
@@ -17520,27 +17483,55 @@ export const unitData = {
         'When a soldier was struck down in the mud of No Man’s Land, his survival depended on a vast, integrated medical machine: the Chain of Evacuation. Operated by the Royal Army Medical Corps (RAMC) and heroic volunteers of the First Aid Nursing Yeomanry (FANY), this multi-stage system ferried casualties from the frontline firing line through Regimental Aid Posts, Advanced Dressing Stations, and Casualty Clearing Stations, back to coastal Base Hospitals. In a war where untreated wounds quickly succumbed to fatal gas gangrene, every hour saved in transit was the difference between life and death.',
       teacher_notes: {
         primer:
-          'Master the complete operational sequence of the Chain of Evacuation: Stretcher Bearers -> Regimental Aid Post (RAP) -> Advanced / Main Dressing Station (ADS/MDS, Field Ambulance) -> Casualty Clearing Station (CCS) -> Base Hospital -> ‘Blighty’ (Britain). Emphasize the crucial concept of triage, transport innovations (motor ambulances, ambulance trains, canal barges), and the vital role of women in the FANY.',
+          'This enquiry examines the operational structure and humanitarian logistics of the Royal Army Medical Corps (RAMC) Chain of Evacuation on the Western Front, exploring stretcher bearer retrieval, first aid at Regimental Aid Posts, intermediate triage at Dressing Stations, surgical intervention and the 3-tier triage system at Casualty Clearing Stations, coastal Base Hospitals, and transport innovations including motor ambulances and converted canal barges.',
         objectives: [
           {
             objective:
-              'Describe the sequence and specific medical function of each station in the Chain of Evacuation.',
+              'Explain the vital role of frontline Stretcher Bearers and Regimental Aid Posts in stemming catastrophic haemorrhage and shock.',
             primer:
-              'Direct students to paragraphs [1.2], [2.1], and [3.1]. Ensure students distinguish between first-aid triage posts (RAP and Dressing Stations, which could not perform major surgery) and surgical hospitals (Casualty Clearing Stations with operating theatres and Base Hospitals).',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that sixteen stretcher bearers per battalion crawled through mud under fire to bring casualties to the RAP 200 yards back, where medical officers administered tourniquets, morphine, and tetanus antitoxins.',
+            question:
+              'Why was rapid frontline retrieval by stretcher bearers to the Regimental Aid Post essential to prevent fatal haemorrhagic shock?',
           },
           {
             objective:
-              'Analyze the physical challenges faced by Stretcher Bearers in retrieving casualties under fire.',
+              'Analyse the tactical medical function of Advanced and Main Dressing Stations operated by RAMC Field Ambulances.',
             primer:
-              'Guide students through paragraph [2.1] and Source A. Highlight the extreme physical exhaustion of navigating flooded shell craters in Flanders, where carrying one stretcher required four to six men and several hours of agonizing effort under continuous artillery fire.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Stretcher bearers at Passchendaele). Highlight how six men were needed per stretcher in mud and how dressing stations sorted casualties to prevent CCS congestion.',
+            question:
+              'What was the tactical medical purpose of Dressing Stations in sorting casualties and preventing bottlenecks at Casualty Clearing Stations?',
           },
           {
             objective:
-              'Evaluate the role of transport methods and Casualty Clearing Stations in saving lives.',
+              'Evaluate the surgical supremacy and 3-tier triage system of Casualty Clearing Stations (CCS).',
             primer:
-              'Examine paragraphs [3.1]–[3.2], Source B, and the role of FANY. Contrast horse ambulances with motor ambulances, and explain why converted canal barges provided the smoothest, vibration-free transport for fragile head and abdominal wounds.',
+              'Direct students to paragraphs [3.1]–[3.2]. Detail the location of CCSs (7–12 miles back near railheads), female QAIMNS nursing staff, sterile theatres, and the strict division into walking wounded, urgent surgical cases, and moribund.',
+            question:
+              'How did the rigorous 3-tier triage system at Casualty Clearing Stations maximize casualty survival during mass offensives?',
+          },
+          {
+            objective:
+              'Examine the specialized treatment and convalescent role of coastal Base Hospitals and hospital ships returning to "Blighty".',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Focus on massive hospital complexes at Boulogne and Étaples, specialized wards for chest and brain trauma, and patient transit to Britain on dedicated white hospital ships.',
+            question:
+              'Why were vast Base Hospitals situated adjacent to major coastal railheads and Channel passenger ports in northern France?',
+          },
+          {
+            objective:
+              'Compare the medical effectiveness of motorized ambulances and converted canal barges in casualty transport.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2] and Source B (Converted RAMC Ambulance Canal Barge). Contrast the jarring motion of road ambulances driven by FANY volunteers with the smooth, vibration-free transport of barge waterways for head and abdominal injuries.',
+            question:
+              'Why were converted canal barges preferred over road motor ambulances for transporting casualties with severe head, chest, or abdominal wounds?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Source A: RAMC Stretcher Bearers Carrying a Casualty at Boesinghe, Ypres (1917). Official British Army photograph taken by Lieutenant John Warwick Brooke near Boesinghe during the Third Battle of Ypres, 1 August 1917, showing a team of six British stretcher bearers struggling through deep, liquid Flanders mud to carry a wounded soldier on a wooden stretcher. Hinge Question: Why did the exhausting physical conditions shown in Source A require six stretcher bearers instead of the usual four to transport a single casualty through Flanders mud?',
+          'Source B':
+            'Source B: Converted RAMC Ambulance Canal Barge on French Waterways (c.1916). Official British military photograph taken in northern France, c.1916, showing a French canal barge converted by the Royal Army Medical Corps into an ambulance barge fitted with canvas awnings, clean hospital cots, and heating for post-operative transit. Hinge Question: Why did converted canal barges like the one shown in Source B provide a superior method of transport for post-operative head and abdominal casualties compared to road motor ambulances?',
+        },
       },
       learning_objectives: [
         'Detail the order and purpose of each station in the Chain of Evacuation.',
@@ -17592,14 +17583,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Context & Catalyst (The Geography of Survival: The Evacuation Lifeline)',
-          text: '<span class="para-ref">[1.1]</span> In the brutal arithmetic of the Western Front, survival was a race against time. Because the manured soil of Flanders and northern France teemed with anaerobic bacteria that induced fatal gas gangrene within twenty-four hours, the Royal Army Medical Corps (RAMC) had to construct a rapid, continuous system for transporting wounded soldiers from the active firestep back to specialized surgical units. This operational lifeline was known as the <strong>Chain of Evacuation</strong>.<br><br><span class="para-ref">[1.2]</span> The Chain was organized into distinct stages in depth, each positioned at a calculated distance from the front line to balance physical safety from enemy artillery against the urgent speed of medical treatment. The complete sequence ran: <strong>Stretcher Bearers</strong> in the frontline and No Man’s Land &rarr; <strong>Regimental Aid Post (RAP)</strong> within 200–300 yards &rarr; <strong>Advanced and Main Dressing Stations</strong> (Field Ambulances) at 1 to 3 miles &rarr; <strong>Casualty Clearing Stations (CCS)</strong> at 7 to 12 miles &rarr; <strong>Base Hospitals</strong> at coastal ports like Boulogne and Calais &rarr; and finally <strong>Hospital Ships</strong> returning severe casualties to "Blighty" (specialist hospitals in Britain).',
+          title: 'Act 1: Frontline Retrieval & The Regimental Aid Post (1914–1918)',
+          theme_heading: 'Act 1: Frontline Retrieval & The Regimental Aid Post (1914–1918)',
+          text: '<span class="para-ref">[1.1]</span> In the brutal arithmetic of the Western Front, casualty survival was a desperate race against time. Because the manured soil of Flanders and northern France was teeming with virulent anaerobic bacteria that caused fatal gas gangrene within twenty-four hours, the Royal Army Medical Corps (RAMC) constructed an organized, continuous evacuation pipeline from the firestep back to specialized base hospitals: the <strong>Chain of Evacuation</strong>. The initial retrieval of wounded men fell upon battalion <strong>Stretcher Bearers</strong>. Each British infantry battalion of 1,000 men had just sixteen dedicated stretcher bearers (four per company), armed only with brassards, field dressings, and wooden stretchers.<br><br><span class="para-ref">[1.2]</span> Under direct artillery fire and sniper observation, bearers crawled into shell holes to retrieve casualties and haul them back to the <strong>Regimental Aid Post (RAP)</strong>. Located 200 to 300 yards behind the frontline in a communication trench dugout, ruined farmhouse cellar, or sandbagged breastwork, the RAP was staffed by the Regimental Medical Officer (RMO) and orderlies. The RAP was an emergency first-aid station, not a surgical hospital: its mission was immediate life-preservation—applying tourniquets to stem arterial haemorrhage, bandaging wounds, administering pain-relieving morphine, and giving mandatory tetanus antitoxin injections before moving men back to avoid congestion.',
         },
         {
           act: 2,
-          title:
-            'Act 2: Escalation & Conflict (Frontline Retrieval: Stretcher Bearers, RAP & Dressing Stations)',
-          text: '<span class="para-ref">[2.1]</span> The initial retrieval of wounded men fell upon unit <strong>Stretcher Bearers</strong>. Each British infantry battalion of 1,000 men had just sixteen dedicated stretcher bearers (four per company). In combat, they ventured unarmed into No Man’s Land and pulverized communication trenches under direct machine-gun fire and artillery shelling. In the mud of Passchendaele (<span class="archival-meta-tag">Source A</span>), carrying a single wounded soldier weighing twelve stone on a heavy wooden stretcher required six men rather than four, as bearers sank waist-deep into liquid clay. The journey of two miles to an aid post could take up to eight exhausting hours. Bearers suffered staggering casualty rates, demonstrating immense courage in hauling comrades through cratered devastation.<br><br><span class="para-ref">[2.2]</span> The first medical facility was the <strong>Regimental Aid Post (RAP)</strong>, located a few hundred yards behind the frontline in a communication trench dugout, ruined cellar, or behind a breastwork. Staffed by the Regimental Medical Officer (RMO) and medical orderlies, its function was immediate triage and first aid: bandaging wounds, applying field tourniquets to stem catastrophic hemorrhage, and administering pain-relieving morphine and tetanus antitoxin. The RAP could not perform surgery. Casualties were moved back by hand-stretcher, wheeled gurney, or horse ambulance to an <strong>Advanced Dressing Station (ADS)</strong> and <strong>Main Dressing Station (MDS)</strong>, operated by an RAMC Field Ambulance unit. Located roughly one to two miles behind the line, dressing stations checked dressings, treated shock with warm blankets and hot sweetened tea, and sorted patients for vehicular evacuation.',
+          title: 'Act 2: Field Ambulances & Advanced Dressing Stations (1914–1918)',
+          theme_heading: 'Act 2: Field Ambulances & Advanced Dressing Stations (1914–1918)',
           source: {
             id: 'source_a_stretcher_bearers_passchendaele',
             letter: 'A',
@@ -17610,24 +17601,38 @@ export const unitData = {
             image: '/images/stretcher_bearers_passchendaele.jpg',
             caption:
               'A team of six British stretcher bearers struggling through deep, liquid Flanders mud to carry a wounded soldier on a wooden stretcher near Boesinghe during the Third Battle of Ypres.',
-            desc: 'Primary photograph of RAMC stretcher bearers carrying a wounded soldier through liquid mud.',
+            desc: 'Official British Army photograph taken near Boesinghe during the Third Battle of Ypres, August 1917.',
             provenance:
               'Official British Army photograph taken by Lieutenant John Warwick Brooke near Boesinghe during the Third Battle of Ypres, 1 August 1917. Imperial War Museum Collection.',
             citation:
-              'Lieut. Ernest Brooks, Official British War Office Photograph, Passchendaele, 1917 (Imperial War Museum Q 2757).',
-            source_context:
-              'Official photograph taken by British war photographer Lieutenant John Warwick Brooke on 1 August 1917 during the Third Battle of Ypres (Passchendaele), capturing the grueling physical ordeal experienced by stretcher bearers navigating liquid-mud battlefields under fire, requiring six men rather than four to haul a single stretcher.',
-            context:
-              'Official photograph taken by British war photographer Lieutenant John Warwick Brooke on 1 August 1917 during the Third Battle of Ypres (Passchendaele), capturing the grueling physical ordeal experienced by stretcher bearers navigating liquid-mud battlefields under fire, requiring six men rather than four to haul a single stretcher.',
+              'Lt. John Warwick Brooke, Official War Office Photograph, Boesinghe, Ypres, 1 August 1917 (IWM Collection).',
+            question:
+              'Why did the exhausting physical conditions shown in Source A require six stretcher bearers instead of the usual four to transport a single casualty through Flanders mud?',
             hinge_question:
-              'Study Source A. How does this photograph illustrate why transporting wounded soldiers across devastated battlefields to dressing stations required up to six bearers and took many exhausting hours?',
+              'Why did the exhausting physical conditions shown in Source A require six stretcher bearers instead of the usual four to transport a single casualty through Flanders mud?',
+            source_context:
+              'Official British Army photograph taken by Lieutenant John Warwick Brooke near Boesinghe during the Third Battle of Ypres, 1 August 1917, showing a team of six British stretcher bearers struggling through deep, liquid Flanders mud to carry a wounded soldier on a wooden stretcher. Hinge Question: Why did the exhausting physical conditions shown in Source A require six stretcher bearers instead of the usual four to transport a single casualty through Flanders mud?',
+            context:
+              'Official British Army photograph taken by Lieutenant John Warwick Brooke near Boesinghe during the Third Battle of Ypres, 1 August 1917, showing a team of six British stretcher bearers struggling through deep, liquid Flanders mud to carry a wounded soldier on a wooden stretcher.',
           },
+          text: '<span class="para-ref">[2.1]</span> Transporting wounded soldiers from the RAP back to intermediate dressing stations was one of the most physically punishing ordeals of the war. In the cratered quagmires of Passchendaele (<span class="archival-meta-tag">Source A</span>), carrying a wounded soldier weighing twelve stone across broken ground required teams of six stretcher bearers rather than four, as men repeatedly sank waist-deep into liquid mud. A relay journey of two miles across pulverized terrain could take six to eight exhausting hours. Stretcher bearers suffered immense casualties from flying shrapnel and sniper bullets while struggling to keep their patients elevated above water-filled shell holes.<br><br><span class="para-ref">[2.2]</span> From the RAP, casualties arrived at <strong>Advanced Dressing Stations (ADS)</strong> and <strong>Main Dressing Stations (MDS)</strong>, operated by RAMC Field Ambulance units. Located one to two miles behind the front in tents, bunkers, or ruined barns, dressing stations acted as an intermediate clearing filter. Staffed by ten medical officers and orderlies, dressing stations could not perform major surgery, but they examined bandages, treated hypothermic shock with warm blankets and hot sweet tea, administered additional anti-tetanus injections, and sorted casualties into motorized transport to prevent catastrophic crowding at surgical hospitals.',
         },
         {
           act: 3,
-          title:
-            'Act 3: Forensic Evidence (The Surgical Crucible: Casualty Clearing Stations & Transport)',
-          text: '<span class="para-ref">[3.1]</span> The pivotal medical hub of the entire evacuation chain was the <strong>Casualty Clearing Station (CCS)</strong>. Located 7 to 12 miles behind the front line—safely beyond the range of standard German field artillery, but situated beside major railway lines and canal networks—the CCS was the first facility equipped with fully sterile operating theatres, mobile X-ray machines, and trained female military nurses of the Queen Alexandra’s Imperial Military Nursing Service (QAIMNS). The CCS was where life-saving, contaminated trauma surgery actually occurred. Upon arrival, medical officers operated a rigorous system of <strong>Triage</strong>, dividing casualties into three strict categories: <em>The Walking Wounded</em> (treated and returned to duty); <em>Those Requiring Immediate Surgery</em> (patients with compound fractures, internal abdominal hemorrhages, or chest trauma who had a viable chance of life if operated on at once); and <em>The Moribund</em> (hopelessly wounded casualties made comfortable with morphine until they died).<br><br><span class="para-ref">[3.2]</span> From the CCS, stabilized patients were transported to vast <strong>Base Hospitals</strong> near the French coast (such as the sprawling complex of tented and hutted hospitals at Étaples and Boulogne). Transport logistics were transformed over the course of the war. In 1914, the British Army relied almost exclusively on horse-drawn ambulances, which jolted shattered limbs agonizingly and caused hundreds of men to die from hemorrhagic shock. The Red Cross and volunteer donations introduced thousands of motorized ambulance vans, driven with extraordinary heroism by female drivers of the <strong>First Aid Nursing Yeomanry (FANY)</strong>. For severely wounded soldiers suffering from fractured skulls or delicate abdominal operations, the smoothest journey was provided by converted <strong>RAMC canal barges</strong> (<span class="archival-meta-tag">Source B</span>), which floated casualties gently along the inland canal network without the violent jolting of rutted, shell-smashed roads.',
+          title: 'Act 3: Casualty Clearing Stations & The 3-Tier Triage System (1914–1918)',
+          theme_heading: 'Act 3: Casualty Clearing Stations & The 3-Tier Triage System (1914–1918)',
+          text: '<span class="para-ref">[3.1]</span> The pivotal medical hub of the entire evacuation chain was the <strong>Casualty Clearing Station (CCS)</strong>. Located 7 to 12 miles behind the front line—safely beyond standard German field artillery range, but positioned strategically beside railway lines and canal networks—the CCS was the first facility equipped with sterile operating theatres, autoclaves, mobile X-ray vans, and professional military nurses of the Queen Alexandra’s Imperial Military Nursing Service (QAIMNS). The CCS was where contaminated, life-threatening trauma surgery actually took place.<br><br><span class="para-ref">[3.2]</span> To handle thousands of casualties arriving simultaneously during major offensives, medical officers operated a rigorous system of <strong>Triage</strong>, dividing incoming men into three strict clinical categories: (1) <em>The Walking Wounded</em> (men with minor flesh wounds who were dressed and returned to duty); (2) <em>Those Requiring Immediate Surgery</em> (patients with compound fractures, ruptured femurs, or penetrating abdominal and chest wounds who had a viable chance of survival if operated on immediately); and (3) <em>The Moribund</em> (hopelessly wounded soldiers whose injuries were fatal, who were placed in quiet tents and made comfortable with morphine until they passed away). By prioritizing surgical resources for viable life-threatening cases, CCS surgeons saved hundreds of thousands of lives.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Base Hospitals on the French Coast (1914–1918)',
+          theme_heading: 'Act 4: Base Hospitals on the French Coast (1914–1918)',
+          text: '<span class="para-ref">[4.1]</span> Once patients were operated on and stabilized at the CCS, they were evacuated to vast <strong>Base Hospitals</strong> situated along the French coast, concentrated at major ports such as Boulogne, Le Havre, Rouen, and the massive hospital camp at Étaples. Taking advantage of maritime and railway infrastructure, coastal base hospitals were vast complexes of brick buildings, tents, and wooden huts capable of housing 2,000 to 20,000 beds. Base hospitals were staffed by senior civilian surgeons, specialist consultants, and Voluntary Aid Detachment (VAD) nurses, providing advanced post-operative care and specialized rehabilitation.<br><br><span class="para-ref">[4.2]</span> Base hospitals were organized into dedicated specialist wings: orthopedic wards for compound fractures, specialized units for severe facial and head injuries, and isolation wards for infectious gas gangrene and dysentery. When casualties stabilized sufficiently to travel and required extended convalescence, they were loaded onto dedicated white-painted <strong>hospital ships</strong> (marked with red crosses and green hull bands) for the voyage across the English Channel back to specialized military and civilian hospitals in Britain ("Blighty").',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Transport Logistics: Motor Ambulances & Canal Barges (1914–1918)',
+          theme_heading: 'Act 5: Transport Logistics: Motor Ambulances & Canal Barges (1914–1918)',
           source: {
             id: 'source_b_ramc_canal_barge',
             letter: 'B',
@@ -17637,23 +17642,21 @@ export const unitData = {
             image: '/images/ramc_canal_barge.jpg',
             caption:
               'A French canal barge converted by the Royal Army Medical Corps into an ambulance barge, fitted with canvas awnings, clean hospital cots, and heating, transporting fragile post-operative casualties to Base Hospitals.',
-            desc: 'Primary photograph of an RAMC converted hospital canal barge transporting wounded soldiers.',
+            desc: 'Official British military photograph of converted RAMC ambulance canal barge in northern France, c.1916.',
             provenance:
               'Official British military photograph taken in northern France, c.1916. Imperial War Museum Collection (Shelfmark: Q 11048).',
             citation:
-              'Official British Military Photograph, Northern France, c.1916 (Imperial War Museum Q 11048).',
-            source_context:
-              'An official photograph taken c.1916 showing an RAMC ambulance canal barge in northern France. Converted barges carried up to thirty stretcher cases along calm inland waterways, providing a vibration-free, smooth evacuation method for soldiers recovering from delicate abdominal surgery or fractured skulls who could not survive the jolting of road ambulances.',
-            context:
-              'An official photograph taken c.1916 showing an RAMC ambulance canal barge in northern France. Converted barges carried up to thirty stretcher cases along calm inland waterways, providing a vibration-free, smooth evacuation method for soldiers recovering from delicate abdominal surgery or fractured skulls who could not survive the jolting of road ambulances.',
+              'Official British Military Photograph, Northern France Waterways, c.1916 (IWM Q 11048).',
+            question:
+              'Why did converted canal barges like the one shown in Source B provide a superior method of transport for post-operative head and abdominal casualties compared to road motor ambulances?',
             hinge_question:
-              'How does the use of converted canal barges shown in Source B explain how the RAMC adapted natural infrastructure to improve casualty survival during transit to Base Hospitals?',
+              'Why did converted canal barges like the one shown in Source B provide a superior method of transport for post-operative head and abdominal casualties compared to road motor ambulances?',
+            source_context:
+              'Official British military photograph taken in northern France, c.1916, showing a French canal barge converted by the Royal Army Medical Corps into an ambulance barge fitted with canvas awnings, clean hospital cots, and heating for post-operative transit. Hinge Question: Why did converted canal barges like the one shown in Source B provide a superior method of transport for post-operative head and abdominal casualties compared to road motor ambulances?',
+            context:
+              'Official British military photograph taken in northern France, c.1916, showing a French canal barge converted by the Royal Army Medical Corps into an ambulance barge fitted with canvas awnings, clean hospital cots, and heating for post-operative transit.',
           },
-        },
-        {
-          act: 4,
-          title: 'Act 4: The Historical Verdict & Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> Historiographers debate the ultimate efficiency and humanitarian success of the Chain of Evacuation. Critical accounts emphasize the horrific bottlenecks during major offensives: on 1 July 1916 at the Somme, the sudden arrival of over 50,000 wounded men completely collapsed transport networks, leaving casualties lying in open fields outside overwhelmed CCSs for days without food or water. However, medical historians such as Ian Whitehead and Mark Harrison demonstrate that the RAMC achieved unprecedented operational efficiency. Over the course of the war, the British medical services treated over 2.6 million wounded soldiers on the Western Front, returning an astounding 80% of treated casualties back to active military service or home life.<br><br><span class="para-ref">[4.2]</span> The Chain of Evacuation was not merely a passive transport system; it was an active filter that determined surgical priority. By pushing life-saving surgery forward from coastal base hospitals into forward Casualty Clearing Stations, and by integrating motorized road ambulances, hospital trains, and canal barges, the RAMC shrank evacuation times from days to hours. In doing so, British military medicine transformed the chaotic horrors of industrial warfare into a structured, rational system that laid the institutional foundation for modern emergency trauma networks.',
+          text: '<span class="para-ref">[5.1]</span> The physical survival of wounded soldiers was deeply dependent upon transport technology between medical stations. In August 1914, the British Army deployed almost exclusively with horse-drawn ambulances. Over cratered, shell-ploughed roads, horse wagons jolted agonizingly, causing jagged bone splinters to sever arteries and throwing stabilized casualties into fatal secondary shock. In response, public appeals coordinated by the British Red Cross raised funds to purchase motorized ambulance vans. Female volunteer drivers of the <strong>First Aid Nursing Yeomanry (FANY)</strong> and Red Cross drove fleets of motorized ambulances under shellfire, dramatically shrinking transit times between dressing stations and railheads.<br><br><span class="para-ref">[5.2]</span> For the most delicate surgical casualties—men with trepanned skulls, fragile chest wounds, or newly stitched abdominal incisions—even motorized ambulances over cobbled French roads were dangerously jarring. The RAMC solved this by converting French commercial canal barges into floating ambulance wards (<span class="archival-meta-tag">Source B</span>). Fitted with warm stoves, electric lamps, clean hospital cots, and nursing staff, these <strong>ambulance barges</strong> glided smoothly and silently along northern France’s extensive canal network, carrying post-operative patients directly to coastal base hospitals without a single jolt, preserving delicate surgical sutures and saving countless lives.',
         },
       ],
       sources: [
@@ -17982,7 +17985,7 @@ export const unitData = {
         {
           step: 2,
           date: '1914–1918',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
           heading: 'What was the tactical role of Dressing Stations in preventing CCS congestion?',
           bullets: [
             'Setting up treatment cots inside ruined farm barns',
@@ -17995,7 +17998,7 @@ export const unitData = {
         {
           step: 3,
           date: '1914–1918',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'How did the 3-tier triage system maximize survival during mass offensives?',
           bullets: [
             'Setting up big operating tents near railway tracks',
@@ -18007,7 +18010,7 @@ export const unitData = {
         {
           step: 4,
           date: '1914–1918',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why were Base Hospitals situated near major coastal rail terminals and ports?',
           bullets: [
             'Converting coastal resort hotels into recovery wards',
@@ -18020,7 +18023,7 @@ export const unitData = {
         {
           step: 5,
           date: '1914–1918',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why were canal barges preferred over trains for head and chest trauma?',
           bullets: [
             'Bouncing painfully in old wooden horse wagons',
@@ -18052,7 +18055,7 @@ export const unitData = {
           {
             step: 2,
             date: '1914–1918',
-            para_ref: '[2.1]',
+            para_ref: '[2.1–2.2]',
             title: 'Field Ambulances & ADS/MDS',
             actor: 'RAMC Field Ambulances',
             tag: '🏥 ADVANCED DRESSING STATIONS (ADS)',
@@ -18067,7 +18070,7 @@ export const unitData = {
           {
             step: 3,
             date: '1914–1918',
-            para_ref: '[2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'CCS & The Triage System',
             actor: 'Casualty Clearing Station Surgeons & Triage Officers',
             tag: '⚖️ 3-TIER CCS TRIAGE',
@@ -18081,7 +18084,7 @@ export const unitData = {
           {
             step: 4,
             date: '1914–1918',
-            para_ref: '[3.1]',
+            para_ref: '[3.1–3.2]',
             title: 'Base Hospitals on French Coast',
             actor: 'Coastal Base Hospitals & Hospital Ships',
             tag: '🚢 BASE HOSPITALS & BLIGHTY',
@@ -18096,7 +18099,7 @@ export const unitData = {
           {
             step: 5,
             date: '1914–1918',
-            para_ref: '[3.2, 4.1]',
+            para_ref: '[5.1–5.2]',
             title: 'Motor Ambulances & Barges',
             actor: 'Red Cross, FANY & Ambulance Drivers',
             tag: '🚑 MOTOR AMBULANCES & CANAL BARGES',
@@ -18120,75 +18123,30 @@ export const unitData = {
           date: '1914–1918',
           title: 'Field Ambulances & ADS/MDS',
           desc: 'Field Ambulances operated Advanced Dressing Stations (ADS) and Main Dressing Stations (MDS) located one to two miles behind the frontline in farmhouses, tents, or bunkers.',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
         },
         {
           date: '1914–1918',
           title: 'CCS & The Triage System',
           desc: 'Located 10 miles behind the front near railway sidings, Casualty Clearing Stations (CCS) served as the vital surgical hub where incoming wounded were divided into three triage categories.',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: '1914–1918',
           title: 'Base Hospitals on French Coast',
           desc: 'Vast Base Hospitals operated at Boulogne, Le Havre, and Rouen, taking advantage of major coastal railheads and passenger ship docks.',
-          para_ref: '[3.1]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: '1914–1918',
           title: 'Motor Ambulances & Barges',
           desc: 'Early horse-drawn ambulances jolted severely on shell-cratered roads, prompting public appeals that raised funds for 250 motorized ambulances operated by the Red Cross and FANY.',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
         },
       ],
     },
     {
       id: 'lesson_5_5',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to evaluate surgical innovations on the Western Front:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'THOMAS SPLINT',
-            title: '1. Hugh Owen Thomas & The Thomas Splint (1915)',
-            prompt:
-              'Explain how the Thomas Splint reduced fractured femur mortality from 80% to 20% in the British Army:',
-            model_notes: [
-              'Femur fractures caused broken bone ends to saw through muscle and femoral arteries during bumpy carriage transit, causing fatal shock and hemorrhage.',
-              "Robert Jones introduced his uncle Hugh Owen Thomas's splint to the Western Front in December 1915.",
-              'The rigid metal traction frame locked the leg firmly in tension, reducing compound femur fracture death rates from 80% down to 20%.',
-            ],
-            key_terms: ['Thomas Splint (1915)', 'Compound Femur Fractures'],
-          },
-          {
-            num: 2,
-            badge: 'MOBILE RADIOLOGY',
-            title: '2. Mobile X-Rays & Locating Deep Shrapnel',
-            prompt:
-              'Explain how mobile X-ray vans and hospital radiographic units enabled surgeons to locate buried shrapnel:',
-            model_notes: [
-              'Base hospitals and larger CCS units operated stationary radiographic X-ray machines.',
-              'Six mobile X-ray vans operated across the British sector, moving directly between CCS stations during major military offensives.',
-              'Located exact depths and angles of jagged shrapnel fragments and bullets inside muscle before surgery, preventing destructive exploratory probing.',
-            ],
-            key_terms: ['Mobile X-Ray Vans', 'Radiographic Shrapnel Location'],
-          },
-          {
-            num: 3,
-            badge: 'WOUND SURGERY',
-            title: '3. Wound Debridement & The Carrel-Dakin Continuous Irrigation Method',
-            prompt:
-              'Explain why carbolic acid failed on deep wounds and how debridement and Carrel-Dakin irrigation solved infection:',
-            model_notes: [
-              "Lister's carbolic acid failed because it burnt delicate tissue and could not penetrate deep into anaerobic shrapnel cavities.",
-              "Surgeons developed 'wound debridement' (wound excision): cutting away all dead, damaged, and contaminated tissue to starve bacteria.",
-              'The Carrel-Dakin technique inserted rubber tubes into open wounds to continuously flush them with a mild, sterilizing sodium hypochlorite antiseptic solution.',
-            ],
-            key_terms: ['Wound Debridement', 'Carrel-Dakin Irrigation'],
-          },
-        ],
-      },
       title:
         'KT5.5: Surgical Breakthroughs: The Thomas Splint, Wound Debridement & Mobile X-Rays (1914–1918)',
       enquiry_question:
@@ -18201,27 +18159,55 @@ export const unitData = {
         'In the opening months of the First World War, an infantryman who suffered a broken thigh bone had an 80% chance of dying before ever reaching a hospital. The violent jolting of horse ambulances caused shattered bone ends to tear through the femoral artery, triggering fatal internal hemorrhaging. Furthermore, standard nineteenth-century antiseptics completely failed against the anaerobic bacteria of Flanders mud. Confronted by catastrophic mortality, military surgeons revolutionized trauma medicine through brilliant mechanical engineering, chemical irrigation, and mobile radiology.',
       teacher_notes: {
         primer:
-          'Examine the major surgical and mechanical breakthroughs developed to treat severe battlefield trauma: the Thomas Splint, wound debridement, the Carrel-Dakin chemical irrigation method, and mobile X-ray technology. Students must understand why compound fractures had an 80% mortality rate in 1914 and how Robert Jones’s deployment of the Thomas Splint inverted this statistic to an 80% survival rate.',
+          'This enquiry investigates the transformative surgical and radiological innovations developed on the Western Front, exploring radical wound debridement to prevent gas gangrene, Alexis Carrel and Henry Dakin’s continuous chemical antiseptic irrigation system, Sir Robert Jones’s introduction of the Thomas Splint to slash fractured femur mortality, and the clinical deployment and practical limitations of mobile X-ray units.',
         objectives: [
           {
             objective:
-              'Explain why compound fractures were so lethal in 1914 and describe the mechanism of the Thomas Splint.',
+              'Explain why radical surgical wound debridement proved far more effective than chemical antiseptics in preventing gas gangrene.',
             primer:
-              'Direct students to paragraphs [1.1] and [2.1]. Emphasize that muscle spasms pulled jagged femur ends past each other, severing the femoral artery. Explain how the padded leather ring at the groin and mechanical traction pulled the leg straight, stabilizing the bone and reducing mortality from 80% to 20%.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that carbolic acid failed in deep shrapnel wounds, while cutting away dead, contaminated muscle deprived anaerobic bacteria of food, complemented by delayed primary closure.',
+            question:
+              'Why did surgical excision of dead tissue (debridement) succeed in arresting gas gangrene where Listerian chemical antiseptics had failed?',
           },
           {
             objective:
-              'Analyze surgical excision (wound debridement) and the Carrel-Dakin antiseptic irrigation method.',
+              'Analyse how the Carrel-Dakin continuous irrigation method solved the problem of deep wound sepsis.',
             primer:
-              'Examine paragraph [3.1] and Source B. Contrast Lister’s superficial carbolic acid sprays (which burned healthy human cells) with surgical debridement (cutting away dead tissue) and the continuous irrigation of deep wounds with buffered sodium hypochlorite (Carrel-Dakin solution).',
+              'Direct students to paragraphs [2.1]–[2.2] and Source B (Operating theatre at CCS). Explain the buffered sodium hypochlorite bleach solution, perforated rubber tubes, continuous day/night flushing, and the need for fresh preparation within six hours.',
+            question:
+              'How did the Carrel-Dakin irrigation system continuously sterilize deep, irregular wound cavities without destroying living human tissue?',
           },
           {
             objective:
-              'Evaluate the role of mobile X-ray units in locating shrapnel and guiding surgical operations.',
+              'Evaluate how Sir Robert Jones’s deployment of the Thomas Splint reduced compound femur fracture mortality from 80% to 20%.',
             primer:
-              'Guide students through paragraph [3.2], Source A, and Source B. Explain that mobile X-ray vans operated directly at Casualty Clearing Stations, allowing surgeons to locate radiopaque metal shrapnel and bone splinters before opening tissue, preventing exploratory surgical trauma.',
+              'Direct students to paragraphs [3.1]–[3.2] and Source A (Thomas Splint artifact). Detail the padded groin ring, rigid side bars, continuous mechanical traction, bone immobilization, and the prevention of femoral artery laceration during transit.',
+            question:
+              'Why was the mechanical traction of the Thomas Splint so effective in preventing fatal haemorrhage and shock from compound thigh fractures?',
+          },
+          {
+            objective:
+              'Examine the deployment and diagnostic power of mobile X-ray units in forward casualty clearing stations.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Focus on automobile engine generators, mobile vans, and cross-angled stereoscopic X-ray plates allowing surgeons to pinpoint the exact 3D depth of metal fragments before making incisions.',
+            question:
+              'How did mobile X-ray units powered by motor engines enable military surgeons to locate buried shrapnel before operating?',
+          },
+          {
+            objective:
+              'Assess the critical combat limitations of wartime radiography, specifically radiolucent uniform fragments and equipment fragility.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Explain that glass vacuum tubes overheated and shattered on rutted roads, and X-rays could not detect radiolucent mud, wood, or khaki cloth that still bred fatal gas gangrene.',
+            question:
+              'Why did undetected cloth and soil fragments remain a deadly cause of post-operative gangrene despite the use of mobile X-rays?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Source A: First World War Thomas Splint for Fractured Femurs (c.1916). An authentic surviving British Army Thomas Splint preserved in the Wellcome Historical Medical Collection, London, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones. Hinge Question: Why was the simple mechanical traction provided by the Thomas Splint shown in Source A so revolutionary in reducing compound femur fracture mortality from 80% to 20%?',
+          'Source B':
+            'Source B: Photograph of an Operating Theatre at an RAMC Casualty Clearing Station (1917). Official British War Office photograph taken on the Western Front in 1917, showing surgeons and QAIMNS nurses performing emergency operations inside a large canvas tented operating theatre at No. 47 Casualty Clearing Station, complete with sterile operating tables, autoclaves, and electric lighting. Hinge Question: How does the advanced operating theatre shown in Source B demonstrate how sterile surgical care was pushed right up to the edge of the battlefield to combat wound infection?',
+        },
       },
       learning_objectives: [
         'Explain how the Thomas Splint transformed survival rates for compound fractures from 20% to 80%.',
@@ -18273,40 +18259,14 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Context & Catalyst (The 1914 Sepsis & Orthopaedic Crisis)',
-          text: '<span class="para-ref">[1.1]</span> In autumn 1914, British military surgeons were confronted by a catastrophic medical catastrophe that standard peacetime surgical training could not resolve. In nineteenth-century civilian hospitals, aseptic surgery had virtually eliminated operative sepsis, while simple wooden splints were adequate for civilian fractures. On the Western Front, however, high-explosive artillery shells inflicted devastating <em>compound fractures</em>—injuries where shattered, splintered bone ends pierced through living muscle and tore open the skin, exposing the marrow cavity directly to air and mud.<br><br><span class="para-ref">[1.2]</span> The most lethal of these injuries was a fractured femur (thigh bone). In 1914 and early 1915, approximately 80% of all British soldiers who sustained a compound fracture of the femur died from their wounds. The primary cause of death was not initial bone trauma, but secondary hemorrhagic shock and bacterial sepsis during evacuation. Because the powerful thigh muscles went into violent involuntary spasms, the shattered jagged ends of the femur ground against each other, tearing through the large femoral artery and triggering massive internal hemorrhaging. Furthermore, as casualties were transported on stretchers and jolting horse ambulances over cratered roads, the shattered bone acted like a internal saw, shredding surrounding tissue and distributing anaerobic soil bacteria deep into the leg.',
+          title: 'Act 1: Wound Debridement & Surgical Excision (1914–1918)',
+          theme_heading: 'Act 1: Wound Debridement & Surgical Excision (1914–1918)',
+          text: '<span class="para-ref">[1.1]</span> In autumn 1914, British military surgeons confronted an acute sepsis crisis that peacetime civilian training could not resolve. In nineteenth-century hospitals, Joseph Lister’s antiseptic techniques had controlled surface contamination; on the Western Front, however, swabbing deep shrapnel wounds with carbolic acid was completely useless. High-explosive shrapnel drove dirty khaki cloth, mud, and anaerobic soil bacteria deep into torn muscle pockets. Concentrated chemical antiseptics could not reach the deep recesses of irregular wound tracts and damaged the patient’s exposed living tissues and white blood cells faster than they destroyed anaerobic spores, allowing gas gangrene and septicaemia to flourish.<br><br><span class="para-ref">[1.2]</span> Confronted with thousands of rotting limbs, military surgeons adopted radical <strong>Wound Debridement</strong> (surgical excision). Operating under general or local anaesthesia in forward stations, surgeons used scalpels to systematically cut away all dead, bruised, and contaminated muscle tissue around the margins of the wound, depriving anaerobic bacteria of the devitalized biological material they required to multiply. Furthermore, surgeons rejected immediate stitching, practicing <strong>delayed primary closure</strong>: wounds were left wide open and packed with sterile gauze for 24 to 48 hours to expose tissue to oxygen, halting anaerobic bacterial reproduction before the wound was surgically closed.',
         },
         {
           act: 2,
-          title: 'Act 2: Escalation & Conflict (Mechanical Traction: The Thomas Splint Revolution)',
-          text: '<span class="para-ref">[2.1]</span> The miraculous breakthrough that conquered this mortality crisis was not a chemical drug, but a simple mechanical apparatus: the <strong>Thomas Splint</strong>. Designed in the late nineteenth century by Welsh orthopedic pioneer Hugh Owen Thomas, the splint had been used in civilian industrial practice in Liverpool but was initially ignored by the British War Office. In December 1915, Thomas’s nephew, prominent orthopedic surgeon <strong>Robert Jones</strong>, was appointed Inspector of Military Orthopedics. Jones was horrified by the 80% mortality rate from fractured femurs and immediately convinced the military authorities to mass-produce the splint and train frontline medical orderlies in its application.<br><br><span class="para-ref">[2.2]</span> The genius of the Thomas Splint lay in its application of continuous mechanical <em>traction</em> (<span class="archival-meta-tag">Source A</span>). It consisted of an oval padded leather ring that fitted snugly against the groin and ischial tuberosity of the pelvis, connected to two rigid parallel metal rods extending past the foot, joined at the bottom by a W-shaped crossbar. By strapping the soldier’s boot to the end bar and tightening a cord using a wooden windlass, orderlies pulled the leg straight. This traction overcame the violent spasm of the thigh muscles, pulled the shattered bone fragments into alignment, and prevented them from moving during transport. Applied at the frontline Regimental Aid Post before the soldier was moved, the Thomas Splint slashed the mortality rate for compound femur fractures from 80% in 1915 to just 20% by 1917—saving tens of thousands of young soldiers from bleeding to death in transit.',
-          source: {
-            id: 'source_a_thomas_splint_authentic',
-            letter: 'A',
-            title: 'Source A: First World War Thomas Splint for Fractured Femurs (c.1916)',
-            src: '/images/thomas_splint_authentic.jpg',
-            source: '/images/thomas_splint_authentic.jpg',
-            image: '/images/thomas_splint_authentic.jpg',
-            caption:
-              'An authentic surviving British Army Thomas Splint, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones.',
-            desc: 'Primary photograph demonstrating the clinical application of the Thomas Splint.',
-            provenance:
-              'Original First World War Thomas Splint preserved in the Wellcome Historical Medical Collection, London. Designed by Hugh Owen Thomas and introduced to the Western Front in 1915–1916 by Robert Jones.',
-            citation:
-              'RAMC Training and Instructional Archive (Wellcome Collection RAMC 512/3), c.1916.',
-            source_context:
-              'An authentic surviving artifact of the Thomas Splint championed on the Western Front by Robert Jones from late 1915, which revolutionized battlefield trauma care. Before its widespread introduction, 80% of soldiers suffering compound fractures of the femur died from blood loss, shock, and internal hemorrhage caused by broken bone ends grinding during transit. The rigid splint held the leg taut under traction, stabilizing the limb throughout evacuation and reducing femur mortality to under 20% by 1917.',
-            context:
-              'An authentic surviving artifact of the Thomas Splint championed on the Western Front by Robert Jones from late 1915, which revolutionized battlefield trauma care. Before its widespread introduction, 80% of soldiers suffering compound fractures of the femur died from blood loss, shock, and internal hemorrhage caused by broken bone ends grinding during transit. The rigid splint held the leg taut under traction, stabilizing the limb throughout evacuation and reducing femur mortality to under 20% by 1917.',
-            hinge_question:
-              'Study Source A. How does the mechanical design of the Thomas Splint shown in the photograph explain why survival rates for fractured femurs rose from 20% in 1914 to 80% by 1917?',
-          },
-        },
-        {
-          act: 3,
-          title:
-            'Act 3: Forensic Evidence (Antiseptic Engineering: Debridement, Carrel-Dakin & Mobile X-Rays)',
-          text: '<span class="para-ref">[3.1]</span> While the Thomas Splint stabilized fractures, surgeons inside forward Casualty Clearing Stations (<span class="archival-meta-tag">Source B</span>) had to solve the lethal problem of bacterial sepsis. Peacetime surgeons had attempted to sterilize wounds by swabbing them with Joseph Lister’s carbolic acid; on the Western Front, carbolic acid completely failed because it destroyed the patient’s protective white blood cells faster than it killed anaerobic soil spores. Surgeons developed two radical breakthroughs. The first was <strong>Wound Debridement</strong> (surgical excision): surgeons systematically cut away all dead, devitalized, and foreign-matter-contaminated tissue around the wound margins with scalpels, depriving anaerobic bacteria of the dead flesh they required to multiply. Furthermore, surgeons practiced <em>delayed primary closure</em>—leaving the wound open for 24 to 48 hours to expose anaerobic bacteria to air before stitching it shut.<br><br><span class="para-ref">[3.2]</span> The second breakthrough was the <strong>Carrel-Dakin Method</strong>, developed in 1915–16 by French surgeon Alexis Carrel and English chemist Henry Dakin. Dakin developed a mild, buffered antiseptic solution of <em>sodium hypochlorite</em> (dilute chemical bleach) that killed bacteria without damaging healthy living human tissue. Carrel designed an intricate apparatus of rubber tubing perforated with tiny holes, inserted directly into the deep recesses of the debrided wound. Antiseptic solution was flushed continuously through the wound cavity day and night, washing away bacterial toxins. Because the solution was unstable and lost its chemical potency within six hours, it had to be freshly prepared in forward hospital laboratories. Working hand-in-hand with debridement were <strong>Mobile X-Ray Units</strong>: motorized vans equipped with portable radiography generators and darkrooms that traveled between CCSs, allowing surgeons to locate the exact three-dimensional depth of jagged shrapnel fragments and lodged uniform cloth before making a single incision.',
+          title: 'Act 2: The Carrel-Dakin Antiseptic Irrigation Method (1915–1918)',
+          theme_heading: 'Act 2: The Carrel-Dakin Antiseptic Irrigation Method (1915–1918)',
           source: {
             id: 'source_b_casualty_clearing_station_ww1',
             letter: 'B',
@@ -18317,23 +18277,61 @@ export const unitData = {
             image: '/images/casualty_clearing_station_ww1.jpg',
             caption:
               'Surgeons and QAIMNS nurses performing emergency operations inside a large canvas tented operating theatre at No. 47 Casualty Clearing Station, showing sterile operating tables, autoclaves, and electric lighting.',
-            desc: 'Primary photograph of surgeons operating inside a frontline Casualty Clearing Station tent.',
+            desc: 'Official British War Office photograph of operating theatre at No. 47 CCS, 1917.',
             provenance:
               'Official British War Office photograph taken on the Western Front, 1917. Imperial War Museum Collection (Shelfmark: Q 6185).',
-            citation:
-              'Official British War Office Photograph, Western Front, 1917 (Imperial War Museum Q 6185).',
-            source_context:
-              'Official British Army photograph taken in 1917 showing the operating theatre of an active Casualty Clearing Station in northern France. Operating around the clock during major offensives, surgical teams worked at multiple sterile tables under intense electric lighting to debride contaminated wounds, perform emergency amputations, and irrigate tissue.',
-            context:
-              'Official British Army photograph taken in 1917 showing the operating theatre of an active Casualty Clearing Station in northern France. Operating around the clock during major offensives, surgical teams worked at multiple sterile tables under intense electric lighting to debride contaminated wounds, perform emergency amputations, and irrigate tissue.',
+            citation: 'Official British War Office Photograph, Western Front, 1917 (IWM Q 6185).',
+            question:
+              'How does the advanced operating theatre shown in Source B demonstrate how sterile surgical care was pushed right up to the edge of the battlefield to combat wound infection?',
             hinge_question:
-              'How does the operating environment shown in Source B illustrate the transition of Casualty Clearing Stations from simple triage huts into advanced surgical hospitals?',
+              'How does the advanced operating theatre shown in Source B demonstrate how sterile surgical care was pushed right up to the edge of the battlefield to combat wound infection?',
+            source_context:
+              'Official British War Office photograph taken on the Western Front in 1917, showing surgeons and QAIMNS nurses performing emergency operations inside a large canvas tented operating theatre at No. 47 Casualty Clearing Station, complete with sterile operating tables, autoclaves, and electric lighting. Hinge Question: How does the advanced operating theatre shown in Source B demonstrate how sterile surgical care was pushed right up to the edge of the battlefield to combat wound infection?',
+            context:
+              'Official British War Office photograph taken on the Western Front in 1917, showing surgeons and QAIMNS nurses performing emergency operations inside a large canvas tented operating theatre at No. 47 Casualty Clearing Station, complete with sterile operating tables, autoclaves, and electric lighting.',
           },
+          text: '<span class="para-ref">[2.1]</span> To combat infection in deep, complex wounds that could not be completely excised, French surgeon Alexis Carrel and English chemist Henry Dakin invented the <strong>Carrel-Dakin Method</strong> in 1915–16. Dakin developed a mild, buffered antiseptic solution of <em>sodium hypochlorite</em> (dilute chemical bleach). Previous antiseptics were either too weak to kill bacteria or so caustic that they caused severe tissue necrosis; Dakin’s solution achieved the perfect chemical balance, killing anaerobic bacteria and liquefying dead tissue without burning living human flesh.<br><br><span class="para-ref">[2.2]</span> Carrel designed an ingenious mechanical apparatus to deliver the antiseptic: a network of narrow, flexible rubber tubes pierced with tiny holes was laid deep inside the recesses of the wound. Antiseptic solution was dripped continuously from an elevated glass reservoir, flushing the wound cavity day and night in forward operating theatres (<span class="archival-meta-tag">Source B</span>). The antiseptic had to be freshly prepared in hospital laboratories every six hours because the solution rapidly degraded and lost its chemical potency. By combining meticulous surgical debridement with continuous Carrel-Dakin irrigation, surgeons arrested bacterial sepsis within days, dramatically lowering post-operative amputation rates.',
+        },
+        {
+          act: 3,
+          title: 'Act 3: Mechanical Traction: The Thomas Splint Revolution (Dec 1915–1916)',
+          theme_heading: 'Act 3: Mechanical Traction: The Thomas Splint Revolution (Dec 1915–1916)',
+          source: {
+            id: 'source_a_thomas_splint_authentic',
+            letter: 'A',
+            title: 'Source A: First World War Thomas Splint for Fractured Femurs (c.1916)',
+            src: '/images/thomas_splint_authentic.jpg',
+            source: '/images/thomas_splint_authentic.jpg',
+            image: '/images/thomas_splint_authentic.jpg',
+            caption:
+              'An authentic surviving British Army Thomas Splint, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones.',
+            desc: 'Original First World War Thomas Splint preserved in the Wellcome Historical Medical Collection, London.',
+            provenance:
+              'Original First World War Thomas Splint preserved in the Wellcome Historical Medical Collection, London. Designed by Hugh Owen Thomas and introduced to the Western Front in 1915–1916 by Robert Jones.',
+            citation:
+              'Wellcome Historical Medical Collection, London (Object No. A654128), First World War Thomas Splint.',
+            question:
+              'Why was the simple mechanical traction provided by the Thomas Splint shown in Source A so revolutionary in reducing compound femur fracture mortality from 80% to 20%?',
+            hinge_question:
+              'Why was the simple mechanical traction provided by the Thomas Splint shown in Source A so revolutionary in reducing compound femur fracture mortality from 80% to 20%?',
+            source_context:
+              'An authentic surviving British Army Thomas Splint preserved in the Wellcome Historical Medical Collection, London, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones. Hinge Question: Why was the simple mechanical traction provided by the Thomas Splint shown in Source A so revolutionary in reducing compound femur fracture mortality from 80% to 20%?',
+            context:
+              'An authentic surviving British Army Thomas Splint preserved in the Wellcome Historical Medical Collection, London, showing the padded oval ring fitted against the groin, rigid metal side bars, and canvas support straps used to maintain traction and immobilize broken thigh bones.',
+          },
+          text: '<span class="para-ref">[3.1]</span> In the opening year of the war, compound fractures of the femur (thigh bone) were among the most lethal injuries on the Western Front, carrying an appalling mortality rate of approximately 80%. When high-explosive shrapnel shattered the femur, the large thigh muscles went into violent involuntary spasms. The jagged, razor-sharp bone ends were pulled over each other like an internal saw, shredding muscle, severing the large femoral artery, and forcing anaerobic soil bacteria deep into the marrow. As soldiers were transported on stretchers and jolting horse ambulances, continuous bone movement caused catastrophic internal blood loss, sending men into irreversible haemorrhagic shock before they could reach a surgeon.<br><br><span class="para-ref">[3.2]</span> In December 1915, Welsh orthopedic surgeon <strong>Sir Robert Jones</strong> was appointed Inspector of Military Orthopedics and revolutionized treatment by introducing the <strong>Thomas Splint</strong> (<span class="archival-meta-tag">Source A</span>), designed decades earlier by his uncle Hugh Owen Thomas. The splint applied continuous mechanical <em>traction</em>: a padded oval metal ring fitted firmly against the groin and pelvis, connected to two rigid parallel metal rods extending past the foot. By strapping the soldier’s boot to the bottom crossbar and twisting cords taut with a windlass, the leg was pulled straight. This continuous tension overcame muscle spasm, aligned fractured bone fragments, and completely immobilized the thigh during transit. When trained orderlies applied the Thomas Splint at the frontline RAP before moving a casualty, compound femur fracture mortality plummeted from 80% in 1915 to just 20% by 1917—saving tens of thousands of lives.',
         },
         {
           act: 4,
-          title: 'Act 4: The Historical Verdict & Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> Historiographers debate whether the rapid decline in surgical mortality on the Western Front was primarily driven by mechanical devices like the Thomas Splint or by chemical and bacteriological breakthroughs like the Carrel-Dakin method. Orthopedic historians emphasize that without the Thomas Splint, tens of thousands of casualties would have died of hemorrhagic shock before ever reaching an operating theatre. Conversely, surgical historians argue that the splint merely bought time: without aggressive debridement, delayed closure, and Carrel-Dakin irrigation, those same stabilized casualties would inevitably have succumbed to gas gangrene and septicemia days later in base hospitals.<br><br><span class="para-ref">[4.2]</span> Ultimately, the surgical triumphs of 1915–1918 demonstrated that battlefield trauma could only be conquered through a complete synthesis of mechanics, chemistry, and organization. By combining the physical traction of the Thomas Splint at the Regimental Aid Post, mobile radiological localization at the Casualty Clearing Station, and meticulous biochemical irrigation in the operating theatre, British military surgeons inverted the grim arithmetic of 1914. In doing so, they established the foundational principles of modern orthopedic trauma and antiseptic wound management that endure in civilian emergency medicine today.',
+          title: 'Act 4: Mobile X-Ray Units & Radiology (1914–1918)',
+          theme_heading: 'Act 4: Mobile X-Ray Units & Radiology (1914–1918)',
+          text: '<span class="para-ref">[4.1]</span> Discovering the exact three-dimensional location of buried shrapnel fragments was critical to successful debridement. If a surgeon had to probe blindly with metal forceps through crushed flesh to locate a bullet, they caused massive additional tissue trauma, haemorrhage, and shock. To solve this, the British Army deployed diagnostic <strong>Mobile X-Ray Units</strong>. Inspired by pioneering scientist Marie Curie—who equipped French hospital vans known as "petites Curies"—the British War Office fitted motorized vans with portable radiography equipment, darkroom developing facilities, and petrol-driven electrical dynamo generators connected directly to the automobile engine.<br><br><span class="para-ref">[4.2]</span> Traveling between Casualty Clearing Stations and forward dressing stations, mobile X-ray vans allowed radiologists to take two cross-angled diagnostic images (stereoscopic plates) of wounded casualties. These cross-referenced views enabled surgeons to pinpoint the precise location and depth of buried metal shrapnel and shattered bone fragments before picking up a scalpel. Radiologists also used fluorescent screens for real-time fluoroscopy, allowing surgeons to extract buried metal balls quickly with minimal incisions, dramatically reducing operating times and surgical shock during heavy offensives.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Tactical Limits of Battlefield X-Rays (1914–1918)',
+          theme_heading: 'Act 5: Tactical Limits of Battlefield X-Rays (1914–1918)',
+          text: '<span class="para-ref">[5.1]</span> Despite their revolutionary diagnostic power, battlefield X-rays faced severe physical and technical limitations in active combat zones. First World War radiography machines were delicate, temperamental instruments. The glass vacuum tubes (Crookes tubes) overheated rapidly after a few minutes of continuous operation and had to be rested to cool down, causing dangerous bottlenecks when hundreds of casualties flooded a CCS. Furthermore, transporting heavy X-ray vans and delicate glass photographic plates over rutted, shell-cratered roads frequently shattered electrical vacuum bulbs and fractured fragile glass developer plates.<br><br><span class="para-ref">[5.2]</span> Most significantly, medical historians emphasize the crucial clinical blind spot of wartime X-rays: radiography could easily detect dense, radiopaque materials like lead bullets and steel shrapnel, but was completely blind to <strong>radiolucent</strong> materials. X-rays could not reveal muddy soil, trench timber splinters, or fragments of sodden woollen khaki uniform buried deep in muscle tissue. These invisible, bacteria-saturated cloth fragments remained deadly reservoirs of <em>Clostridium welchii</em>, meaning that an apparently successful shrapnel extraction could still result in fatal post-operative gas gangrene unless complemented by thorough manual surgical debridement.',
         },
       ],
       sources: [
@@ -18648,7 +18646,7 @@ export const unitData = {
         {
           step: 2,
           date: '1915–1918',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
           heading:
             'How did continuous chemical irrigation solve the problem of deep wound infection?',
           bullets: [
@@ -18662,7 +18660,7 @@ export const unitData = {
         {
           step: 3,
           date: 'Dec 1915–1916',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'How did rigid traction prevent fatal haemorrhage and shock from broken femurs?',
           bullets: [
             'Fitting padded metal oval ring around upper groin',
@@ -18675,7 +18673,7 @@ export const unitData = {
         {
           step: 4,
           date: '1914–1918',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why was locating shrapnel on an X-ray vital before operating on gas gangrene?',
           bullets: [
             'Running small dynamo generators off motor engines',
@@ -18688,7 +18686,7 @@ export const unitData = {
         {
           step: 5,
           date: '1914–1918',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading:
             'Why did undetected cloth fragments remain the primary cause of post-op gangrene?',
           bullets: [
@@ -18722,7 +18720,7 @@ export const unitData = {
           {
             step: 2,
             date: '1915–1918',
-            para_ref: '[2.1]',
+            para_ref: '[2.1–2.2]',
             title: 'Carrel-Dakin Antiseptic Flush',
             actor: 'Alexis Carrel & Henry Dakin',
             tag: '🧪 CARREL-DAKIN IRRIGATION',
@@ -18737,7 +18735,7 @@ export const unitData = {
           {
             step: 3,
             date: 'Dec 1915–1916',
-            para_ref: '[2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'The Thomas Splint Breakthrough',
             actor: 'Hugh Owen Thomas & Sir Robert Jones',
             tag: '🦿 THE THOMAS SPLINT',
@@ -18752,7 +18750,7 @@ export const unitData = {
           {
             step: 4,
             date: '1914–1918',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Mobile X-Rays & Marie Curie',
             actor: 'Marie Curie & British Mobile X-Ray Units',
             tag: '⚡ MOBILE RADIOLOGY VANS',
@@ -18792,19 +18790,19 @@ export const unitData = {
           date: '1915–1918',
           title: 'Carrel-Dakin Antiseptic Flush',
           desc: 'French surgeon Alexis Carrel and British chemist Henry Dakin designed a sterilized chemical irrigation system using a dilute, neutral sodium hypochlorite bleach solution.',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
         },
         {
           date: 'Dec 1915–1916',
           title: 'The Thomas Splint Breakthrough',
           desc: 'In 1914–15, compound femur fractures carried an 80% mortality rate because broken bone fragments grated violently during transit, tearing the femoral artery and causing fatal haemorrhagic shock.',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: '1914–1918',
           title: 'Mobile X-Rays & Marie Curie',
           desc: 'British Base Hospitals and field units deployed mobile X-ray vans powered by dynamo generators directly connected to automobile petrol engines.',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
         },
         {
           date: '1914–1918',
@@ -18816,51 +18814,6 @@ export const unitData = {
     },
     {
       id: 'lesson_5_6',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to evaluate blood storage, brain surgery, and plastic reconstruction:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'BLOOD BANKING',
-            title: '1. Sodium Citrate, Glucose & The Cambrai Blood Bank (1917)',
-            prompt:
-              'Trace how Lewisohn, Rous, Turner, and Oswald Robertson created the first frontline blood bank at Cambrai:',
-            model_notes: [
-              'Direct person-to-person transfusion was slow and impractical under heavy shellfire.',
-              'Richard Lewisohn (1915) added sodium citrate to prevent blood clotting; Francis Rous and James Turner (1916) added glucose, enabling refrigeration for 4 weeks.',
-              "Canadian doctor Oswald Robertson established the world's first mobile blood depot at the Battle of Cambrai (1917), treating 20 casualties in advance.",
-            ],
-            key_terms: ['Sodium Citrate Anticoagulant', 'Cambrai Blood Depot (1917)'],
-          },
-          {
-            num: 2,
-            badge: 'BRAIN SURGERY',
-            title: '2. Harvey Cushing & Neurosurgical Advances',
-            prompt:
-              'Explain how American surgeon Harvey Cushing revolutionized treatment of severe head and cranial wounds:',
-            model_notes: [
-              'Brain wounds carried enormous mortality (over 55%) due to pressure and infection from bone fragments.',
-              'Harvey Cushing pioneered operating under local anaesthetic rather than general, preventing fatal brain swelling and intracranial pressure.',
-              'Used delicate surgical magnets, electric cautery, and suction pumps to remove shrapnel and bone; reduced neurosurgical mortality to 28%.',
-            ],
-            key_terms: ['Harvey Cushing', 'Local Anaesthetic Brain Surgery'],
-          },
-          {
-            num: 3,
-            badge: 'PLASTIC SURGERY',
-            title: '3. Harold Gillies & Facial Reconstruction at Queen’s Hospital, Sidcup',
-            prompt:
-              'Detail Harold Gillies’ pioneering plastic surgery techniques (pedicle skin tubes) for horrifically disfigured soldiers:',
-            model_notes: [
-              'High explosive shrapnel caused horrific facial mutilations, leaving surviving soldiers socially ostracised and stigmatised.',
-              "New Zealand surgeon Harold Gillies established the Queen's Hospital in Sidcup, Kent (1917), the world's first specialized plastic surgery centre.",
-              "Pioneered the 'tubed pedicle' skin-grafting technique: rolling living skin into a tube to maintain blood supply while grafting it onto damaged faces.",
-            ],
-            key_terms: ['Harold Gillies', 'Tubed Pedicle Skin Graft'],
-          },
-        ],
-      },
       title:
         'KT5.6: Lifesaving Innovations: Blood Storage, Brain Surgery & Plastic Reconstruction (1914–1918)',
       enquiry_question:
@@ -18873,27 +18826,55 @@ export const unitData = {
         'By 1917, the industrial violence of the Western Front was shattering human bodies in ways never before encountered in surgical history. Massive blood loss triggered fatal hemorrhagic shock before casualties could reach the operating table, while artillery shrapnel gouged out brains and ripped away soldiers’ faces. In response, brilliant visionaries transformed medicine forever: Captain Oswald Robertson established the world’s first blood bank on ice, Harvey Cushing pioneered microscopic brain surgery, and Harold Gillies sculpted entirely new living faces at Sidcup.',
       teacher_notes: {
         primer:
-          'Master the three highest-level medical innovations forged on the Western Front: the storage and transfusion of blood (Landsteiner, Hustin, Rous & Turner, and Oswald Robertson’s Cambrai blood bank), specialized neurosurgery (Harvey Cushing), and modern plastic/facial reconstructive surgery (Harold Gillies at Queen’s Hospital, Sidcup). Connect these breakthroughs directly to post-war civilian medicine.',
+          'This enquiry explores the lifesaving medical breakthroughs achieved on the Western Front in blood storage, neurosurgery, and plastic reconstruction, examining Albert Hustin’s sodium citrate anticoagulation, Francis Rous and James Turner’s refrigerated citrate-glucose preservation, Captain Oswald Robertson’s pioneering blood bank depot at Cambrai in 1917, Harvey Cushing’s brain surgery breakthroughs under local anaesthetic, and Harold Gillies’s tubed pedicle plastic reconstruction at Queen’s Hospital, Sidcup.',
         objectives: [
           {
             objective:
-              'Trace the progression of blood transfusion from direct donor matching to refrigerated blood banking at Cambrai.',
+              'Explain how sodium citrate anticoagulation eliminated the need for direct donor-to-patient blood transfusion tubing.',
             primer:
-              'Direct students to paragraphs [1.1], [2.1], and [2.2]. Review Landsteiner’s 1901 ABO discovery, introduce Hustin/Agote’s use of sodium citrate (1914) to prevent clotting, Rous and Turner’s citrate-glucose solution (1916) enabling 28-day storage, and Captain Oswald Robertson’s creation of the world’s first blood bank at the Battle of Cambrai (November 1917).',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that rapid clotting made transfusions nearly impossible in chaotic clearing stations until Albert Hustin and Richard Lewisohn proved sodium citrate safely neutralized calcium to prevent coagulation.',
+            question:
+              'How did the discovery of sodium citrate liberate blood transfusion from dangerous person-to-person tubing on the battlefield?',
           },
           {
             objective:
-              'Analyze Harvey Cushing’s surgical breakthroughs in treating traumatic brain and skull injuries.',
+              'Analyse why adding dextrose-glucose was essential to maintain red blood cell viability during refrigerated storage.',
             primer:
-              'Examine paragraph [3.1]. Explain that Cushing operated under local anesthetic rather than general chloroform, using magnets to draw shrapnel from deep brain tissue and closing scalp wounds with galeal stitches, reducing mortality from head wounds to 29%.',
+              'Direct students to paragraphs [2.1]–[2.2]. Explain that Rous and Turner’s citrate-glucose solution nourished red blood cells, preventing hemolysis and allowing blood stored in iceboxes to remain fresh for four weeks (28 days).',
+            question:
+              'Why was the addition of glucose the decisive chemical breakthrough that allowed blood to be stockpiled in advance of military battles?',
           },
           {
             objective:
-              'Explain Harold Gillies’s pioneering plastic surgery techniques at Queen’s Hospital, Sidcup.',
+              'Evaluate Captain Oswald Robertson’s establishment of the world’s first military blood bank depot at Cambrai in November 1917.',
             primer:
-              'Guide students through paragraph [3.2], Source A, and Source B. Focus on the "tubed pedicle" skin flap technique, explaining how maintaining an intact blood supply prevented skin grafts from dying of gangrene while new tissue grew onto shattered faces.',
+              'Direct students to paragraphs [3.1]–[3.2] and Source A (Robertson’s Blood Storage Outfit). Detail Robertson stockpiling 22 bottles of universal Type O blood in insulated iceboxes, treating shocked casualties who would have died waiting for live donors.',
+            question:
+              'Why was Captain Oswald Robertson’s forward blood depot at Cambrai a transformative milestone in battlefield resuscitation medicine?',
+          },
+          {
+            objective:
+              'Examine Harvey Cushing’s surgical breakthroughs in brain trauma, including local anaesthetics, suction, and silver clips.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Focus on Cushing at No. 46 CCS operating under novocaine to prevent fatal brain swelling, using electromagnets for shrapnel and silver clips for bleeding, cutting brain mortality from 50% down to 29%.',
+            question:
+              'Why was local anaesthesia superior to general anaesthetic (ether or chloroform) when operating on severe brain trauma on the Western Front?',
+          },
+          {
+            objective:
+              'Assess how Harold Gillies’s tubed pedicle technique revolutionized facial reconstructive surgery at Queen’s Hospital, Sidcup.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2] and Source B (Gillies Tubed Pedicle Technique). Explain how rolling chest skin into a living tube maintained vascular blood supply to the facial graft, restoring dignity to disfigured veterans.',
+            question:
+              'How did Harold Gillies’s tubed pedicle technique solve the biological problem of graft death and establish modern plastic surgery?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Source A: Captain Oswald Robertson’s Blood Storage and Transfusion Apparatus at Cambrai (1917). The authentic wooden ice chest, glass collection flasks, rubber delivery tubing, and sodium citrate solutions utilized by Captain Oswald Robertson to establish the world’s first blood bank during the Battle of Cambrai in November 1917. Hinge Question: Why was Captain Robertson’s portable ice-chest apparatus shown in Source A the critical technological breakthrough that enabled blood transfusions to be performed under battlefield conditions during surprise assaults?',
+          'Source B':
+            'Source B: Harold Gillies’s Tubed Pedicle Plastic Reconstruction Technique at Queen’s Hospital, Sidcup (c.1917). Clinical diagram and photographic archive documenting Harold Gillies’s revolutionary tubed pedicle technique at Queen’s Hospital, Sidcup, showing a flap of chest skin rolled into a living vascular tube to reconstruct shattered facial features. Hinge Question: How did Harold Gillies’s tubed pedicle technique shown in Source B solve the biological challenge of maintaining blood supply to newly grafted skin, and why was this essential for facial reconstruction?',
+        },
       },
       learning_objectives: [
         'Explain how sodium citrate, glucose, and Oswald Robertson enabled the world’s first blood bank at Cambrai (1917).',
@@ -18945,14 +18926,20 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          title: 'Act 1: Context & Catalyst (The Haemorrhage Shock & Brain Trauma Crisis)',
-          text: '<span class="para-ref">[1.1]</span> As artillery firepower intensified across the Western Front between 1916 and 1917, military surgeons confronted forms of anatomical trauma that pushed human physiology to its ultimate limits. The most immediate killer of wounded soldiers was <strong>haemorrhagic shock</strong>—a catastrophic collapse of blood pressure caused by acute blood loss from severed major arteries. A casualty who lost more than two pints of blood became hypothermic, turned ashen grey, and suffered irreversible organ failure within hours, long before surgeons could debride their wounds.<br><br><span class="para-ref">[1.2]</span> Before 1914, blood transfusions were extraordinarily rare and dangerous. Although Austrian scientist Karl Landsteiner had discovered the ABO blood group system in 1901, blood transfusions on the battlefield were almost impossible because blood clotted within minutes of leaving the body. Transfusions required a direct donor lying immediately beside the patient, connected by a rubber tube; in a chaotic, unsanitary Casualty Clearing Station dealing with hundreds of dying men, finding healthy matching donors under artillery fire was an insurmountable bottleneck. Equally catastrophic were penetrating brain wounds and horrific facial disfigurements caused by flying shrapnel, which left thousands of young men either dead from cerebral swelling or surviving as living monsters stripped of noses, jaws, and eyelids.',
+          title: 'Act 1: Haemorrhagic Shock & Sodium Citrate Anticoagulation (1914–1915)',
+          theme_heading: 'Act 1: Haemorrhagic Shock & Sodium Citrate Anticoagulation (1914–1915)',
+          text: '<span class="para-ref">[1.1]</span> As artillery firepower intensified across the Western Front between 1914 and 1916, military surgeons confronted forms of trauma that pushed human physiology to its breaking point. The most immediate killer of wounded soldiers was <strong>haemorrhagic shock</strong>—a catastrophic collapse of systemic blood pressure caused by acute blood loss from severed arteries. A casualty who lost more than two pints of blood became hypothermic, turned ashen grey, and suffered irreversible multi-organ failure within hours, long before surgeons could perform debridement or surgical excision in an operating theatre.<br><br><span class="para-ref">[1.2]</span> Before 1914, blood transfusions were extraordinarily rare, hazardous, and impractical. Although Austrian biologist Karl Landsteiner had discovered the ABO blood group system in 1901, transfusions on the battlefield were virtually impossible because human blood naturally coagulated into solid clots within five minutes of leaving the body. Transfusions required a direct donor lying immediately beside the patient, connected arm-to-arm by a rubber tube; in a chaotic, unsanitary Casualty Clearing Station dealing with hundreds of dying men under artillery fire, finding matching live donors under bombardment was an insurmountable logistical hurdle. In 1914, Belgian doctor Albert Hustin and Argentine physician Luis Agote discovered that adding non-toxic <strong>sodium citrate</strong> to freshly drawn blood neutralized calcium ions, preventing coagulation and allowing blood to be administered indirectly via sterile glass funnels.',
         },
         {
           act: 2,
-          title:
-            'Act 2: Escalation & Conflict (Robertson’s Blood Bank: The Triumph of Citrated Blood)',
-          text: '<span class="para-ref">[2.1]</span> The breakthrough that conquered hemorrhagic shock was a chemical triumph over blood coagulation. In 1914, Belgian doctor Albert Hustin and Argentine physician Luis Agote discovered that adding a tiny amount of <strong>sodium citrate</strong> to freshly drawn blood prevented coagulation by neutralizing calcium ions, without making the blood toxic to the recipient. In 1915, American doctor Richard Weil proved that citrated blood could be safely stored in glass bottles in a refrigerator for several days. Then, in 1916 at the Rockefeller Institute, Francis Rous and J.R. Turner made the decisive discovery: adding a <strong>citrate-glucose</strong> solution allowed red blood cells to remain viable and undamaged in cold storage for up to four weeks (28 days).<br><br><span class="para-ref">[2.2]</span> In 1917, Canadian-American medical officer <strong>Captain Oswald Robertson</strong> recognized that this discovery could revolutionize battlefield medicine. Preparing for the mass tank assault at the <strong>Battle of Cambrai</strong> in November 1917, Robertson collected blood from healthy British soldiers in advance, mixed it with sodium citrate and glucose, and packed twenty-two glass bottles into customized wooden transit chests surrounded by ice and sawdust (<span class="archival-meta-tag">Source A</span>). Setting up the world’s first mobile <strong>Blood Depot</strong> (blood bank) in a forward Casualty Clearing Station, Robertson administered stored citrated blood to twenty-two soldiers suffering from lethal shock who were expected to die; remarkably, twenty of the twenty-two men made a full recovery. Robertson proved that blood could be harvested in advance, stockpiled, and transfused to casualties at the point of greatest need, transforming resuscitation medicine across the Allied armies.',
+          title: 'Act 2: Glucose Refrigeration & Extended Blood Storage (1916–1917)',
+          theme_heading: 'Act 2: Glucose Refrigeration & Extended Blood Storage (1916–1917)',
+          text: '<span class="para-ref">[2.1]</span> While sodium citrate kept blood liquid, medical researchers encountered a critical biological barrier: citrated blood deteriorated rapidly. In 1915, American doctor Richard Weil proved that citrated blood could be kept in glass bottles in a refrigerator for a few days, but after 72 hours the fragile red blood cells broke down and lysed, releasing toxic potassium and causing severe kidney failure in recipients. Without a method to preserve living red blood cells over extended periods, medical officers could not stockpile blood in advance of major military offensives.<br><br><span class="para-ref">[2.2]</span> The decisive scientific breakthrough occurred in 1916 at the Rockefeller Institute in New York, where researchers Francis Rous and James Turner discovered that adding a <strong>citrate-glucose</strong> (dextrose) solution provided vital nutrients for the cellular metabolism of red blood cells. By mixing freshly collected blood with sodium citrate and glucose and storing it in glass medicine bottles packed inside insulated ice chests, blood could be preserved fresh, intact, and fully viable for up to four weeks (28 days). For the first time in medical history, human blood had been transformed from a perishable fluid into a storable, transportable medical commodity.',
+        },
+        {
+          act: 3,
+          title: 'Act 3: Captain Oswald Robertson & The Cambrai Blood Depot (Nov 1917)',
+          theme_heading: 'Act 3: Captain Oswald Robertson & The Cambrai Blood Depot (Nov 1917)',
           source: {
             id: 'source_a_robertson_blood_depot_1917',
             letter: 'A',
@@ -18963,49 +18950,59 @@ export const unitData = {
             image: '/images/robertson_blood_depot_1917.jpg',
             caption:
               'The authentic wooden ice chest, glass collection flasks, rubber delivery tubing, and sodium citrate solutions utilized by Captain Oswald Robertson to establish the world’s first blood bank during the Battle of Cambrai in November 1917.',
-            desc: 'Primary artifact photograph of Captain Oswald Robertson’s blood storage apparatus.',
+            desc: 'Original portable blood transfusion apparatus preserved in the RAMC Historical Collection, London.',
             provenance:
               'Original portable blood transfusion outfit preserved in the Royal Army Medical Corps Historical Collection, London. Utilized during the Battle of Cambrai, November 1917.',
             citation:
-              'Captain Oswald Robertson Blood Depot Apparatus, RAMC Collection, November 1917.',
-            source_context:
-              'An authentic surviving artifact photograph of Captain Oswald Robertson’s blood storage and transfusion kit used at the Battle of Cambrai in November 1917. Robertson collected blood in sterile glass bottles containing sodium citrate and dextrose (glucose) and stored them inside an insulated wooden ice chest, enabling stored blood to be transfused up to 26 days after collection.',
-            context:
-              'An authentic surviving artifact photograph of Captain Oswald Robertson’s blood storage and transfusion kit used at the Battle of Cambrai in November 1917. Robertson collected blood in sterile glass bottles containing sodium citrate and dextrose (glucose) and stored them inside an insulated wooden ice chest, enabling stored blood to be transfused up to 26 days after collection.',
+              'RAMC Historical Collection, London (Object No. RAMC-1917-BLD), Captain Oswald Robertson Cambrai Outfit.',
+            question:
+              'Why was Captain Robertson’s portable ice-chest apparatus shown in Source A the critical technological breakthrough that enabled blood transfusions to be performed under battlefield conditions during surprise assaults?',
             hinge_question:
-              'Study Source A. How does this blood storage apparatus explain how medical officers at the Battle of Cambrai were able to treat soldiers suffering from severe shock before operations began?',
-          },
-        },
-        {
-          act: 3,
-          title: 'Act 3: Forensic Evidence (Specialized Surgery: Harvey Cushing & Harold Gillies)',
-          text: '<span class="para-ref">[3.1]</span> Parallel breakthroughs occurred in specialized trauma surgery. Penetrating skull and brain wounds carried a staggering 50% mortality rate on the Western Front. American neurosurgeon <strong>Harvey Cushing</strong>, stationed at No. 46 Casualty Clearing Station near Mendinghem during the Third Battle of Ypres (Passchendaele) in 1917, revolutionized brain surgery. Recognizing that general anesthesia (chloroform or ether) caused dangerous brain swelling, Cushing operated under local anesthetic (novocaine). He used an electrical suction device to clean brain tracts, deployed powerful <em>electromagnets</em> to draw deeply embedded steel shrapnel fragments safely out of cerebral tissue, and stitched the scalp closed using galeal sutures. Cushing reduced brain surgery mortality from over 50% down to 29%, treating 45 patients in a single grueling 48-hour period.<br><br><span class="para-ref">[3.2]</span> Simultaneously, New Zealand-born surgeon <strong>Harold Gillies</strong> pioneered modern reconstructive plastic surgery. Horrified by the thousands of soldiers surviving with catastrophic facial mutilations who were shunned by society, Gillies established a specialized hospital at <strong>Queen’s Hospital in Sidcup</strong>, Kent, in 1917. Because large skin grafts transplanted onto open faces invariably rotted and died from lack of blood supply, Gillies invented the revolutionary <strong>Tubed Pedicle</strong> technique. A flap of healthy skin was cut from the soldier’s chest or neck and rolled into an enclosed, living cylinder of skin with the blood vessels intact, stitched to the facial wound. The tube maintained its own active blood circulation until new capillary blood vessels grew from the face into the graft, after which the stalk was severed. Supported by mobile X-ray technology (<span class="archival-meta-tag">Source B</span>) to map underlying facial bone structures, Gillies and his team performed over 11,000 reconstructive operations, restoring both physical appearance and psychological humanity to the disfigured survivors of the trenches.',
-          source: {
-            id: 'source_b_field_hospital_xray_1917',
-            letter: 'B',
-            title: 'Source B: Photograph of a Mobile Field Hospital X-Ray Unit in Operation (1917)',
-            src: '/images/field_hospital_xray_1917.jpg',
-            source: '/images/field_hospital_xray_1917.jpg',
-            image: '/images/field_hospital_xray_1917.jpg',
-            caption:
-              'An RAMC radiographer and medical orderly using a mobile X-ray apparatus powered by a motor vehicle generator to locate metal shrapnel lodged in the skull and chest of a wounded soldier at a Casualty Clearing Station.',
-            desc: 'Primary photograph of an RAMC mobile field hospital X-ray unit in operation on the Western Front.',
-            provenance:
-              'Official British Army photograph taken in northern France, 1917. Imperial War Museum Collection (Shelfmark: Q 7824).',
-            citation:
-              'Official British War Office Photograph, Western Front, 1917 (Imperial War Museum Q 7824).',
+              'Why was Captain Robertson’s portable ice-chest apparatus shown in Source A the critical technological breakthrough that enabled blood transfusions to be performed under battlefield conditions during surprise assaults?',
             source_context:
-              'Official photograph taken in 1917 showing a mobile X-ray unit in operation at an advanced medical station on the Western Front. Radiographers used mobile generators mounted on motor vans to power fluoroscopic screens and photographic plates, allowing surgeons to locate radiopaque shrapnel balls and fractured bone fragments accurately before surgery.',
+              'The authentic wooden ice chest, glass collection flasks, rubber delivery tubing, and sodium citrate solutions utilized by Captain Oswald Robertson to establish the world’s first blood bank during the Battle of Cambrai in November 1917. Hinge Question: Why was Captain Robertson’s portable ice-chest apparatus shown in Source A the critical technological breakthrough that enabled blood transfusions to be performed under battlefield conditions during surprise assaults?',
             context:
-              'Official photograph taken in 1917 showing a mobile X-ray unit in operation at an advanced medical station on the Western Front. Radiographers used mobile generators mounted on motor vans to power fluoroscopic screens and photographic plates, allowing surgeons to locate radiopaque shrapnel balls and fractured bone fragments accurately before surgery.',
-            hinge_question:
-              'How does the mobile X-ray setup shown in Source B illustrate how technological advancements directly assisted specialized surgeons like Harvey Cushing and Harold Gillies?',
+              'The authentic wooden ice chest, glass collection flasks, rubber delivery tubing, and sodium citrate solutions utilized by Captain Oswald Robertson to establish the world’s first blood bank during the Battle of Cambrai in November 1917.',
           },
+          text: '<span class="para-ref">[3.1]</span> In autumn 1917, Canadian-American medical officer <strong>Captain Oswald Robertson</strong>, serving with the British RAMC, recognized that Rous and Turner’s glucose discovery could revolutionize battlefield resuscitation. Preparing for the mass tank assault at the <strong>Battle of Cambrai</strong> in November 1917, Robertson established the world’s first mobile military <strong>Blood Depot</strong> (blood bank). Robertson collected blood from healthy soldiers in advance, mixed it with sodium citrate and glucose, and packed twenty-two glass bottles into customized wooden transit chests insulated with sawdust and packed with ice (<span class="archival-meta-tag">Source A</span>).<br><br><span class="para-ref">[3.2]</span> Setting up his forward blood depot at Casualty Clearing Station No. 48 near the Cambrai front, Robertson treated twenty-two soldiers suffering from lethal haemorrhagic shock who were expected to die from severe blood loss. Remarkably, twenty of the twenty-two men revived and made a full recovery. Robertson demonstrated that universal donor blood (Group O) could be harvested in advance, stockpiled in forward depots, and transfused to casualties at the point of greatest need, transforming resuscitation medicine and laying the direct organizational blueprint for modern civilian and military blood banking.',
         },
         {
           act: 4,
-          title: 'Act 4: The Historical Verdict & Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> Historiographers debate the ethical and medical legacy of the extreme innovations forged on the Western Front. Popular cultural narratives often perceive First World War medicine as butchery—crude battlefield amputations conducted under primitive conditions. However, modern medical historians, including Roger Cooter and Leo van Bergen, demonstrate that the crucible of industrial warfare acted as an unprecedented catalyst for clinical progress. The imperative to preserve military manpower broke through decades of civilian bureaucratic inertia, providing pioneering doctors like Robertson, Cushing, and Gillies with vast patient cohorts, unlimited state resources, and the clinical freedom to experiment with radical life-saving techniques.<br><br><span class="para-ref">[4.2]</span> The enduring legacy of these wartime breakthroughs permanently reshaped twentieth-century healthcare. Oswald Robertson’s refrigerated blood depot directly inspired the establishment of civilian blood transfusion services and national blood banks across Europe and America in the 1920s and 1930s. Harvey Cushing’s techniques founded the specialized discipline of modern neurosurgery, while Harold Gillies’s tubed pedicle and multi-stage bone grafting established modern plastic and maxillofacial surgery. From the catastrophic slaughter of the Western Front arose the scientific foundations of modern trauma resuscitation, proving that amidst the worst mechanized horrors of war, medical science achieved its most miraculous humanitarian triumphs.',
+          title: 'Act 4: Specialized Brain Surgery: Harvey Cushing at Passchendaele (1917–1918)',
+          theme_heading:
+            'Act 4: Specialized Brain Surgery: Harvey Cushing at Passchendaele (1917–1918)',
+          text: '<span class="para-ref">[4.1]</span> Parallel breakthroughs occurred in specialized trauma surgery. Penetrating skull and brain wounds inflicted by descending artillery shrapnel carried a catastrophic 50% mortality rate on the Western Front. American neurosurgeon <strong>Harvey Cushing</strong>, stationed at No. 46 Casualty Clearing Station near Mendinghem during the grueling Third Battle of Ypres (Passchendaele) in 1917, revolutionized brain surgery through meticulous clinical innovation. Cushing recognized that standard general anaesthesia (ether or chloroform) caused massive cerebral swelling and elevated intracranial pressure, which pushed delicate brain tissue through fractured skull defects, causing instant fatal herniation.<br><br><span class="para-ref">[4.2]</span> Cushing pioneered operating on conscious brain casualties under <strong>local anaesthetic</strong> (novocaine injected into the scalp), which kept the brain calm and unswollen. He designed an electrical suction apparatus to gently aspirate pulped, dead brain tissue, deployed powerful <em>surgical electromagnets</em> to extract deeply embedded steel shrapnel shards without lacerating healthy cerebral cortex, and used tiny silver clips to clamp delicate bleeding vessels. Cushing stitched the scalp closed using galeal sutures to protect against meningitis, reducing brain surgery mortality from over 50% down to 29% and operating on 45 severe casualties in a single 48-hour offensive, establishing modern neurosurgery.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Harold Gillies & The Tubed Pedicle Plastic Reconstruction (1917–1918)',
+          theme_heading:
+            'Act 5: Harold Gillies & The Tubed Pedicle Plastic Reconstruction (1917–1918)',
+          source: {
+            id: 'source_b_gillies_tubed_pedicle',
+            letter: 'B',
+            title:
+              'Source B: Harold Gillies’s Tubed Pedicle Plastic Reconstruction Technique at Queen’s Hospital, Sidcup (c.1917)',
+            src: '/images/gillies_tubed_pedicle.jpg',
+            source: '/images/gillies_tubed_pedicle.jpg',
+            image: '/images/gillies_tubed_pedicle.jpg',
+            caption:
+              'Clinical diagram and photograph documenting Harold Gillies’s revolutionary tubed pedicle technique at Queen’s Hospital, Sidcup, showing a flap of chest skin rolled into a living vascular tube to reconstruct shattered facial features.',
+            desc: 'Primary clinical diagram and photograph of Harold Gillies’s tubed pedicle technique from Queen’s Hospital, Sidcup, c.1917.',
+            provenance:
+              'Primary clinical case archive of Queen’s Hospital, Sidcup, 1917–1918. Harold Gillies Plastic Surgery Archives, Royal College of Surgeons of England, London.',
+            citation:
+              'Queen’s Hospital Sidcup Archive, Royal College of Surgeons of England, London (Gillies Plastic Surgery Collection, c.1917).',
+            question:
+              'How did Harold Gillies’s tubed pedicle technique shown in Source B solve the biological challenge of maintaining blood supply to newly grafted skin, and why was this essential for facial reconstruction?',
+            hinge_question:
+              'How did Harold Gillies’s tubed pedicle technique shown in Source B solve the biological challenge of maintaining blood supply to newly grafted skin, and why was this essential for facial reconstruction?',
+            source_context:
+              'Clinical diagram and photographic archive documenting Harold Gillies’s revolutionary tubed pedicle technique at Queen’s Hospital, Sidcup, showing a flap of chest skin rolled into a living vascular tube to reconstruct shattered facial features. Hinge Question: How did Harold Gillies’s tubed pedicle technique shown in Source B solve the biological challenge of maintaining blood supply to newly grafted skin, and why was this essential for facial reconstruction?',
+            context:
+              'Clinical diagram and photographic archive documenting Harold Gillies’s revolutionary tubed pedicle technique at Queen’s Hospital, Sidcup, showing a flap of chest skin rolled into a living vascular tube to reconstruct shattered facial features.',
+          },
+          text: '<span class="para-ref">[5.1]</span> Simultaneously, New Zealand-born surgeon <strong>Harold Gillies</strong> pioneered modern reconstructive plastic and maxillofacial surgery. Because trench sentries looked directly over parapets, thousands of soldiers sustained horrific facial wounds from machine-gun bullets and shrapnel, having jaws, noses, and cheeks completely blown away. Surviving soldiers were severely disfigured and suffered profound social ostracization. Recognizing their plight, Gillies persuaded the War Office to establish a dedicated hospital at <strong>Queen’s Hospital in Sidcup</strong>, Kent, in 1917, designed specifically for facial reconstruction.<br><br><span class="para-ref">[5.2]</span> Gillies confronted a major biological hurdle: large, flat skin grafts transplanted onto open facial wounds invariably rotted and died from microbial infection and lack of blood supply. To overcome this, Gillies invented the revolutionary <strong>Tubed Pedicle</strong> technique (<span class="archival-meta-tag">Source B</span>). A flap of healthy skin was cut from the patient’s chest, neck, or forehead and rolled into an enclosed, living tube of flesh with its internal blood vessels intact, while remaining attached at one end to maintain active arterial circulation. The free end was stitched to the facial defect; once new blood vessels grew into the graft over several weeks, the stalk was severed. Gillies and his multidisciplinary team performed over 11,000 operations at Sidcup, reconstructing jaws with rib bone grafts and restoring both physical anatomy and human dignity to shattered veterans.',
         },
       ],
       sources: [
@@ -19323,7 +19320,7 @@ export const unitData = {
         {
           step: 2,
           date: '1916–1917',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
           heading: 'Why was glucose addition essential to prevent red blood cell breakdown?',
           bullets: [
             'Mixing sweet sugar syrup to feed fragile red cells',
@@ -19335,7 +19332,7 @@ export const unitData = {
         {
           step: 3,
           date: 'Nov 1917',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'Why did pre-stored blood transform surgical survival during surprise assaults?',
           bullets: [
             'Collecting universal Type O bottles before big attack',
@@ -19348,7 +19345,7 @@ export const unitData = {
         {
           step: 4,
           date: '1917–1918',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why was local anaesthesia superior to general anaesthetic in head trauma?',
           bullets: [
             'Numbing scalp with local needle jabs to stop brain swelling',
@@ -19360,7 +19357,7 @@ export const unitData = {
         {
           step: 5,
           date: '1917–1918',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading:
             'How did the tubed pedicle technique prevent skin grafts from rotting and dying?',
           bullets: [
@@ -19394,7 +19391,7 @@ export const unitData = {
           {
             step: 2,
             date: '1916–1917',
-            para_ref: '[2.1]',
+            para_ref: '[2.1–2.2]',
             title: 'Citrate-Glucose Blood Storage',
             actor: 'Francis Rous & James Turner',
             tag: '❄️ REFRIGERATED GLUCOSE STORAGE',
@@ -19408,7 +19405,7 @@ export const unitData = {
           {
             step: 3,
             date: 'Nov 1917',
-            para_ref: '[2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Cambrai Blood Bank Depot',
             actor: 'Captain Oswald Robertson (US Army / British RAMC)',
             tag: '🧊 CAMBRAI BLOOD DEPOT',
@@ -19423,7 +19420,7 @@ export const unitData = {
           {
             step: 4,
             date: '1917–1918',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Harvey Cushing’s Brain Surgery',
             actor: 'Harvey Cushing (Pioneering Neurosurgeon)',
             tag: '🧠 NEUROSURGERY & SILVER CLIPS',
@@ -19437,7 +19434,7 @@ export const unitData = {
           {
             step: 5,
             date: '1917–1918',
-            para_ref: '[3.2, 4.1]',
+            para_ref: '[5.1–5.2]',
             title: 'Harold Gillies at Sidcup',
             actor: "Harold Gillies & Queen's Hospital Sidcup",
             tag: '🎭 TUBED PEDICLE PLASTIC SURGERY',
@@ -19462,25 +19459,25 @@ export const unitData = {
           date: '1916–1917',
           title: 'Citrate-Glucose Blood Storage',
           desc: 'In 1916, Francis Rous and James Turner discovered that adding a dextrose-glucose sugar solution nourished red blood cells and prevented cellular breakdown during storage.',
-          para_ref: '[2.1]',
+          para_ref: '[2.1–2.2]',
         },
         {
           date: 'Nov 1917',
           title: 'Cambrai Blood Bank Depot',
           desc: 'Ahead of the British tank offensive at Cambrai in November 1917, Captain Oswald Robertson established the world’s first forward military blood bank depot, stocking 22 units of universal Type O blood in ice chests.',
-          para_ref: '[2.2]',
+          para_ref: '[3.1–3.2]',
         },
         {
           date: '1917–1918',
           title: 'Harvey Cushing’s Brain Surgery',
           desc: 'American neurosurgeon Harvey Cushing operated at CCS No. 46, abandoning traditional scalpels and ether to introduce local anaesthetic injections (preventing brain swelling and fatal intracranial pressure).',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
         },
         {
           date: '1917–1918',
           title: 'Harold Gillies at Sidcup',
           desc: 'New Zealand surgeon Harold Gillies established a specialized facial reconstruction hospital at Queen’s Hospital, Sidcup, in 1917 to rebuild jaws and faces destroyed by bullet fire and shrapnel.',
-          para_ref: '[3.2, 4.1]',
+          para_ref: '[5.1–5.2]',
         },
       ],
     },
