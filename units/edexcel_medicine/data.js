@@ -4649,51 +4649,6 @@ export const unitData = {
     },
     {
       id: 'lesson_2_2',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to evaluate why Sydenham became ‘The English Hippocrates’:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'CLINICAL METHOD',
-            title: '1. Bedside Observation vs. Book-Learning (Observationes Medicae 1676)',
-            prompt:
-              'Explain how Sydenham’s method of closely monitoring real-time symptoms rejected Galenic library study and astrology:',
-            model_notes: [
-              "Nicknamed 'The English Hippocrates'; rejected studying theoretical Latin manuscripts; visited patients at bedside, recorded detailed symptom chronologies.",
-              "Refused to check astrology or complex pulse charts, arguing that the patient's physical symptoms were the only true guide to illness.",
-              "Encouraged doctors to observe the natural course of a disease and let the body's natural defenses fight it whenever possible.",
-            ],
-            key_terms: ['Bedside Observation', 'Observationes Medicae'],
-          },
-          {
-            num: 2,
-            badge: 'DIAGNOSIS',
-            title: '2. Classifying Diseases into ‘Distinct Species’ (Like Plants in Botany)',
-            prompt:
-              'Explain how Sydenham viewed diseases as separate outside illnesses rather than unique personal fluid imbalances:',
-            model_notes: [
-              'Argued diseases had distinct, predictable identities like botanical species in plant classification.',
-              'Successfully proved scarlet fever and measles were two entirely separate illnesses, requiring different clinical responses.',
-              "Directly challenged ancient humoural dogma that every patient's illness was a unique personal imbalance of humours.",
-            ],
-            key_terms: ['Disease Classification', 'Scarlet Fever'],
-          },
-          {
-            num: 3,
-            badge: 'CONTINUITY PARADOX',
-            title: '3. The Sydenham Paradox (Clinical Genius with Medieval Treatments)',
-            prompt:
-              'Explain why Sydenham prescribed cinchona bark and fresh air, but still relied heavily on bloodletting and humoural purging:',
-            model_notes: [
-              'Pioneered practical treatments: cinchona bark (quinine) for malaria fevers; cool bedrooms and light blankets for smallpox.',
-              'Yet remained humoural at his core, prescribing regular venesection (bloodletting) and purges to expel toxins.',
-              'Illustrates the central Renaissance paradox: clinical observation advanced dramatically, but treatments showed deep continuity.',
-            ],
-            key_terms: ['Cinchona Bark', 'Venesection'],
-          },
-        ],
-      },
       banner: '/images/renaissance_apothecary_shop.jpg',
       banner_position: 'center 25%',
       title: 'KT2.2: Thomas Sydenham & The Art of Bedside Observation (1676)',
@@ -4803,39 +4758,55 @@ export const unitData = {
         'While European anatomists dissected corpses in lecture theatres, one London physician stepped out of the university library and into the sickroom. Thomas Sydenham, nicknamed the "English Hippocrates", told young doctors: "You must go to the bedside; there alone you can learn disease." He rejected 1,500 years of astrological charts and complex urine wheels, arguing that illnesses were distinct biological entities with recognizable symptoms—like species of plants in a garden. Yet, even as he proved measles was separate from scarlet fever and prescribed Peruvian tree bark for malaria, Sydenham still bled patients to balance their humours. How could one man be both a revolutionary pioneer and a prisoner of ancient tradition?',
       teacher_notes: {
         primer:
-          'Guide students through the diagnostic revolution led by Thomas Sydenham. Help them contrast medieval individualized humoral diagnosis (where every illness was treated as a unique internal imbalance) with Sydenham’s groundbreaking concept of diseases as external, universal "species" that produce identical symptom clusters across different patients.',
+          'This enquiry explores Thomas Sydenham ("The English Hippocrates"), examining how his bedside clinical observations, disease classification, cool therapy for smallpox, and use of Cinchona bark (quinine) challenged medieval individual humoral theory, while evaluating why everyday medical treatments remained predominantly traditional.',
         objectives: [
           {
             objective:
-              'Explain Sydenham’s revolutionary emphasis on direct bedside clinical observation.',
+              'Explain why Sydenham rejected scholastic book learning in favour of direct bedside observation.',
             primer:
-              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that Sydenham rejected reading Galen from elevated lecture desks, pulse charts, and astrological almanacs, insisting that physicians sit beside patients and record symptoms over time.',
+              'Direct students to paragraphs [1.1]–[1.2] and Source A (Portrait by Mary Beale). Emphasize his insistence that doctors must observe symptoms directly rather than theorising about humours.',
             question:
-              'Why did Sydenham’s bedside method represent a direct break from traditional medieval medical education?',
-          },
-          {
-            objective: 'Analyze how Sydenham classified diseases into distinct species.',
-            primer:
-              'Direct students to paragraphs [2.1]–[2.2]. Explain his botanical analogy: just as botanists classify plants by their flowers, doctors should classify illnesses by symptoms. Focus on his differentiation between scarlet fever and measles in Observationes Medicae (1676).',
-            question:
-              'How did classifying diseases as external species challenge the Galenic theory of the Four Humours?',
+              'Why did Sydenham believe that observing a patient at the bedside was more valuable than reading Galen at university?',
           },
           {
             objective:
-              'Evaluate the limits of Sydenham’s practice: rational treatments alongside traditional humoral remedies.',
+              'Analyse how classifying diseases in Observationes Medicae challenged individual humoral theory.',
             primer:
-              'Direct students to paragraphs [3.1]–[4.2]. Contrast his rational innovations (cinchona bark/quinine for malaria, cool bedrooms for smallpox) with his continued use of bloodletting and purging.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source B (The Quack Physician). Connect Sydenham’s plant-like taxonomy of disease to the concept that diseases are external entities with uniform symptoms.',
             question:
-              'Why did Sydenham continue to prescribe bloodletting even after proving diseases were distinct external species?',
+              'How did classifying diseases into distinct species undermine the 1,400-year-old belief in individual humoral balance?',
+          },
+          {
+            objective:
+              'Assess the significance of Cinchona bark (quinine) in demonstrating that specific remedies target specific diseases.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2]. Discuss how Peruvian bark cured malaria without purging or bloodletting, striking a fatal blow against Galenic therapeutics.',
+            question:
+              'Why was the success of Peruvian bark such a profound conceptual challenge to Galen’s Theory of Opposites?',
+          },
+          {
+            objective: 'Evaluate Sydenham’s innovative "cool therapy" for smallpox fevers.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Contrast the lethal traditional sweating treatment (heavy blankets, sealed rooms) with Sydenham’s open windows and cool drinks.',
+            question:
+              'Why did Sydenham’s common-sense cool treatment dramatically reduce smallpox fatalities in London?',
+          },
+          {
+            objective:
+              'Explain why medical treatments remained mostly medieval despite Sydenham’s diagnostic breakthroughs.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2] and Source C. Highlight that without germ theory, Sydenham still relied on bloodletting, purges, and iron tonics for most ailments.',
+            question:
+              'Why did Sydenham’s brilliant clinical observations fail to revolutionize everyday medical treatments in the 17th century?',
           },
         ],
         source_context: {
           'Source A':
-            'Oil portrait of Dr Thomas Sydenham (c1688) by Mary Beale, one of England’s earliest professional female painters. Beale was a close friend of Sydenham, whose son was apprenticed to him. **Hinge Question:** How does Sydenham’s sober, plain dress reflect his practical, down-to-earth rejection of university academic pomposity and book-learning?',
+            'Portrait of Thomas Sydenham by Mary Beale (c.1688). Depicts the celebrated London physician in simple gentlemanly attire, known as the "English Hippocrates" for revitalizing clinical observation. Hinge Question: How does Sydenham’s austere portrait reflect his rejection of theatrical university dogma in favour of practical bedside clinical care?',
           'Source B':
-            'The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient. **Hinge Question:** How does this contemporary satire demonstrate why Sydenham felt it was urgent to establish scientific, clinical observation in place of commercial superstition?',
+            'The Quack Physician, painting by Jan Steen (1660s). Satirizes an itinerant medical practitioner holding up a urine flask to deceive anxious patients with bogus humoral diagnoses. Hinge Question: Why did Sydenham argue that traditional scholastic doctors who relied on urine flasks were no better than theatrical quacks?',
           'Source C':
-            'A 17th-century ward in a municipal charity hospital showing rows of narrow wooden beds cared for by matrons, following the dissolution of monastic infirmaries. **Hinge Question:** Why did the closure of medieval religious hospitals in 1536 force Renaissance doctors like Sydenham to focus more directly on community and bedside clinical care?',
+            'Renaissance Municipal Hospital Ward, woodcut engraving illustrating rows of simple iron cots in an English charitable infirmary. Hinge Question: What does the layout of this 17th-century ward suggest about the persistent limits of hospital care despite Sydenham’s diagnostic advances?',
         },
       },
       do_now: [
@@ -4910,65 +4881,100 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: Context & Catalyst (The "English Hippocrates" at the Bedside)',
+          act: 1,
+          title: 'Act 1: Rejecting Book Learning at the Bedside (1660s)',
+          theme_heading: 'Act 1: Rejecting Book Learning at the Bedside (1660s)',
           source: {
-            id: 'source_a_thomas_sydenham',
+            id: 'source_a_sydenham_portrait',
             letter: 'A',
-            title: 'Source A: Portrait of Thomas Sydenham by Mary Beale (c1688)',
-            src: '/images/thomas_sydenham.jpg',
-            source: '/images/thomas_sydenham.jpg',
-            image: '/images/thomas_sydenham.jpg',
-            caption: 'Oil portrait of Dr Thomas Sydenham (c.1688) by Mary Beale.',
-            desc: 'Portrait of Thomas Sydenham by Mary Beale.',
-            question:
-              "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
-            hinge_question:
-              "Notice Sydenham's plain, sober attire and natural hair, contrasting with the extravagant powdered wigs and velvet robes of theatrical London doctors. How does his modest appearance reflect his clinical philosophy that real medicine must be practiced through rigorous observation at the patient's bedside rather than university pomp?",
-            source_context:
-              "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
-            context:
-              "Known as the 'English Hippocrates', Thomas Sydenham (1624–1689) rejected speculative university book-learning. In Observationes Medicae (1676), he argued that doctors must observe symptoms directly, record disease progressions, and classify illnesses into distinct species, pioneering the cool regime for smallpox and cinchona bark for malaria.",
+            title: 'Source A: Portrait of Thomas Sydenham by Mary Beale (c.1688)',
+            src: '/images/thomas_sydenham_portrait.jpg',
+            source: '/images/thomas_sydenham_portrait.jpg',
+            image: '/images/thomas_sydenham_portrait.jpg',
+            caption:
+              'Portrait of Thomas Sydenham by Mary Beale (c.1688), celebrated London physician known as the ‘English Hippocrates’.',
+            desc: 'Seventeenth-century portrait of Dr Thomas Sydenham.',
             provenance:
-              'Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).',
+              'Oil on canvas by Mary Beale, c.1688. National Portrait Gallery, London (NPG 211).',
             citation:
-              'Oil on canvas by Mary Beale, c. 1688. National Portrait Gallery, London (NPG 211).',
+              'Oil on canvas by Mary Beale, c.1688. National Portrait Gallery, London (NPG 211).',
+            question:
+              'How does Sydenham’s austere portrait reflect his rejection of theatrical university dogma in favour of practical bedside clinical care?',
+            hinge_question:
+              'How does Sydenham’s austere portrait reflect his rejection of theatrical university dogma in favour of practical bedside clinical care?',
+            source_context:
+              'Depicts the celebrated London physician in simple gentlemanly attire, known as the "English Hippocrates" for revitalizing clinical observation.',
+            context:
+              'Depicts the celebrated London physician in simple gentlemanly attire, known as the "English Hippocrates" for revitalizing clinical observation.',
           },
-          text: '<span class="para-ref">[1.1]</span> In the mid-17th century, university medical education in England remained stubbornly detached from the reality of patient care. Wealthy physicians spent years studying Galen, Hippocrates, and Aristotle in Latin, memorizing theoretical passages and casting horoscopes to diagnose illnesses. When visiting a sick aristocrat, a physician often spent more time inspecting a glass matula filled with urine or calculating planetary alignments than examining the patient’s physical body. If a treatment failed, doctors blamed the patient’s corrupt humoural constitution rather than their own medical theories.<br><br><span class="para-ref">[1.2]</span> Thomas Sydenham (1624–1689) (<span class="archival-meta-tag">Source A</span>) rebelled against this academic detachment. Having served as a cavalry officer in the English Civil War, Sydenham brought a practical, no-nonsense soldier’s mindset to medicine. Practicing in Westminster, he insisted that true medical knowledge could only be gained by sitting beside the patient’s bed, taking comprehensive clinical notes, and carefully tracking symptoms from the onset of fever to recovery or death. Because he revived the ancient Greek emphasis on natural observation, contemporaries revered him as the "English Hippocrates".',
+          text: '<span class="para-ref">[1.1]</span> In seventeenth-century England, medical scholarship remained largely trapped within theoretical scholasticism. University doctors read Latin translations of Galen, scrutinized urine flasks, and argued endlessly about metaphysical philosophy while rarely interacting with living sufferers. Dr Thomas Sydenham (1624–1689), practicing in London, staged a radical revolt against this academic elitism (<span class="archival-meta-tag">Source A</span>). Dubbed the "English Hippocrates", Sydenham insisted that true medical science could never be learned from antique books in a library, but only through empirical observation directly at the patient’s bedside. His famous advice to young physicians was blunt: "Go to the bedside, there alone can you learn disease."<br><br><span class="para-ref">[1.2]</span> Sydenham urged physicians to abandon speculative theoretical disputes and adopt meticulous, objective clinical record-keeping. He spent hours monitoring patients, noting precise changes in pulse rate, skin temperature, sweating patterns, tongue coating, and the progression of rashes day by day. By recording detailed case histories and watching nature take its course, Sydenham sought to understand the true biological lifecycle of illnesses, reviving Hippocratic clinical observation for the early modern era.',
         },
         {
-          title: 'Act 2: Escalation & Conflict (Observationes Medicae & Disease Species)',
-          text: '<span class="para-ref">[2.1]</span> Sydenham’s greatest conceptual breakthrough was his revolutionary theory of disease classification. For 1,400 years, Galenic orthodoxy taught that disease was entirely personal: each individual had a unique mixture of the Four Humours, meaning that two people suffering from a fever were experiencing two completely different internal imbalances. Sydenham flatly rejected this, arguing that diseases were external entities that existed independently of the patient. He compared illnesses to plants in a botanical garden, asserting that diseases could be organized into distinct families and "species" based on fixed clusters of symptoms.<br><br><span class="para-ref">[2.2]</span> In 1676, Sydenham published his masterwork, <em>Observationes Medicae</em> (Medical Observations), which quickly became the definitive clinical handbook across Europe. Applying his classification system, he demonstrated that conditions previously lumped together under the vague label of "fevers" were actually entirely separate biological disorders. Most famously, he carefully documented the distinct rashes, incubation periods, and fever patterns of measles and scarlet fever, proving conclusively that they were two independent diseases requiring different care.',
-        },
-        {
-          title: 'Act 3: Forensic Evidence (Practical Therapies vs Quack Remedies)',
-          text: '<span class="para-ref">[3.1]</span> Sydenham’s empirical focus led him to champion innovative, common-sense treatments. For smallpox, traditional physicians sealed sickrooms, lit roaring fires, and covered shivering patients in heavy woolen blankets to "sweat out the venom". Sydenham recognized that this suffocating heat worsened the fever and killed patients. Instead, he pioneered a revolutionary "cooling regime": opening windows to circulate fresh air, removing heavy blankets, and prescribing cool fluids and mild cordials. Survival rates among his smallpox patients improved dramatically.<br><br><span class="para-ref">[3.2]</span> Sydenham also enthusiastically embraced new botanical remedies brought from the Americas. He popularized the use of Cinchona bark (Peruvian bark, containing quinine) to treat ague (malaria), showing that specific medicines could target specific diseases rather than just purging the whole body. He also developed liquid laudanum (opium dissolved in alcohol), providing the first reliable and easily dosed painkiller for chronic sufferers.',
-        },
-        {
-          title: 'Act 4: The Historical Verdict & The Limits of Observation',
+          act: 2,
+          title: 'Act 2: Observationes Medicae & Disease Classification (1676)',
+          theme_heading: 'Act 2: Observationes Medicae & Disease Classification (1676)',
           source: {
             id: 'source_b_quack_physician',
             letter: 'B',
             title: 'Source B: The Quack Physician by Jan Steen (1660s)',
-            src: '/images/quack_doctor_steen.jpg',
-            source: '/images/quack_doctor_steen.jpg',
-            image: '/images/quack_doctor_steen.jpg',
+            src: '/images/quack_physician_steen.jpg',
+            source: '/images/quack_physician_steen.jpg',
+            image: '/images/quack_physician_steen.jpg',
             caption:
-              'The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient.',
-            desc: 'Contemporary satire illustrating the thriving trade in unscientific quack medicines.',
+              'A 17th-century painting by Jan Steen depicting an itinerant quack doctor grandly inspecting a urine flask to deceive a credulous patient.',
+            desc: 'Seventeenth-century Dutch genre painting satirizing diagnostic uroscopy.',
             provenance:
-              'Oil on wood by Jan Steen, c. 1660–1670. Rijksmuseum, Amsterdam (Accession No. SK-A-399).',
+              'Oil on oak panel by Jan Steen, c.1660–1665. Mauritshuis, The Hague (Inv. no. 168).',
             citation:
-              'Oil on wood by Jan Steen, c. 1660–1670. Rijksmuseum, Amsterdam (Accession No. SK-A-399).',
-            source_context:
-              'The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient.',
-            context:
-              'The Quack Physician (1660s) by Jan Steen, illustrating a theatrical travelling charlatan selling potions and examining a urine flask while flattering a gullible wealthy patient.',
+              'Oil on oak panel by Jan Steen, c.1660–1665. Mauritshuis, The Hague (Inv. no. 168).',
             question:
-              'How does this contemporary satire demonstrate why Sydenham felt it was urgent to establish scientific, clinical observation in place of commercial superstition?',
+              'Why did Sydenham argue that traditional scholastic doctors who relied on urine flasks were no better than theatrical quacks?',
             hinge_question:
-              'How does this contemporary satire demonstrate why Sydenham felt it was urgent to establish scientific, clinical observation in place of commercial superstition?',
+              'Why did traditional scholastic doctors who relied on urine flasks fail to diagnose distinct diseases compared to Sydenham’s bedside methods?',
+            source_context:
+              'Satirizes an itinerant medical practitioner holding up a urine flask to deceive anxious patients with bogus humoral diagnoses.',
+            context:
+              'Satirizes an itinerant medical practitioner holding up a urine flask to deceive anxious patients with bogus humoral diagnoses.',
           },
-          text: '<span class="para-ref">[4.1]</span> Despite his profound contributions to clinical diagnosis, Sydenham’s practice illustrates the hard boundaries of Renaissance science. Because the Germ Theory lay nearly two centuries in the future, Sydenham had no understanding of bacteria, viruses, or the true biological causes of infection. He firmly believed that epidemics were triggered by mysterious atmospheric changes and poisonous "miasmas" rising from the earth. Consequently, while his clinical descriptions of illnesses were brilliant, his understanding of what caused them remained speculative.<br><br><span class="para-ref">[4.2]</span> Furthermore, when faced with conditions that did not respond to cinchona or cooling regimes, Sydenham fell back on traditional medieval therapies. Throughout his long career, he routinely bled and purged his patients to rebalance their humours, believing that bleeding lowered inflammatory heat. Furthermore, conservative physicians in London condemned him for undermining university tradition, and ordinary people continued to patronize quack doctors selling fake panaceas (<span class="archival-meta-tag">Source B</span>). Nonetheless, by establishing bedside empirical observation and disease classification, Sydenham laid the indispensable foundation for modern clinical epidemiology.',
+          text: '<span class="para-ref">[2.1]</span> In 1676, Sydenham published his masterwork, <em>Observationes Medicae</em>, which served as a foundational medical textbook across Europe for over two centuries. In it, Sydenham advanced a revolutionary hypothesis: diseases could be systematically organized and classified into distinct species, precisely like botanists classify plants and trees. Prior to Sydenham, medieval humoral doctrine taught that every patient had a unique, individual mixture of humours, meaning that a fever in one person was considered fundamentally different from a fever in another.<br><br><span class="para-ref">[2.2]</span> Sydenham demolished this individualized model. He demonstrated that patients suffering from the same disease exhibited identical, predictable symptom patterns regardless of their individual constitution, age, or background. By differentiating between conditions that had previously been lumped together—most famously distinguishing measles from scarlet fever—Sydenham proved that diseases were distinct external pathological entities rather than vague internal fluid imbalances, striking a mortal blow against traditional Galenic diagnosis (<span class="archival-meta-tag">Source B</span>).',
+        },
+        {
+          act: 3,
+          title: 'Act 3: Quinine & Cinchona Bark for Malaria (c. 1670s)',
+          theme_heading: 'Act 3: Quinine & Cinchona Bark for Malaria (c. 1670s)',
+          text: '<span class="para-ref">[3.1]</span> Sydenham’s empirical bedside method bore its most celebrated therapeutic fruit in his championing of Cinchona bark (Peruvian bark) for the treatment of "intermittent fevers" (ague, known today as malaria). Imported from South America by Jesuit missionaries, Cinchona bark was initially viewed with deep suspicion by conservative Protestant English doctors, who dismissed it as a dangerous Catholic concoction. Sydenham tested it rigorously on patients suffering ague in the marshy Thames estuary, carefully calculating dosages and timing administration to coincide with fever remissions.<br><br><span class="para-ref">[3.2]</span> The results were miraculous: the bark (which contained natural quinine) cured malaria directly and rapidly. Crucially, Cinchona bark did not purge the bowels or induce vomiting; it operated as a specific chemical remedy targeting a specific illness. This discovery was conceptually devastating to Galenism. If a single imported tree bark could cure ague without adjusting the Four Humours or bleeding the patient, then the entire Galenic edifice of humoral balance was fundamentally flawed.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Cool Therapy for Smallpox Fevers (c. 1670s)',
+          theme_heading: 'Act 4: Cool Therapy for Smallpox Fevers (c. 1670s)',
+          text: '<span class="para-ref">[4.1]</span> Sydenham also revolutionized the clinical management of smallpox, one of the deadliest and most disfiguring killers of the seventeenth century. Traditional Galenic physicians treated smallpox fevers by attempting to sweat the poison out of the body: patients were locked in stifling rooms with shuttered windows, roaring hearth fires, and piled under heavy woolen blankets, while being administered heating cordials and wine. This horrific "sweating regimen" caused severe dehydration, accelerated systemic delirium, and dramatically increased patient mortality.<br><br><span class="para-ref">[4.2]</span> Sydenham overturned this centuries-old practice with his famous "cool therapy". He ordered windows opened to allow fresh air to circulate freely through the sickroom, removed heavy blankets in favor of light sheets, extinguished bedchamber fires, and forbade hot cordials, prescribing instead refreshing cold drinks and mild barley waters. While Sydenham could not cure the smallpox virus itself, his cool regimen allowed patients’ immune systems to survive the acute fever crisis, drastically reducing smallpox fatalities and earning him widespread acclaim among grateful London families.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: The Limits of Sydenham’s Legacy (1680s)',
+          theme_heading: 'Act 5: The Limits of Sydenham’s Legacy (1680s)',
+          source: {
+            id: 'source_c_municipal_hospital',
+            letter: 'C',
+            title: 'Source C: Renaissance Municipal Hospital Ward',
+            src: '/images/renaissance_hospital_ward.jpg',
+            source: '/images/renaissance_hospital_ward.jpg',
+            image: '/images/renaissance_hospital_ward.jpg',
+            caption:
+              'A 17th-century engraving showing an early modern hospital ward with rows of simple beds, reflecting modest clinical care.',
+            desc: 'Seventeenth-century engraving of a municipal hospital ward.',
+            provenance: 'Wellcome Collection, London (Shelfmark: Iconographic Collection 3892i).',
+            citation: 'Wellcome Collection, London (Shelfmark: Iconographic Collection 3892i).',
+            question:
+              'What does the layout of this 17th-century ward suggest about the persistent limits of hospital care despite Sydenham’s diagnostic advances?',
+            hinge_question:
+              'What does the layout of this 17th-century ward suggest about the persistent limits of hospital care despite Sydenham’s diagnostic advances?',
+            source_context:
+              'Illustrating rows of simple iron cots in an English charitable infirmary.',
+            context: 'Illustrating rows of simple iron cots in an English charitable infirmary.',
+          },
+          text: '<span class="para-ref">[5.1]</span> Despite his profound clinical innovations, Sydenham faced bitter opposition from the medical establishment. Senior fellows of the Royal College of Physicians resented his contempt for scholastic textbook learning, denouncing him as a dangerous rebel whose empirical focus degraded noble academic medicine into a vulgar mechanic trade. Sydenham was never elected a Fellow of the Royal College, remaining a licentiate throughout his life.<br><br><span class="para-ref">[5.2]</span> Furthermore, Sydenham’s breakthrough illustrated the enduring paradox of Renaissance medicine: revolutionary diagnostic observation did not produce revolutionary cures (<span class="archival-meta-tag">Source C</span>). Because the microscope was in its infancy and germ theory lay almost two centuries in the future, Sydenham had no understanding of microscopic bacteria or viruses. Consequently, outside of quinine for malaria and cool therapy for smallpox, his therapeutic repertoire remained largely traditional: he continued to prescribe regular bloodletting, mild purges, and iron tonics for gout and fevers. Sydenham transformed how diseases were observed and classified, but left everyday therapeutics fundamentally grounded in the ancient world.',
         },
       ],
       tasks: [
@@ -5411,9 +5417,9 @@ export const unitData = {
           para_ref: '[1.1–1.2]',
           heading: 'Why did Sydenham believe bedside observation surpassed textbook learning?',
           bullets: [
-            'Visiting sick London patients in private bedrooms',
-            'Ignoring ancient scholastic university lectures',
-            'Recording clinical symptoms in detailed notebooks',
+            'Dismissing speculative book learning in Latin',
+            'Observing real patient symptoms at the bedside',
+            'Recording fever patterns and changes in pulse',
           ],
           focus_clue: 'Why did Sydenham believe bedside observation surpassed textbook learning?',
         },
@@ -5423,9 +5429,9 @@ export const unitData = {
           para_ref: '[2.1–2.2]',
           heading: 'How did classifying diseases challenge traditional individual humoral theory?',
           bullets: [
-            'Classifying distinct illnesses like modern botanists',
-            'Distinguishing measles from scarlet fever rashes',
-            'Publishing authoritative textbook used for two centuries',
+            'Publishing landmark Observationes Medicae textbook',
+            'Classifying diseases into distinct species like plants',
+            'Distinguishing scarlet fever from measles',
           ],
           focus_clue:
             'How did classifying diseases challenge traditional individual humoral theory?',
@@ -5433,42 +5439,42 @@ export const unitData = {
         {
           step: 3,
           date: 'c1670s',
-          para_ref: '[3.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'Why was the success of Peruvian bark a mortal blow to humoral balance?',
           bullets: [
-            'Importing bitter Peruvian tree bark to London',
-            'Dosing marshland ague fevers with powdered bark',
-            'Proving specific remedies cured specific diseases',
+            'Using Cinchona tree bark to cure malaria fevers',
+            'Targeting specific diseases with specific chemicals',
+            'Disproving the need for humoral purging',
           ],
           focus_clue: 'Why was the success of Peruvian bark a mortal blow to humoral balance?',
         },
         {
           step: 4,
           date: 'c1670s',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why did Sydenham’s cool treatment drastically cut smallpox deaths?',
           bullets: [
-            'Throwing off heavy baronial wool blankets',
-            'Opening window shutters to let in cold wind',
-            'Giving cool drinks instead of scalding wines',
+            'Ending dangerous heated sweating rooms',
+            'Prescribing light bedsheets and open fresh air',
+            'Administering cooling fluids to lower fever',
           ],
           focus_clue: 'Why did Sydenham’s cool treatment drastically cut smallpox deaths?',
         },
         {
           step: 5,
           date: '1680s',
-          para_ref: '[4.1–4.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why did medical treatments remain mostly medieval despite Sydenham?',
           bullets: [
-            'Continuing to believe miasma caused epidemics',
-            'Lacking laboratory tools to identify bacteria',
-            'Leaving ordinary patient treatment largely unchanged',
+            'Lacking knowledge of microscopic bacteria and germs',
+            'Continuing to prescribe bloodletting and purges',
+            'Facing resistance from the Royal College of Physicians',
           ],
           focus_clue: 'Why did medical treatments remain mostly medieval despite Sydenham?',
         },
       ],
       causal_domino_spine: {
-        title: 'Thomas Sydenham: Bedside Observation & Clinical Classification',
+        title: 'Thomas Sydenham & The Art of Bedside Observation',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -5476,13 +5482,13 @@ export const unitData = {
             date: '1660s',
             para_ref: '[1.1–1.2]',
             title: 'Rejecting Book Learning at the Bedside',
-            actor: 'Thomas Sydenham ("English Hippocrates")',
-            tag: '🩺 CLINICAL OBSERVATION',
+            actor: 'Dr Thomas Sydenham (London Physician)',
+            tag: '🛏️ BEDSIDE EMPIRICISM',
             trigger:
-              'Practicing in Westminster after serving as a cavalry officer, Thomas Sydenham rejected university book-learning and urine-gazing, sitting beside patients to record symptoms firsthand.',
-            desc: 'Practicing in Westminster after serving as a cavalry officer, Thomas Sydenham rejected university book-learning and urine-gazing, sitting beside patients to record symptoms firsthand.',
+              'Dr Thomas Sydenham rejected scholastic book learning, declaring that medicine could only be mastered by direct clinical observation of patients at the bedside.',
+            desc: 'Dr Thomas Sydenham rejected scholastic book learning, declaring that medicine could only be mastered by direct clinical observation of patients at the bedside.',
             connective:
-              'Revived Hippocratic clinical observation, placing the patient’s physical symptoms rather than ancient Latin dogma at the center of medical diagnosis.',
+              'Revived Hippocratic clinical observation, recording meticulous daily symptom histories rather than theorizing about invisible humoral fluids.',
             question: 'Why did Sydenham believe bedside observation surpassed textbook learning?',
           },
           {
@@ -5490,56 +5496,56 @@ export const unitData = {
             date: '1676',
             para_ref: '[2.1–2.2]',
             title: 'Observationes Medicae & Disease Classification',
-            actor: 'Thomas Sydenham & European Clinicians',
-            tag: '📚 PATHOLOGICAL TAXONOMY',
+            actor: 'Thomas Sydenham & European Physicians',
+            tag: '📖 OBSERVATIONES MEDICAE',
             trigger:
-              'In his 1676 masterwork Observationes Medicae, Sydenham classified diseases into botanical-style species, proving that measles and scarlet fever were two distinct biological disorders.',
-            desc: 'In his 1676 masterwork Observationes Medicae, Sydenham classified diseases into botanical-style species, proving that measles and scarlet fever were two distinct biological disorders.',
+              'Sydenham published Observationes Medicae, arguing that diseases could be classified into distinct species like plants, distinguishing scarlet fever from measles.',
+            desc: 'Sydenham published Observationes Medicae, arguing that diseases could be classified into distinct species like plants, distinguishing scarlet fever from measles.',
             connective:
-              'Demolished the ancient belief that disease was merely a unique personal humoural imbalance, proving illnesses were separate external entities that behaved predictably.',
+              'Demolished the medieval belief that sickness was unique to each person’s humours, proving diseases were uniform external pathological entities.',
             question:
               'How did classifying diseases challenge traditional individual humoral theory?',
           },
           {
             step: 3,
             date: 'c1670s',
-            para_ref: '[3.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Quinine & Cinchona Bark for Malaria',
-            actor: 'Thomas Sydenham & Colonial Traders',
-            tag: '🌿 TARGETED PHARMACOLOGY',
+            actor: 'Sydenham & Thames Estuary Patients',
+            tag: '🌿 CINCHONA BARK / QUININE',
             trigger:
-              'Sydenham championed Peruvian cinchona bark (containing quinine) to cure marshland ague (malaria), alongside formulating liquid laudanum (opium in alcohol) for severe pain.',
-            desc: 'Sydenham championed Peruvian cinchona bark (containing quinine) to cure marshland ague (malaria), alongside formulating liquid laudanum (opium in alcohol) for severe pain.',
+              'Sydenham successfully deployed Cinchona bark (containing quinine) to cure malaria fevers directly without bloodletting or purging.',
+            desc: 'Sydenham successfully deployed Cinchona bark (containing quinine) to cure malaria fevers directly without bloodletting or purging.',
             connective:
-              'Proved that specific chemical remedies could target specific diseases, dealing a fatal conceptual blow to universal humoural purging.',
+              'Proved that specific chemical treatments targeted specific diseases, delivering a devastating conceptual blow to Galen’s Theory of Opposites.',
             question: 'Why was the success of Peruvian bark a mortal blow to humoral balance?',
           },
           {
             step: 4,
             date: 'c1670s',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Cool Therapy for Smallpox Fevers',
-            actor: 'Thomas Sydenham & London Patients',
-            tag: '🪟 EMPIRICAL REGIMEN',
+            actor: 'Sydenham & Smallpox Patients',
+            tag: '❄️ COOL THERAPY',
             trigger:
-              'Sydenham abandoned traditional suffocating heating regimes for smallpox, pioneering a cooling regimen of fresh circulating air, light bedcovers, and cool cordials.',
-            desc: 'Sydenham abandoned traditional suffocating heating regimes for smallpox, pioneering a cooling regimen of fresh circulating air, light bedcovers, and cool cordials.',
+              'Sydenham abolished the lethal traditional sweating treatment for smallpox, introducing open windows, fresh air, light sheets, and cool barley drinks.',
+            desc: 'Sydenham abolished the lethal traditional sweating treatment for smallpox, introducing open windows, fresh air, light sheets, and cool barley drinks.',
             connective:
-              'Dramatically reduced smallpox fatalities among his patients, proving that simple empirical common-sense treatments surpassed centuries of theoretical Galenic sweat therapies.',
+              'Drastically cut smallpox fever mortality, establishing common-sense empirical hygiene over violent scholastic interventions.',
             question: 'Why did Sydenham’s cool treatment drastically cut smallpox deaths?',
           },
           {
             step: 5,
             date: '1680s',
-            para_ref: '[4.1–4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'The Limits of Sydenham’s Legacy',
-            actor: 'Conservative London Physicians',
-            tag: '⚖️ HISTORICAL PARADOX',
+            actor: 'Royal College of Physicians & Traditionalists',
+            tag: '🔒 CONTINUITY IN TREATMENTS',
             trigger:
-              'Without knowledge of bacteria or viruses, Sydenham still attributed epidemics to atmospheric miasma and continued to prescribe traditional bloodletting for unyielding illnesses.',
-            desc: 'Without knowledge of bacteria or viruses, Sydenham still attributed epidemics to atmospheric miasma and continued to prescribe traditional bloodletting for unyielding illnesses.',
+              'Conservative physicians resisted Sydenham’s ideas, while the absence of germ theory meant Sydenham still prescribed bleeding and mild purges for most illnesses.',
+            desc: 'Conservative physicians resisted Sydenham’s ideas, while the absence of germ theory meant Sydenham still prescribed bleeding and mild purges for most illnesses.',
             connective:
-              'Illustrated that while Renaissance observation revolutionized clinical diagnosis, everyday medical treatments remained anchored to medieval practices until germ theory.',
+              'Proved that while disease classification advanced dramatically, everyday medical treatments remained predominantly grounded in the medieval world.',
             question: 'Why did medical treatments remain mostly medieval despite Sydenham?',
           },
         ],
@@ -5547,51 +5553,6 @@ export const unitData = {
     },
     {
       id: 'lesson_2_3',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to analyze how direct human dissection overturned 1,400 years of Galenic dogma:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'DISSECTION',
-            title: '1. Direct Human Dissection & Correcting Galen’s Errors (De Fabrica 1543)',
-            prompt:
-              'Detail 2 specific anatomical errors Vesalius corrected by dissecting human criminals rather than Galen’s apes and pigs:',
-            model_notes: [
-              'Proved the human lower jaw (mandible) is one single bone, not two bones as Galen claimed from dog dissections.',
-              'Proved the breastbone (sternum) has three segments, not seven as Galen described from apes.',
-              'Proved the human heart septum had no invisible porous holes for blood to pass directly from the right to left ventricle.',
-            ],
-            key_terms: ['Human Dissection', 'De Fabrica (1543)'],
-          },
-          {
-            num: 2,
-            badge: 'RESISTANCE',
-            title: '2. The Fierce Backlash from Conservative Doctors & Universities',
-            prompt:
-              'Explain why professors like Jacobus Sylvius attacked Vesalius and claimed the human body had ‘changed’ since Galen:',
-            model_notes: [
-              "Sylvius (Vesalius's former teacher) publicly attacked him, claiming Galen was infallible and human bodies had degenerated over time.",
-              'Conservative medical faculties feared their costly library collections and university degrees would become worthless if Galen fell.',
-              'Vesalius faced such intense professional hostility and academic vitriol that he resigned his professorship at Padua in frustration.',
-            ],
-            key_terms: ['Jacobus Sylvius', 'Galenic Infallibility'],
-          },
-          {
-            num: 3,
-            badge: 'EVALUATION',
-            title: '3. The Significance Verdict: Master Anatomist vs Zero Cures',
-            prompt:
-              'Explain why De Fabrica transformed surgery and medical training forever, yet failed to cure a single sick patient in 1543:',
-            model_notes: [
-              "Published 'De Humani Corporis Fabrica' (1543) with magnificent illustrated woodcut plates printed on movable-type presses.",
-              'Established anatomy as a primary empirical science, inspiring a generation of pioneering European anatomists.',
-              'However, knowing precise bone and muscle structures did not stop blood loss, prevent infection, or cure internal epidemic disease.',
-            ],
-            key_terms: ['Anatomical Accuracy', 'Empirical Science'],
-          },
-        ],
-      },
       banner: '/images/vesalius_dissection_hero.jpg',
       banner_position: 'center 20%',
       title: 'KT2.3: Andreas Vesalius & The Anatomical Revolution (1543)',
@@ -5701,40 +5662,56 @@ export const unitData = {
         'In 1537, a 23-year-old professor named Andreas Vesalius shocked the University of Padua. For over a thousand years, professors of anatomy sat high above the dissection theatre in an elevated wooden throne called the cathedra, chanting ancient Latin passages from Galen while an illiterate barber-surgeon hacked away at a decaying corpse. If the body disagreed with Galen, professors insisted the body was deformed. Vesalius did the unthinkable: he climbed down from the pulpit, threw off his academic robes, took the dissecting knife into his own hands, and proved that Galen had made over 300 fundamental anatomical errors because he had never dissected a human being. Yet, as Vesalius revealed the true architecture of the human body, doctors remained completely powerless to cure diseases. Was his revolution brilliant, or practically useless?',
       teacher_notes: {
         primer:
-          'Examine the shift from dogmatic medieval anatomy to direct human dissection. Students must understand that Vesalius proved Galen had only dissected animals (Barbary apes, pigs, and dogs) due to Roman burial taboos. Crucially, guide students to evaluate the essay debate: while Vesalius revolutionized anatomical science and surgical education, knowing the structure of muscles and bones could not cure infections, stop pain, or save living patients.',
+          'This enquiry examines Andreas Vesalius and the Renaissance Anatomical Revolution: how his firsthand human dissections at Padua, proof of over 300 Galenic errors, landmark publication of De Humani Corporis Fabrica (1543), and English dissemination via Thomas Geminus transformed anatomy while exposing the persistent gap between anatomical knowledge and medical cure.',
         objectives: [
           {
             objective:
-              'Explain how Vesalius’s hands-on dissection method overthrew medieval university traditions.',
+              'Explain why a professor dissecting human bodies himself at Padua in 1537 was revolutionary.',
             primer:
-              'Direct students to paragraphs [1.1]–[1.2]. Emphasize the visual contrast of the frontispiece: Vesalius descending from the high cathedra to perform dissections with his own hands amidst an active crowd.',
+              'Direct students to paragraphs [1.1]–[1.2] and Source A (Fabrica Frontispiece). Contrast the medieval lector reading Galen from a pulpit with Vesalius handling scalpel and cadaver.',
             question:
-              'Why was Vesalius stepping down from the professor’s pulpit considered an act of scientific rebellion?',
+              'Why did Vesalius stepping down from the elevated pulpit to perform dissections himself shock conservative academics?',
           },
           {
             objective:
-              'Analyze how Vesalius identified and corrected over 300 of Galen’s anatomical errors.',
+              'Analyse how Vesalius proved Galen had made over 300 anatomical mistakes by dissecting animals instead of humans.',
             primer:
-              'Direct students to paragraphs [2.1]–[2.2]. Detail specific corrections: the human lower jaw is one bone (not two), the sternum has 3 parts (not 7), and the septum of the heart has no pores.',
+              'Direct students to paragraphs [2.1]–[2.2]. Cite specific anatomical corrections: the jawbone (1 bone vs 2), breastbone (3 segments vs 7), liver (2 lobes vs 5), and septum pores.',
             question:
-              'Why did Galen make so many anatomical errors regarding internal human organs?',
+              'Why had Galen made hundreds of anatomical errors, and why had no doctor noticed them for 1,400 years?',
           },
           {
             objective:
-              'Evaluate the impact of De Humani Corporis Fabrica (1543) and its critical limitations on medical treatment.',
+              'Assess the significance of De Humani Corporis Fabrica (1543) as a masterpiece of Renaissance art and science.',
             primer:
-              'Direct students to paragraphs [3.1]–[4.2]. Contrast the visual beauty of the woodcut plates with the medical reality that anatomy could not cure internal infections, eliminate surgical pain, or halt epidemics.',
+              'Direct students to paragraphs [3.1]–[3.2] and Source B (Muscle Men Plate). Connect movable type printing with Titian’s woodcut illustrations depicting dynamic muscle layers.',
             question:
-              'Why did Vesalius’s discovery that the heart septum had no pores fail to cure any sick patients during his lifetime?',
+              'How did the partnership between Renaissance printing technology and Renaissance art make The Fabrica so revolutionary?',
+          },
+          {
+            objective:
+              'Evaluate how Thomas Geminus’s Compendiosa and English translations brought Vesalian anatomy to ordinary barber-surgeons.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source C. Explain how Geminus copied the copperplates and Nicholas Udall translated the text into English in 1553.',
+            question:
+              'Why was translating Vesalius into English essential for improving practical trauma surgery in Tudor England?',
+          },
+          {
+            objective:
+              'Explain the fierce opposition Vesalius faced and analyse why anatomical breakthroughs produced zero immediate cures.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Discuss Jacobus Sylvius’s attacks, Vesalius burning his manuscripts, and the fact that knowing bone structures cured no diseases.',
+            question:
+              'Why did Vesalius’s anatomical revolution fail to save a single patient’s life during the 16th century?',
           },
         ],
         source_context: {
           'Source A':
-            'The famous engraved title-page frontispiece of De Humani Corporis Fabrica (Basel, 1543), showing Vesalius personally dissecting a female cadaver at the University of Padua surrounded by students, doctors, and nobles. **Hinge Question:** How does the chaotic, crowded anatomy theatre depicted here contrast with the rigid hierarchy of medieval lecture halls where professors read Galen from a high chair?',
+            'Frontispiece of De Humani Corporis Fabrica by Andreas Vesalius (Basel: Johannes Oporinus, 1543). Depicts a bustling Padua anatomical theatre where Vesalius stands in the center dissecting a female cadaver with his own hands, surrounded by students, city magistrates, and curious citizens. Hinge Question: How does this frontispiece visually symbolize the triumph of direct empirical observation over blind deference to medieval textual authority?',
           'Source B':
-            'One of the fourteen "Muscle Men" woodcut plates from Book II of De Fabrica (1543), attributed to Jan van Calcar, depicting the human muscular system in dynamic classical poses against an Italian landscape. **Hinge Question:** Why was it vital for Vesalius to use skilled Renaissance artists and the printing press rather than traditional medieval hand-copying to communicate his findings?',
+            'Vesalius Muscle Men Plate from De Humani Corporis Fabrica (1543). A famous woodcut attributed to Jan van Calcar (Titian’s workshop) depicting a standing human figure posed against a rustic Italian landscape, demonstrating progressive muscular layers with anatomical precision. Hinge Question: Why was combining forensic anatomical accuracy with dynamic Renaissance artistic realism vital for overthrowing Galen?',
           'Source C':
-            'A 16th-century printed "Phlebotomy Man" diagram showing traditional bloodletting points based on Galenic humoural theory. **Hinge Question:** Why did physicians continue to rely on bloodletting charts even after Vesalius conclusively proved Galen’s anatomical descriptions were fundamentally wrong?',
+            'Traditional Phlebotomy Man Diagram from a late medieval surgical compendium (MS Sloane 1977). Illustrates a schematic medieval figure covered in simplistic vein markers without realistic skeletal or muscular proportion. Hinge Question: In what ways does comparing Source C with Vesalius’s Muscle Men (Source B) prove that Renaissance anatomy represented a complete break with medieval tradition?',
         },
       },
       do_now: [
@@ -5809,90 +5786,101 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: Context & Catalyst (The Padua Anatomical Theatre)',
+          act: 1,
+          title: 'Act 1: Professor of Surgery at Padua University (1537)',
+          theme_heading: 'Act 1: Professor of Surgery at Padua University (1537)',
           source: {
-            id: 'source_a_vesalius_frontispiece',
+            id: 'source_a_fabrica_frontispiece',
             letter: 'A',
-            default_zoom: '2x',
             title: 'Source A: Frontispiece of De Humani Corporis Fabrica (1543)',
             src: '/images/vesalius_fabrica_frontispiece.jpg',
             source: '/images/vesalius_fabrica_frontispiece.jpg',
             image: '/images/vesalius_fabrica_frontispiece.jpg',
             caption:
-              'The frontispiece of De Fabrica (1543) showing Vesalius personally dissecting a female cadaver surrounded by students and spectators.',
-            desc: 'Authentic 1543 woodcut frontispiece of Vesalius’s landmark anatomical treatise.',
+              'The monumental woodcut frontispiece of De Humani Corporis Fabrica (1543), showing Vesalius dissecting a human body in a crowded amphitheater.',
+            desc: 'Title page woodcut of Vesalius dissecting a female cadaver at Padua.',
             provenance:
-              'Woodcut title page to De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Shelfmark: EPB/D/543).',
+              'De Humani Corporis Fabrica, Basel: Johannes Oporinus, 1543. British Library (Shelfmark: C.54.k.12).',
             citation:
-              'Woodcut title page to De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Shelfmark: EPB/D/543).',
-            source_context:
-              'The famous engraved title-page frontispiece of De Humani Corporis Fabrica (Basel, 1543), showing Vesalius personally dissecting a female cadaver at the University of Padua surrounded by students, doctors, and nobles.',
-            context:
-              'The famous engraved title-page frontispiece of De Humani Corporis Fabrica (Basel, 1543), showing Vesalius personally dissecting a female cadaver at the University of Padua surrounded by students, doctors, and nobles.',
+              'De Humani Corporis Fabrica, Basel: Johannes Oporinus, 1543. British Library (Shelfmark: C.54.k.12).',
             question:
-              'Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?',
+              'How does this frontispiece visually symbolize the triumph of direct empirical observation over blind deference to medieval textual authority?',
             hinge_question:
-              'Notice where Andreas Vesalius is standing and what he is doing in this Padua anatomy theatre. How did his hands-on dissection of the human body contrast with the traditional medieval method where a professor sat in a high chair reading Galen?',
+              'How does this frontispiece visually symbolize the triumph of direct empirical observation over blind deference to medieval textual authority?',
+            source_context:
+              'Depicts a bustling Padua anatomical theatre where Vesalius stands in the center dissecting a female cadaver with his own hands, surrounded by students, city magistrates, and curious citizens.',
+            context:
+              'Depicts a bustling Padua anatomical theatre where Vesalius stands in the center dissecting a female cadaver with his own hands, surrounded by students, city magistrates, and curious citizens.',
           },
-          text: '<span class="para-ref">[1.1]</span> In medieval European universities, the study of human anatomy was an exercise in passive textual repetition rather than scientific discovery. In rare winter dissections—permitted only a few times each year on executed criminals—the professor of anatomy sat elevated above the lecture hall in a high wooden pulpit called the <em>cathedra</em>. From this throne, he read aloud ancient Latin texts written by the Roman physician Claudius Galen. Down below on the damp stone floor, an uneducated barber-surgeon (the <em>demonstrator</em>) sliced open the body, while a junior assistant pointed out organs with a wooden wand. If a dissected organ clearly contradicted Galen’s written descriptions, professors dismissed the discrepancy by claiming the corpse was deformed, diseased, or that human bodies had physically degenerated since classical times.<br><br><span class="para-ref">[1.2]</span> This entrenched scholastic tradition was shattered when Andreas Vesalius (1514–1564) arrived at the University of Padua. Appointed Professor of Surgery in 1537 at just 23 years old, Vesalius rejected the cathedra. In front of packed audiences of students, visiting physicians, and city officials (<span class="archival-meta-tag">Source A</span>), he stepped down to the dissection table, took the scalpel into his own hands, and dissected human cadavers himself. Vesalius insisted that medical students must trust what their own eyes observed in human tissue rather than blindly revering ancient authority.',
+          text: '<span class="para-ref">[1.1]</span> In medieval Europe, anatomical dissection was a rare, fossilized academic ritual. In prestigious university faculties, a senior professor (lector) sat aloft in an elevated wooden pulpit, intoning Latin passages from Claudius Galen’s second-century treatises. Far below on the blood-soaked floor, an unlettered barber-surgeon (ostensor) made clumsy incisions into the decaying corpse of an executed felon, merely demonstrating what the ancient text had already declared. If a cadaver’s internal organs visibly contradicted Galen’s descriptions, professors insisted that the body was deformed or that the criminal had lived an unnatural life, never daring to question Galen’s sacred authority.<br><br><span class="para-ref">[1.2]</span> In 1537, a brilliant 23-year-old Flemish doctor, Andreas Vesalius (1514–1564), was appointed Professor of Surgery and Anatomy at the University of Padua in northern Italy. Vesalius shattered academic convention: he climbed down from the pulpit, dismissed the barber-surgeons, and carried out human dissections with his own hands before hundreds of rapt students (<span class="archival-meta-tag">Source A</span>). He argued passionately that physicians could never understand the human body through second-hand textual memorization, demanding that empirical dissection of human corpses become the primary foundation of medical education.',
         },
         {
-          title: 'Act 2: Escalation & Conflict (Correcting 300 Galenic Errors)',
-          text: '<span class="para-ref">[2.1]</span> Through meticulous, repetitive human dissections, Vesalius made a startling discovery: Galen’s revered anatomical treatises were riddled with fundamental errors. Vesalius realized that Roman law had strictly prohibited human dissection; consequently, Galen had dissected Barbary apes, dogs, sheep, and pigs, mistakenly assuming that human internal organs were anatomically identical to animals. Over several years of intensive research, Vesalius identified and documented over 300 major errors in Galen’s anatomical writings.<br><br><span class="para-ref">[2.2]</span> Among his most significant corrections, Vesalius proved that the human lower jaw (mandible) consists of a single solid bone, whereas Galen had claimed it consisted of two separate bones (which is true in dogs and apes, but not humans). He proved that the human breastbone (sternum) has three segments rather than seven, that the human liver does not have five separate lobes, and that the human uterus is a single chamber rather than multi-horned. Crucially for cardiovascular physiology, Vesalius examined the central muscular wall (septum) of the heart and proved it was thick and solid, decisively refuting Galen’s claim that invisible microscopic pores allowed blood to seep directly from the right ventricle into the left.',
+          act: 2,
+          title: 'Act 2: Proving Galen Wrong on Human Anatomy (1540)',
+          theme_heading: 'Act 2: Proving Galen Wrong on Human Anatomy (1540)',
+          text: '<span class="para-ref">[2.1]</span> Through years of hands-on human dissection, Vesalius made a startling discovery that shook European scholarship to its core: Claudius Galen had never dissected a human body in his entire career. Under imperial Roman pagan law, the dissection of human corpses had been strictly outlawed as desecration. Consequently, Galen had dissected Barbary apes, dogs, pigs, and sheep, falsely projecting animal anatomy directly onto the human species. For fourteen centuries, European university doctors had been worshipping the anatomy of apes while believing they were studying humanity.<br><br><span class="para-ref">[2.2]</span> Vesalius systematically compiled a catalog of over three hundred major anatomical errors in Galen’s canonical texts. Among his most famous corrections: he proved that the human lower jawbone is a single solid bone (not two bones fused together as in dogs); the human breastbone (sternum) consists of three parts (not seven segments as in apes); the human liver has two lobes (not five lobes as in pigs); and the human uterus is a simple pear-shaped chamber (not a multi-horned animal organ). Most radically, he investigated the muscular wall (septum) of the heart, proving that it was solid and contained no invisible porous holes for blood to filter through as Galen had claimed.',
         },
         {
-          title: 'Act 3: Forensic Evidence (De Humani Corporis Fabrica, 1543)',
+          act: 3,
+          title: 'Act 3: Publication of De Humani Corporis Fabrica (1543)',
+          theme_heading: 'Act 3: Publication of De Humani Corporis Fabrica (1543)',
           source: {
             id: 'source_b_vesalius_muscle_men',
             letter: 'B',
-            title: 'Source B: Vesalius Muscle Men Plate from De Fabrica (1543)',
+            title: 'Source B: Vesalius Muscle Men Plate (1543)',
             src: '/images/vesalius_muscle_men.jpg',
             source: '/images/vesalius_muscle_men.jpg',
             image: '/images/vesalius_muscle_men.jpg',
             caption:
-              'One of the famous "Muscle Men" woodcut plates from Book II of De Fabrica, showing the superficial muscular layer in classical posture.',
-            desc: 'Masterwork anatomical woodcut plate from De Fabrica (1543).',
-            question:
-              "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
-            hinge_question:
-              "Examine the dissected human body posed dynamically against the landscape of the Italian countryside. How does this plate reflect the revolutionary collaboration between Renaissance art (Titian's workshop) and scientific dissection, and why was visual anatomical accuracy essential for moving surgery beyond medieval guesswork?",
-            source_context:
-              "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
-            context:
-              "In 1543, Andreas Vesalius published De Humani Corporis Fabrica, featuring over 200 magnificent woodcut illustrations attributed to Jan van Calcar. By peeling back successive anatomical layers from surface musculature to the skeleton, Vesalius corrected over 300 of Galen's animal-based errors.",
+              'A famous woodcut from The Fabrica depicting a human figure posed dynamically against an Italian landscape, demonstrating muscular layers.',
+            desc: 'Woodcut illustration from De Humani Corporis Fabrica showing human musculature.',
             provenance:
-              'Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512).',
+              'De Humani Corporis Fabrica, Basel: Johannes Oporinus, 1543. British Library (Shelfmark: C.54.k.12, p. 178).',
             citation:
-              'Woodcut plate from Book II of De Humani Corporis Fabrica, Johannes Oporinus, Basel, 1543. Wellcome Collection, London (Wellcome Collection V0004512).',
+              'De Humani Corporis Fabrica, Basel: Johannes Oporinus, 1543. British Library (Shelfmark: C.54.k.12, p. 178).',
+            question:
+              'Why was combining forensic anatomical accuracy with dynamic Renaissance artistic realism vital for overthrowing Galen?',
+            hinge_question:
+              'Why was combining forensic anatomical accuracy with dynamic Renaissance artistic realism vital for overthrowing Galen?',
+            source_context:
+              'A famous woodcut attributed to Jan van Calcar (Titian’s workshop) depicting a standing human figure posed against a rustic Italian landscape, demonstrating progressive muscular layers with anatomical precision.',
+            context:
+              'A famous woodcut attributed to Jan van Calcar (Titian’s workshop) depicting a standing human figure posed against a rustic Italian landscape, demonstrating progressive muscular layers with anatomical precision.',
           },
-          text: '<span class="para-ref">[3.1]</span> In 1543, at the age of twenty-eight, Vesalius published his monumental masterwork: <em>De Humani Corporis Fabrica</em> ("On the Fabric of the Human Body"). Printed in Basel by Johannes Oporinus, this massive 700-page folio represented a pinnacle of Renaissance printing technology and artistic brilliance. Vesalius collaborated with master artists from the Venetian workshop of Titian (including Jan van Calcar) to produce over 200 breathtakingly accurate woodcut illustrations (<span class="archival-meta-tag">Source B</span>). For the first time in medical history, students across Europe could examine identical, mathematically precise visual representations of human bones, muscles, veins, and internal organs.<br><br><span class="para-ref">[3.2]</span> To ensure his findings reached beyond elite Latin scholars, Vesalius also published an abridged, cheaper summary handbook called the <em>Epitome</em>, designed specifically for practicing surgeons and medical apprentices. Illustrated editions and pirated copies quickly circulated across Germany, France, and England, standardizing anatomical education throughout the continent and permanently establishing human dissection as an essential requirement in university medical training.',
+          text: '<span class="para-ref">[3.1]</span> In 1543, at the age of just twenty-eight, Vesalius published his monumental masterpiece in Basel: <em>De Humani Corporis Fabrica</em> ("On the Fabric of the Human Body"). Spanning seven lavishly printed volumes, <em>The Fabrica</em> was a triumph of Renaissance intellectual and artistic synthesis. Benefiting from Gutenberg’s movable metal printing press, the work featured over two hundred intricate woodcut illustrations engraved by master artists from the Venetian workshop of Titian, notably Jan van Calcar (<span class="archival-meta-tag">Source B</span>).<br><br><span class="para-ref">[3.2]</span> Unlike crude medieval schematic diagrams, <em>The Fabrica</em> depicted lifelike, muscular human figures posed dynamically against rustic Italian landscapes. The plates systematically peeled back superficial skin to expose deeper layers of skeletal bones, striated muscles, nerves, veins, and internal viscera with breathtaking precision. For the first time in human history, medical students across Europe possessed identical, anatomically accurate visual reference manuals, setting a permanent new standard for biological publishing.',
         },
         {
-          title: 'Act 4: The Historical Verdict & The Limits of Anatomy',
+          act: 4,
+          title: 'Act 4: Thomas Geminus & Dissemination in Britain (1545–1553)',
+          theme_heading: 'Act 4: Thomas Geminus & Dissemination in Britain (1545–1553)',
           source: {
-            id: 'source_c_renaissance_phlebotomy_man',
+            id: 'source_c_traditional_phlebotomy_man',
             letter: 'C',
             title: 'Source C: Traditional Phlebotomy Man Diagram',
-            src: '/images/renaissance_phlebotomy_man.jpg',
-            source: '/images/renaissance_phlebotomy_man.jpg',
-            image: '/images/renaissance_phlebotomy_man.jpg',
+            src: '/images/traditional_phlebotomy_man.jpg',
+            source: '/images/traditional_phlebotomy_man.jpg',
+            image: '/images/traditional_phlebotomy_man.jpg',
             caption:
-              'A 16th-century printed bloodletting chart illustrating the enduring reliance on Galenic humoural vein points.',
-            desc: 'Renaissance broadsheet showing bloodletting points on the human body.',
-            provenance:
-              'Woodcut broadsheet illustrating vein-letting anatomical points, 16th century. Wellcome Collection, London (Shelfmark: L0023641).',
-            citation:
-              'Woodcut broadsheet illustrating vein-letting anatomical points, 16th century. Wellcome Collection, London (Shelfmark: L0023641).',
-            source_context:
-              'A 16th-century printed "Phlebotomy Man" diagram showing traditional bloodletting points based on Galenic humoural theory.',
-            context:
-              'A 16th-century printed "Phlebotomy Man" diagram showing traditional bloodletting points based on Galenic humoural theory.',
+              'A late medieval schematic phlebotomy diagram marking vein sites, showing crude anatomical proportions compared to Vesalius.',
+            desc: 'Medieval schematic diagram of veins for bloodletting.',
+            provenance: 'British Library (Shelfmark: MS Sloane 1977, fol. 7r).',
+            citation: 'British Library (Shelfmark: MS Sloane 1977, fol. 7r).',
             question:
-              "Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
+              'In what ways does comparing Source C with Vesalius’s Muscle Men (Source B) prove that Renaissance anatomy represented a complete break with medieval tradition?',
             hinge_question:
-              "Notice the multiple vein points marked across the human figure for routine bloodletting. Why did ordinary people and traditional barbers cling to this centuries-old humoural treatment, even after Vesalius demonstrated that Galen's anatomy was deeply flawed?",
+              'In what ways does comparing Source C with Vesalius’s Muscle Men (Source B) prove that Renaissance anatomy represented a complete break with medieval tradition?',
+            source_context:
+              'Illustrates a schematic medieval figure covered in simplistic vein markers without realistic skeletal or muscular proportion.',
+            context:
+              'Illustrates a schematic medieval figure covered in simplistic vein markers without realistic skeletal or muscular proportion.',
           },
-          text: '<span class="para-ref">[4.1]</span> The publication of <em>De Fabrica</em> provoked furious hostility from conservative medical establishments. Many senior professors, whose reputations were built on interpreting Galen, fiercely attacked Vesalius. His former teacher at Paris, Jacobus Sylvius, denounced him as an arrogant madman ("Vesanus"), claiming that Galen was completely correct and that the human body must have changed shape since antiquity. Disillusioned by this bitter academic resistance, Vesalius burned many of his unpublished manuscripts and resigned from Padua to serve as imperial court physician to Emperor Charles V.<br><br><span class="para-ref">[4.2]</span> Crucially, while Vesalius revolutionized anatomical science and inspired generations of researchers, his discoveries had virtually zero immediate impact on treating sick patients. Knowing the exact structure of a muscle or the shape of the liver did not explain what caused internal diseases, nor did it provide cures for infectious epidemics like the plague. Furthermore, surgery remained primitive, agonizing, and dangerous: without anaesthetics to control pain or antiseptics to prevent infection, surgeons could not perform major internal operations based on Vesalius’s maps. For the average sick patient, physicians continued to consult traditional humoural charts (<span class="archival-meta-tag">Source C</span>) and prescribe bloodletting, leaving everyday healthcare entirely untouched by the anatomical revolution.',
+          text: '<span class="para-ref">[4.1]</span> Because <em>The Fabrica</em> was a massive, costly Latin folio volume, its initial readership was confined to wealthy continental university professors. However, its radical anatomical discoveries rapidly permeated Tudor England through ingenious publishing adaptations. In 1545, an Italian engraver working in London named Thomas Geminus published <em>Compendiosa Totius Anatomie Delineatio</em>, copying Vesalius’s famous woodcuts onto durable copperplate engravings. Geminus condensed the vast seven volumes into a portable manual designed for practical operating practitioners.<br><br><span class="para-ref">[4.2]</span> Most decisively, in 1553, the English scholar Nicholas Udall translated Geminus’s text into vernacular English. For the first time, ordinary English barber-surgeons and apothecaries—who possessed no Latin education—could read precise descriptions of human muscles, arteries, and bones (<span class="archival-meta-tag">Source C</span>). Geminus’s manual became an indispensable standard reference book for London surgeons, dramatically improving practical wound management and surgical confidence on battlefields and in urban workshops.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Fierce Opposition & Practical Limitations (c. 1560)',
+          theme_heading: 'Act 5: Fierce Opposition & Practical Limitations (c. 1560)',
+          text: '<span class="para-ref">[5.1]</span> Vesalius’s demolition of Galen provoked furious outrage across conservative medical faculties. Traditionalist physicians in Paris and London condemned him as an arrogant upstart. His former university professor, Jacobus Sylvius, published a vitriolic attack branding Vesalius an "insolent madman" whose dissections were fraudulent, arguing that if human anatomy contradicted Galen, it was because the human body had degenerate and deformed since antiquity rather than Galen being wrong. Exhausted by bitter academic vitriol, Vesalius burned his remaining research notes in disgust, resigned his professorship at Padua, and spent his remaining career as court physician to Holy Roman Emperor Charles V.<br><br><span class="para-ref">[5.2]</span> Most significantly for ordinary patients, Vesalius’s anatomical revolution suffered from a profound practical limitation: knowing the exact structure of the human skeleton and muscles did not cure disease. Vesalius could describe an inflamed appendix or a diseased lung with forensic brilliance, but he could not prevent infection, stop internal hemorrhages, or alleviate fever. Without antiseptics, anaesthetics, or germ theory, everyday treatments remained stubbornly medieval: barber-surgeons still cauterized stumps with boiling oil, and physicians still bled patients according to the Four Humours. Vesalius revolutionized anatomical science, but saved zero lives in his lifetime.',
         },
       ],
       tasks: [
@@ -6326,9 +6314,9 @@ export const unitData = {
           para_ref: '[1.1–1.2]',
           heading: 'Why was a professor dissecting human bodies revolutionary in 1537?',
           bullets: [
-            'Climbing down from high lecturer chairs',
-            'Picking up steel dissection scalpels directly',
-            'Opening executed criminal bodies on wooden slabs',
+            'Stepping down from the elevated university pulpit',
+            'Dismissing uneducated barber-surgeons from dissection',
+            'Handling human cadavers directly with his own hands',
           ],
           focus_clue: 'Why was a professor dissecting human bodies revolutionary in 1537?',
         },
@@ -6338,9 +6326,9 @@ export const unitData = {
           para_ref: '[2.1–2.2]',
           heading: 'How did Vesalius prove Galen had made anatomical mistakes?',
           bullets: [
-            'Showing human jawbones consist of one piece',
-            'Proving human breastbones have three segments',
-            'Demonstrating Galen dissected pigs and Barbary apes',
+            'Revealing Galen dissected Barbary apes and dogs',
+            'Proving the human jawbone is one bone not two',
+            'Cataloguing over three hundred major Galenic errors',
           ],
           focus_clue: 'How did Vesalius prove Galen had made anatomical mistakes?',
         },
@@ -6350,41 +6338,41 @@ export const unitData = {
           para_ref: '[3.1–3.2]',
           heading: 'Why was The Fabrica considered a masterpiece of Renaissance science?',
           bullets: [
-            'Printing seven massive anatomical volumes in Basel',
-            'Engraving precise woodcut plates of human muscles',
-            'Dedication presented to Holy Roman Emperor Charles V',
+            'Publishing lavish woodcut plates from Titian’s workshop',
+            'Depicting realistic muscle men against Italian landscapes',
+            'Printing identical anatomical textbooks across Europe',
           ],
           focus_clue: 'Why was The Fabrica considered a masterpiece of Renaissance science?',
         },
         {
           step: 4,
           date: '1545–1553',
-          para_ref: '[3.2]',
+          para_ref: '[4.1–4.2]',
           heading: 'How did English translations spread Vesalius’s ideas to barber-surgeons?',
           bullets: [
-            'Copying Vesalius’s woodcuts onto English copper plates',
-            'Translating Latin descriptions into everyday English',
-            'Selling anatomy manuals to London barber-surgeons',
+            'Engraving Thomas Geminus’s portable copperplate manual',
+            'Translating Latin anatomical texts into vernacular English',
+            'Putting accurate diagrams into the hands of surgeons',
           ],
           focus_clue: 'How did English translations spread Vesalius’s ideas to barber-surgeons?',
         },
         {
           step: 5,
           date: 'c1560',
-          para_ref: '[4.1–4.2]',
+          para_ref: '[5.1–5.2]',
           heading:
             'Why did Vesalius’s anatomical discoveries fail to save sick patients immediately?',
           bullets: [
-            'Facing angry attacks from conservative university professors',
-            'Resigning academic post to serve royal courts',
-            'Acknowledging anatomy did not yet cure living sickness',
+            'Facing furious resistance from traditional Galenists',
+            'Lacking anaesthetics, antiseptics, and germ theory',
+            'Providing anatomical knowledge without clinical cures',
           ],
           focus_clue:
             'Why did Vesalius’s anatomical discoveries fail to save sick patients immediately?',
         },
       ],
       causal_domino_spine: {
-        title: 'Andreas Vesalius: The Anatomical Revolution & De Fabrica',
+        title: 'Andreas Vesalius & The Anatomical Revolution',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -6392,13 +6380,13 @@ export const unitData = {
             date: '1537',
             para_ref: '[1.1–1.2]',
             title: 'Professor of Surgery at Padua University',
-            actor: 'Andreas Vesalius & Padua Medical Faculty',
-            tag: '🔪 HUMAN DISSECTION',
+            actor: 'Andreas Vesalius (Flemish Anatomist)',
+            tag: '🔬 EMPIRICAL DISSECTION',
             trigger:
-              'Appointed Professor of Surgery at Padua in 1537 aged 23, Vesalius descended from the elevated academic cathedra to perform human dissections personally with his own scalpels.',
-            desc: 'Appointed Professor of Surgery at Padua in 1537 aged 23, Vesalius descended from the elevated academic cathedra to perform human dissections personally with his own scalpels.',
+              'Appointed Professor of Surgery at Padua in 1537, Andreas Vesalius stepped down from the traditional pulpit to perform human dissections with his own hands.',
+            desc: 'Appointed Professor of Surgery at Padua in 1537, Andreas Vesalius stepped down from the traditional pulpit to perform human dissections with his own hands.',
             connective:
-              'Ended centuries of passive textual chanting from Galen, establishing direct firsthand human dissection as the only trustworthy foundation of anatomical learning.',
+              'Broke centuries of passive academic lecturing, establishing firsthand empirical dissection as the primary foundation of medical education.',
             question: 'Why was a professor dissecting human bodies revolutionary in 1537?',
           },
           {
@@ -6406,13 +6394,13 @@ export const unitData = {
             date: '1540',
             para_ref: '[2.1–2.2]',
             title: 'Proving Galen Wrong on Human Anatomy',
-            actor: 'Andreas Vesalius',
-            tag: '🦴 DISPROVING GALEN',
+            actor: 'Andreas Vesalius & Padua Students',
+            tag: '❌ 300 GALENIC ERRORS',
             trigger:
-              'Through meticulous dissections, Vesalius proved Galen had dissected Barbary apes and pigs rather than humans, documenting over 300 major anatomical errors in Galen’s texts.',
-            desc: 'Through meticulous dissections, Vesalius proved Galen had dissected Barbary apes and pigs rather than humans, documenting over 300 major anatomical errors in Galen’s texts.',
+              'Vesalius proved that Galen had dissected Barbary apes and pigs rather than humans, cataloging over 300 major anatomical errors including the single human jawbone.',
+            desc: 'Vesalius proved that Galen had dissected Barbary apes and pigs rather than humans, cataloging over 300 major anatomical errors including the single human jawbone.',
             connective:
-              'Proved that the human lower jaw was a single bone, the breastbone had three parts, and the heart septum was solid, shattering the myth of Galen’s infallibility.',
+              'Demolished the unquestioned authority of ancient Roman medical dogma, proving that ancient texts were fallible and must be tested against nature.',
             question: 'How did Vesalius prove Galen had made anatomical mistakes?',
           },
           {
@@ -6420,41 +6408,41 @@ export const unitData = {
             date: '1543',
             para_ref: '[3.1–3.2]',
             title: 'Publication of De Humani Corporis Fabrica',
-            actor: 'Andreas Vesalius & Titian Workshop Artists',
-            tag: '📖 MASTERPIECE ATLAS',
+            actor: 'Vesalius, Johannes Oporinus & Titian’s Artists',
+            tag: '📚 THE FABRICA (1543)',
             trigger:
-              'In Basel in 1543, Vesalius published De Humani Corporis Fabrica ("On the Fabric of the Human Body"), containing over 200 breathtakingly precise anatomical woodcut plates.',
-            desc: 'In Basel in 1543, Vesalius published De Humani Corporis Fabrica ("On the Fabric of the Human Body"), containing over 200 breathtakingly precise anatomical woodcut plates.',
+              'In 1543, Vesalius published De Humani Corporis Fabrica in Basel, illustrated with over 200 breathtaking woodcuts by Titian’s Venetian workshop.',
+            desc: 'In 1543, Vesalius published De Humani Corporis Fabrica in Basel, illustrated with over 200 breathtaking woodcuts by Titian’s Venetian workshop.',
             connective:
-              'Distributed mathematically accurate visual blueprints of the human body across Europe, setting an unalterable new international standard for medical illustration.',
+              'Provided European medical students with their first identical, anatomically accurate visual reference text, setting a permanent publishing standard.',
             question: 'Why was The Fabrica considered a masterpiece of Renaissance science?',
           },
           {
             step: 4,
             date: '1545–1553',
-            para_ref: '[3.2]',
+            para_ref: '[4.1–4.2]',
             title: 'Thomas Geminus & Dissemination in Britain',
-            actor: 'Thomas Geminus & London Barber-Surgeons',
+            actor: 'Thomas Geminus & Nicholas Udall',
             tag: '🇬🇧 ENGLISH DISSEMINATION',
             trigger:
-              'Engraver Thomas Geminus copied Vesalius’s illustrations onto copper plates in London, publishing an English-language anatomy manual titled Compendiosa in 1545.',
-            desc: 'Engraver Thomas Geminus copied Vesalius’s illustrations onto copper plates in London, publishing an English-language anatomy manual titled Compendiosa in 1545.',
+              'Thomas Geminus engraved copperplate copies of Vesalius’s illustrations in London (1545), translated into English by Nicholas Udall in 1553.',
+            desc: 'Thomas Geminus engraved copperplate copies of Vesalius’s illustrations in London (1545), translated into English by Nicholas Udall in 1553.',
             connective:
-              'Bypassed Latin academic elites to place accurate anatomical maps directly into the hands of English barber-surgeons and apprentices throughout London.',
+              'Disseminated cutting-edge anatomical science directly to English barber-surgeons who could not read Latin, improving battlefield and trauma wound care.',
             question: 'How did English translations spread Vesalius’s ideas to barber-surgeons?',
           },
           {
             step: 5,
             date: 'c1560',
-            para_ref: '[4.1–4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'Fierce Opposition & Practical Limitations',
             actor: 'Jacobus Sylvius & Conservative Galenists',
-            tag: '⚔️ ACADEMIC RESISTANCE',
+            tag: '🔒 LIMITS OF ANATOMY',
             trigger:
-              'Conservative professors like Jacobus Sylvius denounced Vesalius as a madman, while ordinary physicians continued humoural bleeding because anatomy did not yet cure internal sickness.',
-            desc: 'Conservative professors like Jacobus Sylvius denounced Vesalius as a madman, while ordinary physicians continued humoural bleeding because anatomy did not yet cure internal sickness.',
+              'Conservative Galenists fiercely attacked Vesalius as an insolent madman, while knowing human anatomy produced zero immediate cures for infectious diseases.',
+            desc: 'Conservative Galenists fiercely attacked Vesalius as an insolent madman, while knowing human anatomy produced zero immediate cures for infectious diseases.',
             connective:
-              'Demonstrated that while Vesalius permanently rebuilt human anatomy, his work could not immediately save living patients without anaesthetics, antiseptics, or germ theory.',
+              'Proved that while anatomical science was revolutionized, everyday patient treatments remained trapped in medieval bloodletting and herbal purging.',
             question:
               'Why did Vesalius’s anatomical discoveries fail to save sick patients immediately?',
           },
@@ -6463,51 +6451,6 @@ export const unitData = {
     },
     {
       id: 'lesson_2_4',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to trace how mechanical physics and mathematics proved circulation:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'MATHEMATICS',
-            title: '1. The Mechanical Pump & Mathematical Proof (De Motu Cordis 1628)',
-            prompt:
-              'Explain how Harvey calculated that 540 pints of blood pumped per hour mathematically destroyed Galen’s liver theory:',
-            model_notes: [
-              'Galen claimed the liver manufactured new blood from digested food, which was then burned as fuel by the body.',
-              'Harvey measured heart capacity (2 ounces per beat) and calculated 540 pints pumped per hour (3x the weight of an average human).',
-              'Mathematically proved the liver could not possibly manufacture this impossible volume; blood must circulate in a closed loop.',
-            ],
-            key_terms: ['Circulation of Blood', 'De Motu Cordis (1628)'],
-          },
-          {
-            num: 2,
-            badge: 'EXPERIMENT',
-            title: '2. The Arm Ligature Experiment & One-Way Vein Valves',
-            prompt:
-              'Explain how tying tight and loose bandages proved arteries carry blood from the heart and vein valves only allow flow back to it:',
-            model_notes: [
-              'Tight arm bandage cut off arterial supply: hand went pale and cold; arteries pulsed strongly above the bandage.',
-              'Loosening bandage allowed blood into arm via deeper arteries, but blocked superficial veins: veins swelled with trapped blood.',
-              'Pushing blood past vein valves proved blood could only travel one way (toward the heart), confirming mechanical circulation.',
-            ],
-            key_terms: ['One-Way Valves', 'Mechanical Pump'],
-          },
-          {
-            num: 3,
-            badge: 'STAGNATION',
-            title: '3. The 50-Year Delay & Continued Bloodletting',
-            prompt:
-              'Explain why doctors called Harvey a ‘circulator’ (quack) and continued phlebotomy despite knowing blood circulated:',
-            model_notes: [
-              "Conservative doctors fiercely defended Galen and nicknamed Harvey 'circulator' (Latin slang for a travelling quack or mountebank).",
-              "Capillaries connecting arteries and veins were microscopic; circulation could not be visually completed until Malpighi's microscope (1661).",
-              'Knowing blood circulated did not cure disease; physicians continued prescribing phlebotomy (bleeding) to balance humours until the mid-19th century.',
-            ],
-            key_terms: ['Capillaries', 'Scientific Revolution'],
-          },
-        ],
-      },
       banner: '/images/harvey_veins.jpg',
       banner_position: 'center',
       title: 'KT2.4: William Harvey & The Circulation of the Blood (1628)',
@@ -6617,38 +6560,52 @@ export const unitData = {
         'For 1,400 years, every physician in Europe believed that blood was created in the liver from food, pumped through the body like fuel in a furnace, and completely consumed by the muscles and organs. Then came William Harvey. Inspired by Renaissance mechanical fire pumps, Harvey did something no doctor had ever done: he used mathematics. He calculated that in just one hour, the human heart pumps 540 pints of blood—three times the weight of the entire human body! Where could all that blood possibly come from, and where could it go? Harvey’s answer shook the foundations of medicine: blood does not burn up—it travels in a continuous, one-way circular loop pumped endlessly by the heart. Yet, when he published his discovery, conservative doctors mocked him as a madman, calling him a "circulator" (quack). Why did one of the greatest scientific breakthroughs in human history meet such furious resistance?',
       teacher_notes: {
         primer:
-          'Analyze William Harvey’s revolutionary mechanical model of cardiovascular physiology. Students must understand how Harvey used both empirical vivisection of cold-blooded animals and mathematical calculation (the 540 pints an hour proof) to disprove Galen. Help students evaluate the turning point: while Harvey transformed theoretical understanding of physiology, he could not see capillaries (invisible without microscopes) and his discovery did not produce any immediate medical treatments or stop the practice of bloodletting.',
+          'This enquiry examines William Harvey and the Circulation of the Blood (1628): how animal vivisection, mechanical pump calculations, the tourniquet experiment, publication of De Motu Cordis, and Malpighi’s discovery of capillaries (1661) transformed physiology while leaving clinical treatments unchanged.',
         objectives: [
           {
             objective:
-              'Explain how Harvey proved the heart acts as a mechanical pump driving closed blood circulation.',
+              'Explain why Harvey studied cold-blooded animals and Fabricius’s vein valves to analyse the heart.',
             primer:
-              'Direct students to paragraphs [1.1]–[1.2]. Emphasize the influence of Padua (Fabricius’s discovery of vein valves) and Renaissance mechanical water pumps.',
+              'Direct students to paragraphs [1.1]–[1.2]. Contrast Galen’s two-blood theory with Harvey observing the slow heartbeats of frogs and snakes, and Fabricius’s valves in Padua.',
             question:
-              'How did Harvey’s view of the heart as a muscular pump reflect the mechanical mindset of the Scientific Revolution?',
+              'Why was dissecting slow-beating cold-blooded animals essential for Harvey to understand the human heartbeat?',
           },
           {
             objective:
-              'Analyze how Harvey used mathematical calculation to disprove Galen’s liver theory.',
+              'Demonstrate how mathematical calculations proved Galen’s continuous blood-manufacturing theory was impossible.',
             primer:
-              'Direct students to paragraphs [2.1]–[2.2]. Walk through the calculation: 540 pints per hour is more than body weight, proving the liver could not possibly manufacture that much blood from food.',
+              'Direct students to paragraphs [2.1]–[2.2]. Cite the calculation: 2 ounces per beat, 72 beats/min, 540 pints per hour (three times human body weight).',
             question:
-              'Why was mathematical calculation such a devastating weapon against Galen’s 1,400-year-old liver theory?',
+              'How did Harvey use mathematical logic to prove that the liver could not possibly manufacture the body’s blood from food?',
           },
           {
             objective:
-              'Assess why Harvey met fierce resistance and why circulation had zero immediate impact on medical cures.',
+              'Analyse the tourniquet experiment and the publication of De Motu Cordis in 1628.',
             primer:
-              'Direct students to paragraphs [3.1]–[4.2]. Focus on contemporary backlash ("circulator/quack"), the missing capillaries (proved by Malpighi in 1661), and the tragic continuation of bloodletting.',
+              'Direct students to paragraphs [3.1]–[3.2] and Source A (Vein Valve Experiments). Explain how pressing blood past valves proved veins carry blood exclusively toward the heart.',
             question:
-              'Why did physicians continue to prescribe bloodletting even after Harvey proved the body had a fixed volume of circulating blood?',
+              'How did Harvey’s simple tourniquet experiment provide undeniable physical proof of one-way blood flow?',
+          },
+          {
+            objective:
+              'Explain why conservative physicians fiercely rejected Harvey and ridiculed him as a "circulator".',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Discuss Galenist opposition, lost private patients, and the missing anatomical link between arteries and veins.',
+            question:
+              'Why did established university doctors find Harvey’s theory of blood circulation so threatening to their professional status?',
+          },
+          {
+            objective:
+              'Assess Marcello Malpighi’s discovery of capillaries (1661) and evaluate why Harvey’s breakthrough saved zero lives.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Explore how microscopic capillaries completed the circuit, and why bloodletting continued for two centuries despite Harvey.',
+            question:
+              'Why did understanding that blood circulated in a closed loop fail to improve medical treatments during the Renaissance?',
           },
         ],
         source_context: {
           'Source A':
-            'The famous engraved plate from Chapter 13 of De Motu Cordis (Frankfurt, 1628), illustrating Harvey’s human arm ligature experiments with swollen veins and one-way valves (valvulae). **Hinge Question:** How did stroking blood away from the heart with a fingertip conclusively prove that vein valves only permit one-way flow toward the chest?',
-          'Source B':
-            'Title page of William Harvey’s landmark treatise Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus (Frankfurt, 1628). **Hinge Question:** Why did Harvey publish his revolutionary work in Germany rather than London, and what does this reveal about international scientific communication in the Renaissance?',
+            'Vein Valve Experiments from William Harvey’s De Motu Cordis (Frankfurt, 1628). Engraving illustrating Harvey’s tourniquet demonstration on a volunteer’s forearm: compressed veins swell at valves, and stroking a vein away from the heart leaves the vessel empty, proving blood flows only toward the heart. Hinge Question: How does this simple, repeatable experiment demonstrate the triumph of empirical mechanics over 1,400 years of Galenic theory?',
         },
       },
       do_now: [
@@ -6723,34 +6680,57 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: Context & Catalyst (The Legacy of Galen & Padua)',
-          text: '<span class="para-ref">[1.1]</span> For fourteen centuries, European medicine operated under Claudius Galen’s complex model of physiology. Galen taught that the human body contained two entirely separate circulatory systems with different functions. Dark venous blood, containing natural spirits, was continuously manufactured in the liver from digested food (chyle) and flowed outwards through veins to nourish body tissues, where it was completely consumed like fuel in a fire. Meanwhile, bright arterial blood, enriched with vital heat and air from the lungs, was pumped through arteries to provide life and movement. Galen insisted that blood seeped between these two systems through invisible pores in the central muscular wall (septum) of the heart.<br><br><span class="para-ref">[1.2]</span> William Harvey (1578–1657) dismantled this ancient dogma. After studying at Cambridge, Harvey traveled to the University of Padua, the leading center of European anatomical research. There, he studied under the master anatomist Hieronymus Fabricius, who had discovered tiny one-way flaps or "valves" inside human veins. While Fabricius believed these valves merely slowed down the outward rush of blood to prevent pooling in the feet, Harvey suspected they had a far more radical mechanical purpose: to ensure that blood could only ever flow in one direction—back toward the heart.',
+          act: 1,
+          title: 'Act 1: Dissecting Cold-Blooded Animals & Padua Foundations (c. 1615)',
+          theme_heading: 'Act 1: Dissecting Cold-Blooded Animals & Padua Foundations (c. 1615)',
+          text: '<span class="para-ref">[1.1]</span> For fourteen centuries, European medicine operated under Claudius Galen’s complex model of physiology. Galen taught that the human body contained two entirely separate circulatory systems with different functions. Dark venous blood, containing natural spirits, was continuously manufactured in the liver from digested food (chyle) and flowed outwards through veins to nourish body tissues, where it was completely consumed like fuel in a fire. Meanwhile, bright arterial blood, enriched with vital heat and air from the lungs, was pumped through arteries to provide life and movement. Galen insisted that blood seeped between these two systems through invisible pores in the central muscular wall (septum) of the heart.<br><br><span class="para-ref">[1.2]</span> William Harvey (1578–1657) dismantled this ancient dogma. After studying at Cambridge, Harvey traveled to the University of Padua, the leading center of European anatomical research. There, he studied under the master anatomist Hieronymus Fabricius, who had discovered tiny one-way flaps or "valves" inside human veins. While Fabricius believed these valves merely slowed down the outward rush of blood to prevent pooling in the feet, Harvey suspected they had a far more radical mechanical purpose: to ensure that blood could only ever flow in one direction—back toward the heart. Returning to England, Harvey conducted intensive laboratory vivisections on over eighty species of animals, focusing on cold-blooded creatures like frogs, toads, and snakes whose slow heartbeats allowed him to observe cardiac contractions clearly.',
         },
         {
-          title: 'Act 2: Escalation & Conflict (Mathematical Calculation & Disproving Galen)',
-          text: '<span class="para-ref">[2.1]</span> Returning to London, Harvey was appointed physician to St Bartholomew’s Hospital and later royal physician to King James I and King Charles I. Armed with royal patronage, he conducted intensive laboratory research, dissecting over eighty species of animals. To observe cardiac contractions clearly, he studied cold-blooded creatures—such as frogs, toads, and snakes—whose hearts beat slow enough to analyze. He proved that the heart is a muscular pump that contracts (systole) to actively expel blood into the arteries, rather than expanding like a sponge to suck blood in as Galen had claimed.<br><br><span class="para-ref">[2.2]</span> Harvey’s most devastating argument against Galen was mathematical. Measuring the internal capacity of the human left ventricle, he calculated that with every heartbeat, approximately two ounces of blood were forced into the aorta. At an average pulse of 72 beats per minute, the heart pumped 540 pints (nearly 300 liters) of blood into the body every single hour—three times the total weight of an average human being! It was physically impossible for the liver to manufacture this astronomical quantity of blood from food, nor could the body consume it. The only logical scientific conclusion was that the blood was not consumed at all: it was the same finite volume of blood circulating continuously in a closed, perpetual loop.',
+          act: 2,
+          title: 'Act 2: The Mechanical Pump & Quantitative Proof (1620s)',
+          theme_heading: 'Act 2: The Mechanical Pump & Quantitative Proof (1620s)',
+          text: '<span class="para-ref">[2.1]</span> Influenced by the Renaissance mechanical philosophy of the scientific revolution—which viewed nature as an intricate clockwork mechanism—Harvey reconceptualized the heart not as a mysterious spiritual furnace, but as a mechanical muscular pump. Through meticulous vivisections, he proved that the heart actively contracts during systole, forcing blood out into the arteries, rather than expanding like a sponge to suck blood in as Galen had claimed.<br><br><span class="para-ref">[2.2]</span> Harvey’s most devastating argument against Galen was mathematical. Measuring the internal capacity of the human left ventricle, he calculated that with every heartbeat, approximately two ounces of blood were forced into the aorta. At an average pulse of 72 beats per minute, the heart pumped 540 pints (nearly 300 liters) of blood into the body every single hour—three times the total weight of an average human being! It was physically impossible for the liver to manufacture this astronomical quantity of blood from food, nor could the body consume it. The only logical scientific conclusion was that the blood was not consumed at all: it was the same finite volume of blood circulating continuously in a closed, perpetual loop.',
         },
         {
-          title: 'Act 3: Forensic Evidence (The Tourniquet Experiment & De Motu Cordis)',
+          act: 3,
+          title: 'Act 3: Publication of De Motu Cordis & Tourniquet Proof (1628)',
+          theme_heading: 'Act 3: Publication of De Motu Cordis & Tourniquet Proof (1628)',
           source: {
+            id: 'source_a_harvey_de_motu_cordis',
+            letter: 'A',
             title: 'Source A: Vein Valve Experiments from De Motu Cordis (1628)',
-            src: '/images/harvey_veins.jpg',
-            source: '/images/harvey_veins.jpg',
-            image: '/images/harvey_veins.jpg',
-            question:
-              "Study Figure 2 where Harvey pushes a finger along a surface vein away from the heart. Why does the vein remain completely flat and bloodless between the valves, and how did this simple, physical demonstration conclusively demolish Galen's dogma that blood was produced by the liver and consumed as fuel by tissues?",
-            source_context:
-              "In 1628, William Harvey published De Motu Cordis ('On the Motion of the Heart and Blood in Animals'). Using tight ligatures on human arms, Harvey demonstrated that internal vein valves only permit blood to travel in a single direction: towards the heart.",
+            src: '/images/harvey_de_motu_cordis_valves.jpg',
+            source: '/images/harvey_de_motu_cordis_valves.jpg',
+            image: '/images/harvey_de_motu_cordis_valves.jpg',
+            caption:
+              'Engraving from De Motu Cordis (1628) showing Harvey’s tourniquet experiment demonstrating that vein valves allow blood to flow only toward the heart.',
+            desc: 'Engraving illustrating Harvey’s vein valve experiment.',
             provenance:
-              'Engraved plate from Chapter 13 of De Motu Cordis, William Fitzer, Frankfurt, 1628. Wellcome Collection, London (Shelfmark: EPB 3037/A).',
+              'Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus, Frankfurt: William Fitzer, 1628. British Library (Shelfmark: C.54.b.20).',
             citation:
-              'Engraved plate from Chapter 13 of De Motu Cordis, William Fitzer, Frankfurt, 1628. Wellcome Collection, London (Shelfmark: EPB 3037/A).',
+              'Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus, Frankfurt: William Fitzer, 1628. British Library (Shelfmark: C.54.b.20).',
+            question:
+              'How does this simple, repeatable experiment demonstrate the triumph of empirical mechanics over 1,400 years of Galenic theory?',
+            hinge_question:
+              'How does this simple, repeatable experiment demonstrate the triumph of empirical mechanics over 1,400 years of Galenic theory?',
+            source_context:
+              'Engraving illustrating Harvey’s tourniquet demonstration on a volunteer’s forearm: compressed veins swell at valves, and stroking a vein away from the heart leaves the vessel empty, proving blood flows only toward the heart.',
+            context:
+              'Engraving illustrating Harvey’s tourniquet demonstration on a volunteer’s forearm: compressed veins swell at valves, and stroking a vein away from the heart leaves the vessel empty, proving blood flows only toward the heart.',
           },
           text: '<span class="para-ref">[3.1]</span> To prove that blood circulated in a single direction, Harvey devised a brilliant, elegant experiment using living human volunteers (<span class="archival-meta-tag">Source A</span>). He tied a tight ligature (tourniquet) around an arm until the arterial pulse in the wrist ceased and the hand grew pale and cold, proving that blood entered the arm through deep arteries. When he loosened the bandage slightly into a medium tightness, the arteries remained open, but the superficial surface veins were compressed. The veins swelled dramatically, and tiny nodules appeared along their length—the one-way valves discovered by Fabricius.<br><br><span class="para-ref">[3.2]</span> Harvey then used his finger to press and push blood down a vein away from the heart, between two valves. The vein remained completely empty and collapsed; blood refused to flow backwards. As soon as he released the lower finger, blood instantly rushed upwards toward the shoulder. This simple, repeatable physical demonstration proved conclusively that veins carry blood in only one direction: toward the heart. In 1628, Harvey published his complete findings in Frankfurt in his masterpiece, <em>Exercitatio Anatomica de Motu Cordis et Sanguinis in Animalibus</em> ("On the Motion of the Heart and Blood in Animals").',
         },
         {
-          title: 'Act 4: The Historical Verdict & The Limits of Circulation',
-          text: '<span class="para-ref">[4.1]</span> Harvey’s discovery met furious resistance from conservative physicians. Many senior doctors refused to believe that Galen had been mistaken for over a millennium. Critics ridiculed Harvey as a "circulator" (a Latin pun meaning an irrational quack who travels in circles), and many of his wealthy private patients abandoned him, fearing his radical ideas. Furthermore, Harvey faced a major scientific gap: he could not explain how blood passed from the smallest arteries into the veins. Because powerful compound microscopes were not yet available, he could not see capillaries. It was not until 1661—four years after Harvey’s death—that the Italian scientist Marcello Malpighi used a microscope to discover capillaries in a frog’s lung, finally providing the missing microscopic link.<br><br><span class="para-ref">[4.2]</span> Most significantly for ordinary people, Harvey’s discovery had virtually zero immediate impact on medical treatment. Knowing that blood circulated did not cure illnesses, heal surgical wounds, or prevent infectious diseases. Without knowledge of blood groups, early attempts at blood transfusion in France and England killed patients and were banned by law. Most tragically, despite Harvey conclusively proving that the human body contained a precious, finite volume of circulating blood, physicians—including Harvey himself—continued to prescribe aggressive bloodletting using leeches and lancets for another two hundred years to balance the humours. Therefore, while Harvey was a turning point in mechanical physiology, his breakthrough saved no lives during the Renaissance.',
+          act: 4,
+          title: 'Act 4: Ridicule by ‘Galenists’ & Lost Patients (1630s–1650s)',
+          theme_heading: 'Act 4: Ridicule by ‘Galenists’ & Lost Patients (1630s–1650s)',
+          text: '<span class="para-ref">[4.1]</span> Harvey’s discovery met furious resistance from conservative physicians across Europe. Senior doctors refused to believe that Galen had been mistaken for over a millennium. Critics ridiculed Harvey as a "circulator" (a Latin pun meaning an irrational quack who travels in circles), and many of his wealthy private patients abandoned him, fearing his radical, unproven theories would endanger their health.<br><br><span class="para-ref">[4.2]</span> Furthermore, Harvey faced a major scientific gap that his critics ruthlessly exploited: he could not explain how blood passed from the microscopic endings of the arteries into the beginnings of the veins. Harvey theorized that tiny invisible channels must exist in body tissue, but because compound microscopes were in their infancy, he could not physically demonstrate them, leaving a frustrating anatomical gap in his complete circulatory circuit.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Marcello Malpighi Confirms Capillaries & Practical Limits (1661)',
+          theme_heading: 'Act 5: Marcello Malpighi Confirms Capillaries & Practical Limits (1661)',
+          text: '<span class="para-ref">[5.1]</span> The missing anatomical link was finally discovered in 1661, four years after Harvey’s death. The Italian anatomist Marcello Malpighi, using newly perfected compound microscopes, examined the thin lung tissue of a living frog. Magnified under curved glass lenses, Malpighi observed delicate, microscopic blood vessels connecting the arterial branches directly to the venous system—the capillaries. Malpighi’s microscopic discovery provided the final physical proof of Harvey’s closed circulatory loop, silencing his remaining critics forever.<br><br><span class="para-ref">[5.2]</span> Yet despite this crowning intellectual victory, Harvey’s discovery had virtually zero immediate impact on everyday medical treatment. Knowing that blood circulated did not cure fevers, heal surgical gangrene, or prevent plague. Early attempts at blood transfusion in England and France killed patients due to ignorance of blood groups, prompting Parliament to ban transfusion by law. Most tragically, despite Harvey proving that the body possessed a finite, precious circulating volume of blood, physicians—including Harvey himself—continued to prescribe aggressive bloodletting using leeches and lancets for another two hundred years. Harvey revolutionized physiology, but saved no lives during the Renaissance.',
         },
       ],
       tasks: [
@@ -7160,12 +7140,12 @@ export const unitData = {
         {
           step: 1,
           date: 'c1615',
-          para_ref: '[1.2–2.1]',
+          para_ref: '[1.1–1.2]',
           heading: 'Why did Harvey study cold-blooded animals to understand the human heart?',
           bullets: [
-            'Observing slow heartbeats in live cold frogs',
-            'Dissecting human corpses at the Royal College',
-            'Mapping one-way pocket valves inside veins',
+            'Observing the slow-beating hearts of frogs and snakes',
+            'Studying one-way vein valves under Fabricius at Padua',
+            'Challenging Galen’s two separate blood systems',
           ],
           focus_clue: 'Why did Harvey study cold-blooded animals to understand the human heart?',
         },
@@ -7175,9 +7155,9 @@ export const unitData = {
           para_ref: '[2.1–2.2]',
           heading: 'How did mathematical calculations prove Galen’s theory impossible?',
           bullets: [
-            'Comparing the beating heart to mechanical water pumps',
-            'Calculating liver could not produce gallons of blood daily',
-            'Proving the same blood circulates continuously',
+            'Calculating two ounces of blood pumped per beat',
+            'Pumping 540 pints per hour (three times body weight)',
+            'Proving the liver could not manufacture this volume',
           ],
           focus_clue: 'How did mathematical calculations prove Galen’s theory impossible?',
         },
@@ -7187,53 +7167,53 @@ export const unitData = {
           para_ref: '[3.1–3.2]',
           heading: 'Why did Harvey publish his research abroad rather than in England?',
           bullets: [
-            'Publishing Latin treatise on heart motion in Frankfurt',
-            'Demonstrating tied forearm vein experiments',
-            'Dedicating medical breakthrough to King Charles I',
+            'Conducting the famous arm tourniquet experiment',
+            'Publishing De Motu Cordis in Frankfurt in 1628',
+            'Providing undeniable proof that blood circulates',
           ],
           focus_clue: 'Why did Harvey publish his research abroad rather than in England?',
         },
         {
           step: 4,
           date: '1630s–1650s',
-          para_ref: '[4.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why was Harvey’s discovery fiercely rejected by established doctors?',
           bullets: [
-            'Being mocked as a madman by rival doctors',
-            'Losing wealthy private London medical patients',
-            'Waiting fifty years for Oxford university to teach it',
+            'Facing ridicule by Galenists as a quack circulator',
+            'Losing wealthy patients who feared radical ideas',
+            'Lacking microscopes to show artery-vein connections',
           ],
           focus_clue: 'Why was Harvey’s discovery fiercely rejected by established doctors?',
         },
         {
           step: 5,
           date: '1661',
-          para_ref: '[4.1–4.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why was the discovery of capillaries the final proof Harvey was right?',
           bullets: [
-            'Focusing microscope lenses on live frog lungs',
-            'Discovering microscopic capillary vessels connecting arteries',
-            'Confirming Harvey’s circulatory model beyond all doubt',
+            'Observing frog lung capillaries under Malpighi’s microscope',
+            'Confirming Harvey’s closed circulatory circuit',
+            'Continuing bloodletting treatments for two hundred years',
           ],
           focus_clue: 'Why was the discovery of capillaries the final proof Harvey was right?',
         },
       ],
       causal_domino_spine: {
-        title: 'William Harvey: Circulation of the Blood & The Mechanical Heart',
+        title: 'William Harvey & The Circulation of the Blood',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
             step: 1,
             date: 'c1615',
-            para_ref: '[1.2–2.1]',
-            title: 'Dissecting Cold-Blooded Animals & Human Cadavers',
-            actor: 'William Harvey (Royal Physician)',
-            tag: '🫀 EXPERIMENTAL PHYSIOLOGY',
+            para_ref: '[1.1–1.2]',
+            title: 'Dissecting Cold-Blooded Animals & Padua Foundations',
+            actor: 'William Harvey & Hieronymus Fabricius',
+            tag: '🐸 ANIMAL VIVISECTION',
             trigger:
-              'Studying Fabricius’s vein valves at Padua and dissecting cold-blooded frogs in London, royal physician William Harvey observed that cardiac muscle contracted to pump blood.',
-            desc: 'Studying Fabricius’s vein valves at Padua and dissecting cold-blooded frogs in London, royal physician William Harvey observed that cardiac muscle contracted to pump blood.',
+              'After studying Fabricius’s vein valves in Padua, William Harvey dissected cold-blooded frogs and snakes in London to observe cardiac contractions in slow motion.',
+            desc: 'After studying Fabricius’s vein valves in Padua, William Harvey dissected cold-blooded frogs and snakes in London to observe cardiac contractions in slow motion.',
             connective:
-              'Recognized that Fabricius’s vein valves were one-way mechanical gates ensuring blood flowed in only one direction—toward the heart.',
+              'Proved that the heart was a muscular mechanical pump actively expelling blood into arteries during systole, disproving Galen’s two-blood theory.',
             question: 'Why did Harvey study cold-blooded animals to understand the human heart?',
           },
           {
@@ -7241,13 +7221,13 @@ export const unitData = {
             date: '1620s',
             para_ref: '[2.1–2.2]',
             title: 'The Mechanical Pump & Quantitative Proof',
-            actor: 'William Harvey',
-            tag: '🔢 MATHEMATICAL PROOF',
+            actor: 'William Harvey (Mathematical Calculations)',
+            tag: '🧮 MATHEMATICAL PROOF',
             trigger:
-              'Harvey calculated that the human heart pumped 540 pints (nearly 300 liters) of blood per hour, proving it was mathematically impossible for the liver to manufacture blood from food.',
-            desc: 'Harvey calculated that the human heart pumped 540 pints (nearly 300 liters) of blood per hour, proving it was mathematically impossible for the liver to manufacture blood from food.',
+              'Harvey calculated that the human heart pumps 540 pints (300 liters) of blood per hour—three times the total weight of an average adult human body.',
+            desc: 'Harvey calculated that the human heart pumps 540 pints (300 liters) of blood per hour—three times the total weight of an average adult human body.',
             connective:
-              'Concluded that the heart acted as a mechanical pump moving a fixed, finite volume of blood continuously through the body in a closed, circular loop.',
+              'Proved mathematically that the liver could not manufacture this volume from food, proving blood must circulate continuously in a closed loop.',
             question: 'How did mathematical calculations prove Galen’s theory impossible?',
           },
           {
@@ -7255,36 +7235,36 @@ export const unitData = {
             date: '1628',
             para_ref: '[3.1–3.2]',
             title: 'Publication of De Motu Cordis',
-            actor: 'William Harvey & Continental Publishers',
-            tag: '📖 HISTORICAL MILESTONE',
+            actor: 'William Harvey (Frankfurt Publication)',
+            tag: '📖 DE MOTU CORDIS (1628)',
             trigger:
-              'Harvey published De Motu Cordis ("On the Motion of the Heart and Blood") in Frankfurt, demonstrating his famous tied-arm ligature experiment with visible one-way vein valves.',
-            desc: 'Harvey published De Motu Cordis ("On the Motion of the Heart and Blood") in Frankfurt, demonstrating his famous tied-arm ligature experiment with visible one-way vein valves.',
+              'Harvey conducted his famous arm tourniquet experiment, proving blood flows only towards the heart through vein valves, publishing De Motu Cordis in 1628.',
+            desc: 'Harvey conducted his famous arm tourniquet experiment, proving blood flows only towards the heart through vein valves, publishing De Motu Cordis in 1628.',
             connective:
-              'Provided visual and repeatable physical proof that blood in veins refused to flow backwards away from the heart, permanently refuting Galen’s 1,400-year-old physiology.',
+              'Delivered definitive, repeatable physical proof of blood circulation, sparking a scientific revolution in mechanical physiology across Europe.',
             question: 'Why did Harvey publish his research abroad rather than in England?',
           },
           {
             step: 4,
             date: '1630s–1650s',
-            para_ref: '[4.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Ridicule by ‘Galenists’ & Lost Patients',
-            actor: 'Conservative Doctors ("Galenists")',
-            tag: '🗣️ MEDICAL HOSTILITY',
+            actor: 'Conservative Physicians & London Elites',
+            tag: '😡 MEDICAL RIDICULE',
             trigger:
-              'Senior physicians ridiculed Harvey as a "circulator" (charlatan) and wealthy patients abandoned his practice, with Oxford University taking over fifty years to teach circulation.',
-            desc: 'Senior physicians ridiculed Harvey as a "circulator" (charlatan) and wealthy patients abandoned his practice, with Oxford University taking over fifty years to teach circulation.',
+              'Conservative doctors ridiculed Harvey as an irrational "circulator" and patients abandoned him, because he could not yet see microscopic capillaries.',
+            desc: 'Conservative doctors ridiculed Harvey as an irrational "circulator" and patients abandoned him, because he could not yet see microscopic capillaries.',
             connective:
-              'Demonstrated that even irrefutable mathematical and experimental evidence met decades of institutional resistance when it contradicted established ancient authority.',
+              'Delayed general acceptance of circulation for decades, demonstrating the stubborn entrenchment of ancient Galenic authority.',
             question: 'Why was Harvey’s discovery fiercely rejected by established doctors?',
           },
           {
             step: 5,
             date: '1661',
-            para_ref: '[4.1–4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'Marcello Malpighi Confirms Capillaries',
             actor: 'Marcello Malpighi (Italian Anatomist)',
-            tag: '🔬 MICROSCOPIC CONFIRMATION',
+            tag: '🔬 MICROSCOPIC CAPILLARIES',
             trigger:
               'Using improved microscopes in 1661, Marcello Malpighi discovered microscopic capillaries connecting arteries to veins in a frog’s lung, confirming Harvey’s closed circulatory circuit.',
             desc: 'Using improved microscopes in 1661, Marcello Malpighi discovered microscopic capillaries connecting arteries to veins in a frog’s lung, confirming Harvey’s closed circulatory circuit.',
@@ -7297,51 +7277,6 @@ export const unitData = {
     },
     {
       id: 'lesson_2_5',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to weigh municipal change against medical continuity during the Great Plague:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'CIVIC CHANGE',
-            title: '1. Municipal Quarantine & State Enforcement (What Changed since 1348?)',
-            prompt:
-              'Detail how the Mayor of London enforced 28-day house lock-ins, red crosses, parish watchmen, and Bills of Mortality:',
-            model_notes: [
-              "Lord Mayor's Orders padlocked infected houses for 28 days with a red cross and 'Lord have mercy upon us' painted on the door.",
-              'Parish watchmen guarded locked houses 24/7; searchers of the dead inspected corpses; weekly Bills of Mortality tracked deaths by parish.',
-              'Theatres, public taverns, and crowded fairs were shut down; street fires burned night and day; stray dogs and cats were exterminated.',
-            ],
-            key_terms: ['Tobacco Smoking', 'Pomanders'],
-          },
-          {
-            num: 2,
-            badge: 'MEDICAL CONTINUITY',
-            title: '2. Treatments & Beliefs about Cause (What Stayed Exactly the Same?)',
-            prompt:
-              'Explain why ordinary Londoners and plague doctors still blamed miasma and God, relying on smoking tobacco, pomanders, and bleeding:',
-            model_notes: [
-              "Etiology mirrored 1348: plague was blamed on God's wrath and foul air (miasma) rising from unpaved streets and rotting corpses.",
-              'Plague doctors wore waxed leather cloaks and bird-like beak masks stuffed with camphor and sweet spices to filter air.',
-              'Eton schoolboys were whipped if they refused to smoke tobacco each morning; apothecaries sold useless plague waters and crushed gems.',
-            ],
-            key_terms: ['Pest House', 'Charity Hospital'],
-          },
-          {
-            num: 3,
-            badge: 'VERDICT',
-            title: '3. The Historical Verdict: Civic Efficiency vs. Biological Helplessness',
-            prompt:
-              'Evaluate: Did London handle the 1665 plague better than 1348 because of science, or merely because of ruthless municipal policing?',
-            model_notes: [
-              'Over 100,000 Londoners perished (approx. 20% of the city); the wealthy (including King Charles II, court, and doctors like Sydenham) fled.',
-              'Quarantine was a municipal policing measure enforcing isolation, not a biomedical cure; locking infected families with healthy ones increased deaths.',
-              'The plague subsided not because of medical science, but because the cold winter suppressed fleas and the Great Fire of 1666 destroyed squalid wooden tenements.',
-            ],
-            key_terms: ['Plague Orders (1665)', 'Red Cross Searchers'],
-          },
-        ],
-      },
       banner: '/images/great_plague_broadsheet_1665.jpg',
       banner_position: 'center 20%',
       title: 'KT2.5: Continuity in Treatment & The Great Plague of London (1665)',
@@ -7452,38 +7387,54 @@ export const unitData = {
         'In the scorching summer of 1665, London became a city of horrors. Over 100,000 people—one in every five citizens—perished as the Great Plague tore through overcrowded parishes. Dead-carts rattled through deserted streets at midnight to the cry of "Bring out your dead!", dumping bodies into mass lime pits. Yet this was the era of the Royal Society, of Vesalius’s anatomy, and of Harvey’s blood circulation. Why did all the brilliant breakthroughs of the Scientific Revolution fail so completely to save London? While civic authorities enforced strict padlocked quarantines with armed watchmen and painted red crosses, doctors remained as utterly helpless as medieval monks in 1348. They prescribed smoking tobacco, strapped plucked chickens to swollen buboes, and slaughtered 200,000 cats and dogs—tragically helping the plague rats multiply. Was the Great Plague a triumph of government organization, or the ultimate proof of Renaissance medical failure?',
       teacher_notes: {
         primer:
-          'Synthesize continuity and change in early modern epidemic response. Students must weigh significant changes in municipal administration (quarantine, watchmen, red crosses, Bills of Mortality) against almost total continuity in medical understanding and treatment (miasma, Four Humours, quack remedies, bleeding, and complete ignorance of the flea-rat vector).',
+          'This concluding case study examines the Great Plague of London (1665): the initial outbreak in St Giles, continuity of medieval humoral and miasma beliefs, municipal Plague Orders and household quarantine, the catastrophic slaughter of domestic dogs and cats, and mass burial pits alongside the eventual decline of the plague.',
         objectives: [
           {
             objective:
-              'Analyze the organized civic and municipal public health response to the 1665 Great Plague.',
+              'Explain how the 1665 plague broke out and why the rich fled while the poor suffered catastrophic mortality.',
             primer:
-              'Direct students to paragraphs [1.1]–[1.2]. Detail the Mayor’s orders: 28-day house lockup, red crosses, watchmen, mass lime pits, and Bills of Mortality.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize the crowded timber slums of St Giles, the flight of King Charles II and physicians, and the vulnerability of the poor.',
             question:
-              'How did the municipal response in 1665 demonstrate greater civic organization than the response to the Black Death in 1348?',
+              'Why did the flight of wealthy physicians leave ordinary Londoners completely defenceless during the 1665 plague?',
           },
           {
             objective:
-              'Explain the persistence of medieval medical theories and ineffective treatments in 1665.',
+              'Analyse why medical understanding and treatments in 1665 showed almost complete continuity with 1348.',
             primer:
-              'Direct students to paragraphs [2.1]–[2.2]. Focus on the tragic mistake of slaughtering 200,000 cats and dogs (allowing flea-bearing rats to thrive) and treatments like smoking tobacco and quack plague water.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source B (Plague Doctor). Discuss bird beak masks, smoking tobacco, pomanders, and strapping live pigeons to buboes.',
             question:
-              'Why did the slaughter of cats and dogs in 1665 make the plague epidemic worse rather than better?',
+              'Why did physicians in 1665 still rely on medieval humoral and miasma treatments despite the scientific revolution?',
           },
           {
             objective:
-              'Evaluate the historiographical debate: Did 1665 show more change or continuity compared to 1348?',
+              'Evaluate municipal government action (Mayor’s Plague Orders, Searchers, and 28-day quarantine).',
             primer:
-              'Direct students to paragraphs [3.1]–[4.2]. Guide them to distinguish administrative change (public health containment) from clinical continuity (zero cure or understanding of bacteria).',
+              'Direct students to paragraphs [3.1]–[3.2]. Focus on painted red crosses ("Lord have mercy upon us"), armed watchmen, Bills of Mortality, and Pest Houses.',
             question:
-              'Why did all the anatomical discoveries of Vesalius and Harvey fail to save a single victim of the Great Plague?',
+              'How did London’s municipal response to the 1665 plague show greater civic organization than in 1348?',
+          },
+          {
+            objective:
+              'Explain why the slaughter of 40,000 dogs and 200,000 cats was a disastrous medical mistake.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Connect the belief that animal fur carried miasma to the elimination of predators, allowing black rats and fleas to proliferate.',
+            question:
+              'How did civic magistrates unwittingly accelerate the spread of the plague by ordering the slaughter of dogs and cats?',
+          },
+          {
+            objective:
+              'Assess the demographic impact, night dead-carts, mass pits, and the factors that finally ended the plague.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2] and Source A (Night Burial in a Mass Plague Pit). Explore 100,000 dead, East Smithfield pits, winter frosts, and the 1666 Great Fire.',
+            question:
+              'Why did weather and physical clearance, rather than medical treatment, bring the Great Plague to an end?',
           },
         ],
         source_context: {
           'Source A':
-            'A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount. **Hinge Question:** Why did municipal authorities order burials to take place exclusively at night, and what does this show about the government’s fear of public panic?',
+            'Night Burial in a Mass Plague Pit (1665), contemporary woodcut engraving showing shrouded corpses tipped by dead-cart drivers into a colossal communal lime trench by torchlight. Hinge Question: How does this scene of nocturnal mass burial convey the breakdown of normal Christian funeral customs during the Great Plague of 1665?',
           'Source B':
-            'A famous 17th-century copperplate engraving of a Plague Doctor (Doctor Schnabel von Rom, 1656/1665) wearing an oiled leather coat, spectacles, and a bird-like beak mask filled with sweet-smelling herbs. **Hinge Question:** What does the beak mask filled with dried flowers and camphor prove about the enduring dominance of the miasma theory in 1665?',
+            '17th-Century Plague Doctor (Schnabel von Rom), engraving by Paul Fürst (c.1656). Depicts a physician in full leather protective suit, spectacles, and a long bird-like beak mask stuffed with dried herbs to filter miasma. Hinge Question: What does this iconic plague doctor costume reveal about 17th-century beliefs concerning the transmission of epidemic disease?',
         },
       },
       do_now: [
@@ -7558,66 +7509,80 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: Context & Catalyst (The Catastrophe of 1665)',
-          text: '<span class="para-ref">[1.1]</span> In the spring of 1665, after a winter of bitter frost, bubonic plague erupted across London. Beginning in the crowded, impoverished suburban parish of St Giles-in-the-Fields, the epidemic exploded during an unusually hot, dry summer. Within weeks, the death toll escalated from dozens to thousands per week. At its catastrophic peak in September, over 7,000 people were dying every seven days. By the time the epidemic subsided in the winter frost, over 100,000 Londoners—nearly twenty percent of the city’s population—had perished.<br><br><span class="para-ref">[1.2]</span> As panic gripped the capital, King Charles II, Parliament, and wealthy aristocrats fled to the countryside. Most university-educated physicians abandoned their practices and followed the court, leaving ordinary citizens to face the nightmare alone. Commerce collapsed, shipping on the River Thames was quarantined, and London became an eerie city of silence, punctuated only by the mourning wails of families and the midnight rumble of dead-carts.',
+          act: 1,
+          title: 'Act 1: The Outbreak in St Giles-in-the-Fields (Spring 1665)',
+          theme_heading: 'Act 1: The Outbreak in St Giles-in-the-Fields (Spring 1665)',
+          text: '<span class="para-ref">[1.1]</span> In the spring of 1665, after a winter of bitter frost, bubonic plague erupted across London. Beginning in the crowded, impoverished suburban parish of St Giles-in-the-Fields, the epidemic exploded during an unusually hot, dry summer. Within weeks, the death toll escalated from dozens to thousands per week. At its catastrophic peak in September, over 7,000 people were dying every seven days. By the time the epidemic subsided in the winter frost, over 100,000 Londoners—nearly twenty percent of the city’s population—had perished.<br><br><span class="para-ref">[1.2]</span> As panic gripped the capital, King Charles II, Parliament, and wealthy aristocrats fled to the countryside. Most university-educated physicians abandoned their practices and followed the royal court, leaving ordinary citizens to face the nightmare alone. Commerce collapsed, shipping on the River Thames was quarantined, and London became an eerie city of silence, punctuated only by the mourning wails of families and the midnight rumble of dead-carts.',
         },
         {
-          title: 'Act 2: Escalation & Conflict (Municipal Quarantine Orders: The Change)',
+          act: 2,
+          title: 'Act 2: Continuity of Humoral & Supernatural Beliefs (Summer 1665)',
+          theme_heading: 'Act 2: Continuity of Humoral & Supernatural Beliefs (Summer 1665)',
           source: {
-            id: 'source_a_plague_burial',
-            letter: 'A',
-            title: 'Source A: Night Burial in a Mass Plague Pit (1665)',
-            src: '/images/plague_burial.jpg',
-            source: '/images/plague_burial.jpg',
-            image: '/images/plague_burial.jpg',
-            caption:
-              'A contemporary woodcut broadsheet showing dead-carts dumping plague victims at night into a mass lime pit.',
-            desc: 'Historic woodcut broadsheet illustrating nocturnal plague burials during the 1665 epidemic.',
-            provenance:
-              'Woodcut broadsheet depicting burial carts at the Holywell Mount pest pit, London, 1665. Museum of London (Accession No. NN2598).',
-            citation:
-              'Woodcut broadsheet depicting burial carts at the Holywell Mount pest pit, London, 1665. Museum of London (Accession No. NN2598).',
-            source_context:
-              'A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount.',
-            context:
-              'A contemporary woodcut broadsheet illustration from 1665 showing London parish dead-carts collecting corpses at night and dumping them into a mass lime pit at Holywell Mount.',
-            question:
-              'Study Source A. How does this scene of dead-carts dumping bodies into a mass pit at night illustrate both the terrifying scale of the 1665 Great Plague and the municipal government’s desperate containment measures?',
-            hinge_question:
-              'Study Source A. How does this scene of dead-carts dumping bodies into a mass pit at night illustrate both the terrifying scale of the 1665 Great Plague and the municipal government’s desperate containment measures?',
-          },
-          text: '<span class="para-ref">[2.1]</span> Compared to the disorganized, panicked response to the Black Death in 1348, the response of London’s local government in 1665 demonstrated a major advancement in civic public health administration. The Lord Mayor and Court of Aldermen issued strict "Plague Orders". Parishes appointed two female "Searchers of the Dead" to inspect corpses and verify the cause of death. Parishes also published weekly <em>Bills of Mortality</em>, detailing deaths parish by parish to monitor the epidemic’s spread—an early form of statistical epidemiology.<br><br><span class="para-ref">[2.2]</span> The most aggressive municipal policy was compulsory household quarantine. When plague struck a family, the entire house was boarded up and locked for 28 days. A red cross, twelve inches high, was painted on the door beneath the solemn plea: "Lord have mercy upon us". Two watchmen were assigned to every locked home—one by day and one by night—to bring food and prevent anyone from escaping. All public gatherings, theatrical performances, sports, and traditional funeral ceremonies were banned. Burials were permitted only between sunset and sunrise, with bodies tipped into vast mass lime pits (<span class="archival-meta-tag">Source A</span>).',
-        },
-        {
-          title: 'Act 3: Forensic Evidence (Medical Ignorance & Superstitious Continuity)',
-          source: {
-            id: 'source_b_plague_doctor',
+            id: 'source_b_plague_doctor_schnabel',
             letter: 'B',
             title: 'Source B: 17th-Century Plague Doctor (Schnabel von Rom)',
-            src: '/images/plague_doctor_1665.png',
-            source: '/images/plague_doctor_1665.png',
-            image: '/images/plague_doctor_1665.png',
+            src: '/images/plague_doctor_schnabel.jpg',
+            source: '/images/plague_doctor_schnabel.jpg',
+            image: '/images/plague_doctor_schnabel.jpg',
             caption:
-              'A 17th-century copperplate engraving of a Plague Doctor wearing an oiled protective robe and herb-stuffed beak mask.',
-            desc: 'Iconic primary engraving of an early modern plague doctor in full protective attire.',
-            question:
-              "Study Source B. Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
-            hinge_question:
-              "Study Source B. Identify three distinct features of the plague doctor's costume (the waxed leather gown, the bronze spectacles, and the curved beak filled with sweet perfumes). How does each feature prove that physicians in 1665 still believed the primary cause of plague was corrupt miasma rather than contagion carried by rat fleas?",
-            source_context:
-              "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
-            context:
-              "Engraving of 'Doctor Schnabel von Rom' (Doctor Beak of Rome), popularised during the 17th-century European epidemics. The curved beak acted as a primitive respirator packed with sweet spices, perfumes, and dried flowers to ward off 'pestilential miasma'.",
+              'A 17th-century engraving by Paul Fürst depicting a plague doctor wearing a protective leather coat, spectacles, and a bird-like beak mask packed with herbs.',
+            desc: 'Seventeenth-century engraving of a plague doctor in protective beak mask.',
             provenance:
-              'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
+              'Paul Fürst, Doctor Schnabel von Rom, Nuremberg, 1656. British Museum (Department of Prints and Drawings, 1868,0808.3373).',
             citation:
-              'Copperplate engraving by Paulus Fürst after J. Columbina, Nuremberg, 1656. British Museum, London (BM 1858,0417.1519) / Wellcome Collection V0010834.',
+              'Paul Fürst, Doctor Schnabel von Rom, Nuremberg, 1656. British Museum (Department of Prints and Drawings, 1868,0808.3373).',
+            question:
+              'What does this iconic plague doctor costume reveal about 17th-century beliefs concerning the transmission of epidemic disease?',
+            hinge_question:
+              'What does this iconic plague doctor costume reveal about 17th-century beliefs concerning the transmission of epidemic disease?',
+            source_context:
+              'Depicts a physician in full leather protective suit, spectacles, and a long bird-like beak mask stuffed with dried herbs to filter miasma.',
+            context:
+              'Depicts a physician in full leather protective suit, spectacles, and a long bird-like beak mask stuffed with dried herbs to filter miasma.',
           },
-          text: '<span class="para-ref">[3.1]</span> While municipal administration progressed, medical understanding in 1665 showed almost complete continuity with the medieval Black Death. Because the bacterium <em>Yersinia pestis</em> was unknown, physicians and magistrates remained completely ignorant of the true vector: rat fleas. Believing that domestic animals carried the poisonous contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals: over 40,000 dogs and an estimated 200,000 cats were slaughtered. This tragic error wiped out the natural predators of the black rat, allowing flea-carrying rodents to multiply unchecked throughout London’s timbered tenements.<br><br><span class="para-ref">[3.2]</span> Furthermore, the miasma theory remained the dominant medical explanation. Doctors wore protective leather suits and grotesque bird-like beak masks (<span class="archival-meta-tag">Source B</span>) packed with dried roses, cloves, and camphor to filter out "pestilential air". Citizens carried sweet-smelling pomanders, held sponges soaked in vinegar to their noses, and burned barrels of pitch in the streets. Schoolboys at Eton were forced to smoke tobacco every morning to ward off contagion. Quack doctors made fortunes selling useless "Plague Water", while folk healers strapped plucked, living chickens or dried toads to swollen buboes to "draw out the poison".',
+          text: '<span class="para-ref">[2.1]</span> While municipal administration progressed, medical understanding in 1665 showed almost complete continuity with the medieval Black Death. Because the bacterium <em>Yersinia pestis</em> was unknown, physicians and magistrates remained completely ignorant of the true vector: rat fleas. Sickness was still blamed on divine wrath, unfavorable planetary alignments, and foul environmental miasma arising from open gutters and cesspools.<br><br><span class="para-ref">[2.2]</span> Doctors wore protective leather suits and grotesque bird-like beak masks (<span class="archival-meta-tag">Source B</span>) packed with dried roses, cloves, and camphor to filter out "pestilential air". Citizens carried sweet-smelling pomanders, held sponges soaked in vinegar to their noses, and burned barrels of pitch in the streets. Schoolboys at Eton were forced to smoke tobacco every morning to ward off contagion. Quack doctors made fortunes selling useless "Plague Water", while folk healers strapped plucked, living chickens or dried toads to swollen buboes to "draw out the poison". One hundred and fifty years of Renaissance anatomical discovery had produced zero change in understanding epidemic causation or effective clinical therapy.',
         },
         {
-          title: 'Act 4: The Historical Verdict & 1348 vs 1665 Historiographical Debate',
-          text: '<span class="para-ref">[4.1]</span> The Great Plague of 1665 exposes the dramatic gulf between Renaissance scientific theory and everyday medical reality. Despite the brilliant anatomical achievements of Vesalius and the physiological models of Harvey, 17th-century medicine was utterly powerless to prevent or cure the plague. Bleeding and purging remained the primary therapies offered by physicians who stayed in London, further weakening dehydrated patients and hastening their deaths. The epidemic was eventually halted not by medical science, but by the bitter winter frosts of late 1665 (which killed the flea population) and the catastrophic Great Fire of London in September 1666, which incinerated thousands of flea-infested thatched slums.<br><br><span class="para-ref">[4.2]</span> Historiographically, historians evaluate the 1665 epidemic as a dual narrative of administrative progress and medical stagnation. In terms of municipal governance, London displayed impressive bureaucratic sophistication: quarantine enforcement, weekly statistical casualty mapping, and centralized food supply management marked a genuine departure from 1348. Yet in terms of clinical medicine, diagnosis, and treatment, continuity completely outweighed change. Without germ theory, 17th-century doctors were as intellectually blind to the biological cause of plague as medieval flagellants had been three centuries earlier.',
+          act: 3,
+          title: 'Act 3: Mayor’s Orders & Pest Houses (1665)',
+          theme_heading: 'Act 3: Mayor’s Orders & Pest Houses (1665)',
+          text: '<span class="para-ref">[3.1]</span> Compared to the disorganized, panicked response to the Black Death in 1348, the response of London’s local government in 1665 demonstrated a major advancement in civic public health administration. The Lord Mayor and Court of Aldermen issued strict "Plague Orders". Parishes appointed two female "Searchers of the Dead" to inspect corpses and verify the cause of death. Parishes also published weekly <em>Bills of Mortality</em>, detailing deaths parish by parish to monitor the epidemic’s spread—an early form of statistical epidemiology.<br><br><span class="para-ref">[3.2]</span> The most aggressive municipal policy was compulsory household quarantine. When plague struck a family, the entire house was boarded up and locked for 28 days. A red cross, twelve inches high, was painted on the door beneath the solemn plea: "Lord have mercy upon us". Two watchmen were assigned to every locked home—one by day and one by night—to bring food and prevent anyone from escaping. All public gatherings, theatrical performances, sports, and traditional funeral ceremonies were banned. Sufferers were transferred where possible to dedicated municipal wooden Pest Houses constructed outside the city walls to isolate infection.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Slaughter of Dogs & Smoking Tar Barrels (1665)',
+          theme_heading: 'Act 4: Slaughter of Dogs & Smoking Tar Barrels (1665)',
+          text: '<span class="para-ref">[4.1]</span> Believing that domestic animals carried the poisonous miasmatic contagion in their fur, the Lord Mayor ordered the mass extermination of domestic animals. Special animal catchers were employed, leading to the slaughter of over 40,000 domestic dogs and an estimated 200,000 cats across the city’s parishes.<br><br><span class="para-ref">[4.2]</span> This decision proved to be a catastrophic medical error. Slaughtering cats and dogs eliminated the natural predators of the black rat (<em>Rattus rattus</em>). With rodent predators removed, flea-carrying black rats multiplied completely unchecked throughout London’s timbered tenements, accelerating the spread of <em>Yersinia pestis</em>. Meanwhile, city constables burned barrels of pitch and sulfur day and night at street crossings, choking residents in acrid smoke without killing a single flea.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: The Dead Carts & Demographic Collapse (Winter 1665–1666)',
+          theme_heading: 'Act 5: The Dead Carts & Demographic Collapse (Winter 1665–1666)',
+          source: {
+            id: 'source_a_night_plague_burials',
+            letter: 'A',
+            title: 'Source A: Night Burial in a Mass Plague Pit (1665)',
+            src: '/images/night_plague_burials_1665.jpg',
+            source: '/images/night_plague_burials_1665.jpg',
+            image: '/images/night_plague_burials_1665.jpg',
+            caption:
+              'A 17th-century engraving depicting night-cart orderlies dumping shrouded plague corpses into a mass lime trench by torchlight.',
+            desc: 'Seventeenth-century engraving showing nocturnal plague burials in London.',
+            provenance:
+              'Broadside illustration from London’s Dreadful Visitation, London: E. Cotes, 1665. Wellcome Collection, London (Shelfmark: EPB 33261/B).',
+            citation:
+              'Broadside illustration from London’s Dreadful Visitation, London: E. Cotes, 1665. Wellcome Collection, London (Shelfmark: EPB 33261/B).',
+            question:
+              'How does this scene of nocturnal mass burial convey the breakdown of normal Christian funeral customs during the Great Plague of 1665?',
+            hinge_question:
+              'How does this scene of nocturnal mass burial convey the breakdown of normal Christian funeral customs during the Great Plague of 1665?',
+            source_context:
+              'Contemporary woodcut engraving showing shrouded corpses tipped by dead-cart drivers into a colossal communal lime trench by torchlight.',
+            context:
+              'Contemporary woodcut engraving showing shrouded corpses tipped by dead-cart drivers into a colossal communal lime trench by torchlight.',
+          },
+          text: '<span class="para-ref">[5.1]</span> In the climax of the disaster, traditional burials collapsed entirely. Burials were permitted only between sunset and sunrise. Dead-carts rattled through silent, deserted lanes, their drivers ringing handbells and calling into dark alleyways: "Bring out your dead!" Bodies were stripped of valuables and tipped into vast communal trenches excavated at Holywell Mount and Aldgate (<span class="archival-meta-tag">Source A</span>), where corpses were stacked five deep and coated with quicklime.<br><br><span class="para-ref">[5.2]</span> The Great Plague was eventually brought to an end not by medical science or doctor’s remedies, but by environmental forces. The bitter frosts of November and December 1665 chilled the capital, killing off the flea population and forcing black rats into dormancy. Ten months later, in September 1666, the catastrophic Great Fire of London incinerated over 13,000 rat-infested timber and thatch slums across the ancient city. Historiographically, 1665 stands as a powerful demonstration of administrative progress alongside profound medical continuity: London’s municipal governance was far more organized than in 1348, yet its doctors were as powerless to cure the biological infection as medieval monks.',
         },
       ],
       tasks: [
@@ -8076,7 +8041,7 @@ export const unitData = {
         {
           step: 2,
           date: 'Summer 1665',
-          para_ref: '[3.1–3.2]',
+          para_ref: '[2.1–2.2]',
           heading: 'Why did people still use 14th-century remedies in 1665?',
           bullets: [
             'Blaming planetary alignments and wrath of God',
@@ -8088,7 +8053,7 @@ export const unitData = {
         {
           step: 3,
           date: '1665',
-          para_ref: '[2.1–2.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'How did local government action in 1665 show greater organization than 1348?',
           bullets: [
             'Painting red crosses on barred front doors',
@@ -8101,30 +8066,30 @@ export const unitData = {
         {
           step: 4,
           date: '1665',
-          para_ref: '[3.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why was slaughtering cats and dogs a tragic medical mistake?',
           bullets: [
             'Killing forty thousand domestic dogs and cats',
-            'Burning barrels of black tar at street crossings',
-            'Smoking tobacco pipes to ward off foul miasma',
+            'Eliminating the natural predators of black rats',
+            'Allowing plague-carrying rodent fleas to multiply',
           ],
           focus_clue: 'Why was slaughtering cats and dogs a tragic medical mistake?',
         },
         {
           step: 5,
           date: 'Winter 1665–1666',
-          para_ref: '[1.2, 4.1–4.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'How devastating was the demographic impact of the 1665 epidemic?',
           bullets: [
-            'Ringing bell carts through silent dark lanes',
             'Calling "Bring out your dead" into empty alleys',
             'Burying one hundred thousand Londoners in mass trenches',
+            'Ending the plague through winter frosts and the Great Fire',
           ],
           focus_clue: 'How devastating was the demographic impact of the 1665 epidemic?',
         },
       ],
       causal_domino_spine: {
-        title: 'The Great Plague of London (1665): Continuity, Quarantine & Mortality',
+        title: 'Continuity in Treatment & The Great Plague of London (1665)',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -8133,7 +8098,7 @@ export const unitData = {
             para_ref: '[1.1–1.2]',
             title: 'The Outbreak in St Giles-in-the-Fields',
             actor: 'King Charles II & London Citizens',
-            tag: '☠️ EPIDEMIC OUTBREAK',
+            tag: '🏃 FLIGHT OF THE WEALTHY',
             trigger:
               'Plague broke out in the crowded slums of St Giles-in-the-Fields in spring 1665, triggering the mass flight of King Charles II, royal courtiers, and wealthy physicians to the countryside.',
             desc: 'Plague broke out in the crowded slums of St Giles-in-the-Fields in spring 1665, triggering the mass flight of King Charles II, royal courtiers, and wealthy physicians to the countryside.',
@@ -8145,10 +8110,10 @@ export const unitData = {
           {
             step: 2,
             date: 'Summer 1665',
-            para_ref: '[3.1–3.2]',
+            para_ref: '[2.1–2.2]',
             title: 'Continuity of Humoral & Supernatural Beliefs',
             actor: 'London Physicians & Folk Healers',
-            tag: '🏺 14TH-CENTURY REMEDIES',
+            tag: '🎭 MEDICAL STAGNATION',
             trigger:
               'Without knowledge of Yersinia pestis or rat fleas, doctors wore bird masks, burned street pitch, carried pomanders, and strapped live plucked chickens to buboes.',
             desc: 'Without knowledge of Yersinia pestis or rat fleas, doctors wore bird masks, burned street pitch, carried pomanders, and strapped live plucked chickens to buboes.',
@@ -8159,10 +8124,10 @@ export const unitData = {
           {
             step: 3,
             date: '1665',
-            para_ref: '[2.1–2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Mayor’s Orders & Pest Houses',
             actor: 'Lord Mayor & Searchers of the Dead',
-            tag: '🛡️ MUNICIPAL QUARANTINE',
+            tag: '📜 CIVIC QUARANTINE',
             trigger:
               'The Lord Mayor issued strict Plague Orders: red crosses were painted on infected homes, armed watchmen enforced 28-day quarantine, and female Searchers checked corpses.',
             desc: 'The Lord Mayor issued strict Plague Orders: red crosses were painted on infected homes, armed watchmen enforced 28-day quarantine, and female Searchers checked corpses.',
@@ -8174,10 +8139,10 @@ export const unitData = {
           {
             step: 4,
             date: '1665',
-            para_ref: '[3.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Slaughter of Dogs & Smoking Tar Barrels',
             actor: 'City Magistrates & Town Constables',
-            tag: '🐕 TRAGIC MISJUDGEMENT',
+            tag: '🐕 TRAGIC ANIMAL SLAUGHTER',
             trigger:
               'Believing domestic animal fur carried poisonous miasma, magistrates ordered the slaughter of 40,000 dogs and 200,000 cats, alongside burning barrels of pitch in the streets.',
             desc: 'Believing domestic animal fur carried poisonous miasma, magistrates ordered the slaughter of 40,000 dogs and 200,000 cats, alongside burning barrels of pitch in the streets.',
@@ -8188,10 +8153,10 @@ export const unitData = {
           {
             step: 5,
             date: 'Winter 1665–1666',
-            para_ref: '[1.2, 4.1–4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'The Dead Carts & East Smithfield Pits',
             actor: 'Parish Gravediggers & Dead-Cart Orderlies',
-            tag: '⚰️ DEMOGRAPHIC TOLL',
+            tag: '⚰️ MASS LIME PITS',
             trigger:
               'Over 100,000 Londoners (20% of the capital) died, buried at night in mass lime pits like East Smithfield, until winter frosts killed the fleas and the Great Fire of 1666 burned the slums.',
             desc: 'Over 100,000 Londoners (20% of the capital) died, buried at night in mass lime pits like East Smithfield, until winter frosts killed the fleas and the Great Fire of 1666 burned the slums.',
