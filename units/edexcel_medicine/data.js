@@ -533,51 +533,6 @@ export const unitData = {
   lessons: [
     {
       id: 'lesson_1_1',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to analyse medieval religious and supernatural beliefs about illness:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'RELIGIOUS DOGMA',
-            title: '1. Divine Retribution & The Catholic Church',
-            prompt:
-              'Explain why medieval society believed illness was sent directly by God as a punishment for sin or a test of faith:',
-            model_notes: [
-              'God was seen as the primary cause of all earthly events; disease was divine punishment for moral transgression or a test of devotion.',
-              'The Catholic Church held a monopoly over education, scriptoria (manuscript copying), and universities, teaching that challenging scripture was heresy.',
-              'Friar Roger Bacon was imprisoned in 1277 for advocating empirical observation rather than blind acceptance of ancient authority.',
-            ],
-            key_terms: ['Divine Retribution', 'Monastic Scriptoria'],
-          },
-          {
-            num: 2,
-            badge: 'ASTROLOGY',
-            title: '2. Celestial Movements & The 1345 Conjunction',
-            prompt:
-              'Explain how medieval physicians used astrological charts (almanacs) and zodiac signs to diagnose illness:',
-            model_notes: [
-              "Physicians carried 'almanacs' (astrological calendars) and examined the alignment of planets and stars to calculate disease risks.",
-              'The great planetary conjunction of Mars, Jupiter, and Saturn in Aquarius in 1345 was blamed by Paris physicians for corrupting atmospheric air.',
-              "The 'Zodiac Man' diagram instructed doctors which bodily organs corresponded to which constellations before attempting medical interventions.",
-            ],
-            key_terms: ['Astrological Almanac', 'Planetary Conjunction'],
-          },
-          {
-            num: 3,
-            badge: 'IMPACT ON PROGRESS',
-            title: '3. Why Religious Beliefs Blocked Medical Change',
-            prompt:
-              'Evaluate why unquestioning belief in divine cause and biblical authority prevented natural cures from developing:',
-            model_notes: [
-              'Because illness was sent by God, the only rational cures were prayer, pilgrimages to shrines, and fasting rather than clinical experimentation.',
-              "The Church protected Galen's texts because his teleological philosophy argued the human body was designed by a single Creator.",
-              'Human dissection was strictly controlled or forbidden, locking anatomy into 1,000-year-old animal-based Galenic theory.',
-            ],
-            key_terms: ['Galen’s Authority', 'Teleological Design'],
-          },
-        ],
-      },
       banner: '/images/banner_medicine_medieval.jpg',
       banner_position: 'center',
       title: 'KT1.1: Supernatural & Religious Explanations of Disease (c1250–c1500)',
@@ -686,24 +641,55 @@ export const unitData = {
       },
       teacher_notes: {
         primer:
-          'The overarching pedagogical goal of this lesson is to help pupils understand that medieval beliefs about disease were not random superstition, but a deeply cohesive and logical system anchored to Catholic theology. By exploring the Church’s monopoly on education, book copying, and university curricula, pupils understand why medical progress stalled for centuries.',
+          'This foundational enquiry examines why the medieval Catholic Church exercised a virtual monopoly over explanations of disease, and how theological doctrine, Christian astrology, and Galenic teleology combined to prevent scientific medical progress.',
         objectives: [
           {
-            objective: 'Explain supernatural and religious explanations for the cause of illness.',
+            objective:
+              'Explain how church control of scriptoria, education, and universities enforced Galenic orthodoxy.',
             primer:
-              'Focus on paragraphs [1.1] and [2.1]. Guide pupils to see that if illness is sent by God to punish sin or test faith, searching for biological causes was considered pointless or even blasphemous.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that all copying occurred in monastic scriptoria where tonsured clergy acted as censors, suppressing non-conforming medical treatises.',
             question:
-              'If medieval people believed God directly sent illness as a punishment for sin, why did this stop doctors from investigating physical causes of disease?',
+              'Why did monastic scriptoria make it almost impossible for independent medical discoveries to emerge?',
           },
           {
             objective:
-              'Analyse how the Church enforced Galenic orthodoxy and suppressed scientific dissent.',
+              'Analyse why illness was interpreted as divine retribution and evaluate the treatment of biblical lepers.',
             primer:
-              'Direct pupils to paragraphs [3.1] and [4.1]. Emphasise Galen’s teleological argument (purposeful design by a single Creator) and the exemplary punishment of Roger Bacon in 1277.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Salisbury Doom Painting). Discuss how leprosy was treated as visible soul corruption and examine the ritual of separation (sequestratio).',
             question:
-              'Why did the Church declare the pagan Roman doctor Galen infallible, and what happened to anyone who questioned his writings?',
+              'How did the Church’s belief that sickness was sent by God discourage physicians from searching for physical treatments?',
+          },
+          {
+            objective:
+              'Assess how Christian theology reconciled planetary astrology with medical diagnosis and phlebotomy.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2] and Source B (Zodiac Man). Explain the 1345 Paris conjunction in Aquarius and why doctors checked lunar charts before bleeding.',
+            question:
+              'Why did university doctors consider consulting astrological almanacs more rational than physical experimentation?',
+          },
+          {
+            objective:
+              'Explain why sick medieval people turned to pilgrimage shrines and saints’ relics rather than doctors.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Focus on purgatory, pilgrimages to Canterbury and Ely, kissing holy relics, and purchasing indulgences for healing.',
+            question:
+              'Why did pilgrimages and saintly relics provide more hope to ordinary sick peasants than university-trained doctors?',
+          },
+          {
+            objective:
+              'Evaluate why the Church’s adoption of Galen’s teleological design halted anatomical inquiry for centuries.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Explore how Galen’s Creator theology fit Christian Genesis, the role of the lector in university dissections, and Roger Bacon’s 1277 imprisonment.',
+            question:
+              'Why was questioning Galen treated by the medieval Church as a crime of heresy rather than a scientific debate?',
           },
         ],
+        source_context: {
+          'Source A':
+            'The Doom Painting of St Thomas’s Church, Salisbury (c.1475). A colossal medieval mural positioned above the chancel arch depicting Christ in majesty on Judgment Day, separating the righteous entering the Heavenly Jerusalem from condemned sinners driven into the flaming jaws of Hell. Sickness was interpreted as an earthly foretaste of divine judgment for moral sins. Hinge Question: How does this vivid visual depiction of divine retribution explain why medieval sick people sought priestly confession rather than physical medicine?',
+          'Source B':
+            'The Zodiac Man (Homo Signorum) from a late 14th-century English medical manuscript (MS Sloane 282). This instructional chart maps the twelve astrological constellations directly to zones of the human anatomy, guiding physicians on when to perform phlebotomy without offending celestial spheres. Hinge Question: Why did medieval university physicians believe that bleeding a patient under the wrong astrological sign could cause sudden death?',
+        },
       },
       do_now: [
         {
@@ -750,76 +736,79 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          act_title: 'Context & Catalyst: The Catholic Church Monopoly',
-          text: '<span class="para-ref">[1.1]</span> In medieval England (c1250–c1500), the Roman Catholic Church exercised an unshakeable institutional monopoly over intellectual life, education, and societal values. Formal scholarship was an ecclesiastical privilege; cathedral grammar schools and universities like Oxford, Cambridge, and Paris were staffed exclusively by tonsured Catholic clergy. Most decisively, all book production and manuscript dissemination were concentrated within monastic scriptoria. In these monastic copying rooms, Benedictine and Cistercian monks laboriously hand-transcribed Latin scrolls onto vellum parchment over months of physical toil. Because the Church controlled the means of textual reproduction, clerical superiors operated as unyielding censors, deciding precisely which ancient treatises were copied, translated, or permanently suppressed from university libraries.\n\n<span class="para-ref">[1.2]</span> Medical instruction across medieval European faculties was strictly theoretical, scholastic, and subordinated to biblical scripture. The Church taught that the material universe was a temporary, imperfect terrestrial realm entirely subservient to divine providence. Consequently, comprehending human anatomy did not require physical dissection, clinical experimentation, or empirical inquiry; it demanded the memorisation of holy scripture alongside ancient philosophical authorities sanctified by papal decree. Within medieval theological orthodoxy, sickness was treated as a spiritual condition reflecting divine purpose. To openly dispute canonical authority or propose alternate physical causes of disease was not treated as academic disagreement—it was prosecuted as dangerous heresy against Almighty God.',
-          source: {
-            id: 'source_a_church',
-            letter: 'A',
-            title: 'Source A: The Doom Painting of St Thomas’s Church, Salisbury (c.1475)',
-            src: '/images/medieval_church_interior.jpg',
-            source: '/images/medieval_church_interior.jpg',
-            image: '/images/medieval_church_interior.jpg',
-            caption:
-              'The monumental 15th-century Doom painting above the chancel arch depicting Christ in Majesty, the righteous ascending to Heaven (left), and the damned being dragged into the Hellmouth (right).',
-            provenance: 'St Thomas’s Church, Salisbury, c.1475 wall mural above the chancel arch.',
-            context:
-              'The Catholic Church dominated every aspect of medieval European existence. Ordinary people attended Mass regularly beneath monumental Doom paintings, which reinforced the teaching that sin led directly to divine punishment, damnation, or catastrophic disease.',
-            question:
-              'Study Christ judging humanity and the damned being dragged into the Hellmouth on the right. How did medieval wall paintings like this reinforce the belief that sickness and epidemics were sent by God as punishments for sin?',
-            hinge_question:
-              'Study Christ judging humanity and the damned being dragged into the Hellmouth on the right. How did medieval wall paintings like this reinforce the belief that sickness and epidemics were sent by God as punishments for sin?',
-          },
+          title: 'Act 1: Scriptoria & The Church Monopoly on Learning (c. 1250)',
+          theme_heading: 'Act 1: Scriptoria & The Church Monopoly on Learning (c. 1250)',
+          text: '<span class="para-ref">[1.1]</span> In medieval England (c1250–c1500), the Roman Catholic Church exercised an unshakeable institutional monopoly over intellectual life, education, and societal values. Formal scholarship was an ecclesiastical privilege; cathedral grammar schools and universities like Oxford, Cambridge, and Paris were staffed exclusively by tonsured Catholic clergy. Most decisively, all book production and manuscript dissemination were concentrated within monastic scriptoria. In these monastic copying rooms, Benedictine and Cistercian monks laboriously hand-transcribed Latin scrolls onto vellum parchment over months of physical toil. Because the Church controlled the physical means of textual reproduction, clerical superiors operated as unyielding censors, deciding precisely which ancient treatises were copied, translated, or permanently suppressed from university libraries.<br><br><span class="para-ref">[1.2]</span> Medical instruction across medieval European faculties was strictly theoretical, scholastic, and subordinated to biblical scripture. The Church taught that the material universe was a temporary, imperfect terrestrial realm entirely subservient to divine providence. Consequently, comprehending human health did not require physical dissection, clinical experimentation, or empirical inquiry; it demanded the memorisation of holy scripture alongside ancient philosophical authorities sanctified by papal decree. Within medieval theological orthodoxy, sickness was treated as a spiritual condition reflecting divine purpose. To openly dispute canonical authority or propose alternate physical causes of disease was not treated as academic disagreement—it was prosecuted as dangerous heresy against Almighty God.',
         },
         {
           act: 2,
-          act_title: 'Escalation: God’s Wrath, Sin & Leprosy',
-          text: '<span class="para-ref">[2.1]</span> Because Catholic dogma taught that God held omnipotent sovereignty over human existence, sickness was universally interpreted through a supernatural framework. An outbreak of sudden disease or epidemic pestilence was regarded as divine retribution—a deliberate punishment unleashed by God to chastise individuals or whole communities for mortal sins such as pride, gluttony, blasphemy, or heresy. Sickness could also be interpreted as an intentional divine test of spiritual fortitude, directly mirroring the suffering of Job in the Old Testament. Because the ultimate origin of disease was divine wrath, recovery was viewed as a spiritual pardon granted through prayer, penitence, fasting, and intercessory Masses, rather than physical medical intervention.\n\n<span class="para-ref">[2.2]</span> The most horrifying manifestation of divine punishment in the medieval imagination was leprosy. Prominently chronicled in scripture, leprosy was regarded as the outward physical rotting of an inwardly corrupted, sinful soul. When an individual was diagnosed, church authorities performed a solemn ritual of separation (sequestratio), during which a priest cast consecrated churchyard earth over the sufferer’s shoes, formally pronouncing them dead to the secular world. Lepers were cast out of towns and banished to isolated Lazar houses (leprosaria) constructed outside municipal walls. When walking country tracks, lepers were compelled by law to wear coarse grey hooded cloaks, walk on the leeward side of the road, and continuously rattle a wooden clapper or bell to warn healthy travelers to avoid their foul breath.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Using paragraphs [2.1]–[2.2], explain how religious beliefs dictated the social treatment of leprosy sufferers.',
-              model:
-                'The Catholic Church taught that leprosy was a direct punishment from God for internal sin and moral corruption. Consequently, society treated lepers as spiritually dangerous outcasts, performing symbolic funeral services before banishing them to Lazar houses outside town boundaries. To protect healthy citizens from their breath, lepers were forced to wear concealing cloaks and sound a warning bell.',
-            },
-          ],
+          title: 'Act 2: Biblical Leprosy & Divine Retribution (c. 1280)',
+          theme_heading: 'Act 2: Biblical Leprosy & Divine Retribution (c. 1280)',
+          source: {
+            id: 'source_a_salisbury_doom',
+            letter: 'A',
+            title: 'Source A: The Doom Painting of St Thomas’s Church, Salisbury (c.1475)',
+            src: '/images/salisbury_doom_painting.jpg',
+            source: '/images/salisbury_doom_painting.jpg',
+            image: '/images/salisbury_doom_painting.jpg',
+            caption:
+              'A 15th-century parish wall mural depicting Christ judging souls, sending the righteous to Heaven and the sinful to eternal torment in Hell.',
+            desc: 'Fifteenth-century Doom Painting illustrating medieval beliefs about divine judgment.',
+            provenance:
+              'Chancel arch fresco, St Thomas’s Church, Salisbury, Wiltshire, c.1475 (restored 19th century).',
+            citation:
+              'Chancel arch fresco, St Thomas’s Church, Salisbury, Wiltshire, c.1475 (restored 19th century).',
+            question:
+              'How does this visual depiction of divine retribution explain why medieval sick people sought priestly confession rather than physical medicine?',
+            hinge_question:
+              'How does this visual depiction of divine retribution explain why medieval sick people sought priestly confession rather than physical medicine?',
+            source_context:
+              'A colossal medieval mural positioned above the chancel arch depicting Christ in majesty on Judgment Day, separating the righteous entering the Heavenly Jerusalem from condemned sinners driven into the flaming jaws of Hell. Sickness was interpreted as an earthly foretaste of divine judgment for moral sins.',
+            context:
+              'A colossal medieval mural positioned above the chancel arch depicting Christ in majesty on Judgment Day, separating the righteous entering the Heavenly Jerusalem from condemned sinners driven into the flaming jaws of Hell. Sickness was interpreted as an earthly foretaste of divine judgment for moral sins.',
+          },
+          text: '<span class="para-ref">[2.1]</span> Because Catholic dogma taught that God held omnipotent sovereignty over human existence, sickness was universally interpreted through a supernatural framework (<span class="archival-meta-tag">Source A</span>). An outbreak of sudden disease or epidemic pestilence was regarded as divine retribution—a deliberate punishment unleashed by God to chastise individuals or whole communities for mortal sins such as pride, gluttony, blasphemy, or heresy. Sickness could also be interpreted as an intentional divine test of spiritual fortitude, directly mirroring the suffering of Job in the Old Testament. Because the ultimate origin of disease was divine wrath, recovery was viewed as a spiritual pardon granted through prayer, penitence, fasting, and intercessory Masses, rather than physical medical intervention.<br><br><span class="para-ref">[2.2]</span> The most horrifying manifestation of divine punishment in the medieval imagination was leprosy. Prominently chronicled in scripture, leprosy was regarded as the outward physical rotting of an inwardly corrupted, sinful soul. When an individual was diagnosed, church authorities performed a solemn ritual of separation (<em>sequestratio</em>), during which a priest cast consecrated churchyard earth over the sufferer’s shoes, formally pronouncing them dead to the secular world. Lepers were cast out of towns and banished to isolated Lazar houses (leprosaria) constructed outside municipal walls. When walking country tracks, lepers were compelled by law to wear coarse grey hooded cloaks, walk on the leeward side of the road, and continuously rattle a wooden clapper or bell to warn healthy travelers to avoid their foul breath.',
         },
         {
           act: 3,
-          act_title: 'Forensic Evidence: Celestial Forces & Astrology',
-          text: '<span class="para-ref">[3.1]</span> Alongside divine wrath, medieval society believed that human physiological health was intimately dictated by celestial configurations. While early Christian theologians had initially rejected astrological horoscopes as pagan divination, by the fourteenth century astrological medicine had become fully institutionalized within university medical faculties. European scholars conceptualized the cosmos as God’s grand clockwork mechanism, wherein the movement of the seven celestial spheres exerted continuous metaphysical and physical forces upon terrestrial matter. Medical practitioners carried folding pocket almanacs called Vademecums, which contained diagrams of the Zodiac Man (Homo Signorum), linking the twelve astrological constellations to specific zones of the human anatomy.\n\n<span class="para-ref">[3.2]</span> Whenever inexplicable continental epidemics struck, medieval physicians consulted astrological ephemerides to locate the causal celestial rupture. Most famously, when the Black Death swept across Western Europe in 1348, the royal medical faculty at the University of Paris issued an authoritative report declaring that the catastrophe originated on 20 March 1345 from a rare planetary conjunction of Saturn, Jupiter, and Mars in the fourteenth degree of Aquarius. Physicians argued that the malevolent heat of Mars combined with the corrupting moisture of Jupiter had drawn up toxic subterranean vapors from the earth, poisoning the atmospheric air with pestilential miasma. Consequently, physicians checked lunar charts before performing phlebotomy, fearing that bleeding a patient under the wrong zodiac sign would prove instantly fatal.',
+          title: 'Act 3: Christian Astrology & Planetary Conjunction (1345)',
+          theme_heading: 'Act 3: Christian Astrology & Planetary Conjunction (1345)',
           source: {
-            id: 'source_b_zodiac',
+            id: 'source_b_zodiac_man',
             letter: 'B',
             title: "Source B: The 'Zodiac Man' (Homo Signorum, c.1380)",
             src: '/images/zodiac_man.jpg',
             source: '/images/zodiac_man.jpg',
             image: '/images/zodiac_man.jpg',
             caption:
-              'The Zodiac Man (Homo Signorum) showing the 12 astrological signs that medieval physicians believed governed different bodily organs.',
-            provenance: 'MS Harley 3719, British Library, London, c.1380.',
-            context:
-              'Medieval physicians carried pocket handbooks called Vademecums containing Zodiac Man diagrams. Doctors were strictly forbidden to bleed, purge, or operate on a body part when the moon was in its governing astrological sign.',
+              'A medical manuscript diagram mapping the twelve signs of the zodiac to corresponding bodily organs and surgical sites.',
+            desc: 'Fourteenth-century anatomical diagram of the Zodiac Man.',
+            provenance:
+              'Astronomical and Medical Calendar, England, c.1380–1400. British Library (Shelfmark: MS Sloane 282, fol. 18r).',
+            citation:
+              'Astronomical and Medical Calendar, England, c.1380–1400. British Library (Shelfmark: MS Sloane 282, fol. 18r).',
             question:
-              'Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+              'Why did medieval university physicians believe that bleeding a patient under the wrong astrological sign could cause sudden death?',
             hinge_question:
-              'Notice how each astrological constellation rules a specific part of the human body (such as Aries governing the head and Pisces governing the feet). Why did medieval physicians carry pocket almanacs and consult the position of the moon before performing bloodletting or surgery on a patient?',
+              'Why did medieval university physicians believe that bleeding a patient under the wrong astrological sign could cause sudden death?',
+            source_context:
+              'This instructional chart maps the twelve astrological constellations directly to zones of the human anatomy, guiding physicians on when to perform phlebotomy without offending celestial spheres.',
+            context:
+              'This instructional chart maps the twelve astrological constellations directly to zones of the human anatomy, guiding physicians on when to perform phlebotomy without offending celestial spheres.',
           },
+          text: '<span class="para-ref">[3.1]</span> Alongside divine wrath, medieval society believed that human physiological health was intimately dictated by celestial configurations. While early Christian theologians had initially rejected astrological horoscopes as pagan divination, by the fourteenth century astrological medicine had become fully institutionalized within university medical faculties. European scholars conceptualized the cosmos as God’s grand clockwork mechanism, wherein the movement of the seven celestial spheres exerted continuous metaphysical and physical forces upon terrestrial matter. Medical practitioners carried folding pocket almanacs called <em>Vademecums</em>, which contained diagrams of the Zodiac Man (<em>Homo Signorum</em>, <span class="archival-meta-tag">Source B</span>), linking the twelve astrological constellations to specific zones of the human anatomy.<br><br><span class="para-ref">[3.2]</span> Whenever inexplicable continental epidemics struck, medieval physicians consulted astrological ephemerides to locate the causal celestial rupture. Most famously, when the Black Death swept across Western Europe in 1348, the royal medical faculty at the University of Paris issued an authoritative report declaring that the catastrophe originated on 20 March 1345 from a rare planetary conjunction of Saturn, Jupiter, and Mars in the fourteenth degree of Aquarius. Physicians argued that the malevolent heat of Mars combined with the corrupting moisture of Jupiter had drawn up toxic subterranean vapors from the earth, poisoning the atmospheric air with pestilential miasma. Consequently, physicians checked lunar charts before performing phlebotomy, fearing that bleeding a patient under the wrong zodiac sign would prove instantly fatal.',
         },
         {
           act: 4,
-          act_title: 'Historical Verdict: Galen’s Teleology & The Enforcement of Dogma',
-          text: '<span class="para-ref">[4.1]</span> Why did the medieval Christian Church grant supreme, unquestioned authority to Claudius Galen, a pagan physician who practiced in pagan imperial Rome during the second century AD? The fundamental explanation was teleology. In his voluminous anatomical and philosophical treatises, Galen repeatedly argued that every single organ, bone, muscle, and tendon in the human body had been purposefully crafted with anatomical perfection by a supreme, benevolent, and singular Creator. This teleological design argument aligned so flawlessly with Christian creation theology and the Book of Genesis that the Papacy and university faculties embraced Galen’s writings as sacred, divinely inspired truth.\n\n<span class="para-ref">[4.2]</span> The resulting consequence for European medical development was centuries of profound intellectual stagnation. Questioning Galen’s anatomical descriptions was treated as questioning the perfection of God’s divine design. During rare university dissections of executed felons, the scholarly physician (lector) sat aloft in an elevated pulpit reading aloud from Galen’s Latin texts, while an unlettered barber-surgeon made crude incisions; if a cadaver’s internal organs contradicted Galen, lecturers insisted the corpse was deformed rather than admit Galen was mistaken. When the brilliant English Franciscan friar Roger Bacon argued at Oxford around 1277 that scholars must abandon blind deference to ancient texts and test nature through firsthand empirical experimentation, church authorities condemned his writings and imprisoned him for fourteen years. For over two centuries, scientific inquiry remained effectively outlawed.',
-          tasks: [
-            {
-              type: 'exam_practice',
-              tariff: '[12 marks]',
-              question:
-                'Explain why the Catholic Church had such a powerful influence on medical ideas about the causes of disease in the period c1250–c1500.',
-              stimulus: ['Monastic scriptoria', 'Roger Bacon'],
-              model:
-                'One major reason why the Catholic Church had such a powerful influence on medical ideas was its complete control over education and book production. In the medieval period, the only places where manuscripts were copied were monastic scriptoria, where monks hand-transcribed Latin texts. This gave Church authorities an absolute monopoly over what was read and taught across European universities like Oxford and Paris. Because the Church strictly censored any new or controversial ideas, medical students were taught only texts approved by the Pope, preventing alternative scientific explanations from emerging.\n\nFurthermore, the Church fiercely promoted the medical writings of the Roman physician Claudius Galen because of his teleological philosophy. Galen argued that every organ in the human body was purposefully designed by a single Creator. This aligned perfectly with Christian creation theology, leading Church leaders to declare Galen’s writings infallible sacred dogma. Because the Church taught that Galen was divinely inspired, questioning his anatomical errors was treated as dangerous heresy. Medical education focused on memorising Galen’s texts rather than conducting clinical research, completely freezing anatomical knowledge in classical antiquity.\n\nFinally, the Church ruthlessly suppressed any scholar who advocated firsthand experimentation. When the Franciscan friar Roger Bacon suggested around 1277 that scientific truth should be established through observation rather than unquestioned obedience to ancient books, Church superiors had him imprisoned. This severe punishment sent a chilling message across Europe that empirical enquiry would be punished as heresy. Consequently, respect for classical authority and fear of ecclesiastical punishment ensured that medical ideas remained unchanged throughout the Middle Ages.',
-            },
-          ],
+          title: 'Act 4: Purgatory, Pilgrimage Shrines & Holy Relics (c. 1350)',
+          theme_heading: 'Act 4: Purgatory, Pilgrimage Shrines & Holy Relics (c. 1350)',
+          text: '<span class="para-ref">[4.1]</span> Believing sickness reflected time owed in Purgatory or immediate spiritual transgression, suffering medieval people turned to sacred pilgrimage shrines rather than university physicians. Sufferers undertook arduous journeys to shrines of miraculous saints, most famously St Thomas Becket at Canterbury Cathedral, St Etheldreda at Ely, and Our Lady of Walsingham. The Church taught that saints held direct intercessory favour with God, capable of petitioning the Almighty to remit earthly physical punishment in exchange for sincere spiritual devotion and material penance.<br><br><span class="para-ref">[4.2]</span> At these pilgrimage destinations, sick pilgrims knelt before ornate gilded reliquaries, kissed holy bone fragments and preserved garments of deceased saints, lit expensive beeswax votive candles, and purchased lead pilgrimage badges alongside paper indulgences from pardoner priests. Wealthy barons and sick merchants endowed perpetual chantries where priests chanted daily intercessory Masses for their souls. This institutionalized spiritual devotion poured immense wealth into cathedral treasuries while leaving underlying physiological conditions and infectious pathogens entirely untreated.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Galen’s Teleology, Censorship & Roger Bacon (c. 1400)',
+          theme_heading: 'Act 5: Galen’s Teleology, Censorship & Roger Bacon (c. 1400)',
+          text: '<span class="para-ref">[5.1]</span> Why did the medieval Christian Church grant supreme, unquestioned authority to Claudius Galen, a pagan physician who practiced in pagan imperial Rome during the second century AD? The fundamental explanation was teleology. In his voluminous anatomical and philosophical treatises, Galen repeatedly argued that every single organ, bone, muscle, and tendon in the human body had been purposefully crafted with anatomical perfection by a supreme, benevolent, and singular Creator. This teleological design argument aligned so flawlessly with Christian creation theology and the Book of Genesis that the Papacy and university faculties embraced Galen’s writings as sacred, divinely inspired truth.<br><br><span class="para-ref">[5.2]</span> The resulting consequence for European medical development was centuries of profound intellectual stagnation. Questioning Galen’s anatomical descriptions was treated as questioning the perfection of God’s divine design. During rare university dissections of executed felons, the scholarly physician (lector) sat aloft in an elevated pulpit reading aloud from Galen’s Latin texts, while an unlettered barber-surgeon made crude incisions; if a cadaver’s internal organs contradicted Galen, lecturers insisted the corpse was deformed rather than admit Galen was mistaken. When the brilliant English Franciscan friar Roger Bacon argued at Oxford around 1277 that scholars must abandon blind deference to ancient texts and test nature through firsthand empirical experimentation, church authorities condemned his writings and imprisoned him for fourteen years. For over two centuries, scientific inquiry remained effectively outlawed.',
         },
       ],
       sources: [
@@ -1098,7 +1087,7 @@ export const unitData = {
         {
           step: 4,
           date: 'c1350',
-          para_ref: '[1.2, 2.1]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why did sick people turn to pilgrimage shrines rather than doctors?',
           bullets: [
             'Lighting beeswax candles before parish shrines',
@@ -1110,7 +1099,7 @@ export const unitData = {
         {
           step: 5,
           date: 'c1400',
-          para_ref: '[4.1–4.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why did church enforcement of Galen prevent medical progress?',
           bullets: [
             'Treating Galen’s pagan texts as sacred truth',
@@ -1121,7 +1110,7 @@ export const unitData = {
         },
       ],
       causal_domino_spine: {
-        title: 'Supernatural & Religious Explanations: Church Monopoly & Galen',
+        title: 'Supernatural & Religious Explanations of Disease',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -1130,12 +1119,12 @@ export const unitData = {
             para_ref: '[1.1–1.2]',
             title: 'Scriptoria & Church Monopoly on Learning',
             actor: 'Monastic Scribes & The Catholic Church',
-            tag: '⛪ CHURCH MONOPOLY',
+            tag: '📜 MONASTIC SCRIPTO RIA',
             trigger:
-              'Throughout the Middle Ages, the Catholic Church held an institutional monopoly over book production, hand-copying Latin medical treatises in monastic scriptoria by candle-light.',
-            desc: 'Throughout the Middle Ages, the Catholic Church held an institutional monopoly over book production, hand-copying Latin medical treatises in monastic scriptoria by candle-light.',
+              'All book production and university education was strictly controlled by Benedictine and Cistercian monks hand-copying Latin manuscripts in monastic scriptoria.',
+            desc: 'All book production and university education was strictly controlled by Benedictine and Cistercian monks hand-copying Latin manuscripts in monastic scriptoria.',
             connective:
-              'Enforced strict doctrinal censorship, suppressing dissent and establishing Galenic teleology and biblical dogma as unchallengeable medical truth.',
+              'Enforced absolute censorship over new scientific theories, banning unapproved ideas and ensuring that ancient Galenic orthodoxy was protected from challenge.',
             question: 'How did church scriptoria prevent new medical ideas from spreading?',
           },
           {
@@ -1146,10 +1135,10 @@ export const unitData = {
             actor: 'Parish Priests & Municipal Bailiffs',
             tag: '🔔 DIVINE RETRIBUTION',
             trigger:
-              'Society viewed sudden disease and terrifying epidemics as divine retribution sent by God to chastise moral sin or test individual devotion.',
-            desc: 'Society viewed sudden disease and terrifying epidemics as divine retribution sent by God to chastise moral sin or test individual devotion.',
+              'Because Catholic dogma taught that God was omnipotent, sickness was viewed as divine punishment for mortal sins like pride or heresy, or a divine test of faith.',
+            desc: 'Because Catholic dogma taught that God was omnipotent, sickness was viewed as divine punishment for mortal sins like pride or heresy, or a divine test of faith.',
             connective:
-              'Subjected lepers to symbolic funeral rites before exiling them to isolated Lazar houses outside city walls with warning clappers.',
+              'Resulted in the social banishment of lepers to isolated Lazar houses with warning bells, while teaching the population that prayer and penitence were the only valid cures.',
             question: 'Why was leprosy viewed as visible proof of divine judgment?',
           },
           {
@@ -1158,40 +1147,40 @@ export const unitData = {
             para_ref: '[3.1–3.2]',
             title: 'Christian Astrology & Planetary Conjunction',
             actor: 'University of Paris Medical Faculty',
-            tag: '⭐ CELESTIAL ASTROLOGY',
+            tag: '🌌 CELESTIAL MECHANICS',
             trigger:
-              'Scholars integrated astrology into university curricula, carrying pocket Vademecum almanacs featuring the Zodiac Man to guide medical interventions.',
-            desc: 'Scholars integrated astrology into university curricula, carrying pocket Vademecum almanacs featuring the Zodiac Man to guide medical interventions.',
+              'Scholars integrated astrology into Christian theology, viewing the cosmos as God’s grand clockwork mechanism dictating bodily humours.',
+            desc: 'Scholars integrated astrology into Christian theology, viewing the cosmos as God’s grand clockwork mechanism dictating bodily humours.',
             connective:
-              'Led the Paris medical faculty to blame the Black Death on the 1345 conjunction of Saturn, Jupiter, and Mars in Aquarius corrupting atmospheric air.',
+              'Led the University of Paris in 1348 to blame the Black Death on a 1345 planetary alignment of Saturn, Jupiter, and Mars in Aquarius, reinforcing supernatural causation.',
             question: 'How did the Church reconcile astrology with Christian doctrine?',
           },
           {
             step: 4,
             date: 'c1350',
-            para_ref: '[1.2, 2.1]',
+            para_ref: '[4.1–4.2]',
             title: 'Purgatory, Saints & Holy Relics',
             actor: 'Sick Pilgrims & Shrine Keepers',
-            tag: '🕯️ SACRED RELICS',
+            tag: '⛪ PILGRIMAGE & RELICS',
             trigger:
-              'Believing disease was spiritual, hundreds of thousands of sick pilgrims journeyed to holy shrines like Canterbury to touch saintly relics and pray for miraculous healing.',
-            desc: 'Believing disease was spiritual, hundreds of thousands of sick pilgrims journeyed to holy shrines like Canterbury to touch saintly relics and pray for miraculous healing.',
+              'Believing illness was punishment for sin or time in Purgatory, sick medieval people undertook long pilgrimages to holy cathedral shrines like Thomas Becket at Canterbury.',
+            desc: 'Believing illness was punishment for sin or time in Purgatory, sick medieval people undertook long pilgrimages to holy cathedral shrines like Thomas Becket at Canterbury.',
             connective:
-              'Prioritized religious penitence, fasting, and paper indulgences over clinical treatments, reinforcing the belief that only God could grant recovery.',
+              'Kissed holy bone relics, lit expensive beeswax candles, and purchased paper indulgences from pardoner priests in desperate hopes of miraculous divine cure.',
             question: 'Why did sick people turn to pilgrimage shrines rather than doctors?',
           },
           {
             step: 5,
             date: 'c1400',
-            para_ref: '[4.1–4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'Censorship & The Ban on Dissection',
             actor: 'Ecclesiastical Authorities & Roger Bacon',
-            tag: '⚖️ SUPPRESSING DISSENT',
+            tag: '🔒 DOCTRINAL STAGNATION',
             trigger:
-              'The Church declared Galen infallible because his teleological philosophy argued the human body was crafted by a single Creator, banning human dissection.',
-            desc: 'The Church declared Galen infallible because his teleological philosophy argued the human body was crafted by a single Creator, banning human dissection.',
+              'The Church canonized Galen’s teleological treatises because he argued the body was crafted with perfection by a single benevolent Creator, perfectly matching Genesis.',
+            desc: 'The Church canonized Galen’s teleological treatises because he argued the body was crafted with perfection by a single benevolent Creator, perfectly matching Genesis.',
             connective:
-              'Resulted in the exemplary 14-year imprisonment of Franciscan friar Roger Bacon in 1277 for advocating empirical observation, locking medicine into stagnation.',
+              'Outlawed human dissection and imprisoned questioning scholars like Friar Roger Bacon (1277) for fourteen years, freezing anatomical inquiry for two centuries.',
             question: 'Why did church enforcement of Galen prevent medical progress?',
           },
         ],
@@ -1199,51 +1188,6 @@ export const unitData = {
     },
     {
       id: 'lesson_1_2',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to map rational medieval explanations (Hippocrates, Galen & Miasma):',
-        blocks: [
-          {
-            num: 1,
-            badge: 'FOUR HUMOURS',
-            title: '1. Hippocrates & Bodily Balance',
-            prompt:
-              "Explain Hippocrates' Theory of the Four Humours and how an internal imbalance produced disease symptoms:",
-            model_notes: [
-              'Hippocrates argued the body contained 4 vital fluids: Blood (spring/air/hot & wet), Phlegm (winter/water/cold & wet), Yellow Bile (summer/fire/hot & dry), and Black Bile (autumn/earth/cold & dry).',
-              'A healthy individual had humours in balance; illness occurred when one humour became excessive, deficient, or corrupt.',
-              'This was rational because symptoms (e.g. fever = hot/dry; winter cold = wet phlegm) appeared to physically match humoural properties.',
-            ],
-            key_terms: ['Four Humours', 'Clinical Observation'],
-          },
-          {
-            num: 2,
-            badge: 'THEORY OF OPPOSITES',
-            title: '2. Galen & Restoring Internal Harmony',
-            prompt:
-              'Explain how Galen developed the Theory of Opposites to treat disease, and why the Church adopted him:',
-            model_notes: [
-              'Galen introduced treatment by balance: treating symptoms with their opposite qualities (e.g. cold phlegmatic chills treated with hot, dry pepper and red wine).',
-              'Phlebotomy (bloodletting) was prescribed to remove excess hot blood, alongside purging with emetics and laxatives.',
-              "Galen believed the human body was purposefully crafted by a single Creator ('teleology'), leading the Catholic Church to adopt his writings as absolute truth.",
-            ],
-            key_terms: ['Theory of Opposites', 'Phlebotomy'],
-          },
-          {
-            num: 3,
-            badge: 'MIASMA THEORY',
-            title: '3. Bad Air, Swamps & Rotting Matter',
-            prompt:
-              "Explain what medieval people meant by 'miasma' and how it connected the environment to bodily humours:",
-            model_notes: [
-              'Miasma was poisonous vapour arising from decaying corpses, uncleaned cesspits, swamps, and stagnant filth.',
-              'Inhaling foul air was believed to corrupt the internal humours, causing epidemic diseases like plague.',
-              'Miasma led to sensible public health practices (clearing dung, burning fragrant herbs, carrying pomanders), even though the biological mechanism was incorrect.',
-            ],
-            key_terms: ['Miasma', 'Pestilential Vapours'],
-          },
-        ],
-      },
       banner: '/images/medieval_urine_chart.jpg',
       banner_position: 'center 35%',
       title: 'KT1.2: Rational Explanations: Hippocrates, Galen & The Four Humours (c1250–c1500)',
@@ -1352,23 +1296,55 @@ export const unitData = {
       },
       teacher_notes: {
         primer:
-          'The overarching pedagogical goal of this lesson is to demonstrate that humoural medicine was an exceptionally rational, coherent, and empirical system for its time. Rather than relying on magic or witchcraft, physicians used physical symptoms (vomit, phlegm, urine) to deduce internal fluid imbalances.',
+          'This enquiry explores the rational, natural explanations of illness in the medieval era: how Hippocratic clinical observation, the Four Bodily Humours, Galen’s Theory of Opposites, diagnostic uroscopy, and miasma theory created a comprehensive natural medical framework.',
         objectives: [
           {
-            objective: 'Explain the Theory of the Four Humours and Galen’s Theory of Opposites.',
+            objective:
+              'Explain how Hippocrates established clinical observation and natural causes in Ancient Greece.',
             primer:
-              'Direct pupils to paragraphs [1.1] and [2.1]. Emphasise that health was viewed as an internal balance of blood, phlegm, yellow bile, and black bile, with opposites used to restore equilibrium.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that Hippocrates separated illness from divine punishment and established clinical case records.',
             question:
-              'How would a medieval physician use the Theory of Opposites to treat a patient suffering from a fever with excess hot, dry yellow bile?',
+              'How did Hippocrates’s concept of natural observation revolutionise the role of the ancient physician?',
           },
           {
-            objective: 'Analyse miasma theory and medieval diagnostic methods (uroscopy).',
+            objective:
+              'Analyse the Four Bodily Humours and explain why the theory seemed universally logical to medieval society.',
             primer:
-              'Focus on paragraphs [3.1] and [4.1]. Show how uroscopy allowed doctors to diagnose internal conditions non-invasively, reinforcing Galenic dogma.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Humours Wheel). Connect the 4 fluids (blood, phlegm, yellow bile, black bile) to seasons, elements, and temperaments.',
             question:
-              'Why did physicians examine urine against a 20-shade wheel instead of examining internal organs directly?',
+              'Why did medieval people find the Four Humours so persuasive when explaining physical sickness and emotional moods?',
+          },
+          {
+            objective:
+              'Demonstrate how Galen’s Theory of Opposites provided practical treatment rules for university physicians.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2]. Contrast Hippocrates’s passive balance with Galen’s active intervention (contraria contrariis curantur).',
+            question:
+              'How did Galen’s Theory of Opposites give physicians a clear, systematic guide for prescribing bedside remedies?',
+          },
+          {
+            objective:
+              'Evaluate the diagnostic role of uroscopy and the glass matula flask in establishing physician authority.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source B (Physician Inspecting Urine Flask). Explain color charts, sniffing/tasting urine, and why it carried elite prestige.',
+            question:
+              'Why was the glass urine flask (matula) the universal badge of professional authority for medieval university doctors?',
+          },
+          {
+            objective:
+              'Assess Miasma Theory and explain why rational doctors linked noxious environmental odours directly to epidemics.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Explore how corrupt vapours from marshes, dunghills, and rotting cadavers were believed to disrupt humoral balance upon inhalation.',
+            question:
+              'How did belief in miasma lead medieval towns to introduce early sanitation measures despite complete ignorance of germs?',
           },
         ],
+        source_context: {
+          'Source A':
+            'The Four Humours Wheel from a 14th-century Italian manuscript of Tacuinum Sanitatis. This classical circular diagram correlates the four bodily fluids (Blood, Phlegm, Yellow Bile, Black Bile) with the four seasons (Spring, Winter, Summer, Autumn) and the four terrestrial elements (Air, Water, Fire, Earth). Sickness was defined as humoral dyscrasia (imbalance). Hinge Question: How does this cyclical diagram demonstrate why medieval physicians believed that seasonal weather changes directly caused bodily illnesses?',
+          'Source B':
+            'Physician Inspecting Urine Flask, woodcut frontispiece from Johannes de Ketham’s Fasciculus Medicinae (Venice, 1491). Depicts a university-trained doctor in fur-trimmed robes holding a wheel-blown glass matula up to the window light, surrounded by twenty distinct colour gradations on a parchment urine wheel. Hinge Question: Why did the ritual of examining urine inside a glass matula grant medieval physicians such formidable diagnostic prestige?',
+        },
       },
       do_now: [
         {
@@ -1415,84 +1391,79 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          act_title: 'Context: The Greek Foundations of Humoural Theory',
-          text: '<span class="para-ref">[1.1]</span> While the Christian Church explained the ultimate theological purpose behind illness, medieval physicians required a natural, biological framework to diagnose and treat diseases in day-to-day practice. For this physiological model, European universities relied upon the classical corpus of ancient Greek medicine, foremost among which were the writings attributed to Hippocrates of Kos (c. 460–c. 370 BC). Hippocrates achieved a historic breakthrough in ancient thought by explicitly detaching medicine from superstition, demonic possession, and divine wrath, arguing that the human body operated as a physical system governed entirely by natural laws, diet, environmental climate, and bodily fluids.\n\n<span class="para-ref">[1.2]</span> Hippocrates established the foundational doctrine of pathology known as the Theory of the Four Humours. He posited that the human body contained four primary internal liquids, each corresponding to an element, a season, and two fundamental qualities: Blood (originating in the liver, hot and wet, linked to air and spring); Phlegm (originating in the brain and lungs, cold and wet, linked to water and winter); Yellow Bile or Choler (originating in the gallbladder, hot and dry, linked to fire and summer); and Black Bile or Melancholy (originating in the spleen, cold and dry, linked to earth and autumn). Good physical health required these four humours to remain in harmonious internal balance (eukrasia). When any humour became excessive, deficient, or putrefied, acute sickness inevitably followed.',
-          source: {
-            id: 'source_a_humours',
-            letter: 'A',
-            title: 'Source A: The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)',
-            src: '/images/four_humours.jpg',
-            source: '/images/four_humours.jpg',
-            image: '/images/four_humours.jpg',
-            caption:
-              'The Four Humours Wheel: Blood (air/hot & wet), Phlegm (water/cold & wet), Yellow Bile (fire/hot & dry), and Black Bile (earth/cold & dry).',
-            provenance:
-              'Tacuinum Sanitatis manuscript, 14th century, Österreichische Nationalbibliothek, Vienna.',
-            context:
-              'The Theory of the Four Humours dominated medieval clinical diagnosis. Doctors believed every person had a unique humoural balance dictated by their birth, diet, personality, and age.',
-            question:
-              'Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
-            hinge_question:
-              'Study how each of the four humours (Blood, Phlegm, Yellow Bile, Black Bile) is linked to a season, an element, and specific qualities of heat and moisture. If a patient suffering from a cold and shivering was treated with hot spices and dry foods under Galen’s Theory of Opposites, why did this belief in internal fluid balance prevent medieval physicians from searching for external causes of disease?',
-          },
+          title: 'Act 1: Hippocrates, Clinical Observation & Natural Causes (c. 460 BC)',
+          theme_heading: 'Act 1: Hippocrates, Clinical Observation & Natural Causes (c. 460 BC)',
+          text: '<span class="para-ref">[1.1]</span> While the medieval Christian Church explained the ultimate theological purpose of suffering, the intellectual architecture of physical medicine was inherited from classical antiquity. In fifth-century BC Greece, the physician Hippocrates of Kos fundamentally liberated medical thought from supernatural superstition. Rejecting the entrenched belief that sickness was an invisible curse inflicted by vengeful pagan deities like Apollo, Hippocrates asserted that illness was an entirely natural bodily phenomenon governed by physical laws. He established the revolutionary practice of clinical observation: urging physicians to examine the patient directly at the bedside, systematically record changes in pulse, facial pallor, sweating, and urine, and track the natural trajectory of diseases over time.<br><br><span class="para-ref">[1.2]</span> Hippocrates preserved his clinical insights across the sixty treatises of the <em>Hippocratic Corpus</em>, establishing the ethical foundation of Western medicine through the Hippocratic Oath. He taught that the human body possessed inherent restorative capabilities, and that the doctor’s primary duty was not to impose violent physical intervention, but to assist nature through prescribed diet, restful sleep, moderate exercise, and herbal infusions. By insisting that disease possessed observable physical origins that could be diagnosed and anticipated through natural reason, Hippocrates laid the intellectual cornerstone upon which all medieval rational medicine was erected.',
         },
         {
           act: 2,
-          act_title: 'Escalation: Galen & The Theory of Opposites',
-          text: '<span class="para-ref">[2.1]</span> In the second century AD, the Greek physician Claudius Galen, practicing in imperial Rome, adapted Hippocrates’ humoural theory into a comprehensive, rigid clinical methodology known as the Theory of Opposites (Contraria Contrariis Curantur). Galen argued that physical disease was not a mysterious invasion from outside, but an internal humoural imbalance that a rational practitioner could systematically counteract. Rather than simply waiting for nature to heal the patient, Galen instructed physicians to actively neutralize the excessive qualities of the dominating humour by administering therapeutic treatments possessing the exact contrary physical properties.\n\n<span class="para-ref">[2.2]</span> Under Galen’s Opposites system, diagnosis and prescription followed an unyielding mathematical logic. If a patient presented with a violent shivering winter chill accompanied by excessive white mucous, the physician diagnosed a surplus of cold, wet phlegm; the prescribed remedy consisted of hot, dry foods, spiced wine, ginger, black pepper, and dry bedding near an open hearth. Conversely, if a patient suffered from a burning, inflammatory fever and flushed skin, the diagnosis was an excess of hot, dry yellow bile or hot blood; the treatment demanded cooling cucumber ointments, cold barley broths, and immediate phlebotomy to evacuate internal heat. This mechanical system gave medieval university physicians an immense sense of professional certainty, even though its biological premise was completely false.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Using paragraphs [2.1]–[2.2], explain how Galen’s Theory of Opposites worked in practice.',
-              model:
-                'Galen’s Theory of Opposites worked by treating an excess of one humour with its opposite quality. For example, if a patient had an excess of cold, wet phlegm (causing chills and runny noses), the physician prescribed hot, dry foods like peppers or ginger. If a patient had an excess of hot, dry yellow bile or blood (causing a fever), they were treated with cold cucumber, cooling baths, or bloodletting.',
-            },
-          ],
+          title: 'Act 2: The Four Bodily Humours & Temperament (c. 1250)',
+          theme_heading: 'Act 2: The Four Bodily Humours & Temperament (c. 1250)',
+          source: {
+            id: 'source_a_four_humours',
+            letter: 'A',
+            title: 'Source A: The Four Humours Wheel (Tacuinum Sanitatis, 14th c.)',
+            src: '/images/four_humours_wheel.jpg',
+            source: '/images/four_humours_wheel.jpg',
+            image: '/images/four_humours_wheel.jpg',
+            caption:
+              'A 14th-century circular chart mapping the four bodily fluids to the four seasons, elements, and temperaments.',
+            desc: 'Fourteenth-century diagram of the Four Humours.',
+            provenance:
+              'Tacuinum Sanitatis, Northern Italy, late 14th century. Österreichische Nationalbibliothek, Vienna (Codex Vindobonensis Series Nova 2644).',
+            citation:
+              'Tacuinum Sanitatis, Northern Italy, late 14th century. Österreichische Nationalbibliothek, Vienna (Codex Vindobonensis Series Nova 2644).',
+            question:
+              'How does this cyclical diagram demonstrate why medieval physicians believed that seasonal weather changes directly caused bodily illnesses?',
+            hinge_question:
+              'How does this cyclical diagram demonstrate why medieval physicians believed that seasonal weather changes directly caused bodily illnesses?',
+            source_context:
+              'This classical circular diagram correlates the four bodily fluids (Blood, Phlegm, Yellow Bile, Black Bile) with the four seasons (Spring, Winter, Summer, Autumn) and the four terrestrial elements (Air, Water, Fire, Earth). Sickness was defined as humoral dyscrasia (imbalance).',
+            context:
+              'This classical circular diagram correlates the four bodily fluids (Blood, Phlegm, Yellow Bile, Black Bile) with the four seasons (Spring, Winter, Summer, Autumn) and the four terrestrial elements (Air, Water, Fire, Earth). Sickness was defined as humoral dyscrasia (imbalance).',
+          },
+          text: '<span class="para-ref">[2.1]</span> To explain the biological mechanics of illness, Hippocrates and later classical commentators formulated the Theory of the Four Bodily Humours (<span class="archival-meta-tag">Source A</span>). This cosmological framework posited that the human body contained four vital liquid humours, each corresponding to one of the four terrestrial elements, seasons of the year, and physical qualities: <strong>Blood</strong> (warm and moist, corresponding to spring and air); <strong>Yellow Bile</strong> or choler (warm and dry, corresponding to summer and fire); <strong>Black Bile</strong> or melancholy (cold and dry, corresponding to autumn and earth); and <strong>Phlegm</strong> (cold and moist, corresponding to winter and water).<br><br><span class="para-ref">[2.2]</span> Perfect bodily health was defined as <em>eucrasia</em>—a state of harmonious balance between the four humours. When one humour became corrupted, deficient, or produced in excess, the individual descended into <em>dyscrasia</em>, manifesting fever, chills, coughing, or pain. The theory was persuasive to medieval people because it seamlessly integrated physiological symptoms with observable seasons and psychological personalities: a ruddy, jovial person was deemed sanguine (dominated by blood); an irritable, feverish person was choleric (yellow bile); a brooding, depressed scholar was melancholic (black bile); while a sluggish, pale person suffering winter catarrh was phlegmatic (phlegm). Humoural theory provided an all-encompassing, logical explanation for every human ailment.',
         },
         {
           act: 3,
-          act_title: 'Forensic Evidence: Miasma Theory & Pestilential Air',
-          text: '<span class="para-ref">[3.1]</span> Alongside internal humoural dyscrasia, the dominant environmental explanation for epidemic outbreaks was the Theory of Miasma. Originating in the works of Hippocrates and Galen, miasma was defined as poisonous, corrupt air filled with putrid atmospheric vapors. Medieval physicians believed that inhaling foul-smelling vapors corrupted the internal humours inside the lungs and heart, causing immediate decomposition of the blood. In municipal charters and hospital statutes, this phenomenon was recorded as "pestilential corruption of the atmosphere" or "foul exhalations," establishing a direct causal connection between sensory stench and physical mortality.\n\n<span class="para-ref">[3.2]</span> Contemporary natural philosophy taught that miasma was generated by terrestrial decay: stagnant marshes, open town gutters, unburied decomposing corpses, cesspits overflowing with human excrement, and the noxious entrails of slaughtered livestock dumped into public rivers. Because noxious odors were believed to be actively infectious, medieval disease prevention focused obsessively upon aromatic olfactory barriers. Aristocrats and wealthy burgesses carried silver pomanders stuffed with ambergris, cloves, and musk, held sweet-scented floral posies beneath their noses in crowded streets, and burned fragrant resins like frankincense, rosemary, and juniper within shuttered domestic chambers to purify the atmospheric air.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Explain the connection between miasma theory and medieval attempts to prevent disease.',
-              model:
-                'Miasma theory claimed that breathing in foul-smelling, corrupt air poisoned the body’s humours and caused epidemics. Consequently, medieval prevention focused on eliminating bad odors and purifying the air by burning incense in homes, lighting bonfires in streets, and carrying pomanders or sweet-smelling posies of herbs to mask bad smells.',
-            },
-          ],
+          title: 'Act 3: Galen’s Theory of Opposites (c. 1280)',
+          theme_heading: 'Act 3: Galen’s Theory of Opposites (c. 1280)',
+          text: '<span class="para-ref">[3.1]</span> In the second century AD, the Greek physician Claudius Galen, practicing in imperial Rome, dramatically expanded Hippocrates’s ideas into a comprehensive therapeutic doctrine: the Theory of Opposites (<em>contraria contrariis curantur</em>). While Hippocrates had largely advocated passive dietary observation, Galen argued that physicians must actively intervene to restore humoural equilibrium by administering remedies that possessed qualities directly opposing the excess humour causing the disease.<br><br><span class="para-ref">[3.2]</span> Under Galen’s systematic doctrine, bedside diagnosis and prescription followed rigid deductive logic. If a patient presented with a common winter cold characterized by excessive cold and wet phlegm, the physician prescribed heating and drying therapies: hot dry toast, pungent mustard seeds, spicy pepper broths, and warm blankets. Conversely, if a summer fever left a patient flushed, delirious, hot, and dry with excess yellow bile, the doctor administered cooling and moistening remedies: chilled cucumber water, barley gruel, cold vinegar sponges, and bleeding to evacuate excessive boiling blood. The Theory of Opposites provided medieval practitioners with a clear, comforting, and authoritative manual that made prescribing feel scientifically certain.',
         },
         {
           act: 4,
-          act_title: 'Historical Verdict: Diagnostic Tools—Uroscopy & The Vademecum',
-          text: '<span class="para-ref">[4.1]</span> Because human anatomical dissection was forbidden by religious convention and cultural taboo, how did a university-trained medieval physician actually deduce which humour was corrupted within a living patient? The supreme clinical diagnostic instrument was Uroscopy (the examination of urine). Practitioners collected morning urine specimens in a specialized, thin pear-shaped glass flask called a matula, whose shape was designed to mirror the interior cavities of the human bladder. The physician held the matula aloft against the light, scrupulously inspecting its color, opacity, bubbles, and particulate sediment, occasionally smelling or tasting the liquid to assess its internal humoural qualities.\n\n<span class="para-ref">[4.2]</span> The physician evaluated the specimen against a standardized circular urine wheel containing twenty distinct color gradients, ranging from pale water-white through saffron-gold to dark ruby-red and black. A reddish or golden tint signaled an excess of fiery blood or choler; pale, cloudy urine betrayed cold phlegm; and dark, murky sediment demonstrated corrupt black bile. Physicians carried these diagnostic charts folded inside their belt-worn Vademecum handbooks alongside lunar ephemerides. While uroscopy represented a form of empirical clinical observation, it firmly trapped medieval medicine within Galen’s flawed humoural dogma. Because physicians attributed every pathological symptom to humoural fluids rather than specific microbial pathogens, medical treatment remained completely incapable of curing genuine physical disease.',
+          title: 'Act 4: Diagnostic Uroscopy & The Matula Flask (c. 1300)',
+          theme_heading: 'Act 4: Diagnostic Uroscopy & The Matula Flask (c. 1300)',
           source: {
-            id: 'source_b_urine',
+            id: 'source_b_uroscopy',
             letter: 'B',
             title: 'Source B: Physician Inspecting Urine Flask (Fasciculus Medicinae, 1491)',
-            src: '/images/medieval_urine_chart.jpg',
-            source: '/images/medieval_urine_chart.jpg',
-            image: '/images/medieval_urine_chart.jpg',
+            src: '/images/uroscopy_inspection.jpg',
+            source: '/images/uroscopy_inspection.jpg',
+            image: '/images/uroscopy_inspection.jpg',
             caption:
-              'The Medieval Urine Chart: a radial wheel showing twenty flasks of differing colours, which physicians examined, smelled, and sometimes tasted to diagnose humoural imbalance.',
-            provenance: 'Johannes de Ketham, Fasciculus Medicinae, Venice, 1491.',
-            context:
-              'Uroscopy was the primary clinical diagnostic method in the Middle Ages. Physicians examined the color, cloudiness, sediment, and smell of urine in a matula to deduce which humour was corrupted.',
+              'A woodcut showing a physician examining a matula flask against the light, surrounded by a diagnostic urine wheel.',
+            desc: 'Fifteenth-century woodcut of a physician practicing uroscopy.',
+            provenance:
+              'Johannes de Ketham, Fasciculus Medicinae, Venice: Giovanni and Gregorio de Gregorii, 1491. British Library (Shelfmark: IB.21049).',
+            citation:
+              'Johannes de Ketham, Fasciculus Medicinae, Venice: Giovanni and Gregorio de Gregorii, 1491. British Library (Shelfmark: IB.21049).',
             question:
-              'Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+              'Why did the ritual of examining urine inside a glass matula grant medieval physicians such formidable diagnostic prestige?',
             hinge_question:
-              'Observe the physician holding up a glass matula (urine flask) to inspect the color, sediment, and clarity of the liquid against a radial wheel. How did uroscopy allow medieval doctors to diagnose internal humoural imbalance without performing surgery or human dissection?',
+              'Why did the ritual of examining urine inside a glass matula grant medieval physicians such formidable diagnostic prestige?',
+            source_context:
+              'Depicts a university-trained doctor in fur-trimmed robes holding a wheel-blown glass matula up to the window light, surrounded by twenty distinct colour gradations on a parchment urine wheel.',
+            context:
+              'Depicts a university-trained doctor in fur-trimmed robes holding a wheel-blown glass matula up to the window light, surrounded by twenty distinct colour gradations on a parchment urine wheel.',
           },
-          tasks: [
-            {
-              type: 'exam_practice',
-              tariff: '[4 marks]',
-              question:
-                'Explain one way in which ideas about the causes of illness in the Medieval period were similar to ideas about the causes of illness in the Renaissance period.',
-              model:
-                'One way ideas about the causes of illness were similar was the continued widespread belief in miasma (bad air) as a leading cause of epidemic disease. In the Medieval period, people believed the Black Death of 1348 was caused by corrupt, foul-smelling vapors arising from stagnant swamps, rotting filth, and unburied corpses. Similarly, during the Great Plague of 1665 in the Renaissance, physicians and ordinary citizens still believed that foul odors transmitted the plague, prompting people to smoke tobacco and carry sweet-smelling pomanders to purify the air. Both eras completely lacked Germ Theory, leading people to believe poisonous smells directly produced disease.',
-            },
-          ],
+          text: '<span class="para-ref">[4.1]</span> Because human anatomical dissection was forbidden by religious convention, medieval physicians relied on external bodily emanations to deduce internal humoural dyscrasia. The undisputed pinnacle of clinical diagnosis was uroscopy—the forensic inspection of patient urine (<span class="archival-meta-tag">Source B</span>). The signature instrument of the gowned physician was the <em>matula</em>, a wheel-blown, pear-shaped clear glass flask designed to mimic the internal chambers of the human torso, with three distinct horizontal layers representing the head, chest, and lower abdomen.<br><br><span class="para-ref">[4.2]</span> When called to a wealthy patient’s sickbed, the physician held the matula up to the morning daylight, scrutinizing its color, density, floating sediments, and surface foam against illustrated parchment "urine wheels" depicting twenty distinct hues ranging from crystal white to reddish-orange and putrid black. Dedicated practitioners smelled the specimen and even touched a drop to their tongue to detect sweetness or acidity. While uroscopy granted university physicians immense theatrical prestige and allowed them to charge exorbitant fees, it provided zero understanding of microscopic cellular pathology or infectious bacteria.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Miasma Theory & Foul Environmental Vapours (c. 1350)',
+          theme_heading: 'Act 5: Miasma Theory & Foul Environmental Vapours (c. 1350)',
+          text: '<span class="para-ref">[5.1]</span> Alongside internal humoural dyscrasia, the dominant environmental explanation for widespread epidemic disease was Miasma Theory. Originating in the classical writings of Hippocrates and Galen, miasma was conceptualized as a poisonous, corrupted atmospheric vapor laden with invisible putrefaction. Medieval physicians believed that miasma was generated by decaying terrestrial organic matter: stagnant marshland bogs, rotting animal carcasses, open cesspits, unburied corpses, and stagnant urban ditches choked with human excrement and butchers’ entrails.<br><br><span class="para-ref">[5.2]</span> When inhaled directly into the human lungs, this foul-smelling, corrupted air passed into the heart and arterial bloodstream, instantly poisoning the internal humours and sparking virulent fever. Because medieval senses instinctively associated putrid odors with sickness, miasma theory appeared deeply rational. It motivated civic magistrates to introduce early public health ordinances—commanding butchers to dump offal outside city walls, ordering householders to sweep street filth, and urging citizens to carry aromatic pomanders stuffed with dried lavender, cloves, and rose petals to neutralize deadly atmospheric vapours.',
         },
       ],
       sources: [
@@ -1716,33 +1687,33 @@ export const unitData = {
           para_ref: '[1.1–1.2]',
           heading: 'How did Hippocrates separate medicine from superstition?',
           bullets: [
-            'Rejecting anger of gods at the bedside',
-            'Writing case charts on fever symptoms',
-            'Swearing ethical oath to protect patients',
+            'Observing clinical symptoms at the bedside',
+            'Recording natural disease trajectories in treatises',
+            'Rejecting divine curses in favour of bodily laws',
           ],
           focus_clue: 'How did Hippocrates separate medicine from superstition?',
         },
         {
           step: 2,
           date: 'c1250',
-          para_ref: '[1.2]',
+          para_ref: '[2.1–2.2]',
           heading: 'Why did humoral theory seem logical to medieval people?',
           bullets: [
-            'Balancing blood, phlegm, and two biles',
-            'Linking fluids to four earthly elements',
-            'Associating cold damp seasons with winter coughs',
+            'Balancing blood, phlegm, yellow bile, and black bile',
+            'Connecting bodily fluids to seasons and elements',
+            'Explaining distinct emotional temperaments',
           ],
           focus_clue: 'Why did humoral theory seem logical to medieval people?',
         },
         {
           step: 3,
           date: 'c1280',
-          para_ref: '[2.1–2.2]',
+          para_ref: '[3.1–3.2]',
           heading: 'How did the Theory of Opposites provide practical treatment rules?',
           bullets: [
-            'Cooling burning summer fever with cold cucumber',
-            'Treating excess phlegm with dry hot pepper',
-            'Dissecting Barbary apes to map organs',
+            'Formulating contraria contrariis curantur in imperial Rome',
+            'Treating cold wet phlegm with hot dry spices',
+            'Administering cooling cucumbers for burning yellow bile fevers',
           ],
           focus_clue: 'How did the Theory of Opposites provide practical treatment rules?',
         },
@@ -1752,27 +1723,27 @@ export const unitData = {
           para_ref: '[4.1–4.2]',
           heading: 'Why did uroscopy give physicians great diagnostic authority?',
           bullets: [
-            'Holding glass flasks up to window sunlight',
-            'Comparing urine colours against twenty-shade wheels',
-            'Sniffing and tasting samples for sweetness',
+            'Inspecting clear glass matula flasks against window light',
+            'Comparing urine colour against twenty-part parchment wheels',
+            'Charging exorbitant consultation fees without cutting skin',
           ],
           focus_clue: 'Why did uroscopy give physicians great diagnostic authority?',
         },
         {
           step: 5,
           date: 'c1350',
-          para_ref: '[3.1–3.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why did rational physicians link bad smells directly to epidemics?',
           bullets: [
-            'Fearing stench from open roadside cesspools',
-            'Smelling rotting town refuse heaps',
-            'Believing toxic smells unbalanced bodily fluids',
+            'Blaming poisonous miasma arising from stagnant cesspools',
+            'Inhaling corrupt foul air directly into bloodstream',
+            'Sniffing herbal pomanders to neutralise noxious vapours',
           ],
           focus_clue: 'Why did rational physicians link bad smells directly to epidemics?',
         },
       ],
       causal_domino_spine: {
-        title: 'Rational Explanations: Hippocrates, Galen & The Four Humours',
+        title: 'Rational Explanations: Hippocrates & The Four Humours',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -1781,40 +1752,40 @@ export const unitData = {
             para_ref: '[1.1–1.2]',
             title: 'Hippocrates & Natural Observation',
             actor: 'Hippocrates of Kos',
-            tag: '🩺 CLINICAL OBSERVATION',
+            tag: '🌿 CLINICAL OBSERVATION',
             trigger:
-              'Ancient Greek physician Hippocrates rejected supernatural causes, insisting that diseases were natural physical phenomena to be diagnosed through bedside clinical observation.',
-            desc: 'Ancient Greek physician Hippocrates rejected supernatural causes, insisting that diseases were natural physical phenomena to be diagnosed through bedside clinical observation.',
+              'Hippocrates of Kos rejected divine curses, arguing that illness was caused by natural bodily imbalances that could be observed and recorded at the bedside.',
+            desc: 'Hippocrates of Kos rejected divine curses, arguing that illness was caused by natural bodily imbalances that could be observed and recorded at the bedside.',
             connective:
-              'Separated medical practice from religious superstition, establishing the Hippocratic Oath and careful recording of pulse, fever, and symptoms.',
+              'Established clinical observation and the Hippocratic Corpus, creating the intellectual foundation for rational Western medical thought.',
             question: 'How did Hippocrates separate medicine from superstition?',
           },
           {
             step: 2,
             date: 'c1250',
-            para_ref: '[1.2]',
+            para_ref: '[2.1–2.2]',
             title: 'The Four Bodily Humours',
             actor: 'Medieval Scholastic Physicians',
-            tag: '💧 FOUR HUMOURS',
+            tag: '⚖️ FOUR HUMOURS',
             trigger:
-              'Hippocrates established that the body contained four vital humours—blood, phlegm, yellow bile, and black bile—linked to the four earthly elements and seasons.',
-            desc: 'Hippocrates established that the body contained four vital humours—blood, phlegm, yellow bile, and black bile—linked to the four earthly elements and seasons.',
+              'Classical scholars formulated the Theory of the Four Humours (Blood, Phlegm, Yellow Bile, Black Bile), linking each fluid to elements, seasons, and temperaments.',
+            desc: 'Classical scholars formulated the Theory of the Four Humours (Blood, Phlegm, Yellow Bile, Black Bile), linking each fluid to elements, seasons, and temperaments.',
             connective:
-              'Provided a reassuring, common-sense rationale for illness, teaching that seasonal fevers and coughs arose from internal humoural imbalances.',
+              'Provided an all-encompassing logical explanation for health and illness, convincing medieval society that disease arose from internal fluid imbalance.',
             question: 'Why did humoral theory seem logical to medieval people?',
           },
           {
             step: 3,
             date: 'c1280',
-            para_ref: '[2.1–2.2]',
+            para_ref: '[3.1–3.2]',
             title: 'Galen’s Theory of Opposites',
             actor: 'Claudius Galen (Imperial Rome)',
-            tag: '⚖️ THEORY OF OPPOSITES',
+            tag: '🌶️ THEORY OF OPPOSITES',
             trigger:
-              'Claudius Galen expanded humoural pathology in imperial Rome into the Theory of Opposites, balancing excess humours with opposing physical qualities.',
-            desc: 'Claudius Galen expanded humoural pathology in imperial Rome into the Theory of Opposites, balancing excess humours with opposing physical qualities.',
+              'Galen developed the Theory of Opposites in imperial Rome, instructing physicians to treat excess humours with remedies possessing opposite physical qualities.',
+            desc: 'Galen developed the Theory of Opposites in imperial Rome, instructing physicians to treat excess humours with remedies possessing opposite physical qualities.',
             connective:
-              'Prescribed hot dry pepper for cold wet phlegm and cooling cucumber for hot dry fever, giving medieval doctors a complete, logical system of treatment.',
+              'Gave medieval physicians an authoritative, practical bedside prescription manual (e.g. heating spices for cold chills), making remedies feel scientifically certain.',
             question: 'How did the Theory of Opposites provide practical treatment rules?',
           },
           {
@@ -1823,26 +1794,26 @@ export const unitData = {
             para_ref: '[4.1–4.2]',
             title: 'The Matula & Diagnostic Uroscopy',
             actor: 'Gowned University Doctors',
-            tag: '🧪 DIAGNOSTIC UROSCOPY',
+            tag: '🧪 UROSCOPY FLASK',
             trigger:
-              'Because dissection was forbidden, physicians evaluated internal humoural balance by inspecting urine in a thin glass matula flask against circular twenty-shade wheels.',
-            desc: 'Because dissection was forbidden, physicians evaluated internal humoural balance by inspecting urine in a thin glass matula flask against circular twenty-shade wheels.',
+              'Unable to dissect internal anatomy, university doctors analyzed patient urine inside wheel-blown glass matula flasks against twenty-color parchment urine wheels.',
+            desc: 'Unable to dissect internal anatomy, university doctors analyzed patient urine inside wheel-blown glass matula flasks against twenty-color parchment urine wheels.',
             connective:
-              'Gave university doctors enormous professional authority as they sniffed, swirled, and tasted specimens, even though uroscopy revealed nothing about internal disease.',
+              'Granted university-trained physicians formidable diagnostic prestige and justified massive consultation fees, despite revealing zero microscopic causes.',
             question: 'Why did uroscopy give physicians great diagnostic authority?',
           },
           {
             step: 5,
             date: 'c1350',
-            para_ref: '[3.1–3.2]',
+            para_ref: '[5.1–5.2]',
             title: 'Miasma Theory & Foul Vapours',
             actor: 'Town Bailiffs & Physicians',
-            tag: '💨 MIASMA THEORY',
+            tag: '💨 CORRUPTED MIASMA',
             trigger:
-              'Physicians believed that toxic atmospheric fumes (miasma) arising from marshes, rotting carcasses, and open dung heaps corrupted bodily humours upon inhalation.',
-            desc: 'Physicians believed that toxic atmospheric fumes (miasma) arising from marshes, rotting carcasses, and open dung heaps corrupted bodily humours upon inhalation.',
+              'Physicians taught that corrupt, foul-smelling atmospheric air poisoned by rotting marshes and open cesspits disrupted internal humours upon inhalation.',
+            desc: 'Physicians taught that corrupt, foul-smelling atmospheric air poisoned by rotting marshes and open cesspits disrupted internal humours upon inhalation.',
             connective:
-              'Provided the primary rational explanation for epidemics like the Black Death, leading authorities to burn pitch fires and order street-clearing.',
+              'Prompted early municipal hygiene measures like street-sweeping and offal removal, while reinforcing the belief that bad smells directly generated deadly pestilence.',
             question: 'Why did rational physicians link bad smells directly to epidemics?',
           },
         ],
@@ -1850,51 +1821,6 @@ export const unitData = {
     },
     {
       id: 'lesson_1_3',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to evaluate medieval approaches to prevention and treatment:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'HUMOURAL PRACTICE',
-            title: '1. Phlebotomy, Purging & The Regimen Sanitatis',
-            prompt:
-              'Detail the specific methods medieval practitioners used to rebalance humours (bleeding, purging, cupping):',
-            model_notes: [
-              'Phlebotomy was performed via vein-cutting (using a fleam), leeches, or warm cupping glasses to draw excessive blood.',
-              'Purging cleared the digestive tract using emetics (vomit-inducing hellebore) and strong herbal laxatives (linseed and senna).',
-              "The 'Regimen Sanitatis' gave wealthy patients holistic lifestyle guidelines: balanced diet, moderate exercise, regular bathing, and sleep.",
-            ],
-            key_terms: ['Purging', 'Regimen Sanitatis'],
-          },
-          {
-            num: 2,
-            badge: 'RELIGIOUS REMEDIES',
-            title: '2. Pilgrimages, Relics, Fasting & Flagellation',
-            prompt:
-              'Explain the supernatural and religious actions ordinary people took to cure or prevent illness:',
-            model_notes: [
-              'Pilgrimages were made to holy shrines (e.g. Canterbury Cathedral to touch the shrine of Thomas Becket) seeking miraculous healing.',
-              'Patients touched saintly relics, lit votive candles, fasted, and prayed for saintly intercession.',
-              'During epidemics, religious zealots (Flagellants) whipped themselves publicly to show repentance and avert divine punishment.',
-            ],
-            key_terms: ['Pilgrimage to Shrines', 'Flagellants'],
-          },
-          {
-            num: 3,
-            badge: 'HERBAL REMEDIES',
-            title: '3. The Role of the Wise Woman & Herbal Theriac',
-            prompt:
-              'Explain how ordinary folk remedies, apothecaries, and herbal compounds (theriac) were used in daily life:',
-            model_notes: [
-              'Theriac was a famous multi-ingredient antidote containing up to 70 herbs, spices, and crushed serpent flesh.',
-              'Wise women in local villages provided practical herbal knowledge (chamomile, mint, willow bark) and delivered babies as midwives.',
-              'Ordinary peasants relied almost exclusively on wise women and apothecaries because university physicians charged prohibitive fees.',
-            ],
-            key_terms: ['Theriac', 'Wise Woman Healers'],
-          },
-        ],
-      },
       banner: '/images/medieval_barber_surgeon.jpg',
       banner_position: 'center 80%',
       title:
@@ -2004,24 +1930,55 @@ export const unitData = {
       },
       teacher_notes: {
         primer:
-          'The overarching pedagogical goal of this lesson is to help pupils understand why medieval treatments—such as bloodletting and purging—persisted for centuries despite killing patients. Because people believed humours had to be physically drained to lower heat, these debilitating treatments were viewed as medically essential.',
+          'This enquiry examines the full spectrum of medieval approaches to prevention and treatment: religious rituals, humoral bloodletting, digestive purging, herbal apothecary theriac compounds, and environmental regimens.',
         objectives: [
           {
-            objective: 'Analyse religious and supernatural methods of healing and prevention.',
+            objective:
+              'Explain why religious rituals, prayer, and flagellation remained the primary treatments for ordinary people.',
             primer:
-              'Direct pupils to paragraph [1.1]. Emphasise pilgrimages, relics, fasting, and confession as genuine frontline treatments.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize that if God sent illness, physical therapy was useless without spiritual reconciliation.',
             question:
-              'Why did sick medieval people travel hundreds of miles to touch holy relics at Canterbury instead of visiting a doctor?',
+              'Why did medieval patients regard communal prayer and fasting as more vital for recovery than calling a doctor?',
           },
           {
             objective:
-              'Explain rational humoural treatments: phlebotomy, purging, and herbal Theriac.',
+              'Analyse why bloodletting (phlebotomy) was the most universal physical treatment deployed across medieval society.',
             primer:
-              'Focus on paragraphs [2.1] and [3.1]. Explain the three methods of bloodletting (vein cutting, cupping, leeches) and the composition of Theriac.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source A (Phlebotomy Manuscript). Examine venesection, cupping, leeches, and monastic bleeding schedules.',
             question:
-              'Why did bloodletting and violent purging frequently cause the death of already weakened patients?',
+              'Why was phlebotomy practiced so universally despite frequently causing severe weakness and fatal infection?',
+          },
+          {
+            objective:
+              'Demonstrate how digestive purging (emetics, laxatives, and clysters) aimed to restore bodily equilibrium.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2]. Focus on scammony, senna, and pewter clyster syringes used to flush corrupt humours from the bowels.',
+            question:
+              'How did purging and enemas demonstrate the practical application of Galenic humoral theory?',
+          },
+          {
+            objective:
+              'Assess herbal remedies, garden simples, and the universal panacea known as Theriac.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source B (Galen Engraving). Discuss how domestic housewives and guild apothecaries compounded herbs with up to 70 ingredients.',
+            question:
+              'Why did complex herbal concoctions like Theriac remain trusted across all levels of society for centuries?',
+          },
+          {
+            objective:
+              'Evaluate preventive regimens (Regimen Sanitatis) and clean air measures among the wealthy nobility.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Explore moderation in diet, carrying aromatic pomanders, and fleeing plague-ridden cities.',
+            question:
+              'Why was preventive lifestyle guidance accessible almost exclusively to the wealthy medieval aristocracy?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Phlebotomy / Bloodletting Manuscript from MS Sloane 1977 (c.1300), showing a seated medieval practitioner using a spring fleam and bowl to draw dark venous blood from a patient’s median arm vein. Bloodletting was the supreme physical therapy to relieve excess blood (plethora). Hinge Question: Why did medieval practitioners believe that draining large volumes of blood from an already weakened patient would restore bodily health?',
+          'Source B':
+            'Engraved portrait of Claudius Galen, the 2nd-century Roman imperial physician whose pharmaceutical writings codified over 500 plant-based remedies and complex compounds like Theriac. Hinge Question: How did Galen’s authority ensure that multi-ingredient herbal compounds like Theriac remained standard apothecary prescriptions for over 1,500 years?',
+        },
       },
       do_now: [
         {
@@ -2068,76 +2025,79 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          act_title: 'Context: Spiritual Healing & Religious Penitence',
-          text: '<span class="para-ref">[1.1]</span> Because medieval society fundamentally believed that health and illness were governed by divine will, the initial and most urgent response to any sickness was spiritual reconciliation. Church authorities instructed that physical remedies were completely futile unless the patient’s soul was first cleansed of sin through sacramental confession with a parish priest. Parishioners were warned that seeking medical cures without repenting mortal sins was an act of pride that would invite eternal damnation. Affluent families commissioned monasteries to sing daily intercessory requiem Masses, while common folk fasted rigorously, wore coarse hair-shirts, distributed alms to the destitute, and lit votive wax candles before altar statues of patron saints.\n\n<span class="para-ref">[1.2]</span> Pilgrimage was regarded as the ultimate therapeutic journey in medieval England. Hundreds of thousands of afflicted sufferers walked vast distances along ancient pilgrimage routes to sacred shrines housing miraculous holy relics. Sick pilgrims journeyed to the tomb of Saint Thomas Becket at Canterbury Cathedral, the shrine of Our Lady at Walsingham, or Saint Cuthbert at Durham. Upon reaching the shrine, sufferers knelt in prayer, touched reliquaries encasing holy bones, drank blessed well water, and purchased lead pilgrim badges as protective amulets. Monastic chronicle rolls recorded hundreds of miraculous cures—from restored sight to the healing of tumours—reinforcing the popular conviction that divine mercy was infinitely more efficacious than mortal medicine.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Using paragraphs [1.1]–[1.2], explain why religious rituals were considered frontline medical treatments.',
-              model:
-                'Religious rituals were considered frontline treatments because people believed God directly sent illness as a punishment for sin. Without confessing sins, fasting, praying, or visiting holy shrines to touch saints’ relics (such as Thomas Becket at Canterbury), people believed physical treatments would fail to appease God’s wrath.',
-            },
-          ],
+          title: 'Act 1: Religious Treatments: Prayers, Fasting & Flagellation (c. 1250)',
+          theme_heading: 'Act 1: Religious Treatments: Prayers, Fasting & Flagellation (c. 1250)',
+          text: '<span class="para-ref">[1.1]</span> Because medieval society fundamentally believed that health and sickness were governed by divine will, religious and spiritual treatments constituted the essential first line of defence. When fever or epidemic pestilence struck, physical medicine was considered completely futile unless the patient first achieved spiritual reconciliation with Almighty God. Sufferers sought absolution by reciting repetitive devotional prayers—most commonly the <em>Pater Noster</em> (Lord’s Prayer), <em>Ave Maria</em> (Hail Mary), and the seven Penitential Psalms—while parish priests administered the Last Rites (Extreme Unction) to cleanse mortal sins from the dying soul.<br><br><span class="para-ref">[1.2]</span> Beyond bedside prayers, communities deployed collective religious rituals to avert divine wrath. Diocesan bishops commanded mandatory parish fasts, daily penitential processions through city lanes, and financial offerings to church altars. In moments of extreme existential crisis, desperate penitents engaged in extreme bodily mortification, including wearing abrasive horsehair shirts and self-flagellation, beating their bare shoulders with iron-tipped knotted cords to demonstrate genuine remorse. Spiritual pilgrimage to holy shrines like Canterbury or Walsingham was sought above all else, in the fervent conviction that touching saintly relics would elicit miraculous divine healing.',
         },
         {
           act: 2,
-          act_title: 'Escalation: Phlebotomy—The Universal Humoural Treatment',
-          text: '<span class="para-ref">[2.1]</span> Whenever physical therapy was deployed, the most universally practiced and revered procedure was Phlebotomy (bloodletting). Derived directly from Galen’s anatomical doctrine that blood was the dominant, warmest humour and the primary combustible fuel for fevers, physicians ordered regular venesection to evacuate excess heat and rebalance bodily fluids. Bloodletting was so completely integrated into daily medieval routine that English monasteries scheduled compulsory "bleeding weeks" (minutio) several times annually, during which entire monastic communities were bled in the infirmary for preventive hygiene, receiving nourishing meat broths to recuperate.\n\n<span class="para-ref">[2.2]</span> Phlebotomy was executed via three distinct physical procedures. The standard technique was venesection, wherein a practitioner used a razor-sharp, spring-loaded or handheld blade called a fleam to slice open an arm or neck vein, collecting measured pints of steaming blood in graded pewter bleeding bowls. For localized inflammation or pain, practitioners performed Cupping: heating a glass or bronze cup over a candle flame and sealing it over scarified skin, creating an airtight vacuum that drew blood into the tissue. Finally, Leeching was utilized for sensitive bodily areas like the throat or gums; medicinal leeches (Hirudo medicinalis) were applied to suck corrupt blood until engorged. While intended to restore equilibrium, excessive bloodletting caused massive blood loss, severe hypovolemic shock, and frequently precipitated the death of already weakened patients.',
+          title: 'Act 2: Humoral Phlebotomy: Bloodletting & Cupping (c. 1300)',
+          theme_heading: 'Act 2: Humoral Phlebotomy: Bloodletting & Cupping (c. 1300)',
           source: {
-            id: 'source_a_bleeding',
+            id: 'source_a_phlebotomy_manuscript',
             letter: 'A',
             title: 'Source A: Phlebotomy / Bloodletting Manuscript (MS Sloane 1977, c.1300)',
-            src: '/images/bloodletting.jpg',
-            source: '/images/bloodletting.jpg',
-            image: '/images/bloodletting.jpg',
+            src: '/images/phlebotomy_manuscript.jpg',
+            source: '/images/phlebotomy_manuscript.jpg',
+            image: '/images/phlebotomy_manuscript.jpg',
             caption:
-              'A medieval physician opening a vein in the arm using a fleam while blood drains into a bowl, supervised by an attendant.',
-            provenance: 'British Library MS Sloane 1977, England, c.1300.',
-            context:
-              'Bloodletting was the most universal surgical intervention in medieval Europe, performed by both physicians and barber-surgeons to balance humours.',
+              'A 14th-century illustration of a medical practitioner opening a vein in a patient’s arm with a lancet into a shallow collection bowl.',
+            desc: 'Fourteenth-century manuscript miniature of bloodletting.',
+            provenance:
+              'Chirurgia by Roger Frugardi, England, c.1300–1320. British Library (Shelfmark: MS Sloane 1977, fol. 6r).',
+            citation:
+              'Chirurgia by Roger Frugardi, England, c.1300–1320. British Library (Shelfmark: MS Sloane 1977, fol. 6r).',
             question:
-              'Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+              'Why did medieval practitioners believe that draining large volumes of blood from an already weakened patient would restore bodily health?',
             hinge_question:
-              'Study the physician using a fleam (blade) to open a vein and collect blood in a bowl. Why did medieval people believe that releasing blood was an essential way to restore balance to the body and prevent fevers, even though it frequently weakened the patient?',
+              'Why did medieval practitioners believe that draining large volumes of blood from an already weakened patient would restore bodily health?',
+            source_context:
+              'Showing a seated medieval practitioner using a spring fleam and bowl to draw dark venous blood from a patient’s median arm vein. Bloodletting was the supreme physical therapy to relieve excess blood (plethora).',
+            context:
+              'Showing a seated medieval practitioner using a spring fleam and bowl to draw dark venous blood from a patient’s median arm vein. Bloodletting was the supreme physical therapy to relieve excess blood (plethora).',
           },
+          text: '<span class="para-ref">[2.1]</span> Whenever physical therapy was deployed, the most universal, authoritative, and ubiquitous treatment was phlebotomy—the deliberate surgical extraction of blood (<span class="archival-meta-tag">Source A</span>). Humoural doctrine taught that the human liver continuously generated blood from digested food, frequently producing a dangerous condition known as <em>plethora</em> (an overabundance of hot, moist blood that inflamed internal organs). To restore equilibrium, practitioners extracted blood using three distinct methods: venesection (slicing open a vein with a razor-sharp fleam or lancet), cupping (scratching the skin and placing heated glass or horn cups over the incision to draw blood to the surface via suction), and leeches (<em>hirudotherapy</em>, attaching medicinal leeches to sensitive areas like gums, nostrils, or hemorrhoids).<br><br><span class="para-ref">[2.2]</span> Phlebotomy was conducted with rigid anatomical and astrological precision. Practitioners consulted complex phlebotomy charts indicating which specific vein connected to which inflamed organ: the cephalic vein at the thumb base was incised for head ailments, while the basilic vein near the elbow was opened for liver and spleen fevers. Monks in monastic infirmaries were subjected to mandatory communal bleeding sessions up to six times per year to prevent lustful thoughts and humoural excess. Patients were routinely bled until they collapsed into unconscious syncope, a state practitioners interpreted as proof that burning humoural heat had been successfully purged.',
         },
         {
           act: 3,
-          act_title: 'Forensic Evidence: Purging, Emetics & Herbal Theriac',
-          text: '<span class="para-ref">[3.1]</span> When phlebotomy failed to relieve humoural congestion, physicians resorted to aggressive Purging to evacuate putrefied matter from the gastrointestinal tract. In medieval physiology, the stomach was conceptualized as a simmering cooking vessel; if food spoiled before complete digestion, it generated toxic yellow bile and melancholic black bile. To clear the upper tract, physicians administered violent emetics containing antimony, copper sulfate, or dried cantharides beetles, inducing prolonged vomiting. To clear the bowels, practitioners prescribed powerful laxatives compounded from scammony, senna, black hellebore, and linseeds, or administered clysters (enemas) using hollow goose quills and pig bladders to pump caustic herbal decoctions into the rectum.\n\n<span class="para-ref">[3.2]</span> Alongside purging, pharmacopoeia formed the primary medicinal therapy, mixed by guild apothecaries from native botanicals and costly imported spices. Household herb gardens supplied mint, sage, chamomile, wormwood, and garlic, which were boiled into bitter syrups, electuaries, and healing poultices. The most celebrated universal antidote was Theriac (Venice treacle), a complex ancient compound tracing back to King Mithridates of Pontus. Containing over sixty disparate ingredients—including crushed viper flesh, roasted scorpions, raw opium, gum arabic, crushed pearls, and honey—Theriac required months of fermentation. Regarded as a miraculous cure-all for poisons, fevers, and plague, Theriac was so profoundly trusted that doctors believed it could neutralize any humoural corruption.',
+          title: 'Act 3: Purging, Clysters & Humoral Cleansing (c. 1320)',
+          theme_heading: 'Act 3: Purging, Clysters & Humoral Cleansing (c. 1320)',
+          text: '<span class="para-ref">[3.1]</span> When phlebotomy failed to relieve humoural congestion, practitioners turned to purging the digestive tract. Galenic doctrine held that toxic, corrupt humours accumulated within the stomach and intestines, necessitating aggressive evacuation through vomiting or bowel evacuation. To induce violent vomiting, healers administered emetics formulated from antimony, bitter aloes, or scammony resin. Alternatively, to clear the lower intestines, patients were forced to ingest violent laxatives compounded from dried senna leaves, black hellebore root, and linseed oil, inducing debilitating gastrointestinal purging.<br><br><span class="para-ref">[3.2]</span> The most famous instrument of medieval purging was the clyster—an enema apparatus consisting of a long pewter or ivory pipe attached to an oiled pig’s bladder. The apothecary filled the bladder with a warm concoction of mallow leaves, chamomile flowers, crushed bran, and olive oil, injecting the fluid directly into the patient’s rectum to soften compacted faeces and purge corrupt melancholic bile. Although these violent treatments frequently induced severe dehydration, electrolyte collapse, and circulatory shock, they provided tangible sensory proof to the patient that dangerous internal poisons were being physically evacuated from the body.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Herbal Apothecary Remedies & Theriac (c. 1350)',
+          theme_heading: 'Act 4: Herbal Apothecary Remedies & Theriac (c. 1350)',
           source: {
-            id: 'source_b_galen',
+            id: 'source_b_galen_portrait',
             letter: 'B',
             title: 'Source B: Portrait of Claudius Galen (Engraving)',
             src: '/images/galen_portrait.jpg',
             source: '/images/galen_portrait.jpg',
             image: '/images/galen_portrait.jpg',
             caption:
-              'Claudius Galen (AD 129–c. 216), whose clinical treatises on the Theory of Opposites, phlebotomy, and purging dominated European medicine for 1,400 years.',
-            provenance: 'Historical engraving after ancient Roman busts of Galen.',
-            context:
-              'Galen’s treatises on therapeutics dictated that doctors must actively expel corrupt humours through bleeding, sweating, and purging.',
+              'A classical portrait of the imperial Roman physician Claudius Galen, whose medical writings dominated European pharmacopeias.',
+            desc: 'Engraving of Claudius Galen, physician of antiquity.',
+            provenance:
+              'Engraved portrait, 16th century, based on classical busts. Wellcome Collection, London (Shelfmark: Iconographic Collection 3345i).',
+            citation:
+              'Engraved portrait, 16th century, based on classical busts. Wellcome Collection, London (Shelfmark: Iconographic Collection 3345i).',
             question:
-              'Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+              'How did Galen’s authority ensure that multi-ingredient herbal compounds like Theriac remained standard apothecary prescriptions for over 1,500 years?',
             hinge_question:
-              'Galen taught that the humours must be kept in constant equilibrium through balancing treatments. Why did his authoritative treatises lead doctors to prescribe violent purging (emetics and laxatives) alongside herbal compounds like Theriac, rather than searching for specific remedies for individual illnesses?',
+              'How did Galen’s authority ensure that multi-ingredient herbal compounds like Theriac remained standard apothecary prescriptions for over 1,500 years?',
+            source_context:
+              'The 2nd-century Roman imperial physician whose pharmaceutical writings codified over 500 plant-based remedies and complex compounds like Theriac.',
+            context:
+              'The 2nd-century Roman imperial physician whose pharmaceutical writings codified over 500 plant-based remedies and complex compounds like Theriac.',
           },
+          text: '<span class="para-ref">[4.1]</span> For everyday non-surgical ailments, all social classes turned to herbal pharmacopeias codified by Galen (<span class="archival-meta-tag">Source B</span>) and preserved in medieval herbals like the <em>Macer Floridus</em>. Village housewives and guild apothecaries compounded hundreds of indigenous wild plants: crushed mint and chamomile were boiled to soothe abdominal colic; sage and marigold flowers were steeped in vinegar to treat septic wounds; and wormwood was distilled to expel intestinal parasites. Wealthier townspeople purchased imported exotic spices—such as cloves, cinnamon, ginger, and saffron from India and the Levant—which were ground into fine electuaries with honey.<br><br><span class="para-ref">[4.2]</span> The supreme universal panacea across the medieval world was Theriac (often termed Great Venice Treacle). Originally formulated by Emperor Nero’s court physician Andromachus, Theriac was a staggeringly complex concoction containing up to seventy distinct ingredients, including dried viper flesh, pure opium, asphalt, crushed pearls, myrrh, and wine. Ground over months in stone mortars, Theriac was prescribed as an infallible antidote against snakebites, virulent fevers, chest complaints, and the Black Death. While its high opium content dulled physical agony and induced restful sleep, it possessed zero biological efficacy against infectious bacterial pathogens.',
         },
         {
-          act: 4,
-          act_title: 'Historical Verdict: Prevention & The Regimen Sanitatis',
-          text: '<span class="para-ref">[4.1]</span> In medieval medical philosophy, preventive preservation of health was regarded as vastly superior to curative intervention. Maintaining personal physical equilibrium was considered an ethical and physical duty. Noblemen and wealthy clerics commissioned personalized parchment copies of the Regimen Sanitatis Salernitanum (The Salerno Rule of Health), an authoritative lifestyle treatise originating from the prestigious medical school of Salerno in southern Italy. The text instructed readers to regulate their daily existence across the "Six Non-Naturals": the quality of ambient air, balance of food and drink, physical exercise and rest, sleep and wakefulness, secretions and excretions, and psychological passions of the soul.\n\n<span class="para-ref">[4.2]</span> Adherents of the Regimen were instructed to rise early, wash their hands and face in cold stream water, comb their hair to clear cerebral vapors, avoid damp night mists, sleep with shuttered windows, and consume foods tailored to their individual humoural temperament. Many wealthy households installed private steam baths or visited municipal public bathhouses (stewes). While these hygiene practices promoted personal cleanliness and general wellbeing, they afforded zero protection against lethal bacterial or viral epidemics. Because all medieval preventive and curative approaches remained anchored to the fictional balance of Four Humours, medical practice remained static for centuries, offering virtually no genuine physiological protection against infectious disease.',
-          tasks: [
-            {
-              type: 'exam_practice',
-              tariff: '[12 marks]',
-              question:
-                'Explain why approaches to medical treatment changed very little during the Middle Ages (c1250–c1500).',
-              stimulus: ['The Theory of Opposites', 'Bloodletting'],
-              model:
-                'One major reason why medical treatments changed very little during the Middle Ages was the overwhelming authority of Galen’s Theory of Opposites. Medieval physicians were trained at universities where Galen’s treatises were taught as infallible truth. Under Galen’s system, disease was treated by applying opposite qualities to balance excess humours. Consequently, treatments were rigidly standardized: cold phlegmatic chills were treated with hot spices, and hot fevers were treated with bloodletting and cool cucumbers. Because physicians believed this system provided a complete and logical explanation for all illnesses, there was no perceived need to experiment with new treatments.\n\nFurthermore, the practice of bloodletting (phlebotomy) was deeply entrenched in medieval culture and backed by the Catholic Church. Both university physicians and guild-trained barber-surgeons performed bloodletting using fleams, cupping glasses, and leeches. Because people observed blood draining out and patients cooling down, they genuinely believed the bad humours were being removed, even though patients were simply fainting from blood loss. Religious customaries even required regular bleeding for monks in monasteries. Because bloodletting seemed to produce a physical result that matched Galen’s teachings, it remained unchallenged throughout the period.\n\nFinally, the lack of scientific instruments and understanding of chemistry prevented the development of new treatments. Without microscopes, doctors had no knowledge of bacteria or viruses; they could only treat visible symptoms using traditional herbal mixtures like Theriac (containing 60+ ingredients). Because the Church controlled education and banned any questioning of ancient texts, physicians focused on memorising traditional herbal recipes and classical Latin treatises rather than conducting chemical or clinical trials. Consequently, treatments remained virtually identical from 1250 to 1500.',
-            },
-          ],
+          act: 5,
+          title: 'Act 5: The Regimen Sanitatis & Clean Air (c. 1400)',
+          theme_heading: 'Act 5: The Regimen Sanitatis & Clean Air (c. 1400)',
+          text: '<span class="para-ref">[5.1]</span> In medieval medical philosophy, preventive preservation of health was regarded as vastly superior to curative intervention. This philosophy was formalized in the <em>Regimen Sanitatis Salernitanum</em> (The Salerno Rule of Health), an influential didactic treatise composed by the prestigious medical faculty at Salerno, Italy, for the instruction of European nobility and royal courts. The Regimen instructed wealthy individuals to govern their lives according to the "Six Non-Naturals": air, food and drink, motion and rest, sleep and wakefulness, excretion and retention, and passions of the soul. Sickness was avoided by eating seasonal foods, avoiding heavy greasy meats, exercising moderately before meals, and maintaining emotional calm.<br><br><span class="para-ref">[5.2]</span> Most crucially, preventive regimen required continuous protection against corrupted environmental miasma. Wealthy barons and noble ladies carried pomanders—perforated gold or silver filigree orbs filled with ambergris, cloves, musk, and dried rose petals—which they held to their nostrils when traversing urban thoroughfares. In noble halls, servants burned sweet-scented woods like juniper, pine, and rosemary in open braziers to cleanse domestic air. When epidemic plague loomed, the ultimate preventive advice of classical physicians was simple and brutal: <em>Cito, longe, tarde</em> ("Flee quickly, travel far, return slowly")—an evasive luxury available only to the landowning aristocracy who could retreat to secluded rural country manors.',
         },
       ],
       sources: [
@@ -2366,9 +2326,9 @@ export const unitData = {
           para_ref: '[1.1–1.2]',
           heading: 'Why did ordinary people consider prayer more vital than medicine?',
           bullets: [
-            'Chanting Latin prayers beside the sickbed',
-            'Fasting on bread and well water',
-            'Whipping bare backs to beg God for mercy',
+            'Chanting the Lord’s Prayer and Hail Marys',
+            'Ordering parish fasts and penitential processions',
+            'Seeking miraculous cures at saintly shrines',
           ],
           focus_clue: 'Why did ordinary people consider prayer more vital than medicine?',
         },
@@ -2378,51 +2338,51 @@ export const unitData = {
           para_ref: '[2.1–2.2]',
           heading: 'Why was bloodletting the most universal physical treatment?',
           bullets: [
-            'Slicing vein walls with iron fleams',
-            'Applying fat swamp leeches to temples',
-            'Catching warm dark blood in pewter bowls',
+            'Relieving dangerous plethoric blood congestion',
+            'Slicing median arm veins with lancets and fleams',
+            'Bleeding monastic brothers six times a year',
           ],
           focus_clue: 'Why was bloodletting the most universal physical treatment?',
         },
         {
           step: 3,
           date: 'c1320',
-          para_ref: '[3.1]',
+          para_ref: '[3.1–3.2]',
           heading: 'How was purging believed to restore bodily equilibrium?',
           bullets: [
-            'Swallowing poisonous black hellebore seeds',
-            'Pumping warm mallow tea through boar-bladder clysters',
-            'Emptying bowels to balance bodily humours',
+            'Administering violent emetics to induce vomiting',
+            'Injecting herbal broths through pewter clyster pipes',
+            'Flushing corrupt poisonous humours from the bowels',
           ],
           focus_clue: 'How was purging believed to restore bodily equilibrium?',
         },
         {
           step: 4,
           date: 'c1350',
-          para_ref: '[3.2]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why did herbal recipes remain popular across all social classes?',
           bullets: [
-            'Grinding crushed mint and sage in stone mortars',
-            'Mixing seventy ingredients into treacle theriac',
-            'Brewing bitter willow bark teas for fever',
+            'Compounding garden herbs like sage and mint',
+            'Mixing seventy ingredients into Venice Theriac',
+            'Using opium to dull acute physical pain',
           ],
           focus_clue: 'Why did herbal recipes remain popular across all social classes?',
         },
         {
           step: 5,
           date: 'c1400',
-          para_ref: '[4.1–4.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'How did wealthy barons attempt to prevent sickness before it struck?',
           bullets: [
-            'Following private Latin health rulebooks',
-            'Burning sweet lavender sticks indoors',
-            'Carrying fragrant posy flowers through smelly streets',
+            'Following Salerno’s Regimen Sanitatis rules',
+            'Holding sweet-scented pomanders against miasma',
+            'Fleeing plague cities for rural country manors',
           ],
           focus_clue: 'How did wealthy barons attempt to prevent sickness before it struck?',
         },
       ],
       causal_domino_spine: {
-        title: 'Approaches to Treatment & Prevention: Phlebotomy, Purging & Regimens',
+        title: 'Approaches to Prevention & Treatment: Bleeding, Purging & Regimens',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -2431,12 +2391,12 @@ export const unitData = {
             para_ref: '[1.1–1.2]',
             title: 'Religious Prayers, Fasting & Flagellation',
             actor: 'Parish Priest & Penitent Sufferers',
-            tag: '🙏 SPIRITUAL HEALING',
+            tag: '🙏 SPIRITUAL DEVOTION',
             trigger:
-              'Because sickness was governed by divine will, the essential first line of defence was spiritual appeasement through heartfelt prayer, church attendance, and fasting.',
-            desc: 'Because sickness was governed by divine will, the essential first line of defence was spiritual appeasement through heartfelt prayer, church attendance, and fasting.',
+              'Believing sickness was divine retribution for sin, suffering patients prioritized spiritual absolution through repetitive prayers, church fasts, and penitential processions.',
+            desc: 'Believing sickness was divine retribution for sin, suffering patients prioritized spiritual absolution through repetitive prayers, church fasts, and penitential processions.',
             connective:
-              'Led desperate crowds during epidemics to join flagellant processions, whipping bare shoulders to appease God’s wrath and beg for remission of sins.',
+              'Ensured that religious repentance took precedence over physical medicine, reinforcing the Church’s authority over the sickbed.',
             question: 'Why did ordinary people consider prayer more vital than medicine?',
           },
           {
@@ -2445,54 +2405,54 @@ export const unitData = {
             para_ref: '[2.1–2.2]',
             title: 'Humoral Phlebotomy (Bloodletting)',
             actor: 'Barber-Surgeons & Physicians',
-            tag: '🩸 HUMORAL PHLEBOTOMY',
+            tag: '🩸 PHLEBOTOMY / BLEEDING',
             trigger:
-              'Whenever physical intervention was attempted, the universal remedy was phlebotomy—slicing veins with iron fleams or applying hungry leeches to temples.',
-            desc: 'Whenever physical intervention was attempted, the universal remedy was phlebotomy—slicing veins with iron fleams or applying hungry leeches to temples.',
+              'To treat plethoric humoral excess, practitioners deployed venesection with lancets, heated cupping glasses, and medicinal leeches along mapped vein pathways.',
+            desc: 'To treat plethoric humoral excess, practitioners deployed venesection with lancets, heated cupping glasses, and medicinal leeches along mapped vein pathways.',
             connective:
-              'Removed excess hot blood to restore humoural balance, guided by Zodiac Man charts to ensure the moon occupied a favourable astrological house.',
+              'Became the universal medical therapy across monasteries, towns, and villages, routinely bleeding patients until unconscious syncope occurred.',
             question: 'Why was bloodletting the most universal physical treatment?',
           },
           {
             step: 3,
             date: 'c1320',
-            para_ref: '[3.1]',
+            para_ref: '[3.1–3.2]',
             title: 'Purging, Vomiting & Enemas',
             actor: 'Apothecaries & Sick Patients',
-            tag: '🌿 EVACUATIVE PURGING',
+            tag: '🚽 DIGESTIVE PURGING',
             trigger:
-              'To eliminate corrupted digestive humours, practitioners administered violent herbal emetics to trigger vomiting or pumped warm herbal broths via clyster syringes.',
-            desc: 'To eliminate corrupted digestive humours, practitioners administered violent herbal emetics to trigger vomiting or pumped warm herbal broths via clyster syringes.',
+              'Healers administered violent emetics, black hellebore laxatives, and pewter clyster enema syringes filled with herbal mallow broths to flush the digestive tract.',
+            desc: 'Healers administered violent emetics, black hellebore laxatives, and pewter clyster enema syringes filled with herbal mallow broths to flush the digestive tract.',
             connective:
-              'Provided dramatic, visible proof that toxic humours were being physically evacuated from the body, reinforcing the patient’s belief in humoural theory.',
+              'Provided visible, visceral proof that corrupt humours were leaving the body, despite frequently triggering fatal dehydration and shock.',
             question: 'How was purging believed to restore bodily equilibrium?',
           },
           {
             step: 4,
             date: 'c1350',
-            para_ref: '[3.2]',
+            para_ref: '[4.1–4.2]',
             title: 'Herbal Apothecary Remedies & Theriac',
             actor: 'Guild Apothecaries & Housewives',
-            tag: '🍯 COMPOUND THERIAC',
+            tag: '🌱 HERBAL THERIAC',
             trigger:
-              'Apothecaries and housewives compounded herbal materia medica from mint, sage, and chamomile, mixing multi-ingredient antidotes called theriac.',
-            desc: 'Apothecaries and housewives compounded herbal materia medica from mint, sage, and chamomile, mixing multi-ingredient antidotes called theriac.',
+              'Housewives brewed garden mint and chamomile, while apothecaries compounded Theriac containing up to seventy ingredients including viper flesh and opium.',
+            desc: 'Housewives brewed garden mint and chamomile, while apothecaries compounded Theriac containing up to seventy ingredients including viper flesh and opium.',
             connective:
-              'Offered widely accessible, soothing remedies for everyday ailments, although complex theriac treacles were completely powerless against acute bacterial infections.',
+              'Created an enduring herbal pharmacopeia that offered genuine narcotic pain relief and digestive comfort, even without curing infectious pathogens.',
             question: 'Why did herbal recipes remain popular across all social classes?',
           },
           {
             step: 5,
             date: 'c1400',
-            para_ref: '[4.1–4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'The Regimen Sanitatis & Clean Air',
             actor: 'Salerno Medical Faculty & Wealthy Nobles',
-            tag: '📜 REGIMEN SANITATIS',
+            tag: '🏰 PREVENTIVE REGIMEN',
             trigger:
-              'The Regimen Sanitatis Salernitanum instructed the wealthy elite to regulate the six non-naturals—diet, exercise, sleep, bathing, fresh air, and emotional tranquility.',
-            desc: 'The Regimen Sanitatis Salernitanum instructed the wealthy elite to regulate the six non-naturals—diet, exercise, sleep, bathing, fresh air, and emotional tranquility.',
+              'The Regimen Sanitatis Salernitanum instructed the wealthy aristocracy on moderating diet, sleep, exercise, and carrying clove pomanders to repel bad air.',
+            desc: 'The Regimen Sanitatis Salernitanum instructed the wealthy aristocracy on moderating diet, sleep, exercise, and carrying clove pomanders to repel bad air.',
             connective:
-              'Established preventive lifestyle management as the pinnacle of medieval health, prompting barons to burn lavender and carry sweet posies through filthy towns.',
+              'Established preventive lifestyle health as an elite privilege, prompting wealthy lords to flee pestilential urban outbreaks for rural manors.',
             question: 'How did wealthy barons attempt to prevent sickness before it struck?',
           },
         ],
@@ -2500,51 +2460,6 @@ export const unitData = {
     },
     {
       id: 'lesson_1_4',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to examine medical practitioners and monastic hospitals:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'PRACTITIONERS',
-            title: '1. Physicians vs Barber-Surgeons & Apothecaries',
-            prompt:
-              'Compare the training, status, and treatments of university physicians versus apprentice barber-surgeons:',
-            model_notes: [
-              'Physicians studied 7-10 years at universities reading Latin texts, examined urine flasks, rarely touched patients, and charged high fees.',
-              'Barber-surgeons learned via apprenticeships, pulled teeth, set broken bones, lanced buboes, and amputated limbs with boiling oil cautery.',
-              'Apothecaries mixed herbal prescriptions, ointments, and poisons; cheaper than physicians, accessible to the urban middle class.',
-            ],
-            key_terms: ['University Physician', 'Barber-Surgeon'],
-          },
-          {
-            num: 2,
-            badge: 'MONASTIC HOSPITALS',
-            title: "2. St Bartholomew's, St Thomas's & 'Care Not Cure'",
-            prompt:
-              'Explain why medieval monastic hospitals focused on hospitality, warmth, and prayer rather than medical treatment:',
-            model_notes: [
-              "Hospitals (like St Bartholomew's, founded 1123) were run by monks and nuns as charitable Christian sanctuaries.",
-              "Their core philosophy was 'care not cure': providing clean bedding, warmth, food, and daily prayer to comfort the soul.",
-              'Infectious diseases (plague, leprosy), terminal cases, and pregnant women were rejected to preserve order and spiritual purity.',
-            ],
-            key_terms: ['Care not Cure', 'Monastic Infirmary'],
-          },
-          {
-            num: 3,
-            badge: 'SEGREGATION',
-            title: '3. Lazar Houses & Leprosy Containment',
-            prompt:
-              'Explain how medieval communities managed leprosy through isolation in Lazar houses on town outskirts:',
-            model_notes: [
-              'Leprosy was feared as an incurable, disfiguring contagion and viewed as a sign of inner moral or spiritual corruption.',
-              "Sufferers were legally cast out of towns and housed in dedicated 'Lazar houses' located well outside parish boundaries.",
-              'Lepers were forced to wear hooded cloaks and ring wooden hand-clappers or bells to warn healthy citizens to keep away.',
-            ],
-            key_terms: ['Lazar House', 'Leprosy Quarantine'],
-          },
-        ],
-      },
       banner: '/images/hotel_dieu_hospital.jpg',
       banner_position: 'center 40%',
       title: 'KT1.4: Medical Care Providers & Monastic Hospitals: ‘Care Not Cure’ (c1250–c1500)',
@@ -2653,24 +2568,55 @@ export const unitData = {
       },
       teacher_notes: {
         primer:
-          'The overarching pedagogical goal of this lesson is to eliminate the common GCSE misconception that medieval hospitals were medical treatment centers. By exploring the religious nature of monastic care, pupils understand that hospitals provided shelter, warmth, and prayer ("care not cure"), while surgical and medical treatments were carried out by barber-surgeons, apothecaries, and wise women in the home.',
+          'This enquiry examines the rigid medical hierarchy of medieval healthcare: university-trained physicians, guild apothecaries, barber-surgeons, monastic hospitals providing "care not cure", and female household healers.',
         objectives: [
           {
             objective:
-              'Distinguish between the roles, training, and status of medieval healthcare providers.',
+              'Explain why university-trained physicians were accessible only to royalty and the ultra-wealthy.',
             primer:
-              'Focus on paragraphs [1.1] and [2.1]. Emphasise that university physicians studied Latin theory for 7–10 years and rarely touched patients, while barber-surgeons performed physical surgery.',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize the 10-year Latin university training, theoretical focus, pulse/uroscopy inspection, and high fees.',
             question:
-              'Why were university-trained physicians regarded as higher in social status than barber-surgeons, despite barber-surgeons performing all physical operations?',
+              'Why did university-trained physicians refuse to perform manual surgical operations or cut into living flesh?',
           },
           {
-            objective: 'Analyse the role of medieval monastic hospitals (‘care not cure’).',
+            objective:
+              'Analyse how guild apothecaries provided accessible herbal medicines to townspeople.',
             primer:
-              'Direct pupils to paragraphs [3.1] and [4.1]. Highlight that hospitals were run by monks and nuns to offer hospitality and pray for souls, excluding infectious patients.',
+              'Direct students to paragraphs [2.1]–[2.2]. Contrast trade guild apprenticeships with academic universities, and explore shopfront sales of electuaries and simples.',
             question:
-              'Why did medieval hospitals have chapels and altars at the end of their wards instead of surgical operating rooms?',
+              'Why were apothecaries often in conflict with university physicians over prescribing medicines?',
+          },
+          {
+            objective:
+              'Evaluate the lower social status and surgical duties of medieval barber-surgeons.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2] and Source A (Surgeon Suturing Head Wound). Discuss bone-setting, tooth-pulling, amputations, and cautery without pain relief.',
+            question:
+              'Why did medieval society view barber-surgeons as manual craftsmen rather than respectable scholars?',
+          },
+          {
+            objective:
+              'Assess why medieval monastic hospitals deliberately focused on spiritual ‘care not cure’.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2] and Source B (Hôtel-Dieu Hospital Ward). Highlight that over 1,200 hospitals provided beds, warmth, and prayer, but barred infectious sick.',
+            question:
+              'Why did medieval monastic hospitals bar infectious plague and leprosy sufferers from their wards?',
+          },
+          {
+            objective:
+              'Explain why the vast majority of ordinary peasants relied entirely on female family members and wise women.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2]. Explore practical village midwifery, poultices, bone-setting, and oral herbal tradition delivered at zero financial cost.',
+            question:
+              'Why was domestic healthcare provided by women often safer and more effective than professional medical care?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Medieval Surgeon Suturing a Head Wound, from a 14th-century surgical manuscript (MS Sloane 1977). Illustrates a barber-surgeon using a curved needle and silk thread to stitch a deep cranial laceration while his assistant steadies the conscious patient. Hinge Question: What does this depiction of manual surgery reveal about the practical skill—and immense pain—involved in medieval trauma treatment?',
+          'Source B':
+            'Hôtel-Dieu Hospital Ward, miniature from the Livre de Vie Active (c.1482). Depicts Augustinian nuns nursing bedridden patients wrapped in white linen shrouds, while a priest conducts the Catholic Mass at an altar directly visible from every patient bed. Hinge Question: How does this hospital miniature demonstrate the medieval principle of ‘care not cure’?',
+        },
       },
       do_now: [
         {
@@ -2717,76 +2663,79 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          act_title: 'Context: The Elite University Physician',
-          text: '<span class="para-ref">[1.1]</span> In medieval England, access to formal medical treatment was rigidly stratified by wealth, social hierarchy, and geography. At the supreme apex of the medical hierarchy stood the university-trained Physician (Medicus). To acquire a medical licence, a physician spent between seven and ten years in rigorous post-graduate scholastic study at church-dominated universities such as Oxford, Cambridge, Paris, Bologna, or Montpellier. Their curriculum was overwhelmingly theoretical, philological, and literary; students spent endless terms memorising, debating, and transcribing classical Latin translations of Galen, Hippocrates, and Arabic medical luminaries like Avicenna (Ibn Sina) and Rhazes (al-Razi). Direct physical examination of sick human bodies was virtually nonexistent during their degrees.\n\n<span class="para-ref">[1.2]</span> Because university education was extraordinarily costly and prolonged, licensed physicians were an extreme luxury. Historical tax records indicate that fewer than one hundred fully licensed physicians practiced throughout the entirety of England before 1350. Their astronomical fees meant they were retained almost exclusively by the royal court, dukes, high-ranking bishops, and wealthy monastic abbots. When attending an affluent patient, the physician performed an aristocratic intellectual consultation: he refrained from touching wounds or administering treatments himself, instead inspecting the urine flask (matula), feeling the pulse, calculating astrological planet houses, and writing a complex Latin prescription for lower-status manual tradesmen to execute.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Using paragraphs [1.1]–[1.2], explain why ordinary medieval people rarely saw a university-trained physician.',
-              model:
-                'Ordinary people rarely saw a university physician because they were extremely rare (fewer than 100 in England) and charged prohibitively high fees. Their training took 7 to 10 years at elite universities studying Latin texts, meaning they were affordable only to wealthy nobles, royalty, and high-ranking clergy.',
-            },
-          ],
+          title: 'Act 1: University-Trained Physicians: Theory, Wealth & Status (c. 1250)',
+          theme_heading: 'Act 1: University-Trained Physicians: Theory, Wealth & Status (c. 1250)',
+          text: '<span class="para-ref">[1.1]</span> In medieval England, access to formal medical treatment was rigidly stratified by wealth and social class. At the absolute summit of the professional hierarchy stood the university-trained physician. Medical doctors trained for up to a decade at prestigious universities—including Oxford, Cambridge, Paris, Montpellier, and Bologna—studying in Latin and mastering the canonical texts of Hippocrates, Galen, and Avicenna. However, their education was entirely scholastic and theoretical: students debated philosophical disputations and memorized classical humoral aphorisms without ever touching a living patient or conducting a physical clinical dissection.<br><br><span class="para-ref">[1.2]</span> Because university training was immensely lengthy and costly, licensed physicians were exceptionally scarce: by 1300, there were fewer than one hundred university-trained doctors across the entirety of England. Gowned physicians considered physical manual labor beneath their intellectual dignity, refusing to cut into human skin, lance boils, or dress wounds. Instead, they conducted dignified bedside consultations, examining urine flasks, taking pulses, checking astrological charts, and writing complex Latin prescriptions. Because their consultation fees were exorbitant, physicians catered exclusively to the royal court, landowning aristocracy, and ultra-wealthy urban merchants, leaving ninety-nine percent of the population completely beyond their reach.',
         },
         {
           act: 2,
-          act_title: 'Escalation: Barber-Surgeons, Apothecaries & Domestic Healers',
-          text: '<span class="para-ref">[2.1]</span> For the remaining ninety-nine percent of the population, physical healthcare was provided by manual craft guilds rather than academic scholars. Hands-on operative procedures were performed by Barber-Surgeons. Bound within urban livery companies and trained through strenuous seven-year craft apprenticeships, barber-surgeons operated with razors, fleams, probes, tooth-keys, and bone-saws. They extracted rotten teeth, dressed weeping ulcers, stitched lacerations, set fractured bones, lanced inflamed boils, and performed phlebotomy. Because they performed manual labor and soiled their fingers with human blood, university physicians regarded them with aristocratic condescension, classifying them as uneducated artisans.\n\n<span class="para-ref">[2.2]</span> Medicinal remedies were compounded and dispensed by Apothecaries. Organized in merchant guilds like London’s Worshipful Company of Grocers, apothecaries mixed medicinal syrups, electuaries, and salves from wild English plants and costly Mediterranean spices. Yet the true foundational bedrock of medieval medical relief was domestic care within the home, administered by mothers, housewives, and local village "wise women." Women brewed herbal infusions, applied soothing poultices to feverish children, and acted as community midwives. Local wise women preserved centuries of herbal folklore, diagnosing common ailments and providing affordable, compassionate care to agrarian peasant villages completely abandoned by licensed medicine.',
-          source: {
-            id: 'source_a_surgeon',
-            letter: 'A',
-            title: 'Source A: Medieval Surgeon Suturing a Head Wound (14th c.)',
-            src: '/images/medieval_barber_surgeon.jpg',
-            source: '/images/medieval_barber_surgeon.jpg',
-            image: '/images/medieval_barber_surgeon.jpg',
-            caption:
-              'A guild-trained surgeon physically stitching a patient’s severe head wound with needle and thread, recorded in a 14th-century Latin surgical treatise.',
-            provenance: 'Wellcome Collection MS L0037333, 14th century surgical treatise.',
-            context:
-              'Surgeons learned their craft through apprenticeships rather than universities. They performed physical operations without anesthetics or antiseptics, relying on wine to clean wounds and cautery irons to stop bleeding.',
-            question:
-              'Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
-            hinge_question:
-              'Observe the surgeon physically stitching a wound without any antiseptics or anaesthetics. Why were barber-surgeons considered socially inferior to university-trained physicians in the Middle Ages, despite being the only practitioners performing practical, hands-on treatment?',
-          },
+          title: 'Act 2: Guild Apothecaries & Spicers (c. 1300)',
+          theme_heading: 'Act 2: Guild Apothecaries & Spicers (c. 1300)',
+          text: '<span class="para-ref">[2.1]</span> For ordinary urban burghers, tradesmen, and master craftsmen who could never afford a physician, the high-street provider of physical medicine was the apothecary. Apothecaries were organized as skilled merchant craftsmen within powerful urban trade guilds—such as the Worshipful Company of Grocers in London. Unlike university doctors, apothecaries did not attend university; they acquired their extensive practical knowledge through seven-year apprenticeships, learning to identify, dry, weigh, and blend botanical herbs, mineral compounds, and imported spices.<br><br><span class="para-ref">[2.2]</span> Operating open shopfronts stocked with rows of labeled ceramic majolica jars, apothecaries compounded electuaries, soothing syrups, herbal simples, and clysters. While formal law stipulated that apothecaries were merely meant to compound recipes prescribed by licensed physicians, in everyday practice they served as direct diagnostic prescribers for townspeople. Dispensing medicines at a fraction of a physician’s fee, apothecaries were frequently accused by academic doctors of commercial quackery and illicit competition, yet they remained the indispensable pharmaceutical backbone of medieval town life.',
         },
         {
           act: 3,
-          act_title: 'Forensic Evidence: The Medieval Monastic Hospital',
-          text: '<span class="para-ref">[3.1]</span> Between 1100 and 1500, over 1,200 hospitals were founded across the towns and shires of England. However, a medieval hospital was fundamentally distinct from a modern clinical healing institution. The English word "hospital" derived directly from the Latin concept of hospitalitas—the Christian virtue of hospitality toward the stranger and the destitute. Medieval hospitals were ecclesiastical charities established by royal charters, wealthy merchant guilds, or aristocratic patrons seeking spiritual salvation and reduction of their years in Purgatory. They were governed and staffed exclusively by Catholic religious orders—monks, Augustinian canons, and nuns—not by doctors or surgeons.\n\n<span class="para-ref">[3.2]</span> Famous urban foundations like St Bartholomew’s (chartered in London in 1123 by the courtier Rahere) and St Thomas’s provided sanctuary for weary pilgrims, the infirm elderly, and the impoverished sick. The overriding operational mission was "Care Not Cure." Inmates were washed, clothed in clean linen, warmed beside massive roaring stone hearths, fed wholesome meat broths and fresh ale, and comforted through continuous monastic chanting. However, no medical surgeries or scientific pharmacological cures were ever attempted. Hospital wards were deliberately designed like church naves, with beds aligned in parallel rows facing an elevated high altar so that bedridden patients could witness the elevation of the consecrated Host during the daily Catholic Mass and pray for the salvation of their immortal souls.',
+          title: 'Act 3: Barber-Surgeons & Manual Wound Care (c. 1320)',
+          theme_heading: 'Act 3: Barber-Surgeons & Manual Wound Care (c. 1320)',
           source: {
-            id: 'source_b_hospital',
+            id: 'source_a_surgeon_suturing',
+            letter: 'A',
+            title: 'Source A: Medieval Surgeon Suturing a Head Wound (14th c.)',
+            src: '/images/medieval_surgeon_suturing.jpg',
+            source: '/images/medieval_surgeon_suturing.jpg',
+            image: '/images/medieval_surgeon_suturing.jpg',
+            caption:
+              'A 14th-century illumination depicting a barber-surgeon stitching a cranial laceration on a conscious patient with needle and thread.',
+            desc: 'Fourteenth-century surgical miniature of head suturing.',
+            provenance:
+              'Chirurgia Magna by Guy de Chauliac, France/England, 14th century. Bibliothèque nationale de France (Shelfmark: MS Français 24249).',
+            citation:
+              'Chirurgia Magna by Guy de Chauliac, France/England, 14th century. Bibliothèque nationale de France (Shelfmark: MS Français 24249).',
+            question:
+              'What does this depiction of manual surgery reveal about the practical skill—and immense pain—involved in medieval trauma treatment?',
+            hinge_question:
+              'What does this depiction of manual surgery reveal about the practical skill—and immense pain—involved in medieval trauma treatment?',
+            source_context:
+              'Illustrates a barber-surgeon using a curved needle and silk thread to stitch a deep cranial laceration while his assistant steadies the conscious patient.',
+            context:
+              'Illustrates a barber-surgeon using a curved needle and silk thread to stitch a deep cranial laceration while his assistant steadies the conscious patient.',
+          },
+          text: '<span class="para-ref">[3.1]</span> Because university-trained physicians refused to engage in manual surgical intervention, all bloody, physical procedures were relegated to the lower-status barber-surgeon (<span class="archival-meta-tag">Source A</span>). Grouped within merchant trade guilds alongside ordinary barbers, these craftsmen were trained through practical manual apprenticeships rather than academic Latin treatises. Armed with bone saws, cauterizing irons, curved suture needles, razors, and forceps, barber-surgeons operated on the violent physical realities of medieval life: pulling infected teeth, lancing painful carbuncles, resetting dislocated joints, and dressing battle wounds.<br><br><span class="para-ref">[3.2]</span> On rare occasions, skilled surgeons performed major trauma operations, including the trepanning of fractured skulls to relieve intracranial pressure and the amputation of crushed or gangrenous limbs. These procedures were executed with agonizing speed on fully conscious patients held down by burly assistants, with pain dulled only by ale, wine, or dangerous herbal narcotics like hemlock and henbane. To halt torrential arterial bleeding, surgeons sealed severed stumps with red-hot cautery irons or boiling elderberry oil. Because they worked with their hands and were steeped in blood, barber-surgeons were held in low social esteem by the academic elite, yet their empirical dexterity saved countless trauma victims.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Monastic Hospitals: Spiritual ‘Care Not Cure’ (c. 1350)',
+          theme_heading: 'Act 4: Monastic Hospitals: Spiritual ‘Care Not Cure’ (c. 1350)',
+          source: {
+            id: 'source_b_hotel_dieu',
             letter: 'B',
             title: 'Source B: Hôtel-Dieu Hospital Ward (Livre de Vie Active, c.1482)',
             src: '/images/hotel_dieu_hospital.jpg',
             source: '/images/hotel_dieu_hospital.jpg',
             image: '/images/hotel_dieu_hospital.jpg',
             caption:
-              'The main ward of the Hôtel-Dieu in Paris: Augustinian nuns tending to rows of patients sharing beds, providing spiritual comfort and rest.',
+              'A 15th-century illumination depicting Augustinian hospital nuns caring for sick patients in shared beds facing a chapel altar.',
+            desc: 'Fifteenth-century illumination of a medieval monastic hospital ward.',
             provenance:
-              "Livre de Vie Active des Religieuses de l'Hôtel-Dieu de Paris, Jean Henry, c.1482.",
-            context:
-              'Medieval hospitals were religious houses dedicated to Christian charity. Patients shared beds, were fed nourishing food, and received spiritual absolution.',
+              'Jean Henry, Le Livre de Vie Active des Religieuses de l’Hôtel-Dieu de Paris, c.1482. Musée de l’Assistance Publique, Paris.',
+            citation:
+              'Jean Henry, Le Livre de Vie Active des Religieuses de l’Hôtel-Dieu de Paris, c.1482. Musée de l’Assistance Publique, Paris.',
             question:
-              'Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+              'How does this hospital miniature demonstrate the medieval principle of ‘care not cure’?',
             hinge_question:
-              'Look at the nuns tending to patients in the ward, with an altar visible in the background. Why was the primary purpose of a medieval hospital hospitality and salvation rather than medical cure, and why were infectious patients strictly excluded?',
+              'How does this hospital miniature demonstrate the medieval principle of ‘care not cure’?',
+            source_context:
+              'Depicts Augustinian nuns nursing bedridden patients wrapped in white linen shrouds, while a priest conducts the Catholic Mass at an altar directly visible from every patient bed.',
+            context:
+              'Depicts Augustinian nuns nursing bedridden patients wrapped in white linen shrouds, while a priest conducts the Catholic Mass at an altar directly visible from every patient bed.',
           },
+          text: '<span class="para-ref">[4.1]</span> Between 1100 and 1500, over 1,200 hospitals were founded across England by religious orders, philanthropic monarchs, and wealthy churchmen, including famous London foundations like St Bartholomew’s (founded 1123) and St Thomas’s (<span class="archival-meta-tag">Source B</span>). However, a medieval hospital (derived from the Latin <em>hospitium</em>, meaning hospitality) was not an institution of clinical medical treatment. Staffed entirely by Catholic monks, infirmarers, and nuns, hospitals functioned as religious houses of Christian charity, designed to provide shelter, warmth, clean bedding, and two simple meals a day to elderly destitute folk, weary pilgrims, and the infirm.<br><br><span class="para-ref">[4.2]</span> The overarching philosophy of the medieval hospital was strictly spiritual: "Care, not cure" (<em>cura praestatur, non sanatio</em>). Hospital wards were constructed with high timber roofs mirroring cathedral naves, arranged so that every row of beds faced directly toward the altar of a chapel at the eastern end of the hall. Patients were required to lie in bed, witness daily Catholic Mass, recite the rosary, and confess their mortal sins before death to ensure their souls avoided damnation. Crucially, university physicians were rarely employed, and patients suffering from infectious contagious diseases—such as plague, leprosy, smallpox, or scrofula—alongside pregnant women were strictly banned from admission to preserve institutional sanctity and prevent contamination.',
         },
         {
-          act: 4,
-          act_title: 'Historical Verdict: Strict Exclusion & The Lazar House',
-          text: '<span class="para-ref">[4.1]</span> Because the primary spiritual objective of monastic hospitals was peace, liturgical devotion, and quiet charitable sanctuary, hospital masters enforced strict entry exclusions. Institutional foundation statutes explicitly prohibited the admission of persons suffering from contagious infectious fevers, open bleeding ulcers, leprosy, or mental lunacy, as well as pregnant women awaiting childbirth. Monastic administrators feared that howling, delirious, or visibly pestilential patients would disrupt choral prayers and introduce corrupt atmospheric miasma into the sacred precinct.\n\n<span class="para-ref">[4.2]</span> Instead, infectious victims were forcibly segregated outside town ramparts. Sufferers of leprosy—viewed as carrying the physical mark of divine judgment—were confined to isolated Lazar Houses (leprosaria) constructed along arterial highways, such as St Giles-in-the-Fields near London or Sherburn Hospital outside Durham. Lepers wore hooded cloaks and sounded wooden clappers to warn approaching wayfarers of their corrupting presence. In historical evaluation, medieval institutional care represented an extraordinary monument of Christian charity, community shelter, and spiritual solace for the medieval pauper, but contributed absolutely nothing to anatomical discovery or clinical therapeutics. Genuine medical cure remained completely absent from the medieval hospital.',
-          tasks: [
-            {
-              type: 'exam_practice',
-              tariff: '[4 marks]',
-              question:
-                'Explain one way in which hospital care in the Medieval period (c1250–c1500) was different from hospital care in the 18th or 19th century.',
-              model:
-                'One way hospital care in the Medieval period was different was that its primary purpose was religious hospitality and spiritual comfort ("care not cure"), rather than active medical treatment or scientific cure. In the Medieval period, hospitals were run by Catholic monks and nuns who washed patients, provided warm beds, and held regular church services facing a chapel altar, but no trained doctors worked there and infectious patients were turned away. In contrast, in the 18th and 19th centuries, hospitals became medical institutions funded by voluntary donations where university-trained physicians and surgeons diagnosed illnesses, performed surgeries, and trained medical students.',
-            },
-          ],
+          act: 5,
+          title: 'Act 5: Women Healers & Household Care (c. 1400)',
+          theme_heading: 'Act 5: Women Healers & Household Care (c. 1400)',
+          text: '<span class="para-ref">[5.1]</span> For the overwhelming majority of medieval people—the ninety percent of the population living in rural peasant villages—formal physicians, guild apothecaries, and monastic hospitals were completely inaccessible. When sickness struck a peasant cottage, healthcare was delivered entirely within the domestic household by women: wives, mothers, grandmothers, and local village wise women.<br><br><span class="para-ref">[5.2]</span> Peasant women possessed an extensive practical knowledge of herbal remedies cultivated in cottage kitchen gardens or gathered from hedgerows, boiling soothing broths, preparing warm bread-and-milk poultices for swollen joints, and mixing herbal salves for burns and rashes. In every village, experienced local women served as traditional midwives, managing labor and delivering infants using herbal teas, warm compresses, and manual techniques passed down through female oral tradition. Despite being completely excluded from universities and condemned by male physicians, women healers provided compassionate, practical, and accessible healthcare that was often far safer than the dangerous bloodletting and violent purges administered by the professional elite.',
         },
       ],
       sources: [
@@ -3021,63 +2970,63 @@ export const unitData = {
           para_ref: '[1.1–1.2]',
           heading: 'Why were university physicians accessible only to the ultra-wealthy?',
           bullets: [
-            'Studying Latin texts for ten years in Oxford',
-            'Consulting astronomical star charts for baronial clients',
-            'Charging heavy silver fees without touching patients',
+            'Training ten years in Latin disputations and Galen',
+            'Charging exorbitant bedside consultation fees',
+            'Refusing manual surgical cutting as beneath dignity',
           ],
           focus_clue: 'Why were university physicians accessible only to the ultra-wealthy?',
         },
         {
           step: 2,
           date: 'c1300',
-          para_ref: '[2.2]',
+          para_ref: '[2.1–2.2]',
           heading: 'How did apothecaries provide accessible medicines to townspeople?',
           bullets: [
-            'Weighing dried poppy roots on brass scales',
-            'Selling cheap herbal pills to town weavers',
-            'Learning trade secrets through guild apprenticeships',
+            'Serving seven-year practical merchant guild apprenticeships',
+            'Dispensing herbal simples and syrups from shopfronts',
+            'Offering cheap medicinal alternatives to town burghers',
           ],
           focus_clue: 'How did apothecaries provide accessible medicines to townspeople?',
         },
         {
           step: 3,
           date: 'c1320',
-          para_ref: '[2.1]',
+          para_ref: '[3.1–3.2]',
           heading: 'Why were barber-surgeons viewed as lower-status craftsmen?',
           bullets: [
-            'Pulling rotten teeth with iron pliers',
-            'Setting broken arm bones with wooden splints',
-            'Cauterising bleeding flesh wounds with red-hot irons',
+            'Performing bloody manual procedures and amputations',
+            'Belonging to craft trade guilds rather than universities',
+            'Working with cautery irons without anaesthetic',
           ],
           focus_clue: 'Why were barber-surgeons viewed as lower-status craftsmen?',
         },
         {
           step: 4,
           date: 'c1350',
-          para_ref: '[3.1–3.2]',
+          para_ref: '[4.1–4.2]',
           heading: 'Why did monastic hospitals deliberately avoid medical treatment?',
           bullets: [
-            'Sheltering bedridden pilgrims in monastic wards',
-            'Providing warm woollen blankets and fresh vegetable stew',
-            'Hearing Latin mass through chapel chancel screens',
+            'Emphasizing spiritual care not cure in chapels',
+            'Providing clean beds and hot broth to elderly pilgrims',
+            'Barring infectious plague and leprosy sufferers',
           ],
           focus_clue: 'Why did monastic hospitals deliberately avoid medical treatment?',
         },
         {
           step: 5,
           date: 'c1400',
-          para_ref: '[2.1, 4.1]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why did the vast majority of sick people rely on female family members?',
           bullets: [
-            'Gathering wild chamomile in country hedgerows',
-            'Delivering newborn babies in village cottages',
-            'Applying warm bread poultices to swollen skin',
+            'Administering domestic garden poultices and tisanes',
+            'Delivering village infants through traditional midwifery',
+            'Providing free practical care inside peasant cottages',
           ],
           focus_clue: 'Why did the vast majority of sick people rely on female family members?',
         },
       ],
       causal_domino_spine: {
-        title: 'Medical Care Providers & Monastic Hospitals: Care Not Cure',
+        title: 'Medical Care Providers & Monastic Hospitals: ‘Care Not Cure’',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
@@ -3086,21 +3035,21 @@ export const unitData = {
             para_ref: '[1.1–1.2]',
             title: 'University-Trained Physicians',
             actor: 'Oxford & Cambridge Medical Fellows',
-            tag: '🎓 LICENSED PHYSICIANS',
+            tag: '🎓 SCHOLASTIC PHYSICIANS',
             trigger:
-              'Licensed physicians spent ten years studying classical Latin theory at Oxford or Cambridge, mastering Galen, Hippocrates, and astrological chart-casting.',
-            desc: 'Licensed physicians spent ten years studying classical Latin theory at Oxford or Cambridge, mastering Galen, Hippocrates, and astrological chart-casting.',
+              'Physicians trained for up to a decade in Latin scholastic philosophy at universities like Oxford and Cambridge, mastering Galen and Avicenna without clinical dissection.',
+            desc: 'Physicians trained for up to a decade in Latin scholastic philosophy at universities like Oxford and Cambridge, mastering Galen and Avicenna without clinical dissection.',
             connective:
-              'Charged enormous silver fees to diagnose aristocratic clients without touching physical bodies, remaining completely inaccessible to ninety-nine percent of the population.',
+              'Catered exclusively to the royal court and ultra-wealthy aristocracy due to exorbitant fees, refusing manual surgery as beneath academic dignity.',
             question: 'Why were university physicians accessible only to the ultra-wealthy?',
           },
           {
             step: 2,
             date: 'c1300',
-            para_ref: '[2.2]',
+            para_ref: '[2.1–2.2]',
             title: 'Guild Apothecaries & Spicers',
             actor: 'Worshipful Company of Grocers & Spicers',
-            tag: '⚖️ GUILD APOTHECARIES',
+            tag: '🏺 GUILD APOTHECARIES',
             trigger:
               'Apothecaries trained through rigorous merchant guild apprenticeships, stocking imported Eastern spices, mineral compounds, and dried medicinal herbs in London shops.',
             desc: 'Apothecaries trained through rigorous merchant guild apprenticeships, stocking imported Eastern spices, mineral compounds, and dried medicinal herbs in London shops.',
@@ -3111,10 +3060,10 @@ export const unitData = {
           {
             step: 3,
             date: 'c1320',
-            para_ref: '[2.1]',
+            para_ref: '[3.1–3.2]',
             title: 'Barber-Surgeons & Wound Care',
             actor: 'Barber-Surgeons’ Company',
-            tag: '💈 CRAFT SURGERY',
+            tag: '🪒 BARBER-SURGEONS',
             trigger:
               'Barber-surgeons performed manual, blood-soaked physical procedures: pulling rotten molars, lancing painful boils, setting broken bones, and amputating shattered limbs.',
             desc: 'Barber-surgeons performed manual, blood-soaked physical procedures: pulling rotten molars, lancing painful boils, setting broken bones, and amputating shattered limbs.',
@@ -3125,10 +3074,10 @@ export const unitData = {
           {
             step: 4,
             date: 'c1350',
-            para_ref: '[3.1–3.2]',
+            para_ref: '[4.1–4.2]',
             title: 'Monastic Hospitals: Care Not Cure',
             actor: 'Monks, Nuns & Infirmarers',
-            tag: '🏥 CARE NOT CURE',
+            tag: '⛪ MONASTIC HOSPITALS',
             trigger:
               'Over 1,200 hospitals were founded in medieval England by religious orders, providing warm beds, clean linens, and daily meals to elderly pilgrims and the destitute.',
             desc: 'Over 1,200 hospitals were founded in medieval England by religious orders, providing warm beds, clean linens, and daily meals to elderly pilgrims and the destitute.',
@@ -3139,10 +3088,10 @@ export const unitData = {
           {
             step: 5,
             date: 'c1400',
-            para_ref: '[2.1, 4.1]',
+            para_ref: '[5.1–5.2]',
             title: 'Women Healers & Household Care',
             actor: 'Village Mothers & Wise Women',
-            tag: '👵 DOMESTIC HEALERS',
+            tag: '🏡 DOMESTIC HEALERS',
             trigger:
               'The vast majority of medieval healthcare was delivered inside the peasant home by female family members, local midwives, and village wise women.',
             desc: 'The vast majority of medieval healthcare was delivered inside the peasant home by female family members, local midwives, and village wise women.',
@@ -3155,51 +3104,6 @@ export const unitData = {
     },
     {
       id: 'lesson_1_5',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to evaluate contemporary responses to the Black Death (1348–1349):',
-        blocks: [
-          {
-            num: 1,
-            badge: 'THE DISASTER',
-            title: '1. The Black Death Arrives: Symptoms & Scale (1348)',
-            prompt:
-              'Detail the symptoms, transmission, and catastrophic death toll of the Black Death across England:',
-            model_notes: [
-              'Arrived at Melcombe Regis (Dorset) in June 1348 aboard trading ships; spread rapidly along trade routes to London by autumn.',
-              'Bubonic form caused high fevers, vomiting, and agonizing dark buboes in armpits and groin; pneumonic form attacked lungs via coughing.',
-              'Killed 30-45% of the English population within 18 months, causing massive economic disruption and social paralysis.',
-            ],
-            key_terms: ['Buboes', 'Bubonic Plague'],
-          },
-          {
-            num: 2,
-            badge: 'CONTEMPORARY BELIEFS',
-            title: '2. Blaming God, Miasma & Planetary Conjunctions',
-            prompt:
-              'Explain the conflicting causes medieval people blamed for the plague and the remedies they attempted:',
-            model_notes: [
-              'Supernatural causes: divine anger at human wickedness, leading to mass religious processions, prayers, and flagellation.',
-              'Environmental causes: poisonous miasma from rotting matter and the 1345 planetary conjunction; people carried sweet herbs and lit fires.',
-              'Humoural treatments: bleeding buboes, applying warm pigeon entrails to swellings, drinking crushed emeralds; complete clinical failure.',
-            ],
-            key_terms: ['Divine Wrath', 'Planetary Alignment'],
-          },
-          {
-            num: 3,
-            badge: 'CIVIC RESPONSE',
-            title: '3. Quarantine Attempts, Cemeteries & Structural Limits',
-            prompt:
-              "Evaluate civic attempts to halt contagion (quarantine, Gloucester's border closure) and why they failed:",
-            model_notes: [
-              'Gloucester attempted to close borders to people from Bristol; London established emergency mass burial trenches outside town walls.',
-              'Quarantine failed because authorities had no concept of Yersinia pestis, rat flea vectors (Xenopsylla cheopis), or airborne droplets.',
-              'Civic councils lacked police forces, professional public health departments, or legal powers to enforce strict cordons sanitaires.',
-            ],
-            key_terms: ['Quarantine', 'Street Cleaning'],
-          },
-        ],
-      },
       banner: '/images/plague_toggenburg_wide.jpg',
       banner_position: 'center 50%',
       title: 'KT1.5: Case Study: Dealing with the Black Death (1348–1349)',
@@ -3308,23 +3212,55 @@ export const unitData = {
       },
       teacher_notes: {
         primer:
-          'The overarching pedagogical goal of this lesson is to examine how the Black Death exposed the total impotence of medieval medicine. Without Germ Theory or microscopes, neither religious rituals, humoural purges, nor civic street cleaning could stop the flea-borne bacterium Yersinia pestis, resulting in devastating demographic collapse.',
+          'This concluding case study examines the catastrophe of the Black Death in England (1348–1349): trade route vector, clinical manifestations (bubonic vs pneumonic), desperate treatments, royal miasma sanitation decrees, and mass burial demographic collapse.',
         objectives: [
           {
-            objective: 'Explain the symptoms, real causes, and believed causes of the Black Death.',
+            objective:
+              'Explain how maritime trade routes introduced the Black Death into southern England at Melcombe Regis in 1348.',
             primer:
-              'Direct pupils to paragraphs [1.1] and [2.1]. Contrast the real biological mechanism (rat fleas, Yersinia pestis) with medieval beliefs (God’s anger, 1345 astrological alignment, miasma).',
+              'Direct students to paragraphs [1.1]–[1.2]. Emphasize the Gascon wine cog, black ship rats (Rattus rattus), rodent fleas (Xenopsylla cheopis), and the bacillus Yersinia pestis.',
             question:
-              'Why did medieval people believe the 1345 planetary conjunction and foul smells caused the Black Death instead of rats and fleas?',
+              'How did trade routes and shipping unwittingly create the perfect transmission corridor for the Black Death?',
           },
           {
-            objective: 'Analyse treatments, attempts at prevention, and government responses.',
+            objective:
+              'Distinguish between the clinical symptoms and mortality rates of bubonic and pneumonic plague.',
             primer:
-              'Focus on paragraphs [3.1] and [4.1]. Examine flagellants, street fires, posies, lancing buboes, and Edward III’s 1349 order to the Mayor of London.',
+              'Direct students to paragraphs [2.1]–[2.2] and Source B (Victim with Buboes). Contrast flea-borne buboes (lymph nodes) with aerosolized pulmonary droplets coughing black blood.',
             question:
-              'Why did public religious processions and flagellation actually accelerate the spread of the Black Death rather than stopping it?',
+              'Why was pneumonic plague far more terrifying to medieval communities than the bubonic strain?',
+          },
+          {
+            objective:
+              'Analyse why medical treatments (hot knives, strapped chickens, emerald potions) completely failed.',
+            primer:
+              'Direct students to paragraphs [3.1]–[3.2]. Discuss lancing buboes with cautery irons, folk remedies, and theriac concoctions accelerating fatal septic shock.',
+            question:
+              'Why did contemporary medical treatments often accelerate the death of plague victims rather than saving them?',
+          },
+          {
+            objective:
+              'Evaluate King Edward III’s 1349 cleanliness order and civic attempts to combat pestilential miasma.',
+            primer:
+              'Direct students to paragraphs [4.1]–[4.2]. Focus on posies, street bonfires, locking town gates at Gloucester, and Edward III’s royal mandate to London aldermen.',
+            question:
+              'Why were royal sanitation decrees completely powerless to stop the spread of the Black Death?',
+          },
+          {
+            objective:
+              'Assess the demographic collapse, mass emergency burial pits, and long-term socio-economic breakdown of feudalism.',
+            primer:
+              'Direct students to paragraphs [5.1]–[5.2] and Source A (Citizens of Tournai Burying Plague Victims). Explore East Smithfield trench pits, 30-50% mortality, labour shortages, and the collapse of serfdom.',
+            question:
+              'How did the demographic catastrophe of the Black Death permanently alter English medieval society?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Citizens of Tournai Burying Plague Victims (1349), illumination from Gilles li Muisis’s chronicle (MS 13076-13077). Depicts citizens frantically carrying multiple wooden coffins through city streets toward overflowing cemetery pits during the peak of the Black Death. Hinge Question: How does this contemporary illumination convey the total breakdown of customary individual funeral rites during the Black Death?',
+          'Source B':
+            'Plague Victim with Groin and Armpit Buboes, woodcut from Hieronymus Brunschwig’s Cirurgia (Strasbourg, 1497). Illustrates a physician examining an infected patient bedridden with blackened, inflammatory lymphatic swellings (buboes) in the groin and axilla. Hinge Question: What does this depiction of agonizing buboes reveal about the physiological horror and medical helplessness of plague treatment?',
+        },
       },
       do_now: [
         {
@@ -3371,77 +3307,81 @@ export const unitData = {
       narrative_blocks: [
         {
           act: 1,
-          act_title: 'Context: The Arrival & Deadly Symptoms of the Pestilence',
-          text: '<span class="para-ref">[1.1]</span> In late June 1348, a merchant vessel from Gascony carrying barrels of wine dropped anchor at the southern English port of Melcombe Regis in Dorset. Unbeknownst to the dockers who unloaded the cargo, the bilge timbers and sacking harboured black ship rats (Rattus rattus) infested with tropical rodent fleas (Xenopsylla cheopis), themselves gorged on the virulent bacillus Yersinia pestis. Within weeks, the catastrophic pandemic known to chroniclers as the "Great Pestilence" or "Great Mortality"—and later named the Black Death—ignited across the Dorset countryside. Propelled along overland trade corridors and coastal shipping lanes, it engulfed Bristol, Salisbury, and London by Michaelmas 1348. Between 1348 and 1350, the pestilence obliterated between thirty and fifty percent of the English population, slaughtering an estimated 1.5 to 2 million men, women, and children.\n\n<span class="para-ref">[1.2]</span> The disease struck terror through two distinct, devastating clinical manifestations. The predominant strain was Bubonic Plague, transmitted directly through the bite of an infected rat flea regurgitating bacteria into the human lymphatic system. Sufferers experienced abrupt chills, delirium, agonizing headaches, and subcutaneous haemorrhages that formed dark purple and black petechiae—known morbidly as "God’s tokens." Within hours, violent inflammatory swellings called buboes erupted in the lymph nodes of the groin, armpits, and neck, rapidly swelling to the size of apples, blackened with necrosis and oozing putrid matter. Untreated bubonic victims died in agony within three to five days. The second, even more terrifying manifestation was Pneumonic Plague, occurring when the bacterial infection invaded the lungs. Spread directly through aerosolized droplets in breath, sneezes, and bloodstained sputum, pneumonic victims coughed frothy black blood and succumbed within forty-eight hours with a mortality rate approaching one hundred percent.',
-          source: {
-            id: 'source_a_burial',
-            letter: 'A',
-            title: 'Source A: Citizens of Tournai Burying Plague Victims (1349)',
-            src: '/images/plague_burial.jpg',
-            source: '/images/plague_burial.jpg',
-            image: '/images/plague_burial.jpg',
-            caption:
-              'The citizens of Tournai carrying wooden coffins to mass communal plague burial pits during the devastating Black Death epidemic of 1349.',
-            provenance:
-              'Illumination by Pierart dou Tielt, Gilles Li Muisis chronicle, MS 13076-77, Bibliothèque Royale de Belgique, Brussels, 1349.',
-            context:
-              'When the Black Death struck Europe in 1348–1349, it wiped out between 30% and 50% of the population. Churchyards overflowed within weeks, forcing city authorities to dig vast emergency trench graves outside town walls.',
-            question:
-              'Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
-            hinge_question:
-              'Study the sheer number of wooden coffins being carried simultaneously to a mass burial trench outside the city walls. What does this image show about how the rapid spread and terrifying death toll of the Black Death overwhelmed traditional parish burial customs and churchyards?',
-          },
+          title: 'Act 1: Arrival at Melcombe Regis: Trade Routes & The Rat Vector (June 1348)',
+          theme_heading:
+            'Act 1: Arrival at Melcombe Regis: Trade Routes & The Rat Vector (June 1348)',
+          text: '<span class="para-ref">[1.1]</span> In late June 1348, a merchant vessel from Gascony carrying barrels of wine dropped anchor at the southern English port of Melcombe Regis in Dorset. Unbeknownst to the dockers who unloaded the cargo, the bilge timbers and sacking harboured black ship rats (<em>Rattus rattus</em>) infested with tropical rodent fleas (<em>Xenopsylla cheopis</em>), themselves gorged on the virulent bacillus <em>Yersinia pestis</em>. Within weeks, the catastrophic pandemic known to chroniclers as the "Great Pestilence" or "Great Mortality"—and later named the Black Death—ignited across the Dorset countryside. Propelled along overland trade corridors and coastal shipping lanes, it engulfed Bristol, Salisbury, and London by Michaelmas 1348.<br><br><span class="para-ref">[1.2]</span> The rapid velocity of transmission was accelerated by crowded, unpaved timber settlements where families lived in close proximity to livestock, open drains, and infested straw bedding. England had experienced no major plague outbreak for over six centuries; its population possessed zero acquired biological immunity. Within eighteen months, the pestilence obliterated between thirty and fifty percent of the English population, slaughtering an estimated 1.5 to 2 million men, women, and children and devastating the economic fabric of the realm.',
         },
         {
           act: 2,
-          act_title: 'Escalation: Explaining the Apocalypse—God, Astrology & Miasma',
-          text: '<span class="para-ref">[2.1]</span> Devoid of any concept of microbiology or microscopic pathogen vectors, medieval society rationalized the existential horror through established theological and humoural frameworks. The supreme orthodox explanation was Supernatural: the Church proclaimed that God had unleashed the plague as divine retribution to chastise humanity for mortal sins—notably luxury, avarice, fornication, and blasphemy. Preachers declared that the Day of Judgment was at hand. Concurrently, academic scholars pointed upward to the heavens: the prestigious Medical Faculty of the University of Paris issued an authoritative pronouncement in October 1348 blaming an extraordinary triple planetary conjunction of Saturn, Jupiter, and Mars in the sign of Aquarius in March 1345, which they claimed had drawn up corrupting vapours from the ocean depths.\n\n<span class="para-ref">[2.2]</span> At the terrestrial level, the universal culprit was Miasma Theory. Physicians asserted that noxious, pestilential atmospheric fog—poisoned by rotting unburied cadavers, stagnant open sewers, putrefying animal intestines, and foul volcanic gases—was drawn directly into the lungs, instantly unbalancing the Four Humours and causing internal blood to boil. Across continental Europe, profound mass hysteria ignited anti-Semitic pogroms, with Jewish communities falsely accused of poisoning civic wells and burnt alive at Strasbourg and Mainz. In England, where the Jewish population had already been banished by King Edward I in 1290, popular panic turned toward wandering beggars, lepers, and foreigners.',
-          tasks: [
-            {
-              type: 'written',
-              text: 'Using paragraphs [2.1]–[2.2], explain the three main causes medieval people believed were responsible for the Black Death.',
-              model:
-                'Medieval people believed the Black Death had three main causes: 1. Supernatural: God sent the plague as divine punishment for human wickedness and sin; 2. Astrological: An unusual alignment of Mars, Jupiter, and Saturn in 1345 corrupted the cosmos; 3. Environmental: Miasma (poisonous, corrupt air from unburied bodies, filth, and marshes) poisoned bodily humours upon inhalation.',
-            },
-          ],
+          title: 'Act 2: Clinical Terror: Bubonic vs Pneumonic Plague (Autumn 1348)',
+          theme_heading: 'Act 2: Clinical Terror: Bubonic vs Pneumonic Plague (Autumn 1348)',
+          source: {
+            id: 'source_b_plague_victim_buboes',
+            letter: 'B',
+            title: 'Source B: Plague Victim with Groin and Armpit Buboes (1497)',
+            src: '/images/plague_victim_buboes.jpg',
+            source: '/images/plague_victim_buboes.jpg',
+            image: '/images/plague_victim_buboes.jpg',
+            caption:
+              'A 15th-century woodcut showing a bedridden patient displaying agonizing swollen buboes in the armpit and groin.',
+            desc: 'Fifteenth-century woodcut of a plague sufferer with buboes.',
+            provenance:
+              'Hieronymus Brunschwig, Buch der Cirurgia, Strasbourg: Johann Grüninger, 1497. Wellcome Collection, London (Shelfmark: EPB/A 1152).',
+            citation:
+              'Hieronymus Brunschwig, Buch der Cirurgia, Strasbourg: Johann Grüninger, 1497. Wellcome Collection, London (Shelfmark: EPB/A 1152).',
+            question:
+              'What does this depiction of agonizing buboes reveal about the physiological horror and medical helplessness of plague treatment?',
+            hinge_question:
+              'What does this depiction of agonizing buboes reveal about the physiological horror and medical helplessness of plague treatment?',
+            source_context:
+              'Illustrates a physician examining an infected patient bedridden with blackened, inflammatory lymphatic swellings (buboes) in the groin and axilla.',
+            context:
+              'Illustrates a physician examining an infected patient bedridden with blackened, inflammatory lymphatic swellings (buboes) in the groin and axilla.',
+          },
+          text: '<span class="para-ref">[2.1]</span> The disease struck terror through two distinct, devastating clinical manifestations (<span class="archival-meta-tag">Source B</span>). The predominant strain was Bubonic Plague, transmitted directly through the bite of an infected rat flea regurgitating bacteria into the human lymphatic system. Sufferers experienced abrupt chills, delirium, agonizing headaches, and subcutaneous haemorrhages that formed dark purple and black petechiae—known morbidly as "God’s tokens." Within hours, violent inflammatory swellings called buboes erupted in the lymph nodes of the groin, armpits, and neck, rapidly swelling to the size of apples, blackened with necrosis and oozing putrid matter. Untreated bubonic victims died in agony within three to five days with mortality rates reaching seventy to eighty percent.<br><br><span class="para-ref">[2.2]</span> The second, even more terrifying manifestation was Pneumonic Plague, occurring when the bacterial infection invaded the lungs. Spread directly through aerosolized droplets in breath, sneezes, and bloodstained sputum, pneumonic plague bypassed the flea vector entirely, transmitting rapidly from person to person within enclosed cottages. Pneumonic victims suffered burning fever, agonizing chest pain, coughed frothy black blood, and succumbed within forty-eight hours with a mortality rate approaching one hundred percent. The lethal speed of pneumonic infection caused widespread panic, prompting terrified families to abandon sick children and priests to refuse deathbed confessions.',
         },
         {
           act: 3,
-          act_title: 'Forensic Evidence: Desperate Treatments & Religious Panic',
-          text: '<span class="para-ref">[3.1]</span> Because society fundamentally viewed the pandemic as divine wrath, the primary public countermeasures were frantic acts of religious penitence. The Crown and church bishops commanded continuous parish Masses, mandatory communal fasting, and massive penitential processions through city streets. Most dramatically, bands of Brotherhood Flagellants marched between towns across continental Europe; stripped to the waist and chanting hymns of remorse, they whipped their bare shoulders with iron-tipped scourges three times daily until blood splattered the cobbles. Tragically, these massive public processions and gatherings directly accelerated the spread of aerosolized pneumonic plague and flea infestation from parish to parish.\n\n<span class="para-ref">[3.2]</span> Medical practitioners proved totally impotent, offering treatments that were futile and agonizing. Barber-surgeons applied heated cupping glasses to buboes or sliced them open with cautery irons to drain "corrupt matter," causing agonizing blood poisoning and accelerating fatal septic shock. Desperate folk remedies abounded: healers strapped live, plucked chickens or dried toads to swollen buboes to "draw the venom into the beast." Sufferers were forced to drink melted gold, powdered emeralds, and potent Theriac concoctions, while houses were fumigated with sulfur, pitch, and dried rosemary to dispel poisonous atmospheric miasma.',
-          source: {
-            id: 'source_b_buboes',
-            letter: 'B',
-            title: 'Source B: Plague Victim with Groin and Armpit Buboes (1497)',
-            src: '/images/black_death.jpg',
-            source: '/images/black_death.jpg',
-            image: '/images/black_death.jpg',
-            caption:
-              'A bedridden plague victim showing painful inflamed lymph swellings (buboes) in the groin and neck, surrounded by weeping attendants.',
-            provenance: 'Woodcut of St. Sebastian interceding for plague victims, Augsburg, 1497.',
-            context:
-              'Bubonic plague caused excruciating lymph swellings. Medieval observers had no knowledge of bacteria or fleas; they believed buboes were visible proof of humoural poisons boiling out of the blood.',
-            question:
-              'Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
-            hinge_question:
-              'Observe the painful, dark swellings (buboes) in the groin, armpits, and neck of the plague victim. Why did medieval physicians believe these buboes were proof that poisonous humours were corrupting the body, and why did desperate treatments like lancing them or applying toads fail to cure the disease?',
-          },
+          title: 'Act 3: Desperate Treatments: Hot Knives & Strapped Chickens (Winter 1348)',
+          theme_heading:
+            'Act 3: Desperate Treatments: Hot Knives & Strapped Chickens (Winter 1348)',
+          text: '<span class="para-ref">[3.1]</span> Contemporary medical practitioners proved totally impotent against the bacillus, offering treatments that were futile, agonizing, and lethal. Guided by humoural doctrine, barber-surgeons attempted to evacuate corrupt matter by applying heated cupping glasses to buboes or slicing them open with red-hot cautery irons. This crude surgery frequently induced catastrophic secondary septic shock, while allowing bacteria to contaminate instruments and hands, accelerating the spread of infection to attending healers.<br><br><span class="para-ref">[3.2]</span> Desperate folk remedies abounded across villages: healers strapped live, plucked chickens or dried toads directly to swollen buboes, believing the creature’s warm belly would draw the venomous poison out of the human body until the animal perished. Apothecaries prescribed costly concoctions of crushed emeralds dissolved in vinegar, melted gold cordial, and heavy doses of Theriac treacle. In domestic sickrooms, families burned sulfur, pitch, and dried rosemary to fumigate the air, while desperate sufferers drank concoctions of urine and crushed marigolds. Every single treatment failed completely, exposing the absolute bankruptcy of medieval therapeutics.',
         },
         {
           act: 4,
-          act_title: 'Historical Verdict: Civic Action, Edward III & Social Collapse',
-          text: '<span class="para-ref">[4.1]</span> In a desperate attempt to fend off miasma, civic leaders and citizens adopted aggressive environmental measures. People walked through alleys holding sweet posies, dried lavender, or sponges steeped in vinegar to their nostrils, while pitch fires burned perpetually at crossroads to purify the air. Certain urban settlements attempted quarantine: the borough of Gloucester sealed its town gates against all outsiders, though country lanes soon brought the infection regardless. In London, parish graveyards filled so rapidly that Bishop Ralph Stratford purchased land at No Man’s Land and East Smithfield to excavate colossal communal trench pits, where decaying corpses were stacked like cordwood in layers five deep.\n\n<span class="para-ref">[4.2]</span> In April 1349, King Edward III dispatched an urgent royal mandate to the Mayor of London, furiously denouncing the filthy conditions of the capital where human dung, horse carcasses, and butchers’ entrails fouled the streets, generating a deadly stench that threatened his royal court. Edward demanded immediate civic street-clearing to dispel the pestilential miasma. However, because authorities lacked an organized sanitation bureaucracy or police enforcement, and remained wholly ignorant of the rodent and flea vector, royal decrees proved entirely powerless. The Black Death exterminated up to half the population, dismantled feudal manorial obligations, sparked severe agricultural labour shortages, and stood as indelible historical testimony to the utter failure of medieval medicine.',
-          tasks: [
-            {
-              type: 'exam_practice',
-              tariff: '[16+4 marks]',
-              question:
-                '‘The main reason why people failed to prevent the spread of the Black Death in 1348–49 was belief in supernatural causes.’ How far do you agree? Explain your answer.',
-              stimulus: ['Punishment from God', 'Miasma (bad air)'],
-              model:
-                'On the one hand, belief in supernatural causes was a primary reason why people failed to prevent the spread of the Black Death because it led communities to adopt religious reactions that actively worsened the epidemic. In 1348, the Catholic Church taught that the pestilence was sent directly by God as divine retribution to punish human wickedness. Consequently, authorities and ordinary people believed that the only effective response was spiritual appeasement. Bishops ordered daily church services, public fasting, and massive crowded religious processions, while groups like the Flagellants marched between towns whipping themselves in public squares. Tragically, gathering hundreds of people together in churches and public squares created ideal conditions for the pneumonic plague to spread rapidly through coughs and breath, while crowded streets enabled black rat fleas to jump between hosts. Because people fatalistically believed God alone controlled their fate, they failed to implement scientific hygiene measures or strict isolation.\n\nOn the other hand, failure to contain the disease was heavily driven by the universal belief in Miasma theory. Medical scholars from the University of Paris officially blamed the plague on the 1345 planetary conjunction of Mars, Jupiter, and Saturn, which they believed generated poisonous vapors from the earth. Furthermore, people believed that breathing foul air corrupted the humours. This belief led to prevention methods that were completely ineffective against bacteria and rat fleas: citizens lit fires in the streets, burned incense, shuttered windows, and carried sweet-smelling posies and pomanders. While people spent time and resources trying to mask bad smells, they did nothing to eliminate the real vectors—black rats and fleas living in thatched roofs, dirt floors, and crowded timber houses. Furthermore, medieval doctors had no understanding of contagion or bacteria; treatments like lancing buboes with hot irons caused severe blood loss and secondary infections, hastening death.\n\nIn conclusion, while belief in supernatural causes led to fatalistic religious processions that accelerated contagion, the fundamental reason why people failed to stop the Black Death was the complete absence of scientific knowledge regarding Germ Theory and flea vectors. Even when civic authorities attempted practical public health measures—such as King Edward III ordering the Mayor of London to clean dung from the streets in 1349, or Gloucester closing its gates to outsiders—they were completely powerless because neither doctors, councils, nor the King understood that microscopic Yersinia pestis bacteria carried by fleas on black rats was the true cause of the plague.',
-            },
-          ],
+          title: 'Act 4: King Edward III’s Cleanliness Order & Miasma Prevention (1349)',
+          theme_heading: 'Act 4: King Edward III’s Cleanliness Order & Miasma Prevention (1349)',
+          text: '<span class="para-ref">[4.1]</span> In a desperate attempt to fend off miasma, civic leaders and citizens adopted aggressive environmental measures. People walked through alleys holding sweet posies, dried lavender, or sponges steeped in vinegar to their nostrils, while pitch fires burned perpetually at crossroads to purify the air. Certain urban settlements attempted quarantine: the borough of Gloucester sealed its town gates against all outsiders, though country lanes soon brought the infection regardless.<br><br><span class="para-ref">[4.2]</span> In April 1349, King Edward III dispatched an urgent royal mandate to the Mayor of London, furiously denouncing the filthy conditions of the capital where human dung, horse carcasses, and butchers’ entrails fouled the streets, generating a deadly stench that threatened his royal court. Edward demanded immediate civic street-clearing to dispel the pestilential miasma. However, because authorities lacked an organized sanitation bureaucracy or police enforcement, and remained wholly ignorant of the rodent and flea vector, royal decrees proved entirely powerless to halt the epidemic.',
+        },
+        {
+          act: 5,
+          title: 'Act 5: Mass Burial Pits & Demographic Collapse (1349–1350)',
+          theme_heading: 'Act 5: Mass Burial Pits & Demographic Collapse (1349–1350)',
+          source: {
+            id: 'source_a_tournai_burials',
+            letter: 'A',
+            title: 'Source A: Citizens of Tournai Burying Plague Victims (1349)',
+            src: '/images/tournai_plague_burials.jpg',
+            source: '/images/tournai_plague_burials.jpg',
+            image: '/images/tournai_plague_burials.jpg',
+            caption:
+              'A 14th-century chronicle miniature showing citizens carrying multiple wooden coffins through city streets toward communal mass burial pits.',
+            desc: 'Fourteenth-century miniature depicting mass burials during the Black Death.',
+            provenance:
+              'Gilles li Muisis, Chronica majus, Tournai, Flanders, 1349–1352. Bibliothèque royale de Belgique, Brussels (Shelfmark: MS 13076-13077).',
+            citation:
+              'Gilles li Muisis, Chronica majus, Tournai, Flanders, 1349–1352. Bibliothèque royale de Belgique, Brussels (Shelfmark: MS 13076-13077).',
+            question:
+              'How does this contemporary illumination convey the total breakdown of customary individual funeral rites during the Black Death?',
+            hinge_question:
+              'How does this contemporary illumination convey the total breakdown of customary individual funeral rites during the Black Death?',
+            source_context:
+              'Depicts citizens frantically carrying multiple wooden coffins through city streets toward overflowing cemetery pits during the peak of the Black Death.',
+            context:
+              'Depicts citizens frantically carrying multiple wooden coffins through city streets toward overflowing cemetery pits during the peak of the Black Death.',
+          },
+          text: '<span class="para-ref">[5.1]</span> In London and provincial cities, parish graveyards filled so rapidly that Bishop Ralph Stratford purchased land at No Man’s Land and East Smithfield to excavate colossal communal trench pits (<span class="archival-meta-tag">Source A</span>). In these emergency mass burial trenches, thousands of decaying corpses were stacked like cordwood in layers five deep under thin coatings of Thames river clay. Traditional Christian burial rituals—solemn funeral processions, ringing bells, individual coffins, and consecrated personal graves—collapsed entirely as terrified gravediggers dumped bodies from night-carts.<br><br><span class="para-ref">[5.2]</span> The long-term societal consequence of the Black Death was an unprecedented structural shock to feudal England. Wiping out 30% to 50% of the entire population, the pandemic created an acute shortage of agricultural farm labourers. Surviving serfs demanded significantly higher wages and refused to perform customary unpaid feudal manorial duties, moving between estates in search of higher pay. When Parliament attempted to freeze wages through the 1351 Statute of Labourers, deep social resentments ignited that culminated thirty years later in the Peasants’ Revolt of 1381. The Black Death permanently shattered the stability of medieval feudalism while standing as permanent historical proof of the total impotence of medieval medicine.',
         },
       ],
       sources: [
@@ -3681,7 +3621,7 @@ export const unitData = {
         {
           step: 1,
           date: 'June 1348',
-          para_ref: '[1.1]',
+          para_ref: '[1.1–1.2]',
           heading: 'How did trade routes unwittingly bring the plague to England?',
           bullets: [
             'Docking trade cogs from Gascony in Dorset',
@@ -3693,7 +3633,7 @@ export const unitData = {
         {
           step: 2,
           date: 'Autumn 1348',
-          para_ref: '[1.2]',
+          para_ref: '[2.1–2.2]',
           heading: 'Why was the pneumonic strain far deadlier than the bubonic form?',
           bullets: [
             'Swelling agonizing egg-sized groin lumps',
@@ -3729,7 +3669,7 @@ export const unitData = {
         {
           step: 5,
           date: '1349–1350',
-          para_ref: '[3.1, 4.2]',
+          para_ref: '[5.1–5.2]',
           heading: 'Why did the Black Death trigger a long-term social and economic crisis?',
           bullets: [
             'Digging vast emergency trenches at East Smithfield',
@@ -3740,16 +3680,16 @@ export const unitData = {
         },
       ],
       causal_domino_spine: {
-        title: 'The Black Death (1348–1349): Pathology, Treatments & Social Collapse',
+        title: 'Case Study: The Black Death in England (1348–1349)',
         subtitle: 'Key Turning Points & Causal Dominoes (5-Stage Framework)',
         stages: [
           {
             step: 1,
             date: 'June 1348',
-            para_ref: '[1.1]',
+            para_ref: '[1.1–1.2]',
             title: 'Arrival at Melcombe Regis',
             actor: 'Gascon Cog Sailors & Dorset Stevedores',
-            tag: '🚢 ARRIVAL AT MELCOMBE',
+            tag: '🚢 MARITIME VECTOR',
             trigger:
               'In late June 1348, a merchant cog from Gascony carrying wine casks docked at Melcombe Regis in Dorset, carrying black rats infested with Xenopsylla cheopis fleas.',
             desc: 'In late June 1348, a merchant cog from Gascony carrying wine casks docked at Melcombe Regis in Dorset, carrying black rats infested with Xenopsylla cheopis fleas.',
@@ -3760,10 +3700,10 @@ export const unitData = {
           {
             step: 2,
             date: 'Autumn 1348',
-            para_ref: '[1.2]',
+            para_ref: '[2.1–2.2]',
             title: 'Buboes & Pneumonic Terror',
             actor: 'Victims & Terrified Households',
-            tag: '💀 DUAL PATHOLOGY',
+            tag: '💀 CLINICAL HORROR',
             trigger:
               'The pandemic manifested in two terrifying forms: bubonic plague causing agonizing groin buboes, and highly contagious pneumonic plague spreading via bloody cough droplets.',
             desc: 'The pandemic manifested in two terrifying forms: bubonic plague causing agonizing groin buboes, and highly contagious pneumonic plague spreading via bloody cough droplets.',
@@ -3777,7 +3717,7 @@ export const unitData = {
             para_ref: '[3.1–3.2]',
             title: 'Desperate Treatments & Strapped Chickens',
             actor: 'Helpless Apothecaries & Barber-Surgeons',
-            tag: '🐔 DESPERATE REMEDIES',
+            tag: '🔪 FUTILE REMEDIES',
             trigger:
               'Helpless physicians and barber-surgeons lanced blackened buboes with hot knives, strapped live plucked hens to sores, and prescribed expensive emerald potions.',
             desc: 'Helpless physicians and barber-surgeons lanced blackened buboes with hot knives, strapped live plucked hens to sores, and prescribed expensive emerald potions.',
@@ -3791,7 +3731,7 @@ export const unitData = {
             para_ref: '[4.1–4.2]',
             title: 'King Edward III’s Cleanliness Order',
             actor: 'King Edward III & London Aldermen',
-            tag: '👑 ROYAL CLEANLINESS ORDER',
+            tag: '📜 ROYAL SANITATION',
             trigger:
               'Believing corrupted miasma caused the plague, King Edward III issued an urgent 1349 mandate ordering the Mayor of London to clear animal offal and street filth.',
             desc: 'Believing corrupted miasma caused the plague, King Edward III issued an urgent 1349 mandate ordering the Mayor of London to clear animal offal and street filth.',
@@ -3802,15 +3742,15 @@ export const unitData = {
           {
             step: 5,
             date: '1349–1350',
-            para_ref: '[3.1, 4.2]',
+            para_ref: '[5.1–5.2]',
             title: 'Mass Burial Pits & Demographic Collapse',
             actor: 'Parish Gravediggers & Royal Commissioners',
-            tag: '⚰️ DEMOGRAPHIC COLLAPSE',
+            tag: '⚰️ MASS GRAVES & SOCIAL SHOCK',
             trigger:
               'Churchyards overflowed within months, forcing London authorities to open vast emergency mass trenches at East Smithfield to bury thousands of stacked corpses.',
             desc: 'Churchyards overflowed within months, forcing London authorities to open vast emergency mass trenches at East Smithfield to bury thousands of stacked corpses.',
             connective:
-              'Wiped out 30% to 45% of England’s total population, creating severe agricultural labour shortages and sparking the long-term breakdown of the feudal system.',
+              'Wiped out 30% to 50% of England’s total population, creating severe agricultural labour shortages and sparking the long-term breakdown of the feudal system.',
             question: 'Why did the Black Death trigger a long-term social and economic crisis?',
           },
         ],
@@ -3818,51 +3758,6 @@ export const unitData = {
     },
     {
       id: 'lesson_2_1',
-      note_scaffold: {
-        instruction:
-          'As you read the chapter, complete these 3 structured enquiry blocks to map how ideas spread and why clerical authority broke down:',
-        blocks: [
-          {
-            num: 1,
-            badge: 'TECHNOLOGY',
-            title: '1. The Movable Type Printing Press (c. 1440 Gutenberg / 1476 Caxton)',
-            prompt:
-              'Explain how mass-producing identical copies broke the Catholic Church’s clerical monopoly on medical textbooks:',
-            model_notes: [
-              'Books could be reproduced in identical form without copyist errors; ideas spread across Europe in weeks instead of centuries.',
-              'Weakened Church censorship because thousands of copies circulated faster than inquisitors or bishops could confiscate them.',
-              'Enabled humanists to translate and print original ancient Greek manuscripts directly, bypassing medieval Latin corruptions.',
-            ],
-            key_terms: ['Humanism', 'Movable-Type Press'],
-          },
-          {
-            num: 2,
-            badge: 'SCIENTIFIC METHOD',
-            title: '2. The Royal Society & ‘Nullius in Verba’ (1660 / Royal Charter 1662)',
-            prompt:
-              'Explain how peer review and Philosophical Transactions (1665) replaced Galenic authority with laboratory proof:',
-            model_notes: [
-              "Motto 'Nullius in verba' (Take nobody's word for it) formally rejected ancient dogma in favour of laboratory experiments.",
-              "Published 'Philosophical Transactions' (1665), the world's first peer-reviewed scientific journal, encouraging open scientific exchange.",
-              'Received a Royal Charter from King Charles II (1662), giving secular scientific research royal prestige and state protection.',
-            ],
-            key_terms: ['Royal Society', 'Nullius in Verba'],
-          },
-          {
-            num: 3,
-            badge: 'HISTORICAL PARADOX',
-            title: '3. The Limits of Renaissance Science (Why didn’t this cure sick patients?)',
-            prompt:
-              'Explain why ordinary sick people experienced almost zero benefit despite this revolution in printing and elite science:',
-            model_notes: [
-              'Breakthroughs were strictly in anatomical science, physics, and methodology, not in clinical therapeutics or pharmacology.',
-              'University professors, apothecaries, and quacks continued prescribing humoural bleeding, purging, and astrological charms.',
-              'Life expectancy and infant mortality remained virtually identical between 1500 and 1700; science understood anatomy, not cures.',
-            ],
-            key_terms: ['Medical Continuity', 'Galenic Dogma'],
-          },
-        ],
-      },
       banner: '/images/printing_press.jpg',
       banner_position: 'center',
       title:
@@ -3894,19 +3789,19 @@ export const unitData = {
           date: '1660–1662',
           title: 'Foundation of the Royal Society',
           desc: 'Twelve natural philosophers met at Gresham College in 1660 and received a Royal Charter from King Charles II in 1662, adopting the motto Nullius in Verba ("Take nobody’s word for it").',
-          para_ref: '[2.1–2.2]',
+          para_ref: '[3.1]',
         },
         {
           date: '1665',
           title: 'Philosophical Transactions & Peer Review',
           desc: 'Royal Society secretary Henry Oldenburg published Philosophical Transactions, establishing the world’s first regular, peer-reviewed scientific journal.',
-          para_ref: '[2.2]',
+          para_ref: '[4.1]',
         },
         {
           date: '1665–1676',
           title: 'Early Microscopes & Animalcules',
           desc: 'Robert Hooke published Micrographia (1665) illustrating magnified fleas, and Antonie van Leeuwenhoek used single-lens microscopes to observe living bacteria ("animalcules") in 1676.',
-          para_ref: '[3.1–3.2]',
+          para_ref: '[5.1–5.2]',
         },
       ],
       delivery_plan: {
@@ -3988,7 +3883,7 @@ export const unitData = {
             objective:
               'Assess how the Royal Society and its journal Philosophical Transactions established the empirical scientific method.',
             primer:
-              'Direct students to paragraphs [2.1]–[2.2]. Focus on Charles II’s 1662 Royal Charter, the motto Nullius in Verba, and the creation of Europe’s first peer-reviewed scientific journal in 1665.',
+              'Direct students to paragraphs [3.1] and [4.1]. Focus on Charles II’s 1662 Royal Charter, the motto Nullius in Verba, and the creation of Europe’s first peer-reviewed scientific journal in 1665.',
             question:
               'How did the motto "Nullius in Verba" directly challenge the 1,400-year dominance of Galen’s writings?',
           },
@@ -3996,7 +3891,7 @@ export const unitData = {
             objective:
               'Analyze the Renaissance Paradox: why revolutionary scientific communication failed to improve everyday treatments.',
             primer:
-              'Direct students to paragraphs [3.1]–[4.2]. Contrast Hooke’s Micrographia (1665) and Leeuwenhoek’s "animalcules" (1676) with the fact that neither understood microbes caused illness, leaving bloodletting and miasma untouched.',
+              'Direct students to paragraphs [5.1]–[5.2]. Contrast Hooke’s Micrographia (1665) and Leeuwenhoek’s "animalcules" (1676) with the fact that neither understood microbes caused illness, leaving bloodletting and miasma untouched.',
             question:
               'Why did Antonie van Leeuwenhoek’s discovery of microscopic bacteria fail to save a single life in the 17th century?',
           },
@@ -4082,7 +3977,10 @@ export const unitData = {
       ],
       narrative_blocks: [
         {
-          title: 'Act 1: Context & Catalyst (The Monastic Scribal Monopoly)',
+          act: 1,
+          title: 'Act 1: The Monastic Scribal Monopoly & The Movable-Type Press (c. 1440–1476)',
+          theme_heading:
+            'Act 1: The Monastic Scribal Monopoly & The Movable-Type Press (c. 1440–1476)',
           source: {
             id: 'source_a_printing_press',
             letter: 'A',
@@ -4109,7 +4007,21 @@ export const unitData = {
           text: '<span class="para-ref">[1.1]</span> Throughout the Middle Ages, the communication of medical ideas was severely constricted by the physical limitations of book production and the ideological monopoly of the Catholic Church. Every medical treatise, herbal compendium, and anatomical diagram had to be hand-transcribed by monastic scribes in cathedral scriptoria. This process was exceptionally slow, immensely expensive, and fraught with cumulative human error: copyists frequently misread obscure Latin terms, omitted crucial lines, and distorted hand-drawn illustrations beyond scientific recognition. Furthermore, because monks controlled the production of books, the Church exercised strict doctrinal censorship, suppressing any writing that questioned Galenic orthodoxy or Biblical interpretation while declaring Galen’s teleological treatises infallible sacred truth.<br><br><span class="para-ref">[1.2]</span> In c.1440, the German metalworker Johannes Gutenberg perfected the movable-type printing press (<span class="archival-meta-tag">Source A</span>) in Mainz, introducing individual cast-metal letters that could be arranged into pages, inked, and pressed onto paper at high speed. Brought to England by William Caxton in 1476, the printing press revolutionized European intellectual life. For the first time, hundreds of identical copies of a medical work could be produced in weeks rather than years, at a fraction of the cost. Crucially, the press bypassed monastic scriptoria, transferring publishing into the hands of secular scholars, commercial printers, and university faculties.',
         },
         {
-          title: 'Act 2: Escalation & Conflict (The Royal Society & Nullius in Verba)',
+          act: 2,
+          title: 'Act 2: Renaissance Humanism & Ancient Texts (c. 1500)',
+          theme_heading: 'Act 2: Renaissance Humanism & Ancient Texts (c. 1500)',
+          text: '<span class="para-ref">[2.1]</span> Alongside the mechanical triumph of movable type, the intellectual movement known as Renaissance Humanism fundamentally reshaped medical scholarship. Humanist scholars sought to return to original classical Greek manuscripts (<em>ad fontes</em>), bypassing centuries of medieval Latin translations. By comparing original texts with the Church’s sanctioned copies, scholars made a startling discovery: medieval monk copyists had introduced thousands of translation errors, misunderstandings, and theological distortions into Galen’s and Hippocrates’s works over the preceding millennium. By printing pristine, uncorrupted Greek editions with precise anatomical diagrams, Humanism encouraged physicians across Europe to realize that ancient medical authorities were fallible men rather than divine prophets, sparking an urgent demand to verify classical claims against direct human anatomy and empirical observation.',
+        },
+        {
+          act: 3,
+          title: 'Act 3: Foundation of the Royal Society & ‘Nullius in Verba’ (1660–1662)',
+          theme_heading: 'Act 3: Foundation of the Royal Society & ‘Nullius in Verba’ (1660–1662)',
+          text: '<span class="para-ref">[3.1]</span> By the mid-17th century, the demand for observable, empirical proof led scholars to reject scholastic disputation in favour of institutional experimentation. In November 1660, a group of twelve natural philosophers—including the architect Christopher Wren, the chemist Robert Boyle, and the polymath Robert Hooke—met at Gresham College in London to establish a formal scientific body. In 1662, King Charles II granted them a prestigious Royal Charter, formally incorporating "The Royal Society of London for Improving Natural Knowledge". The Society adopted the radical Latin motto <em>Nullius in Verba</em> ("Take nobody\'s word for it"), boldly declaring their refusal to accept any scientific assertion based merely on classical authority, ecclesiastical dogma, or ancient tradition. To replace hearsay, members conducted weekly laboratory demonstrations, establishing repeatable physical experiment as the supreme test of medical and scientific truth.',
+        },
+        {
+          act: 4,
+          title: 'Act 4: Philosophical Transactions & International Peer Review (1665)',
+          theme_heading: 'Act 4: Philosophical Transactions & International Peer Review (1665)',
           source: {
             id: 'source_b_philosophical_transactions',
             letter: 'B',
@@ -4133,10 +4045,12 @@ export const unitData = {
             citation:
               'Frontispiece of Philosophical Transactions, Vol. I, London: Royal Society, 1665–1666. Royal Society Archives (Shelfmark: Phil. Trans. Vol. 1) / British Library.',
           },
-          text: '<span class="para-ref">[2.1]</span> By the mid-17th century, the revival of classical Greek scholarship known as Humanism had inspired natural philosophers to demand empirical, observable proof rather than blind deference to ancient texts. In November 1660, a group of twelve scholars—including the architect Christopher Wren, the chemist Robert Boyle, and the polymath Robert Hooke—met at Gresham College in London to establish a formal scientific institution. In 1662, King Charles II granted them a prestigious Royal Charter, formally incorporating "The Royal Society of London for Improving Natural Knowledge".<br><br><span class="para-ref">[2.2]</span> The Royal Society adopted the radical Latin motto <em>Nullius in Verba</em> ("Take nobody\'s word for it"), boldly declaring their refusal to accept any scientific claim based merely on classical authority, ecclesiastical tradition, or philosophical speculation. To replace hearsay, members conducted weekly laboratory demonstrations, demanding repeatable physical evidence. In 1665, the Society’s secretary, Henry Oldenburg, launched <em>Philosophical Transactions</em> (<span class="archival-meta-tag">Source B</span>), the world’s first peer-reviewed scientific journal. This publication established an international communications network where researchers across Europe could submit experimental findings, replicate observations, and debate discoveries, permanently democratizing scientific inquiry.',
+          text: '<span class="para-ref">[4.1]</span> In 1665, the Royal Society’s energetic first secretary, Henry Oldenburg, launched <em>Philosophical Transactions</em> (<span class="archival-meta-tag">Source B</span>), the world’s first regular, peer-reviewed scientific journal. Prior to this, scientific discoveries had often been kept as guarded personal secrets or circulated in private correspondence between elite scholars. <em>Philosophical Transactions</em> created a public, permanent, and international communications network. Researchers across England, France, Germany, and Italy could submit experimental papers, read detailed methodologies, critique hypotheses, and replicate laboratory procedures in their own workshops. This formal peer-review process democratized scientific research, allowing anatomical and physiological breakthroughs to spread across Europe with unprecedented velocity.',
         },
         {
-          title: 'Act 3: Forensic Evidence (Microscopes & Optical Frontiers)',
+          act: 5,
+          title: 'Act 5: Early Microscopes, Animalcules & The Renaissance Paradox',
+          theme_heading: 'Act 5: Early Microscopes, Animalcules & The Renaissance Paradox',
           source: {
             id: 'source_c_hooke_flea',
             letter: 'C',
@@ -4160,11 +4074,7 @@ export const unitData = {
             citation:
               'Copperplate engraving from Micrographia by Robert Hooke, Royal Society, London, 1665. British Library (Shelfmark: 435.e.19).',
           },
-          text: '<span class="para-ref">[3.1]</span> The empirical mandate of the Royal Society was demonstrated through optical innovations. In 1665, Royal Society curator Robert Hooke published <em>Micrographia</em>, using the compound microscope to illustrate a magnified flea (<span class="archival-meta-tag">Source C</span>) and coin the biological term "cells". In 1676, Antonie van Leeuwenhoek used single-lens microscopes to observe bacteria in water, which he termed "animalcules". The Royal Society verified and published these observations in <em>Philosophical Transactions</em>, proving that invisible microscopic structures existed.<br><br><span class="para-ref">[3.2]</span> However, neither Hooke nor Leeuwenhoek understood that these microorganisms caused disease. Without knowledge of germs—undiscovered until Pasteur\'s Germ Theory in 1861—microscopic discoveries were treated merely as fascinating optical curiosities, producing zero immediate changes in medical treatment or patient survival.',
-        },
-        {
-          title: 'Act 4: The Historical Verdict & The Renaissance Paradox',
-          text: '<span class="para-ref">[4.1]</span> Despite these dazzling technological and communicative breakthroughs, the Renaissance witnessed a profound historical paradox: revolutionary advances in scientific communication produced virtually zero improvement in everyday medical treatment. While elite university physicians read Vesalius and debated the Royal Society’s transactions in Latin, books remained costly luxury commodities far beyond the financial reach of the general population. The overwhelming majority of citizens in Tudor and Stuart Britain were illiterate; when sickness struck, they did not consult peer-reviewed journals but relied on local wise women, itinerant barber-surgeons, and cheap printed astrological almanacs that continued to preach Galenic humoural balance and planetary alignment.<br><br><span class="para-ref">[4.2]</span> Crucially, neither Hooke nor Leeuwenhoek understood that their microscopic organisms were linked to disease. For two centuries following Leeuwenhoek’s discovery, bacteria were treated as fascinating optical curiosities rather than deadly pathogens. Without an understanding of germ transmission—which would not emerge until Louis Pasteur’s Germ Theory in 1861—physicians had no theoretical basis for creating antiseptic surgery, antibiotics, or effective public health measures. Consequently, while the printing press and the Royal Society successfully demolished the intellectual authority of Galen, they left ordinary sick patients to suffer under the same ancient remedies of bloodletting, purging, and miasmatic pomanders that had dominated the medieval world.',
+          text: '<span class="para-ref">[5.1]</span> The empirical mandate of the Royal Society was demonstrated through optical innovations. In 1665, Royal Society curator Robert Hooke published <em>Micrographia</em>, using the compound microscope to illustrate a magnified flea (<span class="archival-meta-tag">Source C</span>) and coin the biological term "cells". In 1676, Antonie van Leeuwenhoek used single-lens microscopes to observe living bacteria in water, which he termed "animalcules". The Royal Society verified and published these observations in <em>Philosophical Transactions</em>, proving that an invisible microscopic world existed.<br><br><span class="para-ref">[5.2]</span> However, despite these dazzling communicative and optical breakthroughs, the Renaissance witnessed a profound historical paradox: revolutionary advances in scientific communication produced virtually zero improvement in everyday medical treatment. Neither Hooke nor Leeuwenhoek understood that their microscopic organisms caused disease; without Germ Theory (not discovered until Pasteur in 1861), bacteria were viewed as harmless curiosities. Furthermore, scientific books were printed in Latin and remained expensive luxury goods, while the general public was illiterate and continued to rely on cheap astrological almanacs, bloodletting, and herbal purges. Consequently, while the printing press and Royal Society dismantled Galen’s intellectual authority among elites, ordinary sick patients in Tudor and Stuart Britain experienced almost total continuity with the medieval world.',
         },
       ],
       tasks: [
