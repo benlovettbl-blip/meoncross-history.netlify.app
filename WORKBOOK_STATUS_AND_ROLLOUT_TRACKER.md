@@ -127,9 +127,10 @@ To systematically perfect the entire KS3 curriculum without omitting any unit:
 **Built-In Requirement:**  
 In **every turn and recommendation**, regardless of the specific topic being worked on, the agent must include the **Workbook Rollout Compass**:
 > 🧭 **Chronology Spine & Workbook Rollout Compass:**  
-> **Spines Completed (Option 1: Enquiry Roadmap & Master Toggle):** *Causes of the Great War* (`great_war`) 🌟 • *Conflict in the Middle East* (`cme_new`) 🌟 • *The Great War Part 2* (`great_war_part2`) 🌟 • *The Second British Empire* (`second_british_empire`) 🌟 • *The First British Empire* (`first_british_empire`) 🌟 • *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • *Medieval England* (`medieval_england`) 🌟 • *Industrialisation, Empire & Power* (`industrialisation_and_empire`) 🌟  
-> **Immediate Target:** Year 9: *The Cold War* (`cold_war`) 🎯 (or GCSE Medicine Renaissance Dual-QR Parity)  
-> **KS3 Ladder:** *The Cold War* ➔ *The Shoah* ➔ *Post-War Britain*  
+> **GCSE Track:** Edexcel Medicine (5x 24p Workbooks, 130 stages) 🟢 • Middle East (60 stages) 🟢 • Weimar Germany (16 lessons / 80 stages) 🟢 • Early Elizabeth (12 lessons / 60 stages) 🟢  
+> **KS3 Perfected:** Year 9 *The Great War Part 2* (`great_war_part2`) 🌟 • Year 8 *Industrialisation* (`industrialisation_and_empire`) 🌟 • Year 8 *Australia* (`australia`) 🌟 • Year 8 *Second British Empire* (`second_british_empire`) 🌟 • Year 8 *First British Empire* (`first_british_empire`) 🌟 • Year 8 *Crown, Church, or Parliament* (`monarchy_religion_power`) 🌟 • Year 7 *Medieval England* (`medieval_england`) 🌟  
+> **Next Target:** KS3 Half-Term Queue (*The Cold War* `cold_war` ⏳ • *The Shoah* `the_shoah` ⏳ • *Post-War Britain* `post_war_britain` ⏳) or Paper 3 *USA 1954–1975* (`usa`) 🎯  
+> **Vacation Reprint Queue:** *Water & Sanitation* 🔒 • *Early Modern World* 🔒 • *Causes of Great War* 🔒  
 
 ---
 
@@ -156,8 +157,8 @@ In **every turn and recommendation**, regardless of the specific topic being wor
 | `medieval_england` | Year 7 (KS3) | Medieval England (1066–1485) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
 | `industrialisation_and_empire` | Year 8 (KS3) | Industrialisation, Empire & Power | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
 | `australia` | Year 8 (KS3) | The History of Australia (1770–1901) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
-| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | 🎯 **PRIORITY #1 NEXT** | 16 core lessons ready for enquiry stage synchronization from `scripts/components/weimar_enquiry_configs.cjs`. |
-| `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | 🎯 **PRIORITY #2 NEXT** | 12 core lessons ready for enquiry stage synchronization from `scripts/components/eee_enquiry_configs.cjs`. |
+| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | 🌟 **100% COMPLETE** | All 16 lessons (80 stages across KT1–KT4) 100% synchronized with Option 1 enquiry roadmap, causal domino spines, decimal paragraph badges, embedded sources, and master toggle. Full GCSE parity achieved! |
+| `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | 🌟 **100% COMPLETE** | All 12 lessons (60 stages across KT1–KT3) 100% synchronized with Option 1 enquiry roadmap, causal domino spines, decimal paragraph badges, embedded sources, and master toggle. Full GCSE parity achieved! |
 | `usa` | GCSE (Y11) | USA 1954–75: Conflict at Home & Abroad | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
 | `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
 | `the_shoah` | Year 9 (KS3) | The Shoah (Holocaust Education) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
