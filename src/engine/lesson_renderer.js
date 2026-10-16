@@ -3925,7 +3925,7 @@ export function renderLesson(lesson) {
     const vocabTermsList = lesson.vocab.map((v) => (v.term || '').trim()).filter(Boolean);
 
     const wbAnchorBadge = pageAnchor
-      ? `<span class="wb-page-pill" style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; border: 1px solid #bae6fd; padding: 3px 8px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;" title="Corresponding page in printed pupil workbook"><i class="fa-solid fa-book-open"></i> ${pageAnchor.label}</span>`
+      ? `<span class="wb-page-pill" style="font-size: 0.8rem; font-weight: 700; color: #0369a1; background: #e0f2fe; border: 1px solid #bae6fd; padding: 3px 8px; border-radius: 6px; display: inline-flex; align-items: center; gap: 5px;" title="Corresponding page in printed pupil workbook"><i class="fa-solid fa-book-open"></i> ${pageAnchor.booklet && pageAnchor.booklet !== 'Workbook' ? pageAnchor.label : 'Workbook ' + pageAnchor.label}</span>`
       : '';
 
     const wbDrillBtnHtml = `

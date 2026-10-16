@@ -331,74 +331,124 @@ async function run() {
           .replace(/\s+/g, '')
           .slice(0, 20);
 
+        const KS3_16P_UNITS = [
+          'monarchy_religion_power',
+          'medieval_england',
+          'great_war',
+          'great_war_part2',
+          'industrialisation_and_empire',
+          'first_british_empire',
+          'second_british_empire',
+          'australia',
+        ];
+        const KS3_16P_PAGE_MAP = [
+          { page: 2, endPage: 3, spread: 'pp. 2–3' },
+          { page: 4, endPage: 5, spread: 'pp. 4–5' },
+          { page: 6, endPage: 7, spread: 'pp. 6–7' },
+          { page: 10, endPage: 11, spread: 'pp. 10–11' },
+          { page: 12, endPage: 13, spread: 'pp. 12–13' },
+        ];
+
         let foundPage = null;
+        let endPage = null;
+        let spread = null;
 
-        // Lessons start on page 3 or later (page 1 is cover, page 2 is progress tracker/spec)
-        for (let p = 3; p <= pdfRes.numpages; p++) {
-          const pText = pdfRes.pageMap[p] || '';
-
-          // Match L{lNum}: or L{relNum}: or ENQUIRY {relNum} or Title snippet
-          const matchLFull = pText.includes(`L${lNum}:`);
-          const matchLRel = pText.includes(`L${relNum}:`);
-          const matchEnquiry =
-            pText.includes(`ENQUIRY${relNum}`) ||
-            pText.includes(`ENQUIRY${lNum}`) ||
-            pText.includes(`ENQUIRY:${relNum}`) ||
-            pText.includes(`ENQUIRY:${lNum}`);
-          const matchTitle = cleanTitle.length > 5 && pText.includes(cleanTitle);
-
-          if (
-            (matchLFull || matchLRel || matchEnquiry) &&
-            (matchTitle || pText.includes(`ENQUIRY`))
-          ) {
-            foundPage = p;
-            break;
+        if (KS3_16P_UNITS.includes(unitId) && (pdfRes.numpages === 16 || lessons.length === 5)) {
+          const slot = KS3_16P_PAGE_MAP[relIdx] || KS3_16P_PAGE_MAP[fullIdx];
+          if (slot) {
+            foundPage = slot.page;
+            endPage = slot.endPage;
+            spread = slot.spread;
           }
         }
 
-        // Fallback: search just L{relNum}: or ENQUIRY or cleanTitle
         if (!foundPage) {
-          for (let p = 3; p <= pdfRes.numpages; p++) {
+          // Lessons start on page 2 or later (page 1 is cover).
+          // Stop at pdfRes.numpages - 1 to NEVER match the back cover (which contains summary progress/quiz grids with all enquiry numbers).
+          const maxSearchPage = Math.max(2, pdfRes.numpages - 1);
+          for (let p = 2; p <= maxSearchPage; p++) {
             const pText = pdfRes.pageMap[p] || '';
-            if (
-              pText.includes(`L${relNum}:`) ||
-              pText.includes(`L${lNum}:`) ||
+
+            // Match L{lNum}: or L{relNum}: or ENQUIRY {relNum} or Title snippet
+            const matchLFull = pText.includes(`L${lNum}:`);
+            const matchLRel = pText.includes(`L${relNum}:`);
+            const matchEnquiry =
+              pText.includes(`ENQUIRY${relNum}•`) ||
+              pText.includes(`ENQUIRY${lNum}•`) ||
+              pText.includes(`ENQUIRY:${relNum}`) ||
+              pText.includes(`ENQUIRY:${lNum}`) ||
               pText.includes(`ENQUIRY${relNum}`) ||
-              pText.includes(`ENQUIRY${lNum}`)
+              pText.includes(`ENQUIRY${lNum}`);
+            const matchKeyTopic =
+              pText.includes(`KEYTOPIC${relNum}`) ||
+              pText.includes(`KEYTOPIC1.${relNum}`) ||
+              pText.includes(`KEYTOPIC2.${relNum}`) ||
+              pText.includes(`KEYTOPIC3.${relNum}`) ||
+              pText.includes(`KEYTOPIC4.${relNum}`);
+            const matchTitle = cleanTitle.length > 5 && pText.includes(cleanTitle);
+
+            if (
+              (matchKeyTopic || matchLFull || matchLRel || matchEnquiry) &&
+              (matchTitle || pText.includes(`ENQUIRY`) || pText.includes(`KEYTOPIC`))
             ) {
               foundPage = p;
               break;
             }
           }
-        }
 
-        if (!foundPage && cleanTitle.length > 8) {
-          for (let p = 3; p <= pdfRes.numpages; p++) {
-            const pText = pdfRes.pageMap[p] || '';
-            if (pText.includes(cleanTitle)) {
-              foundPage = p;
-              break;
+          // Fallback: search just L{relNum}: or KEYTOPIC or ENQUIRY
+          if (!foundPage) {
+            for (let p = 2; p <= maxSearchPage; p++) {
+              const pText = pdfRes.pageMap[p] || '';
+              if (
+                pText.includes(`KEYTOPIC${relNum}`) ||
+                pText.includes(`L${relNum}:`) ||
+                pText.includes(`L${lNum}:`) ||
+                pText.includes(`ENQUIRY${relNum}`) ||
+                pText.includes(`ENQUIRY${lNum}`)
+              ) {
+                foundPage = p;
+                break;
+              }
             }
           }
-        }
 
-        const isDoublePageKS3 =
-          pdfRes.numpages <= 24 &&
-          (unitId === 'industrialisation_and_empire' ||
-            unitId === 'great_war' ||
-            unitId === 'great_war_part2' ||
-            unitId === 'medieval_england' ||
-            unitId === 'early_modern_world' ||
-            unitId === 'water_and_sanitation' ||
-            unitId === 'post_war_britain' ||
-            unitId === 'the_shoah' ||
-            unitId === 'australia' ||
-            unitId === 'eee');
-        const fallbackPage = isDoublePageKS3 ? 4 + relIdx * 2 : 3 + relIdx * 6;
+          if (!foundPage && cleanTitle.length > 8) {
+            for (let p = 2; p <= maxSearchPage; p++) {
+              const pText = pdfRes.pageMap[p] || '';
+              if (pText.includes(cleanTitle)) {
+                foundPage = p;
+                break;
+              }
+            }
+          }
+
+          const isDoublePageKS3 =
+            pdfRes.numpages <= 24 &&
+            (unitId === 'industrialisation_and_empire' ||
+              unitId === 'great_war' ||
+              unitId === 'great_war_part2' ||
+              unitId === 'medieval_england' ||
+              unitId === 'early_modern_world' ||
+              unitId === 'water_and_sanitation' ||
+              unitId === 'post_war_britain' ||
+              unitId === 'the_shoah' ||
+              unitId === 'australia' ||
+              unitId === 'first_british_empire' ||
+              unitId === 'second_british_empire' ||
+              unitId === 'monarchy_religion_power');
+          const fallbackPage = isDoublePageKS3 ? 2 + relIdx * 2 : 3 + relIdx * 6;
+          const finalPage = foundPage || fallbackPage;
+          endPage = isDoublePageKS3 ? finalPage + 1 : finalPage;
+          spread = isDoublePageKS3 ? `pp. ${finalPage}–${endPage}` : `Page ${finalPage}`;
+          foundPage = finalPage;
+        }
 
         const lessonKey = lesson.id || `lesson_${fullIdx + 1}`;
         unitMap[lessonKey] = {
-          page: foundPage || fallbackPage,
+          page: foundPage,
+          endPage: endPage || foundPage,
+          spread: spread || `Page ${foundPage}`,
           booklet: config.booklet,
           unitId: unitId,
           lessonIndex: fullIdx,
@@ -417,7 +467,54 @@ async function run() {
   fs.writeFileSync(outJsonPath, JSON.stringify(masterMap, null, 2));
 
   const outJsPath = path.join(__dirname, '..', 'src', 'engine', 'workbook_page_map.js');
-  const jsContent = `// Auto-generated mapping of curriculum units and lessons to physical printed workbook page numbers\nexport const WORKBOOK_PAGE_MAP = ${JSON.stringify(masterMap, null, 2)};\n\nexport function getWorkbookPageAnchor(unitId, lessonOrId, fallbackIdx = 0) {\n  if (!unitId) return null;\n  const unitMap = WORKBOOK_PAGE_MAP[unitId];\n  if (!unitMap) return null;\n\n  let lessonKey = '';\n  if (typeof lessonOrId === 'string') {\n    lessonKey = lessonOrId;\n  } else if (lessonOrId && lessonOrId.id) {\n    lessonKey = lessonOrId.id;\n  } else {\n    lessonKey = 'lesson_' + (fallbackIdx + 1);\n  }\n\n  let entry = unitMap[lessonKey];\n  if (!entry) {\n    // Try finding by lessonIndex\n    entry = Object.values(unitMap).find((e) => e.lessonIndex === fallbackIdx);\n  }\n\n  if (!entry) return null;\n\n  const isMultiBooklet = ['cme_new', 'edexcel_medicine', 'eee', 'usa', 'weimar_nazi_germany'].includes(unitId);\n  if (isMultiBooklet && entry.booklet) {\n    return { page: entry.page, booklet: entry.booklet, label: \`Page \${entry.page} (\${entry.booklet})\`, shortLabel: \`Page \${entry.page}\` };\n  }\n  return { page: entry.page, booklet: 'Workbook', label: \`Workbook Page \${entry.page}\`, shortLabel: \`Page \${entry.page}\` };\n}\n`;
+  const jsContent = `// Auto-generated mapping of curriculum units and lessons to physical printed workbook page numbers
+export const WORKBOOK_PAGE_MAP = ${JSON.stringify(masterMap, null, 2)};
+
+export function getWorkbookPageAnchor(unitId, lessonOrId, fallbackIdx = 0) {
+  if (!unitId) return null;
+  const unitMap = WORKBOOK_PAGE_MAP[unitId];
+  if (!unitMap) return null;
+
+  let lessonKey = '';
+  if (typeof lessonOrId === 'string') {
+    lessonKey = lessonOrId;
+  } else if (lessonOrId && lessonOrId.id) {
+    lessonKey = lessonOrId.id;
+  } else {
+    lessonKey = 'lesson_' + (fallbackIdx + 1);
+  }
+
+  let entry = unitMap[lessonKey];
+  if (!entry) {
+    // Try finding by lessonIndex
+    entry = Object.values(unitMap).find((e) => e.lessonIndex === fallbackIdx);
+  }
+
+  if (!entry) return null;
+
+  const isMultiBooklet = ['cme_new', 'edexcel_medicine', 'eee', 'usa', 'weimar_nazi_germany'].includes(unitId);
+  const spreadLabel = entry.spread || (entry.endPage && entry.endPage !== entry.page ? \`pp. \${entry.page}–\${entry.endPage}\` : \`Page \${entry.page}\`);
+
+  if (isMultiBooklet && entry.booklet) {
+    return {
+      page: entry.page,
+      endPage: entry.endPage || entry.page,
+      spread: spreadLabel,
+      booklet: entry.booklet,
+      label: \`\${spreadLabel} (\${entry.booklet})\`,
+      shortLabel: spreadLabel
+    };
+  }
+  return {
+    page: entry.page,
+    endPage: entry.endPage || entry.page,
+    spread: spreadLabel,
+    booklet: 'Workbook',
+    label: spreadLabel,
+    shortLabel: spreadLabel
+  };
+}
+`;
 
   fs.writeFileSync(outJsPath, jsContent);
   console.log(`✅ Successfully generated workbook page map: ${outJsPath} and ${outJsonPath}`);
