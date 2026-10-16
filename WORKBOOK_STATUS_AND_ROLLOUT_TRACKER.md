@@ -59,9 +59,9 @@ Every perfected workbook strictly enforces the architecture established in **Yea
 
 | Unit ID | Key Stage | Unit Title | Current Status | Required Action to Perfect |
 | :--- | :---: | :--- | :--- | :--- |
-| `cold_war` | KS3 (Y9) | The Cold War (1945–1991) | Prose drafted; 0 double-page workbook. | Author bespoke `scripts/render_cold_war_workbook.cjs` (16-page Gold Standard). |
-| `post_war_britain` | KS3 (Y9) | Rights, Protest & Post-War Britain | Prose drafted; 0 double-page workbook. | Author bespoke `scripts/render_post_war_britain_workbook.cjs` (16-page Gold Standard). |
-| `the_shoah` | KS3 (Y9) | The Shoah (Holocaust Education) | On hold (User will build later). | Retained for future development. |
+| `cold_war` | KS3 (Y9) | The Cold War (1945–1991) | ⏳ **POSTPONED (HALF TERM)** | Retained for half-term build in a week's time per departmental instruction. |
+| `post_war_britain` | KS3 (Y9) | Rights, Protest & Post-War Britain | ⏳ **POSTPONED (HALF TERM)** | Retained for half-term build in a week's time per departmental instruction. |
+| `the_shoah` | KS3 (Y9) | The Shoah (Holocaust Education) | ⏳ **POSTPONED (HALF TERM)** | Retained for half-term build in a week's time per departmental instruction. |
 | `second_world_war` | KS3 (Y9) | Second World War | Curriculum draft only; 0 workbook. | Complete curriculum drafting and author 16-page Gold Standard workbook. |
 
 ---
@@ -155,13 +155,14 @@ In **every turn and recommendation**, regardless of the specific topic being wor
 | `monarchy_religion_power` | Year 8 (KS3) | Crown, Church, or Parliament (1517–1689) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
 | `medieval_england` | Year 7 (KS3) | Medieval England (1066–1485) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
 | `industrialisation_and_empire` | Year 8 (KS3) | Industrialisation, Empire & Power | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
-| `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | 🎯 **PRIORITY #1 NEXT** | 7 lessons ready for 16-page workbook authoring & stage extraction. |
-| `the_shoah` | Year 9 (KS3) | The Shoah (Holocaust Education) | ⚪ **QUEUED #8** | Lessons queued for spine authoring. |
-| `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | ⚪ **QUEUED #9** | Lessons queued for spine authoring. |
+| `australia` | Year 8 (KS3) | The History of Australia (1770–1901) | 🌟 **100% COMPLETE** | All 5 lessons (25 stages) populated from Option 1 enquiry roadmap standard and synchronized with workbook. |
+| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | 🎯 **PRIORITY #1 NEXT** | 16 core lessons ready for enquiry stage synchronization from `scripts/components/weimar_enquiry_configs.cjs`. |
+| `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | 🎯 **PRIORITY #2 NEXT** | 12 core lessons ready for enquiry stage synchronization from `scripts/components/eee_enquiry_configs.cjs`. |
+| `usa` | GCSE (Y11) | USA 1954–75: Conflict at Home & Abroad | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
+| `cold_war` | Year 9 (KS3) | The Cold War (1945–1991) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
+| `the_shoah` | Year 9 (KS3) | The Shoah (Holocaust Education) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
+| `post_war_britain` | Year 9 (KS3) | Post-War Britain (1945–1990s) | ⏳ **POSTPONED (HALF TERM)** | Preserved for half-term build in a week's time per departmental instruction. |
 | `water_and_sanitation` | Year 7 (KS3) | Water & Sanitation Through Time | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
 | `early_modern_world` | Year 8 (KS3) | Early Modern World (1450–1750) | 🔒 **CLASSROOM FROZEN** | Active live workbook matching questions served; V2 staged in `data_v2_4act.js`. |
 | `edexcel_medicine` | GCSE (Y10–11) | Medicine in Britain c1250–Present | 🌟 **100% COMPLETE** | All 26 lessons (130 stages across KT1–KT5) 100% synchronized with Option 1 enquiry roadmap, causal domino spines, and master toggle. Full GCSE parity achieved! |
-| `weimar_nazi_germany` | GCSE (Y10–11) | Weimar and Nazi Germany (1918–1939) | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
-| `eee` | GCSE (Y10–11) | Early Elizabethan England (1558–1588) | ⚪ **QUEUED (GCSE)** | 12 core lessons queued for enquiry question parity. |
-| `usa` | GCSE (Y11) | USA 1954–75: Conflict at Home & Abroad | ⚪ **QUEUED (GCSE)** | 16 core lessons queued for enquiry question parity. |
 

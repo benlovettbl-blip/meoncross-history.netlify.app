@@ -233,8 +233,8 @@ The newly established 16-page pupil workbook standard combines **world-class pub
 6. **Step 6 (QUEUED):** Year 8 *Industrialisation, Empire & Power (1750–1900)* (`industrialisation_and_empire`):
    - Refactor 20-page double-page workbook (`scripts/render_industrialisation_twopage_workbook.cjs`) into the clean 16-page Gold Standard architecture.
 
-7. **Step 7 (QUEUED):** Year 9 Unconverted Units (`the_shoah`, `cold_war`, `post_war_britain`):
-   - Author bespoke 16-page Gold Standard workbooks from scratch using lesson prose in `data.js`.
+7. **Step 7 (POSTPONED TO HALF TERM):** Year 9 Unconverted Units (`the_shoah`, `cold_war`, `post_war_britain`):
+   - Postponed to half term in a week's time per departmental instruction; author bespoke 16-page Gold Standard workbooks once curriculum drafting is finalized.
 
 8. **Step 8 (VACATION REPRINT WINDOW):** Classroom-Frozen Units (`water_and_sanitation`, `early_modern_world`, `great_war`):
    - Promote staged V2 double-page workbooks (staged on branch `feat/4act-v2-reprint`) during the scheduled end-of-term reprographics window.
