@@ -172,7 +172,28 @@ const water_and_sanitation = {
     },
   ],
 
-  lessons: [l1, l2, l3, l4, l5, l6],
+  lessons: [l1, l2, l3, l4, l5, l6].map((lesson) => {
+    if (lesson.workbook_stages) {
+      lesson.workbook_stages = lesson.workbook_stages.map((st) => ({
+        step: st.step,
+        para_ref: st.para_ref || st.paraRef || '',
+        paraRef: st.paraRef || st.para_ref || '',
+        date: st.date || '',
+        heading: st.heading || st.questionHeading || '',
+        questionHeading: st.questionHeading || st.heading || '',
+        bullets: st.bullets || [],
+        focus_clue: st.focus_clue || st.focusClue || '',
+        focusClue: st.focusClue || st.focus_clue || '',
+      }));
+    }
+    if (lesson.narrative_blocks) {
+      lesson.narrative_blocks = lesson.narrative_blocks.map((block) => ({
+        ...block,
+        theme_heading: block.theme_heading || block.title,
+      }));
+    }
+    return lesson;
+  }),
 };
 
 // Write output

@@ -245,12 +245,12 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '5.1 Context & Catalyst: The Toxic Tide: Water Closets & The Thames as an Open Sewer',
+      title: '5.1 The Toxic Tide: Water Closets & the Polluted Thames',
       text: '<span class="para-ref">[5.1]</span> By 1855, London was the undisputed financial and imperial capital of the globe, boasting a population of nearly three million citizens. Yet beneath its outward imperial grandeur lay an ecological nightmare. In the 1830s and 1840s, tens of thousands of middle-class households had embraced the modern comfort of indoor flushing water closets. However, because London possessed no specialized sewage pipes, builders took the easiest route: they plumbed flushing toilets directly into the ancient street storm drains, which had been designed centuries earlier solely to carry rainwater into the River Thames.<br><br>The consequence was catastrophic. The tidal Thames—the very river from which several major commercial water companies pumped drinking water for the capital—was transformed into an open, fermenting sewer. In July 1855, world-renowned scientist **Michael Faraday** published a searing letter in *The Times*. Taking a passenger boat between London Bridge and Hungerford, Faraday dropped small pieces of white card into the water. The cards disappeared from view less than an inch beneath the surface: the river was an opaque, pale-brown fermented soup of human faeces and industrial chemicals, exuding a nauseating stench that made passengers gag.',
     },
     {
       act: 2,
-      title: '5.2 The Crisis: The Heatwave of 1858: Panic in the Houses of Parliament',
+      title: '5.2 The Great Stink: Summer Heatwave & Panic in Parliament (1858)',
       text: '<span class="para-ref">[5.2]</span> In the blazing summer of June 1858, London was gripped by an unprecedented heatwave, with temperatures exceeding thirty-five degrees in the sun. The blistering heat cooked the hundreds of thousands of tons of raw human sewage fermenting along the exposed mudbanks of the Thames at low tide. The resulting stench—christened by the press as **"The Great Stink"**—was captured in biting satirical cartoons like "Father Thames" (Source A) and was so suffocating that life across central London ground to a halt. Ordinary citizens walked with handkerchiefs pressed to their faces, river boatmen collapsed from nausea, and business in the law courts was abandoned.<br><br>Critically, the new Palace of Westminster, home to the Houses of Parliament, stood directly on the riverbank. The stench penetrated parliamentary committee rooms, forcing MPs to flee in blind terror with handkerchiefs clamped to their mouths. Desperate officials soaked library curtains in chloride of lime to neutralize the odor, but the fumes caused vomiting and dizziness among politicians. Trapped by their own belief in miasma, MPs were convinced that the toxic vapors would strike them dead with cholera. Overcoming fifty years of entrenched laissez-faire dogma in eighteen days of sheer self-preservation, Parliament passed an emergency bill granting £3 million and unlimited powers to clean the Thames.',
       source: {
         letter: 'A',
@@ -275,8 +275,7 @@ module.exports = {
     },
     {
       act: 3,
-      title:
-        '5.3 Escalation: Joseph Bazalgette’s Brick Revolution: 82 Miles of Intercepting Sewers',
+      title: '5.3 Joseph Bazalgette’s Brick Revolution: 82 Miles of Sewers',
       text: '<span class="para-ref">[5.3]</span> The man entrusted with saving London was Chief Engineer **Joseph Bazalgette**. Bazalgette realized that widening street drains was useless; instead, he devised an audacious scheme to intercept London’s sewage before it ever reached the Thames. Between 1859 and 1865, Bazalgette directed an army of thousands of navvies who tunneled beneath the capital to construct **82 miles of underground intercepting brick sewers**, linked to over 1,000 miles of street drains. To ensure the tunnels could withstand immense water pressure, Bazalgette used 318 million bricks bound with **Portland cement**, a revolutionary waterproof material that hardened underwater.<br><br>Bazalgette’s sewers relied primarily on natural gravity: intercepting tunnels sloped gently downward, carrying waste eastward far past London to outfalls at Barking Creek and Crossness. Where tunnels dipped below river level, Bazalgette erected monumental, cathedral-like beam engine pumping stations—such as Abbey Mills and Crossness—equipped with massive steam-driven beam engines that lifted millions of gallons of sewage up into holding reservoirs, discharging it on the outgoing ebb tide into the estuary. Across provincial Britain, municipal engineers adopted similar heavy steam-pumping facilities, as preserved at the Eastney Beam Engine House in Hampshire (Source B).',
       source: {
         letter: 'B',
@@ -300,8 +299,7 @@ module.exports = {
     },
     {
       act: 4,
-      title:
-        '5.4 Forensic Archival Evidence: Scientific Confirmation: Louis Pasteur’s Germ Theory & Eastney Pumping Station',
+      title: '5.4 Scientific Confirmation: Pasteur’s Germ Theory & Eastney',
       text: '<span class="para-ref">[5.4]</span> While Bazalgette’s construction army tunneled beneath London, a monumental revolution was unfolding across the English Channel. In 1861, French chemist **Louis Pasteur** published his landmark **Germ Theory of Disease**, finally solving the biological riddle of water-borne illness. Through his famous swan-neck flask experiments (Source C), Pasteur demonstrated that boiled nutrient broth remained completely sterile when kept in a flask with a curved S-shaped neck that trapped airborne particles. When the neck was snapped, microscopic organisms entered and fermented the liquid, conclusively disproving the ancient myth of "spontaneous generation".<br><br>Pasteur proved that disease was caused by living, microscopic organisms, not by mysterious foul air (miasma). This scientific breakthrough provided the definitive justification for enclosed municipal sewage systems. Across provincial Britain, towns rushed to construct advanced steam-pumping facilities based on Bazalgette’s principles, permanently shielding citizens from bacterial contamination in their drinking supplies.',
       source: {
         letter: 'C',
@@ -325,7 +323,7 @@ module.exports = {
     },
     {
       act: 5,
-      title: '5.5 The Historical Verdict: The 1875 Public Health Act & The Death of Laissez-Faire',
+      title: '5.5 The 1875 Public Health Act & the Fall of Laissez-Faire',
       text: '<span class="para-ref">[5.5]</span> The combined impact of the Great Stink, Bazalgette’s triumphant sewers, and Pasteur’s Germ Theory fundamentally dismantled the Victorian philosophy of laissez-faire. In 1866, when another cholera epidemic struck London, the East End district that was not yet connected to Bazalgette’s network suffered thousands of fatalities, while the rest of the capital remained completely free of the disease. This stark epidemiological contrast offered indisputable proof that clean, enclosed water and sewer infrastructure saved lives.<br><br>In 1875, Prime Minister Benjamin Disraeli’s government passed the landmark **Public Health Act of 1875**. Unlike the weak, permissive law of 1848, the 1875 Act was strictly *compulsory*. Every local council across England was legally mandated to appoint a qualified Medical Officer of Health, provide clean piped drinking water, construct enclosed drainage, pave and sweep streets, inspect food in butcher shops, and enforce building regulations. The 1875 Act officially marked the death of laissez-faire in domestic governance, establishing for the first time in modern British history that clean water and public sanitation were fundamental legal rights guaranteed by the state.',
     },
   ],
@@ -421,6 +419,26 @@ module.exports = {
   },
 
   video: [
+    {
+      type: 'youtube',
+      url: 'https://www.youtube.com/watch?v=5k8AnhNkN04',
+      title: 'Bazalgette: Saviour of the Great Stink (Institution of Civil Engineers)',
+      duration: '5 mins 14 secs',
+      viewing_task:
+        'Identify two engineering innovations Joseph Bazalgette used to build London’s intercepting sewer network, and explain why his system has lasted over 150 years.',
+      model_answer:
+        'Bazalgette used newly invented waterproof Portland cement, oval egg-shaped brick tunnels to keep sewage moving by gravity without clogging, and massive steam pumping stations (like Abbey Mills and Crossness). Crucially, he doubled the calculated pipe capacity so London’s future population would not overwhelm the sewers.',
+    },
+    {
+      type: 'era',
+      url: 'https://era.org.uk/streaming-service-resource/5-sewer-king-seven-wonders-of-the-industrial-world/',
+      title: '05: The Sewer King | Seven Wonders of the Industrial World (BBC)',
+      duration: '48 mins 36 secs',
+      viewing_task:
+        'Observe Joseph Bazalgette’s struggle against political opposition, miasma theorists, and engineering disasters. Note how he tested Portland cement and how the Great Stink finally forced Parliament to release funding.',
+      model_answer:
+        'Politicians initially refused to fund Bazalgette due to laissez-faire penny-pinching and stubborn belief in miasma. The unbearable heatwave of June 1858 forced Parliament to pass emergency legislation granting £3 million in eighteen days. Bazalgette rigorously tested Portland cement batches to guarantee structural integrity against sewage acids, creating an underground marvel that virtually eliminated waterborne cholera in the capital.',
+    },
     {
       type: 'youtube',
       url: 'https://www.youtube.com/watch?v=8st-Ako2mrU',

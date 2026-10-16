@@ -229,12 +229,12 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '1.1 Context & Catalyst: Celtic Iron Age Settlement vs The Imperial Shock of AD 43',
+      title: '1.1 Celtic Settlement & the Roman Conquest (AD 43)',
       text: '<span class="para-ref">[1.1]</span> For centuries before the Roman conquest, Iron Age Britain was an agrarian society of small, dispersed tribal farming communities. Celtic families lived in circular timber homes called roundhouses, constructed from wattle-and-daub walls and topped with thick conical thatched roofs. Because farming homesteads were scattered across hills and valleys, waste management was straightforward, practical, and sustainable: families dug shallow, temporary cesspits in their vegetable enclosures, which naturally decomposed into fertilizer without endangering drinking supplies. Freshwater was drawn by wooden bucket from nearby unpolluted streams, bubbling natural springs, or shallow hand-dug gravel wells.<br><br>Everything changed dramatically in AD 43 when Emperor Claudius dispatched four imperial legions to invade Britain. The Romans brought an urban revolution. To garrison soldiers and govern conquered tribes, imperial administrators founded dense stone-walled towns and legionary fortresses (*castra*) such as Londinium (London), Verulamium (St Albans), and Eboracum (York). Suddenly, thousands of citizens, administrators, and soldiers were concentrated within cramped, paved streets. The simple rural methods of Celtic roundhouses could not survive this density; without a coordinated municipal water supply and organized waste disposal, urban populations would swiftly collapse from epidemic disease.',
     },
     {
       act: 2,
-      title: '1.2 The Gravity Revolution: Aqueducts, Conduits and Water Towers',
+      title: '1.2 Gravity Hydraulics: Aqueducts & Water Towers',
       text: '<span class="para-ref">[1.2]</span> Roman engineers solved the crisis of urban density through mastery of hydraulic engineering and the unyielding law of gravity. Recognizing that rivers running through towns quickly became fouled with surface wash, engineers located pristine natural springs in distant hills. To convey millions of gallons of water into cities, they constructed massive stone aqueducts (*aquae*) and covered conduits. Because the Romans possessed no electric or steam pumps, aqueducts were calculated with extraordinary mathematical precision: channels maintained an imperceptible downward slope gradient—often dropping just a few inches every hundred yards over distances of thirty miles or more—ensuring water flowed steadily into distribution castella (water towers).<br><br>From these central towers, lead and terracotta pipes distributed pressurized water across the city. Priority was allocated strictly: first to public street fountains where ordinary plebeians collected clean drinking water in ceramic jugs; second to monumental public bathhouses (*thermae*); and third, via paid taxation, to the private villas of wealthy patricians. At monumental sites like Fishbourne Roman Palace in Sussex (Source A), excavated lead pipes prove that water pressure was harnessed to power garden fountains and private luxury pools, showcasing the supreme mechanical confidence of imperial Rome.',
       source: {
         letter: 'A',
@@ -258,7 +258,7 @@ module.exports = {
     },
     {
       act: 3,
-      title: '1.3 The Thermae Experience: Public Bathhouses, Hypocausts, and Social Hygiene',
+      title: '1.3 The Thermae: Public Baths & Hypocaust Heating',
       text: '<span class="para-ref">[1.3]</span> The crown jewel of Roman public health was the public bathhouse, accessible to all citizens for the minimal entrance fee of a single copper coin (*quadrans*). Roman bathing was an elaborate physical ritual. Romans did not possess soap made from animal fat; instead, bathers entered the sweltering heat of the *caldarium*, slathered themselves in olive oil, and had slaves use curved bronze strigils to scrape away accumulated sweat, grime, and dead skin cells before plunging into the frigid cold waters of the *frigidarium* to close their pores.<br><br>Outside the Colosseum and provincial amphitheatres, shrewd vendors even bottled the sweat, dirt, and scraped skin of famous gladiators to sell as wildly expensive luxury facial moisturizers to adoring fans! The subterranean hypocaust system (Source B) circulated furnace heat beneath suspended mosaic floors, providing affordable warmth to thousands. The thermae functioned as daily community hubs where citizens exercised, debated politics, concluded commercial transactions, and dined, ensuring basic bodily cleanliness was woven directly into urban civic identity.',
       source: {
         letter: 'B',
@@ -282,7 +282,7 @@ module.exports = {
     },
     {
       act: 4,
-      title: '1.4 Forensic Realities: Public Latrines, Tersorium, and the Lead Paradox',
+      title: '1.4 Public Latrines, the Tersorium & the Lead Paradox',
       text: '<span class="para-ref">[1.4]</span> Furthermore, Roman cities incorporated communal public latrines featuring circular stone bench seats set over deep trenches continuously flushed with wastewater from the public baths. There were no individual cubicles or privacy doors: Roman citizens sat shoulder-to-shoulder chatting about politics, dinner, or chariot races! Even more remarkable was Roman toilet paper: the *tersorium*, a communal sea sponge attached to a wooden stick. After finishing their business, citizens rinsed the sponge in a saltwater channel running along the floor and politely passed the dripping sponge-on-a-stick to the next person waiting on the bench!<br><br>Surviving bronze strigils and oil flasks (Source C) illustrate how Romans cleaned their skin with oil and friction rather than chemical soap, but forensic archaeological science exposes severe limitations in Roman hygiene. The Romans possessed zero knowledge of microbiology; their health theories were based upon Galen’s balance of the four bodily humours and avoiding foul air (*miasma*). Because firewood was costly, the standing water in public plunge pools was rarely replaced, transforming warm communal baths into a murky, tepid soup of floating skin, hairs, and intestinal parasites. Forensic analysis of latrine soil and Roman coprolites reveals widespread infestation with whipworm, roundworm, and dysentery. Crucially, forensic bone analysis of Roman skeletons reveals high concentrations of lead poisoning (*plumbism*): while mineral deposits lined freshwater pipes, acidic water, wine, and lead cookware slowly poisoned the provincial elite.',
       source: {
         letter: 'C',
@@ -306,7 +306,7 @@ module.exports = {
     },
     {
       act: 5,
-      title: '1.5 The Historical Verdict: Medical Enlightenment vs Imperial Vanity',
+      title: '1.5 Historical Verdict: Medical Logic vs Imperial Prestige',
       text: '<span class="para-ref">[1.5]</span> Historians have long debated the real motives behind Roman sanitation. In the past, Victorian historians believed the Romans built baths and sewers simply to be clean, healthy, and benevolent. However, modern historians argue that Roman public health was really about military strength and imperial power (*romanitas*). Sick soldiers could not march or put down rebellions; grand marble bathhouses and towering stone aqueducts were physical signs of Roman authority, designed to impress conquered Celtic Britons and show off the technological superiority of Rome.<br><br>How fragile Roman public health really was became clear in AD 410, when the Western Roman Empire collapsed and the legions were pulled out of Britain. The sanitation system did not fall apart because people forgot how to build it; it collapsed because the imperial taxes, military officers, and organized municipal workers needed to clean sewers and repair pipes disappeared. Within decades, stone drains choked with silt, lead pipes were melted down for weapons, and Britain entered an unpaved era with no running piped water that lasted for nearly a thousand years.',
     },
   ],

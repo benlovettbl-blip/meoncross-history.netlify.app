@@ -239,17 +239,17 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '6.1 Context & Catalyst: The Soho Outbreak of 1854 & The Miasma Orthodoxy',
+      title: '6.1 The Soho Cholera Outbreak & Miasma Dogma (1854)',
       text: '<span class="para-ref">[6.1]</span> In late August 1854, a sudden and catastrophic cholera epidemic erupted in the crowded Soho neighborhood of central London. Within ten days, over five hundred men, women, and children living within two hundred and fifty yards of the intersection of Broad Street and Cambridge Street died in agonizing convulsions. Soho was thrown into complete pandemonium: hearses clogged the streets, coffins were stacked outside front doors, and over three-quarters of the population fled the district in blind terror.<br><br>The medical establishment’s reaction was entirely predictable: leading doctors and the General Board of Health dogmatically declared that the outbreak was caused by foul miasma. They claimed that hot summer weather had caused the uncleaned sewer grates, slaughterhouses, and rotting gutters of Soho to exhale a concentrated cloud of pestilential gas that poisoned everyone who breathed it. Doctors instructed surviving residents to keep their windows shuttered, light camphor oil lamps, and pour carbolic acid into the street.',
     },
     {
       act: 2,
-      title: '6.2 Escalation: The Medical Detective: Dr. John Snow at Broad Street',
+      title: '6.2 The Medical Detective: Dr John Snow at Broad Street',
       text: '<span class="para-ref">[6.2]</span> One London physician utterly rejected the miasma consensus: **Dr. John Snow**. Snow was a brilliant anesthetist who had administered chloroform to Queen Victoria during the birth of Prince Leopold in 1853. Snow applied sharp, clinical logic: if cholera were caused by inhaling foul air, the symptoms should appear first in the lungs, nose, or chest. Yet cholera victims consistently experienced violent vomiting, intestinal cramps, and watery diarrhea. Snow deduced that the lethal poison had to be swallowed and must therefore enter the body through contaminated food or drinking water.<br><br>Snow immediately hurried to Soho and focused his investigation on the public water pump situated at the corner of Broad Street and Cambridge Street. The pump drew water from an underground well dug twenty-eight feet into the gravel. Ironically, local residents considered the Broad Street pump water superior to all other pumps in Soho: because it drew from deeper ground, the water was cold, sparkling, and lacked the murky taste of river water.',
     },
     {
       act: 3,
-      title: '6.3 The Breakthrough: Forensic Archival Evidence: The Spot Map & The Brewery Anomaly',
+      title: '6.3 Spot Map Evidence & the Lion Brewery Anomaly (1854)',
       text: '<span class="para-ref">[6.3]</span> To substantiate his breakthrough, Snow created one of the most famous cartographic documents in the history of science: his **1854 Cholera Spot Map** (Source A). By plotting each of the 616 cholera deaths as a solid black bar stacked outside the victim’s street address, Snow visually proved that fatalities formed a tight, undeniable geographic cluster directly centered on the Broad Street pump.<br><br>Even more compelling was Snow’s investigation of local anomalies—cases that did not fit the expected pattern. On Broad Street itself stood the Lion Brewery, employing seventy workers; Snow discovered that not a single brewery worker had contracted cholera. When he interviewed the foreman, he discovered why: the men were provided with an allowance of free malt liquor each day and never drank water from the street pump! Armed with this proof, Snow marched into the St James parish vestry on the evening of 7 September 1854 and persuaded skeptical officials to remove the handle of the Broad Street pump the following morning. The epidemic collapsed immediately.',
       source: {
         letter: 'A',
@@ -273,7 +273,7 @@ module.exports = {
     },
     {
       act: 4,
-      title: '6.4 Forensic Reality: The Cesspool Revelation: Baby Lewis and the Leaking Well',
+      title: '6.4 The Cesspool Revelation: 40 Broad Street & the Leaking Well',
       text: '<span class="para-ref">[6.4]</span> While removing the pump handle halted the outbreak, Snow still needed to identify the exact mechanical source of contamination. Snow\'s forensic casebook records (Source B) detail how he traced the death of a wealthy widow, Susanna Eley, who died of cholera in healthy, elevated Hampstead five miles away after having Broad Street water carted to her in a bottle. Teaming up with local curate Reverend Henry Whitehead to interview residents house by house, Snow discovered that the very first victim of the epidemic—the "index case"—was a five-month-old infant named **Baby Lewis**, who lived at No. 40 Broad Street and had contracted cholera in late August.<br><br>His mother, Sarah Lewis, had washed her baby’s soiled diapers in buckets of warm water and emptied the contaminated slurry down a cesspool situated directly in front of her cellar. When surveyor Peter York excavated the ground beneath the roadway, he uncovered a horrifying reality: the brick lining of the No. 40 cesspool was cracked and decaying, while the stone wall of the Broad Street drinking well, situated just two feet and eight inches away, was fractured. Liquid human sewage teeming with *Vibrio cholerae* bacteria had been steadily filtering through the porous gravel soil straight into the drinking water drawn by hundreds of neighbourhood families.',
       source: {
         letter: 'B',
@@ -297,7 +297,7 @@ module.exports = {
     },
     {
       act: 5,
-      title: '6.5 The Historical Verdict: Dogma, Germ Theory and Robert Koch (1884)',
+      title: '6.5 Medical Dogma Overturned: Germ Theory & Robert Koch (1884)',
       text: '<span class="para-ref">[6.5]</span> Tragically, the Victorian medical establishment stubbornly refused to accept Snow’s proof. In 1855, the General Board of Health issued an official report completely rejecting Snow’s water-borne findings, continuing to champion miasma. Senior doctors argued that Snow had merely shown a statistical coincidence and dismissed his theories because he could not physically show them the cholera poison under a microscope. Dr John Snow suffered a fatal stroke in June 1858 at the age of forty-five, dying before his revolutionary breakthrough was officially acknowledged.<br><br>Snow’s complete vindication came thirty years later. In 1884, celebrated German microbiologist **Robert Koch** traveled to Egypt and India, successfully isolating the comma-shaped bacterium *Vibrio cholerae* under the microscope and proving conclusively that it was transmitted through water contaminated with human fecal waste. Today, Dr John Snow is celebrated worldwide as the founding father of modern epidemiology. His spot map demonstrated the power of geographical data, scientific detective work, and evidence-based medicine, permanently transforming clean, uncontaminated water into a recognized universal human right.',
     },
   ],

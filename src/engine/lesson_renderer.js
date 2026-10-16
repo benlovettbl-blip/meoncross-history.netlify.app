@@ -4519,12 +4519,12 @@ export function renderLesson(lesson) {
                     <div style="display: flex; justify-content: space-between; align-items: center; gap: 6px; margin-bottom: 6px; flex-wrap: wrap;">
                       <div style="display: inline-flex; align-items: center; gap: 4px;">
                         <span style="background: #0f284e; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 0.65rem; font-weight: 900; padding: 1px 6px; border-radius: 3px;">STAGE ${st.step}</span>
-                        ${st.para_ref ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: monospace; font-size: 0.65rem; font-weight: 800; padding: 1px 5px; border-radius: 3px;">Text ${st.para_ref}</span>` : ''}
+                        ${st.para_ref || st.paraRef ? `<span style="background: #1e3a8a; border: 0.8px solid #93c5fd; color: #ffffff; font-family: monospace; font-size: 0.65rem; font-weight: 800; padding: 1px 5px; border-radius: 3px;">Text ${st.para_ref || st.paraRef}</span>` : ''}
                       </div>
                       <span style="font-family: 'Inter', sans-serif; font-size: 0.72rem; font-weight: 800; color: #2563eb;">${st.date}</span>
                     </div>
                     <h5 style="font-family: 'Playfair Display', Georgia, serif; font-size: 0.88rem; font-weight: 800; color: #0f172a; margin: 0 0 6px 0; line-height: 1.3;">
-                      ${st.heading}
+                      ${st.heading || st.questionHeading || ''}
                     </h5>
                     ${
                       st.bullets && st.bullets.length > 0
@@ -4535,7 +4535,7 @@ export function renderLesson(lesson) {
                     `
                         : ''
                     }
-                    ${st.focus_clue ? `<div style="font-size: 0.74rem; color: #475569; font-style: italic; line-height: 1.35; margin-bottom: 8px;">${st.focus_clue}</div>` : ''}
+                    ${st.focus_clue || st.focusClue ? `<div style="font-size: 0.74rem; color: #475569; font-style: italic; line-height: 1.35; margin-bottom: 8px;">${st.focus_clue || st.focusClue}</div>` : ''}
                   </div>
                   <div style="margin-top: auto; padding-top: 6px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; align-items: center;">
                     <span style="font-size: 0.68rem; font-weight: 700; color: #64748b;">Workbook Left Page</span>
@@ -5239,7 +5239,9 @@ export function renderLesson(lesson) {
           unitId === 'eee' ||
           window.currentUnitId === 'eee' ||
           unitId === 'cme_new' ||
-          window.currentUnitId === 'cme_new'
+          window.currentUnitId === 'cme_new' ||
+          unitId === 'water_and_sanitation' ||
+          window.currentUnitId === 'water_and_sanitation'
         ) {
           displayHeading = rawHeading;
         } else {

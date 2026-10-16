@@ -233,13 +233,12 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title:
-        '4.1 Context & Catalyst: The Factory Shock: Boomtowns, Back-to-Backs & Cellar Dwellings',
+      title: '4.1 Boomtown Squalor: Back-to-Backs & Cellar Dwellings',
       text: '<span class="para-ref">[4.1]</span> Between 1780 and 1850, the Industrial Revolution transformed Britain from a peaceful rural nation into the manufacturing "workshop of the world." The rapid expansion of steam-powered cotton mills, iron foundries, and deep coal mines triggered the fastest, most chaotic wave of urbanisation in human history. Millions of agricultural labourers abandoned the countryside to seek factory wages in northern manufacturing boomtowns. Manchester’s population exploded from 25,000 in 1770 to over 300,000 by 1850, while Birmingham, Sheffield, and Leeds expanded at a terrifying, uncontrolled velocity.<br><br>Because towns grew with zero planning regulations or building codes, speculative landlords rushed to maximize rental profits by throwing up shoddy, cramped "back-to-back" terraced housing. These houses shared party walls on three sides, leaving only one narrow front wall for windows and doors. With zero through-ventilation, rooms were permanently dark, damp, and choked with soot. In poorer districts like Manchester’s "Little Ireland", thousands of immigrant labourers lived in subterranean cellar dwellings with dirt floors that flooded whenever it rained. Up to fifty or one hundred residents were forced to share a single outdoor communal privy midden, where mountains of nightsoil accumulated outside bedroom windows for months on end.',
     },
     {
       act: 2,
-      title: '4.2 Escalation: Contaminated Water & Slum Squalor: Privy Middens and Shallow Wells',
+      title: '4.2 Slum Squalor: Contaminated Wells & Privy Middens',
       text: '<span class="para-ref">[4.2]</span> The water supply in these industrial boomtowns was an ecological and medical nightmare. Municipalities owned no public water networks. Instead, commercial private water companies operated for profit, laying pipes only to wealthy suburban squares where residents paid high subscription rates. In working-class slum districts, water companies turned on public standpipes for merely twenty or thirty minutes three days a week. Frantic crowds of women and children fought around the pipes with buckets, kettles, and pans to secure enough water for drinking and cooking.<br><br>Those who could not reach the standpipes relied on local hand-dug wells or dipped buckets directly into sluggish rivers such as the Irwell in Manchester or the Aire in Leeds. These rivers were thick, black chemical sewers, polluted with industrial acids, dye refuse, and human excrement from thousands of unlined cesspits. Liquid sewage seeped through the porous earth directly into nearby shallow drinking wells. Satirical cartoons like "A Court for King Cholera" (Source A) portrayed squalid slum courtyards as royal palaces where disease ruled supreme, highlighting how open drains and uncollected dung fostered lethal epidemics.',
       source: {
         letter: 'A',
@@ -263,13 +262,12 @@ module.exports = {
     },
     {
       act: 3,
-      title:
-        '4.3 The Conflict: The Blue Death Arrives: Asiatic Cholera (1831–1832) & The Miasma Trap',
+      title: '4.3 The Blue Death: Asiatic Cholera & the Miasma Trap (1831)',
       text: '<span class="para-ref">[4.3]</span> In October 1831, British sanitary squalor collided with a lethal global pathogen: **Asiatic Cholera**. Entering through the northeastern coal port of Sunderland from the Baltic Sea, cholera struck with terrifying speed and horrific symptoms. Victims experienced sudden, violent vomiting and uncontrollable watery diarrhea ("rice-water stools"). Within hours, severe dehydration drained gallons of fluid from the body: the skin turned a ghostly shriveled blue-grey color, painful muscle spasms seized the limbs, and healthy adults died within twelve hours of their first symptom. The 1831–1832 epidemic killed over 32,000 people across Britain.<br><br>Victorian society was paralyzed with terror, yet the medical establishment’s response was hopelessly misguided. Trapped in the ancient doctrine of miasma, physicians insisted that cholera was transmitted by foul gases emanating from rotting heaps and stagnant drains. In response, local Boards of Health ordered tar barrels to be burned in streets to purify the air, threw chloride of lime into gutters, and whitewashed house walls with vinegar. None of these measures worked because cholera was a water-borne bacterium (*Vibrio cholerae*) ingested by drinking water contaminated with sewage. While doctors focused on the smell in the air, the lethal poison was flowing through their water cups.',
     },
     {
       act: 4,
-      title: '4.4 Forensic Archival Evidence: Edwin Chadwick’s 1842 Sanitary Report',
+      title: '4.4 Edwin Chadwick’s Sanitary Report & the Miasma Dilemma (1842)',
       text: '<span class="para-ref">[4.4]</span> In 1842, an ambitious, abrasive lawyer and civil servant named **Edwin Chadwick** published a revolutionary 400-page parliamentary investigation: the *Report on the Sanitary Condition of the Labouring Population of Great Britain* (Source B). Drawing on medical testimonies and statistical audits from across the nation, Chadwick shocked Victorian society with devastating facts. He proved that the average life expectancy for a labourer in industrial Manchester was a horrifying **seventeen years**—compared to thirty-eight years for a rural agricultural worker in Rutland!<br><br>Crucially, Chadwick understood Victorian political psychology: he framed public health not as a moral duty, but as a hard-headed financial problem. He proved that preventable water-borne diseases killed working fathers in their prime, throwing thousands of widows and orphans onto parish poor-relief taxes paid by middle-class ratepayers. Chadwick argued that building clean, pressurized water mains and underground sewers with smooth, egg-shaped glazed ceramic pipes would eliminate filth, improve worker productivity, and save taxpayers millions of pounds in poor-rate relief.',
       source: {
         letter: 'B',
@@ -295,8 +293,7 @@ module.exports = {
     },
     {
       act: 5,
-      title:
-        '4.5 The Historical Verdict: The 1848 Public Health Act & The Bastion of Laissez-Faire',
+      title: '4.5 The 1848 Public Health Act & Laissez-Faire Resistance',
       text: '<span class="para-ref">[4.5]</span> Chadwick’s crusading work resulted in the landmark **Public Health Act of 1848**, which created Britain’s first national General Board of Health with Chadwick as its chief commissioner. However, the legislation was fatally crippled by Victorian political ideology. Britain was fiercely committed to **laissez-faire** ("leave alone")—the deeply held belief that national government had no moral right to interfere in private property, business profits, or local council taxation.<br><br>Consequently, Parliament made the 1848 Act almost entirely *permissive* (optional) rather than compulsory. Local councils only had to establish a health board if their death rate exceeded an astronomical 23 per 1,000 residents. Wealthy landlords, factory owners, and property ratepayers furiously resisted spending money on sewage pipes, denouncing Chadwick as a tyrannical "sanitary dictator" who wanted to bully independent British towns. Furious ratepayer associations formed across the nation to vote out pro-health councillors. In 1854, the government surrendered to ratepayer pressure: Chadwick was sacked, the General Board of Health was dismantled, and Britain’s industrial towns remained trapped in lethal squalor.',
     },
   ],

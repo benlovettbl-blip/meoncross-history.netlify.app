@@ -237,13 +237,12 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '2.1 Context & Catalyst: The Vanishing Aqueducts & The Medieval Borough Boom',
+      title: '2.1 The Medieval Borough Boom & Vanishing Aqueducts',
       text: '<span class="para-ref">[2.1]</span> The centuries following the collapse of Roman Britain in AD 410 witnessed the complete disintegration of centralized urban infrastructure. Monumental stone aqueducts crumbled, lead conduits were excavated and melted into weapons or roofing, and hypocaust furnaces went cold. For several centuries, Anglo-Saxon communities favored dispersed timber hamlets, where waste disposal remained rural and unproblematic. However, from the eleventh century onward, England experienced an explosive commercial renaissance. Hundreds of market towns and boroughs expanded rapidly: London’s population surged toward 50,000, while provincial centres such as Winchester, Norwich, and York expanded into bustling commercial hubs.<br><br>This medieval urban boom created an acute sanitation crisis. Towns grew within ancient stone defensive walls, forcing carpenters to build narrow, multi-storey timber houses with cantilevered upper storeys called jetties that leaned out over unpaved thoroughfares, blocking out sunlight and fresh air. Without Roman civic engineers or imperial taxation, towns lacked paved storm drains and pressurized running water networks. Ordinary townspeople fetched daily water in wooden buckets from public conduits, parish wells, or local rivers such as the Fleet in London, which steadily grew polluted with household wash and street grime.',
     },
     {
       act: 2,
-      title:
-        '2.2 Escalation & Conflict: The Municipal Waste Battle: Rakers, Gong Farmers and Court Fines',
+      title: '2.2 Municipal Waste Battles: Rakers & Gong Farmers',
       text: '<span class="para-ref">[2.2]</span> Contrary to the widespread modern myth that medieval people wallowed contentedly in filth, medieval town corporations waged an active, unending campaign against public squalor. Citizens dug back-garden cesspits lined with timber or stone to collect privy waste. However, in crowded boroughs where gardens were minute, cesspits frequently leaked into neighbouring basements or seeped through porous soil into shallow drinking wells. To combat this hazard, town councils created specialized municipal regulations. Official street sweepers called "rakers" were employed to clear public squares, and pig-keepers were strictly prohibited from allowing swine to roam loose through the streets.<br><br>The most crucial figures in medieval urban sanitation were the "gong farmers" (also known as nightmen). Because the stench of human sewage was considered intolerable and medically dangerous, gong farmers were legally permitted to work only between 9:00 PM and 5:00 AM under cover of darkness. Armed with shovels and wooden tubs, they descended into pitch-black cesspits, loaded raw sewage into carts, and transported it outside the city gates to sell to suburban farmers as rich agricultural manure. Town court records (Source A) reveal that citizens who failed to maintain their cesspits or dumped rotting offal in the King’s highway were prosecuted and fined by juries at local Court Leet inquests.',
       source: {
         letter: 'A',
@@ -267,8 +266,7 @@ module.exports = {
     },
     {
       act: 3,
-      title:
-        '2.3 Forensic Archival Evidence: Monastic Hydraulics: Canterbury Christ Church & Titchfield Abbey',
+      title: '2.3 Monastic Hydraulics: Canterbury Priory & Pure Water',
       text: '<span class="para-ref">[2.3]</span> The sharpest contrast to crowded town squalor was found inside medieval religious houses. Wealthy monasteries, nunneries, and friaries possessed the land, disciplined workforce, and vast financial endowments required to construct sophisticated hydraulic networks that rivalled the Romans. At Christ Church Priory in Canterbury (Source B), a celebrated architectural waterworks drawing from c.1165 in the Eadwine Psalter demonstrates astonishing engineering ingenuity. Monk Wibert oversaw the construction of an underground network of lead pipes that collected fresh spring water over a mile outside the city walls.<br><br>Before entering the cloister, Canterbury’s water passed through a succession of five settling tanks designed to filter out sand, silt, and organic impurities. This purified spring water flowed under gravity pressure into an elevated stone water tower, which distributed running water to private wash-basins, the infirmary, kitchen sculleries, and an ornate circular fountain (*lavatorium*) where monks washed their hands and faces before meals. Finally, wastewater from the lavatorium was diverted through the monastic reredorter (communal latrine), flushing human waste continuously into the Great Stour river.',
       source: {
         letter: 'B',
@@ -292,12 +290,12 @@ module.exports = {
     },
     {
       act: 4,
-      title: '2.4 The Crisis: The Black Death Catastrophe (1348) & The Miasma Orthodoxy',
+      title: '2.4 The Black Death Catastrophe & Miasma Dogma (1348)',
       text: '<span class="para-ref">[2.4]</span> In the sweltering summer of 1348, an unimaginable catastrophe made landfall on the Dorset coast: the **Black Death**. Caused by the bacterium *Yersinia pestis* and carried across trading routes by fleas on black rats, the plague caused agonizing egg-sized swellings (buboes) in the groin and armpits, accompanied by black hemorrhagic spots and violent coughing of blood. Between 1348 and 1350, the pandemic wiped out between 40% and 50% of the entire English population, devastating towns and villages alike.<br><br>Medieval medical science was utterly helpless before the pathogen. Steeped in the classical teachings of Galen and Hippocrates, medieval physicians attributed the pestilence to two causes: divine punishment for human sin, and corrupt, poisoned air (*miasma*) generated by putrefying corpses, stagnant marshes, and uncleaned dungheaps. To combat foul air, citizens burned fragrant wood and barrels of pitch in the streets, held sweet-smelling posies and vinegar-soaked sponges to their noses, and enacted strict port quarantines (*quarantena*—forty days). While town councils ordered streets to be swept and closed public bathhouses (*bagnios*) fearing hot steam opened the skin’s pores to miasma, they possessed no understanding that microscopic bacteria and fleas caused the disease.',
     },
     {
       act: 5,
-      title: '2.5 The Historical Verdict: The 1388 Statute of Cambridge & Peasant Hygiene',
+      title: '2.5 The 1388 Statute of Cambridge & Peasant Realities',
       text: '<span class="para-ref">[2.5]</span> Modern historical revisionism, pioneered by historians such as Carole Rawcliffe, has dismantled the Victorian stereotype of the ignorant, filthy medieval peasant. Fieldwork analysis at Titchfield Abbey in Hampshire (Source C) confirms that medieval religious houses invested heavily in diverting natural waterways, stone-lined culverts, and fishponds to maintain hygienic living conditions. Town dwellers likewise valued cleanliness, regularly bathing in wooden tubs, washing before religious services, and cleaning their teeth with salt.<br><br>In 1388, Parliament passed the landmark **Statute of Cambridge** under King Richard II. This statute was England’s first nationwide environmental protection law: it made it a criminal offence under heavy royal fines to cast animal dung, butchery offal, and rotting refuse into rivers, town ditches, and open public waters. Municipal authorities across the kingdom appointed ward aldermen to inspect latrines, clear blocked conduits, and enforce fines against polluters. Therefore, while medieval Britain lacked modern germ theory and piped infrastructure, the era was defined not by deliberate squalor, but by a continuous, highly organized struggle against urban filth within the strict limits of pre-industrial technology.',
       source: {
         letter: 'C',

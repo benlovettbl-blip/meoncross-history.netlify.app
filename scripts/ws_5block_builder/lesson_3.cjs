@@ -240,13 +240,12 @@ module.exports = {
   narrative_blocks: [
     {
       act: 1,
-      title: '3.1 Context & Catalyst: The Great Metropolis & The Tudor Population Boom',
+      title: '3.1 The Great Metropolis: Tudor London’s Population Boom',
       text: '<span class="para-ref">[3.1]</span> Between 1500 and 1700, the demographic landscape of England underwent a staggering transformation. While the national population doubled from 2.5 million to over 5 million, the growth of London was explosive: expanding from 60,000 citizens in 1500 to over 500,000 by 1700. Rural enclosure and agricultural changes drove hundreds of thousands of impoverished labourers into the capital searching for employment. To accommodate this human wave, landlords subdivided ancient medieval merchant houses into cramped multi-family tenements and built rows of poorly constructed timber buildings down narrow alleyways.<br><br>The physical pressure on London’s sanitation was catastrophic. Multi-storey buildings with cantilevered upper floors leaned across streets so closely that neighbours on top floors could lean out of their windows and shake hands across the alleyway! These overhangs blocked out sunlight and trapped toxic coal smoke and foul smells. The capital possessed no centralized sewage network. Ordinary citizens threw chamber pot slops out of upper windows into street gutters with the traditional cry of *"Gardyloo!"* (from the French *regardez l’eau*—watch out for the water!). Piped drinking water remained an unattainable luxury for the vast majority, who queued for hours at public street conduits or paid commercial water-carriers (*cobs*) by the bucket.',
     },
     {
       act: 2,
-      title:
-        '3.2 Escalation & Conflict: Sir John Harington’s Flush Toilet: Innovation Ahead of Its Time',
+      title: '3.2 Sir John Harington’s Flush Toilet: Ajax (1596)',
       text: '<span class="para-ref">[3.2]</span> In 1596, a witty courtier named **Sir John Harington**—godson to Queen Elizabeth I—devised a revolutionary technological breakthrough: the world’s first functioning flushing water closet (Source A). In his satirical treatise *The Metamorphosis of Ajax*, Harington provided detailed engineering schematics for an indoor toilet that washed away waste using water from an overhead cistern. Harington’s design featured a brass valve, a seat with an airtight pan, and a release lever that unleashed 7.5 gallons of water to flush waste down a lead pipe into an outdoor cesspool.<br><br>Harington constructed working models at his country house in Kelston and installed one at Queen Elizabeth’s palace at Richmond. However, despite royal curiosity, the invention failed completely to transform public health across early modern Britain. The fatal barrier was infrastructural: Harington’s flush toilet required a continuous, pressurized supply of running water to refill the cistern and an underground drainage network to carry waste away. Because 99% of British households possessed neither running water mains nor municipal sewers, the flush toilet remained an isolated palace novelty, and Britons continued relying on chamber pots, privy sheds, and back-garden cesspits for the next two centuries.',
       source: {
         letter: 'A',
@@ -270,14 +269,12 @@ module.exports = {
     },
     {
       act: 3,
-      title:
-        '3.3 Forensic Archival Evidence: Sir Hugh Myddelton & The New River Engineering Project',
+      title: '3.3 Sir Hugh Myddelton & the New River Project (1613)',
       text: '<span class="para-ref">[3.3]</span> As London’s traditional parish wells and public conduits became hopelessly overdrawn and fouled, private enterprise stepped in to solve the capital’s water famine. In 1609, a wealthy Welsh goldsmith and merchant named **Sir Hugh Myddelton** launched an audacious engineering feat: the **New River** project. Myddelton financed the construction of a 38-mile-long man-made canal designed to bring fresh, pure spring water from Amwell and Chadwell in Hertfordshire directly into a newly excavated distribution reservoir at Islington in north London.<br><br>Completed in 1613, the New River utilized gravity to flow through countryside and over valleys. From the Islington reservoir, water was piped into the city through a vast underground network of hollowed-out elm tree trunks connected by iron bands. However, the New River was an entirely private commercial venture. Only wealthy aristocrats and prosperous merchants who could afford to pay quarterly subscription fees had lead branch pipes connected directly to their basements. Impoverished slum dwellers in districts like Whitechapel and Southwark were entirely excluded, continuing to scoop brackish, sewage-tainted water directly from the tidal Thames.',
     },
     {
       act: 4,
-      title:
-        '3.4 Forensic Reality in the Capital: Samuel Pepys’ Cellar and London’s Nightsoil Crisis',
+      title: '3.4 Samuel Pepys’ Cellar & London’s Nightsoil Squalor',
       text: '<span class="para-ref">[3.4]</span> The shocking reality of early modern domestic sanitation is captured with vivid honesty in the private diaries of naval administrator **Samuel Pepys**. On the morning of 20 October 1660, Pepys crept down into the dark basement in his nightshirt, expecting to retrieve wine, only to suffer a disgusting shock: *“Going down to my cellar... I put my foot into a great heap of turds, by which I find that Sir Thomas Penn’s house of office is fallen into my cellar, which do trouble me.”* (Source B). His neighbour’s brick cesspit had cracked, leaking human excrement directly through the cellar wall into Pepys’ home.<br><br>Pepys’ diary confirms that even wealthy, well-connected government officials lived atop ticking sanitary time bombs. London’s basements were honeycombed with thousands of aging brick cesspools that leaked sewage into the surrounding soil and contaminated nearby drinking wells. The city relied entirely on nightsoil men who arrived with wooden barrels after dark to empty overflowing pits, frequently spilling foul slurry across doorsteps. Dead animals, butcher offal, and human filth accumulated in open street kennels, creating a pervasive stench that contemporaries believed was a direct source of pestilence.',
       source: {
         letter: 'B',
@@ -301,8 +298,7 @@ module.exports = {
     },
     {
       act: 5,
-      title:
-        '3.5 The Historical Verdict: The Great Plague of 1665 & The Limits of Scientific Enlightenment',
+      title: '3.5 The Great Plague & the Limits of Medical Science (1665)',
       text: '<span class="para-ref">[3.5]</span> Historians identify a profound paradox in the Early Modern era. This was the age of the Scientific Revolution: William Harvey discovered the circulation of blood (1628), Robert Hooke observed microscopic cells (1665), and Sir Isaac Newton formulated the laws of universal gravitation. Yet, when the **Great Plague of 1665** struck London, killing nearly 100,000 citizens in seven months (Source C), public health and medical practice remained almost completely unchanged from the fourteenth century.<br><br>The medical response was defined by ancient superstition and miasma theory. The College of Physicians ordered citizens to hold pomanders to their noses, burn sulfur and pitch in the streets, and forced schoolboys at Eton College to smoke tobacco daily to ward off poisonous air! Parish watchmen padlocked infected families inside their homes for forty days, painting red crosses on doors with the inscription *"Lord Have Mercy Upon Us"*, while elderly "Searchers of the Dead" inspected corpses. Wealthy citizens, including King Charles II and wealthy doctors, fled to the countryside, abandoning poor slum dwellers to die in squalor. Therefore, while the Early Modern era laid crucial engineering foundations with Harington’s toilet and Myddelton’s New River, public health for ordinary citizens actually deteriorated as explosive urban growth far outpaced sanitary science.',
       source: {
         letter: 'C',
