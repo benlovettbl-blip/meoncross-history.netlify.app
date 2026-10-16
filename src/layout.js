@@ -171,6 +171,108 @@ export function bindEvents() {
     });
   }
 
+  // Reading Overlay Controller (Visual Stress, Irlen Syndrome & Dyslexia)
+  const overlayBtn = document.getElementById('btn-overlay-toggle');
+  const overlayPopover = document.getElementById('overlay-popover');
+  const overlayLabel = document.getElementById('overlay-toggle-label');
+
+  const OVERLAYS = {
+    none: { id: 'none', label: 'Overlay: Off', class: '' },
+    blue: { id: 'blue', label: 'Blue Overlay 🟦', class: 'overlay-blue' },
+    yellow: { id: 'yellow', label: 'Yellow Overlay 🟨', class: 'overlay-yellow' },
+    green: { id: 'green', label: 'Mint Overlay 🟩', class: 'overlay-green' },
+    rose: { id: 'rose', label: 'Peach Overlay 🟧', class: 'overlay-rose' },
+  };
+
+  function applyReadingOverlay(overlayId, persist = true) {
+    const config = OVERLAYS[overlayId] || OVERLAYS.none;
+
+    // Clear all previous overlay classes on body and documentElement
+    Object.values(OVERLAYS).forEach((o) => {
+      if (o.class) {
+        document.body.classList.remove(o.class);
+        document.documentElement.classList.remove(o.class);
+      }
+    });
+
+    if (config.class) {
+      document.body.classList.add(config.class);
+      document.documentElement.classList.add(config.class);
+    }
+
+    if (overlayBtn) {
+      overlayBtn.classList.toggle('active', overlayId !== 'none');
+      if (overlayId === 'blue') {
+        overlayBtn.style.borderColor = '#0284c7';
+        overlayBtn.style.color = '#0369a1';
+        overlayBtn.style.background = '#e0f2fe';
+      } else if (overlayId === 'yellow') {
+        overlayBtn.style.borderColor = '#ca8a04';
+        overlayBtn.style.color = '#854d0e';
+        overlayBtn.style.background = '#fef9c3';
+      } else if (overlayId === 'green') {
+        overlayBtn.style.borderColor = '#16a34a';
+        overlayBtn.style.color = '#166534';
+        overlayBtn.style.background = '#dcfce7';
+      } else if (overlayId === 'rose') {
+        overlayBtn.style.borderColor = '#e11d48';
+        overlayBtn.style.color = '#9f1239';
+        overlayBtn.style.background = '#ffe4e6';
+      } else {
+        overlayBtn.style.borderColor = '';
+        overlayBtn.style.color = '';
+        overlayBtn.style.background = '';
+      }
+    }
+
+    if (overlayLabel) {
+      overlayLabel.textContent = config.label;
+    }
+
+    // Highlight active option in popover
+    document.querySelectorAll('.overlay-option-btn').forEach((btn) => {
+      const isSelected = btn.getAttribute('data-overlay') === overlayId;
+      btn.classList.toggle('selected', isSelected);
+    });
+
+    if (persist) {
+      localStorage.setItem('reading_overlay', overlayId);
+    }
+  }
+
+  window.setReadingOverlay = applyReadingOverlay;
+
+  // Restore saved overlay on boot
+  const savedOverlay = localStorage.getItem('reading_overlay') || 'none';
+  applyReadingOverlay(savedOverlay, false);
+
+  if (overlayBtn && overlayPopover) {
+    // Open/close popover
+    overlayBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isVisible = overlayPopover.style.display === 'block';
+      overlayPopover.style.display = isVisible ? 'none' : 'block';
+      const themePopover = document.getElementById('theme-popover');
+      if (themePopover) themePopover.style.display = 'none';
+    });
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+      if (!overlayBtn.contains(e.target) && !overlayPopover.contains(e.target)) {
+        overlayPopover.style.display = 'none';
+      }
+    });
+
+    // Option buttons inside popover
+    document.querySelectorAll('.overlay-option-btn').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        const overlayId = e.currentTarget.getAttribute('data-overlay');
+        applyReadingOverlay(overlayId, true);
+        overlayPopover.style.display = 'none';
+      });
+    });
+  }
+
   // Mobile navigation drawer toggle
   const menuToggle = document.getElementById('sidebar-toggle-btn');
   const sidebar = document.getElementById('app-sidebar');

@@ -511,6 +511,8 @@ body {
 }
 
 .app-header {
+  position: relative;
+  z-index: 1000;
   height: 70px;
   border-bottom: 1px solid var(--border-glass);
   padding: 0 32px;
@@ -5292,6 +5294,185 @@ body.sen-mode .speech-word.speaking-word-highlight {
   color: #ffffff;
   border-color: #1e3a8a;
   box-shadow: 0 2px 6px rgba(30, 58, 138, 0.25);
+}
+
+/* ==========================================================================
+   VISUAL STRESS & IRLEN READING OVERLAYS (Blue, Yellow, Mint, Peach)
+   ========================================================================== */
+#reading-overlay-screen {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 99990;
+  mix-blend-mode: multiply;
+  transition: background-color 0.25s ease;
+  display: none;
+}
+
+/* Header Overlay Button */
+.header-tool-btn.btn-overlay {
+  background: var(--bg-card, #f8fafc);
+  border: 1.5px solid var(--border-glass, #e2e8f0);
+  border-radius: 8px;
+  padding: 6px 10px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary, #1e293b);
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.header-tool-btn.btn-overlay:hover {
+  border-color: var(--primary, #1e3a8a);
+  background: var(--bg-card-hover, #f1f5f9);
+}
+
+.header-tool-btn.btn-overlay.active {
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Overlay Popover styling */
+.overlay-option-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 1.5px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary, #1e293b);
+  transition: all 0.15s ease;
+}
+
+.overlay-option-btn:hover {
+  background: var(--bg-card-hover, #f1f5f9);
+  border-color: var(--border-glass, #cbd5e1);
+}
+
+.overlay-option-btn.selected {
+  background: #f1f5f9;
+  border-color: var(--primary, #1e3a8a);
+  font-weight: 700;
+}
+
+.overlay-swatch {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.overlay-tag {
+  margin-left: auto;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+/* 🟦 Blue Overlay */
+body.overlay-blue #reading-overlay-screen,
+html.overlay-blue #reading-overlay-screen {
+  display: block;
+  background-color: rgba(186, 230, 253, 0.45); /* Soft Aqua/Sky tint */
+}
+body.overlay-blue,
+html.overlay-blue body {
+  background-color: #edf5fc !important;
+}
+body.overlay-blue .app-header {
+  background-color: #e0f2fe !important;
+  border-bottom: 1px solid #bae6fd !important;
+}
+body.overlay-blue .card,
+body.overlay-blue .narrative-block,
+body.overlay-blue .task-item,
+body.overlay-blue .primary-source-box,
+body.overlay-blue .do-now-box {
+  background-color: #f0f7fe !important;
+  border-color: #bae6fd !important;
+}
+
+/* 🟨 Yellow Overlay */
+body.overlay-yellow #reading-overlay-screen,
+html.overlay-yellow #reading-overlay-screen {
+  display: block;
+  background-color: rgba(254, 240, 138, 0.42); /* Canary Yellow tint */
+}
+body.overlay-yellow,
+html.overlay-yellow body {
+  background-color: #fefcf0 !important;
+}
+body.overlay-yellow .app-header {
+  background-color: #fef9c3 !important;
+  border-bottom: 1px solid #fef08a !important;
+}
+body.overlay-yellow .card,
+body.overlay-yellow .narrative-block,
+body.overlay-yellow .task-item,
+body.overlay-yellow .primary-source-box,
+body.overlay-yellow .do-now-box {
+  background-color: #fffdf5 !important;
+  border-color: #fef08a !important;
+}
+
+/* 🟩 Mint / Green Overlay */
+body.overlay-green #reading-overlay-screen,
+html.overlay-green #reading-overlay-screen {
+  display: block;
+  background-color: rgba(187, 247, 208, 0.4); /* Mint / Sage tint */
+}
+body.overlay-green,
+html.overlay-green body {
+  background-color: #f2fbf5 !important;
+}
+body.overlay-green .app-header {
+  background-color: #dcfce7 !important;
+  border-bottom: 1px solid #bbf7d0 !important;
+}
+body.overlay-green .card,
+body.overlay-green .narrative-block,
+body.overlay-green .task-item,
+body.overlay-green .primary-source-box,
+body.overlay-green .do-now-box {
+  background-color: #f6fcf8 !important;
+  border-color: #bbf7d0 !important;
+}
+
+/* 🟧 Peach / Rose Overlay */
+body.overlay-rose #reading-overlay-screen,
+html.overlay-rose #reading-overlay-screen {
+  display: block;
+  background-color: rgba(254, 205, 211, 0.4); /* Rose / Peach tint */
+}
+body.overlay-rose,
+html.overlay-rose body {
+  background-color: #fdf5f6 !important;
+}
+body.overlay-rose .app-header {
+  background-color: #ffe4e6 !important;
+  border-bottom: 1px solid #fecdd3 !important;
+}
+body.overlay-rose .card,
+body.overlay-rose .narrative-block,
+body.overlay-rose .task-item,
+body.overlay-rose .primary-source-box,
+body.overlay-rose .do-now-box {
+  background-color: #fff8f8 !important;
+  border-color: #fecdd3 !important;
 }
 
 /* Authentic SEN / Dyslexia Mode */

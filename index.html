@@ -75,6 +75,16 @@
           }
         }
       })();
+
+      // Immediate Reading Overlay Restoration (eliminates flash of white for visual stress / Irlen pupils)
+      (function () {
+        try {
+          var saved = localStorage.getItem('reading_overlay');
+          if (saved && saved !== 'none') {
+            document.documentElement.classList.add('overlay-' + saved);
+          }
+        } catch (e) {}
+      })();
     </script>
 
     <link rel="manifest" href="/manifest.json" />
@@ -136,6 +146,9 @@
       <i class="fa-solid fa-graduation-cap curtain-logo"></i>
       <div class="curtain-text">Loading History Hub...</div>
     </div>
+
+    <!-- Coloured Reading Overlay Acetate Screen for Visual Stress / Dyslexia -->
+    <div id="reading-overlay-screen" class="reading-overlay-screen" aria-hidden="true"></div>
 
     <div class="app-layout">
       <!-- Sidebar Navigation -->
@@ -402,6 +415,126 @@
               <i class="fa-solid fa-universal-access"></i>
               <span class="btn-text">SEN</span>
             </button>
+
+            <!-- Coloured Reading Overlay / Visual Stress Tint Selector -->
+            <div id="header-overlay-toggle" style="position: relative">
+              <button
+                type="button"
+                id="btn-overlay-toggle"
+                class="header-tool-btn btn-overlay"
+                title="Coloured Reading Overlay for Visual Stress & Dyslexia (Blue, Yellow, Mint, Peach)"
+                aria-label="Toggle Coloured Reading Overlay"
+              >
+                <i class="fa-solid fa-glasses"></i>
+                <span class="btn-text" id="overlay-toggle-label">Overlay: Off</span>
+                <i class="fa-solid fa-chevron-down" style="font-size: 0.65rem; opacity: 0.6"></i>
+              </button>
+              <div
+                id="overlay-popover"
+                class="overlay-popover"
+                style="
+                  display: none;
+                  position: absolute;
+                  top: calc(100% + 8px);
+                  left: 0;
+                  background: var(--bg-card, #fff);
+                  border: 1.5px solid var(--border-glass, #e2e8f0);
+                  border-radius: 12px;
+                  padding: 12px 14px;
+                  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                  z-index: 99999;
+                  min-width: 225px;
+                "
+              >
+                <div
+                  style="
+                    font-size: 0.72rem;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 0.05em;
+                    color: var(--text-muted, #64748b);
+                    margin-bottom: 8px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                  "
+                >
+                  <span>Reading Overlays</span>
+                  <span style="font-size: 0.68rem; font-weight: normal; opacity: 0.8"
+                    >Visual Stress / SEN</span
+                  >
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 6px">
+                  <button type="button" class="overlay-option-btn selected" data-overlay="none">
+                    <span
+                      class="overlay-swatch swatch-none"
+                      style="
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 0.75rem;
+                        background: #e2e8f0;
+                        border-radius: 4px;
+                      "
+                      >✕</span
+                    >
+                    <span class="overlay-name">Standard (Off)</span>
+                  </button>
+                  <button type="button" class="overlay-option-btn" data-overlay="blue">
+                    <span
+                      class="overlay-swatch"
+                      style="background: #38bdf8; border: 1px solid #0284c7; border-radius: 4px"
+                    ></span>
+                    <span class="overlay-name">Soft Blue Overlay</span>
+                    <span class="overlay-tag" style="background: #e0f2fe; color: #0284c7"
+                      >Aqua</span
+                    >
+                  </button>
+                  <button type="button" class="overlay-option-btn" data-overlay="yellow">
+                    <span
+                      class="overlay-swatch"
+                      style="background: #facc15; border: 1px solid #ca8a04; border-radius: 4px"
+                    ></span>
+                    <span class="overlay-name">Soft Yellow Overlay</span>
+                    <span class="overlay-tag" style="background: #fef9c3; color: #a16207"
+                      >Canary</span
+                    >
+                  </button>
+                  <button type="button" class="overlay-option-btn" data-overlay="green">
+                    <span
+                      class="overlay-swatch"
+                      style="background: #4ade80; border: 1px solid #16a34a; border-radius: 4px"
+                    ></span>
+                    <span class="overlay-name">Soft Mint Overlay</span>
+                    <span class="overlay-tag" style="background: #dcfce7; color: #15803d"
+                      >Sage</span
+                    >
+                  </button>
+                  <button type="button" class="overlay-option-btn" data-overlay="rose">
+                    <span
+                      class="overlay-swatch"
+                      style="background: #fb7185; border: 1px solid #e11d48; border-radius: 4px"
+                    ></span>
+                    <span class="overlay-name">Soft Peach / Rose</span>
+                    <span class="overlay-tag" style="background: #ffe4e6; color: #be123c"
+                      >Warm</span
+                    >
+                  </button>
+                </div>
+                <div
+                  style="
+                    margin-top: 10px;
+                    padding-top: 8px;
+                    border-top: 1px solid var(--border-glass, #e2e8f0);
+                    font-size: 0.7rem;
+                    color: var(--text-muted, #64748b);
+                    line-height: 1.35;
+                  "
+                >
+                  Calms glare &amp; stops visual vibration. Saved on this device.
+                </div>
+              </div>
+            </div>
 
             <!-- Natural Read Aloud Voice Toggle -->
             <button
