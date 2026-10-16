@@ -679,27 +679,27 @@ const unitData = {
         {
           question: 'Who died in January 1066 without leaving an heir to the English throne?',
           options: [
-            'William the Conqueror',
+            'Harold Godwinson',
             'Edward the Confessor',
             'Alfred the Great',
-            'Harold Godwinson',
+            'William the Conqueror',
           ],
           answer: 'Edward the Confessor',
         },
         {
           question: 'Where did Harold Godwinson crush Harald Hardrada’s Viking invasion army?',
-          options: ['Hastings', 'Fulford', 'Stamford Bridge', 'Pevensey'],
+          options: ['Fulford', 'Hastings', 'Stamford Bridge', 'Pevensey'],
           answer: 'Stamford Bridge',
         },
         {
           question:
             'What military formation did Anglo-Saxon housecarls form at the crest of Senlac Hill?',
-          options: ['The Phalanx', 'The Flying Wedge', 'The Roman Square', 'The Shield Wall'],
+          options: ['The Flying Wedge', 'The Roman Square', 'The Phalanx', 'The Shield Wall'],
           answer: 'The Shield Wall',
         },
         {
           question: 'What tactical trick did Duke William use to lure the English downhill?',
-          options: ['The Feigned Retreat', 'Poisoned Wells', 'Night Ambush', 'Smoke Screens'],
+          options: ['The Feigned Retreat', 'Night Ambush', 'Poisoned Wells', 'Smoke Screens'],
           answer: 'The Feigned Retreat',
         },
       ],
@@ -1047,21 +1047,21 @@ const unitData = {
         {
           question:
             'Roughly how many Norman soldiers invaded England in 1066 to rule over 2 million people?',
-          options: ['Over 100,000', 'Roughly 50,000', 'Fewer than 1,000', 'Fewer than 10,000'],
+          options: ['Over 100,000', 'Fewer than 1,000', 'Roughly 50,000', 'Fewer than 10,000'],
           answer: 'Fewer than 10,000',
         },
         {
           question: 'What was the artificial earthen mound of a Norman castle called?',
-          options: ['The Bailey', 'The Palisade', 'The Motte', 'The Barbican'],
+          options: ['The Palisade', 'The Bailey', 'The Motte', 'The Barbican'],
           answer: 'The Motte',
         },
         {
           question: 'What campaign did William carry out in the winter of 1069–1070?',
           options: [
             'The Harrying of the North',
-            'The Pilgrimage of Grace',
             'The Barons’ War',
             'The Peasant Crusade',
+            'The Pilgrimage of Grace',
           ],
           answer: 'The Harrying of the North',
         },
@@ -1069,10 +1069,10 @@ const unitData = {
           question:
             'What great survey of English land and wealth did William commission in 1085–1086?',
           options: [
-            'The Anglo-Saxon Chronicle',
-            'The Domesday Book',
             'Magna Carta',
+            'The Domesday Book',
             'The Constitutions of Clarendon',
+            'The Anglo-Saxon Chronicle',
           ],
           answer: 'The Domesday Book',
         },
@@ -1410,7 +1410,7 @@ const unitData = {
         {
           question:
             'What royal office did Thomas Becket hold before becoming Archbishop of Canterbury?',
-          options: ['Lord High Treasurer', 'Lord Chancellor', 'Earl Marshal', 'Justiciar'],
+          options: ['Justiciar', 'Lord Chancellor', 'Earl Marshal', 'Lord High Treasurer'],
           answer: 'Lord Chancellor',
         },
         {
@@ -1426,15 +1426,15 @@ const unitData = {
         },
         {
           question: 'On what date was Thomas Becket assassinated inside Canterbury Cathedral?',
-          options: ['14 October 1066', '15 June 1215', '29 December 1170', '24 June 1381'],
+          options: ['24 June 1381', '15 June 1215', '29 December 1170', '14 October 1066'],
           answer: '29 December 1170',
         },
         {
           question: 'What public punishment did King Henry II submit to at Canterbury in 1174?',
           options: [
-            'Loss of his crown',
             'Imprisonment in the Tower',
             'Exile to Normandy',
+            'Loss of his crown',
             'Flogging by monks',
           ],
           answer: 'Flogging by monks',
@@ -1746,18 +1746,18 @@ const unitData = {
       quick_quiz: [
         {
           question: 'What ancestral continental territory did King John lose to France in 1204?',
-          options: ['Gascony', 'Aquitaine', 'Normandy', 'Brittany'],
+          options: ['Aquitaine', 'Brittany', 'Normandy', 'Gascony'],
           answer: 'Normandy',
         },
         {
           question: 'Where beside the River Thames did King John seal Magna Carta in June 1215?',
-          options: ['Westminster', 'Canterbury', 'Oxford', 'Runnymede'],
+          options: ['Westminster', 'Oxford', 'Canterbury', 'Runnymede'],
           answer: 'Runnymede',
         },
         {
           question:
             'Which famous clause guaranteed that no free man would be imprisoned without lawful judgement?',
-          options: ['Clause 63', 'Clause 39', 'Clause 12', 'Clause 1'],
+          options: ['Clause 1', 'Clause 39', 'Clause 63', 'Clause 12'],
           answer: 'Clause 39',
         },
         {
@@ -2074,15 +2074,15 @@ const unitData = {
       quick_quiz: [
         {
           question: 'In what year did the Black Death first arrive in England?',
-          options: ['1348', '1215', '1381', '1066'],
+          options: ['1348', '1066', '1215', '1381'],
           answer: '1348',
         },
         {
           question: 'What 1351 royal law attempted to freeze peasant wages at pre-plague rates?',
           options: [
-            'The Poor Law',
             'The Constitutions of Clarendon',
             'Magna Carta',
+            'The Poor Law',
             'The Statute of Labourers',
           ],
           answer: 'The Statute of Labourers',

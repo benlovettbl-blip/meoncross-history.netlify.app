@@ -15,6 +15,7 @@ const l3 = require('./lesson_3.cjs');
 const l4 = require('./lesson_4.cjs');
 const l5 = require('./lesson_5.cjs');
 const l6 = require('./lesson_6.cjs');
+const l7 = require('./lesson_7.cjs');
 
 const water_and_sanitation = {
   id: 'water_and_sanitation',
@@ -172,7 +173,7 @@ const water_and_sanitation = {
     },
   ],
 
-  lessons: [l1, l2, l3, l4, l5, l6].map((lesson) => {
+  lessons: [l1, l2, l3, l4, l5, l6, l7].map((lesson) => {
     if (lesson.workbook_stages) {
       lesson.workbook_stages = lesson.workbook_stages.map((st) => ({
         step: st.step,
