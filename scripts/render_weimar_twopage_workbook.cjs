@@ -96,44 +96,66 @@ function renderFooterStrip(pageNum, text, totalPages = 24) {
 
 /**
  * MODULE PAGE 1: 5-Stage Chronological Inquiry Spine (Verso)
+ * Aligned with Edexcel Medicine Benchmark Standard:
+ *   - Full-width black .stage-banner across both columns
+ *   - High-visibility 44mm pure white trigger spine with 3 spec-anchored concrete triad bullets
+ *   - 6 clean ruled note-taking lines (~154mm writing width)
+ *   - White pill paragraph badge [X.1] on far right of stage banner
+ *   - Core Specification Focus strip in header
  */
 function renderSpinePage(cfg, pageNum, quip) {
-  const { keyTopicBadge, enquiryQuestion, stages } = cfg;
+  const { keyTopicBadge, enquiryQuestion, specAnchor, stages } = cfg;
+  const lessonNum = cfg.lessonNum || cfg.enquiryNum || 1;
 
-  let stagesHtml = '';
-  stages.forEach((st, idx) => {
-    let bulletsHtml = st.bullets
-      .map((b) => `<div><span style="font-weight: 900; color: #000000;">&bull;</span> ${b}</div>`)
-      .join('\n');
-    stagesHtml += `
-          <!-- Stage ${idx + 1} -->
-          <div class="spine-stage-row" style="display: flex; flex: 1; min-height: 0; align-items: stretch; margin: 0; border-bottom: 1.2px solid #000000;">
-            <div style="width: 38mm; flex-shrink: 0; border-left: 2.5px solid #000000; padding: 0 3px 0 5px; display: flex; flex-direction: column; justify-content: center; position: relative;">
-              <div style="position: absolute; left: -5.5px; top: 50%; transform: translateY(-50%); width: 8px; height: 8px; background: #000000; border-radius: 50%;"></div>
-              <div style="display: flex; align-items: center; gap: 3px; margin-bottom: 1px;">
-                <span style="background: #000000; color: #ffffff; font-family: 'Inter', sans-serif; font-size: 6.5pt; font-weight: 900; padding: 0.5px 3.5px; border-radius: 2px;">${idx + 1}</span>
-                <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 800; color: #000000;">${st.dates}</span>
+  const stagesHtml = stages
+    .map((st, sIdx) => {
+      const bulletsHtml = st.bullets
+        .map(
+          (b, idx) => `
+            <div style="flex: 1; display: flex; align-items: center; padding: 0 5px; ${idx < 2 ? 'border-bottom: 0.8px solid #000000;' : ''}">
+              <div style="display: flex; align-items: flex-start; gap: 4px; line-height: 1.18;">
+                <span style="font-weight: 900; color: #000000; font-size: 7pt; line-height: 1.3;">&bull;</span>
+                <span style="font-family: 'Inter', sans-serif; font-size: 8.8pt; font-weight: 800; color: #000000; word-break: break-word;">${b}</span>
               </div>
-              <div style="font-family: 'Playfair Display', serif; font-size: 7.2pt; font-weight: 800; color: #000000; line-height: 1.1; margin-bottom: 2px;">
-                ${st.title}
-              </div>
-              <div style="margin-top: 1px;">
-                <div style="display: flex; flex-direction: column; gap: 0.5px; font-family: 'Inter', sans-serif; font-size: 6.3pt; line-height: 1.15; color: #111111;">
-                  ${bulletsHtml}
-                </div>
-              </div>
-              <div style="margin-top: 2.5px; border: 1px dashed #000000; background: #f8fafc; padding: 1.5px 3px; border-radius: 2px;">
-                <div style="font-family: 'Inter', sans-serif; font-size: 5.2pt; font-weight: 900; text-transform: uppercase; color: #000000; line-height: 1; margin-bottom: 1px;">
-                  Focus Clue
-                </div>
-                <div style="font-family: 'Georgia', serif; font-size: 5.8pt; line-height: 1.15; color: #222222; font-style: italic;">
-                  ${st.focusClue}
-                </div>
-              </div>
+            </div>`,
+        )
+        .join('');
+
+      const questionText = st.questionHeading || st.focusClue || st.title;
+      const paraBadge = st.paraBadge || `[${sIdx + 1}.1]`;
+
+      return `
+        <div class="spine-stage-block" style="display: flex; flex-direction: column; flex: 1; min-height: 0; margin-bottom: 2.5px; border: 1.2px solid #000000; border-radius: 2px; overflow: hidden; background: #ffffff;">
+          
+          <!-- Full-Width Banner with Key Question Across Page (Strict Single-Line Fit) -->
+          <div class="stage-banner" style="background: #000000; color: #ffffff; padding: 2px 7px; display: flex; align-items: center; border-bottom: 1.2px solid #000000; min-height: 20px; box-sizing: border-box;">
+            <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1; overflow: hidden;">
+              <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 8.2pt; font-weight: 900; padding: 0.6px 6px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;">
+                ${st.step || sIdx + 1}
+              </span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.4pt; font-weight: 800; color: #ffffff; white-space: nowrap; flex-shrink: 0;">
+                ${st.dates}
+              </span>
+              <span style="color: #ffffff; font-size: 7.5pt; flex-shrink: 0;">&bull;</span>
+              <span style="font-family: 'Inter', sans-serif; font-size: 8.6pt; font-weight: 800; color: #ffffff; white-space: nowrap; overflow: hidden; letter-spacing: -0.1px;">
+                ${questionText}
+              </span>
+            </div>
+            <span style="background: #ffffff; color: #000000; font-family: 'Inter', sans-serif; font-size: 7.6pt; font-weight: 900; padding: 0.5px 5px; border-radius: 2px; margin-left: 6px; white-space: nowrap; flex-shrink: 0;">
+              ${paraBadge}
+            </span>
+          </div>
+
+          <!-- Content Row: Left 3-Zone Trigger Spine (44mm) & Right Ruled Writing Lines (~154mm) -->
+          <div style="display: flex; flex: 1; min-height: 0; align-items: stretch;">
+            
+            <!-- Left Column: High-Visibility 44mm Trigger Spine (Pure White Canvas, Zero Grey Dithering) -->
+            <div style="width: 44mm; flex-shrink: 0; background: #ffffff; display: flex; flex-direction: column; border-right: 1.2px solid #000000; box-sizing: border-box;">
+              ${bulletsHtml}
             </div>
 
-            <!-- Ruled Lines (6 Lines per stage • 30 lines total) -->
-            <div style="flex: 1; display: flex; flex-direction: column; border-left: 1px solid #cbd5e1; margin: 0; padding: 0;">
+            <!-- Right Column: 6 Ruled Note-Taking Lines (Expanded Writing Space) -->
+            <div style="flex: 1; display: flex; flex-direction: column; background: #ffffff; margin: 0; padding: 0;">
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
@@ -141,42 +163,46 @@ function renderSpinePage(cfg, pageNum, quip) {
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
               <div style="flex: 1; min-height: 0; border-bottom: 1.2px solid #000000; box-sizing: border-box;"></div>
             </div>
-          </div>`;
-  });
+
+          </div>
+        </div>`;
+    })
+    .join('');
 
   return `
   <!-- LESSON ENQUIRY NOTEBOOK WITH CHRONOLOGICAL SPINE (PAGE ${pageNum}) -->
   <div class="page page-container verso-page" id="page-${pageNum}" style="padding: 4mm 6mm;">
     <div class="page-body-full">
+      
       <!-- Lesson Header with Inquiry Question Title -->
       <div style="border-bottom: 2px solid #000000; padding-bottom: 2px; margin-bottom: 2px;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; border: 1.2px solid #000000; padding: 1px 6px; border-radius: 2px;">
-            ${keyTopicBadge} &bull; ENQUIRY LESSON NOTEBOOK
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 900; letter-spacing: 0.5px; text-transform: uppercase; background: #000000; color: #ffffff; border: 1.2px solid #000000; padding: 1.5px 7px; border-radius: 2px;">
+            ${keyTopicBadge} &bull; LESSON NOTEBOOK
           </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 7.2pt; font-weight: 800; text-transform: uppercase; color: #000000;">
-            EDEXCEL PAPER 3 (1HI0/31) &bull; WEIMAR &amp; NAZI GERMANY
+          <span style="font-family: 'Inter', sans-serif; font-size: 8.0pt; font-weight: 800; text-transform: uppercase; color: #000000;">
+            EDEXCEL GCSE (9–1) HISTORY &bull; PAPER 3 (1HI0/31)
           </span>
         </div>
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 11.5pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.18;">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 12.2pt; color: #000000; margin: 1px 0 1px 0; font-weight: 900; line-height: 1.2;">
           ${enquiryQuestion}
         </h2>
       </div>
 
-      <!-- Active Lesson Note-Taking Spine -->
-      <div style="flex: 1; display: flex; flex-direction: column; margin-top: 1px; min-height: 0;">
-        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1.5px solid #000000; padding: 1px 0; margin-bottom: 2px;">
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.8pt; font-weight: 900; text-transform: uppercase; letter-spacing: 0.5px;">
-            Chronological Inquiry Spine &bull; Core Causal Narrative
-          </span>
-          <span style="font-family: 'Inter', sans-serif; font-size: 6.5pt; font-style: italic; color: #444444;">
-            Take precise, structured notes alongside each milestone as your teacher narrates the history
-          </span>
-        </div>
+      <!-- Core Specification Focus Strip -->
+      ${
+        specAnchor
+          ? `
+      <div style="border: 1px solid #000000; border-left: 3.5px solid #000000; padding: 2.5px 7px; background: #ffffff; margin-bottom: 2px; font-family: 'Inter', sans-serif; font-size: 8.4pt; line-height: 1.26; color: #000000;">
+        <strong style="color: #000000;">Core Specification Focus:</strong> ${specAnchor}
+      </div>`
+          : ''
+      }
 
-        <!-- 5 Chronological Stages with Spine on Left and Ruled Lines on Right -->
+      <!-- Chronological Inquiry Spine & Note-Taking Canvas -->
+      <div style="flex: 1; display: flex; flex-direction: column; min-height: 0; margin-top: 2px;">
         <div style="display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 0;">
-${stagesHtml}
+          ${stagesHtml}
         </div>
       </div>
 
