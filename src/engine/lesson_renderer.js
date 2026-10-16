@@ -5745,32 +5745,101 @@ export function renderLesson(lesson) {
               <div class="cme-source-content" style="padding: 18px; background: #ffffff; border-top: 1px solid #e2e8f0;">
                 ${sourceHeaderHtml}
                 ${sourceBodyHtml}
-                ${
-                  rawSource.how_useful_question
-                    ? `
-                  <div class="archival-source-utility-box" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
-                    <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
-                      <i class="fa-solid fa-scale-balanced"></i> Source Utility Enquiry & Provenance Scaffolding
-                    </div>
-                    <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 10px; line-height: 1.45;">
-                      ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.how_useful_question) : rawSource.how_useful_question}
-                    </div>
-                    ${
-                      rawSource.provenance_clues
-                        ? `
-                      <div style="font-size: 0.88rem; color: #166534; line-height: 1.55; background: #ffffff; padding: 10px 14px; border-radius: 4px; border: 1px solid #bbf7d0;">
-                        <strong style="color: #14532d; display: block; margin-bottom: 4px;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
-                        <ul style="margin: 4px 0 0 16px; padding: 0;">
-                          ${(Array.isArray(rawSource.provenance_clues) ? rawSource.provenance_clues : [rawSource.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
-                        </ul>
+                ${(() => {
+                  const utilityObj = rawSource.utility_enquiry || rawSource.utilityEnquiry;
+                  if (utilityObj) {
+                    const uPrompt =
+                      utilityObj.question || utilityObj.prompt || utilityObj.enquiry || '';
+                    const uInferences =
+                      utilityObj.content_inferences ||
+                      utilityObj.inferences ||
+                      utilityObj.content ||
+                      '';
+                    const uProv = utilityObj.provenance_evaluation || utilityObj.provenance || '';
+                    const uContext =
+                      utilityObj.context_limitations ||
+                      utilityObj.limitations ||
+                      utilityObj.context ||
+                      '';
+
+                    return `
+                      <div class="archival-source-utility-box edexcel-paper3-utility-card" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; flex-wrap: wrap; gap: 6px;">
+                          <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                            <i class="fa-solid fa-scale-balanced"></i> Edexcel Paper 3 &bull; Q3(a) Source Utility Enquiry [8 Marks]
+                          </div>
+                          <span style="font-size: 0.65rem; font-weight: 800; color: #15803d; background: #dcfce7; border: 1px solid #bbf7d0; padding: 2px 8px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.5px;">Exam Utility Triad</span>
+                        </div>
+                        ${uPrompt ? `<div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 12px; line-height: 1.45;">${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uPrompt) : uPrompt}</div>` : ''}
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-top: 8px;">
+                          ${
+                            uInferences
+                              ? `
+                            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; display: flex; flex-direction: column;">
+                              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
+                                <i class="fa-solid fa-magnifying-glass" style="color: #16a34a;"></i> 1. Content &amp; Inferences
+                              </div>
+                              <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5; flex-grow: 1;">
+                                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uInferences) : uInferences}
+                              </div>
+                            </div>`
+                              : ''
+                          }
+                          ${
+                            uProv
+                              ? `
+                            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; display: flex; flex-direction: column;">
+                              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
+                                <i class="fa-solid fa-stamp" style="color: #16a34a;"></i> 2. Provenance (NOP)
+                              </div>
+                              <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5; flex-grow: 1;">
+                                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uProv) : uProv}
+                              </div>
+                            </div>`
+                              : ''
+                          }
+                          ${
+                            uContext
+                              ? `
+                            <div style="background: #ffffff; border: 1px solid #bbf7d0; border-radius: 5px; padding: 10px 12px; display: flex; flex-direction: column;">
+                              <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 5px; display: flex; align-items: center; gap: 5px;">
+                                <i class="fa-solid fa-book-bookmark" style="color: #16a34a;"></i> 3. Context &amp; Limitations
+                              </div>
+                              <div style="font-size: 0.86rem; color: #1e293b; line-height: 1.5; flex-grow: 1;">
+                                ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(uContext) : uContext}
+                              </div>
+                            </div>`
+                              : ''
+                          }
+                        </div>
                       </div>
-                    `
-                        : ''
-                    }
-                  </div>
-                `
-                    : ''
-                }
+                      `;
+                  } else if (rawSource.how_useful_question) {
+                    return `
+                      <div class="archival-source-utility-box" style="background: #f0fdf4; border: 1.5px solid #86efac; border-left: 5px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin-top: 14px; box-shadow: 0 2px 5px rgba(22, 163, 74, 0.06);">
+                        <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #166534; margin-bottom: 6px; letter-spacing: 0.5px; display: flex; align-items: center; gap: 6px;">
+                          <i class="fa-solid fa-scale-balanced"></i> Source Utility Enquiry & Provenance Scaffolding
+                        </div>
+                        <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; color: #14532d; font-weight: 700; margin-bottom: 10px; line-height: 1.45;">
+                          ${typeof window !== 'undefined' && window.formatBold ? window.formatBold(rawSource.how_useful_question) : rawSource.how_useful_question}
+                        </div>
+                        ${
+                          rawSource.provenance_clues
+                            ? `
+                          <div style="font-size: 0.88rem; color: #166534; line-height: 1.55; background: #ffffff; padding: 10px 14px; border-radius: 4px; border: 1px solid #bbf7d0;">
+                            <strong style="color: #14532d; display: block; margin-bottom: 4px;">Provenance Scaffolding (Author &bull; Audience &bull; Motive):</strong>
+                            <ul style="margin: 4px 0 0 16px; padding: 0;">
+                              ${(Array.isArray(rawSource.provenance_clues) ? rawSource.provenance_clues : [rawSource.provenance_clues]).map((c) => `<li>${c}</li>`).join('')}
+                            </ul>
+                          </div>
+                        `
+                            : ''
+                        }
+                      </div>
+                      `;
+                  }
+                  return '';
+                })()}
                 ${
                   rawSource.hinge_question || rawSource.question || rawSource.source_question
                     ? `

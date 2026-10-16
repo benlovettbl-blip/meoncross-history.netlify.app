@@ -1,5 +1,4 @@
-// Early Elizabethan England, 1558–88 Unit Data
-const unitData = {
+export default {
   lesson_reflection: {
     prompt:
       'You have reached the end of this unit! Before you finish, please turn to the back page of your printed workbook and complete the End of Unit Reflection & Pupil Voice page.',
@@ -397,27 +396,25 @@ const unitData = {
           level_4:
             'Elizabeth became queen in 1558 facing a massive £300,000 debt left by Mary I. She had to borrow money at high interest from Antwerp and appointed William Cecil as her chief advisor to restore stability.',
           source: {
-            act: 1,
-            id: 'source_a_elizabeth_coronation',
+            id: 'source_a_coronation_portrait',
             letter: 'A',
-            title: 'Source A: The Coronation Portrait of Queen Elizabeth I (1559)',
+            title: 'Source A: Queen Elizabeth I Coronation Portrait (1559)',
             src: '/images/elizabeth_coronation_portrait.jpg',
             source: '/images/elizabeth_coronation_portrait.jpg',
             image: '/images/elizabeth_coronation_portrait.jpg',
             caption:
-              'Queen Elizabeth I in her coronation robes patterned with Tudor roses and holding the orb and sceptre, projecting royal majesty.',
-            desc: 'Official coronation portrait of Queen Elizabeth I in 1559.',
-            provenance:
-              'Official portrait of Queen Elizabeth I in coronation robes, c. 1559. National Portrait Gallery, London (NPG 5175).',
-            citation: 'National Portrait Gallery, NPG 5175, Elizabeth I Coronation Portrait.',
+              'Queen Elizabeth I in her magnificent gold coronation robes, holding the orb and sceptre as symbols of monarchical authority and divine right, painted c. 1559.',
+            desc: 'Coronation portrait of Queen Elizabeth I in imperial robes.',
+            provenance: 'National Portrait Gallery, London (NPG 5175), c. 1559.',
+            citation: 'National Portrait Gallery, London, 1559.',
             question:
-              'How does Source A illustrate how Elizabeth used visual majesty and Tudor symbolism to overcome doubts about female rule?',
+              'How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
             hinge_question:
-              'How does Source A illustrate how Elizabeth used visual majesty and Tudor symbolism to overcome doubts about female rule?',
+              'How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
             source_context:
-              'Official portrait of Queen Elizabeth I in her gold cloth of estate coronation robes, holding the orb and sceptre to signify divinely ordained monarchical power. Hinge Question: How does Source A illustrate how Elizabeth used visual majesty and Tudor symbolism to overcome doubts about female rule?',
+              'Queen Elizabeth I in her gold coronation robes, holding the orb and sceptre, c. 1559. Hinge Question: How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
             context:
-              'Official coronation portrait of Queen Elizabeth I holding the orb and sceptre in 1559.',
+              'Queen Elizabeth I in her gold coronation robes, holding the orb and sceptre, c. 1559.',
           },
         },
         {
@@ -429,6 +426,27 @@ const unitData = {
           text: '<span class="para-ref">[2.1]</span> Tudor monarchical governance was rooted in the concept of <strong>Divine Right</strong>, but the Crown possessed no standing army or professional police force. Sovereign power was instead maintained through an executive <strong>19-man Privy Council</strong> comprising senior noblemen and statesmen meeting daily to guide defense, finance, and diplomacy.<br><br><span class="para-ref">[2.2]</span> To bind the landed aristocracy and ambitious courtiers to her rule, Elizabeth deployed a sophisticated system of <strong>royal patronage</strong>, distributing titles, offices, leases, and lucrative <strong>commercial monopolies</strong>. By balancing rival political factions at court—most notably between the cautious William Cecil and her favourite, Lord Robert Dudley—the Queen prevented any single noble clique from dominating royal decision-making.',
           level_4:
             'Elizabeth governed with a 19-man Privy Council of trusted nobles and advisors. She used royal patronage, like giving titles and monopolies, to keep rival noble factions loyal and balanced at court.',
+          source: {
+            id: 'source_b_william_cecil',
+            letter: 'B',
+            title: 'Source B: Sir William Cecil, Lord Burghley, Elizabeth’s Chief Minister',
+            src: '/images/sir_william_cecil_lord_burghley.jpg',
+            source: '/images/sir_william_cecil_lord_burghley.jpg',
+            image: '/images/sir_william_cecil_lord_burghley.jpg',
+            caption:
+              'Sir William Cecil (later Lord Burghley), appointed Elizabeth’s Principal Secretary on 17 November 1558, who managed government business and parliament for forty years.',
+            desc: 'Contemporary portrait of Sir William Cecil, Lord Burghley, Principal Secretary to Elizabeth I.',
+            provenance: 'National Portrait Gallery, London (NPG 2174), c. 1565.',
+            citation: 'National Portrait Gallery, London, c. 1565.',
+            question:
+              'Why did Elizabeth’s appointment of moderate, experienced advisers like William Cecil prove critical in stabilising her royal government in 1558?',
+            hinge_question:
+              'Why did Elizabeth’s appointment of moderate, experienced advisers like William Cecil prove critical in stabilising her royal government in 1558?',
+            source_context:
+              'Contemporary portrait of Sir William Cecil, Elizabeth’s most trusted adviser and Principal Secretary from 1558 until his death in 1598. Hinge Question: Why did Elizabeth’s appointment of moderate, experienced advisers like William Cecil prove critical in stabilising her royal government in 1558?',
+            context:
+              'Contemporary portrait of Sir William Cecil, Elizabeth’s most trusted adviser and Principal Secretary from 1558 until his death in 1598.',
+          },
         },
         {
           stage: 3,
@@ -642,27 +660,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 1,
-          id: 'source_a_elizabeth_coronation',
+          id: 'source_a_coronation_portrait',
           letter: 'A',
-          title: 'Source A: The Coronation Portrait of Queen Elizabeth I (1559)',
+          title: 'Source A: Queen Elizabeth I Coronation Portrait (1559)',
           src: '/images/elizabeth_coronation_portrait.jpg',
           source: '/images/elizabeth_coronation_portrait.jpg',
           image: '/images/elizabeth_coronation_portrait.jpg',
           caption:
-            'Queen Elizabeth I in her coronation robes patterned with Tudor roses and holding the orb and sceptre, projecting royal majesty.',
-          desc: 'Official coronation portrait of Queen Elizabeth I in 1559.',
-          provenance:
-            'Official portrait of Queen Elizabeth I in coronation robes, c. 1559. National Portrait Gallery, London (NPG 5175).',
-          citation: 'National Portrait Gallery, NPG 5175, Elizabeth I Coronation Portrait.',
+            'Queen Elizabeth I in her magnificent gold coronation robes, holding the orb and sceptre as symbols of monarchical authority and divine right, painted c. 1559.',
+          desc: 'Coronation portrait of Queen Elizabeth I in imperial robes.',
+          provenance: 'National Portrait Gallery, London (NPG 5175), c. 1559.',
+          citation: 'National Portrait Gallery, London, 1559.',
           question:
-            'How does Source A illustrate how Elizabeth used visual majesty and Tudor symbolism to overcome doubts about female rule?',
+            'How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
           hinge_question:
-            'How does Source A illustrate how Elizabeth used visual majesty and Tudor symbolism to overcome doubts about female rule?',
+            'How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
           source_context:
-            'Official portrait of Queen Elizabeth I in her gold cloth of estate coronation robes, holding the orb and sceptre to signify divinely ordained monarchical power. Hinge Question: How does Source A illustrate how Elizabeth used visual majesty and Tudor symbolism to overcome doubts about female rule?',
+            'Queen Elizabeth I in her gold coronation robes, holding the orb and sceptre, c. 1559. Hinge Question: How did Elizabeth use royal portraits like the Coronation Portrait to project divine authority and overcome early doubts about female rule?',
           context:
-            'Official coronation portrait of Queen Elizabeth I holding the orb and sceptre in 1559.',
+            'Queen Elizabeth I in her gold coronation robes, holding the orb and sceptre, c. 1559.',
+        },
+        {
+          id: 'source_b_william_cecil',
+          letter: 'B',
+          title: 'Source B: Sir William Cecil, Lord Burghley, Elizabeth’s Chief Minister',
+          src: '/images/sir_william_cecil_lord_burghley.jpg',
+          source: '/images/sir_william_cecil_lord_burghley.jpg',
+          image: '/images/sir_william_cecil_lord_burghley.jpg',
+          caption:
+            'Sir William Cecil (later Lord Burghley), appointed Elizabeth’s Principal Secretary on 17 November 1558, who managed government business and parliament for forty years.',
+          desc: 'Contemporary portrait of Sir William Cecil, Lord Burghley, Principal Secretary to Elizabeth I.',
+          provenance: 'National Portrait Gallery, London (NPG 2174), c. 1565.',
+          citation: 'National Portrait Gallery, London, c. 1565.',
+          question:
+            'Why did Elizabeth’s appointment of moderate, experienced advisers like William Cecil prove critical in stabilising her royal government in 1558?',
+          hinge_question:
+            'Why did Elizabeth’s appointment of moderate, experienced advisers like William Cecil prove critical in stabilising her royal government in 1558?',
+          source_context:
+            'Contemporary portrait of Sir William Cecil, Elizabeth’s most trusted adviser and Principal Secretary from 1558 until his death in 1598. Hinge Question: Why did Elizabeth’s appointment of moderate, experienced advisers like William Cecil prove critical in stabilising her royal government in 1558?',
+          context:
+            'Contemporary portrait of Sir William Cecil, Elizabeth’s most trusted adviser and Principal Secretary from 1558 until his death in 1598.',
         },
       ],
       pair_share: {
@@ -1222,26 +1259,24 @@ const unitData = {
           level_4:
             'The 1559 Act of Supremacy broke with Rome, naming Elizabeth Supreme Governor of the Church of England. All clergy and royal officials had to swear the Oath of Supremacy or lose their positions.',
           source: {
-            act: 2,
             id: 'source_a_act_of_supremacy',
             letter: 'A',
-            title: 'Source A: The Act of Supremacy (May 1559)',
+            title: 'Source A: The 1559 Act of Supremacy',
             src: '/images/act_of_supremacy.jpg',
             source: '/images/act_of_supremacy.jpg',
             image: '/images/act_of_supremacy.jpg',
             caption:
-              'The printed frontispiece of the 1559 Elizabethan Act of Supremacy, declaring the monarch Supreme Governor of the Church of England.',
-            desc: 'Parliamentary statute frontispiece of the 1559 Act of Supremacy.',
-            provenance:
-              'Parliamentary Archives, London, An Acte restoring to the Crowne the auncient Jurisdiction over the State Ecclesiasticall, 1559.',
-            citation: 'Parliamentary Archives, HL/PO/PU/1/1558/1Eliz1n1, Act of Supremacy 1559.',
+              'The opening preamble of the 1559 Act of Supremacy passed by Parliament, declaring Queen Elizabeth I to be "Supreme Governor" rather than "Supreme Head" of the Church of England.',
+            desc: 'The official parliamentary statute of the 1559 Act of Supremacy.',
+            provenance: 'Parliamentary Archives, London, 1 Elizabeth I, c. 1, May 1559.',
+            citation: 'Parliamentary Archives, London, 1559.',
             question:
-              'How does the terminology in Source A reflect a deliberate political compromise to satisfy moderate Catholics while securing royal authority?',
+              'Why was the compromise title of "Supreme Governor" chosen instead of "Supreme Head" to reassure both Catholic traditionalists and Puritan reformers?',
             hinge_question:
-              'How does the terminology in Source A reflect a deliberate political compromise to satisfy moderate Catholics while securing royal authority?',
+              'Why was the compromise title of "Supreme Governor" chosen instead of "Supreme Head" to reassure both Catholic traditionalists and Puritan reformers?',
             source_context:
-              'Frontispiece of the parliamentary statute of May 1559 establishing Elizabeth as Supreme Governor rather than Supreme Head of the Church of England. Hinge Question: How does the terminology in Source A reflect a deliberate political compromise to satisfy moderate Catholics while securing royal authority?',
-            context: 'Parliamentary statute frontispiece of the 1559 Act of Supremacy.',
+              'The official parliamentary statute of the 1559 Act of Supremacy. Hinge Question: Why was the compromise title of "Supreme Governor" chosen instead of "Supreme Head" to reassure both Catholic traditionalists and Puritan reformers?',
+            context: 'The official parliamentary statute of the 1559 Act of Supremacy.',
           },
         },
         {
@@ -1263,6 +1298,27 @@ const unitData = {
           text: '<span class="para-ref">[4.1]</span> In the summer of 1559, William Cecil issued <strong>57 Royal Injunctions</strong> to provide precise administrative instructions for the day-to-day enforcement of the religious settlement. Clergy were instructed to preach royal supremacy at least once every quarter and report anyone praising foreign papal jurisdiction. Every parish church was legally mandated to purchase an <strong>English Bible</strong> accessible to all parishioners.<br><br><span class="para-ref">[4.2]</span> To eradicate traditional Catholic idolatry, pilgrimages, fake miracles, and candle-burning before images were strictly prohibited. Furthermore, clerical marriage was tightly regulated, requiring prospective brides to be vetted and approved by two Justices of the Peace and the local bishop.',
           level_4:
             'The 57 Royal Injunctions detailed how churches must operate, requiring an English Bible in every parish and banning pilgrimages and image worship. Clergy had to preach royal supremacy quarterly.',
+          source: {
+            id: 'source_b_book_of_common_prayer',
+            letter: 'B',
+            title: 'Source B: The 1559 Book of Common Prayer',
+            src: '/images/book_of_common_prayer_1559.jpg',
+            source: '/images/book_of_common_prayer_1559.jpg',
+            image: '/images/book_of_common_prayer_1559.jpg',
+            caption:
+              'Title page of the 1559 Book of Common Prayer, enforcing moderate Protestant liturgy and deliberately combining 1549 and 1552 communion wordings to appease traditional Catholics.',
+            desc: 'Title page of the Elizabethan Book of Common Prayer, published 1559.',
+            provenance: 'The Folger Shakespeare Library / British Library, 1559 edition.',
+            citation: 'British Library, London, 1559.',
+            question:
+              'How did the deliberate ambiguity of the 1559 Prayer Book reflect Elizabeth’s desire "not to make windows into men’s souls"?',
+            hinge_question:
+              'How did the deliberate ambiguity of the 1559 Prayer Book reflect Elizabeth’s desire "not to make windows into men’s souls"?',
+            source_context:
+              'Title page of the Elizabethan Book of Common Prayer (1559), which enforced Protestant liturgy while including ambiguous wording on communion to avoid alienating Catholics. Hinge Question: How did the deliberate ambiguity of the 1559 Prayer Book reflect Elizabeth’s desire "not to make windows into men’s souls"?',
+            context:
+              'Title page of the Elizabethan Book of Common Prayer (1559), which enforced Protestant liturgy while including ambiguous wording on communion.',
+          },
         },
         {
           stage: 5,
@@ -1491,26 +1547,45 @@ const unitData = {
       ],
       sources: [
         {
-          act: 2,
           id: 'source_a_act_of_supremacy',
           letter: 'A',
-          title: 'Source A: The Act of Supremacy (May 1559)',
+          title: 'Source A: The 1559 Act of Supremacy',
           src: '/images/act_of_supremacy.jpg',
           source: '/images/act_of_supremacy.jpg',
           image: '/images/act_of_supremacy.jpg',
           caption:
-            'The printed frontispiece of the 1559 Elizabethan Act of Supremacy, declaring the monarch Supreme Governor of the Church of England.',
-          desc: 'Parliamentary statute frontispiece of the 1559 Act of Supremacy.',
-          provenance:
-            'Parliamentary Archives, London, An Acte restoring to the Crowne the auncient Jurisdiction over the State Ecclesiasticall, 1559.',
-          citation: 'Parliamentary Archives, HL/PO/PU/1/1558/1Eliz1n1, Act of Supremacy 1559.',
+            'The opening preamble of the 1559 Act of Supremacy passed by Parliament, declaring Queen Elizabeth I to be "Supreme Governor" rather than "Supreme Head" of the Church of England.',
+          desc: 'The official parliamentary statute of the 1559 Act of Supremacy.',
+          provenance: 'Parliamentary Archives, London, 1 Elizabeth I, c. 1, May 1559.',
+          citation: 'Parliamentary Archives, London, 1559.',
           question:
-            'How does the terminology in Source A reflect a deliberate political compromise to satisfy moderate Catholics while securing royal authority?',
+            'Why was the compromise title of "Supreme Governor" chosen instead of "Supreme Head" to reassure both Catholic traditionalists and Puritan reformers?',
           hinge_question:
-            'How does the terminology in Source A reflect a deliberate political compromise to satisfy moderate Catholics while securing royal authority?',
+            'Why was the compromise title of "Supreme Governor" chosen instead of "Supreme Head" to reassure both Catholic traditionalists and Puritan reformers?',
           source_context:
-            'Frontispiece of the parliamentary statute of May 1559 establishing Elizabeth as Supreme Governor rather than Supreme Head of the Church of England. Hinge Question: How does the terminology in Source A reflect a deliberate political compromise to satisfy moderate Catholics while securing royal authority?',
-          context: 'Parliamentary statute frontispiece of the 1559 Act of Supremacy.',
+            'The official parliamentary statute of the 1559 Act of Supremacy. Hinge Question: Why was the compromise title of "Supreme Governor" chosen instead of "Supreme Head" to reassure both Catholic traditionalists and Puritan reformers?',
+          context: 'The official parliamentary statute of the 1559 Act of Supremacy.',
+        },
+        {
+          id: 'source_b_book_of_common_prayer',
+          letter: 'B',
+          title: 'Source B: The 1559 Book of Common Prayer',
+          src: '/images/book_of_common_prayer_1559.jpg',
+          source: '/images/book_of_common_prayer_1559.jpg',
+          image: '/images/book_of_common_prayer_1559.jpg',
+          caption:
+            'Title page of the 1559 Book of Common Prayer, enforcing moderate Protestant liturgy and deliberately combining 1549 and 1552 communion wordings to appease traditional Catholics.',
+          desc: 'Title page of the Elizabethan Book of Common Prayer, published 1559.',
+          provenance: 'The Folger Shakespeare Library / British Library, 1559 edition.',
+          citation: 'British Library, London, 1559.',
+          question:
+            'How did the deliberate ambiguity of the 1559 Prayer Book reflect Elizabeth’s desire "not to make windows into men’s souls"?',
+          hinge_question:
+            'How did the deliberate ambiguity of the 1559 Prayer Book reflect Elizabeth’s desire "not to make windows into men’s souls"?',
+          source_context:
+            'Title page of the Elizabethan Book of Common Prayer (1559), which enforced Protestant liturgy while including ambiguous wording on communion to avoid alienating Catholics. Hinge Question: How did the deliberate ambiguity of the 1559 Prayer Book reflect Elizabeth’s desire "not to make windows into men’s souls"?',
+          context:
+            'Title page of the Elizabethan Book of Common Prayer (1559), which enforced Protestant liturgy while including ambiguous wording on communion.',
         },
       ],
       pair_share: {
@@ -2071,6 +2146,27 @@ const unitData = {
           text: '<span class="para-ref">[2.1]</span> Clashes between Elizabeth and Puritan reformers erupted over church visuals and clerical dress. Elizabeth insisted on retaining a silver <strong>crucifix</strong> in her Royal Chapel, provoking threats of resignation from newly appointed Puritan bishops who viewed crucifixes as idol worship; Elizabeth eventually compromised by removing the chapel cross. A more serious confrontation unfolded over clerical attire in 1566.<br><br><span class="para-ref">[2.2]</span> Radical Puritans refused to wear the traditional white linen <strong>surplice</strong>, denouncing it as the livery of the Antichrist. In response, Archbishop of Canterbury Matthew Parker issued the <strong>Book of Advertisements (1566)</strong>, mandating uniform clerical dress. When 110 London ministers were summoned to Lambeth Palace to demonstrate compliance, <strong>37 ministers refused and were deprived</strong> of their pulpits.',
           level_4:
             "Puritans protested Elizabeth's retention of church crucifixes and ornate vestments. In 1566, Archbishop Parker insisted all clergy wear the white surplice, resulting in 37 London ministers being stripped of their livings.",
+          source: {
+            id: 'source_a_regnans_in_excelsis',
+            letter: 'A',
+            title: 'Source A: Papal Bull Regnans in Excelsis Excommunicating Elizabeth (1570)',
+            src: '/images/regnans_in_excelsis_1570.jpg',
+            source: '/images/regnans_in_excelsis_1570.jpg',
+            image: '/images/regnans_in_excelsis_1570.jpg',
+            caption:
+              'Pope Pius V, who issued the papal bull Regnans in Excelsis on 25 February 1570, excommunicating Queen Elizabeth I as a "pretended queen" and releasing English Catholics from their allegiance.',
+            desc: 'Portrait of Pope Pius V, who excommunicated Elizabeth I in 1570.',
+            provenance: 'Vatican Secret Archives / contemporary papal portrait, 1570.',
+            citation: 'Vatican Archives, Rome, 1570.',
+            question:
+              'Why did Pope Pius V’s papal bull in 1570 make it impossible for English Catholics to remain loyal to both their church and their queen?',
+            hinge_question:
+              'Why did Pope Pius V’s papal bull in 1570 make it impossible for English Catholics to remain loyal to both their church and their queen?',
+            source_context:
+              'Contemporary portrait of Pope Pius V, who excommunicated Elizabeth I in 1570 with the papal bull Regnans in Excelsis. Hinge Question: Why did Pope Pius V’s papal bull in 1570 make it impossible for English Catholics to remain loyal to both their church and their queen?',
+            context:
+              'Contemporary portrait of Pope Pius V, who excommunicated Elizabeth I in 1570 with the papal bull Regnans in Excelsis.',
+          },
         },
         {
           stage: 3,
@@ -2078,30 +2174,29 @@ const unitData = {
           type: 'narrative',
           title: 'Act 3: [1559–1568] The Catholic Challenge at Home',
           theme_heading: 'Act 3: [1559–1568] The Catholic Challenge at Home',
-          text: '<span class="para-ref">[3.1]</span> (<span class="archival-meta-tag">Source A</span>) Domestic Catholic opposition was widespread but initially cautious. In the conservative northern counties and Lancashire, powerful magnates such as the Earls of Northumberland and Westmorland quietly sheltered Catholic priests.<br><br><span class="para-ref">[3.2]</span> Many wealthy families became <strong>"Church Papists"</strong>, attending Anglican Sunday services to pay lip service to the law and avoid fines, while secretly attending Latin <strong>Mass</strong> in private household chapels. Because Elizabeth declared she had no desire to "make windows into men\'s souls", early enforcement was deliberately lenient: the one-shilling recusancy fines were rarely collected systematically from the gentry, and Pope Pius IV refrained from instructing English Catholics to actively rebel during the first decade of her reign.',
+          text: '<span class="para-ref">[3.1]</span> (<span class="archival-meta-tag">Source B</span>) Domestic Catholic opposition was widespread but initially cautious. In the conservative northern counties and Lancashire, powerful magnates such as the Earls of Northumberland and Westmorland quietly sheltered Catholic priests.<br><br><span class="para-ref">[3.2]</span> Many wealthy families became <strong>"Church Papists"</strong>, attending Anglican Sunday services to pay lip service to the law and avoid fines, while secretly attending Latin <strong>Mass</strong> in private household chapels. Because Elizabeth declared she had no desire to "make windows into men\'s souls", early enforcement was deliberately lenient: the one-shilling recusancy fines were rarely collected systematically from the gentry, and Pope Pius IV refrained from instructing English Catholics to actively rebel during the first decade of her reign.',
           level_4:
             'Most English Catholics initially conformed as Church Papists, attending Anglican services outwardly to avoid fines while practising Catholic rites in secret. Elizabeth kept enforcement lenient to prevent unrest.',
           source: {
-            act: 3,
-            id: 'source_a_edmund_campion',
-            letter: 'A',
-            title: 'Source A: Father Edmund Campion, English Jesuit Martyr (c. 1581)',
+            id: 'source_b_edmund_campion',
+            letter: 'B',
+            title: 'Source B: Father Edmund Campion SJ, Catholic Jesuit Martyr (1581)',
             src: '/images/edmund_campion.jpg',
             source: '/images/edmund_campion.jpg',
             image: '/images/edmund_campion.jpg',
             caption:
-              'Edmund Campion, the charismatic English Jesuit priest who returned secretly to England to minister to recusants before his capture and execution.',
-            desc: 'Archival portrait print of Jesuit priest Edmund Campion.',
-            provenance:
-              'Contemporary engraving of Edmund Campion, Jesuit Archives, Rome / British Museum Department of Prints and Drawings.',
-            citation: 'British Museum 1848,0911.455, Edmund Campion portrait.',
+              'Father Edmund Campion SJ, the brilliant English Jesuit missionary who secretly ministered to Catholic households before being arrested and executed for treason at Tyburn in 1581.',
+            desc: 'Engraving of Jesuit missionary Father Edmund Campion, executed at Tyburn in 1581.',
+            provenance: 'British Jesuit Archive / Stonyhurst College collection, 1581.',
+            citation: 'British Jesuit Archive, 1581.',
             question:
-              'Why did the Elizabethan government view missionary priests like Campion depicted in Source A as foreign political agents of treason rather than simple men of God?',
+              'Why did the Elizabethan government treat Jesuit missionaries like Edmund Campion as political traitors rather than religious dissidents?',
             hinge_question:
-              'Why did the Elizabethan government view missionary priests like Campion depicted in Source A as foreign political agents of treason rather than simple men of God?',
+              'Why did the Elizabethan government treat Jesuit missionaries like Edmund Campion as political traitors rather than religious dissidents?',
             source_context:
-              'Contemporary portrait engraving of Father Edmund Campion, the brilliant Oxford scholar turned Jesuit missionary who returned secretly to England in 1580 to administer Catholic sacraments before being captured and executed at Tyburn. Hinge Question: Why did the Elizabethan government view missionary priests like Campion depicted in Source A as foreign political agents of treason rather than simple men of God?',
-            context: 'Archival portrait print of Jesuit missionary Edmund Campion.',
+              'Engraving of Jesuit missionary Father Edmund Campion, executed at Tyburn in 1581. Hinge Question: Why did the Elizabethan government treat Jesuit missionaries like Edmund Campion as political traitors rather than religious dissidents?',
+            context:
+              'Engraving of Jesuit missionary Father Edmund Campion, executed at Tyburn in 1581.',
           },
         },
         {
@@ -2349,26 +2444,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 3,
-          id: 'source_a_edmund_campion',
+          id: 'source_a_regnans_in_excelsis',
           letter: 'A',
-          title: 'Source A: Father Edmund Campion, English Jesuit Martyr (c. 1581)',
+          title: 'Source A: Papal Bull Regnans in Excelsis Excommunicating Elizabeth (1570)',
+          src: '/images/regnans_in_excelsis_1570.jpg',
+          source: '/images/regnans_in_excelsis_1570.jpg',
+          image: '/images/regnans_in_excelsis_1570.jpg',
+          caption:
+            'Pope Pius V, who issued the papal bull Regnans in Excelsis on 25 February 1570, excommunicating Queen Elizabeth I as a "pretended queen" and releasing English Catholics from their allegiance.',
+          desc: 'Portrait of Pope Pius V, who excommunicated Elizabeth I in 1570.',
+          provenance: 'Vatican Secret Archives / contemporary papal portrait, 1570.',
+          citation: 'Vatican Archives, Rome, 1570.',
+          question:
+            'Why did Pope Pius V’s papal bull in 1570 make it impossible for English Catholics to remain loyal to both their church and their queen?',
+          hinge_question:
+            'Why did Pope Pius V’s papal bull in 1570 make it impossible for English Catholics to remain loyal to both their church and their queen?',
+          source_context:
+            'Contemporary portrait of Pope Pius V, who excommunicated Elizabeth I in 1570 with the papal bull Regnans in Excelsis. Hinge Question: Why did Pope Pius V’s papal bull in 1570 make it impossible for English Catholics to remain loyal to both their church and their queen?',
+          context:
+            'Contemporary portrait of Pope Pius V, who excommunicated Elizabeth I in 1570 with the papal bull Regnans in Excelsis.',
+        },
+        {
+          id: 'source_b_edmund_campion',
+          letter: 'B',
+          title: 'Source B: Father Edmund Campion SJ, Catholic Jesuit Martyr (1581)',
           src: '/images/edmund_campion.jpg',
           source: '/images/edmund_campion.jpg',
           image: '/images/edmund_campion.jpg',
           caption:
-            'Edmund Campion, the charismatic English Jesuit priest who returned secretly to England to minister to recusants before his capture and execution.',
-          desc: 'Archival portrait print of Jesuit priest Edmund Campion.',
-          provenance:
-            'Contemporary engraving of Edmund Campion, Jesuit Archives, Rome / British Museum Department of Prints and Drawings.',
-          citation: 'British Museum 1848,0911.455, Edmund Campion portrait.',
+            'Father Edmund Campion SJ, the brilliant English Jesuit missionary who secretly ministered to Catholic households before being arrested and executed for treason at Tyburn in 1581.',
+          desc: 'Engraving of Jesuit missionary Father Edmund Campion, executed at Tyburn in 1581.',
+          provenance: 'British Jesuit Archive / Stonyhurst College collection, 1581.',
+          citation: 'British Jesuit Archive, 1581.',
           question:
-            'Why did the Elizabethan government view missionary priests like Campion depicted in Source A as foreign political agents of treason rather than simple men of God?',
+            'Why did the Elizabethan government treat Jesuit missionaries like Edmund Campion as political traitors rather than religious dissidents?',
           hinge_question:
-            'Why did the Elizabethan government view missionary priests like Campion depicted in Source A as foreign political agents of treason rather than simple men of God?',
+            'Why did the Elizabethan government treat Jesuit missionaries like Edmund Campion as political traitors rather than religious dissidents?',
           source_context:
-            'Contemporary portrait engraving of Father Edmund Campion, the brilliant Oxford scholar turned Jesuit missionary who returned secretly to England in 1580 to administer Catholic sacraments before being captured and executed at Tyburn. Hinge Question: Why did the Elizabethan government view missionary priests like Campion depicted in Source A as foreign political agents of treason rather than simple men of God?',
-          context: 'Archival portrait print of Jesuit missionary Edmund Campion.',
+            'Engraving of Jesuit missionary Father Edmund Campion, executed at Tyburn in 1581. Hinge Question: Why did the Elizabethan government treat Jesuit missionaries like Edmund Campion as political traitors rather than religious dissidents?',
+          context:
+            'Engraving of Jesuit missionary Father Edmund Campion, executed at Tyburn in 1581.',
         },
       ],
       pair_share: {
@@ -2934,26 +3049,24 @@ const unitData = {
           level_4:
             'Mary, Queen of Scots held a strong Tudor claim to the English throne and was viewed by Catholics as the rightful queen. Her 1565 marriage to Lord Darnley reinforced her dynastic challenge to Elizabeth.',
           source: {
-            act: 1,
-            id: 'source_a_mary_qos',
+            id: 'source_a_mary_queen_of_scots',
             letter: 'A',
-            title: 'Source A: Mary, Queen of Scots in Captivity (c. 1578)',
+            title: 'Source A: Mary, Queen of Scots (c. 1565)',
             src: '/images/mary_queen_of_scots_mary_stuart.jpg',
             source: '/images/mary_queen_of_scots_mary_stuart.jpg',
             image: '/images/mary_queen_of_scots_mary_stuart.jpg',
             caption:
-              'Mary, Queen of Scots wearing dark mourning dress and a crucifix during her long captivity in English country houses under the Earl of Shrewsbury.',
-            desc: 'Archival portrait of Mary, Queen of Scots during her English captivity.',
-            provenance:
-              'Portrait of Mary, Queen of Scots by Nicholas Hilliard or follower, c. 1578. National Portrait Gallery, London (NPG 429).',
-            citation: 'National Portrait Gallery, NPG 429, Mary, Queen of Scots.',
+              'Mary Stuart, Queen of Scots, great-granddaughter of Henry VII, whose strong dynastic claim and Catholic faith made her a continuous focal point for Catholic rebellion in England.',
+            desc: 'Portrait of Mary, Queen of Scots, painted c. 1565.',
+            provenance: 'National Portrait Gallery, London (NPG 429), c. 1565.',
+            citation: 'National Portrait Gallery, London, c. 1565.',
             question:
-              'How does Source A illustrate why Mary, Queen of Scots remained a permanent, dangerous figurehead for Catholic rebellion throughout her imprisonment?',
+              'Why did Mary, Queen of Scots’ arrival in England in 1568 present Elizabeth with an impossible political and legal dilemma?',
             hinge_question:
-              'How does Source A illustrate why Mary, Queen of Scots remained a permanent, dangerous figurehead for Catholic rebellion throughout her imprisonment?',
+              'Why did Mary, Queen of Scots’ arrival in England in 1568 present Elizabeth with an impossible political and legal dilemma?',
             source_context:
-              'Portrait of Mary, Queen of Scots painted during her confinement in England, depicting her in solemn black velvet with a rosary and crucifix, asserting her Catholic piety and legitimate claim to the English crown. Hinge Question: How does Source A illustrate why Mary, Queen of Scots remained a permanent, dangerous figurehead for Catholic rebellion throughout her imprisonment?',
-            context: 'Archival portrait of Mary, Queen of Scots during her English confinement.',
+              'Portrait of Mary, Queen of Scots, c. 1565. Hinge Question: Why did Mary, Queen of Scots’ arrival in England in 1568 present Elizabeth with an impossible political and legal dilemma?',
+            context: 'Portrait of Mary, Queen of Scots, c. 1565.',
           },
         },
         {
@@ -2985,6 +3098,27 @@ const unitData = {
           text: '<span class="para-ref">[4.1]</span> Fleeing Scotland, Mary crossed the Solway Firth in an open fishing boat, landing at <strong>Workington in Cumberland on 16 May 1568</strong>. Her arrival in England plunged Elizabeth into a severe constitutional dilemma: executing or restoring Mary would provoke foreign intervention, yet releasing her would provide English Catholics with an inspiring leader. To buy time, Elizabeth convened an official inquiry at <strong>York and Westminster (1568–69)</strong> to investigate Darnley’s murder.<br><br><span class="para-ref">[4.2]</span> The Scottish Regent Moray produced eight love letters and sonnets—the controversial <strong>Casket Letters</strong>—allegedly proving Mary\'s complicity in Darnley\'s death. Unwilling to declare a fellow anointed queen guilty of murder, Elizabeth concluded with a deliberate <strong>"not proven" verdict</strong>, keeping Mary detained in legal limbo.',
           level_4:
             "Mary fled to England in May 1568. At the York Inquiry, Moray presented the Casket Letters to accuse Mary of murder; Elizabeth returned a 'not proven' verdict to keep Mary prisoner without formal conviction.",
+          source: {
+            id: 'source_b_francis_walsingham',
+            letter: 'B',
+            title: 'Source B: Sir Francis Walsingham, Queen Elizabeth’s Spymaster',
+            src: '/images/sir_francis_walsingham.jpg',
+            source: '/images/sir_francis_walsingham.jpg',
+            image: '/images/sir_francis_walsingham.jpg',
+            caption:
+              'Sir Francis Walsingham, Elizabeth’s Principal Secretary and spymaster, who built an extensive network of codebreakers and double agents to intercept correspondence between Mary and Catholic plotters.',
+            desc: 'Contemporary portrait of Sir Francis Walsingham, Secretary of State and spymaster.',
+            provenance: 'National Portrait Gallery, London (NPG 1807), c. 1585.',
+            citation: 'National Portrait Gallery, London, c. 1585.',
+            question:
+              'Why was Francis Walsingham so determined to convince a reluctant Elizabeth to place Mary, Queen of Scots on trial for high treason?',
+            hinge_question:
+              'Why was Francis Walsingham so determined to convince a reluctant Elizabeth to place Mary, Queen of Scots on trial for high treason?',
+            source_context:
+              'Contemporary portrait of Sir Francis Walsingham, Elizabeth’s spymaster who uncovered the plots centered on Mary, Queen of Scots. Hinge Question: Why was Francis Walsingham so determined to convince a reluctant Elizabeth to place Mary on trial for high treason?',
+            context:
+              'Contemporary portrait of Sir Francis Walsingham, Elizabeth’s spymaster who uncovered the plots centered on Mary, Queen of Scots.',
+          },
         },
         {
           stage: 5,
@@ -3220,26 +3354,45 @@ const unitData = {
       ],
       sources: [
         {
-          act: 1,
-          id: 'source_a_mary_qos',
+          id: 'source_a_mary_queen_of_scots',
           letter: 'A',
-          title: 'Source A: Mary, Queen of Scots in Captivity (c. 1578)',
+          title: 'Source A: Mary, Queen of Scots (c. 1565)',
           src: '/images/mary_queen_of_scots_mary_stuart.jpg',
           source: '/images/mary_queen_of_scots_mary_stuart.jpg',
           image: '/images/mary_queen_of_scots_mary_stuart.jpg',
           caption:
-            'Mary, Queen of Scots wearing dark mourning dress and a crucifix during her long captivity in English country houses under the Earl of Shrewsbury.',
-          desc: 'Archival portrait of Mary, Queen of Scots during her English captivity.',
-          provenance:
-            'Portrait of Mary, Queen of Scots by Nicholas Hilliard or follower, c. 1578. National Portrait Gallery, London (NPG 429).',
-          citation: 'National Portrait Gallery, NPG 429, Mary, Queen of Scots.',
+            'Mary Stuart, Queen of Scots, great-granddaughter of Henry VII, whose strong dynastic claim and Catholic faith made her a continuous focal point for Catholic rebellion in England.',
+          desc: 'Portrait of Mary, Queen of Scots, painted c. 1565.',
+          provenance: 'National Portrait Gallery, London (NPG 429), c. 1565.',
+          citation: 'National Portrait Gallery, London, c. 1565.',
           question:
-            'How does Source A illustrate why Mary, Queen of Scots remained a permanent, dangerous figurehead for Catholic rebellion throughout her imprisonment?',
+            'Why did Mary, Queen of Scots’ arrival in England in 1568 present Elizabeth with an impossible political and legal dilemma?',
           hinge_question:
-            'How does Source A illustrate why Mary, Queen of Scots remained a permanent, dangerous figurehead for Catholic rebellion throughout her imprisonment?',
+            'Why did Mary, Queen of Scots’ arrival in England in 1568 present Elizabeth with an impossible political and legal dilemma?',
           source_context:
-            'Portrait of Mary, Queen of Scots painted during her confinement in England, depicting her in solemn black velvet with a rosary and crucifix, asserting her Catholic piety and legitimate claim to the English crown. Hinge Question: How does Source A illustrate why Mary, Queen of Scots remained a permanent, dangerous figurehead for Catholic rebellion throughout her imprisonment?',
-          context: 'Archival portrait of Mary, Queen of Scots during her English confinement.',
+            'Portrait of Mary, Queen of Scots, c. 1565. Hinge Question: Why did Mary, Queen of Scots’ arrival in England in 1568 present Elizabeth with an impossible political and legal dilemma?',
+          context: 'Portrait of Mary, Queen of Scots, c. 1565.',
+        },
+        {
+          id: 'source_b_francis_walsingham',
+          letter: 'B',
+          title: 'Source B: Sir Francis Walsingham, Queen Elizabeth’s Spymaster',
+          src: '/images/sir_francis_walsingham.jpg',
+          source: '/images/sir_francis_walsingham.jpg',
+          image: '/images/sir_francis_walsingham.jpg',
+          caption:
+            'Sir Francis Walsingham, Elizabeth’s Principal Secretary and spymaster, who built an extensive network of codebreakers and double agents to intercept correspondence between Mary and Catholic plotters.',
+          desc: 'Contemporary portrait of Sir Francis Walsingham, Secretary of State and spymaster.',
+          provenance: 'National Portrait Gallery, London (NPG 1807), c. 1585.',
+          citation: 'National Portrait Gallery, London, c. 1585.',
+          question:
+            'Why was Francis Walsingham so determined to convince a reluctant Elizabeth to place Mary, Queen of Scots on trial for high treason?',
+          hinge_question:
+            'Why was Francis Walsingham so determined to convince a reluctant Elizabeth to place Mary, Queen of Scots on trial for high treason?',
+          source_context:
+            'Contemporary portrait of Sir Francis Walsingham, Elizabeth’s spymaster who uncovered the plots centered on Mary, Queen of Scots. Hinge Question: Why was Francis Walsingham so determined to convince a reluctant Elizabeth to place Mary on trial for high treason?',
+          context:
+            'Contemporary portrait of Sir Francis Walsingham, Elizabeth’s spymaster who uncovered the plots centered on Mary, Queen of Scots.',
         },
       ],
       pair_share: {
@@ -3818,6 +3971,27 @@ const unitData = {
           text: '<span class="para-ref">[3.1]</span> Catholic plots escalated in 1583 with the <strong>Throckmorton Plot</strong>, organized by young Catholic gentleman Francis Throckmorton. The conspiracy planned for the French Catholic <strong>Duke of Guise</strong> to invade England with Spanish financial funding from Philip II, depose Elizabeth, and crown Mary. Sir Francis Walsingham\'s spy network placed Throckmorton under surveillance, arrested him, and extracted a full confession under torture on the rack.<br><br><span class="para-ref">[3.2]</span> The Spanish ambassador, <strong>Bernardino de Mendoza</strong>, was expelled from England. In response to the growing peril, Cecil and Walsingham drafted the <strong>Bond of Association (1584)</strong>, an oath taken by thousands of Englishmen pledging to execute anyone attempting or benefiting from Elizabeth’s assassination.',
           level_4:
             "The 1583 Throckmorton Plot planned a French invasion backed by Spanish funds to crown Mary. Walsingham caught Throckmorton, leading to the expulsion of Spain's ambassador and the 1584 Bond of Association.",
+          source: {
+            id: 'source_a_throckmorton_plot',
+            letter: 'A',
+            title: 'Source A: Francis Throckmorton and the 1583 Catholic Conspiracy',
+            src: '/images/francis_throckmorton.jpg',
+            source: '/images/francis_throckmorton.jpg',
+            image: '/images/francis_throckmorton.jpg',
+            caption:
+              'Francis Throckmorton, the young Catholic conspirator who served as a courier between Mary Queen of Scots and the French and Spanish ambassadors before being arrested and tortured in 1583.',
+            desc: 'Contemporary engraving of Francis Throckmorton, arrested for treason in 1583.',
+            provenance: 'British Library / Contemporary Tudor engraving, 1583.',
+            citation: 'British Library, London, 1583.',
+            question:
+              'How did the discovery of the Throckmorton Plot lead directly to Parliament creating the Bond of Association in 1584?',
+            hinge_question:
+              'How did the discovery of the Throckmorton Plot lead directly to Parliament creating the Bond of Association in 1584?',
+            source_context:
+              'Contemporary portrait of conspirator Francis Throckmorton, whose confession revealed Spanish plans for an armed invasion of England in 1583. Hinge Question: How did the discovery of the Throckmorton Plot lead directly to Parliament creating the Bond of Association in 1584?',
+            context:
+              'Contemporary portrait of conspirator Francis Throckmorton, whose confession revealed Spanish plans for an armed invasion in 1583.',
+          },
         },
         {
           stage: 4,
@@ -3825,31 +3999,29 @@ const unitData = {
           type: 'narrative',
           title: 'Act 4: [1586] The Babington Plot & Walsingham’s Spies',
           theme_heading: 'Act 4: [1586] The Babington Plot & Walsingham’s Spies',
-          text: '<span class="para-ref">[4.1]</span> (<span class="archival-meta-tag">Source A</span>) In 1586, Catholic gentleman <strong>Anthony Babington</strong> devised a plan to murder Elizabeth and spark an international Catholic invasion to install Mary on the English throne. Mary, now held under strict confinement by Puritan warden Sir Amias Paulet at Chartley Hall, corresponded with Babington through <strong>coded letters hidden inside beer barrels</strong>. However, Walsingham’s double agent <strong>Gilbert Gifford</strong> intercepted every message, which was decoded by cryptanalyst Thomas Phelippes.<br><br><span class="para-ref">[4.2]</span> Crucially, on 17 July 1586, Mary sent a letter explicitly approving the assassination of Elizabeth. Walsingham now possessed the incontrovertible written evidence of regicide required to condemn Mary under the 1585 Act for the Preservation of the Queen\'s Safety.',
+          text: '<span class="para-ref">[4.1]</span> (<span class="archival-meta-tag">Source B</span>) In 1586, Catholic gentleman <strong>Anthony Babington</strong> devised a plan to murder Elizabeth and spark an international Catholic invasion to install Mary on the English throne. Mary, now held under strict confinement by Puritan warden Sir Amias Paulet at Chartley Hall, corresponded with Babington through <strong>coded letters hidden inside beer barrels</strong>. However, Walsingham’s double agent <strong>Gilbert Gifford</strong> intercepted every message, which was decoded by cryptanalyst Thomas Phelippes.<br><br><span class="para-ref">[4.2]</span> Crucially, on 17 July 1586, Mary sent a letter explicitly approving the assassination of Elizabeth. Walsingham now possessed the incontrovertible written evidence of regicide required to condemn Mary under the 1585 Act for the Preservation of the Queen\'s Safety.',
           level_4:
             "In 1586, Anthony Babington plotted to assassinate Elizabeth. Walsingham intercepted ciphered letters inside beer barrels, obtaining Mary's written approval of the murder plot.",
           source: {
-            act: 4,
-            id: 'source_a_anthony_babington',
-            letter: 'A',
-            title: 'Source A: Anthony Babington and the Catholic Conspirators (1586)',
+            id: 'source_b_anthony_babington',
+            letter: 'B',
+            title: 'Source B: Anthony Babington and the 1586 Conspiracy',
             src: '/images/anthony_babington.jpg',
             source: '/images/anthony_babington.jpg',
             image: '/images/anthony_babington.jpg',
             caption:
-              'Anthony Babington, the young Derbyshire Catholic noble whose coded correspondence with Mary, Queen of Scots led directly to her trial and execution.',
-            desc: 'Archival engraving of Catholic conspirator Anthony Babington.',
-            provenance:
-              'Contemporary Dutch engraving of Anthony Babington and his co-conspirators, 1586. British Museum Department of Prints and Drawings.',
-            citation: 'British Museum 1868,0808.3292, Anthony Babington.',
+              'Anthony Babington, the wealthy young Catholic gentleman whose coded letters to Mary, Queen of Scots directly implicated her in the plot to assassinate Elizabeth in 1586.',
+            desc: 'Portrait of Anthony Babington, executed for high treason in 1586.',
+            provenance: 'National Portrait Gallery, London, c. 1586.',
+            citation: 'National Portrait Gallery, London, 1586.',
             question:
-              'How does the discovery of the Babington Plot depicted in Source A provide decisive evidence of Francis Walsingham’s intelligence supremacy?',
+              'Why was Mary’s written reply to Babington’s letter the decisive piece of evidence Walsingham needed to secure her death warrant?',
             hinge_question:
-              'How does the discovery of the Babington Plot depicted in Source A provide decisive evidence of Francis Walsingham’s intelligence supremacy?',
+              'Why was Mary’s written reply to Babington’s letter the decisive piece of evidence Walsingham needed to secure her death warrant?',
             source_context:
-              'Engraving of young Catholic gentleman Anthony Babington, whose ciphered letters hidden in beer barrels to Mary, Queen of Scots were intercepted and decoded by Walsingham’s codebreaker Thomas Phelippes. Hinge Question: How does the discovery of the Babington Plot depicted in Source A provide decisive evidence of Francis Walsingham’s intelligence supremacy?',
+              'Portrait of Anthony Babington, whose intercepted correspondence with Mary sealed her fate in 1586. Hinge Question: Why was Mary’s written reply to Babington’s letter the decisive piece of evidence Walsingham needed to secure her death warrant?',
             context:
-              'Archival engraving of Anthony Babington, principal conspirator in the 1586 plot.',
+              'Portrait of Anthony Babington, whose intercepted correspondence with Mary sealed her fate in 1586.',
           },
         },
         {
@@ -4079,27 +4251,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 4,
-          id: 'source_a_anthony_babington',
+          id: 'source_a_throckmorton_plot',
           letter: 'A',
-          title: 'Source A: Anthony Babington and the Catholic Conspirators (1586)',
+          title: 'Source A: Francis Throckmorton and the 1583 Catholic Conspiracy',
+          src: '/images/francis_throckmorton.jpg',
+          source: '/images/francis_throckmorton.jpg',
+          image: '/images/francis_throckmorton.jpg',
+          caption:
+            'Francis Throckmorton, the young Catholic conspirator who served as a courier between Mary Queen of Scots and the French and Spanish ambassadors before being arrested and tortured in 1583.',
+          desc: 'Contemporary engraving of Francis Throckmorton, arrested for treason in 1583.',
+          provenance: 'British Library / Contemporary Tudor engraving, 1583.',
+          citation: 'British Library, London, 1583.',
+          question:
+            'How did the discovery of the Throckmorton Plot lead directly to Parliament creating the Bond of Association in 1584?',
+          hinge_question:
+            'How did the discovery of the Throckmorton Plot lead directly to Parliament creating the Bond of Association in 1584?',
+          source_context:
+            'Contemporary portrait of conspirator Francis Throckmorton, whose confession revealed Spanish plans for an armed invasion of England in 1583. Hinge Question: How did the discovery of the Throckmorton Plot lead directly to Parliament creating the Bond of Association in 1584?',
+          context:
+            'Contemporary portrait of conspirator Francis Throckmorton, whose confession revealed Spanish plans for an armed invasion in 1583.',
+        },
+        {
+          id: 'source_b_anthony_babington',
+          letter: 'B',
+          title: 'Source B: Anthony Babington and the 1586 Conspiracy',
           src: '/images/anthony_babington.jpg',
           source: '/images/anthony_babington.jpg',
           image: '/images/anthony_babington.jpg',
           caption:
-            'Anthony Babington, the young Derbyshire Catholic noble whose coded correspondence with Mary, Queen of Scots led directly to her trial and execution.',
-          desc: 'Archival engraving of Catholic conspirator Anthony Babington.',
-          provenance:
-            'Contemporary Dutch engraving of Anthony Babington and his co-conspirators, 1586. British Museum Department of Prints and Drawings.',
-          citation: 'British Museum 1868,0808.3292, Anthony Babington.',
+            'Anthony Babington, the wealthy young Catholic gentleman whose coded letters to Mary, Queen of Scots directly implicated her in the plot to assassinate Elizabeth in 1586.',
+          desc: 'Portrait of Anthony Babington, executed for high treason in 1586.',
+          provenance: 'National Portrait Gallery, London, c. 1586.',
+          citation: 'National Portrait Gallery, London, 1586.',
           question:
-            'How does the discovery of the Babington Plot depicted in Source A provide decisive evidence of Francis Walsingham’s intelligence supremacy?',
+            'Why was Mary’s written reply to Babington’s letter the decisive piece of evidence Walsingham needed to secure her death warrant?',
           hinge_question:
-            'How does the discovery of the Babington Plot depicted in Source A provide decisive evidence of Francis Walsingham’s intelligence supremacy?',
+            'Why was Mary’s written reply to Babington’s letter the decisive piece of evidence Walsingham needed to secure her death warrant?',
           source_context:
-            'Engraving of young Catholic gentleman Anthony Babington, whose ciphered letters hidden in beer barrels to Mary, Queen of Scots were intercepted and decoded by Walsingham’s codebreaker Thomas Phelippes. Hinge Question: How does the discovery of the Babington Plot depicted in Source A provide decisive evidence of Francis Walsingham’s intelligence supremacy?',
+            'Portrait of Anthony Babington, whose intercepted correspondence with Mary sealed her fate in 1586. Hinge Question: Why was Mary’s written reply to Babington’s letter the decisive piece of evidence Walsingham needed to secure her death warrant?',
           context:
-            'Archival engraving of Anthony Babington, principal conspirator in the 1586 plot.',
+            'Portrait of Anthony Babington, whose intercepted correspondence with Mary sealed her fate in 1586.',
         },
       ],
       pair_share: {
@@ -4678,6 +4869,27 @@ const unitData = {
           text: '<span class="para-ref">[1.1]</span> Throughout the 1570s, ideological and geopolitical tensions mounted between Protestant England and Catholic Spain, the undisputed European superpower ruled by <strong>Philip II</strong>. The primary flashpoint was the <strong>Dutch Revolt</strong>, where Protestant rebels led by Prince <strong>William of Orange</strong> fought against Spanish Habsburg rule in the Netherlands.<br><br><span class="para-ref">[1.2]</span> Elizabeth faced a delicate dilemma: direct military intervention risked all-out war with Spain, yet a total Spanish victory would leave the Channel coast under hostile military control. Elizabeth pursued covert proxy diplomacy, allowing Dutch Protestant privateers known as the <strong>Sea Beggars</strong> to shelter in English ports and attack Spanish supply shipping, while secretly sending financial subsidies to Dutch rebels.',
           level_4:
             'Religious and political rivalry grew between Protestant England and Catholic Spain over the Dutch Revolt. Elizabeth secretly funded Dutch rebels and sheltered Dutch Sea Beggar privateers in English ports.',
+          source: {
+            id: 'source_a_robert_dudley',
+            letter: 'A',
+            title: 'Source A: Robert Dudley, Earl of Leicester',
+            src: '/images/robert_dudley_earl_of_leicester.jpg',
+            source: '/images/robert_dudley_earl_of_leicester.jpg',
+            image: '/images/robert_dudley_earl_of_leicester.jpg',
+            caption:
+              'Robert Dudley, Earl of Leicester, Elizabeth’s Master of the Horse and favourite, who strongly urged direct English military intervention to support Dutch Protestant rebels against Spain.',
+            desc: 'Portrait of Robert Dudley, Earl of Leicester, painted c. 1575.',
+            provenance: 'National Portrait Gallery, London (NPG 447), c. 1575.',
+            citation: 'National Portrait Gallery, London, c. 1575.',
+            question:
+              'Why did Elizabeth resist Dudley’s calls for direct war with Spain in the Netherlands for so many years before 1585?',
+            hinge_question:
+              'Why did Elizabeth resist Dudley’s calls for direct war with Spain in the Netherlands for so many years before 1585?',
+            source_context:
+              'Contemporary portrait of Robert Dudley, Earl of Leicester, who advocated aggressive military support for Protestant rebels in the Netherlands. Hinge Question: Why did Elizabeth resist Dudley’s calls for direct war with Spain in the Netherlands for so many years before 1585?',
+            context:
+              'Contemporary portrait of Robert Dudley, Earl of Leicester, who advocated aggressive military support for Protestant rebels in the Netherlands.',
+          },
         },
         {
           stage: 2,
@@ -4695,31 +4907,29 @@ const unitData = {
           type: 'narrative',
           title: 'Act 3: [1577–1580] Drake’s Circumnavigation',
           theme_heading: 'Act 3: [1577–1580] Drake’s Circumnavigation',
-          text: '<span class="para-ref">[3.1]</span> (<span class="archival-meta-tag">Source A</span>) In December 1577, Francis Drake sailed from Plymouth with five ships on a covert mission backed by Elizabeth to disrupt Spanish commerce in the Pacific. After surviving treacherous storms in the <strong>Strait of Magellan</strong>, Drake’s flagship, renamed the <strong>Golden Hind</strong>, sailed up the undefended Pacific coast of South America, plundering Spanish ports in Chile and Peru.<br><br><span class="para-ref">[3.2]</span> In March 1579, Drake captured the Spanish treasure galleon <strong>Nuestra Señora de la Concepción (the \'Cacafuego\')</strong>, seizing eighty pounds of gold, thirteen chests of silver coins, and <strong>twenty-six tons of unrefined silver</strong>. Drake sailed across the Pacific and Indian Oceans, returning to Plymouth in September 1580 with <strong>£400,000 in plunder</strong>, single-handedly eliminating the English Crown debt.',
+          text: '<span class="para-ref">[3.1]</span> (<span class="archival-meta-tag">Source B</span>) In December 1577, Francis Drake sailed from Plymouth with five ships on a covert mission backed by Elizabeth to disrupt Spanish commerce in the Pacific. After surviving treacherous storms in the <strong>Strait of Magellan</strong>, Drake’s flagship, renamed the <strong>Golden Hind</strong>, sailed up the undefended Pacific coast of South America, plundering Spanish ports in Chile and Peru.<br><br><span class="para-ref">[3.2]</span> In March 1579, Drake captured the Spanish treasure galleon <strong>Nuestra Señora de la Concepción (the \'Cacafuego\')</strong>, seizing eighty pounds of gold, thirteen chests of silver coins, and <strong>twenty-six tons of unrefined silver</strong>. Drake sailed across the Pacific and Indian Oceans, returning to Plymouth in September 1580 with <strong>£400,000 in plunder</strong>, single-handedly eliminating the English Crown debt.',
           level_4:
             'Between 1577 and 1580, Drake circumnavigated the globe, plundering undefended Spanish ports and capturing the treasure galleon Cacafuego, bringing home £400,000 in bullion.',
           source: {
-            act: 3,
-            id: 'source_a_sir_francis_drake',
-            letter: 'A',
-            title: 'Source A: Sir Francis Drake (c. 1581)',
+            id: 'source_b_francis_drake_privateer',
+            letter: 'B',
+            title: 'Source B: Sir Francis Drake, Privateer and Navigator',
             src: '/images/sir_francis_drake.jpg',
             source: '/images/sir_francis_drake.jpg',
             image: '/images/sir_francis_drake.jpg',
             caption:
-              'Sir Francis Drake wearing the Drake Jewel presented by Queen Elizabeth I following his triumphant circumnavigation on the Golden Hind.',
-            desc: 'Official portrait of Sir Francis Drake by Nicholas Hilliard, c. 1581.',
-            provenance:
-              'Miniature portrait by Nicholas Hilliard, 1581. National Portrait Gallery, London (NPG 4172).',
-            citation: 'National Portrait Gallery, NPG 4172, Sir Francis Drake.',
+              'Sir Francis Drake, English privateer who seized massive quantities of Spanish silver from South American ports during his 1577–1580 circumnavigation aboard the Golden Hind.',
+            desc: 'Portrait of Sir Francis Drake holding a navigational compass, c. 1580.',
+            provenance: 'National Maritime Museum, Greenwich, c. 1580.',
+            citation: 'National Maritime Museum, Greenwich, 1580.',
             question:
-              'How does Source A reflect Elizabeth’s defiance of Philip II by publicly honoring and knighting an English privateer who plundered Spanish treasure?',
+              'How did Drake’s state-backed piracy against Spanish treasure fleets push Philip II and Elizabeth toward open war?',
             hinge_question:
-              'How does Source A reflect Elizabeth’s defiance of Philip II by publicly honoring and knighting an English privateer who plundered Spanish treasure?',
+              'How did Drake’s state-backed piracy against Spanish treasure fleets push Philip II and Elizabeth toward open war?',
             source_context:
-              'Portrait of Francis Drake following his 1577–1580 circumnavigation, wearing the golden Drake Jewel gifted by Elizabeth I after he returned with £140,000 of looted Spanish silver and gold. Hinge Question: How does Source A reflect Elizabeth’s defiance of Philip II by publicly honoring and knighting an English privateer who plundered Spanish treasure?',
+              'Portrait of privateer Sir Francis Drake following his circumnavigation of the globe. Hinge Question: How did Drake’s state-backed piracy against Spanish treasure fleets push Philip II and Elizabeth toward open war?',
             context:
-              'Portrait of Sir Francis Drake wearing royal jewels following his circumnavigation.',
+              'Portrait of privateer Sir Francis Drake following his circumnavigation of the globe.',
           },
         },
         {
@@ -4939,27 +5149,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 3,
-          id: 'source_a_sir_francis_drake',
+          id: 'source_a_robert_dudley',
           letter: 'A',
-          title: 'Source A: Sir Francis Drake (c. 1581)',
+          title: 'Source A: Robert Dudley, Earl of Leicester',
+          src: '/images/robert_dudley_earl_of_leicester.jpg',
+          source: '/images/robert_dudley_earl_of_leicester.jpg',
+          image: '/images/robert_dudley_earl_of_leicester.jpg',
+          caption:
+            'Robert Dudley, Earl of Leicester, Elizabeth’s Master of the Horse and favourite, who strongly urged direct English military intervention to support Dutch Protestant rebels against Spain.',
+          desc: 'Portrait of Robert Dudley, Earl of Leicester, painted c. 1575.',
+          provenance: 'National Portrait Gallery, London (NPG 447), c. 1575.',
+          citation: 'National Portrait Gallery, London, c. 1575.',
+          question:
+            'Why did Elizabeth resist Dudley’s calls for direct war with Spain in the Netherlands for so many years before 1585?',
+          hinge_question:
+            'Why did Elizabeth resist Dudley’s calls for direct war with Spain in the Netherlands for so many years before 1585?',
+          source_context:
+            'Contemporary portrait of Robert Dudley, Earl of Leicester, who advocated aggressive military support for Protestant rebels in the Netherlands. Hinge Question: Why did Elizabeth resist Dudley’s calls for direct war with Spain in the Netherlands for so many years before 1585?',
+          context:
+            'Contemporary portrait of Robert Dudley, Earl of Leicester, who advocated aggressive military support for Protestant rebels in the Netherlands.',
+        },
+        {
+          id: 'source_b_francis_drake_privateer',
+          letter: 'B',
+          title: 'Source B: Sir Francis Drake, Privateer and Navigator',
           src: '/images/sir_francis_drake.jpg',
           source: '/images/sir_francis_drake.jpg',
           image: '/images/sir_francis_drake.jpg',
           caption:
-            'Sir Francis Drake wearing the Drake Jewel presented by Queen Elizabeth I following his triumphant circumnavigation on the Golden Hind.',
-          desc: 'Official portrait of Sir Francis Drake by Nicholas Hilliard, c. 1581.',
-          provenance:
-            'Miniature portrait by Nicholas Hilliard, 1581. National Portrait Gallery, London (NPG 4172).',
-          citation: 'National Portrait Gallery, NPG 4172, Sir Francis Drake.',
+            'Sir Francis Drake, English privateer who seized massive quantities of Spanish silver from South American ports during his 1577–1580 circumnavigation aboard the Golden Hind.',
+          desc: 'Portrait of Sir Francis Drake holding a navigational compass, c. 1580.',
+          provenance: 'National Maritime Museum, Greenwich, c. 1580.',
+          citation: 'National Maritime Museum, Greenwich, 1580.',
           question:
-            'How does Source A reflect Elizabeth’s defiance of Philip II by publicly honoring and knighting an English privateer who plundered Spanish treasure?',
+            'How did Drake’s state-backed piracy against Spanish treasure fleets push Philip II and Elizabeth toward open war?',
           hinge_question:
-            'How does Source A reflect Elizabeth’s defiance of Philip II by publicly honoring and knighting an English privateer who plundered Spanish treasure?',
+            'How did Drake’s state-backed piracy against Spanish treasure fleets push Philip II and Elizabeth toward open war?',
           source_context:
-            'Portrait of Francis Drake following his 1577–1580 circumnavigation, wearing the golden Drake Jewel gifted by Elizabeth I after he returned with £140,000 of looted Spanish silver and gold. Hinge Question: How does Source A reflect Elizabeth’s defiance of Philip II by publicly honoring and knighting an English privateer who plundered Spanish treasure?',
+            'Portrait of privateer Sir Francis Drake following his circumnavigation of the globe. Hinge Question: How did Drake’s state-backed piracy against Spanish treasure fleets push Philip II and Elizabeth toward open war?',
           context:
-            'Portrait of Sir Francis Drake wearing royal jewels following his circumnavigation.',
+            'Portrait of privateer Sir Francis Drake following his circumnavigation of the globe.',
         },
       ],
       pair_share: {
@@ -5527,27 +5756,24 @@ const unitData = {
           level_4:
             "In April 1587, Drake attacked the fortified port of Cadiz in a daring pre-emptive strike. He destroyed 30 Spanish ships, famously boasting he had 'singed the King of Spain's beard'.",
           source: {
-            act: 3,
             id: 'source_a_drake_cadiz',
             letter: 'A',
-            title: 'Source A: Drake’s Raid on Cadiz Harbor (April 1587)',
+            title: 'Source A: Drake’s Raid on Cadiz (1587)',
             src: '/images/drake_cadiz_1587.jpg',
             source: '/images/drake_cadiz_1587.jpg',
             image: '/images/drake_cadiz_1587.jpg',
             caption:
-              'Drake’s warships entering the Spanish harbor of Cadiz in April 1587, destroying thirty Spanish vessels in the raid known as "singeing the King of Spain’s beard."',
-            desc: 'Contemporary Dutch engraving illustrating Drake’s raid on Cadiz harbor in 1587.',
-            provenance:
-              'Contemporary engraving by Baptista Boazio, 1588. National Maritime Museum, Greenwich, London.',
-            citation: 'National Maritime Museum, PAD0256, Drake at Cadiz, 1587.',
+              'Sir Francis Drake’s daring naval raid on the Spanish port of Cadiz in April 1587, destroying over thirty Spanish supply ships and delaying the Armada by over a year.',
+            desc: 'Contemporary maritime illustration of Drake’s raid on Cadiz harbour, 1587.',
+            provenance: 'National Maritime Museum, Greenwich, 1587.',
+            citation: 'National Maritime Museum, Greenwich, 1587.',
             question:
-              'How does Source A illustrate why Drake’s raid on Cadiz delayed the launch of the Spanish Armada by over twelve months?',
+              'Why did Drake describe his raid on Cadiz as "singeing the King of Spain’s beard", and how did it give England vital time to prepare for invasion?',
             hinge_question:
-              'How does Source A illustrate why Drake’s raid on Cadiz delayed the launch of the Spanish Armada by over twelve months?',
+              'Why did Drake describe his raid on Cadiz as "singeing the King of Spain’s beard", and how did it give England vital time to prepare for invasion?',
             source_context:
-              'Contemporary engraving of Drake’s audacious preemptive strike on Cadiz harbor in April 1587, destroying thirty Spanish warships and burning thousands of tons of seasoned oak barrel staves. Hinge Question: How does Source A illustrate why Drake’s raid on Cadiz delayed the launch of the Spanish Armada by over twelve months?',
-            context:
-              'Contemporary engraving of the English naval raid on Cadiz harbor in April 1587.',
+              'Contemporary illustration of Drake’s raid on Cadiz harbour, April 1587. Hinge Question: Why did Drake describe his raid on Cadiz as "singeing the King of Spain’s beard", and how did it give England vital time to prepare for invasion?',
+            context: 'Contemporary illustration of Drake’s raid on Cadiz harbour, April 1587.',
           },
         },
         {
@@ -5599,6 +5825,27 @@ const unitData = {
                 'Relations between England and Spain deteriorated rapidly from an undeclared cold war into direct, open naval confrontation between 1585 and 1588 due to direct English military intervention in the Netherlands, destructive privateering raids by Sir Francis Drake, the execution of Mary Stuart, and the humiliation of the Cadiz raid.<br><br>The decisive turning point was Elizabeth I’s signature of the **Treaty of Nonsuch in August 1585**. For nearly two decades, Elizabeth had avoided direct military conflict with Spain, preferring covert funding for Dutch rebels. However, following the 1584 Treaty of Joinville—an alliance between Philip II and the French Catholic League—and the Spanish Duke of Parma’s capture of Antwerp, Protestant survival in the Netherlands faced extinction. Under Nonsuch, Elizabeth crossed the Rubicon, agreeing to send 7,400 English soldiers under Robert Dudley, Earl of Leicester, to fight Spanish forces directly, while taking the cautionary towns of Brill and Flushing as collateral. By committing an English army to fight Spanish troops on European soil, Elizabeth ended any diplomatic ambiguity; Philip II viewed Nonsuch as an explicit declaration of war.<br><br>Secondly, English naval aggression inflicted catastrophic financial and psychological damage on Philip’s global empire. In September 1585, Elizabeth dispatched Sir Francis Drake with 29 warships to raid Spanish colonies in the Caribbean. Drake sacked Santiago in the Cape Verde Islands, captured Santo Domingo in Hispaniola, and seized Cartagena in Colombia, demanding massive ransoms and disrupting the Spanish treasure fleet. This humiliated Philip II, bankrupting major Genoese banks that financed the Spanish Crown and convincing Spanish grandees that English privateering would continue to bleed Spain dry until the Tudor regime was overthrown.<br><br>Finally, the conflict reached an ideological point of no return with the execution of Mary, Queen of Scots, in February 1587 and Drake’s Cadiz raid in April 1587. Mary’s death removed Philip’s diplomatic hesitation: previously, he feared that placing Mary on the English throne would benefit her French relatives; now, Philip claimed the English throne for himself and his daughter, Isabella. Pope Sixtus V promised a massive subsidy of one million gold ducats upon the Armada’s landing. When Drake audaciously sailed into Cadiz harbor in April 1587—‘singeing the King of Spain’s beard’ by destroying 30 Spanish ships and thousands of tons of provisions—he delayed the invasion by a year but cemented Philip’s determination. By 1588, war was inevitable as Philip launched the ‘Enterprise of England’ to crush English Protestantism once and for all.',
             },
           ],
+          source: {
+            id: 'source_b_tilbury_speech',
+            letter: 'B',
+            title: 'Source B: Elizabeth I’s Speech to the Troops at Tilbury (August 1588)',
+            src: '/images/elizabeth_tilbury_speech.jpg',
+            source: '/images/elizabeth_tilbury_speech.jpg',
+            image: '/images/elizabeth_tilbury_speech.jpg',
+            caption:
+              'Contemporary manuscript of Queen Elizabeth I’s famous speech delivered to English land forces assembled at Tilbury Camp: "I know I have the body of a weak and feeble woman, but I have the heart and stomach of a king."',
+            desc: 'Manuscript text of Queen Elizabeth I’s speech at Tilbury Camp, August 1588.',
+            provenance: 'British Library Harleian MS 6798, Tilbury, August 1588.',
+            citation: 'British Library, London, 1588.',
+            question:
+              'How did Elizabeth use the Tilbury speech to transform the gender liability of being a female monarch into a source of national inspiration?',
+            hinge_question:
+              'How did Elizabeth use the Tilbury speech to transform the gender liability of being a female monarch into a source of national inspiration?',
+            source_context:
+              'Contemporary text of Queen Elizabeth I’s famous speech to English troops assembled at Tilbury in August 1588. Hinge Question: How did Elizabeth use the Tilbury speech to transform the gender liability of being a female monarch into a source of national inspiration?',
+            context:
+              'Contemporary text of Queen Elizabeth I’s famous speech to English troops assembled at Tilbury in August 1588.',
+          },
         },
       ],
       quiz: [
@@ -5757,27 +6004,45 @@ const unitData = {
       ],
       sources: [
         {
-          act: 3,
           id: 'source_a_drake_cadiz',
           letter: 'A',
-          title: 'Source A: Drake’s Raid on Cadiz Harbor (April 1587)',
+          title: 'Source A: Drake’s Raid on Cadiz (1587)',
           src: '/images/drake_cadiz_1587.jpg',
           source: '/images/drake_cadiz_1587.jpg',
           image: '/images/drake_cadiz_1587.jpg',
           caption:
-            'Drake’s warships entering the Spanish harbor of Cadiz in April 1587, destroying thirty Spanish vessels in the raid known as "singeing the King of Spain’s beard."',
-          desc: 'Contemporary Dutch engraving illustrating Drake’s raid on Cadiz harbor in 1587.',
-          provenance:
-            'Contemporary engraving by Baptista Boazio, 1588. National Maritime Museum, Greenwich, London.',
-          citation: 'National Maritime Museum, PAD0256, Drake at Cadiz, 1587.',
+            'Sir Francis Drake’s daring naval raid on the Spanish port of Cadiz in April 1587, destroying over thirty Spanish supply ships and delaying the Armada by over a year.',
+          desc: 'Contemporary maritime illustration of Drake’s raid on Cadiz harbour, 1587.',
+          provenance: 'National Maritime Museum, Greenwich, 1587.',
+          citation: 'National Maritime Museum, Greenwich, 1587.',
           question:
-            'How does Source A illustrate why Drake’s raid on Cadiz delayed the launch of the Spanish Armada by over twelve months?',
+            'Why did Drake describe his raid on Cadiz as "singeing the King of Spain’s beard", and how did it give England vital time to prepare for invasion?',
           hinge_question:
-            'How does Source A illustrate why Drake’s raid on Cadiz delayed the launch of the Spanish Armada by over twelve months?',
+            'Why did Drake describe his raid on Cadiz as "singeing the King of Spain’s beard", and how did it give England vital time to prepare for invasion?',
           source_context:
-            'Contemporary engraving of Drake’s audacious preemptive strike on Cadiz harbor in April 1587, destroying thirty Spanish warships and burning thousands of tons of seasoned oak barrel staves. Hinge Question: How does Source A illustrate why Drake’s raid on Cadiz delayed the launch of the Spanish Armada by over twelve months?',
+            'Contemporary illustration of Drake’s raid on Cadiz harbour, April 1587. Hinge Question: Why did Drake describe his raid on Cadiz as "singeing the King of Spain’s beard", and how did it give England vital time to prepare for invasion?',
+          context: 'Contemporary illustration of Drake’s raid on Cadiz harbour, April 1587.',
+        },
+        {
+          id: 'source_b_tilbury_speech',
+          letter: 'B',
+          title: 'Source B: Elizabeth I’s Speech to the Troops at Tilbury (August 1588)',
+          src: '/images/elizabeth_tilbury_speech.jpg',
+          source: '/images/elizabeth_tilbury_speech.jpg',
+          image: '/images/elizabeth_tilbury_speech.jpg',
+          caption:
+            'Contemporary manuscript of Queen Elizabeth I’s famous speech delivered to English land forces assembled at Tilbury Camp: "I know I have the body of a weak and feeble woman, but I have the heart and stomach of a king."',
+          desc: 'Manuscript text of Queen Elizabeth I’s speech at Tilbury Camp, August 1588.',
+          provenance: 'British Library Harleian MS 6798, Tilbury, August 1588.',
+          citation: 'British Library, London, 1588.',
+          question:
+            'How did Elizabeth use the Tilbury speech to transform the gender liability of being a female monarch into a source of national inspiration?',
+          hinge_question:
+            'How did Elizabeth use the Tilbury speech to transform the gender liability of being a female monarch into a source of national inspiration?',
+          source_context:
+            'Contemporary text of Queen Elizabeth I’s famous speech to English troops assembled at Tilbury in August 1588. Hinge Question: How did Elizabeth use the Tilbury speech to transform the gender liability of being a female monarch into a source of national inspiration?',
           context:
-            'Contemporary engraving of the English naval raid on Cadiz harbor in April 1587.',
+            'Contemporary text of Queen Elizabeth I’s famous speech to English troops assembled at Tilbury in August 1588.',
         },
       ],
       pair_share: {
@@ -6357,6 +6622,27 @@ const unitData = {
           text: '<span class="para-ref">[3.1]</span> At dawn on <strong>8 August 1588</strong>, English warships attacked the disorganized Spanish fleet off the coast of <strong>Gravelines</strong>. John Hawkins’ modern <strong>race-built galleons</strong>—lower, faster, and more maneuverable than the bulky Spanish vessels—closed to point-blank range, pounding Spanish hulls with continuous broadsides. English gun crews, trained to rapidly reload four-wheeled gun carriages, fired multiple shots for every single Spanish reply.<br><br><span class="para-ref">[3.2]</span> Spanish gunners, crowded with soldiers and armed with mismatched cannons, were unable to reload effectively. Three Spanish galleons were sunk, many were severely crippled, and over <strong>1,000 Spanish sailors were killed</strong>, while the English suffered negligible ship losses.',
           level_4:
             'At Gravelines on 8 August, faster English galleons closed in with rapid broadside fire. English gunnery sank three galleons and shattered Spanish resistance without losing a single ship.',
+          source: {
+            id: 'source_a_battle_of_gravelines',
+            letter: 'A',
+            title: 'Source A: The Battle of Gravelines and the Fireships (8 August 1588)',
+            src: '/images/battle_of_gravelines_1588.jpg',
+            source: '/images/battle_of_gravelines_1588.jpg',
+            image: '/images/battle_of_gravelines_1588.jpg',
+            caption:
+              'Contemporary maritime painting showing English fireships scattering the Spanish Armada off Calais on the night of 7–8 August 1588, breaking the defensive crescent formation.',
+            desc: 'Maritime painting of the fireship attack and Battle of Gravelines, August 1588.',
+            provenance: 'National Maritime Museum, Greenwich, BHC0262, c. 1588.',
+            citation: 'National Maritime Museum, Greenwich, 1588.',
+            question:
+              'Why did the fireship attack at Calais prove the decisive tactical turning point in the defeat of the Spanish Armada?',
+            hinge_question:
+              'Why did the fireship attack at Calais prove the decisive tactical turning point in the defeat of the Spanish Armada?',
+            source_context:
+              'Contemporary painting of the Battle of Gravelines, showing English fireships disrupting the Spanish Armada’s crescent formation. Hinge Question: Why did the fireship attack at Calais prove the decisive tactical turning point in the defeat of the Spanish Armada?',
+            context:
+              'Contemporary painting of the Battle of Gravelines, showing English fireships disrupting the Spanish Armada’s crescent formation.',
+          },
         },
         {
           stage: 4,
@@ -6374,7 +6660,7 @@ const unitData = {
           type: 'narrative',
           title: 'Act 5: [1588–1589] Consequences of the English Victory',
           theme_heading: 'Act 5: [1588–1589] Consequences of the English Victory',
-          text: '<span class="para-ref">[5.1]</span> (<span class="archival-meta-tag">Source A</span>) England\'s triumph over the Armada was celebrated as a divine validation of Protestantism, with Elizabeth issuing commemorative medals inscribed: <em>"God blew and they were scattered"</em>. At the military camp at Tilbury, Elizabeth delivered her iconic address, declaring she had <strong>"the heart and stomach of a king, and of a king of England too"</strong>, cementing her national status as Gloriana.<br><br><span class="para-ref">[5.2]</span> The victory secured English national independence, prevented a catastrophic Catholic restoration, and established England as a formidable maritime power. While war with Spain dragged on until the Treaty of London in 1604, Philip II’s financial credit was battered and the myth of Spanish naval invincibility was permanently shattered.',
+          text: '<span class="para-ref">[5.1]</span> (<span class="archival-meta-tag">Source B</span>) England\'s triumph over the Armada was celebrated as a divine validation of Protestantism, with Elizabeth issuing commemorative medals inscribed: <em>"God blew and they were scattered"</em>. At the military camp at Tilbury, Elizabeth delivered her iconic address, declaring she had <strong>"the heart and stomach of a king, and of a king of England too"</strong>, cementing her national status as Gloriana.<br><br><span class="para-ref">[5.2]</span> The victory secured English national independence, prevented a catastrophic Catholic restoration, and established England as a formidable maritime power. While war with Spain dragged on until the Treaty of London in 1604, Philip II’s financial credit was battered and the myth of Spanish naval invincibility was permanently shattered.',
           level_4:
             "Defeating the Armada secured English independence and boosted national pride, inspiring Elizabeth's Tilbury speech. It shattered the myth of Spanish naval invincibility and validated the Protestant nation.",
           tasks: [
@@ -6409,27 +6695,25 @@ const unitData = {
             },
           ],
           source: {
-            act: 5,
-            id: 'source_a_armada_portrait',
-            letter: 'A',
-            title: 'Source A: The Armada Portrait of Queen Elizabeth I (1588)',
+            id: 'source_b_armada_portrait',
+            letter: 'B',
+            title: 'Source B: The Armada Portrait of Elizabeth I (1588)',
             src: '/images/armada_portrait.jpg',
             source: '/images/armada_portrait.jpg',
             image: '/images/armada_portrait.jpg',
             caption:
-              'Elizabeth I with her hand resting upon the globe, flanked by views of the English fireship attack at Calais and the Spanish fleet wrecked on rocky shores.',
-            desc: 'The iconic Armada Portrait attributed to George Gower, 1588.',
-            provenance:
-              'The Armada Portrait, c. 1588, Woburn Abbey Collection / National Maritime Museum, Greenwich.',
-            citation: 'National Maritime Museum, BHC2678, The Armada Portrait.',
+              'The iconic Armada Portrait attributed to George Gower, showing Elizabeth I with her hand resting on the globe, with the defeated Spanish fleet wrecked on rocks in the background.',
+            desc: 'The Armada Portrait of Queen Elizabeth I, painted in late 1588.',
+            provenance: 'Woburn Abbey Collection / National Portrait Gallery, c. 1588.',
+            citation: 'Woburn Abbey Collection, 1588.',
             question:
-              'How do the dual window vignettes behind Elizabeth in Source A summarize the reasons for England’s miraculous victory over the Armada?',
+              'How does the symbolism in the Armada Portrait present Elizabeth’s victory as both divinely ordained and the start of global empire?',
             hinge_question:
-              'How do the dual window vignettes behind Elizabeth in Source A summarize the reasons for England’s miraculous victory over the Armada?',
+              'How does the symbolism in the Armada Portrait present Elizabeth’s victory as both divinely ordained and the start of global empire?',
             source_context:
-              'The iconic 1588 Armada Portrait showing Elizabeth I with her hand resting upon the Americas on a globe, while the background windows contrast English fireships dispersing the Spanish crescent with Spanish galleons wrecked by storms on Irish rocks. Hinge Question: How do the dual window vignettes behind Elizabeth in Source A summarize the reasons for England’s miraculous victory over the Armada?',
+              'The Armada Portrait of Queen Elizabeth I, painted in 1588 to celebrate England’s naval triumph over Spain. Hinge Question: How does the symbolism in the Armada Portrait present Elizabeth’s victory as both divinely ordained and the start of global empire?',
             context:
-              'The iconic Armada Portrait depicting Queen Elizabeth I celebrating the 1588 naval triumph.',
+              'The Armada Portrait of Queen Elizabeth I, painted in 1588 to celebrate England’s naval triumph over Spain.',
           },
         },
       ],
@@ -6618,27 +6902,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 5,
-          id: 'source_a_armada_portrait',
+          id: 'source_a_battle_of_gravelines',
           letter: 'A',
-          title: 'Source A: The Armada Portrait of Queen Elizabeth I (1588)',
+          title: 'Source A: The Battle of Gravelines and the Fireships (8 August 1588)',
+          src: '/images/battle_of_gravelines_1588.jpg',
+          source: '/images/battle_of_gravelines_1588.jpg',
+          image: '/images/battle_of_gravelines_1588.jpg',
+          caption:
+            'Contemporary maritime painting showing English fireships scattering the Spanish Armada off Calais on the night of 7–8 August 1588, breaking the defensive crescent formation.',
+          desc: 'Maritime painting of the fireship attack and Battle of Gravelines, August 1588.',
+          provenance: 'National Maritime Museum, Greenwich, BHC0262, c. 1588.',
+          citation: 'National Maritime Museum, Greenwich, 1588.',
+          question:
+            'Why did the fireship attack at Calais prove the decisive tactical turning point in the defeat of the Spanish Armada?',
+          hinge_question:
+            'Why did the fireship attack at Calais prove the decisive tactical turning point in the defeat of the Spanish Armada?',
+          source_context:
+            'Contemporary painting of the Battle of Gravelines, showing English fireships disrupting the Spanish Armada’s crescent formation. Hinge Question: Why did the fireship attack at Calais prove the decisive tactical turning point in the defeat of the Spanish Armada?',
+          context:
+            'Contemporary painting of the Battle of Gravelines, showing English fireships disrupting the Spanish Armada’s crescent formation.',
+        },
+        {
+          id: 'source_b_armada_portrait',
+          letter: 'B',
+          title: 'Source B: The Armada Portrait of Elizabeth I (1588)',
           src: '/images/armada_portrait.jpg',
           source: '/images/armada_portrait.jpg',
           image: '/images/armada_portrait.jpg',
           caption:
-            'Elizabeth I with her hand resting upon the globe, flanked by views of the English fireship attack at Calais and the Spanish fleet wrecked on rocky shores.',
-          desc: 'The iconic Armada Portrait attributed to George Gower, 1588.',
-          provenance:
-            'The Armada Portrait, c. 1588, Woburn Abbey Collection / National Maritime Museum, Greenwich.',
-          citation: 'National Maritime Museum, BHC2678, The Armada Portrait.',
+            'The iconic Armada Portrait attributed to George Gower, showing Elizabeth I with her hand resting on the globe, with the defeated Spanish fleet wrecked on rocks in the background.',
+          desc: 'The Armada Portrait of Queen Elizabeth I, painted in late 1588.',
+          provenance: 'Woburn Abbey Collection / National Portrait Gallery, c. 1588.',
+          citation: 'Woburn Abbey Collection, 1588.',
           question:
-            'How do the dual window vignettes behind Elizabeth in Source A summarize the reasons for England’s miraculous victory over the Armada?',
+            'How does the symbolism in the Armada Portrait present Elizabeth’s victory as both divinely ordained and the start of global empire?',
           hinge_question:
-            'How do the dual window vignettes behind Elizabeth in Source A summarize the reasons for England’s miraculous victory over the Armada?',
+            'How does the symbolism in the Armada Portrait present Elizabeth’s victory as both divinely ordained and the start of global empire?',
           source_context:
-            'The iconic 1588 Armada Portrait showing Elizabeth I with her hand resting upon the Americas on a globe, while the background windows contrast English fireships dispersing the Spanish crescent with Spanish galleons wrecked by storms on Irish rocks. Hinge Question: How do the dual window vignettes behind Elizabeth in Source A summarize the reasons for England’s miraculous victory over the Armada?',
+            'The Armada Portrait of Queen Elizabeth I, painted in 1588 to celebrate England’s naval triumph over Spain. Hinge Question: How does the symbolism in the Armada Portrait present Elizabeth’s victory as both divinely ordained and the start of global empire?',
           context:
-            'The iconic Armada Portrait depicting Queen Elizabeth I celebrating the 1588 naval triumph.',
+            'The Armada Portrait of Queen Elizabeth I, painted in 1588 to celebrate England’s naval triumph over Spain.',
         },
       ],
       pair_share: {
@@ -7201,6 +7504,27 @@ const unitData = {
           text: '<span class="para-ref">[3.1]</span> For the children of the nobility and landed gentry, formal education was delivered at home by <strong>private tutors</strong>, teaching classical languages, French, history, geography, and gentlemanly accomplishments like horsemanship and fencing. Daughters of noble households were tutored in needlework, music, and foreign languages to prepare them for advantageous marriages.<br><br><span class="para-ref">[3.2]</span> Higher education centered on England’s two ancient universities, <strong>Oxford and Cambridge</strong>, which expanded significantly under Elizabeth to train Anglican clergy, lawyers, and royal administrators. Wealthy young gentlemen frequently completed their education in London at the <strong>Inns of Court</strong>, studying common law and acquiring the cosmopolitan legal skills necessary for managing landed estates and county governance.',
           level_4:
             'Noble children were taught at home by private tutors in academic subjects and courtly skills. Older sons progressed to Oxford, Cambridge, or the London Inns of Court to study law and administration.',
+          source: {
+            id: 'source_a_royal_procession',
+            letter: 'A',
+            title: 'Source A: Queen Elizabeth in Royal Procession (1601)',
+            src: '/images/elizabeth_procession_1601.jpg',
+            source: '/images/elizabeth_procession_1601.jpg',
+            image: '/images/elizabeth_procession_1601.jpg',
+            caption:
+              'Queen Elizabeth I being carried in a royal litter during a summer "progress", surrounded by court nobles, Privy Councillors, and ordinary cheering subjects.',
+            desc: 'Painting of Queen Elizabeth I on royal progress, attributed to Robert Peake, c. 1601.',
+            provenance: 'Sherborne Castle Collection, Dorset, c. 1601.',
+            citation: 'Sherborne Castle Collection, Dorset, 1601.',
+            question:
+              'Why were summer "progresses" so essential for maintaining royal popularity and bonding the Queen with provincial English society?',
+            hinge_question:
+              'Why were summer "progresses" so essential for maintaining royal popularity and bonding the Queen with provincial English society?',
+            source_context:
+              'Painting of Queen Elizabeth I on a summer royal progress, surrounded by courtiers and citizens. Hinge Question: Why were summer "progresses" so essential for maintaining royal popularity and bonding the Queen with provincial English society?',
+            context:
+              'Painting of Queen Elizabeth I on a summer royal progress, surrounded by courtiers and citizens.',
+          },
         },
         {
           stage: 4,
@@ -7218,7 +7542,7 @@ const unitData = {
           type: 'narrative',
           title: 'Act 5: [1576–1588] Development of the Theatre',
           theme_heading: 'Act 5: [1576–1588] Development of the Theatre',
-          text: '<span class="para-ref">[5.1]</span> (<span class="archival-meta-tag">Source A</span>) The Elizabethan era saw the birth of secular commercial drama, evolving from wandering troupes of actors performing in inn-yards to purpose-built permanent playhouses. In 1576, James Burbage erected the first permanent theatre, <strong>The Theatre</strong>, in Shoreditch, outside the City of London\'s jurisdiction, followed by <strong>The Curtain (1577) and The Rose (1587)</strong>.<br><br><span class="para-ref">[5.2]</span> Playhouses accommodated up to 3,000 spectators and were unique social melting pots: common <strong>groundlings paid one penny</strong> to stand in the open yard, while wealthy gentry paid up to sixpence for cushioned upper galleries. However, the theatre provoked fierce opposition from <strong>Puritan ministers and London authorities</strong>, who condemned plays as sinful breeding grounds for plague, prostitution, and public disorder.',
+          text: '<span class="para-ref">[5.1]</span> (<span class="archival-meta-tag">Source B</span>) The Elizabethan era saw the birth of secular commercial drama, evolving from wandering troupes of actors performing in inn-yards to purpose-built permanent playhouses. In 1576, James Burbage erected the first permanent theatre, <strong>The Theatre</strong>, in Shoreditch, outside the City of London\'s jurisdiction, followed by <strong>The Curtain (1577) and The Rose (1587)</strong>.<br><br><span class="para-ref">[5.2]</span> Playhouses accommodated up to 3,000 spectators and were unique social melting pots: common <strong>groundlings paid one penny</strong> to stand in the open yard, while wealthy gentry paid up to sixpence for cushioned upper galleries. However, the theatre provoked fierce opposition from <strong>Puritan ministers and London authorities</strong>, who condemned plays as sinful breeding grounds for plague, prostitution, and public disorder.',
           level_4:
             "Permanent playhouses like 'The Theatre' (1576) emerged outside London, attracting thousands from penny groundlings to nobles. Puritans and magistrates opposed theatres due to fears of plague and immorality.",
           tasks: [
@@ -7252,26 +7576,25 @@ const unitData = {
             },
           ],
           source: {
-            act: 5,
-            id: 'source_a_swan_theatre',
-            letter: 'A',
-            title: 'Source A: Johannes de Witt’s Drawing of the Swan Theatre (c. 1596)',
+            id: 'source_b_swan_theatre',
+            letter: 'B',
+            title: 'Source B: Johannes de Witt’s Sketch of the Swan Theatre (c. 1596)',
             src: '/images/swan_theatre.jpg',
             source: '/images/swan_theatre.jpg',
             image: '/images/swan_theatre.jpg',
             caption:
-              'A contemporary sketch of the open-air Swan Theatre in Southwark, showing the thrust stage, tiered wooden galleries, and groundling standing pit.',
-            desc: 'Contemporary copy of Johannes de Witt’s sketch of the Swan Theatre, London.',
-            provenance:
-              'Arend van Buchel’s commonplace book copy of Johannes de Witt’s drawing, c. 1596. Utrecht University Library (MS 842).',
-            citation: 'Utrecht University Library, MS 842, fol. 132r, Swan Theatre.',
+              'Johannes de Witt’s eyewitness ink drawing of the interior of the Swan Theatre on Bankside in London, the only surviving contemporary sketch of an Elizabethan playhouse interior.',
+            desc: 'Contemporary sketch of the interior of the Swan Theatre, London, c. 1596.',
+            provenance: 'Utrecht University Library, MS 842, c. 1596.',
+            citation: 'Utrecht University Library, c. 1596.',
             question:
-              'How does Source A illustrate how Elizabethan public playhouses brought diverse social classes together while provoking Puritan moral condemnation?',
+              'Why did Elizabethan playhouses appeal equally to working-class groundlings and wealthy aristocrats in private galleries?',
             hinge_question:
-              'How does Source A illustrate how Elizabethan public playhouses brought diverse social classes together while provoking Puritan moral condemnation?',
+              'Why did Elizabethan playhouses appeal equally to working-class groundlings and wealthy aristocrats in private galleries?',
             source_context:
-              'The only surviving contemporary visual record of an Elizabethan playhouse interior, sketched by Dutch traveler Johannes de Witt at the Swan Theatre in Southwark, showing groundlings standing in the pit around the thrust stage while wealthy patrons sat in covered galleries. Hinge Question: How does Source A illustrate how Elizabethan public playhouses brought diverse social classes together while provoking Puritan moral condemnation?',
-            context: 'Contemporary drawing of the interior of the Swan Theatre in London, c. 1596.',
+              'Johannes de Witt’s contemporary sketch of the Swan Theatre in London, c. 1596. Hinge Question: Why did Elizabethan playhouses appeal equally to working-class groundlings and wealthy aristocrats in private galleries?',
+            context:
+              'Johannes de Witt’s contemporary sketch of the Swan Theatre in London, c. 1596.',
           },
         },
       ],
@@ -7432,26 +7755,45 @@ const unitData = {
       ],
       sources: [
         {
-          act: 5,
-          id: 'source_a_swan_theatre',
+          id: 'source_a_royal_procession',
           letter: 'A',
-          title: 'Source A: Johannes de Witt’s Drawing of the Swan Theatre (c. 1596)',
+          title: 'Source A: Queen Elizabeth in Royal Procession (1601)',
+          src: '/images/elizabeth_procession_1601.jpg',
+          source: '/images/elizabeth_procession_1601.jpg',
+          image: '/images/elizabeth_procession_1601.jpg',
+          caption:
+            'Queen Elizabeth I being carried in a royal litter during a summer "progress", surrounded by court nobles, Privy Councillors, and ordinary cheering subjects.',
+          desc: 'Painting of Queen Elizabeth I on royal progress, attributed to Robert Peake, c. 1601.',
+          provenance: 'Sherborne Castle Collection, Dorset, c. 1601.',
+          citation: 'Sherborne Castle Collection, Dorset, 1601.',
+          question:
+            'Why were summer "progresses" so essential for maintaining royal popularity and bonding the Queen with provincial English society?',
+          hinge_question:
+            'Why were summer "progresses" so essential for maintaining royal popularity and bonding the Queen with provincial English society?',
+          source_context:
+            'Painting of Queen Elizabeth I on a summer royal progress, surrounded by courtiers and citizens. Hinge Question: Why were summer "progresses" so essential for maintaining royal popularity and bonding the Queen with provincial English society?',
+          context:
+            'Painting of Queen Elizabeth I on a summer royal progress, surrounded by courtiers and citizens.',
+        },
+        {
+          id: 'source_b_swan_theatre',
+          letter: 'B',
+          title: 'Source B: Johannes de Witt’s Sketch of the Swan Theatre (c. 1596)',
           src: '/images/swan_theatre.jpg',
           source: '/images/swan_theatre.jpg',
           image: '/images/swan_theatre.jpg',
           caption:
-            'A contemporary sketch of the open-air Swan Theatre in Southwark, showing the thrust stage, tiered wooden galleries, and groundling standing pit.',
-          desc: 'Contemporary copy of Johannes de Witt’s sketch of the Swan Theatre, London.',
-          provenance:
-            'Arend van Buchel’s commonplace book copy of Johannes de Witt’s drawing, c. 1596. Utrecht University Library (MS 842).',
-          citation: 'Utrecht University Library, MS 842, fol. 132r, Swan Theatre.',
+            'Johannes de Witt’s eyewitness ink drawing of the interior of the Swan Theatre on Bankside in London, the only surviving contemporary sketch of an Elizabethan playhouse interior.',
+          desc: 'Contemporary sketch of the interior of the Swan Theatre, London, c. 1596.',
+          provenance: 'Utrecht University Library, MS 842, c. 1596.',
+          citation: 'Utrecht University Library, c. 1596.',
           question:
-            'How does Source A illustrate how Elizabethan public playhouses brought diverse social classes together while provoking Puritan moral condemnation?',
+            'Why did Elizabethan playhouses appeal equally to working-class groundlings and wealthy aristocrats in private galleries?',
           hinge_question:
-            'How does Source A illustrate how Elizabethan public playhouses brought diverse social classes together while provoking Puritan moral condemnation?',
+            'Why did Elizabethan playhouses appeal equally to working-class groundlings and wealthy aristocrats in private galleries?',
           source_context:
-            'The only surviving contemporary visual record of an Elizabethan playhouse interior, sketched by Dutch traveler Johannes de Witt at the Swan Theatre in Southwark, showing groundlings standing in the pit around the thrust stage while wealthy patrons sat in covered galleries. Hinge Question: How does Source A illustrate how Elizabethan public playhouses brought diverse social classes together while provoking Puritan moral condemnation?',
-          context: 'Contemporary drawing of the interior of the Swan Theatre in London, c. 1596.',
+            'Johannes de Witt’s contemporary sketch of the Swan Theatre in London, c. 1596. Hinge Question: Why did Elizabethan playhouses appeal equally to working-class groundlings and wealthy aristocrats in private galleries?',
+          context: 'Johannes de Witt’s contemporary sketch of the Swan Theatre in London, c. 1596.',
         },
       ],
       pair_share: {
@@ -8025,27 +8367,24 @@ const unitData = {
           level_4:
             "Elizabethans distinguished between the deserving 'impotent poor' and the 'idle sturdy beggars'. Influenced by books like Harman's Caveat, authorities feared vagrants would cause riots and crime.",
           source: {
-            act: 3,
-            id: 'source_a_caveat_cursitors',
+            id: 'source_a_caveat_for_cursitors',
             letter: 'A',
-            title: 'Source A: Thomas Harman’s "Caveat for Common Cursitors" (1567)',
+            title: 'Source A: Thomas Harman’s Caveat for Common Cursitors (1567)',
             src: '/images/caveat_for_cursitors.png',
             source: '/images/caveat_for_cursitors.png',
             image: '/images/caveat_for_cursitors.png',
             caption:
-              'Title page of Thomas Harman’s popular 1567 book warning householders against counterfeit vagabonds, sturdy beggars, and tricksters.',
-            desc: 'Frontispiece of Thomas Harman’s Caveat for Common Cursitors, printed in London in 1567.',
-            provenance:
-              'Woodcut title page from Thomas Harman, A Caveat or Warning for Common Cursitors, London, 1567. British Library Collection.',
-            citation: 'British Library, C.27.b.24, Harman’s Caveat, 1567.',
+              'Woodcut frontispiece from Thomas Harman’s book warning against vagabonds and "sturdy beggars", depicting the birch whipping of vagrants tied to the back of a cart.',
+            desc: 'Woodcut from Thomas Harman’s Caveat for Common Cursitors, printed in London, 1567.',
+            provenance: 'British Library, London, 1567.',
+            citation: 'British Library, London, 1567.',
             question:
-              'How does Source A reflect the growing anxiety and moral panic felt by Elizabethan property owners towards the "sturdy poor"?',
+              'Why did Elizabethan society distinguish so sharply between the "deserving poor" (impotent) and "idle vagabonds" (sturdy beggars)?',
             hinge_question:
-              'How does Source A reflect the growing anxiety and moral panic felt by Elizabethan property owners towards the "sturdy poor"?',
+              'Why did Elizabethan society distinguish so sharply between the "deserving poor" (impotent) and "idle vagabonds" (sturdy beggars)?',
             source_context:
-              'Woodcut title page from Justice of the Peace Thomas Harman’s 1567 bestseller classifying vagrants into deceitful criminal categories like "Counterfeit Cranks" and "Abraham Men." Hinge Question: How does Source A reflect the growing anxiety and moral panic felt by Elizabethan property owners towards the "sturdy poor"?',
-            context:
-              'Woodcut frontispiece of Thomas Harman’s 1567 book warning against counterfeit vagabonds.',
+              'Woodcut from Thomas Harman’s Caveat for Common Cursitors, London, 1567. Hinge Question: Why did Elizabethan society distinguish so sharply between the "deserving poor" (impotent) and "idle vagabonds" (sturdy beggars)?',
+            context: 'Woodcut from Thomas Harman’s Caveat for Common Cursitors, London, 1567.',
           },
         },
         {
@@ -8097,6 +8436,27 @@ const unitData = {
                 'Poverty and vagrancy increased significantly during the Elizabethan era between 1558 and 1588 due to an explosive demographic population surge that drove runaway inflation, the transformation of arable farmland into enclosed sheep pastures, successive bad harvests, and the long-term absence of monastic charity.<br><br>The foundational cause of growing poverty was a massive **population explosion**. England’s population had plummeted after the Black Death, but during the sixteenth century it surged by 35%, growing from roughly 3 million in 1558 to over 4 million by 1603. This dramatic increase placed overwhelming pressure on finite resources. Food production could not keep pace with demand, causing food prices—especially for bread grain—to skyrocket. At the same time, the surplus of available laborers forced real wages downward, meaning ordinary working families could afford fewer basic necessities. This structural inflation was exacerbated by previous royal debasement of silver coinage, leaving thousands of day-laborers living on the knife-edge of destitution.<br><br>Secondly, agricultural changes dispossessed rural communities through **enclosure and sheep farming**. Historically, peasant farmers shared open communal fields, farming strips of land and grazing livestock on common land. In the sixteenth century, the international boom in raw wool led wealthy landowners to enclose open fields with hedges and fences, converting land from labor-intensive crop farming to sheep grazing. Sheep farming was vastly more profitable and required only a handful of shepherds rather than dozens of agricultural laborers. As landlords evicted tenant farmers and raised rents (‘rack-renting’), hundreds of rural families lost their livelihoods and homes. With no work in the countryside, they were forced on the road as wandering vagabonds.<br><br>Furthermore, the situation was punctuated by catastrophic **harvest failures and trade disruptions**. Bad weather led to failed harvests in the early 1570s, mid-1580s, and throughout the devastating 1590s. When grain failed, bread prices soared to famine levels, leaving urban day-laborers starving. Compounding this, political crises in the Spanish Netherlands caused recurrent collapses in the Antwerp cloth trade, England’s primary export industry, plunging thousands of spinners and weavers into sudden unemployment.<br><br>Finally, this crisis was exacerbated by the historical **dissolution of the monasteries** under Henry VIII in the 1530s. For centuries, religious houses had provided free food, shelter, and medical care for the sick, elderly, and destitute. Without monastic charity, the impoverished had nowhere to turn. By the 1570s, the surging numbers of ‘sturdy beggars’ roaming roads and flooding London created widespread panic among the ruling class, forcing Parliament to pass landmark Poor Laws in 1572 and 1576 to distinguish between the deserving impotent poor and the idle vagabond.',
             },
           ],
+          source: {
+            id: 'source_b_poor_law_statute',
+            letter: 'B',
+            title: 'Source B: The Elizabethan Poor Law Statute of 1601',
+            src: '/images/poor_law_1601.jpg',
+            source: '/images/poor_law_1601.jpg',
+            image: '/images/poor_law_1601.jpg',
+            caption:
+              'The official printed parliamentary statute of the 1601 Act for the Relief of the Poor, establishing a national compulsory poor rate collected by parish overseers.',
+            desc: 'Official parliamentary statute of the 1601 Poor Relief Act.',
+            provenance: 'Parliamentary Archives, London, 43 Elizabeth I, c. 2, 1601.',
+            citation: 'Parliamentary Archives, London, 1601.',
+            question:
+              'Why did the 1601 Poor Law represent a radical change from treating poverty as a criminal failure to a civic parish duty?',
+            hinge_question:
+              'Why did the 1601 Poor Law represent a radical change from treating poverty as a criminal failure to a civic parish duty?',
+            source_context:
+              'Official parliamentary statute of the 1601 Elizabethan Poor Law, which formalized local parish responsibility for the poor. Hinge Question: Why did the 1601 Poor Law represent a radical change from treating poverty as a criminal failure to a civic parish duty?',
+            context:
+              'Official parliamentary statute of the 1601 Elizabethan Poor Law, which formalized local parish responsibility for the poor.',
+          },
         },
       ],
       quiz: [
@@ -8284,27 +8644,45 @@ const unitData = {
       ],
       sources: [
         {
-          act: 3,
-          id: 'source_a_caveat_cursitors',
+          id: 'source_a_caveat_for_cursitors',
           letter: 'A',
-          title: 'Source A: Thomas Harman’s "Caveat for Common Cursitors" (1567)',
+          title: 'Source A: Thomas Harman’s Caveat for Common Cursitors (1567)',
           src: '/images/caveat_for_cursitors.png',
           source: '/images/caveat_for_cursitors.png',
           image: '/images/caveat_for_cursitors.png',
           caption:
-            'Title page of Thomas Harman’s popular 1567 book warning householders against counterfeit vagabonds, sturdy beggars, and tricksters.',
-          desc: 'Frontispiece of Thomas Harman’s Caveat for Common Cursitors, printed in London in 1567.',
-          provenance:
-            'Woodcut title page from Thomas Harman, A Caveat or Warning for Common Cursitors, London, 1567. British Library Collection.',
-          citation: 'British Library, C.27.b.24, Harman’s Caveat, 1567.',
+            'Woodcut frontispiece from Thomas Harman’s book warning against vagabonds and "sturdy beggars", depicting the birch whipping of vagrants tied to the back of a cart.',
+          desc: 'Woodcut from Thomas Harman’s Caveat for Common Cursitors, printed in London, 1567.',
+          provenance: 'British Library, London, 1567.',
+          citation: 'British Library, London, 1567.',
           question:
-            'How does Source A reflect the growing anxiety and moral panic felt by Elizabethan property owners towards the "sturdy poor"?',
+            'Why did Elizabethan society distinguish so sharply between the "deserving poor" (impotent) and "idle vagabonds" (sturdy beggars)?',
           hinge_question:
-            'How does Source A reflect the growing anxiety and moral panic felt by Elizabethan property owners towards the "sturdy poor"?',
+            'Why did Elizabethan society distinguish so sharply between the "deserving poor" (impotent) and "idle vagabonds" (sturdy beggars)?',
           source_context:
-            'Woodcut title page from Justice of the Peace Thomas Harman’s 1567 bestseller classifying vagrants into deceitful criminal categories like "Counterfeit Cranks" and "Abraham Men." Hinge Question: How does Source A reflect the growing anxiety and moral panic felt by Elizabethan property owners towards the "sturdy poor"?',
+            'Woodcut from Thomas Harman’s Caveat for Common Cursitors, London, 1567. Hinge Question: Why did Elizabethan society distinguish so sharply between the "deserving poor" (impotent) and "idle vagabonds" (sturdy beggars)?',
+          context: 'Woodcut from Thomas Harman’s Caveat for Common Cursitors, London, 1567.',
+        },
+        {
+          id: 'source_b_poor_law_statute',
+          letter: 'B',
+          title: 'Source B: The Elizabethan Poor Law Statute of 1601',
+          src: '/images/poor_law_1601.jpg',
+          source: '/images/poor_law_1601.jpg',
+          image: '/images/poor_law_1601.jpg',
+          caption:
+            'The official printed parliamentary statute of the 1601 Act for the Relief of the Poor, establishing a national compulsory poor rate collected by parish overseers.',
+          desc: 'Official parliamentary statute of the 1601 Poor Relief Act.',
+          provenance: 'Parliamentary Archives, London, 43 Elizabeth I, c. 2, 1601.',
+          citation: 'Parliamentary Archives, London, 1601.',
+          question:
+            'Why did the 1601 Poor Law represent a radical change from treating poverty as a criminal failure to a civic parish duty?',
+          hinge_question:
+            'Why did the 1601 Poor Law represent a radical change from treating poverty as a criminal failure to a civic parish duty?',
+          source_context:
+            'Official parliamentary statute of the 1601 Elizabethan Poor Law, which formalized local parish responsibility for the poor. Hinge Question: Why did the 1601 Poor Law represent a radical change from treating poverty as a criminal failure to a civic parish duty?',
           context:
-            'Woodcut frontispiece of Thomas Harman’s 1567 book warning against counterfeit vagabonds.',
+            'Official parliamentary statute of the 1601 Elizabethan Poor Law, which formalized local parish responsibility for the poor.',
         },
       ],
       pair_share: {
@@ -8856,6 +9234,27 @@ const unitData = {
           text: '<span class="para-ref">[1.1]</span> The Elizabethan golden age of maritime exploration was unlocked by revolutionary advances in navigational instruments and cartography. English captains began using <strong>astrolabes and quadrants</strong> to measure the angular elevation of the sun and the North Star, allowing them to calculate precise <strong>latitude</strong> at sea.<br><br><span class="para-ref">[1.2]</span> The introduction of the magnetic compass, cross-staff, and the "log and line" enabled navigators to measure vessel speed and estimate dead reckoning across open oceans. Furthermore, Gerardus Mercator’s revolutionary <strong>1569 Mercator Projection map</strong> introduced conformal nautical charts with straight lines of constant bearing, enabling English navigators to plot reliable transoceanic courses across the Atlantic and Pacific away from familiar shorelines.',
           level_4:
             "Navigational tools like astrolabes, quadrants, and the magnetic compass allowed sailors to calculate latitude and speed. Mercator's 1569 map projection enabled captains to sail accurately across open oceans.",
+          source: {
+            id: 'source_a_naval_galleons',
+            letter: 'A',
+            title: 'Source A: Naval Engagement Between English Galleons and Spanish Warships',
+            src: '/images/spanish_armada_battle.jpg',
+            source: '/images/spanish_armada_battle.jpg',
+            image: '/images/spanish_armada_battle.jpg',
+            caption:
+              'Contemporary depiction of English long-range naval gunnery and maneuverable race-built galleons engaging heavy Spanish warships in the late 16th century.',
+            desc: 'Painting of naval combat between English and Spanish warships, c. 1590.',
+            provenance: 'National Maritime Museum, Greenwich, c. 1590.',
+            citation: 'National Maritime Museum, Greenwich, c. 1590.',
+            question:
+              'How did technological innovations in ship design (like John Hawkins’ race-built galleons) give English explorers and commanders a decisive advantage at sea?',
+            hinge_question:
+              'How did technological innovations in ship design (like John Hawkins’ race-built galleons) give English explorers and commanders a decisive advantage at sea?',
+            source_context:
+              'Contemporary painting of English race-built galleons using long-range culverins against Spanish warships. Hinge Question: How did technological innovations in ship design (like John Hawkins’ race-built galleons) give English explorers and commanders a decisive advantage at sea?',
+            context:
+              'Contemporary painting of English race-built galleons using long-range culverins against Spanish warships.',
+          },
         },
         {
           stage: 2,
@@ -8883,30 +9282,29 @@ const unitData = {
           type: 'narrative',
           title: 'Act 4: [1577–1580] Drake’s Circumnavigation',
           theme_heading: 'Act 4: [1577–1580] Drake’s Circumnavigation',
-          text: '<span class="para-ref">[4.1]</span> (<span class="archival-meta-tag">Source A</span>) In December 1577, Francis Drake sailed from Plymouth with five ships on a secret mission backed by Elizabeth to break into the Spanish Pacific. After navigating the treacherous <strong>Strait of Magellan</strong>, where devastating storms sank four ships and drove his flagship south to Cape Horn, Drake renamed his surviving vessel the <strong>Golden Hind</strong>.<br><br><span class="para-ref">[4.2]</span> Navigating the uncharted Pacific coast of South America, Drake plundered Spanish ports in Peru and captured the treasure galleon <em>Cacafuego</em>. In June 1579, Drake landed in California, claimed the territory for Elizabeth as <strong>Nova Albion</strong>, and sailed west across the Pacific, trading for six tons of cloves with the Sultan of Ternate in the Spice Islands before completing the circumnavigation in September 1580.',
+          text: '<span class="para-ref">[4.1]</span> (<span class="archival-meta-tag">Source B</span>) In December 1577, Francis Drake sailed from Plymouth with five ships on a secret mission backed by Elizabeth to break into the Spanish Pacific. After navigating the treacherous <strong>Strait of Magellan</strong>, where devastating storms sank four ships and drove his flagship south to Cape Horn, Drake renamed his surviving vessel the <strong>Golden Hind</strong>.<br><br><span class="para-ref">[4.2]</span> Navigating the uncharted Pacific coast of South America, Drake plundered Spanish ports in Peru and captured the treasure galleon <em>Cacafuego</em>. In June 1579, Drake landed in California, claimed the territory for Elizabeth as <strong>Nova Albion</strong>, and sailed west across the Pacific, trading for six tons of cloves with the Sultan of Ternate in the Spice Islands before completing the circumnavigation in September 1580.',
           level_4:
             'In 1577-80, Drake sailed the Golden Hind through the Strait of Magellan, plundered Spanish Pacific ports, claimed Nova Albion in California, and traded for spices in the Moluccas, circumnavigating the globe.',
           source: {
-            act: 4,
-            id: 'source_a_francis_drake_voyage',
-            letter: 'A',
-            title: 'Source A: Sir Francis Drake and the Golden Hind World Voyage (1577–1580)',
+            id: 'source_b_francis_drake_circumnavigator',
+            letter: 'B',
+            title: 'Source B: Sir Francis Drake Circumnavigating the Globe',
             src: '/images/francis_drake.jpg',
             source: '/images/francis_drake.jpg',
             image: '/images/francis_drake.jpg',
             caption:
-              'Sir Francis Drake, whose 36,000-mile circumnavigation established England as an emerging global maritime power.',
-            desc: 'Portrait of navigator and privateer Sir Francis Drake.',
-            provenance:
-              'Portrait of Sir Francis Drake, c. 1580. National Portrait Gallery, London / National Maritime Museum, Greenwich.',
-            citation: 'National Portrait Gallery, NPG 837, Sir Francis Drake.',
+              'Sir Francis Drake, navigator, pirate, and naval commander, who became the first Englishman to successfully circumnavigate the globe between 1577 and 1580 aboard the Golden Hind.',
+            desc: 'Portrait of Sir Francis Drake following his global circumnavigation.',
+            provenance: 'National Portrait Gallery, London (NPG 4032), c. 1583.',
+            citation: 'National Portrait Gallery, London, c. 1583.',
             question:
-              'Why did Drake’s voyage of discovery combine geographic exploration with state-sanctioned commercial plunder against the Spanish Empire?',
+              'Why was Drake’s return from his circumnavigation in 1580 celebrated as both a financial triumph and a symbol of national prestige?',
             hinge_question:
-              'Why did Drake’s voyage of discovery combine geographic exploration with state-sanctioned commercial plunder against the Spanish Empire?',
+              'Why was Drake’s return from his circumnavigation in 1580 celebrated as both a financial triumph and a symbol of national prestige?',
             source_context:
-              'Portrait of Francis Drake commemorating his epic three-year voyage around South America, up the coast of California (Nova Albion), and across the Pacific and Indian Oceans, returning to Plymouth with immense treasure. Hinge Question: Why did Drake’s voyage of discovery combine geographic exploration with state-sanctioned commercial plunder against the Spanish Empire?',
-            context: 'Portrait of Francis Drake commemorating his circumnavigation of the globe.',
+              'Portrait of Sir Francis Drake following his global circumnavigation aboard the Golden Hind. Hinge Question: Why was Drake’s return from his circumnavigation in 1580 celebrated as both a financial triumph and a symbol of national prestige?',
+            context:
+              'Portrait of Sir Francis Drake following his global circumnavigation aboard the Golden Hind.',
           },
         },
         {
@@ -9091,26 +9489,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 4,
-          id: 'source_a_francis_drake_voyage',
+          id: 'source_a_naval_galleons',
           letter: 'A',
-          title: 'Source A: Sir Francis Drake and the Golden Hind World Voyage (1577–1580)',
+          title: 'Source A: Naval Engagement Between English Galleons and Spanish Warships',
+          src: '/images/spanish_armada_battle.jpg',
+          source: '/images/spanish_armada_battle.jpg',
+          image: '/images/spanish_armada_battle.jpg',
+          caption:
+            'Contemporary depiction of English long-range naval gunnery and maneuverable race-built galleons engaging heavy Spanish warships in the late 16th century.',
+          desc: 'Painting of naval combat between English and Spanish warships, c. 1590.',
+          provenance: 'National Maritime Museum, Greenwich, c. 1590.',
+          citation: 'National Maritime Museum, Greenwich, c. 1590.',
+          question:
+            'How did technological innovations in ship design (like John Hawkins’ race-built galleons) give English explorers and commanders a decisive advantage at sea?',
+          hinge_question:
+            'How did technological innovations in ship design (like John Hawkins’ race-built galleons) give English explorers and commanders a decisive advantage at sea?',
+          source_context:
+            'Contemporary painting of English race-built galleons using long-range culverins against Spanish warships. Hinge Question: How did technological innovations in ship design (like John Hawkins’ race-built galleons) give English explorers and commanders a decisive advantage at sea?',
+          context:
+            'Contemporary painting of English race-built galleons using long-range culverins against Spanish warships.',
+        },
+        {
+          id: 'source_b_francis_drake_circumnavigator',
+          letter: 'B',
+          title: 'Source B: Sir Francis Drake Circumnavigating the Globe',
           src: '/images/francis_drake.jpg',
           source: '/images/francis_drake.jpg',
           image: '/images/francis_drake.jpg',
           caption:
-            'Sir Francis Drake, whose 36,000-mile circumnavigation established England as an emerging global maritime power.',
-          desc: 'Portrait of navigator and privateer Sir Francis Drake.',
-          provenance:
-            'Portrait of Sir Francis Drake, c. 1580. National Portrait Gallery, London / National Maritime Museum, Greenwich.',
-          citation: 'National Portrait Gallery, NPG 837, Sir Francis Drake.',
+            'Sir Francis Drake, navigator, pirate, and naval commander, who became the first Englishman to successfully circumnavigate the globe between 1577 and 1580 aboard the Golden Hind.',
+          desc: 'Portrait of Sir Francis Drake following his global circumnavigation.',
+          provenance: 'National Portrait Gallery, London (NPG 4032), c. 1583.',
+          citation: 'National Portrait Gallery, London, c. 1583.',
           question:
-            'Why did Drake’s voyage of discovery combine geographic exploration with state-sanctioned commercial plunder against the Spanish Empire?',
+            'Why was Drake’s return from his circumnavigation in 1580 celebrated as both a financial triumph and a symbol of national prestige?',
           hinge_question:
-            'Why did Drake’s voyage of discovery combine geographic exploration with state-sanctioned commercial plunder against the Spanish Empire?',
+            'Why was Drake’s return from his circumnavigation in 1580 celebrated as both a financial triumph and a symbol of national prestige?',
           source_context:
-            'Portrait of Francis Drake commemorating his epic three-year voyage around South America, up the coast of California (Nova Albion), and across the Pacific and Indian Oceans, returning to Plymouth with immense treasure. Hinge Question: Why did Drake’s voyage of discovery combine geographic exploration with state-sanctioned commercial plunder against the Spanish Empire?',
-          context: 'Portrait of Francis Drake commemorating his circumnavigation of the globe.',
+            'Portrait of Sir Francis Drake following his global circumnavigation aboard the Golden Hind. Hinge Question: Why was Drake’s return from his circumnavigation in 1580 celebrated as both a financial triumph and a symbol of national prestige?',
+          context:
+            'Portrait of Sir Francis Drake following his global circumnavigation aboard the Golden Hind.',
         },
       ],
       pair_share: {
@@ -9675,6 +10093,27 @@ const unitData = {
           text: '<span class="para-ref">[1.1]</span> In March 1584, Queen Elizabeth granted courtier and explorer <strong>Sir Walter Raleigh</strong> a royal patent authorizing him to discover, explore, and colonize any "remote, heathen and barbarous lands" not already claimed by a Christian prince. Raleigh and advisor <strong>Richard Hakluyt</strong> published <em>A Discourse on Western Planting</em>, arguing that an American colony would provide a vital forward privateering base to intercept Spanish treasure fleets from the Caribbean.<br><br><span class="para-ref">[1.2]</span> Furthermore, a permanent colony would supply England with exotic timber, sugar, and tobacco, create a new export market for English woollen cloth, and offer productive employment for England\'s surplus impoverished population. Raleigh named the territory <strong>Virginia</strong> in honor of Elizabeth, the Virgin Queen.',
           level_4:
             'In 1584, Elizabeth gave Walter Raleigh a charter to colonize North America, named Virginia. Hakluyt argued the colony would serve as a privateering base against Spain and open new trade markets.',
+          source: {
+            id: 'source_a_walter_raleigh',
+            letter: 'A',
+            title: 'Source A: Sir Walter Raleigh, Courtier, Explorer, and Coloniser',
+            src: '/images/sir_walter_raleigh.jpg',
+            source: '/images/sir_walter_raleigh.jpg',
+            image: '/images/sir_walter_raleigh.jpg',
+            caption:
+              'Sir Walter Raleigh, favorite courtier of Queen Elizabeth I, who obtained a royal patent in 1584 to explore and colonize North American territories named "Virginia" in honour of the Virgin Queen.',
+            desc: 'Portrait of Sir Walter Raleigh, courtier and sponsor of the Roanoke voyages, c. 1588.',
+            provenance: 'National Portrait Gallery, London (NPG 7), c. 1588.',
+            citation: 'National Portrait Gallery, London, 1588.',
+            question:
+              'Why did Walter Raleigh rely on wealthy private investors and royal charters rather than government funding to establish English colonies in America?',
+            hinge_question:
+              'Why did Walter Raleigh rely on wealthy private investors and royal charters rather than government funding to establish English colonies in America?',
+            source_context:
+              'Contemporary portrait of Sir Walter Raleigh, who organized the first English colonizing expeditions to Roanoke Island in North America. Hinge Question: Why did Walter Raleigh rely on wealthy private investors and royal charters rather than government funding to establish English colonies in America?',
+            context:
+              'Contemporary portrait of Sir Walter Raleigh, who organized the first English colonizing expeditions to Roanoke Island.',
+          },
         },
         {
           stage: 2,
@@ -9692,31 +10131,29 @@ const unitData = {
           type: 'narrative',
           title: 'Act 3: [1585–1586] The First Roanoke Colony & Disaster',
           theme_heading: 'Act 3: [1585–1586] The First Roanoke Colony & Disaster',
-          text: '<span class="para-ref">[3.1]</span> (<span class="archival-meta-tag">Source A</span>) The 1585 expedition suffered immediate disaster upon arrival off the North Carolina coast in July. The fleet flagship, the <strong>Tiger</strong>, ran aground on a treacherous coastal sandbar, flooding the hold with seawater and destroying the colonists’ seeds, livestock, and primary grain provisions. Forced to settle on <strong>Roanoke Island</strong> with only a fraction of their food, the colonists were unable to cultivate crops because they had arrived too late in the planting season.<br><br><span class="para-ref">[3.2]</span> The English were forced to rely completely on the local <strong>Secotan tribe</strong> and their paramount chief, <strong>Wingina</strong>, demanding food handouts and relying on Indigenous fish weirs. As English demands drained tribal food reserves, relations between the two communities rapidly turned hostile.',
+          text: '<span class="para-ref">[3.1]</span> (<span class="archival-meta-tag">Source B</span>) The 1585 expedition suffered immediate disaster upon arrival off the North Carolina coast in July. The fleet flagship, the <strong>Tiger</strong>, ran aground on a treacherous coastal sandbar, flooding the hold with seawater and destroying the colonists’ seeds, livestock, and primary grain provisions. Forced to settle on <strong>Roanoke Island</strong> with only a fraction of their food, the colonists were unable to cultivate crops because they had arrived too late in the planting season.<br><br><span class="para-ref">[3.2]</span> The English were forced to rely completely on the local <strong>Secotan tribe</strong> and their paramount chief, <strong>Wingina</strong>, demanding food handouts and relying on Indigenous fish weirs. As English demands drained tribal food reserves, relations between the two communities rapidly turned hostile.',
           level_4:
             "The flagship Tiger ran aground in 1585, destroying grain seeds and food supplies. Arriving too late to plant crops, the colonists became completely dependent on food handouts from Chief Wingina's Secotan tribe.",
           source: {
-            act: 3,
-            id: 'source_a_roanoke_colony',
-            letter: 'A',
-            title: 'Source A: Map of the First English Colony at Roanoke Island, Virginia (1585)',
+            id: 'source_b_roanoke_colony_map',
+            letter: 'B',
+            title: 'Source B: The Roanoke Island Colony Map by John White (1585)',
             src: '/images/roanoke_colony.jpg',
             source: '/images/roanoke_colony.jpg',
             image: '/images/roanoke_colony.jpg',
             caption:
-              'A contemporary watercolor map of Roanoke Island and the Outer Banks of North Carolina, charted by surveyor John White in 1585.',
-            desc: 'Watercolor map of the Virginia coast by John White, 1585.',
-            provenance:
-              'Original watercolor map by John White, 1585. British Museum Department of Prints and Drawings (1906,0509.1.2).',
-            citation: 'British Museum 1906,0509.1.2, John White Map of Virginia.',
+              'John White’s original watercolor map and coastal survey of Roanoke Island and the Virginia coastline, recording the initial landing site of English settlers in 1585.',
+            desc: 'Watercolour map of the Roanoke settlement by Governor John White, 1585.',
+            provenance: 'British Museum, Prints & Drawings (1906,0509.1.2), 1585.',
+            citation: 'British Museum, London, 1585.',
             question:
-              'How does the geography depicted in Source A explain why English supply ships struggled with treacherous shallows and sandbars at Roanoke?',
+              'What critical geographic and climatic factors made the Roanoke settlement site so vulnerable to famine and indigenous conflict?',
             hinge_question:
-              'How does the geography depicted in Source A explain why English supply ships struggled with treacherous shallows and sandbars at Roanoke?',
+              'What critical geographic and climatic factors made the Roanoke settlement site so vulnerable to famine and indigenous conflict?',
             source_context:
-              'John White’s detailed 1585 map of Roanoke Island showing the shallow coastal sandbars and Secotan Native American settlements along the coast of Virginia. Hinge Question: How does the geography depicted in Source A explain why English supply ships struggled with treacherous shallows and sandbars at Roanoke?',
+              'John White’s original watercolor map of Roanoke Island and the Virginia coast, 1585. Hinge Question: What critical geographic and climatic factors made the Roanoke settlement site so vulnerable to famine and indigenous conflict?',
             context:
-              'Contemporary watercolor map of Roanoke Island and the Virginia coastline by John White, 1585.',
+              'John White’s original watercolor map of Roanoke Island and the Virginia coast, 1585.',
           },
         },
         {
@@ -9926,27 +10363,46 @@ const unitData = {
       ],
       sources: [
         {
-          act: 3,
-          id: 'source_a_roanoke_colony',
+          id: 'source_a_walter_raleigh',
           letter: 'A',
-          title: 'Source A: Map of the First English Colony at Roanoke Island, Virginia (1585)',
+          title: 'Source A: Sir Walter Raleigh, Courtier, Explorer, and Coloniser',
+          src: '/images/sir_walter_raleigh.jpg',
+          source: '/images/sir_walter_raleigh.jpg',
+          image: '/images/sir_walter_raleigh.jpg',
+          caption:
+            'Sir Walter Raleigh, favorite courtier of Queen Elizabeth I, who obtained a royal patent in 1584 to explore and colonize North American territories named "Virginia" in honour of the Virgin Queen.',
+          desc: 'Portrait of Sir Walter Raleigh, courtier and sponsor of the Roanoke voyages, c. 1588.',
+          provenance: 'National Portrait Gallery, London (NPG 7), c. 1588.',
+          citation: 'National Portrait Gallery, London, 1588.',
+          question:
+            'Why did Walter Raleigh rely on wealthy private investors and royal charters rather than government funding to establish English colonies in America?',
+          hinge_question:
+            'Why did Walter Raleigh rely on wealthy private investors and royal charters rather than government funding to establish English colonies in America?',
+          source_context:
+            'Contemporary portrait of Sir Walter Raleigh, who organized the first English colonizing expeditions to Roanoke Island in North America. Hinge Question: Why did Walter Raleigh rely on wealthy private investors and royal charters rather than government funding to establish English colonies in America?',
+          context:
+            'Contemporary portrait of Sir Walter Raleigh, who organized the first English colonizing expeditions to Roanoke Island.',
+        },
+        {
+          id: 'source_b_roanoke_colony_map',
+          letter: 'B',
+          title: 'Source B: The Roanoke Island Colony Map by John White (1585)',
           src: '/images/roanoke_colony.jpg',
           source: '/images/roanoke_colony.jpg',
           image: '/images/roanoke_colony.jpg',
           caption:
-            'A contemporary watercolor map of Roanoke Island and the Outer Banks of North Carolina, charted by surveyor John White in 1585.',
-          desc: 'Watercolor map of the Virginia coast by John White, 1585.',
-          provenance:
-            'Original watercolor map by John White, 1585. British Museum Department of Prints and Drawings (1906,0509.1.2).',
-          citation: 'British Museum 1906,0509.1.2, John White Map of Virginia.',
+            'John White’s original watercolor map and coastal survey of Roanoke Island and the Virginia coastline, recording the initial landing site of English settlers in 1585.',
+          desc: 'Watercolour map of the Roanoke settlement by Governor John White, 1585.',
+          provenance: 'British Museum, Prints & Drawings (1906,0509.1.2), 1585.',
+          citation: 'British Museum, London, 1585.',
           question:
-            'How does the geography depicted in Source A explain why English supply ships struggled with treacherous shallows and sandbars at Roanoke?',
+            'What critical geographic and climatic factors made the Roanoke settlement site so vulnerable to famine and indigenous conflict?',
           hinge_question:
-            'How does the geography depicted in Source A explain why English supply ships struggled with treacherous shallows and sandbars at Roanoke?',
+            'What critical geographic and climatic factors made the Roanoke settlement site so vulnerable to famine and indigenous conflict?',
           source_context:
-            'John White’s detailed 1585 map of Roanoke Island showing the shallow coastal sandbars and Secotan Native American settlements along the coast of Virginia. Hinge Question: How does the geography depicted in Source A explain why English supply ships struggled with treacherous shallows and sandbars at Roanoke?',
+            'John White’s original watercolor map of Roanoke Island and the Virginia coast, 1585. Hinge Question: What critical geographic and climatic factors made the Roanoke settlement site so vulnerable to famine and indigenous conflict?',
           context:
-            'Contemporary watercolor map of Roanoke Island and the Virginia coastline by John White, 1585.',
+            'John White’s original watercolor map of Roanoke Island and the Virginia coast, 1585.',
         },
       ],
       pair_share: {
@@ -10432,8 +10888,3 @@ const unitData = {
   id: 'eee',
   edition: '2026.1',
 };
-
-export default unitData;
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = unitData;
-}
