@@ -594,6 +594,22 @@ const water_and_sanitation = {
       ],
       video: [
         {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=nVJV8iEAm88',
+          title: 'Medieval Medicine | Secondary History - Medicine Through Time',
+          duration: '5 mins 12 secs',
+          teacher_guidance:
+            'BBC Teach animated overview of medieval public health, Galenic humoral theories, dirty medieval towns, and supernatural explanations for disease.',
+        },
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=YhsPPBGtquo',
+          title: 'Timelines.tv: The Black Death (1348)',
+          duration: '6 mins 33 secs',
+          teacher_guidance:
+            'Dramatic classroom overview of the arrival of the bubonic plague in 1348, living conditions in medieval towns, and its devastating demographic impact.',
+        },
+        {
           type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/medieval-london-filthy-cities/',
           title: '01: Medieval London | Filthy Cities (BBC Two)',
@@ -1169,6 +1185,16 @@ const water_and_sanitation = {
         'Describe the public health challenges caused by rapid urbanisation in Early Modern towns',
         'Explain why governments failed to act despite growing evidence of poor sanitation',
         'Evaluate the extent to which continuity, rather than change, defined public health between 1500 and 1750',
+      ],
+      video: [
+        {
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=LBvOZO1gmOE',
+          title: 'The Great Plague of London (1665-66) | Simple History',
+          duration: '3 mins 1 secs',
+          teacher_guidance:
+            'Animated exploration of the 1665 Great Plague: the Lord Mayor’s quarantine orders, watchmen padlocking houses, parish searchers, and dead-carts.',
+        },
       ],
       do_now: {
         type: 'questions',
@@ -1821,6 +1847,14 @@ const water_and_sanitation = {
             'Edwin Chadwick highlighted that filthy living conditions and open cesspools caused disease and poverty, proposing clean water piped into homes and underground sewers, which led directly to the 1848 Public Health Act. In 1854, Dr John Snow mapped cholera deaths around Soho, proving the disease was waterborne rather than spread by bad air (miasma) by linking the outbreak directly to the contaminated Broad Street water pump.',
         },
         {
+          title: '19th Century Medicine | Secondary History - Medicine Through Time',
+          type: 'youtube',
+          url: 'https://www.youtube.com/watch?v=MdNXDqCGv3M',
+          duration: '4 mins 41 secs',
+          teacher_guidance:
+            'BBC Teach overview of rapid industrial urbanisation, overcrowding, filthy living conditions, and the urgent push for sanitary reform.',
+        },
+        {
           type: 'era',
           url: 'https://era.org.uk/streaming-service-resource/the-story-of-john-snow-moments-of-genius/',
           title: 'The Story of John Snow | Moments of Genius (BBC Four)',
@@ -2264,7 +2298,38 @@ const water_and_sanitation = {
             question: 'What is the key takeaway for this objective?',
           },
         ],
+        source_context: {
+          'Source A':
+            'Surviving Victorian municipal beam engine pumping station at Eastney, Portsmouth, housing twin 150-HP James Watt & Co. steam beam engines that pumped island sewage into Solent tidal reservoirs on the ebb tide. Hinge Question: Why did coastal Victorian cities like Portsmouth require steam pumping infrastructure just as urgently as London did?',
+          'Source B':
+            'Photograph of Sir Joseph Bazalgette and municipal engineers inspecting the Northern Outfall Sewer during construction in London, c. 1863. Hinge Question: Why did it take the political crisis of the Great Stink outside Parliament, rather than decades of cholera deaths, to finally compel the government to fund Bazalgette’s sewers?',
+          'Source C':
+            'Scientific diagram of Louis Pasteur’s 1861 swan-neck flask experiment demonstrating that boiled broth remains sterile unless airborne microbes enter when the neck is broken or tilted. Hinge Question: Why was proving that microbes come from external sources essential for convincing Victorian governments to pass compulsory public health legislation?',
+        },
       },
+      video: [
+        {
+          url: 'https://www.youtube.com/watch?v=8st-Ako2mrU',
+          title: 'Joseph Bazalgette & The Great Stink of 1858 | 60SecondHistories',
+          duration: '1 mins 37 secs',
+          teacher_guidance:
+            'Concise starter hook detailing how the unbearable stench of the River Thames in the summer of 1858 forced Parliament to fund Bazalgette’s intercepting sewer network.',
+        },
+        {
+          url: 'https://www.youtube.com/watch?v=ZmaoHB5fKB4',
+          title: 'Pasteur and Koch: Germ Theory | Secondary History - Medicine Through Time',
+          duration: '4 mins 47 secs',
+          teacher_guidance:
+            'BBC Teach animated guide to Louis Pasteur’s breakthrough swan-neck flask experiments disproving spontaneous generation and establishing Germ Theory (1861).',
+        },
+        {
+          url: 'https://era.org.uk/streaming-service-resource/the-establishment-of-germ-theory-the-cell/',
+          title: '[STARTER HOOK] The Cell: The Establishment of Germ Theory (BBC Two)',
+          duration: '5 mins 0 secs',
+          teacher_guidance:
+            'Dr Adam Rutherford demonstrates Pasteur’s swan-neck flask experiment and explains how proving bacteria come from the air revolutionized public health.',
+        },
+      ],
       narrative_blocks: [
         {
           text: "For decades, the medical establishment stubbornly clung to the 'Miasma Theory,' believing that all diseases were spread by foul-smelling, invisible clouds of bad air. However, during the devastating 1854 cholera outbreak in the Soho district of London, a brilliant physician named Dr. John Snow fundamentally challenged this assumption. By painstakingly mapping the precise locations of hundreds of cholera deaths on a street map, Snow noticed a terrifying cluster centered around a single, highly popular water pump on Broad Street. He proved that the victims were not breathing the same air, but drinking the same contaminated water, which was secretly drawing from a nearby leaking cesspit. By physically removing the pump's handle so the public could no longer drink the infected water, Snow single-handedly stopped the Soho outbreak, scientifically proving that cholera was waterborne.",
@@ -2307,12 +2372,14 @@ const water_and_sanitation = {
           image_alt:
             'Eastney Beam Engine Pumping Station, Portsmouth: Civic Sanitation Masterpiece (1887)',
           caption:
-            '<strong>What is this source showing?</strong> Surviving Victorian beam engine pumping station at Eastney, Portsmouth, housing twin 150-HP James Watt & Co. steam beam engines that pumped island sewage into Solent tidal reservoirs on the ebb tide.',
+            '<strong>What is this source showing?</strong> Local Fieldwork Record: Eastney Beam Engine Pumping Station, Portsmouth (1887). This is Portsmouth’s direct municipal equivalent to Joseph Bazalgette’s London sewers. Built by civil engineer Sir Frederick Bramwell, it houses twin 150-HP James Watt & Co. steam beam engines engineered to pump the island’s raw sewage into deep reservoirs and discharge it into the Solent on the ebb tide, eliminating cholera locally.',
           source_letter: 'A',
           shelfmark:
             'Fieldwork Primary Record &bull; Solent Municipal Sanitation Survey (ESP/1887/ENG)',
           citation:
             'Portsmouth City Museum Archives &bull; Victorian Municipal Engineering Division.',
+          image_context:
+            '<strong>Local History Link:</strong> Just as London was transformed by Bazalgette’s intercepting sewers, surrounding coastal cities faced the exact same public health crisis. In Portsmouth, low-lying island geography meant raw sewage constantly backed up into crowded streets and contaminated local water supplies. In 1887, Sir Frederick Bramwell completed the Eastney Beam Engine House, using steam power to pump waste out to the Solent during the outgoing tide, preventing filth from washing back ashore.<br><br>**Hinge Question:** How did the construction of the Eastney Beam Engine House in 1887 solve the exact same public health crisis in Portsmouth that Bazalgette solved in London?',
           tasks: [
             {
               type: 'short_answer',
@@ -2325,9 +2392,9 @@ const water_and_sanitation = {
                 "The construction of the Eastney Beam Engine House solved Portsmouth's crisis by...",
             },
           ],
-          text: "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
+          text: "Just as London was transformed by Bazalgette's intercepting sewers, surrounding coastal cities faced the exact same public health crisis. In Portsmouth, low-lying island geography meant raw sewage constantly backed up into crowded streets and contaminated local water supplies. In response, Victorian civil engineer Sir Frederick Bramwell designed the Eastney Beam Engine Pumping Station in 1887. Equipped with two massive 150-horsepower James Watt & Co. steam engines, the station intercepted Portsmouth's waste and pumped it into deep holding reservoirs, discharging it out into the Solent on the ebbing tide and finally eliminating cholera across Portsea Island.",
           level_4:
-            "\n<div class=\"local-history-box\" style=\"background: #f0fdf4; border-left: 4px solid #16a34a; padding: 15px 20px; margin: 20px 0; border-radius: 0 6px 6px 0;\">\n    <h4 style=\"color: #166534; margin-top: 0; margin-bottom: 10px;\">\n        <i class=\"fa-solid fa-location-dot\"></i> Local Link: Eastney Beam Engine House\n    </h4>\n    <p style=\"margin: 0; color: #1f2937; font-size: 1rem; line-height: 1.6;\">\n        This is Portsmouth's direct equivalent to Joseph Bazalgette's London sewers! Built in 1887 by Sir Frederick Bramwell, these massive Victorian steam-powered beam engines were constructed to pump Portsmouth's raw sewage out to sea at Langstone Harbour. The ornate cast-iron machinery, housed in a grand Victorian brick pump house, finally cleaned up the city's streets and eliminated cholera locally. <br><br><a href='https://www.portsmouthwater.co.uk/about-us/eastney-beam-engine-house/' target='_blank' style='color: #1a73e8; text-decoration: underline; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;'><i class='fas fa-external-link-alt'></i> Visit the Eastney Engine House website</a>\n    </p>\n</div>",
+            "Like London, Portsmouth suffered terrible cholera outbreaks until civil engineer Sir Frederick Bramwell built the Eastney Beam Engine House in 1887. Its massive steam engines pumped sewage safely out to sea on the ebbing tide, permanently cleaning up the city's streets.",
           theme_heading: 'Local Link: Portsmouth Cleans Up — Eastney Pumping Station (1887)',
         },
         {
@@ -2370,6 +2437,17 @@ const water_and_sanitation = {
           text: "While British engineers were building massive physical barriers against disease, scientists on the continent were finally uncovering the invisible biological culprits. In 1861, the brilliant French microbiologist Louis Pasteur definitively proved 'Germ Theory' through a series of elegant experiments with swan-necked flasks. Pasteur demonstrated that microscopic, living organisms—bacteria—were responsible for the decay of organic matter and the spread of infections. This groundbreaking discovery completely destroyed the old Miasma theory. It provided the definitive, undeniable scientific backing that reformers like Chadwick and Snow had lacked, proving that advanced sanitation, sterile medical environments, and strict public hygiene were absolute necessities to stop the transmission of deadly germs.",
           level_4:
             'French scientist Louis Pasteur proved Germ Theory in 1861, showing that microscopic organisms (bacteria) cause disease rather than bad smells. This groundbreaking discovery finally destroyed the miasma theory, providing definitive scientific backing for sanitation and modern hygiene.',
+          image: '/images/pasteur_swan_neck.jpg',
+          image_alt:
+            "Louis Pasteur's Swan-Neck Flask Experiment (1861) Disproving Spontaneous Generation",
+          caption:
+            '<strong>What is this source showing?</strong> Louis Pasteur’s famous swan-neck (S-shaped) flask experiment of 1861. Broth boiled inside an open swan-neck flask remained completely sterile because airborne bacteria and dust settled in the curved bend. Only when the neck was broken or tilted did airborne microbes enter, causing rapid bacterial growth and putrefaction. This conclusively disproved spontaneous generation and established Germ Theory.',
+          source_letter: 'C',
+          shelfmark: 'Pasteur Institute Archives &bull; Ann. Chim. Phys. (1862/GERM/EXP)',
+          citation:
+            'Pasteur Institute Historical Archives &bull; Experimental Microbiology Series.',
+          image_context:
+            '<strong>Scientific Context:</strong> Prior to 1861, doctors and authorities believed in "spontaneous generation"—the idea that rotting matter and filth created living germs out of nothing. By using curved swan-necked flasks, Pasteur proved that boiled nutrient broth stayed sterile indefinitely because airborne germs were trapped in the bend. Bacteria only appeared when outside air was allowed direct access. This proved that germs exist in the air and water, providing the scientific foundation for clean municipal water networks and sterile medical procedures.<br><br>**Hinge Question:** Why was proving that bacteria come from outside the body (rather than appearing spontaneously from dirt) essential for convincing Victorian taxpayers to fund clean piped water?',
           tasks: [
             {
               type: 'written',
@@ -2380,6 +2458,15 @@ const water_and_sanitation = {
                 'It proved that bacteria cause disease, providing the scientific backing needed to enforce clean water laws.',
               starter: "Louis Pasteur's Germ Theory linked to sanitation because...",
               clue: 'Think about how this disproved miasma theory permanently.',
+            },
+            {
+              type: 'short_answer',
+              text: "How does Pasteur's swan-neck flask experiment in Source C disprove the ancient theory of 'spontaneous generation'?",
+              answer:
+                'In Source C, the boiled nutrient broth stays completely clear and sterile inside the open swan-neck flask because bacteria and dust particles in the air are trapped in the curve of the glass tube. Bacteria only grow when the neck is broken or tilted, proving that living microbes come from the external atmosphere rather than generating spontaneously from the liquid itself.',
+              model_answer:
+                'The curved swan neck trapped airborne germs in the bend, keeping the broth sterile until tilted, proving germs came from outside rather than spontaneously generating.',
+              starter: "Pasteur's experiment disproved spontaneous generation by showing that...",
             },
           ],
           theme_heading: 'Louis Pasteur: Proving That Microscopic Germs Cause Disease',
