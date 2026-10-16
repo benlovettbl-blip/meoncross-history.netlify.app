@@ -1,15 +1,4 @@
-/**
- * The First British Empire (1600–1783)
- * Key Stage 3 Year 8 • 5-Lesson Disciplinary Enquiry
- *
- * Storytelling: 5-Act Decimal Standard (1.1 to 1.5) with Inline Evidential Sources
- * Pedagogical Architecture: Large-font (10.5pt) note-making, rotating disciplinary skills,
- * centre-fold living timeline, and back-of-booklet retrieval companion.
- *
- * Commercial Neutrality: 100% Institutional-neutral.
- */
-
-export const unitData = {
+const unitData = {
   id: 'first_british_empire',
   title: 'The First British Empire (1600–1783)',
   short_title: 'The First British Empire',
@@ -21,8 +10,6 @@ export const unitData = {
   cover_image_position: 'center 35%',
   is_ks3: true,
   year_group: 'Year 8',
-
-  // Core Chronology for Living Timeline
   timeline: [
     {
       year: '1600',
@@ -74,8 +61,6 @@ export const unitData = {
       dual_coding_prompt: 'Draw a quill pen writing on a parchment scroll with the Liberty Bell.',
     },
   ],
-
-  // 12 Core Tier 3 Substantive Vocabulary Terms
   glossary: [
     {
       term: 'Charter',
@@ -138,8 +123,6 @@ export const unitData = {
         'An enslaved African who escaped rebel masters to fight for the British Crown during the American Revolution in exchange for freedom.',
     },
   ],
-
-  // Knowledge Companion 25-Question Retrieval Bank (5 per lesson)
   quizzing_pack: {
     title: 'Knowledge Retrieval Companion: 25 Core Retrieval Drill Questions',
     description:
@@ -319,12 +302,7 @@ export const unitData = {
       },
     ],
   },
-
-  // The 5 Core Lessons
   lessons: [
-    // ------------------------------------------------------------------------
-    // LESSON 1: The East India Company & Mughal Bengal (1600–1757)
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_1',
       title: 'The East India Company & Mughal Bengal (1600–1757)',
@@ -341,11 +319,26 @@ export const unitData = {
           'Shah Alam II Conveying the Grant of the Diwani to Lord Clive (August 1765) by Benjamin West: A private corporation assumes sovereign tax-raising powers over 20 million people.',
       },
       margin_spine: [
-        { year: '1600', label: '1.1 Royal Charter' },
-        { year: '1615', label: '1.2 Mughal Factories' },
-        { year: '1756', label: '1.3 Calcutta Crisis' },
-        { year: '1757', label: '1.4 Battle of Plassey' },
-        { year: '1765', label: '1.5 The Diwani Treaty' },
+        {
+          year: '1600',
+          label: '1.1 Royal Charter',
+        },
+        {
+          year: '1615',
+          label: '1.2 Mughal Factories',
+        },
+        {
+          year: '1756',
+          label: '1.3 Calcutta Crisis',
+        },
+        {
+          year: '1757',
+          label: '1.4 Battle of Plassey',
+        },
+        {
+          year: '1765',
+          label: '1.5 The Diwani Treaty',
+        },
       ],
       causal_domino_spine: {
         title: 'The East India Company & Mughal Bengal (1600–1757)',
@@ -415,8 +408,6 @@ export const unitData = {
       },
       did_you_know:
         'The East India Company began in 1600 with just 218 London merchants and a single clerk operating from a townhouse on Leadenhall Street—yet within 150 years, this private corporation commanded a private mercenary army of 260,000 soldiers, twice the size of the British Army! Meanwhile, Robert Clive was such an uncontrollable, violent teenage troublemaker that his despairing father shipped him off to India just to get him out of Shropshire, where Clive had formed a teenage extortion gang climbing church steeples to intimidate local shopkeepers!',
-
-      // Do Now: Prior KS3 Tudors & Stuarts Recall
       do_now: {
         type: 'questions',
         items: [
@@ -447,8 +438,6 @@ export const unitData = {
           },
         ],
       },
-
-      // Vocabulary
       vocabulary: [
         {
           term: 'Charter',
@@ -531,8 +520,6 @@ export const unitData = {
           tier: '2',
         },
       ],
-
-      // Narrative Blocks
       narrative_blocks: [
         {
           act: 1,
@@ -600,7 +587,6 @@ export const unitData = {
           },
         },
       ],
-
       sources: [
         {
           title: 'Source A: Nathaniel Dance, Portrait of Major-General Robert Clive (1773)',
@@ -640,7 +626,6 @@ export const unitData = {
           citation: 'Benjamin West • British Library / FCO Collection, London.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry introduces students to the corporate roots of British rule in India. Students evaluate the transformation of the East India Company from an early modern trading venture into a territorial sovereign power, examining the roles of the 1600 charter, Mughal commercial factories, Clive’s opportunistic bribery at Plassey, and the constitutional significance of the 1765 Diwani.',
@@ -671,11 +656,9 @@ export const unitData = {
           },
         ],
       },
+      prologue:
+        'In 1600, Queen Elizabeth I granted a royal charter to a tiny syndicate of London merchants trading in Indian spices. Over 150 years, this private corporation built its own mercenary armies, forts, and warships. In 1757, Robert Clive defeated the Nawab of Bengal at Plassey. How did a commercial company become the ruler of millions?',
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 2: The Transatlantic Slave Trade & The Middle Passage (1619–1807)
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_2',
       title: 'The Transatlantic Slave Trade & The Middle Passage (1619–1807)',
@@ -691,11 +674,26 @@ export const unitData = {
           'The Stowage of the British Slave Ship Brookes (1788): The forensic abolitionist broadside that exposed how 454 captive human beings were systematically crammed into darkness below deck.',
       },
       margin_spine: [
-        { year: '1619', label: '2.1 Virginia Captives' },
-        { year: '1672', label: '2.2 Royal African Co.' },
-        { year: '1713', label: '2.3 The Asiento Monopoly' },
-        { year: '1781', label: '2.4 The Zong Massacre' },
-        { year: '1788', label: '2.5 The Brookes Exposé' },
+        {
+          year: '1619',
+          label: '2.1 Virginia Captives',
+        },
+        {
+          year: '1672',
+          label: '2.2 Royal African Co.',
+        },
+        {
+          year: '1713',
+          label: '2.3 The Asiento Monopoly',
+        },
+        {
+          year: '1781',
+          label: '2.4 The Zong Massacre',
+        },
+        {
+          year: '1788',
+          label: '2.5 The Brookes Exposé',
+        },
       ],
       causal_domino_spine: {
         title: 'The Transatlantic Slave Trade & The Middle Passage (1619–1807)',
@@ -765,7 +763,6 @@ export const unitData = {
       },
       did_you_know:
         'British slave ship captains insured their human captives as literal commercial cargo, classing them in legal paperwork alongside cattle and timber! When Captain Luke Collingwood of the slave ship Zong got lost at sea in 1781 and ran low on drinking water, he ordered 133 living enslaved Africans thrown overboard into shark-infested waters to claim insurance money for "jettisoned cargo"—a legal horror that stunned the public when the insurers refused to pay and the case was fought in London courts as a commercial contract dispute!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -796,7 +793,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Transatlantic Trade',
@@ -879,7 +875,6 @@ export const unitData = {
           tier: '3',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -946,7 +941,6 @@ export const unitData = {
           },
         },
       ],
-
       sources: [
         {
           title:
@@ -986,7 +980,6 @@ export const unitData = {
           citation: 'Daniel Orme • Frontispiece of The Interesting Narrative (1789).',
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry addresses the economic structure and human trauma of the Transatlantic Slave Trade. Students investigate how manufactured goods, captive human beings, and plantation commodities formed the Triangular Trade, scrutinise forensic evidence from the Brookes diagram, and evaluate how captive resistance and Equiano’s firsthand testimony exposed the brutality of chattel slavery.',
@@ -1017,11 +1010,9 @@ export const unitData = {
           },
         ],
       },
+      prologue:
+        'Between the sixteenth and nineteenth centuries, European slave ships forcibly transported over twelve million African men, women, and children across the Atlantic Ocean. Packed in suffocating darkness below deck, captives endured the unspeakable horrors of the Middle Passage. What were the brutal economic mechanics and human costs of this global trading empire?',
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 3: Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_3',
       title: 'Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)',
@@ -1037,11 +1028,26 @@ export const unitData = {
           'Slaves Cutting the Sugar Cane in Antigua (1823) by William Clark: Enslaved field gangs working under armed overseers in the Caribbean sugar industrial complex.',
       },
       margin_spine: [
-        { year: '1655', label: '3.1 Cromwell Takes Jamaica' },
-        { year: '1675', label: '3.2 Sugar Factory Machine' },
-        { year: '1720', label: '3.3 First Maroon War' },
-        { year: '1734', label: '3.4 Fall of Nanny Town' },
-        { year: '1739', label: '3.5 The Peace Treaty' },
+        {
+          year: '1655',
+          label: '3.1 Cromwell Takes Jamaica',
+        },
+        {
+          year: '1675',
+          label: '3.2 Sugar Factory Machine',
+        },
+        {
+          year: '1720',
+          label: '3.3 First Maroon War',
+        },
+        {
+          year: '1734',
+          label: '3.4 Fall of Nanny Town',
+        },
+        {
+          year: '1739',
+          label: '3.5 The Peace Treaty',
+        },
       ],
       causal_domino_spine: {
         title: 'Plantation Reality, Queen Nanny & Maroon Resistance (1655–1740)',
@@ -1111,7 +1117,6 @@ export const unitData = {
       },
       did_you_know:
         'Queen Nanny of the Jamaican Maroons was such a legendary military tactician in the misty Blue Mountains that terrified British soldiers spread wild myths that she could catch musket balls fired at her and shoot them back with deadly aim! Her warriors disguised themselves in tree branches and leafy camouflage so expertly that British redcoats marched right into ambushes, believing the forest itself was attacking them!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -1142,7 +1147,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Maroon',
@@ -1225,7 +1229,6 @@ export const unitData = {
           tier: '2',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -1291,7 +1294,6 @@ export const unitData = {
           text: '<span class="para-ref">[3.5]</span> By 1738, the British colonial government was on the brink of bankruptcy, having spent over £250,000 trying and failing to subdue the Maroons. In March 1739, Governor Edward Trelawny sent emissaries carrying a white flag to negotiate a formal <strong>treaty</strong> with Leeward Maroon leader Cudjoe, followed by a separate treaty with Queen Nanny’s Windward Maroons. The British Crown granted the Maroons 1,500 acres of sovereign land, complete tax exemption, and total self-governing <strong>autonomy</strong>. However, the treaty contained a tragic compromise: to maintain their freedom, the Maroons were forced to agree to capture and return future runaway slaves to British plantations.',
         },
       ],
-
       sources: [
         {
           title: 'Source A: William Clark, Slaves Cutting the Sugar Cane in Antigua (1823)',
@@ -1330,7 +1332,6 @@ export const unitData = {
           citation: 'National Heroes Park, Kingston, Jamaica.',
         },
       ],
-
       tasks: [
         {
           id: 'fbe_l3_q3_interpretations',
@@ -1379,7 +1380,6 @@ export const unitData = {
             "<strong>Part B (Difference between Interpretations):</strong><br>Interpretations 1 and 2 differ fundamentally over the nature of enslaved African resistance and plantation control.<br><br>Interpretation 1 portrays enslaved people as passive, claiming that order and labour were solely maintained through European surveillance and discipline. In sharp contrast, Interpretation 2 argues that enslaved Africans engaged in an unrelenting, active struggle against slavery through cultural preservation, sabotage, and armed guerrilla warfare.<br><br><strong>Part C (Reason Why Interpretations Differ):</strong><br>A primary reason why Interpretations 1 and 2 differ is that the authors have a different focus. Interpretation 1 focuses primarily on the planters' mechanisms of colonial surveillance, viewing plantation life through the disciplinary framework of the slave-owners. In contrast, Interpretation 2 focuses primarily on African resistance, agency, and military strategy, highlighting Queen Nanny and the Maroons' victories against the British imperial army. Because the authors focus on entirely different aspects of the plantation system (planter control mechanisms versus enslaved resistance and rebellion), they reach opposing conclusions.",
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry challenges the misconception that enslaved Africans were passive victims of empire. Students explore the industrial brutality of Caribbean sugar plantations, examine how daily cultural survival and sabotage undermined planter authority, and analyse how Queen Nanny and the Jamaican Maroons used terrain, camouflage, and guerrilla tactics to force the British Crown into signing a formal peace treaty in 1739.',
@@ -1409,11 +1409,9 @@ export const unitData = {
           },
         ],
       },
+      prologue:
+        "On Caribbean sugar plantations, enslaved Africans endured backbreaking labour under the overseer's whip to feed Britain's booming sweet tooth. Yet resistance was relentless. In the misty Blue Mountains of Jamaica, Queen Nanny led runaway Maroons in daring guerrilla warfare against British soldiers. How did enslaved people actively resist colonial bondage?",
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 4: The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_4',
       title: 'The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)',
@@ -1430,11 +1428,26 @@ export const unitData = {
           'The Bloody Massacre in King-Street (March 1770) by Paul Revere: The incendiary Boston propaganda engraving that united the American colonies against British military occupation.',
       },
       margin_spine: [
-        { year: '1763', label: '4.1 Proclamation Line' },
-        { year: '1765', label: '4.2 Stamp Act Crisis' },
-        { year: '1770', label: '4.3 Boston Massacre' },
-        { year: '1773', label: '4.4 The Tea Act' },
-        { year: '1773', label: '4.5 Boston Tea Party' },
+        {
+          year: '1763',
+          label: '4.1 Proclamation Line',
+        },
+        {
+          year: '1765',
+          label: '4.2 Stamp Act Crisis',
+        },
+        {
+          year: '1770',
+          label: '4.3 Boston Massacre',
+        },
+        {
+          year: '1773',
+          label: '4.4 The Tea Act',
+        },
+        {
+          year: '1773',
+          label: '4.5 Boston Tea Party',
+        },
       ],
       causal_domino_spine: {
         title: 'The Thirteen Colonies, The Proclamation of 1763 & The Boston Tea Party (1763–1773)',
@@ -1504,7 +1517,6 @@ export const unitData = {
       },
       did_you_know:
         'During the Boston Tea Party on 16 December 1773, the Sons of Liberty were so determined to show they were principled political protestors rather than common burglars that when one participant tried to sneak some tea into his coat pockets to take home, the other rebels seized him, stripped off his coat, and threw him into the icy harbor mud! Afterward, they even swept the ship’s deck clean and replaced a broken padlock!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -1535,7 +1547,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Boycott',
@@ -1618,7 +1629,6 @@ export const unitData = {
           tier: '2',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -1685,7 +1695,6 @@ export const unitData = {
           },
         },
       ],
-
       sources: [
         {
           title: 'Source A: Paul Revere, The Bloody Massacre in King-Street (March 1770)',
@@ -1724,7 +1733,6 @@ export const unitData = {
           citation: 'Currier & Ives • Library of Congress, Washington D.C.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry examines the causal chain leading from imperial victory in the Seven Years’ War to the outbreak of colonial rebellion in America. Students analyse how British national debt prompted Parliament to tax colonial commerce, explore the constitutional friction behind "No taxation without representation", investigate Paul Revere’s propaganda after the Boston Massacre, and evaluate the economic and political catalysts behind the 1773 Boston Tea Party.',
@@ -1755,11 +1763,9 @@ export const unitData = {
           },
         ],
       },
+      prologue:
+        "Following the Seven Years' War, Parliament insisted that American colonists help pay for imperial defence. Colonists furiously resisted, shouting 'No taxation without representation!' In December 1773, Boston rebels disguised themselves as Native Americans and dumped 342 chests of British tea into the harbour. Why did imperial taxes push loyal subjects toward rebellion?",
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 5: The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_5',
       title: 'The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)',
@@ -1776,11 +1782,26 @@ export const unitData = {
           'Declaration of Independence (1819) by John Trumbull: The drafting committee presents Thomas Jefferson’s declaration of unalienable rights to the Continental Congress in Philadelphia.',
       },
       margin_spine: [
-        { year: '1775', label: '5.1 Lexington & Dunmore' },
-        { year: '1776', label: '5.2 1776 Declaration' },
-        { year: '1777', label: '5.3 Saratoga & France' },
-        { year: '1781', label: '5.4 Siege of Yorktown' },
-        { year: '1783', label: '5.5 Treaty of Paris' },
+        {
+          year: '1775',
+          label: '5.1 Lexington & Dunmore',
+        },
+        {
+          year: '1776',
+          label: '5.2 1776 Declaration',
+        },
+        {
+          year: '1777',
+          label: '5.3 Saratoga & France',
+        },
+        {
+          year: '1781',
+          label: '5.4 Siege of Yorktown',
+        },
+        {
+          year: '1783',
+          label: '5.5 Treaty of Paris',
+        },
       ],
       causal_domino_spine: {
         title: 'The American Revolution, 1776 Declaration & The Black Loyalists (1775–1783)',
@@ -1853,7 +1874,6 @@ export const unitData = {
       },
       did_you_know:
         'When Thomas Jefferson drafted the famous words "All men are created equal, endowed by their Creator with certain unalienable Rights", he personally owned over 170 enslaved human beings at his Monticello estate and never freed them! Meanwhile, the British Royal Governor of Virginia, Lord Dunmore, issued a proclamation offering immediate freedom to any enslaved person who escaped rebel owners and joined the British Army—leading 20,000 enslaved Africans to risk their lives fleeing to British lines wearing badges reading "Liberty to Slaves"!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -1884,7 +1904,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Declaration',
@@ -1967,7 +1986,6 @@ export const unitData = {
           tier: '2',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -2035,7 +2053,6 @@ export const unitData = {
           },
         },
       ],
-
       sources: [
         {
           title: 'Source A: John Trumbull, Declaration of Independence (1819)',
@@ -2076,7 +2093,6 @@ export const unitData = {
           citation: 'Lord Dunmore • The Gilder Lehrman Institute of American History, New York.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This synoptic capstone enquiry investigates the climax and fracture of the First British Empire. Students evaluate the outbreak of armed rebellion at Lexington, deconstruct the Enlightenment principles of the 1776 Declaration alongside the painful reality of chattel slavery, analyse how French intervention and the siege of Yorktown led to British defeat, and examine the experiences of the Black Loyalists who gained freedom fighting for the Crown.',
@@ -2106,6 +2122,10 @@ export const unitData = {
           },
         ],
       },
+      prologue:
+        "In July 1776, American delegates proclaimed that 'all men are created equal' and declared independence from King George III. Yet thousands of enslaved Black Loyalists fled to British battle-lines, seeking genuine personal freedom under the Crown. At Yorktown in 1781, Britain surrendered. How did revolutionary ideals collide with imperial defeat and the reality of slavery?",
     },
   ],
 };
+export default unitData;
+export { unitData };

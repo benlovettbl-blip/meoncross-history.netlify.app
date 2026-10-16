@@ -1,4 +1,4 @@
-export const unitData = {
+const unitData = {
   title: 'KS3: The Great War (1914–1919)',
   homepage_background: '/images/bg_great_war_part2.jpg',
   enquiry:
@@ -891,6 +891,8 @@ export const unitData = {
         model_answer:
           'Enlistment in 1914 was driven by a powerful balance of negative push factors and positive pull factors. Push factors included the intense fear of social disgrace from white feathers, emotional guilt from posters like "Women of Britain Say GO!", and the grinding misery of factory poverty. In contrast, pull factors included the intoxicating camaraderie of joining Pals Battalions with friends, moral conviction to avenge Belgium, and the tangible economic benefit of guaranteed pay, hot food, and warm uniforms.',
       },
+      prologue:
+        "In August 1914, Lord Kitchener pointed his finger from recruitment posters: 'Your Country Needs You.' Convinced the war would be over by Christmas, hundreds of thousands of young British men rushed to enlist alongside their friends and football teammates in Pals Battalions. Why were young men so desperate to join the slaughter?",
     },
     {
       id: 'lesson_2_trenches_haig',
@@ -1787,6 +1789,8 @@ export const unitData = {
         model_answer:
           'The historical record of Douglas Haig reveals a stark divide between the "Butcher" and "Learning Curve" interpretations. Critics highlight the catastrophic failure of 1 July 1916, where 57,470 men fell because Haig ordered them to walk slowly across No Man\'s Land following a defective artillery barrage, persisting for months at staggering human cost. In defense, revisionists emphasize that Haig operated under intense Allied pressure to save Verdun, dealt with unprecedented industrial defensive technology, and actively modernized his tactics—introducing tanks, creeping barrages, and air-ground integration that ultimately smashed the German Army in 1918.',
       },
+      prologue:
+        'Across the Western Front, 400 miles of parallel barbed wire and muddy trenches stretched from the Swiss border to the North Sea. On 1 July 1916, sixty thousand British soldiers fell on the first morning of the Battle of the Somme. Did British generals make the horror of trench warfare worse?',
     },
     {
       id: 'lesson_3_empire_troops',
@@ -2632,6 +2636,8 @@ export const unitData = {
           topic: 'Enquiry Writing Task [8 marks • 10 mins]',
         },
       ],
+      prologue:
+        "While history books often focus on the Western Front, the First World War was a truly global conflict. Over four million non-white colonial soldiers from India, Africa, and the Caribbean served as combatants and labourers in France, Gallipoli, and Mesopotamia. How much of a 'World' War was it, and why were empire troops forgotten?",
     },
     {
       id: 'lesson_4_home_front_dora',
@@ -3518,6 +3524,8 @@ export const unitData = {
           topic: 'Task B: Explain Importance [8 marks • 10 mins]',
         },
       ],
+      prologue:
+        'Total war transformed daily life in Britain. Under the Defence of the Realm Act (DORA), the government censored newspapers, watered down beer, rationed food, and took over munitions factories. As men fought in the trenches, women built shells and drove buses. How did a distant war completely control life at home?',
     },
     {
       id: 'lesson_5_versailles',
@@ -4358,6 +4366,8 @@ export const unitData = {
           topic: 'Enquiry Writing Task [12 marks • 15 mins]',
         },
       ],
+      prologue:
+        'In June 1919, European leaders gathered in the glittering Hall of Mirrors at Versailles to dictate peace terms to a defeated Germany. Blamed entirely for the catastrophe under Article 231, Germany was forced to sign away land and pay £6.6 billion in reparations. Did Versailles resolve the conflicts of 1914, or create 1939?',
     },
   ],
   guided_reading: [
@@ -4467,3 +4477,5 @@ export const unitData = {
     },
   ],
 };
+export default unitData;
+export { unitData };

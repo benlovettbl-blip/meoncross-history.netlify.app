@@ -683,7 +683,8 @@
               "Point 3: The legal justification of terra nullius (European definitions of agriculture, ignoring First Nations custodianship)."
             ],
             "model_answer": "A primary reason why Britain claimed eastern Australia was imperial rivalry and strategic naval ambition. Following the Seven Years’ War, the British Admiralty was determined to pre-empt French expansion in the Pacific. Cook’s secret orders explicitly directed him to locate the Great Southern Land and claim sovereign territory. Furthermore, Joseph Banks’s glowing reports of fertile soil at Botany Bay persuaded government ministers that the territory could provide timber, flax, and naval bases. Crucially, the British Crown justified claiming this vast territory without a treaty by invoking terra nullius. Because First Nations peoples managed country through fire-stick burning and seasonal movement rather than European-style permanent settlements, British jurists dismissed Indigenous sovereignty. Consequently, Britain claimed two million square kilometres of land as an imperial possession, laying the legal foundation for colonization."
-          }
+          },
+          "prologue": "In April 1770, Captain James Cook sailed HMS Endeavour into Botany Bay, guided by the Polynesian navigator Tupaia. Observing Aboriginal people on shore, Cook ignored Indigenous ownership, declared the continent 'Terra Nullius', and claimed it for King George III. What is the true historical significance of Cook's voyage for the story of colonisation?"
         },
         {
           "id": "lesson_2",
@@ -1078,7 +1079,8 @@
               "Context & Limitation: Explain what both sources reveal and what they omit (e.g. Indigenous presence, long-term emancipist success)."
             ],
             "model_answer": "Source A is highly useful for understanding the desperate penal conditions that drove the First Fleet expedition. As an eyewitness French captive, Garneray captures the squalor, disease, and heavy iron chains aboard the Thames hulks. This corroborates historical knowledge of typhus outbreaks and severe overcrowding following the American Revolution. However, Garneray’s perspective is limited because it depicts conditions in England prior to departure, rather than life in Australia. In contrast, Source B is exceptionally useful for analysing the physical reality of the early settlement. Fowkes’s contemporary map shows the vulnerable, isolated nature of the camp at Sydney Cove, where canvas tents and crude timber storehouses were pitched between the ocean and dense forest. This accurately reflects the logistical crisis of 1788–1790, when the colony faced starvation due to poor soil and broken tools. Together, both sources are valuable because they trace the trajectory of convicts from floating prison hulks to the harsh frontier of New South Wales."
-          }
+          },
+          "prologue": "In January 1788, eleven wooden ships carrying 750 British convicts arrived at Sydney Cove after an eight-month voyage. Facing starvation on unfamiliar soil, Governor Arthur Phillip struggled to build an empire out of thieves and outcasts. Whose story should we tell about the founding of Britain's first penal colony in Australia?"
         },
         {
           "id": "lesson_3",
@@ -1473,7 +1475,8 @@
               "Phase 3: Escalation to military warfare (Battle of Parramatta 1797, Hawkesbury River conflicts, Governor King's 1801 shoot-on-sight orders)."
             ],
             "model_answer": "The initial arrival of the First Fleet in January 1788 was met with immediate territorial tension, as British convicts and marines cleared hunting grounds and depleted local fish supplies. While Governor Phillip had official orders to maintain 'amity and kindness', relations rapidly deteriorated. A decisive turning point occurred in April 1789 when a catastrophic smallpox epidemic broke out, killing up to 70% of the Sydney Eora population and weakening tribal resistance. Following this, the British attempted to enforce control by kidnapping Indigenous men like Bennelong to serve as intermediaries. However, violent clashes intensified as settlers expanded into Bidjigal and Dharug lands. In December 1790, Bidjigal warrior Pemulwuy speared Governor Phillip’s gamekeeper John McIntyre, launching twelve years of organized guerrilla warfare. Pemulwuy united different clans, ambushing supply carts and burning colonial wheat crops. Conflict reached a peak in March 1797 at the Battle of Parramatta, where Pemulwuy led 100 warriors in a direct daytime assault on redcoat soldiers. Although wounded, Pemulwuy escaped, and fighting spread to the fertile Hawkesbury River. In response, Governor King issued an 1801 proclamation authorising soldiers to shoot Aboriginal people on sight. This culminated in June 1802 with Pemulwuy being ambushed and shot, concluding a brutal phase of frontier warfare that permanently dispossessed the Sydney clans."
-          }
+          },
+          "prologue": "Within months of British arrival, a devastating smallpox epidemic decimated Sydney's Aboriginal clans. While Governor Phillip kidnapped the diplomat Bennelong to learn their language, the warrior Pemulwuy led a fierce twelve-year guerrilla campaign, spearing redcoats and burning settler farms. Was the early colonisation of Australia a story of friendship, or violent frontier war?"
         },
         {
           "id": "lesson_4",
@@ -1868,7 +1871,8 @@
               "Comparative Analysis: Evaluate why historians differ based on sources used (police depositions vs pastoral records) and reach an evidence-grounded verdict."
             ],
             "model_answer": "Interpretations 1 and 2 present fundamentally contrasting perspectives on the nature and scale of the Australian Frontier Wars. Historian Henry Reynolds argues that colonization was characterized by protracted, violent warfare in which over 20,000 Indigenous people and 2,500 settlers were killed. Reynolds demonstrates that First Nations warriors engaged in coordinated guerrilla campaigns—such as Pemulwuy's resistance in Sydney and the Black War in Tasmania—to defend sovereign land. This interpretation is supported by extensive archival evidence, including Governor Arthur’s 1828 declaration of martial law, military shoot-on-sight orders, and court depositions from the 1838 Myall Creek massacre. In stark contrast, revisionist historian Keith Windschuttle contends that the concept of a widespread 'frontier war' is a political myth fabricated by modern academics. Windschuttle asserts that conflict was limited to isolated criminal clashes over stolen livestock and claims that documented massacre casualties have been drastically exaggerated. The fundamental reason these interpretations differ is their treatment of colonial evidence: Reynolds interrogates oral histories, missionary letters, and settler diaries that recorded widespread violence, whereas Windschuttle relies strictly on official government ledgers that deliberately downplayed frontier bloodshed. Ultimately, Reynolds’s view is far more historically convincing, as military cordons like the 1830 Black Line prove that British authorities treated frontier conflict not as minor crime, but as full-scale warfare."
-          }
+          },
+          "prologue": "As wealthy sheep graziers pushed inland, millions of fine-wool sheep seized Aboriginal grasslands, fencing off sacred waterholes and hunting grounds. In Van Diemen's Land (Tasmania), the conflict escalated into the brutal 'Black War', resulting in catastrophic dispossession. How did pastoral expansion and violent frontier clashes reshape the continent between 1803 and 1840?"
         },
         {
           "id": "lesson_5",
@@ -2263,7 +2267,8 @@
               "Comparative Verdict: Weigh which development had a more enduring and profound structural impact on the shaping of modern Australia."
             ],
             "model_answer": "A compelling argument supporting this statement is that the 1851 Gold Rush and the 1854 Eureka Stockade transformed Australian society, economy, and governance more rapidly than any other event. In the decade following 1851, the discovery of gold tripled Australia’s population from 400,000 to over 1.2 million, injecting immense wealth and permanently dismantling the stigma of a convict penal colony. Furthermore, the Eureka Stockade of December 1854, in which diggers took up arms under the Southern Cross against authoritarian licence fees, directly accelerated political reform. The subsequent abolition of the licence and the introduction of manhood suffrage and the secret ballot established the institutional foundations of Australian democracy. On the other hand, an alternative perspective is that the pastoral wool boom and the frontier wars between 1820 and 1840 were even more structurally transformative. The expansion of squatter pastoralism across millions of acres established Merino wool as Australia’s dominant economic engine for over a century. More critically, this pastoral land grab drove the systematic, violent dispossession of First Nations peoples from ancestral waterways and hunting grounds, culminating in atrocities like the Black War in Tasmania and the 1838 Myall Creek massacre. In conclusion, while the gold rush and Eureka radically democratized colonial political life for free settlers, the pastoral expansion and frontier dispossession had a more permanent, tragic historical significance, because they established the racialized land ownership and social inequality that continues to define Australian history today."
-          }
+          },
+          "prologue": "In 1851, the discovery of gold transformed Australia from an obscure convict outpost into a magnet for fortune-seekers from Britain, America, and China. At Ballarat in 1854, oppressed diggers built the Eureka Stockade and fought armed troops beneath the Southern Cross flag. How did gold and rebellion forge modern Australian democracy?"
         }
       ],
       "edition": "2026.1"
@@ -16479,7 +16484,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In 1945, the defeat of Nazi Germany left two superpowers dominating the globe: capitalist America and communist Russia. Washington championed democracy, free markets, and individual liberty; Moscow demanded classless socialism and state control. Why was genuine, lasting peace between these two irreconcilable political ideologies impossible from the very beginning?"
         },
         {
           "title": "Yalta to Potsdam (1945): How did wartime allies become bitter rivals?",
@@ -16512,7 +16518,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In early 1945, Churchill, Roosevelt, and Stalin met at Yalta, smiling for cameras as they carved up postwar Europe. But by the Potsdam conference in July, mistrust was toxic. With the American atomic bomb revealed and Soviet armies occupying Poland, the Grand Alliance fractured. How did wartime allies become bitter rivals?"
         },
         {
           "title": "The Iron Curtain & The Berlin Blockade (1948–1949): The first flashpoint.",
@@ -16545,7 +16552,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In 1946, Churchill warned that an 'Iron Curtain' had descended across Europe. In 1948, Stalin severed all road and rail access to West Berlin, attempting to starve the Allied enclave into submission. Western pilots responded with the heroic Berlin Airlift. How did divided Berlin become the Cold War’s dangerous frontline?"
         },
         {
           "title": "Nuclear Brinkmanship: The Cuban Missile Crisis (1962).",
@@ -16578,7 +16586,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In October 1962, American spy planes photographed Soviet nuclear missile sites under construction in Cuba, just ninety miles from Florida. For thirteen terrifying days, President Kennedy and Premier Khrushchev stood on the brink of global nuclear war. How close did humanity come to thermonuclear destruction during the Cuban Missile Crisis?"
         },
         {
           "title": "Proxy Wars: Why did the superpowers fight in Asia (Korea & Vietnam)?",
@@ -16611,7 +16620,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "Because direct war between nuclear-armed superpowers meant mutually assured destruction, the Cold War was fought through bloody proxy wars in Asia. From the frozen trenches of Korea to the dense jungles of Vietnam, millions of soldiers and civilians died in ideological conflicts. Why did the superpowers fight through Asian battlegrounds?"
         },
         {
           "title": "Fall of the Berlin Wall (1989) and the collapse of the Soviet Union (1991).",
@@ -16644,7 +16654,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "By the 1980s, Soviet economic stagnation and citizen unrest undermined the Eastern Bloc. Soviet leader Mikhail Gorbachev introduced reforms of openness and restructuring, but in November 1989, ecstatic crowds dismantled the Berlin Wall. Within two years, the Soviet Union collapsed. Why did the mighty Soviet empire fall so rapidly?"
         },
         {
           "title": "Assessment: Was the Cold War ever truly 'cold'?",
@@ -16677,7 +16688,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "Between 1945 and 1991, the Cold War shaped global politics, espionage, nuclear weapons, and space exploration. While the superpowers never launched atomic missiles directly at each other, millions died in proxy conflicts and lived under authoritarian terror. Was the Cold War ever truly 'cold', or a global conflict in disguise?"
         }
       ],
       "key_individuals": [],
@@ -49919,7 +49931,8 @@
                 "question": "Hinge Question: What are the dangers when a profit-seeking private corporation is granted the sovereign power to tax and govern a foreign population?"
               }
             ]
-          }
+          },
+          "prologue": "In 1600, Queen Elizabeth I granted a royal charter to a tiny syndicate of London merchants trading in Indian spices. Over 150 years, this private corporation built its own mercenary armies, forts, and warships. In 1757, Robert Clive defeated the Nawab of Bengal at Plassey. How did a commercial company become the ruler of millions?"
         },
         {
           "id": "lesson_2",
@@ -50216,7 +50229,8 @@
                 "question": "Hinge Question: In what ways did writing a bestselling autobiography represent a powerful act of resistance against slavery?"
               }
             ]
-          }
+          },
+          "prologue": "Between the sixteenth and nineteenth centuries, European slave ships forcibly transported over twelve million African men, women, and children across the Atlantic Ocean. Packed in suffocating darkness below deck, captives endured the unspeakable horrors of the Middle Passage. What were the brutal economic mechanics and human costs of this global trading empire?"
         },
         {
           "id": "lesson_3",
@@ -50560,7 +50574,8 @@
                 "question": "Hinge Question: Did the 1739 Treaty represent an uncompromised victory for freedom, or a tragic compromise with the colonial slave system?"
               }
             ]
-          }
+          },
+          "prologue": "On Caribbean sugar plantations, enslaved Africans endured backbreaking labour under the overseer's whip to feed Britain's booming sweet tooth. Yet resistance was relentless. In the misty Blue Mountains of Jamaica, Queen Nanny led runaway Maroons in daring guerrilla warfare against British soldiers. How did enslaved people actively resist colonial bondage?"
         },
         {
           "id": "lesson_4",
@@ -50857,7 +50872,8 @@
                 "question": "Hinge Question: What visual techniques did Paul Revere use to persuade viewers that the British redcoats were cold-blooded murderers?"
               }
             ]
-          }
+          },
+          "prologue": "Following the Seven Years' War, Parliament insisted that American colonists help pay for imperial defence. Colonists furiously resisted, shouting 'No taxation without representation!' In December 1773, Boston rebels disguised themselves as Native Americans and dumped 342 chests of British tea into the harbour. Why did imperial taxes push loyal subjects toward rebellion?"
         },
         {
           "id": "lesson_5",
@@ -51156,7 +51172,8 @@
                 "question": "Hinge Question: Did Britain lose the American Revolutionary War because of American military brilliance or because France turned the conflict into an unwinnable global war?"
               }
             ]
-          }
+          },
+          "prologue": "In July 1776, American delegates proclaimed that 'all men are created equal' and declared independence from King George III. Yet thousands of enslaved Black Loyalists fled to British battle-lines, seeking genuine personal freedom under the Crown. At Yorktown in 1781, Britain surrendered. How did revolutionary ideals collide with imperial defeat and the reality of slavery?"
         }
       ],
       "edition": "2026.1"
@@ -51723,7 +51740,8 @@
                 "Britain lost its navy"
               ]
             }
-          ]
+          ],
+          "prologue": "In 1871, in the opulent Hall of Mirrors at Versailles, Prussian Chancellor Otto von Bismarck proclaimed a united German Empire, forged through three swift military victories. France lay humiliated, stripped of Alsace-Lorraine. To protect his new empire, Bismarck built a complex web of alliances. How did German unification upset Europe’s balance of power?"
         },
         {
           "id": "lesson_2",
@@ -52138,7 +52156,8 @@
                 "It pushed Britain and France closer together in a strong alliance"
               ]
             }
-          ]
+          ],
+          "prologue": "By the late nineteenth century, European empires raced to claim colonies across Africa and Asia. When Kaiser Wilhelm II demanded Germany’s 'place in the sun', colonial rivalries erupted into tense showdowns in Morocco. Was imperial greed in distant lands the spark that poisoned European relations before 1914?"
         },
         {
           "id": "lesson_3",
@@ -52513,7 +52532,8 @@
                 "It made them ally with Germany"
               ]
             }
-          ]
+          ],
+          "prologue": "For centuries, Britain relied on the Royal Navy to rule the waves and safeguard its global empire. But in 1898, Admiral Tirpitz began building a massive German battle fleet. In 1906, Britain answered with HMS Dreadnought, making all previous warships obsolete. Did the naval arms race make European war inevitable?"
         },
         {
           "id": "lesson_4",
@@ -53039,7 +53059,8 @@
                 "Italy"
               ]
             }
-          ]
+          ],
+          "prologue": "By 1914, Europe had divided into two heavily armed camps: the Triple Entente and the Triple Alliance. In the turbulent Balkans, crumbling Ottoman power and Slavic nationalism created a volatile 'powder keg' of regional tension. Why did interlocking alliance treaties turn a regional Balkan quarrel into a catastrophic continental war?"
         },
         {
           "id": "lesson_5",
@@ -53456,7 +53477,8 @@
                 "Germany invaded neutral Belgium, violating the 1839 Treaty of London"
               ]
             }
-          ]
+          ],
+          "prologue": "On 28 June 1914, nineteen-year-old Gavrilo Princip fired two fatal pistol shots into the carriage of Archduke Franz Ferdinand in Sarajevo. Within thirty-seven days, ultimatums, imperial mobilisations, and German troops marching into neutral Belgium plunged Europe into total war. Could the catastrophic July Crisis have been avoided, or was war unstoppable?"
         }
       ],
       "quizPack": [
@@ -55067,7 +55089,8 @@
             },
             "rows": 3,
             "model_answer": "Enlistment in 1914 was driven by a powerful balance of negative push factors and positive pull factors. Push factors included the intense fear of social disgrace from white feathers, emotional guilt from posters like \"Women of Britain Say GO!\", and the grinding misery of factory poverty. In contrast, pull factors included the intoxicating camaraderie of joining Pals Battalions with friends, moral conviction to avenge Belgium, and the tangible economic benefit of guaranteed pay, hot food, and warm uniforms."
-          }
+          },
+          "prologue": "In August 1914, Lord Kitchener pointed his finger from recruitment posters: 'Your Country Needs You.' Convinced the war would be over by Christmas, hundreds of thousands of young British men rushed to enlist alongside their friends and football teammates in Pals Battalions. Why were young men so desperate to join the slaughter?"
         },
         {
           "id": "lesson_2_trenches_haig",
@@ -55833,7 +55856,8 @@
             },
             "rows": 3,
             "model_answer": "The historical record of Douglas Haig reveals a stark divide between the \"Butcher\" and \"Learning Curve\" interpretations. Critics highlight the catastrophic failure of 1 July 1916, where 57,470 men fell because Haig ordered them to walk slowly across No Man's Land following a defective artillery barrage, persisting for months at staggering human cost. In defense, revisionists emphasize that Haig operated under intense Allied pressure to save Verdun, dealt with unprecedented industrial defensive technology, and actively modernized his tactics—introducing tanks, creeping barrages, and air-ground integration that ultimately smashed the German Army in 1918."
-          }
+          },
+          "prologue": "Across the Western Front, 400 miles of parallel barbed wire and muddy trenches stretched from the Swiss border to the North Sea. On 1 July 1916, sixty thousand British soldiers fell on the first morning of the Battle of the Somme. Did British generals make the horror of trench warfare worse?"
         },
         {
           "id": "lesson_3_empire_troops",
@@ -56547,7 +56571,8 @@
               "model_answer": "<strong>Part B (Difference between Interpretations):</strong><br>Interpretations 1 and 2 differ fundamentally over the treatment and motivation of imperial troops in the First World War [1.1, 5.1]. Interpretation 1 portrays colonial involvement as a harmonious, voluntary display of \"imperial brotherhood\", asserting that Indian and dominion soldiers fought out of deep devotion and \"mutual love\" for the King-Emperor. In sharp contrast, Interpretation 2 argues that the reality for non-white troops was defined by systemic institutional racism, physical abuse, and unequal pay. While Curzon presents imperial sacrifice as celebrated and unified, Olusoga reveals that non-white troops were barred from officer ranks and deliberately whitewashed from British national remembrance after 1918 [5.1].<br><br><strong>Part C (Reason Why Interpretations Differ):</strong><br>Interpretations 1 and 2 differ primarily because the two historians have chosen to focus on different aspects of the colonial war effort. Interpretation 1 focuses on wartime imperial mobilization, diplomatic loyalty, and frontline camaraderie during active combat, highlighting how soldiers from across the British Empire fought alongside British troops in Flanders, Gallipoli, and Egypt. In sharp contrast, Interpretation 2 focuses on institutional racism, military hierarchies, and postwar commemoration. Olusoga concentrates on the systemic barriers faced by non-white troops—such as exclusion from officer commissions, inferior wages, and severe corporal punishment—as well as the deliberate postwar refusal by imperial authorities to grant African dead individual headstones. Because Curzon and Olusoga focus on entirely different dimensions of the imperial experience (wartime solidarity versus institutional discrimination and memory), they arrive at opposing conclusions about the reality of the colonial soldier’s experience.",
               "topic": "Enquiry Writing Task [8 marks • 10 mins]"
             }
-          ]
+          ],
+          "prologue": "While history books often focus on the Western Front, the First World War was a truly global conflict. Over four million non-white colonial soldiers from India, Africa, and the Caribbean served as combatants and labourers in France, Gallipoli, and Mesopotamia. How much of a 'World' War was it, and why were empire troops forgotten?"
         },
         {
           "id": "lesson_4_home_front_dora",
@@ -57306,7 +57331,8 @@
               "model_answer": "One reason why female munitions workers were of vital importance to the British war effort was that they sustained the physical supply of weapons and ammunition to the Western Front [4.1]. Following the catastrophic 1915 Shell Crisis, nearly 950,000 women entered factories under the Ministry of Munitions, manufacturing over 80% of all British shells and weapons. As male industrial workers were conscripted into the trenches from 1916, women operated heavy lathe machinery, welded steel, and assembled artillery shells. Without this female workforce, the British Army would have run out of ammunition, showing that female munitions workers were of vital importance to the British war effort.\\n\\nAnother reason why female munitions workers were of vital importance to the British war effort was that they risked their lives under lethal industrial conditions to maintain military supplies [4.2]. Known as \"Canary Girls\", thousands of women worked 12-hour shifts handling toxic cordite and trinitrotoluene (TNT), which turned their skin yellow and caused fatal liver failure. They also faced the constant danger of massive factory explosions, such as the 1917 Silvertown disaster that killed 73 people. Despite these deadly hazards, women continued working without disruption, which proves that female munitions workers were of vital importance to the British war effort.\\n\\nA final reason why female munitions workers were of vital importance to the British war effort was that their vital wartime labour permanently transformed the social standing of women in Britain [4.2]. By demonstrating extraordinary competence in heavy industrial engineering that had previously been reserved for men, women dismantled Victorian prejudices regarding female capacity. Their indispensable national service made it politically impossible to deny women democratic rights, leading directly to the Representation of the People Act in 1918 which granted the vote to women over 30. Therefore, by proving women\\'s value to the survival of the nation, female munitions workers were of vital importance to the British war effort.",
               "topic": "Task B: Explain Importance [8 marks • 10 mins]"
             }
-          ]
+          ],
+          "prologue": "Total war transformed daily life in Britain. Under the Defence of the Realm Act (DORA), the government censored newspapers, watered down beer, rationed food, and took over munitions factories. As men fought in the trenches, women built shells and drove buses. How did a distant war completely control life at home?"
         },
         {
           "id": "lesson_5_versailles",
@@ -58037,7 +58063,8 @@
               "model_answer": "On one hand, there is strong evidence to agree that the Treaty of Versailles was so harsh that it made another European war inevitable [3.1, 4.1]. In particular, Article 231 (the \"War Guilt Clause\") forced Germany to accept sole blame for starting the war, which caused deep national humiliation across Germany. Furthermore, setting reparations at £6.6 billion in 1921 stripped Germany of money and triggered catastrophic economic chaos, including the 1923 hyperinflation crisis. Right-wing politicians like Adolf Hitler used these bitter grievances to attack the Weimar democracy and promise military revenge, which strongly supports the view that the Treaty of Versailles was so harsh that it made another European war inevitable.\\n\\nOn the other hand, many historians disagree that the Treaty of Versailles was so harsh that it made another European war inevitable [5.2]. As historian Margaret MacMillan points out, the treaty was far less punitive than the Treaty of Brest-Litovsk, which Germany had forced upon Russia in 1918. Germany also remained the most populous and industrially powerful country in Central Europe, with its coalfields, factories, and transport networks completely undamaged by fighting. In addition, Germany recovered strongly in the late 1920s under Gustav Stresemann, proving that the Treaty of Versailles was not so harsh that it made another European war inevitable.\\n\\nIn conclusion, while the treaty created dangerous anger, I disagree that the Treaty of Versailles was so harsh that it made another European war inevitable on its own [5.2]. The decisive reason for conflict was not the wording of the treaty in 1919, but the total failure of Britain and France to enforce its terms during the 1930s. When Adolf Hitler began rearming Germany and remilitarised the Rhineland in 1936, the Allies chose appeasement rather than collective action. Therefore, it was the weakness of Allied enforcement rather than the terms of 1919 that led to conflict, disproving the claim that the Treaty of Versailles was so harsh that it made another European war inevitable.",
               "topic": "Enquiry Writing Task [12 marks • 15 mins]"
             }
-          ]
+          ],
+          "prologue": "In June 1919, European leaders gathered in the glittering Hall of Mirrors at Versailles to dictate peace terms to a defeated Germany. Blamed entirely for the catastrophe under Article 231, Germany was forced to sign away land and pay £6.6 billion in reparations. Did Versailles resolve the conflicts of 1914, or create 1939?"
         }
       ],
       "guided_reading": [
@@ -58820,7 +58847,7 @@
               "answer": "Railways were needed to move massive tonnages of coal and iron, while tracks and locomotives themselves required thousands of tons of iron"
             }
           ],
-          "hook_text": "In the autumn of 1775, Henry Cort stood on the banks of the rushing River Meon at Funtley, gazing toward Portsmouth Harbour just fifteen miles away. Britain’s Royal Navy was locked in a perilous crisis: its colossal warships required thousands of tons of tough wrought iron for anchors and hull bolts, but British blast furnaces produced only brittle 'pig iron' that shattered like glass. With English oak forests cut down and Baltic shipping vulnerable to enemy blockade, Cort risked his entire fortune to lease an old Hampshire corn mill and master the chemistry of fire and iron.",
+          "hook_text": "In the late 1700s, Britain stood on the brink of an industrial transformation. Colossal Royal Navy warships and new factories demanded thousands of tons of tough wrought iron, but British blast furnaces produced only brittle pig iron. By mastering chemistry and steam power, inventors unlocked modern industry. How did iron reshape Britain’s global power?",
           "tasks": [
             {
               "id": "ie_l1_explain_why_cort",
@@ -58879,7 +58906,8 @@
               "model_answer": "One major reason why Henry Cort achieved his breakthrough was the urgent naval demand from Portsmouth Royal Dockyard [1.1, 1.5]. Prior to Cort’s work, British blast furnaces produced brittle pig iron that shattered under pressure, forcing the Royal Navy to import over 50,000 tons of tough Swedish iron every year. By setting up Funtley Ironworks near Portsmouth, Cort secured naval contracts from Admiralty commissioners who desperately needed domestic shatter-resistant iron for anchors and naval warships during wartime.\n\nAnother decisive factor was Cort’s technological combination of the puddling furnace and grooved rollers [1.3, 1.4]. In his reverberatory puddling furnace, pig iron was stirred to burn off impurities while keeping it separate from sulfurous coal. Furthermore, Cort replaced slow trip hammers with grooved rollers, which squeezed out slag and shaped iron bars fifteen times faster than traditional methods, creating high-quality malleable wrought iron.\n\nIn conclusion, Cort succeeded because strategic naval demand gave him financial backing, while his puddling and rolling process solved Britain’s technological bottleneck.",
               "topic": "Question 2: Explain Why [12 marks • 15 mins]"
             }
-          ]
+          ],
+          "prologue": "In the late 1700s, Britain stood on the brink of an industrial transformation. Colossal Royal Navy warships and new factories demanded thousands of tons of tough wrought iron, but British blast furnaces produced only brittle pig iron. By mastering chemistry and steam power, inventors unlocked modern industry. How did iron reshape Britain’s global power?"
         },
         {
           "id": "lesson_2",
@@ -59422,7 +59450,7 @@
               "definition": "Grim institutions established under the Poor Law where the destitute endured harsh labor in exchange for food."
             }
           ],
-          "hook_text": "Dawn breaks over Leeds in 1830 as a piercing factory horn shatters the icy darkness. In freezing garrets, eight-year-old children stagger awake, terrified of arriving a minute past six o'clock, which brings the overseer's heavy leather strap or a docked wage. In the domestic workshops of the previous century, families spun wool at their own pace, pausing to tend crops or celebrate 'Saint Monday.' Now, towering brick textile mills dominate the horizon, filled with the deafening thunder of steam-driven powerlooms. For Britain's new working class, the machine has become a harsh, unyielding master.",
+          "hook_text": "Dawn breaks over Leeds in 1830 as factory horns pierce the darkness. In cold attics, eight-year-old children hurry awake, terrified of arriving late and facing the overseer's leather strap. Once, families spun wool peacefully at home; now, deafening steam powerlooms rule their lives. How did the factory system transform everyday working life?",
           "tasks": [
             {
               "id": "ie_l2_two_features_child_labour",
@@ -59486,7 +59514,8 @@
               "model_answer": "One significant consequence of the 1833 Factory Act was the introduction of statutory legal limits on child labour and independent factory inspectors [2.5]. Specifically, the Act banned the employment of children under nine and limited nine- to thirteen-year-olds to an eight-hour workday. Crucially, appointing four independent government inspectors broke laissez-faire, establishing the legal principle that the state must protect vulnerable workers.",
               "topic": "Question 2: Explain One Consequence [4 marks • 5 mins]"
             }
-          ]
+          ],
+          "prologue": "Dawn breaks over Leeds in 1830 as factory horns pierce the darkness. In cold attics, eight-year-old children hurry awake, terrified of arriving late and facing the overseer's leather strap. Once, families spun wool peacefully at home; now, deafening steam powerlooms rule their lives. How did the factory system transform everyday working life?"
         },
         {
           "id": "lesson_3",
@@ -60029,7 +60058,7 @@
               "answer": "It provided empirical, mapped epidemiological evidence that disease spread via contaminated water ingested into the digestive tract, not through airborne miasma"
             }
           ],
-          "hook_text": "In July 1858, a suffocating heatwave settles over London. The River Thames, which receives the daily untreated sewage of three million citizens, transforms into a vast, bubbling open sewer. Inside the Palace of Westminster, the nauseating stench is so overpowering that MPs soak window curtains in chloride of lime and flee committee rooms with handkerchiefs pressed to their faces. For decades, politicians clung to the doctrine of laissez-faire, insisting that filthy industrial slums and cholera epidemics were none of the government's business. Now, the reek of their own neglect threatens Parliament itself, forcing the greatest engineering revolution in urban history.",
+          "hook_text": "In July 1858, a suffocating heatwave struck London. The River Thames, choked with raw sewage from three million residents, turned into a bubbling cesspool. The stench inside Parliament became so unbearable that MPs soaked curtains in lime to breathe. How did this environmental catastrophe force the greatest sewer engineering project in history?",
           "tasks": [
             {
               "id": "ie_l3_two_features_slums",
@@ -60093,7 +60122,8 @@
               "model_answer": "One decisive consequence of the 1858 Great Stink was that Parliament abandoned laissez-faire and funded Sir Joseph Bazalgette’s underground interceptor sewer network [3.5]. During the blistering summer of 1858, the putrid stench of raw sewage in the Thames forced MPs to flee Westminster. In just eighteen days, Parliament granted £3 million to build 82 miles of brick interceptor sewers, redirecting London’s waste away from drinking water and permanently eliminating waterborne cholera.",
               "topic": "Question 2: Explain One Consequence [4 marks • 5 mins]"
             }
-          ]
+          ],
+          "prologue": "In July 1858, a suffocating heatwave struck London. The River Thames, choked with raw sewage from three million residents, turned into a bubbling cesspool. The stench inside Parliament became so unbearable that MPs soaked curtains in lime to breathe. How did this environmental catastrophe force the greatest sewer engineering project in history?"
         },
         {
           "id": "lesson_4",
@@ -60723,7 +60753,7 @@
               "answer": "By 1928, five of its six democratic demands had slowly become the law of the land."
             }
           ],
-          "hook_text": "In November 1830, a mysterious threatening letter arrives at a Hampshire manor house, written in rough handwriting and signed by the mythical leader 'Captain Swing.' Across the Meon Valley and the fields of Hampshire, starving farm labourers have watched mechanical threshing machines take away their winter earnings. Deprived of work and facing parish starvation, bands of desperate men assemble under cover of night, armed with sledgehammers, pitchforks, and firebrands. As midnight flames consume hayricks on the horizon and the sound of iron smashing machinery echoes through farmyards, the ruling class panics, fearing England stands on the brink of bloody French-style revolution.",
+          "hook_text": "In 1830, threatening letters signed by the mysterious 'Captain Swing' arrived at manor houses across southern England. Starving farm labourers, displaced by mechanical threshing machines, assembled at midnight with hammers and firebrands. As burning hayricks lit the night sky, landowners panicked. Why did rural workers risk the gallows to smash farm machinery?",
           "tasks": [
             {
               "id": "ie_l4_two_features_swing_riots",
@@ -60798,7 +60828,8 @@
               "model_answer": "The sequence began in August 1819 with the Peterloo Massacre in Manchester [4.2]. Over 60,000 peaceful protestors gathered to demand parliamentary reform, but panic-stricken magistrates ordered cavalry to charge the crowd, killing 18 people. In response, the government passed the repressive Six Acts to crush political meetings, driving working-class agitation underground.\n\nThis state repression caused deep resentment to simmer, leading to a turning point in 1830 with the Hampshire Swing Riots [4.3, 4.4]. Facing winter starvation caused by new horse-powered threshing machines, labourers smashed machinery and burned hayricks under the name \"Captain Swing\". The government responded ruthlessly at the Winchester Assizes, hanging Henry Cook and transporting 101 men.\n\nConsequently, this brutal suppression convinced workers to abandon violent riots and form peaceful unions, culminating in 1834 with the Tolpuddle Martyrs [4.5]. Six Dorset farmworkers formed a friendly society to resist wage cuts, but were sentenced to penal transportation for secret oaths. This injustice provoked massive national protests, forcing the government to grant full pardons.",
               "topic": "Question 2: Narrative Account [8 marks • 10 mins]"
             }
-          ]
+          ],
+          "prologue": "In 1830, threatening letters signed by the mysterious 'Captain Swing' arrived at manor houses across southern England. Starving farm labourers, displaced by mechanical threshing machines, assembled at midnight with hammers and firebrands. As burning hayricks lit the night sky, landowners panicked. Why did rural workers risk the gallows to smash farm machinery?"
         },
         {
           "id": "lesson_5",
@@ -61358,7 +61389,7 @@
               "answer": "60%"
             }
           ],
-          "hook_text": "In May 1832, London awakens to giant placards plastered on every street corner: 'To stop the Duke, go for gold!' The Duke of Wellington, the hero of Waterloo, has attempted to form a hardline anti-reform government. In response, middle-class radicals and working-class leaders join forces to trigger a nationwide run on the banks, draining over £1.6 million in gold sovereigns from the Bank of England in ten days. In Bristol, Nottingham, and Derby, furious crowds burn down bishops' palaces and gaols. King William IV and aristocratic peers, staring into the abyss of national economic collapse and revolution, realize that the corrupt electoral system of medieval Britain must finally fall.",
+          "hook_text": "In May 1832, posters appeared across London: 'To stop the Duke, go for gold!' Middle-class reformers and working-class crowds united, demanding the vote and threatening financial ruin if Parliament refused reform. Staring into the abyss of revolution, King and peers surrendered. How did popular protest finally break the medieval electoral system?",
           "tasks": [
             {
               "id": "ie_l5_evaluative_essay_reform_act",
@@ -61417,7 +61448,8 @@
               "model_answer": "To a large extent, I agree that the 1832 Great Reform Act was passed because the ruling aristocracy feared violent revolution [5.2]. When the House of Lords rejected the Reform Bill in 1831, widespread rioting erupted across Britain. In Bristol, crowds burned the Bishop’s Palace and three prisons, while in Nottingham the Duke’s castle was destroyed. Furthermore, during the 1832 \"Days of May\", radicals organized a £1.5 million run on the Bank of England, convincing the King and Wellington that refusing reform would trigger economic collapse and civil war.\n\nOn the other hand, the actual terms of the Act demonstrate that the Whig government wanted to preserve aristocratic power rather than advance democratic justice [5.1, 5.3]. Prime Minister Earl Grey explicitly stated his aim was to \"reform in order to preserve\". The Act introduced a strict £10 annual property qualification, deliberately enfranchising the wealthy middle class while completely locking out working-class men who had protested for it. Radicals rightly condemned this settlement as the \"Great Betrayal\".\n\nIn conclusion, I agree with the statement. While fear of violent revolution was the immediate catalyst that forced the Lords to pass the Act, the aristocracy designed the legislation to protect their own supremacy by dividing middle-class reformers from working people.",
               "topic": "Question 3: Evaluative Statement Essay [12 marks • 15 mins]"
             }
-          ]
+          ],
+          "prologue": "In May 1832, posters appeared across London: 'To stop the Duke, go for gold!' Middle-class reformers and working-class crowds united, demanding the vote and threatening financial ruin if Parliament refused reform. Staring into the abyss of revolution, King and peers surrendered. How did popular protest finally break the medieval electoral system?"
         }
       ],
       "glossary": [
@@ -62336,7 +62368,8 @@
               "term": "Feigned Retreat",
               "definition": "A deliberate military trick where soldiers fake panic and run away to lure enemies out of position."
             }
-          ]
+          ],
+          "prologue": "On 14 October 1066, two battle-hardened armies collided on a Sussex hillside. Harold Godwinson's Anglo-Saxon housecarls formed an impenetrable shield-wall, defying cavalry charges and arrow storms for nine brutal hours. Yet by sunset, King Harold lay dead and William of Normandy stood victorious. Was William’s triumph down to battlefield genius, or Harold’s exhaustion?"
         },
         {
           "id": "lesson_2",
@@ -62673,7 +62706,8 @@
               "term": "Domesday Book",
               "definition": "William the Conqueror’s 1086 national land audit recording ownership, resources, and taxable values."
             }
-          ]
+          ],
+          "prologue": "Following his bloody coronation at Westminster, William faced a hostile kingdom of two million Anglo-Saxons. With fewer than ten thousand Norman soldiers, he imposed absolute terror. From the scorched earth of the Harrying of the North to the Domesday survey, William transformed England. How did a tiny Norman elite crush an entire conquered nation?"
         },
         {
           "id": "lesson_3",
@@ -62998,7 +63032,8 @@
               "term": "Canon Law",
               "definition": "The supreme legal system of the Catholic Church governing moral conduct and ecclesiastical matters."
             }
-          ]
+          ],
+          "prologue": "King Henry II and Thomas Becket were once inseparable friends, sharing banquets and hunting trips. But when Henry made Becket Archbishop of Canterbury, his friend chose God over the Crown. On a freezing winter evening in 1170, four royal knights burst into Canterbury Cathedral. Why did their dispute end in holy murder before the altar?"
         },
         {
           "id": "lesson_4",
@@ -63298,7 +63333,8 @@
               "term": "Habeas Corpus",
               "definition": "The legal principle that a person cannot be detained without lawful cause and trial."
             }
-          ]
+          ],
+          "prologue": "King John was deeply unpopular: he lost Normandy, fought with the Pope, and extorted ruinous taxes from his nobility. In June 1215, armed barons cornered the terrified monarch at Runnymede, forcing him to set his seal to Magna Carta. Was the Great Charter a landmark victory for human freedom, or a selfish baronial power grab?"
         },
         {
           "id": "lesson_5",
@@ -63598,7 +63634,8 @@
               "term": "Serfdom",
               "definition": "The hereditary legal bondage of peasants tied to a lord’s manorial estate."
             }
-          ]
+          ],
+          "prologue": "In the summer of 1348, a terrifying pestilence arrived on merchant ships from Europe, wiping out nearly half of England's population within two years. When surviving farmworkers demanded higher wages, landlords clamped down with harsh poll taxes. In 1381, peasant rebels marched on London with scythes and banners. How did plague and rebellion shatter medieval feudalism?"
         }
       ],
       "edition": "2026.1"
@@ -66503,7 +66540,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In early twentieth-century Britain, women were denied the parliamentary vote. While Millicent Fawcett’s peaceful Suffragists used patient lobbying and petitions, Emmeline Pankhurst’s militant Suffragettes turned to direct action, smashing windows, hunger strikes, and civil disobedience. Were peaceful arguments or militant headlines more effective in securing female emancipation?"
         },
         {
           "title": "1945: How did the aftermath of total war build the Welfare State and the NHS?",
@@ -66536,7 +66574,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In July 1945, having survived the Blitz and total war, British voters stunned the world by voting out Winston Churchill and electing Clement Attlee’s Labour government. Based on William Beveridge's report, Labour launched the National Health Service and the Welfare State. How did wartime suffering inspire a postwar social revolution?"
         },
         {
           "title": "The Windrush Generation: Why did Britain invite Commonwealth citizens, and what did they face?",
@@ -66569,7 +66608,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In June 1948, the Empire Windrush docked at Tilbury, carrying hundreds of Caribbean passengers invited to help rebuild war-torn Britain. Arriving as proud British subjects, Caribbean nurses, bus drivers, and railway workers faced cold weather, poor housing, and colour bars. What challenges and prejudice did the Windrush generation overcome?"
         },
         {
           "title": "The 1963 Bristol Bus Boycott & the fight for British civil rights.",
@@ -66602,7 +66642,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In 1963, the Bristol Omnibus Company refused to employ Black or Asian bus conductors, enforcing an open 'colour bar'. Inspired by Martin Luther King and Rosa Parks, local youth activists Paul Stephenson and Roy Hackett organised a citywide passenger boycott. How did community direct action force Britain’s first Race Relations Act?"
         },
         {
           "title": "The Cold War on the Home Front: How did nuclear paranoia shape British popular culture?",
@@ -66635,7 +66676,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "During the Cold War, nuclear anxiety penetrated everyday British life. Schoolchildren learned to 'Duck and Cover', television broadcast chilling government survival films, and underground bunkers were dug for politicians in the Chilterns. How did the ever-present shadow of the atomic bomb transform British popular culture, protest, and domestic life?"
         },
         {
           "title": "Assessment: How has British identity transformed since 1945?",
@@ -66668,7 +66710,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "Since 1945, Britain has evolved from a bankrupt global empire into a diverse, multicultural, and modern society. Through immigration, decolonisation, the welfare state, and changing social values, the meaning of 'Britishness' was continuously questioned and redefined. How has British national identity transformed over the past eighty years?"
         }
       ],
       "key_individuals": [],
@@ -67357,7 +67400,8 @@
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
-          "vocab_cloze_text": "The expansion of the British Empire was powered by the economic strategy of [Mercantilism]. In South Asia, the private [East India Company (EIC)] controlled trade and taxation through military conquest. Britain transformed India into a massive [Captive Market], exporting cheap factory cloth and destroying local weavers. Global trade routes were protected by unquestioned [Naval Supremacy], reinforced by the deployment of steam-powered [Ironclad] warships. Following rebellion in 1857, the British Crown took direct control to establish the [British Raj]."
+          "vocab_cloze_text": "The expansion of the British Empire was powered by the economic strategy of [Mercantilism]. In South Asia, the private [East India Company (EIC)] controlled trade and taxation through military conquest. Britain transformed India into a massive [Captive Market], exporting cheap factory cloth and destroying local weavers. Global trade routes were protected by unquestioned [Naval Supremacy], reinforced by the deployment of steam-powered [Ironclad] warships. Following rebellion in 1857, the British Crown took direct control to establish the [British Raj].",
+          "prologue": "Following the loss of the American colonies in 1783, Britain pivoted east and south, constructing the largest empire in human history. Under Queen Victoria, the British Empire encompassed one-quarter of the globe and 400 million subjects. Was this global dominion maintained through technological progress and trade, or sheer military force and coercion?"
         },
         {
           "id": "lesson_2",
@@ -67880,7 +67924,8 @@
             "pair": "Discuss your perspective with your partner. Identify where you agree on long-term corporate causes and short-term triggers.",
             "share": "Share your conclusion with the class, explaining why Parliament replaced Company rule with the British Raj."
           },
-          "vocab_cloze_text": "Under the 1765 Treaty of Allahabad, the [East India Company (EIC)] acquired the [Diwani] of Bengal, allowing corporate merchants to fund trade from Indian land taxes. Over the next century, British factory cloth triggered the [De-industrialisation] of India, destroying the livelihoods of traditional weavers. Tensions escalated under Lord Dalhousie's aggressive [Doctrine of Lapse]. In 1857, Indian soldiers known as a [Sepoy] revolted over greased cartridges, uniting with leaders like [Rani Lakshmibai] until Parliament abolished the company in 1858, establishing the direct [British Raj]."
+          "vocab_cloze_text": "Under the 1765 Treaty of Allahabad, the [East India Company (EIC)] acquired the [Diwani] of Bengal, allowing corporate merchants to fund trade from Indian land taxes. Over the next century, British factory cloth triggered the [De-industrialisation] of India, destroying the livelihoods of traditional weavers. Tensions escalated under Lord Dalhousie's aggressive [Doctrine of Lapse]. In 1857, Indian soldiers known as a [Sepoy] revolted over greased cartridges, uniting with leaders like [Rani Lakshmibai] until Parliament abolished the company in 1858, establishing the direct [British Raj].",
+          "prologue": "In May 1857, Indian sepoys serving the British East India Company rose in armed rebellion across northern India. Furious over greased cartridges and corporate exploitation, the uprising threatened British rule before being crushed with ruthless vengeance. In 1858, Queen Victoria abolished the company and declared direct royal rule. What drove India to rebel?"
         },
         {
           "id": "lesson_3",
@@ -68403,7 +68448,8 @@
             "pair": "Discuss your ideas with your partner. Contrast the legal fiction of empty land with the reality of 65,000 years of civilization.",
             "share": "Share your conclusion with the class, explaining why Australian colonization was an armed conquest rather than peaceful pioneering."
           },
-          "vocab_cloze_text": "In May 1787, the [First Fleet] departed Portsmouth Spithead to establish a penal colony in New South Wales. The British Crown claimed absolute sovereignty under the legal fiction of [Terra Nullius], falsely declaring the continent empty despite over 65,000 years of Indigenous culture. As settlers seized hunting grounds, the [Frontier Wars] erupted. Bidjigal leader [Pemulwuy] mounted fierce guerrilla resistance along the Hawkesbury River. From the 1820s, wealthy [Pastoral Squatters] drove sheep across the interior, while the 1851 Gold Rush sparked the [Eureka Stockade (1854)] rebellion, accelerating colonial self-government."
+          "vocab_cloze_text": "In May 1787, the [First Fleet] departed Portsmouth Spithead to establish a penal colony in New South Wales. The British Crown claimed absolute sovereignty under the legal fiction of [Terra Nullius], falsely declaring the continent empty despite over 65,000 years of Indigenous culture. As settlers seized hunting grounds, the [Frontier Wars] erupted. Bidjigal leader [Pemulwuy] mounted fierce guerrilla resistance along the Hawkesbury River. From the 1820s, wealthy [Pastoral Squatters] drove sheep across the interior, while the 1851 Gold Rush sparked the [Eureka Stockade (1854)] rebellion, accelerating colonial self-government.",
+          "prologue": "In January 1788, the First Fleet landed at Sydney Cove, claiming the continent under the legal fiction of 'Terra Nullius'—land belonging to no one. For Aboriginal Australians, who had cared for the land for over 60,000 years, colonisation brought catastrophic disease and frontier warfare. How did British settler colonialism transform Indigenous Australia?"
         },
         {
           "id": "lesson_4",
@@ -68919,7 +68965,8 @@
               ],
               "answer": "To avoid fighting each other in Europe by treating Africa as vacant real estate to divide peacefully among themselves"
             }
-          ]
+          ],
+          "prologue": "Between 1881 and 1914, European superpowers raced to conquer the African continent, slicing up territories with straight lines on European maps. Armed with the Maxim gun, steamships, and quinine, imperialists seized immense wealth in rubber, diamonds, and gold. How did Europeans justify the Scramble for Africa, and how did African rulers resist?"
         },
         {
           "id": "lesson_5",
@@ -69457,7 +69504,8 @@
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
           },
-          "vocab_cloze_text": "Historians remain engaged in a profound [Historiographical Debate] over who truly benefited from nineteenth-century changes. Factory fortunes created the fabulously wealthy [Industrial Capitalist], while millions of the [Working Class] endured squalor in unregulated urban slums under government [Laissez-faire]. Across the globe, British industrial output depended upon colonial conquest and ruthless [Imperial Exploitation]. In response to inequality, workers organized the first legal [Trade Union] to demand a fair share of national wealth."
+          "vocab_cloze_text": "Historians remain engaged in a profound [Historiographical Debate] over who truly benefited from nineteenth-century changes. Factory fortunes created the fabulously wealthy [Industrial Capitalist], while millions of the [Working Class] endured squalor in unregulated urban slums under government [Laissez-faire]. Across the globe, British industrial output depended upon colonial conquest and ruthless [Imperial Exploitation]. In response to inequality, workers organized the first legal [Trade Union] to demand a fair share of national wealth.",
+          "prologue": "By 1914, the sun never set on the British Empire. In London, imperialists celebrated civilising progress, railways, and global commerce. Yet across the colonies, millions experienced economic extraction, famine, and racial subjugation. Looking back across two centuries of global rule, who truly benefited from the British Empire, and who paid the price?"
         }
       ],
       "glossary": [
@@ -69757,7 +69805,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "Anti-Semitism did not begin with Adolf Hitler; for centuries, European Jews faced Christian prejudice, expulsions, and violent pogroms. In the late nineteenth century, pseudo-scientific racism transformed religious hostility into biological hatred. How did deep-rooted historical prejudice enable the Nazi regime to turn anti-Semitic discrimination into state policy?"
         },
         {
           "title": "1933–1939: How were German Jews progressively stripped of citizenship and rights?",
@@ -69790,7 +69839,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "From the moment Hitler took power in 1933, the German state launched a legal assault against its half-million Jewish citizens. The Nuremberg Laws revoked citizenship, while Kristallnacht in 1938 unleashed nationwide arson and terror. How were ordinary German Jews systematically stripped of their livelihoods, rights, and human dignity?"
         },
         {
           "title": "The Ghettos and the Einsatzgruppen: How did persecution turn into systematic mass murder?",
@@ -69823,7 +69873,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "Following the 1939 invasion of Poland, the Nazis forced millions of Jewish families into walled, disease-ridden ghettos like Warsaw. In 1941, during the invasion of the Soviet Union, paramilitary SS Einsatzgruppen squads carried out mass shooting massacres across Eastern Europe. How did targeted persecution transform into systematic mass murder?"
         },
         {
           "title": "The 'Final Solution': How did the death camps operate as industrialised extermination?",
@@ -69856,7 +69907,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In 1942, senior Nazi officials met at Wannsee to coordinate the 'Final Solution'—the state-sponsored, industrialised murder of European Jewry. Across Nazi-occupied Poland, extermination camps like Auschwitz-Birkenau and Treblinka used poison gas to murder six million innocent people. How did modern bureaucracy and technology execute this unimaginable industrialised horror?"
         },
         {
           "title": "Resistance, Rescue, and Complicity: Did anyone stand up to the perpetrators?",
@@ -69889,7 +69941,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "Faced with overwhelming terror, victims and bystanders confronted agonizing moral choices. In 1943, starving fighters in the Warsaw Ghetto held off SS troops with makeshift weapons, while courageous non-Jews risked execution to hide persecuted neighbours. Why was resistance so desperately difficult, and what drove ordinary people to rescue others?"
         },
         {
           "title": "Liberation and Legacy: What does survivor testimony teach us about humanity and memory?",
@@ -69922,7 +69975,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "In 1945, Allied soldiers advanced across Germany, encountering emaciated survivors, piles of unburied corpses, and smouldering crematoria. For liberated survivors, freedom brought profound grief, displaced persons camps, and the painful duty of bearing witness. What can firsthand survivor testimony teach future generations about memory, justice, and human resilience?"
         },
         {
           "title": "Assessment: The Shoah Enquiry",
@@ -69955,7 +70009,8 @@
             "think": "Spend 1 minute quietly considering the question and forming your own opinion.",
             "pair": "Discuss your thoughts with your partner. Identify where your ideas agree and where they differ.",
             "share": "Share your pair's combined conclusion with the class."
-          }
+          },
+          "prologue": "The Holocaust remains the defining moral catastrophe of modern world history. By examining how ordinary citizens became perpetrators, collaborators, or silent bystanders, historians seek to understand how civilisation collapsed into state-sponsored genocide. How should we remember the Shoah, and what lessons must humanity preserve to prevent future atrocities?"
         }
       ],
       "key_individuals": [],

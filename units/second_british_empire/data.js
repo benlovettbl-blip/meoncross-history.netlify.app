@@ -1,4 +1,4 @@
-export const unitData = {
+const unitData = {
   id: 'second_british_empire',
   title: 'KS3: The Second British Empire (1783–1914)',
   short_title: 'The Second British Empire',
@@ -787,6 +787,8 @@ export const unitData = {
       },
       vocab_cloze_text:
         'The expansion of the British Empire was powered by the economic strategy of [Mercantilism]. In South Asia, the private [East India Company (EIC)] controlled trade and taxation through military conquest. Britain transformed India into a massive [Captive Market], exporting cheap factory cloth and destroying local weavers. Global trade routes were protected by unquestioned [Naval Supremacy], reinforced by the deployment of steam-powered [Ironclad] warships. Following rebellion in 1857, the British Crown took direct control to establish the [British Raj].',
+      prologue:
+        'Following the loss of the American colonies in 1783, Britain pivoted east and south, constructing the largest empire in human history. Under Queen Victoria, the British Empire encompassed one-quarter of the globe and 400 million subjects. Was this global dominion maintained through technological progress and trade, or sheer military force and coercion?',
     },
     {
       id: 'lesson_2',
@@ -1380,6 +1382,8 @@ export const unitData = {
       },
       vocab_cloze_text:
         "Under the 1765 Treaty of Allahabad, the [East India Company (EIC)] acquired the [Diwani] of Bengal, allowing corporate merchants to fund trade from Indian land taxes. Over the next century, British factory cloth triggered the [De-industrialisation] of India, destroying the livelihoods of traditional weavers. Tensions escalated under Lord Dalhousie's aggressive [Doctrine of Lapse]. In 1857, Indian soldiers known as a [Sepoy] revolted over greased cartridges, uniting with leaders like [Rani Lakshmibai] until Parliament abolished the company in 1858, establishing the direct [British Raj].",
+      prologue:
+        'In May 1857, Indian sepoys serving the British East India Company rose in armed rebellion across northern India. Furious over greased cartridges and corporate exploitation, the uprising threatened British rule before being crushed with ruthless vengeance. In 1858, Queen Victoria abolished the company and declared direct royal rule. What drove India to rebel?',
     },
     {
       id: 'lesson_3',
@@ -1956,6 +1960,8 @@ export const unitData = {
       },
       vocab_cloze_text:
         'In May 1787, the [First Fleet] departed Portsmouth Spithead to establish a penal colony in New South Wales. The British Crown claimed absolute sovereignty under the legal fiction of [Terra Nullius], falsely declaring the continent empty despite over 65,000 years of Indigenous culture. As settlers seized hunting grounds, the [Frontier Wars] erupted. Bidjigal leader [Pemulwuy] mounted fierce guerrilla resistance along the Hawkesbury River. From the 1820s, wealthy [Pastoral Squatters] drove sheep across the interior, while the 1851 Gold Rush sparked the [Eureka Stockade (1854)] rebellion, accelerating colonial self-government.',
+      prologue:
+        "In January 1788, the First Fleet landed at Sydney Cove, claiming the continent under the legal fiction of 'Terra Nullius'—land belonging to no one. For Aboriginal Australians, who had cared for the land for over 60,000 years, colonisation brought catastrophic disease and frontier warfare. How did British settler colonialism transform Indigenous Australia?",
     },
     {
       id: 'lesson_4',
@@ -2527,6 +2533,8 @@ export const unitData = {
             'To avoid fighting each other in Europe by treating Africa as vacant real estate to divide peacefully among themselves',
         },
       ],
+      prologue:
+        'Between 1881 and 1914, European superpowers raced to conquer the African continent, slicing up territories with straight lines on European maps. Armed with the Maxim gun, steamships, and quinine, imperialists seized immense wealth in rubber, diamonds, and gold. How did Europeans justify the Scramble for Africa, and how did African rulers resist?',
     },
     {
       id: 'lesson_5',
@@ -3160,6 +3168,8 @@ export const unitData = {
       },
       vocab_cloze_text:
         'Historians remain engaged in a profound [Historiographical Debate] over who truly benefited from nineteenth-century changes. Factory fortunes created the fabulously wealthy [Industrial Capitalist], while millions of the [Working Class] endured squalor in unregulated urban slums under government [Laissez-faire]. Across the globe, British industrial output depended upon colonial conquest and ruthless [Imperial Exploitation]. In response to inequality, workers organized the first legal [Trade Union] to demand a fair share of national wealth.',
+      prologue:
+        'By 1914, the sun never set on the British Empire. In London, imperialists celebrated civilising progress, railways, and global commerce. Yet across the colonies, millions experienced economic extraction, famine, and racial subjugation. Looking back across two centuries of global rule, who truly benefited from the British Empire, and who paid the price?',
     },
   ],
   glossary: [
@@ -3469,5 +3479,5 @@ export const unitData = {
     },
   ],
 };
-
 export default unitData;
+export { unitData };

@@ -1,4 +1,4 @@
-const great_war = {
+const unitData = {
   debatePrompts: [
     {
       title: 'Bismarck & Unification',
@@ -560,6 +560,8 @@ const great_war = {
           ],
         },
       ],
+      prologue:
+        'In 1871, in the opulent Hall of Mirrors at Versailles, Prussian Chancellor Otto von Bismarck proclaimed a united German Empire, forged through three swift military victories. France lay humiliated, stripped of Alsace-Lorraine. To protect his new empire, Bismarck built a complex web of alliances. How did German unification upset Europe’s balance of power?',
     },
     {
       id: 'lesson_2',
@@ -1018,6 +1020,8 @@ const great_war = {
           ],
         },
       ],
+      prologue:
+        "By the late nineteenth century, European empires raced to claim colonies across Africa and Asia. When Kaiser Wilhelm II demanded Germany’s 'place in the sun', colonial rivalries erupted into tense showdowns in Morocco. Was imperial greed in distant lands the spark that poisoned European relations before 1914?",
     },
     {
       id: 'lesson_3',
@@ -1424,6 +1428,8 @@ const great_war = {
           ],
         },
       ],
+      prologue:
+        'For centuries, Britain relied on the Royal Navy to rule the waves and safeguard its global empire. But in 1898, Admiral Tirpitz began building a massive German battle fleet. In 1906, Britain answered with HMS Dreadnought, making all previous warships obsolete. Did the naval arms race make European war inevitable?',
     },
     {
       id: 'lesson_4',
@@ -2005,6 +2011,8 @@ const great_war = {
           options: ['Austria-Hungary', 'Germany', 'Britain', 'Italy'],
         },
       ],
+      prologue:
+        "By 1914, Europe had divided into two heavily armed camps: the Triple Entente and the Triple Alliance. In the turbulent Balkans, crumbling Ottoman power and Slavic nationalism created a volatile 'powder keg' of regional tension. Why did interlocking alliance treaties turn a regional Balkan quarrel into a catastrophic continental war?",
     },
     {
       id: 'lesson_5',
@@ -2454,6 +2462,8 @@ const great_war = {
           ],
         },
       ],
+      prologue:
+        'On 28 June 1914, nineteen-year-old Gavrilo Princip fired two fatal pistol shots into the carriage of Archduke Franz Ferdinand in Sarajevo. Within thirty-seven days, ultimatums, imperial mobilisations, and German troops marching into neutral Belgium plunged Europe into total war. Could the catastrophic July Crisis have been avoided, or was war unstoppable?',
     },
   ],
   quizPack: [
@@ -3185,7 +3195,5 @@ const great_war = {
     },
   ],
 };
-
-export default great_war;
-export const unitData = great_war;
-if (typeof module !== 'undefined' && module.exports) module.exports = great_war;
+export default unitData;
+export { unitData };

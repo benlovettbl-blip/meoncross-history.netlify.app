@@ -1,15 +1,4 @@
-/**
- * Medieval England (1066–1485)
- * Key Stage 3 Year 7 • 5-Lesson Disciplinary Enquiry
- *
- * Storytelling: 5-Act Decimal Standard (1.1 to 1.5) with Inline Evidential Sources
- * Pedagogical Architecture: Large-font (10.5pt) note-making, rotating disciplinary skills,
- * centre-fold living timeline, and back-of-booklet retrieval companion.
- *
- * Commercial Neutrality: 100% Institutional-neutral.
- */
-
-export const unitData = {
+const unitData = {
   id: 'medieval_england',
   title: 'Medieval England: 1066–1485',
   short_title: 'Medieval England',
@@ -21,8 +10,6 @@ export const unitData = {
   cover_image_position: 'center 30%',
   is_ks3: true,
   year_group: 'Year 7',
-
-  // Core Chronology for Living Timeline (Pages 8–9)
   timeline: [
     {
       year: '1066',
@@ -62,8 +49,6 @@ export const unitData = {
       dual_coding_prompt: 'Draw an agricultural scythe crossed with a broken iron feudal collar.',
     },
   ],
-
-  // Core 12 Disciplinary Tier 3 Terms (Pages 2–3)
   vocabulary: [
     {
       term: 'Succession',
@@ -162,8 +147,6 @@ export const unitData = {
       tier: '3',
     },
   ],
-
-  // Knowledge Companion 25-Question Retrieval Bank (5 per lesson)
   quizzing_pack: {
     title: 'Knowledge Retrieval Companion: 25 Core Retrieval Drill Questions',
     description:
@@ -409,12 +392,7 @@ export const unitData = {
       },
     ],
   },
-
-  // The 5 Core Lessons
   lessons: [
-    // ------------------------------------------------------------------------
-    // LESSON 1: 1066 & The Battle of Hastings: Why did William win?
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_1',
       title: '1066 & The Battle of Hastings: Why did William win?',
@@ -431,11 +409,26 @@ export const unitData = {
           'Norman heavy cavalry crashing against the Anglo-Saxon shield wall at the Battle of Hastings (14 October 1066), as depicted in the Bayeux Tapestry.',
       },
       margin_spine: [
-        { year: 'Jan 1066', label: '1.1 Succession Void' },
-        { year: 'Jan 1066', label: '1.2 The Three Rivals' },
-        { year: 'Sept 1066', label: '1.3 Stamford Bridge' },
-        { year: 'Oct 1066', label: '1.4 The Shield Wall' },
-        { year: 'Oct 1066', label: '1.5 Feigned Retreat' },
+        {
+          year: 'Jan 1066',
+          label: '1.1 Succession Void',
+        },
+        {
+          year: 'Jan 1066',
+          label: '1.2 The Three Rivals',
+        },
+        {
+          year: 'Sept 1066',
+          label: '1.3 Stamford Bridge',
+        },
+        {
+          year: 'Oct 1066',
+          label: '1.4 The Shield Wall',
+        },
+        {
+          year: 'Oct 1066',
+          label: '1.5 Feigned Retreat',
+        },
       ],
       causal_domino_spine: {
         title: '1066 & The Battle of Hastings: Chronology Spine',
@@ -508,7 +501,6 @@ export const unitData = {
       },
       did_you_know:
         'William of Normandy was known across Europe as "William the Bastard" because his parents were unmarried. At Hastings, when rumors spread that William was slain, he ripped off his iron helmet in the thick of battle and roared: "Look at me! I live, and with God’s help I shall conquer!"',
-
       do_now: {
         type: 'questions',
         items: [
@@ -534,7 +526,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Succession',
@@ -575,7 +566,6 @@ export const unitData = {
           tier: '3',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -643,7 +633,6 @@ export const unitData = {
           },
         },
       ],
-
       tasks: [
         {
           id: 'me_l1_q2_explain_why',
@@ -666,7 +655,6 @@ export const unitData = {
             'While Norman military tactics were vital, William’s victory was equally driven by Harold’s severe exhaustion and strategic misfortune.<br><br>On the one hand, William demonstrated tactical flexibility. Unlike the static Saxon army, William commanded a combined-arms force of archers, heavy infantry, and mounted cavalry. When frontal charges failed to crack the shield wall, William deployed the feigned retreat, exploiting Saxon lack of discipline to break their defensive perimeter.<br><br>On the other hand, Harold was defeated by circumstance and fatigue. Harold had been forced to fight Harald Hardrada at Stamford Bridge in Yorkshire, losing elite housecarls before marching 250 miles south in October. His men were physically depleted, and had Harold waited in London to gather reinforcements, the outcome may have differed.<br><br>In conclusion, tactics unlocked the shield wall, but Harold’s exhaustion created the vulnerability William exploited.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry establishes the foundational geopolitical crisis of 1066. Ground pupils in the succession void left by Edward the Confessor before examining the mechanics of Senlac Hill. Emphasise that the shield wall was nearly impenetrable until the feigned retreat broke Saxon discipline.',
@@ -687,7 +675,6 @@ export const unitData = {
           },
         ],
       },
-
       quick_quiz: [
         {
           question: 'Who died in January 1066 without leaving an heir to the English throne?',
@@ -716,7 +703,6 @@ export const unitData = {
           answer: 'The Feigned Retreat',
         },
       ],
-
       flashcards: [
         {
           term: 'Witan',
@@ -734,11 +720,9 @@ export const unitData = {
             'A deliberate military trick where soldiers fake panic and run away to lure enemies out of position.',
         },
       ],
+      prologue:
+        "On 14 October 1066, two battle-hardened armies collided on a Sussex hillside. Harold Godwinson's Anglo-Saxon housecarls formed an impenetrable shield-wall, defying cavalry charges and arrow storms for nine brutal hours. Yet by sunset, King Harold lay dead and William of Normandy stood victorious. Was William’s triumph down to battlefield genius, or Harold’s exhaustion?",
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 2: Castles, Terror & Domesday: How did William control England?
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_2',
       title: 'Castles, Terror & Domesday: How did the Normans subjugate England?',
@@ -755,11 +739,26 @@ export const unitData = {
           'Portchester Castle, Hampshire: William the Conqueror planted a 4-storey Norman stone keep inside the massive Roman Saxon Shore fort walls to police the Solent and Portsmouth Harbour.',
       },
       margin_spine: [
-        { year: '1066–70', label: '2.1 The Minority Dilemma' },
-        { year: '1067–80', label: '2.2 Motte & Bailey Blitz' },
-        { year: '1069–70', label: '2.3 Harrying of the North' },
-        { year: '1086', label: '2.4 Great Domesday Audit' },
-        { year: '1086', label: '2.5 Local Fieldwork: Portchester' },
+        {
+          year: '1066–70',
+          label: '2.1 The Minority Dilemma',
+        },
+        {
+          year: '1067–80',
+          label: '2.2 Motte & Bailey Blitz',
+        },
+        {
+          year: '1069–70',
+          label: '2.3 Harrying of the North',
+        },
+        {
+          year: '1086',
+          label: '2.4 Great Domesday Audit',
+        },
+        {
+          year: '1086',
+          label: '2.5 Local Fieldwork: Portchester',
+        },
       ],
       causal_domino_spine: {
         title: 'Castles, Terror & Domesday (1066–1086)',
@@ -833,7 +832,6 @@ export const unitData = {
       },
       did_you_know:
         'William the Conqueror’s Domesday Book was so thorough that the Anglo-Saxon Chronicle lamented: "Not a single hide of land, nor ox, cow, or pig was omitted from his record." The English called it "Domesday" (Doomsday) because its tax rulings were as final and terrifying as the Day of Judgement!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -855,7 +853,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Subjugation',
@@ -898,7 +895,6 @@ export const unitData = {
           tier: '3',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -991,7 +987,6 @@ export const unitData = {
           ],
         },
       ],
-
       tasks: [
         {
           id: 'me_l2_q1_features',
@@ -1027,7 +1022,6 @@ export const unitData = {
             'A significant consequence of the motte-and-bailey castle blitz was the fatal fracturing and paralysis of Anglo-Saxon resistance across England. By constructing over 500 fortified outposts within two decades, a tiny foreign elite of roughly 10,000 Normans was able to dominate two million hostile English subjects. Impregnable keeps provided elevated sightlines and secure bases for garrisons of thirty mounted knights, who could deploy within hours to crush spontaneous local revolts before they could coalesce into coordinated regional rebellions. Furthermore, the psychological intimidation of colossal earthworks built by forced Saxon labour reinforced Norman supremacy. Consequently, the English lost the physical and strategic ability to mount sustained guerrilla warfare, locking the shires under permanent military subjugation.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry challenges pupils to explain how a tiny foreign military elite achieved permanent subjugation. Structure the lesson around three pillars: physical architecture (castles), psychological terror (Harrying of the North), and fiscal surveillance (Domesday). Ground the lesson locally in Portchester Castle and Hampshire Domesday manors.',
@@ -1049,7 +1043,6 @@ export const unitData = {
           },
         ],
       },
-
       quick_quiz: [
         {
           question:
@@ -1084,7 +1077,6 @@ export const unitData = {
           answer: 'The Domesday Book',
         },
       ],
-
       flashcards: [
         {
           term: 'Motte-and-Bailey',
@@ -1102,11 +1094,9 @@ export const unitData = {
             'William the Conqueror’s 1086 national land audit recording ownership, resources, and taxable values.',
         },
       ],
+      prologue:
+        'Following his bloody coronation at Westminster, William faced a hostile kingdom of two million Anglo-Saxons. With fewer than ten thousand Norman soldiers, he imposed absolute terror. From the scorched earth of the Harrying of the North to the Domesday survey, William transformed England. How did a tiny Norman elite crush an entire conquered nation?',
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 3: Crown vs Church: Henry II & Thomas Becket
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_3',
       title: 'Crown vs Church: Why did Henry II clash with Thomas Becket?',
@@ -1123,11 +1113,26 @@ export const unitData = {
           'King Henry II and Archbishop Thomas Becket disputing royal versus ecclesiastical sovereignty, depicted in a 14th-century English manuscript illumination.',
       },
       margin_spine: [
-        { year: '1154–62', label: '3.1 Two Jurisdictions' },
-        { year: '1162', label: '3.2 Becket’s Metamorphosis' },
-        { year: '1164', label: '3.3 Clarendon & Clerks' },
-        { year: '1164–70', label: '3.4 Exile & The Fatal Cry' },
-        { year: '1170–74', label: '3.5 Martyrdom & Penance' },
+        {
+          year: '1154–62',
+          label: '3.1 Two Jurisdictions',
+        },
+        {
+          year: '1162',
+          label: '3.2 Becket’s Metamorphosis',
+        },
+        {
+          year: '1164',
+          label: '3.3 Clarendon & Clerks',
+        },
+        {
+          year: '1164–70',
+          label: '3.4 Exile & The Fatal Cry',
+        },
+        {
+          year: '1170–74',
+          label: '3.5 Martyrdom & Penance',
+        },
       ],
       causal_domino_spine: {
         title: 'Crown vs Church: Henry II & Thomas Becket (1154–1174)',
@@ -1199,7 +1204,6 @@ export const unitData = {
       },
       did_you_know:
         'When Archbishop Thomas Becket was murdered, monks washing his corpse discovered he secretly wore a coarse goat-hair shirt crawling with lice beneath his magnificent silk robes. This severe self-mortification convinced contemporaries that Becket was not a proud, stubborn politician, but a holy saint who died defending Christ’s Church!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -1224,7 +1228,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Canon Law',
@@ -1267,7 +1270,6 @@ export const unitData = {
           tier: '3',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -1336,7 +1338,6 @@ export const unitData = {
           },
         },
       ],
-
       tasks: [
         {
           id: 'me_l3_q3_interpretations',
@@ -1384,7 +1385,6 @@ export const unitData = {
             "Interpretations 1 and 2 differ fundamentally over Thomas Becket’s character and motivation during the crisis with King Henry II.<br><br>Interpretation 1 presents Becket as a pious, principled Christian martyr who heroically defended Church liberties against secular tyranny, offering his life willingly for divine law. In sharp contrast, Interpretation 2 depicts Becket as an arrogant, theatrical extremist whose obstinacy precipitated a pointless constitutional crisis by shielding criminal clergy from the King's courts.<br><br>A primary reason why Interpretations 1 and 2 differ is that the authors have a different focus. Interpretation 1 focuses primarily on Becket's religious conviction, spiritual devotion, and steadfast martyrdom at the altar of Canterbury Cathedral, portraying him as a selfless defender of God’s law against earthly tyranny. In contrast, Interpretation 2 focuses primarily on the constitutional and legal crisis caused by Becket's resistance to royal justice, emphasising his shielding of criminous clerks from the King's common law courts and viewing his conversion as destructive obstinacy. Because the two authors focus on entirely different aspects of Becket’s actions, they arrive at contrasting interpretations.",
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry explores the fierce medieval clash between secular monarchy and ecclesiastical sovereignty. Guide pupils to see that both men felt they were defending vital principles: Henry was fighting for universal justice and the rule of law, while Becket was defending the spiritual autonomy of the Church from royal tyranny.',
@@ -1406,7 +1406,6 @@ export const unitData = {
           },
         ],
       },
-
       quick_quiz: [
         {
           question:
@@ -1441,7 +1440,6 @@ export const unitData = {
           answer: 'Flogging by monks',
         },
       ],
-
       flashcards: [
         {
           term: 'Benefit of Clergy',
@@ -1459,11 +1457,9 @@ export const unitData = {
             'The supreme legal system of the Catholic Church governing moral conduct and ecclesiastical matters.',
         },
       ],
+      prologue:
+        'King Henry II and Thomas Becket were once inseparable friends, sharing banquets and hunting trips. But when Henry made Becket Archbishop of Canterbury, his friend chose God over the Crown. On a freezing winter evening in 1170, four royal knights burst into Canterbury Cathedral. Why did their dispute end in holy murder before the altar?',
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 4: Magna Carta (1215) & Medieval Kingship
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_4',
       title: 'Magna Carta (1215) & Medieval Kingship: Liberty or Barons’ Power Grab?',
@@ -1480,11 +1476,26 @@ export const unitData = {
           'King John depicted in Matthew Paris’s 13th-century chronicle Historia Anglorum: a monarch whose financial extortion and military failures brought civil war.',
       },
       margin_spine: [
-        { year: '1199–1204', label: '4.1 Softsword & Normandy' },
-        { year: '1205–13', label: '4.2 Papal Interdict' },
-        { year: '1214–15', label: '4.3 Baronial Rebellion' },
-        { year: 'June 1215', label: '4.4 Clauses of Runnymede' },
-        { year: '1215–25', label: '4.5 War & The Great Myth' },
+        {
+          year: '1199–1204',
+          label: '4.1 Softsword & Normandy',
+        },
+        {
+          year: '1205–13',
+          label: '4.2 Papal Interdict',
+        },
+        {
+          year: '1214–15',
+          label: '4.3 Baronial Rebellion',
+        },
+        {
+          year: 'June 1215',
+          label: '4.4 Clauses of Runnymede',
+        },
+        {
+          year: '1215–25',
+          label: '4.5 War & The Great Myth',
+        },
       ],
       causal_domino_spine: {
         title: 'Magna Carta & Medieval Kingship (1199–1216)',
@@ -1557,7 +1568,6 @@ export const unitData = {
       },
       did_you_know:
         'King John had zero intention of keeping his promises in Magna Carta. Just ten weeks after sealing it at Runnymede, John secretly appealed to Pope Innocent III, who declared Magna Carta "null, void of all validity for ever!" John immediately triggered a civil war in which rebellious English barons invited the French Prince Louis to invade England and take the crown!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -1581,7 +1591,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Magna Carta',
@@ -1624,7 +1633,6 @@ export const unitData = {
           tier: '3',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -1690,7 +1698,6 @@ export const unitData = {
           text: '<span class="para-ref">[4.5]</span> Magna Carta was not a peace treaty; it triggered immediate war. Pope Innocent III annulled the charter, and John waged a scorched-earth campaign against his barons. The barons invited Prince Louis of France to take the English throne, and French troops marched into London. John’s sudden death from dysentery at Newark in October 1216 saved the Plantagenet dynasty. John’s nine-year-old son was crowned <strong>King Henry III</strong>. Under the regency of the legendary knight William Marshal, the royal council reissued Magna Carta in 1216, 1217, and 1225 to win back baronial loyalty. Over the centuries, a document created by selfish feudal lords to protect their own bank balances was transformed into the global symbol of constitutional liberty and human rights.',
         },
       ],
-
       tasks: [
         {
           id: 'me_l4_q2_narrative_account',
@@ -1714,7 +1721,6 @@ export const unitData = {
             'Initially, the sequence began in 1204 when King John suffered the humiliating loss of Normandy to King Philip Augustus of France. This disaster stripped English barons of their ancestral cross-Channel estates and provoked bitter resentment against the Crown. Determined to reconquer his lost duchy, John spent the next decade demanding unprecedented financial extortion, levying eleven crushing scutage taxes (shield money) in sixteen years, seizing church property during a five-year papal interdict, and abusing royal feudal wardship fines to amass a massive war chest.<br><br>Following this period of financial coercion, the decisive military turning point occurred in July 1214 at the Battle of Bouvines in Flanders. John’s lavishly funded continental coalition was catastrophically defeated by Philip Augustus. Bouvines destroyed John’s master strategy in a single afternoon: John returned to England completely bankrupt, militarily discredited, and stripped of royal prestige, with nothing to show for over £130,000 of extorted funds.<br><br>Consequently, rebellious northern barons (the "Northerners") seized the moment of royal weakness. In May 1215, led by Robert Fitzwalter styling himself "Marshal of the Army of God," the rebel barons renounced their feudal homage and marched into London, winning the financial and military support of the capital’s wealthy merchant oligarchy. Completely isolated and devoid of military leverage, King John was forced to agree to negotiations beside the River Thames at Runnymede. On 15 June 1215, John pressed his Great Seal onto the parchment of Magna Carta, conceding Clause 39 and agreeing that royal power was permanently subject to the rule of law.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This enquiry deconstructs the popular myth of Magna Carta. Challenge pupils to interrogate whether the charter was a modern manifesto of freedom or a medieval trade union agreement for 25 disgruntled barons. Emphasise Clause 39 as the pivot point where feudal self-interest inadvertently created constitutional law.',
@@ -1737,7 +1743,6 @@ export const unitData = {
           },
         ],
       },
-
       quick_quiz: [
         {
           question: 'What ancestral continental territory did King John lose to France in 1204?',
@@ -1766,7 +1771,6 @@ export const unitData = {
           answer: 'He annulled it as null and void',
         },
       ],
-
       flashcards: [
         {
           term: 'Magna Carta',
@@ -1783,11 +1787,9 @@ export const unitData = {
             'The legal principle that a person cannot be detained without lawful cause and trial.',
         },
       ],
+      prologue:
+        'King John was deeply unpopular: he lost Normandy, fought with the Pope, and extorted ruinous taxes from his nobility. In June 1215, armed barons cornered the terrified monarch at Runnymede, forcing him to set his seal to Magna Carta. Was the Great Charter a landmark victory for human freedom, or a selfish baronial power grab?',
     },
-
-    // ------------------------------------------------------------------------
-    // LESSON 5: The Black Death (1348) & The Peasants’ Revolt (1381)
-    // ------------------------------------------------------------------------
     {
       id: 'lesson_5',
       title:
@@ -1805,11 +1807,26 @@ export const unitData = {
           'Citizens of Tournai burying plague victims in communal coffins during the Black Death of 1348–1349, depicted in the contemporary chronicle of Gilles li Muisis.',
       },
       margin_spine: [
-        { year: '1348–50', label: '5.1 Black Death Arrives' },
-        { year: '1351', label: '5.2 Statute of Labourers' },
-        { year: '1377–81', label: '5.3 Poll Tax Sparks' },
-        { year: 'June 1381', label: '5.4 March on London' },
-        { year: 'June 1381', label: '5.5 Smithfield Betrayal' },
+        {
+          year: '1348–50',
+          label: '5.1 Black Death Arrives',
+        },
+        {
+          year: '1351',
+          label: '5.2 Statute of Labourers',
+        },
+        {
+          year: '1377–81',
+          label: '5.3 Poll Tax Sparks',
+        },
+        {
+          year: 'June 1381',
+          label: '5.4 March on London',
+        },
+        {
+          year: 'June 1381',
+          label: '5.5 Smithfield Betrayal',
+        },
       ],
       causal_domino_spine: {
         title: 'The Black Death & The Peasants’ Revolt (1348–1381)',
@@ -1882,7 +1899,6 @@ export const unitData = {
       },
       did_you_know:
         'During the Peasants’ Revolt, rebels stormed the Tower of London and found the Archbishop of Canterbury, Simon of Sudbury, praying in the royal chapel. Blaming him for the poll tax, they dragged him to Tower Hill and beheaded him with eight blows of an axe. His mummified skull is still preserved in a display case at St Gregory’s Church in Suffolk!',
-
       do_now: {
         type: 'questions',
         items: [
@@ -1905,7 +1921,6 @@ export const unitData = {
           },
         ],
       },
-
       vocabulary: [
         {
           term: 'Demography',
@@ -1947,7 +1962,6 @@ export const unitData = {
           tier: '3',
         },
       ],
-
       narrative_blocks: [
         {
           act: 1,
@@ -2013,7 +2027,6 @@ export const unitData = {
           text: '<span class="para-ref">[5.5]</span> On 15 June 1381, King Richard II agreed to meet Wat Tyler in open ground at <strong>Smithfield</strong>. Riding forward alone, Tyler boldly demanded the total abolition of <strong>serfdom</strong>, the confiscation of church property, and that all men be equal under the King. An argument erupted with the King’s retinue; the Mayor of London, William Walworth, drew his cutlass and slashed Tyler across the neck. As Tyler fell dying, the furious peasant army drew their bows. In a moment of sheer courage, fourteen-year-old Richard II spurred his horse directly toward the rebels, shouting: <em>"I am your King and your leader! Follow me!"</em> He led them to Clerkenwell Fields and promised them pardons and charters of freedom. But once the peasants disbanded and went home, the King ruthlessly revoked all charters, declaring: <em>"Serfs you were, and serfs you shall remain."</em> Over 1,500 rebels were hunted down and hanged. Yet despite the bloody retribution, Parliament never dared pass another poll tax, and within a century, serfdom died out completely across England.',
         },
       ],
-
       tasks: [
         {
           id: 'me_l5_q5_evaluative_essay',
@@ -2037,7 +2050,6 @@ export const unitData = {
             'To a large extent, the Black Death of 1348 was the foundational catalyst for the collapse of feudalism, although political resistance during the Peasants’ Revolt of 1381 was necessary to seal its demise.<br><br>On the one hand, the Black Death dealt an insurmountable biological shock to the feudal economy. Between 1348 and 1350, bubonic plague wiped out nearly half of England’s population. This demographic catastrophe triggered an acute labour shortage: with fields unploughed and harvests rotting, surviving peasants possessed unprecedented economic bargaining leverage. In defiance of feudal tradition, villeins demanded cash wages, lower rents, and the freedom to move to rival estates offering higher pay. Although the ruling elite attempted to restore feudal control through the 1351 Statute of Labourers and sumptuary laws, the inexorable economic reality of supply and demand rendered serfdom increasingly unenforceable.<br><br>On the other hand, the feudal system did not crumble through economic forces alone; armed political rebellion by ordinary peasants proved decisive. When royal governments attempted to finance the Hundred Years’ War through repeated, regressive Poll Taxes, simmering peasant fury erupted into the Peasants’ Revolt of 1381. Led by Wat Tyler and inspired by John Ball’s egalitarian sermons, thousands of rebels stormed London, burned tax rolls in the Savoy Palace, and demanded the immediate abolition of serfdom. While King Richard II brutally executed over 1,500 rebels after Smithfield, the ruling elite was thoroughly traumatised. Parliament never dared levy another poll tax, and landlords quietly abandoned compulsory feudal labour services in favour of paid tenancies.<br><br>In conclusion, while the Black Death supplied the underlying economic death blow to serfdom by making labour scarce, the Peasants’ Revolt of 1381 shattered the political will of the aristocracy to maintain feudal bondage.',
         },
       ],
-
       teacher_notes: {
         primer:
           'This capstone enquiry traces the economic and social chain reaction from the biological shock of the Black Death (1348) to the political explosion of the Peasants’ Revolt (1381). Challenge pupils to connect demographic scarcity with wage inflation, royal repression (Statute of Labourers), and tax resistance.',
@@ -2059,7 +2071,6 @@ export const unitData = {
           },
         ],
       },
-
       quick_quiz: [
         {
           question: 'In what year did the Black Death first arrive in England?',
@@ -2087,7 +2098,6 @@ export const unitData = {
           answer: 'Smithfield',
         },
       ],
-
       flashcards: [
         {
           term: 'Statute of Labourers',
@@ -2104,8 +2114,10 @@ export const unitData = {
           definition: 'The hereditary legal bondage of peasants tied to a lord’s manorial estate.',
         },
       ],
+      prologue:
+        "In the summer of 1348, a terrifying pestilence arrived on merchant ships from Europe, wiping out nearly half of England's population within two years. When surviving farmworkers demanded higher wages, landlords clamped down with harsh poll taxes. In 1381, peasant rebels marched on London with scythes and banners. How did plague and rebellion shatter medieval feudalism?",
     },
   ],
 };
-
 export default unitData;
+export { unitData };
