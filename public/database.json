@@ -32302,56 +32302,6 @@
         },
         {
           "id": "lesson_4_1",
-          "note_scaffold": {
-            "instruction": "As you read the chapter, complete these 3 structured enquiry blocks to analyse genetics, DNA, and the Human Genome Project:",
-            "blocks": [
-              {
-                "num": 1,
-                "badge": "DISCOVERY OF DNA",
-                "title": "1. Crick, Watson, Franklin & The Double Helix (1953)",
-                "prompt": "Explain how Rosalind Franklin’s Photo 51 enabled Francis Crick and James Watson to decode the DNA double helix:",
-                "model_notes": [
-                  "Franklin produced Photo 51 using X-ray crystallography at King's College London, revealing the distinct helical diffraction pattern.",
-                  "Crick and Watson at Cambridge used her uncredited data to construct the 3D double-helix molecular model of DNA in 1953.",
-                  "Proved DNA carries the universal genetic code instructing cell growth and transmitting hereditary characteristics across generations."
-                ],
-                "key_terms": [
-                  "Double Helix (1953)",
-                  "Rosalind Franklin Crystallography"
-                ]
-              },
-              {
-                "num": 2,
-                "badge": "GENOME MAPPING",
-                "title": "2. The Human Genome Project (1990–2003)",
-                "prompt": "Explain how international scientists mapped all 3 billion chemical base pairs in human DNA and its diagnostic impact:",
-                "model_notes": [
-                  "13-year international scientific consortium led by public scientists mapped every gene in human DNA (completed 2003).",
-                  "Enabled identification of specific faulty genes responsible for hereditary diseases (cystic fibrosis, Huntington's, BRCA breast cancer).",
-                  "Paved the way for personalized medicine, carrier screening, and pharmacogenomics (tailoring drug therapies to a patient's genetic profile)."
-                ],
-                "key_terms": [
-                  "Human Genome Project",
-                  "Gene Mapping"
-                ]
-              },
-              {
-                "num": 3,
-                "badge": "CLINICAL GAP",
-                "title": "3. The Diagnostic Revolution vs. The Treatment Gap",
-                "prompt": "Evaluate why decoding DNA has revolutionized disease diagnosis, yet genetic cures remain difficult to achieve:",
-                "model_notes": [
-                  "Doctors can accurately predict genetic disease susceptibility and perform preventative surgeries before symptoms appear.",
-                  "However, editing human DNA (gene therapy or CRISPR) inside millions of living body cells remains technically difficult and ethically controversial.",
-                  "Knowing the genetic cause of a disease does not immediately translate into an affordable, safe, or permanent clinical cure."
-                ],
-                "key_terms": [
-                  "Genetic Screening",
-                  "Gene Therapy"
-                ]
-              }
-            ]
-          },
           "title": "KT4.1: Ideas on Causes: Genetics, DNA & The Human Genome Project (c.1953–present)",
           "specification_anchor": "Ideas about the cause of disease and illness: genetic factors and the discovery of the structure of DNA; the Human Genome Project.",
           "enquiry_question": "How did unlocking the double helix and mapping the human genome revolutionize our understanding of disease causation?",
@@ -32361,56 +32311,66 @@
               "date": "c1900–1940s",
               "title": "Mendel & Early Genetics",
               "desc": "Early 20th-century biologists rediscovered Gregor Mendel’s laws of inheritance and observed thread-like chromosomes inside cells, but assumed complex protein chains must carry hereditary data.",
-              "para_ref": "[1.1]"
+              "para_ref": "[1.1–1.2]"
             },
             {
               "date": "1951–1952",
               "title": "Franklin & Photograph 51",
               "desc": "Rosalind Franklin at King's College London used X-ray crystallography to capture Photograph 51 in May 1952, exposing delicate DNA fibres to X-rays for 62 continuous hours.",
-              "para_ref": "[1.2]"
+              "para_ref": "[2.1–2.2]"
             },
             {
               "date": "1953",
               "title": "Watson & Crick’s Model",
               "desc": "Armed with Franklin’s experimental data, Cambridge researchers James Watson and Francis Crick constructed a three-dimensional tin-and-wire physical model of DNA at the Cavendish Laboratory.",
-              "para_ref": "[1.3]"
+              "para_ref": "[3.1–3.2]"
             },
             {
               "date": "1990–2003",
               "title": "Human Genome Project",
               "desc": "Launched in 1990, the publicly funded Human Genome Project coordinated scientists across six nations to sequence all 3 billion chemical base pairs in human DNA.",
-              "para_ref": "[1.4]"
+              "para_ref": "[4.1–4.2]"
             },
             {
               "date": "2000s–Present",
               "title": "Screening & Treatment Gap",
               "desc": "Genetic knowledge enabled rapid predictive screening for hereditary cancer risks (such as faulty BRCA1/BRCA2 breast cancer genes) and targeted pharmacogenomics.",
-              "para_ref": "[1.5]"
+              "para_ref": "[5.1–5.2]"
             }
           ],
           "hook_text": "For thousands of years, physicians understood that deadly illnesses could haunt family trees across generations, yet the biological mechanism remained an impenetrable mystery. The mid-twentieth-century discovery of the molecular structure of DNA, followed by the international Human Genome Project, unlocked the fundamental code of life—transforming medicine from passive symptom management into predictive, personalized genomic science.",
           "teacher_notes": {
-            "primer": "The overarching pedagogical goal of this lesson is to examine how the transition from microbial germ theory to molecular genetics revolutionized the understanding of non-communicable, hereditary illnesses. Students must grasp why decoding the double helix (1953) and completing the Human Genome Project (2003) shifted modern medicine toward predictive screening and targeted gene therapy, while also evaluating why translating genetic discoveries into clinical cures remains a protracted challenge.",
+            "primer": "This enquiry explores how understanding disease causation transformed in the twentieth and twenty-first centuries, tracing the journey from Mendel’s laws of inheritance and early chromosomal genetics to Rosalind Franklin’s Photograph 51, Watson and Crick’s double helix model, the international Human Genome Project, and the modern gap between genetic screening and clinical gene therapy.",
             "objectives": [
               {
-                "objective": "Explain how Gregor Mendel’s laws and 20th-century biochemistry established that genes carry hereditary traits.",
-                "primer": "Direct students to paragraphs [1.1]–[1.2]. Emphasize that while Germ Theory explained infectious illnesses, hereditary diseases like cystic fibrosis and hemophilia remained unexplained until scientists identified chromosomes and DNA as the physical carriers of genetic information.",
-                "question": "Why could Louis Pasteur’s Germ Theory never explain conditions like hemophilia, sickle cell anemia, or Huntington’s chorea?"
+                "objective": "Explain how the rediscovery of Mendel’s laws revealed the mystery of hereditary disease.",
+                "primer": "Direct students to paragraphs [1.1]–[1.2]. Emphasize that while Germ Theory explained infectious diseases, conditions like cystic fibrosis and haemophilia passed across generations without microbes, puzzling early twentieth-century biologists.",
+                "question": "Why was Germ Theory unable to explain hereditary illnesses like cystic fibrosis and sickle cell anaemia?"
               },
               {
-                "objective": "Analyze the breakthrough of Rosalind Franklin, Maurice Wilkins, James Watson, and Francis Crick in discovering the double helix.",
-                "primer": "Direct students to paragraphs [2.1]–[3.1]. Focus on Franklin’s mastery of X-ray crystallography, Photograph 51, the unauthorized sharing of her data, and Watson and Crick’s free-standing wire model demonstrating complementary base pairing (A-T, C-G).",
-                "question": "How did Rosalind Franklin’s Photograph 51 provide the definitive mathematical proof that DNA was structured as a double helix rather than a triple chain?"
+                "objective": "Analyse how Rosalind Franklin’s Photograph 51 provided mathematical proof of DNA’s helical structure.",
+                "primer": "Direct students to paragraphs [2.1]–[2.2] and Source A (Photograph 51). Guide them to explain her 62-hour X-ray crystallography exposure and how the distinct X-shaped diffraction cross proved DNA was a double-stranded helix.",
+                "question": "How did Franklin’s Photograph 51 provide the critical physical and mathematical breakthrough that unlocked DNA’s structure?"
               },
               {
-                "objective": "Evaluate the diagnostic and therapeutic impact of the Human Genome Project (1990–2003).",
-                "primer": "Direct students to paragraphs [3.2]–[4.2]. Contrast predictive genetic testing (BRCA1/2 breast cancer screening) with the ethical dilemmas and persistent therapeutic lag in developing universal gene therapy cures.",
-                "question": "Why has mapping all 25,000 human genes proven far more revolutionary for diagnosing and predicting illness than for curing it?"
+                "objective": "Examine how Watson and Crick’s double helix model explained biological reproduction and base pairing.",
+                "primer": "Direct students to paragraphs [3.1]–[3.2] and Source B (1953 Double Helix Model). Highlight the complementary base-pairing rule (Adenine-Thymine, Cytosine-Guanine) and how unzipping allows exact biological replication.",
+                "question": "Why was complementary base pairing (A-T and C-G) the decisive discovery that explained how genetic code replicates during cell division?"
+              },
+              {
+                "objective": "Evaluate the medical milestone of the international Human Genome Project (1990–2003).",
+                "primer": "Direct students to paragraphs [4.1]–[4.2]. Focus on the collaborative sequencing of all 3 billion chemical base pairs across 20,000–25,000 human genes and the identification of cancer risk markers like BRCA1 and BRCA2.",
+                "question": "Why was mapping all 3 billion base pairs in the human genome considered a landmark turning point in understanding the causes of disease?"
+              },
+              {
+                "objective": "Assess the diagnostic-therapeutic lag between predictive genetic screening and clinical gene therapy.",
+                "primer": "Direct students to paragraphs [5.1]–[5.2]. Contrast the rapid success of screening and preventative surgery (e.g. mastectomies) with the enormous ethical, technical, and financial difficulties of repairing mutated genes inside living bodies.",
+                "question": "Why has developing curative gene therapies proven so much more difficult than identifying faulty genes through diagnostic screening?"
               }
             ],
             "source_context": {
-              "Source A": "In May 1952, physical chemist Rosalind Franklin and PhD student Raymond Gosling captured Photograph 51 after 62 hours of X-ray exposure of crystallized DNA at King’s College London. The distinct X-shaped diffraction pattern provided the mathematical proof that DNA was a double-stranded helix. **Hinge Question:** Look at the dark, symmetrical X-cross pattern produced by X-ray diffraction: why was this physical photograph the decisive turning point that allowed Cambridge model-builders to solve the molecular structure of DNA?",
-              "Source B": "In March 1953, James Watson and Francis Crick built their celebrated sheet-metal and brass wire model at the Cavendish Laboratory in Cambridge, demonstrating two antiparallel sugar-phosphate backbones connected by adenine-thymine and cytosine-guanine base pairs. **Hinge Question:** Watson and Crick famously declared in The Eagle pub that they had found \"the secret of life\"—how did the complementary base-pairing rule (A-T, C-G) instantly explain how genetic code replicates during cell division?"
+              "Source A": "Rosalind Franklin’s Photograph 51 (May 1952). Historic X-ray crystallography diffraction image of crystallized calf thymus DNA taken by Rosalind Franklin and Raymond Gosling at King’s College London after 62 continuous hours of radiation exposure. Hinge Question: How does the sharp X-pattern in Franklin’s X-ray photograph mathematically prove that DNA is a helical coil rather than a flat chain, and why was this physical evidence critical for Watson and Crick’s model?",
+              "Source B": "Watson and Crick’s 1953 Double Helix Model. The original 1953 double-helix molecular model built from sheet-metal bases and brass rods by James Watson and Francis Crick at the Cavendish Laboratory, Cambridge University. Hinge Question: Why was proving the exact base-pairing mechanism (A-T and C-G) the decisive breakthrough in understanding how genetic hereditary information replicates and passes between generations?"
             }
           },
           "fun_facts": [
@@ -32438,12 +32398,15 @@
           ],
           "narrative_blocks": [
             {
-              "title": "Act 1: Context & Catalyst (Mendel’s Inheritance & The Hereditary Mystery)",
+              "act": 1,
+              "title": "Act 1: Mendel, Heredity & The Chromosomal Mystery (c1900–1940s)",
+              "theme_heading": "Act 1: Mendel, Heredity & The Chromosomal Mystery (c1900–1940s)",
               "text": "<span class=\"para-ref\">[1.1]</span> By the opening decades of the twentieth century, Louis Pasteur and Robert Koch’s Germ Theory had conquered infectious medicine, explaining how external bacteria caused cholera, tuberculosis, and anthrax. Yet physicians were confronted by a profound biological mystery: why did fatal illnesses such as cystic fibrosis, sickle cell anemia, and hemophilia recur relentlessly across generations of the same family without any microbial infection? In 1900, European botanists rediscovered the forgotten 1866 hybridization experiments of Augustinian monk Gregor Mendel, which demonstrated that physical characteristics were transmitted from parents to offspring in precise mathematical ratios via invisible biological units termed \"genes.\"<br><br><span class=\"para-ref\">[1.2]</span> Medical researchers recognized that humanity possessed an internal biological blueprint; however, the physical nature of the gene remained an impenetrable enigma. Microscopic staining revealed thread-like chromosomes inside the cell nucleus, but biochemists were locked in debate over whether genetic blueprints were stored in complex chromosomal proteins or in a puzzling, overlooked nucleic acid called deoxyribonucleic acid (DNA). Without deciphering the molecular geometry of DNA, doctors could neither explain how genetic information replicated during cellular division nor comprehend how microscopic copying errors caused catastrophic hereditary mutations."
             },
             {
-              "title": "Act 2: Escalation & Conflict (Rosalind Franklin & The Race for the Helix)",
-              "text": "<span class=\"para-ref\">[2.1]</span> In January 1951, physical chemist Rosalind Franklin joined King’s College London, bringing world-class expertise in X-ray crystallography—a demanding technique whereby high-energy X-ray beams were diffracted through crystallized biological fibers onto photographic film. Working alongside PhD student Raymond Gosling in a damp, subterranean basement laboratory, Franklin perfected a micro-camera setup, exposing calf thymus DNA to 62 continuous hours of radiation under controlled humidity. In May 1952, Franklin captured \"Photograph 51\" (<span class=\"archival-meta-tag\">Source A</span>), a stark, razor-sharp diffraction image displaying an unmistakable dark X-shaped cross of reflections that mathematically proved DNA formed a double-stranded helical cylinder.<br><br><span class=\"para-ref\">[2.2]</span> Severe institutional discord paralyzed the King’s biophysics unit. Maurice Wilkins, a senior physicist who mistakenly regarded Franklin as his technical assistant rather than an independent investigator, clashed with her rigorous empirical standards. In January 1953, without Franklin’s knowledge or permission, Wilkins showed Photograph 51 to James Watson, an ambitious 24-year-old American biologist visiting from Cambridge. Watson later recorded that his jaw dropped and his pulse raced upon viewing the print: the distinct X-cross pattern immediately provided Watson and his Cambridge collaborator Francis Crick with the exact mathematical dimensions required to solve the molecule.",
+              "act": 2,
+              "title": "Act 2: Rosalind Franklin & Photograph 51 (1951–1952)",
+              "theme_heading": "Act 2: Rosalind Franklin & Photograph 51 (1951–1952)",
               "source": {
                 "id": "source_a_photograph_51",
                 "letter": "A",
@@ -32455,14 +32418,17 @@
                 "desc": "Historic X-ray crystallography diffraction image of DNA taken by Rosalind Franklin.",
                 "provenance": "Primary photographic diffraction plate produced in May 1952 at the Medical Research Council Biophysics Unit, King’s College London (Accession: MRC-KCL-51) / Science Museum London.",
                 "citation": "Rosalind Franklin & Raymond Gosling, King’s College London Archive (MRC-KCL-51), May 1952.",
+                "question": "How does the sharp X-pattern in Franklin’s X-ray photograph mathematically prove that DNA is a helical coil rather than a flat chain, and why was this physical evidence critical for Watson and Crick’s model?",
+                "hinge_question": "How does the sharp X-pattern in Franklin’s X-ray photograph mathematically prove that DNA is a helical coil rather than a flat chain, and why was this physical evidence critical for Watson and Crick’s model?",
                 "source_context": "In May 1952 at King’s College London, physical chemist Rosalind Franklin and Raymond Gosling captured Photograph 51 using X-ray crystallography after 62 continuous hours of radiation exposure. The distinct X-shaped dark reflection pattern provided definitive mathematical proof of DNA’s helical cylinder.",
-                "context": "In May 1952 at King’s College London, physical chemist Rosalind Franklin and Raymond Gosling captured Photograph 51 using X-ray crystallography after 62 continuous hours of radiation exposure. The distinct X-shaped dark reflection pattern provided definitive mathematical proof of DNA’s helical cylinder.",
-                "hinge_question": "How does the sharp X-pattern in Franklin’s X-ray photograph mathematically prove that DNA is a helical coil rather than a flat chain, and why was this physical evidence critical for Watson and Crick’s model?"
-              }
+                "context": "In May 1952 at King’s College London, physical chemist Rosalind Franklin and Raymond Gosling captured Photograph 51 using X-ray crystallography after 62 continuous hours of radiation exposure. The distinct X-shaped dark reflection pattern provided definitive mathematical proof of DNA’s helical cylinder."
+              },
+              "text": "<span class=\"para-ref\">[2.1]</span> In January 1951, physical chemist Rosalind Franklin joined King’s College London, bringing world-class expertise in X-ray crystallography—a demanding technique whereby high-energy X-ray beams were diffracted through crystallized biological fibers onto photographic film. Working alongside PhD student Raymond Gosling in a damp, subterranean basement laboratory, Franklin perfected a micro-camera setup, exposing calf thymus DNA to 62 continuous hours of radiation under controlled humidity. In May 1952, Franklin captured \"Photograph 51\" (<span class=\"archival-meta-tag\">Source A</span>), a stark, razor-sharp diffraction image displaying an unmistakable dark X-shaped cross of reflections that mathematically proved DNA formed a double-stranded helical cylinder.<br><br><span class=\"para-ref\">[2.2]</span> Severe institutional discord paralyzed the King’s biophysics unit. Maurice Wilkins, a senior physicist who mistakenly regarded Franklin as his technical assistant rather than an independent investigator, clashed with her rigorous empirical standards. In January 1953, without Franklin’s knowledge or permission, Wilkins showed Photograph 51 to James Watson, an ambitious 24-year-old American biologist visiting from Cambridge. Watson later recorded that his jaw dropped and his pulse raced upon viewing the print: the distinct X-cross pattern immediately provided Watson and his Cambridge collaborator Francis Crick with the exact mathematical dimensions required to solve the molecule."
             },
             {
-              "title": "Act 3: Forensic Evidence (The Double Helix & The Human Genome Project)",
-              "text": "<span class=\"para-ref\">[3.1]</span> Armed with Franklin’s experimental measurements, Watson and Crick spent frantic weeks in their Cambridge Free School Lane laboratory assembling sheet-metal cutouts and brass wire rods on an upright stand. In March 1953, they completed a magnificent three-dimensional model (<span class=\"archival-meta-tag\">Source B</span>) revealing that DNA was a \"double helix\"—two antiparallel sugar-phosphate backbones intertwined around a central axis, linked by complementary nitrogenous base pairs: Adenine (A) bonded strictly to Thymine (T), and Cytosine (C) bonded strictly to Guanine (G). This base-pairing rule instantly solved the mechanism of biological reproduction: during cell division, the two strands unzip, and each acts as a template to synthesize an identical replica. Watson and Crick famously burst into The Eagle pub, proclaiming they had discovered \"the secret of life.\"<br><br><span class=\"para-ref\">[3.2]</span> Deciphering the structure of DNA was the catalyst for the greatest collaborative expedition in biomedical history: the Human Genome Project. Launched in 1990 as an international public consortium led by James Watson and Francis Collins and co-funded by the UK Wellcome Trust Sanger Institute, researchers across Britain, the United States, France, Germany, and Japan spent thirteen years decoding the genetic instruction manual. Completed in April 2003, the project successfully mapped all 3 billion chemical base pairs across humanity’s 20,000–25,000 genes, establishing a digital reference sequence that allows geneticists to pinpoint specific faulty mutations responsible for over 4,000 inherited disorders, including the BRCA1 and BRCA2 genes that elevate breast and ovarian cancer risk.",
+              "act": 3,
+              "title": "Act 3: Watson & Crick’s Double Helix Model (1953)",
+              "theme_heading": "Act 3: Watson & Crick’s Double Helix Model (1953)",
               "source": {
                 "id": "source_b_dna_model",
                 "letter": "B",
@@ -32474,14 +32440,24 @@
                 "desc": "The original 1953 Cavendish Laboratory double-helix molecular model.",
                 "provenance": "Primary laboratory artifact constructed in March 1953 at the Cavendish Laboratory, Cambridge University. Science Museum London Collection (Accession: 1976-410).",
                 "citation": "James Watson & Francis Crick, Cavendish Laboratory, Cambridge, March 1953 (Science Museum 1976-410).",
+                "question": "Why was proving the exact base-pairing mechanism (A-T and C-G) the decisive breakthrough in understanding how genetic hereditary information replicates and passes between generations?",
+                "hinge_question": "Why was proving the exact base-pairing mechanism (A-T and C-G) the decisive breakthrough in understanding how genetic hereditary information replicates and passes between generations?",
                 "source_context": "In March 1953 at the Cavendish Laboratory in Cambridge, James Watson and Francis Crick constructed this three-dimensional molecular model from sheet-metal bases and brass rods, deciphering the complementary base pairing of Adenine-Thymine and Cytosine-Guanine.",
-                "context": "In March 1953 at the Cavendish Laboratory in Cambridge, James Watson and Francis Crick constructed this three-dimensional molecular model from sheet-metal bases and brass rods, deciphering the complementary base pairing of Adenine-Thymine and Cytosine-Guanine.",
-                "hinge_question": "Why was proving the exact base-pairing mechanism (A-T and C-G) the decisive breakthrough in understanding how genetic hereditary information replicates and passes between generations?"
-              }
+                "context": "In March 1953 at the Cavendish Laboratory in Cambridge, James Watson and Francis Crick constructed this three-dimensional molecular model from sheet-metal bases and brass rods, deciphering the complementary base pairing of Adenine-Thymine and Cytosine-Guanine."
+              },
+              "text": "<span class=\"para-ref\">[3.1]</span> Armed with Franklin’s experimental measurements, Watson and Crick spent frantic weeks in their Cambridge Free School Lane laboratory assembling sheet-metal cutouts and brass wire rods on an upright stand. In March 1953, they completed a magnificent three-dimensional model (<span class=\"archival-meta-tag\">Source B</span>) revealing that DNA was a \"double helix\"—two antiparallel sugar-phosphate backbones intertwined around a central axis, linked by complementary nitrogenous base pairs: Adenine (A) bonded strictly to Thymine (T), and Cytosine (C) bonded strictly to Guanine (G).<br><br><span class=\"para-ref\">[3.2]</span> This base-pairing rule instantly solved the mechanism of biological reproduction: during cell division, the two strands unzip, and each acts as a template to synthesize an identical replica. Watson and Crick famously burst into The Eagle pub, proclaiming they had discovered \"the secret of life.\" In April 1953, they published their 900-word breakthrough paper in <em>Nature</em>, opening the modern era of molecular genetics."
             },
             {
-              "title": "Act 4: The Historical Verdict & Historiographical Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> The genetic revolution fundamentally transformed modern clinical practice from reactive symptom management into predictive, personalized medicine. Armed with genomic sequencing, contemporary doctors no longer rely on standardized treatments; instead, individuals carrying faulty hereditary mutations can undergo preventative blood screening, enabling life-saving prophylactic surgery such as double mastectomies decades before malignant tumors form. Furthermore, the twenty-first century witnessed the emergence of synthetic gene therapy and CRISPR-Cas9 molecular editing, allowing clinical geneticists to repair defective cystic fibrosis genes and treat sickle cell disease at the cellular level.<br><br><span class=\"para-ref\">[4.2]</span> Historiographers and medical ethicists actively debate the clinical reality versus the therapeutic hype of genetics. Medical historians emphasize the persistent \"Diagnostic-Therapeutic Lag\": while sequencing a patient’s genome is now rapid and inexpensive, developing safe, effective gene therapies remains extraordinarily complex, costly, and ethically contested. Furthermore, the historiographical narrative surrounding the discovery of DNA has undergone profound revision: while Watson, Crick, and Wilkins received the 1962 Nobel Prize in Physiology or Medicine, Rosalind Franklin tragically passed away from ovarian cancer in 1958 at age 37, unacknowledged during her lifetime for generating the foundational experimental evidence that made the double helix model possible."
+              "act": 4,
+              "title": "Act 4: The Human Genome Project (1990–2003)",
+              "theme_heading": "Act 4: The Human Genome Project (1990–2003)",
+              "text": "<span class=\"para-ref\">[4.1]</span> Deciphering the structure of DNA was the catalyst for the greatest collaborative expedition in biomedical history: the Human Genome Project. Launched in 1990 as an international public consortium led by James Watson and Francis Collins and co-funded by the UK Wellcome Trust Sanger Institute, researchers across Britain, the United States, France, Germany, and Japan spent thirteen years decoding the genetic instruction manual.<br><br><span class=\"para-ref\">[4.2]</span> Completed in April 2003, the project successfully mapped all 3 billion chemical base pairs across humanity’s 20,000–25,000 genes, publishing the data free online. This monumental digital reference sequence allows geneticists to pinpoint specific faulty mutations responsible for over 4,000 inherited disorders, including the BRCA1 and BRCA2 genes that dramatically elevate hereditary breast and ovarian cancer risks."
+            },
+            {
+              "act": 5,
+              "title": "Act 5: Genetic Screening & The Treatment Gap (2000s–Present)",
+              "theme_heading": "Act 5: Genetic Screening & The Treatment Gap (2000s–Present)",
+              "text": "<span class=\"para-ref\">[5.1]</span> The genetic revolution fundamentally transformed modern clinical practice from reactive symptom management into predictive, personalized medicine. Armed with genomic sequencing, contemporary doctors no longer rely on standardized treatments; instead, individuals carrying faulty hereditary mutations can undergo preventative blood screening, enabling life-saving prophylactic surgery such as double mastectomies decades before malignant tumors form. Furthermore, pharmacogenomics matches targeted drug therapies directly to a patient’s individual DNA profile.<br><br><span class=\"para-ref\">[5.2]</span> However, medical historians emphasize the persistent \"Diagnostic-Therapeutic Lag\": while sequencing a patient’s genome is now rapid and inexpensive, developing safe, effective gene therapies remains extraordinarily complex, costly, and ethically contested. Correcting mutated genes inside living human bodies via techniques like CRISPR-Cas9 has progressed slowly, proving that understanding the genetic cause of disease does not automatically translate into an immediate clinical cure."
             }
           ],
           "tasks": [
@@ -32808,7 +32784,7 @@
             {
               "step": 1,
               "date": "c1900–1940s",
-              "para_ref": "[1.1]",
+              "para_ref": "[1.1–1.2]",
               "heading": "Why did doctors assume proteins carried hereditary traits?",
               "bullets": [
                 "Growing wrinkled green garden peas",
@@ -32820,7 +32796,7 @@
             {
               "step": 2,
               "date": "1951–1952",
-              "para_ref": "[1.2]",
+              "para_ref": "[2.1–2.2]",
               "heading": "How did Photograph 51 prove DNA’s helical structure?",
               "bullets": [
                 "Beaming invisible rays through wet DNA fibers",
@@ -32832,7 +32808,7 @@
             {
               "step": 3,
               "date": "1953",
-              "para_ref": "[1.3]",
+              "para_ref": "[3.1–3.2]",
               "heading": "How did base pairing explain hereditary replication?",
               "bullets": [
                 "Twisting thin metal wire into spirals",
@@ -32844,7 +32820,7 @@
             {
               "step": 4,
               "date": "1990–2003",
-              "para_ref": "[1.4]",
+              "para_ref": "[4.1–4.2]",
               "heading": "Why was mapping 3 billion base pairs a medical milestone?",
               "bullets": [
                 "Linking laboratory supercomputers across six nations",
@@ -32856,7 +32832,7 @@
             {
               "step": 5,
               "date": "2000s–Present",
-              "para_ref": "[1.5]",
+              "para_ref": "[5.1–5.2]",
               "heading": "Why did understanding causes outpace finding cures?",
               "bullets": [
                 "Testing saliva drops for faulty breast genes",
@@ -32873,7 +32849,7 @@
               {
                 "step": 1,
                 "date": "c1900–1940s",
-                "para_ref": "[1.1]",
+                "para_ref": "[1.1–1.2]",
                 "title": "Mendel & Early Genetics",
                 "actor": "Gregor Mendel & Early Cytologists",
                 "tag": "🌱 MENDELIAN INHERITANCE",
@@ -32885,7 +32861,7 @@
               {
                 "step": 2,
                 "date": "1951–1952",
-                "para_ref": "[1.2]",
+                "para_ref": "[2.1–2.2]",
                 "title": "Franklin & Photograph 51",
                 "actor": "Rosalind Franklin & Maurice Wilkins",
                 "tag": "🔬 PHOTOGRAPH 51",
@@ -32897,7 +32873,7 @@
               {
                 "step": 3,
                 "date": "1953",
-                "para_ref": "[1.3]",
+                "para_ref": "[3.1–3.2]",
                 "title": "Watson & Crick’s Model",
                 "actor": "James Watson & Francis Crick",
                 "tag": "🧬 THE DOUBLE HELIX",
@@ -32909,7 +32885,7 @@
               {
                 "step": 4,
                 "date": "1990–2003",
-                "para_ref": "[1.4]",
+                "para_ref": "[4.1–4.2]",
                 "title": "Human Genome Project",
                 "actor": "International Human Genome Sequencing Consortium",
                 "tag": "💻 HUMAN GENOME MAPPING",
@@ -32921,7 +32897,7 @@
               {
                 "step": 5,
                 "date": "2000s–Present",
-                "para_ref": "[1.5]",
+                "para_ref": "[5.1–5.2]",
                 "title": "Screening & Treatment Gap",
                 "actor": "Modern Clinical Geneticists & Oncologists",
                 "tag": "🧬 GENETIC SCREENING & THERAPY",
@@ -32935,56 +32911,6 @@
         },
         {
           "id": "lesson_4_2",
-          "note_scaffold": {
-            "instruction": "As you read the chapter, complete these 3 structured enquiry blocks to examine lifestyle diseases and modern diagnostic technology:",
-            "blocks": [
-              {
-                "num": 1,
-                "badge": "LIFESTYLE KILLERS",
-                "title": "1. The Epidemiological Shift from Infection to Lifestyle Illness",
-                "prompt": "Explain how 20th-century medicine shifted focus from infectious diseases to lifestyle-driven chronic conditions:",
-                "model_notes": [
-                  "Antibiotics and vaccinations largely conquered lethal bacterial and viral epidemics like cholera, diphtheria, and tuberculosis.",
-                  "Average life expectancy climbed past 80, leading to the rise of chronic non-communicable killers: heart disease, stroke, diabetes, and cancers.",
-                  "Modern illnesses are heavily influenced by voluntary lifestyle factors: cigarette smoking, alcohol abuse, lack of exercise, and processed high-sugar diets."
-                ],
-                "key_terms": [
-                  "Non-Communicable Diseases",
-                  "Lifestyle Factors"
-                ]
-              },
-              {
-                "num": 2,
-                "badge": "HIGH-TECH DIAGNOSIS",
-                "title": "2. The Technological Revolution in Non-Invasive Diagnosis",
-                "prompt": "Detail how modern medical technology (X-rays, blood tests, CT scans, MRI, endoscopes) transformed diagnosis:",
-                "model_notes": [
-                  "X-rays (1895 Roentgen) allowed non-invasive imaging of skeletal trauma and chest infections.",
-                  "CT scans (1970s Hounsfield) and MRI scans (1970s Mansfield) produced detailed cross-sectional 3D images of soft organs and brain tissue.",
-                  "Endoscopes allowed optical cameras inside the digestive tract; mass blood chemistry testing detected early organ failure and hormone imbalances."
-                ],
-                "key_terms": [
-                  "CT and MRI Scans",
-                  "Endoscopy"
-                ]
-              },
-              {
-                "num": 3,
-                "badge": "PUBLIC HEALTH",
-                "title": "3. Government Intervention & Nudge Campaigns in Modern Britain",
-                "prompt": "Explain how modern British governments use legislation and education campaigns to prevent lifestyle diseases:",
-                "model_notes": [
-                  "Passed aggressive public health legislation: 2007 indoor public smoking ban; compulsory car seatbelt laws; 2018 Soft Drinks Industry Levy (Sugar Tax).",
-                  "Public education campaigns: 'Change4Life', 'Stoptober', and '5 A Day' fruit and vegetable nutritional guidance.",
-                  "Shifted from reactive treatment to proactive prevention, reducing long-term financial pressure on the National Health Service."
-                ],
-                "key_terms": [
-                  "Public Health Legislation",
-                  "Preventative Campaigns"
-                ]
-              }
-            ]
-          },
           "banner": "/images/banner_mri_hospital.jpg",
           "banner_position": "center 40%",
           "title": "KT4.2: Lifestyle Factors & The Technological Revolution in Diagnosis (c.1900–present)",
@@ -32996,56 +32922,66 @@
               "date": "1895–1918",
               "title": "Röntgen & Early X-Rays",
               "desc": "German physicist Wilhelm Röntgen discovered electromagnetic X-rays in November 1895, imaging the bones and wedding ring of his wife’s hand on a photographic plate.",
-              "para_ref": "[2.1]"
+              "para_ref": "[1.1–1.2]"
             },
             {
               "date": "1930s–1960s",
               "title": "Blood Labs & Endoscopy",
               "desc": "Mid-20th-century hospitals developed automated biochemical blood tests and flexible fibre-optic endoscopes using coherent glass fiber bundles.",
-              "para_ref": "[2.2]"
+              "para_ref": "[2.1–2.2]"
             },
             {
               "date": "1971–1980s",
               "title": "Hounsfield’s CT & MRI",
               "desc": "British electrical engineer Godfrey Hounsfield built the first computerized tomography (CT) scanner at EMI Laboratories in 1971, rotating X-ray beams in a circular gantry.",
-              "para_ref": "[2.3]"
+              "para_ref": "[3.1–3.2]"
             },
             {
               "date": "c1950–1980s",
               "title": "Epidemiological Shift",
               "desc": "With clean municipal water, mandatory vaccinations, and penicillin vanquishing lethal bacterial epidemics, average UK life expectancy surged from 46 in 1900 to over 75 by the 1980s.",
-              "para_ref": "[2.4]"
+              "para_ref": "[4.1–4.2]"
             },
             {
               "date": "1980s–Present",
               "title": "State Lifestyle Campaigns",
               "desc": "Facing astronomical costs for high-tech acute treatments, the Department of Health launched national preventive lifestyle campaigns: the 2007 public indoor smoking ban, Change4Life, and sugar taxes.",
-              "para_ref": "[2.5]"
+              "para_ref": "[5.1–5.2]"
             }
           ],
           "hook_text": "As modern sanitation, clean water, and antibiotics brought lethal bacterial plagues under control, Britain underwent an unprecedented epidemiological transition. The leading killers shifted from infectious contagion to chronic lifestyle diseases caused by smoking, alcohol, and poor diet. Simultaneously, the invention of X-rays, CT scanners, MRI, and endoscopes allowed physicians to peer deep inside living organs without a single surgical incision.",
           "teacher_notes": {
-            "primer": "The overarching pedagogical goal of this lesson is to examine the twin twentieth-century revolutions in disease causation and clinical diagnosis. Students must analyze the epidemiological transition from infectious microbes to chronic lifestyle illnesses, while evaluating how diagnostic technology (X-rays, CT scanners, MRI, endoscopes, automated blood testing) moved medicine away from subjective bedside guesswork toward objective, non-invasive internal visualization.",
+            "primer": "This enquiry evaluates the revolution in medical diagnosis and public health during the twentieth century, analyzing Wilhelm Röntgen’s discovery of X-rays (1895), the development of automated blood labs and fibre-optic endoscopy, Godfrey Hounsfield’s invention of Computerized Tomography (CT) and MRI, the epidemiological shift from infectious to chronic lifestyle diseases, and state-sponsored preventative lifestyle campaigns.",
             "objectives": [
               {
-                "objective": "Explain the epidemiological transition and the role of lifestyle factors in modern disease.",
-                "primer": "Direct students to paragraphs [1.1]–[1.2]. Emphasize how increased life expectancy, cigarette smoking, sedentary diets, and alcohol consumption replaced Victorian infectious contagion as Britain’s primary causes of death.",
-                "question": "Why did chronic conditions like heart disease, lung cancer, and type 2 diabetes become Britain’s primary killers only in the 20th century?"
+                "objective": "Explain how Wilhelm Röntgen’s discovery of X-rays transformed non-invasive surgical diagnosis.",
+                "primer": "Direct students to paragraphs [1.1]–[1.2] and Source A (Bertha Röntgen’s hand). Highlight how X-rays allowed doctors to locate bone fractures and shrapnel without exploratory knife surgery, especially during WWI.",
+                "question": "How did Röntgen’s X-rays overturn centuries of surgical guesswork when diagnosing internal trauma?"
               },
               {
-                "objective": "Trace the development of diagnostic imaging from Röntgen’s X-rays (1895) to Hounsfield’s CT scanner (1971) and MRI.",
-                "primer": "Direct students to paragraphs [2.1]–[3.2]. Focus on Röntgen’s serendipitous discovery, Bertha’s hand, wartime mobile X-rays, and Godfrey Hounsfield using computer tomography to combine multiple X-ray cross-sections into 3D soft-tissue slices.",
-                "question": "Why were standard 2D X-rays unable to detect early-stage brain tumors, and how did Godfrey Hounsfield’s CT scanner solve this limitation?"
+                "objective": "Analyse how automated biochemical blood tests and fibre-optic endoscopy reduced diagnostic risk.",
+                "primer": "Direct students to paragraphs [2.1]–[2.2]. Explain that blood labs detected cellular and chemical abnormalities while flexible endoscopes allowed direct visualization of organs through natural orifices, replacing exploratory laparotomies.",
+                "question": "Why was fiber-optic endoscopy so much safer for patients than exploratory surgery?"
               },
               {
-                "objective": "Evaluate how non-invasive diagnostic tools eliminated exploratory surgery and changed clinical practice.",
-                "primer": "Direct students to paragraphs [4.1]–[4.2]. Compare a doctor in 1900 relying on pulse, urine taste, and exploratory surgery with a modern doctor utilizing automated blood labs, endoscopes, and MRI scans.",
-                "question": "In what ways did high-tech diagnostic scans protect patients from the surgical risks of the 19th-century \"Black Period\"?"
+                "objective": "Evaluate how Godfrey Hounsfield’s CT scanner and MRI revolutionized soft-tissue imaging.",
+                "primer": "Direct students to paragraphs [3.1]–[3.2] and Source B (Prototype EMI CT scanner). Contrast 2D flat bone shadows with digital 3D cross-sectional slices that revealed previously invisible brain tumors.",
+                "question": "How did computer algorithms enable CT scanners to overcome the limitations of traditional two-dimensional X-rays?"
+              },
+              {
+                "objective": "Examine the twentieth-century epidemiological transition from infectious fevers to chronic lifestyle illnesses.",
+                "primer": "Direct students to paragraphs [4.1]–[4.2]. Focus on rising life expectancy (from 46 in 1900 to over 75) and the emergence of coronary heart disease, lung cancer, and diabetes driven by diet, smoking, and alcohol.",
+                "question": "What demographic and medical factors caused lifestyle illnesses to replace infectious epidemics as Britain’s leading killers?"
+              },
+              {
+                "objective": "Assess why governments increasingly prioritize statutory lifestyle prevention over expensive hospital treatments.",
+                "primer": "Direct students to paragraphs [5.1]–[5.2]. Discuss public health initiatives: the 2007 indoor smoking ban, sugar taxes, Change4Life, and seatbelt laws, contrasting their cost-effectiveness against multimillion-pound acute hospital technologies.",
+                "question": "Why do modern health authorities argue that statutory lifestyle prevention delivers greater health gains than high-tech hospital scanning machines?"
               }
             ],
             "source_context": {
-              "Source A": "On 22 December 1895, German physicist Wilhelm Röntgen captured the world’s first clinical X-ray photograph of his wife Bertha’s hand, revealing the skeleton and dark gold wedding ring. **Hinge Question:** When Bertha Röntgen cried \"I have seen my death!\" upon seeing her bones, how did this photographic breakthrough permanently shatter the barrier between external symptoms and internal pathology?",
-              "Source B": "In 1971, British electrical engineer Godfrey Hounsfield built the prototype EMI Computerized Tomography (CT) scanner at Atkinson Morley Hospital, London, combining rotating X-ray beams with computerized slice algorithms. **Hinge Question:** Study the prototype CT scanning apparatus: why was integrating digital computers with rotating X-ray detectors essential before doctors could visualize soft brain tissues without cutting open the skull?"
+              "Source A": "The First Clinical X-Ray: Bertha Röntgen’s Hand (1895). Historic radiographic glass plate produced on 22 December 1895 at the University of Würzburg, showing the living skeletal bones and signet ring of Wilhelm Röntgen’s wife without surgery. Hinge Question: How did Röntgen’s discovery of X-rays fundamentally overturn thousands of years of medical diagnosis by allowing physicians to view internal pathology without making an incision?",
+              "Source B": "Godfrey Hounsfield’s Prototype EMI CT Scanner (1971). The original computed tomography scanner apparatus developed at EMI Laboratories, combining rotating X-ray beams with digital computing to generate 3D cross-sectional slices. Hinge Question: In what way did computerized axial tomography (CT scanning) overcome the fundamental 2D flattening limitation of traditional Röntgen X-rays when diagnosing soft-tissue brain tumours?"
             }
           },
           "fun_facts": [
@@ -33073,12 +33009,9 @@
           ],
           "narrative_blocks": [
             {
-              "title": "Act 1: Context & Catalyst (The Epidemiological Transition & Lifestyle Perils)",
-              "text": "<span class=\"para-ref\">[1.1]</span> In 1900, infectious diseases—tuberculosis, pneumonia, cholera, and diphtheria—were the undisputed executioners of British citizens, holding average life expectancy to just 46 for men and 50 for women. Over the subsequent six decades, clean municipal water, compulsory childhood immunizations, and the mass deployment of antibiotics brought bacterial epidemics under historic control. However, as citizens lived decades longer into old age, Britain underwent a profound \"epidemiological transition\": the leading causes of national mortality shifted decisively from external microbial pathogens to non-communicable, chronic lifestyle illnesses—coronary heart disease, cerebrovascular strokes, hypertension, and malignant tumors.<br><br><span class=\"para-ref\">[1.2]</span> Medical surveillance revealed that modern consumer behaviors directly poisoned human organs from within. Epidemiologists isolated four primary lifestyle culprits: commercial cigarette smoking, which flooded delicate lung tissue with tar and carbon monoxide; excessive alcohol consumption, causing irreversible cirrhosis of the liver and cardiovascular failure; sedentary diets high in saturated fats and refined sugars, sparking an epidemic of obesity and type 2 diabetes; and overexposure to ultraviolet (UV) radiation from sunbeds and sunlight, driving malignant melanoma skin cancers. Unlike medieval miasma or Victorian filth, twentieth-century medicine recognized that individuals’ daily personal choices were degrading their internal bodily systems."
-            },
-            {
-              "title": "Act 2: Escalation & Conflict (Röntgen’s X-Rays & Marie Curie’s Mobile Fleet)",
-              "text": "<span class=\"para-ref\">[2.1]</span> Recognizing that internal organs were deteriorating was useless unless physicians could peer inside living bodies without inflicting trauma. The diagnostic revolution ignited unexpectedly in Würzburg, Germany, on 8 November 1895. Physicist Wilhelm Röntgen, experimenting with high-voltage electrical discharges inside an evacuated glass Crookes tube, noticed that a cardboard screen coated with barium platinocyanide fluoresced green in his darkened laboratory, despite the tube being shielded in thick black cardboard. Röntgen realized an unknown, highly penetrating form of electromagnetic radiation was escaping the glass, christening the phenomenon \"X-rays\" using the mathematical variable for the unknown.<br><br><span class=\"para-ref\">[2.2]</span> Röntgen sequestered himself in his laboratory for seven weeks to investigate the rays. On 22 December 1895, he summoned his apprehensive wife Bertha to place her hand over a photographic glass plate while exposing it to the beam for fifteen minutes. The developed plate revealed an astounding, eerie spectacle: the living skeletal architecture of Bertha’s fingers (<span class=\"archival-meta-tag\">Source A</span>), with her dark gold wedding ring floating distinctly around her ring finger. Bertha famously recoiled, weeping: \"I have seen my death!\" News spread across the globe within days; within months, British voluntary hospitals installed primitive X-ray apparatus to locate bullet fragments and diagnose bone fractures. During World War I, Polish-French scientist Marie Curie mobilized twenty mobile radiology cars (\"petites Curies\"), driving diagnostic X-ray units directly to front-line Casualty Clearing Stations to locate shrapnel before fatal gas gangrene set in.",
+              "act": 1,
+              "title": "Act 1: Wilhelm Röntgen & The Discovery of X-Rays (1895–1918)",
+              "theme_heading": "Act 1: Wilhelm Röntgen & The Discovery of X-Rays (1895–1918)",
               "source": {
                 "id": "source_a_first_xray",
                 "letter": "A",
@@ -33090,14 +33023,23 @@
                 "desc": "Historic first radiographic image of human living anatomy taken by Wilhelm Röntgen.",
                 "provenance": "Primary photographic glass plate produced on 22 December 1895 at the Institute of Physics, University of Würzburg, Germany. Deutsches Museum / Science Museum London.",
                 "citation": "Wilhelm Conrad Röntgen, University of Würzburg Institute of Physics (Accession: WURZ-PHYS-1895), December 1895.",
+                "question": "How did Röntgen’s discovery of X-rays fundamentally overturn thousands of years of medical diagnosis by allowing physicians to view internal pathology without making an incision?",
+                "hinge_question": "How did Röntgen’s discovery of X-rays fundamentally overturn thousands of years of medical diagnosis by allowing physicians to view internal pathology without making an incision?",
                 "source_context": "On 22 December 1895 at the University of Würzburg, Wilhelm Röntgen produced humanity’s first clinical X-ray, capturing the living skeletal architecture of his wife Anna Bertha’s hand and signet ring without surgical dissection.",
-                "context": "On 22 December 1895 at the University of Würzburg, Wilhelm Röntgen produced humanity’s first clinical X-ray, capturing the living skeletal architecture of his wife Anna Bertha’s hand and signet ring without surgical dissection.",
-                "hinge_question": "How did Röntgen’s discovery of X-rays fundamentally overturn thousands of years of medical diagnosis by allowing physicians to view internal pathology without making an incision?"
-              }
+                "context": "On 22 December 1895 at the University of Würzburg, Wilhelm Röntgen produced humanity’s first clinical X-ray, capturing the living skeletal architecture of his wife Anna Bertha’s hand and signet ring without surgical dissection."
+              },
+              "text": "<span class=\"para-ref\">[1.1]</span> In 1895, physician diagnostics remained trapped on the exterior of the living body: doctors tapped chests, smelled urine, and took pulses, but could only discover internal fractures, bullets, or tumors through agonizing exploratory knife surgery. The diagnostic revolution ignited unexpectedly in Würzburg, Germany, on 8 November 1895. Physicist Wilhelm Röntgen, experimenting with high-voltage electrical discharges inside an evacuated glass Crookes tube, noticed that a cardboard screen coated with barium platinocyanide fluoresced green in his darkened laboratory, despite the tube being shielded in thick black cardboard. Röntgen realized an unknown, highly penetrating form of electromagnetic radiation was escaping the glass, christening the phenomenon \"X-rays\" using the mathematical variable for the unknown.<br><br><span class=\"para-ref\">[1.2]</span> On 22 December 1895, Röntgen exposed his wife Bertha’s hand over a photographic glass plate for fifteen minutes (<span class=\"archival-meta-tag\">Source A</span>). The developed plate revealed the living skeletal architecture of her fingers and her dark wedding ring, causing Bertha to cry: \"I have seen my death!\" News spread across the globe within days; within months, British voluntary hospitals installed primitive X-ray apparatus to locate bone fractures without incisions. During World War I, Polish-French scientist Marie Curie mobilized twenty mobile radiology cars (\"petites Curies\"), driving diagnostic X-ray units directly to front-line Casualty Clearing Stations to locate shrapnel before fatal gas gangrene set in."
             },
             {
-              "title": "Act 3: Forensic Evidence (The CT Scanner & The Digital Diagnostic Arsenal)",
-              "text": "<span class=\"para-ref\">[3.1]</span> Despite their brilliance, conventional 2D X-rays suffered from a catastrophic diagnostic blind spot: dense bones cast intense white shadows that obscured underlying soft tissues, rendering brain tumors, blood clots, and liver carcinomas virtually invisible. In 1967, British electrical engineer Godfrey Hounsfield, working at the Central Research Laboratories of EMI (Electric & Musical Industries—the British record label enriched by the global commercial success of The Beatles), devised an ingenious solution: Computerized Tomography (CT). Hounsfield realized that by rotating an X-ray tube 360 degrees around a patient while linked to a digital computer, thousands of individual tissue density measurements could be mathematically reconstructed into razor-sharp cross-sectional \"slices\" of internal organs.<br><br><span class=\"para-ref\">[3.2]</span> In October 1971, Hounsfield installed his prototype clinical CT scanner (<span class=\"archival-meta-tag\">Source B</span>) at Atkinson Morley Hospital in Wimbledon, London. The scanner’s first patient was a woman suffering from a suspected intracranial lesion; within minutes, the computer screen displayed a dark, unmistakable circular tumor in her left frontal lobe. The neurosurgeon operated with millimeter precision and successfully excised the growth. The CT scanner triggered an explosion in diagnostic technology: in the late 1970s and 1980s, Raymond Damadian and Sir Peter Mansfield developed Magnetic Resonance Imaging (MRI), utilizing magnetic fields and radio waves to render soft tissue organs with zero radiation exposure, alongside flexible fiber-optic endoscopes that allowed gastroenterologists to inspect internal stomachs and intestines directly.",
+              "act": 2,
+              "title": "Act 2: Blood Laboratories & Fibre-Optic Endoscopy (1930s–1960s)",
+              "theme_heading": "Act 2: Blood Laboratories & Fibre-Optic Endoscopy (1930s–1960s)",
+              "text": "<span class=\"para-ref\">[2.1]</span> As the twentieth century progressed, hospital diagnostics moved beyond bones to chemical pathology and biochemistry. Automated laboratory testing transformed diagnostic precision: centrifuges separated blood plasma, automated cell counters measured white blood cell spikes signaling acute infection or leukaemia, and biochemical assays measured blood glucose to diagnose diabetes and blood pressure cuffs monitored cardiovascular strain. Instead of guessing from external symptoms, clinicians possessed quantifiable biochemical indicators.<br><br><span class=\"para-ref\">[2.2]</span> Alongside blood testing arose flexible fibre-optic endoscopy. Prior to the 1950s, inspecting internal organs required rigid metal tubes that risked puncturing delicate tissues, or dangerous exploratory laparotomies (cutting open the abdomen). In the 1950s and 1960s, optical physicists developed coherent bundles of flexible glass fibres that transmitted light and high-resolution images around bends. Doctors could now slide flexible endoscopes down a patient’s throat or into the bowel, directly inspecting gastric ulcers and biopsying tumors under direct vision without a single surgical incision."
+            },
+            {
+              "act": 3,
+              "title": "Act 3: Godfrey Hounsfield, The CT Scanner & MRI (1971–1980s)",
+              "theme_heading": "Act 3: Godfrey Hounsfield, The CT Scanner & MRI (1971–1980s)",
               "source": {
                 "id": "source_b_ct_scanner",
                 "letter": "B",
@@ -33109,14 +33051,24 @@
                 "desc": "The original prototype computed tomography scanner developed at EMI Laboratories.",
                 "provenance": "Primary engineering prototype developed at EMI Central Research Laboratories, Hayes, and clinically tested at Atkinson Morley Hospital in October 1971. Science Museum London Collection.",
                 "citation": "Godfrey Hounsfield / EMI Central Research Laboratories (Science Museum London Accession: 1980-143), 1971.",
+                "question": "In what way did computerized axial tomography (CT scanning) overcome the fundamental 2D flattening limitation of traditional Röntgen X-rays when diagnosing soft-tissue brain tumours?",
+                "hinge_question": "In what way did computerized axial tomography (CT scanning) overcome the fundamental 2D flattening limitation of traditional Röntgen X-rays when diagnosing soft-tissue brain tumours?",
                 "source_context": "In 1971 at Atkinson Morley Hospital in Wimbledon, British electrical engineer Godfrey Hounsfield assembled the prototype EMI clinical CT scanner, combining rotating X-ray beams with digital computing algorithms to generate cross-sectional 3D slices of the brain.",
-                "context": "In 1971 at Atkinson Morley Hospital in Wimbledon, British electrical engineer Godfrey Hounsfield assembled the prototype EMI clinical CT scanner, combining rotating X-ray beams with digital computing algorithms to generate cross-sectional 3D slices of the brain.",
-                "hinge_question": "In what way did computerized axial tomography (CT scanning) overcome the fundamental 2D flattening limitation of traditional Röntgen X-rays when diagnosing soft-tissue brain tumours?"
-              }
+                "context": "In 1971 at Atkinson Morley Hospital in Wimbledon, British electrical engineer Godfrey Hounsfield assembled the prototype EMI clinical CT scanner, combining rotating X-ray beams with digital computing algorithms to generate cross-sectional 3D slices of the brain."
+              },
+              "text": "<span class=\"para-ref\">[3.1]</span> Despite their brilliance, conventional 2D X-rays suffered from a major blind spot: dense bones cast intense white shadows that obscured underlying soft tissues, rendering brain tumors, blood clots, and liver carcinomas invisible. In 1967, British electrical engineer Godfrey Hounsfield, working at EMI Central Research Laboratories, devised Computerized Tomography (CT). Hounsfield realized that rotating an X-ray tube 360 degrees around a patient while linked to a digital computer allowed thousands of tissue density measurements to be mathematically reconstructed into razor-sharp cross-sectional 3D \"slices\" of internal organs.<br><br><span class=\"para-ref\">[3.2]</span> In October 1971, Hounsfield installed his prototype clinical CT scanner (<span class=\"archival-meta-tag\">Source B</span>) at Atkinson Morley Hospital in Wimbledon. The first scan clearly revealed a dark circular tumor in a patient’s frontal lobe, allowing surgeons to excise it with millimeter precision. The CT scanner was followed in the late 1970s and 1980s by Magnetic Resonance Imaging (MRI), developed by Sir Peter Mansfield and Raymond Damadian. MRI used powerful magnetic fields and harmless radio waves to render soft tissues, spinal cords, and brain matter with pristine clarity and zero ionizing radiation."
             },
             {
-              "title": "Act 4: The Historical Verdict & Historiographical Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> The twentieth-century diagnostic revolution dismantled the ancient reliance on subjective symptom guesswork. In 1900, a physician examining an ailing patient was restricted to external bedside senses: tapping the chest (percussion), smelling urine, taking a pulse, and asking about pain before subjecting the patient to perilous exploratory surgery. By 2000, medical diagnosis had shifted decisively to non-invasive, objective laboratory and imaging technology. Physicians deployed automated biochemical blood analyzers to measure liver enzymes, dynamic ultrasound to monitor developing fetuses, and continuous digital ECG cardiac telemetry, eliminating dangerous exploratory laparotomies and diagnosing fatal carcinomas before physical symptoms ever manifested.<br><br><span class=\"para-ref\">[4.2]</span> Historiographers debate whether technological diagnostics have created clinical alienation and unsustainable healthcare costs. Medical historians argue that excessive reliance on imaging machines has degraded the traditional doctor-patient consultation, reducing human patients to numerical lab readouts and digital scans—a clinical detachment that Thomas Sydenham campaigned against in 1676. Furthermore, health economists emphasize the staggering financial inequality created by multimillion-pound CT and MRI suites, generating regional disparities between elite metropolitan teaching hospitals and under-resourced district clinics across the National Health Service."
+              "act": 4,
+              "title": "Act 4: The Epidemiological Shift to Chronic & Lifestyle Diseases (c1950–1980s)",
+              "theme_heading": "Act 4: The Epidemiological Shift to Chronic & Lifestyle Diseases (c1950–1980s)",
+              "text": "<span class=\"para-ref\">[4.1]</span> In 1900, infectious diseases—tuberculosis, pneumonia, cholera, and diphtheria—were the undisputed executioners of British citizens, holding average life expectancy to just 46 for men and 50 for women. Over the subsequent six decades, clean municipal water, compulsory childhood immunizations, and the mass deployment of antibiotics brought bacterial epidemics under historic control. Average UK life expectancy surged past 75 by the 1980s.<br><br><span class=\"para-ref\">[4.2]</span> However, living decades longer triggered a profound \"epidemiological transition\": the leading causes of national mortality shifted decisively from external microbial pathogens to non-communicable, chronic lifestyle illnesses. Epidemiologists isolated major culprits: commercial cigarette smoking causing lung cancer and COPD; excessive alcohol causing liver cirrhosis; sedentary diets high in saturated fats and refined sugars driving coronary heart disease, strokes, and type 2 diabetes; and UV sunbeds causing melanoma. Twentieth-century medicine recognized that daily consumer behaviors were degrading internal organs from within."
+            },
+            {
+              "act": 5,
+              "title": "Act 5: State Lifestyle Campaigns & Prevention vs High-Tech Cure (1980s–Present)",
+              "theme_heading": "Act 5: State Lifestyle Campaigns & Prevention vs High-Tech Cure (1980s–Present)",
+              "text": "<span class=\"para-ref\">[5.1]</span> Confronted by the astronomical financial cost of managing chronic lifestyle illnesses with high-tech scanners and intensive hospital care, the British government recognized that prevention was far more effective than clinical treatment. From the 1980s onward, the Department of Health launched nationwide health promotion campaigns: compulsory seatbelts (1983), the Change4Life dietary and exercise initiative, the soft drinks sugar levy (2018), and graphic public education campaigns warning against binge drinking and skin cancer.<br><br><span class=\"para-ref\">[5.2]</span> The ultimate legislative expression of this philosophy was the landmark Health Act 2006, which made all enclosed public places and workplaces smoke-free from 1 July 2007. Health economists proved that statutory regulation and lifestyle prevention deliver far greater aggregate population health improvements at a fraction of the cost of high-tech scanners, demonstrating that modern public health requires combining cutting-edge diagnostic technology with compulsory state intervention."
             }
           ],
           "tasks": [
@@ -33443,7 +33395,7 @@
             {
               "step": 1,
               "date": "1895–1918",
-              "para_ref": "[2.1]",
+              "para_ref": "[1.1–1.2]",
               "heading": "How did X-rays transform surgical trauma diagnosis in WWI?",
               "bullets": [
                 "Photographing wife Bertha’s hand and gold wedding ring",
@@ -33455,7 +33407,7 @@
             {
               "step": 2,
               "date": "1930s–1960s",
-              "para_ref": "[2.2]",
+              "para_ref": "[2.1–2.2]",
               "heading": "Why was fiber-optic endoscopy superior to exploratory surgery?",
               "bullets": [
                 "Spinning red test tubes in fast centrifuges",
@@ -33467,7 +33419,7 @@
             {
               "step": 3,
               "date": "1971–1980s",
-              "para_ref": "[2.3]",
+              "para_ref": "[3.1–3.2]",
               "heading": "Why did CT scans transform internal soft-tissue diagnosis?",
               "bullets": [
                 "Spinning heavy donut scanners around hospital beds",
@@ -33479,7 +33431,7 @@
             {
               "step": 4,
               "date": "c1950–1980s",
-              "para_ref": "[2.4]",
+              "para_ref": "[4.1–4.2]",
               "heading": "What drove the shift from infectious to lifestyle diseases?",
               "bullets": [
                 "Banishing deadly childhood fevers with wonder drugs",
@@ -33491,7 +33443,7 @@
             {
               "step": 5,
               "date": "1980s–Present",
-              "para_ref": "[2.5]",
+              "para_ref": "[5.1–5.2]",
               "heading": "Why do governments favour lifestyle prevention over treatment?",
               "bullets": [
                 "Clicking compulsory car seatbelts across chests",
@@ -33508,7 +33460,7 @@
               {
                 "step": 1,
                 "date": "1895–1918",
-                "para_ref": "[2.1]",
+                "para_ref": "[1.1–1.2]",
                 "title": "Röntgen & Early X-Rays",
                 "actor": "Wilhelm Röntgen & Marie Curie",
                 "tag": "🩻 RADIOLOGICAL X-RAYS",
@@ -33520,7 +33472,7 @@
               {
                 "step": 2,
                 "date": "1930s–1960s",
-                "para_ref": "[2.2]",
+                "para_ref": "[2.1–2.2]",
                 "title": "Blood Labs & Endoscopy",
                 "actor": "Pathologists & Optical Physicists",
                 "tag": "🩸 BIOCHEMICAL & ENDOSCOPIC LABS",
@@ -33532,7 +33484,7 @@
               {
                 "step": 3,
                 "date": "1971–1980s",
-                "para_ref": "[2.3]",
+                "para_ref": "[3.1–3.2]",
                 "title": "Hounsfield’s CT & MRI",
                 "actor": "Godfrey Hounsfield & Sir Peter Mansfield",
                 "tag": "🖥️ 3D DIGITAL CT & MRI",
@@ -33544,7 +33496,7 @@
               {
                 "step": 4,
                 "date": "c1950–1980s",
-                "para_ref": "[2.4]",
+                "para_ref": "[4.1–4.2]",
                 "title": "Epidemiological Shift",
                 "actor": "Epidemiologists & Modern Demographic Researchers",
                 "tag": "📈 THE CHRONIC DISEASE SHIFT",
@@ -33556,7 +33508,7 @@
               {
                 "step": 5,
                 "date": "1980s–Present",
-                "para_ref": "[2.5]",
+                "para_ref": "[5.1–5.2]",
                 "title": "State Lifestyle Campaigns",
                 "actor": "Department of Health & Public Health England",
                 "tag": "🚭 PREVENTIVE LIFESTYLE INITIATIVES",
@@ -33570,56 +33522,6 @@
         },
         {
           "id": "lesson_4_3",
-          "note_scaffold": {
-            "instruction": "As you read the chapter, complete these 3 structured enquiry blocks to trace magic bullets, synthetic drugs, and the foundation of the NHS:",
-            "blocks": [
-              {
-                "num": 1,
-                "badge": "MAGIC BULLETS",
-                "title": "1. Synthetic Chemical Drugs: Salvarsan 606 & Prontosil",
-                "prompt": "Explain how Paul Ehrlich and Gerhard Domagk created synthetic chemicals designed to target specific internal microbes:",
-                "model_notes": [
-                  "Paul Ehrlich coined the term 'magic bullet': a chemical compound that would destroy specific microbes inside the body without harming human tissue.",
-                  "Tested hundreds of arsenic compounds, discovering Salvarsan 606 (1909), the first effective cure for the deadly venereal disease syphilis.",
-                  "Gerhard Domagk discovered Prontosil (1932), a red leather dye sulfonamide that killed streptococcus bacteria, saving his own daughter from amputation."
-                ],
-                "key_terms": [
-                  "Salvarsan 606",
-                  "Prontosil Sulphonamide (1932)"
-                ]
-              },
-              {
-                "num": 2,
-                "badge": "WELFARE STATE",
-                "title": "2. The Beveridge Report (1942) & Aneurin Bevan (1948)",
-                "prompt": "Trace how William Beveridge’s Five Giants inspired Aneurin Bevan to establish the National Health Service in 1948:",
-                "model_notes": [
-                  "1942 Beveridge Report proposed slaying the 'Five Giant Evils' (Want, Disease, Ignorance, Squalor, Idleness) through a comprehensive welfare state.",
-                  "Post-war Labour Health Minister Aneurin Bevan spearheaded the creation of the NHS, launched on 5 July 1948 at Park Hospital, Manchester.",
-                  "Established healthcare free at the point of delivery, funded through central taxation, ensuring medical treatment was based on clinical need, not wealth."
-                ],
-                "key_terms": [
-                  "Beveridge Report (1942)",
-                  "Free at Point of Delivery"
-                ]
-              },
-              {
-                "num": 3,
-                "badge": "POLITICAL STRUGGLE",
-                "title": "3. Overcoming BMA Opposition: 'Stuffing Their Mouths with Gold'",
-                "prompt": "Explain why the British Medical Association opposed the NHS and how Bevan persuaded doctors to cooperate:",
-                "model_notes": [
-                  "The BMA fiercely resisted the NHS; doctors feared becoming salaried state civil servants and losing lucrative private fees.",
-                  "In early 1948, over 90% of doctors voted against joining Bevan's proposed National Health Service.",
-                  "Bevan compromised by allowing hospital consultants to retain private fee-paying patients alongside NHS duties ('stuffed their mouths with gold')."
-                ],
-                "key_terms": [
-                  "BMA Resistance",
-                  "National Health Service (1948)"
-                ]
-              }
-            ]
-          },
           "banner": "/images/banner_medicine_modern.jpg",
           "banner_position": "center 30%",
           "title": "KT4.3: The Search for Magic Bullets, High-Tech Treatments & The Birth of the NHS (1909–1948)",
@@ -33631,56 +33533,66 @@
               "date": "1906–1909",
               "title": "Ehrlich & Salvarsan 606",
               "desc": "German bacteriologist Paul Ehrlich reasoned that if chemical dyes stained specific bacteria selectively, synthetic chemicals could be engineered to destroy microbes without poisoning human host tissue.",
-              "para_ref": "[3.1]"
+              "para_ref": "[1.1–1.2]"
             },
             {
               "date": "1932–1935",
               "title": "Domagk & Prontosil",
               "desc": "In 1932, German pathologist Gerhard Domagk discovered that a bright red industrial leather dye called Prontosil neutralized lethal streptococcus bacterial infections in laboratory mice.",
-              "para_ref": "[3.2]"
+              "para_ref": "[2.1–2.2]"
             },
             {
               "date": "1942",
               "title": "The Beveridge Report",
               "desc": "Amid the collective sacrifice of the Second World War, Sir William Beveridge published his bestselling 1942 report proposing an all-out assault against the \"Five Giant Evils\": Want, Disease, Ignorance, Squalor, and Idleness.",
-              "para_ref": "[3.3]"
+              "para_ref": "[3.1–3.2]"
             },
             {
               "date": "1945–1948",
               "title": "Bevan & Launch of the NHS",
               "desc": "Minister of Health Aneurin Bevan overcame fierce resistance from the British Medical Association by famously \"stuffing their mouths with gold\"—allowing senior hospital consultants to maintain private practice beds.",
-              "para_ref": "[3.4]"
+              "para_ref": "[4.1–4.2]"
             },
             {
               "date": "1950s–Present",
               "title": "High-Tech Care & Costs",
               "desc": "The NHS expanded to deliver expensive high-tech surgical breakthroughs: John Charnley’s pioneering low-friction hip replacements (1962), artificial kidney dialysis, and complex organ transplants.",
-              "para_ref": "[3.5]"
+              "para_ref": "[5.1–5.2]"
             }
           ],
           "hook_text": "At the start of the 20th century, even if doctors could identify a deadly bacterium, they had no medicine to destroy it inside a patient without killing the human host. The discovery of synthetic ‘magic bullets’—Salvarsan 606 and Prontosil—proved that chemical science could target specific microbes. Simultaneously, a political revolution swept Britain: in 1948, Aneurin Bevan overcame fierce medical resistance to create the National Health Service, providing free medical care at the point of delivery for every citizen.",
           "teacher_notes": {
-            "primer": "The overarching pedagogical goal of this lesson is to examine the twin twentieth-century revolutions in therapeutic pharmacology and state healthcare access. Students must analyze Paul Ehrlich and Sahachiro Hata’s discovery of synthetic \"magic bullets\" (Salvarsan 606, 1909) and Gerhard Domagk’s Prontosil (1932), while evaluating how the 1942 Beveridge Report and Aneurin Bevan’s 1948 creation of the National Health Service permanently transformed healthcare from a private luxury into a universal civil right.",
+            "primer": "This enquiry evaluates the revolution in modern treatments and healthcare access in Britain, examining Paul Ehrlich’s search for synthetic \"magic bullets\" resulting in Salvarsan 606 (1909), Gerhard Domagk’s discovery of Prontosil (1932), the wartime solidarity of the Beveridge Report (1942), Aneurin Bevan’s political battle to launch the National Health Service in 1948, and the ongoing fiscal challenges of high-tech medicine.",
             "objectives": [
               {
-                "objective": "Explain Paul Ehrlich’s concept of \"magic bullets\" and how Sahachiro Hata discovered Salvarsan 606.",
-                "primer": "Direct students to paragraphs [1.1]–[2.1]. Emphasize the Diagnostic-Therapeutic Lag and how chemical dyes were engineered into selective arsenic derivatives to destroy Treponema pallidum without killing the patient.",
-                "question": "Why was Salvarsan 606 described as a \"magic bullet\" compared to older chemical antiseptics like carbolic acid or mercury?"
+                "objective": "Explain how Paul Ehrlich developed the concept of the chemical \"magic bullet\" with Salvarsan 606.",
+                "primer": "Direct students to paragraphs [1.1]–[1.2] and Source A (Ehrlich and Hata in laboratory). Emphasize that chemical dyes stained bacteria selectively, leading Ehrlich and Hata to test 606 arsenic compounds to cure syphilis without killing host tissue.",
+                "question": "Why was Salvarsan 606 termed a \"magic bullet\" compared to older chemical antiseptics like carbolic acid or mercury?"
               },
               {
-                "objective": "Analyze Gerhard Domagk’s discovery of Prontosil (1932) and the development of sulfonamide drugs.",
-                "primer": "Direct students to paragraph [2.2]. Explain how red industrial dye derivatives cured puerperal fever (childbed sepsis) and bacterial pneumonia, serving as the second magic bullet.",
-                "question": "How did Domagk’s successful treatment of his own daughter Hildegard demonstrate the practical power of sulfonamides?"
+                "objective": "Analyse how Gerhard Domagk’s Prontosil proved that synthetic sulfonamides could destroy bacteria in living patients.",
+                "primer": "Direct students to paragraphs [2.1]–[2.2]. Explain the testing on streptococcal mice and Domagk injecting his infected daughter, sparking the development of sulfonamide \"sulfa drugs\" for puerperal childbed fever.",
+                "question": "How did the discovery of Prontosil demonstrate that synthetic industrial dyes could yield life-saving antimicrobial medicines?"
               },
               {
-                "objective": "Evaluate the social and political struggle to establish the NHS on 5 July 1948.",
-                "primer": "Direct students to paragraphs [3.1]–[4.2]. Contrast pre-1948 healthcare inequalities (the gap left by the 1911 National Insurance Act) with Beveridge’s \"Five Giants\" and Bevan outmaneuvering the British Medical Association.",
-                "question": "Why did the British Medical Association fiercely oppose the creation of the NHS, and how did Aneurin Bevan overcome their resistance?"
+                "objective": "Examine how the Beveridge Report and WWII collective sacrifice created momentum for universal healthcare.",
+                "primer": "Direct students to paragraphs [3.1]–[3.2]. Contrast the unequal interwar healthcare system (private fees, excluded wives and children) with Beveridge’s Five Giant Evils and public demands for a comprehensive welfare state.",
+                "question": "Why did the shared experience of the Second World War dismantle public tolerance for pre-war medical inequality in Britain?"
+              },
+              {
+                "objective": "Evaluate how Aneurin Bevan overcame doctor resistance to establish the NHS on 5 July 1948.",
+                "primer": "Direct students to paragraphs [4.1]–[4.2] and Source B (1948 NHS information leaflet). Focus on Bevan \"stuffing their mouths with gold\" by permitting private practice, and nationalizing 2,688 hospitals to provide healthcare free at the point of delivery.",
+                "question": "What compromises did Aneurin Bevan make to overcome the British Medical Association’s fierce opposition to the NHS?"
+              },
+              {
+                "objective": "Assess how post-war high-tech treatments and an ageing population created escalating NHS financial strains.",
+                "primer": "Direct students to paragraphs [5.1]–[5.2]. Discuss breakthroughs like John Charnley’s hip replacements (1962), kidney dialysis, and organ transplants, explaining why overwhelming demand forced prescription charges in 1951.",
+                "question": "Why did the clinical success of the NHS in keeping citizens alive longer create an escalating financial crisis for the British government?"
               }
             ],
             "source_context": {
-              "Source A": "German physician Paul Ehrlich and Japanese bacteriologist Sahachiro Hata working in their Frankfurt laboratory in 1909, surrounded by chemical flasks where they systematically tested 606 arsenic derivatives. **Hinge Question:** Study Ehrlich examining a test tube amidst hundreds of chemical reagents: why was systematic, large-scale chemical trial testing required before scientists could discover a compound that killed bacteria without poisoning the patient?",
-              "Source B": "The official 1948 Ministry of Health public information leaflet delivered to every household in Britain, declaring: \"The new National Health Service begins on 5th July... It will provide you with all medical, dental, and nursing care. Everyone—rich or poor, man, woman or child—can use it... There are no charges.\" **Hinge Question:** Study the historic 1948 leaflet: why did the government explicitly emphasize that the NHS was \"not a charity\" but a service paid for by taxpayers, and what impact did this have on working-class families?"
+              "Source A": "Paul Ehrlich and Sahachiro Hata in their Frankfurt Laboratory (1909). Historic photograph showing German bacteriologist Paul Ehrlich and Japanese collaborator Sahachiro Hata surrounded by chemical reagents during their systematic trials of Salvarsan 606. Hinge Question: Why was the systematic laboratory testing of hundreds of synthetic chemical compounds (such as compound 606) a radically new approach to pharmacology compared to 19th-century herbal remedies?",
+              "Source B": "1948 Ministry of Health NHS Information Leaflet. The original public leaflet distributed to every British household in June 1948 by the Ministry of Health, announcing that comprehensive medical, hospital, dental, and optical care would be provided universally free at the point of delivery. Hinge Question: How does the universal entitlement outlined in this 1948 leaflet demonstrate a permanent structural rejection of the 19th-century Victorian Poor Law and voluntary hospital system?"
             }
           },
           "fun_facts": [
@@ -33708,31 +33620,43 @@
           ],
           "narrative_blocks": [
             {
-              "title": "Act 1: Context & Catalyst (Paul Ehrlich & The Quest for \"Magic Bullets\")",
-              "text": "<span class=\"para-ref\">[1.1]</span> By the opening decade of the twentieth century, bacteriology had successfully unmasked the microbial culprits behind tuberculosis, cholera, and diphtheria. Yet physicians found themselves crippled by an agonizing limitation known as the *Diagnostic-Therapeutic Lag*: while a doctor could place a sputum slide under a microscope and diagnose a bacterial infection with scientific precision, they possessed zero medicines to kill the invading pathogens inside the human body. Existing chemical antiseptics like carbolic acid, mercury, and arsenic were blunt, indiscriminate poisons that destroyed human blood cells, liver tissue, and kidneys just as swiftly as they destroyed bacteria.<br><br><span class=\"para-ref\">[1.2]</span> A brilliant German physician named Paul Ehrlich, who had previously worked with Robert Koch staining bacteria with synthetic chemical dyes, proposed an audacious hypothesis: the *Zauberkugel*, or \"magic bullet.\" Ehrlich noticed that certain synthetic aniline dyes attached themselves selectively to specific bacterial cells while leaving surrounding human cells completely unstained. Ehrlich reasoned that if a lethal toxin could be chemically bonded to a selective dye molecule, it would behave like a guided missile—hunting down and annihilating the targeted pathogen inside the bloodstream without inflicting harm upon the patient."
-            },
-            {
-              "title": "Act 2: Escalation & Conflict (Salvarsan 606, Prontosil & Interwar Injustice)",
-              "text": "<span class=\"para-ref\">[2.1]</span> Ehrlich focused his magic bullet research on *Treponema pallidum*, the corkscrew-shaped spirochete responsible for syphilis—a devastating, disfiguring venereal disease that haunted European society, causing paralysis, blindness, and dementia. Ehrlich established an intensive research laboratory in Frankfurt, joined in 1908 by meticulous Japanese bacteriologist Sahachiro Hata. Testing hundreds of synthetic arsenic derivatives on infected rabbits, compound after compound proved either ineffective or lethal. Finally, in 1909, Hata systematically re-examined compound number 606 (arsphenamine), discovering that it completely cured infected animals without killing them. Branded as **Salvarsan 606 (<span class=\"archival-meta-tag\">Source A</span>)**, it became humanity’s first synthetic chemical \"magic bullet,\" proving that synthetic pharmacology could eradicate specific bacterial infections inside a living patient.<br><br><span class=\"para-ref\">[2.2]</span> In 1932, German pathologist Gerhard Domagk achieved the next therapeutic breakthrough with **Prontosil**, a bright red industrial dye. Domagk demonstrated that Prontosil cured mice infected with lethal *Streptococcus*; when his own six-year-old daughter Hildegard contracted fatal blood poisoning from an infected embroidery needle, Domagk took the desperate gamble of injecting her with Prontosil, curing her within days. Researchers at the Pasteur Institute soon realized that the active therapeutic agent inside Prontosil was a simple chemical called *sulphonamide*. Sulphonamides dramatically reduced maternal deaths from puerperal childbed fever and cured bacterial pneumonia, but they caused severe kidney damage and could not kill a broad spectrum of virulent pathogens.",
+              "act": 1,
+              "title": "Act 1: Paul Ehrlich & Salvarsan 606 (1906–1909)",
+              "theme_heading": "Act 1: Paul Ehrlich & Salvarsan 606 (1906–1909)",
               "source": {
                 "id": "source_a_ehrlich_lab",
                 "letter": "A",
-                "title": "Source A: Archival Photograph: Paul Ehrlich in his Frankfurt Laboratory Developing Salvarsan 606 (1909)",
-                "src": "/images/paul_ehrlich_lab.jpg",
-                "source": "/images/paul_ehrlich_lab.jpg",
-                "image": "/images/paul_ehrlich_lab.jpg",
-                "caption": "Paul Ehrlich examining chemical test tubes in his Frankfurt laboratory in 1909, during the systematic research that led to the discovery of Salvarsan 606 with Sahachiro Hata.",
-                "desc": "Archival photograph of German physician Paul Ehrlich at his workbench in Frankfurt researching synthetic magic bullets.",
-                "provenance": "Primary archival photograph taken in 1909 at the Royal Institute for Experimental Therapy, Frankfurt, Germany. Paul Ehrlich Institute / Wellcome Collection Archive (Shelfmark: ICV No 18274).",
-                "citation": "Royal Institute for Experimental Therapy, Frankfurt (Wellcome Collection ICV 18274), 1909.",
-                "source_context": "In 1909 at the Frankfurt Royal Institute for Experimental Therapy, Paul Ehrlich and Sahachiro Hata systematically tested hundreds of synthesized chemical arsenic derivatives until compound 606 (Salvarsan) proved effective against Treponema pallidum.",
-                "context": "In 1909 at the Frankfurt Royal Institute for Experimental Therapy, Paul Ehrlich and Sahachiro Hata systematically tested hundreds of synthesized chemical arsenic derivatives until compound 606 (Salvarsan) proved effective against Treponema pallidum.",
-                "hinge_question": "How did Ehrlich’s concept of a synthetic ‘magic bullet’ represent a radical departure from traditional botanical remedies and universal germ-killing antiseptics like carbolic acid?"
-              }
+                "title": "Source A: Paul Ehrlich and Sahachiro Hata in their Frankfurt Laboratory (1909)",
+                "src": "/images/ehrlich_hata_lab.jpg",
+                "source": "/images/ehrlich_hata_lab.jpg",
+                "image": "/images/ehrlich_hata_lab.jpg",
+                "caption": "Paul Ehrlich and Sahachiro Hata in their Frankfurt laboratory in 1909, where they conducted hundreds of systematic chemical trials resulting in Salvarsan 606.",
+                "desc": "Historic 1909 laboratory photograph of Paul Ehrlich and Sahachiro Hata in Frankfurt.",
+                "provenance": "Primary historical photograph from the Georg-Speyer-Haus Chemotherapy Institute, Frankfurt am Main, 1909. Wellcome Collection, London (Iconographic Coll. L0002871).",
+                "citation": "Georg-Speyer-Haus Chemotherapy Institute / Wellcome Collection (L0002871), Frankfurt, 1909.",
+                "question": "Why was the systematic laboratory testing of hundreds of synthetic chemical compounds (such as compound 606) a radically new approach to pharmacology compared to 19th-century herbal remedies?",
+                "hinge_question": "Why was the systematic laboratory testing of hundreds of synthetic chemical compounds (such as compound 606) a radically new approach to pharmacology compared to 19th-century herbal remedies?",
+                "source_context": "Paul Ehrlich and Japanese bacteriologist Sahachiro Hata in their Frankfurt laboratory in 1909, conducting systematic chemical screenings of synthetic arsenic compounds to target Treponema pallidum, the bacterium causing syphilis.",
+                "context": "Paul Ehrlich and Japanese bacteriologist Sahachiro Hata in their Frankfurt laboratory in 1909, conducting systematic chemical screenings of synthetic arsenic compounds to target Treponema pallidum, the bacterium causing syphilis."
+              },
+              "text": "<span class=\"para-ref\">[1.1]</span> By the opening decade of the twentieth century, bacteriology had successfully unmasked the microbial culprits behind tuberculosis, cholera, and diphtheria. Yet physicians found themselves crippled by an agonizing limitation known as the *Diagnostic-Therapeutic Lag*: while a doctor could diagnose a bacterial infection under a microscope, they possessed zero medicines to kill the pathogens inside the living human body. Existing chemical antiseptics like carbolic acid, mercury, and arsenic were indiscriminate poisons that destroyed human blood cells, liver tissue, and kidneys just as swiftly as they destroyed bacteria.<br><br><span class=\"para-ref\">[1.2]</span> A brilliant German physician named Paul Ehrlich proposed an audacious hypothesis: the *Zauberkugel*, or \"magic bullet.\" Ehrlich noticed that certain synthetic aniline dyes attached themselves selectively to specific bacterial cells while leaving surrounding human cells unstained. Ehrlich reasoned that if a toxin could be chemically bonded to a selective dye molecule, it would behave like a guided missile—destroying targeted microbes without harming the host. Working in Frankfurt with Japanese bacteriologist Sahachiro Hata (<span class=\"archival-meta-tag\">Source A</span>), they systematically re-examined compound 606 (arsphenamine) in 1909, proving it cured lethal human syphilis. Branded **Salvarsan 606**, it became humanity’s first synthetic chemical \"magic bullet.\""
             },
             {
-              "title": "Act 3: Forensic Evidence (Beveridge, Bevan & The Birth of the NHS)",
-              "text": "<span class=\"para-ref\">[3.1]</span> While laboratory science advanced, interwar Britain remained scarred by grotesque healthcare inequality. Prior to 1948, medical treatment was overwhelmingly private, commercial, or dependent on charitable philanthropy. David Lloyd George’s 1911 National Insurance Act provided basic GP coverage for low-paid working men, but completely excluded their wives, children, and elderly relatives. Millions of working-class women suffered untreated prolapses, dental decay, and gynecological trauma in silence, while calling a private doctor or entering a voluntary hospital could plunge an entire family into financial ruin. Voluntary charitable hospitals were perpetually bankrupt, while municipal public-assistance infirmaries were grim, underfunded Victorian workhouses.<br><br><span class=\"para-ref\">[3.2]</span> The collective solidarity of the Second World War shattered this unequal order. In December 1942, civil servant William Beveridge published his famous social report, proclaiming that post-war reconstruction required slaying \"Five Giant Evils\": Want, Disease, Ignorance, Squalor, and Idleness. Following Labour’s landslide election victory in July 1945, Prime Minister Clement Attlee appointed fiery former Welsh coal miner Aneurin Bevan as Minister of Health. Bevan faced bitter, venomous resistance from the British Medical Association (BMA), whose affluent private physicians denounced state-funded healthcare as \"medical dictatorship.\" Bevan outmaneuvered the doctors through astute political compromise: he permitted hospital consultants to continue private fee-paying practice inside state hospitals, famously admitting he had \"stuffed their mouths with gold.\" In June 1948, Bevan prepared the nation by distributing an official household information leaflet (<span class=\"archival-meta-tag\">Source B</span>) to every family in Britain, explaining the revolutionary scope of free, universal healthcare.",
+              "act": 2,
+              "title": "Act 2: Gerhard Domagk & Prontosil (1932–1935)",
+              "theme_heading": "Act 2: Gerhard Domagk & Prontosil (1932–1935)",
+              "text": "<span class=\"para-ref\">[2.1]</span> While Salvarsan 606 was a triumph against syphilis spirochetes, it was ineffective against common bacterial killers like *Streptococcus* and *Staphylococcus*. In 1932, German pathologist Gerhard Domagk achieved the next therapeutic breakthrough with **Prontosil**, a bright red industrial leather dye manufactured by Bayer. Domagk demonstrated that Prontosil cured mice infected with lethal streptococcal blood poisoning without poisoning the animals.<br><br><span class=\"para-ref\">[2.2]</span> In 1935, Domagk’s six-year-old daughter Hildegard contracted severe, life-threatening blood poisoning after an embroidery needle snapped in her arm. Facing impending amputation and death, Domagk took the desperate gamble of injecting her with a heavy dose of Prontosil; she recovered completely within days. Researchers at the Pasteur Institute soon realized that the active therapeutic agent inside Prontosil was a simple chemical called *sulphonamide*. Sulphonamides (\"sulfa drugs\") slashed maternal puerperal fever deaths by 60% and cured bacterial pneumonia, proving that synthetic drugs could conquer widespread internal infections."
+            },
+            {
+              "act": 3,
+              "title": "Act 3: The Beveridge Report & Wartime Reconstruction (1942)",
+              "theme_heading": "Act 3: The Beveridge Report & Wartime Reconstruction (1942)",
+              "text": "<span class=\"para-ref\">[3.1]</span> While laboratory science advanced, interwar Britain remained scarred by grotesque healthcare inequality. Prior to 1948, medical treatment was private, commercial, or dependent on charitable philanthropy. David Lloyd George’s 1911 National Insurance Act provided basic GP coverage for low-paid working men, but completely excluded their wives, children, and elderly relatives. Millions of working-class women suffered untreated prolapses, dental decay, and illnesses in silence, while calling a private doctor or entering a hospital could plunge an entire family into financial ruin.<br><br><span class=\"para-ref\">[3.2]</span> The collective solidarity of the Second World War shattered this unequal order. The Blitz, wartime rationing, and the shared evacuation of children convinced citizens that if the state could organize total war, it could organize peacetime welfare. In December 1942, civil servant William Beveridge published his famous social report, proclaiming that post-war reconstruction required slaying \"Five Giant Evils\": Want, Disease, Ignorance, Squalor, and Idleness. The report became an instant bestseller, recommending a comprehensive welfare state and a universal National Health Service providing free medical treatment for every citizen."
+            },
+            {
+              "act": 4,
+              "title": "Act 4: Aneurin Bevan & The Launch of the NHS (1945–1948)",
+              "theme_heading": "Act 4: Aneurin Bevan & The Launch of the NHS (1945–1948)",
               "source": {
                 "id": "source_b_nhs_leaflet",
                 "letter": "B",
@@ -33744,14 +33668,18 @@
                 "desc": "Official 1948 Ministry of Health public information brochure introducing the National Health Service.",
                 "provenance": "Official government publication issued by His Majesty’s Stationery Office (HMSO) and the Ministry of Health, London, June 1948. The National Archives, Kew (Shelfmark: MH 55/927).",
                 "citation": "Ministry of Health / HMSO, The National Archives (MH 55/927), June 1948.",
+                "question": "How does the universal entitlement outlined in this 1948 leaflet demonstrate a permanent structural rejection of the 19th-century Victorian Poor Law and voluntary hospital system?",
+                "hinge_question": "How does the universal entitlement outlined in this 1948 leaflet demonstrate a permanent structural rejection of the 19th-century Victorian Poor Law and voluntary hospital system?",
                 "source_context": "In June 1948, Minister of Health Aneurin Bevan distributed this official information booklet to every British household, announcing that from 5 July 1948, comprehensive medical, hospital, dental, and optical care would be provided universally free at the point of delivery.",
-                "context": "In June 1948, Minister of Health Aneurin Bevan distributed this official information booklet to every British household, announcing that from 5 July 1948, comprehensive medical, hospital, dental, and optical care would be provided universally free at the point of delivery.",
-                "hinge_question": "How does the universal entitlement outlined in this 1948 leaflet demonstrate a permanent structural rejection of the 19th-century Victorian Poor Law and voluntary hospital system?"
-              }
+                "context": "In June 1948, Minister of Health Aneurin Bevan distributed this official information booklet to every British household, announcing that from 5 July 1948, comprehensive medical, hospital, dental, and optical care would be provided universally free at the point of delivery."
+              },
+              "text": "<span class=\"para-ref\">[4.1]</span> Following Labour’s landslide election victory in July 1945, Prime Minister Clement Attlee appointed fiery former Welsh coal miner Aneurin Bevan as Minister of Health. Bevan faced venomous resistance from the British Medical Association (BMA), whose affluent private physicians denounced state-funded healthcare as \"medical dictatorship.\" Bevan outmaneuvered the doctors through astute political compromise: he permitted hospital consultants to continue private fee-paying practice inside state hospitals, famously admitting he had \"stuffed their mouths with gold.\" In June 1948, Bevan distributed an official household information leaflet (<span class=\"archival-meta-tag\">Source B</span>) to every family in Britain, explaining the scope of universal healthcare.<br><br><span class=\"para-ref\">[4.2]</span> On Monday, 5 July 1948, Bevan arrived at Park Hospital in Manchester to inaugurate the National Health Service. Meeting 13-year-old Sylvia Diggory, the very first NHS patient, Bevan formally enacted a monumental social principle: comprehensive healthcare—family doctors, specialists, surgical operations, dental care, opticians, and emergency ambulances—free at the point of clinical delivery, funded through progressive central taxation. Over 2,688 voluntary and municipal hospitals were nationalized under state control, ending the Victorian terror of medical poverty forever."
             },
             {
-              "title": "Act 4: The Historical Verdict & Historiographical Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> On Monday, 5 July 1948, Aneurin Bevan arrived at Park Hospital in Davyhulme, Manchester, to inaugurate the National Health Service. Meeting 13-year-old Sylvia Diggory, the very first NHS patient, Bevan formally enacted a monumental social principle: comprehensive healthcare—encompassing family doctors, specialists, surgical operations, dental care, opticians, and emergency ambulances—free at the point of clinical delivery, funded not through private insurance premiums, but through progressive central taxation. Within months, millions of impoverished women, children, and elderly citizens received spectacles, dentures, and life-saving surgical treatments for the first time in their lives, establishing healthcare as a fundamental human right.<br><br><span class=\"para-ref\">[4.2]</span> Historiographers debate the economic sustainability and ideological compromises of the NHS. Social historians celebrate the 1948 settlement as Britain’s greatest civilizing accomplishment, demonstrating that state intervention abolished the Victorian terror of medical poverty. Conversely, economic historians argue that Bevan severely underestimated public demand: within nine months of opening, the NHS dispensed 8.5 million pairs of spectacles and millions of dental plates, triggering a colossal financial crisis that forced the government to introduce prescription and dental charges in 1951, prompting Bevan’s dramatic Cabinet resignation. In the modern era, the exponential cost of cutting-edge chemotherapy, organ transplantation, and robotic surgery continues to strain Bevan’s founding vision of universal, tax-funded care."
+              "act": 5,
+              "title": "Act 5: High-Tech Care, Surgical Milestones & Escalating Costs (1950s–Present)",
+              "theme_heading": "Act 5: High-Tech Care, Surgical Milestones & Escalating Costs (1950s–Present)",
+              "text": "<span class=\"para-ref\">[5.1]</span> The foundation of the NHS coincided with an unprecedented explosion in high-tech treatments and complex surgery. In 1962, British orthopedic surgeon Sir John Charnley perfected low-friction total hip replacement at Wrightington Hospital using high-density polyethylene and bone cement, restoring mobility to hundreds of thousands of arthritic patients. The NHS rapidly expanded to deliver kidney dialysis machines, cardiac bypass surgery, intensive neonatal life support, and complex organ transplants.<br><br><span class=\"para-ref\">[5.2]</span> Paradoxically, the clinical success of the NHS in keeping an ageing population alive longer created an escalating financial crisis. When the service opened, pent-up demand resulted in 8.5 million pairs of free spectacles and millions of dentures dispensed within months, wildly exceeding budgetary forecasts. By 1951, the government was forced to introduce prescription and dental charges, prompting Bevan’s Cabinet resignation. In the modern era, the exponential cost of new biological therapies, robotic surgery, and round-the-clock emergency care continues to challenge Bevan’s founding vision of universal, tax-funded healthcare."
             }
           ],
           "tasks": [
@@ -34078,7 +34006,7 @@
             {
               "step": 1,
               "date": "1906–1909",
-              "para_ref": "[3.1]",
+              "para_ref": "[1.1–1.2]",
               "heading": "Why was Salvarsan 606 termed the first \"magic bullet\"?",
               "bullets": [
                 "Testing hundreds of toxic yellow arsenic mixtures",
@@ -34090,7 +34018,7 @@
             {
               "step": 2,
               "date": "1932–1935",
-              "para_ref": "[3.2]",
+              "para_ref": "[2.1–2.2]",
               "heading": "How did Prontosil prove synthetic drugs could kill microbes?",
               "bullets": [
                 "Injecting bright red leather dye into mice",
@@ -34102,7 +34030,7 @@
             {
               "step": 3,
               "date": "1942",
-              "para_ref": "[3.3]",
+              "para_ref": "[3.1–3.2]",
               "heading": "How did WWII unity create momentum for state healthcare?",
               "bullets": [
                 "Listing Five Giants that crush poor workers",
@@ -34114,7 +34042,7 @@
             {
               "step": 4,
               "date": "1945–1948",
-              "para_ref": "[3.4]",
+              "para_ref": "[4.1–4.2]",
               "heading": "How did Bevan compromise to persuade resistant doctors?",
               "bullets": [
                 "Offering private bed perks to stubborn doctors",
@@ -34126,7 +34054,7 @@
             {
               "step": 5,
               "date": "1950s–Present",
-              "para_ref": "[3.5]",
+              "para_ref": "[5.1–5.2]",
               "heading": "Why has modern medical success created financial strain?",
               "bullets": [
                 "Pumping blood through giant artificial kidney filters",
@@ -34143,7 +34071,7 @@
               {
                 "step": 1,
                 "date": "1906–1909",
-                "para_ref": "[3.1]",
+                "para_ref": "[1.1–1.2]",
                 "title": "Ehrlich & Salvarsan 606",
                 "actor": "Paul Ehrlich & Sahachiro Hata",
                 "tag": "🎯 SALVARSAN 606 MAGIC BULLET",
@@ -34155,7 +34083,7 @@
               {
                 "step": 2,
                 "date": "1932–1935",
-                "para_ref": "[3.2]",
+                "para_ref": "[2.1–2.2]",
                 "title": "Domagk & Prontosil",
                 "actor": "Gerhard Domagk & Bayer Laboratories",
                 "tag": "🔴 PRONTOSIL SULPHONAMIDES",
@@ -34167,7 +34095,7 @@
               {
                 "step": 3,
                 "date": "1942",
-                "para_ref": "[3.3]",
+                "para_ref": "[3.1–3.2]",
                 "title": "The Beveridge Report",
                 "actor": "Sir William Beveridge & Wartime Coalition",
                 "tag": "📜 THE BEVERIDGE REPORT",
@@ -34179,7 +34107,7 @@
               {
                 "step": 4,
                 "date": "1945–1948",
-                "para_ref": "[3.4]",
+                "para_ref": "[4.1–4.2]",
                 "title": "Bevan & Launch of the NHS",
                 "actor": "Aneurin Bevan (Minister of Health)",
                 "tag": "🏥 THE 1948 NHS REVOLUTION",
@@ -34191,7 +34119,7 @@
               {
                 "step": 5,
                 "date": "1950s–Present",
-                "para_ref": "[3.5]",
+                "para_ref": "[5.1–5.2]",
                 "title": "High-Tech Care & Costs",
                 "actor": "John Charnley & Modern NHS Clinicians",
                 "tag": "🦿 HIGH-TECH COST CRISIS",
@@ -34205,56 +34133,6 @@
         },
         {
           "id": "lesson_4_4",
-          "note_scaffold": {
-            "instruction": "As you read the chapter, complete these 3 structured enquiry blocks to examine the discovery, purification, and mass production of penicillin:",
-            "blocks": [
-              {
-                "num": 1,
-                "badge": "CHANCE DISCOVERY",
-                "title": "1. Alexander Fleming & Penicillium Notatum (1928)",
-                "prompt": "Explain how chance, observation, and lab conditions led Alexander Fleming to discover penicillin mould in 1928:",
-                "model_notes": [
-                  "Returned from vacation to find an open Petri dish of staphylococci contaminated by wind-blown Penicillium notatum mould spores.",
-                  "Observed a clear bacterial-free halo around the mould where the bacteria had dissolved and been destroyed.",
-                  "Published his findings in 1929; however, Fleming was a bacteriologist, lacked chemical expertise to purify the unstable mould, and abandoned it."
-                ],
-                "key_terms": [
-                  "Alexander Fleming",
-                  "Penicillium Notatum (1928)"
-                ]
-              },
-              {
-                "num": 2,
-                "badge": "PURIFICATION",
-                "title": "2. Florey, Chain & The Oxford University Laboratory (1938–1941)",
-                "prompt": "Explain how Howard Florey and Ernst Chain purified penicillin and proved its effectiveness on mice and Albert Alexander:",
-                "model_notes": [
-                  "Assembled an Oxford biochemistry team; grew mould in milk bottles and bedpans; used freeze-drying to isolate pure penicillin powder.",
-                  "Tested on eight mice infected with deadly streptococcus (1940): the four treated with penicillin survived; the untreated four died.",
-                  "Treated policeman Albert Alexander (1941); his fatal facial infection dramatically cleared until the tiny drug supply ran out and he died."
-                ],
-                "key_terms": [
-                  "Florey and Chain",
-                  "Penicillin Purification"
-                ]
-              },
-              {
-                "num": 3,
-                "badge": "WAR PRODUCTION",
-                "title": "3. US Industrial Mass Production (1941–1944) & Modern Resistance",
-                "prompt": "Explain how US industrial funding enabled D-Day mass supply, and evaluate the modern danger of antibiotic resistance:",
-                "model_notes": [
-                  "British factories were bombed in WWII; Florey travelled to the USA (1941) to persuade pharmaceutical companies and the War Production Board.",
-                  "US factories used deep fermentation vats with corn-steep liquor, producing 2.3 million doses in time for the D-Day landings in June 1944.",
-                  "Modern crisis: widespread over-prescription and livestock feed misuse has caused bacteria to mutate into drug-resistant 'superbugs' (MRSA)."
-                ],
-                "key_terms": [
-                  "Deep Fermentation Vats",
-                  "D-Day Antibiotic Supply"
-                ]
-              }
-            ]
-          },
           "banner": "/images/banner_fleming_lab.jpg",
           "banner_position": "center 30%",
           "title": "KT4.4: Case Study 1: The Antibiotic Revolution: Fleming, Florey & Chain and Penicillin (1928–1945)",
@@ -34266,56 +34144,66 @@
               "date": "1928–1929",
               "title": "Fleming’s Discovery",
               "desc": "Returning from holiday in September 1928, Scottish bacteriologist Alexander Fleming noticed a contaminated petri dish of staphylococcus bacteria where Penicillium notatum mould spores had grown.",
-              "para_ref": "[4.1]"
+              "para_ref": "[1.1–1.2]"
             },
             {
               "date": "1938–1940",
               "title": "Florey & Chain at Oxford",
               "desc": "At Oxford University, Australian pharmacologist Howard Florey and German-Jewish biochemist Ernst Chain assembled a multidisciplinary research team, reading Fleming’s 1928 paper.",
-              "para_ref": "[4.2]"
+              "para_ref": "[2.1–2.2]"
             },
             {
               "date": "1940–1941",
               "title": "Mice Trials & Albert Alexander",
               "desc": "In May 1940, Florey injected eight mice with lethal streptococci, and the four mice given penicillin survived completely; in February 1941 they treated PC Albert Alexander, dying from an infected rose-thorn scratch.",
-              "para_ref": "[4.3]"
+              "para_ref": "[3.1–3.2]"
             },
             {
               "date": "1941–1944",
               "title": "Peoria & US Mass Production",
               "desc": "With British factories committed to munitions during the Blitz, Florey and Heatley travelled to the USA in July 1941, collaborating with the USDA research laboratory in Peoria, Illinois.",
-              "para_ref": "[4.4]"
+              "para_ref": "[4.1–4.2]"
             },
             {
               "date": "1944–Present",
               "title": "D-Day & Superbugs",
               "desc": "Mass-produced penicillin slashed Allied amputations and fatal wound sepsis during the Normandy D-Day invasion, winning Fleming, Florey, and Chain the 1945 Nobel Prize in Medicine.",
-              "para_ref": "[4.5]"
+              "para_ref": "[5.1–5.2]"
             }
           ],
           "hook_text": "In 1928, a stray fungal spore drifted through an open London window and landed on an abandoned bacterial petri dish, producing a clear halo where deadly staphylococci had dissolved. It took another decade, an interdisciplinary Oxford scientific team, makeshift dairy churns, and American industrial factories to turn Alexander Fleming’s accidental observation into penicillin—the wonder drug that saved millions of Allied soldiers and launched the Golden Age of Antibiotics.",
           "teacher_notes": {
-            "primer": "The overarching pedagogical goal of this lesson is to examine the multi-stage historical development of penicillin as humanity’s first true antibiotic. Students must analyze the distinct contributions of Alexander Fleming’s 1928 accidental discovery versus the Oxford research team (Howard Florey, Ernst Chain, Norman Heatley) who purified the drug (1938–1941), and the decisive role of World War II military funding and American pharmaceutical mass production (1941–1944) in saving Allied lives.",
+            "primer": "This enquiry evaluates the development of penicillin as humanity’s first true antibiotic wonder drug, analyzing Alexander Fleming’s accidental observation in 1928, Howard Florey, Ernst Chain, and Norman Heatley’s laboratory purification at Oxford (1938–1940), the high-stakes animal and clinical trials of Albert Alexander, the industrial scale-up via American deep-tank fermentation for D-Day, and the modern emergence of antibiotic resistance.",
             "objectives": [
               {
-                "objective": "Analyze Alexander Fleming’s 1928 discovery of Penicillium notatum and explain why his research stalled.",
-                "primer": "Direct students to paragraphs [1.1]–[2.1]. Emphasize Fleming’s WWI battlefield experience with wound sepsis, the contaminated Staphylococcus petri dish, and his inability as a bacteriologist to isolate or chemically stabilize the unstable drug.",
-                "question": "Why did Fleming’s 1929 published paper on penicillin fail to trigger an immediate medical revolution in British hospitals?"
+                "objective": "Explain how Alexander Fleming accidentally discovered penicillin in 1928 and why he was unable to develop it into a clinical drug.",
+                "primer": "Direct students to paragraphs [1.1]–[1.2] and Source A (Fleming’s culture plate). Emphasize that while he spotted the staphylococcal lysis halo, he lacked biochemical apparatus to purify the fragile, unstable substance.",
+                "question": "Why was Alexander Fleming unable to translate his laboratory observation of penicillin mould into an injectable medicine for human patients?"
               },
               {
-                "objective": "Examine how the Oxford team (Florey, Chain, and Heatley) purified penicillin and conducted clinical trials.",
-                "primer": "Direct students to paragraphs [2.2]–[3.2]. Focus on Chain’s biochemical freeze-drying, Heatley’s improvised bedpan apparatus, the successful mouse trial (1940), and the tragic clinical trial of Constable Albert Alexander (1941).",
-                "question": "How did the clinical trial of police constable Albert Alexander both prove penicillin’s miraculous curing power and reveal its desperate production bottleneck?"
+                "objective": "Analyse how Florey, Chain, and Heatley solved the challenge of purifying and stabilizing penicillin at Oxford.",
+                "primer": "Direct students to paragraphs [2.1]–[2.2]. Focus on team science: Chain’s biochemistry, Florey’s leadership, and Norman Heatley improvising with hospital bedpans, dairy milk churns, and freeze-drying ether extraction.",
+                "question": "How did the Oxford team’s multidisciplinary approach overcome the chemical instability that had defeated Fleming a decade earlier?"
               },
               {
-                "objective": "Evaluate the role of World War II and US mass production in transforming penicillin into a globally available drug.",
-                "primer": "Direct students to paragraphs [3.2]–[4.2]. Detail Florey and Heatley’s mission to Peoria, Illinois, corn steep liquor, deep-tank fermentation, and the distribution of 2.3 million doses for D-Day (1944).",
-                "question": "Why was the collaboration of the US government and American pharmaceutical corporations decisive in mass-producing penicillin in time for D-Day?"
+                "objective": "Evaluate the clinical significance of the mouse trials and the tragic trial of PC Albert Alexander.",
+                "primer": "Direct students to paragraphs [3.1]–[3.2] and Source B (Penicillin culture racks). Contrast the total survival of treated mice with Alexander’s miraculous recovery followed by fatal relapse when the supply was exhausted.",
+                "question": "Why was the clinical trial on PC Albert Alexander simultaneously a miraculous success and a heartbreaking tragedy?"
+              },
+              {
+                "objective": "Explain how wartime necessity and American industrial deep-tank fermentation enabled mass production.",
+                "primer": "Direct students to paragraphs [4.1]–[4.2]. Focus on Florey’s mission to the US in 1941, the USDA laboratory in Peoria, corn-steep liquor, cantaloupe melon mould, and 10,000-gallon aerated fermentation tanks for D-Day.",
+                "question": "How did American industrial manufacturing and agricultural byproducts transform penicillin from scarce drops into millions of doses for D-Day?"
+              },
+              {
+                "objective": "Assess Alexander Fleming’s prophetic warning regarding antimicrobial resistance and modern superbugs.",
+                "primer": "Direct students to paragraphs [5.1]–[5.2]. Discuss Fleming’s 1945 Nobel lecture warning against under-dosing and over-prescribing, connecting it to the rise of MRSA and the danger of a post-antibiotic era.",
+                "question": "Why did Alexander Fleming warn that the misuse and overuse of penicillin would eventually breed deadly drug-resistant superbugs?"
               }
             ],
             "source_context": {
-              "Source A": "Alexander Fleming’s original 1928 Penicillium notatum culture plate at St Mary’s Hospital, London, showing the fungal colony and the clear circular zone of bacterial inhibition. **Hinge Question:** Look at the clear halo surrounding the mold colony where staphylococcus bacteria failed to grow: why was Fleming’s acute observation of this \"negative space\" the catalyst for the antibiotic revolution?",
-              "Source B": "Wartime photograph of penicillin mass production showing hundreds of glass culture bottles stacked on incubator shelves in 1944, before deep-tank fermentation was perfected. **Hinge Question:** Study the labor-intensive racks of culture bottles: why did the transition from shallow glass bottles to American 10,000-gallon deep-tank vats represent a decisive industrial breakthrough for Allied military medicine?"
+              "Source A": "Alexander Fleming’s Original 1928 Penicillin Culture Plate. Historic laboratory photograph showing Alexander Fleming examining culture plates at St Mary’s Hospital, London, where he discovered Penicillium notatum in September 1928. Hinge Question: Why was Fleming unable to translate his brilliant 1928 laboratory observation of penicillin’s antibacterial halo into an injectable medicine for human clinical patients?",
+              "Source B": "Industrial Penicillin Fermentation and Culture Racks (1944). Wartime industrial photograph showing rows of penicillin culture flasks in an incubation facility during Allied preparations for D-Day. Hinge Question: Why was the industrial transition from surface culture bottles to 10,000-gallon aerated deep-tank fermentation vats the decisive factor in saving thousands of Allied soldiers in 1944?"
             }
           },
           "fun_facts": [
@@ -34343,31 +34231,37 @@
           ],
           "narrative_blocks": [
             {
-              "title": "Act 1: Context & Catalyst (Alexander Fleming & The Contaminated Petri Dish)",
-              "text": "<span class=\"para-ref\">[1.1]</span> During the First World War, Scottish bacteriologist Alexander Fleming served as a medical officer in military field hospitals in Boulogne, France. Amidst the carnage, Fleming witnessed thousands of young soldiers perish from wound sepsis, gas gangrene, and blood poisoning. Fleming recognized that standard chemical antiseptics like carbolic acid did more harm than good inside deep, jagged shrapnel lacerations, because chemical toxins destroyed the patient’s protective white blood cells faster than they eliminated anaerobic soil bacteria. Fleming dedicated his post-war career at St Mary’s Hospital, London, to discovering an antibacterial agent capable of killing virulent pathogens without harming human tissue.<br><br><span class=\"para-ref\">[1.2]</span> In late August 1928, Fleming was investigating *Staphylococcus* bacteria in his cluttered second-floor laboratory in Paddington. Before departing on a family holiday to Suffolk, Fleming stacked his agar culture dishes on a bench in the corner of the room. While he was away, a series of extraordinary environmental flukes occurred: fungal spores from a mycologist’s laboratory on the floor below drifted up through the drafty stairwell, landing on an uncovered culture plate. An unseasonable cold snap allowed the fungal spores to germinate, followed by warm weather that encouraged the surrounding *Staphylococcus* bacteria to multiply."
-            },
-            {
-              "title": "Act 2: Escalation & Conflict (The Oxford Team & The Freeze-Drying Struggle)",
-              "text": "<span class=\"para-ref\">[2.1]</span> Returning to his workbench on Monday, 3 September 1928, Fleming began sorting through his culture plates before plunging them into a bath of lysol disinfectant. Examining one contaminated dish (<span class=\"archival-meta-tag\">Source A</span>), he uttered a celebrated understated phrase: \"That’s funny.\" Around a ring of fluffy blue-green mold, a clear translucent halo had formed where colonies of golden *Staphylococcus* bacteria had been completely dissolved and killed. Fleming identified the mold as *Penicillium notatum*, naming its antibacterial secretion **Penicillin**. In June 1929, Fleming published his findings in the *British Journal of Experimental Pathology*; however, because he was a bacteriologist rather than a biochemist, he lacked the chemical apparatus to isolate the pure, unstable substance from the mold broth, and medical journals largely dismissed his paper as a laboratory curiosity.<br><br><span class=\"para-ref\">[2.2]</span> A decade later, in 1938, an interdisciplinary scientific research team at Oxford University reopened Fleming’s forgotten paper. Led by Australian professor of pathology Howard Florey, brilliant German-Jewish refugee biochemist Ernst Chain, and ingenious laboratory engineer Norman Heatley, the Oxford team set out to isolate pure penicillin. Operating in the cash-starved Sir William Dunn School of Pathology, the team faced immense technical roadblocks: penicillin broke down rapidly when exposed to air, light, or mild temperature changes. Heatley improvised brilliant biochemical apparatus using hospital bedpans, porcelain dairy churns, milk bottles, and bathtubs, utilizing ether solvent extraction and a vacuum freeze-drying apparatus to yield tiny pinches of precious brown penicillin powder.",
+              "act": 1,
+              "title": "Act 1: Alexander Fleming’s Accidental Discovery (1928–1929)",
+              "theme_heading": "Act 1: Alexander Fleming’s Accidental Discovery (1928–1929)",
               "source": {
                 "id": "source_a_fleming_dish",
                 "letter": "A",
-                "title": "Source A: Archival Photograph: Sir Alexander Fleming in his Laboratory at St Mary’s Hospital (c.1943)",
+                "title": "Source A: Alexander Fleming’s Original 1928 Penicillin Culture Plate",
                 "src": "/images/fleming_petri_dish.jpg",
                 "source": "/images/fleming_petri_dish.jpg",
                 "image": "/images/fleming_petri_dish.jpg",
-                "caption": "Sir Alexander Fleming seated at his workbench in the Inoculation Department at St Mary’s Hospital, London, examining culture plates of Penicillium notatum.",
-                "desc": "Historic laboratory photograph of Sir Alexander Fleming examining bacterial culture plates at his workbench in St Mary’s Hospital.",
+                "caption": "Alexander Fleming examining culture plates in his laboratory at St Mary’s Hospital, London, where he discovered Penicillium notatum in September 1928.",
+                "desc": "Historic laboratory photograph of Alexander Fleming examining culture plates at St Mary’s Hospital.",
                 "provenance": "Primary photographic record captured in 1928 at the Inoculation Department, St Mary’s Hospital, Paddington, London. Imperial War Museum Collection / Wellcome Collection (L0005721).",
                 "citation": "Alexander Fleming, Inoculation Department, St Mary’s Hospital (Imperial War Museum / Wellcome Collection L0005721), September 1928.",
+                "question": "Why was Fleming unable to translate his brilliant 1928 laboratory observation of penicillin’s antibacterial halo into an injectable medicine for human clinical patients?",
+                "hinge_question": "Why was Fleming unable to translate his brilliant 1928 laboratory observation of penicillin’s antibacterial halo into an injectable medicine for human clinical patients?",
                 "source_context": "In September 1928 at St Mary’s Hospital, London, Alexander Fleming returned from holiday to discover that a stray Penicillium notatum spore had contaminated a staphylococci culture plate, producing a bacteria-free lysis halo around the mold.",
-                "context": "In September 1928 at St Mary’s Hospital, London, Alexander Fleming returned from holiday to discover that a stray Penicillium notatum spore had contaminated a staphylococci culture plate, producing a bacteria-free lysis halo around the mold.",
-                "hinge_question": "Why was Fleming unable to translate his brilliant 1928 laboratory observation of penicillin’s antibacterial halo into an injectable medicine for human clinical patients?"
-              }
+                "context": "In September 1928 at St Mary’s Hospital, London, Alexander Fleming returned from holiday to discover that a stray Penicillium notatum spore had contaminated a staphylococci culture plate, producing a bacteria-free lysis halo around the mold."
+              },
+              "text": "<span class=\"para-ref\">[1.1]</span> During the First World War, Scottish bacteriologist Alexander Fleming witnessed thousands of soldiers die from wound sepsis in French military hospitals. Fleming recognized that standard chemical antiseptics like carbolic acid did more harm than good in deep lacerations, because chemicals destroyed the patient’s protective white blood cells faster than they eliminated bacteria. Fleming dedicated his post-war career at St Mary’s Hospital, London, to discovering an antibacterial agent that attacked microbes without poisoning human tissue.<br><br><span class=\"para-ref\">[1.2]</span> In late August 1928, Fleming left culture plates of *Staphylococcus* bacteria stacked in his Paddington laboratory before departing on holiday. Fungal spores from a mycologist’s laboratory below drifted through the open window, landing on an uncovered dish. Returning on 3 September 1928, Fleming examined the plate (<span class=\"archival-meta-tag\">Source A</span>) and noticed a clear, bacteria-free halo around a blob of blue-green mould where colonies of golden bacteria had dissolved. Fleming identified the mould as *Penicillium notatum*, naming its secretion **Penicillin**. He published his findings in 1929; however, lacking biochemical expertise to purify the unstable juice, he abandoned clinical trials."
             },
             {
-              "title": "Act 3: Forensic Evidence (The Albert Alexander Trial & The Peoria Mission)",
-              "text": "<span class=\"para-ref\">[3.1]</span> In May 1940, the Oxford team conducted a definitive animal experiment: eight mice were injected with lethal doses of virulent *Streptococcus*; four were administered penicillin, while four were left untreated. By the following morning, the four untreated mice were dead, while the four penicillin-treated mice were scurrying healthily around their cage. In February 1941, the team undertook their first clinical trial on Albert Alexander, a 43-year-old Oxford police constable who had scratched his face on a rose thorn; the wound had become infected with *Staphylococcus* and *Streptococcus*, causing massive facial abscesses, severe sepsis, and the surgical loss of one eye.<br><br><span class=\"para-ref\">[3.2]</span> Florey and Chain administered pure penicillin intravenously. Within twenty-four hours, Alexander’s fever subsided and his horrific infection began clearing; however, the team possessed only minute quantities of the drug. They cultivated penicillin using specialized laboratory glassware racks (<span class=\"archival-meta-tag\">Source B</span>) and recycled the drug by painstakingly collecting and recrystallizing Alexander’s urine, but the supply ran out after five days. Deprived of the antibiotic, Alexander suffered a rapid relapse and died in March 1941. The tragic trial provided indisputable proof: penicillin was a non-toxic miracle cure, but it required industrial-scale mass production. With British pharmaceutical factories overwhelmed by wartime munitions and German blitz bombing, Florey and Heatley flew to the neutral United States in July 1941 to seek corporate and governmental backing.",
+              "act": 2,
+              "title": "Act 2: Florey, Chain & Norman Heatley at Oxford (1938–1940)",
+              "theme_heading": "Act 2: Florey, Chain & Norman Heatley at Oxford (1938–1940)",
+              "text": "<span class=\"para-ref\">[2.1]</span> A decade later, in 1938, an interdisciplinary scientific research team at Oxford University reopened Fleming’s forgotten paper. Led by Australian professor of pathology Howard Florey and German-Jewish refugee biochemist Ernst Chain, the Oxford team set out to isolate pure penicillin. Florey brought clinical leadership, while Chain applied biochemical rigor to analyze the chemical properties of the elusive mold.<br><br><span class=\"para-ref\">[2.2]</span> Operating in a cash-starved laboratory during the early months of World War II, the team faced immense obstacles: penicillin broke down rapidly when exposed to air, light, or mild temperature shifts. Laboratory engineer Norman Heatley improvised brilliant apparatus using hospital bedpans, porcelain dairy churns, milk bottles, and bathtubs. By using ether solvents and vacuum freeze-drying, Heatley yielded tiny, precious pinches of stable, concentrated brown penicillin powder."
+            },
+            {
+              "act": 3,
+              "title": "Act 3: Mice Trials & The Tragic Case of Albert Alexander (1940–1941)",
+              "theme_heading": "Act 3: Mice Trials & The Tragic Case of Albert Alexander (1940–1941)",
               "source": {
                 "id": "source_b_penicillin_production",
                 "letter": "B",
@@ -34379,14 +34273,24 @@
                 "desc": "Wartime industrial photograph showing rows of penicillin culture flasks in an incubation facility.",
                 "provenance": "Primary industrial photograph captured in 1944 at a specialized wartime penicillin production facility. National Archives / Wellcome Historical Medical Collection (Shelfmark: M0011832).",
                 "citation": "Wartime Penicillin Production Facility, National Archives / Wellcome Collection (M0011832), 1944.",
+                "question": "Why was the industrial transition from surface culture bottles to 10,000-gallon aerated deep-tank fermentation vats the decisive factor in saving thousands of Allied soldiers in 1944?",
+                "hinge_question": "Why was the industrial transition from surface culture bottles to 10,000-gallon aerated deep-tank fermentation vats the decisive factor in saving thousands of Allied soldiers in 1944?",
                 "source_context": "In 1943–1944, during Allied preparations for D-Day, Oxford researchers Howard Florey and Ernst Chain collaborated with the US Department of Agriculture in Peoria, Illinois, developing deep-tank corn-steep liquor fermentation to mass-produce pure penicillin.",
-                "context": "In 1943–1944, during Allied preparations for D-Day, Oxford researchers Howard Florey and Ernst Chain collaborated with the US Department of Agriculture in Peoria, Illinois, developing deep-tank corn-steep liquor fermentation to mass-produce pure penicillin.",
-                "hinge_question": "Why was the industrial transition from surface culture bottles to 10,000-gallon aerated deep-tank fermentation vats the decisive factor in saving thousands of Allied soldiers in 1944?"
-              }
+                "context": "In 1943–1944, during Allied preparations for D-Day, Oxford researchers Howard Florey and Ernst Chain collaborated with the US Department of Agriculture in Peoria, Illinois, developing deep-tank corn-steep liquor fermentation to mass-produce pure penicillin."
+              },
+              "text": "<span class=\"para-ref\">[3.1]</span> In May 1940, the Oxford team conducted a definitive animal trial: eight mice were injected with lethal streptococci; four were administered penicillin, while four were left untreated. By morning, the four untreated mice were dead, while the four penicillin-treated mice scurried healthily in their cage. In February 1941, the team undertook their first clinical trial on Albert Alexander, a 43-year-old Oxford policeman dying from severe blood poisoning and facial abscesses following a scratch from a rose thorn.<br><br><span class=\"para-ref\">[3.2]</span> Florey and Chain administered penicillin intravenously. Within twenty-four hours, Alexander’s fever dropped and his horrific infection cleared miraculously. However, the team possessed only minute supplies (<span class=\"archival-meta-tag\">Source B</span>). Despite recycling penicillin by collecting and extracting Alexander’s urine, the drug ran out after five days. Alexander tragically relapsed and died in March 1941. The trial proved penicillin was a non-toxic wonder drug, but demonstrated that it required industrial-scale mass production that British factories under Blitz bombardment could not provide."
             },
             {
-              "title": "Act 4: The Historical Verdict & Historiographical Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> In Peoria, Illinois, at the US Department of Agriculture Northern Regional Research Laboratory, American scientists engineered revolutionary industrial breakthroughs. They discovered that culturing the mold in *corn steep liquor* (a byproduct of cornstarch processing) boosted penicillin yields twenty-fold, while a rotting cantaloupe melon from a local grocery market provided *Penicillium chrysogenum*, producing 200 times more penicillin. Backed by the US War Production Board and pharmaceutical titans (Pfizer, Merck, Squibb), American factories constructed 10,000-gallon deep-tank fermentation vats pumped with sterile oxygen. By D-Day on 6 June 1944, Allied medical units possessed 2.3 million doses of penicillin, treating every wounded casualty on the Normandy beaches and reducing amputations and deaths from bacterial sepsis to under 1%.<br><br><span class=\"para-ref\">[4.2]</span> Historiographers debate the relative roles of Fleming’s individual serendipity versus Florey and Chain’s team science and military industrialization. In 1945, Fleming, Florey, and Chain were jointly awarded the Nobel Prize; yet contemporary British newspapers mythologized Fleming as a lone Scottish genius, largely ignoring the biochemical heroism of Florey, Chain, and Heatley. In the twenty-first century, the antibiotic revolution faces its gravest existential crisis: Fleming presciently warned in his 1945 Nobel lecture that underdosing would breed bacterial resistance. Decades of over-prescribing in human medicine and livestock farming have spawned drug-resistant \"superbugs\" like MRSA (Methicillin-Resistant *Staphylococcus Aureus*), confronting modern medicine with the terrifying prospect of a post-antibiotic era."
+              "act": 4,
+              "title": "Act 4: Peoria & US Industrial Deep-Tank Fermentation (1941–1944)",
+              "theme_heading": "Act 4: Peoria & US Industrial Deep-Tank Fermentation (1941–1944)",
+              "text": "<span class=\"para-ref\">[4.1]</span> In July 1941, Florey and Heatley flew to the neutral United States to secure corporate backing. Collaborating with the US Department of Agriculture Northern Regional Research Laboratory in Peoria, Illinois, scientists achieved two crucial breakthroughs: culturing the mould in *corn steep liquor* (a cornstarch byproduct) boosted yields twenty-fold, while a mouldy cantaloupe melon from a Peoria grocery market provided *Penicillium chrysogenum*, producing 200 times more penicillin.<br><br><span class=\"para-ref\">[4.2]</span> Backed by the US War Production Board, pharmaceutical giants (Pfizer, Merck, Squibb) constructed massive 10,000-gallon deep-tank fermentation vats pumped with sterile oxygen. By D-Day on 6 June 1944, Allied medical units possessed 2.3 million doses of penicillin, treating every wounded casualty on the Normandy beaches and reducing amputations and fatal wound sepsis to unprecedented historic lows."
+            },
+            {
+              "act": 5,
+              "title": "Act 5: D-Day Allied Victory & The Menace of Superbugs (1944–Present)",
+              "theme_heading": "Act 5: D-Day Allied Victory & The Menace of Superbugs (1944–Present)",
+              "text": "<span class=\"para-ref\">[5.1]</span> Mass-produced penicillin revolutionized military and civilian medicine, transforming once-fatal conditions—pneumonia, scarlet fever, meningitis, and syphilis—into routine, curable infections. In 1945, Alexander Fleming, Howard Florey, and Ernst Chain were jointly awarded the Nobel Prize in Physiology or Medicine. Fleming was celebrated by the world press as a lone Scottish hero, though historical analysis proves penicillin was the triumphant product of multidisciplinary teamwork and state-backed industrial scale.<br><br><span class=\"para-ref\">[5.2]</span> However, Fleming delivered a prophetic warning in his 1945 Nobel address: under-dosing and over-prescribing would inevitably train bacteria to survive penicillin. Over the subsequent decades, excessive antibiotic use in human medicine and livestock agriculture spurred the evolution of multi-drug resistant \"superbugs\" like MRSA (Methicillin-Resistant *Staphylococcus Aureus*). In the twenty-first century, medicine faces the alarming prospect of a post-antibiotic era, where ordinary infections could once again prove incurable."
             }
           ],
           "tasks": [
@@ -34713,7 +34617,7 @@
             {
               "step": 1,
               "date": "1928–1929",
-              "para_ref": "[4.1]",
+              "para_ref": "[1.1–1.2]",
               "heading": "Why could Fleming not turn mould into a clinical medicine?",
               "bullets": [
                 "Finding fluffy mould on dirty glass dish",
@@ -34725,7 +34629,7 @@
             {
               "step": 2,
               "date": "1938–1940",
-              "para_ref": "[4.2]",
+              "para_ref": "[2.1–2.2]",
               "heading": "How did Norman Heatley solve the purification challenge?",
               "bullets": [
                 "Brewing fungus inside hospital bedpans and milk churns",
@@ -34737,7 +34641,7 @@
             {
               "step": 3,
               "date": "1940–1941",
-              "para_ref": "[4.3]",
+              "para_ref": "[3.1–3.2]",
               "heading": "Why was Alexander’s trial both a success and a tragedy?",
               "bullets": [
                 "Infecting eight mice and keeping treated four alive",
@@ -34749,7 +34653,7 @@
             {
               "step": 4,
               "date": "1941–1944",
-              "para_ref": "[4.4]",
+              "para_ref": "[4.1–4.2]",
               "heading": "How did US industrial fermentation enable mass production?",
               "bullets": [
                 "Feeding corn beer wash to rotting melon mould",
@@ -34761,7 +34665,7 @@
             {
               "step": 5,
               "date": "1944–Present",
-              "para_ref": "[4.5]",
+              "para_ref": "[5.1–5.2]",
               "heading": "Why did Fleming warn that antibiotic overuse causes resistance?",
               "bullets": [
                 "Spraying white powder directly into torn soldiers' limbs",
@@ -34778,7 +34682,7 @@
               {
                 "step": 1,
                 "date": "1928–1929",
-                "para_ref": "[4.1]",
+                "para_ref": "[1.1–1.2]",
                 "title": "Fleming’s Discovery",
                 "actor": "Alexander Fleming (St Mary's Hospital, London)",
                 "tag": "🧫 ACCIDENTAL PETRI DISH DISCOVERY",
@@ -34790,7 +34694,7 @@
               {
                 "step": 2,
                 "date": "1938–1940",
-                "para_ref": "[4.2]",
+                "para_ref": "[2.1–2.2]",
                 "title": "Florey & Chain at Oxford",
                 "actor": "Howard Florey, Ernst Chain & Norman Heatley",
                 "tag": "🧪 OXFORD LABORATORY PURIFICATION",
@@ -34802,7 +34706,7 @@
               {
                 "step": 3,
                 "date": "1940–1941",
-                "para_ref": "[4.3]",
+                "para_ref": "[3.1–3.2]",
                 "title": "Mice Trials & Albert Alexander",
                 "actor": "Oxford Team & PC Albert Alexander",
                 "tag": "🐁 ANIMAL & CLINICAL TRIALS",
@@ -34814,7 +34718,7 @@
               {
                 "step": 4,
                 "date": "1941–1944",
-                "para_ref": "[4.4]",
+                "para_ref": "[4.1–4.2]",
                 "title": "Peoria & US Mass Production",
                 "actor": "US Department of Agriculture & Chemical Firms",
                 "tag": "🏭 PEORIA DEEP-TANK FERMENTATION",
@@ -34826,7 +34730,7 @@
               {
                 "step": 5,
                 "date": "1944–Present",
-                "para_ref": "[4.5]",
+                "para_ref": "[5.1–5.2]",
                 "title": "D-Day & Superbugs",
                 "actor": "Allied Medical Corps & Modern Clinicians",
                 "tag": "⚠️ D-DAY TRIUMPH & ANTIMICROBIAL RESISTANCE",
@@ -34840,56 +34744,6 @@
         },
         {
           "id": "lesson_4_5",
-          "note_scaffold": {
-            "instruction": "As you read the chapter, complete these 3 structured enquiry blocks to evaluate public health action against the modern epidemic of lung cancer:",
-            "blocks": [
-              {
-                "num": 1,
-                "badge": "EPIDEMIOLOGY",
-                "title": "1. Richard Doll, Austin Bradford Hill & The Smoking Link (1950)",
-                "prompt": "Explain how Doll and Hill’s statistical study proved tobacco smoking was the primary cause of lung cancer:",
-                "model_notes": [
-                  "Lung cancer deaths rose dramatically across Britain from 1920 to 1950, previously blamed on motor exhaust fumes and tarmac dust.",
-                  "Doll and Hill interviewed 1,465 hospital patients and monitored 40,000 British doctors over decades in a rigorous statistical study.",
-                  "Proved unarguably that heavy cigarette smokers were up to 50 times more likely to develop lung cancer than non-smokers."
-                ],
-                "key_terms": [
-                  "Richard Doll (1950)",
-                  "Epidemiological Study"
-                ]
-              },
-              {
-                "num": 2,
-                "badge": "GOVERNMENT ACTION",
-                "title": "2. Government Action: Banning Advertisements to Plain Packaging",
-                "prompt": "Detail the escalating legal, fiscal, and advertising restrictions British governments enforced to reduce smoking:",
-                "model_notes": [
-                  "Banned cigarette television advertising in 1965; added mandatory health warnings to cigarette packets starting in 1971.",
-                  "Passed the Health Act 2006 banning smoking in all enclosed workplaces, pubs, and restaurants from July 2007; raised legal buying age to 18.",
-                  "Enforced standardised plain packaging in 2016 featuring graphic diseased-lung imagery and removed tobacco displays from retail shops."
-                ],
-                "key_terms": [
-                  "2007 Public Smoking Ban",
-                  "Plain Packaging (2016)"
-                ]
-              },
-              {
-                "num": 3,
-                "badge": "TREATMENT REALITY",
-                "title": "3. Modern Diagnostic Technology vs. Poor 5-Year Survival Rates",
-                "prompt": "Explain how modern medicine detects and treats lung cancer, and why mortality remains stubbornly high:",
-                "model_notes": [
-                  "Diagnostic tools include high-resolution spiral CT scans, PET scans, bronchoscopy, and genetic tumor profiling.",
-                  "Treatments combine surgical lobectomy (removing lung lobes), targeted beam radiotherapy, and biological immunotherapy drugs.",
-                  "However, early lung cancer is painless and symptom-free; 70-80% of patients are diagnosed too late (Stage 3 or 4), keeping 5-year survival under 15%."
-                ],
-                "key_terms": [
-                  "High-Resolution CT Scans",
-                  "Targeted Radiotherapy"
-                ]
-              }
-            ]
-          },
           "banner": "/images/banner_radiotherapy.jpg",
           "banner_position": "center 40%",
           "title": "KT4.5: Case Study 2: Public Health & The Fight Against Lung Cancer (c.1950–present)",
@@ -34901,56 +34755,66 @@
               "date": "1920s–1950",
               "title": "The Mysterious Epidemic",
               "desc": "Between 1920 and 1950, UK lung cancer deaths escalated fourteen-fold, but physicians blamed industrial coal smog, new road tarmac fumes, or residual lung damage from 1918 Spanish Flu.",
-              "para_ref": "[5.1]"
+              "para_ref": "[1.1–1.2]"
             },
             {
               "date": "1950–1954",
               "title": "Doll & Hill’s Proof",
               "desc": "Medical Research Council epidemiologists Richard Doll and Austin Bradford Hill surveyed 709 lung cancer patients across 20 London hospitals in 1950, finding all but two were regular smokers.",
-              "para_ref": "[5.2]"
+              "para_ref": "[1.1–1.2]"
             },
             {
               "date": "1962–1971",
               "title": "Royal College & Ad Bans",
               "desc": "The Royal College of Physicians published Smoking and Health in 1962, demanding government intervention to curb cigarette marketing despite fierce lobbying from tobacco conglomerates.",
-              "para_ref": "[5.3]"
+              "para_ref": "[3.1–3.2]"
             },
             {
               "date": "2000s",
               "title": "Public Smoking Ban",
               "desc": "Scientific evidence proving that passive secondhand smoke caused thousands of fatal lung cancers and heart attacks in hospitality workers gave the government moral and legal grounds to act.",
-              "para_ref": "[5.4]"
+              "para_ref": "[4.1–4.2]"
             },
             {
               "date": "2010s–Present",
               "title": "Plain Packs & Oncology",
               "desc": "The UK introduced standardized plain packaging in drab Pantone 448C with graphic pictorial warnings in 2016, driving adult smoking prevalence down to a record low of under 13%.",
-              "para_ref": "[5.5]"
+              "para_ref": "[5.1–5.2]"
             }
           ],
           "hook_text": "In 1900, lung cancer was so rare that hospital pathologists rarely saw a case. By 1950, machine-rolled cigarettes had created a national epidemic, killing tens of thousands of British citizens. Richard Doll and Austin Bradford Hill’s statistical research proved the indisputable causal link between tobacco and carcinoma. The ensuing struggle forced government to permanently dismantle modern laissez-faire through television ad bans, public smoking bans, and plain packaging, while oncologists developed CT screening, robotic surgery, and immunotherapy.",
           "teacher_notes": {
-            "primer": "The overarching pedagogical goal of this lesson is to evaluate how the modern epidemic of lung cancer served as the catalyst for twentieth and twenty-first-century government intervention and high-tech oncology. Students must analyze Richard Doll and Austin Bradford Hill’s pioneering epidemiological studies (1950–1954), the multimodal clinical treatments of modern oncology (low-dose CT, lobectomy, radiotherapy, chemotherapy, immunotherapy), and the progressive escalation of state regulatory intervention that permanently repudiated laissez-faire.",
+            "primer": "This enquiry evaluates the battle against lung cancer as a modern public health case study, examining the interwar surge in smoking, Richard Doll and Austin Bradford Hill’s groundbreaking statistical epidemiology (1950–1954), the political struggle against tobacco corporate lobbying resulting in advertising bans (1965), the smoke-free legislation of the Health Act 2006, plain packaging (2016), and the multimodal limits of modern oncology.",
             "objectives": [
               {
-                "objective": "Explain the surge of 20th-century lung cancer and how Doll and Hill proved the link to smoking.",
-                "primer": "Direct students to paragraphs [1.1]–[2.2]. Contrast wartime military cigarette rations and deceptive tobacco advertising with Doll and Hill’s hospital questionnaire and the long-term British Doctors Study (1951–1954).",
-                "question": "Why did British physicians initially attribute the post-war surge in lung cancer to tarmac roads or motor exhaust rather than cigarettes?"
+                "objective": "Explain why early twentieth-century physicians failed to link the surge in lung cancer to tobacco smoking.",
+                "primer": "Direct students to paragraphs [1.1]–[1.2] and Source A (1949 doctor cigarette advertisement). Highlight how doctors blamed road tarmac fumes and coal smog while tobacco firms actively used actors portraying physicians to reassure the public.",
+                "question": "Why did medical authorities in the 1930s and 1940s blame coal smog and road tarmac rather than cigarettes for rising lung cancer rates?"
               },
               {
-                "objective": "Analyze the diagnostic and treatment arsenal deployed by modern oncologists.",
-                "primer": "Direct students to paragraphs [3.1]–[3.2]. Detail low-dose helical CT screening, bronchoscopy, robotic VATS lobectomies, stereotactic radiotherapy, and targeted immunotherapy (checkpoint inhibitors).",
-                "question": "Why does early diagnosis with low-dose CT scanning produce radically higher survival rates than relying on visible outward symptoms?"
+                "objective": "Analyse how Richard Doll and Austin Bradford Hill used statistical epidemiology to prove the causal link.",
+                "primer": "Direct students to paragraphs [2.1]–[2.2]. Explain their 1950 case-control study of 709 London hospital patients and the prospective British Doctors Study (tracking 40,000 physicians over decades), proving heavy smokers had a 50-times higher risk.",
+                "question": "How did Doll and Hill’s statistical method of case-control surveys and long-term doctor tracking prove that smoking directly caused lung cancer?"
               },
               {
-                "objective": "Evaluate the role of government intervention in combating lung cancer compared to clinical cures.",
-                "primer": "Direct students to paragraphs [4.1]–[4.2]. Trace the legislative timeline: TV ad bans (1965), packet warnings (1971), public smoking bans (2007), plain packaging (2016), and the 2024 smoke-free generation legislation.",
-                "question": "Why has government legislative compulsion achieved a far greater statistical reduction in lung cancer deaths than high-tech clinical treatments?"
+                "objective": "Examine why initial government public health action was delayed by commercial lobbying and tax revenues.",
+                "primer": "Direct students to paragraphs [3.1]–[3.2]. Focus on the Royal College of Physicians 1962 report, the 1965 ban on television cigarette commercials, and compulsory packet warnings in 1971.",
+                "question": "Why did British governments delay taking decisive action against cigarette marketing during the 1950s and 1960s?"
+              },
+              {
+                "objective": "Evaluate the impact of scientific evidence on passive secondhand smoking leading to the 2007 public smoking ban.",
+                "primer": "Direct students to paragraphs [4.1]–[4.2]. Discuss how proving that non-smokers and bar staff were harmed by secondhand smoke gave the government the moral and legal mandate to pass the Health Act 2006.",
+                "question": "Why was proving the health danger of passive smoking so crucial in overcoming resistance to the 2007 public indoor smoking ban?"
+              },
+              {
+                "objective": "Assess modern multimodal oncology treatments and explain why statutory prevention remains superior to cure.",
+                "primer": "Direct students to paragraphs [5.1]–[5.2] and Source B (plain cigarette packaging with warnings). Contrast low-dose CT scans, VATS lobectomies, and immunotherapy against stubbornly low survival rates, emphasizing prevention beats cure.",
+                "question": "Why do stubbornly low lung cancer survival rates demonstrate that statutory prevention (like plain packaging) is far more effective than high-tech clinical oncology?"
               }
             ],
             "source_context": {
-              "Source A": "A full-page commercial magazine advertisement from 1949 displaying a smiling actor portrayed as a medical doctor, under the bold slogan: \"According to a Nationwide survey: More Doctors Smoke CAMELS than any other cigarette!\" **Hinge Question:** Study the 1949 advertisement: how did tobacco companies deliberately exploit the public’s trust in medical doctors to reassure consumers and conceal the lethal dangers of smoking?",
-              "Source B": "A modern standardized plain cigarette packet introduced under UK law in May 2016, stripped of all corporate branding, rendered in drab olive-green (Pantone 448 C), and covered with bold government graphic health warnings (\"Smoking kills\"). **Hinge Question:** Compare Source B with Source A: how does modern plain standardized packaging represent the total, permanent rejection of 19th-century laissez-faire by the British government?"
+              "Source A": "1949 Vintage Cigarette Advertisement Featuring a Doctor. Commercial magazine advertisement for Camel cigarettes claiming that \"More Doctors Smoke Camels than any other cigarette,\" illustrating how tobacco companies used medical endorsements. Hinge Question: How did corporate tobacco advertising exploit the professional authority of medical practitioners to suppress public awareness of smoking hazards prior to Doll and Hill’s 1950 epidemiological study?",
+              "Source B": "Modern Cigarette Packet with Mandatory Government Health Warning. Contemporary standardized plain cigarette packaging in drab Pantone 448C displaying compulsory graphic medical warnings mandated under 2016 regulations. Hinge Question: How does the transition from unregulated commercial advertising (Source A) to state-mandated plain packaging (Source B) illustrate the changing role of government intervention in 20th- and 21st-century public health?"
             }
           },
           "fun_facts": [
@@ -34978,8 +34842,9 @@
           ],
           "narrative_blocks": [
             {
-              "title": "Act 1: Context & Catalyst (The 20th-Century Smoking Epidemic)",
-              "text": "<span class=\"para-ref\">[1.1]</span> At the turn of the twentieth century, carcinoma of the lung was an extraordinarily rare clinical pathology in Great Britain, with major London teaching hospitals recording fewer than ten cases annually. By 1950, however, lung cancer had erupted into a catastrophic public health crisis, claiming over 12,000 British lives each year and rapidly becoming the leading cause of cancer mortality among adult men. The catalyst behind this deadly surge was the widespread industrialization of machine-rolled tobacco cigarettes, invented in the late nineteenth century and distributed on a colossal commercial scale.<br><br><span class=\"para-ref\">[1.2]</span> During the First and Second World Wars, military commanders issued free cigarette rations to soldiers in trenches and combat stations to alleviate anxiety, hooking entire generations on nicotine. In the interwar and post-war years, commercial tobacco corporations mounted aggressive advertising campaigns across print newspapers, cinema reels, and roadside billboards, associating smoking with athleticism, Hollywood glamour, and social sophistication. Bizarrely, tobacco companies actively weaponized the medical profession to deceive the public, running advertisements (<span class=\"archival-meta-tag\">Source A</span>) featuring actors dressed as white-coated doctors claiming that \"More Doctors Smoke Camels,\" reassuring citizens that tobacco was soothing to the throat and perfectly harmless.",
+              "act": 1,
+              "title": "Act 1: The 20th-Century Smoking Epidemic & Tobacco Advertising (1920s–1950)",
+              "theme_heading": "Act 1: The 20th-Century Smoking Epidemic & Tobacco Advertising (1920s–1950)",
               "source": {
                 "id": "source_a_cigarette_ad",
                 "letter": "A",
@@ -34991,22 +34856,35 @@
                 "desc": "1949 magazine print advertisement featuring an actor portraying a physician endorsing cigarettes.",
                 "provenance": "Primary commercial print advertisement published in American and British circulation magazines, 1949. R.J. Reynolds Tobacco Company Archive / Stanford Research into the Impact of Tobacco Advertising.",
                 "citation": "R.J. Reynolds Tobacco Co. Magazine Advertisement, SRITA Collection, 1949.",
+                "question": "How did corporate tobacco advertising exploit the professional authority of medical practitioners to suppress public awareness of smoking hazards prior to Doll and Hill’s 1950 epidemiological study?",
+                "hinge_question": "How did corporate tobacco advertising exploit the professional authority of medical practitioners to suppress public awareness of smoking hazards prior to Doll and Hill’s 1950 epidemiological study?",
                 "source_context": "A 1949 magazine advertisement for Camel cigarettes featuring a physician in a white laboratory coat with a stethoscope, claiming \"More doctors smoke Camels than any other cigarette\" to reassure consumers regarding health concerns.",
-                "context": "A 1949 magazine advertisement for Camel cigarettes featuring a physician in a white laboratory coat with a stethoscope, claiming \"More doctors smoke Camels than any other cigarette\" to reassure consumers regarding health concerns.",
-                "hinge_question": "How did corporate tobacco advertising exploit the professional authority of medical practitioners to suppress public awareness of smoking hazards prior to Doll and Hill’s 1950 epidemiological study?"
-              }
+                "context": "A 1949 magazine advertisement for Camel cigarettes featuring a physician in a white laboratory coat with a stethoscope, claiming \"More doctors smoke Camels than any other cigarette\" to reassure consumers regarding health concerns."
+              },
+              "text": "<span class=\"para-ref\">[1.1]</span> At the turn of the twentieth century, carcinoma of the lung was an extraordinarily rare clinical pathology in Great Britain, with major London teaching hospitals recording fewer than ten cases annually. By 1950, however, lung cancer had erupted into a catastrophic public health crisis, claiming over 12,000 British lives each year and rapidly becoming the leading cause of cancer mortality among adult men. The catalyst behind this deadly surge was the widespread industrialization of machine-rolled tobacco cigarettes, invented in the late nineteenth century and distributed on a colossal commercial scale.<br><br><span class=\"para-ref\">[1.2]</span> During the First and Second World Wars, military commanders issued free cigarette rations to soldiers in trenches and combat stations to alleviate anxiety, hooking entire generations on nicotine. In the interwar and post-war years, commercial tobacco corporations mounted aggressive advertising campaigns across print newspapers, cinema reels, and roadside billboards, associating smoking with athleticism, Hollywood glamour, and social sophistication. Bizarrely, tobacco companies actively weaponized the medical profession to deceive the public, running advertisements (<span class=\"archival-meta-tag\">Source A</span>) featuring actors dressed as white-coated doctors claiming that \"More Doctors Smoke Camels,\" reassuring citizens that tobacco was soothing to the throat and perfectly harmless."
             },
             {
-              "title": "Act 2: Escalation & Conflict (Doll, Hill & The Statistical Indictment)",
+              "act": 2,
+              "title": "Act 2: Doll & Hill’s Epidemiological Indictment (1950–1954)",
+              "theme_heading": "Act 2: Doll & Hill’s Epidemiological Indictment (1950–1954)",
               "text": "<span class=\"para-ref\">[2.1]</span> As hospital thoracic wards overflowed with dying patients, the Medical Research Council (MRC) commissioned two brilliant investigators—epidemiologist Richard Doll and medical statistician Austin Bradford Hill—to determine the cause of the epidemic. Most contemporary physicians assumed the culprit was environmental pollution, pointing to coal fires, automobile exhaust fumes, or tarmac road resurfacing. Doll and Hill designed an innovative forensic inquiry, personally interviewing 709 lung cancer patients across twenty London hospitals between 1948 and 1952, comparing their detailed life histories with an identical control group of hospital patients admitted for non-cancer illnesses.<br><br><span class=\"para-ref\">[2.2]</span> In September 1950, Doll and Hill dropped a scientific bombshell in the *British Medical Journal* (BMJ): heavy cigarette smokers were fifty times more likely to contract lung cancer than non-smokers, with the statistical risk rising in direct proportion to the number of cigarettes smoked per day. To silence skeptical tobacco executives, in October 1951 Doll and Hill launched the monumental British Doctors Study, tracking the smoking habits and cause of death of over 40,000 registered British physicians over several decades. Within three years, the prospective study proved conclusively that smoking caused lung cancer, chronic obstructive pulmonary disease (COPD), and coronary heart disease. Stunned by his own forensic data, Richard Doll extinguished his pipe and never smoked again."
             },
             {
-              "title": "Act 3: Forensic Evidence (Modern Oncology: High-Tech Diagnosis & Multimodal Therapy)",
-              "text": "<span class=\"para-ref\">[3.1]</span> The clinical battle against lung cancer in modern Britain relies upon an advanced multi-disciplinary arsenal of high-tech diagnostics. Because lung tissue possesses no sensory pain receptors, early carcinomas grow silently; by the time patients exhibit overt symptoms—a persistent cough, hemoptysis (coughing up blood), and rapid weight loss—the tumor has typically metastasized to the regional lymph nodes, liver, or brain. Modern oncology deploys low-dose helical CT chest scans to detect microscopic pulmonary nodules before they spread, flexible fiber-optic bronchoscopes inserted through the trachea to biopsy suspicious lesions, and Positron Emission Tomography (PET-CT) scans using radioactive glucose tracers to illuminate active, metabolizing cancer cells throughout the body.<br><br><span class=\"para-ref\">[3.2]</span> Once staged, oncologists combine four cutting-edge treatment modalities: surgery, radiotherapy, chemotherapy, and immunotherapy. In early stages (Stages I and II), thoracic surgeons perform minimally invasive video-assisted thoracoscopic surgery (VATS) or robotic lobectomies, excising the cancerous lung lobe through keyhole incisions with reduced surgical trauma. For advanced or inoperable tumors, clinical teams deploy computer-guided stereotactic radiotherapy beams that obliterate tumor cells while sparing adjacent heart and spinal tissue, alongside platinum-based chemotherapy. In the twenty-first century, oncology was revolutionized by *immunotherapy* (checkpoint inhibitor drugs like pembrolizumab), which genetically trains the patient’s own immune T-cells to identify and destroy cancer cells."
+              "act": 3,
+              "title": "Act 3: Royal College of Physicians & Early Statutory Ad Bans (1962–1971)",
+              "theme_heading": "Act 3: Royal College of Physicians & Early Statutory Ad Bans (1962–1971)",
+              "text": "<span class=\"para-ref\">[3.1]</span> Despite Doll and Hill’s overwhelming statistical proof, the British government dragged its feet throughout the 1950s, fearful of losing hundreds of millions in tobacco tax revenues and cowed by the aggressive political lobbying of tobacco conglomerates. The inertia was shattered in 1962, when the Royal College of Physicians published its landmark report *Smoking and Health*, warning Parliament that cigarette smoking was causing a national death toll equivalent to a major wartime catastrophe.<br><br><span class=\"para-ref\">[3.2]</span> Under intense public pressure, Parliament initiated an escalating legislative campaign against tobacco: in 1965, the government banned all cigarette commercials from British television screens; in 1971, health warnings were made legally compulsory on all cigarette packets; and tobacco sports sponsorship was progressively restricted. However, commercial tobacco firms fought back by sponsoring Formula 1 motor racing, keeping brand logos visible to millions of young television viewers."
             },
             {
-              "title": "Act 4: The Historical Verdict & Historiographical Debate",
-              "text": "<span class=\"para-ref\">[4.1]</span> Despite billions invested in clinical oncology, lung cancer remains notoriously difficult to cure, with five-year survival rates lingering around 16–20%. Consequently, the decisive historical battle was fought not in the surgical operating theatre, but in Parliament through preventative state regulation—representing the complete, permanent destruction of Victorian *laissez-faire*. Over fifty years, the British government executed an escalating legislative squeeze against tobacco: banning television cigarette advertising in 1965, mandating health warning labels in 1971, raising punitive tobacco taxation, prohibiting smoking in all enclosed public places and workplaces under the Health Act 2007, and enforcing standardized plain olive-green packaging (<span class=\"archival-meta-tag\">Source B</span>) (Pantone 448 C) with graphic diseased-lung photographs in 2016.<br><br><span class=\"para-ref\">[4.2]</span> Historiographers debate the speed of government intervention versus individual civil liberty and commercial lobbying. Critical historians emphasize that successive British governments dragged their feet for decades following Doll and Hill’s 1950 breakthrough, addicted to billions in annual tobacco tax revenues and intimidated by the ferocious political lobbying of Imperial Tobacco. Conversely, public health historians celebrate state intervention as one of the greatest preventative triumphs in human history: smoking prevalence among British adult males plummeted from 65% in 1950 to under 13% today. Furthermore, the 2024 legislative push for a \"smoke-free generation\"—prohibiting tobacco sales to anyone born after 2009—marks the ultimate triumph of compulsory state intervention in modern medicine.",
+              "act": 4,
+              "title": "Act 4: The Public Indoor Smoking Ban & Secondhand Smoke (2000s)",
+              "theme_heading": "Act 4: The Public Indoor Smoking Ban & Secondhand Smoke (2000s)",
+              "text": "<span class=\"para-ref\">[4.1]</span> By the late 1990s, medical science established that tobacco did not merely poison the individual smoker, but inflicted severe mortal harm on non-smokers via *passive smoking* (secondhand smoke). Extensive epidemiological research proved that inhaling secondhand tobacco smoke in crowded pubs, restaurants, and workplaces caused thousands of fatal heart attacks and lung cancers in non-smoking hospitality workers every year.<br><br><span class=\"para-ref\">[4.2]</span> This scientific revelation transformed public health policy: tobacco was no longer a matter of individual lifestyle choice, but a workplace safety hazard that the state had a legal duty to regulate. Under the landmark Health Act 2006, the British government enacted a total ban on smoking inside all enclosed public places and workplaces across England from 1 July 2007 (following Scotland in 2006 and Wales earlier in 2007). In October 2007, the legal purchase age for tobacco was raised from 16 to 18, permanently changing British social habits."
+            },
+            {
+              "act": 5,
+              "title": "Act 5: Plain Packaging, Advanced Oncology & The Smoke-Free Goal (2010s–Present)",
+              "theme_heading": "Act 5: Plain Packaging, Advanced Oncology & The Smoke-Free Goal (2010s–Present)",
               "source": {
                 "id": "source_b_plain_packaging",
                 "letter": "B",
@@ -35018,10 +34896,12 @@
                 "desc": "Contemporary standardized plain cigarette packaging displaying compulsory graphic medical warnings.",
                 "provenance": "Contemporary photograph of standardized commercial tobacco packaging compliant with UK and EU tobacco control directives. Public Health England / Department of Health Archive.",
                 "citation": "Department of Health and Social Care / Public Health England Standardized Packaging Directive, 2016.",
+                "question": "How does the transition from unregulated commercial advertising (Source A) to state-mandated plain packaging (Source B) illustrate the changing role of government intervention in 20th- and 21st-century public health?",
+                "hinge_question": "How does the transition from unregulated commercial advertising (Source A) to state-mandated plain packaging (Source B) illustrate the changing role of government intervention in 20th- and 21st-century public health?",
                 "source_context": "Modern standardized plain cigarette packaging introduced under the UK Children and Families Act and 2016 regulations, eliminating brand typography and corporate logos in favour of prominent photographic health warnings.",
-                "context": "Modern standardized plain cigarette packaging introduced under the UK Children and Families Act and 2016 regulations, eliminating brand typography and corporate logos in favour of prominent photographic health warnings.",
-                "hinge_question": "How does the transition from unregulated commercial advertising (Source A) to state-mandated plain packaging (Source B) illustrate the changing role of government intervention in 20th- and 21st-century public health?"
-              }
+                "context": "Modern standardized plain cigarette packaging introduced under the UK Children and Families Act and 2016 regulations, eliminating brand typography and corporate logos in favour of prominent photographic health warnings."
+              },
+              "text": "<span class=\"para-ref\">[5.1]</span> In May 2016, the UK enacted standardized plain packaging (<span class=\"archival-meta-tag\">Source B</span>), mandating that all cigarettes be sold in an unappealing olive-green pack (Pantone 448C) with brand names in uniform typography, covered in graphic pictorial warnings of diseased organs. In 2024, Parliament advanced legislation to create a \"smoke-free generation\" by making it illegal to sell tobacco to anyone born after 1 January 2009. These statutory measures plunged adult male smoking prevalence from 65% in 1950 to under 13% today.<br><br><span class=\"para-ref\">[5.2]</span> Meanwhile, modern clinical oncology deploys high-tech therapies: video-assisted keyhole lobectomies, stereotactic radiotherapy beams that destroy tumors while sparing healthy tissue, and immunotherapy drugs (like pembrolizumab) that train the immune system to hunt cancer cells. Yet because lung cancer has no early symptoms and is usually diagnosed late, 10-year survival remains stubbornly low at approximately 10%. This reality reinforces the fundamental lesson of modern public health: statutory government prevention remains infinitely more effective than clinical high-tech cures."
             }
           ],
           "tasks": [
@@ -35342,7 +35222,7 @@
             {
               "step": 1,
               "date": "1920s–1950",
-              "para_ref": "[5.1]",
+              "para_ref": "[1.1–1.2]",
               "heading": "Why did early doctors fail to link smoking to lung cancer?",
               "bullets": [
                 "Men coughing black blood into hospital basins",
@@ -35354,7 +35234,7 @@
             {
               "step": 2,
               "date": "1950–1954",
-              "para_ref": "[5.2]",
+              "para_ref": "[2.1–2.2]",
               "heading": "How did statistical epidemiology prove the causal link?",
               "bullets": [
                 "Interviewing sick patients across twenty London wards",
@@ -35366,7 +35246,7 @@
             {
               "step": 3,
               "date": "1962–1971",
-              "para_ref": "[5.3]",
+              "para_ref": "[3.1–3.2]",
               "heading": "Why did government action encounter strong tobacco lobbying?",
               "bullets": [
                 "Banning glowing cigarette commercials on evening television",
@@ -35378,7 +35258,7 @@
             {
               "step": 4,
               "date": "2000s",
-              "para_ref": "[5.4]",
+              "para_ref": "[4.1–4.2]",
               "heading": "Why was passive smoking crucial in banning public smoking?",
               "bullets": [
                 "Breathing toxic secondhand smoke in crowded rooms",
@@ -35390,7 +35270,7 @@
             {
               "step": 5,
               "date": "2010s–Present",
-              "para_ref": "[5.5]",
+              "para_ref": "[5.1–5.2]",
               "heading": "Why does low cancer survival prove prevention beats cure?",
               "bullets": [
                 "Selling plain ugly mud-green packets with graphic photos",
@@ -35407,7 +35287,7 @@
               {
                 "step": 1,
                 "date": "1920s–1950",
-                "para_ref": "[5.1]",
+                "para_ref": "[1.1–1.2]",
                 "title": "The Mysterious Epidemic",
                 "actor": "Interwar Physicians & Tobacco Companies",
                 "tag": "🚬 UNEXPLAINED CARCINOMA RISE",
@@ -35419,7 +35299,7 @@
               {
                 "step": 2,
                 "date": "1950–1954",
-                "para_ref": "[5.2]",
+                "para_ref": "[1.1–1.2]",
                 "title": "Doll & Hill’s Proof",
                 "actor": "Sir Richard Doll & Sir Austin Bradford Hill",
                 "tag": "📊 STATISTICAL EPIDEMIOLOGY",
@@ -35431,7 +35311,7 @@
               {
                 "step": 3,
                 "date": "1962–1971",
-                "para_ref": "[5.3]",
+                "para_ref": "[3.1–3.2]",
                 "title": "Royal College & Ad Bans",
                 "actor": "Royal College of Physicians & British Parliament",
                 "tag": "📺 STATUTORY ADVERTISING RESTRICTIONS",
@@ -35443,7 +35323,7 @@
               {
                 "step": 4,
                 "date": "2000s",
-                "para_ref": "[5.4]",
+                "para_ref": "[4.1–4.2]",
                 "title": "Public Smoking Ban",
                 "actor": "Health Act 2006 & Public Health Campaigners",
                 "tag": "🚭 2007 PUBLIC SMOKING BAN",
@@ -35455,7 +35335,7 @@
               {
                 "step": 5,
                 "date": "2010s–Present",
-                "para_ref": "[5.5]",
+                "para_ref": "[5.1–5.2]",
                 "title": "Plain Packs & Oncology",
                 "actor": "Modern Thoracic Surgeons & Public Health Advocates",
                 "tag": "📦 PLAIN PACKAGING & ADVANCED ONCOLOGY",
