@@ -489,7 +489,7 @@ export const SCHEMES_OF_WORK_DATA = {
   },
   ks2_ww2: {
     unitId: 'ks2_ww2',
-    yearGroup: 'Year 5',
+    yearGroup: 'Key Stage 2',
     keyStage: 'KS2',
     title: 'World War II & The Home Front (1939–1945)',
     subtitle:

@@ -822,6 +822,59 @@ function updateSidebarForUnit(unitId, unitData = {}) {
     unitTitleEl.textContent = title;
   }
 
+  // Wire Unit Card click handler (Smart Hybrid Navigation)
+  const unitCard = document.getElementById('sidebar-unit-card');
+  if (unitCard) {
+    unitCard.setAttribute('role', 'button');
+    unitCard.setAttribute('tabindex', '0');
+
+    const updateUnitCardTitle = () => {
+      const currentUrl = new URL(window.location.href);
+      const hasLessonParam = currentUrl.searchParams.has('lesson');
+      const isInsideLesson =
+        hasLessonParam ||
+        (typeof window.currentLessonIndex !== 'undefined' && window.currentLessonIndex !== null) ||
+        Boolean(document.getElementById('lesson-detail-container'));
+      const isNotLessonsView = appStore.state.currentView !== 'lessons';
+
+      unitCard.title =
+        isInsideLesson || isNotLessonsView
+          ? 'Return to Unit Overview'
+          : isKs2Active
+            ? 'Return to KS2 Junior Hub'
+            : 'Return to Main Dashboard';
+    };
+
+    updateUnitCardTitle();
+    unitCard.onmouseenter = updateUnitCardTitle;
+
+    const handleUnitCardClick = (e) => {
+      if (e) e.preventDefault();
+      const currentUrl = new URL(window.location.href);
+      const hasLessonParam = currentUrl.searchParams.has('lesson');
+      const isInsideLesson =
+        hasLessonParam ||
+        (typeof window.currentLessonIndex !== 'undefined' && window.currentLessonIndex !== null) ||
+        Boolean(document.getElementById('lesson-detail-container'));
+      const isNotLessonsView = appStore.state.currentView !== 'lessons';
+
+      if (isInsideLesson || isNotLessonsView) {
+        // Return to Unit Overview / Unit Homepage
+        switchView('lessons', unitId);
+      } else {
+        // Already on Unit Overview -> return to Main Dashboard / KS2 Junior Hub
+        switchView('dashboard');
+      }
+    };
+
+    unitCard.onclick = handleUnitCardClick;
+    unitCard.onkeydown = (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        handleUnitCardClick(e);
+      }
+    };
+  }
+
   // Calculate and display Lesson Count Micro-Badge
   const lessons = unitData.lessons || unitData.subtopics || [];
   const lessonCount = lessons.length;

@@ -2,7 +2,7 @@
  * generate_ks2_quiz_booklet.cjs
  *
  * Compiles the 4-Page Saddle-Stitch Knowledge Retrieval & Homework Companion
- * for Key Stage 2 (Year 5): World War II & The Home Front (1939–1945).
+ * for Key Stage 2: World War II & The Home Front (1939–1945).
  *
  * Page Architecture (4-Page Saddle-Stitch Format / 1 Folded A3 Sheet):
  * - Page 1: Master Front Cover & 10-Enquiry Knowledge Tracking Ledger (ZERO RAG)
@@ -856,7 +856,7 @@ async function compileQuizBookletHtml() {
       <div class="sheet-masthead">
         <div class="brand-left">
           <span class="brand-badge">THE HISTORY REVISION HUB</span>
-          <span class="brand-text">Key Stage 2 • Year 5 History</span>
+          <span class="brand-text">Key Stage 2 History</span>
         </div>
         <div class="masthead-right">1939–1945 • NATIONAL CURRICULUM COMPLIANT</div>
       </div>
@@ -931,7 +931,7 @@ async function compileQuizBookletHtml() {
           <span class="brand-badge">PART 1 DRILL</span>
           <span class="brand-text">Enquiries 01 to 05</span>
         </div>
-        <div class="masthead-right">YEAR 5 WWII RETRIEVAL • QUESTIONS 1–20</div>
+        <div class="masthead-right">KS2 WWII RETRIEVAL • QUESTIONS 1–20</div>
       </div>
 
       <div class="page-overview-bar">
@@ -987,7 +987,7 @@ async function compileQuizBookletHtml() {
           <span class="brand-badge">PART 2 DRILL</span>
           <span class="brand-text">Enquiries 06 to 10</span>
         </div>
-        <div class="masthead-right">YEAR 5 WWII RETRIEVAL • QUESTIONS 21–40</div>
+        <div class="masthead-right">KS2 WWII RETRIEVAL • QUESTIONS 21–40</div>
       </div>
 
       <div class="page-overview-bar" style="background: linear-gradient(135deg, #0f766e 0%, #0d9488 100%);">

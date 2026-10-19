@@ -1114,7 +1114,7 @@ const htmlContent = `<!DOCTYPE html>
       <div class="brand-tag">
         <i class="fa-solid fa-graduation-cap"></i> The History Revision Hub • Key Stage 2 Curriculum
       </div>
-      <h1 class="hero-title">World War II &amp; The Home Front (Year 5)</h1>
+      <h1 class="hero-title">World War II &amp; The Home Front (Key Stage 2)</h1>
       <p class="hero-subtitle">
         A complete, 10-lesson classroom package engineered for primary teachers. Featuring 30 short age-appropriate video clips from BBC Teach and British Pathé, 24 verified archival primary sources, 10 modular 'Stick &amp; Solve' A4 worksheets, a 26-page master pupil consumable workbook, and 1:1 teacher model answer keys.
       </p>
@@ -1272,7 +1272,7 @@ const htmlContent = `<!DOCTYPE html>
       <strong>The History Revision Hub</strong> • Commercial Educational Products &amp; Reprographic Standards
     </div>
     <div>
-      Year 5 World War II &amp; The Home Front • 100% Institutional Neutrality Compliance
+      Key Stage 2: World War II &amp; The Home Front • 100% Institutional Neutrality Compliance
     </div>
   </footer>
 

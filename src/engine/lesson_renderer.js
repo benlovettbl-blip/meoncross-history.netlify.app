@@ -3511,6 +3511,7 @@ export function renderLesson(lesson) {
                       `
                           : ''
                       }
+                      ${renderArchivalSourceDiscussionBox(hingeText, source, isKs2, '10px')}
                     </div>
                     ${
                       !isKs2 && citationText
@@ -3550,6 +3551,7 @@ export function renderLesson(lesson) {
                         </div>`
                       : ''
                   }
+                  ${renderArchivalSourceDiscussionBox(hingeText, source, isKs2, '12px')}
                 </div>
               `
               }
@@ -3579,7 +3581,6 @@ export function renderLesson(lesson) {
               `
                   : ''
               }
-              ${renderArchivalSourceDiscussionBox(hingeText, source, isKs2, '14px')}
             </div>
           </details>
         `;
@@ -5629,11 +5630,9 @@ export function renderLesson(lesson) {
                                  </div>`
                                      : ''
                                  }
-
-
+                                 ${renderArchivalSourceDiscussionBox(hingeText, img, isKs2, '10px')}
                                </div>
                              </div>
-                             ${renderArchivalSourceDiscussionBox(hingeText, img, isKs2, '14px')}
                            </div>
                          </details>
                        </div>
@@ -5885,6 +5884,7 @@ export function renderLesson(lesson) {
             `
                 : ''
             }
+            ${renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '12px')}
           `;
         } else {
           const rawSourceImgUrl = getAssetUrl(rawImgSrc);
@@ -5955,6 +5955,7 @@ export function renderLesson(lesson) {
                   `
                       : ''
                   }
+                  ${renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '10px')}
                 </div>
                 ${
                   !isKs2 && (rawSource.citation || rawSource.provenance)
@@ -6123,7 +6124,6 @@ export function renderLesson(lesson) {
                   }
                   return '';
                 })()}
-                ${renderArchivalSourceDiscussionBox(rawSource.hinge_question || rawSource.question || rawSource.source_question, rawSource, isKs2, '14px')}
               </div>
             </details>
           `;
@@ -6132,7 +6132,6 @@ export function renderLesson(lesson) {
                 <div class="gcse-source-container archival-source-box" ${bCardIdAttr} style="text-align: left; transition: all 0.3s ease; margin: 20px 0;">
                   ${sourceHeaderHtml}
                   ${sourceBodyHtml}
-                  ${renderArchivalSourceDiscussionBox(rawSource.question || rawSource.hinge_question || rawSource.source_question, rawSource, isKs2, '12px')}
                 </div>
                `;
         }
@@ -6849,7 +6848,7 @@ export function renderLesson(lesson) {
                 window.currentUnitId === 'industrialisation_and_empire' ||
                 (typeof unit !== 'undefined' && unit && unit.is_ks3));
             const badgeText = isKs2
-              ? 'Year 5 Historian Challenge'
+              ? 'Key Stage 2 Historian Challenge'
               : isKs3
                 ? 'KS3 Analytical Masterclass'
                 : 'GCSE Analytical Masterclass';
@@ -7198,7 +7197,7 @@ export function renderLesson(lesson) {
                   <i class="fa-solid fa-file-lines"></i>
                 </div>
                 <div>
-                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px;">Enquiry Companion Resources &bull; Year 5</div>
+                  <div style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #1e40af; letter-spacing: 0.5px;">Enquiry Companion Resources &bull; Key Stage 2</div>
                   <div style="font-family: 'Playfair Display', Georgia, serif; font-size: 1.05rem; font-weight: 700; color: #0f172a;">A4 Companion Worksheet &amp; Pupil Workbook</div>
                   <div style="font-size: 0.82rem; color: #475569; margin-top: 1px;">Printable 2-page enquiry worksheet, source detective tasks, and 24-page pupil workbook.</div>
                 </div>
@@ -7311,7 +7310,7 @@ export function renderLesson(lesson) {
                   ]);
             const modelAnswer = task.model_answer || task.model || '';
             const targetBadge = isKs2
-              ? `<span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-award" style="color: #93c5fd;"></i> Year 5 Historian Investigation</span>`
+              ? `<span style="background: #1e3a8a; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-award" style="color: #93c5fd;"></i> Key Stage 2 Historian Investigation</span>`
               : isKs3
                 ? `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bridge" style="color: #5eead4;"></i> Planning Bridge &bull; Evidence Extraction</span>`
                 : `<span style="background: #0f766e; color: #ffffff; font-size: 0.75rem; font-weight: 700; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; display: inline-flex; align-items: center; gap: 6px;"><i class="fa-solid fa-bullseye" style="color: #5eead4;"></i> Target: Paper 1 Q5/Q6 Evaluative Essay [16+4 Marks]</span>`;
@@ -7569,7 +7568,7 @@ export function renderLesson(lesson) {
             const badgeText =
               task.badge ||
               (isKs2
-                ? 'Year 5 Historian Challenge'
+                ? 'Key Stage 2 Historian Challenge'
                 : isKs3
                   ? task.type === 'narrative_account'
                     ? '8 MARKS &bull; NARRATIVE ACCOUNT'
@@ -9383,7 +9382,7 @@ export function renderLesson(lesson) {
 
   const activeUnitEdition = (activeUnit && activeUnit.edition) || '2026.1';
   const hubPrefix = isKs2
-    ? 'The History Revision Hub &bull; Year 5 History'
+    ? 'The History Revision Hub &bull; Key Stage 2 History'
     : isKs3
       ? 'The History Revision Hub &bull; Key Stage 3'
       : 'GCSE History Hub';

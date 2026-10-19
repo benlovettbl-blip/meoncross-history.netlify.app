@@ -7,7 +7,7 @@ const code = `/**
  * KS2 Junior School Teacher Planning Hub & Worksheet Companion Engine
  * Provides non-specialist primary teachers with:
  * - 1-Click access to 2-Page A4 Enquiry Worksheets & 24-Page Master Pupil Consumable Workbook (PDF & Print)
- * - Year 5 National Curriculum links & 4-part lesson timelines
+ * - Key Stage 2 National Curriculum links & 4-part lesson timelines
  * - Factual subject knowledge primers (including cartographic and geopolitical context)
  * - Common primary misconceptions & hinge discussion questions
  * - Complete worksheet answer keys corresponding 1:1 with Tasks 1–5 on the A4 worksheets & Pupil Workbook
@@ -667,7 +667,7 @@ export function openKs2TeacherGuidanceModal(lessonId, lessonIndex) {
           <div>
             <div style="display: flex; align-items: center; gap: 8px;">
               <span style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; background: rgba(255, 255, 255, 0.2); color: #ffffff; padding: 2px 8px; border-radius: 4px;">Primary Teacher Companion</span>
-              <span style="font-size: 0.72rem; font-weight: 600; color: #cbd5e1;">Year 5 History • Non-Specialist Guide</span>
+              <span style="font-size: 0.72rem; font-weight: 600; color: #cbd5e1;">Key Stage 2 History • Non-Specialist Guide</span>
             </div>
             <h2 style="margin: 3px 0 0 0; font-size: 1.25rem; font-weight: 800; color: #ffffff; letter-spacing: -0.01em;">\${sheet.title}</h2>
           </div>
@@ -881,7 +881,7 @@ export function openKs2TeacherGuidanceModal(lessonId, lessonIndex) {
             <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
               <h4 style="margin: 0; font-size: 0.90rem; font-weight: 800; color: #312e81; display: flex; align-items: center; gap: 6px;">
                 <i class="fa-solid fa-star" style="color: #eab308;"></i>
-                <span>Task 5 WAGOLL: What A Good One Looks Like (Year 5 Model Paragraph)</span>
+                <span>Task 5 WAGOLL: What A Good One Looks Like (Key Stage 2 Model Paragraph)</span>
               </h4>
               <span style="font-size: 0.72rem; font-weight: 700; background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 4px;">Expected Standard</span>
             </div>

@@ -69,7 +69,7 @@ export function renderDashboard() {
         <!-- Fast Year Jump Chips -->
         <nav id="year-quick-jump-nav" aria-label="Jump to year group" style="display: inline-flex; align-items: center; gap: 6px; flex-wrap: wrap;">
           <span style="font-size: 0.7rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; margin-right: 2px;">Jump:</span>
-          <a href="#year5-section" class="jump-chip jump-ks2" onclick="event.preventDefault(); window.scrollToSection('year5-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; cursor: pointer; transition: all 0.15s;">Year 5</a>
+          <a href="#ks2-section" class="jump-chip jump-ks2" onclick="event.preventDefault(); window.scrollToSection('ks2-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; cursor: pointer; transition: all 0.15s;">KS2</a>
           <a href="#year7-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year7-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 7</a>
           <a href="#year8-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year8-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 8</a>
           <a href="#year9-section" class="jump-chip jump-ks3" onclick="event.preventDefault(); window.scrollToSection('year9-section');" style="text-decoration:none; padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; cursor: pointer; transition: all 0.15s;">Year 9</a>
@@ -82,11 +82,11 @@ export function renderDashboard() {
 
   const units = getUnits();
 
-  // Year 5 Grouping (Key Stage 2)
-  const year5Order = ['ks2_ww2'];
-  const year5Units = units
-    .filter((u) => year5Order.includes(u.id))
-    .sort((a, b) => year5Order.indexOf(a.id) - year5Order.indexOf(b.id));
+  // Key Stage 2 Grouping
+  const ks2Order = ['ks2_ww2'];
+  const ks2Units = units
+    .filter((u) => ks2Order.includes(u.id))
+    .sort((a, b) => ks2Order.indexOf(a.id) - ks2Order.indexOf(b.id));
 
   // Year 7 Grouping
   const year7Order = ['water_and_sanitation', 'medieval_england'];
@@ -207,7 +207,7 @@ export function renderDashboard() {
         <div style="position: relative; z-index: 2; padding: 0; flex-grow: 1; display: flex; flex-direction: column;">
           <div style="flex-grow: 1; min-width: 0;">
             <h4 style="margin: 0 0 6px 0; font-size: 0.98rem; font-weight: 700; line-height: 1.3; color: var(--text-main, #0f172a); font-family: 'Playfair Display', serif;">${displayTitle}</h4>
-            <p style="margin: 0; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted, #64748b); font-style: italic; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">"${displayEnquiry}"</p>
+            <p style="margin: 0; font-size: 0.8rem; line-height: 1.45; color: var(--text-muted, #64748b); font-style: italic; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical;">"${displayEnquiry}"</p>
           </div>
         </div>
         
@@ -224,14 +224,14 @@ export function renderDashboard() {
     `;
   };
 
-  // Year 5 Section (Key Stage 2)
-  if (year5Units.length > 0) {
+  // Key Stage 2 Section
+  if (ks2Units.length > 0) {
     html += `
-      <div class="dashboard-curriculum-block stage-block-ks2" id="block-year5">
+      <div class="dashboard-curriculum-block stage-block-ks2" id="block-ks2">
         <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
-          <h3 class="section-title" id="year5-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin: 0; display: flex; align-items: center; gap: 8px;">
+          <h3 class="section-title" id="ks2-section" style="font-family: 'Playfair Display', serif; font-size: 1.18rem; margin: 0; display: flex; align-items: center; gap: 8px;">
             <span style="background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 4px; font-size: 0.72rem; font-weight: 800; text-transform: uppercase;">Key Stage 2</span>
-            Year 5: World War II &amp; The Home Front (1939–1945)
+            World War II &amp; The Home Front (1939–1945)
           </h3>
           <a href="/units/ks2_ww2/index.html" target="_blank" style="background: #1e3a8a; color: #ffffff; padding: 6px 14px; border-radius: 6px; font-size: 0.76rem; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; box-shadow: 0 2px 6px rgba(30,58,138,0.25); transition: background 0.15s ease;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#1e3a8a'">
             <i class="fa-solid fa-chalkboard-user"></i> Open KS2 Teacher Command Centre &amp; Showcase <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.68rem;"></i>
@@ -239,7 +239,7 @@ export function renderDashboard() {
         </div>
         <div class="modules-grid" style="margin-bottom: 2rem;">
     `;
-    year5Units.forEach(renderUnitCard);
+    ks2Units.forEach(renderUnitCard);
     html += `</div></div>`;
   }
 
@@ -969,7 +969,7 @@ export function renderInteractiveQuiz() {
   if (lessons.length > 0) {
     const groupLabel =
       data.is_ks2 || unitId === 'ks2_ww2'
-        ? 'Enquiry Lessons (Year 5)'
+        ? 'Enquiry Lessons (Key Stage 2)'
         : data.isGCSE
           ? 'Individual Enquiry Lessons'
           : 'Enquiry Lessons';

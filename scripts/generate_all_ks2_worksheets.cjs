@@ -692,7 +692,7 @@ ${sharedStyles}
       <div class="sheet-masthead">
         <div class="brand-left">
           <span class="brand-badge">KS2 HISTORY</span>
-          <span class="brand-text">THE HISTORY REVISION HUB • YEAR 5 WORLD WAR II</span>
+          <span class="brand-text">THE HISTORY REVISION HUB • KS2 WORLD WAR II</span>
         </div>
         <div class="student-fields">
           <div class="field-item">Name: <span class="field-line"></span></div>
@@ -1188,7 +1188,7 @@ const lessonsToGenerate = [
           <div style="background:#ffffff; border:1px solid #d97706; padding:1mm; border-radius:2px; text-align:center;">100g BACON<br><span style="font-size:5pt; color:#78350f;">2 Rashers</span></div>
           <div style="background:#ffffff; border:1px solid #d97706; padding:1mm; border-radius:2px; text-align:center;">225g SUGAR<br><span style="font-size:5pt; color:#78350f;">For Baking</span></div>
         </div>
-        <div style="font-size:5.6pt; font-weight:700; color:#92400e; text-align:center;">COUPON SHEET • YEAR 5 ALLOTMENT</div>
+        <div style="font-size:5.6pt; font-weight:700; color:#92400e; text-align:center;">COUPON SHEET • KS2 ALLOTMENT</div>
       </div>
     `,
     canvasInstruction:

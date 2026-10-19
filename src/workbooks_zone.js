@@ -1193,8 +1193,8 @@ export function renderWorkbooksZone(container, unitData) {
               <option value="post_war_britain" ${activeUnitId === 'post_war_britain' ? 'selected' : ''}>Post-War Britain &amp; Windrush (Year 9)</option>
               <option value="trip_ypres" ${activeUnitId === 'trip_ypres' ? 'selected' : ''}>Ypres Battlefield Tour Companion</option>
             </optgroup>
-            <optgroup label="Key Stage 2 Primary History (Year 5)">
-              <option value="ks2_ww2" ${activeUnitId === 'ks2_ww2' ? 'selected' : ''}>World War II &amp; The Home Front (Year 5)</option>
+            <optgroup label="Key Stage 2 Primary History">
+              <option value="ks2_ww2" ${activeUnitId === 'ks2_ww2' ? 'selected' : ''}>World War II &amp; The Home Front (Key Stage 2)</option>
             </optgroup>
           </select>
         </div>

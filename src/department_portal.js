@@ -132,7 +132,7 @@ const DEPARTMENT_POLICIES = [
 
 const UNIT_HEALTH_DATA = [
   {
-    year: 'Year 5',
+    year: 'KS2',
     ks: 'KS2',
     uid: 'ks2_ww2',
     name: 'WWII & The Home Front (1939–1945)',

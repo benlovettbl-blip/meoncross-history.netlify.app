@@ -278,7 +278,7 @@ function generateWorkbookHtml() {
             <span class="brand-badge">MISSION 0${e.num}</span>
             <span class="brand-text">Historical Story &amp; Primary Evidence</span>
           </div>
-          <span style="font-size: 7.2pt; font-weight:700; color:#64748b;">Year 5 History</span>
+          <span style="font-size: 7.2pt; font-weight:700; color:#64748b;">Key Stage 2 History</span>
         </div>
 
         <div class="enquiry-banner">
